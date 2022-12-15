@@ -24,7 +24,7 @@
           }]
         },
         "width": { "value": "0rem", "source": "$modal-content-border-width" },
-        "radius": { "value": "{border.radius.lg.value}", "source": "$modal-content-border-radius" }
+        "radius": { "value": "{size.border.radius.lg.value}", "source": "$modal-content-border-radius" }
       },
       "box-shadow": {
         "sm-up": {

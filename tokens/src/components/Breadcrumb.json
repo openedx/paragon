@@ -21,7 +21,7 @@
         "width": { "value": ".0625rem", "source": "$breadcrumb-border-focus-width" }
       },
       "radius": {
-        "base": { "value": "{border.radius.base.value}", "source": "$breadcrumb-border-radius" },
+        "base": { "value": "{size.border.radius.base.value}", "source": "$breadcrumb-border-radius" },
         "focus": { "value": ".125rem", "source": "$breadcrumb-focus-border-radius" }
       }
     },
