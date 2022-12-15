@@ -1,0 +1,105 @@
+{
+  "spacing": {
+    "form": {
+      "input": {
+        "padding": {
+          "y": {
+            "base": { "value": "{input.btn.padding.y.value}", "source": "$input-padding-y" },
+            "sm": { "value": "{input.btn.padding.sm.y.value}", "source": "$input-padding-y-sm" },
+            "lg": { "value": "{input.btn.padding.lg.y.value}", "source": "$input-padding-y-lg" }
+          },
+          "x": {
+            "base": { "value": "{input.btn.padding.x.value}", "source": "$input-padding-x" },
+            "sm": { "value": "{input.btn.padding.sm.x.value}", "source": "$input-padding-x-sm" },
+            "lg": { "value": "{input.btn.padding.lg.x.value}", "source": "$input-padding-x-lg" }
+          }
+        },
+        "check": {
+          "gutter" : { "value": "1.25rem", "source": "$form-check-input-gutter" },
+          "margin": {
+            "x": {
+              "base": { "value": ".25rem", "source": "$form-check-input-margin-x" },
+              "inline": { "value": ".3125rem", "source": "$form-check-inline-input-margin-x" }
+            },
+            "y": { "value": ".3rem", "source": "$form-check-input-margin-y" }
+          }
+        }
+      },
+      "text": {
+        "margin": {
+          "top": { "value": ".25rem", "source": "$form-text-margin-top" }
+        }
+      },
+      "check": {
+        "inline": {
+          "margin": {
+            "x": { "value": ".75rem", "source": "$form-check-inline-margin-x" }
+          }
+        },
+        "position": {
+          "axis": { "value": ".375rem", "source": "$form-check-position-axis" }
+        }
+      },
+      "group": {
+        "margin": {
+          "bottom": { "value": "1rem", "source": "$form-group-margin-bottom" }
+        }
+      },
+      "control": {
+        "gutter": { "value": ".5rem", "source": "$custom-control-gutter" },
+        "spacer": {
+          "x": { "value": "1rem", "source": "$custom-control-spacer-x" }
+        },
+        "select": {
+          "padding": {
+            "y": {
+              "base": { "value": "{spacing.form.input.padding.y.base.value}", "source": "$custom-select-padding-y" },
+              "sm": { "value": "{spacing.form.input.padding.y.sm.value}", "source": "$custom-select-padding-y-sm" },
+              "lg": { "value": "{spacing.form.input.padding.y.lg.value}", "source": "$custom-select-padding-y-lg" }
+            },
+            "x": {
+              "base": { "value": "{spacing.form.input.padding.x.base.value}", "source": "$custom-select-padding-x" },
+              "sm": { "value": "{spacing.form.input.padding.x.sm.value}", "source": "$custom-select-padding-x-sm" },
+              "lg": { "value": "{spacing.form.input.padding.x.lg.value}", "source": "$custom-select-padding-x-lg" }
+            }
+          },
+          "indicator": {
+            "padding": { "value": "1rem", "source": "$custom-select-indicator-padding" }
+          },
+          "feedback": {
+            "icon": {
+              "padding": {
+                "right": {
+                  "value": "calc((1em + 2 * {spacing.form.control.select.padding.y.base.value}) * 3 / 4 + {spacing.form.control.select.padding.x.base.value} + {spacing.form.control.select.indicator.padding.value})",
+                  "source": "$custom-select-feedback-icon-padding-right"
+                }
+              },
+              "position": {
+                "value": "center right calc({spacing.form.control.select.padding.x.base.value} + {spacing.form.control.select.indicator.padding.value})",
+                "source": "$custom-select-feedback-icon-position"
+              }
+            },
+            "margin": {
+              "top": { "value": "{spacing.form.text.margin.top.value}", "source": "$form-feedback-margin-top" }
+            },
+            "tooltip": {
+              "padding": {
+                "y": { "value": ".25rem", "source": "$form-feedback-tooltip-padding-y" },
+                "x": { "value": ".5rem", "source": "$form-feedback-tooltip-padding-x" }
+              }
+            }
+          },
+          "icon": {
+            "padding": { "value": ".5625rem", "source": "$select-icon-padding" }
+          }
+        },
+        "file": {
+          "padding": {
+            "y": { "value": "{spacing.form.input.padding.y.base.value}", "source": "$custom-file-padding-y" },
+            "x": { "value": "{spacing.form.input.padding.x.base.value}", "source": "$custom-file-padding-x" }
+          }
+        }
+      }
+    }
+  }
+}

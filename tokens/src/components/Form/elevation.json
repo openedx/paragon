@@ -1,0 +1,42 @@
+{
+  "elevation": {
+    "form": {
+      "input": {
+        "base": { "value": "inset 0 1px 1px rgba(0, 0, 0, .075)", "source": "$input-box-shadow" },
+        "focus": { "value": "{input.btn.focus.box-shadow.value}", "source": "$input-focus-box-shadow" }
+      },
+      "control": {
+        "indicator": {
+          "base": { "value": "{elevation.form.input.base.value}", "source": "$custom-control-indicator-box-shadow" },
+          "checked": {
+            "base": { "value": "none", "source": "$custom-control-indicator-checked-box-shadow" },
+            "focus": { "value": "0 0 0 4px rgba(0, 0, 0, .1)", "source": "$custom-control-indicator-focus-box-shadow" }
+          },
+          "active": { "value": "none", "source": "$custom-control-indicator-active-box-shadow" }
+        },
+        "checkbox": {
+          "indicator": {
+            "indeterminate": { "value": "none", "source": "$custom-checkbox-indicator-indeterminate-box-shadow" }
+          }
+        },
+        "range": {
+          "track": { "value": "inset 0 .25rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-track-box-shadow" },
+          "thumb": {
+            "base": { "value": "0 .1rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-thumb-box-shadow" },
+            "focus": { "value": "0 0 0 1px {body.bg.value}, {size.form.input.width.focus.value}", "source": "$custom-range-thumb-focus-box-shadow" }
+          }
+        },
+        "file": {
+          "base": { "value": "{elevation.form.input.base.value}", "source": "$custom-file-box-shadow" },
+          "focus": { "value": "{elevation.form.input.focus.value}", "source": "$custom-file-focus-box-shadow" }
+        },
+        "select": {
+          "border": {
+            "base": { "value": "inset 0 1px 2px rgba(0, 0, 0, .075)", "source": "$custom-select-box-shadow" },
+            "focus": { "value": "{input.btn.focus.box-shadow.value}", "source": "$custom-select-focus-box-shadow" }
+          }
+        }
+      }
+    }
+  }
+}
