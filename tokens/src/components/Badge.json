@@ -1,27 +1,25 @@
 {
-  "badge": {
-    "font": {
-      "size": { "value": "75%", "source": "$badge-font-size" },
-      "weight": { "value": "{font.weight.bold.value}", "source": "$badge-font-weight" }
-    },
-    "padding": {
-      "x": {
-        "base": { "value": ".5rem", "source": "$badge-padding-x" },
-        "pill": { "value": ".6em", "source": "$badge-pill-padding-x" }
-      },
-      "y": { "value": ".125rem", "source": "$badge-padding-y" }
-    },
-    "border": {
-      "radius": {
-        "base": { "value": ".25rem", "source": "$badge-border-radius" },
-        "pill": { "value": "10rem", "source": "$badge-pill-border-radius" }
+  "spacing": {
+    "badge": {
+      "padding": {
+        "x": {
+          "base": { "value": ".5rem", "source": "$badge-padding-x" },
+          "pill": { "value": ".6em", "source": "$badge-pill-padding-x" }
+        },
+        "y": { "value": ".125rem", "source": "$badge-padding-y" }
       }
-    },
-    "transition": { "value": "none", "source": "$badge-transition" },
-    "focus": {
-      "width": {"value": "{input.btn.focus.width.value}", "source": "$badge-focus-width"}
-    },
-    "color": {
+    }
+  },
+  "typograthy": {
+    "badge": {
+      "font": {
+        "size": { "value": "75%", "source": "$badge-font-size" },
+        "weight": { "value": "{font.weight.bold.value}", "source": "$badge-font-weight" }
+      }
+    }
+  },
+  "color": {
+    "badge": {
       "primary": { "value": "{color.primary.base.value}", "source": "$badge-primary-color", "modify": [{ "type": "color-yiq" }] },
       "secondary": { "value": "{color.secondary.base.value}", "source": "$badge-secondary-color", "modify": [{ "type": "color-yiq" }] },
       "success": { "value": "{color.success.base.value}", "source": "$badge-success-color", "modify": [{ "type": "color-yiq" }] },
@@ -215,5 +213,19 @@
         }
       }
     }
+  },
+  "size": {
+    "badge": {
+      "border": {
+        "radius": {
+          "base": { "value": ".25rem", "source": "$badge-border-radius" },
+          "pill": { "value": "10rem", "source": "$badge-pill-border-radius" }
+        }
+      },
+      "focus-width": { "value": "{input.btn.focus.width.value}", "source": "$badge-focus-width" }
+    }
+  },
+  "transition": {
+    "badge": { "value": "none", "source": "$badge-transition" }
   }
 }
