@@ -6,11 +6,12 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "Apache-2.0",
+  "bin": {
+    "build-design-tokens": "./tokens/build-tokens.js",
+    "paragon": "./bin/paragon-scripts.js"
+  },
   "publishConfig": {
     "access": "public"
-  },
-  "bin": {
-    "paragon": "./bin/paragon-scripts.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "/icons",
     "/src",
     "/scss",
+    "/tokens",
     "/lib"
   ],
   "sideEffects": false,
