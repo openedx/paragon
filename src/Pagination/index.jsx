@@ -158,6 +158,7 @@ class Pagination extends React.Component {
         <Button
           className="page-link"
           aria-label={ariaLabel}
+          variant={active ? 'primary' : 'tertiary'}
           ref={(element) => { this.pageRefs[page] = element; }}
           onClick={() => { this.handlePageSelect(page); }}
         >

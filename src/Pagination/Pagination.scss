@@ -57,6 +57,7 @@
 
 .page-link {
   border: none;
+  background-color: transparent;
 
   &.btn-primary:not(:disabled):not(.disabled):focus {
     background-color: $pagination-bg;
