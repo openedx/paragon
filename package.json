@@ -5,6 +5,9 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "license": "Apache-2.0",
+  "bin": {
+    "build-design-tokens": "./tokens/build-tokens.js"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -16,7 +19,8 @@
     "/dist",
     "/icons",
     "/src",
-    "/scss"
+    "/scss",
+    "/tokens"
   ],
   "sideEffects": false,
   "scripts": {
