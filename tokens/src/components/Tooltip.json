@@ -13,7 +13,7 @@
       "light": { "value": "{color.white.value}", "source": "$tooltip-bg-light" }
     },
     "border": {
-      "radius": { "value": "{border.radius.base.value}", "source": "$tooltip-border-radius" }
+      "radius": { "value": "{size.border.radius.base.value}", "source": "$tooltip-border-radius" }
     },
     "opacity": { "value": "1", "source": "$tooltip-opacity" },
     "padding": {

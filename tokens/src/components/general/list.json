@@ -24,8 +24,8 @@
           "amount": 0.125
         }]
       },
-      "width": { "value": "{border.width.value}", "source": "$list-group-border-width" },
-      "radius": { "value": "{border.radius.base.value}", "source": "$list-group-border-radius" }
+      "width": { "value": "{size.border.width.value}", "source": "$list-group-border-width" },
+      "radius": { "value": "{size.border.radius.base.value}", "source": "$list-group-border-radius" }
     },
     "item": {
       "padding": {

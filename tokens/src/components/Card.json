@@ -5,9 +5,9 @@
       "y": { "value": ".75rem", "source": "$card-spacer-y" }
     },
     "border": {
-      "width": { "value": "{border.width.value}", "source": "$card-border-width" },
+      "width": { "value": "{size.border.width.value}", "source": "$card-border-width" },
       "radius": {
-        "base": { "value": "{border.radius.base.value}", "source": "$card-border-radius" },
+        "base": { "value": "{size.border.radius.base.value}", "source": "$card-border-radius" },
         "image": { "value": ".3125rem", "source": "$card-image-border-radius" },
         "logo": { "value": ".25rem", "source": "$card-logo-border-radius" }
       },

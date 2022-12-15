@@ -1,248 +1,248 @@
-$input-padding-y: var(--pgn-form-input-padding-y-base) !default;
-$input-padding-x: var(--pgn-form-input-padding-x-base) !default;
-$input-font-family: var(--pgn-form-input-font-family) !default;
-$input-font-size: var(--pgn-form-input-font-size-base) !default;
-$input-font-weight: var(--pgn-form-input-font-weight) !default;
-$input-line-height: var(--pgn-form-input-line-height-base) !default;
+$input-padding-y: var(--pgn-spacing-form-input-padding-y-base) !default;
+$input-padding-x: var(--pgn-spacing-form-input-padding-x-base) !default;
+$input-font-family: var(--pgn-typography-form-input-font-family) !default;
+$input-font-size: var(--pgn-typography-form-input-font-size-base) !default;
+$input-font-weight: var(--pgn-typography-form-input-font-weight) !default;
+$input-line-height: var(--pgn-typography-form-input-line-height-base) !default;
 
-$input-padding-y-sm: var(--pgn-form-input-padding-y-sm) !default;
-$input-padding-x-sm: var(--pgn-form-input-padding-x-sm) !default;
-$input-font-size-sm: var(--pgn-form-input-font-size-sm) !default;
-$input-line-height-sm: var(--pgn-form-input-line-height-sm) !default;
+$input-padding-y-sm: var(--pgn-spacing-form-input-padding-y-sm) !default;
+$input-padding-x-sm: var(--pgn-spacing-form-input-padding-x-sm) !default;
+$input-font-size-sm: var(--pgn-typography-form-input-font-size-sm) !default;
+$input-line-height-sm: var(--pgn-typography-form-input-line-height-sm) !default;
 
-$input-padding-y-lg: var(--pgn-form-input-padding-y-lg) !default;
-$input-padding-x-lg: var(--pgn-form-input-padding-x-lg) !default;
-$input-font-size-lg: var(--pgn-form-input-font-size-lg) !default;
-$input-line-height-lg: var(--pgn-form-input-line-height-lg) !default;
+$input-padding-y-lg: var(--pgn-spacing-form-input-padding-y-lg) !default;
+$input-padding-x-lg: var(--pgn-spacing-form-input-padding-x-lg) !default;
+$input-font-size-lg: var(--pgn-typography-form-input-font-size-lg) !default;
+$input-line-height-lg: var(--pgn-typography-form-input-line-height-lg) !default;
 
-$input-bg: var(--pgn-form-input-bg-base) !default;
-$input-disabled-bg: var(--pgn-form-input-bg-disabled) !default;
+$input-bg: var(--pgn-color-form-input-bg-base) !default;
+$input-disabled-bg: var(--pgn-color-form-input-bg-disabled) !default;
 
-$input-color: var(--pgn-form-input-color-base) !default;
-$input-border-color: var(--pgn-form-input-border-color) !default;
-$input-border-width: var(--pgn-form-input-border-width) !default;
-$input-box-shadow: var(--pgn-form-input-box-shadow-base) !default;
+$input-color: var(--pgn-color-form-input-base) !default;
+$input-border-color: var(--pgn-color-form-input-border) !default;
+$input-border-width: var(--pgn-size-form-input-width-border) !default;
+$input-box-shadow: var(--pgn-elevation-form-input-base) !default;
 
-$input-border-radius: var(--pgn-form-input-border-radius-base) !default;
-$input-border-radius-lg: var(--pgn-form-input-border-radius-lg) !default;
-$input-border-radius-sm: var(--pgn-form-input-border-radius-sm) !default;
+$input-border-radius: var(--pgn-size-form-input-radius-border-base) !default;
+$input-border-radius-lg: var(--pgn-size-form-input-radius-border-lg) !default;
+$input-border-radius-sm: var(--pgn-size-form-input-radius-border-sm) !default;
 
-$input-focus-bg: var(--pgn-form-input-focus-bg) !default;
-$input-focus-border-color: var(--pgn-form-input-focus-color-border) !default;
-$input-focus-color: var(--pgn-form-input-focus-color-base) !default;
-$input-focus-width: var(--pgn-form-input-focus-width) !default;
-$input-focus-box-shadow: var(--pgn-form-input-box-shadow-focus) !default;
+$input-focus-bg: var(--pgn-color-form-input-focus-bg) !default;
+$input-focus-border-color: var(--pgn-color-form-input-focus-border) !default;
+$input-focus-color: var(--pgn-color-form-input-focus-base) !default;
+$input-focus-width: var(--pgn-size-form-input-width-focus) !default;
+$input-focus-box-shadow: var(--pgn-elevation-form-input-focus) !default;
 
-$input-placeholder-color: var(--pgn-form-input-color-plaintext) !default;
+$input-placeholder-color: var(--pgn-color-form-input-plaintext) !default;
 $input-plaintext-color:                 var(--pgn-body-color) !default;
 
-$input-height-border: var(--pgn-form-input-border-height) !default;
+$input-height-border: var(--pgn-size-form-input-height-border) !default;
 
-$input-height-inner: var(--pgn-form-input-height-inner-base) !default;
-$input-height-inner-half: var(--pgn-form-input-height-inner-half) !default;
-$input-height-inner-quarter: var(--pgn-form-input-height-inner-quarter) !default;
+$input-height-inner: var(--pgn-size-form-input-height-inner-base) !default;
+$input-height-inner-half: var(--pgn-size-form-input-height-inner-half) !default;
+$input-height-inner-quarter: var(--pgn-size-form-input-height-inner-quarter) !default;
 
-$input-height: var(--pgn-form-input-height-base) !default;
-$input-height-sm: var(--pgn-form-input-height-sm) !default;
-$input-height-lg: var(--pgn-form-input-height-lg) !default;
+$input-height: var(--pgn-size-form-input-height-base) !default;
+$input-height-sm: var(--pgn-size-form-input-height-sm) !default;
+$input-height-lg: var(--pgn-size-form-input-height-lg) !default;
 
-$input-hover-width: var(--pgn-form-input-width-hover) !default;
-$input-transition: var(--pgn-form-input-transition) !default;
+$input-hover-width: var(--pgn-size-form-input-width-hover) !default;
+$input-transition: var(--pgn-transition-form-input) !default;
 
-$form-text-margin-top: var(--pgn-form-text-margin-top) !default;
+$form-text-margin-top: var(--pgn-spacing-form-text-margin-top) !default;
 
-$form-check-input-gutter: var(--pgn-form-input-check-gutter) !default;
-$form-check-input-margin-y: var(--pgn-form-input-check-margin-y) !default;
-$form-check-input-margin-x: var(--pgn-form-input-check-margin-x-base) !default;
+$form-check-input-gutter: var(--pgn-spacing-form-input-check-gutter) !default;
+$form-check-input-margin-y: var(--pgn-spacing-form-input-check-margin-y) !default;
+$form-check-input-margin-x: var(--pgn-spacing-form-input-check-margin-x-base) !default;
 
-$form-check-inline-margin-x: var(--pgn-form-check-inline-margin-x) !default;
-$form-check-inline-input-margin-x: var(--pgn-form-input-check-margin-x-inline) !default;
+$form-check-inline-margin-x: var(--pgn-spacing-form-check-inline-margin-x) !default;
+$form-check-inline-input-margin-x: var(--pgn-spacing-form-input-check-margin-x-inline) !default;
 
-$form-check-position-axis: var(--pgn-form-check-position-axis) !default;
-$form-check-focus-border-radius: var(--pgn-form-check-border-radius-focus) !default;
-$form-check-border-width: var(--pgn-form-check-border-width) !default;
+$form-check-position-axis: var(--pgn-spacing-form-check-position-axis) !default;
+$form-check-focus-border-radius: var(--pgn-size-form-border-radius-check-focus) !default;
+$form-check-border-width: var(--pgn-size-form-border-radius-width) !default;
 
-$form-grid-gutter-width: var(--pgn-form-grid-gutter-width) !default;
-$form-group-margin-bottom: var(--pgn-form-group-margin-bottom) !default;
+$form-grid-gutter-width: var(--pgn-size-form-grid-gutter-width) !default;
+$form-group-margin-bottom: var(--pgn-spacing-form-group-margin-bottom) !default;
 
-$input-group-addon-color: var(--pgn-form-input-group-addon-color-base) !default;
-$input-group-addon-bg: var(--pgn-form-input-group-addon-bg) !default;
-$input-group-addon-border-color: var(--pgn-form-input-group-addon-color-border) !default;
+$input-group-addon-color: var(--pgn-color-form-input-group-addon-base) !default;
+$input-group-addon-bg: var(--pgn-color-form-input-group-addon-bg) !default;
+$input-group-addon-border-color: var(--pgn-color-form-input-group-addon-border) !default;
 
-$custom-forms-transition: var(--pgn-form-custom-transition) !default;
+$custom-forms-transition: var(--pgn-transition-form-control) !default;
 
-$custom-control-gutter: var(--pgn-form-custom-control-gutter) !default;
-$custom-control-spacer-x: var(--pgn-form-custom-control-spacer-x) !default;
-$custom-control-cursor: var(--pgn-form-custom-control-cursor) !default;
+$custom-control-gutter: var(--pgn-spacing-form-control-gutter) !default;
+$custom-control-spacer-x: var(--pgn-spacing-form-control-spacer-x) !default;
+$custom-control-cursor: var(--pgn-other-form-control-cursor) !default;
 
-$custom-control-indicator-size: var(--pgn-form-custom-control-indicator-size) !default;
-$custom-control-indicator-bg: var(--pgn-form-custom-control-indicator-bg-base) !default;
+$custom-control-indicator-size: var(--pgn-size-form-control-indicator-base) !default;
+$custom-control-indicator-bg: var(--pgn-color-form-control-indicator-bg-base) !default;
 
-$custom-control-indicator-bg-size: var(--pgn-form-custom-control-indicator-bg-size) !default;
-$custom-control-indicator-box-shadow: var(--pgn-form-custom-control-indicator-box-shadow) !default;
-$custom-control-indicator-border-color: var(--pgn-form-custom-control-indicator-border-color) !default;
-$custom-control-indicator-border-width: var(--pgn-form-custom-control-indicator-border-width) !default;
+$custom-control-indicator-bg-size: var(--pgn-size-form-control-indicator-bg) !default;
+$custom-control-indicator-box-shadow: var(--pgn-elevation-form-control-indicator-base) !default;
+$custom-control-indicator-border-color: var(--pgn-color-form-control-indicator-border) !default;
+$custom-control-indicator-border-width: var(--pgn-size-form-control-indicator-border-width) !default;
 
-$custom-control-label-color: var(--pgn-form-custom-control-label-color-base) !default;
-$custom-control-indicator-disabled-bg: var(--pgn-form-custom-control-indicator-disabled-bg) !default;
-$custom-control-label-disabled-color: var(--pgn-form-custom-control-label-color-disabled) !default;
+$custom-control-label-color: var(--pgn-color-form-control-label-base) !default;
+$custom-control-indicator-disabled-bg: var(--pgn-color-form-control-indicator-bg-disabled) !default;
+$custom-control-label-disabled-color: var(--pgn-color-form-control-label-disabled) !default;
 
-$custom-control-indicator-checked-color: var(--pgn-form-custom-control-indicator-checked-color) !default;
-$custom-control-indicator-checked-bg: var(--pgn-form-custom-control-indicator-checked-bg-text) !default;
-$custom-control-indicator-checked-disabled-bg: var(--pgn-form-custom-control-indicator-checked-bg-disabled) !default;
+$custom-control-indicator-checked-color: var(--pgn-color-form-control-indicator-checked-base) !default;
+$custom-control-indicator-checked-bg: var(--pgn-color-form-control-indicator-checked-bg-base) !default;
+$custom-control-indicator-checked-disabled-bg: var(--pgn-color-form-control-indicator-checked-bg-disabled) !default;
+
+// stylelint-disable-next-line max-line-length
+$custom-control-indicator-checked-box-shadow: var(--pgn-elevation-form-control-indicator-checked-base) !default;
 
 // stylelint-disable-next-line max-line-length
 $custom-control-indicator-checked-valid-color:    theme-color("success") !default;
 $custom-control-indicator-checked-invalid-color:  theme-color("danger") !default;
-$custom-control-indicator-checked-box-shadow: var(--pgn-form-custom-control-indicator-checked-box-shadow-base) !default;
+$custom-control-indicator-checked-border-color: var(--pgn-color-form-control-indicator-checked-border-base) !default;
+
+$custom-control-indicator-focus-box-shadow: var(--pgn-elevation-form-control-indicator-checked-focus) !default;
 
 // stylelint-disable-next-line max-line-length
-$custom-control-indicator-checked-border-color: var(--pgn-form-custom-control-indicator-checked-border-color-base) !default;
+$custom-control-indicator-focus-border-color: var(--pgn-color-form-control-indicator-checked-border-focus) !default;
 
-$custom-control-indicator-focus-box-shadow: var(--pgn-form-custom-control-indicator-checked-box-shadow-focus) !default;
+$custom-control-indicator-active-color: var(--pgn-color-form-control-indicator-active-base) !default;
+$custom-control-indicator-active-bg: var(--pgn-color-form-control-indicator-active-bg) !default;
+$custom-control-indicator-active-box-shadow: var(--pgn-elevation-form-control-indicator-active) !default;
+$custom-control-indicator-active-border-color: var(--pgn-color-form-control-indicator-active-border) !default;
+$custom-checkbox-indicator-border-radius: var(--pgn-size-form-control-border-checkbox-indicator-radius) !default;
+$custom-checkbox-indicator-icon-checked: var(--pgn-other-form-control-checkbox-indicator-icon-checked) !default;
+
+$custom-checkbox-indicator-indeterminate-bg: var(--pgn-color-form-control-checkbox-indicator-indeterminate-bg) !default;
+// stylelint-disable-next-line max-line-length
+$custom-checkbox-indicator-indeterminate-color: var(--pgn-color-form-control-checkbox-indicator-indeterminate-base) !default;
+// stylelint-disable-next-line max-line-length
+$custom-checkbox-indicator-icon-indeterminate: var(--pgn-other-form-control-checkbox-indicator-indeterminate-icon) !default;
 
 // stylelint-disable-next-line max-line-length
-$custom-control-indicator-focus-border-color: var(--pgn-form-custom-control-indicator-checked-border-color-focus) !default;
-
-$custom-control-indicator-active-color: var(--pgn-form-custom-control-indicator-active-color) !default;
-$custom-control-indicator-active-bg: var(--pgn-form-custom-control-indicator-active-bg) !default;
-$custom-control-indicator-active-box-shadow: var(--pgn-form-custom-control-indicator-active-box-shadow) !default;
-$custom-control-indicator-active-border-color: var(--pgn-form-custom-control-indicator-active-border-color) !default;
-$custom-checkbox-indicator-border-radius: var(--pgn-form-custom-checkbox-indicator-border-radius) !default;
-$custom-checkbox-indicator-icon-checked: var(--pgn-form-custom-checkbox-indicator-icon-checked) !default;
-$custom-checkbox-indicator-icon-valid-checked:         str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='#{$custom-control-indicator-checked-valid-color}'/></svg>"), "#", "%23") !default;
-$custom-checkbox-indicator-icon-invalid-checked:       str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='#{$custom-control-indicator-checked-invalid-color}'/></svg>"), "#", "%23") !default;
-
-$custom-checkbox-indicator-indeterminate-bg: var(--pgn-form-custom-checkbox-indicator-indeterminate-bg) !default;
-$custom-checkbox-indicator-indeterminate-color: var(--pgn-form-custom-checkbox-indicator-indeterminate-color) !default;
-$custom-checkbox-indicator-icon-indeterminate: var(--pgn-form-custom-checkbox-indicator-indeterminate-icon) !default;
+$custom-checkbox-indicator-indeterminate-box-shadow: var(--pgn-elevation-form-control-checkbox-indicator-indeterminate) !default;
 
 // stylelint-disable-next-line max-line-length
-$custom-checkbox-indicator-indeterminate-box-shadow: var(--pgn-form-custom-checkbox-indicator-indeterminate-box-shadow) !default;
-
-// stylelint-disable-next-line max-line-length
-$custom-checkbox-indicator-indeterminate-border-color: var(--pgn-form-custom-checkbox-indicator-indeterminate-border-color) !default;
-
-$custom-radio-indicator-border-radius: var(--pgn-form-custom-radio-indicator-border-radius) !default;
-$custom-radio-indicator-icon-checked: var(--pgn-form-custom-radio-indicator-icon-checked) !default;
+$custom-checkbox-indicator-indeterminate-border-color: var(--pgn-color-form-control-checkbox-indicator-indeterminate-border) !default;
 $custom-radio-indicator-icon-valid-checked:     str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-valid-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
 $custom-radio-indicator-icon-invalid-checked:   str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-invalid-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
 
-$custom-switch-indicator-icon-off: var(--pgn-form-custom-switch-indicator-icon-off) !default;
-$custom-switch-indicator-icon-on: var(--pgn-form-custom-switch-indicator-icon-on) !default;
-$custom-switch-width: var(--pgn-form-custom-switch-width) !default;
-$custom-switch-indicator-border-radius: var(--pgn-form-custom-switch-indicator-border-radius) !default;
-$custom-switch-indicator-size: var(--pgn-form-custom-switch-indicator-size) !default;
-$custom-switch-indicator-checked-bg: var(--pgn-form-custom-switch-indicator-checked-bg) !default;
+$custom-radio-indicator-border-radius: var(--pgn-size-form-control-border-radio-indicator-radius) !default;
+$custom-radio-indicator-icon-checked: var(--pgn-other-form-control-radio-indicator-icon-checked) !default;
 
-$custom-select-padding-y: var(--pgn-form-custom-select-padding-y-base) !default;
-$custom-select-padding-x: var(--pgn-form-custom-select-padding-x-base) !default;
-$custom-select-font-family: var(--pgn-form-custom-select-font-family) !default;
-$custom-select-font-size: var(--pgn-form-custom-select-font-size-base) !default;
-$custom-select-height: var(--pgn-form-custom-select-font-height-base) !default;
+$custom-switch-indicator-icon-off: var(--pgn-other-form-control-switch-indicator-icon-off) !default;
+$custom-switch-indicator-icon-on: var(--pgn-other-form-control-switch-indicator-icon-on) !default;
+$custom-switch-width: var(--pgn-size-form-control-switch-width) !default;
+$custom-switch-indicator-border-radius: var(--pgn-size-form-control-switch-indicator-border-radius) !default;
+$custom-switch-indicator-size: var(--pgn-size-form-control-switch-indicator-base) !default;
+$custom-switch-indicator-checked-bg: var(--pgn-color-form-control-switch-indicator-checked-bg) !default;
+
+$custom-select-padding-y: var(--pgn-spacing-form-control-select-padding-y-base) !default;
+$custom-select-padding-x: var(--pgn-spacing-form-control-select-padding-x-base) !default;
+$custom-select-font-family: var(--pgn-typography-form-control-select-font-family) !default;
+$custom-select-font-size: var(--pgn-typography-form-control-select-font-size-base) !default;
+$custom-select-height: var(--pgn-size-form-control-select-height-base) !default;
 
 // Extra padding to account for the presence of the background-image based indicator
-$custom-select-indicator-padding: var(--pgn-form-custom-select-indicator-padding) !default;
-$custom-select-font-weight: var(--pgn-form-custom-select-font-weight) !default;
-$custom-select-line-height: var(--pgn-form-custom-select-line-height) !default;
-$custom-select-color: var(--pgn-form-custom-select-color-base) !default;
-$custom-select-disabled-color: var(--pgn-form-custom-select-color-disabled) !default;
-$custom-select-bg: var(--pgn-form-custom-select-bg-base) !default;
-$custom-select-disabled-bg: var(--pgn-form-custom-select-bg-disabled) !default;
-$custom-select-bg-size: var(--pgn-form-custom-select-bg-size) !default;
-$custom-select-indicator-color: var(--pgn-form-custom-select-indicator-color) !default;
+$custom-select-indicator-padding: var(--pgn-spacing-form-control-select-indicator-padding) !default;
+$custom-select-font-weight: var(--pgn-typography-form-control-select-font-weight) !default;
+$custom-select-line-height: var(--pgn-typography-form-control-select-line-height) !default;
+$custom-select-color: var(--pgn-color-form-control-select-base) !default;
+$custom-select-disabled-color: var(--pgn-color-form-control-select-disabled) !default;
+$custom-select-bg: var(--pgn-color-form-control-select-bg-base) !default;
+$custom-select-disabled-bg: var(--pgn-color-form-control-select-bg-disabled) !default;
+$custom-select-bg-size: var(--pgn-color-form-control-select-bg-size) !default;
+$custom-select-indicator-color: var(--pgn-color-form-control-select-indicator-base) !default;
 
-$custom-select-indicator: var(--pgn-form-custom-select-indicator-icon) !default;
+$custom-select-indicator: var(--pgn-other-form-control-select-indicator-icon) !default;
 
 // Used so we can have multiple background elements (e.g., arrow and feedback icon)
 $custom-select-background:          $custom-select-indicator no-repeat right
   var(--pgn-form-input-padding-y-base) center / var(--pgn-form-custom-select-bg-size) !default;
 
-$custom-select-feedback-icon-padding-right: var(--pgn-form-custom-select-feedback-icon-padding-right) !default;
-$custom-select-feedback-icon-position: var(--pgn-form-custom-select-feedback-icon-position) !default;
-$custom-select-feedback-icon-size: var(--pgn-form-custom-select-feedback-icon-size) !default;
+$custom-select-feedback-icon-padding-right: var(--pgn-spacing-form-control-select-feedback-icon-padding-right) !default;
+$custom-select-feedback-icon-position: var(--pgn-spacing-form-control-select-feedback-icon-position) !default;
+$custom-select-feedback-icon-size: var(--pgn-size-form-control-select-feedback-icon) !default;
 
-$custom-select-border-width: var(--pgn-form-custom-select-border-width-base) !default;
-$custom-select-border-color: var(--pgn-form-custom-select-border-color-base) !default;
-$custom-select-border-radius: var(--pgn-form-custom-select-border-radius) !default;
-$custom-select-box-shadow: var(--pgn-form-custom-select-border-box-shadow-base) !default;
+$custom-select-border-width: var(--pgn-size-form-control-select-border-width-base) !default;
+$custom-select-border-color: var(--pgn-color-form-control-select-border-base) !default;
+$custom-select-border-radius: var(--pgn-size-form-control-select-border-radius) !default;
+$custom-select-box-shadow: var(--pgn-elevation-form-control-select-border-base) !default;
 
-$custom-select-focus-border-color: var(--pgn-form-custom-select-border-color-focus) !default;
-$custom-select-focus-width: var(--pgn-form-custom-select-border-width-focus) !default;
-$custom-select-focus-box-shadow: var(--pgn-form-custom-select-border-box-shadow-focus) !default;
+$custom-select-focus-border-color: var(--pgn-color-form-control-select-border-focus) !default;
+$custom-select-focus-width: var(--pgn-size-form-control-select-border-width-focus) !default;
+$custom-select-focus-box-shadow: var(--pgn-elevation-form-control-select-border-focus) !default;
 
-$custom-select-padding-y-sm: var(--pgn-form-custom-select-padding-y-sm) !default;
-$custom-select-padding-x-sm: var(--pgn-form-custom-select-padding-x-sm) !default;
-$custom-select-font-size-sm: var(--pgn-form-custom-select-font-size-sm) !default;
-$custom-select-height-sm: var(--pgn-form-custom-select-height-sm) !default;
+$custom-select-padding-y-sm: var(--pgn-spacing-form-control-select-padding-y-sm) !default;
+$custom-select-padding-x-sm: var(--pgn-spacing-form-control-select-padding-x-sm) !default;
+$custom-select-font-size-sm: var(--pgn-typography-form-control-select-font-size-sm) !default;
+$custom-select-height-sm: var(--pgn-size-form-control-select-height-sm) !default;
 
-$custom-select-padding-y-lg: var(--pgn-form-custom-select-padding-y-lg) !default;
-$custom-select-padding-x-lg: var(--pgn-form-custom-select-padding-x-lg) !default;
-$custom-select-font-size-lg: var(--pgn-form-custom-select-font-size-lg) !default;
-$custom-select-height-lg: var(--pgn-form-custom-select-font-height-lg) !default;
+$custom-select-padding-y-lg: var(--pgn-spacing-form-control-select-padding-y-lg) !default;
+$custom-select-padding-x-lg: var(--pgn-spacing-form-control-select-padding-x-lg) !default;
+$custom-select-font-size-lg: var(--pgn-typography-form-control-select-font-size-lg) !default;
+$custom-select-height-lg: var(--pgn-size-form-control-select-height-lg) !default;
 
-$custom-range-track-width: var(--pgn-form-custom-range-track-width) !default;
-$custom-range-track-height: var(--pgn-form-custom-range-track-height) !default;
-$custom-range-track-cursor: var(--pgn-form-custom-range-track-cursor) !default;
-$custom-range-track-bg: var(--pgn-form-custom-range-track-bg) !default;
-$custom-range-track-border-radius: var(--pgn-form-custom-range-track-border-radius) !default;
-$custom-range-track-box-shadow: var(--pgn-form-custom-range-track-box-shadow) !default;
+$custom-range-track-width: var(--pgn-size-form-control-range-track-width) !default;
+$custom-range-track-height: var(--pgn-size-form-control-range-track-height) !default;
+$custom-range-track-cursor: var(--pgn-other-form-control-range-track-cursor) !default;
+$custom-range-track-bg: var(--pgn-color-form-control-range-track-bg) !default;
+$custom-range-track-border-radius: var(--pgn-size-form-control-range-track-border-radius) !default;
+$custom-range-track-box-shadow: var(--pgn-elevation-form-control-range-track) !default;
 
-$custom-range-thumb-width: var(--pgn-form-custom-range-thumb-width) !default;
-$custom-range-thumb-height: var(--pgn-form-custom-range-thumb-height) !default;
-$custom-range-thumb-bg: var(--pgn-form-custom-range-thumb-bg-base) !default;
-$custom-range-thumb-border: var(--pgn-form-custom-range-thumb-border-base) !default;
-$custom-range-thumb-border-radius: var(--pgn-form-custom-range-thumb-border-radius) !default;
-$custom-range-thumb-box-shadow: var(--pgn-form-custom-range-thumb-box-shadow-base) !default;
-$custom-range-thumb-focus-box-shadow: var(--pgn-form-custom-range-thumb-box-shadow-focus-base) !default;
-$custom-range-thumb-focus-box-shadow-width: var(--pgn-form-custom-range-thumb-box-shadow-focus-width) !default;
-$custom-range-thumb-active-bg: var(--pgn-form-custom-range-thumb-bg-active) !default;
-$custom-range-thumb-disabled-bg: var(--pgn-form-custom-range-thumb-bg-disabled) !default;
+$custom-range-thumb-width: var(--pgn-size-form-control-range-thumb-width) !default;
+$custom-range-thumb-height: var(--pgn-size-form-control-range-thumb-height) !default;
+$custom-range-thumb-bg: var(--pgn-color-form-control-range-thumb-bg-base) !default;
+$custom-range-thumb-border: var(--pgn-size-form-control-range-thumb-border-base) !default;
+$custom-range-thumb-border-radius: var(--pgn-size-form-control-range-thumb-border-radius) !default;
+$custom-range-thumb-box-shadow: var(--pgn-elevation-form-control-range-thumb-base) !default;
+$custom-range-thumb-focus-box-shadow: var(--pgn-elevation-form-control-range-thumb-focus) !default;
+$custom-range-thumb-focus-box-shadow-width: var(--pgn-size-form-control-range-thumb-focus-width) !default;
+$custom-range-thumb-active-bg: var(--pgn-color-form-control-range-thumb-bg-active) !default;
+$custom-range-thumb-disabled-bg: var(--pgn-color-form-control-range-thumb-bg-disabled) !default;
 
-$custom-file-height: var(--pgn-form-custom-file-height-base) !default;
-$custom-file-height-inner: var(--pgn-form-custom-file-height-inner) !default;
-$custom-file-focus-border-color: var(--pgn-form-custom-file-border-color-focus) !default;
-$custom-file-focus-box-shadow: var(--pgn-form-custom-file-box-shadow-focus) !default;
-$custom-file-disabled-bg: var(--pgn-form-custom-file-bg-disabled) !default;
+$custom-file-height: var(--pgn-size-form-control-file-height-base) !default;
+$custom-file-height-inner: var(--pgn-size-form-control-file-height-inner) !default;
+$custom-file-focus-border-color: var(--pgn-color-form-control-file-border-focus) !default;
+$custom-file-focus-box-shadow: var(--pgn-elevation-form-control-file-focus) !default;
+$custom-file-disabled-bg: var(--pgn-color-form-control-file-bg-disabled) !default;
 
-$custom-file-padding-y: var(--pgn-form-custom-file-padding-y) !default;
-$custom-file-padding-x: var(--pgn-form-custom-file-padding-x) !default;
-$custom-file-line-height: var(--pgn-form-custom-file-line-height) !default;
-$custom-file-font-family: var(--pgn-form-custom-file-font-family) !default;
-$custom-file-font-weight: var(--pgn-form-custom-file-font-weight) !default;
-$custom-file-color: var(--pgn-form-custom-file-color) !default;
-$custom-file-bg: var(--pgn-form-custom-file-bg-base) !default;
-$custom-file-border-width: var(--pgn-form-custom-file-border-width) !default;
-$custom-file-border-color: var(--pgn-form-custom-file-border-color-base) !default;
-$custom-file-border-radius: var(--pgn-form-custom-file-border-color-radius) !default;
-$custom-file-box-shadow: var(--pgn-form-custom-file-box-shadow-base) !default;
-$custom-file-button-color: var(--pgn-form-custom-file-button-color) !default;
-$custom-file-button-bg: var(--pgn-form-custom-file-button-bg) !default;
+$custom-file-padding-y: var(--pgn-spacing-form-control-file-padding-y) !default;
+$custom-file-padding-x: var(--pgn-spacing-form-control-file-padding-x) !default;
+$custom-file-line-height: var(--pgn-typography-form-control-file-line-height) !default;
+$custom-file-font-family: var(--pgn-typography-form-control-file-font-family) !default;
+$custom-file-font-weight: var(--pgn-typography-form-control-file-font-weight) !default;
+$custom-file-color: var(--pgn-color-form-control-file-base) !default;
+$custom-file-bg: var(--pgn-color-form-control-file-bg-base) !default;
+$custom-file-border-width: var(--pgn-size-form-control-file-width) !default;
+$custom-file-border-color: var(--pgn-color-form-control-file-border-base) !default;
+$custom-file-border-radius: var(--pgn-size-form-control-file-border-radius) !default;
+$custom-file-box-shadow: var(--pgn-elevation-form-control-file-base) !default;
+$custom-file-button-color: var(--pgn-color-form-control-file-button-base) !default;
+$custom-file-button-bg: var(--pgn-color-form-control-file-button-bg) !default;
 $custom-file-text: (
   en: "Browse"
 ) !default;
 
 // Form validation
 
-$form-feedback-margin-top: var(--pgn-form-feedback-margin-top) !default;
-$form-feedback-font-size: var(--pgn-form-feedback-font-size) !default;
-$form-feedback-valid-color: var(--pgn-form-feedback-color-valid) !default;
-$form-feedback-invalid-color: var(--pgn-form-feedback-color-invalid) !default;
+$form-feedback-margin-top: var(--pgn-spacing-form-control-select-feedback-margin-top) !default;
+$form-feedback-font-size: var(--pgn-typography-form-feedback-font-size) !default;
+$form-feedback-valid-color: var(--pgn-color-form-feedback-valid) !default;
+$form-feedback-invalid-color: var(--pgn-color-form-feedback-invalid) !default;
 
-$form-feedback-tooltip-valid-color: var(--pgn-form-feedback-color-tooltip-valid) !default;
-$form-feedback-tooltip-invalid-color: var(--pgn-form-feedback-color-tooltip-invalid) !default;
-$form-feedback-tooltip-valid-bg: var(--pgn-form-feedback-color-tooltip-bg-valid) !default;
-$form-feedback-tooltip-invalid-bg: var(--pgn-form-feedback-color-tooltip-bg-invalid) !default;
+$form-feedback-tooltip-valid-color: var(--pgn-color-form-feedback-tooltip-valid) !default;
+$form-feedback-tooltip-invalid-color: var(--pgn-color-form-feedback-tooltip-invalid) !default;
+$form-feedback-tooltip-valid-bg: var(--pgn-color-form-feedback-tooltip-bg-valid) !default;
+$form-feedback-tooltip-invalid-bg: var(--pgn-color-form-feedback-tooltip-bg-invalid) !default;
 
-$form-feedback-focus-box-shadow-valid-color: var(--pgn-form-feedback-color-focus-box-shadow-valid) !default;
-$form-feedback-focus-box-shadow-invalid-color: var(--pgn-form-feedback-color-focus-box-shadow-invalid) !default;
-$form-feedback-checked-valid-color: var(--pgn-form-feedback-color-checked-valid) !default;
-$form-feedback-checked-invalid-color: var(--pgn-form-feedback-color-checked-invalid) !default;
+$form-feedback-focus-box-shadow-valid-color: var(--pgn-color-form-feetback-tooltip-box-shadow-focus-valid) !default;
+$form-feedback-focus-box-shadow-invalid-color: var(--pgn-color-form-feetback-tooltip-box-shadow-focus-invalid) !default;
+$form-feedback-checked-valid-color: var(--pgn-color-form-feedback-checked-valid) !default;
+$form-feedback-checked-invalid-color: var(--pgn-color-form-feedback-checked-invalid) !default;
 
-$form-feedback-icon-valid-color: var(--pgn-form-feedback-color-icon-valid) !default;
-$form-feedback-icon-valid: var(--pgn-form-feedback-icon-valid) !default;
-$form-feedback-icon-invalid-color: var(--pgn-form-feedback-color-icon-invalid) !default;
-$form-feedback-icon-invalid: var(--pgn-form-feedback-icon-invalid) !default;
+$form-feedback-icon-valid-color: var(--pgn-color-form-feedback-icon-valid) !default;
+$form-feedback-icon-valid: var(--pgn-other-form-feedback-icon-valid) !default;
+$form-feedback-icon-invalid-color: var(--pgn-color-form-feedback-icon-invalid) !default;
+$form-feedback-icon-invalid: var(--pgn-other-form-feedback-icon-invalid) !default;
 
 $form-validation-states: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -268,19 +268,19 @@ $form-validation-states: map-merge(
 );
 
 // Form tooltips must come after regular tooltips
-$form-feedback-tooltip-padding-y: var(--pgn-form-feedback-tooltip-padding-y) !default;
-$form-feedback-tooltip-padding-x: var(--pgn-form-feedback-tooltip-padding-x) !default;
-$form-feedback-tooltip-font-size: var(--pgn-form-feedback-tooltip-font-size) !default;
-$form-feedback-tooltip-line-height: var(--pgn-form-feedback-tooltip-line-height) !default;
-$form-feedback-tooltip-opacity: var(--pgn-form-feedback-tooltip-opacity) !default;
-$form-feedback-tooltip-border-radius: var(--pgn-form-feedback-tooltip-border-radius) !default;
+$form-feedback-tooltip-padding-y: var(--pgn-spacing-form-control-select-feedback-tooltip-padding-y) !default;
+$form-feedback-tooltip-padding-x: var(--pgn-spacing-form-control-select-feedback-tooltip-padding-x) !default;
+$form-feedback-tooltip-font-size: var(--pgn-typography-form-feedback-tooltip-font-size) !default;
+$form-feedback-tooltip-line-height: var(--pgn-typography-form-feedback-tooltip-line-height) !default;
+$form-feedback-tooltip-opacity: var(--pgn-color-form-feedback-tooltip-opacity) !default;
+$form-feedback-tooltip-border-radius: var(--pgn-size-form-feedback-tooltip-border-radius) !default;
 
-$form-control-icon-width: var(--pgn-form-control-icon-width) !default;
-$select-icon-padding: var(--pgn-form-select-icon-padding) !default;
+$form-control-icon-width: var(--pgn-size-form-control-icon-width) !default;
+$select-icon-padding: var(--pgn-spacing-form-control-select-icon-padding) !default;
 
-$form-autosuggest-icon-width: var(--pgn-form-autosuggest-icon-width) !default;
-$form-autosuggest-icon-height: var(--pgn-form-autosuggest-icon-height) !default;
-$form-autosuggest-spinner-width: var(--pgn-form-autosuggest-spinner-width) !default;
-$form-autosuggest-spinner-height: var(--pgn-form-autosuggest-spinner-height) !default;
-$form-autosuggest-border-width: var(--pgn-form-autosuggest-border-width) !default;
-$form-control-floating-label-text-bg: var(--pgn-form-custom-control-label-floating-text) !default;
+$form-autosuggest-icon-width: var(--pgn-size-form-autosuggest-icon-width) !default;
+$form-autosuggest-icon-height: var(--pgn-size-form-autosuggest-icon-height) !default;
+$form-autosuggest-spinner-width: var(--pgn-size-form-autosuggest-spinner-width) !default;
+$form-autosuggest-spinner-height: var(--pgn-size-form-autosuggest-spinner-height) !default;
+$form-autosuggest-border-width: var(--pgn-size-form-autosuggest-border-width) !default;
+$form-control-floating-label-text-bg: var(--pgn-color-form-control-label-floating-text) !default;
