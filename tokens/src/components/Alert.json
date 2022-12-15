@@ -8,7 +8,7 @@
       "bottom": { "value": "1rem", "source": "$alert-margin-bottom" }
     },
     "border": {
-      "radius": { "value": "{border.radius.base}", "source": "$alert-border-radius" },
+      "radius": { "value": "{size.border.radius.base}", "source": "$alert-border-radius" },
       "width": { "value": "0", "source": "$alert-border-width" }
     },
     "font": {

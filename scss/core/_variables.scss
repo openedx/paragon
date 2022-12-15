@@ -461,12 +461,12 @@ $max-width-xl: var(--pgn-container-max-width-xl) !default;
 $line-height-lg: var(--pgn-line-height-lg) !default;
 $line-height-sm: var(--pgn-line-height-sm) !default;
 
-$border-width: var(--pgn-border-width) !default;
-$border-color: var(--pgn-border-color) !default;
+$border-width: var(--pgn-size-border-width) !default;
+$border-color: var(--pgn-color-border) !default;
 
-$border-radius: var(--pgn-border-radius-base) !default;
-$border-radius-lg: var(--pgn-border-radius-lg) !default;
-$border-radius-sm: var(--pgn-border-radius-sm) !default;
+$border-radius: var(--pgn-size-border-radius-base) !default;
+$border-radius-lg: var(--pgn-size-border-radius-lg) !default;
+$border-radius-sm: var(--pgn-size-border-radius-sm) !default;
 
 $rounded-pill:                50rem !default;
 

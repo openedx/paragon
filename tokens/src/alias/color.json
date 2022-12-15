@@ -30,6 +30,7 @@
     "input": {
       "focus": { "value": "{color.primary.500.value}" }
     },
+    "border": { "value": "{color.gray.200.value}", "source": "$border-color" },
     "theme": {
       "background": {
         "primary": { "value": "{color.primary.100.value}" },

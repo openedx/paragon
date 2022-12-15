@@ -6,8 +6,8 @@
     "bg": { "value": "{color.background.base.value}", "source": "$popover-bg" },
     "max-width": { "value": "480px", "source": "$popover-max-width" },
     "border": {
-      "radius": { "value": "{border.radius.sm.value}", "source": "$popover-border-radius" },
-      "width": { "value": "{border.width.value}", "source": "$popover-border-width" },
+      "radius": { "value": "{size.border.radius.sm.value}", "source": "$popover-border-radius" },
+      "width": { "value": "{size.border.width.value}", "source": "$popover-border-width" },
       "color": { "value": "rgba(0, 0, 0, .2)", "source": "$popover-border-color" }
     },
     "box-shadow": {

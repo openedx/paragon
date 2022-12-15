@@ -1,0 +1,54 @@
+{
+  "typography": {
+    "form": {
+      "input": {
+        "font": {
+          "family": { "value": "{input.btn.font.family.value}", "source": "$input-font-family" },
+          "size": {
+            "base": { "value": "{input.btn.font.size.base.value}", "source": "$input-font-size" },
+            "sm": { "value": "{input.btn.font.size.sm.value}", "source": "$input-font-size-sm" },
+            "lg": { "value": "{input.btn.font.size.lg.value}", "source": "$input-font-size-lg" }
+          },
+          "weight": { "value": "{font.weight.base.value}", "source": "$input-font-weight" }
+        },
+        "line-height": {
+          "base": { "value": "{input.btn.line.height.base.value}", "source": "$input-line-height" },
+          "sm": { "value": "{input.btn.line.height.sm.value}", "source": "$input-line-height-sm" },
+          "lg": { "value": "{input.btn.line.height.lg.value}", "source": "$input-line-height-lg" }
+        }
+      },
+      "control": {
+        "select": {
+          "font": {
+            "family": { "value": "{typography.form.input.font.family.value}", "source": "$custom-select-font-family" },
+            "size": {
+              "base": { "value": "{typography.form.input.font.size.base.value}", "source": "$custom-select-font-size" },
+              "sm": { "value": "{typography.form.input.font.size.sm.value}", "source": "$custom-select-font-size-sm" },
+              "lg": { "value": "{typography.form.input.font.size.lg.value}", "source": "$custom-select-font-size-lg" }
+            },
+            "weight": { "value": "{typography.form.input.font.weight.value}", "source": "$custom-select-font-weight" }
+          },
+          "line-height": { "value": "{typography.form.input.line-height.base.value}", "source": "$custom-select-line-height" }
+        },
+        "file": {
+          "line-height": { "value": "{typography.form.input.line-height.base.value}", "source": "$custom-file-line-height" },
+          "font": {
+            "family": { "value": "{typography.form.input.font.family.value}", "source": "$custom-file-font-family" },
+            "weight": { "value": "{typography.form.input.font.weight.value}", "source": "$custom-file-font-weight" }
+          }
+        }
+      },
+      "feedback": {
+        "font": {
+          "size": { "value": "{font.size.small.base.value}", "source": "$form-feedback-font-size" }
+        },
+        "tooltip": {
+          "font": {
+            "size": { "value": "{font.size.sm.value}", "source": "$form-feedback-tooltip-font-size" }
+          },
+          "line-height": { "value": "{line-height.base.value}", "source": "$form-feedback-tooltip-line-height" }
+        }
+      }
+    }
+  }
+}
