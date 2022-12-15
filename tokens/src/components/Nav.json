@@ -37,7 +37,7 @@
     },
     "pills": {
       "border": {
-        "radius": { "value": "{border.radius.base.value}", "source": "$nav-pills-border-radius" }
+        "radius": { "value": "{size.border.radius.base.value}", "source": "$nav-pills-border-radius" }
       },
       "link": {
         "link": {

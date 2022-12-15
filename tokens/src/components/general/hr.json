@@ -9,7 +9,7 @@
           "amount": 0.1
         }]
       },
-      "width": { "value": "{border.width.value}", "source": "$hr-border-width" },
+      "width": { "value": "{size.border.width.value}", "source": "$hr-border-width" },
       "margin": {
         "y": { "value": "{spacer.base.value}", "source": "$hr-margin-y" }
       }

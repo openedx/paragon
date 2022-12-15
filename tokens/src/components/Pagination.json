@@ -61,7 +61,7 @@
       "disabled": { "value": "{color.white.value}", "source": "$pagination-disabled-bg" }
     },
     "border": {
-      "width": { "value": "{border.width.value}", "source": "$pagination-border-width" },
+      "width": { "value": "{size.border.width.value}", "source": "$pagination-border-width" },
       "color": {
         "base": { "value": "{color.gray.200.value}", "source": "$pagination-border-color" },
         "hover": { "value": "{color.gray.200.value}", "source": "$pagination-hover-border-color" },
@@ -69,8 +69,8 @@
         "disabled": { "value": "{color.gray.100.value}", "source": "$pagination-disabled-border-color" }
       },
       "radius": {
-        "sm": { "value": "{border.radius.sm.value}", "source": "$pagination-border-radius-sm" },
-        "lg": { "value": "{border.radius.lg.value}", "source": "$pagination-border-radius-lg" }
+        "sm": { "value": "{size.border.radius.sm.value}", "source": "$pagination-border-radius-sm" },
+        "lg": { "value": "{size.border.radius.lg.value}", "source": "$pagination-border-radius-lg" }
       }
     },
     "focus": {
