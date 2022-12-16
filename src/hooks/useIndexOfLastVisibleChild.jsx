@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 import useWindowSize from './useWindowSize';
 
@@ -22,22 +22,8 @@ import useWindowSize from './useWindowSize';
  *    is optional.
  */
 const useIndexOfLastVisibleChild = (containerElementRef, overflowElementRef) => {
-  const [containerWidth, setContainerWidth] = useState(0);
   const [indexOfLastVisibleChild, setIndexOfLastVisibleChild] = useState(-1);
   const windowSize = useWindowSize();
-
-  useEffect(() => {
-    if (containerElementRef) {
-      const observer = new ResizeObserver(entries => {
-        for (let i = 0; i < entries.length; i++) {
-          setContainerWidth(entries[i].contentRect.width);
-        }
-      });
-      observer.observe(containerElementRef);
-      return () => observer.disconnect();
-    }
-    return undefined;
-  }, [containerElementRef]);
 
   useLayoutEffect(() => {
     if (!containerElementRef) {
@@ -51,7 +37,7 @@ const useIndexOfLastVisibleChild = (containerElementRef, overflowElementRef) => 
       // sum the widths to find the last visible element's index
       .reduce((acc, childNode, index) => {
         acc.sumWidth += childNode.getBoundingClientRect().width;
-        if (acc.sumWidth <= containerWidth) {
+        if (acc.sumWidth <= containerElementRef.getBoundingClientRect().width) {
           acc.nextIndexOfLastVisibleChild = index;
         }
         return acc;
@@ -65,7 +51,7 @@ const useIndexOfLastVisibleChild = (containerElementRef, overflowElementRef) => 
       });
 
     setIndexOfLastVisibleChild(nextIndexOfLastVisibleChild);
-  }, [windowSize, containerWidth, containerElementRef, overflowElementRef]);
+  }, [windowSize, containerElementRef, overflowElementRef]);
 
   return indexOfLastVisibleChild;
 };
