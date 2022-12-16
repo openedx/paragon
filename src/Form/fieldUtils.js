@@ -20,8 +20,8 @@ const callAllHandlers = (...handlers) => {
 };
 
 const useHasValue = ({ defaultValue, value }) => {
-  const [hasUncontrolledValue, setHasUncontrolledValue] = useState(!!defaultValue);
-  const hasValue = !!value || hasUncontrolledValue;
+  const [hasUncontrolledValue, setHasUncontrolledValue] = useState(!!defaultValue || defaultValue === 0);
+  const hasValue = !!value || value === 0 || hasUncontrolledValue;
   const handleInputEvent = (e) => setHasUncontrolledValue(e.target.value);
   return [hasValue, handleInputEvent];
 };
