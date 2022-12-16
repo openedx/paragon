@@ -1,14 +1,6 @@
 @import "variables";
 @import "~bootstrap/scss/pagination";
 
-.pagination {
-  align-items: center;
-
-  .dropdown {
-    z-index: 4;
-  }
-}
-
 %pagination-icon-button-right {
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
@@ -19,12 +11,12 @@
   border-bottom-left-radius: 50%;
 }
 
-.pagination-icon-button-right {
-  @extend %pagination-icon-button-right;
-}
+.pagination {
+  align-items: center;
 
-.pagination-icon-button-left {
-  @extend %pagination-icon-button-left;
+  .dropdown {
+    z-index: 4;
+  }
 }
 
 .pagination-default {
@@ -37,20 +29,6 @@
     &.next .pgn__icon {
       margin-inline-start: $pagination-margin-x;
       margin-inline-end: 0;
-    }
-  }
-
-  .page-item {
-    &:first-child .page-link {
-      [dir="rtl"] & {
-        border-radius: 0 $pagination-border-radius-lg $pagination-border-radius-lg 0;
-      }
-    }
-
-    &:last-child .page-link {
-      [dir="rtl"] & {
-        border-radius: $pagination-border-radius-lg 0 0 $pagination-border-radius-lg;
-      }
     }
   }
 }
@@ -70,8 +48,7 @@
 
   &.btn-primary:focus::before {
     border: $pagination-focus-border-width solid $pagination-focus-color;
-
-    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+    border-radius: $btn-border-radius;
   }
 
   div {
