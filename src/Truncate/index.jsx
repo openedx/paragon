@@ -17,17 +17,19 @@ function Truncate({
 
   useLayoutEffect(() => {
     if (textContainer.current) {
-      const newTruncateText = truncateLines(children, textContainer.current, {
+      const [truncated, original] = truncateLines(children, textContainer.current, {
         ellipsis,
         whiteSpace,
         lines,
       });
+      textContainer.current.setAttribute('title', original);
+      textContainer.current.setAttribute('aria-label', original);
       textContainer.current.innerHTML = '';
-      newTruncateText.forEach(el => {
-        textContainer.current.appendChild(el);
+      truncated.forEach(element => {
+        textContainer.current.appendChild(element);
       });
       if (onTruncate) {
-        onTruncate(newTruncateText);
+        onTruncate(truncated);
       }
     }
   }, [children, ellipsis, lines, onTruncate, whiteSpace, width]);
