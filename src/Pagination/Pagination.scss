@@ -36,8 +36,14 @@
 .page-link {
   border: none;
   background-color: transparent;
+  color: $pagination-page-link-color;
 
-  &.btn-primary:not(:disabled):not(.disabled):focus {
+  &:hover {
+    color: $pagination-page-link-color;
+  }
+
+  &.btn-primary:not(:disabled):not(.disabled):focus,
+  &.btn-tertiary:not(:disabled):not(.disabled):focus {
     background-color: $pagination-bg;
     color: $pagination-focus-color-text;
   }
@@ -46,7 +52,8 @@
     box-shadow: none;
   }
 
-  &.btn-primary:focus::before {
+  &.btn-primary:focus::before,
+  &.btn-tertiary:focus::before {
     border: $pagination-focus-border-width solid $pagination-focus-color;
     border-radius: $btn-border-radius;
   }
@@ -149,7 +156,7 @@
 
     &.active button.page-link {
       background-color: $pagination-bg;
-      color: $pagination-color;
+      color: $pagination-page-link-color;
     }
 
     button.page-link {
