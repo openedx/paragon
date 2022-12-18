@@ -1,7 +1,7 @@
 {
-  "product-tour": {
-    "checkpoint": {
-      "color": {
+  "color": {
+    "product-tour": {
+      "checkpoint": {
         "background": { "value": "{color.light.300.value}", "source": "$checkpoint-background-color" },
         "body": { "value": "{color.gray.700.value}", "source": "$checkpoint-body-color" },
         "border": { "value": "{color.brand.500.value}", "source": "$checkpoint-border-color" },
@@ -14,14 +14,18 @@
             "amount": 0.3
           }]
         }
-      },
-      "width": {
-        "border": { "value": "8px", "source": "$checkpoint-border-width" },
-        "arrow": { "value": "15px", "source": "$checkpoint-arrow-width" },
-        "max": { "value": "480px", "source": "$checkpoint-max-width" }
-      },
-      "arrow": {
-        "color": {
+      }
+    }
+  },
+  "size": {
+    "product-tour": {
+      "checkpoint": {
+        "width": {
+          "border": { "value": "8px", "source": "$checkpoint-border-width" },
+          "arrow": { "value": "15px", "source": "$checkpoint-arrow-width" },
+          "max": { "value": "480px", "source": "$checkpoint-max-width" }
+        },
+        "arrow": {
           "top": {
             "value": "solid {product-tour.checkpoint.width.arrow.value} {product-tour.checkpoint.width.border.value}",
             "source": "$checkpoint-arrow-top-color"
@@ -29,14 +33,20 @@
           "default": {
             "value": "solid {product-tour.checkpoint.width.arrow.value} {product-tour.checkpoint.color.background.value}",
             "source": "$checkpoint-arrow-default-color"
+          },
+          "transparent": {
+            "value": "solid {product-tour.checkpoint.width.arrow.value} transparent",
+            "source": "$checkpoint-arrow-transparent"
           }
-        },
-        "transparent": {
-          "value": "solid {product-tour.checkpoint.width.arrow.value} transparent",
-          "source": "$checkpoint-arrow-transparent"
         }
-      },
-      "zindex": { "value": "1060", "source": "$checkpoint-z-index" }
+      }
+    }
+  },
+  "elevation": {
+    "product-tour": {
+      "checkpoint": {
+        "zindex": { "value": "1060", "source": "$checkpoint-z-index" }
+      }
     }
   }
 }
