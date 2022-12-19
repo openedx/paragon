@@ -31,7 +31,7 @@
       "body": { "value": "{body.color.value}", "source": "$popover-body-color" },
       "arrow": { 
         "base": { "value": "{popover.bg.value}", "source": "$popover-arrow-color" },
-        "outer-color": {
+        "outer": {
           "value": "{popover.border.color}",
           "source": "$popover-arrow-outer-color",
           "modify": [{

@@ -56,10 +56,8 @@
   "size": {
     "pagination": {
       "icon": {
-        "size": {
-          "base": { "value": "1.375rem", "source": "$pagination-icon-size" },
-          "sm": { "value": "1rem", "source": "$pagination-icon-size-sm" }
-        },
+        "base": { "value": "1.375rem", "source": "$pagination-icon-size" },
+        "sm": { "value": "1rem", "source": "$pagination-icon-size-sm" },
         "width": { "value": "2.25rem", "source": "$pagination-icon-width" },
         "height": { "value": "2.25rem", "source": "$pagination-icon-height" }
       },

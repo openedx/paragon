@@ -2,7 +2,7 @@
   "color": {
     "data-table": {
       "background": {
-        "color": { "value": "{color.background.base.value}", "source": "$data-table-background-color" },
+        "base": { "value": "{color.background.base.value}", "source": "$data-table-background-color" },
         "is-loading": {
           "value": "{color.white.value}",
           "source": "$data-table-is-loading-bg",

@@ -17,11 +17,9 @@
   },
   "spacing": {
     "bubble": {
-      "expandable": {
-        "padding": {
-          "y": { "value": "0", "source": "$bubble-expandable-padding-y" },
-          "x": { "value": ".25rem", "source": "$bubble-expandable-padding-x" }
-        }
+      "expandable-padding": {
+        "y": { "value": "0", "source": "$bubble-expandable-padding-y" },
+        "x": { "value": ".25rem", "source": "$bubble-expandable-padding-x" }
       }
     } 
   }

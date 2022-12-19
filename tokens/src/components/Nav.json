@@ -2,36 +2,30 @@
   "color": {
     "nav": {
       "link": {
-        "color": {
-          "base": { "value": "{color.gray.700.value}", "source": "$nav-link-color" },
-          "disabled": { "value": "{color.gray.300.value}", "source": "$nav-link-disabled-color" }
-        }
+        "base": { "value": "{color.gray.700.value}", "source": "$nav-link-color" },
+        "disabled": { "value": "{color.gray.300.value}", "source": "$nav-link-disabled-color" }
       },
       "tabs": {
         "border": { "value": "{color.light.400.value}", "source": "$nav-tabs-border-color" },
         "link": {
           "hover": {
             "border": {
-              "color": { "value": "transparent transparent {nav.tabs.border.color.value}", "source": "$nav-tabs-link-hover-border-color" }
+              "value": "transparent transparent {nav.tabs.border.color.value}", "source": "$nav-tabs-link-hover-border-color"
             },
             "bg": { "value": "{color.light.400.value}", "source": "$nav-tabs-link-hover-bg" }
           },
           "active": {
-            "color": {
-              "base": { "value": "{color.primary.500.value}", "source": "$nav-tabs-link-active-color" },
-              "border": { "value": "transparent transparent {color.primary.500.value}", "source": "$nav-tabs-link-active-border-color" }
-            },
+            "base": { "value": "{color.primary.500.value}", "source": "$nav-tabs-link-active-color" },
+            "border": { "value": "transparent transparent {color.primary.500.value}", "source": "$nav-tabs-link-active-border-color" },
             "bg": { "value": "{body.bg.value}", "source": "$nav-tabs-link-active-bg" }
           }
         }
       },
       "pills": {
         "link": {
-          "link": {
-            "active": {
-              "color": { "value": "{color.active.value}", "source": "$nav-pills-link-active-color" },
-              "bg": { "value": "{color.background.active.value}", "source": "$nav-pills-link-active-bg" }
-            }
+          "active": {
+            "base": { "value": "{color.active.value}", "source": "$nav-pills-link-active-color" },
+            "bg": { "value": "{color.background.active.value}", "source": "$nav-pills-link-active-bg" }
           }
         }
       },

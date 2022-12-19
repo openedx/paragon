@@ -46,8 +46,8 @@
         "deck": { "value": "{card.margin.group.value}", "source": "$card-deck-margin" },
         "grid": { "value": "{card.margin.group.value}", "source": "$card-grid-margin" }
       },
-      "image": {
-        "overlay-padding": { "value": "1.25rem", "source": "$card-img-overlay-padding" }
+      "image-overlay": {
+        "padding": { "value": "1.25rem", "source": "$card-img-overlay-padding" }
       },
       "divider": {
         "margin-y": { "value": "{card.spacer.y.value}", "source": "$card-divider-margin-y" }
@@ -60,21 +60,17 @@
       "footer": {
         "action-gap": { "value": ".5rem", "source": "$card-footer-actions-gap" }
       },
-      "loading": {
-        "skeleton-spacer": { "value": ".313rem", "source": "$loading-skeleton-spacer" }
+      "loading-skeleton": {
+        "spacer": { "value": ".313rem", "source": "$loading-skeleton-spacer" }
       },
       "logo": {
-        "left": {
-          "offset": {
-            "base": { "value": "1.5rem", "source": "$card-logo-left-offset" },
-            "horizontal": { "value": ".4375rem", "source": "$card-logo-left-offset-horizontal" }
-          }
+        "left-offset": {
+          "base": { "value": "1.5rem", "source": "$card-logo-left-offset" },
+          "horizontal": { "value": ".4375rem", "source": "$card-logo-left-offset-horizontal" }
         },
-        "bottom": {
-          "offset": {
-            "base": { "value": "1rem", "source": "$card-logo-bottom-offset" },
-            "horizontal": { "value": ".4375rem", "source": "$card-logo-bottom-offset-horizontal" }
-          }
+        "bottom-offset": {
+          "base": { "value": "1rem", "source": "$card-logo-bottom-offset" },
+          "horizontal": { "value": ".4375rem", "source": "$card-logo-bottom-offset-horizontal" }
         }
       }
     }
@@ -98,7 +94,7 @@
           }
         },
         "vertical": {
-          "height-max": { "value": "140px", "source": "$card-image-vertical-max-height" }
+          "max-height": { "value": "140px", "source": "$card-image-vertical-max-height" }
         }
       },
       "logo": {

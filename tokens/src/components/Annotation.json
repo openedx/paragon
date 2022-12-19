@@ -2,16 +2,14 @@
   "spacing": {
     "annotation": {
       "padding": { "value": ".5rem", "source": "$annotation-padding" },
-      "arrow": {
-        "side": {
-          "margin": { "value": ".25rem", "source": "$annotation-arrow-side-margin" }
-        }
+      "arrow-side": {
+        "margin": { "value": ".25rem", "source": "$annotation-arrow-side-margin" }
       }
     }
   },
   "elevation": {
     "annotation": {
-      "base": {
+      "box-shadow": {
         "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15))\n  drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
         "source": "$annotation-box-shadow"
       }
@@ -43,10 +41,8 @@
   },
   "size": {
     "annotation": {
-      "arrow": {
-        "border-width": {
-          "value": ".5rem", "source": "$annotation-arrow-border-width"
-        }
+      "arrow-border": {
+        "width": { "value": ".5rem", "source": "$annotation-arrow-border-width" }
       },
       "max-width": { "value": "18.75rem", "source": "$annotation-max-width" },
       "border-radius": { "value": ".25rem", "source": "$annotation-border-radius" }

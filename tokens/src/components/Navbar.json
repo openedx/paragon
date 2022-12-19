@@ -28,7 +28,7 @@
           }]
         },
         "toggler": {
-          "border-color": {
+          "border": {
             "value": "{color.white.value}",
             "source": "$navbar-dark-toggler-border-color",
             "modify": [{
@@ -77,24 +77,17 @@
         },
         "toggler": {
           "border": {
-            "color": { 
-              "value": "{color.black.value}",
-              "source": "$navbar-light-toggler-border-color",
-              "modify": [{
-                "type": "alpha",
-                "amount": 0.1
-              }]
-            }
+            "value": "{color.black.value}",
+            "source": "$navbar-light-toggler-border-color",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.1
+            }]
           }
         },
         "brand": {
-          "color": {
-            "base": { "value": "{navbar.light.color.active.value}", "source": "$navbar-light-brand-color" },
-            "hover": {
-              "value": "{navbar.light.color.active.value}",
-              "source": "$navbar-light-brand-hover-color"
-            }
-          }
+          "base": { "value": "{navbar.light.color.active.value}", "source": "$navbar-light-brand-color" },
+          "hover": { "value": "{navbar.light.color.active.value}", "source": "$navbar-light-brand-hover-color" }
         }
       }
     }
@@ -127,16 +120,12 @@
   "typography": {
     "navbar": {
       "brand": {
-        "font": {
-          "size": { "value": "{font.size.lg.value}", "source": "$navbar-brand-font-size" }
-        }
+        "font-size": { "value": "{font.size.lg.value}", "source": "$navbar-brand-font-size" }
       },
-      "nav": {
-        "link": {
-          "height": {
-            "value": "calc({font.size.base.value} * {line-height.base.value} + .5rem * 2)",
-            "source": "$nav-link-height"
-          }
+      "nav-link": {
+        "height": {
+          "value": "calc({font.size.base.value} * {line-height.base.value} + .5rem * 2)",
+          "source": "$nav-link-height"
         }
       },
       "toggler": {
