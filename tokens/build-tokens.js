@@ -6,12 +6,11 @@ const StyleDictionary = require('./style-dictionary');
 program
   .version('0.0.1')
   .description('CLI to build design tokens for various platforms (currently only CSS is supported) from Paragon Design Tokens.')
-  .option('--prefix <char>', 'A prefix that will be added to the names of all built tokens.', 'pgn')
   .option('--build-dir <char>', 'A path to directory where to put files with built tokens, must end with a /.', './build/')
-  .option('--tokens-source <char>', 'A path where to look for additional tokens that will get merged with Paragon ones, accepts glob patterns, e.g. "mytokens/**/*.json". Only json files are allowed.')
-  .parse()
+  .option('--source <char>', 'A path where to look for additional tokens that will get merged with Paragon ones, accepts glob patterns, e.g. "mytokens/**/*.json". Only json files are allowed.')
+  .parse();
 
-const { prefix, buildDir, tokensSource } = program.opts();
+const { buildDir, source: tokensSource } = program.opts();
 const source = tokensSource ? [tokensSource] : [];
 
 const config = {
@@ -19,7 +18,7 @@ const config = {
   source,
   platforms: {
     css: {
-      prefix,
+      prefix: 'pgn',
       transformGroup: 'css',
       buildPath: buildDir,
       files: [
