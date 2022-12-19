@@ -37,6 +37,7 @@ module.exports = {
           '**/*.config.js',
           'component-generator/**',
           'generate-changelog.js',
+          'tokens/**',
         ],
       },
     ],
