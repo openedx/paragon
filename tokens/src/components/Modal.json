@@ -1,64 +1,79 @@
 {
-  "modal": {
-    "inner": {
-      "padding": {
-        "base": { "value": "1.5rem", "source": "$modal-inner-padding" },
-        "bottom": { "value": ".7rem", "source": "$modal-inner-padding-bottom" }
-      }
-    },
-    "footer": {
-      "padding": {
-        "base": { "value": "{modal.footer.padding.y.value} 1.5rem", "source": "$modal-footer-padding" },
-        "y": { "value": "1rem", "source": "$modal-footer-padding-y" }
-      }
-    },
-    "content": {
-      "bg": { "value": "{color.background.base.value}", "source": "$modal-content-bg" },
-      "border": {
-        "color": { 
+  "color": {
+    "modal": {
+      "content": {
+        "bg": { "value": "{color.background.base.value}", "source": "$modal-content-bg" },
+        "border": {
           "value": "{color.black.value}",
           "source": "$modal-content-border-color",
           "modify": [{
             "type": "alpha",
             "amount": 0.2
           }]
-        },
-        "width": { "value": "0rem", "source": "$modal-content-border-width" },
-        "radius": { "value": "{size.border.radius.lg.value}", "source": "$modal-content-border-radius" }
+        }
       },
-      "box-shadow": {
-        "sm-up": {
-          "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
-          "source": "$modal-content-box-shadow-sm-up"
+      "backdrop": {
+        "bg": { "value": "{color.black.value}", "source": "$modal-backdrop-bg" }
+      }
+    }
+  },
+  "elevation": {
+    "modal": {
+      "content": {
+        "box-shadow": {
+          "sm-up": {
+            "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
+            "source": "$modal-content-box-shadow-sm-up"
+          }
+        }
+      },
+      "backdrop": {
+        "zindex": { "value": "1040", "source": "$zindex-modal-backdrop" },
+        "opacity": { "value": ".5", "source": "$modal-backdrop-opacity" }
+      },
+      "zindex": { "value": "1050", "source": "$zindex-modal" }
+    }
+  },
+  "size": {
+    "modal": {
+      "xl": { "value": "1140px", "source": "$modal-xl" },
+      "lg": { "value": "800px", "source": "$modal-lg" },
+      "md": { "value": "500px", "source": "$modal-md" },
+      "sm": { "value": "400px", "source": "$modal-sm" },
+      "content": {
+        "border": {
+          "width": { "value": "0px", "source": "$modal-content-border-width" },
+          "radius": { "value": "{size.border.radius.lg.value}", "source": "$modal-content-border-radius" }
         }
       }
-    },
-    "backdrop": {
-      "bg": { "value": "{color.black.value}", "source": "$modal-backdrop-bg" },
-      "opacity": { "value": ".5", "source": "$modal-backdrop-opacity" },
-      "zindex": { "value": "1040", "source": "$zindex-modal-backdrop" }
-    },
-    "header": {
-      "padding": {
-        "base": {
-          "value": "{modal.header.padding.y.value} 1.5rem",
-          "source": "$modal-header-padding"
-        },
-        "y": { "value": "1rem", "source": "$modal-header-padding-y" }
+    }
+  },
+  "spacing": {
+    "modal": {
+      "inner": {
+        "padding": {
+          "base": { "value": "1.5rem", "source": "$modal-inner-padding" },
+          "bottom": { "value": ".7rem", "source": "$modal-inner-padding-bottom" }
+        }
+      },
+      "footer": {
+        "padding": {
+          "base": { "value": "{spacing.modal.footer.padding.y.value} 1.5rem", "source": "$modal-footer-padding" },
+          "y": { "value": "1rem", "source": "$modal-footer-padding-y" }
+        }
+      },
+      "header": {
+        "padding": {
+          "base": {
+            "value": "{spacing.modal.header.padding.y.value} 1.5rem",
+            "source": "$modal-header-padding"
+          },
+          "y": { "value": "1rem", "source": "$modal-header-padding-y" }
+        }
+      },
+      "dialog": {
+        "margin": { "value": "1.5rem", "source": "$modal-dialog-margin" }
       }
-    },
-    "dialog": {
-      "margin": {
-        "base": { "value": "1.5rem", "source": "$modal-dialog-margin" }
-      }
-    },
-    "xl": { "value": "1140px", "source": "$modal-xl" },
-    "lg": { "value": "800px", "source": "$modal-lg" },
-    "md": { "value": "500px", "source": "$modal-md" },
-    "sm": { "value": "400px", "source": "$modal-sm" },
-    "zindex": { "value": "1050", "source": "$zindex-modal" },
-    "close-container": {
-      "top": { "value": ".625rem", "source": "$modal-close-container-top" }
     }
   }
 }

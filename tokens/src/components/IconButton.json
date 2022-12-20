@@ -1,11 +1,6 @@
 {
-  "icon-button": {
-    "diameter": {
-      "md": { "value": "2.75rem", "source": "$btn-icon-diameter-md" },
-      "sm": { "value": "2.25rem", "source": "$btn-icon-diameter-sm" },
-      "inline": { "value": "calc({line-height.base.value} + .1em)", "source": "$btn-icon-diameter-inline" }
-    },
-    "color": {
+  "color": {
+    "icon-button": {
       "bg": { "value": "transparent", "source": "$btn-icon-bg" },
       "accent": { "value": "{color.white.value}", "source": "$btn-icon-accent-color" },
       "primary": { "value": "{color.primary.base.value}", "source": "$btn-icon-primary" },
@@ -17,6 +12,15 @@
       "light": { "value": "{color.light.base.value}", "source": "$btn-icon-light" },
       "dark": { "value": "{color.dark.base.value}", "source": "$btn-icon-dark" },
       "black": { "value": "{color.black.value}", "source": "$btn-icon-black" }
+    }
+  },
+  "size": {
+    "icon-button": {
+      "diameter": {
+        "md": { "value": "2.75rem", "source": "$btn-icon-diameter-md" },
+        "sm": { "value": "2.25rem", "source": "$btn-icon-diameter-sm" },
+        "inline": { "value": "calc({line-height.base.value} + .1em)", "source": "$btn-icon-diameter-inline" }
+      }
     }
   }
 }
