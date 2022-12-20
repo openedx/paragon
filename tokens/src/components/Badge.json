@@ -1,35 +1,35 @@
 {
-  "badge": {
-    "font": {
-      "size": { "value": "75%", "source": "$badge-font-size" },
-      "weight": { "value": "{font.weight.bold.value}", "source": "$badge-font-weight" }
-    },
-    "padding": {
-      "x": {
-        "base": { "value": ".5rem", "source": "$badge-padding-x" },
-        "pill": { "value": ".6em", "source": "$badge-pill-padding-x" }
-      },
-      "y": { "value": ".125rem", "source": "$badge-padding-y" }
-    },
-    "border": {
-      "radius": {
-        "base": { "value": ".25rem", "source": "$badge-border-radius" },
-        "pill": { "value": "10rem", "source": "$badge-pill-border-radius" }
+  "spacing": {
+    "badge": {
+      "padding": {
+        "x": {
+          "base": { "value": ".5rem", "source": "$badge-padding-x" },
+          "pill": { "value": ".6em", "source": "$badge-pill-padding-x" }
+        },
+        "y": { "value": ".125rem", "source": "$badge-padding-y" }
       }
-    },
-    "transition": { "value": "none", "source": "$badge-transition" },
-    "focus": {
-      "width": {"value": "{input.btn.focus.width.value}", "source": "$badge-focus-width"}
-    },
-    "color": {
-      "primary": { "value": "{color.primary.base.value}", "source": "$badge-primary-color", "modify": [{ "type": "color-yiq" }] },
-      "secondary": { "value": "{color.secondary.base.value}", "source": "$badge-secondary-color", "modify": [{ "type": "color-yiq" }] },
-      "success": { "value": "{color.success.base.value}", "source": "$badge-success-color", "modify": [{ "type": "color-yiq" }] },
-      "danger": { "value": "{color.danger.base.value}", "source": "$badge-danger-color", "modify": [{ "type": "color-yiq" }] },
-      "warning": { "value": "{color.warning.base.value}", "source": "$badge-warning-color", "modify": [{ "type": "color-yiq" }] },
-      "info": { "value": "{color.info.base.value}", "source": "$badge-info-color", "modify": [{ "type": "color-yiq" }] },
-      "light": { "value": "{color.light.base.value}", "source": "$badge-light-color", "modify": [{ "type": "color-yiq" }] },
-      "dark": { "value": "{color.dark.base.value}", "source": "$badge-dark-color", "modify": [{ "type": "color-yiq" }] },
+    }
+  },
+  "typography": {
+    "badge": {
+      "font": {
+        "size": { "value": "75%", "source": "$badge-font-size" },
+        "weight": { "value": "{font.weight.bold.value}", "source": "$badge-font-weight" }
+      }
+    }
+  },
+  "color": {
+    "badge": {
+      "text": {
+        "primary": { "value": "{color.primary.base.value}", "source": "$badge-primary-color", "modify": [{ "type": "color-yiq" }] },
+        "secondary": { "value": "{color.secondary.base.value}", "source": "$badge-secondary-color", "modify": [{ "type": "color-yiq" }] },
+        "success": { "value": "{color.success.base.value}", "source": "$badge-success-color", "modify": [{ "type": "color-yiq" }] },
+        "danger": { "value": "{color.danger.base.value}", "source": "$badge-danger-color", "modify": [{ "type": "color-yiq" }] },
+        "warning": { "value": "{color.warning.base.value}", "source": "$badge-warning-color", "modify": [{ "type": "color-yiq" }] },
+        "info": { "value": "{color.info.base.value}", "source": "$badge-info-color", "modify": [{ "type": "color-yiq" }] },
+        "light": { "value": "{color.light.base.value}", "source": "$badge-light-color", "modify": [{ "type": "color-yiq" }] },
+        "dark": { "value": "{color.dark.base.value}", "source": "$badge-dark-color", "modify": [{ "type": "color-yiq" }] }
+      },
       "bg": {
         "primary": { "value": "{color.primary.base.value}", "source": "$badge-primary-bg" },
         "secondary": { "value": "{color.secondary.base.value}", "source": "$badge-secondary-bg" },
@@ -41,17 +41,17 @@
         "dark": { "value": "{color.dark.base.value}", "source": "$badge-dark-bg" }
       },
       "focus": {
-        "primary": { "value": "{badge.color.primary.value}", "source": "$badge-primary-focus-color" },
-        "secondary": { "value": "{badge.color.secondary.value}", "source": "$badge-secondary-focus-color" },
-        "success": { "value": "{badge.color.success.value}", "source": "$badge-success-focus-color" },
-        "warning": { "value": "{badge.color.warning.value}", "source": "$badge-warning-focus-color" },
-        "danger": { "value": "{badge.color.danger.value}", "source": "$badge-danger-focus-color" },
-        "info": { "value": "{badge.color.info.value}", "source": "$badge-info-focus-color" },
-        "light": { "value": "{badge.color.light.value}", "source": "$badge-light-focus-color" },
-        "dark": { "value": "{badge.color.dark.value}", "source": "$badge-dark-focus-color" },
+        "primary": { "value": "{color.badge.text.primary.value}", "source": "$badge-primary-focus-color" },
+        "secondary": { "value": "{color.badge.text.secondary.value}", "source": "$badge-secondary-focus-color" },
+        "success": { "value": "{color.badge.text.success.value}", "source": "$badge-success-focus-color" },
+        "warning": { "value": "{color.badge.text.warning.value}", "source": "$badge-warning-focus-color" },
+        "danger": { "value": "{color.badge.text.danger.value}", "source": "$badge-danger-focus-color" },
+        "info": { "value": "{color.badge.text.info.value}", "source": "$badge-info-focus-color" },
+        "light": { "value": "{color.badge.text.light.value}", "source": "$badge-light-focus-color" },
+        "dark": { "value": "{color.badge.text.dark.value}", "source": "$badge-dark-focus-color" },
         "bg": {
           "primary": {
-            "value": "{badge.color.bg.primary.value}",
+            "value": "{color.badge.bg.primary.value}",
             "source": "$badge-primary-focus-bg",
             "modify": [
               {
@@ -61,7 +61,7 @@
             ]
           },
           "secondary": {
-            "value": "{badge.color.bg.secondary.value}",
+            "value": "{color.badge.bg.secondary.value}",
             "source": "$badge-secondary-focus-bg",
             "modify": [
               {
@@ -71,7 +71,7 @@
             ]
           },
           "success": {
-            "value": "{badge.color.bg.success.value}",
+            "value": "{color.badge.bg.success.value}",
             "source": "$badge-success-focus-bg",
             "modify": [
               {
@@ -81,7 +81,7 @@
             ]
           },
           "danger": {
-            "value": "{badge.color.bg.danger.value}",
+            "value": "{color.badge.bg.danger.value}",
             "source": "$badge-danger-focus-bg",
             "modify": [
               {
@@ -91,7 +91,7 @@
             ]
           },
           "warning": {
-            "value": "{badge.color.bg.warning.value}",
+            "value": "{color.badge.bg.warning.value}",
             "source": "$badge-warning-focus-bg",
             "modify": [
               {
@@ -101,7 +101,7 @@
             ]
           },
           "info": {
-            "value": "{badge.color.bg.info.value}",
+            "value": "{color.badge.bg.info.value}",
             "source": "$badge-info-focus-bg",
             "modify": [
               {
@@ -111,7 +111,7 @@
             ]
           },
           "light": {
-            "value": "{badge.color.bg.light.value}",
+            "value": "{color.badge.bg.light.value}",
             "source": "$badge-light-focus-bg",
             "modify": [
               {
@@ -121,7 +121,7 @@
             ]
           },
           "dark": {
-            "value": "{badge.color.bg.dark.value}",
+            "value": "{color.badge.bg.dark.value}",
             "source": "$badge-dark-focus-bg",
             "modify": [
               {
@@ -133,7 +133,7 @@
         },
         "box-shadow": {
           "primary": {
-            "value": "{badge.color.bg.primary.value}",
+            "value": "{color.badge.bg.primary.value}",
             "source": "$badge-primary-focus-box-shadow-color",
             "modify": [
               {
@@ -143,7 +143,7 @@
             ]
           },
           "secondary": {
-            "value": "{badge.color.bg.secondary.value}",
+            "value": "{color.badge.bg.secondary.value}",
             "source": "$badge-secondary-focus-box-shadow-color",
             "modify": [
               {
@@ -153,7 +153,7 @@
             ]
           },
           "success": {
-            "value": "{badge.color.bg.success.value}",
+            "value": "{color.badge.bg.success.value}",
             "source": "$badge-success-focus-box-shadow-color",
             "modify": [
               {
@@ -163,7 +163,7 @@
             ]
           },
           "danger": {
-            "value": "{badge.color.bg.danger.value}",
+            "value": "{color.badge.bg.danger.value}",
             "source": "$badge-danger-focus-box-shadow-color",
             "modify": [
               {
@@ -173,7 +173,7 @@
             ]
           },
           "warning": {
-            "value": "{badge.color.bg.warning.value}",
+            "value": "{color.badge.bg.warning.value}",
             "source": "$badge-warning-focus-box-shadow-color",
             "modify": [
               {
@@ -183,7 +183,7 @@
             ]
           },
           "info": {
-            "value": "{badge.color.bg.info.value}",
+            "value": "{color.badge.bg.info.value}",
             "source": "$badge-info-focus-box-shadow-color",
             "modify": [
               {
@@ -193,7 +193,7 @@
             ]
           },
           "light": {
-            "value": "{badge.color.bg.light.value}",
+            "value": "{color.badge.bg.light.value}",
             "source": "$badge-light-focus-box-shadow-color",
             "modify": [
               {
@@ -203,7 +203,7 @@
             ]
           },
           "dark": {
-            "value": "{badge.color.bg.dark.value}",
+            "value": "{color.badge.bg.dark.value}",
             "source": "$badge-dark-focus-box-shadow-color",
             "modify": [
               {
@@ -215,5 +215,17 @@
         }
       }
     }
+  },
+  "size": {
+    "badge": {
+      "border-radius": {
+        "base": { "value": ".25rem", "source": "$badge-border-radius" },
+        "pill": { "value": "10rem", "source": "$badge-pill-border-radius" }
+      },
+      "focus-width": { "value": "{input.btn.focus.width.value}", "source": "$badge-focus-width" }
+    }
+  },
+  "transition": {
+    "badge": { "value": "none", "source": "$badge-transition" }
   }
 }
