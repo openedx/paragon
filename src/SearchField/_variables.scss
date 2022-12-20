@@ -1,14 +1,14 @@
-$search-border-radius: var(--pgn-search-field-border-radius) !default;
-$search-line-height: var(--pgn-search-field-line-height) !default;
-$search-border-color: var(--pgn-search-field-border-color-base) !default;
-$search-border-color-interaction: var(--pgn-search-field-border-color-interaction) !default;
-$search-border-width: var(--pgn-search-field-border-width-base) !default;
-$search-border-width-interaction: var(--pgn-search-field-border-width-interaction) !default;
-$search-disabled-opacity: var(--pgn-search-field-disabled-opacity) !default;
-$search-button-margin: var(--pgn-search-field-button-margin) !default;
-$input-height-search: var(--pgn-search-field-input-height-search) !default;
-$search-border-focus-color: var(--pgn-search-field-border-color-focus) !default;
-$search-border-focus-width: var(--pgn-search-field-border-width-focus) !default;
+$search-border-radius: var(--pgn-size-search-field-border-radius) !default;
+$search-line-height: var(--pgn-typography-search-field-line-height) !default;
+$search-border-color: var(--pgn-color-search-field-border-base) !default;
+$search-border-color-interaction: var(--pgn-color-search-field-border-interaction) !default;
+$search-border-width: var(--pgn-size-search-field-border-width-base) !default;
+$search-border-width-interaction: var(--pgn-size-search-field-border-width-interaction) !default;
+$search-disabled-opacity: var(--pgn-color-search-field-disabled-opacity) !default;
+$search-button-margin: var(--pgn-spacing-search-field-margin-button) !default;
+$input-height-search: var(--pgn-size-search-field-search-input-height) !default;
+$search-border-focus-color: var(--pgn-color-search-field-border-focus) !default;
+$search-border-focus-width: var(--pgn-size-search-field-border-width-focus) !default;
 
-$search-btn-primary-bg: var(--pgn-search-field-button-color-bg-primary) !default;
-$search-btn-brand-bg: var(--pgn-search-field-button-color-bg-brand) !default;
+$search-btn-primary-bg: var(--pgn-color-search-field-button-bg-primary) !default;
+$search-btn-brand-bg: var(--pgn-color-search-field-button-bg-brand) !default;

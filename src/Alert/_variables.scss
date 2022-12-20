@@ -2,35 +2,35 @@
 //
 // Define alert colors, border radius, and padding.
 
-$alert-padding-y: var(--pgn-alert-padding-y) !default;
-$alert-padding-x: var(--pgn-alert-padding-x) !default;
-$alert-margin-bottom: var(--pgn-alert-margin-bottom) !default;
-$alert-border-radius: var(--pgn-alert-border-radius) !default;
-$alert-link-font-weight: var(--pgn-alert-font-weight-link) !default;
-$alert-border-width: var(--pgn-alert-border-width) !default;
-$alert-title-color: var(--pgn-alert-color-title) !default;
-$alert-box-shadow: var(--pgn-alert-box-shadow) !default;
+$alert-padding-y: var(--pgn-spacing-alert-padding-y) !default;
+$alert-padding-x: var(--pgn-spacing-alert-padding-x) !default;
+$alert-margin-bottom: var(--pgn-spacing-alert-margin-bottom) !default;
+$alert-border-radius: var(--pgn-size-alert-border-radius) !default;
+$alert-link-font-weight: var(--pgn-typography-alert-font-weight-link) !default;
+$alert-border-width: var(--pgn-size-alert-border-width) !default;
+$alert-title-color: var(--pgn-color-alert-title) !default;
+$alert-box-shadow: var(--pgn-elevation-alert-box-shadow) !default;
 
-$alert-icon-space: var(--pgn-alert-icon-space) !default;
+$alert-icon-space: var(--pgn-spacing-alert-icon-space) !default;
 
-$alert-font-size: var(--pgn-alert-font-size) !default;
-$alert-line-height: var(--pgn-alert-line-height) !default;
-$alert-content-color: var(--pgn-alert-color-content) !default;
+$alert-font-size: var(--pgn-typography-alert-font-size) !default;
+$alert-line-height: var(--pgn-typography-alert-line-height) !default;
+$alert-content-color: var(--pgn-color-alert-content) !default;
 
-$alert-actions-gap: var(--pgn-alert-actions-gap) !default;
+$alert-actions-gap: var(--pgn-spacing-alert-actions-gap) !default;
 
-$alert-success-border-color: var(--pgn-alert-color-border-success) !default;
-$alert-success-bg: var(--pgn-alert-color-bg-success) !default;
-$alert-success-icon-color: var(--pgn-alert-color-icon-success) !default;
+$alert-success-border-color: var(--pgn-color-alert-border-success) !default;
+$alert-success-bg: var(--pgn-color-alert-bg-success) !default;
+$alert-success-icon-color: var(--pgn-color-alert-icon-success) !default;
 
-$alert-info-border-color: var(--pgn-alert-color-border-info) !default;
-$alert-info-bg: var(--pgn-alert-color-bg-info) !default;
-$alert-info-icon-color: var(--pgn-alert-color-icon-info) !default;
+$alert-info-border-color: var(--pgn-color-alert-border-info) !default;
+$alert-info-bg: var(--pgn-color-alert-bg-info) !default;
+$alert-info-icon-color: var(--pgn-color-alert-icon-info) !default;
 
-$alert-danger-border-color: var(--pgn-alert-color-border-danger) !default;
-$alert-danger-bg: var(--pgn-alert-color-bg-danger) !default;
-$alert-danger-icon-color: var(--pgn-alert-color-icon-danger) !default;
+$alert-danger-border-color: var(--pgn-color-alert-border-danger) !default;
+$alert-danger-bg: var(--pgn-color-alert-bg-danger) !default;
+$alert-danger-icon-color: var(--pgn-color-alert-icon-danger) !default;
 
-$alert-warning-border-color: var(--pgn-alert-color-border-warning) !default;
-$alert-warning-bg: var(--pgn-alert-color-bg-warning) !default;
-$alert-warning-icon-color: var(--pgn-alert-color-icon-warning) !default;
+$alert-warning-border-color: var(--pgn-color-alert-border-warning) !default;
+$alert-warning-bg: var(--pgn-color-alert-bg-warning) !default;
+$alert-warning-icon-color: var(--pgn-color-alert-icon-warning) !default;

@@ -1,38 +1,50 @@
 {
-  "tooltip": {
-    "font": {
-      "size": { "value": "{font.size.sm.value}", "source": "$tooltip-font-size" }
-    },
-    "max-width": { "value": "200px", "source": "$tooltip-max-width" },
-    "color": {
-      "base": { "value": "{color.white.value}", "source": "$tooltip-color" },
-      "light": { "value": "{color.black.value}", "source": "$tooltip-color-light" }
-    },
-    "bg": {
-      "base": { "value": "{color.black.value}", "source": "$tooltip-bg" },
-      "light": { "value": "{color.white.value}", "source": "$tooltip-bg-light" }
-    },
-    "border": {
-      "radius": { "value": "{size.border.radius.base.value}", "source": "$tooltip-border-radius" }
-    },
-    "opacity": { "value": "1", "source": "$tooltip-opacity" },
-    "padding": {
-      "y": { "value": ".5rem", "source": "$tooltip-padding-y" },
-      "x": { "value": ".5rem", "source": "$tooltip-padding-x" }
-    },
-    "margin": { "value": "0", "source": "$tooltip-margin" },
-    "box-shadow": {
-      "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
-      "source": "$tooltip-box-shadow"
-    },
-    "arrow": {
-      "height": { "value": ".4rem", "source": "$tooltip-arrow-height" },
-      "color": {
-        "base": { "value": "{tooltip.bg.base.value}", "source": "$tooltip-arrow-color" },
-        "light": { "value": "{color.white.value}", "source": "$tooltip-arrow-color-light" }
+  "typography": {
+    "tooltip": {
+      "font-size": { "value": "{font.size.sm.value}", "source": "$tooltip-font-size" }
+    }
+  },
+  "color": {
+    "tooltip": {
+      "text": { "value": "{color.white.value}", "source": "$tooltip-color" },
+      "light": { "value": "{color.black.value}", "source": "$tooltip-color-light" },
+      "bg": {
+        "base": { "value": "{color.black.value}", "source": "$tooltip-bg" },
+        "light": { "value": "{color.white.value}", "source": "$tooltip-bg-light" }
       },
-      "width": { "value": ".8rem", "source": "$tooltip-arrow-width" }
-    },
-    "zindex": { "value": 1070, "source": "$zindex-tooltip" }
+      "opacity": { "value": "1", "source": "$tooltip-opacity" },
+      "arrow": {
+        "base": { "value": "{color.tooltip.bg.base.value}", "source": "$tooltip-arrow-color" },
+        "light": { "value": "{color.white.value}", "source": "$tooltip-arrow-color-light" }
+      }
+    }
+  },
+  "spacing": {
+    "tooltip": {
+      "padding": {
+        "y": { "value": ".5rem", "source": "$tooltip-padding-y" },
+        "x": { "value": ".5rem", "source": "$tooltip-padding-x" }
+      },
+      "margin": { "value": "0", "source": "$tooltip-margin" }
+    }
+  },
+  "elevation": {
+    "tooltip": {
+      "box-shadow": {
+        "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
+        "source": "$tooltip-box-shadow"
+      },
+      "zindex": { "value": "1070", "source": "$zindex-tooltip" }
+    }
+  },
+  "size": {
+    "tooltip": {
+      "max-width": { "value": "200px", "source": "$tooltip-max-width" },
+      "arrow": {
+        "height": { "value": ".4rem", "source": "$tooltip-arrow-height" },
+        "width": { "value": ".8rem", "source": "$tooltip-arrow-width" }
+      },
+      "border-radius": { "value": "{size.border.radius.base.value}", "source": "$tooltip-border-radius" }
+    }
   }
 }

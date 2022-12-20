@@ -1,39 +1,39 @@
 // Popovers
 
-$popover-font-size: var(--pgn-popover-font-size) !default;
-$popover-bg: var(--pgn-popover-bg) !default;
-$popover-max-width: var(--pgn-popover-max-width) !default;
-$popover-border-width: var(--pgn-popover-border-width) !default;
-$popover-border-color: var(--pgn-popover-border-color) !default;
+$popover-font-size: var(--pgn-typography-popover-font-size) !default;
+$popover-bg: var(--pgn-color-popover-bg) !default;
+$popover-max-width: var(--pgn-size-popover-max-width) !default;
+$popover-border-width: var(--pgn-size-popover-border-width) !default;
+$popover-border-color: var(--pgn-color-popover-border) !default;
 
-$popover-border-radius: var(--pgn-popover-border-radius) !default;
+$popover-border-radius: var(--pgn-size-popover-border-radius) !default;
 $popover-inner-border-radius: calc(#{var(--pgn-popover-border-radius)} - #{var(--pgn-popover-border-border)}) !default;
-$popover-box-shadow: var(--pgn-popover-box-shadow) !default;
-$popover-icon-margin-right: var(--pgn-popover-icon-margin-right) !default;
-$popover-icon-height: var(--pgn-popover-icon-height) !default;
-$popover-icon-width: var(--pgn-popover-icon-width) !default;
+$popover-box-shadow: var(--pgn-elevation-popover-box-shadow) !default;
+$popover-icon-margin-right: var(--pgn-spacing-popover-icon-margin-right) !default;
+$popover-icon-height: var(--pgn-size-popover-icon-height) !default;
+$popover-icon-width: var(--pgn-size-popover-icon-width) !default;
 
-$popover-header-bg: var(--pgn-popover-header-color-bg) !default;
-$popover-header-bg-dark: var(--pgn-popover-header-color-bg-dark) !default;
+$popover-header-bg: var(--pgn-color-popover-header-bg) !default;
+$popover-header-bg-dark: var(--pgn-color-popover-header-bg-dark) !default;
 
-$popover-header-color: var(--pgn-popover-header-color-base) !default;
-$popover-header-padding-y: var(--pgn-popover-header-padding-y) !default;
-$popover-header-padding-x: var(--pgn-popover-header-padding-x) !default;
+$popover-header-color: var(--pgn-color-popover-header-text) !default;
+$popover-header-padding-y: var(--pgn-spacing-popover-header-padding-y) !default;
+$popover-header-padding-x: var(--pgn-spacing-popover-header-padding-x) !default;
 
-$popover-body-color: var(--pgn-popover-body-color) !default;
-$popover-body-padding-y: var(--pgn-popover-body-padding-y) !default;
-$popover-body-padding-x: var(--pgn-popover-body-padding-x) !default;
+$popover-body-color: var(--pgn-color-popover-body) !default;
+$popover-body-padding-y: var(--pgn-spacing-popover-body-padding-y) !default;
+$popover-body-padding-x: var(--pgn-spacing-popover-body-padding-x) !default;
 
-$popover-arrow-width: var(--pgn-popover-arrow-width) !default;
-$popover-arrow-height: var(--pgn-popover-arrow-height) !default;
-$popover-arrow-color: var(--pgn-popover-arrow-color) !default;
+$popover-arrow-width: var(--pgn-size-popover-arrow-width) !default;
+$popover-arrow-height: var(--pgn-size-popover-arrow-height) !default;
+$popover-arrow-color: var(--pgn-color-popover-arrow-base) !default;
 
-$popover-arrow-outer-color: var(--pgn-popover-arrow-outer-color) !default;
+$popover-arrow-outer-color: var(--pgn-color-popover-arrow-outer) !default;
 
-$popover-success-bg: var(--pgn-popover-success-bg) !default;
-$popover-success-icon-color: var(--pgn-popover-success-icon-color) !default;
-$popover-warning-bg: var(--pgn-popover-warning-bg) !default;
-$popover-warning-icon-color: var(--pgn-popover-warning-icon-color) !default;
-$popover-danger-bg: var(--pgn-popover-danger-bg) !default;
-$popover-danger-icon-color: var(--pgn-popover-danger-icon-color) !default;
-$popover-header-border-bottom-darken: var(--pgn-popover-header-color-border-bottom-dark) !default;
+$popover-success-bg: var(--pgn-color-popover-success-bg) !default;
+$popover-success-icon-color: var(--pgn-color-popover-success-icon) !default;
+$popover-warning-bg: var(--pgn-color-popover-warning-bg) !default;
+$popover-warning-icon-color: var(--pgn-color-popover-warning-icon) !default;
+$popover-danger-bg: var(--pgn-color-popover-danger-bg) !default;
+$popover-danger-icon-color: var(--pgn-color-popover-danger-icon) !default;
+$popover-header-border-bottom-darken: var(--pgn-color-popover-header-border-bottom-dark) !default;

@@ -6,7 +6,7 @@
   align-items: center;
   min-height: 200px;
   padding: $dropzone-padding;
-  border: $dropzone-border-default;
+  border: $dropzone-border-default dashed $dropzone-border-color-default;
   box-sizing: border-box;
   cursor: pointer;
 
@@ -18,19 +18,19 @@
   }
 
   &:hover {
-    box-shadow: $dropzone-box-shadow-hover;
+    box-shadow: $dropzone-box-shadow-hover solid $dropzone-border-color-hover;
   }
 
   &:focus {
-    box-shadow: $dropzone-box-shadow-focus;
+    box-shadow: $dropzone-box-shadow-focus solid $dropzone-border-color-focus;
   }
 
   &.pgn__dropzone-validation-error {
-    box-shadow: $dropzone-box-shadow-error;
+    box-shadow: $dropzone-box-shadow-error solid $dropzone-border-color-error;
   }
 
   &.pgn__dropzone-active {
-    box-shadow: $dropzone-box-shadow-active;
+    box-shadow: $dropzone-box-shadow-active solid $dropzone-border-color-active;
   }
 }
 
