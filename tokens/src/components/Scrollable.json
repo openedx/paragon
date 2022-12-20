@@ -1,13 +1,15 @@
 {
-  "scrollable": {
-    "body": {
-      "box-shadow": {
-        "value": "{color.black.value}",
-        "source": "$scrollable-body-box-shadow",
-        "modify": [{
-          "type": "alpha",
-          "amount": 0.55
-        }]
+  "elevation": {
+    "scrollable": {
+      "body": {
+        "box-shadow": {
+          "value": "{color.black.value}",
+          "source": "$scrollable-body-box-shadow",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.55
+          }]
+        }
       }
     }
   }

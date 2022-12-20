@@ -1,18 +1,6 @@
 {
-  "chip": {
-    "padding": {
-      "y": { "value": ".125rem", "source": "$chip-padding-y" },
-      "x": { "value": ".5rem", "source": "$chip-padding-x" },
-      "icon": { "value": ".25rem", "source": "$chip-icon-padding" },
-      "to-icon": { "value": "3px", "source": "$chip-padding-to-icon" }
-    },
-    "margin": { "value": ".125rem", "source": "$chip-margin" },
-    "border-radius": { "value": ".25rem", "source": "$chip-border-radius" },
-    "opacity": {
-      "disabled": { "value": ".3", "source": "$chip-disable-opacity" }
-    },
-    "icon-size": { "value": "1.25rem", "source": "$chip-icon-size" },
-    "color": {
+  "color": {
+    "chip": {
       "text": {
         "light": { "value": "{color.black.value}", "source": "$chip-light-color" },
         "dark": { "value": "{color.white.value}", "source": "$chip-dark-color" }
@@ -20,7 +8,25 @@
       "bg": {
         "light": { "value": "{color.light.500.value}", "source": "$chip-light-bg" },
         "dark": { "value": "{color.dark.200.value}", "source": "$chip-dark-bg" }
+      },
+      "opacity-disabled": { "value": ".3", "source": "$chip-disable-opacity" }
+    }
+  },
+  "spacing": {
+    "chip": {
+      "margin": { "value": ".125rem", "source": "$chip-margin" },
+      "padding": {
+        "y": { "value": ".125rem", "source": "$chip-padding-y" },
+        "x": { "value": ".5rem", "source": "$chip-padding-x" },
+        "icon": { "value": ".25rem", "source": "$chip-icon-padding" },
+        "to-icon": { "value": "3px", "source": "$chip-padding-to-icon" }
       }
+    }
+  },
+  "size": {
+    "chip": {
+      "border-radius": { "value": ".25rem", "source": "$chip-border-radius" },
+      "icon": { "value": "1.25rem", "source": "$chip-icon-size" }
     }
   }
 }

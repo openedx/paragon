@@ -1,33 +1,33 @@
 // Modals
 
 // Padding applied to the modal body
-$modal-inner-padding: var(--pgn-modal-inner-padding-base) !default;
-$modal-inner-padding-bottom: var(--pgn-modal-inner-padding-bottom) !default;
+$modal-inner-padding: var(--pgn-spacing-modal-inner-padding-base) !default;
+$modal-inner-padding-bottom: var(--pgn-spacing-modal-inner-padding-bottom) !default;
 
-$modal-dialog-margin: var(--pgn-modal-dialog-margin-base) !default;
+$modal-dialog-margin: var(--pgn-spacing-modal-dialog-margin) !default;
 
-$modal-content-bg: var(--pgn-modal-content-bg) !default;
-$modal-content-border-color: var(--pgn-modal-content-border-color) !default;
-$modal-content-border-width: var(--pgn-modal-content-border-width) !default;
-$modal-content-border-radius: var(--pgn-modal-content-border-radius) !default;
+$modal-content-bg: var(--pgn-color-modal-content-bg) !default;
+$modal-content-border-color: var(--pgn-color-modal-content-border) !default;
+$modal-content-border-width: var(--pgn-size-modal-content-border-width) !default;
+$modal-content-border-radius: var(--pgn-size-modal-content-border-radius) !default;
 
 // stylelint-disable-next-line max-line-length
-$modal-content-inner-border-radius: calc(#{var(--pgn-modal-content-border-radius)} - #{var(--pgn-modal-content-border-width)}) !default;
+$modal-content-inner-border-radius: calc(#{var(--pgn-size-modal-content-border-radius)} - #{var(--pgn-size-modal-content-border-width)}) !default;
 
-$modal-content-box-shadow-sm-up: var(--pgn-modal-content-box-shadow-sm-up) !default;
+$modal-content-box-shadow-sm-up: var(--pgn-elevation-modal-content-box-shadow-sm-up) !default;
 
-$modal-backdrop-bg: var(--pgn-modal-backdrop-bg) !default;
-$modal-backdrop-opacity: var(--pgn-modal-backdrop-opacity) !default;
-$modal-header-padding-y: var(--pgn-modal-header-padding-y) !default;
+$modal-backdrop-bg: var(--pgn-color-modal-backdrop-bg) !default;
+$modal-backdrop-opacity: var(--pgn-elevation-modal-backdrop-opacity) !default;
+$modal-header-padding-y: var(--pgn-spacing-modal-header-padding-y) !default;
 
-$modal-close-container-top: var(--pgn-modal-close-container-top) !default;
+$modal-close-container-top: var(--pgn-spacing-dropdown-close-container-top) !default;
 
-$modal-header-padding: var(--pgn-modal-header-padding-base) !default;
-$modal-footer-padding-y: var(--pgn-modal-footer-padding-y) !default;
+$modal-header-padding: var(--pgn-spacing-modal-header-padding-base) !default;
+$modal-footer-padding-y: var(--pgn-spacing-modal-footer-padding-y) !default;
 
-$modal-footer-padding: var(--pgn-modal-footer-padding-base) !default;
+$modal-footer-padding: var(--pgn-spacing-modal-footer-padding-base) !default;
 
-$modal-xl: var(--pgn-modal-xl) !default;
-$modal-lg: var(--pgn-modal-lg) !default;
-$modal-md: var(--pgn-modal-md) !default;
-$modal-sm: var(--pgn-modal-sm) !default;
+$modal-xl: var(--pgn-size-modal-xl) !default;
+$modal-lg: var(--pgn-size-modal-lg) !default;
+$modal-md: var(--pgn-size-modal-md) !default;
+$modal-sm: var(--pgn-size-modal-sm) !default;

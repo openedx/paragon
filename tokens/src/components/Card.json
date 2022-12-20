@@ -1,20 +1,11 @@
 {
-  "card": {
-    "spacer": {
-      "x": { "value": "1.25rem", "source": "$card-spacer-x" },
-      "y": { "value": ".75rem", "source": "$card-spacer-y" }
-    },
-    "border": {
-      "width": { "value": "{size.border.width.value}", "source": "$card-border-width" },
-      "radius": {
-        "base": { "value": "{size.border.radius.base.value}", "source": "$card-border-radius" },
-        "image": { "value": ".3125rem", "source": "$card-image-border-radius" },
-        "logo": { "value": ".25rem", "source": "$card-logo-border-radius" }
-      },
-      "color": {
+  "color": {
+    "card": {
+      "base": { "value": "null", "source": "$card-color" },
+      "bg": { "value": "{color.background.base.value}", "source": "$card-bg" },
+      "border": {
         "base": { 
           "value": "{color.black.value}", 
-
           "source": "$card-border-color",
           "modify": [{
             "type": "alpha",
@@ -23,96 +14,81 @@
         },
         "focus": { 
           "value": "{color.black.value}", 
-
           "source": "$card-border-focus-color",
           "modify": [{
             "type": "alpha",
             "amount": 0.5
           }] 
         }
-      }
-    },
-    "cap": {
-      "bg": { 
-        "value": "{color.black.value}", 
-
-        "source": "$card-cap-bg",
-        "modify": [{
-          "type": "alpha",
-          "amount": 0.03
-        }] 
       },
-      "color": { "value": "null", "source": "$card-cap-color" }
-    },
-    "height": {
-      "base": { "value": "null", "source": "$card-height" }
-    },
-    "color": { "value": "null", "source": "$card-color" },
-    "bg": { "value": "{color.background.base.value}", "source": "$card-bg" },
-    "image": {
-      "overlay": {
-        "padding": { "value": "1.25rem", "source": "$card-img-overlay-padding" }
+      "divider-bg": { "value": "{color.light.400.value}", "source": "$card-divider-bg" }
+    }
+  },
+  "spacing": {
+    "card": {
+      "spacer": {
+        "x": { "value": "1.25rem", "source": "$card-spacer-x" },
+        "y": { "value": ".75rem", "source": "$card-spacer-y" }
       },
-      "horizontal": {
-        "width": {
-          "max": { "value": "240px", "source": "$card-image-horizontal-max-width" },
-          "min": {
-            "value": "{card.image.horizontal.width.max.value}",
-            "source": "$card-image-horizontal-min-width"
-          }
-        }
-      },
-      "vertical": {
-        "height": {
-          "max": { "value": "140px", "source": "$card-image-vertical-max-height" }
-        }
-      }
-    },
-    "margin": {
-      "group": { "value": "12px", "source": "$card-group-margin" },
-      "deck": { "value": "{card.margin.group.value}", "source": "$card-deck-margin" },
-      "grid": { "value": "{card.margin.group.value}", "source": "$card-grid-margin" }
-    },
-    "columns": {
-      "count": { "value": "3", "source": "$card-columns-count" },
-      "gap": { "value": "1.25rem", "source": "$card-columns-gap" },
-      "margin": { "value": "{card.spacer.y.value}", "source": "$card-columns-margin" }
-    },
-    "divider": {
-      "bg": { "value": "{color.light.400.value}", "source": "$card-divider-bg" },
       "margin": {
-        "y": { "value": "{card.spacer.y.value}", "source": "$card-divider-margin-y" }
-      }
-    },
-    "footer": {
-      "action": {
-        "gap": { "value": ".5rem", "source": "$card-footer-actions-gap" }
+        "group": { "value": "12px", "source": "$card-group-margin" },
+        "deck": { "value": "{spacing.card.margin.group.value}", "source": "$card-deck-margin" },
+        "grid": { "value": "{spacing.card.margin.group.value}", "source": "$card-grid-margin" }
       },
-      "text": {
-        "font": {
-          "size": { "value": "{font.size.small.x.value}", "source": "$card-footer-text-font-size" }
-        }
-      }
-    },
-    "logo": {
-      "left": {
-        "offset": {
+      "columns": {
+        "margin": { "value": "{spacing.card.spacer.y.value}", "source": "$card-columns-margin" },
+        "count": { "value": "3", "source": "$card-columns-count" },
+        "gap": { "value": "1.25rem", "source": "$card-columns-gap" }
+      },
+      "footer": {
+        "action-gap": { "value": ".5rem", "source": "$card-footer-actions-gap" }
+      },
+      "loading-skeleton": {
+        "spacer": { "value": ".313rem", "source": "$loading-skeleton-spacer" }
+      },
+      "logo": {
+        "left-offset": {
           "base": { "value": "1.5rem", "source": "$card-logo-left-offset" },
           "horizontal": { "value": ".4375rem", "source": "$card-logo-left-offset-horizontal" }
-        }
-      },
-      "bottom": {
-        "offset": {
+        },
+        "bottom-offset": {
           "base": { "value": "1rem", "source": "$card-logo-bottom-offset" },
           "horizontal": { "value": ".4375rem", "source": "$card-logo-bottom-offset-horizontal" }
         }
+      }
+    }
+  },
+  "size": {
+    "card": {
+      "border": {
+        "width": { "value": "{size.border.width.value}", "source": "$card-border-width" },
+        "radius": {
+          "base": { "value": "{size.border.radius.base.value}", "source": "$card-border-radius" },
+          "image": { "value": ".3125rem", "source": "$card-image-border-radius" },
+          "logo": { "value": ".25rem", "source": "$card-logo-border-radius" }
+        }
       },
-      "width": { "value": "7.25rem", "source": "$card-logo-width" },
-      "height": { "value": "4.125rem", "source": "$card-logo-height" }
-    },
-    "loading": {
-      "skeleton": {
-        "spacer": { "value": ".313rem", "source": "$loading-skeleton-spacer" }
+      "image": {
+        "horizontal": {
+          "width": {
+            "max": { "value": "240px", "source": "$card-image-horizontal-max-width" },
+            "min": { "value": "{size.card.image.horizontal.width.max.value}", "source": "$card-image-horizontal-min-width" }
+          }
+        },
+        "vertical": {
+          "max-height": { "value": "140px", "source": "$card-image-vertical-max-height" }
+        }
+      },
+      "logo": {
+        "width": { "value": "7.25rem", "source": "$card-logo-width" },
+        "height": { "value": "4.125rem", "source": "$card-logo-height" }
+      }
+    }
+  },
+  "typography": {
+    "footer": {
+      "text": {
+        "font-size": { "value": "{font.size.small.x.value}", "source": "$card-footer-text-font-size" }
       }
     }
   }
