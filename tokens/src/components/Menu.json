@@ -1,12 +1,12 @@
 {
-  "menu": {
-    "background": {
-      "active": { "value": "{color.btn.active.bg.tertiary.value}", "source": "$active-background" }
-    },
-    "border": {
-      "base": { "value": "transparent", "source": "$border" },
-      "active": { "value": "transparent", "source": "$active-border" },
-      "hover": { "value": "transparent", "source": "$hover-border" }
+  "color": {
+    "menu": {
+      "bg-active": { "value": "{color.btn.active.bg.tertiary.value}", "source": "$active-background" },
+      "border": {
+        "base": { "value": "transparent", "source": "$border" },
+        "active": { "value": "transparent", "source": "$active-border" },
+        "hover": { "value": "transparent", "source": "$hover-border" }
+      }
     }
   }
 }

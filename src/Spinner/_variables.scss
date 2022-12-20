@@ -1,9 +1,9 @@
 // Spinners
 
-$spinner-width: var(--pgn-spinner-width) !default;
-$spinner-height: var(--pgn-spinner-height) !default;
-$spinner-border-width: var(--pgn-spinner-border-width) !default;
+$spinner-width: var(--pgn-size-spinner-base-width) !default;
+$spinner-height: var(--pgn-size-spinner-base-height) !default;
+$spinner-border-width: var(--pgn-size-spinner-base-border-width) !default;
 
-$spinner-width-sm: var(--pgn-spinner-sm-width) !default;
-$spinner-height-sm: var(--pgn-spinner-sm-height) !default;
-$spinner-border-width-sm: var(--pgn-spinner-sm-border-width) !default;
+$spinner-width-sm: var(--pgn-size-spinner-sm-width) !default;
+$spinner-height-sm: var(--pgn-size-spinner-sm-height) !default;
+$spinner-border-width-sm: var(--pgn-size-spinner-sm-border-width) !default;
