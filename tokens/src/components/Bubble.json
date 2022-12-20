@@ -1,12 +1,6 @@
 {
-  "bubble": {
-    "expandable": {
-      "padding": {
-        "y": { "value": "0", "source": "$bubble-expandable-padding-y" },
-        "x": { "value": ".25rem", "source": "$bubble-expandable-padding-x" }
-      }
-    },
-    "color": {
+  "color": {
+    "bubble": {
       "text": {
         "success": {"value": "{color.white.value}", "source": "$bubble-success-color"},
         "warning": {"value": "{color.white.value}", "source": "$bubble-warning-color"},
@@ -20,5 +14,13 @@
         "primary": {"value": "{color.primary.base.value}", "source": "$bubble-primary-bg"}
       }
     }
+  },
+  "spacing": {
+    "bubble": {
+      "expandable-padding": {
+        "y": { "value": "0", "source": "$bubble-expandable-padding-y" },
+        "x": { "value": ".25rem", "source": "$bubble-expandable-padding-x" }
+      }
+    } 
   }
 }
