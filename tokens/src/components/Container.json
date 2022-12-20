@@ -1,7 +1,7 @@
 {
-  "container": {
-    "max": {
-      "width": {
+  "size": {
+    "container": {
+      "max-width": {
         "xs": { "value": "464px", "source": "$max-width-xs" },
         "sm": { "value": "708px", "source": "$max-width-sm" },
         "md": { "value": "952px", "source": "$max-width-md" },

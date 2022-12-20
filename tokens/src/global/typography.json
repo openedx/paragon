@@ -4,13 +4,13 @@
       "base": { "value": "{font.family.sans.serif.value}", "source": "$font-family-base" },
       "sans": {
         "serif": {
-          "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\",\n  Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\",\n  \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\",  Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\",  \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
           "source": "$font-family-sans-serif"
         }
       },
       "serif": { "value": "serif", "source": "$font-family-serif" },
       "monospace": {
-        "value": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\",\n  \"Courier New\", monospace",
+        "value": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\",  \"Courier New\", monospace",
         "source": "$font-family-monospace"
       }
     },

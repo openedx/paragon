@@ -1,60 +1,7 @@
 {
-  "navbar": {
-    "padding": {
-      "y": { "value": "calc({spacer.base.value} / 2)", "source": "$navbar-padding-y" },
-      "x": {
-        "base": { "value": "{spacer.base.value}", "source": "$navbar-padding-x" },
-        "nav": {
-          "link": { "value": ".5rem", "source": "$navbar-nav-link-padding-x" }
-        }
-      }
-    },
-    "nav": {
-      "link": {
-        "height": {
-          "value": "calc({font.size.base.value} * {line-height.base.value} + .5rem * 2)",
-          "source": "$nav-link-height"
-        }
-      },
-      "scroll": {
-        "max": {
-          "height": { "value": "75vh", "source": "$navbar-nav-scroll-max-height" }
-        }
-      }
-    },
-    "brand": {
-      "font": {
-        "size": {
-          "value": "{font.size.lg.value}", "source": "$navbar-brand-font-size"
-        }
-      },
-      "height": {
-        "value": "calc({navbar.brand.font.size.value} * {line-height.base.value})",
-        "source": "$navbar-brand-height"
-      },
-      "padding": {
-        "y": {
-          "value": "calc(({navbar.nav.link.height.value} - {navbar.brand.height.value}) / 2)",
-          "source": "$navbar-brand-padding-y"
-        }
-      }
-    },
-    "toggler": {
-      "padding": {
-        "y": { "value": ".25rem", "source": "$navbar-toggler-padding-y" },
-        "x": { "value": ".75rem", "source": "$navbar-toggler-padding-x" }
-      },
-      "font": {
-        "size": { "value": "{font.size.lg.value}", "source": "$navbar-toggler-font-size" }
-      },
-      "border": {
-        "radius": {
-          "value": "{btn.border.radius.base.value}", "source": "$navbar-toggler-border-radius"
-        }
-      }
-    },
-    "dark": {
-      "color": {
+  "color": {
+    "navbar": {
+      "dark": {
         "text": {
           "value": "{color.white.value}",
           "source": "$navbar-dark-color",
@@ -71,9 +18,7 @@
             "amount": 0.75
           }]
         },
-        "active": {
-          "value": "{color.active.value}", "source": "$navbar-dark-active-color"
-        },
+        "active": { "value": "{color.active.value}", "source": "$navbar-dark-active-color" },
         "disabled": {
           "value": "{color.white.value}",
           "source": "$navbar-dark-disabled-color",
@@ -81,41 +26,23 @@
             "type": "alpha",
             "amount": 0.25
           }]
-        }
-      },
-      "toggler": {
-        "border-color": {
-          "value": "{color.white.value}",
-          "source": "$navbar-dark-toggler-border-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.1
-          }]
         },
-        "icon-bg": {
-          "value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{navbar.dark.color.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
-          "source": "$navbar-dark-toggler-icon-bg",
-          "outputReferences": false,
-          "modify": [{
-            "type": "str-replace",
-            "toReplace": "#",
-            "replaceWith": "%23"
-          }]
+        "toggler": {
+          "border": {
+            "value": "{color.white.value}",
+            "source": "$navbar-dark-toggler-border-color",
+            "modify": [{
+              "type": "alpha",
+              "amount": 0.1
+            }]
+          }
+        },
+        "brand": {
+          "text": { "value": "{color.navbar.dark.active.value}", "source": "$navbar-dark-brand-color" },
+          "hover": { "value": "{color.navbar.dark.active.value}", "source": "$navbar-dark-brand-hover-color" }
         }
       },
-      "brand": {
-        "color": {
-          "base": {
-            "value": "{navbar.dark.color.active.value}", "source": "$navbar-dark-brand-color"
-          },
-          "hover": {
-            "value": "{navbar.dark.color.active.value}", "source": "$navbar-dark-brand-hover-color"
-          }
-        }
-      }
-    },
-    "light": {
-      "color": {
+      "light": {
         "text": {
           "value": "{color.black.value}",
           "source": "$navbar-light-color",
@@ -147,11 +74,9 @@
             "type": "alpha",
             "amount": 0.3
           }]
-        }
-      },
-      "toggler": {
-        "border": {
-          "color": { 
+        },
+        "toggler": {
+          "border": {
             "value": "{color.black.value}",
             "source": "$navbar-light-toggler-border-color",
             "modify": [{
@@ -160,23 +85,99 @@
             }]
           }
         },
-        "icon-bg": {
-          "value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{navbar.light.color.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
-          "source": "$navbar-light-toggler-icon-bg",
-          "outputReferences": false,
-          "modify": [{
-            "type": "str-replace",
-            "toReplace": "#",
-            "replaceWith": "%23"
-          }]
+        "brand": {
+          "text": { "value": "{color.navbar.light.active.value}", "source": "$navbar-light-brand-color" },
+          "hover": { "value": "{color.navbar.light.active.value}", "source": "$navbar-light-brand-hover-color" }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "navbar": {
+      "padding": {
+        "y": { "value": "calc({spacer.base.value} / 2)", "source": "$navbar-padding-y" },
+        "x": {
+          "base": { "value": "{spacer.base.value}", "source": "$navbar-padding-x" },
+          "nav-link": { "value": ".5rem", "source": "$navbar-nav-link-padding-x" }
         }
       },
       "brand": {
-        "color": {
-          "base": { "value": "{navbar.light.color.active.value}", "source": "$navbar-light-brand-color" },
-          "hover": {
-            "value": "{navbar.light.color.active.value}",
-            "source": "$navbar-light-brand-hover-color"
+        "padding": {
+          "y": {
+            "value": "calc(({typography.navbar.nav-link.height.value} - {size.navbar.brand.height.value}) / 2)",
+            "source": "$navbar-brand-padding-y"
+          }
+        }
+      },
+      "toggler": {
+        "padding": {
+          "y": { "value": ".25rem", "source": "$navbar-toggler-padding-y" },
+          "x": { "value": ".75rem", "source": "$navbar-toggler-padding-x" }
+        }
+      }
+    }
+  },
+  "typography": {
+    "navbar": {
+      "brand": {
+        "font-size": { "value": "{font.size.lg.value}", "source": "$navbar-brand-font-size" }
+      },
+      "nav-link": {
+        "height": {
+          "value": "calc({font.size.base.value} * {line-height.base.value} + .5rem * 2)",
+          "source": "$nav-link-height"
+        }
+      },
+      "toggler": {
+        "font-size": { "value": "{font.size.lg.value}", "source": "$navbar-toggler-font-size" }
+      }
+    }
+  },
+  "size": {
+    "navbar": {
+      "nav": {
+        "scroll": {
+          "max-height": { "value": "75vh", "source": "$navbar-nav-scroll-max-height" }
+        }
+      },
+      "brand": {
+        "height": {
+          "value": "calc({typography.navbar.brand.font-size.value} * {line-height.base.value})",
+          "source": "$navbar-brand-height"
+        }
+      },
+      "toggler": {
+        "border-radius": {
+          "value": "{btn.border.radius.base.value}", "source": "$navbar-toggler-border-radius"
+        }
+      }
+    }
+  },
+  "content": {
+    "navbar": {
+      "toggler": {
+        "dark": {
+          "icon-bg": {
+            "value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.dark.text.value}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
+            "source": "$navbar-dark-toggler-icon-bg",
+            "outputReferences": false,
+            "modify": [{
+              "type": "str-replace",
+              "toReplace": "#",
+              "replaceWith": "%23"
+            }]
+          }
+        },
+        "light": {
+          "icon-bg": {
+            "value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.light.text.value}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
+            "source": "$navbar-light-toggler-icon-bg",
+            "outputReferences": false,
+            "modify": [{
+              "type": "str-replace",
+              "toReplace": "#",
+              "replaceWith": "%23"
+            }]
           }
         }
       }

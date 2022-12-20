@@ -1,15 +1,21 @@
 {
-  "sticky": {
-    "offset": { "value": "0", "source": "$sticky-offset" },
-    "shadow": {
-      "top": {
-        "value": "0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15)",
-        "source": "$sticky-shadow-top"
-      },
-      "bottom": {
-        "value": "0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15)",
-        "source": "$sticky-shadow-bottom"
+  "elevation": {
+    "sticky": {
+      "shadow": {
+        "top": {
+          "value": "0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15)",
+          "source": "$sticky-shadow-top"
+        },
+        "bottom": {
+          "value": "0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15)",
+          "source": "$sticky-shadow-bottom"
+        }
       }
+    }
+  },
+  "spacing": {
+    "sticky": {
+      "offset": { "value": "0", "source": "$sticky-offset" }
     }
   }
 }

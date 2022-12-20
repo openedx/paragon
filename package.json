@@ -24,7 +24,6 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "postinstall": "cd ./tokens && npm ci",
     "generate-component-install": "cd component-generator && npm install",
     "consumer-app-install": "cd example && npm install",
     "doc-site-install": "cd www && npm install",

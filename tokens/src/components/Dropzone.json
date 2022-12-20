@@ -1,24 +1,33 @@
 {
-  "dropzone": {
-    "padding": { "value": "1.5rem", "source": "$dropzone-padding" },
-    "border": {
-      "default": { "value": "1px dashed {color.gray.500.value}", "source": "$dropzone-border-default" },
-      "hover": { "value": "2px solid {color.info.300.value}", "source": "$dropzone-border-hover" },
-      "focus": { "value": "2px solid {color.info.300.value}", "source": "$dropzone-border-focus" },
-      "active": { "value": "2px solid {color.primary.500.value}", "source": "$dropzone-border-active" },
-      "error": { "value": "2px solid {color.danger.300.value}", "source": "$dropzone-border-error" }
-    },
-    "error": {
-      "wrapper": {
-        "color": { "value": "{color.danger.500.value}", "source": "$dropzone-error-wrapper-color" }
+  "color": {
+    "dropzone": {
+      "error-wrapper": { "value": "{color.danger.500.value}", "source": "$dropzone-error-wrapper-color" },
+      "restriction-msg": { "value": "{color.gray.500.value}", "source": "$dropzone-restriction-msg-color" },
+      "border": {
+        "base": { "value": "{color.gray.500.value}", "source": "$dropzone-border-color-default" },
+        "hover": { "value": "{color.info.300.value}", "source": "$dropzone-border-color-hover" },
+        "focus": { "value": "{color.info.300.value}", "source": "$dropzone-border-color-focus" },
+        "active": { "value": "{color.primary.500.value}", "source": "$dropzone-border-color-active" },
+        "error": { "value": "{color.danger.300.value}", "source": "$dropzone-border-color-error" }
       }
-    },
-    "restriction": {
-      "msg": {
-        "font": {
-          "size": { "value": "{font.size.small.x.value}", "source": "$dropzone-restriction-msg-font-size" }
-        },
-        "color": { "value": "{color.gray.500.value}", "source": "$dropzone-restriction-msg-color" }
+    }
+  },
+  "typography": {
+    "dropzone": {
+      "restriction-msg": {
+        "font-size": { "value": "{font.size.small.x.value}", "source": "$dropzone-restriction-msg-font-size" }
+      }
+    }
+  },
+  "spacing": {
+    "dropzone": {
+      "padding": { "value": "1.5rem", "source": "$dropzone-padding" },
+      "border": {
+        "base": { "value": "1px", "source": "$dropzone-border-default" },
+        "hover": { "value": "2px", "source": "$dropzone-border-hover" },
+        "focus": { "value": "2px", "source": "$dropzone-border-focus" },
+        "active": { "value": "2px", "source": "$dropzone-border-active" },
+        "error": { "value": "2px", "source": "$dropzone-border-error" }
       }
     }
   }
