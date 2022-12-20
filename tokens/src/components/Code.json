@@ -1,34 +1,50 @@
 {
-  "code": {
-    "font": {
-      "size": { "value": "87.5%", "source": "$code-font-size" }
-    },
-    "color": { "value": "#E83E8C", "source": "$code-color" },
-    "kbd": {
-      "font": {
-        "size": { "value": "{code.font.size.value}", "source": "$kbd-font-size" }
+  "color": {
+    "code": {
+      "base": { "value": "#E83E8C", "source": "$code-color" },
+      "kbd": {
+        "base": { "value": "{color.white.value}", "source": "$kbd-color" },
+        "bg": { "value": "{color.gray.700.value}", "source": "$kbd-bg" }
       },
-      "box-shadow": {
-        "value": "inset 0 -.1rem 0 rgba(0, 0, 0, .25)",
-        "source": "$kbd-box-shadow"
-      },
-      "nested": {
-        "font": {
-          "weight": { "value": "{font.weight.bold.value}", "source": "$nested-kbd-font-weight" }
+      "pre": { "value": "{color.gray.900.value}", "source": "$pre-color" }
+    }
+  },
+  "typography": {
+    "code": {
+      "font-size": { "value": "87.5%", "source": "$code-font-size" },
+      "kbd": {
+        "font-size": { "value": "{typography.code.font-size.value}", "source": "$kbd-font-size" },
+        "nested": {
+          "font-weight": { "value": "{font.weight.bold.value}", "source": "$nested-kbd-font-weight" }
         }
-      },
-      "padding": {
-        "y": { "value": ".2rem", "source": "$kbd-padding-y" },
-        "x": { "value": ".4rem", "source": "$kbd-padding-x" }
-      },
-      "color": { "value": "{color.white.value}", "source": "$kbd-color" },
-      "bg": { "value": "{color.gray.700.value}", "source": "$kbd-bg" }
-    },
-    "pre": {
-      "color": { "value": "{color.gray.900.value}", "source": "$pre-color" },
-      "scrollable": {
-        "max": {
-          "height": { "value": "340px", "source": "$pre-scrollable-max-height" }
+      }
+    }
+  },
+  "spacing": {
+    "code": {
+      "kbd": {
+        "padding": {
+          "y": { "value": ".2rem", "source": "$kbd-padding-y" },
+          "x": { "value": ".4rem", "source": "$kbd-padding-x" }
+        }
+      }
+    }
+  },
+  "size": {
+    "code": {
+      "pre": {
+        "scrollable": {
+          "max-height": { "value": "340px", "source": "$pre-scrollable-max-height" }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "code": {
+      "kbd": {
+        "box-shadow": {
+          "value": "inset 0 -.1rem 0 rgba(0, 0, 0, .25)",
+          "source": "$kbd-box-shadow"
         }
       }
     }
