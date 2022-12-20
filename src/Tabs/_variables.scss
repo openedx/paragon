@@ -1,6 +1,6 @@
-$tab-notification-height: var(--pgn-tabs-notification-height) !default;
-$tab-notification-width: var(--pgn-tabs-notification-width) !default;
-$tab-notification-font-size: var(--pgn-tabs-notification-font-size) !default;
+$tab-notification-height: var(--pgn-size-tabs-notification-height) !default;
+$tab-notification-width: var(--pgn-size-tabs-notification-width) !default;
+$tab-notification-font-size: var(--pgn-typography-tabs-notification-font-size) !default;
 $tab-more-link-dropdown-toggle-padding-x:                   .7rem !default;
 $tab-more-link-dropdown-toggle-padding-y:                   $spacer !default;
 $tab-more-link-dropdown-toggle-focus-bg:                    $primary-500 !default;

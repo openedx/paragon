@@ -1,27 +1,27 @@
 // Breadcrumbs
 
-$breadcrumb-font-size: var(--pgn-breadcrumb-font-size) !default;
+$breadcrumb-font-size: var(--pgn-typography-breadcrumb-font-size) !default;
 
-$breadcrumb-padding-y: var(--pgn-breadcrumb-padding-y) !default;
-$breadcrumb-padding-x: var(--pgn-breadcrumb-padding-x) !default;
-$breadcrumb-item-padding: var(--pgn-breadcrumb-padding-item) !default;
+$breadcrumb-padding-y: var(--pgn-spacing-breadcrumb-padding-y) !default;
+$breadcrumb-padding-x: var(--pgn-spacing-breadcrumb-padding-x) !default;
+$breadcrumb-item-padding: var(--pgn-spacing-breadcrumb-padding-item) !default;
 
-$breadcrumb-margin-bottom: var(--pgn-breadcrumb-margin-bottom) !default;
-$breadcrumb-margin-left: var(--pgn-breadcrumb-margin-left) !default;
+$breadcrumb-margin-bottom: var(--pgn-spacing-breadcrumb-margin-bottom) !default;
+$breadcrumb-margin-left: var(--pgn-spacing-breadcrumb-margin-left) !default;
 
 $breadcrumb-border-focus-axis-x: var(--pgn-breadcrumb-border-focus-axis-x) !default;
 $breadcrumb-border-focus-axis-y: var(--pgn-breadcrumb-border-focus-axis-y) !default;
 
-$breadcrumb-border-focus-width: var(--pgn-breadcrumb-border-focus-width) !default;
+$breadcrumb-border-focus-width: var(--pgn-size-breadcrumb-border-width-focus) !default;
 
-$breadcrumb-bg: var(--pgn-breadcrumb-bg) !default;
-$breadcrumb-divider-color: var(--pgn-breadcrumb-color-divider) !default;
-$breadcrumb-active-color: var(--pgn-breadcrumb-color-active) !default;
-$breadcrumb-inverse-active: var(--pgn-breadcrumb-inverse-active) !default;
-$breadcrumb-inverse-spacer: var(--pgn-breadcrumb-inverse-spacer) !default;
-$breadcrumb-color: var(--pgn-breadcrumb-color-base) !default;
-$breadcrumb-inverse-color: var(--pgn-breadcrumb-inverse-color) !default;
+$breadcrumb-bg: var(--pgn-color-breadcrumb-bg) !default;
+$breadcrumb-divider-color: var(--pgn-color-breadcrumb-divider) !default;
+$breadcrumb-active-color: var(--pgn-color-breadcrumb-active) !default;
+$breadcrumb-inverse-active: var(--pgn-color-breadcrumb-inverse-active) !default;
+$breadcrumb-inverse-spacer: var(--pgn-color-breadcrumb-inverse-spacer) !default;
+$breadcrumb-color: var(--pgn-color-breadcrumb-base) !default;
+$breadcrumb-inverse-color: var(--pgn-color-breadcrumb-inverse-base) !default;
 $breadcrumb-divider: "/" !default;
 
-$breadcrumb-border-radius: var(--pgn-breadcrumb-border-radius-base) !default;
-$breadcrumb-focus-border-radius: var(--pgn-breadcrumb-border-radius-focus) !default;
+$breadcrumb-border-radius: var(--pgn-size-breadcrumb-border-radius-base) !default;
+$breadcrumb-focus-border-radius: var(--pgn-size-breadcrumb-border-radius-focus) !default;

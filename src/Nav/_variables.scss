@@ -1,10 +1,10 @@
 // Navs
 
-$nav-link-padding-y: var(--pgn-nav-link-padding-y) !default;
-$nav-link-padding-x: var(--pgn-nav-link-padding-x) !default;
-$nav-link-color: var(--pgn-nav-link-color-base) !default;
-$nav-link-disabled-color: var(--pgn-nav-link-color-disabled) !default;
-$nav-link-font-weight: var(--pgn-nav-link-font-weight) !default;
+$nav-link-padding-y: var(--pgn-spacing-nav-link-padding-y) !default;
+$nav-link-padding-x: var(--pgn-spacing-nav-link-padding-x) !default;
+$nav-link-color: var(--pgn-color-nav-link-text-base) !default;
+$nav-link-disabled-color: var(--pgn-color-nav-link-text-disabled) !default;
+$nav-link-font-weight: var(--pgn-typography-nav-link-font-weight) !default;
 
 $nav-tabs-hover-bg:                                transparent !default;
 $nav-tabs-focus-border-color:                      $nav-tabs-hover-bg !default;
@@ -13,18 +13,18 @@ $nav-tabs-link-focus-border-color:                 $nav-tabs-link-active-color !
 $nav-tabs-link-distance-to-border:                 4px !default;
 $nav-tabs-link-border-color:                       transparent !default;
 $nav-tabs-link-disabled-border-color:              $nav-tabs-link-border-color !default;
-$nav-tabs-border-color: var(--pgn-nav-tabs-border-color) !default;
-$nav-tabs-border-width: var(--pgn-nav-tabs-border-width) !default;
-$nav-tabs-border-radius: var(--pgn-nav-tabs-border-radius) !default;
-$nav-tabs-link-hover-border-color: var(--pgn-nav-tabs-link-hover-border-color) !default;
-$nav-tabs-link-hover-bg: var(--pgn-nav-tabs-link-hover-bg) !default;
-$nav-tabs-link-active-color: var(--pgn-nav-tabs-link-active-color-base) !default;
-$nav-tabs-link-active-bg: var(--pgn-nav-tabs-link-active-bg) !default;
-$nav-tabs-link-active-border-color: var(--pgn-nav-tabs-link-active-color-border) !default;
+$nav-tabs-border-color: var(--pgn-color-nav-tabs-border) !default;
+$nav-tabs-border-width: var(--pgn-size-nav-tabs-border-width) !default;
+$nav-tabs-border-radius: var(--pgn-size-nav-tabs-border-radius) !default;
+$nav-tabs-link-hover-border-color: var(--pgn-border-color-nav-tabs-link-border-hover) !default;
+$nav-tabs-link-hover-bg: var(--pgn-color-nav-tabs-link-hover-bg) !default;
+$nav-tabs-link-active-color: var(--pgn-color-nav-tabs-link-active-text) !default;
+$nav-tabs-link-active-bg: var(--pgn-color-nav-tabs-link-active-bg) !default;
+$nav-tabs-link-active-border-color: var(--pgn-border-color-nav-tabs-link-border-active) !default;
 
-$nav-pills-border-radius: var(--pgn-nav-pills-border-radius) !default;
-$nav-pills-link-active-color: var(--pgn-nav-pills-link-link-active-color) !default;
-$nav-pills-link-active-bg: var(--pgn-nav-pills-link-link-active-bg) !default;
+$nav-pills-border-radius: var(--pgn-size-nav-pills-border-radius) !default;
+$nav-pills-link-active-color: var(--pgn-color-nav-pills-link-active-text) !default;
+$nav-pills-link-active-bg: var(--pgn-color-nav-pills-link-active-bg) !default;
 $nav-pills-link-active-border-color:               $white !default;
 $nav-pills-link-border-color:                      $nav-tabs-border-color !default;
 $nav-pills-link-border-width:                      1px !default;
@@ -57,5 +57,5 @@ $nav-inverse-tabs-link-active-border-bottom-width: $nav-tabs-border-width !defau
 $nav-inverse-tabs-tab-content-color:               $nav-inverse-tabs-link-color !default;
 $nav-inverse-tabs-dropdown-border-color:           $nav-inverse-tabs-link-active-hover-bg !default;
 $nav-inverse-tabs-dropdown-bottom-gap:             .4375rem !default;
-$nav-divider-color: var(--pgn-nav-divider-color) !default;
-$nav-divider-margin-y: var(--pgn-nav-divider-margin-y) !default;
+$nav-divider-color: var(--pgn-color-nav-divider) !default;
+$nav-divider-margin-y: var(--pgn-spacing-nav-divider-margin-y) !default;

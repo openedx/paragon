@@ -1,20 +1,20 @@
 // Progress bars
 
-$progress-height: var(--pgn-progress-bar-height-base) !default;
-$annotated-progress-height: var(--pgn-progress-bar-height-annotated) !default;
-$progress-font-size: var(--pgn-progress-bar-font-size) !default;
-$progress-bg: var(--pgn-progress-bar-bg) !default;
-$progress-border-radius: var(--pgn-progress-bar-border-radius) !default;
-$progress-box-shadow: var(--pgn-progress-bar-box-shadow) !default;
-$progress-bar-color: var(--pgn-progress-bar-bar-color) !default;
-$progress-bar-bg: var(--pgn-progress-bar-bar-bg-base) !default;
-$annotated-progress-bar-bg: var(--pgn-progress-bar-bar-bg-annotated) !default;
-$progress-bar-animation-timing: var(--pgn-progress-bar-bar-animation-timing) !default;
-$progress-bar-transition: var(--pgn-progress-bar-bar-transition) !default;
-$progress-bar-border-width: var(--pgn-progress-bar-border-width) !default;
-$progress-bar-border-color: var(--pgn-progress-bar-border-color) !default;
-$progress-threshold-circle: var(--pgn-progress-bar-threshold-circle) !default;
-$progress-hint-annotation-gap: var(--pgn-progress-bar-hint-annotation-gap) !default;
+$progress-height: var(--pgn-size-progress-bar-height-base) !default;
+$annotated-progress-height: var(--pgn-size-progress-bar-height-annotated) !default;
+$progress-font-size: var(--pgn-typography-progress-bar-font-size) !default;
+$progress-bg: var(--pgn-color-progress-bar-bg) !default;
+$progress-border-radius: var(--pgn-size-progress-bar-border-radius) !default;
+$progress-box-shadow: var(--pgn-elevation-progress-bar-box-shadow) !default;
+$progress-bar-color: var(--pgn-color-progress-bar-bar-base) !default;
+$progress-bar-bg: var(--pgn-color-progress-bar-bar-bg-base) !default;
+$annotated-progress-bar-bg: var(--pgn-color-progress-bar-bar-bg-annotated) !default;
+$progress-bar-animation-timing: var(--pgn-transition-progress-bar-bar-animation-timing) !default;
+$progress-bar-transition: var(--pgn-transition-progress-bar-bar-transition) !default;
+$progress-bar-border-width: var(--pgn-size-progress-bar-border-width) !default;
+$progress-bar-border-color: var(--pgn-color-progress-bar-border) !default;
+$progress-threshold-circle: var(--pgn-size-progress-bar-threshold-circle) !default;
+$progress-hint-annotation-gap: var(--pgn-spacing-progress-bar-hint-annotation-gap) !default;
 $progress-colors: (
   "dark":    var(--pgn-color-primary-500),
   "success": var(--pgn-color-success-500),

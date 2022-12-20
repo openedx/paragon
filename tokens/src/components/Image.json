@@ -1,21 +1,41 @@
 {
-  "image": {
-    "thumbnail": {
-      "padding": { "value": ".25rem", "source": "$thumbnail-padding" },
-      "bg": { "value": "{body.bg.value}", "source": "$thumbnail-bg" },
-      "border": {
-        "width": { "value": "{size.border.width.value}", "source": "$thumbnail-border-width" },
-        "color": { "value": "{color.gray.200.value}", "source": "$thumbnail-border-color" },
-        "radius": { "value": "{size.border.radius.base.value}", "source": "$thumbnail-border-radius"}
-      },
-      "box-shadow": { "value": "0 1px 2px rgba(0, 0, 0, .075)", "source": "$thumbnail-box-shadow" }
-    },
-    "figure": {
-      "caption": {
-        "font": {
-          "size": { "value": "90%", "source": "$figure-caption-font-size" }
-        },
-        "color": { "value": "{color.gray.500.value}", "source": "$figure-caption-color" }
+  "color": {
+    "image": {
+      "figure-caption": { "value": "{color.gray.500.value}", "source": "$figure-caption-color" },
+      "thumbnail": {
+        "bg": { "value": "{body.bg.value}", "source": "$thumbnail-bg" },
+        "border": { "value": "{color.gray.200.value}", "source": "$thumbnail-border-color" }
+      }
+    }
+  },
+  "typography": {
+    "image": {
+      "figure-caption": {
+        "font-size": { "value": "90%", "source": "$figure-caption-font-size" }
+      }
+    }
+  },
+  "elevation": {
+    "image": {
+      "thumbnail": {
+        "box-shadow": { "value": "0 1px 2px rgba(0, 0, 0, .075)", "source": "$thumbnail-box-shadow" }
+      }
+    }
+  },
+  "size": {
+    "image": {
+      "thumbnail": {
+        "border": {
+          "width": { "value": "{size.border.width.value}", "source": "$thumbnail-border-width" },
+          "radius": { "value": "{size.border.radius.base.value}", "source": "$thumbnail-border-radius"}
+        }
+      }
+    }
+  },
+  "spacing": {
+    "image": {
+      "thumbnail": {
+        "padding": { "value": ".25rem", "source": "$thumbnail-padding" }
       }
     }
   }
