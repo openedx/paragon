@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCastle(props) {
   return (
     <svg
@@ -7,11 +6,14 @@ function SvgCastle(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M21 9v2h-2V3h-2v2h-2V3h-2v2h-2V3H9v2H7V3H5v8H3V9H1v12h9v-5h4v5h9V9h-2zm-10 3H9V9h2v3zm4 0h-2V9h2v3z" />
+      <path
+        d="M21 9v2h-2V3h-2v2h-2V3h-2v2h-2V3H9v2H7V3H5v8H3V9H1v12h9v-5h4v5h9V9h-2zm-10 3H9V9h2v3zm4 0h-2V9h2v3z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgCastle;

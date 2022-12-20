@@ -93,7 +93,7 @@ export interface IPropsTable {
 const PropsTable = ({ props: componentProps, displayName, content }: IPropsTable) => (
   <Card className="mb-5" id={`props-api-table-${displayName}`}>
     <Card.Header as="h3" title={`${displayName} Props API`} className="pb-1" />
-    {content && <div className="small mb-3">{content}</div>}
+    {content && <p className="px-4 small">{content}</p>}
     {componentProps.length > 0 ? (
       <ul className="list-unstyled">
         {componentProps

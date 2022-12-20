@@ -28,6 +28,11 @@
   background-color: $accent-a;
   color: black;
 }
+// stylelint-disable-next-line selector-class-pattern
+.pgn__pageBanner__accentB {
+  background-color: $accent-b;
+  color: black;
+}
 
 // stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__warning {

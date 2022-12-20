@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDrawShapes(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDrawShapes(props) {
     </svg>
   );
 }
-
 export default SvgDrawShapes;

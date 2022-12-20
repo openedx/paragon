@@ -15,14 +15,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@edx/brand-openedx": "^1.1.0",
+    "@edx/frontend-platform": "^2.6.1",
+    "core-js": "^3.22.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "@edx/brand-openedx": "^1.1.0",
-    "@edx/frontend-platform": "^2.0.0",
-    "core-js": "^3.22.2",
     "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
-    "@edx/frontend-build": "9.2.0"
+    "@edx/frontend-build": "^12.3.0"
   }
 }

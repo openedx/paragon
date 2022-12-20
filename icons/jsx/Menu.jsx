@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMenu(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMenu(props) {
     </svg>
   );
 }
-
 export default SvgMenu;

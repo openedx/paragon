@@ -264,9 +264,14 @@ a .pgn__card {
   height: $card-logo-height;
   border-radius: $card-logo-border-radius;
   box-shadow: $level-1-box-shadow;
-  z-index: 1;
   padding: map_get($spacers, 2);
   background-color: $white;
+}
+
+%pgn__card-focused {
+  box-shadow: $level-1-box-shadow;
+  outline: none;
+  border-color: $card-border-focus-color;
 }
 
 .pgn__card {
@@ -281,9 +286,7 @@ a .pgn__card {
 
     &:focus,
     &.focus {
-      box-shadow: $level-1-box-shadow;
-      outline: none;
-      border-color: $card-border-focus-color;
+      @extend %pgn__card-focused;
     }
   }
 

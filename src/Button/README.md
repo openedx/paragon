@@ -107,6 +107,25 @@ Use inline size buttons for when a button sits with a line of text.
 </>
 ```
 
+### Disabled
+
+```jsx live
+<>
+  <Button variant="primary" disabled>Primary disabled</Button>
+  <Button variant="secondary" disabled>Secondary disabled</Button>
+  <Button as="a" href="https://edx.org" disabled>Link disabled</Button>
+</>
+```
+
+For link to be `disabled`, it must have href defined with some value.
+
+```jsx live
+<>
+  <Button as='a' disabled>No href</Button>
+  <Button as='a' href='' disabled>Empty string href</Button>
+</>
+```
+
 ### With Icons before or after
 ```jsx live
 <>

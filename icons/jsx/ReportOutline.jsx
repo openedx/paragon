@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgReportOutline(props) {
   return (
     <svg
@@ -23,5 +22,4 @@ function SvgReportOutline(props) {
     </svg>
   );
 }
-
 export default SvgReportOutline;

@@ -49,8 +49,8 @@ const Settings = () => {
           >
             {THEMES.map(theme => (
               <option
-                key={theme.label}
-                value={theme.stylesheet}
+                key={theme.id}
+                value={theme.id}
               >
                 {theme.label}
               </option>

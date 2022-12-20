@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAlignVerticalBottom(props) {
   return (
     <svg
@@ -7,11 +6,14 @@ function SvgAlignVerticalBottom(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M22 22H2v-2h20v2zM10 2H7v16h3V2zm7 6h-3v10h3V8z" />
+      <path
+        d="M22 22H2v-2h20v2zM10 2H7v16h3V2zm7 6h-3v10h3V8z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgAlignVerticalBottom;

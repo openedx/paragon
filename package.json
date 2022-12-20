@@ -1,6 +1,6 @@
 {
   "name": "@edx/paragon",
-  "version": "20.12.1",
+  "version": "20.18.1",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -69,7 +69,8 @@
     "react-table": "^7.7.0",
     "react-transition-group": "^4.4.2",
     "tabbable": "^5.3.3",
-    "uncontrollable": "^7.2.1"
+    "uncontrollable": "^7.2.1",
+    "uuid": "^9.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.6 || ^17.0.0",

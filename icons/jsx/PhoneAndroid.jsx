@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPhoneAndroid(props) {
   return (
     <svg
@@ -7,11 +6,14 @@ function SvgPhoneAndroid(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M19 1H5v22h14V1zm-5 20h-4v-1h4v1zm3-3H7V4h10v14z" />
+      <path
+        d="M19 1H5v22h14V1zm-5 20h-4v-1h4v1zm3-3H7V4h10v14z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
-
 export default SvgPhoneAndroid;

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { useContext } from 'react';
 import DataTableContext from './DataTableContext';
 import { clearSelectionAction } from './selection/data/actions';
@@ -35,6 +34,7 @@ export const useSelectionActions = (
       toggleAllRowsSelected(false);
     }
   };
+
   return {
     clearSelection,
   };

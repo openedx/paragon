@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDensityMedium(props) {
   return (
     <svg
@@ -7,11 +6,11 @@ function SvgDensityMedium(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M3 3h18v2H3zm0 16h18v2H3zm0-8h18v2H3z" />
+      <path d="M3 3h18v2H3zm0 16h18v2H3zm0-8h18v2H3z" fill="currentColor" />
     </svg>
   );
 }
-
 export default SvgDensityMedium;

@@ -15,6 +15,11 @@ import Menu from './Menu';
 import Settings from './Settings';
 import Toc from './Toc';
 
+if (process.env.NODE_ENV === 'development') {
+  /* eslint-disable-next-line global-require */
+  require('~paragon-style/core/core.scss');
+}
+
 export interface ILayout {
   children: React.ReactNode,
   showMinimizedTitle: boolean,
