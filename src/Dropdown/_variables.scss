@@ -46,17 +46,17 @@ $dropdown-divider-bg: var(--pgn-dropdown-divider-bg) !default;
 $dropdown-divider-margin-y: var(--pgn-dropdown-divider-margin-y) !default;
 $dropdown-box-shadow: var(--pgn-dropdown-box-shadow) !default;
 
-$dropdown-link-color: var(--pgn-dropdown-link-color) !default;
-$dropdown-link-hover-color: var(--pgn-dropdown-link-hover-color) !default;
-$dropdown-link-hover-bg: var(--pgn-dropdown-link-hover-bg) !default;
+$dropdown-link-color: var(--pgn-color-dropdown-link-base) !default;
+$dropdown-link-hover-color: var(--pgn-color-dropdown-link-hover-base) !default;
+$dropdown-link-hover-bg: var(--pgn-color-dropdown-link-hover-bg) !default;
 
-$dropdown-link-active-color: var(--pgn-dropdown-link-active-color) !default;
-$dropdown-link-active-bg: var(--pgn-dropdown-link-active-bg) !default;
+$dropdown-link-active-color: var(--pgn-color-dropdown-link-active-base) !default;
+$dropdown-link-active-bg: var(--pgn-color-dropdown-link-active-bg) !default;
 
-$dropdown-link-disabled-color: var(--pgn-dropdown-link-disabled-color) !default;
+$dropdown-link-disabled-color: var(--pgn-color-dropdown-link-disabled) !default;
 
-$dropdown-item-padding-y: var(--pgn-dropdown-padding-y-item) !default;
-$dropdown-item-padding-x: var(--pgn-dropdown-padding-x-item) !default;
+$dropdown-item-padding-y: var(--pgn-spacing-dropdown-padding-y-item) !default;
+$dropdown-item-padding-x: var(--pgn-spacing-dropdown-padding-x-item) !default;
 
-$dropdown-header-color: var(--pgn-dropdown-color-header) !default;
-$dropdown-header-padding: var(--pgn-dropdown-padding-header) !default;
+$dropdown-header-color: var(--pgn-color-dropdown-header) !default;
+$dropdown-header-padding: var(--pgn-spacing-dropdown-padding-header) !default;
