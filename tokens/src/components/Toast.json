@@ -2,7 +2,7 @@
   "color": {
     "toast": {
       "base": { "value": "null", "source": "$toast-color" },
-      "background": { "value": "{color.gray.700.value}", "source": "$toast-background-color" },
+      "bg": { "value": "{color.gray.700.value}", "source": "$toast-background-color" },
       "border": {
         "value": "{color.black.value}",
         "source": "$toast-border-color",
@@ -12,8 +12,8 @@
         }]
       },
       "header": {
-        "base": { "value": "{color.white.value}", "source": "$toast-header-color" },
-        "background": { "value": "{color.gray.700.value}", "source": "$toast-header-background-color" },
+        "text": { "value": "{color.white.value}", "source": "$toast-header-color" },
+        "bg": { "value": "{color.gray.700.value}", "source": "$toast-header-background-color" },
         "border": { 
           "value": "{color.black.value}",
           "source": "$toast-header-border-color",
@@ -25,7 +25,7 @@
       }
     }
   },
-  "typograthy": {
+  "typography": {
     "toast": {
       "font-size": { "value": ".875rem", "source": "$toast-font-size" }
     }
@@ -44,12 +44,6 @@
       "border": {
         "width": { "value": "1px", "source": "$toast-border-width" },
         "radius": { "value": ".25rem", "source": "$toast-border-radius" }
-      },
-      "container": {
-        "gutter": {
-          "lg": { "value": "1.25rem", "source": "$toast-container-gutter-lg" },
-          "sm": { "value": ".625rem", "source": "$toast-container-gutter-sm" }
-        }
       }
     }
   },
@@ -58,6 +52,12 @@
       "padding": {
         "x": { "value": ".75rem", "source": "$toast-padding-x" },
         "y": { "value": ".25rem", "source": "$toast-padding-y" }
+      },
+      "container": {
+        "gutter": {
+          "lg": { "value": "1.25rem", "source": "$toast-container-gutter-lg" },
+          "sm": { "value": ".625rem", "source": "$toast-container-gutter-sm" }
+        }
       }
     }
   }

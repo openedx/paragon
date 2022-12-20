@@ -1,7 +1,7 @@
 {
   "color": {
     "dropdown": {
-      "base": { "value": "{body.color.value}", "source": "$dropdown-color" },
+      "text": { "value": "{body.color.value}", "source": "$dropdown-color" },
       "header": { "value": "{color.gray.500.value}", "source": "$dropdown-header-color" },
       "bg": { "value": "{color.background.base.value}", "source": "$dropdown-bg" },
       "border": {
@@ -27,7 +27,7 @@
       }
     }
   },
-  "typograthy": {
+  "typography": {
     "dropdown": {
       "font-size": { "value": "{font.size.base.value}", "source": "$dropdown-font-size" }
     }
@@ -35,11 +35,14 @@
   "size": {
     "dropdown": {
       "min-width": { "value": "18rem", "source": "$dropdown-min-width" },
-      "border-radius": {
-        "base": { "value": "{size.border.radius.base.value}", "source": "$dropdown-border-radius" },
-        "inner": {
-          "value": "calc({dropdown.border.radius.base.value} - {dropdown.border.width.value})",
-          "source": "$dropdown-inner-border-radius"
+      "border": {
+        "width": { "value": "{size.border.width.value}", "source": "$dropdown-border-width" },
+        "radius": {
+          "base": { "value": "{size.border.radius.base.value}", "source": "$dropdown-border-radius" },
+          "inner": {
+            "value": "calc({size.dropdown.border.radius.base.value} - {size.dropdown.border.width.value})",
+            "source": "$dropdown-inner-border-radius"
+          }
         }
       }
     }
@@ -57,11 +60,10 @@
           "item": { "value": ".5rem", "source": "$dropdown-item-padding-y" }
         },
         "header": {
-          "value": "{dropdown.padding.y.base.value} {dropdown.padding.x.item.value}",
+          "value": "{spacing.dropdown.padding.y.base.value} {spacing.dropdown.padding.x.item.value}",
           "source": "$dropdown-header-padding"
         }
       },
-      "border-width": { "value": "{size.border.width.value}", "source": "$dropdown-border-width" },
       "divider": {
         "margin-y": { "value": "calc({spacer.base.value} / 2)", "source": "$dropdown-divider-margin-y" }
       },

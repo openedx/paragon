@@ -10,7 +10,7 @@
   "elevation": {
     "annotation": {
       "box-shadow": {
-        "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15))\n  drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
+        "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15))  drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
         "source": "$annotation-box-shadow"
       }
     }

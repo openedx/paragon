@@ -1,11 +1,13 @@
 {
   "color": {
     "pagination": {
-      "base": { "value": "{color.link.value}", "source": "$pagination-color" },
-      "inverse": { "value": "{color.white.value}", "source": "$pagination-color-inverse" },
-      "hover": { "value": "{link.hover.color.value}", "source": "$pagination-hover-color" },
-      "active": { "value": "{color.active.value}", "source": "$pagination-active-color" },
-      "disabled": { "value": "{color.disabled.value}", "source": "$pagination-disabled-color" },
+      "text": {
+        "base": { "value": "{color.link.value}", "source": "$pagination-color" },
+        "inverse": { "value": "{color.white.value}", "source": "$pagination-color-inverse" },
+        "hover": { "value": "{link.hover.color.value}", "source": "$pagination-hover-color" },
+        "active": { "value": "{color.active.value}", "source": "$pagination-active-color" },
+        "disabled": { "value": "{color.disabled.value}", "source": "$pagination-disabled-color" }
+      },
       "bg": {
         "base": { "value": "{color.background.base.value}", "source": "$pagination-bg" },
         "hover": { "value": "{color.gray.100.value}", "source": "$pagination-hover-bg" },
@@ -15,7 +17,7 @@
       "border": {
         "base": { "value": "{color.gray.200.value}", "source": "$pagination-border-color" },
         "hover": { "value": "{color.gray.200.value}", "source": "$pagination-hover-border-color" },
-        "active": { "value": "{pagination.bg.active.value}", "source": "$pagination-active-border-color" },
+        "active": { "value": "{color.pagination.bg.active.value}", "source": "$pagination-active-border-color" },
         "disabled": { "value": "{color.gray.100.value}", "source": "$pagination-disabled-border-color" }
       },
       "focus": {

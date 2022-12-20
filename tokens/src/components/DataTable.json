@@ -1,7 +1,7 @@
 {
   "color": {
     "data-table": {
-      "background": {
+      "bg": {
         "base": { "value": "{color.background.base.value}", "source": "$data-table-background-color" },
         "is-loading": {
           "value": "{color.white.value}",
@@ -13,7 +13,8 @@
             }
           ]
         }
-      }
+      },
+      "border": { "value": "{color.gray.200.value}", "source": "$data-table-border-color" }
     }
   },
   "elevation": {
@@ -23,9 +24,9 @@
   },
   "size": {
     "data-table": {
-      "border": { "value": "1px solid {color.gray.200.value}", "source": "$data-table-border" },
-      "pagination": {
-        "dropdown": {
+      "border": { "value": "1px", "source": "$data-table-border" },
+      "dropdown": {
+        "pagination": {
           "max-height": { "value": "60vh", "source": "$data-table-pagination-dropdown-max-height" },
           "min-width": { "value": "6rem", "source": "$data-table-pagination-dropdown-min-width" }
         }
@@ -35,26 +36,11 @@
   "spacing": {
     "data-table": {
       "padding": {
-        "x": {
-          "value": ".75rem",
-          "source": "$data-table-padding-x"
-        },
-        "y": {
-          "value": ".75rem",
-          "source": "$data-table-padding-y"
-        },
-        "small": {
-          "value": ".5rem",
-          "source": "$data-table-padding-small"
-        },
-        "cell": {
-          "value": ".75rem",
-          "source": "$data-table-cell-padding"
-        },
-        "head-cell": {
-          "value": ".5rem .75rem",
-          "source": "$data-table-head-cell-padding"
-        }
+        "x": { "value": ".75rem", "source": "$data-table-padding-x" },
+        "y": { "value": ".75rem", "source": "$data-table-padding-y" },
+        "small": { "value": ".5rem", "source": "$data-table-padding-small" },
+        "cell": { "value": ".75rem", "source": "$data-table-cell-padding" },
+        "head-cell": { "value": ".5rem .75rem", "source": "$data-table-head-cell-padding" }
       },
       "footer-position": { "value": "center", "source": "$data-table-footer-position" }
     }

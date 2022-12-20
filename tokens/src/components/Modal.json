@@ -13,8 +13,7 @@
         }
       },
       "backdrop": {
-        "bg": { "value": "{color.black.value}", "source": "$modal-backdrop-bg" },
-        "opacity": { "value": ".5", "source": "$modal-backdrop-opacity" }
+        "bg": { "value": "{color.black.value}", "source": "$modal-backdrop-bg" }
       }
     }
   },
@@ -29,7 +28,8 @@
         }
       },
       "backdrop": {
-        "zindex": { "value": "1040", "source": "$zindex-modal-backdrop" }
+        "zindex": { "value": "1040", "source": "$zindex-modal-backdrop" },
+        "opacity": { "value": ".5", "source": "$modal-backdrop-opacity" }
       },
       "zindex": { "value": "1050", "source": "$zindex-modal" }
     }
@@ -42,7 +42,7 @@
       "sm": { "value": "400px", "source": "$modal-sm" },
       "content": {
         "border": {
-          "width": { "value": "0rem", "source": "$modal-content-border-width" },
+          "width": { "value": "0px", "source": "$modal-content-border-width" },
           "radius": { "value": "{size.border.radius.lg.value}", "source": "$modal-content-border-radius" }
         }
       }
@@ -58,14 +58,14 @@
       },
       "footer": {
         "padding": {
-          "base": { "value": "{modal.footer.padding.y.value} 1.5rem", "source": "$modal-footer-padding" },
+          "base": { "value": "{spacing.modal.footer.padding.y.value} 1.5rem", "source": "$modal-footer-padding" },
           "y": { "value": "1rem", "source": "$modal-footer-padding-y" }
         }
       },
       "header": {
         "padding": {
           "base": {
-            "value": "{modal.header.padding.y.value} 1.5rem",
+            "value": "{spacing.modal.header.padding.y.value} 1.5rem",
             "source": "$modal-header-padding"
           },
           "y": { "value": "1rem", "source": "$modal-header-padding-y" }

@@ -38,8 +38,8 @@
           }
         },
         "brand": {
-          "base": { "value": "{navbar.dark.color.active.value}", "source": "$navbar-dark-brand-color" },
-          "hover": { "value": "{navbar.dark.color.active.value}", "source": "$navbar-dark-brand-hover-color" }
+          "text": { "value": "{color.navbar.dark.active.value}", "source": "$navbar-dark-brand-color" },
+          "hover": { "value": "{color.navbar.dark.active.value}", "source": "$navbar-dark-brand-hover-color" }
         }
       },
       "light": {
@@ -86,8 +86,8 @@
           }
         },
         "brand": {
-          "base": { "value": "{navbar.light.color.active.value}", "source": "$navbar-light-brand-color" },
-          "hover": { "value": "{navbar.light.color.active.value}", "source": "$navbar-light-brand-hover-color" }
+          "text": { "value": "{color.navbar.light.active.value}", "source": "$navbar-light-brand-color" },
+          "hover": { "value": "{color.navbar.light.active.value}", "source": "$navbar-light-brand-hover-color" }
         }
       }
     }
@@ -104,7 +104,7 @@
       "brand": {
         "padding": {
           "y": {
-            "value": "calc(({navbar.nav.link.height.value} - {navbar.brand.height.value}) / 2)",
+            "value": "calc(({typography.navbar.nav-link.height.value} - {size.navbar.brand.height.value}) / 2)",
             "source": "$navbar-brand-padding-y"
           }
         }
@@ -142,7 +142,7 @@
       },
       "brand": {
         "height": {
-          "value": "calc({navbar.brand.font.size.value} * {line-height.base.value})",
+          "value": "calc({typography.navbar.brand.font-size.value} * {line-height.base.value})",
           "source": "$navbar-brand-height"
         }
       },
@@ -153,12 +153,12 @@
       }
     }
   },
-  "other": {
+  "content": {
     "navbar": {
       "toggler": {
         "dark": {
           "icon-bg": {
-            "value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{navbar.dark.color.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
+            "value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.dark.text.value}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
             "source": "$navbar-dark-toggler-icon-bg",
             "outputReferences": false,
             "modify": [{
@@ -170,7 +170,7 @@
         },
         "light": {
           "icon-bg": {
-            "value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{navbar.light.color.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
+            "value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.light.text.value}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
             "source": "$navbar-light-toggler-icon-bg",
             "outputReferences": false,
             "modify": [{

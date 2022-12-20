@@ -15,7 +15,7 @@
       "disabled-opacity": { "value": ".3", "source": "$search-disabled-opacity" }
     }
   },
-  "typograthy": {
+  "typography": {
     "search-field": {
       "line-height": { "value": "1.5rem", "source": "$search-line-height" }
     }
@@ -30,13 +30,9 @@
         },
         "radius": { "value": "0", "source": "$search-border-radius" }
       },
-      "input": {
-        "height": {
-          "search": {
-            "value": "calc({typography.form.input.line-height.base.value} * 1em + {spacing.form.input.padding.y.base.value} * 2)",
-            "source": "$input-height-search"
-          }
-        }
+      "search-input-height": {
+        "value": "calc({typography.form.input.line-height.base.value} * 1em + {spacing.form.input.padding.y.base.value} * 2)",
+        "source": "$input-height-search"
       }
     }
   },

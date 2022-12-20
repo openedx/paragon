@@ -6,7 +6,7 @@
   },
   "color": {
     "tooltip": {
-      "base": { "value": "{color.white.value}", "source": "$tooltip-color" },
+      "text": { "value": "{color.white.value}", "source": "$tooltip-color" },
       "light": { "value": "{color.black.value}", "source": "$tooltip-color-light" },
       "bg": {
         "base": { "value": "{color.black.value}", "source": "$tooltip-bg" },
@@ -14,7 +14,7 @@
       },
       "opacity": { "value": "1", "source": "$tooltip-opacity" },
       "arrow": {
-        "base": { "value": "{tooltip.bg.base.value}", "source": "$tooltip-arrow-color" },
+        "base": { "value": "{color.tooltip.bg.base.value}", "source": "$tooltip-arrow-color" },
         "light": { "value": "{color.white.value}", "source": "$tooltip-arrow-color-light" }
       }
     }
@@ -34,7 +34,7 @@
         "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
         "source": "$tooltip-box-shadow"
       },
-      "zindex": { "value": 1070, "source": "$zindex-tooltip" }
+      "zindex": { "value": "1070", "source": "$zindex-tooltip" }
     }
   },
   "size": {

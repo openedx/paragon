@@ -13,7 +13,7 @@
     "code": {
       "font-size": { "value": "87.5%", "source": "$code-font-size" },
       "kbd": {
-        "font-size": { "value": "{code.font.size.value}", "source": "$kbd-font-size" },
+        "font-size": { "value": "{typography.code.font-size.value}", "source": "$kbd-font-size" },
         "nested": {
           "font-weight": { "value": "{font.weight.bold.value}", "source": "$nested-kbd-font-weight" }
         }

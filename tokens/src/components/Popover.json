@@ -9,7 +9,7 @@
       "bg": { "value": "{color.background.base.value}", "source": "$popover-bg" },
       "border": { "value": "rgba(0, 0, 0, .2)", "source": "$popover-border-color" },
       "header": {
-        "base": { "value": "{headings.color.value}", "source": "$popover-header-color" },
+        "text": { "value": "{headings.color.value}", "source": "$popover-header-color" },
         "bg": { "value": "{color.white.value}", "source": "$popover-header-bg" },
         "bg-dark": {
           "value": "{color.white.value}",
@@ -30,9 +30,9 @@
       },
       "body": { "value": "{body.color.value}", "source": "$popover-body-color" },
       "arrow": { 
-        "base": { "value": "{popover.bg.value}", "source": "$popover-arrow-color" },
+        "base": { "value": "{color.popover.bg.value}", "source": "$popover-arrow-color" },
         "outer": {
-          "value": "{popover.border.color}",
+          "value": "{color.popover.border.value}",
           "source": "$popover-arrow-outer-color",
           "modify": [{
             "type": "alpha",
@@ -90,8 +90,8 @@
       },
       "body": {
         "padding": {
-          "y": { "value": "{popover.header.padding.y.value}", "source": "$popover-body-padding-y" },
-          "x": { "value": "{popover.header.padding.x.value}", "source": "$popover-body-padding-x" }
+          "y": { "value": "{spacing.popover.header.padding.y.value}", "source": "$popover-body-padding-y" },
+          "x": { "value": "{spacing.popover.header.padding.x.value}", "source": "$popover-body-padding-x" }
         }
       },
       "icon": {

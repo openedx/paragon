@@ -1,13 +1,13 @@
 // Image thumbnails
 
-$thumbnail-padding: var(--pgn-image-thumbnail-padding) !default;
-$thumbnail-bg: var(--pgn-image-thumbnail-bg) !default;
-$thumbnail-border-width: var(--pgn-image-thumbnail-border-width) !default;
-$thumbnail-border-color: var(--pgn-image-thumbnail-border-color) !default;
-$thumbnail-border-radius: var(--pgn-image-thumbnail-border-radius) !default;
-$thumbnail-box-shadow: var(--pgn-image-thumbnail-box-shadow) !default;
+$thumbnail-padding: var(--pgn-spacing-image-thumbnail-padding) !default;
+$thumbnail-bg: var(--pgn-color-image-thumbnail-bg) !default;
+$thumbnail-border-width: var(--pgn-size-image-thumbnail-border-width) !default;
+$thumbnail-border-color: var(--pgn-color-image-thumbnail-border) !default;
+$thumbnail-border-radius: var(--pgn-size-image-thumbnail-border-radius) !default;
+$thumbnail-box-shadow: var(--pgn-elevation-image-thumbnail-box-shadow) !default;
 
 // Figures
 
-$figure-caption-font-size: var(--pgn-image-figure-caption-font-size) !default;
-$figure-caption-color: var(--pgn-image-figure-caption-color) !default;
+$figure-caption-font-size: var(--pgn-typography-image-figure-caption-font-size) !default;
+$figure-caption-color: var(--pgn-color-image-figure-caption) !default;

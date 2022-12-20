@@ -14,7 +14,7 @@
   },
   "spacing": {
     "chip": {
-    "margin": { "value": ".125rem", "source": "$chip-margin" },
+      "margin": { "value": ".125rem", "source": "$chip-margin" },
       "padding": {
         "y": { "value": ".125rem", "source": "$chip-padding-y" },
         "x": { "value": ".5rem", "source": "$chip-padding-x" },
