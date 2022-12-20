@@ -6,24 +6,24 @@
   align-items: center;
   min-height: 200px;
   padding: $dropzone-padding;
-  border: $dropzone-border-default;
+  border: $dropzone-border-default dashed $dropzone-border-color-default;
   box-sizing: border-box;
   cursor: pointer;
 
   &:hover {
-    border: $dropzone-border-hover;
+    border: $dropzone-border-hover solid $dropzone-border-color-hover;
   }
 
   &:focus {
-    border: $dropzone-border-focus;
+    border: $dropzone-border-focus solid $dropzone-border-color-focus;
   }
 
   &.pgn__dropzone-validation-error {
-    border: $dropzone-border-error;
+    border: $dropzone-border-error solid $dropzone-border-color-error;
   }
 
   &.pgn__dropzone-active {
-    border: $dropzone-border-active;
+    border: $dropzone-border-active solid $dropzone-border-color-active;
   }
 }
 

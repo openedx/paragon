@@ -1,17 +1,22 @@
 {
-  "avatar": {
-    "border": {
-      "base": { "value": "solid 1px {color.light.300.value}", "source": "$avatar-border" },
-      "radius": { "value": "100%", "source": "$avatar-border-radius" }
-    },
-    "size": {
+  "color": {
+    "avatar": {
+      "border": { "value": "{color.light.300.value}", "source": "$avatar-color-border" }
+    }
+  },
+  "size": {
+    "avatar": {
       "base": { "value": "3rem", "source": "$avatar-size" },
       "xs": { "value": "1.5rem", "source": "$avatar-size-xs" },
       "sm": { "value": "2.25rem", "source": "$avatar-size-sm" },
       "lg": { "value": "4rem", "source": "$avatar-size-lg" },
       "xl": { "value": "6rem", "source": "$avatar-size-xl" },
       "xxl": { "value": "11.5rem", "source": "$avatar-size-xxl" },
-      "huge": { "value": "18.75rem", "source": "$avatar-size-huge" }
+      "huge": { "value": "18.75rem", "source": "$avatar-size-huge" },
+      "border": {
+        "base": { "value": "1px", "source": "$avatar-border" },
+        "radius": { "value": "100%", "source": "$avatar-border-radius" }
+      }
     }
   }
 }

@@ -1,14 +1,14 @@
-$chip-padding-x: var(--pgn-chip-padding-x) !default;
-$chip-padding-y: var(--pgn-chip-padding-y) !default;
-$chip-padding-to-icon: var(--pgn-chip-padding-to-icon) !default;
-$chip-icon-padding: var(--pgn-chip-padding-icon) !default;
-$chip-margin: var(--pgn-chip-margin) !default;
-$chip-border-radius: var(--pgn-chip-border-radius) !default;
-$chip-disable-opacity: var(--pgn-chip-opacity-disabled) !default;
-$chip-icon-size: var(--pgn-chip-icon-size) !default;
+$chip-padding-x: var(--pgn-spacing-chip-padding-x) !default;
+$chip-padding-y: var(--pgn-spacing-chip-padding-y) !default;
+$chip-padding-to-icon: var(--pgn-spacing-chip-padding-to-icon) !default;
+$chip-icon-padding: var(--pgn-spacing-chip-padding-icon) !default;
+$chip-margin: var(--pgn-spacing-chip-margin) !default;
+$chip-border-radius: var(--pgn-size-chip-border-radius) !default;
+$chip-disable-opacity: var(--pgn-color-chip-opacity-disabled) !default;
+$chip-icon-size: var(--pgn-size-chip-icon) !default;
 
-$chip-light-bg: var(--pgn-chip-color-bg-light) !default;
-$chip-light-color: var(--pgn-chip-color-text-light) !default;
+$chip-light-bg: var(--pgn-color-chip-bg-light) !default;
+$chip-light-color: var(--pgn-color-chip-text-light) !default;
 
-$chip-dark-bg: var(--pgn-chip-color-bg-dark) !default;
-$chip-dark-color: var(--pgn-chip-color-text-dark) !default;
+$chip-dark-bg: var(--pgn-color-chip-bg-dark) !default;
+$chip-dark-color: var(--pgn-color-chip-text-dark) !default;

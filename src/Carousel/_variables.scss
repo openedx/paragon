@@ -1,24 +1,21 @@
-$carousel-control-color: var(--pgn-carousel-control-color) !default;
-$carousel-control-width: var(--pgn-carousel-control-width-base) !default;
-$carousel-control-opacity: var(--pgn-carousel-control-opacity-base) !default;
-$carousel-control-hover-opacity: var(--pgn-carousel-control-opacity-hover) !default;
-$carousel-control-transition: var(--pgn-carousel-control-transition) !default;
+$carousel-control-width: var(--pgn-size-carousel-control-width-base) !default;
+$carousel-control-opacity: var(--pgn-color-carousel-control-opacity-base) !default;
+$carousel-control-hover-opacity: var(--pgn-color-carousel-control-opacity-hover) !default;
+$carousel-control-transition: var(--pgn-transition-carousel-control) !default;
 
-$carousel-indicator-width: var(--pgn-carousel-indicator-width) !default;
-$carousel-indicator-height: var(--pgn-carousel-indicator-height-base) !default;
-$carousel-indicator-hit-area-height: var(--pgn-carousel-indicator-height-area-hit) !default;
-$carousel-indicator-spacer: var(--pgn-carousel-indicator-spacer) !default;
-$carousel-indicator-active-bg: var(--pgn-carousel-indicator-active-bg) !default;
-$carousel-indicator-transition: var(--pgn-carousel-indicator-transition) !default;
+$carousel-indicator-width: var(--pgn-size-carousel-indicator-width) !default;
+$carousel-indicator-height: var(--pgn-size-carousel-indicator-height-base) !default;
+$carousel-indicator-hit-area-height: var(--pgn-size-carousel-indicator-height-area-hit) !default;
+$carousel-indicator-spacer: var(--pgn-spacing-carousel-indicator-spacer) !default;
+$carousel-indicator-active-bg: var(--pgn-color-carousel-indicator-active-bg) !default;
+$carousel-indicator-transition: var(--pgn-transition-carousel-indicator) !default;
 
-$carousel-caption-width: var(--pgn-carousel-caption-width) !default;
-$carousel-caption-color: var(--pgn-carousel-caption-color) !default;
+$carousel-caption-width: var(--pgn-size-carousel-caption-width) !default;
+$carousel-caption-color: var(--pgn-color-carousel-caption) !default;
 
-$carousel-control-icon-width: var(--pgn-carousel-control-width-icon) !default;
-$carousel-control-prev-icon-bg: var(--pgn-carousel-control-bg-prev-icon) !default;
-$carousel-control-next-icon-bg: var(--pgn-carousel-control-bg-next-icon) !default;
-
-$carousel-transition-duration: var(--pgn-carousel-transition-duration) !default;
+$carousel-control-icon-width: var(--pgn-size-carousel-control-width-icon) !default;
+$carousel-control-prev-icon-bg: var(--pgn-content-carousel-control-bg-prev-icon) !default;
+$carousel-control-next-icon-bg: var(--pgn-content-carousel-control-bg-next-icon) !default;
 
 // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
-$carousel-transition: transform $carousel-transition-duration ease-in-out !default;
+$carousel-transition: transform var(--pgn-transition-carousel-duration) ease-in-out !default;
