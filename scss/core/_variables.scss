@@ -448,11 +448,11 @@ $grid-gutter-width:           24px !default;
 // TODO: can't use css variables due to conflict with @if SCSS.
 $grid-row-columns: 6 !default;
 
-$max-width-xs: var(--pgn-container-max-width-xs) !default;
-$max-width-sm: var(--pgn-container-max-width-sm) !default;
-$max-width-md: var(--pgn-container-max-width-md) !default;
-$max-width-lg: var(--pgn-container-max-width-lg) !default;
-$max-width-xl: var(--pgn-container-max-width-xl) !default;
+$max-width-xs: var(--pgn-size-container-max-width-xs) !default;
+$max-width-sm: var(--pgn-size-container-max-width-sm) !default;
+$max-width-md: var(--pgn-size-container-max-width-md) !default;
+$max-width-lg: var(--pgn-size-container-max-width-lg) !default;
+$max-width-xl: var(--pgn-size-container-max-width-xl) !default;
 
 // Components
 //
@@ -782,15 +782,15 @@ $table-th-font-weight:        null !default;
 // Warning: Avoid customizing these values. They're used for a bird's eye view
 // of components dependent on the z-axis and are designed to all work together.
 
-$zindex-dropdown: var(--pgn-dropdown-zindex) !default;
+$zindex-dropdown: var(--pgn-elevation-dropdown-zindex) !default;
 $zindex-sticky: var(--pgn-zindex-sticky) !default;
 $zindex-fixed: var(--pgn-zindex-fixed) !default;
-$zindex-sheet-backdrop: var(--pgn-sheet-zindex-backdrop) !default;
-$zindex-sheet: var(--pgn-sheet-zindex-main) !default;
-$zindex-modal-backdrop: var(--pgn-modal-backdrop-zindex) !default;
-$zindex-modal: var(--pgn-modal-zindex) !default;
-$zindex-popover: var(--pgn-popover-zindex) !default;
-$zindex-tooltip: var(--pgn-tooltip-zindex) !default;
+$zindex-sheet-backdrop: var(--pgn-elevation-sheet-zindex-backdrop) !default;
+$zindex-sheet: var(--pgn-elevation-sheet-zindex-main) !default;
+$zindex-modal-backdrop: var(--pgn-elevation-modal-backdrop-zindex) !default;
+$zindex-modal: var(--pgn-elevation-modal-zindex) !default;
+$zindex-popover: var(--pgn-elevation-popover-zindex) !default;
+$zindex-tooltip: var(--pgn-elevation-tooltip-zindex) !default;
 
 // Buttons + Forms
 //
