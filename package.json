@@ -46,13 +46,19 @@
     "build-types": "tsc --emitDeclarationOnly",
     "playroom:start": "npm run playroom:start --workspace=www",
     "playroom:build": "npm run playroom:build --workspace=www"
+    "build-tokens": "node tokens/build-tokens.js --build-dir scss/core/css/",
+    "replace-variables-usage-with-css": "node tokens/replace-variables.js -p src -t usage",
+    "replace-variables-definition-with-css": "node tokens/replace-variables.js -p src -t definition",
+    "build-scss-to-css-map": "node tokens/map-scss-to-css.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@popperjs/core": "^2.11.4",
     "bootstrap": "^4.6.2",
+    "chroma-js": "^2.4.2",
     "classnames": "^2.3.1",
+    "commander": "^9.4.1",
     "email-prop-type": "^3.0.0",
     "file-selector": "^0.6.0",
     "font-awesome": "^4.7.0",
@@ -70,6 +76,7 @@
     "react-responsive": "^8.2.0",
     "react-table": "^7.7.0",
     "react-transition-group": "^4.4.2",
+    "style-dictionary": "^3.7.1",
     "tabbable": "^5.3.3",
     "uncontrollable": "^7.2.1",
     "uuid": "^9.0.0"
@@ -112,7 +119,6 @@
     "axios-mock-adapter": "^1.21.1",
     "babel-jest": "^28.1.2",
     "babel-loader": "^8.2.4",
-    "commander": "^9.3.0",
     "enzyme": "^3.9.0",
     "eslint": "8.18.0",
     "eslint-config-airbnb": "19.0.4",
