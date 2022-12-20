@@ -1,20 +1,22 @@
 // Checkpoints
 
-$checkpoint-background-color: var(--pgn-product-tour-checkpoint-color-background) !default;
+$checkpoint-background-color: var(--pgn-color-product-tour-checkpoint-bg) !default;
 
-$checkpoint-body-color: var(--pgn-product-tour-checkpoint-color-body) !default;
+$checkpoint-body-color: var(--pgn-color-product-tour-checkpoint-body) !default;
 
-$checkpoint-border-color: var(--pgn-product-tour-checkpoint-color-border) !default;
-$checkpoint-border-width: var(--pgn-product-tour-checkpoint-width-border) !default;
+$checkpoint-border-color: var(--pgn-color-product-tour-checkpoint-border) !default;
+$checkpoint-border-width: var(--pgn-size-product-tour-checkpoint-width-border) !default;
 
-$checkpoint-breadcrumb-color: var(--pgn-product-tour-checkpoint-color-breadcrumb) !default;
+$checkpoint-breadcrumb-color: var(--pgn-color-product-tour-checkpoint-breadcrumb) !default;
 
-$checkpoint-arrow-width: var(--pgn-product-tour-checkpoint-width-arrow) !default;
-$checkpoint-max-width: var(--pgn-product-tour-checkpoint-width-max) !default;
+$checkpoint-arrow-width: var(--pgn-size-product-tour-checkpoint-width-arrow) !default;
+$checkpoint-max-width: var(--pgn-size-product-tour-checkpoint-width-max) !default;
 
-$checkpoint-z-index: var(--pgn-product-tour-checkpoint-zindex) !default;
+$checkpoint-z-index: var(--pgn-elevation-product-tour-checkpoint-zindex) !default;
 
-$checkpoint-arrow-top-color: var(--pgn-product-tour-checkpoint-arrow-color-top) !default;
-$checkpoint-arrow-default-color: var(--pgn-product-tour-checkpoint-arrow-color-default) !default;
-$checkpoint-arrow-transparent: var(--pgn-product-tour-checkpoint-arrow-transparent) !default;
-$checkpoint-box-shadow-color: var(--pgn-product-tour-checkpoint-color-box-shadow) !default;
+$checkpoint-arrow-border-bottom: var(--pgn-size-product-tour-checkpoint-arrow-bottom) !default;
+$checkpoint-arrow-border-top: var(--pgn-size-product-tour-checkpoint-arrow-top) !default;
+$checkpoint-arrow-border-transparent: var(--pgn-size-product-tour-checkpoint-arrow-transparent) !default;
+$checkpoint-box-shadow-color: var(--pgn-color-product-tour-checkpoint-box-shadow) !default;
+$checkpoint-arrow-border-color-top: var(--pgn-color-product-tour-checkpoint-arrow-border-top) !default;
+$checkpoint-arrow-border-color-transparent: var(--pgn-color-product-tour-checkpoint-arrow-border-transparent) !default;

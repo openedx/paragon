@@ -1,40 +1,44 @@
 {
-  "search-field": {
-    "border": {
-      "radius": { "value": "0", "source": "$search-border-radius" },
-      "color": {
+  "color": {
+    "search-field": {
+      "border": {
         "base": { "value": "{color.gray.500.value}", "source": "$search-border-color" },
         "interaction": { "value": "{color.black.value}", "source": "$search-border-color-interaction" },
         "focus": { "value": "{color.black.value}", "source": "$search-border-focus-color" }
       },
-      "width": {
-        "base": { "value": ".0625rem", "source": "$search-border-width" },
-        "interaction": { "value": ".125rem", "source": "$search-border-width-interaction" },
-        "focus": { "value": ".3125rem", "source": "$search-border-focus-width" }
-      }
-    },
-    "line": {
-      "height": { "value": "1.5rem", "source": "$search-line-height" }
-    },
-    "disabled": {
-      "opacity": { "value": ".3", "source": "$search-disabled-opacity" }
-    },
-    "button": {
-      "margin": { "value": ".5rem", "source": "$search-button-margin" },
-      "color": {
+      "button": {
         "bg": {
           "primary": { "value": "{color.primary.500.value}", "source": "$search-btn-primary-bg" },
           "brand": { "value": "{color.brand.500.value}", "source": "$search-btn-brand-bg" }
         }
+      },
+      "disabled-opacity": { "value": ".3", "source": "$search-disabled-opacity" }
+    }
+  },
+  "typography": {
+    "search-field": {
+      "line-height": { "value": "1.5rem", "source": "$search-line-height" }
+    }
+  },
+  "size": {
+    "search-field": {
+      "border": {
+        "width": {
+          "base": { "value": ".0625rem", "source": "$search-border-width" },
+          "interaction": { "value": ".125rem", "source": "$search-border-width-interaction" },
+          "focus": { "value": ".3125rem", "source": "$search-border-focus-width" }
+        },
+        "radius": { "value": "0", "source": "$search-border-radius" }
+      },
+      "search-input-height": {
+        "value": "calc({typography.form.input.line-height.base.value} * 1em + {spacing.form.input.padding.y.base.value} * 2)",
+        "source": "$input-height-search"
       }
-    },
-    "input": {
-      "height": {
-        "search": {
-          "value": "calc({typography.form.input.line-height.base.value} * 1em + {spacing.form.input.padding.y.base.value} * 2)",
-          "source": "$input-height-search"
-        }
-      }
+    }
+  },
+  "spacing": {
+    "search-field": {
+      "margin-button": { "value": ".5rem", "source": "$search-button-margin" }
     }
   }
 }
