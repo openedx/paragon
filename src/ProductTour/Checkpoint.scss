@@ -103,10 +103,10 @@
   }
 
   &::after {
-    border-bottom: $checkpoint-arrow-transparent;
-    border-top: $checkpoint-arrow-default-color;
-    border-left: $checkpoint-arrow-transparent;
-    border-right: $checkpoint-arrow-transparent;
+    border-bottom: solid $checkpoint-arrow-border-transparent $checkpoint-arrow-border-color-transparent;
+    border-top: solid $checkpoint-arrow-border-top $checkpoint-arrow-border-color-top;
+    border-left: solid $checkpoint-arrow-border-transparent $checkpoint-arrow-border-color-transparent;
+    border-right: solid $checkpoint-arrow-border-transparent $checkpoint-arrow-border-color-transparent;
     filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
     -webkit-filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
   }
@@ -117,10 +117,10 @@
   left: calc($checkpoint-arrow-width * -1) !important; // Override PopperJS arrow placement
 
   &::after {
-    border-bottom: $checkpoint-arrow-top-color;
-    border-top: $checkpoint-arrow-transparent;
-    border-left: $checkpoint-arrow-transparent;
-    border-right: $checkpoint-arrow-transparent;
+    border-bottom: solid $checkpoint-arrow-border-bottom;
+    border-top: solid $checkpoint-arrow-border-transparent $checkpoint-arrow-border-color-transparent;
+    border-left: solid $checkpoint-arrow-border-transparent $checkpoint-arrow-border-color-transparent;
+    border-right: solid $checkpoint-arrow-border-transparent $checkpoint-arrow-border-color-transparent;
   }
 }
 
@@ -129,10 +129,10 @@
   right: 1px;
 
   &::after {
-    border-bottom: $checkpoint-arrow-transparent;
-    border-top: $checkpoint-arrow-transparent;
-    border-left: $checkpoint-arrow-default-color;
-    border-right: $checkpoint-arrow-transparent;
+    border-bottom: solid $checkpoint-arrow-border-transparent $checkpoint-arrow-border-color-transparent;
+    border-top: solid $checkpoint-arrow-border-transparent $checkpoint-arrow-border-color-transparent;
+    border-left: solid $checkpoint-arrow-border-top $checkpoint-arrow-border-color-top;
+    border-right: solid $checkpoint-arrow-border-transparent $checkpoint-arrow-border-color-transparent;
     filter: drop-shadow(3px 1px 2px rgba(0, 0, 0, .1));
   }
 }
@@ -143,10 +143,10 @@
 
   &::after {
     left: calc(-2 * $checkpoint-arrow-width);
-    border-bottom: $checkpoint-arrow-transparent;
-    border-top: $checkpoint-arrow-transparent;
-    border-left: $checkpoint-arrow-transparent;
-    border-right: $checkpoint-arrow-default-color;
+    border-bottom: solid $checkpoint-arrow-border-transparent $checkpoint-arrow-border-color-transparent;
+    border-top: solid $checkpoint-arrow-border-transparent $checkpoint-arrow-border-color-transparent;
+    border-left: solid $checkpoint-arrow-border-transparent;
+    border-right: solid $checkpoint-arrow-border-top $checkpoint-arrow-border-color-top;
     filter: drop-shadow(-3px 1px 2px rgba(0, 0, 0, .1));
   }
 }

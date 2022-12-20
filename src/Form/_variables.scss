@@ -109,13 +109,15 @@ $custom-control-indicator-active-bg: var(--pgn-color-form-control-indicator-acti
 $custom-control-indicator-active-box-shadow: var(--pgn-elevation-form-control-indicator-active) !default;
 $custom-control-indicator-active-border-color: var(--pgn-color-form-control-indicator-active-border) !default;
 $custom-checkbox-indicator-border-radius: var(--pgn-size-form-control-border-checkbox-indicator-radius) !default;
-$custom-checkbox-indicator-icon-checked: var(--pgn-other-form-control-checkbox-indicator-icon-checked) !default;
+$custom-checkbox-indicator-icon-checked: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked) !default;
 
 $custom-checkbox-indicator-indeterminate-bg: var(--pgn-color-form-control-checkbox-indicator-indeterminate-bg) !default;
+
 // stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-color: var(--pgn-color-form-control-checkbox-indicator-indeterminate-base) !default;
+
 // stylelint-disable-next-line max-line-length
-$custom-checkbox-indicator-icon-indeterminate: var(--pgn-other-form-control-checkbox-indicator-indeterminate-icon) !default;
+$custom-checkbox-indicator-icon-indeterminate: var(--pgn-other-content-form-control-checkbox-indicator-indeterminate-icon) !default;
 
 // stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-box-shadow: var(--pgn-elevation-form-control-checkbox-indicator-indeterminate) !default;
@@ -126,10 +128,10 @@ $custom-radio-indicator-icon-valid-checked:     str-replace(url("data:image/svg+
 $custom-radio-indicator-icon-invalid-checked:   str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-invalid-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
 
 $custom-radio-indicator-border-radius: var(--pgn-size-form-control-border-radio-indicator-radius) !default;
-$custom-radio-indicator-icon-checked: var(--pgn-other-form-control-radio-indicator-icon-checked) !default;
+$custom-radio-indicator-icon-checked: var(--pgn-other-content-form-control-radio-indicator-icon-checked) !default;
 
-$custom-switch-indicator-icon-off: var(--pgn-other-form-control-switch-indicator-icon-off) !default;
-$custom-switch-indicator-icon-on: var(--pgn-other-form-control-switch-indicator-icon-on) !default;
+$custom-switch-indicator-icon-off: var(--pgn-other-content-form-control-switch-indicator-icon-off) !default;
+$custom-switch-indicator-icon-on: var(--pgn-other-content-form-control-switch-indicator-icon-on) !default;
 $custom-switch-width: var(--pgn-size-form-control-switch-width) !default;
 $custom-switch-indicator-border-radius: var(--pgn-size-form-control-switch-indicator-border-radius) !default;
 $custom-switch-indicator-size: var(--pgn-size-form-control-switch-indicator-base) !default;
@@ -152,7 +154,7 @@ $custom-select-disabled-bg: var(--pgn-color-form-control-select-bg-disabled) !de
 $custom-select-bg-size: var(--pgn-color-form-control-select-bg-size) !default;
 $custom-select-indicator-color: var(--pgn-color-form-control-select-indicator-base) !default;
 
-$custom-select-indicator: var(--pgn-other-form-control-select-indicator-icon) !default;
+$custom-select-indicator: var(--pgn-other-content-form-control-select-indicator-icon) !default;
 
 // Used so we can have multiple background elements (e.g., arrow and feedback icon)
 $custom-select-background:          $custom-select-indicator no-repeat right
@@ -234,15 +236,15 @@ $form-feedback-tooltip-invalid-color: var(--pgn-color-form-feedback-tooltip-inva
 $form-feedback-tooltip-valid-bg: var(--pgn-color-form-feedback-tooltip-bg-valid) !default;
 $form-feedback-tooltip-invalid-bg: var(--pgn-color-form-feedback-tooltip-bg-invalid) !default;
 
-$form-feedback-focus-box-shadow-valid-color: var(--pgn-color-form-feetback-tooltip-box-shadow-focus-valid) !default;
-$form-feedback-focus-box-shadow-invalid-color: var(--pgn-color-form-feetback-tooltip-box-shadow-focus-invalid) !default;
+$form-feedback-focus-box-shadow-valid-color: var(--pgn-color-form-feedback-tooltip-box-shadow-focus-valid) !default;
+$form-feedback-focus-box-shadow-invalid-color: var(--pgn-color-form-feedback-tooltip-box-shadow-focus-invalid) !default;
 $form-feedback-checked-valid-color: var(--pgn-color-form-feedback-checked-valid) !default;
 $form-feedback-checked-invalid-color: var(--pgn-color-form-feedback-checked-invalid) !default;
 
 $form-feedback-icon-valid-color: var(--pgn-color-form-feedback-icon-valid) !default;
-$form-feedback-icon-valid: var(--pgn-other-form-feedback-icon-valid) !default;
+$form-feedback-icon-valid: var(--pgn-other-content-form-feedback-icon-valid) !default;
 $form-feedback-icon-invalid-color: var(--pgn-color-form-feedback-icon-invalid) !default;
-$form-feedback-icon-invalid: var(--pgn-other-form-feedback-icon-invalid) !default;
+$form-feedback-icon-invalid: var(--pgn-other-content-form-feedback-icon-invalid) !default;
 
 $form-validation-states: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default

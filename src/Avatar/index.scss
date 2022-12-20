@@ -2,7 +2,7 @@
 
 .pgn__avatar {
   border-radius: $avatar-border-radius;
-  border: $avatar-border;
+  border: solid $avatar-border $avatar-color-border;
   display: inline-block;
   height: $avatar-size;
   overflow: hidden;

@@ -1,99 +1,103 @@
 {
-  "pagination": {
-    "padding": {
-      "y": {
-        "base": { "value": ".625rem", "source": "$pagination-padding-y" },
-        "sm": { "value": ".8rem", "source": "$pagination-padding-y-sm" },
-        "lg": { "value": ".75rem", "source": "$pagination-padding-y-lg" }
+  "color": {
+    "pagination": {
+      "text": {
+        "base": { "value": "{color.link.value}", "source": "$pagination-color" },
+        "inverse": { "value": "{color.white.value}", "source": "$pagination-color-inverse" },
+        "hover": { "value": "{link.hover.color.value}", "source": "$pagination-hover-color" },
+        "active": { "value": "{color.active.value}", "source": "$pagination-active-color" },
+        "disabled": { "value": "{color.disabled.value}", "source": "$pagination-disabled-color" }
       },
-      "x": {
-        "base": { "value": "1rem", "source": "$pagination-padding-x" },
-        "sm": { "value": ".6rem", "source": "$pagination-padding-x-sm" },
-        "lg": { "value": "1.5rem", "source": "$pagination-padding-x-lg" }
+      "bg": {
+        "base": { "value": "{color.background.base.value}", "source": "$pagination-bg" },
+        "hover": { "value": "{color.gray.100.value}", "source": "$pagination-hover-bg" },
+        "active": { "value": "{color.background.active.value}", "source": "$pagination-active-bg" },
+        "disabled": { "value": "{color.white.value}", "source": "$pagination-disabled-bg" }
       },
-      "icon": { "value": ".5rem", "source": "$pagination-padding-icon" }
-    },
-    "margin": {
-      "x": { "value": ".5rem", "source": "$pagination-margin-x" },
-      "y": { "value": ".5rem", "source": "$pagination-margin-y" }
-    },
-    "line": {
-      "height": {
-        "value": "1.5rem", "source": "$pagination-line-height"
-      }
-    },
-    "font": {
-      "size": {
-        "sm": { "value": ".875rem", "source": "$pagination-font-size-sm" }
-      }
-    },
-    "icon": {
-      "size": {
-        "base": { "value": "1.375rem", "source": "$pagination-icon-size" },
-        "sm": { "value": "1rem", "source": "$pagination-icon-size-sm" }
-      },
-      "width": { "value": "2.25rem", "source": "$pagination-icon-width" },
-      "height": { "value": "2.25rem", "source": "$pagination-icon-height" }
-    },
-    "toggle": {
       "border": {
-        "base": { "value": ".3125rem", "source": "$pagination-toggle-border" },
-        "sm": { "value": ".25rem", "source": "$pagination-toggle-border-sm" }
-      }
-    },
-    "secondary": {
-      "height": {
-        "base": { "value": "2.75rem", "source": "$pagination-secondary-height" },
-        "sm": { "value": "2.25rem", "source": "$pagination-secondary-height-sm" }
-      }
-    },
-    "color": {
-      "base": { "value": "{color.link.value}", "source": "$pagination-color" },
-      "inverse": { "value": "{color.white.value}", "source": "$pagination-color-inverse" },
-      "hover": { "value": "{link.hover.color.value}", "source": "$pagination-hover-color" },
-      "active": { "value": "{color.active.value}", "source": "$pagination-active-color" },
-      "disabled": { "value": "{color.disabled.value}", "source": "$pagination-disabled-color" }
-    },
-    "bg": {
-      "base": { "value": "{color.background.base.value}", "source": "$pagination-bg" },
-      "hover": { "value": "{color.gray.100.value}", "source": "$pagination-hover-bg" },
-      "active": { "value": "{color.background.active.value}", "source": "$pagination-active-bg" },
-      "disabled": { "value": "{color.white.value}", "source": "$pagination-disabled-bg" }
-    },
-    "border": {
-      "width": { "value": "{size.border.width.value}", "source": "$pagination-border-width" },
-      "color": {
         "base": { "value": "{color.gray.200.value}", "source": "$pagination-border-color" },
         "hover": { "value": "{color.gray.200.value}", "source": "$pagination-hover-border-color" },
-        "active": { "value": "{pagination.bg.active.value}", "source": "$pagination-active-border-color" },
+        "active": { "value": "{color.pagination.bg.active.value}", "source": "$pagination-active-border-color" },
         "disabled": { "value": "{color.gray.100.value}", "source": "$pagination-disabled-border-color" }
       },
-      "radius": {
-        "sm": { "value": "{size.border.radius.sm.value}", "source": "$pagination-border-radius-sm" },
-        "lg": { "value": "{size.border.radius.lg.value}", "source": "$pagination-border-radius-lg" }
-      }
-    },
-    "focus": {
-      "box-shadow": {
-        "value": "{input.btn.focus.box-shadow.value}", "source": "$pagination-focus-box-shadow"
-      },
-      "outline": { "value": "0", "source": "$pagination-focus-outline" },
-      "border": {
-        "width": { "value": ".125rem", "source": "$pagination-focus-border-width" }
-      },
-      "color": {
+      "focus": {
         "base": { "value": "{color.primary.500.value}", "source": "$pagination-focus-color" },
         "text": { "value": "{color.black.value}", "source": "$pagination-focus-color-text" }
       }
     }
   },
-  "reduced": {
-    "dropdown": {
-      "height": {
-        "max": { "value": "60vh", "source": "$pagination-reduced-dropdown-max-height" }
+  "typography": {
+    "pagination": {
+      "font-size": {
+        "sm": { "value": ".875rem", "source": "$pagination-font-size-sm" }
       },
-      "width": {
-        "min": { "value": "6rem", "source": "$pagination-reduced-dropdown-min-width" }
+      "line-height": { "value": "1.5rem", "source": "$pagination-line-height" }
+    }
+  },
+  "spacing": {
+    "pagination": {
+      "padding": {
+        "y": {
+          "base": { "value": ".625rem", "source": "$pagination-padding-y" },
+          "sm": { "value": ".8rem", "source": "$pagination-padding-y-sm" },
+          "lg": { "value": ".75rem", "source": "$pagination-padding-y-lg" }
+        },
+        "x": {
+          "base": { "value": "1rem", "source": "$pagination-padding-x" },
+          "sm": { "value": ".6rem", "source": "$pagination-padding-x-sm" },
+          "lg": { "value": "1.5rem", "source": "$pagination-padding-x-lg" }
+        },
+        "icon": { "value": ".5rem", "source": "$pagination-padding-icon" }
+      },
+      "margin": {
+        "x": { "value": ".5rem", "source": "$pagination-margin-x" },
+        "y": { "value": ".5rem", "source": "$pagination-margin-y" }
+      }
+    }
+  },
+  "size": {
+    "pagination": {
+      "icon": {
+        "base": { "value": "1.375rem", "source": "$pagination-icon-size" },
+        "sm": { "value": "1rem", "source": "$pagination-icon-size-sm" },
+        "width": { "value": "2.25rem", "source": "$pagination-icon-width" },
+        "height": { "value": "2.25rem", "source": "$pagination-icon-height" }
+      },
+      "secondary": {
+        "height": {
+          "base": { "value": "2.75rem", "source": "$pagination-secondary-height" },
+          "sm": { "value": "2.25rem", "source": "$pagination-secondary-height-sm" }
+        }
+      },
+      "border": {
+        "width": { "value": "{size.border.width.value}", "source": "$pagination-border-width" },
+        "radius": {
+          "sm": { "value": "{size.border.radius.sm.value}", "source": "$pagination-border-radius-sm" },
+          "lg": { "value": "{size.border.radius.lg.value}", "source": "$pagination-border-radius-lg" }
+        }
+      },
+      "reduced": {
+        "dropdown": {
+          "max-height": { "value": "60vh", "source": "$pagination-reduced-dropdown-max-height" },
+          "min-width": { "value": "6rem", "source": "$pagination-reduced-dropdown-min-width" }
+        }
+      },
+      "toggle": {
+        "border": {
+          "base": { "value": ".3125rem", "source": "$pagination-toggle-border" },
+          "sm": { "value": ".25rem", "source": "$pagination-toggle-border-sm" }
+        }
+      },
+      "focus": {
+        "border-width": { "value": ".125rem", "source": "$pagination-focus-border-width" },
+        "outline": { "value": "0", "source": "$pagination-focus-outline" }
+      }
+    }
+  },
+  "elevation": {
+    "pagination": {
+      "focus": {
+        "box-shadow": { "value": "{input.btn.focus.box-shadow.value}", "source": "$pagination-focus-box-shadow" }
       }
     }
   }

@@ -37,7 +37,7 @@ const config = {
           },
         },
       ],
-      transforms: StyleDictionary.transformGroup.css.concat('color/sass-color-functions', 'str-replace'),
+      transforms: StyleDictionary.transformGroup.css.filter(item => item !== 'size/rem').concat('color/sass-color-functions', 'str-replace'),
       options: {
         showFileHeader: false,
       },

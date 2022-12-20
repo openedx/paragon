@@ -1,8 +1,8 @@
 {
-  "product-tour": {
-    "checkpoint": {
-      "color": {
-        "background": { "value": "{color.light.300.value}", "source": "$checkpoint-background-color" },
+  "color": {
+    "product-tour": {
+      "checkpoint": {
+        "bg": { "value": "{color.light.300.value}", "source": "$checkpoint-background-color" },
         "body": { "value": "{color.gray.700.value}", "source": "$checkpoint-body-color" },
         "border": { "value": "{color.brand.500.value}", "source": "$checkpoint-border-color" },
         "breadcrumb": { "value": "{color.primary.500.value}", "source": "$checkpoint-breadcrumb-color" },
@@ -13,30 +13,52 @@
             "type": "alpha",
             "amount": 0.3
           }]
-        }
-      },
-      "width": {
-        "border": { "value": "8px", "source": "$checkpoint-border-width" },
-        "arrow": { "value": "15px", "source": "$checkpoint-arrow-width" },
-        "max": { "value": "480px", "source": "$checkpoint-max-width" }
-      },
-      "arrow": {
-        "color": {
-          "top": {
-            "value": "solid {product-tour.checkpoint.width.arrow.value} {product-tour.checkpoint.width.border.value}",
-            "source": "$checkpoint-arrow-top-color"
-          },
-          "default": {
-            "value": "solid {product-tour.checkpoint.width.arrow.value} {product-tour.checkpoint.color.background.value}",
-            "source": "$checkpoint-arrow-default-color"
-          }
         },
-        "transparent": {
-          "value": "solid {product-tour.checkpoint.width.arrow.value} transparent",
-          "source": "$checkpoint-arrow-transparent"
+        "arrow": {
+          "border": {
+            "top": {
+              "value": "{color.product-tour.checkpoint.bg.value}",
+              "source": "$checkpoint-arrow-border-top-color"
+            },
+            "transparent": {
+              "value": "transparent",
+              "source": "$checkpoint-arrow-border-color-transparent"
+            }
+          }
         }
-      },
-      "zindex": { "value": "1060", "source": "$checkpoint-z-index" }
+      }
+    }
+  },
+  "size": {
+    "product-tour": {
+      "checkpoint": {
+        "width": {
+          "border": { "value": "8px", "source": "$checkpoint-border-width" },
+          "arrow": { "value": "15px", "source": "$checkpoint-arrow-width" },
+          "max": { "value": "480px", "source": "$checkpoint-max-width" }
+        },
+        "arrow": {
+          "bottom": {
+            "value": "{size.product-tour.checkpoint.width.arrow.value} {size.product-tour.checkpoint.width.border.value}",
+            "source": "$checkpoint-arrow-border-bottom"
+          },
+          "top": {
+            "value": "{size.product-tour.checkpoint.width.arrow.value}",
+            "source": "$checkpoint-arrow-border-top"
+          },
+          "transparent": {
+            "value": "{size.product-tour.checkpoint.width.arrow.value}",
+            "source": "$checkpoint-arrow-border-transparent"
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "product-tour": {
+      "checkpoint": {
+        "zindex": { "value": "1060", "source": "$checkpoint-z-index" }
+      }
     }
   }
 }

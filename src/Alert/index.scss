@@ -99,19 +99,6 @@
 }
 
 // Alternate styles
-//
-// Generate contextual modifier classes for coloring the alert.
-//
-//@each $color, $value in $theme-colors {
-//  .alert-#{$color} {
-//    background-color: theme-color($color, "background");
-//    border-color: theme-color($color, "border");
-//
-//    .alert-icon {
-//      color: theme-color($color, "default");
-//    }
-//  }
-//}
 
 .alert-success {
   --pgn-alert-bg: #{$alert-success-bg};

@@ -1,9 +1,9 @@
 {
-  "selectable-box": {
-    "padding": { "value": "1rem", "source": "$selectable-box-padding" },
-    "border": {
-      "radius": { "value": ".25rem", "source": "$selectable-box-border-radius" }
-    },
-    "box-space": { "value": ".75rem", "source": "$selectable-box-space" }
+  "spacing": {
+    "selectable-box": {
+      "padding": { "value": "1rem", "source": "$selectable-box-padding" },
+      "border-radius": { "value": ".25rem", "source": "$selectable-box-border-radius" },
+      "box-space": { "value": ".75rem", "source": "$selectable-box-space" }
+    }
   }
 }

@@ -1,40 +1,40 @@
 // Navbar
 
-$navbar-padding-y: var(--pgn-navbar-padding-y) !default;
-$navbar-padding-x: var(--pgn-navbar-padding-x-base) !default;
+$navbar-padding-y: var(--pgn-spacing-navbar-padding-y) !default;
+$navbar-padding-x: var(--pgn-spacing-navbar-padding-x-base) !default;
 
-$navbar-nav-link-padding-x: var(--pgn-navbar-padding-x-nav-link) !default;
+$navbar-nav-link-padding-x: var(--pgn-spacing-navbar-padding-x-nav-link) !default;
 
-$navbar-brand-font-size: var(--pgn-navbar-brand-font-size) !default;
+$navbar-brand-font-size: var(--pgn-typography-navbar-brand-font-size) !default;
 
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 // The default for var(--pgn-nav-link-padding-y) is .5rem. Copied here for modularization
-$nav-link-height: var(--pgn-navbar-nav-link-height) !default;
-$navbar-brand-height: var(--pgn-navbar-brand-height) !default;
-$navbar-brand-padding-y: var(--pgn-navbar-brand-padding-y) !default;
+$nav-link-height: var(--pgn-typography-navbar-nav-link-height) !default;
+$navbar-brand-height: var(--pgn-size-navbar-brand-height) !default;
+$navbar-brand-padding-y: var(--pgn-spacing-navbar-brand-padding-y) !default;
 
-$navbar-toggler-padding-y: var(--pgn-navbar-toggler-padding-y) !default;
-$navbar-toggler-padding-x: var(--pgn-navbar-toggler-padding-x) !default;
-$navbar-toggler-font-size: var(--pgn-navbar-toggler-font-size) !default;
-$navbar-toggler-border-radius: var(--pgn-navbar-toggler-border-radius) !default;
+$navbar-toggler-padding-y: var(--pgn-spacing-navbar-toggler-padding-y) !default;
+$navbar-toggler-padding-x: var(--pgn-spacing-navbar-toggler-padding-x) !default;
+$navbar-toggler-font-size: var(--pgn-typography-navbar-toggler-font-size) !default;
+$navbar-toggler-border-radius: var(--pgn-size-navbar-toggler-border-radius) !default;
 
-$navbar-nav-scroll-max-height: var(--pgn-navbar-nav-scroll-max-height) !default;
+$navbar-nav-scroll-max-height: var(--pgn-size-navbar-nav-scroll-max-height) !default;
 
-$navbar-dark-color: var(--pgn-navbar-dark-color-text) !default;
-$navbar-dark-hover-color: var(--pgn-navbar-dark-color-hover) !default;
-$navbar-dark-active-color: var(--pgn-navbar-dark-color-active) !default;
-$navbar-dark-disabled-color: var(--pgn-navbar-dark-color-disabled) !default;
-$navbar-dark-toggler-icon-bg: var(--pgn-navbar-dark-toggler-icon-bg) !default;
-$navbar-dark-toggler-border-color: var(--pgn-navbar-dark-toggler-border-color) !default;
+$navbar-dark-color: var(--pgn-color-navbar-dark-text) !default;
+$navbar-dark-hover-color: var(--pgn-color-navbar-dark-hover) !default;
+$navbar-dark-active-color: var(--pgn-color-navbar-dark-active) !default;
+$navbar-dark-disabled-color: var(--pgn-color-navbar-dark-disabled) !default;
+$navbar-dark-toggler-icon-bg: var(--pgn-content-navbar-toggler-dark-icon-bg) !default;
+$navbar-dark-toggler-border-color: var(--pgn-color-navbar-dark-toggler-border) !default;
 
-$navbar-light-color: var(--pgn-navbar-light-color-text) !default;
-$navbar-light-hover-color: var(--pgn-navbar-light-color-hover) !default;
-$navbar-light-active-color: var(--pgn-navbar-light-color-active) !default;
-$navbar-light-disabled-color: var(--pgn-navbar-light-color-disabled) !default;
-$navbar-light-toggler-icon-bg: var(--pgn-navbar-light-toggler-icon-bg) !default;
-$navbar-light-toggler-border-color: var(--pgn-navbar-light-toggler-border-color) !default;
+$navbar-light-color: var(--pgn-color-navbar-light-text) !default;
+$navbar-light-hover-color: var(--pgn-color-navbar-light-hover) !default;
+$navbar-light-active-color: var(--pgn-color-navbar-light-active) !default;
+$navbar-light-disabled-color: var(--pgn-color-navbar-light-disabled) !default;
+$navbar-light-toggler-icon-bg: var(--pgn-content-navbar-toggler-light-icon-bg) !default;
+$navbar-light-toggler-border-color: var(--pgn-color-navbar-light-toggler-border) !default;
 
-$navbar-light-brand-color: var(--pgn-navbar-light-brand-color-base) !default;
-$navbar-light-brand-hover-color: var(--pgn-navbar-light-brand-color-hover) !default;
-$navbar-dark-brand-color: var(--pgn-navbar-dark-brand-color-base) !default;
-$navbar-dark-brand-hover-color: var(--pgn-navbar-dark-brand-color-hover) !default;
+$navbar-light-brand-color: var(--pgn-color-navbar-light-brand-text) !default;
+$navbar-light-brand-hover-color: var(--pgn-color-navbar-light-brand-hover) !default;
+$navbar-dark-brand-color: var(--pgn-color-navbar-dark-brand-text) !default;
+$navbar-dark-brand-hover-color: var(--pgn-color-navbar-dark-brand-hover) !default;

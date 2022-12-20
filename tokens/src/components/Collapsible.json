@@ -1,23 +1,23 @@
 {
-  "collapsible": {
-    "card": {
-      "spacer": {
-        "y": {
-          "base": { "value": ".5rem", "source": "$collapsible-card-spacer-y" },
-          "lg": { "value": "{card.spacer.y.value}", "source": "$collapsible-card-spacer-y-lg" }
-        },
-        "x": {
-          "base": { "value": ".5rem", "source": "$collapsible-card-spacer-x" },
-          "lg": { "value": "{card.spacer.x.value}", "source": "$collapsible-card-spacer-x-lg" }
-        },
-        "left": {
-          "body": { "value": ".75rem", "source": "$collapsible-card-body-spacer-left" }
-        },
-        "icon": { "value": "2.5rem", "source": "$collapsible-card-spacer-icon" },
-        "basic": {
-          "y": { "value": ".5rem", "source": "$collapsible-basic-spacer-y" },
-          "x": { "value": ".5rem", "source": "$collapsible-basic-spacer-x" },
-          "icon": { "value": ".625rem", "source": "$collapsible-basic-spacer-icon" }
+  "spacing": {
+    "collapsible": {
+      "card": {
+        "spacer": {
+          "y": {
+            "base": { "value": ".5rem", "source": "$collapsible-card-spacer-y" },
+            "lg": { "value": "{spacing.card.spacer.y.value}", "source": "$collapsible-card-spacer-y-lg" }
+          },
+          "x": {
+            "base": { "value": ".5rem", "source": "$collapsible-card-spacer-x" },
+            "lg": { "value": "{spacing.card.spacer.x.value}", "source": "$collapsible-card-spacer-x-lg" }
+          },
+          "left-body": { "value": ".75rem", "source": "$collapsible-card-body-spacer-left" },
+          "icon": { "value": "2.5rem", "source": "$collapsible-card-spacer-icon" },
+          "basic": {
+            "y": { "value": ".5rem", "source": "$collapsible-basic-spacer-y" },
+            "x": { "value": ".5rem", "source": "$collapsible-basic-spacer-x" },
+            "icon": { "value": ".625rem", "source": "$collapsible-basic-spacer-icon" }
+          }
         }
       }
     }
