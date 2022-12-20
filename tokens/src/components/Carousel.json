@@ -1,59 +1,75 @@
 {
-  "carousel": {
-    "control": {
-      "color": { "value": "{color.white.value}", "source": "$carousel-control-color" },
-      "width": {
-        "base": { "value": "15%", "source": "$carousel-control-width" },
-        "icon": { "value": "20px", "source": "$carousel-control-icon-width" }
+  "color": {
+    "carousel": {
+      "control": {
+        "base": { "value": "{color.white.value}", "source": "$carousel-control-color" },
+        "opacity": {
+          "base": { "value": ".5", "source": "$carousel-control-opacity" },
+          "hover": { "value": ".9", "source": "$carousel-control-hover-opacity" }
+        }
       },
-      "opacity": {
-        "base": { "value": ".5", "source": "$carousel-control-opacity" },
-        "hover": { "value": ".9", "source": "$carousel-control-hover-opacity" }
+      "indicator": {
+        "active-bg": { "value": "{color.white.value}", "source": "$carousel-indicator-active-bg" }
       },
-      "transition": { "value": "opacity .15s ease", "source": "$carousel-control-transition" },
-      "bg": {
-        "prev-icon": {
-          "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{carousel.control.color}' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e\")",
-          "source": "$carousel-control-prev-icon-bg",
-          "outputReferences": false,
-          "modify": [{
-            "type": "str-replace",
-            "toReplace": "#",
-            "replaceWith": "%23"
-          }]
-        },
-        "next-icon": {
-          "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{carousel.control.color}' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e\")",
-          "source": "$carousel-control-next-icon-bg",
-          "outputReferences": false,
-          "modify": [{
-            "type": "str-replace",
-            "toReplace": "#",
-            "replaceWith": "%23"
-          }]
+      "caption": { "value": "{color.white.value}", "source": "$carousel-caption-color" }
+    }
+  },
+  "size": {
+    "carousel": {
+      "control": {
+        "width": {
+          "base": { "value": "15%", "source": "$carousel-control-width" },
+          "icon": { "value": "20px", "source": "$carousel-control-icon-width" }
+        }
+      },
+      "indicator": {
+        "width": { "value": "30px", "source": "$carousel-indicator-width" },
+        "height": {
+          "base": { "value": "3px", "source": "$carousel-indicator-height" },
+          "area-hit": { "value": "3px", "source": "$carousel-indicator-hit-area-height" }
+        }
+      },
+      "caption-width": { "value": "70%", "source": "$carousel-caption-width" }
+    }
+  },
+  "spacing": {
+    "carousel": {
+      "indicator-spacer": { "value": "3px", "source": "$carousel-indicator-spacer" }
+    }
+  },
+  "transition": {
+    "carousel": {
+      "duration": { "value": ".6s", "source": "$carousel-transition-duration" },
+      "indicator": { "value": "opacity .6s ease", "source": "$carousel-indicator-transition" },
+      "control": { "value": "opacity .15s ease", "source": "$carousel-control-transition" }
+    }
+  },
+  "content": {
+    "carousel": {
+      "control": {
+        "bg": {
+          "prev-icon": {
+            "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.carousel.control.base.value}' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e\")",
+            "source": "$carousel-control-prev-icon-bg",
+            "outputReferences": false,
+            "modify": [{
+              "type": "str-replace",
+              "toReplace": "#",
+              "replaceWith": "%23"
+            }]
+          },
+          "next-icon": {
+            "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.carousel.control.base.value}' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e\")",
+            "source": "$carousel-control-next-icon-bg",
+            "outputReferences": false,
+            "modify": [{
+              "type": "str-replace",
+              "toReplace": "#",
+              "replaceWith": "%23"
+            }]
+          }
         }
       }
-    },
-    "indicator": {
-      "width": { "value": "30px", "source": "$carousel-indicator-width" },
-      "height": {
-        "base": { "value": "3px", "source": "$carousel-indicator-height" },
-        "area": {
-          "hit": { "value": "3px", "source": "$carousel-indicator-hit-area-height" }
-        }
-      },
-      "spacer": { "value": "3px", "source": "$carousel-indicator-spacer" },
-      "active": {
-        "bg": { "value": "{color.white.value}", "source": "$carousel-indicator-active-bg" }
-      },
-      "transition": { "value": "opacity .6s ease", "source": "$carousel-indicator-transition" }
-    },
-    "caption": {
-      "width": { "value": "70%", "source": "$carousel-caption-width" },
-      "color": { "value": "{color.white.value}", "source": "$carousel-caption-color" }
-    },
-    "transition": {
-      "duration": { "value": ".6s", "source": "$carousel-transition-duration" }
     }
   }
 }

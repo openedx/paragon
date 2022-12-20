@@ -188,7 +188,7 @@
   justify-content: space-between;
   padding: $data-table-padding-x $data-table-padding-y;
   align-items: center;
-  border-top: $data-table-border;
+  border-top: $data-table-border solid $data-table-border-color;
 
   .btn-icon .pgn__icon {
     [dir="rtl"] & {
