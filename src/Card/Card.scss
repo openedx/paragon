@@ -26,6 +26,11 @@
     .pgn__card-section {
       @extend %dark-variant-content;
     }
+
+    .pgn__card-footer,
+    .pgn__card-footer-text {
+      @extend %dark-variant-content;
+    }
   }
 
   &.pgn__card-muted {

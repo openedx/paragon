@@ -88,7 +88,7 @@ Use `variant` prop to use `Card` specific style variant.
         <Card.Section>
           This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
         </Card.Section>
-        <Card.Footer>
+        <Card.Footer textElement="Course">
           <Button
             variant={cardVariant === 'dark' ? 'inverse-primary' : 'primary'}
           >
