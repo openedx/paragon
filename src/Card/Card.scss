@@ -21,6 +21,12 @@
 
     .pgn__card-header {
       @extend %dark-variant-content;
+
+      .pgn__card-header-title,
+      .pgn__card-header-title-sm,
+      .pgn__card-header-title-md {
+        @extend %dark-variant-content;
+      }
     }
 
     .pgn__card-section {
