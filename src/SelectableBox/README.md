@@ -35,32 +35,34 @@ As ``Checkbox``
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
   
   return (
-    <SelectableBox.Set
-      value={checkedCheeses}
-      type={type}
-      onChange={handleChange}
-      name="cheeses"
-      columns={isExtraSmall ? 1 : 2}
-    >
-      <SelectableBox value="swiss" type={type} aria-label="checkbox">
-        <div>
-          <h3>It is my first SelectableBox</h3>
-          <p>Swiss</p>
-        </div>
-      </SelectableBox>
-      <SelectableBox value="cheddar" inputHidden={false} type={type} aria-label="checkbox">
-        Cheddar
-      </SelectableBox>
-      <SelectableBox
-        value="pepperjack"
-        inputHidden={false}
+    <div className="bg-light-200 p-3">
+      <SelectableBox.Set
+        value={checkedCheeses}
         type={type}
-        isInvalid={isInvalid()}
-        aria-label="checkbox"
+        onChange={handleChange}
+        name="cheeses"
+        columns={isExtraSmall ? 1 : 2}
       >
-        <h3>Pepperjack</h3>
-      </SelectableBox>
-    </SelectableBox.Set>
+        <SelectableBox value="swiss" type={type} aria-label="checkbox">
+          <div>
+            <h3>It is my first SelectableBox</h3>
+            <p>Swiss</p>
+          </div>
+        </SelectableBox>
+        <SelectableBox value="cheddar" inputHidden={false} type={type} aria-label="checkbox">
+          Cheddar
+        </SelectableBox>
+        <SelectableBox
+          value="pepperjack"
+          inputHidden={false}
+          type={type}
+          isInvalid={isInvalid()}
+          aria-label="checkbox"
+        >
+          <h3>Pepperjack</h3>
+        </SelectableBox>
+      </SelectableBox.Set>
+    </div>
   );
 }
 ```

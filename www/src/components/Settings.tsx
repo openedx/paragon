@@ -28,6 +28,7 @@ const Settings = () => {
       position="right"
       show={showSettings}
       variant="light"
+      onClose={closeSettings}
     >
       <div className="d-flex align-items-center justify-content-between mb-3">
         <h3 className="mb-0">Settings</h3>
