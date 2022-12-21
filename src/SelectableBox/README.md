@@ -35,7 +35,7 @@ As ``Checkbox``
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
   
   return (
-    <div className="bg-primary-500 p-5">
+    <div className="bg-light-200 p-3">
       <SelectableBox.Set
         value={checkedCheeses}
         type={type}
