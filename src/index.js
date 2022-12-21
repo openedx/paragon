@@ -15,6 +15,7 @@ export {
   CardImg,
   CardGroup,
   CardGrid,
+  CARD_VARIANTS,
 } from './Card';
 export {
   default as Carousel, CarouselItem, CAROUSEL_NEXT_LABEL_TEXT, CAROUSEL_PREV_LABEL_TEXT,
