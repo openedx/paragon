@@ -76,7 +76,14 @@ Use `variant` prop to use `Card` specific style variant.
           srcAlt="Card image"
         />
         <Card.Header
-          title="Card Title"
+          title={(
+            <Hyperlink
+              destination="https://google.com"
+              target="_blank"
+            >
+              Card Title
+             </Hyperlink>
+          )}
         />
         <Card.Section>
           This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.

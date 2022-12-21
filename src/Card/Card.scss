@@ -4,33 +4,32 @@
 .pgn__card,
 .pgn__card-body {
   width: 100%;
+  border: 0;
 
-  &.pgn__card-dark {
-    border: 0;
-    background-color: $primary-500;
+  %dark-variant-content {
     color: $white;
 
-    .pgn__card-header {
-      .pgn__card-header-title,
-      .pgn__card-header-title-sm,
-      .pgn__card-header-title-md {
-        color: $white;
-      }
-
-      .pgn__card-header-subtitle,
-      .pgn__card-header-subtitle-sm,
-      .pgn__card-header-subtitle-md {
-        color: $white;
-      }
-    }
-
-    .pgn__card-section .pgn__card-section-title {
+    a {
       color: $white;
     }
   }
 
+  &.pgn__card-dark {
+    background-color: $card-bg-dark;
+
+    @extend %dark-variant-content;
+
+    .pgn__card-header {
+      @extend %dark-variant-content;
+    }
+
+    .pgn__card-section {
+      @extend %dark-variant-content;
+    }
+  }
+
   &.pgn__card-muted {
-    background-color: $light-200;
+    background-color: $card-bg-muted;
   }
 }
 
@@ -293,9 +292,23 @@ a .pgn__card {
 }
 
 %pgn__card-focused {
-  box-shadow: $level-1-box-shadow;
+  box-shadow: none;
   outline: none;
-  border-color: $card-border-focus-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(-1 * #{$card-focus-border-offset});
+    right: calc(-1 * #{$card-focus-border-offset});
+    bottom: calc(-1 * #{$card-focus-border-offset});
+    left: calc(-1 * #{$card-focus-border-offset});
+    border: solid $card-focus-border-width $card-border-focus-color;
+    border-radius: $card-focus-border-radius;
+  }
+
+  &.pgn__card-dark::before {
+    border: solid $card-focus-border-width $card-border-focus-color-dark;
+  }
 }
 
 .pgn__card {
