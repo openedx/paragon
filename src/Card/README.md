@@ -75,16 +75,7 @@ Use `variant` prop to use `Card` specific style variant.
           src="https://picsum.photos/360/200/"
           srcAlt="Card image"
         />
-        <Card.Header
-          title={(
-            <Hyperlink
-              destination="https://google.com"
-              target="_blank"
-            >
-              Card Title
-             </Hyperlink>
-          )}
-        />
+        <Card.Header title="Card Title" />
         <Card.Section>
           This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
         </Card.Section>
