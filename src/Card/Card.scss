@@ -24,7 +24,10 @@
 
       .pgn__card-header-title,
       .pgn__card-header-title-sm,
-      .pgn__card-header-title-md {
+      .pgn__card-header-title-md,
+      .pgn__card-header-subtitle,
+      .pgn__card-header-subtitle-sm,
+      .pgn__card-header-subtitle-md {
         @extend %dark-variant-content;
       }
     }
