@@ -712,9 +712,7 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
@@ -730,9 +728,7 @@ behavior.
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This content is a little bit longer.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
@@ -749,9 +745,7 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
@@ -768,9 +762,7 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
@@ -786,9 +778,7 @@ behavior.
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This content is a little bit longer.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
@@ -805,9 +795,7 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
 </CardGrid>
 ```
@@ -819,7 +807,7 @@ Displays child `Card` components in a horizontal row with equal height and width
 ```jsx live
 () => {
   const CardComponent = () => (
-    <Card>
+    <Card isClickable>
       <Card.ImageCap
         src="https://picsum.photos/360/200/"
         srcAlt="Card image"
@@ -847,7 +835,7 @@ Displays child `Card` components in a horizontal row with equal height and width
 
 Gives any child `Card` components equal height with an appropriate gutter between cards. Each child `Card` component's width will be adjusted (e.g., become more narrow) to ensure all `Card` components fit within its parent's width.
 
-Note: This component A pass-thru from `react-bootstrap`
+Note: This component is a pass-thru from `react-bootstrap`.
 
 ```jsx live
 () => {

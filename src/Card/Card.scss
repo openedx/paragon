@@ -55,7 +55,7 @@ a .pgn__card {
 
 .pgn__card-grid {
   .row > div[class*="col-"] {
-    margin-bottom: $card-grid-margin;
+    margin-bottom: $card-grid-margin-bottom;
   }
 }
 
@@ -68,15 +68,24 @@ a .pgn__card {
 }
 
 .pgn__card-deck {
-  margin: -5px -5px;
-  padding: 5px 5px;
+  position: relative;
+  margin: -$card-focus-border-offset;
+  padding: $card-focus-border-offset;
+  margin-bottom: $card-deck-margin-bottom;
   overflow: hidden;
   overflow-x: scroll;
 
-  border: 1px solid $primary-500;
+  &:focus-visible {
+    outline: $card-focus-border-width solid $card-border-focus-color;
+    border-radius: $card-focus-border-radius
+  }
 
   .pgn__card-deck-row {
     flex-wrap: nowrap;
+    
+    > div[class*="col"]:last-child {
+      padding-right: $card-focus-border-offset;
+    }
   }
 }
 
@@ -348,7 +357,8 @@ a .pgn__card {
 
   &.clickable {
     &:hover,
-    &:focus {
+    &:focus,
+    &.focus {
       cursor: pointer;
       @include pgn-box-shadow(2, "down");
     }
