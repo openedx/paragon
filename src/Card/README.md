@@ -812,71 +812,63 @@ behavior.
 </CardGrid>
 ```
 
-## CardDeck (Deprecated)
+## CardDeck
 
-This component gives any child Card components equal height with an appropriate gutter between cards. However,
-it is meant to be used as a single horizontal row of Cards, not as a grid. See CardGrid for more details.
-
-**Note**: this component is deprecated and is going to be removed soon.
+Displays child `Card` components in a horizontal row with equal height and width, along with an  appropriate gutter between cards. The width of the child `Card` components is determined by the (optional) `columnSizes` prop. If any child `Card` components overflow beyond the parent's width, they will be hidden but accessible via scrolling horizontally or keyboard navigation (e.g., if the cards are clickable).
 
 ```jsx live
-<CardDeck>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This content is a little bit longer.
-    </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-</CardDeck>
+() => {
+  const CardComponent = () => (
+    <Card>
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header title="Card title" />
+      <Card.Section  title="Section title">
+        <HipsterIpsum numShortParagraphs={1} />
+      </Card.Section>
+    </Card>
+  );
+  return (
+    <CardDeck>
+      <CardComponent />
+      <CardComponent />
+      <CardComponent />
+      <CardComponent />
+      <CardComponent />
+    </CardDeck>
+  );
+}
 ```
 
+### CardDeck.Deprecated
+
+
+Gives any child `Card` components equal height with an appropriate gutter between cards. Each child `Card` component's width will be adjusted (e.g., become more narrow) to ensure all `Card` components fit within its parent's width.
+
+Note: This component A pass-thru from `react-bootstrap`
+
+```jsx live
+() => {
+  const CardComponent = () => (
+    <Card>
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header title="Card title" />
+      <Card.Section title="Section title">
+        <HipsterIpsum numShortParagraphs={1} />
+      </Card.Section>
+    </Card>
+  );
+  return (
+    <CardDeck.Deprecated>
+      <CardComponent />
+      <CardComponent />
+      <CardComponent />
+    </CardDeck.Deprecated>
+  )
+}
+```
