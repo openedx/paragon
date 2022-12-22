@@ -137,12 +137,36 @@ class Pagination extends React.Component {
   }
 
   renderPageButton(page) {
-    const { buttonLabels } = this.props;
+    const { buttonLabels, invertColors } = this.props;
     const active = page === this.state.currentPage || null;
 
     let ariaLabel = `${buttonLabels.page} ${page}`;
     if (active) {
       ariaLabel += `, ${buttonLabels.currentPage}`;
+    }
+
+    if (invertColors) {
+      return (
+        <li
+          className={classNames([
+            'page-item',
+            {
+              active,
+            },
+          ])}
+          key={page}
+        >
+          <Button
+            className="page-link"
+            aria-label={ariaLabel}
+            variant={active ? 'inverse-primary' : 'inverse-tertiary'}
+            ref={(element) => { this.pageRefs[page] = element; }}
+            onClick={() => { this.handlePageSelect(page); }}
+          >
+            {page.toString()}
+          </Button>
+        </li>
+      );
     }
 
     return (

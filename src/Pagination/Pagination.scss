@@ -159,6 +159,12 @@
       color: $pagination-page-link-color;
     }
 
+    button.page-link.btn-inverse-tertiary:hover {
+      color: $white;
+      background-color: #2D494E;
+      border-color: rgba(0, 0, 0, 0);
+    }
+
     button.page-link {
       @extend %dark-styles;
 
