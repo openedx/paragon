@@ -69,11 +69,10 @@ a .pgn__card {
 
 .pgn__card-deck {
   position: relative;
-  margin: -$card-focus-border-offset;
-  padding: $card-focus-border-offset;
+  margin: 0 -$card-focus-border-offset;
+  padding: 0 $card-focus-border-offset;
   margin-bottom: $card-deck-margin-bottom;
   overflow: hidden;
-  overflow-x: scroll;
 
   &:focus-visible {
     outline: $card-focus-border-width solid $card-border-focus-color;
@@ -81,11 +80,19 @@ a .pgn__card {
   }
 
   .pgn__card-deck-row {
+    overflow: hidden;
+    overflow-x: scroll;
     flex-wrap: nowrap;
+    padding-top: $card-focus-border-offset;
+    padding-bottom: $card-focus-border-offset;
     
-    > div[class*="col"]:last-child {
-      padding-right: $card-focus-border-offset;
-    }
+    // > div[class*="col"]:first-child {
+    //   padding-left: $card-focus-border-offset;
+    // }
+
+    // > div[class*="col"]:last-child {
+    //   padding-right: $card-focus-border-offset;
+    // }
   }
 }
 

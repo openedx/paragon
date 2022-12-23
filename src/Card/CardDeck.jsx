@@ -5,12 +5,12 @@ import BaseCardDeck from 'react-bootstrap/CardDeck';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function CardDeck({
+const CardDeck = React.forwardRef(({
   className,
   children,
   columnSizes,
   hasInteractiveChildren,
-}) {
+}, ref) => {
   const cards = useMemo(
     () => React.Children.map(children, card => (
       <Col {...columnSizes}>
@@ -22,6 +22,7 @@ function CardDeck({
 
   return (
     <div
+      ref={ref}
       className={classNames('pgn__card-deck', className)}
       tabIndex={hasInteractiveChildren ? -1 : 0}
     >
@@ -30,7 +31,7 @@ function CardDeck({
       </Row>
     </div>
   );
-}
+});
 
 CardDeck.propTypes = {
   /** The class name for the CardDeck component */

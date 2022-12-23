@@ -807,7 +807,7 @@ Displays child `Card` components in a horizontal row with equal height and width
 ```jsx live
 () => {
   const CardComponent = () => (
-    <Card isClickable>
+    <Card>
       <Card.ImageCap
         src="https://picsum.photos/360/200/"
         srcAlt="Card image"
