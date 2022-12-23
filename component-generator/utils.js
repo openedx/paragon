@@ -1,9 +1,9 @@
 const { InvalidOptionArgumentError } = require('commander');
 const fs = require('fs');
 const path = require('path');
-const axios = require('axios');
+const axios = require('axios'); /* eslint-disable-line import/no-unresolved */
 const { exec } = require('child_process');
-require('dotenv').config();
+require('dotenv').config(); /* eslint-disable-line import/no-unresolved */
 
 /**
  * Transforms PascalCase to kebab-case.
