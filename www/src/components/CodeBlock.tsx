@@ -5,6 +5,7 @@ import React, {
   useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import axios from 'axios';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/duotoneDark';
@@ -84,6 +85,7 @@ function CodeBlock({
             formatMessage: intl.formatMessage,
             MenuIcon: ParagonIcons.Menu,
             axios,
+            GatsbyLink: Link,
           }}
           theme={theme}
         >
