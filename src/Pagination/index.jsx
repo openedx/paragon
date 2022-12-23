@@ -208,6 +208,7 @@ class Pagination extends React.Component {
     } = this.props;
     const { currentPage } = this.state;
     const isFirstPage = currentPage === 1;
+    const isDisabled = isFirstPage || pageCount === 0;
     const previousPage = isFirstPage ? null : currentPage - 1;
     const iconSize = (variant !== VARIANTS.reduced && size !== 'small') || variant === VARIANTS.minimal;
 
@@ -221,7 +222,7 @@ class Pagination extends React.Component {
         className={classNames(
           'page-item',
           {
-            disabled: isFirstPage,
+            disabled: isDisabled,
           },
         )}
       >
@@ -231,10 +232,10 @@ class Pagination extends React.Component {
               <Button
                 className="previous page-link"
                 aria-label={ariaLabel}
-                tabIndex={isFirstPage ? '-1' : undefined}
+                tabIndex={isDisabled ? '-1' : undefined}
                 onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
                 ref={(element) => { this.previousButtonRef = element; }}
-                disabled={isFirstPage}
+                disabled={isDisabled}
               >
                 <div>
                   {icons.leftIcon}
@@ -248,10 +249,10 @@ class Pagination extends React.Component {
                 iconAs={Icon}
                 className="previous page-link"
                 aria-label={ariaLabel}
-                tabIndex={isFirstPage ? '-1' : undefined}
+                tabIndex={isDisabled ? '-1' : undefined}
                 onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
                 ref={(element) => { this.previousButtonRef = element; }}
-                disabled={isFirstPage || pageCount <= 1}
+                disabled={isDisabled}
                 alt={PAGINATION_BUTTON_ICON_BUTTON_PREV_ALT}
               />
             )
