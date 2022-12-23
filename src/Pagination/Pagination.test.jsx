@@ -308,5 +308,115 @@ describe('<Pagination />', () => {
 
       expect(items.length).toEqual(2);
     });
+
+    it('renders chevrons and buttons disabled when pageCount is 1 || 0 on default variant', () => {
+      // default
+      props = {
+        ...baseProps,
+        pageCount: 0,
+      };
+      wrapper = mount(<Pagination {...props} />);
+      const disabled = wrapper.find('button[disabled=true]');
+      expect(props.pageCount).toEqual(0);
+      expect(disabled.length).toEqual(2);
+
+      props = {
+        ...baseProps,
+        pageCount: 1,
+      };
+      wrapper = mount(<Pagination {...props} />);
+
+      expect(props.pageCount).toEqual(1);
+      expect(disabled.length).toEqual(2);
+    });
+    it('renders chevrons and buttons disabled when pageCount is 1 || 0 on default variant', () => {
+      // default
+      props = {
+        ...baseProps,
+        variant: 'default',
+        pageCount: 0,
+      };
+      wrapper = mount(<Pagination {...props} />);
+      const disabled1 = wrapper.find('button[disabled=true]');
+      expect(props.pageCount).toEqual(0);
+      expect(disabled1.length).toEqual(2);
+
+      props = {
+        ...baseProps,
+        variant: 'default',
+        pageCount: 1,
+      };
+      wrapper = mount(<Pagination {...props} />);
+
+      const disabled2 = wrapper.find('button[disabled=true]');
+      expect(props.pageCount).toEqual(1);
+      expect(disabled2.length).toEqual(2);
+    });
+    it('renders chevrons and buttons disabled when pageCount is 1 || 0 on default variant', () => {
+      props = {
+        ...baseProps,
+        variant: 'secondary',
+        pageCount: 0,
+      };
+      wrapper = mount(<Pagination {...props} />);
+      const disabled1 = wrapper.find('button[disabled=true]');
+      expect(props.pageCount).toEqual(0);
+      expect(disabled1.length).toEqual(2);
+
+      props = {
+        ...baseProps,
+        variant: 'secondary',
+        pageCount: 1,
+      };
+      wrapper = mount(<Pagination {...props} />);
+
+      const disabled2 = wrapper.find('button[disabled=true]');
+      expect(props.pageCount).toEqual(1);
+      expect(disabled2.length).toEqual(2);
+    });
+    it('renders chevrons and buttons disabled when pageCount is 1 || 0 on default variant', () => {
+      props = {
+        ...baseProps,
+        variant: 'reduced',
+        pageCount: 0,
+      };
+      wrapper = mount(<Pagination {...props} />);
+      const disabled1 = wrapper.find('button[disabled=true]');
+      expect(props.pageCount).toEqual(0);
+      expect(disabled1.length).toEqual(2);
+
+      props = {
+        ...baseProps,
+        variant: 'reduced',
+        pageCount: 1,
+      };
+      wrapper = mount(<Pagination {...props} />);
+
+      const disabled2 = wrapper.find('button[disabled=true]');
+      expect(props.pageCount).toEqual(1);
+      expect(disabled2.length).toEqual(2);
+    });
+    it('renders chevrons and buttons disabled when pageCount is 1 || 0 on default variant', () => {
+      props = {
+        ...baseProps,
+        variant: 'minimal',
+        pageCount: 0,
+      };
+      wrapper = mount(<Pagination {...props} />);
+      const disabled1 = wrapper.find('button[disabled=true]');
+      expect(props.pageCount).toEqual(0);
+      expect(disabled1.length).toEqual(2);
+
+      props = {
+        ...baseProps,
+        variant: 'minimal',
+        pageCount: 1,
+      };
+      wrapper = mount(<Pagination {...props} />);
+
+      const disabled2 = wrapper.find('button[disabled=true]');
+      expect(props.pageCount).toEqual(1);
+      expect(disabled2.length).toEqual(2);
+    });
   });
 });
