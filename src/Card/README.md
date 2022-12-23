@@ -802,12 +802,16 @@ behavior.
 
 ## CardDeck
 
-Displays child `Card` components in a horizontal row with equal height and width, along with an  appropriate gutter between cards. The width of the child `Card` components is determined by the (optional) `columnSizes` prop. If any child `Card` components overflow beyond the parent's width, they will be hidden but accessible via scrolling horizontally or keyboard navigation (e.g., if the cards are clickable).
+Displays child `Card` components in a horizontal row with equal height and width, with an appropriate gutter between cards. The width of each child `Card` component is determined by the (optional) `columnSizes` prop. If any child `Card` components overflow beyond the parent's width, they will be hidden but accessible via scrolling horizontally or keyboard navigation.
+
+For accessibility, if the child `Card` components are interactive (e.g., `isClickable`), pass the `hasInteractiveChildren` prop so the `CardDeck` itself isn't focusable.
 
 ```jsx live
 () => {
+  const [hasInteractiveChildren, setHasInteractiveChildren] = useState('false');
+
   const CardComponent = () => (
-    <Card>
+    <Card isClickable={hasInteractiveChildren === 'true'}>
       <Card.ImageCap
         src="https://picsum.photos/360/200/"
         srcAlt="Card image"
@@ -818,20 +822,34 @@ Displays child `Card` components in a horizontal row with equal height and width
       </Card.Section>
     </Card>
   );
+
   return (
-    <CardDeck>
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-    </CardDeck>
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          {
+            value: hasInteractiveChildren,
+            setValue: setHasInteractiveChildren,
+            options: ['true', 'false'],
+            name: 'hasInteractiveChildren',
+          },
+        ]}
+      />
+      {/* end example form block */}
+      <CardDeck hasInteractiveChildren={hasInteractiveChildren === 'true'}>
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+      </CardDeck>
+    </>
   );
 }
 ```
 
-### CardDeck.Deprecated
-
+## CardDeck.Deprecated
 
 Gives any child `Card` components equal height with an appropriate gutter between cards. Each child `Card` component's width will be adjusted (e.g., become more narrow) to ensure all `Card` components fit within its parent's width.
 

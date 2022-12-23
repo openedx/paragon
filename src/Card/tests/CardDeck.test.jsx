@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { v4 as uuidv4 } from 'uuid';
 import CardDeck from '../CardDeck';
 import Card from '../index';
 
@@ -21,7 +22,7 @@ function ExampleCard(props) {
 }
 
 function CardContent({ cardCount = 5, ...props }) {
-  return Array.from({ length: cardCount }).map(() => <ExampleCard {...props} />);
+  return Array.from({ length: cardCount }).map(() => <ExampleCard key={uuidv4()} {...props} />);
 }
 
 describe('<CardDeck />', () => {

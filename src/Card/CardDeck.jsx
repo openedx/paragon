@@ -5,12 +5,13 @@ import BaseCardDeck from 'react-bootstrap/CardDeck';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const CardDeck = React.forwardRef(({
+function CardDeck({
   className,
   children,
   columnSizes,
   hasInteractiveChildren,
-}, ref) => {
+  overflowRef,
+}) {
   const cards = useMemo(
     () => React.Children.map(children, card => (
       <Col {...columnSizes}>
@@ -21,17 +22,17 @@ const CardDeck = React.forwardRef(({
   );
 
   return (
-    <div
-      ref={ref}
-      className={classNames('pgn__card-deck', className)}
-      tabIndex={hasInteractiveChildren ? -1 : 0}
-    >
-      <Row className="pgn__card-deck-row">
+    <div className={classNames('pgn__card-deck', className)}>
+      <Row
+        className="pgn__card-deck-row"
+        tabIndex={hasInteractiveChildren ? -1 : 0}
+        ref={overflowRef}
+      >
         {cards}
       </Row>
     </div>
   );
-});
+}
 
 CardDeck.propTypes = {
   /** The class name for the CardDeck component */

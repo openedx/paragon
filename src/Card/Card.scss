@@ -69,30 +69,19 @@ a .pgn__card {
 
 .pgn__card-deck {
   position: relative;
-  margin: 0 -$card-focus-border-offset;
-  padding: 0 $card-focus-border-offset;
   margin-bottom: $card-deck-margin-bottom;
-  overflow: hidden;
-
-  &:focus-visible {
-    outline: $card-focus-border-width solid $card-border-focus-color;
-    border-radius: $card-focus-border-radius
-  }
-
+  
   .pgn__card-deck-row {
     overflow: hidden;
     overflow-x: scroll;
     flex-wrap: nowrap;
     padding-top: $card-focus-border-offset;
     padding-bottom: $card-focus-border-offset;
-    
-    // > div[class*="col"]:first-child {
-    //   padding-left: $card-focus-border-offset;
-    // }
 
-    // > div[class*="col"]:last-child {
-    //   padding-right: $card-focus-border-offset;
-    // }
+    &:focus-visible {
+      outline: $card-focus-border-width solid $card-border-focus-color;
+      border-radius: $card-focus-border-radius;
+    }
   }
 }
 
@@ -361,6 +350,7 @@ a .pgn__card {
 
 .pgn__card {
   @include pgn-box-shadow(1, "down");
+  outline: none;
 
   &.clickable {
     &:hover,

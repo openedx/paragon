@@ -91,13 +91,7 @@ const HipsterIpsum = ({
     paragraphs,
     numParagraphs,
   });
-
-  return (
-    <>
-      {content}
-      <p className="x-small">Sourced with love from <a href="https://hipsum.co/">https://hipsum.co/</a></p>
-    </>
-  );
+  return content;
 };
 
 HipsterIpsum.propTypes = {
