@@ -56,7 +56,7 @@ CardDeck.propTypes = {
   /** The ref to be passed to the scrollable CardDeck element */
   overflowRef: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+    PropTypes.shape({ current: PropTypes.instanceOf(typeof Element === 'undefined' ? () => {} : Element) }),
   ]),
 };
 
