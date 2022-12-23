@@ -309,26 +309,6 @@ describe('<Pagination />', () => {
       expect(items.length).toEqual(2);
     });
 
-    it('renders chevrons and buttons disabled when pageCount is 1 || 0 on default variant', () => {
-      // default
-      props = {
-        ...baseProps,
-        pageCount: 0,
-      };
-      wrapper = mount(<Pagination {...props} />);
-      const disabled = wrapper.find('button[disabled=true]');
-      expect(props.pageCount).toEqual(0);
-      expect(disabled.length).toEqual(2);
-
-      props = {
-        ...baseProps,
-        pageCount: 1,
-      };
-      wrapper = mount(<Pagination {...props} />);
-
-      expect(props.pageCount).toEqual(1);
-      expect(disabled.length).toEqual(2);
-    });
     it('renders chevrons and buttons disabled when pageCount is 1 || 0 for all variants', () => {
       const variantTypes = ['default', 'secondary', 'reduced', 'minimal'];
       // default
