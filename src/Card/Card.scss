@@ -70,7 +70,7 @@ a .pgn__card {
 .pgn__card-deck {
   position: relative;
   margin-bottom: $card-deck-margin-bottom;
-  
+
   .pgn__card-deck-row {
     overflow: hidden;
     overflow-x: scroll;
@@ -349,14 +349,16 @@ a .pgn__card {
 }
 
 .pgn__card {
-  @include pgn-box-shadow(1, "down");
   outline: none;
+
+  @include pgn-box-shadow(1, "down");
 
   &.clickable {
     &:hover,
     &:focus,
     &.focus {
       cursor: pointer;
+
       @include pgn-box-shadow(2, "down");
     }
 

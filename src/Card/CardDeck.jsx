@@ -53,6 +53,11 @@ CardDeck.propTypes = {
   /** Whether the child `Card` components are interactive/focusable. If not, a `tabindex="0"` is
    * added to be a11y-compliant */
   hasInteractiveChildren: PropTypes.bool,
+  /** The ref to be passed to the scrollable CardDeck element */
+  overflowRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
 };
 
 CardDeck.defaultProps = {
@@ -63,6 +68,7 @@ CardDeck.defaultProps = {
     xl: 4,
   },
   hasInteractiveChildren: false,
+  overflowRef: null,
 };
 
 CardDeck.Deprecated = BaseCardDeck;
