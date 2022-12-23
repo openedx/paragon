@@ -7,15 +7,15 @@ const baseProps = {
   links: [
     {
       label: 'Link 1',
-      url: '/link-1',
+      href: '/link-1',
     },
     {
       label: 'Link 2',
-      url: '/link-2',
+      href: '/link-2',
     },
     {
       label: 'Link 3',
-      url: '/link-3',
+      href: '/link-3',
     },
   ],
 };
@@ -74,5 +74,34 @@ describe('<Breadcrumb />', () => {
     const listElements = list.find('li');
     expect(listElements.length).toEqual(2);
     expect(list.hasClass('is-mobile')).toEqual(true);
+  });
+
+  it('renders links as custom elements', () => {
+    wrapper = mount(<Breadcrumb {...baseProps} linkAs="div" />);
+
+    const list = wrapper.find('ol');
+    const anchors = list.find('a');
+    expect(anchors.length).toEqual(0);
+
+    const customLinks = list.find('div');
+    expect(customLinks.length).toEqual(3);
+  });
+
+  it('passes down link props to link elements', () => {
+    const linkProps = {
+      label: 'Link 1',
+      url: '/link-1',
+      className: 'my-link',
+      target: '_blank',
+    };
+
+    wrapper = mount(<Breadcrumb links={[linkProps]} />);
+
+    const list = wrapper.find('ol');
+    const renderedLink = list.find('a').first();
+
+    expect(renderedLink.hasClass('my-link')).toEqual(true);
+    expect(renderedLink.prop('target')).toEqual('_blank');
+    expect(renderedLink.prop('href')).toEqual('/link-1');
   });
 });
