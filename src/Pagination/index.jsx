@@ -36,7 +36,7 @@ function ReducedPagination({ currentPage, pageCount, handlePageSelect }) {
       <Dropdown.Toggle variant="tertiary" id="Pagination dropdown">
         {currentPage} of {pageCount}
       </Dropdown.Toggle>
-      <Dropdown.Menu className="pgn__reduced-pagination-dropdown">
+      <Dropdown.Menu className="pagination-reduced-dropdown-menu">
         {[...Array(pageCount).keys()].map(pageNum => (
           <Dropdown.Item onClick={() => handlePageSelect(pageNum + 1)} key={pageNum}>
             {pageNum + 1}
@@ -145,30 +145,6 @@ class Pagination extends React.Component {
       ariaLabel += `, ${buttonLabels.currentPage}`;
     }
 
-    if (invertColors) {
-      return (
-        <li
-          className={classNames([
-            'page-item',
-            {
-              active,
-            },
-          ])}
-          key={page}
-        >
-          <Button
-            className="page-link"
-            aria-label={ariaLabel}
-            variant={active ? 'inverse-primary' : 'inverse-tertiary'}
-            ref={(element) => { this.pageRefs[page] = element; }}
-            onClick={() => { this.handlePageSelect(page); }}
-          >
-            {page.toString()}
-          </Button>
-        </li>
-      );
-    }
-
     return (
       <li
         className={classNames([
@@ -182,7 +158,8 @@ class Pagination extends React.Component {
         <Button
           className="page-link"
           aria-label={ariaLabel}
-          variant={active ? 'primary' : 'tertiary'}
+          /* eslint-disable-next-line no-nested-ternary */
+          variant={invertColors ? (active ? 'inverse-primary' : 'inverse-tertiary') : (active ? 'primary' : 'tertiary')}
           ref={(element) => { this.pageRefs[page] = element; }}
           onClick={() => { this.handlePageSelect(page); }}
         >
