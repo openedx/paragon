@@ -39,14 +39,14 @@ const Card = React.forwardRef(({
           [`pgn__card-${resolvedVariant}`]: resolvedVariant,
         })}
         ref={ref}
-        tabIndex={isClickable ? '0' : '-1'}
+        tabIndex={isClickable ? 0 : -1}
       />
     </CardContextProvider>
   );
 });
 
 export { default as CardColumns } from 'react-bootstrap/CardColumns';
-export { default as CardDeck } from 'react-bootstrap/CardDeck';
+export { default as CardDeck } from './CardDeck';
 export { default as CardImg } from 'react-bootstrap/CardImg';
 export { default as CardGroup } from 'react-bootstrap/CardGroup';
 export { default as CardGrid } from './CardGrid';

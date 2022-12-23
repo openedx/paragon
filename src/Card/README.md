@@ -712,9 +712,7 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
@@ -730,9 +728,7 @@ behavior.
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This content is a little bit longer.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
@@ -749,9 +745,7 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
@@ -768,9 +762,7 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
@@ -786,9 +778,7 @@ behavior.
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This content is a little bit longer.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
@@ -805,78 +795,86 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
 </CardGrid>
 ```
 
-## CardDeck (Deprecated)
+## CardDeck
 
-This component gives any child Card components equal height with an appropriate gutter between cards. However,
-it is meant to be used as a single horizontal row of Cards, not as a grid. See CardGrid for more details.
+Displays child `Card` components in a horizontal row with equal height and width, with an appropriate gutter between cards. The width of each child `Card` component is determined by the (optional) `columnSizes` prop. If any child `Card` components overflow beyond the parent's width, they will be hidden but accessible via scrolling horizontally or keyboard navigation.
 
-**Note**: this component is deprecated and is going to be removed soon.
+For accessibility, if the child `Card` components are interactive (e.g., `isClickable`), pass the `hasInteractiveChildren` prop so the `CardDeck` itself isn't focusable.
 
 ```jsx live
-<CardDeck>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This content is a little bit longer.
-    </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-</CardDeck>
+() => {
+  const [hasInteractiveChildren, setHasInteractiveChildren] = useState('false');
+
+  const CardComponent = () => (
+    <Card isClickable={hasInteractiveChildren === 'true'}>
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header title="Card title" />
+      <Card.Section  title="Section title">
+        <HipsterIpsum numShortParagraphs={1} />
+      </Card.Section>
+    </Card>
+  );
+
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          {
+            value: hasInteractiveChildren,
+            setValue: setHasInteractiveChildren,
+            options: ['true', 'false'],
+            name: 'hasInteractiveChildren',
+          },
+        ]}
+      />
+      {/* end example form block */}
+      <CardDeck hasInteractiveChildren={hasInteractiveChildren === 'true'}>
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+      </CardDeck>
+    </>
+  );
+}
 ```
 
+## CardDeck.Deprecated
+
+Gives any child `Card` components equal height with an appropriate gutter between cards. Each child `Card` component's width will be adjusted (e.g., become more narrow) to ensure all `Card` components fit within its parent's width.
+
+Note: This component is a pass-thru from `react-bootstrap`.
+
+```jsx live
+() => {
+  const CardComponent = () => (
+    <Card>
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header title="Card title" />
+      <Card.Section title="Section title">
+        <HipsterIpsum numShortParagraphs={1} />
+      </Card.Section>
+    </Card>
+  );
+  return (
+    <CardDeck.Deprecated>
+      <CardComponent />
+      <CardComponent />
+      <CardComponent />
+    </CardDeck.Deprecated>
+  )
+}
+```

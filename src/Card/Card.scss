@@ -55,9 +55,33 @@ a .pgn__card {
 
 .pgn__card-grid {
   .row > div[class*="col-"] {
-    margin-bottom: $card-grid-margin;
+    margin-bottom: $card-grid-margin-bottom;
+  }
+}
+
+.pgn__card-grid,
+.pgn__card-deck {
+  .row > div[class*="col-"] {
     display: flex;
     flex: 1 0 auto;
+  }
+}
+
+.pgn__card-deck {
+  position: relative;
+  margin-bottom: $card-deck-margin-bottom;
+
+  .pgn__card-deck-row {
+    overflow: hidden;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    padding-top: $card-focus-border-offset;
+    padding-bottom: $card-focus-border-offset;
+
+    &:focus-visible {
+      outline: $card-focus-border-width solid $card-border-focus-color;
+      border-radius: $card-focus-border-radius;
+    }
   }
 }
 
@@ -306,7 +330,6 @@ a .pgn__card {
 }
 
 %pgn__card-focused {
-  box-shadow: none;
   outline: none;
 
   &::before {
@@ -326,10 +349,14 @@ a .pgn__card {
 }
 
 .pgn__card {
+  outline: none;
+
   @include pgn-box-shadow(1, "down");
 
   &.clickable {
-    &:hover {
+    &:hover,
+    &:focus,
+    &.focus {
       cursor: pointer;
 
       @include pgn-box-shadow(2, "down");
