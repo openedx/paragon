@@ -1,5 +1,5 @@
 {
-  "lastModified": 1671804577539,
+  "lastModified": 1671890956665,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -1557,7 +1557,7 @@
       }
     },
     {
-      "version": "20.21.1",
+      "version": "20.24.1",
       "name": "frontend-app-admin-portal",
       "repository": "https://github.com/openedx/frontend-app-admin-portal",
       "folderName": "frontend-app-admin-portal",
@@ -3361,7 +3361,7 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
-            "line": 98,
+            "line": 96,
             "column": 4
           },
           {
@@ -3418,7 +3418,7 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
-            "line": 157,
+            "line": 155,
             "column": 6
           },
           {
@@ -3846,6 +3846,11 @@
             "column": 10
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/SelectContentSearchPagination.jsx",
+            "line": 11,
+            "column": 2
+          },
+          {
             "filePath": "src/components/settings/ConfigError.jsx",
             "line": 21,
             "column": 6
@@ -3939,7 +3944,7 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
-            "line": 143,
+            "line": 141,
             "column": 6
           },
           {
@@ -3971,7 +3976,7 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
-            "line": 156,
+            "line": 154,
             "column": 33
           },
           {
@@ -4003,7 +4008,7 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
-            "line": 158,
+            "line": 156,
             "column": 6
           },
           {
@@ -4029,9 +4034,9 @@
             "column": 10
           },
           {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
-            "line": 159,
-            "column": 8
+            "filePath": "src/components/ContentHighlights/HighlightStepper/SelectContentSearchPagination.jsx",
+            "line": 12,
+            "column": 4
           }
         ],
         "Stepper": [
@@ -5747,7 +5752,7 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/SelectContentSearchPagination.jsx",
-            "line": 17,
+            "line": 20,
             "column": 4
           },
           {
@@ -6111,6 +6116,16 @@
             "column": 8
           },
           {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/SelectContentSearchPagination.jsx",
+            "line": 13,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/SelectContentSearchPagination.jsx",
+            "line": 19,
+            "column": 4
+          },
+          {
             "filePath": "src/components/settings/ConfigError.jsx",
             "line": 22,
             "column": 8
@@ -6179,14 +6194,14 @@
         "CardView": [
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
-            "line": 145,
+            "line": 143,
             "column": 8
           }
         ],
         "Pagination.Reduced": [
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/SelectContentSearchPagination.jsx",
-            "line": 12,
+            "line": 14,
             "column": 4
           }
         ],
@@ -7378,7 +7393,7 @@
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 152,
+            "line": 154,
             "column": 14
           }
         ],
@@ -7474,7 +7489,7 @@
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 149,
+            "line": 151,
             "column": 10
           }
         ],
@@ -7900,7 +7915,7 @@
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 144,
+            "line": 146,
             "column": 12
           }
         ],
@@ -7942,7 +7957,7 @@
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 145,
+            "line": 147,
             "column": 14
           }
         ],
@@ -8020,12 +8035,12 @@
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 164,
+            "line": 166,
             "column": 14
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 176,
+            "line": 178,
             "column": 14
           }
         ],
@@ -8131,7 +8146,7 @@
           },
           {
             "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 144,
+            "line": 146,
             "column": 79
           }
         ],
@@ -16378,7 +16393,7 @@
       }
     },
     {
-      "version": "19.18.3",
+      "version": "20.24.0",
       "name": "@edx/frontend-app-learning",
       "repository": {
         "type": "git",
@@ -22592,8 +22607,13 @@
             "column": 6
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/ImportTranscriptCard.jsx",
+            "line": 24,
+            "column": 4
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 119,
+            "line": 123,
             "column": 12
           },
           {
@@ -22679,8 +22699,13 @@
             "column": 12
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/ImportTranscriptCard.jsx",
+            "line": 26,
+            "column": 6
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 140,
+            "line": 144,
             "column": 14
           },
           {
@@ -22796,8 +22821,13 @@
             "column": 10
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/ImportTranscriptCard.jsx",
+            "line": 34,
+            "column": 4
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 158,
+            "line": 165,
             "column": 10
           },
           {
@@ -22956,7 +22986,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 112,
+            "line": 116,
             "column": 10
           },
           {
@@ -23312,8 +23342,13 @@
             "column": 22
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/ImportTranscriptCard.jsx",
+            "line": 29,
+            "column": 16
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 138,
+            "line": 142,
             "column": 16
           },
           {
@@ -23357,6 +23392,11 @@
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
             "line": 37,
             "column": 23
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/ImportTranscriptCard.jsx",
+            "line": 28,
+            "column": 13
           }
         ],
         "Truncate": [
@@ -23426,6 +23466,11 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
             "line": 72,
             "column": 20
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/ImportTranscriptCard.jsx",
+            "line": 27,
+            "column": 6
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
@@ -23793,7 +23838,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 161,
+            "line": 168,
             "column": 24
           },
           {
@@ -23977,7 +24022,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 129,
+            "line": 133,
             "column": 14
           },
           {
@@ -23994,7 +24039,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 133,
+            "line": 137,
             "column": 18
           },
           {
@@ -24098,12 +24143,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 120,
+            "line": 124,
             "column": 14
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 142,
+            "line": 146,
             "column": 12
           },
           {
@@ -24190,8 +24235,13 @@
             "column": 8
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/ImportTranscriptCard.jsx",
+            "line": 23,
+            "column": 2
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 110,
+            "line": 114,
             "column": 6
           }
         ],
@@ -24298,7 +24348,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 138,
+            "line": 142,
             "column": 27
           },
           {
@@ -24571,7 +24621,7 @@
       }
     },
     {
-      "version": "19.14.1",
+      "version": "20.22.4",
       "name": "@edx/frontend-lib-special-exams",
       "repository": {
         "type": "git",
