@@ -7,6 +7,7 @@ $card-border-radius: var(--pgn-size-card-border-radius-base) !default;
 $card-border-color: var(--pgn-color-card-border-base) !default;
 $card-border-focus-color: var(--pgn-color-card-border-focus) !default;
 
+// TODO: Need to deleted this variable after refactoring Card component
 // stylelint-disable-next-line max-line-length
 $card-inner-border-radius: calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)}) !default;
 $card-color: var(--pgn-color-card-base) !default;

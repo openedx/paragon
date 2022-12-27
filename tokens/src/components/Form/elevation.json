@@ -3,7 +3,7 @@
     "form": {
       "input": {
         "base": { "value": "inset 0 1px 1px rgba(0, 0, 0, .075)", "source": "$input-box-shadow" },
-        "focus": { "value": "{input.btn.focus.box-shadow.value}", "source": "$input-focus-box-shadow" }
+        "focus": { "value": "{elevation.input.btn-focus.box-shadow.value}", "source": "$input-focus-box-shadow" }
       },
       "control": {
         "indicator": {
@@ -23,7 +23,7 @@
           "track": { "value": "inset 0 .25rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-track-box-shadow" },
           "thumb": {
             "base": { "value": "0 .1rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-thumb-box-shadow" },
-            "focus": { "value": "0 0 0 1px {body.bg.value}, {size.form.input.width.focus.value}", "source": "$custom-range-thumb-focus-box-shadow" }
+            "focus": { "value": "0 0 0 1px {color.body.bg.value}, {size.form.input.width.focus.value}", "source": "$custom-range-thumb-focus-box-shadow" }
           }
         },
         "file": {
@@ -33,7 +33,7 @@
         "select": {
           "border": {
             "base": { "value": "inset 0 1px 2px rgba(0, 0, 0, .075)", "source": "$custom-select-box-shadow" },
-            "focus": { "value": "{input.btn.focus.box-shadow.value}", "source": "$custom-select-focus-box-shadow" }
+            "focus": { "value": "{elevation.input.btn-focus.box-shadow.value}", "source": "$custom-select-focus-box-shadow" }
           }
         }
       }
