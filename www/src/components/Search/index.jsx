@@ -5,7 +5,7 @@ import '@docsearch/css';
 
 import HitComponent from './HitComponent';
 
-const Search = () => {
+function Search() {
   let userId = global.localStorage?.getItem('pgn__algolia-usedId');
   if (!userId) {
     userId = uuidv4();
@@ -27,6 +27,7 @@ const Search = () => {
       appId={process.env.GATSBY_ALGOLIA_APP_ID}
       indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}
       apiKey={process.env.GATSBY_ALGOLIA_API_KEY}
+      // eslint-disable-next-line react/no-unstable-nested-components
       hitComponent={({ hit, children }) => <HitComponent userId={userId} hit={hit}>{children}</HitComponent>}
       searchParameters={{
         clickAnalytics: true,
@@ -48,6 +49,6 @@ const Search = () => {
       transformItems={(items) => items.map((item, index) => ({ ...item, position: index + 1 }))}
     />
   );
-};
+}
 
 export default Search;

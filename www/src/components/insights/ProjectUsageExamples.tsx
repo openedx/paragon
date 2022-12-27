@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
-import { Hyperlink } from '~paragon-react'; // eslint-disable-line
+import { Hyperlink } from '~paragon-react';
 
 type IProjectUsages = {
   filePath: string,

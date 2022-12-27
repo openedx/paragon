@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
 import { MDXProvider } from '@mdx-js/react';
 import { Link } from 'gatsby';
-// @ts-ignore
-import { Container } from '~paragon-react'; // eslint-disable-line
-
+import { Container } from '~paragon-react';
 import CodeBlock from '../components/CodeBlock';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';

@@ -13,10 +13,8 @@ import {
   LiveProvider, LiveEditor, LiveError, LivePreview,
 } from 'react-live';
 import { FormattedMessage, useIntl } from 'react-intl';
-// @ts-ignore
-import * as ParagonReact from '~paragon-react'; // eslint-disable-line
-// @ts-ignore
-import * as ParagonIcons from '~paragon-icons'; // eslint-disable-line
+import * as ParagonReact from '~paragon-react';
+import * as ParagonIcons from '~paragon-icons';
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
 import ExamplePropsForm from './exampleComponents/ExamplePropsForm';

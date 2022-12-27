@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import {
+  Button, Form, Container, Input, Toast, Icon, IconButtonWithTooltip,
+} from '~paragon-react';
+import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
-import {
-  Button, Form, Container, Input, Toast,
-// eslint-disable-next-line import/no-unresolved
-} from '~paragon-react';
-// eslint-disable-next-line
-import { Close, WbSunny, DoDisturb } from '../../../../icons/index';
-
-import { Icon, IconButtonWithTooltip } from '../../../../src'; // eslint-disable-line import/no-unresolved
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
@@ -23,7 +19,7 @@ const controlsProps = [
   { key: 'color', name: 'Color' },
 ];
 
-const BoxShadowNode = () => {
+function BoxShadowNode() {
   const [showToast, setShowToast] = useState(false);
 
   const isBoxShadowCopied = (level, side) => {
@@ -52,21 +48,19 @@ const BoxShadowNode = () => {
   return (
     <div className="pgn-doc__box-shadow-cells">
       { boxShadowCells }
-      {(
-        <Toast
-          className="pgn-doc__box-shadow--toast"
-          onClose={() => setShowToast(false)}
-          show={showToast}
-          delay={2000}
-        >
-          Box-shadow copied to clipboard!
-        </Toast>
-      )}
+      <Toast
+        className="pgn-doc__box-shadow--toast"
+        onClose={() => setShowToast(false)}
+        show={showToast}
+        delay={2000}
+      >
+        Box-shadow copied to clipboard!
+      </Toast>
     </div>
   );
-};
+}
 
-const BoxShadowToolkit = ({
+function BoxShadowToolkit({
   id,
   updateBoxShadow,
   removeBoxShadowLayer,
@@ -74,7 +68,7 @@ const BoxShadowToolkit = ({
   enableBoxShadowLayer,
   isDisabled,
   canDelete,
-}) => {
+}) {
   const [boxShadowModel, setBoxShadowModel] = useState({
     x: 0,
     y: 0,
@@ -165,7 +159,7 @@ const BoxShadowToolkit = ({
       </div>
     </section>
   );
-};
+}
 
 BoxShadowToolkit.propTypes = {
   updateBoxShadow: PropTypes.func.isRequired,
@@ -177,7 +171,7 @@ BoxShadowToolkit.propTypes = {
   canDelete: PropTypes.bool.isRequired,
 };
 
-const BoxShadowGenerator = () => {
+function BoxShadowGenerator() {
   const [boxShadows, setBoxShadows] = useState([{ id: 1, enabled: true, style: DEFAULT_BOX_SHADOW }]);
 
   const updateBoxShadow = (shadow, id) => {
@@ -265,7 +259,7 @@ const BoxShadowGenerator = () => {
       </div>
     </section>
   );
-};
+}
 
 export default function ElevationPage() {
   const levelTitle = boxShadowLevels.map(level => (
