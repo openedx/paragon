@@ -1,5 +1,5 @@
 {
-  "lastModified": 1672322898510,
+  "lastModified": 1672409302601,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -7372,6 +7372,11 @@
             "column": 10
           },
           {
+            "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
+            "line": 154,
+            "column": 14
+          },
+          {
             "filePath": "src/register/registrationFields/HonorCode.jsx",
             "line": 32,
             "column": 14
@@ -7389,11 +7394,6 @@
           {
             "filePath": "src/register/registrationFields/TermsOfService.jsx",
             "line": 33,
-            "column": 14
-          },
-          {
-            "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 154,
             "column": 14
           }
         ],
@@ -7478,6 +7478,11 @@
             "column": 10
           },
           {
+            "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
+            "line": 151,
+            "column": 10
+          },
+          {
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 479,
             "column": 10
@@ -7486,11 +7491,6 @@
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 176,
             "column": 14
-          },
-          {
-            "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 151,
-            "column": 10
           }
         ],
         "Button": [
@@ -7510,13 +7510,13 @@
             "column": 4
           },
           {
-            "filePath": "src/register/registrationFields/UsernameField.jsx",
-            "line": 23,
+            "filePath": "src/progressive-profiling/ProgressiveProfilingPageModal.jsx",
+            "line": 40,
             "column": 10
           },
           {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
-            "line": 40,
+            "filePath": "src/register/registrationFields/UsernameField.jsx",
+            "line": 23,
             "column": 10
           }
         ],
@@ -7894,6 +7894,11 @@
             "column": 4
           },
           {
+            "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
+            "line": 146,
+            "column": 12
+          },
+          {
             "filePath": "src/register/RegistrationFailure.jsx",
             "line": 42,
             "column": 4
@@ -7912,11 +7917,6 @@
             "filePath": "src/reset-password/ResetPasswordSuccess.jsx",
             "line": 12,
             "column": 4
-          },
-          {
-            "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 146,
-            "column": 12
           }
         ],
         "Alert.Heading": [
@@ -7941,6 +7941,11 @@
             "column": 6
           },
           {
+            "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
+            "line": 147,
+            "column": 14
+          },
+          {
             "filePath": "src/register/RegistrationFailure.jsx",
             "line": 43,
             "column": 6
@@ -7954,11 +7959,6 @@
             "filePath": "src/reset-password/ResetPasswordSuccess.jsx",
             "line": 13,
             "column": 6
-          },
-          {
-            "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 147,
-            "column": 14
           }
         ],
         "ExpandMore": [
@@ -8024,6 +8024,16 @@
             "column": 12
           },
           {
+            "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
+            "line": 166,
+            "column": 14
+          },
+          {
+            "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
+            "line": 178,
+            "column": 14
+          },
+          {
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 538,
             "column": 12
@@ -8032,16 +8042,6 @@
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 195,
             "column": 16
-          },
-          {
-            "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 166,
-            "column": 14
-          },
-          {
-            "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 178,
-            "column": 14
           }
         ],
         "ModalDialog": [
@@ -8051,7 +8051,7 @@
             "column": 4
           },
           {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "filePath": "src/progressive-profiling/ProgressiveProfilingPageModal.jsx",
             "line": 20,
             "column": 4
           }
@@ -8063,7 +8063,7 @@
             "column": 6
           },
           {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "filePath": "src/progressive-profiling/ProgressiveProfilingPageModal.jsx",
             "line": 28,
             "column": 6
           }
@@ -8075,7 +8075,7 @@
             "column": 8
           },
           {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "filePath": "src/progressive-profiling/ProgressiveProfilingPageModal.jsx",
             "line": 29,
             "column": 8
           }
@@ -8087,7 +8087,7 @@
             "column": 6
           },
           {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "filePath": "src/progressive-profiling/ProgressiveProfilingPageModal.jsx",
             "line": 34,
             "column": 6
           }
@@ -8099,7 +8099,7 @@
             "column": 6
           },
           {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "filePath": "src/progressive-profiling/ProgressiveProfilingPageModal.jsx",
             "line": 38,
             "column": 6
           }
@@ -8111,7 +8111,7 @@
             "column": 8
           },
           {
-            "filePath": "src/welcome/WelcomePageModal.jsx",
+            "filePath": "src/progressive-profiling/ProgressiveProfilingPageModal.jsx",
             "line": 39,
             "column": 8
           }
@@ -8130,6 +8130,11 @@
             "column": 76
           },
           {
+            "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
+            "line": 146,
+            "column": 79
+          },
+          {
             "filePath": "src/register/RegistrationFailure.jsx",
             "line": 42,
             "column": 74
@@ -8143,11 +8148,6 @@
             "filePath": "src/reset-password/ResetPasswordFailure.jsx",
             "line": 36,
             "column": 76
-          },
-          {
-            "filePath": "src/welcome/ProgressiveProfiling.jsx",
-            "line": 146,
-            "column": 79
           }
         ],
         "ExpandLess": [
@@ -10124,6 +10124,31 @@
             "column": 8
           },
           {
+            "filePath": "src/discussions/in-context-topics/components/BackButton.jsx",
+            "line": 20,
+            "column": 18
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic-search/TopicSearchBar.jsx",
+            "line": 50,
+            "column": 10
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 69,
+            "column": 18
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 85,
+            "column": 18
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 109,
+            "column": 20
+          },
+          {
             "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
             "line": 31,
             "column": 4
@@ -10160,7 +10185,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 62,
+            "line": 68,
             "column": 20
           },
           {
@@ -10296,7 +10321,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 259,
+            "line": 270,
             "column": 8
           },
           {
@@ -10313,7 +10338,7 @@
           },
           {
             "filePath": "src/components/FilterBar.jsx",
-            "line": 157,
+            "line": 156,
             "column": 18
           },
           {
@@ -10323,7 +10348,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 265,
+            "line": 276,
             "column": 10
           },
           {
@@ -10350,7 +10375,7 @@
         "Spinner": [
           {
             "filePath": "src/components/FilterBar.jsx",
-            "line": 153,
+            "line": 152,
             "column": 18
           },
           {
@@ -10364,6 +10389,16 @@
             "column": 6
           },
           {
+            "filePath": "src/discussions/in-context-topics/TopicPostsView.jsx",
+            "line": 70,
+            "column": 12
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/TopicsView.jsx",
+            "line": 48,
+            "column": 10
+          },
+          {
             "filePath": "src/discussions/learners/LearnerPostsView.jsx",
             "line": 105,
             "column": 12
@@ -10375,7 +10410,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 205,
+            "line": 212,
             "column": 10
           },
           {
@@ -10425,17 +10460,17 @@
           },
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 118,
+            "line": 104,
             "column": 21
           },
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 123,
+            "line": 109,
             "column": 21
           },
           {
             "filePath": "src/discussions/discussions-home/DiscussionSidebar.jsx",
-            "line": 30,
+            "line": 33,
             "column": 35
           }
         ],
@@ -10456,13 +10491,18 @@
             "column": 6
           },
           {
+            "filePath": "src/discussions/in-context-topics/components/BackButton.jsx",
+            "line": 18,
+            "column": 8
+          },
+          {
             "filePath": "src/discussions/learners/LearnerPostsView.jsx",
             "line": 83,
             "column": 8
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 60,
+            "line": 66,
             "column": 10
           }
         ],
@@ -10474,7 +10514,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 61,
+            "line": 67,
             "column": 17
           }
         ],
@@ -10556,12 +10596,12 @@
           },
           {
             "filePath": "src/discussions/posts/post-actions-bar/PostActionsBar.jsx",
-            "line": 47,
+            "line": 53,
             "column": 10
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 436,
+            "line": 467,
             "column": 12
           },
           {
@@ -10580,12 +10620,22 @@
             "filePath": "src/components/Search.jsx",
             "line": 60,
             "column": 6
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic-search/TopicSearchBar.jsx",
+            "line": 38,
+            "column": 6
           }
         ],
         "SearchField.Label": [
           {
             "filePath": "src/components/Search.jsx",
             "line": 66,
+            "column": 8
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic-search/TopicSearchBar.jsx",
+            "line": 44,
             "column": 8
           }
         ],
@@ -10594,12 +10644,22 @@
             "filePath": "src/components/Search.jsx",
             "line": 67,
             "column": 8
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic-search/TopicSearchBar.jsx",
+            "line": 45,
+            "column": 8
           }
         ],
         "SearchIcon": [
           {
             "filePath": "src/components/Search.jsx",
             "line": 73,
+            "column": 17
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic-search/TopicSearchBar.jsx",
+            "line": 51,
             "column": 17
           }
         ],
@@ -10684,32 +10744,32 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 289,
+            "line": 300,
             "column": 12
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 320,
+            "line": 351,
             "column": 14
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 341,
+            "line": 372,
             "column": 12
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 361,
+            "line": 392,
             "column": 14
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 408,
+            "line": 439,
             "column": 16
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 420,
+            "line": 451,
             "column": 16
           },
           {
@@ -10726,22 +10786,22 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 290,
+            "line": 301,
             "column": 14
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 321,
+            "line": 352,
             "column": 16
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 348,
+            "line": 379,
             "column": 14
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 368,
+            "line": 399,
             "column": 16
           },
           {
@@ -10758,7 +10818,7 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 442,
+            "line": 473,
             "column": 12
           }
         ],
@@ -10799,6 +10859,11 @@
             "filePath": "src/discussions/comments/CommentsView.jsx",
             "line": 202,
             "column": 17
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/components/BackButton.jsx",
+            "line": 19,
+            "column": 15
           },
           {
             "filePath": "src/discussions/learners/LearnerPostsView.jsx",
@@ -10871,6 +10936,11 @@
             "filePath": "src/discussions/common/AlertBanner.jsx",
             "line": 31,
             "column": 21
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 109,
+            "column": 31
           },
           {
             "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
@@ -10967,12 +11037,12 @@
         "breakpoints": [
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 119,
+            "line": 105,
             "column": 29
           },
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 124,
+            "line": 110,
             "column": 29
           }
         ],
@@ -10983,19 +11053,19 @@
             "column": 4
           },
           {
-            "filePath": "src/discussions/discussions-home/InformationsBanner.jsx",
+            "filePath": "src/discussions/discussions-home/InformationBanner.jsx",
             "line": 24,
             "column": 4
           }
         ],
         "Hyperlink": [
           {
-            "filePath": "src/discussions/discussions-home/InformationsBanner.jsx",
+            "filePath": "src/discussions/discussions-home/InformationBanner.jsx",
             "line": 34,
             "column": 12
           },
           {
-            "filePath": "src/discussions/discussions-home/InformationsBanner.jsx",
+            "filePath": "src/discussions/discussions-home/InformationBanner.jsx",
             "line": 45,
             "column": 8
           },
@@ -11005,36 +11075,34 @@
             "column": 10
           }
         ],
-        "Check": [
+        "SearchField": [
           {
-            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
-            "line": 31,
-            "column": 15
-          },
-          {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 45,
-            "column": 15
-          }
-        ],
-        "Form.Radio": [
-          {
-            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
-            "line": 32,
-            "column": 4
-          },
-          {
-            "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 56,
+            "filePath": "src/discussions/in-context-topics/topic-search/TopicSearchResultBar.jsx",
+            "line": 16,
             "column": 6
           },
           {
-            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
-            "line": 46,
-            "column": 4
+            "filePath": "src/discussions/topics/topic-search-bar/TopicSearchBar.jsx",
+            "line": 15,
+            "column": 6
           }
         ],
         "OverlayTrigger": [
+          {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 57,
+            "column": 14
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 73,
+            "column": 14
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 90,
+            "column": 16
+          },
           {
             "filePath": "src/discussions/learners/learner/LearnerFooter.jsx",
             "line": 26,
@@ -11078,6 +11146,21 @@
         ],
         "Tooltip": [
           {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 59,
+            "column": 18
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 75,
+            "column": 18
+          },
+          {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 92,
+            "column": 20
+          },
+          {
             "filePath": "src/discussions/learners/learner/LearnerFooter.jsx",
             "line": 29,
             "column": 10
@@ -11118,6 +11201,59 @@
             "column": 18
           }
         ],
+        "PostOutline": [
+          {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 69,
+            "column": 29
+          },
+          {
+            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
+            "line": 70,
+            "column": 27
+          }
+        ],
+        "HelpOutline": [
+          {
+            "filePath": "src/discussions/in-context-topics/topic/Topic.jsx",
+            "line": 85,
+            "column": 29
+          },
+          {
+            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
+            "line": 86,
+            "column": 27
+          }
+        ],
+        "Check": [
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 31,
+            "column": 15
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 45,
+            "column": 15
+          }
+        ],
+        "Form.Radio": [
+          {
+            "filePath": "src/discussions/learners/learner/LearnerFilterBar.jsx",
+            "line": 32,
+            "column": 4
+          },
+          {
+            "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
+            "line": 62,
+            "column": 6
+          },
+          {
+            "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
+            "line": 46,
+            "column": 4
+          }
+        ],
         "Edit": [
           {
             "filePath": "src/discussions/learners/learner/LearnerFooter.jsx",
@@ -11156,40 +11292,40 @@
         "Card": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 57,
+            "line": 63,
             "column": 6
           }
         ],
         "Card.Section": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 64,
+            "line": 70,
             "column": 8
           }
         ],
         "Post": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 277,
+            "line": 288,
             "column": 20
           }
         ],
         "Help": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 284,
+            "line": 295,
             "column": 20
           }
         ],
         "Form.Checkbox": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 409,
+            "line": 440,
             "column": 18
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 421,
+            "line": 452,
             "column": 18
           }
         ],
@@ -11246,27 +11382,6 @@
             "filePath": "src/discussions/posts/post/PostLink.jsx",
             "line": 97,
             "column": 29
-          }
-        ],
-        "PostOutline": [
-          {
-            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
-            "line": 70,
-            "column": 27
-          }
-        ],
-        "HelpOutline": [
-          {
-            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
-            "line": 86,
-            "column": 27
-          }
-        ],
-        "SearchField": [
-          {
-            "filePath": "src/discussions/topics/topic-search-bar/TopicSearchBar.jsx",
-            "line": 15,
-            "column": 6
           }
         ]
       }
@@ -14314,7 +14429,7 @@
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
-            "line": 87,
+            "line": 88,
             "column": 4
           },
           {
@@ -14366,7 +14481,7 @@
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
-            "line": 94,
+            "line": 97,
             "column": 6
           },
           {
@@ -14418,7 +14533,7 @@
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
-            "line": 100,
+            "line": 103,
             "column": 6
           },
           {
@@ -14505,7 +14620,7 @@
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
-            "line": 112,
+            "line": 115,
             "column": 6
           },
           {
@@ -14547,7 +14662,7 @@
           },
           {
             "filePath": "src/components/search/SearchCourseCard.jsx",
-            "line": 113,
+            "line": 116,
             "column": 6
           },
           {
@@ -20541,39 +20656,14 @@
             "column": 10
           },
           {
-            "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 117,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/RemoveButton/index.jsx",
-            "line": 20,
-            "column": 4
-          },
-          {
             "filePath": "src/components/SidePanes/CommentsPane.jsx",
             "line": 100,
             "column": 24
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
-            "line": 107,
+            "line": 123,
             "column": 13
-          },
-          {
-            "filePath": "src/components/SidePanes/UsersPane.jsx",
-            "line": 140,
-            "column": 16
-          },
-          {
-            "filePath": "src/components/Staffer/index.jsx",
-            "line": 29,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/Staffer/index.jsx",
-            "line": 43,
-            "column": 10
           }
         ],
         "Alert": [
@@ -20674,7 +20764,7 @@
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
-            "line": 122,
+            "line": 139,
             "column": 13
           },
           {
@@ -20768,7 +20858,7 @@
         "SearchField": [
           {
             "filePath": "src/components/CourseTable/index.jsx",
-            "line": 170,
+            "line": 165,
             "column": 12
           }
         ],
@@ -20878,7 +20968,7 @@
         "OverlayTrigger": [
           {
             "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
-            "line": 85,
+            "line": 86,
             "column": 12
           },
           {
@@ -20890,7 +20980,7 @@
         "Tooltip": [
           {
             "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
-            "line": 87,
+            "line": 88,
             "column": 23
           },
           {
@@ -20906,6 +20996,18 @@
             "column": 10
           }
         ],
+        "Add": [
+          {
+            "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
+            "line": 117,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/SidePanes/UsersPane.jsx",
+            "line": 158,
+            "column": 16
+          }
+        ],
         "Chip": [
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
@@ -20918,6 +21020,18 @@
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 187,
             "column": 21
+          }
+        ],
+        "InfoOutline": [
+          {
+            "filePath": "src/components/FieldHelp/index.jsx",
+            "line": 57,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/SidePanes/Pane.jsx",
+            "line": 21,
+            "column": 12
           }
         ],
         "Dropdown": [
@@ -20967,6 +21081,13 @@
             "column": 10
           }
         ],
+        "Close": [
+          {
+            "filePath": "src/components/RemoveButton/index.jsx",
+            "line": 20,
+            "column": 4
+          }
+        ],
         "Form": [
           {
             "filePath": "src/components/SidePanes/CatalogInclusionPane.jsx",
@@ -20988,18 +21109,18 @@
             "column": 14
           }
         ],
-        "InfoOutline": [
+        "Delete": [
           {
-            "filePath": "src/components/SidePanes/Pane.jsx",
-            "line": 21,
-            "column": 12
+            "filePath": "src/components/Staffer/index.jsx",
+            "line": 30,
+            "column": 8
           }
         ],
-        "InputSelect": [
+        "Edit": [
           {
-            "filePath": "src/components/SidePanes/UsersPane.jsx",
-            "line": 147,
-            "column": 16
+            "filePath": "src/components/Staffer/index.jsx",
+            "line": 44,
+            "column": 10
           }
         ],
         "DataTable": [
