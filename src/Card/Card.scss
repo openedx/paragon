@@ -96,6 +96,8 @@ a .pgn__card {
         );
     }
 
+    // TODO: make it such that `OverflowScroll` component includes start/end opacity masks rather than having them be part of `CardDeck`
+
     &.opacity-mask-end {
       mask-image:
         linear-gradient(
