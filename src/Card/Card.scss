@@ -85,15 +85,21 @@ a .pgn__card {
     padding-top: $card-focus-border-offset;
     padding-bottom: $card-focus-border-offset;
 
+    $opacity-mask-transparent: rgba(0,0,0,.4);
+
+    /* stylelint-disable function-comma-space-after */
     &.opacity-mask-start {
-      mask-image: linear-gradient(to right, rgba(0,0,0,0.4) 0%, black 10%);
+      mask-image: linear-gradient(to right, $opacity-mask-transparent 0%, black 10%);
     }
+
     &.opacity-mask-end {
-      mask-image: linear-gradient(to right, black 90%, rgba(0,0,0,0.4) 100%);
+      mask-image: linear-gradient(to right, black 90%, $opacity-mask-transparent 100%);
     }
+
     &.opacity-mask-start-end {
-      mask-image: linear-gradient(to right, rgba(0,0,0,0.4) 0%, black 10%, black 90%, rgba(0,0,0,0.4) 100%);
+      mask-image: linear-gradient(to right, $opacity-mask-transparent 0%, black 10%, black 90%, $opacity-mask-transparent 100%);
     }
+    /* stylelint-enable function-comma-space-after */
 
     &:focus-visible {
       outline: $card-focus-border-width solid $card-border-focus-color;
