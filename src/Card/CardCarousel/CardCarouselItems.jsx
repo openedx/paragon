@@ -10,6 +10,8 @@ function CardCarouselItems({ children }) {
     hasInteractiveChildren,
     canScrollHorizontal,
     overflowRef,
+    isScrolledToStart,
+    isScrolledToEnd,
   } = useContext(CardCarouselContext);
 
   return (
@@ -20,6 +22,8 @@ function CardCarouselItems({ children }) {
       canScrollHorizontal={canScrollHorizontal}
       StartSentinel={OverflowScroll.StartSentinel}
       EndSentinel={OverflowScroll.EndSentinel}
+      hasOpacityMaskStart={!isScrolledToStart}
+      hasOpacityMaskEnd={!isScrolledToEnd}
     >
       {children}
     </CardDeck>

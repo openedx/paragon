@@ -12,6 +12,7 @@ function CardCarouselProvider({
 }) {
   const {
     overflowRef,
+    isOverflowContainerVisible,
     isScrolledToStart,
     isScrolledToEnd,
     scrollToPrevious,
@@ -27,6 +28,7 @@ function CardCarouselProvider({
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
+    isOverflowContainerVisible,
   }), [
     overflowRef,
     columnSizes,
@@ -36,6 +38,7 @@ function CardCarouselProvider({
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
+    isOverflowContainerVisible,
   ]);
 
   return (

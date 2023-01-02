@@ -43,6 +43,7 @@ function CardCarousel({
     <OverflowScroll
       childQuerySelector={`.${CARD_DECK_ITEM_CLASS_NAME}`}
       disableScroll={!canScrollHorizontal}
+      hasInteractiveChildren={hasInteractiveChildren}
     >
       <CardCarouselProvider
         columnSizes={columnSizes}
@@ -65,13 +66,13 @@ function CardCarousel({
 }
 
 CardCarousel.propTypes = {
-  /** TODO */
+  /** The `Card` items for the `CardCarousel`. */
   children: PropTypes.node.isRequired,
-  /** TODO */
+  /** An optional title. */
   title: PropTypes.node,
-  /** TODO */
+  /** An optional subtitle. */
   subtitle: PropTypes.node,
-  /** TODO */
+  /** Customize the responsive columnSizes used by the carousel. */
   columnSizes: PropTypes.shape({
     xs: PropTypes.number,
     sm: PropTypes.number,
@@ -79,9 +80,9 @@ CardCarousel.propTypes = {
     lg: PropTypes.number,
     xl: PropTypes.number,
   }),
-  /** TODO */
+  /** Whether the carousel has interactive children (e.g., clickable cards). */
   hasInteractiveChildren: PropTypes.bool,
-  /** TODO */
+  /** Whether the carousel can be scrolled manually by users. */
   canScrollHorizontal: PropTypes.bool,
 };
 

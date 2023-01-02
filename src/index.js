@@ -23,7 +23,7 @@ export {
 } from './Carousel';
 export { default as CheckBox } from './CheckBox';
 export { default as CheckBoxGroup } from './CheckBoxGroup';
-export { default as Chip } from './Chip';
+export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as CloseButton } from './CloseButton';
 export { default as Container } from './Container';
 export { default as Layout, Col, Row } from './Layout';

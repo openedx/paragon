@@ -10,6 +10,7 @@ import {
 function OverflowScroll({
   children,
   childQuerySelector,
+  hasInteractiveChildren,
   disableScroll,
 }) {
   const {
@@ -22,8 +23,9 @@ function OverflowScroll({
     scrollToNext,
     isOverflowContainerVisible,
   } = useOverflowScroll({
-    disableScroll,
     childQuerySelector,
+    hasInteractiveChildren,
+    disableScroll,
   });
 
   const contextValue = useMemo(() => ({
@@ -59,11 +61,13 @@ OverflowScroll.EndSentinel = OverflowScrollEndSentinel;
 OverflowScroll.propTypes = {
   children: PropTypes.node.isRequired,
   childQuerySelector: PropTypes.string.isRequired,
+  hasInteractiveChildren: PropTypes.bool,
   disableScroll: PropTypes.bool,
 };
 
 OverflowScroll.defaultProps = {
   disableScroll: false,
+  hasInteractiveChildren: false,
 };
 
 export default OverflowScroll;
