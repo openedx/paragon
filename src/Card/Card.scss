@@ -71,9 +71,16 @@ a .pgn__card {
   position: relative;
   margin-bottom: $card-deck-margin-bottom;
 
+  &.pgn__card-deck-has-horizontal-scroll {
+    .pgn__card-deck-row {
+      overflow-x: scroll;
+      padding-left: 1px;
+      padding-right: 1px;
+    }
+  }
+
   .pgn__card-deck-row {
     overflow: hidden;
-    overflow-x: scroll;
     flex-wrap: nowrap;
     padding-top: $card-focus-border-offset;
     padding-bottom: $card-focus-border-offset;
@@ -82,6 +89,24 @@ a .pgn__card {
       outline: $card-focus-border-width solid $card-border-focus-color;
       border-radius: $card-focus-border-radius;
     }
+  }
+}
+
+.pgn__card-carousel {
+  .pgn__card-carousel-title {
+    margin-bottom: map-get($spacers, 2);
+  }
+
+  .pgn__card-carousel-subtitle {
+    font-size: $font-size-sm;
+    margin-bottom: map-get($spacers, 2);
+  }
+
+  .pgn__card-carousel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: map-get($spacers, 1);
   }
 }
 

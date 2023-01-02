@@ -1,0 +1,97 @@
+---
+title: 'OverflowScroll'
+type: 'component'
+components:
+- OverflowScroll
+- OverflowScrollStartSentinel
+- OverflowScrollEndSentinel
+categories:
+- Layout
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: ''
+---
+
+A set of React components that encapsulates the logic from [`useOverflowScroll`](./useoverflowscroll) for building carousel-like UI components:
+* `OverflowScroll`
+* `OverflowScroll.StartSentinel`
+* `OverflowScroll.EndSentinel`
+
+## Sample Usage
+
+The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.StartSentinel`, and `OverflowScroll.EndSentinel` to build carousel-like UI components.
+
+```jsx live
+() => {
+  const ExampleItem = ({ className }) => (
+    <div
+      className={classNames('example-item border flex-shrink-0 text-center', className)}
+      style={{ width: 160 }}
+    >
+      Item
+    </div>
+  );
+
+  const OverflowScrollItems = () => {
+    const { overflowRef } = useContext(OverflowScrollContext);
+    return (
+      <div
+        ref={overflowRef}
+        className="d-flex pb-3"
+        style={{ paddingLeft: 1, paddingRight: 1 }}
+      >
+        <OverflowScroll.StartSentinel />
+        {items}
+        <OverflowScroll.EndSentinel />
+      </div>
+    );
+  };
+
+  const OverflowScrollControls = () => {
+    const {
+      isScrolledToStart,
+      isScrolledToEnd,
+      isOverflowContainerVisible,
+      scrollToPrevious,
+      scrollToNext,
+    } = useContext(OverflowScrollContext);
+
+    return (
+      <div className="mb-3">
+        <Button
+          onClick={scrollToPrevious}
+          disabled={isScrolledToStart || !isOverflowContainerVisible}
+          size="sm"
+          className="mr-2"
+        >
+          Previous
+        </Button>
+        <Button
+          onClick={scrollToNext}
+          disabled={isScrolledToEnd || !isOverflowContainerVisible}
+          size="sm"
+        >
+          Next
+        </Button>
+      </div>
+    );
+  };
+
+  const itemCount = 24;
+  const items = useMemo(() => Array.from({ length: itemCount }).map((index) => {
+    if (index !== itemCount - 1) {
+      return <ExampleItem key={uuidv4()} className="mr-2" />;
+    }
+    // last element, no right margin
+    return <ExampleItem key={uuidv4()} />;
+  }), []);
+
+  return (
+    <OverflowScroll childQuerySelector=".example-item">
+      <OverflowScrollControls />
+      <OverflowScrollItems />
+    </OverflowScroll>
+  );
+};
+```

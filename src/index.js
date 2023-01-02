@@ -15,6 +15,7 @@ export {
   CardImg,
   CardGroup,
   CardGrid,
+  CardCarousel,
   CARD_VARIANTS,
 } from './Card';
 export {
@@ -164,6 +165,11 @@ export { default as useToggle } from './hooks/useToggle';
 export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigation';
 export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChild';
 export { default as useIsVisible } from './hooks/useIsVisible';
+export {
+  useOverflowScroll,
+  OverflowScroll,
+  OverflowScrollContext,
+} from './OverflowScroll';
 
 // Pass through any needed whole third-party library functionality
 // useTable for example is needed to use the DataTable component seamlessly

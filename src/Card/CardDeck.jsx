@@ -5,16 +5,20 @@ import BaseCardDeck from 'react-bootstrap/CardDeck';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function CardDeck({
+export const CARD_DECK_ITEM_CLASS_NAME = 'pgn__card-deck-card-item';
+
+const CardDeck = React.forwardRef(({
   className,
   children,
   columnSizes,
   hasInteractiveChildren,
-  overflowRef,
-}) {
+  canScrollHorizontal,
+  StartSentinel,
+  EndSentinel,
+}, ref) => {
   const cards = useMemo(
     () => React.Children.map(children, card => (
-      <Col {...columnSizes}>
+      <Col className={CARD_DECK_ITEM_CLASS_NAME} {...columnSizes}>
         {card}
       </Col>
     )),
@@ -22,17 +26,27 @@ function CardDeck({
   );
 
   return (
-    <div className={classNames('pgn__card-deck', className)}>
+    <div
+      className={classNames(
+        'pgn__card-deck',
+        {
+          'pgn__card-deck-has-horizontal-scroll': canScrollHorizontal,
+        },
+        className,
+      )}
+    >
       <Row
         className="pgn__card-deck-row"
         tabIndex={hasInteractiveChildren ? -1 : 0}
-        ref={overflowRef}
+        ref={ref}
       >
+        {StartSentinel && <StartSentinel />}
         {cards}
+        {EndSentinel && <EndSentinel />}
       </Row>
     </div>
   );
-}
+});
 
 CardDeck.propTypes = {
   /** The class name for the CardDeck component */
@@ -53,11 +67,12 @@ CardDeck.propTypes = {
   /** Whether the child `Card` components are interactive/focusable. If not, a `tabindex="0"` is
    * added to be a11y-compliant */
   hasInteractiveChildren: PropTypes.bool,
-  /** The ref to be passed to the scrollable CardDeck element */
-  overflowRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.instanceOf(typeof Element === 'undefined' ? () => {} : Element) }),
-  ]),
+  /** Whether the `CardDeck` supports horizontal scrolling when there are overflow children */
+  canScrollHorizontal: PropTypes.bool,
+  /** TODO  */
+  StartSentinel: PropTypes.elementType,
+  /** TODO  */
+  EndSentinel: PropTypes.elementType,
 };
 
 CardDeck.defaultProps = {
@@ -68,7 +83,9 @@ CardDeck.defaultProps = {
     xl: 4,
   },
   hasInteractiveChildren: false,
-  overflowRef: null,
+  canScrollHorizontal: true,
+  StartSentinel: null,
+  EndSentinel: null,
 };
 
 CardDeck.Deprecated = BaseCardDeck;

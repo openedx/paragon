@@ -1,12 +1,17 @@
 import React, {
   useCallback,
+  useContext,
   useEffect,
+  useLayoutEffect,
+  useReducer,
   useState,
   useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import axios from 'axios';
+import classNames from 'classnames';
+import { v4 as uuidv4 } from 'uuid';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/duotoneDark';
 import {
@@ -75,8 +80,11 @@ function CodeBlock({
             ...ParagonIcons,
             ...ParagonReact,
             useCallback,
+            useContext,
+            useLayoutEffect,
             useEffect,
             useState,
+            useReducer,
             useMemo,
             ExamplePropsForm,
             MiyazakiCard,
@@ -86,6 +94,8 @@ function CodeBlock({
             MenuIcon: ParagonIcons.Menu,
             axios,
             GatsbyLink: Link,
+            classNames,
+            uuidv4,
           }}
           theme={theme}
         >

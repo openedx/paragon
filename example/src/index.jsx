@@ -11,6 +11,9 @@ import {
 import { APP_INIT_ERROR, APP_READY, initialize } from '@edx/frontend-platform';
 import { subscribe } from '@edx/frontend-platform/pubSub';
 import MyComponent from './MyComponent';
+import ExampleCardCarouselPage from './ExampleCardCarouselPage';
+import ExampleCardDeckPage from './ExampleCardDeckPage';
+import GenericCarouselPage from './GenericCarouselPage';
 
 import './index.scss';
 
@@ -21,6 +24,21 @@ subscribe(APP_READY, () => {
         exact
         path="/"
         component={MyComponent}
+      />
+      <PageRoute
+        exact
+        path="/carddeck"
+        component={ExampleCardDeckPage}
+      />
+      <PageRoute
+        exact
+        path="/cardcarousel"
+        component={ExampleCardCarouselPage}
+      />
+      <PageRoute
+        exact
+        path="/carousel"
+        component={GenericCarouselPage}
       />
     </AppProvider>,
     document.getElementById('root'),
