@@ -17,6 +17,7 @@ A set of React components that encapsulates the logic from [`useOverflowScroll`]
 * `OverflowScroll`
 * `OverflowScroll.StartSentinel`
 * `OverflowScroll.EndSentinel`
+* `OverflowScroll.Items`
 
 ## Sample Usage
 
@@ -33,7 +34,7 @@ The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.
     </div>
   );
 
-  const OverflowScrollItems = () => {
+  const OverflowScrollContent = () => {
     const { overflowRef } = useContext(OverflowScrollContext);
     return (
       <div
@@ -42,7 +43,9 @@ The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.
         style={{ paddingLeft: 1, paddingRight: 1 }}
       >
         <OverflowScroll.StartSentinel />
-        {items}
+        <OverflowScroll.Items>
+          {items}
+        </OverflowScroll.Items>
         <OverflowScroll.EndSentinel />
       </div>
     );
@@ -90,7 +93,7 @@ The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.
   return (
     <OverflowScroll childQuerySelector=".example-item" disableScroll>
       <OverflowScrollControls />
-      <OverflowScrollItems />
+      <OverflowScrollContent />
     </OverflowScroll>
   );
 };

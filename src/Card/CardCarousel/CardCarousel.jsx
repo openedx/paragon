@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { OverflowScroll } from '../..';
-import { CARD_DECK_ITEM_CLASS_NAME } from '../CardDeck';
 import CardCarouselProvider from './CardCarouselProvider';
 import CardCarouselHeader from './CardCarouselHeader';
 import CardCarouselItems from './CardCarouselItems';
@@ -17,7 +16,6 @@ function CardCarousel({
 }) {
   return (
     <OverflowScroll
-      childQuerySelector={`.${CARD_DECK_ITEM_CLASS_NAME}`}
       disableScroll={!canScrollHorizontal}
       hasInteractiveChildren={hasInteractiveChildren}
       disableOpacityMasks={disableOpacityMasks}
@@ -28,7 +26,10 @@ function CardCarousel({
         canScrollHorizontal={canScrollHorizontal}
       >
         <div className="pgn__card-carousel">
-          <CardCarouselHeader title={title} subtitle={subtitle} />
+          <CardCarouselHeader
+            title={title}
+            subtitle={subtitle}
+          />
           <CardCarouselItems>{children}</CardCarouselItems>
         </div>
       </CardCarouselProvider>

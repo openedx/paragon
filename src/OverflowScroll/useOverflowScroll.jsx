@@ -1,11 +1,14 @@
 import {
   useCallback,
-  useEffect,
   useState,
 } from 'react';
 import useIsVisible from '../hooks/useIsVisible';
-
-export const OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS = 'pgn__overflow-scroll-overflow-container';
+import {
+  useOverflowScrollActions,
+  useOverflowScrollElementAttributes,
+  useOverflowScrollEventListeners,
+  OVERFLOW_SCROLL_ITEM_CLASS,
+} from './data';
 
 /**
  * Gets the children elements matching the given CSS query selector.
@@ -23,15 +26,14 @@ const getChildrenElements = ({
   if (!element) {
     return [];
   }
-  const matchingElements = [...element.querySelectorAll(childQuerySelector)];
+  const actualChildQuerySelector = childQuerySelector || `.${OVERFLOW_SCROLL_ITEM_CLASS}`;
+  const matchingElements = [...element.querySelectorAll(actualChildQuerySelector)];
   if (matchingElements.length === 0) {
     // eslint-disable-next-line no-console
-    console.warn(`No matching elements found for CSS selector: ${childQuerySelector}`);
+    console.warn(`No matching elements found for CSS selector: ${actualChildQuerySelector}`);
   }
   return matchingElements;
 };
-
-const calculateOffsetLeft = element => element?.offsetLeft || 0;
 
 /**
  * A headless React hook that encapsulates the logic for supporting
@@ -44,6 +46,7 @@ const calculateOffsetLeft = element => element?.offsetLeft || 0;
  *  the overflow container are interactive. If false, the overflow container will
  *  automatically become focusable for a11y.
  * @param {boolean} args.disableScroll Whether users can scroll within the overflow container.
+ * @param {boolean} args.disableOpacityMasks Whether the start/end opacity masks should be shown, when applicable.
  * @param {string} args.scrollBehavior Optional override for the scroll behavior. See https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo for
  *  more details.
  *
@@ -67,222 +70,56 @@ const useOverflowScroll = ({
   const [isOverflowElementVisible, overflowRef] = useIsVisible();
   const [isScrolledToStart, startSentinelRef] = useIsVisible();
   const [isScrolledToEnd, endSentinelRef] = useIsVisible();
+
   const [activeChildElementIndex, setActiveChildElementIndex] = useState(0);
+
+  const onActiveChildElementIndexChange = useCallback((index) => {
+    setActiveChildElementIndex(index);
+  }, []);
 
   const childrenElements = getChildrenElements({
     element: overflowRef.current,
     childQuerySelector,
   });
 
-  /**
-   * Once the overflow container element is known, check to see if it already has the necessary
-   * a11y attributes and CSS styles to support the overflow scrolling behavior.
-   *
-   * a11y Attributes:
-   * - `tabIndex: -1` (hasInteractiveChildren = false) OR `tabIndex: 0` (hasInteractiveChildren = true)
-   *
-   * CSS Styles:
-   * - `position: relative`
-   * - `overflow-x: scroll` (disableScroll = false) OR `overflow-x: hidden` (disableScroll = true)
-   */
-  useEffect(() => {
-    if (overflowRef.current) {
-      // a11y
-      if (hasInteractiveChildren && overflowRef.current.tabIndex !== '-1') {
-        overflowRef.current.tabIndex = '-1';
-      }
-      if (!hasInteractiveChildren && overflowRef.current.tabIndex !== '0') {
-        overflowRef.current.tabIndex = '0';
-      }
+  useOverflowScrollEventListeners({
+    overflowRef,
+    childrenElements,
+    activeChildElementIndex,
+    onActiveChildElementIndexChange,
+    disableScroll,
+  });
 
-      // styles
-      const overflowRefStyles = global.getComputedStyle(overflowRef.current);
-      const positionStyle = overflowRefStyles.getPropertyValue('position');
-      const overflowXStyle = overflowRefStyles.getPropertyValue('overflow-x');
-      const hasOverflowClass = overflowRef.current.classList.contains(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
-
-      if (!hasOverflowClass) {
-        overflowRef.current.classList.add(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
-      }
-
-      if (positionStyle !== 'relative') {
-        overflowRef.current.style.position = 'relative';
-      }
-      if (disableScroll && overflowXStyle !== 'hidden') {
-        overflowRef.current.style.overflowX = 'hidden';
-      }
-      if (!disableScroll && overflowXStyle !== 'scroll') {
-        overflowRef.current.style.overflowX = 'scroll';
-      }
-
-      if (disableOpacityMasks) {
-        overflowRef.current.style.removeProperty('mask-image');
-        overflowRef.current.style.removeProperty('-webkit-mask-image');
-      } else {
-        const getMaskImageStyleValue = () => {
-          if (isScrolledToStart && !isScrolledToEnd) {
-            return 'linear-gradient(to right, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%';
-          }
-          if (!isScrolledToStart && isScrolledToEnd) {
-            return 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%';
-          }
-
-          if (!isScrolledToStart && !isScrolledToEnd) {
-            return 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%)';
-          }
-
-          // no opacity mask required
-          return undefined;
-        };
-        const maskImageStyleValue = getMaskImageStyleValue();
-        overflowRef.current.style.maskImage = maskImageStyleValue;
-        overflowRef.current.style.webkitMaskImage = maskImageStyleValue;
-      }
-    }
-  }, [
+  useOverflowScrollElementAttributes({
     overflowRef,
     hasInteractiveChildren,
     disableScroll,
     disableOpacityMasks,
     isScrolledToStart,
     isScrolledToEnd,
-  ]);
+  });
 
-  /**
-   * A helper function to scroll to the previous element in the overflow container.
-   */
-  const scrollToPrevious = useCallback(() => {
-    if (overflowRef.current) {
-      const getPreviousChildElement = (previousChildElementIndex) => {
-        // return the start sentinel element if the overflow container reached the beginning
-        if (previousChildElementIndex <= 0) {
-          return startSentinelRef.current;
-        }
-        // otherwise return the previous element
-        return childrenElements[previousChildElementIndex];
-      };
+  const handleScrollPrevious = useCallback(() => {
+    setActiveChildElementIndex(s => Math.max(s - 1, 0));
+  }, []);
 
-      const previousChildElementIndex = activeChildElementIndex - 1;
-      const previousChildElement = getPreviousChildElement(previousChildElementIndex);
-      const calculatedOffsetLeft = calculateOffsetLeft(previousChildElement);
-      overflowRef.current.scrollTo({
-        left: calculatedOffsetLeft,
-        behavior: scrollBehavior,
-      });
-      setActiveChildElementIndex(s => Math.max(s - 1, 0));
-    }
-  }, [
+  const handleScrollNext = useCallback(() => {
+    setActiveChildElementIndex(s => Math.min(s + 1, childrenElements.length - 1));
+  }, [childrenElements]);
+
+  const {
+    scrollToPrevious,
+    scrollToNext,
+  } = useOverflowScrollActions({
     overflowRef,
-    childrenElements,
+    activeChildElementIndex,
     startSentinelRef,
-    activeChildElementIndex,
-    scrollBehavior,
-  ]);
-
-  /**
-   * A helper function to scroll to the next element in the overflow container.
-   */
-  const scrollToNext = useCallback(() => {
-    if (overflowRef.current) {
-      const getNextChildElement = (nextChildElementIndex) => {
-        // return the end sentinel element if the overflow container reached the end
-        if (nextChildElementIndex >= childrenElements.length - 1) {
-          return endSentinelRef.current;
-        }
-        // otherwise return the next element
-        return childrenElements[nextChildElementIndex];
-      };
-
-      const nextChildElementIndex = activeChildElementIndex + 1;
-      const nextChildElement = getNextChildElement(nextChildElementIndex);
-      const calculatedOffsetLeft = calculateOffsetLeft(nextChildElement);
-      overflowRef.current.scrollTo({
-        left: calculatedOffsetLeft,
-        behavior: scrollBehavior,
-      });
-      setActiveChildElementIndex(s => Math.min(s + 1, childrenElements.length - 1));
-    }
-  }, [
-    overflowRef,
     endSentinelRef,
-    activeChildElementIndex,
-    scrollBehavior,
     childrenElements,
-  ]);
-
-  /**
-   * Determines which child element should be flagged as active based on the
-   * user's scroll position within the overflow container element.
-   *
-   * This ensures the overflow container scrolls to an appropriate child element
-   * based on where the user's current scroll position resides.
-   */
-  const updateActiveChildElementOnWheel = useCallback((event) => {
-    if (!overflowRef?.current || disableScroll) {
-      return;
-    }
-
-    const isScrollingLeft = event.deltaX < 0;
-
-    const getScrollOffsetLeft = (element) => {
-      if (isScrollingLeft) {
-        return element.offsetLeft;
-      }
-      return element.offsetLeft + element.offsetWidth;
-    };
-
-    for (let index = 0; index < childrenElements.length; index++) {
-      const childElement = childrenElements[index];
-      const scrollOffsetLeft = getScrollOffsetLeft(childElement);
-      if (scrollOffsetLeft > overflowRef.current.scrollLeft) {
-        if (index !== activeChildElementIndex) {
-          setActiveChildElementIndex(index);
-        }
-        break;
-      }
-    }
-  }, [overflowRef, activeChildElementIndex, disableScroll, childrenElements]);
-
-  /**
-   * Determines which child element should be flagged as active based on
-   * which element within the overflow container currently has the user's focus.
-   */
-  const updateActiveChildElementOnFocusIn = useCallback(() => {
-    if (!overflowRef?.current) {
-      return;
-    }
-    if (overflowRef.current === document.activeElement) {
-      return;
-    }
-    childrenElements.forEach((element, index) => {
-      const elementContainsActiveElement = element.contains(document.activeElement);
-      if (elementContainsActiveElement && index !== activeChildElementIndex) {
-        setActiveChildElementIndex(index);
-      }
-    });
-  }, [overflowRef, activeChildElementIndex, childrenElements]);
-
-  /**
-   * Adds/removes event listeners for the `wheel` and `focusin` events to ensure the
-   * `activeChildElementIndex` state value is updated as the user manually scrolls
-   * within overflow container and/or the user moves focus to another child element
-   * within the overflow container. Doing so ensures that scrolling to the previous/next
-   * element in the overflow container continues from the leftmost visible element or the
-   * actively focused element.
-   */
-  useEffect(() => {
-    const overflowRefCopy = overflowRef.current;
-    overflowRefCopy?.addEventListener('focusin', updateActiveChildElementOnFocusIn);
-    if (!disableScroll) {
-      overflowRefCopy?.addEventListener('wheel', updateActiveChildElementOnWheel);
-    }
-    return () => {
-      overflowRefCopy?.removeEventListener('focusin', updateActiveChildElementOnFocusIn);
-      if (!disableScroll) {
-        overflowRefCopy?.removeEventListener('wheel', updateActiveChildElementOnWheel);
-      }
-    };
-  }, [overflowRef, disableScroll, updateActiveChildElementOnWheel, updateActiveChildElementOnFocusIn]);
+    scrollBehavior,
+    onScrollPrevious: handleScrollPrevious,
+    onScrollNext: handleScrollNext,
+  });
 
   return {
     overflowRef,

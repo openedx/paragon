@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import BaseCardDeck from 'react-bootstrap/CardDeck';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useOverflowScrollItems } from '..';
 
 export const CARD_DECK_ITEM_CLASS_NAME = 'pgn__card-deck-card-item';
 
@@ -15,15 +16,25 @@ const CardDeck = React.forwardRef(({
   canScrollHorizontal,
   StartSentinel,
   EndSentinel,
+  hasOverflowScrollItems,
 }, ref) => {
   const cards = useMemo(
-    () => React.Children.map(children, card => (
-      <Col className={CARD_DECK_ITEM_CLASS_NAME} {...columnSizes}>
-        {card}
+    () => React.Children.map(children, child => (
+      <Col className={classNames(CARD_DECK_ITEM_CLASS_NAME, child.props.className)} {...columnSizes}>
+        {child}
       </Col>
     )),
     [children, columnSizes],
   );
+
+  const overflowCardDeckItems = useOverflowScrollItems(cards);
+
+  const cardDeckChildren = useMemo(() => {
+    if (hasOverflowScrollItems) {
+      return overflowCardDeckItems;
+    }
+    return cards;
+  }, [hasOverflowScrollItems, overflowCardDeckItems, cards]);
 
   return (
     <div
@@ -41,7 +52,7 @@ const CardDeck = React.forwardRef(({
         ref={ref}
       >
         {StartSentinel && <StartSentinel />}
-        {cards}
+        {cardDeckChildren}
         {EndSentinel && <EndSentinel />}
       </Row>
     </div>
@@ -73,6 +84,9 @@ CardDeck.propTypes = {
   StartSentinel: PropTypes.elementType,
   /** React element to determine when scrolled to end  */
   EndSentinel: PropTypes.elementType,
+  /** Whether the children of CardDeck should be processed by `useOverflowScrollItems` to give
+   * each child a known/stable CSS classname */
+  hasOverflowScrollItems: PropTypes.bool,
 };
 
 CardDeck.defaultProps = {
@@ -86,6 +100,7 @@ CardDeck.defaultProps = {
   canScrollHorizontal: true,
   StartSentinel: null,
   EndSentinel: null,
+  hasOverflowScrollItems: false,
 };
 
 CardDeck.Deprecated = BaseCardDeck;

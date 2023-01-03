@@ -166,9 +166,10 @@ export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigation'
 export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChild';
 export { default as useIsVisible } from './hooks/useIsVisible';
 export {
-  useOverflowScroll,
-  OverflowScroll,
   OverflowScrollContext,
+  OverflowScroll,
+  useOverflowScroll,
+  useOverflowScrollItems,
 } from './OverflowScroll';
 
 // Pass through any needed whole third-party library functionality

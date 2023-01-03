@@ -24,6 +24,7 @@ function CardCarouselItems({ children }) {
       EndSentinel={OverflowScroll.EndSentinel}
       hasOpacityMaskStart={!isScrolledToStart}
       hasOpacityMaskEnd={!isScrolledToEnd}
+      hasOverflowScrollItems
     >
       {children}
     </CardDeck>

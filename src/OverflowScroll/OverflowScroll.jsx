@@ -6,6 +6,7 @@ import {
   OverflowScrollStartSentinel,
   OverflowScrollEndSentinel,
 } from './OverflowScrollSentinels';
+import OverflowScrollItems from './OverflowScrollItems';
 
 function OverflowScroll({
   children,
@@ -59,6 +60,7 @@ function OverflowScroll({
 
 OverflowScroll.StartSentinel = OverflowScrollStartSentinel;
 OverflowScroll.EndSentinel = OverflowScrollEndSentinel;
+OverflowScroll.Items = OverflowScrollItems;
 
 OverflowScroll.propTypes = {
   children: PropTypes.node.isRequired,
