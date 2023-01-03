@@ -12,6 +12,7 @@ function OverflowScroll({
   childQuerySelector,
   hasInteractiveChildren,
   disableScroll,
+  disableOpacityMasks,
 }) {
   const {
     overflowRef,
@@ -21,11 +22,12 @@ function OverflowScroll({
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
-    isOverflowContainerVisible,
+    isOverflowElementVisible,
   } = useOverflowScroll({
     childQuerySelector,
     hasInteractiveChildren,
     disableScroll,
+    disableOpacityMasks,
   });
 
   const contextValue = useMemo(() => ({
@@ -36,7 +38,7 @@ function OverflowScroll({
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
-    isOverflowContainerVisible,
+    isOverflowElementVisible,
   }), [
     endSentinelRef,
     isScrolledToEnd,
@@ -45,7 +47,7 @@ function OverflowScroll({
     scrollToNext,
     scrollToPrevious,
     startSentinelRef,
-    isOverflowContainerVisible,
+    isOverflowElementVisible,
   ]);
 
   return (
@@ -63,11 +65,13 @@ OverflowScroll.propTypes = {
   childQuerySelector: PropTypes.string.isRequired,
   hasInteractiveChildren: PropTypes.bool,
   disableScroll: PropTypes.bool,
+  disableOpacityMasks: PropTypes.bool,
 };
 
 OverflowScroll.defaultProps = {
   disableScroll: false,
   hasInteractiveChildren: false,
+  disableOpacityMasks: false,
 };
 
 export default OverflowScroll;

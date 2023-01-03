@@ -890,6 +890,7 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
 ```jsx live
 () => {
   const [canScrollHorizontal, setCanScrollHorizontal] = useState('true');
+  const [disableOpacityMasks, setDisableOpacityMasks] = useState('false');
 
   const CardComponent = () => (
     <Card isClickable>
@@ -915,6 +916,12 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
             options: ['true', 'false'],
             name: 'canScrollHorizontal',
           },
+          {
+            value: disableOpacityMasks,
+            setValue: setDisableOpacityMasks,
+            options: ['true', 'false'],
+            name: 'disableOpacityMasks',
+          },
         ]}
       />
       {/* end example form block */}
@@ -923,6 +930,7 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
         title={<h3>Recommended for you</h3>}
         subtitle="The following content was picked just for you."
         canScrollHorizontal={canScrollHorizontal === 'true'}
+        disableOpacityMasks={disableOpacityMasks === 'true'}
       >
         <CardComponent />
         <CardComponent />

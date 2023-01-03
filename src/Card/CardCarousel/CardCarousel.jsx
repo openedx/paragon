@@ -1,32 +1,10 @@
-import React, { isValidElement } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { OverflowScroll } from '../..';
 import { CARD_DECK_ITEM_CLASS_NAME } from '../CardDeck';
 import CardCarouselProvider from './CardCarouselProvider';
-import CardCarouselTitle from './CardCarouselTitle';
-import CardCarouselSubtitle from './CardCarouselSubtitle';
-import CardCarouselControls from './CardCarouselControls';
+import CardCarouselHeader from './CardCarouselHeader';
 import CardCarouselItems from './CardCarouselItems';
-
-const getFormattedTitle = (title) => {
-  if (!title) {
-    return null;
-  }
-  if (isValidElement(title)) {
-    return title;
-  }
-  return <CardCarouselTitle>{title}</CardCarouselTitle>;
-};
-
-const getFormattedSubtitle = (subtitle) => {
-  if (!subtitle) {
-    return null;
-  }
-  if (isValidElement(subtitle)) {
-    return subtitle;
-  }
-  return <CardCarouselSubtitle>{subtitle}</CardCarouselSubtitle>;
-};
 
 function CardCarousel({
   children,
@@ -35,15 +13,14 @@ function CardCarousel({
   columnSizes,
   hasInteractiveChildren,
   canScrollHorizontal,
+  disableOpacityMasks,
 }) {
-  const carouselTitle = getFormattedTitle(title);
-  const carouselSubtitle = getFormattedSubtitle(subtitle);
-
   return (
     <OverflowScroll
       childQuerySelector={`.${CARD_DECK_ITEM_CLASS_NAME}`}
       disableScroll={!canScrollHorizontal}
       hasInteractiveChildren={hasInteractiveChildren}
+      disableOpacityMasks={disableOpacityMasks}
     >
       <CardCarouselProvider
         columnSizes={columnSizes}
@@ -51,13 +28,7 @@ function CardCarousel({
         canScrollHorizontal={canScrollHorizontal}
       >
         <div className="pgn__card-carousel">
-          <div className="pgn__card-carousel-header">
-            <div>
-              {carouselTitle}
-              {carouselSubtitle}
-            </div>
-            <CardCarouselControls />
-          </div>
+          <CardCarouselHeader title={title} subtitle={subtitle} />
           <CardCarouselItems>{children}</CardCarouselItems>
         </div>
       </CardCarouselProvider>
@@ -84,6 +55,8 @@ CardCarousel.propTypes = {
   hasInteractiveChildren: PropTypes.bool,
   /** Whether the carousel can be scrolled manually by users. */
   canScrollHorizontal: PropTypes.bool,
+  /** Whether the default opacity masks should be shown at the start/end, if applicable */
+  disableOpacityMasks: PropTypes.bool,
 };
 
 CardCarousel.defaultProps = {
@@ -96,6 +69,7 @@ CardCarousel.defaultProps = {
   },
   hasInteractiveChildren: false,
   canScrollHorizontal: true,
+  disableOpacityMasks: false,
 };
 
 export default CardCarousel;

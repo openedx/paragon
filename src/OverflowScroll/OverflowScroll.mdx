@@ -52,7 +52,7 @@ The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.
     const {
       isScrolledToStart,
       isScrolledToEnd,
-      isOverflowContainerVisible,
+      isOverflowElementVisible,
       scrollToPrevious,
       scrollToNext,
     } = useContext(OverflowScrollContext);
@@ -61,7 +61,7 @@ The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.
       <div className="mb-3">
         <Button
           onClick={scrollToPrevious}
-          disabled={isScrolledToStart || !isOverflowContainerVisible}
+          disabled={isScrolledToStart || !isOverflowElementVisible}
           size="sm"
           className="mr-2"
         >
@@ -69,7 +69,7 @@ The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.
         </Button>
         <Button
           onClick={scrollToNext}
-          disabled={isScrolledToEnd || !isOverflowContainerVisible}
+          disabled={isScrolledToEnd || !isOverflowElementVisible}
           size="sm"
         >
           Next

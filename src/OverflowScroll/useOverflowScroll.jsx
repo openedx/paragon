@@ -55,15 +55,16 @@ const calculateOffsetLeft = element => element?.offsetLeft || 0;
  * - scrollToNext
  * - isScrolledToStart
  * - isScrolledToEnd
- * - isOverflowContainerVisible
+ * - isOverflowElementVisible
  */
 const useOverflowScroll = ({
   childQuerySelector,
   hasInteractiveChildren = false,
   disableScroll = false,
+  disableOpacityMasks = false,
   scrollBehavior = 'smooth',
 }) => {
-  const [isOverflowContainerVisible, overflowRef] = useIsVisible();
+  const [isOverflowElementVisible, overflowRef] = useIsVisible();
   const [isScrolledToStart, startSentinelRef] = useIsVisible();
   const [isScrolledToEnd, endSentinelRef] = useIsVisible();
   const [activeChildElementIndex, setActiveChildElementIndex] = useState(0);
@@ -114,30 +115,35 @@ const useOverflowScroll = ({
         overflowRef.current.style.overflowX = 'scroll';
       }
 
-      const getMaskImageStyleValue = () => {
-        if (isScrolledToStart && !isScrolledToEnd) {
-          return 'linear-gradient(to right, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%';
-        }
-        if (!isScrolledToStart && isScrolledToEnd) {
-          return 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%';
-        }
+      if (disableOpacityMasks) {
+        overflowRef.current.style.removeProperty('mask-image');
+        overflowRef.current.style.removeProperty('-webkit-mask-image');
+      } else {
+        const getMaskImageStyleValue = () => {
+          if (isScrolledToStart && !isScrolledToEnd) {
+            return 'linear-gradient(to right, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%';
+          }
+          if (!isScrolledToStart && isScrolledToEnd) {
+            return 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%';
+          }
 
-        if (!isScrolledToStart && !isScrolledToEnd) {
-          return 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%)';
-        }
+          if (!isScrolledToStart && !isScrolledToEnd) {
+            return 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%)';
+          }
 
-        // no opacity mask required
-        return undefined;
-      };
-
-      const maskImageStyleValue = getMaskImageStyleValue();
-      overflowRef.current.style.maskImage = maskImageStyleValue;
-      overflowRef.current.style.webkitMaskImage = maskImageStyleValue;
+          // no opacity mask required
+          return undefined;
+        };
+        const maskImageStyleValue = getMaskImageStyleValue();
+        overflowRef.current.style.maskImage = maskImageStyleValue;
+        overflowRef.current.style.webkitMaskImage = maskImageStyleValue;
+      }
     }
   }, [
     overflowRef,
     hasInteractiveChildren,
     disableScroll,
+    disableOpacityMasks,
     isScrolledToStart,
     isScrolledToEnd,
   ]);
@@ -286,7 +292,7 @@ const useOverflowScroll = ({
     scrollToNext,
     isScrolledToStart,
     isScrolledToEnd,
-    isOverflowContainerVisible,
+    isOverflowElementVisible,
   };
 };
 

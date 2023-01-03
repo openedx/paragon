@@ -55,7 +55,7 @@ notes: |
   <OverflowScrollContext.Consumer>
     {({
       overflowRef,
-      isOverflowContainerVisible,
+      isOverflowElementVisible,
       isScrolledToStart,
       isScrolledToEnd,
       scrollToPrevious,
@@ -67,14 +67,14 @@ notes: |
             onClick={scrollToPrevious}
             className="mr-2"
             size="sm"
-            disabled={isScrolledToStart || !isOverflowContainerVisible}
+            disabled={isScrolledToStart || !isOverflowElementVisible}
           >
             Previous
           </Button>
           <Button
             onClick={scrollToNext}
             size="sm"
-            disabled={isScrolledToEnd || !isOverflowContainerVisible}
+            disabled={isScrolledToEnd || !isOverflowElementVisible}
           >
             Next
           </Button>

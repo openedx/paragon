@@ -1,5 +1,5 @@
 .pgn__overflow-scroll-overflow-container {
-  --pgn-overflow-scroll-opacity-mask-transparent: rgba(0, 0, 0, 0.4);
+  --pgn-overflow-scroll-opacity-mask-transparent: rgba(0, 0, 0, .4);
 }
 
 $overflow-scroll-opacity-mask-transparent: var(--pgn-overflow-scroll-opacity-mask-transparent) !default;

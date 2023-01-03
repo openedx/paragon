@@ -15,6 +15,7 @@ The hook accepts the following options:
 * `scrollBehavior`. Allows overriding the default scroll behavior (e.g., "smooth", "instant", "auto").
 * `childQuerySelector`. A CSS query selector that can be used to find the child elements within the overflow container.
 * `disableScroll`. An optional flag to disable the scroll behavior for the overflow container.
+* `disableOpacityMasks`. An optional flag to disable the opacity masks at the start/end of the overflow container (if applicable).
 
 The hook returns the following:
 * Refs
@@ -44,7 +45,7 @@ The following example demonstrates how to use `useOverflowScroll` to build a car
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
-    isOverflowContainerVisible,
+    isOverflowElementVisible,
   } = useOverflowScroll({
     childQuerySelector: '.example-item',
   });
@@ -71,7 +72,7 @@ The following example demonstrates how to use `useOverflowScroll` to build a car
       <div className="mb-3">
         <Button
           onClick={scrollToPrevious}
-          disabled={isScrolledToStart || !isOverflowContainerVisible}
+          disabled={isScrolledToStart || !isOverflowElementVisible}
           size="sm"
           className="mr-2"
         >
@@ -79,7 +80,7 @@ The following example demonstrates how to use `useOverflowScroll` to build a car
         </Button>
         <Button
           onClick={scrollToNext}
-          disabled={isScrolledToEnd || !isOverflowContainerVisible}
+          disabled={isScrolledToEnd || !isOverflowElementVisible}
           size="sm"
         >
           Next

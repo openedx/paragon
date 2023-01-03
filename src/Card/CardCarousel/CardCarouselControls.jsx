@@ -11,7 +11,7 @@ function CardCarouselControls() {
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
-    isOverflowContainerVisible,
+    isOverflowElementVisible,
   } = useContext(CardCarouselContext);
 
   const intl = useIntl();
@@ -20,14 +20,14 @@ function CardCarouselControls() {
     <div>
       <Stack direction="horizontal" gap={1}>
         <IconButton
-          disabled={isScrolledToStart || !isOverflowContainerVisible}
+          disabled={isScrolledToStart || !isOverflowElementVisible}
           src={ArrowBack}
           iconAs={Icon}
           alt={intl.formatMessage(messages.scrollToPrevious)}
           onClick={scrollToPrevious}
         />
         <IconButton
-          disabled={isScrolledToEnd || !isOverflowContainerVisible}
+          disabled={isScrolledToEnd || !isOverflowElementVisible}
           src={ArrowForward}
           iconAs={Icon}
           alt={intl.formatMessage(messages.scrollToNext)}
