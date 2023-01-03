@@ -80,10 +80,7 @@ a .pgn__card {
   .pgn__card-deck-row {
     overflow: hidden;
     flex-wrap: nowrap;
-    padding-top: $card-focus-border-offset;
-    padding-bottom: $card-focus-border-offset;
-    padding-left: 1px;
-    padding-right: 1px;
+    padding: $card-focus-border-offset 1px;
 
     &:focus-visible {
       outline: $card-focus-border-width solid $card-border-focus-color;
