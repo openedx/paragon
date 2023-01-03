@@ -64,13 +64,14 @@ OverflowScroll.Items = OverflowScrollItems;
 
 OverflowScroll.propTypes = {
   children: PropTypes.node.isRequired,
-  childQuerySelector: PropTypes.string.isRequired,
+  childQuerySelector: PropTypes.string,
   hasInteractiveChildren: PropTypes.bool,
   disableScroll: PropTypes.bool,
   disableOpacityMasks: PropTypes.bool,
 };
 
 OverflowScroll.defaultProps = {
+  childQuerySelector: undefined,
   disableScroll: false,
   hasInteractiveChildren: false,
   disableOpacityMasks: false,

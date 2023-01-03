@@ -21,7 +21,7 @@ A set of React components that encapsulates the logic from [`useOverflowScroll`]
 
 ## Sample Usage
 
-The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.StartSentinel`, and `OverflowScroll.EndSentinel` to build carousel-like UI components.
+The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.Items`, `OverflowScroll.StartSentinel`, and `OverflowScroll.EndSentinel` to build carousel-like UI components.
 
 ```jsx live
 () => {
@@ -91,7 +91,7 @@ The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.
   }), []);
 
   return (
-    <OverflowScroll childQuerySelector=".example-item" disableScroll>
+    <OverflowScroll>
       <OverflowScrollControls />
       <OverflowScrollContent />
     </OverflowScroll>
