@@ -85,39 +85,6 @@ a .pgn__card {
     padding-top: $card-focus-border-offset;
     padding-bottom: $card-focus-border-offset;
 
-    $opacity-mask-transparent: rgba(0, 0, 0, .4);
-
-    &.opacity-mask-start {
-      mask-image:
-        linear-gradient(
-          to right,
-          $opacity-mask-transparent 0%,
-          black 10%
-        );
-    }
-
-    // TODO: make it such that `OverflowScroll` component includes start/end opacity masks rather than having them be part of `CardDeck`
-
-    &.opacity-mask-end {
-      mask-image:
-        linear-gradient(
-          to right,
-          black 90%,
-          $opacity-mask-transparent 100%
-        );
-    }
-
-    &.opacity-mask-start-end {
-      mask-image:
-        linear-gradient(
-          to right,
-          $opacity-mask-transparent 0%,
-          black 10%,
-          black 90%,
-          $opacity-mask-transparent 100%
-        );
-    }
-
     &:focus-visible {
       outline: $card-focus-border-width solid $card-border-focus-color;
       border-radius: $card-focus-border-radius;

@@ -5,6 +5,8 @@ import {
 } from 'react';
 import useIsVisible from '../hooks/useIsVisible';
 
+export const OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS = 'pgn__overflow-scroll-overflow-container';
+
 /**
  * Gets the children elements matching the given CSS query selector.
  *
@@ -84,9 +86,6 @@ const useOverflowScroll = ({
    */
   useEffect(() => {
     if (overflowRef.current) {
-      const positionStyle = global.getComputedStyle(overflowRef.current).getPropertyValue('position');
-      const overflowXStyle = global.getComputedStyle(overflowRef.current).getPropertyValue('overflow-x');
-
       // a11y
       if (hasInteractiveChildren && overflowRef.current.tabIndex !== '-1') {
         overflowRef.current.tabIndex = '-1';
@@ -96,6 +95,15 @@ const useOverflowScroll = ({
       }
 
       // styles
+      const overflowRefStyles = global.getComputedStyle(overflowRef.current);
+      const positionStyle = overflowRefStyles.getPropertyValue('position');
+      const overflowXStyle = overflowRefStyles.getPropertyValue('overflow-x');
+      const hasOverflowClass = overflowRef.current.classList.contains(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
+
+      if (!hasOverflowClass) {
+        overflowRef.current.classList.add(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
+      }
+
       if (positionStyle !== 'relative') {
         overflowRef.current.style.position = 'relative';
       }
@@ -105,8 +113,34 @@ const useOverflowScroll = ({
       if (!disableScroll && overflowXStyle !== 'scroll') {
         overflowRef.current.style.overflowX = 'scroll';
       }
+
+      const getMaskImageStyleValue = () => {
+        if (isScrolledToStart && !isScrolledToEnd) {
+          return 'linear-gradient(to right, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%';
+        }
+        if (!isScrolledToStart && isScrolledToEnd) {
+          return 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%';
+        }
+
+        if (!isScrolledToStart && !isScrolledToEnd) {
+          return 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%)';
+        }
+
+        // no opacity mask required
+        return undefined;
+      };
+
+      const maskImageStyleValue = getMaskImageStyleValue();
+      overflowRef.current.style.maskImage = maskImageStyleValue;
+      overflowRef.current.style.webkitMaskImage = maskImageStyleValue;
     }
-  }, [overflowRef, hasInteractiveChildren, disableScroll]);
+  }, [
+    overflowRef,
+    hasInteractiveChildren,
+    disableScroll,
+    isScrolledToStart,
+    isScrolledToEnd,
+  ]);
 
   /**
    * A helper function to scroll to the previous element in the overflow container.

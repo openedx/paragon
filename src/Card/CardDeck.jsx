@@ -15,8 +15,6 @@ const CardDeck = React.forwardRef(({
   canScrollHorizontal,
   StartSentinel,
   EndSentinel,
-  hasOpacityMaskStart,
-  hasOpacityMaskEnd,
 }, ref) => {
   const cards = useMemo(
     () => React.Children.map(children, card => (
@@ -38,11 +36,7 @@ const CardDeck = React.forwardRef(({
       )}
     >
       <Row
-        className={classNames('pgn__card-deck-row', {
-          'opacity-mask-start': (hasOpacityMaskStart && !hasOpacityMaskEnd),
-          'opacity-mask-end': (!hasOpacityMaskStart && hasOpacityMaskEnd),
-          'opacity-mask-start-end': (hasOpacityMaskStart && hasOpacityMaskEnd),
-        })}
+        className="pgn__card-deck-row"
         tabIndex={hasInteractiveChildren ? -1 : 0}
         ref={ref}
       >
@@ -79,10 +73,6 @@ CardDeck.propTypes = {
   StartSentinel: PropTypes.elementType,
   /** React element to determine when scrolled to end  */
   EndSentinel: PropTypes.elementType,
-  /** Whether to show a opacity mask on the left to indicate more (hidden) elements in that direction */
-  hasOpacityMaskStart: PropTypes.bool,
-  /** Whether to show a opacity mask on the right to indicate more (hidden) elements in that direction */
-  hasOpacityMaskEnd: PropTypes.bool,
 };
 
 CardDeck.defaultProps = {
@@ -96,8 +86,6 @@ CardDeck.defaultProps = {
   canScrollHorizontal: true,
   StartSentinel: null,
   EndSentinel: null,
-  hasOpacityMaskStart: false,
-  hasOpacityMaskEnd: false,
 };
 
 CardDeck.Deprecated = BaseCardDeck;
