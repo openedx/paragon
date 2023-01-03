@@ -2,13 +2,11 @@ import {
   useCallback,
   useState,
 } from 'react';
-import useIsVisible from '../hooks/useIsVisible';
-import {
-  useOverflowScrollActions,
-  useOverflowScrollElementAttributes,
-  useOverflowScrollEventListeners,
-  OVERFLOW_SCROLL_ITEM_CLASS,
-} from './data';
+import useIsVisible from '../../hooks/useIsVisible';
+import useOverflowScrollActions from './useOverflowScrollActions';
+import useOverflowScrollElementAttributes from './useOverflowScrollElementAttributes';
+import useOverflowScrollEventListeners from './useOverflowScrollEventListeners';
+import { OVERFLOW_SCROLL_ITEM_CLASS } from './constants';
 
 /**
  * Gets the children elements matching the given CSS query selector.

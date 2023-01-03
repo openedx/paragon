@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import useOverflowScroll from './useOverflowScroll';
+import { useOverflowScroll } from './data';
 import OverflowScrollContext from './OverflowScrollContext';
 import {
   OverflowScrollStartSentinel,
