@@ -18,17 +18,17 @@ describe('correct rendering', () => {
   });
   it('renders body with custom className', () => {
     const className = 'my-class-name';
-    const status = mount(<CardStatus className={className} />);
+    const status = mount(<CardStatus className={className}>Text</CardStatus>);
     expect(status.find('.my-class-name').length).toBeGreaterThan(0);
   });
   it('renders with correct variant', () => {
-    const variant = 'dark';
-    const status = mount(<CardStatus variant={variant} />);
-    expect(status.find('.pgn__card-status__dark').length).toBeGreaterThan(0);
+    const variant = 'primary';
+    const status = mount(<CardStatus variant={variant}>Text</CardStatus>);
+    expect(status.find('.pgn__card-status__primary').length).toBeGreaterThan(0);
   });
   it('renders with icon', () => {
     const icon = WarningFilled;
-    const status = mount(<CardStatus icon={icon} />);
+    const status = mount(<CardStatus icon={icon}>Text</CardStatus>);
     expect(status.find('.pgn__icon').length).toBeGreaterThan(0);
   });
 });

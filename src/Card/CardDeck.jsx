@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { Children, useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import BaseCardDeck from 'react-bootstrap/CardDeck';
@@ -19,14 +19,13 @@ const CardDeck = React.forwardRef(({
   hasOverflowScrollItems,
 }, ref) => {
   const cards = useMemo(
-    () => React.Children.map(children, child => (
+    () => Children.map(Children.toArray(children), child => (
       <Col className={classNames(CARD_DECK_ITEM_CLASS_NAME, child.props.className)} {...columnSizes}>
         {child}
       </Col>
     )),
     [children, columnSizes],
   );
-
   const overflowCardDeckItems = useOverflowScrollItems(cards);
 
   const cardDeckChildren = useMemo(() => {

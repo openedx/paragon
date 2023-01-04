@@ -14,6 +14,8 @@ function OverflowScroll({
   hasInteractiveChildren,
   disableScroll,
   disableOpacityMasks,
+  onScrollPrevious,
+  onScrollNext,
 }) {
   const {
     overflowRef,
@@ -29,6 +31,8 @@ function OverflowScroll({
     hasInteractiveChildren,
     disableScroll,
     disableOpacityMasks,
+    onScrollPrevious,
+    onScrollNext,
   });
 
   const contextValue = useMemo(() => ({
@@ -68,6 +72,8 @@ OverflowScroll.propTypes = {
   hasInteractiveChildren: PropTypes.bool,
   disableScroll: PropTypes.bool,
   disableOpacityMasks: PropTypes.bool,
+  onScrollPrevious: PropTypes.func,
+  onScrollNext: PropTypes.func,
 };
 
 OverflowScroll.defaultProps = {
@@ -75,6 +81,8 @@ OverflowScroll.defaultProps = {
   disableScroll: false,
   hasInteractiveChildren: false,
   disableOpacityMasks: false,
+  onScrollPrevious: undefined,
+  onScrollNext: undefined,
 };
 
 export default OverflowScroll;

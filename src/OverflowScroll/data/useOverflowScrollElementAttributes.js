@@ -2,6 +2,26 @@ import { useEffect } from 'react';
 
 export const OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS = 'pgn__overflow-scroll-overflow-container';
 
+/**
+ * Given the ref the overflow container element, adds the following:
+ * - Paragon-specific CSS class name for internal styles
+ *
+ * - a11y Attributes:
+ *   - `tabIndex: -1` (hasInteractiveChildren = false) OR `tabIndex: 0` (hasInteractiveChildren = true)
+ *
+ * - CSS Styles:
+ *   - `position: relative`
+ *   - `overflow-x: scroll` (disableScroll = false) OR `overflow-x: hidden` (disableScroll = true)
+ *
+ * @param {object} args Options
+ * @param {React.Ref} args.overflowRef Ref for the overflow container element
+ * @param {boolean} args.hasInteractiveChildren Whether the overflow container element
+ *  has interactive children (e.g., clickable cards).
+ * @param {boolean} args.disableScroll Whether the overflow container's manual scroll behavior is disabled.
+ * @param {boolean} args.disableOpacityMasks Whether opacity masks at the start/end are enabled.
+ * @param {boolean} args.isScrolledToStart Whether the overflow container is scrolled to the start.
+ * @param {boolean} args.isScrolledToEnd Whether the overflow container is scrolled to the end.
+ */
 const useOverflowScrollElementAttributes = ({
   overflowRef,
   hasInteractiveChildren,
@@ -13,13 +33,6 @@ const useOverflowScrollElementAttributes = ({
   /**
    * Once the overflow container element is known, check to see if it already has the necessary
    * a11y attributes and CSS styles to support the overflow scrolling behavior.
-   *
-   * a11y Attributes:
-   * - `tabIndex: -1` (hasInteractiveChildren = false) OR `tabIndex: 0` (hasInteractiveChildren = true)
-   *
-   * CSS Styles:
-   * - `position: relative`
-   * - `overflow-x: scroll` (disableScroll = false) OR `overflow-x: hidden` (disableScroll = true)
    */
   useEffect(() => {
     if (overflowRef.current) {

@@ -68,6 +68,8 @@ const useOverflowScroll = ({
   disableScroll = false,
   disableOpacityMasks = false,
   scrollBehavior = 'smooth',
+  onScrollPrevious,
+  onScrollNext,
 }) => {
   const [isOverflowElementVisible, overflowRef] = useIsVisible();
   const [isScrolledToStart, startSentinelRef] = useIsVisible();
@@ -103,11 +105,17 @@ const useOverflowScroll = ({
 
   const handleScrollPrevious = useCallback(() => {
     setActiveChildElementIndex(s => Math.max(s - 1, 0));
-  }, []);
+    if (onScrollPrevious) {
+      onScrollPrevious();
+    }
+  }, [onScrollPrevious]);
 
   const handleScrollNext = useCallback(() => {
     setActiveChildElementIndex(s => Math.min(s + 1, childrenElements.length - 1));
-  }, [childrenElements]);
+    if (onScrollNext) {
+      onScrollNext();
+    }
+  }, [childrenElements, onScrollNext]);
 
   const {
     scrollToPrevious,

@@ -931,6 +931,8 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
         subtitle="The following content was picked just for you."
         canScrollHorizontal={canScrollHorizontal === 'true'}
         disableOpacityMasks={disableOpacityMasks === 'true'}
+        onScrollPrevious={() => { console.log('onScrollPrevious'); } }
+        onScrollNext={() => { console.log('onScrollNext'); } }
       >
         <CardComponent />
         <CardComponent />

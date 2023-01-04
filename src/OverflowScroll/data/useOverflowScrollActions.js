@@ -1,5 +1,11 @@
 import { useCallback } from 'react';
 
+/**
+ * Calculates the `offsetLeft` position relative to the overflow container.
+ *
+ * @param {HTMLElement} element A HTML element
+ * @returns The `offsetLeft` property of an element, if given.
+ */
 const calculateOffsetLeft = element => element?.offsetLeft || 0;
 
 const useOverflowScrollActions = ({

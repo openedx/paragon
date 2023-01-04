@@ -1,5 +1,16 @@
 import { useCallback, useEffect, useState } from 'react';
 
+/**
+ * A React hook that adds and deletes event listeners on the `overflowRef` container element.
+ *
+ * @param {object} args
+ * @param {object} args.overflowRef The ref of the overflow container.
+ * @param {array} args.childrenElements A list of child DOM elements
+ * @param {number} args.activeChildElementIndex The current index of the child element considered to be "active"
+ * @param {function} args.onActiveChildElementIndexChange Callback function for when the active child element
+ *  index changes
+ * @param {boolean} args.disableScroll Whether scrolling is disabled
+ */
 const useOverflowScrollEventListeners = ({
   overflowRef,
   childrenElements,
@@ -7,9 +18,13 @@ const useOverflowScrollEventListeners = ({
   onActiveChildElementIndexChange,
   disableScroll,
 }) => {
-  const [isOverflowElementClicked, setIsOverflowElementClicked] = useState(false);
-  const [currentOverflowScrollLeft, setCurrentOverflowScrollLeft] = useState(0);
+  const [isOverflowElementMouseDown, setIsOverflowElementMouseDown] = useState(false);
+  const [previousOverflowScrollLeft, setPreviousOverflowScrollLeft] = useState(0);
 
+  /**
+   * Determines which child element should be deemed the new `activeChildElementIndex`, as triggered by a particular
+   * event, e.g. `wheel`, `scroll`, `focusin`, `keyup`
+   */
   const updateActiveChildElementIndex = useCallback(({ isScrollingLeft }) => {
     const getScrollOffsetLeft = (element) => {
       if (isScrollingLeft) {
@@ -42,9 +57,7 @@ const useOverflowScrollEventListeners = ({
       return;
     }
     const isScrollingLeft = event.deltaX < 0;
-    updateActiveChildElementIndex({
-      isScrollingLeft,
-    });
+    updateActiveChildElementIndex({ isScrollingLeft });
   }, [overflowRef, disableScroll, updateActiveChildElementIndex]);
 
   /**
@@ -73,31 +86,50 @@ const useOverflowScrollEventListeners = ({
    *   - Update the active child element index based on the current scroll position
    */
   const handleScrollEvent = useCallback(() => {
-    if (isOverflowElementClicked) {
-      const isScrollingLeft = overflowRef.current.scrollLeft < currentOverflowScrollLeft;
-      updateActiveChildElementIndex({
-        isScrollingLeft,
-      });
-      setCurrentOverflowScrollLeft(overflowRef.current.scrollLeft);
+    if (!isOverflowElementMouseDown) {
+      return;
     }
-  }, [isOverflowElementClicked, overflowRef, updateActiveChildElementIndex, currentOverflowScrollLeft]);
+    const isScrollingLeft = overflowRef.current.scrollLeft < previousOverflowScrollLeft;
+    updateActiveChildElementIndex({ isScrollingLeft });
+    setPreviousOverflowScrollLeft(overflowRef.current.scrollLeft);
+  }, [isOverflowElementMouseDown, overflowRef, updateActiveChildElementIndex, previousOverflowScrollLeft]);
 
   /**
    * When mousedown event is fired:
-   *   - set current overflow container scroll left position
-   *   - set `isOverflowElementClicked=true`
+   *   - set previous overflow container scroll left position
+   *   - set `isOverflowElementMouseDown=true`
    */
   const handleMouseDownEvent = useCallback(() => {
-    setCurrentOverflowScrollLeft(overflowRef.current.scrollLeft);
-    setIsOverflowElementClicked(true);
+    setPreviousOverflowScrollLeft(overflowRef.current.scrollLeft);
+    setIsOverflowElementMouseDown(true);
   }, [overflowRef]);
 
   /**
-   * When mouseup event is fired, reset to `isOverflowElementClicked=false`.
+   * When mouseup event is fired, reset to `isOverflowElementMouseDown=false`.
    */
   const handleMouseUpEvent = useCallback(() => {
-    setIsOverflowElementClicked(false);
+    setIsOverflowElementMouseDown(false);
   }, []);
+
+  /**
+   * When keydown event is fired, set previous overflow container scroll left position
+   */
+  const updateActiveChildElementOnKeyDown = useCallback((e) => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      setPreviousOverflowScrollLeft(overflowRef.current.scrollLeft);
+    }
+  }, [overflowRef]);
+
+  /**
+   * When keyup event is fired, update the active child element in the overflow container
+   * based on the new scroll position
+   */
+  const updateActiveChildElementOnKeyUp = useCallback((e) => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      const isScrollingLeft = overflowRef.current.scrollLeft < previousOverflowScrollLeft;
+      updateActiveChildElementIndex({ isScrollingLeft });
+    }
+  }, [overflowRef, previousOverflowScrollLeft, updateActiveChildElementIndex]);
 
   /**
    * Adds/removes event listeners for the following events:
@@ -105,6 +137,8 @@ const useOverflowScrollEventListeners = ({
    * - `focusin`
    * - `mousedown`
    * - `mouseup`
+   * - `keydown`
+   * - `keyup`
    * - `scroll`
    *
    * These event listeners ensure the `activeChildElementIndex` state value is updated as the
@@ -115,20 +149,28 @@ const useOverflowScrollEventListeners = ({
   useEffect(() => {
     const overflowRefCopy = overflowRef.current;
 
+    overflowRefCopy?.addEventListener('focusin', updateActiveChildElementOnFocusIn);
+    overflowRefCopy?.addEventListener('keydown', updateActiveChildElementOnKeyDown);
+    overflowRefCopy?.addEventListener('keyup', updateActiveChildElementOnKeyUp);
+
+    // we must handle the `scroll` event even when `disableScroll` is true because the `mousedown` and `mouseup`
+    // events trigger a scroll.
+    overflowRefCopy?.addEventListener('scroll', handleScrollEvent);
+
     if (!disableScroll) {
       overflowRefCopy?.addEventListener('wheel', updateActiveChildElementOnWheel);
-      overflowRefCopy?.addEventListener('scroll', handleScrollEvent);
       overflowRefCopy?.addEventListener('mousedown', handleMouseDownEvent);
       overflowRefCopy?.addEventListener('mouseup', handleMouseUpEvent);
     }
 
-    overflowRefCopy?.addEventListener('focusin', updateActiveChildElementOnFocusIn);
-
     return () => {
       overflowRefCopy?.removeEventListener('focusin', updateActiveChildElementOnFocusIn);
+      overflowRefCopy?.removeEventListener('keydown', updateActiveChildElementOnKeyDown);
+      overflowRefCopy?.removeEventListener('keyup', updateActiveChildElementOnKeyUp);
+      overflowRefCopy?.removeEventListener('scroll', handleScrollEvent);
+
       if (!disableScroll) {
         overflowRefCopy?.removeEventListener('wheel', updateActiveChildElementOnWheel);
-        overflowRefCopy?.removeEventListener('scroll', handleScrollEvent);
         overflowRefCopy?.removeEventListener('mousedown', handleMouseDownEvent);
         overflowRefCopy?.removeEventListener('mouseup', handleMouseUpEvent);
       }
@@ -138,6 +180,8 @@ const useOverflowScrollEventListeners = ({
     disableScroll,
     updateActiveChildElementOnWheel,
     updateActiveChildElementOnFocusIn,
+    updateActiveChildElementOnKeyDown,
+    updateActiveChildElementOnKeyUp,
     handleScrollEvent,
     handleMouseUpEvent,
     handleMouseDownEvent,

@@ -13,12 +13,16 @@ function CardCarousel({
   hasInteractiveChildren,
   canScrollHorizontal,
   disableOpacityMasks,
+  onScrollPrevious,
+  onScrollNext,
 }) {
   return (
     <OverflowScroll
       disableScroll={!canScrollHorizontal}
       hasInteractiveChildren={hasInteractiveChildren}
       disableOpacityMasks={disableOpacityMasks}
+      onScrollPrevious={onScrollPrevious}
+      onScrollNext={onScrollNext}
     >
       <CardCarouselProvider
         columnSizes={columnSizes}
@@ -56,8 +60,12 @@ CardCarousel.propTypes = {
   hasInteractiveChildren: PropTypes.bool,
   /** Whether the carousel can be scrolled manually by users. */
   canScrollHorizontal: PropTypes.bool,
-  /** Whether the default opacity masks should be shown at the start/end, if applicable */
+  /** Whether the default opacity masks should be shown at the start/end, if applicable. */
   disableOpacityMasks: PropTypes.bool,
+  /** Callback function for when the user scrolls to the previous element. */
+  onScrollPrevious: PropTypes.func,
+  /** Callback function for when the user scrolls to the next element. */
+  onScrollNext: PropTypes.func,
 };
 
 CardCarousel.defaultProps = {
@@ -71,6 +79,8 @@ CardCarousel.defaultProps = {
   hasInteractiveChildren: false,
   canScrollHorizontal: true,
   disableOpacityMasks: false,
+  onScrollPrevious: undefined,
+  onScrollNext: undefined,
 };
 
 export default CardCarousel;
