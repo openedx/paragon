@@ -1,0 +1,1023 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardCarousel /> renders card carousel with custom title and subtitles elements 1`] = `
+<div
+  aria-label="example card carousel"
+  className="pgn__overflow-scroll"
+  role="region"
+>
+  <div
+    className="pgn__card-carousel"
+  >
+    <div
+      className="pgn__card-carousel-header"
+    >
+      <div>
+        <h1>
+          Example Title
+        </h1>
+        <p
+          className="small"
+        >
+          Example subtitle
+        </p>
+      </div>
+      <div
+        className="pgn__card-carousel-controls"
+      >
+        <div
+          className="pgn__hstack pgn__stack-gap--1"
+        >
+          <button
+            aria-label="Scroll to previous"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+          <button
+            aria-label="Scroll to next"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="pgn__card-deck pgn__card-deck-has-horizontal-scroll"
+    >
+      <div
+        className="pgn__card-deck-row row"
+        tabIndex={0}
+      >
+        <div />
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
+<div
+  aria-label="example card carousel"
+  className="pgn__overflow-scroll"
+  role="region"
+>
+  <div
+    className="pgn__card-carousel"
+  >
+    <div
+      className="pgn__card-carousel-header"
+    >
+      <div>
+        <h2
+          className="pgn__card-carousel-title"
+        >
+          Example Title
+        </h2>
+        <p
+          className="pgn__card-carousel-subtitle"
+        >
+          Example subtitle.
+        </p>
+      </div>
+      <div
+        className="pgn__card-carousel-controls"
+      >
+        <div
+          className="pgn__hstack pgn__stack-gap--1"
+        >
+          <button
+            aria-label="Scroll to previous"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+          <button
+            aria-label="Scroll to next"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="pgn__card-deck pgn__card-deck-has-horizontal-scroll"
+    >
+      <div
+        className="pgn__card-deck-row row"
+        tabIndex={0}
+      >
+        <div />
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CardCarousel /> renders default card carousel 1`] = `
+<div
+  aria-label="example card carousel"
+  className="pgn__overflow-scroll"
+  role="region"
+>
+  <div
+    className="pgn__card-carousel"
+  >
+    <div
+      className="pgn__card-carousel-header"
+    >
+      <div />
+      <div
+        className="pgn__card-carousel-controls"
+      >
+        <div
+          className="pgn__hstack pgn__stack-gap--1"
+        >
+          <button
+            aria-label="Scroll to previous"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+          <button
+            aria-label="Scroll to next"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="pgn__card-deck pgn__card-deck-has-horizontal-scroll"
+    >
+      <div
+        className="pgn__card-deck-row row"
+        tabIndex={0}
+      >
+        <div />
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+        >
+          <div
+            className="pgn__card pgn__card-light card"
+            tabIndex={-1}
+          >
+            <div
+              className="pgn__card-wrapper-image-cap vertical"
+            >
+              <img
+                className="pgn__card-image-cap"
+                onError={[Function]}
+                src="http://fake.image"
+              />
+            </div>
+            <div
+              className="pgn__card-body"
+            >
+              <div
+                className="pgn__card-header"
+              >
+                <div
+                  className="pgn__card-header-content"
+                />
+              </div>
+              <div
+                className="pgn__card-section"
+              >
+                This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+              </div>
+            </div>
+            <div
+              className="pgn__card-footer vertical"
+            >
+              <div
+                className="pgn__card-footer-text vertical"
+              >
+                <small
+                  className="text-muted"
+                >
+                  Last updated 3 mins ago
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;

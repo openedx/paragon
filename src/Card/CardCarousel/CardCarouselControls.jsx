@@ -17,7 +17,7 @@ function CardCarouselControls() {
   const intl = useIntl();
 
   return (
-    <div>
+    <div className="pgn__card-carousel-controls">
       <Stack direction="horizontal" gap={1}>
         <IconButton
           disabled={isScrolledToStart || !isOverflowElementVisible}
