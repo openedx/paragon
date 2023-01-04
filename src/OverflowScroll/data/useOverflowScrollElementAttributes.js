@@ -2,6 +2,10 @@ import { useEffect } from 'react';
 
 export const OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS = 'pgn__overflow-scroll-overflow-container';
 
+export const OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START = 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%';
+export const OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_END = 'linear-gradient(to right, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%';
+export const OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START_END = 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%)';
+
 /**
  * Given the ref the overflow container element, adds the following:
  * - Paragon-specific CSS class name for internal styles
@@ -50,6 +54,7 @@ const useOverflowScrollElementAttributes = ({
       const overflowXStyle = overflowRefStyles.getPropertyValue('overflow-x');
       const hasOverflowClass = overflowRef.current.classList.contains(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
 
+      // class name
       if (!hasOverflowClass) {
         overflowRef.current.classList.add(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
       }
@@ -66,27 +71,32 @@ const useOverflowScrollElementAttributes = ({
 
       if (disableOpacityMasks) {
         overflowRef.current.style.removeProperty('mask-image');
-        overflowRef.current.style.removeProperty('-webkit-mask-image');
+        overflowRef.current.style.removeProperty('webkit-mask-image');
       } else {
         const getMaskImageStyleValue = () => {
           // TODO: make the `mask-image` property (optionally) extensible/customizable (e.g., passed as a prop)
           if (isScrolledToStart && !isScrolledToEnd) {
-            return 'linear-gradient(to right, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%';
+            return OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_END;
           }
           if (!isScrolledToStart && isScrolledToEnd) {
-            return 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%';
+            return OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START;
           }
 
           if (!isScrolledToStart && !isScrolledToEnd) {
-            return 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%)';
+            return OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START_END;
           }
 
           // no opacity mask required
           return undefined;
         };
         const maskImageStyleValue = getMaskImageStyleValue();
-        overflowRef.current.style.maskImage = maskImageStyleValue;
-        overflowRef.current.style.webkitMaskImage = maskImageStyleValue;
+        if (maskImageStyleValue) {
+          overflowRef.current.style.maskImage = maskImageStyleValue;
+          overflowRef.current.style.webkitMaskImage = maskImageStyleValue;
+        } else {
+          overflowRef.current.style.removeProperty('mask-image');
+          overflowRef.current.style.removeProperty('webkit-mask-image');
+        }
       }
     }
   }, [

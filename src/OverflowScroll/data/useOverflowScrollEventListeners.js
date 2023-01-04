@@ -71,12 +71,14 @@ const useOverflowScrollEventListeners = ({
     if (overflowRef.current === document.activeElement) {
       return;
     }
-    childrenElements.forEach((element, index) => {
-      const elementContainsActiveElement = element.contains(document.activeElement);
-      if (elementContainsActiveElement && index !== activeChildElementIndex) {
-        onActiveChildElementIndexChange(index);
+    for (let i = 0; i < childrenElements.length; i++) {
+      const element = childrenElements[i];
+      const elementHasActiveElement = element.contains(document.activeElement);
+      if (elementHasActiveElement && i !== activeChildElementIndex) {
+        onActiveChildElementIndexChange(i);
+        break;
       }
-    });
+    }
   }, [overflowRef, activeChildElementIndex, childrenElements, onActiveChildElementIndexChange]);
 
   /**
@@ -186,6 +188,19 @@ const useOverflowScrollEventListeners = ({
     handleMouseUpEvent,
     handleMouseDownEvent,
   ]);
+
+  return {
+    updateActiveChildElementIndex,
+    updateActiveChildElementOnWheel,
+    updateActiveChildElementOnFocusIn,
+    handleScrollEvent,
+    handleMouseDownEvent,
+    handleMouseUpEvent,
+    updateActiveChildElementOnKeyDown,
+    updateActiveChildElementOnKeyUp,
+    isOverflowElementMouseDown,
+    previousOverflowScrollLeft,
+  };
 };
 
 export default useOverflowScrollEventListeners;

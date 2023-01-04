@@ -14,7 +14,7 @@ const useOverflowScrollActions = ({
   startSentinelRef,
   endSentinelRef,
   childrenElements,
-  scrollBehavior,
+  scrollAnimationBehavior = 'smooth',
   onScrollPrevious,
   onScrollNext,
 }) => {
@@ -37,16 +37,19 @@ const useOverflowScrollActions = ({
       const calculatedOffsetLeft = calculateOffsetLeft(previousChildElement);
       overflowRef.current.scrollTo({
         left: calculatedOffsetLeft,
-        behavior: scrollBehavior,
+        behavior: scrollAnimationBehavior,
       });
-      onScrollPrevious();
+      const currentActiveChildElementIndex = previousChildElementIndex <= 0 ? 0 : previousChildElementIndex;
+      onScrollPrevious({
+        currentActiveChildElementIndex,
+      });
     }
   }, [
     overflowRef,
     childrenElements,
     startSentinelRef,
     activeChildElementIndex,
-    scrollBehavior,
+    scrollAnimationBehavior,
     onScrollPrevious,
   ]);
 
@@ -55,29 +58,34 @@ const useOverflowScrollActions = ({
    */
   const scrollToNext = useCallback(() => {
     if (overflowRef.current) {
-      const getNextChildElement = (nextChildElementIndex) => {
+      const childElementCount = childrenElements.length;
+      const lastChildElementIndex = childElementCount - 1;
+      const nextChildElementIndex = activeChildElementIndex + 1;
+      const isNextChildIndexAtEnd = nextChildElementIndex >= lastChildElementIndex;
+
+      const getNextChildElement = () => {
         // return the end sentinel element if the overflow container reached the end
-        if (nextChildElementIndex >= childrenElements.length - 1) {
+        if (isNextChildIndexAtEnd) {
           return endSentinelRef.current;
         }
         // otherwise return the next element
         return childrenElements[nextChildElementIndex];
       };
 
-      const nextChildElementIndex = activeChildElementIndex + 1;
-      const nextChildElement = getNextChildElement(nextChildElementIndex);
+      const nextChildElement = getNextChildElement();
       const calculatedOffsetLeft = calculateOffsetLeft(nextChildElement);
       overflowRef.current.scrollTo({
         left: calculatedOffsetLeft,
-        behavior: scrollBehavior,
+        behavior: scrollAnimationBehavior,
       });
-      onScrollNext();
+      const currentActiveChildElementIndex = isNextChildIndexAtEnd ? lastChildElementIndex : nextChildElementIndex;
+      onScrollNext({ currentActiveChildElementIndex });
     }
   }, [
     overflowRef,
     endSentinelRef,
     activeChildElementIndex,
-    scrollBehavior,
+    scrollAnimationBehavior,
     childrenElements,
     onScrollNext,
   ]);
