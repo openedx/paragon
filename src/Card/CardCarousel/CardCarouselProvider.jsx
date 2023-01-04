@@ -9,6 +9,7 @@ function CardCarouselProvider({
   hasInteractiveChildren,
   canScrollHorizontal,
   children,
+  CardCarouselControls,
 }) {
   const {
     overflowRef,
@@ -29,6 +30,7 @@ function CardCarouselProvider({
     scrollToPrevious,
     scrollToNext,
     isOverflowElementVisible,
+    CardCarouselControls,
   }), [
     overflowRef,
     columnSizes,
@@ -39,6 +41,7 @@ function CardCarouselProvider({
     scrollToPrevious,
     scrollToNext,
     isOverflowElementVisible,
+    CardCarouselControls,
   ]);
 
   return (
@@ -66,6 +69,8 @@ CardCarouselProvider.propTypes = {
   hasInteractiveChildren: PropTypes.bool,
   /** Whether the `CardDeck` supports horizontal scrolling when there are overflow children */
   canScrollHorizontal: PropTypes.bool,
+  /** Optional override for the default `CardCarouselControls` */
+  CardCarouselControls: PropTypes.elementType,
 };
 
 CardCarouselProvider.defaultProps = {
@@ -76,6 +81,7 @@ CardCarouselProvider.defaultProps = {
   },
   hasInteractiveChildren: false,
   canScrollHorizontal: true,
+  CardCarouselControls: undefined,
 };
 
 export default CardCarouselProvider;

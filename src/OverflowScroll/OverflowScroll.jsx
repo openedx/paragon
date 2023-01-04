@@ -9,6 +9,7 @@ import {
 import OverflowScrollItems from './OverflowScrollItems';
 
 function OverflowScroll({
+  ariaLabel,
   children,
   childQuerySelector,
   hasInteractiveChildren,
@@ -56,9 +57,15 @@ function OverflowScroll({
   ]);
 
   return (
-    <OverflowScrollContext.Provider value={contextValue}>
-      {children}
-    </OverflowScrollContext.Provider>
+    <div
+      role="region"
+      aria-label={ariaLabel}
+      className="pgn__overflow-scroll"
+    >
+      <OverflowScrollContext.Provider value={contextValue}>
+        {children}
+      </OverflowScrollContext.Provider>
+    </div>
   );
 }
 
@@ -67,6 +74,7 @@ OverflowScroll.EndSentinel = OverflowScrollEndSentinel;
 OverflowScroll.Items = OverflowScrollItems;
 
 OverflowScroll.propTypes = {
+  ariaLabel: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   childQuerySelector: PropTypes.string,
   hasInteractiveChildren: PropTypes.bool,

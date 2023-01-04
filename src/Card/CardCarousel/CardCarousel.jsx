@@ -6,6 +6,7 @@ import CardCarouselHeader from './CardCarouselHeader';
 import CardCarouselItems from './CardCarouselItems';
 
 function CardCarousel({
+  ariaLabel,
   children,
   title,
   subtitle,
@@ -15,6 +16,7 @@ function CardCarousel({
   disableOpacityMasks,
   onScrollPrevious,
   onScrollNext,
+  CardCarouselControls,
 }) {
   return (
     <OverflowScroll
@@ -23,11 +25,13 @@ function CardCarousel({
       disableOpacityMasks={disableOpacityMasks}
       onScrollPrevious={onScrollPrevious}
       onScrollNext={onScrollNext}
+      ariaLabel={ariaLabel}
     >
       <CardCarouselProvider
         columnSizes={columnSizes}
         hasInteractiveChildren={hasInteractiveChildren}
         canScrollHorizontal={canScrollHorizontal}
+        CardCarouselControls={CardCarouselControls}
       >
         <div className="pgn__card-carousel">
           <CardCarouselHeader
@@ -44,6 +48,8 @@ function CardCarousel({
 CardCarousel.propTypes = {
   /** The `Card` items for the `CardCarousel`. */
   children: PropTypes.node.isRequired,
+  /** Text describing the CardCarousel for screen readers */
+  ariaLabel: PropTypes.string.isRequired,
   /** An optional title. */
   title: PropTypes.node,
   /** An optional subtitle. */
@@ -66,6 +72,8 @@ CardCarousel.propTypes = {
   onScrollPrevious: PropTypes.func,
   /** Callback function for when the user scrolls to the next element. */
   onScrollNext: PropTypes.func,
+  /** Optional override for the default `CardCarouselControls` */
+  CardCarouselControls: PropTypes.elementType,
 };
 
 CardCarousel.defaultProps = {
@@ -81,6 +89,7 @@ CardCarousel.defaultProps = {
   disableOpacityMasks: false,
   onScrollPrevious: undefined,
   onScrollNext: undefined,
+  CardCarouselControls: undefined,
 };
 
 export default CardCarousel;
