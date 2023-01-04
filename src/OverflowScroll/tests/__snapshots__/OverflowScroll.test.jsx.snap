@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OverflowScroll /> renders OverflowScroll 1`] = `
+<div
+  aria-label="example overflow scroll"
+  className="pgn__overflow-scroll"
+  role="region"
+>
+  <div />
+  <div
+    className="pgn__overflow-scroll-item"
+  >
+    item
+  </div>
+  <div
+    className="pgn__overflow-scroll-item"
+  >
+    item
+  </div>
+  <div
+    className="pgn__overflow-scroll-item"
+  >
+    item
+  </div>
+  <div
+    className="pgn__overflow-scroll-item"
+  >
+    item
+  </div>
+  <div
+    className="pgn__overflow-scroll-item"
+  >
+    item
+  </div>
+  <div />
+</div>
+`;
