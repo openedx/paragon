@@ -23,7 +23,7 @@ notes: |
 </div>
 ```
 
-## With icon before and after
+## With Icon Before and After
 
 ```jsx live
 <div>
@@ -48,10 +48,10 @@ notes: |
 </div>
 ```
 
-## ChipCarousel
+## `Chip` Carousel
 
 ```jsx live
-<OverflowScroll childQuerySelector={`.${CHIP_PGN_CLASS}`} hasInteractiveChildren>
+<OverflowScroll ariaLabel="example chip carousel" hasInteractiveChildren>
   <OverflowScrollContext.Consumer>
     {({
       overflowRef,
@@ -81,26 +81,28 @@ notes: |
         </div>
         <div ref={overflowRef} className="d-flex" style={{ paddingLeft: 1, paddingRight: 1 }}>
           <OverflowScroll.StartSentinel />
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
-          <Chip iconAfter={Close}>New</Chip>
+          <OverflowScroll.Items>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+          </OverflowScroll.Items>
           <OverflowScroll.EndSentinel />
         </div>
       </>
