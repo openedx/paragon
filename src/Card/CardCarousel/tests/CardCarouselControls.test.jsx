@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
 import { IntlProvider } from 'react-intl';
 import { CardCarouselContext } from '../CardCarouselProvider';
@@ -69,5 +71,29 @@ describe('<CardCarouselControls />', () => {
       <CardCarouselControlsWrapper cardCarouselContextValue={contextValue} />
     )).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('handles scroll to previous click', () => {
+    const contextValue = {
+      ...defaultCardCarouselContextValue,
+      isScrolledToStart: false,
+    };
+    render((
+      <CardCarouselControlsWrapper cardCarouselContextValue={contextValue} />
+    ));
+    userEvent.click(screen.getByLabelText('Scroll to previous'));
+    expect(mockScrollToPrevious).toHaveBeenCalledTimes(1);
+  });
+
+  it('handles scroll to next click', () => {
+    const contextValue = {
+      ...defaultCardCarouselContextValue,
+      isScrolledToEnd: false,
+    };
+    render((
+      <CardCarouselControlsWrapper cardCarouselContextValue={contextValue} />
+    ));
+    userEvent.click(screen.getByLabelText('Scroll to next'));
+    expect(mockScrollToNext).toHaveBeenCalledTimes(1);
   });
 });
