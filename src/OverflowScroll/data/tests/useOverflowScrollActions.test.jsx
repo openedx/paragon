@@ -3,9 +3,7 @@ import { act } from 'react-test-renderer';
 import useOverflowScrollActions from '../useOverflowScrollActions';
 
 const divElement = document.createElement('div');
-const mockRef = {
-  current: divElement,
-};
+const mockRef = divElement;
 
 const mockScrollTo = jest.fn();
 Element.prototype.scrollTo = mockScrollTo;

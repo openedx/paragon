@@ -46,8 +46,6 @@ const useOverflowScroll = ({
   disableOpacityMasks = false,
   scrollAnimationBehavior = 'smooth',
 }) => {
-  // const [childrenElements, setChildrenElements] = useState([]);
-
   const [isScrolledToStart, setIsScrolledToStart] = useState(true);
   const [isScrolledToEnd, setIsScrolledToEnd] = useState(true);
 

@@ -20,28 +20,29 @@ const useOverflowScrollActions = ({
    * A helper function to scroll to the previous element in the overflow container.
    */
   const scrollToPrevious = useCallback(() => {
-    if (overflowRef) {
-      const getPreviousChildElement = (previousChildElementIndex) => {
-        // return the first element if the overflow container reached the beginning
-        if (previousChildElementIndex <= 0) {
-          return childrenElements[0];
-        }
-        // otherwise return the previous element
-        return childrenElements[previousChildElementIndex];
-      };
-
-      const previousChildElementIndex = activeChildElementIndex - 1;
-      const previousChildElement = getPreviousChildElement(previousChildElementIndex);
-      const calculatedOffsetLeft = calculateOffsetLeft(previousChildElement);
-      overflowRef.scrollTo({
-        left: calculatedOffsetLeft,
-        behavior: scrollAnimationBehavior,
-      });
-      const currentActiveChildElementIndex = previousChildElementIndex <= 0 ? 0 : previousChildElementIndex;
-      onScrollPrevious({
-        currentActiveChildElementIndex,
-      });
+    if (!overflowRef) {
+      return;
     }
+    const getPreviousChildElement = (previousChildElementIndex) => {
+      // return the first element if the overflow container reached the beginning
+      if (previousChildElementIndex <= 0) {
+        return childrenElements[0];
+      }
+      // otherwise return the previous element
+      return childrenElements[previousChildElementIndex];
+    };
+
+    const previousChildElementIndex = activeChildElementIndex - 1;
+    const previousChildElement = getPreviousChildElement(previousChildElementIndex);
+    const calculatedOffsetLeft = calculateOffsetLeft(previousChildElement);
+    overflowRef.scrollTo({
+      left: calculatedOffsetLeft,
+      behavior: scrollAnimationBehavior,
+    });
+    const currentActiveChildElementIndex = previousChildElementIndex <= 0 ? 0 : previousChildElementIndex;
+    onScrollPrevious({
+      currentActiveChildElementIndex,
+    });
   }, [
     overflowRef,
     childrenElements,

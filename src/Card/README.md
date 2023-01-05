@@ -913,13 +913,6 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
     return Array.from({ length: 2 }).map(() => <CardComponent key={uuidv4()} />);
   }, [hasOverflowCards]);
 
-  const getCardItems = () => {
-    if (hasOverflowCards === 'true') {
-      return Array.from({ length: 8 }).map(() => <CardComponent key={uuidv4()} />);
-    }
-    return Array.from({ length: 2 }).map(() => <CardComponent key={uuidv4()} />);
-  };
-
   return (
     <>
       {/* start example form block */}
@@ -956,7 +949,7 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
         onScrollPrevious={() => { console.log('onScrollPrevious'); } }
         onScrollNext={() => { console.log('onScrollNext'); } }
       >
-        {getCardItems()}
+        {cardItems}
       </CardCarousel>
     </>
   );
