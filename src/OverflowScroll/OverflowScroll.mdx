@@ -71,7 +71,7 @@ The following example demonstrates how to use `OverflowScroll` and `OverflowScro
     );
   };
 
-  const itemCount = 3;
+  const itemCount = 20;
   const items = useMemo(() => Array.from({ length: itemCount }).map((index) => {
     if (index !== itemCount - 1) {
       return <ExampleItem key={uuidv4()} className="mr-2" />;
