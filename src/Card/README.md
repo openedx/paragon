@@ -837,6 +837,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
         ]}
       />
       {/* end example form block */}
+
       <CardDeck hasInteractiveChildren={hasInteractiveChildren === 'true'}>
         <CardComponent />
         <CardComponent />
@@ -849,7 +850,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
 }
 ```
 
-## CardDeck.Deprecated
+### CardDeck.Deprecated
 
 Gives any child `Card` components equal height with an appropriate gutter between cards. Each child `Card` component's width will be adjusted (e.g., become more narrow) to ensure all `Card` components fit within its parent's width.
 
@@ -869,6 +870,7 @@ Note: This component is a pass-thru from `react-bootstrap`.
       </Card.Section>
     </Card>
   );
+
   return (
     <CardDeck.Deprecated>
       <CardComponent />
@@ -876,5 +878,69 @@ Note: This component is a pass-thru from `react-bootstrap`.
       <CardComponent />
     </CardDeck.Deprecated>
   )
+}
+```
+
+## CardCarousel
+
+Extends `CardDeck` to support navigating between any overflow `Card` components via left and right `IconButton` components as a scrollable carousel.
+
+Includes support for an optional `title` and `subtitle`. You may rely on the default styles for the titles (e.g., if passing strings) or alternatively you may also pass custom HTML and JSX.
+
+```jsx live
+() => {
+  const [canScrollHorizontal, setCanScrollHorizontal] = useState('true');
+  const [disableOpacityMasks, setDisableOpacityMasks] = useState('false');
+
+  const CardComponent = () => (
+    <Card isClickable>
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header title="Card title" />
+      <Card.Section  title="Section title">
+        <HipsterIpsum numShortParagraphs={1} />
+      </Card.Section>
+    </Card>
+  );
+
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          {
+            value: canScrollHorizontal,
+            setValue: setCanScrollHorizontal,
+            options: ['true', 'false'],
+            name: 'canScrollHorizontal',
+          },
+          {
+            value: disableOpacityMasks,
+            setValue: setDisableOpacityMasks,
+            options: ['true', 'false'],
+            name: 'disableOpacityMasks',
+          },
+        ]}
+      />
+      {/* end example form block */}
+
+      <CardCarousel
+        title={<h3>Recommended for you</h3>}
+        subtitle="The following content was picked just for you."
+        canScrollHorizontal={canScrollHorizontal === 'true'}
+        disableOpacityMasks={disableOpacityMasks === 'true'}
+        onScrollPrevious={() => { console.log('onScrollPrevious'); } }
+        onScrollNext={() => { console.log('onScrollNext'); } }
+      >
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+      </CardCarousel>
+    </>
+  );
 }
 ```
