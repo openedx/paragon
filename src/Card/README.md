@@ -891,6 +891,7 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
 () => {
   const [canScrollHorizontal, setCanScrollHorizontal] = useState('true');
   const [disableOpacityMasks, setDisableOpacityMasks] = useState('false');
+  const [hasOverflowCards, setHasOverflowCards] = useState('false');
 
   const CardComponent = () => (
     <Card isClickable>
@@ -904,6 +905,20 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
       </Card.Section>
     </Card>
   );
+
+  const cardItems = useMemo(() => {
+    if (hasOverflowCards === 'true') {
+      return Array.from({ length: 8 }).map(() => <CardComponent key={uuidv4()} />);
+    }
+    return Array.from({ length: 2 }).map(() => <CardComponent key={uuidv4()} />);
+  }, [hasOverflowCards]);
+
+  const getCardItems = () => {
+    if (hasOverflowCards === 'true') {
+      return Array.from({ length: 8 }).map(() => <CardComponent key={uuidv4()} />);
+    }
+    return Array.from({ length: 2 }).map(() => <CardComponent key={uuidv4()} />);
+  };
 
   return (
     <>
@@ -922,11 +937,18 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
             options: ['true', 'false'],
             name: 'disableOpacityMasks',
           },
+          {
+            value: hasOverflowCards,
+            setValue: setHasOverflowCards,
+            options: ['true', 'false'],
+            name: 'hasOverflowCards',
+          }
         ]}
       />
       {/* end example form block */}
 
       <CardCarousel
+        ariaLabel="example card carousel"
         title={<h3>Recommended for you</h3>}
         subtitle="The following content was picked just for you."
         canScrollHorizontal={canScrollHorizontal === 'true'}
@@ -934,8 +956,7 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
         onScrollPrevious={() => { console.log('onScrollPrevious'); } }
         onScrollNext={() => { console.log('onScrollNext'); } }
       >
-        <CardComponent />
-        <CardComponent />
+        {getCardItems()}
       </CardCarousel>
     </>
   );

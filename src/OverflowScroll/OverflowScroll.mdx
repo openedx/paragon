@@ -31,10 +31,10 @@ The following example demonstrates how to use `OverflowScroll` and `OverflowScro
   );
 
   const OverflowScrollContent = () => {
-    const { overflowRef } = useContext(OverflowScrollContext);
+    const { overflowRef, setOverflowRef } = useContext(OverflowScrollContext);
     return (
       <div
-        ref={overflowRef}
+        ref={setOverflowRef}
         className="d-flex"
       >
         <OverflowScroll.Items>{items}</OverflowScroll.Items>

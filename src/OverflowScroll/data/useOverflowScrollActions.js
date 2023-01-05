@@ -20,7 +20,7 @@ const useOverflowScrollActions = ({
    * A helper function to scroll to the previous element in the overflow container.
    */
   const scrollToPrevious = useCallback(() => {
-    if (overflowRef.current) {
+    if (overflowRef) {
       const getPreviousChildElement = (previousChildElementIndex) => {
         // return the first element if the overflow container reached the beginning
         if (previousChildElementIndex <= 0) {
@@ -33,7 +33,7 @@ const useOverflowScrollActions = ({
       const previousChildElementIndex = activeChildElementIndex - 1;
       const previousChildElement = getPreviousChildElement(previousChildElementIndex);
       const calculatedOffsetLeft = calculateOffsetLeft(previousChildElement);
-      overflowRef.current.scrollTo({
+      overflowRef.scrollTo({
         left: calculatedOffsetLeft,
         behavior: scrollAnimationBehavior,
       });
@@ -54,30 +54,31 @@ const useOverflowScrollActions = ({
    * A helper function to scroll to the next element in the overflow container.
    */
   const scrollToNext = useCallback(() => {
-    if (overflowRef.current) {
-      const childElementCount = childrenElements.length;
-      const lastChildElementIndex = childElementCount - 1;
-      const nextChildElementIndex = activeChildElementIndex + 1;
-      const isNextChildIndexAtEnd = nextChildElementIndex >= lastChildElementIndex;
-
-      const getNextChildElement = () => {
-        // return the last element if the overflow container reached the end
-        if (isNextChildIndexAtEnd) {
-          return childrenElements[lastChildElementIndex];
-        }
-        // otherwise return the next element
-        return childrenElements[nextChildElementIndex];
-      };
-
-      const nextChildElement = getNextChildElement();
-      const calculatedOffsetLeft = calculateOffsetLeft(nextChildElement);
-      overflowRef.current.scrollTo({
-        left: calculatedOffsetLeft,
-        behavior: scrollAnimationBehavior,
-      });
-      const currentActiveChildElementIndex = isNextChildIndexAtEnd ? lastChildElementIndex : nextChildElementIndex;
-      onScrollNext({ currentActiveChildElementIndex });
+    if (!overflowRef) {
+      return;
     }
+    const childElementCount = childrenElements.length;
+    const lastChildElementIndex = childElementCount - 1;
+    const nextChildElementIndex = activeChildElementIndex + 1;
+    const isNextChildIndexAtEnd = nextChildElementIndex >= lastChildElementIndex;
+
+    const getNextChildElement = () => {
+      // return the last element if the overflow container reached the end
+      if (isNextChildIndexAtEnd) {
+        return childrenElements[lastChildElementIndex];
+      }
+      // otherwise return the next element
+      return childrenElements[nextChildElementIndex];
+    };
+
+    const nextChildElement = getNextChildElement();
+    const calculatedOffsetLeft = calculateOffsetLeft(nextChildElement);
+    overflowRef.scrollTo({
+      left: calculatedOffsetLeft,
+      behavior: scrollAnimationBehavior,
+    });
+    const currentActiveChildElementIndex = isNextChildIndexAtEnd ? lastChildElementIndex : nextChildElementIndex;
+    onScrollNext({ currentActiveChildElementIndex });
   }, [
     overflowRef,
     activeChildElementIndex,

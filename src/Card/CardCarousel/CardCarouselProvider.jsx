@@ -13,6 +13,7 @@ function CardCarouselProvider({
 }) {
   const {
     overflowRef,
+    setOverflowRef,
     isScrolledToStart,
     isScrolledToEnd,
     scrollToPrevious,
@@ -21,6 +22,7 @@ function CardCarouselProvider({
 
   const cardCarouselContextValue = useMemo(() => ({
     overflowRef,
+    setOverflowRef,
     columnSizes,
     hasInteractiveChildren,
     canScrollHorizontal,
@@ -31,6 +33,7 @@ function CardCarouselProvider({
     CardCarouselControls,
   }), [
     overflowRef,
+    setOverflowRef,
     columnSizes,
     hasInteractiveChildren,
     canScrollHorizontal,
