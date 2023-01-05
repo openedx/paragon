@@ -65,7 +65,7 @@ const useOverflowScroll = ({
       (sumWidth, childElement) => sumWidth + childElement.offsetWidth,
       0,
     );
-    const firstChildElementOffsetLeft = childrenElements[0]?.offsetLeft;
+    const firstChildElementOffsetLeft = childrenElements[0]?.offsetLeft || 0;
 
     // 1. is scrolled start?
     if (currentScrollLeft <= firstChildElementOffsetLeft) {

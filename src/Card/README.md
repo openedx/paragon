@@ -936,9 +936,6 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
       >
         <CardComponent />
         <CardComponent />
-        <CardComponent />
-        <CardComponent />
-        <CardComponent />
       </CardCarousel>
     </>
   );
