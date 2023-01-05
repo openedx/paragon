@@ -83,7 +83,7 @@ const useOverflowScroll = ({
     } else {
       setIsScrolledToEnd(false);
     }
-  }, [currentScrollLeft, childrenElements, isScrolledToStart]);
+  }, [currentScrollLeft, childrenElements]);
 
   const [activeChildElementIndex, setActiveChildElementIndex] = useState(0);
 
