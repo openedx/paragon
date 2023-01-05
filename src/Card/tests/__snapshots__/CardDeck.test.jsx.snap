@@ -2,14 +2,14 @@
 
 exports[`<CardDeck /> has tabIndex="-1" when \`hasInteractiveChildren\` is true 1`] = `
 <div
-  className="pgn__card-deck"
+  className="pgn__card-deck pgn__card-deck-has-horizontal-scroll"
 >
   <div
     className="pgn__card-deck-row row"
     tabIndex={-1}
   >
     <div
-      className="col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card clickable pgn__card-light card"
@@ -54,6 +54,10 @@ exports[`<CardDeck /> has tabIndex="-1" when \`hasInteractiveChildren\` is true 
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+    >
       <div
         className="pgn__card clickable pgn__card-light card"
         tabIndex={0}
@@ -97,6 +101,10 @@ exports[`<CardDeck /> has tabIndex="-1" when \`hasInteractiveChildren\` is true 
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+    >
       <div
         className="pgn__card clickable pgn__card-light card"
         tabIndex={0}
@@ -140,6 +148,10 @@ exports[`<CardDeck /> has tabIndex="-1" when \`hasInteractiveChildren\` is true 
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+    >
       <div
         className="pgn__card clickable pgn__card-light card"
         tabIndex={0}
@@ -183,6 +195,10 @@ exports[`<CardDeck /> has tabIndex="-1" when \`hasInteractiveChildren\` is true 
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+    >
       <div
         className="pgn__card clickable pgn__card-light card"
         tabIndex={0}
@@ -233,14 +249,14 @@ exports[`<CardDeck /> has tabIndex="-1" when \`hasInteractiveChildren\` is true 
 
 exports[`<CardDeck /> renders default columnSizes 1`] = `
 <div
-  className="pgn__card-deck"
+  className="pgn__card-deck pgn__card-deck-has-horizontal-scroll"
 >
   <div
     className="pgn__card-deck-row row"
     tabIndex={0}
   >
     <div
-      className="col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -285,6 +301,10 @@ exports[`<CardDeck /> renders default columnSizes 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+    >
       <div
         className="pgn__card pgn__card-light card"
         tabIndex={-1}
@@ -328,6 +348,10 @@ exports[`<CardDeck /> renders default columnSizes 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+    >
       <div
         className="pgn__card pgn__card-light card"
         tabIndex={-1}
@@ -371,6 +395,10 @@ exports[`<CardDeck /> renders default columnSizes 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+    >
       <div
         className="pgn__card pgn__card-light card"
         tabIndex={-1}
@@ -414,6 +442,10 @@ exports[`<CardDeck /> renders default columnSizes 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+    >
       <div
         className="pgn__card pgn__card-light card"
         tabIndex={-1}
@@ -464,14 +496,14 @@ exports[`<CardDeck /> renders default columnSizes 1`] = `
 
 exports[`<CardDeck /> renders with controlled columnSizes 1`] = `
 <div
-  className="pgn__card-deck"
+  className="pgn__card-deck pgn__card-deck-has-horizontal-scroll"
 >
   <div
     className="pgn__card-deck-row row"
     tabIndex={0}
   >
     <div
-      className="col-xl-3 col-lg-4 col-md-6 col-12"
+      className="pgn__card-deck-card-item col-xl-3 col-lg-4 col-md-6 col-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -516,6 +548,10 @@ exports[`<CardDeck /> renders with controlled columnSizes 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-3 col-lg-4 col-md-6 col-12"
+    >
       <div
         className="pgn__card pgn__card-light card"
         tabIndex={-1}
@@ -559,6 +595,10 @@ exports[`<CardDeck /> renders with controlled columnSizes 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-3 col-lg-4 col-md-6 col-12"
+    >
       <div
         className="pgn__card pgn__card-light card"
         tabIndex={-1}
@@ -602,6 +642,10 @@ exports[`<CardDeck /> renders with controlled columnSizes 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-3 col-lg-4 col-md-6 col-12"
+    >
       <div
         className="pgn__card pgn__card-light card"
         tabIndex={-1}
@@ -645,6 +689,10 @@ exports[`<CardDeck /> renders with controlled columnSizes 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="pgn__card-deck-card-item col-xl-3 col-lg-4 col-md-6 col-12"
+    >
       <div
         className="pgn__card pgn__card-light card"
         tabIndex={-1}
