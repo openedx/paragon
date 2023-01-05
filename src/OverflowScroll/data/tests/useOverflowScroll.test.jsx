@@ -5,11 +5,6 @@ import useOverflowScroll from '../useOverflowScroll';
 import useOverflowScrollActions from '../useOverflowScrollActions';
 import getChildrenElements from '../getChildrenElements';
 
-const divElement = document.createElement('div');
-const mockRef = {
-  current: divElement,
-};
-
 jest.mock('../useOverflowScrollEventListeners');
 jest.mock('../useOverflowScrollElementAttributes');
 
@@ -47,7 +42,6 @@ describe('useOverflowScroll', () => {
     const actualReturnedValue = result.current;
     expect(actualReturnedValue).toEqual(
       expect.objectContaining({
-        overflowRef: mockRef,
         isScrolledToStart: true,
         isScrolledToEnd: true,
         scrollToPrevious: expect.any(Function),

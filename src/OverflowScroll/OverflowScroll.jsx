@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useOverflowScroll } from './data';
 import OverflowScrollContext from './OverflowScrollContext';
@@ -14,8 +14,9 @@ function OverflowScroll({
   onScrollPrevious,
   onScrollNext,
 }) {
+  const [overflowRef, setOverflowRef] = useState();
+
   const {
-    overflowRef,
     isScrolledToStart,
     isScrolledToEnd,
     scrollToPrevious,
@@ -27,16 +28,19 @@ function OverflowScroll({
     disableOpacityMasks,
     onScrollPrevious,
     onScrollNext,
+    overflowRef,
   });
 
   const contextValue = useMemo(() => ({
     overflowRef,
+    setOverflowRef,
     isScrolledToStart,
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
   }), [
     overflowRef,
+    setOverflowRef,
     isScrolledToStart,
     isScrolledToEnd,
     scrollToPrevious,
