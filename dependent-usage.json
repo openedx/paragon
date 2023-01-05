@@ -1,5 +1,5 @@
 {
-  "lastModified": 1672841355420,
+  "lastModified": 1672927761347,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -11494,7 +11494,7 @@
       }
     },
     {
-      "version": "20.9.2",
+      "version": "20.25.0",
       "name": "@edx/frontend-app-enterprise-public-catalog",
       "repository": {
         "type": "git",
@@ -12000,10 +12000,10 @@
             "column": 6
           }
         ],
-        "CardDeck": [
+        "CardDeck.Deprecated": [
           {
             "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
-            "line": 23,
+            "line": 25,
             "column": 8
           }
         ],
@@ -12272,8 +12272,8 @@
         "Form.Checkbox": [
           {
             "filePath": "src/components/GradebookFilters/index.jsx",
-            "line": 89,
-            "column": 10
+            "line": 96,
+            "column": 12
           }
         ],
         "Form.Group": [
@@ -26035,11 +26035,6 @@
             "filePath": "src/templates/learnPage.jsx",
             "line": 132,
             "column": 12
-          },
-          {
-            "filePath": "src/templates/programDetailDegree.jsx",
-            "line": 241,
-            "column": 16
           }
         ],
         "ChevronRight": [
@@ -26872,10 +26867,17 @@
             "column": 21
           }
         ],
+        "Skeleton": [
+          {
+            "filePath": "src/components/ContentfulModule/ImageCarouselModule/ImageCarouselModule.jsx",
+            "line": 15,
+            "column": 8
+          }
+        ],
         "useWindowSize": [
           {
             "filePath": "src/components/ContentfulModule/ImageCarouselModule/ImageCarouselModule.jsx",
-            "line": 13,
+            "line": 26,
             "column": 21
           },
           {
