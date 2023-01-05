@@ -11,8 +11,6 @@ const calculateOffsetLeft = element => element?.offsetLeft || 0;
 const useOverflowScrollActions = ({
   overflowRef,
   activeChildElementIndex,
-  startSentinelRef,
-  endSentinelRef,
   childrenElements,
   scrollAnimationBehavior = 'smooth',
   onScrollPrevious,
@@ -24,9 +22,9 @@ const useOverflowScrollActions = ({
   const scrollToPrevious = useCallback(() => {
     if (overflowRef.current) {
       const getPreviousChildElement = (previousChildElementIndex) => {
-        // return the start sentinel element if the overflow container reached the beginning
+        // return the first element if the overflow container reached the beginning
         if (previousChildElementIndex <= 0) {
-          return startSentinelRef.current;
+          return childrenElements[0];
         }
         // otherwise return the previous element
         return childrenElements[previousChildElementIndex];
@@ -47,7 +45,6 @@ const useOverflowScrollActions = ({
   }, [
     overflowRef,
     childrenElements,
-    startSentinelRef,
     activeChildElementIndex,
     scrollAnimationBehavior,
     onScrollPrevious,
@@ -64,9 +61,9 @@ const useOverflowScrollActions = ({
       const isNextChildIndexAtEnd = nextChildElementIndex >= lastChildElementIndex;
 
       const getNextChildElement = () => {
-        // return the end sentinel element if the overflow container reached the end
+        // return the last element if the overflow container reached the end
         if (isNextChildIndexAtEnd) {
-          return endSentinelRef.current;
+          return childrenElements[lastChildElementIndex];
         }
         // otherwise return the next element
         return childrenElements[nextChildElementIndex];
@@ -83,7 +80,6 @@ const useOverflowScrollActions = ({
     }
   }, [
     overflowRef,
-    endSentinelRef,
     activeChildElementIndex,
     scrollAnimationBehavior,
     childrenElements,

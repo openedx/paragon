@@ -17,6 +17,7 @@ const useOverflowScrollEventListeners = ({
   activeChildElementIndex,
   onActiveChildElementIndexChange,
   disableScroll,
+  onOverflowElementScrollLeftChange,
 }) => {
   const [isOverflowElementMouseDown, setIsOverflowElementMouseDown] = useState(false);
   const [previousOverflowScrollLeft, setPreviousOverflowScrollLeft] = useState(0);
@@ -88,13 +89,22 @@ const useOverflowScrollEventListeners = ({
    *   - Update the active child element index based on the current scroll position
    */
   const handleScrollEvent = useCallback(() => {
+    onOverflowElementScrollLeftChange(overflowRef.current.scrollLeft);
+
     if (!isOverflowElementMouseDown) {
       return;
     }
+
     const isScrollingLeft = overflowRef.current.scrollLeft < previousOverflowScrollLeft;
     updateActiveChildElementIndex({ isScrollingLeft });
     setPreviousOverflowScrollLeft(overflowRef.current.scrollLeft);
-  }, [isOverflowElementMouseDown, overflowRef, updateActiveChildElementIndex, previousOverflowScrollLeft]);
+  }, [
+    isOverflowElementMouseDown,
+    overflowRef,
+    updateActiveChildElementIndex,
+    previousOverflowScrollLeft,
+    onOverflowElementScrollLeftChange,
+  ]);
 
   /**
    * When mousedown event is fired:

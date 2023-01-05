@@ -2,10 +2,6 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useOverflowScroll } from './data';
 import OverflowScrollContext from './OverflowScrollContext';
-import {
-  OverflowScrollStartSentinel,
-  OverflowScrollEndSentinel,
-} from './OverflowScrollSentinels';
 import OverflowScrollItems from './OverflowScrollItems';
 
 function OverflowScroll({
@@ -20,13 +16,10 @@ function OverflowScroll({
 }) {
   const {
     overflowRef,
-    startSentinelRef,
-    endSentinelRef,
     isScrolledToStart,
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
-    isOverflowElementVisible,
   } = useOverflowScroll({
     childQuerySelector,
     hasInteractiveChildren,
@@ -38,29 +31,23 @@ function OverflowScroll({
 
   const contextValue = useMemo(() => ({
     overflowRef,
-    startSentinelRef,
-    endSentinelRef,
     isScrolledToStart,
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
-    isOverflowElementVisible,
   }), [
-    endSentinelRef,
-    isScrolledToEnd,
-    isScrolledToStart,
     overflowRef,
-    scrollToNext,
+    isScrolledToStart,
+    isScrolledToEnd,
     scrollToPrevious,
-    startSentinelRef,
-    isOverflowElementVisible,
+    scrollToNext,
   ]);
 
   return (
     <div
+      className="pgn__overflow-scroll"
       role="region"
       aria-label={ariaLabel}
-      className="pgn__overflow-scroll"
     >
       <OverflowScrollContext.Provider value={contextValue}>
         {children}
@@ -69,8 +56,6 @@ function OverflowScroll({
   );
 }
 
-OverflowScroll.StartSentinel = OverflowScrollStartSentinel;
-OverflowScroll.EndSentinel = OverflowScrollEndSentinel;
 OverflowScroll.Items = OverflowScrollItems;
 
 OverflowScroll.propTypes = {

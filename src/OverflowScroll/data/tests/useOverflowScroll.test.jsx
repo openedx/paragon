@@ -1,6 +1,6 @@
+import React from 'react';
 import { renderHook } from '@testing-library/react-hooks/dom';
 import { act } from '@testing-library/react';
-import useIsVisible from '../../../hooks/useIsVisible';
 import useOverflowScroll from '../useOverflowScroll';
 import useOverflowScrollActions from '../useOverflowScrollActions';
 import getChildrenElements from '../getChildrenElements';
@@ -9,9 +9,6 @@ const divElement = document.createElement('div');
 const mockRef = {
   current: divElement,
 };
-
-jest.mock('../../../hooks/useIsVisible');
-useIsVisible.mockReturnValue([false, mockRef]);
 
 jest.mock('../useOverflowScrollEventListeners');
 jest.mock('../useOverflowScrollElementAttributes');
@@ -34,6 +31,10 @@ useOverflowScrollActions.mockImplementation(({
 jest.mock('../getChildrenElements');
 getChildrenElements.mockReturnValue([document.createElement('div')]);
 
+jest.spyOn(React, 'useRef').mockReturnValue({
+  current: document.createElement('div'),
+});
+
 describe('useOverflowScroll', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -47,11 +48,8 @@ describe('useOverflowScroll', () => {
     expect(actualReturnedValue).toEqual(
       expect.objectContaining({
         overflowRef: mockRef,
-        startSentinelRef: mockRef,
-        endSentinelRef: mockRef,
-        isScrolledToStart: false,
-        isScrolledToEnd: false,
-        isOverflowElementVisible: false,
+        isScrolledToStart: true,
+        isScrolledToEnd: true,
         scrollToPrevious: expect.any(Function),
         scrollToNext: expect.any(Function),
         activeChildElementIndex: 0,

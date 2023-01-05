@@ -19,16 +19,15 @@ The following example demonstrates how to use `useOverflowScroll` to build a car
 () => {
   const {
     overflowRef,
-    startSentinelRef,
-    endSentinelRef,
     isScrolledToStart,
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
-    isOverflowElementVisible,
   } = useOverflowScroll({
     childQuerySelector: '.example-item',
   });
+
+  console.log('overflowRef', overflowRef);
 
   const ExampleItem = ({ className }) => (
     <div
@@ -52,7 +51,7 @@ The following example demonstrates how to use `useOverflowScroll` to build a car
       <div className="mb-3">
         <Button
           onClick={scrollToPrevious}
-          disabled={isScrolledToStart || !isOverflowElementVisible}
+          disabled={isScrolledToStart}
           size="sm"
           className="mr-2"
         >
@@ -60,7 +59,7 @@ The following example demonstrates how to use `useOverflowScroll` to build a car
         </Button>
         <Button
           onClick={scrollToNext}
-          disabled={isScrolledToEnd || !isOverflowElementVisible}
+          disabled={isScrolledToEnd}
           size="sm"
         >
           Next
@@ -70,12 +69,9 @@ The following example demonstrates how to use `useOverflowScroll` to build a car
         ref={overflowRef}
         role="region"
         aria-label="example overflow scroll container"
-        className="d-flex pb-3"
-        style={{ paddingLeft: 1, paddingRight: 1 }}
+        className="d-flex"
       >
-        <div ref={startSentinelRef} />
         {items}
-        <div ref={endSentinelRef} />
       </div>
     </>
   );
@@ -94,8 +90,6 @@ The hook accepts the following options:
 The hook returns the following:
 * Refs
   * `overflowRef`. The ref to pass to your overflow container. Note that this element may receive style overrides for `position: relative;` and `overflow-x: scroll` (optionally).
-  * `startSentinelRef`. The ref for an element representing the start sentinel of the overflow container. Used to determine whether the overflow container is scrolled all the way to the start.
-  * `endSentinelRef`. The ref for an element representing the end sentinel of the overflow container. Used to determine whether the overflow container is scrolled all the way to the end.
 * Behaviors
   * `scrollToPrevious`. A click handler to scroll the overflow container to the previous element.
   * `scrollToNext`. A click handler to scroll the overflow container to the next element.

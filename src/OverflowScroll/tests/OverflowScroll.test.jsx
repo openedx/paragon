@@ -6,7 +6,6 @@ describe('<OverflowScroll />', () => {
   it('renders OverflowScroll', () => {
     const tree = renderer.create((
       <OverflowScroll ariaLabel="example overflow scroll">
-        <OverflowScroll.StartSentinel />
         <OverflowScroll.Items>
           <div>item</div>
           <div>item</div>
@@ -14,7 +13,6 @@ describe('<OverflowScroll />', () => {
           <div>item</div>
           <div>item</div>
         </OverflowScroll.Items>
-        <OverflowScroll.EndSentinel />
       </OverflowScroll>
     )).toJSON();
     expect(tree).toMatchSnapshot();

@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CardCarouselControls /> does not render controls when overflow element is not visible 1`] = `null`;
-
 exports[`<CardCarouselControls /> renders with disabled next control when scrolled to end 1`] = `
 <div
   className="pgn__card-carousel-controls"

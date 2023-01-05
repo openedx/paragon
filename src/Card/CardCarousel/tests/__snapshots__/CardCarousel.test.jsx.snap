@@ -2,9 +2,7 @@
 
 exports[`<CardCarousel /> renders card carousel with custom title and subtitles elements 1`] = `
 <div
-  aria-label="example card carousel"
-  className="pgn__overflow-scroll"
-  role="region"
+  data-testid="overflow-scroll"
 >
   <div
     className="pgn__card-carousel"
@@ -22,6 +20,76 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
           Example subtitle
         </p>
       </div>
+      <div
+        className="pgn__card-carousel-controls"
+      >
+        <div
+          className="pgn__hstack pgn__stack-gap--1"
+        >
+          <button
+            aria-label="Scroll to previous"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={true}
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+          <button
+            aria-label="Scroll to next"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={false}
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
     <div
       className="pgn__card-deck pgn__card-deck-has-horizontal-scroll"
@@ -30,7 +98,6 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
         className="pgn__card-deck-row row"
         tabIndex={0}
       >
-        <div />
         <div
           className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
         >
@@ -266,7 +333,6 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
             </div>
           </div>
         </div>
-        <div />
       </div>
     </div>
   </div>
@@ -275,9 +341,7 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
 
 exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
 <div
-  aria-label="example card carousel"
-  className="pgn__overflow-scroll"
-  role="region"
+  data-testid="overflow-scroll"
 >
   <div
     className="pgn__card-carousel"
@@ -297,6 +361,76 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
           Example subtitle.
         </p>
       </div>
+      <div
+        className="pgn__card-carousel-controls"
+      >
+        <div
+          className="pgn__hstack pgn__stack-gap--1"
+        >
+          <button
+            aria-label="Scroll to previous"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={true}
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+          <button
+            aria-label="Scroll to next"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={false}
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
     <div
       className="pgn__card-deck pgn__card-deck-has-horizontal-scroll"
@@ -305,7 +439,6 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
         className="pgn__card-deck-row row"
         tabIndex={0}
       >
-        <div />
         <div
           className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
         >
@@ -541,7 +674,6 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
             </div>
           </div>
         </div>
-        <div />
       </div>
     </div>
   </div>
@@ -550,9 +682,7 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
 
 exports[`<CardCarousel /> renders default card carousel 1`] = `
 <div
-  aria-label="example card carousel"
-  className="pgn__overflow-scroll"
-  role="region"
+  data-testid="overflow-scroll"
 >
   <div
     className="pgn__card-carousel"
@@ -561,6 +691,76 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
       className="pgn__card-carousel-header"
     >
       <div />
+      <div
+        className="pgn__card-carousel-controls"
+      >
+        <div
+          className="pgn__hstack pgn__stack-gap--1"
+        >
+          <button
+            aria-label="Scroll to previous"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={true}
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+          <button
+            aria-label="Scroll to next"
+            className="btn-icon btn-icon-primary btn-icon-md"
+            disabled={false}
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <span
+              className="btn-icon__icon-container"
+            >
+              <span
+                className="pgn__icon btn-icon__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="none"
+                  focusable={false}
+                  height={24}
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
     <div
       className="pgn__card-deck pgn__card-deck-has-horizontal-scroll"
@@ -569,7 +769,6 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
         className="pgn__card-deck-row row"
         tabIndex={0}
       >
-        <div />
         <div
           className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
         >
@@ -805,7 +1004,6 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
             </div>
           </div>
         </div>
-        <div />
       </div>
     </div>
   </div>

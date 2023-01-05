@@ -14,7 +14,6 @@ const defaultCardCarouselContextValue = {
   isScrolledToEnd: false,
   scrollToPrevious: mockScrollToPrevious,
   scrollToNext: mockScrollToNext,
-  isOverflowElementVisible: true,
 };
 
 function CardCarouselControlsWrapper({
@@ -58,17 +57,6 @@ describe('<CardCarouselControls />', () => {
     const contextValue = {
       ...defaultCardCarouselContextValue,
       isScrolledToEnd: true,
-    };
-    const tree = renderer.create((
-      <CardCarouselControlsWrapper cardCarouselContextValue={contextValue} />
-    )).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('does not render controls when overflow element is not visible', () => {
-    const contextValue = {
-      ...defaultCardCarouselContextValue,
-      isOverflowElementVisible: false,
     };
     const tree = renderer.create((
       <CardCarouselControlsWrapper cardCarouselContextValue={contextValue} />

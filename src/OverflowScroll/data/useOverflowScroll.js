@@ -1,8 +1,9 @@
 import {
   useCallback,
+  useEffect,
+  useRef,
   useState,
 } from 'react';
-import useIsVisible from '../../hooks/useIsVisible';
 import useOverflowScrollActions from './useOverflowScrollActions';
 import useOverflowScrollElementAttributes from './useOverflowScrollElementAttributes';
 import useOverflowScrollEventListeners from './useOverflowScrollEventListeners';
@@ -27,13 +28,10 @@ import getChildrenElements from './getChildrenElements';
  *
  * @returns {object} An object with the following properties:
  * - overflowRef
- * - startSentinelRef
- * - endSentinelRef
  * - scrollToPrevious
  * - scrollToNext
  * - isScrolledToStart
  * - isScrolledToEnd
- * - isOverflowElementVisible
  * - activeChildElementIndex
  */
 const useOverflowScroll = ({
@@ -45,9 +43,47 @@ const useOverflowScroll = ({
   disableOpacityMasks = false,
   scrollAnimationBehavior = 'smooth',
 }) => {
-  const [isOverflowElementVisible, overflowRef] = useIsVisible();
-  const [isScrolledToStart, startSentinelRef] = useIsVisible();
-  const [isScrolledToEnd, endSentinelRef] = useIsVisible();
+  const overflowRef = useRef();
+  const [childrenElements, setChildrenElements] = useState([]);
+
+  const [isScrolledToStart, setIsScrolledToStart] = useState(false);
+  const [isScrolledToEnd, setIsScrolledToEnd] = useState(false);
+
+  const [currentScrollLeft, setCurrentScrollLeft] = useState(overflowRef.current?.scrollLeft || 0);
+
+  useEffect(() => {
+    const children = getChildrenElements({
+      element: overflowRef.current,
+      childQuerySelector,
+    });
+    setChildrenElements(children);
+  }, [childQuerySelector]);
+
+  useEffect(() => {
+    // 1. is scrolled start?
+    if (currentScrollLeft === 0) {
+      setIsScrolledToStart(true);
+    } else {
+      setIsScrolledToStart(false);
+    }
+
+    // 1. is not enough content to need scrolling to the right?
+    // 2. is scrolled to end?
+    const childElementOffsetWidth = childrenElements.reduce(
+      (sumWidth, childElement) => sumWidth + childElement.offsetWidth,
+      0,
+    );
+    console.log('overflowRef!!!!', overflowRef);
+    const canScrollRight = childElementOffsetWidth > overflowRef.current.offsetWidth;
+    const isScrolledRightMax = (
+      overflowRef.current.scrollLeft === overflowRef.current.scrollWidth - overflowRef.current.clientWidth
+    );
+    if (!canScrollRight || isScrolledRightMax) {
+      setIsScrolledToEnd(true);
+    } else {
+      setIsScrolledToEnd(false);
+    }
+  }, [currentScrollLeft, childrenElements]);
 
   const [activeChildElementIndex, setActiveChildElementIndex] = useState(0);
 
@@ -55,10 +91,9 @@ const useOverflowScroll = ({
     setActiveChildElementIndex(index);
   }, []);
 
-  const childrenElements = getChildrenElements({
-    element: overflowRef.current,
-    childQuerySelector,
-  });
+  const onOverflowElementScrollLeftChange = useCallback((scrollLeft) => {
+    setCurrentScrollLeft(scrollLeft);
+  }, []);
 
   useOverflowScrollEventListeners({
     overflowRef,
@@ -66,6 +101,7 @@ const useOverflowScroll = ({
     activeChildElementIndex,
     onActiveChildElementIndexChange,
     disableScroll,
+    onOverflowElementScrollLeftChange,
   });
 
   useOverflowScrollElementAttributes({
@@ -105,8 +141,6 @@ const useOverflowScroll = ({
   } = useOverflowScrollActions({
     overflowRef,
     activeChildElementIndex,
-    startSentinelRef,
-    endSentinelRef,
     childrenElements,
     scrollAnimationBehavior,
     onScrollPrevious: handleScrollPrevious,
@@ -115,13 +149,10 @@ const useOverflowScroll = ({
 
   return {
     overflowRef,
-    startSentinelRef,
-    endSentinelRef,
     scrollToPrevious,
     scrollToNext,
     isScrolledToStart,
     isScrolledToEnd,
-    isOverflowElementVisible,
     activeChildElementIndex,
   };
 };

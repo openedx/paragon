@@ -11,15 +11,11 @@ function CardCarouselControls() {
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
-    isOverflowElementVisible,
   } = useContext(CardCarouselContext);
 
   const intl = useIntl();
 
-  const isPreviousDisabled = isScrolledToStart || !isOverflowElementVisible;
-  const isNextDisabled = isScrolledToEnd || !isOverflowElementVisible;
-
-  if (isPreviousDisabled && isNextDisabled) {
+  if (isScrolledToStart && isScrolledToEnd) {
     return null;
   }
 
@@ -27,14 +23,14 @@ function CardCarouselControls() {
     <div className="pgn__card-carousel-controls">
       <Stack direction="horizontal" gap={1}>
         <IconButton
-          disabled={isPreviousDisabled}
+          disabled={isScrolledToStart}
           src={ArrowBack}
           iconAs={Icon}
           alt={intl.formatMessage(messages.scrollToPrevious)}
           onClick={scrollToPrevious}
         />
         <IconButton
-          disabled={isNextDisabled}
+          disabled={isScrolledToEnd}
           src={ArrowForward}
           iconAs={Icon}
           alt={intl.formatMessage(messages.scrollToNext)}

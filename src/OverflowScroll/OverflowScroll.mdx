@@ -3,8 +3,6 @@ title: 'OverflowScroll'
 type: 'component'
 components:
 - OverflowScroll
-- OverflowScrollStartSentinel
-- OverflowScrollEndSentinel
 categories:
 - Content
 status: 'New'
@@ -15,13 +13,11 @@ notes: ''
 
 A set of React components that encapsulates the logic from [`useOverflowScroll`](/components/overflowscroll/useoverflowscroll) for building carousel-like UI components:
 * `OverflowScroll`
-* `OverflowScroll.StartSentinel`
-* `OverflowScroll.EndSentinel`
 * `OverflowScroll.Items`
 
 ## Sample Usage
 
-The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.Items`, `OverflowScroll.StartSentinel`, and `OverflowScroll.EndSentinel` to build carousel-like UI components.
+The following example demonstrates how to use `OverflowScroll` and `OverflowScroll.Items` to build carousel-like UI components.
 
 ```jsx live
 () => {
@@ -39,14 +35,9 @@ The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.
     return (
       <div
         ref={overflowRef}
-        className="d-flex pb-3"
-        style={{ paddingLeft: 1, paddingRight: 1 }}
+        className="d-flex"
       >
-        <OverflowScroll.StartSentinel />
-        <OverflowScroll.Items>
-          {items}
-        </OverflowScroll.Items>
-        <OverflowScroll.EndSentinel />
+        <OverflowScroll.Items>{items}</OverflowScroll.Items>
       </div>
     );
   };
@@ -55,7 +46,6 @@ The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.
     const {
       isScrolledToStart,
       isScrolledToEnd,
-      isOverflowElementVisible,
       scrollToPrevious,
       scrollToNext,
     } = useContext(OverflowScrollContext);
@@ -64,7 +54,7 @@ The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.
       <div className="mb-3">
         <Button
           onClick={scrollToPrevious}
-          disabled={isScrolledToStart || !isOverflowElementVisible}
+          disabled={isScrolledToStart}
           size="sm"
           className="mr-2"
         >
@@ -72,7 +62,7 @@ The following example demonstrates how to use `OverflowScroll`, `OverflowScroll.
         </Button>
         <Button
           onClick={scrollToNext}
-          disabled={isScrolledToEnd || !isOverflowElementVisible}
+          disabled={isScrolledToEnd}
           size="sm"
         >
           Next

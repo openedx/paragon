@@ -5,6 +5,30 @@ import { v4 as uuidv4 } from 'uuid';
 import { IntlProvider } from 'react-intl';
 import CardCarousel from '../CardCarousel';
 import Card from '../..';
+import { OverflowScroll, OverflowScrollContext } from '../../../OverflowScroll';
+
+jest.mock('../../../OverflowScroll', () => ({
+  ...jest.requireActual('../../../OverflowScroll'),
+  OverflowScroll: jest.fn(),
+}));
+
+// eslint-disable-next-line react/prop-types
+OverflowScroll.mockImplementation(({ children }) => {
+  const overflowRef = { current: document.createElement('div') };
+  const contextValue = {
+    overflowRef,
+    isScrolledToStart: true,
+    isScrolledToEnd: false,
+    scrollToPrevious: jest.fn(),
+    scrollToNext: jest.fn(),
+  };
+
+  return (
+    <OverflowScrollContext.Provider value={contextValue}>
+      <div data-testid="overflow-scroll">{children}</div>
+    </OverflowScrollContext.Provider>
+  );
+});
 
 function ExampleCard(props) {
   return (
@@ -47,6 +71,10 @@ CardCarouselWrapper.defaultProps = {
 };
 
 describe('<CardCarousel />', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('renders default card carousel', () => {
     const cardContent = getCardContent();
     const tree = renderer.create((

@@ -14,8 +14,6 @@ const CardDeck = React.forwardRef(({
   columnSizes,
   hasInteractiveChildren,
   canScrollHorizontal,
-  StartSentinel,
-  EndSentinel,
   hasOverflowScrollItems,
 }, ref) => {
   const cards = useMemo(
@@ -50,9 +48,7 @@ const CardDeck = React.forwardRef(({
         tabIndex={hasInteractiveChildren ? -1 : 0}
         ref={ref}
       >
-        {StartSentinel && <StartSentinel />}
         {cardDeckChildren}
-        {EndSentinel && <EndSentinel />}
       </Row>
     </div>
   );
@@ -79,10 +75,6 @@ CardDeck.propTypes = {
   hasInteractiveChildren: PropTypes.bool,
   /** Whether the `CardDeck` supports horizontal scrolling when there are overflow children */
   canScrollHorizontal: PropTypes.bool,
-  /** React element to determine when scrolled to start  */
-  StartSentinel: PropTypes.elementType,
-  /** React element to determine when scrolled to end  */
-  EndSentinel: PropTypes.elementType,
   /** Whether the children of CardDeck should be processed by `useOverflowScrollItems` to give
    * each child a known/stable CSS classname */
   hasOverflowScrollItems: PropTypes.bool,
@@ -97,8 +89,6 @@ CardDeck.defaultProps = {
   },
   hasInteractiveChildren: false,
   canScrollHorizontal: true,
-  StartSentinel: null,
-  EndSentinel: null,
   hasOverflowScrollItems: false,
 };
 

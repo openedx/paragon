@@ -15,8 +15,6 @@ const mockOnScrollNext = jest.fn();
 
 const baseArgs = {
   overflowRef: mockRef,
-  startSentinelRef: mockRef,
-  endSentinelRef: mockRef,
   childrenElements: [
     document.createElement('div'),
     document.createElement('div'),

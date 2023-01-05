@@ -6,7 +6,6 @@ exports[`<OverflowScroll /> renders OverflowScroll 1`] = `
   className="pgn__overflow-scroll"
   role="region"
 >
-  <div />
   <div
     className="pgn__overflow-scroll-item"
   >
@@ -32,6 +31,5 @@ exports[`<OverflowScroll /> renders OverflowScroll 1`] = `
   >
     item
   </div>
-  <div />
 </div>
 `;

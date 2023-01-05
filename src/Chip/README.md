@@ -55,7 +55,6 @@ notes: |
   <OverflowScrollContext.Consumer>
     {({
       overflowRef,
-      isOverflowElementVisible,
       isScrolledToStart,
       isScrolledToEnd,
       scrollToPrevious,
@@ -67,20 +66,19 @@ notes: |
             onClick={scrollToPrevious}
             className="mr-2"
             size="sm"
-            disabled={isScrolledToStart || !isOverflowElementVisible}
+            disabled={isScrolledToStart}
           >
             Previous
           </Button>
           <Button
             onClick={scrollToNext}
             size="sm"
-            disabled={isScrolledToEnd || !isOverflowElementVisible}
+            disabled={isScrolledToEnd}
           >
             Next
           </Button>
         </div>
-        <div ref={overflowRef} className="d-flex" style={{ paddingLeft: 1, paddingRight: 1 }}>
-          <OverflowScroll.StartSentinel />
+        <div ref={overflowRef} className="d-flex">
           <OverflowScroll.Items>
             <Chip iconAfter={Close}>New</Chip>
             <Chip iconAfter={Close}>New</Chip>
@@ -103,7 +101,6 @@ notes: |
             <Chip iconAfter={Close}>New</Chip>
             <Chip iconAfter={Close}>New</Chip>
           </OverflowScroll.Items>
-          <OverflowScroll.EndSentinel />
         </div>
       </>
     )}

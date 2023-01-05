@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { OverflowScroll } from '../..';
+import { OverflowScroll } from '../../OverflowScroll';
 import CardCarouselProvider from './CardCarouselProvider';
 import CardCarouselHeader from './CardCarouselHeader';
 import CardCarouselItems from './CardCarouselItems';
