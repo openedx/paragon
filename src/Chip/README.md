@@ -54,7 +54,7 @@ notes: |
 <OverflowScroll ariaLabel="example chip carousel" hasInteractiveChildren>
   <OverflowScrollContext.Consumer>
     {({
-      overflowRef,
+      setOverflowRef,
       isScrolledToStart,
       isScrolledToEnd,
       scrollToPrevious,
@@ -78,7 +78,7 @@ notes: |
             Next
           </Button>
         </div>
-        <div ref={overflowRef} className="d-flex">
+        <div ref={setOverflowRef} className="d-flex">
           <OverflowScroll.Items>
             <Chip iconAfter={Close}>New</Chip>
             <Chip iconAfter={Close}>New</Chip>
