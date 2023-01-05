@@ -67,10 +67,7 @@ const useOverflowScrollEventListeners = ({
    * which element within the overflow container currently has the user's focus.
    */
   const updateActiveChildElementOnFocusIn = useCallback(() => {
-    if (!overflowRef?.current) {
-      return;
-    }
-    if (overflowRef.current === document.activeElement) {
+    if (!overflowRef || overflowRef === document.activeElement) {
       return;
     }
     for (let i = 0; i < childrenElements.length; i++) {
@@ -142,7 +139,7 @@ const useOverflowScrollEventListeners = ({
    */
   const updateActiveChildElementOnKeyUp = useCallback((e) => {
     if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-      const isScrollingLeft = overflowRef.current.scrollLeft < previousOverflowScrollLeft;
+      const isScrollingLeft = overflowRef.scrollLeft < previousOverflowScrollLeft;
       updateActiveChildElementIndex({ isScrollingLeft });
     }
   }, [overflowRef, previousOverflowScrollLeft, updateActiveChildElementIndex]);
@@ -163,27 +160,35 @@ const useOverflowScrollEventListeners = ({
    * to an appropriate element.
    */
   useEffect(() => {
-    const overflowRefCopy = overflowRef.current;
+    if (!overflowRef) {
+      return undefined;
+    }
 
-    overflowRefCopy?.addEventListener('focusin', updateActiveChildElementOnFocusIn);
-    overflowRefCopy?.addEventListener('keydown', updateActiveChildElementOnKeyDown);
-    overflowRefCopy?.addEventListener('keyup', updateActiveChildElementOnKeyUp);
+    const overflowRefCopy = overflowRef;
+
+    overflowRefCopy.addEventListener('focusin', updateActiveChildElementOnFocusIn);
+    overflowRefCopy.addEventListener('keydown', updateActiveChildElementOnKeyDown);
+    overflowRefCopy.addEventListener('keyup', updateActiveChildElementOnKeyUp);
 
     // we must handle the `scroll` event even when `disableScroll` is true because the `mousedown` and `mouseup`
     // events trigger a scroll.
-    overflowRefCopy?.addEventListener('scroll', handleScrollEvent);
+    overflowRefCopy.addEventListener('scroll', handleScrollEvent);
 
     if (!disableScroll) {
-      overflowRefCopy?.addEventListener('wheel', updateActiveChildElementOnWheel);
-      overflowRefCopy?.addEventListener('mousedown', handleMouseDownEvent);
-      overflowRefCopy?.addEventListener('mouseup', handleMouseUpEvent);
+      overflowRefCopy.addEventListener('wheel', updateActiveChildElementOnWheel);
+      overflowRefCopy.addEventListener('mousedown', handleMouseDownEvent);
+      overflowRefCopy.addEventListener('mouseup', handleMouseUpEvent);
     }
 
     return () => {
-      overflowRefCopy?.removeEventListener('focusin', updateActiveChildElementOnFocusIn);
-      overflowRefCopy?.removeEventListener('keydown', updateActiveChildElementOnKeyDown);
-      overflowRefCopy?.removeEventListener('keyup', updateActiveChildElementOnKeyUp);
-      overflowRefCopy?.removeEventListener('scroll', handleScrollEvent);
+      if (!overflowRef) {
+        return;
+      }
+
+      overflowRefCopy.removeEventListener('focusin', updateActiveChildElementOnFocusIn);
+      overflowRefCopy.removeEventListener('keydown', updateActiveChildElementOnKeyDown);
+      overflowRefCopy.removeEventListener('keyup', updateActiveChildElementOnKeyUp);
+      overflowRefCopy.removeEventListener('scroll', handleScrollEvent);
 
       if (!disableScroll) {
         overflowRefCopy?.removeEventListener('wheel', updateActiveChildElementOnWheel);

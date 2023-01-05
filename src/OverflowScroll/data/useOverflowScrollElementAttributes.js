@@ -39,64 +39,66 @@ const useOverflowScrollElementAttributes = ({
    * a11y attributes and CSS styles to support the overflow scrolling behavior.
    */
   useEffect(() => {
-    if (overflowRef.current) {
-      // a11y
-      if (hasInteractiveChildren && overflowRef.current.tabIndex !== '-1') {
-        overflowRef.current.tabIndex = '-1';
-      }
-      if (!hasInteractiveChildren && overflowRef.current.tabIndex !== '0') {
-        overflowRef.current.tabIndex = '0';
-      }
+    if (!overflowRef) {
+      return;
+    }
 
-      // styles
-      const overflowRefStyles = global.getComputedStyle(overflowRef.current);
-      const positionStyle = overflowRefStyles.getPropertyValue('position');
-      const overflowXStyle = overflowRefStyles.getPropertyValue('overflow-x');
-      const hasOverflowClass = overflowRef.current.classList.contains(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
+    // a11y
+    if (hasInteractiveChildren && overflowRef.tabIndex !== '-1') {
+      overflowRef.tabIndex = '-1';
+    }
+    if (!hasInteractiveChildren && overflowRef.tabIndex !== '0') {
+      overflowRef.tabIndex = '0';
+    }
 
-      // class name
-      if (!hasOverflowClass) {
-        overflowRef.current.classList.add(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
-      }
+    // styles
+    const overflowRefStyles = global.getComputedStyle(overflowRef);
+    const positionStyle = overflowRefStyles.getPropertyValue('position');
+    const overflowXStyle = overflowRefStyles.getPropertyValue('overflow-x');
+    const hasOverflowClass = overflowRef.classList.contains(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
 
-      if (positionStyle !== 'relative') {
-        overflowRef.current.style.position = 'relative';
-      }
-      if (disableScroll && overflowXStyle !== 'hidden') {
-        overflowRef.current.style.overflowX = 'hidden';
-      }
-      if (!disableScroll && overflowXStyle !== 'scroll') {
-        overflowRef.current.style.overflowX = 'scroll';
-      }
+    // class name
+    if (!hasOverflowClass) {
+      overflowRef.classList.add(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
+    }
 
-      if (disableOpacityMasks) {
-        overflowRef.current.style.removeProperty('mask-image');
-        overflowRef.current.style.removeProperty('webkit-mask-image');
-      } else {
-        const getMaskImageStyleValue = () => {
-          // TODO: make the `mask-image` property (optionally) extensible/customizable (e.g., passed as a prop)
-          if (isScrolledToStart && !isScrolledToEnd) {
-            return OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_END;
-          }
-          if (!isScrolledToStart && isScrolledToEnd) {
-            return OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START;
-          }
+    if (positionStyle !== 'relative') {
+      overflowRef.style.position = 'relative';
+    }
+    if (disableScroll && overflowXStyle !== 'hidden') {
+      overflowRef.style.overflowX = 'hidden';
+    }
+    if (!disableScroll && overflowXStyle !== 'scroll') {
+      overflowRef.style.overflowX = 'scroll';
+    }
 
-          if (!isScrolledToStart && !isScrolledToEnd) {
-            return OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START_END;
-          }
-
-          // no opacity mask required
-          return undefined;
-        };
-        const maskImageStyleValue = getMaskImageStyleValue();
-        if (maskImageStyleValue) {
-          overflowRef.current.style.maskImage = maskImageStyleValue;
-          overflowRef.current.style.webkitMaskImage = maskImageStyleValue;
-        } else {
-          overflowRef.current.style.removeProperty('mask-image');
-          overflowRef.current.style.removeProperty('webkit-mask-image');
+    if (disableOpacityMasks) {
+      overflowRef.style.removeProperty('mask-image');
+      overflowRef.style.removeProperty('webkit-mask-image');
+    } else {
+      const getMaskImageStyleValue = () => {
+        // TODO: make the `mask-image` property (optionally) extensible/customizable (e.g., passed as a prop)
+        if (isScrolledToStart && !isScrolledToEnd) {
+          return OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_END;
         }
+        if (!isScrolledToStart && isScrolledToEnd) {
+          return OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START;
+        }
+
+        if (!isScrolledToStart && !isScrolledToEnd) {
+          return OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START_END;
+        }
+
+        // no opacity mask required
+        return undefined;
+      };
+      const maskImageStyleValue = getMaskImageStyleValue();
+      if (maskImageStyleValue) {
+        overflowRef.style.maskImage = maskImageStyleValue;
+        overflowRef.style.webkitMaskImage = maskImageStyleValue;
+      } else {
+        overflowRef.style.removeProperty('mask-image');
+        overflowRef.style.removeProperty('webkit-mask-image');
       }
     }
   }, [
