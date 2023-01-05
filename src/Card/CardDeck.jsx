@@ -1,38 +1,58 @@
-import React, { useMemo } from 'react';
+import React, { Children, useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import BaseCardDeck from 'react-bootstrap/CardDeck';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useOverflowScrollItems } from '..';
 
-function CardDeck({
+export const CARD_DECK_ITEM_CLASS_NAME = 'pgn__card-deck-card-item';
+
+const CardDeck = React.forwardRef(({
   className,
   children,
   columnSizes,
   hasInteractiveChildren,
-  overflowRef,
-}) {
+  canScrollHorizontal,
+  hasOverflowScrollItems,
+}, ref) => {
   const cards = useMemo(
-    () => React.Children.map(children, card => (
-      <Col {...columnSizes}>
-        {card}
+    () => Children.map(Children.toArray(children), child => (
+      <Col className={classNames(CARD_DECK_ITEM_CLASS_NAME, child.props.className)} {...columnSizes}>
+        {child}
       </Col>
     )),
     [children, columnSizes],
   );
+  const overflowCardDeckItems = useOverflowScrollItems(cards);
+
+  const cardDeckChildren = useMemo(() => {
+    if (hasOverflowScrollItems) {
+      return overflowCardDeckItems;
+    }
+    return cards;
+  }, [hasOverflowScrollItems, overflowCardDeckItems, cards]);
 
   return (
-    <div className={classNames('pgn__card-deck', className)}>
+    <div
+      className={classNames(
+        'pgn__card-deck',
+        {
+          'pgn__card-deck-has-horizontal-scroll': canScrollHorizontal,
+        },
+        className,
+      )}
+    >
       <Row
         className="pgn__card-deck-row"
         tabIndex={hasInteractiveChildren ? -1 : 0}
-        ref={overflowRef}
+        ref={ref}
       >
-        {cards}
+        {cardDeckChildren}
       </Row>
     </div>
   );
-}
+});
 
 CardDeck.propTypes = {
   /** The class name for the CardDeck component */
@@ -53,11 +73,11 @@ CardDeck.propTypes = {
   /** Whether the child `Card` components are interactive/focusable. If not, a `tabindex="0"` is
    * added to be a11y-compliant */
   hasInteractiveChildren: PropTypes.bool,
-  /** The ref to be passed to the scrollable CardDeck element */
-  overflowRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.instanceOf(typeof Element === 'undefined' ? () => {} : Element) }),
-  ]),
+  /** Whether the `CardDeck` supports horizontal scrolling when there are overflow children */
+  canScrollHorizontal: PropTypes.bool,
+  /** Whether the children of CardDeck should be processed by `useOverflowScrollItems` to give
+   * each child a known/stable CSS classname */
+  hasOverflowScrollItems: PropTypes.bool,
 };
 
 CardDeck.defaultProps = {
@@ -68,7 +88,8 @@ CardDeck.defaultProps = {
     xl: 4,
   },
   hasInteractiveChildren: false,
-  overflowRef: null,
+  canScrollHorizontal: true,
+  hasOverflowScrollItems: false,
 };
 
 CardDeck.Deprecated = BaseCardDeck;

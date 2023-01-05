@@ -21,21 +21,23 @@ function ExampleCard(props) {
   );
 }
 
-function CardContent({ cardCount = 5, ...props }) {
-  return Array.from({ length: cardCount }).map(() => <ExampleCard key={uuidv4()} {...props} />);
+function getCardContent({ cardCount = 5, ...cardProps } = {}) {
+  return Array.from({ length: cardCount }).map(() => <ExampleCard key={uuidv4()} {...cardProps} />);
 }
 
 describe('<CardDeck />', () => {
   it('renders default columnSizes', () => {
+    const cardContent = getCardContent();
     const tree = renderer.create((
       <CardDeck>
-        <CardContent />
+        {cardContent}
       </CardDeck>
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders with controlled columnSizes', () => {
+    const cardContent = getCardContent();
     const tree = renderer.create((
       <CardDeck
         columnSizes={{
@@ -45,16 +47,17 @@ describe('<CardDeck />', () => {
           xl: 3,
         }}
       >
-        <CardContent />
+        {cardContent}
       </CardDeck>
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('has tabIndex="-1" when `hasInteractiveChildren` is true', () => {
+    const cardContent = getCardContent({ isClickable: true });
     const tree = renderer.create((
       <CardDeck hasInteractiveChildren>
-        <CardContent isClickable />
+        {cardContent}
       </CardDeck>
     )).toJSON();
     expect(tree).toMatchSnapshot();
