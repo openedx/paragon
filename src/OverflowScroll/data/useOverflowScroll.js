@@ -46,8 +46,8 @@ const useOverflowScroll = ({
   const overflowRef = useRef();
   const [childrenElements, setChildrenElements] = useState([]);
 
-  const [isScrolledToStart, setIsScrolledToStart] = useState(false);
-  const [isScrolledToEnd, setIsScrolledToEnd] = useState(false);
+  const [isScrolledToStart, setIsScrolledToStart] = useState(true);
+  const [isScrolledToEnd, setIsScrolledToEnd] = useState(true);
 
   const [currentScrollLeft, setCurrentScrollLeft] = useState(overflowRef.current?.scrollLeft || 0);
 
@@ -60,6 +60,11 @@ const useOverflowScroll = ({
   }, [childQuerySelector]);
 
   useEffect(() => {
+    const childElementOffsetWidth = childrenElements.reduce(
+      (sumWidth, childElement) => sumWidth + childElement.offsetWidth,
+      0,
+    );
+
     // 1. is scrolled start?
     if (currentScrollLeft === 0) {
       setIsScrolledToStart(true);
@@ -69,11 +74,6 @@ const useOverflowScroll = ({
 
     // 1. is not enough content to need scrolling to the right?
     // 2. is scrolled to end?
-    const childElementOffsetWidth = childrenElements.reduce(
-      (sumWidth, childElement) => sumWidth + childElement.offsetWidth,
-      0,
-    );
-    console.log('overflowRef!!!!', overflowRef);
     const canScrollRight = childElementOffsetWidth > overflowRef.current.offsetWidth;
     const isScrolledRightMax = (
       overflowRef.current.scrollLeft === overflowRef.current.scrollWidth - overflowRef.current.clientWidth
@@ -83,7 +83,7 @@ const useOverflowScroll = ({
     } else {
       setIsScrolledToEnd(false);
     }
-  }, [currentScrollLeft, childrenElements]);
+  }, [currentScrollLeft, childrenElements, isScrolledToStart]);
 
   const [activeChildElementIndex, setActiveChildElementIndex] = useState(0);
 

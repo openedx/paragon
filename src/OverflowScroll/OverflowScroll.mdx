@@ -71,14 +71,14 @@ The following example demonstrates how to use `OverflowScroll` and `OverflowScro
     );
   };
 
-  const itemCount = 24;
+  const itemCount = 3;
   const items = useMemo(() => Array.from({ length: itemCount }).map((index) => {
     if (index !== itemCount - 1) {
       return <ExampleItem key={uuidv4()} className="mr-2" />;
     }
     // last element, no right margin
     return <ExampleItem key={uuidv4()} />;
-  }), []);
+  }), [itemCount]);
 
   return (
     <OverflowScroll ariaLabel="example overflow scroll usage">
