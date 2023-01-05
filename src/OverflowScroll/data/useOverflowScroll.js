@@ -8,6 +8,7 @@ import useOverflowScrollActions from './useOverflowScrollActions';
 import useOverflowScrollElementAttributes from './useOverflowScrollElementAttributes';
 import useOverflowScrollEventListeners from './useOverflowScrollEventListeners';
 import getChildrenElements from './getChildrenElements';
+import getOverflowElementScrollLeft from './getOverflowElementScrollLeft';
 
 /**
  * A headless React hook that encapsulates the logic for supporting
@@ -64,9 +65,10 @@ const useOverflowScroll = ({
       (sumWidth, childElement) => sumWidth + childElement.offsetWidth,
       0,
     );
+    const firstChildElementOffsetLeft = childrenElements[0]?.offsetLeft;
 
     // 1. is scrolled start?
-    if (currentScrollLeft === 0) {
+    if (currentScrollLeft <= firstChildElementOffsetLeft) {
       setIsScrolledToStart(true);
     } else {
       setIsScrolledToStart(false);
@@ -74,10 +76,12 @@ const useOverflowScroll = ({
 
     // 1. is not enough content to need scrolling to the right?
     // 2. is scrolled to end?
-    const canScrollRight = childElementOffsetWidth > overflowRef.current.offsetWidth;
+    const overflowScrollLeft = getOverflowElementScrollLeft(overflowRef);
+    const canScrollRight = childElementOffsetWidth > overflowRef.current.getBoundingClientRect().width;
     const isScrolledRightMax = (
-      overflowRef.current.scrollLeft === overflowRef.current.scrollWidth - overflowRef.current.clientWidth
+      overflowScrollLeft >= overflowRef.current.scrollWidth - overflowRef.current.clientWidth
     );
+
     if (!canScrollRight || isScrolledRightMax) {
       setIsScrolledToEnd(true);
     } else {

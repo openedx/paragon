@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import getOverflowElementScrollLeft from './getOverflowElementScrollLeft';
 
 /**
  * A React hook that adds and deletes event listeners on the `overflowRef` container element.
@@ -36,8 +37,8 @@ const useOverflowScrollEventListeners = ({
 
     for (let index = 0; index < childrenElements.length; index++) {
       const childElement = childrenElements[index];
-      const scrollOffsetLeft = getScrollOffsetLeft(childElement);
-      if (scrollOffsetLeft > overflowRef.current.scrollLeft) {
+      const childElementScrollOffsetLeft = getScrollOffsetLeft(childElement);
+      if (childElementScrollOffsetLeft > getOverflowElementScrollLeft(overflowRef)) {
         if (index !== activeChildElementIndex) {
           onActiveChildElementIndexChange(index);
         }
@@ -89,15 +90,16 @@ const useOverflowScrollEventListeners = ({
    *   - Update the active child element index based on the current scroll position
    */
   const handleScrollEvent = useCallback(() => {
-    onOverflowElementScrollLeftChange(overflowRef.current.scrollLeft);
+    const overflowElementScrollLeft = getOverflowElementScrollLeft(overflowRef);
+    onOverflowElementScrollLeftChange(overflowElementScrollLeft);
 
     if (!isOverflowElementMouseDown) {
       return;
     }
 
-    const isScrollingLeft = overflowRef.current.scrollLeft < previousOverflowScrollLeft;
+    const isScrollingLeft = overflowElementScrollLeft < previousOverflowScrollLeft;
     updateActiveChildElementIndex({ isScrollingLeft });
-    setPreviousOverflowScrollLeft(overflowRef.current.scrollLeft);
+    setPreviousOverflowScrollLeft(overflowElementScrollLeft);
   }, [
     isOverflowElementMouseDown,
     overflowRef,
@@ -112,7 +114,8 @@ const useOverflowScrollEventListeners = ({
    *   - set `isOverflowElementMouseDown=true`
    */
   const handleMouseDownEvent = useCallback(() => {
-    setPreviousOverflowScrollLeft(overflowRef.current.scrollLeft);
+    const overflowElementScrollLeft = getOverflowElementScrollLeft(overflowRef);
+    setPreviousOverflowScrollLeft(overflowElementScrollLeft);
     setIsOverflowElementMouseDown(true);
   }, [overflowRef]);
 
@@ -128,7 +131,8 @@ const useOverflowScrollEventListeners = ({
    */
   const updateActiveChildElementOnKeyDown = useCallback((e) => {
     if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-      setPreviousOverflowScrollLeft(overflowRef.current.scrollLeft);
+      const overflowElementScrollLeft = getOverflowElementScrollLeft(overflowRef);
+      setPreviousOverflowScrollLeft(overflowElementScrollLeft);
     }
   }, [overflowRef]);
 
