@@ -10,8 +10,8 @@ import CardCarouselControls from '../CardCarouselControls';
 const mockScrollToPrevious = jest.fn();
 const mockScrollToNext = jest.fn();
 const defaultCardCarouselContextValue = {
-  isScrolledToStart: true,
-  isScrolledToEnd: true,
+  isScrolledToStart: false,
+  isScrolledToEnd: false,
   scrollToPrevious: mockScrollToPrevious,
   scrollToNext: mockScrollToNext,
   isOverflowElementVisible: true,
@@ -43,17 +43,32 @@ describe('<CardCarouselControls />', () => {
     jest.clearAllMocks();
   });
 
-  it('renders with disabled controls when scrolled to start/end', () => {
+  it('renders with disabled previous control when scrolled to start', () => {
+    const contextValue = {
+      ...defaultCardCarouselContextValue,
+      isScrolledToStart: true,
+    };
     const tree = renderer.create((
-      <CardCarouselControlsWrapper />
+      <CardCarouselControlsWrapper cardCarouselContextValue={contextValue} />
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders with disabled controls when overflow element is not visible', () => {
+  it('renders with disabled next control when scrolled to end', () => {
     const contextValue = {
       ...defaultCardCarouselContextValue,
-      isOverflowElementVisible: true,
+      isScrolledToEnd: true,
+    };
+    const tree = renderer.create((
+      <CardCarouselControlsWrapper cardCarouselContextValue={contextValue} />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('does not render controls when overflow element is not visible', () => {
+    const contextValue = {
+      ...defaultCardCarouselContextValue,
+      isOverflowElementVisible: false,
     };
     const tree = renderer.create((
       <CardCarouselControlsWrapper cardCarouselContextValue={contextValue} />
@@ -66,6 +81,18 @@ describe('<CardCarouselControls />', () => {
       ...defaultCardCarouselContextValue,
       isScrolledToStart: false,
       isScrolledToEnd: false,
+    };
+    const tree = renderer.create((
+      <CardCarouselControlsWrapper cardCarouselContextValue={contextValue} />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders without controls when both previous/next controls would be disabled', () => {
+    const contextValue = {
+      ...defaultCardCarouselContextValue,
+      isScrolledToStart: true,
+      isScrolledToEnd: true,
     };
     const tree = renderer.create((
       <CardCarouselControlsWrapper cardCarouselContextValue={contextValue} />

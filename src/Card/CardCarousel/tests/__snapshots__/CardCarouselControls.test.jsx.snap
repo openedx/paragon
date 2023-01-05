@@ -1,6 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CardCarouselControls /> renders with disabled controls when overflow element is not visible 1`] = `
+exports[`<CardCarouselControls /> does not render controls when overflow element is not visible 1`] = `null`;
+
+exports[`<CardCarouselControls /> renders with disabled next control when scrolled to end 1`] = `
 <div
   className="pgn__card-carousel-controls"
 >
@@ -10,7 +12,7 @@ exports[`<CardCarouselControls /> renders with disabled controls when overflow e
     <button
       aria-label="Scroll to previous"
       className="btn-icon btn-icon-primary btn-icon-md"
-      disabled={true}
+      disabled={false}
       onClick={[MockFunction]}
       type="button"
     >
@@ -73,7 +75,7 @@ exports[`<CardCarouselControls /> renders with disabled controls when overflow e
 </div>
 `;
 
-exports[`<CardCarouselControls /> renders with disabled controls when scrolled to start/end 1`] = `
+exports[`<CardCarouselControls /> renders with disabled previous control when scrolled to start 1`] = `
 <div
   className="pgn__card-carousel-controls"
 >
@@ -114,7 +116,7 @@ exports[`<CardCarouselControls /> renders with disabled controls when scrolled t
     <button
       aria-label="Scroll to next"
       className="btn-icon btn-icon-primary btn-icon-md"
-      disabled={true}
+      disabled={false}
       onClick={[MockFunction]}
       type="button"
     >
@@ -218,3 +220,5 @@ exports[`<CardCarouselControls /> renders with enabled controls when not scrolle
   </div>
 </div>
 `;
+
+exports[`<CardCarouselControls /> renders without controls when both previous/next controls would be disabled 1`] = `null`;

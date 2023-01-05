@@ -16,18 +16,25 @@ function CardCarouselControls() {
 
   const intl = useIntl();
 
+  const isPreviousDisabled = isScrolledToStart || !isOverflowElementVisible;
+  const isNextDisabled = isScrolledToEnd || !isOverflowElementVisible;
+
+  if (isPreviousDisabled && isNextDisabled) {
+    return null;
+  }
+
   return (
     <div className="pgn__card-carousel-controls">
       <Stack direction="horizontal" gap={1}>
         <IconButton
-          disabled={isScrolledToStart || !isOverflowElementVisible}
+          disabled={isPreviousDisabled}
           src={ArrowBack}
           iconAs={Icon}
           alt={intl.formatMessage(messages.scrollToPrevious)}
           onClick={scrollToPrevious}
         />
         <IconButton
-          disabled={isScrolledToEnd || !isOverflowElementVisible}
+          disabled={isNextDisabled}
           src={ArrowForward}
           iconAs={Icon}
           alt={intl.formatMessage(messages.scrollToNext)}
