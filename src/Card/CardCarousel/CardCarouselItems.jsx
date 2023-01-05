@@ -8,12 +8,12 @@ function CardCarouselItems({ children }) {
     columnSizes,
     hasInteractiveChildren,
     canScrollHorizontal,
-    overflowRef,
+    setOverflowRef,
   } = useContext(CardCarouselContext);
 
   return (
     <CardDeck
-      ref={overflowRef}
+      ref={setOverflowRef}
       columnSizes={columnSizes}
       hasInteractiveChildren={hasInteractiveChildren}
       canScrollHorizontal={canScrollHorizontal}

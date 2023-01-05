@@ -3,9 +3,7 @@ import { act } from '@testing-library/react';
 import useOverflowScrollEventListeners from '../useOverflowScrollEventListeners';
 
 const divElement = document.createElement('div');
-const mockRef = {
-  current: divElement,
-};
+const mockRef = divElement;
 
 const createDivWithLink = () => {
   const element = document.createElement('div');
@@ -59,13 +57,13 @@ describe('useOverflowScrollElementAttributes', () => {
     const eventArrowRight = { key: 'ArrowRight' };
 
     // mock initial scrolling
-    baseArgs.overflowRef.current.scrollLeft = 25;
+    baseArgs.overflowRef.scrollLeft = 25;
 
     // ArrowRight
     act(() => {
       updateActiveChildElementOnKeyDown(eventArrowRight);
       // mock some right scrolling
-      baseArgs.overflowRef.current.scrollLeft = 50;
+      baseArgs.overflowRef.scrollLeft = 50;
       updateActiveChildElementOnKeyUp(eventArrowRight);
     });
     expect(result.current.previousOverflowScrollLeft).toEqual(25);
@@ -74,7 +72,7 @@ describe('useOverflowScrollElementAttributes', () => {
     act(() => {
       updateActiveChildElementOnKeyDown(eventArrowLeft);
       // mock some right scrolling
-      baseArgs.overflowRef.current.scrollLeft = 25;
+      baseArgs.overflowRef.scrollLeft = 25;
       updateActiveChildElementOnKeyUp(eventArrowLeft);
     });
     expect(result.current.previousOverflowScrollLeft).toEqual(50);

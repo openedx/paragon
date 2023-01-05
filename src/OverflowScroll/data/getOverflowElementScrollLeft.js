@@ -5,10 +5,10 @@
  * @returns The scroll left position of the overflow container element.
  */
 const getOverflowElementScrollLeft = (overflowRef) => {
-  if (!overflowRef.current) {
+  if (!overflowRef) {
     return 0;
   }
-  return Math.abs(Math.round(overflowRef.current.scrollLeft));
+  return Math.abs(Math.round(overflowRef.scrollLeft));
 };
 
 export default getOverflowElementScrollLeft;
