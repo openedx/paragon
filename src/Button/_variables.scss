@@ -1,38 +1,38 @@
-$btn-padding-y: var(--pgn-btn-padding-y-base) !default;
-$btn-padding-x: var(--pgn-btn-padding-x-base) !default;
-$btn-font-family: var(--pgn-btn-font-family) !default;
-$btn-font-size: var(--pgn-btn-font-size-base) !default;
-$btn-line-height: var(--pgn-btn-line-height-base) !default;
+$btn-padding-y: var(--pgn-spacing-btn-padding-y-base) !default;
+$btn-padding-x: var(--pgn-spacing-btn-padding-x-base) !default;
+$btn-font-family: var(--pgn-typography-btn-font-family) !default;
+$btn-font-size: var(--pgn-typography-btn-font-size-base) !default;
+$btn-line-height: var(--pgn-typography-btn-line-height-base) !default;
 
-$btn-padding-y-sm: var(--pgn-btn-padding-y-sm) !default;
-$btn-padding-x-sm: var(--pgn-btn-padding-x-sm) !default;
-$btn-font-size-sm: var(--pgn-btn-font-size-sm) !default;
-$btn-line-height-sm: var(--pgn-btn-line-height-sm) !default;
+$btn-padding-y-sm: var(--pgn-spacing-btn-padding-y-sm) !default;
+$btn-padding-x-sm: var(--pgn-spacing-btn-padding-x-sm) !default;
+$btn-font-size-sm: var(--pgn-typography-btn-font-size-sm) !default;
+$btn-line-height-sm: var(--pgn-typography-btn-line-height-sm) !default;
 
-$btn-padding-y-lg: var(--pgn-btn-padding-y-lg) !default;
-$btn-padding-x-lg: var(--pgn-btn-padding-x-lg) !default;
-$btn-font-size-lg: var(--pgn-btn-font-size-lg) !default;
-$btn-line-height-lg: var(--pgn-btn-line-height-lg) !default;
+$btn-padding-y-lg: var(--pgn-spacing-btn-padding-y-lg) !default;
+$btn-padding-x-lg: var(--pgn-spacing-btn-padding-x-lg) !default;
+$btn-font-size-lg: var(--pgn-typography-btn-font-size-lg) !default;
+$btn-line-height-lg: var(--pgn-typography-btn-line-height-lg) !default;
 
-$btn-border-width: var(--pgn-btn-border-width) !default;
+$btn-border-width: var(--pgn-size-btn-border-width) !default;
 
-$btn-font-weight: var(--pgn-btn-font-weight) !default;
-$btn-box-shadow: var(--pgn-btn-box-shadow-base) !default;
-$btn-focus-width: var(--pgn-btn-focus-width) !default;
-$btn-focus-gap: var(--pgn-btn-focus-gap) !default;
-$btn-disabled-opacity: var(--pgn-btn-disabled-opacity) !default;
-$btn-active-box-shadow: var(--pgn-btn-box-shadow-active) !default;
+$btn-font-weight: var(--pgn-typography-btn-font-weight) !default;
+$btn-box-shadow: var(--pgn-elevation-btn-box-shadow-base) !default;
+$btn-focus-width: var(--pgn-size-btn-focus-width) !default;
+$btn-focus-gap: var(--pgn-spacing-btn-focus-gap) !default;
+$btn-disabled-opacity: var(--pgn-other-btn-disabled-opacity) !default;
+$btn-active-box-shadow: var(--pgn-elevation-btn-box-shadow-active) !default;
 
-$btn-link-disabled-color: var(--pgn-btn-disabled-link-color) !default;
+$btn-link-disabled-color: var(--pgn-color-btn-disabled-link) !default;
 
-$btn-block-spacing-y: var(--pgn-btn-block-spacing-y) !default;
+$btn-block-spacing-y: var(--pgn-spacing-btn-block-spacing-y) !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius: var(--pgn-btn-border-radius-base) !default;
-$btn-border-radius-lg: var(--pgn-btn-border-radius-lg) !default;
-$btn-border-radius-sm: var(--pgn-btn-border-radius-sm) !default;
+$btn-border-radius: var(--pgn-size-btn-border-radius-base) !default;
+$btn-border-radius-lg: var(--pgn-size-btn-border-radius-lg) !default;
+$btn-border-radius-sm: var(--pgn-size-btn-border-radius-sm) !default;
 
-$btn-transition: var(--pgn-btn-transition) !default;
+$btn-transition: var(--pgn-transition-btn) !default;
 
 // PRIMARY BUTTON VARIABLES
 $btn-primary-bg: var(--pgn-color-btn-bg-primary) !default;
@@ -417,7 +417,7 @@ $btn-inverse-tertiary-hover-border-color: var(--pgn-color-btn-hover-border-inver
 $btn-inverse-tertiary-active-color: var(--pgn-color-btn-active-text-inverse-tertiary) !default;
 $btn-inverse-tertiary-active-bg: var(--pgn-color-btn-active-bg-inverse-tertiary) !default;
 $btn-inverse-tertiary-active-border-color: var(--pgn-color-btn-active-border-inverse-tertiary) !default;
-$btn-inverse-tertiary-focus-border-color: var(--pgn-color-btn-focus-border-secondary) !default;
+$btn-inverse-tertiary-focus-border-color: var(--pgn-color-btn-focus-border-inverse-tertiary) !default;
 
 $btn-focus-border-gap: $btn-focus-width + $btn-focus-gap !default;
 $btn-focus-distance-to-border: $btn-focus-border-gap + $btn-border-width !default;
