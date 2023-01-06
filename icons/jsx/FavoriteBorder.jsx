@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFavoriteBorder(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFavoriteBorder(props) {
     </svg>
   );
 }
+
 export default SvgFavoriteBorder;

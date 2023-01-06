@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSentimentSatisfied(props) {
   return (
     <svg
@@ -18,4 +19,5 @@ function SvgSentimentSatisfied(props) {
     </svg>
   );
 }
+
 export default SvgSentimentSatisfied;

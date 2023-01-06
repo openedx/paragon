@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSpeakerPhone(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSpeakerPhone(props) {
     </svg>
   );
 }
+
 export default SvgSpeakerPhone;

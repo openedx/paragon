@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgEmojiFlags(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgEmojiFlags(props) {
     </svg>
   );
 }
+
 export default SvgEmojiFlags;

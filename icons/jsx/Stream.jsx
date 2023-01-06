@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgStream(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgStream(props) {
     </svg>
   );
 }
+
 export default SvgStream;

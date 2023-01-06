@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgIosShare(props) {
   return (
     <svg
@@ -14,4 +15,5 @@ function SvgIosShare(props) {
     </svg>
   );
 }
+
 export default SvgIosShare;

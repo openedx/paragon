@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNoEncryption(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNoEncryption(props) {
     </svg>
   );
 }
+
 export default SvgNoEncryption;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalPolice(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocalPolice(props) {
     </svg>
   );
 }
+
 export default SvgLocalPolice;

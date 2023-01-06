@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAutoStories(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgAutoStories(props) {
     </svg>
   );
 }
+
 export default SvgAutoStories;

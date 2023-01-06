@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCloseFullscreen(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCloseFullscreen(props) {
     </svg>
   );
 }
+
 export default SvgCloseFullscreen;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgGridOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgGridOff(props) {
     </svg>
   );
 }
+
 export default SvgGridOff;

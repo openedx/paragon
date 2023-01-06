@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPanToolAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPanToolAlt(props) {
     </svg>
   );
 }
+
 export default SvgPanToolAlt;

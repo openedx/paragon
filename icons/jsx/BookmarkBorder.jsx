@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBookmarkBorder(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBookmarkBorder(props) {
     </svg>
   );
 }
+
 export default SvgBookmarkBorder;

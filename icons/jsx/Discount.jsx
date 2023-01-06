@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDiscount(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgDiscount(props) {
     </svg>
   );
 }
+
 export default SvgDiscount;

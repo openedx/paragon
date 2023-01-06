@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPageview(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPageview(props) {
     </svg>
   );
 }
+
 export default SvgPageview;

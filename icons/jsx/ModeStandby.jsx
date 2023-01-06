@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgModeStandby(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgModeStandby(props) {
     </svg>
   );
 }
+
 export default SvgModeStandby;

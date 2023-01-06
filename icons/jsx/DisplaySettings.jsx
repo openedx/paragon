@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDisplaySettings(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgDisplaySettings(props) {
     </svg>
   );
 }
+
 export default SvgDisplaySettings;

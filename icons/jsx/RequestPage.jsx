@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRequestPage(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRequestPage(props) {
     </svg>
   );
 }
+
 export default SvgRequestPage;

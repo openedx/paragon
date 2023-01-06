@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgUnsubscribe(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgUnsubscribe(props) {
     </svg>
   );
 }
+
 export default SvgUnsubscribe;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAccessAlarm(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAccessAlarm(props) {
     </svg>
   );
 }
+
 export default SvgAccessAlarm;

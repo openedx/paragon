@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgViewInAr(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgViewInAr(props) {
     </svg>
   );
 }
+
 export default SvgViewInAr;

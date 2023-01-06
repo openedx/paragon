@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNotEqual(props) {
   return (
     <svg
@@ -14,4 +15,5 @@ function SvgNotEqual(props) {
     </svg>
   );
 }
+
 export default SvgNotEqual;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTransform(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTransform(props) {
     </svg>
   );
 }
+
 export default SvgTransform;

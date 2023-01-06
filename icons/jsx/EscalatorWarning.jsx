@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgEscalatorWarning(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgEscalatorWarning(props) {
     </svg>
   );
 }
+
 export default SvgEscalatorWarning;

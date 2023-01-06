@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNightShelter(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNightShelter(props) {
     </svg>
   );
 }
+
 export default SvgNightShelter;

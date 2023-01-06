@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHeight(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHeight(props) {
     </svg>
   );
 }
+
 export default SvgHeight;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWbAuto(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWbAuto(props) {
     </svg>
   );
 }
+
 export default SvgWbAuto;

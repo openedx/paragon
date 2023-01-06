@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCo2(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCo2(props) {
     </svg>
   );
 }
+
 export default SvgCo2;

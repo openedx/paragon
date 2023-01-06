@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPinInvoke(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPinInvoke(props) {
     </svg>
   );
 }
+
 export default SvgPinInvoke;

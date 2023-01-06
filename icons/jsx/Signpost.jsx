@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSignpost(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSignpost(props) {
     </svg>
   );
 }
+
 export default SvgSignpost;

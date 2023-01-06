@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPlaylistPlay(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPlaylistPlay(props) {
     </svg>
   );
 }
+
 export default SvgPlaylistPlay;

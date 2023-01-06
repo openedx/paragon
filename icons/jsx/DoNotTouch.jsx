@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDoNotTouch(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDoNotTouch(props) {
     </svg>
   );
 }
+
 export default SvgDoNotTouch;

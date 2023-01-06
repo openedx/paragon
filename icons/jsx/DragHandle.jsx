@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDragHandle(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgDragHandle(props) {
     </svg>
   );
 }
+
 export default SvgDragHandle;

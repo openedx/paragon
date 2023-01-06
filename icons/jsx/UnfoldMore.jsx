@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgUnfoldMore(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgUnfoldMore(props) {
     </svg>
   );
 }
+
 export default SvgUnfoldMore;

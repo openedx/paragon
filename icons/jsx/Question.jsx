@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgQuestion(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgQuestion(props) {
     </svg>
   );
 }
+
 export default SvgQuestion;

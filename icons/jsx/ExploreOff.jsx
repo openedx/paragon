@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgExploreOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgExploreOff(props) {
     </svg>
   );
 }
+
 export default SvgExploreOff;

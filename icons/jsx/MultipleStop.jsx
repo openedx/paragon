@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMultipleStop(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMultipleStop(props) {
     </svg>
   );
 }
+
 export default SvgMultipleStop;

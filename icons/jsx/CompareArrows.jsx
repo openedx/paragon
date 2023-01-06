@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCompareArrows(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCompareArrows(props) {
     </svg>
   );
 }
+
 export default SvgCompareArrows;

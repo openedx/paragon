@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSkipPrevious(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgSkipPrevious(props) {
     </svg>
   );
 }
+
 export default SvgSkipPrevious;

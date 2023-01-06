@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHideSource(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHideSource(props) {
     </svg>
   );
 }
+
 export default SvgHideSource;

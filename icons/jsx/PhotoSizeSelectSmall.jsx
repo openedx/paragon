@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPhotoSizeSelectSmall(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPhotoSizeSelectSmall(props) {
     </svg>
   );
 }
+
 export default SvgPhotoSizeSelectSmall;

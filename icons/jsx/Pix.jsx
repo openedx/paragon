@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPix(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgPix(props) {
     </svg>
   );
 }
+
 export default SvgPix;

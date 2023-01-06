@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalFireDepartment(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgLocalFireDepartment(props) {
     </svg>
   );
 }
+
 export default SvgLocalFireDepartment;

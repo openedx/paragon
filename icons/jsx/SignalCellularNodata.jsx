@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSignalCellularNodata(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSignalCellularNodata(props) {
     </svg>
   );
 }
+
 export default SvgSignalCellularNodata;

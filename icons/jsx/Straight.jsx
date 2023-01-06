@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgStraight(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgStraight(props) {
     </svg>
   );
 }
+
 export default SvgStraight;

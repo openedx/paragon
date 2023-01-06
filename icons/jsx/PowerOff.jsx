@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPowerOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPowerOff(props) {
     </svg>
   );
 }
+
 export default SvgPowerOff;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAddModerator(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgAddModerator(props) {
     </svg>
   );
 }
+
 export default SvgAddModerator;

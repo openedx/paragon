@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHdrStrong(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHdrStrong(props) {
     </svg>
   );
 }
+
 export default SvgHdrStrong;

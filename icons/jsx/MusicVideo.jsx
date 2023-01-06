@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMusicVideo(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMusicVideo(props) {
     </svg>
   );
 }
+
 export default SvgMusicVideo;

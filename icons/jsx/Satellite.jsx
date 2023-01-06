@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSatellite(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSatellite(props) {
     </svg>
   );
 }
+
 export default SvgSatellite;

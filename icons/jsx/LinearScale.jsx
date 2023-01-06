@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLinearScale(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLinearScale(props) {
     </svg>
   );
 }
+
 export default SvgLinearScale;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRemoveModerator(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRemoveModerator(props) {
     </svg>
   );
 }
+
 export default SvgRemoveModerator;

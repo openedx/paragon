@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDirectionsRailway(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDirectionsRailway(props) {
     </svg>
   );
 }
+
 export default SvgDirectionsRailway;

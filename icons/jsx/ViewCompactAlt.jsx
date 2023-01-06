@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgViewCompactAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgViewCompactAlt(props) {
     </svg>
   );
 }
+
 export default SvgViewCompactAlt;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBusinessCenter(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBusinessCenter(props) {
     </svg>
   );
 }
+
 export default SvgBusinessCenter;

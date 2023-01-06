@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgGridView(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgGridView(props) {
     </svg>
   );
 }
+
 export default SvgGridView;

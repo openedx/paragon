@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFullscreenExit(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFullscreenExit(props) {
     </svg>
   );
 }
+
 export default SvgFullscreenExit;

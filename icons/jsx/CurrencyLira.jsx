@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCurrencyLira(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCurrencyLira(props) {
     </svg>
   );
 }
+
 export default SvgCurrencyLira;

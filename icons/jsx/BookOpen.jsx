@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBookOpen(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgBookOpen(props) {
     </svg>
   );
 }
+
 export default SvgBookOpen;

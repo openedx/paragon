@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFilterCenterFocus(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFilterCenterFocus(props) {
     </svg>
   );
 }
+
 export default SvgFilterCenterFocus;

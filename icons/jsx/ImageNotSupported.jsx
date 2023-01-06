@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgImageNotSupported(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgImageNotSupported(props) {
     </svg>
   );
 }
+
 export default SvgImageNotSupported;

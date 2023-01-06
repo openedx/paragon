@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHighlightAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHighlightAlt(props) {
     </svg>
   );
 }
+
 export default SvgHighlightAlt;

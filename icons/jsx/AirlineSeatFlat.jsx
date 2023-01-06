@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAirlineSeatFlat(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAirlineSeatFlat(props) {
     </svg>
   );
 }
+
 export default SvgAirlineSeatFlat;

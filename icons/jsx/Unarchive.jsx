@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgUnarchive(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgUnarchive(props) {
     </svg>
   );
 }
+
 export default SvgUnarchive;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRollerShades(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRollerShades(props) {
     </svg>
   );
 }
+
 export default SvgRollerShades;

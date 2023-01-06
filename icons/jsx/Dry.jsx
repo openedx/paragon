@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDry(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDry(props) {
     </svg>
   );
 }
+
 export default SvgDry;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAdUnits(props) {
   return (
     <svg
@@ -14,4 +15,5 @@ function SvgAdUnits(props) {
     </svg>
   );
 }
+
 export default SvgAdUnits;

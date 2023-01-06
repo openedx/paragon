@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPestControlRodent(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPestControlRodent(props) {
     </svg>
   );
 }
+
 export default SvgPestControlRodent;

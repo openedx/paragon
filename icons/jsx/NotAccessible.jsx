@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNotAccessible(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNotAccessible(props) {
     </svg>
   );
 }
+
 export default SvgNotAccessible;

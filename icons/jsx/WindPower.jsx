@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWindPower(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgWindPower(props) {
     </svg>
   );
 }
+
 export default SvgWindPower;

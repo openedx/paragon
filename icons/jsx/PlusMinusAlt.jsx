@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPlusMinusAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPlusMinusAlt(props) {
     </svg>
   );
 }
+
 export default SvgPlusMinusAlt;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCardMembership(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCardMembership(props) {
     </svg>
   );
 }
+
 export default SvgCardMembership;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWbShade(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWbShade(props) {
     </svg>
   );
 }
+
 export default SvgWbShade;

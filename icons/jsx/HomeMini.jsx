@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHomeMini(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHomeMini(props) {
     </svg>
   );
 }
+
 export default SvgHomeMini;

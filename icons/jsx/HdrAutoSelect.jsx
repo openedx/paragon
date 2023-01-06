@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHdrAutoSelect(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgHdrAutoSelect(props) {
     </svg>
   );
 }
+
 export default SvgHdrAutoSelect;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDoorFront(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDoorFront(props) {
     </svg>
   );
 }
+
 export default SvgDoorFront;

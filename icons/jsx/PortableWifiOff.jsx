@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPortableWifiOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPortableWifiOff(props) {
     </svg>
   );
 }
+
 export default SvgPortableWifiOff;

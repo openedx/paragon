@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMobileOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMobileOff(props) {
     </svg>
   );
 }
+
 export default SvgMobileOff;

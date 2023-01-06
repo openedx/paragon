@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPanoramaWideAngle(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPanoramaWideAngle(props) {
     </svg>
   );
 }
+
 export default SvgPanoramaWideAngle;

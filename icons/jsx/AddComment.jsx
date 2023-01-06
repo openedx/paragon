@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAddComment(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAddComment(props) {
     </svg>
   );
 }
+
 export default SvgAddComment;

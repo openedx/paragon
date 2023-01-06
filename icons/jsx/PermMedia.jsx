@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPermMedia(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPermMedia(props) {
     </svg>
   );
 }
+
 export default SvgPermMedia;

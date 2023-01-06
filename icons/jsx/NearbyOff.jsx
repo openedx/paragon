@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNearbyOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNearbyOff(props) {
     </svg>
   );
 }
+
 export default SvgNearbyOff;

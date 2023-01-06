@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCameraswitch(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgCameraswitch(props) {
     </svg>
   );
 }
+
 export default SvgCameraswitch;

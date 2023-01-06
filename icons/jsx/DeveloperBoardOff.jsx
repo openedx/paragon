@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDeveloperBoardOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDeveloperBoardOff(props) {
     </svg>
   );
 }
+
 export default SvgDeveloperBoardOff;

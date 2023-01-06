@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCc(props) {
   return (
     <svg
@@ -22,4 +23,5 @@ function SvgCc(props) {
     </svg>
   );
 }
+
 export default SvgCc;

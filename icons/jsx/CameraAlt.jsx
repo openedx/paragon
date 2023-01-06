@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCameraAlt(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgCameraAlt(props) {
     </svg>
   );
 }
+
 export default SvgCameraAlt;

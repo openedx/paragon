@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgUpgrade(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgUpgrade(props) {
     </svg>
   );
 }
+
 export default SvgUpgrade;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgEco(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgEco(props) {
     </svg>
   );
 }
+
 export default SvgEco;

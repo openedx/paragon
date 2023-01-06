@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBbb(props) {
   return (
     <svg
@@ -33,4 +34,5 @@ function SvgBbb(props) {
     </svg>
   );
 }
+
 export default SvgBbb;

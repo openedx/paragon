@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBlurOff(props) {
   return (
     <svg
@@ -40,4 +41,5 @@ function SvgBlurOff(props) {
     </svg>
   );
 }
+
 export default SvgBlurOff;

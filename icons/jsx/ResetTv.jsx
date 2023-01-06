@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgResetTv(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgResetTv(props) {
     </svg>
   );
 }
+
 export default SvgResetTv;

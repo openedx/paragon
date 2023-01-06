@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDataExploration(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDataExploration(props) {
     </svg>
   );
 }
+
 export default SvgDataExploration;
