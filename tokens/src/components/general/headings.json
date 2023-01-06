@@ -1,15 +1,21 @@
 {
-  "headings": {
-    "margin": {
-      "bottom": { "value": ".5rem", "source": "$headings-margin-bottom" }
-    },
-    "font": {
-      "family": { "value": "inherit", "source": "$headings-font-family" },
-      "weight": { "value": "{font.weight.bold}", "source": "$headings-font-weight" }
-    },
-    "line": {
-      "height": { "value": "1.25", "source": "$headings-line-height" }
-    },
-    "color": { "value": "{color.black}", "source": "$headings-color" }
+  "color": {
+    "headings": {
+      "base": { "value": "{color.black.value}", "source": "$headings-color" }
+    }
+  },
+  "typography": {
+    "headings": {
+      "font": {
+        "family": { "value": "inherit", "source": "$headings-font-family" },
+        "weight": { "value": "{typography.font.weight.bold}", "source": "$headings-font-weight" }
+      },
+      "line-height": { "value": "1.25", "source": "$headings-line-height" }
+    }
+  },
+  "spacing": {
+    "headings": {
+      "margin-bottom": { "value": ".5rem", "source": "$headings-margin-bottom" }
+    }
   }
 }

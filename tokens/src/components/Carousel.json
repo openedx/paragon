@@ -39,6 +39,10 @@
   },
   "transition": {
     "carousel": {
+      "base": {
+        "value": "transform {transition.carousel.duration.value} ease-in-out",
+        "source": "$carousel-transition-duration"
+      },
       "duration": { "value": ".6s", "source": "$carousel-transition-duration" },
       "indicator": { "value": "opacity .6s ease", "source": "$carousel-indicator-transition" },
       "control": { "value": "opacity .15s ease", "source": "$carousel-control-transition" }
