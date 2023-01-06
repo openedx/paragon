@@ -1,7 +1,7 @@
 {
   "color": {
     "toast": {
-      "base": { "value": "null", "source": "$toast-color" },
+      "base": { "value": "inherit", "source": "$toast-color" },
       "bg": { "value": "{color.gray.700.value}", "source": "$toast-background-color" },
       "border": {
         "value": "{color.black.value}",

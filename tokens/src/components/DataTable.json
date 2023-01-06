@@ -2,7 +2,7 @@
   "color": {
     "data-table": {
       "bg": {
-        "base": { "value": "{color.background.base.value}", "source": "$data-table-background-color" },
+        "base": { "value": "{color.bg.base.value}", "source": "$data-table-background-color" },
         "is-loading": {
           "value": "{color.white.value}",
           "source": "$data-table-is-loading-bg",
@@ -19,7 +19,7 @@
   },
   "elevation": {
     "data-table": {
-      "box-shadow": { "value": "{box-shadow.sm.value}", "source": "$data-table-box-shadow" }
+      "box-shadow": { "value": "{elevation.box-shadow.sm.value}", "source": "$data-table-box-shadow" }
     }
   },
   "size": {

@@ -1,22 +1,17 @@
 {
-  "dt": {
-    "font": {
-      "weight": { "value": "{font.weight.bold.value}", "source": "$dt-font-weight" }
+  "typography": {
+    "dt": {
+      "font-weight": { "value": "{typography.font.weight.bold.value}", "source": "$dt-font-weight" }
     }
   },
-  "list": {
-    "inline": {
-      "padding": { "value": ".5rem", "source": "$list-inline-padding" }
-    }
-  },
-  "list-group": {
-    "color": { "value": "null", "source": "$list-group-color" },
-    "bg": {
-      "base": { "value": "{color.background.base.value}", "source": "$list-group-bg" },
-      "hover": { "value": "{color.gray.100.value}", "source": "$list-group-hover-bg" }
-    },
-    "border": {
-      "color": { 
+  "color": {
+    "list-group": {
+      "base": { "value": "inherit", "source": "$list-group-color" },
+      "bg": {
+        "base": { "value": "{color.bg.base.value}", "source": "$list-group-bg" },
+        "hover": { "value": "{color.gray.100.value}", "source": "$list-group-hover-bg" }
+      },
+      "border": {
         "value": "{color.black.value}",
         "source": "$list-group-border-color",
         "modify": [{
@@ -24,40 +19,41 @@
           "amount": 0.125
         }]
       },
-      "width": { "value": "{size.border.width.value}", "source": "$list-group-border-width" },
-      "radius": { "value": "{size.border.radius.base.value}", "source": "$list-group-border-radius" }
-    },
-    "item": {
-      "padding": {
-        "y": { "value": ".75rem", "source": "$list-group-item-padding-y" },
-        "x": { "value": "1.25rem", "source": "$list-group-item-padding-x" }
-      }
-    },
-    "active": {
-      "color": {
-        "base": { "value": "{color.active.value}", "source": "$list-group-active-color" },
-        "border": {
-          "value": "{list-group.active.bg.value}",
-          "source": "$list-group-active-border-color"
-        }
-      },
-      "bg": { "value": "{color.background.active.value}", "source": "$list-group-active-bg" }
-    },
-    "disabled": {
-      "color": { "value": "{color.gray.600.value}", "source": "$list-group-disabled-color" },
-      "bg": { "value": "{list-group.bg.base.value}", "source": "$list-group-disabled-bg" }
-    },
-    "action": {
-      "color": {
-        "base": { "value": "{color.gray.700.value}", "source": "$list-group-action-color" },
-        "hover": {
-          "value": "{list-group.action.color.base.value}",
-          "source": "$list-group-action-hover-color"
-        }
-      },
       "active": {
-        "color": { "value": "{body.color.value}", "source": "$list-group-action-active-color" },
-        "bg": { "value": "{color.gray.200.value}", "source": "$list-group-action-active-bg" }
+        "base": { "value": "{color.active.value}", "source": "$list-group-active-color" },
+        "border": { "value": "{color.list-group.active.bg.value}", "source": "$list-group-active-border-color" },
+        "bg": { "value": "{color.bg.active.value}", "source": "$list-group-active-bg" }
+      },
+      "disabled": {
+        "base": { "value": "{color.gray.600.value}", "source": "$list-group-disabled-color" },
+        "bg": { "value": "{color.list-group.bg.base.value}", "source": "$list-group-disabled-bg" }
+      },
+      "action": {
+        "base": { "value": "{color.gray.700.value}", "source": "$list-group-action-color" },
+        "hover": { "value": "{color.list-group.action.base.value}", "source": "$list-group-action-hover-color" },
+        "active": {
+          "base": { "value": "{color.body.base.value}", "source": "$list-group-action-active-color" },
+          "bg": { "value": "{color.gray.200.value}", "source": "$list-group-action-active-bg" }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "list": {
+      "inline-padding": { "value": ".5rem", "source": "$list-inline-padding" },
+      "group-item": {
+        "padding": {
+          "y": { "value": ".75rem", "source": "$list-group-item-padding-y" },
+          "x": { "value": "1.25rem", "source": "$list-group-item-padding-x" }
+        }
+      }
+    }
+  },
+  "size": {
+    "list-group": {
+      "border": {
+        "width": { "value": "{size.border.width.value}", "source": "$list-group-border-width" },
+        "radius": { "value": "{size.border.radius.base.value}", "source": "$list-group-border-radius" }
       }
     }
   }
