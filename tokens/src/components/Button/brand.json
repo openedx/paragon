@@ -75,8 +75,8 @@
         },
         "bg": {
           "brand": { "value": "{color.theme.active.brand.value}", "source": "$btn-brand-active-bg" },
-          "outline-brand": { "value": "{color.theme.background.brand.value}", "source": "$btn-brand-outline-active-bg" },
-          "inverse-outline-brand": { "value": "{color.theme.background.brand.value}", "source": "$btn-brand-inverse-outline-active-bg" }
+          "outline-brand": { "value": "{color.theme.bg.brand.value}", "source": "$btn-brand-outline-active-bg" },
+          "inverse-outline-brand": { "value": "{color.theme.bg.brand.value}", "source": "$btn-brand-inverse-outline-active-bg" }
         },
         "border": {
           "brand": { "value": "{color.theme.active.brand.value}", "source": "$btn-brand-active-border-color" },

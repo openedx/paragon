@@ -4,6 +4,9 @@
       "control": {
         "cursor": { "value": "auto", "source": "$custom-control-cursor" },
         "range-track-cursor": { "value": "pointer", "source": "$custom-range-track-cursor" }
+      },
+      "feedback": {
+        "tooltip-opacity": { "value": ".9", "source": "$form-feedback-tooltip-opacity" }
       }
     },
     "content": {
@@ -97,6 +100,10 @@
                   }
                 ]
               }
+            },
+            "bg": {
+              "value": "{other.content.form.control.select.indicator.icon.value} no-repeat right {spacing.form.input.padding.y.base.value} center / {color.form.control.select.bg.base.value}",
+              "source": "$custom-select-background"
             }
           }
         },

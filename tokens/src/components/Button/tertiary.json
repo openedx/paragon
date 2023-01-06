@@ -51,7 +51,7 @@
       "focus": {
         "border": {
           "tertiary": { "value": "{color.theme.focus.primary.value}", "source": "$btn-tertiary-focus-border-color" },
-          "inverse-tertiary": { "value": "{color.white.value}", "source": "$btn-tertiary-inverse-focus-border-color" }
+          "inverse-tertiary": { "value": "{color.white.value}", "source": "$btn-inverse-tertiary-focus-border-color" }
         }
       }
     }
