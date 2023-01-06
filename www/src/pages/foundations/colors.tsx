@@ -2,11 +2,14 @@ import React, { useContext } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+// @ts-ignore
 import Color from 'color';
-import { Container } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
+import { Container, DataTable } from '~paragon-react';
+
+import { CodeCell } from '../../components/TableCells';
 import { SettingsContext } from '../../context/SettingsContext';
 
 const utilityClasses = {
@@ -35,11 +38,7 @@ const colors: IColors[] = [
 
 const levels = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-export type ParseColorTypes = {
-  [key: string]: string | null;
-};
-
-const selectorColors: ParseColorTypes = {};
+const selectorColors: Record<string, string | null> = {};
 
 function parseColors(cssSelectors: { selector: string; declarations: string; }[]) {
   const colorsAreParsed = Object.keys(selectorColors).length !== 0;
@@ -186,29 +185,33 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
           for theming and attempt to eliminate mixins from the public api.
         </p>
 
-        <table className="table pgn-doc__table">
+        <table className="pgn-doc__table mb-2">
           <tbody>
             <tr>
-              <td>
+              <td className="p-3">
                 <strong>Color Name</strong>
                 <br />A theme color
               </td>
-              <td>
+              <td className="p-3 align-baseline">
                 {colors.map(({ themeName }) => (
-                  <code key={themeName} className="mr-2">{themeName}</code>
+                  <code key={themeName} className="mr-2">
+                    {themeName}
+                  </code>
                 ))}
               </td>
             </tr>
             <tr>
-              <td>
+              <td className="p-3 align-baseline">
                 <strong>Variant</strong>
                 <br />
                 <p>A number level or element type</p>
               </td>
-              <td>
+              <td className="p-3">
                 <strong className="d-block">Levels </strong>
-                {levels.map(level => (
-                  <code key={level} className="mr-2">{level}</code>
+                {levels.map((level) => (
+                  <code key={level} className="mr-2">
+                    {level}
+                  </code>
                 ))}
                 <br />
                 <strong className="d-block">Element types </strong>
@@ -226,8 +229,10 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
                   'text',
                   'active',
                   'dark-text',
-                ].map(element => (
-                  <code key={element} className="mr-2">{element}</code>
+                ].map((element) => (
+                  <code key={element} className="mr-2">
+                    {element}
+                  </code>
                 ))}
               </td>
             </tr>
@@ -250,7 +255,7 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
           <strong>theme-color(&ldquo;gray&rdquo;, 300)</strong>;
         </code>
 
-        <h3>CSS Class Utilties</h3>
+        <h3>CSS Class Utilities</h3>
         <p>
           Utility classes for backgrounds, borders, and text colors follow the
           format below:
@@ -258,37 +263,23 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
         <p>
           <code>{'.{use}-{color}-{level}'}</code>
         </p>
-        <table className="table w-50">
-          <thead>
-            <tr>
-              <th>Use</th>
-              <th>Color</th>
-              <th>Level</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="align-top pr-4">
-                <code>bg-</code>
-                <br />
-                <code>border-</code>
-                <br />
-                <code>text-</code>
-                <br />
-              </td>
-              <td className="align-top pr-4">
-                {colors.map(({ themeName }) => (
-                  <code key={themeName} className="d-block">{themeName}-</code>
-                ))}
-              </td>
-              <td className="align-top pr-4">
-                {levels.map(level => (
-                  <code key={level} className="d-block">{level}</code>
-                ))}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="w-sm-50 mb-4">
+          <DataTable
+            itemCount={3}
+            data={colors.map(({ themeName }, index) => ({
+              use: Object.keys(utilityClasses)[index],
+              color: themeName,
+              level: levels[index],
+            }))}
+            columns={[
+              { Header: 'Use', accessor: 'use', Cell: CodeCell },
+              { Header: 'Color', accessor: 'color', Cell: CodeCell },
+              { Header: 'Level', accessor: 'level', Cell: CodeCell },
+            ]}
+          >
+            <DataTable.Table />
+          </DataTable>
+        </div>
 
         <h3>Background Fills</h3>
         <div className="d-flex flex-wrap">
