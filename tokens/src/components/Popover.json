@@ -1,15 +1,15 @@
 {
   "typography": {
     "popover": {
-      "font-size": { "value": "{font.size.sm.value}", "source": "$popover-font-size" }
+      "font-size": { "value": "{typography.font.size.sm.value}", "source": "$popover-font-size" }
     }
   },
   "color": {
     "popover": {
-      "bg": { "value": "{color.background.base.value}", "source": "$popover-bg" },
+      "bg": { "value": "{color.bg.base.value}", "source": "$popover-bg" },
       "border": { "value": "rgba(0, 0, 0, .2)", "source": "$popover-border-color" },
       "header": {
-        "text": { "value": "{headings.color.value}", "source": "$popover-header-color" },
+        "text": { "value": "{color.headings.base.value}", "source": "$popover-header-color" },
         "bg": { "value": "{color.white.value}", "source": "$popover-header-bg" },
         "bg-dark": {
           "value": "{color.white.value}",
@@ -24,11 +24,11 @@
           "source": "$popover-header-border-bottom-darken",
           "modify": [{
             "type": "darken",
-            "amount": 0.5
+            "amount": 0.05
           }]
         }
       },
-      "body": { "value": "{body.color.value}", "source": "$popover-body-color" },
+      "body": { "value": "{color.body.base.value}", "source": "$popover-body-color" },
       "arrow": { 
         "base": { "value": "{color.popover.bg.value}", "source": "$popover-arrow-color" },
         "outer": {

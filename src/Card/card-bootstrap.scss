@@ -38,6 +38,8 @@
   }
 }
 
+// TODO: This selector is not used in Paragon.
+// It is necessary to delete it and the existing design token (`$card-color`).
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
