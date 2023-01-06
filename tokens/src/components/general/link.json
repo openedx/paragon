@@ -133,5 +133,12 @@
         }
       }
     }
+  },
+  "other": {
+    "link": {
+      "emphasized-hover": {
+        "darken-percentage": { "value": "15%", "source": "$emphasized-link-hover-darken-percentage" }
+      }
+    }
   }
 }

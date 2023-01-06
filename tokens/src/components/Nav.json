@@ -126,7 +126,7 @@
         }
       },
       "divider": {
-        "margin-y": { "value": "calc({spacer.base.value} / 2)", "source": "$nav-divider-margin-y" }
+        "margin-y": { "value": "calc({spacing.spacer.base.value} / 2)", "source": "$nav-divider-margin-y" }
       }
     }
   }
