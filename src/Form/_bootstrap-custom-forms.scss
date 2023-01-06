@@ -203,8 +203,7 @@
       background-color: $custom-control-indicator-border-color;
       // stylelint-disable-next-line property-disallowed-list
       border-radius: $custom-switch-indicator-border-radius;
-
-      @include transition(transform .15s ease-in-out, $custom-forms-transition);
+      transition: transform .15s ease-in-out, $custom-forms-transition;
     }
   }
 
@@ -429,11 +428,11 @@
     margin-top: calc((#{$custom-range-track-height} - #{$custom-range-thumb-height}) * .5); // Webkit specific
     border: $custom-range-thumb-border;
     appearance: none;
+    transition: $custom-forms-transition;
 
     @include gradient-bg($custom-range-thumb-bg);
     @include border-radius($custom-range-thumb-border-radius);
     @include box-shadow($custom-range-thumb-box-shadow);
-    @include transition($custom-forms-transition);
 
     &:active {
       @include gradient-bg($custom-range-thumb-active-bg);
@@ -457,11 +456,11 @@
     height: $custom-range-thumb-height;
     border: $custom-range-thumb-border;
     appearance: none;
+    transition: $custom-forms-transition;
 
     @include gradient-bg($custom-range-thumb-bg);
     @include border-radius($custom-range-thumb-border-radius);
     @include box-shadow($custom-range-thumb-box-shadow);
-    @include transition($custom-forms-transition);
 
     &:active {
       @include gradient-bg($custom-range-thumb-active-bg);
@@ -488,11 +487,11 @@
     margin-left: $custom-range-thumb-focus-box-shadow-width;  // Workaround that overflowed box-shadow is hidden.
     border: $custom-range-thumb-border;
     appearance: none;
+    transition: $custom-forms-transition;
 
     @include gradient-bg($custom-range-thumb-bg);
     @include border-radius($custom-range-thumb-border-radius);
     @include box-shadow($custom-range-thumb-box-shadow);
-    @include transition($custom-forms-transition);
 
     &:active {
       @include gradient-bg($custom-range-thumb-active-bg);
@@ -550,5 +549,5 @@
 .custom-control-label::before,
 .custom-file-label,
 .custom-select {
-  @include transition($custom-forms-transition);
+  transition: $custom-forms-transition;
 }

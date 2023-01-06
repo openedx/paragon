@@ -17,8 +17,8 @@
   },
   "typography": {
     "annotation": {
-      "font-size": { "value": "{font.size.sm.value}", "source": "$annotation-font-size" },
-      "line-height": { "value": "{line-height.sm.value}", "source": "$annotation-line-height" }
+      "font-size": { "value": "{typography.font.size.sm.value}", "source": "$annotation-font-size" },
+      "line-height": { "value": "{typography.line-height.sm.value}", "source": "$annotation-line-height" }
     }
   },
   "color": {
