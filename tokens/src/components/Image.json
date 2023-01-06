@@ -3,7 +3,7 @@
     "image": {
       "figure-caption": { "value": "{color.gray.500.value}", "source": "$figure-caption-color" },
       "thumbnail": {
-        "bg": { "value": "{body.bg.value}", "source": "$thumbnail-bg" },
+        "bg": { "value": "{color.body.bg.value}", "source": "$thumbnail-bg" },
         "border": { "value": "{color.gray.200.value}", "source": "$thumbnail-border-color" }
       }
     }

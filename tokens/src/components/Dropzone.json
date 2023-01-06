@@ -15,7 +15,7 @@
   "typography": {
     "dropzone": {
       "restriction-msg": {
-        "font-size": { "value": "{font.size.small.x.value}", "source": "$dropzone-restriction-msg-font-size" }
+        "font-size": { "value": "{typography.font.size.small.x.value}", "source": "$dropzone-restriction-msg-font-size" }
       }
     }
   },

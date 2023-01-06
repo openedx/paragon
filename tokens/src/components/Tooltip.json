@@ -1,7 +1,7 @@
 {
   "typography": {
     "tooltip": {
-      "font-size": { "value": "{font.size.sm.value}", "source": "$tooltip-font-size" }
+      "font-size": { "value": "{typography.font.size.sm.value}", "source": "$tooltip-font-size" }
     }
   },
   "color": {
@@ -12,7 +12,6 @@
         "base": { "value": "{color.black.value}", "source": "$tooltip-bg" },
         "light": { "value": "{color.white.value}", "source": "$tooltip-bg-light" }
       },
-      "opacity": { "value": "1", "source": "$tooltip-opacity" },
       "arrow": {
         "base": { "value": "{color.tooltip.bg.base.value}", "source": "$tooltip-arrow-color" },
         "light": { "value": "{color.white.value}", "source": "$tooltip-arrow-color-light" }
@@ -45,6 +44,11 @@
         "width": { "value": ".8rem", "source": "$tooltip-arrow-width" }
       },
       "border-radius": { "value": "{size.border.radius.base.value}", "source": "$tooltip-border-radius" }
+    }
+  },
+  "other": {
+    "tooltip": {
+      "opacity": { "value": "1", "source": "$tooltip-opacity" }
     }
   }
 }

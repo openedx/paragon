@@ -75,8 +75,8 @@
         },
         "bg": {
           "light": { "value": "{color.theme.active.light.value}", "source": "$btn-light-active-bg" },
-          "outline-light": { "value": "{color.theme.background.light.value}", "source": "$btn-light-outline-active-bg" },
-          "inverse-outline-light": { "value": "{color.theme.background.light.value}", "source": "$btn-light-inverse-outline-active-bg" }
+          "outline-light": { "value": "{color.theme.bg.light.value}", "source": "$btn-light-outline-active-bg" },
+          "inverse-outline-light": { "value": "{color.theme.bg.light.value}", "source": "$btn-light-inverse-outline-active-bg" }
         },
         "border": {
           "light": { "value": "{color.theme.active.light.value}", "source": "$btn-light-active-border-color" },

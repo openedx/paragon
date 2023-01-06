@@ -8,8 +8,7 @@
       "bg": {
         "light": { "value": "{color.light.500.value}", "source": "$chip-light-bg" },
         "dark": { "value": "{color.dark.200.value}", "source": "$chip-dark-bg" }
-      },
-      "opacity-disabled": { "value": ".3", "source": "$chip-disable-opacity" }
+      }
     }
   },
   "spacing": {
@@ -21,6 +20,11 @@
         "icon": { "value": ".25rem", "source": "$chip-icon-padding" },
         "to-icon": { "value": "3px", "source": "$chip-padding-to-icon" }
       }
+    }
+  },
+  "other": {
+    "chip": {
+      "opacity-disabled": { "value": ".3", "source": "$chip-disable-opacity" }
     }
   },
   "size": {

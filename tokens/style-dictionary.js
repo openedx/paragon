@@ -12,7 +12,7 @@ const colorTransform = (token) => {
   const { value, modify = [] } = token;
   let color = chroma(value);
 
-  if (modify.length > 0) {
+  if (modify && modify.length > 0) {
     modify.forEach((modifier) => {
       const { type, amount, otherColor } = modifier;
       switch (type) {
