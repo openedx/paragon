@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBlurCircular(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBlurCircular(props) {
     </svg>
   );
 }
+
 export default SvgBlurCircular;

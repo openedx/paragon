@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPhoneBluetoothSpeaker(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPhoneBluetoothSpeaker(props) {
     </svg>
   );
 }
+
 export default SvgPhoneBluetoothSpeaker;

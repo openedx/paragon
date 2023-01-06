@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgOndemandVideo(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgOndemandVideo(props) {
     </svg>
   );
 }
+
 export default SvgOndemandVideo;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSnapchat(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSnapchat(props) {
     </svg>
   );
 }
+
 export default SvgSnapchat;

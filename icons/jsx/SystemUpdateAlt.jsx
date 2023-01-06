@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSystemUpdateAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSystemUpdateAlt(props) {
     </svg>
   );
 }
+
 export default SvgSystemUpdateAlt;

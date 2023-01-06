@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgConnectedTv(props) {
   return (
     <svg
@@ -21,4 +22,5 @@ function SvgConnectedTv(props) {
     </svg>
   );
 }
+
 export default SvgConnectedTv;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgIron(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgIron(props) {
     </svg>
   );
 }
+
 export default SvgIron;

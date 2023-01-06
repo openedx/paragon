@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTsunami(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTsunami(props) {
     </svg>
   );
 }
+
 export default SvgTsunami;

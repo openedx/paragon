@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWest(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWest(props) {
     </svg>
   );
 }
+
 export default SvgWest;

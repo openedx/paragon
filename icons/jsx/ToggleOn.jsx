@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgToggleOn(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgToggleOn(props) {
     </svg>
   );
 }
+
 export default SvgToggleOn;

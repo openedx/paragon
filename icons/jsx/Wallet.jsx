@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWallet(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWallet(props) {
     </svg>
   );
 }
+
 export default SvgWallet;

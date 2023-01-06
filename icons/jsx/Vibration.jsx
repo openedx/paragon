@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgVibration(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgVibration(props) {
     </svg>
   );
 }
+
 export default SvgVibration;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgExplore(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgExplore(props) {
     </svg>
   );
 }
+
 export default SvgExplore;

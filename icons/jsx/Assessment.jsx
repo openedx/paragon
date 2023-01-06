@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAssessment(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAssessment(props) {
     </svg>
   );
 }
+
 export default SvgAssessment;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgStoreMallDirectory(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgStoreMallDirectory(props) {
     </svg>
   );
 }
+
 export default SvgStoreMallDirectory;

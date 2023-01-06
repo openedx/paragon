@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgContentPasteGo(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgContentPasteGo(props) {
     </svg>
   );
 }
+
 export default SvgContentPasteGo;

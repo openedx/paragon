@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPark(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPark(props) {
     </svg>
   );
 }
+
 export default SvgPark;

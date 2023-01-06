@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAirplanemodeActive(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAirplanemodeActive(props) {
     </svg>
   );
 }
+
 export default SvgAirplanemodeActive;

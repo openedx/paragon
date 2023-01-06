@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalHotel(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocalHotel(props) {
     </svg>
   );
 }
+
 export default SvgLocalHotel;

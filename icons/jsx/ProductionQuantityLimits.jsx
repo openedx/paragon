@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgProductionQuantityLimits(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgProductionQuantityLimits(props) {
     </svg>
   );
 }
+
 export default SvgProductionQuantityLimits;

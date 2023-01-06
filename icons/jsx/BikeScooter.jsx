@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBikeScooter(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgBikeScooter(props) {
     </svg>
   );
 }
+
 export default SvgBikeScooter;

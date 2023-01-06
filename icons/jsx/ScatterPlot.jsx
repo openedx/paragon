@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgScatterPlot(props) {
   return (
     <svg
@@ -15,4 +16,5 @@ function SvgScatterPlot(props) {
     </svg>
   );
 }
+
 export default SvgScatterPlot;

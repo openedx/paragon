@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTireRepair(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgTireRepair(props) {
     </svg>
   );
 }
+
 export default SvgTireRepair;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgViewQuilt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgViewQuilt(props) {
     </svg>
   );
 }
+
 export default SvgViewQuilt;

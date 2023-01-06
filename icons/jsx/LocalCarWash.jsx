@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalCarWash(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocalCarWash(props) {
     </svg>
   );
 }
+
 export default SvgLocalCarWash;

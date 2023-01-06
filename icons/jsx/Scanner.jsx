@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgScanner(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgScanner(props) {
     </svg>
   );
 }
+
 export default SvgScanner;

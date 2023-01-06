@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWatchOutline(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgWatchOutline(props) {
     </svg>
   );
 }
+
 export default SvgWatchOutline;

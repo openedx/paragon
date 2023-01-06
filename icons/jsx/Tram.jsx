@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTram(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTram(props) {
     </svg>
   );
 }
+
 export default SvgTram;

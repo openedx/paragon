@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalConvenienceStore(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocalConvenienceStore(props) {
     </svg>
   );
 }
+
 export default SvgLocalConvenienceStore;

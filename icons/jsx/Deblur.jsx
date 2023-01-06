@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDeblur(props) {
   return (
     <svg
@@ -25,4 +26,5 @@ function SvgDeblur(props) {
     </svg>
   );
 }
+
 export default SvgDeblur;

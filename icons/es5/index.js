@@ -660,6 +660,7 @@ export { default as EdgesensorLow } from './EdgesensorLow';
 export { default as Edit } from './Edit';
 export { default as EditAttributes } from './EditAttributes';
 export { default as EditCalendar } from './EditCalendar';
+export { default as EditCircle } from './EditCircle';
 export { default as EditLocation } from './EditLocation';
 export { default as EditLocationAlt } from './EditLocationAlt';
 export { default as EditNote } from './EditNote';

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMap(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMap(props) {
     </svg>
   );
 }
+
 export default SvgMap;

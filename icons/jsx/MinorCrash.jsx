@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMinorCrash(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMinorCrash(props) {
     </svg>
   );
 }
+
 export default SvgMinorCrash;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalSee(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgLocalSee(props) {
     </svg>
   );
 }
+
 export default SvgLocalSee;

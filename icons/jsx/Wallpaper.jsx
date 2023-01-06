@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWallpaper(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWallpaper(props) {
     </svg>
   );
 }
+
 export default SvgWallpaper;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMarkChatUnread(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMarkChatUnread(props) {
     </svg>
   );
 }
+
 export default SvgMarkChatUnread;

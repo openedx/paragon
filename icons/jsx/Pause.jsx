@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPause(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgPause(props) {
     </svg>
   );
 }
+
 export default SvgPause;

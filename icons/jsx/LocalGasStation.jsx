@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalGasStation(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocalGasStation(props) {
     </svg>
   );
 }
+
 export default SvgLocalGasStation;

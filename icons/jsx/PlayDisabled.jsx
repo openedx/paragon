@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPlayDisabled(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPlayDisabled(props) {
     </svg>
   );
 }
+
 export default SvgPlayDisabled;

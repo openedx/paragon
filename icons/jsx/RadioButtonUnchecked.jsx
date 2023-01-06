@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRadioButtonUnchecked(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRadioButtonUnchecked(props) {
     </svg>
   );
 }
+
 export default SvgRadioButtonUnchecked;

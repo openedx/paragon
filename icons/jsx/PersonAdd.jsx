@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPersonAdd(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPersonAdd(props) {
     </svg>
   );
 }
+
 export default SvgPersonAdd;

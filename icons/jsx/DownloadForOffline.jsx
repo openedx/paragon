@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDownloadForOffline(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDownloadForOffline(props) {
     </svg>
   );
 }
+
 export default SvgDownloadForOffline;

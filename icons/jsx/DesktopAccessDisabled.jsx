@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDesktopAccessDisabled(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDesktopAccessDisabled(props) {
     </svg>
   );
 }
+
 export default SvgDesktopAccessDisabled;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPower(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPower(props) {
     </svg>
   );
 }
+
 export default SvgPower;

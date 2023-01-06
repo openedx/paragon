@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgModeEditOutline(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgModeEditOutline(props) {
     </svg>
   );
 }
+
 export default SvgModeEditOutline;

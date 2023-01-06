@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAod(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAod(props) {
     </svg>
   );
 }
+
 export default SvgAod;

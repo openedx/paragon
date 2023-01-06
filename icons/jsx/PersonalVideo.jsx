@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPersonalVideo(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPersonalVideo(props) {
     </svg>
   );
 }
+
 export default SvgPersonalVideo;

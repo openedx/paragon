@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMoped(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgMoped(props) {
     </svg>
   );
 }
+
 export default SvgMoped;

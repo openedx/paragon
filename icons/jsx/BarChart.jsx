@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBarChart(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBarChart(props) {
     </svg>
   );
 }
+
 export default SvgBarChart;

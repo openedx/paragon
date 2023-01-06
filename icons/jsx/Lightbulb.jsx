@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLightbulb(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLightbulb(props) {
     </svg>
   );
 }
+
 export default SvgLightbulb;

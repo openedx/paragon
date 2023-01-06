@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPhonelinkErase(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPhonelinkErase(props) {
     </svg>
   );
 }
+
 export default SvgPhonelinkErase;

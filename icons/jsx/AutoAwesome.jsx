@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAutoAwesome(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAutoAwesome(props) {
     </svg>
   );
 }
+
 export default SvgAutoAwesome;

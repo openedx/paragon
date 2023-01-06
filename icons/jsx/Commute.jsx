@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCommute(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCommute(props) {
     </svg>
   );
 }
+
 export default SvgCommute;

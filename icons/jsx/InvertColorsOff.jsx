@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgInvertColorsOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgInvertColorsOff(props) {
     </svg>
   );
 }
+
 export default SvgInvertColorsOff;

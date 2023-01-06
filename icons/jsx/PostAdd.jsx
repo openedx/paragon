@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPostAdd(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgPostAdd(props) {
     </svg>
   );
 }
+
 export default SvgPostAdd;

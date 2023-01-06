@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPaypal(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgPaypal(props) {
     </svg>
   );
 }
+
 export default SvgPaypal;

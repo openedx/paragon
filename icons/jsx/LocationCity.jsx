@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocationCity(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocationCity(props) {
     </svg>
   );
 }
+
 export default SvgLocationCity;

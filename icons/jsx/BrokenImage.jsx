@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBrokenImage(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBrokenImage(props) {
     </svg>
   );
 }
+
 export default SvgBrokenImage;

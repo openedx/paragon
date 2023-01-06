@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgKayaking(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgKayaking(props) {
     </svg>
   );
 }
+
 export default SvgKayaking;

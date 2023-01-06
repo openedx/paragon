@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function Svg1XMobiledata(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function Svg1XMobiledata(props) {
     </svg>
   );
 }
+
 export default Svg1XMobiledata;

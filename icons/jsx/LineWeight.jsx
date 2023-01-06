@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLineWeight(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLineWeight(props) {
     </svg>
   );
 }
+
 export default SvgLineWeight;

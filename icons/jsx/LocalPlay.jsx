@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalPlay(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocalPlay(props) {
     </svg>
   );
 }
+
 export default SvgLocalPlay;

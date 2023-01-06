@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgScreenRotationAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgScreenRotationAlt(props) {
     </svg>
   );
 }
+
 export default SvgScreenRotationAlt;

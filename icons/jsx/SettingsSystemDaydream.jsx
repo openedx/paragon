@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSettingsSystemDaydream(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSettingsSystemDaydream(props) {
     </svg>
   );
 }
+
 export default SvgSettingsSystemDaydream;

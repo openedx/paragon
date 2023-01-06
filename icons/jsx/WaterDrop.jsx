@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWaterDrop(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWaterDrop(props) {
     </svg>
   );
 }
+
 export default SvgWaterDrop;

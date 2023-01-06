@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSegment(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSegment(props) {
     </svg>
   );
 }
+
 export default SvgSegment;

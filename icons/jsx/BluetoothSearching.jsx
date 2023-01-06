@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBluetoothSearching(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBluetoothSearching(props) {
     </svg>
   );
 }
+
 export default SvgBluetoothSearching;

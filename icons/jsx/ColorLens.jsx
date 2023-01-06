@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgColorLens(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgColorLens(props) {
     </svg>
   );
 }
+
 export default SvgColorLens;

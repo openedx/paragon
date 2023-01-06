@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgInterests(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgInterests(props) {
     </svg>
   );
 }
+
 export default SvgInterests;

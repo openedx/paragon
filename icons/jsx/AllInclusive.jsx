@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAllInclusive(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAllInclusive(props) {
     </svg>
   );
 }
+
 export default SvgAllInclusive;

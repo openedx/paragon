@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAccessibility(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAccessibility(props) {
     </svg>
   );
 }
+
 export default SvgAccessibility;

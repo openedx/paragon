@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSendToMobile(props) {
   return (
     <svg
@@ -14,4 +15,5 @@ function SvgSendToMobile(props) {
     </svg>
   );
 }
+
 export default SvgSendToMobile;

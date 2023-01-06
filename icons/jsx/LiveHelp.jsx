@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLiveHelp(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLiveHelp(props) {
     </svg>
   );
 }
+
 export default SvgLiveHelp;

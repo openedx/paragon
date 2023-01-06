@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDialerSip(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDialerSip(props) {
     </svg>
   );
 }
+
 export default SvgDialerSip;

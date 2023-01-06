@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMuseum(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMuseum(props) {
     </svg>
   );
 }
+
 export default SvgMuseum;

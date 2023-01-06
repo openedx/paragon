@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNotStarted(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNotStarted(props) {
     </svg>
   );
 }
+
 export default SvgNotStarted;

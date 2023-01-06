@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFeaturedVideo(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgFeaturedVideo(props) {
     </svg>
   );
 }
+
 export default SvgFeaturedVideo;

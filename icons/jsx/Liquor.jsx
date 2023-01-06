@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLiquor(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLiquor(props) {
     </svg>
   );
 }
+
 export default SvgLiquor;

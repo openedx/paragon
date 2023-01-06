@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMonetizationOn(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMonetizationOn(props) {
     </svg>
   );
 }
+
 export default SvgMonetizationOn;

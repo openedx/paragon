@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAutoFixHigh(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAutoFixHigh(props) {
     </svg>
   );
 }
+
 export default SvgAutoFixHigh;

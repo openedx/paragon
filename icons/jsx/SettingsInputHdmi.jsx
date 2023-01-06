@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSettingsInputHdmi(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSettingsInputHdmi(props) {
     </svg>
   );
 }
+
 export default SvgSettingsInputHdmi;

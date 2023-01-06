@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBedroomParent(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgBedroomParent(props) {
     </svg>
   );
 }
+
 export default SvgBedroomParent;

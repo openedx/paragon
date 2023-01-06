@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgChair(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgChair(props) {
     </svg>
   );
 }
+
 export default SvgChair;

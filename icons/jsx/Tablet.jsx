@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTablet(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgTablet(props) {
     </svg>
   );
 }
+
 export default SvgTablet;

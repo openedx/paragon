@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgVideoTranscript(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgVideoTranscript(props) {
     </svg>
   );
 }
+
 export default SvgVideoTranscript;

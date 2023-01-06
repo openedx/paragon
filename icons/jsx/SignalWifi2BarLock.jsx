@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSignalWifi2BarLock(props) {
   return (
     <svg
@@ -25,4 +26,5 @@ function SvgSignalWifi2BarLock(props) {
     </svg>
   );
 }
+
 export default SvgSignalWifi2BarLock;

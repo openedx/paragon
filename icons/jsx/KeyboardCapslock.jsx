@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgKeyboardCapslock(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgKeyboardCapslock(props) {
     </svg>
   );
 }
+
 export default SvgKeyboardCapslock;

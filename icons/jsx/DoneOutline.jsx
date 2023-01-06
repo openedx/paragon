@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDoneOutline(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDoneOutline(props) {
     </svg>
   );
 }
+
 export default SvgDoneOutline;

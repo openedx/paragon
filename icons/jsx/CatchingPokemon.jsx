@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCatchingPokemon(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCatchingPokemon(props) {
     </svg>
   );
 }
+
 export default SvgCatchingPokemon;

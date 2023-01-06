@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLegendToggle(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLegendToggle(props) {
     </svg>
   );
 }
+
 export default SvgLegendToggle;

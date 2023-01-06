@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSearchOff(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgSearchOff(props) {
     </svg>
   );
 }
+
 export default SvgSearchOff;

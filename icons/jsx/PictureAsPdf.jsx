@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPictureAsPdf(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPictureAsPdf(props) {
     </svg>
   );
 }
+
 export default SvgPictureAsPdf;

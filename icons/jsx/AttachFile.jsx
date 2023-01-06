@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAttachFile(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAttachFile(props) {
     </svg>
   );
 }
+
 export default SvgAttachFile;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSpoke(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSpoke(props) {
     </svg>
   );
 }
+
 export default SvgSpoke;

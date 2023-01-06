@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgReceiptLong(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgReceiptLong(props) {
     </svg>
   );
 }
+
 export default SvgReceiptLong;
