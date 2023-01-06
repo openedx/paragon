@@ -9,11 +9,11 @@ export interface ILinkedHeading {
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-const LinkedHeading = ({
+function LinkedHeading({
   h,
   children,
   id,
-}: ILinkedHeading) => {
+}: ILinkedHeading) {
   const H = `h${h}` as HeadingTag;
 
   return (
@@ -21,7 +21,7 @@ const LinkedHeading = ({
       {children}
     </H>
   );
-};
+}
 
 LinkedHeading.propTypes = {
   h: PropTypes.string.isRequired,

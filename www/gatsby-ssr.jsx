@@ -11,8 +11,9 @@ const headComponents = [
     href="/static/openedx-theme.css"
     rel="stylesheet"
     type="text/css"
-  />
+  />,
 ];
+
 exports.onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents(headComponents);
-}
+};

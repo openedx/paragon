@@ -3,8 +3,8 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
-import { Icon, SearchField, Toast } from '~paragon-react'; // eslint-disable-line
-import * as IconComponents from '~paragon-icons'; // eslint-disable-line
+import { Icon, SearchField, Toast } from '~paragon-react';
+import * as IconComponents from '~paragon-icons';
 
 const ICON_NAMES = Object.keys(IconComponents);
 const WINDOW_HEIGHT = 2400;
@@ -12,11 +12,11 @@ const ROW_HEIGHT = 100;
 const ROWS_PER_WINDOW = WINDOW_HEIGHT / ROW_HEIGHT;
 const COLUMN_WIDTH = 150;
 
-const TableCell = ({
+function TableCell({
   iconName,
   setCurrentIcon,
   previewRef,
-}) => {
+}) {
   const handleClick = () => {
     setCurrentIcon(iconName);
     if (previewRef.current) {
@@ -44,11 +44,11 @@ const TableCell = ({
       <span className="pgn-doc__icons-table__cell-text">{iconName}</span>
     </div>
   );
-};
+}
 
-const TableRow = ({
+function TableRow({
   rowIndex, columnsCount, iconsList, data,
-}) => {
+}) {
   const startIndex = rowIndex * columnsCount;
   const endIndex = startIndex + columnsCount;
   if (startIndex > iconsList.length) {
@@ -59,9 +59,9 @@ const TableRow = ({
   return icons.map(iconName => (
     <TableCell key={iconName} iconName={iconName} setCurrentIcon={data.setCurrentIcon} previewRef={data.previewRef} />
   ));
-};
+}
 
-const IconsTable = () => {
+function IconsTable() {
   const previewRef = React.useRef(null);
   const tableRef = React.useRef(null);
   const tableBottom = React.useRef(null);
@@ -83,11 +83,14 @@ const IconsTable = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedSetIconsList = useCallback(
-    debounce((list) => {
-      global.analytics.track('openedx.paragon.icons-table.search', { value: searchValue });
-      setData({ rowsCount: ROWS_PER_WINDOW, iconsList: list });
-    },
-    250, { leading: false }),
+    debounce(
+      (list) => {
+        global.analytics.track('openedx.paragon.icons-table.search', { value: searchValue });
+        setData({ rowsCount: ROWS_PER_WINDOW, iconsList: list });
+      },
+      250,
+      { leading: false },
+    ),
     [],
   );
 
@@ -193,7 +196,7 @@ const IconsTable = () => {
       </Toast>
     </>
   );
-};
+}
 
 TableCell.propTypes = {
   iconName: PropTypes.string.isRequired,
@@ -206,9 +209,9 @@ TableCell.propTypes = {
 };
 
 TableRow.propTypes = {
-  rowIndex: PropTypes.number,
-  columnsCount: PropTypes.number,
-  iconsList: PropTypes.arrayOf(PropTypes.string),
+  rowIndex: PropTypes.number.isRequired,
+  columnsCount: PropTypes.number.isRequired,
+  iconsList: PropTypes.arrayOf(PropTypes.string).isRequired,
   data: PropTypes.shape({
     setCurrentIcon: PropTypes.func,
     previewRef: PropTypes.shape({

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
-import { Hyperlink } from '~paragon-react'; // eslint-disable-line
+import { Hyperlink } from '~paragon-react';
 
 type ProjectUsagesTypes = {
   filePath: string,
@@ -18,7 +17,7 @@ export interface IComponentUsageExamples {
   },
 }
 
-const ComponentUsageExamples = ({ row }: IComponentUsageExamples) => {
+function ComponentUsageExamples({ row }: IComponentUsageExamples) {
   const { repositoryUrl, usages } = row.original;
 
   return (
@@ -44,7 +43,7 @@ const ComponentUsageExamples = ({ row }: IComponentUsageExamples) => {
       </ul>
     </div>
   );
-};
+}
 
 ComponentUsageExamples.propTypes = {
   row: PropTypes.shape({
