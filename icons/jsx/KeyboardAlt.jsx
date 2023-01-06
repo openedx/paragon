@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgKeyboardAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgKeyboardAlt(props) {
     </svg>
   );
 }
+
 export default SvgKeyboardAlt;

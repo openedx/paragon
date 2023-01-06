@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSnowshoeing(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSnowshoeing(props) {
     </svg>
   );
 }
+
 export default SvgSnowshoeing;

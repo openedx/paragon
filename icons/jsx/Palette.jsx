@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPalette(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPalette(props) {
     </svg>
   );
 }
+
 export default SvgPalette;

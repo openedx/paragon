@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgShoppingCartCheckout(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgShoppingCartCheckout(props) {
     </svg>
   );
 }
+
 export default SvgShoppingCartCheckout;

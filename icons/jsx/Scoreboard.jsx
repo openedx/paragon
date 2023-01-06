@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgScoreboard(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgScoreboard(props) {
     </svg>
   );
 }
+
 export default SvgScoreboard;

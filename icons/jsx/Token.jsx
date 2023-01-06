@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgToken(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgToken(props) {
     </svg>
   );
 }
+
 export default SvgToken;

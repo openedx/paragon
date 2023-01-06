@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMan3(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMan3(props) {
     </svg>
   );
 }
+
 export default SvgMan3;

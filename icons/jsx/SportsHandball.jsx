@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSportsHandball(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgSportsHandball(props) {
     </svg>
   );
 }
+
 export default SvgSportsHandball;

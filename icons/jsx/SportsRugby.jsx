@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSportsRugby(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSportsRugby(props) {
     </svg>
   );
 }
+
 export default SvgSportsRugby;

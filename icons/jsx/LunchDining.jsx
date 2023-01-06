@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLunchDining(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLunchDining(props) {
     </svg>
   );
 }
+
 export default SvgLunchDining;

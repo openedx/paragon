@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSsidChart(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSsidChart(props) {
     </svg>
   );
 }
+
 export default SvgSsidChart;

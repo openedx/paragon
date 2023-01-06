@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNoBackpack(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNoBackpack(props) {
     </svg>
   );
 }
+
 export default SvgNoBackpack;

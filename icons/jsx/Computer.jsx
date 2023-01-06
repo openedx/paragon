@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgComputer(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgComputer(props) {
     </svg>
   );
 }
+
 export default SvgComputer;

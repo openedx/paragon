@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgGroups(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgGroups(props) {
     </svg>
   );
 }
+
 export default SvgGroups;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPermPhoneMsg(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPermPhoneMsg(props) {
     </svg>
   );
 }
+
 export default SvgPermPhoneMsg;

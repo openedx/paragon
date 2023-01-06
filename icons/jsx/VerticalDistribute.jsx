@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgVerticalDistribute(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgVerticalDistribute(props) {
     </svg>
   );
 }
+
 export default SvgVerticalDistribute;

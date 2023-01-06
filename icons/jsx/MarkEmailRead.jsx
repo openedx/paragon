@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMarkEmailRead(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMarkEmailRead(props) {
     </svg>
   );
 }
+
 export default SvgMarkEmailRead;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAlignHorizontalLeft(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAlignHorizontalLeft(props) {
     </svg>
   );
 }
+
 export default SvgAlignHorizontalLeft;

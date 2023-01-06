@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTempleHindu(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTempleHindu(props) {
     </svg>
   );
 }
+
 export default SvgTempleHindu;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRowing(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRowing(props) {
     </svg>
   );
 }
+
 export default SvgRowing;

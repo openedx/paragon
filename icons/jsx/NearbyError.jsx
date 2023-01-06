@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNearbyError(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNearbyError(props) {
     </svg>
   );
 }
+
 export default SvgNearbyError;

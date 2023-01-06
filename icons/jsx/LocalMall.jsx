@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalMall(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocalMall(props) {
     </svg>
   );
 }
+
 export default SvgLocalMall;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCastForEducation(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCastForEducation(props) {
     </svg>
   );
 }
+
 export default SvgCastForEducation;

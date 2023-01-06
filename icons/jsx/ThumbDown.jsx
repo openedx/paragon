@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgThumbDown(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgThumbDown(props) {
     </svg>
   );
 }
+
 export default SvgThumbDown;

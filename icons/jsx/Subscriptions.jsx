@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSubscriptions(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSubscriptions(props) {
     </svg>
   );
 }
+
 export default SvgSubscriptions;

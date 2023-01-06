@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFiberDvr(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFiberDvr(props) {
     </svg>
   );
 }
+
 export default SvgFiberDvr;

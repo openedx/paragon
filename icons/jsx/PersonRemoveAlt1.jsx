@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPersonRemoveAlt1(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPersonRemoveAlt1(props) {
     </svg>
   );
 }
+
 export default SvgPersonRemoveAlt1;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAllInbox(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAllInbox(props) {
     </svg>
   );
 }
+
 export default SvgAllInbox;

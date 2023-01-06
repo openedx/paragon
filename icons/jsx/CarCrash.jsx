@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCarCrash(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCarCrash(props) {
     </svg>
   );
 }
+
 export default SvgCarCrash;

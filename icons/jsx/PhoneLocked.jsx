@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPhoneLocked(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgPhoneLocked(props) {
     </svg>
   );
 }
+
 export default SvgPhoneLocked;

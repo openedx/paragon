@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCreditCardOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCreditCardOff(props) {
     </svg>
   );
 }
+
 export default SvgCreditCardOff;

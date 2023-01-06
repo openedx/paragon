@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSync(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSync(props) {
     </svg>
   );
 }
+
 export default SvgSync;

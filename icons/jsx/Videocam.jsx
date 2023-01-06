@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgVideocam(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgVideocam(props) {
     </svg>
   );
 }
+
 export default SvgVideocam;

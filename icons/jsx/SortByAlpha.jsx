@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSortByAlpha(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSortByAlpha(props) {
     </svg>
   );
 }
+
 export default SvgSortByAlpha;

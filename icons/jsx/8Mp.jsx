@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function Svg8Mp(props) {
   return (
     <svg
@@ -18,4 +19,5 @@ function Svg8Mp(props) {
     </svg>
   );
 }
+
 export default Svg8Mp;

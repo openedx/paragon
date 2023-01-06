@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgOpacity(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgOpacity(props) {
     </svg>
   );
 }
+
 export default SvgOpacity;

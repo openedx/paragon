@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgInsights(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgInsights(props) {
     </svg>
   );
 }
+
 export default SvgInsights;

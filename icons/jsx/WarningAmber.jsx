@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWarningAmber(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWarningAmber(props) {
     </svg>
   );
 }
+
 export default SvgWarningAmber;

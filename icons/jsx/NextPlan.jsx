@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNextPlan(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNextPlan(props) {
     </svg>
   );
 }
+
 export default SvgNextPlan;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDiversity1(props) {
   return (
     <svg
@@ -26,4 +27,5 @@ function SvgDiversity1(props) {
     </svg>
   );
 }
+
 export default SvgDiversity1;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgStrikethroughS(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgStrikethroughS(props) {
     </svg>
   );
 }
+
 export default SvgStrikethroughS;

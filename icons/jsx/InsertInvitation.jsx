@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgInsertInvitation(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgInsertInvitation(props) {
     </svg>
   );
 }
+
 export default SvgInsertInvitation;

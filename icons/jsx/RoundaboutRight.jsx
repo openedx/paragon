@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRoundaboutRight(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRoundaboutRight(props) {
     </svg>
   );
 }
+
 export default SvgRoundaboutRight;

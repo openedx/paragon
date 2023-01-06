@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLessThanEqual(props) {
   return (
     <svg
@@ -18,4 +19,5 @@ function SvgLessThanEqual(props) {
     </svg>
   );
 }
+
 export default SvgLessThanEqual;

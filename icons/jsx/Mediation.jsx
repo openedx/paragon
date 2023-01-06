@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMediation(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMediation(props) {
     </svg>
   );
 }
+
 export default SvgMediation;

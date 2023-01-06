@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCyclone(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgCyclone(props) {
     </svg>
   );
 }
+
 export default SvgCyclone;

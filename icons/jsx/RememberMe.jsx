@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRememberMe(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgRememberMe(props) {
     </svg>
   );
 }
+
 export default SvgRememberMe;

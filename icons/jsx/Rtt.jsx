@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRtt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRtt(props) {
     </svg>
   );
 }
+
 export default SvgRtt;

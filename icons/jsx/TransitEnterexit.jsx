@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTransitEnterexit(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTransitEnterexit(props) {
     </svg>
   );
 }
+
 export default SvgTransitEnterexit;

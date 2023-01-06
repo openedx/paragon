@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCategory(props) {
   return (
     <svg
@@ -15,4 +16,5 @@ function SvgCategory(props) {
     </svg>
   );
 }
+
 export default SvgCategory;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDirections(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDirections(props) {
     </svg>
   );
 }
+
 export default SvgDirections;

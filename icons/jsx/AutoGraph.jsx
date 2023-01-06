@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAutoGraph(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAutoGraph(props) {
     </svg>
   );
 }
+
 export default SvgAutoGraph;

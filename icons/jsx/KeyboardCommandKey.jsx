@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgKeyboardCommandKey(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgKeyboardCommandKey(props) {
     </svg>
   );
 }
+
 export default SvgKeyboardCommandKey;

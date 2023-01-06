@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPanTool(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPanTool(props) {
     </svg>
   );
 }
+
 export default SvgPanTool;

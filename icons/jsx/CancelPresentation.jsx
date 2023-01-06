@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCancelPresentation(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCancelPresentation(props) {
     </svg>
   );
 }
+
 export default SvgCancelPresentation;

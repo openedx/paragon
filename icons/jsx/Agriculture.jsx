@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAgriculture(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgAgriculture(props) {
     </svg>
   );
 }
+
 export default SvgAgriculture;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCloudCircle(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCloudCircle(props) {
     </svg>
   );
 }
+
 export default SvgCloudCircle;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgGppMaybe(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgGppMaybe(props) {
     </svg>
   );
 }
+
 export default SvgGppMaybe;

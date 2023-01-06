@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTransgender(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTransgender(props) {
     </svg>
   );
 }
+
 export default SvgTransgender;

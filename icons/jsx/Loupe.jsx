@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLoupe(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLoupe(props) {
     </svg>
   );
 }
+
 export default SvgLoupe;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHotTub(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgHotTub(props) {
     </svg>
   );
 }
+
 export default SvgHotTub;

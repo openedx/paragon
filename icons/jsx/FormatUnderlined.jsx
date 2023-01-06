@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFormatUnderlined(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFormatUnderlined(props) {
     </svg>
   );
 }
+
 export default SvgFormatUnderlined;

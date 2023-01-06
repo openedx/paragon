@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSwipeRightAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSwipeRightAlt(props) {
     </svg>
   );
 }
+
 export default SvgSwipeRightAlt;

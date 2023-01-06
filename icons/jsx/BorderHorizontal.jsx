@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBorderHorizontal(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBorderHorizontal(props) {
     </svg>
   );
 }
+
 export default SvgBorderHorizontal;

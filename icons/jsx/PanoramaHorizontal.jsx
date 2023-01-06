@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPanoramaHorizontal(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPanoramaHorizontal(props) {
     </svg>
   );
 }
+
 export default SvgPanoramaHorizontal;

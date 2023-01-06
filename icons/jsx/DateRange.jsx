@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDateRange(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDateRange(props) {
     </svg>
   );
 }
+
 export default SvgDateRange;

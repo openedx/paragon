@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTrackChanges(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTrackChanges(props) {
     </svg>
   );
 }
+
 export default SvgTrackChanges;

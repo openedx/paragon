@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWhatsapp(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWhatsapp(props) {
     </svg>
   );
 }
+
 export default SvgWhatsapp;

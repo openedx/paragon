@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAspectRatio(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAspectRatio(props) {
     </svg>
   );
 }
+
 export default SvgAspectRatio;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSyncAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSyncAlt(props) {
     </svg>
   );
 }
+
 export default SvgSyncAlt;

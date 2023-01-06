@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgEject(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgEject(props) {
     </svg>
   );
 }
+
 export default SvgEject;

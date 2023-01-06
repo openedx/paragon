@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLastPage(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLastPage(props) {
     </svg>
   );
 }
+
 export default SvgLastPage;

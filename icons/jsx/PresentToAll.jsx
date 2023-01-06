@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPresentToAll(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPresentToAll(props) {
     </svg>
   );
 }
+
 export default SvgPresentToAll;

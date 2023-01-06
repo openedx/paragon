@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgThumbUpFilled(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgThumbUpFilled(props) {
     </svg>
   );
 }
+
 export default SvgThumbUpFilled;

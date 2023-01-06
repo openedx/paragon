@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWavingHand(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWavingHand(props) {
     </svg>
   );
 }
+
 export default SvgWavingHand;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgGreaterThan(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgGreaterThan(props) {
     </svg>
   );
 }
+
 export default SvgGreaterThan;

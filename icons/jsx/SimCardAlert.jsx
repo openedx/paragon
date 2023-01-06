@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSimCardAlert(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSimCardAlert(props) {
     </svg>
   );
 }
+
 export default SvgSimCardAlert;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPinch(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPinch(props) {
     </svg>
   );
 }
+
 export default SvgPinch;

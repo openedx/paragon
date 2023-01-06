@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFormatListNumberedRtl(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFormatListNumberedRtl(props) {
     </svg>
   );
 }
+
 export default SvgFormatListNumberedRtl;

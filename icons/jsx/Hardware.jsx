@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHardware(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHardware(props) {
     </svg>
   );
 }
+
 export default SvgHardware;

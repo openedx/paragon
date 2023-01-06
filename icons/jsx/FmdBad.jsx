@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFmdBad(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFmdBad(props) {
     </svg>
   );
 }
+
 export default SvgFmdBad;

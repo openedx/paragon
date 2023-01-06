@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDelete(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDelete(props) {
     </svg>
   );
 }
+
 export default SvgDelete;

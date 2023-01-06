@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWrongLocation(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgWrongLocation(props) {
     </svg>
   );
 }
+
 export default SvgWrongLocation;

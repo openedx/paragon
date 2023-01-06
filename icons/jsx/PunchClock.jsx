@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPunchClock(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgPunchClock(props) {
     </svg>
   );
 }
+
 export default SvgPunchClock;

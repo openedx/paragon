@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNoCell(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNoCell(props) {
     </svg>
   );
 }
+
 export default SvgNoCell;

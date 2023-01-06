@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgEnergySavingsLeaf(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgEnergySavingsLeaf(props) {
     </svg>
   );
 }
+
 export default SvgEnergySavingsLeaf;

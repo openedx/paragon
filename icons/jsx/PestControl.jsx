@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPestControl(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPestControl(props) {
     </svg>
   );
 }
+
 export default SvgPestControl;

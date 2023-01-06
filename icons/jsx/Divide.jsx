@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDivide(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDivide(props) {
     </svg>
   );
 }
+
 export default SvgDivide;

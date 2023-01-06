@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgQuora(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgQuora(props) {
     </svg>
   );
 }
+
 export default SvgQuora;

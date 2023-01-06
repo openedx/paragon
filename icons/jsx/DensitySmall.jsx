@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDensitySmall(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDensitySmall(props) {
     </svg>
   );
 }
+
 export default SvgDensitySmall;

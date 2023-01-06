@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAddHomeWork(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgAddHomeWork(props) {
     </svg>
   );
 }
+
 export default SvgAddHomeWork;

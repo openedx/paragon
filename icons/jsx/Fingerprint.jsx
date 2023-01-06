@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFingerprint(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFingerprint(props) {
     </svg>
   );
 }
+
 export default SvgFingerprint;
