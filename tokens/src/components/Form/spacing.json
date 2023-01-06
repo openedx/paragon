@@ -4,14 +4,14 @@
       "input": {
         "padding": {
           "y": {
-            "base": { "value": "{input.btn.padding.y.value}", "source": "$input-padding-y" },
-            "sm": { "value": "{input.btn.padding.sm.y.value}", "source": "$input-padding-y-sm" },
-            "lg": { "value": "{input.btn.padding.lg.y.value}", "source": "$input-padding-y-lg" }
+            "base": { "value": "{spacing.input.btn.padding.y.value}", "source": "$input-padding-y" },
+            "sm": { "value": "{spacing.input.btn.padding.sm.y.value}", "source": "$input-padding-y-sm" },
+            "lg": { "value": "{spacing.input.btn.padding.lg.y.value}", "source": "$input-padding-y-lg" }
           },
           "x": {
-            "base": { "value": "{input.btn.padding.x.value}", "source": "$input-padding-x" },
-            "sm": { "value": "{input.btn.padding.sm.x.value}", "source": "$input-padding-x-sm" },
-            "lg": { "value": "{input.btn.padding.lg.x.value}", "source": "$input-padding-x-lg" }
+            "base": { "value": "{spacing.input.btn.padding.x.value}", "source": "$input-padding-x" },
+            "sm": { "value": "{spacing.input.btn.padding.sm.x.value}", "source": "$input-padding-x-sm" },
+            "lg": { "value": "{spacing.input.btn.padding.lg.x.value}", "source": "$input-padding-x-lg" }
           }
         },
         "check": {

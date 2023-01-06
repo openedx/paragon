@@ -1,3 +1,4 @@
+$carousel-control-color: var(--pgn-color-carousel-control-base) !default;
 $carousel-control-width: var(--pgn-size-carousel-control-width-base) !default;
 $carousel-control-opacity: var(--pgn-color-carousel-control-opacity-base) !default;
 $carousel-control-hover-opacity: var(--pgn-color-carousel-control-opacity-hover) !default;
@@ -18,4 +19,4 @@ $carousel-control-prev-icon-bg: var(--pgn-content-carousel-control-bg-prev-icon)
 $carousel-control-next-icon-bg: var(--pgn-content-carousel-control-bg-next-icon) !default;
 
 // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
-$carousel-transition: transform var(--pgn-transition-carousel-duration) ease-in-out !default;
+$carousel-transition: var(--pgn-transition-carousel-base) !default;

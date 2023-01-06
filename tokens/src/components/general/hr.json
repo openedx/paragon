@@ -1,17 +1,21 @@
 {
-  "hr": {
-    "border": {
-      "color": { 
+  "size": {
+    "hr": {
+      "border": {
+        "width": { "value": "{size.border.width.value}", "source": "$hr-border-width" },
+        "margin-y": { "value": "{spacing.spacer.base.value}", "source": "$hr-margin-y" }
+      }
+    }
+  },
+  "color": {
+    "hr": {
+      "border": {
         "value": "{color.black.value}",
         "source": "$hr-border-color",
         "modify": [{
           "type": "alpha",
           "amount": 0.1
         }]
-      },
-      "width": { "value": "{size.border.width.value}", "source": "$hr-border-width" },
-      "margin": {
-        "y": { "value": "{spacer.base.value}", "source": "$hr-margin-y" }
       }
     }
   }

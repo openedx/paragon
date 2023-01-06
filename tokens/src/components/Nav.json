@@ -29,7 +29,7 @@
           },
           "active": {
             "text": { "value": "{color.primary.500.value}", "source": "$nav-tabs-link-active-color" },
-            "bg": { "value": "{body.bg.value}", "source": "$nav-tabs-link-active-bg" }
+            "bg": { "value": "{color.body.bg.value}", "source": "$nav-tabs-link-active-bg" }
           }
         }
       },
@@ -37,7 +37,7 @@
         "link": {
           "active": {
             "text": { "value": "{color.active.value}", "source": "$nav-pills-link-active-color" },
-            "bg": { "value": "{color.background.active.value}", "source": "$nav-pills-link-active-bg" }
+            "bg": { "value": "{color.bg.active.value}", "source": "$nav-pills-link-active-bg" }
           }
         }
       },
@@ -89,7 +89,7 @@
         }
       },
       "divider": {
-        "margin-y": { "value": "calc({spacer.base.value} / 2)", "source": "$nav-divider-margin-y" }
+        "margin-y": { "value": "calc({spacing.spacer.base.value} / 2)", "source": "$nav-divider-margin-y" }
       }
     }
   }
