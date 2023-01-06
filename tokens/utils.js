@@ -17,14 +17,14 @@ function getFilesWithExtension(location, extension, files = [], excludeDirectori
   return files;
 }
 
-function getSCSStoCSSMap(prefix, key, result) {
-  Object.keys(key).forEach(node => {
-    if (key[node].constructor.name === 'Object') {
+function getSCSStoCSSMap(prefix, tokensObject, result) {
+  Object.entries(tokensObject).forEach(([node, value]) => {
+    if (value?.constructor.name === 'Object') {
       const newPrefix = `${prefix}-${node}`;
-      getSCSStoCSSMap(newPrefix, key[node], result);
+      getSCSStoCSSMap(newPrefix, value, result);
     } else if (node === 'source') {
       // eslint-disable-next-line no-param-reassign
-      result[key[node]] = `var(${prefix})`;
+      result[value] = `var(${prefix})`;
     }
   });
   return result;

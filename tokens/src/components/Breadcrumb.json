@@ -14,7 +14,7 @@
   },
   "typography": {
     "breadcrumb": {
-      "font-size": { "value": "null", "source": "$breadcrumb-font-size" }
+      "font-size": { "value": "inherit", "source": "$breadcrumb-font-size" }
     }
   },
   "spacing": {
@@ -36,6 +36,10 @@
         "radius": {
           "base": { "value": "{size.border.radius.base.value}", "source": "$breadcrumb-border-radius" },
           "focus": { "value": ".125rem", "source": "$breadcrumb-focus-border-radius" }
+        },
+        "axis": {
+          "x-focus": { "value": ".25rem", "source": "$breadcrumb-border-focus-axis-x" },
+          "y-focus": { "value": ".5rem", "source": "$breadcrumb-border-focus-axis-y" }
         },
         "width-focus": { "value": ".0625rem", "source": "$breadcrumb-border-focus-width" }
       }

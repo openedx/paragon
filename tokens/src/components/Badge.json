@@ -14,7 +14,7 @@
     "badge": {
       "font": {
         "size": { "value": "75%", "source": "$badge-font-size" },
-        "weight": { "value": "{font.weight.bold.value}", "source": "$badge-font-weight" }
+        "weight": { "value": "{typography.font.weight.bold.value}", "source": "$badge-font-weight" }
       }
     }
   },
@@ -222,7 +222,7 @@
         "base": { "value": ".25rem", "source": "$badge-border-radius" },
         "pill": { "value": "10rem", "source": "$badge-pill-border-radius" }
       },
-      "focus-width": { "value": "{input.btn.focus.width.value}", "source": "$badge-focus-width" }
+      "focus-width": { "value": "{size.input.btn.focus-width.value}", "source": "$badge-focus-width" }
     }
   },
   "transition": {

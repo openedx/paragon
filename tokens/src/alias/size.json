@@ -1,11 +1,11 @@
 {
   "size": {
     "border": {
-      "width": { "value": "0.063rem", "source": "$border-width" },
+      "width": { "value": "1px", "source": "$border-width" },
       "radius": {
-        "base": { "value": ".375rem", "source": "$border-radius" },
-        "lg": { "value": ".425rem", "source": "$border-radius-lg" },
-        "sm": { "value": ".25rem", "source": "$border-radius-sm" }
+        "base": { "value": "6px", "source": "$border-radius" },
+        "lg": { "value": "7px", "source": "$border-radius-lg" },
+        "sm": { "value": "4px", "source": "$border-radius-sm" }
       }
     }
   }

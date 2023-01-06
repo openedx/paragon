@@ -10,7 +10,7 @@
   "typography": {
     "tabs": {
       "notification": {
-        "font-size": { "value": "{font.size.xs.value}", "source": "$tab-notification-font-size" }
+        "font-size": { "value": "{typography.font.size.xs.value}", "source": "$tab-notification-font-size" }
       }
     }
   }

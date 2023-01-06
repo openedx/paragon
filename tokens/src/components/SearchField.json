@@ -11,13 +11,7 @@
           "primary": { "value": "{color.primary.500.value}", "source": "$search-btn-primary-bg" },
           "brand": { "value": "{color.brand.500.value}", "source": "$search-btn-brand-bg" }
         }
-      },
-      "disabled-opacity": { "value": ".3", "source": "$search-disabled-opacity" }
-    }
-  },
-  "typography": {
-    "search-field": {
-      "line-height": { "value": "1.5rem", "source": "$search-line-height" }
+      }
     }
   },
   "size": {
@@ -25,7 +19,6 @@
       "border": {
         "width": {
           "base": { "value": ".0625rem", "source": "$search-border-width" },
-          "interaction": { "value": ".125rem", "source": "$search-border-width-interaction" },
           "focus": { "value": ".3125rem", "source": "$search-border-focus-width" }
         },
         "radius": { "value": "0", "source": "$search-border-radius" }
@@ -39,6 +32,11 @@
   "spacing": {
     "search-field": {
       "margin-button": { "value": ".5rem", "source": "$search-button-margin" }
+    }
+  },
+  "other": {
+    "search-field": {
+      "disabled-opacity": { "value": ".3", "source": "$search-disabled-opacity" }
     }
   }
 }
