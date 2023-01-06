@@ -25,10 +25,9 @@
   border: $btn-border-width solid var(--pgn-btn-border-color, transparent);
   color: var(--pgn-btn-color, #{$body-color});
   background-color: var(--pgn-btn-bg, transparent);
+  transition: $btn-transition;
 
-  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size,
-  $btn-line-height, $btn-border-radius);
-  @include transition($btn-transition);
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
 
   &:hover {
     color: var(--pgn-btn-hover-color, #{$body-color});

@@ -2,16 +2,16 @@
   "color": {
     "pagination": {
       "text": {
-        "base": { "value": "{color.link.value}", "source": "$pagination-color" },
+        "base": { "value": "{color.link.base.value}", "source": "$pagination-color" },
         "inverse": { "value": "{color.white.value}", "source": "$pagination-color-inverse" },
-        "hover": { "value": "{link.hover.color.value}", "source": "$pagination-hover-color" },
+        "hover": { "value": "{color.link.hover.value}", "source": "$pagination-hover-color" },
         "active": { "value": "{color.active.value}", "source": "$pagination-active-color" },
         "disabled": { "value": "{color.disabled.value}", "source": "$pagination-disabled-color" }
       },
       "bg": {
-        "base": { "value": "{color.background.base.value}", "source": "$pagination-bg" },
+        "base": { "value": "{color.bg.base.value}", "source": "$pagination-bg" },
         "hover": { "value": "{color.gray.100.value}", "source": "$pagination-hover-bg" },
-        "active": { "value": "{color.background.active.value}", "source": "$pagination-active-bg" },
+        "active": { "value": "{color.bg.active.value}", "source": "$pagination-active-bg" },
         "disabled": { "value": "{color.white.value}", "source": "$pagination-disabled-bg" }
       },
       "border": {
@@ -46,20 +46,16 @@
           "base": { "value": "1rem", "source": "$pagination-padding-x" },
           "sm": { "value": ".6rem", "source": "$pagination-padding-x-sm" },
           "lg": { "value": "1.5rem", "source": "$pagination-padding-x-lg" }
-        },
-        "icon": { "value": ".5rem", "source": "$pagination-padding-icon" }
+        }
       },
       "margin": {
-        "x": { "value": ".5rem", "source": "$pagination-margin-x" },
-        "y": { "value": ".5rem", "source": "$pagination-margin-y" }
+        "x": { "value": ".5rem", "source": "$pagination-margin-x" }
       }
     }
   },
   "size": {
     "pagination": {
       "icon": {
-        "base": { "value": "1.375rem", "source": "$pagination-icon-size" },
-        "sm": { "value": "1rem", "source": "$pagination-icon-size-sm" },
         "width": { "value": "2.25rem", "source": "$pagination-icon-width" },
         "height": { "value": "2.25rem", "source": "$pagination-icon-height" }
       },
@@ -97,7 +93,7 @@
   "elevation": {
     "pagination": {
       "focus": {
-        "box-shadow": { "value": "{input.btn.focus.box-shadow.value}", "source": "$pagination-focus-box-shadow" }
+        "box-shadow": { "value": "{elevation.input.btn-focus.box-shadow.value}", "source": "$pagination-focus-box-shadow" }
       }
     }
   }

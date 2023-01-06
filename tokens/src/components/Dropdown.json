@@ -1,9 +1,9 @@
 {
   "color": {
     "dropdown": {
-      "text": { "value": "{body.color.value}", "source": "$dropdown-color" },
+      "text": { "value": "{color.body.base.value}", "source": "$dropdown-color" },
       "header": { "value": "{color.gray.500.value}", "source": "$dropdown-header-color" },
-      "bg": { "value": "{color.background.base.value}", "source": "$dropdown-bg" },
+      "bg": { "value": "{color.bg.base.value}", "source": "$dropdown-bg" },
       "border": {
         "value": "{color.black.value}", 
         "source": "$dropdown-border-color",
@@ -21,7 +21,7 @@
         },
         "active": {
           "base": { "value": "{color.active.value}", "source": "$dropdown-link-active-color" },
-          "bg": { "value": "{color.background.active.value}", "source": "$dropdown-link-active-bg" }
+          "bg": { "value": "{color.bg.active.value}", "source": "$dropdown-link-active-bg" }
         },
         "disabled": { "value": "{color.disabled.value}", "source": "$dropdown-link-disabled-color" }
       }
@@ -29,7 +29,7 @@
   },
   "typography": {
     "dropdown": {
-      "font-size": { "value": "{font.size.base.value}", "source": "$dropdown-font-size" }
+      "font-size": { "value": "{typography.font.size.base.value}", "source": "$dropdown-font-size" }
     }
   },
   "size": {
@@ -65,7 +65,7 @@
         }
       },
       "divider": {
-        "margin-y": { "value": "calc({spacer.base.value} / 2)", "source": "$dropdown-divider-margin-y" }
+        "margin-y": { "value": "calc({spacing.spacer.base.value} / 2)", "source": "$dropdown-divider-margin-y" }
       },
       "close-container": {
         "top": { "value": ".625rem", "source": "$modal-close-container-top" }

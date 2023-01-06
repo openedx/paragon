@@ -8,7 +8,8 @@
   "license": "Apache-2.0",
   "bin": {
     "build-design-tokens": "./tokens/build-tokens.js",
-    "paragon": "./bin/paragon-scripts.js"
+    "paragon": "./bin/paragon-scripts.js",
+    "replace-scss-with-css": "./tokens/replace-variables.js"
   },
   "publishConfig": {
     "access": "public"
@@ -52,7 +53,7 @@
     "type-check": "tsc --noEmit && tsc --project www --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build-types": "tsc --emitDeclarationOnly",
-    "build-tokens": "node tokens/build-tokens.js --build-dir scss/core/css/",
+    "build-tokens": "node tokens/build-tokens.js --build-dir ./scss/core/css/",
     "replace-variables-usage-with-css": "node tokens/replace-variables.js -p src -t usage",
     "replace-variables-definition-with-css": "node tokens/replace-variables.js -p src -t definition",
     "build-scss-to-css-map": "node tokens/map-scss-to-css.js",

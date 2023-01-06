@@ -19,7 +19,7 @@
       "diameter": {
         "md": { "value": "2.75rem", "source": "$btn-icon-diameter-md" },
         "sm": { "value": "2.25rem", "source": "$btn-icon-diameter-sm" },
-        "inline": { "value": "calc({line-height.base.value} + .1em)", "source": "$btn-icon-diameter-inline" }
+        "inline": { "value": "calc({typography.line-height.base.value} + .1em)", "source": "$btn-icon-diameter-inline" }
       }
     }
   }
