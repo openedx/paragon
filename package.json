@@ -8,6 +8,7 @@
   "license": "Apache-2.0",
   "bin": {
     "build-design-tokens": "./tokens/build-tokens.js",
+    "replace-scss-with-css": "./tokens/replace-variables.js",
     "paragon": "./bin/paragon-scripts.js"
   },
   "publishConfig": {
@@ -55,7 +56,7 @@
     "playroom:start": "npm run playroom:start --workspace=www",
     "playroom:build": "npm run playroom:build --workspace=www",
     "prepare": "husky || true",
-    "build-tokens": "node tokens/build-tokens.js --build-dir scss/core/css/",
+    "build-tokens": "node tokens/build-tokens.js --build-dir ./scss/core/css/",
     "replace-variables-usage-with-css": "node tokens/replace-variables.js -p src -t usage",
     "replace-variables-definition-with-css": "node tokens/replace-variables.js -p src -t definition",
     "build-scss-to-css-map": "node tokens/map-scss-to-css.js"

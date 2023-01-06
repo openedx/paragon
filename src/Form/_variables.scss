@@ -33,8 +33,8 @@ $input-focus-color: var(--pgn-color-form-input-focus-base) !default;
 $input-focus-width: var(--pgn-size-form-input-width-focus) !default;
 $input-focus-box-shadow: var(--pgn-elevation-form-input-focus) !default;
 
-$input-placeholder-color: var(--pgn-color-form-input-plaintext) !default;
-$input-plaintext-color:                 var(--pgn-body-color) !default;
+$input-placeholder-color: var(--pgn-color-form-input-placeholder) !default;
+$input-plaintext-color: var(--pgn-color-form-input-plaintext) !default;
 
 $input-height-border: var(--pgn-size-form-input-height-border) !default;
 
@@ -157,8 +157,7 @@ $custom-select-indicator-color: var(--pgn-color-form-control-select-indicator-ba
 $custom-select-indicator: var(--pgn-other-content-form-control-select-indicator-icon) !default;
 
 // Used so we can have multiple background elements (e.g., arrow and feedback icon)
-$custom-select-background:          $custom-select-indicator no-repeat right
-  var(--pgn-form-input-padding-y-base) center / var(--pgn-form-custom-select-bg-size) !default;
+$custom-select-background: var(--pgn-other-content-form-control-select-bg) !default;
 
 $custom-select-feedback-icon-padding-right: var(--pgn-spacing-form-control-select-feedback-icon-padding-right) !default;
 $custom-select-feedback-icon-position: var(--pgn-spacing-form-control-select-feedback-icon-position) !default;
@@ -232,7 +231,6 @@ $form-feedback-valid-color: var(--pgn-color-form-feedback-valid) !default;
 $form-feedback-invalid-color: var(--pgn-color-form-feedback-invalid) !default;
 
 $form-feedback-tooltip-valid-color: var(--pgn-color-form-feedback-tooltip-valid) !default;
-$form-feedback-tooltip-invalid-color: var(--pgn-color-form-feedback-tooltip-invalid) !default;
 $form-feedback-tooltip-valid-bg: var(--pgn-color-form-feedback-tooltip-bg-valid) !default;
 $form-feedback-tooltip-invalid-bg: var(--pgn-color-form-feedback-tooltip-bg-invalid) !default;
 
@@ -274,7 +272,7 @@ $form-feedback-tooltip-padding-y: var(--pgn-spacing-form-control-select-feedback
 $form-feedback-tooltip-padding-x: var(--pgn-spacing-form-control-select-feedback-tooltip-padding-x) !default;
 $form-feedback-tooltip-font-size: var(--pgn-typography-form-feedback-tooltip-font-size) !default;
 $form-feedback-tooltip-line-height: var(--pgn-typography-form-feedback-tooltip-line-height) !default;
-$form-feedback-tooltip-opacity: var(--pgn-color-form-feedback-tooltip-opacity) !default;
+$form-feedback-tooltip-opacity: var(--pgn-other-form-feedback-tooltip-opacity) !default;
 $form-feedback-tooltip-border-radius: var(--pgn-size-form-feedback-tooltip-border-radius) !default;
 
 $form-control-icon-width: var(--pgn-size-form-control-icon-width) !default;

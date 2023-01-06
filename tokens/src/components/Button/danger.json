@@ -75,8 +75,8 @@
         },
         "bg": {
           "danger": { "value": "{color.theme.active.danger.value}", "source": "$btn-danger-active-bg" },
-          "outline-danger": { "value": "{color.theme.background.danger.value}", "source": "$btn-danger-outline-active-bg" },
-          "inverse-outline-danger": { "value": "{color.theme.background.danger.value}", "source": "$btn-danger-inverse-outline-active-bg" }
+          "outline-danger": { "value": "{color.theme.bg.danger.value}", "source": "$btn-danger-outline-active-bg" },
+          "inverse-outline-danger": { "value": "{color.theme.bg.danger.value}", "source": "$btn-danger-inverse-outline-active-bg" }
         },
         "border": {
           "danger": { "value": "{color.theme.active.danger.value}", "source": "$btn-danger-active-border-color" },

@@ -8,11 +8,11 @@
             "source": "$input-height"
           },
           "sm": {
-            "value": "calc({typography.form.input.line-height.sm.value} * 1em + {input.btn.padding.sm.y.value} * 2 + {size.form.input.height.border.value})",
+            "value": "calc({typography.form.input.line-height.sm.value} * 1em + {spacing.input.btn.padding.sm.y.value} * 2 + {size.form.input.height.border.value})",
             "source": "$input-height-sm"
           },
           "lg": {
-            "value": "calc({typography.form.input.line-height.lg.value} * 1em + {input.btn.padding.lg.y.value} * 2 + {size.form.input.height.border.value})",
+            "value": "calc({typography.form.input.line-height.lg.value} * 1em + {spacing.input.btn.padding.lg.y.value} * 2 + {size.form.input.height.border.value})",
             "source": "$input-height-lg"
           },
           "inner": {
@@ -34,7 +34,7 @@
         "width": {
           "hover": { "value": "0.063rem", "source": "$input-hover-width" },
           "focus": { "value": "0.063rem", "source": "$input-focus-width" },
-          "border": { "value": "{input.btn.border.width.value}", "source": "$input-border-width" }
+          "border": { "value": "{size.input.btn.border-width.value}", "source": "$input-border-width" }
         },
         "radius": {
           "border": {

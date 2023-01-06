@@ -1,10 +1,8 @@
 $search-border-radius: var(--pgn-size-search-field-border-radius) !default;
-$search-line-height: var(--pgn-typography-search-field-line-height) !default;
 $search-border-color: var(--pgn-color-search-field-border-base) !default;
 $search-border-color-interaction: var(--pgn-color-search-field-border-interaction) !default;
 $search-border-width: var(--pgn-size-search-field-border-width-base) !default;
-$search-border-width-interaction: var(--pgn-size-search-field-border-width-interaction) !default;
-$search-disabled-opacity: var(--pgn-color-search-field-disabled-opacity) !default;
+$search-disabled-opacity: var(--pgn-other-search-field-disabled-opacity) !default;
 $search-button-margin: var(--pgn-spacing-search-field-margin-button) !default;
 $input-height-search: var(--pgn-size-search-field-search-input-height) !default;
 $search-border-focus-color: var(--pgn-color-search-field-border-focus) !default;

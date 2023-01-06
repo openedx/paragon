@@ -16,6 +16,7 @@ const chroma = require('chroma-js');
 function colorYiq(color, light, dark, threshold) {
   const defaultsFile = fs.readFileSync(path.resolve(__dirname, 'src', 'global', 'other.json'), 'utf8');
   const defaults = JSON.parse(defaultsFile);
+
   const {
     'yiq-text-dark': defaultDark,
     'yiq-text-light': defaultLight,

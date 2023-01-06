@@ -13,6 +13,7 @@ $card-height: var(--pgn-card-height-base) !default;
 $card-bg-dark:                       $primary-500 !default;
 $card-bg-muted:                      $light-200 !default;
 
+// TODO: Need to deleted this variable after refactoring Card component
 // stylelint-disable-next-line max-line-length
 $card-inner-border-radius: calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)}) !default;
 $card-color: var(--pgn-color-card-base) !default;
