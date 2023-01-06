@@ -7,9 +7,7 @@ import useOverflowScrollElementAttributes, {
 } from '../useOverflowScrollElementAttributes';
 
 const divElement = document.createElement('div');
-const mockRef = {
-  current: divElement,
-};
+const mockRef = divElement;
 
 const baseArgs = {
   overflowRef: mockRef,
@@ -27,8 +25,8 @@ describe('useOverflowScrollElementAttributes', () => {
 
   it('returns correct base object properties', () => {
     renderHook(() => useOverflowScrollElementAttributes(baseArgs));
-    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef.current);
-    const hasOverflowClass = baseArgs.overflowRef.current.classList.contains(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
+    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef);
+    const hasOverflowClass = baseArgs.overflowRef.classList.contains(OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS);
 
     // class name
     expect(hasOverflowClass).toBeTruthy();
@@ -44,7 +42,7 @@ describe('useOverflowScrollElementAttributes', () => {
     expect(webkitMaskImageStyle).toBeTruthy();
 
     // a11y
-    expect(baseArgs.overflowRef.current.tabIndex).toEqual(0);
+    expect(baseArgs.overflowRef.tabIndex).toEqual(0);
   });
 
   it('tabIndex={-1} if `hasInteractiveChildren` is true', () => {
@@ -53,7 +51,7 @@ describe('useOverflowScrollElementAttributes', () => {
       hasInteractiveChildren: true,
     };
     renderHook(() => useOverflowScrollElementAttributes(args));
-    expect(baseArgs.overflowRef.current.tabIndex).toEqual(-1);
+    expect(baseArgs.overflowRef.tabIndex).toEqual(-1);
   });
 
   it('applies `overflow-x: hidden` on the overflow container element when `disableScroll=true`', () => {
@@ -62,7 +60,7 @@ describe('useOverflowScrollElementAttributes', () => {
       disableScroll: true,
     };
     renderHook(() => useOverflowScrollElementAttributes(args));
-    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef.current);
+    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef);
     const overflowXStyle = overflowRefStyles.getPropertyValue('overflow-x');
     expect(overflowXStyle).toEqual('hidden');
   });
@@ -73,7 +71,7 @@ describe('useOverflowScrollElementAttributes', () => {
       disableOpacityMasks: true,
     };
     renderHook(() => useOverflowScrollElementAttributes(args));
-    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef.current);
+    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef);
     const maskImageStyle = overflowRefStyles.getPropertyValue('mask-image');
     expect(maskImageStyle).toBeFalsy();
     const webkitMaskImageStyle = overflowRefStyles.getPropertyValue('webkit-mask-image');
@@ -87,7 +85,7 @@ describe('useOverflowScrollElementAttributes', () => {
       isScrolledToEnd: false,
     };
     renderHook(() => useOverflowScrollElementAttributes(args));
-    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef.current);
+    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef);
     const maskImageStyle = overflowRefStyles.getPropertyValue('mask-image');
     expect(maskImageStyle).toEqual(OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_END);
     const webkitMaskImageStyle = overflowRefStyles.getPropertyValue('webkit-mask-image');
@@ -101,7 +99,7 @@ describe('useOverflowScrollElementAttributes', () => {
       isScrolledToEnd: true,
     };
     renderHook(() => useOverflowScrollElementAttributes(args));
-    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef.current);
+    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef);
     const maskImageStyle = overflowRefStyles.getPropertyValue('mask-image');
     expect(maskImageStyle).toEqual(OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START);
     const webkitMaskImageStyle = overflowRefStyles.getPropertyValue('webkit-mask-image');
@@ -115,7 +113,7 @@ describe('useOverflowScrollElementAttributes', () => {
       isScrolledToEnd: false,
     };
     renderHook(() => useOverflowScrollElementAttributes(args));
-    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef.current);
+    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef);
     const maskImageStyle = overflowRefStyles.getPropertyValue('mask-image');
     expect(maskImageStyle).toEqual(OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START_END);
     const webkitMaskImageStyle = overflowRefStyles.getPropertyValue('webkit-mask-image');
@@ -129,7 +127,7 @@ describe('useOverflowScrollElementAttributes', () => {
       isScrolledToEnd: true,
     };
     renderHook(() => useOverflowScrollElementAttributes(args));
-    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef.current);
+    const overflowRefStyles = global.getComputedStyle(baseArgs.overflowRef);
     const maskImageStyle = overflowRefStyles.getPropertyValue('mask-image');
     expect(maskImageStyle).toBeFalsy();
     const webkitMaskImageStyle = overflowRefStyles.getPropertyValue('webkit-mask-image');

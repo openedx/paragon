@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
-import { Card } from '~paragon-react'; // eslint-disable-line
+import { Card } from '~paragon-react';
 
 export interface IMiyazakiCard {
   className: string,
@@ -12,7 +11,7 @@ export interface IMiyazakiCard {
   },
 }
 
-const MiyazakiCard = ({ className, original }: IMiyazakiCard) => {
+function MiyazakiCard({ className, original }: IMiyazakiCard) {
   const { title, director, release_date: releaseDate } = original;
 
   return (
@@ -29,7 +28,7 @@ const MiyazakiCard = ({ className, original }: IMiyazakiCard) => {
       </Card.Section>
     </Card>
   );
-};
+}
 
 MiyazakiCard.defaultProps = {
   className: '',

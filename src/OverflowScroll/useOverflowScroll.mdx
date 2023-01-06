@@ -17,17 +17,17 @@ The following example demonstrates how to use `useOverflowScroll` to build a car
 
 ```jsx live
 () => {
+  const [overflowRef, setOverflowRef] = useState();
+
   const {
-    overflowRef,
     isScrolledToStart,
     isScrolledToEnd,
     scrollToPrevious,
     scrollToNext,
   } = useOverflowScroll({
     childQuerySelector: '.example-item',
+    overflowRef,
   });
-
-  console.log('overflowRef', overflowRef);
 
   const ExampleItem = ({ className }) => (
     <div
@@ -66,8 +66,7 @@ The following example demonstrates how to use `useOverflowScroll` to build a car
         </Button>
       </div>
       <div
-        ref={overflowRef}
-        role="region"
+        ref={setOverflowRef}
         aria-label="example overflow scroll container"
         className="d-flex"
       >
