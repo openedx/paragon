@@ -1,10 +1,8 @@
 import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
 import { Helmet } from 'react-helmet';
 import { IntlProvider } from 'react-intl';
-// @ts-ignore
-import { messages } from '~paragon-react'; // eslint-disable-line
+import { messages } from '~paragon-react';
 
 import { THEMES, DEFAULT_THEME } from '../../theme-config';
 
@@ -28,7 +26,7 @@ const defaultValue = {
 
 export const SettingsContext = createContext<IDefaultValue>(defaultValue);
 
-const SettingsContextProvider: React.FC = ({ children }) => {
+function SettingsContextProvider({ children }) {
   // gatsby does not have access to the localStorage during the build (and first render)
   // so sadly we cannot initialize theme with value from localStorage
   const [settings, setSettings] = useState({
@@ -97,7 +95,7 @@ const SettingsContextProvider: React.FC = ({ children }) => {
       </IntlProvider>
     </SettingsContext.Provider>
   );
-};
+}
 
 SettingsContextProvider.propTypes = {
   children: PropTypes.node.isRequired,

@@ -2,13 +2,13 @@ import React, {
   createContext, useState, useEffect, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
-import * as Components from '~paragon-react'; // eslint-disable-line
-import * as Icons from '~paragon-icons'; // eslint-disable-line
+import * as Components from '~paragon-react';
+import * as Icons from '~paragon-icons';
 import getParagonComponentsTypes from '../utils/getParagonComponentsTypes';
 
 const InsightsContext = createContext({});
 
-const InsightsContextProvider = ({ children }) => {
+function InsightsContextProvider({ children }) {
   const [paragonTypes, setParagonTypes] = useState({});
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const InsightsContextProvider = ({ children }) => {
       {children}
     </InsightsContext.Provider>
   );
-};
+}
 
 InsightsContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
