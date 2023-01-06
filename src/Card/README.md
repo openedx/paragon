@@ -597,8 +597,8 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
     </Card>
 )}
 ```
-
-## With Fallback Image
+## Fallback Image
+### With Fallback custom Image
 
 You can specify `fallbackSrc` image to show in case your main `src` fails to load.
 A fallback source is available for both the main `ImageCap` component image and the logo.
@@ -612,6 +612,35 @@ A fallback source is available for both the main `ImageCap` component image and 
       <Card.ImageCap
           src="fakeURL"
           fallbackSrc="https://picsum.photos/360/200/"
+          srcAlt="Card image"
+          logoSrc="fakeURL"
+          fallbackLogoSrc="https://www.edx.org/images/logos/edx-logo-elm.svg"
+          logoAlt="Card logo"
+      />
+      <Card.Header title="Title" subtitle="Subtitle" />
+      <Card.Section title="Section title">
+          This is a card section. It can contain anything but usually text, a list, or list of links.
+          Multiple sections have a card divider between them.
+      </Card.Section>
+      <Card.Footer>
+          <Button>Action 1</Button>
+      </Card.Footer>
+  </Card>
+)}
+```
+
+### With default Fallback Image
+
+The default fallback image will be displayed if `fallbackSrc` is not specified.
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({maxWidth: breakpoints.small.maxWidth});
+
+  return (
+    <Card style={{width: isExtraSmall ? "100%" : "40%"}}>
+      <Card.ImageCap
+          src="fakeURL"
           srcAlt="Card image"
           logoSrc="fakeURL"
           fallbackLogoSrc="https://www.edx.org/images/logos/edx-logo-elm.svg"
