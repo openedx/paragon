@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWorkspaces(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWorkspaces(props) {
     </svg>
   );
 }
+
 export default SvgWorkspaces;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPlagiarism(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgPlagiarism(props) {
     </svg>
   );
 }
+
 export default SvgPlagiarism;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgStreetview(props) {
   return (
     <svg
@@ -21,4 +22,5 @@ function SvgStreetview(props) {
     </svg>
   );
 }
+
 export default SvgStreetview;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgOutbox(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgOutbox(props) {
     </svg>
   );
 }
+
 export default SvgOutbox;

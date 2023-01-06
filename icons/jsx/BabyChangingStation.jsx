@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBabyChangingStation(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBabyChangingStation(props) {
     </svg>
   );
 }
+
 export default SvgBabyChangingStation;

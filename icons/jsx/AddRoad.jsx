@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAddRoad(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAddRoad(props) {
     </svg>
   );
 }
+
 export default SvgAddRoad;

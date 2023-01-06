@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMapsUgc(props) {
   return (
     <svg
@@ -21,4 +22,5 @@ function SvgMapsUgc(props) {
     </svg>
   );
 }
+
 export default SvgMapsUgc;

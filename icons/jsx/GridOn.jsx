@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgGridOn(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgGridOn(props) {
     </svg>
   );
 }
+
 export default SvgGridOn;

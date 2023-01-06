@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgImagesearchRoller(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgImagesearchRoller(props) {
     </svg>
   );
 }
+
 export default SvgImagesearchRoller;

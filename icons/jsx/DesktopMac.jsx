@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDesktopMac(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDesktopMac(props) {
     </svg>
   );
 }
+
 export default SvgDesktopMac;

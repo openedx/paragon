@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMargin(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMargin(props) {
     </svg>
   );
 }
+
 export default SvgMargin;

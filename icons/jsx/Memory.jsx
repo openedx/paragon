@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMemory(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMemory(props) {
     </svg>
   );
 }
+
 export default SvgMemory;

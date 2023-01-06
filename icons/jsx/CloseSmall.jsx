@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCloseSmall(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCloseSmall(props) {
     </svg>
   );
 }
+
 export default SvgCloseSmall;

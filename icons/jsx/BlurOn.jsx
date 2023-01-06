@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBlurOn(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBlurOn(props) {
     </svg>
   );
 }
+
 export default SvgBlurOn;

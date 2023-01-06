@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCalendarViewDay(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCalendarViewDay(props) {
     </svg>
   );
 }
+
 export default SvgCalendarViewDay;

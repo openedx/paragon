@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTiktok(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTiktok(props) {
     </svg>
   );
 }
+
 export default SvgTiktok;

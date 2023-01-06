@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMoodBad(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMoodBad(props) {
     </svg>
   );
 }
+
 export default SvgMoodBad;

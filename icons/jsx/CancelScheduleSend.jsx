@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCancelScheduleSend(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgCancelScheduleSend(props) {
     </svg>
   );
 }
+
 export default SvgCancelScheduleSend;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTaskAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTaskAlt(props) {
     </svg>
   );
 }
+
 export default SvgTaskAlt;

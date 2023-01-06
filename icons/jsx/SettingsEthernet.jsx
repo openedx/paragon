@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSettingsEthernet(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSettingsEthernet(props) {
     </svg>
   );
 }
+
 export default SvgSettingsEthernet;

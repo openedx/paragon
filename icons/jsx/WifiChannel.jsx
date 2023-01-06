@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWifiChannel(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWifiChannel(props) {
     </svg>
   );
 }
+
 export default SvgWifiChannel;

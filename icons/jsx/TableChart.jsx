@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTableChart(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTableChart(props) {
     </svg>
   );
 }
+
 export default SvgTableChart;

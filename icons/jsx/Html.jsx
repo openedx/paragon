@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHtml(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHtml(props) {
     </svg>
   );
 }
+
 export default SvgHtml;

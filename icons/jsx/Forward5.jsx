@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgForward5(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgForward5(props) {
     </svg>
   );
 }
+
 export default SvgForward5;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTextFields(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTextFields(props) {
     </svg>
   );
 }
+
 export default SvgTextFields;

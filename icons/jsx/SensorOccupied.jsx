@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSensorOccupied(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSensorOccupied(props) {
     </svg>
   );
 }
+
 export default SvgSensorOccupied;

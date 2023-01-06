@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHistoryToggleOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHistoryToggleOff(props) {
     </svg>
   );
 }
+
 export default SvgHistoryToggleOff;

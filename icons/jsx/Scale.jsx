@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgScale(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgScale(props) {
     </svg>
   );
 }
+
 export default SvgScale;

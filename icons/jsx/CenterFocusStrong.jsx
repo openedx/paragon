@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCenterFocusStrong(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCenterFocusStrong(props) {
     </svg>
   );
 }
+
 export default SvgCenterFocusStrong;

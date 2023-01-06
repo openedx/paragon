@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSynagogue(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSynagogue(props) {
     </svg>
   );
 }
+
 export default SvgSynagogue;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgVaccines(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgVaccines(props) {
     </svg>
   );
 }
+
 export default SvgVaccines;

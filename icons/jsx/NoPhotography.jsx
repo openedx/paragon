@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNoPhotography(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNoPhotography(props) {
     </svg>
   );
 }
+
 export default SvgNoPhotography;

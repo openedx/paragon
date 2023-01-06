@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgVapingRooms(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgVapingRooms(props) {
     </svg>
   );
 }
+
 export default SvgVapingRooms;

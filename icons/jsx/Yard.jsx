@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgYard(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgYard(props) {
     </svg>
   );
 }
+
 export default SvgYard;

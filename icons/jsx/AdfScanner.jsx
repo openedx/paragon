@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAdfScanner(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAdfScanner(props) {
     </svg>
   );
 }
+
 export default SvgAdfScanner;

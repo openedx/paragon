@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBackHand(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBackHand(props) {
     </svg>
   );
 }
+
 export default SvgBackHand;

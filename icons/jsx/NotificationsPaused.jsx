@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNotificationsPaused(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNotificationsPaused(props) {
     </svg>
   );
 }
+
 export default SvgNotificationsPaused;

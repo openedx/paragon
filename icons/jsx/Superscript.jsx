@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSuperscript(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSuperscript(props) {
     </svg>
   );
 }
+
 export default SvgSuperscript;

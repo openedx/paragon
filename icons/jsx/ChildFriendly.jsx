@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgChildFriendly(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgChildFriendly(props) {
     </svg>
   );
 }
+
 export default SvgChildFriendly;

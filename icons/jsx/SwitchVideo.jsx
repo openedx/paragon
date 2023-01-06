@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSwitchVideo(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSwitchVideo(props) {
     </svg>
   );
 }
+
 export default SvgSwitchVideo;

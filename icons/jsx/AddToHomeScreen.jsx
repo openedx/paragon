@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAddToHomeScreen(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAddToHomeScreen(props) {
     </svg>
   );
 }
+
 export default SvgAddToHomeScreen;

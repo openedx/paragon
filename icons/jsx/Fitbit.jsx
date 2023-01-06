@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFitbit(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFitbit(props) {
     </svg>
   );
 }
+
 export default SvgFitbit;

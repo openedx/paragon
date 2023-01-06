@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMerge(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMerge(props) {
     </svg>
   );
 }
+
 export default SvgMerge;

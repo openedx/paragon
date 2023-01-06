@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSafetyDivider(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSafetyDivider(props) {
     </svg>
   );
 }
+
 export default SvgSafetyDivider;

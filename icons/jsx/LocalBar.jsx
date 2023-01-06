@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalBar(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocalBar(props) {
     </svg>
   );
 }
+
 export default SvgLocalBar;

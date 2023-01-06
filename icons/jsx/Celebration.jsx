@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCelebration(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgCelebration(props) {
     </svg>
   );
 }
+
 export default SvgCelebration;

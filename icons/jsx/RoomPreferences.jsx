@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRoomPreferences(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRoomPreferences(props) {
     </svg>
   );
 }
+
 export default SvgRoomPreferences;

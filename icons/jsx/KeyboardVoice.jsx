@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgKeyboardVoice(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgKeyboardVoice(props) {
     </svg>
   );
 }
+
 export default SvgKeyboardVoice;

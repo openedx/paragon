@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBookOnline(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBookOnline(props) {
     </svg>
   );
 }
+
 export default SvgBookOnline;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSummarize(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSummarize(props) {
     </svg>
   );
 }
+
 export default SvgSummarize;

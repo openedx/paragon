@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgVideoFile(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgVideoFile(props) {
     </svg>
   );
 }
+
 export default SvgVideoFile;

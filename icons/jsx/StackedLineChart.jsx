@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgStackedLineChart(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgStackedLineChart(props) {
     </svg>
   );
 }
+
 export default SvgStackedLineChart;

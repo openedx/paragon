@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLessThan(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgLessThan(props) {
     </svg>
   );
 }
+
 export default SvgLessThan;

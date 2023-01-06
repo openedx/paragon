@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgVerifiedUser(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgVerifiedUser(props) {
     </svg>
   );
 }
+
 export default SvgVerifiedUser;

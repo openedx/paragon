@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFormatClear(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFormatClear(props) {
     </svg>
   );
 }
+
 export default SvgFormatClear;

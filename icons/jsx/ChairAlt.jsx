@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgChairAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgChairAlt(props) {
     </svg>
   );
 }
+
 export default SvgChairAlt;

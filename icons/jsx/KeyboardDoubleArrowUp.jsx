@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgKeyboardDoubleArrowUp(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgKeyboardDoubleArrowUp(props) {
     </svg>
   );
 }
+
 export default SvgKeyboardDoubleArrowUp;

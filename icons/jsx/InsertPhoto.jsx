@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgInsertPhoto(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgInsertPhoto(props) {
     </svg>
   );
 }
+
 export default SvgInsertPhoto;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAdb(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAdb(props) {
     </svg>
   );
 }
+
 export default SvgAdb;

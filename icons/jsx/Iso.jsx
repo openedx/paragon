@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgIso(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgIso(props) {
     </svg>
   );
 }
+
 export default SvgIso;

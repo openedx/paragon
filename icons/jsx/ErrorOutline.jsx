@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgErrorOutline(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgErrorOutline(props) {
     </svg>
   );
 }
+
 export default SvgErrorOutline;

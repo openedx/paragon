@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBungalow(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBungalow(props) {
     </svg>
   );
 }
+
 export default SvgBungalow;

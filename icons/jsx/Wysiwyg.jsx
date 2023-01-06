@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWysiwyg(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWysiwyg(props) {
     </svg>
   );
 }
+
 export default SvgWysiwyg;

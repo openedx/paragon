@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRadar(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRadar(props) {
     </svg>
   );
 }
+
 export default SvgRadar;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgChat(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgChat(props) {
     </svg>
   );
 }
+
 export default SvgChat;

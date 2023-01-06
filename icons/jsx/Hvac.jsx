@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHvac(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgHvac(props) {
     </svg>
   );
 }
+
 export default SvgHvac;

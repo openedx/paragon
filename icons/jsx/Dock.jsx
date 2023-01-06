@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDock(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDock(props) {
     </svg>
   );
 }
+
 export default SvgDock;

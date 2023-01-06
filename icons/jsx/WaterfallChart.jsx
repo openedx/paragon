@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWaterfallChart(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWaterfallChart(props) {
     </svg>
   );
 }
+
 export default SvgWaterfallChart;

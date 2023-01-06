@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSignLanguage(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSignLanguage(props) {
     </svg>
   );
 }
+
 export default SvgSignLanguage;

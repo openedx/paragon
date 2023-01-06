@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFormatSize(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFormatSize(props) {
     </svg>
   );
 }
+
 export default SvgFormatSize;

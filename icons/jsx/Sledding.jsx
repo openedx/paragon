@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSledding(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSledding(props) {
     </svg>
   );
 }
+
 export default SvgSledding;

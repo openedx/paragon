@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSanitizer(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSanitizer(props) {
     </svg>
   );
 }
+
 export default SvgSanitizer;

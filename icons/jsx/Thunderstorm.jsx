@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgThunderstorm(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgThunderstorm(props) {
     </svg>
   );
 }
+
 export default SvgThunderstorm;

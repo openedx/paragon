@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSportsMma(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSportsMma(props) {
     </svg>
   );
 }
+
 export default SvgSportsMma;

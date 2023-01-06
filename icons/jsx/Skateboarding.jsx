@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSkateboarding(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSkateboarding(props) {
     </svg>
   );
 }
+
 export default SvgSkateboarding;

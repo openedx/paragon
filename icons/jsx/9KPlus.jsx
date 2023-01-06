@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function Svg9KPlus(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function Svg9KPlus(props) {
     </svg>
   );
 }
+
 export default Svg9KPlus;

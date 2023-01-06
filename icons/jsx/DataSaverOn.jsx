@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDataSaverOn(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDataSaverOn(props) {
     </svg>
   );
 }
+
 export default SvgDataSaverOn;

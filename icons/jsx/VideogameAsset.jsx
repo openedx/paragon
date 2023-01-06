@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgVideogameAsset(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgVideogameAsset(props) {
     </svg>
   );
 }
+
 export default SvgVideogameAsset;

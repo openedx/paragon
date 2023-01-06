@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWc(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWc(props) {
     </svg>
   );
 }
+
 export default SvgWc;

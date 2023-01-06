@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgArchitecture(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgArchitecture(props) {
     </svg>
   );
 }
+
 export default SvgArchitecture;

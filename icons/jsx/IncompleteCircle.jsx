@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgIncompleteCircle(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgIncompleteCircle(props) {
     </svg>
   );
 }
+
 export default SvgIncompleteCircle;

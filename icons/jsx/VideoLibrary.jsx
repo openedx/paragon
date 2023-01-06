@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgVideoLibrary(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgVideoLibrary(props) {
     </svg>
   );
 }
+
 export default SvgVideoLibrary;

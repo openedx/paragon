@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgManageAccounts(props) {
   return (
     <svg
@@ -21,4 +22,5 @@ function SvgManageAccounts(props) {
     </svg>
   );
 }
+
 export default SvgManageAccounts;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPlaylistRemove(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPlaylistRemove(props) {
     </svg>
   );
 }
+
 export default SvgPlaylistRemove;

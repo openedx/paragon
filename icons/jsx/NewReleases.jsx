@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNewReleases(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNewReleases(props) {
     </svg>
   );
 }
+
 export default SvgNewReleases;

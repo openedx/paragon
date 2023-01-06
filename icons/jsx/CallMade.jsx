@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCallMade(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCallMade(props) {
     </svg>
   );
 }
+
 export default SvgCallMade;

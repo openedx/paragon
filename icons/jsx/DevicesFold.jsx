@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDevicesFold(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDevicesFold(props) {
     </svg>
   );
 }
+
 export default SvgDevicesFold;

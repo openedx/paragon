@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgGpsNotFixed(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgGpsNotFixed(props) {
     </svg>
   );
 }
+
 export default SvgGpsNotFixed;

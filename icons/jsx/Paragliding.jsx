@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgParagliding(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgParagliding(props) {
     </svg>
   );
 }
+
 export default SvgParagliding;

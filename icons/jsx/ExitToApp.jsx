@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgExitToApp(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgExitToApp(props) {
     </svg>
   );
 }
+
 export default SvgExitToApp;

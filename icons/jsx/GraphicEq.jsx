@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgGraphicEq(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgGraphicEq(props) {
     </svg>
   );
 }
+
 export default SvgGraphicEq;

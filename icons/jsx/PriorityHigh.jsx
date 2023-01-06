@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPriorityHigh(props) {
   return (
     <svg
@@ -14,4 +15,5 @@ function SvgPriorityHigh(props) {
     </svg>
   );
 }
+
 export default SvgPriorityHigh;

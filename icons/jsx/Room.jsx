@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRoom(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRoom(props) {
     </svg>
   );
 }
+
 export default SvgRoom;

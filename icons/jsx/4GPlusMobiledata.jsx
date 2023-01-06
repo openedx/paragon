@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function Svg4GPlusMobiledata(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function Svg4GPlusMobiledata(props) {
     </svg>
   );
 }
+
 export default Svg4GPlusMobiledata;
