@@ -5,9 +5,9 @@ import Layout from '../../components/PageLayout';
 import {
   Button, Form, Container,
   Toast, Icon, IconButtonWithTooltip,
-// eslint-disable-next-line import/no-unresolved
+// @ts-ignore
 } from '~paragon-react';
-// eslint-disable-next-line import/no-unresolved
+// @ts-ignore
 import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
@@ -22,10 +22,10 @@ const controlsProps = [
   { key: 'color', name: 'Color' },
 ];
 
-const BoxShadowNode = () => {
+function BoxShadowNode() {
   const [showToast, setShowToast] = useState(false);
 
-  const isBoxShadowCopied = (level, side) => {
+  const isBoxShadowCopied = (level: number, side: string) => {
     navigator.clipboard.writeText(`@include pgn-box-shadow(${level}, "${side}");`);
     setShowToast(true);
   };
@@ -61,9 +61,28 @@ const BoxShadowNode = () => {
       </Toast>
     </div>
   );
-};
+}
 
-const BoxShadowToolkit = ({
+export interface IBoxShadowToolkit {
+  id: number,
+  updateBoxShadow: (shadow: IBoxShadowModel, id: number) => void,
+  removeBoxShadowLayer: (id: number) => void,
+  disableBoxShadowLayer: (id: number) => void,
+  enableBoxShadowLayer: (id: number) => void,
+  isDisabled: boolean,
+  canDelete: boolean,
+}
+
+export interface IBoxShadowModel {
+  x: number,
+  y: number,
+  blur: number,
+  spread: number,
+  color: string,
+  inset: boolean,
+}
+
+function BoxShadowToolkit({
   id,
   updateBoxShadow,
   removeBoxShadowLayer,
@@ -71,8 +90,8 @@ const BoxShadowToolkit = ({
   enableBoxShadowLayer,
   isDisabled,
   canDelete,
-}) => {
-  const [boxShadowModel, setBoxShadowModel] = useState({
+}: IBoxShadowToolkit) {
+  const [boxShadowModel, setBoxShadowModel] = useState<IBoxShadowModel>({
     x: 0,
     y: 0,
     blur: 0,
@@ -81,7 +100,7 @@ const BoxShadowToolkit = ({
     inset: false,
   });
 
-  const updateBoxShadowModel = (property, value) => {
+  const updateBoxShadowModel = (property: string, value: boolean | string) => {
     global.analytics.track('openedx.paragon.elevation.generator.updated', { property, value });
 
     const newBoxShadowModel = {
@@ -109,7 +128,7 @@ const BoxShadowToolkit = ({
             max="100"
             type={key === 'color' ? 'color' : 'range'}
             defaultValue="0"
-            onChange={(e) => updateBoxShadowModel(key, e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateBoxShadowModel(key, e.target.value)}
             disabled={isDisabled}
           />
         </Form.Group>
@@ -162,7 +181,7 @@ const BoxShadowToolkit = ({
       </div>
     </section>
   );
-};
+}
 
 BoxShadowToolkit.propTypes = {
   updateBoxShadow: PropTypes.func.isRequired,
@@ -174,10 +193,10 @@ BoxShadowToolkit.propTypes = {
   canDelete: PropTypes.bool.isRequired,
 };
 
-const BoxShadowGenerator = () => {
+function BoxShadowGenerator() {
   const [boxShadows, setBoxShadows] = useState([{ id: 1, enabled: true, style: DEFAULT_BOX_SHADOW }]);
 
-  const updateBoxShadow = (shadow, id) => {
+  const updateBoxShadow = (shadow: IBoxShadowModel, id: number) => {
     setBoxShadows(boxShadows.map(item => {
       if (id === item.id) {
         return {
@@ -199,12 +218,12 @@ const BoxShadowGenerator = () => {
     ]);
   };
 
-  const removeBoxShadowLayer = (toolkitId) => {
+  const removeBoxShadowLayer = (toolkitId: number) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.removed');
     setBoxShadows(boxShadows.filter((shadow) => shadow.id !== toolkitId));
   };
 
-  const disableBoxShadowLayer = (toolkitId) => {
+  const disableBoxShadowLayer = (toolkitId: number) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.disabled');
     const updatedBoxShadows = boxShadows
       .map((shadow) => {
@@ -216,7 +235,7 @@ const BoxShadowGenerator = () => {
     setBoxShadows(updatedBoxShadows);
   };
 
-  const enableBoxShadowLayer = (toolkitId) => {
+  const enableBoxShadowLayer = (toolkitId: string | number) => {
     global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.enabled');
     const updatedBoxShadows = boxShadows
       .map((shadow) => {
@@ -262,7 +281,7 @@ const BoxShadowGenerator = () => {
       </div>
     </section>
   );
-};
+}
 
 export default function ElevationPage() {
   const levelTitle = boxShadowLevels.map(level => (
@@ -307,28 +326,29 @@ export default function ElevationPage() {
 
         <h4>Mixin</h4>
         <code className="d-block mb-4 lead bg-gray-100 p-3">
-          pgn-box-shadow($level, $side)
+          pgn-box-shadow($level, $direction)
         </code>
+
         <div className="pgn-doc__box-shadow--table-wrapper">
-          <table className="pgn-doc__table table">
+          <table className="pgn-doc__table mb-2 w-100">
             <tbody>
               <tr>
-                <td>
+                <td className="p-3">
                   <strong>Direction name</strong>
                 </td>
-                <td>
+                <td className="p-3">
                   {boxShadowSides.map(side => (
                     <code key={side} className="mr-2">{side}</code>
                   ))}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td className="p-3">
                   <strong>Levels</strong>
                   <br />
                   <p>Box-shadows elevation levels</p>
                 </td>
-                <td>
+                <td className="p-3 align-baseline">
                   {boxShadowLevels.map(level => (
                     <code key={level} className="mr-2">{level}</code>
                   ))}
