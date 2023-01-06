@@ -1,7 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-// @ts-ignore
-import { Table, Container } from '~paragon-react'; // eslint-disable-line
+import { Table, Container } from '~paragon-react';
 import { ComponentStatus } from '../components/doc-elements';
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';

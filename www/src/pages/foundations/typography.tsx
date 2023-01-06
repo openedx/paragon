@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-// @ts-ignore
-import { Container } from '~paragon-react'; // eslint-disable-line
+import { Container } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';

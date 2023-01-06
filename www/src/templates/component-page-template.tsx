@@ -1,11 +1,15 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
-// @ts-ignore
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-// @ts-ignore
-import { Container, Alert, breakpoints, useMediaQuery } from '~paragon-react'; // eslint-disable-line
+import {
+  Container,
+  Alert,
+  breakpoints,
+  useMediaQuery,
+} from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 import { DEFAULT_THEME } from '../../theme-config';
 import CodeBlock from '../components/CodeBlock';
@@ -58,12 +62,12 @@ export default function PageTemplate({
     }, {});
 
   const shortcodes = React.useMemo(() => {
-    const PropsTable = ({ displayName, ...props }: ShortCodesTypes) => { // eslint-disable-line react/prop-types
+    function PropsTable({ displayName, ...props }: ShortCodesTypes) { // eslint-disable-line react/prop-types
       if (components[displayName]) {
         return <GenericPropsTable {...components[displayName]} {...props} />;
       }
       return null;
-    };
+    }
     // Provide common components here
     return {
       h2: (props: HTMLElement) => <LinkedHeading h="2" {...props} />,

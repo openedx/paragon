@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// @ts-ignore
-import { Form } from '~paragon-react'; // eslint-disable-line
+import { Form } from '~paragon-react';
 import CodeBlock from './CodeBlock';
 
 export interface IColumn {

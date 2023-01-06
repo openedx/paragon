@@ -22,7 +22,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
-
+    "baseUrl": "src",
+    "paths": {
+      "~paragon-react": ["../../src"],
+      "~paragon-style": ["../../scss"],
+      "~paragon-icons": ["../../icons"]
+    }
   },
   "include": [
     "src"
