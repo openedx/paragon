@@ -1,28 +1,20 @@
 {
-  "text": {
-    "muted": { "value": "{color.gray.500.value}", "source": "$text-muted" }
+  "color": {
+    "text-muted": { "value": "{color.gray.500.value}", "source": "$text-muted" },
+    "mark-bg": { "value": "#FFF243", "source": "$mark-bg" }
   },
-  "paragraph": {
-    "margin": {
-      "bottom": { "value": "1rem", "source": "$paragraph-margin-bottom" }
-    }
-  },
-  "blockquote": {
-    "small": {
-      "font": {
-        "size": {
-          "value": "{font.size.small.base.value}", "source": "$blockquote-small-font-size"
-        }
-      }
+  "spacing": {
+    "paragraph": {
+      "margin-bottom": { "value": "1rem", "source": "$paragraph-margin-bottom" }
     },
-    "font": {
-      "size": {
-        "value": "calc({font.size.base.value} * 1.25)", "source": "$blockquote-font-size"
-      }
-    }
+    "mark-padding": { "value": ".2em", "source": "$mark-padding" }
   },
-  "mark": {
-    "padding": { "value": ".2em", "source": "$mark-padding" },
-    "bg": { "value": "#FFF243", "source": "$mark-bg" }
+  "typography": {
+    "blockquote": {
+      "small": {
+        "font-size": { "value": "{typography.font.size.small.base.value}", "source": "$blockquote-small-font-size" }
+      },
+      "font-size": { "value": "calc({typography.font.size.base.value} * 1.25)", "source": "$blockquote-font-size" }
+    }
   }
 }

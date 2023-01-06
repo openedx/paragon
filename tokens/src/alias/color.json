@@ -1,6 +1,6 @@
 {
   "color": {
-    "background": {
+    "bg": {
       "base": { "value": "{color.white.value}" },
       "active": { "value": "{color.primary.500.value}", "source": "$component-active-bg" }
     },
@@ -26,13 +26,12 @@
     },
     "active": { "value": "{color.white.value}", "source": "$component-active-color" },
     "disabled": { "value": "{color.gray.500.value}" },
-    "link": { "value": "{color.info.500.value}" },
     "input": {
       "focus": { "value": "{color.primary.500.value}" }
     },
     "border": { "value": "{color.gray.200.value}", "source": "$border-color" },
     "theme": {
-      "background": {
+      "bg": {
         "primary": { "value": "{color.primary.100.value}" },
         "secondary": { "value": "{color.secondary.100.value}" },
         "brand": { "value": "{color.brand.100.value}" },

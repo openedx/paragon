@@ -14,7 +14,7 @@
   },
   "typography": {
     "progress-bar": {
-      "font-size": { "value": "calc({font.size.base.value} * .75)", "source": "$progress-font-size" }
+      "font-size": { "value": "calc({typography.font.size.base.value} * .75)", "source": "$progress-font-size" }
     }
   },
   "size": {

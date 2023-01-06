@@ -339,7 +339,7 @@ $enable-deprecation-messages:                 true !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer: var(--pgn-spacer-base) !default;
+$spacer: var(--pgn-spacing-spacer-base) !default;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
@@ -378,54 +378,54 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg: var(--pgn-body-bg) !default;
-$body-color: var(--pgn-body-color) !default;
+$body-bg: var(--pgn-color-body-bg) !default;
+$body-color: var(--pgn-color-body-base) !default;
 
 // Links
 //
 // Style anchor elements.
 
-$link-color: var(--pgn-link-color) !default;
-$link-decoration: var(--pgn-link-decoration) !default;
-$link-hover-color: var(--pgn-link-hover-color) !default;
-$link-hover-decoration: var(--pgn-link-hover-decoration) !default;
-$inline-link-color: var(--pgn-link-inline-color) !default;
-$inline-link-decoration: var(--pgn-link-inline-decoration) !default;
-$inline-link-decoration-color: var(--pgn-link-inline-decoration-color) !default;
-$inline-link-hover-color: var(--pgn-link-inline-hover-color) !default;
-$inline-link-hover-decoration: var(--pgn-link-inline-hover-decoration) !default;
-$inline-link-hover-decoration-color: var(--pgn-link-inline-hover-decoration-color) !default;
+$link-color: var(--pgn-color-link-base) !default;
+$link-decoration: var(--pgn-typography-link-decoration-base) !default;
+$link-hover-color: var(--pgn-color-link-hover) !default;
+$link-hover-decoration: var(--pgn-typography-link-decoration-hover) !default;
+$inline-link-color: var(--pgn-color-link-inline-base) !default;
+$inline-link-decoration: var(--pgn-typography-link-decoration-inline-base) !default;
+$inline-link-decoration-color: var(--pgn-color-link-inline-decoration) !default;
+$inline-link-hover-color: var(--pgn-color-link-inline-hover-base) !default;
+$inline-link-hover-decoration: var(--pgn-typography-link-decoration-inline-hover) !default;
+$inline-link-hover-decoration-color: var(--pgn-color-link-inline-hover-decoration) !default;
 
-$muted-link-color: var(--pgn-link-muted-color) !default;
-$muted-link-decoration: var(--pgn-link-muted-decoration) !default;
-$muted-link-hover-color: var(--pgn-link-muted-hover-color) !default;
-$muted-link-hover-decoration: var(--pgn-link-muted-hover-decoration) !default;
-$muted-inline-link-color: var(--pgn-link-muted-inline-color) !default;
-$muted-inline-link-decoration: var(--pgn-link-muted-inline-decoration) !default;
-$muted-inline-link-decoration-color: var(--pgn-link-muted-inline-decoration-color) !default;
-$muted-inline-link-hover-color: var(--pgn-link-muted-inline-hover-color) !default;
-$muted-inline-link-hover-decoration: var(--pgn-link-muted-inline-hover-decoration) !default;
-$muted-inline-link-hover-decoration-color: var(--pgn-link-muted-inline-hover-decoration-color) !default;
+$muted-link-color: var(--pgn-color-link-muted-base) !default;
+$muted-link-decoration: var(--pgn-typography-link-decoration-muted-base) !default;
+$muted-link-hover-color: var(--pgn-color-link-muted-hover) !default;
+$muted-link-hover-decoration: var(--pgn-typography-link-decoration-muted-hover) !default;
+$muted-inline-link-color: var(--pgn-color-link-muted-inline-base) !default;
+$muted-inline-link-decoration: var(--pgn-typography-link-decoration-muted-inline-base) !default;
+$muted-inline-link-decoration-color: var(--pgn-color-link-muted-inline-decoration) !default;
+$muted-inline-link-hover-color: var(--pgn-color-link-muted-inline-hover-base) !default;
+$muted-inline-link-hover-decoration: var(--pgn-typography-link-decoration-muted-inline-hover) !default;
+$muted-inline-link-hover-decoration-color: var(--pgn-color-link-muted-inline-hover-decoration) !default;
 
-$brand-link-color: var(--pgn-link-brand-color) !default;
-$brand-link-decoration: var(--pgn-link-brand-decoration) !default;
-$brand-link-hover-color: var(--pgn-link-brand-hover-color) !default;
-$brand-link-hover-decoration: var(--pgn-link-brand-hover-decoration) !default;
-$brand-inline-link-color: var(--pgn-link-brand-inline-color) !default;
-$brand-inline-link-decoration: var(--pgn-link-brand-inline-decoration) !default;
-$brand-inline-link-decoration-color: var(--pgn-link-brand-inline-decoration-color) !default;
-$brand-inline-link-hover-color: var(--pgn-link-brand-inline-hover-color) !default;
-$brand-inline-link-hover-decoration: var(--pgn-link-brand-inline-hover-decoration) !default;
-$brand-inline-link-hover-decoration-color: var(--pgn-link-brand-inline-hover-decoration-color) !default;
+$brand-link-color: var(--pgn-color-link-brand-base) !default;
+$brand-link-decoration: var(--pgn-typography-link-decoration-brand-base) !default;
+$brand-link-hover-color: var(--pgn-color-link-brand-hover) !default;
+$brand-link-hover-decoration: var(--pgn-typography-link-decoration-brand-hover) !default;
+$brand-inline-link-color: var(--pgn-color-link-brand-inline-base) !default;
+$brand-inline-link-decoration: var(--pgn-typography-link-decoration-brand-inline-base) !default;
+$brand-inline-link-decoration-color: var(--pgn-color-link-brand-inline-decoration) !default;
+$brand-inline-link-hover-color: var(--pgn-color-link-brand-inline-hover-base) !default;
+$brand-inline-link-hover-decoration: var(--pgn-typography-link-decoration-brand-inline-hover) !default;
+$brand-inline-link-hover-decoration-color: var(--pgn-color-link-brand-inline-hover-decoration) !default;
 
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
-$emphasized-link-hover-darken-percentage: var(--pgn-link-emphasized-hover-darken-percentage) !default;
+$emphasized-link-hover-darken-percentage: var(--pgn-other-link-emphasized-hover-darken-percentage) !default;
 
 // Paragraphs
 //
 // Style p element.
 
-$paragraph-margin-bottom: var(--pgn-paragraph-margin-bottom) !default;
+$paragraph-margin-bottom: var(--pgn-spacing-paragraph-margin-bottom) !default;
 
 // Grid containers
 //
@@ -458,8 +458,8 @@ $max-width-xl: var(--pgn-size-container-max-width-xl) !default;
 //
 // Define common padding and border radius sizes and more.
 
-$line-height-lg: var(--pgn-line-height-lg) !default;
-$line-height-sm: var(--pgn-line-height-sm) !default;
+$line-height-lg: var(--pgn-typography-line-height-lg) !default;
+$line-height-sm: var(--pgn-typography-line-height-sm) !default;
 
 $border-width: var(--pgn-size-border-width) !default;
 $border-color: var(--pgn-color-border) !default;
@@ -470,41 +470,41 @@ $border-radius-sm: var(--pgn-size-border-radius-sm) !default;
 
 $rounded-pill:                50rem !default;
 
-$level-1-box-shadow: var(--pgn-box-shadow-level-1) !default;
-$level-2-box-shadow: var(--pgn-box-shadow-level-2) !default;
-$level-3-box-shadow: var(--pgn-box-shadow-level-3) !default;
-$level-4-box-shadow: var(--pgn-box-shadow-level-4) !default;
-$level-5-box-shadow: var(--pgn-box-shadow-level-5) !default;
+$level-1-box-shadow: var(--pgn-elevation-box-shadow-level-1) !default;
+$level-2-box-shadow: var(--pgn-elevation-box-shadow-level-2) !default;
+$level-3-box-shadow: var(--pgn-elevation-box-shadow-level-3) !default;
+$level-4-box-shadow: var(--pgn-elevation-box-shadow-level-4) !default;
+$level-5-box-shadow: var(--pgn-elevation-box-shadow-level-5) !default;
 
-$box-shadow-down-1: var(--pgn-box-shadow-down-1) !default;
-$box-shadow-down-2: var(--pgn-box-shadow-down-2) !default;
-$box-shadow-down-3: var(--pgn-box-shadow-down-3) !default;
-$box-shadow-down-4: var(--pgn-box-shadow-down-4) !default;
-$box-shadow-down-5: var(--pgn-box-shadow-down-5) !default;
+$box-shadow-down-1: var(--pgn-elevation-box-shadow-down-1) !default;
+$box-shadow-down-2: var(--pgn-elevation-box-shadow-down-2) !default;
+$box-shadow-down-3: var(--pgn-elevation-box-shadow-down-3) !default;
+$box-shadow-down-4: var(--pgn-elevation-box-shadow-down-4) !default;
+$box-shadow-down-5: var(--pgn-elevation-box-shadow-down-5) !default;
 
-$box-shadow-left-1: var(--pgn-box-shadow-left-1) !default;
-$box-shadow-left-2: var(--pgn-box-shadow-left-2) !default;
-$box-shadow-left-3: var(--pgn-box-shadow-left-3) !default;
-$box-shadow-left-4: var(--pgn-box-shadow-left-4) !default;
-$box-shadow-left-5: var(--pgn-box-shadow-left-5) !default;
+$box-shadow-left-1: var(--pgn-elevation-box-shadow-left-1) !default;
+$box-shadow-left-2: var(--pgn-elevation-box-shadow-left-2) !default;
+$box-shadow-left-3: var(--pgn-elevation-box-shadow-left-3) !default;
+$box-shadow-left-4: var(--pgn-elevation-box-shadow-left-4) !default;
+$box-shadow-left-5: var(--pgn-elevation-box-shadow-left-5) !default;
 
-$box-shadow-up-1: var(--pgn-box-shadow-up-1) !default;
-$box-shadow-up-2: var(--pgn-box-shadow-up-2) !default;
-$box-shadow-up-3: var(--pgn-box-shadow-up-3) !default;
-$box-shadow-up-4: var(--pgn-box-shadow-up-4) !default;
-$box-shadow-up-5: var(--pgn-box-shadow-up-5) !default;
+$box-shadow-up-1: var(--pgn-elevation-box-shadow-up-1) !default;
+$box-shadow-up-2: var(--pgn-elevation-box-shadow-up-2) !default;
+$box-shadow-up-3: var(--pgn-elevation-box-shadow-up-3) !default;
+$box-shadow-up-4: var(--pgn-elevation-box-shadow-up-4) !default;
+$box-shadow-up-5: var(--pgn-elevation-box-shadow-up-5) !default;
 
-$box-shadow-right-1: var(--pgn-box-shadow-right-1) !default;
-$box-shadow-right-2: var(--pgn-box-shadow-right-2) !default;
-$box-shadow-right-3: var(--pgn-box-shadow-right-3) !default;
-$box-shadow-right-4: var(--pgn-box-shadow-right-4) !default;
-$box-shadow-right-5: var(--pgn-box-shadow-right-5) !default;
+$box-shadow-right-1: var(--pgn-elevation-box-shadow-right-1) !default;
+$box-shadow-right-2: var(--pgn-elevation-box-shadow-right-2) !default;
+$box-shadow-right-3: var(--pgn-elevation-box-shadow-right-3) !default;
+$box-shadow-right-4: var(--pgn-elevation-box-shadow-right-4) !default;
+$box-shadow-right-5: var(--pgn-elevation-box-shadow-right-5) !default;
 
-$box-shadow-centered-1: var(--pgn-box-shadow-centered-1) !default;
-$box-shadow-centered-2: var(--pgn-box-shadow-centered-2) !default;
-$box-shadow-centered-3: var(--pgn-box-shadow-centered-3) !default;
-$box-shadow-centered-4: var(--pgn-box-shadow-centered-4) !default;
-$box-shadow-centered-5: var(--pgn-box-shadow-centered-5) !default;
+$box-shadow-centered-1: var(--pgn-elevation-box-shadow-centered-1) !default;
+$box-shadow-centered-2: var(--pgn-elevation-box-shadow-centered-2) !default;
+$box-shadow-centered-3: var(--pgn-elevation-box-shadow-centered-3) !default;
+$box-shadow-centered-4: var(--pgn-elevation-box-shadow-centered-4) !default;
+$box-shadow-centered-5: var(--pgn-elevation-box-shadow-centered-5) !default;
 
 @mixin pgn-box-shadow($level, $side) {
   @if $side == "down" {
@@ -654,16 +654,16 @@ $box-shadow-sides: (
   "centered"
 ) !default;
 
-$box-shadow-sm: var(--pgn-box-shadow-sm) !default;
-$box-shadow: var(--pgn-box-shadow-base) !default;
-$box-shadow-lg: var(--pgn-box-shadow-lg) !default;
+$box-shadow-sm: var(--pgn-elevation-box-shadow-sm) !default;
+$box-shadow: var(--pgn-elevation-box-shadow-base) !default;
+$box-shadow-lg: var(--pgn-elevation-box-shadow-lg) !default;
 
 $component-active-color: var(--pgn-color-active) !default;
-$component-active-bg: var(--pgn-color-background-active) !default;
+$component-active-bg: var(--pgn-color-bg-active) !default;
 
-$caret-width: var(--pgn-caret-width) !default;
-$caret-vertical-align: var(--pgn-caret-vertical-align) !default;
-$caret-spacing: var(--pgn-caret-spacing) !default;
+$caret-width: var(--pgn-size-caret-width) !default;
+$caret-vertical-align: var(--pgn-spacing-caret-vertical-align) !default;
+$caret-spacing: var(--pgn-spacing-caret-base) !default;
 
 $transition-base: var(--pgn-transition-base) !default;
 $transition-fade: var(--pgn-transition-fade) !default;
@@ -686,96 +686,96 @@ $embed-responsive-aspect-ratios: join(
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: var(--pgn-font-family-sans-serif) !default;
-$font-family-serif: var(--pgn-font-family-serif) !default;
-$font-family-monospace: var(--pgn-font-family-monospace) !default;
-$font-family-base: var(--pgn-font-family-base) !default;
+$font-family-sans-serif: var(--pgn-typography-font-family-sans-serif) !default;
+$font-family-serif: var(--pgn-typography-font-family-serif) !default;
+$font-family-monospace: var(--pgn-typography-font-family-monospace) !default;
+$font-family-base: var(--pgn-typography-font-family-base) !default;
 
-$font-size-base: var(--pgn-font-size-base) !default;
-$font-size-lg: var(--pgn-font-size-lg) !default;
-$font-size-sm: var(--pgn-font-size-sm) !default;
-$font-size-xs: var(--pgn-font-size-xs) !default;
+$font-size-base: var(--pgn-typography-font-size-base) !default;
+$font-size-lg: var(--pgn-typography-font-size-lg) !default;
+$font-size-sm: var(--pgn-typography-font-size-sm) !default;
+$font-size-xs: var(--pgn-typography-font-size-xs) !default;
 
-$font-weight-lighter: var(--pgn-font-weight-lighter) !default;
-$font-weight-light: var(--pgn-font-weight-light) !default;
-$font-weight-normal: var(--pgn-font-weight-normal) !default;
-$font-weight-semi-bold: var(--pgn-font-weight-semi-bold) !default;
-$font-weight-bold: var(--pgn-font-weight-bold) !default;
-$font-weight-bolder: var(--pgn-font-weight-bolder) !default;
+$font-weight-lighter: var(--pgn-typography-font-weight-lighter) !default;
+$font-weight-light: var(--pgn-typography-font-weight-light) !default;
+$font-weight-normal: var(--pgn-typography-font-weight-normal) !default;
+$font-weight-semi-bold: var(--pgn-typography-font-weight-semi-bold) !default;
+$font-weight-bold: var(--pgn-typography-font-weight-bold) !default;
+$font-weight-bolder: var(--pgn-typography-font-weight-bolder) !default;
 
-$font-weight-base: var(--pgn-font-weight-base) !default;
-$line-height-base: var(--pgn-line-height-base) !default;
+$font-weight-base: var(--pgn-typography-font-weight-base) !default;
+$line-height-base: var(--pgn-typography-line-height-base) !default;
 
-$h1-font-size: var(--pgn-font-size-h1) !default;
-$h2-font-size: var(--pgn-font-size-h2) !default;
-$h3-font-size: var(--pgn-font-size-h3) !default;
-$h4-font-size: var(--pgn-font-size-h4) !default;
-$h5-font-size: var(--pgn-font-size-h5) !default;
-$h6-font-size: var(--pgn-font-size-h6) !default;
+$h1-font-size: var(--pgn-typography-font-size-h1) !default;
+$h2-font-size: var(--pgn-typography-font-size-h2) !default;
+$h3-font-size: var(--pgn-typography-font-size-h3) !default;
+$h4-font-size: var(--pgn-typography-font-size-h4) !default;
+$h5-font-size: var(--pgn-typography-font-size-h5) !default;
+$h6-font-size: var(--pgn-typography-font-size-h6) !default;
 
-$h1-mobile-font-size: var(--pgn-font-size-mobile-h1) !default;
-$h2-mobile-font-size: var(--pgn-font-size-mobile-h2) !default;
-$h3-mobile-font-size: var(--pgn-font-size-mobile-h3) !default;
-$h4-mobile-font-size: var(--pgn-font-size-mobile-h4) !default;
-$h5-mobile-font-size: var(--pgn-font-size-mobile-h5) !default;
-$h6-mobile-font-size: var(--pgn-font-size-mobile-h6) !default;
+$h1-mobile-font-size: var(--pgn-typography-font-size-mobile-h1) !default;
+$h2-mobile-font-size: var(--pgn-typography-font-size-mobile-h2) !default;
+$h3-mobile-font-size: var(--pgn-typography-font-size-mobile-h3) !default;
+$h4-mobile-font-size: var(--pgn-typography-font-size-mobile-h4) !default;
+$h5-mobile-font-size: var(--pgn-typography-font-size-mobile-h5) !default;
+$h6-mobile-font-size: var(--pgn-typography-font-size-mobile-h6) !default;
 
-$headings-margin-bottom: var(--pgn-headings-margin-bottom) !default;
-$headings-font-family: var(--pgn-headings-font-family) !default;
-$headings-font-weight: var(--pgn-headings-font-weight) !default;
-$headings-line-height: var(--pgn-headings-line-height) !default;
-$headings-color: var(--pgn-headings-color) !default;
+$headings-margin-bottom: var(--pgn-spacing-headings-margin-bottom) !default;
+$headings-font-family: var(--pgn-typography-headings-font-family) !default;
+$headings-font-weight: var(--pgn-typography-headings-font-weight) !default;
+$headings-line-height: var(--pgn-typography-headings-line-height) !default;
+$headings-color: var(--pgn-color-headings-base) !default;
 
-$display1-size: var(--pgn-display-size-1) !default;
-$display2-size: var(--pgn-display-size-2) !default;
-$display3-size: var(--pgn-display-size-3) !default;
-$display4-size: var(--pgn-display-size-4) !default;
+$display1-size: var(--pgn-typography-display-1) !default;
+$display2-size: var(--pgn-typography-display-2) !default;
+$display3-size: var(--pgn-typography-display-3) !default;
+$display4-size: var(--pgn-typography-display-4) !default;
 
-$display-mobile-size: var(--pgn-display-size-mobile) !default;
+$display-mobile-size: var(--pgn-typography-display-mobile) !default;
 
-$display1-weight: var(--pgn-display-weight-1) !default;
-$display2-weight: var(--pgn-display-weight-2) !default;
-$display3-weight: var(--pgn-display-weight-3) !default;
-$display4-weight: var(--pgn-display-weight-4) !default;
+$display1-weight: var(--pgn-typography-display-weight-1) !default;
+$display2-weight: var(--pgn-typography-display-weight-2) !default;
+$display3-weight: var(--pgn-typography-display-weight-3) !default;
+$display4-weight: var(--pgn-typography-display-weight-4) !default;
 
-$display-line-height: var(--pgn-display-line-height-base) !default;
-$display-mobile-line-height: var(--pgn-display-line-height-mobile) !default;
+$display-line-height: var(--pgn-typography-display-line-height-base) !default;
+$display-mobile-line-height: var(--pgn-typography-display-line-height-mobile) !default;
 
-$lead-font-size: var(--pgn-font-size-lead) !default;
-$lead-font-weight: var(--pgn-font-weight-lead) !default;
+$lead-font-size: var(--pgn-typography-font-size-lead) !default;
+$lead-font-weight: var(--pgn-typography-font-weight-lead) !default;
 
-$small-font-size: var(--pgn-font-size-small-base) !default;
-$x-small-font-size: var(--pgn-font-size-small-x) !default;
+$small-font-size: var(--pgn-typography-font-size-small-base) !default;
+$x-small-font-size: var(--pgn-typography-font-size-small-x) !default;
 
-$micro-font-size:        .688rem;
-$micro-line-height:      .938rem;
+$micro-font-size: .688rem;
+$micro-line-height: .938rem;
 
-$text-muted: var(--pgn-text-muted) !default;
+$text-muted: var(--pgn-color-text-muted) !default;
 
-$blockquote-small-color:      theme-color("gray", "light-text") !default;
-$blockquote-small-font-size: var(--pgn-blockquote-small-font-size) !default;
-$blockquote-font-size: var(--pgn-blockquote-font-size) !default;
+$blockquote-small-color: theme-color("gray", "light-text") !default;
+$blockquote-small-font-size: var(--pgn-typography-blockquote-small-font-size) !default;
+$blockquote-font-size: var(--pgn-typography-blockquote-font-size) !default;
 
-$hr-border-color: var(--pgn-hr-border-color) !default;
-$hr-border-width: var(--pgn-hr-border-width) !default;
+$hr-border-color: var(--pgn-color-hr-border) !default;
+$hr-border-width: var(--pgn-size-hr-border-width) !default;
 
-$mark-padding: var(--pgn-mark-padding) !default;
+$mark-padding: var(--pgn-spacing-mark-padding) !default;
 
-$dt-font-weight: var(--pgn-dt-font-weight) !default;
+$dt-font-weight: var(--pgn-typography-dt-font-weight) !default;
 
-$list-inline-padding: var(--pgn-list-inline-padding) !default;
+$list-inline-padding: var(--pgn-spacing-list-inline-padding) !default;
 
-$mark-bg: var(--pgn-mark-bg) !default;
+$mark-bg: var(--pgn-color-mark-bg) !default;
 
-$hr-margin-y: var(--pgn-hr-border-margin-y) !default;
+$hr-margin-y: var(--pgn-size-hr-border-margin-y) !default;
 
-$label-margin-bottom:                   .5rem !default;
+$label-margin-bottom: .5rem !default;
 
-$table-cell-padding:          .75rem !default;
-$table-cell-padding-sm:       .3rem !default;
-$table-caption-color:         $text-muted !default;
-$table-border-color:          $border-color !default;
-$table-th-font-weight:        null !default;
+$table-cell-padding: 75rem !default;
+$table-cell-padding-sm: .3rem !default;
+$table-caption-color: $text-muted !default;
+$table-border-color: $border-color !default;
+$table-th-font-weight: null !default;
 
 // Z-index master list
 //
@@ -783,8 +783,8 @@ $table-th-font-weight:        null !default;
 // of components dependent on the z-axis and are designed to all work together.
 
 $zindex-dropdown: var(--pgn-elevation-dropdown-zindex) !default;
-$zindex-sticky: var(--pgn-zindex-sticky) !default;
-$zindex-fixed: var(--pgn-zindex-fixed) !default;
+$zindex-sticky: var(--pgn-elevation-zindex-sticky) !default;
+$zindex-fixed: var(--pgn-elevation-zindex-fixed) !default;
 $zindex-sheet-backdrop: var(--pgn-elevation-sheet-zindex-backdrop) !default;
 $zindex-sheet: var(--pgn-elevation-sheet-zindex-main) !default;
 $zindex-modal-backdrop: var(--pgn-elevation-modal-backdrop-zindex) !default;
@@ -796,27 +796,27 @@ $zindex-tooltip: var(--pgn-elevation-tooltip-zindex) !default;
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
-$input-btn-padding-y: var(--pgn-input-btn-padding-y) !default;
-$input-btn-padding-x: var(--pgn-input-btn-padding-x) !default;
-$input-btn-font-family: var(--pgn-input-btn-font-family) !default;
-$input-btn-font-size: var(--pgn-input-btn-font-size-base) !default;
-$input-btn-line-height: var(--pgn-input-btn-line-height-base) !default;
+$input-btn-padding-y: var(--pgn-spacing-input-btn-padding-y) !default;
+$input-btn-padding-x: var(--pgn-spacing-input-btn-padding-x) !default;
+$input-btn-font-family: var(--pgn-typography-input-btn-font-family) !default;
+$input-btn-font-size: var(--pgn-typography-input-btn-font-size-base) !default;
+$input-btn-line-height: var(--pgn-typography-input-btn-line-height-base) !default;
 
-$input-btn-focus-width: var(--pgn-input-btn-focus-width) !default;
-$input-btn-focus-color: var(--pgn-input-btn-focus-color) !default;
-$input-btn-focus-box-shadow: var(--pgn-input-btn-focus-box-shadow) !default;
+$input-btn-focus-width: var(--pgn-size-input-btn-focus-width) !default;
+$input-btn-focus-color: var(--pgn-color-input-btn-focus) !default;
+$input-btn-focus-box-shadow: var(--pgn-elevation-input-btn-focus-box-shadow) !default;
 
-$input-btn-padding-y-sm: var(--pgn-input-btn-padding-sm-y) !default;
-$input-btn-padding-x-sm: var(--pgn-input-btn-padding-sm-x) !default;
-$input-btn-font-size-sm: var(--pgn-input-btn-font-size-sm) !default;
-$input-btn-line-height-sm: var(--pgn-input-btn-line-height-sm) !default;
+$input-btn-padding-y-sm: var(--pgn-spacing-input-btn-padding-sm-y) !default;
+$input-btn-padding-x-sm: var(--pgn-spacing-input-btn-padding-sm-x) !default;
+$input-btn-font-size-sm: var(--pgn-typography-input-btn-font-size-sm) !default;
+$input-btn-line-height-sm: var(--pgn-typography-input-btn-line-height-sm) !default;
 
-$input-btn-padding-y-lg: var(--pgn-input-btn-padding-lg-y) !default;
-$input-btn-padding-x-lg: var(--pgn-input-btn-padding-lg-x) !default;
-$input-btn-font-size-lg: var(--pgn-input-btn-font-size-lg) !default;
-$input-btn-line-height-lg: var(--pgn-input-btn-line-height-lg) !default;
+$input-btn-padding-y-lg: var(--pgn-spacing-input-btn-padding-lg-y) !default;
+$input-btn-padding-x-lg: var(--pgn-spacing-input-btn-padding-lg-x) !default;
+$input-btn-font-size-lg: var(--pgn-typography-input-btn-font-size-lg) !default;
+$input-btn-line-height-lg: var(--pgn-typography-input-btn-line-height-lg) !default;
 
-$input-btn-border-width: var(--pgn-input-btn-border-width) !default;
+$input-btn-border-width: var(--pgn-size-input-btn-border-width) !default;
 
 // Spinners
 
@@ -844,28 +844,28 @@ $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
 
 // List group
 
-$list-group-color: var(--pgn-list-group-color) !default;
-$list-group-bg: var(--pgn-list-group-bg-base) !default;
-$list-group-border-color: var(--pgn-list-group-border-color) !default;
-$list-group-border-width: var(--pgn-list-group-border-width) !default;
-$list-group-border-radius: var(--pgn-list-group-border-radius) !default;
+$list-group-color: var(--pgn-color-list-group-base) !default;
+$list-group-bg: var(--pgn-color-list-group-bg-base) !default;
+$list-group-border-color: var(--pgn-color-list-group-border) !default;
+$list-group-border-width: var(--pgn-size-list-group-border-width) !default;
+$list-group-border-radius: var(--pgn-size-list-group-border-radius) !default;
 
-$list-group-item-padding-y: var(--pgn-list-group-item-padding-y) !default;
-$list-group-item-padding-x: var(--pgn-list-group-item-padding-x) !default;
+$list-group-item-padding-y: var(--pgn-spacing-list-group-item-padding-y) !default;
+$list-group-item-padding-x: var(--pgn-spacing-list-group-item-padding-x) !default;
 
-$list-group-hover-bg: var(--pgn-list-group-bg-hover) !default;
-$list-group-active-color: var(--pgn-list-group-active-color-base) !default;
-$list-group-active-bg: var(--pgn-list-group-active-bg) !default;
-$list-group-active-border-color: var(--pgn-list-group-active-color-border) !default;
+$list-group-hover-bg: var(--pgn-color-list-group-bg-hover) !default;
+$list-group-active-color: var(--pgn-color-list-group-active-base) !default;
+$list-group-active-bg: var(--pgn-color-list-group-active-bg) !default;
+$list-group-active-border-color: var(--pgn-color-list-group-active-border) !default;
 
-$list-group-disabled-color: var(--pgn-list-group-disabled-color) !default;
-$list-group-disabled-bg: var(--pgn-list-group-disabled-bg) !default;
+$list-group-disabled-color: var(--pgn-color-list-group-disabled-base) !default;
+$list-group-disabled-bg: var(--pgn-color-list-group-disabled-bg) !default;
 
-$list-group-action-color: var(--pgn-list-group-action-color-base) !default;
-$list-group-action-hover-color: var(--pgn-list-group-action-color-hover) !default;
+$list-group-action-color: var(--pgn-color-list-group-action-base) !default;
+$list-group-action-hover-color: var(--pgn-color-list-group-action-hover) !default;
 
-$list-group-action-active-color: var(--pgn-list-group-action-active-color) !default;
-$list-group-action-active-bg: var(--pgn-list-group-action-active-bg) !default;
+$list-group-action-active-color: var(--pgn-color-list-group-action-active-base) !default;
+$list-group-action-active-bg: var(--pgn-color-list-group-action-active-bg) !default;
 
 $text-black-50: var(--pgn-color-text-50-black) !default;
 $text-white-50: var(--pgn-color-text-50-white) !default;
