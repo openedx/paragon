@@ -1,5 +1,5 @@
 {
-  "lastModified": 1673014174722,
+  "lastModified": 1673100505122,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -1557,7 +1557,7 @@
       }
     },
     {
-      "version": "20.24.1",
+      "version": "20.26.3",
       "name": "frontend-app-admin-portal",
       "repository": "https://github.com/openedx/frontend-app-admin-portal",
       "folderName": "frontend-app-admin-portal",
@@ -3045,8 +3045,8 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmContent.jsx",
-            "line": 138,
-            "column": 10
+            "line": 144,
+            "column": 12
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentHeader.jsx",
@@ -3542,8 +3542,8 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmContent.jsx",
-            "line": 135,
-            "column": 4
+            "line": 141,
+            "column": 6
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContent.jsx",
@@ -3614,8 +3614,8 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmContent.jsx",
-            "line": 136,
-            "column": 6
+            "line": 142,
+            "column": 8
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContent.jsx",
@@ -5102,7 +5102,7 @@
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 32,
+            "line": 34,
             "column": 4
           },
           {
@@ -5199,7 +5199,7 @@
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 45,
+            "line": 48,
             "column": 10
           },
           {
@@ -5618,8 +5618,8 @@
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmContent.jsx",
-            "line": 134,
-            "column": 2
+            "line": 140,
+            "column": 4
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContent.jsx",
@@ -5887,7 +5887,7 @@
           },
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 26,
+            "line": 28,
             "column": 6
           },
           {
@@ -5974,7 +5974,7 @@
         "Card.ImageCap": [
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 33,
+            "line": 35,
             "column": 6
           },
           {
@@ -5996,7 +5996,7 @@
         "Card.Header": [
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 39,
+            "line": 42,
             "column": 6
           },
           {
@@ -6028,7 +6028,7 @@
         "Card.Footer": [
           {
             "filePath": "src/components/ContentHighlights/ContentHighlightCardItem.jsx",
-            "line": 46,
+            "line": 49,
             "column": 10
           },
           {
@@ -6170,8 +6170,8 @@
         "Assignment": [
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperConfirmContent.jsx",
-            "line": 138,
-            "column": 21
+            "line": 144,
+            "column": 23
           }
         ],
         "AddCircle": [
@@ -6179,11 +6179,6 @@
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentHeader.jsx",
             "line": 13,
             "column": 19
-          },
-          {
-            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
-            "line": 15,
-            "column": 21
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/SSOConfigConfiguredCard.jsx",
@@ -6196,6 +6191,13 @@
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
             "line": 143,
             "column": 8
+          }
+        ],
+        "EditCircle": [
+          {
+            "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperTitle.jsx",
+            "line": 15,
+            "column": 21
           }
         ],
         "Pagination.Reduced": [
@@ -13659,7 +13661,7 @@
       }
     },
     {
-      "version": "20.26.1",
+      "version": "20.26.2",
       "name": "frontend-app-learner-portal-enterprise",
       "repository": {
         "type": "git",
@@ -14505,7 +14507,7 @@
           },
           {
             "filePath": "src/components/search/content-highlights/HighlightedContentCard.jsx",
-            "line": 55,
+            "line": 56,
             "column": 4
           },
           {
@@ -14562,7 +14564,7 @@
           },
           {
             "filePath": "src/components/search/content-highlights/HighlightedContentCard.jsx",
-            "line": 62,
+            "line": 63,
             "column": 6
           },
           {
@@ -14619,7 +14621,7 @@
           },
           {
             "filePath": "src/components/search/content-highlights/HighlightedContentCard.jsx",
-            "line": 68,
+            "line": 70,
             "column": 6
           },
           {
@@ -14711,7 +14713,7 @@
           },
           {
             "filePath": "src/components/search/content-highlights/HighlightedContentCard.jsx",
-            "line": 80,
+            "line": 82,
             "column": 6
           },
           {
@@ -14758,7 +14760,7 @@
           },
           {
             "filePath": "src/components/search/content-highlights/HighlightedContentCard.jsx",
-            "line": 81,
+            "line": 83,
             "column": 6
           },
           {
@@ -26049,11 +26051,6 @@
             "column": 12
           },
           {
-            "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 130,
-            "column": 14
-          },
-          {
             "filePath": "src/components/Search/ManagedAutoComplete.jsx",
             "line": 267,
             "column": 14
@@ -26112,8 +26109,8 @@
           },
           {
             "filePath": "src/components/SkillsBreadcrumbs/index.jsx",
-            "line": 34,
-            "column": 55
+            "line": 38,
+            "column": 24
           }
         ],
         "Check": [
@@ -26164,7 +26161,7 @@
           },
           {
             "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 44,
+            "line": 43,
             "column": 8
           }
         ],
@@ -26450,7 +26447,7 @@
           },
           {
             "filePath": "src/components/Learn/LearnHero.jsx",
-            "line": 55,
+            "line": 57,
             "column": 6
           },
           {
@@ -27007,7 +27004,7 @@
           },
           {
             "filePath": "src/components/SkillsBreadcrumbs/index.jsx",
-            "line": 13,
+            "line": 20,
             "column": 6
           }
         ],
