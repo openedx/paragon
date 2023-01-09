@@ -6,9 +6,11 @@ import {
   Icon,
   IconButton,
   Stack,
+  Nav,
 } from '~paragon-react';
 import { Close } from '~paragon-icons';
 
+import { Link } from 'gatsby';
 import { LANGUAGES } from '../config';
 // eslint-disable-next-line import/no-named-as-default
 import SettingsContext from '../context/SettingsContext';

@@ -18,16 +18,17 @@ function Search() {
     process.env.GATSBY_ALGOLIA_API_KEY,
     process.env.GATSBY_ALGOLIA_INDEX_NAME,
   ];
-  // if (algoliaEnvVars.some(envVar => !envVar)) {
-  //   // some required environment variables for Algolia not set, so don't render `DocSearch`.
-  //   return null;
-  // }
+  if (algoliaEnvVars.some(envVar => !envVar)) {
+    // some required environment variables for Algolia not set, so don't render `DocSearch`.
+    return null;
+  }
 
   return (
     <DocSearch
       appId="9NJ4KNRZNN"
       indexName="paragon-openedx"
       apiKey="27557a9329cd027499d05e1b6c1bf938"
+      /* eslint-disable-next-line react/no-unstable-nested-components */
       hitComponent={({ hit, children }) => <HitComponent userId={userId} hit={hit}>{children}</HitComponent>}
       searchParameters={{
         clickAnalytics: true,

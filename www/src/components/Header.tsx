@@ -117,7 +117,6 @@ function Header({ siteTitle, showMinimizedTitle }: IHeaderProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isOpen, , close, toggle] = useToggle(false);
   const [target, setTarget] = useState(null);
-  console.log('target', target);
   const { openSettings } = useContext(SettingsContext);
 
   useEffect(() => () => {

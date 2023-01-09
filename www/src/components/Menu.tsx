@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { Issue } from '../../../icons';
-import Search from './Search';
 import {
   Tooltip,
   OverlayTrigger,
@@ -13,6 +11,8 @@ import {
   Collapsible,
   Hyperlink,
 } from '~paragon-react';
+import { Issue } from '../../../icons';
+import Search from './Search';
 import { SettingsContext } from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 

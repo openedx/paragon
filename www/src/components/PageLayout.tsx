@@ -14,10 +14,9 @@ import {
   Nav,
   Row,
   Col,
-  OverlayTrigger,
-  Tooltip,
   Sticky,
 } from '~paragon-react';
+import ComponentsList from './ComponentsList';
 import Header from './Header';
 import Menu from './Menu';
 import Settings from './Settings';
