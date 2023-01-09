@@ -89,6 +89,7 @@ function Settings({ showMinimizedTitle }: ISetting) {
             ))}
           </Form.Control>
         </Form.Group>
+        {!showMinimizedTitle && (
           <Form.Group>
             <Form.Control
               as="select"
@@ -103,6 +104,7 @@ function Settings({ showMinimizedTitle }: ISetting) {
               <option value="xl">xl</option>
             </Form.Control>
           </Form.Group>
+        )}
       </Stack>
     </Sheet>
   );

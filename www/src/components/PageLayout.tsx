@@ -19,7 +19,7 @@ import Header from './Header';
 import Menu from './Menu';
 import Settings from './Settings';
 import Toc from './Toc';
-import SettingsContext from '../context/SettingsContext';
+import { SettingsContext } from '../context/SettingsContext';
 
 if (process.env.NODE_ENV === 'development') {
   /* eslint-disable-next-line global-require */
