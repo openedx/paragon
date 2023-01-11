@@ -436,18 +436,22 @@ To get treeshaking to work, your app may require some updates - most notably, Ba
 
 ## Design Tokens
 
-Design tokens are all the values needed to build and maintain a design system — spacing, color, typography, object styles, etc. They can represent anything defined by the design: color as an RGB value, opacity as a number, spacing as a REM value. They are used instead of hard-coded values to provide flexibility and uniformity across the application.
+Paragon uses [style-dictionary](https://github.com/amzn/style-dictionary) to build design tokens into CSS variables that are included in the package. Read more in [design tokens README](tokens/README.md).
 
-### Design Tokens in Paragon
+To leverage design tokens in your project Paragon exposes a couple of helpful CLI commands:
 
-Folder `tokens` in the project root contains split by categories `json` files. They consist of `JSON` objects that store information about the variable name and its value. Scripts that also reside in the `tokens` folder provide following facilities: build tokens into `css`, `scss` variables, map `scss` to `css` variables and replace old `scss` to new `css` variables.
-
-### Usage
-
+1. `build-design-tokens --build-dir <path_to_some_directory> --source <path_or_glob_patter>`
+Build tokens into CSS variables by providing additional tokens or overriding existing ones.
+`build-dir` specifies where to place resulting files, `source` tells Paragon where additional tokens are located.
+2. `replace-scss-with-css --filePath <path_to_file_or_directory>` 
+Replace definition of SCSS variables with CSS values. The script scans SCSS files for variables' definitions
+and replaces values with corresponding CSS variable based on `source` attribute. Consider a token
 ```
-cd tokens
-npm install
-npm run build-tokens # creates "build" folder with scss and css variables based on json tokens
-npm run build-scss-to-css-map # creats scss-to-css-core.json and scss-to-css-components.json 
-npm run replace-variables -- --path ../src # this will replace all scss variables in the project with the new css variables based on the "scss-to-css-core.json" and "scss-to-css-components.json" files
+{
+  "color": {
+    "white": { "value": "#FFF", "source": "$white-color" }
+  }
+}
 ```
+if you run the script and feed it a file that contains a line `$white-color: #222;` (i.e. definition of the variable),
+then script will modify the line to be `$white-color: var(--pgn-color-white);`. 
