@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { DocSearch } from '@docsearch/react';
-// eslint-disable-next-line import/no-extraneous-dependencies
+
 import '@docsearch/css';
 
 import HitComponent from './HitComponent';
@@ -25,9 +25,9 @@ function Search() {
 
   return (
     <DocSearch
-      appId="9NJ4KNRZNN"
-      indexName="paragon-openedx"
-      apiKey="27557a9329cd027499d05e1b6c1bf938"
+      appId={process.env.GATSBY_ALGOLIA_APP_ID}
+      indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}
+      apiKey={process.env.GATSBY_ALGOLIA_API_KEY}
       /* eslint-disable-next-line react/no-unstable-nested-components */
       hitComponent={({ hit, children }) => <HitComponent userId={userId} hit={hit}>{children}</HitComponent>}
       searchParameters={{

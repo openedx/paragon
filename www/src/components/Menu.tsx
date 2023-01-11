@@ -11,7 +11,7 @@ import {
   Collapsible,
   Hyperlink,
 } from '~paragon-react';
-import { Issue } from '../../../icons';
+import { AddTask } from '../../../icons';
 import Search from './Search';
 import { SettingsContext } from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
@@ -207,7 +207,7 @@ function Menu() {
         >
           <ul className="list-unstyled foundations-list">
             {foundationLinks.map(link => (
-              <li key={link} className="mr-3">
+              <li key={link}>
                 <Link to={`/foundations/${link.toLowerCase().trim()}`}>{link}</Link>
               </li>
             ))}
@@ -241,11 +241,11 @@ function Menu() {
           <li className="mr-3 mb-3">
             A drag-and-drop UI builder for prototyping with Paragon components.
             <OverlayTrigger
-              trigger="focus"
+              trigger="click"
               overlay={(
-                <Popover id="playground-popover">
+                <Popover className="pgn-doc__menu-playground--popover">
                   <Popover.Title as="h3">
-                    <Icon src={Issue} />
+                    <Icon src={AddTask} />
                     Сoming soon
                   </Popover.Title>
                   <Popover.Content>
@@ -265,13 +265,20 @@ function Menu() {
           </li>
         </ul>
       </div>
-      <img
-        className="d-inline-block mr-2"
-        src="https://img.shields.io/npm/v/@edx/paragon.svg"
-        alt="npm_version"
-        width={94}
-        height={20}
-      />
+      <Hyperlink
+        href="https://www.npmjs.com/package/@edx/paragon"
+        externalLinkAlternativeText="npm Paragon package page"
+        externalLinkTitle="Paragon npm"
+        target="_blank"
+      >
+        <img
+          className="d-inline-block mr-2"
+          src="https://img.shields.io/npm/v/@edx/paragon.svg"
+          alt="npm_version"
+          width={94}
+          height={20}
+        />
+      </Hyperlink>
     </div>
   );
 }

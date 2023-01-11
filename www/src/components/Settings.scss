@@ -1,7 +1,7 @@
-.pgn__settings {
+.pgn-doc__settings {
   min-width: 13rem;
 
-  .pgn__settings-title {
+  &-title {
     border-bottom: $border-width solid $light-400;
     display: flex;
     align-items: center;
@@ -10,22 +10,22 @@
     padding-bottom: .75rem;
   }
 
-  .pgn__settings-label {
+  &-label {
     color: $black;
   }
 
-  .pgn__settings-direction {
+  &-direction {
     border-bottom: $border-width solid $light-400;
     padding-bottom: .75rem;
     margin-bottom: 0;
   }
 
-  .pgn__settings-nav--items {
+  &-nav--items {
     position: absolute;
     bottom: 1.5rem;
   }
 
-  .pgn__settings-nav--items .nav-item .nav-link {
+  &-nav--items .nav-item .nav-link {
     color: $info-500;
   }
 }

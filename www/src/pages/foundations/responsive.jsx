@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Container, breakpoints } from '~paragon-react';
+import {
+  DataTable, Container, breakpoints, useMediaQuery,
+} from '~paragon-react';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import CodeBlock from '../../components/CodeBlock';
@@ -27,6 +29,7 @@ function MaxWidthCell({ row }) {
 }
 
 function Responsive() {
+  const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
   const breakpointsData = Object.keys(breakpoints).map(breakpoint => {
     const { minWidth, maxWidth } = breakpoints[breakpoint];
     const breakpointData = getBreakpointDescription(breakpoint);
@@ -36,7 +39,7 @@ function Responsive() {
   });
 
   return (
-    <Layout>
+    <Layout showMinimizedTitle={isMobile}>
       <Container size="md" className="py-5">
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Responsive" />

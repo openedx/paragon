@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MDXProvider } from '@mdx-js/react';
 import { Link } from 'gatsby';
-import { Container } from '~paragon-react';
+import { Container, breakpoints, useMediaQuery } from '~paragon-react';
 import CodeBlock from '../components/CodeBlock';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
@@ -32,8 +32,10 @@ export interface IPageTemplateType {
 }
 
 export default function PageTemplate({ children, pageContext }: IPageTemplateType) {
+  const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
+
   return (
-    <Layout>
+    <Layout showMinimizedTitle={isMobile}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={pageContext?.frontmatter?.title} />
       <Container size="md" className="py-5">

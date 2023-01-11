@@ -34,8 +34,8 @@ function Settings({ showMinimizedTitle }: ISetting) {
       variant="light"
       onClose={closeSettings}
     >
-      <div className="pgn__settings">
-        <div className="pgn__settings-title">
+      <div className="pgn-doc__settings">
+        <div className="pgn-doc__settings-title">
           <h3 className="mb-0">Settings</h3>
           <IconButton
             src={Close}
@@ -46,8 +46,8 @@ function Settings({ showMinimizedTitle }: ISetting) {
           />
         </div>
         <Stack gap={1}>
-          <Form.Group className="pgn__settings-direction">
-            <Form.Label className="setting__label">Text direction</Form.Label>
+          <Form.Group className="pgn-doc__settings-direction">
+            <Form.Label className="pgn-doc__settings-label">Text direction</Form.Label>
             <Form.RadioSet
               name="direction"
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('direction', e.target.value)}
@@ -58,7 +58,7 @@ function Settings({ showMinimizedTitle }: ISetting) {
             </Form.RadioSet>
           </Form.Group>
           <Form.Group>
-            <Form.Label className="pgn__settings-label">Language</Form.Label>
+            <Form.Label className="pgn-doc__settings-label">Language</Form.Label>
             <Form.Control
               as="select"
               value={settings.language}
@@ -90,7 +90,7 @@ function Settings({ showMinimizedTitle }: ISetting) {
               </Form.Control>
             </Form.Group>
           )}
-          <Nav className="pgn__settings-nav--items">
+          <Nav className="pgn-doc__settings-nav--items">
             <Nav.Item>
               <Link className="nav-link" to="/changelog">
                 Changelog

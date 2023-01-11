@@ -11,6 +11,9 @@ import {
   IconButton,
   Button,
   ModalPopup,
+  ModalDialog,
+  breakpoints,
+  useMediaQuery,
 } from '~paragon-react';
 import { Menu as MenuIcon, Close, Settings } from '~paragon-icons'; // eslint-disable-line
 import { SettingsContext } from '../context/SettingsContext';
@@ -21,8 +24,8 @@ import Menu from './Menu';
 
 export interface INavbar {
   siteTitle: string,
-  onMenuClick: Function,
-  setTarget: Function,
+  onMenuClick: () => boolean,
+  setTarget: React.Dispatch<React.SetStateAction<null>>,
   onSettingsClick: Function | undefined,
   menuIsOpen?: boolean,
   showMinimizedTitle?: boolean,
@@ -40,15 +43,17 @@ function Navbar({
     <Container as="header" className="py-3 bg-dark text-white sticky-top">
       <Row className="align-items-center text-center text-sm-left">
         <Col className="pgn-doc__header-button--menu mb-2 mb-sm-0 col-4" sm={5}>
-          <Button
-            ref={setTarget}
-            className="d-inline-flex align-items-center"
-            variant="inverse-tertiary"
-            onClick={onMenuClick}
-            iconBefore={menuIsOpen ? Close : MenuIcon}
-          >
-            Menu
-          </Button>
+          {showMinimizedTitle && (
+            <Button
+              ref={setTarget}
+              className="d-inline-flex align-items-center"
+              variant="inverse-tertiary"
+              onClick={onMenuClick}
+              iconBefore={menuIsOpen ? Close : MenuIcon}
+            >
+              Menu
+            </Button>
+          )}
         </Col>
         <Col className="mb-2 mb-sm-0 col-4" sm={showMinimizedTitle ? 2 : 3}>
           <Link
@@ -75,8 +80,8 @@ function Navbar({
             </div>
           </Link>
         </Col>
-        <Col className="small" sm={12} xl={showMinimizedTitle ? 5 : 4}>
-          <Nav className="justify-content-center justify-content-xl-end align-items-center">
+        <Col className="small mb-2 mb-sm-0 col-4" sm={5} xl={showMinimizedTitle ? 5 : 4}>
+          <Nav className="justify-content-end align-items-center">
             <Nav.Item>
               <IconButton
                 src={Settings}
@@ -118,6 +123,7 @@ function Header({ siteTitle, showMinimizedTitle }: IHeaderProps) {
   const [isOpen, , close, toggle] = useToggle(false);
   const [target, setTarget] = useState(null);
   const { openSettings } = useContext(SettingsContext);
+  const isMobile = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
   useEffect(() => () => {
     document.body.style.overflow = 'initial';
@@ -134,18 +140,33 @@ function Header({ siteTitle, showMinimizedTitle }: IHeaderProps) {
           showMinimizedTitle={showMinimizedTitle}
           onSettingsClick={openSettings}
         />
-        <ModalPopup
-          hasArrow
-          placement="bottom"
-          positionRef={target}
-          isOpen={isOpen}
-          onClose={close}
-          onEscapeKey={close}
-        >
-          <div className="home-menu">
-            <Menu />
-          </div>
-        </ModalPopup>
+        {isMobile ? (
+          <ModalDialog
+            title="Docsite navigation"
+            isOpen={isOpen}
+            onClose={close}
+            size="fullscreen"
+            hasCloseButton
+            isFullscreenOnMobile
+          >
+            <div className="pgn-doc__header-home--menu">
+              <Menu />
+            </div>
+          </ModalDialog>
+        ) : (
+          <ModalPopup
+            hasArrow
+            placement="bottom"
+            positionRef={target}
+            isOpen={isOpen}
+            onClose={close}
+            onEscapeKey={close}
+          >
+            <div className="pgn-doc__header-home--menu">
+              <Menu />
+            </div>
+          </ModalPopup>
+        )}
       </div>
     </div>
   );

@@ -61,7 +61,7 @@ function Layout({
         showMinimizedTitle={showMinimizedTitle}
       />
       <Settings showMinimizedTitle={showMinimizedTitle} />
-      {isMdx ? (
+      {isMdx || !hideFooterComponentMenu ? (
         <Container fluid>
           <Row className="flex-xl-nowrap">
             <Col className="d-none d-xl-block" xl={settings.containerWidth === 'xl' ? 'auto' : 2}>
