@@ -319,7 +319,7 @@ When developing a new component you should generally follow three rules:
    };
    ```
 
-### Developing locally against MFE
+### Developing locally against a micro-frontend (MFE)
 
 If you want to test the changes with local MFE setup, you need to create a "module.config.js" file in your MFE's directory containing local module overrides. After that the webpack build for your application will automatically pick your local version of Paragon and use it. The example of module.config.js file looks like this (for more details about module.config.js, refer to the [frontend-build documentation](https://github.com/openedx/frontend-build#local-module-configuration-for-webpack).):
 
