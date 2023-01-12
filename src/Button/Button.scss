@@ -26,7 +26,7 @@
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    color: color-yiq($background);
+    color: $color;
     background-color: $background;
     border-color: $border;
 
@@ -68,6 +68,7 @@
   &:disabled {
     color: $color;
     background-color: transparent;
+    border-color: $color;
   }
 
   &:not(:disabled):not(.disabled):active,
@@ -116,8 +117,9 @@
 
   &.disabled,
   &:disabled {
-    color: $color;
+    color: lighten($color, 10%);
     background-color: transparent;
+    border-color: lighten($color, 10%);
   }
 
   &:not(:disabled):not(.disabled):active,
