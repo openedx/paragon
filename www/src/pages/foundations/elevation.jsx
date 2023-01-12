@@ -8,8 +8,6 @@ import {
   Toast,
   Icon,
   IconButtonWithTooltip,
-  useMediaQuery,
-  breakpoints,
 } from '~paragon-react';
 import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 import SEO from '../../components/SEO';
@@ -270,8 +268,6 @@ function BoxShadowGenerator() {
 }
 
 export default function ElevationPage() {
-  const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
-
   const levelTitle = boxShadowLevels.map(level => (
     <h3 key={level} className="pgn-doc__box-shadow-level-title">
       Level {level}
@@ -285,7 +281,7 @@ export default function ElevationPage() {
   ));
 
   return (
-    <Layout showMinimizedTitle={isMobile}>
+    <Layout>
       <Container className="py-5" size="md">
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Elevation" />

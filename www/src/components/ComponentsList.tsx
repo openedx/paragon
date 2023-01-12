@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-// @ts-ignore
 import { Container } from '~paragon-react';
 import { ComponentNavItem } from './Menu';
 

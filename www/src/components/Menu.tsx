@@ -10,8 +10,9 @@ import {
   Icon,
   Collapsible,
   Hyperlink,
+  ButtonGroup,
 } from '~paragon-react';
-import { AddTask } from '../../../icons';
+import { AddTask } from '~paragon-icons';
 import Search from './Search';
 import { SettingsContext } from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
@@ -164,16 +165,18 @@ function Menu() {
     <div className="pgn-doc__menu">
       <h2 className="pgn-doc__menu-title">Theme</h2>
       <div className="pgn-doc__menu-btn--group">
-        {THEMES.map(({ id, label }) => (
-          <Button
-            key={id}
-            variant={settings.theme === id ? 'primary' : 'outline-primary'}
-            size="sm"
-            onClick={() => handleSettingsChange('theme', id)}
-          >
-            {label}
-          </Button>
-        ))}
+        <ButtonGroup>
+          {THEMES.map(({ id, label }) => (
+            <Button
+              key={id}
+              variant={settings.theme === id ? 'primary' : 'outline-primary'}
+              size="sm"
+              onClick={() => handleSettingsChange('theme', id)}
+            >
+              {label}
+            </Button>
+          ))}
+        </ButtonGroup>
       </div>
       <Search />
       <div className="pgn-doc__menu-items">

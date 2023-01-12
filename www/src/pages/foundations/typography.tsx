@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Container, breakpoints, useMediaQuery } from '~paragon-react';
+import { Container } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
@@ -42,10 +42,8 @@ const measuredTypeProps = {
 };
 
 export default function TypographyPage() {
-  const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
-
   return (
-    <Layout showMinimizedTitle={isMobile}>
+    <Layout>
       <Container size="xl" className="py-5">
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Typography" />

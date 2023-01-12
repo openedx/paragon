@@ -17,10 +17,10 @@ import {
 } from '~paragon-react';
 import { Menu as MenuIcon, Close, Settings } from '~paragon-icons'; // eslint-disable-line
 import { SettingsContext } from '../context/SettingsContext';
+import Menu from './Menu';
 
 // @ts-ignore
 import Logo from '../images/diamond.svg';
-import Menu from './Menu';
 
 export interface INavbar {
   siteTitle: string,

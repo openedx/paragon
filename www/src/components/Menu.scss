@@ -13,23 +13,13 @@
     padding-bottom: $spacer;
     border-bottom: $border-width solid $light-400;
     margin-bottom: $spacer;
-    display: flex;
-    flex-wrap: wrap;
 
-    .btn {
-      width: 50%;
+    .btn-group {
+      width: 100%;
 
-      @media (max-width: $max-width-xl) {
-        width: 100%;
-
-        &:first-child {
-          margin-bottom: $label-margin-bottom;
-        }
+      .btn {
+        width: 50%;
       }
-    }
-
-    @media (max-width: $max-width-xl) {
-      flex-direction: column;
     }
   }
 

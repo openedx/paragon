@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {
-  Form, Container, DataTable, breakpoints, useMediaQuery,
-} from '~paragon-react';
+import { Form, Container, DataTable } from '~paragon-react';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import MeasuredItem from '../../components/MeasuredItem';
@@ -85,7 +83,6 @@ SpaceBlock.defaultProps = {
 };
 
 export default function SpacingPage() {
-  const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
   const [size, setSize] = useState<number>(3);
   const [direction, setDirection] = useState<string>('r');
 
@@ -97,7 +94,7 @@ export default function SpacingPage() {
   }));
 
   return (
-    <Layout showMinimizedTitle={isMobile}>
+    <Layout>
       <Container size="md" className="py-5">
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Spacing" />

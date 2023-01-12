@@ -344,7 +344,6 @@ function IconsUsage({ data }: { data: string[] }) {
 }
 
 export default function InsightsPage({ pageContext: { tab } }: { pageContext: { tab: string } }) {
-  const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
   const { paragonTypes = {}, isParagonIcon = () => false } = useContext(InsightsContext) as IInsightsContext;
   const {
     components, hooks, utils, icons,
@@ -371,7 +370,7 @@ export default function InsightsPage({ pageContext: { tab } }: { pageContext: { 
   };
 
   return (
-    <Layout showMinimizedTitle={isMobile}>
+    <Layout>
       <Container size="md" className="py-5">
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Usage Insights" />

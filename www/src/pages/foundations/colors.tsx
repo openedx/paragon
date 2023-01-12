@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Container, breakpoints, useMediaQuery } from '~paragon-react';
+import { Container } from '~paragon-react';
 import Color from 'color';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
@@ -125,10 +125,9 @@ export interface IColorsPage {
 // eslint-disable-next-line react/prop-types
 export default function ColorsPage({ data }: IColorsPage) {
   parseColors(data.allCssUtilityClasses.nodes); // eslint-disable-line react/prop-types
-  const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
 
   return (
-    <Layout showMinimizedTitle={isMobile}>
+    <Layout>
       <Container size="md" className="py-5">
         {/* eslint-disable-next-line react/jsx-pascal-case */}
         <SEO title="Colors" />

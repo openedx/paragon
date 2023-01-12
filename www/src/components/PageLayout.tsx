@@ -15,6 +15,8 @@ import {
   Row,
   Col,
   Sticky,
+  useMediaQuery,
+  breakpoints,
 } from '~paragon-react';
 import ComponentsList from './ComponentsList';
 import Header from './Header';
@@ -43,6 +45,7 @@ function Layout({
   isMdx,
   tocData,
 }: ILayout) {
+  const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
   const { settings } = useContext(SettingsContext);
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -58,7 +61,7 @@ function Layout({
     <div className="d-flex flex-column">
       <Header
         siteTitle={data.site.siteMetadata?.title || 'Title'}
-        showMinimizedTitle={showMinimizedTitle}
+        showMinimizedTitle={isMobile || showMinimizedTitle}
       />
       <Settings showMinimizedTitle={showMinimizedTitle} />
       {isMdx || !hideFooterComponentMenu ? (

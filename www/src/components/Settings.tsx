@@ -12,8 +12,8 @@ import { Close } from '~paragon-icons';
 
 import { Link } from 'gatsby';
 import { LANGUAGES } from '../config';
-// eslint-disable-next-line import/no-named-as-default
-import SettingsContext from '../context/SettingsContext';
+
+import { SettingsContext } from '../context/SettingsContext';
 
 export interface ISetting {
   showMinimizedTitle?: boolean,
