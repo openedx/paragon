@@ -752,6 +752,7 @@ export { default as FeaturedPlayList } from './FeaturedPlayList';
 export { default as FeaturedVideo } from './FeaturedVideo';
 export { default as Feed } from './Feed';
 export { default as Feedback } from './Feedback';
+export { default as FeedbackOutline } from './FeedbackOutline';
 export { default as Female } from './Female';
 export { default as Fence } from './Fence';
 export { default as Festival } from './Festival';
