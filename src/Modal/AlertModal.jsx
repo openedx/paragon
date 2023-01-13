@@ -19,9 +19,9 @@ function AlertModal({
     >
       <ModalDialog.Header>
         <ModalDialog.Title>
-          {icon && <Icon src={icon} className={classNames("pgn_alert-modal-icon", props.variant)} />}
+          {icon && <Icon src={icon} className={classNames('pgn_alert-modal-icon', props.variant)} />}
           {props.title}
-          </ModalDialog.Title>
+        </ModalDialog.Title>
       </ModalDialog.Header>
       <ModalDialog.Body>{children}</ModalDialog.Body>
       {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
@@ -57,6 +57,8 @@ AlertModal.propTypes = {
   isFullscreenScroll: PropTypes.bool,
   /** Specifies what should be displayed in the footer of the dialog box */
   footerNode: PropTypes.node,
+  /** Icon that will be shown in the header of modal */
+  icon: PropTypes.func,
 };
 
 AlertModal.defaultProps = {
