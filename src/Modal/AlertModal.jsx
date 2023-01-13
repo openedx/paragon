@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { requiredWhenNot } from '../utils/propTypes';
+import { Icon } from '..';
 import ModalDialog from './ModalDialog';
 
 function AlertModal({
   children,
   footerNode,
+  icon,
   ...props
 }) {
   return (
@@ -16,7 +18,10 @@ function AlertModal({
       className={classNames('pgn__alert-modal', props.className)}
     >
       <ModalDialog.Header>
-        <ModalDialog.Title>{props.title}</ModalDialog.Title>
+        <ModalDialog.Title>
+          {icon && <Icon src={icon} className={classNames("pgn_alert-modal-icon", props.variant)} />}
+          {props.title}
+          </ModalDialog.Title>
       </ModalDialog.Header>
       <ModalDialog.Body>{children}</ModalDialog.Body>
       {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
@@ -65,6 +70,7 @@ AlertModal.defaultProps = {
   className: undefined,
   isFullscreenScroll: false,
   footerNode: null,
+  icon: undefined,
 };
 
 export default AlertModal;

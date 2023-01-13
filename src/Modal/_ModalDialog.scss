@@ -285,5 +285,32 @@
 
   .pgn__modal-title {
     font-size: $h4-font-size;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+
+    & > * {
+      margin: 0;
+    }
+
+    & > * + * {
+      margin-inline-start: .5rem;
+    }
+    .pgn_alert-modal-icon {
+      float: left;
+      width: 1.5rem;
+      height: 1.5rem;
+      flex-shrink: 0;
+      margin-right: .75rem;
+    }
+    .success {
+      color: $success-500;
+    }
+    .warning {
+      color: $warning-500;
+    }
+    .danger {
+      color: $danger-500;
+    }
   }
 }
