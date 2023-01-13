@@ -97,8 +97,8 @@ export {
 export { default as Navbar, NavbarBrand, NAVBAR_LABEL } from './Navbar';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as PageBanner, PAGE_BANNER_DISMISS_ALT_TEXT } from './PageBanner';
+export { default as Pagination } from './Pagination';
 export {
-  default as Pagination,
   PAGINATION_BUTTON_LABEL_PREV,
   PAGINATION_BUTTON_ICON_BUTTON_NEXT_ALT,
   PAGINATION_BUTTON_ICON_BUTTON_PREV_ALT,
@@ -106,7 +106,7 @@ export {
   PAGINATION_BUTTON_LABEL_CURRENT_PAGE,
   PAGINATION_BUTTON_LABEL_NEXT,
   PAGINATION_BUTTON_LABEL_PAGE,
-} from './Pagination';
+} from './Pagination/constants';
 export { default as Popover, PopoverTitle, PopoverContent } from './Popover';
 export { default as ProgressBar } from './ProgressBar';
 export { default as ProductTour } from './ProductTour';
