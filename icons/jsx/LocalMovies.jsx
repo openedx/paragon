@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalMovies(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocalMovies(props) {
     </svg>
   );
 }
+
 export default SvgLocalMovies;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSensorWindow(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSensorWindow(props) {
     </svg>
   );
 }
+
 export default SvgSensorWindow;

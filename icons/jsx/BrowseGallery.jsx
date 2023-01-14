@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBrowseGallery(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgBrowseGallery(props) {
     </svg>
   );
 }
+
 export default SvgBrowseGallery;

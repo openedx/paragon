@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTypeSpecimen(props) {
   return (
     <svg
@@ -18,4 +19,5 @@ function SvgTypeSpecimen(props) {
     </svg>
   );
 }
+
 export default SvgTypeSpecimen;

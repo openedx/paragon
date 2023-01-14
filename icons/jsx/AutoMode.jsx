@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAutoMode(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgAutoMode(props) {
     </svg>
   );
 }
+
 export default SvgAutoMode;

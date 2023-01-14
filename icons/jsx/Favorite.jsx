@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFavorite(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFavorite(props) {
     </svg>
   );
 }
+
 export default SvgFavorite;

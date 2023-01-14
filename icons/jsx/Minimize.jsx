@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMinimize(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgMinimize(props) {
     </svg>
   );
 }
+
 export default SvgMinimize;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCallMissed(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCallMissed(props) {
     </svg>
   );
 }
+
 export default SvgCallMissed;

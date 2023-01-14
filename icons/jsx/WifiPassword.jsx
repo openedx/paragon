@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWifiPassword(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWifiPassword(props) {
     </svg>
   );
 }
+
 export default SvgWifiPassword;

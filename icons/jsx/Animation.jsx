@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAnimation(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAnimation(props) {
     </svg>
   );
 }
+
 export default SvgAnimation;

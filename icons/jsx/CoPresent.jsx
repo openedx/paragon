@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCoPresent(props) {
   return (
     <svg
@@ -18,4 +19,5 @@ function SvgCoPresent(props) {
     </svg>
   );
 }
+
 export default SvgCoPresent;

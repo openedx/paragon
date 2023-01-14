@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgZoomOutMap(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgZoomOutMap(props) {
     </svg>
   );
 }
+
 export default SvgZoomOutMap;

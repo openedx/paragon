@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDryCleaning(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDryCleaning(props) {
     </svg>
   );
 }
+
 export default SvgDryCleaning;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLooksOne(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgLooksOne(props) {
     </svg>
   );
 }
+
 export default SvgLooksOne;

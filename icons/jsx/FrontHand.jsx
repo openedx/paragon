@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFrontHand(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFrontHand(props) {
     </svg>
   );
 }
+
 export default SvgFrontHand;

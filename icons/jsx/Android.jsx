@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAndroid(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAndroid(props) {
     </svg>
   );
 }
+
 export default SvgAndroid;

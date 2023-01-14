@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFireHydrantAlt(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgFireHydrantAlt(props) {
     </svg>
   );
 }
+
 export default SvgFireHydrantAlt;

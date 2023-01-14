@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSurroundSound(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSurroundSound(props) {
     </svg>
   );
 }
+
 export default SvgSurroundSound;

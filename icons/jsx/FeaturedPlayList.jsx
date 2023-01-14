@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFeaturedPlayList(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFeaturedPlayList(props) {
     </svg>
   );
 }
+
 export default SvgFeaturedPlayList;

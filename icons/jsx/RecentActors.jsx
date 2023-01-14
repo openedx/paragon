@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRecentActors(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRecentActors(props) {
     </svg>
   );
 }
+
 export default SvgRecentActors;

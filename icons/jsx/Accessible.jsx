@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAccessible(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgAccessible(props) {
     </svg>
   );
 }
+
 export default SvgAccessible;

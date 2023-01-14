@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTurnSlightRight(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTurnSlightRight(props) {
     </svg>
   );
 }
+
 export default SvgTurnSlightRight;

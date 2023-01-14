@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDepartureBoard(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDepartureBoard(props) {
     </svg>
   );
 }
+
 export default SvgDepartureBoard;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLeaveBagsAtHome(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLeaveBagsAtHome(props) {
     </svg>
   );
 }
+
 export default SvgLeaveBagsAtHome;

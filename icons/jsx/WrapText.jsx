@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWrapText(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWrapText(props) {
     </svg>
   );
 }
+
 export default SvgWrapText;

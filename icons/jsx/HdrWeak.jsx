@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHdrWeak(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHdrWeak(props) {
     </svg>
   );
 }
+
 export default SvgHdrWeak;

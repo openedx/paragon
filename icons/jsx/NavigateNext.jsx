@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNavigateNext(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNavigateNext(props) {
     </svg>
   );
 }
+
 export default SvgNavigateNext;

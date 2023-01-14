@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMailOutline(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMailOutline(props) {
     </svg>
   );
 }
+
 export default SvgMailOutline;

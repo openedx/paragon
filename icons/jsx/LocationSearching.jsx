@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocationSearching(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocationSearching(props) {
     </svg>
   );
 }
+
 export default SvgLocationSearching;

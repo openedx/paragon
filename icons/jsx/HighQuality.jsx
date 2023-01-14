@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHighQuality(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHighQuality(props) {
     </svg>
   );
 }
+
 export default SvgHighQuality;

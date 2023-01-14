@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLineAxis(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLineAxis(props) {
     </svg>
   );
 }
+
 export default SvgLineAxis;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgEdgesensorLow(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgEdgesensorLow(props) {
     </svg>
   );
 }
+
 export default SvgEdgesensorLow;

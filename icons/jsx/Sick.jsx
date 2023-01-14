@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSick(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSick(props) {
     </svg>
   );
 }
+
 export default SvgSick;

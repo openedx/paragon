@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNorthEast(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNorthEast(props) {
     </svg>
   );
 }
+
 export default SvgNorthEast;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgShield(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgShield(props) {
     </svg>
   );
 }
+
 export default SvgShield;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPsychologyAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPsychologyAlt(props) {
     </svg>
   );
 }
+
 export default SvgPsychologyAlt;

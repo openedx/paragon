@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDoDisturb(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDoDisturb(props) {
     </svg>
   );
 }
+
 export default SvgDoDisturb;

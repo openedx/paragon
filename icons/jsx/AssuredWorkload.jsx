@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAssuredWorkload(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAssuredWorkload(props) {
     </svg>
   );
 }
+
 export default SvgAssuredWorkload;

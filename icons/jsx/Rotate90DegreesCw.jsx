@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRotate90DegreesCw(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgRotate90DegreesCw(props) {
     </svg>
   );
 }
+
 export default SvgRotate90DegreesCw;

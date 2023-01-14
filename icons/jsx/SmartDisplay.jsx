@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSmartDisplay(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgSmartDisplay(props) {
     </svg>
   );
 }
+
 export default SvgSmartDisplay;

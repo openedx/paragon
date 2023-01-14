@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFilterDrama(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFilterDrama(props) {
     </svg>
   );
 }
+
 export default SvgFilterDrama;

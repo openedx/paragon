@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgReportOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgReportOff(props) {
     </svg>
   );
 }
+
 export default SvgReportOff;

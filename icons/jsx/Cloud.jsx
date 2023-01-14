@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCloud(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCloud(props) {
     </svg>
   );
 }
+
 export default SvgCloud;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSecurity(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSecurity(props) {
     </svg>
   );
 }
+
 export default SvgSecurity;

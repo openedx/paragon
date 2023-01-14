@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPrivacyTip(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPrivacyTip(props) {
     </svg>
   );
 }
+
 export default SvgPrivacyTip;

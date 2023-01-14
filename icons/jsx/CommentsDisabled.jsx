@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCommentsDisabled(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCommentsDisabled(props) {
     </svg>
   );
 }
+
 export default SvgCommentsDisabled;

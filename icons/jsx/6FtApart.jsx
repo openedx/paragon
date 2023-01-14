@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function Svg6FtApart(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function Svg6FtApart(props) {
     </svg>
   );
 }
+
 export default Svg6FtApart;

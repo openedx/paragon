@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgArrowCircleUp(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgArrowCircleUp(props) {
     </svg>
   );
 }
+
 export default SvgArrowCircleUp;

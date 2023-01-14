@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDns(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDns(props) {
     </svg>
   );
 }
+
 export default SvgDns;

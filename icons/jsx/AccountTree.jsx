@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAccountTree(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAccountTree(props) {
     </svg>
   );
 }
+
 export default SvgAccountTree;

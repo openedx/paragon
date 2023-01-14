@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRemoveRedEye(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRemoveRedEye(props) {
     </svg>
   );
 }
+
 export default SvgRemoveRedEye;

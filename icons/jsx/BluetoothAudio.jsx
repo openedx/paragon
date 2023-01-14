@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBluetoothAudio(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBluetoothAudio(props) {
     </svg>
   );
 }
+
 export default SvgBluetoothAudio;

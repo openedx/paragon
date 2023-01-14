@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgControlPointDuplicate(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgControlPointDuplicate(props) {
     </svg>
   );
 }
+
 export default SvgControlPointDuplicate;

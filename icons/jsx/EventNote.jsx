@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgEventNote(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgEventNote(props) {
     </svg>
   );
 }
+
 export default SvgEventNote;

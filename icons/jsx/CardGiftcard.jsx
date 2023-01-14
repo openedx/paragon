@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCardGiftcard(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCardGiftcard(props) {
     </svg>
   );
 }
+
 export default SvgCardGiftcard;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgExtensionOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgExtensionOff(props) {
     </svg>
   );
 }
+
 export default SvgExtensionOff;

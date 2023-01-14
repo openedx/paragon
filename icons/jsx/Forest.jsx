@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgForest(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgForest(props) {
     </svg>
   );
 }
+
 export default SvgForest;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSmokeFree(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSmokeFree(props) {
     </svg>
   );
 }
+
 export default SvgSmokeFree;

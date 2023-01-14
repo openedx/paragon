@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHearing(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHearing(props) {
     </svg>
   );
 }
+
 export default SvgHearing;

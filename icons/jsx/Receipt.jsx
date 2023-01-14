@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgReceipt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgReceipt(props) {
     </svg>
   );
 }
+
 export default SvgReceipt;

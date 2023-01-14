@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgOpenInBrowser(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgOpenInBrowser(props) {
     </svg>
   );
 }
+
 export default SvgOpenInBrowser;

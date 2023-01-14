@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSubtitles(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSubtitles(props) {
     </svg>
   );
 }
+
 export default SvgSubtitles;

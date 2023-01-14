@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAward(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAward(props) {
     </svg>
   );
 }
+
 export default SvgAward;

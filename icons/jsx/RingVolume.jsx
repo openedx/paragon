@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRingVolume(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRingVolume(props) {
     </svg>
   );
 }
+
 export default SvgRingVolume;

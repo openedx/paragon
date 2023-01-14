@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgOnlinePrediction(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgOnlinePrediction(props) {
     </svg>
   );
 }
+
 export default SvgOnlinePrediction;

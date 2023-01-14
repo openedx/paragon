@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgExtension(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgExtension(props) {
     </svg>
   );
 }
+
 export default SvgExtension;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgGarage(props) {
   return (
     <svg
@@ -19,4 +20,5 @@ function SvgGarage(props) {
     </svg>
   );
 }
+
 export default SvgGarage;

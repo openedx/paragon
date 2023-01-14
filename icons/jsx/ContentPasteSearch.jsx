@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgContentPasteSearch(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgContentPasteSearch(props) {
     </svg>
   );
 }
+
 export default SvgContentPasteSearch;

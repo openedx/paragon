@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgChatBubbleOutline(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgChatBubbleOutline(props) {
     </svg>
   );
 }
+
 export default SvgChatBubbleOutline;

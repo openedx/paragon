@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgInput(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgInput(props) {
     </svg>
   );
 }
+
 export default SvgInput;

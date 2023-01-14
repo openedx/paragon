@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSignalCellularAlt1Bar(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgSignalCellularAlt1Bar(props) {
     </svg>
   );
 }
+
 export default SvgSignalCellularAlt1Bar;

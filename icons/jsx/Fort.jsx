@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFort(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFort(props) {
     </svg>
   );
 }
+
 export default SvgFort;

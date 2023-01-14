@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCellTower(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgCellTower(props) {
     </svg>
   );
 }
+
 export default SvgCellTower;

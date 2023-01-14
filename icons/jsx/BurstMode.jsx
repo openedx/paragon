@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBurstMode(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBurstMode(props) {
     </svg>
   );
 }
+
 export default SvgBurstMode;
