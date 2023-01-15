@@ -117,9 +117,8 @@
 
   &.disabled,
   &:disabled {
-    color: lighten($color, 10%);
+    color: $color;
     background-color: transparent;
-    border-color: lighten($color, 10%);
   }
 
   &:not(:disabled):not(.disabled):active,
