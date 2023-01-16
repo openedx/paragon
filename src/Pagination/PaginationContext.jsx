@@ -53,9 +53,6 @@ function PaginationContextProvider({
   };
 
   const handlePreviousButtonClick = () => {
-    if (isOnFirstPage()) {
-      return;
-    }
     onPageSelect(currentPage - 1);
     if (currentPage === 2) {
       nextButtonRef.current.focus();
@@ -66,9 +63,6 @@ function PaginationContextProvider({
   };
 
   const handleNextButtonClick = () => {
-    if (isOnLastPage()) {
-      return;
-    }
     onPageSelect(currentPage + 1);
     if (currentPage === pageCount - 1) {
       previousButtonRef.current.focus();
@@ -109,7 +103,6 @@ function PaginationContextProvider({
   };
 
   const getAriaLabelForPageOfCountButton = () => `${buttonLabels.page} ${currentPage}, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} ${pageCount}`;
-  const getLabelForPageOfCountButton = () => currentPage;
 
   const getScreenReaderText = () => `${buttonLabels.page} ${currentPage}, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} ${pageCount}`;
   const getPageOfText = () => `${currentPage} ${buttonLabels.pageOfCount} ${pageCount}`;
@@ -148,7 +141,6 @@ function PaginationContextProvider({
     getAriaLabelForPageButton,
     getAriaLabelForPreviousButton,
     getAriaLabelForPageOfCountButton,
-    getLabelForPageOfCountButton,
     getPageButtonVariant,
     handlePreviousButtonClick,
     handleNextButtonClick,

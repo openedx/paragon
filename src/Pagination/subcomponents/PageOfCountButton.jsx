@@ -3,10 +3,10 @@ import classNames from 'classnames';
 import PaginationContext from '../PaginationContext';
 
 export default function PageOfCountButton() {
-  const { getAriaLabelForPageOfCountButton, getLabelForPageOfCountButton } = useContext(PaginationContext);
+  const { getAriaLabelForPageOfCountButton, getPageOfText } = useContext(PaginationContext);
 
   const ariaLabel = getAriaLabelForPageOfCountButton();
-  const label = getLabelForPageOfCountButton();
+  const label = getPageOfText();
 
   return (
     <li className={classNames(['page-item', 'disabled'])}>

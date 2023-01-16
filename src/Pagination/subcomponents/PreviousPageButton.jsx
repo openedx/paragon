@@ -9,6 +9,7 @@ import PaginationContext from '../PaginationContext';
 export default function PreviousPageButton() {
   const {
     invertColors,
+    getPageButtonVariant,
     isDefaultVariant,
     isOnFirstPage,
     getAriaLabelForPreviousButton,
@@ -26,7 +27,7 @@ export default function PreviousPageButton() {
       <li className={classNames('page-item', { disabled: isDisabled })}>
         <Button
           className="previous page-link"
-          variant={invertColors ? 'inverse-tertiary' : 'tertiary'}
+          variant={getPageButtonVariant()}
           aria-label={getAriaLabelForPreviousButton()}
           tabIndex={isDisabled ? '-1' : undefined}
           onClick={handlePreviousButtonClick}
