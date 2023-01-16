@@ -136,9 +136,6 @@
     outline: 0;
     box-shadow: none;
 
-    $distance: $btn-focus-width + $btn-focus-gap;
-    $distance-include-btn-border: $distance + $btn-border-width;
-
     &::before {
       content: "";
       position: absolute;
@@ -147,15 +144,15 @@
       bottom: -1 * $distance-include-btn-border;
       left: -1 * $distance-include-btn-border;
       border: solid $btn-focus-width $ring-color;
-      border-radius: calc(#{$btn-border-radius} + #{$distance});
+      border-radius: $btn-border-radius-value;
     }
 
     &.btn-lg::before {
-      border-radius: calc(#{$btn-border-radius-lg} + #{$distance});
+      border-radius: $btn-border-radius-value;
     }
 
     &.btn-sm::before {
-      border-radius: calc(#{$btn-border-radius-sm} + #{$distance});
+      border-radius: $btn-border-radius-value;
     }
 
     &:active,
