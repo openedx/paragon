@@ -2,22 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import BreadcrumbLink from './BreadcrumbLink';
 import { ChevronRight } from '../../icons';
 import Icon from '../Icon';
 
 function Breadcrumb({
-  links, activeLabel, spacer, clickHandler, variant, isMobile, ariaLabel,
+  links, activeLabel, spacer, clickHandler,
+  variant, isMobile, ariaLabel, linkAs,
 }) {
   const linkCount = links.length;
   const displayLinks = isMobile ? [links[linkCount - 1]] : links;
 
   return (
     <nav aria-label={ariaLabel} className={classNames('pgn__breadcrumb', `pgn__breadcrumb-${variant}`)}>
-      <ol className={classNames('list-inline', 'd-flex', 'align-items-center', { 'is-mobile': isMobile })}>
-        {displayLinks.map(({ url, label }, i) => (
-          <React.Fragment key={url}>
+      <ol className={classNames('list-inline', { 'is-mobile': isMobile })}>
+        {displayLinks.map((link, i) => (
+          <React.Fragment key={link.label}>
             <li className={classNames('list-inline-item')}>
-              <a className="link-muted" href={url} {...(clickHandler && { onClick: clickHandler })}>{label}</a>
+              <BreadcrumbLink as={linkAs} clickHandler={clickHandler} linkProps={link} />
             </li>
             {(activeLabel || ((i + 1) < linkCount))
               && (
@@ -34,14 +36,13 @@ function Breadcrumb({
 }
 
 Breadcrumb.propTypes = {
-  /** an array of objects with the properties `label` and `url` as strings. */
+  /** An array of objects describing links to be rendered. The contents of an object depend on the value of `linkAs`
+   * prop as these objects will get passed down as props to the underlying component defined by `linkAs` prop.
+   */
   links: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
-    url: PropTypes.string,
   })).isRequired,
-  /** allows to add a label that is not a link to the end of the breadcrumb.
-   * Defaults to `undefined`.
- */
+  /** allows to add a label that is not a link to the end of the breadcrumb. */
   activeLabel: PropTypes.string,
   /** label of the element */
   ariaLabel: PropTypes.string,
@@ -55,6 +56,10 @@ Breadcrumb.propTypes = {
   variant: PropTypes.oneOf(['light', 'dark']),
   /** The `Breadcrumbs` mobile variant view. */
   isMobile: PropTypes.bool,
+  /** Specifies the base element to use when rendering links, you should generally use either plain 'a' or
+   * [react-router's Link](https://reactrouter.com/en/main/components/link).
+   */
+  linkAs: PropTypes.elementType,
 };
 
 Breadcrumb.defaultProps = {
@@ -64,6 +69,7 @@ Breadcrumb.defaultProps = {
   clickHandler: undefined,
   variant: 'light',
   isMobile: false,
+  linkAs: 'a',
 };
 
 export default Breadcrumb;

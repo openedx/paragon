@@ -2,13 +2,11 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// @ts-ignore
+import { Container } from '~paragon-react';
 import Color from 'color';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
-// @ts-ignore
-import { Container } from '~paragon-react'; // eslint-disable-line
 
 const utilityClasses = {
   bg: (color: string, level: number) => (level ? `bg-${color}-${level}` : `bg-${color}`),
@@ -61,31 +59,33 @@ export interface ISwatch {
   isUnused?: boolean,
 }
 
-const Swatch = ({ name, colorClassName, isUnused }: ISwatch) => (
-  <div className="d-flex align-items-center mb-2">
-    <MeasuredItem
-      properties={['background-color']}
-      renderAfter={(measurements: { [x: string]: JSX.Element; }) => (
-        <div style={{ lineHeight: 1 }} className="small">
-          <code className="mb-0 d-block text-lowercase text-dark-700">
-            {name}
-          </code>
-          {measurements['background-color'] && (
+function Swatch({ name, colorClassName, isUnused }: ISwatch) {
+  return (
+    <div className="d-flex align-items-center mb-2">
+      <MeasuredItem
+        properties={['background-color']}
+        renderAfter={(measurements: { [x: string]: JSX.Element; }) => (
+          <div style={{ lineHeight: 1 }} className="small">
+            <code className="mb-0 d-block text-lowercase text-dark-700">
+              {name}
+            </code>
+            {measurements['background-color'] && (
             <code style={{ fontSize: '65%' }} className="text-muted">
               {Color(measurements['background-color']).hex()}
             </code>
-          )}
-        </div>
-      )}
-    >
-      <div
-        className={classNames('p-3 mr-2 rounded', colorClassName, {
-          'unused-level': isUnused,
-        })}
-      />
-    </MeasuredItem>
-  </div>
-);
+            )}
+          </div>
+        )}
+      >
+        <div
+          className={classNames('p-3 mr-2 rounded', colorClassName, {
+            'unused-level': isUnused,
+          })}
+        />
+      </MeasuredItem>
+    </div>
+  );
+}
 
 Swatch.propTypes = {
   name: PropTypes.string.isRequired,

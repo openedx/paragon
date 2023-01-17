@@ -7,9 +7,10 @@ function SvgViewAgenda(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M3 13h18v8H3zM3 3h18v8H3z" />
+      <path d="M3 13h18v8H3zM3 3h18v8H3z" fill="currentColor" />
     </svg>
   );
 }

@@ -30,7 +30,7 @@ function ControlledSelect({ row }) {
   const updatedProps = useConvertIndeterminateProp(row.getToggleRowSelectedProps());
 
   return (
-    <div className="d-flex align-content-center p-1">
+    <div className="pgn__data-table__controlled-select">
       <CheckboxControl
         {...updatedProps}
         onChange={toggleSelected}

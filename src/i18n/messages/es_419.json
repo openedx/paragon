@@ -10,6 +10,7 @@
   "pgn.DataTable.BaseSelectionStatus.clearSelectionText": "Borrar selección",
   "pgn.DataTable.BaseSelectionStatus.selectAllText": "Seleccionar todo {itemCount}",
   "pgn.DataTable.BaseSelectionStatus.selectedText": "{numSelectedRows} seleccionado",
+  "pgn.DataTable.BaseSelectionStatus.selectedTextPaginated": "{numSelectedRows} selected ({numSelectedRowsOnPage} shown below)",
   "pgn.DataTable.ExpandAll.collapseAllLabel": "Colapsar todo",
   "pgn.DataTable.ExpandAll.expandAllLabel": "Expandir todo",
   "pgn.DataTable.FilterStatus.clearFiltersText": "Borrar filtros",
@@ -22,5 +23,7 @@
   "pgn.Dropzone.DefaultContent.label": "Arrastre y suelte su archivo aquí o haga clic para cargarlo.",
   "pgn.Dropzone.UploadProgress.cancelLabel": "Cancelar",
   "pgn.Dropzone.UploadProgress.uploadLabel": "Subiendo {filename}.",
+  "pgn.FormAutosuggest.iconButtonClosed": "Close the options menu",
+  "pgn.FormAutosuggest.iconButtonOpened": "Open the options menu",
   "pgn.Toast.closeLabel": "Cerrar"
 }

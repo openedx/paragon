@@ -22,8 +22,11 @@ export const selectColumn = {
     const updatedProps = useConvertIndeterminateProp(toggleRowsSelectedProps);
 
     return (
-      <div className="d-flex align-content-center p-1">
-        <CheckboxControl {...updatedProps} />
+      <div className="pgn__data-table__controlled-select">
+        <CheckboxControl
+          {...updatedProps}
+          data-testid="datatable-select-column-checkbox-header"
+        />
       </div>
     );
   },
@@ -35,8 +38,11 @@ export const selectColumn = {
     const updatedProps = useConvertIndeterminateProp(row.getToggleRowSelectedProps());
 
     return (
-      <div className="d-flex align-content-center p-1">
-        <CheckboxControl {...updatedProps} />
+      <div className="pgn__data-table__controlled-select">
+        <CheckboxControl
+          {...updatedProps}
+          data-testid="datatable-select-column-checkbox-cell"
+        />
       </div>
     );
   },

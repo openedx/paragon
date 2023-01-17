@@ -8,21 +8,26 @@ const SMART_STATUS_CLASS = 'pgn__smart-status';
 
 function SmartStatus() {
   const {
-    state, selectedFlatRows, SelectionStatusComponent, FilterStatusComponent, RowStatusComponent, showFiltersInSidebar,
+    state,
+    SelectionStatusComponent,
+    FilterStatusComponent,
+    RowStatusComponent,
+    showFiltersInSidebar,
   } = useContext(DataTableContext);
-  const numSelectedRows = selectedFlatRows?.length;
+  const { selectedRowIds } = state;
+  const numSelectedRows = Object.keys(selectedRowIds || {}).length;
   const SelectionStatus = SelectionStatusComponent || SelectionStatusDefault;
   const FilterStatus = FilterStatusComponent || FilterStatusDefault;
   const RowStatus = RowStatusComponent || RowStatusDefault;
 
-  if (selectedFlatRows && numSelectedRows > 0) {
+  if (numSelectedRows > 0) {
     return (
       <SelectionStatus
         className={SMART_STATUS_CLASS}
       />
     );
   }
-  if (state?.filters && state.filters.length > 0 && !showFiltersInSidebar) {
+  if (state?.filters?.length > 0 && !showFiltersInSidebar) {
     return (
       <FilterStatus
         className={SMART_STATUS_CLASS}

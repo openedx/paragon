@@ -2,7 +2,7 @@ import React, {
   useEffect, useMemo, useReducer,
 } from 'react';
 import PropTypes from 'prop-types';
-import { useTable } from 'react-table';
+import { useTable, useMountedLayoutEffect } from 'react-table';
 
 import classNames from 'classnames';
 import Table from './Table';
@@ -51,22 +51,49 @@ function DataTable({
   disableElevation,
   isLoading,
   children,
+  onSelectedRowsChanged,
   ...props
 }) {
   const defaultColumn = useMemo(
     () => (defaultColumnValues),
     [defaultColumnValues],
   );
-  const tableOptions = useMemo(() => ({
-    columns,
-    data,
-    defaultColumn,
-    manualFilters,
-    manualPagination,
-    manualSortBy,
-    initialState,
-    ...initialTableOptions,
-  }), [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions, manualSortBy]);
+  const tableOptions = useMemo(() => {
+    const updatedTableOptions = {
+      stateReducer: (newState, action) => {
+        switch (action.type) {
+          // Note: we override the `toggleAllRowsSelected` action
+          // from react-table because it only clears the selections on the
+          // currently visible page; it does not clear the `selectedRowIds`
+          // as we would expect for selections on different pages. Instead, we
+          // force `selectedRowIds` to be cleared when `toggleAllRowsSelected(false)`
+          // is called.
+          case 'toggleAllRowsSelected': {
+            if (action.value) {
+              return newState;
+            }
+            return {
+              ...newState,
+              selectedRowIds: {},
+            };
+          }
+          default:
+            return newState;
+        }
+      },
+      ...initialTableOptions,
+    };
+    return {
+      columns,
+      data,
+      defaultColumn,
+      manualFilters,
+      manualPagination,
+      manualSortBy,
+      initialState,
+      ...updatedTableOptions,
+    };
+  }, [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions, manualSortBy]);
 
   const [selections, selectionsDispatch] = useReducer(selectionsReducer, initialSelectionsState);
 
@@ -107,17 +134,30 @@ function DataTable({
   // Use the state and functions returned from useTable to build your UI
   const instance = useTable(...tableArgs);
 
-  // Call ``fetchData`` whenever the state of the table changes (e.g., page change, sort or filter applied) but ignore
-  // any state changes to current row selections as we don't want to re-fetch data whenever row(s) are selected.
-  const tableStateWithoutSelections = { ...instance.state };
-  delete tableStateWithoutSelections.selectedRowIds;
+  const {
+    pageSize: tableStatePageSize,
+    pageIndex: tableStatePageIndex,
+    sortBy: tableStateSortBy,
+    filters: tableStateFilters,
+    selectedRowIds: tableStateSelectedRowIds,
+  } = instance.state;
 
   useEffect(() => {
     if (fetchData) {
-      fetchData(tableStateWithoutSelections);
+      fetchData({
+        pageSize: tableStatePageSize,
+        pageIndex: tableStatePageIndex,
+        sortBy: tableStateSortBy,
+        filters: tableStateFilters,
+      });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fetchData, JSON.stringify(tableStateWithoutSelections)]);
+  }, [fetchData, tableStatePageSize, tableStatePageIndex, tableStateSortBy, tableStateFilters]);
+
+  useMountedLayoutEffect(() => {
+    if (onSelectedRowsChanged) {
+      onSelectedRowsChanged(tableStateSelectedRowIds);
+    }
+  }, [tableStateSelectedRowIds, onSelectedRowsChanged]);
 
   const selectionActions = useSelectionActions(instance, controlledTableSelections);
 
@@ -133,6 +173,9 @@ function DataTable({
     renderRowSubComponent,
     disableElevation,
     isLoading,
+    isSelectable,
+    isPaginated,
+    manualSelectColumn,
     ...selectionProps,
     ...selectionActions,
     ...props,
@@ -192,6 +235,7 @@ DataTable.defaultProps = {
   renderRowSubComponent: undefined,
   isExpandable: false,
   isLoading: false,
+  onSelectedRowsChanged: undefined,
 };
 
 DataTable.propTypes = {
@@ -263,6 +307,7 @@ DataTable.propTypes = {
     pageIndex: requiredWhen(PropTypes.number, 'isPaginated'),
     filters: requiredWhen(PropTypes.arrayOf(PropTypes.shape()), 'manualFilters'),
     sortBy: requiredWhen(PropTypes.arrayOf(PropTypes.shape()), 'manualSortBy'),
+    selectedRowIds: PropTypes.shape(),
   }),
   /** Table options passed to react-table's useTable hook. Will override some options passed in to DataTable, such
      as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
@@ -350,13 +395,16 @@ DataTable.propTypes = {
      * actions section. Only 'left' and 'bottom' are supported */
     togglePlacement: PropTypes.string,
   }),
-  /** remove the default box shadow on the component */
+  /** Remove the default box shadow on the component */
   disableElevation: PropTypes.bool,
   /** A function that will render contents of expanded row, accepts `row` as a prop. */
   renderRowSubComponent: PropTypes.func,
   /** Indicates whether table supports expandable rows. */
   isExpandable: PropTypes.bool,
+  /** Indicates whether the table should show loading states. */
   isLoading: PropTypes.bool,
+  /** Callback function called when row selections change. */
+  onSelectedRowsChanged: PropTypes.func,
 };
 
 DataTable.BulkActions = BulkActions;

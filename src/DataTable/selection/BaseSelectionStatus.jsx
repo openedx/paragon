@@ -13,13 +13,15 @@ function BaseSelectionStatus({
   className,
   clearSelectionText,
   numSelectedRows,
+  numSelectedRowsOnPage,
   onSelectAll,
   onClear,
   selectAllText,
   allSelectedText,
   selectedText,
 }) {
-  const { itemCount } = useContext(DataTableContext);
+  const { itemCount, isPaginated, state } = useContext(DataTableContext);
+  const hasAppliedFilters = state?.filters?.length > 0;
   const isAllRowsSelected = numSelectedRows === itemCount;
   const intlAllSelectedText = allSelectedText || (
     <FormattedMessage
@@ -29,7 +31,15 @@ function BaseSelectionStatus({
       values={{ numSelectedRows }}
     />
   );
-  const intlSelectedText = selectedText || (
+
+  const defaultSelectedText = isPaginated || hasAppliedFilters ? (
+    <FormattedMessage
+      id="pgn.DataTable.BaseSelectionStatus.selectedTextPaginated"
+      defaultMessage="{numSelectedRows} selected ({numSelectedRowsOnPage} shown below)"
+      description="Text for selected label when table is paginated"
+      values={{ numSelectedRows, numSelectedRowsOnPage }}
+    />
+  ) : (
     <FormattedMessage
       id="pgn.DataTable.BaseSelectionStatus.selectedText"
       defaultMessage="{numSelectedRows} selected"
@@ -37,6 +47,9 @@ function BaseSelectionStatus({
       values={{ numSelectedRows }}
     />
   );
+
+  const intlSelectedText = selectedText || defaultSelectedText;
+
   return (
     <div className={className}>
       <span>{isAllRowsSelected ? intlAllSelectedText : intlSelectedText}</span>
@@ -92,6 +105,8 @@ BaseSelectionStatus.propTypes = {
   clearSelectionText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /** Count of selected rows in the table. */
   numSelectedRows: PropTypes.number.isRequired,
+  /** Count of selected rows on the current page */
+  numSelectedRowsOnPage: PropTypes.number.isRequired,
   /** A handler for 'Select all' button. */
   onSelectAll: PropTypes.func.isRequired,
   /** A handler for 'Clear selection' button. */

@@ -15,13 +15,15 @@ export {
   CardImg,
   CardGroup,
   CardGrid,
+  CardCarousel,
+  CARD_VARIANTS,
 } from './Card';
 export {
   default as Carousel, CarouselItem, CAROUSEL_NEXT_LABEL_TEXT, CAROUSEL_PREV_LABEL_TEXT,
 } from './Carousel';
 export { default as CheckBox } from './CheckBox';
 export { default as CheckBoxGroup } from './CheckBoxGroup';
-export { default as Chip } from './Chip';
+export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as CloseButton } from './CloseButton';
 export { default as Container } from './Container';
 export { default as Layout, Col, Row } from './Layout';
@@ -160,8 +162,15 @@ export { default as breakpoints } from './utils/breakpoints';
 export { default as Variant } from './utils/constants';
 export { default as useWindowSize } from './hooks/useWindowSize';
 export { default as useToggle } from './hooks/useToggle';
+export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigation';
 export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChild';
 export { default as useIsVisible } from './hooks/useIsVisible';
+export {
+  OverflowScrollContext,
+  OverflowScroll,
+  useOverflowScroll,
+  useOverflowScrollItems,
+} from './OverflowScroll';
 
 // Pass through any needed whole third-party library functionality
 // useTable for example is needed to use the DataTable component seamlessly

@@ -11,9 +11,18 @@ import {
 } from '../data/constants';
 
 const instance = {
-  selectedFlatRows: [1, 2, 3, 4],
+  // represents how `react-table` passes the row data for the current page
+  page: [1, 2, 3, 4],
   toggleAllRowsSelected: () => {},
   itemCount: 101,
+  state: {
+    selectedRowIds: {
+      1: true,
+      2: true,
+      3: true,
+      4: true,
+    },
+  },
 };
 
 // eslint-disable-next-line react/prop-types
@@ -30,18 +39,24 @@ function SelectionStatusWrapper({ value, props = {} }) {
 describe('<SelectionStatus />', () => {
   it('Shows the number of rows selected', () => {
     const wrapper = mount(<SelectionStatusWrapper value={instance} />);
-    expect(wrapper.text()).toContain(instance.selectedFlatRows.length.toString());
+    expect(wrapper.text()).toContain(instance.page.length.toString());
   });
   it('Shows that all rows are selected', () => {
+    const selectedRowIds = {};
+    [...new Array(101)].forEach((_, index) => {
+      selectedRowIds[index] = true;
+    });
+    const value = {
+      ...instance,
+      state: {
+        ...instance.state,
+        selectedRowIds,
+      },
+    };
     const wrapper = mount(
-      <SelectionStatusWrapper value={{ ...instance, selectedFlatRows: Array(101) }} />,
+      <SelectionStatusWrapper value={value} />,
     );
     expect(wrapper.text()).toContain('All 101');
-  });
-  it('does not show select all button if all rows are selected', () => {
-    const wrapper = mount(
-      <SelectionStatusWrapper value={{ ...instance, selectedFlatRows: Array(101) }} />,
-    );
     const button = wrapper.find(`button.${SELECT_ALL_TEST_ID}`);
     expect(button.length).toEqual(0);
   });
@@ -56,8 +71,16 @@ describe('<SelectionStatus />', () => {
     expect(toggleAllRowsSpy).toHaveBeenCalledWith(true);
   });
   it('does not render the clear selection button if there are no selected rows', () => {
+    const value = {
+      ...instance,
+      page: [],
+      state: {
+        ...instance.state,
+        selectedRowIds: {},
+      },
+    };
     const wrapper = mount(
-      <SelectionStatusWrapper value={{ ...instance, selectedFlatRows: [] }} />,
+      <SelectionStatusWrapper value={value} />,
     );
     expect(wrapper.find(CLEAR_SELECTION_TEST_ID).length).toEqual(0);
   });

@@ -7,9 +7,10 @@ function SvgAmpStories(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M7 4h10v15H7zM3 6h2v11H3zm16 0h2v11h-2z" />
+      <path d="M7 4h10v15H7zM3 6h2v11H3zm16 0h2v11h-2z" fill="currentColor" />
     </svg>
   );
 }

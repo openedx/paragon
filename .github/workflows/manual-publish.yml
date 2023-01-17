@@ -1,0 +1,40 @@
+name: Manual Publish
+on: [workflow_dispatch]
+jobs:
+  release:
+    name: Manual Publish
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+    - name: Install dependencies
+      run: npm ci
+    - name: Validate package-lock.json changes
+      run: make validate-no-uncommitted-package-lock-changes
+    - name: Lint
+      run: npm run lint
+    - name: Test
+      run: npm run test
+    - name: i18n_extract
+      run: npm run i18n_extract
+    - name: Coverage
+      uses: codecov/codecov-action@v2
+    - name: Build
+      run: npm run build
+    # NPM expects to be authenticated for publishing. This step will fail CI if NPM is not authenticated
+    - name: Check NPM authentication
+      run: |
+        echo "//registry.npmjs.org/:_authToken=${{ secrets.SEMANTIC_RELEASE_NPM_TOKEN }}" >> .npmrc
+        npm whoami
+    - name: Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_NPM_TOKEN }}
+      # `npm publish` relies on version specified in package.json file
+      run: npm publish --tag old-version

@@ -2,10 +2,12 @@ import React, {
   useEffect, useState,
 } from 'react';
 import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
 import { KeyboardArrowUp, KeyboardArrowDown } from '../../icons';
 import Icon from '../Icon';
 import { Form, IconButton, Spinner } from '../index';
 import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
+import messages from './messages';
 
 function FormAutosuggest({
   children,
@@ -20,6 +22,7 @@ function FormAutosuggest({
   helpMessage,
   ...props
 }) {
+  const intl = useIntl();
   const parentRef = useArrowKeyNavigation({
     selectors: arrowKeyNavigationSelector,
     ignoredKeys: ignoredArrowKeysNames,
@@ -103,7 +106,9 @@ function FormAutosuggest({
       iconAs={Icon}
       size="sm"
       variant="secondary"
-      alt={isMenuClosed ? 'Open the options menu' : 'Close the options menu'}
+      alt={isMenuClosed
+        ? intl.formatMessage(messages.iconButtonOpened)
+        : intl.formatMessage(messages.iconButtonClosed)}
       onClick={(e) => handleExpand(e, isMenuClosed)}
     />
   );

@@ -5,9 +5,7 @@ import {
   Icon,
   IconButton,
   Stack,
-  // @ts-ignore
 } from '~paragon-react';
-// @ts-ignore
 import { Close } from '~paragon-icons';
 
 import { LANGUAGES } from '../config';
@@ -15,7 +13,7 @@ import { LANGUAGES } from '../config';
 import SettingsContext from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 
-const Settings = () => {
+function Settings() {
   const {
     settings,
     handleSettingsChange,
@@ -28,6 +26,7 @@ const Settings = () => {
       position="right"
       show={showSettings}
       variant="light"
+      onClose={closeSettings}
     >
       <div className="d-flex align-items-center justify-content-between mb-3">
         <h3 className="mb-0">Settings</h3>
@@ -88,6 +87,6 @@ const Settings = () => {
       </Stack>
     </Sheet>
   );
-};
+}
 
 export default Settings;
