@@ -139,20 +139,20 @@
     &::before {
       content: "";
       position: absolute;
-      top: -1 * $distance-include-btn-border;
-      right: -1 * $distance-include-btn-border;
-      bottom: -1 * $distance-include-btn-border;
-      left: -1 * $distance-include-btn-border;
+      top: -1 * $btn-focus-distance-to-border;
+      right: -1 * $btn-focus-distance-to-border;
+      bottom: -1 * $btn-focus-distance-to-border;
+      left: -1 * $btn-focus-distance-to-border;
       border: solid $btn-focus-width $ring-color;
-      border-radius: $btn-border-radius-value;
+      border-radius: $btn-focus-border-radius;
     }
 
     &.btn-lg::before {
-      border-radius: $btn-border-radius-value;
+      border-radius: $btn-focus-border-radius;
     }
 
     &.btn-sm::before {
-      border-radius: $btn-border-radius-value;
+      border-radius: $btn-focus-border-radius;
     }
 
     &:active,
