@@ -1,13 +1,14 @@
 # Design Tokens
 
-TDB short into to design tokens
+This module is responsible for handling design tokens in Paragon, for rationale behind design tokens see [Scaling Paragon's styles architecture with design tokens](https://openedx.atlassian.net/wiki/spaces/BPL/pages/3630923811/Scaling+Paragon+s+styles+architecture+with+design+tokens)
+and relevant ADR(TODO: add link when we merge an ADR). 
 
 ## Overview
 
 We heavily rely on [style-dictionary](https://github.com/amzn/style-dictionary) package to build design tokens into various formats,
 it is recommended to read their [documentation](https://amzn.github.io/style-dictionary/#/) as well to know more about the package since we mostly focus on Paragon specifics in this document.
 
-All tokens are located in `src` directory and divided into three category. We try to follow CTI token naming as described [here](https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item), but our schema does have some differences, see tokens files for an example of that
+All tokens are located in `src` directory and divided into three categories. We try to follow CTI token naming as described [here](https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item), but our schema does have some differences, see tokens files for an example of that
 
 ## Token modifications
 

@@ -434,11 +434,11 @@ Paragon is distributed on npm as ES6 modules.  This means that webpack can use t
 
 To get treeshaking to work, your app may require some updates - most notably, Babel 7.  See this PR for an example of the changes necessary to update an app to take advantage of treeshaking with Paragon: https://github.com/openedx/frontend-app-payment/pull/48
 
-## Design Tokens
+## Theming with Design Tokens
 
 Paragon uses [style-dictionary](https://github.com/amzn/style-dictionary) to build design tokens into CSS variables that are included in the package. Read more in [design tokens README](tokens/README.md).
 
-To leverage design tokens in your project Paragon exposes a couple of helpful CLI commands:
+To leverage design tokens in your project and apply your custom theme by changing tokens' values Paragon exposes a couple of helpful CLI commands:
 
 1. `build-design-tokens --build-dir <path_to_some_directory> --source <path_or_glob_patter>`
 Build tokens into CSS variables by providing additional tokens or overriding existing ones.
@@ -454,4 +454,9 @@ and replaces values with corresponding CSS variable based on `source` attribute.
 }
 ```
 if you run the script and feed it a file that contains a line `$white-color: #222;` (i.e. definition of the variable),
-then script will modify the line to be `$white-color: var(--pgn-color-white);`. 
+then script will modify the line to be `$white-color: var(--pgn-color-white);`.
+
+See [brand-edx.org](https://github.com/edx/brand-edx.org) repo for an example of overriding design tokens to apply your theme.
+
+**NOTE**: internally Paragon still utilizes SCSS variables as before (the values are changed to CSS variables instead of being constants),
+therefore you could still use an old approach of theming by overriding SCSS variables directly, although this is not recommended.  
