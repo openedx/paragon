@@ -1,5 +1,5 @@
 {
-  "lastModified": 1674050961152,
+  "lastModified": 1674137353165,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -17461,7 +17461,7 @@
           },
           {
             "filePath": "src/courseware/course/share/ShareButton.jsx",
-            "line": 29,
+            "line": 38,
             "column": 6
           },
           {
@@ -18450,13 +18450,6 @@
             "filePath": "src/courseware/course/sequence/Unit.jsx",
             "line": 194,
             "column": 8
-          }
-        ],
-        "Share": [
-          {
-            "filePath": "src/courseware/course/share/ShareButton.jsx",
-            "line": 29,
-            "column": 17
           }
         ],
         "ArrowBackIos": [
@@ -24393,6 +24386,28 @@
             "column": 6
           }
         ],
+        "ModalDialog.Body": [
+          {
+            "filePath": "src/editors/containers/EditorContainer/index.jsx",
+            "line": 65,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/index.jsx",
+            "line": 32,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 35,
+            "column": 4
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 30,
+            "column": 4
+          }
+        ],
         "Collapsible.Advanced": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
@@ -24973,23 +24988,6 @@
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/GalleryCard.jsx",
             "line": 12,
             "column": 2
-          }
-        ],
-        "ModalDialog.Body": [
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/index.jsx",
-            "line": 32,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 35,
-            "column": 4
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
-            "line": 30,
-            "column": 4
           }
         ],
         "ModalDialog": [
