@@ -43,13 +43,13 @@ As ``Checkbox``
         name="cheeses"
         columns={isExtraSmall ? 1 : 2}
       >
-        <SelectableBox value="swiss" type={type} aria-label="checkbox">
+        <SelectableBox value="swiss" type={type} aria-label="swiss checkbox">
           <div>
             <h3>It is my first SelectableBox</h3>
             <p>Swiss</p>
           </div>
         </SelectableBox>
-        <SelectableBox value="cheddar" inputHidden={false} type={type} aria-label="checkbox">
+        <SelectableBox value="cheddar" inputHidden={false} type={type} aria-label="cheddar checkbox">
           Cheddar
         </SelectableBox>
         <SelectableBox
@@ -57,7 +57,7 @@ As ``Checkbox``
           inputHidden={false}
           type={type}
           isInvalid={isInvalid()}
-          aria-label="checkbox"
+          aria-label="pepperjack checkbox"
         >
           <h3>Pepperjack</h3>
         </SelectableBox>
@@ -84,17 +84,17 @@ As ``Radio``
       name="colors"
       columns={isExtraSmall ? 1 : 3}
     >
-      <SelectableBox value="red" type={type} aria-label="checkbox">
+      <SelectableBox value="red" type={type} aria-label="red checkbox">
         <div>
           <h3>It is Red color</h3>
           <p>Select me</p>
         </div>
       </SelectableBox>
-      <SelectableBox value="green" inputHidden={false} type={type} aria-label="checkbox">
+      <SelectableBox value="green" inputHidden={false} type={type} aria-label="green-checkbox">
         <h3>Green</h3>
         <p>Leaves and grass</p>
       </SelectableBox>
-      <SelectableBox value="blue" inputHidden={false} type={type} aria-label="checkbox">
+      <SelectableBox value="blue" inputHidden={false} type={type} aria-label="blue checkbox">
         <h3>Blue</h3>
         <p>The sky</p>
       </SelectableBox>
@@ -133,7 +133,7 @@ As ``Checkbox`` with ``isIndeterminate``
           onClick={handleCheckAllChange}
           inputHidden={false}
           type={type}
-          aria-label="checkbox"
+          aria-label="all options checkbox"
         >
           All the cheese
         </SelectableBox>
@@ -145,16 +145,16 @@ As ``Checkbox`` with ``isIndeterminate``
         name="cheeses"
         columns={isExtraSmall ? 1 : 3}
       >
-        <SelectableBox value="swiss" type={type} aria-label="checkbox">
+        <SelectableBox value="swiss" type={type} aria-label="swiss checkbox">
           <div>
             <h3>It is my first SelectableBox</h3>
             <p>Swiss</p>
           </div>
         </SelectableBox>
-        <SelectableBox value="cheddar" inputHidden={false} type={type} aria-label="checkbox">
+        <SelectableBox value="cheddar" inputHidden={false} type={type} aria-label="cheddar checkbox">
           Cheddar
         </SelectableBox>
-        <SelectableBox value="pepperjack" inputHidden={false} type={type} aria-label="checkbox">
+        <SelectableBox value="pepperjack" inputHidden={false} type={type} aria-label="pepperjack checkbox">
           <h3>Pepperjack</h3>
         </SelectableBox>
       </SelectableBox.Set>
