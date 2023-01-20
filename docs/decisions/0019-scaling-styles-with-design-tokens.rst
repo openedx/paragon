@@ -208,33 +208,54 @@ As a more concrete example, consuming applications could, in theory, use an expo
 Consequences
 ============
 
-* **May need to iterate on the design tokens schema.**
+May need to iterate on the design tokens schema
+-----------------------------------------------
 
-  * Identifying the best way to think about, represent, and communicate our design tokens in JSON is a new paradigm and we'll likely need to make some adjustments to the schema over time as design tokens get adopted by consumers and theme authors and we receive feedback on what's working and what isn't.
-  * Iterating on good naming conventions and JSON file schemas that make sense and continues to scale as the Paragon design system evolves will be a challenge, especially to do so in a way that doesn't cause downstream breaking changes without warning. We will likely need to establish a process for deprecating design tokens to facilitate some level of iteration on the token schema.
-  * Paragon's previous SCSS variables were a combination of only global and component tokens. The notion of "alias" tokens is new to Paragon and will require intentional thought into how alias tokens are defined and used.
+* Identifying the best way to think about, represent, and communicate our design tokens in JSON is a new paradigm and we'll likely need to make some adjustments to the schema over time as design tokens get adopted by consumers and theme authors and we receive feedback on what's working and what isn't.
+* Iterating on good naming conventions and JSON file schemas that make sense and continues to scale as the Paragon design system evolves will be a challenge, especially to do so in a way that doesn't cause downstream breaking changes without warning. We will likely need to establish a process for deprecating design tokens to facilitate some level of iteration on the token schema.
+* Paragon's previous SCSS variables were a combination of only global and component tokens. The notion of "alias" tokens is new to Paragon and will require intentional thought into how alias tokens are defined and used.
 
-* **Updates required for consuming applications using and/or overriding SCSS variables.**
+Updates required for consuming applications using and/or overriding SCSS variables
+----------------------------------------------------------------------------------
 
-  * We are attempting to mitigate this concern keeping the SCSS variables Paragon has in place today, but redefining them to reference the newly generated CSS variables instead. This approach should allow consumers who rely on the existing SCSS variables to continue to use them as they are, but still utilize the underlying CSS variable for runtime theming support instead.
-  * We also plan to ensure the output CSS/SCSS supported by Paragon is well-documented such that consumers know what variables are available to use.
+* We are attempting to mitigate this concern keeping the SCSS variables Paragon has in place today, but redefining them to reference the newly generated CSS variables instead. This approach should allow consumers who rely on the existing SCSS variables to continue to use them as they are, but still utilize the underlying CSS variable for runtime theming support instead.
+* We also plan to ensure the output CSS/SCSS supported by Paragon is well-documented such that consumers know what variables are available to use.
 
-* **Breaking change for how Paragon themes are currently created.**
+Breaking change for how Paragon themes are currently created
+------------------------------------------------------------
 
-  * Currently, Paragon themes are created following the guidance in `@edx/brand-openedx`, which defines a set of files in which theme authors should modify to override the core Paragon starter theme. These files include a `_variables.scss` file in which theme authors may override any of Paragon's SCSS variables.
-  * With design tokens, theme authors will no longer override any variables in SCSS/CSS directly, but rather define JSON files to override the core Paragon design tokens. After re-building the theme, a new `variables.css` file representing all the CSS variables for the theme is generated, including the overriden values in theme's custom JSON files.
-  * The resulting CSS file may be hosted on a CDN and applied at runtime to consuming applications.
+* Currently, Paragon themes are created following the guidance in `@edx/brand-openedx`, which defines a set of files in which theme authors should modify to override the core Paragon starter theme. These files include a `_variables.scss` file in which theme authors may override any of Paragon's SCSS variables.
+* With design tokens, theme authors will no longer override any variables in SCSS/CSS directly, but rather define JSON files to override the core Paragon design tokens. After re-building the theme, a new `variables.css` file representing all the CSS variables for the theme is generated, including the overriden values in theme's custom JSON files.
+* The resulting CSS file may be hosted on a CDN and applied at runtime to consuming applications.
 
-* **Onboarding designers and engineers to design tokens.**
+Lack of support for SCSS calculations with CSS variables
+--------------------------------------------------------
 
-  * Given defining styles via JSON files is a bit of a nascent paradigm, there is a fair concern that onboarding designers and engineers to this new styles architecture may be more difficult than defining traditional styles (e.g., hardcoding CSS variables). That said, with adequate documentation and training, we feel the benefits of design tokens for Paragon's future scalability outweigh potential increased complexities with getting up to speed with design tokens.
-  * There is also a vision that there could, in the future, be a user interface built on top of the JSON design tokens such that changes could be made by designers and engineers alike without needing to understanding the underlying `style-dictionary` tool and JSON file schema.
-  * Design tokens will also be annotated with brief descriptions of their purpose, which will be helpful for theme authors.
+* One of the benefits of SCSS is its useful helper functions that could be used with SCSS variables, such as `lighten` and `darken` to modify colors slightly.
+* SCSS is unable to parse the value of CSS variables at build time so, theme authors can't use such SCSS helper functions with Paragon's CSS variables.
+* As an alternative, we are proposing an approach to define `modifications <https://github.com/openedx/paragon/blob/alpha/tokens/sass-helpers.js>`_ to tokens similar to `lighten` and `darken` via a `modify` array in the design token JSON properties.
 
-* **Design tooling support for tokens is still relatively poor.**
+An abbreviated example::
 
-  * One of the intriguing benefits of moving to design tokens is that they may be transformed to other formats compatible with different platforms. One of the areas the Paragon Working Group may like to explore in the future is an integration between its design tokens and the Figma design tool.
-  * One of the deliverables of the Paragon design system is the Figma library containing drop-in Paragon components that largely match the components as implemented in code. The Figma library enables designers to work more efficiently and consistently, without needing to redefine existing patterns.
-  * However, all of the visual styles associated with the design system are essentially defined twice: once in Figma and again in code.
-  * The longer term vision would be treat Figma as a compatible platform for Paragon's design tokens, such that these foundational style properties would truly become a single source of truth across for both designers and engineers alike.
-  * However, this vision is limited by what such design tools like Figma can support; While Figma does not have native support for design tokens, there are Figma plugins (e.g., `Design Tokens <https://www.figma.com/community/plugin/888356646278934516/Design-Tokens>`__) that might be worth exploring in the future.
+  {
+    "inverse-brand": {
+      "value": "{color.btn.bg.inverse-brand.value}",
+      "source": "$btn-brand-inverse-hover-bg",
+      "modify": [{ "type": "darken", "amount": 0.075 }]
+  },
+
+Onboarding designers and engineers to design tokens
+---------------------------------------------------
+
+* Given defining styles via JSON files is a bit of a nascent paradigm, there is a fair concern that onboarding designers and engineers to this new styles architecture may be more difficult than defining traditional styles (e.g., hardcoding CSS variables). That said, with adequate documentation and training, we feel the benefits of design tokens for Paragon's future scalability outweigh potential increased complexities with getting up to speed with design tokens.
+* There is also a vision that there could, in the future, be a user interface built on top of the JSON design tokens such that changes could be made by designers and engineers alike without needing to understanding the underlying `style-dictionary` tool and JSON file schema.
+* Design tokens will also be annotated with brief descriptions of their purpose, which will be helpful for theme authors.
+
+Design tooling support for tokens is still relatively poor
+-----------------------------------------------------------
+
+* One of the intriguing benefits of moving to design tokens is that they may be transformed to other formats compatible with different platforms. One of the areas the Paragon Working Group may like to explore in the future is an integration between its design tokens and the Figma design tool.
+* One of the deliverables of the Paragon design system is the Figma library containing drop-in Paragon components that largely match the components as implemented in code. The Figma library enables designers to work more efficiently and consistently, without needing to redefine existing patterns.
+* However, all of the visual styles associated with the design system are essentially defined twice: once in Figma and again in code.
+* The longer term vision would be treat Figma as a compatible platform for Paragon's design tokens, such that these foundational style properties would truly become a single source of truth across for both designers and engineers alike.
+* However, this vision is limited by what such design tools like Figma can support; While Figma does not have native support for design tokens, there are Figma plugins (e.g., `Design Tokens <https://www.figma.com/community/plugin/888356646278934516/Design-Tokens>`__) that might be worth exploring in the future.
