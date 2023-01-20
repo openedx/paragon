@@ -920,7 +920,7 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
 () => {
   const [canScrollHorizontal, setCanScrollHorizontal] = useState('true');
   const [disableOpacityMasks, setDisableOpacityMasks] = useState('false');
-  const [hasOverflowCards, setHasOverflowCards] = useState('false');
+  const [hasOverflowCards, setHasOverflowCards] = useState('true');
 
   const CardComponent = () => (
     <Card isClickable>
