@@ -233,7 +233,7 @@ Lack of support for SCSS calculations with CSS variables
 
 * One of the benefits of SCSS is its useful helper functions that could be used with SCSS variables, such as ``lighten`` and ``darken`` to modify colors slightly.
 * SCSS is unable to parse the value of CSS variables at build time so, theme authors can't use such SCSS helper functions with Paragon's CSS variables.
-* As an alternative, we are proposing an approach to define `modifications <https://github.com/openedx/paragon/blob/alpha/tokens/sass-helpers.js>`_ to tokens similar to ``lighten`` and ``darken`` via a ``modify`` array in the design token JSON properties.
+* As an alternative, we are proposing an approach to define `modifications <https://github.com/openedx/paragon/blob/alpha/tokens/sass-helpers.js>`_ to tokens similar to ``lighten`` and ``darken`` via a ``modify`` array in the design token JSON properties based on functionality available via ``chroma-js`` (`NPM <https://www.npmjs.com/package/chroma-js>`__).
 
 An abbreviated example::
 
