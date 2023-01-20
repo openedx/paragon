@@ -16,7 +16,7 @@ Within Paragon, "theming" predominantly refers to brand customization as it rela
 Current styles architecture
 ---------------------------
 
-Today, Paragon's core styles are heavily based on `Bootstrap 4 <https://getbootstrap.com/docs/4.6/getting-started/introduction/>`_. The decision to rely on Bootstrap was to extend a popular, existing repsonsive CSS framework to get an initial design system created more efficienctly than creating all styles from scratch in addition to general knowledge and awareness of Bootstrap throughout the frontend community (see `OEP-16 <https://open-edx-proposals.readthedocs.io/en/latest/best-practices/oep-0016-bp-adopt-bootstrap.html>`_ for more details).
+Today, Paragon's core styles are heavily based on `Bootstrap 4 <https://getbootstrap.com/docs/4.6/getting-started/introduction/>`__. The decision to rely on Bootstrap was to extend a popular, existing repsonsive CSS framework to get an initial design system created more efficienctly than creating all styles from scratch in addition to general knowledge and awareness of Bootstrap throughout the frontend community (see `OEP-16 <https://open-edx-proposals.readthedocs.io/en/latest/best-practices/oep-0016-bp-adopt-bootstrap.html>`__ for more details).
 
 Bootstrap 4 supports theming of visual styles through SCSS variables. As a result, Paragon's current theming system also relies overriding SCSS variables, both from core Bootstrap and custom Paragon variables.
 
@@ -56,7 +56,7 @@ Decision
 
 We will migrate Paragon's theming and styles architecture to rely on CSS variables instead of SCSS variables to enable runtime theming support for consuming applications throughout the Open edX platform.
 
-In order to create a scalable, platform-agnostic way to define style properties (i.e., design tokens), Paragon will utilize `style-dictionary` (`docs <https://amzn.github.io/style-dictionary/#/>`_), a "build system that allows you to define styles once, in a way for any platform or language to consume."
+In order to create a scalable, platform-agnostic way to define style properties (i.e., design tokens), Paragon will utilize `style-dictionary` (`docs <https://amzn.github.io/style-dictionary/#/>`__), a "build system that allows you to define styles once, in a way for any platform or language to consume."
 
 If Paragon opted to hardcode the new CSS variables derived from the existing SCSS variables, we would still be in a situation where our design tokens are not platform-agnostic in that supporting CSS variables alone implies Paragon can only be utilized by browser-based applications.
 
@@ -75,12 +75,144 @@ How does `style-dictionary` work?
 
 At its core, `style-dictionary` finds all design token files, deep merges them together, and then parses them based on a configuration for how it should transform the discovered design tokens. As it parses the design token files, it resolves aliases or references to other design tokens. The final output from `style-dictionary` are automatically generated files (e.g., `variables.css`) based on the platforms specified in the configuration.
 
+The majority of the above architecture is handled `style-dictionary` itself; what concerns Paragon is how to define its configuration (i.e., which platforms to support) and the design tokens JSON file schema.
+
 .. image:: ./assets/style-dictionary-build-diagram.png
   :width: 100%
   :alt: `style-dictionary` build architecture diagram
 
+Design tokens implementation in Paragon 
+----------------------------------------
+
+In Paragon's design token implementation with `style-dictionary`, there will be a new directory (`tokens`) containing the JSON files representing Paragon's design tokens schema. These tokens represent style properties defined at several different layers of abstraction:
+
+1. Global tokens
+2. Alias tokens
+3. Component tokens
+
+Global tokens
+^^^^^^^^^^^^^
+
+The primitive values in the Paragon design language. The color palette, typography, spacing, animation, etc. are treated as global tokens. They may be used directly, and are inherited by other token types.
+
+Example::
+
+  {
+    "color": {
+      "primary": {
+        "500": {
+          "value": "#00262B",
+        },
+        "base": {
+          "value": "{color.primary.500.value}",
+        }
+      }
+  }
+
+The above global tokens would be transformed into CSS variables by `style-dictionary` as follows::
+
+  --pgn-color-primary-500: #00262B;
+  --pgn-color-primary-base: var(--pgn-color-primary-500);
+
+Alias tokens
+^^^^^^^^^^^^
+
+Intends to map global tokens and even other alias tokens to specific contexts, communicating the intended purpose of a token.
+
+Example::
+
+  {
+    "color": {
+      "theme": {
+        "default": {
+          "primary": {
+            "value": "{color.primary.500.value}"
+          }
+        }
+      }
+    }
+  }
+
+The above alias token would be transformed into a CSS variable by `style-dictionary` as follows::
+
+  --pgn-color-theme-default-primary: var(--pgn-color-primary-500);
+
+Component tokens
+^^^^^^^^^^^^^^^^
+
+An exhaustive representation of every value associated with specific components in the design system. Component tokens give explicit control over component-specific styles. They may inherit from other token types.
+
+Example::
+
+  {
+    "color": {
+      "btn": {
+        "bg": {
+          "primary": {
+            "value": "{color.theme.default.primary.value}"
+          }
+        }
+      }
+    }
+  }
+
+The above component token would be transformed to a CSS variable by `style-dictionary` as follows::
+
+  --pgn-color-btn-bg-primary: var(--pgn-color-theme-default-primary);
+
+By creating tokens within these 3 categories, the Paragon theming system provides more explicit control in how design tokens are utilized throughout the design system and its components.
+
+For example, by using alias tokens, theme authors may change the style properties of components consuming a specific alias token(s) without needing to necessarily change any underlying global token itself.
+
+In the token examples shown above, say the button component token referred directly to a global token instead. To update that button's background color (say, to a darker shade of the base primary color), the theme author must update the foundational global token to change the button color. However, this may have unintentend consequences in changing the color of components that were not intended to be changed.
+
+Instead, by having the component token inherit from an alias token, theme authors can modify the alias token without needing to change the underlying global token, which helps mitigate concerns around changing a foundational style property heavily used throughout the entire design system.
+
+In the above example, for instance, the value of `--pgn-color-theme-default-primary` could be changed to `{color.primary.700}` rather than changing the underlying value of `{color.primary.500}` directly, which might need to remain at its current value given its use elsewhere throughout the design system.
+
+Additional token file examples
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Please refer to the `tokens <https://github.com/openedx/paragon/tree/alpha/tokens/src>`__ defined in the current `alpha` release of Paragon.
+
+Implications for theme authors (e.g., `@edx/brand` packages)
+------------------------------------------------------------
+
+Currently, Paragon recommends theme authors to create a theme package such as `@edx/brand-openedx` (`Github <https://github.com/openedx/brand-openedx>`__) and `@edx/brand-edx.org` (`Github <https://github.com/edx/brand-edx.org>`__).
+
+While the migration from SCSS variables to CSS variables is a breaking change for theme authors, we have tried to mitigate this by keeping the existing SCSS variables but defining them such that their values refer to the new CSS variables. Because SCSS can't evaluate the CSS variable at runtime, it utilizes the CSS variable in the resulting output CSS used in the browser.
+
+Currently, theme authors largely modify SCSS variables from core Paragon by creating a `_variables.scss` file and importing it *after* the core Paragon SCSS styles in consuming applications (e.g., micro-frontends). Doing so, SCSS will override the original variables' values defined by core Paragon with the new SCSS from the `@edx/brand` theme.
+
+With design tokens, theme authors will instead override core Paragon tokens by defining their own JSON tokens that get deep merged alongside the core Paragon tokens, thus overriding any tokens that were defined by the theme author.
+
+This approach gives theme authors the same theming experience as core Paragon's tokens architecture though theme authors could also hardcode the CSS variables themselves like they do with SCSS variables today. The former approach is primarily recommended by Paragon to enable theme authors to have same theming approach as core Paragon.
+
+Furthermore, given CSS variables may be generated and consumed by applications in numerous ways, it's worth mentioning alternative strategies as well.
+
+For example, the above approach largely assumes you're able to generate and use a CSS file containing CSS variable overrides in consuming applications for each desired theme. It may be impractical to generate and host a CSS file for each dynamically generated theme, e.g. if the theme is driven by user input or the theme values (like HEX values) are stored in a database, retrieved by an API.
+
+In such cases, consumers could also directly override CSS variables at runtime by generating and injecting them into the `<head>` of the HTML document (e.g., with `react-helmet`) after retrieving the values from an API, which would result in overriding the core Paragon CSS variables as well.
+
+Future considerations: Customizing the theme via a user interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+More forward thinking, we would also like to explore creating a UI on top of these design tokens such that the understanding and writing of JSON files is abstracted away from theme authors. Such a UI may also enable designers to self-serve update the theme.
+
+Though this theme customization UI is not included in the initial release of design tokens and CSS variables, there is desire to do some prototyping to see what might be possible; other groups in the community may also have the capacity to run with it as well.
+
+That said, such UI considerations thus far have largely been for theme authors at the system/provider level, not so much at the user level. It may be interesting to explore whether Paragon could (and/or should) expose some generic and flexible helper components, hooks, functions, etc. that consuming applications could utilize to simplify the creation and injection of a dynamic, user-driven theme's CSS variables. 
+
+As a more concrete example, consuming applications could, in theory, use an exported function from Paragon that accepts a list of JSON and/or JavaScript objects as design tokens (similar to importing all the token files in the tokens build) and then run `style-dictionary` with the same (or extended) config on these custom tokens and the core Paragon tokens to generate the dynamic CSS variables. This solution, too, is still pretty raw and is likely out of scope of the initial design tokens release and this ADR.
+
 Consequences
 ============
+
+* **May need to iterate on the design tokens schema.**
+
+  * Identifying the best way to think about, represent, and communicate our design tokens in JSON is a new paradigm and we'll likely need to make some adjustments to the schema over time as design tokens get adopted by consumers and theme authors and we receive feedback on what's working and what isn't.
+  * Iterating on good naming conventions and JSON file schemas that make sense and continues to scale as the Paragon design system evolves will be a challenge, especially to do so in a way that doesn't cause downstream breaking changes without warning. We will likely need to establish a process for deprecating design tokens to facilitate some level of iteration on the token schema.
+  * Paragon's previous SCSS variables were a combination of only global and component tokens. The notion of "alias" tokens is new to Paragon and will require intentional thought into how alias tokens are defined and used.
 
 * **Updates required for consuming applications using and/or overriding SCSS variables.**
 
@@ -96,5 +228,13 @@ Consequences
 * **Onboarding designers and engineers to design tokens.**
 
   * Given defining styles via JSON files is a bit of a nascent paradigm, there is a fair concern that onboarding designers and engineers to this new styles architecture may be more difficult than defining traditional styles (e.g., hardcoding CSS variables). That said, with adequate documentation and training, we feel the benefits of design tokens for Paragon's future scalability outweigh potential increased complexities with getting up to speed with design tokens.
-  * There is also a vision that there could, in the future, be a user interface built on top of the JSON design tokens such that changes could be made by designers and engineers alike without needing to understanding the underlying `style-dictionary` tool and JSON schema.
+  * There is also a vision that there could, in the future, be a user interface built on top of the JSON design tokens such that changes could be made by designers and engineers alike without needing to understanding the underlying `style-dictionary` tool and JSON file schema.
   * Design tokens will also be annotated with brief descriptions of their purpose, which will be helpful for theme authors.
+
+* **Design tooling support for tokens is still relatively poor.**
+
+  * One of the intriguing benefits of moving to design tokens is that they may be transformed to other formats compatible with different platforms. One of the areas the Paragon Working Group may like to explore in the future is an integration between its design tokens and the Figma design tool.
+  * One of the deliverables of the Paragon design system is the Figma library containing drop-in Paragon components that largely match the components as implemented in code. The Figma library enables designers to work more efficiently and consistently, without needing to redefine existing patterns.
+  * However, all of the visual styles associated with the design system are essentially defined twice: once in Figma and again in code.
+  * The longer term vision would be treat Figma as a compatible platform for Paragon's design tokens, such that these foundational style properties would truly become a single source of truth across for both designers and engineers alike.
+  * However, this vision is limited by what such design tools like Figma can support; While Figma does not have native support for design tokens, there are Figma plugins (e.g., `Design Tokens <https://www.figma.com/community/plugin/888356646278934516/Design-Tokens>`__) that might be worth exploring in the future.
