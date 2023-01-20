@@ -224,7 +224,7 @@ Updates required for consuming applications using and/or overriding SCSS variabl
 Breaking change for how Paragon themes are currently created
 ------------------------------------------------------------
 
-* Currently, Paragon themes are created following the guidance in `@edx/brand-openedx`, which defines a set of files in which theme authors should modify to override the core Paragon starter theme. These files include a `_variables.scss` file in which theme authors may override any of Paragon's SCSS variables.
+* Currently, Paragon themes are created following the guidance in ``@edx/brand-openedx``, which defines a set of files in which theme authors should modify to override the core Paragon starter theme. These files include a `_variables.scss` file in which theme authors may override any of Paragon's SCSS variables.
 * With design tokens, theme authors will no longer override any variables in SCSS/CSS directly, but rather define JSON files to override the core Paragon design tokens. After re-building the theme, a new `variables.css` file representing all the CSS variables for the theme is generated, including the overriden values in theme's custom JSON files.
 * The resulting CSS file may be hosted on a CDN and applied at runtime to consuming applications.
 
