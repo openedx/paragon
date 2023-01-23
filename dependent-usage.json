@@ -1,5 +1,5 @@
 {
-  "lastModified": 1674396558517,
+  "lastModified": 1674482933853,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -2673,7 +2673,7 @@
           },
           {
             "filePath": "src/components/Admin/EmbeddedSubscription.jsx",
-            "line": 44,
+            "line": 45,
             "column": 22
           },
           {
@@ -3020,8 +3020,13 @@
         "Icon": [
           {
             "filePath": "src/components/Admin/EmbeddedSubscription.jsx",
-            "line": 60,
+            "line": 61,
             "column": 16
+          },
+          {
+            "filePath": "src/components/Admin/EmbeddedSubscription.jsx",
+            "line": 75,
+            "column": 18
           },
           {
             "filePath": "src/components/Admin/index.jsx",
@@ -3317,8 +3322,15 @@
         "Lightbulb": [
           {
             "filePath": "src/components/Admin/EmbeddedSubscription.jsx",
-            "line": 60,
+            "line": 61,
             "column": 27
+          }
+        ],
+        "ArrowOutward": [
+          {
+            "filePath": "src/components/Admin/EmbeddedSubscription.jsx",
+            "line": 75,
+            "column": 60
           }
         ],
         "Badge": [
@@ -3391,22 +3403,22 @@
         "DataTable": [
           {
             "filePath": "src/components/Admin/licenses/LicenseManagementTable/index.jsx",
-            "line": 54,
+            "line": 53,
             "column": 10
           },
           {
             "filePath": "src/components/Admin/licenses/LicenseManagementTable/index.jsx",
-            "line": 55,
+            "line": 54,
             "column": 8
           },
           {
             "filePath": "src/components/Admin/licenses/LicenseManagementTable/index.jsx",
-            "line": 216,
+            "line": 208,
             "column": 6
           },
           {
             "filePath": "src/components/Admin/licenses/LicenseManagementTable/index.jsx",
-            "line": 225,
+            "line": 217,
             "column": 34
           },
           {
@@ -3468,7 +3480,7 @@
         "DataTable.EmptyTable": [
           {
             "filePath": "src/components/Admin/licenses/LicenseManagementTable/index.jsx",
-            "line": 248,
+            "line": 236,
             "column": 19
           },
           {
@@ -3510,7 +3522,7 @@
         "Toast": [
           {
             "filePath": "src/components/Admin/licenses/LicenseManagementTable/index.jsx",
-            "line": 329,
+            "line": 317,
             "column": 6
           },
           {
@@ -22724,7 +22736,7 @@
       }
     },
     {
-      "version": "20.21.1",
+      "version": "20.27.0",
       "name": "@edx/frontend-component-header-edx",
       "repository": {
         "type": "git",
@@ -22832,7 +22844,7 @@
       }
     },
     {
-      "version": "20.20.0",
+      "version": "20.27.0",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
