@@ -34,6 +34,10 @@
 
     .pgn__card-section {
       @extend %dark-variant-content;
+
+      .pgn__card-section-title {
+        @extend %dark-variant-content;
+      }
     }
 
     .pgn__card-footer,
