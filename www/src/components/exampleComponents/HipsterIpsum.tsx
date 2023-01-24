@@ -79,10 +79,10 @@ const useHipsterIpsumContent = ({
   return getHipsterIpsumContent(shuffledParagraphs, numParagraphs);
 };
 
-const HipsterIpsum = ({
+function HipsterIpsum({
   numParagraphs,
   numShortParagraphs,
-}: HipsterIpsumType) => {
+}: HipsterIpsumType) {
   const content = useHipsterIpsumContent({
     shortParagraphsInContent: shortParagraphs,
     numShortParagraphs,
@@ -90,7 +90,7 @@ const HipsterIpsum = ({
     numParagraphs,
   });
   return content;
-};
+}
 
 HipsterIpsum.propTypes = {
   numParagraphs: PropTypes.number,
