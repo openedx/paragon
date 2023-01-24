@@ -1,5 +1,5 @@
 {
-  "lastModified": 1674482933853,
+  "lastModified": 1674569440530,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -11996,9 +11996,19 @@
             "column": 12
           },
           {
-            "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 45,
+            "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
+            "line": 47,
             "column": 12
+          },
+          {
+            "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
+            "line": 59,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
+            "line": 71,
+            "column": 10
           },
           {
             "filePath": "src/components/courseCard/CourseCard.jsx",
@@ -12078,76 +12088,50 @@
             "column": 14
           }
         ],
-        "DataTable.RowStatus": [
+        "useMediaQuery": [
           {
-            "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
-            "line": 498,
-            "column": 16
-          }
-        ],
-        "Form.Radio": [
-          {
-            "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 20,
-            "column": 4
-          }
-        ],
-        "Card": [
-          {
-            "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 41,
-            "column": 4
+            "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
+            "line": 26,
+            "column": 23
           },
           {
-            "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 44,
-            "column": 4
+            "filePath": "src/components/hero/Hero.jsx",
+            "line": 47,
+            "column": 20
           },
           {
-            "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 37,
-            "column": 4
-          }
-        ],
-        "Card.Header": [
-          {
-            "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 42,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 56,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 49,
-            "column": 6
-          }
-        ],
-        "Card.Section": [
-          {
-            "filePath": "src/components/catalogSelectionCard/CatalogSelectionCard.jsx",
-            "line": 54,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/courseCard/CourseCard.jsx",
+            "filePath": "src/components/hero/Hero.jsx",
             "line": 58,
-            "column": 6
+            "column": 19
+          }
+        ],
+        "breakpoints": [
+          {
+            "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
+            "line": 26,
+            "column": 49
           },
           {
-            "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 57,
-            "column": 6
+            "filePath": "src/components/hero/Hero.jsx",
+            "line": 47,
+            "column": 46
+          },
+          {
+            "filePath": "src/components/hero/Hero.jsx",
+            "line": 59,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/hero/Hero.jsx",
+            "line": 60,
+            "column": 14
           }
         ],
         "Container": [
           {
             "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
-            "line": 21,
-            "column": 6
+            "line": 35,
+            "column": 4
           },
           {
             "filePath": "src/components/hero/Hero.jsx",
@@ -12165,11 +12149,40 @@
             "column": 6
           }
         ],
-        "CardDeck.Deprecated": [
+        "SelectableBox.Set": [
           {
             "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
-            "line": 25,
+            "line": 37,
+            "column": 6
+          }
+        ],
+        "SelectableBox": [
+          {
+            "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
+            "line": 45,
             "column": 8
+          },
+          {
+            "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
+            "line": 58,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
+            "line": 70,
+            "column": 8
+          }
+        ],
+        "Card": [
+          {
+            "filePath": "src/components/courseCard/CourseCard.jsx",
+            "line": 44,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/programCard/ProgramCard.jsx",
+            "line": 37,
+            "column": 4
           }
         ],
         "Card.ImageCap": [
@@ -12184,33 +12197,28 @@
             "column": 6
           }
         ],
-        "useMediaQuery": [
+        "Card.Header": [
           {
-            "filePath": "src/components/hero/Hero.jsx",
-            "line": 47,
-            "column": 20
+            "filePath": "src/components/courseCard/CourseCard.jsx",
+            "line": 56,
+            "column": 6
           },
           {
-            "filePath": "src/components/hero/Hero.jsx",
-            "line": 58,
-            "column": 19
+            "filePath": "src/components/programCard/ProgramCard.jsx",
+            "line": 49,
+            "column": 6
           }
         ],
-        "breakpoints": [
+        "Card.Section": [
           {
-            "filePath": "src/components/hero/Hero.jsx",
-            "line": 47,
-            "column": 46
+            "filePath": "src/components/courseCard/CourseCard.jsx",
+            "line": 58,
+            "column": 6
           },
           {
-            "filePath": "src/components/hero/Hero.jsx",
-            "line": 59,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/hero/Hero.jsx",
-            "line": 60,
-            "column": 14
+            "filePath": "src/components/programCard/ProgramCard.jsx",
+            "line": 57,
+            "column": 6
           }
         ],
         "Program": [
@@ -12271,7 +12279,7 @@
           },
           {
             "filePath": "src/components/GradesView/GradebookTable/index.jsx",
-            "line": 68,
+            "line": 67,
             "column": 8
           }
         ],
@@ -12525,21 +12533,21 @@
         "DataTable.TableControlBar": [
           {
             "filePath": "src/components/GradesView/GradebookTable/index.jsx",
-            "line": 76,
+            "line": 75,
             "column": 10
           }
         ],
         "DataTable.Table": [
           {
             "filePath": "src/components/GradesView/GradebookTable/index.jsx",
-            "line": 77,
+            "line": 76,
             "column": 10
           }
         ],
         "DataTable.EmptyTable": [
           {
             "filePath": "src/components/GradesView/GradebookTable/index.jsx",
-            "line": 78,
+            "line": 77,
             "column": 10
           }
         ],
@@ -20607,28 +20615,28 @@
         "Hyperlink": [
           {
             "filePath": "src/feedback/FallbackErrorMessage.jsx",
-            "line": 14,
-            "column": 10
+            "line": 13,
+            "column": 8
           },
           {
             "filePath": "src/payment/AlertCodeMessages.jsx",
-            "line": 23,
-            "column": 12
+            "line": 22,
+            "column": 10
           },
           {
             "filePath": "src/payment/checkout/FreeCheckoutOrderButton.jsx",
-            "line": 9,
-            "column": 4
+            "line": 8,
+            "column": 2
           },
           {
             "filePath": "src/payment/EmptyCartMessage.jsx",
-            "line": 24,
-            "column": 16
+            "line": 23,
+            "column": 14
           },
           {
             "filePath": "src/payment/EmptyCartMessage.jsx",
-            "line": 33,
-            "column": 16
+            "line": 32,
+            "column": 14
           }
         ],
         "Collapsible": [
@@ -20945,7 +20953,7 @@
       }
     },
     {
-      "version": "20.20.0",
+      "version": "20.25.0",
       "name": "edx-frontend-app-publisher",
       "repository": "https://github.com/openedx/frontend-app-publisher",
       "folderName": "frontend-app-publisher",
@@ -20966,7 +20974,7 @@
           {
             "filePath": "src/components/Collaborator/index.jsx",
             "line": 53,
-            "column": 10
+            "column": 12
           },
           {
             "filePath": "src/components/SidePanes/CommentsPane.jsx",
@@ -21057,7 +21065,7 @@
           },
           {
             "filePath": "src/components/ListField/index.jsx",
-            "line": 191,
+            "line": 190,
             "column": 10
           },
           {
@@ -21098,11 +21106,6 @@
           {
             "filePath": "src/components/TableComponent/index.jsx",
             "line": 128,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/TableComponent/index.jsx",
-            "line": 139,
             "column": 6
           }
         ],
@@ -21171,8 +21174,8 @@
         "SearchField": [
           {
             "filePath": "src/components/CourseTable/index.jsx",
-            "line": 165,
-            "column": 12
+            "line": 164,
+            "column": 10
           }
         ],
         "Form.Group": [
@@ -21259,7 +21262,7 @@
         "Hyperlink": [
           {
             "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
-            "line": 79,
+            "line": 80,
             "column": 12
           },
           {
@@ -21281,25 +21284,25 @@
         "OverlayTrigger": [
           {
             "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
-            "line": 86,
+            "line": 87,
             "column": 12
           },
           {
             "filePath": "src/components/SidePanes/Pane.jsx",
-            "line": 12,
-            "column": 10
+            "line": 11,
+            "column": 6
           }
         ],
         "Tooltip": [
           {
             "filePath": "src/components/EditCoursePage/CollapsibleCourseRun.jsx",
-            "line": 88,
+            "line": 89,
             "column": 23
           },
           {
             "filePath": "src/components/SidePanes/Pane.jsx",
-            "line": 16,
-            "column": 14
+            "line": 15,
+            "column": 10
           }
         ],
         "Badge": [
@@ -21329,43 +21332,43 @@
           },
           {
             "filePath": "src/components/SidePanes/Pane.jsx",
-            "line": 21,
-            "column": 12
+            "line": 20,
+            "column": 8
           }
         ],
         "Dropdown": [
+          {
+            "filePath": "src/components/Header/index.jsx",
+            "line": 59,
+            "column": 12
+          }
+        ],
+        "Dropdown.Toggle": [
           {
             "filePath": "src/components/Header/index.jsx",
             "line": 60,
             "column": 14
           }
         ],
-        "Dropdown.Toggle": [
-          {
-            "filePath": "src/components/Header/index.jsx",
-            "line": 61,
-            "column": 16
-          }
-        ],
         "AvatarButton": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 61,
-            "column": 37
+            "line": 60,
+            "column": 35
           }
         ],
         "Dropdown.Menu": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 65,
-            "column": 16
+            "line": 64,
+            "column": 14
           }
         ],
         "Dropdown.Item": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 66,
-            "column": 18
+            "line": 65,
+            "column": 16
           }
         ],
         "Spinner": [
@@ -21440,13 +21443,6 @@
           {
             "filePath": "src/components/TableComponent/index.jsx",
             "line": 130,
-            "column": 14
-          }
-        ],
-        "WarningFilled": [
-          {
-            "filePath": "src/components/TableComponent/index.jsx",
-            "line": 141,
             "column": 14
           }
         ]
@@ -23164,8 +23160,8 @@
           },
           {
             "filePath": "src/tests/SearchFilters.test.jsx",
-            "line": 15,
-            "column": 50
+            "line": 13,
+            "column": 47
           }
         ],
         "Container": [
@@ -23205,7 +23201,7 @@
           {
             "filePath": "src/tests/SearchFilters.test.jsx",
             "line": 15,
-            "column": 6
+            "column": 4
           }
         ]
       }
@@ -23310,7 +23306,7 @@
       }
     },
     {
-      "version": "20.27.0",
+      "version": "20.21.5",
       "name": "@edx/frontend-lib-content-components",
       "repository": {
         "type": "git",
@@ -23360,17 +23356,17 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 29,
+            "line": 27,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 46,
+            "line": 44,
             "column": 16
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 69,
+            "line": 67,
             "column": 14
           },
           {
@@ -23440,7 +23436,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 106,
+            "line": 107,
             "column": 8
           }
         ],
@@ -23452,22 +23448,22 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 31,
+            "line": 29,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 35,
+            "line": 33,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 50,
+            "line": 48,
             "column": 18
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 73,
+            "line": 71,
             "column": 16
           },
           {
@@ -23532,7 +23528,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 127,
+            "line": 128,
             "column": 10
           }
         ],
@@ -23548,19 +23544,14 @@
             "column": 8
           },
           {
-            "filePath": "src/editors/containers/EditorContainer/index.jsx",
-            "line": 36,
-            "column": 10
-          },
-          {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswersContainer.jsx",
-            "line": 34,
+            "line": 31,
             "column": 6
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 61,
-            "column": 18
+            "line": 52,
+            "column": 20
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintsCard.jsx",
@@ -23578,18 +23569,8 @@
             "column": 8
           },
           {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/SwitchToAdvancedEditorCard.jsx",
-            "line": 21,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/SwitchToAdvancedEditorCard.jsx",
-            "line": 31,
-            "column": 6
-          },
-          {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/ProblemTypeSelect.jsx",
-            "line": 39,
+            "line": 34,
             "column": 6
           },
           {
@@ -23600,6 +23581,11 @@
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/SelectTypeFooter.jsx",
             "line": 36,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/CodeEditor/index.jsx",
+            "line": 87,
             "column": 8
           },
           {
@@ -23669,13 +23655,8 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 131,
+            "line": 132,
             "column": 6
-          },
-          {
-            "filePath": "src/editors/sharedComponents/CodeEditor/index.jsx",
-            "line": 32,
-            "column": 8
           }
         ],
         "Spinner": [
@@ -23686,7 +23667,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/index.jsx",
-            "line": 23,
+            "line": 25,
             "column": 8
           },
           {
@@ -23722,8 +23703,8 @@
             "column": 2
           },
           {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/components/Feedback/FeedbackControl.jsx",
-            "line": 12,
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 38,
             "column": 2
           },
           {
@@ -23748,12 +23729,12 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 41,
+            "line": 36,
             "column": 6
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 59,
+            "line": 54,
             "column": 8
           },
           {
@@ -23763,7 +23744,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 28,
+            "line": 26,
             "column": 6
           },
           {
@@ -23828,7 +23809,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 60,
+            "line": 61,
             "column": 6
           },
           {
@@ -23850,13 +23831,13 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 47,
-            "column": 8
+            "line": 48,
+            "column": 4
           },
           {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/components/Feedback/FeedbackControl.jsx",
-            "line": 22,
-            "column": 4
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 120,
+            "column": 10
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
@@ -23880,12 +23861,12 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 42,
+            "line": 37,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 60,
+            "line": 55,
             "column": 10
           },
           {
@@ -23935,17 +23916,17 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 62,
+            "line": 63,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 71,
+            "line": 72,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 89,
+            "line": 90,
             "column": 12
           }
         ],
@@ -23956,13 +23937,13 @@
             "column": 34
           },
           {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/components/Checker/index.jsx",
-            "line": 8,
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 19,
             "column": 20
           },
           {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/components/Checker/index.jsx",
-            "line": 10,
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 21,
             "column": 18
           }
         ],
@@ -24001,7 +23982,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 95,
+            "line": 96,
             "column": 12
           }
         ],
@@ -24013,7 +23994,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/TypeRow.jsx",
-            "line": 29,
+            "line": 20,
             "column": 43
           }
         ],
@@ -24035,18 +24016,18 @@
           },
           {
             "filePath": "src/editors/containers/EditorContainer/index.jsx",
-            "line": 59,
+            "line": 33,
             "column": 22
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 69,
-            "column": 20
+            "line": 139,
+            "column": 22
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 76,
-            "column": 18
+            "line": 146,
+            "column": 20
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
@@ -24055,7 +24036,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/TypeRow.jsx",
-            "line": 29,
+            "line": 20,
             "column": 32
           },
           {
@@ -24070,12 +24051,12 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 30,
+            "line": 28,
             "column": 46
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/index.jsx",
-            "line": 26,
+            "line": 25,
             "column": 22
           },
           {
@@ -24195,12 +24176,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 100,
+            "line": 101,
             "column": 22
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 125,
+            "line": 126,
             "column": 12
           }
         ],
@@ -24212,12 +24193,12 @@
           },
           {
             "filePath": "src/editors/containers/EditorContainer/index.jsx",
-            "line": 58,
+            "line": 32,
             "column": 19
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/index.jsx",
-            "line": 25,
+            "line": 24,
             "column": 19
           },
           {
@@ -24246,18 +24227,18 @@
           },
           {
             "filePath": "src/editors/containers/EditorContainer/index.jsx",
-            "line": 57,
+            "line": 31,
             "column": 12
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 67,
-            "column": 10
+            "line": 137,
+            "column": 12
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 74,
-            "column": 8
+            "line": 144,
+            "column": 10
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
@@ -24266,12 +24247,12 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 30,
+            "line": 28,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/index.jsx",
-            "line": 24,
+            "line": 23,
             "column": 12
           },
           {
@@ -24325,12 +24306,12 @@
         "ModalDialog.Header": [
           {
             "filePath": "src/editors/containers/EditorContainer/index.jsx",
-            "line": 49,
+            "line": 23,
             "column": 6
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/index.jsx",
-            "line": 20,
+            "line": 19,
             "column": 6
           },
           {
@@ -24347,12 +24328,12 @@
         "ModalDialog.Title": [
           {
             "filePath": "src/editors/containers/EditorContainer/index.jsx",
-            "line": 50,
+            "line": 24,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/index.jsx",
-            "line": 21,
+            "line": 20,
             "column": 8
           },
           {
@@ -24364,191 +24345,17 @@
             "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
             "line": 26,
             "column": 6
-          }
-        ],
-        "ModalDialog.Body": [
-          {
-            "filePath": "src/editors/containers/EditorContainer/index.jsx",
-            "line": 65,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/index.jsx",
-            "line": 32,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 35,
-            "column": 4
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
-            "line": 30,
-            "column": 4
-          }
-        ],
-        "Collapsible.Advanced": [
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 34,
-            "column": 4
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 59,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 73,
-            "column": 12
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 17,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 33,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 40,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 26,
-            "column": 2
-          }
-        ],
-        "Collapsible.Body": [
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 56,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 60,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 74,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 36,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 43,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 52,
-            "column": 4
-          }
-        ],
-        "Collapsible.Trigger": [
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 66,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 21,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
-            "line": 31,
-            "column": 4
-          }
-        ],
-        "FeedbackOutline": [
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 68,
-            "column": 17
-          }
-        ],
-        "DeleteOutline": [
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 75,
-            "column": 15
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseSelector.jsx",
-            "line": 57,
-            "column": 19
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 98,
-            "column": 19
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
-            "line": 86,
-            "column": 21
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 99,
-            "column": 19
-          }
-        ],
-        "Add": [
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswersContainer.jsx",
-            "line": 36,
-            "column": 20
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintsCard.jsx",
-            "line": 33,
-            "column": 20
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 56,
-            "column": 28
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/index.jsx",
-            "line": 74,
-            "column": 26
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 168,
-            "column": 24
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 134,
-            "column": 20
           }
         ],
         "Form.Label": [
           {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/components/Feedback/FeedbackControl.jsx",
-            "line": 13,
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 39,
             "column": 4
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 32,
+            "line": 30,
             "column": 10
           },
           {
@@ -24587,93 +24394,98 @@
             "column": 20
           }
         ],
-        "Container": [
+        "Collapsible.Advanced": [
           {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
-            "line": 27,
-            "column": 6
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 104,
+            "column": 4
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 39,
-            "column": 6
+            "line": 50,
+            "column": 16
           },
           {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
+            "line": 64,
+            "column": 14
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
             "line": 17,
-            "column": 2
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/TypeRow.jsx",
-            "line": 27,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/Preview.jsx",
-            "line": 22,
-            "column": 4
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/ProblemTypeSelect.jsx",
-            "line": 17,
-            "column": 4
-          }
-        ],
-        "Row": [
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
-            "line": 28,
             "column": 8
           },
           {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
+            "line": 33,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
             "line": 40,
             "column": 8
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
+            "line": 26,
+            "column": 2
+          }
+        ],
+        "Row": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 109,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
+            "line": 33,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
+            "line": 37,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
+            "line": 39,
+            "column": 14
+          },
+          {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
             "line": 42,
-            "column": 12
+            "column": 14
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 51,
-            "column": 12
+            "line": 45,
+            "column": 14
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 54,
-            "column": 12
+            "line": 49,
+            "column": 14
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 58,
-            "column": 12
+            "line": 66,
+            "column": 18
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
+            "line": 69,
+            "column": 18
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
+            "line": 72,
+            "column": 18
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
             "line": 75,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 78,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 81,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 84,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 87,
-            "column": 16
+            "column": 18
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
@@ -24688,19 +24500,34 @@
         ],
         "Col": [
           {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 111,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 119,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 135,
+            "column": 8
+          },
+          {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
-            "line": 29,
+            "line": 34,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
-            "line": 39,
+            "line": 38,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 41,
-            "column": 10
+            "line": 38,
+            "column": 12
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
@@ -24713,9 +24540,14 @@
             "column": 6
           },
           {
-            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 27,
-            "column": 4
+            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/index.jsx",
+            "line": 23,
+            "column": 12
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/index.jsx",
+            "line": 26,
+            "column": 12
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget.jsx",
@@ -24728,11 +24560,126 @@
             "column": 24
           }
         ],
+        "Collapsible.Body": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 128,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
+            "line": 51,
+            "column": 18
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
+            "line": 65,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
+            "line": 36,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
+            "line": 43,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
+            "line": 52,
+            "column": 4
+          }
+        ],
+        "Collapsible.Trigger": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 136,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
+            "line": 21,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
+            "line": 31,
+            "column": 4
+          }
+        ],
+        "AddComment": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 138,
+            "column": 19
+          }
+        ],
         "Delete": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
+            "line": 145,
+            "column": 17
+          },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
             "line": 31,
             "column": 15
+          }
+        ],
+        "Add": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswersContainer.jsx",
+            "line": 33,
+            "column": 20
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintsCard.jsx",
+            "line": 33,
+            "column": 20
+          },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
+            "line": 56,
+            "column": 28
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/index.jsx",
+            "line": 74,
+            "column": 26
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 168,
+            "column": 24
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 135,
+            "column": 20
+          }
+        ],
+        "Container": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
+            "line": 32,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
+            "line": 36,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
+            "line": 17,
+            "column": 2
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/TypeRow.jsx",
+            "line": 18,
+            "column": 6
           }
         ],
         "MailtoLink": [
@@ -24750,13 +24697,8 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 37,
+            "line": 32,
             "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 79,
-            "column": 6
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/Preview.jsx",
@@ -24770,11 +24712,6 @@
           }
         ],
         "Card": [
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/SwitchToAdvancedEditorCard.jsx",
-            "line": 15,
-            "column": 4
-          },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
             "line": 15,
@@ -24842,14 +24779,14 @@
         "ArrowBack": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 30,
+            "line": 28,
             "column": 27
           }
         ],
         "Form.RadioSet": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 37,
+            "line": 35,
             "column": 8
           },
           {
@@ -24866,12 +24803,12 @@
         "Form.Radio": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 47,
+            "line": 45,
             "column": 18
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 70,
+            "line": 68,
             "column": 16
           },
           {
@@ -24893,7 +24830,7 @@
         "OverlayTrigger": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 51,
+            "line": 49,
             "column": 18
           },
           {
@@ -24903,14 +24840,14 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 116,
+            "line": 117,
             "column": 10
           }
         ],
         "Tooltip": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 54,
+            "line": 52,
             "column": 22
           },
           {
@@ -24920,7 +24857,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 120,
+            "line": 121,
             "column": 14
           }
         ],
@@ -24970,12 +24907,106 @@
             "column": 2
           }
         ],
-        "Stack": [
+        "ModalDialog.Body": [
           {
-            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/index.jsx",
-            "line": 22,
-            "column": 10
+            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/index.jsx",
+            "line": 31,
+            "column": 6
           },
+          {
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 35,
+            "column": 4
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 30,
+            "column": 4
+          }
+        ],
+        "ModalDialog": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 21,
+            "column": 2
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 16,
+            "column": 2
+          }
+        ],
+        "ModalDialog.CloseButton": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
+            "line": 42,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 35,
+            "column": 8
+          }
+        ],
+        "Form.Checkbox": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
+            "line": 47,
+            "column": 4
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 124,
+            "column": 14
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 146,
+            "column": 12
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 108,
+            "column": 10
+          }
+        ],
+        "ArrowBackIos": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "line": 65,
+            "column": 20
+          }
+        ],
+        "Alert": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/RawEditor/index.jsx",
+            "line": 12,
+            "column": 4
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
+            "line": 79,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/ErrorSummary.jsx",
+            "line": 18,
+            "column": 4
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorAlerts/ErrorAlert.jsx",
+            "line": 43,
+            "column": 4
+          }
+        ],
+        "Scrollable": [
+          {
+            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/Gallery.jsx",
+            "line": 52,
+            "column": 4
+          }
+        ],
+        "Stack": [
           {
             "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
             "line": 81,
@@ -25025,66 +25056,6 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
             "line": 114,
             "column": 6
-          }
-        ],
-        "ModalDialog": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 21,
-            "column": 2
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
-            "line": 16,
-            "column": 2
-          }
-        ],
-        "ModalDialog.CloseButton": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 42,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
-            "line": 35,
-            "column": 8
-          }
-        ],
-        "Form.Checkbox": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
-            "line": 47,
-            "column": 4
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 124,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 146,
-            "column": 12
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 107,
-            "column": 10
-          }
-        ],
-        "ArrowBackIos": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
-            "line": 65,
-            "column": 20
-          }
-        ],
-        "Scrollable": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/Gallery.jsx",
-            "line": 52,
-            "column": 4
           }
         ],
         "Search": [
@@ -25195,7 +25166,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 125,
+            "line": 126,
             "column": 23
           },
           {
@@ -25226,7 +25197,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 88,
+            "line": 89,
             "column": 10
           }
         ],
@@ -25338,26 +25309,26 @@
             "column": 20
           }
         ],
-        "Alert": [
+        "DeleteOutline": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseSelector.jsx",
+            "line": 57,
+            "column": 19
+          },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 79,
-            "column": 8
+            "line": 98,
+            "column": 19
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/ErrorSummary.jsx",
-            "line": 18,
-            "column": 4
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 86,
+            "column": 21
           },
           {
-            "filePath": "src/editors/sharedComponents/ErrorAlerts/ErrorAlert.jsx",
-            "line": 43,
-            "column": 4
-          },
-          {
-            "filePath": "src/editors/sharedComponents/RawEditor/index.jsx",
-            "line": 22,
-            "column": 6
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 100,
+            "column": 19
           }
         ],
         "Card.Header": [
@@ -25384,12 +25355,12 @@
         "FormControlFeedback": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 68,
+            "line": 69,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 77,
+            "line": 78,
             "column": 10
           }
         ],
@@ -25415,7 +25386,7 @@
       }
     },
     {
-      "version": "20.27.0",
+      "version": "20.13.0",
       "name": "content-components-gallery",
       "folderName": "www",
       "usages": {
@@ -25947,53 +25918,48 @@
         "Icon": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 183,
+            "line": 122,
             "column": 10
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 196,
+            "line": 130,
             "column": 10
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 209,
+            "line": 138,
             "column": 10
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 222,
+            "line": 146,
             "column": 10
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 235,
+            "line": 154,
             "column": 10
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 248,
+            "line": 162,
             "column": 10
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 261,
+            "line": 170,
             "column": 10
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 274,
+            "line": 178,
             "column": 10
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 287,
+            "line": 186,
             "column": 10
-          },
-          {
-            "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 422,
-            "column": 12
           },
           {
             "filePath": "src/components/Card/index.jsx",
@@ -26022,13 +25988,13 @@
           },
           {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
-            "line": 51,
+            "line": 52,
             "column": 16
           },
           {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
-            "line": 106,
-            "column": 14
+            "line": 109,
+            "column": 16
           },
           {
             "filePath": "src/components/ContentfulModule/PartnershipModule.jsx",
@@ -26279,53 +26245,48 @@
         "Launch": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 183,
+            "line": 122,
             "column": 48
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 196,
+            "line": 130,
             "column": 48
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 209,
+            "line": 138,
             "column": 48
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 222,
+            "line": 146,
             "column": 48
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 235,
+            "line": 154,
             "column": 48
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 248,
+            "line": 162,
             "column": 48
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 261,
+            "line": 170,
             "column": 48
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 274,
+            "line": 178,
             "column": 48
           },
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 287,
+            "line": 186,
             "column": 48
-          },
-          {
-            "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 422,
-            "column": 23
           },
           {
             "filePath": "src/components/Course/2U/WhyGetsmarter.jsx",
@@ -26351,7 +26312,7 @@
         "Card": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 370,
+            "line": 269,
             "column": 8
           },
           {
@@ -26373,7 +26334,7 @@
         "Card.Body": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 395,
+            "line": 294,
             "column": 10
           },
           {
@@ -26390,7 +26351,7 @@
         "Badge": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 415,
+            "line": 314,
             "column": 14
           },
           {
@@ -26442,7 +26403,7 @@
         "Card.Footer": [
           {
             "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 420,
+            "line": 319,
             "column": 10
           }
         ],
@@ -27499,14 +27460,14 @@
           },
           {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
-            "line": 102,
-            "column": 12
+            "line": 104,
+            "column": 14
           }
         ],
         "OpenInNew": [
           {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
-            "line": 52,
+            "line": 53,
             "column": 23
           },
           {
@@ -27518,8 +27479,8 @@
         "ArrowUpward": [
           {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
-            "line": 107,
-            "column": 21
+            "line": 110,
+            "column": 23
           }
         ],
         "Skeleton": [
