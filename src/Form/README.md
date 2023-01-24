@@ -75,17 +75,8 @@ notes: |
   </Form.Row>
 
   <Form.Group controlId="formSwitch">
-    <Form.Check
-      type="switch"
-      id="custom-switch"
-      label="Check this switch"
-    />
-    <Form.Check
-      disabled
-      type="switch"
-      label="disabled switch"
-      id="disabled-custom-switch"
-    />
+    <Form.Switch>Check this switch</Form.Switch><br/>
+    <Form.Switch disabled>disabled switch</Form.Switch>
   </Form.Group>
 
   <Form.Group controlId="whichColor">
@@ -103,7 +94,7 @@ notes: |
   </Form.Group>
 
   <Form.Group id="formGridCheckbox">
-    <Form.Check type="checkbox" id="formGridCheckboxCheck" label="Check me out" />
+    <Form.Checkbox>Check me out</Form.Checkbox>
   </Form.Group>
   <div className="d-flex">
     <Button variant="primary" type="submit">
@@ -166,21 +157,12 @@ notes: |
   </Form.Row>
 
   <Form.Group controlId="formSwitch-2">
-    <Form.Check
-      type="switch"
-      id="custom-switch-2"
-      label="Check this switch"
-    />
-    <Form.Check
-      disabled
-      type="switch"
-      label="disabled switch"
-      id="disabled-custom-switch-2"
-    />
+    <Form.Switch>Check this switch</Form.Switch><br/>
+    <Form.Switch disabled>disabled switch</Form.Switch>
   </Form.Group>
 
   <Form.Group id="formGridCheckbox-2">
-    <Form.Check type="checkbox" id="formGridCheckboxCheck-2" label="Check me out" />
+      <Form.Checkbox>Check me out</Form.Checkbox>
   </Form.Group>
   <div className="d-flex">
     <Button variant="primary" type="submit">
