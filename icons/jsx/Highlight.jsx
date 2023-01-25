@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHighlight(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHighlight(props) {
     </svg>
   );
 }
+
 export default SvgHighlight;

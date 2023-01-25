@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgScreenLockPortrait(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgScreenLockPortrait(props) {
     </svg>
   );
 }
+
 export default SvgScreenLockPortrait;

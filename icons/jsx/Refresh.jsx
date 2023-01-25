@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRefresh(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRefresh(props) {
     </svg>
   );
 }
+
 export default SvgRefresh;

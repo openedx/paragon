@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgUsbOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgUsbOff(props) {
     </svg>
   );
 }
+
 export default SvgUsbOff;

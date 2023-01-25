@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSendTimeExtension(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgSendTimeExtension(props) {
     </svg>
   );
 }
+
 export default SvgSendTimeExtension;

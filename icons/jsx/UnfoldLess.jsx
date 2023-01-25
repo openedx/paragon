@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgUnfoldLess(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgUnfoldLess(props) {
     </svg>
   );
 }
+
 export default SvgUnfoldLess;

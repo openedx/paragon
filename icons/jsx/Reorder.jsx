@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgReorder(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgReorder(props) {
     </svg>
   );
 }
+
 export default SvgReorder;

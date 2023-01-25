@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgThermostat(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgThermostat(props) {
     </svg>
   );
 }
+
 export default SvgThermostat;

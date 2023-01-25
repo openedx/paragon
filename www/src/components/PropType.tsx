@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
-import { Badge } from '~paragon-react'; // eslint-disable-line
+import { Badge } from '~paragon-react';
 
 export type RequiredBadgeTypes = {
   isRequired?: boolean,
 };
 
-const RequiredBadge = ({ isRequired }: RequiredBadgeTypes) => {
+function RequiredBadge({ isRequired }: RequiredBadgeTypes) {
   if (!isRequired) { return null; }
   return (
     <>
@@ -15,7 +14,7 @@ const RequiredBadge = ({ isRequired }: RequiredBadgeTypes) => {
       <Badge variant="light">Required</Badge>
     </>
   );
-};
+}
 
 RequiredBadge.propTypes = {
   isRequired: PropTypes.bool,
@@ -32,9 +31,9 @@ export interface IPropType {
   required?: boolean,
 }
 
-const PropType = ({
+function PropType({
   name, value, required, raw,
-}: IPropType) => {
+}: IPropType) {
   // eslint-disable-next-line @typescript-eslint/no-use-before-define
   const PropTypeComponent = PROP_TYPE_COMPONENTS[name];
 
@@ -50,7 +49,7 @@ const PropType = ({
   }
 
   return <>unknown type</>;
-};
+}
 
 PropType.propTypes = {
   name: PropTypes.oneOf([
@@ -90,12 +89,14 @@ export interface ISimplePropType {
   isRequired?: boolean,
 }
 
-const SimplePropType = ({ name, isRequired }: ISimplePropType) => (
-  <span>
-    <code>{name}</code>
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-);
+function SimplePropType({ name, isRequired }: ISimplePropType) {
+  return (
+    <span>
+      <code>{name}</code>
+      <RequiredBadge isRequired={isRequired} />
+    </span>
+  );
+}
 
 SimplePropType.propTypes = {
   isRequired: PropTypes.bool,
@@ -112,17 +113,19 @@ export interface IPropTypeEnum {
   isRequired?: boolean,
 }
 
-const PropTypeEnum = ({ name, value: enumValue, isRequired }: IPropTypeEnum) => (
-  <span>
-    <code>{name}</code>
-    <RequiredBadge isRequired={isRequired} />
-    <span className="text-monospace small ml-2">
-      {enumValue.map
-        ? enumValue.map(({ value }) => value).join(' | ')
-        : JSON.stringify(enumValue)}
+function PropTypeEnum({ name, value: enumValue, isRequired }: IPropTypeEnum) {
+  return (
+    <span>
+      <code>{name}</code>
+      <RequiredBadge isRequired={isRequired} />
+      <span className="text-monospace small ml-2">
+        {enumValue.map
+          ? enumValue.map(({ value }) => value).join(' | ')
+          : JSON.stringify(enumValue)}
+      </span>
     </span>
-  </span>
-);
+  );
+}
 
 PropTypeEnum.propTypes = {
   isRequired: PropTypes.bool,
@@ -139,14 +142,16 @@ export interface IPropTypeUnion {
   isRequired?: boolean,
 }
 
-const PropTypeUnion = ({ value, isRequired }: IPropTypeUnion) => (
-  <span>
-    {value
-      .map((propType: { name: string }) => <PropType key={propType.name} {...propType} />)
-      .reduce((prev: Element, curr: Element) => [prev, ' | ', curr])}
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-);
+function PropTypeUnion({ value, isRequired }: IPropTypeUnion) {
+  return (
+    <span>
+      {value
+        .map((propType: { name: string }) => <PropType key={propType.name} {...propType} />)
+        .reduce((prev: Element, curr: Element) => [prev, ' | ', curr])}
+      <RequiredBadge isRequired={isRequired} />
+    </span>
+  );
+}
 
 PropTypeUnion.propTypes = {
   isRequired: PropTypes.bool,
@@ -163,12 +168,14 @@ export interface IPropTypeInstanceOf {
   value: string,
 }
 
-const PropTypeInstanceOf = ({ value, isRequired }: IPropTypeInstanceOf) => (
-  <span>
-    <code>{value}</code>
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-);
+function PropTypeInstanceOf({ value, isRequired }: IPropTypeInstanceOf) {
+  return (
+    <span>
+      <code>{value}</code>
+      <RequiredBadge isRequired={isRequired} />
+    </span>
+  );
+}
 
 PropTypeInstanceOf.propTypes = {
   isRequired: PropTypes.bool,
@@ -184,13 +191,15 @@ export interface IPropTypeArrayOf {
   value: Array<{}>,
 }
 
-const PropTypeArrayOf = ({ value, isRequired }: IPropTypeArrayOf) => (
-  <span>
-    <PropType {...value} />
-    <code>[]</code>
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-);
+function PropTypeArrayOf({ value, isRequired }: IPropTypeArrayOf) {
+  return (
+    <span>
+      <PropType {...value} />
+      <code>[]</code>
+      <RequiredBadge isRequired={isRequired} />
+    </span>
+  );
+}
 
 PropTypeArrayOf.propTypes = {
   isRequired: PropTypes.bool,
@@ -206,16 +215,18 @@ export interface IPropTypeObjectOf {
   isRequired?: boolean,
 }
 
-const PropTypeObjectOf = ({ value, isRequired }: IPropTypeObjectOf) => (
-  <span>
-    <code>
-      Object.{'<'}
-      <PropType {...value} />
-      {'>'}
-    </code>
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-);
+function PropTypeObjectOf({ value, isRequired }: IPropTypeObjectOf) {
+  return (
+    <span>
+      <code>
+        Object.{'<'}
+        <PropType {...value} />
+        {'>'}
+      </code>
+      <RequiredBadge isRequired={isRequired} />
+    </span>
+  );
+}
 
 PropTypeObjectOf.propTypes = {
   isRequired: PropTypes.bool,
@@ -232,19 +243,21 @@ export interface IPropTypeShape {
   value: Array<{}>,
 }
 
-const PropTypeShape = ({ name, value, isRequired }: IPropTypeShape) => (
-  <span className="small">
-    <code>{name}</code>
-    <RequiredBadge isRequired={isRequired} />
-    {' {'}
-    {Object.entries(value).map(([key, propType]) => (
-      <div className="text-monospace pl-3" key={key}>
-        {key}: <PropType {...propType} />,
-      </div>
-    ))}
-    {'}'}
-  </span>
-);
+function PropTypeShape({ name, value, isRequired }: IPropTypeShape) {
+  return (
+    <span className="small">
+      <code>{name}</code>
+      <RequiredBadge isRequired={isRequired} />
+      {' {'}
+      {Object.entries(value).map(([key, propType]) => (
+        <div className="text-monospace pl-3" key={key}>
+          {key}: <PropType {...propType} />,
+        </div>
+      ))}
+      {'}'}
+    </span>
+  );
+}
 
 PropTypeShape.propTypes = {
   isRequired: PropTypes.bool,
@@ -264,19 +277,21 @@ export interface IPropTypeExact {
   },
 }
 
-const PropTypeExact = ({ name, value, isRequired }: IPropTypeExact) => (
-  <span className="small">
-    <code>{name}</code>
-    <RequiredBadge isRequired={isRequired} />
-    {' {'}
-    {Object.entries(value).map(([key, propType]) => (
-      <div className="text-monospace pl-3">
-        {key}: <PropType {...propType} />,
-      </div>
-    ))}
-    {'}'}
-  </span>
-);
+function PropTypeExact({ name, value, isRequired }: IPropTypeExact) {
+  return (
+    <span className="small">
+      <code>{name}</code>
+      <RequiredBadge isRequired={isRequired} />
+      {' {'}
+      {Object.entries(value).map(([key, propType]) => (
+        <div className="text-monospace pl-3">
+          {key}: <PropType {...propType} />,
+        </div>
+      ))}
+      {'}'}
+    </span>
+  );
+}
 
 PropTypeExact.propTypes = {
   isRequired: PropTypes.bool,
@@ -293,12 +308,14 @@ export interface ICustomPropType {
   raw?: string
 }
 
-const CustomPropType = ({ raw, isRequired }: ICustomPropType) => (
-  <span>
-    <code>{raw}</code>
-    <RequiredBadge isRequired={isRequired} />
-  </span>
-);
+function CustomPropType({ raw, isRequired }: ICustomPropType) {
+  return (
+    <span>
+      <code>{raw}</code>
+      <RequiredBadge isRequired={isRequired} />
+    </span>
+  );
+}
 
 CustomPropType.propTypes = {
   isRequired: PropTypes.bool,

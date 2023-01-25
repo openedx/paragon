@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFilter4(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFilter4(props) {
     </svg>
   );
 }
+
 export default SvgFilter4;

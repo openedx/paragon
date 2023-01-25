@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalFlorist(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocalFlorist(props) {
     </svg>
   );
 }
+
 export default SvgLocalFlorist;

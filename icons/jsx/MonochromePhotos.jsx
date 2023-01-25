@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMonochromePhotos(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMonochromePhotos(props) {
     </svg>
   );
 }
+
 export default SvgMonochromePhotos;

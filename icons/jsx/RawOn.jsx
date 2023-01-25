@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRawOn(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRawOn(props) {
     </svg>
   );
 }
+
 export default SvgRawOn;

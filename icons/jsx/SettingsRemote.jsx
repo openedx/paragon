@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSettingsRemote(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSettingsRemote(props) {
     </svg>
   );
 }
+
 export default SvgSettingsRemote;

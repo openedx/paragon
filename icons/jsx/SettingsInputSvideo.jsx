@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSettingsInputSvideo(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSettingsInputSvideo(props) {
     </svg>
   );
 }
+
 export default SvgSettingsInputSvideo;

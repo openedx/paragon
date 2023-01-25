@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWorkOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWorkOff(props) {
     </svg>
   );
 }
+
 export default SvgWorkOff;

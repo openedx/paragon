@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFileOpen(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFileOpen(props) {
     </svg>
   );
 }
+
 export default SvgFileOpen;

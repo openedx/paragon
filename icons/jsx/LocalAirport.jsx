@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLocalAirport(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLocalAirport(props) {
     </svg>
   );
 }
+
 export default SvgLocalAirport;

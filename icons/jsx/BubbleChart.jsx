@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBubbleChart(props) {
   return (
     <svg
@@ -15,4 +16,5 @@ function SvgBubbleChart(props) {
     </svg>
   );
 }
+
 export default SvgBubbleChart;

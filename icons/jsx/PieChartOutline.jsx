@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPieChartOutline(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPieChartOutline(props) {
     </svg>
   );
 }
+
 export default SvgPieChartOutline;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgShareArrivalTime(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgShareArrivalTime(props) {
     </svg>
   );
 }
+
 export default SvgShareArrivalTime;

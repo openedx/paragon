@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDeveloperMode(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDeveloperMode(props) {
     </svg>
   );
 }
+
 export default SvgDeveloperMode;

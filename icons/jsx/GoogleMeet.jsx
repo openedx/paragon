@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgGoogleMeet(props) {
   return (
     <svg
@@ -33,4 +34,5 @@ function SvgGoogleMeet(props) {
     </svg>
   );
 }
+
 export default SvgGoogleMeet;

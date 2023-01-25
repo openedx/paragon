@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSpatialAudioOff(props) {
   return (
     <svg
@@ -21,4 +22,5 @@ function SvgSpatialAudioOff(props) {
     </svg>
   );
 }
+
 export default SvgSpatialAudioOff;

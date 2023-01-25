@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgShower(props) {
   return (
     <svg
@@ -22,4 +23,5 @@ function SvgShower(props) {
     </svg>
   );
 }
+
 export default SvgShower;

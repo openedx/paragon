@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPhonelinkSetup(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPhonelinkSetup(props) {
     </svg>
   );
 }
+
 export default SvgPhonelinkSetup;

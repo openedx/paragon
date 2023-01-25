@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMediaBluetoothOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMediaBluetoothOff(props) {
     </svg>
   );
 }
+
 export default SvgMediaBluetoothOff;

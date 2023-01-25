@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCenterFocusWeak(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCenterFocusWeak(props) {
     </svg>
   );
 }
+
 export default SvgCenterFocusWeak;

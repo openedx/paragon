@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLibraryBooks(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLibraryBooks(props) {
     </svg>
   );
 }
+
 export default SvgLibraryBooks;

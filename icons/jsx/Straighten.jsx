@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgStraighten(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgStraighten(props) {
     </svg>
   );
 }
+
 export default SvgStraighten;

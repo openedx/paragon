@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSip(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgSip(props) {
     </svg>
   );
 }
+
 export default SvgSip;

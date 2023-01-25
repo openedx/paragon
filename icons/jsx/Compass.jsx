@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCompass(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCompass(props) {
     </svg>
   );
 }
+
 export default SvgCompass;

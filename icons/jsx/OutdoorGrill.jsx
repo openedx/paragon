@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgOutdoorGrill(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgOutdoorGrill(props) {
     </svg>
   );
 }
+
 export default SvgOutdoorGrill;

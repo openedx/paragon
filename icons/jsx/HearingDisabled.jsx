@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHearingDisabled(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHearingDisabled(props) {
     </svg>
   );
 }
+
 export default SvgHearingDisabled;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFilterVintage(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFilterVintage(props) {
     </svg>
   );
 }
+
 export default SvgFilterVintage;

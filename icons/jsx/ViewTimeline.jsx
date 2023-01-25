@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgViewTimeline(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgViewTimeline(props) {
     </svg>
   );
 }
+
 export default SvgViewTimeline;

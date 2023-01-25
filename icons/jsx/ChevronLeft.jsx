@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgChevronLeft(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgChevronLeft(props) {
     </svg>
   );
 }
+
 export default SvgChevronLeft;

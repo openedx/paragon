@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRampRight(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRampRight(props) {
     </svg>
   );
 }
+
 export default SvgRampRight;

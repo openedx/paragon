@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgStorm(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgStorm(props) {
     </svg>
   );
 }
+
 export default SvgStorm;

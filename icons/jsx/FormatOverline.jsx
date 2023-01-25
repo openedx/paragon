@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFormatOverline(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFormatOverline(props) {
     </svg>
   );
 }
+
 export default SvgFormatOverline;

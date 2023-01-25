@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLooks3(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLooks3(props) {
     </svg>
   );
 }
+
 export default SvgLooks3;

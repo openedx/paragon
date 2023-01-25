@@ -17,12 +17,12 @@ export interface IMeasuredItem {
 
 const initialMeasurements = {};
 
-const MeasuredItem = ({
+function MeasuredItem({
   properties,
   renderBefore,
   renderAfter,
   children,
-}: IMeasuredItem) => {
+}: IMeasuredItem) {
   const { settings } = useContext(SettingsContext);
   const { theme } = settings;
   const [measurements, setMeasurements] = useState(initialMeasurements);
@@ -56,7 +56,7 @@ const MeasuredItem = ({
       {renderAfter ? renderAfter(measurements) : null}
     </>
   );
-};
+}
 
 MeasuredItem.propTypes = {
   properties: PropTypes.arrayOf(PropTypes.string),

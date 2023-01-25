@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgClear(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgClear(props) {
     </svg>
   );
 }
+
 export default SvgClear;

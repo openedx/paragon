@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWheelchairPickup(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWheelchairPickup(props) {
     </svg>
   );
 }
+
 export default SvgWheelchairPickup;

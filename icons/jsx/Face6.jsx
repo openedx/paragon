@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFace6(props) {
   return (
     <svg
@@ -18,4 +19,5 @@ function SvgFace6(props) {
     </svg>
   );
 }
+
 export default SvgFace6;

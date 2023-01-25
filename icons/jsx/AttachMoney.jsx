@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAttachMoney(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAttachMoney(props) {
     </svg>
   );
 }
+
 export default SvgAttachMoney;

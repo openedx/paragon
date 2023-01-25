@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDeviceHub(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDeviceHub(props) {
     </svg>
   );
 }
+
 export default SvgDeviceHub;

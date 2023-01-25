@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgStarPurple500(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgStarPurple500(props) {
     </svg>
   );
 }
+
 export default SvgStarPurple500;

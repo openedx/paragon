@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPermDeviceInformation(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPermDeviceInformation(props) {
     </svg>
   );
 }
+
 export default SvgPermDeviceInformation;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLyrics(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgLyrics(props) {
     </svg>
   );
 }
+
 export default SvgLyrics;

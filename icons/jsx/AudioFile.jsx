@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAudioFile(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAudioFile(props) {
     </svg>
   );
 }
+
 export default SvgAudioFile;

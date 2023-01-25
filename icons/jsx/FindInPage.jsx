@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFindInPage(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFindInPage(props) {
     </svg>
   );
 }
+
 export default SvgFindInPage;

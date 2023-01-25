@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLoop(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLoop(props) {
     </svg>
   );
 }
+
 export default SvgLoop;

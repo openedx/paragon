@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgLens(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgLens(props) {
     </svg>
   );
 }
+
 export default SvgLens;

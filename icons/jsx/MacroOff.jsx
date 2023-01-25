@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMacroOff(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgMacroOff(props) {
     </svg>
   );
 }
+
 export default SvgMacroOff;

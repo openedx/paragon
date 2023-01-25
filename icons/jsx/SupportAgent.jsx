@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSupportAgent(props) {
   return (
     <svg
@@ -22,4 +23,5 @@ function SvgSupportAgent(props) {
     </svg>
   );
 }
+
 export default SvgSupportAgent;

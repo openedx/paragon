@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNoMeals(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNoMeals(props) {
     </svg>
   );
 }
+
 export default SvgNoMeals;

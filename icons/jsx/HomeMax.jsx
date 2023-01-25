@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHomeMax(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHomeMax(props) {
     </svg>
   );
 }
+
 export default SvgHomeMax;

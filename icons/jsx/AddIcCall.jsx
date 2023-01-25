@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAddIcCall(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAddIcCall(props) {
     </svg>
   );
 }
+
 export default SvgAddIcCall;

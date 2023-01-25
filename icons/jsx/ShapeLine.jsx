@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgShapeLine(props) {
   return (
     <svg
@@ -20,4 +21,5 @@ function SvgShapeLine(props) {
     </svg>
   );
 }
+
 export default SvgShapeLine;

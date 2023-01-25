@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWatch(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWatch(props) {
     </svg>
   );
 }
+
 export default SvgWatch;

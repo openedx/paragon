@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgControlPoint(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgControlPoint(props) {
     </svg>
   );
 }
+
 export default SvgControlPoint;

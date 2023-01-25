@@ -54,6 +54,7 @@ module.exports = {
       required: 'id',
       allowChildren: false,
     }],
+    'no-param-reassign': [2, { props: false }],
   },
   env: {
     jest: true,

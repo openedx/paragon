@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgOfflinePin(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgOfflinePin(props) {
     </svg>
   );
 }
+
 export default SvgOfflinePin;

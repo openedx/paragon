@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHistoryEdu(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHistoryEdu(props) {
     </svg>
   );
 }
+
 export default SvgHistoryEdu;

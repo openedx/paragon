@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPermCameraMic(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPermCameraMic(props) {
     </svg>
   );
 }
+
 export default SvgPermCameraMic;

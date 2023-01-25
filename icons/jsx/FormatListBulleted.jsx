@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFormatListBulleted(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFormatListBulleted(props) {
     </svg>
   );
 }
+
 export default SvgFormatListBulleted;

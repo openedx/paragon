@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAllOut(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAllOut(props) {
     </svg>
   );
 }
+
 export default SvgAllOut;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgOilBarrel(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgOilBarrel(props) {
     </svg>
   );
 }
+
 export default SvgOilBarrel;

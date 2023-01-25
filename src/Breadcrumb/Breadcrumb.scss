@@ -1,5 +1,4 @@
 @import "variables";
-@import "~bootstrap/scss/breadcrumb";
 
 .pgn__breadcrumb {
   .list-inline-item {
@@ -62,20 +61,25 @@
     }
   }
 
-  ol.is-mobile {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+  ol {
+    display: flex;
+    align-items: center;
 
-    .list-inline-item:not(:last-child) {
-      margin-right: 0;
-      margin-left: $breadcrumb-margin-left;
-    }
+    &.is-mobile {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
 
-    .pgn__icon {
-      transform: scale(-1);
+      .list-inline-item:not(:last-child) {
+        margin-right: 0;
+        margin-left: $breadcrumb-margin-left;
+      }
 
-      [dir="rtl"] & {
-        transform: scale(1);
+      .pgn__icon {
+        transform: scale(-1);
+
+        [dir="rtl"] & {
+          transform: scale(1);
+        }
       }
     }
   }

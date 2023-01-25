@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgNfc(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgNfc(props) {
     </svg>
   );
 }
+
 export default SvgNfc;

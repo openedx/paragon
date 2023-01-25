@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgAlbum(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgAlbum(props) {
     </svg>
   );
 }
+
 export default SvgAlbum;

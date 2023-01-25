@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPlayArrow(props) {
   return (
     <svg
@@ -13,4 +14,5 @@ function SvgPlayArrow(props) {
     </svg>
   );
 }
+
 export default SvgPlayArrow;

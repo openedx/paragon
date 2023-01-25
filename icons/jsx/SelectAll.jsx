@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSelectAll(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSelectAll(props) {
     </svg>
   );
 }
+
 export default SvgSelectAll;

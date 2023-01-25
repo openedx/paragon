@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgHowToReg(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgHowToReg(props) {
     </svg>
   );
 }
+
 export default SvgHowToReg;

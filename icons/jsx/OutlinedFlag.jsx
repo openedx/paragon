@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgOutlinedFlag(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgOutlinedFlag(props) {
     </svg>
   );
 }
+
 export default SvgOutlinedFlag;

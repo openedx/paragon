@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgKitchen(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgKitchen(props) {
     </svg>
   );
 }
+
 export default SvgKitchen;

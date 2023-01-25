@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgWarehouse(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgWarehouse(props) {
     </svg>
   );
 }
+
 export default SvgWarehouse;

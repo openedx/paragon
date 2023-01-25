@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgScreenSearchDesktop(props) {
   return (
     <svg
@@ -17,4 +18,5 @@ function SvgScreenSearchDesktop(props) {
     </svg>
   );
 }
+
 export default SvgScreenSearchDesktop;

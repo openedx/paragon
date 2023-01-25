@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgThumbUpOffAlt(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgThumbUpOffAlt(props) {
     </svg>
   );
 }
+
 export default SvgThumbUpOffAlt;

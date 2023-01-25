@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgCopyright(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgCopyright(props) {
     </svg>
   );
 }
+
 export default SvgCopyright;

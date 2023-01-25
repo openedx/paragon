@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDoneAll(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDoneAll(props) {
     </svg>
   );
 }
+
 export default SvgDoneAll;

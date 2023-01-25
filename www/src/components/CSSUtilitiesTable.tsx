@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
-import { Table } from '~paragon-react'; // eslint-disable-line
+import { Table } from '~paragon-react';
 
 export interface ICSSUtilitiesTable {
   selectors: Array<{

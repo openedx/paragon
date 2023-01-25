@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgForwardToInbox(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgForwardToInbox(props) {
     </svg>
   );
 }
+
 export default SvgForwardToInbox;

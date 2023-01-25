@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTornado(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTornado(props) {
     </svg>
   );
 }
+
 export default SvgTornado;

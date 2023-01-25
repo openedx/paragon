@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSensorsOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSensorsOff(props) {
     </svg>
   );
 }
+
 export default SvgSensorsOff;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgDomainAdd(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgDomainAdd(props) {
     </svg>
   );
 }
+
 export default SvgDomainAdd;

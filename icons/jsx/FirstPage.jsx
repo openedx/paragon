@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFirstPage(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFirstPage(props) {
     </svg>
   );
 }
+
 export default SvgFirstPage;

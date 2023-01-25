@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgRepeatOneOn(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgRepeatOneOn(props) {
     </svg>
   );
 }
+
 export default SvgRepeatOneOn;

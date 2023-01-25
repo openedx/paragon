@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgBrush(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgBrush(props) {
     </svg>
   );
 }
+
 export default SvgBrush;

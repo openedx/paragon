@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSchema(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSchema(props) {
     </svg>
   );
 }
+
 export default SvgSchema;

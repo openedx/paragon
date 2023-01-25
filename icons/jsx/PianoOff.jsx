@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgPianoOff(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgPianoOff(props) {
     </svg>
   );
 }
+
 export default SvgPianoOff;

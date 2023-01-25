@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSpinner(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSpinner(props) {
     </svg>
   );
 }
+
 export default SvgSpinner;

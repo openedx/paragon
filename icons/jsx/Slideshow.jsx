@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgSlideshow(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgSlideshow(props) {
     </svg>
   );
 }
+
 export default SvgSlideshow;

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgEventBusy(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgEventBusy(props) {
     </svg>
   );
 }
+
 export default SvgEventBusy;

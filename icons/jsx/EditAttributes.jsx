@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgEditAttributes(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgEditAttributes(props) {
     </svg>
   );
 }
+
 export default SvgEditAttributes;

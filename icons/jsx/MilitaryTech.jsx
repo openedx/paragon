@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgMilitaryTech(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgMilitaryTech(props) {
     </svg>
   );
 }
+
 export default SvgMilitaryTech;

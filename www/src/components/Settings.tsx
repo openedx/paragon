@@ -1,13 +1,12 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import {
   Sheet,
   Form,
   Icon,
   IconButton,
   Stack,
-  // @ts-ignore
 } from '~paragon-react';
-// @ts-ignore
 import { Close } from '~paragon-icons';
 
 import { LANGUAGES } from '../config';
@@ -15,7 +14,11 @@ import { LANGUAGES } from '../config';
 import SettingsContext from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
 
-const Settings = () => {
+export interface ISetting {
+  showMinimizedTitle?: boolean,
+}
+
+function Settings({ showMinimizedTitle }: ISetting) {
   const {
     settings,
     handleSettingsChange,
@@ -28,6 +31,7 @@ const Settings = () => {
       position="right"
       show={showSettings}
       variant="light"
+      onClose={closeSettings}
     >
       <div className="d-flex align-items-center justify-content-between mb-3">
         <h3 className="mb-0">Settings</h3>
@@ -85,9 +89,33 @@ const Settings = () => {
             ))}
           </Form.Control>
         </Form.Group>
+        {!showMinimizedTitle && (
+          <Form.Group>
+            <Form.Control
+              as="select"
+              value={settings.containerWidth}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('containerWidth', e.target.value)}
+              floatingLabel="Container Width"
+            >
+              <option value="xs">xs</option>
+              <option value="sm">sm</option>
+              <option value="md">md (default)</option>
+              <option value="lg">lg</option>
+              <option value="xl">xl</option>
+            </Form.Control>
+          </Form.Group>
+        )}
       </Stack>
     </Sheet>
   );
+}
+
+Settings.propTypes = {
+  showMinimizedTitle: PropTypes.bool,
+};
+
+Settings.defaultProps = {
+  showMinimizedTitle: false,
 };
 
 export default Settings;

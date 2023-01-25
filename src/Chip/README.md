@@ -7,7 +7,7 @@ categories:
 - Buttonlike
 status: 'New'
 designStatus: 'Done'
-devStatus: 'In progress'
+devStatus: 'Done'
 notes: |
 ---
 
@@ -23,7 +23,7 @@ notes: |
 </div>
 ```
 
-## With icon before and after
+## With Icon Before and After
 
 ```jsx live
 <div>
@@ -46,4 +46,64 @@ notes: |
     New
   </Chip>
 </div>
+```
+
+## `Chip` Carousel
+
+```jsx live
+<OverflowScroll ariaLabel="example chip carousel" hasInteractiveChildren>
+  <OverflowScrollContext.Consumer>
+    {({
+      setOverflowRef,
+      isScrolledToStart,
+      isScrolledToEnd,
+      scrollToPrevious,
+      scrollToNext,
+    }) => (
+      <>
+        <div className="mb-3">
+          <Button
+            onClick={scrollToPrevious}
+            className="mr-2"
+            size="sm"
+            disabled={isScrolledToStart}
+          >
+            Previous
+          </Button>
+          <Button
+            onClick={scrollToNext}
+            size="sm"
+            disabled={isScrolledToEnd}
+          >
+            Next
+          </Button>
+        </div>
+        <div ref={setOverflowRef} className="d-flex">
+          <OverflowScroll.Items>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+            <Chip iconAfter={Close}>New</Chip>
+          </OverflowScroll.Items>
+        </div>
+      </>
+    )}
+  </OverflowScrollContext.Consumer>
+</OverflowScroll>
 ```

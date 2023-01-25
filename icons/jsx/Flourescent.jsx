@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgFlourescent(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgFlourescent(props) {
     </svg>
   );
 }
+
 export default SvgFlourescent;
