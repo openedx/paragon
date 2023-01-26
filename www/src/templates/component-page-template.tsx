@@ -112,7 +112,7 @@ export default function PageTemplate({
     >
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={mdx.frontmatter.title} />
-      <Container size="md" className="py-5">
+      <Container size={settings.containerWidth} className="py-5">
         {isDeprecated && (
           <Alert variant="warning">
             <Alert.Heading>This component will be removed soon.</Alert.Heading>

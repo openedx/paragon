@@ -6,6 +6,7 @@
  */
 
 import * as React from 'react';
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import {
@@ -18,6 +19,7 @@ import Header from './Header';
 import Menu from './Menu';
 import Settings from './Settings';
 import Toc from './Toc';
+import { SettingsContext } from '../context/SettingsContext';
 
 if (process.env.NODE_ENV === 'development') {
   /* eslint-disable-next-line global-require */
@@ -39,6 +41,7 @@ function Layout({
   isMdx,
   tocData,
 }: ILayout) {
+  const { settings } = useContext(SettingsContext);
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -55,13 +58,13 @@ function Layout({
         siteTitle={data.site.siteMetadata?.title || 'Title'}
         showMinimizedTitle={showMinimizedTitle}
       />
-      <Settings />
+      <Settings showMinimizedTitle={showMinimizedTitle} />
       {isMdx ? (
         <Container fluid>
           <Row className="flex-xl-nowrap">
-            <Col className="d-none d-xl-block" xl={2} />
+            <Col className="d-none d-xl-block" xl={settings.containerWidth === 'xl' ? 'auto' : 2} />
             <Col
-              xl={8}
+              xl={settings.containerWidth === 'xl' ? 10 : 8}
               lg={9}
               md={12}
               as="main"

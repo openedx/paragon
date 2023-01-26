@@ -11,6 +11,7 @@ export interface IDefaultValue {
     theme?: string,
     direction?: string,
     language?: string,
+    containerWidth?: string,
   },
   theme?: string,
   handleSettingsChange: Function,
@@ -33,6 +34,7 @@ function SettingsContextProvider({ children }) {
     theme: DEFAULT_THEME,
     direction: 'ltr',
     language: 'en',
+    containerWidth: undefined,
   });
   const [showSettings, setShowSettings] = useState(false);
 
