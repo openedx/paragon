@@ -7,7 +7,7 @@
     "jsx": "react",
     "lib": ["dom", "es2019"],
     "isolatedModules": true,
-    "module": "esnext",
+    "module": "es6",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -17,7 +17,7 @@
     "sourceMap": true,
     "strict": true,
     "strictFunctionTypes": false,
-    "target": "esnext",
+    "target": "es6",
     "rootDir": "src",
     "outDir": "dist"
   },
