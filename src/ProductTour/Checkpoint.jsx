@@ -106,6 +106,7 @@ const Checkpoint = React.forwardRef(({
       <CheckpointBody>{body}</CheckpointBody>
       <CheckpointActionRow
         isLastCheckpoint={isLastCheckpoint}
+        index={index}
         {...props}
       />
       <div id="pgn__checkpoint-arrow" data-popper-arrow />

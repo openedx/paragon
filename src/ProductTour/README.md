@@ -52,6 +52,10 @@ The checkpoint objects themselves have additional props that can override the pr
           placement: 'bottom',
           target: '#checkpoint-3',
           title: 'Third checkpoint',
+          onEnd: () => {
+            console.log('Ended the third checkpoint');
+            setIsTourEnabled(false);
+          } // Additional logic for the onEnd callback to be called on the last checkpoint
         }
       ],
     };
