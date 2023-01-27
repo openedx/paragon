@@ -25,6 +25,8 @@ jobs:
         npm ci
         npm run generate-component-install
         npm run doc-site-install
+    - name: Check Types
+      run: npm run type-check
     - name: Lint
       run: npm run lint
     - name: Test
