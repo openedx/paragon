@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-ignore
 import { DataTable } from '~paragon-react';
 import { TextCell } from '../TableCells';
 

@@ -1,7 +1,5 @@
 import React from 'react';
-// @ts-ignore
 import { DataTable } from '~paragon-react';
-
 import { ClassNameCell, DesktopMeasuredCell, MobileMeasuredCell } from '../TableCells';
 
 const displaySizes = [1, 2, 3, 4];

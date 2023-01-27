@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { Container } from '~paragon-react';
 import Layout from '../../components/PageLayout';
 import SEO from '../../components/SEO';
-import { Container } from '~paragon-react';
 import {
   HeadingsTable,
   BodyTable,
