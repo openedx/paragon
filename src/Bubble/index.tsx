@@ -38,7 +38,7 @@ const Bubble = React.forwardRef<HTMLDivElement, BubbleProps>(({
 
 Bubble.propTypes = {
   /** Specifies contents of the component. */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   /** The `Bubble` style variant to use. */
   variant: PropTypes.oneOf(STYLE_VARIANTS),
   /** Activates disabled variant. */
@@ -50,6 +50,7 @@ Bubble.propTypes = {
 };
 
 Bubble.defaultProps = {
+  children: null,
   variant: 'primary',
   disabled: false,
   className: undefined,

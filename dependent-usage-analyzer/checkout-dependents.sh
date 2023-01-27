@@ -38,4 +38,6 @@ mkdir .projects
   git clone git@github.com:openedx/frontend-template-application.git --depth 1
   git clone git@github.com:edx/prospectus.git --depth 1
   git clone git@github.com:openedx/studio-frontend.git --depth 1
+  git clone git@github.com:edx/frontend-app-communications --depth 1
+  git clone git@github.com:edx/frontend-app-learner-dashboard.git -- depth 1
 )

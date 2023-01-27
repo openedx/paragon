@@ -261,6 +261,10 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
 
 .pgn__data-table-card-view {
   padding: 0 $data-table-padding-x;
+
+  .pgn__data-table-card-view-default-skeleton-card-section {
+    margin-top: map_get($spacers, 2);
+  }
 }
 
 .pgn__data-table__action-btn {
@@ -284,4 +288,41 @@ $data-table-pagination-dropdown-min-width: 6rem !default;
   padding: map_get($spacers, 2);
   box-shadow: $level-1-box-shadow;
   border-radius: 4px;
+}
+
+.pgn__data-table__selectable-card {
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1;
+
+  > :first-child {
+    height: 100%; // ensure Card stretches full height of column
+  }
+
+  &.is-selected {
+    > :first-child {
+      @extend %pgn__card-focused;
+    }
+  }
+
+  &.selection-right {
+    > :first-child {
+      margin-right: map_get($spacers, 2);
+
+      [dir="rtl"] & {
+        margin-left: map_get($spacers, 2);
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.selection-left {
+    flex-direction: row-reverse;
+  }
+}
+
+.pgn__data-table__controlled-select {
+  display: flex;
+  align-content: center;
+  padding: map_get($spacers, 1);
 }

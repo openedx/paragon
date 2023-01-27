@@ -11,7 +11,7 @@ function SvgGoogleMeet(props) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       {...props}
     >
-      <path fill="url(#google_meet_svg__pattern0)" d="M0 .127h24v19.745H0z" />
+      <path fill="currentColor" d="M0 .127h24v19.745H0z" />
       <defs>
         <pattern
           id="google_meet_svg__pattern0"

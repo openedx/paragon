@@ -10,7 +10,12 @@ const MyComponent = () => {
 
   return (
     <div className="p-5">
-      <h1>My Form</h1>
+      <div className="d-flex align-items-center">
+        <h1 className="mr-2">
+          My Form
+        </h1>
+        <Bubble variant="error">1</Bubble>
+      </div>
       <Form>
         <Form.Group>
           <Form.Control
@@ -22,7 +27,6 @@ const MyComponent = () => {
         </Form.Group>
         <Button onClick={handleClick}>Submit</Button>
       </Form>
-      <Bubble disabled expandable>Test bubble</Bubble>
     </div>
   );
 };

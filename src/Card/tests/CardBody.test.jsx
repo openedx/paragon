@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import CardBody from '../CardBody';
+import Card from '../index';
 
 describe('correct rendering', () => {
   it('renders CardBody element', () => {
@@ -16,6 +17,11 @@ describe('correct rendering', () => {
     const body = mount(<CardBody />).find('div');
 
     expect(body.hasClass('pgn__card-body')).toBe(true);
+  });
+
+  it('renders correct variant', () => {
+    const wrapper = mount(<Card variant="dark" />).find('div');
+    expect(wrapper.hasClass('pgn__card-dark')).toBe(true);
   });
 
   it('renders body with custom className', () => {

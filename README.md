@@ -1,13 +1,19 @@
 # Paragon
 
-[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon) [![NPM downloads](https://img.shields.io/npm/dw/@edx/paragon)](https://www.npmjs.com/package/@edx/paragon) [![Build Status](https://github.com/openedx/paragon/actions/workflows/release.yml/badge.svg)](https://github.com/openedx/paragon/actions/workflows/release.yml) [![codecov](https://codecov.io/gh/edx/paragon/branch/master/graph/badge.svg?token=x1tZmNduy9)](https://codecov.io/gh/edx/paragon)
+![status](https://img.shields.io/badge/status-Maintained-brightgreen)
+[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon)
+[![codecov](https://codecov.io/gh/edx/paragon/branch/master/graph/badge.svg?token=x1tZmNduy9)](https://codecov.io/gh/edx/paragon)
+![license](https://img.shields.io/github/license/openedx/paragon.svg)
+[![Build Status](https://github.com/openedx/paragon/actions/workflows/release.yml/badge.svg)](https://github.com/openedx/paragon/actions/workflows/release.yml)
+[![NPM downloads](https://img.shields.io/npm/dw/@edx/paragon)](https://www.npmjs.com/package/@edx/paragon)
 
-Paragon is a pattern library containing [accessible](https://www.w3.org/WAI/standards-guidelines/aria/) React components and a SCSS foundation built on Twitter Bootstrap. Paragon is developed for the Open edX platform.
+## Purpose
+
+Paragon is a pattern library containing [accessible](https://www.w3.org/WAI/standards-guidelines/aria/) React components and a SCSS foundation built on Twitter Bootstrap. Paragon is developed for the [Open edX](https://openedx.org/) platform.
 
 Documentation lives at https://paragon-openedx.netlify.app/.
 
-
-## Usage
+## Getting Started
 
 ### React Components
 
@@ -36,7 +42,9 @@ Usage for Open edX and others:
 @import '~@edx/paragon/scss/core/core.scss';
 ```
 
-Usage on edx.org:
+Usage on with `@edx/brand`:
+
+**index.scss**
 
 ```
 @import '~@edx/brand/paragon/fonts.scss';
@@ -47,9 +55,19 @@ Usage on edx.org:
 
 Note that including fonts will affect performance.  In some applications may choose not to load the custom font to keep it highly performant.
 
+## Getting Help
+
+Please reach out to the Paragon Working Group (PWG):
+
+* Open edX Slack ([request an invite](https://openedx.org/slack)): [#wg-paragon](https://openedx.slack.com/archives/C02NR285KV4)
+* [Github Issues](https://github.com/openedx/paragon/issues/new?template=blank-issue.md)
+* [Weekly PWG Meeting](https://calendar.google.com/calendar/embed?src=c_v86shrnegshsqgp4fj2k94u7bc%40group.calendar.google.com&ctz=America%2FNew_York)
+
 ## Contributing & Development
 
-See the [code of conduct](https://github.com/openedx/.github/blob/master/CODE_OF_CONDUCT.md).
+Please refer to the ["How to Contribute"](https://openedx.org/r/how-to-contribute) documentation and [Code of Conduct](https://openedx.org/code-of-conduct/) from Open edX.
+
+The Paragon Working Group accepts fixes, new features, and security patches. If you'd like to contribute a new component or update an existing component, please consider reaching out to the Paragon Working Group via the channels [described above](#getting-help).
 
 #### 1. Start the documentation site development server
 
@@ -124,9 +142,9 @@ This way the variables will also get automatically picked up by documentation si
 
 **Please note that you need to follow [Paragon's CSS styling conventions](docs/decisions/0012-css-styling-conventions).**
 
-#### 5. Document you component
+#### 5. Document your component
 
-The documentation for you component lives in `src/MyComponent/README.md`. The documentation site scans this directory for markdown or mdx files to create pages. By default, the file is created with following content:
+The documentation for your component lives in `src/MyComponent/README.md`. The documentation site scans this directory for markdown or mdx files to create pages. By default, the file is created with following content:
 
 ```` md
 ---
@@ -301,7 +319,7 @@ When developing a new component you should generally follow three rules:
    };
    ```
 
-### Developing locally against MFE
+### Developing locally against a micro-frontend (MFE)
 
 If you want to test the changes with local MFE setup, you need to create a "module.config.js" file in your MFE's directory containing local module overrides. After that the webpack build for your application will automatically pick your local version of Paragon and use it. The example of module.config.js file looks like this (for more details about module.config.js, refer to the [frontend-build documentation](https://github.com/openedx/frontend-build#local-module-configuration-for-webpack).):
 
@@ -433,3 +451,12 @@ BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite
 Paragon is distributed on npm as ES6 modules.  This means that webpack can use treeshaking on any Paragon components that a consuming app is not using, resulting in greatly reduced bundle sizes.
 
 To get treeshaking to work, your app may require some updates - most notably, Babel 7.  See this PR for an example of the changes necessary to update an app to take advantage of treeshaking with Paragon: https://github.com/openedx/frontend-app-payment/pull/48
+
+## People
+
+The assigned maintainers for this component and other project details may be found in [Backstage](https://backstage.openedx.org/catalog/default/component/paragon). Backstage pulls this data from the `catalog-info.yml` file in this repository.
+
+## Reporting Security Issues
+Please do not report security issues in public. Please email security@edx.org.
+
+We tend to prioritize security issues which impact the published `@edx/paragon` NPM library more so than the [documentation website](https://paragon-openedx.netlify.app/) or example React application.

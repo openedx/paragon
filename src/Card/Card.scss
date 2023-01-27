@@ -4,23 +4,110 @@
 .pgn__card,
 .pgn__card-body {
   width: 100%;
+  border: 0;
 
-  &.is-muted {
-    background-color: $light-200;
+  %dark-variant-content {
+    color: $white;
+
+    a {
+      color: $white;
+    }
+  }
+
+  &.pgn__card-dark {
+    background-color: $card-bg-dark;
+
+    @extend %dark-variant-content;
+
+    .pgn__card-header {
+      @extend %dark-variant-content;
+
+      .pgn__card-header-title,
+      .pgn__card-header-title-sm,
+      .pgn__card-header-title-md,
+      .pgn__card-header-subtitle,
+      .pgn__card-header-subtitle-sm,
+      .pgn__card-header-subtitle-md {
+        @extend %dark-variant-content;
+      }
+    }
+
+    .pgn__card-section {
+      @extend %dark-variant-content;
+
+      .pgn__card-section-title {
+        @extend %dark-variant-content;
+      }
+    }
+
+    .pgn__card-footer,
+    .pgn__card-footer-text {
+      @extend %dark-variant-content;
+    }
+  }
+
+  &.pgn__card-muted {
+    background-color: $card-bg-muted;
   }
 }
 
 a .pgn__card {
   color: $gray-700;
   display: inline-block;
-  margin-right: 100%;
 }
 
 .pgn__card-grid {
   .row > div[class*="col-"] {
-    margin-bottom: $card-grid-margin;
+    margin-bottom: $card-grid-margin-bottom;
+  }
+}
+
+.pgn__card-grid,
+.pgn__card-deck {
+  .row > div[class*="col-"] {
     display: flex;
     flex: 1 0 auto;
+  }
+}
+
+.pgn__card-deck {
+  position: relative;
+  margin-bottom: $card-deck-margin-bottom;
+
+  &.pgn__card-deck-has-horizontal-scroll {
+    .pgn__card-deck-row {
+      overflow-x: scroll;
+    }
+  }
+
+  .pgn__card-deck-row {
+    overflow: hidden;
+    flex-wrap: nowrap;
+    padding-top: $card-focus-border-offset;
+    padding-bottom: $card-focus-border-offset;
+
+    &:focus-visible {
+      outline: $card-focus-border-width solid $card-border-focus-color;
+      border-radius: $card-focus-border-radius;
+    }
+  }
+}
+
+.pgn__card-carousel {
+  .pgn__card-carousel-title {
+    margin-bottom: map-get($spacers, 2);
+  }
+
+  .pgn__card-carousel-subtitle {
+    font-size: $font-size-sm;
+    margin-bottom: map-get($spacers, 2);
+  }
+
+  .pgn__card-carousel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: map-get($spacers, 1);
   }
 }
 
@@ -264,16 +351,38 @@ a .pgn__card {
   height: $card-logo-height;
   border-radius: $card-logo-border-radius;
   box-shadow: $level-1-box-shadow;
-  z-index: 1;
   padding: map_get($spacers, 2);
   background-color: $white;
 }
 
+%pgn__card-focused {
+  outline: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(-1 * #{$card-focus-border-offset});
+    right: calc(-1 * #{$card-focus-border-offset});
+    bottom: calc(-1 * #{$card-focus-border-offset});
+    left: calc(-1 * #{$card-focus-border-offset});
+    border: solid $card-focus-border-width $card-border-focus-color;
+    border-radius: $card-focus-border-radius;
+  }
+
+  &.pgn__card-dark::before {
+    border: solid $card-focus-border-width $card-border-focus-color-dark;
+  }
+}
+
 .pgn__card {
+  outline: none;
+
   @include pgn-box-shadow(1, "down");
 
   &.clickable {
-    &:hover {
+    &:hover,
+    &:focus,
+    &.focus {
       cursor: pointer;
 
       @include pgn-box-shadow(2, "down");
@@ -281,9 +390,7 @@ a .pgn__card {
 
     &:focus,
     &.focus {
-      box-shadow: $level-1-box-shadow;
-      outline: none;
-      border-color: $card-border-focus-color;
+      @extend %pgn__card-focused;
     }
   }
 
