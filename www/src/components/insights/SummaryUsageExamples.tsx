@@ -54,7 +54,7 @@ function SummaryUsageExamples({ row }: ISummaryUsageExamples) {
     </div>
   ));
 
-  return componentUsagesExample;
+  return <div>{componentUsagesExample}</div>;
 }
 
 SummaryUsageExamples.propTypes = {

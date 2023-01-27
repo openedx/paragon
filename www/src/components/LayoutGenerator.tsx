@@ -98,7 +98,7 @@ function LayoutGenerator() {
   }
 
   const renderMarkupString = () => {
-    const columnsString = columns.map((ColumnComponent, i) => {
+    const columnsString = [...Array(columns.length).keys()].map((i) => {
       const width = columnWidths[i];
       const offset = columnOffsets[i];
 
