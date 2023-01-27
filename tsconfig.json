@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": ["dom", "es2019"],
+    "lib": ["dom", "es6"],
     "isolatedModules": true,
     "module": "es6",
     "moduleResolution": "node",
