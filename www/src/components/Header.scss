@@ -45,6 +45,38 @@
       margin-bottom: 1.75rem;
     }
   }
+
+  &-settings-and-search {
+    justify-content: end;
+    align-items: center;
+
+    // stylelint-disable-next-line selector-class-pattern
+    .DocSearch.DocSearch-Button {
+      margin: 0 0 0 $spacer;
+      width: 13.25rem;
+      height: 2.75rem;
+
+      @media (max-width: $max-width-md) {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+        overflow: hidden;
+        padding: .625rem .75rem;
+      }
+
+      @media (max-width: $max-width-xs) {
+        margin: 0 0 0 .5rem;
+        width: 2rem;
+        height: 2rem;
+        padding: .5rem .45rem;
+
+        // stylelint-disable-next-line selector-class-pattern
+        .DocSearch-Search-Icon {
+          width: 1rem;
+        }
+      }
+    }
+  }
 }
 
 [dir="rtl"] .pgn-doc__header {
@@ -66,6 +98,15 @@
 
   .list-unstyled {
     padding: 0;
+  }
+
+  // stylelint-disable-next-line selector-class-pattern
+  &-settings-and-search .DocSearch.DocSearch-Button {
+    margin: 0 $spacer 0 0;
+
+    @media (max-width: $max-width-xs) {
+      margin: 0 .5rem 0 0;
+    }
   }
 }
 

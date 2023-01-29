@@ -21,6 +21,7 @@ import Menu from './Menu';
 
 // @ts-ignore
 import Logo from '../images/diamond.svg';
+import Search from './Search';
 
 export interface INavbar {
   siteTitle: string,
@@ -81,7 +82,7 @@ function Navbar({
           </Link>
         </Col>
         <Col className="small mb-2 mb-sm-0 col-4" sm={5} xl={showMinimizedTitle ? 5 : 4}>
-          <Nav className="justify-content-end align-items-center">
+          <Nav className="pgn-doc__header-settings-and-search">
             <Nav.Item>
               <IconButton
                 src={Settings}
@@ -91,6 +92,9 @@ function Navbar({
                 variant="light"
                 size="sm"
               />
+            </Nav.Item>
+            <Nav.Item>
+              <Search />
             </Nav.Item>
           </Nav>
         </Col>
