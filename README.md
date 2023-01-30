@@ -63,7 +63,7 @@ Please reach out to the Paragon Working Group (PWG):
 * [Github Issues](https://github.com/openedx/paragon/issues/new?template=blank-issue.md)
 * [Weekly PWG Meeting](https://calendar.google.com/calendar/embed?src=c_v86shrnegshsqgp4fj2k94u7bc%40group.calendar.google.com&ctz=America%2FNew_York)
 
-### Internationalization
+## Internationalization
 
 Paragon supports internationalization for its components out of the box with the support of [react-intl](https://formatjs.io/docs/react-intl/). You may view translated strings for each component on the documentation website by switching languages in the settings.
 
