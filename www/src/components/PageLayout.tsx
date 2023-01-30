@@ -67,7 +67,7 @@ function Layout({
       {isMdx || !hideFooterComponentMenu ? (
         <Container fluid>
           <Row className="flex-xl-nowrap">
-            <Col className="d-none d-xl-block" xl={settings.containerWidth === 'xl' ? 'auto' : 2}>
+            <Col className="d-none d-xl-block p-0" xl={settings.containerWidth === 'xl' ? 'auto' : 2}>
               <Sticky offset={6} className="pgn-doc__toc p-0 pt-3">
                 <Menu />
               </Sticky>

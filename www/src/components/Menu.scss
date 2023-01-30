@@ -1,5 +1,9 @@
-.pgn-doc__menu {
+.pgn__modal-popup__tooltip .pgn-doc__menu {
   padding: $spacer 1.5rem 2rem;
+}
+
+.pgn-doc__menu {
+  padding: $spacer .625rem 2rem;
   border-right: $border-width solid $light-400;
 
   &-title {
@@ -16,9 +20,15 @@
 
     .btn-group {
       width: 100%;
+      white-space: nowrap;
 
       .btn {
         width: 50%;
+
+        @media (max-width: map-get($grid-breakpoints, "xxl")) {
+          font-size: $font-size-xs;
+          line-height: $headings-line-height;
+        }
       }
     }
   }
