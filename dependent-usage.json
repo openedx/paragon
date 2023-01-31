@@ -1,5 +1,5 @@
 {
-  "lastModified": 1675087747007,
+  "lastModified": 1675174159196,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -14133,7 +14133,7 @@
           },
           {
             "filePath": "src/components/enterprise-banner/EnterpriseBanner.jsx",
-            "line": 20,
+            "line": 19,
             "column": 6
           },
           {
@@ -14374,6 +14374,31 @@
             "filePath": "src/components/program/ProgramCourses.jsx",
             "line": 93,
             "column": 20
+          },
+          {
+            "filePath": "src/components/search/SearchError.jsx",
+            "line": 11,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/search/SearchNoResults.jsx",
+            "line": 14,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/skills-quiz/SearchCourseCard.jsx",
+            "line": 90,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
+            "line": 164,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
+            "line": 161,
+            "column": 10
           }
         ],
         "Error": [
@@ -14866,7 +14891,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 194,
+            "line": 183,
             "column": 12
           }
         ],
@@ -14918,7 +14943,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 202,
+            "line": 191,
             "column": 14
           }
         ],
@@ -14980,7 +15005,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 208,
+            "line": 197,
             "column": 14
           }
         ],
@@ -15072,12 +15097,12 @@
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 220,
+            "line": 209,
             "column": 14
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 230,
+            "line": 219,
             "column": 14
           }
         ],
@@ -15104,7 +15129,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 242,
+            "line": 231,
             "column": 14
           }
         ],
@@ -15166,7 +15191,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SearchCourseCard.jsx",
-            "line": 115,
+            "line": 105,
             "column": 6
           },
           {
@@ -15176,12 +15201,12 @@
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 190,
+            "line": 179,
             "column": 6
           },
           {
             "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
-            "line": 159,
+            "line": 147,
             "column": 10
           }
         ],
@@ -15263,7 +15288,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
-            "line": 130,
+            "line": 118,
             "column": 12
           }
         ],
@@ -15353,12 +15378,12 @@
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 224,
+            "line": 213,
             "column": 22
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 231,
+            "line": 220,
             "column": 16
           },
           {
@@ -15368,7 +15393,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
-            "line": 133,
+            "line": 121,
             "column": 10
           }
         ],
@@ -15418,6 +15443,16 @@
           {
             "filePath": "src/components/enterprise-user-subsidy/enterprise-offers/EnterpriseOffersBalanceAlert.jsx",
             "line": 56,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/search/SearchError.jsx",
+            "line": 17,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/search/SearchNoResults.jsx",
+            "line": 21,
             "column": 8
           }
         ],
@@ -15595,7 +15630,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 237,
+            "line": 226,
             "column": 20
           },
           {
@@ -15764,7 +15799,7 @@
           },
           {
             "filePath": "src/components/enterprise-banner/EnterpriseBanner.jsx",
-            "line": 27,
+            "line": 26,
             "column": 12
           },
           {
@@ -15824,7 +15859,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
-            "line": 150,
+            "line": 138,
             "column": 12
           },
           {
@@ -16090,7 +16125,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 221,
+            "line": 210,
             "column": 16
           },
           {
@@ -16221,31 +16256,33 @@
             "column": 6
           }
         ],
-        "StatusAlert": [
+        "Warning": [
           {
             "filePath": "src/components/search/SearchError.jsx",
-            "line": 28,
-            "column": 4
-          },
+            "line": 14,
+            "column": 12
+          }
+        ],
+        "ZoomOut": [
           {
             "filePath": "src/components/search/SearchNoResults.jsx",
-            "line": 31,
-            "column": 6
+            "line": 18,
+            "column": 14
           },
           {
             "filePath": "src/components/skills-quiz/SearchCourseCard.jsx",
-            "line": 102,
-            "column": 6
+            "line": 94,
+            "column": 14
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 177,
-            "column": 6
+            "line": 168,
+            "column": 14
           },
           {
             "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
-            "line": 173,
-            "column": 10
+            "line": 165,
+            "column": 18
           }
         ],
         "Program": [
@@ -16256,7 +16293,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 237,
+            "line": 226,
             "column": 31
           }
         ],
@@ -17052,12 +17089,12 @@
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 100,
+            "line": 101,
             "column": 6
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 194,
+            "line": 196,
             "column": 6
           },
           {
@@ -17097,17 +17134,17 @@
           },
           {
             "filePath": "src/shared/links.jsx",
-            "line": 11,
+            "line": 10,
+            "column": 2
+          },
+          {
+            "filePath": "src/shared/links.jsx",
+            "line": 28,
             "column": 4
           },
           {
             "filePath": "src/shared/links.jsx",
-            "line": 30,
-            "column": 4
-          },
-          {
-            "filePath": "src/shared/links.jsx",
-            "line": 48,
+            "line": 46,
             "column": 4
           }
         ],
@@ -17164,7 +17201,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WelcomeMessage.jsx",
-            "line": 30,
+            "line": 31,
             "column": 4
           },
           {
@@ -17219,12 +17256,12 @@
           },
           {
             "filePath": "src/generic/user-messages/Alert.jsx",
-            "line": 36,
-            "column": 4
+            "line": 35,
+            "column": 2
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 180,
+            "line": 181,
             "column": 10
           }
         ],
@@ -17337,27 +17374,27 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
-            "line": 137,
+            "line": 138,
             "column": 6
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
-            "line": 152,
+            "line": 153,
             "column": 6
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
-            "line": 159,
+            "line": 160,
             "column": 8
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
-            "line": 165,
+            "line": 166,
             "column": 8
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
-            "line": 207,
+            "line": 209,
             "column": 12
           },
           {
@@ -17367,12 +17404,12 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WelcomeMessage.jsx",
-            "line": 42,
+            "line": 43,
             "column": 8
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 244,
+            "line": 245,
             "column": 12
           },
           {
@@ -17402,12 +17439,12 @@
           },
           {
             "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
-            "line": 35,
+            "line": 36,
             "column": 10
           },
           {
             "filePath": "src/courseware/course/celebration/WeeklyGoalCelebrationModal.jsx",
-            "line": 29,
+            "line": 30,
             "column": 10
           },
           {
@@ -17497,23 +17534,23 @@
           },
           {
             "filePath": "src/generic/upgrade-notification/UpgradeNotification.jsx",
-            "line": 454,
+            "line": 449,
             "column": 6
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/LaunchCourseHomeTourButton.jsx",
+            "line": 46,
+            "column": 8
+          },
+          {
+            "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
             "line": 45,
             "column": 8
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 46,
-            "column": 10
-          },
-          {
-            "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 52,
-            "column": 10
+            "line": 51,
+            "column": 8
           }
         ],
         "Icon": [
@@ -17529,7 +17566,7 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 136,
+            "line": 137,
             "column": 14
           },
           {
@@ -17614,7 +17651,7 @@
           },
           {
             "filePath": "src/courseware/course/celebration/WeeklyGoalCelebrationModal.jsx",
-            "line": 55,
+            "line": 56,
             "column": 10
           },
           {
@@ -17624,37 +17661,37 @@
           },
           {
             "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
-            "line": 54,
+            "line": 55,
             "column": 10
           },
           {
             "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
-            "line": 71,
+            "line": 72,
             "column": 28
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/discussions/DiscussionsTrigger.jsx",
-            "line": 42,
+            "line": 43,
             "column": 6
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationIcon.jsx",
-            "line": 17,
-            "column": 6
+            "line": 16,
+            "column": 4
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/LaunchCourseHomeTourButton.jsx",
-            "line": 47,
+            "line": 48,
             "column": 12
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 173,
+            "line": 174,
             "column": 12
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 182,
+            "line": 183,
             "column": 14
           }
         ],
@@ -17678,7 +17715,7 @@
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 169,
+            "line": 170,
             "column": 10
           }
         ],
@@ -17772,19 +17809,19 @@
         "Collapsible": [
           {
             "filePath": "src/course-home/outline-tab/Section.jsx",
-            "line": 75,
+            "line": 76,
             "column": 6
           }
         ],
         "IconButton": [
           {
             "filePath": "src/course-home/outline-tab/Section.jsx",
-            "line": 82,
+            "line": 83,
             "column": 10
           },
           {
             "filePath": "src/course-home/outline-tab/Section.jsx",
-            "line": 90,
+            "line": 91,
             "column": 10
           },
           {
@@ -17799,7 +17836,7 @@
           },
           {
             "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
-            "line": 68,
+            "line": 69,
             "column": 18
           }
         ],
@@ -17811,17 +17848,17 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 90,
+            "line": 91,
             "column": 4
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 237,
+            "line": 238,
             "column": 6
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 105,
+            "line": 106,
             "column": 8
           }
         ],
@@ -17833,47 +17870,8 @@
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 95,
+            "line": 96,
             "column": 6
-          },
-          {
-            "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 238,
-            "column": 8
-          },
-          {
-            "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 107,
-            "column": 10
-          }
-        ],
-        "Card.Footer": [
-          {
-            "filePath": "src/course-home/outline-tab/widgets/StartOrResumeCourseCard.jsx",
-            "line": 59,
-            "column": 6
-          },
-          {
-            "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 242,
-            "column": 8
-          },
-          {
-            "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 110,
-            "column": 10
-          }
-        ],
-        "Card.Section": [
-          {
-            "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 100,
-            "column": 6
-          },
-          {
-            "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 133,
-            "column": 8
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
@@ -17882,28 +17880,67 @@
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 109,
+            "line": 108,
+            "column": 10
+          }
+        ],
+        "Card.Footer": [
+          {
+            "filePath": "src/course-home/outline-tab/widgets/StartOrResumeCourseCard.jsx",
+            "line": 60,
+            "column": 6
+          },
+          {
+            "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
+            "line": 243,
+            "column": 8
+          },
+          {
+            "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
+            "line": 111,
+            "column": 10
+          }
+        ],
+        "Card.Section": [
+          {
+            "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
+            "line": 101,
+            "column": 6
+          },
+          {
+            "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
+            "line": 134,
+            "column": 8
+          },
+          {
+            "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
+            "line": 240,
+            "column": 8
+          },
+          {
+            "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
+            "line": 110,
             "column": 10
           }
         ],
         "Form.Switch": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 123,
+            "line": 124,
             "column": 10
           }
         ],
         "Email": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
-            "line": 138,
+            "line": 139,
             "column": 21
           }
         ],
         "TransitionReplace": [
           {
             "filePath": "src/course-home/outline-tab/widgets/WelcomeMessage.jsx",
-            "line": 51,
+            "line": 52,
             "column": 6
           }
         ],
@@ -18073,12 +18110,12 @@
           },
           {
             "filePath": "src/courseware/course/sidebar/SidebarContextProvider.jsx",
-            "line": 17,
+            "line": 19,
             "column": 34
           },
           {
             "filePath": "src/courseware/course/sidebar/SidebarContextProvider.jsx",
-            "line": 18,
+            "line": 20,
             "column": 35
           },
           {
@@ -18088,7 +18125,7 @@
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 71,
+            "line": 76,
             "column": 21
           }
         ],
@@ -18170,42 +18207,42 @@
           },
           {
             "filePath": "src/courseware/course/sequence/Sequence.test.jsx",
-            "line": 39,
+            "line": 40,
             "column": 24
           },
           {
             "filePath": "src/courseware/course/sequence/Sequence.test.jsx",
-            "line": 411,
+            "line": 410,
             "column": 26
           },
           {
             "filePath": "src/courseware/course/sidebar/SidebarContextProvider.jsx",
-            "line": 17,
+            "line": 19,
             "column": 58
           },
           {
             "filePath": "src/courseware/course/sidebar/SidebarContextProvider.jsx",
-            "line": 18,
+            "line": 20,
             "column": 59
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationTray.test.jsx",
-            "line": 45,
+            "line": 46,
             "column": 24
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationTray.test.jsx",
-            "line": 53,
+            "line": 54,
             "column": 24
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationTray.test.jsx",
-            "line": 138,
+            "line": 139,
             "column": 24
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 71,
+            "line": 76,
             "column": 46
           },
           {
@@ -18273,12 +18310,12 @@
           },
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryTable.jsx",
-            "line": 85,
+            "line": 95,
             "column": 6
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 181,
+            "line": 183,
             "column": 8
           }
         ],
@@ -18290,7 +18327,7 @@
           },
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryTable.jsx",
-            "line": 135,
+            "line": 128,
             "column": 8
           }
         ],
@@ -18455,31 +18492,31 @@
         "StatefulButton": [
           {
             "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
-            "line": 42,
+            "line": 43,
             "column": 4
           }
         ],
         "StandardModal": [
           {
             "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
-            "line": 32,
+            "line": 33,
             "column": 4
           },
           {
             "filePath": "src/courseware/course/celebration/WeeklyGoalCelebrationModal.jsx",
-            "line": 26,
+            "line": 27,
             "column": 4
           }
         ],
         "ActionRow": [
           {
             "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
-            "line": 34,
+            "line": 35,
             "column": 8
           },
           {
             "filePath": "src/courseware/course/celebration/WeeklyGoalCelebrationModal.jsx",
-            "line": 28,
+            "line": 29,
             "column": 8
           },
           {
@@ -18489,33 +18526,33 @@
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 45,
-            "column": 8
+            "line": 44,
+            "column": 6
           }
         ],
         "Lightbulb": [
           {
             "filePath": "src/courseware/course/celebration/WeeklyGoalCelebrationModal.jsx",
-            "line": 56,
+            "line": 57,
             "column": 17
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 173,
+            "line": 174,
             "column": 50
           }
         ],
         "Card.ImageCap": [
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 106,
+            "line": 107,
             "column": 10
           }
         ],
         "CardView": [
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
-            "line": 191,
+            "line": 193,
             "column": 10
           }
         ],
@@ -18543,8 +18580,8 @@
         "Dropdown": [
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
-            "line": 15,
-            "column": 4
+            "line": 14,
+            "column": 2
           },
           {
             "filePath": "src/generic/tabs/Tabs.jsx",
@@ -18560,8 +18597,8 @@
         "Dropdown.Toggle": [
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
-            "line": 16,
-            "column": 6
+            "line": 15,
+            "column": 4
           },
           {
             "filePath": "src/generic/tabs/Tabs.jsx",
@@ -18577,8 +18614,8 @@
         "Dropdown.Menu": [
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
-            "line": 27,
-            "column": 6
+            "line": 26,
+            "column": 4
           },
           {
             "filePath": "src/generic/tabs/Tabs.jsx",
@@ -18594,8 +18631,8 @@
         "Dropdown.Item": [
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigationDropdown.jsx",
-            "line": 29,
-            "column": 10
+            "line": 28,
+            "column": 8
           },
           {
             "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidgetOption.jsx",
@@ -18613,29 +18650,29 @@
         "ArrowBackIos": [
           {
             "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
-            "line": 54,
+            "line": 55,
             "column": 21
           }
         ],
         "Close": [
           {
             "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
-            "line": 69,
+            "line": 70,
             "column": 25
           }
         ],
         "QuestionAnswer": [
           {
             "filePath": "src/courseware/course/sidebar/sidebars/discussions/DiscussionsTrigger.jsx",
-            "line": 42,
+            "line": 43,
             "column": 17
           }
         ],
         "WatchOutline": [
           {
             "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationIcon.jsx",
-            "line": 17,
-            "column": 17
+            "line": 16,
+            "column": 15
           }
         ],
         "Input": [
@@ -18648,92 +18685,92 @@
         "Compass": [
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/LaunchCourseHomeTourButton.jsx",
-            "line": 48,
+            "line": 49,
             "column": 19
           }
         ],
         "MarketingModal": [
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 19,
-            "column": 4
+            "line": 18,
+            "column": 2
           }
         ],
         "ModalDialog.Hero": [
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 26,
-            "column": 8
+            "line": 25,
+            "column": 6
           }
         ],
         "ModalDialog.Title": [
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 31,
-            "column": 12
+            "line": 30,
+            "column": 10
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 158,
+            "line": 159,
             "column": 8
           }
         ],
         "ProductTour": [
           {
             "filePath": "src/product-tours/ProductTours.jsx",
-            "line": 144,
+            "line": 145,
             "column": 6
           }
         ],
         "ModalDialog": [
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 146,
+            "line": 147,
             "column": 4
           }
         ],
         "ModalDialog.Header": [
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 157,
+            "line": 158,
             "column": 6
           }
         ],
         "ModalDialog.Body": [
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 162,
+            "line": 163,
             "column": 6
           }
         ],
         "MoneyFilled": [
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 182,
+            "line": 183,
             "column": 69
           }
         ],
         "ModalDialog.Footer": [
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 200,
+            "line": 201,
             "column": 6
           }
         ],
         "ModalDialog.CloseButton": [
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 212,
+            "line": 213,
             "column": 16
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 225,
+            "line": 226,
             "column": 16
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 233,
+            "line": 234,
             "column": 10
           }
         ],
@@ -21183,27 +21220,27 @@
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 652,
+            "line": 678,
             "column": 8
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 768,
+            "line": 794,
             "column": 10
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 778,
+            "line": 804,
             "column": 10
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 828,
+            "line": 854,
             "column": 10
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 865,
+            "line": 891,
             "column": 12
           },
           {
@@ -21280,7 +21317,7 @@
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 658,
+            "line": 684,
             "column": 10
           },
           {
@@ -21425,12 +21462,12 @@
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 139,
+            "line": 140,
             "column": 10
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 153,
+            "line": 154,
             "column": 10
           },
           {
@@ -21473,7 +21510,7 @@
         "Add": [
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 116,
+            "line": 117,
             "column": 8
           },
           {
@@ -26456,13 +26493,6 @@
             "column": 33
           }
         ],
-        "Card.Footer": [
-          {
-            "filePath": "src/components/2U/ProductCard.jsx",
-            "line": 319,
-            "column": 10
-          }
-        ],
         "ExpandMore": [
           {
             "filePath": "src/components/AboutUs/TimelineEntry.jsx",
@@ -26695,7 +26725,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 326,
+            "line": 322,
             "column": 6
           },
           {
@@ -27235,7 +27265,7 @@
           },
           {
             "filePath": "src/templates/courseDetail2U.jsx",
-            "line": 454,
+            "line": 450,
             "column": 18
           },
           {
@@ -27456,7 +27486,12 @@
           },
           {
             "filePath": "src/templates/CCPAPage.jsx",
-            "line": 32,
+            "line": 27,
+            "column": 8
+          },
+          {
+            "filePath": "src/templates/CCPAPageES.jsx",
+            "line": 26,
             "column": 8
           }
         ],
@@ -27468,7 +27503,12 @@
           },
           {
             "filePath": "src/templates/CCPAPage.jsx",
-            "line": 33,
+            "line": 28,
+            "column": 10
+          },
+          {
+            "filePath": "src/templates/CCPAPageES.jsx",
+            "line": 27,
             "column": 10
           }
         ],
