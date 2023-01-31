@@ -246,7 +246,7 @@ function Menu() {
             <OverlayTrigger
               trigger="click"
               overlay={(
-                <Popover className="pgn-doc__menu-playground--popover">
+                <Popover id="playground-popover" className="pgn-doc__menu-playground--popover">
                   <Popover.Title as="h3">
                     <Icon src={AddTask} />
                     Сoming soon
@@ -269,7 +269,7 @@ function Menu() {
         </ul>
       </div>
       <Hyperlink
-        href="https://www.npmjs.com/package/@edx/paragon"
+        destination="https://www.npmjs.com/package/@edx/paragon"
         externalLinkAlternativeText="npm Paragon package page"
         externalLinkTitle="Paragon npm"
         target="_blank"

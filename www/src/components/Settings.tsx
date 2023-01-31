@@ -76,11 +76,11 @@ function Settings({ showMinimizedTitle }: ISetting) {
           </Form.Group>
           {!showMinimizedTitle && (
             <Form.Group>
+              <Form.Label className="pgn-doc__settings-label">Container Width</Form.Label>
               <Form.Control
                 as="select"
                 value={settings.containerWidth}
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('containerWidth', e.target.value)}
-                floatingLabel="Container Width"
               >
                 <option value="xs">xs</option>
                 <option value="sm">sm</option>
