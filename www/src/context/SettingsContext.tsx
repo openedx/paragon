@@ -49,9 +49,7 @@ function SettingsContextProvider({ children }) {
 
   const toggleSettings = (value: boolean) => {
     setShowSettings(value);
-    global.analytics.track(`openedx.paragon.docs.settings.${value ? 'opened' : 'closed'}`, {
-      value: value ? 'show' : 'hide',
-    });
+    global.analytics.track(`openedx.paragon.docs.settings.${value ? 'opened' : 'closed'}`);
   };
 
   // this hook will be called after the first render, so we can safely access localStorage
