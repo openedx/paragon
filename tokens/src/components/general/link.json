@@ -1,9 +1,9 @@
 {
   "color": {
     "link": {
-      "base": { "value": "{color.info.500.value}", "source": "$link-color" },
+      "base": { "value": "{color.info.500}", "source": "$link-color" },
       "hover": {
-        "value": "{color.link.base.value}",
+        "value": "{color.link.base}",
         "source": "$link-hover-color",
         "modify": [{
           "type": "darken",
@@ -11,9 +11,9 @@
         }]
       },
       "inline": {
-        "base": { "value": "{color.info.500.value}", "source": "$inline-link-color" },
+        "base": { "value": "{color.info.500}", "source": "$inline-link-color" },
         "decoration": {
-          "value": "{color.link.inline.base.value}",
+          "value": "{color.link.inline.base}",
           "source": "$inline-link-decoration-color",
           "modify": [{
             "type": "alpha",
@@ -22,7 +22,7 @@
         },
         "hover": {
           "base": {
-            "value": "{color.link.inline.base.value}",
+            "value": "{color.link.inline.base}",
             "source": "$inline-link-hover-color",
             "modify": [{
               "type": "darken",
@@ -30,7 +30,7 @@
             }]
           },
           "decoration": {
-            "value": "{color.link.inline.hover.base.value}",
+            "value": "{color.link.inline.hover.base}",
             "source": "$inline-link-hover-decoration-color",
             "modify": [{
               "type": "alpha",
@@ -40,9 +40,9 @@
         }
       },
       "muted": {
-        "base": { "value": "{color.primary.500.value}", "source": "$muted-link-color" },
+        "base": { "value": "{color.primary.500}", "source": "$muted-link-color" },
         "hover": {
-          "value": "{color.link.muted.base.value}",
+          "value": "{color.link.muted.base}",
           "source": "$muted-link-hover-color",
           "modify": [{
             "type": "darken",
@@ -50,9 +50,9 @@
           }]
         },
         "inline": {
-          "base": { "value": "{color.primary.500.value}", "source": "$muted-inline-link-color" },
+          "base": { "value": "{color.primary.500}", "source": "$muted-inline-link-color" },
           "decoration": {
-            "value": "{color.link.muted.inline.base.value}",
+            "value": "{color.link.muted.inline.base}",
             "source": "$muted-inline-link-decoration-color",
             "modify": [{
               "type": "alpha",
@@ -61,7 +61,7 @@
           },
           "hover": {
             "base": {
-              "value": "{color.link.muted.inline.base.value}",
+              "value": "{color.link.muted.inline.base}",
               "source": "$muted-inline-link-hover-color",
               "modify": [{
                 "type": "darken",
@@ -69,7 +69,7 @@
               }]
             },
             "decoration": {
-              "value": "{color.link.muted.inline.hover.base.value}",
+              "value": "{color.link.muted.inline.hover.base}",
               "source": "$muted-inline-link-hover-decoration-color",
               "modify": [{
                 "type": "alpha",
@@ -80,9 +80,9 @@
         }
       },
       "brand": {
-        "base": { "value": "{color.brand.500.value}", "source": "$brand-link-color" },
+        "base": { "value": "{color.brand.500}", "source": "$brand-link-color" },
         "hover": {
-          "value": "{color.link.brand.base.value}",
+          "value": "{color.link.brand.base}",
           "source": "$brand-link-hover-color",
           "modify": [{
             "type": "darken",
@@ -90,9 +90,9 @@
           }]
         },
         "inline": {
-          "base": { "value": "{color.brand.500.value}", "source": "$brand-inline-link-color" },
+          "base": { "value": "{color.brand.500}", "source": "$brand-inline-link-color" },
           "decoration": {
-            "value": "{color.link.brand.inline.base.value}",
+            "value": "{color.link.brand.inline.base}",
             "source": "$brand-inline-link-decoration-color",
             "modify": [{
               "type": "alpha",
@@ -101,7 +101,7 @@
           },
           "hover": {
             "base": {
-              "value": "{color.link.brand.inline.base.value}",
+              "value": "{color.link.brand.inline.base}",
               "source": "$brand-inline-link-hover-color",
               "modify": [{
                 "type": "darken",
@@ -109,7 +109,7 @@
               }]
             },
             "decoration": {
-              "value": "{color.link.brand.inline.hover.base.value}",
+              "value": "{color.link.brand.inline.hover.base}",
               "source": "$brand-inline-link-hover-decoration-color",
               "modify": [{
                 "type": "alpha",
