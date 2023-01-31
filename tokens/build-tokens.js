@@ -17,7 +17,7 @@ const config = {
   include: [path.resolve(__dirname, 'src/**/*.json')],
   fileHeader: {
     customFileHeader: (defaultMessage) => [
-      'IMPORTANT: This file is the result of assembling design tokens, contained in the project\'s "tokens/src" folder',
+      'IMPORTANT: This file is the result of assembling design tokens',
       ...defaultMessage,
     ],
   },
