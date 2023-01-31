@@ -9,7 +9,7 @@ function StepListSeparator() {
   return <li aria-hidden="true" className="pgn__stepper-header-line" />;
 }
 
-function StepList({ steps, activeKey, handleStepClick }) {
+function StepList({ steps, activeKey }) {
   return (
     <ul className="pgn__stepper-header-step-list">
       {steps.map(({ label, ...stepProps }, index) => (
@@ -19,8 +19,6 @@ function StepList({ steps, activeKey, handleStepClick }) {
             {...stepProps}
             index={index}
             isActive={activeKey === stepProps.eventKey}
-            onClick={handleStepClick && steps.every((step) => !step.hasError)
-              ? () => handleStepClick(stepProps.eventKey) : undefined}
           >
             {label}
           </StepperHeaderStep>
@@ -32,7 +30,7 @@ function StepList({ steps, activeKey, handleStepClick }) {
 
 const PageCount = ({ activeStepIndex, totalSteps }) => `Step ${activeStepIndex + 1} of ${totalSteps}`;
 
-function StepperHeader({ className, PageCountComponent, handleStepClick }) {
+function StepperHeader({ className, PageCountComponent }) {
   const { steps, activeKey } = useContext(StepperContext);
   const windowDimensions = useWindowSize();
   // assume about 200px per step
@@ -62,7 +60,7 @@ function StepperHeader({ className, PageCountComponent, handleStepClick }) {
   // Show all steps
   return (
     <div className={classNames('pgn__stepper-header', className)}>
-      <StepList steps={steps} handleStepClick={handleStepClick} activeKey={activeKey} />
+      <StepList steps={steps} activeKey={activeKey} />
     </div>
   );
 }
@@ -72,15 +70,11 @@ StepperHeader.propTypes = {
   className: PropTypes.string,
   /** A component that receives `activeStepIndex` and `totalSteps` props to display them. */
   PageCountComponent: PropTypes.elementType,
-  /** Specifies whether the `Stepper` headers is clickable, if `true` appropriate `hover` and `focus` styling
-   * will be added and opportunities toggle content. */
-  handleStepClick: PropTypes.func,
 };
 
 StepperHeader.defaultProps = {
   className: null,
   PageCountComponent: PageCount,
-  handleStepClick: undefined,
 };
 
 StepList.propTypes = {
@@ -91,12 +85,10 @@ StepList.propTypes = {
     hasError: PropTypes.bool,
   })),
   activeKey: PropTypes.string.isRequired,
-  handleStepClick: PropTypes.func,
 };
 
 StepList.defaultProps = {
   steps: [],
-  handleStepClick: undefined,
 };
 
 StepperHeader.Step = StepperHeaderStep;

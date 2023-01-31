@@ -29,15 +29,14 @@ function StepperHeaderStep({
         className={classNames(
           'pgn__stepper-header-step',
           {
-            'pgn__stepper-header-step-active': isActive,
             'pgn__stepper-header-step-has-error': hasError,
             'pgn__stepper-header-step-complete': isComplete,
           },
         )}
-        onClick={isClickable ? onClick : undefined}
-        onKeyPress={isClickable ? onClick : undefined}
+        onClick={onClick}
+        onKeyPress={onClick}
       >
-        <Bubble variant={hasError ? 'error' : 'primary'} disabled={!isActive}>
+        <Bubble variant={hasError ? 'error' : 'primary'} disabled>
           {hasError ? errorIcon : stepIcon}
         </Bubble>
         <div className="pgn__stepper-header-step-title-description">

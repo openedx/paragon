@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import Stepper from '../Stepper';
 import StepperHeaderStep from '../StepperHeaderStep';
 import { stepsReducer } from '../StepperContext';
@@ -14,9 +16,14 @@ function Example({
 }) {
   return (
     <Stepper activeKey={activeKey}>
-      <Stepper.Header handleStepClick={handleStepClick} />
+      <Stepper.Header />
 
-      <Stepper.Step eventKey="welcome" title="Welcome" index={0}>
+      <Stepper.Step
+        eventKey="welcome"
+        title="Welcome"
+        index={0}
+        onClick={handleStepClick ? () => handleStepClick('welcome') : undefined}
+      >
         <span id="welcome-content">Welcome content</span>
       </Stepper.Step>
       <Stepper.Step
@@ -25,6 +32,7 @@ function Example({
         hasError={hasStepWithError}
         description={hasStepWithError ? 'Im an error description' : undefined}
         index={1}
+        onClick={handleStepClick ? () => handleStepClick('cats') : undefined}
       >
         <span id="cats-content">Cat content</span>
       </Stepper.Step>
@@ -78,29 +86,21 @@ describe('Stepper', () => {
     expect(wrapper.exists('#review-actions')).toBe(false);
   });
 
-  describe('handleStepClick usage', () => {
-    it('function call and render button tag', () => {
-      wrapper.setProps({ activeKey: 'welcome', handleStepClick: jest.fn() });
-      wrapper.update();
-      expect(wrapper.exists('#welcome-content')).toBe(true);
+  describe('clickable variant', () => {
+    const onStepClick = jest.fn();
 
-      wrapper.setProps({ activeKey: 'cats' });
-      expect(wrapper.exists('#welcome-content')).toBe(false);
-
-      const headerStepTitle = wrapper.find('button');
-      expect(headerStepTitle.exists('.pgn__stepper-header-step')).toEqual(true);
+    it('ignores onClick function if Step has not been visited yet', () => {
+      render(<Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />);
+      const step = screen.getAllByRole('listitem').find(listitem => listitem.textContent.includes('Cat'));
+      fireEvent.click(step);
+      expect(onStepClick).toHaveBeenCalledTimes(0);
     });
 
-    it('undefined function and the absence of a button tag', () => {
-      wrapper.setProps({ activeKey: 'welcome', handleStepClick: undefined });
-      wrapper.update();
-      expect(wrapper.exists('#welcome-content')).toBe(true);
-
-      wrapper.setProps({ activeKey: 'cats' });
-      expect(wrapper.exists('#welcome-content')).toBe(false);
-
-      const headerStepTitle = wrapper.find('button');
-      expect(headerStepTitle.exists('.pgn__stepper-header-step')).toBe(false);
+    it('invokes onClick function if Step has been visited', () => {
+      render(<Example activeKey="review" showError={false} hasFourthStep handleStepClick={onStepClick} />);
+      const step = screen.getAllByRole('button').find(button => button.textContent.includes('Welcome'));
+      fireEvent.click(step);
+      expect(onStepClick).toHaveBeenCalledTimes(1);
     });
   });
 

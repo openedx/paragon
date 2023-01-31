@@ -110,7 +110,10 @@ The order of steps is dictated by the order of ``Stepper.Step`` components in th
 
 ## Clickable Header
 
-Using ``handleStepClick`` prop you can switch ``Stepper.Step`` components by clicking on ``Stepper.Header`` titles.
+Use ``Stepper.Step``'s ``onClick`` prop to enable clickable behaviour for step's header. This should primarily be used to
+implement navigation between steps by clicking on their headers.
+
+**Note**: this prop takes effect (i.e., header becomes clickable) only after the step has been visited.
 
 ### Basic usage
 
@@ -121,20 +124,20 @@ Using ``handleStepClick`` prop you can switch ``Stepper.Step`` components by cli
 
   return (
     <Stepper activeKey={currentStep}>
-      <Stepper.Header handleStepClick={setCurrentStep} />
+      <Stepper.Header />
 
       <Container size="sm" className="py-5">
-        <Stepper.Step eventKey="introduction" title="Introduction">
+        <Stepper.Step onClick={() => setCurrentStep('introduction')} eventKey="introduction" title="Introduction">
           <h2>Introduction</h2>
           <HipsterIpsum numParagraphs={1} />
         </Stepper.Step>
 
-        <Stepper.Step eventKey="benefits" title="Benefits">
+        <Stepper.Step onClick={() => setCurrentStep('benefits')} eventKey="benefits" title="Benefits">
           <h2>Benefits</h2>
           <HipsterIpsum numParagraphs={1} />
         </Stepper.Step>
 
-        <Stepper.Step eventKey="finally" title="Finally!">
+        <Stepper.Step onClick={() => setCurrentStep('finally')} eventKey="finally" title="Finally!">
           <h2>Finally</h2>
           <HipsterIpsum numParagraphs={1} />
         </Stepper.Step>
@@ -172,8 +175,6 @@ Using ``handleStepClick`` prop you can switch ``Stepper.Step`` components by cli
 
 ### With Error State
 
-If an error occurs or the step condition is not met, `Stepper.Header` titles becomes non-clickable.
-
 ```jsx live
 () => {
   const steps = ['checkbox', 'success'];
@@ -197,17 +198,9 @@ If an error occurs or the step condition is not met, `Stepper.Header` titles bec
     removeError();
   };
 
-  const getStepClickHandler = () => {
-    if (isChecked) {
-      return setCurrentStep;
-    }
-
-    return undefined;
-  }
-
   return (
     <Stepper activeKey={currentStep}>
-      <Stepper.Header handleStepClick={getStepClickHandler()} />
+      <Stepper.Header />
 
       <AlertModal
         title="Confirm reset"
@@ -232,6 +225,7 @@ If an error occurs or the step condition is not met, `Stepper.Header` titles bec
           index={steps.indexOf('checkbox')}
           description={hasError ? 'Please check the box to continue.' : ''}
           hasError={hasError}
+          onClick={() => setCurrentStep('checkbox')}
         >
           <h2>Check the box</h2>
           <Form.Checkbox checked={isChecked} onChange={toggleChecked}>
@@ -243,6 +237,7 @@ If an error occurs or the step condition is not met, `Stepper.Header` titles bec
           eventKey="success"
           title="Success!"
           index={steps.indexOf('success')}
+          onClick={evaluateCheckbox}
         >
           <h2>Success!</h2>
           <p>You may now complete this demo.</p>
