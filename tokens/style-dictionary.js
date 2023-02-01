@@ -91,7 +91,7 @@ StyleDictionary.registerFormat({
  */
 StyleDictionary.registerFormat({
   name: 'css/custom-variables',
-  formatter({ dictionary, options }) {
+  formatter({ dictionary, options, file }) {
     const variables = dictionary.allTokens.sort(sortByReference(dictionary)).map(token => {
       let { value } = token;
       const outputReferencesForToken = token.original.outputReferences === false ? false : options.outputReferences;
@@ -106,7 +106,7 @@ StyleDictionary.registerFormat({
       return `  --${token.name}: ${value};`;
     }).join('\n');
 
-    return `:root {\n${variables}\n}\n`;
+    return `${fileHeader({ file })}:root {\n${variables}\n}\n`;
   },
 });
 
@@ -119,7 +119,7 @@ StyleDictionary.registerFormat({
  */
 StyleDictionary.registerFormat({
   name: 'css/utility-classes',
-  formatter({ dictionary }) {
+  formatter({ dictionary, file }) {
     const { utilities } = dictionary.properties;
 
     if (!utilities) {
@@ -144,7 +144,7 @@ StyleDictionary.registerFormat({
       }
     });
 
-    return utilityClasses;
+    return fileHeader({ file }) + utilityClasses;
   },
 });
 
