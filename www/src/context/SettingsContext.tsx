@@ -34,7 +34,7 @@ function SettingsContextProvider({ children }) {
     theme: DEFAULT_THEME,
     direction: 'ltr',
     language: 'en',
-    containerWidth: undefined,
+    containerWidth: 'md',
   });
   const [showSettings, setShowSettings] = useState(false);
 
