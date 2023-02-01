@@ -1,5 +1,5 @@
 {
-  "lastModified": 1675174159196,
+  "lastModified": 1675260537594,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -1775,7 +1775,7 @@
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 424,
+            "line": 433,
             "column": 12
           },
           {
@@ -3185,27 +3185,27 @@
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 413,
+            "line": 422,
             "column": 25
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 414,
+            "line": 423,
             "column": 25
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 415,
+            "line": 424,
             "column": 26
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 416,
+            "line": 425,
             "column": 23
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 428,
+            "line": 437,
             "column": 14
           },
           {
@@ -6017,7 +6017,7 @@
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 402,
+            "line": 411,
             "column": 12
           },
           {
@@ -6616,42 +6616,42 @@
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 256,
+            "line": 265,
             "column": 12
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 274,
+            "line": 283,
             "column": 12
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 293,
+            "line": 302,
             "column": 12
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 309,
+            "line": 318,
             "column": 12
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 326,
+            "line": 335,
             "column": 8
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 357,
+            "line": 366,
             "column": 10
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 375,
+            "line": 384,
             "column": 10
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 396,
+            "line": 405,
             "column": 10
           },
           {
@@ -7129,42 +7129,42 @@
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 247,
+            "line": 249,
             "column": 14
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 261,
+            "line": 270,
             "column": 14
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 280,
+            "line": 289,
             "column": 14
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 298,
+            "line": 307,
             "column": 14
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 316,
+            "line": 325,
             "column": 14
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 333,
+            "line": 342,
             "column": 10
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 364,
+            "line": 373,
             "column": 12
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
-            "line": 380,
+            "line": 389,
             "column": 12
           },
           {
@@ -8920,7 +8920,7 @@
       }
     },
     {
-      "version": "20.27.0",
+      "version": "20.28.0",
       "name": "@edx/frontend-app-course-authoring",
       "repository": {
         "type": "git",
@@ -10713,7 +10713,7 @@
           },
           {
             "filePath": "src/discussions/posts/PostsList.jsx",
-            "line": 94,
+            "line": 93,
             "column": 10
           }
         ],
@@ -10934,7 +10934,7 @@
           },
           {
             "filePath": "src/discussions/posts/PostsList.jsx",
-            "line": 98,
+            "line": 97,
             "column": 10
           }
         ],
@@ -20908,7 +20908,7 @@
           },
           {
             "filePath": "src/profile/ProfilePage.jsx",
-            "line": 157,
+            "line": 144,
             "column": 10
           }
         ],
@@ -20956,7 +20956,7 @@
           },
           {
             "filePath": "src/profile/ProfilePage.jsx",
-            "line": 127,
+            "line": 114,
             "column": 6
           }
         ],
@@ -25997,7 +25997,15 @@
         "url": "git+https://github.com/openedx/frontend-template-application.git"
       },
       "folderName": "frontend-template-application",
-      "usages": {}
+      "usages": {
+        "Container": [
+          {
+            "filePath": "src/example/ExamplePage.jsx",
+            "line": 5,
+            "column": 4
+          }
+        ]
+      }
     },
     {
       "version": "20.10.0",
@@ -26055,6 +26063,11 @@
             "column": 10
           },
           {
+            "filePath": "src/components/BootCamp/BootCampStickyNav.jsx",
+            "line": 39,
+            "column": 10
+          },
+          {
             "filePath": "src/components/Card/index.jsx",
             "line": 171,
             "column": 32
@@ -26080,6 +26093,11 @@
             "column": 14
           },
           {
+            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
+            "line": 71,
+            "column": 16
+          },
+          {
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
             "line": 52,
             "column": 16
@@ -26088,6 +26106,11 @@
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
             "line": 109,
             "column": 16
+          },
+          {
+            "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
+            "line": 41,
+            "column": 10
           },
           {
             "filePath": "src/components/ContentfulModule/PartnershipModule.jsx",
@@ -26280,6 +26303,11 @@
             "column": 10
           },
           {
+            "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
+            "line": 148,
+            "column": 14
+          },
+          {
             "filePath": "src/components/Search/Refinements/FacetList.jsx",
             "line": 180,
             "column": 22
@@ -26321,7 +26349,7 @@
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 37,
+            "line": 34,
             "column": 9
           },
           {
@@ -26333,6 +26361,11 @@
             "filePath": "src/templates/mastersProgramDetail.jsx",
             "line": 523,
             "column": 22
+          },
+          {
+            "filePath": "src/templates/programDetailDegree.jsx",
+            "line": 241,
+            "column": 16
           }
         ],
         "Launch": [
@@ -26573,7 +26606,12 @@
           },
           {
             "filePath": "src/components/FAQs/AccordionFAQ.jsx",
-            "line": 60,
+            "line": 62,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/FAQs/AccordionFAQ.jsx",
+            "line": 90,
             "column": 12
           },
           {
@@ -26590,7 +26628,7 @@
           },
           {
             "filePath": "src/components/BootCamp/BootCampStickyNav.jsx",
-            "line": 32,
+            "line": 33,
             "column": 8
           },
           {
@@ -26620,7 +26658,7 @@
           },
           {
             "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
-            "line": 38,
+            "line": 39,
             "column": 8
           },
           {
@@ -26735,8 +26773,80 @@
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 142,
+            "line": 131,
             "column": 12
+          }
+        ],
+        "ArrowForward": [
+          {
+            "filePath": "src/components/BootCamp/BootCampStickyNav.jsx",
+            "line": 39,
+            "column": 21
+          },
+          {
+            "filePath": "src/components/Carousel/index.jsx",
+            "line": 268,
+            "column": 58
+          },
+          {
+            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
+            "line": 71,
+            "column": 27
+          },
+          {
+            "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
+            "line": 41,
+            "column": 21
+          },
+          {
+            "filePath": "src/components/Home/Audiences.jsx",
+            "line": 56,
+            "column": 18
+          },
+          {
+            "filePath": "src/components/Home/Audiences.jsx",
+            "line": 94,
+            "column": 18
+          },
+          {
+            "filePath": "src/components/Home/Audiences.jsx",
+            "line": 132,
+            "column": 18
+          },
+          {
+            "filePath": "src/components/Home/NewOnEdxCarousel/SubcategoriesList/index.jsx",
+            "line": 78,
+            "column": 17
+          },
+          {
+            "filePath": "src/components/Home/StaticCallouts.jsx",
+            "line": 151,
+            "column": 44
+          },
+          {
+            "filePath": "src/components/Home/StaticCallouts.jsx",
+            "line": 192,
+            "column": 44
+          },
+          {
+            "filePath": "src/components/Home/StaticCallouts.jsx",
+            "line": 232,
+            "column": 44
+          },
+          {
+            "filePath": "src/components/Home/StaticCallouts.jsx",
+            "line": 274,
+            "column": 48
+          },
+          {
+            "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
+            "line": 148,
+            "column": 25
+          },
+          {
+            "filePath": "src/templates/programDetailDegree.jsx",
+            "line": 241,
+            "column": 27
           }
         ],
         "ChevronRight": [
@@ -26804,7 +26914,7 @@
           },
           {
             "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 43,
+            "line": 44,
             "column": 8
           }
         ],
@@ -26915,7 +27025,7 @@
           },
           {
             "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
-            "line": 25,
+            "line": 26,
             "column": 4
           },
           {
@@ -27085,7 +27195,7 @@
           },
           {
             "filePath": "src/components/Learn/DynamicProductList/DynamicProductList.jsx",
-            "line": 224,
+            "line": 223,
             "column": 6
           },
           {
@@ -27280,17 +27390,17 @@
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 154,
+            "line": 143,
             "column": 10
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 177,
+            "line": 166,
             "column": 12
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 205,
+            "line": 194,
             "column": 10
           },
           {
@@ -27314,53 +27424,6 @@
             "filePath": "src/components/Home/NewOnEdxCarousel/SubcategoriesList/index.jsx",
             "line": 62,
             "column": 17
-          }
-        ],
-        "ArrowForward": [
-          {
-            "filePath": "src/components/Carousel/index.jsx",
-            "line": 268,
-            "column": 58
-          },
-          {
-            "filePath": "src/components/Home/Audiences.jsx",
-            "line": 56,
-            "column": 18
-          },
-          {
-            "filePath": "src/components/Home/Audiences.jsx",
-            "line": 94,
-            "column": 18
-          },
-          {
-            "filePath": "src/components/Home/Audiences.jsx",
-            "line": 132,
-            "column": 18
-          },
-          {
-            "filePath": "src/components/Home/NewOnEdxCarousel/SubcategoriesList/index.jsx",
-            "line": 78,
-            "column": 17
-          },
-          {
-            "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 151,
-            "column": 44
-          },
-          {
-            "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 192,
-            "column": 44
-          },
-          {
-            "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 232,
-            "column": 44
-          },
-          {
-            "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 274,
-            "column": 48
           }
         ],
         "useToggle": [
@@ -28612,7 +28675,7 @@
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 37,
+            "line": 34,
             "column": 20
           }
         ],
