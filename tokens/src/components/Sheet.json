@@ -4,20 +4,16 @@
       "skrim": {
         "bg": { 
           "value": "{color.gray.300}",
+          "type": "color",
           "source": "$sheet-skrim-bg",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.5
-          }]
+          "modify": [{ "type": "alpha", "amount": 0.5 }]
         },
         "component": {
           "box-shadow": {
             "value": "{color.black}",
+            "type": "color",
             "source": "$sheet-skrim-component-box-shadow",
-            "modify": [{
-              "type": "alpha",
-              "amount": 0.15
-            }]
+            "modify": [{ "type": "alpha", "amount": 0.15 }]
           }
         }
       }
@@ -26,8 +22,8 @@
   "elevation": {
     "sheet": {
       "zindex": {
-        "backdrop": { "value": "1031", "source": "$zindex-sheet-backdrop" },
-        "main": { "value": "1032", "source": "$zindex-sheet" }
+        "backdrop": { "value": "1031", "type": "ratio", "source": "$zindex-sheet-backdrop" },
+        "main": { "value": "1032", "type": "ratio", "source": "$zindex-sheet" }
       }
     }
   }
