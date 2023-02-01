@@ -15,6 +15,12 @@ const source = tokensSource ? [tokensSource] : [];
 
 const config = {
   include: [path.resolve(__dirname, 'src/**/*.json')],
+  fileHeader: {
+    customFileHeader: (defaultMessage) => [
+      'IMPORTANT: This file is the result of assembling design tokens',
+      ...defaultMessage,
+    ],
+  },
   source,
   platforms: {
     css: {
@@ -39,7 +45,7 @@ const config = {
       ],
       transforms: StyleDictionary.transformGroup.css.filter(item => item !== 'size/rem').concat('color/sass-color-functions', 'str-replace'),
       options: {
-        showFileHeader: false,
+        fileHeader: 'customFileHeader',
       },
     },
   },
