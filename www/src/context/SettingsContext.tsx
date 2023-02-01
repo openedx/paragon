@@ -44,12 +44,12 @@ function SettingsContextProvider({ children }) {
     }
     setSettings(prevState => ({ ...prevState, [key]: value }));
     global.localStorage.setItem('pgn__settings', JSON.stringify({ ...settings, [key]: value }));
-    global.analytics.track(`${key[0].toUpperCase() + key.slice(1)} change`, { [key]: value });
+    global.analytics.track(`openedx.paragon.docs.settings.${key}.changed`, { [key]: value });
   };
 
   const toggleSettings = (value: boolean) => {
     setShowSettings(value);
-    global.analytics.track('Toggle Settings', { value: value ? 'show' : 'hide' });
+    global.analytics.track(`openedx.paragon.docs.settings.${value ? 'opened' : 'closed'}`);
   };
 
   // this hook will be called after the first render, so we can safely access localStorage

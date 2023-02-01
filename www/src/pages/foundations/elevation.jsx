@@ -79,7 +79,7 @@ function BoxShadowToolkit({
   });
 
   const updateBoxShadowModel = (property, value) => {
-    global.analytics.track('openedx.paragon.elevation.generator.updated', { property, value });
+    global.analytics.track('openedx.paragon.docs.elevation.generator.updated', { property, value });
 
     const newBoxShadowModel = {
       ...boxShadowModel,
