@@ -1,5 +1,5 @@
 {
-  "lastModified": 1675260537594,
+  "lastModified": 1675346951664,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -20946,6 +20946,11 @@
             "filePath": "src/profile/forms/PreferredLanguage.jsx",
             "line": 80,
             "column": 16
+          },
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 45,
+            "column": 8
           }
         ],
         "Hyperlink": [
@@ -20977,14 +20982,19 @@
             "column": 8
           },
           {
-            "filePath": "src/skills/SkillsBuilder.jsx",
-            "line": 23,
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 32,
             "column": 10
           },
           {
-            "filePath": "src/skills/SkillsBuilder.jsx",
-            "line": 27,
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 36,
             "column": 10
+          },
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 53,
+            "column": 8
           }
         ],
         "StatefulButton": [
@@ -21050,30 +21060,37 @@
         ],
         "FullscreenModal": [
           {
-            "filePath": "src/skills/SkillsBuilder.jsx",
-            "line": 17,
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 26,
             "column": 4
           }
         ],
         "ActionRow": [
           {
-            "filePath": "src/skills/SkillsBuilder.jsx",
-            "line": 22,
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 31,
             "column": 8
           }
         ],
         "ActionRow.Spacer": [
           {
-            "filePath": "src/skills/SkillsBuilder.jsx",
-            "line": 26,
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 35,
             "column": 10
           }
         ],
         "Container": [
           {
-            "filePath": "src/skills/SkillsBuilder.jsx",
-            "line": 33,
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 42,
             "column": 6
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 46,
+            "column": 10
           }
         ]
       }
@@ -23501,7 +23518,7 @@
       }
     },
     {
-      "version": "20.27.0",
+      "version": "20.28.0",
       "name": "@edx/frontend-lib-content-components",
       "repository": {
         "type": "git",
@@ -23938,6 +23955,11 @@
             "column": 8
           },
           {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
+            "line": 78,
+            "column": 6
+          },
+          {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/TimerCard.jsx",
             "line": 27,
             "column": 6
@@ -24068,6 +24090,11 @@
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
             "line": 60,
             "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
+            "line": 79,
+            "column": 8
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/TimerCard.jsx",
@@ -24241,12 +24268,12 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 26,
+            "line": 25,
             "column": 14
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 29,
+            "line": 28,
             "column": 14
           },
           {
@@ -24554,6 +24581,16 @@
             "column": 4
           },
           {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/CardSection.jsx",
+            "line": 15,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/CardSection.jsx",
+            "line": 22,
+            "column": 6
+          },
+          {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
             "line": 53,
             "column": 8
@@ -24565,17 +24602,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 19,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 35,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 42,
+            "line": 18,
             "column": 8
           },
           {
@@ -24591,6 +24618,16 @@
             "column": 8
           },
           {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/CardSection.jsx",
+            "line": 18,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/CardSection.jsx",
+            "line": 25,
+            "column": 8
+          },
+          {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
             "line": 54,
             "column": 10
@@ -24599,16 +24636,6 @@
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
             "line": 68,
             "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 38,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 45,
-            "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
@@ -24624,7 +24651,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 23,
+            "line": 22,
             "column": 10
           },
           {
@@ -24724,6 +24751,23 @@
             "column": 20
           }
         ],
+        "Card.Section": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/CardSection.jsx",
+            "line": 14,
+            "column": 4
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
+            "line": 17,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 54,
+            "column": 14
+          }
+        ],
         "MailtoLink": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/MatlabCard.jsx",
@@ -24766,7 +24810,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 17,
+            "line": 16,
             "column": 4
           },
           {
@@ -24775,32 +24819,15 @@
             "column": 10
           }
         ],
-        "Card.Section": [
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 18,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 34,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
-            "line": 54,
-            "column": 14
-          }
-        ],
         "Collapsible.Visible": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 25,
+            "line": 24,
             "column": 12
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 28,
+            "line": 27,
             "column": 12
           },
           {
@@ -24817,14 +24844,14 @@
         "KeyboardArrowDown": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 26,
+            "line": 25,
             "column": 25
           }
         ],
         "KeyboardArrowUp": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
-            "line": 29,
+            "line": 28,
             "column": 25
           }
         ],
@@ -25479,7 +25506,7 @@
       }
     },
     {
-      "version": "20.27.0",
+      "version": "20.28.0",
       "name": "content-components-gallery",
       "folderName": "www",
       "usages": {
@@ -26733,7 +26760,7 @@
           },
           {
             "filePath": "src/components/Search/ManagedAutoComplete.jsx",
-            "line": 275,
+            "line": 272,
             "column": 14
           },
           {
@@ -27155,7 +27182,7 @@
           },
           {
             "filePath": "src/components/Home/Hero.jsx",
-            "line": 36,
+            "line": 50,
             "column": 10
           },
           {
