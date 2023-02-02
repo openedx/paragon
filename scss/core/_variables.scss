@@ -54,7 +54,8 @@ $colors: map-merge(
   $colors
 );
 
-$primary: #0A3055 !default;
+$default-primary: #0A3055 !default;
+$primary: var(--custom-primary, $default-primary) !default;
 $secondary: $gray-700 !default;
 $brand: #9D0054 !default;
 $success: $green !default;
@@ -85,15 +86,15 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
-$primary-100: mix(white, $primary, 94%) !default;
-$primary-200: mix(white, $primary, 75%) !default;
-$primary-300: mix(white, $primary, 50%) !default;
-$primary-400: mix(white, $primary, 25%) !default;
-$primary-500: $primary !default;
-$primary-600: mix(black, $primary, 10%) !default;
-$primary-700: mix(black, $primary, 20%) !default;
-$primary-800: mix(black, $primary, 25%) !default;
-$primary-900: mix(black, $primary, 30%) !default;
+$primary-100: var(--custom-primary-100, mix(white, $default-primary,  94%)) !default;
+$primary-200: var(--custom-primary-200, mix(white, $default-primary,  75%)) !default;
+$primary-300: var(--custom-primary-300, mix(white, $default-primary,  50%)) !default;
+$primary-400: var(--custom-primary-400, mix(white, $default-primary,  25%)) !default;
+$primary-500: var(--custom-primary-500, $default-primary) !default;
+$primary-600: var(--custom-primary-600, mix(white, $default-primary,  10%)) !default;
+$primary-700: var(--custom-primary-700, mix(white, $default-primary,  20%)) !default;
+$primary-800: var(--custom-primary-800, mix(white, $default-primary,  25%)) !default;
+$primary-900: var(--custom-primary-900, mix(white, $default-primary,  30%)) !default;
 
 $secondary-100: mix(white, $secondary, 94%) !default;
 $secondary-200: mix(white, $secondary, 75%) !default;
@@ -395,11 +396,11 @@ $inline-link-hover-color:                 darken($inline-link-color, 15%) !defau
 $inline-link-hover-decoration:            underline !default;
 $inline-link-hover-decoration-color:      rgba($inline-link-hover-color, 1) !default;
 
-$muted-link-color:                              $primary-500 !default;
+$muted-link-color:                              var(--custom-muted-link-color, $default-primary) !default;
 $muted-link-decoration:                         none !default;
-$muted-link-hover-color:                        darken($muted-link-color, 15%) !default;
+$muted-link-hover-color:                        var(--custom-muted-link-hover-color, darken($default-primary, 15%)) !default;
 $muted-link-hover-decoration:                   underline !default;
-$muted-inline-link-color:                       $primary-500 !default;
+$muted-inline-link-color:                       $default-primary !default;
 $muted-inline-link-decoration:                  underline !default;
 $muted-inline-link-decoration-color:            rgba($muted-inline-link-color, .3) !default;
 $muted-inline-link-hover-color:                 darken($muted-inline-link-color, 15%) !default;

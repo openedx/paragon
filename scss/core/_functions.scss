@@ -33,3 +33,116 @@
 
   @return $base-color;
 }
+
+//
+// This will convert a hex value as string and will return a
+// decimal as number
+// This function only works with a hex string number of two digits,
+// like "A8", "B5" etc.
+//
+@function hex-to-dec($hex) {
+  $hex-map-values: (
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "A": 10,
+    "B": 11,
+    "C": 12,
+    "D": 13,
+    "E": 14,
+    "F": 15,
+  );
+
+  $first-digit: 16 * map-get($hex-map-values, str-slice($hex, 1, 1));
+  $second-digit: map-get($hex-map-values, str-slice($hex, 2, 2));
+
+  @return $first-digit + $second-digit;
+}
+
+//
+// This will take a color custom property argument and will
+// extract and return the default value.
+//
+@function extract-default-color-from-var($color) {
+  $start: str-index($color, '#') + 1;
+  $end: str-index($color, ')') - 1;
+  $default-color: to-upper-case(str-slice($color, $start, $end));
+
+  $r: hex-to-dec(str-slice($default-color, 1, 2));
+  $g: hex-to-dec(str-slice($default-color, 3, 4));
+  $b: hex-to-dec(str-slice($default-color, 5, 6));
+
+  @return rgb($r, $g, $b);
+}
+
+//
+// This will take a color custom property argument and will
+// extract and return the variable name.
+//
+@function extract-name-color-from-var($color) {
+  $start: str-index($color, '(') + 1;
+  $end: str-index($color, ',') - 1;
+  $name: str-slice($color, $start, $end);
+
+  @return $name;
+}
+
+//
+// This is a wrapper of darken function, that will accept.
+// a color type or a custom property, if the argument is
+// a color this will return the result of darken but if
+// the argument is a custom property this will return a
+// a custom property with the result of darken as default.
+//
+@function get-darken-color($color, $percentage) {
+  @if type-of($color) == "string" {
+    $name: extract-name-color-from-var($color) + "-darken-" + $percentage;
+    $color: extract-default-color-from-var($color);
+    @return var($name, darken($color, $percentage));
+  } @else {
+    @return darken($color, $percentage);
+  }
+}
+
+//
+// This is a wrapper of lighten function, that will accept.
+// a color type or a custom property, if the argument is
+// a color this will return the result of lighten but if
+// the argument is a custom property this will return a
+// a custom property with the result of lighten as default.
+//
+@function get-lighten-color($color, $percentage) {
+  @if type-of($color) == "string" {
+    $name: extract-name-color-from-var($color) + "-lighten-" + $percentage;
+    $color: extract-default-color-from-var($color);
+    @return var($name, lighten($color, $percentage));
+  } @else {
+    @return lighten($color, $percentage);
+  }
+}
+
+//
+// This is a wrapper of mix function, that will accept.
+// a color type or a custom property, if the argument is
+// a color this will return the result of mix but if
+// the argument is a custom property this will return a
+// a custom property with the result of mix as default.
+//
+@function get-mix-color($color1, $color2, $weight: 50%, $color-name: "primary") {
+  @if type-of($color2) == "string" {
+    $color2: extract-default-color-from-var($color2);
+    $name: "--custom-" + $color-name;
+    @return var($name, mix($color1, $color2, $weight));
+  } @else {
+    @return mix($color1, $color2, $weight);
+  }
+}
+
+

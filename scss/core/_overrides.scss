@@ -1,0 +1,170 @@
+//
+// BOOTSTRAP MIXIN OVERRIDE
+// This preserves the original bootstrap mixin logic,
+// just changes darken function to get-darken-color function.
+// This mixin comes from bootstrap/scss/mixins/_list-group.scss
+//
+@mixin list-group-item-variant($state, $background, $color) {
+  .list-group-item-#{$state} {
+    color: $color;
+    background-color: $background;
+
+    &.list-group-item-action {
+      @include hover-focus() {
+        color: $color;
+        background-color: get-darken-color($background, 5%);
+      }
+
+      &.active {
+        color: $white;
+        background-color: $color;
+        border-color: $color;
+      }
+    }
+  }
+}
+
+//
+// BOOTSTRAP MIXIN OVERRIDE
+// This preserves the original bootstrap mixin logic,
+// just changes darken function to get-darken-color function.
+// This mixin comes from bootstrap/scss/mixins/_badge.scss
+//
+@mixin badge-variant($bg) {
+  color: color-yiq($bg);
+  background-color: $bg;
+
+  @at-root a#{&} {
+    @include hover-focus() {
+      color: color-yiq($bg);
+      background-color: get-darken-color($bg, 10%);
+    }
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 $badge-focus-width rgba($bg, .5);
+    }
+  }
+}
+
+//
+// BOOTSTRAP MIXIN OVERRIDE
+// This preserves the original bootstrap mixin logic,
+// just changes darken function to get-darken-color function.
+// This mixin comes from bootstrap/scss/mixins/_background-variant.scss
+//
+@mixin bg-variant($parent, $color, $ignore-warning: false) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+  a#{$parent},
+  button#{$parent} {
+    @include hover-focus() {
+      background-color: get-darken-color($color, 10%) !important;
+    }
+  }
+  @include deprecate("The `bg-variant` mixin", "v4.4.0", "v5", $ignore-warning);
+}
+
+//
+// BOOTSTRAP MIXIN OVERRIDE
+// This preserves the original bootstrap mixin logic,
+// just changes darken function to get-darken-color function.
+// This mixin comes from bootstrap/scss/mixins/_text-emphasis.scss
+//
+@mixin text-emphasis-variant($parent, $color, $ignore-warning: false) {
+  #{$parent} {
+    color: $color !important;
+  }
+  @if $emphasized-link-hover-darken-percentage != 0 {
+    a#{$parent} {
+      @include hover-focus() {
+        color: get-darken-color($color, $emphasized-link-hover-darken-percentage) !important;
+      }
+    }
+  }
+  @include deprecate("`text-emphasis-variant()`", "v4.4.0", "v5", $ignore-warning);
+}
+
+//
+// BOOTSTRAP MIXIN OVERRIDE
+// This preserves the original bootstrap mixin logic,
+// just changes darken function to get-darken-color function.
+// This mixin comes from bootstrap/scss/mixins/_table-row.scss
+//
+@mixin table-row-variant($state, $background, $border: null) {
+  // Exact selectors below required to override `.table-striped` and prevent
+  // inheritance to nested tables.
+  .table-#{$state} {
+    &,
+    > th,
+    > td {
+      background-color: $background;
+    }
+
+    @if $border != null {
+      th,
+      td,
+      thead th,
+      tbody + tbody {
+        border-color: $border;
+      }
+    }
+  }
+
+  // Hover states for `.table-hover`
+  // Note: this is not available for cells or rows within `thead` or `tfoot`.
+  .table-hover {
+    $hover-background: get-darken-color($background, 5%);
+
+    .table-#{$state} {
+      @include hover() {
+        background-color: $hover-background;
+
+        > td,
+        > th {
+          background-color: $hover-background;
+        }
+      }
+    }
+  }
+}
+
+//
+// BOOTSTRAP FUNCTION OVERRIDE
+// This checks the color argument in order to determinate
+// if the type is a string, when color is a custom property,
+// or a color type, then preserves the original logic.
+// This function comes from bootstrap/scss/_functions.scss
+//
+@function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
+  @if type-of($color) == "string" {
+    $color: extract-default-color-from-var($color);
+  }
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) * .001;
+
+  @if ($yiq >= $yiq-contrasted-threshold) {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
+}
+
+//
+// BOOTSTRAP FUNCTION OVERRIDE
+// This preserves the original bootstrap function logic,
+// just changes mix function to get-mix-color function.
+// This function comes from bootstrap/scss/_functions.scss
+//
+@function theme-color-level($color-name: "primary", $level: 0) {
+  $color: theme-color($color-name);
+  $color-base: if($level > 0, $black, $white);
+  $level: abs($level);
+
+  @return get-mix-color($color-base, $color, $level * $theme-color-interval, $color-name);
+}
