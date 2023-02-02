@@ -2,8 +2,8 @@
   "other": {
     "form": {
       "control": {
-        "cursor": { "value": "auto", "type": "strokeStyle", "source": "$custom-control-cursor" },
-        "range-track-cursor": { "value": "pointer", "type": "strokeStyle", "source": "$custom-range-track-cursor" }
+        "cursor": { "value": "auto", "type": "cursorStyle", "source": "$custom-control-cursor" },
+        "range-track-cursor": { "value": "pointer", "type": "cursorStyle", "source": "$custom-range-track-cursor" }
       },
       "feedback": {
         "tooltip-opacity": { "value": ".9", "type": "ratio", "source": "$form-feedback-tooltip-opacity" }
