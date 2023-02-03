@@ -100,4 +100,12 @@ describe('<CardImageCap />', () => {
     fireEvent.error(logoImg);
     expect(logoImg.src).toEqual('http://logo.image.fallback/');
   });
+
+  it('hiding component if it isn`t fallbackLogoSrc and logoSrc don`t work', () => {
+    render(<CardImageCapWrapper logoSrc="fakeURL" logoAlt="Logo alt text" />);
+
+    const logoImg = screen.getByAltText('Logo alt text');
+    fireEvent.error(logoImg);
+    expect(logoImg.style.display).toEqual('none');
+  });
 });
