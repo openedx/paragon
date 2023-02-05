@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
@@ -23,6 +23,7 @@ const CardImageCap = React.forwardRef(({
   className,
 }, ref) => {
   const { orientation, isLoading } = useContext(CardContext);
+  const [show, setShow] = useState({ imageCap: false, logoCap: false });
   const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
 
   if (isLoading) {
@@ -58,16 +59,18 @@ const CardImageCap = React.forwardRef(({
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
       <img
-        className="pgn__card-image-cap"
+        className={classNames('pgn__card-image-cap', { show: show.imageCap })}
         src={src}
         onError={(event) => handleSrcFallback(event, fallbackSrc)}
+        onLoad={() => setShow({ ...show, imageCap: src })}
         alt={srcAlt}
       />
       {!!logoSrc && (
         <img
-          className="pgn__card-logo-cap"
+          className={classNames('pgn__card-logo-cap', { show: show.logoCap })}
           src={logoSrc}
           onError={(event) => handleSrcFallback(event, fallbackLogoSrc)}
+          onLoad={() => setShow({ ...show, logoCap: logoSrc })}
           alt={logoAlt}
         />
       )}
