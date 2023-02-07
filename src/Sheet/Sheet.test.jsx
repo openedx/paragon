@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import Sheet, { POSITIONS, VARIANTS } from './index';
 
 /* eslint-disable react/prop-types */
-jest.mock('./SheetContainer', () => function (props) {
+jest.mock('./SheetContainer', () => function SheetContainerMock(props) {
   const { children, ...otherProps } = props;
   return (
     <sheet-container {...otherProps}>

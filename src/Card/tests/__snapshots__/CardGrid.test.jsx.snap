@@ -8,17 +8,18 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
     className="row"
   >
     <div
-      className="col-lg-4 col-md-6 col-12"
+      className="col-xl-3 col-lg-4 col-md-6 col-12"
     >
       <div
-        className="pgn__card card"
-        tabIndex="-1"
+        className="pgn__card pgn__card-light card"
+        tabIndex={-1}
       >
         <div
           className="pgn__card-wrapper-image-cap vertical"
         >
           <img
             className="pgn__card-image-cap"
+            onError={[Function]}
             src="http://fake.image"
           />
         </div>
@@ -64,14 +65,15 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
       className="col-xl-4 col-lg-6 col-sm-12"
     >
       <div
-        className="pgn__card card"
-        tabIndex="-1"
+        className="pgn__card pgn__card-light card"
+        tabIndex={-1}
       >
         <div
           className="pgn__card-wrapper-image-cap vertical"
         >
           <img
             className="pgn__card-image-cap"
+            onError={[Function]}
             src="http://fake.image"
           />
         </div>

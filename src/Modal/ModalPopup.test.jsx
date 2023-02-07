@@ -6,7 +6,7 @@ import { ModalContextProvider } from './ModalContext';
 import Portal from './Portal';
 
 /* eslint-disable react/prop-types */
-jest.mock('./Portal', () => function (props) {
+jest.mock('./Portal', () => function PortalMock(props) {
   const { children, ...otherProps } = props;
   return (
     <paragon-portal {...otherProps}>

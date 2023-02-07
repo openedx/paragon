@@ -15,7 +15,8 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@material-icons/svg": "^1.0.30",
-    "@svgr/cli": "^6.4.0"
+    "@svgr/cli": "^6.4.0",
+    "@svgr/babel-plugin-add-jsx-attribute": "^6.5.1"
   },
   "peerDependencies": {
     "react": "^16.8.6"

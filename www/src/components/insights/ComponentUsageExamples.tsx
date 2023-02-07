@@ -1,54 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
 import { Hyperlink } from '~paragon-react';
+
+type ProjectUsagesTypes = {
+  filePath: string,
+  line: number,
+};
 
 export interface IComponentUsageExamples {
   row: {
     original: {
       name: string,
       repositoryUrl?: string,
-      usages: {},
+      usages: Array<ProjectUsagesTypes>,
     },
   },
 }
 
-const ComponentUsageExamples = ({ row }: IComponentUsageExamples) => {
-  const repositoryUrl = row.original;
-  const projectUsages: { [key: string]: Function } = row.original.usages;
-
-  type ProjectUsagesTypes = {
-    filePath: string,
-    line: number,
-  };
+function ComponentUsageExamples({ row }: IComponentUsageExamples) {
+  const { repositoryUrl, usages } = row.original;
 
   return (
     <div className="pgn-doc__component-usage__project">
       <ul className="list-unstyled">
-        {projectUsages.map(({
-          filePath,
-          line,
-        }: ProjectUsagesTypes) => (
-          <li key={`${filePath}#L${line}`}>
+        {usages.map(usage => (
+          <li key={`${usage.filePath}#L${usage.line}`}>
             {repositoryUrl ? (
               <>
                 <Hyperlink
-                  destination={`${repositoryUrl}/${filePath}#L${line}`}
+                  destination={`${repositoryUrl}/${usage.filePath}#L${usage.line}`}
                   target="_blank"
                 >
-                  {filePath}
+                  {usage.filePath}
                 </Hyperlink>
-                {' '}(line {line})
+                {' '}(line {usage.line})
               </>
             ) : (
-              <>{filePath} (line {line})</>
+              <>{usage.filePath} (line {usage.line})</>
             )}
           </li>
         ))}
       </ul>
     </div>
   );
-};
+}
 
 ComponentUsageExamples.propTypes = {
   row: PropTypes.shape({

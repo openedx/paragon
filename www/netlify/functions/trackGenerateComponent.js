@@ -3,7 +3,7 @@ const Analytics = require('analytics-node');
 
 const analytics = new Analytics(process.env.SEGMENT_KEY);
 
-exports.handler = async function (event) {
+exports.handler = async function eventHandler(event) {
   // Only allow POST
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
@@ -12,7 +12,7 @@ exports.handler = async function (event) {
   // dispatch event to Segment
   analytics.track({
     anonymousId: uuidv4(),
-    event: 'edx.paragon.generate-component',
+    event: 'openedx.paragon.functions.track-generate-component.created',
     properties: { componentName },
   });
 

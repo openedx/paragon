@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -7,24 +7,25 @@ const DIRECTION_VARIANTS = [
   'vertical',
 ];
 
-function Stack({
+const Stack = forwardRef(({
   direction,
   gap,
   children,
   className,
-}) {
-  return (
-    <div
-      className={classNames(
-        direction === 'horizontal' ? 'pgn__hstack' : 'pgn__vstack',
-        gap ? `pgn__stack-gap--${gap}` : '',
-        className,
-      )}
-    >
-      {children}
-    </div>
-  );
-}
+  ...rest
+}, ref) => (
+  <div
+    ref={ref}
+    className={classNames(
+      direction === 'horizontal' ? 'pgn__hstack' : 'pgn__vstack',
+      gap ? `pgn__stack-gap--${gap}` : '',
+      className,
+    )}
+    {...rest}
+  >
+    {children}
+  </div>
+));
 
 Stack.propTypes = {
   /** Specifies the content of the `Stack`. */

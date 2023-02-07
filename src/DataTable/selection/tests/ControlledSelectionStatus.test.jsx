@@ -20,7 +20,7 @@ const instance = {
     },
     jest.fn(),
   ],
-  rows: [{ id: 1 }, { id: 2 }, { id: 5 }],
+  page: [{ id: 1 }, { id: 2 }, { id: 5 }],
 };
 
 // eslint-disable-next-line react/prop-types
@@ -96,7 +96,7 @@ describe('<ControlledSelectionStatus />', () => {
         />,
       );
       expect(dispatchSpy).toHaveBeenCalledTimes(1);
-      const action = setSelectedRowsAction(instance.rows, instance.itemCount);
+      const action = setSelectedRowsAction(instance.page, instance.itemCount);
       expect(dispatchSpy).toHaveBeenCalledWith(action);
     });
   });

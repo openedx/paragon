@@ -1,15 +1,17 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
+const rehypeSlugPlugin = require('rehype-slug');
+const rehypeAutolinkHeadingsPlugin = require('rehype-autolink-headings');
 
 const segmentPlugin = {
-  resolve: `gatsby-plugin-segment-js`,
+  resolve: 'gatsby-plugin-segment-js',
   options: {
     prodKey: process.env && process.env.SEGMENT_KEY,
     devKey: process.env && process.env.SEGMENT_KEY,
     trackPage: true,
     trackPageDelay: 100,
-  }
+  },
 };
 
 const axePlugin = {
@@ -22,56 +24,56 @@ const axePlugin = {
 
 const plugins = [
   {
-    resolve: `gatsby-plugin-sass`,
+    resolve: 'gatsby-plugin-sass',
     options: {
-     cssLoaderOptions: {
-       modules: {
-         namedExport: false,
-       },
-     },
-   },
+      cssLoaderOptions: {
+        modules: {
+          namedExport: false,
+        },
+      },
+    },
   },
-  `gatsby-plugin-react-helmet`,
+  'gatsby-plugin-react-helmet',
   {
-    resolve: `gatsby-plugin-manifest`,
+    resolve: 'gatsby-plugin-manifest',
     options: {
-      start_url: `/`,
-      icon: `src/images/paragon-icon.png`, // This path is relative to the root of the site.
+      start_url: '/',
+      icon: 'src/images/paragon-icon.png', // This path is relative to the root of the site.
     },
   },
   {
-    resolve: `gatsby-source-filesystem`,
+    resolve: 'gatsby-source-filesystem',
     options: {
       path: `${__dirname}/../src`,
-      name: `components`,
+      name: 'components',
     },
   },
   {
-    resolve: `gatsby-source-filesystem`,
+    resolve: 'gatsby-source-filesystem',
     options: {
       path: `${__dirname}/../CHANGELOG.md`,
-      name: `changelog`,
+      name: 'changelog',
     },
   },
   // Note this will throw a warning about conflicting field types during build, but it is O.K.
   // https://github.com/gatsbyjs/gatsby/issues/7027
-  "gatsby-transformer-react-docgen",
+  'gatsby-transformer-react-docgen',
   {
-    resolve: `gatsby-plugin-mdx`,
+    resolve: 'gatsby-plugin-mdx',
     options: {
-      extensions: [`.mdx`, `.md`],
+      extensions: ['.mdx', '.md'],
       defaultLayouts: {
         components: require.resolve(
-          "./src/templates/component-page-template.tsx"
+          './src/templates/component-page-template.tsx',
         ),
         default: require.resolve(
-          "./src/templates/default-mdx-page-template.tsx"
+          './src/templates/default-mdx-page-template.tsx',
         ),
       },
       rehypePlugins: [
-        require("rehype-slug"),
+        rehypeSlugPlugin,
         [
-          require("rehype-autolink-headings"),
+          rehypeAutolinkHeadingsPlugin,
           {
             behavior: 'append',
             content: {
@@ -81,7 +83,7 @@ const plugins = [
                 className: 'pgn-doc__anchor',
               },
               children: [
-                { type: 'text', value: '#' }
+                { type: 'text', value: '#' },
               ],
             },
           },
@@ -108,11 +110,11 @@ if (process.env && process.env.FEATURE_ENABLE_AXE) {
 
 module.exports = {
   siteMetadata: {
-    title: `Paragon Design System`,
-    description: `Technical documentation for the Paragon Design System.`,
-    author: `@edx`,
+    title: 'Paragon Design System',
+    description: 'Technical documentation for the Paragon Design System.',
+    author: '@edx',
   },
   // Match the location of the site on github pages if no path prefix is specified
   pathPrefix: 'PATH_PREFIX' in process.env ? process.env.PATH_PREFIX : '/paragon',
-  plugins: plugins,
-}
+  plugins,
+};

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, Icon } from '@edx/paragon'; // eslint-disable-line
+import { Button, Form, Icon, Bubble } from '@edx/paragon'; // eslint-disable-line
 import { FavoriteBorder } from '@edx/paragon/icons'; // eslint-disable-line
 
 function MyComponent() {
@@ -10,7 +10,12 @@ function MyComponent() {
 
   return (
     <div className="p-5">
-      <h1>My Form</h1>
+      <div className="d-flex align-items-center">
+        <h1 className="mr-2">
+          My Form
+        </h1>
+        <Bubble variant="error">1</Bubble>
+      </div>
       <Form>
         <Form.Group>
           <Form.Control

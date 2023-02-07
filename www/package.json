@@ -51,17 +51,20 @@
     "clean": "gatsby clean",
     "develop": "npm run build-themes && gatsby develop",
     "develop:with-theme": "npm run develop",
-    "lint": "eslint --ext .js --ext .jsx .",
+    "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx .",
     "start": "npm run develop",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-themes": "node build-themes.js"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "@edx/eslint-config": "^3.1.0",
+    "@types/color": "^3.0.3",
+    "@types/mdx": "^2.0.3",
+    "@types/mdx-js__react": "^1.5.5",
+    "@types/react-helmet": "^6.1.6",
     "css": "^3.0.0",
-    "eslint": "^7.32.0",
-    "eslint-config-edx": "^4.0.4",
-    "eslint-import-resolver-alias": "^1.1.2"
+    "eslint": "8.18.0",
+    "eslint-import-resolver-webpack": "^0.13.2"
   },
   "repository": {
     "type": "git",

@@ -1,3 +1,68 @@
+## [20.18.1](https://github.com/openedx/paragon/compare/v20.18.0...v20.18.1) (2022-11-10)
+
+
+### Bug Fixes
+
+* added translations English strings in FormAutosuggest component ([#1711](https://github.com/openedx/paragon/issues/1711)) ([782cfb8](https://github.com/openedx/paragon/commit/782cfb8147aef728a85eeee8c91551dd0eebf4b4))
+* fixed close button positioning in modal components ([#1733](https://github.com/openedx/paragon/issues/1733)) ([9d24187](https://github.com/openedx/paragon/commit/9d24187f5ee02159caed517c238dc8e4b2c704c9))
+* fixed onToggle prop ([#1719](https://github.com/openedx/paragon/issues/1719)) ([fe21655](https://github.com/openedx/paragon/commit/fe216550f3b5326304d1230eb5ee3d6119ee9bb7))
+* hooks are displayed in production ([#1715](https://github.com/openedx/paragon/issues/1715)) ([d726ad1](https://github.com/openedx/paragon/commit/d726ad10ad5e176ae6d4a83ddc4a645a9b08b024))
+
+# [20.18.0](https://github.com/openedx/paragon/compare/v20.17.0...v20.18.0) (2022-10-26)
+
+
+### Features
+
+* add creative common icons ([#1716](https://github.com/openedx/paragon/issues/1716)) ([3fac8c4](https://github.com/openedx/paragon/commit/3fac8c4e27b19a26997ccbf5c35ca5ae7e8cf247))
+
+# [20.17.0](https://github.com/openedx/paragon/compare/v20.16.0...v20.17.0) (2022-10-21)
+
+
+### Features
+
+* FormAutosuggest component ([#1586](https://github.com/openedx/paragon/issues/1586)) ([7fbf86d](https://github.com/openedx/paragon/commit/7fbf86de5110bdf3e26a17c0848337f8be0b2b23))
+
+# [20.16.0](https://github.com/openedx/paragon/compare/v20.15.0...v20.16.0) (2022-10-21)
+
+
+### Features
+
+* [BD-46] add Layout component ([#1659](https://github.com/openedx/paragon/issues/1659)) ([f8cddda](https://github.com/openedx/paragon/commit/f8cddda5a96a6fed24fcca97a8d641501ebb7865))
+
+# [20.15.0](https://github.com/openedx/paragon/compare/v20.14.0...v20.15.0) (2022-10-19)
+
+
+### Features
+
+* added accentB background for page banner ([#1688](https://github.com/openedx/paragon/issues/1688)) ([0942daa](https://github.com/openedx/paragon/commit/0942daa1f23ae5880c6e8278f97d4c777f60ed08))
+
+# [20.14.0](https://github.com/openedx/paragon/compare/v20.13.0...v20.14.0) (2022-10-19)
+
+
+### Features
+
+* Added fallback image src props to Card component ([#1682](https://github.com/openedx/paragon/issues/1682)) ([c0a1f6c](https://github.com/openedx/paragon/commit/c0a1f6cd80b4aaf66cbff2af35770f9d0901fc2c))
+
+# [20.13.0](https://github.com/openedx/paragon/compare/v20.12.1...v20.13.0) (2022-10-07)
+
+
+### Bug Fixes
+
+* remove body width jumping on open ([#1644](https://github.com/openedx/paragon/issues/1644)) ([0d1f4d7](https://github.com/openedx/paragon/commit/0d1f4d73f6c4a8435b9eb3ea3e66febfb0f5ba0f))
+
+
+### Features
+
+* truncate v2 supports inner tags ([#1642](https://github.com/openedx/paragon/issues/1642)) ([8aa2fa6](https://github.com/openedx/paragon/commit/8aa2fa66ccfc60857faf580a8dfc8007eaa9efa3))
+
+## [20.12.1](https://github.com/openedx/paragon/compare/v20.12.0...v20.12.1) (2022-09-30)
+
+
+### Bug Fixes
+
+* floating label expand beyond input field ([#1605](https://github.com/openedx/paragon/issues/1605)) ([2f89035](https://github.com/openedx/paragon/commit/2f89035e741858b2c97e1b2542a137c1b116a1a8))
+* update styles for Chip ([#1606](https://github.com/openedx/paragon/issues/1606)) ([df4583f](https://github.com/openedx/paragon/commit/df4583fd5fd6d056ddd8be2c11b1ad87733d353e))
+
 # [20.12.0](https://github.com/openedx/paragon/compare/v20.11.1...v20.12.0) (2022-09-21)
 
 

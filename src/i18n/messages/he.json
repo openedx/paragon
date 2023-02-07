@@ -6,10 +6,13 @@
   "dropzone.Dropzone.unexpectedValidationError": "An unexpected problem occured during file validation. Please try again.",
   "dropzone.Dropzone.uploadError": "A problem occured while uploading your file. Please try again.",
   "pgn.Alert.closeLabel": "Dismiss",
+  "pgn.CardCarousel.scrollToNext": "Scroll to next",
+  "pgn.CardCarousel.scrollToPrevious": "Scroll to previous",
   "pgn.DataTable.BaseSelectionStatus.allSelectedText": "All {numSelectedRows} selected",
   "pgn.DataTable.BaseSelectionStatus.clearSelectionText": "Clear selection",
   "pgn.DataTable.BaseSelectionStatus.selectAllText": "Select all {itemCount}",
   "pgn.DataTable.BaseSelectionStatus.selectedText": "{numSelectedRows} selected",
+  "pgn.DataTable.BaseSelectionStatus.selectedTextPaginated": "{numSelectedRows} selected ({numSelectedRowsOnPage} shown below)",
   "pgn.DataTable.ExpandAll.collapseAllLabel": "Collapse all",
   "pgn.DataTable.ExpandAll.expandAllLabel": "Expand all",
   "pgn.DataTable.FilterStatus.clearFiltersText": "Clear filters",
@@ -22,5 +25,7 @@
   "pgn.Dropzone.DefaultContent.label": "Drag and drop your file here or click to upload.",
   "pgn.Dropzone.UploadProgress.cancelLabel": "Cancel",
   "pgn.Dropzone.UploadProgress.uploadLabel": "Uploading {filename}.",
+  "pgn.FormAutosuggest.iconButtonClosed": "Close the options menu",
+  "pgn.FormAutosuggest.iconButtonOpened": "Open the options menu",
   "pgn.Toast.closeLabel": "Close"
 }

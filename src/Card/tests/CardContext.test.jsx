@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import { CardContextProvider } from '../CardContext';
@@ -14,7 +14,7 @@ describe('correct rendering', () => {
   });
 
   it('renders a context with correct props', () => {
-    const wrapper = shallow((
+    const wrapper = mount((
       <Card orientation="horizontal" />
     ));
     const contextProvider = wrapper.find(CardContextProvider);

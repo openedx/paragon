@@ -46,7 +46,8 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
   </div>
   <div className="mb-2">
     <Button variant="link" className="mb-2 mb-sm-0">Link</Button>{' '}
-    <Button variant="light" className="mb-2 mb-sm-0">Light</Button> <Button variant="dark">Dark</Button>{' '}
+    <Button variant="light" className="mb-2 mb-sm-0">Light</Button>{' '} 
+    <Button variant="dark" className="mb-2 mb-sm-0">Dark</Button>{' '}
     <Button variant="outline-light" className="mb-2 mb-sm-0">Light</Button>{' '}
     <Button variant="outline-dark" className="mb-2 mb-sm-0">Dark</Button>
   </div>
@@ -104,6 +105,25 @@ Use inline size buttons for when a button sits with a line of text.
   <Button variant="secondary" size="lg" block>
     Block level button
   </Button>
+</>
+```
+
+### Disabled
+
+```jsx live
+<>
+  <Button variant="primary" disabled>Primary disabled</Button>
+  <Button variant="secondary" disabled>Secondary disabled</Button>
+  <Button as="a" href="https://edx.org" disabled>Link disabled</Button>
+</>
+```
+
+For link to be `disabled`, it must have href defined with some value.
+
+```jsx live
+<>
+  <Button as='a' disabled>No href</Button>
+  <Button as='a' href='' disabled>Empty string href</Button>
 </>
 ```
 

@@ -11,7 +11,7 @@ function SvgBbb(props) {
     viewBox: "0 0 25 25",
     fill: "none"
   }, props), /*#__PURE__*/React.createElement("path", {
-    fill: "url(#bbb_svg__pattern0)",
+    fill: "currentColor",
     d: "M.5 0h24v24.004H.5z"
   }), /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("pattern", {
     id: "bbb_svg__pattern0",

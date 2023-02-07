@@ -2,6 +2,10 @@
 @import "~bootstrap/scss/modal";
 @import "ModalDialog";
 
+.pgn__hidden-scroll-padding-right {
+  padding-right: 0;
+}
+
 .pgn__modal-layer {
   height: 100%;
   left: 0;

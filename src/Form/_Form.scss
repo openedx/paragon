@@ -187,6 +187,7 @@ $select-icon-padding: .5625rem !default;
     border-top: solid 2px transparent;
     position: relative;
     inset-inline-start: -.5em;
+    max-width: 100%;
   }
 
   .pgn__form-control-floating-label-text {
@@ -517,5 +518,70 @@ select.form-control {
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   [dir="rtl"] & {
     border-radius: $input-border-radius 0 0 $input-border-radius;
+  }
+}
+
+.pgn__form-autosuggest__wrapper {
+  position: relative;
+
+  .pgn__form-control-decorator .btn-icon {
+    &:hover {
+      fill: $white;
+    }
+
+    &:focus {
+      fill: $gray-500;
+    }
+  }
+
+  .form-control {
+    min-height: 2.75rem;
+  }
+
+  .pgn__icon.btn-icon__icon {
+    height: $form-autosuggest-icon-height;
+    width: $form-autosuggest-icon-width;
+  }
+
+  .pgn__form-autosuggest__dropdown {
+    @include pgn-box-shadow(1, "centered");
+
+    @media (min-width: map-get($grid-breakpoints, "sm")) {
+      margin-inline-end: $custom-control-gutter;
+    }
+
+    border-radius: $border-radius-sm;
+    max-height: 15rem;
+    overflow-y: scroll;
+    position: absolute;
+    background-color: $white;
+    width: calc(100% - .5rem);
+    z-index: $zindex-dropdown;
+    top: 3.125rem;
+
+    .dropdown-item {
+      display: block;
+      text-align: start;
+      max-width: 100%;
+      padding: .625rem 1rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:active {
+        color: $white;
+      }
+    }
+
+    .pgn__form-autosuggest__dropdown-loading {
+      padding: 6.25rem 0;
+      text-align: center;
+
+      .spinner-border {
+        width: $form-autosuggest-spinner-width;
+        height: $form-autosuggest-spinner-height;
+        border: $form-autosuggest-border-width solid $black;
+        border-right-color: transparent;
+      }
+    }
   }
 }

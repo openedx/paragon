@@ -10,6 +10,9 @@ import CardFooter from './CardFooter';
 import CardImageCap from './CardImageCap';
 import CardBody from './CardBody';
 import CardStatus from './CardStatus';
+import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
+
+export const CARD_VARIANTS = ['light', 'dark', 'muted'];
 
 const Card = React.forwardRef(({
   orientation,
@@ -17,24 +20,34 @@ const Card = React.forwardRef(({
   className,
   isClickable,
   muted,
+  variant,
   ...props
-}, ref) => (
-  <CardContextProvider orientation={orientation} isLoading={isLoading}>
-    <BaseCard
-      {...props}
-      className={classNames(className, 'pgn__card', {
-        horizontal: orientation === 'horizontal',
-        clickable: isClickable,
-        'is-muted': muted,
-      })}
-      ref={ref}
-      tabIndex={isClickable ? '0' : '-1'}
-    />
-  </CardContextProvider>
-));
+}, ref) => {
+  const resolvedVariant = muted ? 'muted' : variant;
+
+  return (
+    <CardContextProvider
+      orientation={orientation}
+      isLoading={isLoading}
+      variant={resolvedVariant}
+    >
+      <BaseCard
+        {...props}
+        className={classNames(className, 'pgn__card', {
+          horizontal: orientation === 'horizontal',
+          clickable: isClickable,
+          [`pgn__card-${resolvedVariant}`]: resolvedVariant,
+        })}
+        ref={ref}
+        tabIndex={isClickable ? 0 : -1}
+      />
+    </CardContextProvider>
+  );
+});
 
 export { default as CardColumns } from 'react-bootstrap/CardColumns';
-export { default as CardDeck } from 'react-bootstrap/CardDeck';
+export { default as CardDeck } from './CardDeck';
+export { default as CardCarousel } from './CardCarousel/CardCarousel';
 export { default as CardImg } from 'react-bootstrap/CardImg';
 export { default as CardGroup } from 'react-bootstrap/CardGroup';
 export { default as CardGrid } from './CardGrid';
@@ -49,7 +62,9 @@ Card.propTypes = {
   isClickable: PropTypes.bool,
   /** Specifies loading state. */
   isLoading: PropTypes.bool,
-  /** Specifies whether to display `Card` in muted styling. */
+  /** Specifies `Card` style variant. */
+  variant: PropTypes.oneOf(CARD_VARIANTS),
+  /** **Deprecated**. Specifies whether `Card` uses `muted` variant. Use `variant="muted"` instead. */
   muted: PropTypes.bool,
 };
 
@@ -58,16 +73,24 @@ Card.defaultProps = {
   className: undefined,
   orientation: 'vertical',
   isClickable: false,
-  muted: false,
+  variant: 'light',
   isLoading: false,
 };
 
-Card.Status = CardStatus;
-Card.Header = CardHeader;
-Card.Divider = CardDivider;
-Card.Section = CardSection;
-Card.Footer = CardFooter;
-Card.ImageCap = CardImageCap;
-Card.Context = CardContext;
-Card.Body = CardBody;
-export default Card;
+const CardWithDeprecatedProp = withDeprecatedProps(Card, 'Card', {
+  muted: {
+    deprType: DeprTypes.REMOVED,
+    message: 'Use "variant" prop instead, i.e. variant="muted"',
+  },
+});
+
+CardWithDeprecatedProp.Status = CardStatus;
+CardWithDeprecatedProp.Header = CardHeader;
+CardWithDeprecatedProp.Divider = CardDivider;
+CardWithDeprecatedProp.Section = CardSection;
+CardWithDeprecatedProp.Footer = CardFooter;
+CardWithDeprecatedProp.ImageCap = CardImageCap;
+CardWithDeprecatedProp.Context = CardContext;
+CardWithDeprecatedProp.Body = CardBody;
+
+export default CardWithDeprecatedProp;

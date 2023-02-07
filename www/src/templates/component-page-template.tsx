@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable react/no-unstable-nested-components */
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
-// @ts-ignore
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-// @ts-ignore
-import { Container, Alert, breakpoints, useMediaQuery } from '~paragon-react'; // eslint-disable-line
+import {
+  Container,
+  Alert,
+  breakpoints,
+  useMediaQuery,
+} from '~paragon-react';
+import { SettingsContext } from '../context/SettingsContext';
+import { DEFAULT_THEME } from '../../theme-config';
 import CodeBlock from '../components/CodeBlock';
 import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
@@ -31,7 +37,7 @@ export interface IPageTemplate {
     }
   },
   pageContext: {
-    cssVariables: string,
+    scssVariablesData: Record<string, string>,
   }
 }
 
@@ -41,10 +47,13 @@ export type ShortCodesTypes = {
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
-  pageContext: { cssVariables },
+  pageContext: { scssVariablesData },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
+  const { settings } = useContext(SettingsContext);
+  const { theme } = settings;
+  const scssVariables = scssVariablesData[theme!] || scssVariablesData[DEFAULT_THEME!];
 
   const components = componentNodes.nodes
     .reduce((acc: { [x: string]: { displayName: string }; }, currentValue: { displayName: string; }) => {
@@ -53,12 +62,12 @@ export default function PageTemplate({
     }, {});
 
   const shortcodes = React.useMemo(() => {
-    const PropsTable = ({ displayName, ...props }: ShortCodesTypes) => { // eslint-disable-line react/prop-types
+    function PropsTable({ displayName, ...props }: ShortCodesTypes) { // eslint-disable-line react/prop-types
       if (components[displayName]) {
         return <GenericPropsTable {...components[displayName]} {...props} />;
       }
       return null;
-    };
+    }
     // Provide common components here
     return {
       h2: (props: HTMLElement) => <LinkedHeading h="2" {...props} />,
@@ -75,15 +84,15 @@ export default function PageTemplate({
     };
   }, [components]);
 
-  const cssVariablesTitle = 'Theme Variables (SCSS)';
-  const cssVariablesUrl = 'theme-variables-scss';
+  const scssVariablesTitle = 'Theme Variables (SCSS)';
+  const scssVariablesUrl = 'theme-variables-scss';
 
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
-    if (cssVariables && !tableOfContents.items?.includes()) {
+    if (Object.values(scssVariablesData).some(data => data) && !tableOfContents.items?.includes()) {
       tableOfContents.items?.push({
-        title: cssVariablesTitle,
-        url: `#${cssVariablesUrl}`,
+        title: scssVariablesTitle,
+        url: `#${scssVariablesUrl}`,
       });
     }
     return tableOfContents;
@@ -103,7 +112,7 @@ export default function PageTemplate({
     >
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={mdx.frontmatter.title} />
-      <Container size="md" className="py-5">
+      <Container size={settings.containerWidth} className="py-5">
         {isDeprecated && (
           <Alert variant="warning">
             <Alert.Heading>This component will be removed soon.</Alert.Heading>
@@ -114,15 +123,15 @@ export default function PageTemplate({
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-        {cssVariables && (
+        {scssVariables && (
           <div className="mb-5">
-            <h2 className="mb-4 pgn-doc__heading" id={cssVariablesUrl}>
-              {cssVariablesTitle}
-              <a href={`#${cssVariablesUrl}`} aria-label="Jump to SCSS variables">
+            <h2 className="mb-4 pgn-doc__heading" id={scssVariablesUrl}>
+              {scssVariablesTitle}
+              <a href={`#${scssVariablesUrl}`} aria-label="Jump to SCSS variables">
                 <span className="pgn-doc__anchor">#</span>
               </a>
             </h2>
-            <CodeBlock className="language-scss">{cssVariables}</CodeBlock>
+            <CodeBlock className="language-scss">{scssVariables}</CodeBlock>
           </div>
         )}
         {typeof sortedComponentNames !== 'string'
@@ -155,7 +164,10 @@ PageTemplate.propTypes = {
     }),
   }).isRequired,
   pageContext: PropTypes.shape({
-    cssVariables: PropTypes.string,
+    scssVariablesData: PropTypes.shape({
+      openedx: PropTypes.string,
+      edxorg: PropTypes.string,
+    }),
   }),
 };
 

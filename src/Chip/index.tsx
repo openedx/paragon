@@ -17,9 +17,10 @@ export interface IChip {
   iconAfter?: React.ReactElement | Function,
   onIconBeforeClick?: KeyboardEventHandler & MouseEventHandler,
   onIconAfterClick?: KeyboardEventHandler & MouseEventHandler,
-  onLabelClick?: KeyboardEventHandler & MouseEventHandler,
   disabled?: boolean,
 }
+
+export const CHIP_PGN_CLASS = 'pgn__chip';
 
 const Chip = React.forwardRef(({
   children,
@@ -29,13 +30,12 @@ const Chip = React.forwardRef(({
   iconAfter,
   onIconBeforeClick,
   onIconAfterClick,
-  onLabelClick,
   disabled,
   ...props
 }: IChip, ref: ForwardedRef<HTMLDivElement>) => (
   <div
     className={classNames(
-      'pgn__chip',
+      CHIP_PGN_CLASS,
       `pgn__chip-${variant}`,
       className,
       { disabled },
@@ -51,7 +51,10 @@ const Chip = React.forwardRef(({
       </div>
     )}
     <div
-      className={classNames('pgn__chip__label', { 'p-before': iconBefore, 'p-after': iconAfter })}
+      className={classNames('pgn__chip__label', {
+        'p-before': iconBefore,
+        'p-after': iconAfter,
+      })}
     >
       {children}
     </div>
@@ -85,6 +88,8 @@ Chip.propTypes = {
    * `import { Check } from '@edx/paragon/icons';`
    */
   iconBefore: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  /** A click handler for the `Chip` icon before. */
+  onIconBeforeClick: PropTypes.func,
   /**
    * An icon component to render before after the content.
    * Example import of a Paragon icon component:
@@ -102,7 +107,6 @@ Chip.defaultProps = {
   disabled: false,
   iconBefore: undefined,
   iconAfter: undefined,
-  onLabelClick: undefined,
   onIconBeforeClick: undefined,
   onIconAfterClick: undefined,
 };

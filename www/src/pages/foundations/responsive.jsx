@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Container, breakpoints } from '~paragon-react'; // eslint-disable-line
+import { DataTable, Container, breakpoints } from '~paragon-react';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import CodeBlock from '../../components/CodeBlock';
@@ -16,11 +16,17 @@ const BREAKPOINT_DESCRIPTIONS = {
 
 const getBreakpointDescription = (breakpoint) => BREAKPOINT_DESCRIPTIONS[breakpoint] || {};
 
-const IdentifierCell = ({ row }) => <code>{row.values.identifier}</code>;
-const MinWidthCell = ({ row }) => <code>{row.values.minWidth ? `${row.values.minWidth}px` : '-'}</code>;
-const MaxWidthCell = ({ row }) => <code>{row.values.maxWidth ? `${row.values.maxWidth}px` : '-'}</code>;
+function IdentifierCell({ row }) {
+  return <code>{row.values.identifier}</code>;
+}
+function MinWidthCell({ row }) {
+  return <code>{row.values.minWidth ? `${row.values.minWidth}px` : '-'}</code>;
+}
+function MaxWidthCell({ row }) {
+  return <code>{row.values.maxWidth ? `${row.values.maxWidth}px` : '-'}</code>;
+}
 
-const Responsive = () => {
+function Responsive() {
   const breakpointsData = Object.keys(breakpoints).map(breakpoint => {
     const { minWidth, maxWidth } = breakpoints[breakpoint];
     const breakpointData = getBreakpointDescription(breakpoint);
@@ -71,7 +77,7 @@ const Responsive = () => {
       </Container>
     </Layout>
   );
-};
+}
 
 const cellPropTypes = {
   row: PropTypes.shape({

@@ -43,3 +43,8 @@ $btn-border-radius-lg:        $border-radius-lg !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
 
 $btn-transition: null;
+
+$btn-focus-border-gap: $btn-focus-width + $btn-focus-gap !default;
+$btn-focus-distance-to-border: $btn-focus-border-gap + $btn-border-width !default;
+
+$btn-focus-border-radius: calc(#{$btn-border-radius} + #{$btn-focus-border-gap}) !default;

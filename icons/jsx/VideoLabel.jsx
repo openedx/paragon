@@ -7,9 +7,10 @@ function SvgVideoLabel(props) {
       width={24}
       height={24}
       viewBox="0 0 24 24"
+      fill="none"
       {...props}
     >
-      <path d="M23 3H1v18h22V3zm-2 13H3V5h18v11z" />
+      <path d="M23 3H1v18h22V3zm-2 13H3V5h18v11z" fill="currentColor" />
     </svg>
   );
 }

@@ -1,30 +1,14 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "disableSourceOfProjectReferenceRedirect": true,
-    "disableSolutionSearching": true,
-    "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "es6"
-    ],
-    "jsx": "react",
-    "module": "es6",
-    "moduleResolution": "node",
-    "preserveSymlinks": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "rootDir": "src",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": false,
-
+    "noImplicitAny": false,
+    "paths": {
+      "~paragon-react": ["../src"],
+      "~paragon-style": ["../scss"],
+      "~paragon-icons": ["../icons"],
+    }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
