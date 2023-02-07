@@ -479,6 +479,7 @@ select.form-control {
 
   &.pgn__form-control-invalid input {
     border-color: $form-feedback-invalid-color;
+
     &:checked {
       background-image: escape-svg($custom-checkbox-indicator-icon-valid-checked);
     }
@@ -486,6 +487,7 @@ select.form-control {
 
   &.pgn__form-control-valid input {
     border-color: $form-feedback-valid-color;
+    
     &:checked {
       background-image: escape-svg($custom-checkbox-indicator-icon-invalid-checked);
     }
