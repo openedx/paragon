@@ -36,6 +36,20 @@ export type CollapsibleLiveEditorTypes = {
 
 function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
+
+  const eventSegmentSubmitter = (e) => {
+    let elementBeforeUseCase = e.target.closest('.pgn-doc__code-block').parentNode.previousSibling;
+    const componentNameAndCategory = window.location.pathname.replace(/\//g, '.');
+
+    while (elementBeforeUseCase.className !== 'pgn-doc__heading') {
+      elementBeforeUseCase = elementBeforeUseCase.previousSibling;
+    }
+
+    global.analytics.track(`openedx.ui${componentNameAndCategory}${elementBeforeUseCase.id}.${collapseIsOpen ? 'close' : 'open'}`, {
+      value: `${componentNameAndCategory.replace(/.components./gi, '')}${elementBeforeUseCase.id}`,
+    });
+  };
+
   return (
     <div className="pgn-doc__collapsible-live-editor">
       <Collapsible
@@ -43,6 +57,7 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
         styling="card-lg"
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
+        onClick={(e) => eventSegmentSubmitter(e)}
         withIcon
         title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
