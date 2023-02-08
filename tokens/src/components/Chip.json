@@ -2,12 +2,12 @@
   "color": {
     "chip": {
       "text": {
-        "light": { "value": "{color.black.value}", "source": "$chip-light-color" },
-        "dark": { "value": "{color.white.value}", "source": "$chip-dark-color" }
+        "light": { "value": "{color.black}", "source": "$chip-light-color" },
+        "dark": { "value": "{color.white}", "source": "$chip-dark-color" }
       },
       "bg": {
-        "light": { "value": "{color.light.500.value}", "source": "$chip-light-bg" },
-        "dark": { "value": "{color.dark.200.value}", "source": "$chip-dark-bg" }
+        "light": { "value": "{color.light.500}", "source": "$chip-light-bg" },
+        "dark": { "value": "{color.dark.200}", "source": "$chip-dark-bg" }
       }
     }
   },

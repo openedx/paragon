@@ -1,7 +1,7 @@
 {
   "color": {
     "menu": {
-      "bg-active": { "value": "{color.btn.active.bg.tertiary.value}", "source": "$active-background" },
+      "bg-active": { "value": "{color.btn.active.bg.tertiary}", "source": "$active-background" },
       "border": {
         "base": { "value": "transparent", "source": "$border" },
         "active": { "value": "transparent", "source": "$active-border" },

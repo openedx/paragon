@@ -1,7 +1,7 @@
 {
   "color": {
     "input": {
-      "btn-focus": { "value": "{color.input.focus.value}", "source": "$input-btn-focus-color" }
+      "btn-focus": { "value": "{color.input.focus}", "source": "$input-btn-focus-color" }
     }
   },
   "typography": {
@@ -18,7 +18,7 @@
         "line-height": {
           "base": { "value": "1.3333", "source": "$input-btn-line-height" },
           "sm": { "value": "1.4286", "source": "$input-btn-line-height-sm" },
-          "lg": { "value": "{typography.line-height.lg.value}", "source": "$input-btn-line-height-lg" }
+          "lg": { "value": "{typography.line-height.lg}", "source": "$input-btn-line-height-lg" }
         }
       }
     }
@@ -44,7 +44,7 @@
   "size": {
     "input": {
       "btn": {
-        "border-width": { "value": "{size.border.width.value}", "source": "$input-btn-border-width" },
+        "border-width": { "value": "{size.border.width}", "source": "$input-btn-border-width" },
         "focus-width": { "value": "1px", "source": "$input-btn-focus-width" }
       }
     }
@@ -53,7 +53,7 @@
     "input": {
       "btn-focus": {
         "box-shadow": {
-          "value": "0 0 0 {size.input.btn.focus-width.value} {color.input.btn-focus.value}",
+          "value": "0 0 0 {size.input.btn.focus-width} {color.input.btn-focus}",
           "source": "$input-btn-focus-box-shadow"
         }
       }

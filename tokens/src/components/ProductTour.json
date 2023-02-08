@@ -2,12 +2,12 @@
   "color": {
     "product-tour": {
       "checkpoint": {
-        "bg": { "value": "{color.light.300.value}", "source": "$checkpoint-background-color" },
-        "body": { "value": "{color.gray.700.value}", "source": "$checkpoint-body-color" },
-        "border": { "value": "{color.brand.500.value}", "source": "$checkpoint-border-color" },
-        "breadcrumb": { "value": "{color.primary.500.value}", "source": "$checkpoint-breadcrumb-color" },
+        "bg": { "value": "{color.light.300}", "source": "$checkpoint-background-color" },
+        "body": { "value": "{color.gray.700}", "source": "$checkpoint-body-color" },
+        "border": { "value": "{color.brand.500}", "source": "$checkpoint-border-color" },
+        "breadcrumb": { "value": "{color.primary.500}", "source": "$checkpoint-breadcrumb-color" },
         "box-shadow": {
-          "value": "{color.black.value}",
+          "value": "{color.black}",
           "source": "$checkpoint-box-shadow-color",
           "modify": [{
             "type": "alpha",
@@ -17,7 +17,7 @@
         "arrow": {
           "border": {
             "top": {
-              "value": "{color.product-tour.checkpoint.bg.value}",
+              "value": "{color.product-tour.checkpoint.bg}",
               "source": "$checkpoint-arrow-border-top-color"
             },
             "transparent": {
@@ -39,15 +39,15 @@
         },
         "arrow": {
           "bottom": {
-            "value": "{size.product-tour.checkpoint.width.arrow.value} {size.product-tour.checkpoint.width.border.value}",
+            "value": "{size.product-tour.checkpoint.width.arrow} {size.product-tour.checkpoint.width.border}",
             "source": "$checkpoint-arrow-border-bottom"
           },
           "top": {
-            "value": "{size.product-tour.checkpoint.width.arrow.value}",
+            "value": "{size.product-tour.checkpoint.width.arrow}",
             "source": "$checkpoint-arrow-border-top"
           },
           "transparent": {
-            "value": "{size.product-tour.checkpoint.width.arrow.value}",
+            "value": "{size.product-tour.checkpoint.width.arrow}",
             "source": "$checkpoint-arrow-border-transparent"
           }
         }

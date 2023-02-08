@@ -3,7 +3,7 @@
     "spinner": {
       "base": {
         "width": { "value": "2rem", "source": "$spinner-width" },
-        "height": { "value": "{size.spinner.base.width.value}", "source": "$spinner-height" },
+        "height": { "value": "{size.spinner.base.width}", "source": "$spinner-height" },
         "border-width": { "value": ".25em", "source": "$spinner-border-width" }
       },
       "sm": {

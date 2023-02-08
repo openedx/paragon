@@ -17,25 +17,25 @@
   },
   "typography": {
     "annotation": {
-      "font-size": { "value": "{typography.font.size.sm.value}", "source": "$annotation-font-size" },
-      "line-height": { "value": "{typography.line-height.sm.value}", "source": "$annotation-line-height" }
+      "font-size": { "value": "{typography.font.size.sm}", "source": "$annotation-font-size" },
+      "line-height": { "value": "{typography.line-height.sm}", "source": "$annotation-line-height" }
     }
   },
   "color": {
     "annotation": {
       "text": {
-        "success": {"value": "{color.white.value}", "source": "$annotation-success-color"},
-        "warning": {"value": "{color.black.value}", "source": "$annotation-warning-color"},
-        "error": {"value": "{color.white.value}", "source": "$annotation-error-color"},
-        "light": {"value": "{color.primary.500.value}", "source": "$annotation-light-color"},
-        "dark": {"value": "{color.white.value}", "source": "$annotation-dark-color"}
+        "success": {"value": "{color.white}", "source": "$annotation-success-color"},
+        "warning": {"value": "{color.black}", "source": "$annotation-warning-color"},
+        "error": {"value": "{color.white}", "source": "$annotation-error-color"},
+        "light": {"value": "{color.primary.500}", "source": "$annotation-light-color"},
+        "dark": {"value": "{color.white}", "source": "$annotation-dark-color"}
       },
       "bg": {
-        "success": {"value": "{color.success.base.value}", "source": "$annotation-success-bg"},
-        "warning": {"value": "{color.accent.b.value}", "source": "$annotation-warning-bg"},
-        "error": {"value": "{color.danger.base.value}", "source": "$annotation-error-bg"},
-        "light": {"value": "{color.white.value}", "source": "$annotation-light-bg"},
-        "dark": {"value": "{color.dark.base.value}", "source": "$annotation-dark-bg"}
+        "success": {"value": "{color.success.base}", "source": "$annotation-success-bg"},
+        "warning": {"value": "{color.accent.b}", "source": "$annotation-warning-bg"},
+        "error": {"value": "{color.danger.base}", "source": "$annotation-error-bg"},
+        "light": {"value": "{color.white}", "source": "$annotation-light-bg"},
+        "dark": {"value": "{color.dark.base}", "source": "$annotation-dark-bg"}
       }
     }
   },

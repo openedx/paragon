@@ -2,14 +2,14 @@
   "color": {
     "search-field": {
       "border": {
-        "base": { "value": "{color.gray.500.value}", "source": "$search-border-color" },
-        "interaction": { "value": "{color.black.value}", "source": "$search-border-color-interaction" },
-        "focus": { "value": "{color.black.value}", "source": "$search-border-focus-color" }
+        "base": { "value": "{color.gray.500}", "source": "$search-border-color" },
+        "interaction": { "value": "{color.black}", "source": "$search-border-color-interaction" },
+        "focus": { "value": "{color.black}", "source": "$search-border-focus-color" }
       },
       "button": {
         "bg": {
-          "primary": { "value": "{color.primary.500.value}", "source": "$search-btn-primary-bg" },
-          "brand": { "value": "{color.brand.500.value}", "source": "$search-btn-brand-bg" }
+          "primary": { "value": "{color.primary.500}", "source": "$search-btn-primary-bg" },
+          "brand": { "value": "{color.brand.500}", "source": "$search-btn-brand-bg" }
         }
       }
     }
@@ -24,7 +24,7 @@
         "radius": { "value": "0", "source": "$search-border-radius" }
       },
       "search-input-height": {
-        "value": "calc({typography.form.input.line-height.base.value} * 1em + {spacing.form.input.padding.y.base.value} * 2)",
+        "value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2)",
         "source": "$input-height-search"
       }
     }

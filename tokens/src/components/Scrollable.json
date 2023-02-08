@@ -3,7 +3,7 @@
     "scrollable": {
       "body": {
         "box-shadow": {
-          "value": "{color.black.value}",
+          "value": "{color.black}",
           "source": "$scrollable-body-box-shadow",
           "modify": [{
             "type": "alpha",
