@@ -2,16 +2,16 @@
   "color": {
     "bubble": {
       "text": {
-        "success": {"value": "{color.white.value}", "source": "$bubble-success-color"},
-        "warning": {"value": "{color.white.value}", "source": "$bubble-warning-color"},
-        "error": {"value": "{color.white.value}", "source": "$bubble-error-color"},
-        "primary": {"value": "{color.white.value}", "source": "$bubble-primary-color"}
+        "success": {"value": "{color.white}", "source": "$bubble-success-color"},
+        "warning": {"value": "{color.white}", "source": "$bubble-warning-color"},
+        "error": {"value": "{color.white}", "source": "$bubble-error-color"},
+        "primary": {"value": "{color.white}", "source": "$bubble-primary-color"}
       },
       "bg": {
-        "success": {"value": "{color.success.base.value}", "source": "$bubble-success-bg"},
-        "warning": {"value": "{color.warning.base.value}", "source": "$bubble-warning-bg"},
-        "error": {"value": "{color.danger.base.value}", "source": "$bubble-error-bg"},
-        "primary": {"value": "{color.primary.base.value}", "source": "$bubble-primary-bg"}
+        "success": {"value": "{color.success.base}", "source": "$bubble-success-bg"},
+        "warning": {"value": "{color.warning.base}", "source": "$bubble-warning-bg"},
+        "error": {"value": "{color.danger.base}", "source": "$bubble-error-bg"},
+        "primary": {"value": "{color.primary.base}", "source": "$bubble-primary-bg"}
       }
     }
   },

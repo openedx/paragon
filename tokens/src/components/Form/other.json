@@ -15,7 +15,7 @@
           "checkbox": {
             "indicator": {
               "icon-checked": {
-                "value": "url(\"data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='{color.form.control.indicator.checked.base.value}'/></svg>\")",
+                "value": "url(\"data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='{color.form.control.indicator.checked.base}'/></svg>\")",
                 "source": "$custom-checkbox-indicator-icon-checked",
                 "outputReferences": false,
                 "modify": [
@@ -28,7 +28,7 @@
               },
               "indeterminate": {
                 "icon": {
-                  "value": "url(\"data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM17 13H7V11H17V13Z' fill='{color.form.control.checkbox.indicator.indeterminate.base.value}'/></svg>\")",
+                  "value": "url(\"data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM17 13H7V11H17V13Z' fill='{color.form.control.checkbox.indicator.indeterminate.base}'/></svg>\")",
                   "source": "$custom-checkbox-indicator-icon-indeterminate",
                   "outputReferences": false,
                   "modify": [
@@ -45,7 +45,7 @@
           "radio": {
             "indicator": {
               "icon-checked": {
-                "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{color.form.control.indicator.checked.bg.base.value}'/%3e%3c/svg%3e\")",
+                "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{color.form.control.indicator.checked.bg.base}'/%3e%3c/svg%3e\")",
                 "source": "$custom-radio-indicator-icon-checked",
                 "outputReferences": false,
                 "modify": [
@@ -61,7 +61,7 @@
           "switch": {
             "indicator": {
               "icon-off": {
-                "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{color.form.control.indicator.checked.bg.base.value}'/%3e%3c/svg%3e\")",
+                "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{color.form.control.indicator.checked.bg.base}'/%3e%3c/svg%3e\")",
                 "source": "$custom-switch-indicator-icon-off",
                 "outputReferences": false,
                 "modify": [
@@ -73,7 +73,7 @@
                 ]
               },
               "icon-on": {
-                "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{color.form.control.indicator.active.base.value}'/%3e%3c/svg%3e\")",
+                "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{color.form.control.indicator.active.base}'/%3e%3c/svg%3e\")",
                 "source": "$custom-switch-indicator-icon-on",
                 "outputReferences": false,
                 "modify": [
@@ -89,7 +89,7 @@
           "select": {
             "indicator": {
               "icon": {
-                "value": "url('data:image/svg+xml,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16.59 8.58984L12 13.1698L7.41 8.58984L6 9.99984L12 15.9998L18 9.99984L16.59 8.58984Z\" fill=\"{color.form.control.select.indicator.base.value}\"/></svg>')",
+                "value": "url('data:image/svg+xml,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16.59 8.58984L12 13.1698L7.41 8.58984L6 9.99984L12 15.9998L18 9.99984L16.59 8.58984Z\" fill=\"{color.form.control.select.indicator.base}\"/></svg>')",
                 "source": "$custom-select-indicator",
                 "outputReferences": false,
                 "modify": [
@@ -102,7 +102,7 @@
               }
             },
             "bg": {
-              "value": "{other.content.form.control.select.indicator.icon.value} no-repeat right {spacing.form.input.padding.y.base.value} center / {color.form.control.select.bg.base.value}",
+              "value": "{other.content.form.control.select.indicator.icon} no-repeat right {spacing.form.input.padding.y.base} center / {color.form.control.select.bg.base}",
               "source": "$custom-select-background"
             }
           }
@@ -110,7 +110,7 @@
         "feedback": {
           "icon": {
             "valid": {
-              "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='{color.form.feedback.icon.valid.value}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e\")",
+              "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='{color.form.feedback.icon.valid}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e\")",
               "source": "$form-feedback-icon-valid",
               "outputReferences": false,
               "modify": [
@@ -122,7 +122,7 @@
               ]
             },
             "invalid": {
-              "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.form.feedback.icon.invalid.value}' viewBox='-2 -2 7 7'%3e%3cpath stroke='{color.form.feedback.icon.invalid.value}' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E\")",
+              "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.form.feedback.icon.invalid}' viewBox='-2 -2 7 7'%3e%3cpath stroke='{color.form.feedback.icon.invalid}' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E\")",
               "source": "$form-feedback-icon-invalid",
               "outputReferences": false,
               "modify": [

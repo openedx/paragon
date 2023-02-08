@@ -3,7 +3,7 @@
     "sheet": {
       "skrim": {
         "bg": { 
-          "value": "{color.gray.300.value}",
+          "value": "{color.gray.300}",
           "source": "$sheet-skrim-bg",
           "modify": [{
             "type": "alpha",
@@ -12,7 +12,7 @@
         },
         "component": {
           "box-shadow": {
-            "value": "{color.black.value}",
+            "value": "{color.black}",
             "source": "$sheet-skrim-component-box-shadow",
             "modify": [{
               "type": "alpha",

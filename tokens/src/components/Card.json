@@ -2,10 +2,10 @@
   "color": {
     "card": {
       "base": { "value": "inherit", "source": "$card-color" },
-      "bg": { "value": "{color.bg.base.value}", "source": "$card-bg" },
+      "bg": { "value": "{color.bg.base}", "source": "$card-bg" },
       "border": {
         "base": { 
-          "value": "{color.black.value}", 
+          "value": "{color.black}", 
           "source": "$card-border-color",
           "modify": [{
             "type": "alpha",
@@ -13,7 +13,7 @@
           }]
         },
         "focus": { 
-          "value": "{color.black.value}", 
+          "value": "{color.black}", 
           "source": "$card-border-focus-color",
           "modify": [{
             "type": "alpha",
@@ -21,7 +21,7 @@
           }] 
         }
       },
-      "divider-bg": { "value": "{color.light.400.value}", "source": "$card-divider-bg" }
+      "divider-bg": { "value": "{color.light.400}", "source": "$card-divider-bg" }
     }
   },
   "spacing": {
@@ -32,11 +32,11 @@
       },
       "margin": {
         "group": { "value": "12px", "source": "$card-group-margin" },
-        "deck": { "value": "{spacing.card.margin.group.value}", "source": "$card-deck-margin" },
-        "grid": { "value": "{spacing.card.margin.group.value}", "source": "$card-grid-margin" }
+        "deck": { "value": "{spacing.card.margin.group}", "source": "$card-deck-margin" },
+        "grid": { "value": "{spacing.card.margin.group}", "source": "$card-grid-margin" }
       },
       "columns": {
-        "margin": { "value": "{spacing.card.spacer.y.value}", "source": "$card-columns-margin" },
+        "margin": { "value": "{spacing.card.spacer.y}", "source": "$card-columns-margin" },
         "count": { "value": "3", "source": "$card-columns-count" },
         "gap": { "value": "1.25rem", "source": "$card-columns-gap" }
       },
@@ -61,9 +61,9 @@
   "size": {
     "card": {
       "border": {
-        "width": { "value": "{size.border.width.value}", "source": "$card-border-width" },
+        "width": { "value": "{size.border.width}", "source": "$card-border-width" },
         "radius": {
-          "base": { "value": "{size.border.radius.base.value}", "source": "$card-border-radius" },
+          "base": { "value": "{size.border.radius.base}", "source": "$card-border-radius" },
           "image": { "value": ".3125rem", "source": "$card-image-border-radius" },
           "logo": { "value": ".25rem", "source": "$card-logo-border-radius" }
         }
@@ -72,7 +72,7 @@
         "horizontal": {
           "width": {
             "max": { "value": "240px", "source": "$card-image-horizontal-max-width" },
-            "min": { "value": "{size.card.image.horizontal.width.max.value}", "source": "$card-image-horizontal-min-width" }
+            "min": { "value": "{size.card.image.horizontal.width.max}", "source": "$card-image-horizontal-min-width" }
           }
         },
         "vertical": {
@@ -88,7 +88,7 @@
   "typography": {
     "footer": {
       "text": {
-        "font-size": { "value": "{typography.font.size.small.x.value}", "source": "$card-footer-text-font-size" }
+        "font-size": { "value": "{typography.font.size.small.x}", "source": "$card-footer-text-font-size" }
       }
     }
   }

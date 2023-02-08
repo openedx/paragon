@@ -2,94 +2,94 @@
   "color": {
     "btn": {
       "text": {
-        "light": { "value": "{color.btn.bg.light.value}", "source": "$btn-light-color", "modify": [{ "type": "color-yiq" }] },
-        "outline-light": { "value": "{color.light.base.value}", "source": "$btn-light-outline-color" },
-        "inverse-light": { "value": "{color.light.base.value}", "source": "$btn-light-inverse-color" },
-        "inverse-outline-light": { "value": "{color.white.value}", "source": "$btn-light-inverse-outline-color" }
+        "light": { "value": "{color.btn.bg.light}", "source": "$btn-light-color", "modify": [{ "type": "color-yiq" }] },
+        "outline-light": { "value": "{color.light.base}", "source": "$btn-light-outline-color" },
+        "inverse-light": { "value": "{color.light.base}", "source": "$btn-light-inverse-color" },
+        "inverse-outline-light": { "value": "{color.white}", "source": "$btn-light-inverse-outline-color" }
       },
       "bg": {
-        "light": { "value": "{color.light.base.value}", "source": "$btn-light-bg" },
+        "light": { "value": "{color.light.base}", "source": "$btn-light-bg" },
         "inverse-light": {
-          "value": "{color.btn.text.inverse-light.value}",
+          "value": "{color.btn.text.inverse-light}",
           "source": "$btn-light-inverse-bg",
           "modify": [{ "type": "color-yiq" }]
         }
       },
       "border": {
-        "light": { "value": "{color.btn.bg.light.value}", "source": "$btn-light-border-color" },
-        "outline-light": { "value": "{color.light.base.value}", "source": "$btn-light-outline-border-color" },
-        "inverse-outline-light": { "value": "{color.white.value}", "source": "$btn-light-inverse-outline-border-color" }
+        "light": { "value": "{color.btn.bg.light}", "source": "$btn-light-border-color" },
+        "outline-light": { "value": "{color.light.base}", "source": "$btn-light-outline-border-color" },
+        "inverse-outline-light": { "value": "{color.white}", "source": "$btn-light-inverse-outline-border-color" }
       },
       "hover": {
         "text": {
           "light": {
-            "value": "{color.btn.hover.bg.light.value}",
+            "value": "{color.btn.hover.bg.light}",
             "source": "$btn-light-hover-color",
             "modify": [{ "type": "color-yiq" }]
           },
-          "outline-light": { "value": "{color.theme.hover.light.value}", "source": "$btn-light-outline-hover-color" },
+          "outline-light": { "value": "{color.theme.hover.light}", "source": "$btn-light-outline-hover-color" },
           "inverse-light": {
-            "value": "{color.btn.text.inverse-light.value}",
+            "value": "{color.btn.text.inverse-light}",
             "source": "$btn-light-inverse-hover-color",
             "modify": [{ "type": "darken", "amount": 0.075 }]
           },
-          "inverse-outline-light": { "value": "{color.theme.hover.light.value}", "source": "$btn-light-inverse-outline-hover-color" }
+          "inverse-outline-light": { "value": "{color.theme.hover.light}", "source": "$btn-light-inverse-outline-hover-color" }
         },
         "bg": {
-          "light": { "value": "{color.theme.hover.light.value}", "source": "$btn-light-hover-bg" },
-          "outline-light": { "value": "{color.light.100.value}", "source": "$btn-light-outline-hover-bg" },
+          "light": { "value": "{color.theme.hover.light}", "source": "$btn-light-hover-bg" },
+          "outline-light": { "value": "{color.light.100}", "source": "$btn-light-outline-hover-bg" },
           "inverse-light": {
-            "value": "{color.btn.bg.inverse-light.value}",
+            "value": "{color.btn.bg.inverse-light}",
             "source": "$btn-light-inverse-hover-bg",
             "modify": [{ "type": "darken", "amount": 0.075 }]
           },
-          "inverse-outline-light": { "value": "{color.light.100.value}", "source": "$btn-light-inverse-outline-hover-bg" }
+          "inverse-outline-light": { "value": "{color.light.100}", "source": "$btn-light-inverse-outline-hover-bg" }
         },
         "border": {
-          "light": { "value": "{color.theme.hover.light.value}", "source": "$btn-light-hover-border-color" },
-          "outline-light": { "value": "{color.light.900.value}", "source": "$btn-light-outline-hover-border-color" },
+          "light": { "value": "{color.theme.hover.light}", "source": "$btn-light-hover-border-color" },
+          "outline-light": { "value": "{color.light.900}", "source": "$btn-light-outline-hover-border-color" },
           "inverse-outline-light": { "value": "transparent", "source": "$btn-light-inverse-outline-hover-border-color" }
         }
       },
       "active": {
         "text": {
           "light": {
-            "value": "{color.btn.active.bg.light.value}",
+            "value": "{color.btn.active.bg.light}",
             "source": "$btn-light-active-color",
             "modify": [{ "type": "color-yiq" }]
           },
           "outline-light": {
-            "value": "{color.btn.active.bg.outline-light.value}",
+            "value": "{color.btn.active.bg.outline-light}",
             "source": "$btn-light-outline-active-color",
             "modify": [{ "type": "color-yiq" }]
           },
           "inverse-light": {
-            "value": "{color.btn.text.inverse-light.value}",
+            "value": "{color.btn.text.inverse-light}",
             "source": "$btn-light-inverse-active-color",
             "modify": [{ "type": "darken", "amount": 0.1 }]
           },
           "inverse-outline-light": {
-            "value": "{color.btn.active.bg.inverse-outline-light.value}",
+            "value": "{color.btn.active.bg.inverse-outline-light}",
             "source": "$btn-light-inverse-outline-active-color",
             "modify": [{ "type": "color-yiq" }] }
         },
         "bg": {
-          "light": { "value": "{color.theme.active.light.value}", "source": "$btn-light-active-bg" },
-          "outline-light": { "value": "{color.theme.bg.light.value}", "source": "$btn-light-outline-active-bg" },
-          "inverse-outline-light": { "value": "{color.theme.bg.light.value}", "source": "$btn-light-inverse-outline-active-bg" }
+          "light": { "value": "{color.theme.active.light}", "source": "$btn-light-active-bg" },
+          "outline-light": { "value": "{color.theme.bg.light}", "source": "$btn-light-outline-active-bg" },
+          "inverse-outline-light": { "value": "{color.theme.bg.light}", "source": "$btn-light-inverse-outline-active-bg" }
         },
         "border": {
-          "light": { "value": "{color.theme.active.light.value}", "source": "$btn-light-active-border-color" },
-          "outline-light": { "value": "{color.theme.active.light.value}", "source": "$btn-light-outline-active-border-color" },
+          "light": { "value": "{color.theme.active.light}", "source": "$btn-light-active-border-color" },
+          "outline-light": { "value": "{color.theme.active.light}", "source": "$btn-light-outline-active-border-color" },
           "inverse-outline-light": { "value": "transparent", "source": "$btn-light-inverse-outline-active-border-color" }
         }
       },
       "focus": {
         "border": {
-          "light": { "value": "{color.theme.focus.light.value}", "source": "$btn-light-focus-border-color" },
-          "outline-light": { "value": "{color.theme.focus.light.value}", "source": "$btn-light-outline-focus-border-color" },
-          "inverse-light": { "value": "{color.white.value}", "source": "$btn-light-inverse-focus-border-color" },
-          "inverse-outline-light": { "value": "{color.white.value}", "source": "$btn-light-inverse-outline-focus-border-color" }
+          "light": { "value": "{color.theme.focus.light}", "source": "$btn-light-focus-border-color" },
+          "outline-light": { "value": "{color.theme.focus.light}", "source": "$btn-light-outline-focus-border-color" },
+          "inverse-light": { "value": "{color.white}", "source": "$btn-light-inverse-focus-border-color" },
+          "inverse-outline-light": { "value": "{color.white}", "source": "$btn-light-inverse-outline-focus-border-color" }
         }
       }
     }
