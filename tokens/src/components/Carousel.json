@@ -2,16 +2,16 @@
   "color": {
     "carousel": {
       "control": {
-        "base": { "value": "{color.white.value}", "source": "$carousel-control-color" },
+        "base": { "value": "{color.white}", "source": "$carousel-control-color" },
         "opacity": {
           "base": { "value": ".5", "source": "$carousel-control-opacity" },
           "hover": { "value": ".9", "source": "$carousel-control-hover-opacity" }
         }
       },
       "indicator": {
-        "active-bg": { "value": "{color.white.value}", "source": "$carousel-indicator-active-bg" }
+        "active-bg": { "value": "{color.white}", "source": "$carousel-indicator-active-bg" }
       },
-      "caption": { "value": "{color.white.value}", "source": "$carousel-caption-color" }
+      "caption": { "value": "{color.white}", "source": "$carousel-caption-color" }
     }
   },
   "size": {
@@ -40,7 +40,7 @@
   "transition": {
     "carousel": {
       "base": {
-        "value": "transform {transition.carousel.duration.value} ease-in-out",
+        "value": "transform {transition.carousel.duration} ease-in-out",
         "source": "$carousel-transition-duration"
       },
       "duration": { "value": ".6s", "source": "$carousel-transition-duration" },
@@ -53,7 +53,7 @@
       "control": {
         "bg": {
           "prev-icon": {
-            "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.carousel.control.base.value}' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e\")",
+            "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.carousel.control.base}' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e\")",
             "source": "$carousel-control-prev-icon-bg",
             "outputReferences": false,
             "modify": [{
@@ -63,7 +63,7 @@
             }]
           },
           "next-icon": {
-            "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.carousel.control.base.value}' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e\")",
+            "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.carousel.control.base}' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e\")",
             "source": "$carousel-control-next-icon-bg",
             "outputReferences": false,
             "modify": [{

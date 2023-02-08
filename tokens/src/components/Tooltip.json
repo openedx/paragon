@@ -1,20 +1,20 @@
 {
   "typography": {
     "tooltip": {
-      "font-size": { "value": "{typography.font.size.sm.value}", "source": "$tooltip-font-size" }
+      "font-size": { "value": "{typography.font.size.sm}", "source": "$tooltip-font-size" }
     }
   },
   "color": {
     "tooltip": {
-      "text": { "value": "{color.white.value}", "source": "$tooltip-color" },
-      "light": { "value": "{color.black.value}", "source": "$tooltip-color-light" },
+      "text": { "value": "{color.white}", "source": "$tooltip-color" },
+      "light": { "value": "{color.black}", "source": "$tooltip-color-light" },
       "bg": {
-        "base": { "value": "{color.black.value}", "source": "$tooltip-bg" },
-        "light": { "value": "{color.white.value}", "source": "$tooltip-bg-light" }
+        "base": { "value": "{color.black}", "source": "$tooltip-bg" },
+        "light": { "value": "{color.white}", "source": "$tooltip-bg-light" }
       },
       "arrow": {
-        "base": { "value": "{color.tooltip.bg.base.value}", "source": "$tooltip-arrow-color" },
-        "light": { "value": "{color.white.value}", "source": "$tooltip-arrow-color-light" }
+        "base": { "value": "{color.tooltip.bg.base}", "source": "$tooltip-arrow-color" },
+        "light": { "value": "{color.white}", "source": "$tooltip-arrow-color-light" }
       }
     }
   },
@@ -43,7 +43,7 @@
         "height": { "value": ".4rem", "source": "$tooltip-arrow-height" },
         "width": { "value": ".8rem", "source": "$tooltip-arrow-width" }
       },
-      "border-radius": { "value": "{size.border.radius.base.value}", "source": "$tooltip-border-radius" }
+      "border-radius": { "value": "{size.border.radius.base}", "source": "$tooltip-border-radius" }
     }
   },
   "other": {
