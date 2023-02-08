@@ -1,5 +1,5 @@
 {
-  "lastModified": 1675692517203,
+  "lastModified": 1675865317367,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -11785,7 +11785,7 @@
       }
     },
     {
-      "version": "19.9.0",
+      "version": "20.20.0",
       "name": "@edx/frontend-app-ecommerce",
       "repository": {
         "type": "git",
@@ -20949,8 +20949,8 @@
           },
           {
             "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 45,
-            "column": 8
+            "line": 47,
+            "column": 10
           }
         ],
         "Hyperlink": [
@@ -20983,18 +20983,18 @@
           },
           {
             "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 32,
+            "line": 55,
             "column": 10
           },
           {
             "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 36,
+            "line": 62,
             "column": 10
           },
           {
             "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 53,
-            "column": 8
+            "line": 66,
+            "column": 10
           }
         ],
         "StatefulButton": [
@@ -21058,38 +21058,59 @@
             "column": 15
           }
         ],
-        "FullscreenModal": [
+        "ModalDialog": [
           {
             "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 26,
+            "line": 28,
             "column": 4
+          }
+        ],
+        "ModalDialog.Hero": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 35,
+            "column": 6
+          }
+        ],
+        "ModalDialog.Body": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 43,
+            "column": 6
+          }
+        ],
+        "Container": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 44,
+            "column": 8
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 48,
+            "column": 12
+          }
+        ],
+        "ModalDialog.Footer": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 60,
+            "column": 6
           }
         ],
         "ActionRow": [
           {
             "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 31,
+            "line": 61,
             "column": 8
           }
         ],
         "ActionRow.Spacer": [
           {
             "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 35,
-            "column": 10
-          }
-        ],
-        "Container": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 42,
-            "column": 6
-          }
-        ],
-        "Form.Control": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 46,
+            "line": 65,
             "column": 10
           }
         ]
@@ -23772,7 +23793,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 55,
+            "line": 59,
             "column": 12
           },
           {
@@ -24221,7 +24242,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/TypeRow.jsx",
-            "line": 31,
+            "line": 37,
             "column": 43
           }
         ],
@@ -24238,7 +24259,7 @@
           },
           {
             "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/index.jsx",
-            "line": 53,
+            "line": 55,
             "column": 16
           },
           {
@@ -24263,7 +24284,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/TypeRow.jsx",
-            "line": 31,
+            "line": 37,
             "column": 32
           },
           {
@@ -24442,14 +24463,14 @@
         "Truncate": [
           {
             "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/index.jsx",
-            "line": 48,
+            "line": 50,
             "column": 6
           }
         ],
         "IconButton": [
           {
             "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/index.jsx",
-            "line": 51,
+            "line": 53,
             "column": 6
           },
           {
@@ -24526,7 +24547,7 @@
         "EditOutline": [
           {
             "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/index.jsx",
-            "line": 57,
+            "line": 59,
             "column": 13
           }
         ],
@@ -24592,12 +24613,12 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 53,
+            "line": 57,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 67,
+            "line": 71,
             "column": 6
           },
           {
@@ -24629,12 +24650,12 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 54,
+            "line": 58,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 68,
+            "line": 72,
             "column": 8
           },
           {
@@ -26519,7 +26540,7 @@
           },
           {
             "filePath": "src/components/DiscoveryCard/DiscoveryCourseCard.jsx",
-            "line": 147,
+            "line": 150,
             "column": 14
           },
           {
@@ -26593,42 +26614,42 @@
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 60,
+            "line": 76,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 74,
+            "line": 90,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 82,
+            "line": 98,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 93,
+            "line": 109,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 105,
+            "line": 121,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 117,
+            "line": 133,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 127,
+            "line": 152,
             "column": 6
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 137,
+            "line": 162,
             "column": 6
           },
           {
@@ -27122,8 +27143,13 @@
           },
           {
             "filePath": "src/components/Course/CoursePageMobile.jsx",
-            "line": 75,
+            "line": 91,
             "column": 8
+          },
+          {
+            "filePath": "src/components/Course/CourseRecommendations/CourseRecommendations.jsx",
+            "line": 21,
+            "column": 4
           },
           {
             "filePath": "src/components/Course/CourseRecommendations/CourseRecommendationsExp.jsx",
@@ -27182,7 +27208,7 @@
           },
           {
             "filePath": "src/components/Home/Hero.jsx",
-            "line": 50,
+            "line": 63,
             "column": 10
           },
           {
@@ -27691,6 +27717,11 @@
             "filePath": "src/components/Header/SearchBar.jsx",
             "line": 24,
             "column": 20
+          },
+          {
+            "filePath": "src/components/Home/Hero.jsx",
+            "line": 35,
+            "column": 20
           }
         ],
         "ArrowOutward": [
@@ -27769,7 +27800,7 @@
           },
           {
             "filePath": "src/components/Video/index.jsx",
-            "line": 129,
+            "line": 128,
             "column": 18
           }
         ],
@@ -28113,8 +28144,8 @@
           },
           {
             "filePath": "src/components/Home/HomeSearchInput.jsx",
-            "line": 57,
-            "column": 10
+            "line": 58,
+            "column": 12
           },
           {
             "filePath": "src/components/Search/PreQuery/SearchBox.jsx",
@@ -28135,8 +28166,8 @@
           },
           {
             "filePath": "src/components/Home/HomeSearchInput.jsx",
-            "line": 65,
-            "column": 10
+            "line": 66,
+            "column": 12
           },
           {
             "filePath": "src/components/Search/PreQuery/SearchBox.jsx",
@@ -28162,8 +28193,8 @@
           },
           {
             "filePath": "src/components/Home/HomeSearchInput.jsx",
-            "line": 67,
-            "column": 8
+            "line": 68,
+            "column": 10
           },
           {
             "filePath": "src/components/Search/PreQuery/SearchBox.jsx",
