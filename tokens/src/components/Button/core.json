@@ -1,21 +1,21 @@
 {
   "color": {
     "btn": {
-      "disabled-link": { "value": "{color.disabled.value}", "source": "$btn-link-disabled-color" }
+      "disabled-link": { "value": "{color.disabled}", "source": "$btn-link-disabled-color" }
     }
   },
   "spacing": {
     "btn": {
       "padding": {
         "y": {
-          "base": { "value": "{spacing.input.btn.padding.y.value}", "source": "$btn-padding-y" },
-          "lg": { "value": "{spacing.input.btn.padding.lg.y.value}", "source": "$btn-padding-y-lg" },
-          "sm": { "value": "{spacing.input.btn.padding.sm.y.value}", "source": "$btn-padding-y-sm" }
+          "base": { "value": "{spacing.input.btn.padding.y}", "source": "$btn-padding-y" },
+          "lg": { "value": "{spacing.input.btn.padding.lg.y}", "source": "$btn-padding-y-lg" },
+          "sm": { "value": "{spacing.input.btn.padding.sm.y}", "source": "$btn-padding-y-sm" }
         },
         "x": {
-          "base": { "value": "{spacing.input.btn.padding.x.value}", "source": "$btn-padding-x" },
-          "lg": { "value": "{spacing.input.btn.padding.lg.x.value}", "source": "$btn-padding-x-lg" },
-          "sm": { "value": "{spacing.input.btn.padding.sm.x.value}", "source": "$btn-padding-x-sm" }
+          "base": { "value": "{spacing.input.btn.padding.x}", "source": "$btn-padding-x" },
+          "lg": { "value": "{spacing.input.btn.padding.lg.x}", "source": "$btn-padding-x-lg" },
+          "sm": { "value": "{spacing.input.btn.padding.sm.x}", "source": "$btn-padding-x-sm" }
         }
       },
       "block": {
@@ -27,18 +27,18 @@
   "typography": {
     "btn": {
       "font": {
-        "family": { "value": "{typography.input.btn.font.family.value}", "source": "$btn-font-family" },
+        "family": { "value": "{typography.input.btn.font.family}", "source": "$btn-font-family" },
         "size": {
-          "base": { "value": "{typography.input.btn.font.size.base.value}", "source": "$btn-font-size" },
-          "sm": { "value": "{typography.input.btn.font.size.sm.value}", "source": "$btn-font-size-sm" },
-          "lg": { "value": "{typography.input.btn.font.size.lg.value}", "source": "$btn-font-size-lg" }
+          "base": { "value": "{typography.input.btn.font.size.base}", "source": "$btn-font-size" },
+          "sm": { "value": "{typography.input.btn.font.size.sm}", "source": "$btn-font-size-sm" },
+          "lg": { "value": "{typography.input.btn.font.size.lg}", "source": "$btn-font-size-lg" }
         },
-        "weight": { "value": "{typography.font.weight.normal.value}", "source": "$btn-font-weight" }
+        "weight": { "value": "{typography.font.weight.normal}", "source": "$btn-font-weight" }
       },
       "line-height": {
-        "base": { "value": "{typography.input.btn.line-height.base.value}", "source": "$btn-line-height" },
-        "sm": { "value": "{typography.input.btn.line-height.sm.value}", "source": "$btn-line-height-sm" },
-        "lg": { "value": "{typography.input.btn.line-height.lg.value}", "source": "$btn-line-height-lg" }
+        "base": { "value": "{typography.input.btn.line-height.base}", "source": "$btn-line-height" },
+        "sm": { "value": "{typography.input.btn.line-height.sm}", "source": "$btn-line-height-sm" },
+        "lg": { "value": "{typography.input.btn.line-height.lg}", "source": "$btn-line-height-lg" }
       }
     }
   },
@@ -61,11 +61,11 @@
   "size": {
     "btn": {
       "border": {
-        "width": { "value": "{size.input.btn.border-width.value}", "source": "$btn-border-width" },
+        "width": { "value": "{size.input.btn.border-width}", "source": "$btn-border-width" },
         "radius": {
-          "base": { "value": "{size.border.radius.base.value}", "source": "$btn-border-radius" },
-          "lg": { "value": "{size.border.radius.lg.value}", "source": "$btn-border-radius-lg" },
-          "sm": { "value": "{size.border.radius.sm.value}", "source": "$btn-border-radius-sm" }
+          "base": { "value": "{size.border.radius.base}", "source": "$btn-border-radius" },
+          "lg": { "value": "{size.border.radius.lg}", "source": "$btn-border-radius-lg" },
+          "sm": { "value": "{size.border.radius.sm}", "source": "$btn-border-radius-sm" }
         }
       },
       "focus-width": { "value": "2px", "source": "$btn-focus-width" }
