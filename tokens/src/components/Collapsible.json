@@ -5,11 +5,11 @@
         "spacer": {
           "y": {
             "base": { "value": ".5rem", "source": "$collapsible-card-spacer-y" },
-            "lg": { "value": "{spacing.card.spacer.y.value}", "source": "$collapsible-card-spacer-y-lg" }
+            "lg": { "value": "{spacing.card.spacer.y}", "source": "$collapsible-card-spacer-y-lg" }
           },
           "x": {
             "base": { "value": ".5rem", "source": "$collapsible-card-spacer-x" },
-            "lg": { "value": "{spacing.card.spacer.x.value}", "source": "$collapsible-card-spacer-x-lg" }
+            "lg": { "value": "{spacing.card.spacer.x}", "source": "$collapsible-card-spacer-x-lg" }
           },
           "left-body": { "value": ".75rem", "source": "$collapsible-card-body-spacer-left" },
           "icon": { "value": "2.5rem", "source": "$collapsible-card-spacer-icon" },
