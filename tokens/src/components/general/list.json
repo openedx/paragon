@@ -1,18 +1,18 @@
 {
   "typography": {
     "dt": {
-      "font-weight": { "value": "{typography.font.weight.bold.value}", "source": "$dt-font-weight" }
+      "font-weight": { "value": "{typography.font.weight.bold}", "source": "$dt-font-weight" }
     }
   },
   "color": {
     "list-group": {
       "base": { "value": "inherit", "source": "$list-group-color" },
       "bg": {
-        "base": { "value": "{color.bg.base.value}", "source": "$list-group-bg" },
-        "hover": { "value": "{color.gray.100.value}", "source": "$list-group-hover-bg" }
+        "base": { "value": "{color.bg.base}", "source": "$list-group-bg" },
+        "hover": { "value": "{color.gray.100}", "source": "$list-group-hover-bg" }
       },
       "border": {
-        "value": "{color.black.value}",
+        "value": "{color.black}",
         "source": "$list-group-border-color",
         "modify": [{
           "type": "alpha",
@@ -20,20 +20,20 @@
         }]
       },
       "active": {
-        "base": { "value": "{color.active.value}", "source": "$list-group-active-color" },
-        "border": { "value": "{color.list-group.active.bg.value}", "source": "$list-group-active-border-color" },
-        "bg": { "value": "{color.bg.active.value}", "source": "$list-group-active-bg" }
+        "base": { "value": "{color.active}", "source": "$list-group-active-color" },
+        "border": { "value": "{color.list-group.active.bg}", "source": "$list-group-active-border-color" },
+        "bg": { "value": "{color.bg.active}", "source": "$list-group-active-bg" }
       },
       "disabled": {
-        "base": { "value": "{color.gray.600.value}", "source": "$list-group-disabled-color" },
-        "bg": { "value": "{color.list-group.bg.base.value}", "source": "$list-group-disabled-bg" }
+        "base": { "value": "{color.gray.600}", "source": "$list-group-disabled-color" },
+        "bg": { "value": "{color.list-group.bg.base}", "source": "$list-group-disabled-bg" }
       },
       "action": {
-        "base": { "value": "{color.gray.700.value}", "source": "$list-group-action-color" },
-        "hover": { "value": "{color.list-group.action.base.value}", "source": "$list-group-action-hover-color" },
+        "base": { "value": "{color.gray.700}", "source": "$list-group-action-color" },
+        "hover": { "value": "{color.list-group.action.base}", "source": "$list-group-action-hover-color" },
         "active": {
-          "base": { "value": "{color.body.base.value}", "source": "$list-group-action-active-color" },
-          "bg": { "value": "{color.gray.200.value}", "source": "$list-group-action-active-bg" }
+          "base": { "value": "{color.body.base}", "source": "$list-group-action-active-color" },
+          "bg": { "value": "{color.gray.200}", "source": "$list-group-action-active-bg" }
         }
       }
     }
@@ -52,8 +52,8 @@
   "size": {
     "list-group": {
       "border": {
-        "width": { "value": "{size.border.width.value}", "source": "$list-group-border-width" },
-        "radius": { "value": "{size.border.radius.base.value}", "source": "$list-group-border-radius" }
+        "width": { "value": "{size.border.width}", "source": "$list-group-border-width" },
+        "radius": { "value": "{size.border.radius.base}", "source": "$list-group-border-radius" }
       }
     }
   }

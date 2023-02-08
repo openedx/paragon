@@ -17,7 +17,7 @@
       "200": { "value": "#CCCCCC", "source": "$gray-200" },
       "300": { "value": "#ADADAD", "source": "$gray-300" },
       "400": { "value": "#8F8F8F", "source": "$gray-400" },
-      "500": { "value": "{color.gray.base.value}", "source": "$gray-500" },
+      "500": { "value": "{color.gray.base}", "source": "$gray-500" },
       "600": { "value": "#5C5C5C", "source": "$gray-600" },
       "700": { "value": "#454545", "source": "$gray-700" },
       "800": { "value": "#333333", "source": "$gray-800" },
@@ -26,7 +26,7 @@
     "primary": {
       "base": { "value": "#0A3055", "source": "$primary" },
       "100": {
-        "value": "{color.primary.base.value}",
+        "value": "{color.primary.base}",
         "source": "$primary-100",
         "modify": [
           {
@@ -37,7 +37,7 @@
         ]
       },
       "200": {
-        "value": "{color.primary.base.value}",
+        "value": "{color.primary.base}",
         "source": "$primary-200",
         "modify": [
           {
@@ -48,7 +48,7 @@
         ]
       },
       "300": {
-        "value": "{color.primary.base.value}",
+        "value": "{color.primary.base}",
         "source": "$primary-300",
         "modify": [
           {
@@ -59,7 +59,7 @@
         ]
       },
       "400": {
-        "value": "{color.primary.base.value}",
+        "value": "{color.primary.base}",
         "source": "$primary-400",
         "modify": [
           {
@@ -69,9 +69,9 @@
           }
         ]
       },
-      "500": { "value": "{color.primary.base.value}", "source": "$primary-500" },
+      "500": { "value": "{color.primary.base}", "source": "$primary-500" },
       "600": {
-        "value": "{color.primary.base.value}",
+        "value": "{color.primary.base}",
         "source": "$primary-600",
         "modify": [
           {
@@ -82,7 +82,7 @@
         ]
       },
       "700": {
-        "value": "{color.primary.base.value}",
+        "value": "{color.primary.base}",
         "source": "$primary-700",
         "modify": [
           {
@@ -93,7 +93,7 @@
         ]
       },
       "800": {
-        "value": "{color.primary.base.value}",
+        "value": "{color.primary.base}",
         "source": "$primary-800",
         "modify": [
           {
@@ -104,7 +104,7 @@
         ]
       },
       "900": {
-        "value": "{color.primary.base.value}",
+        "value": "{color.primary.base}",
         "source": "$primary-900",
         "modify": [
           {
@@ -116,9 +116,9 @@
       }
     },
     "secondary": {
-      "base": { "value": "{color.gray.700.value}", "source": "$secondary" },
+      "base": { "value": "{color.gray.700}", "source": "$secondary" },
       "100": { 
-        "value": "{color.secondary.base.value}",
+        "value": "{color.secondary.base}",
         "source": "$secondary-100",
         "modify": [
           {
@@ -129,7 +129,7 @@
         ]
       },
       "200": { 
-        "value": "{color.secondary.base.value}",
+        "value": "{color.secondary.base}",
         "source": "$secondary-200",
         "modify": [
           {
@@ -140,7 +140,7 @@
         ]
       },
       "300": { 
-        "value": "{color.secondary.base.value}",
+        "value": "{color.secondary.base}",
         "source": "$secondary-300",
         "modify": [
           {
@@ -151,7 +151,7 @@
         ]
       },
       "400": { 
-        "value": "{color.secondary.base.value}",
+        "value": "{color.secondary.base}",
         "source": "$secondary-400",
         "modify": [
           {
@@ -161,9 +161,9 @@
           }
         ]
       },
-      "500": { "value": "{color.secondary.base.value}", "source": "$secondary-500"},
+      "500": { "value": "{color.secondary.base}", "source": "$secondary-500"},
       "600": { 
-        "value": "{color.secondary.base.value}",
+        "value": "{color.secondary.base}",
         "source": "$secondary-600",
         "modify": [
           {
@@ -174,7 +174,7 @@
         ]
       },
       "700": { 
-        "value": "{color.secondary.base.value}",
+        "value": "{color.secondary.base}",
         "source": "$secondary-700",
         "modify": [
           {
@@ -185,7 +185,7 @@
         ]
       },
       "800": { 
-        "value": "{color.secondary.base.value}",
+        "value": "{color.secondary.base}",
         "source": "$secondary-800",
         "modify": [
           {
@@ -196,7 +196,7 @@
         ]
       },
       "900": { 
-        "value": "{color.secondary.base.value}",
+        "value": "{color.secondary.base}",
         "source": "$secondary-900",
         "modify": [
           {
@@ -210,7 +210,7 @@
     "brand": {
       "base": { "value": "#9D0054", "source": "$brand" },
       "100": { 
-        "value": "{color.brand.base.value}",
+        "value": "{color.brand.base}",
         "source": "$brand-100",
         "modify": [
           {
@@ -221,7 +221,7 @@
         ]
       },
       "200": { 
-        "value": "{color.brand.base.value}",
+        "value": "{color.brand.base}",
         "source": "$brand-200",
         "modify": [
           {
@@ -232,7 +232,7 @@
         ]
       },
       "300": { 
-        "value": "{color.brand.base.value}",
+        "value": "{color.brand.base}",
         "source": "$brand-300",
         "modify": [
           {
@@ -243,7 +243,7 @@
         ]
       },
       "400": { 
-        "value": "{color.brand.base.value}",
+        "value": "{color.brand.base}",
         "source": "$brand-400",
         "modify": [
           {
@@ -253,9 +253,9 @@
           }
         ]
       },
-      "500": { "value": "{color.brand.base.value}", "source": "$brand-500" },
+      "500": { "value": "{color.brand.base}", "source": "$brand-500" },
       "600": { 
-        "value": "{color.brand.base.value}",
+        "value": "{color.brand.base}",
         "source": "$brand-600",
         "modify": [
           {
@@ -266,7 +266,7 @@
         ]
       },
       "700": { 
-        "value": "{color.brand.base.value}",
+        "value": "{color.brand.base}",
         "source": "$brand-700",
         "modify": [
           {
@@ -277,7 +277,7 @@
         ]
       },
       "800": { 
-        "value": "{color.brand.base.value}",
+        "value": "{color.brand.base}",
         "source": "$brand-800",
         "modify": [
           {
@@ -288,7 +288,7 @@
         ]
       },
       "900": { 
-        "value": "{color.brand.base.value}",
+        "value": "{color.brand.base}",
         "source": "$brand-900",
         "modify": [
           {
@@ -300,9 +300,9 @@
       }
     },
     "success": {
-      "base": { "value": "{color.green.value}", "source": "$success" },
+      "base": { "value": "{color.green}", "source": "$success" },
       "100": { 
-        "value": "{color.success.base.value}",
+        "value": "{color.success.base}",
         "source": "$success-100",
         "modify": [
           {
@@ -313,7 +313,7 @@
         ]
       },
       "200": { 
-        "value": "{color.success.base.value}",
+        "value": "{color.success.base}",
         "source": "$success-200",
         "modify": [
           {
@@ -324,7 +324,7 @@
         ]
       },
       "300": { 
-        "value": "{color.success.base.value}",
+        "value": "{color.success.base}",
         "source": "$success-300",
         "modify": [
           {
@@ -335,7 +335,7 @@
         ]
       },
       "400": { 
-        "value": "{color.success.base.value}",
+        "value": "{color.success.base}",
         "source": "$success-400",
         "modify": [
           {
@@ -345,9 +345,9 @@
           }
         ]
       },
-      "500": { "value": "{color.success.base.value}", "source": "$success-500" },
+      "500": { "value": "{color.success.base}", "source": "$success-500" },
       "600": { 
-        "value": "{color.success.base.value}",
+        "value": "{color.success.base}",
         "source": "$success-600",
         "modify": [
           {
@@ -358,7 +358,7 @@
         ]
       },
       "700": { 
-        "value": "{color.success.base.value}",
+        "value": "{color.success.base}",
         "source": "$success-700",
         "modify": [
           {
@@ -369,7 +369,7 @@
         ]
       },
       "800": { 
-        "value": "{color.success.base.value}",
+        "value": "{color.success.base}",
         "source": "$success-800",
         "modify": [
           {
@@ -380,7 +380,7 @@
         ]
       },
       "900": { 
-        "value": "{color.success.base.value}",
+        "value": "{color.success.base}",
         "source": "$success-900",
         "modify": [
           {
@@ -392,9 +392,9 @@
       }
     },
     "info": {
-      "base": { "value": "{color.teal.value}", "source": "$info" },
+      "base": { "value": "{color.teal}", "source": "$info" },
       "100": { 
-        "value": "{color.info.base.value}",
+        "value": "{color.info.base}",
         "source": "$info-100",
         "modify": [
           {
@@ -405,7 +405,7 @@
         ]
       },
       "200": { 
-        "value": "{color.info.base.value}",
+        "value": "{color.info.base}",
         "source": "$info-200",
         "modify": [
           {
@@ -416,7 +416,7 @@
         ]
       },
       "300": { 
-        "value": "{color.info.base.value}",
+        "value": "{color.info.base}",
         "source": "$info-300",
         "modify": [
           {
@@ -427,7 +427,7 @@
         ]
       },
       "400": { 
-        "value": "{color.info.base.value}",
+        "value": "{color.info.base}",
         "source": "$info-400",
         "modify": [
           {
@@ -437,9 +437,9 @@
           }
         ]
       },
-      "500": { "value": "{color.info.base.value}", "source": "$info-500" },
+      "500": { "value": "{color.info.base}", "source": "$info-500" },
       "600": { 
-        "value": "{color.info.base.value}",
+        "value": "{color.info.base}",
         "source": "$info-600",
         "modify": [
           {
@@ -450,7 +450,7 @@
         ]
       },
       "700": { 
-        "value": "{color.info.base.value}",
+        "value": "{color.info.base}",
         "source": "$info-700",
         "modify": [
           {
@@ -461,7 +461,7 @@
         ]
       },
       "800": { 
-        "value": "{color.info.base.value}",
+        "value": "{color.info.base}",
         "source": "$info-800",
         "modify": [
           {
@@ -472,7 +472,7 @@
         ]
       },
       "900": { 
-        "value": "{color.info.base.value}",
+        "value": "{color.info.base}",
         "source": "$info-900",
         "modify": [
           {
@@ -484,9 +484,9 @@
       }
     },
     "warning": {
-      "base": { "value": "{color.yellow.value}", "source": "$warning" },
+      "base": { "value": "{color.yellow}", "source": "$warning" },
       "100": { 
-        "value": "{color.warning.base.value}",
+        "value": "{color.warning.base}",
         "source": "$warning-100",
         "modify": [
           {
@@ -497,7 +497,7 @@
         ]
       },
       "200": { 
-        "value": "{color.warning.base.value}",
+        "value": "{color.warning.base}",
         "source": "$warning-200",
         "modify": [
           {
@@ -508,7 +508,7 @@
         ]
       },
       "300": { 
-        "value": "{color.warning.base.value}",
+        "value": "{color.warning.base}",
         "source": "$warning-300",
         "modify": [
           {
@@ -519,7 +519,7 @@
         ]
       },
       "400": { 
-        "value": "{color.warning.base.value}",
+        "value": "{color.warning.base}",
         "source": "$warning-400",
         "modify": [
           {
@@ -529,9 +529,9 @@
           }
         ]
       },
-      "500": { "value": "{color.warning.base.value}", "source": "$warning-500" },
+      "500": { "value": "{color.warning.base}", "source": "$warning-500" },
       "600": { 
-        "value": "{color.warning.base.value}",
+        "value": "{color.warning.base}",
         "source": "$warning-600",
         "modify": [
           {
@@ -542,7 +542,7 @@
         ]
       },
       "700": { 
-        "value": "{color.warning.base.value}",
+        "value": "{color.warning.base}",
         "source": "$warning-700",
         "modify": [
           {
@@ -553,7 +553,7 @@
         ]
       },
       "800": { 
-        "value": "{color.warning.base.value}",
+        "value": "{color.warning.base}",
         "source": "$warning-800",
         "modify": [
           {
@@ -564,7 +564,7 @@
         ]
       },
       "900": { 
-        "value": "{color.warning.base.value}",
+        "value": "{color.warning.base}",
         "source": "$warning-900",
         "modify": [
           {
@@ -576,9 +576,9 @@
       }
     },
     "danger": {
-      "base": { "value": "{color.red.value}", "source": "$danger" },
+      "base": { "value": "{color.red}", "source": "$danger" },
       "100": { 
-        "value": "{color.danger.base.value}",
+        "value": "{color.danger.base}",
         "source": "$danger-100",
         "modify": [
           {
@@ -589,7 +589,7 @@
         ]
       },
       "200": { 
-        "value": "{color.danger.base.value}",
+        "value": "{color.danger.base}",
         "source": "$danger-200",
         "modify": [
           {
@@ -600,7 +600,7 @@
         ]
       },
       "300": { 
-        "value": "{color.danger.base.value}",
+        "value": "{color.danger.base}",
         "source": "$danger-300",
         "modify": [
           {
@@ -611,7 +611,7 @@
         ]
       },
       "400": { 
-        "value": "{color.danger.base.value}",
+        "value": "{color.danger.base}",
         "source": "$danger-400",
         "modify": [
           {
@@ -621,9 +621,9 @@
           }
         ]
       },
-      "500": { "value": "{color.danger.base.value}", "source": "$danger-500" },
+      "500": { "value": "{color.danger.base}", "source": "$danger-500" },
       "600": { 
-        "value": "{color.danger.base.value}",
+        "value": "{color.danger.base}",
         "source": "$danger-600",
         "modify": [
           {
@@ -634,7 +634,7 @@
         ]
       },
       "700": { 
-        "value": "{color.danger.base.value}",
+        "value": "{color.danger.base}",
         "source": "$danger-700",
         "modify": [
           {
@@ -645,7 +645,7 @@
         ]
       },
       "800": { 
-        "value": "{color.danger.base.value}",
+        "value": "{color.danger.base}",
         "source": "$danger-800",
         "modify": [
           {
@@ -656,7 +656,7 @@
         ]
       },
       "900": { 
-        "value": "{color.danger.base.value}",
+        "value": "{color.danger.base}",
         "source": "$danger-900",
         "modify": [
           {
@@ -670,7 +670,7 @@
     "light": {
       "base": { "value": "#E1DDDB", "source": "$light" },
       "100": { 
-        "value": "{color.light.base.value}",
+        "value": "{color.light.base}",
         "source": "$light-100",
         "modify": [
           {
@@ -681,7 +681,7 @@
         ]
       },
       "200": { 
-        "value": "{color.light.base.value}",
+        "value": "{color.light.base}",
         "source": "$light-200",
         "modify": [
           {
@@ -692,7 +692,7 @@
         ]
       },
       "300": { 
-        "value": "{color.light.base.value}",
+        "value": "{color.light.base}",
         "source": "$light-300",
         "modify": [
           {
@@ -703,7 +703,7 @@
         ]
       },
       "400": { 
-        "value": "{color.light.base.value}",
+        "value": "{color.light.base}",
         "source": "$light-400",
         "modify": [
           {
@@ -713,9 +713,9 @@
           }
         ]
       },
-      "500": { "value": "{color.light.base.value}", "source": "$light-500" },
+      "500": { "value": "{color.light.base}", "source": "$light-500" },
       "600": { 
-        "value": "{color.light.base.value}",
+        "value": "{color.light.base}",
         "source": "$light-600",
         "modify": [
           {
@@ -726,7 +726,7 @@
         ]
       },
       "700": { 
-        "value": "{color.light.base.value}",
+        "value": "{color.light.base}",
         "source": "$light-700",
         "modify": [
           {
@@ -737,7 +737,7 @@
         ]
       },
       "800": { 
-        "value": "{color.light.base.value}",
+        "value": "{color.light.base}",
         "source": "$light-800",
         "modify": [
           {
@@ -748,7 +748,7 @@
         ]
       },
       "900": { 
-        "value": "{color.light.base.value}",
+        "value": "{color.light.base}",
         "source": "$light-900",
         "modify": [
           {
@@ -762,7 +762,7 @@
     "dark": {
       "base": { "value": "#273F2F", "source": "$dark" },
       "100": { 
-        "value": "{color.dark.base.value}",
+        "value": "{color.dark.base}",
         "source": "$dark-100",
         "modify": [
           {
@@ -773,7 +773,7 @@
         ]
       },
       "200": { 
-        "value": "{color.dark.base.value}",
+        "value": "{color.dark.base}",
         "source": "$dark-200",
         "modify": [
           {
@@ -784,7 +784,7 @@
         ]
       },
       "300": { 
-        "value": "{color.dark.base.value}",
+        "value": "{color.dark.base}",
         "source": "$dark-300",
         "modify": [
           {
@@ -795,7 +795,7 @@
         ]
       },
       "400": { 
-        "value": "{color.dark.base.value}",
+        "value": "{color.dark.base}",
         "source": "$dark-400",
         "modify": [
           {
@@ -805,9 +805,9 @@
           }
         ]
       },
-      "500": { "value": "{color.dark.base.value}", "source": "$dark-500" },
+      "500": { "value": "{color.dark.base}", "source": "$dark-500" },
       "600": { 
-        "value": "{color.dark.base.value}",
+        "value": "{color.dark.base}",
         "source": "$dark-600",
         "modify": [
           {
@@ -818,7 +818,7 @@
         ]
       },
       "700": { 
-        "value": "{color.dark.base.value}",
+        "value": "{color.dark.base}",
         "source": "$dark-700",
         "modify": [
           {
@@ -829,7 +829,7 @@
         ]
       },
       "800": { 
-        "value": "{color.dark.base.value}",
+        "value": "{color.dark.base}",
         "source": "$dark-800",
         "modify": [
           {
@@ -840,7 +840,7 @@
         ]
       },
       "900": { 
-        "value": "{color.dark.base.value}",
+        "value": "{color.dark.base}",
         "source": "$dark-900",
         "modify": [
           {
