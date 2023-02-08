@@ -3,17 +3,17 @@
     "spacer": {
       "base": { "value": "1rem", "source": "$spacer" },
       "0": { "value": "0" },
-      "1": { "value": "calc({spacing.spacer.base.value} * .25rem)" },
-      "1,5": { "value": "calc({spacing.spacer.base.value} * .375rem)" },
-      "2": { "value": "calc({spacing.spacer.base.value} * .5rem)" },
-      "2,5": { "value": "calc({spacing.spacer.base.value} * .75rem)" },
-      "3": { "value": "{spacing.spacer.base.value}" },
-      "3,5": { "value": "calc({spacing.spacer.base.value} * 1.25rem)" },
-      "4": { "value": "calc({spacing.spacer.base.value} * 1.5rem)" },
-      "4,5": { "value": "calc({spacing.spacer.base.value} * 2rem)" },
-      "5": { "value": "calc({spacing.spacer.base.value} * 3rem)" },
-      "5,5": { "value": "calc({spacing.spacer.base.value} * 4rem)" },
-      "6": { "value": "calc({spacing.spacer.base.value} * 5rem)" }
+      "1": { "value": "calc({spacing.spacer.base} * .25rem)" },
+      "1,5": { "value": "calc({spacing.spacer.base} * .375rem)" },
+      "2": { "value": "calc({spacing.spacer.base} * .5rem)" },
+      "2,5": { "value": "calc({spacing.spacer.base} * .75rem)" },
+      "3": { "value": "{spacing.spacer.base}" },
+      "3,5": { "value": "calc({spacing.spacer.base} * 1.25rem)" },
+      "4": { "value": "calc({spacing.spacer.base} * 1.5rem)" },
+      "4,5": { "value": "calc({spacing.spacer.base} * 2rem)" },
+      "5": { "value": "calc({spacing.spacer.base} * 3rem)" },
+      "5,5": { "value": "calc({spacing.spacer.base} * 4rem)" },
+      "6": { "value": "calc({spacing.spacer.base} * 5rem)" }
     }
   }
 }

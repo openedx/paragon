@@ -2,8 +2,8 @@
   "color": {
     "btn": {
       "text": {
-        "tertiary": { "value": "{color.gray.700.value}", "source": "$btn-tertiary-color" },
-        "inverse-tertiary": { "value": "{color.white.value}", "source": "$btn-inverse-tertiary-color" }
+        "tertiary": { "value": "{color.gray.700}", "source": "$btn-tertiary-color" },
+        "inverse-tertiary": { "value": "{color.white}", "source": "$btn-inverse-tertiary-color" }
       },
       "bg": {
         "tertiary": { "value": "transparent", "source": "$btn-tertiary-bg" },
@@ -15,13 +15,13 @@
       },
       "hover": {
         "text": {
-          "tertiary": { "value": "{color.gray.700.value}", "source": "$btn-tertiary-hover-color" },
-          "inverse-tertiary": { "value": "{color.white.value}", "source": "$btn-inverse-tertiary-hover-color" }
+          "tertiary": { "value": "{color.gray.700}", "source": "$btn-tertiary-hover-color" },
+          "inverse-tertiary": { "value": "{color.white}", "source": "$btn-inverse-tertiary-hover-color" }
         },
         "bg": {
-          "tertiary": { "value": "{color.light.500.value}", "source": "$btn-tertiary-hover-bg" },
+          "tertiary": { "value": "{color.light.500}", "source": "$btn-tertiary-hover-bg" },
           "inverse-tertiary": {
-            "value": "{color.white.value}",
+            "value": "{color.white}",
             "source": "$btn-inverse-tertiary-hover-bg",
             "modify": [{
               "type": "alpha",
@@ -36,12 +36,12 @@
       },
       "active": {
         "text": {
-          "tertiary": { "value": "{color.gray.700.value}", "source": "$btn-tertiary-active-color" },
-          "inverse-tertiary": { "value": "{color.white.value}", "source": "$btn-inverse-tertiary-active-color" }
+          "tertiary": { "value": "{color.gray.700}", "source": "$btn-tertiary-active-color" },
+          "inverse-tertiary": { "value": "{color.white}", "source": "$btn-inverse-tertiary-active-color" }
         },
         "bg": {
-          "tertiary": { "value": "{color.light.500.value}", "source": "$btn-tertiary-active-bg" },
-          "inverse-tertiary":  { "value": "{color.btn.hover.bg.inverse-tertiary.value}", "source": "$btn-inverse-tertiary-active-bg" }
+          "tertiary": { "value": "{color.light.500}", "source": "$btn-tertiary-active-bg" },
+          "inverse-tertiary":  { "value": "{color.btn.hover.bg.inverse-tertiary}", "source": "$btn-inverse-tertiary-active-bg" }
         },
         "border": {
           "tertiary": { "value": "transparent", "source": "$btn-tertiary-active-border-color" },
@@ -50,8 +50,8 @@
       },
       "focus": {
         "border": {
-          "tertiary": { "value": "{color.theme.focus.primary.value}", "source": "$btn-tertiary-focus-border-color" },
-          "inverse-tertiary": { "value": "{color.white.value}", "source": "$btn-inverse-tertiary-focus-border-color" }
+          "tertiary": { "value": "{color.theme.focus.primary}", "source": "$btn-tertiary-focus-border-color" },
+          "inverse-tertiary": { "value": "{color.white}", "source": "$btn-inverse-tertiary-focus-border-color" }
         }
       }
     }
