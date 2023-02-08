@@ -180,7 +180,7 @@ notes: |
 
 <br/>
 
-### Basic usage
+### (Deprecated) basic usage
 
 ```jsx live
 <Tabs.Deprecated
