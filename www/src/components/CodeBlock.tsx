@@ -37,19 +37,31 @@ export type CollapsibleLiveEditorTypes = {
 function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
 
-  const eventSegmentSubmitter = (e: Event & { target: HTMLElement }) => {
-    const useCaseElement: { parentNode: any } = e.target.closest('.pgn-doc__code-block') as HTMLElement;
-    let elementBeforeUseCase: {
-      className: string, id: string, previousSibling: any
-    } = useCaseElement.parentNode.previousSibling;
-    const componentNameAndCategory: string = window.location.pathname.replace(/\//g, '.');
+  const getCodeBlockHeading = (element: ChildNode | null): HTMLHeadElement | null => {
+    if (!element) { return null; }
 
-    while (elementBeforeUseCase.className !== 'pgn-doc__heading') {
-      elementBeforeUseCase = elementBeforeUseCase.previousSibling;
+    let node = element as HTMLElement;
+
+    while (node.className !== 'pgn-doc__heading') {
+      node = node.previousSibling as HTMLElement;
     }
 
-    global.analytics.track(`openedx.ui${componentNameAndCategory}${elementBeforeUseCase.id}.${collapseIsOpen ? 'close' : 'open'}`, {
-      value: `${componentNameAndCategory.replace(/.components./gi, '')}${elementBeforeUseCase.id}`,
+    return node;
+  };
+
+  const submitSegmentEvent = (e: React.MouseEvent & { target: HTMLElement }) => {
+    const useCaseElement = e.target.closest<HTMLDivElement>('.pgn-doc__code-block');
+
+    if (!useCaseElement || !useCaseElement.parentNode) { return; }
+
+    const elementBeforeUseCase = useCaseElement.parentNode.previousSibling;
+    const componentNameAndCategory: string = window.location.pathname.replace(/\//g, '.');
+    const headingElement = getCodeBlockHeading(elementBeforeUseCase);
+
+    if (!headingElement) { return; }
+
+    global.analytics.track(`openedx.ui.example-code-block.${collapseIsOpen ? 'close' : 'open'}`, {
+      value: `${componentNameAndCategory.replace(/.components./gi, '')}${headingElement.id}`,
     });
   };
 
@@ -60,7 +72,7 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
         styling="card-lg"
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
-        onClick={(e) => eventSegmentSubmitter(e)}
+        onClick={submitSegmentEvent}
         withIcon
         title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
