@@ -64,19 +64,21 @@ const CardImageCap = React.forwardRef(({
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      <img
-        className={classNames('pgn__card-image-cap', { show: show.imageCap })}
-        src={src}
-        onError={(event) => handleSrcFallback(event, fallbackSrc, 'imageCap')}
-        onLoad={() => setShow(s => ({ ...s, imageCap: !!src }))}
-        alt={srcAlt}
-      />
+      {!!src && (
+        <img
+          className={classNames('pgn__card-image-cap', { show: show.imageCap })}
+          src={src}
+          onError={(event) => handleSrcFallback(event, fallbackSrc, 'imageCap')}
+          onLoad={() => setShow(s => ({ ...s, imageCap: true }))}
+          alt={srcAlt}
+        />
+      )}
       {!!logoSrc && (
         <img
           className={classNames('pgn__card-logo-cap', { show: show.logoCap })}
           src={logoSrc}
           onError={(event) => handleSrcFallback(event, fallbackLogoSrc, 'logoCap')}
-          onLoad={() => setShow(s => ({ ...s, logoCap: !!logoSrc }))}
+          onLoad={() => setShow(s => ({ ...s, logoCap: true }))}
           alt={logoAlt}
         />
       )}
