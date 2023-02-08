@@ -4,43 +4,43 @@
       "input": {
         "height": {
           "base": {
-            "value": "calc({typography.form.input.line-height.base.value} * 1em + {spacing.form.input.padding.y.base.value} * 2 + {size.form.input.height.border.value})",
+            "value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2 + {size.form.input.height.border})",
             "source": "$input-height"
           },
           "sm": {
-            "value": "calc({typography.form.input.line-height.sm.value} * 1em + {spacing.input.btn.padding.sm.y.value} * 2 + {size.form.input.height.border.value})",
+            "value": "calc({typography.form.input.line-height.sm} * 1em + {spacing.input.btn.padding.sm.y} * 2 + {size.form.input.height.border})",
             "source": "$input-height-sm"
           },
           "lg": {
-            "value": "calc({typography.form.input.line-height.lg.value} * 1em + {spacing.input.btn.padding.lg.y.value} * 2 + {size.form.input.height.border.value})",
+            "value": "calc({typography.form.input.line-height.lg} * 1em + {spacing.input.btn.padding.lg.y} * 2 + {size.form.input.height.border})",
             "source": "$input-height-lg"
           },
           "inner": {
             "base": {
-              "value": "calc({typography.form.input.line-height.base.value} * 1em + {spacing.form.input.padding.y.base.value} * 2)",
+              "value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2)",
               "source": "$input-height-inner"
             },
             "half": {
-              "value": "calc({typography.form.input.line-height.base.value} * .5em + {spacing.form.input.padding.y.base.value})",
+              "value": "calc({typography.form.input.line-height.base} * .5em + {spacing.form.input.padding.y.base})",
               "source": "$input-height-inner-half"
             },
             "quarter": {
-              "value": "calc({typography.form.input.line-height.base.value} * .25em + calc({spacing.form.input.padding.y.base.value} / 2))",
+              "value": "calc({typography.form.input.line-height.base} * .25em + calc({spacing.form.input.padding.y.base} / 2))",
               "source": "$input-height-inner-quarter"
             }
           },
-          "border": { "value": "calc({size.form.input.width.border.value} * 2)", "source": "$input-height-border" }
+          "border": { "value": "calc({size.form.input.width.border} * 2)", "source": "$input-height-border" }
         },
         "width": {
           "hover": { "value": "0.063rem", "source": "$input-hover-width" },
           "focus": { "value": "0.063rem", "source": "$input-focus-width" },
-          "border": { "value": "{size.input.btn.border-width.value}", "source": "$input-border-width" }
+          "border": { "value": "{size.input.btn.border-width}", "source": "$input-border-width" }
         },
         "radius": {
           "border": {
-            "base": { "value": "{size.border.radius.base.value}", "source": "$input-border-radius" },
-            "lg": { "value": "{size.border.radius.lg.value}", "source": "$input-border-radius-lg" },
-            "sm": { "value": "{size.border.radius.sm.value}", "source": "$input-border-radius-sm" }
+            "base": { "value": "{size.border.radius.base}", "source": "$input-border-radius" },
+            "lg": { "value": "{size.border.radius.lg}", "source": "$input-border-radius-lg" },
+            "sm": { "value": "{size.border.radius.sm}", "source": "$input-border-radius-sm" }
           }
         }
       },
@@ -53,35 +53,35 @@
           }
         },
         "switch": {
-          "width": { "value": "calc({size.form.control.indicator.base.value} * 1.75)", "source": "$custom-switch-width" },
+          "width": { "value": "calc({size.form.control.indicator.base} * 1.75)", "source": "$custom-switch-width" },
           "indicator": {
             "base": {
-              "value": "calc({size.form.control.indicator.base.value} - {size.form.control.indicator.border.width.value} * 4)",
+              "value": "calc({size.form.control.indicator.base} - {size.form.control.indicator.border.width} * 4)",
               "source": "$custom-switch-indicator-size"
             },
             "border": {
               "radius": {
-                "value": "calc({size.form.control.indicator.base.value} / 2)", "source": "$custom-switch-indicator-border-radius"
+                "value": "calc({size.form.control.indicator.base} / 2)", "source": "$custom-switch-indicator-border-radius"
               }
             }
           }
         },
         "select": {
           "height": {
-            "base": { "value": "{size.form.input.height.base.value}", "source": "$custom-select-height" },
-            "lg": { "value": "{size.form.input.height.lg.value}", "source": "$custom-select-height-lg" },
-            "sm": { "value": "{size.form.input.height.sm.value}", "source": "$custom-select-height-sm" }
+            "base": { "value": "{size.form.input.height.base}", "source": "$custom-select-height" },
+            "lg": { "value": "{size.form.input.height.lg}", "source": "$custom-select-height-lg" },
+            "sm": { "value": "{size.form.input.height.sm}", "source": "$custom-select-height-sm" }
           },
           "feedback": {
-            "icon": { "value": "{size.form.input.height.inner.half.value} {size.form.input.height.inner.half.value}", "source": "$custom-select-feedback-icon-size" }
+            "icon": { "value": "{size.form.input.height.inner.half} {size.form.input.height.inner.half}", "source": "$custom-select-feedback-icon-size" }
           },
           "border": {
             "width": {
-              "base": { "value": "{size.form.input.width.border.value}", "source": "$custom-select-border-width" },
-              "focus": { "value": "{size.form.input.width.focus.value}", "source": "$custom-select-focus-width" }
+              "base": { "value": "{size.form.input.width.border}", "source": "$custom-select-border-width" },
+              "focus": { "value": "{size.form.input.width.focus}", "source": "$custom-select-focus-width" }
             },
             "radius": {
-              "value": "{size.border.radius.base.value}", "source": "$custom-select-border-radius"
+              "value": "{size.border.radius.base}", "source": "$custom-select-border-radius"
             }
           }
         },
@@ -95,25 +95,25 @@
           },
           "thumb": {
             "width": { "value": "1rem", "source": "$custom-range-thumb-width" },
-            "height": { "value": "{size.form.control.range.thumb.width.value}", "source": "$custom-range-thumb-height" },
+            "height": { "value": "{size.form.control.range.thumb.width}", "source": "$custom-range-thumb-height" },
             "border": {
               "base": { "value": "0", "source": "$custom-range-thumb-border" },
               "radius": { "value": "1rem", "source": "$custom-range-thumb-border-radius" }
             },
             "focus": {
-              "width": { "value": "{size.form.input.width.focus.value}", "source": "$custom-range-thumb-focus-box-shadow-width" }
+              "width": { "value": "{size.form.input.width.focus}", "source": "$custom-range-thumb-focus-box-shadow-width" }
             }
           }
         },
         "file": {
-          "width": { "value": "{size.form.input.width.border.value}", "source": "$custom-file-border-width" },
+          "width": { "value": "{size.form.input.width.border}", "source": "$custom-file-border-width" },
           "height": {
-            "base": { "value": "{size.form.input.height.base.value}",  "source": "$custom-file-height" },
-            "inner": { "value": "{size.form.input.height.inner.base.value}", "source": "$custom-file-height-inner" }
+            "base": { "value": "{size.form.input.height.base}",  "source": "$custom-file-height" },
+            "inner": { "value": "{size.form.input.height.inner.base}", "source": "$custom-file-height-inner" }
           },
           "border": {
             "radius": {
-              "value": "{size.form.input.radius.border.base.value}", "source": "$custom-file-border-radius"
+              "value": "{size.form.input.radius.border.base}", "source": "$custom-file-border-radius"
             }
           }
         },
@@ -160,7 +160,7 @@
       "feedback": {
         "tooltip": {
           "border": {
-            "radius": { "value": "{size.border.radius.base.value}", "source": "$form-feedback-tooltip-border-radius" }
+            "radius": { "value": "{size.border.radius.base}", "source": "$form-feedback-tooltip-border-radius" }
           }
         }
       }

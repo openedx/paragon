@@ -2,7 +2,7 @@
   "typography": {
     "font": {
       "family": {
-        "base": { "value": "{typography.font.family.sans.serif.value}", "source": "$font-family-base" },
+        "base": { "value": "{typography.font.family.sans.serif}", "source": "$font-family-base" },
         "sans": {
           "serif": {
             "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\",  Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\",  \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
@@ -32,13 +32,13 @@
         "h6": { "value": ".75rem", "source": "$h6-font-size" },
         "mobile": {
           "h1": { "value": "2.25rem", "source": "$h1-mobile-font-size" },
-          "h2": { "value": "{typography.font.size.h2.value}", "source": "$h2-mobile-font-size" },
-          "h3": { "value": "{typography.font.size.h3.value}", "source": "$h3-mobile-font-size" },
-          "h4": { "value": "{typography.font.size.h4.value}", "source": "$h4-mobile-font-size" },
-          "h5": { "value": "{typography.font.size.h5.value}", "source": "$h5-mobile-font-size" },
-          "h6": { "value": "{typography.font.size.h6.value}", "source": "$h6-mobile-font-size" }
+          "h2": { "value": "{typography.font.size.h2}", "source": "$h2-mobile-font-size" },
+          "h3": { "value": "{typography.font.size.h3}", "source": "$h3-mobile-font-size" },
+          "h4": { "value": "{typography.font.size.h4}", "source": "$h4-mobile-font-size" },
+          "h5": { "value": "{typography.font.size.h5}", "source": "$h5-mobile-font-size" },
+          "h6": { "value": "{typography.font.size.h6}", "source": "$h6-mobile-font-size" }
         },
-        "lead": { "value": "calc({typography.font.size.base.value} * 1.25)", "source": "$lead-font-size" }
+        "lead": { "value": "calc({typography.font.size.base} * 1.25)", "source": "$lead-font-size" }
       },
       "weight": {
         "lighter": { "value": "lighter", "source": "$font-weight-lighter" },
@@ -49,7 +49,7 @@
         },
         "bold": { "value": "700", "source": "$font-weight-bold" },
         "bolder": { "value": "bolder", "source": "$font-weight-bolder" },
-        "base": { "value": "{typography.font.weight.normal.value}", "source": "$font-weight-base" },
+        "base": { "value": "{typography.font.weight.normal}", "source": "$font-weight-base" },
         "lead": { "value": "inherit", "source": "$lead-font-weight" }
       }
     },
