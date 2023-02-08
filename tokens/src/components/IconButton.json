@@ -2,16 +2,16 @@
   "color": {
     "icon-button": {
       "bg": { "value": "transparent", "source": "$btn-icon-bg" },
-      "accent": { "value": "{color.white.value}", "source": "$btn-icon-accent-color" },
-      "primary": { "value": "{color.primary.base.value}", "source": "$btn-icon-primary" },
-      "secondary": { "value": "{color.secondary.base.value}", "source": "$btn-icon-secondary" },
-      "brand": { "value": "{color.brand.base.value}", "source": "$btn-icon-brand" },
-      "success": { "value": "{color.success.base.value}", "source": "$btn-icon-success" },
-      "warning": { "value": "{color.warning.base.value}", "source": "$btn-icon-warning" },
-      "danger": { "value": "{color.danger.base.value}", "source": "$btn-icon-danger" },
-      "light": { "value": "{color.light.base.value}", "source": "$btn-icon-light" },
-      "dark": { "value": "{color.dark.base.value}", "source": "$btn-icon-dark" },
-      "black": { "value": "{color.black.value}", "source": "$btn-icon-black" }
+      "accent": { "value": "{color.white}", "source": "$btn-icon-accent-color" },
+      "primary": { "value": "{color.primary.base}", "source": "$btn-icon-primary" },
+      "secondary": { "value": "{color.secondary.base}", "source": "$btn-icon-secondary" },
+      "brand": { "value": "{color.brand.base}", "source": "$btn-icon-brand" },
+      "success": { "value": "{color.success.base}", "source": "$btn-icon-success" },
+      "warning": { "value": "{color.warning.base}", "source": "$btn-icon-warning" },
+      "danger": { "value": "{color.danger.base}", "source": "$btn-icon-danger" },
+      "light": { "value": "{color.light.base}", "source": "$btn-icon-light" },
+      "dark": { "value": "{color.dark.base}", "source": "$btn-icon-dark" },
+      "black": { "value": "{color.black}", "source": "$btn-icon-black" }
     }
   },
   "size": {
@@ -19,7 +19,7 @@
       "diameter": {
         "md": { "value": "2.75rem", "source": "$btn-icon-diameter-md" },
         "sm": { "value": "2.25rem", "source": "$btn-icon-diameter-sm" },
-        "inline": { "value": "calc({typography.line-height.base.value} + .1em)", "source": "$btn-icon-diameter-inline" }
+        "inline": { "value": "calc({typography.line-height.base} + .1em)", "source": "$btn-icon-diameter-inline" }
       }
     }
   }
