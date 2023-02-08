@@ -107,7 +107,7 @@
   "size": {
     "nav": {
       "pills": {
-        "border-radius": { "value": "{size.border.radius.base.value}", "source": "$nav-pills-border-radius" }
+        "border-radius": { "value": "{size.border.radius.base}", "source": "$nav-pills-border-radius" }
       },
       "tabs": {
         "border": {
@@ -126,7 +126,7 @@
         }
       },
       "divider": {
-        "margin-y": { "value": "calc({spacing.spacer.base.value} / 2)", "source": "$nav-divider-margin-y" }
+        "margin-y": { "value": "calc({spacing.spacer.base} / 2)", "source": "$nav-divider-margin-y" }
       }
     }
   }
