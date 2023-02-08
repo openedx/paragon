@@ -37,10 +37,16 @@ export type CollapsibleLiveEditorTypes = {
 function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
 
-  const getCodeBlockHeading = (element: ChildNode | null): HTMLHeadElement | null => {
+  const getCodeBlockHeading = (element: HTMLElement | null): HTMLHeadElement | null => {
     if (!element) { return null; }
 
-    let node = element as HTMLElement;
+    const useCaseElement = element.closest<HTMLDivElement>('.pgn-doc__code-block');
+
+    if (!useCaseElement || !useCaseElement.parentNode) { return null; }
+
+    const elementBeforeUseCase = useCaseElement.parentNode.previousSibling;
+
+    let node = elementBeforeUseCase as HTMLElement;
 
     while (node.className !== 'pgn-doc__heading') {
       node = node.previousSibling as HTMLElement;
@@ -50,15 +56,20 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
   };
 
   const submitSegmentEvent = (e: React.MouseEvent & { target: HTMLElement }) => {
-    const useCaseElement = e.target.closest<HTMLDivElement>('.pgn-doc__code-block');
-
-    if (!useCaseElement || !useCaseElement.parentNode) { return; }
-
-    const elementBeforeUseCase = useCaseElement.parentNode.previousSibling;
     const componentNameAndCategory: string = window.location.pathname.replace(/\//g, '.');
-    const headingElement = getCodeBlockHeading(elementBeforeUseCase);
+    let headingElement;
 
-    if (!headingElement) { return; }
+    try {
+      headingElement = getCodeBlockHeading(e.target);
+    } catch (error) {
+      console.error(error);
+
+      global.analytics.track(`openedx.ui.example-code-block.${collapseIsOpen ? 'close' : 'open'}`, {
+        value: `${componentNameAndCategory.replace(/.components./gi, '')}id-not-generated`,
+      });
+
+      return;
+    }
 
     global.analytics.track(`openedx.ui.example-code-block.${collapseIsOpen ? 'close' : 'open'}`, {
       value: `${componentNameAndCategory.replace(/.components./gi, '')}${headingElement.id}`,
