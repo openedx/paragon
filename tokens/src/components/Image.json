@@ -1,10 +1,10 @@
 {
   "color": {
     "image": {
-      "figure-caption": { "value": "{color.gray.500.value}", "source": "$figure-caption-color" },
+      "figure-caption": { "value": "{color.gray.500}", "source": "$figure-caption-color" },
       "thumbnail": {
-        "bg": { "value": "{color.body.bg.value}", "source": "$thumbnail-bg" },
-        "border": { "value": "{color.gray.200.value}", "source": "$thumbnail-border-color" }
+        "bg": { "value": "{color.body.bg}", "source": "$thumbnail-bg" },
+        "border": { "value": "{color.gray.200}", "source": "$thumbnail-border-color" }
       }
     }
   },
@@ -26,8 +26,8 @@
     "image": {
       "thumbnail": {
         "border": {
-          "width": { "value": "{size.border.width.value}", "source": "$thumbnail-border-width" },
-          "radius": { "value": "{size.border.radius.base.value}", "source": "$thumbnail-border-radius"}
+          "width": { "value": "{size.border.width}", "source": "$thumbnail-border-width" },
+          "radius": { "value": "{size.border.radius.base}", "source": "$thumbnail-border-radius"}
         }
       }
     }

@@ -2,15 +2,15 @@
   "size": {
     "hr": {
       "border": {
-        "width": { "value": "{size.border.width.value}", "source": "$hr-border-width" },
-        "margin-y": { "value": "{spacing.spacer.base.value}", "source": "$hr-margin-y" }
+        "width": { "value": "{size.border.width}", "source": "$hr-border-width" },
+        "margin-y": { "value": "{spacing.spacer.base}", "source": "$hr-margin-y" }
       }
     }
   },
   "color": {
     "hr": {
       "border": {
-        "value": "{color.black.value}",
+        "value": "{color.black}",
         "source": "$hr-border-color",
         "modify": [{
           "type": "alpha",

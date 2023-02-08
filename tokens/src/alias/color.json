@@ -1,13 +1,13 @@
 {
   "color": {
     "bg": {
-      "base": { "value": "{color.white.value}" },
-      "active": { "value": "{color.primary.500.value}", "source": "$component-active-bg" }
+      "base": { "value": "{color.white}" },
+      "active": { "value": "{color.primary.500}", "source": "$component-active-bg" }
     },
     "text": {
       "50":{
         "black": {
-          "value": "{color.black.value}",
+          "value": "{color.black}",
           "source": "$text-black-50",
           "modify": [{
             "type": "alpha",
@@ -15,7 +15,7 @@
           }]
         },
         "white": {
-          "value": "{color.white.value}",
+          "value": "{color.white}",
           "source": "$text-white-50",
           "modify": [{
             "type": "alpha",
@@ -24,84 +24,84 @@
         }
       }
     },
-    "active": { "value": "{color.white.value}", "source": "$component-active-color" },
-    "disabled": { "value": "{color.gray.500.value}" },
+    "active": { "value": "{color.white}", "source": "$component-active-color" },
+    "disabled": { "value": "{color.gray.500}" },
     "input": {
-      "focus": { "value": "{color.primary.500.value}" }
+      "focus": { "value": "{color.primary.500}" }
     },
-    "border": { "value": "{color.gray.200.value}", "source": "$border-color" },
+    "border": { "value": "{color.gray.200}", "source": "$border-color" },
     "theme": {
       "bg": {
-        "primary": { "value": "{color.primary.100.value}" },
-        "secondary": { "value": "{color.secondary.100.value}" },
-        "brand": { "value": "{color.brand.100.value}" },
-        "success": { "value": "{color.success.100.value}" },
-        "info": { "value": "{color.info.100.value}" },
-        "warning": { "value": "{color.warning.100.value}" },
-        "danger": { "value": "{color.danger.100.value}" },
-        "light": { "value": "{color.light.100.value}" },
-        "dark": { "value": "{color.dark.100.value}" },
-        "gray": { "value": "{color.gray.100.value}" }
+        "primary": { "value": "{color.primary.100}" },
+        "secondary": { "value": "{color.secondary.100}" },
+        "brand": { "value": "{color.brand.100}" },
+        "success": { "value": "{color.success.100}" },
+        "info": { "value": "{color.info.100}" },
+        "warning": { "value": "{color.warning.100}" },
+        "danger": { "value": "{color.danger.100}" },
+        "light": { "value": "{color.light.100}" },
+        "dark": { "value": "{color.dark.100}" },
+        "gray": { "value": "{color.gray.100}" }
       },
       "border": {
-        "primary": { "value": "{color.primary.200.value}" },
-        "secondary": { "value": "{color.secondary.200.value}" },
-        "brand": { "value": "{color.brand.200.value}" },
-        "success": { "value": "{color.success.200.value}" },
-        "info": { "value": "{color.info.200.value}" },
-        "warning": { "value": "{color.warning.200.value}" },
-        "danger": { "value": "{color.danger.200.value}" },
-        "light": { "value": "{color.light.200.value}" },
-        "dark": { "value": "{color.dark.200.value}" },
-        "gray": { "value": "{color.gray.200.value}" }
+        "primary": { "value": "{color.primary.200}" },
+        "secondary": { "value": "{color.secondary.200}" },
+        "brand": { "value": "{color.brand.200}" },
+        "success": { "value": "{color.success.200}" },
+        "info": { "value": "{color.info.200}" },
+        "warning": { "value": "{color.warning.200}" },
+        "danger": { "value": "{color.danger.200}" },
+        "light": { "value": "{color.light.200}" },
+        "dark": { "value": "{color.dark.200}" },
+        "gray": { "value": "{color.gray.200}" }
       },
       "focus": {
-        "primary": { "value": "{color.primary.300.value}" },
-        "secondary": { "value": "{color.secondary.300.value}" },
-        "brand": { "value": "{color.brand.300.value}" },
-        "success": { "value": "{color.success.300.value}" },
-        "info": { "value": "{color.info.300.value}" },
-        "warning": { "value": "{color.warning.300.value}" },
-        "danger": { "value": "{color.danger.300.value}" },
-        "light": { "value": "{color.light.300.value}" },
-        "dark": { "value": "{color.dark.300.value}" },
-        "gray": { "value": "{color.gray.300.value}" }
+        "primary": { "value": "{color.primary.300}" },
+        "secondary": { "value": "{color.secondary.300}" },
+        "brand": { "value": "{color.brand.300}" },
+        "success": { "value": "{color.success.300}" },
+        "info": { "value": "{color.info.300}" },
+        "warning": { "value": "{color.warning.300}" },
+        "danger": { "value": "{color.danger.300}" },
+        "light": { "value": "{color.light.300}" },
+        "dark": { "value": "{color.dark.300}" },
+        "gray": { "value": "{color.gray.300}" }
       },
       "default": {
-        "primary": { "value": "{color.primary.500.value}" },
-        "secondary": { "value": "{color.secondary.500.value}" },
-        "brand": { "value": "{color.brand.500.value}" },
-        "success": { "value": "{color.success.500.value}" },
-        "info": { "value": "{color.info.500.value}" },
-        "warning": { "value": "{color.warning.500.value}" },
-        "danger": { "value": "{color.danger.500.value}" },
-        "light": { "value": "{color.light.500.value}" },
-        "dark": { "value": "{color.dark.500.value}" },
-        "gray": { "value": "{color.gray.500.value}" }
+        "primary": { "value": "{color.primary.500}" },
+        "secondary": { "value": "{color.secondary.500}" },
+        "brand": { "value": "{color.brand.500}" },
+        "success": { "value": "{color.success.500}" },
+        "info": { "value": "{color.info.500}" },
+        "warning": { "value": "{color.warning.500}" },
+        "danger": { "value": "{color.danger.500}" },
+        "light": { "value": "{color.light.500}" },
+        "dark": { "value": "{color.dark.500}" },
+        "gray": { "value": "{color.gray.500}" }
       },
       "hover": {
-        "primary": { "value": "{color.primary.700.value}" },
-        "secondary": { "value": "{color.secondary.700.value}" },
-        "brand": { "value": "{color.brand.700.value}" },
-        "success": { "value": "{color.success.700.value}" },
-        "info": { "value": "{color.info.700.value}" },
-        "warning": { "value": "{color.warning.700.value}" },
-        "danger": { "value": "{color.danger.700.value}" },
-        "light": { "value": "{color.light.700.value}" },
-        "dark": { "value": "{color.dark.700.value}" },
-        "gray": { "value": "{color.gray.700.value}" }
+        "primary": { "value": "{color.primary.700}" },
+        "secondary": { "value": "{color.secondary.700}" },
+        "brand": { "value": "{color.brand.700}" },
+        "success": { "value": "{color.success.700}" },
+        "info": { "value": "{color.info.700}" },
+        "warning": { "value": "{color.warning.700}" },
+        "danger": { "value": "{color.danger.700}" },
+        "light": { "value": "{color.light.700}" },
+        "dark": { "value": "{color.dark.700}" },
+        "gray": { "value": "{color.gray.700}" }
       },
       "active": {
-        "primary": { "value": "{color.primary.900.value}" },
-        "secondary": { "value": "{color.secondary.900.value}" },
-        "brand": { "value": "{color.brand.900.value}" },
-        "success": { "value": "{color.success.900.value}" },
-        "info": { "value": "{color.info.900.value}" },
-        "warning": { "value": "{color.warning.900.value}" },
-        "danger": { "value": "{color.danger.900.value}" },
-        "light": { "value": "{color.light.900.value}" },
-        "dark": { "value": "{color.dark.900.value}" },
-        "gray": { "value": "{color.gray.900.value}" }
+        "primary": { "value": "{color.primary.900}" },
+        "secondary": { "value": "{color.secondary.900}" },
+        "brand": { "value": "{color.brand.900}" },
+        "success": { "value": "{color.success.900}" },
+        "info": { "value": "{color.info.900}" },
+        "warning": { "value": "{color.warning.900}" },
+        "danger": { "value": "{color.danger.900}" },
+        "light": { "value": "{color.light.900}" },
+        "dark": { "value": "{color.dark.900}" },
+        "gray": { "value": "{color.gray.900}" }
       }
     }
   }
