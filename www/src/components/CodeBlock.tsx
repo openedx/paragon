@@ -37,9 +37,12 @@ export type CollapsibleLiveEditorTypes = {
 function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
 
-  const eventSegmentSubmitter = (e) => {
-    let elementBeforeUseCase = e.target.closest('.pgn-doc__code-block').parentNode.previousSibling;
-    const componentNameAndCategory = window.location.pathname.replace(/\//g, '.');
+  const eventSegmentSubmitter = (e: Event & { target: HTMLElement }) => {
+    const useCaseElement: { parentNode: any } = e.target.closest('.pgn-doc__code-block') as HTMLElement;
+    let elementBeforeUseCase: {
+      className: string, id: string, previousSibling: any
+    } = useCaseElement.parentNode.previousSibling;
+    const componentNameAndCategory: string = window.location.pathname.replace(/\//g, '.');
 
     while (elementBeforeUseCase.className !== 'pgn-doc__heading') {
       elementBeforeUseCase = elementBeforeUseCase.previousSibling;
