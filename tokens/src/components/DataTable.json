@@ -2,9 +2,9 @@
   "color": {
     "data-table": {
       "bg": {
-        "base": { "value": "{color.bg.base.value}", "source": "$data-table-background-color" },
+        "base": { "value": "{color.bg.base}", "source": "$data-table-background-color" },
         "is-loading": {
-          "value": "{color.white.value}",
+          "value": "{color.white}",
           "source": "$data-table-is-loading-bg",
           "modify": [
             {
@@ -14,12 +14,12 @@
           ]
         }
       },
-      "border": { "value": "{color.gray.200.value}", "source": "$data-table-border-color" }
+      "border": { "value": "{color.gray.200}", "source": "$data-table-border-color" }
     }
   },
   "elevation": {
     "data-table": {
-      "box-shadow": { "value": "{elevation.box-shadow.sm.value}", "source": "$data-table-box-shadow" }
+      "box-shadow": { "value": "{elevation.box-shadow.sm}", "source": "$data-table-box-shadow" }
     }
   },
   "size": {

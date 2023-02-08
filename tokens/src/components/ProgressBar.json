@@ -2,19 +2,19 @@
   "color": {
     "progress-bar": {
       "bg": { "value": "transparent", "source": "$progress-bg" },
-      "border": { "value": "{color.gray.500.value}", "source": "$progress-bar-border-color" },
+      "border": { "value": "{color.gray.500}", "source": "$progress-bar-border-color" },
       "bar": {
-        "base": { "value": "{color.white.value}", "source": "$progress-bar-color" },
+        "base": { "value": "{color.white}", "source": "$progress-bar-color" },
         "bg": {
-          "base": { "value": "{color.accent.a.value}", "source": "$progress-bar-bg" },
-          "annotated": { "value": "{color.dark.500.value}", "source": "$annotated-progress-bar-bg" }
+          "base": { "value": "{color.accent.a}", "source": "$progress-bar-bg" },
+          "annotated": { "value": "{color.dark.500}", "source": "$annotated-progress-bar-bg" }
         }
       }
     }
   },
   "typography": {
     "progress-bar": {
-      "font-size": { "value": "calc({typography.font.size.base.value} * .75)", "source": "$progress-font-size" }
+      "font-size": { "value": "calc({typography.font.size.base} * .75)", "source": "$progress-font-size" }
     }
   },
   "size": {

@@ -2,94 +2,94 @@
   "color": {
     "btn": {
       "text": {
-        "info": { "value": "{color.btn.bg.info.value}", "source": "$btn-info-color", "modify": [{ "type": "color-yiq" }] },
-        "outline-info": { "value": "{color.info.base.value}", "source": "$btn-info-outline-color" },
-        "inverse-info": { "value": "{color.info.base.value}", "source": "$btn-info-inverse-color" },
-        "inverse-outline-info": { "value": "{color.white.value}", "source": "$btn-info-inverse-outline-color" }
+        "info": { "value": "{color.btn.bg.info}", "source": "$btn-info-color", "modify": [{ "type": "color-yiq" }] },
+        "outline-info": { "value": "{color.info.base}", "source": "$btn-info-outline-color" },
+        "inverse-info": { "value": "{color.info.base}", "source": "$btn-info-inverse-color" },
+        "inverse-outline-info": { "value": "{color.white}", "source": "$btn-info-inverse-outline-color" }
       },
       "bg": {
-        "info": { "value": "{color.info.base.value}", "source": "$btn-info-bg" },
+        "info": { "value": "{color.info.base}", "source": "$btn-info-bg" },
         "inverse-info": {
-          "value": "{color.btn.text.inverse-info.value}",
+          "value": "{color.btn.text.inverse-info}",
           "source": "$btn-info-inverse-bg",
           "modify": [{ "type": "color-yiq" }]
         }
       },
       "border": {
-        "info": { "value": "{color.btn.bg.info.value}", "source": "$btn-info-border-color" },
-        "outline-info": { "value": "{color.info.base.value}", "source": "$btn-info-outline-border-color" },
-        "inverse-outline-info": { "value": "{color.white.value}", "source": "$btn-info-inverse-outline-border-color" }
+        "info": { "value": "{color.btn.bg.info}", "source": "$btn-info-border-color" },
+        "outline-info": { "value": "{color.info.base}", "source": "$btn-info-outline-border-color" },
+        "inverse-outline-info": { "value": "{color.white}", "source": "$btn-info-inverse-outline-border-color" }
       },
       "hover": {
         "text": {
           "info": {
-            "value": "{color.btn.hover.bg.info.value}",
+            "value": "{color.btn.hover.bg.info}",
             "source": "$btn-info-hover-color",
             "modify": [{ "type": "color-yiq" }]
           },
-          "outline-info": { "value": "{color.theme.hover.info.value}", "source": "$btn-info-outline-hover-color" },
+          "outline-info": { "value": "{color.theme.hover.info}", "source": "$btn-info-outline-hover-color" },
           "inverse-info": {
-            "value": "{color.btn.text.inverse-info.value}",
+            "value": "{color.btn.text.inverse-info}",
             "source": "$btn-info-inverse-hover-color",
             "modify": [{ "type": "darken", "amount": 0.075 }]
           },
-          "inverse-outline-info": { "value": "{color.theme.hover.info.value}", "source": "$btn-info-inverse-outline-hover-color" }
+          "inverse-outline-info": { "value": "{color.theme.hover.info}", "source": "$btn-info-inverse-outline-hover-color" }
         },
         "bg": {
-          "info": { "value": "{color.theme.hover.info.value}", "source": "$btn-info-hover-bg" },
-          "outline-info": { "value": "{color.info.100.value}", "source": "$btn-info-outline-hover-bg" },
+          "info": { "value": "{color.theme.hover.info}", "source": "$btn-info-hover-bg" },
+          "outline-info": { "value": "{color.info.100}", "source": "$btn-info-outline-hover-bg" },
           "inverse-info": {
-            "value": "{color.btn.bg.inverse-info.value}",
+            "value": "{color.btn.bg.inverse-info}",
             "source": "$btn-info-inverse-hover-bg",
             "modify": [{ "type": "darken", "amount": 0.075 }]
           },
-          "inverse-outline-info": { "value": "{color.info.100.value}", "source": "$btn-info-inverse-outline-hover-bg" }
+          "inverse-outline-info": { "value": "{color.info.100}", "source": "$btn-info-inverse-outline-hover-bg" }
         },
         "border": {
-          "info": { "value": "{color.theme.hover.info.value}", "source": "$btn-info-hover-border-color" },
-          "outline-info": { "value": "{color.info.900.value}", "source": "$btn-info-outline-hover-border-color" },
+          "info": { "value": "{color.theme.hover.info}", "source": "$btn-info-hover-border-color" },
+          "outline-info": { "value": "{color.info.900}", "source": "$btn-info-outline-hover-border-color" },
           "inverse-outline-info": { "value": "transparent", "source": "$btn-info-inverse-outline-hover-border-color" }
         }
       },
       "active": {
         "text": {
           "info": {
-            "value": "{color.btn.active.bg.info.value}",
+            "value": "{color.btn.active.bg.info}",
             "source": "$btn-info-active-color",
             "modify": [{ "type": "color-yiq" }]
           },
           "outline-info": {
-            "value": "{color.btn.active.bg.outline-info.value}",
+            "value": "{color.btn.active.bg.outline-info}",
             "source": "$btn-info-outline-active-color",
             "modify": [{ "type": "color-yiq" }]
           },
           "inverse-info": {
-            "value": "{color.btn.text.inverse-info.value}",
+            "value": "{color.btn.text.inverse-info}",
             "source": "$btn-info-inverse-active-color",
             "modify": [{ "type": "darken", "amount": 0.1 }]
           },
           "inverse-outline-info": {
-            "value": "{color.btn.active.bg.inverse-outline-info.value}",
+            "value": "{color.btn.active.bg.inverse-outline-info}",
             "source": "$btn-info-inverse-outline-active-color",
             "modify": [{ "type": "color-yiq" }] }
         },
         "bg": {
-          "info": { "value": "{color.theme.active.info.value}", "source": "$btn-info-active-bg" },
-          "outline-info": { "value": "{color.theme.bg.info.value}", "source": "$btn-info-outline-active-bg" },
-          "inverse-outline-info": { "value": "{color.theme.bg.info.value}", "source": "$btn-info-inverse-outline-active-bg" }
+          "info": { "value": "{color.theme.active.info}", "source": "$btn-info-active-bg" },
+          "outline-info": { "value": "{color.theme.bg.info}", "source": "$btn-info-outline-active-bg" },
+          "inverse-outline-info": { "value": "{color.theme.bg.info}", "source": "$btn-info-inverse-outline-active-bg" }
         },
         "border": {
-          "info": { "value": "{color.theme.active.info.value}", "source": "$btn-info-active-border-color" },
-          "outline-info": { "value": "{color.theme.active.info.value}", "source": "$btn-info-outline-active-border-color" },
+          "info": { "value": "{color.theme.active.info}", "source": "$btn-info-active-border-color" },
+          "outline-info": { "value": "{color.theme.active.info}", "source": "$btn-info-outline-active-border-color" },
           "inverse-outline-info": { "value": "transparent", "source": "$btn-info-inverse-outline-active-border-color" }
         }
       },
       "focus": {
         "border": {
-          "info": { "value": "{color.theme.focus.info.value}", "source": "$btn-info-focus-border-color" },
-          "outline-info": { "value": "{color.theme.focus.info.value}", "source": "$btn-info-outline-focus-border-color" },
-          "inverse-info": { "value": "{color.white.value}", "source": "$btn-info-inverse-focus-border-color" },
-          "inverse-outline-info": { "value": "{color.white.value}", "source": "$btn-info-inverse-outline-focus-border-color" }
+          "info": { "value": "{color.theme.focus.info}", "source": "$btn-info-focus-border-color" },
+          "outline-info": { "value": "{color.theme.focus.info}", "source": "$btn-info-outline-focus-border-color" },
+          "inverse-info": { "value": "{color.white}", "source": "$btn-info-inverse-focus-border-color" },
+          "inverse-outline-info": { "value": "{color.white}", "source": "$btn-info-inverse-outline-focus-border-color" }
         }
       }
     }

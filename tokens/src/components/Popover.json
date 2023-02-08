@@ -1,18 +1,18 @@
 {
   "typography": {
     "popover": {
-      "font-size": { "value": "{typography.font.size.sm.value}", "source": "$popover-font-size" }
+      "font-size": { "value": "{typography.font.size.sm}", "source": "$popover-font-size" }
     }
   },
   "color": {
     "popover": {
-      "bg": { "value": "{color.bg.base.value}", "source": "$popover-bg" },
+      "bg": { "value": "{color.bg.base}", "source": "$popover-bg" },
       "border": { "value": "rgba(0, 0, 0, .2)", "source": "$popover-border-color" },
       "header": {
-        "text": { "value": "{color.headings.base.value}", "source": "$popover-header-color" },
-        "bg": { "value": "{color.white.value}", "source": "$popover-header-bg" },
+        "text": { "value": "{color.headings.base}", "source": "$popover-header-color" },
+        "bg": { "value": "{color.white}", "source": "$popover-header-bg" },
         "bg-dark": {
-          "value": "{color.white.value}",
+          "value": "{color.white}",
           "source": "$popover-header-bg-dark",
           "modify": [{
             "type": "darken",
@@ -20,7 +20,7 @@
           }]
         },
         "border-bottom-dark": {
-          "value": "{color.white.value}",
+          "value": "{color.white}",
           "source": "$popover-header-border-bottom-darken",
           "modify": [{
             "type": "darken",
@@ -28,11 +28,11 @@
           }]
         }
       },
-      "body": { "value": "{color.body.base.value}", "source": "$popover-body-color" },
+      "body": { "value": "{color.body.base}", "source": "$popover-body-color" },
       "arrow": { 
-        "base": { "value": "{color.popover.bg.value}", "source": "$popover-arrow-color" },
+        "base": { "value": "{color.popover.bg}", "source": "$popover-arrow-color" },
         "outer": {
-          "value": "{color.popover.border.value}",
+          "value": "{color.popover.border}",
           "source": "$popover-arrow-outer-color",
           "modify": [{
             "type": "alpha",
@@ -41,16 +41,16 @@
         }
       },
       "success": {
-        "bg": { "value": "{color.success.100.value}", "source": "$popover-success-bg" },
-        "icon": { "value": "{color.success.500.value}", "source": "$popover-success-icon-color" }
+        "bg": { "value": "{color.success.100}", "source": "$popover-success-bg" },
+        "icon": { "value": "{color.success.500}", "source": "$popover-success-icon-color" }
       },
       "warning": {
-        "bg": { "value": "{color.warning.100.value}", "source": "$popover-warning-bg" },
-        "icon": { "value": "{color.warning.500.value}", "source": "$popover-warning-icon-color" }
+        "bg": { "value": "{color.warning.100}", "source": "$popover-warning-bg" },
+        "icon": { "value": "{color.warning.500}", "source": "$popover-warning-icon-color" }
       },
       "danger": {
-        "bg": { "value": "{color.danger.100.value}", "source": "$popover-danger-bg" },
-        "icon": { "value": "{color.warning.500.value}", "source": "$popover-danger-icon-color" }
+        "bg": { "value": "{color.danger.100}", "source": "$popover-danger-bg" },
+        "icon": { "value": "{color.warning.500}", "source": "$popover-danger-icon-color" }
       }
     }
   },
@@ -58,8 +58,8 @@
     "popover": {
       "max-width": { "value": "480px", "source": "$popover-max-width" },
       "border": {
-        "width": { "value": "{size.border.width.value}", "source": "$popover-border-width" },
-        "radius": { "value": "{size.border.radius.sm.value}", "source": "$popover-border-radius" }
+        "width": { "value": "{size.border.width}", "source": "$popover-border-width" },
+        "radius": { "value": "{size.border.radius.sm}", "source": "$popover-border-radius" }
       },
       "icon": {
         "height": { "value": "1rem", "source": "$popover-icon-height" },
@@ -90,8 +90,8 @@
       },
       "body": {
         "padding": {
-          "y": { "value": "{spacing.popover.header.padding.y.value}", "source": "$popover-body-padding-y" },
-          "x": { "value": "{spacing.popover.header.padding.x.value}", "source": "$popover-body-padding-x" }
+          "y": { "value": "{spacing.popover.header.padding.y}", "source": "$popover-body-padding-y" },
+          "x": { "value": "{spacing.popover.header.padding.x}", "source": "$popover-body-padding-x" }
         }
       },
       "icon": {

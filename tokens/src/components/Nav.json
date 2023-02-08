@@ -4,10 +4,10 @@
       "tabs-link": {
         "border": {
           "active": {
-            "value": "transparent transparent {color.primary.500.value}", "source": "$nav-tabs-link-active-border-color"
+            "value": "transparent transparent {color.primary.500}", "source": "$nav-tabs-link-active-border-color"
           },
           "hover": {
-            "value": "transparent transparent {color.nav.tabs.border.value}", "source": "$nav-tabs-link-hover-border-color"
+            "value": "transparent transparent {color.nav.tabs.border}", "source": "$nav-tabs-link-hover-border-color"
           }
         }
       }
@@ -17,33 +17,33 @@
     "nav": {
       "link": {
         "text": {
-          "base": { "value": "{color.gray.700.value}", "source": "$nav-link-color" },
-          "disabled": { "value": "{color.gray.300.value}", "source": "$nav-link-disabled-color" }
+          "base": { "value": "{color.gray.700}", "source": "$nav-link-color" },
+          "disabled": { "value": "{color.gray.300}", "source": "$nav-link-disabled-color" }
         }
       },
       "tabs": {
-        "border": { "value": "{color.light.400.value}", "source": "$nav-tabs-border-color" },
+        "border": { "value": "{color.light.400}", "source": "$nav-tabs-border-color" },
         "link": {
           "hover": {
-            "bg": { "value": "{color.light.400.value}", "source": "$nav-tabs-link-hover-bg" }
+            "bg": { "value": "{color.light.400}", "source": "$nav-tabs-link-hover-bg" }
           },
           "active": {
-            "text": { "value": "{color.primary.500.value}", "source": "$nav-tabs-link-active-color" },
-            "bg": { "value": "{color.body.bg.value}", "source": "$nav-tabs-link-active-bg" }
+            "text": { "value": "{color.primary.500}", "source": "$nav-tabs-link-active-color" },
+            "bg": { "value": "{color.body.bg}", "source": "$nav-tabs-link-active-bg" }
           }
         }
       },
       "pills": {
         "link": {
           "active": {
-            "text": { "value": "{color.active.value}", "source": "$nav-pills-link-active-color" },
-            "bg": { "value": "{color.bg.active.value}", "source": "$nav-pills-link-active-bg" }
+            "text": { "value": "{color.active}", "source": "$nav-pills-link-active-color" },
+            "bg": { "value": "{color.bg.active}", "source": "$nav-pills-link-active-bg" }
           }
         }
       },
-      "divider": { "value": "{color.gray.100.value}", "source": "$nav-divider-color" },
+      "divider": { "value": "{color.gray.100}", "source": "$nav-divider-color" },
       "dark": {
-        "value": "{color.white.value}",
+        "value": "{color.white}",
         "source": "$navbar-dark-color",
         "modify": [{
           "type": "alpha",
@@ -51,7 +51,7 @@
         }]
       },
       "light": {
-        "value": "{color.black.value}",
+        "value": "{color.black}",
         "source": "$navbar-light-color",
         "modify": [{
           "type": "alpha",
@@ -70,7 +70,7 @@
   "size": {
     "nav": {
       "pills": {
-        "border-radius": { "value": "{size.border.radius.base.value}", "source": "$nav-pills-border-radius" }
+        "border-radius": { "value": "{size.border.radius.base}", "source": "$nav-pills-border-radius" }
       },
       "tabs": {
         "border": {
@@ -89,7 +89,7 @@
         }
       },
       "divider": {
-        "margin-y": { "value": "calc({spacing.spacer.base.value} / 2)", "source": "$nav-divider-margin-y" }
+        "margin-y": { "value": "calc({spacing.spacer.base} / 2)", "source": "$nav-divider-margin-y" }
       }
     }
   }
