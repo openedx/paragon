@@ -46,14 +46,20 @@ const CardImageCap = React.forwardRef(({
     );
   }
 
-  const handleSrcFallback = (event, altSrc) => {
+  const handleSrcFallback = (event, altSrc, imageKey) => {
     const { currentTarget } = event;
 
     if (!altSrc || currentTarget.src.endsWith(altSrc)) {
-      currentTarget.style.display = 'none';
-    } else if (currentTarget.src !== altSrc) {
-      currentTarget.src = altSrc;
+      if (imageKey === 'imageCap') {
+        currentTarget.src = cardSrcFallbackImg;
+      } else {
+        setShow(s => ({ ...s, logoCap: false }));
+      }
+
+      return;
     }
+
+    currentTarget.src = altSrc;
   };
 
   return (
@@ -61,16 +67,16 @@ const CardImageCap = React.forwardRef(({
       <img
         className={classNames('pgn__card-image-cap', { show: show.imageCap })}
         src={src}
-        onError={(event) => handleSrcFallback(event, fallbackSrc)}
-        onLoad={() => setShow({ ...show, imageCap: src })}
+        onError={(event) => handleSrcFallback(event, fallbackSrc, 'imageCap')}
+        onLoad={() => setShow(s => ({ ...s, imageCap: !!src }))}
         alt={srcAlt}
       />
       {!!logoSrc && (
         <img
           className={classNames('pgn__card-logo-cap', { show: show.logoCap })}
           src={logoSrc}
-          onError={(event) => handleSrcFallback(event, fallbackLogoSrc)}
-          onLoad={() => setShow({ ...show, logoCap: logoSrc })}
+          onError={(event) => handleSrcFallback(event, fallbackLogoSrc, 'logoCap')}
+          onLoad={() => setShow(s => ({ ...s, logoCap: !!logoSrc }))}
           alt={logoAlt}
         />
       )}

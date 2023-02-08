@@ -108,7 +108,8 @@ describe('<CardImageCap />', () => {
 
     const logoImg = screen.getByAltText('Logo alt text');
     fireEvent.load(logoImg);
+    expect(logoImg.className).toEqual('pgn__card-logo-cap show');
     fireEvent.error(logoImg);
-    expect(logoImg.style.display).toEqual('none');
+    expect(logoImg.className).toEqual('pgn__card-logo-cap');
   });
 });
