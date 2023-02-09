@@ -37,42 +37,41 @@ export type CollapsibleLiveEditorTypes = {
 function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
 
-  const getCodeBlockHeading = (element: HTMLElement | null): HTMLHeadElement | null => {
-    if (!element) { return null; }
+  const getCodeBlockHeading = (element: HTMLElement): HTMLHeadElement | null => {
+    const codeBlockWrapper = element.closest<HTMLDivElement>('.pgn-doc__code-block');
 
-    const useCaseElement = element.closest<HTMLDivElement>('.pgn-doc__code-block');
+    if (!codeBlockWrapper) {
+      return null;
+    }
 
-    if (!useCaseElement || !useCaseElement.parentNode) { return null; }
-
-    const elementBeforeUseCase = useCaseElement.parentNode.previousSibling;
-
-    let node = elementBeforeUseCase as HTMLElement;
+    let node = codeBlockWrapper!.parentNode!.previousSibling as HTMLElement;
 
     while (node.className !== 'pgn-doc__heading') {
       node = node.previousSibling as HTMLElement;
+
+      if (!node) {
+        return null;
+      }
     }
 
     return node;
   };
 
   const submitSegmentEvent = (e: React.MouseEvent & { target: HTMLElement }) => {
-    const componentNameAndCategory: string = window.location.pathname.replace(/\//g, '.');
-    let headingElement;
+    const componentNameAndCategory = window.location.pathname.replace(/\//g, '.')
+      .replace(/.components./gi, '');
+    const headingElement = getCodeBlockHeading(e.target);
 
-    try {
-      headingElement = getCodeBlockHeading(e.target);
-    } catch (error) {
-      console.error(error);
-
+    if (!headingElement) {
       global.analytics.track(`openedx.ui.example-code-block.${collapseIsOpen ? 'close' : 'open'}`, {
-        value: `${componentNameAndCategory.replace(/.components./gi, '')}id-not-generated`,
+        value: `${componentNameAndCategory}id-not-generated`,
       });
 
       return;
     }
 
     global.analytics.track(`openedx.ui.example-code-block.${collapseIsOpen ? 'close' : 'open'}`, {
-      value: `${componentNameAndCategory.replace(/.components./gi, '')}${headingElement.id}`,
+      value: `${componentNameAndCategory}${headingElement.id}`,
     });
   };
 
