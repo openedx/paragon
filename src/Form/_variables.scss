@@ -122,6 +122,8 @@ $custom-checkbox-indicator-indeterminate-border-color: $custom-checkbox-indicato
 
 $custom-radio-indicator-border-radius:          50% !default;
 $custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-bg}'/%3e%3c/svg%3e"), "#", "%23") !default;
+$custom-radio-indicator-icon-valid-checked:     str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-valid-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
+$custom-radio-indicator-icon-invalid-checked:   str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-invalid-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
 
 $custom-switch-indicator-icon-off:              str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-bg}'/%3e%3c/svg%3e"), "#", "%23") !default;
 $custom-switch-indicator-icon-on:               str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-active-color}'/%3e%3c/svg%3e"), "#", "%23") !default;

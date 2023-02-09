@@ -479,18 +479,10 @@ select.form-control {
 
   &.pgn__form-control-invalid input {
     border-color: $form-feedback-invalid-color;
-
-    &:checked {
-      background-image: escape-svg($custom-checkbox-indicator-icon-valid-checked);
-    }
   }
 
   &.pgn__form-control-valid input {
     border-color: $form-feedback-valid-color;
-
-    &:checked {
-      background-image: escape-svg($custom-checkbox-indicator-icon-invalid-checked);
-    }
   }
 
   &.pgn__form-control-label-left {
@@ -501,6 +493,34 @@ select.form-control {
 
     input {
       order: 2;
+    }
+  }
+}
+
+.pgn__form-checkbox {
+  &.pgn__form-control-invalid input {
+    &:checked {
+      background-image: escape-svg($custom-checkbox-indicator-icon-invalid-checked);
+    }
+  }
+
+  &.pgn__form-control-valid input {
+    &:checked {
+      background-image: escape-svg($custom-checkbox-indicator-icon-valid-checked);
+    }
+  }
+}
+
+.pgn__form-radio {
+  &.pgn__form-control-invalid input {
+    &:checked {
+      background-image: escape-svg($custom-radio-indicator-icon-invalid-checked);
+    }
+  }
+
+  &.pgn__form-control-valid input {
+    &:checked {
+      background-image: escape-svg($custom-radio-indicator-icon-valid-checked);
     }
   }
 }
