@@ -23,7 +23,8 @@ const CardImageCap = React.forwardRef(({
   className,
 }, ref) => {
   const { orientation, isLoading } = useContext(CardContext);
-  const [show, setShow] = useState({ imageCap: false, logoCap: false });
+  const [showImageCap, setShowImageCap] = useState(false);
+  const [showLogoCap, setShowLogoCap] = useState(false);
   const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
 
   if (isLoading) {
@@ -53,7 +54,7 @@ const CardImageCap = React.forwardRef(({
       if (imageKey === 'imageCap') {
         currentTarget.src = cardSrcFallbackImg;
       } else {
-        setShow(s => ({ ...s, logoCap: false }));
+        setShowLogoCap(false);
       }
 
       return;
@@ -66,19 +67,19 @@ const CardImageCap = React.forwardRef(({
     <div className={classNames(className, wrapperClassName)} ref={ref}>
       {!!src && (
         <img
-          className={classNames('pgn__card-image-cap', { show: show.imageCap })}
+          className={classNames('pgn__card-image-cap', { show: showImageCap })}
           src={src}
           onError={(event) => handleSrcFallback(event, fallbackSrc, 'imageCap')}
-          onLoad={() => setShow(s => ({ ...s, imageCap: true }))}
+          onLoad={() => setShowImageCap(true)}
           alt={srcAlt}
         />
       )}
       {!!logoSrc && (
         <img
-          className={classNames('pgn__card-logo-cap', { show: show.logoCap })}
+          className={classNames('pgn__card-logo-cap', { show: showLogoCap })}
           src={logoSrc}
           onError={(event) => handleSrcFallback(event, fallbackLogoSrc, 'logoCap')}
-          onLoad={() => setShow(s => ({ ...s, logoCap: true }))}
+          onLoad={() => setShowLogoCap(true)}
           alt={logoAlt}
         />
       )}
