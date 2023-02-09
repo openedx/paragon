@@ -8,6 +8,7 @@ exports[`<CardImageCap /> renders with scr prop and srcAlt 1`] = `
     alt="Alt text"
     className="pgn__card-image-cap"
     onError={[Function]}
+    onLoad={[Function]}
     src="http://fake.image"
   />
 </div>
@@ -20,6 +21,7 @@ exports[`<CardImageCap /> renders with scr prop in horizontal orientation 1`] = 
   <img
     className="pgn__card-image-cap"
     onError={[Function]}
+    onLoad={[Function]}
     src="http://fake.image"
   />
 </div>
@@ -32,11 +34,13 @@ exports[`<CardImageCap /> renders with src and logoSrc prop in horizontal orient
   <img
     className="pgn__card-image-cap"
     onError={[Function]}
+    onLoad={[Function]}
     src="http://fake.image"
   />
   <img
     className="pgn__card-logo-cap"
     onError={[Function]}
+    onLoad={[Function]}
     src="http://fake.image"
   />
 </div>
@@ -49,12 +53,14 @@ exports[`<CardImageCap /> renders with src, logoSrc and logoAlt props 1`] = `
   <img
     className="pgn__card-image-cap"
     onError={[Function]}
+    onLoad={[Function]}
     src="http://fake.image"
   />
   <img
     alt="Logo alt"
     className="pgn__card-logo-cap"
     onError={[Function]}
+    onLoad={[Function]}
     src="http://fake.image"
   />
 </div>

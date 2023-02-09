@@ -92,12 +92,34 @@ describe('<CardImageCap />', () => {
     );
     const srcImg = screen.getByAltText('Src alt text');
     expect(srcImg.src).toEqual('http://src.image/');
+    fireEvent.load(srcImg);
     fireEvent.error(srcImg);
     expect(srcImg.src).toEqual('http://src.image.fallback/');
 
     const logoImg = screen.getByAltText('Logo alt text');
     expect(logoImg.src).toEqual('http://logo.image/');
+    fireEvent.load(srcImg);
     fireEvent.error(logoImg);
     expect(logoImg.src).toEqual('http://logo.image.fallback/');
+  });
+
+  it('hiding component if it isn`t fallbackLogoSrc and logoSrc don`t work', () => {
+    render(<CardImageCapWrapper logoSrc="fakeURL" logoAlt="Logo alt text" />);
+
+    const logoImg = screen.getByAltText('Logo alt text');
+    fireEvent.load(logoImg);
+    expect(logoImg.className).toEqual('pgn__card-logo-cap show');
+    fireEvent.error(logoImg);
+    expect(logoImg.className).toEqual('pgn__card-logo-cap');
+  });
+
+  it('hiding component if it isn`t fallbackSrc and src don`t work', () => {
+    render(<CardImageCapWrapper src="fakeURL" fallbackSrc="fakeURL" srcAlt="Src alt text" />);
+
+    const srcImg = screen.getByAltText('Src alt text');
+    fireEvent.load(srcImg);
+    fireEvent.error(srcImg);
+    // test-file-stub is what our fileMock.js returns for all images
+    expect(srcImg.src.endsWith('test-file-stub')).toEqual(true);
   });
 });
