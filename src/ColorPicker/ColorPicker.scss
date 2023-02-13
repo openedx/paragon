@@ -1,6 +1,7 @@
 @import "variables";
 
 .pgn__color-picker {
+  box-shadow: 0 0 3px 1px $gray-300;
   border: none;
   background:
     linear-gradient(to bottom right,
@@ -35,6 +36,17 @@
 }
 
 .pgn__hex-form {
+  display: flex;
   max-width: 180px;
-  margin: .5rem auto;
+  margin: 5px;
+
+  h5 {
+    margin: 10px;
+  }
+
+  .form-field {
+    @media (min-width: map-get($grid-breakpoints, "sm")) {
+      margin-inline-end: 0;
+    }
+  }
 }

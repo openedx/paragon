@@ -32,7 +32,7 @@ notes: |
 
 () => {
   const [color, setColor] = useState('#32116c')
-  const [colorBad, setColorBad] = useState('bad')
+  const [colorBad, setColorBad] = useState('#badcolor')
 
   return (
   <div className="d-flex bg-light p-2" style={{ columnGap: '1rem' }}>
