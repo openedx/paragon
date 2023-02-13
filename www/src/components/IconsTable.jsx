@@ -81,18 +81,16 @@ function IconsTable() {
     global.analytics.track('openedx.paragon.docs.icons-table.selected-icon.copied', { name: currentIcon });
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const debouncedSetIconsList = useCallback(
-    debounce(
-      (list) => {
-        global.analytics.track('openedx.paragon.docs.icons-table.search', { value: searchValue });
-        setData({ rowsCount: ROWS_PER_WINDOW, iconsList: list });
-      },
-      250,
-      { leading: false },
-    ),
-    [],
-  );
+  const submitSegmentEvent = useCallback(() => {
+    if (typeof searchValue === 'string' && searchValue.trim() !== '') {
+      global.analytics.track('openedx.paragon.docs.icons-table.search', { value: searchValue });
+    }
+  }, [searchValue]);
+
+  const handleChangeSearchValue = useMemo(() => {
+    submitSegmentEvent();
+    return debounce(setSearchValue, 500, { leading: false });
+  }, [submitSegmentEvent]);
 
   useEffect(() => {
     if (tableRef.current) {
@@ -122,10 +120,9 @@ function IconsTable() {
   }, []);
 
   useEffect(() => {
-    debouncedSetIconsList(
-      ICON_NAMES.filter(name => name.toLowerCase().includes(searchValue.toLowerCase())),
-    );
-  }, [searchValue, debouncedSetIconsList]);
+    const list = ICON_NAMES.filter(name => name.toLowerCase().includes(searchValue.toLowerCase()));
+    setData({ rowsCount: ROWS_PER_WINDOW, iconsList: list });
+  }, [searchValue]);
 
   const rowsIndices = useMemo(() => [...Array(rowsCount).keys()], [rowsCount]);
 
@@ -133,7 +130,7 @@ function IconsTable() {
     <>
       <SearchField
         onSubmit={() => {}}
-        onChange={value => setSearchValue(value)}
+        onChange={handleChangeSearchValue}
         placeholder="Search icons"
       />
       {currentIcon && (
