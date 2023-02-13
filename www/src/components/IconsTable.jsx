@@ -1,6 +1,4 @@
-import React, {
-  useCallback, useEffect, useMemo, useState,
-} from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import { Icon, SearchField, Toast } from '~paragon-react';
@@ -81,16 +79,7 @@ function IconsTable() {
     global.analytics.track('openedx.paragon.docs.icons-table.selected-icon.copied', { name: currentIcon });
   };
 
-  const submitSegmentEvent = useCallback(() => {
-    if (typeof searchValue === 'string' && searchValue.trim() !== '') {
-      global.analytics.track('openedx.paragon.docs.icons-table.search', { value: searchValue });
-    }
-  }, [searchValue]);
-
-  const handleChangeSearchValue = useMemo(() => {
-    submitSegmentEvent();
-    return debounce(setSearchValue, 500, { leading: false });
-  }, [submitSegmentEvent]);
+  const handleChangeSearchValue = useMemo(() => debounce(setSearchValue, 500, { leading: false }), []);
 
   useEffect(() => {
     if (tableRef.current) {
@@ -121,6 +110,9 @@ function IconsTable() {
 
   useEffect(() => {
     const list = ICON_NAMES.filter(name => name.toLowerCase().includes(searchValue.toLowerCase()));
+    if (typeof searchValue === 'string' && searchValue.trim() !== '') {
+      global.analytics?.track('openedx.paragon.docs.icons-table.search', { value: searchValue, amount: list.length });
+    }
     setData({ rowsCount: ROWS_PER_WINDOW, iconsList: list });
   }, [searchValue]);
 
