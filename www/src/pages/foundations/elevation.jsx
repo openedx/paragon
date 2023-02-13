@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {
   Button,
   Form,
-  Container,
   Input,
   Toast,
   Icon,
@@ -12,6 +11,7 @@ import {
 import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
+import ContentWrapper from '../../components/ContentWrapper';
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
@@ -269,22 +269,22 @@ function BoxShadowGenerator() {
 
 export default function ElevationPage() {
   const levelTitle = boxShadowLevels.map(level => (
-    <h3 key={level} className="pgn-doc__box-shadow-level-title">
+    <p key={level} className="pgn-doc__box-shadow-level-title h3">
       Level {level}
-    </h3>
+    </p>
   ));
 
   const sideTitle = boxShadowSides.map(side => (
-    <h3 key={side} className="pgn-doc__box-shadow-side-title">
+    <p key={side} className="pgn-doc__box-shadow-side-title h3">
       {side.charAt(0).toUpperCase() + side.substring(1)}
-    </h3>
+    </p>
   ));
 
   return (
     <Layout>
-      <Container className="py-5" size="md">
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <SEO title="Elevation" />
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <SEO title="Elevation" />
+      <ContentWrapper addAnchors>
         <h1 className="mb-3">Elevation & Shadow</h1>
         <p className="mb-5">
           You can quickly add a <code>box-shadow</code> with the Clickable Box-Shadow Grid.
@@ -392,7 +392,7 @@ export default function ElevationPage() {
           and so does this online tool. Use the Add New Layer button to save the current line and set up a new one.
         </p>
         <BoxShadowGenerator />
-      </Container>
+      </ContentWrapper>
     </Layout>
   );
 }

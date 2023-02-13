@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  DataTable, Container, breakpoints, OverlayTrigger, Tooltip, Icon,
+  DataTable, breakpoints, OverlayTrigger, Tooltip, Icon,
 } from '~paragon-react';
 import { QuestionMark } from '~paragon-icons';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import CodeBlock from '../../components/CodeBlock';
+import ContentWrapper from '../../components/ContentWrapper';
 
 const BREAKPOINT_DESCRIPTIONS = {
   extraSmall: { name: 'Extra small', identifier: 'xs' },
@@ -59,9 +60,9 @@ function Responsive() {
 
   return (
     <Layout>
-      <Container size="md" className="py-5">
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <SEO title="Responsive" />
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <SEO title="Responsive" />
+      <ContentWrapper addAnchors>
         <h1>Responsive</h1>
         <h2>Available breakpoints</h2>
         <p>
@@ -96,7 +97,7 @@ function Responsive() {
         <CodeBlock className="language-scss">
           {'@include media-breakpoint-up(map-get($grid-breakpoints, \'lg\')) { // styles here }'}
         </CodeBlock>
-      </Container>
+      </ContentWrapper>
     </Layout>
   );
 }

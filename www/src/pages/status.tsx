@@ -1,9 +1,10 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { Table, Container } from '~paragon-react';
+import { Table } from '~paragon-react';
 import { ComponentStatus } from '../components/doc-elements';
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
+import ContentWrapper from '../components/ContentWrapper';
 
 export interface IComponents {
   frontmatter?: string,
@@ -13,9 +14,9 @@ export interface IComponents {
 export default function StatusPage() {
   return (
     <Layout>
-      <Container size="md" className="py-5">
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <SEO title="Status" />
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <SEO title="Status" />
+      <ContentWrapper addAnchors>
         <h1>Library Status</h1>
 
         <h3>Components Status</h3>
@@ -84,7 +85,7 @@ export default function StatusPage() {
             );
           }}
         />
-      </Container>
+      </ContentWrapper>
     </Layout>
   );
 }

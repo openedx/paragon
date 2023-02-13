@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Container } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
+import ContentWrapper from '../../components/ContentWrapper';
 
 export type WeightLabelsTypes = {
   [key: string]: string,
@@ -44,9 +44,9 @@ const measuredTypeProps = {
 export default function TypographyPage() {
   return (
     <Layout>
-      <Container size="xl" className="py-5">
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <SEO title="Typography" />
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <SEO title="Typography" />
+      <ContentWrapper addAnchors>
         <h1>Typography</h1>
         <table className="w-100 table pgn-doc__status-table">
           <tbody>
@@ -391,7 +391,7 @@ export default function TypographyPage() {
             </tr>
           </tbody>
         </table>
-      </Container>
+      </ContentWrapper>
     </Layout>
   );
 }

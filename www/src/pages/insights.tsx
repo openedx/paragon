@@ -4,7 +4,10 @@ import PropTypes from 'prop-types';
 import {
   Tabs,
   Tab,
-  Container,
+  TextFilter,
+  CheckboxFilter,
+  useMediaQuery,
+  breakpoints,
 } from '~paragon-react';
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
@@ -19,6 +22,7 @@ import ComponentsUsage from '../components/insights/ComponentsUsage';
 // @ts-ignore
 import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
+import ContentWrapper from '../components/ContentWrapper';
 import componentsUsage from '../utils/componentsUsage';
 import { IInsightsContext } from '../types/types';
 
@@ -60,9 +64,9 @@ export default function InsightsPage({ pageContext: { tab } }: { pageContext: { 
   };
   return (
     <Layout>
-      <Container size="md" className="py-5">
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <SEO title="Usage Insights" />
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <SEO title="Usage Insights" />
+      <ContentWrapper addAnchors>
         <header className="mb-5">
           <h1>Usage Insights</h1>
           <p>Last updated: {new Date(analysisLastUpdated).toLocaleDateString()}</p>
@@ -74,36 +78,36 @@ export default function InsightsPage({ pageContext: { tab } }: { pageContext: { 
         >
           <Tab eventKey={INSIGHTS_TABS.SUMMARY} title="Summary">
             {tab === INSIGHTS_TABS.SUMMARY && (
-              <SummaryUsage />
+            <SummaryUsage />
             )}
           </Tab>
           <Tab eventKey={INSIGHTS_TABS.PROJECTS} title="Projects">
             {tab === INSIGHTS_TABS.PROJECTS && (
-              <ProjectsUsage />
+            <ProjectsUsage />
             )}
           </Tab>
           <Tab eventKey={INSIGHTS_TABS.COMPONENTS} title="Components">
             {tab === INSIGHTS_TABS.COMPONENTS && (
-              <ComponentsUsage data={components} />
+            <ComponentsUsage data={components} />
             )}
           </Tab>
           <Tab eventKey={INSIGHTS_TABS.HOOKS} title="Hooks">
             {tab === INSIGHTS_TABS.HOOKS && (
-              <HooksUsage data={hooks} />
+            <HooksUsage data={hooks} />
             )}
           </Tab>
           <Tab eventKey={INSIGHTS_TABS.UTILS} title="Utils">
             {tab === INSIGHTS_TABS.UTILS && (
-              <UtilsUsage data={utils} />
+            <UtilsUsage data={utils} />
             )}
           </Tab>
           <Tab eventKey={INSIGHTS_TABS.ICONS} title="Icons">
             {tab === INSIGHTS_TABS.ICONS && (
-              <IconsUsage data={icons} />
+            <IconsUsage data={icons} />
             )}
           </Tab>
         </Tabs>
-      </Container>
+      </ContentWrapper>
     </Layout>
   );
 }

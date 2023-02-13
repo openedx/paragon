@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Form, Container, DataTable } from '~paragon-react';
+import { Form, DataTable } from '~paragon-react';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import MeasuredItem from '../../components/MeasuredItem';
+import ContentWrapper from '../../components/ContentWrapper';
 
 const directions = [
   { key: '', name: 'all' },
@@ -95,9 +96,9 @@ export default function SpacingPage() {
 
   return (
     <Layout>
-      <Container size="md" className="py-5">
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <SEO title="Spacing" />
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <SEO title="Spacing" />
+      <ContentWrapper addAnchors>
         <h1>Spacing</h1>
         <h2>Spacing according to pixels</h2>
         <DataTable
@@ -120,7 +121,7 @@ export default function SpacingPage() {
         </p>
         <div className="border p-4">
           <div className="d-flex flex-column align-items-center">
-            <h4>Direction</h4>
+            <p className="h4">Direction</p>
             <div className="d-flex flex-wrap mt-2">
               {directions.map(({ key, name }) => (
                 <Form.Radio
@@ -220,7 +221,7 @@ export default function SpacingPage() {
             </tr>
           </tbody>
         </table>
-      </Container>
+      </ContentWrapper>
     </Layout>
   );
 }
