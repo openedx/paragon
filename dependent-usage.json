@@ -1,5 +1,5 @@
 {
-  "lastModified": 1676297339607,
+  "lastModified": 1676383759649,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -7671,12 +7671,12 @@
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-            "line": 144,
-            "column": 12
+            "line": 145,
+            "column": 14
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
-            "line": 157,
+            "line": 159,
             "column": 16
           },
           {
@@ -10914,7 +10914,7 @@
           },
           {
             "filePath": "src/components/TinyMCEEditor.jsx",
-            "line": 137,
+            "line": 138,
             "column": 12
           },
           {
@@ -11071,14 +11071,14 @@
         "AlertModal": [
           {
             "filePath": "src/components/TinyMCEEditor.jsx",
-            "line": 130,
+            "line": 131,
             "column": 6
           }
         ],
         "ActionRow": [
           {
             "filePath": "src/components/TinyMCEEditor.jsx",
-            "line": 136,
+            "line": 137,
             "column": 10
           },
           {
@@ -12898,7 +12898,7 @@
           },
           {
             "filePath": "src/components/Banner.jsx",
-            "line": 8,
+            "line": 10,
             "column": 2
           }
         ],
@@ -12947,7 +12947,7 @@
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 46,
+            "line": 47,
             "column": 20
           },
           {
@@ -13004,6 +13004,21 @@
             "filePath": "src/containers/LearnerDashboardHeader/hooks.test.js",
             "line": 21,
             "column": 6
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/hooks.js",
+            "line": 14,
+            "column": 20
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/hooks.test.js",
+            "line": 33,
+            "column": 6
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/hooks.test.js",
+            "line": 37,
+            "column": 6
           }
         ],
         "breakpoints": [
@@ -13059,7 +13074,7 @@
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 47,
+            "line": 48,
             "column": 27
           },
           {
@@ -13106,6 +13121,21 @@
             "filePath": "src/containers/LearnerDashboardHeader/hooks.test.js",
             "line": 21,
             "column": 49
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/hooks.js",
+            "line": 15,
+            "column": 52
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/hooks.test.js",
+            "line": 33,
+            "column": 49
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/hooks.test.js",
+            "line": 37,
+            "column": 49
           }
         ],
         "Button": [
@@ -13141,12 +13171,12 @@
           },
           {
             "filePath": "src/containers/CourseFilterControls/ActiveCourseFilters.jsx",
-            "line": 29,
+            "line": 28,
             "column": 6
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 51,
+            "line": 52,
             "column": 6
           },
           {
@@ -13193,6 +13223,71 @@
             "filePath": "src/containers/LearnerDashboardHeader/index.jsx",
             "line": 68,
             "column": 16
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/CollapsedHeader/CollapseMenuBody.jsx",
+            "line": 29,
+            "column": 8
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/CollapsedHeader/CollapseMenuBody.jsx",
+            "line": 32,
+            "column": 8
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/CollapsedHeader/CollapseMenuBody.jsx",
+            "line": 35,
+            "column": 8
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/CollapsedHeader/CollapseMenuBody.jsx",
+            "line": 43,
+            "column": 8
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/CollapsedHeader/CollapseMenuBody.jsx",
+            "line": 49,
+            "column": 14
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/CollapsedHeader/CollapseMenuBody.jsx",
+            "line": 53,
+            "column": 12
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/CollapsedHeader/CollapseMenuBody.jsx",
+            "line": 62,
+            "column": 12
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/CollapsedHeader/CollapseMenuBody.jsx",
+            "line": 70,
+            "column": 14
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/CollapsedHeader/CollapseMenuBody.jsx",
+            "line": 78,
+            "column": 12
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/index.jsx",
+            "line": 29,
+            "column": 8
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/index.jsx",
+            "line": 37,
+            "column": 8
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/index.jsx",
+            "line": 45,
+            "column": 8
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/index.jsx",
+            "line": 55,
+            "column": 8
           },
           {
             "filePath": "src/containers/SelectSessionModal/index.jsx",
@@ -13336,7 +13431,7 @@
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 60,
+            "line": 61,
             "column": 6
           },
           {
@@ -13355,6 +13450,28 @@
             "filePath": "src/containers/MasqueradeBar/index.jsx",
             "line": 62,
             "column": 14
+          }
+        ],
+        "Program": [
+          {
+            "filePath": "src/containers/CourseCard/components/CourseCardBanners/RelatedProgramsBanner/index.jsx",
+            "line": 21,
+            "column": 14
+          },
+          {
+            "filePath": "src/containers/CourseCard/components/RelatedProgramsBadge/index.jsx",
+            "line": 28,
+            "column": 19
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeader/index.jsx",
+            "line": 45,
+            "column": 92
+          },
+          {
+            "filePath": "src/containers/RelatedProgramsModal/components/ProgramCard.jsx",
+            "line": 45,
+            "column": 21
           }
         ],
         "Badge": [
@@ -13379,6 +13496,11 @@
             "filePath": "src/containers/LearnerDashboardHeader/AuthenticatedUserDropdown.jsx",
             "line": 24,
             "column": 4
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 19,
+            "column": 6
           }
         ],
         "Dropdown.Toggle": [
@@ -13391,6 +13513,11 @@
             "filePath": "src/containers/LearnerDashboardHeader/AuthenticatedUserDropdown.jsx",
             "line": 25,
             "column": 6
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 20,
+            "column": 8
           }
         ],
         "IconButton": [
@@ -13403,6 +13530,11 @@
             "filePath": "src/containers/LearnerDashboardHeader/index.jsx",
             "line": 54,
             "column": 16
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/CollapsedHeader/index.jsx",
+            "line": 23,
+            "column": 10
           }
         ],
         "MoreVert": [
@@ -13425,13 +13557,18 @@
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 81,
+            "line": 82,
             "column": 18
           },
           {
             "filePath": "src/containers/LearnerDashboardHeader/index.jsx",
             "line": 61,
             "column": 26
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/CollapsedHeader/index.jsx",
+            "line": 27,
+            "column": 20
           },
           {
             "filePath": "src/containers/MasqueradeBar/index.jsx",
@@ -13464,6 +13601,11 @@
             "filePath": "src/containers/LearnerDashboardHeader/AuthenticatedUserDropdown.jsx",
             "line": 35,
             "column": 6
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 31,
+            "column": 8
           }
         ],
         "Dropdown.Item": [
@@ -13521,29 +13663,42 @@
             "filePath": "src/containers/LearnerDashboardHeader/AuthenticatedUserDropdown.jsx",
             "line": 73,
             "column": 8
-          }
-        ],
-        "Program": [
-          {
-            "filePath": "src/containers/CourseCard/components/RelatedProgramsBadge/index.jsx",
-            "line": 28,
-            "column": 19
           },
           {
-            "filePath": "src/containers/LearnerDashboardHeader/index.jsx",
-            "line": 45,
-            "column": 92
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 33,
+            "column": 10
           },
           {
-            "filePath": "src/containers/RelatedProgramsModal/components/ProgramCard.jsx",
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 37,
+            "column": 12
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 42,
+            "column": 10
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
             "line": 45,
-            "column": 21
+            "column": 10
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 49,
+            "column": 12
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 54,
+            "column": 10
           }
         ],
         "Card": [
           {
             "filePath": "src/containers/CourseCard/index.jsx",
-            "line": 24,
+            "line": 23,
             "column": 6
           },
           {
@@ -13565,7 +13720,7 @@
         "Card.Body": [
           {
             "filePath": "src/containers/CourseCard/index.jsx",
-            "line": 28,
+            "line": 27,
             "column": 12
           },
           {
@@ -13582,7 +13737,7 @@
         "Card.Header": [
           {
             "filePath": "src/containers/CourseCard/index.jsx",
-            "line": 29,
+            "line": 28,
             "column": 14
           },
           {
@@ -13594,7 +13749,7 @@
         "Card.Section": [
           {
             "filePath": "src/containers/CourseCard/index.jsx",
-            "line": 33,
+            "line": 32,
             "column": 14
           },
           {
@@ -13606,7 +13761,7 @@
         "Card.Footer": [
           {
             "filePath": "src/containers/CourseCard/index.jsx",
-            "line": 36,
+            "line": 35,
             "column": 14
           }
         ],
@@ -13625,7 +13780,7 @@
         "CloseSmall": [
           {
             "filePath": "src/containers/CourseFilterControls/ActiveCourseFilters.jsx",
-            "line": 23,
+            "line": 22,
             "column": 21
           }
         ],
@@ -13707,28 +13862,28 @@
         "Tune": [
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 54,
+            "line": 55,
             "column": 20
           }
         ],
         "Sheet": [
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 63,
+            "line": 64,
             "column": 12
           }
         ],
         "ModalCloseButton": [
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 80,
+            "line": 81,
             "column": 16
           }
         ],
         "Close": [
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 81,
+            "line": 82,
             "column": 29
           },
           {
@@ -13740,24 +13895,24 @@
         "ModalPopup": [
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 86,
+            "line": 87,
             "column": 12
           }
         ],
         "useToggle": [
           {
             "filePath": "src/containers/CourseFilterControls/hooks.js",
-            "line": 16,
-            "column": 32
+            "line": 18,
+            "column": 44
           },
           {
             "filePath": "src/containers/CourseFilterControls/hooks.test.js",
-            "line": 27,
+            "line": 36,
             "column": 6
           },
           {
             "filePath": "src/containers/CourseFilterControls/hooks.test.js",
-            "line": 44,
+            "line": 64,
             "column": 6
           }
         ],
@@ -13923,6 +14078,11 @@
             "filePath": "src/containers/LearnerDashboardHeader/AuthenticatedUserDropdown.jsx",
             "line": 26,
             "column": 12
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 21,
+            "column": 14
           }
         ],
         "Dropdown.Header": [
@@ -13930,6 +14090,11 @@
             "filePath": "src/containers/LearnerDashboardHeader/AuthenticatedUserDropdown.jsx",
             "line": 36,
             "column": 8
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 32,
+            "column": 10
           }
         ],
         "Dropdown.Divider": [
@@ -13942,6 +14107,16 @@
             "filePath": "src/containers/LearnerDashboardHeader/AuthenticatedUserDropdown.jsx",
             "line": 72,
             "column": 8
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 41,
+            "column": 10
+          },
+          {
+            "filePath": "src/containers/LearnerDashboardHeaderVariant/ExpandedHeader/AuthenticatedUserDropdown.jsx",
+            "line": 53,
+            "column": 10
           }
         ],
         "PageBanner": [
@@ -27574,7 +27749,7 @@
           },
           {
             "filePath": "src/components/Learn/LearnHero.jsx",
-            "line": 57,
+            "line": 58,
             "column": 6
           },
           {
