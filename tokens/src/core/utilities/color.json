@@ -8,5 +8,1051 @@
       },
       "utilityFunctionsToApply": ["bgVariant", "textEmphasisVariant", "borderColor"]
     }
-  ]
+  ],
+  "color": {
+    "focus": {
+      "gray": {
+        "base": {
+          "value": "{color.gray.base}",
+          "source": "$focus-gray-base",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "100": {
+          "value": "{color.gray.100}",
+          "source": "$focus-gray-100",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "200": {
+          "value": "{color.gray.200}",
+          "source": "$focus-gray-200",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "300": {
+          "value": "{color.gray.300}",
+          "source": "$focus-gray-300",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "400": {
+          "value": "{color.gray.400}",
+          "source": "$focus-gray-400",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "500": {
+          "value": "{color.gray.500}",
+          "source": "$focus-gray-500",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "600": {
+          "value": "{color.gray.600}",
+          "source": "$focus-gray-600",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "700": {
+          "value": "{color.gray.700}",
+          "source": "$focus-gray-700",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "800": {
+          "value": "{color.gray.800}",
+          "source": "$focus-gray-800",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "900": {
+          "value": "{color.gray.900}",
+          "source": "$focus-gray-900",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        }
+      },
+      "primary": {
+        "base": {
+          "value": "{color.primary.base}",
+          "source": "$focus-primary-base",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "100": {
+          "value": "{color.primary.100}",
+          "source": "$focus-primary-100",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "200": {
+          "value": "{color.primary.200}",
+          "source": "$focus-primary-200",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "300": {
+          "value": "{color.primary.300}",
+          "source": "$focus-primary-300",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "400": {
+          "value": "{color.primary.400}",
+          "source": "$focus-primary-400",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "500": {
+          "value": "{color.primary.500}",
+          "source": "$focus-primary-500",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "600": {
+          "value": "{color.primary.600}",
+          "source": "$focus-primary-600",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "700": {
+          "value": "{color.primary.700}",
+          "source": "$focus-primary-700",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "800": {
+          "value": "{color.primary.800}",
+          "source": "$focus-primary-800",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "900": {
+          "value": "{color.primary.900}",
+          "source": "$focus-primary-900",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        }
+      },
+      "secondary": {
+        "base": {
+          "value": "{color.secondary.base}",
+          "source": "$focus-secondary-base",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "100": {
+          "value": "{color.secondary.100}",
+          "source": "$focus-secondary-100",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "200": {
+          "value": "{color.secondary.200}",
+          "source": "$focus-secondary-200",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "300": {
+          "value": "{color.secondary.300}",
+          "source": "$focus-secondary-300",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "400": {
+          "value": "{color.secondary.400}",
+          "source": "$focus-secondary-400",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "500": {
+          "value": "{color.secondary.500}",
+          "source": "$focus-secondary-500",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "600": {
+          "value": "{color.secondary.600}",
+          "source": "$focus-secondary-600",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "700": {
+          "value": "{color.secondary.700}",
+          "source": "$focus-secondary-700",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "800": {
+          "value": "{color.secondary.800}",
+          "source": "$focus-secondary-800",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "900": {
+          "value": "{color.secondary.900}",
+          "source": "$focus-secondary-900",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        }
+      },
+      "brand": {
+        "base": {
+          "value": "{color.brand.base}",
+          "source": "$focus-brand-base",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "100": {
+          "value": "{color.brand.100}",
+          "source": "$focus-brand-100",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "200": {
+          "value": "{color.brand.200}",
+          "source": "$focus-brand-200",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "300": {
+          "value": "{color.brand.300}",
+          "source": "$focus-brand-300",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "400": {
+          "value": "{color.brand.400}",
+          "source": "$focus-brand-400",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "500": {
+          "value": "{color.brand.500}",
+          "source": "$focus-brand-500",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "600": {
+          "value": "{color.brand.600}",
+          "source": "$focus-brand-600",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "700": {
+          "value": "{color.brand.700}",
+          "source": "$focus-brand-700",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "800": {
+          "value": "{color.brand.800}",
+          "source": "$focus-brand-800",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "900": {
+          "value": "{color.brand.900}",
+          "source": "$focus-brand-900",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        }
+      },
+      "success": {
+        "base": {
+          "value": "{color.success.base}",
+          "source": "$focus-success-base",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "100": {
+          "value": "{color.success.100}",
+          "source": "$focus-success-100",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "200": {
+          "value": "{color.success.200}",
+          "source": "$focus-success-200",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "300": {
+          "value": "{color.success.300}",
+          "source": "$focus-success-300",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "400": {
+          "value": "{color.success.400}",
+          "source": "$focus-success-400",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "500": {
+          "value": "{color.success.500}",
+          "source": "$focus-success-500",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "600": {
+          "value": "{color.success.600}",
+          "source": "$focus-success-600",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "700": {
+          "value": "{color.success.700}",
+          "source": "$focus-success-700",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "800": {
+          "value": "{color.success.800}",
+          "source": "$focus-success-800",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "900": {
+          "value": "{color.success.900}",
+          "source": "$focus-success-900",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        }
+      },
+      "info": {
+        "base": {
+          "value": "{color.info.base}",
+          "source": "$focus-info-base",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "100": {
+          "value": "{color.info.100}",
+          "source": "$focus-info-100",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "200": {
+          "value": "{color.info.200}",
+          "source": "$focus-info-200",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "300": {
+          "value": "{color.info.300}",
+          "source": "$focus-info-300",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "400": {
+          "value": "{color.info.400}",
+          "source": "$focus-info-400",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "500": {
+          "value": "{color.info.500}",
+          "source": "$focus-info-500",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "600": {
+          "value": "{color.info.600}",
+          "source": "$focus-info-600",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "700": {
+          "value": "{color.info.700}",
+          "source": "$focus-info-700",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "800": {
+          "value": "{color.info.800}",
+          "source": "$focus-info-800",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "900": {
+          "value": "{color.info.900}",
+          "source": "$focus-info-900",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        }
+      },
+      "warning": {
+        "base": {
+          "value": "{color.warning.base}",
+          "source": "$focus-warning-base",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "100": {
+          "value": "{color.warning.100}",
+          "source": "$focus-warning-100",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "200": {
+          "value": "{color.warning.200}",
+          "source": "$focus-warning-200",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "300": {
+          "value": "{color.warning.300}",
+          "source": "$focus-warning-300",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "400": {
+          "value": "{color.warning.400}",
+          "source": "$focus-warning-400",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "500": {
+          "value": "{color.warning.500}",
+          "source": "$focus-warning-500",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "600": {
+          "value": "{color.warning.600}",
+          "source": "$focus-warning-600",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "700": {
+          "value": "{color.warning.700}",
+          "source": "$focus-warning-700",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "800": {
+          "value": "{color.warning.800}",
+          "source": "$focus-warning-800",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "900": {
+          "value": "{color.warning.900}",
+          "source": "$focus-warning-900",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        }
+      },
+      "danger": {
+        "base": {
+          "value": "{color.danger.base}",
+          "source": "$focus-danger-base",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "100": {
+          "value": "{color.danger.100}",
+          "source": "$focus-danger-100",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "200": {
+          "value": "{color.danger.200}",
+          "source": "$focus-danger-200",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "300": {
+          "value": "{color.danger.300}",
+          "source": "$focus-danger-300",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "400": {
+          "value": "{color.danger.400}",
+          "source": "$focus-danger-400",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "500": {
+          "value": "{color.danger.500}",
+          "source": "$focus-danger-500",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "600": {
+          "value": "{color.danger.600}",
+          "source": "$focus-danger-600",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "700": {
+          "value": "{color.danger.700}",
+          "source": "$focus-danger-700",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "800": {
+          "value": "{color.danger.800}",
+          "source": "$focus-danger-800",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "900": {
+          "value": "{color.danger.900}",
+          "source": "$focus-danger-900",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        }
+      },
+      "light": {
+        "base": {
+          "value": "{color.light.base}",
+          "source": "$focus-light-base",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "100": {
+          "value": "{color.light.100}",
+          "source": "$focus-light-100",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "200": {
+          "value": "{color.light.200}",
+          "source": "$focus-light-200",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "300": {
+          "value": "{color.light.300}",
+          "source": "$focus-light-300",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "400": {
+          "value": "{color.light.400}",
+          "source": "$focus-light-400",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "500": {
+          "value": "{color.light.500}",
+          "source": "$focus-light-500",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "600": {
+          "value": "{color.light.600}",
+          "source": "$focus-light-600",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "700": {
+          "value": "{color.light.700}",
+          "source": "$focus-light-700",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "800": {
+          "value": "{color.light.800}",
+          "source": "$focus-light-800",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "900": {
+          "value": "{color.light.900}",
+          "source": "$focus-light-900",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        }
+      },
+      "dark": {
+        "base": {
+          "value": "{color.dark.base}",
+          "source": "$focus-dark-base",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "100": {
+          "value": "{color.dark.100}",
+          "source": "$focus-dark-100",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "200": {
+          "value": "{color.dark.200}",
+          "source": "$focus-dark-200",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "300": {
+          "value": "{color.dark.300}",
+          "source": "$focus-dark-300",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "400": {
+          "value": "{color.dark.400}",
+          "source": "$focus-dark-400",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "500": {
+          "value": "{color.dark.500}",
+          "source": "$focus-dark-500",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "600": {
+          "value": "{color.dark.600}",
+          "source": "$focus-dark-600",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "700": {
+          "value": "{color.dark.700}",
+          "source": "$focus-dark-700",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "800": {
+          "value": "{color.dark.800}",
+          "source": "$focus-dark-800",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "900": {
+          "value": "{color.dark.900}",
+          "source": "$focus-dark-900",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        }
+      },
+      "accent": {
+        "a": {
+          "value": "{color.accent.a}",
+          "source": "$focus-accent-a",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        },
+        "b": {
+          "value": "{color.accent.b}",
+          "source": "$focus-accent-b",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": "0.1"
+            }
+          ]
+        }
+      }
+    }
+  }
 }
