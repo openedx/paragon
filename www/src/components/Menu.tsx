@@ -128,7 +128,7 @@ function MenuComponentListCategory({ children, title }: IMenuComponentListCatego
 }
 
 const handlePlaygroundClick = () => {
-  global.analytics.track('openedx.paragon.menu.playground.visit_playground.clicked');
+  global.analytics.track('openedx.paragon.docs.menu.playground.visit_playground.clicked');
 };
 
 MenuComponentListCategory.propTypes = {
