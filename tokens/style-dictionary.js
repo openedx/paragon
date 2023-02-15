@@ -9,7 +9,13 @@ const cssUtilities = require('./css-utilities');
 const { formattedVariables, fileHeader, sortByReference } = StyleDictionary.formatHelpers;
 
 const colorTransform = (token) => {
-  const { value, modify = [] } = token;
+  const { value, modify = [], original } = token;
+  const reservedColorValues = ['inherit', 'initial', 'revert', 'unset', 'currentColor'];
+
+  if (reservedColorValues.includes(original.value)) {
+    return original.value;
+  }
+
   let color = chroma(value);
 
   if (modify && modify.length > 0) {
