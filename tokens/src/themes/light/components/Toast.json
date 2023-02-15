@@ -1,0 +1,36 @@
+{
+  "color": {
+    "toast": {
+      "base": { "value": "inherit", "source": "$toast-color" },
+      "bg": { "value": "{color.gray.700}", "source": "$toast-background-color" },
+      "border": {
+        "value": "{color.black}",
+        "source": "$toast-border-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.1
+        }]
+      },
+      "header": {
+        "text": { "value": "{color.white}", "source": "$toast-header-color" },
+        "bg": { "value": "{color.gray.700}", "source": "$toast-header-background-color" },
+        "border": { 
+          "value": "{color.black}",
+          "source": "$toast-header-border-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.5
+          }]
+        }
+      }
+    }
+  },
+  "elevation": {
+    "toast": {
+      "box-shadow": {
+        "value": "0 1.25rem 2.5rem rgba(0, 0, 0, .15), 0 .5rem 3rem rgba(0, 0, 0, .15)",
+        "source": "$toast-box-shadow"
+      }
+    }
+  }
+}

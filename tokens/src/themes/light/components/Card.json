@@ -1,0 +1,27 @@
+{
+  "color": {
+    "card": {
+      "base": { "value": "inherit", "source": "$card-color" },
+      "bg": { "value": "{color.bg.base}", "source": "$card-bg" },
+      "border": {
+        "base": { 
+          "value": "{color.black}",
+          "source": "$card-border-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.125
+          }]
+        },
+        "focus": { 
+          "value": "{color.black}",
+          "source": "$card-border-focus-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.5
+          }] 
+        }
+      },
+      "divider-bg": { "value": "{color.light.400}", "source": "$card-divider-bg" }
+    }
+  }
+}

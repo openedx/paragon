@@ -1,0 +1,25 @@
+{
+  "color": {
+    "data-table": {
+      "bg": {
+        "base": { "value": "{color.bg.base}", "source": "$data-table-background-color" },
+        "is-loading": {
+          "value": "{color.white}",
+          "source": "$data-table-is-loading-bg",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.7
+            }
+          ]
+        }
+      },
+      "border": { "value": "{color.gray.200}", "source": "$data-table-border-color" }
+    }
+  },
+  "elevation": {
+    "data-table": {
+      "box-shadow": { "value": "{elevation.box-shadow.sm}", "source": "$data-table-box-shadow" }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "typography": {
+    "pagination": {
+      "font-size": {
+        "sm": { "value": ".875rem", "source": "$pagination-font-size-sm" }
+      },
+      "line-height": { "value": "1.5rem", "source": "$pagination-line-height" }
+    }
+  },
+  "spacing": {
+    "pagination": {
+      "padding": {
+        "y": {
+          "base": { "value": ".625rem", "source": "$pagination-padding-y" },
+          "sm": { "value": ".8rem", "source": "$pagination-padding-y-sm" },
+          "lg": { "value": ".75rem", "source": "$pagination-padding-y-lg" }
+        },
+        "x": {
+          "base": { "value": "1rem", "source": "$pagination-padding-x" },
+          "sm": { "value": ".6rem", "source": "$pagination-padding-x-sm" },
+          "lg": { "value": "1.5rem", "source": "$pagination-padding-x-lg" }
+        }
+      },
+      "margin": {
+        "x": { "value": ".5rem", "source": "$pagination-margin-x" }
+      }
+    }
+  },
+  "size": {
+    "pagination": {
+      "icon": {
+        "width": { "value": "2.25rem", "source": "$pagination-icon-width" },
+        "height": { "value": "2.25rem", "source": "$pagination-icon-height" }
+      },
+      "secondary": {
+        "height": {
+          "base": { "value": "2.75rem", "source": "$pagination-secondary-height" },
+          "sm": { "value": "2.25rem", "source": "$pagination-secondary-height-sm" }
+        }
+      },
+      "border": {
+        "width": { "value": "{size.border.width}", "source": "$pagination-border-width" },
+        "radius": {
+          "sm": { "value": "{size.border.radius.sm}", "source": "$pagination-border-radius-sm" },
+          "lg": { "value": "{size.border.radius.lg}", "source": "$pagination-border-radius-lg" }
+        }
+      },
+      "reduced": {
+        "dropdown": {
+          "max-height": { "value": "60vh", "source": "$pagination-reduced-dropdown-max-height" },
+          "min-width": { "value": "6rem", "source": "$pagination-reduced-dropdown-min-width" }
+        }
+      },
+      "toggle": {
+        "border": {
+          "base": { "value": ".3125rem", "source": "$pagination-toggle-border" },
+          "sm": { "value": ".25rem", "source": "$pagination-toggle-border-sm" }
+        }
+      },
+      "focus": {
+        "border-width": { "value": ".125rem", "source": "$pagination-focus-border-width" },
+        "outline": { "value": "0", "source": "$pagination-focus-outline" }
+      }
+    }
+  }
+}

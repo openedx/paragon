@@ -1,0 +1,10 @@
+{
+  "typography": {
+    "close-button": {
+      "font": {
+        "size": { "value": "calc({typography.font.size.base} * 1.5)", "source": "$close-font-size" },
+        "weight": { "value": "{typography.font.weight.bold}", "source": "$close-font-weight" }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "color": {
+    "carousel": {
+      "control": {
+        "base": { "value": "{color.white}", "source": "$carousel-control-color" },
+        "opacity": {
+          "base": { "value": ".5", "source": "$carousel-control-opacity" },
+          "hover": { "value": ".9", "source": "$carousel-control-hover-opacity" }
+        }
+      },
+      "indicator": {
+        "active-bg": { "value": "{color.white}", "source": "$carousel-indicator-active-bg" }
+      },
+      "caption": { "value": "{color.white}", "source": "$carousel-caption-color" }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "typography": {
+    "tooltip": {
+      "font-size": { "value": "{typography.font.size.sm}", "source": "$tooltip-font-size" }
+    }
+  },
+  "spacing": {
+    "tooltip": {
+      "padding": {
+        "y": { "value": ".5rem", "source": "$tooltip-padding-y" },
+        "x": { "value": ".5rem", "source": "$tooltip-padding-x" }
+      },
+      "margin": { "value": "0", "source": "$tooltip-margin" }
+    }
+  },
+  "elevation": {
+    "tooltip": {
+      "zindex": { "value": "1070", "source": "$zindex-tooltip" }
+    }
+  },
+  "size": {
+    "tooltip": {
+      "max-width": { "value": "200px", "source": "$tooltip-max-width" },
+      "arrow": {
+        "height": { "value": ".4rem", "source": "$tooltip-arrow-height" },
+        "width": { "value": ".8rem", "source": "$tooltip-arrow-width" }
+      },
+      "border-radius": { "value": "{size.border.radius.base}", "source": "$tooltip-border-radius" }
+    }
+  }
+}

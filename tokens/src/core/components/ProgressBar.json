@@ -1,0 +1,40 @@
+{
+  "typography": {
+    "progress-bar": {
+      "font-size": { "value": "calc({typography.font.size.base} * .75)", "source": "$progress-font-size" }
+    }
+  },
+  "size": {
+    "progress-bar": {
+      "height": {
+        "base": { "value": "1rem", "source": "$progress-height" },
+        "annotated": { "value": ".3125rem", "source": "$annotated-progress-height" }
+      },
+      "border": {
+        "width": { "value": "1px", "source": "$progress-bar-border-width" },
+        "radius": { "value": "0", "source": "$progress-border-radius" }
+      },
+      "threshold-circle": { "value": ".5625rem", "source": "$progress-threshold-circle" }
+    }
+  },
+  "elevation": {
+    "progress-bar": {
+      "box-shadow": { "value": "none", "source": "$progress-box-shadow" }
+    }
+  },
+  "spacing": {
+    "progress-bar": {
+      "hint": {
+        "annotation-gap": { "value": ".5rem", "source": "$progress-hint-annotation-gap" }
+      }
+    }
+  },
+  "transition": {
+    "progress-bar": {
+      "bar": {
+        "animation-timing": { "value": "1s linear infinite", "source": "$progress-bar-animation-timing" },
+        "transition": { "value": "width .6s ease", "source": "$progress-bar-transition" }
+      }
+    }
+  }
+}

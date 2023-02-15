@@ -1,0 +1,36 @@
+{
+  "color": {
+    "list-group": {
+      "base": { "value": "inherit", "source": "$list-group-color" },
+      "bg": {
+        "base": { "value": "{color.bg.base}", "source": "$list-group-bg" },
+        "hover": { "value": "{color.gray.100}", "source": "$list-group-hover-bg" }
+      },
+      "border": {
+        "value": "{color.black}",
+        "source": "$list-group-border-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.125
+        }]
+      },
+      "active": {
+        "base": { "value": "{color.active}", "source": "$list-group-active-color" },
+        "border": { "value": "{color.list-group.active.bg}", "source": "$list-group-active-border-color" },
+        "bg": { "value": "{color.bg.active}", "source": "$list-group-active-bg" }
+      },
+      "disabled": {
+        "base": { "value": "{color.gray.600}", "source": "$list-group-disabled-color" },
+        "bg": { "value": "{color.list-group.bg.base}", "source": "$list-group-disabled-bg" }
+      },
+      "action": {
+        "base": { "value": "{color.gray.700}", "source": "$list-group-action-color" },
+        "hover": { "value": "{color.list-group.action.base}", "source": "$list-group-action-hover-color" },
+        "active": {
+          "base": { "value": "{color.body.base}", "source": "$list-group-action-active-color" },
+          "bg": { "value": "{color.gray.200}", "source": "$list-group-action-active-bg" }
+        }
+      }
+    }
+  }
+}

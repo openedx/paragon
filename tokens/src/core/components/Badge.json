@@ -1,0 +1,33 @@
+{
+  "spacing": {
+    "badge": {
+      "padding": {
+        "x": {
+          "base": { "value": ".5rem", "source": "$badge-padding-x" },
+          "pill": { "value": ".6em", "source": "$badge-pill-padding-x" }
+        },
+        "y": { "value": ".125rem", "source": "$badge-padding-y" }
+      }
+    }
+  },
+  "typography": {
+    "badge": {
+      "font": {
+        "size": { "value": "75%", "source": "$badge-font-size" },
+        "weight": { "value": "{typography.font.weight.bold}", "source": "$badge-font-weight" }
+      }
+    }
+  },
+  "size": {
+    "badge": {
+      "border-radius": {
+        "base": { "value": ".25rem", "source": "$badge-border-radius" },
+        "pill": { "value": "10rem", "source": "$badge-pill-border-radius" }
+      },
+      "focus-width": { "value": "{size.input.btn.focus-width}", "source": "$badge-focus-width" }
+    }
+  },
+  "transition": {
+    "badge": { "value": "none", "source": "$badge-transition" }
+  }
+}

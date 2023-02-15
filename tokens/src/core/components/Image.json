@@ -1,0 +1,26 @@
+{
+  "typography": {
+    "image": {
+      "figure-caption": {
+        "font-size": { "value": "90%", "source": "$figure-caption-font-size" }
+      }
+    }
+  },
+  "size": {
+    "image": {
+      "thumbnail": {
+        "border": {
+          "width": { "value": "{size.border.width}", "source": "$thumbnail-border-width" },
+          "radius": { "value": "{size.border.radius.base}", "source": "$thumbnail-border-radius"}
+        }
+      }
+    }
+  },
+  "spacing": {
+    "image": {
+      "thumbnail": {
+        "padding": { "value": ".25rem", "source": "$thumbnail-padding" }
+      }
+    }
+  }
+}

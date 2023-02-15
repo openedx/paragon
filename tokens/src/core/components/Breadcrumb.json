@@ -1,0 +1,35 @@
+{
+  "typography": {
+    "breadcrumb": {
+      "font-size": { "value": "inherit", "source": "$breadcrumb-font-size" }
+    }
+  },
+  "spacing": {
+    "breadcrumb": {
+      "padding": {
+        "y": { "value": ".75rem", "source": "$breadcrumb-padding-y" },
+        "x": { "value": "1rem", "source": "$breadcrumb-padding-x" },
+        "item": { "value": ".5rem", "source": "$breadcrumb-item-padding" }
+      },
+      "margin": {
+        "bottom": { "value": "1rem", "source": "$breadcrumb-margin-bottom" },
+        "left": { "value": ".5rem", "source": "$breadcrumb-margin-left" }
+      }
+    }
+  },
+  "size": {
+    "breadcrumb": {
+      "border": {
+        "radius": {
+          "base": { "value": "{size.border.radius.base}", "source": "$breadcrumb-border-radius" },
+          "focus": { "value": ".125rem", "source": "$breadcrumb-focus-border-radius" }
+        },
+        "axis": {
+          "x-focus": { "value": ".25rem", "source": "$breadcrumb-border-focus-axis-x" },
+          "y-focus": { "value": ".5rem", "source": "$breadcrumb-border-focus-axis-y" }
+        },
+        "width-focus": { "value": ".0625rem", "source": "$breadcrumb-border-focus-width" }
+      }
+    }
+  }
+}

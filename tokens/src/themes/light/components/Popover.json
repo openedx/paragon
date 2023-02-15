@@ -1,0 +1,60 @@
+{
+  "color": {
+    "popover": {
+      "bg": { "value": "{color.bg.base}", "source": "$popover-bg" },
+      "border": { "value": "rgba(0, 0, 0, .2)", "source": "$popover-border-color" },
+      "header": {
+        "text": { "value": "{color.headings.base}", "source": "$popover-header-color" },
+        "bg": { "value": "{color.white}", "source": "$popover-header-bg" },
+        "bg-dark": {
+          "value": "{color.white}",
+          "source": "$popover-header-bg-dark",
+          "modify": [{
+            "type": "darken",
+            "amount": 0.5
+          }]
+        },
+        "border-bottom-dark": {
+          "value": "{color.white}",
+          "source": "$popover-header-border-bottom-darken",
+          "modify": [{
+            "type": "darken",
+            "amount": 0.05
+          }]
+        }
+      },
+      "body": { "value": "{color.body.base}", "source": "$popover-body-color" },
+      "arrow": { 
+        "base": { "value": "{color.popover.bg}", "source": "$popover-arrow-color" },
+        "outer": {
+          "value": "{color.popover.border}",
+          "source": "$popover-arrow-outer-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.05
+          }]
+        }
+      },
+      "success": {
+        "bg": { "value": "{color.success.100}", "source": "$popover-success-bg" },
+        "icon": { "value": "{color.success.500}", "source": "$popover-success-icon-color" }
+      },
+      "warning": {
+        "bg": { "value": "{color.warning.100}", "source": "$popover-warning-bg" },
+        "icon": { "value": "{color.warning.500}", "source": "$popover-warning-icon-color" }
+      },
+      "danger": {
+        "bg": { "value": "{color.danger.100}", "source": "$popover-danger-bg" },
+        "icon": { "value": "{color.warning.500}", "source": "$popover-danger-icon-color" }
+      }
+    }
+  },
+  "elevation": {
+    "popover": {
+      "box-shadow": {
+        "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
+        "source": "$popover-box-shadow"
+      }
+    }
+  }
+}

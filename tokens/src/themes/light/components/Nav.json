@@ -1,0 +1,63 @@
+{
+  "border-color": {
+    "nav": {
+      "tabs-link": {
+        "border": {
+          "active": {
+            "value": "transparent transparent {color.primary.500}", "source": "$nav-tabs-link-active-border-color"
+          },
+          "hover": {
+            "value": "transparent transparent {color.nav.tabs.border}", "source": "$nav-tabs-link-hover-border-color"
+          }
+        }
+      }
+    }
+  },
+  "color": {
+    "nav": {
+      "link": {
+        "text": {
+          "base": { "value": "{color.gray.700}", "source": "$nav-link-color" },
+          "disabled": { "value": "{color.gray.300}", "source": "$nav-link-disabled-color" }
+        }
+      },
+      "tabs": {
+        "border": { "value": "{color.light.400}", "source": "$nav-tabs-border-color" },
+        "link": {
+          "hover": {
+            "bg": { "value": "{color.light.400}", "source": "$nav-tabs-link-hover-bg" }
+          },
+          "active": {
+            "text": { "value": "{color.primary.500}", "source": "$nav-tabs-link-active-color" },
+            "bg": { "value": "{color.body.bg}", "source": "$nav-tabs-link-active-bg" }
+          }
+        }
+      },
+      "pills": {
+        "link": {
+          "active": {
+            "text": { "value": "{color.active}", "source": "$nav-pills-link-active-color" },
+            "bg": { "value": "{color.bg.active}", "source": "$nav-pills-link-active-bg" }
+          }
+        }
+      },
+      "divider": { "value": "{color.gray.100}", "source": "$nav-divider-color" },
+      "dark": {
+        "value": "{color.white}",
+        "source": "$navbar-dark-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.5
+        }]
+      },
+      "light": {
+        "value": "{color.black}",
+        "source": "$navbar-light-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.5
+        }]
+      }
+    }
+  }
+}

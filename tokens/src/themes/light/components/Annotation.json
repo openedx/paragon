@@ -1,0 +1,28 @@
+{
+  "elevation": {
+    "annotation": {
+      "box-shadow": {
+        "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15))  drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
+        "source": "$annotation-box-shadow"
+      }
+    }
+  },
+  "color": {
+    "annotation": {
+      "text": {
+        "success": { "value": "{color.white}", "source": "$annotation-success-color"},
+        "warning": { "value": "{color.black}", "source": "$annotation-warning-color"},
+        "error": { "value": "{color.white}", "source": "$annotation-error-color"},
+        "light": { "value": "{color.primary.500}", "source": "$annotation-light-color"},
+        "dark": { "value": "{color.white}", "source": "$annotation-dark-color"}
+      },
+      "bg": {
+        "success": { "value": "{color.success.base}", "source": "$annotation-success-bg"},
+        "warning": { "value": "{color.accent.b}", "source": "$annotation-warning-bg"},
+        "error": { "value": "{color.danger.base}", "source": "$annotation-error-bg"},
+        "light": { "value": "{color.white}", "source": "$annotation-light-bg"},
+        "dark": { "value": "{color.dark.base}", "source": "$annotation-dark-bg"}
+      }
+    }
+  }
+}

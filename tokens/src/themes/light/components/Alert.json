@@ -1,0 +1,34 @@
+{
+  "color": {
+    "alert": {
+      "title": { "value": "{color.black}", "source": "$alert-title-color" },
+      "content": { "value": "{color.gray.700}", "source": "$alert-content-color" },
+      "icon": {
+        "success": { "value": "{color.theme.default.success}", "source": "$alert-success-icon-color" },
+        "info": { "value": "{color.theme.default.info}", "source": "$alert-info-icon-color" },
+        "danger": { "value": "{color.theme.default.danger}", "source": "$alert-danger-icon-color" },
+        "warning": { "value": "{color.theme.default.warning}", "source": "$alert-warning-icon-color" }
+      },
+      "bg": {
+        "success": { "value": "{color.theme.bg.success}", "source": "$alert-success-bg" },
+        "info": { "value": "{color.theme.bg.info}", "source": "$alert-info-bg" },
+        "danger": { "value": "{color.theme.bg.danger}", "source": "$alert-danger-bg" },
+        "warning": { "value": "{color.theme.bg.warning}", "source": "$alert-warning-bg" }
+      },
+      "border": {
+        "success": { "value": "{color.theme.border.success}", "source": "$alert-success-border-color" },
+        "info": { "value": "{color.theme.border.info}", "source": "$alert-info-border-color" },
+        "danger": { "value": "{color.theme.border.danger}", "source": "$alert-danger-border-color" },
+        "warning": { "value": "{color.theme.border.warning}", "source": "$alert-warning-border-color" }
+      }
+    }
+  },
+  "elevation": {
+    "alert": {
+      "box-shadow": {
+        "value": "0 1px 2px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15)",
+        "source": "$alert-box-shadow"
+      }
+    }
+  }
+}

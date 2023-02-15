@@ -1,0 +1,10 @@
+{
+  "size": {
+    "hr": {
+      "border": {
+        "width": { "value": "{size.border.width}", "source": "$hr-border-width" },
+        "margin-y": { "value": "{spacing.spacer.base}", "source": "$hr-margin-y" }
+      }
+    }
+  }
+}
