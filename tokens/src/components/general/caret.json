@@ -1,13 +1,13 @@
 {
   "size": {
     "caret": {
-      "width": { "value": ".3em", "source": "$caret-width" }
+      "width": { "value": ".3em", "type": "dimension", "source": "$caret-width" }
     }
   },
   "spacing": {
     "caret": {
-      "base": { "value": ".255em", "source": "$caret-spacing" },
-      "vertical-align": { "value": ".255em", "source": "$caret-vertical-align" }
+      "base": { "value": ".255em", "type": "dimension", "source": "$caret-spacing" },
+      "vertical-align": { "value": ".255em", "type": "dimension", "source": "$caret-vertical-align" }
     }
   }
 }
