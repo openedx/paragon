@@ -1,62 +1,59 @@
 {
   "color": {
     "toast": {
-      "base": { "value": "inherit", "source": "$toast-color" },
-      "bg": { "value": "{color.gray.700}", "source": "$toast-background-color" },
+      "base": { "value": "inherit", "type": "color", "source": "$toast-color" },
+      "bg": { "value": "{color.gray.700}", "type": "color", "source": "$toast-background-color" },
       "border": {
         "value": "{color.black}",
+        "type": "color",
         "source": "$toast-border-color",
-        "modify": [{
-          "type": "alpha",
-          "amount": 0.1
-        }]
+        "modify": [{ "type": "alpha", "amount": 0.1 }]
       },
       "header": {
-        "text": { "value": "{color.white}", "source": "$toast-header-color" },
-        "bg": { "value": "{color.gray.700}", "source": "$toast-header-background-color" },
+        "text": { "value": "{color.white}", "type": "color", "source": "$toast-header-color" },
+        "bg": { "value": "{color.gray.700}", "type": "color", "source": "$toast-header-background-color" },
         "border": { 
           "value": "{color.black}",
+          "type": "color",
           "source": "$toast-header-border-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.5
-          }]
+          "modify": [{ "type": "alpha", "amount": 0.5 }]
         }
       }
     }
   },
   "typography": {
     "toast": {
-      "font-size": { "value": ".875rem", "source": "$toast-font-size" }
+      "font-size": { "value": ".875rem", "type": "dimension", "source": "$toast-font-size" }
     }
   },
   "elevation": {
     "toast": {
       "box-shadow": {
         "value": "0 1.25rem 2.5rem rgba(0, 0, 0, .15), 0 .5rem 3rem rgba(0, 0, 0, .15)",
+        "type": "shadow",
         "source": "$toast-box-shadow"
       }
     }
   },
   "size": {
     "toast": {
-      "max-width": { "value": "400px", "source": "$toast-max-width" },
+      "max-width": { "value": "400px", "type": "dimension", "source": "$toast-max-width" },
       "border": {
-        "width": { "value": "1px", "source": "$toast-border-width" },
-        "radius": { "value": ".25rem", "source": "$toast-border-radius" }
+        "width": { "value": "1px", "type": "dimension", "source": "$toast-border-width" },
+        "radius": { "value": ".25rem", "type": "dimension", "source": "$toast-border-radius" }
       }
     }
   },
   "spacing": {
     "toast": {
       "padding": {
-        "x": { "value": ".75rem", "source": "$toast-padding-x" },
-        "y": { "value": ".25rem", "source": "$toast-padding-y" }
+        "x": { "value": ".75rem", "type": "dimension", "source": "$toast-padding-x" },
+        "y": { "value": ".25rem", "type": "dimension", "source": "$toast-padding-y" }
       },
       "container": {
         "gutter": {
-          "lg": { "value": "1.25rem", "source": "$toast-container-gutter-lg" },
-          "sm": { "value": ".625rem", "source": "$toast-container-gutter-sm" }
+          "lg": { "value": "1.25rem", "type": "dimension", "source": "$toast-container-gutter-lg" },
+          "sm": { "value": ".625rem", "type": "dimension", "source": "$toast-container-gutter-sm" }
         }
       }
     }

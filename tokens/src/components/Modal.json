@@ -2,17 +2,15 @@
   "color": {
     "modal": {
       "content": {
-        "bg": { "value": "{color.bg.base}", "source": "$modal-content-bg" },
+        "bg": { "value": "{color.bg.base}", "type": "color", "source": "$modal-content-bg" },
         "border": {
           "value": "{color.black}",
+          "type": "color",
           "source": "$modal-content-border-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.2
-          }]
+          "modify": [{ "type": "alpha", "amount": 0.2 }]
         }
       },
-      "backdrop-bg": { "value": "{color.black}", "source": "$modal-backdrop-bg" }
+      "backdrop-bg": { "value": "{color.black}", "type": "color", "source": "$modal-backdrop-bg" }
     }
   },
   "elevation": {
@@ -21,46 +19,57 @@
         "box-shadow": {
           "sm-up": {
             "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
+            "type": "shadow",
             "source": "$modal-content-box-shadow-sm-up"
           }
         }
       },
-      "backdrop-zindex": { "value": "1040", "source": "$zindex-modal-backdrop" },
-      "zindex": { "value": "1050", "source": "$zindex-modal" }
+      "backdrop-zindex": { "value": "1040", "type": "ratio", "source": "$zindex-modal-backdrop" },
+      "zindex": { "value": "1050", "type": "ratio", "source": "$zindex-modal" }
     }
   },
   "size": {
     "modal": {
-      "xl": { "value": "1140px", "source": "$modal-xl" },
-      "lg": { "value": "800px", "source": "$modal-lg" },
-      "md": { "value": "500px", "source": "$modal-md" },
-      "sm": { "value": "400px", "source": "$modal-sm" },
+      "xl": { "value": "1140px", "type": "dimension", "source": "$modal-xl" },
+      "lg": { "value": "800px", "type": "dimension", "source": "$modal-lg" },
+      "md": { "value": "500px", "type": "dimension", "source": "$modal-md" },
+      "sm": { "value": "400px", "type": "dimension", "source": "$modal-sm" },
       "content-border": {
-        "width": { "value": "0px", "source": "$modal-content-border-width" },
-        "radius": { "value": "{size.border.radius.lg}", "source": "$modal-content-border-radius" }
+        "width": { "value": "0px", "type": "dimension", "source": "$modal-content-border-width" },
+        "radius": {
+          "value": "{size.border.radius.lg}", "type": "dimension", "source": "$modal-content-border-radius"
+        }
       }
     }
   },
   "spacing": {
     "modal": {
       "inner-padding": {
-        "base": { "value": "1.5rem", "source": "$modal-inner-padding" },
-        "bottom": { "value": ".7rem", "source": "$modal-inner-padding-bottom" }
+        "base": { "value": "1.5rem", "type": "dimension", "source": "$modal-inner-padding" },
+        "bottom": { "value": ".7rem", "type": "dimension", "source": "$modal-inner-padding-bottom" }
       },
       "footer-padding": {
-        "base": { "value": "{spacing.modal.footer-padding.y} 1.5rem", "source": "$modal-footer-padding" },
-        "y": { "value": "1rem", "source": "$modal-footer-padding-y" }
+        "base": {
+          "value": "{spacing.modal.footer-padding.y} 1.5rem",
+          "type": "dimension",
+          "source": "$modal-footer-padding"
+        },
+        "y": { "value": "1rem", "type": "dimension", "source": "$modal-footer-padding-y" }
       },
       "header-padding": {
-        "base": { "value": "{spacing.modal.header-padding.y} 1.5rem", "source": "$modal-header-padding" },
-        "y": { "value": "1rem", "source": "$modal-header-padding-y" }
+        "base": {
+          "value": "{spacing.modal.header-padding.y} 1.5rem",
+          "type": "dimension",
+          "source": "$modal-header-padding"
+        },
+        "y": { "value": "1rem", "type": "dimension", "source": "$modal-header-padding-y" }
       },
-      "dialog-margin": { "value": "1.5rem", "source": "$modal-dialog-margin" }
+      "dialog-margin": { "value": "1.5rem", "type": "dimension", "source": "$modal-dialog-margin" }
     }
   },
   "other": {
     "modal": {
-      "opacity": { "value": ".5", "source": "$modal-backdrop-opacity" }
+      "opacity": { "value": ".5", "type": "ratio", "source": "$modal-backdrop-opacity" }
     }
   }
 }
