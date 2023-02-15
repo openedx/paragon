@@ -1,20 +1,28 @@
 {
   "color": {
-    "text-muted": { "value": "{color.gray.500}", "source": "$text-muted" },
-    "mark-bg": { "value": "#FFF243", "source": "$mark-bg" }
+    "text-muted": { "value": "{color.gray.500}", "type": "color", "source": "$text-muted" },
+    "mark-bg": { "value": "#FFF243", "type": "color", "source": "$mark-bg" }
   },
   "spacing": {
     "paragraph": {
-      "margin-bottom": { "value": "1rem", "source": "$paragraph-margin-bottom" }
+      "margin-bottom": { "value": "1rem", "type": "dimension", "source": "$paragraph-margin-bottom" }
     },
-    "mark-padding": { "value": ".2em", "source": "$mark-padding" }
+    "mark-padding": { "value": ".2em", "type": "dimension", "source": "$mark-padding" }
   },
   "typography": {
     "blockquote": {
       "small": {
-        "font-size": { "value": "{typography.font.size.small.base}", "source": "$blockquote-small-font-size" }
+        "font-size": {
+          "value": "{typography.font.size.small.base}",
+          "type": "dimension",
+          "source": "$blockquote-small-font-size"
+        }
       },
-      "font-size": { "value": "calc({typography.font.size.base} * 1.25)", "source": "$blockquote-font-size" }
+      "font-size": {
+        "value": "calc({typography.font.size.base} * 1.25)",
+        "type": "dimension",
+        "source": "$blockquote-font-size"
+      }
     }
   }
 }

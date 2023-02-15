@@ -1,21 +1,23 @@
 {
   "color": {
     "code": {
-      "base": { "value": "#E83E8C", "source": "$code-color" },
+      "base": { "value": "#E83E8C", "type": "color", "source": "$code-color" },
       "kbd": {
-        "base": { "value": "{color.white}", "source": "$kbd-color" },
-        "bg": { "value": "{color.gray.700}", "source": "$kbd-bg" }
+        "base": { "value": "{color.white}", "type": "color", "source": "$kbd-color" },
+        "bg": { "value": "{color.gray.700}", "type": "color", "source": "$kbd-bg" }
       },
-      "pre": { "value": "{color.gray.900}", "source": "$pre-color" }
+      "pre": { "value": "{color.gray.900}", "type": "color", "source": "$pre-color" }
     }
   },
   "typography": {
     "code": {
-      "font-size": { "value": "87.5%", "source": "$code-font-size" },
+      "font-size": { "value": "87.5%", "type": "percentage", "source": "$code-font-size" },
       "kbd": {
-        "font-size": { "value": "{typography.code.font-size}", "source": "$kbd-font-size" },
+        "font-size": { "value": "{typography.code.font-size}", "type": "dimension", "source": "$kbd-font-size" },
         "nested": {
-          "font-weight": { "value": "{typography.font.weight.bold}", "source": "$nested-kbd-font-weight" }
+          "font-weight": {
+            "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$nested-kbd-font-weight"
+          }
         }
       }
     }
@@ -24,8 +26,8 @@
     "code": {
       "kbd": {
         "padding": {
-          "y": { "value": ".2rem", "source": "$kbd-padding-y" },
-          "x": { "value": ".4rem", "source": "$kbd-padding-x" }
+          "y": { "value": ".2rem", "type": "dimension", "source": "$kbd-padding-y" },
+          "x": { "value": ".4rem", "type": "dimension", "source": "$kbd-padding-x" }
         }
       }
     }
@@ -34,7 +36,7 @@
     "code": {
       "pre": {
         "scrollable": {
-          "max-height": { "value": "340px", "source": "$pre-scrollable-max-height" }
+          "max-height": { "value": "340px", "type": "dimension", "source": "$pre-scrollable-max-height" }
         }
       }
     }
@@ -44,6 +46,7 @@
       "kbd": {
         "box-shadow": {
           "value": "inset 0 -.1rem 0 rgba(0, 0, 0, .25)",
+          "type": "shadow",
           "source": "$kbd-box-shadow"
         }
       }

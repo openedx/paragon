@@ -1,21 +1,21 @@
 {
   "color": {
     "headings": {
-      "base": { "value": "{color.black}", "source": "$headings-color" }
+      "base": { "value": "{color.black}", "type": "color", "source": "$headings-color" }
     }
   },
   "typography": {
     "headings": {
       "font": {
-        "family": { "value": "inherit", "source": "$headings-font-family" },
-        "weight": { "value": "{typography.font.weight.bold}", "source": "$headings-font-weight" }
+        "family": { "value": "inherit", "type": "fontFamily", "source": "$headings-font-family" },
+        "weight": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$headings-font-weight" }
       },
-      "line-height": { "value": "1.25", "source": "$headings-line-height" }
+      "line-height": { "value": "1.25", "type": "dimension", "source": "$headings-line-height" }
     }
   },
   "spacing": {
     "headings": {
-      "margin-bottom": { "value": ".5rem", "source": "$headings-margin-bottom" }
+      "margin-bottom": { "value": ".5rem", "type": "dimension", "source": "$headings-margin-bottom" }
     }
   }
 }

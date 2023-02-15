@@ -2,61 +2,75 @@
   "typography": {
     "font": {
       "family": {
-        "base": { "value": "{typography.font.family.sans.serif}", "source": "$font-family-base" },
+        "base": {
+          "value": "{typography.font.family.sans.serif}",
+          "type": "fontFamily",
+          "source": "$font-family-base"
+        },
         "sans": {
           "serif": {
             "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\",  Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\",  \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "type": "fontFamily",
             "source": "$font-family-sans-serif"
           }
         },
         "serif": { "value": "serif", "source": "$font-family-serif" },
         "monospace": {
           "value": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\",  \"Courier New\", monospace",
+          "type": "fontFamily",
           "source": "$font-family-monospace"
         }
       },
       "size": {
-        "base": { "value": "1.125rem", "source": "$font-size-base" },
-        "lg": { "value": "1.4063rem", "source": "$font-size-lg" },
-        "sm": { "value": ".875rem", "source": "$font-size-sm" },
-        "xs": { "value": ".75rem", "source": "$font-size-xs" },
+        "base": { "value": "1.125rem", "type": "dimension", "source": "$font-size-base" },
+        "lg": { "value": "1.4063rem", "type": "dimension", "source": "$font-size-lg" },
+        "sm": { "value": ".875rem", "type": "dimension", "source": "$font-size-sm" },
+        "xs": { "value": ".75rem", "type": "dimension", "source": "$font-size-xs" },
         "small": {
-          "base": { "value": "87.5%", "source": "$small-font-size" },
-          "x": { "value": "75%", "source": "$x-small-font-size" }
+          "base": { "value": "87.5%", "type": "percentage", "source": "$small-font-size" },
+          "x": { "value": "75%", "type": "percentage", "source": "$x-small-font-size" }
         },
-        "h1": { "value": "2.5rem", "source": "$h1-font-size" },
-        "h2": { "value": "2rem", "source": "$h2-font-size" },
-        "h3": { "value": "1.375rem", "source": "$h3-font-size" },
-        "h4": { "value": "1.125rem", "source": "$h4-font-size" },
-        "h5": { "value": ".875rem", "source": "$h5-font-size" },
-        "h6": { "value": ".75rem", "source": "$h6-font-size" },
+        "h1": { "value": "2.5rem", "type": "dimension", "source": "$h1-font-size" },
+        "h2": { "value": "2rem", "type": "dimension", "source": "$h2-font-size" },
+        "h3": { "value": "1.375rem", "type": "dimension", "source": "$h3-font-size" },
+        "h4": { "value": "1.125rem", "type": "dimension", "source": "$h4-font-size" },
+        "h5": { "value": ".875rem", "type": "dimension", "source": "$h5-font-size" },
+        "h6": { "value": ".75rem", "type": "dimension", "source": "$h6-font-size" },
         "mobile": {
-          "h1": { "value": "2.25rem", "source": "$h1-mobile-font-size" },
-          "h2": { "value": "{typography.font.size.h2}", "source": "$h2-mobile-font-size" },
-          "h3": { "value": "{typography.font.size.h3}", "source": "$h3-mobile-font-size" },
-          "h4": { "value": "{typography.font.size.h4}", "source": "$h4-mobile-font-size" },
-          "h5": { "value": "{typography.font.size.h5}", "source": "$h5-mobile-font-size" },
-          "h6": { "value": "{typography.font.size.h6}", "source": "$h6-mobile-font-size" }
+          "h1": { "value": "2.25rem", "type": "dimension", "source": "$h1-mobile-font-size" },
+          "h2": { "value": "{typography.font.size.h2}", "type": "dimension", "source": "$h2-mobile-font-size" },
+          "h3": { "value": "{typography.font.size.h3}", "type": "dimension", "source": "$h3-mobile-font-size" },
+          "h4": { "value": "{typography.font.size.h4}", "type": "dimension", "source": "$h4-mobile-font-size" },
+          "h5": { "value": "{typography.font.size.h5}", "type": "dimension", "source": "$h5-mobile-font-size" },
+          "h6": { "value": "{typography.font.size.h6}", "type": "dimension", "source": "$h6-mobile-font-size" }
         },
-        "lead": { "value": "calc({typography.font.size.base} * 1.25)", "source": "$lead-font-size" }
+        "lead": {
+          "value": "calc({typography.font.size.base} * 1.25)",
+          "type": "dimension",
+          "source": "$lead-font-size"
+        }
       },
       "weight": {
-        "lighter": { "value": "lighter", "source": "$font-weight-lighter" },
-        "light": { "value": "300", "source": "$font-weight-light" },
-        "normal": { "value": "400", "source": "$font-weight-normal" },
+        "lighter": { "value": "lighter", "type": "fontWeight", "source": "$font-weight-lighter" },
+        "light": { "value": "300", "type": "fontWeight", "source": "$font-weight-light" },
+        "normal": { "value": "400", "type": "fontWeight", "source": "$font-weight-normal" },
         "semi": {
-          "bold": { "value": "500", "source": "$font-weight-semi-bold" }
+          "bold": { "value": "500", "type": "fontWeight", "source": "$font-weight-semi-bold" }
         },
-        "bold": { "value": "700", "source": "$font-weight-bold" },
-        "bolder": { "value": "bolder", "source": "$font-weight-bolder" },
-        "base": { "value": "{typography.font.weight.normal}", "source": "$font-weight-base" },
-        "lead": { "value": "inherit", "source": "$lead-font-weight" }
+        "bold": { "value": "700", "type": "fontWeight", "source": "$font-weight-bold" },
+        "bolder": { "value": "bolder", "type": "fontWeight", "source": "$font-weight-bolder" },
+        "base": {
+          "value": "{typography.font.weight.normal}",
+          "type": "fontWeight",
+          "source": "$font-weight-base"
+        },
+        "lead": { "value": "inherit", "type": "fontWeight", "source": "$lead-font-weight" }
       }
     },
     "line-height": {
-      "base": { "value": "1.5556", "source": "$line-height-base" },
-      "lg": { "value": "1.5", "source": "$line-height-lg" },
-      "sm": { "value": "1.5", "source": "$line-height-sm" }
+      "base": { "value": "1.5556", "type": "dimension", "source": "$line-height-base" },
+      "lg": { "value": "1.5", "type": "dimension", "source": "$line-height-lg" },
+      "sm": { "value": "1.5", "type": "dimension", "source": "$line-height-sm" }
     }
   }
 }
