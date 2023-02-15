@@ -86,14 +86,6 @@
     opacity: $btn-disabled-opacity;
   }
 
-  &:not(:disabled):not(.disabled):not(.btn-link):active,
-  &:not(:disabled):not(.disabled):not(.btn-link).active,
-  .show > &.dropdown-toggle {
-    color: var(--pgn-btn-active-color, inherit);
-    background-color: var(--pgn-btn-active-bg, inherit);
-    border-color: var(--pgn-btn-active-border-color, transparent);
-  }
-
   // Button Icon Sizes
 
   .btn-icon-before {
