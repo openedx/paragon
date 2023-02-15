@@ -1,5 +1,5 @@
 {
-  "lastModified": 1676383759649,
+  "lastModified": 1676470129254,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -1984,6 +1984,11 @@
             "column": 8
           },
           {
+            "filePath": "src/components/settings/SettingsSSOTab/NoSSOCard.jsx",
+            "line": 32,
+            "column": 8
+          },
+          {
             "filePath": "src/components/settings/SettingsSSOTab/SSOConfigConfiguredCard.jsx",
             "line": 106,
             "column": 12
@@ -2202,7 +2207,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
-            "line": 82,
+            "line": 90,
             "column": 37
           },
           {
@@ -3602,7 +3607,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
-            "line": 73,
+            "line": 81,
             "column": 12
           },
           {
@@ -4968,12 +4973,12 @@
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
-            "line": 63,
+            "line": 71,
             "column": 10
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
-            "line": 68,
+            "line": 76,
             "column": 10
           },
           {
@@ -5080,12 +5085,12 @@
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
-            "line": 63,
+            "line": 71,
             "column": 41
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
-            "line": 68,
+            "line": 76,
             "column": 41
           },
           {
@@ -5353,6 +5358,11 @@
             "column": 10
           },
           {
+            "filePath": "src/components/settings/SettingsSSOTab/NoSSOCard.jsx",
+            "line": 17,
+            "column": 4
+          },
+          {
             "filePath": "src/components/subscriptions/MultipleSubscriptionsPage.jsx",
             "line": 38,
             "column": 6
@@ -5442,6 +5452,11 @@
           {
             "filePath": "src/components/settings/SettingsLMSTab/NoConfigCard.jsx",
             "line": 25,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/NoSSOCard.jsx",
+            "line": 23,
             "column": 6
           },
           {
@@ -6144,7 +6159,7 @@
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
-            "line": 36,
+            "line": 44,
             "column": 8
           },
           {
@@ -6228,6 +6243,11 @@
             "filePath": "src/components/settings/SettingsLMSTab/NoConfigCard.jsx",
             "line": 44,
             "column": 21
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/NoSSOCard.jsx",
+            "line": 32,
+            "column": 28
           }
         ],
         "Form.RadioSet": [
@@ -6361,6 +6381,11 @@
             "filePath": "src/components/settings/SettingsLMSTab/NoConfigCard.jsx",
             "line": 20,
             "column": 6
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/NoSSOCard.jsx",
+            "line": 18,
+            "column": 6
           }
         ],
         "Card.Header": [
@@ -6429,6 +6454,11 @@
           {
             "filePath": "src/components/settings/SettingsLMSTab/NoConfigCard.jsx",
             "line": 38,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/NoSSOCard.jsx",
+            "line": 31,
             "column": 6
           }
         ],
@@ -7625,7 +7655,7 @@
       }
     },
     {
-      "version": "20.21.2",
+      "version": "20.28.4",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -17888,7 +17918,7 @@
           },
           {
             "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
-            "line": 36,
+            "line": 38,
             "column": 10
           },
           {
@@ -18509,7 +18539,7 @@
           },
           {
             "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
-            "line": 23,
+            "line": 25,
             "column": 21
           },
           {
@@ -18519,7 +18549,7 @@
           },
           {
             "filePath": "src/courseware/course/Course.jsx",
-            "line": 136,
+            "line": 145,
             "column": 22
           },
           {
@@ -18596,7 +18626,7 @@
           },
           {
             "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
-            "line": 23,
+            "line": 25,
             "column": 46
           },
           {
@@ -18606,12 +18636,12 @@
           },
           {
             "filePath": "src/courseware/course/Course.jsx",
-            "line": 55,
+            "line": 53,
             "column": 47
           },
           {
             "filePath": "src/courseware/course/Course.jsx",
-            "line": 59,
+            "line": 57,
             "column": 64
           },
           {
@@ -18948,7 +18978,7 @@
         "StandardModal": [
           {
             "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
-            "line": 33,
+            "line": 35,
             "column": 4
           },
           {
@@ -18960,7 +18990,7 @@
         "ActionRow": [
           {
             "filePath": "src/courseware/course/celebration/CelebrationModal.jsx",
-            "line": 35,
+            "line": 37,
             "column": 8
           },
           {
@@ -24004,7 +24034,7 @@
         "Toast": [
           {
             "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
-            "line": 26,
+            "line": 33,
             "column": 6
           },
           {
@@ -24016,8 +24046,8 @@
         "ModalDialog.Footer": [
           {
             "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
-            "line": 31,
-            "column": 4
+            "line": 38,
+            "column": 6
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/SelectTypeFooter.jsx",
@@ -24038,8 +24068,8 @@
         "ActionRow": [
           {
             "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
-            "line": 32,
-            "column": 6
+            "line": 39,
+            "column": 8
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/GroupFeedback/GroupFeedbackRow.jsx",
@@ -24137,11 +24167,43 @@
             "column": 8
           }
         ],
+        "Hyperlink": [
+          {
+            "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
+            "line": 44,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ResetCard.jsx",
+            "line": 29,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
+            "line": 37,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
+            "line": 79,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/Preview.jsx",
+            "line": 35,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
+            "line": 31,
+            "column": 8
+          }
+        ],
         "ActionRow.Spacer": [
           {
             "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
-            "line": 33,
-            "column": 8
+            "line": 49,
+            "column": 10
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
@@ -24237,13 +24299,13 @@
         "Button": [
           {
             "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
-            "line": 34,
-            "column": 8
+            "line": 50,
+            "column": 10
           },
           {
             "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
-            "line": 41,
-            "column": 8
+            "line": 57,
+            "column": 10
           },
           {
             "filePath": "src/editors/containers/EditorContainer/index.jsx",
@@ -24359,13 +24421,18 @@
             "filePath": "src/editors/sharedComponents/CodeEditor/index.jsx",
             "line": 32,
             "column": 8
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
+            "line": 40,
+            "column": 12
           }
         ],
         "Spinner": [
           {
             "filePath": "src/editors/containers/EditorContainer/components/EditorFooter/index.jsx",
-            "line": 47,
-            "column": 14
+            "line": 63,
+            "column": 16
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/index.jsx",
@@ -25305,6 +25372,11 @@
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/index.jsx",
             "line": 20,
             "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
+            "line": 26,
+            "column": 8
           }
         ],
         "Form.Checkbox": [
@@ -25339,33 +25411,6 @@
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/MatlabCard.jsx",
             "line": 31,
             "column": 10
-          }
-        ],
-        "Hyperlink": [
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ResetCard.jsx",
-            "line": 29,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 37,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
-            "line": 79,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/Preview.jsx",
-            "line": 35,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
-            "line": 31,
-            "column": 8
           }
         ],
         "Card": [
@@ -25436,6 +25481,11 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget/index.jsx",
             "line": 59,
             "column": 24
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
+            "line": 27,
+            "column": 10
           }
         ],
         "ArrowBack": [
@@ -25533,6 +25583,11 @@
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/ProblemTypeSelect.jsx",
             "line": 17,
             "column": 4
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
+            "line": 25,
+            "column": 6
           }
         ],
         "Image": [
@@ -26868,7 +26923,7 @@
           },
           {
             "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 148,
+            "line": 158,
             "column": 14
           },
           {
@@ -27247,7 +27302,7 @@
           },
           {
             "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 148,
+            "line": 158,
             "column": 25
           },
           {
@@ -27281,7 +27336,7 @@
           },
           {
             "filePath": "src/components/ContentfulModule/AboutTheProgramModule.jsx",
-            "line": 58,
+            "line": 59,
             "column": 14
           },
           {
@@ -28744,23 +28799,6 @@
             "filePath": "src/components/Learn/DynamicProductList/ProductFilter.jsx",
             "line": 48,
             "column": 10
-          }
-        ],
-        "Chip": [
-          {
-            "filePath": "src/components/Home/CardListTabs.jsx",
-            "line": 62,
-            "column": 20
-          },
-          {
-            "filePath": "src/components/Home/NewOnEdxCarousel/SubcategoriesList/index.jsx",
-            "line": 99,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/Learn/RelatedTopics.jsx",
-            "line": 31,
-            "column": 12
           }
         ],
         "KeyboardArrowRight": [
