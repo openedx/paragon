@@ -38,7 +38,7 @@
         "cell": { "value": ".75rem", "type": "dimension", "source": "$data-table-cell-padding" },
         "head-cell": { "value": ".5rem .75rem", "type": "dimension", "source": "$data-table-head-cell-padding" }
       },
-      "footer-position": { "value": "center", "type": "ratio", "source": "$data-table-footer-position" }
+      "footer-position": { "value": "center", "type": "position", "source": "$data-table-footer-position" }
     }
   }
 }
