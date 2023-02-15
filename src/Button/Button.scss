@@ -2,17 +2,6 @@
 @import "mixins";
 @import "button-group";
 
-//
-// Override Bootstrap's button definition.
-// We do this to get more control over focus
-// and hover states, as well as to define
-// an extra button variant: btn-inverse-${color}
-//
-
-//
-// Base styles
-//
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -29,28 +18,75 @@
 
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
 
-  &:hover {
-    color: var(--pgn-btn-hover-color, #{$body-color});
-    background-color: var(--pgn-btn-hover-bg, transparent);
-    border-color: var(--pgn-btn-hover-border-color, transparent);
-    text-decoration: none;
+  &:not(:disabled):not(.disabled):not(.btn-link) {
+    &.focus,
+    &:focus {
+      position: relative;
+      outline: 0;
+      box-shadow: none;
+      background: var(--pgn-btn-focus-bg, transparent);
+      border-color: var(--pgn-btn-focus-border-color, transparent);
+      color: var(--pgn-btn-focus-color, #{$body-color});
+
+      $distance: calc(#{$btn-focus-width} + #{$btn-focus-gap});
+      $distance-include-btn-border: calc(#{$distance} + #{$btn-border-width});
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: calc(#{$distance-include-btn-border} * -1);
+        right: calc(#{$distance-include-btn-border} * -1);
+        bottom: calc(#{$distance-include-btn-border} * -1);
+        left: calc(#{$distance-include-btn-border} * -1);
+        border: solid $btn-focus-width var(--pgn-btn-focus-outline-color, #{$body-color});
+        border-radius: calc(#{$btn-border-radius} + #{$distance});
+      }
+
+      &.btn-lg::before {
+        border-radius: calc(#{$btn-border-radius-lg} + #{$distance});
+      }
+
+      &.btn-sm::before {
+        border-radius: calc(#{$btn-border-radius-sm} + #{$distance});
+      }
+
+      &:active,
+      &.active {
+        &::before {
+          opacity: .75;
+        }
+      }
+
+      &:disabled,
+      &.disabled {
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &:hover {
+      color: var(--pgn-btn-hover-color, #{$body-color});
+      background-color: var(--pgn-btn-hover-bg, transparent);
+      border-color: var(--pgn-btn-hover-border-color, transparent);
+      text-decoration: none;
+    }
+
+    &:active,
+    &.active,
+    .show > &.dropdown-toggle {
+      color: var(--pgn-btn-active-color, inherit);
+      background-color: var(--pgn-btn-active-bg, inherit);
+      border-color: var(--pgn-btn-active-border-color, transparent);
+    }
   }
 
-  // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
     color: var(--pgn-btn-disabled-color, inherit);
     background-color: var(--pgn-btn-disabled-bg, inherit);
     border-color: var(--pgn-btn-disabled-border-color, transparent);
     opacity: $btn-disabled-opacity;
-  }
-
-  &:not(:disabled):not(.disabled):not(.btn-link):active,
-  &:not(:disabled):not(.disabled):not(.btn-link).active,
-  .show > &.dropdown-toggle {
-    color: var(--pgn-btn-active-color, inherit);
-    background-color: var(--pgn-btn-active-bg, inherit);
-    border-color: var(--pgn-btn-active-border-color, transparent);
   }
 
   // Button Icon Sizes
@@ -108,13 +144,6 @@ fieldset:disabled a.btn {
     color: $btn-link-disabled-color;
     pointer-events: none;
   }
-
-  // No need for an active state here
-}
-
-.btn-light,
-.btn-dark {
-  @include button-focus(theme-color("primary", "focus"));
 }
 
 //
@@ -190,61 +219,75 @@ input[type="button"] {
   --pgn-btn-hover-color: #{$btn-primary-hover-color};
   --pgn-btn-hover-bg: #{$btn-primary-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-primary-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-primary-color};
-  --pgn-btn-disabled-bg: #{$btn-primary-bg};
-  --pgn-btn-disabled-border-color: #{$btn-primary-border-color};
+  --pgn-btn-disabled-color: #{$btn-primary-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-primary-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-primary-disabled-border-color};
   --pgn-btn-active-color: #{$btn-primary-active-color};
   --pgn-btn-active-bg: #{$btn-primary-active-bg};
   --pgn-btn-active-border-color: #{$btn-primary-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-primary-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-primary-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-primary-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-primary-focus-bg};
 
   box-shadow: $btn-box-shadow;
-
-  @include button-focus($btn-primary-focus-border-color);
 }
 
 .btn-outline-primary {
   --pgn-btn-color: #{$btn-primary-outline-color};
+  --pgn-btn-bg: #{$btn-primary-outline-bg};
   --pgn-btn-border-color: #{$btn-primary-outline-border-color};
   --pgn-btn-hover-color: #{$btn-primary-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-primary-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-primary-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-primary-outline-hover-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-primary-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-primary-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-primary-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-primary-outline-active-color};
   --pgn-btn-active-bg: #{$btn-primary-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-primary-outline-active-border-color};
-
-  @include button-focus(#{$btn-primary-outline-focus-border-color});
+  --pgn-btn-focus-outline-color: #{$btn-primary-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-primary-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-primary-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-primary-outline-focus-bg};
 }
 
 .btn-inverse-primary {
   --pgn-btn-color: #{$btn-primary-inverse-color};
   --pgn-btn-bg: #{$btn-primary-inverse-bg};
-  --pgn-btn-border-color: transparent;
+  --pgn-btn-border-color: #{$btn-primary-inverse-border-color};
   --pgn-btn-hover-color: #{$btn-primary-inverse-hover-color};
   --pgn-btn-hover-bg: #{$btn-primary-inverse-hover-bg};
-  --pgn-btn-hover-border-color: transparent;
-  --pgn-btn-disabled-bg: transparent;
-  --pgn-btn-disabled-border-color: #{$btn-primary-border-color};
+  --pgn-btn-hover-border-color: #{$btn-primary-inverse-hover-border-color};
+  --pgn-btn-disabled-color: #{$btn-primary-inverse-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-primary-inverse-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-primary-inverse-disabled-border-color};
   --pgn-btn-active-color: #{$btn-primary-inverse-active-color};
-  --pgn-btn-active-bg: #EEEEEE;
-
-  @include button-focus($btn-primary-inverse-focus-border-color);
+  --pgn-btn-active-bg: #{$btn-primary-inverse-active-bg};
+  --pgn-btn-active-border-color: #{$btn-primary-inverse-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-primary-inverse-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-primary-inverse-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-primary-inverse-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-primary-inverse-focus-bg};
 }
 
 .btn-inverse-outline-primary {
   --pgn-btn-color: #{$btn-primary-inverse-outline-color};
+  --pgn-btn-bg: #{$btn-primary-inverse-outline-bg};
   --pgn-btn-border-color: #{$btn-primary-inverse-outline-border-color};
   --pgn-btn-hover-color: #{$btn-primary-inverse-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-primary-inverse-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-primary-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-primary-inverse-outline-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-primary-inverse-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-primary-inverse-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-primary-inverse-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-primary-inverse-outline-active-color};
   --pgn-btn-active-bg: #{$btn-primary-inverse-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-primary-inverse-outline-active-border-color};
-
-  @include button-focus($btn-primary-inverse-outline-focus-border-color);
+  --pgn-btn-focus-outline-color: #{$btn-primary-inverse-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-primary-inverse-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-primary-inverse-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-primary-inverse-outline-focus-bg};
 }
 
 
@@ -256,61 +299,75 @@ input[type="button"] {
   --pgn-btn-hover-color: #{$btn-secondary-hover-color};
   --pgn-btn-hover-bg: #{$btn-secondary-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-secondary-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-secondary-color};
-  --pgn-btn-disabled-bg: #{$btn-secondary-bg};
-  --pgn-btn-disabled-border-color: #{$btn-secondary-border-color};
+  --pgn-btn-disabled-color: #{$btn-secondary-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-secondary-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-secondary-disabled-border-color};
   --pgn-btn-active-color: #{$btn-secondary-active-color};
   --pgn-btn-active-bg: #{$btn-secondary-active-bg};
   --pgn-btn-active-border-color: #{$btn-secondary-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-secondary-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-secondary-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-secondary-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-secondary-focus-bg};
 
   box-shadow: $btn-box-shadow;
-
-  @include button-focus($btn-secondary-focus-border-color);
 }
 
 .btn-outline-secondary {
   --pgn-btn-color: #{$btn-secondary-outline-color};
+  --pgn-btn-bg: #{$btn-secondary-outline-bg};
   --pgn-btn-border-color: #{$btn-secondary-outline-border-color};
   --pgn-btn-hover-color: #{$btn-secondary-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-secondary-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-secondary-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-secondary-outline-hover-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-secondary-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-secondary-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-secondary-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-secondary-outline-active-color};
   --pgn-btn-active-bg: #{$btn-secondary-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-secondary-outline-active-border-color};
-
-  @include button-focus(#{$btn-secondary-outline-focus-border-color});
+  --pgn-btn-focus-outline-color: #{$btn-secondary-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-secondary-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-secondary-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-secondary-outline-focus-bg};
 }
 
 .btn-inverse-secondary {
   --pgn-btn-color: #{$btn-secondary-inverse-color};
   --pgn-btn-bg: #{$btn-secondary-inverse-bg};
-  --pgn-btn-border-color: transparent;
+  --pgn-btn-border-color: #{$btn-secondary-inverse-border-color};
   --pgn-btn-hover-color: #{$btn-secondary-inverse-hover-color};
   --pgn-btn-hover-bg: #{$btn-secondary-inverse-hover-bg};
-  --pgn-btn-hover-border-color: transparent;
-  --pgn-btn-disabled-bg: transparent;
-  --pgn-btn-disabled-border-color: #{$btn-secondary-border-color};
+  --pgn-btn-hover-border-color: #{$btn-secondary-inverse-hover-border-color};
+  --pgn-btn-disabled-bg: #{$btn-secondary-inverse-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-secondary-inverse-disabled-border-color};
+  --pgn-btn-disabled-color: #{$btn-secondary-inverse-disabled-color};
   --pgn-btn-active-color: #{$btn-secondary-inverse-active-color};
-  --pgn-btn-active-bg: #EEEEEE;
-
-  @include button-focus($btn-secondary-inverse-focus-border-color);
+  --pgn-btn-active-bg: #{$btn-secondary-inverse-active-bg};
+  --pgn-btn-active-border-color: #{$btn-secondary-inverse-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-secondary-inverse-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-secondary-inverse-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-secondary-inverse-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-secondary-inverse-focus-bg};
 }
 
 .btn-inverse-outline-secondary {
   --pgn-btn-color: #{$btn-secondary-inverse-outline-color};
+  --pgn-btn-bg: #{$btn-secondary-inverse-outline-bg};
   --pgn-btn-border-color: #{$btn-secondary-inverse-outline-border-color};
   --pgn-btn-hover-color: #{$btn-secondary-inverse-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-secondary-inverse-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-secondary-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-secondary-inverse-outline-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-secondary-inverse-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-secondary-inverse-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-secondary-inverse-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-secondary-inverse-outline-active-color};
   --pgn-btn-active-bg: #{$btn-secondary-inverse-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-secondary-inverse-outline-active-border-color};
-
-  @include button-focus($btn-secondary-inverse-outline-focus-border-color);
+  --pgn-btn-focus-outline-color: #{$btn-secondary-inverse-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-secondary-inverse-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-secondary-inverse-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-secondary-inverse-outline-focus-bg};
 }
 
 
@@ -322,61 +379,75 @@ input[type="button"] {
   --pgn-btn-hover-color: #{$btn-brand-hover-color};
   --pgn-btn-hover-bg: #{$btn-brand-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-brand-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-brand-color};
-  --pgn-btn-disabled-bg: #{$btn-brand-bg};
-  --pgn-btn-disabled-border-color: #{$btn-brand-border-color};
+  --pgn-btn-disabled-color: #{$btn-brand-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-brand-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-brand-disabled-border-color};
   --pgn-btn-active-color: #{$btn-brand-active-color};
   --pgn-btn-active-bg: #{$btn-brand-active-bg};
   --pgn-btn-active-border-color: #{$btn-brand-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-brand-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-brand-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-brand-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-brand-focus-bg};
 
   box-shadow: $btn-box-shadow;
-
-  @include button-focus($btn-brand-focus-border-color);
 }
 
 .btn-outline-brand {
   --pgn-btn-color: #{$btn-brand-outline-color};
+  --pgn-btn-bg: #{$btn-brand-outline-bg};
   --pgn-btn-border-color: #{$btn-brand-outline-border-color};
   --pgn-btn-hover-color: #{$btn-brand-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-brand-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-brand-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-brand-outline-hover-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-brand-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-brand-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-brand-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-brand-outline-active-color};
   --pgn-btn-active-bg: #{$btn-brand-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-brand-outline-active-border-color};
-
-  @include button-focus(#{$btn-brand-outline-focus-border-color});
+  --pgn-btn-focus-outline-color: #{$btn-brand-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-brand-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-brand-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-brand-outline-focus-bg};
 }
 
 .btn-inverse-brand {
   --pgn-btn-color: #{$btn-brand-inverse-color};
   --pgn-btn-bg: #{$btn-brand-inverse-bg};
-  --pgn-btn-border-color: transparent;
+  --pgn-btn-border-color: #{$btn-brand-inverse-border-color};
   --pgn-btn-hover-color: #{$btn-brand-inverse-hover-color};
   --pgn-btn-hover-bg: #{$btn-brand-inverse-hover-bg};
-  --pgn-btn-hover-border-color: transparent;
-  --pgn-btn-disabled-bg: transparent;
-  --pgn-btn-disabled-border-color: #{$btn-brand-border-color};
+  --pgn-btn-hover-border-color: #{$btn-brand-inverse-hover-border-color};
+  --pgn-btn-disabled-color: #{$btn-brand-inverse-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-brand-inverse-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-brand-inverse-disabled-border-color};
   --pgn-btn-active-color: #{$btn-brand-inverse-active-color};
-  --pgn-btn-active-bg: #EEEEEE;
-
-  @include button-focus($btn-brand-inverse-focus-border-color);
+  --pgn-btn-active-bg: #{$btn-brand-inverse-active-bg};
+  --pgn-btn-active-border-color: #{$btn-brand-inverse-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-brand-inverse-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-brand-inverse-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-brand-inverse-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-brand-inverse-focus-bg};
 }
 
 .btn-inverse-outline-brand {
   --pgn-btn-color: #{$btn-brand-inverse-outline-color};
+  --pgn-btn-bg: #{$btn-brand-inverse-outline-bg};
   --pgn-btn-border-color: #{$btn-brand-inverse-outline-border-color};
   --pgn-btn-hover-color: #{$btn-brand-inverse-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-brand-inverse-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-brand-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-brand-inverse-outline-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-brand-inverse-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-brand-inverse-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-brand-inverse-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-brand-inverse-outline-active-color};
   --pgn-btn-active-bg: #{$btn-brand-inverse-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-brand-inverse-outline-active-border-color};
-
-  @include button-focus($btn-brand-inverse-outline-focus-border-color);
+  --pgn-btn-focus-outline-color: #{$btn-brand-inverse-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-brand-inverse-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-brand-inverse-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-brand-inverse-outline-focus-bg};
 }
 
 
@@ -388,61 +459,75 @@ input[type="button"] {
   --pgn-btn-hover-color: #{$btn-danger-hover-color};
   --pgn-btn-hover-bg: #{$btn-danger-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-danger-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-danger-color};
-  --pgn-btn-disabled-bg: #{$btn-danger-bg};
-  --pgn-btn-disabled-border-color: #{$btn-danger-border-color};
+  --pgn-btn-disabled-color: #{$btn-danger-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-danger-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-danger-disabled-border-color};
   --pgn-btn-active-color: #{$btn-danger-active-color};
   --pgn-btn-active-bg: #{$btn-danger-active-bg};
   --pgn-btn-active-border-color: #{$btn-danger-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-danger-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-danger-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-danger-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-danger-focus-bg};
 
   box-shadow: $btn-box-shadow;
-
-  @include button-focus($btn-danger-focus-border-color);
 }
 
 .btn-outline-danger {
   --pgn-btn-color: #{$btn-danger-outline-color};
+  --pgn-btn-bg: #{$btn-danger-outline-bg};
   --pgn-btn-border-color: #{$btn-danger-outline-border-color};
   --pgn-btn-hover-color: #{$btn-danger-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-danger-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-danger-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-danger-outline-hover-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-danger-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-danger-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-danger-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-danger-outline-active-color};
   --pgn-btn-active-bg: #{$btn-danger-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-danger-outline-active-border-color};
-
-  @include button-focus(#{$btn-danger-outline-focus-border-color});
+  --pgn-btn-focus-outline-color: #{$btn-danger-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-danger-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-danger-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-danger-outline-focus-bg};
 }
 
 .btn-inverse-danger {
   --pgn-btn-color: #{$btn-danger-inverse-color};
   --pgn-btn-bg: #{$btn-danger-inverse-bg};
-  --pgn-btn-border-color: transparent;
+  --pgn-btn-border-color: #{$btn-danger-inverse-border-color};
   --pgn-btn-hover-color: #{$btn-danger-inverse-hover-color};
   --pgn-btn-hover-bg: #{$btn-danger-inverse-hover-bg};
-  --pgn-btn-hover-border-color: transparent;
-  --pgn-btn-disabled-bg: transparent;
-  --pgn-btn-disabled-border-color: #{$btn-danger-border-color};
+  --pgn-btn-hover-border-color: #{$btn-danger-inverse-hover-border-color};
+  --pgn-btn-disabled-color: #{$btn-danger-inverse-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-danger-inverse-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-danger-inverse-disabled-border-color};
   --pgn-btn-active-color: #{$btn-danger-inverse-active-color};
-  --pgn-btn-active-bg: #EEEEEE;
-
-  @include button-focus($btn-danger-inverse-focus-border-color);
+  --pgn-btn-active-bg: #{$btn-danger-inverse-active-bg};
+  --pgn-btn-active-border-color: #{$btn-danger-inverse-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-danger-inverse-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-danger-inverse-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-danger-inverse-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-danger-inverse-focus-bg};
 }
 
 .btn-inverse-outline-danger {
   --pgn-btn-color: #{$btn-danger-inverse-outline-color};
+  --pgn-btn-bg: #{$btn-danger-inverse-outline-bg};
   --pgn-btn-border-color: #{$btn-danger-inverse-outline-border-color};
   --pgn-btn-hover-color: #{$btn-danger-inverse-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-danger-inverse-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-danger-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-danger-inverse-outline-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-danger-inverse-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-danger-inverse-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-danger-inverse-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-danger-inverse-outline-active-color};
   --pgn-btn-active-bg: #{$btn-danger-inverse-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-danger-inverse-outline-active-border-color};
-
-  @include button-focus($btn-danger-inverse-outline-focus-border-color);
+  --pgn-btn-focus-outline-color: #{$btn-danger-inverse-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-danger-inverse-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-danger-inverse-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-danger-inverse-outline-focus-bg};
 }
 
 
@@ -454,61 +539,75 @@ input[type="button"] {
   --pgn-btn-hover-color: #{$btn-dark-hover-color};
   --pgn-btn-hover-bg: #{$btn-dark-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-dark-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-dark-color};
-  --pgn-btn-disabled-bg: #{$btn-dark-bg};
-  --pgn-btn-disabled-border-color: #{$btn-dark-border-color};
+  --pgn-btn-disabled-color: #{$btn-dark-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-dark-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-dark-disabled-border-color};
   --pgn-btn-active-color: #{$btn-dark-active-color};
   --pgn-btn-active-bg: #{$btn-dark-active-bg};
   --pgn-btn-active-border-color: #{$btn-dark-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-dark-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-dark-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-dark-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-dark-focus-bg};
 
   box-shadow: $btn-box-shadow;
-
-  @include button-focus($btn-dark-focus-border-color);
 }
 
 .btn-outline-dark {
   --pgn-btn-color: #{$btn-dark-outline-color};
+  --pgn-btn-bg: #{$btn-dark-outline-bg};
   --pgn-btn-border-color: #{$btn-dark-outline-border-color};
   --pgn-btn-hover-color: #{$btn-dark-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-dark-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-dark-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-dark-outline-hover-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-dark-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-dark-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-dark-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-dark-outline-active-color};
   --pgn-btn-active-bg: #{$btn-dark-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-dark-outline-active-border-color};
-
-  @include button-focus(#{$btn-dark-outline-focus-border-color});
+  --pgn-btn-focus-outline-color: #{$btn-dark-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-dark-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-dark-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-dark-outline-focus-bg};
 }
 
 .btn-inverse-dark {
   --pgn-btn-color: #{$btn-dark-inverse-color};
   --pgn-btn-bg: #{$btn-dark-inverse-bg};
-  --pgn-btn-border-color: transparent;
+  --pgn-btn-border-color: #{$btn-dark-inverse-border-color};
   --pgn-btn-hover-color: #{$btn-dark-inverse-hover-color};
   --pgn-btn-hover-bg: #{$btn-dark-inverse-hover-bg};
-  --pgn-btn-hover-border-color: transparent;
-  --pgn-btn-disabled-bg: transparent;
-  --pgn-btn-disabled-border-color: #{$btn-dark-border-color};
+  --pgn-btn-hover-border-color: #{$btn-dark-inverse-hover-border-color};
+  --pgn-btn-disabled-bg: #{$btn-dark-inverse-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-dark-inverse-disabled-border-color};
+  --pgn-btn-disabled-color: #{$btn-dark-inverse-disabled-color};
   --pgn-btn-active-color: #{$btn-dark-inverse-active-color};
-  --pgn-btn-active-bg: #EEEEEE;
-
-  @include button-focus($btn-dark-inverse-focus-border-color);
+  --pgn-btn-active-bg: #{$btn-dark-inverse-active-bg};
+  --pgn-btn-active-border-color: #{$btn-dark-inverse-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-dark-inverse-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-dark-inverse-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-dark-inverse-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-dark-inverse-focus-bg};
 }
 
 .btn-inverse-outline-dark {
   --pgn-btn-color: #{$btn-dark-inverse-outline-color};
+  --pgn-btn-bg: #{$btn-dark-inverse-outline-bg};
   --pgn-btn-border-color: #{$btn-dark-inverse-outline-border-color};
   --pgn-btn-hover-color: #{$btn-dark-inverse-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-dark-inverse-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-dark-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-dark-inverse-outline-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-dark-inverse-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-dark-inverse-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-dark-inverse-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-dark-inverse-outline-active-color};
   --pgn-btn-active-bg: #{$btn-dark-inverse-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-dark-inverse-outline-active-border-color};
-
-  @include button-focus($btn-dark-inverse-outline-focus-border-color);
+  --pgn-btn-focus-outline-color: #{$btn-dark-inverse-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-dark-inverse-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-dark-inverse-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-dark-inverse-outline-focus-bg};
 }
 
 
@@ -520,61 +619,75 @@ input[type="button"] {
   --pgn-btn-hover-color: #{$btn-info-hover-color};
   --pgn-btn-hover-bg: #{$btn-info-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-info-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-info-color};
-  --pgn-btn-disabled-bg: #{$btn-info-bg};
-  --pgn-btn-disabled-border-color: #{$btn-info-border-color};
+  --pgn-btn-disabled-color: #{$btn-info-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-info-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-info-disabled-border-color};
   --pgn-btn-active-color: #{$btn-info-active-color};
   --pgn-btn-active-bg: #{$btn-info-active-bg};
   --pgn-btn-active-border-color: #{$btn-info-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-info-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-info-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-info-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-info-focus-bg};
 
   box-shadow: $btn-box-shadow;
-
-  @include button-focus($btn-info-focus-border-color);
 }
 
 .btn-outline-info {
   --pgn-btn-color: #{$btn-info-outline-color};
+  --pgn-btn-bg: #{$btn-info-outline-bg};
   --pgn-btn-border-color: #{$btn-info-outline-border-color};
   --pgn-btn-hover-color: #{$btn-info-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-info-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-info-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-info-outline-hover-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-info-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-info-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-info-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-info-outline-active-color};
   --pgn-btn-active-bg: #{$btn-info-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-info-outline-active-border-color};
-
-  @include button-focus(#{$btn-info-outline-focus-border-color});
+  --pgn-btn-focus-outline-color: #{$btn-info-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-info-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-info-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-info-outline-focus-bg};
 }
 
 .btn-inverse-info {
   --pgn-btn-color: #{$btn-info-inverse-color};
   --pgn-btn-bg: #{$btn-info-inverse-bg};
-  --pgn-btn-border-color: transparent;
+  --pgn-btn-border-color: #{$btn-info-inverse-border-color};
   --pgn-btn-hover-color: #{$btn-info-inverse-hover-color};
   --pgn-btn-hover-bg: #{$btn-info-inverse-hover-bg};
-  --pgn-btn-hover-border-color: transparent;
-  --pgn-btn-disabled-bg: transparent;
-  --pgn-btn-disabled-border-color: #{$btn-info-border-color};
+  --pgn-btn-hover-border-color: #{$btn-info-inverse-hover-border-color};
+  --pgn-btn-disabled-color: #{$btn-info-inverse-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-info-inverse-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-info-inverse-disabled-border-color};
   --pgn-btn-active-color: #{$btn-info-inverse-active-color};
-  --pgn-btn-active-bg: #EEEEEE;
-
-  @include button-focus($btn-info-inverse-focus-border-color);
+  --pgn-btn-active-bg: #{$btn-info-inverse-active-bg};
+  --pgn-btn-active-border-color: #{$btn-info-inverse-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-info-inverse-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-info-inverse-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-info-inverse-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-info-inverse-focus-bg};
 }
 
 .btn-inverse-outline-info {
   --pgn-btn-color: #{$btn-info-inverse-outline-color};
+  --pgn-btn-bg: #{$btn-info-inverse-outline-bg};
   --pgn-btn-border-color: #{$btn-info-inverse-outline-border-color};
   --pgn-btn-hover-color: #{$btn-info-inverse-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-info-inverse-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-info-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-info-inverse-outline-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-info-inverse-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-info-inverse-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-info-inverse-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-info-inverse-outline-active-color};
   --pgn-btn-active-bg: #{$btn-info-inverse-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-info-inverse-outline-active-border-color};
-
-  @include button-focus($btn-info-inverse-outline-focus-border-color);
+  --pgn-btn-focus-outline-color: #{$btn-info-inverse-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-info-inverse-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-info-inverse-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-info-inverse-outline-focus-bg};
 }
 
 
@@ -586,61 +699,75 @@ input[type="button"] {
   --pgn-btn-hover-color: #{$btn-light-hover-color};
   --pgn-btn-hover-bg: #{$btn-light-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-light-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-light-color};
-  --pgn-btn-disabled-bg: #{$btn-light-bg};
-  --pgn-btn-disabled-border-color: #{$btn-light-border-color};
+  --pgn-btn-disabled-color: #{$btn-light-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-light-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-light-disabled-border-color};
   --pgn-btn-active-color: #{$btn-light-active-color};
   --pgn-btn-active-bg: #{$btn-light-active-bg};
   --pgn-btn-active-border-color: #{$btn-light-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-light-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-light-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-light-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-light-focus-bg};
 
   box-shadow: $btn-box-shadow;
-
-  @include button-focus($btn-light-focus-border-color);
 }
 
 .btn-outline-light {
   --pgn-btn-color: #{$btn-light-outline-color};
+  --pgn-btn-bg: #{$btn-light-outline-bg};
   --pgn-btn-border-color: #{$btn-light-outline-border-color};
   --pgn-btn-hover-color: #{$btn-light-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-light-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-light-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-light-outline-hover-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-light-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-light-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-light-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-light-outline-active-color};
   --pgn-btn-active-bg: #{$btn-light-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-light-outline-active-border-color};
-
-  @include button-focus(#{$btn-light-outline-focus-border-color});
+  --pgn-btn-focus-outline-color: #{$btn-light-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-light-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-light-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-light-outline-focus-bg};
 }
 
 .btn-inverse-light {
   --pgn-btn-color: #{$btn-light-inverse-color};
   --pgn-btn-bg: #{$btn-light-inverse-bg};
-  --pgn-btn-border-color: transparent;
+  --pgn-btn-border-color: #{$btn-light-inverse-border-color};
   --pgn-btn-hover-color: #{$btn-light-inverse-hover-color};
   --pgn-btn-hover-bg: #{$btn-light-inverse-hover-bg};
-  --pgn-btn-hover-border-color: transparent;
-  --pgn-btn-disabled-bg: transparent;
-  --pgn-btn-disabled-border-color: #{$btn-light-border-color};
+  --pgn-btn-hover-border-color: #{$btn-light-inverse-hover-border-color};
+  --pgn-btn-disabled-bg: #{$btn-light-inverse-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-light-inverse-disabled-border-color};
+  --pgn-btn-disabled-color: #{$btn-light-inverse-disabled-color};
   --pgn-btn-active-color: #{$btn-light-inverse-active-color};
-  --pgn-btn-active-bg: #EEEEEE;
-
-  @include button-focus($btn-light-inverse-focus-border-color);
+  --pgn-btn-active-bg: #{$btn-light-inverse-active-bg};
+  --pgn-btn-active-border-color: #{$btn-light-inverse-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-light-inverse-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-light-inverse-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-light-inverse-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-light-inverse-focus-bg};
 }
 
 .btn-inverse-outline-light {
   --pgn-btn-color: #{$btn-light-inverse-outline-color};
+  --pgn-btn-bg: #{$btn-light-inverse-outline-bg};
   --pgn-btn-border-color: #{$btn-light-inverse-outline-border-color};
   --pgn-btn-hover-color: #{$btn-light-inverse-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-light-inverse-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-light-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-light-inverse-outline-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-light-inverse-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-light-inverse-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-light-inverse-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-light-inverse-outline-active-color};
   --pgn-btn-active-bg: #{$btn-light-inverse-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-light-inverse-outline-active-border-color};
-
-  @include button-focus($btn-light-inverse-outline-focus-border-color);
+  --pgn-btn-focus-outline-color: #{$btn-light-inverse-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-light-inverse-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-light-inverse-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-light-inverse-outline-focus-bg};
 }
 
 
@@ -652,61 +779,75 @@ input[type="button"] {
   --pgn-btn-hover-color: #{$btn-success-hover-color};
   --pgn-btn-hover-bg: #{$btn-success-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-success-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-success-color};
-  --pgn-btn-disabled-bg: #{$btn-success-bg};
-  --pgn-btn-disabled-border-color: #{$btn-success-border-color};
+  --pgn-btn-disabled-color: #{$btn-success-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-success-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-success-disabled-border-color};
   --pgn-btn-active-color: #{$btn-success-active-color};
   --pgn-btn-active-bg: #{$btn-success-active-bg};
   --pgn-btn-active-border-color: #{$btn-success-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-success-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-success-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-success-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-success-focus-bg};
 
   box-shadow: $btn-box-shadow;
-
-  @include button-focus($btn-success-focus-border-color);
 }
 
 .btn-outline-success {
   --pgn-btn-color: #{$btn-success-outline-color};
+  --pgn-btn-bg: #{$btn-success-outline-bg};
   --pgn-btn-border-color: #{$btn-success-outline-border-color};
   --pgn-btn-hover-color: #{$btn-success-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-success-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-success-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-success-outline-hover-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-success-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-success-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-success-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-success-outline-active-color};
   --pgn-btn-active-bg: #{$btn-success-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-success-outline-active-border-color};
-
-  @include button-focus(#{$btn-success-outline-focus-border-color});
+  --pgn-btn-focus-outline-color: #{$btn-success-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-success-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-success-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-success-outline-focus-bg};
 }
 
 .btn-inverse-success {
   --pgn-btn-color: #{$btn-success-inverse-color};
   --pgn-btn-bg: #{$btn-success-inverse-bg};
-  --pgn-btn-border-color: transparent;
+  --pgn-btn-border-color: #{$btn-success-inverse-border-color};
   --pgn-btn-hover-color: #{$btn-success-inverse-hover-color};
   --pgn-btn-hover-bg: #{$btn-success-inverse-hover-bg};
-  --pgn-btn-hover-border-color: transparent;
-  --pgn-btn-disabled-bg: transparent;
-  --pgn-btn-disabled-border-color: #{$btn-success-border-color};
+  --pgn-btn-hover-border-color: #{$btn-success-inverse-hover-border-color};
+  --pgn-btn-disabled-color: #{$btn-success-inverse-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-success-inverse-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-success-inverse-disabled-border-color};
   --pgn-btn-active-color: #{$btn-success-inverse-active-color};
-  --pgn-btn-active-bg: #EEEEEE;
-
-  @include button-focus($btn-success-inverse-focus-border-color);
+  --pgn-btn-active-bg: #{$btn-success-inverse-active-bg};
+  --pgn-btn-active-border-color: #{$btn-success-inverse-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-success-inverse-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-success-inverse-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-success-inverse-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-success-inverse-focus-bg};
 }
 
 .btn-inverse-outline-success {
   --pgn-btn-color: #{$btn-success-inverse-outline-color};
+  --pgn-btn-bg: #{$btn-success-inverse-outline-bg};
   --pgn-btn-border-color: #{$btn-success-inverse-outline-border-color};
   --pgn-btn-hover-color: #{$btn-success-inverse-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-success-inverse-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-success-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-success-inverse-outline-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-success-inverse-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-success-inverse-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-success-inverse-outline-disabled-color};
   --pgn-btn-active-color: #{$btn-success-inverse-outline-active-color};
   --pgn-btn-active-bg: #{$btn-success-inverse-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-success-inverse-outline-active-border-color};
-
-  @include button-focus($btn-success-inverse-outline-focus-border-color);
+  --pgn-btn-focus-outline-color: #{$btn-success-inverse-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-success-inverse-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-success-inverse-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-success-inverse-outline-focus-bg};
 }
 
 
@@ -718,61 +859,75 @@ input[type="button"] {
   --pgn-btn-hover-color: #{$btn-warning-hover-color};
   --pgn-btn-hover-bg: #{$btn-warning-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-warning-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-warning-color};
-  --pgn-btn-disabled-bg: #{$btn-warning-bg};
-  --pgn-btn-disabled-border-color: #{$btn-warning-border-color};
+  --pgn-btn-disabled-color: #{$btn-warning-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-warning-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-warning-disabled-border-color};
   --pgn-btn-active-color: #{$btn-warning-active-color};
   --pgn-btn-active-bg: #{$btn-warning-active-bg};
   --pgn-btn-active-border-color: #{$btn-warning-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-warning-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-warning-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-warning-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-warning-focus-bg};
 
   box-shadow: $btn-box-shadow;
-
-  @include button-focus($btn-warning-focus-border-color);
 }
 
 .btn-outline-warning {
   --pgn-btn-color: #{$btn-warning-outline-color};
+  --pgn-btn-bg: #{$btn-warning-outline-bg};
   --pgn-btn-border-color: #{$btn-warning-outline-border-color};
   --pgn-btn-hover-color: #{$btn-warning-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-warning-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-warning-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-warning-outline-hover-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-warning-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-warning-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-warning-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-warning-outline-active-color};
   --pgn-btn-active-bg: #{$btn-warning-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-warning-outline-active-border-color};
-
-  @include button-focus(#{$btn-warning-outline-focus-border-color});
+  --pgn-btn-focus-outline-color: #{$btn-warning-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-warning-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-warning-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-warning-outline-focus-bg};
 }
 
 .btn-inverse-warning {
   --pgn-btn-color: #{$btn-warning-inverse-color};
   --pgn-btn-bg: #{$btn-warning-inverse-bg};
-  --pgn-btn-border-color: transparent;
+  --pgn-btn-border-color: #{$btn-warning-inverse-border-color};
   --pgn-btn-hover-color: #{$btn-warning-inverse-hover-color};
   --pgn-btn-hover-bg: #{$btn-warning-inverse-hover-bg};
-  --pgn-btn-hover-border-color: transparent;
-  --pgn-btn-disabled-bg: transparent;
-  --pgn-btn-disabled-border-color: #{$btn-warning-border-color};
+  --pgn-btn-hover-border-color: #{$btn-warning-inverse-hover-border-color};
+  --pgn-btn-disabled-bg: #{$btn-warning-inverse-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-warning-inverse-disabled-border-color};
+  --pgn-btn-disabled-color: #{$btn-warning-inverse-disabled-color};
   --pgn-btn-active-color: #{$btn-warning-inverse-active-color};
-  --pgn-btn-active-bg: #EEEEEE;
-
-  @include button-focus($btn-warning-inverse-focus-border-color);
+  --pgn-btn-active-bg: #{$btn-warning-inverse-active-bg};
+  --pgn-btn-active-border-color: #{$btn-warning-inverse-active-border-color};
+  --pgn-btn-focus-outline-color: #{$btn-warning-inverse-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-warning-inverse-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-warning-inverse-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-warning-inverse-focus-bg};
 }
 
 .btn-inverse-outline-warning {
   --pgn-btn-color: #{$btn-warning-inverse-outline-color};
+  --pgn-btn-bg: #{$btn-warning-inverse-outline-bg};
   --pgn-btn-border-color: #{$btn-warning-inverse-outline-border-color};
   --pgn-btn-hover-color: #{$btn-warning-inverse-outline-hover-color};
   --pgn-btn-hover-bg: #{$btn-warning-inverse-outline-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-warning-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-warning-inverse-outline-color};
-  --pgn-btn-disabled-bg: transparent;
+  --pgn-btn-disabled-color: #{$btn-warning-inverse-outline-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-warning-inverse-outline-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-warning-inverse-outline-disabled-border-color};
   --pgn-btn-active-color: #{$btn-warning-inverse-outline-active-color};
   --pgn-btn-active-bg: #{$btn-warning-inverse-outline-active-bg};
   --pgn-btn-active-border-color: #{$btn-warning-inverse-outline-active-border-color};
-
-  @include button-focus($btn-warning-inverse-outline-focus-border-color);
+  --pgn-btn-focus-outline-color: #{$btn-warning-inverse-outline-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-warning-inverse-outline-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-warning-inverse-outline-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-warning-inverse-outline-focus-bg};
 }
 
 
@@ -784,14 +939,16 @@ input[type="button"] {
   --pgn-btn-hover-color: #{$btn-tertiary-hover-color};
   --pgn-btn-hover-bg: #{$btn-tertiary-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-tertiary-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-tertiary-color};
-  --pgn-btn-disabled-bg: #{$btn-tertiary-bg};
-  --pgn-btn-disabled-border-color: #{$btn-tertiary-border-color};
+  --pgn-btn-disabled-color: #{$btn-tertiary-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-tertiary-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-tertiary-disabled-border-color};
   --pgn-btn-active-color: #{$btn-tertiary-active-color};
   --pgn-btn-active-bg: #{$btn-tertiary-active-bg};
   --pgn-btn-active-border-color: #{$btn-tertiary-active-border-color};
-
-  @include button-focus($btn-tertiary-focus-border-color);
+  --pgn-btn-focus-outline-color: #{$btn-tertiary-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-tertiary-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-tertiary-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-tertiary-focus-bg};
 }
 
 .btn-inverse-tertiary {
@@ -801,12 +958,14 @@ input[type="button"] {
   --pgn-btn-hover-color: #{$btn-inverse-tertiary-hover-color};
   --pgn-btn-hover-bg: #{$btn-inverse-tertiary-hover-bg};
   --pgn-btn-hover-border-color: #{$btn-inverse-tertiary-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-inverse-tertiary-color};
-  --pgn-btn-disabled-bg: #{$btn-inverse-tertiary-bg};
-  --pgn-btn-disabled-border-color: #{$btn-inverse-tertiary-border-color};
+  --pgn-btn-disabled-color: #{$btn-inverse-tertiary-disabled-color};
+  --pgn-btn-disabled-bg: #{$btn-inverse-tertiary-disabled-bg};
+  --pgn-btn-disabled-border-color: #{$btn-inverse-tertiary-disabled-border-color};
   --pgn-btn-active-color: #{$btn-inverse-tertiary-active-color};
   --pgn-btn-active-bg: #{$btn-inverse-tertiary-active-bg};
   --pgn-btn-active-border-color: #{$btn-inverse-tertiary-active-border-color};
-
-  @include button-focus($btn-inverse-tertiary-focus-border-color);
+  --pgn-btn-focus-outline-color: #{$btn-inverse-tertiary-focus-outline-color};
+  --pgn-btn-focus-color: #{$btn-inverse-tertiary-focus-color};
+  --pgn-btn-focus-border-color: #{$btn-inverse-tertiary-focus-border-color};
+  --pgn-btn-focus-bg: #{$btn-inverse-tertiary-focus-bg};
 }

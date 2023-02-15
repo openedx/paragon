@@ -16,11 +16,17 @@
       },
       "bg": {
         "brand": { "value": "{color.brand.base}", "type": "color", "source": "$btn-brand-bg" },
+        "outline-brand": { "value": "inherit", "type": "color", "source": "$btn-brand-outline-bg" },
         "inverse-brand": {
           "value": "{color.btn.text.inverse-brand}",
           "type": "color",
           "source": "$btn-brand-inverse-bg",
           "modify": [{ "type": "color-yiq" }]
+        },
+        "inverse-outline-brand": {
+          "value": "transparent",
+          "type": "color",
+          "source": "$btn-brand-inverse-outline-bg"
         }
       },
       "border": {
@@ -30,7 +36,8 @@
         },
         "inverse-outline-brand": {
           "value": "{color.white}", "type": "color", "source": "$btn-brand-inverse-outline-border-color"
-        }
+        },
+        "inverse-brand": { "value": "transparent", "type": "color", "source": "$btn-brand-inverse-border-color" }
       },
       "hover": {
         "text": {
@@ -79,7 +86,8 @@
           },
           "inverse-outline-brand": {
             "value": "transparent", "type": "color", "source": "$btn-brand-inverse-outline-hover-border-color"
-          }
+          },
+          "inverse-brand": { "value": "transparent", "type": "color", "source": "$btn-brand-inverse-hover-border-color" }
         }
       },
       "active": {
@@ -117,7 +125,8 @@
           },
           "inverse-outline-brand": {
             "value": "{color.theme.bg.brand}", "type": "color", "source": "$btn-brand-inverse-outline-active-bg"
-          }
+          },
+          "inverse-brand": { "value": "{color.gray.100}", "type": "color", "source": "$btn-brand-inverse-active-bg" }
         },
         "border": {
           "brand": {
@@ -128,18 +137,41 @@
             "type": "color",
             "source": "$btn-brand-outline-active-border-color"
           },
+          "inverse-brand": {
+            "value": "transparent",
+            "type": "color",
+            "source": "$btn-brand-inverse-active-border-color"
+          },
           "inverse-outline-brand": {
             "value": "transparent", "type": "color", "source": "$btn-brand-inverse-outline-active-border-color"
           }
         }
       },
       "focus": {
-        "border": {
-          "brand": {
-            "value": "{color.theme.focus.brand}", "type": "color", "source": "$btn-brand-focus-border-color"
+        "text": {
+          "brand": { "value": "{color.btn.text.brand}", "type": "color", "source": "$btn-brand-focus-color" },
+          "inverse-brand": {
+            "value": "{color.btn.text.inverse-brand}",
+            "type": "color",
+            "source": "$btn-brand-inverse-focus-color"
           },
           "outline-brand": {
-            "value": "{color.theme.focus.brand}",
+            "value": "{color.btn.text.outline-brand}",
+            "type": "color",
+            "source": "$btn-brand-outline-focus-color"
+          },
+          "inverse-outline-brand": {
+            "value": "{color.btn.text.inverse-outline-brand}",
+            "type": "color",
+            "source": "$btn-brand-inverse-outline-focus-color"
+          }
+        },
+        "border": {
+          "brand": {
+            "value": "{color.btn.border.brand}", "type": "color", "source": "$btn-brand-focus-border-color"
+          },
+          "outline-brand": {
+            "value": "{color.btn.border.outline-brand}",
             "type": "color",
             "source": "$btn-brand-outline-focus-border-color"
           },
@@ -147,7 +179,79 @@
             "value": "{color.white}", "type": "color", "source": "$btn-brand-inverse-focus-border-color"
           },
           "inverse-outline-brand": {
-            "value": "{color.white}", "type": "color",  "source": "$btn-brand-inverse-outline-focus-border-color"
+            "value": "{color.btn.border.inverse-outline-brand}", "type": "color",  "source": "$btn-brand-inverse-outline-focus-border-color"
+          }
+        },
+        "bg": {
+          "brand": { "value": "{color.btn.bg.brand}", "type": "color", "source": "$btn-brand-focus-bg" },
+          "inverse-brand": {
+            "value": "{color.btn.bg.inverse-brand}",
+            "source": "$btn-brand-inverse-focus-bg",
+            "type": "color"
+          },
+          "outline-brand": { "value": "inherit", "type": "color", "source": "$btn-brand-outline-focus-bg" },
+          "inverse-outline-brand": { "value": "inherit", "type": "color", "source": "$btn-brand-inverse-outline-focus-bg" }
+        },
+        "outline": {
+          "brand": { "value": "{color.theme.focus.brand}", "type": "color", "source": "$btn-brand-focus-outline-color" },
+          "outline-brand": {
+            "value": "{color.theme.focus.brand}",
+            "type": "color",
+            "source": "$btn-brand-outline-focus-outline-color"
+          },
+          "inverse-brand": {
+            "value": "{color.btn.focus.border.inverse-brand}",
+            "type": "color",
+            "source": "$btn-brand-inverse-focus-outline-color"
+          },
+          "inverse-outline-brand": {
+            "value": "{color.btn.focus.border.inverse-outline-brand}",
+            "type": "color",
+            "source": "$btn-brand-inverse-outline-focus-outline-color"
+          }
+        }
+      },
+      "disabled": {
+        "text": {
+          "brand": { "value": "{color.btn.text.brand}", "type": "color", "source": "$btn-brand-disabled-color" },
+          "inverse-brand": { "value": "{color.brand.500}", "type": "color", "source": "$btn-brand-inverse-disabled-color" },
+          "outline-brand": {
+            "value": "{color.btn.hover.text.outline-brand}",
+            "type": "color",
+            "source": "$btn-brand-outline-disabled-color"
+          },
+          "inverse-outline-brand": {
+            "value": "{color.btn.text.inverse-outline-brand}",
+            "type": "color",
+            "source": "$btn-brand-inverse-outline-disabled-color"
+          }
+        },
+        "bg": {
+          "brand": { "value": "{color.btn.bg.brand}", "type": "color", "source": "$btn-brand-disabled-bg" },
+          "outline-brand": { "value": "inherit", "type": "color", "source": "$btn-brand-outline-disabled-bg" },
+          "inverse-brand": { "value": "transparent", "type": "color", "source": "$btn-brand-inverse-disabled-bg" },
+          "inverse-outline-brand": {
+            "value": "{color.btn.bg.inverse-outline-brand}",
+            "type": "color",
+            "source": "$btn-brand-inverse-outline-disabled-bg"
+          }
+        },
+        "border": {
+          "brand": { "value": "{color.btn.border.brand}", "type": "color", "source": "$btn-brand-disabled-border-color" },
+          "outline-brand": {
+            "value": "{color.btn.border.outline-brand}",
+            "type": "color",
+            "source": "$btn-brand-outline-disabled-border-color"
+          },
+          "inverse-brand": {
+            "value": "{color.btn.disabled.bg.inverse-brand}",
+            "type": "color",
+            "source": "$btn-brand-inverse-disabled-border-color"
+          },
+          "inverse-outline-brand": {
+            "value": "{color.btn.text.inverse-outline-brand}",
+            "type": "color",
+            "source": "$btn-brand-inverse-outline-disabled-border-color"
           }
         }
       }
