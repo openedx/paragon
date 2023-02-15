@@ -2,8 +2,8 @@
   "spacing": {
     "action-row": {
       "gap": {
-        "x": { "value": ".5rem", "source": "$action-row-gap-x" },
-        "y": { "value": ".5rem", "source": "$action-row-gap-y" }
+        "x": { "value": ".5rem", "type": "dimension", "source": "$action-row-gap-x" },
+        "y": { "value": ".5rem", "type": "dimension", "source": "$action-row-gap-y" }
       }
     }
   }

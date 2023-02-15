@@ -2,35 +2,35 @@
   "color": {
     "chip": {
       "text": {
-        "light": { "value": "{color.black}", "source": "$chip-light-color" },
-        "dark": { "value": "{color.white}", "source": "$chip-dark-color" }
+        "light": { "value": "{color.black}", "type": "color", "source": "$chip-light-color" },
+        "dark": { "value": "{color.white}", "type": "color", "source": "$chip-dark-color" }
       },
       "bg": {
-        "light": { "value": "{color.light.500}", "source": "$chip-light-bg" },
-        "dark": { "value": "{color.dark.200}", "source": "$chip-dark-bg" }
+        "light": { "value": "{color.light.500}", "type": "color", "source": "$chip-light-bg" },
+        "dark": { "value": "{color.dark.200}", "type": "color", "source": "$chip-dark-bg" }
       }
     }
   },
   "spacing": {
     "chip": {
-      "margin": { "value": ".125rem", "source": "$chip-margin" },
+      "margin": { "value": ".125rem", "type": "dimension", "source": "$chip-margin" },
       "padding": {
-        "y": { "value": ".125rem", "source": "$chip-padding-y" },
-        "x": { "value": ".5rem", "source": "$chip-padding-x" },
-        "icon": { "value": ".25rem", "source": "$chip-icon-padding" },
-        "to-icon": { "value": "3px", "source": "$chip-padding-to-icon" }
+        "y": { "value": ".125rem", "type": "dimension", "source": "$chip-padding-y" },
+        "x": { "value": ".5rem", "type": "dimension", "source": "$chip-padding-x" },
+        "icon": { "value": ".25rem", "type": "dimension", "source": "$chip-icon-padding" },
+        "to-icon": { "value": "3px", "type": "dimension", "source": "$chip-padding-to-icon" }
       }
     }
   },
   "other": {
     "chip": {
-      "opacity-disabled": { "value": ".3", "source": "$chip-disable-opacity" }
+      "opacity-disabled": { "value": ".3", "type": "ratio", "source": "$chip-disable-opacity" }
     }
   },
   "size": {
     "chip": {
-      "border-radius": { "value": ".25rem", "source": "$chip-border-radius" },
-      "icon": { "value": "1.25rem", "source": "$chip-icon-size" }
+      "border-radius": { "value": ".25rem", "type": "dimension", "source": "$chip-border-radius" },
+      "icon": { "value": "1.25rem", "type": "dimension", "source": "$chip-icon-size" }
     }
   }
 }

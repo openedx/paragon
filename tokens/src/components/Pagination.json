@@ -2,98 +2,110 @@
   "color": {
     "pagination": {
       "text": {
-        "base": { "value": "{color.link.base}", "source": "$pagination-color" },
-        "inverse": { "value": "{color.white}", "source": "$pagination-color-inverse" },
-        "hover": { "value": "{color.link.hover}", "source": "$pagination-hover-color" },
-        "active": { "value": "{color.active}", "source": "$pagination-active-color" },
-        "disabled": { "value": "{color.disabled}", "source": "$pagination-disabled-color" }
+        "base": { "value": "{color.link.base}", "type": "color", "source": "$pagination-color" },
+        "inverse": { "value": "{color.white}", "type": "color", "source": "$pagination-color-inverse" },
+        "hover": { "value": "{color.link.hover}", "type": "color", "source": "$pagination-hover-color" },
+        "active": { "value": "{color.active}", "type": "color", "source": "$pagination-active-color" },
+        "disabled": { "value": "{color.disabled}", "type": "color", "source": "$pagination-disabled-color" }
       },
       "bg": {
-        "base": { "value": "{color.bg.base}", "source": "$pagination-bg" },
-        "hover": { "value": "{color.gray.100}", "source": "$pagination-hover-bg" },
-        "active": { "value": "{color.bg.active}", "source": "$pagination-active-bg" },
-        "disabled": { "value": "{color.white}", "source": "$pagination-disabled-bg" }
+        "base": { "value": "{color.bg.base}", "type": "color", "source": "$pagination-bg" },
+        "hover": { "value": "{color.gray.100}", "type": "color", "source": "$pagination-hover-bg" },
+        "active": { "value": "{color.bg.active}", "type": "color", "source": "$pagination-active-bg" },
+        "disabled": { "value": "{color.white}", "type": "color", "source": "$pagination-disabled-bg" }
       },
       "border": {
-        "base": { "value": "{color.gray.200}", "source": "$pagination-border-color" },
-        "hover": { "value": "{color.gray.200}", "source": "$pagination-hover-border-color" },
-        "active": { "value": "{color.pagination.bg.active}", "source": "$pagination-active-border-color" },
-        "disabled": { "value": "{color.gray.100}", "source": "$pagination-disabled-border-color" }
+        "base": { "value": "{color.gray.200}", "type": "color", "source": "$pagination-border-color" },
+        "hover": { "value": "{color.gray.200}", "type": "color", "source": "$pagination-hover-border-color" },
+        "active": {
+          "value": "{color.pagination.bg.active}", "type": "color", "source": "$pagination-active-border-color"
+        },
+        "disabled": {
+          "value": "{color.gray.100}", "type": "color", "source": "$pagination-disabled-border-color"
+        }
       },
       "focus": {
-        "base": { "value": "{color.primary.500}", "source": "$pagination-focus-color" },
-        "text": { "value": "{color.black}", "source": "$pagination-focus-color-text" }
+        "base": { "value": "{color.primary.500}", "type": "color", "source": "$pagination-focus-color" },
+        "text": { "value": "{color.black}", "type": "color", "source": "$pagination-focus-color-text" }
       }
     }
   },
   "typography": {
     "pagination": {
       "font-size": {
-        "sm": { "value": ".875rem", "source": "$pagination-font-size-sm" }
+        "sm": { "value": ".875rem", "type": "dimension", "source": "$pagination-font-size-sm" }
       },
-      "line-height": { "value": "1.5rem", "source": "$pagination-line-height" }
+      "line-height": { "value": "1.5rem", "type": "dimension", "source": "$pagination-line-height" }
     }
   },
   "spacing": {
     "pagination": {
       "padding": {
         "y": {
-          "base": { "value": ".625rem", "source": "$pagination-padding-y" },
-          "sm": { "value": ".8rem", "source": "$pagination-padding-y-sm" },
-          "lg": { "value": ".75rem", "source": "$pagination-padding-y-lg" }
+          "base": { "value": ".625rem", "type": "dimension", "source": "$pagination-padding-y" },
+          "sm": { "value": ".8rem", "type": "dimension", "source": "$pagination-padding-y-sm" },
+          "lg": { "value": ".75rem", "type": "dimension", "source": "$pagination-padding-y-lg" }
         },
         "x": {
-          "base": { "value": "1rem", "source": "$pagination-padding-x" },
-          "sm": { "value": ".6rem", "source": "$pagination-padding-x-sm" },
-          "lg": { "value": "1.5rem", "source": "$pagination-padding-x-lg" }
+          "base": { "value": "1rem", "type": "dimension", "source": "$pagination-padding-x" },
+          "sm": { "value": ".6rem", "type": "dimension", "source": "$pagination-padding-x-sm" },
+          "lg": { "value": "1.5rem", "type": "dimension", "source": "$pagination-padding-x-lg" }
         }
       },
       "margin": {
-        "x": { "value": ".5rem", "source": "$pagination-margin-x" }
+        "x": { "value": ".5rem", "type": "dimension", "source": "$pagination-margin-x" }
       }
     }
   },
   "size": {
     "pagination": {
       "icon": {
-        "width": { "value": "2.25rem", "source": "$pagination-icon-width" },
-        "height": { "value": "2.25rem", "source": "$pagination-icon-height" }
+        "width": { "value": "2.25rem", "type": "dimension", "source": "$pagination-icon-width" },
+        "height": { "value": "2.25rem", "type": "dimension", "source": "$pagination-icon-height" }
       },
       "secondary": {
         "height": {
-          "base": { "value": "2.75rem", "source": "$pagination-secondary-height" },
-          "sm": { "value": "2.25rem", "source": "$pagination-secondary-height-sm" }
+          "base": { "value": "2.75rem", "type": "dimension", "source": "$pagination-secondary-height" },
+          "sm": { "value": "2.25rem", "type": "dimension", "source": "$pagination-secondary-height-sm" }
         }
       },
       "border": {
-        "width": { "value": "{size.border.width}", "source": "$pagination-border-width" },
+        "width": { "value": "{size.border.width}", "type": "dimension", "source": "$pagination-border-width" },
         "radius": {
-          "sm": { "value": "{size.border.radius.sm}", "source": "$pagination-border-radius-sm" },
-          "lg": { "value": "{size.border.radius.lg}", "source": "$pagination-border-radius-lg" }
+          "sm": {
+            "value": "{size.border.radius.sm}", "type": "dimension", "source": "$pagination-border-radius-sm"
+          },
+          "lg": {
+            "value": "{size.border.radius.lg}", "type": "dimension", "source": "$pagination-border-radius-lg"
+          }
         }
       },
       "reduced": {
         "dropdown": {
-          "max-height": { "value": "60vh", "source": "$pagination-reduced-dropdown-max-height" },
-          "min-width": { "value": "6rem", "source": "$pagination-reduced-dropdown-min-width" }
+          "max-height": { "value": "60vh", "type": "dimension", "source": "$pagination-reduced-dropdown-max-height" },
+          "min-width": { "value": "6rem", "type": "dimension", "source": "$pagination-reduced-dropdown-min-width" }
         }
       },
       "toggle": {
         "border": {
-          "base": { "value": ".3125rem", "source": "$pagination-toggle-border" },
-          "sm": { "value": ".25rem", "source": "$pagination-toggle-border-sm" }
+          "base": { "value": ".3125rem", "type": "dimension", "source": "$pagination-toggle-border" },
+          "sm": { "value": ".25rem", "type": "dimension", "source": "$pagination-toggle-border-sm" }
         }
       },
       "focus": {
-        "border-width": { "value": ".125rem", "source": "$pagination-focus-border-width" },
-        "outline": { "value": "0", "source": "$pagination-focus-outline" }
+        "border-width": { "value": ".125rem", "type": "dimension", "source": "$pagination-focus-border-width" },
+        "outline": { "value": "0", "type": "dimension", "source": "$pagination-focus-outline" }
       }
     }
   },
   "elevation": {
     "pagination": {
       "focus": {
-        "box-shadow": { "value": "{elevation.input.btn-focus.box-shadow}", "source": "$pagination-focus-box-shadow" }
+        "box-shadow": {
+          "value": "{elevation.input.btn-focus.box-shadow}",
+          "type": "shadow",
+          "source": "$pagination-focus-box-shadow"
+        }
       }
     }
   }

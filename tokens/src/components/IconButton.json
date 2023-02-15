@@ -1,25 +1,29 @@
 {
   "color": {
     "icon-button": {
-      "bg": { "value": "transparent", "source": "$btn-icon-bg" },
-      "accent": { "value": "{color.white}", "source": "$btn-icon-accent-color" },
-      "primary": { "value": "{color.primary.base}", "source": "$btn-icon-primary" },
-      "secondary": { "value": "{color.secondary.base}", "source": "$btn-icon-secondary" },
-      "brand": { "value": "{color.brand.base}", "source": "$btn-icon-brand" },
-      "success": { "value": "{color.success.base}", "source": "$btn-icon-success" },
-      "warning": { "value": "{color.warning.base}", "source": "$btn-icon-warning" },
-      "danger": { "value": "{color.danger.base}", "source": "$btn-icon-danger" },
-      "light": { "value": "{color.light.base}", "source": "$btn-icon-light" },
-      "dark": { "value": "{color.dark.base}", "source": "$btn-icon-dark" },
-      "black": { "value": "{color.black}", "source": "$btn-icon-black" }
+      "bg": { "value": "transparent", "type": "color", "source": "$btn-icon-bg" },
+      "accent": { "value": "{color.white}", "type": "color", "source": "$btn-icon-accent-color" },
+      "primary": { "value": "{color.primary.base}", "type": "color", "source": "$btn-icon-primary" },
+      "secondary": { "value": "{color.secondary.base}", "type": "color", "source": "$btn-icon-secondary" },
+      "brand": { "value": "{color.brand.base}", "type": "color", "source": "$btn-icon-brand" },
+      "success": { "value": "{color.success.base}", "type": "color", "source": "$btn-icon-success" },
+      "warning": { "value": "{color.warning.base}", "type": "color", "source": "$btn-icon-warning" },
+      "danger": { "value": "{color.danger.base}", "type": "color", "source": "$btn-icon-danger" },
+      "light": { "value": "{color.light.base}", "type": "color", "source": "$btn-icon-light" },
+      "dark": { "value": "{color.dark.base}", "type": "color", "source": "$btn-icon-dark" },
+      "black": { "value": "{color.black}", "type": "color", "source": "$btn-icon-black" }
     }
   },
   "size": {
     "icon-button": {
       "diameter": {
-        "md": { "value": "2.75rem", "source": "$btn-icon-diameter-md" },
-        "sm": { "value": "2.25rem", "source": "$btn-icon-diameter-sm" },
-        "inline": { "value": "calc({typography.line-height.base} + .1em)", "source": "$btn-icon-diameter-inline" }
+        "md": { "value": "2.75rem", "type": "dimension", "source": "$btn-icon-diameter-md" },
+        "sm": { "value": "2.25rem", "type": "dimension", "source": "$btn-icon-diameter-sm" },
+        "inline": {
+          "value": "calc({typography.line-height.base} + .1em)",
+          "type": "dimension",
+          "source": "$btn-icon-diameter-inline"
+        }
       }
     }
   }
