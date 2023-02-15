@@ -4,99 +4,149 @@
       "input": {
         "padding": {
           "y": {
-            "base": { "value": "{spacing.input.btn.padding.y}", "source": "$input-padding-y" },
-            "sm": { "value": "{spacing.input.btn.padding.sm.y}", "source": "$input-padding-y-sm" },
-            "lg": { "value": "{spacing.input.btn.padding.lg.y}", "source": "$input-padding-y-lg" }
+            "base": {
+              "value": "{spacing.input.btn.padding.y}", "type": "dimension", "source": "$input-padding-y"
+            },
+            "sm": {
+              "value": "{spacing.input.btn.padding.sm.y}", "type": "dimension", "source": "$input-padding-y-sm"
+            },
+            "lg": {
+              "value": "{spacing.input.btn.padding.lg.y}", "type": "dimension", "source": "$input-padding-y-lg"
+            }
           },
           "x": {
-            "base": { "value": "{spacing.input.btn.padding.x}", "source": "$input-padding-x" },
-            "sm": { "value": "{spacing.input.btn.padding.sm.x}", "source": "$input-padding-x-sm" },
-            "lg": { "value": "{spacing.input.btn.padding.lg.x}", "source": "$input-padding-x-lg" }
+            "base": {
+              "value": "{spacing.input.btn.padding.x}", "type": "dimension", "source": "$input-padding-x"
+            },
+            "sm": {
+              "value": "{spacing.input.btn.padding.sm.x}", "type": "dimension", "source": "$input-padding-x-sm"
+            },
+            "lg": {
+              "value": "{spacing.input.btn.padding.lg.x}", "type": "dimension", "source": "$input-padding-x-lg"
+            }
           }
         },
         "check": {
-          "gutter" : { "value": "1.25rem", "source": "$form-check-input-gutter" },
+          "gutter" : { "value": "1.25rem", "type": "dimension", "source": "$form-check-input-gutter" },
           "margin": {
             "x": {
-              "base": { "value": ".25rem", "source": "$form-check-input-margin-x" },
-              "inline": { "value": ".3125rem", "source": "$form-check-inline-input-margin-x" }
+              "base": { "value": ".25rem", "type": "dimension", "source": "$form-check-input-margin-x" },
+              "inline": { "value": ".3125rem", "type": "dimension", "source": "$form-check-inline-input-margin-x" }
             },
-            "y": { "value": ".3rem", "source": "$form-check-input-margin-y" }
+            "y": { "value": ".3rem", "type": "dimension", "source": "$form-check-input-margin-y" }
           }
         }
       },
       "text": {
         "margin": {
-          "top": { "value": ".25rem", "source": "$form-text-margin-top" }
+          "top": { "value": ".25rem", "type": "dimension", "source": "$form-text-margin-top" }
         }
       },
       "check": {
         "inline": {
           "margin": {
-            "x": { "value": ".75rem", "source": "$form-check-inline-margin-x" }
+            "x": { "value": ".75rem", "type": "dimension", "source": "$form-check-inline-margin-x" }
           }
         },
         "position": {
-          "axis": { "value": ".375rem", "source": "$form-check-position-axis" }
+          "axis": { "value": ".375rem", "type": "dimension", "source": "$form-check-position-axis" }
         }
       },
       "group": {
         "margin": {
-          "bottom": { "value": "1rem", "source": "$form-group-margin-bottom" }
+          "bottom": { "value": "1rem", "type": "dimension", "source": "$form-group-margin-bottom" }
         }
       },
       "control": {
-        "gutter": { "value": ".5rem", "source": "$custom-control-gutter" },
+        "gutter": { "value": ".5rem", "type": "dimension", "source": "$custom-control-gutter" },
         "spacer": {
-          "x": { "value": "1rem", "source": "$custom-control-spacer-x" }
+          "x": { "value": "1rem", "type": "dimension", "source": "$custom-control-spacer-x" }
         },
         "select": {
           "padding": {
             "y": {
-              "base": { "value": "{spacing.form.input.padding.y.base}", "source": "$custom-select-padding-y" },
-              "sm": { "value": "{spacing.form.input.padding.y.sm}", "source": "$custom-select-padding-y-sm" },
-              "lg": { "value": "{spacing.form.input.padding.y.lg}", "source": "$custom-select-padding-y-lg" }
+              "base": {
+                "value": "{spacing.form.input.padding.y.base}",
+                "type": "dimension",
+                "source": "$custom-select-padding-y"
+              },
+              "sm": {
+                "value": "{spacing.form.input.padding.y.sm}",
+                "type": "dimension",
+                "source": "$custom-select-padding-y-sm"
+              },
+              "lg": {
+                "value": "{spacing.form.input.padding.y.lg}",
+                "type": "dimension",
+                "source": "$custom-select-padding-y-lg"
+              }
             },
             "x": {
-              "base": { "value": "{spacing.form.input.padding.x.base}", "source": "$custom-select-padding-x" },
-              "sm": { "value": "{spacing.form.input.padding.x.sm}", "source": "$custom-select-padding-x-sm" },
-              "lg": { "value": "{spacing.form.input.padding.x.lg}", "source": "$custom-select-padding-x-lg" }
+              "base": {
+                "value": "{spacing.form.input.padding.x.base}",
+                "type": "dimension",
+                "source": "$custom-select-padding-x"
+              },
+              "sm": {
+                "value": "{spacing.form.input.padding.x.sm}",
+                "type": "dimension",
+                "source": "$custom-select-padding-x-sm"
+              },
+              "lg": {
+                "value": "{spacing.form.input.padding.x.lg}",
+                "type": "dimension",
+                "source": "$custom-select-padding-x-lg"
+              }
             }
           },
           "indicator": {
-            "padding": { "value": "1rem", "source": "$custom-select-indicator-padding" }
+            "padding": { "value": "1rem", "type": "dimension", "source": "$custom-select-indicator-padding" }
           },
           "feedback": {
             "icon": {
               "padding": {
                 "right": {
                   "value": "calc((1em + 2 * {spacing.form.control.select.padding.y.base}) * 3 / 4 + {spacing.form.control.select.padding.x.base} + {spacing.form.control.select.indicator.padding})",
+                  "type": "dimension",
                   "source": "$custom-select-feedback-icon-padding-right"
                 }
               },
               "position": {
                 "value": "center right calc({spacing.form.control.select.padding.x.base} + {spacing.form.control.select.indicator.padding})",
+                "type": "dimension",
                 "source": "$custom-select-feedback-icon-position"
               }
             },
             "margin": {
-              "top": { "value": "{spacing.form.text.margin.top}", "source": "$form-feedback-margin-top" }
+              "top": {
+                "value": "{spacing.form.text.margin.top}",
+                "type": "dimension",
+                "source": "$form-feedback-margin-top"
+              }
             },
             "tooltip": {
               "padding": {
-                "y": { "value": ".25rem", "source": "$form-feedback-tooltip-padding-y" },
-                "x": { "value": ".5rem", "source": "$form-feedback-tooltip-padding-x" }
+                "y": { "value": ".25rem", "type": "dimension", "source": "$form-feedback-tooltip-padding-y" },
+                "x": { "value": ".5rem", "type": "dimension", "source": "$form-feedback-tooltip-padding-x" }
               }
             }
           },
           "icon": {
-            "padding": { "value": ".5625rem", "source": "$select-icon-padding" }
+            "padding": { "value": ".5625rem", "type": "dimension", "source": "$select-icon-padding" }
           }
         },
         "file": {
           "padding": {
-            "y": { "value": "{spacing.form.input.padding.y.base}", "source": "$custom-file-padding-y" },
-            "x": { "value": "{spacing.form.input.padding.x.base}", "source": "$custom-file-padding-x" }
+            "y": {
+              "value": "{spacing.form.input.padding.y.base}",
+              "type": "dimension",
+              "source": "$custom-file-padding-y"
+            },
+            "x": {
+              "value": "{spacing.form.input.padding.x.base}",
+              "type": "dimension",
+              "source": "$custom-file-padding-x"
+            }
           }
         }
       }

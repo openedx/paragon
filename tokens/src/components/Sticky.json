@@ -4,10 +4,12 @@
       "shadow": {
         "top": {
           "value": "0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15)",
+          "type": "shadow",
           "source": "$sticky-shadow-top"
         },
         "bottom": {
           "value": "0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15)",
+          "type": "shadow",
           "source": "$sticky-shadow-bottom"
         }
       }
@@ -15,7 +17,7 @@
   },
   "spacing": {
     "sticky": {
-      "offset": { "value": "0", "source": "$sticky-offset" }
+      "offset": { "value": "0", "type": "dimension", "source": "$sticky-offset" }
     }
   }
 }

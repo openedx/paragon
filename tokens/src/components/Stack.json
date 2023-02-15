@@ -1,7 +1,7 @@
 {
   "size": {
     "stack": {
-      "gap": { "value": "0", "source": "$stack-gap" }
+      "gap": { "value": "0", "type": "dimension", "source": "$stack-gap" }
     }
   }
 }
