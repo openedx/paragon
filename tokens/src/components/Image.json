@@ -1,24 +1,24 @@
 {
   "color": {
     "image": {
-      "figure-caption": { "value": "{color.gray.500}", "source": "$figure-caption-color" },
+      "figure-caption": { "value": "{color.gray.500}", "type": "color", "source": "$figure-caption-color" },
       "thumbnail": {
-        "bg": { "value": "{color.body.bg}", "source": "$thumbnail-bg" },
-        "border": { "value": "{color.gray.200}", "source": "$thumbnail-border-color" }
+        "bg": { "value": "{color.body.bg}", "type": "color", "source": "$thumbnail-bg" },
+        "border": { "value": "{color.gray.200}", "type": "color", "source": "$thumbnail-border-color" }
       }
     }
   },
   "typography": {
     "image": {
       "figure-caption": {
-        "font-size": { "value": "90%", "source": "$figure-caption-font-size" }
+        "font-size": { "value": "90%", "type": "percentage", "source": "$figure-caption-font-size" }
       }
     }
   },
   "elevation": {
     "image": {
       "thumbnail": {
-        "box-shadow": { "value": "0 1px 2px rgba(0, 0, 0, .075)", "source": "$thumbnail-box-shadow" }
+        "box-shadow": { "value": "0 1px 2px rgba(0, 0, 0, .075)", "type": "shadow", "source": "$thumbnail-box-shadow" }
       }
     }
   },
@@ -26,8 +26,10 @@
     "image": {
       "thumbnail": {
         "border": {
-          "width": { "value": "{size.border.width}", "source": "$thumbnail-border-width" },
-          "radius": { "value": "{size.border.radius.base}", "source": "$thumbnail-border-radius"}
+          "width": { "value": "{size.border.width}", "type": "dimension", "source": "$thumbnail-border-width" },
+          "radius": {
+            "value": "{size.border.radius.base}", "type": "dimension", "source": "$thumbnail-border-radius"
+          }
         }
       }
     }
@@ -35,7 +37,7 @@
   "spacing": {
     "image": {
       "thumbnail": {
-        "padding": { "value": ".25rem", "source": "$thumbnail-padding" }
+        "padding": { "value": ".25rem", "type": "dimension", "source": "$thumbnail-padding" }
       }
     }
   }
