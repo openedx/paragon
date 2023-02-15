@@ -20,18 +20,21 @@
       },
       "bg": {
         "success": { "value": "{color.success.base}", "type": "color", "source": "$btn-success-bg" },
+        "outline-success": { "value": "inherit", "type": "color", "source": "$btn-success-outline-bg" },
         "inverse-success": {
           "value": "{color.btn.text.inverse-success}",
           "type": "color",
           "source": "$btn-success-inverse-bg",
           "modify": [{ "type": "color-yiq" }]
-        }
+        },
+        "inverse-outline-success": { "value": "inherit", "type": "color", "source": "$btn-success-inverse-outline-bg" }
       },
       "border": {
         "success": { "value": "{color.btn.bg.success}", "type": "color", "source": "$btn-success-border-color" },
         "outline-success": {
           "value": "{color.success.base}", "type": "color", "source": "$btn-success-outline-border-color"
         },
+        "inverse-success": { "value": "transparent", "type": "color", "source": "$btn-success-inverse-border-color" },
         "inverse-outline-success": {
           "value": "{color.white}", "type": "color", "source": "$btn-success-inverse-outline-border-color"
         }
@@ -83,6 +86,7 @@
           "outline-success": {
             "value": "{color.success.900}", "type": "color", "source": "$btn-success-outline-hover-border-color"
           },
+          "inverse-success": { "value": "transparent", "type": "color", "source": "$btn-success-inverse-hover-border-color" },
           "inverse-outline-success": {
             "value": "transparent", "type": "color", "source": "$btn-success-inverse-outline-hover-border-color"
           }
@@ -121,6 +125,7 @@
           "outline-success": {
             "value": "{color.theme.bg.success}", "type": "color", "source": "$btn-success-outline-active-bg"
           },
+          "inverse-success": { "value": "{color.gray.100}", "type": "color", "source": "$btn-success-inverse-active-bg" },
           "inverse-outline-success": {
             "value": "{color.theme.bg.success}",
             "type": "color",
@@ -138,6 +143,10 @@
             "type": "color",
             "source": "$btn-success-outline-active-border-color"
           },
+          "inverse-success": {
+            "value": "inherit",
+            "source": "$btn-success-inverse-active-border-color"
+          },
           "inverse-outline-success": {
             "value": "transparent",
             "type": "color",
@@ -146,21 +155,97 @@
         }
       },
       "focus": {
-        "border": {
-          "success": {
-            "value": "{color.theme.focus.success}", "type": "color", "source": "$btn-success-focus-border-color"
-          },
+        "text": {
+          "success": { "value": "{color.btn.text.success}", "type": "color", "source": "$btn-success-focus-color" },
           "outline-success": {
-            "value": "{color.theme.focus.success}",
+            "value": "{color.btn.text.outline-success}",
+            "type": "color",
+            "source": "$btn-success-outline-focus-color"
+          },
+          "inverse-success": {
+            "value": "{color.btn.text.inverse-success}",
+            "type": "color",
+            "source": "$btn-success-inverse-focus-color"
+          },
+          "inverse-outline-success": {
+            "value": "{color.btn.text.inverse-outline-success}",
+            "type": "color",
+            "source": "$btn-success-inverse-outline-focus-color"
+          }
+        },
+        "border": {
+          "success": { "value": "{color.btn.border.success}", "type": "color", "source": "$btn-success-focus-border-color" },
+          "outline-success": {
+            "value": "{color.btn.border.outline-success}",
             "type": "color",
             "source": "$btn-success-outline-focus-border-color"
           },
           "inverse-success": {
-            "value": "{color.white}", "type": "color", "source": "$btn-success-inverse-focus-border-color"
+            "value": "{color.white}",
+            "type": "color",
+            "source": "$btn-success-inverse-focus-border-color"
           },
           "inverse-outline-success": {
-            "value": "{color.white}", "type": "color", "source": "$btn-success-inverse-outline-focus-border-color"
+            "value": "{color.btn.border.inverse-outline-success}",
+            "type": "color",
+            "source": "$btn-success-inverse-outline-focus-border-color"
           }
+        },
+        "bg": {
+          "success": { "value": "{color.btn.bg.success}", "type": "color", "source": "$btn-success-focus-bg" },
+          "outline-success": { "value": "inherit", "type": "color", "source": "$btn-success-outline-focus-bg" },
+          "inverse-success": { "value": "{color.btn.bg.inverse-success}", "type": "color", "source": "$btn-success-inverse-focus-bg" },
+          "inverse-outline-success": { "value": "inherit", "type": "color", "source": "$btn-success-inverse-outline-focus-bg" }
+        },
+        "outline": {
+          "success": { "value": "{color.theme.focus.success}", "type": "color", "source": "$btn-success-focus-outline-color" },
+          "outline-success": {
+            "value": "{color.theme.focus.success}",
+            "type": "color",
+            "source": "$btn-success-outline-focus-outline-color"
+          },
+          "inverse-success": {
+            "value": "{color.btn.focus.border.inverse-success}",
+            "type": "color",
+            "source": "$btn-success-inverse-focus-outline-color"
+          },
+          "inverse-outline-success": {
+            "value": "{color.btn.focus.border.inverse-outline-success}",
+            "type": "color",
+            "source": "$btn-success-inverse-outline-focus-outline-color"
+          }
+        }
+      },
+      "disabled": {
+        "text": {
+          "success": { "value": "{color.btn.text.success}", "type": "color", "source": "$btn-success-disabled-color" },
+          "outline-success": {
+            "value": "{color.btn.text.outline-success}",
+            "type": "color",
+            "source": "$btn-success-outline-disabled-color"
+          },
+          "inverse-success": { "value": "{color.success.base}", "type": "color", "source": "$btn-success-inverse-disabled-color" },
+          "inverse-outline-success": {
+            "value": "{color.btn.text.inverse-outline-success}",
+            "type": "color",
+            "source": "$btn-success-inverse-outline-disabled-color"
+          }
+        },
+        "bg": {
+          "success": { "value": "{color.btn.bg.success}", "type": "color", "source": "$btn-success-disabled-bg" },
+          "outline-success": { "value": "inherit", "type": "color", "source": "$btn-success-outline-disabled-bg" },
+          "inverse-success": { "value": "inherit", "type": "color", "source": "$btn-success-inverse-disabled-bg" },
+          "inverse-outline-success": { "value": "inherit", "type": "color", "source": "$btn-success-inverse-outline-disabled-bg" }
+        },
+        "border": {
+          "success": { "value": "{color.btn.border.success}", "type": "color", "source": "$btn-success-disabled-border-color" },
+          "outline-success": {
+            "value": "{color.btn.border.outline-success}",
+            "type": "color",
+            "source": "$btn-success-outline-disabled-border-color"
+          },
+          "inverse-success": { "value": "transparent", "type": "color", "source": "$btn-success-inverse-disabled-border-color" },
+          "inverse-outline-success": { "value": "inherit", "type": "color", "source": "$btn-success-inverse-outline-disabled-border-color" }
         }
       }
     }
