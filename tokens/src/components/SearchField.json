@@ -2,14 +2,14 @@
   "color": {
     "search-field": {
       "border": {
-        "base": { "value": "{color.gray.500}", "source": "$search-border-color" },
-        "interaction": { "value": "{color.black}", "source": "$search-border-color-interaction" },
-        "focus": { "value": "{color.black}", "source": "$search-border-focus-color" }
+        "base": { "value": "{color.gray.500}", "type": "color", "source": "$search-border-color" },
+        "interaction": { "value": "{color.black}", "type": "color", "source": "$search-border-color-interaction" },
+        "focus": { "value": "{color.black}", "type": "color", "source": "$search-border-focus-color" }
       },
       "button": {
         "bg": {
-          "primary": { "value": "{color.primary.500}", "source": "$search-btn-primary-bg" },
-          "brand": { "value": "{color.brand.500}", "source": "$search-btn-brand-bg" }
+          "primary": { "value": "{color.primary.500}", "type": "color", "source": "$search-btn-primary-bg" },
+          "brand": { "value": "{color.brand.500}", "type": "color", "source": "$search-btn-brand-bg" }
         }
       }
     }
@@ -18,25 +18,26 @@
     "search-field": {
       "border": {
         "width": {
-          "base": { "value": ".0625rem", "source": "$search-border-width" },
-          "focus": { "value": ".3125rem", "source": "$search-border-focus-width" }
+          "base": { "value": ".0625rem", "type": "dimension", "source": "$search-border-width" },
+          "focus": { "value": ".3125rem", "type": "dimension", "source": "$search-border-focus-width" }
         },
-        "radius": { "value": "0", "source": "$search-border-radius" }
+        "radius": { "value": "0", "type": "dimension", "source": "$search-border-radius" }
       },
       "search-input-height": {
         "value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2)",
+        "type": "dimension",
         "source": "$input-height-search"
       }
     }
   },
   "spacing": {
     "search-field": {
-      "margin-button": { "value": ".5rem", "source": "$search-button-margin" }
+      "margin-button": { "value": ".5rem", "type": "dimension", "source": "$search-button-margin" }
     }
   },
   "other": {
     "search-field": {
-      "disabled-opacity": { "value": ".3", "source": "$search-disabled-opacity" }
+      "disabled-opacity": { "value": ".3", "type": "ratio", "source": "$search-disabled-opacity" }
     }
   }
 }
