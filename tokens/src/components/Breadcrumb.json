@@ -1,32 +1,32 @@
 {
   "color": {
     "breadcrumb": {
-      "bg": { "value": "{color.gray.200}", "source": "$breadcrumb-bg" },
-      "base": { "value": "{color.primary.500}", "source": "$breadcrumb-color" },
-      "divider": { "value": "{color.gray.600}", "source": "$breadcrumb-divider-color" },
-      "active": { "value": "{color.gray.500}", "source": "$breadcrumb-active-color" },
+      "bg": { "value": "{color.gray.200}", "type": "color", "source": "$breadcrumb-bg" },
+      "base": { "value": "{color.primary.500}", "type": "color", "source": "$breadcrumb-color" },
+      "divider": { "value": "{color.gray.600}", "type": "color", "source": "$breadcrumb-divider-color" },
+      "active": { "value": "{color.gray.500}", "type": "color", "source": "$breadcrumb-active-color" },
       "inverse": {
-        "base": { "value": "{color.white}", "source": "$breadcrumb-inverse-color" },
-        "active": { "value": "{color.light.500}", "source": "$breadcrumb-inverse-active" },
-        "spacer": { "value": "{color.light.700}", "source": "$breadcrumb-inverse-spacer" }
+        "base": { "value": "{color.white}", "type": "color", "source": "$breadcrumb-inverse-color" },
+        "active": { "value": "{color.light.500}", "type": "color", "source": "$breadcrumb-inverse-active" },
+        "spacer": { "value": "{color.light.700}", "type": "color", "source": "$breadcrumb-inverse-spacer" }
       }
     }
   },
   "typography": {
     "breadcrumb": {
-      "font-size": { "value": "inherit", "source": "$breadcrumb-font-size" }
+      "font-size": { "value": "inherit", "type": "dimension", "source": "$breadcrumb-font-size" }
     }
   },
   "spacing": {
     "breadcrumb": {
       "padding": {
-        "y": { "value": ".75rem", "source": "$breadcrumb-padding-y" },
-        "x": { "value": "1rem", "source": "$breadcrumb-padding-x" },
-        "item": { "value": ".5rem", "source": "$breadcrumb-item-padding" }
+        "y": { "value": ".75rem", "type": "dimension", "source": "$breadcrumb-padding-y" },
+        "x": { "value": "1rem", "type": "dimension", "source": "$breadcrumb-padding-x" },
+        "item": { "value": ".5rem", "type": "dimension", "source": "$breadcrumb-item-padding" }
       },
       "margin": {
-        "bottom": { "value": "1rem", "source": "$breadcrumb-margin-bottom" },
-        "left": { "value": ".5rem", "source": "$breadcrumb-margin-left" }
+        "bottom": { "value": "1rem", "type": "dimension", "source": "$breadcrumb-margin-bottom" },
+        "left": { "value": ".5rem", "type": "dimension", "source": "$breadcrumb-margin-left" }
       }
     }
   },
@@ -34,14 +34,16 @@
     "breadcrumb": {
       "border": {
         "radius": {
-          "base": { "value": "{size.border.radius.base}", "source": "$breadcrumb-border-radius" },
-          "focus": { "value": ".125rem", "source": "$breadcrumb-focus-border-radius" }
+          "base": {
+            "value": "{size.border.radius.base}", "type": "dimension", "source": "$breadcrumb-border-radius"
+          },
+          "focus": { "value": ".125rem", "type": "dimension", "source": "$breadcrumb-focus-border-radius" }
         },
         "axis": {
-          "x-focus": { "value": ".25rem", "source": "$breadcrumb-border-focus-axis-x" },
-          "y-focus": { "value": ".5rem", "source": "$breadcrumb-border-focus-axis-y" }
+          "x-focus": { "value": ".25rem", "type": "dimension", "source": "$breadcrumb-border-focus-axis-x" },
+          "y-focus": { "value": ".5rem", "type": "dimension", "source": "$breadcrumb-border-focus-axis-y" }
         },
-        "width-focus": { "value": ".0625rem", "source": "$breadcrumb-border-focus-width" }
+        "width-focus": { "value": ".0625rem", "type": "dimension", "source": "$breadcrumb-border-focus-width" }
       }
     }
   }
