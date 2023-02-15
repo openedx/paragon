@@ -1,10 +1,10 @@
 {
   "size": {
     "icon": {
-      "inline": { "value": ".8em", "source": "$icon-inline" },
-      "sm": { "value": "1.25rem", "source": "$icon-sm" },
-      "md": { "value": "1.5rem", "source": "$icon-md" },
-      "lg": { "value": "1.75rem", "source": "$icon-lg" }
+      "inline": { "value": ".8em", "type": "dimension", "source": "$icon-inline" },
+      "sm": { "value": "1.25rem", "type": "dimension", "source": "$icon-sm" },
+      "md": { "value": "1.5rem", "type": "dimension", "source": "$icon-md" },
+      "lg": { "value": "1.75rem", "type": "dimension", "source": "$icon-lg" }
     }
   }
 }

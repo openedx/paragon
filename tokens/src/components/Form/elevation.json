@@ -2,38 +2,72 @@
   "elevation": {
     "form": {
       "input": {
-        "base": { "value": "inset 0 1px 1px rgba(0, 0, 0, .075)", "source": "$input-box-shadow" },
-        "focus": { "value": "{elevation.input.btn-focus.box-shadow}", "source": "$input-focus-box-shadow" }
+        "base": { "value": "inset 0 1px 1px rgba(0, 0, 0, .075)", "type": "shadow", "source": "$input-box-shadow" },
+        "focus": {
+          "value": "{elevation.input.btn-focus.box-shadow}",
+          "type": "shadow",
+          "source": "$input-focus-box-shadow"
+        }
       },
       "control": {
         "indicator": {
-          "base": { "value": "{elevation.form.input.base}", "source": "$custom-control-indicator-box-shadow" },
-          "checked": {
-            "base": { "value": "none", "source": "$custom-control-indicator-checked-box-shadow" },
-            "focus": { "value": "0 0 0 4px rgba(0, 0, 0, .1)", "source": "$custom-control-indicator-focus-box-shadow" }
+          "base": {
+            "value": "{elevation.form.input.base}",
+            "type": "shadow",
+            "source": "$custom-control-indicator-box-shadow"
           },
-          "active": { "value": "none", "source": "$custom-control-indicator-active-box-shadow" }
+          "checked": {
+            "base": { "value": "none", "type": "shadow", "source": "$custom-control-indicator-checked-box-shadow" },
+            "focus": {
+              "value": "0 0 0 4px rgba(0, 0, 0, .1)",
+              "type": "shadow",
+              "source": "$custom-control-indicator-focus-box-shadow"
+            }
+          },
+          "active": { "value": "none", "type": "shadow", "source": "$custom-control-indicator-active-box-shadow" }
         },
         "checkbox": {
           "indicator": {
-            "indeterminate": { "value": "none", "source": "$custom-checkbox-indicator-indeterminate-box-shadow" }
+            "indeterminate": {
+              "value": "none", "type": "shadow", "source": "$custom-checkbox-indicator-indeterminate-box-shadow"
+            }
           }
         },
         "range": {
-          "track": { "value": "inset 0 .25rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-track-box-shadow" },
+          "track": {
+            "value": "inset 0 .25rem .25rem rgba(0, 0, 0, .1)",
+            "type": "shadow",
+            "source": "$custom-range-track-box-shadow"
+          },
           "thumb": {
-            "base": { "value": "0 .1rem .25rem rgba(0, 0, 0, .1)", "source": "$custom-range-thumb-box-shadow" },
-            "focus": { "value": "0 0 0 1px {color.body.bg}, {size.form.input.width.focus}", "source": "$custom-range-thumb-focus-box-shadow" }
+            "base": {
+              "value": "0 .1rem .25rem rgba(0, 0, 0, .1)", "type": "shadow", "source": "$custom-range-thumb-box-shadow"
+            },
+            "focus": {
+              "value": "0 0 0 1px {color.body.bg}, {size.form.input.width.focus}",
+              "type": "shadow",
+              "source": "$custom-range-thumb-focus-box-shadow"
+            }
           }
         },
         "file": {
-          "base": { "value": "{elevation.form.input.base}", "source": "$custom-file-box-shadow" },
-          "focus": { "value": "{elevation.form.input.focus}", "source": "$custom-file-focus-box-shadow" }
+          "base": {
+            "value": "{elevation.form.input.base}", "type": "shadow", "source": "$custom-file-box-shadow"
+          },
+          "focus": {
+            "value": "{elevation.form.input.focus}", "type": "shadow", "source": "$custom-file-focus-box-shadow"
+          }
         },
         "select": {
           "border": {
-            "base": { "value": "inset 0 1px 2px rgba(0, 0, 0, .075)", "source": "$custom-select-box-shadow" },
-            "focus": { "value": "{elevation.input.btn-focus.box-shadow}", "source": "$custom-select-focus-box-shadow" }
+            "base": {
+              "value": "inset 0 1px 2px rgba(0, 0, 0, .075)", "type": "shadow", "source": "$custom-select-box-shadow"
+            },
+            "focus": {
+              "value": "{elevation.input.btn-focus.box-shadow}",
+              "type": "shadow",
+              "source": "$custom-select-focus-box-shadow"
+            }
           }
         }
       }
