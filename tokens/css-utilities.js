@@ -4,7 +4,7 @@
 function bgVariant(token) {
   const { attributes: { type, item } } = token;
   const parent = `.bg-${type}${item === 'base' ? '' : `-${item}`}`;
-  const focus = token.name.replace(type, `focus-${type}`);
+  const action = token.name.replace(type, `action-default-${type}`);
   return `${parent} {
   background-color: ${`var(--${token.name})`} !important;
 }
@@ -13,7 +13,7 @@ a${parent}:hover,
 a${parent}:focus,
 button${parent}:hover,
 button${parent}:focus {
-  background-color: ${`var(--${focus})`}  !important;
+  background-color: ${`var(--${action})`}  !important;
 }
 
 `;
@@ -25,14 +25,14 @@ button${parent}:focus {
 function textEmphasisVariant(token) {
   const { attributes: { type, item } } = token;
   const parent = `.text-${type}${item === 'base' ? '' : `-${item}`}`;
-  const focus = token.name.replace(type, `focus-${type}`);
+  const action = token.name.replace(type, `action-default-${type}`);
   return `${parent} {
   color: ${`var(--${token.name})`} !important;
 }
 
 a${parent}:hover,
 a${parent}:focus {
-  color: ${`var(--${focus})`} !important;
+  color: ${`var(--${action})`} !important;
 }
 
 `;
