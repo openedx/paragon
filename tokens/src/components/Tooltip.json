@@ -56,7 +56,7 @@
   },
   "other": {
     "tooltip": {
-      "opacity": { "value": "1", "source": "$tooltip-opacity" }
+      "opacity": { "value": "1", "type": "ratio", "source": "$tooltip-opacity" }
     }
   }
 }
