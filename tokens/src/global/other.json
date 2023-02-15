@@ -2,5 +2,5 @@
   "yiq-text-dark": "#454545",
   "yiq-text-light": "#FFFFFF",
   "yiq-contrasted-threshold": 150,
-  "theme-interval": { "value": "8%", "source": "$theme-color-interval" }
+  "theme-interval": { "value": "8%", "type": "percentage", "source": "$theme-color-interval" }
 }
