@@ -20,18 +20,21 @@
       },
       "bg": {
         "danger": { "value": "{color.danger.base}", "type": "color", "source": "$btn-danger-bg" },
+        "outline-danger": { "value": "inherit", "type": "color", "source": "$btn-danger-outline-bg" },
         "inverse-danger": {
           "value": "{color.btn.text.inverse-danger}",
           "type": "color",
           "source": "$btn-danger-inverse-bg",
           "modify": [{ "type": "color-yiq" }]
-        }
+        },
+        "inverse-outline-danger": { "value": "transparent", "type": "color", "source": "$btn-danger-inverse-outline-bg" }
       },
       "border": {
         "danger": { "value": "{color.btn.bg.danger}", "type": "color", "source": "$btn-danger-border-color" },
         "outline-danger": {
           "value": "{color.danger.base}", "type": "color", "source": "$btn-danger-outline-border-color"
         },
+        "inverse-danger": { "value": "transparent", "type": "color", "source": "$btn-danger-inverse-border-color" },
         "inverse-outline-danger": {
           "value": "{color.white}", "type": "color", "source": "$btn-danger-inverse-outline-border-color"
         }
@@ -81,6 +84,7 @@
           "outline-danger": {
             "value": "{color.danger.900}", "type": "color", "source": "$btn-danger-outline-hover-border-color"
           },
+          "inverse-danger": { "value": "transparent", "type": "color", "source": "$btn-danger-inverse-hover-border-color" },
           "inverse-outline-danger": {
             "value": "transparent", "type": "color", "source": "$btn-danger-inverse-outline-hover-border-color"
           }
@@ -119,6 +123,7 @@
           "outline-danger": {
             "value": "{color.theme.bg.danger}", "type": "color", "source": "$btn-danger-outline-active-bg"
           },
+          "inverse-danger": { "value": "{color.gray.100}", "type": "color", "source": "$btn-danger-inverse-active-bg" },
           "inverse-outline-danger": {
             "value": "{color.theme.bg.danger}", "type": "color", "source": "$btn-danger-inverse-outline-active-bg"
           }
@@ -132,17 +137,36 @@
             "type": "color",
             "source": "$btn-danger-outline-active-border-color"
           },
+          "inverse-danger": { "value": "transparent", "type": "color", "source": "$btn-danger-inverse-active-border-color" },
           "inverse-outline-danger": {
             "value": "transparent", "type": "color", "source": "$btn-danger-inverse-outline-active-border-color" }
         }
       },
       "focus": {
-        "border": {
-          "danger": {
-            "value": "{color.theme.focus.danger}", "type": "color", "source": "$btn-danger-focus-border-color"
+        "text": {
+          "danger": { "value": "{color.btn.text.danger}", "type": "color", "source": "$btn-danger-focus-color" },
+          "inverse-danger": {
+            "value": "{color.btn.text.inverse-danger}",
+            "type": "color",
+            "source": "$btn-danger-inverse-focus-color"
           },
           "outline-danger": {
-            "value": "{color.theme.focus.danger}",
+            "value": "{color.btn.text.outline-danger}",
+            "type": "color",
+            "source": "$btn-danger-outline-focus-color"
+          },
+          "inverse-outline-danger": {
+            "value": "{color.btn.text.inverse-outline-danger}",
+            "type": "color",
+            "source": "$btn-danger-inverse-outline-focus-color"
+          }
+        },
+        "border": {
+          "danger": {
+            "value": "{color.btn.focus.bg.danger}", "type": "color", "source": "$btn-danger-focus-border-color"
+          },
+          "outline-danger": {
+            "value": "{color.btn.border.outline-danger}",
             "type": "color",
             "source": "$btn-danger-outline-focus-border-color"
           },
@@ -151,6 +175,70 @@
           },
           "inverse-outline-danger": {
             "value": "{color.white}", "type": "color", "source": "$btn-danger-inverse-outline-focus-border-color"
+          }
+        },
+        "bg": {
+          "danger": { "value": "{color.btn.bg.danger}", "type": "color", "source": "$btn-danger-focus-bg" },
+          "outline-danger": { "value": "inherit", "type": "color", "source": "$btn-danger-outline-focus-bg" },
+          "inverse-danger": { "value": "{color.btn.bg.inverse-danger}", "type": "color", "source": "$btn-danger-inverse-focus-bg" },
+          "inverse-outline-danger": { "value": "inherit", "type": "color", "source": "$btn-danger-inverse-outline-focus-bg" }
+        },
+        "outline": {
+          "danger": { "value": "{color.theme.focus.danger}", "type": "color", "source": "$btn-danger-focus-outline-color" },
+          "outline-danger": {
+            "value": "{color.theme.focus.danger}",
+            "type": "color",
+            "source": "$btn-danger-outline-focus-outline-color"
+          },
+          "inverse-danger": {
+            "value": "{color.btn.focus.border.inverse-danger}",
+            "type": "color",
+            "source": "$btn-danger-inverse-focus-outline-color"
+          },
+          "inverse-outline-danger": {
+            "value": "{color.btn.focus.border.inverse-danger}",
+            "type": "color",
+            "source": "$btn-danger-inverse-outline-focus-outline-color"
+          }
+        }
+      },
+      "disabled": {
+        "text": {
+          "danger": { "value": "{color.btn.text.danger}", "type": "color", "source": "$btn-danger-disabled-color" },
+          "outline-danger": {
+            "value": "{color.btn.hover.text.outline-danger}",
+            "type": "color",
+            "source": "$btn-danger-outline-disabled-color"
+          },
+          "inverse-danger": { "value": "{color.danger.base}", "type": "color", "source": "$btn-danger-inverse-disabled-color" },
+          "inverse-outline-danger": {
+            "value": "{color.btn.text.inverse-outline-danger}",
+            "type": "color",
+            "source": "$btn-danger-inverse-outline-disabled-color"
+          }
+        },
+        "bg": {
+          "danger": { "value": "{color.btn.bg.danger}", "type": "color", "source": "$btn-danger-disabled-bg" },
+          "outline-danger": { "value": "inherit", "type": "color", "source": "$btn-danger-outline-disabled-bg" },
+          "inverse-danger": { "value": "transparent", "type": "color", "source": "$btn-danger-inverse-disabled-bg" },
+          "inverse-outline-danger": { "value": "inherit", "type": "color", "source": "$btn-danger-inverse-outline-disabled-bg" }
+        },
+        "border": {
+          "danger": { "value": "{color.btn.border.danger}", "type": "color", "source": "$btn-danger-disabled-border-color" },
+          "outline-danger": {
+            "value": "{color.btn.border.outline-danger}",
+            "type": "color",
+            "source": "$btn-danger-outline-disabled-border-color"
+          },
+          "inverse-danger": {
+            "value": "transparent",
+            "type": "color",
+            "source": "$btn-danger-inverse-disabled-border-color"
+          },
+          "inverse-outline-danger": {
+            "value": "{color.btn.border.inverse-outline-danger}",
+            "type": "color",
+            "source": "$btn-danger-inverse-outline-disabled-border-color"
           }
         }
       }
