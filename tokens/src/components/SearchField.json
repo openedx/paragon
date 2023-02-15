@@ -42,7 +42,7 @@
   },
   "other": {
     "search-field": {
-      "disabled-opacity": { "value": ".3", "source": "$search-disabled-opacity" }
+      "disabled-opacity": { "value": ".3", "type": "ratio", "source": "$search-disabled-opacity" }
     }
   }
 }
