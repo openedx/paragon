@@ -1,854 +1,494 @@
 {
   "color": {
-    "white": { "value": "#FFFFFF", "source": "$white" },
-    "black": { "value": "#000000", "source": "$black" },
-    "blue": { "value": "#23419F", "source": "$blue" },
-    "red": { "value": "#C32D3A", "source": "$red" },
-    "green": { "value": "#178253", "source": "$green" },
-    "yellow": { "value": "#FFD900", "source": "$yellow" },
-    "teal": { "value": "#006DAA", "source": "$teal" },
+    "white": { "value": "#FFFFFF", "type": "color", "source": "$white" },
+    "black": { "value": "#000000", "type": "color", "source": "$black" },
+    "blue": { "value": "#23419F", "type": "color", "source": "$blue" },
+    "red": { "value": "#C32D3A", "type": "color", "source": "$red" },
+    "green": { "value": "#178253", "type": "color", "source": "$green" },
+    "yellow": { "value": "#FFD900", "type": "color", "source": "$yellow" },
+    "teal": { "value": "#006DAA", "type": "color", "source": "$teal" },
     "accent": {
-      "a": { "value": "#00BBF9", "source": "$accent-a" },
-      "b": { "value": "#FFEE88", "source": "$accent-b" }
+      "a": { "value": "#00BBF9", "type": "color", "source": "$accent-a" },
+      "b": { "value": "#FFEE88", "type": "color", "source": "$accent-b" }
     },
     "gray": {
-      "base": { "value": "#707070", "source": "$gray" },
-      "100": { "value": "#EBEBEB", "source": "$gray-100" },
-      "200": { "value": "#CCCCCC", "source": "$gray-200" },
-      "300": { "value": "#ADADAD", "source": "$gray-300" },
-      "400": { "value": "#8F8F8F", "source": "$gray-400" },
-      "500": { "value": "{color.gray.base}", "source": "$gray-500" },
-      "600": { "value": "#5C5C5C", "source": "$gray-600" },
-      "700": { "value": "#454545", "source": "$gray-700" },
-      "800": { "value": "#333333", "source": "$gray-800" },
-      "900": { "value": "#212529", "source": "$gray-900" }
+      "base": { "value": "#707070", "type": "color", "source": "$gray" },
+      "100": { "value": "#EBEBEB", "type": "color", "source": "$gray-100" },
+      "200": { "value": "#CCCCCC", "type": "color", "source": "$gray-200" },
+      "300": { "value": "#ADADAD", "type": "color", "source": "$gray-300" },
+      "400": { "value": "#8F8F8F", "type": "color", "source": "$gray-400" },
+      "500": { "value": "{color.gray.base}", "type": "color", "source": "$gray-500" },
+      "600": { "value": "#5C5C5C", "type": "color", "source": "$gray-600" },
+      "700": { "value": "#454545", "type": "color", "source": "$gray-700" },
+      "800": { "value": "#333333", "type": "color", "source": "$gray-800" },
+      "900": { "value": "#212529", "type": "color", "source": "$gray-900" }
     },
     "primary": {
-      "base": { "value": "#0A3055", "source": "$primary" },
+      "base": { "value": "#0A3055", "type": "color", "source": "$primary" },
       "100": {
         "value": "{color.primary.base}",
+        "type": "color",
         "source": "$primary-100",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.94"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
       },
       "200": {
         "value": "{color.primary.base}",
+        "type": "color",
         "source": "$primary-200",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.75"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
       },
       "300": {
         "value": "{color.primary.base}",
+        "type": "color",
         "source": "$primary-300",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.50"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50"}]
       },
       "400": {
         "value": "{color.primary.base}",
+        "type": "color",
         "source": "$primary-400",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
       },
-      "500": { "value": "{color.primary.base}", "source": "$primary-500" },
+      "500": { "value": "{color.primary.base}", "type": "color", "source": "$primary-500" },
       "600": {
         "value": "{color.primary.base}",
+        "type": "color",
         "source": "$primary-600",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.10"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
       },
       "700": {
         "value": "{color.primary.base}",
+        "type": "color",
         "source": "$primary-700",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.20"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
       },
       "800": {
         "value": "{color.primary.base}",
+        "type": "color",
         "source": "$primary-800",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
       },
       "900": {
         "value": "{color.primary.base}",
+        "type": "color",
         "source": "$primary-900",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.30"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
       }
     },
     "secondary": {
-      "base": { "value": "{color.gray.700}", "source": "$secondary" },
+      "base": { "value": "{color.gray.700}", "type": "color", "source": "$secondary" },
       "100": { 
         "value": "{color.secondary.base}",
+        "type": "color",
         "source": "$secondary-100",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.94"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
       },
       "200": { 
         "value": "{color.secondary.base}",
+        "type": "color",
         "source": "$secondary-200",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.75"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
       },
       "300": { 
         "value": "{color.secondary.base}",
+        "type": "color",
         "source": "$secondary-300",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.50"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
       },
       "400": { 
         "value": "{color.secondary.base}",
+        "type": "color",
         "source": "$secondary-400",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
       },
-      "500": { "value": "{color.secondary.base}", "source": "$secondary-500"},
+      "500": { "value": "{color.secondary.base}", "type": "color", "source": "$secondary-500"},
       "600": { 
         "value": "{color.secondary.base}",
+        "type": "color",
         "source": "$secondary-600",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.10"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
       },
       "700": { 
         "value": "{color.secondary.base}",
+        "type": "color",
         "source": "$secondary-700",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.20"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
       },
       "800": { 
         "value": "{color.secondary.base}",
+        "type": "color",
         "source": "$secondary-800",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
       },
       "900": { 
         "value": "{color.secondary.base}",
+        "type": "color",
         "source": "$secondary-900",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.30"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
       }
     },
     "brand": {
-      "base": { "value": "#9D0054", "source": "$brand" },
+      "base": { "value": "#9D0054", "type": "color", "source": "$brand" },
       "100": { 
         "value": "{color.brand.base}",
+        "type": "color",
         "source": "$brand-100",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.94"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
       },
       "200": { 
         "value": "{color.brand.base}",
+        "type": "color",
         "source": "$brand-200",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.75"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
       },
       "300": { 
         "value": "{color.brand.base}",
+        "type": "color",
         "source": "$brand-300",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.50"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
       },
       "400": { 
         "value": "{color.brand.base}",
+        "type": "color",
         "source": "$brand-400",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
       },
-      "500": { "value": "{color.brand.base}", "source": "$brand-500" },
+      "500": { "value": "{color.brand.base}", "type": "color", "source": "$brand-500" },
       "600": { 
         "value": "{color.brand.base}",
+        "type": "color",
         "source": "$brand-600",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.10"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
       },
       "700": { 
         "value": "{color.brand.base}",
+        "type": "color",
         "source": "$brand-700",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.20"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
       },
       "800": { 
         "value": "{color.brand.base}",
+        "type": "color",
         "source": "$brand-800",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
       },
       "900": { 
         "value": "{color.brand.base}",
+        "type": "color",
         "source": "$brand-900",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.30"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
       }
     },
     "success": {
-      "base": { "value": "{color.green}", "source": "$success" },
+      "base": { "value": "{color.green}", "type": "color", "source": "$success" },
       "100": { 
         "value": "{color.success.base}",
+        "type": "color",
         "source": "$success-100",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.94"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
       },
       "200": { 
         "value": "{color.success.base}",
+        "type": "color",
         "source": "$success-200",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.75"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
       },
       "300": { 
         "value": "{color.success.base}",
+        "type": "color",
         "source": "$success-300",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.50"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
       },
       "400": { 
         "value": "{color.success.base}",
+        "type": "color",
         "source": "$success-400",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
       },
-      "500": { "value": "{color.success.base}", "source": "$success-500" },
+      "500": { "value": "{color.success.base}", "type": "color", "source": "$success-500" },
       "600": { 
         "value": "{color.success.base}",
+        "type": "color",
         "source": "$success-600",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.10"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
       },
       "700": { 
         "value": "{color.success.base}",
+        "type": "color",
         "source": "$success-700",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.20"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
       },
       "800": { 
         "value": "{color.success.base}",
+        "type": "color",
         "source": "$success-800",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
       },
       "900": { 
         "value": "{color.success.base}",
+        "type": "color",
         "source": "$success-900",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.30"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
       }
     },
     "info": {
-      "base": { "value": "{color.teal}", "source": "$info" },
+      "base": { "value": "{color.teal}", "type": "color", "source": "$info" },
       "100": { 
         "value": "{color.info.base}",
+        "type": "color",
         "source": "$info-100",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.94"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
       },
       "200": { 
         "value": "{color.info.base}",
+        "type": "color",
         "source": "$info-200",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.75"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
       },
       "300": { 
         "value": "{color.info.base}",
+        "type": "color",
         "source": "$info-300",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.50"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
       },
       "400": { 
         "value": "{color.info.base}",
+        "type": "color",
         "source": "$info-400",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
       },
-      "500": { "value": "{color.info.base}", "source": "$info-500" },
+      "500": { "value": "{color.info.base}", "type": "color", "source": "$info-500" },
       "600": { 
         "value": "{color.info.base}",
+        "type": "color",
         "source": "$info-600",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.10"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
       },
       "700": { 
         "value": "{color.info.base}",
+        "type": "color",
         "source": "$info-700",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.20"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
       },
       "800": { 
         "value": "{color.info.base}",
+        "type": "color",
         "source": "$info-800",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25"}]
       },
       "900": { 
         "value": "{color.info.base}",
+        "type": "color",
         "source": "$info-900",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.30"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
       }
     },
     "warning": {
-      "base": { "value": "{color.yellow}", "source": "$warning" },
+      "base": { "value": "{color.yellow}", "type": "color", "source": "$warning" },
       "100": { 
         "value": "{color.warning.base}",
+        "type": "color",
         "source": "$warning-100",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.94"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
       },
       "200": { 
         "value": "{color.warning.base}",
+        "type": "color",
         "source": "$warning-200",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.75"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
       },
       "300": { 
         "value": "{color.warning.base}",
+        "type": "color",
         "source": "$warning-300",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.50"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
       },
       "400": { 
         "value": "{color.warning.base}",
+        "type": "color",
         "source": "$warning-400",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
       },
-      "500": { "value": "{color.warning.base}", "source": "$warning-500" },
+      "500": { "value": "{color.warning.base}", "type": "color", "source": "$warning-500" },
       "600": { 
         "value": "{color.warning.base}",
+        "type": "color",
         "source": "$warning-600",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.10"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
       },
       "700": { 
         "value": "{color.warning.base}",
+        "type": "color",
         "source": "$warning-700",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.20"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
       },
       "800": { 
         "value": "{color.warning.base}",
+        "type": "color",
         "source": "$warning-800",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
       },
       "900": { 
         "value": "{color.warning.base}",
+        "type": "color",
         "source": "$warning-900",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.30"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
       }
     },
     "danger": {
-      "base": { "value": "{color.red}", "source": "$danger" },
+      "base": { "value": "{color.red}", "type": "color", "source": "$danger" },
       "100": { 
         "value": "{color.danger.base}",
+        "type": "color",
         "source": "$danger-100",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.94"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
       },
       "200": { 
         "value": "{color.danger.base}",
+        "type": "color",
         "source": "$danger-200",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.75"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
       },
       "300": { 
         "value": "{color.danger.base}",
+        "type": "color",
         "source": "$danger-300",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.50"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
       },
       "400": { 
         "value": "{color.danger.base}",
+        "type": "color",
         "source": "$danger-400",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
       },
-      "500": { "value": "{color.danger.base}", "source": "$danger-500" },
+      "500": { "value": "{color.danger.base}", "type": "color", "source": "$danger-500" },
       "600": { 
         "value": "{color.danger.base}",
+        "type": "color",
         "source": "$danger-600",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.10"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
       },
       "700": { 
         "value": "{color.danger.base}",
+        "type": "color",
         "source": "$danger-700",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.20"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
       },
       "800": { 
         "value": "{color.danger.base}",
+        "type": "color",
         "source": "$danger-800",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
       },
       "900": { 
         "value": "{color.danger.base}",
+        "type": "color",
         "source": "$danger-900",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.30"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
       }
     },
     "light": {
-      "base": { "value": "#E1DDDB", "source": "$light" },
+      "base": { "value": "#E1DDDB", "type": "color",  "source": "$light" },
       "100": { 
         "value": "{color.light.base}",
+        "type": "color",
         "source": "$light-100",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.94"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
       },
       "200": { 
         "value": "{color.light.base}",
+        "type": "color",
         "source": "$light-200",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.75"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
       },
       "300": { 
         "value": "{color.light.base}",
+        "type": "color",
         "source": "$light-300",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.50"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
       },
       "400": { 
         "value": "{color.light.base}",
+        "type": "color",
         "source": "$light-400",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
       },
-      "500": { "value": "{color.light.base}", "source": "$light-500" },
+      "500": { "value": "{color.light.base}", "type": "color", "source": "$light-500" },
       "600": { 
         "value": "{color.light.base}",
+        "type": "color",
         "source": "$light-600",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.10"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
       },
       "700": { 
         "value": "{color.light.base}",
+        "type": "color",
         "source": "$light-700",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.20"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
       },
       "800": { 
         "value": "{color.light.base}",
+        "type": "color",
         "source": "$light-800",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
       },
       "900": { 
         "value": "{color.light.base}",
+        "type": "color",
         "source": "$light-900",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.30"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
       }
     },
     "dark": {
-      "base": { "value": "#273F2F", "source": "$dark" },
+      "base": { "value": "#273F2F", "type": "color", "source": "$dark" },
       "100": { 
         "value": "{color.dark.base}",
+        "type": "color",
         "source": "$dark-100",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.94"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
       },
       "200": { 
         "value": "{color.dark.base}",
+        "type": "color",
         "source": "$dark-200",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.75"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
       },
       "300": { 
         "value": "{color.dark.base}",
+        "type": "color",
         "source": "$dark-300",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.50"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
       },
       "400": { 
         "value": "{color.dark.base}",
+        "type": "color",
         "source": "$dark-400",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
       },
-      "500": { "value": "{color.dark.base}", "source": "$dark-500" },
+      "500": { "value": "{color.dark.base}", "type": "color", "source": "$dark-500" },
       "600": { 
         "value": "{color.dark.base}",
+        "type": "color",
         "source": "$dark-600",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.10"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
       },
       "700": { 
         "value": "{color.dark.base}",
+        "type": "color",
         "source": "$dark-700",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.20"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
       },
       "800": { 
         "value": "{color.dark.base}",
+        "type": "color",
         "source": "$dark-800",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.25"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
       },
       "900": { 
         "value": "{color.dark.base}",
+        "type": "color",
         "source": "$dark-900",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.30"
-          }
-        ]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
       }
     }
   }

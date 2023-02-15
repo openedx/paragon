@@ -4,19 +4,23 @@
       "card": {
         "spacer": {
           "y": {
-            "base": { "value": ".5rem", "source": "$collapsible-card-spacer-y" },
-            "lg": { "value": "{spacing.card.spacer.y}", "source": "$collapsible-card-spacer-y-lg" }
+            "base": { "value": ".5rem", "type": "dimension", "source": "$collapsible-card-spacer-y" },
+            "lg": {
+              "value": "{spacing.card.spacer.y}", "type": "dimension", "source": "$collapsible-card-spacer-y-lg"
+            }
           },
           "x": {
-            "base": { "value": ".5rem", "source": "$collapsible-card-spacer-x" },
-            "lg": { "value": "{spacing.card.spacer.x}", "source": "$collapsible-card-spacer-x-lg" }
+            "base": { "value": ".5rem", "type": "dimension", "source": "$collapsible-card-spacer-x" },
+            "lg": {
+              "value": "{spacing.card.spacer.x}", "type": "dimension", "source": "$collapsible-card-spacer-x-lg"
+            }
           },
-          "left-body": { "value": ".75rem", "source": "$collapsible-card-body-spacer-left" },
-          "icon": { "value": "2.5rem", "source": "$collapsible-card-spacer-icon" },
+          "left-body": { "value": ".75rem", "type": "dimension", "source": "$collapsible-card-body-spacer-left" },
+          "icon": { "value": "2.5rem", "type": "dimension", "source": "$collapsible-card-spacer-icon" },
           "basic": {
-            "y": { "value": ".5rem", "source": "$collapsible-basic-spacer-y" },
-            "x": { "value": ".5rem", "source": "$collapsible-basic-spacer-x" },
-            "icon": { "value": ".625rem", "source": "$collapsible-basic-spacer-icon" }
+            "y": { "value": ".5rem", "type": "dimension", "source": "$collapsible-basic-spacer-y" },
+            "x": { "value": ".5rem", "type": "dimension", "source": "$collapsible-basic-spacer-x" },
+            "icon": { "value": ".625rem", "type": "dimension", "source": "$collapsible-basic-spacer-icon" }
           }
         }
       }
