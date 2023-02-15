@@ -16,18 +16,21 @@
       },
       "bg": {
         "dark": { "value": "{color.dark.base}", "type": "color", "source": "$btn-dark-bg" },
+        "outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-outline-bg" },
         "inverse-dark": {
           "value": "{color.btn.text.inverse-dark}",
           "type": "color",
           "source": "$btn-dark-inverse-bg",
           "modify": [{ "type": "color-yiq" }]
-        }
+        },
+        "inverse-outline-dark": { "value": "transparent", "type": "color", "source": "$btn-dark-inverse-outline-bg" }
       },
       "border": {
         "dark": { "value": "{color.btn.bg.dark}", "type": "color", "source": "$btn-dark-border-color" },
         "outline-dark": {
           "value": "{color.dark.base}", "type": "color", "source": "$btn-dark-outline-border-color"
         },
+        "inverse-dark": { "value": "transparent", "type": "color", "source": "$btn-dark-inverse-border-color" },
         "inverse-outline-dark": {
           "value": "{color.white}", "type": "color", "source": "$btn-dark-inverse-outline-border-color"
         }
@@ -73,6 +76,7 @@
           "outline-dark": {
             "value": "{color.dark.900}", "type": "color", "source": "$btn-dark-outline-hover-border-color"
           },
+          "inverse-dark": { "value": "transparent", "type": "color", "source": "$btn-dark-inverse-hover-border-color" },
           "inverse-outline-dark": {
             "value": "transparent", "type": "color", "source": "$btn-dark-inverse-outline-hover-border-color"
           }
@@ -109,6 +113,7 @@
           "outline-dark": {
             "value": "{color.theme.bg.dark}", "type": "color", "source": "$btn-dark-outline-active-bg"
           },
+          "inverse-dark": { "value": "{color.gray.100}", "type": "color", "source": "$btn-dark-inverse-active-bg" },
           "inverse-outline-dark": {
             "value": "{color.theme.bg.dark}", "type": "color", "source": "$btn-dark-inverse-outline-active-bg"
           }
@@ -120,24 +125,103 @@
           "outline-dark": {
             "value": "{color.theme.active.dark}", "type": "color", "source": "$btn-dark-outline-active-border-color"
           },
+          "inverse-dark": {
+            "value": "transparent",
+            "type": "color",
+            "source": "$btn-dark-inverse-active-border-color"
+          },
           "inverse-outline-dark": {
             "value": "transparent", "type": "color", "source": "$btn-dark-inverse-outline-active-border-color"
           }
         }
       },
       "focus": {
+        "text": {
+          "dark": { "value": "{color.btn.text.dark}", "type": "color", "source": "$btn-dark-focus-color" },
+          "inverse-dark": { "value": "{color.btn.text.inverse-dark}", "type": "color", "source": "$btn-dark-inverse-focus-color" },
+          "outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-outline-focus-color" },
+          "inverse-outline-dark": {
+            "value": "{color.btn.text.inverse-outline-dark}",
+            "type": "color",
+            "source": "$btn-dark-inverse-outline-focus-color"
+          }
+        },
         "border": {
-          "dark": {
-            "value": "{color.theme.focus.dark}", "type": "color", "source": "$btn-dark-focus-border-color"
-          },
+          "dark": { "value": "{color.btn.focus.bg.dark}", "type": "color", "source": "$btn-dark-focus-border-color" },
           "outline-dark": {
-            "value": "{color.theme.focus.dark}", "type": "color", "source": "$btn-dark-outline-focus-border-color"
+            "value": "{color.btn.border.outline-dark}",
+            "type": "color",
+            "source": "$btn-dark-outline-focus-border-color"
           },
           "inverse-dark": {
-            "value": "{color.white}", "type": "color", "source": "$btn-dark-inverse-focus-border-color"
+            "value": "{color.white}",
+            "type": "color",
+            "source": "$btn-dark-inverse-focus-border-color"
           },
           "inverse-outline-dark": {
-            "value": "{color.white}", "type": "color", "source": "$btn-dark-inverse-outline-focus-border-color"
+            "value": "{color.white}",
+            "type": "color",
+            "source": "$btn-dark-inverse-outline-focus-border-color"
+          }
+        },
+        "bg": {
+          "dark": { "value": "{color.btn.bg.dark}", "type": "color", "source": "$btn-dark-focus-bg" },
+          "outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-outline-focus-bg" },
+          "inverse-dark": { "value": "{color.btn.bg.inverse-dark}", "type": "color", "source": "$btn-dark-inverse-focus-bg" },
+          "inverse-outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-inverse-outline-focus-bg" }
+        },
+        "outline": {
+          "dark": { "value": "{color.theme.focus.dark}", "type": "color", "source": "$btn-dark-focus-outline-color" },
+          "outline-dark": { "value": "{color.theme.focus.dark}", "type": "color", "source": "$btn-dark-outline-focus-outline-color" },
+          "inverse-dark": {
+            "value": "{color.btn.focus.border.inverse-dark}",
+            "type": "color",
+            "source": "$btn-dark-inverse-focus-outline-color"
+          },
+          "inverse-outline-dark": {
+            "value": "{color.btn.focus.border.inverse-outline-dark}",
+            "type": "color",
+            "source": "$btn-dark-inverse-outline-focus-border-color"
+          }
+        }
+      },
+      "disabled": {
+        "text": {
+          "dark": { "value": "{color.btn.text.dark}", "type": "color", "source": "$btn-dark-disabled-color" },
+          "outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-outline-disabled-color" },
+          "inverse-dark": {
+            "value": "{color.btn.text.inverse-dark}",
+            "type": "color",
+            "source": "$btn-dark-inverse-disabled-color"
+          },
+          "inverse-outline-dark": {
+            "value": "{color.btn.text.inverse-outline-dark}",
+            "type": "color",
+            "source": "$btn-dark-inverse-outline-disabled-color"
+          }
+        },
+        "bg": {
+          "dark": { "value": "{color.btn.bg.dark}", "type": "color", "source": "$btn-dark-disabled-bg" },
+          "outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-outline-disabled-bg" },
+          "inverse-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-inverse-disabled-bg" },
+          "inverse-outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-inverse-outline-disabled-bg" }
+        },
+        "border": {
+          "dark": {
+            "value": "{color.btn.border.dark}",
+            "type": "color",
+            "source": "$btn-dark-disabled-border-color"
+          },
+          "outline-dark": {
+            "value": "{color.btn.hover.text.outline-dark}",
+            "type": "color",
+            "source": "$btn-dark-outline-disabled-border-color"
+          },
+          "inverse-dark": { "value": "transparent", "type": "color", "source": "$btn-dark-inverse-disabled-border-color" },
+          "inverse-outline-dark": {
+            "value": "{color.btn.focus.border.inverse-outline-dark}",
+            "type": "color",
+            "source": "$btn-dark-inverse-outline-disabled-border-color"
           }
         }
       }
