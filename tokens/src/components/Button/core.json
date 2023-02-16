@@ -31,7 +31,19 @@
       "block": {
         "spacing-y": { "value": ".5rem", "type": "dimension", "source": "$btn-block-spacing-y" }
       },
-      "focus-gap": { "value": "1px", "type": "dimension", "source": "$btn-focus-gap" }
+      "focus": {
+        "gap": { "value": "1px", "type": "dimension", "source": "$btn-focus-gap" },
+        "border-gap": {
+          "value": "calc({size.btn.focus.width} + {spacing.btn.focus.gap})",
+          "type": "dimension",
+          "source": "$btn-focus-border-gap"
+        },
+        "distance-to-border": {
+          "value": "calc({spacing.btn.focus.border-gap} + {size.btn.border.width})",
+          "type": "dimension",
+          "source": "$btn-focus-distance-to-border"
+        }
+      }
     }
   },
   "typography": {
@@ -95,7 +107,14 @@
           "sm": { "value": "{size.border.radius.sm}", "type": "dimension", "source": "$btn-border-radius-sm" }
         }
       },
-      "focus-width": { "value": "2px", "type": "dimension", "source": "$btn-focus-width" }
+      "focus": {
+        "width": { "value": "2px", "type": "dimension", "source": "$btn-focus-width" },
+        "border-radius": {
+          "value": "calc({size.btn.border.radius.base} + {spacing.btn.focus.border-gap})",
+          "type": "dimension",
+          "source": "$btn-focus-border-radius"
+        }
+      }
     }
   },
   "transition": {
