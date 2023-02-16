@@ -28,26 +28,23 @@
       border-color: var(--pgn-btn-focus-border-color, transparent);
       color: var(--pgn-btn-focus-color, #{$body-color});
 
-      $distance: calc(#{$btn-focus-width} + #{$btn-focus-gap});
-      $distance-include-btn-border: calc(#{$distance} + #{$btn-border-width});
-
       &::before {
         content: "";
         position: absolute;
-        top: calc(#{$distance-include-btn-border} * -1);
-        right: calc(#{$distance-include-btn-border} * -1);
-        bottom: calc(#{$distance-include-btn-border} * -1);
-        left: calc(#{$distance-include-btn-border} * -1);
+        top: calc(#{$btn-focus-distance-to-border} * -1);
+        right: calc(#{$btn-focus-distance-to-border} * -1);
+        bottom: calc(#{$btn-focus-distance-to-border} * -1);
+        left: calc(#{$btn-focus-distance-to-border} * -1);
         border: solid $btn-focus-width var(--pgn-btn-focus-outline-color, #{$body-color});
-        border-radius: calc(#{$btn-border-radius} + #{$distance});
+        border-radius: $btn-focus-border-radius;
       }
 
       &.btn-lg::before {
-        border-radius: calc(#{$btn-border-radius-lg} + #{$distance});
+        border-radius: $btn-focus-border-radius;
       }
 
       &.btn-sm::before {
-        border-radius: calc(#{$btn-border-radius-sm} + #{$distance});
+        border-radius: $btn-focus-border-radius;
       }
 
       &:active,
