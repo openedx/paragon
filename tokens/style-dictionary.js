@@ -141,6 +141,7 @@ StyleDictionary.registerFormat({
 
       // eslint-disable-next-line no-restricted-syntax
       for (const token of tokens) {
+        token.actions = {"default": `var(--pgn-${token.actions.default.join('-')})`};
         // eslint-disable-next-line no-restricted-syntax
         for (const funcName of utilityFunctionsToApply) {
           utilityClasses += cssUtilities[funcName](token);
