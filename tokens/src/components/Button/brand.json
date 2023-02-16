@@ -229,7 +229,7 @@
         "bg": {
           "brand": { "value": "{color.btn.bg.brand}", "type": "color", "source": "$btn-brand-disabled-bg" },
           "outline-brand": { "value": "inherit", "type": "color", "source": "$btn-brand-outline-disabled-bg" },
-          "inverse-brand": { "value": "transparent", "type": "color", "source": "$btn-brand-inverse-disabled-bg" },
+          "inverse-brand": { "value": "{color.white}", "type": "color", "source": "$btn-brand-inverse-disabled-bg" },
           "inverse-outline-brand": {
             "value": "{color.btn.bg.inverse-outline-brand}",
             "type": "color",

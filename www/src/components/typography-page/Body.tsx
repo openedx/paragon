@@ -1,7 +1,4 @@
 import React from 'react';
-import MeasuredItem from '../MeasuredItem';
-import measuredTypeProps from './measuredTypeProps';
-// @ts-ignore
 import { DataTable } from '~paragon-react';
 
 import { DesktopMeasuredCell, ClassNameCell } from '../TableCells';

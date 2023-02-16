@@ -3,10 +3,10 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Color from 'color';
+import { Container, DataTable } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
-import { Container, DataTable } from '~paragon-react';
 import { CodeCell } from '../../components/TableCells';
 import { SettingsContext } from '../../context/SettingsContext';
 
