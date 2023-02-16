@@ -140,8 +140,10 @@ export default function SpacingPage() {
                 ))}
               </Form.RadioSet>
             </Form.Group>
-            <label className="d-block" htmlFor="set-size">
-              <span className="d-block text-center">Spacing Level: {size}</span>
+            <Form.Group>
+              <Form.Label className="d-block">
+                <span className="d-block text-center">Spacing Level: {size}</span>
+              </Form.Label>
               <div
                 className="d-flex align-items-center mt-1"
                 style={{ maxWidth: '20rem' }}
