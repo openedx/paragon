@@ -226,7 +226,7 @@
         },
         "bg": {
           "primary": { "value": "{color.btn.bg.primary}", "type": "color", "source": "$btn-primary-disabled-bg" },
-          "inverse-primary": { "value": "inherit", "type": "color", "source": "$btn-primary-inverse-disabled-bg" },
+          "inverse-primary": { "value": "{color.white}", "type": "color", "source": "$btn-primary-inverse-disabled-bg" },
           "outline-primary": { "value": "inherit", "type": "color", "source": "$btn-primary-outline-disabled-bg" },
           "inverse-outline-primary": { "value": "inherit", "type": "color", "source": "$btn-primary-inverse-outline-disabled-bg" }
         },
