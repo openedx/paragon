@@ -17,25 +17,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18
-      - name: Merge master -> alpha
-        uses: devmasx/merge-branch@master
+      - name: Sync alpha with master
+        uses: connor-baer/action-sync-branch@main
         with:
-          type: now
-          from_branch: master
-          target_branch: alpha
-          github_token: ${{ secrets.requirements_bot_github_token }}
-      - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v4
-        with:
+          branch: alpha
           token: ${{ secrets.requirements_bot_github_token }}
-          branch: automation/sync-alpha-master
-          base: alpha
-          title: "chore(release): sync from master to alpha"
-          body: "Sync changes from `master` to `alpha`."
-      - name: Enable Pull Request Auto Merge
-        uses: peter-evans/enable-pull-request-automerge@v2
-        with:
-          token: ${{ secrets.requirements_bot_github_token }}
-          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
-          merge-method: squash
+          force: false
