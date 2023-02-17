@@ -44,7 +44,8 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
   </div>
   <div className="mb-2">
     <Button variant="link" className="mb-2 mb-sm-0">Link</Button>{' '}
-    <Button variant="light" className="mb-2 mb-sm-0">Light</Button> <Button variant="dark">Dark</Button>{' '}
+    <Button variant="light" className="mb-2 mb-sm-0">Light</Button>{' '} 
+    <Button variant="dark" className="mb-2 mb-sm-0">Dark</Button>{' '}
     <Button variant="outline-light" className="mb-2 mb-sm-0">Light</Button>{' '}
     <Button variant="outline-dark" className="mb-2 mb-sm-0">Dark</Button>
   </div>

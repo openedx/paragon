@@ -699,3 +699,8 @@ $btn-inverse-tertiary-focus-bg: var(--pgn-color-btn-focus-bg-inverse-tertiary) !
 $btn-inverse-tertiary-disabled-color: var(--pgn-color-btn-disabled-text-inverse-tertiary) !default;
 $btn-inverse-tertiary-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-tertiary) !default;
 $btn-inverse-tertiary-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-tertiary) !default;
+
+$btn-focus-border-gap: var(--pgn-spacing-btn-focus-border-gap) !default;
+$btn-focus-distance-to-border: var(--pgn-spacing-btn-focus-distance-to-border) !default;
+
+$btn-focus-border-radius: var(--pgn-size-btn-focus-border-radius) !default;

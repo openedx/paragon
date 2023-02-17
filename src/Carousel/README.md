@@ -28,7 +28,7 @@ notes: |
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://source.unsplash.com/1600x800/?nature,flower"
+      src="https://picsum.photos/1600/800/"
       alt="First slide"
     />
     <Carousel.Caption>
@@ -39,7 +39,7 @@ notes: |
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://source.unsplash.com/1600x800/?nature,plants"
+      src="https://picsum.photos/1600/800/"
       alt="Third slide"
     />
 
@@ -51,7 +51,7 @@ notes: |
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://source.unsplash.com/1600x800/?nature,fruit"
+      src="https://picsum.photos/1600/800/"
       alt="Third slide"
     />
 

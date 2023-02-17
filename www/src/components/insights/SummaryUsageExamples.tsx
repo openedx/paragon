@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
 import { Hyperlink } from '~paragon-react';
 
 export interface ISummaryUsageExamples {
@@ -11,7 +10,7 @@ export interface ISummaryUsageExamples {
   }
 }
 
-const SummaryUsageExamples = ({ row }: ISummaryUsageExamples) => {
+function SummaryUsageExamples({ row }: ISummaryUsageExamples) {
   interface IProjectUsages {
     filePath: string,
     line: number,
@@ -55,8 +54,8 @@ const SummaryUsageExamples = ({ row }: ISummaryUsageExamples) => {
     </div>
   ));
 
-  return <>{componentUsagesExample}</>;
-};
+  return <div>{componentUsagesExample}</div>;
+}
 
 SummaryUsageExamples.propTypes = {
   row: PropTypes.shape({

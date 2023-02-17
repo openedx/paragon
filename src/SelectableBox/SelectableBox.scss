@@ -23,6 +23,7 @@
   box-shadow: $level-1-box-shadow;
   border-radius: $selectable-box-border-radius;
   text-align: start;
+  background: $white;
 
   &:focus-visible {
     outline: 1px solid $primary-700;

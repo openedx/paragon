@@ -7,7 +7,6 @@
 
 import * as React from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -44,7 +43,7 @@ function SEO({
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={[
         {
           name: 'description',

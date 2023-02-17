@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// @ts-ignore
 import { Form, Container, DataTable } from '~paragon-react'; // eslint-disable-line
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
@@ -30,21 +29,23 @@ export type PixelCellTypes = {
   spacer: number,
 };
 
-const PixelCell = ({ spacer }: PixelCellTypes) => (
-  <MeasuredItem
-    properties={['margin']}
-    renderAfter={(measurements: { margin: number }) => (
-      <code>
-        {measurements.margin}
-      </code>
-    )}
-  >
-    <div
-      style={{ display: 'none' }}
-      className={`m-${spacer}`}
-    />
-  </MeasuredItem>
-);
+function PixelCell({ spacer }: PixelCellTypes) {
+  return (
+    <MeasuredItem
+      properties={['margin']}
+      renderAfter={(measurements: { margin: number }) => (
+        <code>
+          {measurements.margin}
+        </code>
+      )}
+    >
+      <div
+        style={{ display: 'none' }}
+        className={`m-${spacer}`}
+      />
+    </MeasuredItem>
+  );
+}
 
 PixelCell.propTypes = {
   spacer: PropTypes.number.isRequired,
@@ -54,22 +55,24 @@ export type SpaceBlockTypes = {
   utilityClass: string,
 };
 
-const SpaceBlock = ({ utilityClass }: SpaceBlockTypes) => (
-  <code
-    className={classNames(utilityClass)}
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '5rem',
-      textAlign: 'center',
-      width: '10rem',
-      background: 'rgba(0,0,0,.1)',
-    }}
-  >
-    {utilityClass ? `.${utilityClass}` : null}
-  </code>
-);
+function SpaceBlock({ utilityClass }: SpaceBlockTypes) {
+  return (
+    <code
+      className={classNames(utilityClass)}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '5rem',
+        textAlign: 'center',
+        width: '10rem',
+        background: 'rgba(0,0,0,.1)',
+      }}
+    >
+      {utilityClass ? `.${utilityClass}` : null}
+    </code>
+  );
+}
 
 SpaceBlock.propTypes = {
   utilityClass: PropTypes.string,
@@ -137,8 +140,10 @@ export default function SpacingPage() {
                 ))}
               </Form.RadioSet>
             </Form.Group>
-            <label className="d-block" htmlFor="set-size">
-              <span className="d-block text-center">Spacing Level: {size}</span>
+            <Form.Group>
+              <Form.Label className="d-block">
+                <span className="d-block text-center">Spacing Level: {size}</span>
+              </Form.Label>
               <div
                 className="d-flex align-items-center mt-1"
                 style={{ maxWidth: '20rem' }}
@@ -156,7 +161,7 @@ export default function SpacingPage() {
                 />
                 6
               </div>
-            </label>
+            </Form.Group>
           </div>
           <div className="d-flex justify-content-center">
             <SpaceBlock />

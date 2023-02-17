@@ -35,7 +35,7 @@ This component uses a `Card` from react-bootstrap as a base component and extend
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "18rem" }}>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
       />
       <Card.Header
@@ -51,34 +51,47 @@ This component uses a `Card` from react-bootstrap as a base component and extend
 )}
 ```
 
-## With muted styling
+## Card variants
 
-Use `muted` prop to show `Card` in inactive state.
+Use `variant` prop to use `Card` specific style variant.
 
 ```jsx live
 () => {
+  const [cardVariant, setCardVariant] = useState('light');
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
 
   return (
-    <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} muted>
-      <Card.ImageCap 
-        src="https://source.unsplash.com/360x200/?nature,flower"
-        srcAlt="Card image"
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          { value: cardVariant, setValue: setCardVariant, options: ['light', 'dark', 'muted'], name: 'variant' },
+        ]}
       />
-      <Card.Header
-        title="Card Title"
-      />
-      <Card.Section>
-        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
-      </Card.Section>
-      <Card.Footer>
-        <Button>Action 1</Button>
-      </Card.Footer>
-    </Card>
+      {/* end example form block */}
+      
+      <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} variant={cardVariant}>
+        <Card.ImageCap 
+          src="https://picsum.photos/360/200/"
+          srcAlt="Card image"
+        />
+        <Card.Header title="Card Title" />
+        <Card.Section>
+          This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+        </Card.Section>
+        <Card.Footer textElement="Course">
+          <Button
+            variant={cardVariant === 'dark' ? 'inverse-primary' : 'primary'}
+          >
+            Action
+          </Button>
+        </Card.Footer>
+      </Card>
+    </>
 )}
 ```
 
-## Clickable variant
+## Clickable card
 
 You use `isClickable` prop to add additional `hover` and `focus` styling to the `Card`.
 
@@ -89,7 +102,7 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
       />
       <Card.Header
@@ -117,7 +130,7 @@ link styling to make its content appear as a regular text.
     <Hyperlink destination="https://www.edx.org">
       <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
         <Card.ImageCap
-          src="https://source.unsplash.com/360x200/?nature,flower"
+          src="https://picsum.photos/360/200/"
           srcAlt="Card image"
         />
         <Card.Header title="Card Title"/>
@@ -244,16 +257,15 @@ Add ``size="sm"`` for smaller header content and actions.
       </Card.Section>
       <Card.Divider />
       <Card.Section 
-        title="Muted section"
+        title="Section"
         actions={
           <ActionRow isStacked={!!isExtraSmall}>
             <Button>Action 1</Button>
             <Button>Action 2</Button>
           </ActionRow>
         }
-        muted
       >
-        This is a muted variant.
+        This is another section variant.
       </Card.Section>
       <Card.Divider />
       <Card.Section>
@@ -348,7 +360,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "40%" }}>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
         logoSrc="https://via.placeholder.com/150"
         logoAlt="Card logo"
@@ -386,7 +398,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
         orientation={isSmall ? "vertical" : "horizontal"}
       >
         <Card.ImageCap
-          src="https://source.unsplash.com/360x200/?nature,flower"
+          src="https://picsum.photos/360/200/"
           srcAlt="Card image"
           logoSrc="https://via.placeholder.com/150"
           logoAlt="Card logo"
@@ -410,7 +422,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
       </Card>
       <Card className="mb-4" orientation={isSmall ? "vertical" : "horizontal"}>
         <Card.ImageCap
-          src="https://source.unsplash.com/360x200/?nature,flower"
+          src="https://picsum.photos/360/200/"
           srcAlt="Card image"
           logoSrc="https://via.placeholder.com/150"
           logoAlt="Card logo"
@@ -427,7 +439,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
       </Card>
       <Card orientation={isSmall ? "vertical" : "horizontal"}>
         <Card.ImageCap
-          src="https://source.unsplash.com/360x200/?nature,flower"
+          src="https://picsum.photos/360/200/"
           srcAlt="Card image"
           logoSrc="https://via.placeholder.com/150"
           logoAlt="Card logo"
@@ -470,7 +482,7 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
       <ExamplePropsForm
         inputs={[
           { value: orientation, setValue: setOrientation, options: ['horizontal', 'vertical'], name: 'orientation' },
-          { value: variant, setValue: setVariant, options: ['primary', 'warning', 'danger', 'success'], name: 'variant' },
+          { value: variant, setValue: setVariant, options: ['primary', 'warning', 'danger', 'success'], name: 'status-variant' },
         ]}
       />
       {/* end example form block */}
@@ -512,7 +524,7 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
   return (
     <Card style={{ width: isExtraSmall ? "100%" : "25rem" }}>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower" 
+        src="https://picsum.photos/360/200/" 
         srcAlt="Card image"
       />
       <Card.Section className="text-center">
@@ -551,7 +563,7 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
   return (
     <Card orientation={isSmall ? "vertical" : "horizontal"}>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower" 
+        src="https://picsum.photos/360/200/" 
         srcAlt="Card image"
       />
       <Card.Body>
@@ -585,8 +597,8 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
     </Card>
 )}
 ```
-
-## With Fallback Image
+## Fallback Image
+### With Fallback custom Image
 
 You can specify `fallbackSrc` image to show in case your main `src` fails to load.
 A fallback source is available for both the main `ImageCap` component image and the logo.
@@ -598,20 +610,49 @@ A fallback source is available for both the main `ImageCap` component image and 
   return (
     <Card style={{width: isExtraSmall ? "100%" : "40%"}}>
       <Card.ImageCap
-          src="fakeURL"
-          fallbackSrc="https://source.unsplash.com/360x200/?ocean"
-          srcAlt="Card image"
-          logoSrc="fakeURL"
-          fallbackLogoSrc="https://www.edx.org/images/logos/edx-logo-elm.svg"
-          logoAlt="Card logo"
+        src="fakeURL"
+        fallbackSrc="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+        logoSrc="fakeURL"
+        fallbackLogoSrc="https://www.edx.org/images/logos/edx-logo-elm.svg"
+        logoAlt="Card logo"
       />
       <Card.Header title="Title" subtitle="Subtitle" />
       <Card.Section title="Section title">
-          This is a card section. It can contain anything but usually text, a list, or list of links.
-          Multiple sections have a card divider between them.
+        This is a card section. It can contain anything but usually text, a list, or list of links.
+        Multiple sections have a card divider between them.
       </Card.Section>
       <Card.Footer>
-          <Button>Action 1</Button>
+        <Button>Action 1</Button>
+      </Card.Footer>
+  </Card>
+)}
+```
+
+### With default Fallback Image
+
+The default fallback image will be displayed if `fallbackSrc` is not specified.
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({maxWidth: breakpoints.small.maxWidth});
+
+  return (
+    <Card style={{width: isExtraSmall ? "100%" : "40%"}}>
+      <Card.ImageCap 
+        src="fakeURL"
+        srcAlt="Card image"
+        logoSrc="fakeURL"
+        fallbackLogoSrc="https://www.edx.org/images/logos/edx-logo-elm.svg"
+        logoAlt="Card logo"
+      />
+      <Card.Header title="Title" subtitle="Subtitle" />
+      <Card.Section title="Section title">
+        This is a card section. It can contain anything but usually text, a list, or list of links.
+        Multiple sections have a card divider between them.
+      </Card.Section>
+      <Card.Footer>
+        <Button>Action 1</Button>
       </Card.Footer>
   </Card>
 )}
@@ -627,7 +668,7 @@ A fallback source is available for both the main `ImageCap` component image and 
   return (
     <Card isLoading style={{ width: isExtraSmall ? "100%" : "18rem" }}>
       <Card.ImageCap
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
       />
       <Card.Header title="Card Title" />
@@ -650,8 +691,8 @@ A fallback source is available for both the main `ImageCap` component image and 
   return (
     <Card isLoading orientation={isExtraSmall ? "vertical" : "horizontal"}>
       <Card.ImageCap
-        skeletonHeight={isExtraSmall ? 140 : undefined}
-        src="https://source.unsplash.com/360x200/?nature,flower"
+        skeletonHeight={isExtraSmall ? 140 : null}
+        src="https://picsum.photos/360/200/"
         srcAlt="Card image"
         logoSrc="https://via.placeholder.com/150"
         logoAlt="Card logo"
@@ -687,7 +728,7 @@ behavior.
 >
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -700,13 +741,11 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -718,13 +757,11 @@ behavior.
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This content is a little bit longer.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -737,13 +774,11 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -756,13 +791,11 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -774,13 +807,11 @@ behavior.
       This is a wider card with supporting text below as a natural lead-in to 
       additional content. This content is a little bit longer.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
   <Card>
     <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
+      src="https://picsum.photos/360/200/"
       srcAlt="Card image"
     />
     <Card.Header
@@ -793,77 +824,163 @@ behavior.
       additional content. This card has even longer content than the first to 
       show that equal height action.
     </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
   </Card>
 </CardGrid>
 ```
 
-## CardDeck (Deprecated)
+## CardDeck
 
-This component gives any child Card components equal height with an appropriate gutter between cards. However,
-it is meant to be used as a single horizontal row of Cards, not as a grid. See CardGrid for more details.
+Displays child `Card` components in a horizontal row with equal height and width, with an appropriate gutter between cards. The width of each child `Card` component is determined by the (optional) `columnSizes` prop. If any child `Card` components overflow beyond the parent's width, they will be hidden but accessible via scrolling horizontally or keyboard navigation.
 
-**Note**: this component is deprecated and is going to be removed soon.
+For accessibility, if the child `Card` components are interactive (e.g., `isClickable`), pass the `hasInteractiveChildren` prop so the `CardDeck` itself isn't focusable.
 
 ```jsx live
-<CardDeck>
-  <Card>
-    <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This content is a little bit longer.
-    </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://source.unsplash.com/360x200/?nature,flower"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-</CardDeck>
+() => {
+  const [hasInteractiveChildren, setHasInteractiveChildren] = useState('false');
+
+  const CardComponent = () => (
+    <Card isClickable={hasInteractiveChildren === 'true'}>
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header title="Card title" />
+      <Card.Section  title="Section title">
+        <HipsterIpsum numShortParagraphs={1} />
+      </Card.Section>
+    </Card>
+  );
+
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          {
+            value: hasInteractiveChildren,
+            setValue: setHasInteractiveChildren,
+            options: ['true', 'false'],
+            name: 'hasInteractiveChildren',
+          },
+        ]}
+      />
+      {/* end example form block */}
+
+      <CardDeck hasInteractiveChildren={hasInteractiveChildren === 'true'}>
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+        <CardComponent />
+      </CardDeck>
+    </>
+  );
+}
+```
+
+### CardDeck.Deprecated
+
+Gives any child `Card` components equal height with an appropriate gutter between cards. Each child `Card` component's width will be adjusted (e.g., become more narrow) to ensure all `Card` components fit within its parent's width.
+
+Note: This component is a pass-thru from `react-bootstrap`.
+
+```jsx live
+() => {
+  const CardComponent = () => (
+    <Card>
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header title="Card title" />
+      <Card.Section title="Section title">
+        <HipsterIpsum numShortParagraphs={1} />
+      </Card.Section>
+    </Card>
+  );
+
+  return (
+    <CardDeck.Deprecated>
+      <CardComponent />
+      <CardComponent />
+      <CardComponent />
+    </CardDeck.Deprecated>
+  )
+}
+```
+
+## CardCarousel
+
+Extends `CardDeck` to support navigating between any overflow `Card` components via left and right `IconButton` components as a scrollable carousel.
+
+Includes support for an optional `title` and `subtitle`. You may rely on the default styles for the titles (e.g., if passing strings) or alternatively you may also pass custom HTML and JSX.
+
+```jsx live
+() => {
+  const [canScrollHorizontal, setCanScrollHorizontal] = useState('true');
+  const [disableOpacityMasks, setDisableOpacityMasks] = useState('false');
+  const [hasOverflowCards, setHasOverflowCards] = useState('true');
+
+  const CardComponent = () => (
+    <Card isClickable>
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header title="Card title" />
+      <Card.Section  title="Section title">
+        <HipsterIpsum numShortParagraphs={1} />
+      </Card.Section>
+    </Card>
+  );
+
+  const cardItems = useMemo(() => {
+    if (hasOverflowCards === 'true') {
+      return Array.from({ length: 8 }).map(() => <CardComponent key={uuidv4()} />);
+    }
+    return Array.from({ length: 2 }).map(() => <CardComponent key={uuidv4()} />);
+  }, [hasOverflowCards]);
+
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          {
+            value: canScrollHorizontal,
+            setValue: setCanScrollHorizontal,
+            options: ['true', 'false'],
+            name: 'canScrollHorizontal',
+          },
+          {
+            value: disableOpacityMasks,
+            setValue: setDisableOpacityMasks,
+            options: ['true', 'false'],
+            name: 'disableOpacityMasks',
+          },
+          {
+            value: hasOverflowCards,
+            setValue: setHasOverflowCards,
+            options: ['true', 'false'],
+            name: 'hasOverflowCards',
+          }
+        ]}
+      />
+      {/* end example form block */}
+
+      <CardCarousel
+        ariaLabel="example card carousel"
+        title={<h3>Recommended for you</h3>}
+        subtitle="The following content was picked just for you."
+        canScrollHorizontal={canScrollHorizontal === 'true'}
+        disableOpacityMasks={disableOpacityMasks === 'true'}
+        onScrollPrevious={() => { console.log('onScrollPrevious'); } }
+        onScrollNext={() => { console.log('onScrollNext'); } }
+      >
+        {cardItems}
+      </CardCarousel>
+    </>
+  );
+}
 ```

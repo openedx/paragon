@@ -11,7 +11,7 @@ function SvgBbb(props) {
       fill="none"
       {...props}
     >
-      <path fill="url(#bbb_svg__pattern0)" d="M.5 0h24v24.004H.5z" />
+      <path fill="currentColor" d="M.5 0h24v24.004H.5z" />
       <defs>
         <pattern
           id="bbb_svg__pattern0"

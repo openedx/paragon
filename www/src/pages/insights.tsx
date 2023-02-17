@@ -10,14 +10,14 @@ import {
   CheckboxFilter,
   useMediaQuery,
   breakpoints,
-  // @ts-ignore
-} from '~paragon-react'; // eslint-disable-line
+} from '~paragon-react';
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
 import SummaryUsageExamples, { ISummaryUsageExamples } from '../components/insights/SummaryUsageExamples';
 import ProjectUsageExamples, { IProjectUsageExamples } from '../components/insights/ProjectUsageExamples';
 import ComponentUsageExamples, { IComponentUsageExamples } from '../components/insights/ComponentUsageExamples';
 import getGithubProjectUrl from '../utils/getGithubProjectUrl';
+// @ts-ignore
 import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
 import InsightsContext from '../context/InsightsContext';
@@ -85,8 +85,8 @@ export interface IComponentUsage {
 
 const dependentProjects: IDependentUsage[] = [];
 
-const componentsUsage: { [key: string]: IComponentUsageData[] } = dependentProjectsUsages.reduce(
-  (accumulator: any, project: any) => {
+const componentsUsage: Record<string, IComponentUsageData[]> = dependentProjectsUsages
+  .reduce((accumulator: any, project: any) => {
     dependentProjects.push({
       ...project,
       repositoryUrl: getGithubProjectUrl(project.repository),
@@ -107,8 +107,8 @@ const componentsUsage: { [key: string]: IComponentUsageData[] } = dependentProje
       });
     });
     return accumulator;
-  }, {},
-);
+  }, {});
+
 const componentsInUsage = Object.keys(componentsUsage);
 
 const round = (n: number) => Math.round(n * 10) / 10;
@@ -119,15 +119,14 @@ function SummaryUsage() {
   const { paragonTypes = {}, isParagonIcon = () => false } = useContext(InsightsContext) as IInsightsContext;
   const isMedium = useMediaQuery({ minWidth: breakpoints.large.minWidth });
 
-  const typeCount = Object.keys(paragonTypes).reduce(
-    (accumulator: { [key: string]: number | undefined }, componentName) => {
+  const typeCount = Object.keys(paragonTypes)
+    .reduce((accumulator: { [key: string]: number | undefined }, componentName) => {
       const type = paragonTypes[componentName] || (isParagonIcon(componentName) && ICON_TYPE);
       if (componentsInUsage.includes(componentName)) {
         accumulator[type] = (accumulator[type] || 0) + 1;
       }
       return accumulator;
-    }, {},
-  );
+    }, {});
 
   const filterValues: IFilterData[] = Object.keys(paragonTypes)
     .map((key) => paragonTypes[key])
@@ -138,9 +137,8 @@ function SummaryUsage() {
 
   const summaryComponentsUsage = Object.entries<IComponentUsageData[]>(componentsUsage).map(
     ([componentName, usages]) => {
-      const componentUsageCounts = usages.reduce(
-        (accumulator, project) => accumulator + project.componentUsageCount, 0,
-      );
+      const componentUsageCounts = usages
+        .reduce((accumulator, project) => accumulator + project.componentUsageCount, 0);
       let type = paragonTypes[componentName];
       if (!type && isParagonIcon(componentName)) {
         type = ICON_TYPE;
@@ -163,9 +161,8 @@ function SummaryUsage() {
     return nameA < nameB ? -1 : 1;
   });
 
-  const averageComponentsUsedPerProject = dependentProjects.reduce(
-    (accumulator, project) => accumulator + project.count, 0,
-  ) / dependentProjects.length;
+  const averageComponentsUsedPerProject = dependentProjects
+    .reduce((accumulator, project) => accumulator + project.count, 0) / dependentProjects.length;
 
   return (
     <div className="pt-5 mb-5">
@@ -368,7 +365,7 @@ export default function InsightsPage({ pageContext: { tab } }: { pageContext: { 
 
   const handleOnSelect = (value: string) => {
     if (value !== tab) {
-      global.analytics.track('Usage Insights', { tab: value });
+      global.analytics.track(`openedx.paragon.docs.insights.tabs.${value.toLowerCase().trim()}.clicked`);
       navigate(INSIGHTS_PAGES.find(item => item.tab === value)!.path);
     }
   };

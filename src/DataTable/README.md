@@ -51,6 +51,11 @@ for more information.
 
 ```jsx live
   <DataTable
+    isPaginated
+    isSelectable
+    initialState={{
+      pageSize: 2,
+    }}
     isFilterable
     isSortable
     defaultColumnValues={{ Filter: TextFilter }}
@@ -314,6 +319,26 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
 () => {
   const [currentView, setCurrentView] = useState('card');
   const togglePlacement = 'left'; // 'bottom' is the only other supported value
+
+  const ExampleCard = ({ className, original }) => {
+    const { name, color, famous_for: famousFor } = original;
+
+    return (
+      <Card className={className}>
+        <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
+        <Card.Header title={name} />
+        <Card.Section>
+          <dl>
+            <dt>Color</dt>
+            <dd>{color}</dd>
+            <dt>Famous For</dt>
+            <dd>{famousFor}</dd>
+          </dl>
+        </Card.Section>
+      </Card>
+    );
+  };
+
   // memoize data, otherwise the filters will get reset after switching view
   const data = useMemo(() => [
     {
@@ -335,6 +360,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
   return (
     <DataTable
       isFilterable
+      isSelectable
       dataViewToggleOptions={{
         isDataViewToggleEnabled: true,
         onDataViewToggle: val => setCurrentView(val),
@@ -342,13 +368,12 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       }}
       isSortable
       defaultColumnValues={{ Filter: TextFilter }}
-      itemCount={7}
+      itemCount={3}
       data={data}
       columns={[
         {
           Header: 'Name',
           accessor: 'name',
-
         },
         {
           Header: 'Famous For',
@@ -385,7 +410,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       <DataTable.TableControlBar />
 
       {/* which kind of body content to show */}
-      { currentView === "card" && <CardView CardComponent={MiyazakiCard} /> }
+      { currentView === "card" && <CardView CardComponent={ExampleCard} /> }
       { currentView === "list" && <DataTable.Table /> }
 
       <DataTable.EmptyTable content="No results found" />
@@ -1033,6 +1058,166 @@ a responsive grid of cards.
     >
       <TableControlBar />
       <CardView CardComponent={MiyazakiCard} />
+      <TableFooter />
+    </DataTable>
+  );
+};
+```
+
+### Customizing number of Cards shown per row
+Use `columnSizes` prop of `CardView` component to define how many `Cards` are shown per row at each breakpoint.
+
+`columnSizes` is an object containing the desired column size at each breakpoint. The example below shows 1 `Card` per row at `xs` breakpoint, 2 `Cards` at `sm` and `md`, and 4 `Cards` at `lg` and higher. You can read more about the API at https://react-bootstrap.netlify.app/layout/grid/.
+
+```jsx live
+() => {
+  const columnSizes = { xs: 12, sm: 6, lg: 3 };
+
+  const ExampleCard = ({ className, original }) => {
+    const { name, color, famous_for: famousFor } = original;
+		
+    return (
+      <Card className={className}>
+        <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
+        <Card.Body>
+          <Card.Header title={name} />
+          <Card.Section>
+            <dl>
+              <dt>Color</dt>
+              <dd>{color}</dd>
+              <dt>Famous For</dt>
+              <dd>{famousFor}</dd>
+            </dl>
+          </Card.Section>
+          </Card.Body>
+      </Card>
+    );
+  };
+
+  return (
+    <DataTable
+      itemCount={5}
+      defaultColumnValues={{ Filter: TextFilter }}
+      isFilterable
+      isSortable
+      data={[
+        {
+          name: 'Lil Bub',
+          color: 'brown tabby',
+          famous_for: 'weird tongue',
+        },
+        {
+          name: 'Grumpy Cat',
+          color: 'siamese',
+          famous_for: 'serving moods',
+        },
+        {
+          name: 'Smoothie',
+          color: 'orange tabby',
+          famous_for: 'modeling',
+        },
+        {
+          name: 'Maru',
+          color: 'brown tabby',
+          famous_for: 'being a lovable oaf',
+        },
+        {
+          name: 'Keyboard Cat',
+          color: 'orange tabby',
+          famous_for: 'piano virtuoso',
+        },
+      ]}
+      columns={[
+        {
+          Header: 'Name',
+          accessor: 'name',
+        },
+        {
+          Header: 'Color',
+          accessor: 'color',
+        },
+        {
+          Header: 'Famous For',
+          accessor: 'famous_for',
+        },
+      ]}
+    >
+      <TableControlBar />
+      <CardView CardComponent={ExampleCard} columnSizes={columnSizes} />
+      <TableFooter />
+    </DataTable>
+  );
+};
+```
+
+### Horizontal view
+You can also display `Cards` with horizontal view. If the table is selectable control position of selection checkbox with `selectionPlacement` prop, accepts `right` or `left` positions (relative to the `Card`).
+
+```jsx live
+() => {
+  const columnSizes = { xs: 12 };
+
+  const ExampleCard = ({ className, original }) => {
+    const { name, color, famous_for: famousFor } = original;
+
+    return (
+      <Card className={className} orientation="horizontal">
+        <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
+        <Card.Body>
+          <Card.Header title={name} />
+          <Card.Section>
+            <dl>
+              <dt>Color</dt>								
+              <dd>{color}</dd>
+              <dt>Famous For</dt>
+              <dd>{famousFor}</dd>
+            </dl>
+          </Card.Section>
+        </Card.Body>
+      </Card>
+    );
+  };
+
+  return (
+    <DataTable
+      isSelectable
+      defaultColumnValues={{ Filter: TextFilter }}
+      isFilterable
+      itemCount={3}
+      data={[
+        {
+          name: 'Lil Bub',
+          color: 'brown tabby',
+          famous_for: 'weird tongue',
+        }, 
+        {
+          name: 'Grumpy Cat',
+          color: 'siamese',
+          famous_for: 'serving moods',
+        },
+        {
+          name: 'Smoothie',
+          color: 'orange tabby',
+          famous_for: 'modeling',
+        },
+      ]}
+      columns={[
+        {
+          Header: 'Name',
+          accessor: 'name',
+        },
+        {
+          Header: 'Color',
+          accessor: 'color',
+        },
+        {
+          Header: 'Famous For',
+          accessor: 'famous_for',
+        },
+      ]}
+    >
+      <TableControlBar />
+      <CardView CardComponent={ExampleCard} columnSizes={columnSizes} selectionPlacement="left" />
       <TableFooter />
     </DataTable>
   );

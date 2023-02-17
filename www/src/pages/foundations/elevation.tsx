@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import SEO from '../../components/SEO';
-import Layout from '../../components/PageLayout';
 import {
   Button, Form, Container,
   Toast, Icon, IconButtonWithTooltip,
-// @ts-ignore
 } from '~paragon-react';
-// @ts-ignore
 import { Close, WbSunny, DoDisturb } from '~paragon-icons';
+import SEO from '../../components/SEO';
+import Layout from '../../components/PageLayout';
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
@@ -101,7 +99,7 @@ function BoxShadowToolkit({
   });
 
   const updateBoxShadowModel = (property: string, value: boolean | string) => {
-    global.analytics.track('openedx.paragon.elevation.generator.updated', { property, value });
+    global.analytics.track('openedx.paragon.docs.elevation.generator.updated', { property, value });
 
     const newBoxShadowModel = {
       ...boxShadowModel,

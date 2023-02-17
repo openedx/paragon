@@ -31,6 +31,7 @@ const VARIANTS = {
 };
 
 function ReducedPagination({ currentPage, pageCount, handlePageSelect }) {
+  if (pageCount <= 1) { return null; }
   return (
     <Dropdown>
       <Dropdown.Toggle variant="tertiary" id="Pagination dropdown">
@@ -203,10 +204,11 @@ class Pagination extends React.Component {
 
   renderPreviousButton() {
     const {
-      buttonLabels, icons, variant, size,
+      buttonLabels, icons, variant, size, pageCount,
     } = this.props;
     const { currentPage } = this.state;
     const isFirstPage = currentPage === 1;
+    const isDisabled = isFirstPage || pageCount === 0;
     const previousPage = isFirstPage ? null : currentPage - 1;
     const iconSize = (variant !== VARIANTS.reduced && size !== 'small') || variant === VARIANTS.minimal;
 
@@ -220,7 +222,7 @@ class Pagination extends React.Component {
         className={classNames(
           'page-item',
           {
-            disabled: isFirstPage,
+            disabled: isDisabled,
           },
         )}
       >
@@ -230,10 +232,10 @@ class Pagination extends React.Component {
               <Button
                 className="previous page-link"
                 aria-label={ariaLabel}
-                tabIndex={isFirstPage ? '-1' : undefined}
+                tabIndex={isDisabled ? '-1' : undefined}
                 onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
                 ref={(element) => { this.previousButtonRef = element; }}
-                disabled={isFirstPage}
+                disabled={isDisabled}
               >
                 <div>
                   {icons.leftIcon}
@@ -247,10 +249,10 @@ class Pagination extends React.Component {
                 iconAs={Icon}
                 className="previous page-link"
                 aria-label={ariaLabel}
-                tabIndex={isFirstPage ? '-1' : undefined}
+                tabIndex={isDisabled ? '-1' : undefined}
                 onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
                 ref={(element) => { this.previousButtonRef = element; }}
-                disabled={isFirstPage}
+                disabled={isDisabled}
                 alt={PAGINATION_BUTTON_ICON_BUTTON_PREV_ALT}
               />
             )
@@ -264,7 +266,8 @@ class Pagination extends React.Component {
       buttonLabels, pageCount, icons, variant, size,
     } = this.props;
     const { currentPage } = this.state;
-    const isLastPage = currentPage === pageCount;
+    const isLastPage = (currentPage === pageCount);
+    const isDisabled = isLastPage || (pageCount <= 1);
     const nextPage = isLastPage ? null : currentPage + 1;
     const iconSize = (variant !== VARIANTS.reduced && size !== 'small') || variant === VARIANTS.minimal;
 
@@ -278,7 +281,7 @@ class Pagination extends React.Component {
         className={classNames(
           'page-item',
           {
-            disabled: isLastPage,
+            disabled: isDisabled,
           },
         )}
       >
@@ -286,10 +289,10 @@ class Pagination extends React.Component {
           <Button
             className="next page-link"
             aria-label={ariaLabel}
-            tabIndex={isLastPage ? '-1' : undefined}
+            tabIndex={isDisabled ? '-1' : undefined}
             onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
             ref={(element) => { this.nextButtonRef = element; }}
-            disabled={isLastPage}
+            disabled={isDisabled}
           >
             <div>
               {variant === VARIANTS.default ? buttonLabels.next : null}
@@ -302,10 +305,10 @@ class Pagination extends React.Component {
             iconAs={Icon}
             className="next page-link"
             aria-label={ariaLabel}
-            tabIndex={isLastPage ? '-1' : undefined}
+            tabIndex={isDisabled ? '-1' : undefined}
             onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
             ref={(element) => { this.nextButtonRef = element; }}
-            disabled={isLastPage}
+            disabled={isDisabled}
             alt={PAGINATION_BUTTON_ICON_BUTTON_NEXT_ALT}
           />
         )}
@@ -342,6 +345,9 @@ class Pagination extends React.Component {
       requireFirstAndLastPages: true,
     });
 
+    if (pageCount <= 1) {
+      return null;
+    }
     return pages.map((pageIndex) => {
       if (pageIndex === ELLIPSIS) {
         return this.renderEllipsisButton();

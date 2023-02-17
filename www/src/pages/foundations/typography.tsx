@@ -1,8 +1,7 @@
 import React from 'react';
+import { Container } from '~paragon-react';
 import Layout from '../../components/PageLayout';
 import SEO from '../../components/SEO';
-// @ts-ignore
-import { Container } from '~paragon-react';
 import {
   HeadingsTable,
   BodyTable,

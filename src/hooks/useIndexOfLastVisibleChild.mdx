@@ -35,30 +35,40 @@ of the children until they exceed the width of the container.
   const children = useMemo(() => {
     const indexOfOverflowStart = indexOfLastVisibleChild + 1;
     const childrenList = elements.map((element, i) => (
-      <div className="px-4 pt-2" style={i >= indexOfOverflowStart ? invisibleStyles : {}}>{element}</div>
+      <div
+        key={element}
+        className="px-4 pt-2"
+        style={i >= indexOfOverflowStart ? invisibleStyles : {}}
+      >
+        {element}
+      </div>
     ));
-    const overflowChildren = childrenList.slice(indexOfOverflowStart)
+
+    const overflowChildren = elements.slice(indexOfOverflowStart)
       .map(overflowChild => (
-          <Dropdown.Item
-            key={`${overflowChild}overflow`}
-          >
-            {overflowChild.props.children}
-          </Dropdown.Item>
-        ));
-    
-    childrenList.splice(indexOfOverflowStart, 0, (
-      <Dropdown ref={overflowElementRef} style={!overflowChildren.length ? invisibleStyles : {}}>
+        <Dropdown.Item key={`${overflowChild}-overflow`}>
+          {overflowChild}
+        </Dropdown.Item>
+      )
+    );
+
+    const MoreDropdown = (
+    	<Dropdown ref={overflowElementRef} style={!overflowChildren.length ? invisibleStyles : {}} key="overflow-example">
         <Dropdown.Toggle
           variant="link"
+          id="more-toggle"
         >
           More...
         </Dropdown.Toggle>
         <Dropdown.Menu className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
       </Dropdown>
-    ));
-    
+    )
+
+    childrenList.push(MoreDropdown);
+
     return childrenList;
   }, [indexOfLastVisibleChild]);
+
   return (
     <div className="d-flex" ref={containerElementRef}>
       {children}

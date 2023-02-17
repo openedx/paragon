@@ -11,10 +11,7 @@ function SvgMicrosoftTeams(props) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       {...props}
     >
-      <path
-        fill="url(#microsoft_teams_svg__pattern0)"
-        d="M.332.871h24v22.257h-24z"
-      />
+      <path fill="currentColor" d="M.332.871h24v22.257h-24z" />
       <defs>
         <pattern
           id="microsoft_teams_svg__pattern0"

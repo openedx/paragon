@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// @ts-ignore
-import { FormGroup, FormControl, FormLabel, Row } from '~paragon-react'; // eslint-disable-line
+import { FormGroup, FormControl, FormLabel } from '~paragon-react';
 import CodeBlock from './CodeBlock';
 
 export interface IColumn {
@@ -13,56 +12,58 @@ export interface IColumn {
   onChangeOffset: Function,
 }
 
-const Column = ({
+function Column({
   index, width, onChangeWidth, offset, onChangeOffset,
-}: IColumn) => (
-  <div
-    className={classNames('col mb-4', {
-      [`col-${width}`]: width > 0,
-      [`offset-${offset}`]: offset > 0,
-    })}
-  >
+}: IColumn) {
+  return (
     <div
-      className="text-align-center p-1"
-      style={{ background: '#eee', minHeight: '2rem' }}
+      className={classNames('col mb-4', {
+        [`col-${width}`]: width > 0,
+        [`offset-${offset}`]: offset > 0,
+      })}
     >
-      <FormGroup className="form-inline m-2">
-        <FormLabel isInline className="font-weight-normal" htmlFor={`column-${index}-width`}>
-          Width
-        </FormLabel>
-        <FormControl
-          type="number"
-          id={`column-${index}-width`}
-          size="sm"
-          value={width}
-          placeholder="Width (1 - 12)"
-          style={{ width: '3.5rem' }}
-          min={0}
-          step={1}
-          max={12}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeWidth(index, e.target.value)}
-        />
-      </FormGroup>
-      <FormGroup className="form-inline m-2">
-        <FormLabel isInline className="font-weight-normal" htmlFor={`column-${index}-offset`}>
-          Offset
-        </FormLabel>
-        <FormControl
-          type="number"
-          id={`column-${index}-offset`}
-          size="sm"
-          value={offset}
-          placeholder="Offset (1 - 11)"
-          style={{ width: '3.5rem' }}
-          min={0}
-          step={1}
-          max={11}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeOffset(index, e.target.value)}
-        />
-      </FormGroup>
+      <div
+        className="text-align-center p-1"
+        style={{ background: '#eee', minHeight: '2rem' }}
+      >
+        <FormGroup className="form-inline m-2">
+          <FormLabel isInline className="font-weight-normal" htmlFor={`column-${index}-width`}>
+            Width
+          </FormLabel>
+          <FormControl
+            type="number"
+            id={`column-${index}-width`}
+            size="sm"
+            value={width}
+            placeholder="Width (1 - 12)"
+            style={{ width: '3.5rem' }}
+            min={0}
+            step={1}
+            max={12}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeWidth(index, e.target.value)}
+          />
+        </FormGroup>
+        <FormGroup className="form-inline m-2">
+          <FormLabel isInline className="font-weight-normal" htmlFor={`column-${index}-offset`}>
+            Offset
+          </FormLabel>
+          <FormControl
+            type="number"
+            id={`column-${index}-offset`}
+            size="sm"
+            value={offset}
+            placeholder="Offset (1 - 11)"
+            style={{ width: '3.5rem' }}
+            min={0}
+            step={1}
+            max={11}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeOffset(index, e.target.value)}
+          />
+        </FormGroup>
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
 Column.propTypes = {
   index: PropTypes.number.isRequired,
@@ -106,7 +107,7 @@ function LayoutGenerator() {
   }
 
   const renderMarkupString = () => {
-    const columnsString = columns.map((ColumnComponent, i) => {
+    const columnsString = [...Array(columns.length).keys()].map((i) => {
       const width = columnWidths[i];
       const offset = columnOffsets[i];
 

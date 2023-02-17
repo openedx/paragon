@@ -1,10 +1,8 @@
 import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
 import { Helmet } from 'react-helmet';
 import { IntlProvider } from 'react-intl';
-// @ts-ignore
-import { messages } from '~paragon-react'; // eslint-disable-line
+import { messages } from '~paragon-react';
 
 import { THEMES, DEFAULT_THEME } from '../../theme-config';
 
@@ -13,6 +11,7 @@ export interface IDefaultValue {
     theme?: string,
     direction?: string,
     language?: string,
+    containerWidth?: string,
   },
   theme?: string,
   handleSettingsChange: Function,
@@ -28,13 +27,14 @@ const defaultValue = {
 
 export const SettingsContext = createContext<IDefaultValue>(defaultValue);
 
-const SettingsContextProvider: React.FC = ({ children }) => {
+function SettingsContextProvider({ children }) {
   // gatsby does not have access to the localStorage during the build (and first render)
   // so sadly we cannot initialize theme with value from localStorage
   const [settings, setSettings] = useState({
     theme: DEFAULT_THEME,
     direction: 'ltr',
     language: 'en',
+    containerWidth: 'md',
   });
   const [showSettings, setShowSettings] = useState(false);
 
@@ -44,12 +44,12 @@ const SettingsContextProvider: React.FC = ({ children }) => {
     }
     setSettings(prevState => ({ ...prevState, [key]: value }));
     global.localStorage.setItem('pgn__settings', JSON.stringify({ ...settings, [key]: value }));
-    global.analytics.track(`${key[0].toUpperCase() + key.slice(1)} change`, { [key]: value });
+    global.analytics.track(`openedx.paragon.docs.settings.${key}.changed`, { [key]: value });
   };
 
   const toggleSettings = (value: boolean) => {
     setShowSettings(value);
-    global.analytics.track('Toggle Settings', { value: value ? 'show' : 'hide' });
+    global.analytics.track(`openedx.paragon.docs.settings.${value ? 'opened' : 'closed'}`);
   };
 
   // this hook will be called after the first render, so we can safely access localStorage
@@ -97,7 +97,7 @@ const SettingsContextProvider: React.FC = ({ children }) => {
       </IntlProvider>
     </SettingsContext.Provider>
   );
-};
+}
 
 SettingsContextProvider.propTypes = {
   children: PropTypes.node.isRequired,

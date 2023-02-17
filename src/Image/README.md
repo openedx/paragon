@@ -24,19 +24,19 @@ notes: |
 <>
   <Image
     className="mr-2"
-    src="https://source.unsplash.com/100x100/?nature,flower"
+    src="https://picsum.photos/100/100/"
     rounded
     alt="Image description"
   />
   <Image
     className="mr-2"
-    src="https://source.unsplash.com/100x100/?nature,flower"
+    src="https://picsum.photos/100/100/"
     roundedCircle
     alt="Image description"
   />
   <Image
     className="mr-2"
-    src="https://source.unsplash.com/100x100/?nature,flower"
+    src="https://picsum.photos/100/100/"
     thumbnail
     alt="Image description"
   />
@@ -46,7 +46,7 @@ notes: |
 ## Fluid Sizing
 
 ```jsx live
-<Image src="https://source.unsplash.com/1600x800/?nature,flower" fluid alt="Image description" />
+<Image src="https://picsum.photos/1600/800/" fluid alt="Image description" />
 ```
 
 
