@@ -13,7 +13,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Set up Node
+      - name: Setup Git User
+        uses: fregante/setup-git-user@v1
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 18
