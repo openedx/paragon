@@ -21,8 +21,7 @@ jobs:
           node-version: 18
       - name: Sync changes
         run: |
-          git switch alpha
-          git pull origin alpha
+          git checkout alpha
           git rebase master
       - name: Create Pull Request
         id: cpr
