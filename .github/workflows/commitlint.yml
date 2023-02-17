@@ -3,7 +3,9 @@
 name: Lint Commit Messages
 
 on:
-  - pull_request
+  pull_request:
+    branches-ignore:
+      - 'automation/sync-alpha-master'
 
 jobs:
   commitlint:
