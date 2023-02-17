@@ -21,7 +21,7 @@ jobs:
           node-version: 18
       - name: Create Pull Request
         id: cpr
-        uses: tretuna/sync-branches@1
+        uses: tretuna/sync-branches@v1
         with:
           GITHUB_TOKEN: ${{ secrets.requirements_bot_github_token }}
           FROM_BRANCH: "master"
