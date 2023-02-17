@@ -22,7 +22,7 @@ jobs:
       - name: Sync changes
         run: |
           git switch alpha
-          git merge master
+          git rebase master
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v4
