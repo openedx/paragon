@@ -29,7 +29,7 @@ jobs:
         with:
           token: ${{ secrets.requirements_bot_github_token }}
           branch: automation/sync-alpha-master
-          title: "chore(release): sync from master to alpha"
+          title: "[skip ci] chore(release): sync from master to alpha"
           body: "Sync changes from `master` to `alpha`."
       - name: Enable Pull Request Auto Merge
         uses: peter-evans/enable-pull-request-automerge@v2
