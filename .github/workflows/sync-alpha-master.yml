@@ -13,16 +13,17 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Setup Git User
-        uses: fregante/setup-git-user@v1
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 18
-      - name: Sync changes
-        run: |
-          git switch alpha
-          git rebase master
+      - name: Merge master -> alpha
+        uses: devmasx/merge-branch@v1
+        with:
+          type: now
+          from_branch: master
+          target_branch: alpha
+          github_token: ${{ secrets.requirements_bot_github_token }}
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v4
