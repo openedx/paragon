@@ -19,16 +19,21 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18
+      - name: Sync changes
+        run: |
+          git switch alpha
+          git rebase master
       - name: Create Pull Request
         id: cpr
-        uses: tretuna/sync-branches@v1
+        uses: peter-evans/create-pull-request@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.requirements_bot_github_token }}
-          FROM_BRANCH: "master"
-          TO_BRANCH: "alpha"
+          token: ${{ secrets.requirements_bot_github_token }}
+          branch: automation/sync-alpha-master
+          title: "chore(release): sync from master to alpha"
+          body: "Sync changes from `master` to `alpha`."
       - name: Enable Pull Request Auto Merge
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
           token: ${{ secrets.requirements_bot_github_token }}
-          pull-request-number: ${{ steps.cpr.outputs.PULL_REQUEST_NUMBER }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           merge-method: squash
