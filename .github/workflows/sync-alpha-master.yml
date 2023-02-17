@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 18
       - name: Merge master -> alpha
-        uses: devmasx/merge-branch@v1
+        uses: devmasx/merge-branch@master
         with:
           type: now
           from_branch: master
