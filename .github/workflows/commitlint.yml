@@ -2,10 +2,7 @@
 
 name: Lint Commit Messages
 
-on:
-  pull_request:
-    branches-ignore:
-      - 'automation/sync-alpha-master'
+on: pull_request
 
 jobs:
   commitlint:
