@@ -1,0 +1,32 @@
+{
+  "color": {
+    "product-tour": {
+      "checkpoint": {
+        "bg": { "value": "{color.light.300}", "source": "$checkpoint-background-color" },
+        "body": { "value": "{color.gray.700}", "source": "$checkpoint-body-color" },
+        "border": { "value": "{color.brand.500}", "source": "$checkpoint-border-color" },
+        "breadcrumb": { "value": "{color.primary.500}", "source": "$checkpoint-breadcrumb-color" },
+        "box-shadow": {
+          "value": "{color.black}",
+          "source": "$checkpoint-box-shadow-color",
+          "modify": [{
+            "type": "alpha",
+            "amount": 0.3
+          }]
+        },
+        "arrow": {
+          "border": {
+            "top": {
+              "value": "{color.product-tour.checkpoint.bg}",
+              "source": "$checkpoint-arrow-border-top-color"
+            },
+            "transparent": {
+              "value": "transparent",
+              "source": "$checkpoint-arrow-border-color-transparent"
+            }
+          }
+        }
+      }
+    }
+  }
+}

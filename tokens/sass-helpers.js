@@ -14,7 +14,7 @@ const chroma = require('chroma-js');
  * @return chroma-js color instance (one of dark or light variants)
  */
 function colorYiq(color, light, dark, threshold) {
-  const defaultsFile = fs.readFileSync(path.resolve(__dirname, 'src', 'global', 'other.json'), 'utf8');
+  const defaultsFile = fs.readFileSync(path.resolve(__dirname, 'src', 'themes/light/global', 'other.json'), 'utf8');
   const defaults = JSON.parse(defaultsFile);
 
   const {

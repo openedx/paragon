@@ -1,0 +1,21 @@
+{
+  "typography": {
+    "dropzone": {
+      "restriction-msg": {
+        "font-size": { "value": "{typography.font.size.small.x}", "source": "$dropzone-restriction-msg-font-size" }
+      }
+    }
+  },
+  "spacing": {
+    "dropzone": {
+      "padding": { "value": "1.5rem", "source": "$dropzone-padding" },
+      "border": {
+        "base": { "value": "1px", "source": "$dropzone-border-default" },
+        "hover": { "value": "2px", "source": "$dropzone-border-hover" },
+        "focus": { "value": "2px", "source": "$dropzone-border-focus" },
+        "active": { "value": "2px", "source": "$dropzone-border-active" },
+        "error": { "value": "2px", "source": "$dropzone-border-error" }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "color": {
+    "code": {
+      "base": { "value": "#E83E8C", "source": "$code-color" },
+      "kbd": {
+        "base": { "value": "{color.white}", "source": "$kbd-color" },
+        "bg": { "value": "{color.gray.700}", "source": "$kbd-bg" }
+      },
+      "pre": { "value": "{color.gray.900}", "source": "$pre-color" }
+    }
+  },
+  "elevation": {
+    "code": {
+      "kbd": {
+        "box-shadow": {
+          "value": "inset 0 -.1rem 0 rgba(0, 0, 0, .25)",
+          "source": "$kbd-box-shadow"
+        }
+      }
+    }
+  }
+}

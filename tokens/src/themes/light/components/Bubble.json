@@ -1,0 +1,18 @@
+{
+  "color": {
+    "bubble": {
+      "text": {
+        "success": { "value": "{color.white}", "source": "$bubble-success-color" },
+        "warning": { "value": "{color.white}", "source": "$bubble-warning-color" },
+        "error": { "value": "{color.white}", "source": "$bubble-error-color" },
+        "primary": { "value": "{color.white}", "source": "$bubble-primary-color" }
+      },
+      "bg": {
+        "success": { "value": "{color.success.base}", "source": "$bubble-success-bg" },
+        "warning": { "value": "{color.warning.base}", "source": "$bubble-warning-bg" },
+        "error": { "value": "{color.danger.base}", "source": "$bubble-error-bg" },
+        "primary": { "value": "{color.primary.base}", "source": "$bubble-primary-bg" }
+      }
+    }
+  }
+}

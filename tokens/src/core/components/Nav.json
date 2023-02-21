@@ -1,0 +1,35 @@
+{
+  "typography": {
+    "nav": {
+      "link": {
+        "font-weight": { "value": "500", "source": "$nav-link-font-weight" }
+      }
+    }
+  },
+  "size": {
+    "nav": {
+      "pills": {
+        "border-radius": { "value": "{size.border.radius.base}", "source": "$nav-pills-border-radius" }
+      },
+      "tabs": {
+        "border": {
+          "width": { "value": "2px", "source": "$nav-tabs-border-width" },
+          "radius": { "value": "0", "source": "$nav-tabs-border-radius" }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "nav": {
+      "link": {
+        "padding": {
+          "y": { "value": ".5rem", "source": "$nav-link-padding-y" },
+          "x": { "value": "1rem", "source": "$nav-link-padding-x" }
+        }
+      },
+      "divider": {
+        "margin-y": { "value": "calc({spacing.spacer.base} / 2)", "source": "$nav-divider-margin-y" }
+      }
+    }
+  }
+}

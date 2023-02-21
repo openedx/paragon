@@ -1,0 +1,15 @@
+{
+  "color": {
+    "breadcrumb": {
+      "bg": { "value": "{color.gray.200}", "source": "$breadcrumb-bg" },
+      "base": { "value": "{color.primary.500}", "source": "$breadcrumb-color" },
+      "divider": { "value": "{color.gray.600}", "source": "$breadcrumb-divider-color" },
+      "active": { "value": "{color.gray.500}", "source": "$breadcrumb-active-color" },
+      "inverse": {
+        "base": { "value": "{color.white}", "source": "$breadcrumb-inverse-color" },
+        "active": { "value": "{color.light.500}", "source": "$breadcrumb-inverse-active" },
+        "spacer": { "value": "{color.light.700}", "source": "$breadcrumb-inverse-spacer" }
+      }
+    }
+  }
+}
