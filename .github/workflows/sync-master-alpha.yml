@@ -23,7 +23,6 @@ jobs:
           FROM_BRANCH: master
           TO_BRANCH: alpha
       - name: Enable Pull Request Automerge
-        if: steps.cpr.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
           token: ${{ secrets.requirements_bot_github_token }}
