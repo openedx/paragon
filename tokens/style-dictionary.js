@@ -166,8 +166,8 @@ StyleDictionary.registerFormat({
 
     let customMediaVariables = '';
 
-    Object.keys(breakpoint).forEach(key => {
-      customMediaVariables += `@custom-media --${breakpoint[key].name} (max-width: ${breakpoint[key].value}); \n`;
+    Object.values(breakpoint).forEach(item => {
+      customMediaVariables += `@custom-media --${item.name} (max-width: ${item.value}); \n`;
     });
 
     return fileHeader({ file }) + customMediaVariables;
