@@ -280,9 +280,9 @@ jobs:
       uses: hmarr/auto-approve-action@v2
       with:
         pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
-        github-token: ${{ secrets.EDX_NETLIFY_PAT }}
+        github-token: ${{ secrets.requirements_bot_github_token }}
     - name: Auto-merge pull request for dependent project usages
       uses: pascalgn/automerge-action@v0.14.3
       env:
-        GITHUB_TOKEN: ${{ secrets.EDX_NETLIFY_PAT }}
+        GITHUB_TOKEN: ${{ secrets.requirements_bot_github_token }}
         MERGE_METHOD: squash
