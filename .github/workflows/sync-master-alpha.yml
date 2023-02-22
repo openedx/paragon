@@ -28,4 +28,3 @@ jobs:
         with:
           token: ${{ secrets.requirements_bot_github_token }}
           pull-request-number: ${{ steps.cpr.outputs.PULL_REQUEST_NUMBER }}
-          merge-method: squash
