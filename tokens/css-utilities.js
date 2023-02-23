@@ -2,10 +2,10 @@
  * Implements bg-variant mixin from bootstrap. Creates utility classes for background colors based on theme color.
  */
 function bgVariant(token) {
-  const { attributes: { type, item }, actions } = token;
+  const { attributes: { type, item }, name, actions } = token;
   const parent = `.bg-${type}${item === 'base' ? '' : `-${item}`}`;
   return `${parent} {
-  background-color: ${`var(--${token.name})`} !important;
+  background-color: ${`var(--${name})`} !important;
 }
 
 a${parent}:hover,
@@ -22,10 +22,10 @@ button${parent}:focus {
  * Implements text-emphasis-variant mixin from bootstrap. Creates utility classes for text colors based on theme color.
  */
 function textEmphasisVariant(token) {
-  const { attributes: { type, item }, actions } = token;
+  const { attributes: { type, item }, name, actions } = token;
   const parent = `.text-${type}${item === 'base' ? '' : `-${item}`}`;
   return `${parent} {
-  color: ${`var(--${token.name})`} !important;
+  color: ${`var(--${name})`} !important;
 }
 
 a${parent}:hover,
@@ -40,10 +40,10 @@ a${parent}:focus {
  * Creates utility class for border color.
  */
 function borderColor(token) {
-  const { attributes: { type, item } } = token;
+  const { attributes: { type, item }, name } = token;
   const className = `.border-${type}${item === 'base' ? '' : `-${item}`}`;
   return `${className} {
-  border-color: ${`var(--${token.name})`} !important;
+  border-color: ${`var(--${name})`} !important;
 }
 
 `;
