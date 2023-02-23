@@ -2,7 +2,7 @@
  * Implements bg-variant mixin from bootstrap. Creates utility classes for background colors based on theme color.
  */
 function bgVariant(token) {
-  const { attributes: { type, item}, actions } = token;
+  const { attributes: { type, item }, actions } = token;
   const parent = `.bg-${type}${item === 'base' ? '' : `-${item}`}`;
   return `${parent} {
   background-color: ${`var(--${token.name})`} !important;
@@ -22,7 +22,7 @@ button${parent}:focus {
  * Implements text-emphasis-variant mixin from bootstrap. Creates utility classes for text colors based on theme color.
  */
 function textEmphasisVariant(token) {
-  const { attributes: { type, item}, actions } = token;
+  const { attributes: { type, item }, actions } = token;
   const parent = `.text-${type}${item === 'base' ? '' : `-${item}`}`;
   return `${parent} {
   color: ${`var(--${token.name})`} !important;
