@@ -110,7 +110,7 @@ function IconsTable() {
 
   useEffect(() => {
     const list = ICON_NAMES.filter(name => name.toLowerCase().includes(searchValue.toLowerCase()));
-    if (typeof searchValue === 'string' && searchValue.trim() !== '') {
+    if (searchValue.trim() !== '') {
       global.analytics?.track('openedx.paragon.docs.icons-table.search', { value: searchValue, amount: list.length });
     }
     setData({ rowsCount: ROWS_PER_WINDOW, iconsList: list });
