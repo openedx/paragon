@@ -1,5 +1,5 @@
 {
-  "lastModified": 1677074926974,
+  "lastModified": 1677161312716,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -7736,7 +7736,7 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 63,
+            "line": 66,
             "column": 8
           },
           {
@@ -7793,7 +7793,7 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 64,
+            "line": 67,
             "column": 10
           }
         ],
@@ -8398,7 +8398,7 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 74,
+            "line": 77,
             "column": 12
           },
           {
@@ -8563,7 +8563,7 @@
         "Spinner": [
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 87,
+            "line": 90,
             "column": 10
           },
           {
@@ -26789,11 +26789,6 @@
             "column": 10
           },
           {
-            "filePath": "src/components/BootCamp/BootCampStickyNav.jsx",
-            "line": 34,
-            "column": 8
-          },
-          {
             "filePath": "src/components/Card/index.jsx",
             "line": 171,
             "column": 32
@@ -26839,19 +26834,9 @@
             "column": 8
           },
           {
-            "filePath": "src/components/ContentfulModule/PartnershipModule.jsx",
-            "line": 29,
-            "column": 9
-          },
-          {
             "filePath": "src/components/ContentfulModule/StatisticIconModule.jsx",
             "line": 31,
             "column": 14
-          },
-          {
-            "filePath": "src/components/ContentfulModule/UpcomingProgramModule.jsx",
-            "line": 38,
-            "column": 9
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
@@ -27371,83 +27356,6 @@
             "column": 17
           }
         ],
-        "ArrowForward": [
-          {
-            "filePath": "src/components/BootCamp/BootCampStickyNav.jsx",
-            "line": 34,
-            "column": 19
-          },
-          {
-            "filePath": "src/components/Carousel/index.jsx",
-            "line": 268,
-            "column": 58
-          },
-          {
-            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
-            "line": 92,
-            "column": 23
-          },
-          {
-            "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
-            "line": 41,
-            "column": 19
-          },
-          {
-            "filePath": "src/components/Home/Audiences.jsx",
-            "line": 56,
-            "column": 18
-          },
-          {
-            "filePath": "src/components/Home/Audiences.jsx",
-            "line": 94,
-            "column": 18
-          },
-          {
-            "filePath": "src/components/Home/Audiences.jsx",
-            "line": 132,
-            "column": 18
-          },
-          {
-            "filePath": "src/components/Home/NewOnEdxCarousel/SubcategoriesList/index.jsx",
-            "line": 78,
-            "column": 17
-          },
-          {
-            "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 151,
-            "column": 44
-          },
-          {
-            "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 192,
-            "column": 44
-          },
-          {
-            "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 232,
-            "column": 44
-          },
-          {
-            "filePath": "src/components/Home/StaticCallouts.jsx",
-            "line": 274,
-            "column": 48
-          },
-          {
-            "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 164,
-            "column": 25
-          },
-          {
-            "filePath": "src/components/Program/ProgramUpsell.jsx",
-            "line": 137,
-            "column": 40
-          },
-          {
-            "filePath": "src/templates/programDetailDegree.jsx",
-            "line": 243,
-            "column": 27
-          }
-        ],
         "ChevronRight": [
           {
             "filePath": "src/components/Breadcrumbs/index.jsx",
@@ -27600,7 +27508,7 @@
           },
           {
             "filePath": "src/components/Search/ManagedAutoComplete.jsx",
-            "line": 259,
+            "line": 258,
             "column": 14
           },
           {
@@ -27751,12 +27659,12 @@
           },
           {
             "filePath": "src/components/ContentfulModule/PartnershipModule.jsx",
-            "line": 41,
+            "line": 35,
             "column": 6
           },
           {
             "filePath": "src/components/ContentfulModule/UpcomingProgramModule.jsx",
-            "line": 54,
+            "line": 48,
             "column": 6
           },
           {
@@ -28157,6 +28065,78 @@
             "column": 17
           }
         ],
+        "ArrowForward": [
+          {
+            "filePath": "src/components/Carousel/index.jsx",
+            "line": 268,
+            "column": 58
+          },
+          {
+            "filePath": "src/components/ContentfulModule/FeaturedProductsModule.jsx",
+            "line": 92,
+            "column": 23
+          },
+          {
+            "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
+            "line": 41,
+            "column": 19
+          },
+          {
+            "filePath": "src/components/Home/Audiences.jsx",
+            "line": 56,
+            "column": 18
+          },
+          {
+            "filePath": "src/components/Home/Audiences.jsx",
+            "line": 94,
+            "column": 18
+          },
+          {
+            "filePath": "src/components/Home/Audiences.jsx",
+            "line": 132,
+            "column": 18
+          },
+          {
+            "filePath": "src/components/Home/NewOnEdxCarousel/SubcategoriesList/index.jsx",
+            "line": 78,
+            "column": 17
+          },
+          {
+            "filePath": "src/components/Home/StaticCallouts.jsx",
+            "line": 151,
+            "column": 44
+          },
+          {
+            "filePath": "src/components/Home/StaticCallouts.jsx",
+            "line": 192,
+            "column": 44
+          },
+          {
+            "filePath": "src/components/Home/StaticCallouts.jsx",
+            "line": 232,
+            "column": 44
+          },
+          {
+            "filePath": "src/components/Home/StaticCallouts.jsx",
+            "line": 274,
+            "column": 48
+          },
+          {
+            "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
+            "line": 164,
+            "column": 25
+          },
+          {
+            "filePath": "src/components/Program/ProgramUpsell.jsx",
+            "line": 137,
+            "column": 40
+          },
+          {
+            "filePath": "src/templates/programDetailDegree.jsx",
+            "line": 243,
+            "column": 27
+          }
+        ],
         "useToggle": [
           {
             "filePath": "src/components/CCPADialog/CCPADialog.jsx",
@@ -28399,18 +28379,6 @@
           {
             "filePath": "src/components/Home/Hero.jsx",
             "line": 35,
-            "column": 20
-          }
-        ],
-        "ArrowOutward": [
-          {
-            "filePath": "src/components/ContentfulModule/PartnershipModule.jsx",
-            "line": 29,
-            "column": 20
-          },
-          {
-            "filePath": "src/components/ContentfulModule/UpcomingProgramModule.jsx",
-            "line": 38,
             "column": 20
           }
         ],
