@@ -1,0 +1,33 @@
+{
+  "spacing": {
+    "badge": {
+      "padding": {
+        "x": {
+          "base": { "value": ".5rem", "type": "dimension", "source": "$badge-padding-x" },
+          "pill": { "value": ".6em", "type": "dimension", "source": "$badge-pill-padding-x" }
+        },
+        "y": { "value": ".125rem", "type": "dimension", "source": "$badge-padding-y" }
+      }
+    }
+  },
+  "typography": {
+    "badge": {
+      "font": {
+        "size": { "value": "75%", "type": "percentage", "source": "$badge-font-size" },
+        "weight": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$badge-font-weight" }
+      }
+    }
+  },
+  "size": {
+    "badge": {
+      "border-radius": {
+        "base": { "value": ".25rem", "type": "dimension", "source": "$badge-border-radius" },
+        "pill": { "value": "10rem", "type": "dimension", "source": "$badge-pill-border-radius" }
+      },
+      "focus-width": { "value": "{size.input.btn.focus-width}", "type": "dimension", "source": "$badge-focus-width" }
+    }
+  },
+  "transition": {
+    "badge": { "value": "none", "type": "transition", "source": "$badge-transition" }
+  }
+}

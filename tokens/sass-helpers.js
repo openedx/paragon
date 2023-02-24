@@ -7,21 +7,21 @@ const chroma = require('chroma-js');
  * based on contrast value of the input color
  *
  * @param color - chroma-js color instance
- * @param {String} [light] - light color variant, defaults to 'yiq-text-light' from ./src/global/other.json
- * @param {String} [dark] - dark color variant, defaults to 'yiq-text-dark' from ./src/global/other.json
- * @param {Number} [threshold] - contrast threshold, defaults to 'yiq-contrasted-threshold'
- * from ./src/global/other.json
+ * @param {String} [themeVariant] - theme variant name that will be used to find default contrast colors
+ * @param {String} [light] - light color variant from ./src/themes/{themeVariant}/global/other.json
+ * @param {String} [dark] - dark color variant from ./src/themes/{themeVariant}/global/other.json
+ * @param {Number} [threshold] - contrast threshold from ./src/core/global/other.json
  * @return chroma-js color instance (one of dark or light variants)
  */
-function colorYiq(color, light, dark, threshold) {
-  const defaultsFile = fs.readFileSync(path.resolve(__dirname, 'src', 'global', 'other.json'), 'utf8');
-  const defaults = JSON.parse(defaultsFile);
+function colorYiq(color, light, dark, threshold, themeVariant = 'light') {
+  const defaultThresholdFile = fs.readFileSync(path.resolve(__dirname, 'src/core/global', 'other.json'), 'utf8');
+  const defaultThreshold = JSON.parse(defaultThresholdFile)['yiq-contrasted-threshold'];
 
+  const defaultColorsFile = fs.readFileSync(path.resolve(__dirname, `src/themes/${themeVariant}/global`, 'other.json'), 'utf8');
   const {
     'yiq-text-dark': defaultDark,
     'yiq-text-light': defaultLight,
-    'yiq-contrasted-threshold': defaultThreshold,
-  } = defaults;
+  } = JSON.parse(defaultColorsFile);
 
   const contrastThreshold = threshold || defaultThreshold;
   const lightColor = light || defaultLight;
