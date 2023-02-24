@@ -1,0 +1,30 @@
+{
+  "typography": {
+    "toast": {
+      "font-size": { "value": ".875rem", "type": "dimension", "source": "$toast-font-size" }
+    }
+  },
+  "size": {
+    "toast": {
+      "max-width": { "value": "400px", "type": "dimension", "source": "$toast-max-width" },
+      "border": {
+        "width": { "value": "1px", "type": "dimension", "source": "$toast-border-width" },
+        "radius": { "value": ".25rem", "type": "dimension", "source": "$toast-border-radius" }
+      }
+    }
+  },
+  "spacing": {
+    "toast": {
+      "padding": {
+        "x": { "value": ".75rem", "type": "dimension", "source": "$toast-padding-x" },
+        "y": { "value": ".25rem", "type": "dimension", "source": "$toast-padding-y" }
+      },
+      "container": {
+        "gutter": {
+          "lg": { "value": "1.25rem", "type": "dimension", "source": "$toast-container-gutter-lg" },
+          "sm": { "value": ".625rem", "type": "dimension", "source": "$toast-container-gutter-sm" }
+        }
+      }
+    }
+  }
+}

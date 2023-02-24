@@ -1,0 +1,70 @@
+{
+  "typography": {
+    "pagination": {
+      "font-size": {
+        "sm": { "value": ".875rem", "type": "dimension", "source": "$pagination-font-size-sm" }
+      },
+      "line-height": { "value": "1.5rem", "type": "dimension", "source": "$pagination-line-height" }
+    }
+  },
+  "spacing": {
+    "pagination": {
+      "padding": {
+        "y": {
+          "base": { "value": ".625rem", "type": "dimension", "source": "$pagination-padding-y" },
+          "sm": { "value": ".8rem", "type": "dimension", "source": "$pagination-padding-y-sm" },
+          "lg": { "value": ".75rem", "type": "dimension", "source": "$pagination-padding-y-lg" }
+        },
+        "x": {
+          "base": { "value": "1rem", "type": "dimension", "source": "$pagination-padding-x" },
+          "sm": { "value": ".6rem", "type": "dimension", "source": "$pagination-padding-x-sm" },
+          "lg": { "value": "1.5rem", "type": "dimension", "source": "$pagination-padding-x-lg" }
+        }
+      },
+      "margin": {
+        "x": { "value": ".5rem", "type": "dimension", "source": "$pagination-margin-x" }
+      }
+    }
+  },
+  "size": {
+    "pagination": {
+      "icon": {
+        "width": { "value": "2.25rem", "type": "dimension", "source": "$pagination-icon-width" },
+        "height": { "value": "2.25rem", "type": "dimension", "source": "$pagination-icon-height" }
+      },
+      "secondary": {
+        "height": {
+          "base": { "value": "2.75rem", "type": "dimension", "source": "$pagination-secondary-height" },
+          "sm": { "value": "2.25rem", "type": "dimension", "source": "$pagination-secondary-height-sm" }
+        }
+      },
+      "border": {
+        "width": { "value": "{size.border.width}", "type": "dimension", "source": "$pagination-border-width" },
+        "radius": {
+          "sm": {
+            "value": "{size.border.radius.sm}", "type": "dimension", "source": "$pagination-border-radius-sm"
+          },
+          "lg": {
+            "value": "{size.border.radius.lg}", "type": "dimension", "source": "$pagination-border-radius-lg"
+          }
+        }
+      },
+      "reduced": {
+        "dropdown": {
+          "max-height": { "value": "60vh", "type": "dimension", "source": "$pagination-reduced-dropdown-max-height" },
+          "min-width": { "value": "6rem", "type": "dimension", "source": "$pagination-reduced-dropdown-min-width" }
+        }
+      },
+      "toggle": {
+        "border": {
+          "base": { "value": ".3125rem", "type": "dimension", "source": "$pagination-toggle-border" },
+          "sm": { "value": ".25rem", "type": "dimension", "source": "$pagination-toggle-border-sm" }
+        }
+      },
+      "focus": {
+        "border-width": { "value": ".125rem", "type": "dimension", "source": "$pagination-focus-border-width" },
+        "outline": { "value": "0", "type": "dimension", "source": "$pagination-focus-outline" }
+      }
+    }
+  }
+}
