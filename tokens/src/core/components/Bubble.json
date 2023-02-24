@@ -1,0 +1,10 @@
+{
+  "spacing": {
+    "bubble": {
+      "expandable-padding": {
+        "y": { "value": "0", "type": "transition", "source": "$bubble-expandable-padding-y" },
+        "x": { "value": ".25rem", "type": "transition", "source": "$bubble-expandable-padding-x" }
+      }
+    } 
+  }
+}

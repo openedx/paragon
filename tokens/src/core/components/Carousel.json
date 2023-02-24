@@ -1,0 +1,37 @@
+{
+  "size": {
+    "carousel": {
+      "control": {
+        "width": {
+          "base": { "value": "15%", "type": "percentage", "source": "$carousel-control-width" },
+          "icon": { "value": "20px", "type": "dimension", "source": "$carousel-control-icon-width" }
+        }
+      },
+      "indicator": {
+        "width": { "value": "30px", "type": "dimension", "source": "$carousel-indicator-width" },
+        "height": {
+          "base": { "value": "3px", "type": "dimension", "source": "$carousel-indicator-height" },
+          "area-hit": { "value": "3px", "type": "dimension", "source": "$carousel-indicator-hit-area-height" }
+        }
+      },
+      "caption-width": { "value": "70%", "type": "percentage", "source": "$carousel-caption-width" }
+    }
+  },
+  "spacing": {
+    "carousel": {
+      "indicator-spacer": { "value": "3px", "type": "dimension", "source": "$carousel-indicator-spacer" }
+    }
+  },
+  "transition": {
+    "carousel": {
+      "base": {
+        "value": "transform {transition.carousel.duration} ease-in-out",
+        "type": "transition",
+        "source": "$carousel-transition-duration"
+      },
+      "duration": { "value": ".6s", "type": "duration", "source": "$carousel-transition-duration" },
+      "indicator": { "value": "opacity .6s ease", "type": "transition", "source": "$carousel-indicator-transition" },
+      "control": { "value": "opacity .15s ease", "type": "transition", "source": "$carousel-control-transition" }
+    }
+  }
+}

@@ -26,8 +26,15 @@ const colorTransform = (token) => {
           color = color.mix(otherColor, amount, 'rgb');
           break;
         case 'color-yiq': {
+          // find whether token belongs to any theme based on its location
+          // split full path by '/', check if 'themes' directory is a part of the path, if it is - the next nested
+          // directory is the theme name, otherwise use 'light' theme
+          const pathParts = token.filePath.split('/');
+          const themePartIndex = pathParts.findIndex(item => item === 'themes');
+          const themeVariant = themePartIndex === -1 ? 'light' : pathParts[themePartIndex + 1];
+
           const { light, dark, threshold } = modifier;
-          color = colorYiq(color, light, dark, threshold);
+          color = colorYiq(color, light, dark, threshold, themeVariant);
           break;
         }
         case 'darken':
