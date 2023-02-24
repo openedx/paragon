@@ -8,12 +8,9 @@ const chroma = require('chroma-js');
  *
  * @param color - chroma-js color instance
  * @param {String} [themeVariant] - theme variant name that will be used to find default contrast colors
- * @param {String} [light] - light color variant, defaults to 'yiq-text-light'
- * from ./src/themes/{themeVariant}/other.json
- * @param {String} [dark] - dark color variant, defaults to 'yiq-text-dark'
- * from ./src/themes/{themeVariant}/other.json
- * @param {Number} [threshold] - contrast threshold, defaults to 'yiq-contrasted-threshold'
- * from ./src/core/global/other.json
+ * @param {String} [light] - light color variant from ./src/themes/{themeVariant}/global/other.json
+ * @param {String} [dark] - dark color variant from ./src/themes/{themeVariant}/global/other.json
+ * @param {Number} [threshold] - contrast threshold from ./src/core/global/other.json
  * @return chroma-js color instance (one of dark or light variants)
  */
 function colorYiq(color, light, dark, threshold, themeVariant = 'light') {
