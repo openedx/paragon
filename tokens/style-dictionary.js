@@ -154,4 +154,24 @@ StyleDictionary.registerFormat({
   },
 });
 
+/**
+ * Formatter to generate CSS custom media queries for responsive breakpoints.
+ * Gets input about existing tokens of the 'size' category,
+ * 'breakpoints' subcategory, and generates a CSS custom media queries.
+ */
+StyleDictionary.registerFormat({
+  name: 'css/custom-media-breakpoints',
+  formatter({ dictionary, file }) {
+    const { size: { breakpoint } } = dictionary.properties;
+
+    let customMediaVariables = '';
+
+    Object.values(breakpoint).forEach(item => {
+      customMediaVariables += `@custom-media --${item.name} (max-width: ${item.value}); \n`;
+    });
+
+    return fileHeader({ file }) + customMediaVariables;
+  },
+});
+
 module.exports = StyleDictionary;
