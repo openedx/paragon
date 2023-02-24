@@ -1,7 +1,7 @@
 {
   "color": {
     "card": {
-      "base": { "value": "inherit", "source": "$card-color" },
+      "base": { "value": "inherit", "type": "color", "source": "$card-color" },
       "bg": {
         "base": { "value": "{color.bg.base}", "type": "color", "source": "$card-bg" },
         "dark": { "value": "{color.primary.500}", "type": "color", "source": "$card-bg-dark" },
@@ -10,6 +10,7 @@
       "border": {
         "base": { 
           "value": "{color.black}",
+          "type": "color",
           "source": "$card-border-color",
           "modify": [{
             "type": "alpha",
@@ -18,6 +19,7 @@
         },
         "focus": { 
           "value": "{color.black}",
+          "type": "color",
           "source": "$card-border-focus-color",
           "modify": [{
             "type": "alpha",
@@ -25,7 +27,7 @@
           }] 
         }
       },
-      "divider-bg": { "value": "{color.light.400}", "source": "$card-divider-bg" }
+      "divider-bg": { "value": "{color.light.400}", "type": "color", "source": "$card-divider-bg" }
     }
   }
 }

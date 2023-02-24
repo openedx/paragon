@@ -2,9 +2,10 @@
   "color": {
     "modal": {
       "content": {
-        "bg": { "value": "{color.bg.base}", "source": "$modal-content-bg" },
+        "bg": { "value": "{color.bg.base}", "type": "color", "source": "$modal-content-bg" },
         "border": {
           "value": "{color.black}",
+          "type": "color",
           "source": "$modal-content-border-color",
           "modify": [{
             "type": "alpha",
@@ -12,7 +13,7 @@
           }]
         }
       },
-      "backdrop-bg": { "value": "{color.black}", "source": "$modal-backdrop-bg" }
+      "backdrop-bg": { "value": "{color.black}", "type": "color", "source": "$modal-backdrop-bg" }
     }
   },
   "elevation": {
@@ -21,6 +22,7 @@
         "box-shadow": {
           "sm-up": {
             "value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)",
+            "type": "shadow",
             "source": "$modal-content-box-shadow-sm-up"
           }
         }

@@ -1,8 +1,8 @@
 {
   "elevation": {
     "modal": {
-      "backdrop-zindex": { "value": "1040", "source": "$zindex-modal-backdrop" },
-      "zindex": { "value": "1050", "source": "$zindex-modal" }
+      "backdrop-zindex": { "value": "1040", "type": "ratio", "source": "$zindex-modal-backdrop" },
+      "zindex": { "value": "1050", "type": "ratio", "source": "$zindex-modal" }
     }
   },
   "size": {

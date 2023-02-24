@@ -1,7 +1,7 @@
 {
   "color": {
     "btn": {
-      "disabled-link": { "value": "{color.disabled}", "source": "$btn-link-disabled-color" }
+      "disabled-link": { "value": "{color.disabled}", "type": "color", "source": "$btn-link-disabled-color" }
     }
   },
   "elevation":  {
@@ -9,15 +9,16 @@
       "box-shadow": {
         "base": {
           "value": "none",
+          "type": "shadow",
           "source": "$btn-box-shadow"
         },
-        "active": { "value": "none", "source": "$btn-active-box-shadow" }
+        "active": { "value": "none", "type": "shadow", "source": "$btn-active-box-shadow" }
       }
     }
   },
   "other": {
     "btn": {
-      "disabled-opacity": { "value": ".65", "source": "$btn-disabled-opacity" }
+      "disabled-opacity": { "value": ".65", "type": "ratio", "source": "$btn-disabled-opacity" }
     }
   }
 }

@@ -3,20 +3,21 @@
     "search-field": {
       "border": {
         "width": {
-          "base": { "value": ".0625rem", "source": "$search-border-width" },
-          "focus": { "value": ".3125rem", "source": "$search-border-focus-width" }
+          "base": { "value": ".0625rem", "type": "dimension", "source": "$search-border-width" },
+          "focus": { "value": ".3125rem", "type": "dimension", "source": "$search-border-focus-width" }
         },
-        "radius": { "value": "0", "source": "$search-border-radius" }
+        "radius": { "value": "0", "type": "dimension", "source": "$search-border-radius" }
       },
       "search-input-height": {
         "value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2)",
+        "type": "dimension",
         "source": "$input-height-search"
       }
     }
   },
   "spacing": {
     "search-field": {
-      "margin-button": { "value": ".5rem", "source": "$search-button-margin" }
+      "margin-button": { "value": ".5rem", "type": "dimension", "source": "$search-button-margin" }
     }
   }
 }

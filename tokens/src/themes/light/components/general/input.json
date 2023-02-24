@@ -1,7 +1,7 @@
 {
   "color": {
     "input": {
-      "btn-focus": { "value": "{color.input.focus}", "source": "$input-btn-focus-color" }
+      "btn-focus": { "value": "{color.input.focus}", "type": "color", "source": "$input-btn-focus-color" }
     }
   },
   "elevation": {
@@ -9,6 +9,7 @@
       "btn-focus": {
         "box-shadow": {
           "value": "0 0 0 {size.input.btn.focus-width} {color.input.btn-focus}",
+          "type": "shadow",
           "source": "$input-btn-focus-box-shadow"
         }
       }

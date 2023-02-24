@@ -1,35 +1,36 @@
 {
   "color": {
     "dropdown": {
-      "text": { "value": "{color.body.base}", "source": "$dropdown-color" },
-      "header": { "value": "{color.gray.500}", "source": "$dropdown-header-color" },
-      "bg": { "value": "{color.bg.base}", "source": "$dropdown-bg" },
+      "text": { "value": "{color.body.base}", "type": "color", "source": "$dropdown-color" },
+      "header": { "value": "{color.gray.500}", "type": "color", "source": "$dropdown-header-color" },
+      "bg": { "value": "{color.bg.base}", "type": "color", "source": "$dropdown-bg" },
       "border": {
         "value": "{color.black}",
+        "type": "color",
         "source": "$dropdown-border-color",
         "modify": [{
           "type": "alpha",
           "amount": 0.15
         }]
       },
-      "divider-bg": { "value": "{color.gray.100}", "source": "$dropdown-divider-bg" },
+      "divider-bg": { "value": "{color.gray.100}", "type": "color", "source": "$dropdown-divider-bg" },
       "link": {
-        "base": { "value": "{color.gray.900}", "source": "$dropdown-link-color" },
+        "base": { "value": "{color.gray.900}", "type": "color", "source": "$dropdown-link-color" },
         "hover": {
-          "base": { "value": "{color.gray.900}", "source": "$dropdown-link-hover-color" },
-          "bg": { "value": "{color.light.300}", "source": "$dropdown-link-hover-bg" }
+          "base": { "value": "{color.gray.900}", "type": "color", "source": "$dropdown-link-hover-color" },
+          "bg": { "value": "{color.light.300}", "type": "color", "source": "$dropdown-link-hover-bg" }
         },
         "active": {
-          "base": { "value": "{color.active}", "source": "$dropdown-link-active-color" },
-          "bg": { "value": "{color.bg.active}", "source": "$dropdown-link-active-bg" }
+          "base": { "value": "{color.active}", "type": "color", "source": "$dropdown-link-active-color" },
+          "bg": { "value": "{color.bg.active}", "type": "color", "source": "$dropdown-link-active-bg" }
         },
-        "disabled": { "value": "{color.disabled}", "source": "$dropdown-link-disabled-color" }
+        "disabled": { "value": "{color.disabled}", "type": "color", "source": "$dropdown-link-disabled-color" }
       }
     }
   },
   "elevation": {
     "dropdown": {
-      "box-shadow": { "value": "0 .5rem 1rem rgba(0, 0, 0, .175)", "source": "$dropdown-box-shadow" }
+      "box-shadow": { "value": "0 .5rem 1rem rgba(0, 0, 0, .175)", "type": "shadow", "source": "$dropdown-box-shadow" }
     }
   }
 }
