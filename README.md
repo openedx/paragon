@@ -472,16 +472,26 @@ We tend to prioritize security issues which impact the published `@edx/paragon` 
 
 Design tokens are all the values needed to build and maintain a design system — spacing, color, typography, object styles, etc. They can represent anything defined by the design: color as an RGB value, opacity as a number, spacing as a REM value. They are used instead of hard-coded values to provide flexibility and uniformity across the application.
 
-### Design Tokens in Paragon
+By defining style properties as tokens, we can transform the styles into various implementations compatible with different platforms or formats as our use cases expand (e.g., transforming tokens to CSS variables, CSS utility classes, etc.).
 
-Folder `tokens` in the project root contains split by categories `json` files. They consist of `JSON` objects that store information about the variable name and its value. Scripts that also reside in the `tokens` folder provide following facilities: build tokens into `css`, `scss` variables, map `scss` to `css` variables and replace old `scss` to new `css` variables.
+### Theming with design tokens
 
-### Usage
+Paragon uses [style-dictionary](https://github.com/amzn/style-dictionary) to build design tokens into CSS variables that are included in the package. Read more in [design tokens README](tokens/README.md).
 
-```
-cd tokens
-npm install
-npm run build-tokens # creates "build" folder with scss and css variables based on json tokens
-npm run build-scss-to-css-map # creats scss-to-css-core.json and scss-to-css-components.json 
-npm run replace-variables -- --path ../src # this will replace all scss variables in the project with the new css variables based on the "scss-to-css-core.json" and "scss-to-css-components.json" files
-```
+#### Compiling CSS from design tokens for Paragon contributions (in this repo)
+1. **`npm install`.** Install dependencies, including `style-dictionary`.
+2. Make changes to design token(s).
+3. **`npm run build-scss`.** Transforms the tokens to CSS variables and CSS utility classes, and generates `core.css` and `light.css` output files.
+    - `light.css`. CSS variable definitions for colors in the light theme variant.
+    - `core.css`. Contains the majority of Paragon/Bootstrap foundational styles for layout, components, etc. Consumes CSS variables defined by `light.css`.
+4. Test changes locally (e.g., running the documentation website, the example MFE app, etc.).
+5. Ensure changes to `core.css` and `light.css` are committed & released to NPM (which also "releases" them on versioned public CDNs for NPM packages).
+6. Consuming applications would inject the `core.css` and `light.css` theme files into their applications via a mechanism similar to https://github.com/openedx/frontend-platform/pull/440 (ideally pulling from a public CDN for NPM packages, but falling back to locally installed copies, if needed).
+
+#### Compiling CSS from design tokens for `@edx/brand` theme authors (in `@edx/brand` repos)
+1. **`npm install`.** Install dependencies, including `@edx/paragon`.
+2. Create tokens that will override Paragon's default tokens (matching same JSON schema).
+3. **`npm run build-scss`.** This `@edx/brand` repo will have a new NPM script that utilizes a new CLI exported by `@edx/paragon` which exposes the `build-tokens.js` script (or possibly another if we end up needing one for the brand packages to run specifically, TBD) for `@edx/brand` consumers.
+    - The intent of running this command is to effectively deep merge the tokens defined in Paragon's default tokens with the override tokens defined by `@edx/brand`, generating its own `core.css` and `light.css` output files (exact output files still a TBD) containing CSS variable overrides based on the token overrides.
+5. Ensure any changes to the generated `core.css` and `light.css` files are committed & released to NPM (which also "releases" them on versioned public CDNs for NPM packages).
+    - _Note: It is a bit unclear still in the above linked implementation POC for `@edx/frontend-platform` how it would integrate with `@edx/brand` in this way. Open to suggestions/feedback/ideas here._
