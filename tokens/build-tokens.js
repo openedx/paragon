@@ -43,8 +43,8 @@ const config = {
           },
         },
         {
-          format: 'css/custom-media',
-          destination: 'custom-media.css',
+          format: 'css/custom-media-breakpoints',
+          destination: 'custom-media-breakpoints.css',
           options: {
             outputReferences: true,
           },
