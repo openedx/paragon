@@ -42,6 +42,13 @@ const config = {
             outputReferences: true,
           },
         },
+        {
+          format: 'css/custom-media-breakpoints',
+          destination: 'custom-media-breakpoints.css',
+          options: {
+            outputReferences: true,
+          },
+        },
       ],
       transforms: StyleDictionary.transformGroup.css.filter(item => item !== 'size/rem').concat('color/sass-color-functions', 'str-replace'),
       options: {
