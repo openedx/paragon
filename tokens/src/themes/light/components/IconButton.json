@@ -1,0 +1,17 @@
+{
+  "color": {
+    "icon-button": {
+      "bg": { "value": "transparent", "type": "color", "source": "$btn-icon-bg" },
+      "accent": { "value": "{color.white}", "type": "color", "source": "$btn-icon-accent-color" },
+      "primary": { "value": "{color.primary.base}", "type": "color", "source": "$btn-icon-primary" },
+      "secondary": { "value": "{color.secondary.base}", "type": "color", "source": "$btn-icon-secondary" },
+      "brand": { "value": "{color.brand.base}", "type": "color", "source": "$btn-icon-brand" },
+      "success": { "value": "{color.success.base}", "type": "color", "source": "$btn-icon-success" },
+      "warning": { "value": "{color.warning.base}", "type": "color", "source": "$btn-icon-warning" },
+      "danger": { "value": "{color.danger.base}", "type": "color", "source": "$btn-icon-danger" },
+      "light": { "value": "{color.light.base}", "type": "color", "source": "$btn-icon-light" },
+      "dark": { "value": "{color.dark.base}", "type": "color", "source": "$btn-icon-dark" },
+      "black": { "value": "{color.black}", "type": "color", "source": "$btn-icon-black" }
+    }
+  }
+}
