@@ -1,0 +1,19 @@
+{
+  "spacing": {
+    "chip": {
+      "margin": { "value": ".125rem", "type": "dimension", "source": "$chip-margin" },
+      "padding": {
+        "y": { "value": ".125rem", "type": "dimension", "source": "$chip-padding-y" },
+        "x": { "value": ".5rem", "type": "dimension", "source": "$chip-padding-x" },
+        "icon": { "value": ".25rem", "type": "dimension", "source": "$chip-icon-padding" },
+        "to-icon": { "value": "3px", "type": "dimension", "source": "$chip-padding-to-icon" }
+      }
+    }
+  },
+  "size": {
+    "chip": {
+      "border-radius": { "value": ".25rem", "type": "dimension", "source": "$chip-border-radius" },
+      "icon": { "value": "1.25rem", "type": "dimension", "source": "$chip-icon-size" }
+    }
+  }
+}

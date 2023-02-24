@@ -1,0 +1,47 @@
+{
+  "elevation": {
+    "modal": {
+      "backdrop-zindex": { "value": "1040", "type": "ratio", "source": "$zindex-modal-backdrop" },
+      "zindex": { "value": "1050", "type": "ratio", "source": "$zindex-modal" }
+    }
+  },
+  "size": {
+    "modal": {
+      "xl": { "value": "1140px", "type": "dimension", "source": "$modal-xl" },
+      "lg": { "value": "800px", "type": "dimension", "source": "$modal-lg" },
+      "md": { "value": "500px", "type": "dimension", "source": "$modal-md" },
+      "sm": { "value": "400px", "type": "dimension", "source": "$modal-sm" },
+      "content-border": {
+        "width": { "value": "0px", "type": "dimension", "source": "$modal-content-border-width" },
+        "radius": {
+          "value": "{size.border.radius.lg}", "type": "dimension", "source": "$modal-content-border-radius"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "modal": {
+      "inner-padding": {
+        "base": { "value": "1.5rem", "type": "dimension", "source": "$modal-inner-padding" },
+        "bottom": { "value": ".7rem", "type": "dimension", "source": "$modal-inner-padding-bottom" }
+      },
+      "footer-padding": {
+        "base": {
+          "value": "{spacing.modal.footer-padding.y} 1.5rem",
+          "type": "dimension",
+          "source": "$modal-footer-padding"
+        },
+        "y": { "value": "1rem", "type": "dimension", "source": "$modal-footer-padding-y" }
+      },
+      "header-padding": {
+        "base": {
+          "value": "{spacing.modal.header-padding.y} 1.5rem",
+          "type": "dimension",
+          "source": "$modal-header-padding"
+        },
+        "y": { "value": "1rem", "type": "dimension", "source": "$modal-header-padding-y" }
+      },
+      "dialog-margin": { "value": "1.5rem", "type": "dimension", "source": "$modal-dialog-margin" }
+    }
+  }
+}
