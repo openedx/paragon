@@ -174,7 +174,7 @@ StyleDictionary.registerFormat({
     let customMediaVariables = '';
 
     Object.values(breakpoint).forEach(item => {
-      customMediaVariables += `@custom-media --${item.name} (max-width: ${item.value}); \n`;
+      customMediaVariables += `@custom-media --${item.name} (min-width: ${item.value});\n`;
     });
 
     return fileHeader({ file }) + customMediaVariables;
