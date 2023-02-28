@@ -13,14 +13,16 @@ program
 const { buildDir, source: tokensSource } = program.opts();
 const source = tokensSource ? [tokensSource] : [];
 
-const config = {
-  include: [path.resolve(__dirname, 'src/**/*.json')],
-  fileHeader: {
-    customFileHeader: (defaultMessage) => [
-      'IMPORTANT: This file is the result of assembling design tokens',
-      ...defaultMessage,
-    ],
-  },
+StyleDictionary.registerFileHeader({
+  name: 'customFileHeader',
+  fileHeader: (defaultMessage) => [
+    'IMPORTANT: This file is the result of assembling design tokens',
+    ...defaultMessage,
+  ],
+});
+
+StyleDictionary.extend({
+  include: [path.resolve(__dirname, 'src/core/**/*.json')],
   source,
   platforms: {
     css: {
@@ -29,22 +31,15 @@ const config = {
       buildPath: buildDir,
       files: [
         {
-          format: 'css/custom-variables',
-          destination: 'variables.css',
+          format: 'core/custom-variables',
+          destination: 'core/variables.css',
           options: {
             outputReferences: true,
           },
         },
         {
-          format: 'css/utility-classes',
-          destination: 'utility-classes.css',
-          options: {
-            outputReferences: true,
-          },
-        },
-        {
-          format: 'css/custom-media-breakpoints',
-          destination: 'custom-media-breakpoints.css',
+          format: 'core/custom-media-breakpoints',
+          destination: 'core/custom-media-breakpoints.css',
           options: {
             outputReferences: true,
           },
@@ -56,8 +51,47 @@ const config = {
       },
     },
   },
+}).buildAllPlatforms();
+
+const getStyleDictionaryConfig = (themeVariant) => {
+  const config = {
+    include: [path.resolve(__dirname, 'src/core/**/*.json')],
+    source: [path.resolve(__dirname, 'src/themes/light/**/*.json')],
+    platforms: {
+      css: {
+        prefix: 'pgn',
+        transformGroup: 'css',
+        buildPath: buildDir,
+        files: [
+          {
+            format: `${themeVariant}/custom-variables`,
+            destination: `${themeVariant}/variables.css`,
+            options: {
+              outputReferences: true,
+            },
+          },
+          {
+            format: 'core/utility-classes',
+            destination: 'core/utility-classes.css',
+            options: {
+              outputReferences: true,
+            },
+          },
+        ],
+        transforms: StyleDictionary.transformGroup.css.filter(item => item !== 'size/rem').concat('color/sass-color-functions', 'str-replace'),
+        options: {
+          fileHeader: 'customFileHeader',
+        },
+      },
+    },
+  };
+
+  return config;
 };
 
-StyleDictionary
-  .extend(config)
-  .buildAllPlatforms();
+const THEME_VARIANT = ['light'];
+
+THEME_VARIANT.forEach((themeVariant) => {
+  const config = getStyleDictionaryConfig(themeVariant);
+  StyleDictionary.extend(config).buildAllPlatforms();
+});

@@ -21,3 +21,5 @@ var coreResult = sass.renderSync({
 });
 
 fs.writeFileSync('./dist/paragon.css', coreResult.css);
+
+module.exports = tildaImporter;

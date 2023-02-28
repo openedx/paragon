@@ -53,6 +53,33 @@ const colorTransform = (token) => {
 };
 
 /**
+ * Custom formatter that extends default css/variables format to allow specifying
+ * 'outputReferences' per token (by default you are only able to specify it globally for all tokens)
+ */
+const createCustomCSSVariables = (args, dir) => {
+  const { dictionary, options, file } = args;
+
+  const filteredTokens = dictionary.allTokens.filter(token => token.filePath.includes(dir));
+
+  const variables = filteredTokens.sort(sortByReference(dictionary)).map(token => {
+    let { value } = token;
+
+    const outputReferencesForToken = (token.original.outputReferences === false) ? false : options.outputReferences;
+
+    if (dictionary.usesReference(token.original.value) && outputReferencesForToken) {
+      const refs = dictionary.getReferences(token.original.value);
+      refs.forEach(ref => {
+        value = value.replace(ref.value, `var(--${ref.name})`);
+      });
+    }
+
+    return `  --${token.name}: ${value};`;
+  }).join('\n');
+
+  return `${fileHeader({ file })}:root {\n${variables}\n}\n`;
+};
+
+/**
  * Transformer that applies SASS color functions to tokens.
  */
 StyleDictionary.registerTransform({
@@ -99,28 +126,19 @@ StyleDictionary.registerFormat({
 });
 
 /**
- * Custom formatter that extends default css/variables format to allow specifying
- * 'outputReferences' per token (by default you are only able to specify it globally for all tokens)
+ * The custom formatter returns an array of formatted custom variables for the core styles Paragon.
  */
 StyleDictionary.registerFormat({
-  name: 'css/custom-variables',
-  formatter({ dictionary, options, file }) {
-    const variables = dictionary.allTokens.sort(sortByReference(dictionary)).map(token => {
-      let { value } = token;
-      const outputReferencesForToken = token.original.outputReferences === false ? false : options.outputReferences;
+  name: 'core/custom-variables',
+  formatter: (args) => createCustomCSSVariables(args, 'core'),
+});
 
-      if (dictionary.usesReference(token.original.value) && outputReferencesForToken) {
-        const refs = dictionary.getReferences(token.original.value);
-        refs.forEach(ref => {
-          value = value.replace(ref.value, `var(--${ref.name})`);
-        });
-      }
-
-      return `  --${token.name}: ${value};`;
-    }).join('\n');
-
-    return `${fileHeader({ file })}:root {\n${variables}\n}\n`;
-  },
+/**
+ * The custom formatter returns an array of formatted custom variables for the light theme styles Paragon.
+ */
+StyleDictionary.registerFormat({
+  name: 'light/custom-variables',
+  formatter: (args) => createCustomCSSVariables(args, 'light'),
 });
 
 /**
@@ -131,7 +149,7 @@ StyleDictionary.registerFormat({
  * 'utilityFunctionsToApply' list, those functions must be located in css-utilities.js module and return string.
  */
 StyleDictionary.registerFormat({
-  name: 'css/utility-classes',
+  name: 'core/utility-classes',
   formatter({ dictionary, file }) {
     const { utilities } = dictionary.properties;
 
@@ -167,7 +185,7 @@ StyleDictionary.registerFormat({
  * 'breakpoints' subcategory, and generates a CSS custom media queries.
  */
 StyleDictionary.registerFormat({
-  name: 'css/custom-media-breakpoints',
+  name: 'core/custom-media-breakpoints',
   formatter({ dictionary, file }) {
     const { size: { breakpoint } } = dictionary.properties;
 
