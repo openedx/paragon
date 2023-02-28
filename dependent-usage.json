@@ -1,5 +1,5 @@
 {
-  "lastModified": 1677506956073,
+  "lastModified": 1677593363778,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -177,7 +177,7 @@
       "name": "edx-enterprise",
       "repository": {
         "type": "git",
-        "url": "git://github.com/edx/edx-enterprise"
+        "url": "git://github.com/openedx/edx-enterprise"
       },
       "folderName": "edx-enterprise",
       "usages": {}
@@ -7731,12 +7731,12 @@
           },
           {
             "filePath": "src/recommendations/RecommendationCard.jsx",
-            "line": 37,
+            "line": 38,
             "column": 6
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 76,
+            "line": 88,
             "column": 8
           },
           {
@@ -7793,7 +7793,7 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 77,
+            "line": 89,
             "column": 10
           }
         ],
@@ -8398,7 +8398,7 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 88,
+            "line": 100,
             "column": 12
           },
           {
@@ -8521,35 +8521,35 @@
         "Card": [
           {
             "filePath": "src/recommendations/RecommendationCard.jsx",
-            "line": 43,
+            "line": 44,
             "column": 8
           }
         ],
         "Card.ImageCap": [
           {
             "filePath": "src/recommendations/RecommendationCard.jsx",
-            "line": 44,
+            "line": 45,
             "column": 10
           }
         ],
         "Card.Header": [
           {
             "filePath": "src/recommendations/RecommendationCard.jsx",
-            "line": 50,
+            "line": 51,
             "column": 10
           }
         ],
         "Card.Section": [
           {
             "filePath": "src/recommendations/RecommendationCard.jsx",
-            "line": 54,
+            "line": 55,
             "column": 10
           }
         ],
         "Card.Footer": [
           {
             "filePath": "src/recommendations/RecommendationCard.jsx",
-            "line": 55,
+            "line": 56,
             "column": 10
           }
         ],
@@ -8563,7 +8563,7 @@
         "Spinner": [
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 101,
+            "line": 113,
             "column": 10
           },
           {
@@ -21497,6 +21497,16 @@
             "filePath": "src/profile/forms/PreferredLanguage.jsx",
             "line": 80,
             "column": 16
+          },
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/GoalSelect.jsx",
+            "line": 19,
+            "column": 6
+          },
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
+            "line": 29,
+            "column": 6
           }
         ],
         "Hyperlink": [
@@ -21526,26 +21536,6 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 59,
             "column": 8
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SelectPreferences.jsx",
-            "line": 24,
-            "column": 8
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SelectPreferences.jsx",
-            "line": 33,
-            "column": 8
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SelectPreferences.jsx",
-            "line": 43,
-            "column": 8
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SelectPreferences.jsx",
-            "line": 52,
-            "column": 12
           },
           {
             "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
@@ -21629,24 +21619,88 @@
             "column": 15
           }
         ],
+        "Stack": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/GoalSelect.jsx",
+            "line": 17,
+            "column": 4
+          },
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
+            "line": 22,
+            "column": 4
+          },
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/SelectPreferences.jsx",
+            "line": 18,
+            "column": 4
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/GoalSelect.jsx",
+            "line": 20,
+            "column": 8
+          }
+        ],
+        "Form.Autosuggest": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleInstantSearch.jsx",
+            "line": 20,
+            "column": 4
+          }
+        ],
+        "Form.AutosuggestOption": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleInstantSearch.jsx",
+            "line": 27,
+            "column": 8
+          }
+        ],
+        "Form.CheckboxSet": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
+            "line": 30,
+            "column": 8
+          }
+        ],
+        "Form.Checkbox": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
+            "line": 34,
+            "column": 10
+          },
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
+            "line": 37,
+            "column": 10
+          }
+        ],
         "Stepper": [
           {
             "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 34,
+            "line": 32,
             "column": 4
           }
         ],
         "ModalDialog": [
           {
             "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 35,
+            "line": 33,
             "column": 6
           }
         ],
         "ModalDialog.Hero": [
           {
             "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 42,
+            "line": 40,
+            "column": 8
+          }
+        ],
+        "Stepper.Header": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
+            "line": 49,
             "column": 8
           }
         ],
@@ -26900,17 +26954,17 @@
           },
           {
             "filePath": "src/components/ContentfulModule/StatisticIconModule.jsx",
-            "line": 31,
+            "line": 32,
             "column": 14
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 171,
+            "line": 169,
             "column": 12
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 188,
+            "line": 186,
             "column": 14
           },
           {
@@ -27079,9 +27133,9 @@
             "column": 10
           },
           {
-            "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 164,
-            "column": 14
+            "filePath": "src/components/ProductDetail/ProductDetailHero/DegreeHero.jsx",
+            "line": 79,
+            "column": 18
           },
           {
             "filePath": "src/components/Program/ProgramUpsell.jsx",
@@ -27150,7 +27204,7 @@
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 34,
+            "line": 35,
             "column": 9
           },
           {
@@ -27165,7 +27219,7 @@
           },
           {
             "filePath": "src/templates/programDetailDegree.jsx",
-            "line": 243,
+            "line": 246,
             "column": 16
           }
         ],
@@ -27485,8 +27539,8 @@
             "column": 50
           },
           {
-            "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 44,
+            "filePath": "src/components/ProductDetail/ProductDetailHero/index.jsx",
+            "line": 24,
             "column": 8
           }
         ],
@@ -27513,12 +27567,12 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 202,
+            "line": 200,
             "column": 27
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 225,
+            "line": 223,
             "column": 16
           },
           {
@@ -27613,7 +27667,7 @@
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 132,
+            "line": 135,
             "column": 12
           }
         ],
@@ -27709,7 +27763,7 @@
           },
           {
             "filePath": "src/components/ContentfulModule/BlurbModule/SlantedBlurbModule.jsx",
-            "line": 53,
+            "line": 54,
             "column": 6
           },
           {
@@ -27724,12 +27778,12 @@
           },
           {
             "filePath": "src/components/ContentfulModule/PartnershipModule.jsx",
-            "line": 35,
+            "line": 36,
             "column": 6
           },
           {
             "filePath": "src/components/ContentfulModule/UpcomingProgramModule.jsx",
-            "line": 48,
+            "line": 42,
             "column": 6
           },
           {
@@ -27739,7 +27793,7 @@
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 181,
+            "line": 179,
             "column": 6
           },
           {
@@ -27774,7 +27828,7 @@
           },
           {
             "filePath": "src/components/Course/CourseMain/index.jsx",
-            "line": 93,
+            "line": 94,
             "column": 4
           },
           {
@@ -27864,12 +27918,12 @@
           },
           {
             "filePath": "src/components/Home/MarketingTakeover.jsx",
-            "line": 21,
+            "line": 17,
             "column": 6
           },
           {
             "filePath": "src/components/Home/MarketingTakeover.jsx",
-            "line": 50,
+            "line": 46,
             "column": 6
           },
           {
@@ -27899,7 +27953,7 @@
           },
           {
             "filePath": "src/components/Learn/LearnHero.jsx",
-            "line": 58,
+            "line": 65,
             "column": 6
           },
           {
@@ -27909,7 +27963,7 @@
           },
           {
             "filePath": "src/components/PlacementAboutSection/PlacementAboutSection.jsx",
-            "line": 31,
+            "line": 32,
             "column": 4
           },
           {
@@ -28094,17 +28148,22 @@
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 144,
+            "line": 147,
             "column": 10
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 167,
+            "line": 169,
             "column": 12
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 199,
+            "line": 201,
+            "column": 10
+          },
+          {
+            "filePath": "src/templates/learnPage.jsx",
+            "line": 250,
             "column": 10
           },
           {
@@ -28187,9 +28246,9 @@
             "column": 48
           },
           {
-            "filePath": "src/components/ProductDetail/ProductDetailHero.jsx",
-            "line": 164,
-            "column": 25
+            "filePath": "src/components/ProductDetail/ProductDetailHero/DegreeHero.jsx",
+            "line": 79,
+            "column": 29
           },
           {
             "filePath": "src/components/Program/ProgramUpsell.jsx",
@@ -28198,7 +28257,7 @@
           },
           {
             "filePath": "src/templates/programDetailDegree.jsx",
-            "line": 243,
+            "line": 246,
             "column": 27
           }
         ],
@@ -28407,7 +28466,7 @@
           },
           {
             "filePath": "src/components/ContentfulModule/StatisticIconModule.jsx",
-            "line": 32,
+            "line": 33,
             "column": 21
           }
         ],
@@ -28421,19 +28480,19 @@
         "Skeleton": [
           {
             "filePath": "src/components/ContentfulModule/ImageCarouselModule/ImageCarouselModule.jsx",
-            "line": 15,
+            "line": 14,
             "column": 8
           },
           {
             "filePath": "src/templates/homePage.jsx",
-            "line": 93,
+            "line": 90,
             "column": 15
           }
         ],
         "useWindowSize": [
           {
             "filePath": "src/components/ContentfulModule/ImageCarouselModule/ImageCarouselModule.jsx",
-            "line": 26,
+            "line": 25,
             "column": 21
           },
           {
@@ -28450,19 +28509,19 @@
         "CallMade": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 171,
+            "line": 169,
             "column": 23
           }
         ],
         "Breadcrumb": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 185,
+            "line": 183,
             "column": 14
           },
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 189,
+            "line": 187,
             "column": 14
           },
           {
@@ -28484,7 +28543,7 @@
         "ChevronLeft": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 188,
+            "line": 186,
             "column": 25
           },
           {
@@ -28501,7 +28560,7 @@
         "PlayCircleFilled": [
           {
             "filePath": "src/components/Course/2U/CourseHeader2U.jsx",
-            "line": 228,
+            "line": 226,
             "column": 30
           },
           {
@@ -28783,11 +28842,6 @@
             "filePath": "src/components/Course/Instructors/InstructorCard.jsx",
             "line": 48,
             "column": 16
-          },
-          {
-            "filePath": "src/components/MemberList/MemberListItem.jsx",
-            "line": 19,
-            "column": 8
           }
         ],
         "Alert": [
@@ -29447,7 +29501,7 @@
           },
           {
             "filePath": "src/templates/learnPage.jsx",
-            "line": 34,
+            "line": 35,
             "column": 20
           }
         ],
