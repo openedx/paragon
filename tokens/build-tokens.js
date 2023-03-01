@@ -13,14 +13,6 @@ program
 const { buildDir, source: tokensSource } = program.opts();
 const source = tokensSource ? [tokensSource] : [];
 
-StyleDictionary.registerFileHeader({
-  name: 'customFileHeader',
-  fileHeader: (defaultMessage) => [
-    'IMPORTANT: This file is the result of assembling design tokens',
-    ...defaultMessage,
-  ],
-});
-
 StyleDictionary.extend({
   include: [path.resolve(__dirname, 'src/core/**/*.json')],
   source,
@@ -31,14 +23,14 @@ StyleDictionary.extend({
       buildPath: buildDir,
       files: [
         {
-          format: 'core/custom-variables',
+          format: 'css/custom-variables',
           destination: 'core/variables.css',
           options: {
             outputReferences: true,
           },
         },
         {
-          format: 'core/custom-media-breakpoints',
+          format: 'css/custom-media-breakpoints',
           destination: 'core/custom-media-breakpoints.css',
           options: {
             outputReferences: true,
@@ -89,9 +81,9 @@ const getStyleDictionaryConfig = (themeVariant) => {
   return config;
 };
 
-const THEME_VARIANT = ['light'];
+const THEME_VARIANTS = ['light'];
 
-THEME_VARIANT.forEach((themeVariant) => {
+THEME_VARIANTS.forEach((themeVariant) => {
   const config = getStyleDictionaryConfig(themeVariant);
   StyleDictionary.extend(config).buildAllPlatforms();
 });

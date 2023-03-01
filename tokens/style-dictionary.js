@@ -129,7 +129,7 @@ StyleDictionary.registerFormat({
  * The custom formatter returns an array of formatted custom variables for the core styles Paragon.
  */
 StyleDictionary.registerFormat({
-  name: 'core/custom-variables',
+  name: 'css/custom-variables',
   formatter: (args) => createCustomCSSVariables(args, 'core'),
 });
 
@@ -185,7 +185,7 @@ StyleDictionary.registerFormat({
  * 'breakpoints' subcategory, and generates a CSS custom media queries.
  */
 StyleDictionary.registerFormat({
-  name: 'core/custom-media-breakpoints',
+  name: 'css/custom-media-breakpoints',
   formatter({ dictionary, file }) {
     const { size: { breakpoint } } = dictionary.properties;
 
@@ -197,6 +197,17 @@ StyleDictionary.registerFormat({
 
     return fileHeader({ file }) + customMediaVariables;
   },
+});
+
+/**
+ * Custom file header for custom and built-in formatters.
+ */
+StyleDictionary.registerFileHeader({
+  name: 'customFileHeader',
+  fileHeader: (defaultMessage) => [
+    'IMPORTANT: This file is the result of assembling design tokens',
+    ...defaultMessage,
+  ],
 });
 
 module.exports = StyleDictionary;

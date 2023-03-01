@@ -10,7 +10,6 @@ build:
 	rm -rf dist/__mocks__
 	rm -rf dist/setupTest.js
 	node build-scss.js
-	node build-css.js
 
 export TRANSIFEX_RESOURCE = paragon
 transifex_langs = "ar,ca,es_419,fr,he,id,ko_KR,pl,pt_BR,ru,th,uk,zh_CN"
