@@ -1,5 +1,5 @@
 {
-  "lastModified": 1677593363778,
+  "lastModified": 1677679696689,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -7736,8 +7736,8 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 88,
-            "column": 8
+            "line": 97,
+            "column": 10
           },
           {
             "filePath": "src/register/registrationFields/HonorCode.jsx",
@@ -7793,8 +7793,8 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 89,
-            "column": 10
+            "line": 98,
+            "column": 12
           }
         ],
         "breakpoints": [
@@ -8398,8 +8398,8 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 100,
-            "column": 12
+            "line": 109,
+            "column": 14
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
@@ -8563,8 +8563,8 @@
         "Spinner": [
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 113,
-            "column": 10
+            "line": 122,
+            "column": 12
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
@@ -14276,14 +14276,14 @@
         "FormControlFeedback": [
           {
             "filePath": "src/containers/MasqueradeBar/index.jsx",
-            "line": 68,
+            "line": 69,
             "column": 16
           }
         ],
         "StatefulButton": [
           {
             "filePath": "src/containers/MasqueradeBar/index.jsx",
-            "line": 73,
+            "line": 74,
             "column": 12
           }
         ],
@@ -14462,6 +14462,11 @@
             "filePath": "src/components/program/ProgramInstructors.jsx",
             "line": 81,
             "column": 14
+          },
+          {
+            "filePath": "src/components/skills-quiz/SimilarJobs.jsx",
+            "line": 54,
+            "column": 10
           }
         ],
         "Container": [
@@ -14637,7 +14642,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 221,
+            "line": 199,
             "column": 10
           }
         ],
@@ -15317,6 +15322,11 @@
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 183,
             "column": 12
+          },
+          {
+            "filePath": "src/components/skills-quiz/TopSkillsOverview.jsx",
+            "line": 66,
+            "column": 8
           }
         ],
         "Card.ImageCap": [
@@ -15543,6 +15553,16 @@
             "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
             "line": 219,
             "column": 14
+          },
+          {
+            "filePath": "src/components/skills-quiz/TopSkillsOverview.jsx",
+            "line": 67,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/skills-quiz/TopSkillsOverview.jsx",
+            "line": 96,
+            "column": 10
           }
         ],
         "Card.Footer": [
@@ -15832,13 +15852,23 @@
           },
           {
             "filePath": "src/components/skills-quiz/SelectedJobSkills.jsx",
-            "line": 23,
-            "column": 10
+            "line": 13,
+            "column": 8
           },
           {
             "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
             "line": 121,
             "column": 10
+          },
+          {
+            "filePath": "src/components/skills-quiz/TopSkillsOverview.jsx",
+            "line": 77,
+            "column": 18
+          },
+          {
+            "filePath": "src/components/skills-quiz/TopSkillsOverview.jsx",
+            "line": 85,
+            "column": 18
           }
         ],
         "Modal": [
@@ -16331,37 +16361,37 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 330,
+            "line": 285,
             "column": 16
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 342,
+            "line": 297,
             "column": 12
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 346,
+            "line": 301,
             "column": 12
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 354,
+            "line": 309,
             "column": 12
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 358,
+            "line": 313,
             "column": 12
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 361,
+            "line": 316,
             "column": 12
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 365,
+            "line": 320,
             "column": 12
           }
         ],
@@ -16623,7 +16653,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 212,
+            "line": 190,
             "column": 8
           }
         ],
@@ -16688,7 +16718,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 321,
+            "line": 276,
             "column": 20
           }
         ],
@@ -16898,69 +16928,69 @@
         "Stepper": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 204,
+            "line": 182,
             "column": 4
           }
         ],
         "ModalDialog": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 205,
+            "line": 183,
             "column": 6
           }
         ],
         "ModalDialog.Body": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 220,
+            "line": 198,
             "column": 8
           }
         ],
         "Stepper.Step": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 222,
+            "line": 200,
             "column": 12
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 310,
+            "line": 265,
             "column": 12
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 335,
+            "line": 290,
             "column": 12
           }
         ],
         "Form.Checkbox": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 275,
+            "line": 229,
             "column": 24
           }
         ],
         "ModalDialog.Footer": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 340,
+            "line": 295,
             "column": 8
           }
         ],
         "Stepper.ActionRow": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 341,
+            "line": 296,
             "column": 10
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 353,
+            "line": 308,
             "column": 10
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 360,
+            "line": 315,
             "column": 10
           }
         ],
@@ -17564,7 +17594,7 @@
       }
     },
     {
-      "version": "20.24.0",
+      "version": "20.28.4",
       "name": "@edx/frontend-app-learning",
       "repository": {
         "type": "git",
@@ -21505,7 +21535,7 @@
           },
           {
             "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
-            "line": 29,
+            "line": 33,
             "column": 6
           }
         ],
@@ -21610,6 +21640,11 @@
             "filePath": "src/profile/UsernameDescription.jsx",
             "line": 9,
             "column": 4
+          },
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestCard.jsx",
+            "line": 22,
+            "column": 16
           }
         ],
         "VisibilityOff": [
@@ -21619,7 +21654,26 @@
             "column": 15
           }
         ],
+        "IconButton": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestCard.jsx",
+            "line": 21,
+            "column": 6
+          }
+        ],
+        "Close": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestCard.jsx",
+            "line": 23,
+            "column": 13
+          }
+        ],
         "Stack": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestSelect.jsx",
+            "line": 27,
+            "column": 4
+          },
           {
             "filePath": "src/skills-builder/skills-builder-modal/select-preferences/GoalSelect.jsx",
             "line": 17,
@@ -21627,13 +21681,27 @@
           },
           {
             "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
-            "line": 22,
+            "line": 26,
             "column": 4
           },
           {
             "filePath": "src/skills-builder/skills-builder-modal/select-preferences/SelectPreferences.jsx",
-            "line": 18,
-            "column": 4
+            "line": 21,
+            "column": 6
+          }
+        ],
+        "Row": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestSelect.jsx",
+            "line": 34,
+            "column": 6
+          }
+        ],
+        "Col": [
+          {
+            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestSelect.jsx",
+            "line": 37,
+            "column": 10
           }
         ],
         "Form.Control": [
@@ -21646,33 +21714,33 @@
         "Form.Autosuggest": [
           {
             "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleInstantSearch.jsx",
-            "line": 20,
+            "line": 23,
             "column": 4
           }
         ],
         "Form.AutosuggestOption": [
           {
             "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleInstantSearch.jsx",
-            "line": 27,
+            "line": 30,
             "column": 8
           }
         ],
         "Form.CheckboxSet": [
           {
             "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
-            "line": 30,
+            "line": 34,
             "column": 8
           }
         ],
         "Form.Checkbox": [
           {
             "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
-            "line": 34,
+            "line": 38,
             "column": 10
           },
           {
             "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
-            "line": 37,
+            "line": 41,
             "column": 10
           }
         ],
@@ -24195,7 +24263,7 @@
           },
           {
             "filePath": "src/editors/containers/TextEditor/index.jsx",
-            "line": 111,
+            "line": 71,
             "column": 8
           }
         ],
@@ -24211,13 +24279,13 @@
             "column": 4
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 38,
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 33,
             "column": 4
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
-            "line": 33,
+            "filePath": "src/editors/sharedComponents/BaseModal/index.jsx",
+            "line": 38,
             "column": 4
           }
         ],
@@ -24256,16 +24324,6 @@
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/SelectTypeFooter.jsx",
             "line": 27,
             "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 39,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 22,
-            "column": 2
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
@@ -24331,6 +24389,16 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
             "line": 106,
             "column": 8
+          },
+          {
+            "filePath": "src/editors/sharedComponents/BaseModal/index.jsx",
+            "line": 39,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 22,
+            "column": 2
           }
         ],
         "Hyperlink": [
@@ -24402,16 +24470,6 @@
             "column": 8
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 41,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 45,
-            "column": 4
-          },
-          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
             "line": 68,
             "column": 12
@@ -24470,6 +24528,16 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
             "line": 127,
             "column": 10
+          },
+          {
+            "filePath": "src/editors/sharedComponents/BaseModal/index.jsx",
+            "line": 41,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 45,
+            "column": 4
           }
         ],
         "Button": [
@@ -24516,31 +24584,6 @@
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/SelectTypeWrapper/SelectTypeFooter.jsx",
             "line": 36,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
-            "line": 47,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
-            "line": 64,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 50,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 56,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SourceCodeModal/index.jsx",
-            "line": 30,
             "column": 8
           },
           {
@@ -24607,6 +24650,31 @@
             "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
             "line": 40,
             "column": 12
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/index.jsx",
+            "line": 47,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/index.jsx",
+            "line": 64,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/index.jsx",
+            "line": 50,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/index.jsx",
+            "line": 56,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/sharedComponents/SourceCodeModal/index.jsx",
+            "line": 30,
+            "column": 8
           }
         ],
         "Spinner": [
@@ -24617,27 +24685,27 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/index.jsx",
-            "line": 23,
+            "line": 24,
             "column": 8
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/Gallery.jsx",
-            "line": 30,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 84,
-            "column": 10
-          },
-          {
             "filePath": "src/editors/containers/TextEditor/index.jsx",
-            "line": 118,
+            "line": 78,
             "column": 14
           },
           {
             "filePath": "src/editors/containers/VideoEditor/index.jsx",
             "line": 41,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/Gallery.jsx",
+            "line": 30,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/index.jsx",
+            "line": 84,
             "column": 10
           },
           {
@@ -24708,21 +24776,6 @@
             "column": 6
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
-            "line": 28,
-            "column": 2
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
-            "line": 38,
-            "column": 2
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 23,
-            "column": 4
-          },
-          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget/index.jsx",
             "line": 47,
             "column": 8
@@ -24766,6 +24819,21 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
             "line": 60,
             "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/AltTextControls.jsx",
+            "line": 28,
+            "column": 2
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/DimensionControls.jsx",
+            "line": 38,
+            "column": 2
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 23,
+            "column": 4
           },
           {
             "filePath": "www/src/Gallery.jsx",
@@ -24850,26 +24918,6 @@
             "column": 8
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
-            "line": 32,
-            "column": 4
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
-            "line": 43,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
-            "line": 50,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 24,
-            "column": 6
-          },
-          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget/index.jsx",
             "line": 48,
             "column": 10
@@ -24898,6 +24946,26 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
             "line": 89,
             "column": 12
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/AltTextControls.jsx",
+            "line": 32,
+            "column": 4
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/DimensionControls.jsx",
+            "line": 43,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/DimensionControls.jsx",
+            "line": 50,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 24,
+            "column": 6
           }
         ],
         "Form": [
@@ -25045,21 +25113,6 @@
             "column": 22
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
-            "line": 64,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 32,
-            "column": 26
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 40,
-            "column": 16
-          },
-          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
             "line": 41,
             "column": 22
@@ -25178,6 +25231,21 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
             "line": 125,
             "column": 12
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/DimensionControls.jsx",
+            "line": 64,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 32,
+            "column": 26
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 40,
+            "column": 16
           }
         ],
         "Close": [
@@ -25197,14 +25265,14 @@
             "column": 19
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 37,
-            "column": 23
-          },
-          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/ImportTranscriptCard.jsx",
             "line": 28,
             "column": 13
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 37,
+            "column": 23
           }
         ],
         "Truncate": [
@@ -25256,16 +25324,6 @@
             "column": 12
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
-            "line": 57,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 31,
-            "column": 16
-          },
-          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
             "line": 42,
             "column": 10
@@ -25294,6 +25352,16 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
             "line": 39,
             "column": 12
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/DimensionControls.jsx",
+            "line": 57,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 31,
+            "column": 16
           }
         ],
         "EditOutline": [
@@ -25315,13 +25383,13 @@
             "column": 6
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 30,
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 25,
             "column": 4
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
-            "line": 25,
+            "filePath": "src/editors/sharedComponents/BaseModal/index.jsx",
+            "line": 30,
             "column": 4
           }
         ],
@@ -25337,13 +25405,13 @@
             "column": 6
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 35,
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 30,
             "column": 4
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
-            "line": 30,
+            "filePath": "src/editors/sharedComponents/BaseModal/index.jsx",
+            "line": 35,
             "column": 4
           }
         ],
@@ -25494,21 +25562,6 @@
             "column": 10
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
-            "line": 29,
-            "column": 4
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
-            "line": 52,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/DimensionControls.jsx",
-            "line": 39,
-            "column": 4
-          },
-          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
             "line": 51,
             "column": 20
@@ -25527,12 +25580,27 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDetails.jsx",
             "line": 121,
             "column": 20
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/AltTextControls.jsx",
+            "line": 29,
+            "column": 4
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/AltTextControls.jsx",
+            "line": 52,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/DimensionControls.jsx",
+            "line": 39,
+            "column": 4
           }
         ],
         "Container": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
-            "line": 31,
+            "line": 32,
             "column": 10
           },
           {
@@ -25599,11 +25667,6 @@
             "column": 10
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/AltTextControls.jsx",
-            "line": 47,
-            "column": 4
-          },
-          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
             "line": 124,
             "column": 14
@@ -25617,6 +25680,11 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
             "line": 107,
             "column": 10
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/AltTextControls.jsx",
+            "line": 47,
+            "column": 4
           }
         ],
         "MailtoLink": [
@@ -25793,19 +25861,19 @@
             "column": 6
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
+            "line": 85,
+            "column": 10
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/index.jsx",
             "line": 75,
             "column": 10
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/GalleryCard.jsx",
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/GalleryCard.jsx",
             "line": 14,
             "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
-            "line": 85,
-            "column": 10
           }
         ],
         "SelectableBox.Set": [
@@ -25815,7 +25883,7 @@
             "column": 6
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/Gallery.jsx",
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/Gallery.jsx",
             "line": 54,
             "column": 8
           }
@@ -25827,7 +25895,7 @@
             "column": 14
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/GalleryCard.jsx",
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/GalleryCard.jsx",
             "line": 12,
             "column": 2
           }
@@ -25837,11 +25905,6 @@
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/index.jsx",
             "line": 22,
             "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 81,
-            "column": 6
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
@@ -25887,6 +25950,11 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
             "line": 114,
             "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/index.jsx",
+            "line": 81,
+            "column": 6
           }
         ],
         "ModalDialog.Title": [
@@ -25896,198 +25964,37 @@
             "column": 8
           },
           {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 31,
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 26,
             "column": 6
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
-            "line": 26,
+            "filePath": "src/editors/sharedComponents/BaseModal/index.jsx",
+            "line": 31,
             "column": 6
           }
         ],
         "ModalDialog": [
           {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 21,
+            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
+            "line": 16,
             "column": 2
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
-            "line": 16,
+            "filePath": "src/editors/sharedComponents/BaseModal/index.jsx",
+            "line": 21,
             "column": 2
           }
         ],
         "ModalDialog.CloseButton": [
           {
-            "filePath": "src/editors/containers/TextEditor/components/BaseModal.jsx",
-            "line": 42,
-            "column": 8
-          },
-          {
             "filePath": "src/editors/containers/VideoEditor/components/BaseModal.jsx",
             "line": 35,
             "column": 8
-          }
-        ],
-        "ArrowBackIos": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/ImageSettingsModal/index.jsx",
-            "line": 65,
-            "column": 20
-          }
-        ],
-        "Scrollable": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/Gallery.jsx",
-            "line": 52,
-            "column": 4
-          }
-        ],
-        "Add": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/index.jsx",
-            "line": 56,
-            "column": 28
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/index.jsx",
-            "line": 74,
-            "column": 26
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
-            "line": 168,
-            "column": 24
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
-            "line": 134,
-            "column": 20
-          }
-        ],
-        "Search": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 40,
-            "column": 27
-          }
-        ],
-        "Dropdown": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 46,
-            "column": 4
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 69,
-            "column": 12
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 86,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
-            "line": 36,
-            "column": 4
-          }
-        ],
-        "Dropdown.Toggle": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 47,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 70,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 89,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
-            "line": 37,
-            "column": 6
-          }
-        ],
-        "Dropdown.Menu": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 50,
-            "column": 6
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 78,
-            "column": 14
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 99,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
-            "line": 45,
-            "column": 6
-          }
-        ],
-        "Dropdown.Item": [
-          {
-            "filePath": "src/editors/containers/TextEditor/components/SelectImageModal/SearchSort.jsx",
-            "line": 52,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 79,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 85,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
-            "line": 88,
-            "column": 16
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 102,
-            "column": 22
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 105,
-            "column": 22
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 107,
-            "column": 20
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
-            "line": 46,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
-            "line": 52,
-            "column": 8
-          },
-          {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
-            "line": 55,
+            "filePath": "src/editors/sharedComponents/BaseModal/index.jsx",
+            "line": 42,
             "column": 8
           }
         ],
@@ -26139,6 +26046,50 @@
             "column": 10
           }
         ],
+        "Dropdown": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
+            "line": 69,
+            "column": 12
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
+            "line": 86,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 36,
+            "column": 4
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 46,
+            "column": 4
+          }
+        ],
+        "Dropdown.Toggle": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
+            "line": 70,
+            "column": 14
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
+            "line": 89,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 37,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 47,
+            "column": 6
+          }
+        ],
         "MoreHoriz": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
@@ -26151,6 +26102,80 @@
             "column": 13
           }
         ],
+        "Dropdown.Menu": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
+            "line": 78,
+            "column": 14
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
+            "line": 99,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 45,
+            "column": 6
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 50,
+            "column": 6
+          }
+        ],
+        "Dropdown.Item": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
+            "line": 79,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
+            "line": 85,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
+            "line": 88,
+            "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
+            "line": 102,
+            "column": 22
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
+            "line": 105,
+            "column": 22
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
+            "line": 107,
+            "column": 20
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 46,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 52,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
+            "line": 55,
+            "column": 8
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 52,
+            "column": 10
+          }
+        ],
         "FileUpload": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/HandoutWidget/index.jsx",
@@ -26161,6 +26186,28 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
             "line": 115,
             "column": 24
+          }
+        ],
+        "Add": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/index.jsx",
+            "line": 74,
+            "column": 26
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 168,
+            "column": 24
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 134,
+            "column": 20
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/index.jsx",
+            "line": 56,
+            "column": 28
           }
         ],
         "Copyright": [
@@ -26319,6 +26366,27 @@
             "filePath": "src/editors/sharedComponents/ErrorAlerts/ErrorAlert.jsx",
             "line": 45,
             "column": 12
+          }
+        ],
+        "ArrowBackIos": [
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/index.jsx",
+            "line": 65,
+            "column": 20
+          }
+        ],
+        "Scrollable": [
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/Gallery.jsx",
+            "line": 52,
+            "column": 4
+          }
+        ],
+        "Search": [
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/SearchSort.jsx",
+            "line": 40,
+            "column": 27
           }
         ]
       }
@@ -26946,6 +27014,11 @@
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
             "line": 109,
             "column": 16
+          },
+          {
+            "filePath": "src/components/ContentfulModule/MediaModule/index.jsx",
+            "line": 48,
+            "column": 18
           },
           {
             "filePath": "src/components/ContentfulModule/MoreInfoCTAModule.jsx",
@@ -28463,6 +28536,11 @@
             "filePath": "src/components/ContentfulModule/FootnoteModule.jsx",
             "line": 53,
             "column": 23
+          },
+          {
+            "filePath": "src/components/ContentfulModule/MediaModule/index.jsx",
+            "line": 49,
+            "column": 25
           },
           {
             "filePath": "src/components/ContentfulModule/StatisticIconModule.jsx",
