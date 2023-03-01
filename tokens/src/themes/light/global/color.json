@@ -14,7 +14,7 @@
         "source": "$accent-a",
         "description": "Accent-A color."
         "actions": {
-          "default": "{color.action.default.accent.a.path}"
+          "default": "{color.action.default.accent.a}"
         }
       },
       "b": {
@@ -23,7 +23,7 @@
         "source": "$accent-b",
         "description": "Accent-B color.",
         "actions": {
-          "default": "{color.action.default.accent.b.path}"
+          "default": "{color.action.default.accent.b}"
         }
       }
     },
@@ -34,7 +34,7 @@
         "source": "$gray",
         "description": "Basic gray color.",
         "actions": {
-          "default": "{color.action.default.gray.base.path}"
+          "default": "{color.action.default.gray.base}"
         }
       },
       "100": {
@@ -43,7 +43,7 @@
         "source": "$gray-100",
         "Gray color of level 100.",
         "actions": {
-          "default": "{color.action.default.gray.100.path}"
+          "default": "{color.action.default.gray.100}"
         }
       },
       "200": {
@@ -52,7 +52,7 @@
         "source": "$gray-200",
         "Gray color of level 200.",
         "actions": {
-          "default": "{color.action.default.gray.200.path}"
+          "default": "{color.action.default.gray.200}"
         }
       },
       "300": {
@@ -61,7 +61,7 @@
         "source": "$gray-300",
         "Gray color of level 300.",
         "actions": {
-          "default": "{color.action.default.gray.300.path}"
+          "default": "{color.action.default.gray.300}"
         }
       },
       "400": {
@@ -70,7 +70,7 @@
         "source": "$gray-400",
         "Gray color of level 400.",
         "actions": {
-          "default": "{color.action.default.gray.400.path}"
+          "default": "{color.action.default.gray.400}"
         }
       },
       "500": {
@@ -79,7 +79,7 @@
         "source": "$gray-500",
         "description": "Gray color of level 500.",
         "actions": {
-          "default": "{color.action.default.gray.500.path}"
+          "default": "{color.action.default.gray.500}"
         }
        },
       "600": {
@@ -88,7 +88,7 @@
         "source": "$gray-600",
         "description": "Gray color of level 600.",
         "actions": {
-          "default": "{color.action.default.gray.600.path}"
+          "default": "{color.action.default.gray.600}"
         }
       },
       "700": {
@@ -97,7 +97,7 @@
         "source": "$gray-700",
         "description": "Gray color of level 700.",
         "actions": {
-          "default": "{color.action.default.gray.700.path}"
+          "default": "{color.action.default.gray.700}"
         }
       },
       "800": {
@@ -106,7 +106,7 @@
         "source": "$gray-800",
         "description": "Gray color of level 800.",
         "actions": {
-          "default": "{color.action.default.gray.800.path}"
+          "default": "{color.action.default.gray.800}"
         }
       },
       "900": {
@@ -115,7 +115,7 @@
         "source": "$gray-900",
         "description": "Gray color of level 900.",
         "actions": {
-          "default": "{color.action.default.gray.900.path}"
+          "default": "{color.action.default.gray.900}"
         }
       }
     },
@@ -126,7 +126,7 @@
         "source": "$primary",
         "description": "Basic primary color.",
         "actions": {
-          "default": "{color.action.default.primary.base.path}"
+          "default": "{color.action.default.primary.base}"
         }
       },
       "100": { 
@@ -136,7 +136,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
         "description": "Primary color of level 100.",
         "actions": {
-          "default": "{color.action.default.primary.100.path}"
+          "default": "{color.action.default.primary.100}"
         }
       },
       "200": { 
@@ -146,7 +146,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
         "description": "Primary color of level 200.",
         "actions": {
-          "default": "{color.action.default.primary.200.path}"
+          "default": "{color.action.default.primary.200}"
         }
       },
       "300": { 
@@ -156,7 +156,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50"}],
         "description": "Primary color of level 300.",
         "actions": {
-          "default": "{color.action.default.primary.300.path}"
+          "default": "{color.action.default.primary.300}"
         }
       },
       "400": { 
@@ -166,7 +166,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
         "description": "Primary color of level 400.",
         "actions": {
-          "default": "{color.action.default.primary.400.path}"
+          "default": "{color.action.default.primary.400}"
         }
       },
       "500": {
@@ -175,7 +175,7 @@
         "source": "$primary-500",
         "description": "Primary color of level 500.",
         "actions": {
-          "default": "{color.action.default.primary.500.path}"
+          "default": "{color.action.default.primary.500}"
         }
       },
       "600": { 
@@ -185,7 +185,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
         "description": "Primary color of level 600.",
         "actions": {
-          "default": "{color.action.default.primary.600.path}"
+          "default": "{color.action.default.primary.600}"
         }
       },
       "700": { 
@@ -195,7 +195,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
         "description": "Primary color of level 700.",
         "actions": {
-          "default": "{color.action.default.primary.700.path}"
+          "default": "{color.action.default.primary.700}"
         }
       },
       "800": { 
@@ -205,7 +205,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
         "description": "Primary color of level 800.",
         "actions": {
-          "default": "{color.action.default.primary.800.path}"
+          "default": "{color.action.default.primary.800}"
         }
       },
       "900": { 
@@ -215,7 +215,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
         "description": "Primary color of level 900.",
         "actions": {
-          "default": "{color.action.default.primary.900.path}"
+          "default": "{color.action.default.primary.900}"
         }
       }
     },
@@ -226,7 +226,7 @@
         "source": "$secondary",
         "description": "Basic secondary color.",
         "actions": {
-          "default": "{color.action.default.secondary.base.path}"
+          "default": "{color.action.default.secondary.base}"
         }
       },
       "100": { 
@@ -236,7 +236,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
         "description": "Secondary color of level 100.",
         "actions": {
-          "default": "{color.action.default.secondary.100.path}"
+          "default": "{color.action.default.secondary.100}"
         }
       },
       "200": {
@@ -246,7 +246,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
         "description": "Secondary color of level 200.",
         "actions": {
-          "default": "{color.action.default.secondary.200.path}"
+          "default": "{color.action.default.secondary.200}"
         }
       },
       "300": {
@@ -256,7 +256,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
         "description": "Secondary color of level 300.",
         "actions": {
-          "default": "{color.action.default.secondary.300.path}"
+          "default": "{color.action.default.secondary.300}"
         }
       },
       "400": {
@@ -266,7 +266,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
         "description": "Secondary color of level 400.",
         "actions": {
-          "default": "{color.action.default.secondary.400.path}"
+          "default": "{color.action.default.secondary.400}"
         }
       },
       "500": {
@@ -275,7 +275,7 @@
         "source": "$secondary-500",
         "description": "Secondary color of level 500.",
         "actions": {
-          "default": "{color.action.default.secondary.500.path}"
+          "default": "{color.action.default.secondary.500}"
         }
       },
       "600": { 
@@ -285,7 +285,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
         "description": "Secondary color of level 600.",
         "actions": {
-          "default": "{color.action.default.secondary.600.path}"
+          "default": "{color.action.default.secondary.600}"
         }
       },
       "700": {
@@ -295,7 +295,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
         "description": "Secondary color of level 700.",
         "actions": {
-          "default": "{color.action.default.secondary.700.path}"
+          "default": "{color.action.default.secondary.700}"
         }
       },
       "800": {
@@ -305,7 +305,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
         "description": "Secondary color of level 800.",
         "actions": {
-          "default": "{color.action.default.secondary.800.path}"
+          "default": "{color.action.default.secondary.800}"
         }
       },
       "900": {
@@ -315,7 +315,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
         "description": "Secondary color of level 900.",
         "actions": {
-          "default": "{color.action.default.secondary.900.path}"
+          "default": "{color.action.default.secondary.900}"
         }
       }
     },
@@ -326,7 +326,7 @@
         "source": "$brand",
         "description": "Basic brand color.",
         "actions": {
-          "default": "{color.action.default.brand.base.path}"
+          "default": "{color.action.default.brand.base}"
         }
       },
       "100": { 
@@ -336,7 +336,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
         "description": "Brand color of level 100.",
         "actions": {
-          "default": "{color.action.default.brand.100.path}"
+          "default": "{color.action.default.brand.100}"
         }
       },
       "200": {
@@ -346,7 +346,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
         "description": "Brand color of level 200.",
         "actions": {
-          "default": "{color.action.default.brand.200.path}"
+          "default": "{color.action.default.brand.200}"
         }
       },
       "300": {
@@ -356,7 +356,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
         "description": "Brand color of level 300.",
         "actions": {
-          "default": "{color.action.default.brand.300.path}"
+          "default": "{color.action.default.brand.300}"
         }
       },
       "400": {
@@ -366,7 +366,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
         "description": "Brand color of level 400.",
         "actions": {
-          "default": "{color.action.default.brand.400.path}"
+          "default": "{color.action.default.brand.400}"
         }
       },
       "500": {
@@ -375,7 +375,7 @@
         "source": "$brand-500",
         "description": "Brand color of level 500.",
         "actions": {
-          "default": "{color.action.default.brand.500.path}"
+          "default": "{color.action.default.brand.500}"
         }
       },
       "600": { 
@@ -385,7 +385,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
         "description": "Brand color of level 600.",
         "actions": {
-          "default": "{color.action.default.brand.600.path}"
+          "default": "{color.action.default.brand.600}"
         }
       },
       "700": {
@@ -395,7 +395,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
         "description": "Brand color of level 700.",
         "actions": {
-          "default": "{color.action.default.brand.700.path}"
+          "default": "{color.action.default.brand.700}"
         }
       },
       "800": {
@@ -405,7 +405,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
         "description": "Brand color of level 800.",
         "actions": {
-          "default": "{color.action.default.brand.800.path}"
+          "default": "{color.action.default.brand.800}"
         }
       },
       "900": {
@@ -415,7 +415,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
         "description": "Brand color of level 900.",
         "actions": {
-          "default": "{color.action.default.brand.900.path}"
+          "default": "{color.action.default.brand.900}"
         }
       }
     },
@@ -426,7 +426,7 @@
         "source": "$success",
         "description": "Basic success color.",
         "actions": {
-          "default": "{color.action.default.success.base.path}"
+          "default": "{color.action.default.success.base}"
         }
       },
       "100": { 
@@ -436,7 +436,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
         "description": "Success color of level 100.",
         "actions": {
-          "default": "{color.action.default.success.100.path}"
+          "default": "{color.action.default.success.100}"
         }
       },
       "200": {
@@ -446,7 +446,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
         "description": "Success color of level 200.",
         "actions": {
-          "default": "{color.action.default.success.200.path}"
+          "default": "{color.action.default.success.200}"
         }
       },
       "300": {
@@ -456,7 +456,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
         "description": "Success color of level 300.",
         "actions": {
-          "default": "{color.action.default.success.300.path}"
+          "default": "{color.action.default.success.300}"
         }
       },
       "400": {
@@ -466,7 +466,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
         "description": "Success color of level 400.",
         "actions": {
-          "default": "{color.action.default.success.400.path}"
+          "default": "{color.action.default.success.400}"
         }
       },
       "500": {
@@ -475,7 +475,7 @@
         "source": "$success-500",
         "description": "Success color of level 500.",
         "actions": {
-          "default": "{color.action.default.success.500.path}"
+          "default": "{color.action.default.success.500}"
         }
       },
       "600": { 
@@ -485,7 +485,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
         "description": "Success color of level 600.",
         "actions": {
-          "default": "{color.action.default.success.600.path}"
+          "default": "{color.action.default.success.600}"
         }
       },
       "700": {
@@ -495,7 +495,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
         "description": "Success color of level 700.",
         "actions": {
-          "default": "{color.action.default.success.700.path}"
+          "default": "{color.action.default.success.700}"
         }
       },
       "800": {
@@ -505,7 +505,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
         "description": "Success color of level 800.",
         "actions": {
-          "default": "{color.action.default.success.800.path}"
+          "default": "{color.action.default.success.800}"
         }
       },
       "900": {
@@ -515,7 +515,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
         "description": "Success color of level 900.",
         "actions": {
-          "default": "{color.action.default.success.900.path}"
+          "default": "{color.action.default.success.900}"
         }
       }
     },
@@ -526,7 +526,7 @@
         "source": "$info",
         "description": "Basic info color.",
         "actions": {
-          "default": "{color.action.default.info.base.path}"
+          "default": "{color.action.default.info.base}"
         }
       },
       "100": { 
@@ -536,7 +536,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
         "description": "Info color of level 100.",
         "actions": {
-          "default": "{color.action.default.info.100.path}"
+          "default": "{color.action.default.info.100}"
         }
       },
       "200": {
@@ -546,7 +546,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
         "description": "Info color of level 200.",
         "actions": {
-          "default": "{color.action.default.info.200.path}"
+          "default": "{color.action.default.info.200}"
         }
       },
       "300": {
@@ -556,7 +556,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
         "description": "Info color of level 300.",
         "actions": {
-          "default": "{color.action.default.info.300.path}"
+          "default": "{color.action.default.info.300}"
         }
       },
       "400": {
@@ -566,7 +566,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
         "description": "Info color of level 400.",
         "actions": {
-          "default": "{color.action.default.info.400.path}"
+          "default": "{color.action.default.info.400}"
         }
       },
       "500": {
@@ -575,7 +575,7 @@
         "source": "$info-500",
         "description": "Info color of level 500.",
         "actions": {
-          "default": "{color.action.default.info.500.path}"
+          "default": "{color.action.default.info.500}"
         }
       },
       "600": { 
@@ -585,7 +585,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
         "description": "Info color of level 600.",
         "actions": {
-          "default": "{color.action.default.info.600.path}"
+          "default": "{color.action.default.info.600}"
         }
       },
       "700": {
@@ -595,7 +595,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
         "description": "Info color of level 700.",
         "actions": {
-          "default": "{color.action.default.info.700.path}"
+          "default": "{color.action.default.info.700}"
         }
       },
       "800": {
@@ -605,7 +605,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25"}],
         "description": "Info color of level 800.",
         "actions": {
-          "default": "{color.action.default.info.800.path}"
+          "default": "{color.action.default.info.800}"
         }
       },
       "900": {
@@ -615,7 +615,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
         "description": "Info color of level 900.",
         "actions": {
-          "default": "{color.action.default.info.900.path}"
+          "default": "{color.action.default.info.900}"
         }
       }
     },
@@ -626,7 +626,7 @@
         "source": "$warning",
         "description": "Basic warning color.",
         "actions": {
-          "default": "{color.action.default.warning.base.path}"
+          "default": "{color.action.default.warning.base}"
         }
       },
       "100": { 
@@ -636,7 +636,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
         "description": "Warning color of level 100.",
         "actions": {
-          "default": "{color.action.default.warning.100.path}"
+          "default": "{color.action.default.warning.100}"
         }
       },
       "200": {
@@ -646,7 +646,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
         "description": "Warning color of level 200.",
         "actions": {
-          "default": "{color.action.default.warning.200.path}"
+          "default": "{color.action.default.warning.200}"
         }
       },
       "300": {
@@ -656,7 +656,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
         "description": "Warning color of level 300.",
         "actions": {
-          "default": "{color.action.default.warning.300.path}"
+          "default": "{color.action.default.warning.300}"
         }
       },
       "400": {
@@ -666,7 +666,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
         "description": "Warning color of level 400.",
         "actions": {
-          "default": "{color.action.default.warning.400.path}"
+          "default": "{color.action.default.warning.400}"
         }
       },
       "500": {
@@ -675,7 +675,7 @@
         "source": "$warning-500",
         "description": "Warning color of level 500.",
         "actions": {
-          "default": "{color.action.default.warning.500.path}"
+          "default": "{color.action.default.warning.500}"
         }
       },
       "600": { 
@@ -685,7 +685,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
         "description": "Warning color of level 600.",
         "actions": {
-          "default": "{color.action.default.warning.600.path}"
+          "default": "{color.action.default.warning.600}"
         }
       },
       "700": {
@@ -695,7 +695,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
         "description": "Warning color of level 700.",
         "actions": {
-          "default": "{color.action.default.warning.700.path}"
+          "default": "{color.action.default.warning.700}"
         }
       },
       "800": {
@@ -705,7 +705,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
         "description": "Warning color of level 800.",
         "actions": {
-          "default": "{color.action.default.warning.800.path}"
+          "default": "{color.action.default.warning.800}"
         }
       },
       "900": {
@@ -715,7 +715,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
         "description": "Warning color of level 900.",
         "actions": {
-          "default": "{color.action.default.warning.900.path}"
+          "default": "{color.action.default.warning.900}"
         }
       }
     },
@@ -726,7 +726,7 @@
         "source": "$danger",
         "description": "Basic danger color.",
         "actions": {
-          "default": "{color.action.default.danger.base.path}"
+          "default": "{color.action.default.danger.base}"
         }
       },
       "100": { 
@@ -736,7 +736,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
         "description": "Danger color of level 100.",
         "actions": {
-          "default": "{color.action.default.danger.100.path}"
+          "default": "{color.action.default.danger.100}"
         }
       },
       "200": {
@@ -746,7 +746,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
         "description": "Danger color of level 200.",
         "actions": {
-          "default": "{color.action.default.danger.200.path}"
+          "default": "{color.action.default.danger.200}"
         }
       },
       "300": {
@@ -756,7 +756,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
         "description": "Danger color of level 300.",
         "actions": {
-          "default": "{color.action.default.danger.300.path}"
+          "default": "{color.action.default.danger.300}"
         }
       },
       "400": {
@@ -766,7 +766,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
         "description": "Danger color of level 400.",
         "actions": {
-          "default": "{color.action.default.danger.400.path}"
+          "default": "{color.action.default.danger.400}"
         }
       },
       "500": {
@@ -775,7 +775,7 @@
         "source": "$danger-500",
         "description": "Danger color of level 500.",
         "actions": {
-          "default": "{color.action.default.danger.500.path}"
+          "default": "{color.action.default.danger.500}"
         }
       },
       "600": { 
@@ -785,7 +785,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
         "description": "Danger color of level 600.",
         "actions": {
-          "default": "{color.action.default.danger.600.path}"
+          "default": "{color.action.default.danger.600}"
         }
       },
       "700": {
@@ -795,7 +795,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
         "description": "Danger color of level 700.",
         "actions": {
-          "default": "{color.action.default.danger.700.path}"
+          "default": "{color.action.default.danger.700}"
         }
       },
       "800": {
@@ -805,7 +805,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
         "description": "Danger color of level 800.",
         "actions": {
-          "default": "{color.action.default.danger.800.path}"
+          "default": "{color.action.default.danger.800}"
         }
       },
       "900": {
@@ -815,7 +815,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
         "description": "Danger color of level 900.",
         "actions": {
-          "default": "{color.action.default.danger.900.path}"
+          "default": "{color.action.default.danger.900}"
         }
       }
     },
@@ -826,7 +826,7 @@
         "source": "$light",
         "description": "Basic light color.",
         "actions": {
-          "default": "{color.action.default.light.base.path}"
+          "default": "{color.action.default.light.base}"
         }
       },
       "100": { 
@@ -836,7 +836,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
         "description": "Light color of level 100.",
         "actions": {
-          "default": "{color.action.default.light.100.path}"
+          "default": "{color.action.default.light.100}"
         }
       },
       "200": {
@@ -846,7 +846,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
         "description": "Light color of level 200.",
         "actions": {
-          "default": "{color.action.default.light.200.path}"
+          "default": "{color.action.default.light.200}"
         }
       },
       "300": {
@@ -856,7 +856,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
         "description": "Light color of level 300.",
         "actions": {
-          "default": "{color.action.default.light.300.path}"
+          "default": "{color.action.default.light.300}"
         }
       },
       "400": {
@@ -866,7 +866,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
         "description": "Light color of level 400.",
         "actions": {
-          "default": "{color.action.default.light.400.path}"
+          "default": "{color.action.default.light.400}"
         }
       },
       "500": {
@@ -875,7 +875,7 @@
         "source": "$light-500",
         "description": "Light color of level 500.",
         "actions": {
-          "default": "{color.action.default.light.500.path}"
+          "default": "{color.action.default.light.500}"
         }
       },
       "600": { 
@@ -885,7 +885,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
         "description": "Light color of level 600.",
         "actions": {
-          "default": "{color.action.default.light.600.path}"
+          "default": "{color.action.default.light.600}"
         }
       },
       "700": {
@@ -895,7 +895,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
         "description": "Light color of level 700.",
         "actions": {
-          "default": "{color.action.default.light.700.path}"
+          "default": "{color.action.default.light.700}"
         }
       },
       "800": {
@@ -905,7 +905,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
         "description": "Light color of level 800.",
         "actions": {
-          "default": "{color.action.default.light.800.path}"
+          "default": "{color.action.default.light.800}"
         }
       },
       "900": {
@@ -915,7 +915,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
         "description": "Light color of level 900.",
         "actions": {
-          "default": "{color.action.default.light.900.path}"
+          "default": "{color.action.default.light.900}"
         }
       }
     },
@@ -926,7 +926,7 @@
         "source": "$dark",
         "description": "Basic dark color.",
         "actions": {
-          "default": "{color.action.default.dark.base.path}"
+          "default": "{color.action.default.dark.base}"
         }
       },
       "100": {
@@ -936,7 +936,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
         "description": "Dark color of level 100.",
         "actions": {
-          "default": "{color.action.default.dark.100.path}"
+          "default": "{color.action.default.dark.100}"
         }
       },
       "200": {
@@ -946,7 +946,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
         "description": "Dark color of level 200.",
         "actions": {
-          "default": "{color.action.default.dark.200.path}"
+          "default": "{color.action.default.dark.200}"
         }
       },
       "300": {
@@ -956,7 +956,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
         "description": "Dark color of level 300.",
         "actions": {
-          "default": "{color.action.default.dark.300.path}"
+          "default": "{color.action.default.dark.300}"
         }
       },
       "400": {
@@ -975,7 +975,7 @@
         "source": "$dark-500",
         "description": "Dark color of level 500.",
         "actions": {
-          "default": "{color.action.default.dark.500.path}"
+          "default": "{color.action.default.dark.500}"
         }
       },
       "600": { 
@@ -1005,7 +1005,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
         "description": "Dark color of level 800.",
         "actions": {
-          "default": "{color.action.default.dark.800.path}"
+          "default": "{color.action.default.dark.800}"
         }
       },
       "900": {
@@ -1015,7 +1015,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
         "description": "Dark color of level 900.",
         "actions": {
-          "default": "{color.action.default.dark.900.path}"
+          "default": "{color.action.default.dark.900}"
         }
       }
     },
