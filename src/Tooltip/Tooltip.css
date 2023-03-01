@@ -1,0 +1,16 @@
+/**
+ * Do not edit directly
+ * Generated on Wed, 01 Mar 2023 00:27:20 GMT
+ */
+
+:root {
+  --pgn-elevation-tooltip-zindex: 1070;
+  --pgn-spacing-tooltip-margin: 0;
+  --pgn-spacing-tooltip-padding-x: .5rem;
+  --pgn-spacing-tooltip-padding-y: .5rem;
+  --pgn-size-tooltip-arrow-width: .8rem;
+  --pgn-size-tooltip-arrow-height: .4rem;
+  --pgn-size-tooltip-max-width: 200px;
+  --pgn-typography-tooltip-font-size: var(--pgn-typography-font-size-sm);
+  --pgn-size-tooltip-border-radius: var(--pgn-size-border-radius-base);
+}

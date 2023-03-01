@@ -1,0 +1,32 @@
+/**
+ * Do not edit directly
+ * Generated on Wed, 01 Mar 2023 00:27:19 GMT
+ */
+
+:root {
+  --pgn-transition-btn: none;
+  --pgn-spacing-btn-focus-gap: 1px;
+  --pgn-spacing-btn-block-spacing-y: .5rem;
+  --pgn-size-btn-focus-width: 2px;
+  --pgn-typography-btn-line-height-sm: var(--pgn-typography-input-btn-line-height-sm);
+  --pgn-typography-btn-line-height-base: var(--pgn-typography-input-btn-line-height-base);
+  --pgn-typography-btn-font-weight: var(--pgn-typography-font-weight-normal);
+  --pgn-typography-btn-font-size-lg: var(--pgn-typography-input-btn-font-size-lg);
+  --pgn-typography-btn-font-size-sm: var(--pgn-typography-input-btn-font-size-sm);
+  --pgn-typography-btn-font-size-base: var(--pgn-typography-input-btn-font-size-base);
+  --pgn-typography-btn-font-family: var(--pgn-typography-input-btn-font-family);
+  --pgn-spacing-btn-focus-border-gap: calc(var(--pgn-size-btn-focus-width) + var(--pgn-spacing-btn-focus-gap));
+  --pgn-spacing-btn-padding-x-sm: var(--pgn-spacing-input-btn-padding-sm-x);
+  --pgn-spacing-btn-padding-x-lg: var(--pgn-spacing-input-btn-padding-lg-x);
+  --pgn-spacing-btn-padding-x-base: var(--pgn-spacing-input-btn-padding-x);
+  --pgn-spacing-btn-padding-y-sm: var(--pgn-spacing-input-btn-padding-sm-y);
+  --pgn-spacing-btn-padding-y-lg: var(--pgn-spacing-input-btn-padding-lg-y);
+  --pgn-spacing-btn-padding-y-base: var(--pgn-spacing-input-btn-padding-y);
+  --pgn-size-btn-border-radius-sm: var(--pgn-size-border-radius-sm);
+  --pgn-size-btn-border-radius-lg: var(--pgn-size-border-radius-lg);
+  --pgn-size-btn-border-radius-base: var(--pgn-size-border-radius-base);
+  --pgn-typography-btn-line-height-lg: var(--pgn-typography-input-btn-line-height-lg);
+  --pgn-spacing-btn-focus-distance-to-border: calc(var(--pgn-spacing-btn-focus-border-gap) + var(--pgn-size-btn-border-width));
+  --pgn-size-btn-focus-border-radius: calc(var(--pgn-size-btn-border-radius-base) + var(--pgn-spacing-btn-focus-border-gap));
+  --pgn-size-btn-border-width: var(--pgn-size-input-btn-border-width);
+}

@@ -1,0 +1,26 @@
+/**
+ * Do not edit directly
+ * Generated on Wed, 01 Mar 2023 00:27:20 GMT
+ */
+
+:root {
+  --pgn-typography-nav-link-font-weight: 500;
+  --pgn-spacing-navbar-toggler-padding-x: .75rem;
+  --pgn-spacing-navbar-toggler-padding-y: .25rem;
+  --pgn-spacing-navbar-padding-x-nav-link: .5rem;
+  --pgn-spacing-nav-link-padding-x: 1rem;
+  --pgn-spacing-nav-link-padding-y: .5rem;
+  --pgn-size-navbar-nav-scroll-max-height: 75vh;
+  --pgn-size-nav-tabs-border-radius: 0;
+  --pgn-size-nav-tabs-border-width: 2px;
+  --pgn-typography-navbar-toggler-font-size: var(--pgn-typography-font-size-lg);
+  --pgn-typography-navbar-nav-link-height: calc(var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base) + .5rem * 2);
+  --pgn-typography-navbar-brand-font-size: var(--pgn-typography-font-size-lg);
+  --pgn-spacing-navbar-padding-x-base: var(--pgn-spacing-spacer-base);
+  --pgn-spacing-navbar-padding-y: calc(var(--pgn-spacing-spacer-base) / 2);
+  --pgn-spacing-nav-divider-margin-y: calc(var(--pgn-spacing-spacer-base) / 2);
+  --pgn-size-nav-pills-border-radius: var(--pgn-size-border-radius-base);
+  --pgn-spacing-navbar-brand-padding-y: calc((var(--pgn-typography-navbar-nav-link-height) - var(--pgn-size-navbar-brand-height)) / 2);
+  --pgn-size-navbar-toggler-border-radius: var(--pgn-size-btn-border-radius-base);
+  --pgn-size-navbar-brand-height: calc(var(--pgn-typography-navbar-brand-font-size) * var(--pgn-typography-line-height-base));
+}

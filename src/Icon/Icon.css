@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly
+ * Generated on Wed, 01 Mar 2023 00:27:20 GMT
+ */
+
+:root {
+  --pgn-size-icon-button-diameter-sm: 2.25rem;
+  --pgn-size-icon-button-diameter-md: 2.75rem;
+  --pgn-size-icon-lg: 1.75rem;
+  --pgn-size-icon-md: 1.5rem;
+  --pgn-size-icon-sm: 1.25rem;
+  --pgn-size-icon-inline: .8em;
+  --pgn-size-icon-button-diameter-inline: calc(var(--pgn-typography-line-height-base) + .1em);
+}

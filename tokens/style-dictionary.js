@@ -114,6 +114,32 @@ StyleDictionary.registerFormat({
   formatter: (args) => createCustomCSSVariables(args),
 });
 
+StyleDictionary.registerFormat({
+  name: 'tokens-to-components',
+  formatter({ dictionary, options, file }) {
+    // console.log('dictionary', dictionary);
+    const component = file.destination.slice(0, -4);
+    const filteredCoreTokens = dictionary.allTokens.filter(token => token.filePath.includes(`core/components/${component}`));
+
+    const variables = filteredCoreTokens.sort(sortByReference(dictionary)).map(token => {
+      let { value } = token;
+      const outputReferencesForToken = token.original.outputReferences === false ? false : options.outputReferences;
+
+      // console.log('token', filteredCoreTokens);
+      if (dictionary.usesReference(token.original.value) && outputReferencesForToken) {
+        const refs = dictionary.getReferences(token.original.value);
+        refs.forEach(ref => {
+          value = value.replace(ref.value, `var(--${ref.name})`);
+        });
+      }
+
+      return `  --${token.name}: ${value};`;
+    }).join('\n');
+
+    return `${fileHeader({ file })}:root {\n${variables}\n}\n`;
+  },
+});
+
 /**
  * Formatter to generate CSS utility classes.
  * Looks in ./src/utilities/ to get utility classes configuration, filters tokens by 'filters' object attributes

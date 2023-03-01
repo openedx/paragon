@@ -1,0 +1,17 @@
+/**
+ * Do not edit directly
+ * Generated on Tue, 28 Feb 2023 22:02:48 GMT
+ */
+
+:root {
+  --pgn-typography-alert-line-height: 1.5rem;
+  --pgn-typography-alert-font-size: .875rem;
+  --pgn-spacing-alert-icon-space: .8rem;
+  --pgn-spacing-alert-margin-bottom: 1rem;
+  --pgn-spacing-alert-padding-x: 1.5rem;
+  --pgn-spacing-alert-padding-y: 1.5rem;
+  --pgn-size-alert-border-width: 0;
+  --pgn-typography-alert-font-weight-link: var(--pgn-typography-font-weight-normal);
+  --pgn-size-alert-border-radius: var(--pgn-size-border-radius-base);
+  --pgn-spacing-alert-actions-gap: var(--pgn-spacing-spacer-3);
+}

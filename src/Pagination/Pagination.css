@@ -1,0 +1,29 @@
+/**
+ * Do not edit directly
+ * Generated on Wed, 01 Mar 2023 00:27:20 GMT
+ */
+
+:root {
+  --pgn-typography-pagination-line-height: 1.5rem;
+  --pgn-typography-pagination-font-size-sm: .875rem;
+  --pgn-spacing-pagination-margin-x: .5rem;
+  --pgn-spacing-pagination-padding-x-lg: 1.5rem;
+  --pgn-spacing-pagination-padding-x-sm: .6rem;
+  --pgn-spacing-pagination-padding-x-base: 1rem;
+  --pgn-spacing-pagination-padding-y-lg: .75rem;
+  --pgn-spacing-pagination-padding-y-sm: .8rem;
+  --pgn-spacing-pagination-padding-y-base: .625rem;
+  --pgn-size-pagination-focus-outline: 0;
+  --pgn-size-pagination-focus-border-width: .125rem;
+  --pgn-size-pagination-toggle-border-sm: .25rem;
+  --pgn-size-pagination-toggle-border-base: .3125rem;
+  --pgn-size-pagination-reduced-dropdown-min-width: 6rem;
+  --pgn-size-pagination-reduced-dropdown-max-height: 60vh;
+  --pgn-size-pagination-secondary-height-sm: 2.25rem;
+  --pgn-size-pagination-secondary-height-base: 2.75rem;
+  --pgn-size-pagination-icon-height: 2.25rem;
+  --pgn-size-pagination-icon-width: 2.25rem;
+  --pgn-size-pagination-border-radius-lg: var(--pgn-size-border-radius-lg);
+  --pgn-size-pagination-border-radius-sm: var(--pgn-size-border-radius-sm);
+  --pgn-size-pagination-border-width: var(--pgn-size-border-width);
+}
