@@ -6,9 +6,9 @@ const chroma = require('chroma-js');
 const { colorYiq, darken, lighten } = require('./sass-helpers');
 const cssUtilities = require('./css-utilities');
 
-const { formattedVariables, fileHeader, sortByReference } = StyleDictionary.formatHelpers;
+const { fileHeader, sortByReference } = StyleDictionary.formatHelpers;
 
-const colorTransform = (token) => {
+const colorTransform = (token, theme) => {
   const { value, modify = [], original } = token;
   const reservedColorValues = ['inherit', 'initial', 'revert', 'unset', 'currentColor'];
 
@@ -26,15 +26,8 @@ const colorTransform = (token) => {
           color = color.mix(otherColor, amount, 'rgb');
           break;
         case 'color-yiq': {
-          // find whether token belongs to any theme based on its location
-          // split full path by '/', check if 'themes' directory is a part of the path, if it is - the next nested
-          // directory is the theme name, otherwise use 'light' theme
-          const pathParts = token.filePath.split('/');
-          const themePartIndex = pathParts.findIndex(item => item === 'themes');
-          const themeVariant = themePartIndex === -1 ? 'light' : pathParts[themePartIndex + 1];
-
           const { light, dark, threshold } = modifier;
-          color = colorYiq(color, light, dark, threshold, themeVariant);
+          color = colorYiq(color, light, dark, threshold, theme);
           break;
         }
         case 'darken':
@@ -54,14 +47,18 @@ const colorTransform = (token) => {
 
 /**
  * Custom formatter that extends default css/variables format to allow specifying
- * 'outputReferences' per token (by default you are only able to specify it globally for all tokens)
+ * 1. 'outputReferences' per token (by default you are only able to specify it globally for all tokens)
+ * 2. 'theme' to output only theme's variables (e.g, 'light' or 'dark'), if theme is not provided - only
+ * core tokens are built.
  */
-const createCustomCSSVariables = (args, dir) => {
+const createCustomCSSVariables = (args, theme) => {
   const { dictionary, options, file } = args;
 
-  const filteredTokens = dictionary.allTokens.filter(token => token.filePath.includes(dir));
+  const outputTokens = theme
+    ? dictionary.allTokens.filter(token => token.filePath.includes(theme))
+    : dictionary.allTokens;
 
-  const variables = filteredTokens.sort(sortByReference(dictionary)).map(token => {
+  const variables = outputTokens.sort(sortByReference(dictionary)).map(token => {
     let { value } = token;
 
     const outputReferencesForToken = (token.original.outputReferences === false) ? false : options.outputReferences;
@@ -110,35 +107,11 @@ StyleDictionary.registerTransform({
 });
 
 /**
- * Overrides default scss/variables formatter to add new line at the end of file
- * to be compatible with our stylelint rules.
- */
-StyleDictionary.registerFormat({
-  name: 'scss/variables-with-new-line',
-  formatter({ dictionary, options, file }) {
-    const { outputReferences, themeable = false } = options;
-    return `${fileHeader({ file, commentStyle: 'short' })
-      + formattedVariables({
-        format: 'sass', dictionary, outputReferences, themeable,
-      })
-    }\n`;
-  },
-});
-
-/**
- * The custom formatter returns an array of formatted custom variables for the core styles Paragon.
+ * The custom formatter to create CSS variables for core tokens.
  */
 StyleDictionary.registerFormat({
   name: 'css/custom-variables',
-  formatter: (args) => createCustomCSSVariables(args, 'core'),
-});
-
-/**
- * The custom formatter returns an array of formatted custom variables for the light theme styles Paragon.
- */
-StyleDictionary.registerFormat({
-  name: 'light/custom-variables',
-  formatter: (args) => createCustomCSSVariables(args, 'light'),
+  formatter: (args) => createCustomCSSVariables(args),
 });
 
 /**
@@ -149,7 +122,7 @@ StyleDictionary.registerFormat({
  * 'utilityFunctionsToApply' list, those functions must be located in css-utilities.js module and return string.
  */
 StyleDictionary.registerFormat({
-  name: 'core/utility-classes',
+  name: 'css/utility-classes',
   formatter({ dictionary, file }) {
     const { utilities } = dictionary.properties;
 
@@ -210,4 +183,8 @@ StyleDictionary.registerFileHeader({
   ],
 });
 
-module.exports = StyleDictionary;
+module.exports = {
+  StyleDictionary,
+  createCustomCSSVariables,
+  colorTransform,
+};
