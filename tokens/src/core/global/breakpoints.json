@@ -1,12 +1,12 @@
 {
   "size": {
     "breakpoint": {
-      "xs": { "value": "0", "type": "dimension" },
-      "sm": { "value": "576px", "type": "dimension" },
-      "md": { "value": "768px", "type": "dimension" },
-      "lg": { "value": "992px", "type": "dimension" },
-      "xl": { "value": "1200px", "type": "dimension" },
-      "xxl": { "value": "1400px", "type": "dimension" }
+      "xs": { "value": "0", "type": "dimension", "description": "Starting value for extra-small breakpoint." },
+      "sm": { "value": "576px", "type": "dimension", "description": "Starting value for small breakpoint." },
+      "md": { "value": "768px", "type": "dimension", "description": "Starting value for medium breakpoint." },
+      "lg": { "value": "992px", "type": "dimension", "description": "Starting value for large breakpoint." },
+      "xl": { "value": "1200px", "type": "dimension", "description": "Starting value for extra-large breakpoint." },
+      "xxl": { "value": "1400px", "type": "dimension", "description": "Starting value for extra-extra-large breakpoint." }
     }
   }
 }

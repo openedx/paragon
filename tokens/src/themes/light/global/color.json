@@ -1,494 +1,566 @@
 {
   "color": {
-    "white": { "value": "#FFFFFF", "type": "color", "source": "$white" },
-    "black": { "value": "#000000", "type": "color", "source": "$black" },
-    "blue": { "value": "#23419F", "type": "color", "source": "$blue" },
-    "red": { "value": "#C32D3A", "type": "color", "source": "$red" },
-    "green": { "value": "#178253", "type": "color", "source": "$green" },
-    "yellow": { "value": "#FFD900", "type": "color", "source": "$yellow" },
-    "teal": { "value": "#006DAA", "type": "color", "source": "$teal" },
+    "white": { "value": "#FFFFFF", "type": "color", "source": "$white", "description": "White color." },
+    "black": { "value": "#000000", "type": "color", "source": "$black", "description": "Black color." },
+    "blue": { "value": "#23419F", "type": "color", "source": "$blue", "description": "Blue color." },
+    "red": { "value": "#C32D3A", "type": "color", "source": "$red", "description": "Red color." },
+    "green": { "value": "#178253", "type": "color", "source": "$green", "description": "Green color." },
+    "yellow": { "value": "#FFD900", "type": "color", "source": "$yellow", "description": "Yellow color." },
+    "teal": { "value": "#006DAA", "type": "color", "source": "$teal", "description": "Teal color." },
     "accent": {
-      "a": { "value": "#00BBF9", "type": "color", "source": "$accent-a" },
-      "b": { "value": "#FFEE88", "type": "color", "source": "$accent-b" }
+      "a": { "value": "#00BBF9", "type": "color", "source": "$accent-a", "description": "Accent-A color." },
+      "b": { "value": "#FFEE88", "type": "color", "source": "$accent-b", "description": "Accent-B color." }
     },
     "gray": {
-      "base": { "value": "#707070", "type": "color", "source": "$gray" },
-      "100": { "value": "#EBEBEB", "type": "color", "source": "$gray-100" },
-      "200": { "value": "#CCCCCC", "type": "color", "source": "$gray-200" },
-      "300": { "value": "#ADADAD", "type": "color", "source": "$gray-300" },
-      "400": { "value": "#8F8F8F", "type": "color", "source": "$gray-400" },
-      "500": { "value": "{color.gray.base}", "type": "color", "source": "$gray-500" },
-      "600": { "value": "#5C5C5C", "type": "color", "source": "$gray-600" },
-      "700": { "value": "#454545", "type": "color", "source": "$gray-700" },
-      "800": { "value": "#333333", "type": "color", "source": "$gray-800" },
-      "900": { "value": "#212529", "type": "color", "source": "$gray-900" }
+      "base": { "value": "#707070", "type": "color", "source": "$gray", "description": "Basic gray color." },
+      "100": { "value": "#EBEBEB", "type": "color", "source": "$gray-100", "description": "Gray color of level 100." },
+      "200": { "value": "#CCCCCC", "type": "color", "source": "$gray-200", "description": "Gray color of level 200." },
+      "300": { "value": "#ADADAD", "type": "color", "source": "$gray-300", "description": "Gray color of level 300." },
+      "400": { "value": "#8F8F8F", "type": "color", "source": "$gray-400", "description": "Gray color of level 400." },
+      "500": { "value": "{color.gray.base}", "type": "color", "source": "$gray-500", "description": "Gray color of level 500." },
+      "600": { "value": "#5C5C5C", "type": "color", "source": "$gray-600", "description": "Gray color of level 600." },
+      "700": { "value": "#454545", "type": "color", "source": "$gray-700", "description": "Gray color of level 700." },
+      "800": { "value": "#333333", "type": "color", "source": "$gray-800", "description": "Gray color of level 800." },
+      "900": { "value": "#212529", "type": "color", "source": "$gray-900", "description": "Gray color of level 900." }
     },
     "primary": {
-      "base": { "value": "#0A3055", "type": "color", "source": "$primary" },
+      "base": { "value": "#0A3055", "type": "color", "source": "$primary", "description": "Basic primary color." },
       "100": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-100",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
+        "description": "Primary color of level 100."
       },
       "200": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-200",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
+        "description": "Primary color of level 200."
       },
       "300": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-300",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50"}]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50"}],
+        "description": "Primary color of level 300."
       },
       "400": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-400",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
+        "description": "Primary color of level 400."
       },
-      "500": { "value": "{color.primary.base}", "type": "color", "source": "$primary-500" },
+      "500": { "value": "{color.primary.base}", "type": "color", "source": "$primary-500", "description": "Primary color of level 500." },
       "600": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-600",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
+        "description": "Primary color of level 600."
       },
       "700": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-700",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
+        "description": "Primary color of level 700."
       },
       "800": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
+        "description": "Primary color of level 800."
       },
       "900": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-900",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
+        "description": "Primary color of level 900."
       }
     },
     "secondary": {
-      "base": { "value": "{color.gray.700}", "type": "color", "source": "$secondary" },
-      "100": { 
+      "base": { "value": "{color.gray.700}", "type": "color", "source": "$secondary", "description": "Basic secondary color." },
+      "100": {
         "value": "{color.secondary.base}",
         "type": "color",
         "source": "$secondary-100",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
+        "description": "Secondary color of level 100."
       },
-      "200": { 
+      "200": {
         "value": "{color.secondary.base}",
         "type": "color",
         "source": "$secondary-200",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
+        "description": "Secondary color of level 200."
       },
-      "300": { 
+      "300": {
         "value": "{color.secondary.base}",
         "type": "color",
         "source": "$secondary-300",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
+        "description": "Secondary color of level 300."
       },
-      "400": { 
+      "400": {
         "value": "{color.secondary.base}",
         "type": "color",
         "source": "$secondary-400",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
+        "description": "Secondary color of level 400."
       },
-      "500": { "value": "{color.secondary.base}", "type": "color", "source": "$secondary-500"},
-      "600": { 
+      "500": { "value": "{color.secondary.base}", "type": "color", "source": "$secondary-500", "description": "Secondary color of level 500."},
+      "600": {
         "value": "{color.secondary.base}",
         "type": "color",
         "source": "$secondary-600",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
+        "description": "Secondary color of level 600."
       },
-      "700": { 
+      "700": {
         "value": "{color.secondary.base}",
         "type": "color",
         "source": "$secondary-700",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
+        "description": "Secondary color of level 700."
       },
-      "800": { 
+      "800": {
         "value": "{color.secondary.base}",
         "type": "color",
         "source": "$secondary-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
+        "description": "Secondary color of level 800."
       },
-      "900": { 
+      "900": {
         "value": "{color.secondary.base}",
         "type": "color",
         "source": "$secondary-900",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
+        "description": "Secondary color of level 900."
       }
     },
     "brand": {
-      "base": { "value": "#9D0054", "type": "color", "source": "$brand" },
-      "100": { 
+      "base": { "value": "#9D0054", "type": "color", "source": "$brand", "description": "Basic brand color." },
+      "100": {
         "value": "{color.brand.base}",
         "type": "color",
         "source": "$brand-100",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
+        "description": "Brand color of level 100."
       },
-      "200": { 
+      "200": {
         "value": "{color.brand.base}",
         "type": "color",
         "source": "$brand-200",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
+        "description": "Brand color of level 200."
       },
-      "300": { 
+      "300": {
         "value": "{color.brand.base}",
         "type": "color",
         "source": "$brand-300",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
+        "description": "Brand color of level 300."
       },
-      "400": { 
+      "400": {
         "value": "{color.brand.base}",
         "type": "color",
         "source": "$brand-400",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
+        "description": "Brand color of level 400."
       },
-      "500": { "value": "{color.brand.base}", "type": "color", "source": "$brand-500" },
-      "600": { 
+      "500": { "value": "{color.brand.base}", "type": "color", "source": "$brand-500", "description": "Brand color of level 500." },
+      "600": {
         "value": "{color.brand.base}",
         "type": "color",
         "source": "$brand-600",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
+        "description": "Brand color of level 600."
       },
-      "700": { 
+      "700": {
         "value": "{color.brand.base}",
         "type": "color",
         "source": "$brand-700",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
+        "description": "Brand color of level 700."
       },
-      "800": { 
+      "800": {
         "value": "{color.brand.base}",
         "type": "color",
         "source": "$brand-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
+        "description": "Brand color of level 800."
       },
-      "900": { 
+      "900": {
         "value": "{color.brand.base}",
         "type": "color",
         "source": "$brand-900",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
+        "description": "Brand color of level 900."
       }
     },
     "success": {
-      "base": { "value": "{color.green}", "type": "color", "source": "$success" },
-      "100": { 
+      "base": { "value": "{color.green}", "type": "color", "source": "$success", "description": "Basic success color." },
+      "100": {
         "value": "{color.success.base}",
         "type": "color",
         "source": "$success-100",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
+        "description": "Success color of level 100."
       },
-      "200": { 
+      "200": {
         "value": "{color.success.base}",
         "type": "color",
         "source": "$success-200",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
+        "description": "Success color of level 200."
       },
-      "300": { 
+      "300": {
         "value": "{color.success.base}",
         "type": "color",
         "source": "$success-300",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
+        "description": "Success color of level 300."
       },
-      "400": { 
+      "400": {
         "value": "{color.success.base}",
         "type": "color",
         "source": "$success-400",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
+        "description": "Success color of level 400."
       },
-      "500": { "value": "{color.success.base}", "type": "color", "source": "$success-500" },
-      "600": { 
+      "500": { "value": "{color.success.base}", "type": "color", "source": "$success-500", "description": "Success color of level 500." },
+      "600": {
         "value": "{color.success.base}",
         "type": "color",
         "source": "$success-600",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
+        "description": "Success color of level 600."
       },
-      "700": { 
+      "700": {
         "value": "{color.success.base}",
         "type": "color",
         "source": "$success-700",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
+        "description": "Success color of level 700."
       },
-      "800": { 
+      "800": {
         "value": "{color.success.base}",
         "type": "color",
         "source": "$success-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
+        "description": "Success color of level 800."
       },
-      "900": { 
+      "900": {
         "value": "{color.success.base}",
         "type": "color",
         "source": "$success-900",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
+        "description": "Success color of level 900."
       }
     },
     "info": {
-      "base": { "value": "{color.teal}", "type": "color", "source": "$info" },
-      "100": { 
+      "base": { "value": "{color.teal}", "type": "color", "source": "$info", "description": "Basic info color." },
+      "100": {
         "value": "{color.info.base}",
         "type": "color",
         "source": "$info-100",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
+        "description": "Info color of level 100."
       },
-      "200": { 
+      "200": {
         "value": "{color.info.base}",
         "type": "color",
         "source": "$info-200",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
+        "description": "Info color of level 200."
       },
-      "300": { 
+      "300": {
         "value": "{color.info.base}",
         "type": "color",
         "source": "$info-300",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
+        "description": "Info color of level 300."
       },
-      "400": { 
+      "400": {
         "value": "{color.info.base}",
         "type": "color",
         "source": "$info-400",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
+        "description": "Info color of level 400."
       },
-      "500": { "value": "{color.info.base}", "type": "color", "source": "$info-500" },
-      "600": { 
+      "500": { "value": "{color.info.base}", "type": "color", "source": "$info-500", "description": "Info color of level 500." },
+      "600": {
         "value": "{color.info.base}",
         "type": "color",
         "source": "$info-600",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
+        "description": "Info color of level 600."
       },
-      "700": { 
+      "700": {
         "value": "{color.info.base}",
         "type": "color",
         "source": "$info-700",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
+        "description": "Info color of level 700."
       },
-      "800": { 
+      "800": {
         "value": "{color.info.base}",
         "type": "color",
         "source": "$info-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25"}]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25"}],
+        "description": "Info color of level 800."
       },
-      "900": { 
+      "900": {
         "value": "{color.info.base}",
         "type": "color",
         "source": "$info-900",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
+        "description": "Info color of level 900."
       }
     },
     "warning": {
-      "base": { "value": "{color.yellow}", "type": "color", "source": "$warning" },
-      "100": { 
+      "base": { "value": "{color.yellow}", "type": "color", "source": "$warning", "description": "Basic warning color." },
+      "100": {
         "value": "{color.warning.base}",
         "type": "color",
         "source": "$warning-100",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
+        "description": "Warning color of level 100."
       },
-      "200": { 
+      "200": {
         "value": "{color.warning.base}",
         "type": "color",
         "source": "$warning-200",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
+        "description": "Warning color of level 200."
       },
-      "300": { 
+      "300": {
         "value": "{color.warning.base}",
         "type": "color",
         "source": "$warning-300",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
+        "description": "Warning color of level 300."
       },
-      "400": { 
+      "400": {
         "value": "{color.warning.base}",
         "type": "color",
         "source": "$warning-400",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
+        "description": "Warning color of level 400."
       },
-      "500": { "value": "{color.warning.base}", "type": "color", "source": "$warning-500" },
-      "600": { 
+      "500": { "value": "{color.warning.base}", "type": "color", "source": "$warning-500", "description": "Warning color of level 500." },
+      "600": {
         "value": "{color.warning.base}",
         "type": "color",
         "source": "$warning-600",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
+        "description": "Warning color of level 600."
       },
-      "700": { 
+      "700": {
         "value": "{color.warning.base}",
         "type": "color",
         "source": "$warning-700",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
+        "description": "Warning color of level 700."
       },
-      "800": { 
+      "800": {
         "value": "{color.warning.base}",
         "type": "color",
         "source": "$warning-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
+        "description": "Warning color of level 800."
       },
-      "900": { 
+      "900": {
         "value": "{color.warning.base}",
         "type": "color",
         "source": "$warning-900",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
+        "description": "Warning color of level 900."
       }
     },
     "danger": {
-      "base": { "value": "{color.red}", "type": "color", "source": "$danger" },
-      "100": { 
+      "base": { "value": "{color.red}", "type": "color", "source": "$danger", "description": "Basic danger color." },
+      "100": {
         "value": "{color.danger.base}",
         "type": "color",
         "source": "$danger-100",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
+        "description": "Danger color of level 100."
       },
-      "200": { 
+      "200": {
         "value": "{color.danger.base}",
         "type": "color",
         "source": "$danger-200",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
+        "description": "Danger color of level 200."
       },
-      "300": { 
+      "300": {
         "value": "{color.danger.base}",
         "type": "color",
         "source": "$danger-300",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
+        "description": "Danger color of level 300."
       },
-      "400": { 
+      "400": {
         "value": "{color.danger.base}",
         "type": "color",
         "source": "$danger-400",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
+        "description": "Danger color of level 400."
       },
-      "500": { "value": "{color.danger.base}", "type": "color", "source": "$danger-500" },
-      "600": { 
+      "500": { "value": "{color.danger.base}", "type": "color", "source": "$danger-500", "description": "Danger color of level 500." },
+      "600": {
         "value": "{color.danger.base}",
         "type": "color",
         "source": "$danger-600",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
+        "description": "Danger color of level 600."
       },
-      "700": { 
+      "700": {
         "value": "{color.danger.base}",
         "type": "color",
         "source": "$danger-700",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
+        "description": "Danger color of level 700."
       },
-      "800": { 
+      "800": {
         "value": "{color.danger.base}",
         "type": "color",
         "source": "$danger-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
+        "description": "Danger color of level 800."
       },
-      "900": { 
+      "900": {
         "value": "{color.danger.base}",
         "type": "color",
         "source": "$danger-900",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
+        "description": "Danger color of level 900."
       }
     },
     "light": {
-      "base": { "value": "#E1DDDB", "type": "color",  "source": "$light" },
-      "100": { 
+      "base": { "value": "#E1DDDB", "type": "color",  "source": "$light", "description": "Basic light color." },
+      "100": {
         "value": "{color.light.base}",
         "type": "color",
         "source": "$light-100",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
+        "description": "Light color of level 100."
       },
-      "200": { 
+      "200": {
         "value": "{color.light.base}",
         "type": "color",
         "source": "$light-200",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
+        "description": "Light color of level 200."
       },
-      "300": { 
+      "300": {
         "value": "{color.light.base}",
         "type": "color",
         "source": "$light-300",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
+        "description": "Light color of level 300."
       },
-      "400": { 
+      "400": {
         "value": "{color.light.base}",
         "type": "color",
         "source": "$light-400",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
+        "description": "Light color of level 400."
       },
-      "500": { "value": "{color.light.base}", "type": "color", "source": "$light-500" },
-      "600": { 
+      "500": { "value": "{color.light.base}", "type": "color", "source": "$light-500", "description": "Light color of level 500." },
+      "600": {
         "value": "{color.light.base}",
         "type": "color",
         "source": "$light-600",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
+        "description": "Light color of level 600."
       },
-      "700": { 
+      "700": {
         "value": "{color.light.base}",
         "type": "color",
         "source": "$light-700",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
+        "description": "Light color of level 700."
       },
-      "800": { 
+      "800": {
         "value": "{color.light.base}",
         "type": "color",
         "source": "$light-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
+        "description": "Light color of level 800."
       },
-      "900": { 
+      "900": {
         "value": "{color.light.base}",
         "type": "color",
         "source": "$light-900",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
+        "description": "Light color of level 900."
       }
     },
     "dark": {
-      "base": { "value": "#273F2F", "type": "color", "source": "$dark" },
-      "100": { 
+      "base": { "value": "#273F2F", "type": "color", "source": "$dark", "description": "Basic dark color." },
+      "100": {
         "value": "{color.dark.base}",
         "type": "color",
         "source": "$dark-100",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
+        "description": "Dark color of level 100."
       },
-      "200": { 
+      "200": {
         "value": "{color.dark.base}",
         "type": "color",
         "source": "$dark-200",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
+        "description": "Dark color of level 200."
       },
-      "300": { 
+      "300": {
         "value": "{color.dark.base}",
         "type": "color",
         "source": "$dark-300",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
+        "description": "Dark color of level 300."
       },
-      "400": { 
+      "400": {
         "value": "{color.dark.base}",
         "type": "color",
         "source": "$dark-400",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
+        "description": "Dark color of level 400."
       },
-      "500": { "value": "{color.dark.base}", "type": "color", "source": "$dark-500" },
-      "600": { 
+      "500": { "value": "{color.dark.base}", "type": "color", "source": "$dark-500", "description": "Dark color of level 500." },
+      "600": {
         "value": "{color.dark.base}",
         "type": "color",
         "source": "$dark-600",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
+        "description": "Dark color of level 600."
       },
-      "700": { 
+      "700": {
         "value": "{color.dark.base}",
         "type": "color",
         "source": "$dark-700",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
+        "description": "Info color of level 700."
       },
-      "800": { 
+      "800": {
         "value": "{color.dark.base}",
         "type": "color",
         "source": "$dark-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
+        "description": "Dark color of level 800."
       },
-      "900": { 
+      "900": {
         "value": "{color.dark.base}",
         "type": "color",
         "source": "$dark-900",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }]
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
+        "description": "Dark color of level 900."
       }
     }
   }
