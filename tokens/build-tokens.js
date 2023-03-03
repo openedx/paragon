@@ -7,15 +7,14 @@ program
   .version('0.0.1')
   .description('CLI to build design tokens for various platforms (currently only CSS is supported) from Paragon Design Tokens.')
   .option('--build-dir <char>', 'A path to directory where to put files with built tokens, must end with a /.', './build/')
-  .option('--source <char>', 'A path where to look for additional tokens that will get merged with Paragon ones, accepts glob patterns, e.g. "mytokens/**/*.json". Only json files are allowed.')
+  .option('--source <char>', 'A path where to look for additional tokens that will get merged with Paragon ones, must be a path to root directory of the token files that contains "root" and "themes" subdirectories.')
   .parse();
 
 const { buildDir, source: tokensSource } = program.opts();
-const source = tokensSource ? [tokensSource] : [];
 
 const coreConfig = {
   include: [path.resolve(__dirname, 'src/core/**/*.json')],
-  source,
+  source: tokensSource ? [`${tokensSource}/core/**/*,json`] : [],
   platforms: {
     css: {
       prefix: 'pgn',
@@ -47,7 +46,8 @@ const coreConfig = {
 
 const getStyleDictionaryConfig = (themeVariant) => ({
   ...coreConfig,
-  source: [path.resolve(__dirname, `src/themes/${themeVariant}/**/*.json`), ...source],
+  include: [...coreConfig.include, path.resolve(__dirname, `src/themes/${themeVariant}/**/*.json`)],
+  source: tokensSource ? [`${tokensSource}/themes/${themeVariant}/**/*.json`] : [],
   transform: {
     'color/sass-color-functions': {
       ...StyleDictionary.transform['color/sass-color-functions'],
