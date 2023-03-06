@@ -1,60 +1,67 @@
-const path = require('path');
 const sass = require('sass');
 const fs = require('fs');
 const { pathToFileURL } = require('url');
 
 const compileStyleSheets = (path, output) => {
-  return sass.compile(path, {
-    style: output,
-    sourceMap: true,
-    sourceMapIncludeSources: true,
-    importers: [{
-      // An importer that redirects relative URLs starting with '~' to 'node_modules'.
-      findFileUrl(url) {
-        if (!url.startsWith('~')) return null;
-        return new URL(url.substring(1), `${pathToFileURL('node_modules')}/node_modules`);
-      }
-    }]
-  });
+    return sass.compile(path, {
+        style: output,
+        sourceMap: true,
+        sourceMapIncludeSources: true,
+        importers: [{
+            // An importer that redirects relative URLs starting with '~' to 'node_modules'.
+            findFileUrl(url) {
+                if (!url.startsWith('~')) return null;
+                return new URL(url.substring(1), `${pathToFileURL('node_modules')}/node_modules`);
+            }
+        }]
+    });
 }
 
-const compileAndWriteCSSFiles = (endPath, initialPath, outputFormat = 'expanded') => {
-  if (!endPath.endsWith('map')) {
-    return fs.writeFileSync(endPath, compileStyleSheets(initialPath, outputFormat).css);
-  }
+fs.writeFileSync(
+    './dist/core.css',
+    compileStyleSheets('./scss/core/core.scss').css
+);
 
-  return fs.writeFileSync(endPath, JSON.stringify(compileStyleSheets(initialPath).sourceMap));
-}
+fs.writeFileSync(
+    './dist/core.min.css',
+    compileStyleSheets('./scss/core/core.scss', 'compressed').css
+);
 
-const buildCSSExpandedFile = (fileName, filePath) => {
-  return compileAndWriteCSSFiles(`./dist/${fileName}.css`, filePath);
-};
+fs.appendFileSync(
+    './dist/core.css',
+        compileStyleSheets(`./css/core/custom-media-breakpoints.css`).css
+);
 
-const buildCSSMinifiedFile = (fileName, filePath) => {
-  return compileAndWriteCSSFiles(`./dist/${fileName}.min.css`, filePath, 'compressed');
-};
-
-const buildCSSSourceMapFile = (fileName, filePath) => {
-  return compileAndWriteCSSFiles(`./dist/${fileName}.css.map`, filePath);
-};
-
-const PATH_TO_CORE_SCSS = './scss/core/core.scss';
-
-buildCSSExpandedFile('core', PATH_TO_CORE_SCSS);
-buildCSSMinifiedFile('core', PATH_TO_CORE_SCSS);
-buildCSSSourceMapFile('core', PATH_TO_CORE_SCSS);
+fs.writeFileSync(
+    './dist/core.css.map',
+    JSON.stringify(compileStyleSheets('./scss/core/core.scss').sourceMap)
+);
 
 const compileThemeStyleSheets = (themeVariant) => {
-  const PATH_TO_VARIABLES = `./css/${themeVariant}/variables.css`;
-  const PATH_TO_UTILITY_CLASSES = `./css/${themeVariant}/utility-classes.css`;
-  
-  buildCSSExpandedFile(themeVariant, PATH_TO_VARIABLES);
-  buildCSSExpandedFile(themeVariant, PATH_TO_VARIABLES);
+    fs.writeFileSync(
+        `./dist/${themeVariant}.css`,
+        compileStyleSheets(`./css/${themeVariant}/variables.css`).css
+    );
 
-  buildCSSMinifiedFile(themeVariant, PATH_TO_UTILITY_CLASSES);
-  buildCSSMinifiedFile(themeVariant, PATH_TO_UTILITY_CLASSES);
+    fs.writeFileSync(
+        `./dist/${themeVariant}.min.css`,
+        compileStyleSheets(`./css/${themeVariant}/variables.css`, 'compressed').css
+    );
 
-  buildCSSSourceMapFile(themeVariant, `./dist/${themeVariant}.min.css`);
+    fs.appendFileSync(
+        `./dist/${themeVariant}.css`,
+        `\n${compileStyleSheets(`./css/${themeVariant}/utility-classes.css`).css}`
+    );
+
+    fs.writeFileSync(
+        `./css/${themeVariant}/${themeVariant}.css`,
+        compileStyleSheets(`./dist/${themeVariant}.css`).css
+    );
+
+    fs.writeFileSync(
+        `./dist/${themeVariant}.css.map`,
+        JSON.stringify(compileStyleSheets(`./dist/${themeVariant}.min.css`).sourceMap)
+    );
 };
 
 const THEME_VARIANTS = ['light'];
