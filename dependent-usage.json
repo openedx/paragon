@@ -1,5 +1,5 @@
 {
-  "lastModified": 1678111724788,
+  "lastModified": 1678198160566,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -728,7 +728,7 @@
       }
     },
     {
-      "version": "20.27.0",
+      "version": "20.28.4",
       "name": "@edx/frontend-app-account",
       "repository": {
         "type": "git",
@@ -10530,12 +10530,12 @@
           },
           {
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
-            "line": 52,
+            "line": 64,
             "column": 16
           },
           {
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
-            "line": 84,
+            "line": 96,
             "column": 18
           },
           {
@@ -10937,7 +10937,7 @@
           },
           {
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
-            "line": 48,
+            "line": 60,
             "column": 6
           },
           {
@@ -11021,7 +11021,7 @@
           },
           {
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
-            "line": 75,
+            "line": 87,
             "column": 22
           },
           {
@@ -11051,12 +11051,12 @@
           },
           {
             "filePath": "src/discussions/post-comments/comments/comment/Comment.jsx",
-            "line": 169,
+            "line": 172,
             "column": 12
           },
           {
             "filePath": "src/discussions/post-comments/comments/comment/Comment.jsx",
-            "line": 192,
+            "line": 195,
             "column": 20
           },
           {
@@ -11427,12 +11427,12 @@
           },
           {
             "filePath": "src/discussions/post-comments/comments/comment/Comment.jsx",
-            "line": 40,
+            "line": 43,
             "column": 71
           },
           {
             "filePath": "src/discussions/post-comments/comments/comment/Comment.jsx",
-            "line": 41,
+            "line": 44,
             "column": 72
           },
           {
@@ -11452,31 +11452,31 @@
           },
           {
             "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 41,
+            "line": 42,
             "column": 71
           },
           {
             "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 42,
+            "line": 43,
             "column": 72
           },
           {
             "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 43,
+            "line": 44,
             "column": 62
           }
         ],
         "MoreHoriz": [
           {
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
-            "line": 51,
+            "line": 63,
             "column": 13
           }
         ],
         "ModalPopup": [
           {
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
-            "line": 59,
+            "line": 71,
             "column": 8
           },
           {
@@ -11488,14 +11488,14 @@
         "Dropdown.Divider": [
           {
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
-            "line": 72,
+            "line": 84,
             "column": 21
           }
         ],
         "Dropdown.Item": [
           {
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
-            "line": 74,
+            "line": 86,
             "column": 16
           },
           {
@@ -11664,7 +11664,7 @@
           },
           {
             "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 137,
+            "line": 155,
             "column": 10
           }
         ],
@@ -11715,12 +11715,12 @@
           },
           {
             "filePath": "src/discussions/post-comments/comments/comment/Reply.jsx",
-            "line": 90,
+            "line": 91,
             "column": 12
           },
           {
             "filePath": "src/discussions/post-comments/comments/comment/Reply.jsx",
-            "line": 100,
+            "line": 101,
             "column": 10
           },
           {
@@ -12650,13 +12650,13 @@
           },
           {
             "filePath": "src/components/GradebookFilters/index.jsx",
-            "line": 61,
-            "column": 14
+            "line": 31,
+            "column": 12
           },
           {
             "filePath": "src/components/GradebookFilters/index.jsx",
-            "line": 65,
-            "column": 20
+            "line": 35,
+            "column": 18
           },
           {
             "filePath": "src/components/GradesView/FilterMenuToggle.jsx",
@@ -12714,13 +12714,13 @@
         "Button": [
           {
             "filePath": "src/components/GradebookFilters/AssignmentGradeFilter/index.jsx",
-            "line": 59,
-            "column": 10
+            "line": 38,
+            "column": 8
           },
           {
             "filePath": "src/components/GradebookFilters/CourseGradeFilter/index.jsx",
-            "line": 66,
-            "column": 10
+            "line": 36,
+            "column": 8
           },
           {
             "filePath": "src/components/GradebookHeader/index.jsx",
@@ -12768,32 +12768,47 @@
             "column": 8
           }
         ],
-        "Collapsible": [
-          {
-            "filePath": "src/components/GradebookFilters/index.jsx",
-            "line": 44,
-            "column": 4
-          }
-        ],
         "IconButton": [
           {
             "filePath": "src/components/GradebookFilters/index.jsx",
-            "line": 62,
-            "column": 10
+            "line": 32,
+            "column": 8
           }
         ],
         "Close": [
           {
             "filePath": "src/components/GradebookFilters/index.jsx",
-            "line": 66,
-            "column": 17
+            "line": 36,
+            "column": 15
+          }
+        ],
+        "Collapsible": [
+          {
+            "filePath": "src/components/GradebookFilters/index.jsx",
+            "line": 42,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/GradebookFilters/index.jsx",
+            "line": 54,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/GradebookFilters/index.jsx",
+            "line": 62,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/GradebookFilters/index.jsx",
+            "line": 70,
+            "column": 6
           }
         ],
         "Form.Checkbox": [
           {
             "filePath": "src/components/GradebookFilters/index.jsx",
-            "line": 96,
-            "column": 12
+            "line": 75,
+            "column": 8
           }
         ],
         "Form.Group": [
@@ -12806,6 +12821,11 @@
             "filePath": "src/components/GradebookFilters/SelectGroup.jsx",
             "line": 16,
             "column": 4
+          },
+          {
+            "filePath": "src/components/GradesView/ImportGradesButton/index.jsx",
+            "line": 28,
+            "column": 8
           }
         ],
         "Form.Label": [
@@ -12840,6 +12860,11 @@
             "filePath": "src/components/GradesView/EditModal/OverrideTable/ReasonInput.jsx",
             "line": 31,
             "column": 6
+          },
+          {
+            "filePath": "src/components/GradesView/ImportGradesButton/index.jsx",
+            "line": 29,
+            "column": 10
           }
         ],
         "ModalDialog": [
@@ -12914,33 +12939,14 @@
         ],
         "Form": [
           {
-            "filePath": "src/components/GradesView/ImportGradesButton.jsx",
-            "line": 62,
-            "column": 8
-          }
-        ],
-        "FormGroup": [
-          {
-            "filePath": "src/components/GradesView/ImportGradesButton.jsx",
-            "line": 63,
-            "column": 10
+            "filePath": "src/components/GradesView/ImportGradesButton/index.jsx",
+            "line": 27,
+            "column": 6
           },
           {
-            "filePath": "src/components/GradesView/ScoreViewInput.jsx",
-            "line": 17,
-            "column": 2
-          }
-        ],
-        "FormControl": [
-          {
-            "filePath": "src/components/GradesView/ImportGradesButton.jsx",
-            "line": 64,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/GradesView/ScoreViewInput.jsx",
-            "line": 19,
-            "column": 4
+            "filePath": "src/components/GradesView/ImportGradesButton/index.test.jsx",
+            "line": 39,
+            "column": 21
           }
         ],
         "Toast": [
@@ -12950,10 +12956,24 @@
             "column": 6
           }
         ],
+        "FormGroup": [
+          {
+            "filePath": "src/components/GradesView/ScoreViewInput.jsx",
+            "line": 17,
+            "column": 2
+          }
+        ],
         "FormLabel": [
           {
             "filePath": "src/components/GradesView/ScoreViewInput.jsx",
             "line": 18,
+            "column": 4
+          }
+        ],
+        "FormControl": [
+          {
+            "filePath": "src/components/GradesView/ScoreViewInput.jsx",
+            "line": 19,
             "column": 4
           }
         ],
@@ -27618,7 +27638,7 @@
           },
           {
             "filePath": "src/components/ProductDetail/ProductDetailHero/index.jsx",
-            "line": 24,
+            "line": 26,
             "column": 8
           }
         ],
