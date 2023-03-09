@@ -7,53 +7,44 @@ const postCSSMinify = require('postcss-minify');
 const { pathToFileURL } = require('url');
 
 /**
- * The function that compiles SCSS files
- * and writes CSS output in the `dist` directory.
+ * Compiles SCSS file with sass and postcss, writes result to 'dist' directory which includes:
+ * 1. Resulting CSS file
+ * 2. Map file
+ * 2. Minified version of resulting CSS file
  *
- * @param {string} name - name to the stylesheet
- * @param {string} path - path to the stylesheet
+ * @param {string} name - base of the resulting files
+ * @param {string} path - path to the SCSS stylesheet
  */
 const compileAndWriteStyleSheets = (name, path) => {
-    const compiledStyleSheet =  sass.compile(path, {
-        importers: [{
-            // An importer that redirects relative URLs starting with '~' to 'node_modules'.
-            findFileUrl(url) {
-                if (!url.startsWith('~')) return null;
-                return new URL(url.substring(1), `${pathToFileURL('node_modules')}/node_modules`);
-            }
-        }]
+  const compiledStyleSheet = sass.compile(path, {
+    importers: [{
+      // An importer that redirects relative URLs starting with '~' to 'node_modules'.
+      findFileUrl(url) {
+        if (!url.startsWith('~')) {
+          return null;
+        }
+        return new URL(url.substring(1), `${pathToFileURL('node_modules')}/node_modules`)
+      }
+    }]
+  });
+
+  postCSS([postCSSCustomMedia(), postCSSImport()])
+    .process(compiledStyleSheet.css, { from: path, map: { inline: false } })
+    .then(result => {
+      fs.writeFileSync(`./dist/${name}.css`, result.css);
+      fs.writeFileSync(`./dist/${name}.css.map`, result.map.toString());
     });
 
-    convertAndWriteCSSWithPostCSS(name, path, compiledStyleSheet);
-}
-
-/**
- * Converted media queries with CSS custom variables,
- * minified the output CSS file and created a CSS source map.
- *
- * @param {string} name - name to the stylesheet
- * @param {string} path - path to the stylesheet
- * @param {Object} source - compiled stylesheet object
- */
-const convertAndWriteCSSWithPostCSS = (name, path, source) => {
-    postCSS([postCSSCustomMedia(), postCSSImport()])
-        .process(source.css, { from: path })
-        .then(outputStyleSheet => fs.writeFileSync(`./dist/${name}.css`, outputStyleSheet.css));
-
-    postCSS([postCSSCustomMedia(), postCSSImport(), postCSSMinify()])
-        .process(source.css, { from: path })
-        .then(outputStyleSheet => fs.writeFileSync(`./dist/${name}.min.css`, outputStyleSheet.css));
-
-    postCSS([postCSSCustomMedia(), postCSSImport()])
-        .process(source.css, { from: path, map: { inline: false } })
-        .then(outputStyleSheet => fs.writeFileSync(`./dist/${name}.css.map`, JSON.stringify(outputStyleSheet.map)));
+  postCSS([postCSSCustomMedia(), postCSSImport(), postCSSMinify()])
+    .process(compiledStyleSheet.css, { from: path })
+    .then(result => fs.writeFileSync(`./dist/${name}.min.css`, result.css));
 }
 
 const compileThemeStyleSheets = (themeVariant) => {
-    compileAndWriteStyleSheets(themeVariant, `./css/${themeVariant}/${themeVariant}.css`);
+  compileAndWriteStyleSheets(themeVariant, `./styles/css/${themeVariant}/index.css`);
 };
 
-compileAndWriteStyleSheets('core', './scss/core/core.scss');
+compileAndWriteStyleSheets('core', './styles/scss/core/core.scss');
 
 const THEME_VARIANTS = ['light'];
 THEME_VARIANTS.forEach(themeVariant => compileThemeStyleSheets(themeVariant));
