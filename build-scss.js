@@ -10,9 +10,9 @@ const { pathToFileURL } = require('url');
  * Compiles SCSS file with sass and postcss, writes result to 'dist' directory which includes:
  * 1. Resulting CSS file
  * 2. Map file
- * 2. Minified version of resulting CSS file
+ * 3. Minified version of resulting CSS file
  *
- * @param {string} name - base of the resulting files
+ * @param {string} name - base name of the resulting files
  * @param {string} path - path to the SCSS stylesheet
  */
 const compileAndWriteStyleSheets = (name, path) => {
