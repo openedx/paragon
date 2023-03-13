@@ -16,7 +16,7 @@
             "description": "Sans-serif font family."
           }
         },
-        "serif": { "value": "serif", "source": "$font-family-serif", "description": "Serif font style" },
+        "serif": { "value": "serif", "source": "$font-family-serif", "description": "Serif font family." },
         "monospace": {
           "value": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\",  \"Courier New\", monospace",
           "type": "fontFamily",
@@ -25,7 +25,7 @@
         }
       },
       "size": {
-        "base": { "value": "1.125rem", "type": "dimension", "source": "$font-size-base", "description": "Basic font size." },
+        "base": { "value": "1.125rem", "type": "dimension", "source": "$font-size-base", "description": "Base font size." },
         "lg": { "value": "1.4063rem", "type": "dimension", "source": "$font-size-lg", "description": "Large font size." },
         "sm": { "value": ".875rem", "type": "dimension", "source": "$font-size-sm", "description": "Small font size." },
         "xs": { "value": ".75rem", "type": "dimension", "source": "$font-size-xs", "description": "Extra-small font size." },
