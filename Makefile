@@ -13,8 +13,6 @@ build:
 
 export TRANSIFEX_RESOURCE = paragon
 transifex_langs = "ar,ca,es_419,fr,he,id,ko_KR,pl,pt_BR,ru,th,uk,zh_CN"
-i18n = ./src/i18n
-transifex_input = $(i18n)/transifex_input.json
 
 NPM_TESTS=build i18n_extract lint test
 
@@ -36,10 +34,6 @@ i18n.extract:
 
 extract_translations: | requirements i18n.extract
 
-# Despite the name, we actually need this target to detect changes in the incoming translated message files as well.
-detect_changed_source_translations:
-	# Checking for changed translations...
-	git diff --exit-code $(i18n)
 
 # Pushes translations to Transifex.  You must run make extract_translations first.
 push_translations:
