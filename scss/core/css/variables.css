@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Wed, 01 Mar 2023 00:27:20 GMT
+ * Generated on Wed, 15 Mar 2023 01:15:01 GMT
  */
 
 :root {
@@ -31,6 +31,7 @@
   --pgn-color-progress-bar-bg: #00000000;
   --pgn-color-product-tour-checkpoint-arrow-border-transparent: #00000000;
   --pgn-color-popover-border: #00000033;
+  --pgn-color-overflow-scroll-opacity-mask-transparent: #00000066;
   --pgn-color-menu-border-hover: #00000000;
   --pgn-color-menu-border-active: #00000000;
   --pgn-color-menu-border-base: #00000000;
@@ -184,6 +185,8 @@
   --pgn-other-chip-opacity-disabled: .3;
   --pgn-other-btn-disabled-opacity: .65;
   --pgn-other-form-feedback-tooltip-opacity: .9;
+  --pgn-other-form-control-custom-file-content: Browse;
+  --pgn-other-form-control-custom-file-lang: en;
   --pgn-other-form-control-range-track-cursor: pointer;
   --pgn-other-form-control-cursor: auto;
   --pgn-elevation-box-shadow-centered-5: 0 0 2.5rem rgba(0, 0, 0, .15), 0 0 3rem rgba(0, 0, 0, .15);

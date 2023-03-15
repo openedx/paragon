@@ -7,16 +7,16 @@ function ComponentVariablesTable({ rawStylesheet }: ComponentVariablesTableProps
 
   useEffect(() => {
     const bodyStyles = getComputedStyle(document.body);
-    const variablesList = rawStylesheet.trim().split('\n').filter((row) => row.startsWith('$'));
+    const variablesList = rawStylesheet.filter((row) => row.trim().match(/var\((\w|-|_)*\)/g));
 
-    const tableRows = variablesList.map(row => {
-      const [property, value] = row.split(':').map((item) => item.trim());
-      const extractedCSSVariables = value.match(/(?<=var?\()(.*)(?=\))/g);
+    const tableRows = variablesList.map(variable => {
+      const variableName = variable.trim();
+      const extractedCSSVariables = variableName.match(/(?<=var?\()(.*)(?=\))/g);
+
       const computedValue = extractedCSSVariables ? bodyStyles.getPropertyValue(extractedCSSVariables[0]) : '';
 
       return {
-        propertyName: <code>{property}</code>,
-        propertyValue: <code>{value}</code>,
+        variableName: <code>{variableName}</code>,
         computedValue: <code>{computedValue}</code>,
       };
     });
@@ -30,12 +30,8 @@ function ComponentVariablesTable({ rawStylesheet }: ComponentVariablesTableProps
       itemCount={tableData.length}
       columns={[
         {
-          Header: 'SCSS Property',
-          accessor: 'propertyName',
-        },
-        {
-          Header: 'Value',
-          accessor: 'propertyValue',
+          Header: 'CSS Variable',
+          accessor: 'variableName',
         },
         {
           Header: 'Computed Value',
@@ -49,12 +45,11 @@ function ComponentVariablesTable({ rawStylesheet }: ComponentVariablesTableProps
 }
 
 interface ComponentVariablesTableProps {
-  rawStylesheet: string,
+  rawStylesheet: any,
 }
 
 interface TableRowData {
-  propertyName: JSX.Element,
-  propertyValue: JSX.Element,
+  variableName: JSX.Element,
   computedValue: JSX.Element,
 }
 

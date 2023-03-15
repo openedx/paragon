@@ -1,13 +1,12 @@
-@import "variables";
-@import "~bootstrap/scss/toasts";
+@import "bootstrap-toast";
 
 .toast {
-  background-color: $toast-background-color;
-  box-shadow: $toast-box-shadow;
+  background-color: var(--pgn-color-toast-bg);
+  box-shadow: var(--pgn-elevation-toast-box-shadow);
   margin: 0;
   padding: 1rem;
   position: relative;
-  border-radius: $toast-border-radius;
+  border-radius: var(--pgn-size-toast-border-radius);
   z-index: 2;
 
   &.show {
@@ -47,7 +46,7 @@
   }
 
   @media only screen and (min-width: 768px) {
-    min-width: $toast-max-width;
-    max-width: $toast-max-width;
+    min-width: var(--pgn-size-toast-max-width);
+    max-width: var(--pgn-size-toast-max-width);
   }
 }

@@ -12,7 +12,7 @@
   .prism-code {
     font-size: $font-size-base;
     font-family: monospace;
-    border-radius: $input-border-radius;
+    border-radius: var(--pgn-size-form-input-radius-border-base);
   }
 
   .pgn-doc__code-block-error {
