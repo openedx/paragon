@@ -12,7 +12,6 @@ const css = require('css');
 
 const fs = require('fs');
 const { INSIGHTS_PAGES } = require('./src/config');
-const { getThemesSCSSVariables, processComponentSCSSVariables } = require('./theme-utils');
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -87,14 +86,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create component detail pages.
   const components = result.data.allMdx.edges;
 
-  const themesSCSSVariables = await getThemesSCSSVariables();
-
   // you'll call `createPage` for each result
   // eslint-disable-next-line no-restricted-syntax
   for (const { node } of components) {
     const componentDir = node.slug.split('/')[0];
-    const variablesPath = path.resolve(__dirname, `../src/${componentDir}/_variables.scss`);
-    let scssVariablesData = {};
     const cssVariablesData = [];
 
     const pathToComponents = fs.readdirSync(`../src/${componentDir}`);
@@ -112,11 +107,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     });
 
-    if (fs.existsSync(variablesPath)) {
-      // eslint-disable-next-line no-await-in-loop
-      scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
-    }
-
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
@@ -126,7 +116,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       // You can use the values in this context in
       // our page layout component
       context: {
-        id: node.id, components: node.frontmatter.components || [], scssVariablesData, cssVariablesData,
+        id: node.id, components: node.frontmatter.components || [], cssVariablesData,
       },
     });
   }

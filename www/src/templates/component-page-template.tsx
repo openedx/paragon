@@ -87,7 +87,7 @@ export default function PageTemplate({
 
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
-    if (cssVariablesData.length && !tableOfContents.items?.includes()) {
+    if (cssVariablesData?.length && !tableOfContents.items?.includes()) {
       tableOfContents.items?.push({
         title: cssVariablesTitle,
         url: `#${cssVariablesUrl}`,
