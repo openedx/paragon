@@ -107,7 +107,7 @@ select.form-control {
 }
 
 .col-form-label-lg {
-  padding-top: calc(#{var(--pgn-spacing-form-input-padding-y-lg)-y-lg} + #{var(--pgn-size-form-input-width-border)});
+  padding-top: calc(#{var(--pgn-spacing-form-input-padding-y-lg)} + #{var(--pgn-size-form-input-width-border)});
   padding-bottom: calc(#{var(--pgn-spacing-form-input-padding-y-lg)} + #{var(--pgn-size-form-input-width-border)});
 
   @include font-size(var(--pgn-typography-form-input-font-size-lg));

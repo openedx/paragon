@@ -49,7 +49,10 @@
 
   &.has-prepended-node {
     .form-control {
-      padding-inline-start: calc(#{var(--pgn-spacing-form-input-padding-x-base)} + #{var(--pgn-size-form-control-icon-width)});
+      padding-inline-start:
+        calc(
+          #{var(--pgn-spacing-form-input-padding-x-base)} + #{var(--pgn-size-form-control-icon-width)}
+        );
 
       [dir="rtl"] & {
         background-position: left var(--pgn-spacing-form-control-select-icon-padding) center;
@@ -57,25 +60,40 @@
     }
 
     .form-control-lg {
-      padding-inline-start: calc(#{var(--pgn-spacing-form-input-padding-x-lg)} + #{var(--pgn-size-form-control-icon-width)});
+      padding-inline-start:
+        calc(
+          #{var(--pgn-spacing-form-input-padding-x-lg)} + #{var(--pgn-size-form-control-icon-width)}
+        );
     }
 
     .form-control-sm {
-      padding-inline-start: calc(#{var(--pgn-spacing-form-input-padding-x-sm)} + #{var(--pgn-size-form-control-icon-width)});
+      padding-inline-start:
+        calc(
+          #{var(--pgn-spacing-form-input-padding-x-sm)} + #{var(--pgn-size-form-control-icon-width)}
+        );
     }
   }
 
   &.has-appended-node {
     .form-control {
-      padding-inline-end: calc(#{var(--pgn-spacing-form-input-padding-x-base)} + #{var(--pgn-size-form-control-icon-width)});
+      padding-inline-end:
+        calc(
+          #{var(--pgn-spacing-form-input-padding-x-base)} + #{var(--pgn-size-form-control-icon-width)}
+        );
     }
 
     .form-control-lg {
-      padding-inline-end: calc(#{var(--pgn-spacing-form-input-padding-x-lg)} + #{var(--pgn-size-form-control-icon-width)});
+      padding-inline-end:
+        calc(
+          #{var(--pgn-spacing-form-input-padding-x-lg)} + #{var(--pgn-size-form-control-icon-width)}
+        );
     }
 
     .form-control-sm {
-      padding-inline-end: calc(#{var(--pgn-spacing-form-input-padding-x-sm)} + #{var(--pgn-size-form-control-icon-width)});
+      padding-inline-end:
+        calc(
+          #{var(--pgn-spacing-form-input-padding-x-sm)} + #{var(--pgn-size-form-control-icon-width)}
+        );
     }
   }
 
@@ -120,7 +138,10 @@
   &.pgn__form-control-decorator-trailing {
     inset-inline-end: 0;
     padding-inline-start: calc(#{var(--pgn-spacing-form-input-padding-x-base)} / 2);
-    padding-inline-end: calc(#{var(--pgn-spacing-form-input-padding-y-sm)} - calc(2 * #{var(--pgn-size-form-input-width-border)}));
+    padding-inline-end:
+      calc(
+        #{var(--pgn-spacing-form-input-padding-y-sm)} - calc(2 * #{var(--pgn-size-form-input-width-border)})
+      );
   }
 
   .pgn__form-control-decorator-group-lg & {
@@ -365,7 +386,7 @@ select.form-control {
   border:
     solid var(--pgn-size-form-control-indicator-border-width)
     var(--pgn-color-form-control-indicator-border);
-  border-radius: var(--pgn-size-form-control-border-checkbox-indicator-radius)radius;
+  border-radius: var(--pgn-size-form-control-border-checkbox-indicator-radius) radius;
   margin-inline-end: var(--pgn-spacing-form-control-gutter);
   background-position: center;
 

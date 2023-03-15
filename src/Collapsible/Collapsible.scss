@@ -21,7 +21,9 @@
     }
 
     &[aria-expanded="true"] {
-      border-radius: calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)}) calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)}) 0 0;
+      border-radius:
+        calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)})
+        calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)}) 0 0;
       border-color: var(--pgn-color-card-border-base);
       transition: none;
       text-align: start;

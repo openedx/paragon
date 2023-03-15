@@ -22,13 +22,17 @@
     &:first-child {
       border-top-width: 0;
 
-      @include border-top-radius(calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)}));
+      @include border-top-radius(
+        calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)})
+      );
     }
 
     &:last-child {
       border-bottom-width: 0;
 
-      @include border-bottom-radius(calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)}));
+      @include border-bottom-radius(
+        calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)})
+      );
     }
   }
 

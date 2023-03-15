@@ -37,7 +37,7 @@ export interface IPageTemplate {
     }
   },
   pageContext: {
-    cssVariablesData: any,
+    cssVariablesData: string[],
   }
 }
 
@@ -53,7 +53,6 @@ export default function PageTemplate({
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
   const { settings } = useContext(SettingsContext);
 
-  // console.log('cssVariablesData', cssVariablesData);
   const components = componentNodes.nodes
     .reduce((acc: { [x: string]: { displayName: string }; }, currentValue: { displayName: string; }) => {
       acc[currentValue.displayName] = currentValue;

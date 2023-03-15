@@ -102,7 +102,9 @@
     z-index: 5;
     display: none;
     max-width: 100%; // Contain to parent when possible
-    padding: var(--pgn-spacing-form-control-select-feedback-tooltip-padding-y) var(--pgn-spacing-form-control-select-feedback-tooltip-padding-x);
+    padding:
+      var(--pgn-spacing-form-control-select-feedback-tooltip-padding-y)
+      var(--pgn-spacing-form-control-select-feedback-tooltip-padding-x);
     margin-top: .1rem;
 
     @include font-size(var(--pgn-typography-form-feedback-tooltip-font-size));
@@ -133,7 +135,7 @@
       border-color: $color;
 
       @if $enable-validation-icons {
-        padding-right: var(--pgn-size-form-input-height-inner-base) !important; // stylelint-disable-line declaration-no-important
+        padding-right: var(--pgn-size-form-input-height-inner-base) !important;
         background-image: $icon;
         background-repeat: no-repeat;
         background-position: right var(--pgn-size-form-input-height-inner-quarter) center;
@@ -151,7 +153,7 @@
   select.form-control {
     @include form-validation-state-selector($state) {
       @if $enable-validation-icons {
-        padding-right: calc(#{var(--pgn-spacing-form-input-padding-x-base)} * 4) !important; // stylelint-disable-line declaration-no-important
+        padding-right: calc(#{var(--pgn-spacing-form-input-padding-x-base)} * 4) !important;
         background-position: right calc(#{var(--pgn-spacing-form-input-padding-x-base)} * 2) center;
       }
     }
@@ -162,7 +164,9 @@
     @include form-validation-state-selector($state) {
       @if $enable-validation-icons {
         padding-right: var(--pgn-size-form-input-height-inner-base);
-        background-position: top var(--pgn-size-form-input-height-inner-quarter) right var(--pgn-size-form-input-height-inner-quarter);
+        background-position:
+          top var(--pgn-size-form-input-height-inner-quarter)
+          right var(--pgn-size-form-input-height-inner-quarter);
       }
     }
   }
@@ -173,8 +177,10 @@
 
       @if $enable-validation-icons {
         padding-right: var(--pgn-spacing-form-control-select-feedback-icon-padding-right) !important;
-        // stylelint-disable-next-line max-line-length
-        background: var(--pgn-other-content-form-control-select-bg), var(--pgn-color-form-control-select-bg-base) $icon var(--pgn-spacing-form-control-select-feedback-icon-position) / var(--pgn-size-form-control-select-feedback-icon) no-repeat;
+        background:
+          var(--pgn-other-content-form-control-select-bg),
+          var(--pgn-color-form-control-select-bg-base) $icon
+          var(--pgn-spacing-form-control-select-feedback-icon-position) / var(--pgn-size-form-control-select-feedback-icon) no-repeat; // stylelint-disable-line max-line-length
       }
 
       &:focus {

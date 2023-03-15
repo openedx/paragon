@@ -98,10 +98,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const cssVariablesData = [];
 
     const pathToComponents = fs.readdirSync(`../src/${componentDir}`);
+
     pathToComponents.forEach(componentFile => {
       if (componentFile.endsWith('.scss')) {
         const fileData = fs.readFileSync(`../src/${componentDir}/${componentFile}`, 'utf-8');
         const customCSSVariables = fileData.match(/var\((\w|-|_)*\)/g);
+
         customCSSVariables?.forEach(variable => {
           if (!cssVariablesData.includes(variable)) {
             cssVariablesData.push(variable);

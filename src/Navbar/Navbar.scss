@@ -29,11 +29,12 @@
   display: inline-block;
   padding-top: var(--pgn-spacing-navbar-brand-padding-y);
   padding-bottom: var(--pgn-spacing-navbar-brand-padding-y);
-  margin-right: var(--pgn-spacing-navbar-padding-x-base)-x;
+  margin-right: var(--pgn-spacing-navbar-padding-x-base);
   line-height: inherit;
   white-space: nowrap;
 
   @include font-size(var(--pgn-typography-navbar-brand-font-size));
+
   @include hover-focus() {
     text-decoration: none;
   }
@@ -159,7 +160,6 @@
 
         .navbar-collapse {
           display: flex !important;
-
           flex-basis: auto;
         }
 
@@ -212,6 +212,7 @@
 
   .navbar-text {
     color: var(--pgn-color-navbar-light-text);
+
     a {
       color: var(--pgn-color-navbar-light-active);
 
@@ -263,6 +264,7 @@
 
   .navbar-text {
     color: var(--pgn-color-navbar-dark-text);
+
     a {
       color: var(--pgn-color-navbar-dark-active);
 

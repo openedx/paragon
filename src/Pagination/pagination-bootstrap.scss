@@ -1,5 +1,6 @@
 .pagination {
   display: flex;
+
   @include list-unstyled();
   @include border-radius();
 }
@@ -8,7 +9,7 @@
   position: relative;
   display: block;
   padding: var(--pgn-spacing-pagination-padding-y-base) var(--pgn-spacing-pagination-padding-x-base);
-  margin-left: -var(--pgn-size-pagination-border-width);
+  margin-left: calc(var(--pgn-size-pagination-border-width) * -1);
   line-height: var(--pgn-typography-pagination-line-height);
   color: var(--pgn-color-pagination-text-base);
   text-decoration: if($link-decoration == none, null, none);
@@ -34,9 +35,11 @@
   &:first-child {
     .page-link {
       margin-left: 0;
+
       @include border-left-radius($border-radius);
     }
   }
+
   &:last-child {
     .page-link {
       @include border-right-radius($border-radius);
@@ -53,22 +56,28 @@
   &.disabled .page-link {
     color: var(--pgn-color-pagination-text-disabled);
     pointer-events: none;
-    // Opinionated: remove the "hand" cursor set previously for .page-link
     cursor: auto;
     background-color: var(--pgn-color-pagination-bg-disabled);
     border-color: var(--pgn-color-pagination-border-disabled);
   }
 }
 
-
-//
-// Sizing
-//
-
 .pagination-lg {
-  @include pagination-size(var(--pgn-spacing-pagination-padding-y-lg), var(--pgn-spacing-pagination-padding-x-lg), $font-size-lg, $line-height-lg, var(--pgn-size-pagination-border-radius-lg));
+  @include pagination-size(
+    var(--pgn-spacing-pagination-padding-y-lg),
+    var(--pgn-spacing-pagination-padding-x-lg),
+    $font-size-lg,
+    $line-height-lg,
+    var(--pgn-size-pagination-border-radius-lg)
+  );
 }
 
 .pagination-sm {
-  @include pagination-size(var(--pgn-spacing-pagination-padding-y-sm), var(--pgn-spacing-pagination-padding-x-sm), $font-size-sm, $line-height-sm, var(--pgn-size-pagination-border-radius-sm));
+  @include pagination-size(
+    var(--pgn-spacing-pagination-padding-y-sm),
+    var(--pgn-spacing-pagination-padding-x-sm),
+    $font-size-sm,
+    $line-height-sm,
+    var(--pgn-size-pagination-border-radius-sm)
+  );
 }

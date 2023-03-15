@@ -1,8 +1,9 @@
 .pgn__checkpoint {
   position: absolute;
   background: var(--pgn-color-product-tour-checkpoint-bg);
-  border-top: var(--pgn-size-product-tour-checkpoint-width-border)
-              solid var(--pgn-color-product-tour-checkpoint-border);
+  border-top:
+    var(--pgn-size-product-tour-checkpoint-width-border)
+    solid var(--pgn-color-product-tour-checkpoint-border);
   border-radius: $border-radius;
   padding: map_get($spacers, 4);
   box-shadow: 0 .25rem .5rem var(--pgn-color-product-tour-checkpoint-box-shadow);
@@ -94,7 +95,7 @@
 }
 
 .pgn__checkpoint[data-popper-placement^="top"] > #pgn__checkpoint-arrow {
-  left: calc(var(--pgn-size-product-tour-checkpoint-width-arrow) * -1) !important; // Override PopperJS arrow placement
+  left: calc(var(--pgn-size-product-tour-checkpoint-width-arrow) * -1) !important;
   bottom: 1px;
 
   [dir="rtl"] & {
@@ -102,14 +103,18 @@
   }
 
   &::after {
-    border-bottom: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                    var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
-    border-top: solid var(--pgn-size-product-tour-checkpoint-arrow-top)
-                var(--pgn-color-product-tour-checkpoint-arrow-border-top);
-    border-left: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                  var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
-    border-right: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                  var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-bottom:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-top:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-top)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-top);
+    border-left:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-right:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
     filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
     -webkit-filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
   }
@@ -117,17 +122,21 @@
 
 .pgn__checkpoint[data-popper-placement^="bottom"] > #pgn__checkpoint-arrow {
   top: -36px;
-  left: calc(var(--pgn-size-product-tour-checkpoint-width-arrow) * -1) !important; // Override PopperJS arrow placement
+  left: calc(var(--pgn-size-product-tour-checkpoint-width-arrow) * -1) !important;
 
   &::after {
-    border-bottom: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                    var(--pgn-color-product-tour-checkpoint-border);
-    border-top: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
-    border-left: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                  var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
-    border-right: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                  var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-bottom:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-border);
+    border-top:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-left:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-right:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
   }
 }
 
@@ -136,14 +145,18 @@
   right: 1px;
 
   &::after {
-    border-bottom: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                    var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
-    border-top: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
-    border-left: solid var(--pgn-size-product-tour-checkpoint-arrow-top)
-                  var(--pgn-color-product-tour-checkpoint-arrow-border-top);
-    border-right: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                  var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-bottom:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-top:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-left:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-top)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-top);
+    border-right:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
     filter: drop-shadow(3px 1px 2px rgba(0, 0, 0, .1));
   }
 }
@@ -154,14 +167,18 @@
 
   &::after {
     left: calc(-2 * var(--pgn-size-product-tour-checkpoint-width-arrow));
-    border-bottom: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                    var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
-    border-top: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
-    border-left: solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
-                  var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
-    border-right: solid var(--pgn-size-product-tour-checkpoint-arrow-top)
-                  var(--pgn-color-product-tour-checkpoint-arrow-border-top);
+    border-bottom:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-top:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-left:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-right:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-top)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-top);
     filter: drop-shadow(-3px 1px 2px rgba(0, 0, 0, .1));
   }
 }

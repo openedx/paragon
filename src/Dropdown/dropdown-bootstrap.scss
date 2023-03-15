@@ -1,4 +1,3 @@
-// The dropdown wrapper (`<div>`)
 .dropup,
 .dropright,
 .dropdown,
@@ -9,30 +8,37 @@
 .dropdown-toggle {
   white-space: nowrap;
 
-  // Generate the caret automatically
   @include caret();
 }
 
-// The dropdown menu
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
   z-index: $zindex-dropdown;
-  display: none; // none by default, but block on "open" of the menu
+  display: none;
   float: left;
   min-width: var(--pgn-size-dropdown-min-width);
   padding: var(--pgn-spacing-dropdown-padding-y-base) var(--pgn-spacing-dropdown-padding-x-base);
-  margin: var(--pgn-spacing-dropdown-spacer) 0 0; // override default ul
-  @include font-size(var(--pgn-typography-dropdown-font-size));
+  margin: var(--pgn-spacing-dropdown-spacer) 0 0;
   color: var(--pgn-color-dropdown-text);
-  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  text-align: left;
   list-style: none;
   background-color: var(--pgn-color-dropdown-bg);
   background-clip: padding-box;
   border: var(--pgn-size-dropdown-border-width) solid var(--pgn-color-dropdown-border);
+
+  @include font-size(var(--pgn-typography-dropdown-font-size));
   @include border-radius(var(--pgn-size-dropdown-border-radius-base));
   @include box-shadow(var(--pgn-elevation-dropdown-box-shadow));
+
+  &[x-placement^="top"],
+  &[x-placement^="right"],
+  &[x-placement^="bottom"],
+  &[x-placement^="left"] {
+    right: auto;
+    bottom: auto;
+  }
 }
 
 @each $breakpoint in map-keys($grid-breakpoints) {
@@ -51,8 +57,6 @@
   }
 }
 
-// Allow for dropdowns to go bottom up (aka, dropup-menu)
-// Just add .dropup after the standard .dropdown class and you're set.
 .dropup {
   .dropdown-menu {
     top: auto;
@@ -77,6 +81,7 @@
 
   .dropdown-toggle {
     @include caret(right);
+
     &::after {
       vertical-align: 0;
     }
@@ -94,47 +99,30 @@
 
   .dropdown-toggle {
     @include caret(left);
+
     &::before {
       vertical-align: 0;
     }
   }
 }
 
-// When Popper is enabled, reset the basic dropdown position
-// stylelint-disable-next-line no-duplicate-selectors
-.dropdown-menu {
-  &[x-placement^="top"],
-  &[x-placement^="right"],
-  &[x-placement^="bottom"],
-  &[x-placement^="left"] {
-    right: auto;
-    bottom: auto;
-  }
-}
-
-// Dividers (basically an `<hr>`) within the dropdown
 .dropdown-divider {
   @include nav-divider(var(--pgn-color-dropdown-divider-bg), var(--pgn-spacing-dropdown-divider-margin-y), true);
 }
 
-// Links, buttons, and more within the dropdown menu
-//
-// `<button>`-specific styles are denoted with `// For <button>s`
 .dropdown-item {
   display: block;
-  width: 100%; // For `<button>`s
+  width: 100%;
   padding: var(--pgn-spacing-dropdown-padding-y-item) var(--pgn-spacing-dropdown-padding-x-item);
   clear: both;
   font-weight: $font-weight-normal;
   color: var(--pgn-color-dropdown-link-base);
-  text-align: inherit; // For `<button>`s
+  text-align: inherit;
   text-decoration: if($link-decoration == none, null, none);
-  white-space: nowrap; // prevent links from randomly breaking onto new lines
-  background-color: transparent; // For `<button>`s
-  border: 0; // For `<button>`s
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
 
-  // Prevent dropdown overflow if there's no padding
-  // See https://github.com/twbs/bootstrap/pull/27703
   @if var(--pgn-spacing-dropdown-padding-y-base) == 0 {
     &:first-child {
       @include border-top-radius(var(--pgn-size-dropdown-border-radius-inner));
@@ -148,6 +136,7 @@
   @include hover-focus() {
     color: var(--pgn-color-dropdown-link-hover-base);
     text-decoration: none;
+
     @include gradient-bg(var(--pgn-color-dropdown-link-hover-bg));
   }
 
@@ -155,6 +144,7 @@
   &:active {
     color: var(--pgn-color-dropdown-link-active-base);
     text-decoration: none;
+
     @include gradient-bg(var(--pgn-color-dropdown-link-active-bg));
   }
 
@@ -163,7 +153,7 @@
     color: var(--pgn-color-dropdown-link-disabled);
     pointer-events: none;
     background-color: transparent;
-    // Remove CSS gradients if they're enabled
+
     @if $enable-gradients {
       background-image: none;
     }
@@ -174,17 +164,17 @@
   display: block;
 }
 
-// Dropdown section headers
+
 .dropdown-header {
   display: block;
   padding: var(--pgn-spacing-dropdown-padding-header);
-  margin-bottom: 0; // for use with heading elements
-  @include font-size($font-size-sm);
+  margin-bottom: 0;
   color: var(--pgn-color-dropdown-header);
-  white-space: nowrap; // as with > li > a
+  white-space: nowrap;
+
+  @include font-size($font-size-sm);
 }
 
-// Dropdown text
 .dropdown-item-text {
   display: block;
   padding: var(--pgn-spacing-dropdown-padding-y-item) var(--pgn-spacing-dropdown-padding-x-item);

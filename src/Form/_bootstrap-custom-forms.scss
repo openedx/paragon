@@ -210,7 +210,10 @@
   .custom-control-input:checked ~ .custom-control-label {
     &::after {
       background-color: var(--pgn-color-form-control-indicator-bg-base);
-      transform: translateX(calc(#{var(--pgn-size-form-control-switch-width)} - #{var(--pgn-size-form-control-indicator-base)}));
+      transform:
+        translateX(calc(
+          #{var(--pgn-size-form-control-switch-width)} - #{var(--pgn-size-form-control-indicator-base)}
+        ));
     }
   }
 
@@ -233,7 +236,11 @@
   width: 100%;
   height: var(--pgn-size-form-control-select-height-base);
   // stylelint-disable-next-line max-line-length
-  padding: var(--pgn-spacing-form-control-select-padding-y-base) (var(--pgn-spacing-form-control-select-padding-x-base) + var(--pgn-spacing-form-control-select-indicator-padding)) var(--pgn-spacing-form-control-select-padding-y-base) var(--pgn-spacing-form-control-select-padding-x-base);
+  padding:
+    var(--pgn-spacing-form-control-select-padding-y-base)
+    (var(--pgn-spacing-form-control-select-padding-x-base) + var(--pgn-spacing-form-control-select-indicator-padding))
+    var(--pgn-spacing-form-control-select-padding-y-base)
+    var(--pgn-spacing-form-control-select-padding-x-base);
   font-family: var(--pgn-typography-form-control-select-font-family);
   font-weight: var(--pgn-typography-form-control-select-font-weight);
   line-height: var(--pgn-typography-form-control-select-line-height);
@@ -252,7 +259,10 @@
     outline: 0;
 
     @if $enable-shadows {
-      @include box-shadow(var(--pgn-elevation-form-control-select-border-base), var(--pgn-elevation-form-control-select-border-focus));
+      @include box-shadow(
+        var(--pgn-elevation-form-control-select-border-base),
+        var(--pgn-elevation-form-control-select-border-focus)
+      );
     }
 
     @else {
@@ -364,7 +374,7 @@
   height: var(--pgn-size-form-control-file-height-base);
   padding: var(--pgn-spacing-form-control-file-padding-y) var(--pgn-spacing-form-control-file-padding-x);
   overflow: hidden;
-  font-family: var(--pgn-typography-form-control-file-font-family)-font-family;
+  font-family: var(--pgn-typography-form-control-file-font-family);
   font-weight: var(--pgn-typography-form-control-file-font-weight);
   line-height: var(--pgn-typography-form-control-file-line-height);
   color: var(--pgn-color-form-control-file-base);
@@ -389,7 +399,10 @@
     border-left: inherit;
 
     @include gradient-bg(var(--pgn-color-form-control-file-button-bg));
-    @include border-radius(0 var(--pgn-size-form-control-file-border-radius) var(--pgn-size-form-control-file-border-radius) 0);
+    @include border-radius(
+      0 var(--pgn-size-form-control-file-border-radius)
+      var(--pgn-size-form-control-file-border-radius) 0
+    );
   }
 }
 
@@ -401,7 +414,10 @@
 
 .custom-range {
   width: 100%;
-  height: calc(var(--pgn-size-form-control-range-thumb-height) + calc(#{var(--pgn-size-form-control-range-thumb-focus-width)} * 2));
+  height:
+    calc(
+      var(--pgn-size-form-control-range-thumb-height) + calc(
+        #{var(--pgn-size-form-control-range-thumb-focus-width)} * 2));
   padding: 0; // Need to reset padding
   background-color: transparent;
   appearance: none;
@@ -423,7 +439,11 @@
   &::-webkit-slider-thumb {
     width: var(--pgn-size-form-control-range-thumb-width);
     height: var(--pgn-size-form-control-range-thumb-height);
-    margin-top: calc((#{var(--pgn-size-form-control-range-track-height)} - #{var(--pgn-size-form-control-range-thumb-height)}) * .5); // Webkit specific
+    margin-top:
+      calc(
+        (#{var(--pgn-size-form-control-range-track-height)} - #{var(--pgn-size-form-control-range-thumb-height)}) * .5
+      ); // Webkit specific
+
     border: var(--pgn-size-form-control-range-thumb-border-base);
     appearance: none;
     transition: var(--pgn-transition-form-control);
@@ -481,8 +501,8 @@
     width: var(--pgn-size-form-control-range-thumb-width);
     height: var(--pgn-size-form-control-range-thumb-height);
     margin-top: 0; // Edge specific
-    margin-right: var(--pgn-size-form-control-range-thumb-focus-width); // Workaround that overflowed box-shadow is hidden.
-    margin-left: var(--pgn-size-form-control-range-thumb-focus-width);  // Workaround that overflowed box-shadow is hidden.
+    margin-right: var(--pgn-size-form-control-range-thumb-focus-width);
+    margin-left: var(--pgn-size-form-control-range-thumb-focus-width);
     border: var(--pgn-size-form-control-range-thumb-border-base);
     appearance: none;
     transition: var(--pgn-transition-form-control);

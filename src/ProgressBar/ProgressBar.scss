@@ -50,7 +50,10 @@
         display: block;
         background: var(--pgn-color-primary-500);
         position: absolute;
-        top: calc(var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2);
+        top:
+          calc(
+            var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2
+          );
         right: calc(var(--pgn-size-progress-bar-threshold-circle) / -2);
         width: var(--pgn-size-progress-bar-threshold-circle);
         height: var(--pgn-size-progress-bar-threshold-circle);
@@ -67,7 +70,10 @@
         display: block;
         background: var(--pgn-color-success-500);
         position: absolute;
-        top: calc(var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2);
+        top:
+          calc(
+            var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2
+          );
         right: calc(var(--pgn-size-progress-bar-threshold-circle) / -2);
         width: var(--pgn-size-progress-bar-threshold-circle);
         height: var(--pgn-size-progress-bar-threshold-circle);
@@ -84,7 +90,10 @@
         display: block;
         background: var(--pgn-color-danger-500);
         position: absolute;
-        top: calc(var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2);
+        top:
+          calc(
+            var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2
+          );
         right: calc(var(--pgn-size-progress-bar-threshold-circle) / -2);
         width: var(--pgn-size-progress-bar-threshold-circle);
         height: var(--pgn-size-progress-bar-threshold-circle);
@@ -101,7 +110,10 @@
         display: block;
         background: var(--pgn-color-accent-b);
         position: absolute;
-        top: calc(var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2);
+        top:
+          calc(
+            var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2
+          );
         right: calc(var(--pgn-size-progress-bar-threshold-circle) / -2);
         width: var(--pgn-size-progress-bar-threshold-circle);
         height: var(--pgn-size-progress-bar-threshold-circle);

@@ -147,7 +147,7 @@
     border-top: var(--pgn-size-carousel-indicator-height-area-hit) solid transparent;
     border-bottom: var(--pgn-size-carousel-indicator-height-area-hit) solid transparent;
     opacity: .5;
-    transition: var(--pgn-transition-carousel-indicator)-transition;
+    transition: var(--pgn-transition-carousel-indicator);
   }
 
   .active {

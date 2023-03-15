@@ -7,7 +7,7 @@ function ComponentVariablesTable({ rawStylesheet }: ComponentVariablesTableProps
 
   useEffect(() => {
     const bodyStyles = getComputedStyle(document.body);
-    const variablesList = rawStylesheet.filter((row) => row.trim().match(/var\((\w|-|_)*\)/g));
+    const variablesList = rawStylesheet.filter((row) => row.match(/var\((\w|-|_)*\)/g));
 
     const tableRows = variablesList.map(variable => {
       const variableName = variable.trim();
@@ -45,7 +45,7 @@ function ComponentVariablesTable({ rawStylesheet }: ComponentVariablesTableProps
 }
 
 interface ComponentVariablesTableProps {
-  rawStylesheet: any,
+  rawStylesheet: string[],
 }
 
 interface TableRowData {
