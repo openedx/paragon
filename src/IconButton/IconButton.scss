@@ -11,8 +11,24 @@
   display: inline-flex;
   justify-content: center;
   border: none;
-  background-color: var(--pgn-color-icon-button-bg);
-  color: var(--pgn-color-icon-button-accent);
+  background-color: var(--btn-icon-bg-color, var(--pgn-color-icon-button-bg));
+  color: var(--btn-icon-color, var(--pgn-color-icon-button-accent));
+
+  &.hover,
+  &:hover,
+  &.active,
+  &:active {
+    background-color: var(--btn-icon-hover-bg-color, inherit);
+    color: var(--btn-icon-hover-color, inherit);
+  }
+
+  &.focus,
+  &:focus {
+    outline: 2px transparent;
+    background-color: var(--btn-icon-focus-bg-color, var(--pgn-color-icon-button-bg));
+    color: var(--btn-icon-focus-color, (--pgn-color-icon-button-accent));
+    box-shadow: var(--btn-icon-box-shadow, none);
+  }
 
   &.btn-icon-sm {
     @include btn-icon-size(var(--pgn-size-icon-button-diameter-sm));
@@ -55,748 +71,370 @@
 
   // PRIMARY
   &.btn-icon-primary {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-primary);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-primary);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-primary);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-primary);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-primary-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-primary-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-primary-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-primary-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-primary-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-primary-base);
   }
 
   &.btn-icon-inverse-primary {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-primary);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-accent);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-primary-inverse-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-inverse-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-primary-inverse-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-primary-inverse-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-primary-inverse-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-primary-inverse-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-primary-inverse);
   }
 
   &.btn-icon-primary-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-primary);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-primary);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-primary);
-      color: var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-primary-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-primary-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-primary-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-primary-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-primary-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-primary-active);
   }
 
   &.btn-icon-inverse-primary-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-primary);
-    }
-
-    background-color: var(--pgn-color-icon-button-accent);
-    color: var(--pgn-color-icon-button-primary);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-primary);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-primary-inverse-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-inverse-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-primary-inverse-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-primary-inverse-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-primary-inverse-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-primary-inverse-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-primary-inverse-active);
   }
 
   // SECONDARY
   &.btn-icon-secondary {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-secondary);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-secondary);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-secondary);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-secondary);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-secondary-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-secondary-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-secondary-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-secondary-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-secondary-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-secondary-base);
   }
 
   &.btn-icon-inverse-secondary {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-secondary);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-accent);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-secondary-inverse-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-inverse-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-secondary-inverse-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-secondary-inverse-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-secondary-inverse-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-secondary-inverse-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-secondary-inverse);
   }
 
   &.btn-icon-secondary-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-secondary);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-secondary);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-secondary);
-      color: var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-secondary-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-secondary-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-secondary-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-secondary-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-secondary-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-secondary-active);
   }
 
   &.btn-icon-inverse-secondary-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-secondary);
-    }
-
-    background-color: var(--pgn-color-icon-button-accent);
-    color: var(--pgn-color-icon-button-secondary);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-secondary);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-secondary-inverse-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-inverse-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-secondary-inverse-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-secondary-inverse-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-secondary-inverse-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-secondary-inverse-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-secondary-inverse-active);
   }
 
   // BRAND
   &.btn-icon-brand {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-brand);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-brand);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-brand);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-brand);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-brand-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-brand-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-brand-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-brand-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-brand-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-brand-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-brand-base);
   }
 
   &.btn-icon-inverse-brand {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-brand);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-accent);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-brand-inverse-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-brand-inverse-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-brand-inverse-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-brand-inverse-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-brand-inverse-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-brand-inverse-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-brand-inverse);
   }
 
   &.btn-icon-brand-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-brand);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-brand);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-brand);
-      color: var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-brand-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-brand-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-brand-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-brand-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-brand-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-brand-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-brand-active);
   }
 
   &.btn-icon-inverse-brand-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-brand);
-    }
-
-    background-color: var(--pgn-color-icon-button-accent);
-    color: var(--pgn-color-icon-button-brand);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-brand);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-brand-inverse-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-brand-inverse-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-brand-inverse-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-brand-inverse-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-brand-inverse-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-brand-inverse-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-brand-inverse-active);
   }
 
   // SUCCESS
   &.btn-icon-success {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-success);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-success);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-success);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-success);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-success-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-success-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-success-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-success-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-success-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-success-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-success-base);
   }
 
   &.btn-icon-inverse-success {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-success);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-accent);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-success-inverse-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-success-inverse-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-success-inverse-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-success-inverse-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-success-inverse-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-success-inverse-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-success-inverse);
   }
 
   &.btn-icon-success-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-success);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-success);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-success);
-      color: var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-success-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-success-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-success-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-success-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-success-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-success-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-success-active);
   }
 
   &.btn-icon-inverse-success-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-success);
-    }
-
-    background-color: var(--pgn-color-icon-button-accent);
-    color: var(--pgn-color-icon-button-success);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-success);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-success-inverse-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-success-inverse-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-success-inverse-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-success-inverse-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-success-inverse-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-success-inverse-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-success-inverse-active);
   }
 
   // WARNING
   &.btn-icon-warning {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-warning);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-warning);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-warning);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-warning);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-warning-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-warning-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-warning-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-warning-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-warning-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-warning-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-warning-base);
   }
 
   &.btn-icon-inverse-warning {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-warning);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-accent);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-warning-inverse-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-warning-inverse-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-warning-inverse-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-warning-inverse-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-warning-inverse-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-warning-inverse-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-warning-inverse);
   }
 
   &.btn-icon-warning-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-warning);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-warning);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-warning);
-      color: var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-warning-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-warning-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-warning-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-warning-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-warning-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-warning-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-warning-active);
   }
 
   &.btn-icon-inverse-warning-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-warning);
-    }
-
-    background-color: var(--pgn-color-icon-button-accent);
-    color: var(--pgn-color-icon-button-warning);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-warning);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-warning-inverse-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-warning-inverse-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-warning-inverse-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-warning-inverse-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-warning-inverse-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-warning-inverse-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-warning-inverse-active);
   }
 
   // DANGER
   &.btn-icon-danger {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-danger);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-danger);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-danger);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-danger);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-danger);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-color: var(--pgn-color-icon-button-danger);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-danger);
+    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-danger);
   }
 
   &.btn-icon-inverse-danger {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-danger);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-accent);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-danger);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
   }
 
   &.btn-icon-danger-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-danger);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-danger);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-danger);
-      color: var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-danger);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-danger);
+    --btn-icon-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-danger);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-box-shadow: none;
   }
 
   &.btn-icon-inverse-danger-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-danger);
-    }
-
-    background-color: var(--pgn-color-icon-button-accent);
-    color: var(--pgn-color-icon-button-danger);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-danger);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-danger);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-color: var(--pgn-color-icon-button-danger);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-danger);
+    --btn-icon-box-shadow: none;
   }
 
   // LIGHT
   &.btn-icon-light {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-light);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-light);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-light);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-light);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-light);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-color: var(--pgn-color-icon-button-light);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-light);
+    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-light);
   }
 
   &.btn-icon-inverse-light {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-light);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-accent);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-light);
+    --btn-iconbg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
   }
 
   &.btn-icon-light-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-light);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-light);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-light);
-      color: var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-light);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-light);
+    --btn-icon-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-light);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-box-shadow: none;
   }
 
   &.btn-icon-inverse-light-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-light);
-    }
-
-    background-color: var(--pgn-color-icon-button-accent);
-    color: var(--pgn-color-icon-button-light);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-light);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-light);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-color: var(--pgn-color-icon-button-light);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-light);
+    --btn-icon-box-shadow: none;
   }
 
   // DARK
   &.btn-icon-dark {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-dark);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-dark);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-dark);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-dark);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-dark);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-color: var(--pgn-color-icon-button-dark);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-dark);
+    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-dark);
   }
 
   &.btn-icon-inverse-dark {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-dark);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-accent);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-dark);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
   }
 
   &.btn-icon-dark-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-dark);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-dark);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-dark);
-      color: var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-dark);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-dark);
+    --btn-icon-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-dark);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-box-shadow: none;
   }
 
   &.btn-icon-inverse-dark-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-dark);
-    }
-
-    background-color: var(--pgn-color-icon-button-accent);
-    color: var(--pgn-color-icon-button-dark);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-dark);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-dark);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-color: var(--pgn-color-icon-button-dark);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-dark);
+    --btn-icon-box-shadow: none;
   }
 
   // BLACK
   &.btn-icon-black {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-black);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-black);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-black);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-black);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-black);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-color: var(--pgn-color-icon-button-black);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-black);
+    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-black);
   }
 
   &.btn-icon-inverse-black {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-black);
-    }
-
-    background-color: var(--pgn-color-icon-button-bg);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-bg);
-      color: var(--pgn-color-icon-button-accent);
-      box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-black);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
   }
 
   &.btn-icon-black-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-black);
-      color: var(--pgn-color-icon-button-accent);
-    }
-
-    background-color: var(--pgn-color-icon-button-black);
-    color: var(--pgn-color-icon-button-accent);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-black);
-      color: var(--pgn-color-icon-button-accent);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-black);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-black);
+    --btn-icon-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-black);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-box-shadow: none;
   }
 
   &.btn-icon-inverse-black-active {
-    &.hover,
-    &:hover,
-    &.active,
-    &:active {
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-black);
-    }
-
-    background-color: var(--pgn-color-icon-button-accent);
-    color: var(--pgn-color-icon-button-black);
-
-    &.focus,
-    &:focus {
-      outline: 2px transparent;
-      background-color: var(--pgn-color-icon-button-accent);
-      color: var(--pgn-color-icon-button-black);
-    }
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-black);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-accent);
+    --btn-icon-color: var(--pgn-color-icon-button-black);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-black);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-black);
+    --btn-icon-box-shadow: none;
   }
 }
