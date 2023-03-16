@@ -1,3 +1,5 @@
+@import "mixins";
+
 .pgn__annotation {
   padding: var(--pgn-spacing-annotation-padding);
   border-radius: var(--pgn-size-annotation-border-radius);
@@ -13,626 +15,126 @@
 
 // SUCCESS
 .pgn__annotation-success-top {
-  background-color: var(--pgn-color-annotation-bg-success);
-  color: var(--pgn-color-annotation-text-success);
-  margin-bottom: calc(var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin));
-  margin-top:
-    calc(
-      #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-    );
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-bottom-color: var(--pgn-color-annotation-bg-success);
-    border-width: 0 var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width);
-    right: 0;
-    left: 0;
-    top: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: 0 auto;
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-success),
+    var(--pgn-color-annotation-text-success), "top"
+  );
 }
 
 .pgn__annotation-success-bottom {
-  background-color: var(--pgn-color-annotation-bg-success);
-  color: var(--pgn-color-annotation-text-success);
-  margin-bottom: calc(var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin));
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-top-color: var(--pgn-color-annotation-bg-success);
-    border-width: var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width) 0;
-    right: 0;
-    left: 0;
-    bottom: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: 0 auto;
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-success),
+    var(--pgn-color-annotation-text-success), "bottom");
 }
 
 .pgn__annotation-success-right {
-  background-color: var(--pgn-color-annotation-bg-success);
-  color: var(--pgn-color-annotation-text-success);
-  margin-right:
-    calc(
-      #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-    );
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-left-color: var(--pgn-color-annotation-bg-success);
-    border-width:
-      var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
-      var(--pgn-size-annotation-arrow-border-width);
-    top: 0;
-    bottom: 0;
-    right: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: auto 0;
-
-    [dir="rtl"] & {
-      right: initial;
-      left: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-      border-width:
-        var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
-        var(--pgn-size-annotation-arrow-border-width) 0;
-      border-right-color: var(--pgn-color-annotation-bg-success);
-    }
-  }
-
-  [dir="rtl"] & {
-    margin-right: 0;
-    margin-left:
-      calc(
-        #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-      );
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-success),
+    var(--pgn-color-annotation-text-success), "right");
 }
 
 .pgn__annotation-success-left {
-  background-color: var(--pgn-color-annotation-bg-success);
-  color: var(--pgn-color-annotation-text-success);
-  margin-left:
-    calc(
-      #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-    );
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-right-color: var(--pgn-color-annotation-bg-success);
-    border-width:
-      var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
-      var(--pgn-size-annotation-arrow-border-width) 0;
-    top: 0;
-    bottom: 0;
-    left: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: auto 0;
-
-    [dir="rtl"] & {
-      left: initial;
-      right: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-      border-width:
-        var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
-        var(--pgn-size-annotation-arrow-border-width);
-      border-left-color: var(--pgn-color-annotation-bg-success);
-    }
-  }
-
-  [dir="rtl"] & {
-    margin-left: 0;
-    margin-right:
-      calc(
-        #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-      );
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-success),
+    var(--pgn-color-annotation-text-success), "left");
 }
 
 // WARNING
 .pgn__annotation-warning-top {
-  background-color: var(--pgn-color-annotation-bg-warning);
-  color: var(--pgn-color-annotation-text-warning);
-  margin-top:
-    calc(
-      var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin)
-    );
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-bottom-color: var(--pgn-color-annotation-bg-warning);
-    border-width: 0 var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width);
-    right: 0;
-    left: 0;
-    top: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: 0 auto;
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-warning),
+    var(--pgn-color-annotation-text-warning), "top");
 }
 
 .pgn__annotation-warning-bottom {
-  background-color: var(--pgn-color-annotation-bg-warning);
-  color: var(--pgn-color-annotation-text-warning);
-  margin-bottom:
-    calc(
-      var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin)
-    );
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-top-color: var(--pgn-color-annotation-bg-warning);
-    border-width: var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width) 0;
-    right: 0;
-    left: 0;
-    bottom: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: 0 auto;
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-warning),
+    var(--pgn-color-annotation-text-warning), "bottom");
 }
 
 .pgn__annotation-warning-right {
-  background-color: var(--pgn-color-annotation-bg-warning);
-  color: var(--pgn-color-annotation-text-warning);
-  margin-right:
-    calc(
-      var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin)
-    );
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-left-color: var(--pgn-color-annotation-bg-warning);
-    border-width:
-      var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
-      var(--pgn-size-annotation-arrow-border-width);
-    top: 0;
-    bottom: 0;
-    right: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: auto 0;
-
-    [dir="rtl"] & {
-      right: initial;
-      left: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-      border-width:
-        var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
-        var(--pgn-size-annotation-arrow-border-width) 0;
-      border-right-color: var(--pgn-color-annotation-bg-warning);
-    }
-  }
-
-  [dir="rtl"] & {
-    margin-right: 0;
-    margin-left:
-      calc(
-        #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-      );
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-warning),
+    var(--pgn-color-annotation-text-warning), "right");
 }
 
 .pgn__annotation-warning-left {
-  background-color: var(--pgn-color-annotation-bg-warning);
-  color: var(--pgn-color-annotation-text-warning);
-  margin-left:
-    calc(
-      var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin)
-    );
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-right-color: var(--pgn-color-annotation-bg-warning);
-    border-width:
-      var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
-      var(--pgn-size-annotation-arrow-border-width) 0;
-    top: 0;
-    bottom: 0;
-    left: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: auto 0;
-
-    [dir="rtl"] & {
-      left: initial;
-      right: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-      border-width:
-        var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
-        var(--pgn-size-annotation-arrow-border-width);
-      border-left-color: var(--pgn-color-annotation-bg-warning);
-    }
-  }
-
-  [dir="rtl"] & {
-    margin-left: 0;
-    margin-right:
-      calc(
-        #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-      );
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-warning),
+    var(--pgn-color-annotation-text-warning), "left");
 }
 
 // ERROR
 .pgn__annotation-error-top {
-  background-color: var(--pgn-color-annotation-bg-error);
-  color: var(--pgn-color-annotation-text-error);
-  margin-top:
-    calc(
-      var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin)
-    );
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-bottom-color: var(--pgn-color-annotation-bg-error);
-    border-width: 0 var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width);
-    right: 0;
-    left: 0;
-    top: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: 0 auto;
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-error),
+    var(--pgn-color-annotation-text-error), "top");
 }
 
 .pgn__annotation-error-bottom {
-  background-color: var(--pgn-color-annotation-bg-error);
-  color: var(--pgn-color-annotation-text-error);
-  margin-bottom:
-    calc(
-      var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin)
-    );
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-top-color: var(--pgn-color-annotation-bg-error);
-    border-width: var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width) 0;
-    right: 0;
-    left: 0;
-    bottom: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: 0 auto;
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-error),
+    var(--pgn-color-annotation-text-error), "bottom");
 }
 
 .pgn__annotation-error-right {
-  background-color: var(--pgn-color-annotation-bg-error);
-  color: var(--pgn-color-annotation-text-error);
-  margin-right:
-    calc(
-      var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin)
-    );
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-left-color: var(--pgn-color-annotation-bg-error);
-    border-width:
-      var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
-      var(--pgn-size-annotation-arrow-border-width);
-    top: 0;
-    bottom: 0;
-    right: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: auto 0;
-
-    [dir="rtl"] & {
-      right: initial;
-      left: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-      border-width:
-        var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
-        var(--pgn-size-annotation-arrow-border-width) 0;
-      border-right-color: var(--pgn-color-annotation-bg-error);
-    }
-  }
-
-  [dir="rtl"] & {
-    margin-right: 0;
-    margin-left:
-      calc(
-        #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-      );
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-error),
+    var(--pgn-color-annotation-text-error), "right");
 }
 
 .pgn__annotation-error-left {
-  background-color: var(--pgn-color-annotation-bg-error);
-  color: var(--pgn-color-annotation-text-error);
-  margin-left: calc(var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin));
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-right-color: var(--pgn-color-annotation-bg-error);
-    border-width:
-      var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
-      var(--pgn-size-annotation-arrow-border-width) 0;
-    top: 0;
-    bottom: 0;
-    left: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: auto 0;
-
-    [dir="rtl"] & {
-      left: initial;
-      right: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-      border-width:
-        var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
-        var(--pgn-size-annotation-arrow-border-width);
-      border-left-color: var(--pgn-color-annotation-bg-error);
-    }
-  }
-
-  [dir="rtl"] & {
-    margin-left: 0;
-    margin-right:
-      calc(
-        #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-      );
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-error),
+    var(--pgn-color-annotation-text-error), "left");
 }
 
 // DARK
 .pgn__annotation-dark-top {
-  background-color: var(--pgn-color-annotation-bg-dark);
-  color: var(--pgn-color-annotation-text-dark);
-  margin-top: calc(var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin));
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-bottom-color: var(--pgn-color-annotation-bg-dark);
-    border-width: 0 var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width);
-    right: 0;
-    left: 0;
-    top: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: 0 auto;
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-dark),
+    var(--pgn-color-annotation-text-dark), "top");
 }
 
 .pgn__annotation-dark-bottom {
-  background-color: var(--pgn-color-annotation-bg-dark);
-  color: var(--pgn-color-annotation-text-dark);
-  margin-bottom: calc(var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin));
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-top-color: var(--pgn-color-annotation-bg-dark);
-    border-width: var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width) 0;
-    right: 0;
-    left: 0;
-    bottom: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: 0 auto;
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-dark),
+    var(--pgn-color-annotation-text-dark), "bottom");
 }
 
 .pgn__annotation-dark-right {
-  background-color: var(--pgn-color-annotation-bg-dark);
-  color: var(--pgn-color-annotation-text-dark);
-  margin-right: calc(var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin));
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-left-color: var(--pgn-color-annotation-bg-dark);
-    border-width:
-      var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
-      var(--pgn-size-annotation-arrow-border-width);
-    top: 0;
-    bottom: 0;
-    right: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: auto 0;
-
-    [dir="rtl"] & {
-      right: initial;
-      left: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-      border-width:
-        var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
-        var(--pgn-size-annotation-arrow-border-width) 0;
-      border-right-color: var(--pgn-color-annotation-bg-dark);
-    }
-  }
-
-  [dir="rtl"] & {
-    margin-right: 0;
-    margin-left:
-      calc(
-        #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-      );
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-dark),
+    var(--pgn-color-annotation-text-dark), "right");
 }
 
 .pgn__annotation-dark-left {
-  background-color: var(--pgn-color-annotation-bg-dark);
-  color: var(--pgn-color-annotation-text-dark);
-  margin-left: calc(var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin));
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-right-color: var(--pgn-color-annotation-bg-dark);
-    border-width:
-      var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
-      var(--pgn-size-annotation-arrow-border-width) 0;
-    top: 0;
-    bottom: 0;
-    left: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: auto 0;
-
-    [dir="rtl"] & {
-      left: initial;
-      right: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-      border-width:
-        var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
-        var(--pgn-size-annotation-arrow-border-width);
-      border-left-color: var(--pgn-color-annotation-bg-dark);
-    }
-  }
-
-  [dir="rtl"] & {
-    margin-left: 0;
-    margin-right:
-      calc(
-        #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-      );
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-dark),
+    var(--pgn-color-annotation-text-dark), "left");
 }
 
 // LIGHT
 .pgn__annotation-light-top {
-  background-color: var(--pgn-color-annotation-bg-light);
-  color: var(--pgn-color-annotation-text-light);
-  margin-top: calc(var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin));
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-bottom-color: var(--pgn-color-annotation-bg-light);
-    border-width: 0 var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width);
-    right: 0;
-    left: 0;
-    top: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: 0 auto;
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-light),
+    var(--pgn-color-annotation-text-light), "top");
 }
 
 .pgn__annotation-light-bottom {
-  background-color: var(--pgn-color-annotation-bg-light);
-  color: var(--pgn-color-annotation-text-light);
-  margin-bottom: calc(var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin));
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-top-color: var(--pgn-color-annotation-bg-light);
-    border-width: var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width) 0;
-    right: 0;
-    left: 0;
-    bottom: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: 0 auto;
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-light),
+    var(--pgn-color-annotation-text-light), "bottom");
 }
 
 .pgn__annotation-light-right {
-  background-color: var(--pgn-color-annotation-bg-light);
-  color: var(--pgn-color-annotation-text-light);
-  margin-right: calc(var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin));
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-left-color: var(--pgn-color-annotation-bg-light);
-    border-width:
-      var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
-      var(--pgn-size-annotation-arrow-border-width);
-    top: 0;
-    bottom: 0;
-    right: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: auto 0;
-
-    [dir="rtl"] & {
-      right: initial;
-      left: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-      border-width:
-        var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
-        var(--pgn-size-annotation-arrow-border-width) 0;
-      border-right-color: var(--pgn-color-annotation-bg-light);
-    }
-  }
-
-  [dir="rtl"] & {
-    margin-right: 0;
-    margin-left:
-      calc(
-        #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-      );
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-light),
+    var(--pgn-color-annotation-text-light), "right");
 }
 
 .pgn__annotation-light-left {
-  background-color: var(--pgn-color-annotation-bg-light);
-  color: var(--pgn-color-annotation-text-light);
-  margin-left: calc(var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin));
-
-  &::after {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border: solid transparent;
-    border-right-color: var(--pgn-color-annotation-bg-light);
-    border-width:
-      var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
-      var(--pgn-size-annotation-arrow-border-width) 0;
-    top: 0;
-    bottom: 0;
-    left: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-    margin: auto 0;
-
-    [dir="rtl"] & {
-      left: initial;
-      right: calc(#{var(--pgn-size-annotation-arrow-border-width)} * -1);
-      border-width:
-        var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
-        var(--pgn-size-annotation-arrow-border-width);
-      border-left-color: var(--pgn-color-annotation-bg-light);
-    }
-  }
-
-  [dir="rtl"] & {
-    margin-left: 0;
-    margin-right:
-      calc(
-        #{var(--pgn-size-annotation-arrow-border-width)} + #{var(--pgn-spacing-annotation-arrow-side-margin)}
-      );
-  }
+  @include annotation-variant(
+    var(--pgn-color-annotation-bg-light),
+    var(--pgn-color-annotation-text-light), "left");
 }

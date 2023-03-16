@@ -17,10 +17,10 @@
       &:focus::before {
         content: "";
         position: absolute;
-        top: calc(#{var(--pgn-size-breadcrumb-border-axis-y-focus)} * -1);
-        right: calc(#{var(--pgn-size-breadcrumb-border-axis-x-focus)} * -1);
-        bottom: calc(#{var(--pgn-size-breadcrumb-border-axis-y-focus)} * -1);
-        left: calc(#{var(--pgn-size-breadcrumb-border-axis-x-focus)} * -1);
+        top: calc(var(--pgn-size-breadcrumb-border-axis-y-focus) * -1);
+        right: calc(var(--pgn-size-breadcrumb-border-axis-x-focus) * -1);
+        bottom: calc(var(--pgn-size-breadcrumb-border-axis-y-focus) * -1);
+        left: calc(var(--pgn-size-breadcrumb-border-axis-x-focus) * -1);
         border: var(--pgn-size-breadcrumb-border-width-focus) solid var(--pgn-color-breadcrumb-base);
         border-radius: var(--pgn-size-breadcrumb-border-radius-focus);
       }

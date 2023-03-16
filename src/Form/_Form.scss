@@ -51,7 +51,7 @@
     .form-control {
       padding-inline-start:
         calc(
-          #{var(--pgn-spacing-form-input-padding-x-base)} + #{var(--pgn-size-form-control-icon-width)}
+          var(--pgn-spacing-form-input-padding-x-base) + var(--pgn-size-form-control-icon-width)
         );
 
       [dir="rtl"] & {
@@ -62,14 +62,14 @@
     .form-control-lg {
       padding-inline-start:
         calc(
-          #{var(--pgn-spacing-form-input-padding-x-lg)} + #{var(--pgn-size-form-control-icon-width)}
+          var(--pgn-spacing-form-input-padding-x-lg) + var(--pgn-size-form-control-icon-width)
         );
     }
 
     .form-control-sm {
       padding-inline-start:
         calc(
-          #{var(--pgn-spacing-form-input-padding-x-sm)} + #{var(--pgn-size-form-control-icon-width)}
+          var(--pgn-spacing-form-input-padding-x-sm) + var(--pgn-size-form-control-icon-width)
         );
     }
   }
@@ -78,21 +78,21 @@
     .form-control {
       padding-inline-end:
         calc(
-          #{var(--pgn-spacing-form-input-padding-x-base)} + #{var(--pgn-size-form-control-icon-width)}
+          var(--pgn-spacing-form-input-padding-x-base) + var(--pgn-size-form-control-icon-width)
         );
     }
 
     .form-control-lg {
       padding-inline-end:
         calc(
-          #{var(--pgn-spacing-form-input-padding-x-lg)} + #{var(--pgn-size-form-control-icon-width)}
+          var(--pgn-spacing-form-input-padding-x-lg) + var(--pgn-size-form-control-icon-width)
         );
     }
 
     .form-control-sm {
       padding-inline-end:
         calc(
-          #{var(--pgn-spacing-form-input-padding-x-sm)} + #{var(--pgn-size-form-control-icon-width)}
+          var(--pgn-spacing-form-input-padding-x-sm) + var(--pgn-size-form-control-icon-width)
         );
     }
   }
@@ -132,15 +132,15 @@
   &.pgn__form-control-decorator-leading {
     inset-inline-start: 0;
     padding-inline-start: var(--pgn-spacing-form-input-padding-x-base);
-    padding-inline-end: calc(#{var(--pgn-spacing-form-input-padding-x-base)} / 2);
+    padding-inline-end: calc(var(--pgn-spacing-form-input-padding-x-base) / 2);
   }
 
   &.pgn__form-control-decorator-trailing {
     inset-inline-end: 0;
-    padding-inline-start: calc(#{var(--pgn-spacing-form-input-padding-x-base)} / 2);
+    padding-inline-start: calc(var(--pgn-spacing-form-input-padding-x-base) / 2);
     padding-inline-end:
       calc(
-        #{var(--pgn-spacing-form-input-padding-y-sm)} - calc(2 * #{var(--pgn-size-form-input-width-border)})
+        var(--pgn-spacing-form-input-padding-y-sm) - calc(2 * var(--pgn-size-form-input-width-border))
       );
   }
 
@@ -155,7 +155,10 @@
 
     &.pgn__form-control-decorator-trailing {
       padding-left: calc(var(--pgn-spacing-form-input-padding-x-lg) / 2);
-      padding-right: calc(var(--pgn-spacing-form-input-padding-y-base) - (2 * var(--pgn-size-form-input-width-border)));
+      padding-right:
+        calc(
+          var(--pgn-spacing-form-input-padding-y-base) - (2 * var(--pgn-size-form-input-width-border))
+        );
     }
   }
 
@@ -230,7 +233,7 @@
 
   .has-leading-element & {
     .pgn__form-control-floating-label-text {
-      transform: translateX(#{var(--pgn-size-form-control-icon-width)});
+      transform: translateX(var(--pgn-size-form-control-icon-width));
 
       [dir="rtl"] & {
         transform: translateX(calc(-1 * #{var(--pgn-size-form-control-icon-width)}));
@@ -337,7 +340,7 @@
 }
 
 select.form-control {
-  padding-inline-end: calc(#{var(--pgn-spacing-form-control-select-icon-padding)} + 2rem);
+  padding-inline-end: calc(var(--pgn-spacing-form-control-select-icon-padding) + 2rem);
   background-image: var(--pgn-other-content-form-control-select-indicator-icon);
   background-position: right var(--pgn-spacing-form-control-select-icon-padding) center;
   background-repeat: no-repeat;
@@ -430,10 +433,10 @@ select.form-control {
   &:focus::before {
     content: "";
     position: absolute;
-    top: calc(#{var(--pgn-spacing-form-check-position-axis)} * -1);
-    right: calc(#{var(--pgn-spacing-form-check-position-axis)} * -1);
-    bottom: calc(#{var(--pgn-spacing-form-check-position-axis)} * -1);
-    left: calc(#{var(--pgn-spacing-form-check-position-axis)} * -1);
+    top: calc(var(--pgn-spacing-form-check-position-axis) * -1);
+    right: calc(var(--pgn-spacing-form-check-position-axis) * -1);
+    bottom: calc(var(--pgn-spacing-form-check-position-axis) * -1);
+    left: calc(var(--pgn-spacing-form-check-position-axis) * -1);
     border: var(--pgn-size-form-border-radius-width) solid var(--pgn-color-form-input-focus-border);
     border-radius: var(--pgn-size-form-border-radius-check-focus);
   }

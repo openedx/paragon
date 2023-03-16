@@ -97,8 +97,8 @@ select.form-control {
 // For use with horizontal and inline forms, when you need the label (or legend)
 // text to align with the form controls.
 .col-form-label {
-  padding-top: calc(#{var(--pgn-spacing-form-input-padding-y-base)} + #{var(--pgn-size-form-input-width-border)});
-  padding-bottom: calc(#{var(--pgn-spacing-form-input-padding-y-base)} + #{var(--pgn-size-form-input-width-border)});
+  padding-top: calc(var(--pgn-spacing-form-input-padding-y-base) + var(--pgn-size-form-input-width-border));
+  padding-bottom: calc(var(--pgn-spacing-form-input-padding-y-base) + var(--pgn-size-form-input-width-border));
   margin-bottom: 0; // Override the `<label>/<legend>` default
 
   @include font-size(inherit); // Override the `<legend>` default
@@ -107,8 +107,8 @@ select.form-control {
 }
 
 .col-form-label-lg {
-  padding-top: calc(#{var(--pgn-spacing-form-input-padding-y-lg)} + #{var(--pgn-size-form-input-width-border)});
-  padding-bottom: calc(#{var(--pgn-spacing-form-input-padding-y-lg)} + #{var(--pgn-size-form-input-width-border)});
+  padding-top: calc(var(--pgn-spacing-form-input-padding-y-lg) + var(--pgn-size-form-input-width-border));
+  padding-bottom: calc(var(--pgn-spacing-form-input-padding-y-lg) + var(--pgn-size-form-input-width-border));
 
   @include font-size(var(--pgn-typography-form-input-font-size-lg));
 
@@ -116,8 +116,8 @@ select.form-control {
 }
 
 .col-form-label-sm {
-  padding-top: calc(#{var(--pgn-spacing-form-input-padding-y-sm)} + #{var(--pgn-size-form-input-width-border)});
-  padding-bottom: calc(#{var(--pgn-spacing-form-input-padding-y-sm)} + #{var(--pgn-size-form-input-width-border)});
+  padding-top: calc(var(--pgn-spacing-form-input-padding-y-sm) + var(--pgn-size-form-input-width-border));
+  padding-bottom: calc(var(--pgn-spacing-form-input-padding-y-sm) + var(--pgn-size-form-input-width-border));
 
   @include font-size(var(--pgn-typography-form-input-font-size-sm));
 
@@ -215,13 +215,13 @@ textarea.form-control {
 .form-row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: calc(-1 * #{var(--pgn-size-form-grid-gutter-width)} * .5);
-  margin-left: calc(-1 * #{var(--pgn-size-form-grid-gutter-width)} * .5);
+  margin-right: calc(-1 * var(--pgn-size-form-grid-gutter-width) * .5);
+  margin-left: calc(-1 * var(--pgn-size-form-grid-gutter-width) * .5);
 
   > .col,
   > [class*="col-"] {
-    padding-right: calc(#{var(--pgn-size-form-grid-gutter-width)} * .5);
-    padding-left: calc(#{var(--pgn-size-form-grid-gutter-width)} * .5);
+    padding-right: calc(var(--pgn-size-form-grid-gutter-width) * .5);
+    padding-left: calc(var(--pgn-size-form-grid-gutter-width) * .5);
   }
 }
 
@@ -239,7 +239,7 @@ textarea.form-control {
 .form-check-input {
   position: absolute;
   margin-top: var(--pgn-spacing-form-input-check-margin-y);
-  margin-left: calc(-1 * #{var(--pgn-spacing-form-input-check-gutter)});
+  margin-left: calc(-1 * var(--pgn-spacing-form-input-check-gutter));
 
   // Use [disabled] and :disabled for workaround https://github.com/twbs/bootstrap/issues/28247
   &[disabled] ~ .form-check-label,

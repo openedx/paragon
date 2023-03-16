@@ -1,6 +1,6 @@
 .pgn__modal {
   background: var(--pgn-color-modal-content-bg);
-  border-radius: calc(#{var(--pgn-size-modal-content-border-radius)} - #{var(--pgn-size-modal-content-border-width)});
+  border-radius: calc(var(--pgn-size-modal-content-border-radius) - var(--pgn-size-modal-content-border-width));
   display: flex;
   flex-direction: column;
   margin: 0 var(--pgn-spacing-modal-dialog-margin);
@@ -131,7 +131,7 @@
   flex-grow: 1;
   padding:
     var(--pgn-spacing-modal-inner-padding-base)
-    var(--pgn-spacing-modal-inner-padding-base) calc(#{var(--pgn-spacing-modal-inner-padding-base)} / 2);
+    var(--pgn-spacing-modal-inner-padding-base) calc(var(--pgn-spacing-modal-inner-padding-base) / 2);
   overflow: auto;
   position: relative;
 
@@ -163,7 +163,7 @@
     display: block;
     height: 20px;
     position: sticky;
-    bottom: calc(#{var(--pgn-spacing-modal-inner-padding-base)} / 2 * -1);
+    bottom: calc(var(--pgn-spacing-modal-inner-padding-base) / 2 * -1);
     margin-bottom: calc(var(--pgn-spacing-modal-inner-padding-bottom) * -1);
     margin-left: calc(var(--pgn-spacing-modal-inner-padding-base) * -1);
     margin-right: calc(var(--pgn-spacing-modal-inner-padding-base) * -1);
@@ -227,7 +227,7 @@
   background-color: var(--pgn-color-modal-content-bg);
   transition: box-shadow 150ms ease;
   padding: var(--pgn-spacing-modal-footer-padding-base);
-  padding-top: calc(#{var(--pgn-spacing-modal-inner-padding-base)} / 2);
+  padding-top: calc(var(--pgn-spacing-modal-inner-padding-base) / 2);
 }
 
 // Color Variants
@@ -236,14 +236,14 @@
   // Default style modals don't have a background on the header which
   // ends up looking spaced too far away from the body content.
   .pgn__modal-header {
-    padding-bottom: calc(#{var(--pgn-spacing-modal-inner-padding-base)} / 2);
+    padding-bottom: calc(var(--pgn-spacing-modal-inner-padding-base) / 2);
   }
 
   .pgn__modal-body {
-    padding: calc(#{var(--pgn-spacing-modal-inner-padding-base)} / 2) var(--pgn-spacing-modal-inner-padding-base);
+    padding: calc(var(--pgn-spacing-modal-inner-padding-base) / 2) var(--pgn-spacing-modal-inner-padding-base);
 
     &::before {
-      top: calc(#{var(--pgn-spacing-modal-inner-padding-base)} / 2 * -1);
+      top: calc(var(--pgn-spacing-modal-inner-padding-base) / 2 * -1);
     }
   }
 }

@@ -21,21 +21,21 @@
 }
 
 .pgn__bubble-primary {
-  --pgn-bubble-color: #{var(--pgn-color-bubble-text-primary)};
-  --pgn-bubble-bg: #{var(--pgn-color-bubble-bg-primary)};
+  --pgn-bubble-color: var(--pgn-color-bubble-text-primary);
+  --pgn-bubble-bg: var(--pgn-color-bubble-bg-primary);
 }
 
 .pgn__bubble-success {
-  --pgn-bubble-color: #{var(--pgn-color-bubble-text-success)};
-  --pgn-bubble-bg: #{var(--pgn-color-bubble-bg-success)};
+  --pgn-bubble-color: var(--pgn-color-bubble-text-success);
+  --pgn-bubble-bg: var(--pgn-color-bubble-bg-success);
 }
 
 .pgn__bubble-warning {
-  --pgn-bubble-color: #{var(--pgn-color-bubble-text-warning)};
-  --pgn-bubble-bg: #{var(--pgn-color-bubble-bg-warning)};
+  --pgn-bubble-color: var(--pgn-color-bubble-text-warning);
+  --pgn-bubble-bg: var(--pgn-color-bubble-bg-warning);
 }
 
 .pgn__bubble-error {
-  --pgn-bubble-color: #{var(--pgn-color-bubble-text-error)};
-  --pgn-bubble-bg: #{var(--pgn-color-bubble-bg-error)};
+  --pgn-bubble-color: var(--pgn-color-bubble-text-error);
+  --pgn-bubble-bg: var(--pgn-color-bubble-bg-error);
 }

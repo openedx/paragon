@@ -69,7 +69,7 @@
 
 // Baking in $close-font-size: $font-size-base * 1.5 !default; to avoid any dependency
 .alert-dismissible {
-  padding-right: calc((#{$font-size-base} * 1.5) + (#{var(--pgn-spacing-alert-padding-x)} * 2));
+  padding-right: calc((#{$font-size-base} * 1.5) + (var(--pgn-spacing-alert-padding-x) * 2));
 
   // Adjust close link position
   .close {
@@ -99,25 +99,25 @@
 // Alternate styles
 
 .alert-success {
-  --pgn-alert-bg: #{var(--pgn-color-alert-bg-success)};
-  --pgn-alert-border-color: #{var(--pgn-color-alert-border-success)};
-  --pgn-alert-icon-color: #{var(--pgn-color-alert-icon-success)};
+  --pgn-alert-bg: var(--pgn-color-alert-bg-success);
+  --pgn-alert-border-color: var(--pgn-color-alert-border-success);
+  --pgn-alert-icon-color: var(--pgn-color-alert-icon-success);
 }
 
 .alert-info {
-  --pgn-alert-bg: #{var(--pgn-color-alert-bg-info)};
-  --pgn-alert-border-color: #{var(--pgn-color-alert-border-info)};
-  --pgn-alert-icon-color: #{var(--pgn-color-alert-icon-info)};
+  --pgn-alert-bg: var(--pgn-color-alert-bg-info);
+  --pgn-alert-border-color: var(--pgn-color-alert-border-info);
+  --pgn-alert-icon-color: var(--pgn-color-alert-icon-info);
 }
 
 .alert-danger {
-  --pgn-alert-bg: #{var(--pgn-color-alert-bg-danger)};
-  --pgn-alert-border-color: #{var(--pgn-color-alert-border-danger)};
-  --pgn-alert-icon-color: #{var(--pgn-color-alert-icon-danger)};
+  --pgn-alert-bg: var(--pgn-color-alert-bg-danger);
+  --pgn-alert-border-color: var(--pgn-color-alert-border-danger);
+  --pgn-alert-icon-color: var(--pgn-color-alert-icon-danger);
 }
 
 .alert-warning {
-  --pgn-alert-bg: #{var(--pgn-color-alert-bg-warning)};
-  --pgn-alert-border-color: #{var(--pgn-color-alert-border-warning)};
-  --pgn-alert-icon-color: #{var(--pgn-color-alert-icon-warning)};
+  --pgn-alert-bg: var(--pgn-color-alert-bg-warning);
+  --pgn-alert-border-color: var(--pgn-color-alert-border-warning);
+  --pgn-alert-icon-color: var(--pgn-color-alert-icon-warning);
 }

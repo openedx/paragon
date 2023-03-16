@@ -119,7 +119,7 @@
     // Align tooltip to form elements
     .form-row > .col > &,
     .form-row > [class*="col-"] > & {
-      left: calc(#{var(--pgn-size-form-grid-gutter-width)} * .5);
+      left: calc(var(--pgn-size-form-grid-gutter-width) * .5);
     }
   }
 
@@ -153,8 +153,8 @@
   select.form-control {
     @include form-validation-state-selector($state) {
       @if $enable-validation-icons {
-        padding-right: calc(#{var(--pgn-spacing-form-input-padding-x-base)} * 4) !important;
-        background-position: right calc(#{var(--pgn-spacing-form-input-padding-x-base)} * 2) center;
+        padding-right: calc(var(--pgn-spacing-form-input-padding-x-base) * 4) !important;
+        background-position: right calc(var(--pgn-spacing-form-input-padding-x-base) * 2) center;
       }
     }
   }

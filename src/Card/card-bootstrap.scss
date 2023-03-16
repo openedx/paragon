@@ -8,7 +8,7 @@
   border: var(--pgn-size-card-border-width) solid var(--pgn-color-card-border-base);
   position: relative;
 
-  @include border-radius(calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)}));
+  @include border-radius(calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width)));
 
   > hr {
     margin-right: 0;
@@ -23,7 +23,7 @@
       border-top-width: 0;
 
       @include border-top-radius(
-        calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)})
+        calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width))
       );
     }
 
@@ -31,7 +31,7 @@
       border-bottom-width: 0;
 
       @include border-bottom-radius(
-        calc(#{var(--pgn-size-card-border-radius-base)} - #{var(--pgn-size-card-border-width)})
+        calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width))
       );
     }
   }
@@ -60,8 +60,8 @@
   @include media-breakpoint-up(sm) {
     display: flex;
     flex-flow: row wrap;
-    margin-right: calc(#{var(--pgn-spacing-card-margin-deck)} * -1);
-    margin-left: calc(#{var(--pgn-spacing-card-margin-deck)} * -1);
+    margin-right: calc(var(--pgn-spacing-card-margin-deck) * -1);
+    margin-left: calc(var(--pgn-spacing-card-margin-deck) * -1);
 
     .card {
       flex: 1 0 0%;
@@ -164,7 +164,7 @@
     > .card-header {
       @include border-radius(0);
 
-      margin-bottom: calc(#{var(--pgn-size-card-border-width)} * -1);
+      margin-bottom: calc(var(--pgn-size-card-border-width) * -1);
     }
   }
 }

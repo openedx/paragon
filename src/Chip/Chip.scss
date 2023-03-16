@@ -93,11 +93,11 @@
 }
 
 .pgn__chip-light {
-  --pgn-chip-color: #{var(--pgn-color-chip-text-light)};
-  --pgn-chip-bg: #{var(--pgn-color-chip-bg-light)};
+  --pgn-chip-color: var(--pgn-color-chip-text-light);
+  --pgn-chip-bg: var(--pgn-color-chip-bg-light);
 }
 
 .pgn__chip-dark {
-  --pgn-chip-color: #{var(--pgn-color-chip-text-dark)};
-  --pgn-chip-bg: #{var(--pgn-color-chip-bg-dark)};
+  --pgn-chip-color: var(--pgn-color-chip-text-dark);
+  --pgn-chip-bg: var(--pgn-color-chip-bg-dark);
 }

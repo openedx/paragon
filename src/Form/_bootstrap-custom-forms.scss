@@ -12,7 +12,7 @@
   z-index: 1;
   display: block;
   min-height: calc(#{$font-size-base} * #{$line-height-base});
-  padding-left: calc(#{var(--pgn-spacing-form-control-gutter)} + #{var(--pgn-size-form-control-indicator-base)});
+  padding-left: calc(var(--pgn-spacing-form-control-gutter) + var(--pgn-size-form-control-indicator-base));
   print-color-adjust: exact; // Keep themed appearance for print
 }
 
@@ -26,7 +26,7 @@
   left: 0;
   z-index: -1; // Put the input behind the label so it doesn't overlay text
   width: var(--pgn-size-form-control-indicator-base);
-  height: calc((#{$font-size-base} * #{$line-height-base} + #{var(--pgn-size-form-control-indicator-base)}) * .5);
+  height: calc((#{$font-size-base} * #{$line-height-base} + var(--pgn-size-form-control-indicator-base)) * .5);
   opacity: 0;
 
   &:checked ~ .custom-control-label::before {
@@ -88,7 +88,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: calc((#{$font-size-base} * #{$line-height-base} - #{var(--pgn-size-form-control-indicator-base)}) * .5);
+    top: calc((#{$font-size-base} * #{$line-height-base} - var(--pgn-size-form-control-indicator-base)) * .5);
     left: -(var(--pgn-spacing-form-control-gutter) + var(--pgn-size-form-control-indicator-base));
     display: block;
     width: var(--pgn-size-form-control-indicator-base);
@@ -104,12 +104,12 @@
   &::after {
     content: "";
     position: absolute;
-    top: calc((#{$font-size-base} * #{$line-height-base} - #{var(--pgn-size-form-control-indicator-base)}) * .5);
-    left: -(var(--pgn-spacing-form-control-gutter) + var(--pgn-size-form-control-indicator-base));
+    top: calc((#{$font-size-base} * #{$line-height-base} - var(--pgn-size-form-control-indicator-base)) * .5);
+    left: calc((var(--pgn-spacing-form-control-gutter) + var(--pgn-size-form-control-indicator-base)) * -1);
     display: block;
     width: var(--pgn-size-form-control-indicator-base);
     height: var(--pgn-size-form-control-indicator-base);
-    background: 50% / #{var(--pgn-size-form-control-indicator-bg)} no-repeat;
+    background: 50% / var(--pgn-size-form-control-indicator-bg) no-repeat;
   }
 }
 
@@ -182,11 +182,11 @@
 // Tweak a few things for switches
 
 .custom-switch {
-  padding-left: calc(#{var(--pgn-size-form-control-switch-width)} + #{var(--pgn-spacing-form-control-gutter)});
+  padding-left: calc(var(--pgn-size-form-control-switch-width) + var(--pgn-spacing-form-control-gutter));
 
   .custom-control-label {
     &::before {
-      left: calc(-1 * (#{var(--pgn-size-form-control-switch-width)} + #{var(--pgn-spacing-form-control-gutter)}));
+      left: calc(-1 * (var(--pgn-size-form-control-switch-width) + var(--pgn-spacing-form-control-gutter)));
       width: var(--pgn-size-form-control-switch-width);
       pointer-events: all;
       // stylelint-disable-next-line property-disallowed-list
@@ -195,9 +195,9 @@
 
     &::after {
       // stylelint-disable-next-line max-line-length
-      top: calc(calc((#{$font-size-base} * #{$line-height-base} - #{var(--pgn-size-form-control-indicator-base)}) * .5) + calc(#{var(--pgn-size-form-control-indicator-border-width)} * 2));
+      top: calc(calc((#{$font-size-base} * #{$line-height-base} - var(--pgn-size-form-control-indicator-base)) * .5) + calc(var(--pgn-size-form-control-indicator-border-width) * 2));
       // stylelint-disable-next-line max-line-length
-      left: calc(calc(-1 * (#{var(--pgn-size-form-control-switch-width)} + #{var(--pgn-spacing-form-control-gutter)})) + calc(#{var(--pgn-size-form-control-indicator-border-width)} * 2));
+      left: calc(calc(-1 * (var(--pgn-size-form-control-switch-width) + var(--pgn-spacing-form-control-gutter))) + calc(var(--pgn-size-form-control-indicator-border-width) * 2));
       width: var(--pgn-size-form-control-switch-indicator-base);
       height: var(--pgn-size-form-control-switch-indicator-base);
       background-color: var(--pgn-color-form-control-indicator-border);
@@ -212,7 +212,7 @@
       background-color: var(--pgn-color-form-control-indicator-bg-base);
       transform:
         translateX(calc(
-          #{var(--pgn-size-form-control-switch-width)} - #{var(--pgn-size-form-control-indicator-base)}
+          #{var(--pgn-size-form-control-switch-width)} - var(--pgn-size-form-control-indicator-base)
         ));
     }
   }
@@ -417,7 +417,7 @@
   height:
     calc(
       var(--pgn-size-form-control-range-thumb-height) + calc(
-        #{var(--pgn-size-form-control-range-thumb-focus-width)} * 2));
+        var(--pgn-size-form-control-range-thumb-focus-width) * 2));
   padding: 0; // Need to reset padding
   background-color: transparent;
   appearance: none;
@@ -441,7 +441,7 @@
     height: var(--pgn-size-form-control-range-thumb-height);
     margin-top:
       calc(
-        (#{var(--pgn-size-form-control-range-track-height)} - #{var(--pgn-size-form-control-range-thumb-height)}) * .5
+        (var(--pgn-size-form-control-range-track-height) - var(--pgn-size-form-control-range-thumb-height)) * .5
       ); // Webkit specific
 
     border: var(--pgn-size-form-control-range-thumb-border-base);
@@ -523,7 +523,7 @@
     cursor: var(--pgn-other-form-control-range-track-cursor);
     background-color: transparent;
     border-color: transparent;
-    border-width: calc(#{var(--pgn-size-form-control-range-thumb-height)} * .5);
+    border-width: calc(var(--pgn-size-form-control-range-thumb-height) * .5);
 
     @include box-shadow(var(--pgn-elevation-form-control-range-track));
   }

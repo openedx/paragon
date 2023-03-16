@@ -260,7 +260,7 @@ a .pgn__card {
 
   &.horizontal-stacked {
     flex-direction: column-reverse;
-    padding-top: calc(#{var(--pgn-spacing-card-spacer-x)} - #{var(--pgn-spacing-card-footer-action-gap)});
+    padding-top: calc(var(--pgn-spacing-card-spacer-x) - var(--pgn-spacing-card-footer-action-gap));
 
     & > * {
       margin-top: var(--pgn-spacing-card-footer-action-gap);
@@ -326,9 +326,9 @@ a .pgn__card {
 
   .pgn__card-image-cap-loader {
     .react-loading-skeleton {
-      margin-bottom: calc(#{var(--pgn-spacing-card-loading-skeleton-spacer)} * -1);
+      margin-bottom: calc(var(--pgn-spacing-card-loading-skeleton-spacer) * -1);
       position: relative;
-      top: calc(#{var(--pgn-spacing-card-loading-skeleton-spacer)} * -1);
+      top: calc(var(--pgn-spacing-card-loading-skeleton-spacer) * -1);
       height: 100%;
     }
   }
@@ -350,7 +350,7 @@ a .pgn__card {
 .pgn__card-logo-cap {
   position: absolute;
   inset-inline-start: var(--pgn-spacing-card-logo-left-offset-base);
-  bottom: #{calc(#{var(--pgn-spacing-card-logo-bottom-offset-base)} * -1)};
+  bottom: calc(var(--pgn-spacing-card-logo-bottom-offset-base) * -1);
   width: var(--pgn-size-card-logo-width);
   height: var(--pgn-size-card-logo-height);
   border-radius: var(--pgn-size-card-border-radius-logo);
@@ -370,10 +370,10 @@ a .pgn__card {
   &::before {
     content: "";
     position: absolute;
-    top: calc(-1 * #{var(--pgn-spacing-card-focus-border-offset)});
-    right: calc(-1 * #{var(--pgn-spacing-card-focus-border-offset)});
-    bottom: calc(-1 * #{var(--pgn-spacing-card-focus-border-offset)});
-    left: calc(-1 * #{var(--pgn-spacing-card-focus-border-offset)});
+    top: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
+    right: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
+    bottom: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
+    left: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
     border: solid var(--pgn-size-card-focus-border-width) var(--pgn-color-card-border-focus-base);
     border-radius: var(--pgn-size-card-focus-border-radius);
   }
