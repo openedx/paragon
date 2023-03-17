@@ -1,27 +1,4 @@
-// This variable has connected with the brand variable.
+// This variable has connected with the Brand variable.
 $input-focus-width: var(--pgn-size-form-input-width-focus) !default;
-// This variable has connected with the brand variable.
+// This variable has connected with the Brand variable.
 $custom-select-indicator: var(--pgn-other-content-form-control-select-indicator-icon) !default;
-
-$form-validation-states: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$form-validation-states: map-merge(
-  (
-    "valid": (
-      "color": var(--pgn-color-form-feedback-valid),
-      "icon": var(--pgn-other-content-form-feedback-icon-valid),
-      "tooltip-color": var(--pgn-color-form-feedback-tooltip-valid),
-      "tooltip-bg": var(--pgn-color-form-feedback-tooltip-bg-valid),
-      "focus-box-shadow-color": var(--pgn-color-form-feedback-tooltip-box-shadow-focus-valid),
-      "checked-color": var(--pgn-color-form-feedback-checked-valid)
-    ),
-    "invalid": (
-      "color": var(--pgn-color-form-feedback-invalid),
-      "icon": var(--pgn-other-content-form-feedback-icon-invalid),
-      "tooltip-bg": var(--pgn-color-form-feedback-tooltip-bg-invalid),
-      "focus-box-shadow-color": var(--pgn-color-form-feedback-tooltip-box-shadow-focus-invalid),
-      "checked-color": var(--pgn-color-form-feedback-checked-invalid)
-    ),
-  ),
-  $form-validation-states
-);

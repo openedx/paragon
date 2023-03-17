@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Fri, 17 Mar 2023 13:58:00 GMT
+ * Generated on Fri, 17 Mar 2023 15:19:16 GMT
  */
 
 :root {
@@ -693,6 +693,13 @@
   --pgn-color-pagination-bg-disabled: var(--pgn-color-white);
   --pgn-color-pagination-bg-hover: var(--pgn-color-gray-100);
   --pgn-color-pagination-text-inverse: var(--pgn-color-white);
+  --pgn-color-page-banner-text-warning: var(--pgn-color-black);
+  --pgn-color-page-banner-text-accent-b: var(--pgn-color-black);
+  --pgn-color-page-banner-text-accent-a: var(--pgn-color-black);
+  --pgn-color-page-banner-text-light: var(--pgn-color-black);
+  --pgn-color-page-banner-text-dark: var(--pgn-color-white);
+  --pgn-color-page-banner-bg-accent-b: var(--pgn-color-accent-b);
+  --pgn-color-page-banner-bg-accent-a: var(--pgn-color-accent-a);
   --pgn-color-navbar-light-toggler-border: #0000001A;
   --pgn-color-navbar-light-disabled: #0000004D;
   --pgn-color-navbar-light-active: #000000E6;
@@ -1132,6 +1139,8 @@
   --pgn-color-pagination-focus-base: var(--pgn-color-primary-500);
   --pgn-color-pagination-bg-base: var(--pgn-color-bg-base);
   --pgn-color-pagination-text-active: var(--pgn-color-active);
+  --pgn-color-page-banner-bg-light: var(--pgn-color-light-400);
+  --pgn-color-page-banner-bg-dark: var(--pgn-color-dark-500);
   --pgn-color-navbar-light-brand-hover: var(--pgn-color-navbar-light-active);
   --pgn-color-navbar-light-brand-text: var(--pgn-color-navbar-light-active);
   --pgn-color-navbar-dark-active: var(--pgn-color-active);
@@ -1561,6 +1570,7 @@
   --pgn-color-popover-arrow-base: var(--pgn-color-popover-bg);
   --pgn-color-pagination-bg-active: var(--pgn-color-bg-active);
   --pgn-color-pagination-text-disabled: var(--pgn-color-disabled);
+  --pgn-color-page-banner-bg-warning: var(--pgn-color-warning-100);
   --pgn-color-navbar-dark-brand-hover: var(--pgn-color-navbar-dark-active);
   --pgn-color-navbar-dark-brand-text: var(--pgn-color-navbar-dark-active);
   --pgn-color-nav-pills-link-active-bg: var(--pgn-color-bg-active);

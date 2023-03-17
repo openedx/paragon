@@ -1,4 +1,5 @@
 @import "bootstrap-progress";
+@import "mixins";
 
 .progress {
   border: var(--pgn-size-progress-bar-border-width) solid var(--pgn-color-progress-bar-border);
@@ -43,83 +44,19 @@
     }
 
     .pgn__progress-bar--dark {
-      background-color: var(--pgn-color-primary-500);
-
-      &::after {
-        content: "";
-        display: block;
-        background: var(--pgn-color-primary-500);
-        position: absolute;
-        top:
-          calc(
-            var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2
-          );
-        right: calc(var(--pgn-size-progress-bar-threshold-circle) / -2);
-        width: var(--pgn-size-progress-bar-threshold-circle);
-        height: var(--pgn-size-progress-bar-threshold-circle);
-        border-radius: calc(var(--pgn-size-progress-bar-threshold-circle) / 2);
-        z-index: 1;
-      }
+      @include progress-bar-variant(var(--pgn-color-primary-500));
     }
 
     .pgn__progress-bar--success {
-      background-color: var(--pgn-color-success-500);
-
-      &::after {
-        content: "";
-        display: block;
-        background: var(--pgn-color-success-500);
-        position: absolute;
-        top:
-          calc(
-            var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2
-          );
-        right: calc(var(--pgn-size-progress-bar-threshold-circle) / -2);
-        width: var(--pgn-size-progress-bar-threshold-circle);
-        height: var(--pgn-size-progress-bar-threshold-circle);
-        border-radius: calc(var(--pgn-size-progress-bar-threshold-circle) / 2);
-        z-index: 1;
-      }
+      @include progress-bar-variant(var(--pgn-color-success-500));
     }
 
     .pgn__progress-bar--error {
-      background-color: var(--pgn-color-danger-500);
-
-      &::after {
-        content: "";
-        display: block;
-        background: var(--pgn-color-danger-500);
-        position: absolute;
-        top:
-          calc(
-            var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2
-          );
-        right: calc(var(--pgn-size-progress-bar-threshold-circle) / -2);
-        width: var(--pgn-size-progress-bar-threshold-circle);
-        height: var(--pgn-size-progress-bar-threshold-circle);
-        border-radius: calc(var(--pgn-size-progress-bar-threshold-circle) / 2);
-        z-index: 1;
-      }
+      @include progress-bar-variant(var(--pgn-color-danger-500));
     }
 
     .pgn__progress-bar--warning {
-      background-color: var(--pgn-color-accent-b);
-
-      &::after {
-        content: "";
-        display: block;
-        background: var(--pgn-color-accent-b);
-        position: absolute;
-        top:
-          calc(
-            var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2
-          );
-        right: calc(var(--pgn-size-progress-bar-threshold-circle) / -2);
-        width: var(--pgn-size-progress-bar-threshold-circle);
-        height: var(--pgn-size-progress-bar-threshold-circle);
-        border-radius: calc(var(--pgn-size-progress-bar-threshold-circle) / 2);
-        z-index: 1;
-      }
+      @include progress-bar-variant(var(--pgn-color-accent-b));
     }
   }
 

@@ -187,7 +187,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-inline {
-  line-height: calc(#{$line-height-base}em - 2 * #{var(--pgn-size-btn-border-width)});
+  line-height: calc(#{$line-height-base}em - 2 * var(--pgn-size-btn-border-width));
   font-size: inherit;
   vertical-align: bottom;
   padding: 0 .25em;

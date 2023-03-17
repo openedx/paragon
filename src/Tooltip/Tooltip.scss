@@ -13,7 +13,9 @@
   opacity: 0;
   filter: var(--pgn-elevation-tooltip-box-shadow);
 
-  &.show { opacity: var(--pgn-other-tooltip-opacity); }
+  &.show {
+    opacity: var(--pgn-other-tooltip-opacity);
+  }
 
   .arrow {
     position: absolute;

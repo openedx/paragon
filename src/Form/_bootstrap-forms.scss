@@ -275,17 +275,24 @@ textarea.form-control {
 // pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
 // server side validation.
 
-@each $state, $data in $form-validation-states {
-  @include form-validation-state(
-    $state,
-    map-get($data, color),
-    map-get($data, icon),
-    map-get($data, tooltip-color),
-    map-get($data, tooltip-bg),
-    map-get($data, focus-box-shadow-color),
-    map-get($data, checked-color)
-  );
-}
+@include form-validation-state(
+  "valid",
+  var(--pgn-color-form-feedback-valid),
+  var(--pgn-other-content-form-feedback-icon-valid),
+  var(--pgn-color-form-feedback-tooltip-valid),
+  var(--pgn-color-form-feedback-tooltip-bg-valid),
+  var(--pgn-color-form-feedback-tooltip-box-shadow-focus-valid),
+  var(--pgn-color-form-feedback-checked-valid),
+);
+@include form-validation-state(
+  "invalid",
+  var(--pgn-color-form-feedback-invalid),
+  var(--pgn-other-content-form-feedback-icon-invalid),
+  var(--pgn-color-form-feedback-tooltip-bg-invalid),
+  transparent,
+  var(--pgn-color-form-feedback-tooltip-box-shadow-focus-invalid),
+  var(--pgn-color-form-feedback-checked-invalid),
+);
 
 // Inline forms
 //
