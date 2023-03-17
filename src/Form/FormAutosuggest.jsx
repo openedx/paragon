@@ -160,13 +160,11 @@ function FormAutosuggest({
     const opt = optValue.find((o) => o.toLowerCase() === normalized);
 
     if (opt) {
-      setValue(opt);
       setState(prevState => ({
         ...prevState,
         displayValue: opt,
       }));
     } else {
-      setValue(null);
       setState(prevState => ({
         ...prevState,
         displayValue: itemValue,
