@@ -276,165 +276,165 @@
 
   // DANGER
   &.btn-icon-danger {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-danger);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-color: var(--pgn-color-icon-button-danger);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-danger);
-    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-danger);
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-danger-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-danger-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-danger-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-danger-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-danger-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-danger-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-danger-base);
   }
 
   &.btn-icon-inverse-danger {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-danger);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-danger-inverse-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-danger-inverse-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-danger-inverse-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-danger-inverse-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-danger-inverse-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-danger-inverse-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-danger-inverse);
   }
 
   &.btn-icon-danger-active {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-danger);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-danger);
-    --btn-icon-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-danger);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-box-shadow: none;
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-danger-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-danger-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-danger-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-danger-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-danger-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-danger-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-danger-active);
   }
 
   &.btn-icon-inverse-danger-active {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-danger);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-color: var(--pgn-color-icon-button-danger);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-danger);
-    --btn-icon-box-shadow: none;
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-danger-inverse-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-danger-inverse-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-danger-inverse-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-danger-inverse-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-danger-inverse-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-danger-inverse-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-danger-inverse-active);
   }
 
   // LIGHT
   &.btn-icon-light {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-light);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-color: var(--pgn-color-icon-button-light);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-light);
-    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-light);
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-light-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-light-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-light-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-light-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-light-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-light-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-light-base);
   }
 
   &.btn-icon-inverse-light {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-light);
-    --btn-iconbg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-light-inverse-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-light-inverse-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-light-inverse-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-light-inverse-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-light-inverse-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-light-inverse-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-light-inverse);
   }
 
   &.btn-icon-light-active {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-light);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-light);
-    --btn-icon-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-light);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-box-shadow: none;
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-light-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-light-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-light-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-light-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-light-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-light-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-light-active);
   }
 
   &.btn-icon-inverse-light-active {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-light);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-color: var(--pgn-color-icon-button-light);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-light);
-    --btn-icon-box-shadow: none;
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-light-inverse-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-light-inverse-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-light-inverse-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-light-inverse-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-light-inverse-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-light-inverse-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-light-inverse-active);
   }
 
   // DARK
   &.btn-icon-dark {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-dark);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-color: var(--pgn-color-icon-button-dark);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-dark);
-    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-dark);
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-dark-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-dark-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-dark-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-dark-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-dark-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-dark-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-dark-base);
   }
 
   &.btn-icon-inverse-dark {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-dark);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-dark-inverse-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-dark-inverse-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-dark-inverse-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-dark-inverse-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-dark-inverse-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-dark-inverse-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-dark-inverse);
   }
 
   &.btn-icon-dark-active {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-dark);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-dark);
-    --btn-icon-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-dark);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-box-shadow: none;
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-dark-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-dark-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-dark-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-dark-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-dark-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-dark-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-dark-active);
   }
 
   &.btn-icon-inverse-dark-active {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-dark);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-color: var(--pgn-color-icon-button-dark);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-dark);
-    --btn-icon-box-shadow: none;
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-dark-inverse-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-dark-inverse-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-dark-inverse-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-dark-inverse-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-dark-inverse-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-dark-inverse-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-dark-inverse-active);
   }
 
   // BLACK
   &.btn-icon-black {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-black);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-color: var(--pgn-color-icon-button-black);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-black);
-    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-black);
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-black-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-black-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-black-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-black-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-black-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-black-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-black-base);
   }
 
   &.btn-icon-inverse-black {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-black);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-box-shadow: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-black-inverse-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-black-inverse-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-black-inverse-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-black-inverse-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-black-inverse-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-black-inverse-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-black-inverse);
   }
 
   &.btn-icon-black-active {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-black);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-black);
-    --btn-icon-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-black);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-box-shadow: none;
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-black-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-black-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-black-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-black-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-black-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-black-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-black-active);
   }
 
   &.btn-icon-inverse-black-active {
-    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-hover-color: var(--pgn-color-icon-button-black);
-    --btn-icon-bg-color: var(--pgn-color-icon-button-accent);
-    --btn-icon-color: var(--pgn-color-icon-button-black);
-    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-black);
-    --btn-icon-focus-color: var(--pgn-color-icon-button-black);
-    --btn-icon-box-shadow: none;
+    --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-black-inverse-active-hover);
+    --btn-icon-hover-color: var(--pgn-color-icon-button-text-black-inverse-active-hover);
+    --btn-icon-bg-color: var(--pgn-color-icon-button-bg-black-inverse-active-base);
+    --btn-icon-color: var(--pgn-color-icon-button-text-black-inverse-active-base);
+    --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-black-inverse-active-focus);
+    --btn-icon-focus-color: var(--pgn-color-icon-button-text-black-inverse-active-focus);
+    --btn-icon-box-shadow: var(--pgn-elevation-icon-button-box-shadow-black-inverse-active);
   }
 }
