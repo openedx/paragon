@@ -26,9 +26,11 @@ function FormAutosuggestWrapper(props) {
 }
 
 describe('FormAutosuggest', () => {
-  it('renders component without error', () => {
-    mount(<FormAutosuggestWrapper />);
+  afterEach(() => {
+    jest.clearAllMocks();
   });
+
+  const onSelected = jest.fn();
 
   const container = mount(
     <FormAutosuggestWrapper
@@ -36,6 +38,7 @@ describe('FormAutosuggest', () => {
       floatingLabel="floatingLabel text"
       helpMessage="Example help message"
       errorMessageText="Example error message"
+      onSelected={onSelected}
     >
       <FormAutosuggestOption>Option 1</FormAutosuggestOption>
       <FormAutosuggestOption>Option 2</FormAutosuggestOption>
@@ -43,73 +46,84 @@ describe('FormAutosuggest', () => {
     </FormAutosuggestWrapper>,
   );
 
-  it('render without loading state', () => {
-    expect(container.exists('.pgn__form-autosuggest__dropdown-loading')).toBe(false);
-    expect(container.props().isLoading).toBeUndefined();
+  describe('render behavior', () => {
+    it('renders component without error', () => {
+      mount(<FormAutosuggestWrapper />);
+    });
+
+    it('render without loading state', () => {
+      expect(container.exists('.pgn__form-autosuggest__dropdown-loading')).toBe(false);
+      expect(container.props().isLoading).toBeUndefined();
+    });
+
+    it('render with loading state', () => {
+      const wrapper = mount(<FormAutosuggestWrapper isLoading />);
+
+      expect(wrapper.exists('.pgn__form-autosuggest__dropdown-loading')).toBe(true);
+      expect(wrapper.props().isLoading).toBe(true);
+    });
+
+    it('renders component with options', () => {
+      container.find('input').simulate('click');
+      const optionsList = container.find('.pgn__form-autosuggest__dropdown').find('button');
+
+      expect(optionsList.length).toEqual(3);
+    });
   });
 
-  it('render with loading state', () => {
-    const wrapper = mount(<FormAutosuggestWrapper isLoading />);
+  describe('controlled behavior', () => {
+    it('selects option', () => {
+      container.find('input').simulate('click');
+      container.find('.pgn__form-autosuggest__dropdown').find('button')
+        .at(0).simulate('click');
 
-    expect(wrapper.exists('.pgn__form-autosuggest__dropdown-loading')).toBe(true);
-    expect(wrapper.props().isLoading).toBe(true);
-  });
+      expect(container.find('input').instance().value).toEqual('Option 1');
+      expect(onSelected).toHaveBeenCalledWith('Option 1');
+      expect(onSelected).toHaveBeenCalledTimes(1);
+    });
 
-  it('renders component with options', () => {
-    container.find('input').simulate('click');
-    const optionsList = container.find('.pgn__form-autosuggest__dropdown').find('button');
+    it('options list depends on empty field value', () => {
+      container.find('input').simulate('change', { target: { value: '' } });
 
-    expect(optionsList.length).toEqual(3);
-  });
+      expect(container.find('input').instance().value).toEqual('');
+    });
 
-  it('selects option', () => {
-    container.find('input').simulate('click');
-    container.find('.pgn__form-autosuggest__dropdown').find('button')
-      .at(0).simulate('click');
+    it('options list depends on filled field value', () => {
+      container.find('input').simulate('change', { target: { value: 'option 1' } });
 
-    expect(container.find('input').instance().value).toEqual('Option 1');
-  });
+      expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(1);
+      expect(onSelected).toHaveBeenCalledTimes(0);
+    });
 
-  it('options list depends on empty field value', () => {
-    container.find('input').simulate('change', { target: { value: '' } });
+    it('toggles options list', () => {
+      const dropdownContainer = '.pgn__form-autosuggest__dropdown';
 
-    expect(container.find('input').instance().value).toEqual('');
-  });
+      expect(container.find(dropdownContainer).find('button').length).toEqual(1);
 
-  it('options list depends on filled field value', () => {
-    container.find('input').simulate('change', { target: { value: 'option 1' } });
+      container.find('button.pgn__form-autosuggest__icon-button').simulate('click');
+      expect(container.find(dropdownContainer).find('button').length).toEqual(0);
 
-    expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(1);
-  });
+      container.find('button.pgn__form-autosuggest__icon-button').simulate('click');
+      expect(container.find(dropdownContainer).find('button').length).toEqual(3);
+    });
 
-  it('toggles options list', () => {
-    const dropdownContainer = '.pgn__form-autosuggest__dropdown';
+    it('shows options list depends on field value', () => {
+      container.find('input').simulate('change', { target: { value: '1' } });
 
-    expect(container.find(dropdownContainer).find('button').length).toEqual(1);
+      expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(2);
+    });
 
-    container.find('button.pgn__form-autosuggest__icon-button').simulate('click');
-    expect(container.find(dropdownContainer).find('button').length).toEqual(0);
+    it('closes options list on click outside', () => {
+      const fireEvent = createDocumentListenersMock();
+      const dropdownContainer = '.pgn__form-autosuggest__dropdown';
 
-    container.find('button.pgn__form-autosuggest__icon-button').simulate('click');
-    expect(container.find(dropdownContainer).find('button').length).toEqual(3);
-  });
+      container.find('input').simulate('click');
+      expect(container.find(dropdownContainer).find('button').length).toEqual(2);
 
-  it('shows options list depends on field value', () => {
-    container.find('input').simulate('change', { target: { value: '1' } });
+      act(() => { fireEvent.click(document.body); });
+      container.update();
 
-    expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(2);
-  });
-
-  it('closes options list on click outside', () => {
-    const fireEvent = createDocumentListenersMock();
-    const dropdownContainer = '.pgn__form-autosuggest__dropdown';
-
-    container.find('input').simulate('click');
-    expect(container.find(dropdownContainer).find('button').length).toEqual(2);
-
-    act(() => { fireEvent.click(document.body); });
-    container.update();
-
-    expect(container.find(dropdownContainer).find('button').length).toEqual(0);
+      expect(container.find(dropdownContainer).find('button').length).toEqual(0);
+    });
   });
 });
