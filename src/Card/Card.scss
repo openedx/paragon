@@ -6,10 +6,10 @@
   border: 0;
 
   %dark-variant-content {
-    color: $white;
+    color: var(--pgn-color-white);
 
     a {
-      color: $white;
+      color: var(--pgn-color-white);
     }
   }
 
@@ -51,7 +51,7 @@
 }
 
 a .pgn__card {
-  color: $gray-700;
+  color: var(--pgn-color-gray-700);
   display: inline-block;
 }
 
@@ -98,7 +98,7 @@ a .pgn__card {
   }
 
   .pgn__card-carousel-subtitle {
-    font-size: $font-size-sm;
+    font-size: var(--pgn-typography-font-size-sm);
     margin-bottom: map-get($spacers, 2);
   }
 
@@ -125,8 +125,8 @@ a .pgn__card {
   }
 
   %header-title {
-    color: $black;
-    font-weight: $font-weight-bold;
+    color: var(--pgn-color-black);
+    font-weight: var(--pgn-typography-font-weight-bold);
     text-align: start;
   }
 
@@ -137,15 +137,15 @@ a .pgn__card {
   }
 
   .pgn__card-header-title-sm {
-    font-size: $h4-font-size;
+    font-size: var(--pgn-typography-font-size-h4);
   }
 
   .pgn__card-header-title-md {
-    font-size: $h3-font-size;
+    font-size: var(--pgn-typography-font-size-h3);
   }
 
   %header-subtitle {
-    color: $gray-700;
+    color: var(--pgn-color-gray-700);
     margin-top: map_get($spacers, 1);
   }
 
@@ -156,16 +156,16 @@ a .pgn__card {
   }
 
   .pgn__card-header-subtitle-sm {
-    font-size: $h5-font-size;
+    font-size: var(--pgn-typography-font-size-h5);
   }
 
   .pgn__card-header-subtitle-md {
-    font-size: $h4-font-size;
+    font-size: var(--pgn-typography-font-size-h4);
   }
 
   .pgn__card-header-actions {
-    margin-top: $spacer;
-    margin-inline-start: $spacer;
+    margin-top: var(--pgn-spacing-spacer-base);
+    margin-inline-start: var(--pgn-spacing-spacer-base);
     flex-shrink: 0;
   }
 
@@ -189,13 +189,13 @@ a .pgn__card {
   text-align: start;
 
   &.is-muted {
-    background-color: $light-200;
+    background-color: var(--pgn-color-light-200);
   }
 
   .pgn__card-section-title {
-    color: $black;
-    font-weight: $font-weight-bold;
-    font-size: $h5-font-size;
+    color: var(--pgn-color-black);
+    font-weight: var(--pgn-typography-font-weight-bold);
+    font-size: var(--pgn-typography-font-size-h5);
     margin-bottom: var(--pgn-spacing-card-spacer-y);
   }
 
@@ -269,7 +269,7 @@ a .pgn__card {
 }
 
 .pgn__card-footer-text {
-  color: $gray-700;
+  color: var(--pgn-color-gray-700);
   order: 1;
   font-size: var(--pgn-typography-footer-text-font-size);
 
@@ -354,9 +354,9 @@ a .pgn__card {
   width: var(--pgn-size-card-logo-width);
   height: var(--pgn-size-card-logo-height);
   border-radius: var(--pgn-size-card-border-radius-logo);
-  box-shadow: $level-1-box-shadow;
+  box-shadow: var(--pgn-elevation-box-shadow-level-1);
   padding: map_get($spacers, 2);
-  background-color: $white;
+  background-color: var(--pgn-color-white);
   display: none;
 
   &.show {
@@ -412,7 +412,7 @@ a .pgn__card {
   box-shadow: none;
   margin-bottom: 0;
   display: flex;
-  font-size: $font-size-sm;
+  font-size: var(--pgn-typography-font-size-sm);
   line-height: 1.5rem;
   text-align: start;
   position: relative;
@@ -427,10 +427,10 @@ a .pgn__card {
   }
 
   .pgn__card-status__heading {
-    font-size: $h4-font-size;
-    color: $black;
+    font-size: var(--pgn-typography-font-size-h4);
+    color: var(--pgn-color-black);
     display: flex;
-    font-weight: $font-weight-bold;
+    font-weight: var(--pgn-typography-font-weight-bold);
     line-height: 1.5rem;
     margin-bottom: .5rem;
   }
@@ -456,13 +456,13 @@ a .pgn__card {
   }
 
   &.pgn__card-status__primary {
-    color: $white;
-    background-color: $primary-500;
-    border-color: $primary-500;
-    box-shadow: 0 0 0 1px $primary-500;
+    color: var(--pgn-color-white);
+    background-color: var(--pgn-color-primary-500);
+    border-color: var(--pgn-color-primary-500);
+    box-shadow: 0 0 0 1px var(--pgn-color-primary-500);
 
     .pgn__icon {
-      color: $white;
+      color: var(--pgn-color-white);
     }
   }
 }

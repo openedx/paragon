@@ -41,7 +41,7 @@
 }
 
 .figure-img {
-  margin-bottom: calc(#{$spacer} * .5);
+  margin-bottom: calc(var(--pgn-spacing-spacer-base) * .5);
   line-height: 1;
 }
 

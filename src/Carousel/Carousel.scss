@@ -77,14 +77,14 @@
   text-align: center;
   background: none;
   border: 0;
-  opacity: var(--pgn-color-carousel-control-opacity-base);
+  opacity: var(--pgn-other-carousel-control-opacity-base);
   transition: var(--pgn-transition-carousel-control);
 
   @include hover-focus() {
     color: var(--pgn-carousel-control-color);
     text-decoration: none;
     outline: 0;
-    opacity: var(--pgn-color-carousel-control-opacity-hover);
+    opacity: var(--pgn-other-carousel-control-opacity-hover);
   }
 }
 
@@ -92,7 +92,7 @@
   left: 0;
 
   @if $enable-gradients {
-    background-image: linear-gradient(90deg, rgba($black, .25), rgba($black, .001));
+    background-image: linear-gradient(90deg, rgba(var(--pgn-color-black), .25), rgba(var(--pgn-color-black), .001));
   }
 }
 
@@ -100,7 +100,7 @@
   right: 0;
 
   @if $enable-gradients {
-    background-image: linear-gradient(270deg, rgba($black, .25), rgba($black, .001));
+    background-image: linear-gradient(270deg, rgba(var(--pgn-color-black), .25), rgba(var(--pgn-color-black), .001));
   }
 }
 
@@ -113,11 +113,11 @@
 }
 
 .carousel-control-prev-icon {
-  background-image: escape-svg(var(--pgn-content-carousel-control-bg-prev-icon));
+  background-image: var(--pgn-content-carousel-control-bg-prev-icon);
 }
 
 .carousel-control-next-icon {
-  background-image: escape-svg(var(--pgn-content-carousel-control-bg-next-icon));
+  background-image: var(--pgn-content-carousel-control-bg-next-icon);
 }
 
 .carousel-indicators {

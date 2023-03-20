@@ -14,7 +14,7 @@
 .nav-link {
   display: block;
   padding: var(--pgn-spacing-nav-link-padding-y) var(--pgn-spacing-nav-link-padding-x);
-  text-decoration: if($link-decoration == none, null, none);
+  text-decoration: var(--pgn-typography-nav-link-text-decoration);
   color: var(--pgn-color-nav-link-text-base);
   font-weight: var(--pgn-typography-nav-link-font-weight);
 

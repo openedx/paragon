@@ -6,11 +6,8 @@
     display: block;
     background: $bg;
     position: absolute;
-    top:
-      calc(
-        // stylelint-disable-next-line max-line-length
-        var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2
-      );
+    // stylelint-disable-next-line max-line-length
+    top: calc(var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2);
     right: calc(var(--pgn-size-progress-bar-threshold-circle) / -2);
     width: var(--pgn-size-progress-bar-threshold-circle);
     height: var(--pgn-size-progress-bar-threshold-circle);

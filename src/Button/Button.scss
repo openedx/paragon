@@ -11,7 +11,7 @@
   vertical-align: middle;
   user-select: none;
   border: var(--pgn-size-btn-border-width) solid var(--pgn-btn-border-color, transparent);
-  color: var(--pgn-btn-color, #{$body-color});
+  color: var(--pgn-btn-color, var(--pgn-color-body-base));
   background-color: var(--pgn-btn-bg, transparent);
   transition: var(--pgn-transition-btn);
 
@@ -31,7 +31,7 @@
       box-shadow: none;
       background: var(--pgn-btn-focus-bg, transparent);
       border-color: var(--pgn-btn-focus-border-color, transparent);
-      color: var(--pgn-btn-focus-color, #{$body-color});
+      color: var(--pgn-btn-focus-color, var(--pgn-color-body-base));
 
       &::before {
         content: "";
@@ -40,7 +40,7 @@
         right: calc(var(--pgn-spacing-btn-focus-distance-to-border) * -1);
         bottom: calc(var(--pgn-spacing-btn-focus-distance-to-border) * -1);
         left: calc(var(--pgn-spacing-btn-focus-distance-to-border) * -1);
-        border: solid var(--pgn-size-btn-focus-width) var(--pgn-btn-focus-outline-color, #{$body-color});
+        border: solid var(--pgn-size-btn-focus-width) var(--pgn-btn-focus-outline-color, var(--pgn-color-body-base));
         border-radius: var(--pgn-size-btn-focus-border-radius);
       }
 
@@ -68,7 +68,7 @@
     }
 
     &:hover {
-      color: var(--pgn-btn-hover-color, #{$body-color});
+      color: var(--pgn-btn-hover-color, var(--pgn-color-body-base));
       background-color: var(--pgn-btn-hover-bg, transparent);
       border-color: var(--pgn-btn-hover-border-color, transparent);
       text-decoration: none;
@@ -126,18 +126,18 @@ fieldset:disabled a.btn {
 
 // Make a button look and behave like a link
 .btn-link {
-  font-weight: $font-weight-normal;
-  color: $link-color;
-  text-decoration: $link-decoration;
+  font-weight: var(--pgn-typography-font-weight-normal);
+  color: var(--pgn-color-link-base);
+  text-decoration: var(--pgn-typography-link-decoration-base);
 
   &:hover {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+    color: var(--pgn-color-link-hover);
+    text-decoration: var(--pgn-typography-link-decoration-hover);
   }
 
   &:focus,
   &.focus {
-    text-decoration: $link-hover-decoration;
+    text-decoration: var(--pgn-typography-link-decoration-hover);
     box-shadow: none;
   }
 
@@ -187,7 +187,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-inline {
-  line-height: calc(#{$line-height-base}em - 2 * var(--pgn-size-btn-border-width));
+  line-height: calc(var(--pgn-typography-line-height-base) * 1em - 2 * var(--pgn-size-btn-border-width));
   font-size: inherit;
   vertical-align: bottom;
   padding: 0 .25em;
@@ -763,7 +763,7 @@ input[type="button"] {
   --pgn-btn-color: var(--pgn-color-btn-text-inverse-outline-light);
   --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-outline-light);
   --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-outline-light);
-  --pgn-btn-hover-color: #{var(--pgn-color-btn-hover-text-inverse-outline-light)};
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-outline-light);
   --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-outline-light);
   --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-outline-light);
   --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-outline-light);

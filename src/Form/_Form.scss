@@ -15,7 +15,7 @@
 }
 
 .form-control:hover {
-  border: solid var(--pgn-size-form-input-width-hover) $dark-700;
+  border: solid var(--pgn-size-form-input-width-hover) var(--pgn-color-dark-700);
 }
 
 .pgn__form-group {
@@ -178,17 +178,17 @@
   }
 
   .btn-icon {
-    color: $gray-500 !important;
+    color: var(--pgn-color-gray-500) !important;
 
     &:hover {
-      background-color: $gray-500 !important;
-      color: $white !important;
+      background-color: var(--pgn-color-gray-500) !important;
+      color: var(--pgn-color-white) !important;
     }
 
     &:focus {
-      background-color: $white !important;
-      color: $gray-500 !important;
-      box-shadow: inset 0 0 0 2px $gray-500 !important;
+      background-color: var(--pgn-color-white) !important;
+      color: var(--pgn-color-gray-500) !important;
+      box-shadow: inset 0 0 0 2px var(--pgn-color-gray-500) !important;
     }
   }
 }
@@ -236,7 +236,7 @@
       transform: translateX(var(--pgn-size-form-control-icon-width));
 
       [dir="rtl"] & {
-        transform: translateX(calc(-1 * #{var(--pgn-size-form-control-icon-width)}));
+        transform: translateX(calc(-1 * var(--pgn-size-form-control-icon-width)));
       }
     }
   }
@@ -412,11 +412,11 @@ select.form-control {
 
 .pgn__form-checkbox-input {
   &:checked {
-    background-image: escape-svg(var(--pgn-other-content-form-control-checkbox-indicator-icon-checked));
+    background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked);
   }
 
   &:indeterminate {
-    background-image: escape-svg(var(--pgn-other-content-form-control-checkbox-indicator-indeterminate-icon));
+    background-image: var(--pgn-other-content-form-control-checkbox-indicator-indeterminate-icon);
   }
 }
 
@@ -445,7 +445,7 @@ select.form-control {
 .pgn__form-switch-input {
   width: var(--pgn-size-form-control-switch-width);
   border-radius: var(--pgn-size-form-control-switch-indicator-border-radius);
-  background-image: escape-svg(var(--pgn-other-content-form-control-switch-indicator-icon-off));
+  background-image: var(--pgn-other-content-form-control-switch-indicator-icon-off);
   background-position: left center;
   background-repeat: no-repeat;
   transition: background 150ms ease;
@@ -453,18 +453,18 @@ select.form-control {
   &:checked {
     background-position: right center;
     background-color: var(--pgn-color-form-control-switch-indicator-checked-bg);
-    background-image: escape-svg(var(--pgn-other-content-form-control-switch-indicator-icon-on));
+    background-image: var(--pgn-other-content-form-control-switch-indicator-icon-on);
   }
 
   &:indeterminate {
     background-position: center;
-    background-image: escape-svg(var(--pgn-other-content-form-control-switch-indicator-icon-off));
+    background-image: var(--pgn-other-content-form-control-switch-indicator-icon-off);
   }
 }
 
 .pgn__form-switch-helper-text {
-  color: $gray-500;
-  font-size: $font-size-xs;
+  color: var(--pgn-color-gray-500);
+  font-size: var(--pgn-typography-font-size-xs);
   margin-top: .25rem;
 }
 
@@ -472,11 +472,11 @@ select.form-control {
   border-radius: var(--pgn-size-form-control-border-radio-indicator-radius);
 
   &:checked {
-    background-image: escape-svg(var(--pgn-other-content-form-control-radio-indicator-icon-checked));
+    background-image: var(--pgn-other-content-form-control-radio-indicator-icon-checked);
   }
 
   &:focus {
-    border-color: $black;
+    border-color: var(--pgn-color-black);
 
     &::before {
       border-radius: var(--pgn-size-form-control-border-radio-indicator-radius);
@@ -577,11 +577,11 @@ select.form-control {
 
   .pgn__form-control-decorator .btn-icon {
     &:hover {
-      fill: $white;
+      fill: var(--pgn-color-white);
     }
 
     &:focus {
-      fill: $gray-500;
+      fill: var(--pgn-color-gray-500);
     }
   }
 
@@ -601,13 +601,13 @@ select.form-control {
       margin-inline-end: var(--pgn-spacing-form-control-gutter);
     }
 
-    border-radius: $border-radius-sm;
+    border-radius: var(--pgn-size-border-radius-sm);
     max-height: 15rem;
     overflow-y: scroll;
     position: absolute;
-    background-color: $white;
+    background-color: var(--pgn-color-white);
     width: calc(100% - .5rem);
-    z-index: $zindex-dropdown;
+    z-index: var(--pgn-elevation-dropdown-zindex);
     top: 3.125rem;
 
     .dropdown-item {
@@ -619,7 +619,7 @@ select.form-control {
       text-overflow: ellipsis;
 
       &:active {
-        color: $white;
+        color: var(--pgn-color-white);
       }
     }
 
@@ -630,7 +630,7 @@ select.form-control {
       .spinner-border {
         width: var(--pgn-size-form-autosuggest-spinner-width);
         height: var(--pgn-size-form-autosuggest-spinner-height);
-        border: var(--pgn-size-form-autosuggest-border-width) solid $black;
+        border: var(--pgn-size-form-autosuggest-border-width) solid var(--pgn-color-black);
         border-right-color: transparent;
       }
     }

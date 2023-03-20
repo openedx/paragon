@@ -1,6 +1,6 @@
 .pgn__data-table-wrapper {
-  font-size: $font-size-sm;
-  border-radius: $border-radius;
+  font-size: var(--pgn-typography-font-size-sm);
+  border-radius: var(--pgn-size-border-radius-base);
   background-color: var(--pgn-color-data-table-bg-base);
   box-shadow: var(--pgn-elevation-data-table-box-shadow);
 
@@ -9,13 +9,13 @@
   }
 
   > :first-child {
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+    border-top-left-radius: var(--pgn-size-border-radius-base);
+    border-top-right-radius: var(--pgn-size-border-radius-base);
   }
 
   > :last-child {
-    border-bottom-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: var(--pgn-size-border-radius-base);
+    border-bottom-right-radius: var(--pgn-size-border-radius-base);
   }
 }
 
@@ -86,13 +86,13 @@
   display: flex;
   align-items: flex-start;
 
-  @media (max-width: $max-width-xl) {
+  @media (max-width: var(--pgn-size-container-max-width-xl)) {
     overflow-x: scroll;
   }
 
   .pgn__data-table-layout-sidebar {
     background-color: var(--pgn-color-data-table-bg-base);
-    border-radius: $border-radius;
+    border-radius: var(--pgn-size-border-radius-base);
     box-shadow: var(--pgn-elevation-data-table-box-shadow);
     padding: var(--pgn-spacing-data-table-padding-small);
     margin-right: map_get($spacers, 4);
@@ -121,11 +121,11 @@
   width: 100%;
 
   &.is-striped tr:nth-child(even) {
-    background-color: $light-200;
+    background-color: var(--pgn-color-light-200);
   }
 
   th {
-    background-color: $light-300;
+    background-color: var(--pgn-color-light-300);
     padding: var(--pgn-spacing-data-table-padding-cell);
     text-align: start;
   }
@@ -137,7 +137,7 @@
   }
 
   & tr.is-selected {
-    background-color: $info-100 !important;
+    background-color: var(--pgn-color-info-100) !important;
   }
 }
 
@@ -214,7 +214,7 @@
 }
 
 .pgn__checkbox-filter-label {
-  font-weight: $font-weight-bold;
+  font-weight: var(--pgn-typography-font-weight-bold);
 }
 
 .pgn__checkbox-filter {
@@ -273,9 +273,9 @@
 }
 
 .pgn__data-table__overflow-actions-menu {
-  background: $white;
+  background: var(--pgn-color-white);
   padding: map_get($spacers, 2);
-  box-shadow: $level-1-box-shadow;
+  box-shadow: var(--pgn-elevation-box-shadow-level-1);
   border-radius: 4px;
 }
 

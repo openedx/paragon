@@ -10,7 +10,7 @@
   text-overflow: ellipsis;
   font-family: var(--pgn-typography-btn-font-family);
   font-weight: var(--pgn-typography-btn-font-weight);
-  color: $body-color;
+  color: var(--pgn-color-body-base);
   text-align: center;
   vertical-align: middle;
   user-select: none;
@@ -48,7 +48,7 @@
 
   &.focus,
   &:focus {
-    font-weight: $font-weight-bolder;
+    font-weight: var(--pgn-typography-font-weight-bolder);
     color: var(--pgn-color-btn-text-tertiary);
     background-color: var(--pgn-color-menu-bg-active);
     border-color: var(--pgn-color-menu-border-active);
@@ -77,8 +77,8 @@
 
 .pgn__menu {
   border-radius: .25em;
-  box-shadow: $box-shadow;
-  background-color: $white;
+  box-shadow: var(--pgn-elevation-box-shadow-base);
+  background-color: var(--pgn-color-white);
   overflow: auto;
   max-height: 264px;
 }
@@ -93,14 +93,14 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  background: $white;
+  background: var(--pgn-color-white);
   box-sizing: border-box;
-  color: $dark;
+  color: var(--pgn-color-dark-base);
 
   &:hover {
-    color: $white;
-    background: $primary;
-    border: 1px solid $white;
+    color: var(--pgn-color-white);
+    background: var(--pgn-color-primary-base);
+    border: 1px solid var(--pgn-color-white);
     box-sizing: border-box;
   }
 }

@@ -12,7 +12,7 @@
   margin-left: calc(var(--pgn-size-pagination-border-width) * -1);
   line-height: var(--pgn-typography-pagination-line-height);
   color: var(--pgn-color-pagination-text-base);
-  text-decoration: if($link-decoration == none, null, none);
+  text-decoration: none;
   background-color: var(--pgn-color-pagination-bg-base);
   border: var(--pgn-size-pagination-border-width) solid var(--pgn-color-pagination-border-base);
 
@@ -36,13 +36,13 @@
     .page-link {
       margin-left: 0;
 
-      @include border-left-radius($border-radius);
+      @include border-left-radius(var(--pgn-size-border-radius-base));
     }
   }
 
   &:last-child {
     .page-link {
-      @include border-right-radius($border-radius);
+      @include border-right-radius(var(--pgn-size-border-radius-base));
     }
   }
 
@@ -66,8 +66,8 @@
   @include pagination-size(
     var(--pgn-spacing-pagination-padding-y-lg),
     var(--pgn-spacing-pagination-padding-x-lg),
-    $font-size-lg,
-    $line-height-lg,
+    var(--pgn-typography-font-size-lg),
+    var(--pgn-typography-line-height-lg),
     var(--pgn-size-pagination-border-radius-lg)
   );
 }
@@ -76,8 +76,8 @@
   @include pagination-size(
     var(--pgn-spacing-pagination-padding-y-sm),
     var(--pgn-spacing-pagination-padding-x-sm),
-    $font-size-sm,
-    $line-height-sm,
+    var(--pgn-typography-font-size-sm),
+    var(--pgn-typography-line-height-sm),
     var(--pgn-size-pagination-border-radius-sm)
   );
 }

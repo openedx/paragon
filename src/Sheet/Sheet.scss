@@ -10,7 +10,7 @@
     display: none;
   }
 
-  z-index: $zindex-sheet-backdrop;
+  z-index: var(--pgn-elevation-sheet-zindex-backdrop);
 }
 
 %component-left {
@@ -34,12 +34,12 @@
 .pgn__sheet-component {
   position: fixed;
   padding: 1.25rem;
-  background-color: $white;
-  z-index: $zindex-sheet;
+  background-color: var(--pgn-color-white);
+  z-index: var(--pgn-elevation-sheet-zindex-main);
 
   &.pgn__sheet__dark {
-    background-color: $dark-500;
-    color: $light-300;
+    background-color: var(--pgn-color-dark-500);
+    color: var(--pgn-color-light-300);
   }
 
   &.bottom {

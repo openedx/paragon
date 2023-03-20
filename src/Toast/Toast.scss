@@ -31,7 +31,7 @@
     padding: 0;
 
     p {
-      font-size: $small-font-size;
+      font-size: var(--pgn-typography-font-size-small-base);
       margin: 0;
       padding-right: .75rem;
     }

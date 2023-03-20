@@ -2,7 +2,8 @@
   "typography": {
     "nav": {
       "link": {
-        "font-weight": { "value": "500", "type": "fontWeight", "source": "$nav-link-font-weight" }
+        "font-weight": { "value": "500", "type": "fontWeight", "source": "$nav-link-font-weight" },
+        "text-decoration": { "value": "none", "type": "textDecoration" }
       }
     }
   },

@@ -1,7 +1,7 @@
 // Base class
 .tooltip {
   position: absolute;
-  z-index: $zindex-tooltip;
+  z-index: var(--pgn-elevation-tooltip-zindex);
   display: block;
   margin: var(--pgn-spacing-tooltip-margin);
   // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.

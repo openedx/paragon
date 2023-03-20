@@ -16,7 +16,7 @@
 
   .progress {
     overflow: visible;
-    background-color: $light-300;
+    background-color: var(--pgn-color-light-300);
     height: var(--pgn-size-progress-bar-height-annotated);
     border: none;
 
@@ -36,11 +36,11 @@
     }
 
     .pgn__progress-tick--white::after {
-      background: $light-300;
+      background: var(--pgn-color-light-300);
     }
 
     .pgn__progress-tick--black::after {
-      background: $primary-500;
+      background: var(--pgn-color-primary-500);
     }
 
     .pgn__progress-bar--dark {
@@ -66,7 +66,7 @@
     content: "";
     height: var(--pgn-size-progress-bar-height-annotated);
     width: 1px;
-    background: $primary-500;
+    background: var(--pgn-color-primary-500);
   }
 
   .progress::after {
@@ -81,6 +81,6 @@
   .pgn__progress-hint {
     box-sizing: border-box;
     padding: 0 var(--pgn-spacing-progress-bar-hint-annotation-gap);
-    font-size: $small-font-size;
+    font-size: var(--pgn-typography-font-size-small-base);
   }
 }

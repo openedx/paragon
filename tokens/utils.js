@@ -37,10 +37,10 @@ async function replaceVariablesUsage(filePath, variablesMap, direction = 'scss-t
   if (direction === 'css-to-scss') {
     variableRegex = /var\((\w|-|_)*\)/g;
   } else if (direction === 'scss-to-css') {
-    variableRegex = /\$(\w|-|_)*(,|;|\)|\s|}|$)/g;
+    variableRegex = /(\$|#{\$)(\w|-|_)*(}|,|;|\)|\s|$)/g;
   }
 
-  const fileStream = fs.createReadStream(path.resolve(__dirname, filePath));
+  const fileStream = fs.createReadStream(path.resolve(__dirname, '..', filePath));
 
   const rl = readline.createInterface({
     input: fileStream,
@@ -53,12 +53,23 @@ async function replaceVariablesUsage(filePath, variablesMap, direction = 'scss-t
     const variables = [...parsedLine.matchAll(variableRegex)];
 
     variables.forEach(variableData => {
-      let variable = variableData[0];
-      if (direction === 'scss-to-css' && [',', ';', ')', ' ', '}'].includes(variable.slice(-1))) {
-        variable = variable.slice(0, -1);
+      let varExpressionToReplace = variableData[0];
+      let actualVariable = varExpressionToReplace;
+
+      if (direction === 'scss-to-css') {
+        // handle interpolation expressions first, e.g. #{$some-variable}
+        if (varExpressionToReplace.startsWith('#{') && varExpressionToReplace.endsWith('}')) {
+          actualVariable = varExpressionToReplace.slice(2, -1);
+
+          // general case, e.g. $some-variable;
+        } else if ([',', ';', ')', ' ', '}'].includes(varExpressionToReplace.slice(-1))) {
+          varExpressionToReplace = varExpressionToReplace.slice(0, -1);
+          actualVariable = varExpressionToReplace;
+        }
       }
-      if (variable in variablesMap) {
-        parsedLine = parsedLine.replaceAll(variable, variablesMap[variable]);
+
+      if (actualVariable in variablesMap) {
+        parsedLine = parsedLine.replaceAll(varExpressionToReplace, variablesMap[actualVariable]);
       }
     });
 

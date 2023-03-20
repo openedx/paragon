@@ -74,7 +74,7 @@
   padding: var(--pgn-spacing-navbar-toggler-padding-y) var(--pgn-spacing-navbar-toggler-padding-x);
   line-height: 1;
   background-color: transparent;
-  border: $border-width solid transparent;
+  border: var(--pgn-size-border-width) solid transparent;
 
   @include border-radius(var(--pgn-size-navbar-toggler-border-radius));
   @include font-size(var(--pgn-typography-navbar-toggler-font-size));
@@ -207,7 +207,7 @@
   }
 
   .navbar-toggler-icon {
-    background-image: escape-svg(var(--pgn-content-navbar-toggler-light-icon-bg));
+    background-image: var(--pgn-content-navbar-toggler-light-icon-bg);
   }
 
   .navbar-text {
@@ -259,7 +259,7 @@
   }
 
   .navbar-toggler-icon {
-    background-image: escape-svg(var(--pgn-content-navbar-toggler-dark-icon-bg));
+    background-image: var(--pgn-content-navbar-toggler-dark-icon-bg);
   }
 
   .navbar-text {

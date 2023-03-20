@@ -1,12 +1,12 @@
 .pgn__chip {
-  background: var(--pgn-chip-bg, $light-500);
+  background: var(--pgn-chip-bg, var(--pgn-color-light-500));
   border-radius: var(--pgn-size-chip-border-radius);
   display: inline-flex;
   margin: var(--pgn-spacing-chip-margin);
   box-sizing: border-box;
 
   .pgn__chip__label {
-    font-size: $font-size-sm;
+    font-size: var(--pgn-typography-font-size-sm);
     padding: var(--pgn-spacing-chip-padding-y) var(--pgn-spacing-chip-padding-x);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -50,11 +50,11 @@
     &.active:hover,
     &.active:focus {
       cursor: pointer;
-      background: $black;
+      background: var(--pgn-color-black);
 
       * {
-        color: $white;
-        fill: $white;
+        color: var(--pgn-color-white);
+        fill: var(--pgn-color-white);
       }
     }
   }

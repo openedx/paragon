@@ -6,13 +6,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: $font-size-xs;
+  font-size: var(--pgn-typography-font-size-xs);
   color: var(--pgn-bubble-color, inherit);
   background-color: var(--pgn-bubble-bg, transparent);
 
   &:disabled,
   &.disabled {
-    background: $gray-500;
+    background: var(--pgn-color-gray-500);
   }
 
   &.expandable {

@@ -11,7 +11,7 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: $zindex-modal;
+  z-index: var(--pgn-elevation-modal-zindex);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -97,8 +97,8 @@
 .pgn__modal-popup__arrow::after,
 .pgn__modal-popup__arrow-top-start::after,
 .pgn__modal-popup__arrow-top::after {
-  bottom: $border-width;
-  border-top-color: $white;
+  bottom: var(--pgn-size-border-width);
+  border-top-color: var(--pgn-color-white);
 }
 
 [data-popper-placement^="right"] .pgn__modal-popup__arrow-auto,

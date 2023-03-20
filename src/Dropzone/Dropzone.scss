@@ -44,7 +44,7 @@
 .pgn__dropzone__upload-icon-wrapper {
   height: 56px;
   width: 56px;
-  background: $light-300;
+  background: var(--pgn-color-light-300);
   border-radius: 50%;
   position: relative;
   margin-bottom: map-get($spacers, 4);

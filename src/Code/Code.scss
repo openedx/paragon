@@ -15,7 +15,7 @@ kbd {
   background-color: var(--pgn-color-code-kbd-bg);
 
   @include font-size(var(--pgn-typography-code-kbd-font-size));
-  @include border-radius($border-radius-sm);
+  @include border-radius(var(--pgn-size-border-radius-sm));
   @include box-shadow(var(--pgn-elevation-code-kbd-box-shadow));
 
   kbd {

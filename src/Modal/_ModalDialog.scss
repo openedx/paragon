@@ -53,7 +53,7 @@
   max-width: none;
 
   .pgn__modal-footer {
-    border-top: solid 1px $light;
+    border-top: solid 1px var(--pgn-color-light-base);
     padding-top: var(--pgn-spacing-modal-footer-padding-y);
   }
 }
@@ -96,7 +96,7 @@
   }
 
   .pgn__modal-title {
-    font-size: $h3-font-size;
+    font-size: var(--pgn-typography-font-size-h3);
     margin-inline-end: 3rem; // roughly accomodate the width of the close buttonn
     text-align: start;
   }
@@ -251,8 +251,8 @@
 .pgn__modal-dark {
   .pgn__modal-header,
   .pgn__modal-hero {
-    background-color: $dark;
-    color: $white;
+    background-color: var(--pgn-color-dark-base);
+    color: var(--pgn-color-white);
 
     * {
       color: inherit;
@@ -260,20 +260,20 @@
   }
 
   .pgn__modal-header {
-    border-bottom: solid 1px $light;
+    border-bottom: solid 1px var(--pgn-color-light-base);
   }
 }
 
 .pgn__modal-warning .pgn__modal-header {
-  background-color: $warning-100;
+  background-color: var(--pgn-color-warning-100);
 }
 
 .pgn__modal-danger .pgn__modal-header {
-  background-color: $danger-100;
+  background-color: var(--pgn-color-danger-100);
 }
 
 .pgn__modal-success .pgn__modal-header {
-  background-color: $success-100;
+  background-color: var(--pgn-color-success-100);
 }
 
 // Modal types
@@ -304,7 +304,7 @@
   }
 
   .pgn__modal-title {
-    font-size: $h4-font-size;
+    font-size: var(--pgn-typography-font-size-h4);
     display: flex;
     flex-grow: 1;
     align-items: center;

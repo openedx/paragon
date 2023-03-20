@@ -162,7 +162,7 @@
 .pagination-inverse {
   %dark-styles {
     background-color: transparent;
-    color: $white;
+    color: var(--pgn-color-white);
   }
 
   .pgn__dark-styles {
@@ -188,7 +188,7 @@
     }
 
     &:not(.active):focus {
-      box-shadow: $level-1-box-shadow;
+      box-shadow: var(--pgn-elevation-box-shadow-level-1);
     }
   }
 
@@ -239,7 +239,7 @@
     height: 0;
     border-left: var(--pgn-size-pagination-toggle-border-base) solid transparent;
     border-right: var(--pgn-size-pagination-toggle-border-base) solid transparent;
-    border-top: var(--pgn-size-pagination-toggle-border-base) solid $gray-700;
+    border-top: var(--pgn-size-pagination-toggle-border-base) solid var(--pgn-color-gray-700);
     transform: rotate(0);
     inset-inline-start: .5rem;
     top: 0;

@@ -11,7 +11,7 @@
   position: relative;
   z-index: 1;
   display: block;
-  min-height: calc(#{$font-size-base} * #{$line-height-base});
+  min-height: calc(var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base));
   padding-left: calc(var(--pgn-spacing-form-control-gutter) + var(--pgn-size-form-control-indicator-base));
   print-color-adjust: exact; // Keep themed appearance for print
 }
@@ -26,7 +26,8 @@
   left: 0;
   z-index: -1; // Put the input behind the label so it doesn't overlay text
   width: var(--pgn-size-form-control-indicator-base);
-  height: calc((#{$font-size-base} * #{$line-height-base} + var(--pgn-size-form-control-indicator-base)) * .5);
+  // stylelint-disable-next-line max-line-length
+  height: calc((var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base) + var(--pgn-size-form-control-indicator-base)) * .5);
   opacity: 0;
 
   &:checked ~ .custom-control-label::before {
@@ -88,7 +89,8 @@
   &::before {
     content: "";
     position: absolute;
-    top: calc((#{$font-size-base} * #{$line-height-base} - var(--pgn-size-form-control-indicator-base)) * .5);
+    // stylelint-disable-next-line max-line-length
+    top: calc((var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base) - var(--pgn-size-form-control-indicator-base)) * .5);
     left: -(var(--pgn-spacing-form-control-gutter) + var(--pgn-size-form-control-indicator-base));
     display: block;
     width: var(--pgn-size-form-control-indicator-base);
@@ -104,7 +106,8 @@
   &::after {
     content: "";
     position: absolute;
-    top: calc((#{$font-size-base} * #{$line-height-base} - var(--pgn-size-form-control-indicator-base)) * .5);
+    // stylelint-disable-next-line max-line-length
+    top: calc((var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base) - var(--pgn-size-form-control-indicator-base)) * .5);
     left: calc((var(--pgn-spacing-form-control-gutter) + var(--pgn-size-form-control-indicator-base)) * -1);
     display: block;
     width: var(--pgn-size-form-control-indicator-base);
@@ -125,7 +128,7 @@
 
   .custom-control-input:checked ~ .custom-control-label {
     &::after {
-      background-image: escape-svg(var(--pgn-other-content-form-control-checkbox-indicator-icon-checked));
+      background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked);
     }
   }
 
@@ -138,7 +141,7 @@
     }
 
     &::after {
-      background-image: escape-svg(var(--pgn-other-content-form-control-checkbox-indicator-indeterminate-icon));
+      background-image: var(--pgn-other-content-form-control-checkbox-indicator-indeterminate-icon);
     }
   }
 
@@ -165,7 +168,7 @@
 
   .custom-control-input:checked ~ .custom-control-label {
     &::after {
-      background-image: escape-svg(var(--pgn-other-content-form-control-radio-indicator-icon-checked));
+      background-image: var(--pgn-other-content-form-control-radio-indicator-icon-checked);
     }
   }
 
@@ -195,7 +198,7 @@
 
     &::after {
       // stylelint-disable-next-line max-line-length
-      top: calc(calc((#{$font-size-base} * #{$line-height-base} - var(--pgn-size-form-control-indicator-base)) * .5) + calc(var(--pgn-size-form-control-indicator-border-width) * 2));
+      top: calc(calc((var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base) - var(--pgn-size-form-control-indicator-base)) * .5) + calc(var(--pgn-size-form-control-indicator-border-width) * 2));
       // stylelint-disable-next-line max-line-length
       left: calc(calc(-1 * (var(--pgn-size-form-control-switch-width) + var(--pgn-spacing-form-control-gutter))) + calc(var(--pgn-size-form-control-indicator-border-width) * 2));
       width: var(--pgn-size-form-control-switch-indicator-base);
@@ -210,10 +213,8 @@
   .custom-control-input:checked ~ .custom-control-label {
     &::after {
       background-color: var(--pgn-color-form-control-indicator-bg-base);
-      transform:
-        translateX(calc(
-          #{var(--pgn-size-form-control-switch-width)} - var(--pgn-size-form-control-indicator-base)
-        ));
+      // stylelint-disable-next-line max-line-length
+      transform: translateX(calc(var(--pgn-size-form-control-switch-width) - var(--pgn-size-form-control-indicator-base)));
     }
   }
 

@@ -106,7 +106,7 @@
   align-items: center;
   padding: var(--pgn-spacing-form-input-padding-y-base) var(--pgn-spacing-form-input-padding-x-base);
   margin-bottom: 0;
-  font-weight: $font-weight-normal;
+  font-weight: var(--pgn-typography-font-weight-normal);
   line-height: var(--pgn-typography-form-input-line-height-base);
   color: var(--pgn-color-form-input-group-addon-base);
   text-align: center;

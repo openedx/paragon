@@ -15,7 +15,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: $zindex-dropdown;
+  z-index: var(--pgn-elevation-dropdown-zindex);
   display: none;
   float: left;
   min-width: var(--pgn-size-dropdown-min-width);
@@ -115,10 +115,10 @@
   width: 100%;
   padding: var(--pgn-spacing-dropdown-padding-y-item) var(--pgn-spacing-dropdown-padding-x-item);
   clear: both;
-  font-weight: $font-weight-normal;
+  font-weight: var(--pgn-typography-font-weight-normal);
   color: var(--pgn-color-dropdown-link-base);
   text-align: inherit;
-  text-decoration: if($link-decoration == none, null, none);
+  text-decoration: var(--pgn-typography-dropdown-item-text-decoration);
   white-space: nowrap;
   background-color: transparent;
   border: 0;
@@ -171,7 +171,7 @@
   color: var(--pgn-color-dropdown-header);
   white-space: nowrap;
 
-  @include font-size($font-size-sm);
+  @include font-size(var(--pgn-typography-font-size-sm));
 }
 
 .dropdown-item-text {

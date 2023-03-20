@@ -16,7 +16,7 @@
   .popover-header {
     display: flex;
     align-items: center;
-    font-size: $h5-font-size;
+    font-size: var(--pgn-typography-font-size-h5);
   }
 
   .pgn__icon {

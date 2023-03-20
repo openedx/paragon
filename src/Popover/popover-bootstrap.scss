@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: $zindex-popover;
+  z-index: var(--pgn-elevation-popover-zindex);
   display: block;
   max-width: var(--pgn-size-popover-max-width);
 
@@ -179,7 +179,7 @@
   padding: var(--pgn-spacing-popover-header-padding-y) var(--pgn-spacing-popover-header-padding-x);
   margin-bottom: 0;
 
-  @include font-size($font-size-base);
+  @include font-size(var(--pgn-typography-font-size-base));
 
   color: var(--pgn-color-popover-header-text);
   background-color: var(--pgn-color-popover-header-bg);
