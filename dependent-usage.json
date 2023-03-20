@@ -1,5 +1,5 @@
 {
-  "lastModified": 1679234907855,
+  "lastModified": 1679321343221,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -728,7 +728,7 @@
       }
     },
     {
-      "version": "20.28.4",
+      "version": "20.28.5",
       "name": "@edx/frontend-app-account",
       "repository": {
         "type": "git",
@@ -7692,7 +7692,7 @@
         "Form": [
           {
             "filePath": "src/common-components/EnterpriseSSO.jsx",
-            "line": 37,
+            "line": 38,
             "column": 12
           },
           {
@@ -7724,12 +7724,12 @@
         "Button": [
           {
             "filePath": "src/common-components/EnterpriseSSO.jsx",
-            "line": 39,
+            "line": 40,
             "column": 14
           },
           {
             "filePath": "src/common-components/EnterpriseSSO.jsx",
-            "line": 65,
+            "line": 66,
             "column": 14
           },
           {
@@ -7822,7 +7822,7 @@
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 65,
+            "line": 66,
             "column": 6
           },
           {
@@ -7926,7 +7926,7 @@
         "ChevronLeft": [
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 65,
+            "line": 66,
             "column": 17
           },
           {
@@ -7943,13 +7943,18 @@
         "Tabs": [
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 84,
-            "column": 12
+            "line": 88,
+            "column": 16
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 90,
-            "column": 14
+            "line": 104,
+            "column": 18
+          },
+          {
+            "filePath": "src/common-components/Logistration.jsx",
+            "line": 110,
+            "column": 20
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
@@ -7965,18 +7970,23 @@
         "Tab": [
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 85,
-            "column": 14
+            "line": 89,
+            "column": 18
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 91,
-            "column": 16
+            "line": 105,
+            "column": 20
           },
           {
             "filePath": "src/common-components/Logistration.jsx",
-            "line": 92,
-            "column": 16
+            "line": 111,
+            "column": 22
+          },
+          {
+            "filePath": "src/common-components/Logistration.jsx",
+            "line": 112,
+            "column": 22
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
@@ -21348,7 +21358,7 @@
       }
     },
     {
-      "version": "20.28.4",
+      "version": "20.28.5",
       "name": "@edx/frontend-app-profile",
       "repository": {
         "type": "git",
@@ -23661,7 +23671,7 @@
       }
     },
     {
-      "version": "20.28.4",
+      "version": "20.28.5",
       "name": "@edx/frontend-component-header-edx",
       "repository": {
         "type": "git",
@@ -23769,7 +23779,7 @@
       }
     },
     {
-      "version": "20.28.4",
+      "version": "20.28.5",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
@@ -26872,7 +26882,7 @@
       }
     },
     {
-      "version": "20.28.4",
+      "version": "20.28.5",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
@@ -26911,7 +26921,7 @@
       }
     },
     {
-      "version": "20.28.4",
+      "version": "20.28.5",
       "name": "@edx/frontend-template-application",
       "repository": {
         "type": "git",
@@ -27453,6 +27463,11 @@
             "column": 12
           },
           {
+            "filePath": "src/packages/degree-page/components/TabSections/index.jsx",
+            "line": 109,
+            "column": 16
+          },
+          {
             "filePath": "src/packages/exec-ed-page/components/CourseCurriculum/index.jsx",
             "line": 95,
             "column": 10
@@ -27491,6 +27506,11 @@
             "filePath": "src/packages/modular-page/modules/DynamicProductModule/index.jsx",
             "line": 37,
             "column": 12
+          },
+          {
+            "filePath": "src/packages/modular-page/modules/FacultyModule/index.jsx",
+            "line": 62,
+            "column": 8
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseHeader/components/CourseDescription.jsx",
@@ -28902,6 +28922,11 @@
             "column": 12
           },
           {
+            "filePath": "src/packages/modular-page/modules/FacultyModule/index.jsx",
+            "line": 45,
+            "column": 10
+          },
+          {
             "filePath": "src/packages/open-course-page/components/CourseRunSelector/components/SelectionTile.jsx",
             "line": 52,
             "column": 4
@@ -28977,33 +29002,18 @@
             "column": 10
           }
         ],
-        "Tabs": [
+        "FormGroup": [
           {
             "filePath": "src/packages/degree-page/components/TabSections/index.jsx",
-            "line": 19,
-            "column": 4
-          },
-          {
-            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 64,
-            "column": 8
+            "line": 125,
+            "column": 10
           }
         ],
-        "Tab": [
+        "FormControl": [
           {
             "filePath": "src/packages/degree-page/components/TabSections/index.jsx",
-            "line": 21,
-            "column": 8
-          },
-          {
-            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 65,
-            "column": 10
-          },
-          {
-            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
-            "line": 85,
-            "column": 10
+            "line": 126,
+            "column": 12
           }
         ],
         "Tooltip": [
@@ -29321,6 +29331,30 @@
             "column": 18
           }
         ],
+        "CardGrid": [
+          {
+            "filePath": "src/packages/modular-page/modules/FacultyModule/index.jsx",
+            "line": 43,
+            "column": 6
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseRunSelector/index.jsx",
+            "line": 193,
+            "column": 10
+          },
+          {
+            "filePath": "src/packages/search-page/components/PreQueryPage/components/PartnerFilters/index.jsx",
+            "line": 81,
+            "column": 10
+          }
+        ],
+        "Card.Section": [
+          {
+            "filePath": "src/packages/modular-page/modules/FacultyModule/index.jsx",
+            "line": 50,
+            "column": 12
+          }
+        ],
         "OpenInNew": [
           {
             "filePath": "src/packages/modular-page/modules/FootnoteModule/index.jsx",
@@ -29367,18 +29401,6 @@
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 346,
             "column": 80
-          }
-        ],
-        "CardGrid": [
-          {
-            "filePath": "src/packages/open-course-page/components/CourseRunSelector/index.jsx",
-            "line": 193,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/search-page/components/PreQueryPage/components/PartnerFilters/index.jsx",
-            "line": 81,
-            "column": 10
           }
         ],
         "Timelapse": [
@@ -29658,6 +29680,25 @@
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/MobileFilterMenu/index.jsx",
             "line": 75,
+            "column": 10
+          }
+        ],
+        "Tabs": [
+          {
+            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
+            "line": 64,
+            "column": 8
+          }
+        ],
+        "Tab": [
+          {
+            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
+            "line": 65,
+            "column": 10
+          },
+          {
+            "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
+            "line": 85,
             "column": 10
           }
         ],
