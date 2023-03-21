@@ -13,6 +13,7 @@ function OverflowScroll({
   disableOpacityMasks,
   onScrollPrevious,
   onScrollNext,
+  offset,
 }) {
   const [overflowRef, setOverflowRef] = useState();
 
@@ -29,6 +30,7 @@ function OverflowScroll({
     onScrollPrevious,
     onScrollNext,
     overflowRef,
+    offset,
   });
 
   const contextValue = useMemo(() => ({
@@ -80,6 +82,7 @@ OverflowScroll.propTypes = {
   onScrollPrevious: PropTypes.func,
   /** Callback function for when the user scrolls to the next element. */
   onScrollNext: PropTypes.func,
+  offset: PropTypes.string,
 };
 
 OverflowScroll.defaultProps = {
@@ -89,6 +92,7 @@ OverflowScroll.defaultProps = {
   disableOpacityMasks: false,
   onScrollPrevious: undefined,
   onScrollNext: undefined,
+  offset: undefined,
 };
 
 export default OverflowScroll;

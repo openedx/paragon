@@ -15,7 +15,24 @@ const useOverflowScrollActions = ({
   scrollAnimationBehavior = 'smooth',
   onScrollPrevious,
   onScrollNext,
+  onChangeOffset,
+  currentOffset,
+  offset,
 }) => {
+
+  const getOffset = (offsetString, maxOffset) => {
+    let offset = 0;
+
+    if (offsetString.endsWith("px")) {
+      offset = parseInt(offsetString);
+    } else if (offsetString.endsWith("%")) {
+      const percent = parseInt(offsetString) / 100;
+      offset = Math.round(maxOffset * percent);
+    }
+
+    return offset;
+  }
+
   /**
    * A helper function to scroll to the previous element in the overflow container.
    */
@@ -34,7 +51,19 @@ const useOverflowScrollActions = ({
 
     const previousChildElementIndex = activeChildElementIndex - 1;
     const previousChildElement = getPreviousChildElement(previousChildElementIndex);
-    const calculatedOffsetLeft = calculateOffsetLeft(previousChildElement);
+    let calculatedOffsetLeft = calculateOffsetLeft(previousChildElement);
+
+    if (offset) {
+      const maxOffset = overflowRef.scrollWidth - overflowRef.clientWidth;
+      const offsetValue = getOffset(offset, maxOffset);
+      calculatedOffsetLeft = currentOffset - offsetValue;
+      if (calculatedOffsetLeft < 0) {
+        onChangeOffset(0);
+      } else {
+        onChangeOffset(calculatedOffsetLeft);
+      }
+    }
+
     overflowRef.scrollTo({
       left: calculatedOffsetLeft,
       behavior: scrollAnimationBehavior,
@@ -72,8 +101,20 @@ const useOverflowScrollActions = ({
       return childrenElements[nextChildElementIndex];
     };
 
-    const nextChildElement = getNextChildElement();
-    const calculatedOffsetLeft = calculateOffsetLeft(nextChildElement);
+    let nextChildElement = getNextChildElement();
+    let calculatedOffsetLeft = calculateOffsetLeft(nextChildElement);
+
+    if (offset) {
+      const maxOffset = overflowRef.scrollWidth - overflowRef.clientWidth;
+      const offsetValue = getOffset(offset, maxOffset);
+      calculatedOffsetLeft = currentOffset + offsetValue;
+      if (calculatedOffsetLeft > maxOffset) {
+        onChangeOffset(maxOffset);
+      } else {
+        onChangeOffset(calculatedOffsetLeft);
+      }
+    }
+
     overflowRef.scrollTo({
       left: calculatedOffsetLeft,
       behavior: scrollAnimationBehavior,
