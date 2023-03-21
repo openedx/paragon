@@ -1,5 +1,5 @@
 {
-  "lastModified": 1679321343221,
+  "lastModified": 1679407748901,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -21858,7 +21858,7 @@
       }
     },
     {
-      "version": "20.25.0",
+      "version": "20.28.5",
       "name": "edx-frontend-app-publisher",
       "repository": "https://github.com/openedx/frontend-app-publisher",
       "folderName": "frontend-app-publisher",
@@ -22374,9 +22374,9 @@
             "column": 4
           },
           {
-            "filePath": "src/Configuration/Provisioning/Dashboard.jsx",
-            "line": 8,
-            "column": 2
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormContainer.jsx",
+            "line": 15,
+            "column": 6
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningPage.jsx",
@@ -22389,6 +22389,16 @@
             "filePath": "src/Configuration/ConfigurationPage.jsx",
             "line": 17,
             "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogHeader.jsx",
+            "line": 28,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogTextArea.jsx",
+            "line": 36,
+            "column": 4
           }
         ],
         "Hyperlink": [
@@ -22396,6 +22406,11 @@
             "filePath": "src/Configuration/ConfigurationPage.jsx",
             "line": 19,
             "column": 10
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogHeader.jsx",
+            "line": 21,
+            "column": 8
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/EnrollmentDetails.jsx",
@@ -22428,49 +22443,288 @@
             "column": 6
           }
         ],
-        "Row": [
+        "ActionRow": [
           {
-            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollment.jsx",
-            "line": 45,
-            "column": 16
+            "filePath": "src/Configuration/Provisioning/DashboardHeader.jsx",
+            "line": 20,
+            "column": 4
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogHeader.jsx",
+            "line": 18,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormSubmissionButton.jsx",
+            "line": 30,
+            "column": 4
+          },
+          {
+            "filePath": "src/users/account-actions/CancelRetirement.jsx",
+            "line": 71,
+            "column": 10
+          },
+          {
+            "filePath": "src/users/account-actions/PasswordHistory.jsx",
+            "line": 78,
+            "column": 10
+          },
+          {
+            "filePath": "src/users/account-actions/ResetPassword.jsx",
+            "line": 74,
+            "column": 10
+          },
+          {
+            "filePath": "src/users/account-actions/TogglePasswordStatus.jsx",
+            "line": 64,
+            "column": 10
+          },
+          {
+            "filePath": "src/users/courseSummary/CourseSummary.jsx",
+            "line": 169,
+            "column": 8
+          },
+          {
+            "filePath": "src/users/enrollments/Certificates.jsx",
+            "line": 210,
+            "column": 8
+          },
+          {
+            "filePath": "src/users/enrollments/ChangeEnrollmentForm.jsx",
+            "line": 157,
+            "column": 8
+          },
+          {
+            "filePath": "src/users/enrollments/CreateEnrollmentForm.jsx",
+            "line": 117,
+            "column": 8
+          },
+          {
+            "filePath": "src/users/entitlements/CreateEntitlementForm.jsx",
+            "line": 119,
+            "column": 8
+          },
+          {
+            "filePath": "src/users/entitlements/ExpireEntitlementForm.jsx",
+            "line": 114,
+            "column": 8
+          },
+          {
+            "filePath": "src/users/entitlements/ReissueEntitlementForm.jsx",
+            "line": 112,
+            "column": 8
+          },
+          {
+            "filePath": "src/users/SingleSignOnRecordCard.jsx",
+            "line": 86,
+            "column": 10
+          },
+          {
+            "filePath": "src/users/VerifiedName.jsx",
+            "line": 170,
+            "column": 10
+          }
+        ],
+        "ActionRow.Spacer": [
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardHeader.jsx",
+            "line": 22,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogHeader.jsx",
+            "line": 20,
+            "column": 8
+          }
+        ],
+        "Button": [
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardHeader.jsx",
+            "line": 23,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormSubmissionButton.jsx",
+            "line": 31,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormSubmissionButton.jsx",
+            "line": 38,
+            "column": 6
+          },
+          {
+            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentIndexPage.jsx",
+            "line": 100,
+            "column": 10
+          },
+          {
+            "filePath": "src/ProgramEnrollments/LinkProgramEnrollments.jsx",
+            "line": 76,
+            "column": 10
           },
           {
             "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 156,
+            "column": 10
+          },
+          {
+            "filePath": "src/userMessages/Alert.jsx",
+            "line": 49,
+            "column": 22
+          },
+          {
+            "filePath": "src/users/account-actions/CancelRetirement.jsx",
+            "line": 48,
+            "column": 6
+          },
+          {
+            "filePath": "src/users/account-actions/CancelRetirement.jsx",
+            "line": 80,
+            "column": 18
+          },
+          {
+            "filePath": "src/users/account-actions/PasswordHistory.jsx",
+            "line": 48,
+            "column": 8
+          },
+          {
+            "filePath": "src/users/account-actions/ResetPassword.jsx",
+            "line": 51,
+            "column": 6
+          },
+          {
+            "filePath": "src/users/account-actions/ResetPassword.jsx",
+            "line": 82,
+            "column": 16
+          },
+          {
+            "filePath": "src/users/account-actions/TogglePasswordStatus.jsx",
+            "line": 28,
+            "column": 6
+          },
+          {
+            "filePath": "src/users/account-actions/TogglePasswordStatus.jsx",
+            "line": 70,
+            "column": 12
+          },
+          {
+            "filePath": "src/users/enrollments/Certificates.jsx",
+            "line": 159,
+            "column": 24
+          },
+          {
+            "filePath": "src/users/enrollments/Certificates.jsx",
+            "line": 169,
+            "column": 24
+          },
+          {
+            "filePath": "src/users/enrollments/ChangeEnrollmentForm.jsx",
             "line": 166,
             "column": 14
           },
           {
-            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 176,
+            "filePath": "src/users/enrollments/CreateEnrollmentForm.jsx",
+            "line": 126,
             "column": 14
           },
           {
-            "filePath": "src/users/licenses/LicenseCard.jsx",
-            "line": 65,
+            "filePath": "src/users/enrollments/Enrollments.jsx",
+            "line": 272,
+            "column": 8
+          },
+          {
+            "filePath": "src/users/entitlements/CreateEntitlementForm.jsx",
+            "line": 128,
+            "column": 14
+          },
+          {
+            "filePath": "src/users/entitlements/Entitlements.jsx",
+            "line": 250,
+            "column": 8
+          },
+          {
+            "filePath": "src/users/entitlements/ExpireEntitlementForm.jsx",
+            "line": 123,
+            "column": 14
+          },
+          {
+            "filePath": "src/users/entitlements/ReissueEntitlementForm.jsx",
+            "line": 121,
+            "column": 14
+          },
+          {
+            "filePath": "src/users/LearnerCredentials.jsx",
+            "line": 26,
             "column": 10
           },
           {
-            "filePath": "src/users/licenses/Licenses.jsx",
-            "line": 34,
-            "column": 10
+            "filePath": "src/users/LearnerCredentials.jsx",
+            "line": 52,
+            "column": 8
+          },
+          {
+            "filePath": "src/users/LearnerRecords.jsx",
+            "line": 73,
+            "column": 18
           },
           {
             "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 104,
-            "column": 10
+            "line": 115,
+            "column": 14
           },
           {
-            "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 113,
-            "column": 10
+            "filePath": "src/users/UserSearch.jsx",
+            "line": 22,
+            "column": 8
           },
           {
-            "filePath": "src/users/SingleSignOnRecords.jsx",
-            "line": 43,
+            "filePath": "src/users/VerifiedName.jsx",
+            "line": 55,
             "column": 10
           }
         ],
+        "Add": [
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardHeader.jsx",
+            "line": 26,
+            "column": 20
+          }
+        ],
+        "Form.AutosuggestOption": [
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogDropdown.jsx",
+            "line": 14,
+            "column": 8
+          }
+        ],
+        "Form.Autosuggest": [
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogDropdown.jsx",
+            "line": 22,
+            "column": 4
+          }
+        ],
+        "Icon": [
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogHeader.jsx",
+            "line": 29,
+            "column": 8
+          }
+        ],
+        "Warning": [
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogHeader.jsx",
+            "line": 29,
+            "column": 19
+          }
+        ],
         "Col": [
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogHeader.jsx",
+            "line": 30,
+            "column": 8
+          },
           {
             "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollment.jsx",
             "line": 46,
@@ -22530,6 +22784,253 @@
             "filePath": "src/users/SingleSignOnRecords.jsx",
             "line": 45,
             "column": 14
+          }
+        ],
+        "Form.Control": [
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogTextArea.jsx",
+            "line": 37,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogTextArea.jsx",
+            "line": 45,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogTitle.jsx",
+            "line": 10,
+            "column": 8
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
+            "line": 32,
+            "column": 8
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
+            "line": 40,
+            "column": 8
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCapAmount.jsx",
+            "line": 25,
+            "column": 8
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormCustomer.jsx",
+            "line": 18,
+            "column": 8
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormCustomer.jsx",
+            "line": 26,
+            "column": 8
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
+            "line": 25,
+            "column": 8
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
+            "line": 35,
+            "column": 8
+          }
+        ],
+        "Form.Group": [
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogTitle.jsx",
+            "line": 9,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
+            "line": 31,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
+            "line": 39,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCapAmount.jsx",
+            "line": 24,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormCustomer.jsx",
+            "line": 17,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormCustomer.jsx",
+            "line": 25,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
+            "line": 24,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
+            "line": 34,
+            "column": 6
+          }
+        ],
+        "Form.RadioSet": [
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormCatalog.jsx",
+            "line": 41,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCap.jsx",
+            "line": 36,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormAccountType.jsx",
+            "line": 32,
+            "column": 6
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormSubsidy.jsx",
+            "line": 28,
+            "column": 6
+          }
+        ],
+        "Form.Radio": [
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormCatalog.jsx",
+            "line": 48,
+            "column": 12
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCap.jsx",
+            "line": 43,
+            "column": 12
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormAccountType.jsx",
+            "line": 39,
+            "column": 12
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormSubsidy.jsx",
+            "line": 35,
+            "column": 12
+          }
+        ],
+        "Alert": [
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPolicyContainer.jsx",
+            "line": 14,
+            "column": 6
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 112,
+            "column": 8
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 201,
+            "column": 16
+          },
+          {
+            "filePath": "src/users/account-actions/CancelRetirement.jsx",
+            "line": 31,
+            "column": 19
+          },
+          {
+            "filePath": "src/users/account-actions/CancelRetirement.jsx",
+            "line": 34,
+            "column": 10
+          },
+          {
+            "filePath": "src/users/account-actions/ResetPassword.jsx",
+            "line": 31,
+            "column": 19
+          },
+          {
+            "filePath": "src/users/account-actions/ResetPassword.jsx",
+            "line": 34,
+            "column": 10
+          },
+          {
+            "filePath": "src/users/account-actions/TogglePasswordStatus.jsx",
+            "line": 49,
+            "column": 12
+          },
+          {
+            "filePath": "src/users/enrollments/Certificates.jsx",
+            "line": 119,
+            "column": 20
+          },
+          {
+            "filePath": "src/users/EnterpriseAssociations.jsx",
+            "line": 40,
+            "column": 16
+          },
+          {
+            "filePath": "src/users/LearnerCredentials.jsx",
+            "line": 16,
+            "column": 6
+          },
+          {
+            "filePath": "src/users/LearnerRecords.jsx",
+            "line": 53,
+            "column": 6
+          },
+          {
+            "filePath": "src/users/LearnerRecords.jsx",
+            "line": 80,
+            "column": 18
+          }
+        ],
+        "Row": [
+          {
+            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollment.jsx",
+            "line": 45,
+            "column": 16
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 166,
+            "column": 14
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
+            "line": 176,
+            "column": 14
+          },
+          {
+            "filePath": "src/users/licenses/LicenseCard.jsx",
+            "line": 65,
+            "column": 10
+          },
+          {
+            "filePath": "src/users/licenses/Licenses.jsx",
+            "line": 34,
+            "column": 10
+          },
+          {
+            "filePath": "src/users/SingleSignOnRecordCard.jsx",
+            "line": 104,
+            "column": 10
+          },
+          {
+            "filePath": "src/users/SingleSignOnRecordCard.jsx",
+            "line": 113,
+            "column": 10
+          },
+          {
+            "filePath": "src/users/SingleSignOnRecords.jsx",
+            "line": 43,
+            "column": 10
           }
         ],
         "Card": [
@@ -22714,138 +23215,6 @@
             "column": 8
           }
         ],
-        "Button": [
-          {
-            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentIndexPage.jsx",
-            "line": 100,
-            "column": 10
-          },
-          {
-            "filePath": "src/ProgramEnrollments/LinkProgramEnrollments.jsx",
-            "line": 76,
-            "column": 10
-          },
-          {
-            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 156,
-            "column": 10
-          },
-          {
-            "filePath": "src/userMessages/Alert.jsx",
-            "line": 49,
-            "column": 22
-          },
-          {
-            "filePath": "src/users/account-actions/CancelRetirement.jsx",
-            "line": 48,
-            "column": 6
-          },
-          {
-            "filePath": "src/users/account-actions/CancelRetirement.jsx",
-            "line": 80,
-            "column": 18
-          },
-          {
-            "filePath": "src/users/account-actions/PasswordHistory.jsx",
-            "line": 48,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/account-actions/ResetPassword.jsx",
-            "line": 51,
-            "column": 6
-          },
-          {
-            "filePath": "src/users/account-actions/ResetPassword.jsx",
-            "line": 82,
-            "column": 16
-          },
-          {
-            "filePath": "src/users/account-actions/TogglePasswordStatus.jsx",
-            "line": 28,
-            "column": 6
-          },
-          {
-            "filePath": "src/users/account-actions/TogglePasswordStatus.jsx",
-            "line": 70,
-            "column": 12
-          },
-          {
-            "filePath": "src/users/enrollments/Certificates.jsx",
-            "line": 159,
-            "column": 24
-          },
-          {
-            "filePath": "src/users/enrollments/Certificates.jsx",
-            "line": 169,
-            "column": 24
-          },
-          {
-            "filePath": "src/users/enrollments/ChangeEnrollmentForm.jsx",
-            "line": 166,
-            "column": 14
-          },
-          {
-            "filePath": "src/users/enrollments/CreateEnrollmentForm.jsx",
-            "line": 126,
-            "column": 14
-          },
-          {
-            "filePath": "src/users/enrollments/Enrollments.jsx",
-            "line": 272,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/entitlements/CreateEntitlementForm.jsx",
-            "line": 128,
-            "column": 14
-          },
-          {
-            "filePath": "src/users/entitlements/Entitlements.jsx",
-            "line": 250,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/entitlements/ExpireEntitlementForm.jsx",
-            "line": 123,
-            "column": 14
-          },
-          {
-            "filePath": "src/users/entitlements/ReissueEntitlementForm.jsx",
-            "line": 121,
-            "column": 14
-          },
-          {
-            "filePath": "src/users/LearnerCredentials.jsx",
-            "line": 26,
-            "column": 10
-          },
-          {
-            "filePath": "src/users/LearnerCredentials.jsx",
-            "line": 52,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/LearnerRecords.jsx",
-            "line": 73,
-            "column": 18
-          },
-          {
-            "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 115,
-            "column": 14
-          },
-          {
-            "filePath": "src/users/UserSearch.jsx",
-            "line": 22,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/VerifiedName.jsx",
-            "line": 55,
-            "column": 10
-          }
-        ],
         "Tabs": [
           {
             "filePath": "src/ProgramEnrollments/ProgramEnrollmentsIndexPage.jsx",
@@ -22913,68 +23282,6 @@
             "filePath": "src/users/LearnerInformation.jsx",
             "line": 50,
             "column": 8
-          }
-        ],
-        "Alert": [
-          {
-            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 112,
-            "column": 8
-          },
-          {
-            "filePath": "src/ProgramEnrollments/ProgramInspector/ProgramInspector.jsx",
-            "line": 201,
-            "column": 16
-          },
-          {
-            "filePath": "src/users/account-actions/CancelRetirement.jsx",
-            "line": 31,
-            "column": 19
-          },
-          {
-            "filePath": "src/users/account-actions/CancelRetirement.jsx",
-            "line": 34,
-            "column": 10
-          },
-          {
-            "filePath": "src/users/account-actions/ResetPassword.jsx",
-            "line": 31,
-            "column": 19
-          },
-          {
-            "filePath": "src/users/account-actions/ResetPassword.jsx",
-            "line": 34,
-            "column": 10
-          },
-          {
-            "filePath": "src/users/account-actions/TogglePasswordStatus.jsx",
-            "line": 49,
-            "column": 12
-          },
-          {
-            "filePath": "src/users/enrollments/Certificates.jsx",
-            "line": 119,
-            "column": 20
-          },
-          {
-            "filePath": "src/users/EnterpriseAssociations.jsx",
-            "line": 40,
-            "column": 16
-          },
-          {
-            "filePath": "src/users/LearnerCredentials.jsx",
-            "line": 16,
-            "column": 6
-          },
-          {
-            "filePath": "src/users/LearnerRecords.jsx",
-            "line": 53,
-            "column": 6
-          },
-          {
-            "filePath": "src/users/LearnerRecords.jsx",
-            "line": 80,
-            "column": 18
           }
         ],
         "Dropdown": [
@@ -23430,73 +23737,6 @@
             "filePath": "src/users/VerifiedName.jsx",
             "line": 169,
             "column": 8
-          }
-        ],
-        "ActionRow": [
-          {
-            "filePath": "src/users/account-actions/CancelRetirement.jsx",
-            "line": 71,
-            "column": 10
-          },
-          {
-            "filePath": "src/users/account-actions/PasswordHistory.jsx",
-            "line": 78,
-            "column": 10
-          },
-          {
-            "filePath": "src/users/account-actions/ResetPassword.jsx",
-            "line": 74,
-            "column": 10
-          },
-          {
-            "filePath": "src/users/account-actions/TogglePasswordStatus.jsx",
-            "line": 64,
-            "column": 10
-          },
-          {
-            "filePath": "src/users/courseSummary/CourseSummary.jsx",
-            "line": 169,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/enrollments/Certificates.jsx",
-            "line": 210,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/enrollments/ChangeEnrollmentForm.jsx",
-            "line": 157,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/enrollments/CreateEnrollmentForm.jsx",
-            "line": 117,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/entitlements/CreateEntitlementForm.jsx",
-            "line": 119,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/entitlements/ExpireEntitlementForm.jsx",
-            "line": 114,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/entitlements/ReissueEntitlementForm.jsx",
-            "line": 112,
-            "column": 8
-          },
-          {
-            "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 86,
-            "column": 10
-          },
-          {
-            "filePath": "src/users/VerifiedName.jsx",
-            "line": 170,
-            "column": 10
           }
         ],
         "ModalDialog.CloseButton": [
@@ -26982,12 +27222,12 @@
         "Container": [
           {
             "filePath": "src/packages/about-edx-page/template/AboutEdXPage/index.jsx",
-            "line": 377,
+            "line": 374,
             "column": 12
           },
           {
             "filePath": "src/packages/about-edx-page/template/AboutEdXPage/index.jsx",
-            "line": 401,
+            "line": 398,
             "column": 12
           },
           {
@@ -28377,7 +28617,7 @@
         "Input": [
           {
             "filePath": "src/packages/common/ui/Footer/index.jsx",
-            "line": 485,
+            "line": 478,
             "column": 18
           }
         ],
