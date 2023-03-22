@@ -7,7 +7,8 @@
   "license": "Apache-2.0",
   "bin": {
     "build-design-tokens": "./tokens/build-tokens.js",
-    "replace-scss-with-css": "./tokens/replace-variables.js"
+    "replace-scss-with-css": "./tokens/replace-variables.js",
+    "build-scss": "./build-scss.js"
   },
   "publishConfig": {
     "access": "public"
@@ -69,6 +70,12 @@
     "glob": "^8.0.3",
     "lodash.uniqby": "^4.7.0",
     "mailto-link": "^2.0.0",
+    "postcss": "^8.4.21",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-custom-media": "^9.1.2",
+    "postcss-import": "^15.1.0",
+    "postcss-map": "^0.11.0",
+    "postcss-minify": "^1.1.0",
     "prop-types": "^15.8.1",
     "react-bootstrap": "^1.6.5",
     "react-dropzone": "^14.2.1",
@@ -79,6 +86,7 @@
     "react-responsive": "^8.2.0",
     "react-table": "^7.7.0",
     "react-transition-group": "^4.4.2",
+    "sass": "^1.58.3",
     "style-dictionary": "^3.7.1",
     "tabbable": "^5.3.3",
     "uncontrollable": "^7.2.1",
@@ -135,16 +143,10 @@
     "jest-cli": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2",
     "markdown-loader-jest": "^0.1.1",
-    "postcss": "^8.4.21",
-    "postcss-custom-media": "^9.1.2",
-    "postcss-import": "^15.1.0",
-    "postcss-map": "^0.11.0",
-    "postcss-minify": "^1.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-test-renderer": "^17.0.0",
     "regenerator-runtime": "^0.13.9",
-    "sass": "^1.58.3",
     "semantic-release": "^19.0.3",
     "stylelint": "^14.7.1",
     "stylelint-config-standard-scss": "^4.0.0",

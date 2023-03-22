@@ -14,7 +14,7 @@ const { buildDir, source: tokensSource } = program.opts();
 
 const coreConfig = {
   include: [path.resolve(__dirname, 'src/core/**/*.json')],
-  source: tokensSource ? [`${tokensSource}/core/**/*,json`] : [],
+  source: tokensSource ? [`${tokensSource}/core/**/*.json`] : [],
   platforms: {
     css: {
       prefix: 'pgn',
@@ -63,14 +63,14 @@ const getStyleDictionaryConfig = (themeVariant) => ({
       files: [
         {
           format: 'css/custom-variables',
-          destination: `${themeVariant}/variables.css`,
+          destination: `themes/${themeVariant}/variables.css`,
           options: {
             outputReferences: true,
           },
         },
         {
           format: 'css/utility-classes',
-          destination: `${themeVariant}/utility-classes.css`,
+          destination: `themes/${themeVariant}/utility-classes.css`,
           options: {
             outputReferences: true,
           },
