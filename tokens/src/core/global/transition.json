@@ -1,7 +1,7 @@
 {
   "transition": {
-    "base": { "value": "all .2s ease-in-out", "type": "transition", "source": "$transition-base" },
-    "fade": { "value": "opacity .15s linear", "type": "transition", "source": "$transition-fade" },
-    "collapse": { "value": "height .35s ease", "type": "transition", "source": "$transition-collapse" }
+    "base": { "value": "all .2s ease-in-out", "type": "transition", "source": "$transition-base", "description": "Generic transition for any property change" },
+    "fade": { "value": "opacity .15s linear", "type": "transition", "source": "$transition-fade", "description": "Opacity transition that takes 150ms" },
+    "collapse": { "value": "height .35s ease", "type": "transition", "source": "$transition-collapse", "description": "Collapse transition that takes 350ms" }
   }
 }

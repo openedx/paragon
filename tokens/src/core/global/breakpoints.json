@@ -1,12 +1,12 @@
 {
   "size": {
     "breakpoint": {
-      "xs": { "value": "0", "type": "dimension" },
-      "sm": { "value": "576px", "type": "dimension" },
-      "md": { "value": "768px", "type": "dimension" },
-      "lg": { "value": "992px", "type": "dimension" },
-      "xl": { "value": "1200px", "type": "dimension" },
-      "xxl": { "value": "1400px", "type": "dimension" }
+      "xs": { "value": "0", "type": "dimension", "description": "Starting breakpoint for portrait phones." },
+      "sm": { "value": "576px", "type": "dimension", "description": "Starting breakpoint for landscape phones." },
+      "md": { "value": "768px", "type": "dimension", "description": "Starting breakpoint for tablets." },
+      "lg": { "value": "992px", "type": "dimension", "description": "Starting breakpoint for desktops." },
+      "xl": { "value": "1200px", "type": "dimension", "description": "Starting breakpoint for large desktops." },
+      "xxl": { "value": "1400px", "type": "dimension", "description": "Starting breakpoint for large desktops, more than 1400px." }
     }
   }
 }
