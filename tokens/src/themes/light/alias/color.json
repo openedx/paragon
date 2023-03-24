@@ -1,8 +1,8 @@
 {
   "color": {
     "bg": {
-      "base": { "value": "{color.white}", "type": "color" },
-      "active": { "value": "{color.primary.500}", "type": "color", "source": "$component-active-bg" }
+      "base": { "value": "{color.white}", "type": "color", "description": "Basic background color." },
+      "active": { "value": "{color.primary.500}", "type": "color", "source": "$component-active-bg", "description": "Active background color." }
     },
     "text": {
       "50":{
@@ -10,94 +10,96 @@
           "value": "{color.black}",
           "type": "color",
           "source": "$text-black-50",
-          "modify": [{ "type": "alpha", "amount": 0.5 }]
+          "modify": [{ "type": "alpha", "amount": 0.5 }],
+          "description": "Black text color with transparency of 50%."
         },
         "white": {
           "value": "{color.white}",
           "type": "color",
           "source": "$text-white-50",
-          "modify": [{ "type": "alpha", "amount": 0.5 }]
+          "modify": [{ "type": "alpha", "amount": 0.5 }],
+          "description": "White text color with transparency of 50%."
         }
       }
     },
-    "active": { "value": "{color.white}", "type": "color", "source": "$component-active-color" },
-    "disabled": { "value": "{color.gray.500}", "type": "color" },
+    "active": { "value": "{color.white}", "type": "color", "source": "$component-active-color", "description": "Color for active element." },
+    "disabled": { "value": "{color.gray.500}", "type": "color", "description": "Color for disabled element." },
     "input": {
-      "focus": { "value": "{color.primary.500}", "type": "color" }
+      "focus": { "value": "{color.primary.500}", "type": "color", "description": "Focused input value color." }
     },
-    "border": { "value": "{color.gray.200}", "type": "color", "source": "$border-color" },
+    "border": { "value": "{color.gray.200}", "type": "color", "source": "$border-color", "description": "Border color." },
     "theme": {
       "bg": {
-        "primary": { "value": "{color.primary.100}", "type": "color" },
-        "secondary": { "value": "{color.secondary.100}", "type": "color" },
-        "brand": { "value": "{color.brand.100}", "type": "color" },
-        "success": { "value": "{color.success.100}", "type": "color" },
-        "info": { "value": "{color.info.100}", "type": "color" },
-        "warning": { "value": "{color.warning.100}", "type": "color" },
-        "danger": { "value": "{color.danger.100}", "type": "color" },
-        "light": { "value": "{color.light.100}", "type": "color" },
-        "dark": { "value": "{color.dark.100}", "type": "color" },
-        "gray": { "value": "{color.gray.100}", "type": "color" }
+        "primary": { "value": "{color.primary.100}", "type": "color", "description": "Theme-specific primary background color." },
+        "secondary": { "value": "{color.secondary.100}", "type": "color", "description": "Theme-specific secondary background color." },
+        "brand": { "value": "{color.brand.100}", "type": "color", "description": "Theme-specific brand background color." },
+        "success": { "value": "{color.success.100}", "type": "color", "description": "Theme-specific success background color." },
+        "info": { "value": "{color.info.100}", "type": "color", "description": "Theme-specific info background color." },
+        "warning": { "value": "{color.warning.100}", "type": "color", "description": "Theme-specific warning background color." },
+        "danger": { "value": "{color.danger.100}", "type": "color", "description": "Theme-specific danger background color." },
+        "light": { "value": "{color.light.100}", "type": "color", "description": "Theme-specific light background color." },
+        "dark": { "value": "{color.dark.100}", "type": "color", "description": "Theme-specific dark background color." },
+        "gray": { "value": "{color.gray.100}", "type": "color", "description": "Theme-specific gray background color." }
       },
       "border": {
-        "primary": { "value": "{color.primary.200}", "type": "color" },
-        "secondary": { "value": "{color.secondary.200}", "type": "color" },
-        "brand": { "value": "{color.brand.200}", "type": "color" },
-        "success": { "value": "{color.success.200}", "type": "color" },
-        "info": { "value": "{color.info.200}", "type": "color" },
-        "warning": { "value": "{color.warning.200}", "type": "color" },
-        "danger": { "value": "{color.danger.200}", "type": "color" },
-        "light": { "value": "{color.light.200}", "type": "color" },
-        "dark": { "value": "{color.dark.200}", "type": "color" },
-        "gray": { "value": "{color.gray.200}", "type": "color" }
+        "primary": { "value": "{color.primary.200}", "type": "color", "description": "Theme-specific primary border color." },
+        "secondary": { "value": "{color.secondary.200}", "type": "color", "description": "Theme-specific secondary border color." },
+        "brand": { "value": "{color.brand.200}", "type": "color", "description": "Theme-specific brand border color." },
+        "success": { "value": "{color.success.200}", "type": "color", "description": "Theme-specific success border color." },
+        "info": { "value": "{color.info.200}", "type": "color", "description": "Theme-specific info border color." },
+        "warning": { "value": "{color.warning.200}", "type": "color", "description": "Theme-specific warning border color." },
+        "danger": { "value": "{color.danger.200}", "type": "color", "description": "Theme-specific danger border color." },
+        "light": { "value": "{color.light.200}", "type": "color", "description": "Theme-specific light border color." },
+        "dark": { "value": "{color.dark.200}", "type": "color", "description": "Theme-specific dark border color." },
+        "gray": { "value": "{color.gray.200}", "type": "color", "description": "Theme-specific gray border color." }
       },
       "focus": {
-        "primary": { "value": "{color.primary.300}", "type": "color" },
-        "secondary": { "value": "{color.secondary.300}", "type": "color" },
-        "brand": { "value": "{color.brand.300}", "type": "color" },
-        "success": { "value": "{color.success.300}", "type": "color" },
-        "info": { "value": "{color.info.300}", "type": "color" },
-        "warning": { "value": "{color.warning.300}", "type": "color" },
-        "danger": { "value": "{color.danger.300}", "type": "color" },
-        "light": { "value": "{color.light.300}", "type": "color" },
-        "dark": { "value": "{color.dark.300}", "type": "color" },
-        "gray": { "value": "{color.gray.300}", "type": "color" }
+        "primary": { "value": "{color.primary.300}", "type": "color", "description": "Theme-specific primary focus color." },
+        "secondary": { "value": "{color.secondary.300}", "type": "color", "description": "Theme-specific secondary focus color." },
+        "brand": { "value": "{color.brand.300}", "type": "color", "description": "Theme-specific brand focus color." },
+        "success": { "value": "{color.success.300}", "type": "color", "description": "Theme-specific success focus color." },
+        "info": { "value": "{color.info.300}", "type": "color", "description": "Theme-specific info focus color." },
+        "warning": { "value": "{color.warning.300}", "type": "color", "description": "Theme-specific warning focus color." },
+        "danger": { "value": "{color.danger.300}", "type": "color", "description": "Theme-specific danger focus color." },
+        "light": { "value": "{color.light.300}", "type": "color", "description": "Theme-specific light focus color." },
+        "dark": { "value": "{color.dark.300}", "type": "color", "description": "Theme-specific dark focus color." },
+        "gray": { "value": "{color.gray.300}", "type": "color", "description": "Theme-specific gray focus color." }
       },
       "default": {
-        "primary": { "value": "{color.primary.500}", "type": "color" },
-        "secondary": { "value": "{color.secondary.500}", "type": "color" },
-        "brand": { "value": "{color.brand.500}", "type": "color" },
-        "success": { "value": "{color.success.500}", "type": "color" },
-        "info": { "value": "{color.info.500}", "type": "color" },
-        "warning": { "value": "{color.warning.500}", "type": "color" },
-        "danger": { "value": "{color.danger.500}", "type": "color" },
-        "light": { "value": "{color.light.500}", "type": "color" },
-        "dark": { "value": "{color.dark.500}", "type": "color" },
-        "gray": { "value": "{color.gray.500}", "type": "color" }
+        "primary": { "value": "{color.primary.500}", "type": "color", "description": "Theme-specific primary default color." },
+        "secondary": { "value": "{color.secondary.500}", "type": "color", "description": "Theme-specific secondary default color." },
+        "brand": { "value": "{color.brand.500}", "type": "color", "description": "Theme-specific brand default color." },
+        "success": { "value": "{color.success.500}", "type": "color", "description": "Theme-specific success default color." },
+        "info": { "value": "{color.info.500}", "type": "color", "description": "Theme-specific info default color." },
+        "warning": { "value": "{color.warning.500}", "type": "color", "description": "Theme-specific warning default color." },
+        "danger": { "value": "{color.danger.500}", "type": "color", "description": "Theme-specific danger default color." },
+        "light": { "value": "{color.light.500}", "type": "color", "description": "Theme-specific light default color." },
+        "dark": { "value": "{color.dark.500}", "type": "color", "description": "Theme-specific dark default color." },
+        "gray": { "value": "{color.gray.500}", "type": "color", "description": "Theme-specific gray default color." }
       },
       "hover": {
-        "primary": { "value": "{color.primary.700}", "type": "color" },
-        "secondary": { "value": "{color.secondary.700}", "type": "color" },
-        "brand": { "value": "{color.brand.700}", "type": "color" },
-        "success": { "value": "{color.success.700}", "type": "color" },
-        "info": { "value": "{color.info.700}", "type": "color" },
-        "warning": { "value": "{color.warning.700}", "type": "color" },
-        "danger": { "value": "{color.danger.700}", "type": "color" },
-        "light": { "value": "{color.light.700}", "type": "color" },
-        "dark": { "value": "{color.dark.700}", "type": "color" },
-        "gray": { "value": "{color.gray.700}", "type": "color" }
+        "primary": { "value": "{color.primary.700}", "type": "color", "description": "Theme-specific primary hover color." },
+        "secondary": { "value": "{color.secondary.700}", "type": "color", "description": "Theme-specific secondary hover color." },
+        "brand": { "value": "{color.brand.700}", "type": "color", "description": "Theme-specific brand hover color." },
+        "success": { "value": "{color.success.700}", "type": "color", "description": "Theme-specific success hover color." },
+        "info": { "value": "{color.info.700}", "type": "color", "description": "Theme-specific info hover color." },
+        "warning": { "value": "{color.warning.700}", "type": "color", "description": "Theme-specific warning hover color." },
+        "danger": { "value": "{color.danger.700}", "type": "color", "description": "Theme-specific danger hover color." },
+        "light": { "value": "{color.light.700}", "type": "color", "description": "Theme-specific light hover color." },
+        "dark": { "value": "{color.dark.700}", "type": "color", "description": "Theme-specific dark hover color." },
+        "gray": { "value": "{color.gray.700}", "type": "color", "description": "Theme-specific gray hover color." }
       },
       "active": {
-        "primary": { "value": "{color.primary.900}", "type": "color" },
-        "secondary": { "value": "{color.secondary.900}", "type": "color" },
-        "brand": { "value": "{color.brand.900}", "type": "color" },
-        "success": { "value": "{color.success.900}", "type": "color" },
-        "info": { "value": "{color.info.900}", "type": "color" },
-        "warning": { "value": "{color.warning.900}", "type": "color" },
-        "danger": { "value": "{color.danger.900}", "type": "color" },
-        "light": { "value": "{color.light.900}", "type": "color" },
-        "dark": { "value": "{color.dark.900}", "type": "color" },
-        "gray": { "value": "{color.gray.900}", "type": "color" }
+        "primary": { "value": "{color.primary.900}", "type": "color", "description": "Theme-specific primary active color." },
+        "secondary": { "value": "{color.secondary.900}", "type": "color", "description": "Theme-specific secondary active color." },
+        "brand": { "value": "{color.brand.900}", "type": "color", "description": "Theme-specific brand active color." },
+        "success": { "value": "{color.success.900}", "type": "color", "description": "Theme-specific success active color." },
+        "info": { "value": "{color.info.900}", "type": "color", "description": "Theme-specific info active color." },
+        "warning": { "value": "{color.warning.900}", "type": "color", "description": "Theme-specific warning active color." },
+        "danger": { "value": "{color.danger.900}", "type": "color", "description": "Theme-specific danger active color." },
+        "light": { "value": "{color.light.900}", "type": "color", "description": "Theme-specific light active color." },
+        "dark": { "value": "{color.dark.900}", "type": "color", "description": "Theme-specific dark active color." },
+        "gray": { "value": "{color.gray.900}", "type": "color", "description": "Theme-specific gray active color." }
       }
     }
   }
