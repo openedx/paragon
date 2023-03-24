@@ -1,11 +1,11 @@
 {
   "size": {
     "border": {
-      "width": { "value": "1px", "type": "dimension", "source": "$border-width" },
+      "width": { "value": "1px", "type": "dimension", "source": "$border-width", "description": "Default border width." },
       "radius": {
-        "base": { "value": "6px", "type": "dimension", "source": "$border-radius" },
-        "lg": { "value": "7px", "type": "dimension", "source": "$border-radius-lg" },
-        "sm": { "value": "4px", "type": "dimension", "source": "$border-radius-sm" }
+        "base": { "value": "6px", "type": "dimension", "source": "$border-radius", "description": "Default border radius." },
+        "lg": { "value": "7px", "type": "dimension", "source": "$border-radius-lg", "description": "Large border radius." },
+        "sm": { "value": "4px", "type": "dimension", "source": "$border-radius-sm", "description": "Small border radius." }
       }
     }
   }

@@ -2,19 +2,19 @@
   "typography": {
     "display": {
       "line-height": {
-        "base": { "value": "1", "type": "dimension", "source": "$display-line-height" },
-        "mobile": { "value": "3.5rem", "type": "dimension", "source": "$display-mobile-line-height" }
+        "base": { "value": "1", "type": "dimension", "source": "$display-line-height", "description": "Standard line height." },
+        "mobile": { "value": "3.5rem", "type": "dimension", "source": "$display-mobile-line-height", "description": "Mobile line height." }
       },
-      "1": { "value": "3.75rem", "type": "dimension", "source": "$display1-size" },
-      "2": { "value": "4.875rem", "type": "dimension", "source": "$display2-size" },
-      "3": { "value": "5.625rem", "type": "dimension", "source": "$display3-size" },
-      "4": { "value": "7.5rem", "type": "dimension", "source": "$display4-size" },
-      "mobile": { "value": "3.25rem", "type": "dimension", "source": "$display-mobile-size" },
+      "1": { "value": "3.75rem", "type": "dimension", "source": "$display1-size", "description": "Font size for heading of level 1." },
+      "2": { "value": "4.875rem", "type": "dimension", "source": "$display2-size", "description": "Font size for heading of level 2." },
+      "3": { "value": "5.625rem", "type": "dimension", "source": "$display3-size", "description": "Font size for heading of level 3." },
+      "4": { "value": "7.5rem", "type": "dimension", "source": "$display4-size", "description": "Font size for heading of level 4." },
+      "mobile": { "value": "3.25rem", "type": "dimension", "source": "$display-mobile-size", "description": "Font size for mobile devices." },
       "weight": {
-        "1": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display1-weight" },
-        "2": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display2-weight" },
-        "3": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display3-weight" },
-        "4": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display4-weight" }
+        "1": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display1-weight", "description": "Font weight of level 1." },
+        "2": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display2-weight", "description": "Font weight of level 2." },
+        "3": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display3-weight", "description": "Font weight of level 3." },
+        "4": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display4-weight", "description": "Font weight of level 4." }
       }
     }
   }
