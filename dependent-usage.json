@@ -1,5 +1,5 @@
 {
-  "lastModified": 1679580541174,
+  "lastModified": 1679666948765,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -7596,7 +7596,7 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 97,
+            "line": 104,
             "column": 10
           },
           {
@@ -7653,7 +7653,7 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 98,
+            "line": 105,
             "column": 12
           }
         ],
@@ -8268,7 +8268,7 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 109,
+            "line": 116,
             "column": 14
           },
           {
@@ -8433,7 +8433,7 @@
         "Spinner": [
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 122,
+            "line": 129,
             "column": 12
           },
           {
@@ -8469,7 +8469,7 @@
       }
     },
     {
-      "version": "20.28.4",
+      "version": "20.28.5",
       "name": "@edx/frontend-app-communications",
       "repository": {
         "type": "git",
@@ -11886,7 +11886,7 @@
       }
     },
     {
-      "version": "20.28.4",
+      "version": "20.28.5",
       "name": "@edx/frontend-app-enterprise-public-catalog",
       "repository": {
         "type": "git",
@@ -15160,7 +15160,7 @@
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 87,
+            "line": 84,
             "column": 4
           },
           {
@@ -15294,7 +15294,7 @@
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 88,
+            "line": 85,
             "column": 6
           },
           {
@@ -15371,12 +15371,12 @@
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 89,
+            "line": 86,
             "column": 6
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 97,
+            "line": 94,
             "column": 8
           },
           {
@@ -15473,7 +15473,7 @@
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 109,
+            "line": 106,
             "column": 8
           },
           {
@@ -16206,7 +16206,12 @@
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 110,
+            "line": 88,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/my-career/CategoryCard.jsx",
+            "line": 107,
             "column": 10
           },
           {
@@ -16340,17 +16345,17 @@
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 18,
+            "line": 17,
             "column": 60
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 19,
+            "line": 18,
             "column": 64
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 20,
+            "line": 19,
             "column": 55
           },
           {
@@ -16476,11 +16481,6 @@
           }
         ],
         "Chip": [
-          {
-            "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 91,
-            "column": 10
-          },
           {
             "filePath": "src/components/my-career/LevelBars.jsx",
             "line": 18,
@@ -24620,12 +24620,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 67,
+            "line": 66,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 76,
+            "line": 75,
             "column": 6
           },
           {
@@ -24666,8 +24666,13 @@
             "column": 8
           },
           {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
+            "line": 79,
+            "column": 6
+          },
+          {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 35,
+            "line": 36,
             "column": 8
           },
           {
@@ -24684,6 +24689,11 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseDisplay.jsx",
             "line": 31,
             "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/index.jsx",
+            "line": 48,
+            "column": 14
           }
         ],
         "ActionRow.Spacer": [
@@ -24759,12 +24769,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 69,
+            "line": 68,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 78,
+            "line": 77,
             "column": 8
           },
           {
@@ -24811,7 +24821,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 89,
+            "line": 94,
             "column": 12
           },
           {
@@ -24871,7 +24881,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 90,
+            "line": 89,
             "column": 18
           },
           {
@@ -24938,8 +24948,28 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/index.jsx",
-            "line": 32,
+            "line": 33,
             "column": 8
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/index.test.jsx",
+            "line": 59,
+            "column": 45
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/index.test.jsx",
+            "line": 63,
+            "column": 45
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/index.test.jsx",
+            "line": 67,
+            "column": 45
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/index.test.jsx",
+            "line": 71,
+            "column": 45
           },
           {
             "filePath": "src/editors/containers/TextEditor/index.jsx",
@@ -24995,22 +25025,22 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
-            "line": 34,
+            "line": 47,
             "column": 6
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
-            "line": 45,
+            "line": 58,
             "column": 6
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 39,
+            "line": 40,
             "column": 6
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 57,
+            "line": 64,
             "column": 8
           },
           {
@@ -25030,12 +25060,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget/index.jsx",
-            "line": 47,
+            "line": 49,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget/index.jsx",
-            "line": 59,
+            "line": 61,
             "column": 8
           },
           {
@@ -25127,22 +25157,22 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
-            "line": 35,
+            "line": 48,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
-            "line": 46,
+            "line": 59,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 40,
+            "line": 41,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 58,
+            "line": 65,
             "column": 10
           },
           {
@@ -25162,12 +25192,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget/index.jsx",
-            "line": 48,
+            "line": 50,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget/index.jsx",
-            "line": 60,
+            "line": 62,
             "column": 10
           },
           {
@@ -25280,12 +25310,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 70,
+            "line": 69,
             "column": 50
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 102,
+            "line": 101,
             "column": 83
           }
         ],
@@ -25447,12 +25477,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 70,
+            "line": 69,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 102,
+            "line": 101,
             "column": 43
           },
           {
@@ -25464,6 +25494,11 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/TranscriptActionMenu.jsx",
             "line": 41,
             "column": 16
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/LanguageNamesWidget.jsx",
+            "line": 23,
+            "column": 6
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
@@ -25681,12 +25716,12 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 87,
+            "line": 92,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 101,
+            "line": 106,
             "column": 6
           },
           {
@@ -25698,6 +25733,11 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
             "line": 26,
             "column": 2
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/index.jsx",
+            "line": 24,
+            "column": 4
           }
         ],
         "Collapsible.Body": [
@@ -25718,18 +25758,23 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 88,
+            "line": 93,
             "column": 10
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
-            "line": 102,
+            "line": 107,
             "column": 8
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/CollapsibleFormWidget.jsx",
             "line": 52,
             "column": 4
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/index.jsx",
+            "line": 29,
+            "column": 6
           }
         ],
         "Collapsible.Trigger": [
@@ -25806,7 +25851,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
-            "line": 31,
+            "line": 44,
             "column": 6
           },
           {
@@ -25930,6 +25975,11 @@
             "column": 10
           },
           {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
+            "line": 69,
+            "column": 8
+          },
+          {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
             "line": 124,
             "column": 14
@@ -26050,12 +26100,12 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget/index.jsx",
-            "line": 47,
+            "line": 49,
             "column": 24
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget/index.jsx",
-            "line": 59,
+            "line": 61,
             "column": 24
           },
           {
@@ -26171,6 +26221,11 @@
             "column": 10
           },
           {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/index.jsx",
+            "line": 31,
+            "column": 10
+          },
+          {
             "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/index.jsx",
             "line": 75,
             "column": 10
@@ -26255,6 +26310,11 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
             "line": 114,
             "column": 6
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/index.jsx",
+            "line": 44,
+            "column": 10
           },
           {
             "filePath": "src/editors/sharedComponents/ImageUploadModal/SelectImageModal/index.jsx",
@@ -26347,7 +26407,7 @@
         "Form.Row": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/DurationWidget/index.jsx",
-            "line": 46,
+            "line": 48,
             "column": 6
           },
           {
@@ -26364,7 +26424,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 86,
+            "line": 85,
             "column": 6
           },
           {
@@ -26386,7 +26446,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 89,
+            "line": 88,
             "column": 8
           },
           {
@@ -26420,7 +26480,7 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 99,
+            "line": 98,
             "column": 8
           },
           {
@@ -26452,17 +26512,17 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 102,
+            "line": 101,
             "column": 22
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 105,
+            "line": 104,
             "column": 22
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 107,
+            "line": 106,
             "column": 20
           },
           {
@@ -26623,6 +26683,13 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
             "line": 57,
             "column": 14
+          }
+        ],
+        "ClosedCaption": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/LanguageNamesWidget.jsx",
+            "line": 18,
+            "column": 4
           }
         ],
         "FormControlFeedback": [
@@ -27481,6 +27548,11 @@
             "column": 4
           },
           {
+            "filePath": "src/packages/modular-page/modules/ProgramReferralModule/index.jsx",
+            "line": 22,
+            "column": 6
+          },
+          {
             "filePath": "src/packages/modular-page/modules/UpcomingProgramModule/index.jsx",
             "line": 43,
             "column": 6
@@ -27968,7 +28040,7 @@
           },
           {
             "filePath": "src/packages/degree-page/template/DegreeDetailPage/index.jsx",
-            "line": 250,
+            "line": 252,
             "column": 16
           },
           {
@@ -28115,6 +28187,16 @@
             "filePath": "src/packages/modular-page/modules/MoreInfoCTAModule/index.jsx",
             "line": 41,
             "column": 8
+          },
+          {
+            "filePath": "src/packages/modular-page/modules/ProgramReferralModule/index.jsx",
+            "line": 56,
+            "column": 16
+          },
+          {
+            "filePath": "src/packages/modular-page/modules/ProgramReferralModule/index.jsx",
+            "line": 69,
+            "column": 16
           },
           {
             "filePath": "src/packages/modular-page/modules/StatisticIconModule/index.jsx",
@@ -28336,7 +28418,7 @@
           },
           {
             "filePath": "src/packages/degree-page/template/DegreeDetailPage/index.jsx",
-            "line": 250,
+            "line": 252,
             "column": 27
           },
           {
@@ -29652,6 +29734,18 @@
             "filePath": "src/packages/modular-page/modules/FootnoteModule/index.jsx",
             "line": 111,
             "column": 23
+          }
+        ],
+        "Icons": [
+          {
+            "filePath": "src/packages/modular-page/modules/ProgramReferralModule/index.jsx",
+            "line": 57,
+            "column": 23
+          },
+          {
+            "filePath": "src/packages/modular-page/modules/ProgramReferralModule/index.jsx",
+            "line": 69,
+            "column": 27
           }
         ],
         "InfoOutline": [
