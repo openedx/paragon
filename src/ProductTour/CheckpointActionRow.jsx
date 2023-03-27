@@ -11,6 +11,7 @@ const CheckpointActionRow = React.forwardRef(({
   onDismiss,
   onEnd,
   showDismissButton,
+  index,
 }, ref) => (
   <div className="pgn__checkpoint-action-row" ref={ref}>
     {(showDismissButton === undefined ? !isLastCheckpoint : showDismissButton) && (
@@ -26,7 +27,7 @@ const CheckpointActionRow = React.forwardRef(({
       autoFocus
       className="pgn__checkpoint-button_advance"
       variant="primary"
-      onClick={isLastCheckpoint ? onEnd : onAdvance}
+      onClick={isLastCheckpoint ? () => onEnd(index) : () => onAdvance(index)}
     >
       {isLastCheckpoint ? endButtonText : advanceButtonText}
     </Button>
@@ -42,6 +43,7 @@ CheckpointActionRow.defaultProps = {
   onDismiss: () => {},
   onEnd: () => {},
   showDismissButton: undefined,
+  index: 0,
 };
 
 CheckpointActionRow.propTypes = {
@@ -61,6 +63,8 @@ CheckpointActionRow.propTypes = {
   onEnd: PropTypes.func,
   /** Enforces visibility of the dismiss button under all circumstances */
   showDismissButton: PropTypes.bool,
+  /** Allows visibility of last index value for onEnd checkpoint compatibility */
+  index: PropTypes.number,
 };
 
 export default CheckpointActionRow;

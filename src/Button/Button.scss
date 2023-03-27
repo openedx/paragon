@@ -26,7 +26,7 @@
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    color: color-yiq($background);
+    color: $color;
     background-color: $background;
     border-color: $border;
 
@@ -68,6 +68,7 @@
   &:disabled {
     color: $color;
     background-color: transparent;
+    border-color: $color;
   }
 
   &:not(:disabled):not(.disabled):active,
@@ -108,16 +109,18 @@
   border-color: transparent;
   background-color: $background;
 
-  @include hover {
-    color: darken($color, 7.5%);
-    background-color: darken($background, 7.5%);
-    border-color: transparent;
+  &:not(:disabled):not(.disabled) {
+    @include hover {
+      color: darken($color, 7.5%);
+      background-color: darken($background, 7.5%);
+      border-color: transparent;
+    }
   }
 
   &.disabled,
   &:disabled {
     color: $color;
-    background-color: transparent;
+    background-color: $background;
   }
 
   &:not(:disabled):not(.disabled):active,
@@ -135,26 +138,23 @@
     outline: 0;
     box-shadow: none;
 
-    $distance: $btn-focus-width + $btn-focus-gap;
-    $distance-include-btn-border: $distance + $btn-border-width;
-
     &::before {
       content: "";
       position: absolute;
-      top: -1 * $distance-include-btn-border;
-      right: -1 * $distance-include-btn-border;
-      bottom: -1 * $distance-include-btn-border;
-      left: -1 * $distance-include-btn-border;
+      top: -1 * $btn-focus-distance-to-border;
+      right: -1 * $btn-focus-distance-to-border;
+      bottom: -1 * $btn-focus-distance-to-border;
+      left: -1 * $btn-focus-distance-to-border;
       border: solid $btn-focus-width $ring-color;
-      border-radius: calc(#{$btn-border-radius} + #{$distance});
+      border-radius: $btn-focus-border-radius;
     }
 
     &.btn-lg::before {
-      border-radius: calc(#{$btn-border-radius-lg} + #{$distance});
+      border-radius: $btn-focus-border-radius;
     }
 
     &.btn-sm::before {
-      border-radius: calc(#{$btn-border-radius-sm} + #{$distance});
+      border-radius: $btn-focus-border-radius;
     }
 
     &:active,

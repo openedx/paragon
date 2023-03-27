@@ -78,14 +78,14 @@ function IconsTable() {
   const copyToClipboard = (content) => {
     navigator.clipboard.writeText(content);
     setShowToast(true);
-    global.analytics.track('openedx.paragon.icons-table.selected-icon.copied', { name: currentIcon });
+    global.analytics.track('openedx.paragon.docs.icons-table.selected-icon.copied', { name: currentIcon });
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedSetIconsList = useCallback(
     debounce(
       (list) => {
-        global.analytics.track('openedx.paragon.icons-table.search', { value: searchValue });
+        global.analytics.track('openedx.paragon.docs.icons-table.search', { value: searchValue });
         setData({ rowsCount: ROWS_PER_WINDOW, iconsList: list });
       },
       250,

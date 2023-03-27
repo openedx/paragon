@@ -81,16 +81,26 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     }
     setCurrentCheckpointData(null);
   };
-
-  const handleEnd = () => {
+  /* eslint-disable */
+  /**
+   * Takes the final checkpoint array index value and looks for an existing onEnd callback.
+   * 
+   * If an onEnd callback exist on checkpointIndex value and it is the final checkpoint 
+   * in the array, the onEnd callback will be called for the parent, and individual onEnd object. 
+   * 
+   * @param {Integer} checkpointIndex 
+   */
+  /* eslint-enable */
+  const handleEnd = (checkpointIndex) => {
     setIndex(0);
     setIsTourEnabled(false);
-    if (onEnd) {
-      onEnd();
+    if (prunedCheckpoints[checkpointIndex].onEnd) {
+      prunedCheckpoints[checkpointIndex].onEnd();
+    } else if (onEnd) {
+      onEnd(prunedCheckpoints[checkpointIndex]);
     }
     setCurrentCheckpointData(null);
   };
-
   return (
     <Checkpoint
       advanceButtonText={advanceButtonText || tourAdvanceButtonText}
@@ -158,6 +168,9 @@ ProductTour.propTypes = {
       /** A function that runs when triggering the `onClick` event of the dismiss
        * button for the given Checkpoint (overrides the `onDismiss` function defined in the parent tour object). */
       onDismiss: PropTypes.func,
+      /** A function that runs when triggering the `onClick` event of the advance
+      * button if the given Checkpoint is the only or last Checkpoint in a tour. */
+      onEnd: PropTypes.func.isRequired,
       /** A string that dictates the alignment of the Checkpoint around its target. */
       placement: PropTypes.oneOf([
         'top', 'top-start', 'top-end', 'right-start', 'right', 'right-end',

@@ -34,6 +34,10 @@
 
     .pgn__card-section {
       @extend %dark-variant-content;
+
+      .pgn__card-section-title {
+        @extend %dark-variant-content;
+      }
     }
 
     .pgn__card-footer,
@@ -50,7 +54,6 @@
 a .pgn__card {
   color: $gray-700;
   display: inline-block;
-  margin-right: 100%;
 }
 
 .pgn__card-grid {
@@ -338,6 +341,11 @@ a .pgn__card {
   width: 100%;
   border-top-left-radius: $card-image-border-radius;
   border-top-right-radius: $card-image-border-radius;
+  display: none;
+
+  &.show {
+    display: block;
+  }
 }
 
 .pgn__card-logo-cap {
@@ -350,6 +358,11 @@ a .pgn__card {
   box-shadow: $level-1-box-shadow;
   padding: map_get($spacers, 2);
   background-color: $white;
+  display: none;
+
+  &.show {
+    display: block;
+  }
 }
 
 %pgn__card-focused {

@@ -13,11 +13,15 @@ describe('<ProductTour />', () => {
       <div id="target-1">...</div>
       <div id="target-2">...</div>
       <div id="target-3">...</div>
+      <div id="target-4">...</div>
     </>
   );
   const handleDismiss = jest.fn();
   const handleEnd = jest.fn();
+  const handleEscape = jest.fn();
+  const customOnEnd = jest.fn();
   const customOnDismiss = jest.fn();
+  const customOnAdvance = jest.fn();
 
   const disabledTourData = {
     advanceButtonText: 'Next',
@@ -67,7 +71,7 @@ describe('<ProductTour />', () => {
       {
         target: '#target-3',
         title: 'Checkpoint 4',
-        endButtonText: 'Override end',
+        endButtonText: 'End',
       },
     ],
   };
@@ -162,11 +166,13 @@ describe('<ProductTour />', () => {
         fireEvent.click(advanceButton3);
 
         // Click the end button
-        const endButton = screen.getByRole('button', { name: 'Override end' });
+        const endButton = screen.getByRole('button', { name: 'End' });
         fireEvent.click(endButton);
 
         // Verify no Checkpoints have rendered
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+        expect(handleEnd).toHaveBeenCalledTimes(1);
+        expect(customOnEnd).not.toHaveBeenCalled();
       });
 
       it('onClick of escape key disables tour', () => {
@@ -203,6 +209,7 @@ describe('<ProductTour />', () => {
         endButtonText: 'Okay',
         onDismiss: handleDismiss,
         onEnd: handleEnd,
+        onEscape: handleEscape,
         tourId: 'enabledTour',
         startingIndex: 2,
         checkpoints: [
@@ -221,14 +228,16 @@ describe('<ProductTour />', () => {
             target: '#target-3',
             title: 'Checkpoint 3',
             onDismiss: customOnDismiss,
+            onAdvance: customOnAdvance,
             advanceButtonText: 'Override advance',
             dismissButtonText: 'Override dismiss',
 
           },
           {
-            target: '#target-3',
+            target: '#target-4',
             title: 'Checkpoint 4',
             endButtonText: 'Override end',
+            onEnd: customOnEnd,
           },
         ],
       };
@@ -255,8 +264,12 @@ describe('<ProductTour />', () => {
           </>,
         );
         expect(screen.getByRole('button', { name: 'Override advance' })).toBeInTheDocument();
+        const advanceButton = screen.getByRole('button', { name: 'Override advance' });
+        fireEvent.click(advanceButton);
+        expect(screen.queryByRole('button', { name: 'Override advance' })).not.toBeInTheDocument();
+        expect(customOnAdvance).toHaveBeenCalledTimes(1);
+        expect(screen.getByText('Checkpoint 4')).toBeInTheDocument();
       });
-
       it('applies override for dismissButtonText', () => {
         render(
           <>
@@ -268,21 +281,6 @@ describe('<ProductTour />', () => {
         );
         expect(screen.getByRole('button', { name: 'Override dismiss' })).toBeInTheDocument();
       });
-
-      it('applies override for endButtonText', () => {
-        render(
-          <>
-            <ProductTour
-              tours={[overrideTourData]}
-            />
-            {targets}
-          </>,
-        );
-        const advanceButton = screen.getByRole('button', { name: 'Override advance' });
-        fireEvent.click(advanceButton);
-        expect(screen.getByRole('button', { name: 'Override end' })).toBeInTheDocument();
-      });
-
       it('calls customHandleDismiss onClick of dismiss button', () => {
         render(
           <>
@@ -294,9 +292,46 @@ describe('<ProductTour />', () => {
         );
         const dismissButton = screen.getByRole('button', { name: 'Override dismiss' });
         fireEvent.click(dismissButton);
-
         expect(customOnDismiss).toHaveBeenCalledTimes(1);
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      });
+      it('calls customHandleOnEnd onClick of end button', () => {
+        render(
+          <>
+            <ProductTour
+              tours={[overrideTourData]}
+            />
+            {targets}
+          </>,
+        );
+        const advanceButton = screen.getByRole('button', { name: 'Override advance' });
+        fireEvent.click(advanceButton);
+        expect(screen.getByText('Checkpoint 4')).toBeInTheDocument();
+        const endButton = screen.getByRole('button', { name: 'Override end' });
+        fireEvent.click(endButton);
+        expect(handleEnd).toBeCalledTimes(1);
+        expect(customOnEnd).toHaveBeenCalledTimes(1);
+        expect(screen.queryByText('Checkpoint 4')).not.toBeInTheDocument();
+      });
+      it('calls onEscape on escape button key press', () => {
+        render(
+          <>
+            <ProductTour
+              tours={[overrideTourData]}
+            />
+            {targets}
+          </>,
+        );
+        expect(screen.getByText('Checkpoint 3')).toBeInTheDocument();
+        const container = screen.getByRole('dialog');
+        fireEvent.keyDown(container, {
+          key: 'Escape',
+          code: 'Escape',
+          keyCode: 27,
+          charCode: 27,
+        });
+        expect(handleEscape).toHaveBeenCalledTimes(1);
+        expect(screen.queryByText('Checkpoint 3')).not.toBeInTheDocument();
       });
     });
 

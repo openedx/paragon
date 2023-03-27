@@ -1993,6 +1993,7 @@ export { default as TextRotationAngleup } from './TextRotationAngleup';
 export { default as TextRotationDown } from './TextRotationDown';
 export { default as TextRotationNone } from './TextRotationNone';
 export { default as TextSnippet } from './TextSnippet';
+export { default as TextToSpeech } from './TextToSpeech';
 export { default as Textsms } from './Textsms';
 export { default as Texture } from './Texture';
 export { default as TheaterComedy } from './TheaterComedy';

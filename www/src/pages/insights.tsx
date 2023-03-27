@@ -17,6 +17,7 @@ import SummaryUsageExamples, { ISummaryUsageExamples } from '../components/insig
 import ProjectUsageExamples, { IProjectUsageExamples } from '../components/insights/ProjectUsageExamples';
 import ComponentUsageExamples, { IComponentUsageExamples } from '../components/insights/ComponentUsageExamples';
 import getGithubProjectUrl from '../utils/getGithubProjectUrl';
+// @ts-ignore
 import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
 import InsightsContext from '../context/InsightsContext';
@@ -84,7 +85,7 @@ export interface IComponentUsage {
 
 const dependentProjects: IDependentUsage[] = [];
 
-const componentsUsage: Record<string, IComponentUsage[]> = dependentProjectsUsages
+const componentsUsage: Record<string, IComponentUsageData[]> = dependentProjectsUsages
   .reduce((accumulator: any, project: any) => {
     dependentProjects.push({
       ...project,
@@ -364,7 +365,7 @@ export default function InsightsPage({ pageContext: { tab } }: { pageContext: { 
 
   const handleOnSelect = (value: string) => {
     if (value !== tab) {
-      global.analytics.track('Usage Insights', { tab: value });
+      global.analytics.track(`openedx.paragon.docs.insights.tabs.${value.toLowerCase().trim()}.clicked`);
       navigate(INSIGHTS_PAGES.find(item => item.tab === value)!.path);
     }
   };
