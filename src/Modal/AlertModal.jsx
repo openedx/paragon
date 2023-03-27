@@ -19,7 +19,7 @@ function AlertModal({
     >
       <ModalDialog.Header>
         <ModalDialog.Title>
-          {icon && <Icon src={icon} className={classNames('pgn_alert-modal-icon', props.variant)} />}
+          {icon && <Icon src={icon} className={classNames('pgn__alert-modal__title__icon')} />}
           {props.title}
         </ModalDialog.Title>
       </ModalDialog.Header>
@@ -44,7 +44,7 @@ AlertModal.propTypes = {
   /** Sizes determine the maximum width of the dialog box */
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
   /** The visual style of the dialog box */
-  variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success', 'dark']),
+  variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success']),
   /** The label supplied to the close icon button if one is rendered */
   closeLabel: PropTypes.string,
   /** Specifies class name to append to the base element */
@@ -58,7 +58,7 @@ AlertModal.propTypes = {
   /** Specifies what should be displayed in the footer of the dialog box */
   footerNode: PropTypes.node,
   /** Icon that will be shown in the header of modal */
-  icon: PropTypes.func,
+  icon: PropTypes.elementType,
 };
 
 AlertModal.defaultProps = {
