@@ -1,5 +1,5 @@
 {
-  "lastModified": 1679839682832,
+  "lastModified": 1679926723076,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -10369,7 +10369,7 @@
             "column": 10
           },
           {
-            "filePath": "src/components/PostPreviewPane.jsx",
+            "filePath": "src/components/PostPreviewPanel.jsx",
             "line": 27,
             "column": 20
           },
@@ -10801,7 +10801,7 @@
         ],
         "IconButton": [
           {
-            "filePath": "src/components/PostPreviewPane.jsx",
+            "filePath": "src/components/PostPreviewPanel.jsx",
             "line": 23,
             "column": 10
           },
@@ -10858,7 +10858,7 @@
         ],
         "Close": [
           {
-            "filePath": "src/components/PostPreviewPane.jsx",
+            "filePath": "src/components/PostPreviewPanel.jsx",
             "line": 26,
             "column": 17
           },
@@ -10870,8 +10870,8 @@
         ],
         "Button": [
           {
-            "filePath": "src/components/PostPreviewPane.jsx",
-            "line": 43,
+            "filePath": "src/components/PostPreviewPanel.jsx",
+            "line": 44,
             "column": 10
           },
           {
@@ -11574,11 +11574,6 @@
           {
             "filePath": "src/discussions/in-context-topics/topic-search/TopicSearchResultBar.jsx",
             "line": 16,
-            "column": 6
-          },
-          {
-            "filePath": "src/discussions/topics/topic-search-bar/TopicSearchBar.jsx",
-            "line": 15,
             "column": 6
           }
         ],
@@ -14402,7 +14397,7 @@
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 50,
+            "line": 51,
             "column": 6
           },
           {
@@ -15865,29 +15860,29 @@
         "Tabs": [
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 54,
+            "line": 56,
             "column": 8
           }
         ],
         "Tab": [
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 55,
+            "line": 57,
             "column": 10
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 58,
+            "line": 60,
             "column": 10
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 66,
+            "line": 68,
             "column": 12
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 75,
+            "line": 77,
             "column": 12
           }
         ],
@@ -23921,7 +23916,7 @@
       }
     },
     {
-      "version": "20.28.5",
+      "version": "20.29.0",
       "name": "@edx/frontend-component-header-edx",
       "repository": {
         "type": "git",
@@ -27806,7 +27801,7 @@
           },
           {
             "filePath": "src/packages/degree-page/components/TabSections/index.jsx",
-            "line": 114,
+            "line": 116,
             "column": 16
           },
           {
@@ -29362,14 +29357,14 @@
         "FormGroup": [
           {
             "filePath": "src/packages/degree-page/components/TabSections/index.jsx",
-            "line": 130,
+            "line": 132,
             "column": 10
           }
         ],
         "FormControl": [
           {
             "filePath": "src/packages/degree-page/components/TabSections/index.jsx",
-            "line": 131,
+            "line": 133,
             "column": 12
           }
         ],
