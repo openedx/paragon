@@ -10,6 +10,10 @@ const classNames = [
 ];
 const srTest = 'srTest';
 
+function BlankSrc() {
+  return <div />;
+}
+
 let wrapper;
 
 describe('<Icon />', () => {
@@ -52,6 +56,13 @@ describe('<Icon />', () => {
       expect(iconSpans.length).toEqual(2);
       expect(iconSpans.at(0).prop('id')).toEqual(testId);
       expect(iconSpans.at(1).hasClass('sr-only')).toEqual(true);
+    });
+    it('receives size prop correctly', () => {
+      wrapper = mount(<Icon src={BlankSrc} className={classNames} size="xs" />);
+      const iconSpans = wrapper.find('span');
+      const iconSpan = iconSpans.at(0);
+
+      expect(iconSpan.hasClass('pgn__icon__xs')).toEqual(true);
     });
   });
 });
