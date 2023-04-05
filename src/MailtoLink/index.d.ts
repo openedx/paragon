@@ -1,21 +1,21 @@
-import { FC, MouseEventHandler, ReactNode } from 'react';
+import * as React from 'react';
 
-export interface IMailtoLink {
-  children: ReactNode;
+export interface MailtoLinkProps {
+  children: React.ReactNode;
   className?: string;
-  to?: string[];
-  cc?: string[];
-  bcc?: string[];
+  to?: string[] | string;
+  cc?: string[] | string;
+  bcc?: string[] | string;
   subject?: string;
   body?: string;
   target?: string;
-  onClick?: MouseEventHandler<HTMLAnchorElement>;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
   externalLink?: {
     alternativeText: string;
     title: string;
   };
 }
 
-declare const MailtoLink: FC<IMailtoLink>;
+declare const MailtoLink: React.ForwardRefExoticComponent<MailtoLinkProps & React.RefAttributes<HTMLAnchorElement>>;
 
 export default MailtoLink;

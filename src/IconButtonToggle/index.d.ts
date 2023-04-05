@@ -1,14 +1,12 @@
-import React from 'react';
+import * as React from 'react';
+import { IconButtonProps } from '../IconButton';
 
-// eslint-disable-next-line import/extensions
-import IconButton from './IconButton';
-
-export interface IconButtonToggleProps {
+interface IconButtonToggleProps {
   activeValue?: string;
   onChange?: (value: string) => void;
-  children: React.ReactElement<IconButton>[];
+  children: React.ReactElement<IconButtonProps>[];
 }
 
-const IconButtonToggle: React.FunctionComponent<IconButtonToggleProps>;
+declare const IconButtonToggle: React.FC<IconButtonToggleProps>;
 
 export default IconButtonToggle;

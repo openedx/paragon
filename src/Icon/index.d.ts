@@ -1,20 +1,22 @@
-import { FC, ReactNode } from 'react';
+import * as React from 'react';
 
-export interface ISvgAttrs {
+export type IconSizes = 'xs' | 'sm' | 'md' | 'lg';
+
+export interface SvgAttrs {
   'aria-label'?: string;
   'aria-labelledby'?: string;
 }
 
 export interface IconProps {
-  src?: ReactNode | FC<ISvgAttrs>;
-  svgAttrs?: ISvgAttrs,
+  src?: ReactElement | FC<{}>;
+  svgAttrs?: SvgAttrs;
   id?: string;
-  size?: 'xs' | 'sm' | 'md' | 'lg';
-  className?: string,
-  hidden?: boolean,
-  screenReaderText?: string | JSX.Element,
+  size?: IconSizes;
+  className?: string;
+  hidden?: boolean;
+  screenReaderText?: string | React.ReactNode;
 }
 
-declare const Icon: FC<IconProps>;
+declare const Icon: React.FC<IconProps>;
 
 export default Icon;
