@@ -1,12 +1,19 @@
-import { FC, ReactNode } from 'react';
+import * as React from 'react';
 
 export interface ActionRowProps {
-  as?: string;
-  className?: string,
+  as?: keyof JSX.IntrinsicElements;
+  className?: string;
+  children?: React.ReactNode;
   isStacked?: boolean;
-  children?: ReactNode;
 }
 
-declare const ActionRow: FC<ActionRowProps>;
+declare function ActionRow(props: ActionRowProps): JSX.Element;
 
+declare function ActionRowSpacer(): JSX.Element;
+
+declare namespace ActionRow {
+  const Spacer: typeof ActionRowSpacer;
+}
+
+export { ActionRowSpacer };
 export default ActionRow;

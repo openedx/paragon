@@ -1,21 +1,12 @@
-import { FC, ReactNode } from 'react';
+import * as React from 'react';
 
 export interface IMenu {
   className?: string;
   arrowKeyNavigationSelector?: string;
-  as?: ElementType;
-  children?: ReactNode;
+  as?: keyof JSX.IntrinsicElements;
+  children?: React.ReactNode;
 }
 
-export interface IMenuItem {
-  defaultSelected?: boolean;
-  className?: string;
-  children?: ReactNode;
-  as?: ElementType;
-  iconBefore?: ReactNode;
-  iconAfter?: ReactNode;
-}
-
-declare const Menu: FC<IMenu>;
+declare const Menu: React.FC<IMenu>;
 
 export default Menu;

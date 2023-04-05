@@ -1,11 +1,11 @@
-import { FC, ReactNode } from 'react';
-import { SpinnerProps } from 'react-bootstrap/Spinner';
+import * as React from 'react';
+import { SpinnerProps as BaseSpinnerProps } from 'react-bootstrap/Spinner';
 
-export interface SpinnerTypes extends SpinnerProps {
+export interface SpinnerProps extends BaseSpinnerProps {
   className?: string;
-  screenReaderText?: ReactNode;
+  screenReaderText?: React.ReactNode;
 }
 
-declare const Spinner: FC<SpinnerTypes>;
+declare const Spinner: React.ForwardRefExoticComponent<SpinnerProps & React.RefAttributes<HTMLDivElement>>;
 
 export default Spinner;
