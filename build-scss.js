@@ -33,14 +33,21 @@ const compileAndWriteStyleSheets = (name, path, outDir) => {
     }]
   });
 
-  postCSS([postCSSCustomMedia(), postCSSImport(), combineSelectors({ removeDuplicatedProperties: true })])
+  postCSS([
+    postCSSCustomMedia({ preserve: true }), 
+    postCSSImport(), 
+    combineSelectors({ removeDuplicatedProperties: true })])
     .process(compiledStyleSheet.css, { from: path, map: { inline: false } })
     .then(result => {
       fs.writeFileSync(`${outDir}/${name}.css`, result.css);
       fs.writeFileSync(`${outDir}/${name}.css.map`, result.map.toString());
     });
 
-  postCSS([postCSSCustomMedia(), postCSSImport(), postCSSMinify(), combineSelectors({ removeDuplicatedProperties: true })])
+  postCSS([
+    postCSSCustomMedia({ preserve: true }), 
+    postCSSImport(), 
+    postCSSMinify(), 
+    combineSelectors({ removeDuplicatedProperties: true })])
     .process(compiledStyleSheet.css, { from: path })
     .then(result => fs.writeFileSync(`${outDir}/${name}.min.css`, result.css));
 }
