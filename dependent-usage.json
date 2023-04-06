@@ -1,5 +1,5 @@
 {
-  "lastModified": 1680703742350,
+  "lastModified": 1680790092207,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -16700,7 +16700,7 @@
       }
     },
     {
-      "version": "19.19.0",
+      "version": "20.28.4",
       "name": "frontend-app-learner-portal",
       "repository": "https://github.com/openedx/frontend-app-learner-portal-programs",
       "folderName": "frontend-app-learner-portal-programs",
@@ -16809,12 +16809,12 @@
           },
           {
             "filePath": "src/components/course-enrollments/tests/CourseEnrollments.test.jsx",
-            "line": 158,
+            "line": 161,
             "column": 52
           },
           {
             "filePath": "src/components/course-enrollments/tests/CourseEnrollments.test.jsx",
-            "line": 170,
+            "line": 173,
             "column": 52
           },
           {
@@ -21950,7 +21950,7 @@
         "SearchField": [
           {
             "filePath": "src/components/CourseTable/index.jsx",
-            "line": 164,
+            "line": 165,
             "column": 10
           }
         ],
@@ -22357,7 +22357,7 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogExecEdBoolean.jsx",
-            "line": 18,
+            "line": 19,
             "column": 4
           },
           {
@@ -22644,12 +22644,12 @@
         "Icon": [
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogExecEdBoolean.jsx",
-            "line": 20,
+            "line": 21,
             "column": 10
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogExecEdBoolean.jsx",
-            "line": 21,
+            "line": 22,
             "column": 10
           },
           {
@@ -22666,14 +22666,14 @@
         "CheckCircle": [
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogExecEdBoolean.jsx",
-            "line": 20,
+            "line": 21,
             "column": 21
           }
         ],
         "Close": [
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogExecEdBoolean.jsx",
-            "line": 21,
+            "line": 22,
             "column": 21
           }
         ],
@@ -26832,7 +26832,7 @@
         "Spinner": [
           {
             "filePath": "src/exam/Exam.jsx",
-            "line": 75,
+            "line": 77,
             "column": 8
           },
           {
@@ -26844,7 +26844,7 @@
         "Alert": [
           {
             "filePath": "src/exam/Exam.jsx",
-            "line": 95,
+            "line": 97,
             "column": 8
           },
           {
@@ -26866,7 +26866,7 @@
         "Info": [
           {
             "filePath": "src/exam/Exam.jsx",
-            "line": 95,
+            "line": 97,
             "column": 36
           },
           {
@@ -26954,7 +26954,7 @@
           },
           {
             "filePath": "src/instructions/proctored_exam/prerequisites-instructions/index.jsx",
-            "line": 39,
+            "line": 37,
             "column": 6
           },
           {
@@ -27088,7 +27088,7 @@
           },
           {
             "filePath": "src/instructions/proctored_exam/Footer.jsx",
-            "line": 15,
+            "line": 12,
             "column": 8
           },
           {
@@ -27393,6 +27393,11 @@
             "column": 6
           },
           {
+            "filePath": "src/packages/degree-page/components/TabSections/index.jsx",
+            "line": 193,
+            "column": 6
+          },
+          {
             "filePath": "src/packages/exec-ed-page/components/AboutCourse.jsx",
             "line": 9,
             "column": 4
@@ -27424,7 +27429,7 @@
           },
           {
             "filePath": "src/packages/exec-ed-page/template/ExecEdDetailPage/index.jsx",
-            "line": 459,
+            "line": 458,
             "column": 18
           },
           {
@@ -27479,17 +27484,17 @@
           },
           {
             "filePath": "src/packages/learn-index-page/template/AllTopicsPage/index.jsx",
-            "line": 71,
+            "line": 70,
             "column": 10
           },
           {
             "filePath": "src/packages/learn-index-page/template/AllTopicsPage/index.jsx",
-            "line": 82,
+            "line": 81,
             "column": 8
           },
           {
             "filePath": "src/packages/learn-index-page/template/LearnIndexPage/index.jsx",
-            "line": 41,
+            "line": 40,
             "column": 8
           },
           {
@@ -27841,7 +27846,7 @@
           },
           {
             "filePath": "src/packages/degree-page/components/TabSections/index.jsx",
-            "line": 121,
+            "line": 161,
             "column": 16
           },
           {
@@ -27999,11 +28004,6 @@
             "column": 11
           },
           {
-            "filePath": "src/packages/common/ui/DiscoveryCard/variants/DiscoveryProgramCard.jsx",
-            "line": 296,
-            "column": 24
-          },
-          {
             "filePath": "src/packages/common/ui/Header/components/mobile-navigation/MenuAccordion/index.jsx",
             "line": 110,
             "column": 10
@@ -28034,63 +28034,8 @@
             "column": 14
           },
           {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 128,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 136,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 144,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 152,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 160,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 168,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 176,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 184,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 192,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 200,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 344,
-            "column": 14
-          },
-          {
             "filePath": "src/packages/degree-page/template/DegreeDetailPage/index.jsx",
-            "line": 252,
+            "line": 251,
             "column": 16
           },
           {
@@ -28478,7 +28423,7 @@
           },
           {
             "filePath": "src/packages/degree-page/template/DegreeDetailPage/index.jsx",
-            "line": 252,
+            "line": 251,
             "column": 27
           },
           {
@@ -28727,74 +28672,10 @@
             "column": 10
           }
         ],
-        "Badge": [
-          {
-            "filePath": "src/packages/common/ui/DiscoveryCard/variants/DiscoveryCourseCard.jsx",
-            "line": 150,
-            "column": 14
-          },
-          {
-            "filePath": "src/packages/common/ui/DiscoveryCard/variants/DiscoveryProgramCard.jsx",
-            "line": 200,
-            "column": 20
-          },
-          {
-            "filePath": "src/packages/common/ui/DiscoveryCard/variants/DiscoveryProgramCard.jsx",
-            "line": 286,
-            "column": 22
-          },
-          {
-            "filePath": "src/packages/common/ui/NewBadge/index.jsx",
-            "line": 22,
-            "column": 4
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 336,
-            "column": 14
-          },
-          {
-            "filePath": "src/packages/learn-page/components/DynamicProductList/components/ProductFilter/index.jsx",
-            "line": 80,
-            "column": 14
-          },
-          {
-            "filePath": "src/packages/open-course-page/components/CourseRunSelector/components/SelectionTile.jsx",
-            "line": 57,
-            "column": 12
-          },
-          {
-            "filePath": "src/packages/search-page/components/AutoComplete/components/AutoCompleteDropdownItem/index.jsx",
-            "line": 63,
-            "column": 14
-          },
-          {
-            "filePath": "src/packages/search-page/components/AutoComplete/components/AutoCompleteDropdownItem/index.jsx",
-            "line": 67,
-            "column": 12
-          },
-          {
-            "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 233,
-            "column": 33
-          }
-        ],
-        "Program": [
-          {
-            "filePath": "src/packages/common/ui/DiscoveryCard/variants/DiscoveryProgramCard.jsx",
-            "line": 296,
-            "column": 35
-          },
-          {
-            "filePath": "src/packages/open-course-page/components/ProgramUpsell/ProgramUpsellWidget.jsx",
-            "line": 135,
-            "column": 25
-          }
-        ],
         "Input": [
           {
             "filePath": "src/packages/common/ui/Footer/index.jsx",
-            "line": 878,
+            "line": 888,
             "column": 18
           }
         ],
@@ -29111,6 +28992,38 @@
             "column": 10
           }
         ],
+        "Badge": [
+          {
+            "filePath": "src/packages/common/ui/NewBadge/index.jsx",
+            "line": 22,
+            "column": 4
+          },
+          {
+            "filePath": "src/packages/learn-page/components/DynamicProductList/components/ProductFilter/index.jsx",
+            "line": 80,
+            "column": 14
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseRunSelector/components/SelectionTile.jsx",
+            "line": 57,
+            "column": 12
+          },
+          {
+            "filePath": "src/packages/search-page/components/AutoComplete/components/AutoCompleteDropdownItem/index.jsx",
+            "line": 63,
+            "column": 14
+          },
+          {
+            "filePath": "src/packages/search-page/components/AutoComplete/components/AutoCompleteDropdownItem/index.jsx",
+            "line": 67,
+            "column": 12
+          },
+          {
+            "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
+            "line": 233,
+            "column": 33
+          }
+        ],
         "Popover.Title": [
           {
             "filePath": "src/packages/common/ui/overlays/PaintedDoorUnauthenticatedPopover.jsx",
@@ -29245,149 +29158,6 @@
             "column": 12
           }
         ],
-        "Launch": [
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 128,
-            "column": 48
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 136,
-            "column": 48
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 144,
-            "column": 48
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 152,
-            "column": 48
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 160,
-            "column": 48
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 168,
-            "column": 48
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 176,
-            "column": 48
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 184,
-            "column": 48
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 192,
-            "column": 48
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 200,
-            "column": 48
-          },
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 344,
-            "column": 25
-          },
-          {
-            "filePath": "src/packages/exec-ed-page/components/CourseCurriculum/index.jsx",
-            "line": 101,
-            "column": 40
-          },
-          {
-            "filePath": "src/packages/exec-ed-page/components/CourseHeader2U/index.jsx",
-            "line": 197,
-            "column": 21
-          },
-          {
-            "filePath": "src/packages/exec-ed-page/components/StickyNav2U.jsx",
-            "line": 248,
-            "column": 35
-          },
-          {
-            "filePath": "src/packages/exec-ed-page/components/WhyGetsmarter/index.jsx",
-            "line": 56,
-            "column": 23
-          },
-          {
-            "filePath": "src/packages/instructor-page/components/InstructorBioDynamic/components/Overview/index.jsx",
-            "line": 27,
-            "column": 24
-          },
-          {
-            "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 384,
-            "column": 22
-          },
-          {
-            "filePath": "src/packages/open-course-page/components/CourseRunSelector/index.jsx",
-            "line": 132,
-            "column": 6
-          }
-        ],
-        "Card": [
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 291,
-            "column": 8
-          },
-          {
-            "filePath": "src/packages/learn-index-page/template/AllTopicsPage/index.jsx",
-            "line": 87,
-            "column": 12
-          },
-          {
-            "filePath": "src/packages/modular-page/modules/FacultyModule/index.jsx",
-            "line": 45,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/open-course-page/components/CourseRunSelector/components/SelectionTile.jsx",
-            "line": 52,
-            "column": 4
-          },
-          {
-            "filePath": "src/packages/search-page/components/PreQueryPage/components/PartnerFilters/index.jsx",
-            "line": 92,
-            "column": 16
-          }
-        ],
-        "Card.Body": [
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 316,
-            "column": 10
-          },
-          {
-            "filePath": "src/packages/learn-index-page/template/AllTopicsPage/index.jsx",
-            "line": 88,
-            "column": 14
-          },
-          {
-            "filePath": "src/packages/open-course-page/components/CourseRunSelector/components/SelectionTile.jsx",
-            "line": 53,
-            "column": 6
-          }
-        ],
-        "Card.Footer": [
-          {
-            "filePath": "src/packages/common/ui/ProductCardLegacy/index.jsx",
-            "line": 342,
-            "column": 12
-          }
-        ],
         "MarketingModal": [
           {
             "filePath": "src/packages/common/ui/SaveForLaterMarketingModal/index.jsx",
@@ -29439,14 +29209,14 @@
         "FormGroup": [
           {
             "filePath": "src/packages/degree-page/components/TabSections/index.jsx",
-            "line": 137,
+            "line": 177,
             "column": 10
           }
         ],
         "FormControl": [
           {
             "filePath": "src/packages/degree-page/components/TabSections/index.jsx",
-            "line": 138,
+            "line": 178,
             "column": 12
           }
         ],
@@ -29480,6 +29250,43 @@
             "filePath": "src/packages/program-page/components/ProgramPathway/components/ProgramPathwayCourse.jsx",
             "line": 61,
             "column": 10
+          }
+        ],
+        "Launch": [
+          {
+            "filePath": "src/packages/exec-ed-page/components/CourseCurriculum/index.jsx",
+            "line": 101,
+            "column": 40
+          },
+          {
+            "filePath": "src/packages/exec-ed-page/components/CourseHeader2U/index.jsx",
+            "line": 197,
+            "column": 21
+          },
+          {
+            "filePath": "src/packages/exec-ed-page/components/StickyNav2U.jsx",
+            "line": 248,
+            "column": 35
+          },
+          {
+            "filePath": "src/packages/exec-ed-page/components/WhyGetsmarter/index.jsx",
+            "line": 56,
+            "column": 23
+          },
+          {
+            "filePath": "src/packages/instructor-page/components/InstructorBioDynamic/components/Overview/index.jsx",
+            "line": 27,
+            "column": 24
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
+            "line": 384,
+            "column": 22
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseRunSelector/index.jsx",
+            "line": 132,
+            "column": 6
           }
         ],
         "CallMade": [
@@ -29625,6 +29432,40 @@
             "column": 20
           }
         ],
+        "Card": [
+          {
+            "filePath": "src/packages/learn-index-page/template/AllTopicsPage/index.jsx",
+            "line": 86,
+            "column": 12
+          },
+          {
+            "filePath": "src/packages/modular-page/modules/FacultyModule/index.jsx",
+            "line": 45,
+            "column": 10
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseRunSelector/components/SelectionTile.jsx",
+            "line": 52,
+            "column": 4
+          },
+          {
+            "filePath": "src/packages/search-page/components/PreQueryPage/components/PartnerFilters/index.jsx",
+            "line": 92,
+            "column": 16
+          }
+        ],
+        "Card.Body": [
+          {
+            "filePath": "src/packages/learn-index-page/template/AllTopicsPage/index.jsx",
+            "line": 87,
+            "column": 14
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseRunSelector/components/SelectionTile.jsx",
+            "line": 53,
+            "column": 6
+          }
+        ],
         "Tune": [
           {
             "filePath": "src/packages/learn-page/components/DynamicProductList/components/ProductFilter/index.jsx",
@@ -29716,7 +29557,7 @@
         "Check": [
           {
             "filePath": "src/packages/modular-page/modules/AboutTheProgramModule/index.jsx",
-            "line": 64,
+            "line": 65,
             "column": 14
           },
           {
@@ -29878,6 +29719,13 @@
             "filePath": "src/packages/open-course-page/components/Instructors/components/InstructorCard.jsx",
             "line": 48,
             "column": 16
+          }
+        ],
+        "Program": [
+          {
+            "filePath": "src/packages/open-course-page/components/ProgramUpsell/ProgramUpsellWidget.jsx",
+            "line": 135,
+            "column": 25
           }
         ],
         "Alert": [
@@ -30044,7 +29892,7 @@
         "StatusAlert": [
           {
             "filePath": "src/packages/queryless-pages/templates/AppUpgrade.jsx",
-            "line": 104,
+            "line": 103,
             "column": 8
           },
           {
