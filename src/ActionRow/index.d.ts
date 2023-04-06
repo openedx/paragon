@@ -7,13 +7,11 @@ export interface ActionRowProps {
   isStacked?: boolean;
 }
 
-declare function ActionRow(props: ActionRowProps): JSX.Element;
-
 declare function ActionRowSpacer(): JSX.Element;
 
-declare namespace ActionRow {
-  const Spacer: typeof ActionRowSpacer;
-}
+declare const ActionRow: React.FC<ActionRowProps> & {
+  Spacer: typeof ActionRowSpacer;
+};
 
 export { ActionRowSpacer };
 export default ActionRow;
