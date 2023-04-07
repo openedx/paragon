@@ -6,9 +6,9 @@ const chroma = require('chroma-js');
 const { colorYiq, darken, lighten } = require('./sass-helpers');
 const cssUtilities = require('./css-utilities');
 
-const { formattedVariables, fileHeader, sortByReference } = StyleDictionary.formatHelpers;
+const { fileHeader, sortByReference } = StyleDictionary.formatHelpers;
 
-const colorTransform = (token) => {
+const colorTransform = (token, theme) => {
   const { value, modify = [], original } = token;
   const reservedColorValues = ['inherit', 'initial', 'revert', 'unset', 'currentColor'];
 
@@ -26,15 +26,8 @@ const colorTransform = (token) => {
           color = color.mix(otherColor, amount, 'rgb');
           break;
         case 'color-yiq': {
-          // find whether token belongs to any theme based on its location
-          // split full path by '/', check if 'themes' directory is a part of the path, if it is - the next nested
-          // directory is the theme name, otherwise use 'light' theme
-          const pathParts = token.filePath.split('/');
-          const themePartIndex = pathParts.findIndex(item => item === 'themes');
-          const themeVariant = themePartIndex === -1 ? 'light' : pathParts[themePartIndex + 1];
-
           const { light, dark, threshold } = modifier;
-          color = colorYiq(color, light, dark, threshold, themeVariant);
+          color = colorYiq(color, light, dark, threshold, theme);
           break;
         }
         case 'darken':
@@ -50,6 +43,37 @@ const colorTransform = (token) => {
   }
 
   return color.hex('rgba').toUpperCase();
+};
+
+/**
+ * Custom formatter that extends default css/variables format to allow specifying
+ * 1. 'outputReferences' per token (by default you are only able to specify it globally for all tokens)
+ * 2. 'theme' to output only theme's variables (e.g, 'light' or 'dark'), if theme is not provided - only
+ * core tokens are built.
+ */
+const createCustomCSSVariables = (args, theme) => {
+  const { dictionary, options, file } = args;
+
+  const outputTokens = theme
+    ? dictionary.allTokens.filter(token => token.filePath.includes(theme))
+    : dictionary.allTokens;
+
+  const variables = outputTokens.sort(sortByReference(dictionary)).map(token => {
+    let { value } = token;
+
+    const outputReferencesForToken = (token.original.outputReferences === false) ? false : options.outputReferences;
+
+    if (dictionary.usesReference(token.original.value) && outputReferencesForToken) {
+      const refs = dictionary.getReferences(token.original.value);
+      refs.forEach(ref => {
+        value = value.replace(ref.value, `var(--${ref.name})`);
+      });
+    }
+
+    return `  --${token.name}: ${value};`;
+  }).join('\n');
+
+  return `${fileHeader({ file })}:root {\n${variables}\n}\n`;
 };
 
 /**
@@ -83,44 +107,11 @@ StyleDictionary.registerTransform({
 });
 
 /**
- * Overrides default scss/variables formatter to add new line at the end of file
- * to be compatible with our stylelint rules.
- */
-StyleDictionary.registerFormat({
-  name: 'scss/variables-with-new-line',
-  formatter({ dictionary, options, file }) {
-    const { outputReferences, themeable = false } = options;
-    return `${fileHeader({ file, commentStyle: 'short' })
-      + formattedVariables({
-        format: 'sass', dictionary, outputReferences, themeable,
-      })
-    }\n`;
-  },
-});
-
-/**
- * Custom formatter that extends default css/variables format to allow specifying
- * 'outputReferences' per token (by default you are only able to specify it globally for all tokens)
+ * The custom formatter to create CSS variables for core tokens.
  */
 StyleDictionary.registerFormat({
   name: 'css/custom-variables',
-  formatter({ dictionary, options, file }) {
-    const variables = dictionary.allTokens.sort(sortByReference(dictionary)).map(token => {
-      let { value } = token;
-      const outputReferencesForToken = token.original.outputReferences === false ? false : options.outputReferences;
-
-      if (dictionary.usesReference(token.original.value) && outputReferencesForToken) {
-        const refs = dictionary.getReferences(token.original.value);
-        refs.forEach(ref => {
-          value = value.replace(ref.value, `var(--${ref.name})`);
-        });
-      }
-
-      return `  --${token.name}: ${value};`;
-    }).join('\n');
-
-    return `${fileHeader({ file })}:root {\n${variables}\n}\n`;
-  },
+  formatter: (args) => createCustomCSSVariables(args),
 });
 
 /**
@@ -181,4 +172,19 @@ StyleDictionary.registerFormat({
   },
 });
 
-module.exports = StyleDictionary;
+/**
+ * Custom file header for custom and built-in formatters.
+ */
+StyleDictionary.registerFileHeader({
+  name: 'customFileHeader',
+  fileHeader: (defaultMessage) => [
+    'IMPORTANT: This file is the result of assembling design tokens',
+    ...defaultMessage,
+  ],
+});
+
+module.exports = {
+  StyleDictionary,
+  createCustomCSSVariables,
+  colorTransform,
+};

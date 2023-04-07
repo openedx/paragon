@@ -31,7 +31,7 @@ import PageEditBtn from './PageEditBtn';
 
 if (process.env.NODE_ENV === 'development') {
   /* eslint-disable-next-line global-require */
-  require('~paragon-style/core/core.scss');
+  require('~paragon-style/scss/core/core.scss');
 }
 
 export interface ILayout {
