@@ -1,5 +1,3 @@
-@import "css/variables";
-@import "css/custom-media-breakpoints";
 @import "functions";
 @import "variables";
 @import "~bootstrap/scss/mixins";
@@ -15,5 +13,9 @@
 @import "~bootstrap/scss/list-group";
 @import "~bootstrap/scss/print";
 
+// Paragon core CSS
+@import "../../css/core/variables";
+@import "../../css/core/custom-media-breakpoints";
+
 // Paragon components
-@import "../../src/index";
+@import "../../../src/index";
