@@ -7,7 +7,7 @@ const importer = function importer(url) {
   let file = url;
   // correctly resolve core Paragon's scss
   if (url.startsWith('~paragon-style')) {
-    file = path.resolve(__dirname, '../scss', url.substr('~paragon-style/'.length));
+    file = path.resolve(__dirname, '../styles', url.substr('~paragon-style/'.length));
   } else if (url[0] === '~') {
     file = path.resolve(__dirname, '../node_modules', url.substr(1));
   }
