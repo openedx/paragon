@@ -7,7 +7,7 @@ const importer = function importer(url, prev) {
   let file = url;
   // correctly resolve core Paragon's scss
   if (url.startsWith('~paragon-style')) {
-    file = path.resolve(__dirname, '../scss', url.substr('~paragon-style/'.length));
+    file = path.resolve(__dirname, '../styles', url.substr('~paragon-style/'.length));
   } else if (url[0] === '~') {
     // we need to correctly resolve urls when reaching Paragon's core scss
     // since stylesheets there also use tilde imports which

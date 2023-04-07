@@ -20,7 +20,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       modules: ['node_modules', path.resolve(__dirname, 'node_modules')],
       alias: {
         '~paragon-react': path.resolve(__dirname, '../src'),
-        '~paragon-style': path.resolve(__dirname, '../scss'),
+        '~paragon-style': path.resolve(__dirname, '../styles'),
         '~paragon-icons': path.resolve(__dirname, '../icons'),
         // Prevent multiple copies of react getting loaded
         // paragon react components would naturally import
@@ -142,7 +142,7 @@ function createCssUtilityClassNodes({
   // We convert to CSS first since we prefer the real values over tokens.
   const compiledCSS = sass
     .renderSync({
-      file: path.resolve(__dirname, '../scss/core/utilities-only.scss'),
+      file: path.resolve(__dirname, '../styles/scss/core/utilities-only.scss'),
       // Resolve tildes the way webpack would in our base npm project
       importer(url) {
         let resolvedUrl = url;
