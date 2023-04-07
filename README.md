@@ -39,7 +39,7 @@ Usage for Open edX and others:
 
 ```
 // ... Any custom SCSS variables should be defined here
-@import '~@edx/paragon/scss/core/core.scss';
+@import '~@edx/paragon/styles/scss/core/core.scss';
 ```
 
 Usage on with `@edx/brand`:
@@ -49,7 +49,7 @@ Usage on with `@edx/brand`:
 ```
 @import '~@edx/brand/paragon/fonts.scss';
 @import '~@edx/brand/paragon/variables.scss';
-@import '~@edx/paragon/scss/core/core.scss';
+@import '~@edx/paragon/styles/scss/core/core.scss';
 @import '~@edx/brand/paragon/overrides.scss';
 ```
 
@@ -138,7 +138,7 @@ module.exports = {
   dist: The sub-directory of the source code where it puts its build artifact. Often "dist".
   */
   localModules: [
-    { moduleName: '@edx/paragon/scss/core', dir: '../src/paragon', dist: 'scss/core' },
+    { moduleName: '@edx/paragon/styles/scss/core', dir: '../src/paragon', dist: 'styles/scss/core' },
     { moduleName: '@edx/paragon/icons', dir: '../src/paragon', dist: 'icons' },
     // Note that using dist: 'dist' will require you to run 'npm build' in Paragon
     // to add local changes to the 'dist' directory, so that they can be picked up by the MFE.
@@ -148,7 +148,7 @@ module.exports = {
 };
 ```
 
-Then, when importing Paragon's core SCSS in your MFE the import needs to begin with a tilde `~` so that path to your local Paragon repository gets resolved correctly: `@import "~@edx/paragon/scss/core";`
+Then, when importing Paragon's core SCSS in your MFE the import needs to begin with a tilde `~` so that path to your local Paragon repository gets resolved correctly: `@import "~@edx/paragon/styles/scss/core";`
 
 #### Internationalization
 
