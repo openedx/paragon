@@ -12,7 +12,7 @@
         "value": "#00BBF9",
         "type": "color",
         "source": "$accent-a",
-        "description": "Accent-A color."
+        "description": "Accent-A color.",
         "actions": {
           "default": "{color.action.default.accent.a}"
         }
@@ -41,7 +41,7 @@
         "value": "#EBEBEB",
         "type": "color",
         "source": "$gray-100",
-        "Gray color of level 100.",
+        "description": "Gray color of level 100.",
         "actions": {
           "default": "{color.action.default.gray.100}"
         }
@@ -50,7 +50,7 @@
         "value": "#CCCCCC",
         "type": "color",
         "source": "$gray-200",
-        "Gray color of level 200.",
+        "description": "Gray color of level 200.",
         "actions": {
           "default": "{color.action.default.gray.200}"
         }
@@ -59,7 +59,7 @@
         "value": "#ADADAD",
         "type": "color",
         "source": "$gray-300",
-        "Gray color of level 300.",
+        "description": "Gray color of level 300.",
         "actions": {
           "default": "{color.action.default.gray.300}"
         }
@@ -68,7 +68,7 @@
         "value": "#8F8F8F",
         "type": "color",
         "source": "$gray-400",
-        "Gray color of level 400.",
+        "description": "Gray color of level 400.",
         "actions": {
           "default": "{color.action.default.gray.400}"
         }
@@ -129,7 +129,7 @@
           "default": "{color.action.default.primary.base}"
         }
       },
-      "100": { 
+      "100": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-100",
@@ -139,7 +139,7 @@
           "default": "{color.action.default.primary.100}"
         }
       },
-      "200": { 
+      "200": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-200",
@@ -149,7 +149,7 @@
           "default": "{color.action.default.primary.200}"
         }
       },
-      "300": { 
+      "300": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-300",
@@ -159,7 +159,7 @@
           "default": "{color.action.default.primary.300}"
         }
       },
-      "400": { 
+      "400": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-400",
@@ -178,7 +178,7 @@
           "default": "{color.action.default.primary.500}"
         }
       },
-      "600": { 
+      "600": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-600",
@@ -188,7 +188,7 @@
           "default": "{color.action.default.primary.600}"
         }
       },
-      "700": { 
+      "700": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-700",
@@ -198,7 +198,7 @@
           "default": "{color.action.default.primary.700}"
         }
       },
-      "800": { 
+      "800": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-800",
@@ -208,7 +208,7 @@
           "default": "{color.action.default.primary.800}"
         }
       },
-      "900": { 
+      "900": {
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-900",
@@ -229,7 +229,7 @@
           "default": "{color.action.default.secondary.base}"
         }
       },
-      "100": { 
+      "100": {
         "value": "{color.secondary.base}",
         "type": "color",
         "source": "$secondary-100",
@@ -278,7 +278,7 @@
           "default": "{color.action.default.secondary.500}"
         }
       },
-      "600": { 
+      "600": {
         "value": "{color.secondary.base}",
         "type": "color",
         "source": "$secondary-600",
@@ -329,7 +329,7 @@
           "default": "{color.action.default.brand.base}"
         }
       },
-      "100": { 
+      "100": {
         "value": "{color.brand.base}",
         "type": "color",
         "source": "$brand-100",
@@ -378,7 +378,7 @@
           "default": "{color.action.default.brand.500}"
         }
       },
-      "600": { 
+      "600": {
         "value": "{color.brand.base}",
         "type": "color",
         "source": "$brand-600",
@@ -429,7 +429,7 @@
           "default": "{color.action.default.success.base}"
         }
       },
-      "100": { 
+      "100": {
         "value": "{color.success.base}",
         "type": "color",
         "source": "$success-100",
@@ -478,7 +478,7 @@
           "default": "{color.action.default.success.500}"
         }
       },
-      "600": { 
+      "600": {
         "value": "{color.success.base}",
         "type": "color",
         "source": "$success-600",
@@ -529,7 +529,7 @@
           "default": "{color.action.default.info.base}"
         }
       },
-      "100": { 
+      "100": {
         "value": "{color.info.base}",
         "type": "color",
         "source": "$info-100",
@@ -578,7 +578,7 @@
           "default": "{color.action.default.info.500}"
         }
       },
-      "600": { 
+      "600": {
         "value": "{color.info.base}",
         "type": "color",
         "source": "$info-600",
@@ -629,7 +629,7 @@
           "default": "{color.action.default.warning.base}"
         }
       },
-      "100": { 
+      "100": {
         "value": "{color.warning.base}",
         "type": "color",
         "source": "$warning-100",
@@ -678,7 +678,7 @@
           "default": "{color.action.default.warning.500}"
         }
       },
-      "600": { 
+      "600": {
         "value": "{color.warning.base}",
         "type": "color",
         "source": "$warning-600",
@@ -729,7 +729,7 @@
           "default": "{color.action.default.danger.base}"
         }
       },
-      "100": { 
+      "100": {
         "value": "{color.danger.base}",
         "type": "color",
         "source": "$danger-100",
@@ -778,7 +778,7 @@
           "default": "{color.action.default.danger.500}"
         }
       },
-      "600": { 
+      "600": {
         "value": "{color.danger.base}",
         "type": "color",
         "source": "$danger-600",
@@ -829,7 +829,7 @@
           "default": "{color.action.default.light.base}"
         }
       },
-      "100": { 
+      "100": {
         "value": "{color.light.base}",
         "type": "color",
         "source": "$light-100",
@@ -878,7 +878,7 @@
           "default": "{color.action.default.light.500}"
         }
       },
-      "600": { 
+      "600": {
         "value": "{color.light.base}",
         "type": "color",
         "source": "$light-600",
@@ -978,7 +978,7 @@
           "default": "{color.action.default.dark.500}"
         }
       },
-      "600": { 
+      "600": {
         "value": "{color.dark.base}",
         "type": "color",
         "source": "$dark-600",
