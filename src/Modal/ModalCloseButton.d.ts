@@ -7,7 +7,6 @@ export interface ModalCloseButtonProps extends React.ButtonHTMLAttributes<HTMLBu
   onClick?: () => void;
 }
 
-declare const ModalCloseButton: React.ForwardRefExoticComponent<
-ModalCloseButtonProps & React.RefAttributes<HTMLButtonElement>>;
+declare const ModalCloseButton: React.ForwardRefExoticComponent<ModalCloseButtonProps & React.RefAttributes<HTMLButtonElement>>;
 
 export default ModalCloseButton;

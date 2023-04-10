@@ -1,13 +1,13 @@
-import * as React from 'react';
+import React from 'react';
 
-interface StepperStepProps {
-  children: React.ReactNode,
-  eventKey: string.isRequired,
-  index?: number,
-  onClick?: (eventKey: string) => void,
-  active?: boolean,
-  complete?: boolean,
-  disabled?: boolean,
+export interface StepperStepProps {
+  children: React.ReactNode;
+  eventKey: string;
+  index?: number;
+  onClick?: (eventKey: string) => void;
+  active?: boolean;
+  complete?: boolean;
+  disabled?: boolean;
 }
 
 declare const StepperStep: React.FC<StepperStepProps>;

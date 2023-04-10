@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-export type PageBannerVariants = 'light' | 'dark' | 'warning' | 'accentA' | 'accentB';
+import React from 'react';
 
 export interface PageBannerTypes {
   children?: React.ReactNode;
@@ -8,7 +6,7 @@ export interface PageBannerTypes {
   dismissAltText?: React.ReactNode;
   onDismiss?: () => void;
   show?: boolean;
-  variant?: PageBannerVariants;
+  variant?: 'light' | 'dark' | 'warning' | 'accentA' | 'accentB';
 }
 
 declare const PageBanner: React.FC<PageBannerTypes>;

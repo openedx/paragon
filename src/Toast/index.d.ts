@@ -1,23 +1,15 @@
-import * as React from 'react';
+import { ToastProps as BaseToastProps } from 'react-bootstrap/Toast';
 
-export interface ToastActionProps {
-  label: string;
-  href?: string;
-  onClick?: () => void;
-}
-
-export interface ToastProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ToastProps extends BaseToastProps {
   children: string;
-  onClose: () => void;
-  show: boolean;
-  action?: ToastActionProps;
+  action?: {
+    label: string;
+    href?: string;
+    onClick?: () => void;
+  };
   closeLabel?: string;
-  delay?: number;
   className?: string;
 }
-
-// export const TOAST_CLOSE_LABEL_TEXT: string;
-// export const TOAST_DELAY: number;
 
 declare function Toast(props: ToastProps): JSX.Element;
 

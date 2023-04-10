@@ -1,11 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 
 export type CheckpointBreadcrumbsProps = {
-  currentIndex?: number | null;
-  totalCheckpoints?: number | null;
+  currentIndex?: number;
+  totalCheckpoints?: number;
 };
 
-const CheckpointBreadcrumbs: React.ForwardRefExoticComponent<
-CheckpointBreadcrumbsProps & React.RefAttributes<HTMLSpanElement>>;
+const CheckpointBreadcrumbs: React.ForwardRefExoticComponent<CheckpointBreadcrumbsProps>;
 
 export default CheckpointBreadcrumbs;

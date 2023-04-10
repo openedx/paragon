@@ -1,9 +1,7 @@
-/* eslint-disable react/require-default-props */
-/* eslint-disable react/no-unused-prop-types */
-import * as React from 'react';
+import React from 'react';
 
 export interface ButtonProps {
-  children?: ReactNode;
+  children?: React.ReactNode;
   disabled?: boolean;
   onClick?: () => void;
   className?: string;
@@ -27,5 +25,4 @@ export interface ModalProps {
   dialogClassName?: string;
 }
 
-// eslint-disable-next-line react/prefer-stateless-function
 export default class Modal extends React.Component<ModalProps> {}

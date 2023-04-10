@@ -1,10 +1,7 @@
-import * as React from 'react';
+import React from 'react';
+import { ModalDialogBodyProps } from './ModalDialogBody';
 
-export interface ModalDialogHeroBackgroundProps extends React.HTMLProps<HTMLElement> {
-  as?: keyof JSX.IntrinsicElements;
-  backgroundSrc?: string;
-  children?: React.ReactNode;
-}
+export interface ModalDialogHeroBackgroundProps extends ModalDialogBodyProps {}
 
 declare const ModalDialogHeroBackground: React.FC<ModalDialogHeroBackgroundProps>;
 

@@ -1,10 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 
 export interface CheckpointBodyProps {
   children?: React.ReactNode;
 }
 
-declare const CheckpointBody: React.ForwardRefExoticComponent<
-CheckpointBodyProps & React.RefAttributes<HTMLDivElement>>;
+declare const CheckpointBody: React.ForwardRefExoticComponent<CheckpointBodyProps>;
 
 export default CheckpointBody;

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 export interface ScrollableProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

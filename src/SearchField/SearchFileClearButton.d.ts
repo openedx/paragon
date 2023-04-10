@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-export interface SearchFieldClearButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface SearchFieldClearButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 declare const SearchFieldClearButton = React.FC<SearchFieldClearButtonProps>;
 

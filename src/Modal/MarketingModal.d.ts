@@ -1,17 +1,7 @@
 import * as React from 'react';
+import { BaseModalProps } from './BaseModalProps';
 
-export interface MarketingModalProps {
-  children: React.ReactNode;
-  title: string;
-  isOpen?: boolean;
-  isBlocking?: boolean;
-  hasCloseButton?: boolean;
-  onClose?: () => void;
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'fullscreen';
-  closeLabel?: string;
-  className?: string;
-  isFullscreenScroll?: boolean;
-  footerNode?: React.ReactNode;
+export interface MarketingModalProps extends BaseModalProps {
   heroIsDark?: boolean;
   heroNode?: React.ReactNode;
   beforeBodyNode?: React.ReactNode;

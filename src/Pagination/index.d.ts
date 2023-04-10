@@ -1,38 +1,28 @@
-/* eslint-disable react/require-default-props */
-/* eslint-disable react/no-unused-prop-types */
-import * as React from 'react';
-
-export interface ButtonLabels {
-  previous?: string;
-  next?: string;
-  page?: string;
-  currentPage?: string;
-  pageOfCount?: string;
-}
-
-export interface Icons {
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
-}
-
-export type PaginationVariants = 'default' | 'secondary' | 'reduced' | 'minimal';
-export type PaginationSizes = 'default' | 'small';
+import React from 'react';
 
 export interface PaginationProps {
   onPageSelect: (pageNumber: number) => void;
   pageCount: number;
   paginationLabel: string;
-  buttonLabels?: ButtonLabels;
+  buttonLabels?: {
+    previous?: string;
+    next?: string;
+    page?: string;
+    currentPage?: string;
+    pageOfCount?: string;
+  };
   className?: string;
   currentPage?: number;
   maxPagesDisplayed?: number;
-  icons?: Icons;
-  variant?: PaginationVariants;
+  icons?: {
+    leftIcon?: React.ReactNode;
+    rightIcon?: React.ReactNode;
+  };
+  variant?: 'default' | 'secondary' | 'reduced' | 'minimal';
   invertColors?: boolean;
-  size?: PaginationSizes;
+  size?: 'default' | 'small';
 }
 
-// eslint-disable-next-line react/prefer-stateless-function
 declare class Pagination extends React.Component<PaginationProps> {}
 
 export default Pagination;

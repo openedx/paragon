@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { IconButtonProps } from '../IconButton';
 
-interface IconButtonToggleProps {
+export interface IconButtonToggleProps {
   activeValue?: string;
   onChange?: (value: string) => void;
   children: React.ReactElement<IconButtonProps>[];

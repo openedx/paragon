@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Placement } from '@popperjs/core';
 import { TransitionProps } from 'react-transition-group/Transition';
 import { FadeProps } from 'react-bootstrap/Fade';
@@ -33,5 +33,6 @@ export interface OverlayTriggerProps extends OverlayProps {
 declare const Overlay: React.FC<OverlayProps>;
 declare const OverlayTrigger: React.FC<OverlayTriggerProps>;
 
-export default Overlay;
 export { OverlayTrigger };
+export default Overlay;
+

@@ -1,12 +1,15 @@
-import * as React from 'react';
+import React from 'react';
 
 interface MenuItemProps extends React.HTMLAttributes<HTMLElement> {
   defaultSelected?: boolean;
-  className?: string;
   children?: React.ReactNode;
-  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
+  as?: keyof JSX.IntrinsicElements;
   iconBefore?: React.ReactNode;
   iconAfter?: React.ReactNode;
+  disabled?: boolean;
+  href?: string;
+  variant?: string;
+  size?: string;
 }
 
 declare const MenuItem: React.FC<MenuItemProps>;

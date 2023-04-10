@@ -1,12 +1,9 @@
-import * as React from 'react';
-
-export type IconButtonVariants = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'light' | 'dark' | 'black' | 'brand';
-export type IconButtonSizes = 'sm' | 'md' | 'inline';
+import React from 'react';
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   iconAs?: keyof JSX.IntrinsicElements;
-  src?: React.ReactElement | React.FC;
+  src?: React.ReactElement;
   alt: string;
   invertColors?: boolean;
   icon?: {
@@ -16,22 +13,22 @@ export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEl
   };
   iconClassNames?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  variant?: IconButtonVariants;
-  size?: IconButtonSizes;
+  variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'light' | 'dark' | 'black' | 'brand';
+  size?: 'sm' | 'md' | 'inline';
   isActive?: boolean;
 }
 
-export interface IconButtonWithTooltipProps extends Omit<IconButtonProps, 'onClick'> {
+export interface IconButtonWithTooltipProps {
   tooltipPlacement?: string;
   tooltipContent: React.ReactNode;
+  invertColors?: boolean;
+  variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'light' | 'dark' | 'black' | 'brand';
 }
 
-declare const IconButtonWithTooltip: React.ForwardRefExoticComponent<
-IconButtonWithTooltipProps & React.RefAttributes<HTMLButtonElement>>;
+declare const IconButtonWithTooltip: React.ForwardRefExoticComponent<IconButtonWithTooltipProps>;
 
-declare const IconButton: React.ForwardRefExoticComponent<
-IconButtonProps & React.RefAttributes<HTMLButtonElement>> & {
-  IconButtonWithTooltip: typeof IconButtonWithTooltip;
+declare const IconButton: React.ForwardRefExoticComponent<IconButtonProps> & {
+  IconButtonWithTooltip: React.FC<IconButtonWithTooltip>;
 };
 
 export default IconButton;
