@@ -1,14 +1,12 @@
-import * as React from 'react';
-
-export type PositionVariant = 'top' | 'bottom';
+import React from 'react';
 
 export interface StickyProps {
   children: React.ReactNode;
-  position?: PositionVariant;
+  position?: 'top' | 'bottom';
   offset?: number | string;
   className?: string;
 }
 
-declare const Sticky: React.ForwardRefExoticComponent<StickyProps & React.RefAttributes<HTMLDivElement>>;
+declare const Sticky: React.ForwardRefExoticComponent<StickyProps>;
 
 export default Sticky;

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 export interface CheckpointActionRowProps {
   advanceButtonText?: React.ReactNode;
@@ -12,8 +12,6 @@ export interface CheckpointActionRowProps {
   index?: number;
 }
 
-declare const CheckpointActionRow: React.ForwardRefExoticComponent<
-CheckpointActionRowProps & React.RefAttributes<HTMLDivElement>
->;
+declare const CheckpointActionRow: React.ForwardRefExoticComponent<CheckpointActionRowProps>;
 
 export default CheckpointActionRow;

@@ -7,24 +7,11 @@ import { ModalDialogHeroProps } from './ModalDialogHero';
 import { ModalDialogBodyProps } from './ModalDialogBody';
 import { ModalDialogHeroContentProps } from './ModalDialogHeroContent';
 import { ModalDialogHeroBackgroundProps } from './ModalDialogHeroBackground';
+import { BaseModalProps } from './BaseModalProps';
 
-export type ModalDialogSizes = 'sm' | 'md' | 'lg' | 'xl' | 'fullscreen';
-export type ModalDialogVariants = 'default' | 'warning' | 'danger' | 'success' | 'dark';
-
-export interface ModalDialogProps {
-  children: React.ReactNode;
-  title: string;
-  isOpen?: boolean;
-  onClose: () => void;
-  hasCloseButton?: boolean;
-  size?: ModalDialogSizes;
-  variant?: ModalDialogVariants;
-  closeLabel?: string;
-  className?: string;
-  isFullscreenScroll?: boolean;
+export interface ModalDialogProps extends Omit<BaseModalProps, 'footerNode'> {
   isFullscreenOnMobile?: boolean;
-  isBlocking?: boolean;
-  zIndex?: number | undefined;
+  zIndex?: number;
 }
 
 declare const ModalDialog: React.FC<ModalDialogProps> & {

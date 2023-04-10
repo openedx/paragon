@@ -1,6 +1,4 @@
-/* eslint-disable react/require-default-props */
-/* eslint-disable react/no-unused-prop-types */
-import * as React from 'react';
+import React from 'react';
 
 export interface TransitionReplaceProps {
   children?: React.ReactElement;
@@ -22,7 +20,6 @@ export interface TransitionReplaceProps {
   };
 }
 
-// eslint-disable-next-line react/prefer-stateless-function
 declare class TransitionReplace extends React.Component<TransitionReplaceProps> {}
 
 export default TransitionReplace;

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { SearchFieldAdvancedProps } from './SearchFieldAdvanced';
 import { SearchFieldClearButtonProps } from './SearchFieldClearButton';
 import { SearchFieldInputProps } from './SearchFieldInput';

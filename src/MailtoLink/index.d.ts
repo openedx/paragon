@@ -1,13 +1,9 @@
-import * as React from 'react';
+import React from 'react';
+import { Options } from 'mailto-link';
 
-export interface MailtoLinkProps {
+export interface MailtoLinkProps extends Options {
   children: React.ReactNode;
   className?: string;
-  to?: string[] | string;
-  cc?: string[] | string;
-  bcc?: string[] | string;
-  subject?: string;
-  body?: string;
   target?: string;
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
   externalLink?: {
@@ -16,6 +12,6 @@ export interface MailtoLinkProps {
   };
 }
 
-declare const MailtoLink: React.ForwardRefExoticComponent<MailtoLinkProps & React.RefAttributes<HTMLAnchorElement>>;
+declare const MailtoLink: React.ForwardRefExoticComponent<MailtoLinkProps>;
 
 export default MailtoLink;

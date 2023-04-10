@@ -1,17 +1,7 @@
-import * as React from 'react';
+import React from 'react';
+import { BaseModalProps } from './BaseModalProps';
 
-export interface FullscreenModalProps {
-  children: React.ReactNode;
-  className?: string;
-  title: string;
-  onClose: () => void;
-  isOpen?: boolean;
-  hasCloseButton?: boolean;
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'fullscreen';
-  variant?: 'default' | 'warning' | 'danger' | 'success' | 'dark';
-  closeLabel?: string;
-  isFullscreenScroll?: boolean;
-  footerNode?: React.ReactNode;
+export interface FullscreenModalProps extends BaseModalProps {
   beforeBodyNode?: React.ReactNode;
   afterBodyNode?: React.ReactNode;
   modalBodyClassName?: string;

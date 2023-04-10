@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { StepperStepProps } from './Stepper.Step';
 import { StepperHeaderProps } from './StepperHeader';
 import { StepperActionRowProps } from './StepperActionRow';

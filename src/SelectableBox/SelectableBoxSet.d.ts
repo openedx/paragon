@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 export interface SelectableBoxSetProps {
   name: string;
@@ -11,8 +11,6 @@ export interface SelectableBoxSetProps {
   className?: string;
 }
 
-declare const SelectableBoxSet: React.ForwardRefExoticComponent<
-SelectableBoxSetProps & React.RefAttributes<HTMLInputElement>
->;
+declare const SelectableBoxSet: React.ForwardRefExoticComponent<SelectableBoxSetProps>;
 
 export default SelectableBoxSet;

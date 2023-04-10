@@ -1,18 +1,13 @@
-import * as React from 'react';
-import { RowProps } from 'react-bootstrap';
+import React from 'react';
 
-export type LayoutElementProps = React.HTMLAttributes<HTMLDivElement>;
-export type ColSpanValue = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'auto';
-
-export declare const LayoutElement: React.ForwardRefExoticComponent<
-LayoutElementProps & React.RefAttributes<HTMLDivElement>>;
+export type ColSpanValues = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'auto';
 
 export interface ColLayout {
-  span: ColSpanValue;
+  span: ColSpanValues;
   offset?: number;
 }
 
-export interface LayoutProps extends RowProps {
+export interface LayoutProps {
   children: React.ReactNode;
   xs?: ColLayout[];
   sm?: ColLayout[];
@@ -21,11 +16,11 @@ export interface LayoutProps extends RowProps {
   xl?: ColLayout[];
 }
 
-export interface LayoutComponent extends React.ForwardRefExoticComponent<
-LayoutProps & React.RefAttributes<HTMLDivElement>
-> {
-  Element: typeof LayoutElement;
+export interface LayoutComponent extends React.ForwardRefExoticComponent<LayoutProps> {
+  Element: React.FC<LayoutElement>;
 }
+
+export declare const LayoutElement: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLDivElement> & React.RefAttributes<HTMLDivElement>>;
 
 declare const Layout: LayoutComponent;
 

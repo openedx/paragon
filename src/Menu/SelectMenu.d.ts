@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-interface SelectMenuProps {
+export interface SelectMenuProps {
   defaultMessage?: string;
   isLink?: boolean;
   children: React.ReactNode;

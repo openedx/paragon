@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 
-export type CheckpointPlacements = 'top' | 'top-start' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'left-start' | 'left'
-| 'left-end' | 'bottom' | 'bottom-start' | 'bottom-end';
+export type CheckpointPlacements = 'top' | 'top-start' | 'top-end' | 'right-start' | 'right' | 'right-end' 
+| 'left-start' | 'left' | 'left-end' | 'bottom' | 'bottom-start' | 'bottom-end';
 
 export interface CheckpointProps {
   advanceButtonText?: React.ReactNode;
@@ -19,6 +19,6 @@ export interface CheckpointProps {
   totalCheckpoints: number;
 }
 
-declare const Checkpoint: React.ForwardRefExoticComponent<CheckpointProps & React.RefAttributes<HTMLDivElement>>;
+declare const Checkpoint: React.ForwardRefExoticComponent<CheckpointProps>;
 
 export default Checkpoint;

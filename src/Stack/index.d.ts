@@ -1,10 +1,8 @@
-import * as React from 'react';
-
-export type DirectionVariants = 'horizontal' | 'vertical';
+import React from 'react';
 
 export interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  direction?: DirectionVariants;
+  direction?: 'horizontal' | 'vertical';
   gap?: number;
   className?: string;
 }

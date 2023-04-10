@@ -1,18 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 
-type PlacementType =
-  | 'top'
-  | 'top-start'
-  | 'top-end'
-  | 'right-start'
-  | 'right'
-  | 'right-end'
-  | 'left-start'
-  | 'left'
-  | 'left-end'
-  | 'bottom'
-  | 'bottom-start'
-  | 'bottom-end';
+export type PlacementType = | 'top' | 'top-start' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'left-start'
+| 'left' | 'left-end' | 'bottom' | 'bottom-start' | 'bottom-end';
 
 export interface CheckpointData {
   advanceButtonText?: React.ReactNode;
@@ -45,7 +34,6 @@ export interface ProductTourProps {
   tours: TourData[];
 }
 
-declare const ProductTour: React.ForwardRefExoticComponent<
-ProductTourProps & React.RefAttributes<HTMLDivElement>>;
+declare const ProductTour: React.ForwardRefExoticComponent<ProductTourProps>;
 
 export default ProductTour;

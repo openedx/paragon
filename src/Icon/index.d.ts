@@ -1,17 +1,14 @@
-import * as React from 'react';
+import React from 'react';
 
-export type IconSizes = 'xs' | 'sm' | 'md' | 'lg';
-
-export interface SvgAttrs {
-  'aria-label'?: string;
-  'aria-labelledby'?: string;
-}
 
 export interface IconProps {
-  src?: ReactElement | FC<{}>;
-  svgAttrs?: SvgAttrs;
+  src?: React.ReactElement | Function;
+  svgAttrs?: {
+    'aria-label'?: string;
+    'aria-labelledby'?: string;
+  };
   id?: string;
-  size?: IconSizes;
+  size?: 'xs' | 'sm' | 'md' | 'lg';
   className?: string;
   hidden?: boolean;
   screenReaderText?: string | React.ReactNode;

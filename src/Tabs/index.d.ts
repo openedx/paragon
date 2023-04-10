@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-export interface TabsProps {
+export interface TabsProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
   moreTabText?: string;
@@ -8,7 +8,7 @@ export interface TabsProps {
   activeKey?: string;
 }
 
-export interface TabProps {
+export interface TabProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   title: React.ReactNode;
   notification?: React.ReactNode;
   disabled?: boolean;
@@ -19,5 +19,6 @@ export interface TabProps {
 declare const Tabs: React.FC<TabsProps>;
 declare const Tab: React.FC<TabProps>;
 
-export default Tabs;
+
 export { Tab };
+export default Tabs;

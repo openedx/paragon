@@ -1,6 +1,4 @@
-/* eslint-disable react/require-default-props */
-/* eslint-disable react/no-unused-prop-types */
-import * as React from 'react';
+import React from 'react';
 
 export declare const POSITIONS: {
   left: string;
@@ -23,7 +21,6 @@ export interface SheetProps {
   variant?: keyof typeof VARIANTS;
 }
 
-// eslint-disable-next-line react/prefer-stateless-function
 declare class Sheet extends React.Component<SheetProps> {}
 
 export default Sheet;

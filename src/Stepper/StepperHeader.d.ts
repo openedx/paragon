@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import { StepperHeaderStepProps } from './StepperHeaderStep';
 
 export interface StepperHeaderProps {
   className?: string;
@@ -6,7 +7,7 @@ export interface StepperHeaderProps {
 }
 
 declare const StepperHeader: React.FC<StepperHeaderProps> & {
-  Step: typeof StepperHeaderStep;
+  Step: React.FC<StepperHeaderStepProps>;
 };
 
 export default StepperHeader;

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { PopoverPlacements } from './PopoverElement';
+import React from 'react';
+import { PopoverPlacements } from './PopperElement';
 
 export interface ModalPopupProps {
   children: React.ReactNode;

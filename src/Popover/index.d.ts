@@ -1,25 +1,17 @@
-import * as React from 'react';
+import React from 'react';
+import { BsPrefixProps } from 'react-bootstrap/helpers';
+import { PopoverProps } from 'react-bootstrap/Popover';
 
-export interface WrapperPopoverProps extends React.PropsWithChildren<React.RefAttributes<any>> {
-  id: string;
+export interface WrapperPopoverProps extends Omit<PopoverProps, 'placement'> {
   placement?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
-  title?: string;
-  arrowProps?: {
-    ref?: ((instance: HTMLDivElement | null) => void) | React.RefObject<HTMLDivElement> | null | undefined;
-    style?: React.CSSProperties;
-  };
-  content?: boolean;
-  popper?: object;
-  show?: boolean;
+  popper?: {};
   className?: string;
   variant?: string;
 }
 
-export interface PopoverTitleProps extends React.PropsWithChildren<React.HTMLAttributes<HTMLElement>> {
-  as?: keyof JSX.IntrinsicElements;
-  bsPrefix?: string;
-}
-export interface PopoverContentProps extends PopoverTitleProps {}
+export interface PopoverTitleProps extends BsPrefixProps {}
+
+export interface PopoverContentProps extends BsPrefixProps {}
 
 declare const WrapperPopover: React.ForwardRefExoticComponent<WrapperPopoverProps> & {
   Title: React.FC<PopoverTitleProps>;

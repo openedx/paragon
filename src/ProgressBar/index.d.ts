@@ -1,18 +1,12 @@
-import * as React from 'react';
+import React from 'react';
+import { ProgressBarProps as BaseProgressBarProps } from 'react-bootstrap/ProgressBar';
 
-export type ProgressBarVariant = 'dark' | 'warning' | 'success' | 'error';
-
-export interface ProgressBarProps {
-  now?: number;
-  label?: React.ReactNode;
-  variant?: ProgressBarVariant;
-  className?: string;
-}
+export interface ProgressBarProps extends BaseProgressBarProps {}
 
 export interface ProgressBarAnnotatedProps extends ProgressBarProps {
   threshold?: number;
   thresholdLabel?: React.ReactNode;
-  thresholdVariant?: ProgressBarVariant;
+  thresholdVariant?: 'dark' | 'warning' | 'success' | 'error';
   progressHint?: React.ReactNode;
   thresholdHint?: React.ReactNode;
 }

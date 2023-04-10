@@ -1,64 +1,47 @@
-import * as React from 'react';
-import { HTMLAttributes } from 'react';
+import React from 'react';
 import { BsPrefixProps } from 'react-bootstrap/helpers';
+import { NavProps as BaseNavProps } from 'react-bootstrap/Nav';
+import { NavItemProps as BaseNavItemProps } from 'react-bootstrap/NavItem';
+import { NavLinkProps as BaseNavLinkProps } from 'react-bootstrap/NavLink';
+import { NavDropdownProps as BaseNavDropdownProps } from 'react-bootstrap/NavDropdown';
+import { DropdownItemProps as BaseDropdownItemProps } from 'react-bootstrap/esm/DropdownItem';
 
-export interface NavProps extends BsPrefixProps, HTMLAttributes<HTMLElement> {
-  activeKey?: string | number;
-  as?: keyof JSX.IntrinsicElements;
-  fill?: boolean;
-  justify?: boolean;
-  navbar?: boolean;
-  onSelect?: string;
-  role?: string;
-  onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
-  variant?: 'tabs' | 'pills';
+export interface NavProps extends BsPrefixProps, BaseNavProps {}
+
+export interface NavItemProps extends BsPrefixProps, BaseNavItemProps {}
+
+export interface NavLinkProps extends BsPrefixProps, Omit<BaseNavLinkProps, 'onSelect'> {
+  title?: string;
 }
 
-export interface NavItemProps extends BsPrefixProps, HTMLAttributes<HTMLElement> {
-  as?: keyof JSX.IntrinsicElements;
-}
-
-export interface NavLinkProps extends BsPrefixProps, HTMLAttributes<HTMLElement> {
-  active?: boolean;
-  as?: keyof JSX.IntrinsicElements;
-  disabled?: boolean;
-  eventKey?: string | number;
-  href?: string;
-  role?: string;
-}
-
-export interface NavDropdownProps extends BsPrefixProps, HTMLAttributes<HTMLElement> {
-  id: string;
-  title: React.ReactNode;
-  active?: boolean;
-  disabled?: boolean;
-  menuRole?: string;
+export interface NavDropdownProps extends BsPrefixProps, BaseNavDropdownProps {
   menuVariant?: 'dark';
   onClick?: (event: React.SyntheticEvent) => void;
-  renderMenuOnMount?: boolean;
-  rootCloseEvent?: string;
 }
 
-export interface NavDropdownItemProps extends BsPrefixProps, HTMLAttributes<HTMLElement> {}
+export interface NavDropdownItemProps extends BsPrefixProps, BaseDropdownItemProps {}
 
-export interface NavDropdownDividerProps extends BsPrefixProps, HTMLAttributes<HTMLElement> {}
+export interface NavDropdownDividerProps extends BsPrefixProps, BsPrefixRefForwardingComponent<'div', unknown> {}
 
-declare const NavDropdownItem: React.ForwardRefExoticComponent<NavDropdownItemProps & React.RefAttributes<HTMLElement>>;
-declare const NavDropdownDivider: React.ForwardRefExoticComponent<
-NavDropdownDividerProps & React.RefAttributes<HTMLElement>>;
-declare const NavItem: React.ForwardRefExoticComponent<NavItemProps & React.RefAttributes<HTMLElement>>;
-declare const NavLink: React.ForwardRefExoticComponent<NavLinkProps & React.RefAttributes<HTMLElement>>;
+declare const NavDropdownItem: React.ForwardRefExoticComponent<NavDropdownItemProps>;
+declare const NavDropdownDivider: React.ForwardRefExoticComponent<NavDropdownDividerProps>;
+declare const NavItem: React.ForwardRefExoticComponent<NavItemProps>;
+declare const NavLink: React.ForwardRefExoticComponent<NavLinkProps>;
+declare const NavDropdown: React.ForwardRefExoticComponent<NavDropdownProps> & {
+  Item: React.ForwardRefExoticComponent<NavDropdownItemProps>;
+  Divider: React.ForwardRefExoticComponent<NavDropdownDividerProps>;
+};
 
 declare const Nav: React.ForwardRefExoticComponent<NavProps> & {
-  Item: React.ForwardRefExoticComponent<NavItemProps & React.RefAttributes<HTMLElement>>;
-  Link: React.ForwardRefExoticComponent<NavLinkProps & React.RefAttributes<HTMLElement>>;
-  Dropdown: React.ForwardRefExoticComponent<NavDropdownProps & React.RefAttributes<HTMLElement>> & {
-    Item: React.ForwardRefExoticComponent<NavDropdownItemProps & React.RefAttributes<HTMLElement>>;
-    Divider: React.ForwardRefExoticComponent<NavDropdownDividerProps & React.RefAttributes<HTMLElement>>;
+  Item: React.ForwardRefExoticComponent<NavItemProps>;
+  Link: React.ForwardRefExoticComponent<NavLinkProps>;
+  Dropdown: React.ForwardRefExoticComponent<NavDropdownProps> & {
+    Item: React.ForwardRefExoticComponent<NavDropdownItemProps>;
+    Divider: React.ForwardRefExoticComponent<NavDropdownDividerProps>;
   };
 };
 
 export default Nav;
 export {
-  NavDropdownItem, NavDropdownDivider, NavItem, NavLink,
+  NavDropdownItem, NavDropdownDivider, NavItem, NavLink, NavDropdown,
 };

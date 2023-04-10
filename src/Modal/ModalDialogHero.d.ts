@@ -1,10 +1,7 @@
-import * as React from 'react';
+import React from 'react';
+import { ModalDialogBodyProps } from './ModalDialogBody';
 
-export interface ModalDialogHeroProps extends React.HTMLProps<HTMLElement> {
-  as?: keyof JSX.IntrinsicElements;
-  children: React.ReactNode;
-  className?: string;
-}
+export interface ModalDialogHeroProps extends ModalDialogBodyProps {}
 
 declare const ModalDialogHero: React.FC<ModalDialogHeroProps>;
 

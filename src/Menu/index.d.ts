@@ -1,12 +1,12 @@
-import * as React from 'react';
+import React from 'react';
 
-export interface IMenu {
+export interface MenuProps {
   className?: string;
   arrowKeyNavigationSelector?: string;
   as?: keyof JSX.IntrinsicElements;
   children?: React.ReactNode;
 }
 
-declare const Menu: React.FC<IMenu>;
+declare const Menu: React.FC<MenuProps>;
 
 export default Menu;

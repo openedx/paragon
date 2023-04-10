@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { ModalDialogBodyProps } from './ModalDialogBody';
 
-export interface ModalDialogHeroContentProps extends ModalDialogBodyProps {}
+export interface ModalDialogHeaderProps extends ModalDialogBodyProps {}
 
-export const ModalDialogHeader = React.FC<ModalDialogHeroContentProps>;
+export const ModalDialogHeader = React.FC<ModalDialogHeaderProps>;
 
 export default ModalDialogHeader;
