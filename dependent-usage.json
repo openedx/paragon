@@ -1,5 +1,5 @@
 {
-  "lastModified": 1681135762629,
+  "lastModified": 1681222127566,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -13094,16 +13094,23 @@
             "column": 18
           }
         ],
+        "CheckCircle": [
+          {
+            "filePath": "src/containers/CourseCard/components/CourseCardBanners/CertificateBanner.jsx",
+            "line": 45,
+            "column": 38
+          }
+        ],
         "Hyperlink": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CertificateBanner.jsx",
-            "line": 56,
-            "column": 10
+            "line": 50,
+            "column": 12
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CertificateBanner.jsx",
             "line": 71,
-            "column": 8
+            "column": 10
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CourseBanner.jsx",
@@ -13129,13 +13136,6 @@
             "filePath": "src/widgets/RecommendationsPanel/components/CourseCard.jsx",
             "line": 15,
             "column": 4
-          }
-        ],
-        "CheckCircle": [
-          {
-            "filePath": "src/containers/CourseCard/components/CourseCardBanners/CertificateBanner.jsx",
-            "line": 68,
-            "column": 38
           }
         ],
         "Form": [
@@ -22718,12 +22718,12 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
-            "line": 25,
+            "line": 35,
             "column": 8
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
-            "line": 35,
+            "line": 45,
             "column": 8
           }
         ],
@@ -22765,12 +22765,12 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
-            "line": 24,
+            "line": 34,
             "column": 6
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
-            "line": 34,
+            "line": 44,
             "column": 6
           }
         ],
@@ -27605,7 +27605,7 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 94,
+            "line": 88,
             "column": 8
           },
           {
@@ -27615,8 +27615,8 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRecommendations/Variant2/index.jsx",
-            "line": 29,
-            "column": 4
+            "line": 97,
+            "column": 6
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunSelector/index.jsx",
@@ -28121,12 +28121,12 @@
           },
           {
             "filePath": "src/packages/masters-program-page/template/MastersProgramDetailPage/index.jsx",
-            "line": 359,
+            "line": 350,
             "column": 20
           },
           {
             "filePath": "src/packages/masters-program-page/template/MastersProgramDetailPage/index.jsx",
-            "line": 524,
+            "line": 515,
             "column": 22
           },
           {
@@ -28151,7 +28151,7 @@
           },
           {
             "filePath": "src/packages/modular-page/modules/CollapsibleTextTabModule/index.jsx",
-            "line": 70,
+            "line": 72,
             "column": 16
           },
           {
@@ -28666,7 +28666,7 @@
         "Input": [
           {
             "filePath": "src/packages/common/ui/Footer/index.jsx",
-            "line": 888,
+            "line": 928,
             "column": 18
           }
         ],
@@ -28693,42 +28693,42 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 79,
+            "line": 73,
             "column": 6
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 93,
+            "line": 87,
             "column": 6
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 101,
+            "line": 95,
             "column": 6
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 112,
+            "line": 106,
             "column": 6
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 124,
+            "line": 118,
             "column": 6
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 139,
+            "line": 133,
             "column": 6
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 149,
+            "line": 143,
             "column": 6
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 159,
+            "line": 153,
             "column": 6
           }
         ],
@@ -29553,7 +29553,7 @@
         "Check": [
           {
             "filePath": "src/packages/modular-page/modules/AboutTheProgramModule/index.jsx",
-            "line": 65,
+            "line": 67,
             "column": 14
           },
           {
@@ -29605,7 +29605,7 @@
         "OpenInNew": [
           {
             "filePath": "src/packages/modular-page/modules/CollapsibleTextTabModule/index.jsx",
-            "line": 71,
+            "line": 73,
             "column": 23
           },
           {
