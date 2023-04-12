@@ -66,17 +66,17 @@ export interface DataTableProps {
     isSelectable?: boolean;
     isPaginated?: boolean;
     manualPagination?: boolean;
-    pageCount?: number; // TODO: requiredWhen
+    pageCount?: number;
     itemCount?: number;
     isFilterable?: boolean;
     manualFilters?: boolean;
     fetchData?: (data: object) => void;
     initialState?: {
-        pageSize?: number; // TODO: requiredWhen
-        pageIndex?: number; // TODO: requiredWhen
-        filters?: { [key: string]: any }[]; // TODO: requiredWhen
-        sortBy?: { [key: string]: any }[]; // TODO: requiredWhen
-        selectedRowIds?: { [key: string]: any }; // TODO: requiredWhen
+        pageSize?: number;
+        pageIndex?: number;
+        filters?: { [key: string]: any }[];
+        sortBy?: { [key: string]: any }[];
+        selectedRowIds?: { [key: string]: any };
     };
     isSortable?: boolean;
     manualSortBy?: boolean;
