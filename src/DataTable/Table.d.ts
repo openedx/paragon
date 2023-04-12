@@ -5,4 +5,3 @@ export interface TableProps {
 declare function Table(props: TableProps): JSX.Element;
 
 export default Table;
-

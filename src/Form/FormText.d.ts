@@ -1,6 +1,5 @@
 import React from 'react';
-
-export type FormTextTypes = 'default' | 'valid' | 'invalid' | 'warning' | 'criteria-empty' | 'criteria-valid' | 'criteria-invalid';
+import { FeedbackVariants } from './FormControlFeedback';
 
 export interface FormTextIconProps {
     type?: FormTextTypes;
@@ -11,13 +10,14 @@ export interface FormTextProps {
     children: React.ReactNode;
     className?: string;
     hasIcon?: boolean;
-    type?: FormTextTypes,
+    type?: FeedbackVariants,
     icon?: React.ReactNode;
     muted?: boolean;
 }
 
-declare const FormText = React.FC<FormTextProps>;
-declare const FormTextIcon = React.FC<FormTextIconProps>;
+declare const FormText: React.FC<FormTextProps>;
+
+declare const FormTextIcon: React.FC<FormTextIconProps>;
 
 export { FormTextIcon };
 

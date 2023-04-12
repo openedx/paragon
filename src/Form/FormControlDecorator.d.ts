@@ -5,6 +5,6 @@ export interface FormControlDecoratorProps {
     location?: 'leading' | 'trailing';
 }
 
-declare const FormControlDecorator = React.FC<FormControlDecoratorProps>;
+declare const FormControlDecorator: React.FC<FormControlDecoratorProps>;
 
 export default FormControlDecorator;

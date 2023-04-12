@@ -1,8 +1,8 @@
 import React from 'react';
 import { ContainerProps as BaseContainerProps } from 'react-bootstrap/Container';
+import { BsPrefixProps } from 'react-bootstrap/helpers';
 
-export interface ContainerProps extends BaseContainerProps {
-    as?: keyof JSX.IntrinsicElements;
+export interface ContainerProps extends BsPrefixProps, BaseContainerProps {
     children?: React.ReactNode;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }

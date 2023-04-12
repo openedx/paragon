@@ -12,6 +12,6 @@ export interface FormCheckboxSetProps {
     onBlur?: React.FocusEventHandler<HTMLInputElement>;
 }
 
-declare const FormCheckboxSet = React.FC<FormCheckboxSetProps>;
+declare const FormCheckboxSet: React.FC<FormCheckboxSetProps>;
 
 export default FormCheckboxSet;

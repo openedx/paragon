@@ -12,6 +12,6 @@ export interface FormRadioSetProps {
     onBlur?: React.FocusEventHandler<HTMLInputElement>;
 }
 
-declare const FormRadioSet = React.FC<FormRadioSetProps>;
+declare const FormRadioSet: React.FC<FormRadioSetProps>;
 
 export default FormRadioSet;

@@ -1,15 +1,16 @@
 import React from 'react';
+import { BsPrefixProps } from 'react-bootstrap/helpers';
+import { FormControlSizes } from './FormGroupContext';
 
-export interface FormGroupProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface FormGroupProps extends BsPrefixProps, React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
     className?: string;
-    as?: keyof JSX.IntrinsicElements;
     controlId?: string;
     isInvalid?: boolean;
     isValid?: boolean;
-    size?: 'sm' | 'lg';
+    size?: FormControlSizes;
 }
 
-declare const FormGroup = React.FC<FormGroupProps>;
+declare const FormGroup: React.FC<FormGroupProps>;
 
 export default FormGroup;

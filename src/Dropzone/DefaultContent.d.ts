@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface DefaultContentProps {
-    accept?: string[],
+    accept?: { [key: string]: string[] };
     maxSize?: number;
     minSize?: number;
 }

@@ -1,4 +1,4 @@
-interface TableRowProps {
+export interface TableRowProps {
     row: {
         getRowProps: (props?: any) => any;
         cells: object[];
@@ -11,5 +11,3 @@ interface TableRowProps {
 declare function TableRow({ row }: TableRowProps): JSX.Element;
 
 export default TableRow;
-
-

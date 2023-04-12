@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface SheetContainerProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 declare class SheetContainer extends React.Component<SheetContainerProps> {}

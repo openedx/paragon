@@ -1,8 +1,3 @@
-import React from 'react';
 import { FormCheckboxSetProps } from './FormCheckboxSet';
 
-export interface FormSwitchSetProps extends FormCheckboxSetProps{}
-
-declare const FormSwitchSet = React.FC<FormSwitchSetProps>;
-
-export default FormSwitchSet;
+export default function FormSwitchSet(props: FormCheckboxSetProps): JSX.Element

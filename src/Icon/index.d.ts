@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export interface IconProps {
   src?: React.ReactElement | Function;
   svgAttrs?: {

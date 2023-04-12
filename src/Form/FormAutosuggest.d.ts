@@ -19,6 +19,6 @@ export interface FormAutosuggestProps {
     onSelected?: (selectedValue: string) => void;
 }
 
-declare const FormAutosuggest = React.FC<FormAutosuggestProps>;
+declare const FormAutosuggest: React.FC<FormAutosuggestProps>;
 
 export default FormAutosuggest;

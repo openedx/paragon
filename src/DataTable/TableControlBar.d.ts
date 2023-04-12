@@ -7,4 +7,3 @@ export interface TableControlBarProps {
 declare const TableControlBar: React.FC<TableControlBarProps>;
 
 export default TableControlBar;
-

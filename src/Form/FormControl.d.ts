@@ -1,10 +1,10 @@
 import React from 'react';
 import { FormControlProps as BaseFormControlProps } from 'react-bootstrap/FormControl';
 import { FormControlFeedbackProps } from './FormControlFeedback';
+import { BsPrefixProps } from 'react-bootstrap/helpers';
 
-export interface FormControlProps extends BaseFormControlProps {
+export interface FormControlProps extends BsPrefixProps, BaseFormControlProps {
     className?: string;
-    as?: keyof JSX.IntrinsicElements;
     defaultValue?: string | number,
     controlClassName?: string;
     leadingElement?: React.ReactNode;

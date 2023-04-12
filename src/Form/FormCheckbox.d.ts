@@ -17,8 +17,9 @@ export interface CheckboxControlProps {
     className?: string;
 }
 
-declare const FormCheckbox = React.FC<FormCheckboxProps>;
-declare const CheckboxControl = React.FC<CheckboxControlProps>;
+declare const FormCheckbox: React.FC<FormCheckboxProps>;
+
+declare const CheckboxControl: React.FC<CheckboxControlProps>;
 
 export { CheckboxControl };
 

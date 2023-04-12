@@ -9,5 +9,3 @@ export interface DataTableLayoutProps {
 declare const DataTableLayout: React.FC<DataTableLayoutProps>;
 
 export default DataTableLayout;
-
-

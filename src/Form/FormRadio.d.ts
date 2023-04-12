@@ -10,6 +10,6 @@ export interface FormRadioProps extends React.InputHTMLAttributes<HTMLInputEleme
     isValid?: boolean;
 }
 
-declare const FormRadio = React.FC<FormRadioProps>;
+declare const FormRadio: React.FC<FormRadioProps>;
 
 export default FormRadio;

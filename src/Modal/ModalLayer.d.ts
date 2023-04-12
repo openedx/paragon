@@ -1,11 +1,11 @@
 import React from 'react';
 
 export interface ModalLayerProps {
-  children: React.ReactNode;
-  onClose: () => void;
-  isOpen: boolean;
-  isBlocking?: boolean;
-  zIndex?: number;
+    children: React.ReactNode;
+    onClose: () => void;
+    isOpen: boolean;
+    isBlocking?: boolean;
+    zIndex?: number;
 }
 
 export function ModalBackdrop({ onClick }: { onClick?: () => void }): JSX.Element;
