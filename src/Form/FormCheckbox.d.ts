@@ -12,6 +12,14 @@ export interface FormCheckboxProps extends React.InputHTMLAttributes<HTMLInputEl
     floatLabelLeft?: boolean;
 }
 
+export interface CheckboxControlProps {
+    isIndeterminate?: boolean;
+    className?: string;
+}
+
 declare const FormCheckbox = React.FC<FormCheckboxProps>;
+declare const CheckboxControl = React.FC<CheckboxControlProps>;
+
+export { CheckboxControl };
 
 export default FormCheckbox;
