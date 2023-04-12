@@ -8,7 +8,7 @@ export interface BaseModalProps {
   title: string;
   isOpen?: boolean;
   hasCloseButton?: boolean;
-  onClose?: () => void;
+  onClose?: () => void; // TODO: requiredWhenNot
   size?: ModalSizes;
   variant?: ModalVariants;
   closeLabel?: string;

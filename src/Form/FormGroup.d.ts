@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface FormGroupProps {
+export interface FormGroupProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
     className?: string;
     as?: keyof JSX.IntrinsicElements;
