@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface CollapsibleButtonGroupProps {
-    className?: string | null;
+    className?: string;
     actions: {
         component: React.ReactNode;
         args?: Record<string, any>;
@@ -11,5 +11,3 @@ export interface CollapsibleButtonGroupProps {
 declare const CollapsibleButtonGroup: React.FC<CollapsibleButtonGroupProps>;
 
 export default CollapsibleButtonGroup;
-
-

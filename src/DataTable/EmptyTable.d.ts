@@ -8,5 +8,3 @@ export interface EmptyTableProps {
 declare const EmptyTable: React.FC<EmptyTableProps>;
 
 export default EmptyTable;
-
-

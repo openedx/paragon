@@ -6,6 +6,6 @@ export interface FormAutosuggestOptionProps {
     onClick?: (event: React.MouseEvent<HTMLLIElement>) => void;
 }
 
-declare const FormAutosuggestOption = React.FC<FormAutosuggestOptionProps>;
+declare const FormAutosuggestOption: React.FC<FormAutosuggestOptionProps>;
 
 export default FormAutosuggestOption;

@@ -11,4 +11,5 @@ export interface CheckboxFiltersProps {
 }
 
 declare const CheckboxFilter: React.FC<CheckboxFiltersProps>;
+
 export default CheckboxFilter;

@@ -19,7 +19,7 @@ export interface CollapsibleProps {
     unmountOnExit?: boolean;
 }
 
-declare const Collapsible: React.ForwardRefExoticComponent<CollapsibleProps & React.RefAttributes<HTMLDivElement>> & {
+declare const Collapsible: React.ForwardRefExoticComponent<CollapsibleProps> & {
     Advanced: React.FC<CollapsibleAdvancedProps>;
     Body: React.FC<CollapsibleBodyProps>;
     Trigger: React.FC<CollapsibleTriggerProps>;

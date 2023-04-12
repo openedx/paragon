@@ -8,4 +8,3 @@ export interface ExpandRowProps {
 declare function ExpandRow(props: ExpandRowProps): JSX.Element;
 
 export default ExpandRow;
-

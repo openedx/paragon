@@ -8,4 +8,3 @@ export interface RowStatusProps {
 declare function RowStatus(props: RowStatusProps): JSX.Element;
 
 export default RowStatus;
-

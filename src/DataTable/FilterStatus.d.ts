@@ -12,4 +12,3 @@ export interface FilterStatusProps {
 declare function FilterStatus(props: FilterStatusProps): JSX.Element;
 
 export default FilterStatus;
-

@@ -1,10 +1,8 @@
 import React from 'react';
+import { ControlledSelectionStatusProps } from './ControlledSelectionStatus';
 
-export interface ControlledSelectionStatusProps {
-    className?: string;
-    clearSelectionText?: string | JSX.Element;
-}
+export interface SelectionStatusProps extends ControlledSelectionStatusProps {}
 
-declare const ControlledSelectionStatus: React.FC<ControlledSelectionStatusProps>;
+declare const SelectionStatus: React.FC<SelectionStatusProps>;
 
-export default ControlledSelectionStatus;
+export default SelectionStatus;

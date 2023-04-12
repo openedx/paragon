@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface CheckpointTitleProps {
-  children?: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 declare const CheckpointTitle: React.ForwardRefExoticComponent<CheckpointTitleProps>;

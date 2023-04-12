@@ -11,4 +11,3 @@ export interface TableCellProps {
 declare function TableCell(props: TableCellProps): JSX.Element;
 
 export default TableCell;
-

@@ -13,8 +13,8 @@ export interface FormSwitchControlProps {
     className?: string;
 }
 
-declare const FormSwitch = React.FC<FormSwitchProps>;
-declare const SwitchControl = React.FC<FormSwitchControlProps>;
+declare const FormSwitch: React.FC<FormSwitchProps>;
+declare const SwitchControl: React.FC<FormSwitchControlProps>;
 
 export { SwitchControl }; // TODO: do not working
 

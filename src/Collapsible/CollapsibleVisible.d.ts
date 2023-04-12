@@ -7,4 +7,5 @@ export interface CollapsibleVisibleProps {
 }
 
 declare const CollapsibleVisible: React.FC<CollapsibleVisibleProps>;
+
 export default CollapsibleVisible;

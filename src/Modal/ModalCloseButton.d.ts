@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
+import { BsPrefixProps } from 'react-bootstrap/helpers';
 
-export interface ModalCloseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  as?: keyof JSX.IntrinsicElements;
-  children?: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
+export interface ModalCloseButtonProps extends BsPrefixProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+    children?: React.ReactNode;
+    className?: string;
+    onClick?: () => void;
 }
 
 declare const ModalCloseButton: React.ForwardRefExoticComponent<ModalCloseButtonProps & React.RefAttributes<HTMLButtonElement>>;

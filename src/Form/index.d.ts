@@ -40,48 +40,6 @@ declare const Form: React.FC<FormProps> & {
 
 export default Form;
 
-// Form.Control = FormControl;
-// Form.Radio = FormRadio;
-// Form.RadioSet = FormRadioSet;
-// Form.Autosuggest = FormAutosuggest;
-// Form.AutosuggestOption = FormAutosuggestOption;
-// Form.Checkbox = FormCheckbox;
-// Form.CheckboxSet = FormCheckboxSet;
-// Form.Switch = FormSwitch;
-// Form.SwitchSet = FormSwitchSet;
-// Form.Label = FormLabel;
-// Form.Group = FormGroup;
-// Form.Text = FormText;
-
-// declare const FormControl: React.FC<FormControlProps>;
-// declare const FormRadio: React.FC<FormRadioProps>;
-// declare const FormRadioSet: React.FC<FormRadioSetProps>;
-// declare const FormAutosuggest: React.FC<FormAutosuggestProps>;
-// declare const FormAutosuggestOption: React.FC<FormAutosuggestOptionProps>;
-// declare const FormCheckbox: React.FC<FormCheckboxProps>;
-// declare const FormCheckboxSet: React.FC<FormCheckboxSetProps>;
-// declare const FormSwitch: React.FC<FormSwitchProps>;
-// declare const FormLabel: React.FC<FormLabelProps>;
-// declare const FormGroup: React.FC<FormGroupProps>;
-// declare const FormText: React.FC<FormTextProps>
-
-// declare const Form: {
-//     // Control: React.FC<FormControlProps> & {
-//     //     Feedback: React.FC<FormControlFeedbackProps>;
-//     //     Description: React.FC<FormControlFeedbackProps>;
-//     // };
-//     Radio: React.FC<FormRadioProps>;
-//     RadioSet: React.FC<FormRadioSetProps>;
-//     Autosuggest: React.FC<FormAutosuggestProps>;
-//     AutosuggestOption: React.FC<FormAutosuggestOptionProps>;
-//     Checkbox: React.FC<FormCheckboxProps>;
-//     CheckboxSet: React.FC<FormCheckboxSetProps>;
-//     Switch: React.FC<FormSwitchProps>;
-//     Label: React.FC<FormLabelProps>;
-//     Group: React.FC<FormGroupProps>;
-//     Text: React.FC<FormTextProps>
-// }
-
 export {
     FormControl,
     FormLabel,

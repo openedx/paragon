@@ -10,15 +10,15 @@ export interface NavbarProps extends BsPrefixProps, BaseNavbarProps {}
 export interface NavbarBrandProps extends BsPrefixProps, BaseNavbarBrandProps {}
 
 export interface NavbarToggleProps extends BsPrefixProps, BaseNavbarToggleProps {
-  children?: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 export interface NavbarCollapseProps extends BsPrefixProps, BaseNavbarCollapseProps, React.HTMLAttributes<HTMLElement> {}
 
 declare const Navbar: React.FC<NavbarProps> & {
-  Brand: React.FC<NavbarBrandProps>;
-  Toggle: React.FC<NavbarToggleProps>;
-  Collapse: React.FC<NavbarCollapseProps>;
+    Brand: React.FC<NavbarBrandProps>;
+    Toggle: React.FC<NavbarToggleProps>;
+    Collapse: React.FC<NavbarCollapseProps>;
 };
 
 export default Navbar;

@@ -1,13 +1,13 @@
 import React from 'react';
 
 export interface StepperHeaderStepProps {
-  eventKey: string;
-  title: string;
-  isActive?: boolean;
-  description?: string;
-  index?: number;
+    eventKey: string;
+    title: string;
+    isActive?: boolean;
+    description?: string;
+    index?: number;
 }
 
-declare const StepperHeaderStep = React.FC<StepperHeaderStepProps>;
+declare const StepperHeaderStep: React.FC<StepperHeaderStepProps>;
 
 export default StepperHeaderStep;

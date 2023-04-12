@@ -1,14 +1,43 @@
 import React from 'react';
-import { FORM_CONTROL_SIZES } from './constants';
+
+export type FormControlSizes = 'sm' | 'lg';
 
 export interface FormGroupContextProviderProps {
     children: React.ReactNode;
     controlId?: string;
     isInvalid?: boolean;
     isValid?: boolean;
-    size?: FORM_CONTROL_SIZES.SMALL | FORM_CONTROL_SIZES.LARGE;
+    size?: FormControlSizes;
 }
 
-declare const FormGroupContextProvider = React.FC<FormGroupContextProviderProps>;
+export type DescriptorProps = {
+    id?: string;
+};
+
+export interface ControlProps extends DescriptorProps {
+    'aria-describedby'?: string;
+    'aria-labelledby'?: string;
+}
+
+export interface LabelProps extends DescriptorProps {
+    htmlFor?: string;
+}
+
+export interface FormGroupContextProps {
+    getControlProps: (props: ControlProps) => ControlProps;
+    getLabelProps: (props: LabelProps) => LabelProps;
+    getDescriptorProps: (props: DescriptorProps) => DescriptorProps;
+    useSetIsControlGroupEffect: (flag: boolean) => void;
+    isControlGroup: boolean;
+    controlId: string;
+    isInvalid?: boolean;
+    isValid?: boolean;
+    size?: FormControlSizes;
+    hasFormGroupProvider: boolean;
+}
+
+declare const FormGroupContextProvider: React.FC<FormGroupContextProviderProps>;
+
+export declare const FormGroupContext: React.Context<FormGroupContextProps>;
 
 export default FormGroupContextProvider;

@@ -10,6 +10,6 @@ export interface FormControlDecoratorGroupProps {
     size?: FORM_CONTROL_SIZES.SMALL | FORM_CONTROL_SIZES.LARGE;
 }
 
-declare const FormControlDecoratorGroup = React.FC<FormControlDecoratorGroupProps>;
+declare const FormControlDecoratorGroup: React.FC<FormControlDecoratorGroupProps>;
 
 export default FormControlDecoratorGroup;

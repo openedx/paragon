@@ -11,37 +11,38 @@ export interface NavProps extends BsPrefixProps, BaseNavProps {}
 export interface NavItemProps extends BsPrefixProps, BaseNavItemProps {}
 
 export interface NavLinkProps extends BsPrefixProps, Omit<BaseNavLinkProps, 'onSelect'> {
-  title?: string;
+    title?: string;
 }
 
 export interface NavDropdownProps extends BsPrefixProps, BaseNavDropdownProps {
-  menuVariant?: 'dark';
-  onClick?: (event: React.SyntheticEvent) => void;
+    menuVariant?: 'dark';
+    onClick?: (event: React.SyntheticEvent) => void;
 }
 
 export interface NavDropdownItemProps extends BsPrefixProps, BaseDropdownItemProps {}
 
-export interface NavDropdownDividerProps extends BsPrefixProps, BsPrefixRefForwardingComponent<'div', unknown> {}
+export interface NavDropdownDividerProps extends BsPrefixProps {}
 
 declare const NavDropdownItem: React.ForwardRefExoticComponent<NavDropdownItemProps>;
 declare const NavDropdownDivider: React.ForwardRefExoticComponent<NavDropdownDividerProps>;
 declare const NavItem: React.ForwardRefExoticComponent<NavItemProps>;
 declare const NavLink: React.ForwardRefExoticComponent<NavLinkProps>;
 declare const NavDropdown: React.ForwardRefExoticComponent<NavDropdownProps> & {
-  Item: React.ForwardRefExoticComponent<NavDropdownItemProps>;
-  Divider: React.ForwardRefExoticComponent<NavDropdownDividerProps>;
+    Item: React.ForwardRefExoticComponent<NavDropdownItemProps>;
+    Divider: React.ForwardRefExoticComponent<NavDropdownDividerProps>;
 };
 
 declare const Nav: React.ForwardRefExoticComponent<NavProps> & {
-  Item: React.ForwardRefExoticComponent<NavItemProps>;
-  Link: React.ForwardRefExoticComponent<NavLinkProps>;
-  Dropdown: React.ForwardRefExoticComponent<NavDropdownProps> & {
-    Item: React.ForwardRefExoticComponent<NavDropdownItemProps>;
-    Divider: React.ForwardRefExoticComponent<NavDropdownDividerProps>;
-  };
+    Item: React.ForwardRefExoticComponent<NavItemProps>;
+    Link: React.ForwardRefExoticComponent<NavLinkProps>;
+    Dropdown: React.ForwardRefExoticComponent<NavDropdownProps> & {
+        Item: React.ForwardRefExoticComponent<NavDropdownItemProps>;
+        Divider: React.ForwardRefExoticComponent<NavDropdownDividerProps>;
+    };
+};
+
+export {
+    NavDropdownItem, NavDropdownDivider, NavItem, NavLink, NavDropdown,
 };
 
 export default Nav;
-export {
-  NavDropdownItem, NavDropdownDivider, NavItem, NavLink, NavDropdown,
-};

@@ -1,34 +1,35 @@
-import { ReactNode } from 'react';
+import React from 'react';
 
-type CheckboxSetControlProps = {
-    onBlur?: (...args: any[]) => any;
-    onFocus?: (...args: any[]) => any;
-    onChange?: (...args: any[]) => any;
-    checked?: boolean;
-    defaultChecked?: boolean;
-    value?: string;
+export type CheckboxProps = {
+    value: string;
+    onBlur?: React.FocusEventHandler<HTMLInputElement>;
+    onFocus?: React.FocusEventHandler<HTMLInputElement>;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
 };
 
-type CheckboxSetContextValue = {
+export type FormCheckboxSetContextValue = {
     name?: string;
     value?: string[];
     defaultValue?: string[];
-    getCheckboxControlProps: (props: CheckboxSetControlProps) => CheckboxSetControlProps;
-    onBlur?: (...args: any[]) => any;
-    onFocus?: (...args: any[]) => any;
-    onChange?: (...args: any[]) => any;
-    hasCheckboxSetProvider?: boolean;
+    onBlur?: React.FocusEventHandler<HTMLInputElement>;
+    onFocus?: React.FocusEventHandler<HTMLInputElement>;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
+    getCheckboxControlProps: (checkboxProps: CheckboxProps) => CheckboxProps;
+    hasCheckboxSetProvider: boolean;
 };
 
-type FormCheckboxSetContextProviderProps = {
-    children: ReactNode;
+export declare const FormCheckboxSetContext: React.Context<FormCheckboxSetContextValue>;
+
+export declare const useCheckboxSetContext: () => FormCheckboxSetContextValue;
+
+export type FormCheckboxSetContextProviderProps = {
+    children: React.ReactNode;
     name?: string;
-    onBlur?: (...args: any[]) => any;
-    onFocus?: (...args: any[]) => any;
-    onChange?: (...args: any[]) => any;
+    onBlur?: React.FocusEventHandler<HTMLInputElement>;
+    onFocus?: React.FocusEventHandler<HTMLInputElement>;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
     value?: string[];
     defaultValue?: string[];
 };
 
-export function useCheckboxSetContext(): CheckboxSetContextValue;
-export function FormCheckboxSetContextProvider(props: FormCheckboxSetContextProviderProps): JSX.Element;
+export declare const FormCheckboxSetContextProvider: React.FC<FormCheckboxSetContextProviderProps>;
