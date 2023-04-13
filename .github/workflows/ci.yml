@@ -22,9 +22,7 @@ jobs:
         node-version: ${{ matrix.node }}
     - name: Install dependencies
       run: |
-        npm ci
-        npm run generate-component-install
-        npm run doc-site-install
+        npm run install-all
     - name: Check Types
       run: npm run type-check
     - name: Lint

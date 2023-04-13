@@ -19,7 +19,7 @@ const importer = function importer(url, prev) {
       file = path.resolve(__dirname, '../node_modules', url.substr(1));
     } else {
       // we are still in docs site project, so resolve tilde imports to its node_modules
-      file = path.resolve(__dirname, './node_modules', url.substr(1));
+      file = path.resolve(__dirname, '../node_modules', url.substr(1));
     }
   }
 

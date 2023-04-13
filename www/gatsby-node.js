@@ -17,7 +17,7 @@ const { getThemesSCSSVariables, processComponentSCSSVariables } = require('./the
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: ['node_modules', path.resolve(__dirname, 'node_modules')],
+      modules: ['node_modules', path.resolve(__dirname, '../node_modules')],
       alias: {
         '~paragon-react': path.resolve(__dirname, '../src'),
         '~paragon-style': path.resolve(__dirname, '../scss'),
@@ -28,9 +28,9 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         // one level above if it is present. This approach forces
         // all uses of react and react-dom to resolve to those
         // in ./node_modules
-        react: path.resolve(__dirname, 'node_modules/react/'),
-        'react-dom': path.resolve(__dirname, 'node_modules/react-dom/'),
-        'react-intl': path.resolve(__dirname, 'node_modules/react-intl/'),
+        react: path.resolve(__dirname, '../node_modules/react/'),
+        'react-dom': path.resolve(__dirname, '../node_modules/react-dom/'),
+        'react-intl': path.resolve(__dirname, '../node_modules/react-intl/'),
       },
     },
   });

@@ -20,10 +20,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "generate-component-install": "cd component-generator && npm install",
-    "consumer-app-install": "cd example && npm install",
-    "doc-site-install": "cd www && npm install",
-    "install-all": "npm install && npm run generate-component-install && npm run consumer-app-install && npm run doc-site-install",
+    "install-all": "npm install && npm install --workspaces --if-present",
     "build": "make build",
     "build-docs": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
     "build-docs:with-theme": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build:with-theme",
@@ -181,5 +178,12 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
-  }
+  },
+  "workspaces": [
+    "component-generator",
+    "www",
+    "example",
+    "icons",
+    "dependent-usage-analyzer"
+  ]
 }
