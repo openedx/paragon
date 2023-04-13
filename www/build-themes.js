@@ -3,7 +3,7 @@ const sass = require('sass');
 const fs = require('fs');
 const { THEMES } = require('./theme-config');
 
-const importer = function importer(url, prev) {
+const importer = function importer(url) {
   let file = url;
   // correctly resolve core Paragon's scss
   if (url.startsWith('~paragon-style')) {
@@ -13,14 +13,7 @@ const importer = function importer(url, prev) {
     // since stylesheets there also use tilde imports which
     // webpack resolves to Paragon's node_modules (not node_modules related to docs site),
     // so we do the same
-    if (prev && !prev.includes('www')) {
-      // chain of import led us out of docs site project, so imports
-      // should be resolved to Paragon's node_modules
-      file = path.resolve(__dirname, '../node_modules', url.substr(1));
-    } else {
-      // we are still in docs site project, so resolve tilde imports to its node_modules
-      file = path.resolve(__dirname, '../node_modules', url.substr(1));
-    }
+    file = path.resolve(__dirname, '../node_modules', url.substr(1));
   }
 
   return { file };

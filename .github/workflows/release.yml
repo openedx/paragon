@@ -20,7 +20,7 @@ jobs:
         node-version: 16
     - name: Install dependencies
       run: |
-        npm run install-all
+        npm ci
     - name: Lint
       run: npm run lint
     - name: Test

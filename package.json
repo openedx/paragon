@@ -20,7 +20,6 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "install-all": "npm install && npm install --workspaces --if-present",
     "build": "make build",
     "build-docs": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
     "build-docs:with-theme": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build:with-theme",
@@ -182,7 +181,6 @@
   "workspaces": [
     "component-generator",
     "www",
-    "example",
     "icons",
     "dependent-usage-analyzer"
   ]
