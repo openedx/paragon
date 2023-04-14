@@ -40,9 +40,10 @@ function CollapsibleLiveEditor({ children }: CollapsibleLiveEditorTypes) {
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
       >
         <Collapsible.Trigger tag={Button} variant="link">
-          <Collapsible.Visible whenClosed>Show code example</Collapsible.Visible>
-          <Collapsible.Visible whenOpen>Hide code example</Collapsible.Visible>
+          <Collapsible.Visible whenClosed>Show editable code example</Collapsible.Visible>
+          <Collapsible.Visible whenOpen>Hide editable code example</Collapsible.Visible>
         </Collapsible.Trigger>
+        <p className="small text-gray">Any Paragon component or export may be added to the code example.</p>
         <Collapsible.Body className="mt-2">
           {children}
         </Collapsible.Body>
