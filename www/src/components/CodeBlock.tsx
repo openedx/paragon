@@ -38,13 +38,14 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
   return (
     <div className="pgn-doc__collapsible-live-editor">
+      <p className="small text-gray ml-3.5 mb-1">Any Paragon component or export may be added to the code example.</p>
       <Collapsible
         unmountOnExit={false}
         styling="card-lg"
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
         withIcon
-        title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} code example</strong>}
+        title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
         {children}
         <IconButton

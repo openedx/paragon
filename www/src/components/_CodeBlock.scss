@@ -22,9 +22,13 @@
     margin: 0;
   }
 
-  .pgn-transition-replace-group .pgn-doc__collapsible-live-editor-copy-btn {
-    position: absolute;
-    top: map-get($spacers, 4);
-    right: 2rem;
+  .collapsible-body.collapse.show {
+    position: relative;
+
+    .pgn-doc__collapsible-live-editor-copy-btn {
+      position: absolute;
+      top: map-get($spacers, 4);
+      right: 2rem;
+    }
   }
 }
