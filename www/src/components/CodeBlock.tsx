@@ -39,6 +39,7 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
   return (
     <div className="pgn-doc__collapsible-live-editor">
       <Collapsible
+        unmountOnExit={false}
         styling="card-lg"
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
@@ -78,7 +79,7 @@ function CodeBlock({
   const language: any = className ? className.replace(/language-/, '') : 'jsx';
   const [showToast, setShowToast] = useState(false);
 
-  const isCodeSnippetCopied = () => {
+  const isCodeExampleCopied = () => {
     navigator.clipboard.writeText(children);
     setShowToast(true);
   };
@@ -112,7 +113,7 @@ function CodeBlock({
           theme={theme}
         >
           <LivePreview className="pgn-doc__code-block-preview" />
-          <CollapsibleLiveEditor clickToCopy={isCodeSnippetCopied}>
+          <CollapsibleLiveEditor clickToCopy={isCodeExampleCopied}>
             <LiveEditor className="pgn-doc__code-block-editor" />
           </CollapsibleLiveEditor>
           <LiveError className="pgn-doc__code-block-error" />
@@ -122,7 +123,7 @@ function CodeBlock({
           show={showToast}
           delay={2000}
         >
-          Code snippet copied to clipboard!
+          Code example copied to clipboard!
         </Toast>
       </div>
     );
