@@ -61,7 +61,7 @@ CardStatus.propTypes = {
   /** The class to append to the base element. */
   className: PropTypes.string,
   /** Icon that will be shown in the top-left corner. */
-  icon: PropTypes.func,
+  icon: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** Specifies variant to use. */
   variant: PropTypes.oneOf([
     'primary',
@@ -70,7 +70,7 @@ CardStatus.propTypes = {
     'warning',
   ]),
   /** Specifies title for the `Card.Status`. */
-  title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  title: PropTypes.node,
   /** Specifies any optional actions, e.g. button(s). */
   actions: PropTypes.node,
 };
