@@ -47,7 +47,6 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build --prefix-paths && npm run build-themes",
-    "build:with-theme": "npm run build",
     "clean": "gatsby clean",
     "develop": "npm run build-themes && gatsby develop",
     "develop:with-theme": "npm run develop",

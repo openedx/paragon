@@ -21,13 +21,11 @@
   "sideEffects": false,
   "scripts": {
     "build": "make build",
-    "build-docs": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
-    "build-docs:with-theme": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build:with-theme",
+    "build-docs": "cd ./www &&  \"$npm_execpath\" run build",
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "stylelint": "stylelint \"src/**/*.scss\" \"scss/**/*.scss\" \"www/src/**/*.scss\" --config .stylelintrc.json",
-    "lint": "npm run stylelint && eslint --ext .js --ext .jsx --ext .ts --ext .tsx . && npm run generate-component-lint && npm run lint-docs",
-    "lint-docs": "cd ./www && \"$npm_execpath\" run lint",
+    "lint": "npm run stylelint && eslint --ext .js --ext .jsx --ext .ts --ext .tsx && npm run lint --workspaces --if-present",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "snapshot": "jest --updateSnapshot",
@@ -35,7 +33,6 @@
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
     "generate-component": "cd component-generator && npm start",
-    "generate-component-lint": "cd component-generator && npm run lint",
     "generate-changelog": "node generate-changelog.js",
     "i18n_compile": "formatjs compile-folder --format transifex ./src/i18n/messages ./src/i18n/messages",
     "i18n_extract": "formatjs extract 'src/**/*.{jsx,js,tsx,ts}' --out-file ./src/i18n/transifex_input.json --format transifex",
@@ -179,10 +176,10 @@
     }
   },
   "workspaces": [
+    "example",
     "component-generator",
     "www",
     "icons",
-    "dependent-usage-analyzer",
-    "example"
+    "dependent-usage-analyzer"
   ]
 }
