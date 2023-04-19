@@ -20,10 +20,10 @@ import {
 import { FormattedMessage, useIntl } from 'react-intl';
 import * as ParagonReact from '~paragon-react';
 import * as ParagonIcons from '~paragon-icons';
+import { ContentCopy } from '~paragon-icons';
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
 import ExamplePropsForm from './exampleComponents/ExamplePropsForm';
-import { ContentCopy } from '../../../icons';
 
 const {
   Collapsible, Toast, IconButton, Icon,
@@ -38,7 +38,6 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
   return (
     <div className="pgn-doc__collapsible-live-editor">
-      <p className="small text-gray ml-3.5 mb-1">Any Paragon component or export may be added to the code example.</p>
       <Collapsible
         unmountOnExit={false}
         styling="card-lg"
@@ -47,15 +46,18 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
         withIcon
         title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
-        {children}
-        <IconButton
-          className="pgn-doc__collapsible-live-editor-copy-btn"
-          src={ContentCopy}
-          iconAs={Icon}
-          alt="Copy code example"
-          onClick={clickToCopy}
-          invertColors
-        />
+        <p className="small text-gray mb-2">Any Paragon component or export may be added to the code example.</p>
+        <div className="pgn-doc__collapsible-code-wrapper">
+          {children}
+          <IconButton
+            className="pgn-doc__collapsible-live-editor-copy-btn"
+            src={ContentCopy}
+            iconAs={Icon}
+            alt="Copy code example"
+            onClick={clickToCopy}
+            invertColors
+          />
+        </div>
       </Collapsible>
     </div>
   );

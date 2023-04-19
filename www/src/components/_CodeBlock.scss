@@ -22,13 +22,13 @@
     margin: 0;
   }
 
-  .collapsible-body.collapse.show {
+  .pgn-doc__collapsible-code-wrapper {
     position: relative;
 
     .pgn-doc__collapsible-live-editor-copy-btn {
       position: absolute;
-      top: map-get($spacers, 4);
-      right: 2rem;
+      top: map-get($spacers, 2);
+      right: map-get($spacers, 2);
     }
   }
 }
