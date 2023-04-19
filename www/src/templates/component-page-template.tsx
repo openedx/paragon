@@ -17,6 +17,7 @@ import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
+import { componentsInUsage, ComponentsUsage } from '../pages/insights';
 
 export interface IPageTemplate {
   data: {
@@ -87,6 +88,12 @@ export default function PageTemplate({
   const scssVariablesTitle = 'Theme Variables (SCSS)';
   const scssVariablesUrl = 'theme-variables-scss';
 
+  const propsAPITitle = 'Props API';
+  const propsAPIUrl = 'props-api';
+
+  const usageInsightsTitle = 'Usage Insights';
+  const usageInsightsUrl = 'usage-insights';
+
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
     if (Object.values(scssVariablesData).some(data => data) && !tableOfContents.items?.includes()) {
@@ -95,6 +102,8 @@ export default function PageTemplate({
         url: `#${scssVariablesUrl}`,
       });
     }
+    tableOfContents.items?.push({ title: propsAPITitle, url: `#${propsAPIUrl}` });
+    tableOfContents.items?.push({ title: usageInsightsTitle, url: `#${usageInsightsUrl}` });
     return tableOfContents;
   };
 
@@ -104,6 +113,18 @@ export default function PageTemplate({
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
 
+  const obj = {};
+
+  // componentsInUsage.forEach(key => obj[key] = null);
+
+  sortedComponentNames.forEach(value => {
+    if (obj.hasOwnProperty(value)) {
+      obj[value] = value;
+    }
+  });
+
+  const noMatchingValues = sortedComponentNames.every(value => !obj.hasOwnProperty(value));
+  console.log('noMatchingValues', noMatchingValues)
   return (
     <Layout
       showMinimizedTitle={showMinimizedTitle}
@@ -134,14 +155,32 @@ export default function PageTemplate({
             <CodeBlock className="language-scss">{scssVariables}</CodeBlock>
           </div>
         )}
-        {typeof sortedComponentNames !== 'string'
-            && sortedComponentNames?.map((componentName: string | number) => {
-              const node: { displayName: string } = components[componentName];
-              if (!node) {
-                return null;
-              }
-              return <GenericPropsTable key={node.displayName} {...node} />;
-            })}
+        {components[sortedComponentNames[0]]?.props && (
+          <h2 className="mb-4 pgn-doc__heading" id={propsAPIUrl}>
+            {propsAPITitle}
+            <a href={`#${propsAPIUrl}`} aria-label="Props API">
+              <span className="pgn-doc__anchor">#</span>
+            </a>
+          </h2>
+        )}
+        {typeof sortedComponentNames !== 'string' && sortedComponentNames?.map((componentName: string | number) => {
+          const node: { displayName: string } = components[componentName];
+          if (!node) {
+            return null;
+          }
+          return <GenericPropsTable key={node.displayName} {...node} />;
+        })}
+        {!noMatchingValues && (
+          <div className="pgn-doc__component-page-usage-insights">
+            <h2 className="pgn-doc__heading" id={usageInsightsUrl}>
+              {usageInsightsTitle}
+              <a href={`#${usageInsightsUrl}`} aria-label="Usage Insights">
+                <span className="pgn-doc__anchor">#</span>
+              </a>
+            </h2>
+            <ComponentsUsage data={sortedComponentNames} />
+          </div>
+        )}
       </Container>
     </Layout>
   );

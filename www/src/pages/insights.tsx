@@ -84,7 +84,6 @@ export interface IComponentUsage {
 }
 
 const dependentProjects: IDependentUsage[] = [];
-
 const componentsUsage: Record<string, IComponentUsageData[]> = dependentProjectsUsages
   .reduce((accumulator: any, project: any) => {
     dependentProjects.push({
@@ -94,10 +93,13 @@ const componentsUsage: Record<string, IComponentUsageData[]> = dependentProjects
     });
 
     Object.keys(project.usages).forEach(componentName => {
-      if (!accumulator[componentName]) {
-        accumulator[componentName] = [];
+      // The next line is necessary for the same naming of the components both in the file with the
+      // repositories of use and in the data structures GraphQL.
+      const newComponentName = componentName.replace(/\./g, '');
+      if (!accumulator[newComponentName]) {
+        accumulator[newComponentName] = [];
       }
-      accumulator[componentName] = accumulator[componentName].concat({
+      accumulator[newComponentName] = accumulator[newComponentName].concat({
         name: project.name,
         folderName: project.folderName,
         version: project.version,
@@ -109,7 +111,7 @@ const componentsUsage: Record<string, IComponentUsageData[]> = dependentProjects
     return accumulator;
   }, {});
 
-const componentsInUsage = Object.keys(componentsUsage);
+export const componentsInUsage = Object.keys(componentsUsage);
 
 const round = (n: number) => Math.round(n * 10) / 10;
 
@@ -285,16 +287,21 @@ function ComponentUsage({ name, componentUsageInProjects }: IComponentUsage) {
 }
 
 // Usage info for all components
-function ComponentsUsage({ data }: { data: string[] }) {
+export function ComponentsUsage({ data }: { data: string[] }) {
   return (
-    <div className="pt-5 mb-5">
-      {data.length ? data.sort().map(name => (
-        <ComponentUsage
-          key={name}
-          name={name}
-          componentUsageInProjects={componentsUsage[name]}
-        />
-      )) : getEmptyMessage('components')}
+    <div className="pgn-doc__component-usage pt-5 mb-5">
+      {data.length ? data.sort().map(name => {
+        if (componentsUsage[name]) {
+          return (
+            <ComponentUsage
+              key={name}
+              name={name}
+              componentUsageInProjects={componentsUsage[name]}
+            />
+          );
+        }
+        return null;
+      }) : getEmptyMessage('components')}
     </div>
   );
 }

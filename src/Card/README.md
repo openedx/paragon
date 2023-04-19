@@ -11,6 +11,8 @@ components:
 - CardBody
 - CardImageCap
 - CardStatus
+- CardDeck
+- CardCarousel
 categories:
 - Content
 status: 'Stable'
