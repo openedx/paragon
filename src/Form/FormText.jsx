@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Icon from '../Icon';
 import {
   Check, Close, Cancel, CheckCircle, RadioButtonUnchecked, WarningFilled,
 } from '../../icons';
-import { Icon } from '..';
 
 import { FORM_TEXT_TYPES } from './constants';
 

@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { useIntl } from 'react-intl';
-import { Stack, IconButton, Icon } from '../..';
+import Stack from '../../Stack';
+import IconButton from '../../IconButton';
+import Icon from '../../Icon';
 import { ArrowForward, ArrowBack } from '../../../icons';
 import { CardCarouselContext } from './CardCarouselProvider';
 import messages from './messages';

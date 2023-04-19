@@ -8,7 +8,9 @@ import {
   ChevronLeft, ChevronRight, ArrowBackIos, ArrowForwardIos,
 } from '../../icons';
 import { greaterThan } from '../utils/propTypes';
-import { Button, Dropdown, IconButton } from '..';
+import Button from '../Button';
+import Dropdown from '../Dropdown';
+import IconButton from '../IconButton';
 import Icon from '../Icon';
 import breakpoints from '../utils/breakpoints';
 import newId from '../utils/newId';
