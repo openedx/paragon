@@ -84,6 +84,7 @@ export interface IComponentUsage {
 }
 
 const dependentProjects: IDependentUsage[] = [];
+
 const componentsUsage: Record<string, IComponentUsageData[]> = dependentProjectsUsages
   .reduce((accumulator: any, project: any) => {
     dependentProjects.push({
@@ -289,7 +290,7 @@ function ComponentUsage({ name, componentUsageInProjects }: IComponentUsage) {
 // Usage info for all components
 export function ComponentsUsage({ data }: { data: string[] }) {
   return (
-    <div className="pgn-doc__component-usage pt-5 mb-5">
+    <div className="pt-5 mb-5">
       {data.length ? data.sort().map(name => {
         if (componentsUsage[name]) {
           return (

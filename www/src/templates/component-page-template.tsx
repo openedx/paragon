@@ -57,7 +57,7 @@ export default function PageTemplate({
   const scssVariables = scssVariablesData[theme!] || scssVariablesData[DEFAULT_THEME!];
 
   const components = componentNodes.nodes
-    .reduce((acc: { [x: string]: { displayName: string }; }, currentValue: { displayName: string; }) => {
+    .reduce((acc: { [x: string]: { displayName: string, props?: [] }; }, currentValue: { displayName: string; }) => {
       acc[currentValue.displayName] = currentValue;
       return acc;
     }, {});
@@ -113,18 +113,22 @@ export default function PageTemplate({
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
 
-  const obj = {};
+  const usageComponents = {};
 
-  // componentsInUsage.forEach(key => obj[key] = null);
-
-  sortedComponentNames.forEach(value => {
-    if (obj.hasOwnProperty(value)) {
-      obj[value] = value;
-    }
+  componentsInUsage.forEach(key => {
+    usageComponents[key] = null;
   });
 
-  const noMatchingValues = sortedComponentNames.every(value => !obj.hasOwnProperty(value));
-  console.log('noMatchingValues', noMatchingValues)
+  if (typeof sortedComponentNames !== 'string') {
+    sortedComponentNames.forEach(componentName => {
+      if (componentName in usageComponents) {
+        usageComponents[componentName] = componentName;
+      }
+    });
+  }
+
+  const noMatchingValues = (sortedComponentNames as []).every(componentName => !(componentName in usageComponents));
+
   return (
     <Layout
       showMinimizedTitle={showMinimizedTitle}
@@ -156,7 +160,7 @@ export default function PageTemplate({
           </div>
         )}
         {components[sortedComponentNames[0]]?.props && (
-          <h2 className="mb-4 pgn-doc__heading" id={propsAPIUrl}>
+          <h2 className="mb-5 pgn-doc__heading" id={propsAPIUrl}>
             {propsAPITitle}
             <a href={`#${propsAPIUrl}`} aria-label="Props API">
               <span className="pgn-doc__anchor">#</span>
@@ -171,15 +175,15 @@ export default function PageTemplate({
           return <GenericPropsTable key={node.displayName} {...node} />;
         })}
         {!noMatchingValues && (
-          <div className="pgn-doc__component-page-usage-insights">
-            <h2 className="pgn-doc__heading" id={usageInsightsUrl}>
+          <>
+            <h2 className="pgn-doc__heading m-0" id={usageInsightsUrl}>
               {usageInsightsTitle}
               <a href={`#${usageInsightsUrl}`} aria-label="Usage Insights">
                 <span className="pgn-doc__anchor">#</span>
               </a>
             </h2>
-            <ComponentsUsage data={sortedComponentNames} />
-          </div>
+            <ComponentsUsage data={(sortedComponentNames as string[])} />
+          </>
         )}
       </Container>
     </Layout>
