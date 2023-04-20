@@ -3,4 +3,6 @@ export interface WindowSizeTypes {
     height: number | undefined;
 }
 
-export default function useWindowSize(): WindowSizeTypes;
+declare function useWindowSize(): WindowSizeTypes;
+
+export default useWindowSize;
