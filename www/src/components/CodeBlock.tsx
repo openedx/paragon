@@ -20,33 +20,45 @@ import {
 import { FormattedMessage, useIntl } from 'react-intl';
 import * as ParagonReact from '~paragon-react';
 import * as ParagonIcons from '~paragon-icons';
+import { ContentCopy } from '~paragon-icons';
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
 import ExamplePropsForm from './exampleComponents/ExamplePropsForm';
 
-const { Button, Collapsible } = ParagonReact;
+const {
+  Collapsible, Toast, IconButton, Icon,
+} = ParagonReact;
 
 export type CollapsibleLiveEditorTypes = {
-  children: React.ReactNode,
+  children: React.ReactNode;
+  clickToCopy: () => void;
 };
 
-function CollapsibleLiveEditor({ children }: CollapsibleLiveEditorTypes) {
+function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
   return (
     <div className="pgn-doc__collapsible-live-editor">
-      <Collapsible.Advanced
+      <Collapsible
         unmountOnExit={false}
+        styling="card-lg"
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
+        withIcon
+        title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
-        <Collapsible.Trigger tag={Button} variant="link">
-          <Collapsible.Visible whenClosed>Show code example</Collapsible.Visible>
-          <Collapsible.Visible whenOpen>Hide code example</Collapsible.Visible>
-        </Collapsible.Trigger>
-        <Collapsible.Body className="mt-2">
+        <p className="small text-gray mb-2">Any Paragon component or export may be added to the code example.</p>
+        <div className="pgn-doc__collapsible-code-wrapper">
           {children}
-        </Collapsible.Body>
-      </Collapsible.Advanced>
+          <IconButton
+            className="pgn-doc__collapsible-live-editor-copy-btn"
+            src={ContentCopy}
+            iconAs={Icon}
+            alt="Copy code example"
+            onClick={clickToCopy}
+            invertColors
+          />
+        </div>
+      </Collapsible>
     </div>
   );
 }
@@ -68,6 +80,12 @@ function CodeBlock({
 }: ICodeBlock) {
   const intl = useIntl();
   const language: any = className ? className.replace(/language-/, '') : 'jsx';
+  const [showToast, setShowToast] = useState(false);
+
+  const isCodeExampleCopied = () => {
+    navigator.clipboard.writeText(children);
+    setShowToast(true);
+  };
 
   if (live) {
     return (
@@ -98,11 +116,18 @@ function CodeBlock({
           theme={theme}
         >
           <LivePreview className="pgn-doc__code-block-preview" />
-          <CollapsibleLiveEditor>
+          <CollapsibleLiveEditor clickToCopy={isCodeExampleCopied}>
             <LiveEditor className="pgn-doc__code-block-editor" />
           </CollapsibleLiveEditor>
           <LiveError className="pgn-doc__code-block-error" />
         </LiveProvider>
+        <Toast
+          onClose={() => setShowToast(false)}
+          show={showToast}
+          delay={2000}
+        >
+          Code example copied to clipboard!
+        </Toast>
       </div>
     );
   }
