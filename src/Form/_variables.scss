@@ -108,11 +108,15 @@ $custom-control-indicator-active-box-shadow: var(--pgn-elevation-form-control-in
 $custom-control-indicator-active-border-color: var(--pgn-color-form-control-indicator-active-border) !default;
 $custom-checkbox-indicator-border-radius: var(--pgn-size-form-control-border-checkbox-indicator-radius) !default;
 $custom-checkbox-indicator-icon-checked: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked) !default;
+$custom-checkbox-indicator-icon-valid-checked:         str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='#{$custom-control-indicator-checked-valid-color}'/></svg>"), "#", "%23") !default;
+$custom-checkbox-indicator-icon-invalid-checked:       str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='#{$custom-control-indicator-checked-invalid-color}'/></svg>"), "#", "%23") !default;
 
 $custom-checkbox-indicator-indeterminate-bg: var(--pgn-color-form-control-checkbox-indicator-indeterminate-bg) !default;
 
 // stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-color: var(--pgn-color-form-control-checkbox-indicator-indeterminate-base) !default;
+$custom-radio-indicator-icon-valid-checked:     str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-valid-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
+$custom-radio-indicator-icon-invalid-checked:   str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-invalid-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
 
 // stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-icon-indeterminate: var(--pgn-other-content-form-control-checkbox-indicator-indeterminate-icon) !default;
