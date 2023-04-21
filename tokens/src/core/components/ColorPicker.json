@@ -1,0 +1,8 @@
+{
+  "size": {
+    "color-picker": {
+      "sm": { "value": "2rem", "source": "$picker-size-sm", "type": "dimension"},
+      "md": { "value": "calc(1.3333em + 1.125rem + 2px)", "source": "$picker-size-md", "type": "dimension"}
+    }
+  }
+}
