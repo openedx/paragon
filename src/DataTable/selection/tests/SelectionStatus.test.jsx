@@ -15,6 +15,7 @@ const instance = {
   page: [1, 2, 3, 4],
   toggleAllRowsSelected: () => {},
   itemCount: 101,
+  filteredRows: [...new Array(27)],
   state: {
     selectedRowIds: {
       1: true,
@@ -69,6 +70,16 @@ describe('<SelectionStatus />', () => {
     button.simulate('click');
     expect(toggleAllRowsSpy).toHaveBeenCalledTimes(1);
     expect(toggleAllRowsSpy).toHaveBeenCalledWith(true);
+  });
+  it('updates select all button text after applying filters', () => {
+    const wrapper = mount(<SelectionStatusWrapper value={{ ...instance }} />);
+    const button = wrapper.find(`button.${SELECT_ALL_TEST_ID}`);
+    expect(button.text()).toContain('Select all 27');
+  });
+  it('updates select all text if filters value is empty', () => {
+    const wrapper = mount(<SelectionStatusWrapper value={{ ...instance, filteredRows: 0 }} />);
+    const button = wrapper.find(`button.${SELECT_ALL_TEST_ID}`);
+    expect(button.text()).toContain('Select all 101');
   });
   it('does not render the clear selection button if there are no selected rows', () => {
     const value = {
