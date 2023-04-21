@@ -41,9 +41,9 @@
             }
           },
           "checked": {
-            "base": {
-              "value": "{color.bg.active}", "type": "color", "source": "$custom-control-indicator-checked-color"
-            },
+            "base": { "value": "{color.bg.active}", "type": "color", "source": "$custom-control-indicator-checked-color" },
+            "valid": { "value": "{color.success.base}", "type": "color", "source": "$custom-control-indicator-checked-valid-color" },
+            "invalid": { "value": "{color.danger.base}", "type": "color", "source": "$custom-control-indicator-checked-invalid-color" },
             "bg": {
               "base": {
                 "value": "{color.bg.active}", "type": "color", "source": "$custom-control-indicator-checked-bg"
