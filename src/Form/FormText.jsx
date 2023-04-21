@@ -66,7 +66,9 @@ function FormText({
   return (
     <div {...props} className={className}>
       {hasIcon && <FormTextIcon customIcon={icon} type={type} />}
-      {children}
+      <div>
+        {children}
+      </div>
     </div>
   );
 }
