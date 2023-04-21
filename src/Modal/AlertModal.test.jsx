@@ -35,7 +35,7 @@ describe('<AlertModal />', () => {
   describe('when isOpen', () => {
     const wrapper = shallow((
       <AlertModal
-        title='some title'
+        title="some title"
         isOpen={isOpen}
         onClose={closeFn}
         footerNode={<p>footer</p>}
@@ -53,50 +53,50 @@ describe('<AlertModal />', () => {
     it('renders warning variant', () => {
       const wrapper = shallow((
         <AlertModal
-          title='some title'
+          title="some title"
           isOpen={isOpen}
           onClose={closeFn}
-          icon='warning'
+          icon="warning"
           footerNode={<p>footer</p>}
         >
           <Body />
         </AlertModal>
       ));
       const modalTitleIcon = wrapper.find('.pgn__alert-modal__title_icon');
-      const src = modalTitleIcon.prop('src')
-      expect(src).toEqual('warning')
-    })
+      const src = modalTitleIcon.prop('src');
+      expect(src).toEqual('warning');
+    });
     it('renders success variant', () => {
       const wrapper = shallow((
         <AlertModal
-          title='some title'
+          title="some title"
           isOpen={isOpen}
           onClose={closeFn}
-          icon='success'
+          icon="success"
           footerNode={<p>footer</p>}
         >
           <Body />
         </AlertModal>
       ));
       const modalTitleIcon = wrapper.find('.pgn__alert-modal__title_icon');
-      const src = modalTitleIcon.prop('src')
-      expect(src).toEqual('success')
-    })
+      const src = modalTitleIcon.prop('src');
+      expect(src).toEqual('success');
+    });
     it('renders danger variant', () => {
       const wrapper = shallow((
         <AlertModal
-          title='some title'
+          title="some title"
           isOpen={isOpen}
           onClose={closeFn}
-          icon='danger'
+          icon="danger"
           footerNode={<p>footer</p>}
         >
           <Body />
         </AlertModal>
       ));
       const modalTitleIcon = wrapper.find('.pgn__alert-modal__title_icon');
-      const src = modalTitleIcon.prop('src')
-      expect(src).toEqual('danger')
-    })
+      const src = modalTitleIcon.prop('src');
+      expect(src).toEqual('danger');
+    });
   });
 });
