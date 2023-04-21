@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { requiredWhenNot } from '../utils/propTypes';
+import { Icon } from '..';
 import ModalDialog from './ModalDialog';
 
 function AlertModal({
   children,
   footerNode,
+  icon,
   ...props
 }) {
   return (
@@ -16,7 +18,10 @@ function AlertModal({
       className={classNames('pgn__alert-modal', props.className)}
     >
       <ModalDialog.Header>
-        <ModalDialog.Title>{props.title}</ModalDialog.Title>
+        <ModalDialog.Title>
+          {icon && <Icon src={icon} className={classNames('pgn__alert-modal__title_icon')} />}
+          {props.title}
+        </ModalDialog.Title>
       </ModalDialog.Header>
       <ModalDialog.Body>{children}</ModalDialog.Body>
       {footerNode && <ModalDialog.Footer>{footerNode}</ModalDialog.Footer>}
@@ -39,7 +44,7 @@ AlertModal.propTypes = {
   /** Sizes determine the maximum width of the dialog box */
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
   /** The visual style of the dialog box */
-  variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success', 'dark']),
+  variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success']),
   /** The label supplied to the close icon button if one is rendered */
   closeLabel: PropTypes.string,
   /** Specifies class name to append to the base element */
@@ -52,6 +57,8 @@ AlertModal.propTypes = {
   isFullscreenScroll: PropTypes.bool,
   /** Specifies what should be displayed in the footer of the dialog box */
   footerNode: PropTypes.node,
+  /** Icon that will be shown in the header of modal */
+  icon: PropTypes.elementType,
 };
 
 AlertModal.defaultProps = {
@@ -65,6 +72,7 @@ AlertModal.defaultProps = {
   className: undefined,
   isFullscreenScroll: false,
   footerNode: null,
+  icon: undefined,
 };
 
 export default AlertModal;

@@ -44,3 +44,90 @@ This is the alert style `ModalDialog` composition. `AlertModal` passes all of it
   )
 }
 ```
+
+## Variants
+
+```jsx live
+() => {
+const [isOpen, open, close] = useToggle(false);
+  return (
+    <>
+      <Button variant="outline-primary" onClick={open}>Open warning alert modal</Button>
+
+      <AlertModal
+        title="Warning Message"
+        isOpen={isOpen}
+        onClose={close}
+        variant="warning"
+        icon={Warning}
+        footerNode={(
+          <ActionRow>
+            <Button variant="tertiary" onClick={close}>Cancel</Button>
+            <Button variant="primary">Delete</Button>
+          </ActionRow>
+        )}
+      >
+        <p>
+          Are your sure you want to delete this file? You can't undo this action.
+        </p>
+      </AlertModal>
+    </>
+  )
+}
+```
+```jsx live
+() => {
+const [isOpen, open, close] = useToggle(false);
+  return (
+    <>
+      <Button variant="outline-primary" onClick={open}>Open error alert modal</Button>
+
+      <AlertModal
+        title="Message"
+        isOpen={isOpen}
+        onClose={close}
+        variant="danger"
+        icon={Info}
+        footerNode={(
+          <ActionRow>
+            <Button variant="tertiary" onClick={close}>Dismiss</Button>
+            <Button variant="danger">Acknowledge errror</Button>
+          </ActionRow>
+        )}
+      >
+        <p>
+          An unknown error has occured.
+        </p>
+      </AlertModal>
+    </>
+  )
+}
+```
+```jsx live
+() => {
+const [isOpen, open, close] = useToggle(false);
+  return (
+    <>
+      <Button variant="outline-primary" onClick={open}>Open success alert modal</Button>
+
+      <AlertModal
+        title="Success Message"
+        isOpen={isOpen}
+        onClose={close}
+        variant="success"
+        icon={CheckCircle}
+        footerNode={(
+          <ActionRow>
+            <Button variant="tertiary" onClick={close}>Dismiss</Button>
+            <Button variant="success">Confirm</Button>
+          </ActionRow>
+        )}
+      >
+        <p>
+          All good!
+        </p>
+      </AlertModal>
+    </>
+  )
+}
+```
