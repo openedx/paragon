@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Wed, 22 Mar 2023 12:28:07 GMT
+ * Generated on Fri, 21 Apr 2023 08:31:37 GMT
  */
 
 :root {
@@ -295,6 +295,7 @@
   --pgn-size-icon-lg: 1.75rem;
   --pgn-size-icon-md: 1.5rem;
   --pgn-size-icon-sm: 1.25rem;
+  --pgn-size-icon-xs: 1rem;
   --pgn-size-icon-inline: .8em;
   --pgn-size-input-btn-focus-width: 1px;
   --pgn-size-caret-width: .3em;
@@ -327,6 +328,8 @@
   --pgn-size-container-max-width-md: 952px;
   --pgn-size-container-max-width-sm: 708px;
   --pgn-size-container-max-width-xs: 464px;
+  --pgn-size-color-picker-md: calc(1.3333em + 1.125rem + 2px);
+  --pgn-size-color-picker-sm: 2rem;
   --pgn-size-code-pre-scrollable-max-height: 340px;
   --pgn-size-chip-icon: 1.25rem;
   --pgn-size-chip-border-radius: .25rem;
