@@ -1,5 +1,5 @@
 {
-  "lastModified": 1681999681366,
+  "lastModified": 1682086141864,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -21845,27 +21845,27 @@
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 695,
+            "line": 697,
             "column": 8
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 811,
+            "line": 815,
             "column": 10
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 821,
+            "line": 825,
             "column": 10
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 871,
+            "line": 875,
             "column": 10
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 908,
+            "line": 913,
             "column": 12
           },
           {
@@ -21947,7 +21947,7 @@
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 701,
+            "line": 703,
             "column": 10
           },
           {
@@ -22759,17 +22759,17 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
-            "line": 35,
+            "line": 44,
             "column": 8
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
-            "line": 43,
+            "line": 52,
             "column": 8
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCapAmount.jsx",
-            "line": 25,
+            "line": 35,
             "column": 8
           },
           {
@@ -22784,12 +22784,12 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
-            "line": 35,
+            "line": 43,
             "column": 8
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
-            "line": 45,
+            "line": 53,
             "column": 8
           }
         ],
@@ -22806,17 +22806,17 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
-            "line": 34,
+            "line": 43,
             "column": 6
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
-            "line": 42,
+            "line": 51,
             "column": 6
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCapAmount.jsx",
-            "line": 24,
+            "line": 34,
             "column": 6
           },
           {
@@ -22831,12 +22831,12 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
-            "line": 34,
+            "line": 42,
             "column": 6
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
-            "line": 44,
+            "line": 52,
             "column": 6
           }
         ],
@@ -24120,7 +24120,6 @@
       }
     },
     {
-      "version": "20.30.1",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
@@ -24635,6 +24634,11 @@
             "column": 8
           },
           {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
+            "line": 59,
+            "column": 10
+          },
+          {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/GroupFeedback/GroupFeedbackRow.jsx",
             "line": 21,
             "column": 4
@@ -24909,6 +24913,16 @@
             "filePath": "src/editors/containers/EditorContainer/index.jsx",
             "line": 36,
             "column": 10
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
+            "line": 60,
+            "column": 12
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
+            "line": 63,
+            "column": 12
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/index.jsx",
@@ -25463,8 +25477,8 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
-            "line": 33,
-            "column": 14
+            "line": 34,
+            "column": 16
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/TypeRow.jsx",
@@ -25699,8 +25713,8 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
-            "line": 31,
-            "column": 4
+            "line": 32,
+            "column": 6
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
@@ -25920,8 +25934,8 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
-            "line": 32,
-            "column": 11
+            "line": 33,
+            "column": 13
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/LicenseWidget/LicenseSelector.jsx",
@@ -26166,10 +26180,17 @@
             "column": 4
           }
         ],
+        "AlertModal": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
+            "line": 54,
+            "column": 6
+          }
+        ],
         "Container": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
-            "line": 39,
+            "line": 91,
             "column": 10
           },
           {
@@ -27371,7 +27392,7 @@
       }
     },
     {
-      "version": "20.28.5",
+      "version": "20.30.1",
       "name": "@edx/frontend-template-application",
       "repository": {
         "type": "git",
@@ -27737,7 +27758,7 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/ProductRecommendations/index.jsx",
-            "line": 15,
+            "line": 25,
             "column": 4
           },
           {
