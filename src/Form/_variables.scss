@@ -1,3 +1,5 @@
+// stylelint-disable max-line-length
+
 $input-padding-y: var(--pgn-spacing-form-input-padding-y-base) !default;
 $input-padding-x: var(--pgn-spacing-form-input-padding-x-base) !default;
 $input-font-family: var(--pgn-typography-form-input-font-family) !default;
@@ -88,6 +90,8 @@ $custom-control-indicator-disabled-bg: var(--pgn-color-form-control-indicator-bg
 $custom-control-label-disabled-color: var(--pgn-color-form-control-label-disabled) !default;
 
 $custom-control-indicator-checked-color: var(--pgn-color-form-control-indicator-checked-base) !default;
+$custom-control-indicator-checked-valid-color: var(--pgn-color-form-control-indicator-checked-valid) !default;
+$custom-control-indicator-checked-invalid-color: var(--pgn-color-form-control-indicator-checked-invalid) !default;
 $custom-control-indicator-checked-bg: var(--pgn-color-form-control-indicator-checked-bg-base) !default;
 $custom-control-indicator-checked-disabled-bg: var(--pgn-color-form-control-indicator-checked-bg-disabled) !default;
 
@@ -107,24 +111,21 @@ $custom-control-indicator-active-bg: var(--pgn-color-form-control-indicator-acti
 $custom-control-indicator-active-box-shadow: var(--pgn-elevation-form-control-indicator-active) !default;
 $custom-control-indicator-active-border-color: var(--pgn-color-form-control-indicator-active-border) !default;
 $custom-checkbox-indicator-border-radius: var(--pgn-size-form-control-border-checkbox-indicator-radius) !default;
-$custom-checkbox-indicator-icon-checked: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked) !default;
+$custom-checkbox-indicator-icon-checked: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-base) !default;
+$custom-checkbox-indicator-icon-valid-checked: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-valid) !default;
+$custom-checkbox-indicator-icon-invalid-checked: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-invalid) !default;
 
 $custom-checkbox-indicator-indeterminate-bg: var(--pgn-color-form-control-checkbox-indicator-indeterminate-bg) !default;
 
-// stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-color: var(--pgn-color-form-control-checkbox-indicator-indeterminate-base) !default;
-
-// stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-icon-indeterminate: var(--pgn-other-content-form-control-checkbox-indicator-indeterminate-icon) !default;
-
-// stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-box-shadow: var(--pgn-elevation-form-control-checkbox-indicator-indeterminate) !default;
-
-// stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-border-color: var(--pgn-color-form-control-checkbox-indicator-indeterminate-border) !default;
+$custom-radio-indicator-icon-valid-checked: var(--pgn-other-content-form-control-radio-indicator-icon-checked-valid) !default;
+$custom-radio-indicator-icon-invalid-checked: var(--pgn-other-content-form-control-radio-indicator-icon-checked-invalid) !default;
 
 $custom-radio-indicator-border-radius: var(--pgn-size-form-control-border-radio-indicator-radius) !default;
-$custom-radio-indicator-icon-checked: var(--pgn-other-content-form-control-radio-indicator-icon-checked) !default;
+$custom-radio-indicator-icon-checked: var(--pgn-other-content-form-control-radio-indicator-icon-checked-base) !default;
 
 $custom-switch-indicator-icon-off: var(--pgn-other-content-form-control-switch-indicator-icon-off) !default;
 $custom-switch-indicator-icon-on: var(--pgn-other-content-form-control-switch-indicator-icon-on) !default;

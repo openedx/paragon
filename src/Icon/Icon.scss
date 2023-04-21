@@ -12,6 +12,11 @@
     height: $icon-inline;
   }
 
+  &.pgn__icon__xs {
+    width: $icon-xs;
+    height: $icon-xs;
+  }
+
   &.pgn__icon__sm {
     width: $icon-sm;
     height: $icon-sm;
