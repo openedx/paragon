@@ -1,7 +1,7 @@
 // Icons sizes
 
 $icon-inline: var(--pgn-size-icon-inline) !default;
-$icon-xs: 1rem !default;
+$icon-xs: var(--pgn-size-icon-xs) !default;
 $icon-sm: var(--pgn-size-icon-sm) !default;
 $icon-md: var(--pgn-size-icon-md) !default;
 $icon-lg: var(--pgn-size-icon-lg) !default;
