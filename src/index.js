@@ -38,7 +38,6 @@ export {
 export {
   default as Carousel, CarouselItem, CAROUSEL_NEXT_LABEL_TEXT, CAROUSEL_PREV_LABEL_TEXT,
 } from './Carousel';
-export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as CloseButton } from './CloseButton';
 export { default as Container } from './Container';
 export { default as Layout, Col, Row } from './Layout';
@@ -134,7 +133,6 @@ export {
   TabPane,
 } from './Tabs';
 export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
-export { default as Tooltip } from './Tooltip';
 export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';
 export { default as DataTable } from './DataTable';

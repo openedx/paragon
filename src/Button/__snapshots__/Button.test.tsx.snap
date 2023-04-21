@@ -82,6 +82,35 @@ exports[`<Button /> correct rendering renders with props iconAfter and size 1`] 
 </button>
 `;
 
+exports[`<Button /> correct rendering renders with props iconAfter and size 1`] = `
+<button
+  className="btn btn-primary btn-md"
+  disabled={false}
+  type="button"
+>
+  Button
+  <span
+    className="pgn__icon pgn__icon__md btn-icon-after"
+  >
+    <svg
+      aria-hidden={true}
+      fill="none"
+      focusable={false}
+      height={24}
+      role="img"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
 exports[`<Button /> correct rendering renders with props iconBefore 1`] = `
 <button
   className="btn btn-primary"
@@ -180,6 +209,35 @@ exports[`<Button /> correct rendering renders with props iconBefore and size 1`]
     >
       <path
         d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
+  Button
+</button>
+`;
+
+exports[`<Button /> correct rendering renders with props iconBefore and size 1`] = `
+<button
+  className="btn btn-primary btn-md"
+  disabled={false}
+  type="button"
+>
+  <span
+    className="pgn__icon pgn__icon__md btn-icon-before"
+  >
+    <svg
+      aria-hidden={true}
+      fill="none"
+      focusable={false}
+      height={24}
+      role="img"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
         fill="currentColor"
       />
     </svg>

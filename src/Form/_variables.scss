@@ -88,19 +88,18 @@ $custom-control-indicator-disabled-bg: var(--pgn-color-form-control-indicator-bg
 $custom-control-label-disabled-color: var(--pgn-color-form-control-label-disabled) !default;
 
 $custom-control-indicator-checked-color: var(--pgn-color-form-control-indicator-checked-base) !default;
+$custom-control-indicator-checked-valid-color:    theme-color("success") !default;
+$custom-control-indicator-checked-invalid-color:  theme-color("danger") !default;
 $custom-control-indicator-checked-bg: var(--pgn-color-form-control-indicator-checked-bg-base) !default;
 $custom-control-indicator-checked-disabled-bg: var(--pgn-color-form-control-indicator-checked-bg-disabled) !default;
-
 // stylelint-disable-next-line max-line-length
 $custom-control-indicator-checked-box-shadow: var(--pgn-elevation-form-control-indicator-checked-base) !default;
-
 // stylelint-disable-next-line max-line-length
 $custom-control-indicator-checked-valid-color:    theme-color("success") !default;
 $custom-control-indicator-checked-invalid-color:  theme-color("danger") !default;
 $custom-control-indicator-checked-border-color: var(--pgn-color-form-control-indicator-checked-border-base) !default;
 
 $custom-control-indicator-focus-box-shadow: var(--pgn-elevation-form-control-indicator-checked-focus) !default;
-
 // stylelint-disable-next-line max-line-length
 $custom-control-indicator-focus-border-color: var(--pgn-color-form-control-indicator-checked-border-focus) !default;
 
@@ -110,18 +109,17 @@ $custom-control-indicator-active-box-shadow: var(--pgn-elevation-form-control-in
 $custom-control-indicator-active-border-color: var(--pgn-color-form-control-indicator-active-border) !default;
 $custom-checkbox-indicator-border-radius: var(--pgn-size-form-control-border-checkbox-indicator-radius) !default;
 $custom-checkbox-indicator-icon-checked: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked) !default;
+$custom-checkbox-indicator-icon-valid-checked:         str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='#{$custom-control-indicator-checked-valid-color}'/></svg>"), "#", "%23") !default;
+$custom-checkbox-indicator-icon-invalid-checked:       str-replace(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='#{$custom-control-indicator-checked-invalid-color}'/></svg>"), "#", "%23") !default;
 
 $custom-checkbox-indicator-indeterminate-bg: var(--pgn-color-form-control-checkbox-indicator-indeterminate-bg) !default;
 
 // stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-color: var(--pgn-color-form-control-checkbox-indicator-indeterminate-base) !default;
-
 // stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-icon-indeterminate: var(--pgn-other-content-form-control-checkbox-indicator-indeterminate-icon) !default;
-
 // stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-box-shadow: var(--pgn-elevation-form-control-checkbox-indicator-indeterminate) !default;
-
 // stylelint-disable-next-line max-line-length
 $custom-checkbox-indicator-indeterminate-border-color: var(--pgn-color-form-control-checkbox-indicator-indeterminate-border) !default;
 $custom-radio-indicator-icon-valid-checked:     str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-valid-color}'/%3e%3c/svg%3e"), "#", "%23") !default;

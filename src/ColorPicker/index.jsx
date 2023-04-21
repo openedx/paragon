@@ -15,6 +15,7 @@ function ColorPicker({
 }) {
   const [isOpen, open, close] = useToggle(false);
   const [target, setTarget] = React.useState(null);
+  const [hexValid, setHexValid] = React.useState(true);
 
   const colorIsValid = (colorToValidate) => {
     const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
@@ -28,8 +29,6 @@ function ColorPicker({
 
     return colorString.slice(0, 7);
   };
-
-  const [hexValid, setHexValid] = React.useState(() => (color === '' || colorIsValid(formatHexColorString(color))));
 
   const [hexColorString, setHexColorString] = React.useState(() => {
     if (color === '') {
