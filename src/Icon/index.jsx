@@ -19,6 +19,7 @@ function Icon({
   hidden,
   screenReaderText,
   svgAttrs,
+  size,
   ...attrs
 }) {
   if (Component) {
@@ -34,7 +35,7 @@ function Icon({
 
     return (
       <span
-        className={classNames('pgn__icon', className)}
+        className={classNames('pgn__icon', { [`pgn__icon__${size}`]: !!size }, className)}
         id={id}
         {...attrs}
       >
@@ -81,6 +82,9 @@ Icon.propTypes = {
   /** the `id` property of the Icon element, by default this value is generated with the `newId` function with the `prefix` of `Icon`. */
   id: PropTypes.string,
   // eslint-disable-next-line max-len
+  /** The size of the icon. */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
+  // eslint-disable-next-line max-len
   /** A class name that will define what the Icon looks like. */
   className: PropTypes.string,
   // eslint-disable-next-line max-len
@@ -98,6 +102,7 @@ Icon.defaultProps = {
   id: undefined,
   hidden: true,
   screenReaderText: undefined,
+  size: undefined,
   className: undefined,
 };
 
