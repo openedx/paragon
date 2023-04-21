@@ -18,9 +18,9 @@ const WrappedButton = React.forwardRef(({
     className={classNames(props.className)}
     ref={ref}
   >
-    {iconBefore && <Icon className={classNames('btn-icon-before', props.size && `pgn__icon__${props.size}`)} src={iconBefore} />}
+    {iconBefore && <Icon className="btn-icon-before" size={props.size} src={iconBefore} />}
     {children}
-    {iconAfter && <Icon className={classNames('btn-icon-after', props.size && `pgn__icon__${props.size}`)} src={iconAfter} />}
+    {iconAfter && <Icon className="btn-icon-after" size={props.size} src={iconAfter} />}
   </Button>
 ));
 
