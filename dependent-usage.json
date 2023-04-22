@@ -1,5 +1,5 @@
 {
-  "lastModified": 1682086141864,
+  "lastModified": 1682172501904,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -13787,7 +13787,7 @@
       }
     },
     {
-      "version": "20.28.1",
+      "version": "20.31.1",
       "name": "frontend-app-learner-portal-enterprise",
       "repository": {
         "type": "git",
@@ -13909,23 +13909,23 @@
             "column": 6
           },
           {
+            "filePath": "src/components/course/course-header/CourseHeader.jsx",
+            "line": 42,
+            "column": 6
+          },
+          {
             "filePath": "src/components/course/CourseEnrollmentFailedAlert.jsx",
             "line": 109,
             "column": 4
           },
           {
-            "filePath": "src/components/course/CourseHeader.jsx",
-            "line": 42,
+            "filePath": "src/components/course/CoursePage.jsx",
+            "line": 149,
             "column": 6
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 119,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/course/CoursePage.jsx",
-            "line": 145,
+            "line": 175,
             "column": 10
           },
           {
@@ -14085,7 +14085,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 199,
+            "line": 198,
             "column": 10
           }
         ],
@@ -14126,144 +14126,172 @@
             "column": 8
           }
         ],
-        "Alert": [
+        "Button": [
           {
-            "filePath": "src/components/course/CourseEnrollmentFailedAlert.jsx",
-            "line": 97,
-            "column": 52
-          },
-          {
-            "filePath": "src/components/course/CourseEnrollmentFailedAlert.jsx",
-            "line": 110,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/course/LicenseRequestedAlert.jsx",
-            "line": 51,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 119,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/ModalError.jsx",
-            "line": 10,
+            "filePath": "src/components/course/course-header/course-run-actions/BasicNavigateToCourseware.jsx",
+            "line": 14,
             "column": 4
           },
           {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/ModalError.jsx",
-            "line": 10,
-            "column": 4
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
-            "line": 77,
+            "filePath": "src/components/course/EnrollModal.jsx",
+            "line": 91,
             "column": 8
           },
           {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollmentsAlert.jsx",
-            "line": 19,
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
+            "line": 59,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpcomingCourseCard.jsx",
+            "line": 10,
             "column": 4
           },
           {
-            "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
-            "line": 30,
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpgradeCourseButton.jsx",
+            "line": 46,
             "column": 6
           },
           {
-            "filePath": "src/components/enterprise-user-subsidy/enterprise-offers/EnterpriseOffersBalanceAlert.jsx",
-            "line": 50,
+            "filePath": "src/components/dashboard/main-content/CourseRecommendations.jsx",
+            "line": 24,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
+            "line": 43,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/dashboard/sidebar/SubsidiesSummary.jsx",
+            "line": 67,
             "column": 6
           },
           {
-            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 148,
-            "column": 18
+            "filePath": "src/components/enterprise-banner/EnterpriseBanner.jsx",
+            "line": 24,
+            "column": 12
           },
           {
-            "filePath": "src/components/license-activation/LicenseActivation.jsx",
-            "line": 56,
-            "column": 47
+            "filePath": "src/components/enterprise-invite/EnterpriseInvitePage.jsx",
+            "line": 104,
+            "column": 10
           },
           {
-            "filePath": "src/components/license-activation/LicenseActivationErrorAlert.jsx",
-            "line": 11,
+            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UError.jsx",
+            "line": 66,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
+            "line": 38,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/my-career/CategoryCard.jsx",
+            "line": 88,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/my-career/CategoryCard.jsx",
+            "line": 107,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/my-career/VisualizeCareer.jsx",
+            "line": 72,
+            "column": 16
+          },
+          {
+            "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
+            "line": 54,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/pathway/PathwayModal.jsx",
+            "line": 44,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/preview-expand/PreviewExpand.jsx",
+            "line": 21,
             "column": 6
           },
           {
-            "filePath": "src/components/license-activation/LicenseActivationPage.jsx",
-            "line": 52,
-            "column": 47
+            "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
+            "line": 51,
+            "column": 10
           },
           {
-            "filePath": "src/components/my-career/AddJobRole.jsx",
-            "line": 39,
-            "column": 6
+            "filePath": "src/components/program-progress/ProgramListingPage.jsx",
+            "line": 45,
+            "column": 14
           },
           {
-            "filePath": "src/components/program/ProgramCourses.jsx",
-            "line": 93,
-            "column": 20
+            "filePath": "src/components/program-progress/ProgramPathwayOpportunity.jsx",
+            "line": 16,
+            "column": 16
           },
           {
-            "filePath": "src/components/search/SearchError.jsx",
-            "line": 11,
-            "column": 4
+            "filePath": "src/components/program-progress/ProgramProgressSidebar.jsx",
+            "line": 76,
+            "column": 14
           },
           {
-            "filePath": "src/components/search/SearchNoResults.jsx",
-            "line": 14,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/skills-quiz/SearchCourseCard.jsx",
-            "line": 90,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 164,
-            "column": 6
+            "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
+            "line": 59,
+            "column": 10
           },
           {
             "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
-            "line": 161,
-            "column": 10
-          }
-        ],
-        "Error": [
-          {
-            "filePath": "src/components/course/CourseEnrollmentFailedAlert.jsx",
-            "line": 110,
-            "column": 36
+            "line": 138,
+            "column": 12
           },
           {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 119,
-            "column": 44
+            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
+            "line": 284,
+            "column": 16
           },
           {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/ModalError.jsx",
-            "line": 10,
-            "column": 34
+            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
+            "line": 296,
+            "column": 12
           },
           {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/ModalError.jsx",
-            "line": 10,
-            "column": 34
+            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
+            "line": 300,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
+            "line": 308,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
+            "line": 312,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
+            "line": 315,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
+            "line": 319,
+            "column": 12
           }
         ],
         "Row": [
           {
-            "filePath": "src/components/course/CourseHeader.jsx",
+            "filePath": "src/components/course/course-header/CourseHeader.jsx",
             "line": 43,
             "column": 8
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 146,
+            "line": 176,
             "column": 12
           },
           {
@@ -14469,18 +14497,18 @@
         ],
         "Col": [
           {
-            "filePath": "src/components/course/CourseHeader.jsx",
+            "filePath": "src/components/course/course-header/CourseHeader.jsx",
             "line": 44,
             "column": 10
           },
           {
-            "filePath": "src/components/course/CourseHeader.jsx",
-            "line": 96,
+            "filePath": "src/components/course/course-header/CourseHeader.jsx",
+            "line": 97,
             "column": 10
           },
           {
-            "filePath": "src/components/course/CourseHeader.jsx",
-            "line": 99,
+            "filePath": "src/components/course/course-header/CourseHeader.jsx",
+            "line": 100,
             "column": 10
           },
           {
@@ -14706,7 +14734,7 @@
         ],
         "Breadcrumb": [
           {
-            "filePath": "src/components/course/CourseHeader.jsx",
+            "filePath": "src/components/course/course-header/CourseHeader.jsx",
             "line": 47,
             "column": 16
           },
@@ -14721,159 +14749,20 @@
             "column": 12
           }
         ],
-        "MediaQuery": [
-          {
-            "filePath": "src/components/course/CourseMainContent.jsx",
-            "line": 38,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/course/CoursePage.jsx",
-            "line": 150,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
-            "line": 45,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 25,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 57,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/my-career/AddJobRole.jsx",
-            "line": 84,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramProgressPage.jsx",
-            "line": 111,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/program/ProgramEndorsements.jsx",
-            "line": 17,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/program/ProgramPage.jsx",
-            "line": 80,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/site-header/SiteHeader.jsx",
-            "line": 79,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/site-header/SiteHeader.jsx",
-            "line": 82,
-            "column": 6
-          }
-        ],
-        "breakpoints": [
-          {
-            "filePath": "src/components/course/CourseMainContent.jsx",
-            "line": 38,
-            "column": 28
-          },
-          {
-            "filePath": "src/components/course/CoursePage.jsx",
-            "line": 150,
-            "column": 36
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
-            "line": 45,
-            "column": 32
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 25,
-            "column": 28
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 57,
-            "column": 28
-          },
-          {
-            "filePath": "src/components/dashboard/tests/DashboardPage.test.jsx",
-            "line": 107,
-            "column": 9
-          },
-          {
-            "filePath": "src/components/dashboard/tests/DashboardPage.test.jsx",
-            "line": 215,
-            "column": 62
-          },
-          {
-            "filePath": "src/components/my-career/AddJobRole.jsx",
-            "line": 84,
-            "column": 32
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 37,
-            "column": 23
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 39,
-            "column": 30
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 41,
-            "column": 30
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramProgressPage.jsx",
-            "line": 111,
-            "column": 36
-          },
-          {
-            "filePath": "src/components/program/ProgramEndorsements.jsx",
-            "line": 17,
-            "column": 30
-          },
-          {
-            "filePath": "src/components/program/ProgramHeader.jsx",
-            "line": 25,
-            "column": 67
-          },
-          {
-            "filePath": "src/components/program/ProgramPage.jsx",
-            "line": 80,
-            "column": 34
-          },
-          {
-            "filePath": "src/components/search/content-highlights/ContentHighlightSet.jsx",
-            "line": 34,
-            "column": 26
-          },
-          {
-            "filePath": "src/components/site-header/tests/SiteHeader.test.jsx",
-            "line": 41,
-            "column": 9
-          }
-        ],
         "Card": [
           {
-            "filePath": "src/components/course/CourseRecommendationCard.jsx",
-            "line": 45,
+            "filePath": "src/components/course/course-header/CourseRunCard.jsx",
+            "line": 40,
             "column": 4
           },
           {
-            "filePath": "src/components/course/CourseRunCard.jsx",
-            "line": 227,
+            "filePath": "src/components/course/course-header/deprecated/CourseRunCard.jsx",
+            "line": 231,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/course/CourseRecommendationCard.jsx",
+            "line": 45,
             "column": 4
           },
           {
@@ -14977,139 +14866,20 @@
             "column": 8
           }
         ],
-        "Card.ImageCap": [
-          {
-            "filePath": "src/components/course/CourseRecommendationCard.jsx",
-            "line": 59,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
-            "line": 23,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/pathway/SearchPathwayCard.jsx",
-            "line": 108,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 63,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/search/content-highlights/HighlightedContentCard.jsx",
-            "line": 63,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/search/SearchCourseCard.jsx",
-            "line": 90,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/search/SearchProgramCard.jsx",
-            "line": 106,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/skills-quiz/CardLoadingSkeleton.jsx",
-            "line": 11,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/skills-quiz/CourseCard.jsx",
-            "line": 48,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 191,
-            "column": 14
-          }
-        ],
-        "Card.Header": [
-          {
-            "filePath": "src/components/course/CourseRecommendationCard.jsx",
-            "line": 65,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
-            "line": 12,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/executive-education-2u/components/CourseSummaryCard.jsx",
-            "line": 14,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 85,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
-            "line": 29,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/pathway/SearchPathwayCard.jsx",
-            "line": 112,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
-            "line": 71,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/search/content-highlights/HighlightedContentCard.jsx",
-            "line": 70,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/search/SearchCourseCard.jsx",
-            "line": 96,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/search/SearchProgramCard.jsx",
-            "line": 112,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/skills-quiz/CardLoadingSkeleton.jsx",
-            "line": 12,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/skills-quiz/CourseCard.jsx",
-            "line": 54,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/skills-quiz/JobCardComponent.jsx",
-            "line": 18,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 197,
-            "column": 14
-          }
-        ],
         "Card.Section": [
+          {
+            "filePath": "src/components/course/course-header/CourseRunCard.jsx",
+            "line": 41,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/course/course-header/deprecated/CourseRunCard.jsx",
+            "line": 232,
+            "column": 6
+          },
           {
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
             "line": 81,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/course/CourseRunCard.jsx",
-            "line": 228,
             "column": 6
           },
           {
@@ -15243,39 +15013,17 @@
             "column": 10
           }
         ],
-        "Card.Footer": [
-          {
-            "filePath": "src/components/course/CourseRecommendationCard.jsx",
-            "line": 82,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 106,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/search/content-highlights/HighlightedContentCard.jsx",
-            "line": 83,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/search/SearchCourseCard.jsx",
-            "line": 109,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/search/SearchProgramCard.jsx",
-            "line": 138,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 231,
-            "column": 14
-          }
-        ],
         "CardGrid": [
+          {
+            "filePath": "src/components/course/course-header/CourseRunCards.jsx",
+            "line": 19,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/course/course-header/deprecated/CourseRunCards.jsx",
+            "line": 24,
+            "column": 4
+          },
           {
             "filePath": "src/components/course/CourseRecommendations.jsx",
             "line": 16,
@@ -15285,11 +15033,6 @@
             "filePath": "src/components/course/CourseRecommendations.jsx",
             "line": 26,
             "column": 10
-          },
-          {
-            "filePath": "src/components/course/CourseRunCards.jsx",
-            "line": 24,
-            "column": 4
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
@@ -15350,6 +15093,482 @@
             "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
             "line": 147,
             "column": 10
+          }
+        ],
+        "Stack": [
+          {
+            "filePath": "src/components/course/course-header/data/hooks/useCourseRunCardAction.jsx",
+            "line": 58,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/course/course-header/data/hooks/useCourseRunCardAction.jsx",
+            "line": 78,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/pathway/SearchPathwayCard.jsx",
+            "line": 121,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/progress-category-bubbles/ProgressCategoryBubbles.jsx",
+            "line": 7,
+            "column": 2
+          },
+          {
+            "filePath": "src/components/search/content-highlights/ContentHighlights.jsx",
+            "line": 38,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/search/Search.jsx",
+            "line": 136,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/skills-quiz/CourseCard.jsx",
+            "line": 72,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
+            "line": 210,
+            "column": 16
+          },
+          {
+            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
+            "line": 275,
+            "column": 20
+          }
+        ],
+        "Alert": [
+          {
+            "filePath": "src/components/course/CourseEnrollmentFailedAlert.jsx",
+            "line": 97,
+            "column": 52
+          },
+          {
+            "filePath": "src/components/course/CourseEnrollmentFailedAlert.jsx",
+            "line": 110,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/course/LicenseRequestedAlert.jsx",
+            "line": 51,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+            "line": 119,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/ModalError.jsx",
+            "line": 10,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/ModalError.jsx",
+            "line": 10,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
+            "line": 77,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollmentsAlert.jsx",
+            "line": 19,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
+            "line": 30,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/enterprise-user-subsidy/enterprise-offers/EnterpriseOffersBalanceAlert.jsx",
+            "line": 50,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
+            "line": 148,
+            "column": 18
+          },
+          {
+            "filePath": "src/components/license-activation/LicenseActivation.jsx",
+            "line": 56,
+            "column": 47
+          },
+          {
+            "filePath": "src/components/license-activation/LicenseActivationErrorAlert.jsx",
+            "line": 11,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/license-activation/LicenseActivationPage.jsx",
+            "line": 52,
+            "column": 47
+          },
+          {
+            "filePath": "src/components/my-career/AddJobRole.jsx",
+            "line": 39,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/program/ProgramCourses.jsx",
+            "line": 93,
+            "column": 20
+          },
+          {
+            "filePath": "src/components/search/SearchError.jsx",
+            "line": 11,
+            "column": 4
+          },
+          {
+            "filePath": "src/components/search/SearchNoResults.jsx",
+            "line": 14,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/skills-quiz/SearchCourseCard.jsx",
+            "line": 90,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
+            "line": 164,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
+            "line": 161,
+            "column": 10
+          }
+        ],
+        "Error": [
+          {
+            "filePath": "src/components/course/CourseEnrollmentFailedAlert.jsx",
+            "line": 110,
+            "column": 36
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+            "line": 119,
+            "column": 44
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/ModalError.jsx",
+            "line": 10,
+            "column": 34
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/ModalError.jsx",
+            "line": 10,
+            "column": 34
+          }
+        ],
+        "MediaQuery": [
+          {
+            "filePath": "src/components/course/CourseMainContent.jsx",
+            "line": 38,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/course/CoursePage.jsx",
+            "line": 180,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
+            "line": 45,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
+            "line": 25,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
+            "line": 57,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/my-career/AddJobRole.jsx",
+            "line": 84,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramProgressPage.jsx",
+            "line": 111,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/program/ProgramEndorsements.jsx",
+            "line": 17,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/program/ProgramPage.jsx",
+            "line": 80,
+            "column": 12
+          },
+          {
+            "filePath": "src/components/site-header/SiteHeader.jsx",
+            "line": 79,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/site-header/SiteHeader.jsx",
+            "line": 82,
+            "column": 6
+          }
+        ],
+        "breakpoints": [
+          {
+            "filePath": "src/components/course/CourseMainContent.jsx",
+            "line": 38,
+            "column": 28
+          },
+          {
+            "filePath": "src/components/course/CoursePage.jsx",
+            "line": 180,
+            "column": 36
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
+            "line": 45,
+            "column": 32
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
+            "line": 25,
+            "column": 28
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
+            "line": 57,
+            "column": 28
+          },
+          {
+            "filePath": "src/components/dashboard/tests/DashboardPage.test.jsx",
+            "line": 107,
+            "column": 9
+          },
+          {
+            "filePath": "src/components/dashboard/tests/DashboardPage.test.jsx",
+            "line": 215,
+            "column": 62
+          },
+          {
+            "filePath": "src/components/my-career/AddJobRole.jsx",
+            "line": 84,
+            "column": 32
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
+            "line": 37,
+            "column": 23
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
+            "line": 39,
+            "column": 30
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
+            "line": 41,
+            "column": 30
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramProgressPage.jsx",
+            "line": 111,
+            "column": 36
+          },
+          {
+            "filePath": "src/components/program/ProgramEndorsements.jsx",
+            "line": 17,
+            "column": 30
+          },
+          {
+            "filePath": "src/components/program/ProgramHeader.jsx",
+            "line": 25,
+            "column": 67
+          },
+          {
+            "filePath": "src/components/program/ProgramPage.jsx",
+            "line": 80,
+            "column": 34
+          },
+          {
+            "filePath": "src/components/search/content-highlights/ContentHighlightSet.jsx",
+            "line": 34,
+            "column": 26
+          },
+          {
+            "filePath": "src/components/site-header/tests/SiteHeader.test.jsx",
+            "line": 41,
+            "column": 9
+          }
+        ],
+        "Card.ImageCap": [
+          {
+            "filePath": "src/components/course/CourseRecommendationCard.jsx",
+            "line": 59,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
+            "line": 23,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/pathway/SearchPathwayCard.jsx",
+            "line": 108,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
+            "line": 63,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/search/content-highlights/HighlightedContentCard.jsx",
+            "line": 63,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/search/SearchCourseCard.jsx",
+            "line": 90,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/search/SearchProgramCard.jsx",
+            "line": 106,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/skills-quiz/CardLoadingSkeleton.jsx",
+            "line": 11,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/skills-quiz/CourseCard.jsx",
+            "line": 48,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
+            "line": 191,
+            "column": 14
+          }
+        ],
+        "Card.Header": [
+          {
+            "filePath": "src/components/course/CourseRecommendationCard.jsx",
+            "line": 65,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/dashboard/sidebar/SidebarCard.jsx",
+            "line": 12,
+            "column": 14
+          },
+          {
+            "filePath": "src/components/executive-education-2u/components/CourseSummaryCard.jsx",
+            "line": 14,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/my-career/CategoryCard.jsx",
+            "line": 85,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
+            "line": 29,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/pathway/SearchPathwayCard.jsx",
+            "line": 112,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/program-progress/ProgramListingCard.jsx",
+            "line": 71,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/search/content-highlights/HighlightedContentCard.jsx",
+            "line": 70,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/search/SearchCourseCard.jsx",
+            "line": 96,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/search/SearchProgramCard.jsx",
+            "line": 112,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/skills-quiz/CardLoadingSkeleton.jsx",
+            "line": 12,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/skills-quiz/CourseCard.jsx",
+            "line": 54,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/skills-quiz/JobCardComponent.jsx",
+            "line": 18,
+            "column": 10
+          },
+          {
+            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
+            "line": 197,
+            "column": 14
+          }
+        ],
+        "Card.Footer": [
+          {
+            "filePath": "src/components/course/CourseRecommendationCard.jsx",
+            "line": 82,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/my-career/CategoryCard.jsx",
+            "line": 106,
+            "column": 8
+          },
+          {
+            "filePath": "src/components/search/content-highlights/HighlightedContentCard.jsx",
+            "line": 83,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/search/SearchCourseCard.jsx",
+            "line": 109,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/search/SearchProgramCard.jsx",
+            "line": 138,
+            "column": 6
+          },
+          {
+            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
+            "line": 231,
+            "column": 14
           }
         ],
         "Icon": [
@@ -15707,6 +15926,11 @@
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
             "line": 309,
             "column": 14
+          },
+          {
+            "filePath": "src/components/stateful-enroll/StatefulEnroll.jsx",
+            "line": 112,
+            "column": 4
           }
         ],
         "Tabs": [
@@ -15951,153 +16175,6 @@
             "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
             "line": 58,
             "column": 8
-          }
-        ],
-        "Button": [
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
-            "line": 59,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpcomingCourseCard.jsx",
-            "line": 10,
-            "column": 4
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpgradeCourseButton.jsx",
-            "line": 46,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/CourseRecommendations.jsx",
-            "line": 24,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
-            "line": 43,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/dashboard/sidebar/SubsidiesSummary.jsx",
-            "line": 67,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/enterprise-banner/EnterpriseBanner.jsx",
-            "line": 24,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/enterprise-invite/EnterpriseInvitePage.jsx",
-            "line": 104,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/executive-education-2u/ExecutiveEducation2UError.jsx",
-            "line": 66,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
-            "line": 38,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 88,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 107,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/my-career/VisualizeCareer.jsx",
-            "line": 72,
-            "column": 16
-          },
-          {
-            "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
-            "line": 54,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/pathway/PathwayModal.jsx",
-            "line": 44,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/preview-expand/PreviewExpand.jsx",
-            "line": 21,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
-            "line": 51,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramListingPage.jsx",
-            "line": 45,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramPathwayOpportunity.jsx",
-            "line": 16,
-            "column": 16
-          },
-          {
-            "filePath": "src/components/program-progress/ProgramProgressSidebar.jsx",
-            "line": 76,
-            "column": 14
-          },
-          {
-            "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
-            "line": 59,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/skills-quiz/SkillsCourses.jsx",
-            "line": 138,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 285,
-            "column": 16
-          },
-          {
-            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 297,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 301,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 309,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 313,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 316,
-            "column": 12
-          },
-          {
-            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 320,
-            "column": 12
           }
         ],
         "Collapsible": [
@@ -16385,7 +16462,7 @@
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 190,
+            "line": 189,
             "column": 8
           }
         ],
@@ -16415,43 +16492,6 @@
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 128,
             "column": 27
-          }
-        ],
-        "Stack": [
-          {
-            "filePath": "src/components/pathway/SearchPathwayCard.jsx",
-            "line": 121,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/progress-category-bubbles/ProgressCategoryBubbles.jsx",
-            "line": 7,
-            "column": 2
-          },
-          {
-            "filePath": "src/components/search/content-highlights/ContentHighlights.jsx",
-            "line": 38,
-            "column": 6
-          },
-          {
-            "filePath": "src/components/search/Search.jsx",
-            "line": 136,
-            "column": 10
-          },
-          {
-            "filePath": "src/components/skills-quiz/CourseCard.jsx",
-            "line": 72,
-            "column": 8
-          },
-          {
-            "filePath": "src/components/skills-quiz/SearchProgramCard.jsx",
-            "line": 210,
-            "column": 16
-          },
-          {
-            "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 276,
-            "column": 20
           }
         ],
         "StandardModal": [
@@ -16660,69 +16700,69 @@
         "Stepper": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 182,
+            "line": 181,
             "column": 4
           }
         ],
         "ModalDialog": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 183,
+            "line": 182,
             "column": 6
           }
         ],
         "ModalDialog.Body": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 198,
+            "line": 197,
             "column": 8
           }
         ],
         "Stepper.Step": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 200,
+            "line": 199,
             "column": 12
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 265,
+            "line": 264,
             "column": 12
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 290,
+            "line": 289,
             "column": 12
           }
         ],
         "Form.Checkbox": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 229,
+            "line": 228,
             "column": 24
           }
         ],
         "ModalDialog.Footer": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 295,
+            "line": 294,
             "column": 8
           }
         ],
         "Stepper.ActionRow": [
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 296,
+            "line": 295,
             "column": 10
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 308,
+            "line": 307,
             "column": 10
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuizStepper.jsx",
-            "line": 315,
+            "line": 314,
             "column": 10
           }
         ],
@@ -25457,12 +25497,12 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 116,
-            "column": 20
+            "line": 114,
+            "column": 10
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 123,
+            "line": 121,
             "column": 18
           },
           {
@@ -25698,12 +25738,7 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 114,
-            "column": 10
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 121,
+            "line": 119,
             "column": 8
           },
           {
@@ -25924,7 +25959,7 @@
         "DeleteOutline": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
-            "line": 122,
+            "line": 120,
             "column": 15
           },
           {
@@ -27227,7 +27262,7 @@
           },
           {
             "filePath": "src/instructions/proctored_exam/SubmitProctoredExamInstructions.jsx",
-            "line": 51,
+            "line": 62,
             "column": 6
           },
           {
