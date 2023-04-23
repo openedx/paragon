@@ -83,7 +83,6 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
         onClick={submitSegmentEvent}
-        withIcon
         title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
         <p className="small text-gray mb-2">Any Paragon component or export may be added to the code example.</p>
