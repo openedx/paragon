@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, Avatar } from '..';
+import Button from '../Button';
+import Avatar from '../Avatar';
 
 const buttonSizesToAvatarSize = {
   sm: 'xs',

@@ -7,7 +7,7 @@ import { FocusOn } from 'react-focus-on';
 import { tabbable } from 'tabbable';
 
 import { Close } from '../../icons';
-import { Button } from '..';
+import Button from '../Button';
 import Icon from '../Icon';
 import newId from '../utils/newId';
 import Variant from '../utils/constants';
