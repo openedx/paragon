@@ -42,16 +42,18 @@
 
   .nav-link {
     margin-bottom: -$nav-tabs-border-width;
-    border-top: $nav-tabs-border-width solid transparent;
-    border-bottom: $nav-tabs-border-width solid transparent;
-    border-left: none;
-    border-right: none;
+    border: $nav-tabs-border-width solid transparent;
 
     @include border-top-radius($nav-tabs-border-radius);
 
-    @include hover-focus {
+    &:hover {
       border-color: $nav-tabs-link-hover-border-color;
       background-color: $nav-tabs-link-hover-bg;
+    }
+
+    &:focus {
+      border-color: $nav-tabs-link-focus-border-color;
+      outline: 0;
     }
 
     &.disabled {
@@ -66,6 +68,14 @@
     color: $nav-tabs-link-active-color;
     background-color: $nav-tabs-link-active-bg;
     border-color: $nav-tabs-link-active-border-color;
+
+    &:hover {
+      background-color: $nav-tabs-link-hover-bg;
+    }
+
+    &:focus {
+      border-color: $nav-tabs-link-focus-border-color;
+    }
   }
 
   .dropdown-menu {
