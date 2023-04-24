@@ -1,8 +1,7 @@
 import React, { useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Form, FormLabel, Badge,
-} from '../..';
+import Form, { FormLabel } from '../../Form';
+import Badge from '../../Badge';
 import { newId } from '../../utils';
 import LabelledCheckbox from './LabelledCheckbox';
 

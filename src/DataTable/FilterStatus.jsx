@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { Button } from '..';
 import DataTableContext from './DataTableContext';
+import Button from '../Button';
 
 function FilterStatus({
   className, variant, size, clearFiltersText, buttonClassName, showFilteredFields,

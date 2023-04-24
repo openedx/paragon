@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import isRequiredIf from 'react-proptype-conditional-require';
 
-import { Button } from '..';
+import Button from '../Button';
 import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 class StatusAlert extends React.Component {
