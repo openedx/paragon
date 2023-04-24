@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { Button, ProgressBar, Spinner } from '..';
+import Button from '../Button';
+import ProgressBar from '../ProgressBar';
+import Spinner from '../Spinner';
 
 function UploadProgress({
   percent, variant, name, onCancel,

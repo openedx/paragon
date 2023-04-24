@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Input from '../Input';
-import { FormControl } from '..';
+import { FormControl } from '../Form';
 
 const propTypes = {
   /** Id of the form input that the validation is for */

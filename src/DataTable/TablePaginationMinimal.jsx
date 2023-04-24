@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { Pagination } from '..';
 import DataTableContext from './DataTableContext';
+import Pagination from '../Pagination';
 
 function TablePaginationMinimal() {
   const {
