@@ -21,7 +21,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "make build",
-    "build-docs": "cd ./www &&  \"$npm_execpath\" run build",
+    "build-docs": "npm run build --workspace=www",
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "stylelint": "stylelint \"src/**/*.scss\" \"scss/**/*.scss\" \"www/src/**/*.scss\" --config .stylelintrc.json",
@@ -32,7 +32,7 @@
     "start": "npm start --workspace=www",
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
-    "generate-component": "cd component-generator && npm start",
+    "generate-component": "npm start --workspace=component-generator",
     "generate-changelog": "node generate-changelog.js",
     "i18n_compile": "formatjs compile-folder --format transifex ./src/i18n/messages ./src/i18n/messages",
     "i18n_extract": "formatjs extract 'src/**/*.{jsx,js,tsx,ts}' --out-file ./src/i18n/transifex_input.json --format transifex",
