@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Container } from '~paragon-react';
-import { ComponentNavItem } from './Menu';
+import { ComponentNavItem, IComponentNavItem } from './Menu';
 
 const componentsQuery = graphql`
   query componentsQuery {
@@ -44,7 +44,7 @@ function ComponentsList() {
         <div className="pgn-doc__menu-all-components pt-5">
           <h3 className="mb-4">All components (A-Z)</h3>
           <ul className="pgn-doc__menu-component-list list-unstyled small mb-4">
-            {all.map((node: { id: number; }) => ({ key: node.id, ...node })).map(ComponentNavItem)}
+            {all.map((node: IComponentNavItem) => <ComponentNavItem key={node.id} {...node} />)}
           </ul>
         </div>
       </Container>

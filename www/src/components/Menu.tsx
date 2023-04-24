@@ -172,6 +172,7 @@ function Menu() {
               variant={settings.theme === id ? 'primary' : 'outline-primary'}
               size="sm"
               onClick={() => handleSettingsChange('theme', id)}
+              {...settings.theme === id ? { 'data-autofocus': true } : {}}
             >
               {label}
             </Button>
@@ -225,9 +226,7 @@ function Menu() {
               title={fieldValue}
             >
               <ul className="list-unstyled">
-                {nodes
-                  .map((node) => ({ key: node.id, ...node }))
-                  .map(ComponentNavItem)}
+                {nodes.map((node) => <ComponentNavItem key={node.id} {...node} />)}
               </ul>
             </Collapsible>
           ))}
