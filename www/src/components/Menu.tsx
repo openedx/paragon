@@ -141,7 +141,7 @@ MenuComponentListCategory.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-interface IManuQueryComponents {
+interface IMenuQueryComponents {
   categories: Array<{
     fieldValue: string,
     nodes: Array<IComponentNavItem>,
@@ -159,7 +159,7 @@ function Menu() {
     handleSettingsChange,
   } = useContext(SettingsContext);
   const { components } = useStaticQuery(menuQuery);
-  const { categories }: IManuQueryComponents = components;
+  const { categories }: IMenuQueryComponents = components;
 
   return (
     <div className="pgn-doc__menu">
@@ -212,7 +212,7 @@ function Menu() {
           <ul className="list-unstyled foundations-list">
             {foundationLinks.map(link => (
               <li key={link}>
-                <Link to={`/foundations/${link.toLowerCase().trim()}`}>{link}</Link>
+                <Link to={`/foundations/${link.toLowerCase().trim()}`}>{link.replace(/-/g, ' ')}</Link>
               </li>
             ))}
           </ul>
