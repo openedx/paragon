@@ -1,5 +1,5 @@
 {
-  "lastModified": 1682345357886,
+  "lastModified": 1682431742000,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -11247,9 +11247,9 @@
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/AppList.jsx",
-            "line": 51,
+            "line": 57,
             "column": 6,
-            "index": 1916
+            "index": 2288
           }
         ],
         "MailtoLink": [
@@ -11383,41 +11383,35 @@
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/AppList.jsx",
-            "line": 80,
+            "line": 88,
             "column": 28,
-            "index": 2600
+            "index": 3059
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/AppList.test.jsx",
-            "line": 34,
-            "column": 41,
-            "index": 1300
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/AppList.test.jsx",
-            "line": 60,
-            "column": 55,
-            "index": 1975
+            "line": 40,
+            "column": 39,
+            "index": 1607
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/AppList.test.jsx",
             "line": 82,
-            "column": 39,
-            "index": 2999
+            "column": 22,
+            "index": 2870
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/AppList.test.jsx",
             "line": 92,
-            "column": 39,
-            "index": 3446
+            "column": 22,
+            "index": 3289
           }
         ],
         "CardGrid": [
           {
             "filePath": "src/pages-and-resources/discussions/app-list/AppList.jsx",
-            "line": 62,
+            "line": 78,
             "column": 6,
-            "index": 2197
+            "index": 2797
           },
           {
             "filePath": "src/pages-and-resources/pages/PageGrid.jsx",
@@ -16455,15 +16449,15 @@
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 149,
+            "line": 145,
             "column": 6,
-            "index": 4829
+            "index": 4643
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 175,
+            "line": 171,
             "column": 10,
-            "index": 5566
+            "index": 5380
           },
           {
             "filePath": "src/components/course/CourseReview.jsx",
@@ -16899,9 +16893,9 @@
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 176,
+            "line": 172,
             "column": 12,
-            "index": 5617
+            "index": 5431
           },
           {
             "filePath": "src/components/course/CourseReview.jsx",
@@ -18081,9 +18075,9 @@
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 180,
+            "line": 176,
             "column": 14,
-            "index": 5732
+            "index": 5546
           },
           {
             "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
@@ -18149,9 +18143,9 @@
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 180,
+            "line": 176,
             "column": 36,
-            "index": 5754
+            "index": 5568
           },
           {
             "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
@@ -25099,7 +25093,7 @@
       }
     },
     {
-      "version": "20.28.5",
+      "version": "20.32.0",
       "name": "@edx/frontend-app-profile",
       "repository": {
         "type": "git",
@@ -28411,7 +28405,7 @@
       }
     },
     {
-      "version": "20.29.0",
+      "version": "20.32.0",
       "name": "@edx/frontend-component-header-edx",
       "repository": {
         "type": "git",
@@ -32407,7 +32401,7 @@
       }
     },
     {
-      "version": "20.28.3",
+      "version": "20.32.0",
       "name": "@edx/gatsby-react-app",
       "repository": {
         "type": "git",
@@ -33237,12 +33231,6 @@
             "line": 118,
             "column": 14,
             "index": 3872
-          },
-          {
-            "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
-            "line": 45,
-            "column": 14,
-            "index": 1560
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
@@ -35035,12 +35023,6 @@
             "line": 92,
             "column": 16,
             "index": 2817
-          },
-          {
-            "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
-            "line": 29,
-            "column": 8,
-            "index": 896
           }
         ],
         "Card.Body": [
@@ -35275,12 +35257,6 @@
             "line": 50,
             "column": 12,
             "index": 1546
-          },
-          {
-            "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
-            "line": 30,
-            "column": 10,
-            "index": 938
           }
         ],
         "ArrowUpward": [
@@ -35663,22 +35639,6 @@
             "line": 75,
             "column": 10,
             "index": 2420
-          }
-        ],
-        "useMediaQuery": [
-          {
-            "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
-            "line": 19,
-            "column": 23,
-            "index": 565
-          }
-        ],
-        "breakpoints": [
-          {
-            "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
-            "line": 19,
-            "column": 49,
-            "index": 591
           }
         ],
         "Tabs": [
