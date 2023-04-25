@@ -1,31 +1,31 @@
-import breakpointSizes from '../../scss/core/_exports.module.scss';
+// import breakpointSizes from '../../scss/core/_exports.module.scss';
 
 const {
   sm, md, lg, xl, xxl,
-} = breakpointSizes;
+} = {};
 
 const breakpoints = {
   extraSmall: {
-    maxWidth: parseFloat(sm) || 575.98,
+    maxWidth: 575.98,
   },
   small: {
-    minWidth: parseFloat(sm) || 576,
-    maxWidth: parseFloat(md) || 767.98,
+    minWidth: 576,
+    maxWidth: 767.98,
   },
   medium: {
-    minWidth: parseFloat(md) || 768,
-    maxWidth: parseFloat(lg) || 991.98,
+    minWidth: 768,
+    maxWidth: 991.98,
   },
   large: {
-    minWidth: parseFloat(lg) || 992,
-    maxWidth: parseFloat(xl) || 1199.98,
+    minWidth: 992,
+    maxWidth: 1199.98,
   },
   extraLarge: {
-    minWidth: parseFloat(xl) || 1200,
-    maxWidth: parseFloat(xxl) || 1399.98,
+    minWidth: 1200,
+    maxWidth: 1399.98,
   },
   extraExtraLarge: {
-    minWidth: parseFloat(xxl) || 1400,
+    minWidth: 1400,
   },
 };
 

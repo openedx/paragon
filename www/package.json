@@ -46,7 +46,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build --prefix-paths && npm run build-themes",
+    "build": "gatsby build --prefix-paths && npm run build-themes && playroom build",
     "clean": "gatsby clean",
     "develop": "npm run build-themes && gatsby develop",
     "develop:with-theme": "npm run develop",
@@ -63,7 +63,15 @@
     "@types/react-helmet": "^6.1.6",
     "css": "^3.0.0",
     "eslint": "8.18.0",
-    "eslint-import-resolver-webpack": "^0.13.2"
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "playroom": "^0.31.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@svgr/webpack": "6.5.1",
+    "file-loader": "6.2.0"
   },
   "repository": {
     "type": "git",
