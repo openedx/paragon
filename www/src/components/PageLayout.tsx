@@ -14,7 +14,11 @@ import {
   Nav,
   Row,
   Col,
+  Sticky,
+  useMediaQuery,
+  breakpoints,
 } from '~paragon-react';
+import ComponentsList from './ComponentsList';
 import Header from './Header';
 import Menu from './Menu';
 import Settings from './Settings';
@@ -41,6 +45,7 @@ function Layout({
   isMdx,
   tocData,
 }: ILayout) {
+  const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
   const { settings } = useContext(SettingsContext);
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -56,13 +61,17 @@ function Layout({
     <div className="d-flex flex-column">
       <Header
         siteTitle={data.site.siteMetadata?.title || 'Title'}
-        showMinimizedTitle={showMinimizedTitle}
+        showMinimizedTitle={isMobile || showMinimizedTitle}
       />
       <Settings showMinimizedTitle={showMinimizedTitle} />
-      {isMdx ? (
+      {isMdx || !hideFooterComponentMenu ? (
         <Container fluid>
           <Row className="flex-xl-nowrap">
-            <Col className="d-none d-xl-block" xl={settings.containerWidth === 'xl' ? 'auto' : 2} />
+            <Col className="d-none d-xl-block p-0" xl={settings.containerWidth === 'xl' ? 'auto' : 2}>
+              <Sticky offset={6} className="pgn-doc__toc p-0 pt-3">
+                <Menu />
+              </Sticky>
+            </Col>
             <Col
               xl={settings.containerWidth === 'xl' ? 10 : 8}
               lg={9}
@@ -86,11 +95,7 @@ function Layout({
           {children}
         </main>
       )}
-      {!hideFooterComponentMenu && (
-        <Container className="py-3 mt-5 bg-light-200 border-top border-light-300">
-          <Menu />
-        </Container>
-      )}
+      {!hideFooterComponentMenu && <ComponentsList />}
       <Container as="footer" className="py-3 border-top border-light-300">
         <Nav className="d-flex align-items-center">
           <Nav.Item>

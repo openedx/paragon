@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Button, Form, Container, Input, Toast, Icon, IconButtonWithTooltip,
+  Button,
+  Form,
+  Container,
+  Input,
+  Toast,
+  Icon,
+  IconButtonWithTooltip,
 } from '~paragon-react';
 import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 import SEO from '../../components/SEO';
