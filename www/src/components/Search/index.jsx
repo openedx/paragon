@@ -1,6 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { DocSearch } from '@docsearch/react';
+
 import '@docsearch/css';
 
 import HitComponent from './HitComponent';
@@ -27,7 +28,7 @@ function Search() {
       appId={process.env.GATSBY_ALGOLIA_APP_ID}
       indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}
       apiKey={process.env.GATSBY_ALGOLIA_API_KEY}
-      // eslint-disable-next-line react/no-unstable-nested-components
+      /* eslint-disable-next-line react/no-unstable-nested-components */
       hitComponent={({ hit, children }) => <HitComponent userId={userId} hit={hit}>{children}</HitComponent>}
       searchParameters={{
         clickAnalytics: true,
