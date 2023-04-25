@@ -11,13 +11,13 @@
 const THEMES = [
   {
     id: 'openedx',
-    label: 'Open edX (default)',
+    label: 'Open edX',
     stylesheet: 'openedx-theme',
     pathToVariables: undefined,
   },
   {
     id: 'edxorg',
-    label: 'edX.org',
+    label: 'edX',
     stylesheet: 'edxorg-theme',
     pathToVariables: '@edx/brand-edx.org/paragon/_variables.scss',
   },
