@@ -10,7 +10,7 @@ function PopperElement({
   const {
     styles,
     attributes,
-  } = usePopper(target, popperElement, popperOptions);
+  } = usePopper(target?.current, popperElement, popperOptions);
 
   if (!target) {
     return null;
@@ -30,7 +30,8 @@ PopperElement.defaultProps = {
 PopperElement.propTypes = {
   children: PropTypes.node,
   target: PropTypes.shape({
-    current: PropTypes.node,
+    // eslint-disable-next-line react/forbid-prop-types
+    current: PropTypes.object,
   }),
   strategy: PropTypes.oneOf(['absolute', 'fixed']),
   placement: PropTypes.oneOf([

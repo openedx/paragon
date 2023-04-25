@@ -10,7 +10,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     advanceButtonText: tourAdvanceButtonText, dismissButtonText: tourDismissButtonText,
     endButtonText: tourEndButtonText,
   } = tourValue || {};
-  const [currentCheckpointData, setCurrentCheckpointData] = useState([]);
+  const [currentCheckpointData, setCurrentCheckpointData] = useState(null);
   const [index, setIndex] = useState(0);
   const [isTourEnabled, setIsTourEnabled] = useState(false);
   const [prunedCheckpoints, setPrunedCheckpoints] = useState([]);

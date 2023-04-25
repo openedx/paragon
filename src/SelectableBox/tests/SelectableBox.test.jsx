@@ -38,11 +38,17 @@ describe('<SelectableBox />', () => {
       expect(boxWrapper.find(Form.Checkbox).length).toBeGreaterThan(0);
     });
     it('renders with radio input type if neither checkbox nor radio is passed', () => {
+      // Hiding the `console.error` is intentional because an invalid `type` prop
+      // with `wrongType` specified for `ForwardRef` expects one of the ['radio','flag'] parameters.
+      // eslint-disable-next-line no-console
+      console.error = jest.fn();
       const wrapper = mount(
         <SelectableBox type="wrongType">SelectableBox</SelectableBox>,
       );
       const selectableBox = wrapper.find('input');
       expect(selectableBox.prop('type')).toEqual(radioType);
+      // eslint-disable-next-line no-console
+      console.error.mockRestore();
     });
     it('renders with checkbox input type', () => {
       const wrapper = mount(<SelectableCheckbox />);
