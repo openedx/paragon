@@ -28,9 +28,9 @@ describe('<SelectableBox />', () => {
       expect(tree).toMatchSnapshot();
     });
     it('correct render when type prop is changed', () => {
-      const boxWrapper = mount(<SelectableBox />);
-      expect(boxWrapper.find(Form.Radio).length).toBeGreaterThan(0);
-      boxWrapper.setProps({ type: 'anytype' });
+      const boxWrapper = mount(
+        <SelectableBox>SelectableBox</SelectableBox>,
+      );
       expect(boxWrapper.find(Form.Radio).length).toBeGreaterThan(0);
       boxWrapper.setProps({ type: 'radio' });
       expect(boxWrapper.find(Form.Radio).length).toBeGreaterThan(0);
@@ -38,7 +38,9 @@ describe('<SelectableBox />', () => {
       expect(boxWrapper.find(Form.Checkbox).length).toBeGreaterThan(0);
     });
     it('renders with radio input type if neither checkbox nor radio is passed', () => {
-      const wrapper = mount(<SelectableBox type="wrongType" />);
+      const wrapper = mount(
+        <SelectableBox type="wrongType">SelectableBox</SelectableBox>,
+      );
       const selectableBox = wrapper.find('input');
       expect(selectableBox.prop('type')).toEqual(radioType);
     });

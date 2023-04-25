@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 
+import { fireEvent } from '@testing-library/react';
 import MultiSelectDropdownFilter from '../MultiSelectDropdownFilter';
 import Badge from '../../../Badge';
 
@@ -26,11 +27,13 @@ describe('<MultiSelectDropdownFilter />', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
-  it('renders a list of checkboxes', () => {
+  it('renders a list of checkboxes', async () => {
     const wrapper = mount(<MultiSelectDropdownFilter {...props} />);
     wrapper.find('button').simulate('click');
-    const checkbox = wrapper.find({ type: 'checkbox' }).find('input');
-    expect(checkbox.length).toEqual(3);
+    await act(async () => {
+      const checkbox = wrapper.find({ type: 'checkbox' }).find('input');
+      expect(checkbox.length).toEqual(3);
+    });
   });
   it('renders a title', () => {
     const wrapper = mount(<MultiSelectDropdownFilter {...props} />);
@@ -63,25 +66,33 @@ describe('<MultiSelectDropdownFilter />', () => {
     });
     expect(setFilterMock).toHaveBeenCalledWith([]);
   });
-  it('renders checkbox label with filter name', () => {
+  it('renders checkbox label with filter name', async () => {
     const wrapper = mount(<MultiSelectDropdownFilter column={{ ...props.column, filterValue: [roan.value] }} />);
     wrapper.find('button').simulate('click');
-    const label = wrapper.find('.form-check-label').at(0);
-    expect(label.text()).toContain(roan.name);
+    await act(async () => {
+      const label = wrapper.find('.form-check-label').at(0);
+      expect(label.text()).toContain(roan.name);
+    });
   });
-  it('renders checkbox label with number', () => {
+  it('renders checkbox label with number', async () => {
     const wrapper = mount(<MultiSelectDropdownFilter column={{ ...props.column, filterValue: [roan.value] }} />);
     wrapper.find('button').simulate('click');
-    const label = wrapper.find('.pgn__checkbox-filter').at(0);
-    const badge = label.find(Badge);
-    expect(badge).toHaveLength(1);
-    expect(badge.text()).toEqual(String(roan.number));
+
+    await act(async () => {
+      const label = wrapper.find('.pgn__checkbox-filter').at(0);
+      const badge = label.find(Badge);
+      expect(badge).toHaveLength(1);
+      expect(badge.text()).toEqual(String(roan.number));
+    });
   });
-  it('renders checkbox label with number', () => {
+  it('renders checkbox label with number', async () => {
     const wrapper = mount(<MultiSelectDropdownFilter column={{ ...props.column, filterValue: [roan.value] }} />);
     wrapper.find('button').simulate('click');
-    const label = wrapper.find('.pgn__checkbox-filter').at(1);
-    const badge = label.find(Badge);
-    expect(badge).toHaveLength(0);
+
+    await act(async () => {
+      const label = wrapper.find('.pgn__checkbox-filter').at(1);
+      const badge = label.find(Badge);
+      expect(badge).toHaveLength(0);
+    });
   });
 });

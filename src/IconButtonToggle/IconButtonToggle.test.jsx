@@ -5,6 +5,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 
+import { act } from 'react-dom/test-utils';
 import { Info, Home } from '../../icons';
 import { IconButton, IconButtonToggle, Icon } from '..';
 
@@ -43,11 +44,15 @@ describe('IconButtonToggle tests', () => {
 
     userEvent.click(btnDef);
 
-    waitFor(() => expect(btnDef).toHaveClass('btn-icon-primary-active'));
-    waitFor(() => expect(btnDef).toHaveAttribute('aria-selected', 'false'));
+    waitFor(() => {
+      expect(btnDef).toHaveClass('btn-icon-primary-active');
+      expect(btnDef).toHaveAttribute('aria-selected', 'false');
+    });
 
-    waitFor(() => expect(btnAbc).toHaveClass('btn-icon-primary'));
-    waitFor(() => expect(btnAbc).toHaveAttribute('aria-selected', 'true'));
+    waitFor(() => {
+      expect(btnAbc).toHaveClass('btn-icon-primary');
+      expect(btnAbc).toHaveAttribute('aria-selected', 'true');
+    });
 
     expect(spyChanger).toHaveBeenCalledWith('def');
   });
