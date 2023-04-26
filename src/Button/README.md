@@ -92,7 +92,6 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
 
   return (
     <>
-      <div className="mb-2">
         <Stack
           className="mb-2"
           gap={2}
@@ -105,8 +104,6 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
             Large button
           </Button>
         </Stack>
-      </div>
-      <div className="mb-2">
         <Stack
           className="mb-2"
           gap={2}
@@ -119,11 +116,8 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
             Small button
           </Button>
         </Stack>
-      </div>
-      <div className="mb-2">
         <Button variant="link" size="inline" className="mb-2 mb-sm-0">Inline button</Button>
         <Button variant="link" size="inline" className="mb-2 mb-sm-0">Inline button</Button>
-      </div>
     </>
 )}
 ```
