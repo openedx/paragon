@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks/dom';
+import { renderHook } from '@testing-library/react';
 import useOverflowScrollElementAttributes, {
   OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS,
   OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START,
