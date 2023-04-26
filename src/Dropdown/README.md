@@ -138,7 +138,7 @@ You can use `Dropdown.Toggle` with [IconButton](/components/iconbutton) componen
 </Dropdown.Deprecated>
 ```
 
-### with icon element
+### (Deprecated) with icon element
 
 ```jsx live
 <Dropdown.Deprecated>
