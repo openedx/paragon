@@ -242,28 +242,13 @@ function Menu() {
         <ul className="list-unstyled small mb-4">
           <li className="mr-3 mb-3">
             A drag-and-drop UI builder for prototyping with Paragon components.
-            <OverlayTrigger
-              trigger="click"
-              overlay={(
-                <Popover id="playground-popover" className="pgn-doc__menu-playground--popover">
-                  <Popover.Title as="h3">
-                    <Icon src={AddTask} />
-                    Сoming soon
-                  </Popover.Title>
-                  <Popover.Content>
-                    Playground is under development
-                  </Popover.Content>
-                </Popover>
-                )}
+            <Hyperlink
+              isInline
+              onClick={handlePlaygroundClick}
+              destination="/playroom"
             >
-              <Hyperlink
-                isInline
-                onClick={handlePlaygroundClick}
-                destination="#playground"
-              >
-                Visit playground
-              </Hyperlink>
-            </OverlayTrigger>
+              Visit playground
+            </Hyperlink>
           </li>
         </ul>
       </div>

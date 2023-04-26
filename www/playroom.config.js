@@ -8,7 +8,8 @@ module.exports = {
   themes: './playroom/themes.js',
   scope: './playroom/scope.js',
   title: 'Paragon Playground',
-  processCode: './playroom/process-code.js',
+  widths: [576, 768, 992, 1200, 1400],
+  snippets: './playroom/snippets.js',
   openBrowser: false,
   paramType: 'search',
   webpackConfig: () => ({
@@ -16,6 +17,7 @@ module.exports = {
       rules: [
         {
           test: /\.(js|jsx|ts|tsx)$/,
+          exclude: /node_modules/,
           include: [path.resolve('../src'), path.resolve('./playroom')],
           use: [
             {
@@ -32,6 +34,14 @@ module.exports = {
                 ],
               },
             },
+          ],
+        },
+        {
+          test: /\.s[ac]ss$/i,
+          use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader',
           ],
         },
         {
