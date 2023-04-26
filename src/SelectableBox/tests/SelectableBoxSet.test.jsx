@@ -71,7 +71,7 @@ describe('<SelectableBox.Set />', () => {
       expect(selectableBoxSet.length).toEqual(1);
     });
     it('renders with radio type if neither checkbox nor radio is passed', () => {
-      // Hiding the `console.error` is intentional because an invalid `type` prop
+      // Mock the `console.error` is intentional because an invalid `type` prop
       // with type `text` specified for `ForwardRef` expects one of the ['radio','checkbox'] parameters.
       // eslint-disable-next-line no-console
       console.error = jest.fn();

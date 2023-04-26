@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 
-import { fireEvent } from '@testing-library/react';
 import MultiSelectDropdownFilter from '../MultiSelectDropdownFilter';
 import Badge from '../../../Badge';
 
