@@ -118,6 +118,7 @@ Use inline size buttons for when a button sits with a line of text.
 </>
 ```
 
+### With empty href
 For link to be `disabled`, it must have href defined with some value.
 
 ```jsx live
@@ -174,15 +175,15 @@ For link to be `disabled`, it must have href defined with some value.
 
 ***
 
-## Button/Deprecated
+## Button.Deprecated
 
-### Basic Usage
+### (Deprecated) basic usage
 
 ```jsx live
 <Button.Deprecated className="btn-primary">Hello World!</Button.Deprecated>
 ```
 
-### Color Variants
+### (Deprecated) color variants
 
 ```jsx live
 <div>
@@ -194,7 +195,7 @@ For link to be `disabled`, it must have href defined with some value.
 </div>
 ```
 
-### Outline Variants
+### (Deprecated) outline variants
 
 ```jsx live
 <div>
@@ -204,7 +205,7 @@ For link to be `disabled`, it must have href defined with some value.
 </div>
 ```
 
-### Inverse Variants
+### (Deprecated) inverse variants
 
 ```jsx live
 <div className="bg-gray-700 p-3">
@@ -214,7 +215,7 @@ For link to be `disabled`, it must have href defined with some value.
 </div>
 ```
 
-### Link Variant
+### (Deprecated) link variant
 
 ```jsx live
 <div className="bg-gray-200 p-3">
