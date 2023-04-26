@@ -40,6 +40,22 @@
 .nav-tabs {
   border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
 
+  %nav-tabs-link-focus {
+    position: relative;
+    outline: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1 * $nav-tabs-link-distance-to-border;
+      right: -1 * $nav-tabs-link-distance-to-border;
+      bottom: -.25rem;
+      left: -1 * $nav-tabs-link-distance-to-border;
+      border: solid $nav-tabs-border-width $nav-tabs-link-focus-border-color;
+      border-radius: 0;
+    }
+  }
+
   .nav-link {
     margin-bottom: -$nav-tabs-border-width;
     border: $nav-tabs-border-width solid transparent;
@@ -52,8 +68,7 @@
     }
 
     &:focus {
-      border-color: $nav-tabs-link-focus-border-color;
-      outline: 0;
+      @extend %nav-tabs-link-focus;
     }
 
     &.disabled {
@@ -74,7 +89,7 @@
     }
 
     &:focus {
-      border-color: $nav-tabs-link-focus-border-color;
+      @extend %nav-tabs-link-focus;
     }
   }
 
