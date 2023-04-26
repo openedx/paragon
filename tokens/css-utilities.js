@@ -1,21 +1,18 @@
-const chroma = require('chroma-js');
-const { darken } = require('./sass-helpers');
-
 /**
  * Implements bg-variant mixin from bootstrap. Creates utility classes for background colors based on theme color.
  */
 function bgVariant(token) {
-  const { attributes: { type, item }, value } = token;
+  const { attributes: { type, item }, name, actions } = token;
   const parent = `.bg-${type}${item === 'base' ? '' : `-${item}`}`;
   return `${parent} {
-  background-color: ${value} !important;
+  background-color: ${`var(--${name})`} !important;
 }
 
 a${parent}:hover,
 a${parent}:focus,
 button${parent}:hover,
 button${parent}:focus {
-  background-color: ${darken(chroma(value), 0.1).hex('rgba').toUpperCase()} !important;
+  background-color: ${actions.default}  !important;
 }
 
 `;
@@ -25,15 +22,15 @@ button${parent}:focus {
  * Implements text-emphasis-variant mixin from bootstrap. Creates utility classes for text colors based on theme color.
  */
 function textEmphasisVariant(token) {
-  const { attributes: { type, item }, value } = token;
+  const { attributes: { type, item }, name, actions } = token;
   const parent = `.text-${type}${item === 'base' ? '' : `-${item}`}`;
   return `${parent} {
-  color: ${value} !important;
+  color: ${`var(--${name})`} !important;
 }
 
 a${parent}:hover,
 a${parent}:focus {
-  color: ${darken(chroma(value), 0.15).hex('rgba').toUpperCase()} !important;
+  color: ${actions.default} !important;
 }
 
 `;
@@ -43,10 +40,10 @@ a${parent}:focus {
  * Creates utility class for border color.
  */
 function borderColor(token) {
-  const { attributes: { type, item }, value } = token;
+  const { attributes: { type, item }, name } = token;
   const className = `.border-${type}${item === 'base' ? '' : `-${item}`}`;
   return `${className} {
-  border-color: ${value} !important;
+  border-color: ${`var(--${name})`} !important;
 }
 
 `;
