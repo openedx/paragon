@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { Button } from '../..';
+import Button from '../../Button';
 import DataTableContext from '../DataTableContext';
 import {
   SELECT_ALL_TEST_ID,

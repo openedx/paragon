@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Cancel, CheckCircleOutline, SpinnerSimple } from '../../icons';
-import { Button } from '..';
+import Button from '../Button';
 import Icon from '../Icon';
 
 function StatefulButton({

@@ -1,3 +1,128 @@
-.pgn-doc-header {
+.pgn-doc__header {
   z-index: var(--pgn-www-zindex-header);
+
+  .pgn-doc__header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:has(h1):has(.pgn-doc__header-title-heading) {
+      justify-content: start;
+    }
+
+    &-logo {
+      font-size: $h1-mobile-font-size;
+      line-height: $display-line-height;
+    }
+
+    &-heading {
+      font-size: $h3-font-size;
+      line-height: $line-height-base;
+      margin: 0;
+      color: $white;
+    }
+
+    &-description {
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm;
+      line-height: $line-height-base;
+      color: $light;
+      margin: 0;
+    }
+  }
+
+  &-home--menu {
+    position: absolute;
+    background-color: $white;
+    width: 28rem;
+    left: -3rem;
+
+    @include pgn-box-shadow(2, "down");
+
+    .pgn-doc__menu-items {
+      max-height: 28rem;
+      overflow-y: scroll;
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  &-settings-and-search {
+    justify-content: end;
+    align-items: center;
+
+    // stylelint-disable-next-line selector-class-pattern
+    .DocSearch.DocSearch-Button {
+      margin: 0 0 0 $spacer;
+      width: 13.25rem;
+      height: 2.75rem;
+
+      @media (max-width: $max-width-md) {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+        overflow: hidden;
+        padding: .625rem .75rem;
+      }
+
+      @media (max-width: $max-width-xs) {
+        margin: 0 0 0 .5rem;
+        width: 2rem;
+        height: 2rem;
+        padding: .5rem .45rem;
+
+        // stylelint-disable-next-line selector-class-pattern
+        .DocSearch-Search-Icon {
+          width: 1rem;
+        }
+      }
+    }
+  }
+}
+
+[dir="rtl"] .pgn-doc__header {
+  &-button--menu {
+    text-align: right;
+  }
+
+  &-home--menu {
+    left: -25rem;
+
+    .list-unstyled {
+      padding: 0;
+    }
+
+    .pgn-doc__menu-title {
+      text-align: right;
+    }
+  }
+
+  .list-unstyled {
+    padding: 0;
+  }
+
+  // stylelint-disable-next-line selector-class-pattern
+  &-settings-and-search .DocSearch.DocSearch-Button {
+    margin: 0 $spacer 0 0;
+
+    @media (max-width: $max-width-xs) {
+      margin: 0 .5rem 0 0;
+    }
+  }
+}
+
+.pgn__modal-fullscreen {
+  .pgn-doc__menu-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .pgn-doc__header-home--menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+
+    .pgn-doc__menu-items {
+      max-height: 100%;
+      overflow-y: auto;
+    }
+  }
 }

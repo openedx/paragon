@@ -5,10 +5,8 @@ import BaseDropdown from 'react-bootstrap/Dropdown';
 import DropdownMenu from 'react-bootstrap/DropdownMenu';
 import BaseDropdownItem from 'react-bootstrap/DropdownItem';
 import BaseDropdownToggle from 'react-bootstrap/DropdownToggle';
-import {
-  Button,
-  IconButton,
-} from '..';
+import Button from '../Button';
+import IconButton from '../IconButton';
 
 const Dropdown = React.forwardRef(
   // eslint-disable-next-line prefer-arrow-callback

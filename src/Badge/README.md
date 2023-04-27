@@ -27,14 +27,19 @@ Badges are composed of text and an accompanying indicator color, and are typical
 ## Basic Usage
 
 ```jsx live
-<>
-  <Badge variant="primary">Primary</Badge>{' '}
-  <Badge variant="secondary">Secondary</Badge>{' '}
-  <Badge variant="success">Success</Badge>{' '}
-  <Badge variant="danger">Danger</Badge>{' '}
-  <Badge variant="warning">Warning</Badge>{' '}
-  <Badge variant="info">Info</Badge>{' '}
-  <Badge variant="light">Light</Badge>{' '}
-  <Badge variant="dark">Dark</Badge>
-</>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
+
+  return (
+    <Stack gap={2} direction={ isExtraSmall ? "vertical" : "horizontal" }>
+      <Badge variant="primary">Primary</Badge>
+      <Badge variant="secondary">Secondary</Badge>
+      <Badge variant="success">Success</Badge>
+      <Badge variant="danger">Danger</Badge>
+      <Badge variant="warning">Warning</Badge>
+      <Badge variant="info">Info</Badge>
+      <Badge variant="light">Light</Badge>
+      <Badge variant="dark">Dark</Badge>
+    </Stack>
+)}
 ```
