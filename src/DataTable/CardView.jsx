@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import DataTableContext from './DataTableContext';
 import { useRows } from './hooks';
 import { selectColumn } from './utils/getVisibleColumns';
-import { CardGrid, Card } from '..';
+import Card, { CardGrid } from '../Card';
 
 function CardItem({
   row,

@@ -280,7 +280,7 @@ Add ``size="sm"`` for smaller header content and actions.
 `Card.Footer` is the bottom part of the card. Usually used to outline actions that can be taken on the card object.
 Note that `Card.Footer` has a separate `orientation` prop which will override the value from `CardContext`, this was implemented because there are some use cases where you would want to display `Card` with horizontal orientation containing footer with vertical orientation.
 
-### Vertical variant
+### Footer vertical variant
 
 ```jsx live
 () => {
@@ -322,7 +322,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 }
 ```
 
-### Horizontal variant
+### Footer horizontal variant
 
 ```jsx live
 () => {

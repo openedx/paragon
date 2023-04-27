@@ -98,7 +98,7 @@
     box-shadow: $data-table-box-shadow;
     padding: $data-table-padding-small;
     margin-right: map_get($spacers, 4);
-    flex-grow: 0;
+    flex: 0 0 $data-table-layout-sidebar-width;
   }
 
   .pgn__data-table-side-filters {
@@ -128,7 +128,7 @@
 
   th {
     background-color: $light-300;
-    padding: $data-table-head-cell-padding;
+    padding: $data-table-cell-padding;
     text-align: start;
   }
 

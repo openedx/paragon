@@ -68,7 +68,7 @@ async function getThemesSCSSVariables() {
   for (const { id, pathToVariables } of THEMES) {
     if (pathToVariables) {
       // eslint-disable-next-line no-await-in-loop
-      themeSCSSVariables[id] = await parseSCSSIntoObject(path.resolve(__dirname, 'node_modules', pathToVariables));
+      themeSCSSVariables[id] = await parseSCSSIntoObject(path.resolve(__dirname, '../node_modules', pathToVariables));
     } else {
       themeSCSSVariables[id] = {};
     }
