@@ -10,7 +10,7 @@ function PopperElement({
   const {
     styles,
     attributes,
-  } = usePopper(target?.current, popperElement, popperOptions);
+  } = usePopper(target, popperElement, popperOptions);
 
   if (!target) {
     return null;
