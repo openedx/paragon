@@ -45,7 +45,7 @@ describe('<PopperElement />', () => {
       </PopperElement>
     ));
     const popperEl = wrapper.find('[data-test="someValue"]');
-    expect(usePopper).toHaveBeenCalledWith(targetRef.current, null, defaultPopperOptions);
+    expect(usePopper).toHaveBeenCalledWith(targetRef, null, defaultPopperOptions);
     expect(popperEl.length).toBe(1);
     expect(popperEl.props().style.someProperty).toBe('someValue');
   });
