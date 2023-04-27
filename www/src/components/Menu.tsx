@@ -171,6 +171,10 @@ interface IMenuQueryComponents {
   all: Array<IComponentNavItem>
 }
 
+const foundationLinks = [
+  'Colors', 'Design-Tokens', 'Elevation', 'Typography', 'Layout', 'Spacing', 'Icons', 'CSS-Utilities', 'Responsive',
+];
+
 function Menu() {
   const {
     settings,

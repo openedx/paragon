@@ -15,6 +15,8 @@ Displays an svg icon from `@openedx/paragon/icons`. See [Icons Foundation Docume
 
 ## Basic Usage
 
+## Basic Usage
+
 ```jsx live
 // Included in this live jsx scope:
 // import { Add, AddCircle } from '@openedx/paragon/icons';

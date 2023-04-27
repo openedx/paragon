@@ -70,19 +70,19 @@ function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: Coll
     const headingElement = getCodeBlockHeading(e.target);
 
     if (!headingElement) {
-      const event = collapseIsOpen
-        ? EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_EVENTS.CLOSED
-        : EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_EVENTS.OPENED;
+        const event = collapseIsOpen
+            ? EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_EVENTS.CLOSED
+            : EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_EVENTS.OPENED;
 
-      sendUserAnalyticsEvent(event, { value: `${componentNameAndCategory}id-not-generated` });
-      return;
+        sendUserAnalyticsEvent(event, { value: `${componentNameAndCategory}id-not-generated` });
+        return;
     }
 
-    const event = collapseIsOpen
-      ? EXAMPLE_CODE_BLOCK_WITH_HEADING_EVENTS.CLOSED
-      : EXAMPLE_CODE_BLOCK_WITH_HEADING_EVENTS.OPENED;
+      const event = collapseIsOpen
+          ? EXAMPLE_CODE_BLOCK_WITH_HEADING_EVENTS.CLOSED
+          : EXAMPLE_CODE_BLOCK_WITH_HEADING_EVENTS.OPENED;
 
-    sendUserAnalyticsEvent(event, { value: `${componentNameAndCategory}${headingElement.id}` });
+      sendUserAnalyticsEvent(event, { value: `${componentNameAndCategory}${headingElement.id}` });
   };
 
   return (
@@ -92,8 +92,8 @@ function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: Coll
         styling="card-lg"
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
-        onChange={handleCodeChange}
         onClick={submitSegmentEvent}
+        onChange={handleCodeChange}
         title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
         <p className="small text-gray mb-2">Any Paragon component or export may be added to the code example.</p>

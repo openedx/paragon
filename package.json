@@ -29,16 +29,12 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "generate-component-install": "cd component-generator && npm install",
-    "consumer-app-install": "cd example && npm install",
-    "doc-site-install": "cd www && npm install",
-    "install-all": "npm install && npm run generate-component-install && npm run consumer-app-install && npm run doc-site-install",
     "build": "make build",
     "build-docs": "npm run build --workspace=www",
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "stylelint": "stylelint \"src/**/*.scss\" \"scss/**/*.scss\" \"www/src/**/*.scss\" --config .stylelintrc.json",
-    "lint": "npm run stylelint && eslint --ext .js --ext .jsx --ext .ts --ext .tsx . && npm run lint --workspaces --if-present",
+    "lint": "npm run stylelint && eslint --ext .js --ext .jsx --ext .ts --ext .tsx && npm run lint --workspaces --if-present",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "snapshot": "jest --updateSnapshot",
@@ -219,5 +215,12 @@
   ],
   "overrides": {
     "@testing-library/dom": "9.3.3"
-  }
+  },
+  "workspaces": [
+    "example",
+    "component-generator",
+    "www",
+    "icons",
+    "dependent-usage-analyzer"
+  ]
 }
