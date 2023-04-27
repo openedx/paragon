@@ -217,11 +217,9 @@
   "overrides": {
     "@testing-library/dom": "9.3.3"
   },
-  "workspaces": [
-    "example",
-    "component-generator",
-    "www",
-    "icons",
-    "dependent-usage-analyzer"
-  ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
 }
