@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Icon from '../Icon';
 import { ArrowDropDown, ArrowDropUp, ArrowDropUpDown } from '../../icons';
-import { Icon } from '..';
 
 export function SortIndicator({ isSorted, isSortedDesc }) {
   if (!isSorted) {

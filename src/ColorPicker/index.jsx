@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { HexColorPicker } from 'react-colorful';
 
-import {
-  Button,
-  Form,
-  ModalPopup,
-  OverlayTrigger,
-  Tooltip,
-  useToggle,
-} from '..';
+import Button from '../Button';
+import Form from '../Form';
+import ModalPopup from '../Modal/ModalPopup';
+import { OverlayTrigger } from '../Overlay';
+import Tooltip from '../Tooltip';
+import useToggle from '../hooks/useToggle';
 
 function ColorPicker({
   color, setColor, className, size,

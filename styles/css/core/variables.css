@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Mon, 24 Apr 2023 23:00:41 GMT
+ * Generated on Thu, 27 Apr 2023 12:12:55 GMT
  */
 
 :root {
@@ -320,6 +320,7 @@
   --pgn-size-form-input-width-focus: 0.063rem;
   --pgn-size-form-input-width-hover: 0.063rem;
   --pgn-size-dropdown-min-width: 18rem;
+  --pgn-size-data-table-layout-sidebar-width: 12rem;
   --pgn-size-data-table-dropdown-pagination-min-width: 6rem;
   --pgn-size-data-table-dropdown-pagination-max-height: 60vh;
   --pgn-size-data-table-border: 1px;

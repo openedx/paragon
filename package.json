@@ -26,26 +26,19 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "generate-component-install": "cd component-generator && npm install",
-    "consumer-app-install": "cd example && npm install",
-    "doc-site-install": "cd www && npm install",
-    "install-all": "npm install && npm run generate-component-install && npm run consumer-app-install && npm run doc-site-install",
     "build": "make build",
-    "build-docs": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build",
-    "build-docs:with-theme": "cd ./www && \"$npm_execpath\" install && \"$npm_execpath\" run build:with-theme",
+    "build-docs": "npm run build --workspace=www",
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "stylelint": "stylelint \"src/**/*.scss\" \"scss/**/*.scss\" \"www/src/**/*.scss\" --config .stylelintrc.json",
-    "lint": "npm run stylelint && eslint --ext .js --ext .jsx --ext .ts --ext .tsx . && npm run generate-component-lint && npm run lint-docs",
-    "lint-docs": "cd ./www && \"$npm_execpath\" run lint",
+    "lint": "npm run stylelint && eslint --ext .js --ext .jsx --ext .ts --ext .tsx && npm run lint --workspaces --if-present",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "snapshot": "jest --updateSnapshot",
-    "start": "echo 'To start the Paragon documentation site: cd www/ && npm i && npm start'",
+    "start": "npm start --workspace=www",
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
-    "generate-component": "cd component-generator && npm start",
-    "generate-component-lint": "cd component-generator && npm run lint",
+    "generate-component": "npm start --workspace=component-generator",
     "generate-changelog": "node generate-changelog.js",
     "i18n_compile": "formatjs compile-folder --format transifex ./src/i18n/messages ./src/i18n/messages",
     "i18n_extract": "formatjs extract 'src/**/*.{jsx,js,tsx,ts}' --out-file ./src/i18n/transifex_input.json --format transifex",
@@ -134,9 +127,9 @@
     "eslint": "8.18.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-jsx-a11y": "6.5.1",
-    "eslint-plugin-react": "7.30.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "husky": "^8.0.1",
     "identity-obj-proxy": "^3.0.0",
@@ -198,5 +191,12 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
-  }
+  },
+  "workspaces": [
+    "example",
+    "component-generator",
+    "www",
+    "icons",
+    "dependent-usage-analyzer"
+  ]
 }
