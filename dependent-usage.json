@@ -1,5 +1,5 @@
 {
-  "lastModified": 1682518112556,
+  "lastModified": 1682604514798,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -10058,7 +10058,7 @@
       }
     },
     {
-      "version": "20.28.0",
+      "version": "20.32.0",
       "name": "@edx/frontend-app-course-authoring",
       "repository": {
         "type": "git",
@@ -16463,7 +16463,7 @@
             "filePath": "src/components/course/CourseReview.jsx",
             "line": 36,
             "column": 4,
-            "index": 1861
+            "index": 1894
           },
           {
             "filePath": "src/components/course/LicenseRequestedAlert.jsx",
@@ -16901,19 +16901,19 @@
             "filePath": "src/components/course/CourseReview.jsx",
             "line": 37,
             "column": 6,
-            "index": 1901
+            "index": 1934
           },
           {
             "filePath": "src/components/course/CourseReview.jsx",
             "line": 40,
             "column": 6,
-            "index": 2000
+            "index": 2033
           },
           {
             "filePath": "src/components/course/CourseReview.jsx",
-            "line": 59,
+            "line": 89,
             "column": 6,
-            "index": 3565
+            "index": 4408
           },
           {
             "filePath": "src/components/course/CourseSidebarListItem.jsx",
@@ -17161,37 +17161,37 @@
             "filePath": "src/components/course/CourseReview.jsx",
             "line": 38,
             "column": 8,
-            "index": 1941
+            "index": 1974
           },
           {
             "filePath": "src/components/course/CourseReview.jsx",
             "line": 41,
             "column": 8,
-            "index": 2014
+            "index": 2047
           },
           {
             "filePath": "src/components/course/CourseReview.jsx",
-            "line": 45,
+            "line": 52,
             "column": 8,
-            "index": 2338
+            "index": 2565
           },
           {
             "filePath": "src/components/course/CourseReview.jsx",
-            "line": 50,
+            "line": 66,
             "column": 8,
-            "index": 2793
+            "index": 3247
           },
           {
             "filePath": "src/components/course/CourseReview.jsx",
-            "line": 54,
+            "line": 77,
             "column": 8,
-            "index": 3167
+            "index": 3812
           },
           {
             "filePath": "src/components/course/CourseReview.jsx",
-            "line": 61,
+            "line": 91,
             "column": 8,
-            "index": 3662
+            "index": 4505
           },
           {
             "filePath": "src/components/course/CourseSidebarListItem.jsx",
@@ -18427,9 +18427,9 @@
         "Icon": [
           {
             "filePath": "src/components/course/CourseReview.jsx",
-            "line": 46,
-            "column": 141,
-            "index": 2627
+            "line": 62,
+            "column": 12,
+            "index": 3081
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
@@ -18489,9 +18489,9 @@
         "StarFilled": [
           {
             "filePath": "src/components/course/CourseReview.jsx",
-            "line": 46,
-            "column": 175,
-            "index": 2661
+            "line": 62,
+            "column": 46,
+            "index": 3115
           }
         ],
         "Skeleton": [
@@ -25678,7 +25678,7 @@
       }
     },
     {
-      "version": "19.9.0",
+      "version": "20.28.4",
       "name": "@edx/frontend-app-program-console",
       "repository": {
         "type": "git",
@@ -30323,6 +30323,24 @@
             "index": 5857
           },
           {
+            "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
+            "line": 51,
+            "column": 12,
+            "index": 1927
+          },
+          {
+            "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
+            "line": 73,
+            "column": 10,
+            "index": 2989
+          },
+          {
+            "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
+            "line": 127,
+            "column": 18,
+            "index": 4424
+          },
+          {
             "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/DimensionControls.jsx",
             "line": 64,
             "column": 16,
@@ -30365,6 +30383,12 @@
             "line": 28,
             "column": 13,
             "index": 707
+          },
+          {
+            "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
+            "line": 126,
+            "column": 15,
+            "index": 4399
           },
           {
             "filePath": "src/editors/sharedComponents/SelectionModal/SearchSort.jsx",
@@ -30459,6 +30483,12 @@
             "line": 39,
             "column": 12,
             "index": 1211
+          },
+          {
+            "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
+            "line": 125,
+            "column": 8,
+            "index": 4372
           },
           {
             "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/DimensionControls.jsx",
@@ -31629,6 +31659,12 @@
             "line": 115,
             "column": 24,
             "index": 3555
+          },
+          {
+            "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
+            "line": 51,
+            "column": 23,
+            "index": 1938
           }
         ],
         "Copyright": [
@@ -31773,6 +31809,14 @@
             "line": 51,
             "column": 10,
             "index": 1129
+          }
+        ],
+        "ArrowForward": [
+          {
+            "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
+            "line": 73,
+            "column": 21,
+            "index": 3000
           }
         ],
         "Error": [
