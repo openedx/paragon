@@ -30,8 +30,7 @@ PopperElement.defaultProps = {
 PopperElement.propTypes = {
   children: PropTypes.node,
   target: PropTypes.shape({
-    // eslint-disable-next-line react/forbid-prop-types
-    current: PropTypes.object,
+    current: PropTypes.shape({}),
   }),
   strategy: PropTypes.oneOf(['absolute', 'fixed']),
   placement: PropTypes.oneOf([

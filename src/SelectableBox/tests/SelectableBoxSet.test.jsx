@@ -34,15 +34,11 @@ function SelectableRadioSet(props) {
 describe('<SelectableBox.Set />', () => {
   describe('correct rendering', () => {
     it('renders without props', () => {
-      const tree = renderer.create((
-        <SelectableBox.Set name="testName">SelectableBox</SelectableBox.Set>
-      )).toJSON();
+      const tree = renderer.create((<SelectableRadioSet name="testName" />)).toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('correct render when type prop is changed', () => {
-      const setWrapper = mount(
-        <SelectableBox.Set name="set">SelectableBoxSet</SelectableBox.Set>,
-      );
+      const setWrapper = mount(<SelectableRadioSet name="set" />);
       expect(setWrapper.find(Form.RadioSet).length).toBeGreaterThan(0);
       setWrapper.setProps({ type: 'radio' });
       expect(setWrapper.find(Form.RadioSet).length).toBeGreaterThan(0);
@@ -51,22 +47,18 @@ describe('<SelectableBox.Set />', () => {
     });
     it('renders with children', () => {
       const wrapper = mount(
-        <SelectableBox.Set name="testName">{checkboxText(1)}</SelectableBox.Set>,
+        <SelectableCheckboxSet name="testName">{checkboxText(1)}</SelectableCheckboxSet>,
       );
       expect(wrapper.text()).toContain(checkboxText(1));
     });
     it('renders with on change event', () => {
       const onChangeSpy = jest.fn();
-      const wrapper = mount(
-        <SelectableCheckboxSet onChange={onChangeSpy}>SelectableCheckboxSet</SelectableCheckboxSet>,
-      );
+      const wrapper = mount(<SelectableCheckboxSet onChange={onChangeSpy} />);
       wrapper.props().onChange();
       expect(onChangeSpy).toHaveBeenCalledTimes(1);
     });
     it('renders with checkbox type', () => {
-      const wrapper = mount(
-        <SelectableCheckboxSet>SelectableCheckboxSet</SelectableCheckboxSet>,
-      );
+      const wrapper = mount(<SelectableCheckboxSet />);
       const selectableBoxSet = wrapper.find(Form.CheckboxSet);
       expect(selectableBoxSet.length).toEqual(1);
     });
@@ -75,26 +67,20 @@ describe('<SelectableBox.Set />', () => {
       // with type `text` specified for `ForwardRef` expects one of the ['radio','checkbox'] parameters.
       // eslint-disable-next-line no-console
       console.error = jest.fn();
-      const wrapper = mount(
-        <SelectableCheckboxSet type="text">SelectableCheckboxSet</SelectableCheckboxSet>,
-      );
+      const wrapper = mount(<SelectableCheckboxSet type="text" />);
       const selectableBoxSet = wrapper.find(Form.RadioSet);
       expect(selectableBoxSet.length).toEqual(1);
       // eslint-disable-next-line no-console
       console.error.mockRestore();
     });
     it('renders with radio type', () => {
-      const wrapper = mount(
-        <SelectableRadioSet type={radioType}>SelectableCheckboxSet</SelectableRadioSet>,
-      );
+      const wrapper = mount(<SelectableRadioSet type={radioType} />);
       const selectableBoxSet = wrapper.find(Form.RadioSet);
       expect(selectableBoxSet.length).toEqual(1);
     });
     it('renders with correct number of columns', () => {
       const columns = 10;
-      const wrapper = mount(
-        <SelectableRadioSet columns={columns}>SelectableCheckboxSet</SelectableRadioSet>,
-      );
+      const wrapper = mount(<SelectableRadioSet columns={columns} />);
       const selectableBoxSet = wrapper.find(Form.RadioSet);
       expect(selectableBoxSet.hasClass(`pgn__selectable_box-set--${columns}`)).toBe(true);
     });

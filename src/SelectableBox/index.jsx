@@ -48,7 +48,7 @@ const SelectableBox = React.forwardRef(({
     tabIndex: -1,
     onChange: () => {},
     ...(type === 'checkbox' ? { ...props, isIndeterminate } : { ...props }),
-  }, false);
+  }, null);
 
   useEffect(() => {
     if (onClick && inputRef.current) {

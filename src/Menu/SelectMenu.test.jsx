@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 import { Add, Check } from '../../icons';
 import { MenuItem, SelectMenu } from '..';
+import Hyperlink from '../Hyperlink';
 import Button from '../Button';
 
 const app = document.createElement('div');
@@ -14,7 +15,7 @@ const selectMenu = mount(
       <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
       <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
       <MenuItem disabled>A Disabled Menu Item</MenuItem>
-      <MenuItem as="a" href="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
+      <MenuItem as={Hyperlink} destination="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
       <MenuItem>Falstaff</MenuItem>
       <MenuItem>Scipio</MenuItem>
       <MenuItem>Faustus</MenuItem>

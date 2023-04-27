@@ -28,9 +28,7 @@ describe('<SelectableBox />', () => {
       expect(tree).toMatchSnapshot();
     });
     it('correct render when type prop is changed', () => {
-      const boxWrapper = mount(
-        <SelectableBox>SelectableBox</SelectableBox>,
-      );
+      const boxWrapper = mount(<SelectableRadio />);
       expect(boxWrapper.find(Form.Radio).length).toBeGreaterThan(0);
       boxWrapper.setProps({ type: 'radio' });
       expect(boxWrapper.find(Form.Radio).length).toBeGreaterThan(0);
@@ -42,9 +40,7 @@ describe('<SelectableBox />', () => {
       // with `wrongType` specified for `ForwardRef` expects one of the ['radio','flag'] parameters.
       // eslint-disable-next-line no-console
       console.error = jest.fn();
-      const wrapper = mount(
-        <SelectableBox type="wrongType">SelectableBox</SelectableBox>,
-      );
+      const wrapper = mount(<SelectableRadio type="wrongType" />);
       const selectableBox = wrapper.find('input');
       expect(selectableBox.prop('type')).toEqual(radioType);
       // eslint-disable-next-line no-console
