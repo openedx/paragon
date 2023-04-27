@@ -1,9 +1,7 @@
 import React, { useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import {
-  DropdownButton,
-  Badge,
-} from '../..';
+import Badge from '../../Badge';
+import { DropdownButton } from '../../Dropdown';
 import { newId } from '../../utils';
 import LabelledCheckbox from './LabelledCheckbox';
 

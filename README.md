@@ -241,7 +241,7 @@ When developing a new component you should generally follow three rules:
 The Paragon documentation site serves both as documentation and as a workbench to create your component within. To see your component in action, you need to run the documentation site locally. (Note you need to install dependencies both in the project root and the `www` directory)
 
 ```
-npm run install-all
+npm install
 cd www
 npm start
 ```

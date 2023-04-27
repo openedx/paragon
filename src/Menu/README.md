@@ -36,6 +36,8 @@ A ``MenuItem`` is its own distinct component that is used by any kind of menu ov
 }
 ```
 
+## With Form
+
 A ``Menu`` can include things like forms.
 
 ```jsx live
@@ -59,6 +61,8 @@ A ``Menu`` can include things like forms.
   );
 }
 ```
+
+## With Modal
 
 A ``Menu`` can be implemented to appear inside a `modalpopup` for a wide variety of use cases. The ``Modal`` brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press.
 
