@@ -67,7 +67,7 @@ As ``Checkbox``
 }
 ```
 
-As ``Radio``
+## As Radio
 
 ```jsx live
 () => {
@@ -102,7 +102,7 @@ As ``Radio``
   );
 }
 ```
-
+## As Checkbox
 As ``Checkbox`` with ``isIndeterminate``
 
 ```jsx live

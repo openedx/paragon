@@ -21,14 +21,23 @@ It is used in the global navigation’s user menu and may also be used to indica
 ## Basic Usage
 
 ```jsx live
-<div className="bg-light p-2">
-  <Avatar size="xxl" />{' '}
-  <Avatar size="xl" />{' '}
-  <Avatar size="lg" />{' '}
-  <Avatar />{' '}
-  <Avatar size="sm" />{' '}
-  <Avatar size="xs" />{' '}
-</div>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Stack
+      className="bg-light p-2"
+      gap={2}
+      direction={ isExtraSmall ? "vertical" : "horizontal" }
+    >
+      <Avatar size="xxl" />
+      <Avatar size="xl" />
+      <Avatar size="lg" />
+      <Avatar />
+      <Avatar size="sm" />
+      <Avatar size="xs" />
+    </Stack>
+)}
 ```
 
 

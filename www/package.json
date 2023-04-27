@@ -35,7 +35,7 @@
     "rehype-autolink-headings": "^5.1.0",
     "rehype-slug": "^4.0.1",
     "sass": "^1.53.0",
-    "uuid": "^8.3.2"
+    "uuid": "^9.0.0"
   },
   "keywords": [
     "paragon",
@@ -47,7 +47,6 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build --prefix-paths && npm run build-themes",
-    "build:with-theme": "npm run build",
     "clean": "gatsby clean",
     "develop": "npm run build-themes && gatsby develop",
     "develop:with-theme": "npm run develop",

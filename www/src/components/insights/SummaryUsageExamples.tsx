@@ -41,12 +41,12 @@ function SummaryUsageExamples({ row }: ISummaryUsageExamples) {
                   destination={`${repositoryUrl}/${filePath}#L${line}`}
                   target="_blank"
                 >
-                  {filePath}
+                  {filePath.split('/').slice(-1)}
                 </Hyperlink>
                 {' '}(line {line})
               </>
             ) : (
-              <>{filePath} (line {line})</>
+              <>{filePath.split('/').slice(-1)} (line {line})</>
             )}
           </li>
         ))}

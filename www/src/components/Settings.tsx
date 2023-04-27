@@ -6,13 +6,14 @@ import {
   Icon,
   IconButton,
   Stack,
+  Nav,
 } from '~paragon-react';
 import { Close } from '~paragon-icons';
 
+import { Link } from 'gatsby';
 import { LANGUAGES } from '../config';
-// eslint-disable-next-line import/no-named-as-default
-import SettingsContext from '../context/SettingsContext';
-import { THEMES } from '../../theme-config';
+
+import { SettingsContext } from '../context/SettingsContext';
 
 export interface ISetting {
   showMinimizedTitle?: boolean,
@@ -33,79 +34,76 @@ function Settings({ showMinimizedTitle }: ISetting) {
       variant="light"
       onClose={closeSettings}
     >
-      <div className="d-flex align-items-center justify-content-between mb-3">
-        <h3 className="mb-0">Settings</h3>
-        <IconButton
-          src={Close}
-          iconAs={Icon}
-          alt="Close settings"
-          onClick={closeSettings}
-          size="sm"
-        />
-      </div>
-      <Stack gap={3}>
-        <Form.Group>
-          <Form.Control
-            as="select"
-            value={settings.theme}
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('theme', e.target.value)}
-            floatingLabel="Theme"
-          >
-            {THEMES.map(theme => (
-              <option
-                key={theme.id}
-                value={theme.id}
-              >
-                {theme.label}
-              </option>
-            ))}
-          </Form.Control>
-        </Form.Group>
-        <Form.Group>
-          <Form.Control
-            as="select"
-            value={settings.direction}
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('direction', e.target.value)}
-            floatingLabel="Direction"
-          >
-            <option value="ltr">Left to right</option>
-            <option value="rtl">Right to left</option>
-          </Form.Control>
-        </Form.Group>
-        <Form.Group>
-          <Form.Control
-            as="select"
-            value={settings.language}
-            onChange={(e: { target: { value: string; }; }) => handleSettingsChange('language', e.target.value)}
-            floatingLabel="Component Language"
-          >
-            {LANGUAGES.map(lang => (
-              <option
-                key={lang.code}
-                value={lang.code}
-              >
-                {lang.label}
-              </option>
-            ))}
-          </Form.Control>
-        </Form.Group>
-        {!showMinimizedTitle && (
+      <div className="pgn-doc__settings">
+        <div className="pgn-doc__settings-title">
+          <h3 className="mb-0">Settings</h3>
+          <IconButton
+            src={Close}
+            iconAs={Icon}
+            alt="Close settings"
+            onClick={closeSettings}
+            size="sm"
+          />
+        </div>
+        <Stack gap={1}>
+          <Form.Group className="pgn-doc__settings-direction">
+            <Form.Label className="pgn-doc__settings-label">Text direction</Form.Label>
+            <Form.RadioSet
+              name="direction"
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('direction', e.target.value)}
+              value={settings.direction}
+            >
+              <Form.Radio value="ltr">Left to right</Form.Radio>
+              <Form.Radio value="rtl">Right to left</Form.Radio>
+            </Form.RadioSet>
+          </Form.Group>
           <Form.Group>
+            <Form.Label className="pgn-doc__settings-label">Language</Form.Label>
             <Form.Control
               as="select"
-              value={settings.containerWidth}
-              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('containerWidth', e.target.value)}
-              floatingLabel="Container Width"
+              value={settings.language}
+              onChange={(e: { target: { value: string; }; }) => handleSettingsChange('language', e.target.value)}
             >
-              <option value="xs">xs</option>
-              <option value="sm">sm</option>
-              <option value="md">md (default)</option>
-              <option value="lg">lg</option>
-              <option value="xl">xl</option>
+              {LANGUAGES.map(lang => (
+                <option
+                  key={lang.code}
+                  value={lang.code}
+                >
+                  {lang.label}
+                </option>
+              ))}
             </Form.Control>
           </Form.Group>
-        )}
-      </Stack>
+          {!showMinimizedTitle && (
+            <Form.Group>
+              <Form.Label className="pgn-doc__settings-label">Container Width</Form.Label>
+              <Form.Control
+                as="select"
+                value={settings.containerWidth}
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('containerWidth', e.target.value)}
+              >
+                <option value="xs">xs</option>
+                <option value="sm">sm</option>
+                <option value="md">md (default)</option>
+                <option value="lg">lg</option>
+                <option value="xl">xl</option>
+              </Form.Control>
+            </Form.Group>
+          )}
+          <Nav className="pgn-doc__settings-nav--items">
+            <Nav.Item>
+              <Link className="nav-link" to="/changelog">
+                Changelog
+              </Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="https://github.com/openedx/paragon">
+                GitHub
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Stack>
+      </div>
     </Sheet>
   );
 }
