@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import BaseCardDeck from 'react-bootstrap/CardDeck';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { useOverflowScrollItems } from '..';
+import { useOverflowScrollItems } from '../OverflowScroll';
 
 export const CARD_DECK_ITEM_CLASS_NAME = 'pgn__card-deck-card-item';
 

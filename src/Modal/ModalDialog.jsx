@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useMediaQuery } from 'react-responsive';
-import { Close } from '../../icons';
 import ModalLayer from './ModalLayer';
-import { Icon, IconButton } from '..';
 import ModalCloseButton from './ModalCloseButton';
 import ModalDialogHeader from './ModalDialogHeader';
 import ModalDialogTitle from './ModalDialogTitle';
 import ModalDialogFooter from './ModalDialogFooter';
 import ModalDialogBody from './ModalDialogBody';
 import ModalDialogHero from './ModalDialogHero';
+
+import Icon from '../Icon';
+import IconButton from '../IconButton';
+import { Close } from '../../icons';
 
 export const MODAL_DIALOG_CLOSE_LABEL = 'Close';
 

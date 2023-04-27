@@ -4,7 +4,8 @@ import classNames from 'classnames';
 
 import { Check, Error } from '../../icons';
 import { StepperContext } from './StepperContext';
-import { Icon, Bubble } from '..';
+import Icon from '../Icon';
+import Bubble from '../Bubble';
 
 function StepperHeaderStep({
   eventKey,

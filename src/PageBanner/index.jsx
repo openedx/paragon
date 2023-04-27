@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Close } from '../../icons';
-import { Icon, IconButton } from '..';
+import Icon from '../Icon';
+import IconButton from '../IconButton';
 
 export const PAGE_BANNER_DISMISS_ALT_TEXT = 'Dismiss';
 
