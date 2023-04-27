@@ -1,5 +1,9 @@
 @import "variables";
 
+// .pgn-doc__code-block-preview {
+//   background-color: #00262b !important;
+// }
+
 // Base class
 //
 // Kickstart any navigation component with a set of style resets. Works with
@@ -16,7 +20,7 @@
 .nav-link {
   display: block;
   padding: $nav-link-padding-y $nav-link-padding-x;
-  text-decoration: if($link-decoration == none, null, none);
+  text-decoration: if($link-decoration ==none, null, none);
   color: $nav-link-color;
   font-weight: $nav-link-font-weight;
 
@@ -33,32 +37,143 @@
   }
 }
 
+%nav-tabs-link-focus {
+  position: relative;
+  outline: 0;
+  z-index: 999999;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border: solid $nav-tabs-border-width $nav-tabs-link-focus-border-color;
+    border-radius: 0;
+  }
+}
+
 //
 // Tabs
 //
 
-.nav-tabs {
-  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+.pgn__tabs {
+  &.nav-pills {
+    .nav-link {
+      border: 1px solid $light-400;
 
-  %nav-tabs-link-focus {
-    position: relative;
-    outline: 0;
+      &:focus {
+        @extend %nav-tabs-link-focus;
+      }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: -1 * $nav-tabs-link-distance-to-border;
-      right: -1 * $nav-tabs-link-distance-to-border;
-      bottom: -.25rem;
-      left: -1 * $nav-tabs-link-distance-to-border;
-      border: solid $nav-tabs-border-width $nav-tabs-link-focus-border-color;
-      border-radius: 0;
+      &:hover {
+        border-color: $nav-tabs-link-hover-border-color;
+        background-color: $nav-tabs-link-hover-bg;
+      }
+
+      &.active {
+        color: $nav-pills-link-active-color;
+        background-color: $nav-pills-link-active-bg;
+        border-color: $nav-pills-link-active-bg;
+
+        &:focus {
+          @extend %nav-tabs-link-focus;
+        }
+      }
     }
   }
+
+  &.nav-inverse-pills {
+    .nav-link {
+      color: $white;
+      border: $nav-tabs-border-width solid $primary-300;
+
+      &:hover {
+        background-color: $primary-300;
+      }
+
+      &:focus {
+        position: relative;
+        outline: 0;
+        z-index: 999999;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          bottom: -5px;
+          left: -5px;
+          border: solid $nav-tabs-border-width $white;
+          border-radius: 0;
+        }
+      }
+    }
+
+    .nav-link.active {
+      background-color: $white;
+      color: $primary-300;
+      border-color: $white;
+
+      &:hover {
+        background-color: $primary-300;
+        color: $white;
+        border-color: $primary-300;
+      }
+    }
+  }
+
+  &.nav-inverse-tabs {
+    border-bottom: $nav-tabs-border-width solid $primary-300;
+
+    .nav-link {
+      color: $white;
+
+      &:hover {
+        background-color: $primary-300;
+      }
+
+      &:focus {
+        position: relative;
+        outline: 0;
+        z-index: 999999;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          bottom: -5px;
+          left: -5px;
+          border: solid $nav-tabs-border-width $white;
+          border-radius: 0;
+        }
+      }
+    }
+
+    .nav-link.active {
+      border-bottom: $nav-tabs-border-width solid $white;
+      background-color: $primary-300;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    .tab-content>.active {
+      color: $white;
+    }
+  }
+}
+
+.nav-tabs {
+  border-bottom: $nav-tabs-border-width solid transparent;
 
   .nav-link {
     margin-bottom: -$nav-tabs-border-width;
     border: $nav-tabs-border-width solid transparent;
+    border-bottom-width: 3px;
 
     @include border-top-radius($nav-tabs-border-radius);
 
@@ -112,7 +227,7 @@
   }
 
   .nav-link.active,
-  .show > .nav-link {
+  .show>.nav-link {
     color: $nav-pills-link-active-color;
     background-color: $nav-pills-link-active-bg;
   }
@@ -153,13 +268,13 @@
       background: $nav-tabs-link-hover-bg;
     }
 
-    & + .nav-link {
+    &+.nav-link {
       margin-left: -1px;
     }
   }
 
   .nav-link.active,
-  .show > .nav-link {
+  .show>.nav-link {
     color: $nav-pills-link-active-color;
     background-color: $nav-pills-link-active-bg;
     border-color: transparent;
@@ -171,7 +286,8 @@
 //
 
 .nav-fill {
-  > .nav-link,
+
+  >.nav-link,
   .nav-item {
     flex: 1 1 auto;
     text-align: center;
@@ -179,7 +295,8 @@
 }
 
 .nav-justified {
-  > .nav-link,
+
+  >.nav-link,
   .nav-item {
     flex-basis: 0;
     flex-grow: 1;
@@ -192,12 +309,12 @@
 // Hide tabbable panes to start, show them when `.active`
 
 .tab-content {
-  > .tab-pane {
+  >.tab-pane {
     display: none;
     text-align: start;
   }
 
-  > .active {
+  >.active {
     display: block;
   }
 }

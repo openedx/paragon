@@ -13,6 +13,7 @@ export const MORE_TAB_TEXT = 'More...';
 function Tabs({
   children,
   className,
+  variant,
   moreTabText = MORE_TAB_TEXT,
   defaultActiveKey,
   activeKey,
@@ -161,6 +162,7 @@ function Tabs({
   return (
     <div ref={containerElementRef}>
       <BaseTabs
+        variant={variant}
         defaultActiveKey={defaultActiveKey}
         activeKey={activeKey}
         {...props}
@@ -173,6 +175,7 @@ function Tabs({
 }
 
 Tabs.propTypes = {
+  variant: PropTypes.oneOf(['tabs', 'pills', 'inverse-tabs', 'inverse-pills']),
   /** Specifies elements that is processed to create tabs. */
   children: PropTypes.node.isRequired,
   /** Specifies class name to append to the base element. */
@@ -186,6 +189,7 @@ Tabs.propTypes = {
 };
 
 Tabs.defaultProps = {
+  variant: 'pills',
   className: undefined,
   moreTabText: MORE_TAB_TEXT,
   defaultActiveKey: undefined,

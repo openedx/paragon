@@ -23,7 +23,7 @@ notes: |
 ## Uncontrolled usage
 
 ```jsx live
-<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+<Tabs variant="inverse-pills" defaultActiveKey="profile" id="uncontrolled-tab-example">
   <Tab eventKey="home" title="Home">
     Hello I am the first panel.
   </Tab>
