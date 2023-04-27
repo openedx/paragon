@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { SearchFieldContext } from './SearchFieldAdvanced';
-import { Button } from '../index';
+import Button from '../Button';
 
 const STYLE_VARIANTS = [
   'light',

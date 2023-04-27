@@ -2,17 +2,15 @@ import React, { useContext, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { MoreVert } from '../../icons';
-import {
-  useWindowSize,
-  useToggle,
-  DataTableContext,
-  Icon,
-  IconButton,
-  breakpoints,
-  ModalPopup,
-  Stack,
-  Button,
-} from '..';
+import useToggle from '../hooks/useToggle';
+import useWindowSize from '../hooks/useWindowSize';
+import DataTableContext from './DataTableContext';
+import Icon from '../Icon';
+import IconButton from '../IconButton';
+import breakpoints from '../utils/breakpoints';
+import ModalPopup from '../Modal/ModalPopup';
+import Stack from '../Stack';
+import Button from '../Button';
 
 export const ACTION_OVERFLOW_BUTTON_TEXT = 'More actions';
 export const SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT = 'Actions';

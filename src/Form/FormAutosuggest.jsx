@@ -5,7 +5,11 @@ import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { KeyboardArrowUp, KeyboardArrowDown } from '../../icons';
 import Icon from '../Icon';
-import { Form, IconButton, Spinner } from '../index';
+import FormGroup from './FormGroup';
+import FormControl from './FormControl';
+import FormControlFeedback from './FormControlFeedback';
+import IconButton from '../IconButton';
+import Spinner from '../Spinner';
 import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
 import messages from './messages';
 
@@ -215,8 +219,8 @@ function FormAutosuggest({
 
   return (
     <div className="pgn__form-autosuggest__wrapper" ref={parentRef}>
-      <Form.Group isInvalid={!!state.errorMessage}>
-        <Form.Control
+      <FormGroup isInvalid={!!state.errorMessage}>
+        <FormControl
           aria-expanded={(state.dropDownItems.length > 0).toString()}
           aria-owns="pgn__form-autosuggest__dropdown-box"
           value={state.displayValue}
@@ -228,17 +232,17 @@ function FormAutosuggest({
         />
 
         {helpMessage && !state.errorMessage && (
-          <Form.Control.Feedback type="default">
+          <FormControlFeedback type="default">
             {helpMessage}
-          </Form.Control.Feedback>
+          </FormControlFeedback>
         )}
 
         {state.errorMessage && (
-          <Form.Control.Feedback type="invalid" feedback-for={props.name}>
+          <FormControlFeedback type="invalid" feedback-for={props.name}>
             {errorMessageText}
-          </Form.Control.Feedback>
+          </FormControlFeedback>
         )}
-      </Form.Group>
+      </FormGroup>
 
       <div
         id="pgn__form-autosuggest__dropdown-box"
