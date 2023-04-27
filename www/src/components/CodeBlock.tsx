@@ -36,6 +36,45 @@ export type CollapsibleLiveEditorTypes = {
 
 function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
+
+  const getCodeBlockHeading = (element: HTMLElement): HTMLHeadElement | null => {
+    const codeBlockWrapper = element.closest<HTMLDivElement>('.pgn-doc__code-block');
+
+    if (!codeBlockWrapper) {
+      return null;
+    }
+
+    let node = codeBlockWrapper!.parentNode!.previousSibling as HTMLElement;
+
+    while (node.className !== 'pgn-doc__heading') {
+      node = node.previousSibling as HTMLElement;
+
+      if (!node) {
+        return null;
+      }
+    }
+
+    return node;
+  };
+
+  const submitSegmentEvent = (e: React.MouseEvent & { target: HTMLElement }) => {
+    const componentNameAndCategory = window.location.pathname.replace(/\//g, '.')
+      .replace(/.components./gi, '');
+    const headingElement = getCodeBlockHeading(e.target);
+
+    if (!headingElement) {
+      global.analytics.track(`openedx.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
+        value: `${componentNameAndCategory}id-not-generated`,
+      });
+
+      return;
+    }
+
+    global.analytics.track(`openedx.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
+      value: `${componentNameAndCategory}${headingElement.id}`,
+    });
+  };
+
   return (
     <div className="pgn-doc__collapsible-live-editor">
       <Collapsible
@@ -43,7 +82,7 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
         styling="card-lg"
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
-        withIcon
+        onClick={submitSegmentEvent}
         title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
         <p className="small text-gray mb-2">Any Paragon component or export may be added to the code example.</p>

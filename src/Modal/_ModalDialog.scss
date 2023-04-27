@@ -285,7 +285,33 @@
     }
   }
 
+  &.pgn__modal-warning {
+    .pgn__alert-modal__title_icon {
+      color: $warning-500;
+    }
+  }
+
+  &.pgn__modal-success {
+    .pgn__alert-modal__title_icon {
+      color: $success-500;
+    }
+  }
+
+  &.pgn__modal-danger {
+    .pgn__alert-modal__title_icon {
+      color: $danger-500;
+    }
+  }
+
   .pgn__modal-title {
     font-size: $h4-font-size;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+
+    .pgn__alert-modal__title_icon {
+      flex-shrink: 0;
+      margin-right: map-get($spacers, 2\.5);
+    }
   }
 }
