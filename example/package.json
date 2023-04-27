@@ -16,14 +16,14 @@
   "license": "ISC",
   "dependencies": {
     "@edx/brand-openedx": "^1.1.0",
-    "@edx/frontend-platform": "^2.6.1",
+    "@edx/frontend-platform": "^4.2.0",
     "@faker-js/faker": "^7.6.0",
     "core-js": "^3.22.2",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
-    "@edx/frontend-build": "^12.6.1"
+    "@edx/frontend-build": "^12.8.10"
   }
 }

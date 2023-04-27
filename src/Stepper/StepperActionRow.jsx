@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { StepperContext } from './StepperContext';
-import { ActionRow } from '..';
+import ActionRow from '../ActionRow';
 
 function StepperActionRow({
   as,

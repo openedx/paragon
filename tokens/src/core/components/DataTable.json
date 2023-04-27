@@ -7,6 +7,9 @@
           "max-height": { "value": "60vh", "type": "dimension", "source": "$data-table-pagination-dropdown-max-height" },
           "min-width": { "value": "6rem", "type": "dimension", "source": "$data-table-pagination-dropdown-min-width" }
         }
+      },
+      "layout": {
+        "sidebar-width": { "value": "12rem", "type": "dimension", "source": "$data-table-layout-sidebar-width" }
       }
     }
   },
