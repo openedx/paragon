@@ -218,6 +218,18 @@ describe('controlled behavior', () => {
 
       expect(onClick).toHaveBeenCalledTimes(1);
     });
+
+    it('renders with error msg', () => {
+      container.find('input').simulate('click');
+      act(() => {
+        const event = new Event('click', { bubbles: true });
+        document.dispatchEvent(event);
+      });
+      container.update();
+      const formControlFeedback = container.find('FormControlFeedback');
+
+      expect(formControlFeedback.text()).toEqual('Example error message');
+    });
   });
 
   describe('controlled behavior', () => {
