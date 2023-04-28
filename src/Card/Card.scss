@@ -417,11 +417,13 @@ a .pgn__card {
   line-height: 1.5rem;
   text-align: start;
   position: relative;
-  padding: 1.5rem;
+  padding: $card-spacer-y $card-spacer-x;
   border: 0 solid transparent;
-  border-radius: 0 0 .375rem .375rem;
+  border-radius: 0 0 $card-border-radius $card-border-radius;
 
   .pgn__card-status__message-content {
+    flex-grow: 1;
+
     & > :last-child {
       margin-bottom: 0;
     }
