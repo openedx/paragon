@@ -128,7 +128,7 @@
 
   .custom-control-input:checked ~ .custom-control-label {
     &::after {
-      background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked);
+      background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-base);
     }
   }
 
@@ -168,7 +168,7 @@
 
   .custom-control-input:checked ~ .custom-control-label {
     &::after {
-      background-image: var(--pgn-other-content-form-control-radio-indicator-icon-checked);
+      background-image: var(--pgn-other-content-form-control-radio-indicator-icon-checked-base);
     }
   }
 

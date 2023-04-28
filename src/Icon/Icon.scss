@@ -11,8 +11,8 @@
   }
 
   &.pgn__icon__xs {
-    width: $icon-xs;
-    height: $icon-xs;
+    width: var(--pgn-size-icon-xs);
+    height: var(--pgn-size-icon-xs);
   }
 
   &.pgn__icon__sm {

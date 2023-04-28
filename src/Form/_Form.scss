@@ -43,7 +43,7 @@
   flex-grow: 1;
   align-items: flex-start;
 
-  @media (min-width: map-get($grid-breakpoints, "sm")) {
+  @media (--min-pgn-size-breakpoint-sm) {
     margin-inline-end: var(--pgn-spacing-form-control-gutter);
   }
 
@@ -412,7 +412,7 @@ select.form-control {
 
 .pgn__form-checkbox-input {
   &:checked {
-    background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked);
+    background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-base);
   }
 
   &:indeterminate {
@@ -472,7 +472,7 @@ select.form-control {
   border-radius: var(--pgn-size-form-control-border-radio-indicator-radius);
 
   &:checked {
-    background-image: var(--pgn-other-content-form-control-radio-indicator-icon-checked);
+    background-image: var(--pgn-other-content-form-control-radio-indicator-icon-checked-base);
   }
 
   &:focus {
@@ -523,13 +523,13 @@ select.form-control {
 .pgn__form-checkbox {
   &.pgn__form-control-invalid input {
     &:checked {
-      background-image: escape-svg($custom-checkbox-indicator-icon-invalid-checked);
+      background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-invalid);
     }
   }
 
   &.pgn__form-control-valid input {
     &:checked {
-      background-image: escape-svg($custom-checkbox-indicator-icon-valid-checked);
+      background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-valid);
     }
   }
 }
@@ -537,13 +537,13 @@ select.form-control {
 .pgn__form-radio {
   &.pgn__form-control-invalid input {
     &:checked {
-      background-image: escape-svg($custom-radio-indicator-icon-invalid-checked);
+      background-image: var(--pgn-other-content-form-control-radio-indicator-icon-checked-invalid);
     }
   }
 
   &.pgn__form-control-valid input {
     &:checked {
-      background-image: escape-svg($custom-radio-indicator-icon-valid-checked);
+      background-image: var(--pgn-other-content-form-control-radio-indicator-icon-checked-valid);
     }
   }
 }
@@ -597,7 +597,7 @@ select.form-control {
   .pgn__form-autosuggest__dropdown {
     @include pgn-box-shadow(1, "centered");
 
-    @media (min-width: map-get($grid-breakpoints, "sm")) {
+    @media (--min-pgn-size-breakpoint-sm) {
       margin-inline-end: var(--pgn-spacing-form-control-gutter);
     }
 

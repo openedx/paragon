@@ -39,7 +39,7 @@
   margin-bottom: var(--pgn-size-popover-arrow-height);
 
   > .arrow {
-    bottom: calc(-1 * (var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
+    bottom: calc(-1 * calc(var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
 
     &::before {
       bottom: 0;
@@ -59,7 +59,7 @@
   margin-left: var(--pgn-size-popover-arrow-height);
 
   > .arrow {
-    left: calc(-1 * (var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
+    left: calc(-1 * calc(var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
     width: var(--pgn-size-popover-arrow-height);
     height: var(--pgn-size-popover-arrow-width);
     margin: var(--pgn-size-popover-border-radius) 0;
@@ -88,7 +88,7 @@
   margin-top: var(--pgn-size-popover-arrow-height);
 
   > .arrow {
-    top: calc(-1 * (var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
+    top: calc(-1 * calc(var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
 
     &::before {
       top: 0;
@@ -126,7 +126,7 @@
   margin-right: var(--pgn-size-popover-arrow-height);
 
   > .arrow {
-    right: calc(-1 * (var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
+    right: calc(-1 * calc(var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
     width: var(--pgn-size-popover-arrow-height);
     height: var(--pgn-size-popover-arrow-width);
     margin: var(--pgn-size-popover-border-radius) 0;
@@ -185,7 +185,7 @@
   background-color: var(--pgn-color-popover-header-bg);
   border-bottom: var(--pgn-size-popover-border-width) solid var(--pgn-color-popover-header-border-bottom-dark);
 
-  @include border-top-radius(calc(var(--pgn-popover-border-radius) - var(--pgn-popover-border-border)));
+  @include border-top-radius(calc(var(--pgn-size-popover-border-radius) - var(--pgn-size-popover-border-width)));
 
   &:empty {
     display: none;

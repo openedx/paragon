@@ -287,19 +287,19 @@
 
   &.pgn__modal-warning {
     .pgn__alert-modal__title_icon {
-      color: $warning-500;
+      color: var(--pgn-color-warning-500);
     }
   }
 
   &.pgn__modal-success {
     .pgn__alert-modal__title_icon {
-      color: $success-500;
+      color: var(--pgn-color-success-500);
     }
   }
 
   &.pgn__modal-danger {
     .pgn__alert-modal__title_icon {
-      color: $danger-500;
+      color: var(--pgn-color-danger-500);
     }
   }
 

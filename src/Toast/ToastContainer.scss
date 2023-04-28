@@ -9,7 +9,7 @@
     left: 0;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media (--max-pgn-size-breakpoint-sm) {
     bottom: var(--pgn-spacing-toast-container-gutter-sm);
     right: var(--pgn-spacing-toast-container-gutter-sm);
     left: var(--pgn-spacing-toast-container-gutter-sm);

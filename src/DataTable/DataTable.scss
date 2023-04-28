@@ -86,7 +86,7 @@
   display: flex;
   align-items: flex-start;
 
-  @media (max-width: var(--pgn-size-container-max-width-xl)) {
+  @media (--max-pgn-size-breakpoint-xl) {
     overflow-x: scroll;
   }
 
@@ -96,7 +96,7 @@
     box-shadow: var(--pgn-elevation-data-table-box-shadow);
     padding: var(--pgn-spacing-data-table-padding-small);
     margin-right: map_get($spacers, 4);
-    flex: 0 0 $data-table-layout-sidebar-width;
+    flex: 0 0 var(--pgn-size-data-table-layout-sidebar-width);
   }
 
   .pgn__data-table-side-filters {

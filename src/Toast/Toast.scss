@@ -41,11 +41,11 @@
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media (--max-pgn-size-breakpoint-sm) {
     max-width: 100%;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media (--min-pgn-size-breakpoint-md) {
     min-width: var(--pgn-size-toast-max-width);
     max-width: var(--pgn-size-toast-max-width);
   }

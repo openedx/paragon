@@ -1,28 +1,31 @@
-import React, { useEffect, useState } from 'react';
-// @ts-ignore
-import { DataTable } from '~paragon-react'; // eslint-disable-line
+import React, { useContext, useEffect, useState } from 'react';
+import { DataTable } from '~paragon-react';
+import { SettingsContext } from '../context/SettingsContext';
 
 function ComponentVariablesTable({ rawStylesheet }: ComponentVariablesTableProps) {
   const [tableData, setTableData] = useState<Array<TableRowData>>([]);
+  const { settings: { theme } } = useContext(SettingsContext);
 
   useEffect(() => {
-    const bodyStyles = getComputedStyle(document.body);
-    const variablesList = rawStylesheet.filter((row) => row.match(/var\((\w|-|_)*\)/g));
+    setTimeout(() => {
+      const bodyStyles = getComputedStyle(document.body);
+      const variablesList = rawStylesheet.filter((row) => row.match(/var\((\w|-|_)*\)/g));
 
-    const tableRows = variablesList.map(variable => {
-      const variableName = variable.trim();
-      const extractedCSSVariables = variableName.match(/(?<=var?\()(.*)(?=\))/g);
+      const tableRows = variablesList.map(variable => {
+        const variableName = variable.trim();
+        const extractedCSSVariables = variableName.match(/(?<=var?\()(.*)(?=\))/g);
 
-      const computedValue = extractedCSSVariables ? bodyStyles.getPropertyValue(extractedCSSVariables[0]) : '';
+        const computedValue = extractedCSSVariables ? bodyStyles.getPropertyValue(extractedCSSVariables[0]) : '';
 
-      return {
-        variableName: <code>{variableName}</code>,
-        computedValue: <code>{computedValue}</code>,
-      };
-    });
+        return {
+          variableName: <code>{variableName}</code>,
+          computedValue: <code>{computedValue}</code>,
+        };
+      });
 
-    setTableData(tableRows);
-  }, [rawStylesheet]);
+      setTableData(tableRows);
+    }, 1000);
+  }, [rawStylesheet, theme]);
 
   return (
     <DataTable
