@@ -40,7 +40,9 @@ Breadcrumb.propTypes = {
    * prop as these objects will get passed down as props to the underlying component defined by `linkAs` prop.
    */
   links: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
+    label: PropTypes.string.isRequired,
+    href: PropTypes.string,
+    className: PropTypes.string,
   })).isRequired,
   /** allows to add a label that is not a link to the end of the breadcrumb. */
   activeLabel: PropTypes.string,
