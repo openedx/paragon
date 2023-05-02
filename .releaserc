@@ -1,5 +1,22 @@
 {
-  "branches": ["master", "next"],
+  "branches": ["master", "next", "beta", "*.x"],
+  "verifyConditions": [
+    "@semantic-release/changelog",
+    "@semantic-release/npm",
+    "@semantic-release/git",
+    {
+      "path": "@semantic-release/github",
+      "assets": [
+        { "path": "dist/**", "label": "Distribution files" },
+        { "path": "docs/**", "label": "Documentation" }
+      ],
+      "successComment": false,
+      "failComment": false,
+      "releasedLabels": false,
+      "addReleases": "top",
+      "releasedDraft": true
+    }
+  ],
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
