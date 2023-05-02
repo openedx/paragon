@@ -51,6 +51,8 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
   {/* start example state */}
   const [type, setType] = useState('default');
   {/* end example state */}
+  const [value, setValue] = useState('');
+  const handleChange = (e) => setValue(e.target.value);
 
   const inputs = {
     default: (
@@ -145,8 +147,7 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
       </Form.Group>
     </>),
   };
-  const [value, setValue] = useState('');
-  const handleChange = (e) => setValue(e.target.value);
+
   return (
     <>
       {/* start example form block */}
