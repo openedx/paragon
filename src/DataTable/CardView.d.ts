@@ -15,7 +15,7 @@ export interface CardViewProps {
     skeletonCardCount?: number;
 }
 
-declare function CardView<T>(props: CardViewProps): JSX.Element;
+declare function CardView(props: CardViewProps): JSX.Element;
 
 export default CardView;
 
