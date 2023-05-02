@@ -8,6 +8,6 @@ export interface TableRowProps {
     };
 }
 
-declare function TableRow({ row }: TableRowProps): JSX.Element;
+declare function TableRow(props: TableRowProps): JSX.Element;
 
 export default TableRow;

@@ -82,7 +82,7 @@ export interface DataTableProps {
     manualSortBy?: boolean;
     isExpandable?: boolean;
     renderRowSubComponent?: (row: number, index: number) => React.ReactNode;
-    bulkActions?: BulkActionProp[] | (() => BulkActionProp[]) | React.ReactElement;
+    bulkActions?: BulkActionProp[];
     tableActions?: TableActionType[];
     numBreakoutFilters?: 1 | 2 | 3 | 4;
     initialTableOptions?: object;

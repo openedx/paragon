@@ -1,6 +1,6 @@
 export interface WindowSizeTypes {
-    width: number | undefined;
-    height: number | undefined;
+    width?: number;
+    height?: number;
 }
 
 declare function useWindowSize(): WindowSizeTypes;

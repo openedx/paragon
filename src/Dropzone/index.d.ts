@@ -5,8 +5,8 @@ export interface DropzoneProps {
     accept?: { [key: string]: string[] };
     maxSize?: number;
     minSize?: number;
-    onUploadProgress?: (percentageUploaded: number, progressEvent: ProgressEvent) => void;
-    onUploadCancel?: (response: Response) => void;
+    onUploadProgress?: (percentageUploaded: number, progressEvent: AbortSignal) => void;
+    onUploadCancel?: () => void;
     onProcessUpload: (params: {
         fileData: object;
         requestConfig: object;

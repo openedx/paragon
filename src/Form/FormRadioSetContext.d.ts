@@ -16,7 +16,7 @@ export interface FormRadioSetContextValue extends RadioControlProps {
     getRadioControlProps: (props: RadioControlProps) => RadioControlProps;
 }
 
-export interface FormRadioSetContextProviderProps extends Omit<FormRadioSetContextValue, 'getRadioControlProps'>  {
+export interface FormRadioSetContextProviderProps extends FormRadioSetContextValue {
     children: React.ReactNode;
 }
 

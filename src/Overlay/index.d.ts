@@ -7,7 +7,7 @@ export interface OverlayProps extends React.HTMLAttributes<HTMLDivElement> {
     show: boolean;
     onHide: () => void;
     placement?: Placement;
-    container?: Element | (() => Element | null) | null;
+    container?: React.ReactElement | (() => React.ReactElement | null) | null;
     flip?: boolean;
     popperConfig?: Object;
     rootClose?: boolean;

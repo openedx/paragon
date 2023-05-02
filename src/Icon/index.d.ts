@@ -10,7 +10,7 @@ export interface IconProps {
   size?: 'xs' | 'sm' | 'md' | 'lg';
   className?: string;
   hidden?: boolean;
-  screenReaderText?: string | React.ReactNode;
+  screenReaderText?: React.ReactNode;
 }
 
 declare const Icon: React.FC<IconProps>;
