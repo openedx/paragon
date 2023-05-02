@@ -15,32 +15,102 @@
     min-width: $tab-notification-width;
     font-size: $tab-notification-font-size;
   }
-}
 
-.pgn__tab_invisible {
-  position: absolute;
-  left: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
+  .pgn__tab_more.nav-link {
+    margin-bottom: 0;
+    padding: 0;
 
-.pgn__tab_more.nav-link {
-  margin-bottom: 0;
-  padding: 0;
-  border-top: none;
-  border-bottom: none;
-
-  .dropdown .dropdown-toggle {
-    display: block;
-    padding: .5rem 1rem;
-    border-top-width: 4px;
-    border-bottom-width: 4px;
+    .dropdown .dropdown-toggle {
+      display: block;
+      border: none;
+    }
   }
 
-  &.active {
-    .dropdown .dropdown-toggle {
-      // stylelint-disable-next-line
-      @extend .nav-link, .active;
+  // Nav-pills
+  &.nav-pills {
+    .pgn__tab_more.nav-link {
+      margin: 0;
+
+      .dropdown .dropdown-toggle {
+        padding: .7rem 1rem;
+
+        &:focus {
+          background-color: $primary-500;
+          border-color: $primary-500;
+          color: $white;
+
+          &.btn.btn-link {
+            color: $white;
+            border-color: $primary-500;
+          }
+        }
+      }
+
+      &.active {
+        .dropdown .dropdown-toggle {
+          color: $white;
+        }
+
+        &:hover {
+          .dropdown .dropdown-toggle {
+            background-color: $primary-500;
+          }
+        }
+      }
     }
+  }
+
+  // Nav inverse pills
+  &.nav-inverse-pills {
+    .pgn__tab_more.nav-link {
+      .dropdown .dropdown-toggle {
+        padding: .625rem 1rem;
+
+        &:focus {
+          background-color: $white;
+          color: $primary-500;
+        }
+      }
+
+      &.active {
+        .dropdown .dropdown-toggle {
+          color: $primary-500;
+
+          &:hover {
+            color: $white;
+            background-color: $primary-300;
+          }
+        }
+      }
+    }
+  }
+
+  // Nav tabs
+  &.nav-tabs {
+    .pgn__tab_more.nav-link {
+      .dropdown .dropdown-toggle {
+        padding: .563rem 1rem;
+      }
+    }
+  }
+
+  // Nav inverse tabs
+  &.nav-inverse-tabs {
+    .pgn__tab_more.nav-link {
+      .dropdown .dropdown-toggle {
+        padding: .625rem 1rem;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .pgn__tab_invisible {
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    visibility: hidden;
   }
 }

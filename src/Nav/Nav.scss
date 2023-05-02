@@ -1,9 +1,5 @@
 @import "variables";
 
-// .pgn-doc__code-block-preview {
-//   background-color: #00262b !important;
-// }
-
 // Base class
 //
 // Kickstart any navigation component with a set of style resets. Works with
@@ -37,20 +33,20 @@
   }
 }
 
-%nav-tabs-link-focus {
+@mixin nav-tabs-link-focus($border-color) {
   position: relative;
   outline: 0;
-  z-index: 999999;
+  z-index: 3;
 
   &::before {
     content: "";
     position: absolute;
-    top: -5px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
-    border: solid $nav-tabs-border-width $nav-tabs-link-focus-border-color;
-    border-radius: 0;
+    top: -$nav-tabs-link-distance-to-border;
+    right: -$nav-tabs-link-distance-to-border;
+    bottom: -$nav-tabs-link-distance-to-border;
+    left: -$nav-tabs-link-distance-to-border;
+    border: solid $nav-tabs-border-width $border-color;
+    border-radius: $nav-tabs-border-radius;
   }
 }
 
@@ -59,27 +55,26 @@
 //
 
 .pgn__tabs {
-  &.nav-pills {
-    .nav-link {
-      border: 1px solid $light-400;
+  &.nav-pills .nav-link {
+    border: 1px solid $light-400;
+
+    &:focus {
+      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+    }
+
+    &:hover {
+      border-color: $nav-tabs-link-hover-border-color;
+      background-color: $nav-tabs-link-hover-bg;
+    }
+
+    &.active,
+    .nav-item.show .nav-link {
+      color: $nav-pills-link-active-color;
+      background-color: $nav-pills-link-active-bg;
+      border-color: $nav-pills-link-active-bg;
 
       &:focus {
-        @extend %nav-tabs-link-focus;
-      }
-
-      &:hover {
-        border-color: $nav-tabs-link-hover-border-color;
-        background-color: $nav-tabs-link-hover-bg;
-      }
-
-      &.active {
-        color: $nav-pills-link-active-color;
-        background-color: $nav-pills-link-active-bg;
-        border-color: $nav-pills-link-active-bg;
-
-        &:focus {
-          @extend %nav-tabs-link-focus;
-        }
+        @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
       }
     }
   }
@@ -87,31 +82,19 @@
   &.nav-inverse-pills {
     .nav-link {
       color: $white;
-      border: $nav-tabs-border-width solid $primary-300;
+      border: 1px solid $primary-300;
 
       &:hover {
         background-color: $primary-300;
       }
 
       &:focus {
-        position: relative;
-        outline: 0;
-        z-index: 999999;
-
-        &::before {
-          content: "";
-          position: absolute;
-          top: -5px;
-          right: -5px;
-          bottom: -5px;
-          left: -5px;
-          border: solid $nav-tabs-border-width $white;
-          border-radius: 0;
-        }
+        @include nav-tabs-link-focus($white);
       }
     }
 
-    .nav-link.active {
+    .nav-link.active,
+    .nav-item.show .nav-link {
       background-color: $white;
       color: $primary-300;
       border-color: $white;
@@ -121,54 +104,43 @@
         color: $white;
         border-color: $primary-300;
       }
+
+      &:focus:hover {
+        background-color: $white;
+        color: $primary-300;
+        border-color: $white;
+      }
     }
   }
 
   &.nav-inverse-tabs {
-    border-bottom: $nav-tabs-border-width solid $primary-300;
-
     .nav-link {
       color: $white;
+      border-bottom: $nav-tabs-border-width solid $primary-300;
 
       &:hover {
         background-color: $primary-300;
       }
 
       &:focus {
-        position: relative;
-        outline: 0;
-        z-index: 999999;
-
-        &::before {
-          content: "";
-          position: absolute;
-          top: -5px;
-          right: -5px;
-          bottom: -5px;
-          left: -5px;
-          border: solid $nav-tabs-border-width $white;
-          border-radius: 0;
-        }
+        @include nav-tabs-link-focus($white);
       }
     }
 
-    .nav-link.active {
-      border-bottom: $nav-tabs-border-width solid $white;
+    .nav-link.active,
+    .nav-item.show .nav-link {
+      border-bottom: 3px solid $white;
       background-color: $primary-300;
 
       &:hover {
         background-color: transparent;
       }
     }
-
-    .tab-content>.active {
-      color: $white;
-    }
   }
 }
 
 .nav-tabs {
-  border-bottom: $nav-tabs-border-width solid transparent;
+  border-bottom: $nav-tabs-border-width solid $light-400;
 
   .nav-link {
     margin-bottom: -$nav-tabs-border-width;
@@ -183,7 +155,7 @@
     }
 
     &:focus {
-      @extend %nav-tabs-link-focus;
+      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
     }
 
     &.disabled {
@@ -204,7 +176,7 @@
     }
 
     &:focus {
-      @extend %nav-tabs-link-focus;
+      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
     }
   }
 

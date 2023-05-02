@@ -189,7 +189,7 @@ Tabs.propTypes = {
 };
 
 Tabs.defaultProps = {
-  variant: 'pills',
+  variant: 'tabs',
   className: undefined,
   moreTabText: MORE_TAB_TEXT,
   defaultActiveKey: undefined,
