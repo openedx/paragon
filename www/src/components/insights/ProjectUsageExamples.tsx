@@ -27,6 +27,10 @@ function ProjectUsageExamples({ row }: IProjectUsageExamples) {
       return obj;
     }, {});
 
+  const handleHyperlinkClick = (projectName, pathToUsage) => {
+    global.analytics.track(projectName, { filePath: pathToUsage });
+  };
+
   return (
     <>
       {Object.keys(usages).length === 0 && (
@@ -36,23 +40,27 @@ function ProjectUsageExamples({ row }: IProjectUsageExamples) {
         <div className="pgn-doc__usages-modal mb-4" key={componentName}>
           <h5 className="font-weight-bold">{componentName}</h5>
           <ul className="list-unstyled">
-            {usagesArray.map((usage) => (
-              <li key={`${usage.filePath}L#${usage.line}`}>
-                {repositoryUrl ? (
-                  <>
-                    <Hyperlink
-                      destination={`${repositoryUrl}/${usage.filePath}#L${usage.line}`}
-                      target="_blank"
-                    >
-                      {usage.filePath}
-                    </Hyperlink>
-                    {' '}(line {usage.line})
-                  </>
-                ) : (
-                  <>{usage.filePath} (line {usage.line})</>
-                )}
-              </li>
-            ))}
+            {usagesArray.map((usage) => {
+              const PATH_TO_USAGE = `${repositoryUrl}/${usage.filePath}#L${usage.line}`;
+              return (
+                <li key={`${usage.filePath}L#${usage.line}`}>
+                  {repositoryUrl ? (
+                    <>
+                      <Hyperlink
+                        destination={PATH_TO_USAGE}
+                        target="_blank"
+                        onClick={() => handleHyperlinkClick(row.original.name, PATH_TO_USAGE)}
+                      >
+                        {usage.filePath}
+                      </Hyperlink>
+                      {' '}(line {usage.line})
+                    </>
+                  ) : (
+                    <>{usage.filePath} (line {usage.line})</>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       ))}

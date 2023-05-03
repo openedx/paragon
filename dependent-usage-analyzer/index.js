@@ -38,12 +38,6 @@ function getDependencyVersion(dir, options = {}) {
   // rather than a range in package.json.
   const packageFilename = 'package-lock.json';
   const { projectsDir } = options;
-  console.log('DIR: ', dir);
-  console.log('PROJECTS_DIR: ', projectsDir);
-  // if (dir === projectsDir) {
-  //   // At the top-level directory containing all projects; Paragon version not found.
-  //   return {};
-  // }
   const parentDir = dir.split('/').slice(0, -1).join('/');
   if (!fs.existsSync(`${dir}/${packageFilename}`)) {
     // No package-lock.json file exists, so try traversing up the tree until
