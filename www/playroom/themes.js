@@ -1,7 +1,7 @@
 const openedx = 'openedx';
-const edxOrg = 'edx.org';
+const edxOrg = 'edX.org';
 
-export {
+module.exports = {
   openedx,
-  edxOrg,
+  'edX.org': edxOrg,
 };
