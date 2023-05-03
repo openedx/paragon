@@ -38,10 +38,12 @@ function getDependencyVersion(dir, options = {}) {
   // rather than a range in package.json.
   const packageFilename = 'package-lock.json';
   const { projectsDir } = options;
-  if (dir === projectsDir) {
-    // At the top-level directory containing all projects; Paragon version not found.
-    return {};
-  }
+  console.log('DIR: ', dir);
+  console.log('PROJECTS_DIR: ', projectsDir);
+  // if (dir === projectsDir) {
+  //   // At the top-level directory containing all projects; Paragon version not found.
+  //   return {};
+  // }
   const parentDir = dir.split('/').slice(0, -1).join('/');
   if (!fs.existsSync(`${dir}/${packageFilename}`)) {
     // No package-lock.json file exists, so try traversing up the tree until
@@ -66,6 +68,7 @@ function getPackageInfo(dir, options = {}) {
   const { directDependencyVersion, peerDependencyVersion } = getDependencyVersion(dir, options);
   try {
     const { name, repository } = JSON.parse(fs.readFileSync(`${dir}/package.json`, { encoding: 'utf-8' }));
+
     return {
       version: directDependencyVersion || peerDependencyVersion,
       name,
