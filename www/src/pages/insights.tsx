@@ -262,7 +262,9 @@ function ComponentUsage({ name, componentUsageInProjects }: IComponentUsage) {
         isSortable
         itemCount={componentUsageInProjects.length} // eslint-disable-line
         data={componentUsageInProjects}
-        renderRowSubComponent={({ row }: IComponentUsageExamples) => <ComponentUsageExamples row={row} />}
+        renderRowSubComponent={({ row }: IComponentUsageExamples) => (
+          <ComponentUsageExamples row={row} componentName={name} />
+        )}
         columns={[
           {
             id: 'expander',

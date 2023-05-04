@@ -31,27 +31,36 @@ function getProjectFiles(dir) {
  * @param {string} dir Path to directory
  * @param {object} options Optional options
  * @param {string} options.projectsDir Path to top-level projects directory
- * @returns Object containing direct or peer Paragon dependency version
+ * @returns String representing direct or peer Paragon dependency version
  */
 function getDependencyVersion(dir, options = {}) {
   // package-lock.json contains the actual Paragon version
   // rather than a range in package.json.
   const packageFilename = 'package-lock.json';
   const { projectsDir } = options;
+  if (dir === projectsDir) {
+    // At the top-level directory containing all projects; Paragon version not found.
+    return {};
+  }
   const parentDir = dir.split('/').slice(0, -1).join('/');
   if (!fs.existsSync(`${dir}/${packageFilename}`)) {
     // No package-lock.json file exists, so try traversing up the tree until
     // reaching the top-level ``projectsDir``.
     return getDependencyVersion(parentDir, options);
   }
-  const { dependencies, peerDependencies } = JSON.parse(fs.readFileSync(`${dir}/${packageFilename}`, { encoding: 'utf-8' }));
-  const directDependencyVersion = dependencies && dependencies['@edx/paragon'] ? dependencies['@edx/paragon'].version : false;
-  const peerDependencyVersion = peerDependencies && peerDependencies['@edx/paragon'] ? peerDependencies['@edx/paragon'].version : false;
-  if (directDependencyVersion || peerDependencyVersion) {
-    return {
-      directDependencyVersion,
-      peerDependencyVersion,
-    }
+  const {
+    packages,
+    dependencies,
+    peerDependencies
+  } = JSON.parse(fs.readFileSync(`${dir}/${packageFilename}`, { encoding: 'utf-8' }));
+
+  // first handle lockfileVersion 3 that contains all dependencies data in 'packages' key
+  const packagesDependencyVersion = packages && packages['node_modules/@edx/paragon']?.version;
+  const directDependencyVersion = dependencies && dependencies['@edx/paragon']?.version;
+  const peerDependencyVersion = peerDependencies && peerDependencies['@edx/paragon']?.version;
+  const resolvedVersion = packagesDependencyVersion || directDependencyVersion || peerDependencyVersion;
+  if (resolvedVersion) {
+    return resolvedVersion;
   }
   // No Paragon dependency exists, so try traversing up the tree until
   // reaching the top-level ``projectsDir``.
@@ -59,12 +68,12 @@ function getDependencyVersion(dir, options = {}) {
 }
 
 function getPackageInfo(dir, options = {}) {
-  const { directDependencyVersion, peerDependencyVersion } = getDependencyVersion(dir, options);
+  const version = getDependencyVersion(dir, options);
   try {
     const { name, repository } = JSON.parse(fs.readFileSync(`${dir}/package.json`, { encoding: 'utf-8' }));
 
     return {
-      version: directDependencyVersion || peerDependencyVersion,
+      version,
       name,
       repository,
       folderName: dir.split('/').pop(),
