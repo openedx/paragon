@@ -1,9 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { TextEncoder } from 'util';
 
 import Spinner from './index';
 
 describe('Spinner', () => {
+  beforeAll(() => {
+    Object.defineProperty(global, 'TextEncoder', {
+      value: TextEncoder,
+    });
+  });
   it('should render a spinner', () => {
     const wrapper = shallow(<Spinner animation="border" />);
     expect(wrapper.html()).toMatchSnapshot();

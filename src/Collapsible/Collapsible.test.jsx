@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
+import { act } from 'react-dom/test-utils';
 import Collapsible from '.';
 
 const collapsibleContent = (
@@ -78,18 +79,22 @@ describe('<Collapsible />', () => {
 
     collapsibleIsClosed(wrapper);
 
-    it('opens on .open()', () => {
-      collapsible.open();
-      wrapper.update();
-      collapsibleIsOpen(wrapper);
+    it('opens on .open()', async () => {
+      await act(() => {
+        collapsible.open();
+        wrapper.update();
+        collapsibleIsOpen(wrapper);
+      });
     });
 
-    it('closes on .close()', () => {
-      collapsible.close();
-      wrapper.update();
-      collapsibleIsClosed(wrapper);
+    it('closes on .close()', async () => {
+      await act(() => {
+        collapsible.close();
+        wrapper.update();
+        collapsibleIsClosed(wrapper);
+      });
     });
-    it('correct behavior with unmountOnExit', () => {
+    it('correct behavior with unmountOnExit', async () => {
       let i = 0;
       function Comp() {
         i += 1;
@@ -103,14 +108,16 @@ describe('<Collapsible />', () => {
         </Collapsible.Advanced>
       ));
       const instance = component.instance();
-      instance.open();
-      component.update();
-      expect(i).toEqual(1);
-      instance.close();
-      component.update();
-      instance.open();
-      component.update();
-      expect(i).toEqual(1);
+      await act(() => {
+        instance.open();
+        component.update();
+        expect(i).toEqual(1);
+        instance.close();
+        component.update();
+        instance.open();
+        component.update();
+        expect(i).toEqual(1);
+      });
     });
   });
 

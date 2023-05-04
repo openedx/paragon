@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { TextEncoder } from 'util';
 import { Search, Close } from '../../icons';
 import Icon from '../Icon';
 
@@ -16,6 +17,11 @@ const baseProps = {
 };
 
 describe('<SearchField /> with basic usage', () => {
+  beforeAll(() => {
+    Object.defineProperty(global, 'TextEncoder', {
+      value: TextEncoder,
+    });
+  });
   it('should match the snapshot', () => {
     const wrapper = shallow(<SearchField {...baseProps} />);
     expect(wrapper.html()).toMatchSnapshot();
