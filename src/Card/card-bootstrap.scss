@@ -3,12 +3,12 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: $card-bg;
+  background-color: var(--pgn-color-card-bg-base);
   background-clip: border-box;
-  border: $card-border-width solid $card-border-color;
+  border: var(--pgn-size-card-border-width) solid var(--pgn-color-card-border-base);
   position: relative;
 
-  @include border-radius($card-border-radius);
+  @include border-radius(calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width)));
 
   > hr {
     margin-right: 0;
@@ -22,13 +22,17 @@
     &:first-child {
       border-top-width: 0;
 
-      @include border-top-radius($card-inner-border-radius);
+      @include border-top-radius(
+        calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width))
+      );
     }
 
     &:last-child {
       border-bottom-width: 0;
 
-      @include border-bottom-radius($card-inner-border-radius);
+      @include border-bottom-radius(
+        calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width))
+      );
     }
   }
 
@@ -43,27 +47,27 @@
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: $card-spacer-x;
-  color: $card-color;
+  padding: var(--pgn-spacing-card-spacer-x);
+  color: var(--pgn-color-card-base);
 }
 
 // Card deck
 .card-deck {
   .card {
-    margin-bottom: $card-deck-margin;
+    margin-bottom: var(--pgn-spacing-card-margin-deck);
   }
 
   @include media-breakpoint-up(sm) {
     display: flex;
     flex-flow: row wrap;
-    margin-right: calc(#{$card-deck-margin} * -1);
-    margin-left: calc(#{$card-deck-margin} * -1);
+    margin-right: calc(var(--pgn-spacing-card-margin-deck) * -1);
+    margin-left: calc(var(--pgn-spacing-card-margin-deck) * -1);
 
     .card {
       flex: 1 0 0%;
-      margin-right: $card-deck-margin;
+      margin-right: var(--pgn-spacing-card-margin-deck);
       margin-bottom: 0; // Override the default
-      margin-left: $card-deck-margin;
+      margin-left: var(--pgn-spacing-card-margin-deck);
     }
   }
 }
@@ -71,7 +75,7 @@
 // Card groups
 .card-group {
   > .card {
-    margin-bottom: $card-group-margin;
+    margin-bottom: var(--pgn-spacing-card-margin-group);
   }
 
   @include media-breakpoint-up(sm) {
@@ -124,12 +128,12 @@
 // Columns
 .card-columns {
   .card {
-    margin-bottom: $card-columns-margin;
+    margin-bottom: var(--pgn-spacing-card-columns-margin);
   }
 
   @include media-breakpoint-up(sm) {
-    column-count: $card-columns-count;
-    column-gap: $card-columns-gap;
+    column-count: var(--pgn-spacing-card-columns-count);
+    column-gap: var(--pgn-spacing-card-columns-gap);
     orphans: 1;
     widows: 1;
 
@@ -160,7 +164,7 @@
     > .card-header {
       @include border-radius(0);
 
-      margin-bottom: calc(#{$card-border-width} * -1);
+      margin-bottom: calc(var(--pgn-size-card-border-width) * -1);
     }
   }
 }

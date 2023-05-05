@@ -1,5 +1,3 @@
-@import "variables";
-
 .collapsible-card {
   // stylelint-disable-next-line
   @extend .card;
@@ -7,9 +5,9 @@
   border-radius: 0;
 
   .collapsible-trigger {
-    padding: $collapsible-card-spacer-y $collapsible-card-spacer-x;
-    border-radius: $card-inner-border-radius;
-    border-bottom: $card-border-width solid transparent;
+    padding: var(--pgn-spacing-collapsible-card-spacer-y-base) var(--pgn-spacing-collapsible-card-spacer-x-base);
+    border-radius: calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width));
+    border-bottom: var(--pgn-size-card-border-width) solid transparent;
     transition: border-color 100ms ease 150ms;
     cursor: pointer;
     display: flex;
@@ -23,8 +21,10 @@
     }
 
     &[aria-expanded="true"] {
-      border-radius: $card-inner-border-radius $card-inner-border-radius 0 0;
-      border-color: $card-border-color;
+      border-radius:
+        calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width))
+        calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width)) 0 0;
+      border-color: var(--pgn-color-card-border-base);
       transition: none;
       text-align: start;
     }
@@ -34,8 +34,8 @@
     // stylelint-disable-next-line
     @extend .card-body;
 
-    padding: $collapsible-card-spacer-y $collapsible-card-spacer-x;
-    padding-left: $collapsible-card-body-spacer-left;
+    padding: var(--pgn-spacing-collapsible-card-spacer-y-base) var(--pgn-spacing-collapsible-card-spacer-x-base);
+    padding-left: var(--pgn-spacing-collapsible-card-spacer-left-body);
     text-align: start;
 
     & > *:last-child {
@@ -44,7 +44,7 @@
   }
 
   .collapsible-icon {
-    margin-inline-start: $collapsible-card-spacer-icon;
+    margin-inline-start: var(--pgn-spacing-collapsible-card-spacer-icon);
   }
 }
 
@@ -53,11 +53,11 @@
   @extend .collapsible-card;
 
   .collapsible-trigger {
-    padding: $collapsible-card-spacer-y-lg $collapsible-card-spacer-x-lg;
+    padding: var(--pgn-spacing-collapsible-card-spacer-y-lg) var(--pgn-spacing-collapsible-card-spacer-x-lg);
   }
 
   .collapsible-body {
-    padding: $collapsible-card-spacer-y-lg $collapsible-card-spacer-x-lg;
+    padding: var(--pgn-spacing-collapsible-card-spacer-y-lg) var(--pgn-spacing-collapsible-card-spacer-x-lg);
   }
 }
 
@@ -68,11 +68,11 @@
     align-items: center;
     text-decoration: underline;
     color: theme-color("primary", "default");
-    padding: $collapsible-basic-spacer-y $collapsible-basic-spacer-x;
+    padding: var(--pgn-spacing-collapsible-card-spacer-basic-y) var(--pgn-spacing-collapsible-card-spacer-basic-x);
   }
 
   .collapsible-body {
-    padding: $collapsible-basic-spacer-y $collapsible-basic-spacer-x;
+    padding: var(--pgn-spacing-collapsible-card-spacer-basic-y) var(--pgn-spacing-collapsible-card-spacer-basic-x);
     text-align: start;
 
     &.collapsing {
@@ -81,6 +81,6 @@
   }
 
   .collapsible-icon {
-    margin-left: $collapsible-basic-spacer-icon;
+    margin-left: var(--pgn-spacing-collapsible-card-spacer-basic-icon);
   }
 }

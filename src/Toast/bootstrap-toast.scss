@@ -1,0 +1,46 @@
+.toast {
+  flex-basis: var(--pgn-size-toast-max-width);
+  max-width: var(--pgn-size-toast-max-width);
+  color: var(--pgn-color-toast-base);
+  background-color: var(--pgn-color-toast-bg);
+  background-clip: padding-box;
+  border: var(--pgn-size-toast-border-width) solid var(--pgn-color-toast-border);
+  box-shadow: var(--pgn-elevation-toast-box-shadow);
+  opacity: 0;
+
+  @include font-size(var(--pgn-typography-toast-font-size));
+  @include border-radius(var(--pgn-size-toast-border-radius));
+
+  &:not(:last-child) {
+    margin-bottom: var(--pgn-spacing-toast-padding-x);
+  }
+
+  &.showing {
+    opacity: 1;
+  }
+
+  &.show {
+    display: block;
+    opacity: 1;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  padding: var(--pgn-spacing-toast-padding-y) var(--pgn-spacing-toast-padding-x);
+  color: var(--pgn-color-toast-header-text);
+  background-color: var(--pgn-color-toast-header-bg);
+  background-clip: padding-box;
+  border-bottom: var(--pgn-size-toast-border-width) solid var(--pgn-color-toast-header-border);
+
+  @include border-top-radius(subtract(var(--pgn-size-toast-border-radius), var(--pgn-size-toast-border-width)));
+}
+
+.toast-body {
+  padding: var(--pgn-spacing-toast-padding-x);
+}

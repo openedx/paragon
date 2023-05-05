@@ -2,11 +2,7 @@
   "color": {
     "carousel": {
       "control": {
-        "base": { "value": "{color.white}", "type": "color", "source": "$carousel-control-color" },
-        "opacity": {
-          "base": { "value": ".5", "type": "ratio", "source": "$carousel-control-opacity" },
-          "hover": { "value": ".9", "type": "ratio", "source": "$carousel-control-hover-opacity" }
-        }
+        "base": { "value": "{color.white}", "type": "color", "source": "$carousel-control-color" }
       },
       "indicator": {
         "active-bg": { "value": "{color.white}", "type": "color", "source": "$carousel-indicator-active-bg" }
@@ -32,6 +28,16 @@
             "outputReferences": false,
             "modify": [{ "type": "str-replace", "toReplace": "#", "replaceWith": "%23" }]
           }
+        }
+      }
+    }
+  },
+  "other": {
+    "carousel": {
+      "control": {
+        "opacity": {
+          "base": { "value": ".5", "type": "ratio", "source": "$carousel-control-opacity" },
+          "hover": { "value": ".9", "type": "ratio", "source": "$carousel-control-hover-opacity" }
         }
       }
     }

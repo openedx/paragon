@@ -1,7 +1,7 @@
 .pgn-doc__example-props-form {
-  background: $warning-100;
-  padding: map-get($spacers, 3) map-get($spacers, 3) 0 map-get($spacers, 3);
+  background: var(--pgn-color-warning-100);
+  padding: var(--pgn-spacing-spacer-3) var(--pgn-spacing-spacer-3) 0 var(--pgn-spacing-spacer-3);
   border-radius: 10px;
   border: 2px dashed black;
-  margin-bottom: map-get($spacers, 3);
+  margin-bottom: var(--pgn-spacing-spacer-3);
 }

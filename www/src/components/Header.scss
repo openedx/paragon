@@ -11,33 +11,32 @@
     }
 
     &-logo {
-      font-size: $h1-mobile-font-size;
-      line-height: $display-line-height;
+      font-size: var(--pgn-typography-font-size-mobile-h1);
+      line-height: var(--pgn-typography-display-line-height-base);
     }
 
     &-heading {
-      font-size: $h3-font-size;
-      line-height: $line-height-base;
+      font-size: var(--pgn-typography-font-size-h3);
+      line-height: var(--pgn-typography-line-height-base);
       margin: 0;
-      color: $white;
+      color: var(--pgn-color-white);
     }
 
     &-description {
-      font-family: $font-family-sans-serif;
-      font-size: $font-size-sm;
-      line-height: $line-height-base;
-      color: $light;
+      font-family: var(--pgn-typography-font-family-sans-serif);
+      font-size: var(--pgn-typography-font-size-sm);
+      line-height: var(--pgn-typography-line-height-base);
+      color: var(--pgn-color-light-base);
       margin: 0;
     }
   }
 
   &-home--menu {
     position: absolute;
-    background-color: $white;
+    background-color: var(--pgn-color-white);
     width: 28rem;
     left: -3rem;
-
-    @include pgn-box-shadow(2, "down");
+    box-shadow: var(--pgn-elevation-box-shadow-down-2);
 
     .pgn-doc__menu-items {
       max-height: 28rem;
@@ -52,11 +51,11 @@
 
     // stylelint-disable-next-line selector-class-pattern
     .DocSearch.DocSearch-Button {
-      margin: 0 0 0 $spacer;
+      margin: 0 0 0 var(--pgn-spacing-spacer-base);
       width: 13.25rem;
       height: 2.75rem;
 
-      @media (max-width: $max-width-md) {
+      @media (--max-pgn-size-breakpoint-md) {
         width: 2.75rem;
         height: 2.75rem;
         border-radius: 50%;
@@ -64,7 +63,7 @@
         padding: .625rem .75rem;
       }
 
-      @media (max-width: $max-width-xs) {
+      @media (--max-pgn-size-breakpoint-xs) {
         margin: 0 0 0 .5rem;
         width: 2rem;
         height: 2rem;
@@ -102,9 +101,9 @@
 
   // stylelint-disable-next-line selector-class-pattern
   &-settings-and-search .DocSearch.DocSearch-Button {
-    margin: 0 $spacer 0 0;
+    margin: 0 var(--pgn-spacing-spacer-base) 0 0;
 
-    @media (max-width: $max-width-xs) {
+    @media (--max-pgn-size-breakpoint-xs) {
       margin: 0 .5rem 0 0;
     }
   }
