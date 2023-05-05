@@ -1,5 +1,4 @@
-@import "variables";
-@import "~bootstrap/scss/pagination";
+@import "pagination-bootstrap";
 
 .pagination {
   align-items: center;
@@ -31,11 +30,11 @@
   .page-link {
     &.previous .pgn__icon {
       margin-inline-start: 0;
-      margin-inline-end: $pagination-margin-x;
+      margin-inline-end: var(--pgn-spacing-pagination-margin-x);
     }
 
     &.next .pgn__icon {
-      margin-inline-start: $pagination-margin-x;
+      margin-inline-start: var(--pgn-spacing-pagination-margin-x);
       margin-inline-end: 0;
     }
   }
@@ -43,13 +42,13 @@
   .page-item {
     &:first-child .page-link {
       [dir="rtl"] & {
-        border-radius: 0 $pagination-border-radius-lg $pagination-border-radius-lg 0;
+        border-radius: 0 var(--pgn-size-pagination-border-radius-lg) var(--pgn-size-pagination-border-radius-lg) 0;
       }
     }
 
     &:last-child .page-link {
       [dir="rtl"] & {
-        border-radius: $pagination-border-radius-lg 0 0 $pagination-border-radius-lg;
+        border-radius: var(--pgn-size-pagination-border-radius-lg) 0 0 var(--pgn-size-pagination-border-radius-lg);
       }
     }
   }
@@ -59,8 +58,8 @@
   border: none;
 
   &.btn-primary:not(:disabled):not(.disabled):focus {
-    background-color: $pagination-bg;
-    color: $pagination-focus-color-text;
+    background-color: var(--pgn-color-pagination-bg-base);
+    color: var(--pgn-color-pagination-focus-text);
   }
 
   &:focus {
@@ -68,14 +67,15 @@
   }
 
   &.btn-primary:focus::before {
-    border: $pagination-focus-border-width solid $pagination-focus-color;
+    border: var(--pgn-size-pagination-focus-border-width) solid var(--pgn-color-pagination-focus-base);
 
     @include button-size(
-      $btn-padding-y,
-      $btn-padding-x,
-      $btn-font-size,
-      $btn-line-height,
-      $btn-border-radius);
+      var(--pgn-spacing-btn-padding-y-base),
+      var(--pgn-spacing-btn-padding-x-base),
+      var(--pgn-typography-btn-font-size-base),
+      var(--pgn-typography-btn-line-height-base),
+      var(--pgn-size-btn-border-radius-base)
+    );
   }
 
   div {
@@ -97,25 +97,25 @@
 .page-item {
   > .btn {
     transition: none;
-    line-height: $pagination-line-height;
+    line-height: var(--pgn-typography-pagination-line-height);
   }
 
   &.active .page-link.btn-primary:not(:disabled):not(.disabled):focus {
-    background-color: $pagination-focus-color;
-    color: $pagination-bg;
+    background-color: var(--pgn-color-pagination-focus-base);
+    color: var(--pgn-color-pagination-bg-base);
   }
 }
 
 .pagination-small {
   .page-link {
-    font-size: $pagination-font-size-sm;
-    line-height: $pagination-line-height;
+    font-size: var(--pgn-typography-pagination-font-size-sm);
+    line-height: var(--pgn-typography-pagination-line-height);
     padding: .375rem .78rem;
 
     &.previous,
     &.next {
-      padding: 0 $pagination-padding-y;
-      line-height: $pagination-secondary-height-sm;
+      padding: 0 var(--pgn-spacing-pagination-padding-y-base);
+      line-height: var(--pgn-size-pagination-secondary-height-sm);
 
       div {
         display: flex;
@@ -129,7 +129,7 @@
       &.previous,
       &.next {
         padding: 0;
-        width: $pagination-icon-width;
+        width: var(--pgn-size-pagination-icon-width);
       }
     }
   }
@@ -138,15 +138,15 @@
 .pagination-secondary {
   button.next,
   button.previous {
-    height: $pagination-secondary-height;
-    padding: 0 $pagination-padding-y;
+    height: var(--pgn-size-pagination-secondary-height-base);
+    padding: 0 var(--pgn-spacing-pagination-padding-y-base);
   }
 
   &.pagination-small {
     button.next,
     button.previous {
-      height: $pagination-secondary-height-sm;
-      line-height: $pagination-line-height;
+      height: var(--pgn-size-pagination-secondary-height-sm);
+      line-height: var(--pgn-typography-pagination-line-height);
     }
   }
 
@@ -162,7 +162,7 @@
 .pagination-inverse {
   %dark-styles {
     background-color: transparent;
-    color: $white;
+    color: var(--pgn-color-white);
   }
 
   .pgn__dark-styles {
@@ -175,8 +175,8 @@
     }
 
     &.active button.page-link {
-      background-color: $pagination-bg;
-      color: $pagination-color;
+      background-color: var(--pgn-color-pagination-bg-base);
+      color: var(--pgn-color-pagination-text-base);
     }
 
     button.page-link {
@@ -188,7 +188,7 @@
     }
 
     &:not(.active):focus {
-      box-shadow: $level-1-box-shadow;
+      box-shadow: var(--pgn-elevation-box-shadow-level-1);
     }
   }
 
@@ -201,10 +201,10 @@
 
   .dropdown {
     .btn-tertiary {
-      color: $pagination-color-inverse;
+      color: var(--pgn-color-pagination-text-inverse);
 
       &::after {
-        border-top: $pagination-toggle-border solid $pagination-color-inverse;
+        border-top: var(--pgn-size-pagination-toggle-border-base) solid var(--pgn-color-pagination-text-inverse);
       }
 
       &:active,
@@ -213,7 +213,7 @@
       }
 
       &:not(:disabled):not(.disabled):active {
-        color: $pagination-color-inverse;
+        color: var(--pgn-color-pagination-text-inverse);
       }
     }
   }
@@ -225,8 +225,8 @@
 
 .pgn__reduced-pagination-dropdown {
   overflow-y: auto;
-  max-height: $pagination-reduced-dropdown-max-height;
-  min-width: $pagination-reduced-dropdown-min-width;
+  max-height: var(--pgn-size-pagination-reduced-dropdown-max-height);
+  min-width: var(--pgn-size-pagination-reduced-dropdown-min-width);
 
   a {
     text-align: center;
@@ -237,9 +237,9 @@
   .dropdown-toggle::after {
     width: 0;
     height: 0;
-    border-left: $pagination-toggle-border solid transparent;
-    border-right: $pagination-toggle-border solid transparent;
-    border-top: $pagination-toggle-border solid $gray-700;
+    border-left: var(--pgn-size-pagination-toggle-border-base) solid transparent;
+    border-right: var(--pgn-size-pagination-toggle-border-base) solid transparent;
+    border-top: var(--pgn-size-pagination-toggle-border-base) solid var(--pgn-color-gray-700);
     transform: rotate(0);
     inset-inline-start: .5rem;
     top: 0;
@@ -248,25 +248,25 @@
 
   button.next,
   button.previous {
-    height: $pagination-secondary-height;
-    padding: 0 $pagination-padding-y;
+    height: var(--pgn-size-pagination-secondary-height-base);
+    padding: 0 var(--pgn-spacing-pagination-padding-y-base);
   }
 
   &.pagination-small {
     .btn.dropdown-toggle {
-      font-size: $pagination-font-size-sm;
+      font-size: var(--pgn-typography-pagination-font-size-sm);
 
       &::after {
-        border-left-width: $pagination-toggle-border-sm;
-        border-right-width: $pagination-toggle-border-sm;
-        border-top-width: $pagination-toggle-border-sm;
+        border-left-width: var(--pgn-size-pagination-toggle-border-sm);
+        border-right-width: var(--pgn-size-pagination-toggle-border-sm);
+        border-top-width: var(--pgn-size-pagination-toggle-border-sm);
       }
     }
 
     button.previous,
     button.next {
-      line-height: $pagination-icon-height;
-      height: $pagination-icon-height;
+      line-height: var(--pgn-size-pagination-icon-height);
+      height: var(--pgn-size-pagination-icon-height);
     }
   }
 
@@ -286,15 +286,15 @@
 
   button.next,
   button.previous {
-    padding: $pagination-padding-y;
-    height: $pagination-secondary-height;
+    padding: var(--pgn-spacing-pagination-padding-y-base);
+    height: var(--pgn-size-pagination-secondary-height-base);
   }
 
   &.pagination-small {
     button.next,
     button.previous {
-      padding: 0 $pagination-padding-y;
-      height: $pagination-secondary-height-sm;
+      padding: 0 var(--pgn-spacing-pagination-padding-y-base);
+      height: var(--pgn-size-pagination-secondary-height-sm);
     }
   }
 

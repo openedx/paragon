@@ -1,10 +1,8 @@
-@import "variables";
-
 .pgn__vstack,
 .pgn__hstack {
   display: flex;
   align-self: stretch;
-  gap: $stack-gap;
+  gap: var(--pgn-size-stack-gap);
 
   @each $level, $space in $spacers {
     &.pgn__stack-gap--#{$level} {

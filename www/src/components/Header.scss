@@ -1,3 +1,127 @@
-.pgn-doc-header {
+.pgn-doc__header {
   z-index: var(--pgn-www-zindex-header);
+
+  .pgn-doc__header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:has(h1):has(.pgn-doc__header-title-heading) {
+      justify-content: start;
+    }
+
+    &-logo {
+      font-size: var(--pgn-typography-font-size-mobile-h1);
+      line-height: var(--pgn-typography-display-line-height-base);
+    }
+
+    &-heading {
+      font-size: var(--pgn-typography-font-size-h3);
+      line-height: var(--pgn-typography-line-height-base);
+      margin: 0;
+      color: var(--pgn-color-white);
+    }
+
+    &-description {
+      font-family: var(--pgn-typography-font-family-sans-serif);
+      font-size: var(--pgn-typography-font-size-sm);
+      line-height: var(--pgn-typography-line-height-base);
+      color: var(--pgn-color-light-base);
+      margin: 0;
+    }
+  }
+
+  &-home--menu {
+    position: absolute;
+    background-color: var(--pgn-color-white);
+    width: 28rem;
+    left: -3rem;
+    box-shadow: var(--pgn-elevation-box-shadow-down-2);
+
+    .pgn-doc__menu-items {
+      max-height: 28rem;
+      overflow-y: scroll;
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  &-settings-and-search {
+    justify-content: end;
+    align-items: center;
+
+    // stylelint-disable-next-line selector-class-pattern
+    .DocSearch.DocSearch-Button {
+      margin: 0 0 0 var(--pgn-spacing-spacer-base);
+      width: 13.25rem;
+      height: 2.75rem;
+
+      @media (--max-pgn-size-breakpoint-md) {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+        overflow: hidden;
+        padding: .625rem .75rem;
+      }
+
+      @media (--max-pgn-size-breakpoint-xs) {
+        margin: 0 0 0 .5rem;
+        width: 2rem;
+        height: 2rem;
+        padding: .5rem .45rem;
+
+        // stylelint-disable-next-line selector-class-pattern
+        .DocSearch-Search-Icon {
+          width: 1rem;
+        }
+      }
+    }
+  }
+}
+
+[dir="rtl"] .pgn-doc__header {
+  &-button--menu {
+    text-align: right;
+  }
+
+  &-home--menu {
+    left: -25rem;
+
+    .list-unstyled {
+      padding: 0;
+    }
+
+    .pgn-doc__menu-title {
+      text-align: right;
+    }
+  }
+
+  .list-unstyled {
+    padding: 0;
+  }
+
+  // stylelint-disable-next-line selector-class-pattern
+  &-settings-and-search .DocSearch.DocSearch-Button {
+    margin: 0 var(--pgn-spacing-spacer-base) 0 0;
+
+    @media (--max-pgn-size-breakpoint-xs) {
+      margin: 0 .5rem 0 0;
+    }
+  }
+}
+
+.pgn__modal-fullscreen {
+  .pgn-doc__menu-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .pgn-doc__header-home--menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+
+    .pgn-doc__menu-items {
+      max-height: 100%;
+      overflow-y: auto;
+    }
+  }
 }

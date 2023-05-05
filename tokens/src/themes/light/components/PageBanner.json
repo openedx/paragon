@@ -1,0 +1,24 @@
+{
+  "color": {
+    "page-banner": {
+      "bg": {
+        "dark": { "value": "{color.dark.500}", "type": "color" },
+        "light": { "value": "{color.light.400}", "type": "color" },
+        "accent": {
+          "a": { "value": "{color.accent.a}", "type": "color" },
+          "b": { "value": "{color.accent.b}", "type": "color" }
+        },
+        "warning": { "value": "{color.warning.100}", "type": "color" }
+      },
+      "text": {
+        "dark": { "value": "{color.white}", "type": "color" },
+        "light": { "value": "{color.black}", "type": "color" },
+        "accent": {
+          "a": { "value": "{color.black}", "type": "color" },
+          "b": { "value": "{color.black}", "type": "color" }
+        },
+        "warning": { "value": "{color.black}", "type": "color" }
+      }
+    }
+  }
+}

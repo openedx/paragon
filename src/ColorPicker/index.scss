@@ -1,7 +1,7 @@
 @import "variables";
 
 .pgn__color-picker {
-  box-shadow: 0 0 3px 1px $gray-300;
+  box-shadow: 0 0 3px 1px var(--pgn-color-gray-300);
   border: none;
   background:
     linear-gradient(to bottom right,
@@ -15,18 +15,18 @@
   );
 
   &.pgn__color-picker-sm {
-    height: $picker-size-sm;
-    width: $picker-size-sm;
+    height: var(--pgn-size-color-picker-sm);
+    width: var(--pgn-size-color-picker-sm);
   }
 
   &.pgn__color-picker-md {
-    height: $picker-size-md;
-    width: $picker-size-md;
+    height: var(--pgn-size-color-picker-md);
+    width: var(--pgn-size-color-picker-md);
   }
 }
 
 .pgn__color-modal {
-  background: $white;
+  background: var(--pgn-color-white);
   padding-bottom: .1rem;
   margin-bottom: 1rem;
 }
@@ -55,7 +55,7 @@
   }
 
   .pgn__hex-field {
-    @media (min-width: map-get($grid-breakpoints, "sm")) {
+    @media (--min-pgn-size-breakpoint-sm) {
       margin-inline-end: 0;
     }
   }

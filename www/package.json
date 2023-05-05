@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "dependencies": {
     "@docsearch/react": "^3.1.0",
-    "@edx/brand-edx.org": "^2.1.2",
     "@edx/brand-openedx": "^1.1.0",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@mdx-js/mdx": "^1.6.22",
@@ -77,7 +76,9 @@
     "eslint": "8.18.0",
     "eslint-import-resolver-webpack": "^0.13.2",
     "file-loader": "6.2.0",
-    "playroom": "^0.31.0"
+    "playroom": "^0.31.0",
+    "postcss": "^8.4.21",
+    "postcss-custom-media": "^9.1.2"
   },
   "repository": {
     "type": "git",

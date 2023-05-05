@@ -19,8 +19,7 @@
         "x": { "value": ".75rem", "type": "dimension", "source": "$data-table-padding-x" },
         "y": { "value": ".75rem", "type": "dimension", "source": "$data-table-padding-y" },
         "small": { "value": ".5rem", "type": "dimension", "source": "$data-table-padding-small" },
-        "cell": { "value": ".75rem", "type": "dimension", "source": "$data-table-cell-padding" },
-        "head-cell": { "value": ".5rem .75rem", "type": "dimension", "source": "$data-table-head-cell-padding" }
+        "cell": { "value": ".75rem", "type": "dimension", "source": "$data-table-cell-padding" }
       },
       "footer-position": { "value": "center", "type": "position", "source": "$data-table-footer-position" }
     }
