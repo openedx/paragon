@@ -1,0 +1,17 @@
+@mixin progress-bar-variant($bg) {
+  background-color: $bg;
+
+  &::after {
+    content: "";
+    display: block;
+    background: $bg;
+    position: absolute;
+    // stylelint-disable-next-line max-line-length
+    top: calc(var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2);
+    right: calc(var(--pgn-size-progress-bar-threshold-circle) / -2);
+    width: var(--pgn-size-progress-bar-threshold-circle);
+    height: var(--pgn-size-progress-bar-threshold-circle);
+    border-radius: calc(var(--pgn-size-progress-bar-threshold-circle) / 2);
+    z-index: 1;
+  }
+}

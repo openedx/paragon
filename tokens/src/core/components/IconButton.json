@@ -5,7 +5,7 @@
         "md": { "value": "2.75rem", "type": "dimension", "source": "$btn-icon-diameter-md" },
         "sm": { "value": "2.25rem", "type": "dimension", "source": "$btn-icon-diameter-sm" },
         "inline": {
-          "value": "calc({typography.line-height.base} + .1em)",
+          "value": "calc({typography.line-height.base} * 1em + .1em)",
           "type": "dimension",
           "source": "$btn-icon-diameter-inline"
         }

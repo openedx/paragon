@@ -8,23 +8,23 @@
 .form-control {
   display: block;
   width: 100%;
-  height: $input-height;
-  padding: $input-padding-y $input-padding-x;
-  font-family: $input-font-family;
+  height: var(--pgn-size-form-input-height-base);
+  padding: var(--pgn-spacing-form-input-padding-y-base) var(--pgn-spacing-form-input-padding-x-base);
+  font-family: var(--pgn-typography-form-input-font-family);
 
-  @include font-size($input-font-size);
+  @include font-size(var(--pgn-typography-form-input-font-size-base));
 
-  font-weight: $input-font-weight;
-  line-height: $input-line-height;
-  color: $input-color;
-  background-color: $input-bg;
+  font-weight: var(--pgn-typography-form-input-font-weight);
+  line-height: var(--pgn-typography-form-input-line-height-base);
+  color: var(--pgn-color-form-input-base);
+  background-color: var(--pgn-color-form-input-bg-base);
   background-clip: padding-box;
-  border: $input-border-width solid $input-border-color;
-  transition: $input-transition;
+  border: var(--pgn-size-form-input-width-border) solid var(--pgn-color-form-input-border);
+  transition: var(--pgn-transition-form-input);
 
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
-  @include border-radius($input-border-radius, 0);
-  @include box-shadow($input-box-shadow);
+  @include border-radius(var(--pgn-size-form-input-radius-border-base), 0);
+  @include box-shadow(var(--pgn-elevation-form-input-base));
 
   // Unstyle the caret on `<select>`s in IE10+.
   &::-ms-expand {
@@ -37,7 +37,7 @@
 
   // Placeholder
   &::placeholder {
-    color: $input-placeholder-color;
+    color: var(--pgn-color-form-input-placeholder);
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }
@@ -49,7 +49,7 @@
   // don't honor that edge case; we style them as disabled anyway.
   &:disabled,
   &[readonly] {
-    background-color: $input-disabled-bg;
+    background-color: var(--pgn-color-form-input-bg-disabled);
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
     opacity: 1;
   }
@@ -68,7 +68,7 @@ select.form-control {
   // Remove select outline from select box in FF
   &:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 $input-color;
+    text-shadow: 0 0 0 var(--pgn-color-form-input-base);
   }
 
   &:focus::-ms-value {
@@ -77,8 +77,8 @@ select.form-control {
     // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
     // match the appearance of the native widget.
     // See https://github.com/twbs/bootstrap/issues/19398.
-    color: $input-color;
-    background-color: $input-bg;
+    color: var(--pgn-color-form-input-base);
+    background-color: var(--pgn-color-form-input-bg-base);
   }
 }
 
@@ -97,31 +97,31 @@ select.form-control {
 // For use with horizontal and inline forms, when you need the label (or legend)
 // text to align with the form controls.
 .col-form-label {
-  padding-top: calc(#{$input-padding-y} + #{$input-border-width});
-  padding-bottom: calc(#{$input-padding-y} + #{$input-border-width});
+  padding-top: calc(var(--pgn-spacing-form-input-padding-y-base) + var(--pgn-size-form-input-width-border));
+  padding-bottom: calc(var(--pgn-spacing-form-input-padding-y-base) + var(--pgn-size-form-input-width-border));
   margin-bottom: 0; // Override the `<label>/<legend>` default
 
   @include font-size(inherit); // Override the `<legend>` default
 
-  line-height: $input-line-height;
+  line-height: var(--pgn-typography-form-input-line-height-base);
 }
 
 .col-form-label-lg {
-  padding-top: calc(#{$input-padding-y-lg} + #{$input-border-width});
-  padding-bottom: calc(#{$input-padding-y-lg} + #{$input-border-width});
+  padding-top: calc(var(--pgn-spacing-form-input-padding-y-lg) + var(--pgn-size-form-input-width-border));
+  padding-bottom: calc(var(--pgn-spacing-form-input-padding-y-lg) + var(--pgn-size-form-input-width-border));
 
-  @include font-size($input-font-size-lg);
+  @include font-size(var(--pgn-typography-form-input-font-size-lg));
 
-  line-height: $input-line-height-lg;
+  line-height: var(--pgn-typography-form-input-line-height-lg);
 }
 
 .col-form-label-sm {
-  padding-top: calc(#{$input-padding-y-sm} + #{$input-border-width});
-  padding-bottom: calc(#{$input-padding-y-sm} + #{$input-border-width});
+  padding-top: calc(var(--pgn-spacing-form-input-padding-y-sm) + var(--pgn-size-form-input-width-border));
+  padding-bottom: calc(var(--pgn-spacing-form-input-padding-y-sm) + var(--pgn-size-form-input-width-border));
 
-  @include font-size($input-font-size-sm);
+  @include font-size(var(--pgn-typography-form-input-font-size-sm));
 
-  line-height: $input-line-height-sm;
+  line-height: var(--pgn-typography-form-input-line-height-sm);
 }
 
 
@@ -133,16 +133,16 @@ select.form-control {
 .form-control-plaintext {
   display: block;
   width: 100%;
-  padding: $input-padding-y 0;
+  padding: var(--pgn-spacing-form-input-padding-y-base) 0;
   margin-bottom: 0; // match inputs if this class comes on inputs with default margins
 
-  @include font-size($input-font-size);
+  @include font-size(var(--pgn-typography-form-input-font-size-base));
 
-  line-height: $input-line-height;
-  color: $input-plaintext-color;
+  line-height: var(--pgn-typography-form-input-line-height-base);
+  color: var(--pgn-color-form-input-plaintext);
   background-color: transparent;
   border: solid transparent;
-  border-width: $input-border-width 0;
+  border-width: var(--pgn-size-form-input-width-border) 0;
 
   &.form-control-sm,
   &.form-control-lg {
@@ -160,25 +160,25 @@ select.form-control {
 // Repeated in `_input_group.scss` to avoid Sass extend issues.
 
 .form-control-sm {
-  height: $input-height-sm;
-  padding: $input-padding-y-sm $input-padding-x-sm;
+  height: var(--pgn-size-form-input-height-sm);
+  padding: var(--pgn-spacing-form-input-padding-y-sm) var(--pgn-spacing-form-input-padding-x-sm);
 
-  @include font-size($input-font-size-sm);
+  @include font-size(var(--pgn-typography-form-input-font-size-sm));
 
-  line-height: $input-line-height-sm;
+  line-height: var(--pgn-typography-form-input-line-height-sm);
 
-  @include border-radius($input-border-radius-sm);
+  @include border-radius(var(--pgn-size-form-input-radius-border-sm));
 }
 
 .form-control-lg {
-  height: $input-height-lg;
-  padding: $input-padding-y-lg $input-padding-x-lg;
+  height: var(--pgn-size-form-input-height-lg);
+  padding: var(--pgn-spacing-form-input-padding-y-lg) var(--pgn-spacing-form-input-padding-x-lg);
 
-  @include font-size($input-font-size-lg);
+  @include font-size(var(--pgn-typography-form-input-font-size-lg));
 
-  line-height: $input-line-height-lg;
+  line-height: var(--pgn-typography-form-input-line-height-lg);
 
-  @include border-radius($input-border-radius-lg);
+  @include border-radius(var(--pgn-size-form-input-radius-border-lg));
 }
 
 // stylelint-disable-next-line no-duplicate-selectors
@@ -199,12 +199,12 @@ textarea.form-control {
 // horizontal forms, use the predefined grid classes.
 
 .form-group {
-  margin-bottom: $form-group-margin-bottom;
+  margin-bottom: var(--pgn-spacing-form-group-margin-bottom);
 }
 
 .form-text {
   display: block;
-  margin-top: $form-text-margin-top;
+  margin-top: var(--pgn-spacing-form-text-margin-top);
 }
 
 
@@ -215,13 +215,13 @@ textarea.form-control {
 .form-row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: calc(-1 * #{$form-grid-gutter-width} * .5);
-  margin-left: calc(-1 * #{$form-grid-gutter-width} * .5);
+  margin-right: calc(-1 * var(--pgn-size-form-grid-gutter-width) * .5);
+  margin-left: calc(-1 * var(--pgn-size-form-grid-gutter-width) * .5);
 
   > .col,
   > [class*="col-"] {
-    padding-right: calc(#{$form-grid-gutter-width} * .5);
-    padding-left: calc(#{$form-grid-gutter-width} * .5);
+    padding-right: calc(var(--pgn-size-form-grid-gutter-width) * .5);
+    padding-left: calc(var(--pgn-size-form-grid-gutter-width) * .5);
   }
 }
 
@@ -233,18 +233,18 @@ textarea.form-control {
 .form-check {
   position: relative;
   display: block;
-  padding-left: $form-check-input-gutter;
+  padding-left: var(--pgn-spacing-form-input-check-gutter);
 }
 
 .form-check-input {
   position: absolute;
-  margin-top: $form-check-input-margin-y;
-  margin-left: calc(-1 * #{$form-check-input-gutter});
+  margin-top: var(--pgn-spacing-form-input-check-margin-y);
+  margin-left: calc(-1 * var(--pgn-spacing-form-input-check-gutter));
 
   // Use [disabled] and :disabled for workaround https://github.com/twbs/bootstrap/issues/28247
   &[disabled] ~ .form-check-label,
   &:disabled ~ .form-check-label {
-    color: $text-muted;
+    color: var(--pgn-color-text-muted);
   }
 }
 
@@ -256,13 +256,13 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   padding-left: 0; // Override base .form-check
-  margin-right: $form-check-inline-margin-x;
+  margin-right: var(--pgn-spacing-form-check-inline-margin-x);
 
   // Undo .form-check-input defaults and add some `margin-right`.
   .form-check-input {
     position: static;
     margin-top: 0;
-    margin-right: $form-check-inline-input-margin-x;
+    margin-right: var(--pgn-spacing-form-input-check-margin-x-inline);
     margin-left: 0;
   }
 }
@@ -275,17 +275,24 @@ textarea.form-control {
 // pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
 // server side validation.
 
-@each $state, $data in $form-validation-states {
-  @include form-validation-state(
-    $state,
-    map-get($data, color),
-    map-get($data, icon),
-    map-get($data, tooltip-color),
-    map-get($data, tooltip-bg),
-    map-get($data, focus-box-shadow-color),
-    map-get($data, checked-color)
-  );
-}
+@include form-validation-state(
+  "valid",
+  var(--pgn-color-form-feedback-valid),
+  var(--pgn-other-content-form-feedback-icon-valid),
+  var(--pgn-color-form-feedback-tooltip-valid),
+  var(--pgn-color-form-feedback-tooltip-bg-valid),
+  var(--pgn-color-form-feedback-tooltip-box-shadow-focus-valid),
+  var(--pgn-color-form-feedback-checked-valid),
+);
+@include form-validation-state(
+  "invalid",
+  var(--pgn-color-form-feedback-invalid),
+  var(--pgn-other-content-form-feedback-icon-invalid),
+  var(--pgn-color-form-feedback-tooltip-bg-invalid),
+  transparent,
+  var(--pgn-color-form-feedback-tooltip-box-shadow-focus-invalid),
+  var(--pgn-color-form-feedback-checked-invalid),
+);
 
 // Inline forms
 //
@@ -358,7 +365,7 @@ textarea.form-control {
       position: relative;
       flex-shrink: 0;
       margin-top: 0;
-      margin-right: $form-check-input-margin-x;
+      margin-right: var(--pgn-spacing-form-input-check-margin-x-base);
       margin-left: 0;
     }
 
