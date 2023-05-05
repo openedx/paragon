@@ -1,5 +1,3 @@
-@import "variables";
-
 //
 // Override Bootstrap's alert definition.
 // We do this to get more control over colors
@@ -12,13 +10,13 @@
 
 .alert {
   position: relative;
-  padding: $alert-padding-y $alert-padding-x;
-  margin-bottom: $alert-margin-bottom;
-  border: $alert-border-width solid var(--pgn-alert-border-color, transparent);
+  padding: var(--pgn-spacing-alert-padding-y) var(--pgn-spacing-alert-padding-x);
+  margin-bottom: var(--pgn-spacing-alert-margin-bottom);
+  border: var(--pgn-size-alert-border-width) solid var(--pgn-alert-border-color, transparent);
   color: inherit;
   background-color: var(--pgn-alert-bg, transparent);
 
-  @include border-radius($alert-border-radius);
+  @include border-radius(var(--pgn-size-alert-border-radius));
   @include pgn-box-shadow(1, "down");
 
   .alert-message-content > :last-child {
@@ -28,7 +26,7 @@
   .alert-icon {
     color: var(--pgn-alert-icon-color, inherit);
     float: left;
-    margin-inline-end: $alert-icon-space;
+    margin-inline-end: var(--pgn-spacing-alert-icon-space);
     width: 1.5rem;
     height: 1.5rem;
     flex-shrink: 0;
@@ -37,17 +35,17 @@
 
 // Headings for larger alerts
 .alert-heading {
-  // Specified to prevent conflicts of changing $headings-color
-  color: $alert-title-color;
+  // Specified to prevent conflicts of changing var(--pgn-color-headings-base)
+  color: var(--pgn-color-alert-title);
   display: flex;
 }
 
 // added to align content and icon
 .alert-content {
   display: flex;
-  font-size: $alert-font-size;
-  line-height: $alert-line-height;
-  color: $alert-content-color;
+  font-size: var(--pgn-typography-alert-font-size);
+  line-height: var(--pgn-typography-alert-line-height);
+  color: var(--pgn-color-alert-content);
   text-align: start;
 
   div {
@@ -57,7 +55,7 @@
 
 // Provide class for links that match alerts
 .alert-link {
-  font-weight: $alert-link-font-weight;
+  font-weight: var(--pgn-typography-alert-font-weight-link);
   text-decoration: underline;
 
   &:hover {
@@ -69,16 +67,16 @@
 //
 // Expand the right padding and account for the close button's positioning.
 
-// Baking in $close-font-size: $font-size-base * 1.5 !default; to avoid any dependency
+// Baking in $close-font-size: var(--pgn-typography-font-size-base) * 1.5 !default; to avoid any dependency
 .alert-dismissible {
-  padding-right: calc((#{$font-size-base} * 1.5) + (#{$alert-padding-x} * 2));
+  padding-right: calc((var(--pgn-typography-font-size-base) * 1.5) + (var(--pgn-spacing-alert-padding-x) * 2));
 
   // Adjust close link position
   .close {
     position: absolute;
     top: 0;
     right: 0;
-    padding: $alert-padding-y $alert-padding-x;
+    padding: var(--pgn-spacing-alert-padding-y) var(--pgn-spacing-alert-padding-x);
     color: inherit;
   }
 }
@@ -88,38 +86,38 @@
   align-items: center;
 
   .pgn__alert-actions {
-    margin-inline-start: $alert-actions-gap;
+    margin-inline-start: var(--pgn-spacing-alert-actions-gap);
   }
 }
 
 .pgn__alert-message-wrapper-stacked {
   .pgn__alert-actions {
-    margin-top: $alert-actions-gap;
+    margin-top: var(--pgn-spacing-alert-actions-gap);
   }
 }
 
 // Alternate styles
 
 .alert-success {
-  --pgn-alert-bg: #{$alert-success-bg};
-  --pgn-alert-border-color: #{$alert-success-border-color};
-  --pgn-alert-icon-color: #{$alert-success-icon-color};
+  --pgn-alert-bg: var(--pgn-color-alert-bg-success);
+  --pgn-alert-border-color: var(--pgn-color-alert-border-success);
+  --pgn-alert-icon-color: var(--pgn-color-alert-icon-success);
 }
 
 .alert-info {
-  --pgn-alert-bg: #{$alert-info-bg};
-  --pgn-alert-border-color: #{$alert-info-border-color};
-  --pgn-alert-icon-color: #{$alert-info-icon-color};
+  --pgn-alert-bg: var(--pgn-color-alert-bg-info);
+  --pgn-alert-border-color: var(--pgn-color-alert-border-info);
+  --pgn-alert-icon-color: var(--pgn-color-alert-icon-info);
 }
 
 .alert-danger {
-  --pgn-alert-bg: #{$alert-danger-bg};
-  --pgn-alert-border-color: #{$alert-danger-border-color};
-  --pgn-alert-icon-color: #{$alert-danger-icon-color};
+  --pgn-alert-bg: var(--pgn-color-alert-bg-danger);
+  --pgn-alert-border-color: var(--pgn-color-alert-border-danger);
+  --pgn-alert-icon-color: var(--pgn-color-alert-icon-danger);
 }
 
 .alert-warning {
-  --pgn-alert-bg: #{$alert-warning-bg};
-  --pgn-alert-border-color: #{$alert-warning-border-color};
-  --pgn-alert-icon-color: #{$alert-warning-icon-color};
+  --pgn-alert-bg: var(--pgn-color-alert-bg-warning);
+  --pgn-alert-border-color: var(--pgn-color-alert-border-warning);
+  --pgn-alert-icon-color: var(--pgn-color-alert-icon-warning);
 }

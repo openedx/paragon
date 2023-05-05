@@ -1,46 +1,43 @@
-// stylelint-disable-next-line selector-class-pattern
+// stylelint-disable selector-class-pattern
 .pgn__pageBanner-component {
   width: 100%;
   min-height: 36px;
   display: flex;
   flex-wrap: nowrap;
-  font-size: $x-small-font-size;
+  font-size: var(--pgn-typography-font-size-small-x);
+  background-color: var(--pgn-page-baner-bg, inherit);
+  color: var(--pgn-page-baner-color, inherit);
 
   @include media-breakpoint-up(md) {
-    font-size: $small-font-size;
+    font-size: var(--pgn-typography-font-size-small-base);
   }
 }
 
-// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__dark {
-  background-color: $dark-500;
-  color: $white;
+  --pgn-page-baner-bg: var(--pgn-color-page-banner-bg-dark);
+  --pgn-page-baner-color: var(--pgn-color-page-banner-text-dark);
 }
 
-// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__light {
-  background-color: $light-400;
-  color: $black;
+  --pgn-page-baner-bg: var(--pgn-color-page-banner-bg-light);
+  --pgn-page-baner-color: var(--pgn-color-page-banner-text-light);
 }
 
-// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__accentA {
-  background-color: $accent-a;
-  color: $black;
+  --pgn-page-baner-bg: var(--pgn-color-page-banner-bg-accent-a);
+  --pgn-page-baner-color: var(--pgn-color-page-banner-text-accent-a);
 }
-// stylelint-disable-next-line selector-class-pattern
+
 .pgn__pageBanner__accentB {
-  background-color: $accent-b;
-  color: $black;
+  --pgn-page-baner-bg: var(--pgn-color-page-banner-bg-accent-b);
+  --pgn-page-baner-color: var(--pgn-color-page-banner-text-accent-b);
 }
 
-// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner__warning {
-  background-color: $warning-100;
-  color: $black;
+  --pgn-page-baner-bg: var(--pgn-color-page-banner-bg-warning);
+  --pgn-page-baner-color: var(--pgn-color-page-banner-text-warning);
 }
 
-// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner-content {
   display: flex;
   flex-grow: 1;
@@ -50,7 +47,6 @@
   text-align: center;
 }
 
-// stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner-dismissButtonContainer {
   min-width: 32px;
   min-height: 32px;
