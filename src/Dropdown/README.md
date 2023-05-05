@@ -7,11 +7,13 @@ components:
 - DropdownMenu
 - DropdownButton
 - DropdownToggle
+- DropdownHeader
+- DropdownDivider
 categories:
 - Navigation
 status: 'Stable'
 designStatus: 'Done'
-devStatus: 'TO DO'
+devStatus: 'Done'
 notes: |
   TODO: Remove subcomponent of deprecated implementation soon
 ---

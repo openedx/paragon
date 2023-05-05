@@ -17,6 +17,7 @@ import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
+import { componentsInUsage, ComponentsUsage } from '../pages/insights';
 
 export interface IPageTemplate {
   data: {
@@ -56,7 +57,7 @@ export default function PageTemplate({
   const scssVariables = scssVariablesData[theme!] || scssVariablesData[DEFAULT_THEME!];
 
   const components = componentNodes.nodes
-    .reduce((acc: { [x: string]: { displayName: string }; }, currentValue: { displayName: string; }) => {
+    .reduce((acc: { [x: string]: { displayName: string, props?: [] }; }, currentValue: { displayName: string; }) => {
       acc[currentValue.displayName] = currentValue;
       return acc;
     }, {});
@@ -87,6 +88,12 @@ export default function PageTemplate({
   const scssVariablesTitle = 'Theme Variables (SCSS)';
   const scssVariablesUrl = 'theme-variables-scss';
 
+  const propsAPITitle = 'Props API';
+  const propsAPIUrl = 'props-api';
+
+  const usageInsightsTitle = 'Usage Insights';
+  const usageInsightsUrl = 'usage-insights';
+
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
     if (Object.values(scssVariablesData).some(data => data) && !tableOfContents.items?.includes()) {
@@ -95,6 +102,8 @@ export default function PageTemplate({
         url: `#${scssVariablesUrl}`,
       });
     }
+    tableOfContents.items?.push({ title: propsAPITitle, url: `#${propsAPIUrl}` });
+    tableOfContents.items?.push({ title: usageInsightsTitle, url: `#${usageInsightsUrl}` });
     return tableOfContents;
   };
 
@@ -103,6 +112,22 @@ export default function PageTemplate({
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
+
+  const usageComponents = {};
+
+  componentsInUsage.forEach(key => {
+    usageComponents[key] = null;
+  });
+
+  if (typeof sortedComponentNames !== 'string') {
+    sortedComponentNames.forEach(componentName => {
+      if (componentName in usageComponents) {
+        usageComponents[componentName] = componentName;
+      }
+    });
+  }
+
+  const noMatchingValues = (sortedComponentNames as []).every(componentName => !(componentName in usageComponents));
 
   return (
     <Layout
@@ -134,14 +159,32 @@ export default function PageTemplate({
             <CodeBlock className="language-scss">{scssVariables}</CodeBlock>
           </div>
         )}
-        {typeof sortedComponentNames !== 'string'
-            && sortedComponentNames?.map((componentName: string | number) => {
-              const node: { displayName: string } = components[componentName];
-              if (!node) {
-                return null;
-              }
-              return <GenericPropsTable key={node.displayName} {...node} />;
-            })}
+        {components[sortedComponentNames[0]]?.props && (
+          <h2 className="mb-5 pgn-doc__heading" id={propsAPIUrl}>
+            {propsAPITitle}
+            <a href={`#${propsAPIUrl}`} aria-label="Props API">
+              <span className="pgn-doc__anchor">#</span>
+            </a>
+          </h2>
+        )}
+        {typeof sortedComponentNames !== 'string' && sortedComponentNames?.map((componentName: string | number) => {
+          const node: { displayName: string } = components[componentName];
+          if (!node) {
+            return null;
+          }
+          return <GenericPropsTable key={node.displayName} {...node} />;
+        })}
+        {!noMatchingValues && (
+          <>
+            <h2 className="pgn-doc__heading m-0" id={usageInsightsUrl}>
+              {usageInsightsTitle}
+              <a href={`#${usageInsightsUrl}`} aria-label="Usage Insights">
+                <span className="pgn-doc__anchor">#</span>
+              </a>
+            </h2>
+            <ComponentsUsage data={(sortedComponentNames as string[])} />
+          </>
+        )}
       </Container>
     </Layout>
   );
