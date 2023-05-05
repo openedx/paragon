@@ -17,6 +17,7 @@ import SummaryUsageExamples, { ISummaryUsageExamples } from '../components/insig
 import ProjectUsageExamples, { IProjectUsageExamples } from '../components/insights/ProjectUsageExamples';
 import ComponentUsageExamples, { IComponentUsageExamples } from '../components/insights/ComponentUsageExamples';
 import getGithubProjectUrl from '../utils/getGithubProjectUrl';
+import componentsUsage from '../utils/componentsUsage';
 // @ts-ignore
 import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
@@ -85,34 +86,22 @@ export interface IComponentUsage {
 
 const dependentProjects: IDependentUsage[] = [];
 
-const componentsUsage: Record<string, IComponentUsageData[]> = dependentProjectsUsages
-  .reduce((accumulator: any, project: any) => {
-    dependentProjects.push({
-      ...project,
-      repositoryUrl: getGithubProjectUrl(project.repository),
-      count: Object.values<IUsage[]>(project.usages).reduce((acc, usage) => acc + usage.length, 0),
-    });
+export interface IDependentProjectsUsages extends Omit<IDependentUsage, 'count'> {
+  version: string,
+  name: string,
+  repository: { type: string, url: string },
+  folderName: string,
+}
 
-    Object.keys(project.usages).forEach(componentName => {
-      // The next line is necessary for the same naming of the components both in the file with the
-      // repositories of use and in the data structures GraphQL.
-      const newComponentName = componentName.replace(/\./g, '');
-      if (!accumulator[newComponentName]) {
-        accumulator[newComponentName] = [];
-      }
-      accumulator[newComponentName] = accumulator[newComponentName].concat({
-        name: project.name,
-        folderName: project.folderName,
-        version: project.version,
-        repositoryUrl: getGithubProjectUrl(project.repository),
-        componentUsageCount: project.usages[componentName].length,
-        usages: project.usages[componentName],
-      });
-    });
-    return accumulator;
-  }, {});
+dependentProjectsUsages.forEach((project: IDependentProjectsUsages) => {
+  dependentProjects.push({
+    ...project,
+    repositoryUrl: getGithubProjectUrl(project.repository),
+    count: Object.values<IUsage[]>(project.usages).reduce((acc, usage) => acc + usage.length, 0),
+  });
+});
 
-export const componentsInUsage = Object.keys(componentsUsage);
+const componentsInUsage = Object.keys(componentsUsage);
 
 const round = (n: number) => Math.round(n * 10) / 10;
 

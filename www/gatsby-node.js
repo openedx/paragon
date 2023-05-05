@@ -13,6 +13,7 @@ const css = require('css');
 const fs = require('fs');
 const { INSIGHTS_PAGES } = require('./src/config');
 const { getThemesSCSSVariables, processComponentSCSSVariables } = require('./theme-utils');
+const componentsUsage = require('./src/utils/componentsUsage');
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -109,7 +110,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve('./src/templates/component-page-template.tsx'),
       // You can use the values in this context in
       // our page layout component
-      context: { id: node.id, components: node.frontmatter.components || [], scssVariablesData },
+      context: {
+        id: node.id,
+        components: node.frontmatter.components || [],
+        scssVariablesData,
+        componentsUsageInsights: Object.keys(componentsUsage),
+      },
     });
   }
 
