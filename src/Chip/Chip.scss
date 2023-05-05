@@ -1,15 +1,13 @@
-@import "variables";
-
 .pgn__chip {
-  background: var(--pgn-chip-bg, $light-500);
-  border-radius: $chip-border-radius;
+  background: var(--pgn-chip-bg, var(--pgn-color-light-500));
+  border-radius: var(--pgn-size-chip-border-radius);
   display: inline-flex;
-  margin: $chip-margin;
+  margin: var(--pgn-spacing-chip-margin);
   box-sizing: border-box;
 
   .pgn__chip__label {
-    font-size: $font-size-sm;
-    padding: $chip-padding-y $chip-padding-x;
+    font-size: var(--pgn-typography-font-size-sm);
+    padding: var(--pgn-spacing-chip-padding-y) var(--pgn-spacing-chip-padding-x);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -17,20 +15,20 @@
     cursor: default;
 
     &.p-before {
-      padding-left: $chip-padding-to-icon;
+      padding-left: var(--pgn-spacing-chip-padding-to-icon);
 
       [dir="rtl"] & {
-        padding-left: $chip-padding-x;
-        padding-right: $chip-padding-to-icon;
+        padding-left: var(--pgn-spacing-chip-padding-x);
+        padding-right: var(--pgn-spacing-chip-padding-to-icon);
       }
     }
 
     &.p-after {
-      padding-right: $chip-padding-to-icon;
+      padding-right: var(--pgn-spacing-chip-padding-to-icon);
 
       [dir="rtl"] & {
-        padding-right: $chip-padding-x;
-        padding-left: $chip-padding-to-icon;
+        padding-right: var(--pgn-spacing-chip-padding-x);
+        padding-left: var(--pgn-spacing-chip-padding-to-icon);
       }
     }
   }
@@ -39,41 +37,41 @@
   .pgn__chip__icon-after {
     align-items: center;
     display: flex;
-    padding-left: $chip-icon-padding;
-    padding-right: $chip-icon-padding;
+    padding-left: var(--pgn-spacing-chip-padding-icon);
+    padding-right: var(--pgn-spacing-chip-padding-icon);
     box-sizing: border-box;
     cursor: default;
 
     .pgn__icon {
-      width: $chip-icon-size;
-      height: $chip-icon-size;
+      width: var(--pgn-size-chip-icon);
+      height: var(--pgn-size-chip-icon);
     }
 
     &.active:hover,
     &.active:focus {
       cursor: pointer;
-      background: $black;
+      background: var(--pgn-color-black);
 
       * {
-        color: $white;
-        fill: $white;
+        color: var(--pgn-color-white);
+        fill: var(--pgn-color-white);
       }
     }
   }
 
   .pgn__chip__icon-before {
-    border-radius: $chip-border-radius 0 0 $chip-border-radius;
+    border-radius: var(--pgn-size-chip-border-radius) 0 0 var(--pgn-size-chip-border-radius);
 
     [dir="rtl"] & {
-      border-radius: 0 $chip-border-radius $chip-border-radius 0;
+      border-radius: 0 var(--pgn-size-chip-border-radius) var(--pgn-size-chip-border-radius) 0;
     }
   }
 
   .pgn__chip__icon-after {
-    border-radius: 0 $chip-border-radius $chip-border-radius 0;
+    border-radius: 0 var(--pgn-size-chip-border-radius) var(--pgn-size-chip-border-radius) 0;
 
     [dir="rtl"] & {
-      border-radius: $chip-border-radius 0 0 $chip-border-radius;
+      border-radius: var(--pgn-size-chip-border-radius) 0 0 var(--pgn-size-chip-border-radius);
     }
   }
 
@@ -85,7 +83,7 @@
   &.disabled,
   &:disabled {
     cursor: default;
-    opacity: $chip-disable-opacity;
+    opacity: var(--pgn-other-chip-opacity-disabled);
     pointer-events: none;
 
     &::before {
@@ -95,11 +93,11 @@
 }
 
 .pgn__chip-light {
-  --pgn-chip-color: #{$chip-light-color};
-  --pgn-chip-bg: #{$chip-light-bg};
+  --pgn-chip-color: var(--pgn-color-chip-text-light);
+  --pgn-chip-bg: var(--pgn-color-chip-bg-light);
 }
 
 .pgn__chip-dark {
-  --pgn-chip-color: #{$chip-dark-color};
-  --pgn-chip-bg: #{$chip-dark-bg};
+  --pgn-chip-color: var(--pgn-color-chip-text-dark);
+  --pgn-chip-bg: var(--pgn-color-chip-bg-dark);
 }

@@ -1,5 +1,3 @@
-@import "variables";
-
 @mixin img-fluid() {
   // Part 1: Set a maximum relative to the parent
   max-width: 100%;
@@ -22,12 +20,12 @@
 
 // Image thumbnails
 .img-thumbnail {
-  padding: $thumbnail-padding;
-  background-color: $thumbnail-bg;
-  border: $thumbnail-border-width solid $thumbnail-border-color;
+  padding: var(--pgn-spacing-image-thumbnail-padding);
+  background-color: var(--pgn-color-image-thumbnail-bg);
+  border: var(--pgn-size-image-thumbnail-border-width) solid var(--pgn-color-image-thumbnail-border);
 
-  @include border-radius($thumbnail-border-radius);
-  @include box-shadow($thumbnail-box-shadow);
+  @include border-radius(var(--pgn-size-image-thumbnail-border-radius));
+  @include box-shadow(var(--pgn-elevation-image-thumbnail-box-shadow));
 
   // Keep them at most 100% wide
   @include img-fluid();
@@ -43,13 +41,13 @@
 }
 
 .figure-img {
-  margin-bottom: calc(#{$spacer} * .5);
+  margin-bottom: calc(var(--pgn-spacing-spacer-base) * .5);
   line-height: 1;
 }
 
 .figure-caption {
-  color: $figure-caption-color;
+  color: var(--pgn-color-image-figure-caption);
 
-  @include font-size($figure-caption-font-size);
+  @include font-size(var(--pgn-typography-image-figure-caption-font-size));
 }
 

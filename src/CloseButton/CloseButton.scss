@@ -1,2 +1,31 @@
-@import "variables";
-@import "~bootstrap/scss/close";
+.close {
+  float: right;
+  font-weight: var(--pgn-typography-close-button-font-weight);
+  line-height: 1;
+  color: var(--pgn-color-close-button);
+  text-shadow: var(--pgn-elevation-close-button-text-shadow);
+  opacity: .5;
+
+  @include font-size(var(--pgn-typography-close-button-font-size));
+
+  @include hover() {
+    color: var(--pgn-color-close-button);
+    text-decoration: none;
+  }
+
+  &:not(:disabled):not(.disabled) {
+    @include hover-focus() {
+      opacity: .75;
+    }
+  }
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+
+a.close.disabled {
+  pointer-events: none;
+}

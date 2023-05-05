@@ -1,0 +1,83 @@
+.pagination {
+  display: flex;
+
+  @include list-unstyled();
+  @include border-radius();
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: var(--pgn-spacing-pagination-padding-y-base) var(--pgn-spacing-pagination-padding-x-base);
+  margin-left: calc(var(--pgn-size-pagination-border-width) * -1);
+  line-height: var(--pgn-typography-pagination-line-height);
+  color: var(--pgn-color-pagination-text-base);
+  text-decoration: none;
+  background-color: var(--pgn-color-pagination-bg-base);
+  border: var(--pgn-size-pagination-border-width) solid var(--pgn-color-pagination-border-base);
+
+  &:hover {
+    z-index: 2;
+    color: var(--pgn-color-pagination-text-hover);
+    text-decoration: none;
+    background-color: var(--pgn-color-pagination-bg-hover);
+    border-color: var(--pgn-color-pagination-border-hover);
+  }
+
+  &:focus {
+    z-index: 3;
+    outline: var(--pgn-size-pagination-focus-outline);
+    box-shadow: var(--pgn-elevation-pagination-focus-box-shadow);
+  }
+}
+
+.page-item {
+  &:first-child {
+    .page-link {
+      margin-left: 0;
+
+      @include border-left-radius(var(--pgn-size-border-radius-base));
+    }
+  }
+
+  &:last-child {
+    .page-link {
+      @include border-right-radius(var(--pgn-size-border-radius-base));
+    }
+  }
+
+  &.active .page-link {
+    z-index: 3;
+    color: var(--pgn-color-pagination-text-active);
+    background-color: var(--pgn-color-pagination-bg-active);
+    border-color: var(--pgn-color-pagination-border-active);
+  }
+
+  &.disabled .page-link {
+    color: var(--pgn-color-pagination-text-disabled);
+    pointer-events: none;
+    cursor: auto;
+    background-color: var(--pgn-color-pagination-bg-disabled);
+    border-color: var(--pgn-color-pagination-border-disabled);
+  }
+}
+
+.pagination-lg {
+  @include pagination-size(
+    var(--pgn-spacing-pagination-padding-y-lg),
+    var(--pgn-spacing-pagination-padding-x-lg),
+    var(--pgn-typography-font-size-lg),
+    var(--pgn-typography-line-height-lg),
+    var(--pgn-size-pagination-border-radius-lg)
+  );
+}
+
+.pagination-sm {
+  @include pagination-size(
+    var(--pgn-spacing-pagination-padding-y-sm),
+    var(--pgn-spacing-pagination-padding-x-sm),
+    var(--pgn-typography-font-size-sm),
+    var(--pgn-typography-line-height-sm),
+    var(--pgn-size-pagination-border-radius-sm)
+  );
+}

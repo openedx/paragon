@@ -1,6 +1,8 @@
 const path = require('path');
 const sass = require('sass');
 const fs = require('fs');
+const postCSS = require('postcss');
+const postCSSCustomMedia = require('postcss-custom-media');
 const { THEMES } = require('./theme-config');
 
 const importer = function importer(url) {
@@ -22,12 +24,14 @@ if (!fs.existsSync('./public/static')) {
 // compile SASS stylesheet to CSS for each theme in the config
 // complied CSS files will be stored in ./public/static/ directory
 THEMES.forEach(theme => {
-  const result = sass.renderSync({
+  const compiledStylesheet = sass.renderSync({
     file: `./src/scss/${theme.stylesheet}.scss`,
     outputStyle: 'compressed',
     importer,
     quietDeps: true,
   });
 
-  fs.writeFileSync(`./public/static/${theme.stylesheet}.css`, result.css);
+  postCSS([postCSSCustomMedia({ preserve: true })])
+    .process(compiledStylesheet.css, { from: `./src/scss/${theme.stylesheet}.scss`, map: { inline: false } })
+    .then(result => fs.writeFileSync(`./public/static/${theme.stylesheet}.css`, result.css));
 });

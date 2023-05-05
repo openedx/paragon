@@ -1,4 +1,3 @@
-@import "variables";
 @import "mixins";
 @import "button-group";
 
@@ -6,17 +5,23 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: $btn-font-family;
-  font-weight: $btn-font-weight;
+  font-family: var(--pgn-typography-btn-font-family);
+  font-weight: var(--pgn-typography-btn-font-weight);
   text-align: center;
   vertical-align: middle;
   user-select: none;
-  border: $btn-border-width solid var(--pgn-btn-border-color, transparent);
-  color: var(--pgn-btn-color, #{$body-color});
+  border: var(--pgn-size-btn-border-width) solid var(--pgn-btn-border-color, transparent);
+  color: var(--pgn-btn-color, var(--pgn-color-body-base));
   background-color: var(--pgn-btn-bg, transparent);
-  transition: $btn-transition;
+  transition: var(--pgn-transition-btn);
 
-  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+  @include button-size(
+    var(--pgn-spacing-btn-padding-y-base),
+    var(--pgn-spacing-btn-padding-x-base),
+    var(--pgn-typography-btn-font-size-base),
+    var(--pgn-typography-btn-line-height-base),
+    var(--pgn-size-btn-border-radius-base)
+  );
 
   &:not(:disabled):not(.disabled):not(.btn-link) {
     &.focus,
@@ -26,25 +31,25 @@
       box-shadow: none;
       background: var(--pgn-btn-focus-bg, transparent);
       border-color: var(--pgn-btn-focus-border-color, transparent);
-      color: var(--pgn-btn-focus-color, #{$body-color});
+      color: var(--pgn-btn-focus-color, var(--pgn-color-body-base));
 
       &::before {
         content: "";
         position: absolute;
-        top: calc(#{$btn-focus-distance-to-border} * -1);
-        right: calc(#{$btn-focus-distance-to-border} * -1);
-        bottom: calc(#{$btn-focus-distance-to-border} * -1);
-        left: calc(#{$btn-focus-distance-to-border} * -1);
-        border: solid $btn-focus-width var(--pgn-btn-focus-outline-color, #{$body-color});
-        border-radius: $btn-focus-border-radius;
+        top: calc(var(--pgn-spacing-btn-focus-distance-to-border) * -1);
+        right: calc(var(--pgn-spacing-btn-focus-distance-to-border) * -1);
+        bottom: calc(var(--pgn-spacing-btn-focus-distance-to-border) * -1);
+        left: calc(var(--pgn-spacing-btn-focus-distance-to-border) * -1);
+        border: solid var(--pgn-size-btn-focus-width) var(--pgn-btn-focus-outline-color, var(--pgn-color-body-base));
+        border-radius: var(--pgn-size-btn-focus-border-radius);
       }
 
       &.btn-lg::before {
-        border-radius: $btn-focus-border-radius;
+        border-radius: var(--pgn-size-btn-focus-border-radius);
       }
 
       &.btn-sm::before {
-        border-radius: $btn-focus-border-radius;
+        border-radius: var(--pgn-size-btn-focus-border-radius);
       }
 
       &:active,
@@ -63,7 +68,7 @@
     }
 
     &:hover {
-      color: var(--pgn-btn-hover-color, #{$body-color});
+      color: var(--pgn-btn-hover-color, var(--pgn-color-body-base));
       background-color: var(--pgn-btn-hover-bg, transparent);
       border-color: var(--pgn-btn-hover-border-color, transparent);
       text-decoration: none;
@@ -83,7 +88,7 @@
     color: var(--pgn-btn-disabled-color, inherit);
     background-color: var(--pgn-btn-disabled-bg, inherit);
     border-color: var(--pgn-btn-disabled-border-color, transparent);
-    opacity: $btn-disabled-opacity;
+    opacity: var(--pgn-other-btn-disabled-opacity);
   }
 
   // Button Icon Sizes
@@ -121,24 +126,24 @@ fieldset:disabled a.btn {
 
 // Make a button look and behave like a link
 .btn-link {
-  font-weight: $font-weight-normal;
-  color: $link-color;
-  text-decoration: $link-decoration;
+  font-weight: var(--pgn-typography-font-weight-normal);
+  color: var(--pgn-color-link-base);
+  text-decoration: var(--pgn-typography-link-decoration-base);
 
   &:hover {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+    color: var(--pgn-color-link-hover);
+    text-decoration: var(--pgn-typography-link-decoration-hover);
   }
 
   &:focus,
   &.focus {
-    text-decoration: $link-hover-decoration;
+    text-decoration: var(--pgn-typography-link-decoration-hover);
     box-shadow: none;
   }
 
   &:disabled,
   &.disabled {
-    color: $btn-link-disabled-color;
+    color: var(--pgn-color-btn-disabled-link);
     pointer-events: none;
   }
 }
@@ -149,15 +154,21 @@ fieldset:disabled a.btn {
 
 .btn-lg {
   @include button-size(
-    $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg,
-    $btn-line-height-lg, $btn-border-radius-lg
+    var(--pgn-spacing-btn-padding-y-lg),
+    var(--pgn-spacing-btn-padding-x-lg),
+    var(--pgn-typography-btn-font-size-lg),
+    var(--pgn-typography-btn-line-height-lg),
+    var(--pgn-size-btn-border-radius-lg)
   );
 }
 
 .btn-sm {
   @include button-size(
-    $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm,
-    $btn-line-height-sm, $btn-border-radius-sm
+    var(--pgn-spacing-btn-padding-y-sm),
+    var(--pgn-spacing-btn-padding-x-sm),
+    var(--pgn-typography-btn-font-size-sm),
+    var(--pgn-typography-btn-line-height-sm),
+    var(--pgn-size-btn-border-radius-sm)
   );
 }
 
@@ -171,12 +182,12 @@ fieldset:disabled a.btn {
 
   // Vertically space out multiple block buttons
   + .btn-block {
-    margin-top: $btn-block-spacing-y;
+    margin-top: var(--pgn-spacing-btn-block-spacing-y);
   }
 }
 
 .btn-inline {
-  line-height: calc(#{$line-height-base}em - 2 * #{$btn-border-width});
+  line-height: calc(var(--pgn-typography-line-height-base) * 1em - 2 * var(--pgn-size-btn-border-width));
   font-size: inherit;
   vertical-align: bottom;
   padding: 0 .25em;
@@ -199,770 +210,770 @@ input[type="button"] {
 
 [dir="rtl"] .btn-group > .btn:not(:first-child),
 [dir="rtl"] .btn-group > .btn-group:not(:first-child) > .btn {
-  border-radius: $btn-border-radius 0 0 $btn-border-radius;
+  border-radius: var(--pgn-size-btn-border-radius-base) 0 0 var(--pgn-size-btn-border-radius-base);
 }
 
 [dir="rtl"] .btn-group > .btn:first-child,
 [dir="rtl"] .btn-group > .btn-group:first-child > .btn {
-  border-top-right-radius: $btn-border-radius;
-  border-bottom-right-radius: $btn-border-radius;
+  border-top-right-radius: var(--pgn-size-btn-border-radius-base);
+  border-bottom-right-radius: var(--pgn-size-btn-border-radius-base);
 }
 
 // PRIMARY BUTTONS
 .btn-primary {
-  --pgn-btn-color: #{$btn-primary-color};
-  --pgn-btn-bg: #{$btn-primary-bg};
-  --pgn-btn-border-color: #{$btn-primary-border-color};
-  --pgn-btn-hover-color: #{$btn-primary-hover-color};
-  --pgn-btn-hover-bg: #{$btn-primary-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-primary-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-primary-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-primary-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-primary-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-primary-active-color};
-  --pgn-btn-active-bg: #{$btn-primary-active-bg};
-  --pgn-btn-active-border-color: #{$btn-primary-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-primary-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-primary-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-primary-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-primary-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-primary);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-primary);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-primary);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-primary);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-primary);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-primary);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-primary);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-primary);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-primary);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-primary);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-primary);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-primary);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-primary);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-primary);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-primary);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-primary);
 
-  box-shadow: $btn-box-shadow;
+  box-shadow: var(--pgn-elevation-btn-box-shadow-base);
 }
 
 .btn-outline-primary {
-  --pgn-btn-color: #{$btn-primary-outline-color};
-  --pgn-btn-bg: #{$btn-primary-outline-bg};
-  --pgn-btn-border-color: #{$btn-primary-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-primary-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-primary-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-primary-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-primary-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-primary-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-primary-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-primary-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-primary-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-primary-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-primary-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-primary-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-primary-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-primary-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-outline-primary);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-outline-primary);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-outline-primary);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-outline-primary);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-outline-primary);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-outline-primary);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-outline-primary);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-outline-primary);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-outline-primary);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-outline-primary);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-outline-primary);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-outline-primary);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-outline-primary);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-outline-primary);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-outline-primary);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-outline-primary);
 }
 
 .btn-inverse-primary {
-  --pgn-btn-color: #{$btn-primary-inverse-color};
-  --pgn-btn-bg: #{$btn-primary-inverse-bg};
-  --pgn-btn-border-color: #{$btn-primary-inverse-border-color};
-  --pgn-btn-hover-color: #{$btn-primary-inverse-hover-color};
-  --pgn-btn-hover-bg: #{$btn-primary-inverse-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-primary-inverse-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-primary-inverse-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-primary-inverse-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-primary-inverse-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-primary-inverse-active-color};
-  --pgn-btn-active-bg: #{$btn-primary-inverse-active-bg};
-  --pgn-btn-active-border-color: #{$btn-primary-inverse-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-primary-inverse-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-primary-inverse-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-primary-inverse-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-primary-inverse-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-primary);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-primary);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-primary);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-primary);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-primary);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-primary);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-primary);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-primary);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-primary);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-primary);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-primary);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-primary);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-primary);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-primary);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-primary);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-primary);
 }
 
 .btn-inverse-outline-primary {
-  --pgn-btn-color: #{$btn-primary-inverse-outline-color};
-  --pgn-btn-bg: #{$btn-primary-inverse-outline-bg};
-  --pgn-btn-border-color: #{$btn-primary-inverse-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-primary-inverse-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-primary-inverse-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-primary-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-primary-inverse-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-primary-inverse-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-primary-inverse-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-primary-inverse-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-primary-inverse-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-primary-inverse-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-primary-inverse-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-primary-inverse-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-primary-inverse-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-primary-inverse-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-outline-primary);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-outline-primary);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-outline-primary);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-outline-primary);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-outline-primary);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-outline-primary);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-outline-primary);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-outline-primary);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-outline-primary);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-outline-primary);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-outline-primary);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-outline-primary);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-outline-primary);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-outline-primary);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-outline-primary);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-outline-primary);
 }
 
 
 // SECONDARY BUTTONS
 .btn-secondary {
-  --pgn-btn-color: #{$btn-secondary-color};
-  --pgn-btn-bg: #{$btn-secondary-bg};
-  --pgn-btn-border-color: #{$btn-secondary-border-color};
-  --pgn-btn-hover-color: #{$btn-secondary-hover-color};
-  --pgn-btn-hover-bg: #{$btn-secondary-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-secondary-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-secondary-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-secondary-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-secondary-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-secondary-active-color};
-  --pgn-btn-active-bg: #{$btn-secondary-active-bg};
-  --pgn-btn-active-border-color: #{$btn-secondary-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-secondary-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-secondary-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-secondary-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-secondary-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-secondary);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-secondary);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-secondary);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-secondary);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-secondary);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-secondary);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-secondary);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-secondary);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-secondary);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-secondary);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-secondary);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-secondary);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-secondary);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-secondary);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-secondary);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-secondary);
 
-  box-shadow: $btn-box-shadow;
+  box-shadow: var(--pgn-elevation-btn-box-shadow-base);
 }
 
 .btn-outline-secondary {
-  --pgn-btn-color: #{$btn-secondary-outline-color};
-  --pgn-btn-bg: #{$btn-secondary-outline-bg};
-  --pgn-btn-border-color: #{$btn-secondary-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-secondary-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-secondary-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-secondary-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-secondary-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-secondary-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-secondary-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-secondary-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-secondary-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-secondary-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-secondary-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-secondary-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-secondary-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-secondary-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-outline-secondary);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-outline-secondary);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-outline-secondary);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-outline-secondary);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-outline-secondary);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-outline-secondary);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-outline-secondary);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-outline-secondary);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-outline-secondary);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-outline-secondary);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-outline-secondary);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-outline-secondary);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-outline-secondary);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-outline-secondary);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-outline-secondary);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-outline-secondary);
 }
 
 .btn-inverse-secondary {
-  --pgn-btn-color: #{$btn-secondary-inverse-color};
-  --pgn-btn-bg: #{$btn-secondary-inverse-bg};
-  --pgn-btn-border-color: #{$btn-secondary-inverse-border-color};
-  --pgn-btn-hover-color: #{$btn-secondary-inverse-hover-color};
-  --pgn-btn-hover-bg: #{$btn-secondary-inverse-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-secondary-inverse-hover-border-color};
-  --pgn-btn-disabled-bg: #{$btn-secondary-inverse-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-secondary-inverse-disabled-border-color};
-  --pgn-btn-disabled-color: #{$btn-secondary-inverse-disabled-color};
-  --pgn-btn-active-color: #{$btn-secondary-inverse-active-color};
-  --pgn-btn-active-bg: #{$btn-secondary-inverse-active-bg};
-  --pgn-btn-active-border-color: #{$btn-secondary-inverse-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-secondary-inverse-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-secondary-inverse-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-secondary-inverse-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-secondary-inverse-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-secondary);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-secondary);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-secondary);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-secondary);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-secondary);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-secondary);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-secondary);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-secondary);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-secondary);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-secondary);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-secondary);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-secondary);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-secondary);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-secondary);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-secondary);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-secondary);
 }
 
 .btn-inverse-outline-secondary {
-  --pgn-btn-color: #{$btn-secondary-inverse-outline-color};
-  --pgn-btn-bg: #{$btn-secondary-inverse-outline-bg};
-  --pgn-btn-border-color: #{$btn-secondary-inverse-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-secondary-inverse-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-secondary-inverse-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-secondary-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-secondary-inverse-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-secondary-inverse-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-secondary-inverse-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-secondary-inverse-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-secondary-inverse-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-secondary-inverse-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-secondary-inverse-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-secondary-inverse-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-secondary-inverse-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-secondary-inverse-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-outline-secondary);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-outline-secondary);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-outline-secondary);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-outline-secondary);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-outline-secondary);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-outline-secondary);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-outline-secondary);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-outline-secondary);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-outline-secondary);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-outline-secondary);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-outline-secondary);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-outline-secondary);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-outline-secondary);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-outline-secondary);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-outline-secondary);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-outline-secondary);
 }
 
 
 // BRAND BUTTONS
 .btn-brand {
-  --pgn-btn-color: #{$btn-brand-color};
-  --pgn-btn-bg: #{$btn-brand-bg};
-  --pgn-btn-border-color: #{$btn-brand-border-color};
-  --pgn-btn-hover-color: #{$btn-brand-hover-color};
-  --pgn-btn-hover-bg: #{$btn-brand-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-brand-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-brand-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-brand-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-brand-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-brand-active-color};
-  --pgn-btn-active-bg: #{$btn-brand-active-bg};
-  --pgn-btn-active-border-color: #{$btn-brand-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-brand-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-brand-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-brand-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-brand-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-brand);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-brand);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-brand);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-brand);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-brand);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-brand);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-brand);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-brand);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-brand);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-brand);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-brand);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-brand);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-brand);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-brand);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-brand);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-brand);
 
-  box-shadow: $btn-box-shadow;
+  box-shadow: var(--pgn-elevation-btn-box-shadow-base);
 }
 
 .btn-outline-brand {
-  --pgn-btn-color: #{$btn-brand-outline-color};
-  --pgn-btn-bg: #{$btn-brand-outline-bg};
-  --pgn-btn-border-color: #{$btn-brand-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-brand-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-brand-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-brand-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-brand-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-brand-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-brand-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-brand-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-brand-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-brand-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-brand-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-brand-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-brand-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-brand-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-outline-brand);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-outline-brand);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-outline-brand);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-outline-brand);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-outline-brand);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-outline-brand);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-outline-brand);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-outline-brand);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-outline-brand);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-outline-brand);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-outline-brand);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-outline-brand);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-outline-brand);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-outline-brand);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-outline-brand);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-outline-brand);
 }
 
 .btn-inverse-brand {
-  --pgn-btn-color: #{$btn-brand-inverse-color};
-  --pgn-btn-bg: #{$btn-brand-inverse-bg};
-  --pgn-btn-border-color: #{$btn-brand-inverse-border-color};
-  --pgn-btn-hover-color: #{$btn-brand-inverse-hover-color};
-  --pgn-btn-hover-bg: #{$btn-brand-inverse-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-brand-inverse-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-brand-inverse-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-brand-inverse-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-brand-inverse-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-brand-inverse-active-color};
-  --pgn-btn-active-bg: #{$btn-brand-inverse-active-bg};
-  --pgn-btn-active-border-color: #{$btn-brand-inverse-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-brand-inverse-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-brand-inverse-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-brand-inverse-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-brand-inverse-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-brand);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-brand);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-brand);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-brand);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-brand);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-brand);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-brand);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-brand);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-brand);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-brand);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-brand);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-brand);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-brand);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-brand);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-brand);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-brand);
 }
 
 .btn-inverse-outline-brand {
-  --pgn-btn-color: #{$btn-brand-inverse-outline-color};
-  --pgn-btn-bg: #{$btn-brand-inverse-outline-bg};
-  --pgn-btn-border-color: #{$btn-brand-inverse-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-brand-inverse-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-brand-inverse-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-brand-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-brand-inverse-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-brand-inverse-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-brand-inverse-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-brand-inverse-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-brand-inverse-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-brand-inverse-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-brand-inverse-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-brand-inverse-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-brand-inverse-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-brand-inverse-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-outline-brand);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-outline-brand);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-outline-brand);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-outline-brand);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-outline-brand);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-outline-brand);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-outline-brand);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-outline-brand);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-outline-brand);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-outline-brand);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-outline-brand);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-outline-brand);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-outline-brand);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-outline-brand);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-outline-brand);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-outline-brand);
 }
 
 
 // DANGER BUTTONS
 .btn-danger {
-  --pgn-btn-color: #{$btn-danger-color};
-  --pgn-btn-bg: #{$btn-danger-bg};
-  --pgn-btn-border-color: #{$btn-danger-border-color};
-  --pgn-btn-hover-color: #{$btn-danger-hover-color};
-  --pgn-btn-hover-bg: #{$btn-danger-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-danger-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-danger-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-danger-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-danger-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-danger-active-color};
-  --pgn-btn-active-bg: #{$btn-danger-active-bg};
-  --pgn-btn-active-border-color: #{$btn-danger-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-danger-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-danger-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-danger-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-danger-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-danger);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-danger);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-danger);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-danger);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-danger);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-danger);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-danger);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-danger);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-danger);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-danger);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-danger);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-danger);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-danger);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-danger);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-danger);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-danger);
 
-  box-shadow: $btn-box-shadow;
+  box-shadow: var(--pgn-elevation-btn-box-shadow-base);
 }
 
 .btn-outline-danger {
-  --pgn-btn-color: #{$btn-danger-outline-color};
-  --pgn-btn-bg: #{$btn-danger-outline-bg};
-  --pgn-btn-border-color: #{$btn-danger-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-danger-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-danger-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-danger-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-danger-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-danger-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-danger-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-danger-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-danger-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-danger-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-danger-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-danger-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-danger-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-danger-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-outline-danger);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-outline-danger);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-outline-danger);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-outline-danger);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-outline-danger);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-outline-danger);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-outline-danger);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-outline-danger);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-outline-danger);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-outline-danger);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-outline-danger);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-outline-danger);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-outline-danger);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-outline-danger);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-outline-danger);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-outline-danger);
 }
 
 .btn-inverse-danger {
-  --pgn-btn-color: #{$btn-danger-inverse-color};
-  --pgn-btn-bg: #{$btn-danger-inverse-bg};
-  --pgn-btn-border-color: #{$btn-danger-inverse-border-color};
-  --pgn-btn-hover-color: #{$btn-danger-inverse-hover-color};
-  --pgn-btn-hover-bg: #{$btn-danger-inverse-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-danger-inverse-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-danger-inverse-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-danger-inverse-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-danger-inverse-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-danger-inverse-active-color};
-  --pgn-btn-active-bg: #{$btn-danger-inverse-active-bg};
-  --pgn-btn-active-border-color: #{$btn-danger-inverse-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-danger-inverse-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-danger-inverse-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-danger-inverse-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-danger-inverse-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-danger);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-danger);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-danger);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-danger);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-danger);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-danger);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-danger);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-danger);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-danger);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-danger);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-danger);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-danger);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-danger);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-danger);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-danger);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-danger);
 }
 
 .btn-inverse-outline-danger {
-  --pgn-btn-color: #{$btn-danger-inverse-outline-color};
-  --pgn-btn-bg: #{$btn-danger-inverse-outline-bg};
-  --pgn-btn-border-color: #{$btn-danger-inverse-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-danger-inverse-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-danger-inverse-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-danger-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-danger-inverse-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-danger-inverse-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-danger-inverse-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-danger-inverse-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-danger-inverse-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-danger-inverse-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-danger-inverse-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-danger-inverse-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-danger-inverse-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-danger-inverse-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-outline-danger);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-outline-danger);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-outline-danger);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-outline-danger);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-outline-danger);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-outline-danger);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-outline-danger);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-outline-danger);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-outline-danger);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-outline-danger);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-outline-danger);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-outline-danger);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-outline-danger);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-outline-danger);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-outline-danger);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-outline-danger);
 }
 
 
 // DARK BUTTONS
 .btn-dark {
-  --pgn-btn-color: #{$btn-dark-color};
-  --pgn-btn-bg: #{$btn-dark-bg};
-  --pgn-btn-border-color: #{$btn-dark-border-color};
-  --pgn-btn-hover-color: #{$btn-dark-hover-color};
-  --pgn-btn-hover-bg: #{$btn-dark-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-dark-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-dark-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-dark-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-dark-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-dark-active-color};
-  --pgn-btn-active-bg: #{$btn-dark-active-bg};
-  --pgn-btn-active-border-color: #{$btn-dark-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-dark-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-dark-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-dark-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-dark-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-dark);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-dark);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-dark);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-dark);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-dark);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-dark);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-dark);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-dark);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-dark);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-dark);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-dark);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-dark);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-dark);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-dark);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-dark);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-dark);
 
-  box-shadow: $btn-box-shadow;
+  box-shadow: var(--pgn-elevation-btn-box-shadow-base);
 }
 
 .btn-outline-dark {
-  --pgn-btn-color: #{$btn-dark-outline-color};
-  --pgn-btn-bg: #{$btn-dark-outline-bg};
-  --pgn-btn-border-color: #{$btn-dark-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-dark-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-dark-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-dark-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-dark-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-dark-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-dark-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-dark-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-dark-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-dark-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-dark-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-dark-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-dark-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-dark-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-outline-dark);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-outline-dark);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-outline-dark);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-outline-dark);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-outline-dark);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-outline-dark);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-outline-dark);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-outline-dark);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-outline-dark);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-outline-dark);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-outline-dark);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-outline-dark);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-outline-dark);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-outline-dark);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-outline-dark);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-outline-dark);
 }
 
 .btn-inverse-dark {
-  --pgn-btn-color: #{$btn-dark-inverse-color};
-  --pgn-btn-bg: #{$btn-dark-inverse-bg};
-  --pgn-btn-border-color: #{$btn-dark-inverse-border-color};
-  --pgn-btn-hover-color: #{$btn-dark-inverse-hover-color};
-  --pgn-btn-hover-bg: #{$btn-dark-inverse-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-dark-inverse-hover-border-color};
-  --pgn-btn-disabled-bg: #{$btn-dark-inverse-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-dark-inverse-disabled-border-color};
-  --pgn-btn-disabled-color: #{$btn-dark-inverse-disabled-color};
-  --pgn-btn-active-color: #{$btn-dark-inverse-active-color};
-  --pgn-btn-active-bg: #{$btn-dark-inverse-active-bg};
-  --pgn-btn-active-border-color: #{$btn-dark-inverse-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-dark-inverse-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-dark-inverse-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-dark-inverse-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-dark-inverse-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-dark);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-dark);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-dark);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-dark);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-dark);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-dark);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-dark);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-dark);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-dark);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-dark);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-dark);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-dark);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-dark);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-dark);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-dark);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-dark);
 }
 
 .btn-inverse-outline-dark {
-  --pgn-btn-color: #{$btn-dark-inverse-outline-color};
-  --pgn-btn-bg: #{$btn-dark-inverse-outline-bg};
-  --pgn-btn-border-color: #{$btn-dark-inverse-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-dark-inverse-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-dark-inverse-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-dark-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-dark-inverse-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-dark-inverse-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-dark-inverse-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-dark-inverse-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-dark-inverse-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-dark-inverse-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-dark-inverse-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-dark-inverse-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-dark-inverse-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-dark-inverse-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-outline-dark);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-outline-dark);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-outline-dark);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-outline-dark);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-outline-dark);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-outline-dark);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-outline-dark);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-outline-dark);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-outline-dark);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-outline-dark);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-outline-dark);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-outline-dark);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-border-inverse-outline-dark);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-outline-dark);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-outline-inverse-outline-dark);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-outline-dark);
 }
 
 
 // INFO BUTTONS
 .btn-info {
-  --pgn-btn-color: #{$btn-info-color};
-  --pgn-btn-bg: #{$btn-info-bg};
-  --pgn-btn-border-color: #{$btn-info-border-color};
-  --pgn-btn-hover-color: #{$btn-info-hover-color};
-  --pgn-btn-hover-bg: #{$btn-info-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-info-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-info-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-info-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-info-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-info-active-color};
-  --pgn-btn-active-bg: #{$btn-info-active-bg};
-  --pgn-btn-active-border-color: #{$btn-info-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-info-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-info-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-info-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-info-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-info);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-info);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-info);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-info);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-info);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-info);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-info);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-info);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-info);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-info);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-info);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-info);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-info);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-info);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-info);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-info);
 
-  box-shadow: $btn-box-shadow;
+  box-shadow: var(--pgn-elevation-btn-box-shadow-base);
 }
 
 .btn-outline-info {
-  --pgn-btn-color: #{$btn-info-outline-color};
-  --pgn-btn-bg: #{$btn-info-outline-bg};
-  --pgn-btn-border-color: #{$btn-info-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-info-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-info-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-info-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-info-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-info-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-info-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-info-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-info-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-info-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-info-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-info-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-info-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-info-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-outline-info);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-outline-info);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-outline-info);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-outline-info);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-outline-info);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-outline-info);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-outline-info);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-outline-info);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-outline-info);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-outline-info);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-outline-info);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-outline-info);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-outline-info);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-outline-info);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-outline-info);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-outline-info);
 }
 
 .btn-inverse-info {
-  --pgn-btn-color: #{$btn-info-inverse-color};
-  --pgn-btn-bg: #{$btn-info-inverse-bg};
-  --pgn-btn-border-color: #{$btn-info-inverse-border-color};
-  --pgn-btn-hover-color: #{$btn-info-inverse-hover-color};
-  --pgn-btn-hover-bg: #{$btn-info-inverse-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-info-inverse-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-info-inverse-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-info-inverse-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-info-inverse-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-info-inverse-active-color};
-  --pgn-btn-active-bg: #{$btn-info-inverse-active-bg};
-  --pgn-btn-active-border-color: #{$btn-info-inverse-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-info-inverse-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-info-inverse-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-info-inverse-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-info-inverse-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-info);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-info);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-info);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-info);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-info);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-info);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-info);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-info);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-info);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-info);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-info);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-info);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-info);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-info);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-info);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-info);
 }
 
 .btn-inverse-outline-info {
-  --pgn-btn-color: #{$btn-info-inverse-outline-color};
-  --pgn-btn-bg: #{$btn-info-inverse-outline-bg};
-  --pgn-btn-border-color: #{$btn-info-inverse-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-info-inverse-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-info-inverse-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-info-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-info-inverse-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-info-inverse-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-info-inverse-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-info-inverse-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-info-inverse-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-info-inverse-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-info-inverse-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-info-inverse-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-info-inverse-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-info-inverse-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-outline-info);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-outline-info);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-outline-info);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-outline-info);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-outline-info);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-outline-info);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-outline-info);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-outline-info);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-outline-info);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-outline-info);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-outline-info);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-outline-info);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-outline-info);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-outline-info);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-outline-info);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-outline-info);
 }
 
 
 // LIGHT BUTTONS
 .btn-light {
-  --pgn-btn-color: #{$btn-light-color};
-  --pgn-btn-bg: #{$btn-light-bg};
-  --pgn-btn-border-color: #{$btn-light-border-color};
-  --pgn-btn-hover-color: #{$btn-light-hover-color};
-  --pgn-btn-hover-bg: #{$btn-light-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-light-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-light-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-light-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-light-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-light-active-color};
-  --pgn-btn-active-bg: #{$btn-light-active-bg};
-  --pgn-btn-active-border-color: #{$btn-light-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-light-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-light-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-light-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-light-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-light);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-light);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-light);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-light);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-light);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-light);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-light);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-light);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-light);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-light);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-light);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-light);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-light);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-light);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-light);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-light);
 
-  box-shadow: $btn-box-shadow;
+  box-shadow: var(--pgn-elevation-btn-box-shadow-base);
 }
 
 .btn-outline-light {
-  --pgn-btn-color: #{$btn-light-outline-color};
-  --pgn-btn-bg: #{$btn-light-outline-bg};
-  --pgn-btn-border-color: #{$btn-light-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-light-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-light-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-light-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-light-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-light-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-light-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-light-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-light-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-light-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-light-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-light-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-light-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-light-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-outline-light);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-outline-light);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-outline-light);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-outline-light);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-outline-light);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-outline-light);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-outline-light);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-outline-light);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-outline-light);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-outline-light);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-outline-light);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-outline-light);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-outline-light);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-outline-light);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-outline-light);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-outline-light);
 }
 
 .btn-inverse-light {
-  --pgn-btn-color: #{$btn-light-inverse-color};
-  --pgn-btn-bg: #{$btn-light-inverse-bg};
-  --pgn-btn-border-color: #{$btn-light-inverse-border-color};
-  --pgn-btn-hover-color: #{$btn-light-inverse-hover-color};
-  --pgn-btn-hover-bg: #{$btn-light-inverse-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-light-inverse-hover-border-color};
-  --pgn-btn-disabled-bg: #{$btn-light-inverse-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-light-inverse-disabled-border-color};
-  --pgn-btn-disabled-color: #{$btn-light-inverse-disabled-color};
-  --pgn-btn-active-color: #{$btn-light-inverse-active-color};
-  --pgn-btn-active-bg: #{$btn-light-inverse-active-bg};
-  --pgn-btn-active-border-color: #{$btn-light-inverse-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-light-inverse-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-light-inverse-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-light-inverse-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-light-inverse-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-light);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-light);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-light);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-light);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-light);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-light);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-light);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-light);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-light);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-light);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-light);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-light);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-light);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-light);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-light);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-light);
 }
 
 .btn-inverse-outline-light {
-  --pgn-btn-color: #{$btn-light-inverse-outline-color};
-  --pgn-btn-bg: #{$btn-light-inverse-outline-bg};
-  --pgn-btn-border-color: #{$btn-light-inverse-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-light-inverse-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-light-inverse-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-light-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-light-inverse-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-light-inverse-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-light-inverse-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-light-inverse-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-light-inverse-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-light-inverse-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-light-inverse-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-light-inverse-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-light-inverse-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-light-inverse-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-outline-light);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-outline-light);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-outline-light);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-outline-light);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-outline-light);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-outline-light);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-outline-light);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-outline-light);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-outline-light);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-outline-light);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-outline-light);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-outline-light);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-outline-light);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-outline-light);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-outline-light);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-outline-light);
 }
 
 
 // SUCCESS BUTTONS
 .btn-success {
-  --pgn-btn-color: #{$btn-success-color};
-  --pgn-btn-bg: #{$btn-success-bg};
-  --pgn-btn-border-color: #{$btn-success-border-color};
-  --pgn-btn-hover-color: #{$btn-success-hover-color};
-  --pgn-btn-hover-bg: #{$btn-success-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-success-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-success-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-success-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-success-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-success-active-color};
-  --pgn-btn-active-bg: #{$btn-success-active-bg};
-  --pgn-btn-active-border-color: #{$btn-success-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-success-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-success-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-success-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-success-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-success);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-success);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-success);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-success);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-success);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-success);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-success);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-success);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-success);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-success);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-success);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-success);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-success);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-success);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-success);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-success);
 
-  box-shadow: $btn-box-shadow;
+  box-shadow: var(--pgn-elevation-btn-box-shadow-base);
 }
 
 .btn-outline-success {
-  --pgn-btn-color: #{$btn-success-outline-color};
-  --pgn-btn-bg: #{$btn-success-outline-bg};
-  --pgn-btn-border-color: #{$btn-success-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-success-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-success-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-success-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-success-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-success-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-success-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-success-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-success-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-success-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-success-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-success-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-success-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-success-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-outline-success);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-outline-success);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-outline-success);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-outline-success);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-outline-success);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-outline-success);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-outline-success);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-outline-success);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-outline-success);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-outline-success);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-outline-success);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-outline-success);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-outline-success);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-outline-success);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-outline-success);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-outline-success);
 }
 
 .btn-inverse-success {
-  --pgn-btn-color: #{$btn-success-inverse-color};
-  --pgn-btn-bg: #{$btn-success-inverse-bg};
-  --pgn-btn-border-color: #{$btn-success-inverse-border-color};
-  --pgn-btn-hover-color: #{$btn-success-inverse-hover-color};
-  --pgn-btn-hover-bg: #{$btn-success-inverse-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-success-inverse-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-success-inverse-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-success-inverse-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-success-inverse-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-success-inverse-active-color};
-  --pgn-btn-active-bg: #{$btn-success-inverse-active-bg};
-  --pgn-btn-active-border-color: #{$btn-success-inverse-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-success-inverse-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-success-inverse-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-success-inverse-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-success-inverse-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-success);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-success);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-success);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-success);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-success);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-success);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-success);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-success);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-success);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-success);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-success);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-success);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-success);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-success);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-success);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-success);
 }
 
 .btn-inverse-outline-success {
-  --pgn-btn-color: #{$btn-success-inverse-outline-color};
-  --pgn-btn-bg: #{$btn-success-inverse-outline-bg};
-  --pgn-btn-border-color: #{$btn-success-inverse-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-success-inverse-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-success-inverse-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-success-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-success-inverse-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-success-inverse-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-success-inverse-outline-disabled-color};
-  --pgn-btn-active-color: #{$btn-success-inverse-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-success-inverse-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-success-inverse-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-success-inverse-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-success-inverse-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-success-inverse-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-success-inverse-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-outline-success);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-outline-success);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-outline-success);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-outline-success);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-outline-success);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-outline-success);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-outline-success);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-outline-success);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-outline-success);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-outline-success);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-outline-success);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-outline-success);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-outline-success);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-outline-success);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-outline-success);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-outline-success);
 }
 
 
 // WARNING BUTTONS
 .btn-warning {
-  --pgn-btn-color: #{$btn-warning-color};
-  --pgn-btn-bg: #{$btn-warning-bg};
-  --pgn-btn-border-color: #{$btn-warning-border-color};
-  --pgn-btn-hover-color: #{$btn-warning-hover-color};
-  --pgn-btn-hover-bg: #{$btn-warning-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-warning-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-warning-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-warning-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-warning-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-warning-active-color};
-  --pgn-btn-active-bg: #{$btn-warning-active-bg};
-  --pgn-btn-active-border-color: #{$btn-warning-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-warning-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-warning-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-warning-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-warning-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-warning);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-warning);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-warning);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-warning);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-warning);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-warning);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-warning);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-warning);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-warning);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-warning);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-warning);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-warning);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-warning);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-warning);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-warning);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-warning);
 
-  box-shadow: $btn-box-shadow;
+  box-shadow: var(--pgn-elevation-btn-box-shadow-base);
 }
 
 .btn-outline-warning {
-  --pgn-btn-color: #{$btn-warning-outline-color};
-  --pgn-btn-bg: #{$btn-warning-outline-bg};
-  --pgn-btn-border-color: #{$btn-warning-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-warning-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-warning-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-warning-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-warning-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-warning-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-warning-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-warning-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-warning-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-warning-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-warning-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-warning-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-warning-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-warning-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-outline-warning);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-outline-warning);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-outline-warning);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-outline-warning);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-outline-warning);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-outline-warning);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-outline-warning);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-outline-warning);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-outline-warning);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-outline-warning);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-outline-warning);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-outline-warning);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-outline-warning);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-outline-warning);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-outline-warning);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-outline-warning);
 }
 
 .btn-inverse-warning {
-  --pgn-btn-color: #{$btn-warning-inverse-color};
-  --pgn-btn-bg: #{$btn-warning-inverse-bg};
-  --pgn-btn-border-color: #{$btn-warning-inverse-border-color};
-  --pgn-btn-hover-color: #{$btn-warning-inverse-hover-color};
-  --pgn-btn-hover-bg: #{$btn-warning-inverse-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-warning-inverse-hover-border-color};
-  --pgn-btn-disabled-bg: #{$btn-warning-inverse-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-warning-inverse-disabled-border-color};
-  --pgn-btn-disabled-color: #{$btn-warning-inverse-disabled-color};
-  --pgn-btn-active-color: #{$btn-warning-inverse-active-color};
-  --pgn-btn-active-bg: #{$btn-warning-inverse-active-bg};
-  --pgn-btn-active-border-color: #{$btn-warning-inverse-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-warning-inverse-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-warning-inverse-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-warning-inverse-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-warning-inverse-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-warning);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-warning);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-warning);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-warning);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-warning);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-warning);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-warning);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-warning);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-warning);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-warning);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-warning);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-warning);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-warning);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-warning);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-warning);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-warning);
 }
 
 .btn-inverse-outline-warning {
-  --pgn-btn-color: #{$btn-warning-inverse-outline-color};
-  --pgn-btn-bg: #{$btn-warning-inverse-outline-bg};
-  --pgn-btn-border-color: #{$btn-warning-inverse-outline-border-color};
-  --pgn-btn-hover-color: #{$btn-warning-inverse-outline-hover-color};
-  --pgn-btn-hover-bg: #{$btn-warning-inverse-outline-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-warning-inverse-outline-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-warning-inverse-outline-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-warning-inverse-outline-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-warning-inverse-outline-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-warning-inverse-outline-active-color};
-  --pgn-btn-active-bg: #{$btn-warning-inverse-outline-active-bg};
-  --pgn-btn-active-border-color: #{$btn-warning-inverse-outline-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-warning-inverse-outline-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-warning-inverse-outline-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-warning-inverse-outline-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-warning-inverse-outline-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-outline-warning);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-outline-warning);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-outline-warning);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-outline-warning);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-outline-warning);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-outline-warning);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-outline-warning);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-outline-warning);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-outline-warning);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-outline-warning);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-outline-warning);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-outline-warning);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-border-inverse-outline-warning);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-outline-warning);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-outline-warning);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-outline-inverse-outline-warning);
 }
 
 
 // TERTIARY BUTTONS
 .btn-tertiary {
-  --pgn-btn-color: #{$btn-tertiary-color};
-  --pgn-btn-bg: #{$btn-tertiary-bg};
-  --pgn-btn-border-color: #{$btn-tertiary-border-color};
-  --pgn-btn-hover-color: #{$btn-tertiary-hover-color};
-  --pgn-btn-hover-bg: #{$btn-tertiary-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-tertiary-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-tertiary-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-tertiary-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-tertiary-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-tertiary-active-color};
-  --pgn-btn-active-bg: #{$btn-tertiary-active-bg};
-  --pgn-btn-active-border-color: #{$btn-tertiary-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-tertiary-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-tertiary-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-tertiary-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-tertiary-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-tertiary);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-tertiary);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-tertiary);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-tertiary);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-tertiary);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-tertiary);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-tertiary);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-tertiary);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-tertiary);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-tertiary);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-tertiary);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-tertiary);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-tertiary);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-tertiary);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-tertiary);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-tertiary);
 }
 
 .btn-inverse-tertiary {
-  --pgn-btn-color: #{$btn-inverse-tertiary-color};
-  --pgn-btn-bg: #{$btn-inverse-tertiary-bg};
-  --pgn-btn-border-color: #{$btn-inverse-tertiary-border-color};
-  --pgn-btn-hover-color: #{$btn-inverse-tertiary-hover-color};
-  --pgn-btn-hover-bg: #{$btn-inverse-tertiary-hover-bg};
-  --pgn-btn-hover-border-color: #{$btn-inverse-tertiary-hover-border-color};
-  --pgn-btn-disabled-color: #{$btn-inverse-tertiary-disabled-color};
-  --pgn-btn-disabled-bg: #{$btn-inverse-tertiary-disabled-bg};
-  --pgn-btn-disabled-border-color: #{$btn-inverse-tertiary-disabled-border-color};
-  --pgn-btn-active-color: #{$btn-inverse-tertiary-active-color};
-  --pgn-btn-active-bg: #{$btn-inverse-tertiary-active-bg};
-  --pgn-btn-active-border-color: #{$btn-inverse-tertiary-active-border-color};
-  --pgn-btn-focus-outline-color: #{$btn-inverse-tertiary-focus-outline-color};
-  --pgn-btn-focus-color: #{$btn-inverse-tertiary-focus-color};
-  --pgn-btn-focus-border-color: #{$btn-inverse-tertiary-focus-border-color};
-  --pgn-btn-focus-bg: #{$btn-inverse-tertiary-focus-bg};
+  --pgn-btn-color: var(--pgn-color-btn-text-inverse-tertiary);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-inverse-tertiary);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-inverse-tertiary);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-inverse-tertiary);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-inverse-tertiary);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-inverse-tertiary);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-inverse-tertiary);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-inverse-tertiary);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-inverse-tertiary);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-inverse-tertiary);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-inverse-tertiary);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-inverse-tertiary);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-inverse-tertiary);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-inverse-tertiary);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-inverse-tertiary);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-inverse-tertiary);
 }
