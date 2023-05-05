@@ -163,10 +163,15 @@ StyleDictionary.registerFormat({
     const { size: { breakpoint } } = dictionary.properties;
 
     let customMediaVariables = '';
+    const breakpoints = Object.values(breakpoint);
 
-    Object.values(breakpoint).forEach(item => {
-      customMediaVariables += `@custom-media --${item.name} (min-width: ${item.value});\n`;
-    });
+    for (let i = 0; i < breakpoints.length; i++) {
+      const [currentBreakpoint, nextBreakpoint] = [breakpoints[i], breakpoints[i + 1]];
+      customMediaVariables += `@custom-media --min-${currentBreakpoint.name} (min-width: ${currentBreakpoint.value});\n`;
+      if (nextBreakpoint) {
+        customMediaVariables += `@custom-media --max-${currentBreakpoint.name} (max-width: ${nextBreakpoint.value});\n`;
+      }
+    }
 
     return fileHeader({ file }) + customMediaVariables;
   },

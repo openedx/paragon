@@ -4,9 +4,14 @@
  * Generated on Wed, 22 Mar 2023 12:28:07 GMT
  */
 
-@custom-media --pgn-size-breakpoint-xs (min-width: 0);
-@custom-media --pgn-size-breakpoint-sm (min-width: 576px);
-@custom-media --pgn-size-breakpoint-md (min-width: 768px);
-@custom-media --pgn-size-breakpoint-lg (min-width: 992px);
-@custom-media --pgn-size-breakpoint-xl (min-width: 1200px);
-@custom-media --pgn-size-breakpoint-xxl (min-width: 1400px);
+@custom-media --min-pgn-size-breakpoint-xs (min-width: 0);
+@custom-media --max-pgn-size-breakpoint-xs (max-width: 576px);
+@custom-media --min-pgn-size-breakpoint-sm (min-width: 576px);
+@custom-media --max-pgn-size-breakpoint-sm (max-width: 768px);
+@custom-media --min-pgn-size-breakpoint-md (min-width: 768px);
+@custom-media --max-pgn-size-breakpoint-md (max-width: 992px);
+@custom-media --min-pgn-size-breakpoint-lg (min-width: 992px);
+@custom-media --max-pgn-size-breakpoint-lg (max-width: 1200px);
+@custom-media --min-pgn-size-breakpoint-xl (min-width: 1200px);
+@custom-media --max-pgn-size-breakpoint-xl (max-width: 1400px);
+@custom-media --min-pgn-size-breakpoint-xxl (min-width: 1400px);

@@ -1,54 +1,54 @@
-@import "variables";
 @import "popover-bootstrap";
 
+@mixin popover-header-and-icon($header-bg, $icon-color) {
+  .popover-header {
+    background: $header-bg;
+  }
+
+  .pgn__icon {
+    color: $icon-color;
+  }
+}
+
 .popover {
-  filter: $popover-box-shadow;
+  filter: var(--pgn-elevation-popover-box-shadow);
 
   .popover-header {
     display: flex;
     align-items: center;
-    font-size: $h5-font-size;
+    font-size: var(--pgn-typography-font-size-h5);
   }
 
   .pgn__icon {
-    margin-inline-end: $popover-icon-margin-right;
-    height: $popover-icon-height;
-    width: $popover-icon-width;
+    margin-inline-end: var(--pgn-spacing-popover-icon-margin-right);
+    height: var(--pgn-size-popover-icon-height);
+    width: var(--pgn-size-popover-icon-width);
   }
 }
 
 .popover-success {
-  background: $popover-success-bg;
+  background: var(--pgn-color-popover-success-bg);
 
-  .popover-header {
-    background: $popover-success-bg;
-  }
-
-  .pgn__icon {
-    color: $popover-success-icon-color;
-  }
+  @include popover-header-and-icon(
+    var(--pgn-color-popover-success-bg),
+    var(--pgn-color-popover-success-icon)
+  );
 }
 
 .popover-warning {
-  background: $popover-warning-bg;
+  background: var(--pgn-color-popover-warning-bg);
 
-  .popover-header {
-    background: $popover-warning-bg;
-  }
-
-  .pgn__icon {
-    color: $popover-warning-icon-color;
-  }
+  @include popover-header-and-icon(
+    var(--pgn-color-popover-warning-bg),
+    var(--pgn-color-popover-warning-icon)
+  );
 }
 
 .popover-danger {
-  background: $popover-danger-bg;
+  background: var(--pgn-color-popover-danger-bg);
 
-  .popover-header {
-    background: $popover-danger-bg;
-  }
-
-  .pgn__icon {
-    color: $popover-danger-icon-color;
-  }
+  @include popover-header-and-icon(
+    var(--pgn-color-popover-danger-bg),
+    var(--pgn-color-popover-danger-icon)
+  );
 }

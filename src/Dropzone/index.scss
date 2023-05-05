@@ -1,12 +1,10 @@
-@import "variables";
-
 .pgn__dropzone {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 200px;
-  padding: $dropzone-padding;
-  border: $dropzone-border-default dashed $dropzone-border-color-default;
+  padding: var(--pgn-spacing-dropzone-padding);
+  border: var(--pgn-spacing-dropzone-border-base) dashed var(--pgn-color-dropzone-border-base);
   box-sizing: border-box;
   cursor: pointer;
 
@@ -18,25 +16,25 @@
   }
 
   &:hover {
-    box-shadow: $dropzone-box-shadow-hover solid $dropzone-border-color-hover;
+    box-shadow: var(--pgn-spacing-dropzone-box-shadow-hover) solid var(--pgn-color-dropzone-border-hover);
   }
 
   &:focus {
-    box-shadow: $dropzone-box-shadow-focus solid $dropzone-border-color-focus;
+    box-shadow: var(--pgn-spacing-dropzone-box-shadow-focus) solid var(--pgn-color-dropzone-border-focus);
   }
 
   &.pgn__dropzone-validation-error {
-    box-shadow: $dropzone-box-shadow-error solid $dropzone-border-color-error;
+    box-shadow: var(--pgn-spacing-dropzone-box-shadow-error) solid var(--pgn-color-dropzone-border-error);
   }
 
   &.pgn__dropzone-active {
-    box-shadow: $dropzone-box-shadow-active solid $dropzone-border-color-active;
+    box-shadow: var(--pgn-spacing-dropzone-box-shadow-active) solid var(--pgn-color-dropzone-border-active);
   }
 }
 
 .pgn__dropzone-error-wrapper {
   text-align: center;
-  color: $dropzone-error-wrapper-color;
+  color: var(--pgn-color-dropzone-error-wrapper);
 }
 
 .pgn__dropzone-generic-alert {
@@ -53,7 +51,7 @@
 .pgn__dropzone__upload-icon-wrapper {
   height: 56px;
   width: 56px;
-  background: $light-300;
+  background: var(--pgn-color-light-300);
   border-radius: 50%;
   position: relative;
   margin-bottom: map-get($spacers, 4);
@@ -69,6 +67,6 @@
 }
 
 .pgn__dropzone__upload-restriction-message {
-  font-size: $dropzone-restriction-msg-font-size;
-  color: $dropzone-restriction-msg-color;
+  font-size: var(--pgn-typography-dropzone-restriction-msg-font-size);
+  color: var(--pgn-color-dropzone-restriction-msg);
 }

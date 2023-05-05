@@ -1,24 +1,22 @@
-@import "variables";
-
 .toast-container {
-  bottom: $toast-container-gutter-lg;
-  left: $toast-container-gutter-lg;
+  bottom: var(--pgn-spacing-toast-container-gutter-lg);
+  left: var(--pgn-spacing-toast-container-gutter-lg);
   position: fixed;
   z-index: 2;
 
   [dir="rtl"] & {
-    right: $toast-container-gutter-lg;
+    right: var(--pgn-spacing-toast-container-gutter-lg);
     left: 0;
   }
 
-  @media only screen and (max-width: 768px) {
-    bottom: $toast-container-gutter-sm;
-    right: $toast-container-gutter-sm;
-    left: $toast-container-gutter-sm;
+  @media (--max-pgn-size-breakpoint-sm) {
+    bottom: var(--pgn-spacing-toast-container-gutter-sm);
+    right: var(--pgn-spacing-toast-container-gutter-sm);
+    left: var(--pgn-spacing-toast-container-gutter-sm);
 
     [dir="rtl"] & {
-      left: $toast-container-gutter-sm;
-      right: $toast-container-gutter-sm;
+      left: var(--pgn-spacing-toast-container-gutter-sm);
+      right: var(--pgn-spacing-toast-container-gutter-sm);
     }
   }
 }
