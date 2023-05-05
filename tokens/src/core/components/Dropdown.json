@@ -3,6 +3,11 @@
     "dropdown": {
       "font-size": {
         "value": "{typography.font.size.base}", "type": "dimension", "source": "$dropdown-font-size"
+      },
+      "item": {
+        "text-decoration": {
+          "value": "none", "type": "textDecoration"
+        }
       }
     }
   },
@@ -33,8 +38,8 @@
           "item": { "value": "1rem", "type": "dimension", "source": "$dropdown-item-padding-x" }
         },
         "y": {
-          "base": { "value": ".25rem", "type": "dimension", "source": "$dropdown-padding-y" },
-          "item": { "value": ".5rem", "type": "dimension", "source": "$dropdown-item-padding-y" }
+          "base": { "value": ".5rem", "type": "dimension", "source": "$dropdown-padding-y" },
+          "item": { "value": ".25rem", "type": "dimension", "source": "$dropdown-item-padding-y" }
         },
         "header": {
           "value": "{spacing.dropdown.padding.y.base} {spacing.dropdown.padding.x.item}",
