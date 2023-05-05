@@ -1,4 +1,6 @@
-import React, { useCallback, useReducer } from 'react';
+import React, {
+  useCallback, useEffect, useReducer, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 
 export const StepperContext = React.createContext({
@@ -12,7 +14,7 @@ const stepsReducer = (stepsState, action) => {
       return stepsState.filter(step => step.eventKey !== action.eventKey);
     case 'register':
     default:
-      // If is existing step
+      // If it is existing step
       if (stepsState.some(step => step.eventKey === action.step.eventKey)) {
         newStepsState = stepsState.map(step => {
           if (step.eventKey === action.step.eventKey) {
@@ -36,13 +38,16 @@ const stepsReducer = (stepsState, action) => {
 
 export function StepperContextProvider({ children, activeKey }) {
   const [steps, dispatch] = useReducer(stepsReducer, []);
+  const [currentBoundary, setCurrentBoundary] = useState(0);
   const registerStep = useCallback((step) => dispatch({ step, type: 'register' }), []);
   const removeStep = useCallback((eventKey) => dispatch({ eventKey, type: 'remove' }), []);
-  const getIsComplete = (eventKey) => {
+
+  const getIsViewed = (index) => index <= currentBoundary;
+
+  useEffect(() => {
     const activeIndex = steps.findIndex(step => step.eventKey === activeKey);
-    const thisIndex = steps.findIndex(step => step.eventKey === eventKey);
-    return thisIndex < activeIndex;
-  };
+    setCurrentBoundary((prevState) => (activeIndex >= prevState ? activeIndex : prevState));
+  }, [activeKey, steps]);
 
   return (
     <StepperContext.Provider
@@ -51,7 +56,7 @@ export function StepperContextProvider({ children, activeKey }) {
         registerStep,
         steps,
         removeStep,
-        getIsComplete,
+        getIsViewed,
       }}
     >
       {children}
