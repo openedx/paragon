@@ -11,7 +11,6 @@ import {
   useMediaQuery,
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
-import { DEFAULT_THEME } from '../../theme-config';
 import CodeBlock from '../components/CodeBlock';
 import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
@@ -38,7 +37,7 @@ export interface IPageTemplate {
     }
   },
   pageContext: {
-    scssVariablesData: Record<string, string>,
+    cssVariablesData: string[],
   }
 }
 
@@ -48,13 +47,11 @@ export type ShortCodesTypes = {
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
-  pageContext: { scssVariablesData },
+  pageContext: { cssVariablesData },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
   const { settings } = useContext(SettingsContext);
-  const { theme } = settings;
-  const scssVariables = scssVariablesData[theme!] || scssVariablesData[DEFAULT_THEME!];
 
   const components = componentNodes.nodes
     .reduce((acc: { [x: string]: { displayName: string }; }, currentValue: { displayName: string; }) => {
@@ -85,15 +82,15 @@ export default function PageTemplate({
     };
   }, [components]);
 
-  const scssVariablesTitle = 'Theme Variables';
-  const scssVariablesUrl = 'theme-variables';
+  const cssVariablesTitle = 'Theme Variables';
+  const cssVariablesUrl = 'theme-variables';
 
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
-    if (Object.values(scssVariablesData).some(data => data) && !tableOfContents.items?.includes()) {
+    if (cssVariablesData?.length && !tableOfContents.items?.includes()) {
       tableOfContents.items?.push({
-        title: scssVariablesTitle,
-        url: `#${scssVariablesUrl}`,
+        title: cssVariablesTitle,
+        url: `#${cssVariablesUrl}`,
       });
     }
     return tableOfContents;
@@ -124,15 +121,15 @@ export default function PageTemplate({
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-        {scssVariables && (
+        {!!cssVariablesData.length && (
           <div className="mb-5">
-            <h2 className="mb-4 pgn-doc__heading" id={scssVariablesUrl}>
-              {scssVariablesTitle}
-              <a href={`#${scssVariablesUrl}`} aria-label="Jump to SCSS variables">
+            <h2 className="mb-4 pgn-doc__heading" id={cssVariablesUrl}>
+              {cssVariablesTitle}
+              <a href={`#${cssVariablesUrl}`} aria-label="Jump to CSS variables">
                 <span className="pgn-doc__anchor">#</span>
               </a>
             </h2>
-            <ComponentVariablesTable rawStylesheet={scssVariables} />
+            <ComponentVariablesTable rawStylesheet={cssVariablesData} />
           </div>
         )}
         {typeof sortedComponentNames !== 'string'

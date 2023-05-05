@@ -1,2 +1,47 @@
-@import "variables";
-@import "~bootstrap/scss/code";
+code {
+  color: var(--pgn-color-code-base);
+  word-wrap: break-word;
+
+  @include font-size(var(--pgn-typography-code-font-size));
+
+  a > & {
+    color: inherit;
+  }
+}
+
+kbd {
+  padding: var(--pgn-spacing-code-kbd-padding-y) var(--pgn-spacing-code-kbd-padding-x);
+  color: var(--pgn-color-code-kbd-base);
+  background-color: var(--pgn-color-code-kbd-bg);
+
+  @include font-size(var(--pgn-typography-code-kbd-font-size));
+  @include border-radius(var(--pgn-size-border-radius-sm));
+  @include box-shadow(var(--pgn-elevation-code-kbd-box-shadow));
+
+  kbd {
+    padding: 0;
+    font-weight: var(--pgn-typography-code-kbd-nested-font-weight);
+
+    @include font-size(100%);
+    @include box-shadow(none);
+  }
+}
+
+pre {
+  display: block;
+  color: var(--pgn-color-code-pre);
+
+  @include font-size(var(--pgn-typography-code-font-size));
+
+  code {
+    @include font-size(inherit);
+
+    color: inherit;
+    word-break: normal;
+  }
+}
+
+.pre-scrollable {
+  max-height: var(--pgn-size-code-pre-scrollable-max-height);
+  overflow-y: scroll;
+}

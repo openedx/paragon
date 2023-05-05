@@ -1,5 +1,3 @@
-@import "variables";
-
 .btn-group,
 .btn-group-vertical {
   position: relative;
@@ -35,7 +33,7 @@
 .btn-group {
   > .btn:not(:first-child),
   > .btn-group:not(:first-child) {
-    margin-left: calc(#{$btn-border-width} * -1);
+    margin-left: calc(var(--pgn-size-btn-border-width) * -1);
   }
 
   > .btn:not(:last-child):not(.dropdown-toggle),
@@ -55,8 +53,8 @@
 .btn-group-lg > .btn { @extend .btn-lg; }
 
 .dropdown-toggle-split {
-  padding-right: calc(#{$btn-padding-x} * .75);
-  padding-left: calc(#{$btn-padding-x} * .75);
+  padding-right: calc(var(--pgn-spacing-btn-padding-x-base) * .75);
+  padding-left: calc(var(--pgn-spacing-btn-padding-x-base) * .75);
 
   &::after,
   .dropup &::after,
@@ -70,17 +68,17 @@
 }
 
 .btn-sm + .dropdown-toggle-split {
-  padding-right: calc(#{$btn-padding-x-sm} * .75);
-  padding-left: calc(#{$btn-padding-x-sm} * .75);
+  padding-right: calc(var(--pgn-spacing-btn-padding-x-sm) * .75);
+  padding-left: calc(var(--pgn-spacing-btn-padding-x-sm) * .75);
 }
 
 .btn-lg + .dropdown-toggle-split {
-  padding-right: calc(#{$btn-padding-x-lg} * .75);
-  padding-left: calc(#{$btn-padding-x-lg} * .75);
+  padding-right: calc(var(--pgn-spacing-btn-padding-x-lg) * .75);
+  padding-left: calc(var(--pgn-spacing-btn-padding-x-lg) * .75);
 }
 
 .btn-group.show .dropdown-toggle {
-  @include box-shadow(#{$btn-active-box-shadow});
+  @include box-shadow(var(--pgn-elevation-btn-box-shadow-active));
 
   &.btn-link {
     @include box-shadow(none);
@@ -99,7 +97,7 @@
 
   > .btn:not(:first-child),
   > .btn-group:not(:first-child) {
-    margin-top: calc(#{$btn-border-width} * -1);
+    margin-top: calc(var(--pgn-size-btn-border-width) * -1);
   }
 
   > .btn:not(:last-child):not(.dropdown-toggle),

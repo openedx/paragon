@@ -1,24 +1,24 @@
 .pgn-doc__code-block {
-  margin: $spacer 0 2rem;
-  background-color: $light-200;
-  border: solid 2px $light-300;
-  border-radius: $border-radius;
+  margin: var(--pgn-spacing-spacer-base) 0 2rem;
+  background-color: var(--pgn-color-light-200);
+  border: solid 2px var(--pgn-color-light-300);
+  border-radius: var(--pgn-size-border-radius-base);
 
   .pgn-doc__code-block-preview {
-    padding: $spacer;
+    padding: var(--pgn-spacing-spacer-base);
   }
 
   .pgn-doc__code-block-editor,
   .prism-code {
-    font-size: $font-size-base;
+    font-size: var(--pgn-typography-font-size-base);
     font-family: monospace;
-    border-radius: $input-border-radius;
+    border-radius: var(--pgn-size-form-input-radius-border-base);
   }
 
   .pgn-doc__code-block-error {
-    background-color: $warning-200;
-    padding: $spacer;
-    font-size: $font-size-sm;
+    background-color: var(--pgn-color-warning-200);
+    padding: var(--pgn-spacing-spacer-base);
+    font-size: var(--pgn-typography-font-size-sm);
     margin: 0;
   }
 
@@ -27,8 +27,8 @@
 
     .pgn-doc__collapsible-live-editor-copy-btn {
       position: absolute;
-      top: map-get($spacers, 2);
-      right: map-get($spacers, 2);
+      top: var(--pgn-spacing-spacer-2);
+      right: var(--pgn-spacing-spacer-2);
     }
   }
 }
