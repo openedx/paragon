@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import classNames from 'classnames';
 
+import { waitFor } from '@testing-library/react';
 import TableActions from '../TableActions';
 import {
   ACTION_OVERFLOW_BUTTON_TEXT, SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT,
@@ -143,11 +144,12 @@ describe('<TableActions />', () => {
       expect(buttons.length).toEqual(2);
       expect(buttons.get(1).props.variant).toEqual('brand');
     });
-    it('displays the user\'s second button as an outline button', () => {
-      const wrapper = mount(<TableActionsWrapper />);
-      waitForComponentToPaint(wrapper);
-      const buttons = wrapper.find(Button);
-      expect(buttons.get(0).props.variant).toEqual('outline-primary');
+    it('displays the user\'s second button as an outline button', async () => {
+      await waitFor(() => {
+        const wrapper = mount(<TableActionsWrapper />);
+        const buttons = wrapper.find(Button);
+        expect(buttons.get(0).props.variant).toEqual('outline-primary');
+      });
     });
     describe('overflow menu', () => {
       const onClickSpy = jest.fn();
@@ -155,7 +157,7 @@ describe('<TableActions />', () => {
       let tableInstance;
       let wrapper;
       let overflowButton;
-      beforeEach(() => {
+      beforeEach(async () => {
         tableInstance = {
           ...instance,
           tableActions: [...instance.tableActions, <FirstAction onClick={onClickSpy} className={itemClassName} />],
@@ -163,10 +165,11 @@ describe('<TableActions />', () => {
         wrapper = mount(
           <TableActionsWrapper value={tableInstance} />,
         );
-        waitForComponentToPaint(wrapper);
-        // the overflow toggle button is the first button
-        overflowButton = wrapper.find(IconButton);
-        overflowButton.simulate('click');
+        await waitFor(() => {
+          // the overflow toggle button is the first button
+          overflowButton = wrapper.find(IconButton);
+          overflowButton.simulate('click');
+        });
       });
       afterEach(() => {
         onClickSpy.mockClear();

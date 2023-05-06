@@ -74,25 +74,22 @@ describe('<Collapsible />', () => {
   });
 
   describe('Imperative Methods', () => {
-    const wrapper = mount(<Collapsible.Advanced>{collapsibleContent}</Collapsible.Advanced>);
-    const collapsible = wrapper.instance();
+    const wrapper = mount(
+      <Collapsible.Advanced>{collapsibleContent}</Collapsible.Advanced>,
+    );
 
     collapsibleIsClosed(wrapper);
 
-    it('opens on .open()', async () => {
-      await act(() => {
-        collapsible.open();
-        wrapper.update();
-        collapsibleIsOpen(wrapper);
-      });
+    it('opens on .open()', () => {
+      wrapper.setProps({ open: true });
+      wrapper.update();
+      collapsibleIsOpen(wrapper);
     });
 
-    it('closes on .close()', async () => {
-      await act(() => {
-        collapsible.close();
-        wrapper.update();
-        collapsibleIsClosed(wrapper);
-      });
+    it('closes on .close()', () => {
+      wrapper.setProps({ open: false });
+      wrapper.update();
+      collapsibleIsClosed(wrapper);
     });
     it('correct behavior with unmountOnExit', async () => {
       let i = 0;

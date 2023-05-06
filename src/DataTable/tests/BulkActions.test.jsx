@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import classNames from 'classnames';
+import { waitFor } from '@testing-library/react';
 
 import BulkActions from '../BulkActions';
 import {
@@ -173,18 +174,19 @@ describe('<BulkActions />', () => {
       expect(buttons.length).toEqual(2);
       expect(buttons.get(1).props.variant).toEqual('brand');
     });
-    it('displays the user\'s second button as an outline button', () => {
-      const wrapper = mount(<BulkActionsWrapper />);
-      waitForComponentToPaint(wrapper);
-      const buttons = wrapper.find(Button);
-      expect(buttons.get(0).props.variant).toEqual('outline-primary');
+    it('displays the user\'s second button as an outline button', async () => {
+      await waitFor(() => {
+        const wrapper = mount(<BulkActionsWrapper />);
+        const buttons = wrapper.find(Button);
+        expect(buttons.get(0).props.variant).toEqual('outline-primary');
+      });
     });
     describe('overflow menu', () => {
       const onClickSpy = jest.fn();
       const itemClassName = 'itemClickTest';
       let wrapper;
       let overflowButton;
-      beforeEach(() => {
+      beforeEach(async() => {
         wrapper = mount(
           <BulkActionsWrapper
             value={{
@@ -194,10 +196,11 @@ describe('<BulkActions />', () => {
             }}
           />,
         );
-        waitForComponentToPaint(wrapper);
-        // the overflow toggle button is the first button
-        overflowButton = wrapper.find(IconButton);
-        overflowButton.simulate('click');
+        await waitFor(() => {
+          // the overflow toggle button is the first button
+          overflowButton = wrapper.find(IconButton);
+          overflowButton.simulate('click');
+        });
       });
       afterEach(() => {
         onClickSpy.mockClear();

@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
+import { waitFor } from '@testing-library/react';
 
 import Dropdown from './index';
 import Icon from '../../Icon';
@@ -86,12 +87,14 @@ describe('<Dropdown />', () => {
       expect(menuTrigger.is(':focus')).toBe(true);
     });
 
-    it('closes on document click when open', () => {
+    it('closes on document click when open', async () => {
       menuTrigger.simulate('click'); // Open
       menuOpen(true, wrapper);
       document.dispatchEvent(new MouseEvent('click'));
-      wrapper.update(); // Let react re-render
-      menuOpen(false, wrapper);
+      await waitFor(() => {
+        wrapper.update(); // Let react re-render
+        menuOpen(false, wrapper);
+      });
     });
   });
 
