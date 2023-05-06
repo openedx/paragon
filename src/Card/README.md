@@ -120,7 +120,7 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
 )};
 ```
 
-## As link
+### As link
 You can also use `Card` as a link by wrapping it into appropriate component, note that `Card` will override default 
 link styling to make its content appear as a regular text.
 
