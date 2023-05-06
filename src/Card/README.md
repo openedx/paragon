@@ -473,11 +473,47 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
 () => {
   const [orientation, setOrientation] = useState('vertical');
   const [variant, setVariant] = useState('warning');
+  const [showCardStatusActions, setCardStatusActions] = useState('false');
   
-  const handleChangeOrientation = (e) => setOrientation(e.target.value);
-  const handleChangeVariant = (e) => setVariant(e.target.value);
   const isVertical = orientation === 'vertical';
-  
+
+  const cardBodyByOrientation = {
+    vertical: (
+      <>
+        <Card.ImageCap
+          src="https://picsum.photos/360/200/"
+          srcAlt="Card image"
+          logoSrc="https://via.placeholder.com/150"
+          logoAlt="Card logo"
+        />
+        <Card.Header title="Card title"/>
+        <Card.Section>
+          This is a wider card with supporting text below as a natural lead-in to
+          additional content. This card has even longer content than the first to
+          show that equal height action.
+        </Card.Section>
+      </>
+    ),
+    horizontal: (
+      <div className="d-flex">
+        <Card.ImageCap
+          src="https://picsum.photos/360/200/"
+          srcAlt="Card image"
+          logoSrc="https://via.placeholder.com/150"
+          logoAlt="Card logo"
+        />
+        <Card.Body>
+          <Card.Header title="Card title"/>
+          <Card.Section>
+            This is a wider card with supporting text below as a natural lead-in to
+            additional content. This card has even longer content than the first to
+            show that equal height action.
+          </Card.Section>
+        </Card.Body>
+      </div>
+    ),
+  };
+
   return (
     <>
       {/* start example form block */}
@@ -485,30 +521,44 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
         inputs={[
           { value: orientation, setValue: setOrientation, options: ['horizontal', 'vertical'], name: 'orientation' },
           { value: variant, setValue: setVariant, options: ['primary', 'warning', 'danger', 'success'], name: 'status-variant' },
+          { value: showCardStatusActions, setValue: setCardStatusActions, options: ['true', 'false'], name: 'card-status-actions' },
         ]}
       />
       {/* end example form block */}
       
-      <Card orientation={orientation} className={`flex-column ${isVertical ? 'w-50' : ''}`}>
-        <Card.Header
-          title="Card title"
-        />
-        <Card.Body className={!isVertical ? 'd-flex' : ''}>
-          <Card.Section
-            title="Section title"
-          >
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This card has even longer content than the first to
-            show that equal height action.
-          </Card.Section>
-          <Card.Footer className={!isVertical ? 'justify-content-end' : ''}>
-            <Button>Save</Button>
-            <Button variant="danger">Remove</Button>
-          </Card.Footer>
-        </Card.Body>
-        
-        <Card.Status icon={Warning} variant={variant}>
-          Warning lorem ipsum dolor sit amet
+      <Card
+        orientation={orientation}
+        className={classNames({ 'w-50': isVertical, 'flex-column': !isVertical })}
+      >
+        {cardBodyByOrientation[orientation]}
+        <Card.Status
+          icon={Warning}
+          variant={variant}
+          actions={(() => {
+            if (showCardStatusActions === "false") { return undefined; }
+            if (orientation === 'horizontal') {
+              return (
+                <ActionRow>
+                  <Button size="sm" variant={variant === 'primary' ? 'inverse-tertiary' : 'tertiary'}>
+                    Dismiss
+                  </Button>
+                  <Button size="sm" variant="brand">
+                    Learn more
+                  </Button>
+                </ActionRow>
+              );
+            }
+            return (
+              <Button size="sm" variant="brand" block>
+                Learn more
+              </Button>
+            );
+          })()}
+        >
+          <HipsterIpsum
+            numShortParagraphs={orientation === "vertical" ? 1 : undefined}
+            numParagraphs={1}
+          />
         </Card.Status>
       </Card>
     </>

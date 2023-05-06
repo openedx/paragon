@@ -212,12 +212,6 @@ a .pgn__card {
       margin-left: 40px;
     }
   }
-
-  .pgn__card-section-loader {
-    .react-loading-skeleton {
-      margin-bottom: 1rem;
-    }
-  }
 }
 
 .pgn__card-footer {
@@ -307,9 +301,6 @@ a .pgn__card {
 
     .pgn__card-image-cap {
       height: 100%;
-      border-top-left-radius: $card-image-border-radius;
-      border-bottom-left-radius: $card-image-border-radius;
-      border-top-right-radius: 0;
       max-width: inherit;
       width: auto;
       object-fit: cover;
@@ -339,8 +330,6 @@ a .pgn__card {
   object-fit: cover;
   max-height: inherit;
   width: 100%;
-  border-top-left-radius: $card-image-border-radius;
-  border-top-right-radius: $card-image-border-radius;
   display: none;
 
   &.show {
@@ -386,6 +375,7 @@ a .pgn__card {
 
 .pgn__card {
   outline: none;
+  overflow: hidden;
 
   @include pgn-box-shadow(1, "down");
 
@@ -412,7 +402,6 @@ a .pgn__card {
 .pgn__card-status {
   box-shadow: none;
   margin-bottom: 0;
-  display: flex;
   font-size: $font-size-sm;
   line-height: 1.5rem;
   text-align: start;
@@ -421,12 +410,20 @@ a .pgn__card {
   border: 0 solid transparent;
   border-radius: 0 0 $card-border-radius $card-border-radius;
 
+  .pgn__card-status__content {
+    display: flex;
+  }
+
   .pgn__card-status__message-content {
     flex-grow: 1;
 
     & > :last-child {
       margin-bottom: 0;
     }
+  }
+
+  .pgn__card-status__actions {
+    margin-top: map-get($spacers, 3);
   }
 
   .pgn__card-status__heading {
