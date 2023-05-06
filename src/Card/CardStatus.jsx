@@ -22,6 +22,7 @@ const CardStatus = React.forwardRef(({
           'pgn__card-status',
           className,
         )}
+        data-testid="card-status-skeleton"
         ref={ref}
       >
         <Skeleton />
