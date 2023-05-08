@@ -474,7 +474,7 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
   const [orientation, setOrientation] = useState('vertical');
   const [variant, setVariant] = useState('warning');
   const [showCardStatusActions, setCardStatusActions] = useState('false');
-  
+
   const isVertical = orientation === 'vertical';
 
   const cardBodyByOrientation = {
@@ -526,41 +526,48 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
       />
       {/* end example form block */}
       
-      <Card
-        orientation={orientation}
-        className={classNames({ 'w-50': isVertical, 'flex-column': !isVertical })}
+      <CardGrid
+        columnSizes={{
+          xs: 12,
+          lg: isVertical ? 6 : 12,
+        }}
       >
-        {cardBodyByOrientation[orientation]}
-        <Card.Status
-          icon={Warning}
-          variant={variant}
-          actions={(() => {
-            if (showCardStatusActions === "false") { return undefined; }
-            if (orientation === 'horizontal') {
-              return (
-                <ActionRow>
-                  <Button size="sm" variant={variant === 'primary' ? 'inverse-tertiary' : 'tertiary'}>
-                    Dismiss
-                  </Button>
-                  <Button size="sm" variant="brand">
-                    Learn more
-                  </Button>
-                </ActionRow>
-              );
-            }
-            return (
-              <Button size="sm" variant="brand" block>
-                Learn more
-              </Button>
-            );
-          })()}
+        <Card
+          orientation={orientation}
+          className={classNames({ 'flex-column': !isVertical })}
         >
-          <HipsterIpsum
-            numShortParagraphs={orientation === "vertical" ? 1 : undefined}
-            numParagraphs={1}
-          />
-        </Card.Status>
-      </Card>
+          {cardBodyByOrientation[orientation]}
+          <Card.Status
+            icon={Warning}
+            variant={variant}
+            actions={(() => {
+              if (showCardStatusActions === "false") { return undefined; }
+              if (orientation === 'horizontal') {
+                return (
+                  <ActionRow>
+                    <Button size="sm" variant={variant === 'primary' ? 'inverse-tertiary' : 'tertiary'}>
+                      Dismiss
+                    </Button>
+                    <Button size="sm" variant="brand">
+                      Learn more
+                    </Button>
+                  </ActionRow>
+                );
+              }
+              return (
+                <Button size="sm" variant="brand" block>
+                  Learn more
+                </Button>
+              );
+            })()}
+          >
+            <HipsterIpsum
+              numShortParagraphs={orientation === "vertical" ? 1 : undefined}
+              numParagraphs={1}
+            />
+          </Card.Status>
+        </Card>
+      </CardGrid>
     </>
   );
 };
