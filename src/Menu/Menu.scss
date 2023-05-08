@@ -1,112 +1,94 @@
-.pgn__menu-item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  min-width: 288px;
-  max-width: 450px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-family: $btn-font-family;
-  font-weight: $btn-font-weight;
-  color: $body-color;
-  text-align: center;
-  vertical-align: middle;
-  user-select: none;
-  background-color: transparent;
-  border: $btn-border-width solid transparent;
-  padding: $btn-padding-y $btn-padding-x;
-  font-size: $btn-font-size;
-  height: 48px;
-  border-radius: 0;
-  $hover-border: transparent;
-
-  .pgn__menu-item-content-spacer {
-    flex-grow: 1;
-  }
-
-  @include hover {
-    text-decoration: none;
-    color: $btn-tertiary-color;
-    border-color: $hover-border;
-    background: $btn-tertiary-hover-bg;
-  }
-
-  // Disabled comes first so active can properly restyle
-  &.disabled,
-  &:disabled {
-    opacity: $btn-disabled-opacity;
-  }
-
-  $background: $btn-tertiary-bg;
-  $border: transparent;
-  $active-background: $btn-tertiary-active-bg;
-  $active-border: transparent;
-
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active,
-  .show > &.dropdown-toggle {
-    color: $btn-tertiary-color;
-    background-color: $active-background;
-    border-color: $active-border;
-  }
-
-  &.focus,
-  &:focus {
-    font-weight: $font-weight-bolder;
-    color: $btn-tertiary-color;
-    background-color: $active-background;
-    border-color: $active-border;
-  }
-
-  .btn-icon-before {
-    margin-inline-end: .5rem;
-    margin-left: -.25em;
-
-    [dir="rtl"] & {
-      margin-right: -.25em;
-      margin-left: .5rem;
-    }
-  }
-
-  .btn-icon-after {
-    margin-inline-start: .5rem;
-    margin-right: -.25em;
-
-    [dir="rtl"] & {
-      margin-right: .5rem;
-      margin-left: -.25em;
-    }
-  }
-}
+@import "variables";
 
 .pgn__menu {
-  border-radius: .25em;
-  box-shadow: $box-shadow;
-  background-color: $white;
+  border-radius: $menu-border-radius;
+  box-shadow: $menu-box-shadow;
+  background-color: $menu-bg;
   overflow: auto;
-  max-height: 264px;
+  max-height: $menu-max-height;
+
+  .pgn__menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: $menu-item-width;
+    color: $menu-item-color;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: $menu-item-bg;
+    border: $menu-item-border;
+    padding: $menu-item-padding-y $menu-item-padding-x;
+    height: $menu-item-height;
+
+    @media (max-width: $max-width-xs) {
+      width: $menu-item-width-xs;
+    }
+
+    .pgn__menu-item-text {
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .pgn__menu-item-content-spacer {
+      flex-grow: 1;
+    }
+
+    @include hover {
+      text-decoration: none;
+      color: $menu-item-hover-color;
+      border-color: $menu-item-hover-border-color;
+      background: $menu-item-hover-bg;
+    }
+
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+      opacity: $btn-disabled-opacity;
+    }
+
+    &.focus,
+    &:focus {
+      font-weight: $font-weight-bolder;
+      background-color: $menu-item-focus-bg;
+    }
+
+    .btn-icon-before {
+      margin-inline-end: .5rem;
+      margin-left: calc(#{$menu-item-icon-margin-left} * -1);
+
+      [dir="rtl"] & {
+        margin-right: calc(#{$menu-item-icon-margin-right} * -1);
+        margin-left: .5rem;
+      }
+    }
+
+    .btn-icon-after {
+      margin-inline-start: .5rem;
+      margin-right: calc(#{$menu-item-icon-margin-right} * -1);
+
+      [dir="rtl"] & {
+        margin-right: .5rem;
+        margin-left: calc(#{$menu-item-icon-margin-left} * -1);
+      }
+    }
+  }
 }
 
-.pgn__menu-select-popup {
-  color: $btn-tertiary-bg;
-  position: relative;
-}
+.pgn__menu-select {
+  .btn.btn-link {
+    color: $menu-select-btn-link-color;
 
-.pgn__menu-select-trigger-btn {
-  max-width: 450px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background: $white;
-  box-sizing: border-box;
-  color: $dark;
+    &:hover,
+    &:focus {
+      text-decoration-line: $menu-select-btn-link-text-decoration-line;
+      text-decoration-thickness: $menu-select-btn-link-text-decoration-thickness;
+    }
+  }
 
-  @include hover {
-    color: $white;
-    background: $primary;
-    border: 1px solid $white;
-    box-sizing: border-box;
+  .pgn__menu-select-popup {
+    position: relative;
   }
 }
