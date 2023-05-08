@@ -63,14 +63,14 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
     const headingElement = getCodeBlockHeading(e.target);
 
     if (!headingElement) {
-      global.analytics.track(`openedx.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
+      global.analytics.track(`openedx.paragon.docs.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
         value: `${componentNameAndCategory}id-not-generated`,
       });
 
       return;
     }
 
-    global.analytics.track(`openedx.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
+    global.analytics.track(`openedx.paragon.docs.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
       value: `${componentNameAndCategory}${headingElement.id}`,
     });
   };
