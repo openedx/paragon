@@ -442,7 +442,7 @@ a .pgn__card {
     margin-bottom: .5rem;
   }
 
-  .pgn__card-status__content__icon {
+  .pgn__card-status__content-icon {
     margin-inline-end: .8rem;
     width: 1.5rem;
     height: 1.5rem;
@@ -455,7 +455,7 @@ a .pgn__card {
       background-color: theme-color($color, "background");
       border-color: theme-color($color, "border");
 
-      .pgn__card-status__content__icon {
+      .pgn__card-status__content-icon {
         color: theme-color($color, "default");
       }
     }
@@ -467,7 +467,7 @@ a .pgn__card {
     border-color: $primary-500;
     box-shadow: 0 0 0 1px $primary-500;
 
-    .pgn__card-status__content__icon {
+    .pgn__card-status__content-icon {
       color: $white;
     }
   }

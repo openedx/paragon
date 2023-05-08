@@ -40,7 +40,7 @@ const CardStatus = React.forwardRef(({
       ref={ref}
     >
       <div className="pgn__card-status__content">
-        {icon && <Icon className="pgn__card-status__content__icon" src={icon} />}
+        {icon && <Icon className="pgn__card-status__content-icon" src={icon} />}
         <div className="pgn__card-status__message-content">
           {title && <div className="pgn__card-status__heading">{title}</div>}
           {children}
