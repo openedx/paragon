@@ -469,6 +469,8 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 
 Note that in the example below, the content of `Card` is wrapped inside `Card.Body`. The `d-flex` class is added for the `horizontal` orientation to achieve horizontal variant. The `flex-column` class is added for the main `Card` component.
 
+An optional `actions` prop may be passed to include call-to-action button(s).
+
 ```jsx live
 () => {
   const [orientation, setOrientation] = useState('vertical');
