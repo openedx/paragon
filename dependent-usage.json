@@ -1,5 +1,5 @@
 {
-  "lastModified": 1683554921271,
+  "lastModified": 1683641382709,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -11868,9 +11868,9 @@
           },
           {
             "filePath": "src/discussions/posts/post/LikeButton.jsx",
-            "line": 37,
+            "line": 36,
             "column": 18,
-            "index": 1031
+            "index": 1020
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
@@ -12274,9 +12274,9 @@
           },
           {
             "filePath": "src/discussions/posts/post/LikeButton.jsx",
-            "line": 32,
+            "line": 31,
             "column": 8,
-            "index": 843
+            "index": 832
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
@@ -12582,9 +12582,9 @@
           },
           {
             "filePath": "src/discussions/posts/post/LikeButton.jsx",
-            "line": 25,
+            "line": 24,
             "column": 6,
-            "index": 632
+            "index": 621
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
@@ -12698,9 +12698,9 @@
           },
           {
             "filePath": "src/discussions/posts/post/LikeButton.jsx",
-            "line": 27,
+            "line": 26,
             "column": 10,
-            "index": 677
+            "index": 666
           },
           {
             "filePath": "src/discussions/posts/post/PostFooter.jsx",
@@ -14637,7 +14637,7 @@
       }
     },
     {
-      "version": "20.19.0",
+      "version": "20.32.0",
       "name": "@edx/frontend-app-learner-dashboard",
       "repository": {
         "type": "git",
@@ -29336,7 +29336,7 @@
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/SocialShareWidget/index.jsx",
             "line": 77,
             "column": 8,
-            "index": 2244
+            "index": 2264
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/index.jsx",
@@ -32102,9 +32102,9 @@
           },
           {
             "filePath": "src/instructions/proctored_exam/download-instructions/index.jsx",
-            "line": 101,
+            "line": 104,
             "column": 6,
-            "index": 3341
+            "index": 3596
           },
           {
             "filePath": "src/instructions/proctored_exam/OnboardingErrorExamInstructions.jsx",
@@ -32560,7 +32560,7 @@
       }
     },
     {
-      "version": "20.28.3",
+      "version": "20.32.3",
       "name": "@edx/gatsby-react-app",
       "repository": {
         "type": "git",
@@ -32654,6 +32654,12 @@
             "line": 53,
             "column": 8,
             "index": 2163
+          },
+          {
+            "filePath": "src/packages/common/ui/RecommendationsContainer/index.jsx",
+            "line": 19,
+            "column": 4,
+            "index": 620
           },
           {
             "filePath": "src/packages/common/ui/SitewideBanner/index.jsx",
@@ -32944,12 +32950,6 @@
             "index": 409
           },
           {
-            "filePath": "src/packages/open-course-page/components/CourseRecommendations/Variant2/index.jsx",
-            "line": 97,
-            "column": 6,
-            "index": 3308
-          },
-          {
             "filePath": "src/packages/open-course-page/components/CourseRunSelector/index.jsx",
             "line": 138,
             "column": 4,
@@ -32974,10 +32974,10 @@
             "index": 350
           },
           {
-            "filePath": "src/packages/open-course-page/components/ProductRecommendations/index.jsx",
-            "line": 39,
+            "filePath": "src/packages/open-course-page/components/ProductRecommendations/components/ProductRecommendationsContainer.jsx",
+            "line": 42,
             "column": 4,
-            "index": 1632
+            "index": 1619
           },
           {
             "filePath": "src/packages/open-course-page/components/ProgramUpsell/ProgramUpsellWidget.jsx",
@@ -33125,9 +33125,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/index.jsx",
-            "line": 49,
+            "line": 52,
             "column": 4,
-            "index": 1513
+            "index": 1623
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/index.jsx",
@@ -33175,9 +33175,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/ProductRecommendations/components/ProductCardHeader.jsx",
-            "line": 65,
+            "line": 69,
             "column": 21,
-            "index": 2140
+            "index": 2289
           },
           {
             "filePath": "src/packages/search-page/components/Results/ShowAllLink.jsx",
@@ -33395,7 +33395,7 @@
             "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
             "line": 55,
             "column": 14,
-            "index": 2090
+            "index": 2096
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
@@ -33755,9 +33755,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/ProductRecommendations/components/ProductCardHeader.jsx",
-            "line": 65,
+            "line": 69,
             "column": 10,
-            "index": 2129
+            "index": 2278
           },
           {
             "filePath": "src/packages/open-course-page/components/ProgramUpsell/ProgramUpsellWidget.jsx",
@@ -35092,10 +35092,22 @@
             "index": 3192
           },
           {
+            "filePath": "src/packages/home-page/template/HomePage/index.jsx",
+            "line": 103,
+            "column": 15,
+            "index": 3566
+          },
+          {
             "filePath": "src/packages/modular-page/modules/ImageCarouselModule/index.jsx",
             "line": 15,
             "column": 8,
             "index": 613
+          },
+          {
+            "filePath": "src/packages/school-detail-page/components/CardLists/index.jsx",
+            "line": 45,
+            "column": 11,
+            "index": 2018
           }
         ],
         "Person": [
@@ -35199,7 +35211,7 @@
             "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
             "line": 37,
             "column": 8,
-            "index": 1338
+            "index": 1339
           }
         ],
         "Card.Body": [
@@ -35445,7 +35457,7 @@
             "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
             "line": 38,
             "column": 10,
-            "index": 1380
+            "index": 1386
           }
         ],
         "ArrowUpward": [
