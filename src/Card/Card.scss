@@ -67,6 +67,10 @@ a .pgn__card {
   .row > div[class*="col-"] {
     display: flex;
     flex: 1 0 auto;
+
+    &.pgn__card__disable-equal-height {
+      display: block;
+    }
   }
 }
 
