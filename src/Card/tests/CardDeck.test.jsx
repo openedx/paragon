@@ -66,7 +66,7 @@ describe('<CardDeck />', () => {
   it('renders with disabled equal height', () => {
     const cardContent = getCardContent();
     const tree = renderer.create((
-      <CardDeck disableEqualHeight>
+      <CardDeck hasEqualColumnHeights={false}>
         {cardContent}
       </CardDeck>
     )).toJSON();

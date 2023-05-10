@@ -51,7 +51,7 @@ describe('<CardGrid />', () => {
 
     it('renders with disabled equal height', () => {
       const tree = renderer.create((
-        <CardGrid disableEqualHeight>
+        <CardGrid hasEqualColumnHeights={false}>
           {cardContent}
         </CardGrid>
       )).toJSON();

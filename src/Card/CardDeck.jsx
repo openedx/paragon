@@ -13,7 +13,7 @@ const CardDeck = React.forwardRef(({
   hasInteractiveChildren,
   canScrollHorizontal,
   hasOverflowScrollItems,
-  disableEqualHeight,
+  hasEqualColumnHeights,
 }, ref) => {
   const cards = useMemo(
     () => Children.map(children, (card) => (
@@ -22,14 +22,14 @@ const CardDeck = React.forwardRef(({
         className={classNames(
           'pgn__card-deck__card-item',
           {
-            'pgn__card__disable-equal-height': disableEqualHeight,
+            'pgn__card__disable-equal-height': !hasEqualColumnHeights,
           },
         )}
       >
         {card}
       </Col>
     )),
-    [children, columnSizes, disableEqualHeight],
+    [children, columnSizes, hasEqualColumnHeights],
   );
   const overflowCardDeckItems = useOverflowScrollItems(cards);
 
@@ -86,7 +86,7 @@ CardDeck.propTypes = {
    * each child a known/stable CSS classname */
   hasOverflowScrollItems: PropTypes.bool,
   /** Whether to disable the default equal height cards across rows in the card grid */
-  disableEqualHeight: PropTypes.bool,
+  hasEqualColumnHeights: PropTypes.bool,
 };
 
 CardDeck.defaultProps = {
@@ -99,7 +99,7 @@ CardDeck.defaultProps = {
   hasInteractiveChildren: false,
   canScrollHorizontal: true,
   hasOverflowScrollItems: false,
-  disableEqualHeight: false,
+  hasEqualColumnHeights: false,
 };
 
 CardDeck.Deprecated = BaseCardDeck;

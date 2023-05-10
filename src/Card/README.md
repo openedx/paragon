@@ -722,7 +722,7 @@ behavior.
 
 ```jsx live
 () => {
-  const [shouldDisableEqualHeight, setShouldDisableEqualHeight] = useState('false');
+  const [hasEqualColumnHeights, setHasEqualColumnHeights] = useState('true');
 
   const ExampleCard = () => (
     <Card>
@@ -748,10 +748,10 @@ behavior.
       <ExamplePropsForm
         inputs={[
           {
-            value: shouldDisableEqualHeight,
-            setValue: setShouldDisableEqualHeight,
+            value: hasEqualColumnHeights,
+            setValue: setHasEqualColumnHeights,
             options: ['true', 'false'],
-            name: 'Disable equal card grid height',
+            name: 'Has equal card grid column heights',
           },
         ]}
       />
@@ -763,7 +763,7 @@ behavior.
           lg: 6,
           xl: 4,
         }}
-        disableEqualHeight={shouldDisableEqualHeight === 'true'}
+        hasEqualColumnHeights={hasEqualColumnHeights === 'true'}
       >
         <ExampleCard />
         <ExampleCard />
@@ -786,7 +786,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
 ```jsx live
 () => {
   const [hasInteractiveChildren, setHasInteractiveChildren] = useState('false');
-  const [shouldDisableEqualHeight, setShouldDisableEqualHeight] = useState('false');
+  const [hasEqualColumnHeights, setHasEqualColumnHeights] = useState('true');
 
   const CardComponent = () => (
     <Card isClickable={hasInteractiveChildren === 'true'}>
@@ -813,10 +813,10 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
             name: 'Has interactive children',
           },
           {
-            value: shouldDisableEqualHeight,
-            setValue: setShouldDisableEqualHeight,
+            value: hasEqualColumnHeights,
+            setValue: setHasEqualColumnHeights,
             options: ['true', 'false'],
-            name: 'Disable equal card deck height',
+            name: 'Has equal card deck column heights',
           },
         ]}
       />
@@ -824,7 +824,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
 
       <CardDeck
         hasInteractiveChildren={hasInteractiveChildren === 'true'}
-        disableEqualHeight={shouldDisableEqualHeight === 'true' }
+        hasEqualColumnHeights={hasEqualColumnHeights === 'true'}
       >
         <CardComponent />
         <CardComponent />
