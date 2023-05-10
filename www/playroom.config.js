@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   baseUrl: '/playroom/',
-  components: '../src',
+  components: './playroom/components.js',
   outputPath: './public/playroom',
   frameComponent: './playroom/FrameComponent.jsx',
   themes: './playroom/themes.js',
