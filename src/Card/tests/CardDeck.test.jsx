@@ -62,4 +62,14 @@ describe('<CardDeck />', () => {
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('renders with disabled equal height', () => {
+    const cardContent = getCardContent();
+    const tree = renderer.create((
+      <CardDeck disableEqualHeight>
+        {cardContent}
+      </CardDeck>
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

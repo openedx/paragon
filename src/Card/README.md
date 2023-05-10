@@ -747,7 +747,12 @@ behavior.
       {/* start example form block */}
       <ExamplePropsForm
         inputs={[
-          { value: shouldDisableEqualHeight, setValue: setShouldDisableEqualHeight, options: ['true', 'false'], name: 'Disable equal height' },
+          {
+            value: shouldDisableEqualHeight,
+            setValue: setShouldDisableEqualHeight,
+            options: ['true', 'false'],
+            name: 'Disable equal card grid height',
+          },
         ]}
       />
       {/* end example form block */}
@@ -781,6 +786,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
 ```jsx live
 () => {
   const [hasInteractiveChildren, setHasInteractiveChildren] = useState('false');
+  const [shouldDisableEqualHeight, setShouldDisableEqualHeight] = useState('false');
 
   const CardComponent = () => (
     <Card isClickable={hasInteractiveChildren === 'true'}>
@@ -789,7 +795,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
         srcAlt="Card image"
       />
       <Card.Header title="Card title" />
-      <Card.Section  title="Section title">
+      <Card.Section>
         <HipsterIpsum numShortParagraphs={1} />
       </Card.Section>
     </Card>
@@ -804,13 +810,22 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
             value: hasInteractiveChildren,
             setValue: setHasInteractiveChildren,
             options: ['true', 'false'],
-            name: 'hasInteractiveChildren',
+            name: 'Has interactive children',
+          },
+          {
+            value: shouldDisableEqualHeight,
+            setValue: setShouldDisableEqualHeight,
+            options: ['true', 'false'],
+            name: 'Disable equal card deck height',
           },
         ]}
       />
       {/* end example form block */}
 
-      <CardDeck hasInteractiveChildren={hasInteractiveChildren === 'true'}>
+      <CardDeck
+        hasInteractiveChildren={hasInteractiveChildren === 'true'}
+        disableEqualHeight={shouldDisableEqualHeight === 'true' }
+      >
         <CardComponent />
         <CardComponent />
         <CardComponent />
