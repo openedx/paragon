@@ -31,11 +31,13 @@ const {
 
 export type CollapsibleLiveEditorTypes = {
   children: React.ReactNode;
-  clickToCopy: () => void;
+  clickToCopy: (arg: string) => void;
+  defaultCodeExample: string;
 };
 
-function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorTypes) {
+function CollapsibleLiveEditor({ children, clickToCopy, defaultCodeExample }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
+  const [codeExample, setCodeExample] = useState(defaultCodeExample);
 
   const getCodeBlockHeading = (element: HTMLElement): HTMLHeadElement | null => {
     const codeBlockWrapper = element.closest<HTMLDivElement>('.pgn-doc__code-block');
@@ -55,6 +57,10 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
     }
 
     return node;
+  };
+
+  const handleChange = (e) => {
+    setCodeExample(e.target.value);
   };
 
   const submitSegmentEvent = (e: React.MouseEvent & { target: HTMLElement }) => {
@@ -82,6 +88,7 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
         styling="card-lg"
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
+        onChange={handleChange}
         onClick={submitSegmentEvent}
         title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
@@ -93,7 +100,7 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
             src={ContentCopy}
             iconAs={Icon}
             alt="Copy code example"
-            onClick={clickToCopy}
+            onClick={() => clickToCopy(codeExample)}
             invertColors
           />
         </div>
@@ -121,8 +128,8 @@ function CodeBlock({
   const language: any = className ? className.replace(/language-/, '') : 'jsx';
   const [showToast, setShowToast] = useState(false);
 
-  const isCodeExampleCopied = () => {
-    navigator.clipboard.writeText(children);
+  const isCodeExampleCopied = (codeExample: string) => {
+    navigator.clipboard.writeText(codeExample);
     setShowToast(true);
   };
 
@@ -155,7 +162,7 @@ function CodeBlock({
           theme={theme}
         >
           <LivePreview className="pgn-doc__code-block-preview" />
-          <CollapsibleLiveEditor clickToCopy={isCodeExampleCopied}>
+          <CollapsibleLiveEditor defaultCodeExample={children} clickToCopy={isCodeExampleCopied}>
             <LiveEditor className="pgn-doc__code-block-editor" />
           </CollapsibleLiveEditor>
           <LiveError className="pgn-doc__code-block-error" />
