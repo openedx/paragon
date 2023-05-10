@@ -721,114 +721,60 @@ all cards in a given row have equal height. Try shrinking the width of your brow
 behavior.
 
 ```jsx live
-<CardGrid
-  columnSizes={{
-    xs: 12,
-    lg: 6,
-    xl: 4,
-  }}
->
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This content is a little bit longer.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This content is a little bit longer.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-</CardGrid>
+() => {
+  const [hasEqualColumnHeights, setHasEqualColumnHeights] = useState('true');
+
+  const ExampleCard = () => (
+    <Card>
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header
+        title="Card title"
+      />
+      <Card.Section 
+        title="Section title"
+      >
+        <HipsterIpsum numShortParagraphs={1} />
+      </Card.Section>
+      <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
+    </Card>
+  );
+
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          {
+            value: hasEqualColumnHeights,
+            setValue: setHasEqualColumnHeights,
+            options: ['true', 'false'],
+            name: 'Has equal card grid column heights',
+          },
+        ]}
+      />
+      {/* end example form block */}
+
+      <CardGrid
+        columnSizes={{
+          xs: 12,
+          lg: 6,
+          xl: 4,
+        }}
+        hasEqualColumnHeights={hasEqualColumnHeights === 'true'}
+      >
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+      </CardGrid>
+    </>
+  );
+}
 ```
 
 ## CardDeck
@@ -840,6 +786,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
 ```jsx live
 () => {
   const [hasInteractiveChildren, setHasInteractiveChildren] = useState('false');
+  const [hasEqualColumnHeights, setHasEqualColumnHeights] = useState('true');
 
   const CardComponent = () => (
     <Card isClickable={hasInteractiveChildren === 'true'}>
@@ -848,7 +795,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
         srcAlt="Card image"
       />
       <Card.Header title="Card title" />
-      <Card.Section  title="Section title">
+      <Card.Section>
         <HipsterIpsum numShortParagraphs={1} />
       </Card.Section>
     </Card>
@@ -863,13 +810,22 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
             value: hasInteractiveChildren,
             setValue: setHasInteractiveChildren,
             options: ['true', 'false'],
-            name: 'hasInteractiveChildren',
+            name: 'Has interactive children',
+          },
+          {
+            value: hasEqualColumnHeights,
+            setValue: setHasEqualColumnHeights,
+            options: ['true', 'false'],
+            name: 'Has equal card deck column heights',
           },
         ]}
       />
       {/* end example form block */}
 
-      <CardDeck hasInteractiveChildren={hasInteractiveChildren === 'true'}>
+      <CardDeck
+        hasInteractiveChildren={hasInteractiveChildren === 'true'}
+        hasEqualColumnHeights={hasEqualColumnHeights === 'true'}
+      >
         <CardComponent />
         <CardComponent />
         <CardComponent />
