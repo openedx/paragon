@@ -8,15 +8,15 @@ function CardGrid({
   className,
   children,
   columnSizes,
-  disableEqualHeightCards,
+  disableEqualHeight,
 }) {
   const cards = useMemo(
     () => React.Children.map(children, card => (
-      <Col {...columnSizes} className={classNames({ 'pgn__card__disable-equal-height': disableEqualHeightCards })}>
+      <Col {...columnSizes} className={classNames({ 'pgn__card__disable-equal-height': disableEqualHeight })}>
         {card}
       </Col>
     )),
-    [children, columnSizes, disableEqualHeightCards],
+    [children, columnSizes, disableEqualHeight],
   );
 
   return (
@@ -45,7 +45,7 @@ CardGrid.propTypes = {
     xl: PropTypes.number,
   }),
   /** Whether to disable the default equal height cards across rows in the card grid */
-  disableEqualHeightCards: PropTypes.bool,
+  disableEqualHeight: PropTypes.bool,
 };
 
 CardGrid.defaultProps = {
@@ -55,7 +55,7 @@ CardGrid.defaultProps = {
     lg: 6,
     xl: 4,
   },
-  disableEqualHeightCards: false,
+  disableEqualHeight: false,
 };
 
 export default CardGrid;
