@@ -33,7 +33,7 @@ function FormAutosuggest({
   });
   const [isMenuClosed, setIsMenuClosed] = useState(true);
   const [state, setState] = useState({
-    displayValue: '',
+    displayValue: value || '',
     errorMessage: '',
     dropDownItems: [],
   });

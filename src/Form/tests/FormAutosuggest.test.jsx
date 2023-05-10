@@ -63,6 +63,13 @@ describe('FormAutosuggest', () => {
       expect(wrapper.props().isLoading).toBe(true);
     });
 
+    it('renders the auto-populated value if it exists', () => {
+      const wrapper = mount(<FormAutosuggestWrapper value="Test Value" />);
+
+      expect(wrapper.find('input').instance().value).toEqual('Test Value');
+      expect(wrapper.props().value).toEqual('Test Value');
+    });
+
     it('renders component with options', () => {
       container.find('input').simulate('click');
       const optionsList = container.find('.pgn__form-autosuggest__dropdown').find('button');
