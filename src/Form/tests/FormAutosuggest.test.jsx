@@ -31,6 +31,7 @@ describe('FormAutosuggest', () => {
   });
 
   const onSelected = jest.fn();
+  const onClick = jest.fn();
 
   const container = mount(
     <FormAutosuggestWrapper
@@ -41,7 +42,7 @@ describe('FormAutosuggest', () => {
       onSelected={onSelected}
     >
       <FormAutosuggestOption>Option 1</FormAutosuggestOption>
-      <FormAutosuggestOption>Option 2</FormAutosuggestOption>
+      <FormAutosuggestOption onClick={onClick}>Option 2</FormAutosuggestOption>
       <FormAutosuggestOption>Learn from more than 160 member universities</FormAutosuggestOption>
     </FormAutosuggestWrapper>,
   );
@@ -99,6 +100,22 @@ describe('FormAutosuggest', () => {
       expect(container.find('input').instance().value).toEqual('Option 1');
       expect(onSelected).toHaveBeenCalledWith('Option 1');
       expect(onSelected).toHaveBeenCalledTimes(1);
+    });
+
+    it('when a function is passed to onClick, it is called', () => {
+      container.find('input').simulate('change', { target: { value: 'Option 2' } });
+      container.find('.pgn__form-autosuggest__dropdown').find('button')
+        .at(0).simulate('click');
+
+      expect(onClick).toHaveBeenCalledTimes(1);
+    });
+
+    it('when a function is not passed to onClick, it is not called', () => {
+      container.find('input').simulate('change', { target: { value: 'Option 1' } });
+      container.find('.pgn__form-autosuggest__dropdown').find('button')
+        .at(0).simulate('click');
+
+      expect(onClick).toHaveBeenCalledTimes(0);
     });
 
     it('options list depends on empty field value', () => {
