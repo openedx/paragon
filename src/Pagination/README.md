@@ -3,6 +3,7 @@ title: 'Pagination'
 type: 'component'
 components:
 - Pagination
+- PaginationReduced
 categories:
 - Navigation
 status: 'Needs Work'
@@ -71,7 +72,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-## Secondary
+## Secondary (Small Size)
 
 ```jsx live
 <Pagination
@@ -83,7 +84,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-## Reduced
+## Reduced (Small Size)
 
 ```jsx live
 <Pagination
@@ -95,7 +96,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 />
 ```
 
-## Minimal
+## Minimal (Small Size)
 
 ```jsx live
 <Pagination

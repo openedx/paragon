@@ -161,7 +161,7 @@ class Dropdown extends React.Component {
 }
 
 Dropdown.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 Dropdown.Item = DropdownItem;
