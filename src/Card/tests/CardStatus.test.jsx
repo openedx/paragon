@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 
 import Button from '../../Button';
-import Card from '../index';
+import Card from '..';
 import CardStatus from '../CardStatus';
 import WarningFilled from '../../../icons/jsx/WarningFilled';
 

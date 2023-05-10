@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import CardGrid from '../CardGrid';
-import Card from '../index';
+import Card from '..';
 
 const cardContent = (
   <Card>

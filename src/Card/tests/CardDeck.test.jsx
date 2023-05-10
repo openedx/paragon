@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { v4 as uuidv4 } from 'uuid';
 import CardDeck from '../CardDeck';
-import Card from '../index';
+import Card from '..';
 
 function ExampleCard(props) {
   return (

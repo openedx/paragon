@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import StatusAlert from './index';
-import { Button } from '../index';
+import StatusAlert from '.';
+import { Button } from '..';
 
 const statusAlertOpen = (isOpen, wrapper) => {
   wrapper.update();

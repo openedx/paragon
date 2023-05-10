@@ -2,8 +2,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-import { Form } from '../../index';
-import SelectableBox from '../index';
+import { Form } from '../..';
+import SelectableBox from '..';
 
 const checkboxType = 'checkbox';
 const checkboxText = (text) => `SelectableCheckbox${text}`;
