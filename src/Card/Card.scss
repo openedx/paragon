@@ -54,6 +54,32 @@
 a .pgn__card {
   color: $gray-700;
   display: inline-block;
+
+  &:not(.clickable) {
+    &:hover,
+    &:focus,
+    &.focus {
+      cursor: pointer;
+
+      @include pgn-box-shadow(2, "down");
+    }
+
+    &:focus,
+    &.focus {
+      @extend %pgn__card-focused;
+    }
+
+    &:focus-visible {
+      outline: none;
+      @extend %pgn__card-focused;
+    }
+  }
+}
+
+a.pgn__card {
+  color: $gray-700;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .pgn__card-grid {
