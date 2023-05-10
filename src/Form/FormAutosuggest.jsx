@@ -65,13 +65,19 @@ function FormAutosuggest({
   function getItems(strToFind = '') {
     let childrenOpt = React.Children.map(children, (child) => {
       // eslint-disable-next-line no-shadow
-      const { children, ...rest } = child.props;
+      const { children, onClick, ...rest } = child.props;
 
       const modifiedOpt = React.cloneElement(child, {
         ...rest,
         children,
         value: children,
-        onClick: (e) => handleItemClick(e, children),
+        onClick: (e) => {
+          if (onClick) {
+            onClick(e);
+          } else {
+            handleItemClick(e, children);
+          }
+        },
       });
 
       return modifiedOpt;

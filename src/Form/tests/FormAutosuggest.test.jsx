@@ -41,7 +41,7 @@ describe('FormAutosuggest', () => {
       onSelected={onSelected}
     >
       <FormAutosuggestOption>Option 1</FormAutosuggestOption>
-      <FormAutosuggestOption>Option 2</FormAutosuggestOption>
+      <FormAutosuggestOption onClick={(e) => console.log(e.target.value)}>Option 2</FormAutosuggestOption>
       <FormAutosuggestOption>Learn from more than 160 member universities</FormAutosuggestOption>
     </FormAutosuggestWrapper>,
   );
@@ -99,6 +99,25 @@ describe('FormAutosuggest', () => {
       expect(container.find('input').instance().value).toEqual('Option 1');
       expect(onSelected).toHaveBeenCalledWith('Option 1');
       expect(onSelected).toHaveBeenCalledTimes(1);
+    });
+
+    it('console.log is called when onClick is passed', () => {
+      const logSpy = jest.spyOn(console, 'log');
+      container.find('input').simulate('change', { target: { value: 'Option 2' } });
+      container.find('.pgn__form-autosuggest__dropdown').find('button')
+        .at(0).simulate('click');
+
+      expect(logSpy).toHaveBeenCalledWith('Option 2');
+      expect(logSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it('console.log is not called when onClick is not passed', () => {
+      const logSpy = jest.spyOn(console, 'log');
+      container.find('input').simulate('change', { target: { value: 'Option 1' } });
+      container.find('.pgn__form-autosuggest__dropdown').find('button')
+        .at(0).simulate('click');
+
+      expect(logSpy).toHaveBeenCalledTimes(0);
     });
 
     it('options list depends on empty field value', () => {
