@@ -63,7 +63,7 @@ CardGrid.defaultProps = {
     lg: 6,
     xl: 4,
   },
-  hasEqualColumnHeights: false,
+  hasEqualColumnHeights: true,
 };
 
 export default CardGrid;

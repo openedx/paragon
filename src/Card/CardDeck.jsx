@@ -85,7 +85,7 @@ CardDeck.propTypes = {
   /** Whether the children of CardDeck should be processed by `useOverflowScrollItems` to give
    * each child a known/stable CSS classname */
   hasOverflowScrollItems: PropTypes.bool,
-  /** Whether to disable the default equal height cards across rows in the card grid */
+  /** Whether to disable the default equal height cards */
   hasEqualColumnHeights: PropTypes.bool,
 };
 
@@ -99,7 +99,7 @@ CardDeck.defaultProps = {
   hasInteractiveChildren: false,
   canScrollHorizontal: true,
   hasOverflowScrollItems: false,
-  hasEqualColumnHeights: false,
+  hasEqualColumnHeights: true,
 };
 
 CardDeck.Deprecated = BaseCardDeck;
