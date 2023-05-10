@@ -7,7 +7,7 @@ exports[`correct rendering renders as expected 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup="true"
-    className="pgn__menu-select-trigger-btn btn btn-tertiary"
+    className="btn btn-outline-primary"
     disabled={false}
     onClick={[Function]}
     type="button"
