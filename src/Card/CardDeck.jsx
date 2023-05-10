@@ -16,23 +16,19 @@ const CardDeck = React.forwardRef(({
   disableEqualHeight,
 }, ref) => {
   const cards = useMemo(
-    () => Children.map(children, (card) => {
-      const { className: cardClassName } = card.props;
-      return (
-        <Col
-          {...columnSizes}
-          className={classNames(
-            'pgn__card-deck__card-item',
-            cardClassName,
-            {
-              'pgn__card__disable-equal-height': disableEqualHeight,
-            },
-          )}
-        >
-          {card}
-        </Col>
-      );
-    }),
+    () => Children.map(children, (card) => (
+      <Col
+        {...columnSizes}
+        className={classNames(
+          'pgn__card-deck__card-item',
+          {
+            'pgn__card__disable-equal-height': disableEqualHeight,
+          },
+        )}
+      >
+        {card}
+      </Col>
+    )),
     [children, columnSizes, disableEqualHeight],
   );
   const overflowCardDeckItems = useOverflowScrollItems(cards);

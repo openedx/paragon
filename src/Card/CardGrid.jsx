@@ -11,23 +11,19 @@ function CardGrid({
   disableEqualHeight,
 }) {
   const cards = useMemo(
-    () => React.Children.map(children, (card) => {
-      const { className: cardClassName } = card.props;
-      return (
-        <Col
-          {...columnSizes}
-          className={classNames(
-            'pgn__card-grid__card-item',
-            cardClassName,
-            {
-              'pgn__card__disable-equal-height': disableEqualHeight,
-            },
-          )}
-        >
-          {card}
-        </Col>
-      );
-    }),
+    () => React.Children.map(children, (card) => (
+      <Col
+        {...columnSizes}
+        className={classNames(
+          'pgn__card-grid__card-item',
+          {
+            'pgn__card__disable-equal-height': disableEqualHeight,
+          },
+        )}
+      >
+        {card}
+      </Col>
+    )),
     [children, columnSizes, disableEqualHeight],
   );
 
