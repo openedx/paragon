@@ -721,114 +721,55 @@ all cards in a given row have equal height. Try shrinking the width of your brow
 behavior.
 
 ```jsx live
-<CardGrid
-  columnSizes={{
-    xs: 12,
-    lg: 6,
-    xl: 4,
-  }}
->
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This content is a little bit longer.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This content is a little bit longer.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-</CardGrid>
+() => {
+  const [shouldDisableEqualHeight, setShouldDisableEqualHeight] = useState('false');
+
+  const ExampleCard = () => (
+    <Card>
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header
+        title="Card title"
+      />
+      <Card.Section 
+        title="Section title"
+      >
+        <HipsterIpsum numShortParagraphs={1} />
+      </Card.Section>
+      <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
+    </Card>
+  );
+
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          { value: shouldDisableEqualHeight, setValue: setShouldDisableEqualHeight, options: ['true', 'false'], name: 'Disable equal height' },
+        ]}
+      />
+      {/* end example form block */}
+
+      <CardGrid
+        columnSizes={{
+          xs: 12,
+          lg: 6,
+          xl: 4,
+        }}
+        disableEqualHeight={shouldDisableEqualHeight === 'true'}
+      >
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+      </CardGrid>
+    </>
+  );
+}
 ```
 
 ## CardDeck

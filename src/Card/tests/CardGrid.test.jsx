@@ -48,5 +48,14 @@ describe('<CardGrid />', () => {
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
+    it('renders with disabled equal height', () => {
+      const tree = renderer.create((
+        <CardGrid disableEqualHeight>
+          {cardContent}
+        </CardGrid>
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 });
