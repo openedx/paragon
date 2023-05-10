@@ -68,7 +68,7 @@ a .pgn__card {
     display: flex;
     flex: 1 0 auto;
 
-    &.pgn__card__disable-equal-height {
+    &.pgn__card__disable-equal-column-heights {
       display: block;
     }
   }

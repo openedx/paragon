@@ -8,7 +8,7 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
     className="row"
   >
     <div
-      className="pgn__card-grid__card-item pgn__card__disable-equal-height col-xl-3 col-lg-4 col-md-6 col-12"
+      className="pgn__card-grid__card-item pgn__card__disable-equal-column-heights col-xl-3 col-lg-4 col-md-6 col-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -63,7 +63,7 @@ exports[`<CardGrid /> Controlled Rendering renders with disabled equal height 1`
     className="row"
   >
     <div
-      className="pgn__card-grid__card-item pgn__card__disable-equal-height col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-grid__card-item pgn__card__disable-equal-column-heights col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -118,7 +118,7 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
     className="row"
   >
     <div
-      className="pgn__card-grid__card-item pgn__card__disable-equal-height col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-grid__card-item pgn__card__disable-equal-column-heights col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card pgn__card-light card"

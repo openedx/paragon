@@ -22,7 +22,7 @@ const CardDeck = React.forwardRef(({
         className={classNames(
           'pgn__card-deck__card-item',
           {
-            'pgn__card__disable-equal-height': !hasEqualColumnHeights,
+            'pgn__card__disable-equal-column-heights': !hasEqualColumnHeights,
           },
         )}
       >

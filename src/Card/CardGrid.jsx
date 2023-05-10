@@ -17,7 +17,7 @@ function CardGrid({
         className={classNames(
           'pgn__card-grid__card-item',
           {
-            'pgn__card__disable-equal-height': !hasEqualColumnHeights,
+            'pgn__card__disable-equal-column-heights': !hasEqualColumnHeights,
           },
         )}
       >
