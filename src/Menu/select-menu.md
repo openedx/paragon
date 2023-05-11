@@ -28,6 +28,20 @@ The ``Modal`` brings focus to the first menu element upon the click of the trigg
 </SelectMenu>
 ```
 
+## Inverse variant
+
+```jsx live
+  <Stack className="bg-dark-700 p-4">
+    <SelectMenu variant="inverse-brand">
+      <MenuItem>A Menu Item</MenuItem>
+      <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
+      <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
+      <MenuItem disabled>A Disabled Menu Item</MenuItem>
+      <MenuItem as={Hyperlink} destination="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
+    </SelectMenu>
+</Stack>
+```
+
 ### Linked variant
 
 ```jsx live

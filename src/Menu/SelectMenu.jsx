@@ -14,6 +14,7 @@ function SelectMenu({
   isLink,
   children,
   className,
+  variant,
   ...props
 }) {
   const triggerTarget = React.useRef(null);
@@ -115,7 +116,7 @@ function SelectMenu({
         aria-haspopup="true"
         aria-expanded={isOpen}
         ref={triggerTarget}
-        variant={link ? 'link' : 'outline-primary'}
+        variant={link ? 'link' : variant}
         iconAfter={ExpandMore}
         onClick={open}
       >
@@ -165,12 +166,15 @@ SelectMenu.propTypes = {
   children: PropTypes.node.isRequired,
   /** Specifies class name to append to the base element */
   className: PropTypes.string,
+  /** Specifies variant to use. */
+  variant: PropTypes.string,
 };
 
 SelectMenu.defaultProps = {
   defaultMessage: SELECT_MENU_DEFAULT_MESSAGE,
   isLink: false,
   className: undefined,
+  variant: 'outline-primary',
 };
 
 export default SelectMenu;

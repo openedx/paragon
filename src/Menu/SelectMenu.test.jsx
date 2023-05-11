@@ -52,6 +52,11 @@ describe('correct rendering', () => {
     const wrapper = mount(<DefaultSelectMenu isLink />);
     expect(wrapper.find(Button).prop('variant')).toEqual('link');
   });
+  it('rendering with Brand button variant', () => {
+    const wrapper = mount(<DefaultSelectMenu variant="brand" />);
+    expect(wrapper.find(Button).prop('variant')).toEqual('brand');
+    expect(wrapper.find('button').hasClass('btn-brand')).toEqual(true);
+  });
 });
 
 describe('mouse behavior & keyboard behavior', () => {
