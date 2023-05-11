@@ -87,7 +87,6 @@ a.pgn__card {
 
 .pgn__card {
   outline: none;
-  overflow: hidden;
 
   @include pgn-box-shadow(1, "down");
 
@@ -372,10 +371,10 @@ a.pgn__card {
     border-radius: 0 0 $card-border-radius $card-border-radius;
 
     .pgn__card-status__content {
-    display: flex;
-  }
+      display: flex;
+    }
 
-  .pgn__card-status__message-content {
+    .pgn__card-status__message-content {
       flex-grow: 1;
 
       & > :last-child {
@@ -383,11 +382,11 @@ a.pgn__card {
       }
     }
 
-  .pgn__card-status__actions {
-    margin-top: map-get($spacers, 3);
-  }
+    .pgn__card-status__actions {
+      margin-top: map-get($spacers, 3);
+    }
 
-  .pgn__card-status__heading {
+    .pgn__card-status__heading {
       font-size: $h4-font-size;
       color: $black;
       display: flex;
