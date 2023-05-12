@@ -89,6 +89,13 @@ describe('render behavior', () => {
       expect(screen.getByDisplayValue('Test Value')).toBeInTheDocument();
     });
 
+    it('renders the auto-populated value if it exists', () => {
+      const wrapper = mount(<FormAutosuggestWrapper value="Test Value" />);
+
+      expect(wrapper.find('input').instance().value).toEqual('Test Value');
+      expect(wrapper.props().value).toEqual('Test Value');
+    });
+
     it('renders component with options', () => {
       const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
@@ -259,6 +266,22 @@ describe('controlled behavior', () => {
       expect(onSelected).toHaveBeenCalledTimes(1);
     });
 
+    it('when a function is passed to onClick, it is called', () => {
+      container.find('input').simulate('change', { target: { value: 'Option 2' } });
+      container.find('.pgn__form-autosuggest__dropdown').find('button')
+        .at(0).simulate('click');
+
+      expect(onClick).toHaveBeenCalledTimes(1);
+    });
+
+    it('when a function is not passed to onClick, it is not called', () => {
+      container.find('input').simulate('change', { target: { value: 'Option 1' } });
+      container.find('.pgn__form-autosuggest__dropdown').find('button')
+        .at(0).simulate('click');
+
+      expect(onClick).toHaveBeenCalledTimes(0);
+    });
+
     it('should set the correct activedescendant', () => {
     const { getByTestId, getAllByTestId } = render(<FormAutosuggestTestComponent />);
       const input = getByTestId('autosuggest-textbox-input');
@@ -365,5 +388,4 @@ describe('controlled behavior', () => {
 
     expect(input.matches(':focus')).toBe(true);
     });
-  });
 });

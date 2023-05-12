@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MenuIcon, Close, Settings } from '~paragon-icons';
 import {
   Nav,
   Row,
@@ -10,6 +9,7 @@ import {
   IconButton,
   Button,
 } from '~paragon-react';
+import { Menu as MenuIcon, Close, Settings } from '~paragon-icons';
 import SiteTitle from './SiteTitle';
 import Search from '../Search';
 

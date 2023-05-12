@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Stepper from '../Stepper';
@@ -141,6 +141,24 @@ describe('Stepper', () => {
       mockWindowSize.width = 768;
 
       expect(container.querySelector(step)).toBeInTheDocument();
+    });
+  });
+
+  describe('clickable variant', () => {
+    const onStepClick = jest.fn();
+
+    it('ignores onClick function if Step has not been visited yet', () => {
+      render(<Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />);
+      const step = screen.getAllByRole('listitem').find(listitem => listitem.textContent.includes('Cat'));
+      fireEvent.click(step);
+      expect(onStepClick).toHaveBeenCalledTimes(0);
+    });
+
+    it('invokes onClick function if Step has been visited', () => {
+      render(<Example activeKey="review" showError={false} hasFourthStep handleStepClick={onStepClick} />);
+      const step = screen.getAllByRole('button').find(button => button.textContent.includes('Welcome'));
+      fireEvent.click(step);
+      expect(onStepClick).toHaveBeenCalledTimes(1);
     });
   });
 

@@ -37,7 +37,7 @@ const {
 
 export type CollapsibleLiveEditorTypes = {
   children: React.ReactNode;
-  clickToCopy: () => void;
+  clickToCopy: (arg: string) => void;
   handleCodeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 

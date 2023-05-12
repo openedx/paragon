@@ -18,9 +18,9 @@ import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
-import ComponentsUsage from '../components/insights/ComponentsUsage';
 import LeaveFeedback from '../components/LeaveFeedback';
 import PageEditBtn from '../components/PageEditBtn';
+import ComponentsUsage from '../components/insights/ComponentsUsage';
 import ComponentVariablesTable from '../components/ComponentVariablesTable';
 
 export interface IPageTemplate {
