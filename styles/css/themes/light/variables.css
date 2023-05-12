@@ -32,9 +32,7 @@
   --pgn-color-product-tour-checkpoint-arrow-border-transparent: #00000000;
   --pgn-color-popover-border: #00000033;
   --pgn-color-overflow-scroll-opacity-mask-transparent: #00000066;
-  --pgn-color-menu-border-hover: #00000000;
-  --pgn-color-menu-border-active: #00000000;
-  --pgn-color-menu-border-base: #00000000;
+  --pgn-color-menu-item-bg: #00000000;
   --pgn-color-icon-button-text-primary-inverse-active-hover: #000000FF;
   --pgn-color-icon-button-bg-base: #00000000;
   --pgn-color-mark-bg: #FFF243FF;
@@ -352,6 +350,9 @@
   --pgn-color-nav-link-text-base: var(--pgn-color-gray-700);
   --pgn-color-modal-backdrop-bg: var(--pgn-color-black);
   --pgn-color-modal-content-border: #00000033;
+  --pgn-color-menu-item-hover-border: var(--pgn-color-menu-item-bg);
+  --pgn-color-menu-item-border: var(--pgn-color-menu-item-bg);
+  --pgn-color-menu-bg: var(--pgn-color-white);
   --pgn-color-image-thumbnail-border: var(--pgn-color-gray-200);
   --pgn-color-icon-button-black: var(--pgn-color-black);
   --pgn-color-icon-button-accent: var(--pgn-color-white);
@@ -551,6 +552,7 @@
   --pgn-color-text-50-black: #00000080;
   --pgn-color-bg-base: var(--pgn-color-white);
   --pgn-elevation-scrollable-body-box-shadow: #0000008C;
+  --pgn-elevation-menu-box-shadow: var(--pgn-elevation-box-shadow-base);
   --pgn-elevation-icon-button-box-shadow-black-inverse: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
   --pgn-elevation-icon-button-box-shadow-black-base: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-text-black-base);
   --pgn-elevation-icon-button-box-shadow-dark-inverse: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
@@ -649,6 +651,9 @@
   --pgn-color-nav-tabs-link-hover-bg: var(--pgn-color-light-400);
   --pgn-color-nav-tabs-border: var(--pgn-color-light-400);
   --pgn-color-modal-content-bg: var(--pgn-color-bg-base);
+  --pgn-color-menu-select-btn-link-color: var(--pgn-color-primary-500);
+  --pgn-color-menu-item-hover-color: var(--pgn-color-btn-text-tertiary);
+  --pgn-color-menu-item-color: var(--pgn-color-body-base);
   --pgn-color-image-figure-caption: var(--pgn-color-gray-500);
   --pgn-color-icon-button-text-black-inverse-active-focus: var(--pgn-color-icon-button-text-black-inverse-active-base);
   --pgn-color-icon-button-text-black-inverse-active-hover: var(--pgn-color-icon-button-text-black-inverse-active-base);
@@ -1039,7 +1044,8 @@
   --pgn-color-navbar-dark-brand-text: var(--pgn-color-navbar-dark-active);
   --pgn-color-nav-pills-link-active-bg: var(--pgn-color-bg-active);
   --pgn-color-nav-tabs-link-active-bg: var(--pgn-color-body-bg);
-  --pgn-color-menu-bg-active: var(--pgn-color-btn-active-bg-tertiary);
+  --pgn-color-menu-item-focus-bg: var(--pgn-color-btn-active-bg-tertiary);
+  --pgn-color-menu-item-hover-bg: var(--pgn-color-btn-hover-bg-tertiary);
   --pgn-color-image-thumbnail-bg: var(--pgn-color-body-bg);
   --pgn-color-icon-button-text-danger-inverse-active-focus: var(--pgn-color-icon-button-text-danger-inverse-active-base);
   --pgn-color-icon-button-text-danger-inverse-active-hover: var(--pgn-color-icon-button-text-danger-inverse-active-base);
