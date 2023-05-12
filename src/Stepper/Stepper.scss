@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $white;
+  background: var(--pgn-color-white);
   padding: .75rem 1rem;
   min-height: 5.13rem;
 
@@ -18,7 +18,7 @@
     .pgn__stepper-header-line {
       display: block;
       height: 1px;
-      background: $light;
+      background: var(--pgn-color-light-base);
       flex-basis: 80px;
       margin: 0 .5rem;
     }
@@ -74,16 +74,9 @@
         }
       }
 
-    .pgn__stepper-header-step-description {
-      color: var(--pgn-color-danger-base);
+      .pgn__stepper-header-step-description {
+        color: var(--pgn-color-danger-base);
+      }
     }
   }
-}
-
-.pgn__stepper-header-line {
-  display: block;
-  height: 1px;
-  background: var(--pgn-color-light-base);
-  flex-basis: 80px;
-  margin: 0 .5rem;
 }

@@ -421,9 +421,9 @@ a .pgn__card {
   line-height: 1.5rem;
   text-align: start;
   position: relative;
-  padding: $card-spacer-y $card-spacer-x;
+  padding: var(--pgn-spacing-card-spacer-y) var(--pgn-spacing-card-spacer-x);
   border: 0 solid transparent;
-  border-radius: 0 0 $card-border-radius $card-border-radius;
+  border-radius: 0 0 var(--pgn-size-card-border-radius-base) var(--pgn-size-card-border-radius-base);
 
   .pgn__card-status__content {
     display: flex;
