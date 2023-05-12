@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef } from 'react';
-import BaseTabs from 'react-bootstrap/Tabs';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import BaseTabs from './BaseTabs';
 import TabsDeprecated from './deprecated';
 import Bubble from '../Bubble';
 import Dropdown from '../Dropdown';

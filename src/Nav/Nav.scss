@@ -16,7 +16,7 @@
 .nav-link {
   display: block;
   padding: $nav-link-padding-y $nav-link-padding-x;
-  text-decoration: if($link-decoration ==none, null, none);
+  text-decoration: if($link-decoration == none, null, none);
   color: $nav-link-color;
   font-weight: $nav-link-font-weight;
 
@@ -199,7 +199,7 @@
   }
 
   .nav-link.active,
-  .show>.nav-link {
+  .show > .nav-link {
     color: $nav-pills-link-active-color;
     background-color: $nav-pills-link-active-bg;
   }
@@ -240,13 +240,13 @@
       background: $nav-tabs-link-hover-bg;
     }
 
-    &+.nav-link {
+    & + .nav-link {
       margin-left: -1px;
     }
   }
 
   .nav-link.active,
-  .show>.nav-link {
+  .show > .nav-link {
     color: $nav-pills-link-active-color;
     background-color: $nav-pills-link-active-bg;
     border-color: transparent;
@@ -258,8 +258,7 @@
 //
 
 .nav-fill {
-
-  >.nav-link,
+  > .nav-link,
   .nav-item {
     flex: 1 1 auto;
     text-align: center;
@@ -267,8 +266,7 @@
 }
 
 .nav-justified {
-
-  >.nav-link,
+  > .nav-link,
   .nav-item {
     flex-basis: 0;
     flex-grow: 1;
@@ -281,12 +279,12 @@
 // Hide tabbable panes to start, show them when `.active`
 
 .tab-content {
-  >.tab-pane {
+  > .tab-pane {
     display: none;
     text-align: start;
   }
 
-  >.active {
+  > .active {
     display: block;
   }
 }
