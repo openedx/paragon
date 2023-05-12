@@ -1,88 +1,90 @@
-@import "variables";
+.pgn__menu {
+  border-radius: var(--pgn-size-menu-base-border-radius);
+  box-shadow: var(--pgn-elevation-menu-box-shadow);
+  background-color: var(--pgn-color-menu-bg);
+  overflow: auto;
+  max-height: var(--pgn-size-menu-base-max-height);
 
-.pgn__menu-item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  min-width: 288px;
-  max-width: 450px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-family: $btn-font-family;
-  font-weight: $btn-font-weight;
-  color: $body-color;
-  text-align: center;
-  vertical-align: middle;
-  user-select: none;
-  background-color: transparent;
-  border: $btn-border-width solid transparent;
-  padding: $btn-padding-y $btn-padding-x;
-  font-size: $btn-font-size;
-  height: 48px;
-  border-radius: 0;
+  .pgn__menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: var(--pgn-size-menu-item-width-base);
+    color: var(--pgn-color-menu-item-color);
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: var(--pgn-color-menu-item-bg);
+    border: var(--pgn-size-menu-item-border-width) solid var(--pgn-color-menu-item-border);
+    padding: var(--pgn-spacing-menu-item-padding-y) var(--pgn-spacing-menu-item-padding-x);
+    height: var(--pgn-size-menu-item-height);
+
+    @media (max-width: var(--pgn-size-container-max-width-xs)) {
+      width: var(--pgn-size-menu-item-width-xs);
+    }
+
+    .pgn__menu-item-text {
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
 
   .pgn__menu-item-content-spacer {
     flex-grow: 1;
   }
 
-  &:hover {
-    text-decoration: none;
-    color: $btn-tertiary-color;
-    border-color: $hover-border;
-    background: $btn-tertiary-hover-bg;
-  }
+    @include hover {
+      text-decoration: none;
+      color: var(--pgn-color-menu-item-hover-color);
+      border-color: var(--pgn-color-menu-item-hover-border);
+      background: var(--pgn-color-menu-item-hover-bg);
+    }
 
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    opacity: $btn-disabled-opacity;
+    opacity: var(--pgn-other-btn-disabled-opacity);
   }
 
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active,
-  .show > &.dropdown-toggle {
-    color: $btn-tertiary-color;
-    background-color: $active-background;
-    border-color: $active-border;
-  }
-
-  &.focus,
-  &:focus {
-    font-weight: $font-weight-bolder;
-    color: $btn-tertiary-color;
-    background-color: $active-background;
-    border-color: $active-border;
-  }
-
-  .btn-icon-before {
-    margin-inline-end: .5rem;
-    margin-left: -.25em;
-
-    [dir="rtl"] & {
-      margin-right: -.25em;
-      margin-left: .5rem;
+    &.focus,
+    &:focus {
+      font-weight: var(--pgn-typography-font-weight-bolder);
+      background-color: var(--pgn-color-menu-item-focus-bg);
     }
-  }
 
-  .btn-icon-after {
-    margin-inline-start: .5rem;
-    margin-right: -.25em;
+    .btn-icon-before {
+      margin-inline-end: .5rem;
+      margin-left: calc(var(--pgn-spacing-menu-item-icon-margin-left) * -1);
 
-    [dir="rtl"] & {
-      margin-right: .5rem;
-      margin-left: -.25em;
+      [dir="rtl"] & {
+        margin-right: calc(var(--pgn-spacing-menu-item-icon-margin-right) * -1);
+        margin-left: .5rem;
+      }
+    }
+
+    .btn-icon-after {
+      margin-inline-start: .5rem;
+      margin-right: calc(var(--pgn-spacing-menu-item-icon-margin-right) * -1);
+
+      [dir="rtl"] & {
+        margin-right: .5rem;
+        margin-left: calc(var(--pgn-spacing-menu-item-icon-margin-left) * -1);
+      }
     }
   }
 }
 
-.pgn__menu {
-  border-radius: .25em;
-  box-shadow: $box-shadow;
-  background-color: $white;
-  overflow: auto;
-  max-height: 264px;
+.pgn__menu-select {
+  .btn.btn-link {
+    color: var(--pgn-color-menu-select-btn-link-color);
+
+    &:hover,
+    &:focus {
+      text-decoration-line: var(--pgn-typography-menu-select-btn-link-text-decoration-line);
+      text-decoration-thickness: var(--pgn-typography-menu-select-btn-link-text-decoration-thickness);
+    }
+  }
 }
 
 .pgn__menu-select-popup {

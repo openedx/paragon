@@ -82,8 +82,8 @@
 }
 
 @mixin form-validation-state(
-  $state, $color, $icon, $tooltip-color,
-  $tooltip-bg, $focus-box-shadow-color, $checked-border-color
+  $state, $color, $icon, $form-tooltip-color,
+  $form-tooltip-bg, $focus-box-shadow-color, $checked-border-color
 ) {
   .#{$state}-feedback {
     display: none;
@@ -108,8 +108,8 @@
     @include font-size($form-feedback-tooltip-font-size);
 
     line-height: $form-feedback-tooltip-line-height;
-    color: $tooltip-color;
-    background-color: $tooltip-bg;
+    color: $form-tooltip-color;
+    background-color: $form-tooltip-bg;
 
     @include border-radius($form-feedback-tooltip-border-radius);
 
