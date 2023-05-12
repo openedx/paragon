@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Fri, 28 Apr 2023 09:30:45 GMT
+ * Generated on Fri, 12 May 2023 12:16:39 GMT
  */
 
 :root {
@@ -82,6 +82,8 @@
   --pgn-typography-pagination-font-size-sm: .875rem;
   --pgn-typography-nav-link-text-decoration: none;
   --pgn-typography-nav-link-font-weight: 500;
+  --pgn-typography-menu-select-btn-link-text-decoration-thickness: .125rem;
+  --pgn-typography-menu-select-btn-link-text-decoration-line: underline;
   --pgn-typography-image-figure-caption-font-size: 90%;
   --pgn-typography-link-decoration-brand-inline-hover: underline;
   --pgn-typography-link-decoration-brand-inline-base: underline;
@@ -144,6 +146,7 @@
   --pgn-spacing-modal-footer-padding-y: 1rem;
   --pgn-spacing-modal-inner-padding-bottom: .7rem;
   --pgn-spacing-modal-inner-padding-base: 1.5rem;
+  --pgn-spacing-menu-item-icon-margin-left: .25em;
   --pgn-spacing-image-thumbnail-padding: .25rem;
   --pgn-spacing-mark-padding: .2em;
   --pgn-spacing-paragraph-margin-bottom: 1rem;
@@ -293,6 +296,11 @@
   --pgn-size-modal-md: 500px;
   --pgn-size-modal-lg: 800px;
   --pgn-size-modal-xl: 1140px;
+  --pgn-size-menu-item-width-xs: 13.438rem;
+  --pgn-size-menu-item-width-base: 19rem;
+  --pgn-size-menu-item-height: 3rem;
+  --pgn-size-menu-base-max-height: 16.813rem;
+  --pgn-size-menu-base-border-radius: .25em;
   --pgn-size-icon-button-diameter-sm: 2.25rem;
   --pgn-size-icon-button-diameter-md: 2.75rem;
   --pgn-size-icon-lg: 1.75rem;
@@ -350,7 +358,6 @@
   --pgn-size-card-focus-border-radius: 5px;
   --pgn-size-card-focus-border-width: 2px;
   --pgn-size-card-border-radius-logo: .25rem;
-  --pgn-size-card-border-radius-image: .3125rem;
   --pgn-size-btn-focus-width: 2px;
   --pgn-size-breadcrumb-border-width-focus: .0625rem;
   --pgn-size-breadcrumb-border-axis-y-focus: .5rem;
@@ -445,6 +452,7 @@
   --pgn-spacing-nav-divider-margin-y: calc(var(--pgn-spacing-spacer-base) / 2);
   --pgn-spacing-modal-header-padding-base: var(--pgn-spacing-modal-header-padding-y) 1.5rem;
   --pgn-spacing-modal-footer-padding-base: var(--pgn-spacing-modal-footer-padding-y) 1.5rem;
+  --pgn-spacing-menu-item-icon-margin-right: var(--pgn-spacing-menu-item-icon-margin-left);
   --pgn-spacing-form-control-select-feedback-margin-top: var(--pgn-spacing-form-text-margin-top);
   --pgn-spacing-form-input-padding-x-lg: var(--pgn-spacing-input-btn-padding-lg-x);
   --pgn-spacing-form-input-padding-x-sm: var(--pgn-spacing-input-btn-padding-sm-x);
@@ -522,6 +530,8 @@
   --pgn-typography-form-input-font-weight: var(--pgn-typography-font-weight-base);
   --pgn-typography-btn-line-height-lg: var(--pgn-typography-input-btn-line-height-lg);
   --pgn-spacing-navbar-brand-padding-y: calc((var(--pgn-typography-navbar-nav-link-height) - var(--pgn-size-navbar-brand-height)) / 2);
+  --pgn-spacing-menu-item-padding-y: var(--pgn-spacing-btn-padding-y-base);
+  --pgn-spacing-menu-item-padding-x: var(--pgn-spacing-btn-padding-x-base);
   --pgn-spacing-form-control-file-padding-x: var(--pgn-spacing-form-input-padding-x-base);
   --pgn-spacing-form-control-file-padding-y: var(--pgn-spacing-form-input-padding-y-base);
   --pgn-spacing-form-control-select-padding-x-lg: var(--pgn-spacing-form-input-padding-x-lg);
@@ -551,6 +561,7 @@
   --pgn-typography-form-control-select-font-weight: var(--pgn-typography-form-input-font-weight);
   --pgn-spacing-form-control-select-feedback-icon-position: center right calc(var(--pgn-spacing-form-control-select-padding-x-base) + var(--pgn-spacing-form-control-select-indicator-padding));
   --pgn-spacing-form-control-select-feedback-icon-padding-right: calc((1em + 2 * var(--pgn-spacing-form-control-select-padding-y-base)) * 3 / 4 + var(--pgn-spacing-form-control-select-padding-x-base) + var(--pgn-spacing-form-control-select-indicator-padding));
+  --pgn-size-menu-item-border-width: var(--pgn-size-btn-border-width);
   --pgn-size-form-control-file-height-inner: var(--pgn-size-form-input-height-inner-base);
   --pgn-size-form-control-file-height-base: var(--pgn-size-form-input-height-base);
   --pgn-size-form-control-file-width: var(--pgn-size-form-input-width-border);
