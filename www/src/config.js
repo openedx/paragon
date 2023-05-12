@@ -45,12 +45,36 @@ const LANGUAGES = [
     code: 'id',
   },
   {
+    label: 'Italian (Italy)',
+    code: 'it-it',
+  },
+  {
     label: 'Polish',
     code: 'pl',
+  },
+  // {
+  //   label: 'Portuguese (Brazil)',
+  //   code: 'pt-br',
+  // },
+  {
+    label: 'Portuguese (Portugal)',
+    code: 'pt-pt',
   },
   {
     label: 'Russian',
     code: 'ru',
+  },
+  {
+    label: 'Spanish',
+    code: 'es-419',
+  },
+  {
+    label: 'Spanish (Argentina)',
+    code: 'es-ar',
+  },
+  {
+    label: 'Spanish (Spain)',
+    code: 'es-es',
   },
   {
     label: 'Thai',
@@ -60,18 +84,14 @@ const LANGUAGES = [
     label: 'Ukrainian',
     code: 'uk',
   },
-  {
-    label: 'Spanish',
-    code: 'es-419',
-  },
   // {
   //   label: 'Korean',
   //   code: 'ko-kr',
   // },
-  // {
-  //   label: 'Portuguese',
-  //   code: 'pt-br',
-  // },
+  {
+    label: 'Turkish (Turkey)',
+    code: 'tr-tr',
+  },
 ];
 
 const INSIGHTS_TABS = Object.freeze({

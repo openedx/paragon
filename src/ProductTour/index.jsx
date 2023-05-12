@@ -10,7 +10,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     advanceButtonText: tourAdvanceButtonText, dismissButtonText: tourDismissButtonText,
     endButtonText: tourEndButtonText,
   } = tourValue || {};
-  const [currentCheckpointData, setCurrentCheckpointData] = useState([]);
+  const [currentCheckpointData, setCurrentCheckpointData] = useState(null);
   const [index, setIndex] = useState(0);
   const [isTourEnabled, setIsTourEnabled] = useState(false);
   const [prunedCheckpoints, setPrunedCheckpoints] = useState([]);
@@ -170,7 +170,7 @@ ProductTour.propTypes = {
       onDismiss: PropTypes.func,
       /** A function that runs when triggering the `onClick` event of the advance
       * button if the given Checkpoint is the only or last Checkpoint in a tour. */
-      onEnd: PropTypes.func.isRequired,
+      onEnd: PropTypes.func,
       /** A string that dictates the alignment of the Checkpoint around its target. */
       placement: PropTypes.oneOf([
         'top', 'top-start', 'top-end', 'right-start', 'right', 'right-end',

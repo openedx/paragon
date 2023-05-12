@@ -24,14 +24,14 @@ The ``Modal`` brings focus to the first menu element upon the click of the trigg
   <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
   <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
   <MenuItem disabled>A Disabled Menu Item</MenuItem>
-  <MenuItem as={Hyperlink} href="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
+  <MenuItem as={Hyperlink} destination="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
 </SelectMenu>
 ```
 
 ### Linked variant
 
 ```jsx live
-<SelectMenu isLink={true} defaultMessage="Choose Your New Best Friend">
+<SelectMenu isLink defaultMessage="Choose Your New Best Friend">
   <MenuItem>Falstaff</MenuItem>
   <MenuItem>Scipio</MenuItem>
   <MenuItem defaultSelected>Faustus</MenuItem>
