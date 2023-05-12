@@ -121,8 +121,8 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
 ```
 
 ### As link
-You can also use `Card` as a link by wrapping it into appropriate component, note that `Card` will override default 
-link styling to make its content appear as a regular text.
+You can also use `Card` as a link by passing the value `HyperLink` (or `a`, `Link`) to the `as` property, note that
+`Card` will override the default link styling to make its content appear as regular text.
 
 ```jsx live
 () => {
