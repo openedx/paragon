@@ -12,7 +12,6 @@ export const SELECT_MENU_DEFAULT_MESSAGE = 'Select...';
 
 function SelectMenu({
   defaultMessage,
-  isLink,
   children,
   className,
   variant,
@@ -116,7 +115,7 @@ function SelectMenu({
         aria-haspopup="true"
         aria-expanded={isOpen}
         ref={triggerTarget}
-        variant={isLink ? 'link' : variant}
+        variant={variant}
         iconAfter={ExpandMore}
         onClick={open}
       >
@@ -160,8 +159,6 @@ function SelectMenu({
 SelectMenu.propTypes = {
   /** String that is displayed for default value of the ``SelectMenu`` */
   defaultMessage: PropTypes.string,
-  /** Displays chosen value of the ``SelectMenu`` as a link */
-  isLink: PropTypes.bool,
   /** Specifies the content of the ``SelectMenu`` */
   children: PropTypes.node.isRequired,
   /** Specifies class name to append to the base element */
@@ -172,15 +169,16 @@ SelectMenu.propTypes = {
 
 SelectMenu.defaultProps = {
   defaultMessage: SELECT_MENU_DEFAULT_MESSAGE,
-  isLink: false,
   className: undefined,
   variant: 'outline-primary',
 };
 
 const SelectMenuWithDeprecatedProp = withDeprecatedProps(SelectMenu, 'SelectMenu', {
   isLink: {
-    deprType: DeprTypes.REMOVED,
+    deprType: DeprTypes.MOVED_AND_FORMAT,
     message: 'Use "variant" prop instead, i.e. variant="link"',
+    newName: 'variant',
+    transform: () => 'link',
   },
 });
 

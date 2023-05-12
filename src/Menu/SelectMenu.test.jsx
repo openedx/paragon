@@ -48,6 +48,10 @@ describe('correct rendering', () => {
     const wrapper = mount(<DefaultSelectMenu defaultMessage="Pick Me" />);
     expect(wrapper.find(Button).text()).toEqual('Pick Me');
   });
+  it('renders with a button as link', () => {
+    const wrapper = mount(<DefaultSelectMenu isLink />);
+    expect(wrapper.find(Button).prop('variant')).toEqual('link');
+  });
   it('rendering with Brand button variant', () => {
     const wrapper = mount(<DefaultSelectMenu variant="brand" />);
     expect(wrapper.find(Button).prop('variant')).toEqual('brand');
