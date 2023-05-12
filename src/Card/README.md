@@ -11,6 +11,8 @@ components:
 - CardBody
 - CardImageCap
 - CardStatus
+- CardDeck
+- CardCarousel
 categories:
 - Content
 status: 'Stable'
@@ -118,7 +120,7 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
 )};
 ```
 
-## As link
+### As link
 You can also use `Card` as a link by wrapping it into appropriate component, note that `Card` will override default 
 link styling to make its content appear as a regular text.
 
@@ -467,15 +469,53 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
 
 Note that in the example below, the content of `Card` is wrapped inside `Card.Body`. The `d-flex` class is added for the `horizontal` orientation to achieve horizontal variant. The `flex-column` class is added for the main `Card` component.
 
+An optional `actions` prop may be passed to include call-to-action button(s).
+
 ```jsx live
 () => {
   const [orientation, setOrientation] = useState('vertical');
   const [variant, setVariant] = useState('warning');
-  
-  const handleChangeOrientation = (e) => setOrientation(e.target.value);
-  const handleChangeVariant = (e) => setVariant(e.target.value);
+  const [showCardStatusActions, setCardStatusActions] = useState('false');
+
   const isVertical = orientation === 'vertical';
-  
+
+  const cardBodyByOrientation = {
+    vertical: (
+      <>
+        <Card.ImageCap
+          src="https://picsum.photos/360/200/"
+          srcAlt="Card image"
+          logoSrc="https://via.placeholder.com/150"
+          logoAlt="Card logo"
+        />
+        <Card.Header title="Card title"/>
+        <Card.Section>
+          This is a wider card with supporting text below as a natural lead-in to
+          additional content. This card has even longer content than the first to
+          show that equal height action.
+        </Card.Section>
+      </>
+    ),
+    horizontal: (
+      <div className="d-flex">
+        <Card.ImageCap
+          src="https://picsum.photos/360/200/"
+          srcAlt="Card image"
+          logoSrc="https://via.placeholder.com/150"
+          logoAlt="Card logo"
+        />
+        <Card.Body>
+          <Card.Header title="Card title"/>
+          <Card.Section>
+            This is a wider card with supporting text below as a natural lead-in to
+            additional content. This card has even longer content than the first to
+            show that equal height action.
+          </Card.Section>
+        </Card.Body>
+      </div>
+    ),
+  };
+
   return (
     <>
       {/* start example form block */}
@@ -483,32 +523,53 @@ Note that in the example below, the content of `Card` is wrapped inside `Card.Bo
         inputs={[
           { value: orientation, setValue: setOrientation, options: ['horizontal', 'vertical'], name: 'orientation' },
           { value: variant, setValue: setVariant, options: ['primary', 'warning', 'danger', 'success'], name: 'status-variant' },
+          { value: showCardStatusActions, setValue: setCardStatusActions, options: ['true', 'false'], name: 'card-status-actions' },
         ]}
       />
       {/* end example form block */}
       
-      <Card orientation={orientation} className={`flex-column ${isVertical ? 'w-50' : ''}`}>
-        <Card.Header
-          title="Card title"
-        />
-        <Card.Body className={!isVertical ? 'd-flex' : ''}>
-          <Card.Section
-            title="Section title"
+      <CardGrid
+        columnSizes={{
+          xs: 12,
+          lg: isVertical ? 6 : 12,
+        }}
+      >
+        <Card
+          orientation={orientation}
+          className={classNames({ 'flex-column': !isVertical })}
+        >
+          {cardBodyByOrientation[orientation]}
+          <Card.Status
+            icon={Warning}
+            variant={variant}
+            actions={(() => {
+              if (showCardStatusActions === "false") { return undefined; }
+              if (orientation === 'horizontal') {
+                return (
+                  <ActionRow>
+                    <Button size="sm" variant={variant === 'primary' ? 'inverse-tertiary' : 'tertiary'}>
+                      Dismiss
+                    </Button>
+                    <Button size="sm" variant="brand">
+                      Learn more
+                    </Button>
+                  </ActionRow>
+                );
+              }
+              return (
+                <Button size="sm" variant="brand" block>
+                  Learn more
+                </Button>
+              );
+            })()}
           >
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This card has even longer content than the first to
-            show that equal height action.
-          </Card.Section>
-          <Card.Footer className={!isVertical ? 'justify-content-end' : ''}>
-            <Button>Save</Button>
-            <Button variant="danger">Remove</Button>
-          </Card.Footer>
-        </Card.Body>
-        
-        <Card.Status icon={Warning} variant={variant}>
-          Warning lorem ipsum dolor sit amet
-        </Card.Status>
-      </Card>
+            <HipsterIpsum
+              numShortParagraphs={orientation === "vertical" ? 1 : undefined}
+              numParagraphs={1}
+            />
+          </Card.Status>
+        </Card>
+      </CardGrid>
     </>
   );
 };
@@ -719,114 +780,60 @@ all cards in a given row have equal height. Try shrinking the width of your brow
 behavior.
 
 ```jsx live
-<CardGrid
-  columnSizes={{
-    xs: 12,
-    lg: 6,
-    xl: 4,
-  }}
->
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This content is a little bit longer.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This content is a little bit longer.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-  <Card>
-    <Card.ImageCap
-      src="https://picsum.photos/360/200/"
-      srcAlt="Card image"
-    />
-    <Card.Header
-      title="Card title"
-    />
-    <Card.Section 
-      title="Section title"
-    >
-      This is a wider card with supporting text below as a natural lead-in to 
-      additional content. This card has even longer content than the first to 
-      show that equal height action.
-    </Card.Section>
-    <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
-  </Card>
-</CardGrid>
+() => {
+  const [hasEqualColumnHeights, setHasEqualColumnHeights] = useState('true');
+
+  const ExampleCard = () => (
+    <Card>
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header
+        title="Card title"
+      />
+      <Card.Section 
+        title="Section title"
+      >
+        <HipsterIpsum numShortParagraphs={1} />
+      </Card.Section>
+      <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
+    </Card>
+  );
+
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          {
+            value: hasEqualColumnHeights,
+            setValue: setHasEqualColumnHeights,
+            options: ['true', 'false'],
+            name: 'Has equal card grid column heights',
+          },
+        ]}
+      />
+      {/* end example form block */}
+
+      <CardGrid
+        columnSizes={{
+          xs: 12,
+          lg: 6,
+          xl: 4,
+        }}
+        hasEqualColumnHeights={hasEqualColumnHeights === 'true'}
+      >
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
+      </CardGrid>
+    </>
+  );
+}
 ```
 
 ## CardDeck
@@ -838,6 +845,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
 ```jsx live
 () => {
   const [hasInteractiveChildren, setHasInteractiveChildren] = useState('false');
+  const [hasEqualColumnHeights, setHasEqualColumnHeights] = useState('true');
 
   const CardComponent = () => (
     <Card isClickable={hasInteractiveChildren === 'true'}>
@@ -846,7 +854,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
         srcAlt="Card image"
       />
       <Card.Header title="Card title" />
-      <Card.Section  title="Section title">
+      <Card.Section>
         <HipsterIpsum numShortParagraphs={1} />
       </Card.Section>
     </Card>
@@ -861,13 +869,22 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
             value: hasInteractiveChildren,
             setValue: setHasInteractiveChildren,
             options: ['true', 'false'],
-            name: 'hasInteractiveChildren',
+            name: 'Has interactive children',
+          },
+          {
+            value: hasEqualColumnHeights,
+            setValue: setHasEqualColumnHeights,
+            options: ['true', 'false'],
+            name: 'Has equal card deck column heights',
           },
         ]}
       />
       {/* end example form block */}
 
-      <CardDeck hasInteractiveChildren={hasInteractiveChildren === 'true'}>
+      <CardDeck
+        hasInteractiveChildren={hasInteractiveChildren === 'true'}
+        hasEqualColumnHeights={hasEqualColumnHeights === 'true'}
+      >
         <CardComponent />
         <CardComponent />
         <CardComponent />

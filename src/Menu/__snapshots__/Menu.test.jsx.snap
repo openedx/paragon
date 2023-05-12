@@ -7,7 +7,11 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
   <button
     className="pgn__menu-item"
   >
-     A Menu Item
+    <span
+      className="pgn__menu-item-text"
+    >
+       A Menu Item
+    </span>
     <span
       className="pgn__menu-item-content-spacer"
     />
@@ -35,7 +39,11 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
         />
       </svg>
     </span>
-    A Menu Item With an Icon Before
+    <span
+      className="pgn__menu-item-text"
+    >
+      A Menu Item With an Icon Before
+    </span>
     <span
       className="pgn__menu-item-content-spacer"
     />
@@ -43,7 +51,11 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
   <button
     className="pgn__menu-item"
   >
-    A Menu Item With an Icon After 
+    <span
+      className="pgn__menu-item-text"
+    >
+      A Menu Item With an Icon After 
+    </span>
     <span
       className="pgn__menu-item-content-spacer"
     />
@@ -71,7 +83,11 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
     className="pgn__menu-item"
     disabled={true}
   >
-    A Disabled Menu Item
+    <span
+      className="pgn__menu-item-text"
+    >
+      A Disabled Menu Item
+    </span>
     <span
       className="pgn__menu-item-content-spacer"
     />
@@ -82,7 +98,11 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
     onClick={[Function]}
     target="_self"
   >
-    A Link Menu Item
+    <span
+      className="pgn__menu-item-text"
+    >
+      A Link Menu Item
+    </span>
     <span
       className="pgn__menu-item-content-spacer"
     />
@@ -92,7 +112,11 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
     disabled={false}
     type="button"
   >
-    A Button Menu Item
+    <span
+      className="pgn__menu-item-text"
+    >
+      A Button Menu Item
+    </span>
     <span
       className="pgn__menu-item-content-spacer"
     />
@@ -110,7 +134,11 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
         className="pgn__form-label"
         htmlFor="form-field1"
       >
-        A Checkbox Menu Item
+        <span
+          className="pgn__menu-item-text"
+        >
+          A Checkbox Menu Item
+        </span>
         <span
           className="pgn__menu-item-content-spacer"
         />

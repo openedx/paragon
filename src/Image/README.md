@@ -4,6 +4,8 @@ type: 'component'
 categories:
 - Imagery & Iconography
 - Content
+components:
+- Image
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

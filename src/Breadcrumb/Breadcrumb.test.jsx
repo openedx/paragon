@@ -90,7 +90,7 @@ describe('<Breadcrumb />', () => {
   it('passes down link props to link elements', () => {
     const linkProps = {
       label: 'Link 1',
-      url: '/link-1',
+      href: '/link-1',
       className: 'my-link',
       target: '_blank',
     };

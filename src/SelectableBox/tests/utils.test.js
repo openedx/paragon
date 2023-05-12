@@ -1,4 +1,4 @@
-import { Form } from '../../index';
+import { Form } from '../..';
 import { getInputType } from '../utils';
 
 describe('utils', () => {

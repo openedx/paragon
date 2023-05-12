@@ -11,6 +11,7 @@ export default function StepperStep({
   index,
   description,
   hasError,
+  onClick,
 }) {
   const { activeKey, registerStep, removeStep } = useContext(StepperContext);
 
@@ -21,9 +22,10 @@ export default function StepperStep({
       eventKey,
       description,
       hasError,
+      onClick,
     });
     return () => removeStep(eventKey);
-  }, [title, eventKey, description, hasError, index, registerStep, removeStep]);
+  }, [title, eventKey, description, hasError, index, registerStep, removeStep, onClick]);
 
   const isActive = activeKey === eventKey;
 
@@ -59,6 +61,11 @@ StepperStep.propTypes = {
    * or conditionally rendering steps.
    * */
   index: PropTypes.number,
+  /**
+   * Click handler for the `Step`. Takes effect only after the `Step` has been visited, making it clickable
+   * and invoking this function on click. Should be used to provide navigation between steps.
+   */
+  onClick: PropTypes.func,
 };
 
 StepperStep.defaultProps = {
@@ -66,4 +73,5 @@ StepperStep.defaultProps = {
   description: undefined,
   hasError: false,
   index: undefined,
+  onClick: undefined,
 };

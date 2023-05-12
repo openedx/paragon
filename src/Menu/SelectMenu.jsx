@@ -115,9 +115,8 @@ function SelectMenu({
         aria-haspopup="true"
         aria-expanded={isOpen}
         ref={triggerTarget}
-        className="pgn__menu-select-trigger-btn"
-        variant={link ? 'link' : 'tertiary'}
-        iconAfter={link ? undefined : ExpandMore}
+        variant={link ? 'link' : 'outline-primary'}
+        iconAfter={ExpandMore}
         onClick={open}
       >
         {selected !== undefined && children[selected] ? children[selected].props.children : defaultMessage}
