@@ -5,14 +5,11 @@ import {
   Tooltip,
   OverlayTrigger,
   Button,
-  Popover,
   Badge,
-  Icon,
   Collapsible,
   Hyperlink,
   ButtonGroup,
 } from '~paragon-react';
-import { AddTask } from '~paragon-icons';
 import Search from './Search';
 import { SettingsContext } from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
@@ -241,29 +238,14 @@ function Menu() {
         </h3>
         <ul className="list-unstyled small mb-4">
           <li className="mr-3 mb-3">
-            A drag-and-drop UI builder for prototyping with Paragon components.
-            <OverlayTrigger
-              trigger="click"
-              overlay={(
-                <Popover id="playground-popover" className="pgn-doc__menu-playground--popover">
-                  <Popover.Title as="h3">
-                    <Icon src={AddTask} />
-                    Сoming soon
-                  </Popover.Title>
-                  <Popover.Content>
-                    Playground is under development
-                  </Popover.Content>
-                </Popover>
-                )}
+            A UI builder for prototyping with Paragon components.
+            <Hyperlink
+              isInline
+              onClick={handlePlaygroundClick}
+              destination="/playground"
             >
-              <Hyperlink
-                isInline
-                onClick={handlePlaygroundClick}
-                destination="#playground"
-              >
-                Visit playground
-              </Hyperlink>
-            </OverlayTrigger>
+              Visit playground
+            </Hyperlink>
           </li>
         </ul>
       </div>

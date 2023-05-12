@@ -14,7 +14,6 @@ function StepList({ steps, activeKey }) {
     <ul className="pgn__stepper-header-step-list">
       {steps.map(({ label, ...stepProps }, index) => (
         <React.Fragment key={stepProps.eventKey}>
-
           {index !== 0 && <StepListSeparator />}
           <StepperHeaderStep
             {...stepProps}

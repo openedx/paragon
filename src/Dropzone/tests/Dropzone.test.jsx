@@ -13,7 +13,7 @@ import '@testing-library/jest-dom';
 
 import { formatBytes } from '../utils';
 import messages from '../messages';
-import Dropzone from '../index';
+import Dropzone from '..';
 
 const axiosMock = new MockAdapter(axios);
 axiosMock.onPost('/upload').reply((config) => {
