@@ -1,11 +1,29 @@
 {
+  "elevation": {
+    "menu": {
+      "box-shadow": { "value": "{elevation.box-shadow.base}", "type": "shadow", "source": "$menu-box-shadow" }
+    }
+  },
   "color": {
     "menu": {
-      "bg-active": { "value": "{color.btn.active.bg.tertiary}", "type": "color", "source": "$active-background" },
-      "border": {
-        "base": { "value": "transparent", "type": "color", "source": "$border" },
-        "active": { "value": "transparent", "type": "color", "source": "$active-border" },
-        "hover": { "value": "transparent", "type": "color", "source": "$hover-border" }
+      "bg": { "value": "{color.white}", "type": "color", "source": "$menu-bg" },
+      "item": {
+        "color": { "value": "{color.body.base}", "type": "color", "source": "$menu-item-color" },
+        "bg": { "value": "transparent", "type": "color", "source": "$menu-item-bg" },
+        "border": { "value": "{color.menu.item.bg}", "type": "color", "source": "$menu-item-border-color" },
+        "hover": {
+          "color": { "value": "{color.btn.text.tertiary}", "type": "color", "source": "$menu-item-hover-color" },
+          "bg": { "value": "{color.btn.hover.bg.tertiary}", "type": "color", "source": "$menu-item-hover-bg" },
+          "border": { "value": "{color.menu.item.bg}", "type": "color", "source": "$menu-item-hover-border-color" }
+        },
+        "focus": {
+          "bg": { "value": "{color.btn.active.bg.tertiary}", "type": "color", "source": "$menu-item-focus-bg" }
+        }
+      },
+      "select": {
+        "btn-link": {
+          "color": { "value": "{color.primary.500}", "type": "color", "source": "$menu-select-btn-link-color" }
+        }
       }
     }
   }
