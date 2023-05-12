@@ -30,7 +30,7 @@ PopperElement.defaultProps = {
 PopperElement.propTypes = {
   children: PropTypes.node,
   target: PropTypes.shape({
-    current: PropTypes.node,
+    current: PropTypes.shape({}),
   }),
   strategy: PropTypes.oneOf(['absolute', 'fixed']),
   placement: PropTypes.oneOf([
