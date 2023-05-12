@@ -37,7 +37,7 @@ const {
 
 export type CollapsibleLiveEditorTypes = {
   children: React.ReactNode;
-  clickToCopy: () => void;
+  clickToCopy: (arg: string) => void;
   handleCodeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
@@ -92,8 +92,8 @@ function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: Coll
         styling="card-lg"
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
-        onClick={submitSegmentEvent}
         onChange={handleCodeChange}
+        onClick={submitSegmentEvent}
         title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
         <p className="small text-gray mb-2">Any Paragon component or export may be added to the code example.</p>

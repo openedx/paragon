@@ -86,8 +86,8 @@ function SelectMenu({
       <Button
         aria-haspopup="true"
         aria-expanded={isOpen}
-        ref={setTriggerTarget}
-        variant={variant}
+        ref={triggerTarget}
+        variant={link ? 'link' : 'outline-primary'}
         iconAfter={ExpandMore}
         onClick={open}
         disabled={disabled}

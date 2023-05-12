@@ -66,6 +66,10 @@ a .pgn__card {
   .row > div[class*="col-"] {
     display: flex;
     flex: 1 0 auto;
+
+    &.pgn__card__disable-equal-column-heights {
+      display: block;
+    }
   }
 }
 
@@ -211,12 +215,6 @@ a .pgn__card {
       margin-left: 40px;
     }
   }
-
-  .pgn__card-section-loader {
-    .react-loading-skeleton {
-      margin-bottom: 1rem;
-    }
-  }
 }
 
 .pgn__card-footer {
@@ -306,9 +304,6 @@ a .pgn__card {
 
     .pgn__card-image-cap {
       height: 100%;
-      border-top-left-radius: var(--pgn-size-card-border-radius-image);
-      border-bottom-left-radius: var(--pgn-size-card-border-radius-image);
-      border-top-right-radius: 0;
       max-width: inherit;
       width: auto;
       object-fit: cover;
@@ -317,6 +312,13 @@ a .pgn__card {
     .pgn__card-logo-cap {
       inset-inline-start: var(--pgn-spacing-card-logo-left-offset-horizontal);
       bottom: var(--pgn-spacing-card-logo-bottom-offset-horizontal);
+    }
+
+    .pgn__card-image-cap-loader {
+      .react-loading-skeleton {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
     }
   }
 
@@ -338,8 +340,6 @@ a .pgn__card {
   object-fit: cover;
   max-height: inherit;
   width: 100%;
-  border-top-left-radius: var(--pgn-size-card-border-radius-image);
-  border-top-right-radius: var(--pgn-size-card-border-radius-image);
   display: none;
 
   &.show {
@@ -385,6 +385,7 @@ a .pgn__card {
 
 .pgn__card {
   outline: none;
+  overflow: hidden;
 
   @include pgn-box-shadow(1, "down");
 
@@ -411,19 +412,28 @@ a .pgn__card {
 .pgn__card-status {
   box-shadow: none;
   margin-bottom: 0;
-  display: flex;
   font-size: var(--pgn-typography-font-size-sm);
   line-height: 1.5rem;
   text-align: start;
   position: relative;
-  padding: 1.5rem;
+  padding: $card-spacer-y $card-spacer-x;
   border: 0 solid transparent;
-  border-radius: 0 0 .375rem .375rem;
+  border-radius: 0 0 $card-border-radius $card-border-radius;
+
+  .pgn__card-status__content {
+    display: flex;
+  }
 
   .pgn__card-status__message-content {
+    flex-grow: 1;
+
     & > :last-child {
       margin-bottom: 0;
     }
+  }
+
+  .pgn__card-status__actions {
+    margin-top: map-get($spacers, 3);
   }
 
   .pgn__card-status__heading {
@@ -435,8 +445,7 @@ a .pgn__card {
     margin-bottom: .5rem;
   }
 
-  .pgn__icon {
-    float: left;
+  .pgn__card-status__content-icon {
     margin-inline-end: .8rem;
     width: 1.5rem;
     height: 1.5rem;
@@ -449,7 +458,7 @@ a .pgn__card {
       background-color: theme-color($color, "background");
       border-color: theme-color($color, "border");
 
-      .pgn__icon {
+      .pgn__card-status__content-icon {
         color: theme-color($color, "default");
       }
     }
@@ -461,7 +470,7 @@ a .pgn__card {
     border-color: var(--pgn-color-primary-500);
     box-shadow: 0 0 0 1px var(--pgn-color-primary-500);
 
-    .pgn__icon {
+    .pgn__card-status__content-icon {
       color: var(--pgn-color-white);
     }
   }

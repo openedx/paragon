@@ -50,10 +50,12 @@ Form auto-suggest enables users to manually select or type to find matching opti
           hasCustomError={hasCustomError()}
           customErrorMessageText="Error: selected language less than 50 years old"
         >
-          <Form.AutosuggestOption id="javascript-option-id">JavaScript</Form.AutosuggestOption>
-          <Form.AutosuggestOption id="python-option-id">Python</Form.AutosuggestOption>
-          <Form.AutosuggestOption id="ruby-option-id">Ruby</Form.AutosuggestOption>
-          <Form.AutosuggestOption id="c-option-id">C</Form.AutosuggestOption>
+            <Form.AutosuggestOption>JavaScript</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Python</Form.AutosuggestOption>
+            <Form.AutosuggestOption>Rube</Form.AutosuggestOption>
+            <Form.AutosuggestOption onClick={(e) => alert(e.target.value)}>
+                Option with custom onClick
+            </Form.AutosuggestOption>
         </Form.Autosuggest>
       </Form.Group>
       <Form.Group>
