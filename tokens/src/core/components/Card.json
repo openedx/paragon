@@ -44,7 +44,6 @@
         "width": { "value": "{size.border.width}", "type": "dimension", "source": "$card-border-width" },
         "radius": {
           "base": { "value": "{size.border.radius.base}", "type": "dimension", "source": "$card-border-radius" },
-          "image": { "value": ".3125rem", "type": "dimension", "source": "$card-image-border-radius" },
           "logo": { "value": ".25rem", "type": "dimension", "source": "$card-logo-border-radius" }
         }
       },
