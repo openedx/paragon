@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
+  width: var(--pgn-size-menu-item-width-base);
   min-width: 288px;
   max-width: 450px;
   white-space: nowrap;
@@ -10,15 +10,15 @@
   text-overflow: ellipsis;
   font-family: var(--pgn-typography-btn-font-family);
   font-weight: var(--pgn-typography-btn-font-weight);
-  color: var(--pgn-color-body-base);
+  color: var(--pgn-color-menu-item-color);
   text-align: center;
   vertical-align: middle;
   user-select: none;
-  background-color: transparent;
-  border: var(--pgn-size-btn-border-width) solid transparent;
-  padding: var(--pgn-spacing-btn-padding-y-base) var(--pgn-spacing-btn-padding-x-base);
+  background-color: var(--pgn-color-menu-item-bg);
+  border: var(--pgn-size-menu-item-border-width) solid var(--pgn-color-menu-item-border);
+  padding: var(--pgn-spacing-menu-item-padding-y) var(--pgn-spacing-menu-item-padding-x);
   font-size: var(--pgn-typography-btn-font-size-base);
-  height: 48px;
+  height: var(--pgn-size-menu-item-height);
   border-radius: 0;
 
   .pgn__menu-item-content-spacer {
@@ -27,9 +27,9 @@
 
   &:hover {
     text-decoration: none;
-    color: var(--pgn-color-btn-text-tertiary);
-    border-color: var(--pgn-color-menu-border-hover);
-    background: var(--pgn-color-btn-hover-bg-tertiary);
+    color: var(--pgn-color-menu-item-hover-color);
+    border-color: var(--pgn-color-menu-item-hover-border);
+    background: var(--pgn-color-menu-item-hover-bg);
   }
 
   // Disabled comes first so active can properly restyle
@@ -50,37 +50,37 @@
   &:focus {
     font-weight: var(--pgn-typography-font-weight-bolder);
     color: var(--pgn-color-btn-text-tertiary);
-    background-color: var(--pgn-color-menu-bg-active);
+    background-color: var(--pgn-color-menu-item-focus-bg);
     border-color: var(--pgn-color-menu-border-active);
   }
 
   .btn-icon-before {
     margin-inline-end: .5rem;
-    margin-left: -.25em;
+    margin-left: calc(var(--pgn-spacing-menu-item-icon-margin-left) * -1);
 
     [dir="rtl"] & {
-      margin-right: -.25em;
+      margin-right: calc(var(--pgn-spacing-menu-item-icon-margin-right) * -1);
       margin-left: .5rem;
     }
   }
 
   .btn-icon-after {
     margin-inline-start: .5rem;
-    margin-right: -.25em;
+    margin-right: calc(var(--pgn-spacing-menu-item-icon-margin-right) * -1);
 
     [dir="rtl"] & {
       margin-right: .5rem;
-      margin-left: -.25em;
+      margin-left: calc(var(--pgn-spacing-menu-item-icon-margin-left) * -1);
     }
   }
 }
 
 .pgn__menu {
-  border-radius: .25em;
+  border-radius: var(--pgn-size-menu-base-border-radius);
   box-shadow: var(--pgn-elevation-box-shadow-base);
   background-color: var(--pgn-color-white);
   overflow: auto;
-  max-height: 264px;
+  max-height: var(--pgn-size-menu-base-max-height);
 }
 
 .pgn__menu-select-popup {

@@ -418,7 +418,7 @@ a .pgn__card {
   position: relative;
   padding: 1.5rem;
   border: 0 solid transparent;
-  border-radius: 0 0 .375rem .375rem;
+  border-radius: 0 0 var(--pgn-size-card-border-radius-base) var(--pgn-size-card-border-radius-base);
 
   .pgn__card-status__message-content {
     & > :last-child {
