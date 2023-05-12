@@ -6,6 +6,7 @@ import Button from '../Button';
 import ModalPopup from '../Modal/ModalPopup';
 import useToggle from '../hooks/useToggle';
 import Menu from '.';
+import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 export const SELECT_MENU_DEFAULT_MESSAGE = 'Select...';
 
@@ -58,7 +59,6 @@ function SelectMenu({
     return React.cloneElement(child, newProps);
   });
 
-  const link = isLink; // allow inline link styling
   const prevOpenRef = React.useRef();
 
   useEffect(() => {
@@ -116,7 +116,7 @@ function SelectMenu({
         aria-haspopup="true"
         aria-expanded={isOpen}
         ref={triggerTarget}
-        variant={link ? 'link' : variant}
+        variant={isLink ? 'link' : variant}
         iconAfter={ExpandMore}
         onClick={open}
       >
@@ -177,4 +177,11 @@ SelectMenu.defaultProps = {
   variant: 'outline-primary',
 };
 
-export default SelectMenu;
+const SelectMenuWithDeprecatedProp = withDeprecatedProps(SelectMenu, 'SelectMenu', {
+  isLink: {
+    deprType: DeprTypes.REMOVED,
+    message: 'Use "variant" prop instead, i.e. variant="link"',
+  },
+});
+
+export default SelectMenuWithDeprecatedProp;

@@ -12,7 +12,7 @@ devStatus: 'Done'
 notes: ''
 ---
 
-The ``SelectMenu`` component is triggered on the click of a button or your choice of a standalone link using the `isLink` prop, and expands from the center if not close to the edge of the page. The ``Menu`` contains a list of ``MenuItems``, with a white background, and level 2 elevation. The ``Menu`` also remembers the user’s selection and displays it as the label for the button/link trigger.
+The ``SelectMenu`` component is triggered on the click of a button, and expands from the center if not close to the edge of the page. The ``Menu`` contains a list of ``MenuItems``, with a white background, and level 2 elevation. The ``Menu`` also remembers the user’s selection and displays it as the label for the button/link trigger.
 
 The ``Modal`` brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press. Set a default message with the `defaultMessage` prop string. Use the `defaultSelected` prop to signify that a menuItem is the default to open to.
 
@@ -45,7 +45,7 @@ The ``Modal`` brings focus to the first menu element upon the click of the trigg
 ### Linked variant
 
 ```jsx live
-<SelectMenu isLink defaultMessage="Choose Your New Best Friend">
+<SelectMenu variant="link" defaultMessage="Choose Your New Best Friend">
   <MenuItem>Falstaff</MenuItem>
   <MenuItem>Scipio</MenuItem>
   <MenuItem defaultSelected>Faustus</MenuItem>
