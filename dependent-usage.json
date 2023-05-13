@@ -1,5 +1,5 @@
 {
-  "lastModified": 1683901028666,
+  "lastModified": 1683986899479,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -17549,9 +17549,9 @@
           },
           {
             "filePath": "src/components/course/course-header/deprecated/CourseRunCard.jsx",
-            "line": 200,
+            "line": 205,
             "column": 4,
-            "index": 5237
+            "index": 5443
           },
           {
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
@@ -17689,9 +17689,9 @@
           },
           {
             "filePath": "src/components/course/course-header/deprecated/CourseRunCard.jsx",
-            "line": 201,
+            "line": 206,
             "column": 6,
-            "index": 5250
+            "index": 5456
           },
           {
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
@@ -17951,15 +17951,21 @@
         "Stack": [
           {
             "filePath": "src/components/course/course-header/data/hooks/useCourseRunCardAction.jsx",
-            "line": 58,
+            "line": 61,
             "column": 6,
-            "index": 2341
+            "index": 2578
           },
           {
             "filePath": "src/components/course/course-header/data/hooks/useCourseRunCardAction.jsx",
-            "line": 77,
+            "line": 85,
             "column": 4,
-            "index": 2910
+            "index": 3287
+          },
+          {
+            "filePath": "src/components/course/enrollment/components/ToExecutiveEducation2UEnrollment.jsx",
+            "line": 21,
+            "column": 4,
+            "index": 585
           },
           {
             "filePath": "src/components/pathway/SearchPathwayCard.jsx",
@@ -25136,7 +25142,7 @@
       }
     },
     {
-      "version": "20.32.3",
+      "version": "20.32.0",
       "name": "@edx/frontend-app-profile",
       "repository": {
         "type": "git",
