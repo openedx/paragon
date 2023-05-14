@@ -94,6 +94,7 @@ function Tabs({
               variant="error"
               role="status"
               className="pgn__tab-notification"
+              aria-live="polite"
               expandable
             >
               {notification}
@@ -175,7 +176,7 @@ function Tabs({
 }
 
 Tabs.propTypes = {
-  variant: PropTypes.oneOf(['tabs', 'pills', 'inverse-tabs', 'inverse-pills']),
+  variant: PropTypes.oneOf(['tabs', 'pills', 'inverse-tabs', 'inverse-pills', 'button-group']),
   /** Specifies elements that is processed to create tabs. */
   children: PropTypes.node.isRequired,
   /** Specifies class name to append to the base element. */

@@ -220,7 +220,7 @@ notes: |
 </Stack>
 ```
 
-### Responsive support
+<!-- ### Responsive support
 
 ```jsx live
 <Tabs variant="tabs" defaultActiveKey="profile" id="uncontrolled-tab-example">
@@ -277,4 +277,4 @@ notes: |
   <div>Hello I am the second panel</div>
   <div>Hello I am the third panel</div>
 </Tabs.Deprecated>
-```
+``` -->

@@ -1,37 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { useUncontrolled } from 'uncontrollable';
-
 import TabContainer from 'react-bootstrap/TabContainer';
 import TabContent from 'react-bootstrap/TabContent';
 import TabPane from 'react-bootstrap/TabPane';
+import { forEach, map } from 'react-bootstrap/ElementChildren';
 import Nav, { NavLink, NavItem } from '../Nav';
-
-function bootstrapForEach(
-  children,
-  func,
-) {
-  let index = 0;
-  React.Children.forEach(children, (child) => {
-    if (React.isValidElement(child)) {
-      func(child, index++);
-    }
-  });
-}
-
-function bootstrapMap(
-  children,
-  func,
-) {
-  let index = 0;
-
-  return React.Children.map(children, (child) => (React.isValidElement(child) ? func(child, index++) : child));
-}
 
 function getDefaultActiveKey(children) {
   let defaultActiveKey;
-  bootstrapForEach(children, (child) => {
+
+  forEach(children, (child) => {
     if (defaultActiveKey == null) {
       defaultActiveKey = child.props.eventKey;
     }
@@ -44,20 +23,21 @@ function renderTab(child) {
   const {
     title, eventKey, disabled, tabClassName, id,
   } = child.props;
+
   if (title == null) {
     return null;
   }
 
   return (
-    <NavItem
-      as={NavLink}
+    <NavLink
+      as="li"
       eventKey={eventKey}
       disabled={disabled}
       id={id}
       className={tabClassName}
     >
       {title}
-    </NavItem>
+    </NavLink>
   );
 }
 
@@ -84,13 +64,14 @@ function BaseTabs(props) {
       mountOnEnter={mountOnEnter}
       unmountOnExit={unmountOnExit}
     >
-      <Nav {...controlledProps} role="tablist" as="nav">
-        {bootstrapMap(children, renderTab)}
+      <Nav {...controlledProps} role="tablist" as="ul">
+        {map(children, renderTab)}
       </Nav>
 
       <TabContent>
-        {bootstrapMap(children, (child) => {
+        {map(children, (child) => {
           const childProps = { ...child.props };
+
           delete childProps.title;
           delete childProps.disabled;
           delete childProps.tabClassName;
@@ -105,13 +86,13 @@ function BaseTabs(props) {
 BaseTabs.propTypes = {
   activeKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   defaultActiveKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onSelect: PropTypes.func,
   variant: PropTypes.string,
   transition: PropTypes.oneOfType([
     PropTypes.oneOf([false]),
     PropTypes.elementType,
   ]),
   id: PropTypes.string,
-  onSelect: PropTypes.func,
   mountOnEnter: PropTypes.bool,
   unmountOnExit: PropTypes.bool,
 };
@@ -119,10 +100,10 @@ BaseTabs.propTypes = {
 BaseTabs.defaultProps = {
   activeKey: undefined,
   defaultActiveKey: undefined,
-  transition: undefined,
-  id: undefined,
   onSelect: undefined,
+  transition: undefined,
   variant: 'tabs',
+  id: undefined,
   mountOnEnter: false,
   unmountOnExit: false,
 };
