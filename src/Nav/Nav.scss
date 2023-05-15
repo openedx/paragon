@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 // Base class
 //
@@ -33,30 +34,13 @@
   }
 }
 
-@mixin nav-tabs-link-focus($border-color) {
-  position: relative;
-  outline: 0;
-  z-index: 3;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -$nav-tabs-link-distance-to-border;
-    right: -$nav-tabs-link-distance-to-border;
-    bottom: -$nav-tabs-link-distance-to-border;
-    left: -$nav-tabs-link-distance-to-border;
-    border: solid $nav-tabs-border-width $border-color;
-    border-radius: $nav-tabs-border-radius;
-  }
-}
-
 //
 // Tabs
 //
 
 .pgn__tabs {
   &.nav-pills .nav-link {
-    border: 1px solid $light-400;
+    border: $nav-pills-link-border-width solid $nav-pills-link-border-color;
 
     &:focus {
       @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
@@ -81,71 +65,71 @@
 
   &.nav-inverse-pills {
     .nav-link {
-      color: $white;
-      border: 1px solid $primary-300;
+      color: $nav-inverse-pills-link-color;
+      border: $nav-inverse-pills-link-border-width solid $nav-inverse-pills-link-border-color;
 
       &:hover {
-        background-color: $primary-300;
+        background-color: $nav-inverse-pills-link-hover-bg;
       }
 
       &:focus {
-        @include nav-tabs-link-focus($white);
+        @include nav-tabs-link-focus($nav-inverse-pills-link-focus-color);
       }
     }
 
     .nav-link.active,
     .nav-item.show .nav-link {
-      background-color: $white;
-      color: $primary-300;
-      border-color: $white;
+      background-color: $nav-inverse-pills-link-active-bg;
+      color: $nav-inverse-pills-link-active-color;
+      border-color: $nav-inverse-pills-link-active-border-color;
 
       &:hover {
-        background-color: $primary-300;
-        color: $white;
-        border-color: $primary-300;
+        background-color: $nav-inverse-pills-link-active-hover-bg;
+        color: $nav-inverse-pills-link-active-hover-color;
+        border-color: $nav-inverse-pills-link-active-hover-border-color;
       }
 
       &:focus:hover {
-        background-color: $white;
-        color: $primary-300;
-        border-color: $white;
+        background-color: $nav-inverse-pills-link-active-focus-hover-bg;
+        color: $nav-inverse-pills-link-active-focus-color;
+        border-color: $nav-inverse-pills-link-active-focus-border-color;
       }
     }
   }
 
   &.nav-inverse-tabs {
     .nav-link {
-      color: $white;
-      border-bottom: $nav-tabs-border-width solid $primary-300;
+      color: $nav-inverse-tabs-link-color;
+      border-bottom: $nav-tabs-border-width solid $nav-inverse-tabs-link-border-bottom-color;
 
       &:hover {
-        background-color: $primary-300;
+        background-color: $nav-inverse-tabs-link-hover-bg;
       }
 
       &:focus {
-        @include nav-tabs-link-focus($white);
+        @include nav-tabs-link-focus($nav-inverse-tabs-link-focus-bg);
       }
     }
 
     .nav-link.active,
     .nav-item.show .nav-link {
-      border-bottom: 3px solid $white;
-      background-color: $primary-300;
+      border-bottom: $nav-inverse-tabs-link-active-border-bottom-width solid $nav-inverse-tabs-link-active-border-color;
+      background-color: $nav-inverse-tabs-link-active-bg;
 
       &:hover {
-        background-color: transparent;
+        background-color: $nav-inverse-tabs-link-active-hover-bg;
       }
     }
   }
 }
 
 .nav-tabs {
-  border-bottom: $nav-tabs-border-width solid $light-400;
+  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
 
   .nav-link {
-    margin-bottom: -$nav-tabs-border-width;
-    border: $nav-tabs-border-width solid transparent;
-    border-bottom-width: 3px;
+    margin-bottom: calc(#{$nav-tabs-border-width} * -1);
+    border: $nav-tabs-border-width solid $nav-tabs-link-border-color;
+    border-bottom-width: $nav-tabs-link-border-bottom-width;
 
     @include border-top-radius($nav-tabs-border-radius);
 
@@ -182,7 +166,7 @@
 
   .dropdown-menu {
     // Make dropdown border overlap tab border
-    margin-top: -$nav-tabs-border-width;
+    margin-top: calc(#{$nav-tabs-border-width} * -1);
 
     // Remove the top rounded corners here since there is a hard edge above the menu
     @include border-top-radius(0);

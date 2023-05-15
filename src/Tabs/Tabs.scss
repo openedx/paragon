@@ -32,28 +32,28 @@
       margin: 0;
 
       .dropdown .dropdown-toggle {
-        padding: .7rem 1rem;
+        padding: $tab-more-link-dropdown-toggle-padding-x $tab-more-link-dropdown-toggle-padding-y;
 
         &:focus {
-          background-color: $primary-500;
-          border-color: $primary-500;
-          color: $white;
+          background-color: $tab-more-link-dropdown-toggle-focus-bg;
+          border-color: $tab-more-link-dropdown-toggle-focus-border-color;
+          color: $tab-more-link-dropdown-toggle-focus-color;
 
           &.btn.btn-link {
-            color: $white;
-            border-color: $primary-500;
+            color: $tab-more-link-dropdown-toggle-btn-focus-color;
+            border-color: $tab-more-link-dropdown-toggle-btn-focus-border-color;
           }
         }
       }
 
       &.active {
         .dropdown .dropdown-toggle {
-          color: $white;
+          color: $tab-more-link-dropdown-toggle-active-color;
         }
 
         &:hover {
           .dropdown .dropdown-toggle {
-            background-color: $primary-500;
+            background-color: $tab-more-link-dropdown-toggle-hover-color;
           }
         }
       }
@@ -64,21 +64,21 @@
   &.nav-inverse-pills {
     .pgn__tab_more.nav-link {
       .dropdown .dropdown-toggle {
-        padding: .625rem 1rem;
+        padding: $tab-inverse-pills-link-dropdown-toggle-padding-x $tab-inverse-pills-link-dropdown-toggle-padding-y;
 
         &:focus {
-          background-color: $white;
-          color: $primary-500;
+          background-color: $tab-inverse-pills-link-dropdown-toggle-focus-bg;
+          color: $tab-inverse-pills-link-dropdown-toggle-focus-color;
         }
       }
 
       &.active {
         .dropdown .dropdown-toggle {
-          color: $primary-500;
+          color: $tab-inverse-pills-link-dropdown-toggle-active-color;
 
           &:hover {
-            color: $white;
-            background-color: $primary-300;
+            color: $tab-inverse-pills-link-dropdown-toggle-active-hover-color;
+            background-color: $tab-inverse-pills-link-dropdown-toggle-active-hover-bg;
           }
         }
       }
@@ -98,10 +98,10 @@
   &.nav-inverse-tabs {
     .pgn__tab_more.nav-link {
       .dropdown .dropdown-toggle {
-        padding: .625rem 1rem;
+        padding: $tab-inverse-tabs-link-dropdown-toggle-padding-x $tab-inverse-tabs-link-dropdown-toggle-padding-y;
 
         &:hover {
-          background-color: transparent;
+          background-color: $tab-inverse-tabs-link-dropdown-toggle-hover-bg;
         }
       }
     }

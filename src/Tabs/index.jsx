@@ -118,8 +118,8 @@ function Tabs({
         if (!moreTabHasNotification && overflowChild.props.notification) {
           moreTabHasNotification = true;
         }
-        function handleKeyDown(event, eventKey) {
-          if (event.key === 'Enter') {
+        function handleOnKeyPress(e, eventKey) {
+          if (e.key === 'Enter') {
             handleDropdownTabClick(eventKey);
           }
         }
@@ -129,7 +129,7 @@ function Tabs({
             tabIndex="0"
             key={`${overflowChild.props.eventKey}overflow`}
             onClick={() => handleDropdownTabClick(overflowChild.props.eventKey)}
-            onKeyDown={(e) => handleKeyDown(e, overflowChild.props.eventKey)}
+            onKeyPress={(e) => handleOnKeyPress(e, overflowChild.props.eventKey)}
             disabled={overflowChild.props.disabled}
             datakey={overflowChild.props.eventKey}
             className={classNames({
@@ -166,7 +166,7 @@ function Tabs({
     />
     ));
     return childrenList;
-  }, [activeKey, children, defaultActiveKey, indexOfLastVisibleChild, moreTabText, handleKeyDown]);
+  }, [activeKey, children, defaultActiveKey, indexOfLastVisibleChild, moreTabText]);
 
   return (
     <div ref={containerElementRef}>
