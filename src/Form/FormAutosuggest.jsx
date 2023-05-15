@@ -157,6 +157,15 @@ function FormAutosuggest({
     };
   });
 
+  useEffect(() => {
+    if (value !== state.displayValue) {
+      setState(prevState => ({
+        ...prevState,
+        displayValue: value,
+      }));
+    }
+  }, [value]);
+
   const setDisplayValue = (itemValue) => {
     const optValue = [];
 
