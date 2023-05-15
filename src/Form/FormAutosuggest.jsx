@@ -83,11 +83,14 @@ const FormAutosuggest = forwardRef(
       if (onClick) {
         onClick(e);
       }
-    };
+  if (onClick) {
+      onClick(e);
+    }
+  };
 
     function getItems(strToFind = '') {
       let childrenOpt = React.Children.map(children, (child) => {
-        const { children: childChildren, onClick, ...rest } = child.props;
+        const { children: childChildren, onClick, onClick, ...rest } = child.props;
         const menuItemId = child.props.id ?? uuidv4();
 
         return React.cloneElement(child, {
