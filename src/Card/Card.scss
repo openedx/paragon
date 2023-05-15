@@ -416,9 +416,13 @@ a .pgn__card {
   line-height: 1.5rem;
   text-align: start;
   position: relative;
-  padding: 1.5rem;
+  padding: var(--pgn-spacing-card-spacer-y) var(--pgn-spacing-card-spacer-x);
   border: 0 solid transparent;
-  border-radius: 0 0 .375rem .375rem;
+  border-radius: 0 0 var(--pgn-size-card-border-radius-base) var(--pgn-size-card-border-radius-base);
+
+  .pgn__card-status__content {
+    display: flex;
+  }
 
   .pgn__card-status__message-content {
     & > :last-child {
