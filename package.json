@@ -39,6 +39,7 @@
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
     "generate-component": "npm start --workspace=component-generator",
+    "start-example-mfe": "npm run start --workspace=example",
     "generate-changelog": "node generate-changelog.js",
     "i18n_compile": "formatjs compile-folder --format transifex ./src/i18n/messages ./src/i18n/messages",
     "i18n_extract": "formatjs extract 'src/**/*.{jsx,js,tsx,ts}' --out-file ./src/i18n/transifex_input.json --format transifex",

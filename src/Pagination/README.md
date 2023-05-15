@@ -3,6 +3,7 @@ title: 'Pagination'
 type: 'component'
 components:
 - Pagination
+- PaginationReduced
 categories:
 - Navigation
 status: 'Needs Work'

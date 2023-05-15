@@ -34,7 +34,9 @@ describe('<Layout />', () => {
       )).toEqual(true);
     });
     it('renders although dimensions are incorrect', () => {
-      const wrapper = mount(<TestLayout lg={[{ span: 6, offset: 0 }, { span: 6, offset: 0 }]} />);
+      const wrapper = mount(
+        <TestLayout lg={[{ span: 6, offset: 0 }, { span: 6, offset: 0 }, { span: 6, offset: 0 }]} />,
+      );
       const children = wrapper.find('.row div');
       expect(children.length).not.toEqual(0);
     });

@@ -9,7 +9,7 @@ exports[`<CardDeck /> has tabIndex="-1" when \`hasInteractiveChildren\` is true 
     tabIndex={-1}
   >
     <div
-      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card clickable pgn__card-light card"
@@ -57,7 +57,7 @@ exports[`<CardDeck /> has tabIndex="-1" when \`hasInteractiveChildren\` is true 
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card clickable pgn__card-light card"
@@ -105,7 +105,7 @@ exports[`<CardDeck /> has tabIndex="-1" when \`hasInteractiveChildren\` is true 
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card clickable pgn__card-light card"
@@ -153,7 +153,7 @@ exports[`<CardDeck /> has tabIndex="-1" when \`hasInteractiveChildren\` is true 
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card clickable pgn__card-light card"
@@ -201,7 +201,7 @@ exports[`<CardDeck /> has tabIndex="-1" when \`hasInteractiveChildren\` is true 
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card clickable pgn__card-light card"
@@ -261,7 +261,7 @@ exports[`<CardDeck /> renders default columnSizes 1`] = `
     tabIndex={0}
   >
     <div
-      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -309,7 +309,7 @@ exports[`<CardDeck /> renders default columnSizes 1`] = `
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -357,7 +357,7 @@ exports[`<CardDeck /> renders default columnSizes 1`] = `
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -405,7 +405,7 @@ exports[`<CardDeck /> renders default columnSizes 1`] = `
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -453,7 +453,7 @@ exports[`<CardDeck /> renders default columnSizes 1`] = `
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+      className="pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -513,7 +513,7 @@ exports[`<CardDeck /> renders with controlled columnSizes 1`] = `
     tabIndex={0}
   >
     <div
-      className="pgn__card-deck-card-item col-xl-3 col-lg-4 col-md-6 col-12"
+      className="pgn__card-deck__card-item col-xl-3 col-lg-4 col-md-6 col-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -561,7 +561,7 @@ exports[`<CardDeck /> renders with controlled columnSizes 1`] = `
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-3 col-lg-4 col-md-6 col-12"
+      className="pgn__card-deck__card-item col-xl-3 col-lg-4 col-md-6 col-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -609,7 +609,7 @@ exports[`<CardDeck /> renders with controlled columnSizes 1`] = `
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-3 col-lg-4 col-md-6 col-12"
+      className="pgn__card-deck__card-item col-xl-3 col-lg-4 col-md-6 col-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -657,7 +657,7 @@ exports[`<CardDeck /> renders with controlled columnSizes 1`] = `
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-3 col-lg-4 col-md-6 col-12"
+      className="pgn__card-deck__card-item col-xl-3 col-lg-4 col-md-6 col-12"
     >
       <div
         className="pgn__card pgn__card-light card"
@@ -705,7 +705,259 @@ exports[`<CardDeck /> renders with controlled columnSizes 1`] = `
       </div>
     </div>
     <div
-      className="pgn__card-deck-card-item col-xl-3 col-lg-4 col-md-6 col-12"
+      className="pgn__card-deck__card-item col-xl-3 col-lg-4 col-md-6 col-12"
+    >
+      <div
+        className="pgn__card pgn__card-light card"
+        tabIndex={-1}
+      >
+        <div
+          className="pgn__card-wrapper-image-cap vertical"
+        >
+          <img
+            className="pgn__card-image-cap"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="http://fake.image"
+          />
+        </div>
+        <div
+          className="pgn__card-body"
+        >
+          <div
+            className="pgn__card-header"
+          >
+            <div
+              className="pgn__card-header-content"
+            />
+          </div>
+          <div
+            className="pgn__card-section"
+          >
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+          </div>
+        </div>
+        <div
+          className="pgn__card-footer vertical"
+        >
+          <div
+            className="pgn__card-footer-text vertical"
+          >
+            <small
+              className="text-muted"
+            >
+              Last updated 3 mins ago
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CardDeck /> renders with disabled equal height 1`] = `
+<div
+  className="pgn__card-deck pgn__card-deck-has-horizontal-scroll"
+>
+  <div
+    className="pgn__card-deck-row row"
+    tabIndex={0}
+  >
+    <div
+      className="pgn__card-deck__card-item pgn__card__disable-equal-column-heights col-xl-4 col-lg-6 col-sm-12"
+    >
+      <div
+        className="pgn__card pgn__card-light card"
+        tabIndex={-1}
+      >
+        <div
+          className="pgn__card-wrapper-image-cap vertical"
+        >
+          <img
+            className="pgn__card-image-cap"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="http://fake.image"
+          />
+        </div>
+        <div
+          className="pgn__card-body"
+        >
+          <div
+            className="pgn__card-header"
+          >
+            <div
+              className="pgn__card-header-content"
+            />
+          </div>
+          <div
+            className="pgn__card-section"
+          >
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+          </div>
+        </div>
+        <div
+          className="pgn__card-footer vertical"
+        >
+          <div
+            className="pgn__card-footer-text vertical"
+          >
+            <small
+              className="text-muted"
+            >
+              Last updated 3 mins ago
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="pgn__card-deck__card-item pgn__card__disable-equal-column-heights col-xl-4 col-lg-6 col-sm-12"
+    >
+      <div
+        className="pgn__card pgn__card-light card"
+        tabIndex={-1}
+      >
+        <div
+          className="pgn__card-wrapper-image-cap vertical"
+        >
+          <img
+            className="pgn__card-image-cap"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="http://fake.image"
+          />
+        </div>
+        <div
+          className="pgn__card-body"
+        >
+          <div
+            className="pgn__card-header"
+          >
+            <div
+              className="pgn__card-header-content"
+            />
+          </div>
+          <div
+            className="pgn__card-section"
+          >
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+          </div>
+        </div>
+        <div
+          className="pgn__card-footer vertical"
+        >
+          <div
+            className="pgn__card-footer-text vertical"
+          >
+            <small
+              className="text-muted"
+            >
+              Last updated 3 mins ago
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="pgn__card-deck__card-item pgn__card__disable-equal-column-heights col-xl-4 col-lg-6 col-sm-12"
+    >
+      <div
+        className="pgn__card pgn__card-light card"
+        tabIndex={-1}
+      >
+        <div
+          className="pgn__card-wrapper-image-cap vertical"
+        >
+          <img
+            className="pgn__card-image-cap"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="http://fake.image"
+          />
+        </div>
+        <div
+          className="pgn__card-body"
+        >
+          <div
+            className="pgn__card-header"
+          >
+            <div
+              className="pgn__card-header-content"
+            />
+          </div>
+          <div
+            className="pgn__card-section"
+          >
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+          </div>
+        </div>
+        <div
+          className="pgn__card-footer vertical"
+        >
+          <div
+            className="pgn__card-footer-text vertical"
+          >
+            <small
+              className="text-muted"
+            >
+              Last updated 3 mins ago
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="pgn__card-deck__card-item pgn__card__disable-equal-column-heights col-xl-4 col-lg-6 col-sm-12"
+    >
+      <div
+        className="pgn__card pgn__card-light card"
+        tabIndex={-1}
+      >
+        <div
+          className="pgn__card-wrapper-image-cap vertical"
+        >
+          <img
+            className="pgn__card-image-cap"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="http://fake.image"
+          />
+        </div>
+        <div
+          className="pgn__card-body"
+        >
+          <div
+            className="pgn__card-header"
+          >
+            <div
+              className="pgn__card-header-content"
+            />
+          </div>
+          <div
+            className="pgn__card-section"
+          >
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+          </div>
+        </div>
+        <div
+          className="pgn__card-footer vertical"
+        >
+          <div
+            className="pgn__card-footer-text vertical"
+          >
+            <small
+              className="text-muted"
+            >
+              Last updated 3 mins ago
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="pgn__card-deck__card-item pgn__card__disable-equal-column-heights col-xl-4 col-lg-6 col-sm-12"
     >
       <div
         className="pgn__card pgn__card-light card"

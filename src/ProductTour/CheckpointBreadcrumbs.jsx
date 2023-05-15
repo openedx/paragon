@@ -8,8 +8,23 @@ const CheckpointBreadcrumbs = React.forwardRef(({ currentIndex, totalCheckpoints
   return (
     <span className="pgn__checkpoint-breadcrumb-container" ref={ref}>
       {new Array(totalCheckpoints).fill(0).map((v, i) => (
-        i === currentIndex ? <span className="pgn__checkpoint-breadcrumb pgn__checkpoint-breadcrumb_active" data-testid="pgn__checkpoint-breadcrumb_active" />
-          : <span className="pgn__checkpoint-breadcrumb pgn__checkpoint-breadcrumb_inactive" data-testid="pgn__checkpoint-breadcrumb_inactive" />
+        i === currentIndex
+          ? (
+            <span
+              /* eslint-disable-next-line react/no-array-index-key */
+              key={i}
+              className="pgn__checkpoint-breadcrumb pgn__checkpoint-breadcrumb_active"
+              data-testid="pgn__checkpoint-breadcrumb_active"
+            />
+          )
+          : (
+            <span
+              /* eslint-disable-next-line react/no-array-index-key */
+              key={i}
+              className="pgn__checkpoint-breadcrumb pgn__checkpoint-breadcrumb_inactive"
+              data-testid="pgn__checkpoint-breadcrumb_inactive"
+            />
+          )
       ))}
     </span>
   );

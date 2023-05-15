@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Hyperlink } from '~paragon-react';
+import UsagesList from './UsagesList';
 
 type ProjectUsagesTypes = {
   filePath: string,
@@ -10,37 +10,25 @@ type ProjectUsagesTypes = {
 export interface IComponentUsageExamples {
   row: {
     original: {
-      name: string,
-      repositoryUrl?: string,
+      folderName: string,
+      repositoryUrl: string,
       usages: Array<ProjectUsagesTypes>,
     },
   },
+  componentName: string,
 }
 
-function ComponentUsageExamples({ row }: IComponentUsageExamples) {
-  const { repositoryUrl, usages } = row.original;
+function ComponentUsageExamples({ row, componentName }: IComponentUsageExamples) {
+  const { repositoryUrl, usages, folderName: projectName } = row.original;
 
   return (
     <div className="pgn-doc__component-usage__project">
-      <ul className="list-unstyled">
-        {usages.map(usage => (
-          <li key={`${usage.filePath}#L${usage.line}`}>
-            {repositoryUrl ? (
-              <>
-                <Hyperlink
-                  destination={`${repositoryUrl}/${usage.filePath}#L${usage.line}`}
-                  target="_blank"
-                >
-                  {usage.filePath}
-                </Hyperlink>
-                {' '}(line {usage.line})
-              </>
-            ) : (
-              <>{usage.filePath} (line {usage.line})</>
-            )}
-          </li>
-        ))}
-      </ul>
+      <UsagesList
+        usages={usages}
+        componentName={componentName}
+        repositoryUrl={repositoryUrl}
+        projectName={projectName}
+      />
     </div>
   );
 }
@@ -48,7 +36,7 @@ function ComponentUsageExamples({ row }: IComponentUsageExamples) {
 ComponentUsageExamples.propTypes = {
   row: PropTypes.shape({
     original: PropTypes.shape({
-      name: PropTypes.string.isRequired,
+      folderName: PropTypes.string.isRequired,
       repositoryUrl: PropTypes.string,
       usages: PropTypes.arrayOf(PropTypes.shape({
         filePath: PropTypes.string.isRequired,

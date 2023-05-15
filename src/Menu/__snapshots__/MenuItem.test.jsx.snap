@@ -23,7 +23,11 @@ exports[`Menu Item renders as expected with both icons 1`] = `
       />
     </svg>
   </span>
-  Hello World
+  <span
+    className="pgn__menu-item-text"
+  >
+    Hello World
+  </span>
   <span
     className="pgn__menu-item-content-spacer"
   />

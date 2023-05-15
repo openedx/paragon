@@ -99,7 +99,7 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
         tabIndex={0}
       >
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -147,7 +147,7 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -195,7 +195,7 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -243,7 +243,7 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -291,7 +291,7 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -445,7 +445,7 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
         tabIndex={0}
       >
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -493,7 +493,7 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -541,7 +541,7 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -589,7 +589,7 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -637,7 +637,7 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -780,7 +780,7 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
         tabIndex={0}
       >
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -828,7 +828,7 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -876,7 +876,7 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -924,7 +924,7 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"
@@ -972,7 +972,7 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
           </div>
         </div>
         <div
-          className="pgn__overflow-scroll-item pgn__card-deck-card-item col-xl-4 col-lg-6 col-sm-12"
+          className="pgn__overflow-scroll-item pgn__card-deck__card-item col-xl-4 col-lg-6 col-sm-12"
         >
           <div
             className="pgn__card pgn__card-light card"

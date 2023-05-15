@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import Stepper from '../Stepper';
 import StepperHeaderStep from '../StepperHeaderStep';
 import { stepsReducer } from '../StepperContext';
@@ -8,13 +10,20 @@ const mockWindowSize = { width: 1000, height: 1000 };
 
 jest.mock('../../hooks/useWindowSize', () => () => mockWindowSize);
 
+function Example({
 // eslint-disable-next-line react/prop-types
-function Example({ activeKey, hasStepWithError, hasFourthStep }) {
+  activeKey, hasStepWithError, hasFourthStep, handleStepClick,
+}) {
   return (
     <Stepper activeKey={activeKey}>
       <Stepper.Header />
 
-      <Stepper.Step eventKey="welcome" title="Welcome" index={0}>
+      <Stepper.Step
+        eventKey="welcome"
+        title="Welcome"
+        index={0}
+        onClick={handleStepClick ? () => handleStepClick('welcome') : undefined}
+      >
         <span id="welcome-content">Welcome content</span>
       </Stepper.Step>
       <Stepper.Step
@@ -23,6 +32,7 @@ function Example({ activeKey, hasStepWithError, hasFourthStep }) {
         hasError={hasStepWithError}
         description={hasStepWithError ? 'Im an error description' : undefined}
         index={1}
+        onClick={handleStepClick ? () => handleStepClick('cats') : undefined}
       >
         <span id="cats-content">Cat content</span>
       </Stepper.Step>
@@ -74,6 +84,24 @@ describe('Stepper', () => {
     expect(wrapper.exists('#welcome-actions')).toBe(false);
     expect(wrapper.exists('#cats-actions')).toBe(true);
     expect(wrapper.exists('#review-actions')).toBe(false);
+  });
+
+  describe('clickable variant', () => {
+    const onStepClick = jest.fn();
+
+    it('ignores onClick function if Step has not been visited yet', () => {
+      render(<Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />);
+      const step = screen.getAllByRole('listitem').find(listitem => listitem.textContent.includes('Cat'));
+      fireEvent.click(step);
+      expect(onStepClick).toHaveBeenCalledTimes(0);
+    });
+
+    it('invokes onClick function if Step has been visited', () => {
+      render(<Example activeKey="review" showError={false} hasFourthStep handleStepClick={onStepClick} />);
+      const step = screen.getAllByRole('button').find(button => button.textContent.includes('Welcome'));
+      fireEvent.click(step);
+      expect(onStepClick).toHaveBeenCalledTimes(1);
+    });
   });
 
   describe('tab updates', () => {
