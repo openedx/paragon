@@ -31,10 +31,11 @@ const {
 
 export type CollapsibleLiveEditorTypes = {
   children: React.ReactNode;
-  clickToCopy: () => void;
+  clickToCopy: (arg: string) => void;
+  handleCodeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
-function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorTypes) {
+function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
 
   const getCodeBlockHeading = (element: HTMLElement): HTMLHeadElement | null => {
@@ -63,14 +64,14 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
     const headingElement = getCodeBlockHeading(e.target);
 
     if (!headingElement) {
-      global.analytics.track(`openedx.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
+      global.analytics.track(`openedx.paragon.docs.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
         value: `${componentNameAndCategory}id-not-generated`,
       });
 
       return;
     }
 
-    global.analytics.track(`openedx.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
+    global.analytics.track(`openedx.paragon.docs.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
       value: `${componentNameAndCategory}${headingElement.id}`,
     });
   };
@@ -82,6 +83,7 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
         styling="card-lg"
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
+        onChange={handleCodeChange}
         onClick={submitSegmentEvent}
         title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
@@ -102,10 +104,6 @@ function CollapsibleLiveEditor({ children, clickToCopy }: CollapsibleLiveEditorT
   );
 }
 
-CollapsibleLiveEditor.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
 export interface ICodeBlock {
   children: string,
   className?: string,
@@ -120,9 +118,12 @@ function CodeBlock({
   const intl = useIntl();
   const language: any = className ? className.replace(/language-/, '') : 'jsx';
   const [showToast, setShowToast] = useState(false);
+  const [codeExample, setCodeExample] = useState(children);
 
-  const isCodeExampleCopied = () => {
-    navigator.clipboard.writeText(children);
+  const handleCodeChange = (e) => setCodeExample(e.target.value);
+
+  const handleCopyCodeExample = () => {
+    navigator.clipboard.writeText(codeExample);
     setShowToast(true);
   };
 
@@ -130,7 +131,7 @@ function CodeBlock({
     return (
       <div className="pgn-doc__code-block">
         <LiveProvider
-          code={children}
+          code={codeExample}
           scope={{
             ...ParagonIcons,
             ...ParagonReact,
@@ -155,7 +156,7 @@ function CodeBlock({
           theme={theme}
         >
           <LivePreview className="pgn-doc__code-block-preview" />
-          <CollapsibleLiveEditor clickToCopy={isCodeExampleCopied}>
+          <CollapsibleLiveEditor handleCodeChange={handleCodeChange} clickToCopy={handleCopyCodeExample}>
             <LiveEditor className="pgn-doc__code-block-editor" />
           </CollapsibleLiveEditor>
           <LiveError className="pgn-doc__code-block-error" />

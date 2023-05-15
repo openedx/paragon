@@ -22,7 +22,7 @@ function MenuItem({
     (
       <>
         {iconBefore && <Icon className="btn-icon-before" src={iconBefore} />}
-        {children}
+        <span className="pgn__menu-item-text">{children}</span>
         <span className="pgn__menu-item-content-spacer" />
         {iconAfter && <Icon className="btn-icon-after" src={iconAfter} />}
       </>
