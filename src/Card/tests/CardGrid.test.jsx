@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import CardGrid from '../CardGrid';
-import Card from '../index';
+import Card from '..';
 
 const cardContent = (
   <Card>
@@ -43,6 +43,15 @@ describe('<CardGrid />', () => {
             xl: 3,
           }}
         >
+          {cardContent}
+        </CardGrid>
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('renders with disabled equal height', () => {
+      const tree = renderer.create((
+        <CardGrid hasEqualColumnHeights={false}>
           {cardContent}
         </CardGrid>
       )).toJSON();

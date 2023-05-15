@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-import ProgressBar, { ANNOTATION_CLASS } from '../index';
+import ProgressBar, { ANNOTATION_CLASS } from '..';
 
 const ref = {
   current: {

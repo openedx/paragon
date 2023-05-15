@@ -7,6 +7,8 @@ components:
 - DropdownMenu
 - DropdownButton
 - DropdownToggle
+- DropdownHeader
+- DropdownDivider
 categories:
 - Navigation
 status: 'Stable'
