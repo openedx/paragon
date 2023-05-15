@@ -3,6 +3,8 @@ title: 'Figure'
 type: 'component'
 categories:
 - Content
+components:
+- Figure
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

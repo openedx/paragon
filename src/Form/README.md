@@ -8,6 +8,7 @@ components:
 - FormControlFeedback
 - FormLabel
 - FormText
+- FormRow
 categories:
 - Forms
 status: 'Stable'

@@ -6,7 +6,9 @@ components:
 - DataViewToggle
 - BulkActions
 - TableActions
-- Table
+- DataTableTable
+- DataTableTableControlBar
+- DataTableTableFooter
 - CardView
 - TableCell
 - TableHeaderCell
@@ -14,10 +16,11 @@ components:
 - TableRow
 - FilterStatus
 - SelectionStatus
-- RowStatus
+- DataTableRowStatus
 - SmartStatus
 - TablePagination
 - TextFilter
+- DataTableEmptyTable
 categories:
 - Table
 status: 'New'
