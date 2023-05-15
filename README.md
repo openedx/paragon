@@ -238,11 +238,10 @@ When developing a new component you should generally follow three rules:
 
 ##### 1. Start the documentation site development server
 
-The Paragon documentation site serves both as documentation and as a workbench to create your component within. To see your component in action, you need to run the documentation site locally. (Note you need to install dependencies both in the project root and the `www` directory)
+The Paragon documentation site serves both as documentation and as a workbench to create your component within. To see your component in action, you need to run the documentation site locally.
 
 ```
 npm install
-cd www
 npm start
 ```
 
@@ -417,9 +416,9 @@ Paragon components can have different behavior in the MFE environment. `example`
 
 Steps to install the `example` app.
 
-1. `cd example && npm install` to install dependencies.
+1. `npm install` to install dependencies.
 2. Launch any devstack. It is required for MFE to login into the system and set up configs.
-3. `npm start` to start the app.
+3. `npm run start-example-mfe` to start the app.
 4. Go to the `example/src/MyComponent.jsx` and use Paragon components inside the MFE environment.
 
 ## Semantic Release

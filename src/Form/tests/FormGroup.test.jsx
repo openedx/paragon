@@ -6,14 +6,16 @@ import FormControl from '../FormControl';
 import FormLabel from '../FormLabel';
 import FormControlFeedback from '../FormControlFeedback';
 
-/* eslint-disable react/prop-types */
-jest.mock('react-bootstrap/FormControl', () => function MockFormControl(props) {
-  const { children, ...otherProps } = props;
-  return (
-    <form-control {...otherProps}>
-      {children}
-    </form-control>
-  );
+jest.mock('react-bootstrap/FormControl', () => {
+  const { forwardRef } = jest.requireActual('react');
+  return forwardRef((props, ref) => {
+    const { children, ...otherProps } = props;
+    return (
+      <form-control {...otherProps} ref={ref}>
+        {children}
+      </form-control>
+    );
+  });
 });
 
 describe('FormGroup', () => {

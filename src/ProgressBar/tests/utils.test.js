@@ -1,5 +1,5 @@
 import { placeInfoAtZero } from '../utils';
-import { ANNOTATION_CLASS } from '../index';
+import { ANNOTATION_CLASS } from '..';
 
 const ref = {
   current: {

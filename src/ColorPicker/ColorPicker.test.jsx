@@ -20,10 +20,10 @@ describe('renders correctly', () => {
   it('renders with the passed variables ', () => {
     const className = 'testClassName';
     const { container } = render(
-      <ColorPicker color={color} setColor={setColor} className={className} size="lg" />,
+      <ColorPicker color={color} setColor={setColor} className={className} size="sm" />,
     );
     expect(container.firstChild.firstChild).toHaveClass(className);
-    expect(container.firstChild.firstChild).toHaveClass('pgn__color-picker-lg');
+    expect(container.firstChild.firstChild).toHaveClass('pgn__color-picker-sm');
   });
 });
 describe('picker works as expected', () => {

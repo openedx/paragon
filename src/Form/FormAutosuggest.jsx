@@ -33,7 +33,7 @@ function FormAutosuggest({
   });
   const [isMenuClosed, setIsMenuClosed] = useState(true);
   const [state, setState] = useState({
-    displayValue: '',
+    displayValue: value || '',
     errorMessage: '',
     dropDownItems: [],
   });
@@ -51,7 +51,7 @@ function FormAutosuggest({
     }
   };
 
-  const handleItemClick = (e, optValue) => {
+  const handleItemClick = (e, optValue, onClick) => {
     setValue(e.target.value, optValue);
 
     setState(prevState => ({
@@ -60,18 +60,22 @@ function FormAutosuggest({
     }));
 
     setIsMenuClosed(true);
+
+    if (onClick) {
+      onClick(e);
+    }
   };
 
   function getItems(strToFind = '') {
     let childrenOpt = React.Children.map(children, (child) => {
       // eslint-disable-next-line no-shadow
-      const { children, ...rest } = child.props;
+      const { children, onClick, ...rest } = child.props;
 
       const modifiedOpt = React.cloneElement(child, {
         ...rest,
         children,
         value: children,
-        onClick: (e) => handleItemClick(e, children),
+        onClick: (e) => handleItemClick(e, children, onClick),
       });
 
       return modifiedOpt;

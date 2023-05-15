@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { v4 as uuidv4 } from 'uuid';
 import CardDeck from '../CardDeck';
-import Card from '../index';
+import Card from '..';
 
 function ExampleCard(props) {
   return (
@@ -57,6 +57,16 @@ describe('<CardDeck />', () => {
     const cardContent = getCardContent({ isClickable: true });
     const tree = renderer.create((
       <CardDeck hasInteractiveChildren>
+        {cardContent}
+      </CardDeck>
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders with disabled equal height', () => {
+    const cardContent = getCardContent();
+    const tree = renderer.create((
+      <CardDeck hasEqualColumnHeights={false}>
         {cardContent}
       </CardDeck>
     )).toJSON();

@@ -5,9 +5,13 @@ exports[`correct rendering renders CardStatus element 1`] = `
   className="pgn__card-status pgn__card-status__warning"
 >
   <div
-    className="pgn__card-status__message-content"
+    className="pgn__card-status__content"
   >
-    Text
+    <div
+      className="pgn__card-status__message-content"
+    >
+      Text
+    </div>
   </div>
 </div>
 `;

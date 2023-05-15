@@ -6,7 +6,7 @@ import Toast from './index';
 /* eslint-disable-next-line react/prop-types */
 function ToastWrapper({ children, ...props }) {
   return (
-    <IntlProvider>
+    <IntlProvider locale="en">
       <Toast {...props}>
         {children}
       </Toast>

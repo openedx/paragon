@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import { CardContextProvider } from '../CardContext';
-import Card from '../index';
+import Card from '..';
 
 describe('correct rendering', () => {
   it('renders a context element', () => {

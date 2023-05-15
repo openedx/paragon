@@ -22,16 +22,12 @@
       flex-basis: 80px;
       margin: 0 .5rem;
     }
-  }
-}
 
-.pgn__stepper-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--pgn-color-white);
-  padding: .75rem 1rem;
-  min-height: 5.13rem;
+    button.pgn__stepper-header-step {
+      border: none;
+      background-color: transparent;
+    }
+  }
 }
 
 .pgn__stepper-header-step {
@@ -40,6 +36,7 @@
   color: var(--pgn-color-primary-base);
   flex-shrink: 1;
   min-width: 0;
+  padding: .25rem;
 
   .pgn__bubble {
     margin-inline-end: .5rem;

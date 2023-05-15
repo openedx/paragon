@@ -30,9 +30,9 @@
       overflow: hidden;
     }
 
-  .pgn__menu-item-content-spacer {
-    flex-grow: 1;
-  }
+    .pgn__menu-item-content-spacer {
+      flex-grow: 1;
+    }
 
     @include hover {
       text-decoration: none;
@@ -41,11 +41,11 @@
       background: var(--pgn-color-menu-item-hover-bg);
     }
 
-  // Disabled comes first so active can properly restyle
-  &.disabled,
-  &:disabled {
-    opacity: var(--pgn-other-btn-disabled-opacity);
-  }
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+      opacity: var(--pgn-other-btn-disabled-opacity);
+    }
 
     &.focus,
     &:focus {

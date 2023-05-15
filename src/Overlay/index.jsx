@@ -102,7 +102,7 @@ OverlayTrigger.propTypes = {
   delay: PropTypes.oneOfType([PropTypes.number, PropTypes.shape({})]),
   /** The initial flip state of the `Overlay`. */
   flip: PropTypes.bool,
-  onHide: PropTypes.instanceOf(null),
+  onHide: PropTypes.func,
   /**
    * A callback that fires when the user triggers a change in tooltip visibility.
    * `onToggle` is called with the desired next show, and generally should be
@@ -124,7 +124,7 @@ OverlayTrigger.propTypes = {
    * Controls `onToggle`.
    */
   show: PropTypes.bool,
-  target: PropTypes.instanceOf(null),
+  target: PropTypes.instanceOf(EventTarget),
   /** Specify which action or actions trigger `Overlay` visibility. */
   trigger: PropTypes.oneOfType([triggerType, PropTypes.arrayOf(triggerType)]),
 };

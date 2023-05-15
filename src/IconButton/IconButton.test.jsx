@@ -16,9 +16,14 @@ describe('<IconButton />', () => {
     iconAs,
     variant,
   };
+  const iconParams = {
+    prefix: 'pgn',
+    iconName: 'InfoOutlineIcon',
+    icon: [InfoOutline],
+  };
   it('renders with required props', () => {
     const tree = renderer.create((
-      <IconButton alt={alt} />
+      <IconButton icon={iconParams} alt={alt} />
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });

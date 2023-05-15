@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Context as ResponsiveContext } from 'react-responsive';
+import { act } from 'react-dom/test-utils';
 import breakpoints from '../utils/breakpoints';
 import Pagination from './index';
 import Dropdown from '../Dropdown';
@@ -290,7 +291,7 @@ describe('<Pagination />', () => {
         .toEqual(`${buttonLabels.page} 1, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} 5`);
     });
 
-    it('for the reduced variant shows dropdown button with the page count as label', () => {
+    it('for the reduced variant shows dropdown button with the page count as label', async () => {
       wrapper = mount(<Pagination variant="reduced" {...props} />);
 
       const dropdown = wrapper.find(Dropdown);
@@ -298,12 +299,21 @@ describe('<Pagination />', () => {
 
       const dropdownButton = wrapper.find('button.dropdown-toggle');
       dropdownButton.simulate('click');
-      const dropdownChoices = wrapper.find(Dropdown.Item);
-      expect(dropdownChoices.length).toEqual(baseProps.pageCount);
+      await act(async () => {
+        const dropdownChoices = wrapper.find(Dropdown.Item);
+        expect(dropdownChoices.length).toEqual(baseProps.pageCount);
+      });
     });
 
     it('renders only previous and next buttons in minimal variant', () => {
-      wrapper = mount(<Pagination variant="minimal" />);
+      wrapper = mount(
+        <Pagination
+          variant="minimal"
+          onPageSelect={(pageNumber) => pageNumber}
+          pageCount={12}
+          paginationLabel="Label"
+        />,
+      );
       const items = wrapper.find('li.page-item');
 
       expect(items.length).toEqual(2);

@@ -2,6 +2,7 @@
 title: 'Popover'
 type: 'component'
 components:
+- Popover
 - WrapperPopover
 - PopoverTitle
 - PopoverContent
