@@ -17,7 +17,7 @@ function SelectMenu({
   variant,
   ...props
 }) {
-  const triggerTarget = React.useRef(null);
+  const [triggerTarget, setTriggerTarget] = useState(null);
   // this ref is used to focus the menu open button after any menu option is clicked.
   // triggerTarget.current.focus() inside the onCLick() function didn't guarantee element focus.
   const focusMenuRef = React.useRef(false);
@@ -37,7 +37,6 @@ function SelectMenu({
 
   const [selected, setSelected] = useState(defaultIndex());
   const [isOpen, open, close] = useToggle(false);
-  const [vertOffset, setOffset] = useState(0);
 
   const createMenuItems = () => React.Children.map(children, (child, index) => {
     const newProps = {
@@ -61,60 +60,23 @@ function SelectMenu({
   const prevOpenRef = React.useRef();
 
   useEffect(() => {
-    // logic to always center the selected item.
-    if (isOpen && selected) {
-      const numItems = children.length;
-      const boundingRect = itemsCollection[selected].current.parentElement.getBoundingClientRect();
-      if (boundingRect.bottom >= window.innerHeight - 150 || boundingRect.top <= 150) {
-        setOffset(0); // if too close to the edge, don't do centering fancyness
-      } else {
-        switch (true) {
-          case numItems < 6: {
-            // on small lists, center each element
-            setOffset(
-              (selected) * -48,
-            );
-            break;
-          }
-          case selected < 2: {
-            // On first two elements, set offset based on position
-            setOffset((selected) * -48);
-            break;
-          }
-          case numItems - selected < 3: {
-            // on n-1 and n-2 elelements, set offset to put most modal elements on top.
-            setOffset((6 - (numItems - selected)) * -48);
-            break;
-          }
-          case selected > 1 && numItems - selected > 2: {
-            // on "middle elements", set offset to center of block and scroll to center
-            itemsCollection[selected].current.children[0].scrollIntoView({
-              block: 'center',
-            });
-            setOffset(2 * -48);
-            break;
-          }
-          default: break;
-        }
-      }
-    }
     // set focus on open
     if (isOpen && !prevOpenRef.current && selected) {
       itemsCollection[selected].current.children[0].focus({ preventScroll: (defaultIndex() === selected) });
     }
     if (focusMenuRef.current) {
-      triggerTarget.current.focus();
+      triggerTarget?.current?.focus();
       focusMenuRef.current = false;
     }
     prevOpenRef.current = isOpen;
-  }, [isOpen, children.length, defaultIndex, itemsCollection, selected]);
+  }, [isOpen, children.length, defaultIndex, itemsCollection, selected, triggerTarget]);
 
   return (
     <div className={classNames('pgn__menu-select', className)} {...props}>
       <Button
         aria-haspopup="true"
         aria-expanded={isOpen}
-        ref={triggerTarget}
+        ref={setTriggerTarget}
         variant={variant}
         iconAfter={ExpandMore}
         onClick={open}
@@ -123,25 +85,9 @@ function SelectMenu({
       </Button>
       <div className="pgn__menu-select-popup">
         <ModalPopup
-          placement="right-start"
           positionRef={triggerTarget}
           isOpen={isOpen}
           onClose={close}
-          modifiers={
-            [
-              {
-                name: 'flip',
-                enabled: true,
-              },
-              {
-                name: 'offset',
-                options: {
-                  enabled: true,
-                  offset: [vertOffset, triggerTarget.current ? -1 * triggerTarget.current.offsetWidth : 0],
-                },
-              },
-            ]
-          }
         >
           <Menu aria-label="Select Menu">
             {createMenuItems().map((child, index) => (
