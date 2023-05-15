@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import BaseTabs from './BaseTabs';
+import BaseTabs from 'react-bootstrap/Tabs';
 import TabsDeprecated from './deprecated';
 import Bubble from '../Bubble';
 import Dropdown from '../Dropdown';
@@ -118,10 +118,18 @@ function Tabs({
         if (!moreTabHasNotification && overflowChild.props.notification) {
           moreTabHasNotification = true;
         }
+        function handleKeyDown(event, eventKey) {
+          if (event.key === 'Enter') {
+            handleDropdownTabClick(eventKey);
+          }
+        }
         return (
           <Dropdown.Item
+            as="li"
+            tabIndex="0"
             key={`${overflowChild.props.eventKey}overflow`}
             onClick={() => handleDropdownTabClick(overflowChild.props.eventKey)}
+            onKeyDown={(e) => handleKeyDown(e, overflowChild.props.eventKey)}
             disabled={overflowChild.props.disabled}
             datakey={overflowChild.props.eventKey}
             className={classNames({
@@ -152,13 +160,13 @@ function Tabs({
               />
             )}
           </Dropdown.Toggle>
-          <Dropdown.Menu className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
+          <Dropdown.Menu as="ul" className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
         </Dropdown>
       )}
     />
     ));
     return childrenList;
-  }, [activeKey, children, defaultActiveKey, indexOfLastVisibleChild, moreTabText]);
+  }, [activeKey, children, defaultActiveKey, indexOfLastVisibleChild, moreTabText, handleKeyDown]);
 
   return (
     <div ref={containerElementRef}>
