@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { requiredWhenNot } from '../utils/propTypes';
-import { Icon } from '..';
+import Icon from '../Icon';
 import ModalDialog from './ModalDialog';
 
 function AlertModal({

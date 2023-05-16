@@ -19,7 +19,7 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
 ```jsx live
 () => {
-    const [selected, setSelected] = useState({ title: '' });
+    const [selected, setSelected] = useState('');
 
     return (
         <Form.Autosuggest
@@ -27,15 +27,13 @@ Form auto-suggest enables users to manually select or type to find matching opti
             aria-label="form autosuggest"
             helpMessage="Select language"
             errorMessageText="Error, no selected value"
-            value={selected.title}
-            onSelected={
-                (value) => setSelected(prevState => ({ selected: { ...prevState.selected, title: value } }))
-            }
+            value={selected}
+            onSelected={(value) => setSelected(value)}
         >
             <Form.AutosuggestOption>JavaScript</Form.AutosuggestOption>
             <Form.AutosuggestOption>Python</Form.AutosuggestOption>
             <Form.AutosuggestOption>Rube</Form.AutosuggestOption>
-            <Form.AutosuggestOption onClick={(e) => alert(e.target.value)}>
+            <Form.AutosuggestOption onClick={(e) => alert(e.currentTarget.value)}>
                 Option with custom onClick
             </Form.AutosuggestOption>
         </Form.Autosuggest>
@@ -47,7 +45,7 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
 ```jsx live
 () => {
-    const [selected, setSelected] = useState({ title: '' });
+    const [selected, setSelected] = useState('');
 
     return (
         <Form.Autosuggest
@@ -55,10 +53,8 @@ Form auto-suggest enables users to manually select or type to find matching opti
             aria-label="form autosuggest"
             errorMessageText="Error, no selected value"
             helpMessage="Select language"
-            value={selected.title}
-            onSelected={
-                (value) => setSelected(prevState => ({ selected: { ...prevState.selected, title: value } }))
-            }
+            value={selected}
+            onSelected={(value) => setSelected(value)}
         >
             <Form.AutosuggestOption>PHP</Form.AutosuggestOption>
             <Form.AutosuggestOption>Java</Form.AutosuggestOption>
