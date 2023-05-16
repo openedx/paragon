@@ -86,6 +86,19 @@ describe('keyboard Interactions', () => {
     expect(menuItems.at(0) === document.activeElement);
   });
 
+  it('should center focus element', () => {
+    menuItems.at(2).simulate('click');
+    // menuTrigger.simulate('click'); // Open
+    const centerIndex = Math.floor(menuItems.length / 2);
+    const centerItem = menuItems.at(centerIndex);
+    const centerItemTopOffset = centerItem.getDOMNode().offsetTop;
+    const centerItemHeight = centerItem.getDOMNode().offsetHeight;
+    const menuContainerHeight = menuContainer.getDOMNode().offsetHeight;
+    expect(menuContainer.getDOMNode().scrollTop).toBe(
+      centerItemTopOffset - menuContainerHeight / 2 + centerItemHeight / 2,
+    );
+  });
+
   it('should focus the next item after ArrowDown keyDown', () => {
     menuContainer.simulate('keyDown', { key: 'ArrowDown' });
     expect(menuItems.at(1) === document.activeElement);
