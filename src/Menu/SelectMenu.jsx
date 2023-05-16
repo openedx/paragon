@@ -60,12 +60,19 @@ function SelectMenu({
   const prevOpenRef = React.useRef();
 
   useEffect(() => {
+    const numItems = children.length;
+    if (isOpen && selected > 1 && numItems - selected > 2) {
+      // on "middle elements", set offset to center of block and scroll to center
+      itemsCollection[selected].current.children[0].scrollIntoView({
+        block: 'center',
+      });
+    }
     // set focus on open
     if (isOpen && !prevOpenRef.current && selected) {
       itemsCollection[selected].current.children[0].focus({ preventScroll: (defaultIndex() === selected) });
     }
     if (focusMenuRef.current) {
-      triggerTarget?.current?.focus();
+      triggerTarget.focus();
       focusMenuRef.current = false;
     }
     prevOpenRef.current = isOpen;
