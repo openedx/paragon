@@ -1,6 +1,7 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "rootDir": "src",
     "resolveJsonModule": true,
     "noImplicitAny": false,
     "paths": {
@@ -8,5 +9,6 @@
       "~paragon-style": ["../scss"],
       "~paragon-icons": ["../icons"],
     }
-  }
+  },
+  "include": ["src"]
 }

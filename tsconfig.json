@@ -1,8 +1,8 @@
 {
   "extends": "@edx/typescript-config",
   "compilerOptions": {
-    "allowJs": true,
     "noImplicitAny": true,
+    "allowJs": false,
     "rootDir": "src",
   },
   "include": ["src"],
