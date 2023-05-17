@@ -115,13 +115,13 @@ notes: |
     defaultActiveKey="profile"
     id="uncontrolled-pills-tab-example"
   >
-    <Tab eventKey="home" title="Home" style={{ color: 'white' }}>
+    <Tab eventKey="home" title="Home">
       Hello I am the first panel.
     </Tab>
-    <Tab eventKey="profile" title="Profile" style={{ color: 'white' }}>
+    <Tab eventKey="profile" title="Profile">
       Hello I am the second panel.
     </Tab>
-    <Tab eventKey="contact" title="Contact" style={{ color: 'white' }} disabled>
+    <Tab eventKey="contact" title="Contact" disabled>
       Hello I am third first panel.
     </Tab>
   </Tabs>
@@ -137,13 +137,13 @@ notes: |
     defaultActiveKey="profile"
     id="uncontrolled-pills-tab-example"
   >
-    <Tab eventKey="home" title="Home" style={{ color: 'white' }}>
+    <Tab eventKey="home" title="Home">
       Hello I am the first panel.
     </Tab>
-    <Tab eventKey="profile" title="Profile" style={{ color: 'white' }}>
+    <Tab eventKey="profile" title="Profile">
       Hello I am the second panel.
     </Tab>
-    <Tab eventKey="contact" title="Contact" style={{ color: 'white' }} disabled>
+    <Tab eventKey="contact" title="Contact" disabled>
       Hello I am third first panel.
     </Tab>
   </Tabs>
