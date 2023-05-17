@@ -1,25 +1,10 @@
 {
+  "extends": "@edx/typescript-config",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "lib": ["dom", "es6", "dom.iterable"],
-    "isolatedModules": true,
-    "module": "es6",
-    "moduleResolution": "node",
-    "noFallthroughCasesInSwitch": true,
+    "allowJs": true,
     "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noUnusedParameters": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "strictFunctionTypes": false,
-    "target": "es6",
     "rootDir": "src",
-    "outDir": "dist"
   },
   "include": ["src"],
+  "exclude": ["dist", "node_modules"]
 }
