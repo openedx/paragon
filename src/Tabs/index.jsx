@@ -13,7 +13,6 @@ export const MORE_TAB_TEXT = 'More...';
 function Tabs({
   children,
   className,
-  variant,
   moreTabText = MORE_TAB_TEXT,
   defaultActiveKey,
   activeKey,
@@ -72,6 +71,11 @@ function Tabs({
 
   const tabsChildren = useMemo(() => {
     const indexOfOverflowStart = indexOfLastVisibleChild + 1;
+    const handleDropdownKeyPress = (e, eventKey) => {
+      if (e.key === 'Enter') {
+        handleDropdownTabClick(eventKey);
+      }
+    };
     const childrenList = React.Children.map(children, (child, index) => {
       if (child?.type?.name !== 'Tab' && process.env.NODE_ENV === 'development') {
         // eslint-disable-next-line no-console
@@ -118,18 +122,13 @@ function Tabs({
         if (!moreTabHasNotification && overflowChild.props.notification) {
           moreTabHasNotification = true;
         }
-        function handleOnKeyPress(e, eventKey) {
-          if (e.key === 'Enter') {
-            handleDropdownTabClick(eventKey);
-          }
-        }
         return (
           <Dropdown.Item
             as="li"
             tabIndex="0"
             key={`${overflowChild.props.eventKey}overflow`}
             onClick={() => handleDropdownTabClick(overflowChild.props.eventKey)}
-            onKeyPress={(e) => handleOnKeyPress(e, overflowChild.props.eventKey)}
+            onKeyPress={(e) => handleDropdownKeyPress(e, overflowChild.props.eventKey)}
             disabled={overflowChild.props.disabled}
             datakey={overflowChild.props.eventKey}
             className={classNames({
@@ -171,7 +170,6 @@ function Tabs({
   return (
     <div ref={containerElementRef}>
       <BaseTabs
-        variant={variant}
         defaultActiveKey={defaultActiveKey}
         activeKey={activeKey}
         {...props}
