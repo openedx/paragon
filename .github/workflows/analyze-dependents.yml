@@ -11,193 +11,193 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout edx/credentials-themes
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/credentials-themes
         path: dependent-usage-analyzer/.projects/credentials-themes
     - name: Checkout edx/credentials
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/credentials
         path: dependent-usage-analyzer/.projects/credentials
     - name: Checkout edx/edx-enterprise
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/edx-enterprise
         path: dependent-usage-analyzer/.projects/edx-enterprise
     - name: Checkout edx/edx-ora2
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/edx-ora2
         path: dependent-usage-analyzer/.projects/edx-ora2
     - name: Checkout edx/edx-platform
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/edx-platform
         path: dependent-usage-analyzer/.projects/edx-platform
     - name: Checkout edx/frontend-app-account
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-account
         path: dependent-usage-analyzer/.projects/frontend-app-account
     - name: Checkout edx/frontend-app-admin-portal
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-admin-portal
         path: dependent-usage-analyzer/.projects/frontend-app-admin-portal
     - name: Checkout edx/frontend-app-authn
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-authn
         path: dependent-usage-analyzer/.projects/frontend-app-authn
     - name: Checkout edx/frontend-app-communications
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-communications
         path: dependent-usage-analyzer/.projects/frontend-app-communications
     - name: Checkout edx/frontend-app-course-authoring
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-course-authoring
         path: dependent-usage-analyzer/.projects/frontend-app-course-authoring
     - name: Checkout edx/frontend-app-discussions
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-discussions
         path: dependent-usage-analyzer/.projects/frontend-app-discussions
     - name: Checkout edx/frontend-app-ecommerce
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-ecommerce
         path: dependent-usage-analyzer/.projects/frontend-app-ecommerce
     - name: Checkout edx/frontend-app-enterprise-public-catalog
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-enterprise-public-catalog
         path: dependent-usage-analyzer/.projects/frontend-app-enterprise-public-catalog
     - name: Checkout edx/frontend-app-gradebook
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-gradebook
         path: dependent-usage-analyzer/.projects/frontend-app-gradebook
     - name: Checkout edx/frontend-app-learner-portal-enterprise
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-learner-portal-enterprise
         path: dependent-usage-analyzer/.projects/frontend-app-learner-portal-enterprise
     - name: Checkout edx/frontend-app-learner-portal-programs
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-learner-portal-programs
         path: dependent-usage-analyzer/.projects/frontend-app-learner-portal-programs
     - name: Checkout edx/frontend-app-learner-record
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-learner-record
         path: dependent-usage-analyzer/.projects/frontend-app-learner-record
     - name: Checkout edx/frontend-app-learning
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-learning
         path: dependent-usage-analyzer/.projects/frontend-app-learning
     - name: Checkout edx/frontend-app-library-authoring
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-library-authoring
         path: dependent-usage-analyzer/.projects/frontend-app-library-authoring
     - name: Checkout edx/frontend-app-ora-grading
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-ora-grading
         path: dependent-usage-analyzer/.projects/frontend-app-ora-grading
     - name: Checkout edx/frontend-app-payment
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-payment
         path: dependent-usage-analyzer/.projects/frontend-app-payment
     - name: Checkout edx/frontend-app-profile
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-profile
         path: dependent-usage-analyzer/.projects/frontend-app-profile
     - name: Checkout edx/frontend-app-program-console
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-program-console
         path: dependent-usage-analyzer/.projects/frontend-app-program-console
     - name: Checkout edx/frontend-app-publisher
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-publisher
         path: dependent-usage-analyzer/.projects/frontend-app-publisher
     - name: Checkout edx/frontend-app-support-tools
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-support-tools
         path: dependent-usage-analyzer/.projects/frontend-app-support-tools
     - name: Checkout edx/frontend-component-cookie-policy-banner
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-component-cookie-policy-banner
         path: dependent-usage-analyzer/.projects/frontend-component-cookie-policy-banner
     - name: Checkout edx/frontend-component-header-edx
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-component-header-edx
         path: dependent-usage-analyzer/.projects/frontend-component-header-edx
     - name: Checkout edx/frontend-component-header
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-component-header
         path: dependent-usage-analyzer/.projects/frontend-component-header
     - name: Checkout edx/frontend-enterprise
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-enterprise
         path: dependent-usage-analyzer/.projects/frontend-enterprise
     - name: Checkout edx/frontend-learner-portal-base
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-learner-portal-base
         path: dependent-usage-analyzer/.projects/frontend-learner-portal-base
     - name: Checkout edx/frontend-lib-content-components
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-lib-content-components
         path: dependent-usage-analyzer/.projects/frontend-lib-content-components
     - name: Checkout edx/frontend-lib-special-exams
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-lib-special-exams
         path: dependent-usage-analyzer/.projects/frontend-lib-special-exams
     - name: Checkout edx/frontend-platform
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-platform
         path: dependent-usage-analyzer/.projects/frontend-platform
     - name: Checkout edx/frontend-template-application
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-template-application
         path: dependent-usage-analyzer/.projects/frontend-template-application
     - name: Checkout edx/prospectus
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/prospectus
         path: dependent-usage-analyzer/.projects/prospectus
         token: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
     - name: Checkout edx/studio-frontend
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/studio-frontend
         path: dependent-usage-analyzer/.projects/studio-frontend
     - name: Checkout edx/frontend-app-communications
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-communications
         path: dependent-usage-analyzer/.projects/frontend-app-communications
     - name: Checkout edx/frontend-app-learner-dashboard
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: edx/frontend-app-learner-dashboard
         path: dependent-usage-analyzer/.projects/frontend-app-learner-dashboard
@@ -219,11 +219,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+    - name: Setup Nodejs Env
+      run: echo "NODE_VER=`cat .nvmrc`" >> $GITHUB_ENV
     - name: Setup Nodejs
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: ${{ env.NODE_VER }}
     - name: Install dependencies
       run: npm ci
       working-directory: dependent-usage-analyzer
@@ -255,13 +257,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
           fetch-depth: 0
     - name: Setup Nodejs
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
+    - name: Setup Nodejs Env
+      run: echo "NODE_VER=`cat .nvmrc`" >> $GITHUB_ENV
       with:
-        node-version: 16
+        node-version: ${{ env.NODE_VER }}
     - name: Download analysis output
       uses: actions/download-artifact@v2
       with:
