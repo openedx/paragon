@@ -6,8 +6,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useOverflowScrollItems } from '../OverflowScroll';
 
-export const CARD_DECK_ITEM_CLASS_NAME = 'pgn__card-deck-card-item';
-
 const CardDeck = React.forwardRef(({
   className,
   children,
@@ -15,14 +13,23 @@ const CardDeck = React.forwardRef(({
   hasInteractiveChildren,
   canScrollHorizontal,
   hasOverflowScrollItems,
+  hasEqualColumnHeights,
 }, ref) => {
   const cards = useMemo(
-    () => Children.map(Children.toArray(children), child => (
-      <Col className={classNames(CARD_DECK_ITEM_CLASS_NAME, child.props.className)} {...columnSizes}>
-        {child}
+    () => Children.map(children, (card) => (
+      <Col
+        {...columnSizes}
+        className={classNames(
+          'pgn__card-deck__card-item',
+          {
+            'pgn__card__disable-equal-column-heights': !hasEqualColumnHeights,
+          },
+        )}
+      >
+        {card}
       </Col>
     )),
-    [children, columnSizes],
+    [children, columnSizes, hasEqualColumnHeights],
   );
   const overflowCardDeckItems = useOverflowScrollItems(cards);
 
@@ -78,6 +85,8 @@ CardDeck.propTypes = {
   /** Whether the children of CardDeck should be processed by `useOverflowScrollItems` to give
    * each child a known/stable CSS classname */
   hasOverflowScrollItems: PropTypes.bool,
+  /** Whether to disable the default equal height cards */
+  hasEqualColumnHeights: PropTypes.bool,
 };
 
 CardDeck.defaultProps = {
@@ -90,6 +99,7 @@ CardDeck.defaultProps = {
   hasInteractiveChildren: false,
   canScrollHorizontal: true,
   hasOverflowScrollItems: false,
+  hasEqualColumnHeights: true,
 };
 
 CardDeck.Deprecated = BaseCardDeck;
