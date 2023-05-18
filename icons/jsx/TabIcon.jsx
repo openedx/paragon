@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgCheckBox(props) {
+function SvgTabIcon(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,11 +11,11 @@ function SvgCheckBox(props) {
       {...props}
     >
       <path
-        d="M21 3H3v18h18V3zM10 17l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+        d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h10v4h8v10zm2-16H1v18h22V3zm-2 16H3V5h10v4h8v10z"
         fill="currentColor"
       />
     </svg>
   );
 }
 
-export default SvgCheckBox;
+export default SvgTabIcon;

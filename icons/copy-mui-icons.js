@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 /*
-  Copies all sharp svg mui icons from @material-icons package to svg directory skipping existing ones.
+  Copies all sharp svg mui icons from @material-icons package to svg directory skipping existing ones. 
  */
 const muiIcons = fs.readdirSync('./node_modules/@material-icons/svg/svg/');
 muiIcons.forEach((iconName) => {
