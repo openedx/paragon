@@ -62,7 +62,7 @@ function SelectMenu({
   useEffect(() => {
     if (isOpen && selected) {
       const numItems = children.length;
-      if (selected > 1 && numItems - selected > 2) {
+      if (numItems > 6 && selected > 1 && numItems - selected > 2) {
         // on "middle elements", set offset to center of block and scroll to center
         itemsCollection[selected].current.children[0].scrollIntoView({
           block: 'center',
@@ -94,9 +94,20 @@ function SelectMenu({
       </Button>
       <div className="pgn__menu-select-popup">
         <ModalPopup
+          placement="bottom-start"
           positionRef={triggerTarget}
           isOpen={isOpen}
           onClose={close}
+          modifiers={
+            [
+              {
+                name: 'flip',
+                options: {
+                  padding: { top: 150, bottom: 150 },
+                },
+              },
+            ]
+          }
         >
           <Menu aria-label="Select Menu">
             {createMenuItems().map((child, index) => (
