@@ -1,4 +1,5 @@
 import * as React from "react";
+
 function SvgTextToSpeech(props) {
   return (
     <svg
@@ -16,4 +17,5 @@ function SvgTextToSpeech(props) {
     </svg>
   );
 }
+
 export default SvgTextToSpeech;
