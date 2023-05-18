@@ -1,6 +1,4 @@
-[context.production]
-  environment = { NODE_VERSION = "18.16.0" }
 [context.deploy-preview]
-  environment = { SEGMENT_KEY = "", NODE_VERSION = "18.16.0" }
+  environment = { SEGMENT_KEY = "" }
 [functions]
   directory = "www/netlify/functions"
