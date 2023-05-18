@@ -81,8 +81,10 @@ function Layout({
               className="flex-grow-1"
             >
               {children}
-              <hr />
-              <LeaveFeedback className="pgn__docs-page-feedback-link" />
+              <Container size="md">
+                <hr />
+                <LeaveFeedback className="pgn__docs-page-feedback-link" />
+              </Container>
             </Col>
             <Col
               xl={2}
