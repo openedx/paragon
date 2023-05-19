@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: ${{env.NODE_VER }}
     - name: Install dependencies
-      run: npm ci
+      run: npm install
     - name: Check Types
       run: npm run type-check
     - name: Lint
