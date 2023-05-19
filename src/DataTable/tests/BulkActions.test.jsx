@@ -186,7 +186,7 @@ describe('<BulkActions />', () => {
       const itemClassName = 'itemClickTest';
       let wrapper;
       let overflowButton;
-      beforeEach(async() => {
+      beforeEach(async () => {
         wrapper = mount(
           <BulkActionsWrapper
             value={{
