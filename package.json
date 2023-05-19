@@ -182,5 +182,8 @@
     "www",
     "icons",
     "dependent-usage-analyzer"
-  ]
+  ],
+  "overrides": {
+    "lmdb": "2.5.5"
+  }
 }
