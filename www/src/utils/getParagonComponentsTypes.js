@@ -17,7 +17,7 @@ const getParagonComponentsTypes = (components) => {
       case isFunctionComponent || isObjectComponent || isContext:
         componentType = 'Component';
         break;
-      case component.constructor.name === 'Object':
+      case typeof component === 'object':
         componentType = 'Object';
         break;
       case typeof component === 'function':

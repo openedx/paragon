@@ -9,7 +9,8 @@ import {
 import componentsUsage from '../../utils/componentsUsage';
 import InsightsContext from '../../context/InsightsContext';
 import SummaryUsageExamples, { ISummaryUsageExamples } from './SummaryUsageExamples';
-import { IComponentUsageData, IDependentUsage, IInsightsContext } from '../../types/types';
+import { IComponentUsageData, IInsightsContext } from '../../types/types';
+import getDependentProjectsUsages from '../../utils/getDependentProjectsUsages';
 
 interface IFilterData {
   name: string,
@@ -22,7 +23,7 @@ const round = (n: number) => Math.round(n * 10) / 10;
 const ICON_TYPE = 'Icon';
 const TABLE_PAGE_SIZE = 10;
 const componentsInUsage = Object.keys(componentsUsage);
-const dependentProjects: IDependentUsage[] = [];
+const dependentProjects = getDependentProjectsUsages();
 
 function SummaryUsage() {
   const { paragonTypes = {}, isParagonIcon = () => false } = useContext(InsightsContext) as IInsightsContext;
@@ -72,7 +73,7 @@ function SummaryUsage() {
 
   const averageComponentsUsedPerProject = dependentProjects
     .reduce((accumulator, project) => accumulator + project.count, 0) / dependentProjects.length;
-
+  console.log('dependentProjects', dependentProjects);
   return (
     <div className="pt-5 mb-5">
       <div className="mb-5">
