@@ -1,8 +1,8 @@
 import React from 'react';
 import { DataTable } from '~paragon-react';
-import ProjectUsageExamples, { IProjectUsageExamples } from '../../../components/insights/ProjectUsageExamples';
+import ProjectUsageExamples, { IProjectUsageExamples } from './ProjectUsageExamples';
 
-import getDependentProjectsUsages from '../utils/getDependentProjectsUsages';
+import getDependentProjectsUsages from '../../utils/getDependentProjectsUsages';
 
 function ProjectsUsage() {
   const dependentProjects = getDependentProjectsUsages();

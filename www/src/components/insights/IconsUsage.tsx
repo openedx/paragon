@@ -1,9 +1,9 @@
 import React from 'react';
 import ComponentUsage from './ComponentUsage';
 
-import componentsUsage from '../../../utils/componentsUsage';
-import getEmptyMessage from '../utils/getEmptyMessage';
-import usagePropTypes from '../utils/usagePropTypes';
+import componentsUsage from '../../utils/componentsUsage';
+import getEmptyMessage from '../../utils/getEmptyMessage';
+import usagePropTypes from '../../utils/usagePropTypes';
 
 function IconsUsage({ data }: { data: string[] }) {
   return (

@@ -6,10 +6,10 @@ import {
   useMediaQuery,
   breakpoints,
 } from '~paragon-react';
-import componentsUsage from '../../../utils/componentsUsage';
-import InsightsContext from '../../../context/InsightsContext';
-import SummaryUsageExamples, { ISummaryUsageExamples } from '../../../components/insights/SummaryUsageExamples';
-import { IComponentUsageData, IDependentUsage, IInsightsContext } from '../../../types/types';
+import componentsUsage from '../../utils/componentsUsage';
+import InsightsContext from '../../context/InsightsContext';
+import SummaryUsageExamples, { ISummaryUsageExamples } from './SummaryUsageExamples';
+import { IComponentUsageData, IDependentUsage, IInsightsContext } from '../../types/types';
 
 interface IFilterData {
   name: string,

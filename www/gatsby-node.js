@@ -122,7 +122,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   INSIGHTS_PAGES.forEach(({ path: pagePath, tab }) => {
     createPage({
       path: pagePath,
-      component: require.resolve('./src/pages/insights/insights.tsx'),
+      component: require.resolve('./src/pages/insights.tsx'),
       context: { tab },
     });
   });

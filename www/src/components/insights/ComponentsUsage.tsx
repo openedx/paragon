@@ -1,10 +1,10 @@
 import React from 'react';
 import ComponentUsage from './ComponentUsage';
 
-import componentsUsage from '../../../utils/componentsUsage';
-import getEmptyMessage from '../utils/getEmptyMessage';
-import usagePropTypes from '../utils/usagePropTypes';
-import removeDotsFromKeys from '../utils/removeDotsFromKey';
+import componentsUsage from '../../utils/componentsUsage';
+import getEmptyMessage from '../../utils/getEmptyMessage';
+import usagePropTypes from '../../utils/usagePropTypes';
+import removeDotsFromKeys from '../../utils/removeDotsFromKey';
 
 function ComponentsUsage({ data }: { data: string[] }) {
   const filteredComponentsUsage = removeDotsFromKeys(componentsUsage);

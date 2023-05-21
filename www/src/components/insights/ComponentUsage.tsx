@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable } from '~paragon-react';
-import ComponentUsageExamples, { IComponentUsageExamples } from '../../../components/insights/ComponentUsageExamples';
+import ComponentUsageExamples, { IComponentUsageExamples } from './ComponentUsageExamples';
 
-import { IComponentUsage } from '../../../types/types';
+import { IComponentUsage } from '../../types/types';
 
 function ComponentUsage({ name, componentUsageInProjects }: IComponentUsage) {
   return (

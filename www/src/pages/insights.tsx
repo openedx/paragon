@@ -6,21 +6,21 @@ import {
   Tab,
   Container,
 } from '~paragon-react';
-import SEO from '../../components/SEO';
-import Layout from '../../components/PageLayout';
-import InsightsContext from '../../context/InsightsContext';
-import SummaryUsage from './components/SummaryUsage';
-import ProjectsUsage from './components/ProjectsUsage';
-import HooksUsage from './components/HooksUsage';
-import UtilsUsage from './components/UtilsUsage';
-import IconsUsage from './components/IconsUsage';
-import ComponentsUsage from './components/ComponentsUsage';
+import SEO from '../components/SEO';
+import Layout from '../components/PageLayout';
+import InsightsContext from '../context/InsightsContext';
+import SummaryUsage from '../components/insights/SummaryUsage';
+import ProjectsUsage from '../components/insights/ProjectsUsage';
+import HooksUsage from '../components/insights/HooksUsage';
+import UtilsUsage from '../components/insights/UtilsUsage';
+import IconsUsage from '../components/insights/IconsUsage';
+import ComponentsUsage from '../components/insights/ComponentsUsage';
 
 // @ts-ignore
-import dependentProjectsAnalysis from '../../../../dependent-usage.json'; // eslint-disable-line
-import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../../config';
-import componentsUsage from '../../utils/componentsUsage';
-import { IInsightsContext } from '../../types/types';
+import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
+import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
+import componentsUsage from '../utils/componentsUsage';
+import { IInsightsContext } from '../types/types';
 
 const {
   lastModified: analysisLastUpdated,
