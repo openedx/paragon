@@ -8,13 +8,10 @@ const {
 const componentsUsage = dependentProjectsUsages
   .reduce((accumulator, project) => {
     Object.keys(project.usages).forEach(componentName => {
-      // The next line is necessary for the same naming of the components both in the file with the
-      // repositories of use and in the data structures GraphQL.
-      const newComponentName = componentName.replace(/\./g, '');
-      if (!accumulator[newComponentName]) {
-        accumulator[newComponentName] = [];
+      if (!accumulator[componentName]) {
+        accumulator[componentName] = [];
       }
-      accumulator[newComponentName] = accumulator[newComponentName].concat({
+      accumulator[componentName] = accumulator[componentName].concat({
         name: project.name,
         folderName: project.folderName,
         version: project.version,
@@ -23,6 +20,7 @@ const componentsUsage = dependentProjectsUsages
         usages: project.usages[componentName],
       });
     });
+
     return accumulator;
   }, {});
 

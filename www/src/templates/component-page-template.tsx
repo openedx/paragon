@@ -17,7 +17,7 @@ import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
-import { ComponentsUsage } from '../pages/insights';
+import ComponentsUsage from '../pages/insights/components/ComponentsUsage';
 
 export interface IPageTemplate {
   data: {
@@ -96,7 +96,8 @@ export default function PageTemplate({
   const usageInsightsUrl = 'usage-insights';
 
   const sortedComponentNames = mdx.frontmatter?.components || [];
-  const isUsageInsights = (sortedComponentNames as []).some(value => componentsUsageInsights.includes(value));
+  const filteredComponentsUsageInsights = componentsUsageInsights.map(componentName => componentName.replace(/\./g, ''));
+  const isUsageInsights = (sortedComponentNames as []).some(value => filteredComponentsUsageInsights.includes(value));
 
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
