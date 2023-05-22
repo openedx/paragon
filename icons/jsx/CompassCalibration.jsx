@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCompassCalibration(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgCompassCalibration(props) {
     </svg>
   );
 }
-
 export default SvgCompassCalibration;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBorderColor(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBorderColor(props) {
     </svg>
   );
 }
-
 export default SvgBorderColor;

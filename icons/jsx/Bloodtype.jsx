@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBloodtype(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBloodtype(props) {
     </svg>
   );
 }
-
 export default SvgBloodtype;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPlace(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPlace(props) {
     </svg>
   );
 }
-
 export default SvgPlace;

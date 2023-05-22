@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSignalCellularNull(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgSignalCellularNull(props) {
     </svg>
   );
 }
-
 export default SvgSignalCellularNull;

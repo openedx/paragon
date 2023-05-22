@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSwapVerticalCircle(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSwapVerticalCircle(props) {
     </svg>
   );
 }
-
 export default SvgSwapVerticalCircle;

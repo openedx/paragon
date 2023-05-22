@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgViewKanban(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgViewKanban(props) {
     </svg>
   );
 }
-
 export default SvgViewKanban;

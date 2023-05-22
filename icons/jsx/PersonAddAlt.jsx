@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPersonAddAlt(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPersonAddAlt(props) {
     </svg>
   );
 }
-
 export default SvgPersonAddAlt;

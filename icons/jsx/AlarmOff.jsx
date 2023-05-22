@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAlarmOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAlarmOff(props) {
     </svg>
   );
 }
-
 export default SvgAlarmOff;

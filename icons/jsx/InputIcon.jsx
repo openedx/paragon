@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgInputIcon(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgInputIcon(props) {
     </svg>
   );
 }
-
 export default SvgInputIcon;

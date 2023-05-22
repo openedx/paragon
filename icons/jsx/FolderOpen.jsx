@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFolderOpen(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgFolderOpen(props) {
     </svg>
   );
 }
-
 export default SvgFolderOpen;

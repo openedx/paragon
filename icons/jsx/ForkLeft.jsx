@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgForkLeft(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgForkLeft(props) {
     </svg>
   );
 }
-
 export default SvgForkLeft;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgInsertPageBreak(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgInsertPageBreak(props) {
     </svg>
   );
 }
-
 export default SvgInsertPageBreak;

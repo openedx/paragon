@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgClosedCaptionOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgClosedCaptionOff(props) {
     </svg>
   );
 }
-
 export default SvgClosedCaptionOff;

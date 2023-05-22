@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMultilineChart(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMultilineChart(props) {
     </svg>
   );
 }
-
 export default SvgMultilineChart;

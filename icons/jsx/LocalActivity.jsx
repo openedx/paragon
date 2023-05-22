@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLocalActivity(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLocalActivity(props) {
     </svg>
   );
 }
-
 export default SvgLocalActivity;

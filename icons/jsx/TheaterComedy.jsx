@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTheaterComedy(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgTheaterComedy(props) {
     </svg>
   );
 }
-
 export default SvgTheaterComedy;

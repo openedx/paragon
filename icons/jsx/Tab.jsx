@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTab(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTab(props) {
     </svg>
   );
 }
-
 export default SvgTab;

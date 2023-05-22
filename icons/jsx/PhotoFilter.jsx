@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPhotoFilter(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPhotoFilter(props) {
     </svg>
   );
 }
-
 export default SvgPhotoFilter;

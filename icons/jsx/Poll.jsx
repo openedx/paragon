@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPoll(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPoll(props) {
     </svg>
   );
 }
-
 export default SvgPoll;

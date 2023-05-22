@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFlipCameraAndroid(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgFlipCameraAndroid(props) {
     </svg>
   );
 }
-
 export default SvgFlipCameraAndroid;

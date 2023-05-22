@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNoStroller(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNoStroller(props) {
     </svg>
   );
 }
-
 export default SvgNoStroller;

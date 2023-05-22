@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPlusMinus(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPlusMinus(props) {
     </svg>
   );
 }
-
 export default SvgPlusMinus;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgInstitution(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgInstitution(props) {
     </svg>
   );
 }
-
 export default SvgInstitution;

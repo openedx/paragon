@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLeaderboard(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLeaderboard(props) {
     </svg>
   );
 }
-
 export default SvgLeaderboard;

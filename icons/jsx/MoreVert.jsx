@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMoreVert(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMoreVert(props) {
     </svg>
   );
 }
-
 export default SvgMoreVert;

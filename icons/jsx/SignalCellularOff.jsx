@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSignalCellularOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSignalCellularOff(props) {
     </svg>
   );
 }
-
 export default SvgSignalCellularOff;

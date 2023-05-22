@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFastForward(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgFastForward(props) {
     </svg>
   );
 }
-
 export default SvgFastForward;

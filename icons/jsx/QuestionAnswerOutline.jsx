@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgQuestionAnswerOutline(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgQuestionAnswerOutline(props) {
     </svg>
   );
 }
-
 export default SvgQuestionAnswerOutline;

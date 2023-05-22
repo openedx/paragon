@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSettingsBackupRestore(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSettingsBackupRestore(props) {
     </svg>
   );
 }
-
 export default SvgSettingsBackupRestore;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWbCloudy(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWbCloudy(props) {
     </svg>
   );
 }
-
 export default SvgWbCloudy;

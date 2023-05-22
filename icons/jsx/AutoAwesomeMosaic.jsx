@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAutoAwesomeMosaic(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAutoAwesomeMosaic(props) {
     </svg>
   );
 }
-
 export default SvgAutoAwesomeMosaic;

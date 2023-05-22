@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRecommend(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRecommend(props) {
     </svg>
   );
 }
-
 export default SvgRecommend;

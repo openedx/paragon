@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHorizontalRule(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgHorizontalRule(props) {
     </svg>
   );
 }
-
 export default SvgHorizontalRule;

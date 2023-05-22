@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgKitesurfing(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgKitesurfing(props) {
     </svg>
   );
 }
-
 export default SvgKitesurfing;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFlaky(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgFlaky(props) {
     </svg>
   );
 }
-
 export default SvgFlaky;

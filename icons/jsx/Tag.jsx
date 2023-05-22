@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTag(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTag(props) {
     </svg>
   );
 }
-
 export default SvgTag;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPermContactCalendar(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPermContactCalendar(props) {
     </svg>
   );
 }
-
 export default SvgPermContactCalendar;

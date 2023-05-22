@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWebAsset(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgWebAsset(props) {
     </svg>
   );
 }
-
 export default SvgWebAsset;

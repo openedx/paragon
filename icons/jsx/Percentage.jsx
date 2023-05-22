@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPercentage(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPercentage(props) {
     </svg>
   );
 }
-
 export default SvgPercentage;

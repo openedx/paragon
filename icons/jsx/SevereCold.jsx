@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSevereCold(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSevereCold(props) {
     </svg>
   );
 }
-
 export default SvgSevereCold;

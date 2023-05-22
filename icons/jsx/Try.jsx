@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTry(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTry(props) {
     </svg>
   );
 }
-
 export default SvgTry;

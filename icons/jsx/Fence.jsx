@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFence(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFence(props) {
     </svg>
   );
 }
-
 export default SvgFence;

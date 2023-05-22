@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMeetingRoom(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMeetingRoom(props) {
     </svg>
   );
 }
-
 export default SvgMeetingRoom;

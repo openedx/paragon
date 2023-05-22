@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPiano(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPiano(props) {
     </svg>
   );
 }
-
 export default SvgPiano;

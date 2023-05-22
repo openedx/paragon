@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTextIncrease(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTextIncrease(props) {
     </svg>
   );
 }
-
 export default SvgTextIncrease;

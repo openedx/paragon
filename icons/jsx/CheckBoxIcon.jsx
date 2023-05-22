@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCheckBoxIcon(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCheckBoxIcon(props) {
     </svg>
   );
 }
-
 export default SvgCheckBoxIcon;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGavel(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGavel(props) {
     </svg>
   );
 }
-
 export default SvgGavel;

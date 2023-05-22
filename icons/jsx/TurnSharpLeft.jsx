@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTurnSharpLeft(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTurnSharpLeft(props) {
     </svg>
   );
 }
-
 export default SvgTurnSharpLeft;

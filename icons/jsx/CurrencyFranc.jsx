@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCurrencyFranc(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCurrencyFranc(props) {
     </svg>
   );
 }
-
 export default SvgCurrencyFranc;

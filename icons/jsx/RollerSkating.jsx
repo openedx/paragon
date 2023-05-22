@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRollerSkating(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRollerSkating(props) {
     </svg>
   );
 }
-
 export default SvgRollerSkating;

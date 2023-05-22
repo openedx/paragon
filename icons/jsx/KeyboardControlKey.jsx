@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgKeyboardControlKey(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgKeyboardControlKey(props) {
     </svg>
   );
 }
-
 export default SvgKeyboardControlKey;

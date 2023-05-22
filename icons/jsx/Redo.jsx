@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRedo(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRedo(props) {
     </svg>
   );
 }
-
 export default SvgRedo;

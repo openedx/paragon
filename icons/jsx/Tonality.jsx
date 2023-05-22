@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTonality(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTonality(props) {
     </svg>
   );
 }
-
 export default SvgTonality;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgInventory(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgInventory(props) {
     </svg>
   );
 }
-
 export default SvgInventory;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLocalParking(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLocalParking(props) {
     </svg>
   );
 }
-
 export default SvgLocalParking;

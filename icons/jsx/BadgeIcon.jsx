@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBadgeIcon(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBadgeIcon(props) {
     </svg>
   );
 }
-
 export default SvgBadgeIcon;

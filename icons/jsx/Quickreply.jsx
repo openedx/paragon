@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgQuickreply(props) {
   return (
     <svg
@@ -15,5 +14,4 @@ function SvgQuickreply(props) {
     </svg>
   );
 }
-
 export default SvgQuickreply;

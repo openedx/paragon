@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStop(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgStop(props) {
     </svg>
   );
 }
-
 export default SvgStop;

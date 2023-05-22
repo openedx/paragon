@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNetworkCheck(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNetworkCheck(props) {
     </svg>
   );
 }
-
 export default SvgNetworkCheck;

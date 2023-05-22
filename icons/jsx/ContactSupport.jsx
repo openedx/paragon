@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgContactSupport(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgContactSupport(props) {
     </svg>
   );
 }
-
 export default SvgContactSupport;

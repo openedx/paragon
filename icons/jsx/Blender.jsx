@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBlender(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBlender(props) {
     </svg>
   );
 }
-
 export default SvgBlender;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFlatware(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFlatware(props) {
     </svg>
   );
 }
-
 export default SvgFlatware;

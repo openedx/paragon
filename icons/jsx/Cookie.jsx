@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCookie(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCookie(props) {
     </svg>
   );
 }
-
 export default SvgCookie;

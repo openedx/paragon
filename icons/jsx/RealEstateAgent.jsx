@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRealEstateAgent(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRealEstateAgent(props) {
     </svg>
   );
 }
-
 export default SvgRealEstateAgent;
