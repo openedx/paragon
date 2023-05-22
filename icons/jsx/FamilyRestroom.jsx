@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFamilyRestroom(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFamilyRestroom(props) {
     </svg>
   );
 }
-
 export default SvgFamilyRestroom;

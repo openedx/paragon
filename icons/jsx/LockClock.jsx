@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLockClock(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLockClock(props) {
     </svg>
   );
 }
-
 export default SvgLockClock;

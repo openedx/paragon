@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSelfImprovement(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgSelfImprovement(props) {
     </svg>
   );
 }
-
 export default SvgSelfImprovement;

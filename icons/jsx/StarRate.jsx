@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStarRate(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgStarRate(props) {
     </svg>
   );
 }
-
 export default SvgStarRate;

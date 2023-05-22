@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFlashlightOn(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFlashlightOn(props) {
     </svg>
   );
 }
-
 export default SvgFlashlightOn;

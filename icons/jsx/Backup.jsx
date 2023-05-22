@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBackup(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBackup(props) {
     </svg>
   );
 }
-
 export default SvgBackup;

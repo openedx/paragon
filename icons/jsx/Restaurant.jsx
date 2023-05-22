@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRestaurant(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRestaurant(props) {
     </svg>
   );
 }
-
 export default SvgRestaurant;

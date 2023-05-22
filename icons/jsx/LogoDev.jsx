@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLogoDev(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgLogoDev(props) {
     </svg>
   );
 }
-
 export default SvgLogoDev;

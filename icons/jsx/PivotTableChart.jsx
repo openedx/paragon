@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPivotTableChart(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPivotTableChart(props) {
     </svg>
   );
 }
-
 export default SvgPivotTableChart;

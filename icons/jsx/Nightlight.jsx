@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNightlight(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNightlight(props) {
     </svg>
   );
 }
-
 export default SvgNightlight;

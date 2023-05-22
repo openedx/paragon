@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSouthAmerica(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSouthAmerica(props) {
     </svg>
   );
 }
-
 export default SvgSouthAmerica;

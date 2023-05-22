@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFastfood(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFastfood(props) {
     </svg>
   );
 }
-
 export default SvgFastfood;

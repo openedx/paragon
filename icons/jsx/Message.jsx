@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMessage(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMessage(props) {
     </svg>
   );
 }
-
 export default SvgMessage;

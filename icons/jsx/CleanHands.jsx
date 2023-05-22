@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCleanHands(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCleanHands(props) {
     </svg>
   );
 }
-
 export default SvgCleanHands;

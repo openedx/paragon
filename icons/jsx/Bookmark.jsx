@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBookmark(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgBookmark(props) {
     </svg>
   );
 }
-
 export default SvgBookmark;

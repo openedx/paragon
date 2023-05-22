@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHub(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHub(props) {
     </svg>
   );
 }
-
 export default SvgHub;

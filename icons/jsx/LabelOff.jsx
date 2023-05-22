@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLabelOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLabelOff(props) {
     </svg>
   );
 }
-
 export default SvgLabelOff;

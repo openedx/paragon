@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgChecklistRtl(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgChecklistRtl(props) {
     </svg>
   );
 }
-
 export default SvgChecklistRtl;

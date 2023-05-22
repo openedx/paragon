@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTerrain(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTerrain(props) {
     </svg>
   );
 }
-
 export default SvgTerrain;

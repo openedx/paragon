@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTableRestaurant(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTableRestaurant(props) {
     </svg>
   );
 }
-
 export default SvgTableRestaurant;

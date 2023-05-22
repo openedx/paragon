@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWordpress(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWordpress(props) {
     </svg>
   );
 }
-
 export default SvgWordpress;

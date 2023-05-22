@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLibraryMusic(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLibraryMusic(props) {
     </svg>
   );
 }
-
 export default SvgLibraryMusic;

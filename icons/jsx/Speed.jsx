@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSpeed(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgSpeed(props) {
     </svg>
   );
 }
-
 export default SvgSpeed;

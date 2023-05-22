@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWbIncandescent(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWbIncandescent(props) {
     </svg>
   );
 }
-
 export default SvgWbIncandescent;

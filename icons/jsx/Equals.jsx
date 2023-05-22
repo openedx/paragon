@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEquals(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgEquals(props) {
     </svg>
   );
 }
-
 export default SvgEquals;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGrid4X4(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGrid4X4(props) {
     </svg>
   );
 }
-
 export default SvgGrid4X4;

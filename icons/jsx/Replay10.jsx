@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgReplay10(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgReplay10(props) {
     </svg>
   );
 }
-
 export default SvgReplay10;

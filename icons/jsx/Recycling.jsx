@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRecycling(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRecycling(props) {
     </svg>
   );
 }
-
 export default SvgRecycling;

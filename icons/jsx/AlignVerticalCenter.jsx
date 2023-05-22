@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAlignVerticalCenter(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAlignVerticalCenter(props) {
     </svg>
   );
 }
-
 export default SvgAlignVerticalCenter;

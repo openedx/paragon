@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgExpandCircleDown(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgExpandCircleDown(props) {
     </svg>
   );
 }
-
 export default SvgExpandCircleDown;

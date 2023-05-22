@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWhereToVote(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWhereToVote(props) {
     </svg>
   );
 }
-
 export default SvgWhereToVote;

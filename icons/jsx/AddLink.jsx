@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAddLink(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAddLink(props) {
     </svg>
   );
 }
-
 export default SvgAddLink;

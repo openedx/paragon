@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCast(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCast(props) {
     </svg>
   );
 }
-
 export default SvgCast;

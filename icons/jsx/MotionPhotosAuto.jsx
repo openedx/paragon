@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMotionPhotosAuto(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMotionPhotosAuto(props) {
     </svg>
   );
 }
-
 export default SvgMotionPhotosAuto;

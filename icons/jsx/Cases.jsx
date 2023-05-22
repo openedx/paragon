@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCases(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCases(props) {
     </svg>
   );
 }
-
 export default SvgCases;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRunCircle(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRunCircle(props) {
     </svg>
   );
 }
-
 export default SvgRunCircle;

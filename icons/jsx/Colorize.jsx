@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgColorize(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgColorize(props) {
     </svg>
   );
 }
-
 export default SvgColorize;

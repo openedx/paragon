@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAssistant(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAssistant(props) {
     </svg>
   );
 }
-
 export default SvgAssistant;

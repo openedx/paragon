@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDeck(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgDeck(props) {
     </svg>
   );
 }
-
 export default SvgDeck;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgViewSidebar(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgViewSidebar(props) {
     </svg>
   );
 }
-
 export default SvgViewSidebar;

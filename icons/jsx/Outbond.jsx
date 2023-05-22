@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgOutbond(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgOutbond(props) {
     </svg>
   );
 }
-
 export default SvgOutbond;

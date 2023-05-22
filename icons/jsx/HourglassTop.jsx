@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHourglassTop(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHourglassTop(props) {
     </svg>
   );
 }
-
 export default SvgHourglassTop;

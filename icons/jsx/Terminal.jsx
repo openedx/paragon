@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTerminal(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTerminal(props) {
     </svg>
   );
 }
-
 export default SvgTerminal;

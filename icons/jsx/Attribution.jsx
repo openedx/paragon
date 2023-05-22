@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAttribution(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgAttribution(props) {
     </svg>
   );
 }
-
 export default SvgAttribution;

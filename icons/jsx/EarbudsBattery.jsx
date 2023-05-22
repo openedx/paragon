@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEarbudsBattery(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEarbudsBattery(props) {
     </svg>
   );
 }
-
 export default SvgEarbudsBattery;

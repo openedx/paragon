@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgJoinLeft(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgJoinLeft(props) {
     </svg>
   );
 }
-
 export default SvgJoinLeft;

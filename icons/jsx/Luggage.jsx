@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLuggage(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLuggage(props) {
     </svg>
   );
 }
-
 export default SvgLuggage;

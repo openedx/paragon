@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWoman2(props) {
   return (
     <svg
@@ -15,5 +14,4 @@ function SvgWoman2(props) {
     </svg>
   );
 }
-
 export default SvgWoman2;

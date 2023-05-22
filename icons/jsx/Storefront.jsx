@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStorefront(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgStorefront(props) {
     </svg>
   );
 }
-
 export default SvgStorefront;

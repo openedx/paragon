@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBrightness1(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgBrightness1(props) {
     </svg>
   );
 }
-
 export default SvgBrightness1;

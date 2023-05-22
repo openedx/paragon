@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFormatQuote(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFormatQuote(props) {
     </svg>
   );
 }
-
 export default SvgFormatQuote;

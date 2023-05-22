@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDangerous(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDangerous(props) {
     </svg>
   );
 }
-
 export default SvgDangerous;

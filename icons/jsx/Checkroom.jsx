@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCheckroom(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCheckroom(props) {
     </svg>
   );
 }
-
 export default SvgCheckroom;

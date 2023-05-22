@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAddHome(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgAddHome(props) {
     </svg>
   );
 }
-
 export default SvgAddHome;

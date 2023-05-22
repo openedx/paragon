@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRemoveCircleOutline(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRemoveCircleOutline(props) {
     </svg>
   );
 }
-
 export default SvgRemoveCircleOutline;

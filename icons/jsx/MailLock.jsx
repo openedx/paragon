@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMailLock(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgMailLock(props) {
     </svg>
   );
 }
-
 export default SvgMailLock;

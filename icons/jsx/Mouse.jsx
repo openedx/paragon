@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMouse(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMouse(props) {
     </svg>
   );
 }
-
 export default SvgMouse;
