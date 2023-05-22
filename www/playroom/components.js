@@ -1,4 +1,4 @@
 const components = require('../../src');
-const { ...restIcons } = require('../../icons');
+const icons = require('../../icons');
 
-module.exports = { ...restIcons, ...components };
+module.exports = { ...icons, ...components };
