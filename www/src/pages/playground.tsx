@@ -4,6 +4,7 @@ import {
   StatefulButton,
   Button,
   Icon,
+  Stack,
 } from '~paragon-react';
 import { ContentCopy, Check } from '~paragon-icons';
 import PropTypes from 'prop-types';
@@ -17,6 +18,7 @@ import { storageKey } from '../../playroom/constants';
 const FEEDBACK_URL = 'https://github.com/openedx/paragon/issues/new?assignees=&labels=playground&template=feedback_template.md&title=[Playground]';
 
 const playroomStorage = localforage.createInstance({ name: storageKey });
+const EMPTY_PLAYROOM_URL_QUERY = '?code=N4XyA';
 
 export default function Playground({ location }) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -54,12 +56,12 @@ export default function Playground({ location }) {
     <div className="d-flex flex-column w-100 vh-100 m-0 p-0">
       <SEO title="Playground" />
       <div className="pgn-doc__header py-3 bg-dark text-white sticky-top">
-        <div className="d-flex align-items-center justify-content-end px-4" style={{ gap: '16px' }}>
+        <Stack direction="horizontal" className="d-flex align-items-center justify-content-end px-4" gap={4}>
           <Button
             variant="inverse-tertiary"
             onClick={() => {
               playroomStorage.clear().then(() => {
-                iframeRef!.current!.contentWindow!.location.search = '?code=N4XyA';
+                iframeRef!.current!.contentWindow!.location.search = EMPTY_PLAYROOM_URL_QUERY;
               });
             }}
           >
@@ -94,7 +96,7 @@ export default function Playground({ location }) {
             isFullVersion
             className="pgn-doc__playground-title"
           />
-        </div>
+        </Stack>
       </div>
       <iframe
         title="Paragon Playground"
