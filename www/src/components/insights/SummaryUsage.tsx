@@ -73,7 +73,6 @@ function SummaryUsage() {
 
   const averageComponentsUsedPerProject = dependentProjects
     .reduce((accumulator, project) => accumulator + project.count, 0) / dependentProjects.length;
-  console.log('dependentProjects', dependentProjects);
   return (
     <div className="pt-5 mb-5">
       <div className="mb-5">
