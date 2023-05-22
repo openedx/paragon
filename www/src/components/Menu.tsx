@@ -147,7 +147,7 @@ interface IMenuQueryComponents {
 }
 
 const foundationLinks = [
-  'Colors', 'Elevation', 'Typography', 'Layout', 'Spacing', 'Icons', 'CSS-Utilities', 'Responsive',
+  'Colors', 'Elevation', 'Typography', 'Layout', 'Spacing', 'Icons', 'CSS-Utilities', 'Responsive', 'Bootstrap-icons',
 ];
 
 function Menu() {
