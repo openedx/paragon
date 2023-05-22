@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPinEnd(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPinEnd(props) {
     </svg>
   );
 }
-
 export default SvgPinEnd;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgQueryStats(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgQueryStats(props) {
     </svg>
   );
 }
-
 export default SvgQueryStats;

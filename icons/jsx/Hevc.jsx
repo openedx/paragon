@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHevc(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHevc(props) {
     </svg>
   );
 }
-
 export default SvgHevc;

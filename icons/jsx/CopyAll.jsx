@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCopyAll(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCopyAll(props) {
     </svg>
   );
 }
-
 export default SvgCopyAll;

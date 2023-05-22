@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgElectricScooter(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgElectricScooter(props) {
     </svg>
   );
 }
-
 export default SvgElectricScooter;

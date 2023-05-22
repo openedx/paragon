@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDoNotStep(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDoNotStep(props) {
     </svg>
   );
 }
-
 export default SvgDoNotStep;

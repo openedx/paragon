@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWaves(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWaves(props) {
     </svg>
   );
 }
-
 export default SvgWaves;

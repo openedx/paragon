@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMicExternalOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMicExternalOff(props) {
     </svg>
   );
 }
-
 export default SvgMicExternalOff;

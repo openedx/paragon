@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFitScreen(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFitScreen(props) {
     </svg>
   );
 }
-
 export default SvgFitScreen;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSwipeVertical(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSwipeVertical(props) {
     </svg>
   );
 }
-
 export default SvgSwipeVertical;

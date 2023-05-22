@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBrandingWatermark(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgBrandingWatermark(props) {
     </svg>
   );
 }
-
 export default SvgBrandingWatermark;

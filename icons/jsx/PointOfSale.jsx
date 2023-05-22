@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPointOfSale(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPointOfSale(props) {
     </svg>
   );
 }
-
 export default SvgPointOfSale;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAutofpsSelect(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgAutofpsSelect(props) {
     </svg>
   );
 }
-
 export default SvgAutofpsSelect;

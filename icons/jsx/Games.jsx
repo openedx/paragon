@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGames(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGames(props) {
     </svg>
   );
 }
-
 export default SvgGames;

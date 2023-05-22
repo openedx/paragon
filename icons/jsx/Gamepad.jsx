@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGamepad(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGamepad(props) {
     </svg>
   );
 }
-
 export default SvgGamepad;

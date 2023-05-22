@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBlinds(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBlinds(props) {
     </svg>
   );
 }
-
 export default SvgBlinds;

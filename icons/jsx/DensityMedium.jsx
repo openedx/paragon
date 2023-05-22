@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDensityMedium(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgDensityMedium(props) {
     </svg>
   );
 }
-
 export default SvgDensityMedium;

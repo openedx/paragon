@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStarBorder(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgStarBorder(props) {
     </svg>
   );
 }
-
 export default SvgStarBorder;

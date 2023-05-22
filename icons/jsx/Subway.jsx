@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSubway(props) {
   return (
     <svg
@@ -19,5 +18,4 @@ function SvgSubway(props) {
     </svg>
   );
 }
-
 export default SvgSubway;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGroupRemove(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGroupRemove(props) {
     </svg>
   );
 }
-
 export default SvgGroupRemove;

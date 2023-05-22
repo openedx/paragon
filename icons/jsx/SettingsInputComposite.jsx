@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSettingsInputComposite(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSettingsInputComposite(props) {
     </svg>
   );
 }
-
 export default SvgSettingsInputComposite;

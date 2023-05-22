@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMoveDown(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMoveDown(props) {
     </svg>
   );
 }
-
 export default SvgMoveDown;

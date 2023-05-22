@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAdsClick(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAdsClick(props) {
     </svg>
   );
 }
-
 export default SvgAdsClick;

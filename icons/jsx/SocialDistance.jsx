@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSocialDistance(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSocialDistance(props) {
     </svg>
   );
 }
-
 export default SvgSocialDistance;

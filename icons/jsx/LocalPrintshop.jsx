@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLocalPrintshop(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLocalPrintshop(props) {
     </svg>
   );
 }
-
 export default SvgLocalPrintshop;

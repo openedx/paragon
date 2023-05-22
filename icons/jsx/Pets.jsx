@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPets(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgPets(props) {
     </svg>
   );
 }
-
 export default SvgPets;

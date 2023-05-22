@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTask(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTask(props) {
     </svg>
   );
 }
-
 export default SvgTask;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFilterAltOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFilterAltOff(props) {
     </svg>
   );
 }
-
 export default SvgFilterAltOff;

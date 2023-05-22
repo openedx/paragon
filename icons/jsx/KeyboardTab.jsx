@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgKeyboardTab(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgKeyboardTab(props) {
     </svg>
   );
 }
-
 export default SvgKeyboardTab;

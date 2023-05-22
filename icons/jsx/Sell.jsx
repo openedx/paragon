@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSell(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSell(props) {
     </svg>
   );
 }
-
 export default SvgSell;

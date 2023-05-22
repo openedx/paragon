@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAutorenew(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAutorenew(props) {
     </svg>
   );
 }
-
 export default SvgAutorenew;

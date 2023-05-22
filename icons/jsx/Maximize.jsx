@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMaximize(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgMaximize(props) {
     </svg>
   );
 }
-
 export default SvgMaximize;

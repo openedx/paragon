@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRemoveFromQueue(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRemoveFromQueue(props) {
     </svg>
   );
 }
-
 export default SvgRemoveFromQueue;

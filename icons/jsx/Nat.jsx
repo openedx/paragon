@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNat(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgNat(props) {
     </svg>
   );
 }
-
 export default SvgNat;

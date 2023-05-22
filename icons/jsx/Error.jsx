@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgError(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgError(props) {
     </svg>
   );
 }
-
 export default SvgError;

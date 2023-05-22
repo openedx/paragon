@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPortrait(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPortrait(props) {
     </svg>
   );
 }
-
 export default SvgPortrait;

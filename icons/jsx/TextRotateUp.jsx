@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTextRotateUp(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTextRotateUp(props) {
     </svg>
   );
 }
-
 export default SvgTextRotateUp;

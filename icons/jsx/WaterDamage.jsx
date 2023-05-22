@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWaterDamage(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWaterDamage(props) {
     </svg>
   );
 }
-
 export default SvgWaterDamage;

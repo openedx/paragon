@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPeopleAlt(props) {
   return (
     <svg
@@ -24,5 +23,4 @@ function SvgPeopleAlt(props) {
     </svg>
   );
 }
-
 export default SvgPeopleAlt;

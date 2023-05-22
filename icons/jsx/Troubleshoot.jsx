@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTroubleshoot(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgTroubleshoot(props) {
     </svg>
   );
 }
-
 export default SvgTroubleshoot;

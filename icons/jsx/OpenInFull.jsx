@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgOpenInFull(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgOpenInFull(props) {
     </svg>
   );
 }
-
 export default SvgOpenInFull;

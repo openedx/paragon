@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgContentCut(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgContentCut(props) {
     </svg>
   );
 }
-
 export default SvgContentCut;

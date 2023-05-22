@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRestorePage(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRestorePage(props) {
     </svg>
   );
 }
-
 export default SvgRestorePage;

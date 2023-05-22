@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFreeCancellation(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFreeCancellation(props) {
     </svg>
   );
 }
-
 export default SvgFreeCancellation;

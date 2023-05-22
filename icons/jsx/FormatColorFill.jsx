@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFormatColorFill(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFormatColorFill(props) {
     </svg>
   );
 }
-
 export default SvgFormatColorFill;

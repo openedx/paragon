@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVolunteerActivism(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgVolunteerActivism(props) {
     </svg>
   );
 }
-
 export default SvgVolunteerActivism;

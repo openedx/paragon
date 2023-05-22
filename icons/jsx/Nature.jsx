@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNature(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNature(props) {
     </svg>
   );
 }
-
 export default SvgNature;

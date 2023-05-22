@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBattery30(props) {
   return (
     <svg
@@ -19,5 +18,4 @@ function SvgBattery30(props) {
     </svg>
   );
 }
-
 export default SvgBattery30;

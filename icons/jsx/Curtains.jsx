@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCurtains(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCurtains(props) {
     </svg>
   );
 }
-
 export default SvgCurtains;

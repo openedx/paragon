@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSportsTennis(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSportsTennis(props) {
     </svg>
   );
 }
-
 export default SvgSportsTennis;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCameraOutdoor(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCameraOutdoor(props) {
     </svg>
   );
 }
-
 export default SvgCameraOutdoor;

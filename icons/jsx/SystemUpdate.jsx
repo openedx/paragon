@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSystemUpdate(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSystemUpdate(props) {
     </svg>
   );
 }
-
 export default SvgSystemUpdate;

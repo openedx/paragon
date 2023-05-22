@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGradient(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGradient(props) {
     </svg>
   );
 }
-
 export default SvgGradient;

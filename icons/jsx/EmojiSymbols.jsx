@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEmojiSymbols(props) {
   return (
     <svg
@@ -23,5 +22,4 @@ function SvgEmojiSymbols(props) {
     </svg>
   );
 }
-
 export default SvgEmojiSymbols;

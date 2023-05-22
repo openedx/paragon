@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMobileScreenShare(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMobileScreenShare(props) {
     </svg>
   );
 }
-
 export default SvgMobileScreenShare;

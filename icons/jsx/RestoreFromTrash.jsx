@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRestoreFromTrash(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRestoreFromTrash(props) {
     </svg>
   );
 }
-
 export default SvgRestoreFromTrash;

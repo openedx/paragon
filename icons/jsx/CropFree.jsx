@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCropFree(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCropFree(props) {
     </svg>
   );
 }
-
 export default SvgCropFree;
