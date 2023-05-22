@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Link } from 'gatsby';
 // @ts-ignore
 import Logo from '../../images/diamond.svg';
@@ -7,14 +8,14 @@ import Logo from '../../images/diamond.svg';
 interface SiteTitleProps {
   title: string,
   isFullVersion: boolean,
+  className?: string,
 }
 
-export default function SiteTitle({ title, isFullVersion } : SiteTitleProps) {
+export default function SiteTitle({ title, isFullVersion, className } : SiteTitleProps) {
   return (
     <Link
       to="/"
-      style={{ textDecoration: 'none' }}
-      className="d-block"
+      className={classNames('d-block text-decoration-none', className)}
     >
       <div className="pgn-doc__header-title">
         <span
@@ -40,4 +41,9 @@ export default function SiteTitle({ title, isFullVersion } : SiteTitleProps) {
 SiteTitle.propTypes = {
   title: PropTypes.string.isRequired,
   isFullVersion: PropTypes.bool.isRequired,
+  className: PropTypes.string,
+};
+
+SiteTitle.defaultProps = {
+  className: undefined,
 };
