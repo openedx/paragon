@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPropane(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPropane(props) {
     </svg>
   );
 }
-
 export default SvgPropane;

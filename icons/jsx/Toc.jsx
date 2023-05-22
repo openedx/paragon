@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgToc(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgToc(props) {
     </svg>
   );
 }
-
 export default SvgToc;

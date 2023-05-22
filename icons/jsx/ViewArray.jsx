@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgViewArray(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgViewArray(props) {
     </svg>
   );
 }
-
 export default SvgViewArray;

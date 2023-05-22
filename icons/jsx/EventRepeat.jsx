@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEventRepeat(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEventRepeat(props) {
     </svg>
   );
 }
-
 export default SvgEventRepeat;

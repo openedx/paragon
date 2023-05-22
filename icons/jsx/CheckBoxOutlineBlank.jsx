@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCheckBoxOutlineBlank(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgCheckBoxOutlineBlank(props) {
     </svg>
   );
 }
-
 export default SvgCheckBoxOutlineBlank;

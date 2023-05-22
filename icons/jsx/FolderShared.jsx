@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFolderShared(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFolderShared(props) {
     </svg>
   );
 }
-
 export default SvgFolderShared;

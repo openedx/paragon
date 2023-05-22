@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFacebook(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFacebook(props) {
     </svg>
   );
 }
-
 export default SvgFacebook;

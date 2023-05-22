@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgViewColumn(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgViewColumn(props) {
     </svg>
   );
 }
-
 export default SvgViewColumn;

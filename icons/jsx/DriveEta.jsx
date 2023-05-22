@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDriveEta(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDriveEta(props) {
     </svg>
   );
 }
-
 export default SvgDriveEta;

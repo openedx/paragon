@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFileCopy(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFileCopy(props) {
     </svg>
   );
 }
-
 export default SvgFileCopy;

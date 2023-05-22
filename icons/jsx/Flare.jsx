@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFlare(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFlare(props) {
     </svg>
   );
 }
-
 export default SvgFlare;

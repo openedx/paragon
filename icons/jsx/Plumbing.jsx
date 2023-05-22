@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPlumbing(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgPlumbing(props) {
     </svg>
   );
 }
-
 export default SvgPlumbing;

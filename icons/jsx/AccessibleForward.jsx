@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAccessibleForward(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgAccessibleForward(props) {
     </svg>
   );
 }
-
 export default SvgAccessibleForward;

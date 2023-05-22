@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgQueue(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgQueue(props) {
     </svg>
   );
 }
-
 export default SvgQueue;

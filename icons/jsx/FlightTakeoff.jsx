@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFlightTakeoff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFlightTakeoff(props) {
     </svg>
   );
 }
-
 export default SvgFlightTakeoff;

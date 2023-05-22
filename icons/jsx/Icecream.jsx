@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgIcecream(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgIcecream(props) {
     </svg>
   );
 }
-
 export default SvgIcecream;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNearMe(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNearMe(props) {
     </svg>
   );
 }
-
 export default SvgNearMe;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWebhook(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWebhook(props) {
     </svg>
   );
 }
-
 export default SvgWebhook;

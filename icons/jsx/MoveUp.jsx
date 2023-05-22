@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMoveUp(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMoveUp(props) {
     </svg>
   );
 }
-
 export default SvgMoveUp;

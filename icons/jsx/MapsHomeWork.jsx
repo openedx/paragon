@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMapsHomeWork(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgMapsHomeWork(props) {
     </svg>
   );
 }
-
 export default SvgMapsHomeWork;

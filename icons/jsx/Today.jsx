@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgToday(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgToday(props) {
     </svg>
   );
 }
-
 export default SvgToday;

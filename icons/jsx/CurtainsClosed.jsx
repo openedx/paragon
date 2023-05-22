@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCurtainsClosed(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCurtainsClosed(props) {
     </svg>
   );
 }
-
 export default SvgCurtainsClosed;

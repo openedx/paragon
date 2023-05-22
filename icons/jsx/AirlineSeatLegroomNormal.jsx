@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAirlineSeatLegroomNormal(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAirlineSeatLegroomNormal(props) {
     </svg>
   );
 }
-
 export default SvgAirlineSeatLegroomNormal;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNoAdultContent(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgNoAdultContent(props) {
     </svg>
   );
 }
-
 export default SvgNoAdultContent;

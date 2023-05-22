@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPhonelinkRing(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPhonelinkRing(props) {
     </svg>
   );
 }
-
 export default SvgPhonelinkRing;

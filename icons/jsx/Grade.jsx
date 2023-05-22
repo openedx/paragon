@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGrade(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGrade(props) {
     </svg>
   );
 }
-
 export default SvgGrade;

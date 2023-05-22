@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgInstallMobile(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgInstallMobile(props) {
     </svg>
   );
 }
-
 export default SvgInstallMobile;

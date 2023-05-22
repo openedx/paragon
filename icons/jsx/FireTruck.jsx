@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFireTruck(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgFireTruck(props) {
     </svg>
   );
 }
-
 export default SvgFireTruck;

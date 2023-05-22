@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFormatItalic(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFormatItalic(props) {
     </svg>
   );
 }
-
 export default SvgFormatItalic;

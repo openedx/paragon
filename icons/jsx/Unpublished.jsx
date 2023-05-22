@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgUnpublished(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgUnpublished(props) {
     </svg>
   );
 }
-
 export default SvgUnpublished;

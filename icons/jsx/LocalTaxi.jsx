@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLocalTaxi(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLocalTaxi(props) {
     </svg>
   );
 }
-
 export default SvgLocalTaxi;

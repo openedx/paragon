@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgElectricMeter(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgElectricMeter(props) {
     </svg>
   );
 }
-
 export default SvgElectricMeter;

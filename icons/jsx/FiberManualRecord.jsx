@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFiberManualRecord(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgFiberManualRecord(props) {
     </svg>
   );
 }
-
 export default SvgFiberManualRecord;

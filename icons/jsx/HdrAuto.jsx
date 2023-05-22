@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHdrAuto(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgHdrAuto(props) {
     </svg>
   );
 }
-
 export default SvgHdrAuto;

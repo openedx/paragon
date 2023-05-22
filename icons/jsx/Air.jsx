@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAir(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAir(props) {
     </svg>
   );
 }
-
 export default SvgAir;

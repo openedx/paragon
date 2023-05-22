@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRiceBowl(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRiceBowl(props) {
     </svg>
   );
 }
-
 export default SvgRiceBowl;

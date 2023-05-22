@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNotificationAdd(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNotificationAdd(props) {
     </svg>
   );
 }
-
 export default SvgNotificationAdd;

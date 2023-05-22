@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDoubleArrow(props) {
   return (
     <svg
@@ -15,5 +14,4 @@ function SvgDoubleArrow(props) {
     </svg>
   );
 }
-
 export default SvgDoubleArrow;

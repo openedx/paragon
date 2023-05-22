@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPlayForWork(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPlayForWork(props) {
     </svg>
   );
 }
-
 export default SvgPlayForWork;

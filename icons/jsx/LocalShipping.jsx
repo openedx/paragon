@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLocalShipping(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLocalShipping(props) {
     </svg>
   );
 }
-
 export default SvgLocalShipping;

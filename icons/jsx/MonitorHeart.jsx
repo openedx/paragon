@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMonitorHeart(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgMonitorHeart(props) {
     </svg>
   );
 }
-
 export default SvgMonitorHeart;

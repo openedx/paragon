@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDataSaverOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDataSaverOff(props) {
     </svg>
   );
 }
-
 export default SvgDataSaverOff;

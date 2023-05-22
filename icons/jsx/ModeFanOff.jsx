@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgModeFanOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgModeFanOff(props) {
     </svg>
   );
 }
-
 export default SvgModeFanOff;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgChangeHistory(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgChangeHistory(props) {
     </svg>
   );
 }
-
 export default SvgChangeHistory;

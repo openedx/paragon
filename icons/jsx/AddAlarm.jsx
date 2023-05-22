@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAddAlarm(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAddAlarm(props) {
     </svg>
   );
 }
-
 export default SvgAddAlarm;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWifiFind(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgWifiFind(props) {
     </svg>
   );
 }
-
 export default SvgWifiFind;

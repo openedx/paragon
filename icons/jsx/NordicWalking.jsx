@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNordicWalking(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNordicWalking(props) {
     </svg>
   );
 }
-
 export default SvgNordicWalking;

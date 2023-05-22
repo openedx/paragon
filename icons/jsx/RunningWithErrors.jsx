@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRunningWithErrors(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRunningWithErrors(props) {
     </svg>
   );
 }
-
 export default SvgRunningWithErrors;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSlowMotionVideo(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSlowMotionVideo(props) {
     </svg>
   );
 }
-
 export default SvgSlowMotionVideo;

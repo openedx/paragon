@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSnooze(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSnooze(props) {
     </svg>
   );
 }
-
 export default SvgSnooze;
