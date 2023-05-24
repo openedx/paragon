@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form, Icon, Bubble } from '@edx/paragon'; // eslint-disable-line
 import { FavoriteBorder } from '@edx/paragon/icons'; // eslint-disable-line
 
-function MyComponent() {
+const MyComponent = () => {
   const [value, setValue] = useState('');
   const handleChange = (e) => setValue(e.target.value);
   // eslint-disable-next-line no-alert
@@ -29,6 +29,6 @@ function MyComponent() {
       </Form>
     </div>
   );
-}
+};
 
 export default MyComponent;
