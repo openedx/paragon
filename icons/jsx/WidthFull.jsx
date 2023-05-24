@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWidthFull(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWidthFull(props) {
     </svg>
   );
 }
-
 export default SvgWidthFull;

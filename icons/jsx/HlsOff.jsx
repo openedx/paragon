@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHlsOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHlsOff(props) {
     </svg>
   );
 }
-
 export default SvgHlsOff;

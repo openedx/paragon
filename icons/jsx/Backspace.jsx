@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBackspace(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBackspace(props) {
     </svg>
   );
 }
-
 export default SvgBackspace;

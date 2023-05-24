@@ -7,7 +7,7 @@ categories:
 - Buttonlike
 status: 'Stable'
 designStatus: 'Done'
-devStatus: 'TO DO'
+devStatus: 'Done'
 notes: |
   TODO: Remove subcomponent of deprecated implementation soon
 ---
@@ -15,70 +15,111 @@ notes: |
 This component utilizes `Button` from React-Bootstrap and extends it with an ability to add icons before and after button label, see [below](#with-icons-before-or-after) for usage example.<br/> <a href="https://react-bootstrap.github.io/components/buttons/" target="_blank" rel="noopener noreferrer"> See React-Bootstrap for additional documentation. </a>
 
 ## Core Buttons
+
 ```jsx live
-<>
-  <Button variant="brand" className="mb-2 mb-sm-0">Brand</Button>{' '}
-  <Button variant="outline-brand" className="mb-2 mb-sm-0">Outline Brand</Button>{' '}
-  <Button variant="primary" className="mb-2 mb-sm-0">Primary</Button>{' '}
-  <Button variant="outline-primary" className="mb-2 mb-sm-0">Outline Primary</Button>{' '}
-  <Button variant="tertiary" className="mb-2 mb-sm-0">Tertiary</Button>{' '}
-</>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.medium.maxWidth });
+
+  return (
+    <Stack gap={2} direction={ isExtraSmall ? "vertical" : "horizontal" }>
+      <Button variant="brand" className="mb-2 mb-sm-0">Brand</Button>
+      <Button variant="outline-brand" className="mb-2 mb-sm-0">Outline Brand</Button>
+      <Button variant="primary" className="mb-2 mb-sm-0">Primary</Button>
+      <Button variant="outline-primary" className="mb-2 mb-sm-0">Outline Primary</Button>
+      <Button variant="tertiary" className="mb-2 mb-sm-0">Tertiary</Button>
+    </Stack>
+)}
 ```
+
 ## Core Buttons (Inverse Pallete)
+
 ```jsx live
-<div className="bg-dark-700 p-4">
-  <Button variant="inverse-brand" className="mb-2 mb-sm-0">Brand</Button>{' '}
-  <Button variant="inverse-outline-brand" className="mb-2 mb-sm-0">Outline Brand</Button>{' '}
-  <Button variant="inverse-primary" className="mb-2 mb-sm-0">Primary</Button>{' '}
-  <Button variant="inverse-outline-primary" className="mb-2 mb-sm-0">Outline Primary</Button>{' '}
-  <Button variant="inverse-tertiary" className="mb-2 mb-sm-0">Tertiary</Button>{' '}
-</div>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.medium.maxWidth });
+
+  return (
+    <Stack
+      className="bg-dark-700 p-4"
+      gap={2}
+      direction={ isExtraSmall ? "vertical" : "horizontal" }
+    >
+      <Button variant="inverse-brand" className="mb-2 mb-sm-0">Brand</Button>
+      <Button variant="inverse-outline-brand" className="mb-2 mb-sm-0">Outline Brand</Button>
+      <Button variant="inverse-primary" className="mb-2 mb-sm-0">Primary</Button>
+      <Button variant="inverse-outline-primary" className="mb-2 mb-sm-0">Outline Primary</Button>
+      <Button variant="inverse-tertiary" className="mb-2 mb-sm-0">Tertiary</Button>
+    </Stack>
+)}
 ```
 
 ## Utility Buttons
+
 ```jsx live
-<>
-  <div className="mb-2">
-    <Button variant="success" className="mb-2 mb-sm-0">Success</Button>{' '}
-    <Button variant="danger" className="mb-2 mb-sm-0">Danger</Button>{' '}
-    <Button variant="outline-success" className="mb-2 mb-sm-0">Success</Button>{' '}
-    <Button variant="outline-danger" className="mb-2 mb-sm-0">Danger</Button>{' '}
-  </div>
-  <div className="mb-2">
-    <Button variant="link" className="mb-2 mb-sm-0">Link</Button>{' '}
-    <Button variant="light" className="mb-2 mb-sm-0">Light</Button>{' '} 
-    <Button variant="dark" className="mb-2 mb-sm-0">Dark</Button>{' '}
-    <Button variant="outline-light" className="mb-2 mb-sm-0">Light</Button>{' '}
-    <Button variant="outline-dark" className="mb-2 mb-sm-0">Dark</Button>
-  </div>
-</>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <>
+      <Stack
+        className="mb-2"
+        gap={2}
+        direction={ isExtraSmall ? "vertical" : "horizontal" }
+      >
+        <Button variant="success" className="mb-2 mb-sm-0">Success</Button>
+        <Button variant="danger" className="mb-2 mb-sm-0">Danger</Button>
+        <Button variant="outline-success" className="mb-2 mb-sm-0">Success</Button>
+        <Button variant="outline-danger" className="mb-2 mb-sm-0">Danger</Button>
+      </Stack>
+      <Stack
+        gap={2}
+        direction={ isExtraSmall ? "vertical" : "horizontal" }
+      >
+        <Button variant="link" className="mb-2 mb-sm-0">Link</Button>
+        <Button variant="light" className="mb-2 mb-sm-0">Light</Button>
+        <Button variant="dark" className="mb-2 mb-sm-0">Dark</Button>
+        <Button variant="outline-light" className="mb-2 mb-sm-0">Light</Button>
+        <Button variant="outline-dark" className="mb-2 mb-sm-0">Dark</Button>
+      </Stack>
+    </>
+)}
 ```
 
 ## Size
 
 ```jsx live
-<>
-  <div className="mb-2">
-    <Button variant="primary" size="lg" className="mb-2 mb-sm-0">
-      Large button
-    </Button>{' '}
-    <Button variant="outline-primary" size="lg" className="mb-2 mb-sm-0">
-      Large button
-    </Button>
-  </div>
-  <div className="mb-2">
-    <Button variant="primary" size="sm" className="mb-2 mb-sm-0">
-      Small button
-    </Button>{' '}
-    <Button variant="outline-primary" size="sm" className="mb-2 mb-sm-0">
-      Small button
-    </Button>
-  </div>
-  <div className="mb-2">
-    <Button variant="link" size="inline" className="mb-2 mb-sm-0">Inline button</Button>
-    <Button variant="link" size="inline" className="mb-2 mb-sm-0">Inline button</Button>
-  </div>
-</>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <>
+        <Stack
+          className="mb-2"
+          gap={2}
+          direction={ isExtraSmall ? "vertical" : "horizontal" }
+        >
+          <Button variant="primary" size="lg" className="mb-2 mb-sm-0">
+            Large button
+          </Button>
+          <Button variant="outline-primary" size="lg" className="mb-2 mb-sm-0">
+            Large button
+          </Button>
+        </Stack>
+        <Stack
+          className="mb-2"
+          gap={2}
+          direction={ isExtraSmall ? "vertical" : "horizontal" }
+        >
+          <Button variant="primary" size="sm" className="mb-2 mb-sm-0">
+            Small button
+          </Button>
+          <Button variant="outline-primary" size="sm" className="mb-2 mb-sm-0">
+            Small button
+          </Button>
+        </Stack>
+        <Button variant="link" size="inline" className="mb-2 mb-sm-0">Inline button</Button>
+        <Button variant="link" size="inline" className="mb-2 mb-sm-0">Inline button</Button>
+    </>
+)}
 ```
 
 ### When to use the inline size
@@ -118,6 +159,7 @@ Use inline size buttons for when a button sits with a line of text.
 </>
 ```
 
+### With empty href
 For link to be `disabled`, it must have href defined with some value.
 
 ```jsx live
@@ -128,27 +170,38 @@ For link to be `disabled`, it must have href defined with some value.
 ```
 
 ### With Icons before or after
+
 ```jsx live
-<>
-  <Button variant="brand" iconBefore={ArrowBack} className="mb-2 mb-sm-0">
-    Brand
-  </Button>{' '}
-  <Button variant="outline-brand" iconAfter={ArrowDropDown} className="mb-2 mb-sm-0">
-    Outline Brand
-  </Button>{' '}
-  <Button variant="primary" iconBefore={Remove} iconAfter={Add} className="mb-2 mb-sm-0">
-    Primary
-  </Button>{' '}
-  <Button variant="outline-primary" iconBefore={Highlight} className="mb-2 mb-sm-0">
-    Outline Primary
-  </Button>{' '}
-  <Button variant="tertiary" iconAfter={Add} className="mb-2 mb-sm-0">
-    Tertiary
-  </Button>{' '}
-</>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
+
+  return (
+    <Stack
+      className="mb-2"
+      gap={2}
+      direction={ isExtraSmall ? "vertical" : "horizontal" }
+    >
+      <Button variant="brand" iconBefore={ArrowBack} className="mb-2 mb-sm-0">
+        Brand
+      </Button>
+      <Button variant="outline-brand" iconAfter={ArrowDropDown} className="mb-2 mb-sm-0">
+        Outline Brand
+      </Button>
+      <Button variant="primary" iconBefore={Remove} iconAfter={Add} className="mb-2 mb-sm-0">
+        Primary
+      </Button>
+      <Button variant="outline-primary" iconBefore={Highlight} className="mb-2 mb-sm-0">
+        Outline Primary
+      </Button>
+      <Button variant="tertiary" iconAfter={Add} className="mb-2 mb-sm-0">
+        Tertiary
+      </Button>
+    </Stack>
+)}
 ```
 
 ### With a Spinner
+
 ```jsx live
 <>
   <Button variant="primary" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
@@ -174,15 +227,15 @@ For link to be `disabled`, it must have href defined with some value.
 
 ***
 
-## Button/Deprecated
+## Button.Deprecated
 
-### Basic Usage
+### (Deprecated) basic usage
 
 ```jsx live
 <Button.Deprecated className="btn-primary">Hello World!</Button.Deprecated>
 ```
 
-### Color Variants
+### (Deprecated) color variants
 
 ```jsx live
 <div>
@@ -194,7 +247,7 @@ For link to be `disabled`, it must have href defined with some value.
 </div>
 ```
 
-### Outline Variants
+### (Deprecated) outline variants
 
 ```jsx live
 <div>
@@ -204,7 +257,7 @@ For link to be `disabled`, it must have href defined with some value.
 </div>
 ```
 
-### Inverse Variants
+### (Deprecated) inverse variants
 
 ```jsx live
 <div className="bg-gray-700 p-3">
@@ -214,7 +267,7 @@ For link to be `disabled`, it must have href defined with some value.
 </div>
 ```
 
-### Link Variant
+### (Deprecated) link variant
 
 ```jsx live
 <div className="bg-gray-200 p-3">

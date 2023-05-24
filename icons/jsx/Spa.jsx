@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSpa(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSpa(props) {
     </svg>
   );
 }
-
 export default SvgSpa;

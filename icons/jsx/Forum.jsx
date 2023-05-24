@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgForum(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgForum(props) {
     </svg>
   );
 }
-
 export default SvgForum;

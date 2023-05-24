@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgModelTraining(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgModelTraining(props) {
     </svg>
   );
 }
-
 export default SvgModelTraining;

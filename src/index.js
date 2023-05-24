@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 export { default as asInput } from './asInput';
 export { default as ActionRow } from './ActionRow';
 export { default as Alert, ALERT_CLOSE_LABEL_TEXT } from './Alert';
@@ -203,3 +202,4 @@ export { default as Dropzone } from './Dropzone';
 
 export { default as messages } from './i18n';
 export { default as Truncate } from './Truncate';
+export { default as ColorPicker } from './ColorPicker';

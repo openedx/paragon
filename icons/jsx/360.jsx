@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function Svg360(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function Svg360(props) {
     </svg>
   );
 }
-
 export default Svg360;

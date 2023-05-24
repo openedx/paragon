@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgApple(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgApple(props) {
     </svg>
   );
 }
-
 export default SvgApple;

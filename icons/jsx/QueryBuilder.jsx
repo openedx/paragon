@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgQueryBuilder(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgQueryBuilder(props) {
     </svg>
   );
 }
-
 export default SvgQueryBuilder;

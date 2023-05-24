@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLocalPostOffice(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLocalPostOffice(props) {
     </svg>
   );
 }
-
 export default SvgLocalPostOffice;

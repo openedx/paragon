@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCable(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCable(props) {
     </svg>
   );
 }
-
 export default SvgCable;

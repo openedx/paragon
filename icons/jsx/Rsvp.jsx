@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRsvp(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRsvp(props) {
     </svg>
   );
 }
-
 export default SvgRsvp;

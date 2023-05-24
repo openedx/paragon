@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSwapHoriz(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSwapHoriz(props) {
     </svg>
   );
 }
-
 export default SvgSwapHoriz;

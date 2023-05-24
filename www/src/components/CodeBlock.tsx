@@ -20,40 +20,89 @@ import {
 import { FormattedMessage, useIntl } from 'react-intl';
 import * as ParagonReact from '~paragon-react';
 import * as ParagonIcons from '~paragon-icons';
+import { ContentCopy } from '~paragon-icons';
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
 import ExamplePropsForm from './exampleComponents/ExamplePropsForm';
 
-const { Button, Collapsible } = ParagonReact;
+const {
+  Collapsible, Toast, IconButton, Icon,
+} = ParagonReact;
 
 export type CollapsibleLiveEditorTypes = {
-  children: React.ReactNode,
+  children: React.ReactNode;
+  clickToCopy: (arg: string) => void;
+  handleCodeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
-function CollapsibleLiveEditor({ children }: CollapsibleLiveEditorTypes) {
+function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: CollapsibleLiveEditorTypes) {
   const [collapseIsOpen, setCollapseIsOpen] = useState(false);
+
+  const getCodeBlockHeading = (element: HTMLElement): HTMLHeadElement | null => {
+    const codeBlockWrapper = element.closest<HTMLDivElement>('.pgn-doc__code-block');
+
+    if (!codeBlockWrapper) {
+      return null;
+    }
+
+    let node = codeBlockWrapper!.parentNode!.previousSibling as HTMLElement;
+
+    while (node.className !== 'pgn-doc__heading') {
+      node = node.previousSibling as HTMLElement;
+
+      if (!node) {
+        return null;
+      }
+    }
+
+    return node;
+  };
+
+  const submitSegmentEvent = (e: React.MouseEvent & { target: HTMLElement }) => {
+    const componentNameAndCategory = window.location.pathname.replace(/\//g, '.')
+      .replace(/.components./gi, '');
+    const headingElement = getCodeBlockHeading(e.target);
+
+    if (!headingElement) {
+      global.analytics.track(`openedx.paragon.docs.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
+        value: `${componentNameAndCategory}id-not-generated`,
+      });
+
+      return;
+    }
+
+    global.analytics.track(`openedx.paragon.docs.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
+      value: `${componentNameAndCategory}${headingElement.id}`,
+    });
+  };
+
   return (
     <div className="pgn-doc__collapsible-live-editor">
-      <Collapsible.Advanced
+      <Collapsible
         unmountOnExit={false}
+        styling="card-lg"
         open={collapseIsOpen}
         onToggle={(isOpen: boolean) => setCollapseIsOpen(isOpen)}
+        onChange={handleCodeChange}
+        onClick={submitSegmentEvent}
+        title={<strong>{collapseIsOpen ? 'Hide' : 'Show'} editable code example</strong>}
       >
-        <Collapsible.Trigger tag={Button} variant="link">
-          <Collapsible.Visible whenClosed>Show code example</Collapsible.Visible>
-          <Collapsible.Visible whenOpen>Hide code example</Collapsible.Visible>
-        </Collapsible.Trigger>
-        <Collapsible.Body className="mt-2">
+        <p className="small text-gray mb-2">Any Paragon component or export may be added to the code example.</p>
+        <div className="pgn-doc__collapsible-code-wrapper">
           {children}
-        </Collapsible.Body>
-      </Collapsible.Advanced>
+          <IconButton
+            className="pgn-doc__collapsible-live-editor-copy-btn"
+            src={ContentCopy}
+            iconAs={Icon}
+            alt="Copy code example"
+            onClick={clickToCopy}
+            invertColors
+          />
+        </div>
+      </Collapsible>
     </div>
   );
 }
-
-CollapsibleLiveEditor.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export interface ICodeBlock {
   children: string,
@@ -68,12 +117,21 @@ function CodeBlock({
 }: ICodeBlock) {
   const intl = useIntl();
   const language: any = className ? className.replace(/language-/, '') : 'jsx';
+  const [showToast, setShowToast] = useState(false);
+  const [codeExample, setCodeExample] = useState(children);
+
+  const handleCodeChange = (e) => setCodeExample(e.target.value);
+
+  const handleCopyCodeExample = () => {
+    navigator.clipboard.writeText(codeExample);
+    setShowToast(true);
+  };
 
   if (live) {
     return (
       <div className="pgn-doc__code-block">
         <LiveProvider
-          code={children}
+          code={codeExample}
           scope={{
             ...ParagonIcons,
             ...ParagonReact,
@@ -89,7 +147,6 @@ function CodeBlock({
             HipsterIpsum,
             FormattedMessage,
             formatMessage: intl.formatMessage,
-            MenuIcon: ParagonIcons.Menu,
             axios,
             GatsbyLink: Link,
             classNames,
@@ -98,11 +155,18 @@ function CodeBlock({
           theme={theme}
         >
           <LivePreview className="pgn-doc__code-block-preview" />
-          <CollapsibleLiveEditor>
+          <CollapsibleLiveEditor handleCodeChange={handleCodeChange} clickToCopy={handleCopyCodeExample}>
             <LiveEditor className="pgn-doc__code-block-editor" />
           </CollapsibleLiveEditor>
           <LiveError className="pgn-doc__code-block-error" />
         </LiveProvider>
+        <Toast
+          onClose={() => setShowToast(false)}
+          show={showToast}
+          delay={2000}
+        >
+          Code example copied to clipboard!
+        </Toast>
       </div>
     );
   }

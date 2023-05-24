@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
@@ -23,48 +23,66 @@ const CardImageCap = React.forwardRef(({
   className,
 }, ref) => {
   const { orientation, isLoading } = useContext(CardContext);
+  const [showImageCap, setShowImageCap] = useState(false);
+  const [showLogoCap, setShowLogoCap] = useState(false);
+
   const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
 
   if (isLoading) {
     return (
-      <div className={classNames(className, wrapperClassName)} data-testid="image-loader-wrapper">
+      <div
+        className={classNames(wrapperClassName, className)}
+        data-testid="image-loader-wrapper"
+      >
         <Skeleton
           containerClassName="pgn__card-image-cap-loader"
-          height={skeletonHeight}
+          height={orientation === 'horizontal' ? '100%' : skeletonHeight}
           width={skeletonWidth}
         />
-        {logoSkeleton
-          && (
+        {logoSkeleton && (
           <Skeleton
             containerClassName="pgn__card-logo-cap"
             height={logoSkeletonHeight}
             width={logoSkeletonWidth}
           />
-          )}
+        )}
       </div>
     );
   }
 
-  const handleSrcFallback = (event, altSrc) => {
+  const handleSrcFallback = (event, altSrc, imageKey) => {
     const { currentTarget } = event;
-    if (currentTarget.src !== altSrc) {
-      currentTarget.src = altSrc;
+
+    if (!altSrc || currentTarget.src.endsWith(altSrc)) {
+      if (imageKey === 'imageCap') {
+        currentTarget.src = cardSrcFallbackImg;
+      } else {
+        setShowLogoCap(false);
+      }
+
+      return;
     }
+
+    currentTarget.src = altSrc;
   };
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      <img
-        className="pgn__card-image-cap"
-        src={src}
-        onError={(event) => handleSrcFallback(event, fallbackSrc)}
-        alt={srcAlt}
-      />
+      {!!src && (
+        <img
+          className={classNames('pgn__card-image-cap', { show: showImageCap })}
+          src={src}
+          onError={(event) => handleSrcFallback(event, fallbackSrc, 'imageCap')}
+          onLoad={() => setShowImageCap(true)}
+          alt={srcAlt}
+        />
+      )}
       {!!logoSrc && (
         <img
-          className="pgn__card-logo-cap"
+          className={classNames('pgn__card-logo-cap', { show: showLogoCap })}
           src={logoSrc}
-          onError={(event) => handleSrcFallback(event, fallbackLogoSrc)}
+          onError={(event) => handleSrcFallback(event, fallbackLogoSrc, 'logoCap')}
+          onLoad={() => setShowLogoCap(true)}
           alt={logoAlt}
         />
       )}

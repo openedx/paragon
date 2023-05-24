@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLocalPharmacy(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLocalPharmacy(props) {
     </svg>
   );
 }
-
 export default SvgLocalPharmacy;

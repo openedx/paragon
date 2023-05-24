@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCampaign(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCampaign(props) {
     </svg>
   );
 }
-
 export default SvgCampaign;

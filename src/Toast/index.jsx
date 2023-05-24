@@ -7,7 +7,9 @@ import { useIntl } from 'react-intl';
 
 import { Close } from '../../icons';
 import ToastContainer from './ToastContainer';
-import { Button, IconButton, Icon } from '..';
+import Button from '../Button';
+import Icon from '../Icon';
+import IconButton from '../IconButton';
 
 export const TOAST_CLOSE_LABEL_TEXT = 'Close';
 export const TOAST_DELAY = 5000;

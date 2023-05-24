@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStopScreenShare(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgStopScreenShare(props) {
     </svg>
   );
 }
-
 export default SvgStopScreenShare;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgIceSkating(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgIceSkating(props) {
     </svg>
   );
 }
-
 export default SvgIceSkating;

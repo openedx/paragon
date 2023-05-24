@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFactCheck(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgFactCheck(props) {
     </svg>
   );
 }
-
 export default SvgFactCheck;

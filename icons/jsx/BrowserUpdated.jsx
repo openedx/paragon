@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBrowserUpdated(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBrowserUpdated(props) {
     </svg>
   );
 }
-
 export default SvgBrowserUpdated;

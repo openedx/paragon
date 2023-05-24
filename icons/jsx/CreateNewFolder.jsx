@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCreateNewFolder(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCreateNewFolder(props) {
     </svg>
   );
 }
-
 export default SvgCreateNewFolder;

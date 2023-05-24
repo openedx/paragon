@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDomainVerification(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgDomainVerification(props) {
     </svg>
   );
 }
-
 export default SvgDomainVerification;

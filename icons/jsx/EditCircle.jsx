@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEditCircle(props) {
   return (
     <svg
@@ -15,5 +14,4 @@ function SvgEditCircle(props) {
     </svg>
   );
 }
-
 export default SvgEditCircle;

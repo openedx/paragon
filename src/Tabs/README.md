@@ -23,7 +23,11 @@ notes: |
 ## Uncontrolled usage
 
 ```jsx live
-<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+<Tabs
+  variant="tabs"
+  defaultActiveKey="profile"
+  id="uncontrolled-tab-example"
+>
   <Tab eventKey="home" title="Home">
     Hello I am the first panel.
   </Tab>
@@ -102,6 +106,50 @@ notes: |
 </Tabs>
 ```
 
+## Inverse-Pills usage
+
+```jsx live
+<Stack className="bg-dark-700 p-4">
+  <Tabs
+    variant="inverse-pills"
+    defaultActiveKey="profile"
+    id="uncontrolled-pills-tab-example"
+  >
+    <Tab eventKey="home" title="Home">
+      Hello I am the first panel.
+    </Tab>
+    <Tab eventKey="profile" title="Profile">
+      Hello I am the second panel.
+    </Tab>
+    <Tab eventKey="contact" title="Contact" disabled>
+      Hello I am third first panel.
+    </Tab>
+  </Tabs>
+</Stack>
+```
+
+## Inverse Tabs usage
+
+```jsx live
+<Stack className="bg-dark-700 p-4">
+  <Tabs
+    variant="inverse-tabs"
+    defaultActiveKey="profile"
+    id="uncontrolled-pills-tab-example"
+  >
+    <Tab eventKey="home" title="Home">
+      Hello I am the first panel.
+    </Tab>
+    <Tab eventKey="profile" title="Profile">
+      Hello I am the second panel.
+    </Tab>
+    <Tab eventKey="contact" title="Contact" disabled>
+      Hello I am third first panel.
+    </Tab>
+  </Tabs>
+</Stack>
+```
+
 ## With notification
 
 ```jsx live
@@ -140,7 +188,11 @@ notes: |
 ### Responsive support
 
 ```jsx live
-<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+<Tabs
+  variant="tabs"
+  defaultActiveKey="profile"
+  id="uncontrolled-tab-example"
+>
   <Tab eventKey="home" title="Home">
     Hello I am the first panel.
   </Tab>
@@ -180,7 +232,7 @@ notes: |
 
 <br/>
 
-### Basic usage
+### (Deprecated) basic usage
 
 ```jsx live
 <Tabs.Deprecated

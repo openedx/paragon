@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgImageSearch(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgImageSearch(props) {
     </svg>
   );
 }
-
 export default SvgImageSearch;

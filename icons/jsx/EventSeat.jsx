@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEventSeat(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEventSeat(props) {
     </svg>
   );
 }
-
 export default SvgEventSeat;

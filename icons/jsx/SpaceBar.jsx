@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSpaceBar(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgSpaceBar(props) {
     </svg>
   );
 }
-
 export default SvgSpaceBar;

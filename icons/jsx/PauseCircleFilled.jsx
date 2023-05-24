@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPauseCircleFilled(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPauseCircleFilled(props) {
     </svg>
   );
 }
-
 export default SvgPauseCircleFilled;

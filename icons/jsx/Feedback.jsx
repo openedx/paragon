@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFeedback(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFeedback(props) {
     </svg>
   );
 }
-
 export default SvgFeedback;

@@ -7,11 +7,13 @@ components:
 - DropdownMenu
 - DropdownButton
 - DropdownToggle
+- DropdownHeader
+- DropdownDivider
 categories:
 - Navigation
 status: 'Stable'
 designStatus: 'Done'
-devStatus: 'TO DO'
+devStatus: 'Done'
 notes: |
   TODO: Remove subcomponent of deprecated implementation soon
 ---
@@ -138,7 +140,7 @@ You can use `Dropdown.Toggle` with [IconButton](/components/iconbutton) componen
 </Dropdown.Deprecated>
 ```
 
-### with icon element
+### (Deprecated) with icon element
 
 ```jsx live
 <Dropdown.Deprecated>

@@ -5,7 +5,11 @@ import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { KeyboardArrowUp, KeyboardArrowDown } from '../../icons';
 import Icon from '../Icon';
-import { Form, IconButton, Spinner } from '../index';
+import FormGroup from './FormGroup';
+import FormControl from './FormControl';
+import FormControlFeedback from './FormControlFeedback';
+import IconButton from '../IconButton';
+import Spinner from '../Spinner';
 import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
 import messages from './messages';
 
@@ -29,48 +33,42 @@ function FormAutosuggest({
   });
   const [isMenuClosed, setIsMenuClosed] = useState(true);
   const [state, setState] = useState({
-    displayValue: '',
+    displayValue: value || '',
     errorMessage: '',
     dropDownItems: [],
   });
 
-  const setValue = (itemValue, optValue) => {
-    if (value === itemValue) { return; }
+  const handleItemClick = (e, onClick) => {
+    const clickedValue = e.currentTarget.value;
 
-    if (onSelected) { onSelected(itemValue); }
-
-    if (optValue !== state.displayValue) {
-      setState(prevState => ({
-        ...prevState,
-        displayValue: optValue,
-      }));
+    if (onSelected && clickedValue !== value) {
+      onSelected(clickedValue);
     }
-  };
-
-  const handleItemClick = (e, optValue) => {
-    setValue(e.target.value, optValue);
 
     setState(prevState => ({
       ...prevState,
-      dropDownItems: '',
+      dropDownItems: [],
+      displayValue: clickedValue,
     }));
 
     setIsMenuClosed(true);
+
+    if (onClick) {
+      onClick(e);
+    }
   };
 
   function getItems(strToFind = '') {
     let childrenOpt = React.Children.map(children, (child) => {
       // eslint-disable-next-line no-shadow
-      const { children, ...rest } = child.props;
+      const { children, onClick, ...rest } = child.props;
 
-      const modifiedOpt = React.cloneElement(child, {
+      return React.cloneElement(child, {
         ...rest,
         children,
         value: children,
-        onClick: (e) => handleItemClick(e, children),
+        onClick: (e) => handleItemClick(e, onClick),
       });
-
-      return modifiedOpt;
     });
 
     if (strToFind.length > 0) {
@@ -117,7 +115,7 @@ function FormAutosuggest({
     if (parentRef.current && !parentRef.current.contains(e.target) && state.dropDownItems.length > 0) {
       setState(prevState => ({
         ...prevState,
-        dropDownItems: '',
+        dropDownItems: [],
         errorMessage: !state.displayValue ? errorMessageText : '',
       }));
 
@@ -131,7 +129,7 @@ function FormAutosuggest({
 
       setState(prevState => ({
         ...prevState,
-        dropDownItems: '',
+        dropDownItems: [],
         errorMessage: !state.displayValue ? errorMessageText : '',
       }));
 
@@ -149,6 +147,15 @@ function FormAutosuggest({
     };
   });
 
+  useEffect(() => {
+    if (value || value === '') {
+      setState(prevState => ({
+        ...prevState,
+        displayValue: value,
+      }));
+    }
+  }, [value]);
+
   const setDisplayValue = (itemValue) => {
     const optValue = [];
 
@@ -159,19 +166,10 @@ function FormAutosuggest({
     const normalized = itemValue.toLowerCase();
     const opt = optValue.find((o) => o.toLowerCase() === normalized);
 
-    if (opt) {
-      setValue(opt);
-      setState(prevState => ({
-        ...prevState,
-        displayValue: opt,
-      }));
-    } else {
-      setValue(null);
-      setState(prevState => ({
-        ...prevState,
-        displayValue: itemValue,
-      }));
-    }
+    setState(prevState => ({
+      ...prevState,
+      displayValue: opt || itemValue,
+    }));
   };
 
   const handleClick = (e) => {
@@ -205,7 +203,7 @@ function FormAutosuggest({
     } else {
       setState(prevState => ({
         ...prevState,
-        dropDownItems: '',
+        dropDownItems: [],
         errorMessageText,
       }));
 
@@ -217,8 +215,8 @@ function FormAutosuggest({
 
   return (
     <div className="pgn__form-autosuggest__wrapper" ref={parentRef}>
-      <Form.Group isInvalid={!!state.errorMessage}>
-        <Form.Control
+      <FormGroup isInvalid={!!state.errorMessage}>
+        <FormControl
           aria-expanded={(state.dropDownItems.length > 0).toString()}
           aria-owns="pgn__form-autosuggest__dropdown-box"
           value={state.displayValue}
@@ -230,17 +228,17 @@ function FormAutosuggest({
         />
 
         {helpMessage && !state.errorMessage && (
-          <Form.Control.Feedback type="default">
+          <FormControlFeedback type="default">
             {helpMessage}
-          </Form.Control.Feedback>
+          </FormControlFeedback>
         )}
 
         {state.errorMessage && (
-          <Form.Control.Feedback type="invalid" feedback-for={props.name}>
+          <FormControlFeedback type="invalid" feedback-for={props.name}>
             {errorMessageText}
-          </Form.Control.Feedback>
+          </FormControlFeedback>
         )}
-      </Form.Group>
+      </FormGroup>
 
       <div
         id="pgn__form-autosuggest__dropdown-box"

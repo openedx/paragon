@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMovieFilter(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMovieFilter(props) {
     </svg>
   );
 }
-
 export default SvgMovieFilter;

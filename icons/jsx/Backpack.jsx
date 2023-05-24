@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBackpack(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBackpack(props) {
     </svg>
   );
 }
-
 export default SvgBackpack;

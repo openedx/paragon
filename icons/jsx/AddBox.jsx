@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAddBox(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAddBox(props) {
     </svg>
   );
 }
-
 export default SvgAddBox;

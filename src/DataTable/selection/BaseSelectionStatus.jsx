@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { Button } from '../..';
+import Button from '../../Button';
 import DataTableContext from '../DataTableContext';
 import {
   SELECT_ALL_TEST_ID,
@@ -20,9 +20,13 @@ function BaseSelectionStatus({
   allSelectedText,
   selectedText,
 }) {
-  const { itemCount, isPaginated, state } = useContext(DataTableContext);
+  const {
+    itemCount, filteredRows, isPaginated, state,
+  } = useContext(DataTableContext);
   const hasAppliedFilters = state?.filters?.length > 0;
   const isAllRowsSelected = numSelectedRows === itemCount;
+  const filteredItems = filteredRows?.length || itemCount;
+
   const intlAllSelectedText = allSelectedText || (
     <FormattedMessage
       id="pgn.DataTable.BaseSelectionStatus.allSelectedText"
@@ -65,7 +69,7 @@ function BaseSelectionStatus({
               id="pgn.DataTable.BaseSelectionStatus.selectAllText"
               defaultMessage="Select all {itemCount}"
               description="A label for select all button."
-              values={{ itemCount }}
+              values={{ itemCount: filteredItems }}
             />
           )}
         </Button>

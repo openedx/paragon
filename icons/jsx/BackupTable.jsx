@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBackupTable(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgBackupTable(props) {
     </svg>
   );
 }
-
 export default SvgBackupTable;

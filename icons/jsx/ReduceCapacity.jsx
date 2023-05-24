@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgReduceCapacity(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgReduceCapacity(props) {
     </svg>
   );
 }
-
 export default SvgReduceCapacity;

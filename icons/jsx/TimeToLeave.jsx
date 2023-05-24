@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTimeToLeave(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTimeToLeave(props) {
     </svg>
   );
 }
-
 export default SvgTimeToLeave;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgScreenshot(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgScreenshot(props) {
     </svg>
   );
 }
-
 export default SvgScreenshot;

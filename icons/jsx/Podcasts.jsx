@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPodcasts(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPodcasts(props) {
     </svg>
   );
 }
-
 export default SvgPodcasts;

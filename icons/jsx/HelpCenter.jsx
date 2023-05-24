@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHelpCenter(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHelpCenter(props) {
     </svg>
   );
 }
-
 export default SvgHelpCenter;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAirplay(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAirplay(props) {
     </svg>
   );
 }
-
 export default SvgAirplay;

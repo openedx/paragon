@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDriveFileRenameOutline(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDriveFileRenameOutline(props) {
     </svg>
   );
 }
-
 export default SvgDriveFileRenameOutline;

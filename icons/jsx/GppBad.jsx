@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGppBad(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGppBad(props) {
     </svg>
   );
 }
-
 export default SvgGppBad;

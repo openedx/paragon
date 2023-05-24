@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCloudOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCloudOff(props) {
     </svg>
   );
 }
-
 export default SvgCloudOff;

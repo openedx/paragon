@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPreview(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPreview(props) {
     </svg>
   );
 }
-
 export default SvgPreview;
