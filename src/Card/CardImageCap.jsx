@@ -119,7 +119,7 @@ CardImageCap.propTypes = {
   /** Specifies width of Logo skeleton in loading state. */
   logoSkeletonWidth: PropTypes.number,
   /** Specifies loading type for images */
-  imageLoadingType: PropTypes.oneOf(['eager','lazy']),
+  imageLoadingType: PropTypes.oneOf(['eager', 'lazy']),
 };
 
 CardImageCap.defaultProps = {
@@ -135,7 +135,7 @@ CardImageCap.defaultProps = {
   logoSkeletonHeight: LOGO_SKELETON_HEIGHT_VALUE,
   skeletonWidth: undefined,
   logoSkeletonWidth: undefined,
-  imageLoadingType: 'eager',
+  imageLoadingType: undefined,
 };
 
 export default CardImageCap;

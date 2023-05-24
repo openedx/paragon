@@ -41,7 +41,7 @@ describe('<CardImageCap />', () => {
 
   it('renders with loading equals lazy', () => {
     const tree = renderer.create((
-      <CardImageCapWrapper src="http://fake.image" logoSrc="http://fake.image" logoAlt="Logo alt" imageLoadingType="lazy"/>
+      <CardImageCapWrapper src="http://fake.image" logoSrc="http://fake.image" logoAlt="Logo alt" imageLoadingType="lazy" />
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
