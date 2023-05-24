@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node copy-mui-icons.js && svgr svg --out-dir jsx && babel jsx -d es5",
+    "build": "node copy-mui-icons.js && node copy-brand-icons.js && svgr svg --out-dir jsx && babel jsx -d es5",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
