@@ -19,6 +19,7 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
         >
           <img
             className="pgn__card-image-cap"
+            loading="eager"
             onError={[Function]}
             onLoad={[Function]}
             src="http://fake.image"
@@ -74,6 +75,7 @@ exports[`<CardGrid /> Controlled Rendering renders with disabled equal height 1`
         >
           <img
             className="pgn__card-image-cap"
+            loading="eager"
             onError={[Function]}
             onLoad={[Function]}
             src="http://fake.image"
@@ -129,6 +131,7 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
         >
           <img
             className="pgn__card-image-cap"
+            loading="eager"
             onError={[Function]}
             onLoad={[Function]}
             src="http://fake.image"
