@@ -13,6 +13,7 @@ import CardStatus from './CardStatus';
 import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 export const CARD_VARIANTS = ['light', 'dark', 'muted'];
+export const COLOR_VARIANTS = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light'];
 
 const Card = React.forwardRef(({
   orientation,
@@ -53,7 +54,14 @@ export { default as CardGroup } from 'react-bootstrap/CardGroup';
 export { default as CardGrid } from './CardGrid';
 
 Card.propTypes = {
-  ...BaseCard.propTypes,
+  /** Specifies a background-color that is displayed on the Card. */
+  bg: PropTypes.oneOf(COLOR_VARIANTS),
+  /** Specifies a text that is displayed on the Card. */
+  text: PropTypes.oneOf([...COLOR_VARIANTS, 'white', 'muted']),
+  /** Specifies a border-color that is displayed on the Card. */
+  border: PropTypes.oneOf(COLOR_VARIANTS),
+  /** The text displayed in the body of the Card */
+  body: PropTypes.bool,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies which orientation to use. */

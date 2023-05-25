@@ -22,9 +22,13 @@ function FormControlSet({
 }
 
 FormControlSet.propTypes = {
+  /** Specifies the base element */
   as: PropTypes.elementType,
+  /** A class name to append to the base element. */
   className: PropTypes.string,
+  /** Specifies whether the component should be displayed with inline styling. */
   isInline: PropTypes.bool,
+  /** Specifies contents of the component. */
   children: PropTypes.node,
 };
 

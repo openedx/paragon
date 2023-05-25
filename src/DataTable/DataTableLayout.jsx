@@ -26,15 +26,18 @@ function DataTableLayout({
   );
 }
 
+DataTableLayout.propTypes = {
+  /** A class name to append to the base element. */
+  className: PropTypes.string,
+  /** Specifies contents of the component. */
+  children: PropTypes.node.isRequired,
+  /** Specifies title of the component. */
+  filtersTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+};
+
 DataTableLayout.defaultProps = {
   className: null,
   filtersTitle: undefined,
-};
-
-DataTableLayout.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  filtersTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 export default DataTableLayout;

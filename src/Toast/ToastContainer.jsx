@@ -33,6 +33,7 @@ class ToastContainer extends React.Component {
 }
 
 ToastContainer.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
 };
 

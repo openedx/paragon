@@ -110,6 +110,16 @@ export const buttonPropTypes = {
   onKeyDown: PropTypes.func,
   /** Used to set the `type` attribute on the `button` tag.  The default type is `button`. */
   type: PropTypes.string,
+  /** Specifies variant to use. */
+  variant: PropTypes.oneOf([
+    'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light', 'link', 'outline-primary',
+    'outline-secondary', 'outline-success', 'outline-danger', 'outline-warning', 'outline-info', 'outline-dark', 'outline-light']),
+  /** An icon component to render.
+  * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
+  iconBefore: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  /** An icon component to render.
+  * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
+  iconAfter: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
 };
 
 Button.propTypes = buttonPropTypes;
@@ -123,6 +133,9 @@ Button.defaultProps = {
   onKeyDown: () => {},
   onClick: () => {},
   type: 'button',
+  variant: 'outline-primary',
+  iconBefore: undefined,
+  iconAfter: undefined,
 };
 
 export default withDeprecatedProps(Button, 'Button', {
