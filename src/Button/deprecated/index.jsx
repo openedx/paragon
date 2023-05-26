@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import withDeprecatedProps, { DeprTypes } from '../../withDeprecatedProps';
 
-class Button extends React.Component {
+class WrapperButton extends React.Component {
   constructor(props) {
     super(props);
 
@@ -122,9 +122,9 @@ export const buttonPropTypes = {
   iconAfter: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
 };
 
-Button.propTypes = buttonPropTypes;
+WrapperButton.propTypes = buttonPropTypes;
 
-Button.defaultProps = {
+WrapperButton.defaultProps = {
   buttonType: undefined,
   className: undefined,
   inputRef: () => {},
@@ -138,7 +138,7 @@ Button.defaultProps = {
   iconAfter: undefined,
 };
 
-export default withDeprecatedProps(Button, 'Button', {
+export default withDeprecatedProps(WrapperButton, 'Button', {
   label: {
     deprType: DeprTypes.MOVED,
     newName: 'children',
