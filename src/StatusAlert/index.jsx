@@ -109,7 +109,7 @@ class StatusAlert extends React.Component {
 
 StatusAlert.propTypes = {
   /** specifies the type of alert that is being diplayed. It defaults to "warning".
-   * See the other available [bootstrap](https://v4-alpha.getbootstrap.com/components/alerts/) options. */
+   * See the other available [bootstrap](https://react-bootstrap-v4.netlify.app/components/alerts/) options. */
   alertType: PropTypes.string,
   /** is a string array that defines the classes to be used within the status alert. */
   className: PropTypes.string,

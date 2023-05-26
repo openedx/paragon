@@ -25,14 +25,10 @@ function NavDropdownDivider(props) {
 }
 
 Nav.propTypes = {
-  /** Overrides underlying component base CSS class name */
-  navbarBsPrefix: PropTypes.string,
   /** Change the underlying component CSS base class name and modifier class names prefix. */
   cardHeaderBsPrefix: PropTypes.string,
   /** Specifies default active nav (uncontrolled usage). */
   defaultActiveKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Enable or disable scroll in the Navbar */
-  navbarScroll: PropTypes.bool,
   /** Marks the NavItem with a matching eventKey (or href if present) as active. */
   activeKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Set a custom element for this component. */

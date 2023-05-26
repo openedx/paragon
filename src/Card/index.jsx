@@ -54,8 +54,6 @@ export { default as CardGroup } from 'react-bootstrap/CardGroup';
 export { default as CardGrid } from './CardGrid';
 
 Card.propTypes = {
-  /** Specifies a background-color that is displayed on the Card. */
-  bg: PropTypes.oneOf(COLOR_VARIANTS),
   /** Specifies a text that is displayed on the Card. */
   text: PropTypes.oneOf([...COLOR_VARIANTS, 'white', 'muted']),
   /** Specifies a border-color that is displayed on the Card. */
