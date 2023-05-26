@@ -53,8 +53,6 @@
     "replace-variables-definition-with-css": "node tokens/replace-variables.js -p src -t definition"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
     "@popperjs/core": "^2.11.4",
     "bootstrap": "^4.6.2",
     "chroma-js": "^2.4.2",
@@ -62,7 +60,6 @@
     "commander": "^9.4.1",
     "email-prop-type": "^3.0.0",
     "file-selector": "^0.6.0",
-    "font-awesome": "^4.7.0",
     "glob": "^8.0.3",
     "lodash.uniqby": "^4.7.0",
     "mailto-link": "^2.0.0",
