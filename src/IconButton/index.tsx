@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Icon from '../Icon';
 import { type Placement } from 'react-bootstrap/Overlay';
-
 import { OverlayTrigger } from '../Overlay';
 import Tooltip from '../Tooltip';
 import Icon from '../Icon';
@@ -57,14 +56,8 @@ const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
 }, ref) => {
   const invert = invertColors ? 'inverse-' : '';
   const activeStyle = isActive ? `${variant}-` : '';
-  if (!iconAs && process.env.NODE_ENV === 'development' && console) {
-    const msg = '[Deprecated] IconButton: you have not provided a value for iconAs prop and '
-      + 'are using a default one - FontAwesomeIcon, the default value is going to be changed soon '
-      + 'as Paragon is moving away from FontAwesome, please use Paragon\'s icons instead.';
-    // eslint-disable-next-line no-console
-    console.warn(msg);
-  }
-  const IconComponent = iconAs || FontAwesomeIcon;
+  const IconComponent = iconAs;
+
   return (
     <button
       aria-label={alt}
@@ -94,7 +87,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
 });
 
 IconButton.defaultProps = {
-  iconAs: undefined,
+  iconAs: Icon,
   src: undefined,
   icon: undefined,
   iconClassNames: undefined,
@@ -110,8 +103,7 @@ IconButton.defaultProps = {
 IconButton.propTypes = {
   /** A custom class name. */
   className: PropTypes.string,
-  /** Component that renders the icon, currently defaults to `FontAwesomeIcon`,
-   *  but is going to be deprecated soon, please use Paragon's icons instead. */
+  /** Component that renders the icon, currently defaults to `Icon` */
   iconAs: PropTypes.elementType as any,
   /** An icon component to render. Example import of a Paragon icon component:
    * `import { Check } from '@openedx/paragon/icons';`
@@ -123,7 +115,7 @@ IconButton.propTypes = {
   alt: PropTypes.string.isRequired,
   /** Changes icon styles for dark background */
   invertColors: PropTypes.bool,
-  /** Accepts a React fontawesome icon. */
+  /** Accepts a [Paragon icon](https://paragon-openedx.netlify.app/foundations/icons) */
   icon: PropTypes.shape({
     prefix: PropTypes.string,
     iconName: PropTypes.string,

@@ -59,8 +59,6 @@
     "prepare": "husky || true"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
     "@popperjs/core": "^2.11.4",
     "bootstrap": "^4.6.2",
     "chalk": "^4.1.2",
@@ -70,7 +68,6 @@
     "commander": "^9.4.1",
     "email-prop-type": "^3.0.0",
     "file-selector": "^0.6.0",
-    "font-awesome": "^4.7.0",
     "glob": "^8.0.3",
     "inquirer": "^8.2.5",
     "lodash.uniqby": "^4.7.0",
