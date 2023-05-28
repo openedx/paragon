@@ -182,6 +182,7 @@ function Tabs({
 }
 
 Tabs.propTypes = {
+  /** Specifies variant to use. */
   variant: PropTypes.oneOf(['tabs', 'pills', 'inverse-tabs', 'inverse-pills', 'button-group']),
   /** Specifies elements that is processed to create tabs. */
   children: PropTypes.node.isRequired,

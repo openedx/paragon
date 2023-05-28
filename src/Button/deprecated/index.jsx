@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import withDeprecatedProps, { DeprTypes } from '../../withDeprecatedProps';
 
-class Button extends React.Component {
+class DeprecatedButton extends React.Component {
   constructor(props) {
     super(props);
 
@@ -110,11 +110,16 @@ export const buttonPropTypes = {
   onKeyDown: PropTypes.func,
   /** Used to set the `type` attribute on the `button` tag.  The default type is `button`. */
   type: PropTypes.string,
+  /** Specifies variant to use. */
+  variant: PropTypes.oneOf([
+    'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light', 'link', 'outline-primary',
+    'outline-secondary', 'outline-success', 'outline-danger', 'outline-warning', 'outline-info', 'outline-dark', 'outline-light',
+  ]),
 };
 
-Button.propTypes = buttonPropTypes;
+DeprecatedButton.propTypes = buttonPropTypes;
 
-Button.defaultProps = {
+DeprecatedButton.defaultProps = {
   buttonType: undefined,
   className: undefined,
   inputRef: () => {},
@@ -123,9 +128,10 @@ Button.defaultProps = {
   onKeyDown: () => {},
   onClick: () => {},
   type: 'button',
+  variant: 'outline-primary',
 };
 
-export default withDeprecatedProps(Button, 'Button', {
+export default withDeprecatedProps(DeprecatedButton, 'Button', {
   label: {
     deprType: DeprTypes.MOVED,
     newName: 'children',
