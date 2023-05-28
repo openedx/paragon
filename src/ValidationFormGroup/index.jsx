@@ -19,6 +19,7 @@ const propTypes = {
   invalidMessage: PropTypes.node,
   /** Help text for the form input */
   helpText: PropTypes.node,
+  /** Specifies contents of the component. */
   children: PropTypes.node,
 };
 
