@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import withDeprecatedProps, { DeprTypes } from '../../withDeprecatedProps';
 
-class WrapperButton extends React.Component {
+class DeprecatedButton extends React.Component {
   constructor(props) {
     super(props);
 
@@ -113,18 +113,13 @@ export const buttonPropTypes = {
   /** Specifies variant to use. */
   variant: PropTypes.oneOf([
     'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light', 'link', 'outline-primary',
-    'outline-secondary', 'outline-success', 'outline-danger', 'outline-warning', 'outline-info', 'outline-dark', 'outline-light']),
-  /** An icon component to render.
-  * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
-  iconBefore: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
-  /** An icon component to render.
-  * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
-  iconAfter: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+    'outline-secondary', 'outline-success', 'outline-danger', 'outline-warning', 'outline-info', 'outline-dark', 'outline-light'
+  ]),
 };
 
-WrapperButton.propTypes = buttonPropTypes;
+DeprecatedButton.propTypes = buttonPropTypes;
 
-WrapperButton.defaultProps = {
+DeprecatedButton.defaultProps = {
   buttonType: undefined,
   className: undefined,
   inputRef: () => {},
@@ -134,11 +129,9 @@ WrapperButton.defaultProps = {
   onClick: () => {},
   type: 'button',
   variant: 'outline-primary',
-  iconBefore: undefined,
-  iconAfter: undefined,
 };
 
-export default withDeprecatedProps(WrapperButton, 'Button', {
+export default withDeprecatedProps(DeprecatedButton, 'Button', {
   label: {
     deprType: DeprTypes.MOVED,
     newName: 'children',
