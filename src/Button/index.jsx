@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Button from 'react-bootstrap/Button';
+import BaseButton from 'react-bootstrap/Button';
 import BaseButtonGroup from 'react-bootstrap/ButtonGroup';
 import BaseButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import ButtonDeprecated from './deprecated';
 
 import Icon from '../Icon';
 
-const WrappedButton = React.forwardRef(({
+const Button = React.forwardRef(({
   children,
   iconAfter,
   iconBefore,
   ...props
 }, ref) => (
-  <Button
+  <BaseButton
     {...props}
     className={classNames(props.className)}
     ref={ref}
@@ -22,32 +22,55 @@ const WrappedButton = React.forwardRef(({
     {iconBefore && <Icon className="btn-icon-before" size={props.size} src={iconBefore} />}
     {children}
     {iconAfter && <Icon className="btn-icon-after" size={props.size} src={iconAfter} />}
-  </Button>
+  </BaseButton>
 ));
 
-WrappedButton.propTypes = {
+Button.propTypes = {
   ...Button.propTypes,
-  /** Docstring for the children prop */
-  children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
-  /** Docstring for className... A class name to append to the button */
+  /** Specifies class name to apply to the button */
   className: PropTypes.string,
+  /** Disables the Button, preventing mouse events, even if the underlying component is an `<a>` element */
+  disabled: PropTypes.bool,
+  /** Specifies the text that is displayed within the button. */
+  children: PropTypes.node.isRequired,
+  /** A function that would specify what the button should do when the `onClick` event is triggered.
+   * For example, the button could launch a `Modal`. The default is an empty function. */
+  onClick: PropTypes.func,
+  /** Providing a `href` will render an `<a>` element, styled as a button. */
+  href: PropTypes.string,
+  /** A function that would specify what the button should do when the `onKeyDown` event is triggered.
+   * For example, this could handle using the `Escape` key to trigger the button's action.
+   * The default is an empty function. */
+  onKeyDown: PropTypes.func,
+  /** Used to set the `type` attribute on the `button` tag.  The default type is `button`. */
+  type: PropTypes.string,
+  /** Specifies variant to use.
+   * Can be on of the base variants: `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `dark`,
+   * `light`, `link`
+   *
+   * as well as one of the customized variants (= base variant prefixed with `inverse-`, `outline-`
+   * or `inverse-outline-`)
+   * */
+  variant: PropTypes.string,
   /** An icon component to render.
-   * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
+  * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
   iconBefore: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   /** An icon component to render.
-   * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
+  * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
   iconAfter: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
 };
 
-WrappedButton.defaultProps = {
+Button.defaultProps = {
   ...Button.defaultProps,
   children: undefined,
   className: undefined,
   iconBefore: undefined,
   iconAfter: undefined,
+  href: undefined,
+  disabled: false,
 };
 
-WrappedButton.Deprecated = ButtonDeprecated;
+Button.Deprecated = ButtonDeprecated;
 
 function ButtonGroup(props) {
   return <BaseButtonGroup {...props} />;
@@ -92,5 +115,5 @@ ButtonToolbar.defaultProps = {
   bsPrefix: 'btn-toolbar',
 };
 
-export default WrappedButton;
+export default Button;
 export { ButtonGroup, ButtonToolbar };

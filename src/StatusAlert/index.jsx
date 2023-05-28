@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -109,7 +108,8 @@ class StatusAlert extends React.Component {
 }
 
 StatusAlert.propTypes = {
-  /** specifies the type of alert that is being diplayed. It defaults to "warning".  See the other available [bootstrap](https://v4-alpha.getbootstrap.com/components/alerts/) options. */
+  /** specifies the type of alert that is being diplayed. It defaults to "warning".
+   * See the other available [bootstrap](https://react-bootstrap-v4.netlify.app/components/alerts/) options. */
   alertType: PropTypes.string,
   /** is a string array that defines the classes to be used within the status alert. */
   className: PropTypes.string,
@@ -118,7 +118,9 @@ StatusAlert.propTypes = {
   dismissible: PropTypes.bool,
   /* eslint-disable react/require-default-props */
   closeButtonAriaLabel: PropTypes.string,
-  /** is a function that is called on close. It can be used to perform actions upon closing of the status alert, such as restoring focus to the previous logical focusable element.  It is only required if `dismissible` is set to `true` and not required if the alert is not `dismissible`. */
+  /** is a function that is called on close. It can be used to perform actions upon closing of the status alert,
+   * such as restoring focus to the previous logical focusable element.  It is only required if `dismissible`
+   * is set to `true` and not required if the alert is not `dismissible`. */
   onClose: isRequiredIf(PropTypes.func, props => props.dismissible),
   /** specifies whether the status alert renders open or closed on the initial render. It defaults to false. */
   open: PropTypes.bool,
