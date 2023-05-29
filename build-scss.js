@@ -27,19 +27,27 @@ const updateParagonThemeOutput = ({
   paragonThemeOutput,
   name,
   isThemeVariant,
+  isDefaultThemeVariant,
+  isDarkThemeVariant,
 }) => {
   if (isThemeVariant) {
     paragonThemeOutput.themeUrls.variants = {
       ...paragonThemeOutput.themeUrls.variants,
       [name]: {
-        default: `./${name}.css`,
-        minified: `./${name}.min.css`,
+        paths: {
+          default: `./${name}.css`,
+          minified: `./${name}.min.css`,
+        },
+        default: isDefaultThemeVariant,
+        dark: isDarkThemeVariant,
       },
     };
   } else {
     paragonThemeOutput.themeUrls[name] = {
-      default: `./${name}.css`,
-      minified: `./${name}.min.css`,
+      paths: {
+        default: `./${name}.css`,
+        minified: `./${name}.min.css`,
+      },
     };
   }
   return paragonThemeOutput;
@@ -61,6 +69,8 @@ const compileAndWriteStyleSheets = ({
   stylesPath,
   outDir,
   isThemeVariant = false,
+  isDefaultThemeVariant = true,
+  isDarkThemeVariant = false,
 }) => {
   const compiledStyleSheet = sass.compile(stylesPath, {
     importers: [{
@@ -93,6 +103,8 @@ const compileAndWriteStyleSheets = ({
           paragonThemeOutput: initialConfigOutput,
           name,
           isThemeVariant,
+          isDefaultThemeVariant,
+          isDarkThemeVariant,
         });
       } else {
         const existingParagonThemeOutput = JSON.parse(fs.readFileSync(`${outDir}/${paragonThemeOutputFilename}`, 'utf8'));
@@ -100,6 +112,8 @@ const compileAndWriteStyleSheets = ({
           paragonThemeOutput: existingParagonThemeOutput,
           name,
           isThemeVariant,
+          isDefaultThemeVariant,
+          isDarkThemeVariant,
         });
       }
       fs.writeFileSync(`${outDir}/${paragonThemeOutputFilename}`, `${JSON.stringify(paragonThemeOutput, null, 2)}\n`);
@@ -171,6 +185,9 @@ program
           stylesPath: `${themesPath}/${themeDir.name}/index.css`,
           outDir,
           isThemeVariant: true,
+          isDefaultThemeVariant: themeDir.name === 'light',
+          // "dark" theme dri does not exist yet, but no harm in having this here
+          isDarkThemeVariant: themeDir.name === 'dark',
         });
       });
   });
