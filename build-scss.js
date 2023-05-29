@@ -10,6 +10,8 @@ const { pathToFileURL } = require('url');
 const path = require('path');
 const { program, Option } = require('commander');
 
+const paragonThemeOutputFilename = 'paragon-theme.json';
+
 const updateParagonConfig = ({
   isThemeVariant,
   paragonConfig,
@@ -72,7 +74,7 @@ const compileAndWriteStyleSheets = ({
       fs.writeFileSync(`${outDir}/${name}.css`, result.css);
       fs.writeFileSync(`${outDir}/${name}.css.map`, result.map.toString());
 
-      const hasExistingParagonConfig = fs.existsSync(`${outDir}/paragon.config.json`);
+      const hasExistingParagonConfig = fs.existsSync(`${outDir}/${paragonThemeOutputFilename}`);
       let paragonConfig;
       if (!hasExistingParagonConfig) {
         const initialConfigOutput = { themeUrls: {} };
@@ -82,7 +84,7 @@ const compileAndWriteStyleSheets = ({
           name,
         });
       } else {
-        const existingParagonConfigRaw = fs.readFileSync(`${outDir}/paragon.config.json`, 'utf8');
+        const existingParagonConfigRaw = fs.readFileSync(`${outDir}/${paragonThemeOutputFilename}`, 'utf8');
         const existingParagonConfig = JSON.parse(existingParagonConfigRaw);
         paragonConfig = updateParagonConfig({
           isThemeVariant,
@@ -90,7 +92,7 @@ const compileAndWriteStyleSheets = ({
           name,
         });
       }
-      fs.writeFileSync(`${outDir}/paragon.config.json`, `${JSON.stringify(paragonConfig, null, 2)}\n`);
+      fs.writeFileSync(`${outDir}/${paragonThemeOutputFilename}`, `${JSON.stringify(paragonConfig, null, 2)}\n`);
     });
 
   postCSS([
