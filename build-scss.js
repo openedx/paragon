@@ -12,26 +12,37 @@ const { program, Option } = require('commander');
 
 const paragonThemeOutputFilename = 'paragon-theme.json';
 
-const updateParagonConfig = ({
-  isThemeVariant,
-  paragonConfig,
+/**
+ * Updates `paragonThemeOutput` object with appropriate name and URLs.
+ *
+ * @param {object} args
+ * @param {object} args.paragonThemeOutput Object containing the `themeUrls` pointing
+ *  to the core and theme variant CSS files.
+ * @param {string} args.name Name of the theme variant.
+ * @param {boolean} args.isThemeVariant Indicates whether the stylesheet is a theme variant.
+ *
+ * @returns Updated paragonThemeOutput object.
+ */
+const updateParagonThemeOutput = ({
+  paragonThemeOutput,
   name,
+  isThemeVariant,
 }) => {
   if (isThemeVariant) {
-    paragonConfig.themeUrls.variants = {
-      ...paragonConfig.themeUrls.variants,
+    paragonThemeOutput.themeUrls.variants = {
+      ...paragonThemeOutput.themeUrls.variants,
       [name]: {
         default: `./${name}.css`,
         minified: `./${name}.min.css`,
       },
     };
   } else {
-    paragonConfig.themeUrls[name] = {
+    paragonThemeOutput.themeUrls[name] = {
       default: `./${name}.css`,
       minified: `./${name}.min.css`,
     };
   }
-  return paragonConfig;
+  return paragonThemeOutput;
 };
 
 /**
@@ -74,25 +85,24 @@ const compileAndWriteStyleSheets = ({
       fs.writeFileSync(`${outDir}/${name}.css`, result.css);
       fs.writeFileSync(`${outDir}/${name}.css.map`, result.map.toString());
 
-      const hasExistingParagonConfig = fs.existsSync(`${outDir}/${paragonThemeOutputFilename}`);
-      let paragonConfig;
-      if (!hasExistingParagonConfig) {
+      const hasExistingParagonThemeOutput = fs.existsSync(`${outDir}/${paragonThemeOutputFilename}`);
+      let paragonThemeOutput;
+      if (!hasExistingParagonThemeOutput) {
         const initialConfigOutput = { themeUrls: {} };
-        paragonConfig = updateParagonConfig({
-          isThemeVariant,
-          paragonConfig: initialConfigOutput,
+        paragonThemeOutput = updateParagonThemeOutput({
+          paragonThemeOutput: initialConfigOutput,
           name,
+          isThemeVariant,
         });
       } else {
-        const existingParagonConfigRaw = fs.readFileSync(`${outDir}/${paragonThemeOutputFilename}`, 'utf8');
-        const existingParagonConfig = JSON.parse(existingParagonConfigRaw);
-        paragonConfig = updateParagonConfig({
-          isThemeVariant,
-          paragonConfig: existingParagonConfig,
+        const existingParagonThemeOutput = JSON.parse(fs.readFileSync(`${outDir}/${paragonThemeOutputFilename}`, 'utf8'));
+        paragonThemeOutput = updateParagonThemeOutput({
+          paragonThemeOutput: existingParagonThemeOutput,
           name,
+          isThemeVariant,
         });
       }
-      fs.writeFileSync(`${outDir}/${paragonThemeOutputFilename}`, `${JSON.stringify(paragonConfig, null, 2)}\n`);
+      fs.writeFileSync(`${outDir}/${paragonThemeOutputFilename}`, `${JSON.stringify(paragonThemeOutput, null, 2)}\n`);
     });
 
   postCSS([
