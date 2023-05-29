@@ -135,7 +135,7 @@ CardImageCap.defaultProps = {
   logoSkeletonHeight: LOGO_SKELETON_HEIGHT_VALUE,
   skeletonWidth: undefined,
   logoSkeletonWidth: undefined,
-  imageLoadingType: undefined,
+  imageLoadingType: 'eager',
 };
 
 export default CardImageCap;
