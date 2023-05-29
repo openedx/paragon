@@ -186,7 +186,7 @@ program
           outDir,
           isThemeVariant: true,
           isDefaultThemeVariant: themeDir.name === 'light',
-          // "dark" theme dri does not exist yet, but no harm in having this here
+          // "dark" theme dir does not exist yet, but no harm in having this here
           isDarkThemeVariant: themeDir.name === 'dark',
         });
       });
