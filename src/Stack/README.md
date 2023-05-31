@@ -11,7 +11,7 @@ devStatus: 'In progress'
 notes: |
 ---
 
-Shorthand helpers that build on top of our flexbox utilities to make component layout faster and easier than ever. Similar to the [Boostrap Stack](https://react-bootstrap.github.io/layout/stack/) component.
+Shorthand helpers that build on top of our flexbox utilities to make component layout faster and easier than ever. Similar to the [Bootstrap Stack](https://react-bootstrap.github.io/docs/layout/stack/) component.
 
 ## Basic Usage
 
