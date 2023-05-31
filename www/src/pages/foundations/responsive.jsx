@@ -7,7 +7,7 @@ import CodeBlock from '../../components/CodeBlock';
 
 const BREAKPOINT_DESCRIPTIONS = {
   extraSmall: { name: 'Extra small', identifier: 'xs' },
-  small: { name: 'Small', identifier: 'xs' },
+  small: { name: 'Small', identifier: 'sm' },
   medium: { name: 'Medium', identifier: 'md' },
   large: { name: 'Large', identifier: 'lg' },
   extraLarge: { name: 'Extra large', identifier: 'xl' },
