@@ -4,8 +4,8 @@ function SvgBbb(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
     xmlnsXlink: "http://www.w3.org/1999/xlink",
     xmlns: "http://www.w3.org/2000/svg",
-    width: 25,
-    height: 25,
+    width: 24,
+    height: 24,
     viewBox: "0 0 25 25",
     fill: "none"
   }, props), /*#__PURE__*/React.createElement("path", {

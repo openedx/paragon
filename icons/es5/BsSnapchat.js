@@ -3,8 +3,8 @@ import * as React from "react";
 function SvgBsSnapchat(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
     xmlns: "http://www.w3.org/2000/svg",
-    width: 16,
-    height: 16,
+    width: 24,
+    height: 24,
     fill: "none",
     className: "bs-snapchat_svg__bi bs-snapchat_svg__bi-snapchat",
     viewBox: "0 0 16 16"

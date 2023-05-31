@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         addAttributesToSVGElement: {
-          attributes: ['fill="none"'],
+          attributes: ['fill="none"', 'width=24', 'height=24'],
         },
       },
     ],

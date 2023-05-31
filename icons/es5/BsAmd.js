@@ -3,8 +3,8 @@ import * as React from "react";
 function SvgBsAmd(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
     xmlns: "http://www.w3.org/2000/svg",
-    width: 16,
-    height: 16,
+    width: 24,
+    height: 24,
     fill: "none",
     className: "bs-amd_svg__bi bs-amd_svg__bi-amd",
     viewBox: "0 0 16 16"

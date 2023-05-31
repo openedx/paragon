@@ -3,8 +3,8 @@ function SvgBsVimeo(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={16}
-      height={16}
+      width={24}
+      height={24}
       fill="none"
       className="bs-vimeo_svg__bi bs-vimeo_svg__bi-vimeo"
       viewBox="0 0 16 16"

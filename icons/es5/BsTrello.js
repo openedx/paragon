@@ -3,8 +3,8 @@ import * as React from "react";
 function SvgBsTrello(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
     xmlns: "http://www.w3.org/2000/svg",
-    width: 16,
-    height: 16,
+    width: 24,
+    height: 24,
     fill: "none",
     className: "bs-trello_svg__bi bs-trello_svg__bi-trello",
     viewBox: "0 0 16 16"

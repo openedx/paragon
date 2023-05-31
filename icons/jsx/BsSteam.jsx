@@ -3,8 +3,8 @@ function SvgBsSteam(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={16}
-      height={16}
+      width={24}
+      height={24}
       fill="none"
       className="bs-steam_svg__bi bs-steam_svg__bi-steam"
       viewBox="0 0 16 16"

@@ -3,8 +3,8 @@ import * as React from "react";
 function SvgBsMeta(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
     xmlns: "http://www.w3.org/2000/svg",
-    width: 16,
-    height: 16,
+    width: 24,
+    height: 24,
     fill: "none",
     className: "bs-meta_svg__bi bs-meta_svg__bi-meta",
     viewBox: "0 0 16 16"

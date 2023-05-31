@@ -3,8 +3,8 @@ function SvgBsDribbble(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={16}
-      height={16}
+      width={24}
+      height={24}
       fill="none"
       className="bs-dribbble_svg__bi bs-dribbble_svg__bi-dribbble"
       viewBox="0 0 16 16"

@@ -3,8 +3,8 @@ function SvgBsSignal(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={16}
-      height={16}
+      width={24}
+      height={24}
       fill="none"
       className="bs-signal_svg__bi bs-signal_svg__bi-signal"
       viewBox="0 0 16 16"

@@ -3,8 +3,8 @@ function SvgBsAmd(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={16}
-      height={16}
+      width={24}
+      height={24}
       fill="none"
       className="bs-amd_svg__bi bs-amd_svg__bi-amd"
       viewBox="0 0 16 16"

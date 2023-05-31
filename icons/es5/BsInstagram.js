@@ -3,8 +3,8 @@ import * as React from "react";
 function SvgBsInstagram(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
     xmlns: "http://www.w3.org/2000/svg",
-    width: 16,
-    height: 16,
+    width: 24,
+    height: 24,
     fill: "none",
     className: "bs-instagram_svg__bi bs-instagram_svg__bi-instagram",
     viewBox: "0 0 16 16"

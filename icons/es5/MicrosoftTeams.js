@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 import * as React from "react";
 function SvgMicrosoftTeams(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
-    width: 25,
+    width: 24,
     height: 24,
     viewBox: "0 0 25 24",
     fill: "none",
