@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgKingBed(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgKingBed(props) {
     </svg>
   );
 }
-
 export default SvgKingBed;

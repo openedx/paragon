@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHail(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHail(props) {
     </svg>
   );
 }
-
 export default SvgHail;

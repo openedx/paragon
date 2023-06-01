@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLeakAdd(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLeakAdd(props) {
     </svg>
   );
 }
-
 export default SvgLeakAdd;

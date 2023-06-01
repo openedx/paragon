@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNoteAdd(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNoteAdd(props) {
     </svg>
   );
 }
-
 export default SvgNoteAdd;

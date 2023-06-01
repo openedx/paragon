@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGpsOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGpsOff(props) {
     </svg>
   );
 }
-
 export default SvgGpsOff;

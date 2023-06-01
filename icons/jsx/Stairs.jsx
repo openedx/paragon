@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStairs(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgStairs(props) {
     </svg>
   );
 }
-
 export default SvgStairs;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStars(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgStars(props) {
     </svg>
   );
 }
-
 export default SvgStars;

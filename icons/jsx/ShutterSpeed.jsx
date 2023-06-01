@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgShutterSpeed(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgShutterSpeed(props) {
     </svg>
   );
 }
-
 export default SvgShutterSpeed;

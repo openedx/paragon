@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWifiTethering(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWifiTethering(props) {
     </svg>
   );
 }
-
 export default SvgWifiTethering;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBorderClear(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBorderClear(props) {
     </svg>
   );
 }
-
 export default SvgBorderClear;

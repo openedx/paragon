@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVoicemail(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgVoicemail(props) {
     </svg>
   );
 }
-
 export default SvgVoicemail;

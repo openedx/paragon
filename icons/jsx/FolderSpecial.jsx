@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFolderSpecial(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFolderSpecial(props) {
     </svg>
   );
 }
-
 export default SvgFolderSpecial;

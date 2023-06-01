@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSupervisorAccount(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSupervisorAccount(props) {
     </svg>
   );
 }
-
 export default SvgSupervisorAccount;

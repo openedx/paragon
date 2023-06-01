@@ -39,6 +39,13 @@ describe('<CardImageCap />', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('renders with loading equals lazy', () => {
+    const tree = renderer.create((
+      <CardImageCapWrapper src="http://fake.image" logoSrc="http://fake.image" logoAlt="Logo alt" imageLoadingType="lazy" />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('renders with correct horizontal class', async () => {
     const { container } = render(<CardImageCapWrapper orientation="horizontal" src="http://fake.image" />);
 

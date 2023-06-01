@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPending(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPending(props) {
     </svg>
   );
 }
-
 export default SvgPending;

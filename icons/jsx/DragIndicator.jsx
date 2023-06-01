@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDragIndicator(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDragIndicator(props) {
     </svg>
   );
 }
-
 export default SvgDragIndicator;

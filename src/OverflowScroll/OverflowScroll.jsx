@@ -63,13 +63,22 @@ function OverflowScroll({
 OverflowScroll.Items = OverflowScrollItems;
 
 OverflowScroll.propTypes = {
+  /** Text describing the OverflowScroll for screen readers */
   ariaLabel: PropTypes.string.isRequired,
+  /** Specifies the content of the `OverflowScroll`. */
   children: PropTypes.node.isRequired,
+  /** A CSS query selector to find all child elements within the overflow container. */
   childQuerySelector: PropTypes.string,
+  /** Whether the child `OverflowScroll` components are interactive/focusable. If not, a `tabindex="0"` is
+   * added to be a11y-compliant */
   hasInteractiveChildren: PropTypes.bool,
+  /** Whether users can scroll within the overflow container. */
   disableScroll: PropTypes.bool,
+  /** Whether the default opacity masks should be shown at the start/end, if applicable. */
   disableOpacityMasks: PropTypes.bool,
+  /** Callback function for when the user scrolls to the previous element. */
   onScrollPrevious: PropTypes.func,
+  /** Callback function for when the user scrolls to the next element. */
   onScrollNext: PropTypes.func,
 };
 

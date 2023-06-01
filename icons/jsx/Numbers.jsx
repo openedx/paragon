@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNumbers(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNumbers(props) {
     </svg>
   );
 }
-
 export default SvgNumbers;

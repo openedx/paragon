@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgChildCare(props) {
   return (
     <svg
@@ -19,5 +18,4 @@ function SvgChildCare(props) {
     </svg>
   );
 }
-
 export default SvgChildCare;

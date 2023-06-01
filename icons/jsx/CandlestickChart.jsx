@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCandlestickChart(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCandlestickChart(props) {
     </svg>
   );
 }
-
 export default SvgCandlestickChart;

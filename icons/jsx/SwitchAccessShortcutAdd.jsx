@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSwitchAccessShortcutAdd(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSwitchAccessShortcutAdd(props) {
     </svg>
   );
 }
-
 export default SvgSwitchAccessShortcutAdd;

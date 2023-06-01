@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSensorDoor(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSensorDoor(props) {
     </svg>
   );
 }
-
 export default SvgSensorDoor;

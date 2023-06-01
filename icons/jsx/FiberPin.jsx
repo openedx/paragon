@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFiberPin(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFiberPin(props) {
     </svg>
   );
 }
-
 export default SvgFiberPin;

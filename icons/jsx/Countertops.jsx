@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCountertops(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCountertops(props) {
     </svg>
   );
 }
-
 export default SvgCountertops;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStopCircle(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgStopCircle(props) {
     </svg>
   );
 }
-
 export default SvgStopCircle;

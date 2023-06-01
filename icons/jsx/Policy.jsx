@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPolicy(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgPolicy(props) {
     </svg>
   );
 }
-
 export default SvgPolicy;

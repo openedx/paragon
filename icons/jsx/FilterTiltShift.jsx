@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFilterTiltShift(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFilterTiltShift(props) {
     </svg>
   );
 }
-
 export default SvgFilterTiltShift;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNoDrinks(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNoDrinks(props) {
     </svg>
   );
 }
-
 export default SvgNoDrinks;

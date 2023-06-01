@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBedtime(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBedtime(props) {
     </svg>
   );
 }
-
 export default SvgBedtime;

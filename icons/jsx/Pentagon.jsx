@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPentagon(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgPentagon(props) {
     </svg>
   );
 }
-
 export default SvgPentagon;

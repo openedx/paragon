@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWechat(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgWechat(props) {
     </svg>
   );
 }
-
 export default SvgWechat;

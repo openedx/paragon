@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEmojiPeople(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgEmojiPeople(props) {
     </svg>
   );
 }
-
 export default SvgEmojiPeople;

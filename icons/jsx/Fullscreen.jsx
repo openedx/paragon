@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFullscreen(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFullscreen(props) {
     </svg>
   );
 }
-
 export default SvgFullscreen;

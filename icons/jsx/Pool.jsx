@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPool(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgPool(props) {
     </svg>
   );
 }
-
 export default SvgPool;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPublishedWithChanges(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPublishedWithChanges(props) {
     </svg>
   );
 }
-
 export default SvgPublishedWithChanges;

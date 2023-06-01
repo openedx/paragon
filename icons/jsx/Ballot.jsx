@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBallot(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBallot(props) {
     </svg>
   );
 }
-
 export default SvgBallot;

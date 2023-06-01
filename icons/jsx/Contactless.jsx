@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgContactless(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgContactless(props) {
     </svg>
   );
 }
-
 export default SvgContactless;

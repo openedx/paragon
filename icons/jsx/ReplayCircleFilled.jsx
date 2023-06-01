@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgReplayCircleFilled(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgReplayCircleFilled(props) {
     </svg>
   );
 }
-
 export default SvgReplayCircleFilled;

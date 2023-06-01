@@ -1,0 +1,20 @@
+@mixin nav-tabs-link-focus(
+  $tabs-border-color,
+  $radius: var(--pgn-size-nav-tabs-border-radius),
+  $distance: var(--pgn-spacing-nav-link-distance-to-border)
+) {
+  position: relative;
+  outline: 0;
+  z-index: map-get($map: $indexes, $key: 1);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(#{$distance} * -1);
+    right: calc(#{$distance} * -1);
+    bottom: calc(#{$distance} * -1);
+    left: calc(#{$distance} * -1);
+    border: solid var(--pgn-size-nav-tabs-border-width) $tabs-border-color;
+    border-radius: $radius;
+  }
+}

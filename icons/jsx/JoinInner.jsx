@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgJoinInner(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgJoinInner(props) {
     </svg>
   );
 }
-
 export default SvgJoinInner;
