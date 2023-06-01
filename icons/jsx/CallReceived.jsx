@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCallReceived(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCallReceived(props) {
     </svg>
   );
 }
-
 export default SvgCallReceived;

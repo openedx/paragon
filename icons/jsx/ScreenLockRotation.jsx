@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgScreenLockRotation(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgScreenLockRotation(props) {
     </svg>
   );
 }
-
 export default SvgScreenLockRotation;

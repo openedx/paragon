@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgOpenWith(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgOpenWith(props) {
     </svg>
   );
 }
-
 export default SvgOpenWith;

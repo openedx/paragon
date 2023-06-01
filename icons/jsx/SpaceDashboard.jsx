@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSpaceDashboard(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSpaceDashboard(props) {
     </svg>
   );
 }
-
 export default SvgSpaceDashboard;

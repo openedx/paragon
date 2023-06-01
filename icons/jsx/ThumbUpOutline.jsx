@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgThumbUpOutline(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgThumbUpOutline(props) {
     </svg>
   );
 }
-
 export default SvgThumbUpOutline;

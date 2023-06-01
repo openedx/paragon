@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVoiceOverOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgVoiceOverOff(props) {
     </svg>
   );
 }
-
 export default SvgVoiceOverOff;

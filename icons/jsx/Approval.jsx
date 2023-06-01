@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgApproval(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgApproval(props) {
     </svg>
   );
 }
-
 export default SvgApproval;

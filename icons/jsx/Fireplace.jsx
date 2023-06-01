@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFireplace(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFireplace(props) {
     </svg>
   );
 }
-
 export default SvgFireplace;

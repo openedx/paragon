@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAnchor(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAnchor(props) {
     </svg>
   );
 }
-
 export default SvgAnchor;

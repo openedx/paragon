@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDoorbell(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDoorbell(props) {
     </svg>
   );
 }
-
 export default SvgDoorbell;

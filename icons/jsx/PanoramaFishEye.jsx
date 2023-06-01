@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPanoramaFishEye(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPanoramaFishEye(props) {
     </svg>
   );
 }
-
 export default SvgPanoramaFishEye;

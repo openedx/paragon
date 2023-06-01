@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgInsertChartOutlined(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgInsertChartOutlined(props) {
     </svg>
   );
 }
-
 export default SvgInsertChartOutlined;

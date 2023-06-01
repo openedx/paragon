@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function Svg60Fps(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function Svg60Fps(props) {
     </svg>
   );
 }
-
 export default Svg60Fps;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgKeyOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgKeyOff(props) {
     </svg>
   );
 }
-
 export default SvgKeyOff;

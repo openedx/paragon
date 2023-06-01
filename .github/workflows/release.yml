@@ -17,10 +17,12 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
+    - name: Setup Nodejs Env
+      run: echo "NODE_VER=`cat .nvmrc`" >> $GITHUB_ENV
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: ${{ env.NODE_VER }}
     - name: Install dependencies
       run: npm ci
     - name: Lint

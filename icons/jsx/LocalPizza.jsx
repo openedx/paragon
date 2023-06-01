@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLocalPizza(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLocalPizza(props) {
     </svg>
   );
 }
-
 export default SvgLocalPizza;

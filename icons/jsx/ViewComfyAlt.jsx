@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgViewComfyAlt(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgViewComfyAlt(props) {
     </svg>
   );
 }
-
 export default SvgViewComfyAlt;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPinDrop(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgPinDrop(props) {
     </svg>
   );
 }
-
 export default SvgPinDrop;

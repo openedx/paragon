@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMarkunreadMailbox(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgMarkunreadMailbox(props) {
     </svg>
   );
 }
-
 export default SvgMarkunreadMailbox;

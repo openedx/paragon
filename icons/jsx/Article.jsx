@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgArticle(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgArticle(props) {
     </svg>
   );
 }
-
 export default SvgArticle;

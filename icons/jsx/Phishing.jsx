@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPhishing(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPhishing(props) {
     </svg>
   );
 }
-
 export default SvgPhishing;

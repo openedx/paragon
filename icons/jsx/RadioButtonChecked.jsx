@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRadioButtonChecked(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgRadioButtonChecked(props) {
     </svg>
   );
 }
-
 export default SvgRadioButtonChecked;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSpatialTracking(props) {
   return (
     <svg
@@ -22,5 +21,4 @@ function SvgSpatialTracking(props) {
     </svg>
   );
 }
-
 export default SvgSpatialTracking;

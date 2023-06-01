@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAdjust(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAdjust(props) {
     </svg>
   );
 }
-
 export default SvgAdjust;

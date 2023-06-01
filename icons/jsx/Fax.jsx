@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFax(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFax(props) {
     </svg>
   );
 }
-
 export default SvgFax;

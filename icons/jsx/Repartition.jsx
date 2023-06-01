@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRepartition(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRepartition(props) {
     </svg>
   );
 }
-
 export default SvgRepartition;

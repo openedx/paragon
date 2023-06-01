@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAttachment(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAttachment(props) {
     </svg>
   );
 }
-
 export default SvgAttachment;

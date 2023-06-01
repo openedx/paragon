@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDiscord(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDiscord(props) {
     </svg>
   );
 }
-
 export default SvgDiscord;

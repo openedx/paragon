@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFontDownloadOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFontDownloadOff(props) {
     </svg>
   );
 }
-
 export default SvgFontDownloadOff;

@@ -1,3 +1,5 @@
+@import "mixins";
+
 // Base class
 //
 // Kickstart any navigation component with a set of style resets. Works with
@@ -35,21 +37,124 @@
 // Tabs
 //
 
+.pgn__tabs {
+  &.nav-pills .nav-link {
+    border: $nav-pills-link-border-width solid $nav-pills-link-border-color;
+
+    &:focus {
+      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+    }
+
+    &:hover {
+      border-color: $nav-tabs-link-hover-border-color;
+      background-color: $nav-tabs-link-hover-bg;
+    }
+
+    &.active,
+    .nav-item.show .nav-link {
+      color: $nav-pills-link-active-color;
+      background-color: $nav-pills-link-active-bg;
+      border-color: $nav-pills-link-active-bg;
+
+      &:focus {
+        @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+      }
+    }
+  }
+
+  &.nav-inverse-pills {
+    + .tab-content {
+      color: $nav-inverse-pills-tab-content-color;
+    }
+
+    .nav-link {
+      color: $nav-inverse-pills-link-color;
+      border: $nav-inverse-pills-link-border-width solid $nav-inverse-pills-link-border-color;
+
+      &:hover {
+        background-color: $nav-inverse-pills-link-hover-bg;
+      }
+
+      &:focus {
+        @include nav-tabs-link-focus($nav-inverse-pills-link-focus-color);
+      }
+
+      &.disabled {
+        opacity: .5;
+      }
+    }
+
+    .nav-link.active,
+    .nav-item.show .nav-link {
+      background-color: $nav-inverse-pills-link-active-bg;
+      color: $nav-inverse-pills-link-active-color;
+      border-color: $nav-inverse-pills-link-active-border-color;
+
+      &:hover {
+        background-color: $nav-inverse-pills-link-active-hover-bg;
+        color: $nav-inverse-pills-link-active-hover-color;
+        border-color: $nav-inverse-pills-link-active-hover-border-color;
+      }
+
+      &:focus:hover {
+        background-color: $nav-inverse-pills-link-active-focus-hover-bg;
+        color: $nav-inverse-pills-link-active-focus-color;
+        border-color: $nav-inverse-pills-link-active-focus-border-color;
+      }
+    }
+  }
+
+  &.nav-inverse-tabs {
+    + .tab-content {
+      color: $nav-inverse-tabs-tab-content-color;
+    }
+
+    .nav-link {
+      color: $nav-inverse-tabs-link-color;
+      border-bottom: $nav-tabs-border-width solid $nav-inverse-tabs-link-border-bottom-color;
+
+      &:hover {
+        background-color: $nav-inverse-tabs-link-hover-bg;
+      }
+
+      &:focus {
+        @include nav-tabs-link-focus($nav-inverse-tabs-link-focus-bg);
+      }
+
+      &.disabled {
+        opacity: .5;
+      }
+    }
+
+    .nav-link.active,
+    .nav-item.show .nav-link {
+      border-bottom: $nav-inverse-tabs-link-active-border-bottom-width solid $nav-inverse-tabs-link-active-border-color;
+      background-color: $nav-inverse-tabs-link-active-bg;
+
+      &:hover {
+        background-color: $nav-inverse-tabs-link-active-hover-bg;
+      }
+    }
+  }
+}
+
 .nav-tabs {
   border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-tabs-border);
 
   .nav-link {
-    margin-bottom: calc(var(--pgn-size-nav-tabs-border-width) * -1);
-    border-top: var(--pgn-size-nav-tabs-border-width) solid transparent;
-    border-bottom: var(--pgn-size-nav-tabs-border-width) solid transparent;
-    border-left: none;
-    border-right: none;
+    margin-bottom: calc(#{$nav-tabs-border-width} * -1);
+    border: $nav-tabs-border-width solid $nav-tabs-link-border-color;
+    border-bottom-width: $nav-tabs-link-border-bottom-width;
 
     @include border-top-radius(var(--pgn-size-nav-tabs-border-radius));
 
-    @include hover-focus {
-      border-color: var(--pgn-border-color-nav-tabs-link-border-hover);
-      background-color: var(--pgn-color-nav-tabs-link-hover-bg);
+    &:hover {
+      border-color: $nav-tabs-link-hover-border-color;
+      background-color: $nav-tabs-link-hover-bg;
+    }
+
+    &:focus {
+      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
     }
 
     &.disabled {
@@ -61,14 +166,22 @@
 
   .nav-link.active,
   .nav-item.show .nav-link {
-    color: var(--pgn-color-nav-tabs-link-active-text);
-    background-color: var(--pgn-color-nav-tabs-link-active-bg);
-    border-color: var(--pgn-border-color-nav-tabs-link-border-active);
+    color: $nav-tabs-link-active-color;
+    background-color: $nav-tabs-link-active-bg;
+    border-color: $nav-tabs-link-active-border-color;
+
+    &:hover {
+      background-color: $nav-tabs-link-hover-bg;
+    }
+
+    &:focus {
+      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+    }
   }
 
   .dropdown-menu {
     // Make dropdown border overlap tab border
-    margin-top: calc(var(--pgn-size-nav-tabs-border-width) * -1);
+    margin-top: calc(#{$nav-tabs-border-width} * -1);
 
     // Remove the top rounded corners here since there is a hard edge above the menu
     @include border-top-radius(0);

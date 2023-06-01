@@ -18,6 +18,7 @@ exports[`<Tabs /> correct rendering renders successfully 1`] = `
     >
       Tab 1
       <div
+        aria-live="polite"
         className="pgn__bubble pgn__bubble-error pgn__tab-notification expandable"
         role="status"
       >

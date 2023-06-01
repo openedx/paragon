@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHMobiledata(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgHMobiledata(props) {
     </svg>
   );
 }
-
 export default SvgHMobiledata;

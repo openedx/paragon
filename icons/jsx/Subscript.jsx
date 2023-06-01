@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSubscript(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSubscript(props) {
     </svg>
   );
 }
-
 export default SvgSubscript;

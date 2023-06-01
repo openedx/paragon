@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSpeakerGroup(props) {
   return (
     <svg
@@ -19,5 +18,4 @@ function SvgSpeakerGroup(props) {
     </svg>
   );
 }
-
 export default SvgSpeakerGroup;

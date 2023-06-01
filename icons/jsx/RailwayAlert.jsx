@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRailwayAlert(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgRailwayAlert(props) {
     </svg>
   );
 }
-
 export default SvgRailwayAlert;

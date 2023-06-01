@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNightlife(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNightlife(props) {
     </svg>
   );
 }
-
 export default SvgNightlife;
