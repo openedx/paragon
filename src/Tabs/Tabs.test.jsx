@@ -116,6 +116,12 @@ describe('<Tabs />', () => {
         expect(tab.className).toContain('active');
       });
     });
+    it('select dropdown item after pressing Enter', () => {
+      const wrapper = mount(<TabsTestComponent />);
+      wrapper.find('#pgn__tab-toggle').at(0).at(0).simulate('click');
+      wrapper.find('.dropdown-item').at(0).simulate('keyPress', { key: 'Enter' });
+      expect(wrapper.find('[data-rb-event-key="tab_2"]').at(0).hasClass('active')).toEqual(true);
+    });
     it('invalid child does not render', () => {
       const { getByRole } = render(
         <Tabs>
