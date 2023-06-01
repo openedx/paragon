@@ -30,6 +30,7 @@
       margin: 0;
 
       .dropdown .dropdown-toggle {
+        // stylelint-disable-next-line max-line-length
         padding: var(--pgn-spacing-tab-more-link-dropdown-toggle-padding-x) var(--pgn-spacing-tab-more-link-dropdown-toggle-padding-y);
 
         &:focus {
@@ -61,6 +62,7 @@
   // Nav inverse pills
   &.nav-inverse-pills .pgn__tab_more.nav-link {
     .dropdown .dropdown-toggle {
+      // stylelint-disable-next-line max-line-length
       padding: var(--pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-x) var(--pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-y);
 
       &:focus {
@@ -86,6 +88,7 @@
 
   // Nav inverse tabs
   &.nav-inverse-tabs .pgn__tab_more.nav-link .dropdown .dropdown-toggle {
+    // stylelint-disable-next-line max-line-length
     padding: var(--pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-padding-x) var(--pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-padding-y);
 
     &:hover {
