@@ -67,6 +67,7 @@
 
     .nav-link {
       color: var(--pgn-color-nav-pills-inverse-link-text-base);
+      // stylelint-disable-next-line max-line-length
       border: var(--pgn-size-nav-pills-inverse-link-border-width) solid var(--pgn-color-nav-pills-inverse-link-border-base);
 
       &:hover {
@@ -126,6 +127,7 @@
 
     .nav-link.active,
     .nav-item.show .nav-link {
+      // stylelint-disable-next-line max-line-length
       border-bottom: var(--pgn-size-nav-tabs-inverse-link-active-border-bottom-width) solid var(--pgn-color-nav-tabs-inverse-link-border-active);
       background-color: var(--pgn-color-nav-tabs-inverse-link-bg-active);
 
