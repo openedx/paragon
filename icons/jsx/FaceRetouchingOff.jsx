@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFaceRetouchingOff(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgFaceRetouchingOff(props) {
     </svg>
   );
 }
-
 export default SvgFaceRetouchingOff;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSdCardAlert(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSdCardAlert(props) {
     </svg>
   );
 }
-
 export default SvgSdCardAlert;

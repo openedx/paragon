@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSettingsSuggest(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSettingsSuggest(props) {
     </svg>
   );
 }
-
 export default SvgSettingsSuggest;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDehaze(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDehaze(props) {
     </svg>
   );
 }
-
 export default SvgDehaze;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgArrowCircleRight(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgArrowCircleRight(props) {
     </svg>
   );
 }
-
 export default SvgArrowCircleRight;

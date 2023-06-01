@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBarcode(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgBarcode(props) {
     </svg>
   );
 }
-
 export default SvgBarcode;

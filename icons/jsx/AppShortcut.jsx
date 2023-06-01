@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAppShortcut(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgAppShortcut(props) {
     </svg>
   );
 }
-
 export default SvgAppShortcut;

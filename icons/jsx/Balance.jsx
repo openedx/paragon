@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBalance(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBalance(props) {
     </svg>
   );
 }
-
 export default SvgBalance;

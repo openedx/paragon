@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFastRewind(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFastRewind(props) {
     </svg>
   );
 }
-
 export default SvgFastRewind;

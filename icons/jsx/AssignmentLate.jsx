@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAssignmentLate(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAssignmentLate(props) {
     </svg>
   );
 }
-
 export default SvgAssignmentLate;

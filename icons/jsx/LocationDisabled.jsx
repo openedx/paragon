@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLocationDisabled(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLocationDisabled(props) {
     </svg>
   );
 }
-
 export default SvgLocationDisabled;

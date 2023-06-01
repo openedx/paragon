@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDataUsage(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDataUsage(props) {
     </svg>
   );
 }
-
 export default SvgDataUsage;

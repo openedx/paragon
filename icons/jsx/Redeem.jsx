@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRedeem(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRedeem(props) {
     </svg>
   );
 }
-
 export default SvgRedeem;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSentimentSatisfiedAlt(props) {
   return (
     <svg
@@ -19,5 +18,4 @@ function SvgSentimentSatisfiedAlt(props) {
     </svg>
   );
 }
-
 export default SvgSentimentSatisfiedAlt;

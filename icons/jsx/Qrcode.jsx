@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgQrcode(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgQrcode(props) {
     </svg>
   );
 }
-
 export default SvgQrcode;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTurnedInNot(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTurnedInNot(props) {
     </svg>
   );
 }
-
 export default SvgTurnedInNot;

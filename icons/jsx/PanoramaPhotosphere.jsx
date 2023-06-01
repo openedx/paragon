@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPanoramaPhotosphere(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPanoramaPhotosphere(props) {
     </svg>
   );
 }
-
 export default SvgPanoramaPhotosphere;

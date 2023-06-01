@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAccessTimeFilled(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAccessTimeFilled(props) {
     </svg>
   );
 }
-
 export default SvgAccessTimeFilled;

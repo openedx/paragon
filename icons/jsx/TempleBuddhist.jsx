@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTempleBuddhist(props) {
   return (
     <svg
@@ -22,5 +21,4 @@ function SvgTempleBuddhist(props) {
     </svg>
   );
 }
-
 export default SvgTempleBuddhist;

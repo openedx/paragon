@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNetworkPing(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNetworkPing(props) {
     </svg>
   );
 }
-
 export default SvgNetworkPing;

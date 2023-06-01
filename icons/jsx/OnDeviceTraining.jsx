@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgOnDeviceTraining(props) {
   return (
     <svg
@@ -22,5 +21,4 @@ function SvgOnDeviceTraining(props) {
     </svg>
   );
 }
-
 export default SvgOnDeviceTraining;

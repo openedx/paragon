@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTravelExplore(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTravelExplore(props) {
     </svg>
   );
 }
-
 export default SvgTravelExplore;

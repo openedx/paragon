@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPattern(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPattern(props) {
     </svg>
   );
 }
-
 export default SvgPattern;

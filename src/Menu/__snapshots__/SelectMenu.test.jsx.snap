@@ -35,56 +35,6 @@ exports[`correct rendering renders as expected 1`] = `
   </button>
   <div
     className="pgn__menu-select-popup"
-  >
-    <div
-      style={
-        Object {
-          "left": "0",
-          "position": "absolute",
-          "top": "0",
-          "zIndex": 2000,
-        }
-      }
-    >
-      <div
-        data-focus-guard={true}
-        style={
-          Object {
-            "height": "0px",
-            "left": "1px",
-            "overflow": "hidden",
-            "padding": 0,
-            "position": "fixed",
-            "top": "1px",
-            "width": "1px",
-          }
-        }
-        tabIndex={-1}
-      />
-      <div
-        data-focus-lock-disabled="disabled"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        onScrollCapture={[Function]}
-        onTouchMoveCapture={[Function]}
-        onWheelCapture={[Function]}
-      />
-      <div
-        data-focus-guard={true}
-        style={
-          Object {
-            "height": "0px",
-            "left": "1px",
-            "overflow": "hidden",
-            "padding": 0,
-            "position": "fixed",
-            "top": "1px",
-            "width": "1px",
-          }
-        }
-        tabIndex={-1}
-      />
-    </div>
-  </div>
+  />
 </div>
 `;

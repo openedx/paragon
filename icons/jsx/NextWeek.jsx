@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNextWeek(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNextWeek(props) {
     </svg>
   );
 }
-
 export default SvgNextWeek;

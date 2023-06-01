@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPolyline(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPolyline(props) {
     </svg>
   );
 }
-
 export default SvgPolyline;

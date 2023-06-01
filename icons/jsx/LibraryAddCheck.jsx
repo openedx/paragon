@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLibraryAddCheck(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLibraryAddCheck(props) {
     </svg>
   );
 }
-
 export default SvgLibraryAddCheck;

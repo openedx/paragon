@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStadium(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgStadium(props) {
     </svg>
   );
 }
-
 export default SvgStadium;

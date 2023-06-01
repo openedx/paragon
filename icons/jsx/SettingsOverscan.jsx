@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSettingsOverscan(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSettingsOverscan(props) {
     </svg>
   );
 }
-
 export default SvgSettingsOverscan;

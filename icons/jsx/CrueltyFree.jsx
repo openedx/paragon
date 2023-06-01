@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCrueltyFree(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCrueltyFree(props) {
     </svg>
   );
 }
-
 export default SvgCrueltyFree;

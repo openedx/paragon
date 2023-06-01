@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFiberSmartRecord(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgFiberSmartRecord(props) {
     </svg>
   );
 }
-
 export default SvgFiberSmartRecord;

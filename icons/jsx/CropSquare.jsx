@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCropSquare(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgCropSquare(props) {
     </svg>
   );
 }
-
 export default SvgCropSquare;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDeleteOutline(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDeleteOutline(props) {
     </svg>
   );
 }
-
 export default SvgDeleteOutline;

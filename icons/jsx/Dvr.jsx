@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDvr(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDvr(props) {
     </svg>
   );
 }
-
 export default SvgDvr;

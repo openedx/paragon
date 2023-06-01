@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWash(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWash(props) {
     </svg>
   );
 }
-
 export default SvgWash;

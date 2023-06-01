@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWbIridescent(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWbIridescent(props) {
     </svg>
   );
 }
-
 export default SvgWbIridescent;

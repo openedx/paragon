@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgClosedCaptionDisabled(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgClosedCaptionDisabled(props) {
     </svg>
   );
 }
-
 export default SvgClosedCaptionDisabled;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHouseSiding(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHouseSiding(props) {
     </svg>
   );
 }
-
 export default SvgHouseSiding;
