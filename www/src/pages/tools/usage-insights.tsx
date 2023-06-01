@@ -354,7 +354,7 @@ function IconsUsage({ data }: { data: string[] }) {
   );
 }
 
-export default function InsightsPage({ pageContext: { tab } }: { pageContext: { tab: string } }) {
+export default function UsageInsightsPage({ pageContext: { tab } }: { pageContext: { tab: string } }) {
   const { paragonTypes = {}, isParagonIcon = () => false } = useContext(InsightsContext) as IInsightsContext;
   const {
     components, hooks, utils, icons,
@@ -376,7 +376,7 @@ export default function InsightsPage({ pageContext: { tab } }: { pageContext: { 
   const handleOnSelect = (value: string) => {
     if (value !== tab) {
       global.analytics.track(`openedx.paragon.docs.insights.tabs.${value.toLowerCase().trim()}.clicked`);
-      navigate(INSIGHTS_PAGES.find(item => item.tab === value)!.path);
+      navigate(INSIGHTS_PAGES.find(item => item.tab === value).path);
     }
   };
   return (
@@ -429,7 +429,7 @@ export default function InsightsPage({ pageContext: { tab } }: { pageContext: { 
   );
 }
 
-InsightsPage.propTypes = {
+UsageInsightsPage.propTypes = {
   pageContext: PropTypes.shape({
     tab: PropTypes.oneOf(Object.values(INSIGHTS_TABS)),
   }).isRequired,

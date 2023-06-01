@@ -109,7 +109,7 @@ function Layout({
             </Link>
           </Nav.Item>
           <Nav.Item>
-            <Link className="nav-link muted-link" to="/tools/insights">
+            <Link className="nav-link muted-link" to="/tools/usage-insights">
               Usage insights
             </Link>
           </Nav.Item>

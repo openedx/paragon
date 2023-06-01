@@ -217,7 +217,7 @@ function Menu() {
         >
           <ul className="list-unstyled foundations-list">
             <li>
-              <Link to="/tools/insights">Usage Insights</Link>
+              <Link to="/tools/usage-insights">Usage Insights</Link>
             </li>
             <li>
               <Link to="/tools/playground" onClick={handlePlaygroundClick}>

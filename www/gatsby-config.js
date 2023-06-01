@@ -95,7 +95,7 @@ const plugins = [
     resolve: 'gatsby-plugin-page-creator',
     options: {
       path: `${__dirname}/src/pages`,
-      ignore: ['insights.tsx'],
+      ignore: ['tools/usage-insights.tsx'],
     },
   },
 ];

@@ -29,7 +29,7 @@ export default function Playground({ location }) {
         && iframeRef.current.contentWindow.location.search !== searchValue.current
       ) {
         searchValue.current = iframeRef.current.contentWindow.location.search;
-        navigate(`/playground${searchValue.current}`, { replace: true });
+        navigate(`/tools/playground${searchValue.current}`, { replace: true });
       }
     }, 200);
     return () => clearInterval(iframeUrlPoll);
