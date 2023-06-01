@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Thu, 01 Jun 2023 12:58:07 GMT
+ * Generated on Thu, 01 Jun 2023 14:00:29 GMT
  */
 
 :root {
@@ -1547,7 +1547,7 @@
   --pgn-color-btn-active-text-primary: #FFFFFFFF;
   --pgn-color-btn-active-text-inverse-outline-light: #454545FF;
   --pgn-color-btn-active-text-outline-light: #454545FF;
-  --pgn-color-btn-active-text-light: #454545FF;
+  --pgn-color-btn-active-text-light: #313131FF;
   --pgn-color-btn-active-text-inverse-outline-dark: #454545FF;
   --pgn-color-btn-active-text-outline-dark: #454545FF;
   --pgn-color-btn-active-text-dark: #FFFFFFFF;
@@ -1576,7 +1576,7 @@
   --pgn-color-btn-hover-text-inverse-outline-secondary: var(--pgn-color-theme-hover-secondary);
   --pgn-color-btn-hover-text-outline-secondary: var(--pgn-color-theme-hover-secondary);
   --pgn-color-btn-hover-text-primary: #FFFFFFFF;
-  --pgn-color-btn-hover-text-light: #454545FF;
+  --pgn-color-btn-hover-text-light: #414141FF;
   --pgn-color-btn-hover-text-inverse-outline-info: var(--pgn-color-theme-hover-info);
   --pgn-color-btn-hover-text-outline-info: var(--pgn-color-theme-hover-info);
   --pgn-color-btn-hover-text-dark: #FFFFFFFF;
@@ -1594,7 +1594,7 @@
   --pgn-color-btn-disabled-text-outline-danger: var(--pgn-color-btn-hover-text-outline-danger);
   --pgn-color-btn-active-text-inverse-outline-warning: #454545FF;
   --pgn-color-btn-active-text-outline-warning: #454545FF;
-  --pgn-color-btn-active-text-warning: #FFFFFFFF;
+  --pgn-color-btn-active-text-warning: #313131FF;
   --pgn-color-btn-active-text-inverse-outline-success: #454545FF;
   --pgn-color-btn-active-text-outline-success: #454545FF;
   --pgn-color-btn-active-text-success: #FFFFFFFF;
@@ -1607,7 +1607,7 @@
   --pgn-color-btn-active-text-inverse-outline-danger: #454545FF;
   --pgn-color-btn-active-text-outline-danger: #454545FF;
   --pgn-color-btn-active-text-danger: #FFFFFFFF;
-  --pgn-color-btn-hover-text-warning: #454545FF;
+  --pgn-color-btn-hover-text-warning: #414141FF;
   --pgn-color-btn-hover-text-success: #FFFFFFFF;
   --pgn-color-btn-hover-text-secondary: #FFFFFFFF;
   --pgn-color-btn-hover-text-info: #FFFFFFFF;
