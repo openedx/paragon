@@ -1,0 +1,108 @@
+---
+title: Component generation
+---
+
+# Component generation
+
+Component generation offers pre-defined templates of the necessary files to kickstart development and automatically export the created components for use in the project. In this document, we will explore the process of component generation and the steps required to get started with this powerful feature.
+
+## 1. Start the documentation site development server
+
+The Paragon documentation site serves both as documentation and as a workbench to create your component within. To see your component in action, you need to run the documentation site locally.
+
+```
+npm install
+npm start
+```
+
+## 2. Create new component
+
+To create new component run
+
+```
+npm run generate-component MyComponent
+```
+
+where `MyComponent` is your new component's name.
+
+This will create a directory in `/src/` that will contain templates for all necessary files to start developing the component:
+```
+MyComponent
+├── index.jsx
+├── README.md
+├── MyComponent.scss
+├── _variables.scss
+└── MyComponent.test.jsx
+```
+
+The script will also automatically export your component from Paragon.
+
+## 3. Start developing
+
+`/src/MyComponent/index.jsx` is where your component lives, the file is created with the following template, edit it to implement your own component.
+
+``` jsx
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+const MyComponent = React.forwardRef(({ className, children }, ref) => (
+  <div ref={ref} className={classNames('png__MyComponent', className)}>
+    {children}
+  </div>
+));
+
+MyComponent.defaultProps = {
+  className: undefined,
+};
+
+MyComponent.propTypes = {
+  /** A class name to append to the base element. */
+  className: PropTypes.string,
+  /** Specifies contents of the component. */
+  children: PropTypes.node.isRequired,
+};
+
+export default MyComponent;
+
+```
+
+## 4. (Optional) Add styles to your component.
+
+If your component requires additional styling (which most likely is the case), edit created SCSS style sheet in your
+component's directory `/src/MyComponent/MyComponent.scss` which by default contains an empty class for your component.
+
+If you wish to use SASS variables (which is the preferred way of styling the components since values can be
+easily overridden and customized by the consumers of Paragon), add them in `/src/MyComponent/_variables.scss` (this file should contain all variables specific to your component).
+This way the variables will also get automatically picked up by documentation site and displayed on your component's page.
+
+**Please note that you need to follow [Paragon's CSS styling conventions](docs/decisions/0012-css-styling-conventions).**
+
+## 5. Document your component
+
+The documentation for your component lives in `src/MyComponent/README.md`. The documentation site scans this directory for markdown or mdx files to create pages. By default, the file is created with following content:
+
+```` md
+---
+title: 'MyComponent'
+type: 'component'
+components:
+- MyComponent
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+  Something special about this component
+---
+
+Describe your component here and give usage examples.
+
+### Basic Usage
+
+```jsx live
+<MyComponent>
+  Hello!
+</MyComponent>
+```
+
+````

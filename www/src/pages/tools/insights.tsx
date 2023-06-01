@@ -11,16 +11,16 @@ import {
   useMediaQuery,
   breakpoints,
 } from '~paragon-react';
-import SEO from '../components/SEO';
-import Layout from '../components/PageLayout';
-import SummaryUsageExamples, { ISummaryUsageExamples } from '../components/insights/SummaryUsageExamples';
-import ProjectUsageExamples, { IProjectUsageExamples } from '../components/insights/ProjectUsageExamples';
-import ComponentUsageExamples, { IComponentUsageExamples } from '../components/insights/ComponentUsageExamples';
-import getGithubProjectUrl from '../utils/getGithubProjectUrl';
+import SEO from '../../components/SEO';
+import Layout from '../../components/PageLayout';
+import SummaryUsageExamples, { ISummaryUsageExamples } from '../../components/insights/SummaryUsageExamples';
+import ProjectUsageExamples, { IProjectUsageExamples } from '../../components/insights/ProjectUsageExamples';
+import ComponentUsageExamples, { IComponentUsageExamples } from '../../components/insights/ComponentUsageExamples';
+import getGithubProjectUrl from '../../utils/getGithubProjectUrl';
 // @ts-ignore
-import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
-import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
-import InsightsContext from '../context/InsightsContext';
+import dependentProjectsAnalysis from '../../../../dependent-usage.json'; // eslint-disable-line
+import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../../config';
+import InsightsContext from '../../context/InsightsContext';
 
 const ICON_TYPE = 'Icon';
 const TABLE_PAGE_SIZE = 10;
@@ -379,7 +379,6 @@ export default function InsightsPage({ pageContext: { tab } }: { pageContext: { 
       navigate(INSIGHTS_PAGES.find(item => item.tab === value)!.path);
     }
   };
-
   return (
     <Layout>
       <Container size="md" className="py-5">
