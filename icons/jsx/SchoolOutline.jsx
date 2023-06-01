@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSchoolOutline(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSchoolOutline(props) {
     </svg>
   );
 }
-
 export default SvgSchoolOutline;

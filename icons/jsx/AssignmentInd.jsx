@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAssignmentInd(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAssignmentInd(props) {
     </svg>
   );
 }
-
 export default SvgAssignmentInd;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStayPrimaryPortrait(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgStayPrimaryPortrait(props) {
     </svg>
   );
 }
-
 export default SvgStayPrimaryPortrait;

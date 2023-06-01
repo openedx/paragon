@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHiking(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHiking(props) {
     </svg>
   );
 }
-
 export default SvgHiking;

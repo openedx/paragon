@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMoveToInbox(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMoveToInbox(props) {
     </svg>
   );
 }
-
 export default SvgMoveToInbox;

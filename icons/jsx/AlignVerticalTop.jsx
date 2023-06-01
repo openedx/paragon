@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAlignVerticalTop(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAlignVerticalTop(props) {
     </svg>
   );
 }
-
 export default SvgAlignVerticalTop;

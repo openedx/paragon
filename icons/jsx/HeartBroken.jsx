@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHeartBroken(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHeartBroken(props) {
     </svg>
   );
 }
-
 export default SvgHeartBroken;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgReportGmailerrorred(props) {
   return (
     <svg
@@ -19,5 +18,4 @@ function SvgReportGmailerrorred(props) {
     </svg>
   );
 }
-
 export default SvgReportGmailerrorred;

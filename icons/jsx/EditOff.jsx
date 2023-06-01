@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEditOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEditOff(props) {
     </svg>
   );
 }
-
 export default SvgEditOff;

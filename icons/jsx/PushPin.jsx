@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPushPin(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgPushPin(props) {
     </svg>
   );
 }
-
 export default SvgPushPin;

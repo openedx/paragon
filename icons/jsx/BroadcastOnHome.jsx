@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBroadcastOnHome(props) {
   return (
     <svg
@@ -25,5 +24,4 @@ function SvgBroadcastOnHome(props) {
     </svg>
   );
 }
-
 export default SvgBroadcastOnHome;

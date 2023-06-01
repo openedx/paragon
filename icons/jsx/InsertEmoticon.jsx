@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgInsertEmoticon(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgInsertEmoticon(props) {
     </svg>
   );
 }
-
 export default SvgInsertEmoticon;

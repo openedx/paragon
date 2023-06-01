@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMoreTime(props) {
   return (
     <svg
@@ -19,5 +18,4 @@ function SvgMoreTime(props) {
     </svg>
   );
 }
-
 export default SvgMoreTime;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLandslide(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLandslide(props) {
     </svg>
   );
 }
-
 export default SvgLandslide;

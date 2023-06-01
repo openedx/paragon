@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgJoinRight(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgJoinRight(props) {
     </svg>
   );
 }
-
 export default SvgJoinRight;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRssFeed(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgRssFeed(props) {
     </svg>
   );
 }
-
 export default SvgRssFeed;

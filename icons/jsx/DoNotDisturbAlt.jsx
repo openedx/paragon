@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDoNotDisturbAlt(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDoNotDisturbAlt(props) {
     </svg>
   );
 }
-
 export default SvgDoNotDisturbAlt;

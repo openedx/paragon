@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFolderOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFolderOff(props) {
     </svg>
   );
 }
-
 export default SvgFolderOff;

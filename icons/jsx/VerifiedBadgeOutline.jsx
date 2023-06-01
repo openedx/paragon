@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVerifiedBadgeOutline(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgVerifiedBadgeOutline(props) {
     </svg>
   );
 }
-
 export default SvgVerifiedBadgeOutline;

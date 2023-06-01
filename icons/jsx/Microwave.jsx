@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMicrowave(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMicrowave(props) {
     </svg>
   );
 }
-
 export default SvgMicrowave;

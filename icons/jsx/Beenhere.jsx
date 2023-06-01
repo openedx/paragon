@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBeenhere(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBeenhere(props) {
     </svg>
   );
 }
-
 export default SvgBeenhere;

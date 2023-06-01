@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef } from 'react';
-import BaseTabs from 'react-bootstrap/Tabs';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Bubble from '../Bubble';
@@ -70,6 +69,11 @@ function Tabs({
 
   const tabsChildren = useMemo(() => {
     const indexOfOverflowStart = indexOfLastVisibleChild + 1;
+    const handleDropdownKeyPress = (e, eventKey) => {
+      if (e.key === 'Enter') {
+        handleDropdownTabClick(eventKey);
+      }
+    };
     const childrenList = React.Children.map(children, (child, index) => {
       if (child?.type?.name !== 'Tab' && process.env.NODE_ENV === 'development') {
         // eslint-disable-next-line no-console
@@ -92,6 +96,7 @@ function Tabs({
               variant="error"
               role="status"
               className="pgn__tab-notification"
+              aria-live="polite"
               expandable
             >
               {notification}
@@ -117,8 +122,11 @@ function Tabs({
         }
         return (
           <Dropdown.Item
+            as="li"
+            tabIndex="0"
             key={`${overflowChild.props.eventKey}overflow`}
             onClick={() => handleDropdownTabClick(overflowChild.props.eventKey)}
+            onKeyPress={(e) => handleDropdownKeyPress(e, overflowChild.props.eventKey)}
             disabled={overflowChild.props.disabled}
             datakey={overflowChild.props.eventKey}
             className={classNames({
@@ -149,7 +157,7 @@ function Tabs({
               />
             )}
           </Dropdown.Toggle>
-          <Dropdown.Menu className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
+          <Dropdown.Menu as="ul" className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
         </Dropdown>
       )}
     />
@@ -172,6 +180,8 @@ function Tabs({
 }
 
 Tabs.propTypes = {
+  /** Specifies variant to use. */
+  variant: PropTypes.oneOf(['tabs', 'pills', 'inverse-tabs', 'inverse-pills', 'button-group']),
   /** Specifies elements that is processed to create tabs. */
   children: PropTypes.node.isRequired,
   /** Specifies class name to append to the base element. */
@@ -185,6 +195,7 @@ Tabs.propTypes = {
 };
 
 Tabs.defaultProps = {
+  variant: 'tabs',
   className: undefined,
   moreTabText: MORE_TAB_TEXT,
   defaultActiveKey: undefined,

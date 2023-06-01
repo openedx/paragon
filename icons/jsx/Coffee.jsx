@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCoffee(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCoffee(props) {
     </svg>
   );
 }
-
 export default SvgCoffee;

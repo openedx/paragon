@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAssistantDirection(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAssistantDirection(props) {
     </svg>
   );
 }
-
 export default SvgAssistantDirection;

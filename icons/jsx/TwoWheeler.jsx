@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTwoWheeler(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTwoWheeler(props) {
     </svg>
   );
 }
-
 export default SvgTwoWheeler;

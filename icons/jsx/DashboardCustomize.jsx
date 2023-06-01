@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDashboardCustomize(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDashboardCustomize(props) {
     </svg>
   );
 }
-
 export default SvgDashboardCustomize;

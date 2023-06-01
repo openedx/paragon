@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPsychology(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgPsychology(props) {
     </svg>
   );
 }
-
 export default SvgPsychology;

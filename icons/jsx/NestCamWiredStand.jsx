@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNestCamWiredStand(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNestCamWiredStand(props) {
     </svg>
   );
 }
-
 export default SvgNestCamWiredStand;

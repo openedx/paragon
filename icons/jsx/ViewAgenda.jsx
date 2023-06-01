@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgViewAgenda(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgViewAgenda(props) {
     </svg>
   );
 }
-
 export default SvgViewAgenda;

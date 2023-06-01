@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGesture(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGesture(props) {
     </svg>
   );
 }
-
 export default SvgGesture;

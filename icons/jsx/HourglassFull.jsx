@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHourglassFull(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHourglassFull(props) {
     </svg>
   );
 }
-
 export default SvgHourglassFull;
