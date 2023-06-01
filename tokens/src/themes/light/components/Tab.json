@@ -1,0 +1,55 @@
+{
+  "color": {
+    "tab": {
+      "more-link-dropdown-toggle": {
+        "btn": {
+          "text": {
+            "focus": {
+              "value": "{color.tab.more-link-dropdown-toggle.text.focus}",
+              "type": "color",
+              "source": "$tab-more-link-dropdown-toggle-btn-focus-color"
+            }
+          },
+          "border": {
+            "focus": {
+              "value": "{color.tab.more-link-dropdown-toggle.bg.focus}",
+              "type": "color",
+              "source": "$tab-more-link-dropdown-toggle-btn-focus-border-color"
+            }
+          }
+        },
+        "text": {
+          "focus": { "value": "{color.white}", "type": "color", "source": "$tab-more-link-dropdown-toggle-focus-color" },
+          "active": { "value": "{color.tab.more-link-dropdown-toggle.text.focus}", "type": "color", "source": "$tab-more-link-dropdown-toggle-active-color" },
+          "hover": { "value": "{color.tab.more-link-dropdown-toggle.bg.focus}", "type": "color", "source": "$tab-more-link-dropdown-toggle-hover-color" }
+        },
+        "bg": {
+          "focus": { "value": "{color.primary.500}", "type": "color", "source": "$tab-more-link-dropdown-toggle-focus-bg" }
+        },
+        "border": {
+          "focus": { "value": "{color.tab.more-link-dropdown-toggle.bg.focus}", "type": "color", "source": "$tab-more-link-dropdown-toggle-focus-border-color" }
+        }
+      },
+      "inverse-pills-link-dropdown-toggle": {
+        "text": {
+          "focus": { "value": "{color.primary.500}", "type": "color", "source": "$tab-inverse-pills-link-dropdown-toggle-focus-color" },
+          "active": { "value": "{color.tab.inverse-pills-link-dropdown-toggle.text.focus}", "type": "color", "source": "$tab-inverse-pills-link-dropdown-toggle-active-color" },
+          "active-hover": {
+            "value": "{color.tab.inverse-pills-link-dropdown-toggle.bg.focus}",
+            "type": "color",
+            "source": "$tab-inverse-pills-link-dropdown-toggle-active-hover-color"
+          }
+        },
+        "bg": {
+          "focus": { "value": "{color.white}", "type": "color", "source": "$tab-inverse-pills-link-dropdown-toggle-focus-bg" },
+          "hover": { "value": "transparent", "type": "color", "source": "$tab-inverse-tabs-link-dropdown-toggle-hover-bg" },
+          "active-hover": {
+            "value": "{color.primary.300}",
+            "type": "color",
+            "source": "$tab-inverse-pills-link-dropdown-toggle-active-hover-bg"
+          }
+        }
+      }
+    }
+  }
+}

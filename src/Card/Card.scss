@@ -1,56 +1,7 @@
 @import "card-bootstrap";
 
-.pgn__card,
-.pgn__card-body {
-  width: 100%;
-  border: 0;
-
-  %dark-variant-content {
-    color: var(--pgn-color-white);
-
-    a {
-      color: var(--pgn-color-white);
-    }
-  }
-
-  &.pgn__card-dark {
-    background-color: var(--pgn-color-card-bg-dark);
-
-    @extend %dark-variant-content;
-
-    .pgn__card-header {
-      @extend %dark-variant-content;
-
-      .pgn__card-header-title,
-      .pgn__card-header-title-sm,
-      .pgn__card-header-title-md,
-      .pgn__card-header-subtitle,
-      .pgn__card-header-subtitle-sm,
-      .pgn__card-header-subtitle-md {
-        @extend %dark-variant-content;
-      }
-    }
-
-    .pgn__card-section {
-      @extend %dark-variant-content;
-
-      .pgn__card-section-title {
-        @extend %dark-variant-content;
-      }
-    }
-
-    .pgn__card-footer,
-    .pgn__card-footer-text {
-      @extend %dark-variant-content;
-    }
-  }
-
-  &.pgn__card-muted {
-    background-color: var(--pgn-color-card-bg-muted);
-  }
-}
-
-a .pgn__card {
+a .pgn__card,
+a.pgn__card {
   color: var(--pgn-color-gray-700);
   display: inline-block;
   text-decoration: none;
@@ -121,16 +72,16 @@ a .pgn__card {
   &::before {
     content: "";
     position: absolute;
-    top: calc(-1 * #{$card-focus-border-offset});
-    right: calc(-1 * #{$card-focus-border-offset});
-    bottom: calc(-1 * #{$card-focus-border-offset});
-    left: calc(-1 * #{$card-focus-border-offset});
-    border: solid $card-focus-border-width $card-border-focus-color;
-    border-radius: $card-focus-border-radius;
+    top: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
+    right: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
+    bottom: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
+    left: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
+    border: solid var(--pgn-size-card-focus-border-width) var(--pgn-color-card-border-focus-base);
+    border-radius: var(--pgn-size-card-focus-border-radius);
   }
 
   &.pgn__card-dark::before {
-    border: solid $card-focus-border-width $card-border-focus-color-dark;
+    border: solid var(--pgn-size-card-focus-border-width) var(--pgn-color-card-border-focus-dark);
   }
 }
 
@@ -302,7 +253,7 @@ a .pgn__card {
 
     &.horizontal-stacked {
       flex-direction: column-reverse;
-      padding-top: calc(var(--pgn-spacing-card-spacer-x) - var(--pgn-spacing-card-footer-action-gap));
+      padding-top: var(--pgn-spacing-card-spacer-x) - var(--pgn-spacing-card-footer-action-gap);
 
       & > * {
         margin-top: var(--pgn-spacing-card-footer-action-gap);
@@ -339,30 +290,30 @@ a .pgn__card {
   }
 
   .pgn__card-divider {
-    border-top: 1px solid $card-divider-bg;
+    border-top: 1px solid var(--pgn-color-card-divider-bg);
     height: 0;
   }
 
   .pgn__card-section {
-    padding: $card-spacer-x;
+    padding: var(--pgn-spacing-card-spacer-x);
     flex-grow: 1;
     text-align: start;
 
     &.is-muted {
-      background-color: $light-200;
+      background-color: var(--pgn-color-light-200);
     }
 
     .pgn__card-section-title {
-      color: $black;
-      font-weight: $font-weight-bold;
-      font-size: $h5-font-size;
-      margin-bottom: $card-spacer-y;
+      color: var(--pgn-color-black);
+      font-weight: var(--pgn-typography-font-weight-bold);
+      font-size: var(--pgn-typography-font-size-h5);
+      margin-bottom: var(--pgn-spacing-card-spacer-y);
     }
 
     .pgn__card-section-actions {
       display: flex;
       justify-content: flex-end;
-      margin-top: $card-spacer-y;
+      margin-top: var(--pgn-spacing-card-spacer-y);
     }
 
     dd {
@@ -418,33 +369,19 @@ a .pgn__card {
       max-height: var(--pgn-size-card-image-vertical-max-height);
     }
 
-  .pgn__card-image-cap-loader {
-    .react-loading-skeleton {
-      margin-bottom: calc(var(--pgn-spacing-card-loading-skeleton-spacer) * -1);
-      position: relative;
-      top: calc(var(--pgn-spacing-card-loading-skeleton-spacer) * -1);
-      height: 100%;
+    .pgn__card-image-cap-loader {
+      .react-loading-skeleton {
+        margin-bottom: calc(-1 * var(--pgn-spacing-card-loading-skeleton-spacer));
+        position: relative;
+        top: calc(-1 * var(--pgn-spacing-card-loading-skeleton-spacer));
+        height: 100%;
+      }
     }
-  }
-}
-
-.pgn__card-image-cap {
-  object-fit: cover;
-  max-height: inherit;
-  width: 100%;
-  border-top-left-radius: var(--pgn-size-card-border-radius-image);
-  border-top-right-radius: var(--pgn-size-card-border-radius-image);
-  display: none;
-
-  &.show {
-    display: block;
-  }
-}
 
     .pgn__card-logo-cap {
       position: absolute;
       inset-inline-start: var(--pgn-spacing-card-logo-left-offset-base);
-      bottom: calc(var(--pgn-spacing-card-logo-bottom-offset-base) * -1);
+      bottom: calc(-1 * var(--pgn-spacing-card-logo-bottom-offset-base));
       width: var(--pgn-size-card-logo-width);
       height: var(--pgn-size-card-logo-height);
       border-radius: var(--pgn-size-card-border-radius-logo);
@@ -567,15 +504,15 @@ a .pgn__card {
   border: 0;
 
   %dark-variant-content {
-    color: $white;
+    color: var(--pgn-color-white);
 
     a {
-      color: $white;
+      color: var(--pgn-color-white);
     }
   }
 
   &.pgn__card-dark {
-    background-color: $card-bg-dark;
+    background-color: var(--pgn-color-card-bg-dark);
 
     @extend %dark-variant-content;
 
@@ -607,7 +544,7 @@ a .pgn__card {
   }
 
   &.pgn__card-muted {
-    background-color: $card-bg-muted;
+    background-color: var(--pgn-color-card-bg-muted);
   }
 }
 
