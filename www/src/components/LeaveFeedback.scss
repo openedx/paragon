@@ -1,12 +1,12 @@
 .pgn__docs-page-feedback-link.nav-link {
-  color: $gray-400;
-  font-size: $font-size-sm;
-  line-height: $micro-line-height;
+  color: var(--pgn-color-gray-400);
+  font-size: var(--pgn-typography-font-size-sm);
+  line-height: .938rem;
   padding-left: 0;
   padding-top: 0;
-  margin-bottom: map-get($spacers, 5);
+  margin-bottom: var(--pgn-spacing-spacer-5);
 
   &:hover {
-    text-decoration: $link-hover-decoration;
+    text-decoration: var(--pgn-typography-link-decoration-hover);
   }
 }
