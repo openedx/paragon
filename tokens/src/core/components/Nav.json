@@ -10,9 +10,27 @@
   "size": {
     "nav": {
       "pills": {
-        "border-radius": { "value": "{size.border.radius.base}", "type": "dimension", "source": "$nav-pills-border-radius" }
+        "border-radius": { "value": "{size.border.radius.base}", "type": "dimension", "source": "$nav-pills-border-radius" },
+        "link": {
+          "border-width": { "value": "1px", "type": "dimension", "source": "$nav-pills-link-border-width" }
+        },
+        "inverse-link": {
+          "border-width": { "value": "{size.nav.pills.link.border-width}", "type": "dimension", "source": "$nav-inverse-pills-link-border-width" }
+        }
       },
       "tabs": {
+        "link": {
+          "border-bottom": {
+            "width": { "value": ".188rem", "type": "dimension", "source": "$nav-tabs-link-border-bottom-width" }
+          }
+        },
+        "inverse-link": {
+          "active-border-bottom-width": {
+            "value": "{size.nav.tabs.link.border-bottom.width}",
+            "type": "dimension",
+            "source": "$nav-inverse-tabs-link-active-border-bottom-width"
+          }
+        },
         "border": {
           "width": { "value": "2px", "type": "dimension", "source": "$nav-tabs-border-width" },
           "radius": { "value": "0", "type": "dimension", "source": "$nav-tabs-border-radius" }
@@ -26,7 +44,8 @@
         "padding": {
           "y": { "value": ".5rem", "type": "dimension", "source": "$nav-link-padding-y" },
           "x": { "value": "1rem", "type": "dimension", "source": "$nav-link-padding-x" }
-        }
+        },
+        "distance-to-border": { "value": ".313rem", "type": "dimension", "source": "$nav-tabs-link-distance-to-border" }
       },
       "divider": {
         "margin-y": { "value": "calc({spacing.spacer.base} / 2)", "type": "dimension", "source": "$nav-divider-margin-y" }

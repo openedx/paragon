@@ -39,44 +39,44 @@
 
 .pgn__tabs {
   &.nav-pills .nav-link {
-    border: $nav-pills-link-border-width solid $nav-pills-link-border-color;
+    border: var(--pgn-size-nav-pills-link-border-width) solid var(--pgn-color-nav-pills-base-link-border);
 
     &:focus {
-      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+      @include nav-tabs-link-focus(var(--pgn-border-color-nav-tabs-link-border-focus));
     }
 
     &:hover {
-      border-color: $nav-tabs-link-hover-border-color;
-      background-color: $nav-tabs-link-hover-bg;
+      border-color: var(--pgn-border-color-nav-tabs-link-border-hover);
+      background-color: var(--pgn-color-nav-tabs-base-link-hover-bg);
     }
 
     &.active,
     .nav-item.show .nav-link {
-      color: $nav-pills-link-active-color;
-      background-color: $nav-pills-link-active-bg;
-      border-color: $nav-pills-link-active-bg;
+      color: var(--pgn-color-nav-pills-base-link-active-text);
+      background-color: var(--pgn-color-nav-pills-base-link-active-bg);
+      border-color: var(--pgn-color-nav-pills-base-link-active-bg);
 
       &:focus {
-        @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+        @include nav-tabs-link-focus(var(--pgn-border-color-nav-tabs-link-border-focus));
       }
     }
   }
 
   &.nav-inverse-pills {
     + .tab-content {
-      color: $nav-inverse-pills-tab-content-color;
+      color: var(--pgn-color-nav-pills-inverse-tab-content-color);
     }
 
     .nav-link {
-      color: $nav-inverse-pills-link-color;
-      border: $nav-inverse-pills-link-border-width solid $nav-inverse-pills-link-border-color;
+      color: var(--pgn-color-nav-pills-inverse-link-text-base);
+      border: var(--pgn-size-nav-pills-inverse-link-border-width) solid var(--pgn-color-nav-pills-inverse-link-border-base);
 
       &:hover {
-        background-color: $nav-inverse-pills-link-hover-bg;
+        background-color: var(--pgn-color-nav-pills-inverse-link-bg-hover);
       }
 
       &:focus {
-        @include nav-tabs-link-focus($nav-inverse-pills-link-focus-color);
+        @include nav-tabs-link-focus(var(--pgn-color-nav-pills-inverse-link-text-focus));
       }
 
       &.disabled {
@@ -86,39 +86,39 @@
 
     .nav-link.active,
     .nav-item.show .nav-link {
-      background-color: $nav-inverse-pills-link-active-bg;
-      color: $nav-inverse-pills-link-active-color;
-      border-color: $nav-inverse-pills-link-active-border-color;
+      background-color: var(--pgn-color-nav-pills-inverse-link-bg-active);
+      color: var(--pgn-color-nav-pills-inverse-link-text-active);
+      border-color: var(--pgn-color-nav-pills-inverse-link-border-active);
 
       &:hover {
-        background-color: $nav-inverse-pills-link-active-hover-bg;
-        color: $nav-inverse-pills-link-active-hover-color;
-        border-color: $nav-inverse-pills-link-active-hover-border-color;
+        background-color: var(--pgn-color-nav-pills-inverse-link-bg-active-hover);
+        color: var(--pgn-color-nav-pills-inverse-link-text-active-hover);
+        border-color: var(--pgn-color-nav-pills-inverse-link-border-active-hover);
       }
 
       &:focus:hover {
-        background-color: $nav-inverse-pills-link-active-focus-hover-bg;
-        color: $nav-inverse-pills-link-active-focus-color;
-        border-color: $nav-inverse-pills-link-active-focus-border-color;
+        background-color: var(--pgn-color-nav-pills-inverse-link-bg-active-focus-hover);
+        color: var(--pgn-color-nav-pills-inverse-link-text-active-focus);
+        border-color: var(--pgn-color-nav-pills-inverse-link-border-active-focus);
       }
     }
   }
 
   &.nav-inverse-tabs {
     + .tab-content {
-      color: $nav-inverse-tabs-tab-content-color;
+      color: var(--pgn-color-nav-tabs-inverse-link-tab-content-color);
     }
 
     .nav-link {
-      color: $nav-inverse-tabs-link-color;
-      border-bottom: $nav-tabs-border-width solid $nav-inverse-tabs-link-border-bottom-color;
+      color: var(--pgn-color-nav-tabs-inverse-link-text-base);
+      border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-tabs-inverse-link-border-bottom);
 
       &:hover {
-        background-color: $nav-inverse-tabs-link-hover-bg;
+        background-color: var(--pgn-color-nav-tabs-inverse-link-bg-hover);
       }
 
       &:focus {
-        @include nav-tabs-link-focus($nav-inverse-tabs-link-focus-bg);
+        @include nav-tabs-link-focus(var(--pgn-color-nav-tabs-inverse-link-bg-focus));
       }
 
       &.disabled {
@@ -128,33 +128,33 @@
 
     .nav-link.active,
     .nav-item.show .nav-link {
-      border-bottom: $nav-inverse-tabs-link-active-border-bottom-width solid $nav-inverse-tabs-link-active-border-color;
-      background-color: $nav-inverse-tabs-link-active-bg;
+      border-bottom: var(--pgn-size-nav-tabs-inverse-link-active-border-bottom-width) solid var(--pgn-color-nav-tabs-inverse-link-border-active);
+      background-color: var(--pgn-color-nav-tabs-inverse-link-bg-active);
 
       &:hover {
-        background-color: $nav-inverse-tabs-link-active-hover-bg;
+        background-color: var(--pgn-color-nav-tabs-inverse-link-bg-active-hover);
       }
     }
   }
 }
 
 .nav-tabs {
-  border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-tabs-border);
+  border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-tabs-base-border);
 
   .nav-link {
-    margin-bottom: calc(#{$nav-tabs-border-width} * -1);
-    border: $nav-tabs-border-width solid $nav-tabs-link-border-color;
-    border-bottom-width: $nav-tabs-link-border-bottom-width;
+    margin-bottom: calc(var(--pgn-size-nav-tabs-border-width) * -1);
+    border: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-link-border);
+    border-bottom-width: var(--pgn-size-nav-tabs-link-border-bottom-width);
 
     @include border-top-radius(var(--pgn-size-nav-tabs-border-radius));
 
     &:hover {
-      border-color: $nav-tabs-link-hover-border-color;
-      background-color: $nav-tabs-link-hover-bg;
+      border-color: var(--pgn-border-color-nav-tabs-link-border-hover);
+      background-color: var(--pgn-color-nav-tabs-base-link-hover-bg);
     }
 
     &:focus {
-      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+      @include nav-tabs-link-focus(var(--pgn-border-color-nav-tabs-link-border-focus));
     }
 
     &.disabled {
@@ -166,22 +166,22 @@
 
   .nav-link.active,
   .nav-item.show .nav-link {
-    color: $nav-tabs-link-active-color;
-    background-color: $nav-tabs-link-active-bg;
-    border-color: $nav-tabs-link-active-border-color;
+    color: var(--pgn-color-nav-tabs-base-link-active-text);
+    background-color: var(--pgn-color-nav-tabs-base-link-active-bg);
+    border-color: var(--pgn-border-color-nav-tabs-link-border-active);
 
     &:hover {
-      background-color: $nav-tabs-link-hover-bg;
+      background-color: var(--pgn-color-nav-tabs-base-link-hover-bg);
     }
 
     &:focus {
-      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+      @include nav-tabs-link-focus(var(--pgn-border-color-nav-tabs-link-border-focus));
     }
   }
 
   .dropdown-menu {
     // Make dropdown border overlap tab border
-    margin-top: calc(#{$nav-tabs-border-width} * -1);
+    margin-top: calc(var(--pgn-size-nav-tabs-border-width) * -1);
 
     // Remove the top rounded corners here since there is a hard edge above the menu
     @include border-top-radius(0);
@@ -199,8 +199,8 @@
 
   .nav-link.active,
   .show > .nav-link {
-    color: var(--pgn-color-nav-pills-link-active-text);
-    background-color: var(--pgn-color-nav-pills-link-active-bg);
+    color: var(--pgn-color-nav-pills-base-link-active-text);
+    background-color: var(--pgn-color-nav-pills-base-link-active-bg);
   }
 }
 
@@ -210,7 +210,7 @@
 
 .nav-button-group {
   .nav-link {
-    border: solid 1px var(--pgn-color-nav-tabs-border);
+    border: solid 1px var(--pgn-color-nav-tabs-base-border);
 
     &:first-child {
       @include border-left-radius(var(--pgn-size-nav-pills-border-radius));
@@ -236,7 +236,7 @@
     }
 
     &:hover {
-      background: var(--pgn-color-nav-tabs-link-hover-bg);
+      background: var(--pgn-color-nav-tabs-base-link-hover-bg);
     }
 
     & + .nav-link {
@@ -246,8 +246,8 @@
 
   .nav-link.active,
   .show > .nav-link {
-    color: var(--pgn-color-nav-pills-link-active-text);
-    background-color: var(--pgn-color-nav-pills-link-active-bg);
+    color: var(--pgn-color-nav-pills-base-link-active-text);
+    background-color: var(--pgn-color-nav-pills-base-link-active-bg);
     border-color: transparent;
   }
 }
