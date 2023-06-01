@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRvHookup(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRvHookup(props) {
     </svg>
   );
 }
-
 export default SvgRvHookup;

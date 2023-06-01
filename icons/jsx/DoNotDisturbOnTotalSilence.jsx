@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDoNotDisturbOnTotalSilence(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDoNotDisturbOnTotalSilence(props) {
     </svg>
   );
 }
-
 export default SvgDoNotDisturbOnTotalSilence;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTextDecrease(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTextDecrease(props) {
     </svg>
   );
 }
-
 export default SvgTextDecrease;

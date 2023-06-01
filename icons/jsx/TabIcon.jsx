@@ -1,6 +1,5 @@
 import * as React from "react";
-
-function SvgTab(props) {
+function SvgTabIcon(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,5 +16,4 @@ function SvgTab(props) {
     </svg>
   );
 }
-
-export default SvgTab;
+export default SvgTabIcon;

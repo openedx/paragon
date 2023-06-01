@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTransferWithinAStation(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTransferWithinAStation(props) {
     </svg>
   );
 }
-
 export default SvgTransferWithinAStation;

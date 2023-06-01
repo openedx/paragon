@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPartyMode(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPartyMode(props) {
     </svg>
   );
 }
-
 export default SvgPartyMode;

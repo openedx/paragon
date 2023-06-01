@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgYoutubeSearchedFor(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgYoutubeSearchedFor(props) {
     </svg>
   );
 }
-
 export default SvgYoutubeSearchedFor;

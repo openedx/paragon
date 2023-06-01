@@ -147,7 +147,6 @@ function CodeBlock({
             HipsterIpsum,
             FormattedMessage,
             formatMessage: intl.formatMessage,
-            MenuIcon: ParagonIcons.Menu,
             axios,
             GatsbyLink: Link,
             classNames,

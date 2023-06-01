@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTraffic(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTraffic(props) {
     </svg>
   );
 }
-
 export default SvgTraffic;

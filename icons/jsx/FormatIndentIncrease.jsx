@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFormatIndentIncrease(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFormatIndentIncrease(props) {
     </svg>
   );
 }
-
 export default SvgFormatIndentIncrease;

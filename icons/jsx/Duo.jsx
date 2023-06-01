@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDuo(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDuo(props) {
     </svg>
   );
 }
-
 export default SvgDuo;

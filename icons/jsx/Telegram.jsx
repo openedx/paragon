@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTelegram(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTelegram(props) {
     </svg>
   );
 }
-
 export default SvgTelegram;

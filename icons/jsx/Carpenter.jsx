@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCarpenter(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCarpenter(props) {
     </svg>
   );
 }
-
 export default SvgCarpenter;

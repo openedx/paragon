@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCasino(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCasino(props) {
     </svg>
   );
 }
-
 export default SvgCasino;

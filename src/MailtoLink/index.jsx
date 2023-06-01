@@ -1,5 +1,4 @@
-/* eslint-disable max-len */
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
 import emailPropType from 'email-prop-type';
 import isRequiredIf from 'react-proptype-conditional-require';
@@ -43,14 +42,13 @@ const MailtoLink = React.forwardRef((props, ref) => {
   };
 
   return (
-    <span
+    <Hyperlink
       ref={ref}
       className={classNames('pgn__mailtolink', className)}
+      {...hyperlinkProps}
     >
-      <Hyperlink {...hyperlinkProps}>
-        {children}
-      </Hyperlink>
-    </span>
+      {children}
+    </Hyperlink>
   );
 });
 
@@ -84,11 +82,13 @@ MailtoLink.propTypes = {
   subject: PropTypes.string,
   /** Specifies the email's body */
   body: PropTypes.string,
-  /** Specifies where the link should open. The default behavior is `_self`, which means that the URL will be loaded into the same browsing context as the current one */
+  /** Specifies where the link should open. The default behavior is `_self`,
+   * which means that the URL will be loaded into the same browsing context as the current one */
   target: PropTypes.string,
   /** Specifies the callback function when the link is clicked */
   onClick: PropTypes.func,
-  /** The object that contains the `alternativeText` and `title` fields which specify the text and title for links with a `_blank` target (which loads the URL in a new browsing context). */
+  /** The object that contains the `alternativeText` and `title` fields which specify
+   * the text and title for links with a `_blank` target (which loads the URL in a new browsing context). */
   externalLink: PropTypes.shape({
     alternativeText: isRequiredIf(PropTypes.string, props => props.target === '_blank'),
     title: isRequiredIf(PropTypes.string, props => props.target === '_blank'),

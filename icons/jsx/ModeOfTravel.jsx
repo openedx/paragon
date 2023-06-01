@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgModeOfTravel(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgModeOfTravel(props) {
     </svg>
   );
 }
-
 export default SvgModeOfTravel;

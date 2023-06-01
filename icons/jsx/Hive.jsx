@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHive(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHive(props) {
     </svg>
   );
 }
-
 export default SvgHive;

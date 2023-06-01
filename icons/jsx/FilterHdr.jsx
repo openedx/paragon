@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFilterHdr(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFilterHdr(props) {
     </svg>
   );
 }
-
 export default SvgFilterHdr;

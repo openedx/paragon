@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStayCurrentLandscape(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgStayCurrentLandscape(props) {
     </svg>
   );
 }
-
 export default SvgStayCurrentLandscape;

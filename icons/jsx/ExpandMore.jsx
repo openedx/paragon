@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgExpandMore(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgExpandMore(props) {
     </svg>
   );
 }
-
 export default SvgExpandMore;

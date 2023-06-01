@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSmsFailed(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSmsFailed(props) {
     </svg>
   );
 }
-
 export default SvgSmsFailed;

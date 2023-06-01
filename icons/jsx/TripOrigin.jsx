@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTripOrigin(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTripOrigin(props) {
     </svg>
   );
 }
-
 export default SvgTripOrigin;

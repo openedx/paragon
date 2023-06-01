@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDifference(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDifference(props) {
     </svg>
   );
 }
-
 export default SvgDifference;

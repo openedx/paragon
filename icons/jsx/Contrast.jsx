@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgContrast(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgContrast(props) {
     </svg>
   );
 }
-
 export default SvgContrast;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function Svg3DRotation(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function Svg3DRotation(props) {
     </svg>
   );
 }
-
 export default Svg3DRotation;

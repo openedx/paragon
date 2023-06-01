@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEdit(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEdit(props) {
     </svg>
   );
 }
-
 export default SvgEdit;

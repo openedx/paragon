@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFilter9Plus(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFilter9Plus(props) {
     </svg>
   );
 }
-
 export default SvgFilter9Plus;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPolymer(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPolymer(props) {
     </svg>
   );
 }
-
 export default SvgPolymer;

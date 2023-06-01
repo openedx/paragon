@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWarningFilled(props) {
   return (
     <svg
@@ -15,5 +14,4 @@ function SvgWarningFilled(props) {
     </svg>
   );
 }
-
 export default SvgWarningFilled;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgUpload(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgUpload(props) {
     </svg>
   );
 }
-
 export default SvgUpload;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRoundedCorner(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRoundedCorner(props) {
     </svg>
   );
 }
-
 export default SvgRoundedCorner;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGrid3X3(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGrid3X3(props) {
     </svg>
   );
 }
-
 export default SvgGrid3X3;

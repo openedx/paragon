@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTimer10Select(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTimer10Select(props) {
     </svg>
   );
 }
-
 export default SvgTimer10Select;
