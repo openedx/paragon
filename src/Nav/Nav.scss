@@ -36,7 +36,7 @@
 //
 
 .nav-tabs {
-  border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-tabs-border);
+  border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-tabs-base-border);
 
   .nav-link {
     margin-bottom: calc(var(--pgn-size-nav-tabs-border-width) * -1);
@@ -86,8 +86,8 @@
 
   .nav-link.active,
   .show > .nav-link {
-    color: var(--pgn-color-nav-pills-link-active-text);
-    background-color: var(--pgn-color-nav-pills-link-active-bg);
+    color: var(--pgn-color-nav-pills-base-link-active-text);
+    background-color: var(--pgn-color-nav-pills-base-link-active-bg);
   }
 }
 
@@ -97,7 +97,7 @@
 
 .nav-button-group {
   .nav-link {
-    border: solid 1px var(--pgn-color-nav-tabs-border);
+    border: solid 1px var(--pgn-color-nav-tabs-base-border);
 
     &:first-child {
       @include border-left-radius(var(--pgn-size-nav-pills-border-radius));
@@ -123,7 +123,7 @@
     }
 
     &:hover {
-      background: var(--pgn-color-nav-tabs-link-hover-bg);
+      background: var(--pgn-color-nav-tabs-base-link-hover-bg);
     }
 
     & + .nav-link {
@@ -133,8 +133,8 @@
 
   .nav-link.active,
   .show > .nav-link {
-    color: var(--pgn-color-nav-pills-link-active-text);
-    background-color: var(--pgn-color-nav-pills-link-active-bg);
+    color: var(--pgn-color-nav-pills-base-link-active-text);
+    background-color: var(--pgn-color-nav-pills-base-link-active-bg);
     border-color: transparent;
   }
 }
