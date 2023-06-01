@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import StepperHeaderStep from './StepperHeaderStep';
 import { StepperContext } from './StepperContext';
 import useWindowSize from '../hooks/useWindowSize';
+import breakpoints from '../utils/breakpoints';
 
 function StepListSeparator() {
   return <li aria-hidden="true" className="pgn__stepper-header-line" />;
@@ -30,11 +31,11 @@ function StepList({ steps, activeKey }) {
 
 const PageCount = ({ activeStepIndex, totalSteps }) => `Step ${activeStepIndex + 1} of ${totalSteps}`;
 
-function StepperHeader({ className, PageCountComponent }) {
+function StepperHeader({ className, PageCountComponent, compactWidth }) {
   const { steps, activeKey } = useContext(StepperContext);
   const windowDimensions = useWindowSize();
-  // assume about 200px per step
-  const isCompactView = windowDimensions.width < (steps.length * 200);
+  const breakpointWidth = breakpoints[compactWidth].maxWidth;
+  const isCompactView = windowDimensions.width < breakpointWidth;
 
   if (isCompactView) {
     const activeStepIndex = steps.findIndex(step => step.eventKey === activeKey);
@@ -70,11 +71,17 @@ StepperHeader.propTypes = {
   className: PropTypes.string,
   /** A component that receives `activeStepIndex` and `totalSteps` props to display them. */
   PageCountComponent: PropTypes.elementType,
+  /** The max width in which the compact view of the header will switch to display the step number that is
+   * currently in progress. To change the max width, use 'extraSmall', 'medium', 'large',
+   * 'extraLarge', 'extraExtraLarge'
+   */
+  compactWidth: PropTypes.string,
 };
 
 StepperHeader.defaultProps = {
   className: null,
   PageCountComponent: PageCount,
+  compactWidth: 'small',
 };
 
 StepList.propTypes = {
