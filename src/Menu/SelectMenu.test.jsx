@@ -64,6 +64,11 @@ describe('correct rendering', () => {
     const button = screen.getByRole('button');
     expect(button).toBeDisabled();
   });
+  it('rendering with Brand button variant', () => {
+    const wrapper = mount(<DefaultSelectMenu variant="brand" />);
+    expect(wrapper.find(Button).prop('variant')).toEqual('brand');
+    expect(wrapper.find('button').hasClass('btn-brand')).toEqual(true);
+  });
 });
 
 describe('mouse behavior & keyboard behavior', () => {
@@ -119,7 +124,6 @@ describe('keyboard Interactions', () => {
     await userEvent.keyboard('[arrowright]');
     expect(menuItems[1]).toHaveFocus();
   });
-
   it('should focus the previous item after ArrowUp keyDown', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
