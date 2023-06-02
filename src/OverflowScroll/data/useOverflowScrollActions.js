@@ -18,20 +18,15 @@ const useOverflowScrollActions = ({
   onChangeOffset,
   currentOffset,
   offset,
+  offsetType = 'percentage',
 }) => {
+  const getOffset = useCallback((value, type, maxOffset) => {
+    const numOffset = parseInt(value, 10);
 
-  const getOffset = (offsetString, maxOffset) => {
-    let offset = 0;
-
-    if (offsetString.endsWith("px")) {
-      offset = parseInt(offsetString);
-    } else if (offsetString.endsWith("%")) {
-      const percent = parseInt(offsetString) / 100;
-      offset = Math.round(maxOffset * percent);
-    }
-
-    return offset;
-  }
+    return type === 'percentage'
+      ? Math.round(maxOffset * (numOffset / 100))
+      : numOffset;
+  }, []);
 
   /**
    * A helper function to scroll to the previous element in the overflow container.
@@ -55,12 +50,14 @@ const useOverflowScrollActions = ({
 
     if (offset) {
       const maxOffset = overflowRef.scrollWidth - overflowRef.clientWidth;
-      const offsetValue = getOffset(offset, maxOffset);
+      const offsetValue = getOffset(offset, offsetType, maxOffset);
       calculatedOffsetLeft = currentOffset - offsetValue;
-      if (calculatedOffsetLeft < 0) {
-        onChangeOffset(0);
-      } else {
-        onChangeOffset(calculatedOffsetLeft);
+      if (onChangeOffset) {
+        if (calculatedOffsetLeft < 0) {
+          onChangeOffset(0);
+        } else {
+          onChangeOffset(calculatedOffsetLeft);
+        }
       }
     }
 
@@ -69,16 +66,13 @@ const useOverflowScrollActions = ({
       behavior: scrollAnimationBehavior,
     });
     const currentActiveChildElementIndex = previousChildElementIndex <= 0 ? 0 : previousChildElementIndex;
-    onScrollPrevious({
-      currentActiveChildElementIndex,
-    });
-  }, [
-    overflowRef,
-    childrenElements,
-    activeChildElementIndex,
-    scrollAnimationBehavior,
-    onScrollPrevious,
-  ]);
+    if (onScrollPrevious) {
+      onScrollPrevious({
+        currentActiveChildElementIndex,
+      });
+    }
+  }, [overflowRef, activeChildElementIndex, offset, scrollAnimationBehavior, onScrollPrevious, childrenElements,
+    getOffset, offsetType, currentOffset, onChangeOffset]);
 
   /**
    * A helper function to scroll to the next element in the overflow container.
@@ -101,17 +95,19 @@ const useOverflowScrollActions = ({
       return childrenElements[nextChildElementIndex];
     };
 
-    let nextChildElement = getNextChildElement();
+    const nextChildElement = getNextChildElement();
     let calculatedOffsetLeft = calculateOffsetLeft(nextChildElement);
 
     if (offset) {
       const maxOffset = overflowRef.scrollWidth - overflowRef.clientWidth;
-      const offsetValue = getOffset(offset, maxOffset);
+      const offsetValue = getOffset(offset, offsetType, maxOffset);
       calculatedOffsetLeft = currentOffset + offsetValue;
-      if (calculatedOffsetLeft > maxOffset) {
-        onChangeOffset(maxOffset);
-      } else {
-        onChangeOffset(calculatedOffsetLeft);
+      if (onChangeOffset) {
+        if (calculatedOffsetLeft > maxOffset) {
+          onChangeOffset(maxOffset);
+        } else {
+          onChangeOffset(calculatedOffsetLeft);
+        }
       }
     }
 
@@ -120,14 +116,11 @@ const useOverflowScrollActions = ({
       behavior: scrollAnimationBehavior,
     });
     const currentActiveChildElementIndex = isNextChildIndexAtEnd ? lastChildElementIndex : nextChildElementIndex;
-    onScrollNext({ currentActiveChildElementIndex });
-  }, [
-    overflowRef,
-    activeChildElementIndex,
-    scrollAnimationBehavior,
-    childrenElements,
-    onScrollNext,
-  ]);
+    if (onScrollNext) {
+      onScrollNext({ currentActiveChildElementIndex });
+    }
+  }, [overflowRef, childrenElements, activeChildElementIndex, offset, scrollAnimationBehavior, onScrollNext,
+    getOffset, offsetType, currentOffset, onChangeOffset]);
 
   return {
     scrollToPrevious,

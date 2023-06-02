@@ -14,6 +14,7 @@ function OverflowScroll({
   onScrollPrevious,
   onScrollNext,
   offset,
+  offsetType,
 }) {
   const [overflowRef, setOverflowRef] = useState();
 
@@ -31,6 +32,7 @@ function OverflowScroll({
     onScrollNext,
     overflowRef,
     offset,
+    offsetType,
   });
 
   const contextValue = useMemo(() => ({
@@ -82,7 +84,8 @@ OverflowScroll.propTypes = {
   onScrollPrevious: PropTypes.func,
   /** Callback function for when the user scrolls to the next element. */
   onScrollNext: PropTypes.func,
-  offset: PropTypes.string,
+  offset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  offsetType: PropTypes.oneOf(['percentage', 'fixed']),
 };
 
 OverflowScroll.defaultProps = {
@@ -93,6 +96,7 @@ OverflowScroll.defaultProps = {
   onScrollPrevious: undefined,
   onScrollNext: undefined,
   offset: undefined,
+  offsetType: 'percentage',
 };
 
 export default OverflowScroll;

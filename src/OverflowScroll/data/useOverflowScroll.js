@@ -47,6 +47,7 @@ const useOverflowScroll = ({
   disableOpacityMasks = false,
   scrollAnimationBehavior = 'smooth',
   offset,
+  offsetType = 'percentage',
 }) => {
   const [currentOffset, setCurrentOffset] = useState(0);
   const [isScrolledToStart, setIsScrolledToStart] = useState(true);
@@ -159,6 +160,7 @@ const useOverflowScroll = ({
     onChangeOffset: setCurrentOffset,
     currentOffset,
     offset,
+    offsetType,
   });
 
   return {
