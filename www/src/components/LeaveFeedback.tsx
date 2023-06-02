@@ -5,7 +5,7 @@ import { Nav, Button, Hyperlink } from '~paragon-react';
 import { LEAVE_FEEDBACK_CLICKED_EVENT, sendUserAnalyticsEvent } from '../../segment-events';
 
 export interface LeaveFeedbackProps extends Partial<AnchorHTMLAttributes<HTMLAnchorElement>> {
-  isNavLink?: boolean;
+    isNavLink?: boolean;
 }
 
 function LeaveFeedback({ isNavLink, ...props }: LeaveFeedbackProps) {
@@ -24,11 +24,9 @@ function LeaveFeedback({ isNavLink, ...props }: LeaveFeedbackProps) {
                 {...props}
             >
                 {leaveFeedbackLinkTitle}
-    <Nav.Link onClick={handleLinkFeedbackClick} href={FEEDBACK_URL} target="_blank" {...props}>
-      Leave feedback
-    </Nav.Link>
-  );
-}
+            </Nav.Link>
+        );
+    }
 
     return (
         <Button
@@ -46,11 +44,11 @@ function LeaveFeedback({ isNavLink, ...props }: LeaveFeedbackProps) {
 }
 
 LeaveFeedback.propTypes = {
-  isNavLink: PropTypes.bool,
+    isNavLink: PropTypes.bool,
 };
 
 LeaveFeedback.defaultProps = {
-  isNavLink: false,
+    isNavLink: false,
 };
 
 export default LeaveFeedback;
