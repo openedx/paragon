@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgOfflineShare(props) {
   return (
     <svg
@@ -19,5 +18,4 @@ function SvgOfflineShare(props) {
     </svg>
   );
 }
-
 export default SvgOfflineShare;

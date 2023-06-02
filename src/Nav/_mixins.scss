@@ -1,0 +1,16 @@
+@mixin nav-tabs-link-focus($tabs-border-color) {
+  position: relative;
+  outline: 0;
+  z-index: map-get($map: $indexes, $key: 1);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--pgn-spacing-nav-link-distance-to-border) * -1);
+    right: calc(var(--pgn-spacing-nav-link-distance-to-border) * -1);
+    bottom: calc(var(--pgn-spacing-nav-link-distance-to-border) * -1);
+    left: calc(var(--pgn-spacing-nav-link-distance-to-border) * -1);
+    border: solid var(--pgn-size-nav-tabs-border-width) $tabs-border-color;
+    border-radius: var(--pgn-size-nav-tabs-border-radius);
+  }
+}

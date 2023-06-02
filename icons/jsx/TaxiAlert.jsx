@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTaxiAlert(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgTaxiAlert(props) {
     </svg>
   );
 }
-
 export default SvgTaxiAlert;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMobileFriendly(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMobileFriendly(props) {
     </svg>
   );
 }
-
 export default SvgMobileFriendly;

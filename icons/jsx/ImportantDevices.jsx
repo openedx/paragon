@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgImportantDevices(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgImportantDevices(props) {
     </svg>
   );
 }
-
 export default SvgImportantDevices;

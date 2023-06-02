@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSignalCellularConnectedNoInternet2Bar(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgSignalCellularConnectedNoInternet2Bar(props) {
     </svg>
   );
 }
-
 export default SvgSignalCellularConnectedNoInternet2Bar;

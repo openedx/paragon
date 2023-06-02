@@ -52,6 +52,11 @@ describe('correct rendering', () => {
     const wrapper = mount(<DefaultSelectMenu isLink />);
     expect(wrapper.find(Button).prop('variant')).toEqual('link');
   });
+  it('rendering with Brand button variant', () => {
+    const wrapper = mount(<DefaultSelectMenu variant="brand" />);
+    expect(wrapper.find(Button).prop('variant')).toEqual('brand');
+    expect(wrapper.find('button').hasClass('btn-brand')).toEqual(true);
+  });
 });
 
 describe('mouse behavior & keyboard behavior', () => {
@@ -80,7 +85,6 @@ describe('keyboard Interactions', () => {
   it('should focus on the first item after opening', () => {
     expect(menuItems.at(0) === document.activeElement);
   });
-
   it('should focus the next item after ArrowDown keyDown', () => {
     menuContainer.simulate('keyDown', { key: 'ArrowDown' });
     expect(menuItems.at(1) === document.activeElement);

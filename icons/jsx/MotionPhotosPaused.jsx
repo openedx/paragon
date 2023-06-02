@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMotionPhotosPaused(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMotionPhotosPaused(props) {
     </svg>
   );
 }
-
 export default SvgMotionPhotosPaused;

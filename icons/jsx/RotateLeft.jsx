@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRotateLeft(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRotateLeft(props) {
     </svg>
   );
 }
-
 export default SvgRotateLeft;

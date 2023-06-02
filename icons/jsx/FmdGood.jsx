@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFmdGood(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFmdGood(props) {
     </svg>
   );
 }
-
 export default SvgFmdGood;

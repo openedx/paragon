@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMosque(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgMosque(props) {
     </svg>
   );
 }
-
 export default SvgMosque;

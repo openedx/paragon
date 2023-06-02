@@ -21,6 +21,7 @@ const CardImageCap = React.forwardRef(({
   logoSkeletonHeight,
   logoSkeletonWidth,
   className,
+  imageLoadingType,
 }, ref) => {
   const { orientation, isLoading } = useContext(CardContext);
   const [showImageCap, setShowImageCap] = useState(false);
@@ -75,6 +76,7 @@ const CardImageCap = React.forwardRef(({
           onError={(event) => handleSrcFallback(event, fallbackSrc, 'imageCap')}
           onLoad={() => setShowImageCap(true)}
           alt={srcAlt}
+          loading={imageLoadingType}
         />
       )}
       {!!logoSrc && (
@@ -84,6 +86,7 @@ const CardImageCap = React.forwardRef(({
           onError={(event) => handleSrcFallback(event, fallbackLogoSrc, 'logoCap')}
           onLoad={() => setShowLogoCap(true)}
           alt={logoAlt}
+          loading={imageLoadingType}
         />
       )}
     </div>
@@ -115,6 +118,8 @@ CardImageCap.propTypes = {
   logoSkeletonHeight: PropTypes.number,
   /** Specifies width of Logo skeleton in loading state. */
   logoSkeletonWidth: PropTypes.number,
+  /** Specifies loading type for images */
+  imageLoadingType: PropTypes.oneOf(['eager', 'lazy']),
 };
 
 CardImageCap.defaultProps = {
@@ -130,6 +135,7 @@ CardImageCap.defaultProps = {
   logoSkeletonHeight: LOGO_SKELETON_HEIGHT_VALUE,
   skeletonWidth: undefined,
   logoSkeletonWidth: undefined,
+  imageLoadingType: 'eager',
 };
 
 export default CardImageCap;

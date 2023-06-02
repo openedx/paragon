@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRuleFolder(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRuleFolder(props) {
     </svg>
   );
 }
-
 export default SvgRuleFolder;

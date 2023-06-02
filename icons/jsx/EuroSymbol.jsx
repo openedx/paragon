@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEuroSymbol(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEuroSymbol(props) {
     </svg>
   );
 }
-
 export default SvgEuroSymbol;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMusicOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMusicOff(props) {
     </svg>
   );
 }
-
 export default SvgMusicOff;

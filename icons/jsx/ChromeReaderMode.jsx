@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgChromeReaderMode(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgChromeReaderMode(props) {
     </svg>
   );
 }
-
 export default SvgChromeReaderMode;

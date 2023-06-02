@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSoap(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSoap(props) {
     </svg>
   );
 }
-
 export default SvgSoap;

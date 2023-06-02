@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRecord(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRecord(props) {
     </svg>
   );
 }
-
 export default SvgRecord;

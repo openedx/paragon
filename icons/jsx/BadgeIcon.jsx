@@ -1,6 +1,5 @@
 import * as React from "react";
-
-function SvgBadge(props) {
+function SvgBadgeIcon(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,5 +16,4 @@ function SvgBadge(props) {
     </svg>
   );
 }
-
-export default SvgBadge;
+export default SvgBadgeIcon;

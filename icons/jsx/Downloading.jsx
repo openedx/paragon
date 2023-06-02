@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDownloading(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDownloading(props) {
     </svg>
   );
 }
-
 export default SvgDownloading;

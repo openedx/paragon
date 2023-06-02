@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFollowTheSigns(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFollowTheSigns(props) {
     </svg>
   );
 }
-
 export default SvgFollowTheSigns;

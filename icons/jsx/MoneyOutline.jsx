@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMoneyOutline(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMoneyOutline(props) {
     </svg>
   );
 }
-
 export default SvgMoneyOutline;

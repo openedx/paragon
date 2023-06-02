@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgConfirmationNumber(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgConfirmationNumber(props) {
     </svg>
   );
 }
-
 export default SvgConfirmationNumber;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNd(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNd(props) {
     </svg>
   );
 }
-
 export default SvgNd;

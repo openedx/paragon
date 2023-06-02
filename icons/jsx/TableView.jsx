@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTableView(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTableView(props) {
     </svg>
   );
 }
-
 export default SvgTableView;

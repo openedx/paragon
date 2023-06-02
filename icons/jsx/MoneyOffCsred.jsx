@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMoneyOffCsred(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMoneyOffCsred(props) {
     </svg>
   );
 }
-
 export default SvgMoneyOffCsred;

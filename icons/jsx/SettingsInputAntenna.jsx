@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSettingsInputAntenna(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSettingsInputAntenna(props) {
     </svg>
   );
 }
-
 export default SvgSettingsInputAntenna;

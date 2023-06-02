@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFormatShapes(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFormatShapes(props) {
     </svg>
   );
 }
-
 export default SvgFormatShapes;

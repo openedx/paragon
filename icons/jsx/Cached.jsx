@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCached(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCached(props) {
     </svg>
   );
 }
-
 export default SvgCached;

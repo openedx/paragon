@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLan(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLan(props) {
     </svg>
   );
 }
-
 export default SvgLan;

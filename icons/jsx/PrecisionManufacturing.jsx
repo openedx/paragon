@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPrecisionManufacturing(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPrecisionManufacturing(props) {
     </svg>
   );
 }
-
 export default SvgPrecisionManufacturing;

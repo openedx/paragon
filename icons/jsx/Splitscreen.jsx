@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSplitscreen(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSplitscreen(props) {
     </svg>
   );
 }
-
 export default SvgSplitscreen;

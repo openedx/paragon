@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRoofing(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRoofing(props) {
     </svg>
   );
 }
-
 export default SvgRoofing;

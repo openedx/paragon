@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPhoneForwarded(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPhoneForwarded(props) {
     </svg>
   );
 }
-
 export default SvgPhoneForwarded;

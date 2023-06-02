@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLogout(props) {
   return (
     <svg
@@ -15,5 +14,4 @@ function SvgLogout(props) {
     </svg>
   );
 }
-
 export default SvgLogout;

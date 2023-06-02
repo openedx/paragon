@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHeadsetOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHeadsetOff(props) {
     </svg>
   );
 }
-
 export default SvgHeadsetOff;

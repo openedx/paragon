@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFormatLineSpacing(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFormatLineSpacing(props) {
     </svg>
   );
 }
-
 export default SvgFormatLineSpacing;

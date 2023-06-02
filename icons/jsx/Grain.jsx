@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGrain(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGrain(props) {
     </svg>
   );
 }
-
 export default SvgGrain;

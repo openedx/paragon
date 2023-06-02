@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgConstruction(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgConstruction(props) {
     </svg>
   );
 }
-
 export default SvgConstruction;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGite(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGite(props) {
     </svg>
   );
 }
-
 export default SvgGite;

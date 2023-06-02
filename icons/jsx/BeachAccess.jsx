@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBeachAccess(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBeachAccess(props) {
     </svg>
   );
 }
-
 export default SvgBeachAccess;

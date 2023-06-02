@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgToll(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgToll(props) {
     </svg>
   );
 }
-
 export default SvgToll;

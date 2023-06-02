@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEgg(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEgg(props) {
     </svg>
   );
 }
-
 export default SvgEgg;

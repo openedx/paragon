@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLtePlusMobiledata(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLtePlusMobiledata(props) {
     </svg>
   );
 }
-
 export default SvgLtePlusMobiledata;

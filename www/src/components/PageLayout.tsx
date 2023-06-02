@@ -24,6 +24,7 @@ import Menu from './Menu';
 import Settings from './Settings';
 import Toc from './Toc';
 import { SettingsContext } from '../context/SettingsContext';
+import LeaveFeedback from './LeaveFeedback';
 
 if (process.env.NODE_ENV === 'development') {
   /* eslint-disable-next-line global-require */
@@ -80,6 +81,10 @@ function Layout({
               className="flex-grow-1"
             >
               {children}
+              <Container size="md">
+                <hr />
+                <LeaveFeedback className="pgn__docs-page-feedback-link" />
+              </Container>
             </Col>
             <Col
               xl={2}
@@ -120,6 +125,9 @@ function Layout({
             <Nav.Link className="muted-link" href="https://open.edx.org/">
               Open edX
             </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <LeaveFeedback />
           </Nav.Item>
           <div className="flex-grow-1" />
           <a href="https://www.netlify.com">

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgArrowDropDownCircle(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgArrowDropDownCircle(props) {
     </svg>
   );
 }
-
 export default SvgArrowDropDownCircle;

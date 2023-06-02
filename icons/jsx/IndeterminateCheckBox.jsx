@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgIndeterminateCheckBox(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgIndeterminateCheckBox(props) {
     </svg>
   );
 }
-
 export default SvgIndeterminateCheckBox;

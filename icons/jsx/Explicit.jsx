@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgExplicit(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgExplicit(props) {
     </svg>
   );
 }
-
 export default SvgExplicit;

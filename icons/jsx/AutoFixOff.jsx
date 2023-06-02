@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAutoFixOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAutoFixOff(props) {
     </svg>
   );
 }
-
 export default SvgAutoFixOff;
