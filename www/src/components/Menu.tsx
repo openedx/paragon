@@ -193,9 +193,6 @@ function Menu() {
                 Contributing
               </a>
             </li>
-            <li>
-              <Link to="/insights">Usage insights</Link>
-            </li>
           </ul>
           <h2 className="mb-4 h3">Foundations</h2>
           <ul className="list-unstyled small foundations-list mb-5">
@@ -228,6 +225,25 @@ function Menu() {
             </li>
           </ul>
         </Collapsible>
+        <Collapsible
+          styling="basic"
+          title="Tools"
+        >
+          <ul className="list-unstyled foundations-list">
+            <li>
+              <Link to="/insights">Usage Insights</Link>
+            </li>
+            <li>
+              <Link to="/playground" onClick={handlePlaygroundClick}>
+                Playground
+                <Badge className="ml-1" variant="warning">Beta</Badge>
+              </Link>
+            </li>
+            <li>
+              <Link to="/tools/component-generator">Component Generator</Link>
+            </li>
+          </ul>
+        </Collapsible>
         <MenuComponentList>
           {categories.map(({ fieldValue, nodes }) => (
             <Collapsible
@@ -242,26 +258,6 @@ function Menu() {
             </Collapsible>
           ))}
         </MenuComponentList>
-      </div>
-      <div className="pgn-doc__menu-playground">
-        <h3 className="pgn-doc__menu-playground--title">
-          Playground
-          <Badge className="ml-1 mr-1 align-bottom" variant="primary">
-            Beta
-          </Badge>
-        </h3>
-        <ul className="list-unstyled small mb-4">
-          <li className="mr-3 mb-3">
-            A UI builder for prototyping with Paragon components.
-            <Hyperlink
-              isInline
-              onClick={handlePlaygroundClick}
-              destination="/playground"
-            >
-              Visit playground
-            </Hyperlink>
-          </li>
-        </ul>
       </div>
       <Hyperlink
         destination="https://www.npmjs.com/package/@edx/paragon"
