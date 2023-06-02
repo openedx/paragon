@@ -4,8 +4,7 @@ import classNames from 'classnames';
 import StepperHeaderStep from './StepperHeaderStep';
 import { StepperContext } from './StepperContext';
 import useWindowSize from '../hooks/useWindowSize';
-import breakpoints from '../utils/breakpoints';
-import { Size } from '../utils/constants';
+import breakpoints, { Size } from '../utils/breakpoints';
 
 function StepListSeparator() {
   return <li aria-hidden="true" className="pgn__stepper-header-line" />;
