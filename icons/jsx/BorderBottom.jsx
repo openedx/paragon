@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBorderBottom(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBorderBottom(props) {
     </svg>
   );
 }
-
 export default SvgBorderBottom;

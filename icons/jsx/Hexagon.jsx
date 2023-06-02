@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHexagon(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgHexagon(props) {
     </svg>
   );
 }
-
 export default SvgHexagon;

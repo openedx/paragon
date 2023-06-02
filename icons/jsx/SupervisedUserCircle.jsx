@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSupervisedUserCircle(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSupervisedUserCircle(props) {
     </svg>
   );
 }
-
 export default SvgSupervisedUserCircle;

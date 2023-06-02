@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVpnKey(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgVpnKey(props) {
     </svg>
   );
 }
-
 export default SvgVpnKey;

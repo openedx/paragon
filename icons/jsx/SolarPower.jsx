@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSolarPower(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSolarPower(props) {
     </svg>
   );
 }
-
 export default SvgSolarPower;

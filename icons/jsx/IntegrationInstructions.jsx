@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgIntegrationInstructions(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgIntegrationInstructions(props) {
     </svg>
   );
 }
-
 export default SvgIntegrationInstructions;

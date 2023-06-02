@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDataThresholding(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDataThresholding(props) {
     </svg>
   );
 }
-
 export default SvgDataThresholding;

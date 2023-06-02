@@ -30,11 +30,23 @@ function colorYiq(color, light, dark, threshold, themeVariant = 'light') {
   const [r, g, b] = color.rgb();
   const yiq = ((r * 299) + (g * 587) + (b * 114)) * 0.001;
 
+  let result = yiq >= contrastThreshold ? chroma(darkColor) : chroma(lightColor);
+
   if (yiq >= contrastThreshold) {
-    return chroma(darkColor);
+    // check whether the resulting combination of colors passes a11y contrast ratio of 4:5:1
+    // if not - darken resulting color until it does
+    while (chroma.contrast(color, result) < 4.5) {
+      result = result.darken(0.1);
+    }
+    return result;
   }
 
-  return chroma(lightColor);
+  // check whether the resulting combination of colors passes a11y contrast ratio of 4:5:1
+  // if not - brighten resulting color until it does
+  while (chroma.contrast(color, result) < 4.5) {
+    result = result.brighten(0.1);
+  }
+  return result;
 }
 
 /**

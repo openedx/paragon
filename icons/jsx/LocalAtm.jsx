@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLocalAtm(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLocalAtm(props) {
     </svg>
   );
 }
-
 export default SvgLocalAtm;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAnalytics(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAnalytics(props) {
     </svg>
   );
 }
-
 export default SvgAnalytics;

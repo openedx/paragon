@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFormatPaint(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgFormatPaint(props) {
     </svg>
   );
 }
-
 export default SvgFormatPaint;

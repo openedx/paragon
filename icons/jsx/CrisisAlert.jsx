@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCrisisAlert(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCrisisAlert(props) {
     </svg>
   );
 }
-
 export default SvgCrisisAlert;

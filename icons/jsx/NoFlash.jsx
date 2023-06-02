@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNoFlash(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgNoFlash(props) {
     </svg>
   );
 }
-
 export default SvgNoFlash;

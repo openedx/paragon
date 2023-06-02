@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAddBusiness(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgAddBusiness(props) {
     </svg>
   );
 }
-
 export default SvgAddBusiness;

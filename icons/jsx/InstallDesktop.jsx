@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgInstallDesktop(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgInstallDesktop(props) {
     </svg>
   );
 }
-
 export default SvgInstallDesktop;

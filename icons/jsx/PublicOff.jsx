@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPublicOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPublicOff(props) {
     </svg>
   );
 }
-
 export default SvgPublicOff;

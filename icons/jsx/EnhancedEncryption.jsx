@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEnhancedEncryption(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEnhancedEncryption(props) {
     </svg>
   );
 }
-
 export default SvgEnhancedEncryption;

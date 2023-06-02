@@ -121,30 +121,33 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
 ```
 
 ### As link
-You can also use `Card` as a link by wrapping it into appropriate component, note that `Card` will override default 
-link styling to make its content appear as a regular text.
+You can also use `Card` as a link by passing the value `HyperLink` (or `a`, `Link`) to the `as` property, note that
+`Card` will override the default link styling to make its content appear as regular text.
 
 ```jsx live
 () => {
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
 
   return (
-    <Hyperlink destination="https://www.edx.org">
-      <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
-        <Card.ImageCap
-          src="https://picsum.photos/360/200/"
-          srcAlt="Card image"
-        />
-        <Card.Header title="Card Title"/>
-        <Card.Section>
-          This is a card section. It can contain anything but usually text, a list, or list of links. 
-          Multiple sections have a card divider between them.
-        </Card.Section>
-        <Card.Footer>
-          <Button>Action 1</Button>
-        </Card.Footer>
-      </Card>
-    </Hyperlink>
+    <Card
+      as={Hyperlink}
+      destination="https://www.edx.org"
+      style={{ width: isExtraSmall ? "100%" : "18rem" }}
+      isClickable
+    >
+      <Card.ImageCap
+        src="https://picsum.photos/360/200/"
+        srcAlt="Card image"
+      />
+      <Card.Header title="Card Title"/>
+      <Card.Section>
+        This is a card section. It can contain anything but usually text, a list, or list of links.
+        Multiple sections have a card divider between them.
+      </Card.Section>
+      <Card.Footer>
+        <Button>Action 1</Button>
+      </Card.Footer>
+    </Card>
 )}
 ```
 

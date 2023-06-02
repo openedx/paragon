@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSchedule(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSchedule(props) {
     </svg>
   );
 }
-
 export default SvgSchedule;

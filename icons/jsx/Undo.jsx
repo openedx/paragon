@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgUndo(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgUndo(props) {
     </svg>
   );
 }
-
 export default SvgUndo;

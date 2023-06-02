@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAvTimer(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAvTimer(props) {
     </svg>
   );
 }
-
 export default SvgAvTimer;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCorporateFare(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCorporateFare(props) {
     </svg>
   );
 }
-
 export default SvgCorporateFare;

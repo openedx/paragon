@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFlagCircle(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFlagCircle(props) {
     </svg>
   );
 }
-
 export default SvgFlagCircle;

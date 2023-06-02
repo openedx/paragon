@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSwitchAccount(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSwitchAccount(props) {
     </svg>
   );
 }
-
 export default SvgSwitchAccount;

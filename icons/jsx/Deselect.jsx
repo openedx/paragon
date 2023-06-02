@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDeselect(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDeselect(props) {
     </svg>
   );
 }
-
 export default SvgDeselect;

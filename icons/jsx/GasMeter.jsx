@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGasMeter(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGasMeter(props) {
     </svg>
   );
 }
-
 export default SvgGasMeter;

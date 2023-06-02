@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPassword(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPassword(props) {
     </svg>
   );
 }
-
 export default SvgPassword;

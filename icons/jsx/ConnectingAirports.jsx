@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgConnectingAirports(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgConnectingAirports(props) {
     </svg>
   );
 }
-
 export default SvgConnectingAirports;

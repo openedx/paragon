@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFormatAlignJustify(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFormatAlignJustify(props) {
     </svg>
   );
 }
-
 export default SvgFormatAlignJustify;

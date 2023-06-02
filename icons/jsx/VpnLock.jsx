@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVpnLock(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgVpnLock(props) {
     </svg>
   );
 }
-
 export default SvgVpnLock;

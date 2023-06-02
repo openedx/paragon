@@ -76,6 +76,7 @@ Collapsible.propTypes = {
   /** Unmount the component (remove it from the DOM) when it is collapsed */
   unmountOnExit: PropTypes.bool,
 };
+
 Collapsible.defaultProps = {
   className: undefined,
   defaultOpen: false,

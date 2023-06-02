@@ -12,8 +12,11 @@ function CardCarouselSubtitle({ children, as, className }) {
 }
 
 CardCarouselSubtitle.propTypes = {
+  /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
+  /** Specifies the base element */
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
+  /** A class name to append to the base element. */
   className: PropTypes.string,
 };
 

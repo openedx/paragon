@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHeatPump(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHeatPump(props) {
     </svg>
   );
 }
-
 export default SvgHeatPump;
