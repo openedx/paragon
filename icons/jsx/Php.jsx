@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPhp(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPhp(props) {
     </svg>
   );
 }
-
 export default SvgPhp;

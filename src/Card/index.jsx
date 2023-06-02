@@ -53,7 +53,6 @@ export { default as CardGroup } from 'react-bootstrap/CardGroup';
 export { default as CardGrid } from './CardGrid';
 
 Card.propTypes = {
-  ...BaseCard.propTypes,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies which orientation to use. */

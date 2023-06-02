@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgInsertDriveFile(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgInsertDriveFile(props) {
     </svg>
   );
 }
-
 export default SvgInsertDriveFile;

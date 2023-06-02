@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDynamicFeed(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgDynamicFeed(props) {
     </svg>
   );
 }
-
 export default SvgDynamicFeed;

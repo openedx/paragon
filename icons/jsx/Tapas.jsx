@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTapas(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTapas(props) {
     </svg>
   );
 }
-
 export default SvgTapas;

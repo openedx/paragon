@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDatasetLinked(props) {
   return (
     <svg
@@ -22,5 +21,4 @@ function SvgDatasetLinked(props) {
     </svg>
   );
 }
-
 export default SvgDatasetLinked;

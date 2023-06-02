@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgViewComfy(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgViewComfy(props) {
     </svg>
   );
 }
-
 export default SvgViewComfy;

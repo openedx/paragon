@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgChargingStation(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgChargingStation(props) {
     </svg>
   );
 }
-
 export default SvgChargingStation;

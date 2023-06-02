@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAdminPanelSettings(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgAdminPanelSettings(props) {
     </svg>
   );
 }
-
 export default SvgAdminPanelSettings;

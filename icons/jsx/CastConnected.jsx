@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCastConnected(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCastConnected(props) {
     </svg>
   );
 }
-
 export default SvgCastConnected;

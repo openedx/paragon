@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Fri, 12 May 2023 12:16:39 GMT
+ * Generated on Thu, 01 Jun 2023 14:00:29 GMT
  */
 
 :root {
@@ -120,6 +120,9 @@
   --pgn-spacing-toast-container-gutter-lg: 1.25rem;
   --pgn-spacing-toast-padding-y: .25rem;
   --pgn-spacing-toast-padding-x: .75rem;
+  --pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-padding-x: .625rem;
+  --pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-x: .625rem;
+  --pgn-spacing-tab-more-link-dropdown-toggle-padding-x: .7rem;
   --pgn-spacing-sticky-offset: 0;
   --pgn-spacing-selectable-box-box-space: .75rem;
   --pgn-spacing-selectable-box-border-radius: .25rem;
@@ -139,6 +142,7 @@
   --pgn-spacing-navbar-toggler-padding-x: .75rem;
   --pgn-spacing-navbar-toggler-padding-y: .25rem;
   --pgn-spacing-navbar-padding-x-nav-link: .5rem;
+  --pgn-spacing-nav-link-distance-to-border: .313rem;
   --pgn-spacing-nav-link-padding-x: 1rem;
   --pgn-spacing-nav-link-padding-y: .5rem;
   --pgn-spacing-modal-dialog-margin: 1.5rem;
@@ -291,6 +295,8 @@
   --pgn-size-navbar-nav-scroll-max-height: 75vh;
   --pgn-size-nav-tabs-border-radius: 0;
   --pgn-size-nav-tabs-border-width: 2px;
+  --pgn-size-nav-tabs-link-border-bottom-width: .188rem;
+  --pgn-size-nav-pills-link-border-width: 1px;
   --pgn-size-modal-content-border-width: 0px;
   --pgn-size-modal-sm: 400px;
   --pgn-size-modal-md: 500px;
@@ -445,6 +451,9 @@
   --pgn-spacing-spacer-3: var(--pgn-spacing-spacer-base);
   --pgn-spacing-spacer-2: calc(var(--pgn-spacing-spacer-base) * .5rem);
   --pgn-spacing-spacer-1: calc(var(--pgn-spacing-spacer-base) * .25rem);
+  --pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-padding-y: var(--pgn-spacing-spacer-base);
+  --pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-y: var(--pgn-spacing-spacer-base);
+  --pgn-spacing-tab-more-link-dropdown-toggle-padding-y: var(--pgn-spacing-spacer-base);
   --pgn-spacing-popover-body-padding-x: var(--pgn-spacing-popover-header-padding-x);
   --pgn-spacing-popover-body-padding-y: var(--pgn-spacing-popover-header-padding-y);
   --pgn-spacing-navbar-padding-x-base: var(--pgn-spacing-spacer-base);
@@ -485,6 +494,8 @@
   --pgn-size-pagination-border-radius-lg: var(--pgn-size-border-radius-lg);
   --pgn-size-pagination-border-radius-sm: var(--pgn-size-border-radius-sm);
   --pgn-size-pagination-border-width: var(--pgn-size-border-width);
+  --pgn-size-nav-tabs-inverse-link-active-border-bottom-width: var(--pgn-size-nav-tabs-link-border-bottom-width);
+  --pgn-size-nav-pills-inverse-link-border-width: var(--pgn-size-nav-pills-link-border-width);
   --pgn-size-nav-pills-border-radius: var(--pgn-size-border-radius-base);
   --pgn-size-modal-content-border-radius: var(--pgn-size-border-radius-lg);
   --pgn-size-image-thumbnail-border-radius: var(--pgn-size-border-radius-base);

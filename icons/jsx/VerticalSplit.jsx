@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVerticalSplit(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgVerticalSplit(props) {
     </svg>
   );
 }
-
 export default SvgVerticalSplit;

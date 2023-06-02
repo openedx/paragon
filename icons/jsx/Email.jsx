@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEmail(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEmail(props) {
     </svg>
   );
 }
-
 export default SvgEmail;

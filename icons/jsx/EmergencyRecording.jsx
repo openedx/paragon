@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEmergencyRecording(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEmergencyRecording(props) {
     </svg>
   );
 }
-
 export default SvgEmergencyRecording;

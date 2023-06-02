@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgViewCompact(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgViewCompact(props) {
     </svg>
   );
 }
-
 export default SvgViewCompact;

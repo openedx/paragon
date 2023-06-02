@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRocket(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRocket(props) {
     </svg>
   );
 }
-
 export default SvgRocket;

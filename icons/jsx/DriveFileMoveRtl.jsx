@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDriveFileMoveRtl(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDriveFileMoveRtl(props) {
     </svg>
   );
 }
-
 export default SvgDriveFileMoveRtl;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVoiceChat(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgVoiceChat(props) {
     </svg>
   );
 }
-
 export default SvgVoiceChat;

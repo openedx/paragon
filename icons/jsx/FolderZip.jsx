@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFolderZip(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFolderZip(props) {
     </svg>
   );
 }
-
 export default SvgFolderZip;

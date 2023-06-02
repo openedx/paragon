@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEditRoad(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEditRoad(props) {
     </svg>
   );
 }
-
 export default SvgEditRoad;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMovieCreation(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgMovieCreation(props) {
     </svg>
   );
 }
-
 export default SvgMovieCreation;

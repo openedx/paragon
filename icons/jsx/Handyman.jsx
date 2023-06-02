@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHandyman(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgHandyman(props) {
     </svg>
   );
 }
-
 export default SvgHandyman;

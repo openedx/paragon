@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWorkOutline(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgWorkOutline(props) {
     </svg>
   );
 }
-
 export default SvgWorkOutline;

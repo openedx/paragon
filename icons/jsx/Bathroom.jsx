@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBathroom(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBathroom(props) {
     </svg>
   );
 }
-
 export default SvgBathroom;

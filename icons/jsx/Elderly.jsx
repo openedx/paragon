@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgElderly(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgElderly(props) {
     </svg>
   );
 }
-
 export default SvgElderly;

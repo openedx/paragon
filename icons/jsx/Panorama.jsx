@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPanorama(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPanorama(props) {
     </svg>
   );
 }
-
 export default SvgPanorama;

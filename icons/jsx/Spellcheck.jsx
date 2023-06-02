@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSpellcheck(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSpellcheck(props) {
     </svg>
   );
 }
-
 export default SvgSpellcheck;

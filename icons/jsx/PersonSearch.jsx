@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPersonSearch(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgPersonSearch(props) {
     </svg>
   );
 }
-
 export default SvgPersonSearch;

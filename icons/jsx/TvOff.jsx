@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTvOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTvOff(props) {
     </svg>
   );
 }
-
 export default SvgTvOff;
