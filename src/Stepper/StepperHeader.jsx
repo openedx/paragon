@@ -36,7 +36,7 @@ function StepperHeader({ className, PageCountComponent, compactWidth }) {
   const { steps, activeKey } = useContext(StepperContext);
   const windowDimensions = useWindowSize();
   const size = Size[compactWidth] || 'small';
-  const breakpointWidth = breakpoints[size].maxWidth;
+  const breakpointWidth = breakpoints[size].maxWidth || Infinity;
   const isCompactView = windowDimensions.width < breakpointWidth;
 
   if (isCompactView) {
