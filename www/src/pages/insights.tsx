@@ -11,16 +11,16 @@ import {
   useMediaQuery,
   breakpoints,
 } from '~paragon-react';
-import SEO from '../../components/SEO';
-import Layout from '../../components/PageLayout';
-import SummaryUsageExamples, { ISummaryUsageExamples } from '../../components/insights/SummaryUsageExamples';
-import ProjectUsageExamples, { IProjectUsageExamples } from '../../components/insights/ProjectUsageExamples';
-import ComponentUsageExamples, { IComponentUsageExamples } from '../../components/insights/ComponentUsageExamples';
-import getGithubProjectUrl from '../../utils/getGithubProjectUrl';
+import SEO from '../components/SEO';
+import Layout from '../components/PageLayout';
+import SummaryUsageExamples, { ISummaryUsageExamples } from '../components/insights/SummaryUsageExamples';
+import ProjectUsageExamples, { IProjectUsageExamples } from '../components/insights/ProjectUsageExamples';
+import ComponentUsageExamples, { IComponentUsageExamples } from '../components/insights/ComponentUsageExamples';
+import getGithubProjectUrl from '../utils/getGithubProjectUrl';
 // @ts-ignore
-import dependentProjectsAnalysis from '../../../../dependent-usage.json'; // eslint-disable-line
-import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../../config';
-import InsightsContext from '../../context/InsightsContext';
+import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
+import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
+import InsightsContext from '../context/InsightsContext';
 
 const ICON_TYPE = 'Icon';
 const TABLE_PAGE_SIZE = 10;
@@ -354,7 +354,7 @@ function IconsUsage({ data }: { data: string[] }) {
   );
 }
 
-export default function UsageInsightsPage({ pageContext: { tab } }: { pageContext: { tab: string } }) {
+export default function InsightsPage({ pageContext: { tab } }: { pageContext: { tab: string } }) {
   const { paragonTypes = {}, isParagonIcon = () => false } = useContext(InsightsContext) as IInsightsContext;
   const {
     components, hooks, utils, icons,
@@ -429,7 +429,7 @@ export default function UsageInsightsPage({ pageContext: { tab } }: { pageContex
   );
 }
 
-UsageInsightsPage.propTypes = {
+InsightsPage.propTypes = {
   pageContext: PropTypes.shape({
     tab: PropTypes.oneOf(Object.values(INSIGHTS_TABS)),
   }).isRequired,

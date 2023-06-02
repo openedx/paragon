@@ -217,10 +217,10 @@ function Menu() {
         >
           <ul className="list-unstyled foundations-list">
             <li>
-              <Link to="/tools/usage-insights">Usage Insights</Link>
+              <Link to="/insights">Usage Insights</Link>
             </li>
             <li>
-              <Link to="/tools/playground" onClick={handlePlaygroundClick}>
+              <Link to="/playground" onClick={handlePlaygroundClick}>
                 Playground
                 <Badge className="ml-1" variant="warning">Beta</Badge>
               </Link>

@@ -106,27 +106,27 @@ const INSIGHTS_TABS = Object.freeze({
 const INSIGHTS_PAGES = [
   {
     tab: INSIGHTS_TABS.SUMMARY,
-    path: '/tools/usage-insights',
+    path: '/insights',
   },
   {
     tab: INSIGHTS_TABS.PROJECTS,
-    path: '/tools/usage-insights/projects',
+    path: '/insights/projects',
   },
   {
     tab: INSIGHTS_TABS.COMPONENTS,
-    path: '/tools/usage-insights/components',
+    path: '/insights/components',
   },
   {
     tab: INSIGHTS_TABS.HOOKS,
-    path: '/tools/usage-insights/hooks',
+    path: '/insights/hooks',
   },
   {
     tab: INSIGHTS_TABS.UTILS,
-    path: '/tools/usage-insights/utils',
+    path: '/insights/utils',
   },
   {
     tab: INSIGHTS_TABS.ICONS,
-    path: '/tools/usage-insights/icons',
+    path: '/insights/icons',
   },
 ];
 

@@ -3,8 +3,8 @@ import { Hyperlink } from '~paragon-react';
 import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
 
-import SEO from '../../components/SEO';
-import { SiteTitle } from '../../components/header';
+import SEO from '../components/SEO';
+import { SiteTitle } from '../components/header';
 
 const FEEDBACK_URL = 'https://github.com/openedx/paragon/issues/new?assignees=&labels=playground&template=feedback_template.md&title=[Playground]';
 
@@ -29,7 +29,7 @@ export default function Playground({ location }) {
         && iframeRef.current.contentWindow.location.search !== searchValue.current
       ) {
         searchValue.current = iframeRef.current.contentWindow.location.search;
-        navigate(`/tools/playground${searchValue.current}`, { replace: true });
+        navigate(`/playground${searchValue.current}`, { replace: true });
       }
     }, 200);
     return () => clearInterval(iframeUrlPoll);

@@ -17,7 +17,7 @@ import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
-import { componentsInUsage, ComponentsUsage } from '../pages/tools/usage-insights';
+import { componentsInUsage, ComponentsUsage } from '../pages/insights';
 
 export interface IPageTemplate {
   data: {
