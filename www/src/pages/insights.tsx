@@ -376,10 +376,9 @@ export default function InsightsPage({ pageContext: { tab } }: { pageContext: { 
   const handleOnSelect = (value: string) => {
     if (value !== tab) {
       global.analytics.track(`openedx.paragon.docs.insights.tabs.${value.toLowerCase().trim()}.clicked`);
-      navigate(INSIGHTS_PAGES.find(item => item.tab === value)!.path);
+      navigate(INSIGHTS_PAGES.find(item => item.tab === value).path);
     }
   };
-
   return (
     <Layout>
       <Container size="md" className="py-5">
