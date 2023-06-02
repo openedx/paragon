@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTitle(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgTitle(props) {
     </svg>
   );
 }
-
 export default SvgTitle;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCoffeeMaker(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgCoffeeMaker(props) {
     </svg>
   );
 }
-
 export default SvgCoffeeMaker;

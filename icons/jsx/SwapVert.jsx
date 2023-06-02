@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSwapVert(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSwapVert(props) {
     </svg>
   );
 }
-
 export default SvgSwapVert;

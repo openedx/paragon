@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCropDin(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgCropDin(props) {
     </svg>
   );
 }
-
 export default SvgCropDin;

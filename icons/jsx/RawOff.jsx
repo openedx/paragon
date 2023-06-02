@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRawOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRawOff(props) {
     </svg>
   );
 }
-
 export default SvgRawOff;

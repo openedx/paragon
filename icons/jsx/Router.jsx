@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgRouter(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgRouter(props) {
     </svg>
   );
 }
-
 export default SvgRouter;

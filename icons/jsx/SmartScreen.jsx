@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSmartScreen(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgSmartScreen(props) {
     </svg>
   );
 }
-
 export default SvgSmartScreen;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAnnouncement(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAnnouncement(props) {
     </svg>
   );
 }
-
 export default SvgAnnouncement;

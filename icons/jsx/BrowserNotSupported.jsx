@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBrowserNotSupported(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBrowserNotSupported(props) {
     </svg>
   );
 }
-
 export default SvgBrowserNotSupported;

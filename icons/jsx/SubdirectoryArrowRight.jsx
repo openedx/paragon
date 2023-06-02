@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgSubdirectoryArrowRight(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgSubdirectoryArrowRight(props) {
     </svg>
   );
 }
-
 export default SvgSubdirectoryArrowRight;

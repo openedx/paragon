@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAppsOutage(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgAppsOutage(props) {
     </svg>
   );
 }
-
 export default SvgAppsOutage;

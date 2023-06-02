@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgChalet(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgChalet(props) {
     </svg>
   );
 }
-
 export default SvgChalet;

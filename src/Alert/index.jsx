@@ -119,6 +119,27 @@ AlertHeading.defaultProps = {
 
 Alert.propTypes = {
   ...BaseAlert.propTypes,
+  /** Specifies class name to append to the base element */
+  className: PropTypes.string,
+  /** Overrides underlying component base CSS class name */
+  bsPrefix: PropTypes.string,
+  /** Specifies variant to use. */
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light']),
+  /**
+   * Animate the entering and exiting of the Alert. `true` will use the `<Fade>` transition,
+   * more detailed customization is also provided.
+   */
+  transition: PropTypes.oneOfType([PropTypes.bool, PropTypes.shape({
+    in: PropTypes.bool,
+    appear: PropTypes.bool,
+    children: PropTypes.node,
+    onEnter: PropTypes.func,
+    onEntered: PropTypes.func,
+    onEntering: PropTypes.func,
+    onExit: PropTypes.func,
+    onExited: PropTypes.func,
+    onExiting: PropTypes.func,
+  })]),
   /** Docstring for the children prop */
   children: PropTypes.node,
   /** Docstring for the icon prop... Icon that will be shown in the alert */

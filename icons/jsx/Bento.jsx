@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgBento(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgBento(props) {
     </svg>
   );
 }
-
 export default SvgBento;

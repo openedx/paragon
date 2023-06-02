@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTapAndPlay(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTapAndPlay(props) {
     </svg>
   );
 }
-
 export default SvgTapAndPlay;

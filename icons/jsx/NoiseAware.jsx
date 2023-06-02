@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNoiseAware(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgNoiseAware(props) {
     </svg>
   );
 }
-
 export default SvgNoiseAware;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTextRotationAngleup(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTextRotationAngleup(props) {
     </svg>
   );
 }
-
 export default SvgTextRotationAngleup;

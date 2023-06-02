@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgConnectWithoutContact(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgConnectWithoutContact(props) {
     </svg>
   );
 }
-
 export default SvgConnectWithoutContact;

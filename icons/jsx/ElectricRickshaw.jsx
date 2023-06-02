@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgElectricRickshaw(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgElectricRickshaw(props) {
     </svg>
   );
 }
-
 export default SvgElectricRickshaw;

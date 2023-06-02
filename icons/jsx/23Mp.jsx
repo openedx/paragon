@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function Svg23Mp(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function Svg23Mp(props) {
     </svg>
   );
 }
-
 export default Svg23Mp;

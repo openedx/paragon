@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgNetworkCell(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgNetworkCell(props) {
     </svg>
   );
 }
-
 export default SvgNetworkCell;

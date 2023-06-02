@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPadding(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPadding(props) {
     </svg>
   );
 }
-
 export default SvgPadding;

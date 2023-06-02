@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgQueuePlayNext(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgQueuePlayNext(props) {
     </svg>
   );
 }
-
 export default SvgQueuePlayNext;

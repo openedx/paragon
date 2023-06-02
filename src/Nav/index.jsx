@@ -25,7 +25,10 @@ function NavDropdownDivider(props) {
 }
 
 Nav.propTypes = {
-  ...Nav.propTypes,
+  /** Change the underlying component CSS base class name and modifier class names prefix. */
+  cardHeaderBsPrefix: PropTypes.string,
+  /** Specifies default active nav (uncontrolled usage). */
+  defaultActiveKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Marks the NavItem with a matching eventKey (or href if present) as active. */
   activeKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Set a custom element for this component. */
@@ -39,9 +42,10 @@ Nav.propTypes = {
    * This prop will be set automatically when the `Nav` is used inside a `Navbar`.
    */
   navbar: PropTypes.bool,
+  /** Callback fired when a key is pressed. */
   onKeyDown: PropTypes.func,
   /** A callback fired when a NavItem is selected. */
-  onSelect: PropTypes.string,
+  onSelect: PropTypes.func,
   /**
    * ARIA role for the `Nav`, in the context of a `TabContainer`,
    * the default will be set to "tablist", but can be overridden by the `Nav` when set explicitly.
@@ -54,7 +58,8 @@ Nav.propTypes = {
 };
 
 NavItem.propTypes = {
-  ...NavItem.propTypes,
+  /** The ARIA role for the `NavItem` */
+  role: PropTypes.string,
   /** Set a custom element for this component. */
   as: PropTypes.elementType,
   /** Change the underlying component CSS base class name and modifier class names prefix. */
@@ -62,7 +67,8 @@ NavItem.propTypes = {
 };
 
 NavLink.propTypes = {
-  ...NavLink.propTypes,
+  /** Callback fired when the active item changes. */
+  onSelect: PropTypes.string,
   /** The active state of the `NavItem` item. */
   active: PropTypes.bool,
   /** You can use a custom element type for this component. */
@@ -83,7 +89,6 @@ NavLink.propTypes = {
 };
 
 NavDropdown.propTypes = {
-  ...NavDropdown.propTypes,
   /** An html id attribute for the `Toggle` button, necessary for assistive technologies, such as screen readers. */
   id: PropTypes.string.isRequired,
   /** The content of the non-toggle Button. */

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgKeyboardHide(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgKeyboardHide(props) {
     </svg>
   );
 }
-
 export default SvgKeyboardHide;

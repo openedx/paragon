@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCameraFront(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCameraFront(props) {
     </svg>
   );
 }
-
 export default SvgCameraFront;

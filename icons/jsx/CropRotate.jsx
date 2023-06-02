@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCropRotate(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCropRotate(props) {
     </svg>
   );
 }
-
 export default SvgCropRotate;

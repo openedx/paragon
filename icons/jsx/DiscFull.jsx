@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDiscFull(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDiscFull(props) {
     </svg>
   );
 }
-
 export default SvgDiscFull;

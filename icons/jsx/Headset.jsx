@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgHeadset(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgHeadset(props) {
     </svg>
   );
 }
-
 export default SvgHeadset;

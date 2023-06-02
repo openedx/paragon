@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgAssistWalker(props) {
   return (
     <svg
@@ -18,5 +17,4 @@ function SvgAssistWalker(props) {
     </svg>
   );
 }
-
 export default SvgAssistWalker;

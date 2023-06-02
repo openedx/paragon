@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgArrowDropDown(props) {
   return (
     <svg
@@ -14,5 +13,4 @@ function SvgArrowDropDown(props) {
     </svg>
   );
 }
-
 export default SvgArrowDropDown;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPrivateConnectivity(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPrivateConnectivity(props) {
     </svg>
   );
 }
-
 export default SvgPrivateConnectivity;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPhoneCallback(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPhoneCallback(props) {
     </svg>
   );
 }
-
 export default SvgPhoneCallback;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFormatTextdirectionRToL(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFormatTextdirectionRToL(props) {
     </svg>
   );
 }
-
 export default SvgFormatTextdirectionRToL;

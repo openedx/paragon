@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgShieldMoon(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgShieldMoon(props) {
     </svg>
   );
 }
-
 export default SvgShieldMoon;

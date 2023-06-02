@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgEditLocationAlt(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgEditLocationAlt(props) {
     </svg>
   );
 }
-
 export default SvgEditLocationAlt;

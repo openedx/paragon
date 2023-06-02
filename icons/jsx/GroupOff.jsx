@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGroupOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGroupOff(props) {
     </svg>
   );
 }
-
 export default SvgGroupOff;

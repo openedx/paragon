@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVisibility(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgVisibility(props) {
     </svg>
   );
 }
-
 export default SvgVisibility;
