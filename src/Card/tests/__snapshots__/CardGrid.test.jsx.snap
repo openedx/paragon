@@ -19,6 +19,7 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
         >
           <img
             className="pgn__card-image-cap"
+            loading="eager"
             onError={[Function]}
             onLoad={[Function]}
             src="http://fake.image"

@@ -150,6 +150,9 @@ function Layout({
             <LeaveFeedback />
           </Nav.Item>
           <Nav.Item>
+            <LeaveFeedback />
+          </Nav.Item>
+          <Nav.Item>
             <LeaveFeedback className="muted-link" isNavLink />
           </Nav.Item>
           {!hideFooterComponentMenu && (

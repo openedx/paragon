@@ -24,9 +24,11 @@ function LeaveFeedback({ isNavLink, ...props }: LeaveFeedbackProps) {
                 {...props}
             >
                 {leaveFeedbackLinkTitle}
-            </Nav.Link>
-        );
-    }
+    <Nav.Link onClick={handleLinkFeedbackClick} href={FEEDBACK_URL} target="_blank" {...props}>
+      Leave feedback
+    </Nav.Link>
+  );
+}
 
     return (
         <Button
