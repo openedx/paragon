@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDirectionsWalk(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDirectionsWalk(props) {
     </svg>
   );
 }
-
 export default SvgDirectionsWalk;

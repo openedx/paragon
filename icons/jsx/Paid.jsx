@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPaid(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgPaid(props) {
     </svg>
   );
 }
-
 export default SvgPaid;

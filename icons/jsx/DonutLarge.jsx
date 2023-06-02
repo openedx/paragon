@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgDonutLarge(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgDonutLarge(props) {
     </svg>
   );
 }
-
 export default SvgDonutLarge;

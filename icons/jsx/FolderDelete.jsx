@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFolderDelete(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFolderDelete(props) {
     </svg>
   );
 }
-
 export default SvgFolderDelete;

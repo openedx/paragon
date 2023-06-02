@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCompost(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCompost(props) {
     </svg>
   );
 }
-
 export default SvgCompost;

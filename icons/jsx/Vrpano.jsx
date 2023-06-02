@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVrpano(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgVrpano(props) {
     </svg>
   );
 }
-
 export default SvgVrpano;

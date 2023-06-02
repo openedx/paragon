@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgWifiLock(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgWifiLock(props) {
     </svg>
   );
 }
-
 export default SvgWifiLock;

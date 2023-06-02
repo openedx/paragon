@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMicrosoftTeams(props) {
   return (
     <svg
@@ -34,5 +33,4 @@ function SvgMicrosoftTeams(props) {
     </svg>
   );
 }
-
 export default SvgMicrosoftTeams;

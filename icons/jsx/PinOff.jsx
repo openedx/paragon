@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgPinOff(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgPinOff(props) {
     </svg>
   );
 }
-
 export default SvgPinOff;

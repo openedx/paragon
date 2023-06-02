@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgLinkOff(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgLinkOff(props) {
     </svg>
   );
 }
-
 export default SvgLinkOff;

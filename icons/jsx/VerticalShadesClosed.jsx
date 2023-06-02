@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgVerticalShadesClosed(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgVerticalShadesClosed(props) {
     </svg>
   );
 }
-
 export default SvgVerticalShadesClosed;

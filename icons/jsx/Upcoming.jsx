@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgUpcoming(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgUpcoming(props) {
     </svg>
   );
 }
-
 export default SvgUpcoming;

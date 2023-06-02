@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgFlipToBack(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgFlipToBack(props) {
     </svg>
   );
 }
-
 export default SvgFlipToBack;

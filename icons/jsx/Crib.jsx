@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCrib(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCrib(props) {
     </svg>
   );
 }
-
 export default SvgCrib;

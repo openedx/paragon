@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCalendarViewWeek(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCalendarViewWeek(props) {
     </svg>
   );
 }
-
 export default SvgCalendarViewWeek;

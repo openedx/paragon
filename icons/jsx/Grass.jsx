@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGrass(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGrass(props) {
     </svg>
   );
 }
-
 export default SvgGrass;

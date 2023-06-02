@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTextRotationNone(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTextRotationNone(props) {
     </svg>
   );
 }
-
 export default SvgTextRotationNone;

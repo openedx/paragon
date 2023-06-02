@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGifBox(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGifBox(props) {
     </svg>
   );
 }
-
 export default SvgGifBox;

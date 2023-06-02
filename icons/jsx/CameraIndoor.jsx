@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgCameraIndoor(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgCameraIndoor(props) {
     </svg>
   );
 }
-
 export default SvgCameraIndoor;

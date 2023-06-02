@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgShareLocation(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgShareLocation(props) {
     </svg>
   );
 }
-
 export default SvgShareLocation;

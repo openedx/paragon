@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgTabUnselected(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgTabUnselected(props) {
     </svg>
   );
 }
-
 export default SvgTabUnselected;

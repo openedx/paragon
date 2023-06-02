@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgStarFilled(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgStarFilled(props) {
     </svg>
   );
 }
-
 export default SvgStarFilled;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgExposure(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgExposure(props) {
     </svg>
   );
 }
-
 export default SvgExposure;

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgGif(props) {
   return (
     <svg
@@ -17,5 +16,4 @@ function SvgGif(props) {
     </svg>
   );
 }
-
 export default SvgGif;

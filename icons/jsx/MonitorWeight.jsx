@@ -1,5 +1,4 @@
 import * as React from "react";
-
 function SvgMonitorWeight(props) {
   return (
     <svg
@@ -21,5 +20,4 @@ function SvgMonitorWeight(props) {
     </svg>
   );
 }
-
 export default SvgMonitorWeight;
