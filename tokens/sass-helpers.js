@@ -66,7 +66,7 @@ function colorYiq({
     numBrightenAttempts += 1;
     if (numBrightenAttempts === maxAttempts) {
       // eslint-disable-next-line no-console
-      console.warn(`WARNING: Failed to brighten ${tokenName} () to pass contrast ratio of 4.5:1 (Original: ${originalColor.hex()}; Attempted: ${result.hex()}).`);
+      console.warn(`WARNING: Failed to brighten ${tokenName} to pass contrast ratio of 4.5:1 (Original: ${originalColor.hex()}; Attempted: ${result.hex()}).`);
     }
   }
   return result;
