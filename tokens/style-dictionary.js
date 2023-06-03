@@ -9,7 +9,12 @@ const cssUtilities = require('./css-utilities');
 const { fileHeader, sortByReference } = StyleDictionary.formatHelpers;
 
 const colorTransform = (token, theme) => {
-  const { value, modify = [], original } = token;
+  const {
+    name: tokenName,
+    value,
+    original,
+    modify = [],
+  } = token;
   const reservedColorValues = ['inherit', 'initial', 'revert', 'unset', 'currentColor'];
 
   if (reservedColorValues.includes(original.value)) {
@@ -27,7 +32,14 @@ const colorTransform = (token, theme) => {
           break;
         case 'color-yiq': {
           const { light, dark, threshold } = modifier;
-          color = colorYiq(color, light, dark, threshold, theme);
+          color = colorYiq({
+            tokenName,
+            originalColor: color,
+            light,
+            dark,
+            threshold,
+            theme,
+          });
           break;
         }
         case 'darken':
