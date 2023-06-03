@@ -37,7 +37,7 @@
   }
 
   .pgn-doc__menu-items {
-    margin-bottom: $spacer;
+    margin-bottom: var(--pgn-spacing-spacer-base);
 
     .pgn_collapsible {
       font-size: var(--pgn-typography-font-size-xs);
