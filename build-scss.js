@@ -84,16 +84,22 @@ const compileAndWriteStyleSheets = ({
     }],
   });
   const commonPostCssPlugins = [
-    postCSSCustomMedia({ preserve: true }),
     postCSSImport(),
+    postCSSCustomMedia({ preserve: true }),
     combineSelectors({ removeDuplicatedProperties: true }),
   ];
 
   postCSS(commonPostCssPlugins)
-    .process(compiledStyleSheet.css, { from: stylesPath, map: { inline: false } })
-    .then(result => {
+    .process(compiledStyleSheet.css, { from: stylesPath, map: false })
+    .then((result) => {
       fs.writeFileSync(`${outDir}/${name}.css`, result.css);
-      fs.writeFileSync(`${outDir}/${name}.css.map`, result.map.toString());
+
+      postCSS([postCSSMinify()])
+        .process(result.css, { from: `${name}.css`, map: { inline: false } })
+        .then((minifiedResult) => {
+          fs.writeFileSync(`${outDir}/${name}.css.map`, minifiedResult.map.toString());
+          fs.writeFileSync(`${outDir}/${name}.min.css`, minifiedResult.css);
+        });
 
       const hasExistingParagonThemeOutput = fs.existsSync(`${outDir}/${paragonThemeOutputFilename}`);
       let paragonThemeOutput;
@@ -117,15 +123,6 @@ const compileAndWriteStyleSheets = ({
         });
       }
       fs.writeFileSync(`${outDir}/${paragonThemeOutputFilename}`, `${JSON.stringify(paragonThemeOutput, null, 2)}\n`);
-    });
-
-  postCSS([
-    ...commonPostCssPlugins,
-    postCSSMinify(),
-  ])
-    .process(compiledStyleSheet.css, { from: stylesPath, map: { inline: false } })
-    .then(result => {
-      fs.writeFileSync(`${outDir}/${name}.min.css`, result.css);
     });
 };
 
