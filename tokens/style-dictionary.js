@@ -63,11 +63,14 @@ const colorTransform = (token, theme) => {
  * 2. 'theme' to output only theme's variables (e.g, 'light' or 'dark'), if theme is not provided - only
  * core tokens are built.
  */
-const createCustomCSSVariables = (args, theme) => {
-  const { dictionary, options, file } = args;
+const createCustomCSSVariables = ({
+  formatterArgs,
+  themeVariant,
+}) => {
+  const { dictionary, options, file } = formatterArgs;
 
-  const outputTokens = theme
-    ? dictionary.allTokens.filter(token => token.filePath.includes(theme))
+  const outputTokens = themeVariant
+    ? dictionary.allTokens.filter(token => token.filePath.includes(themeVariant))
     : dictionary.allTokens;
 
   const variables = outputTokens.sort(sortByReference(dictionary)).map(token => {
@@ -123,7 +126,7 @@ StyleDictionary.registerTransform({
  */
 StyleDictionary.registerFormat({
   name: 'css/custom-variables',
-  formatter: (args) => createCustomCSSVariables(args),
+  formatter: formatterArgs => createCustomCSSVariables({ formatterArgs }),
 });
 
 /**
