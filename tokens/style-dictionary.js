@@ -181,7 +181,7 @@ StyleDictionary.registerFormat({
     const { size: { breakpoint } } = dictionary.properties;
 
     let customMediaVariables = '';
-    const breakpoints = Object.values(breakpoint);
+    const breakpoints = Object.values(breakpoint || {});
 
     for (let i = 0; i < breakpoints.length; i++) {
       const [currentBreakpoint, nextBreakpoint] = [breakpoints[i], breakpoints[i + 1]];
