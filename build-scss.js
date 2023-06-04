@@ -10,7 +10,7 @@ const { pathToFileURL } = require('url');
 const path = require('path');
 const { program, Option } = require('commander');
 
-const paragonThemeOutputFilename = 'paragon-theme.json';
+const paragonThemeOutputFilename = 'theme-urls.json';
 
 /**
  * Updates `paragonThemeOutput` object with appropriate name and URLs.
