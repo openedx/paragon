@@ -34,7 +34,7 @@ const colorTransform = (token, theme) => {
           const { light, dark, threshold } = modifier;
           color = colorYiq({
             tokenName,
-            originalColor: color,
+            backgroundColor: color,
             light,
             dark,
             threshold,
@@ -63,11 +63,14 @@ const colorTransform = (token, theme) => {
  * 2. 'theme' to output only theme's variables (e.g, 'light' or 'dark'), if theme is not provided - only
  * core tokens are built.
  */
-const createCustomCSSVariables = (args, theme) => {
-  const { dictionary, options, file } = args;
+const createCustomCSSVariables = ({
+  formatterArgs,
+  themeVariant,
+}) => {
+  const { dictionary, options, file } = formatterArgs;
 
-  const outputTokens = theme
-    ? dictionary.allTokens.filter(token => token.filePath.includes(theme))
+  const outputTokens = themeVariant
+    ? dictionary.allTokens.filter(token => token.filePath.includes(themeVariant))
     : dictionary.allTokens;
 
   const variables = outputTokens.sort(sortByReference(dictionary)).map(token => {
@@ -123,7 +126,7 @@ StyleDictionary.registerTransform({
  */
 StyleDictionary.registerFormat({
   name: 'css/custom-variables',
-  formatter: (args) => createCustomCSSVariables(args),
+  formatter: formatterArgs => createCustomCSSVariables({ formatterArgs }),
 });
 
 /**
@@ -178,7 +181,7 @@ StyleDictionary.registerFormat({
     const { size: { breakpoint } } = dictionary.properties;
 
     let customMediaVariables = '';
-    const breakpoints = Object.values(breakpoint);
+    const breakpoints = Object.values(breakpoint || {});
 
     for (let i = 0; i < breakpoints.length; i++) {
       const [currentBreakpoint, nextBreakpoint] = [breakpoints[i], breakpoints[i + 1]];
@@ -201,6 +204,15 @@ StyleDictionary.registerFileHeader({
     'IMPORTANT: This file is the result of assembling design tokens',
     ...defaultMessage,
   ],
+});
+
+/**
+ * Registers a filter `isSource` that filters output to only include tokens
+ * that are marked as `isSource` in their metadata.
+ */
+StyleDictionary.registerFilter({
+  name: 'isSource',
+  matcher: token => token?.isSource === true,
 });
 
 module.exports = {
