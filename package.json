@@ -50,7 +50,7 @@
     "type-check": "tsc --noEmit && tsc --project www --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build-types": "tsc --emitDeclarationOnly",
-    "build-tokens": "node tokens/build-tokens.js --build-dir ./styles/css/",
+    "build-tokens": "node tokens/build-tokens.js --build-dir ./styles/css",
     "replace-variables-usage-with-css": "node tokens/replace-variables.js -p src -t usage",
     "replace-variables-definition-with-css": "node tokens/replace-variables.js -p src -t definition",
     "build-scss-to-css-map": "node tokens/map-scss-to-css.js",
