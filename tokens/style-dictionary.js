@@ -34,7 +34,7 @@ const colorTransform = (token, theme) => {
           const { light, dark, threshold } = modifier;
           color = colorYiq({
             tokenName,
-            originalColor: color,
+            backgroundColor: color,
             light,
             dark,
             threshold,
@@ -201,6 +201,15 @@ StyleDictionary.registerFileHeader({
     'IMPORTANT: This file is the result of assembling design tokens',
     ...defaultMessage,
   ],
+});
+
+/**
+ * Registers a filter `isSource` that filters output to only include tokens
+ * that are marked as `isSource` in their metadata.
+ */
+StyleDictionary.registerFilter({
+  name: 'isSource',
+  matcher: token => token?.isSource === true,
 });
 
 module.exports = {

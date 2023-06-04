@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const chroma = require('chroma-js');
+const chalk = require('chalk');
 
 /**
  * Javascript version of bootstrap's color-yiq function. Decides whether to return light color variant or dark one
@@ -8,7 +9,7 @@ const chroma = require('chroma-js');
  *
  * @param {Object} args
  * @param {Object} args.tokenName - Name of design token, used to log warnings
- * @param {Object} args.color - chroma-js color instance
+ * @param {Object} args.backgroundColor - chroma-js color instance
  * @param {String} args.light - light color variant from ./src/themes/{themeVariant}/global/other.json
  * @param {String} args.dark - dark color variant from ./src/themes/{themeVariant}/global/other.json
  * @param {Number} args.threshold - contrast threshold from ./src/core/global/other.json
@@ -18,7 +19,7 @@ const chroma = require('chroma-js');
  */
 function colorYiq({
   tokenName,
-  originalColor,
+  backgroundColor,
   light,
   dark,
   threshold,
@@ -37,7 +38,7 @@ function colorYiq({
   const lightColor = light || defaultLight;
   const darkColor = dark || defaultDark;
 
-  const [r, g, b] = originalColor.rgb();
+  const [r, g, b] = backgroundColor.rgb();
   const yiq = ((r * 299) + (g * 587) + (b * 114)) * 0.001;
 
   let result = yiq >= contrastThreshold ? chroma(darkColor) : chroma(lightColor);
@@ -47,12 +48,18 @@ function colorYiq({
     // check whether the resulting combination of colors passes a11y contrast ratio of 4:5:1
     // if not - darken resulting color until it does until maxAttempts is reached.
     let numDarkenAttempts = 1;
-    while (chroma.contrast(originalColor, result) < 4.5 && numDarkenAttempts <= maxAttempts) {
+    while (chroma.contrast(backgroundColor, result) < 4.5 && numDarkenAttempts <= maxAttempts) {
       result = result.darken(0.1);
       numDarkenAttempts += 1;
       if (numDarkenAttempts === maxAttempts) {
+        const title = `[a11y] Warning: Failed to sufficiently darken token ${chalk.keyword('orange').bold(tokenName)} to pass contrast ratio of 4.5:1.`;
+        const warningMetadata = [
+          `Background color: ${backgroundColor.hex()}`,
+          `Attempted foreground color: ${result.hex()}`,
+        ].join('\n    ');
+        const warn = `${title}\n    ${warningMetadata}`;
         // eslint-disable-next-line no-console
-        console.warn(`WARNING: Failed to darken ${tokenName} to pass contrast ratio of 4.5:1 (Original: ${originalColor.hex()}; Attempted: ${result.hex()}).`);
+        console.log(chalk.keyword('yellow').bold(warn));
       }
     }
     return result;
@@ -61,12 +68,18 @@ function colorYiq({
   // check whether the resulting combination of colors passes a11y contrast ratio of 4:5:1
   // if not - brighten resulting color until it does until maxAttempts is reached.
   let numBrightenAttempts = 1;
-  while (chroma.contrast(originalColor, result) < 4.5 && numBrightenAttempts <= maxAttempts) {
+  while (chroma.contrast(backgroundColor, result) < 4.5 && numBrightenAttempts <= maxAttempts) {
     result = result.brighten(0.1);
     numBrightenAttempts += 1;
     if (numBrightenAttempts === maxAttempts) {
+      const title = `[a11y] Warning: Failed to sufficiently brighten token ${chalk.keyword('orange').bold(tokenName)} to pass contrast ratio of 4.5:1.`;
+      const warningMetadata = [
+        `Background color: ${backgroundColor.hex()}`,
+        `Attempted foreground color: ${result.hex()}`,
+      ].join('\n    ');
+      const warn = `${title}\n    ${warningMetadata}`;
       // eslint-disable-next-line no-console
-      console.warn(`WARNING: Failed to brighten ${tokenName} to pass contrast ratio of 4.5:1 (Original: ${originalColor.hex()}; Attempted: ${result.hex()}).`);
+      console.log(chalk.keyword('yellow').bold(warn));
     }
   }
   return result;

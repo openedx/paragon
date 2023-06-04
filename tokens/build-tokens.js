@@ -1,16 +1,21 @@
 #!/usr/bin/env node
 const { program } = require('commander');
 const path = require('path');
-const { StyleDictionary, colorTransform, createCustomCSSVariables } = require('./style-dictionary');
+const { StyleDictionary, colorTransform } = require('./style-dictionary');
 
 program
   .version('0.0.1')
   .description('CLI to build design tokens for various platforms (currently only CSS is supported) from Paragon Design Tokens.')
   .option('--build-dir <char>', 'A path to directory where to put files with built tokens, must end with a /.', './build/')
   .option('--source <char>', 'A path where to look for additional tokens that will get merged with Paragon ones, must be a path to root directory of the token files that contains "root" and "themes" subdirectories.')
+  .option('--source-tokens-only', 'A flag to indicate that only tokens from source will be included in the output; Paragon core tokens will be used but not included in the output.')
   .parse();
 
-const { buildDir, source: tokensSource } = program.opts();
+const {
+  buildDir,
+  source: tokensSource,
+  sourceTokensOnly: hasSourceTokensOnly,
+} = program.opts();
 
 const coreConfig = {
   include: [path.resolve(__dirname, 'src/core/**/*.json')],
@@ -19,20 +24,23 @@ const coreConfig = {
     css: {
       prefix: 'pgn',
       transformGroup: 'css',
-      buildPath: buildDir,
+      // add trailing slash if not present
+      buildPath: buildDir.slice(-1) !== '/' ? `${buildDir}/` : buildDir,
       files: [
         {
           format: 'css/custom-variables',
           destination: 'core/variables.css',
+          filter: hasSourceTokensOnly ? 'isSource' : undefined,
           options: {
-            outputReferences: true,
+            outputReferences: !hasSourceTokensOnly,
           },
         },
         {
           format: 'css/custom-media-breakpoints',
           destination: 'core/custom-media-breakpoints.css',
+          filter: hasSourceTokensOnly ? 'isSource' : undefined,
           options: {
-            outputReferences: true,
+            outputReferences: !hasSourceTokensOnly,
           },
         },
       ],
@@ -54,9 +62,6 @@ const getStyleDictionaryConfig = (themeVariant) => ({
       transformer: (token) => colorTransform(token, themeVariant),
     },
   },
-  format: {
-    'css/custom-variables': (args) => createCustomCSSVariables(args, themeVariant),
-  },
   platforms: {
     css: {
       ...coreConfig.platforms.css,
@@ -64,15 +69,17 @@ const getStyleDictionaryConfig = (themeVariant) => ({
         {
           format: 'css/custom-variables',
           destination: `themes/${themeVariant}/variables.css`,
+          filter: hasSourceTokensOnly ? 'isSource' : undefined,
           options: {
-            outputReferences: true,
+            outputReferences: !hasSourceTokensOnly,
           },
         },
         {
           format: 'css/utility-classes',
           destination: `themes/${themeVariant}/utility-classes.css`,
+          filter: hasSourceTokensOnly ? 'isSource' : undefined,
           options: {
-            outputReferences: true,
+            outputReferences: !hasSourceTokensOnly,
           },
         },
       ],
