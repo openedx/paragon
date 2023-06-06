@@ -68,8 +68,8 @@
         background: transparent;
         box-shadow:
           inset 0 0 0
-          $stepper-header-step-error-bubble-box-shadow-width
-          $stepper-header-step-error-bubble-box-shadow-color;
+          $stepper-header-step-error-bubble-shadow-width
+          $stepper-header-step-error-bubble-color;
 
         * {
           color: $stepper-header-step-error-bubble-color;

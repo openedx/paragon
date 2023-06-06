@@ -14,6 +14,5 @@ $stepper-header-step-list-padding-x:                      0 !default;
 $stepper-header-step-list-margin:                         0 !default;
 $stepper-header-active-step-bg:                           $gray-500 !default;
 $stepper-header-step-error-bubble-color:                  $danger !default;
-$stepper-header-step-error-bubble-box-shadow-color:       $stepper-header-step-error-bubble-color !default;
-$stepper-header-step-error-bubble-box-shadow-width:       3px !default;
+$stepper-header-step-error-bubble-shadow-width:           3px !default;
 $stepper-header-step-error-description-color:             $stepper-header-step-error-bubble-color !default;
