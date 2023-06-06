@@ -5,6 +5,7 @@
   padding-left: 0;
   padding-top: 0;
   margin-bottom: map-get($spacers, 5);
+  display: inline-block;
 
   &:hover {
     text-decoration: $link-hover-decoration;
