@@ -36,8 +36,6 @@ Button.propTypes = {
   /** A function that would specify what the button should do when the `onClick` event is triggered.
    * For example, the button could launch a `Modal`. The default is an empty function. */
   onClick: PropTypes.func,
-  /** Providing a `href` will render an `<a>` element, styled as a button. */
-  href: PropTypes.string,
   /** A function that would specify what the button should do when the `onKeyDown` event is triggered.
    * For example, this could handle using the `Escape` key to trigger the button's action.
    * The default is an empty function. */
@@ -66,7 +64,6 @@ Button.defaultProps = {
   className: undefined,
   iconBefore: undefined,
   iconAfter: undefined,
-  href: undefined,
   disabled: false,
 };
 
