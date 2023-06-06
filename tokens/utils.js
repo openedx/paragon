@@ -162,7 +162,37 @@ async function transformInPath(location, variablesMap, transformType = 'definiti
   }
 }
 
+
+function createIndexFile(buildDir, isTheme, themeVariant){
+  const directoryPath = isTheme ? `${buildDir}/themes/${themeVariant}`:`${buildDir}/core`;
+  
+fs.readdir(directoryPath, (err, files) => {
+  if (err) {
+    console.error('Error reading directory:', err);
+    return;
+  }
+
+  const jsonFiles = files.filter(file => file !== 'index.css');
+  isTheme && jsonFiles.reverse();
+
+  const exportStatements = jsonFiles.map((file) => {
+    const fileName = path.basename(file, '.css');
+    return `@import "${fileName}";`;
+  });
+
+  const indexContent = exportStatements.join('\n');
+
+  fs.writeFile(path.join(directoryPath, 'index.css'), indexContent, (err) => {
+    if (err) {
+      console.error('Error creating index file:', err);
+      return;
+     }
+    });
+  });
+}
+
 module.exports = {
+  createIndexFile,
   getFilesWithExtension,
   getSCSStoCSSMap,
   transformInPath,
