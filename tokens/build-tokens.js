@@ -2,7 +2,7 @@
 const { program } = require('commander');
 const path = require('path');
 const { StyleDictionary, colorTransform, createCustomCSSVariables } = require('./style-dictionary');
-const { createIndexFile } = require('./utils');
+const { createIndexCssFile } = require('./utils');
 
 program
   .version('0.0.1')
@@ -10,14 +10,14 @@ program
   .option('--build-dir <char>', 'A path to directory where to put files with built tokens, must end with a /.', './build/')
   .option('--source <char>', 'A path where to look for additional tokens that will get merged with Paragon ones, must be a path to root directory of the token files that contains "root" and "themes" subdirectories.')
   .option('--source-tokens-only', 'If provided, only tokens from --source will be included in the output; Paragon tokens will be used for references but not included in the output.')
-  .option('--themes <themes...>', 'A list of all the themes do you want to build, by default Paragn build light theme.')
+  .option('--themes <themes...>', 'A list of theme variants to build. By default, Paragon currently only supports a light theme.')
   .parse();
 
 const {
   buildDir,
   source: tokensSource,
   sourceTokensOnly: hasSourceTokensOnly,
-  themes
+  themes,
 } = program.opts();
 
 const coreConfig = {
@@ -99,14 +99,12 @@ const getStyleDictionaryConfig = (themeVariant) => ({
 StyleDictionary.extend(coreConfig).buildAllPlatforms();
 
 // This line creates the index file for core folder, specially when buildDir is outside Paragon.
-createIndexFile(buildDir,false);
+createIndexCssFile({ buildDir, isTheme: false });
 
-const THEME_VARIANTS = themes ? themes : ['light'];
+const THEME_VARIANTS = themes || ['light'];
 
 THEME_VARIANTS.forEach((themeVariant) => {
   const config = getStyleDictionaryConfig(themeVariant);
   StyleDictionary.extend(config).buildAllPlatforms();
-  createIndexFile(buildDir,true, themeVariant);
-
+  createIndexCssFile({ buildDir, isTheme: true, themeVariant });
 });
-
