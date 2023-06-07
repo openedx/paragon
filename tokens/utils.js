@@ -162,7 +162,36 @@ async function transformInPath(location, variablesMap, transformType = 'definiti
   }
 }
 
+function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'), isTheme, themeVariant }) {
+  const directoryPath = isTheme ? `${buildDir}/themes/${themeVariant}` : `${buildDir}/core`;
+
+  fs.readdir(directoryPath, (errDir, files) => {
+    if (errDir) {
+      // eslint-disable-next-line no-console
+      console.error('Error reading directory:', errDir);
+      return;
+    }
+
+    const outputCssFiles = files.filter(file => file !== 'index.css');
+    // When creating themes, there are typically two files: one for utility classes and one for variables.
+    // It's organized them to allow variables be reading first.
+    if (isTheme) { outputCssFiles.reverse(); }
+
+    const exportStatements = outputCssFiles.map((file) => `@import "${file}";`);
+
+    const indexContent = `${exportStatements.join('\n')}\n`;
+
+    fs.writeFile(path.join(directoryPath, 'index.css'), indexContent, (errFile) => {
+      if (errFile) {
+        // eslint-disable-next-line no-console
+        console.error('Error creating index file:', errFile);
+      }
+    });
+  });
+}
+
 module.exports = {
+  createIndexCssFile,
   getFilesWithExtension,
   getSCSStoCSSMap,
   transformInPath,
