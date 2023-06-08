@@ -7,6 +7,9 @@
         "lg": { "value": "7px", "type": "dimension", "source": "$border-radius-lg", "description": "Large border radius." },
         "sm": { "value": "4px", "type": "dimension", "source": "$border-radius-sm", "description": "Small border radius." }
       }
+    },
+    "rounded": {
+      "pill": { "value": "50rem", "type": "dimension", "source": "$rounded-pill", "description": "Pill border radius." }
     }
   }
 }
