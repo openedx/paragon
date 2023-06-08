@@ -468,7 +468,7 @@ $border-radius: var(--pgn-size-border-radius-base) !default;
 $border-radius-lg: var(--pgn-size-border-radius-lg) !default;
 $border-radius-sm: var(--pgn-size-border-radius-sm) !default;
 
-$rounded-pill:                50rem !default;
+$rounded-pill: var(--pgn-size-rounded-pill) !default;
 
 $level-1-box-shadow: var(--pgn-elevation-box-shadow-level-1) !default;
 $level-2-box-shadow: var(--pgn-elevation-box-shadow-level-2) !default;
