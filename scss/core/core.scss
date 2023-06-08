@@ -5,7 +5,12 @@
 @import "~bootstrap/scss/reboot";
 @import "typography";
 @import "grid";
-@import "~react-loading-skeleton/dist/skeleton";
+// The react-loading-skeleton package.json defines an 'exports' field which specifies a '.css'
+// extension on this export.  Without the '.css' on the end of this line, webpack can't find the file
+// and the build fails.
+// See https://webpack.js.org/guides/package-exports/ for more information on how webpack uses
+// the 'exports' field.
+@import "~react-loading-skeleton/dist/skeleton.css";
 @import "~bootstrap/scss/transitions";
 @import "utilities";
 @import "~bootstrap/scss/media";
