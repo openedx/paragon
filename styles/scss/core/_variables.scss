@@ -295,7 +295,6 @@ $element-color-levels: map-merge(
 );
 
 // Set a specific jump point for requesting color jumps
-// TODO: can't use css variables due to conflict with SCSS function.
 $theme-color-interval: var(--pgn-theme-interval) !default;
 
 // The yiq lightness value that determines when the lightness
@@ -667,8 +666,8 @@ $caret-spacing: var(--pgn-spacing-caret-base) !default;
 
 $transition-base: var(--pgn-transition-base) !default;
 $transition-fade: var(--pgn-transition-fade) !default;
-$transition-collapse: var(--pgn-transition-collapse) !default;
-$transition-collapse-width:   width .35s ease !default;
+$transition-collapse: var(--pgn-transition-collapse-height) !default;
+$transition-collapse-width: var(--pgn-transition-collapse-width) !default;
 
 $embed-responsive-aspect-ratios: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -747,8 +746,8 @@ $lead-font-weight: var(--pgn-typography-font-weight-lead) !default;
 $small-font-size: var(--pgn-typography-font-size-small-base) !default;
 $x-small-font-size: var(--pgn-typography-font-size-small-x) !default;
 
-$micro-font-size: .688rem;
-$micro-line-height: .938rem;
+$micro-font-size: var(--pgn-typography-font-size-micro);
+$micro-line-height: var(--pgn-typography-line-height-micro);
 
 $text-muted: var(--pgn-color-text-muted) !default;
 
@@ -769,13 +768,13 @@ $mark-bg: var(--pgn-color-mark-bg) !default;
 
 $hr-margin-y: var(--pgn-size-hr-border-margin-y) !default;
 
-$label-margin-bottom: .5rem !default;
+$label-margin-bottom: var(--pgn-spacing-label-margin-bottom) !default;
 
-$table-cell-padding: 75rem !default;
-$table-cell-padding-sm: .3rem !default;
-$table-caption-color: $text-muted !default;
-$table-border-color: $border-color !default;
-$table-th-font-weight: null !default;
+$table-cell-padding: var(--pgn-spacing-table-cell-padding-base) !default;
+$table-cell-padding-sm: var(--pgn-spacing-table-cell-padding-sm) !default;
+$table-caption-color: var(--pgn-color-table-caption) !default;
+$table-border-color: var(--pgn-color-table-border) !default;
+$table-th-font-weight: var(--pgn-typography-font-weight-table-th) !default;
 
 // Z-index master list
 //
@@ -822,7 +821,7 @@ $input-btn-border-width: var(--pgn-size-input-btn-border-width) !default;
 
 // $spinner-width:           2rem !default;
 // $spinner-height:          $spinner-width !default;
-$spinner-vertical-align:      -.125em !default;
+$spinner-vertical-align:     calc(var(--pgn-spacing-vertical-align) * -1) !default;
 
 // $spinner-border-width:    .25em !default;
 

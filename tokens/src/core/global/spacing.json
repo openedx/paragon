@@ -14,6 +14,17 @@
       "5": { "value": "calc({spacing.spacer.base} * 3rem)", "type": "dimension", "description": "Space value of level 5" },
       "5,5": { "value": "calc({spacing.spacer.base} * 4rem)", "type": "dimension", "description": "Space value of level 5.5"},
       "6": { "value": "calc({spacing.spacer.base} * 5rem)", "type": "dimension", "description": "Space value of level 6" }
+    },
+    "label": {
+      "margin-bottom": { "value": ".5rem", "type": "dimension", "description": "Margin bottom for label." }
+    },
+    "table": {
+      "cell": {
+        "padding": {
+          "base": { "value": "75rem", "type": "dimension", "description": "Padding for tables." },
+          "sm": { "value": ".3rem", "type": "dimension", "description": "Padding sm for tables." }
+        }
+      }
     }
   }
 }
