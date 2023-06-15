@@ -25,6 +25,11 @@
           "sm": { "value": ".3rem", "type": "dimension", "description": "Padding sm for tables." }
         }
       }
+    },
+    "grid": {
+      "gutter-width": {
+        "value": "24px", "type": "dimension", "description": "Grid gutter width value."
+      }
     }
   }
 }

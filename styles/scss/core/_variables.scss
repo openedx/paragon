@@ -441,10 +441,10 @@ $container-max-widths: (
 //
 // Set the number of columns and specify the width of the gutters.
 
-// TODO: can't use css variables due to conflict with @if SCSS.
+// TODO: don`t create a token for this variable. Requires more changes to bootstrap files.
 $grid-columns: 12 !default;
-$grid-gutter-width:           24px !default;
-// TODO: can't use css variables due to conflict with @if SCSS.
+$grid-gutter-width: var(--pgn-spacing-grid-gutter-width) !default;
+// TODO: don`t create a token for this variable. Requires more changes to bootstrap files.
 $grid-row-columns: 6 !default;
 
 $max-width-xs: var(--pgn-size-container-max-width-xs) !default;

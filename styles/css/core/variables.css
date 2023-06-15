@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Fri, 09 Jun 2023 07:34:34 GMT
+ * Generated on Thu, 15 Jun 2023 15:10:16 GMT
  */
 
 :root {
@@ -115,6 +115,7 @@
   --pgn-typography-badge-font-size: 75%;
   --pgn-typography-alert-line-height: 1.5rem;
   --pgn-typography-alert-font-size: .875rem;
+  --pgn-spacing-grid-gutter-width: 24px;
   --pgn-spacing-table-cell-padding-sm: .3rem;
   --pgn-spacing-table-cell-padding-base: 75rem;
   --pgn-spacing-label-margin-bottom: .5rem;
