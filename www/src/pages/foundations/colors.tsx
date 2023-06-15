@@ -163,7 +163,7 @@ export default function ColorsPage({ data }: IColorsPage) {
 
         <h4>With default value</h4>
         <p>
-          Using a default value in CSS variables allows you to set a default value for a variable,
+          Using a default value in CSS variables allows to set a default value for a variable,
           which will be used if the primary value of the variable is not defined or not available.
         </p>
         <code className="d-block mb-4 lead bg-gray-100 p-3">
