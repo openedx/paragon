@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Mon, 05 Jun 2023 02:30:54 GMT
+ * Generated on Fri, 09 Jun 2023 07:34:35 GMT
  */
 
 :root {
@@ -1109,6 +1109,7 @@
   --pgn-color-theme-bg-light: var(--pgn-color-light-100);
   --pgn-color-theme-bg-brand: var(--pgn-color-brand-100);
   --pgn-color-theme-bg-primary: var(--pgn-color-primary-100);
+  --pgn-color-table-border: var(--pgn-color-border);
   --pgn-color-input-focus: var(--pgn-color-primary-500);
   --pgn-color-disabled: var(--pgn-color-gray-500);
   --pgn-color-bg-active: var(--pgn-color-primary-500);
@@ -1444,6 +1445,7 @@
   --pgn-color-theme-bg-info: var(--pgn-color-info-100);
   --pgn-color-theme-bg-success: var(--pgn-color-success-100);
   --pgn-color-theme-bg-secondary: var(--pgn-color-secondary-100);
+  --pgn-color-table-caption: var(--pgn-color-text-muted);
   --pgn-color-input-btn-focus: var(--pgn-color-input-focus);
   --pgn-elevation-form-control-file-focus: var(--pgn-elevation-form-input-focus);
   --pgn-elevation-form-control-range-thumb-focus: 0 0 0 1px var(--pgn-color-body-bg), var(--pgn-size-form-input-width-focus);
