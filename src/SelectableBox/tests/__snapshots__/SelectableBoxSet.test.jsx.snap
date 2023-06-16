@@ -13,27 +13,16 @@ exports[`<SelectableBox.Set /> correct rendering renders without props 1`] = `
     role="button"
     tabIndex={0}
   >
-    <div
-      className="pgn__form-radio"
-    >
-      <input
-        className="pgn__form-radio-input"
-        defaultChecked={false}
-        hidden={true}
-        id="form-field1"
-        name="testName"
-        onChange={[Function]}
-        tabIndex={-1}
-        type="radio"
-        value={1}
-      />
-      <div>
-        <label
-          className="pgn__form-label"
-          htmlFor="form-field1"
-        />
-      </div>
-    </div>
+    <input
+      className="pgn__form-radio-input"
+      defaultChecked={false}
+      hidden={true}
+      name="testName"
+      onChange={[Function]}
+      tabIndex={-1}
+      type="radio"
+      value={1}
+    />
     SelectableRadio1
   </div>
   <div
@@ -44,27 +33,16 @@ exports[`<SelectableBox.Set /> correct rendering renders without props 1`] = `
     role="button"
     tabIndex={0}
   >
-    <div
-      className="pgn__form-radio"
-    >
-      <input
-        className="pgn__form-radio-input"
-        defaultChecked={false}
-        hidden={true}
-        id="form-field2"
-        name="testName"
-        onChange={[Function]}
-        tabIndex={-1}
-        type="radio"
-        value={2}
-      />
-      <div>
-        <label
-          className="pgn__form-label"
-          htmlFor="form-field2"
-        />
-      </div>
-    </div>
+    <input
+      className="pgn__form-radio-input"
+      defaultChecked={false}
+      hidden={true}
+      name="testName"
+      onChange={[Function]}
+      tabIndex={-1}
+      type="radio"
+      value={2}
+    />
     SelectableRadio2
   </div>
   <div
@@ -75,27 +53,16 @@ exports[`<SelectableBox.Set /> correct rendering renders without props 1`] = `
     role="button"
     tabIndex={0}
   >
-    <div
-      className="pgn__form-radio"
-    >
-      <input
-        className="pgn__form-radio-input"
-        defaultChecked={false}
-        hidden={true}
-        id="form-field3"
-        name="testName"
-        onChange={[Function]}
-        tabIndex={-1}
-        type="radio"
-        value={3}
-      />
-      <div>
-        <label
-          className="pgn__form-label"
-          htmlFor="form-field3"
-        />
-      </div>
-    </div>
+    <input
+      className="pgn__form-radio-input"
+      defaultChecked={false}
+      hidden={true}
+      name="testName"
+      onChange={[Function]}
+      tabIndex={-1}
+      type="radio"
+      value={3}
+    />
     SelectableRadio3
   </div>
 </div>

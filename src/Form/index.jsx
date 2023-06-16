@@ -5,7 +5,7 @@ import FormGroup from './FormGroup';
 import FormControlFeedback from './FormControlFeedback';
 import FormText from './FormText';
 import FormControlDecoratorGroup from './FormControlDecoratorGroup';
-import FormRadio from './FormRadio';
+import FormRadio, { RadioControl } from './FormRadio';
 import FormRadioSet from './FormRadioSet';
 import FormRadioSetContext from './FormRadioSetContext';
 import FormAutosuggest from './FormAutosuggest';
@@ -48,6 +48,7 @@ export {
   FormControlFeedback,
   FormText,
   CheckboxControl,
+  RadioControl,
   SwitchControl,
   FormSwitchSet,
   useCheckboxSetValues,

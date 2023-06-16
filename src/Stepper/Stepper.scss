@@ -1,3 +1,5 @@
+@import "variables";
+
 .pgn__stepper-header {
   display: flex;
   justify-content: center;
@@ -8,10 +10,10 @@
 
   .pgn__stepper-header-step-list {
     list-style: none;
-    padding: .25rem 0;
+    padding: $stepper-header-step-list-padding-y $stepper-header-step-list-padding-x;
     display: flex;
     align-items: center;
-    margin: 0;
+    margin: $stepper-header-step-list-margin;
     flex-grow: 1;
     justify-content: center;
 
@@ -24,8 +26,8 @@
     }
 
     button.pgn__stepper-header-step {
-      border: none;
-      background-color: transparent;
+      border: $stepper-header-step-border;
+      background-color: $stepper-header-step-bg;
     }
   }
 
@@ -34,8 +36,8 @@
     align-items: center;
     color: var(--pgn-color-primary-base);
     flex-shrink: 1;
-    min-width: 0;
-    padding: .25rem;
+    min-width: $stepper-header-step-min-width;
+    padding: $stepper-header-step-padding;
 
     .pgn__bubble {
       margin-inline-end: .5rem;

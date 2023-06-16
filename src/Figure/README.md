@@ -14,7 +14,7 @@ notes: |
 
 <p className="lead">
   This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap.github.io/components/figures/" target="_blank" rel="noopener noreferrer">
+  <a href="https://react-bootstrap.github.io/docs/components/figures" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for documentation.
   </a>
 </p>
