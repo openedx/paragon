@@ -17,8 +17,7 @@
 .pgn__annotation-success-top {
   @include annotation-variant(
     var(--pgn-color-annotation-bg-success),
-    var(--pgn-color-annotation-text-success), "top"
-  );
+    var(--pgn-color-annotation-text-success), "top");
 }
 
 .pgn__annotation-success-bottom {

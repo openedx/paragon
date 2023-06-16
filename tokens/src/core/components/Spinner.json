@@ -12,5 +12,8 @@
         "border-width": { "value": ".2em", "type": "dimension", "source": "$spinner-border-width-sm" }
       }
     }
+  },
+  "spacing": {
+    "vertical-align": { "value": ".125em", "type": "dimension", "source": "$spinner-vertical-align" }
   }
 }
