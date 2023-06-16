@@ -90,10 +90,8 @@
   }
 }
 
-.pgn__alert-message-wrapper-stacked {
-  .pgn__alert-actions {
-    margin-top: var(--pgn-spacing-alert-actions-gap);
-  }
+.pgn__alert-message-wrapper-stacked .pgn__alert-actions {
+  margin-top: var(--pgn-spacing-alert-actions-gap);
 }
 
 // Alternate styles
