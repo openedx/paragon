@@ -57,23 +57,24 @@ exports.THEMES = [
 
 ## Running playground locally
 
-Playground is a separate application (provided by [playroom](https://github.com/seek-oss/playroom) package) that in production gets bundled together with docs site and is served by gatsby by rendering this application in an iframe on the `/playground` route.
-Currently, there is no way to reproduce this behaviour id development mode. To work with playground locally in development mode with hot-reloading you have to start `playroom`'s dev server and work with it separately from the docs site, to do that run
+Playground is a separate application (provided by [playroom](https://github.com/seek-oss/playroom) package) that in production gets bundled together with docs site and is served by Gatsby by rendering this application in an iframe on the `/playground` route.
+
+Currently, there is no way to reproduce this behavior in development mode. To work with Playground locally in development mode with hot-reloading you have to start `playroom`'s dev server and work with it separately from the docs site. To do that, run:
 
 ```sh
-npm playroom start
+npm run playroom:start
 ```
 
-which will make playroom available at http://localhost:9000/.
+which will make `playroom` available at http://localhost:9000/.
 
-To reproduce production site environment you need to build playroom's production bundle and serve it with gatsby:
+To reproduce the production environment, you may build `playroom`'s production bundle and serve it with Gatsby:
 
 ```sh
-npm playroom build
-gatsby serve
+npm run playroom:build
+npm run serve
 ```
 
-this will make docs site available at http://localhost:9000/ together with playground page working as in production site.
+This will make docs site available at http://localhost:9000/ together with Playground page working as in production site.
 
 ## Feature Flags
 In some scenarios, it is helpful to put your changes to the Paragon documentation site behind a feature flag so that you have more control over how a particular feature or change is rolled out more broadly.
