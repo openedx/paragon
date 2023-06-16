@@ -55,8 +55,11 @@
     "develop:with-theme": "npm run develop",
     "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx .",
     "start": "npm run develop",
+    "serve": "gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-themes": "node build-themes.js"
+    "build-themes": "node build-themes.js",
+    "playroom:start": "playroom start",
+    "playroom:build": "playroom build"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.7",
