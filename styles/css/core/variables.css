@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Thu, 08 Jun 2023 07:10:04 GMT
+ * Generated on Thu, 15 Jun 2023 15:10:16 GMT
  */
 
 :root {
@@ -32,7 +32,8 @@
   --pgn-elevation-modal-zindex: 1050;
   --pgn-elevation-modal-backdrop-zindex: 1040;
   --pgn-elevation-dropdown-zindex: 1000;
-  --pgn-transition-collapse: height .35s ease;
+  --pgn-transition-collapse-width: width .35s ease;
+  --pgn-transition-collapse-height: height .35s ease;
   --pgn-transition-fade: opacity .15s linear;
   --pgn-transition-base: all .2s ease-in-out;
   --pgn-transition-progress-bar-bar-transition: width .6s ease;
@@ -44,9 +45,11 @@
   --pgn-transition-carousel-duration: .6s;
   --pgn-transition-btn: none;
   --pgn-transition-badge: none;
+  --pgn-typography-line-height-micro: .938rem;
   --pgn-typography-line-height-sm: 1.5;
   --pgn-typography-line-height-lg: 1.5;
   --pgn-typography-line-height-base: 1.5556;
+  --pgn-typography-font-weight-table-th: normal;
   --pgn-typography-font-weight-lead: inherit;
   --pgn-typography-font-weight-bolder: bolder;
   --pgn-typography-font-weight-bold: 700;
@@ -54,6 +57,7 @@
   --pgn-typography-font-weight-normal: 400;
   --pgn-typography-font-weight-light: 300;
   --pgn-typography-font-weight-lighter: lighter;
+  --pgn-typography-font-size-micro: .688rem;
   --pgn-typography-font-size-mobile-h1: 2.25rem;
   --pgn-typography-font-size-h6: .75rem;
   --pgn-typography-font-size-h5: .875rem;
@@ -111,6 +115,10 @@
   --pgn-typography-badge-font-size: 75%;
   --pgn-typography-alert-line-height: 1.5rem;
   --pgn-typography-alert-font-size: .875rem;
+  --pgn-spacing-grid-gutter-width: 24px;
+  --pgn-spacing-table-cell-padding-sm: .3rem;
+  --pgn-spacing-table-cell-padding-base: 75rem;
+  --pgn-spacing-label-margin-bottom: .5rem;
   --pgn-spacing-spacer-base: 1rem;
   --pgn-spacing-spacer-0: 0;
   --pgn-spacing-tooltip-margin: 0;
@@ -124,6 +132,7 @@
   --pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-x: .625rem;
   --pgn-spacing-tab-more-link-dropdown-toggle-padding-x: .7rem;
   --pgn-spacing-sticky-offset: 0;
+  --pgn-spacing-vertical-align: .125em;
   --pgn-spacing-selectable-box-box-space: .75rem;
   --pgn-spacing-selectable-box-border-radius: .25rem;
   --pgn-spacing-selectable-box-padding: 1rem;
