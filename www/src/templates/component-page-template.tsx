@@ -17,7 +17,7 @@ import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
-import { componentsInUsage, ComponentsUsage } from '../pages/insights';
+import ComponentsUsage from '../components/insights/ComponentsUsage';
 
 export interface IPageTemplate {
   data: {
@@ -39,6 +39,7 @@ export interface IPageTemplate {
   },
   pageContext: {
     scssVariablesData: Record<string, string>,
+    componentsUsageInsights: string[],
   }
 }
 
@@ -48,7 +49,7 @@ export type ShortCodesTypes = {
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
-  pageContext: { scssVariablesData },
+  pageContext: { scssVariablesData, componentsUsageInsights },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
@@ -94,6 +95,10 @@ export default function PageTemplate({
   const usageInsightsTitle = 'Usage Insights';
   const usageInsightsUrl = 'usage-insights';
 
+  const sortedComponentNames = mdx.frontmatter?.components || [];
+  const filteredComponentsUsageInsights = componentsUsageInsights.map(componentName => componentName.replace(/\./g, ''));
+  const isUsageInsights = (sortedComponentNames as []).some(value => filteredComponentsUsageInsights.includes(value));
+
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
     if (Object.values(scssVariablesData).some(data => data) && !tableOfContents.items?.includes()) {
@@ -103,31 +108,18 @@ export default function PageTemplate({
       });
     }
     tableOfContents.items?.push({ title: propsAPITitle, url: `#${propsAPIUrl}` });
-    tableOfContents.items?.push({ title: usageInsightsTitle, url: `#${usageInsightsUrl}` });
+    if (isUsageInsights) {
+      tableOfContents.items?.push({
+        title: usageInsightsTitle,
+        url: `#${usageInsightsUrl}`,
+      });
+    }
     return tableOfContents;
   };
-
-  const sortedComponentNames = mdx.frontmatter?.components || [];
 
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
-
-  const usageComponents = {};
-
-  componentsInUsage.forEach(key => {
-    usageComponents[key] = null;
-  });
-
-  if (typeof sortedComponentNames !== 'string') {
-    sortedComponentNames.forEach(componentName => {
-      if (componentName in usageComponents) {
-        usageComponents[componentName] = componentName;
-      }
-    });
-  }
-
-  const noMatchingValues = (sortedComponentNames as []).every(componentName => !(componentName in usageComponents));
 
   return (
     <Layout
@@ -174,7 +166,7 @@ export default function PageTemplate({
           }
           return <GenericPropsTable key={node.displayName} {...node} />;
         })}
-        {!noMatchingValues && (
+        {isUsageInsights && (
           <>
             <h2 className="pgn-doc__heading m-0" id={usageInsightsUrl}>
               {usageInsightsTitle}
