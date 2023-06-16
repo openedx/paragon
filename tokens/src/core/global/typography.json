@@ -52,6 +52,12 @@
           "type": "dimension",
           "source": "$lead-font-size",
           "description": "Lead text font size."
+        },
+        "micro": {
+          "value": ".688rem",
+          "type": "dimension",
+          "source": "$micro-font-size",
+          "description": "Micro utils text font size."
         }
       },
       "weight": {
@@ -69,13 +75,17 @@
           "source": "$font-weight-base",
           "description": "Basic font weight."
         },
-        "lead": { "value": "inherit", "type": "fontWeight", "source": "$lead-font-weight", "description": "Lead text font weight." }
+        "lead": { "value": "inherit", "type": "fontWeight", "source": "$lead-font-weight", "description": "Lead text font weight." },
+        "table-th": { "value": "normal", "type": "fontWeight", "source": "$table-th-font-weight", "description": "Table th font weight." }
       }
     },
     "line-height": {
       "base": { "value": "1.5556", "type": "dimension", "source": "$line-height-base", "description": "Basic line height." },
       "lg": { "value": "1.5", "type": "dimension", "source": "$line-height-lg", "description": "Large line height." },
-      "sm": { "value": "1.5", "type": "dimension", "source": "$line-height-sm", "description": "Small line height." }
+      "sm": { "value": "1.5", "type": "dimension", "source": "$line-height-sm", "description": "Small line height." },
+      "micro": {
+        "value": ".938rem", "type": "dimension", "source": "$micro-line-height", "description": "Micro utils line height."
+      }
     }
   }
 }
