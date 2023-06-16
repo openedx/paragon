@@ -1,0 +1,40 @@
+@import "variables";
+
+.pgn__chip-carousel {
+  position: relative;
+
+  .pgn__overflow-scroll-overflow-container {
+    --pgn-overflow-scroll-opacity-mask-transparent: rgba(0, 0, 0, 0);
+  }
+}
+
+.pgn__chip-carousel__right-control,
+.pgn__chip-carousel__left-control {
+  position: absolute;
+  z-index: 2;
+  top: $chip-carousel-controls-top-offset;
+}
+
+.pgn__chip-carousel__right-control {
+  right: 0;
+}
+
+.pgn__chip-carousel__left-control {
+  left: 0;
+}
+
+.pgn__chip-carousel__arrow-forward-bg {
+  background: linear-gradient(270deg, #fbfaf9 85%, #0000);
+  right: 0;
+}
+
+.pgn__chip-carousel__arrow-back-bg {
+  background: linear-gradient(90deg, #fbfaf9 85%, #0000);
+}
+
+.pgn__chip-carousel__arrow-back-bg, .pgn__chip-carousel__arrow-forward-bg {
+  z-index: 1;
+  height: 2.25rem;
+  position: absolute;
+  width: 2.75rem;
+}
