@@ -19,11 +19,14 @@ notes: |
   <ChipCarousel
     ariaLabel="example chip carousel"
     items={Array.from({ length: 40 },
-      (_, index) => ({
-        id: index,
-        title: `Chip #${index + 1}`,
-        onClick: () => console.log(`Chip #${index + 1} clicked`)
-      })
+      (_, index) => (
+        <Chip
+          key={index}
+          onClick={() => console.log(`Chip #${index + 1} clicked`)}
+        >
+          Chip #{index + 1}
+        </Chip>
+      )
     )}
   />
 ```

@@ -22,19 +22,3 @@
 .pgn__chip-carousel__left-control {
   left: 0;
 }
-
-.pgn__chip-carousel__arrow-forward-bg {
-  background: linear-gradient(270deg, #fbfaf9 85%, #0000);
-  right: 0;
-}
-
-.pgn__chip-carousel__arrow-back-bg {
-  background: linear-gradient(90deg, #fbfaf9 85%, #0000);
-}
-
-.pgn__chip-carousel__arrow-back-bg, .pgn__chip-carousel__arrow-forward-bg {
-  z-index: 1;
-  height: 2.25rem;
-  position: absolute;
-  width: 2.75rem;
-}

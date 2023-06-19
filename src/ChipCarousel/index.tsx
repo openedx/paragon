@@ -2,11 +2,8 @@ import React, { ForwardedRef } from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import classNames from 'classnames';
-import Chip from '../Chip';
 // @ts-ignore
 import { OverflowScroll, OverflowScrollContext } from '../OverflowScroll';
-// @ts-ignore
-import Button from '../Button';
 // @ts-ignore
 import IconButton from '../IconButton';
 // @ts-ignore
@@ -15,6 +12,7 @@ import Icon from '../Icon';
 import { ArrowForward, ArrowBack } from '../../icons';
 // @ts-ignore
 import messages from './messages';
+import Chip from '../Chip';
 
 export interface OverflowScrollContextProps {
   setOverflowRef: () => void,
@@ -26,15 +24,11 @@ export interface OverflowScrollContextProps {
 
 export interface ChipCarouselProps {
   className?: string;
-  items?: Array<{
-    onClick?: () => void;
-    title?: string;
-  }>;
+  items: Array<React.ReactElement>;
   ariaLabel: string;
   disableOpacityMasks?: boolean;
   onScrollPrevious?: () => void;
   onScrollNext?: () => void;
-  innerControls?: boolean;
   canScrollHorizontal?: boolean;
   offset?: number | string;
   offsetType?: 'percentage' | 'fixed';
@@ -47,10 +41,9 @@ const ChipCarousel = React.forwardRef(({
   disableOpacityMasks,
   onScrollPrevious,
   onScrollNext,
-  innerControls = true,
   canScrollHorizontal = false,
   offset = 20,
-  offsetType = 'percentage',
+  offsetType = 'fixed',
   ...props
 }: ChipCarouselProps, ref: ForwardedRef<HTMLDivElement>) => {
   const intl = useIntl();
@@ -80,61 +73,37 @@ const ChipCarousel = React.forwardRef(({
             scrollToNext,
           }: OverflowScrollContextProps) => (
             <>
-              {innerControls ? (
-                <>
-                  {!isScrolledToStart && (
-                    <>
-                      {/* <div className="pgn__chip-carousel__arrow-back-bg" /> */}
-                      <IconButton
-                        size="sm"
-                        className="pgn__chip-carousel__left-control"
-                        src={ArrowBack}
-                        iconAs={Icon}
-                        alt={intl.formatMessage(messages.scrollToPrevious)}
-                        onClick={scrollToPrevious}
-                      />
-                    </>
-                  )}
-                  {!isScrolledToEnd && (
-                    <>
-                      {/* <div className="pgn__chip-carousel__arrow-forward-bg" /> */}
-                      <IconButton
-                        size="sm"
-                        className="pgn__chip-carousel__right-control"
-                        src={ArrowForward}
-                        iconAs={Icon}
-                        alt={intl.formatMessage(messages.scrollToNext)}
-                        onClick={scrollToNext}
-                      />
-                    </>
-                  )}
-                </>
-              ) : (
-                <div className="mb-3">
-                  <Button
+              <>
+                {!isScrolledToStart && (
+                  <IconButton
+                    size="sm"
+                    className="pgn__chip-carousel__left-control"
+                    src={ArrowBack}
+                    iconAs={Icon}
+                    alt={intl.formatMessage(messages.scrollToPrevious)}
                     onClick={scrollToPrevious}
-                    className="mr-2"
+                  />
+                )}
+                {!isScrolledToEnd && (
+                  <IconButton
                     size="sm"
-                    disabled={isScrolledToStart}
-                  >
-                    Previous
-                  </Button>
-                  <Button
+                    className="pgn__chip-carousel__right-control"
+                    src={ArrowForward}
+                    iconAs={Icon}
+                    alt={intl.formatMessage(messages.scrollToNext)}
                     onClick={scrollToNext}
-                    size="sm"
-                    disabled={isScrolledToEnd}
-                  >
-                    Next
-                  </Button>
-                </div>
-              )}
+                  />
+                )}
+              </>
               <div ref={setOverflowRef} className="d-flex">
                 <OverflowScroll.Items>
-                  {items?.map(item => (
-                    <Chip key={item.title} {...item}>
-                      {item.title}
-                    </Chip>
-                  ))}
+                  {items?.map(item => {
+                    const { children } = item?.props || {};
+                    if (!children) {
+                      return null;
+                    }
+                    return React.createElement(Chip, item.props);
+                  })}
                 </OverflowScroll.Items>
               </div>
             </>
@@ -148,16 +117,11 @@ const ChipCarousel = React.forwardRef(({
 ChipCarousel.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
   className: PropTypes.string,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      onClick: PropTypes.func.isRequired,
-      title: PropTypes.string.isRequired,
-    }).isRequired,
-  ),
+  // @ts-ignore
+  items: PropTypes.arrayOf(PropTypes.element).isRequired,
   disableOpacityMasks: PropTypes.bool,
   onScrollPrevious: PropTypes.func,
   onScrollNext: PropTypes.func,
-  innerControls: PropTypes.bool,
   canScrollHorizontal: PropTypes.bool,
   offset: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   offsetType: PropTypes.oneOf(['percentage', 'fixed']),
@@ -165,11 +129,9 @@ ChipCarousel.propTypes = {
 
 ChipCarousel.defaultProps = {
   className: undefined,
-  items: undefined,
   disableOpacityMasks: undefined,
   onScrollPrevious: undefined,
   onScrollNext: undefined,
-  innerControls: true,
   canScrollHorizontal: false,
   offset: 20,
   offsetType: 'percentage',
