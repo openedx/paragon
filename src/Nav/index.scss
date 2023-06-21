@@ -55,7 +55,7 @@
     .nav-item.show .nav-link {
       color: $nav-pills-link-active-color;
       background-color: $nav-pills-link-active-bg;
-      border-color: $nav-pills-link-active-bg;
+      border-color: $nav-pills-link-active-border-color;
 
       &:focus {
         @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
@@ -97,10 +97,14 @@
         border-color: $nav-inverse-pills-link-active-hover-border-color;
       }
 
-      &:focus:hover {
-        background-color: $nav-inverse-pills-link-active-focus-hover-bg;
-        color: $nav-inverse-pills-link-active-focus-color;
+      &:focus {
         border-color: $nav-inverse-pills-link-active-focus-border-color;
+
+        &:hover {
+          background-color: $nav-inverse-pills-link-active-focus-hover-bg;
+          color: $nav-inverse-pills-link-active-focus-color;
+          border-color: $nav-inverse-pills-link-active-focus-hover-border-color;
+        }
       }
     }
   }
@@ -118,11 +122,7 @@
         border-bottom: $nav-tabs-border-width solid $nav-inverse-tabs-dropdown-border-color;
 
         &:hover {
-          border-bottom: $nav-tabs-border-width solid $nav-inverse-tabs-link-hover-bg;
-        }
-
-        &:focus::before {
-          bottom: calc(#{$nav-inverse-tabs-dropdown-bottom-gap} * -1);
+          border-bottom: none;
         }
       }
 
@@ -155,8 +155,8 @@
   border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
 
   button.nav-link {
-    border: $nav-tabs-border-width solid $nav-tabs-link-border-color;
-    border-bottom-width: $nav-tabs-link-border-bottom-width;
+    border: none;
+    border-bottom: $nav-tabs-border-width solid $nav-tabs-link-border-color;
 
     &.disabled {
       border-color: $nav-tabs-link-disabled-border-color;
@@ -169,16 +169,18 @@
     @include border-top-radius($nav-tabs-border-radius);
 
     &:hover {
-      background-color: $nav-tabs-link-hover-bg;
+      background-color: $nav-tabs-hover-bg;
     }
 
     &:focus {
+      border-bottom: $nav-tabs-border-width solid $nav-tabs-focus-border-color;
+
       @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
     }
 
     &.disabled {
       color: $nav-link-disabled-color;
-      background-color: transparent;
+      background-color: $nav-tabs-disabled-bg;
     }
   }
 
