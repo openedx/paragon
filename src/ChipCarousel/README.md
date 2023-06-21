@@ -16,77 +16,58 @@ notes: |
 ## Basic Usage
 
 ```jsx live
-  <ChipCarousel
-    ariaLabel="example chip carousel"
-    items={Array.from({ length: 40 },
-      (_, index) => (
-        <Chip
-          key={index}
-          onClick={() => console.log(`Chip #${index + 1} clicked`)}
-        >
-          Chip #{index + 1}
-        </Chip>
-      )
-    )}
-  />
-```
-
-## `Chip` Carousel
-
-```jsx live
-<OverflowScroll ariaLabel="example chip carousel" hasInteractiveChildren>
-  <OverflowScrollContext.Consumer>
-    {({
-      setOverflowRef,
-      isScrolledToStart,
-      isScrolledToEnd,
-      scrollToPrevious,
-      scrollToNext,
-    }) => (
-      <>
-        <div className="mb-3">
-          <Button
-            onClick={scrollToPrevious}
-            className="mr-2"
-            size="sm"
-            disabled={isScrolledToStart}
-          >
-            Previous
-          </Button>
-          <Button
-            onClick={scrollToNext}
-            size="sm"
-            disabled={isScrolledToEnd}
-          >
-            Next
-          </Button>
-        </div>
-        <div ref={setOverflowRef} className="d-flex">
-          <OverflowScroll.Items>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-            <Chip iconAfter={Close}>New</Chip>
-          </OverflowScroll.Items>
-        </div>
-      </>
-    )}
-  </OverflowScrollContext.Consumer>
-</OverflowScroll>
+() => {
+  const [offset, setOffset] = useState(120);
+  const [offsetType, setOffsetType] = useState('fixed');
+  const [gap, setGap] = useState(3)
+  
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          {
+            value: offset,
+            setValue: setOffset,
+            range: {
+              min: 0,
+              max: offsetType === 'percentage' ? 100 : 1000,
+              step: offsetType === 'percentage' ? 1 : 50,
+            },
+            name: 'offset'
+          },
+          {
+            value: offsetType,
+            setValue: setOffsetType,
+            options: ['percentage', 'fixed'],
+            name: 'offsetType'
+          },
+          {
+            value: gap,
+            setValue: setGap,
+            range: { min: 0, max: 6, step: 0.5 },
+            name: 'offset'
+          },
+        ]}
+      />
+      {/* end example form block */}
+      <ChipCarousel
+        offset={offset}
+        offsetType={offsetType}
+        ariaLabel="example chip carousel"
+        gap={gap}
+        items={Array.from({ length: 40 },
+          (_, index) => (
+            <Chip
+              key={`Chip-${index}`}
+              onClick={() => console.log(`Chip #${index + 1} clicked`)}
+            >
+              Chip #{index + 1}
+            </Chip>
+          )
+        )}
+      />
+    </>
+  )
+}
 ```

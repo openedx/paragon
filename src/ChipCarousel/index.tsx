@@ -32,6 +32,7 @@ export interface ChipCarouselProps {
   canScrollHorizontal?: boolean;
   offset?: number | string;
   offsetType?: 'percentage' | 'fixed';
+  gap?: number;
 }
 
 const ChipCarousel = React.forwardRef(({
@@ -42,15 +43,16 @@ const ChipCarousel = React.forwardRef(({
   onScrollPrevious,
   onScrollNext,
   canScrollHorizontal = false,
-  offset = 20,
+  offset = 120,
   offsetType = 'fixed',
+  gap,
   ...props
 }: ChipCarouselProps, ref: ForwardedRef<HTMLDivElement>) => {
   const intl = useIntl();
 
   return (
     <div
-      className={classNames('pgn__chip-carousel', className)}
+      className={classNames('pgn__chip-carousel', className, gap ? `pgn__chip-carousel-gap__${gap}` : '')}
       {...props}
       ref={ref}
     >
@@ -115,16 +117,32 @@ const ChipCarousel = React.forwardRef(({
 });
 
 ChipCarousel.propTypes = {
+  /** Text describing the ChipCarousel for screen readers. */
   ariaLabel: PropTypes.string.isRequired,
+  /** Specifies class name for the ChipCarousel. */
   className: PropTypes.string,
+  /** Specifies array of `Chip` elements to be rendered inside the carousel. */
   // @ts-ignore
   items: PropTypes.arrayOf(PropTypes.element).isRequired,
+  /** Whether the default opacity masks should be shown at the start/end, if applicable. */
   disableOpacityMasks: PropTypes.bool,
+  /** Callback function for when the user scrolls to the previous element. */
   onScrollPrevious: PropTypes.func,
+  /** Callback function for when the user scrolls to the next element. */
   onScrollNext: PropTypes.func,
+  /** Whether users can scroll within the overflow container. */
   canScrollHorizontal: PropTypes.bool,
+  /** A value specifying the distance the scroll should move. */
   offset: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /** Type of offset value (percentage or fixed). */
   offsetType: PropTypes.oneOf(['percentage', 'fixed']),
+  /**
+   * Specifies inner space between children blocks.
+   *
+   * Valid values are based on `the spacing classes`:
+   * `0, 0.5, ... 6`.
+   */
+  gap: PropTypes.number,
 };
 
 ChipCarousel.defaultProps = {
@@ -133,8 +151,9 @@ ChipCarousel.defaultProps = {
   onScrollPrevious: undefined,
   onScrollNext: undefined,
   canScrollHorizontal: false,
-  offset: 20,
-  offsetType: 'percentage',
+  offset: 120,
+  offsetType: 'fixed',
+  gap: 3,
 };
 
 export default ChipCarousel;

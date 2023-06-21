@@ -6,6 +6,14 @@
   .pgn__overflow-scroll-overflow-container {
     --pgn-overflow-scroll-opacity-mask-transparent: rgba(0, 0, 0, 0);
   }
+
+  @each $level, $space in $spacers {
+    &.pgn__chip-carousel-gap__#{$level} {
+      .pgn__overflow-scroll-overflow-container {
+        column-gap: $space;
+      }
+    }
+  }
 }
 
 .pgn__chip-carousel__right-control,
