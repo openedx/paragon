@@ -9,6 +9,7 @@ import {
   Alert,
   breakpoints,
   useMediaQuery,
+  Hyperlink,
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 import { DEFAULT_THEME } from '../../theme-config';
@@ -18,6 +19,7 @@ import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
 import ComponentsUsage from '../components/insights/ComponentsUsage';
+import LeaveFeedback from '../components/LeaveFeedback';
 
 export interface IPageTemplate {
   data: {
@@ -136,7 +138,10 @@ export default function PageTemplate({
             <p className="small mb-0">{mdx.frontmatter.notes}</p>
           </Alert>
         )}
-        <h1 className="mb-4">{mdx.frontmatter.title}</h1>
+        <div className="d-flex justify-content-between">
+          <h1 className="mb-4">{mdx.frontmatter.title}</h1>
+          <LeaveFeedback as={Hyperlink} />
+        </div>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
