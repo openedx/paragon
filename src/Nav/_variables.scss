@@ -12,12 +12,13 @@ $nav-tabs-border-radius:                           0 !default;
 $nav-tabs-link-hover-border-color:                 transparent transparent $nav-tabs-border-color !default;
 $nav-tabs-link-hover-bg:                           $light-400 !default;
 $nav-tabs-link-active-color:                       $primary-500 !default;
+$nav-tabs-link-active-border-color:                $nav-tabs-link-active-color !default;
 $nav-tabs-link-active-bg:                          transparent !default;
-$nav-tabs-link-active-border-color:                transparent transparent $primary-500 !default;
 $nav-tabs-link-focus-border-color:                 $nav-tabs-link-active-color !default;
 $nav-tabs-link-distance-to-border:                 .313rem !default;
 $nav-tabs-link-border-bottom-width:                2px !default;
 $nav-tabs-link-border-color:                       transparent !default;
+$nav-tabs-link-disabled-border-color:              $nav-tabs-link-border-color !default;
 
 $nav-pills-border-radius:                          $border-radius !default;
 $nav-pills-link-active-color:                      $component-active-color !default;
@@ -50,3 +51,5 @@ $nav-inverse-tabs-link-active-border-color:        $nav-inverse-tabs-link-color 
 $nav-inverse-tabs-link-active-bg:                  $nav-inverse-tabs-link-hover-bg !default;
 $nav-inverse-tabs-link-active-border-bottom-width: $nav-tabs-link-border-bottom-width !default;
 $nav-inverse-tabs-tab-content-color:               $nav-inverse-tabs-link-color !default;
+$nav-inverse-tabs-dropdown-border-color:           $nav-inverse-tabs-link-active-hover-bg !default;
+$nav-inverse-tabs-dropdown-bottom-gap:             .4375rem !default;

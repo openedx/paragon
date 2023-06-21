@@ -22,7 +22,6 @@
 
     .dropdown .dropdown-toggle {
       display: block;
-      border: none;
     }
   }
 
@@ -64,6 +63,7 @@
   &.nav-inverse-pills .pgn__tab_more.nav-link {
     .dropdown .dropdown-toggle {
       padding: $tab-inverse-pills-link-dropdown-toggle-padding-x $tab-inverse-pills-link-dropdown-toggle-padding-y;
+      border: none;
 
       &:focus {
         background-color: $tab-inverse-pills-link-dropdown-toggle-focus-bg;
@@ -82,8 +82,16 @@
   }
 
   // Nav tabs
-  &.nav-tabs .pgn__tab_more.nav-link .dropdown .dropdown-toggle {
-    padding: .563rem 1rem;
+  &.nav-tabs .pgn__tab_more.nav-link {
+    .dropdown .dropdown-toggle {
+      padding: .563rem $tab-more-link-dropdown-toggle-padding-y;
+    }
+
+    &.active .dropdown .dropdown-toggle:hover {
+      border-bottom:
+        $tab-more-link-dropdown-toggle-border-active solid
+        $tab-more-link-dropdown-toggle-border-active-color;
+    }
   }
 
   // Nav inverse tabs

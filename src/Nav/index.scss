@@ -114,6 +114,18 @@
       color: $nav-inverse-tabs-link-color;
       border-bottom: $nav-tabs-border-width solid $nav-inverse-tabs-link-border-bottom-color;
 
+      .dropdown .dropdown-toggle {
+        border-bottom: $nav-tabs-border-width solid $nav-inverse-tabs-dropdown-border-color;
+
+        &:hover {
+          border-bottom: $nav-tabs-border-width solid $nav-inverse-tabs-link-hover-bg;
+        }
+
+        &:focus::before {
+          bottom: calc(#{$nav-inverse-tabs-dropdown-bottom-gap} * -1);
+        }
+      }
+
       &:hover {
         background-color: $nav-inverse-tabs-link-hover-bg;
       }
@@ -146,13 +158,8 @@
     border: $nav-tabs-border-width solid $nav-tabs-link-border-color;
     border-bottom-width: $nav-tabs-link-border-bottom-width;
 
-    // &:hover {
-    //   border-color: $nav-tabs-link-active-border-color;
-    //   background-color: $nav-tabs-link-hover-bg;
-    // }
-
     &.disabled {
-      border-color: transparent;
+      border-color: $nav-tabs-link-disabled-border-color;
     }
   }
 
@@ -162,7 +169,6 @@
     @include border-top-radius($nav-tabs-border-radius);
 
     &:hover {
-      // border-color: $nav-tabs-link-hover-border-color;
       background-color: $nav-tabs-link-hover-bg;
     }
 
@@ -180,7 +186,7 @@
   .nav-item.show .nav-link {
     color: $nav-tabs-link-active-color;
     background-color: $nav-tabs-link-active-bg;
-    border-bottom: 2px solid $primary-500;
+    border-bottom: $nav-tabs-border-width solid $nav-tabs-link-active-border-color;
 
     &:hover {
       background-color: $nav-tabs-link-hover-bg;
