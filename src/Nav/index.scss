@@ -43,7 +43,7 @@
     border: $nav-pills-link-border-width solid $nav-pills-link-border-color;
 
     &:focus {
-      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color, $nav-pills-border-radius);
     }
 
     &:hover {
@@ -58,7 +58,7 @@
       border-color: $nav-pills-link-active-border-color;
 
       &:focus {
-        @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+        @include nav-tabs-link-focus($nav-tabs-link-focus-border-color, $nav-pills-border-radius);
       }
     }
   }

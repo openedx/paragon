@@ -80,11 +80,12 @@
         background-color: $tab-inverse-pills-link-dropdown-toggle-active-hover-bg;
       }
 
-      &:focus::before {
-        top: calc(#{$tab-inverse-pills-link-dropdown-distance} * -1);
-        bottom: calc(#{$tab-inverse-pills-link-dropdown-distance} * -1);
-        right: calc(#{$tab-inverse-pills-link-dropdown-distance} * -1);
-        left: calc(#{$tab-inverse-pills-link-dropdown-distance} * -1);
+      &:focus {
+        @include nav-tabs-link-focus(
+          $tab-inverse-pills-link-dropdown-toggle-focus-border-color,
+          $nav-tabs-border-radius,
+          $tab-inverse-pills-link-dropdown-distance
+        );
       }
     }
   }
