@@ -664,6 +664,7 @@ export { default as Diversity1 } from "./Diversity1";
 export { default as Diversity2 } from "./Diversity2";
 export { default as Diversity3 } from "./Diversity3";
 export { default as Divide } from "./Divide";
+export { default as DjangoShort } from "./DjangoShort";
 export { default as Dns } from "./Dns";
 export { default as DoDisturb } from "./DoDisturb";
 export { default as DoDisturbAlt } from "./DoDisturbAlt";
