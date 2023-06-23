@@ -11,7 +11,7 @@ devStatus: 'Done'
 notes: |
 ---
 
-``ChipCarousel`` component creates a scrollable horizontal block of chips with buttons for navigating to the previous and next set of chips.
+The ``ChipCarousel`` component creates a scrollable horizontal block of chips with buttons for navigating to the previous and next set of chips.
 
 ## Basic Usage
 
