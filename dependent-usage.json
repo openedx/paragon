@@ -1,5 +1,5 @@
 {
-  "lastModified": 1687702078318,
+  "lastModified": 1687788531378,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -14448,7 +14448,7 @@
       }
     },
     {
-      "version": "19.25.4",
+      "version": "20.34.0",
       "name": "@edx/frontend-app-gradebook",
       "repository": {
         "type": "git",
@@ -18957,7 +18957,7 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
             "line": 396,
             "column": 12,
-            "index": 10367
+            "index": 10387
           },
           {
             "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
@@ -19105,7 +19105,7 @@
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
             "line": 410,
             "column": 24,
-            "index": 11001
+            "index": 11021
           },
           {
             "filePath": "src/components/dashboard/sidebar/CouponCodesSummaryCard.jsx",
@@ -25822,7 +25822,7 @@
       }
     },
     {
-      "version": "20.44.0",
+      "version": "20.45.0",
       "name": "@edx/frontend-app-profile",
       "repository": {
         "type": "git",
@@ -26944,9 +26944,21 @@
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 157,
+            "line": 158,
             "column": 10,
-            "index": 5545
+            "index": 5648
+          },
+          {
+            "filePath": "src/components/EditCoursePage/EditCourseForm.test.jsx",
+            "line": 314,
+            "column": 8,
+            "index": 10575
+          },
+          {
+            "filePath": "src/components/EditCoursePage/EditCourseForm.test.jsx",
+            "line": 347,
+            "column": 8,
+            "index": 11819
           },
           {
             "filePath": "src/components/Header/index.jsx",
