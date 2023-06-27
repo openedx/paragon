@@ -17,9 +17,20 @@ The ``ChipCarousel`` component creates a scrollable horizontal block of chips wi
 
 ```jsx live
 () => {
-  const [offset, setOffset] = useState(120);
+  const MAX_PERCENTAGE = 100;
+  const MAX_FIXED = 1000;
+  const [offset, setOffset] = useState(50);
   const [offsetType, setOffsetType] = useState('fixed');
   const [gap, setGap] = useState(3)
+  
+  const handleChangeOffsetType = (value) => {
+    const currentMax = offsetType === 'percentage' ? MAX_PERCENTAGE : MAX_FIXED
+    const newMax = value === 'percentage' ? MAX_PERCENTAGE : MAX_FIXED
+    const ration = offset / currentMax
+    const newOffset = Math.floor(newMax * ration)
+    setOffset(newOffset);
+    setOffsetType(value);
+  }
   
   return (
     <>
@@ -31,14 +42,14 @@ The ``ChipCarousel`` component creates a scrollable horizontal block of chips wi
             setValue: setOffset,
             range: {
               min: 0,
-              max: offsetType === 'percentage' ? 100 : 1000,
+              max: offsetType === 'percentage' ? MAX_PERCENTAGE : MAX_FIXED,
               step: offsetType === 'percentage' ? 1 : 50,
             },
             name: 'offset'
           },
           {
             value: offsetType,
-            setValue: setOffsetType,
+            setValue: handleChangeOffsetType,
             options: ['percentage', 'fixed'],
             name: 'offsetType'
           },
@@ -46,7 +57,7 @@ The ``ChipCarousel`` component creates a scrollable horizontal block of chips wi
             value: gap,
             setValue: setGap,
             range: { min: 0, max: 6, step: 0.5 },
-            name: 'offset'
+            name: 'gap'
           },
         ]}
       />
