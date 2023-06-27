@@ -1,5 +1,5 @@
 {
-  "lastModified": 1687788531378,
+  "lastModified": 1687874890267,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -8462,40 +8462,40 @@
       "usages": {
         "Hyperlink": [
           {
-            "filePath": "src/base-component/AuthLargeLayout.jsx",
-            "line": 16,
-            "column": 8,
-            "index": 445
-          },
-          {
-            "filePath": "src/base-component/AuthMediumLayout.jsx",
-            "line": 18,
-            "column": 10,
-            "index": 522
-          },
-          {
-            "filePath": "src/base-component/AuthSmallLayout.jsx",
-            "line": 16,
-            "column": 6,
-            "index": 464
-          },
-          {
-            "filePath": "src/base-component/LargeLayout.jsx",
+            "filePath": "src/base-container/components/default-layout/LargeLayout.jsx",
             "line": 16,
             "column": 8,
             "index": 427
           },
           {
-            "filePath": "src/base-component/MediumLayout.jsx",
+            "filePath": "src/base-container/components/default-layout/MediumLayout.jsx",
             "line": 18,
             "column": 10,
             "index": 509
           },
           {
-            "filePath": "src/base-component/SmallLayout.jsx",
+            "filePath": "src/base-container/components/default-layout/SmallLayout.jsx",
             "line": 17,
             "column": 8,
             "index": 461
+          },
+          {
+            "filePath": "src/base-container/components/welcome-page-layout/AuthLargeLayout.jsx",
+            "line": 16,
+            "column": 8,
+            "index": 445
+          },
+          {
+            "filePath": "src/base-container/components/welcome-page-layout/AuthMediumLayout.jsx",
+            "line": 18,
+            "column": 10,
+            "index": 522
+          },
+          {
+            "filePath": "src/base-container/components/welcome-page-layout/AuthSmallLayout.jsx",
+            "line": 16,
+            "column": 6,
+            "index": 464
           },
           {
             "filePath": "src/common-components/InstitutionLogistration.jsx",
@@ -8507,13 +8507,13 @@
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 146,
             "column": 14,
-            "index": 5120
+            "index": 5116
           },
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 160,
             "column": 16,
-            "index": 5704
+            "index": 5700
           },
           {
             "filePath": "src/login/LoginFailure.jsx",
@@ -8537,7 +8537,7 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 237,
             "column": 14,
-            "index": 8636
+            "index": 8632
           },
           {
             "filePath": "src/recommendations/RecommendationCard.jsx",
@@ -8578,40 +8578,40 @@
         ],
         "Image": [
           {
-            "filePath": "src/base-component/AuthLargeLayout.jsx",
-            "line": 17,
-            "column": 10,
-            "index": 517
-          },
-          {
-            "filePath": "src/base-component/AuthMediumLayout.jsx",
-            "line": 19,
-            "column": 12,
-            "index": 596
-          },
-          {
-            "filePath": "src/base-component/AuthSmallLayout.jsx",
-            "line": 17,
-            "column": 8,
-            "index": 534
-          },
-          {
-            "filePath": "src/base-component/LargeLayout.jsx",
+            "filePath": "src/base-container/components/default-layout/LargeLayout.jsx",
             "line": 17,
             "column": 10,
             "index": 499
           },
           {
-            "filePath": "src/base-component/MediumLayout.jsx",
+            "filePath": "src/base-container/components/default-layout/MediumLayout.jsx",
             "line": 19,
             "column": 12,
             "index": 583
           },
           {
-            "filePath": "src/base-component/SmallLayout.jsx",
+            "filePath": "src/base-container/components/default-layout/SmallLayout.jsx",
             "line": 18,
             "column": 10,
             "index": 533
+          },
+          {
+            "filePath": "src/base-container/components/welcome-page-layout/AuthLargeLayout.jsx",
+            "line": 17,
+            "column": 10,
+            "index": 517
+          },
+          {
+            "filePath": "src/base-container/components/welcome-page-layout/AuthMediumLayout.jsx",
+            "line": 19,
+            "column": 12,
+            "index": 596
+          },
+          {
+            "filePath": "src/base-container/components/welcome-page-layout/AuthSmallLayout.jsx",
+            "line": 17,
+            "column": 8,
+            "index": 534
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
@@ -8622,34 +8622,34 @@
         ],
         "breakpoints": [
           {
-            "filePath": "src/base-component/BaseComponent.jsx",
+            "filePath": "src/base-container/index.jsx",
             "line": 24,
             "column": 30,
-            "index": 892
+            "index": 1063
           },
           {
-            "filePath": "src/base-component/BaseComponent.jsx",
+            "filePath": "src/base-container/index.jsx",
             "line": 27,
             "column": 30,
-            "index": 1067
+            "index": 1238
           },
           {
-            "filePath": "src/base-component/BaseComponent.jsx",
+            "filePath": "src/base-container/index.jsx",
             "line": 27,
             "column": 69,
-            "index": 1106
+            "index": 1277
           },
           {
-            "filePath": "src/base-component/BaseComponent.jsx",
+            "filePath": "src/base-container/index.jsx",
             "line": 30,
             "column": 30,
-            "index": 1283
+            "index": 1454
           },
           {
-            "filePath": "src/base-component/BaseComponent.jsx",
+            "filePath": "src/base-container/index.jsx",
             "line": 30,
             "column": 73,
-            "index": 1326
+            "index": 1497
           },
           {
             "filePath": "src/data/utils/useMobileResponsive.js",
@@ -8669,7 +8669,7 @@
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 112,
             "column": 10,
-            "index": 3596
+            "index": 3592
           },
           {
             "filePath": "src/login/LoginPage.jsx",
@@ -8681,7 +8681,7 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 233,
             "column": 8,
-            "index": 8468
+            "index": 8464
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
@@ -8693,7 +8693,7 @@
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 177,
             "column": 14,
-            "index": 6011
+            "index": 6007
           }
         ],
         "Button": [
@@ -8805,7 +8805,7 @@
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 92,
             "column": 6,
-            "index": 2960
+            "index": 2956
           },
           {
             "filePath": "src/login/LoginPage.jsx",
@@ -8817,7 +8817,7 @@
             "filePath": "src/logistration/Logistration.jsx",
             "line": 71,
             "column": 6,
-            "index": 2460
+            "index": 2456
           },
           {
             "filePath": "src/register/registrationFields/EmailField.jsx",
@@ -8841,7 +8841,7 @@
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 142,
             "column": 6,
-            "index": 4555
+            "index": 4551
           }
         ],
         "Login": [
@@ -9091,7 +9091,7 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 228,
             "column": 10,
-            "index": 8174
+            "index": 8170
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
@@ -9147,7 +9147,7 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 229,
             "column": 12,
-            "index": 8261
+            "index": 8257
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
@@ -9227,19 +9227,19 @@
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 92,
             "column": 17,
-            "index": 2971
+            "index": 2967
           },
           {
             "filePath": "src/logistration/Logistration.jsx",
             "line": 71,
             "column": 17,
-            "index": 2471
+            "index": 2467
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 142,
             "column": 17,
-            "index": 4566
+            "index": 4562
           }
         ],
         "Tabs": [
@@ -9247,31 +9247,31 @@
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 105,
             "column": 8,
-            "index": 3299
+            "index": 3295
           },
           {
             "filePath": "src/logistration/Logistration.jsx",
             "line": 93,
             "column": 16,
-            "index": 3105
+            "index": 3101
           },
           {
             "filePath": "src/logistration/Logistration.jsx",
             "line": 109,
             "column": 18,
-            "index": 3775
+            "index": 3771
           },
           {
             "filePath": "src/logistration/Logistration.jsx",
             "line": 114,
             "column": 18,
-            "index": 4073
+            "index": 4069
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 166,
             "column": 10,
-            "index": 5408
+            "index": 5404
           }
         ],
         "Tab": [
@@ -9279,37 +9279,37 @@
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 106,
             "column": 10,
-            "index": 3377
+            "index": 3373
           },
           {
             "filePath": "src/logistration/Logistration.jsx",
             "line": 94,
             "column": 18,
-            "index": 3204
+            "index": 3200
           },
           {
             "filePath": "src/logistration/Logistration.jsx",
             "line": 110,
             "column": 20,
-            "index": 3876
+            "index": 3872
           },
           {
             "filePath": "src/logistration/Logistration.jsx",
             "line": 115,
             "column": 20,
-            "index": 4178
+            "index": 4174
           },
           {
             "filePath": "src/logistration/Logistration.jsx",
             "line": 116,
             "column": 20,
-            "index": 4288
+            "index": 4284
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 167,
             "column": 12,
-            "index": 5488
+            "index": 5484
           }
         ],
         "StatefulButton": [
@@ -9317,7 +9317,7 @@
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 131,
             "column": 12,
-            "index": 4541
+            "index": 4537
           },
           {
             "filePath": "src/login/LoginPage.jsx",
@@ -9329,13 +9329,13 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 250,
             "column": 12,
-            "index": 9162
+            "index": 9158
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 262,
             "column": 12,
-            "index": 9672
+            "index": 9668
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
@@ -9353,7 +9353,7 @@
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 196,
             "column": 16,
-            "index": 6943
+            "index": 6939
           }
         ],
         "ModalDialog": [
@@ -9459,7 +9459,7 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 228,
             "column": 77,
-            "index": 8241
+            "index": 8237
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
@@ -9545,7 +9545,7 @@
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 151,
             "column": 13,
-            "index": 4824
+            "index": 4820
           }
         ],
         "FormAutosuggestOption": [
@@ -22269,15 +22269,15 @@
           },
           {
             "filePath": "src/courseware/course/sidebar/SidebarContextProvider.jsx",
-            "line": 19,
+            "line": 18,
             "column": 34,
-            "index": 630
+            "index": 564
           },
           {
             "filePath": "src/courseware/course/sidebar/SidebarContextProvider.jsx",
-            "line": 20,
+            "line": 19,
             "column": 35,
-            "index": 717
+            "index": 651
           },
           {
             "filePath": "src/generic/tabs/useIndexOfLastVisibleChild.js",
@@ -22397,15 +22397,15 @@
           },
           {
             "filePath": "src/courseware/course/sidebar/SidebarContextProvider.jsx",
-            "line": 19,
+            "line": 18,
             "column": 58,
-            "index": 654
+            "index": 588
           },
           {
             "filePath": "src/courseware/course/sidebar/SidebarContextProvider.jsx",
-            "line": 20,
+            "line": 19,
             "column": 59,
-            "index": 741
+            "index": 675
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationTray.test.jsx",
@@ -29348,7 +29348,7 @@
       }
     },
     {
-      "version": "20.44.0",
+      "version": "20.45.0",
       "name": "@edx/frontend-component-header-edx",
       "repository": {
         "type": "git",
@@ -29493,7 +29493,7 @@
       }
     },
     {
-      "version": "20.44.0",
+      "version": "20.45.0",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
@@ -33600,7 +33600,7 @@
       }
     },
     {
-      "version": "20.30.1",
+      "version": "20.45.0",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
@@ -33987,9 +33987,9 @@
           },
           {
             "filePath": "src/packages/modular-page/modules/PlacementAboutSection/index.jsx",
-            "line": 30,
+            "line": 31,
             "column": 4,
-            "index": 788
+            "index": 812
           },
           {
             "filePath": "src/packages/modular-page/modules/ProgramReferralModule/index.jsx",
