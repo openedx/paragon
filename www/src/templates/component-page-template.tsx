@@ -9,7 +9,6 @@ import {
   Alert,
   breakpoints,
   useMediaQuery,
-  Hyperlink,
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 import { DEFAULT_THEME } from '../../theme-config';
@@ -138,9 +137,9 @@ export default function PageTemplate({
             <p className="small mb-0">{mdx.frontmatter.notes}</p>
           </Alert>
         )}
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between align-items-start">
           <h1 className="mb-4">{mdx.frontmatter.title}</h1>
-          <LeaveFeedback as={Hyperlink} />
+          <LeaveFeedback />
         </div>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>

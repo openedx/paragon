@@ -15,6 +15,7 @@ import {
   Row,
   Col,
   Sticky,
+  Hyperlink,
   useMediaQuery,
   breakpoints,
 } from '~paragon-react';
@@ -83,7 +84,7 @@ function Layout({
               {children}
               <Container size="md">
                 <hr />
-                <LeaveFeedback className="pgn__docs-page-feedback-link" />
+                <LeaveFeedback />
               </Container>
             </Col>
             <Col
@@ -114,28 +115,40 @@ function Layout({
             </Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link
-              className="muted-link"
-              href="https://github.com/openedx/.github/blob/master/CODE_OF_CONDUCT.md"
+            <Hyperlink
+              className="muted-link nav-link"
+              destination="https://github.com/openedx/.github/blob/master/CODE_OF_CONDUCT.md"
+              showLaunchIcon={false}
+              target="_blank"
             >
               Code of Conduct
-            </Nav.Link>
+            </Hyperlink>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link className="muted-link" href="https://open.edx.org/">
+            <Hyperlink
+              className="muted-link nav-link"
+              destination="https://open.edx.org/"
+              showLaunchIcon={false}
+              target="_blank"
+            >
               Open edX
-            </Nav.Link>
+            </Hyperlink>
           </Nav.Item>
           <Nav.Item>
-            <LeaveFeedback />
+            <LeaveFeedback isLink />
           </Nav.Item>
           <div className="flex-grow-1" />
-          <a href="https://www.netlify.com">
+          <Hyperlink
+            className="muted-link nav-link"
+            destination="https://www.netlify.com"
+            showLaunchIcon={false}
+            target="_blank"
+          >
             <img
               src="https://www.netlify.com/img/global/badges/netlify-light.svg"
               alt="Deploys by Netlify"
             />
-          </a>
+          </Hyperlink>
         </Nav>
       </Container>
     </div>
