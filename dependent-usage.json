@@ -1,5 +1,5 @@
 {
-  "lastModified": 1688134116788,
+  "lastModified": 1688220560574,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -24938,7 +24938,7 @@
       }
     },
     {
-      "version": "20.30.0",
+      "version": "20.45.0",
       "name": "@edx/frontend-app-ora-grading",
       "repository": {
         "type": "git",
@@ -25505,7 +25505,7 @@
             "filePath": "src/components/FilePreview/FileInfo.jsx",
             "line": 32,
             "column": 17,
-            "index": 732
+            "index": 729
           },
           {
             "filePath": "src/components/InfoPopover/index.jsx",
@@ -31135,6 +31135,12 @@
             "index": 1283
           },
           {
+            "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
+            "line": 127,
+            "column": 10,
+            "index": 4241
+          },
+          {
             "filePath": "src/editors/sharedComponents/SelectionModal/Gallery.jsx",
             "line": 43,
             "column": 8,
@@ -31780,21 +31786,21 @@
           },
           {
             "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
-            "line": 51,
+            "line": 50,
             "column": 12,
-            "index": 1875
+            "index": 1828
           },
           {
             "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
-            "line": 74,
+            "line": 73,
             "column": 12,
-            "index": 3039
+            "index": 2992
           },
           {
             "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
-            "line": 129,
-            "column": 18,
-            "index": 4491
+            "line": 119,
+            "column": 22,
+            "index": 3997
           },
           {
             "filePath": "src/editors/sharedComponents/DraggableList/SortableItem.jsx",
@@ -31848,9 +31854,9 @@
           },
           {
             "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
-            "line": 128,
-            "column": 15,
-            "index": 4466
+            "line": 118,
+            "column": 19,
+            "index": 3968
           },
           {
             "filePath": "src/editors/sharedComponents/SelectionModal/SearchSort.jsx",
@@ -31948,9 +31954,9 @@
           },
           {
             "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
-            "line": 127,
-            "column": 8,
-            "index": 4439
+            "line": 117,
+            "column": 12,
+            "index": 3937
           },
           {
             "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/DimensionControls.jsx",
@@ -33110,9 +33116,9 @@
           },
           {
             "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
-            "line": 51,
+            "line": 50,
             "column": 23,
-            "index": 1886
+            "index": 1839
           }
         ],
         "Copyright": [
@@ -33276,9 +33282,9 @@
         "ArrowForward": [
           {
             "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
-            "line": 74,
+            "line": 73,
             "column": 23,
-            "index": 3050
+            "index": 3003
           }
         ],
         "DragIndicator": [
@@ -35213,25 +35219,25 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 269,
             "column": 12,
-            "index": 9109
+            "index": 9146
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 390,
             "column": 20,
-            "index": 13772
+            "index": 13809
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 401,
             "column": 20,
-            "index": 14382
+            "index": 14419
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 573,
             "column": 20,
-            "index": 23975
+            "index": 24012
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
@@ -35639,37 +35645,37 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 268,
             "column": 10,
-            "index": 9018
+            "index": 9055
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 329,
             "column": 14,
-            "index": 10856
+            "index": 10893
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 416,
             "column": 14,
-            "index": 15064
+            "index": 15101
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 572,
             "column": 18,
-            "index": 23882
+            "index": 23919
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 767,
             "column": 22,
-            "index": 35412
+            "index": 35508
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 866,
             "column": 14,
-            "index": 40650
+            "index": 40786
           },
           {
             "filePath": "src/packages/resource-page/template/ResourcePage/index.jsx",
@@ -35775,7 +35781,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 269,
             "column": 23,
-            "index": 9120
+            "index": 9157
           },
           {
             "filePath": "src/packages/queryless-pages/templates/Trademarks.jsx",
@@ -36779,7 +36785,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 577,
             "column": 22,
-            "index": 24265
+            "index": 24302
           }
         ],
         "ChevronLeft": [
@@ -36831,7 +36837,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 573,
             "column": 31,
-            "index": 23986
+            "index": 24023
           }
         ],
         "Send": [
@@ -37237,7 +37243,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 575,
             "column": 18,
-            "index": 24117
+            "index": 24154
           }
         ],
         "ModalDialog.Body": [
@@ -37269,7 +37275,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 579,
             "column": 20,
-            "index": 24381
+            "index": 24418
           }
         ],
         "DropdownButton": [
@@ -37399,7 +37405,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 402,
             "column": 27,
-            "index": 14415
+            "index": 14452
           }
         ],
         "Search": [
@@ -37797,7 +37803,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 576,
             "column": 20,
-            "index": 24222
+            "index": 24259
           }
         ],
         "Timelapse": [
@@ -37817,7 +37823,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 391,
             "column": 27,
-            "index": 13805
+            "index": 13842
           }
         ],
         "MoneyOutline": [
