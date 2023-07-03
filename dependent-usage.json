@@ -1,5 +1,5 @@
 {
-  "lastModified": 1688306885438,
+  "lastModified": 1688393359682,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -1135,6 +1135,12 @@
             "line": 91,
             "column": 6,
             "index": 3197
+          },
+          {
+            "filePath": "src/notification-preferences/NotificationCourses.jsx",
+            "line": 71,
+            "column": 8,
+            "index": 2309
           }
         ],
         "WarningFilled": [
@@ -1186,9 +1192,9 @@
           },
           {
             "filePath": "src/notification-preferences/NotificationCourses.jsx",
-            "line": 63,
-            "column": 18,
-            "index": 2025
+            "line": 54,
+            "column": 16,
+            "index": 1871
           },
           {
             "filePath": "src/notification-preferences/NotificationPreferenceRow.jsx",
@@ -1198,9 +1204,9 @@
           },
           {
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
-            "line": 79,
+            "line": 66,
             "column": 12,
-            "index": 2542
+            "index": 2317
           }
         ],
         "Form.Checkbox": [
@@ -1834,15 +1840,15 @@
           },
           {
             "filePath": "src/notification-preferences/NotificationCourses.jsx",
-            "line": 36,
-            "column": 8,
-            "index": 1204
+            "line": 62,
+            "column": 10,
+            "index": 2076
           },
           {
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
-            "line": 53,
-            "column": 8,
-            "index": 1859
+            "line": 75,
+            "column": 10,
+            "index": 2629
           }
         ],
         "Collapsible": [
@@ -1882,23 +1888,23 @@
         "Container": [
           {
             "filePath": "src/notification-preferences/NotificationCourses.jsx",
-            "line": 47,
+            "line": 39,
             "column": 4,
-            "index": 1450
+            "index": 1327
           },
           {
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
-            "line": 72,
+            "line": 59,
             "column": 4,
-            "index": 2294
+            "index": 2051
           }
         ],
         "ArrowForwardIos": [
           {
             "filePath": "src/notification-preferences/NotificationCourses.jsx",
-            "line": 63,
-            "column": 29,
-            "index": 2036
+            "line": 54,
+            "column": 27,
+            "index": 1882
           }
         ],
         "Collapsible.Advanced": [
@@ -1952,9 +1958,9 @@
         "ArrowBack": [
           {
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
-            "line": 79,
+            "line": 66,
             "column": 68,
-            "index": 2598
+            "index": 2373
           }
         ]
       }
@@ -3756,9 +3762,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAllocationTable.jsx",
-            "line": 22,
+            "line": 23,
             "column": 4,
-            "index": 587
+            "index": 643
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
@@ -3824,9 +3830,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAllocationTable.jsx",
-            "line": 76,
+            "line": 82,
             "column": 17,
-            "index": 2229
+            "index": 2461
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
@@ -7364,9 +7370,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAllocationTable.jsx",
-            "line": 20,
+            "line": 21,
             "column": 51,
-            "index": 536
+            "index": 592
           },
           {
             "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/index.jsx",
@@ -7758,9 +7764,9 @@
         "useMediaQuery": [
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAllocationTable.jsx",
-            "line": 20,
+            "line": 21,
             "column": 25,
-            "index": 510
+            "index": 566
           }
         ],
         "Search": [
@@ -26188,18 +26194,6 @@
             "line": 145,
             "column": 10,
             "index": 4378
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/ViewResults.jsx",
-            "line": 102,
-            "column": 6,
-            "index": 3992
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/ViewResults.jsx",
-            "line": 124,
-            "column": 8,
-            "index": 4438
           }
         ],
         "Alert.Heading": [
@@ -26208,18 +26202,6 @@
             "line": 13,
             "column": 4,
             "index": 336
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/ViewResults.jsx",
-            "line": 106,
-            "column": 8,
-            "index": 4068
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/ViewResults.jsx",
-            "line": 128,
-            "column": 10,
-            "index": 4522
           }
         ],
         "Alert.Link": [
@@ -26254,18 +26236,6 @@
             "line": 80,
             "column": 16,
             "index": 2164
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/GoalSelect.jsx",
-            "line": 33,
-            "column": 4,
-            "index": 864
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
-            "line": 62,
-            "column": 6,
-            "index": 2037
           }
         ],
         "Hyperlink": [
@@ -26280,18 +26250,6 @@
             "line": 115,
             "column": 6,
             "index": 3501
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 102,
-            "column": 12,
-            "index": 3510
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RecommendationCard.jsx",
-            "line": 21,
-            "column": 4,
-            "index": 488
           }
         ],
         "Button": [
@@ -26312,24 +26270,6 @@
             "line": 59,
             "column": 8,
             "index": 1447
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 90,
-            "column": 12,
-            "index": 3027
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 98,
-            "column": 12,
-            "index": 3309
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 103,
-            "column": 14,
-            "index": 3588
           }
         ],
         "StatefulButton": [
@@ -26392,12 +26332,6 @@
             "line": 9,
             "column": 4,
             "index": 332
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestCard.jsx",
-            "line": 38,
-            "column": 16,
-            "index": 1150
           }
         ],
         "VisibilityOff": [
@@ -26406,362 +26340,6 @@
             "line": 9,
             "column": 15,
             "index": 343
-          }
-        ],
-        "IconButton": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestCard.jsx",
-            "line": 37,
-            "column": 6,
-            "index": 1122
-          }
-        ],
-        "Close": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestCard.jsx",
-            "line": 39,
-            "column": 13,
-            "index": 1169
-          }
-        ],
-        "Stack": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestSelect.jsx",
-            "line": 39,
-            "column": 4,
-            "index": 1297
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
-            "line": 49,
-            "column": 4,
-            "index": 1543
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/SelectPreferences.jsx",
-            "line": 18,
-            "column": 4,
-            "index": 582
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/SelectPreferences.jsx",
-            "line": 22,
-            "column": 6,
-            "index": 701
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RelatedSkillsSelectableBoxSet.jsx",
-            "line": 41,
-            "column": 10,
-            "index": 1198
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/ViewResults.jsx",
-            "line": 123,
-            "column": 6,
-            "index": 4393
-          }
-        ],
-        "Form.Label": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestSelect.jsx",
-            "line": 40,
-            "column": 6,
-            "index": 1319
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/GoalSelect.jsx",
-            "line": 34,
-            "column": 6,
-            "index": 883
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
-            "line": 50,
-            "column": 6,
-            "index": 1557
-          }
-        ],
-        "Row": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestSelect.jsx",
-            "line": 53,
-            "column": 6,
-            "index": 1866
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/ViewResults.jsx",
-            "line": 115,
-            "column": 6,
-            "index": 4234
-          }
-        ],
-        "Col": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/CareerInterestSelect.jsx",
-            "line": 56,
-            "column": 10,
-            "index": 1997
-          }
-        ],
-        "Form.Control": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/GoalSelect.jsx",
-            "line": 39,
-            "column": 6,
-            "index": 1004
-          }
-        ],
-        "Form.Autosuggest": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleInstantSearch.jsx",
-            "line": 23,
-            "column": 4,
-            "index": 531
-          }
-        ],
-        "Form.AutosuggestOption": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleInstantSearch.jsx",
-            "line": 31,
-            "column": 8,
-            "index": 725
-          }
-        ],
-        "Form.CheckboxSet": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
-            "line": 63,
-            "column": 8,
-            "index": 2058
-          }
-        ],
-        "Form.Checkbox": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
-            "line": 67,
-            "column": 10,
-            "index": 2173
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/select-preferences/JobTitleSelect.jsx",
-            "line": 70,
-            "column": 10,
-            "index": 2302
-          }
-        ],
-        "useMediaQuery": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 22,
-            "column": 19,
-            "index": 826
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RelatedSkillsSelectableBoxSet.jsx",
-            "line": 11,
-            "column": 23,
-            "index": 397
-          }
-        ],
-        "breakpoints": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 22,
-            "column": 45,
-            "index": 852
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RelatedSkillsSelectableBoxSet.jsx",
-            "line": 11,
-            "column": 49,
-            "index": 423
-          }
-        ],
-        "Stepper": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 55,
-            "column": 4,
-            "index": 1781
-          }
-        ],
-        "ModalDialog": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 56,
-            "column": 6,
-            "index": 1821
-          }
-        ],
-        "ModalDialog.Hero": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 63,
-            "column": 8,
-            "index": 2012
-          }
-        ],
-        "Stepper.Header": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 72,
-            "column": 8,
-            "index": 2414
-          }
-        ],
-        "ModalDialog.Body": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 74,
-            "column": 8,
-            "index": 2460
-          }
-        ],
-        "Container": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 75,
-            "column": 10,
-            "index": 2489
-          }
-        ],
-        "Form": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 76,
-            "column": 12,
-            "index": 2541
-          }
-        ],
-        "Stepper.Step": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 77,
-            "column": 14,
-            "index": 2562
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 81,
-            "column": 14,
-            "index": 2727
-          }
-        ],
-        "ModalDialog.Footer": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 88,
-            "column": 8,
-            "index": 2947
-          }
-        ],
-        "Stepper.ActionRow": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 89,
-            "column": 10,
-            "index": 2978
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/SkillsBuilderModal.jsx",
-            "line": 97,
-            "column": 10,
-            "index": 3260
-          }
-        ],
-        "CardCarousel": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/CarouselStack.jsx",
-            "line": 62,
-            "column": 6,
-            "index": 2143
-          }
-        ],
-        "Card": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RecommendationCard.jsx",
-            "line": 22,
-            "column": 6,
-            "index": 572
-          }
-        ],
-        "Card.ImageCap": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RecommendationCard.jsx",
-            "line": 26,
-            "column": 8,
-            "index": 698
-          }
-        ],
-        "Card.Header": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RecommendationCard.jsx",
-            "line": 32,
-            "column": 8,
-            "index": 894
-          }
-        ],
-        "Card.Section": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RecommendationCard.jsx",
-            "line": 33,
-            "column": 8,
-            "index": 932
-          }
-        ],
-        "Chip": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RecommendationCard.jsx",
-            "line": 36,
-            "column": 12,
-            "index": 1069
-          },
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RelatedSkillsSelectableBoxSet.jsx",
-            "line": 17,
-            "column": 8,
-            "index": 654
-          }
-        ],
-        "SelectableBox.Set": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RelatedSkillsSelectableBoxSet.jsx",
-            "line": 25,
-            "column": 4,
-            "index": 788
-          }
-        ],
-        "SelectableBox": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/RelatedSkillsSelectableBoxSet.jsx",
-            "line": 33,
-            "column": 8,
-            "index": 1000
-          }
-        ],
-        "ErrorOutline": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/ViewResults.jsx",
-            "line": 104,
-            "column": 14,
-            "index": 4038
-          }
-        ],
-        "Spinner": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/ViewResults.jsx",
-            "line": 116,
-            "column": 8,
-            "index": 4248
-          }
-        ],
-        "CheckCircle": [
-          {
-            "filePath": "src/skills-builder/skills-builder-modal/view-results/ViewResults.jsx",
-            "line": 126,
-            "column": 16,
-            "index": 4489
           }
         ]
       }
@@ -33989,7 +33567,7 @@
       }
     },
     {
-      "version": "20.36.0",
+      "version": "20.45.0",
       "name": "@edx/frontend-template-application",
       "repository": {
         "type": "git",
@@ -34971,15 +34549,15 @@
           },
           {
             "filePath": "src/packages/modular-page/modules/CollapsibleTextTabModule/index.jsx",
-            "line": 43,
+            "line": 44,
             "column": 12,
-            "index": 1475
+            "index": 1511
           },
           {
             "filePath": "src/packages/modular-page/modules/CollapsibleTextTabModule/index.jsx",
-            "line": 94,
+            "line": 140,
             "column": 16,
-            "index": 2943
+            "index": 4425
           },
           {
             "filePath": "src/packages/modular-page/modules/FeaturedProductsModule/index.jsx",
@@ -35297,15 +34875,15 @@
           },
           {
             "filePath": "src/packages/modular-page/modules/CollapsibleTextTabModule/index.jsx",
-            "line": 44,
+            "line": 45,
             "column": 19,
-            "index": 1500
+            "index": 1536
           },
           {
             "filePath": "src/packages/modular-page/modules/CollapsibleTextTabModule/index.jsx",
-            "line": 95,
+            "line": 141,
             "column": 23,
-            "index": 2972
+            "index": 4454
           },
           {
             "filePath": "src/packages/modular-page/modules/FootnoteModule/index.jsx",
