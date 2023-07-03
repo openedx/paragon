@@ -7,10 +7,8 @@ const SvgWarningFilled = props => /*#__PURE__*/React.createElement("svg", _exten
   fill: "none",
   xmlns: "http://www.w3.org/2000/svg"
 }, props), /*#__PURE__*/React.createElement("path", {
-  d: "M12 2 1 21h22L12 2Z",
-  fill: "currentColor"
-}), /*#__PURE__*/React.createElement("path", {
-  d: "M13 16h-2v2h2v-2ZM13 10h-2v4h2v-4Z",
+  xmlns: "http://www.w3.org/2000/svg",
+  d: "M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z",
   fill: "currentColor"
 }));
 export default SvgWarningFilled;
