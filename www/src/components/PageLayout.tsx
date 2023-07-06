@@ -84,7 +84,7 @@ function Layout({
               {children}
               <Container size="md">
                 <hr />
-                <LeaveFeedback />
+                <LeaveFeedback className="mb-5" />
               </Container>
             </Col>
             <Col

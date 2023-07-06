@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { AnchorHTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Hyperlink } from '~paragon-react';
 import { useLocation } from '@reach/router';
 
-export interface LeaveFeedbackProps {
+export interface LeaveFeedbackProps extends Partial<AnchorHTMLAttributes<HTMLAnchorElement>> {
   isLink?: boolean;
 }
 
-function LeaveFeedback({ isLink }, props: LeaveFeedbackProps) {
+function LeaveFeedback({ isLink, ...props }: LeaveFeedbackProps) {
   const location = useLocation();
   const FEEDBACK_URL = `https://github.com/openedx/paragon/issues/new?title=%5Bparagon-openedx.netlify.app%5D%20Feedback%20(on%20${location.pathname})&amp;labels=docs&template=feedback_template.md`;
   const leaveFeedbackLinkTitle = 'Leave feedback';
