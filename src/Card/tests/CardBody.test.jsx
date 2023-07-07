@@ -1,7 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-
 import CardBody from '../CardBody';
 import Card from '..';
 
@@ -14,19 +13,21 @@ describe('correct rendering', () => {
   });
 
   it('renders correct base className', () => {
-    const body = mount(<CardBody />).find('div');
-
-    expect(body.hasClass('pgn__card-body')).toBe(true);
+    const { container } = render(<CardBody />);
+    const body = container.querySelector('div');
+    expect(body.classList.contains('pgn__card-body')).toBe(true);
   });
 
   it('renders correct variant', () => {
-    const wrapper = mount(<Card variant="dark" />).find('div');
-    expect(wrapper.hasClass('pgn__card-dark')).toBe(true);
+    const { container } = render(<Card variant="dark" />);
+    const wrapper = container.querySelector('div');
+    expect(wrapper.classList.contains('pgn__card-dark')).toBe(true);
   });
 
   it('renders body with custom className', () => {
     const className = 'my-class-name';
-    const body = mount(<CardBody className={className} />).find('div');
-    expect(body.hasClass('my-class-name')).toBe(true);
+    const { container } = render(<CardBody className={className} />);
+    const body = container.querySelector('div');
+    expect(body.classList.contains(className)).toBe(true);
   });
 });

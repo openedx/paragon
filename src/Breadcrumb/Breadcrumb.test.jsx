@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Breadcrumb from './index';
 
@@ -8,83 +9,88 @@ const baseProps = {
     {
       label: 'Link 1',
       href: '/link-1',
+      'data-testid': 'link',
     },
     {
       label: 'Link 2',
       href: '/link-2',
+      'data-testid': 'link',
     },
     {
       label: 'Link 3',
       href: '/link-3',
+      'data-testid': 'link',
     },
   ],
+  'data-testid': 'breadcrumb',
 };
 
 describe('<Breadcrumb />', () => {
-  let wrapper;
-
   it('renders with just links', () => {
-    wrapper = mount(<Breadcrumb {...baseProps} />);
-
-    const list = wrapper.find('ol li');
-    expect(list.length).toEqual(5);
-    expect(list.find('a').length).toEqual(3);
+    render(<Breadcrumb {...baseProps} />);
+    const breadcrumb = screen.getByTestId('breadcrumb');
+    const list = breadcrumb.querySelectorAll('ol li');
+    expect(list.length).toBe(5);
+    expect(screen.getAllByTestId('link').length).toBe(3);
   });
 
   it('renders with links and active label', () => {
     const label = 'Current Page';
-    wrapper = mount(<Breadcrumb {...baseProps} activeLabel={label} />);
+    render(<Breadcrumb {...baseProps} activeLabel={label} />);
 
-    const list = wrapper.find('ol li');
-    expect(list.length).toEqual(7);
-    expect(list.find('a').length).toEqual(3);
-    expect(list.last().text()).toEqual(label);
+    const breadcrumb = screen.getByTestId('breadcrumb');
+    const list = breadcrumb.querySelectorAll('ol li');
+    expect(list.length).toBe(7);
+    expect(screen.getAllByTestId('link').length).toBe(3);
+    expect(list[list.length - 1].textContent).toBe(label);
   });
 
   it('renders custom spacer', () => {
-    wrapper = mount(<Breadcrumb
-      {...baseProps}
-      spacer={<span className="custom-spacer">/</span>}
-    />);
+    render(
+      <Breadcrumb
+        {...baseProps}
+        spacer={<span data-testid="custom-spacer">/</span>}
+      />,
+    );
 
-    const list = wrapper.find('ol li');
-    expect(list.length).toEqual(5);
-    expect(list.find('a').length).toEqual(3);
-    expect(list.find('.custom-spacer').length).toEqual(2);
+    const breadcrumb = screen.getByTestId('breadcrumb');
+    const list = breadcrumb.querySelectorAll('ol li');
+    expect(list.length).toBe(5);
+    expect(screen.getAllByTestId('link').length).toBe(3);
+    expect(screen.getAllByTestId('custom-spacer').length).toBe(2);
   });
 
-  it('fires the passed in click handler', () => {
+  it('fires the passed in click handler', async () => {
     const clickHandler = jest.fn();
-    wrapper = mount(<Breadcrumb {...baseProps} clickHandler={clickHandler} />);
+    render(<Breadcrumb {...baseProps} clickHandler={clickHandler} />);
 
-    const list = wrapper.find('ol li');
-    expect(list.length).toEqual(5);
+    const links = screen.getAllByTestId('link');
+    expect(links.length).toBe(3);
 
-    const links = list.find('a');
-    expect(links.length).toEqual(3);
-
-    links.first().simulate('click');
+    await userEvent.click(links[0]);
     expect(clickHandler).toHaveBeenCalled();
   });
 
   it('renders in mobile view', () => {
-    wrapper = mount(<Breadcrumb {...baseProps} isMobile />);
+    render(<Breadcrumb {...baseProps} isMobile />);
+    const breadcrumb = screen.getByTestId('breadcrumb');
 
-    const list = wrapper.find('ol');
-    const listElements = list.find('li');
-    expect(listElements.length).toEqual(2);
-    expect(list.hasClass('is-mobile')).toEqual(true);
+    const list = breadcrumb.querySelector('ol');
+    const listItems = breadcrumb.querySelectorAll('ol li');
+    expect(listItems.length).toBe(2);
+    expect(list.className).toContain('is-mobile');
   });
 
   it('renders links as custom elements', () => {
-    wrapper = mount(<Breadcrumb {...baseProps} linkAs="div" />);
+    render(<Breadcrumb {...baseProps} linkAs="div" />);
+    const breadcrumb = screen.getByTestId('breadcrumb');
+    const list = breadcrumb.querySelector('ol');
 
-    const list = wrapper.find('ol');
-    const anchors = list.find('a');
-    expect(anchors.length).toEqual(0);
+    const anchors = list.querySelectorAll('a');
+    expect(anchors.length).toBe(0);
 
-    const customLinks = list.find('div');
-    expect(customLinks.length).toEqual(3);
+    const customLinks = list.querySelectorAll('div');
+    expect(customLinks.length).toBe(3);
   });
 
   it('passes down link props to link elements', () => {
@@ -93,15 +99,14 @@ describe('<Breadcrumb />', () => {
       href: '/link-1',
       className: 'my-link',
       target: '_blank',
+      'data-testid': 'link',
     };
 
-    wrapper = mount(<Breadcrumb links={[linkProps]} />);
+    render(<Breadcrumb links={[linkProps]} />);
 
-    const list = wrapper.find('ol');
-    const renderedLink = list.find('a').first();
-
-    expect(renderedLink.hasClass('my-link')).toEqual(true);
-    expect(renderedLink.prop('target')).toEqual('_blank');
-    expect(renderedLink.prop('href')).toEqual('/link-1');
+    const links = screen.getAllByTestId('link');
+    expect(links[0].className).toContain('my-link');
+    expect(links[0].getAttribute('target')).toBe('_blank');
+    expect(links[0].getAttribute('href')).toBe('/link-1');
   });
 });
