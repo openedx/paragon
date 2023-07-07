@@ -1,12 +1,13 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 import renderer, { act } from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Context as ResponsiveContext } from 'react-responsive';
 import { Info } from '../../icons';
 import breakpoints from '../utils/breakpoints';
 import Button from '../Button';
-import Alert from './index';
+import Alert from '.';
 
 // eslint-disable-next-line react/prop-types
 function AlertWrapper({ children, ...props }) {
@@ -38,12 +39,11 @@ describe('<Alert />', () => {
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('handles dismissible onClose', () => {
+  it('handles dismissible onClose', async () => {
     const mockOnClose = jest.fn();
-    const wrapper = mount((
-      <AlertWrapper onClose={mockOnClose} dismissible>Alert</AlertWrapper>
-    ));
-    wrapper.find('.btn').simulate('click');
+    render(<AlertWrapper onClose={mockOnClose} dismissible>Alert</AlertWrapper>);
+    const button = screen.getByRole('button');
+    await userEvent.click(button);
     expect(mockOnClose).toHaveBeenCalledTimes(1);
   });
   it('renders with button prop', () => {
@@ -52,12 +52,11 @@ describe('<Alert />', () => {
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('handles button onClick', () => {
+  it('handles button onClick', async () => {
     const mockOnClick = jest.fn();
-    const wrapper = mount((
-      <AlertWrapper actions={[<Button onClick={mockOnClick}>Hello</Button>]}>Alert</AlertWrapper>
-    ));
-    wrapper.find('.btn').simulate('click');
+    render(<AlertWrapper actions={[<Button onClick={mockOnClick}>Hello</Button>]}>Alert</AlertWrapper>);
+    const button = screen.getByRole('button');
+    await userEvent.click(button);
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
   it('renders with button and dismissible props', () => {
