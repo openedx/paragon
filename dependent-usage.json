@@ -1,5 +1,5 @@
 {
-  "lastModified": 1688652542682,
+  "lastModified": 1688738926090,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -9679,7 +9679,7 @@
       }
     },
     {
-      "version": "20.34.0",
+      "version": "20.45.0",
       "name": "@edx/frontend-app-communications",
       "repository": {
         "type": "git",
@@ -16040,7 +16040,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 45,
             "column": 6,
-            "index": 1386
+            "index": 1082
           },
           {
             "filePath": "src/containers/LearnerDashboardHeader/ExpandedHeader/AuthenticatedUserDropdown.jsx",
@@ -16054,7 +16054,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 46,
             "column": 8,
-            "index": 1437
+            "index": 1133
           },
           {
             "filePath": "src/containers/LearnerDashboardHeader/ExpandedHeader/AuthenticatedUserDropdown.jsx",
@@ -16068,7 +16068,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 48,
             "column": 14,
-            "index": 1519
+            "index": 1215
           },
           {
             "filePath": "src/containers/LearnerDashboardHeader/CollapsedHeader/index.jsx",
@@ -16082,7 +16082,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 49,
             "column": 15,
-            "index": 1546
+            "index": 1242
           }
         ],
         "Icon": [
@@ -16090,7 +16090,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 50,
             "column": 18,
-            "index": 1574
+            "index": 1270
           },
           {
             "filePath": "src/containers/CourseCard/components/RelatedProgramsBadge/index.jsx",
@@ -16146,7 +16146,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 54,
             "column": 8,
-            "index": 1679
+            "index": 1375
           },
           {
             "filePath": "src/containers/LearnerDashboardHeader/ExpandedHeader/AuthenticatedUserDropdown.jsx",
@@ -16160,13 +16160,13 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 56,
             "column": 12,
-            "index": 1734
+            "index": 1436
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 65,
             "column": 12,
-            "index": 2028
+            "index": 1730
           },
           {
             "filePath": "src/containers/LearnerDashboardHeader/ExpandedHeader/AuthenticatedUserDropdown.jsx",
@@ -17447,13 +17447,13 @@
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 66,
             "column": 16,
-            "index": 2120
+            "index": 2144
           },
           {
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 91,
             "column": 14,
-            "index": 2965
+            "index": 2989
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressListingPage.jsx",
@@ -17725,13 +17725,13 @@
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 89,
             "column": 10,
-            "index": 2921
+            "index": 2945
           },
           {
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 114,
             "column": 10,
-            "index": 3907
+            "index": 3931
           },
           {
             "filePath": "src/components/pathway/PathwayModal.jsx",
@@ -19947,25 +19947,25 @@
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 63,
             "column": 14,
-            "index": 2019
+            "index": 2043
           },
           {
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 68,
             "column": 14,
-            "index": 2249
+            "index": 2273
           },
           {
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 81,
             "column": 12,
-            "index": 2643
+            "index": 2667
           },
           {
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 90,
             "column": 12,
-            "index": 2939
+            "index": 2963
           },
           {
             "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
@@ -20185,7 +20185,7 @@
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 60,
             "column": 8,
-            "index": 1901
+            "index": 1925
           }
         ],
         "Chip": [
@@ -20213,25 +20213,25 @@
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 65,
             "column": 16,
-            "index": 2083
+            "index": 2107
           },
           {
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 70,
             "column": 16,
-            "index": 2326
+            "index": 2350
           },
           {
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 83,
             "column": 14,
-            "index": 2725
+            "index": 2749
           },
           {
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
             "line": 99,
             "column": 14,
-            "index": 3239
+            "index": 3263
           }
         ],
         "Search": [
@@ -20645,7 +20645,7 @@
       }
     },
     {
-      "version": "20.28.4",
+      "version": "20.30.0",
       "name": "frontend-app-learner-portal",
       "repository": "https://github.com/openedx/frontend-app-learner-portal-programs",
       "folderName": "frontend-app-learner-portal-programs",
@@ -20829,7 +20829,7 @@
       }
     },
     {
-      "version": "20.32.0",
+      "version": "20.45.0",
       "name": "@edx/frontend-app-learner-record",
       "repository": {
         "type": "git",
@@ -22238,6 +22238,12 @@
             "index": 1946
           },
           {
+            "filePath": "src/courseware/course/lti-modal/ChatTrigger.jsx",
+            "line": 77,
+            "column": 16,
+            "index": 2122
+          },
+          {
             "filePath": "src/courseware/course/share/ShareButton.jsx",
             "line": 39,
             "column": 6,
@@ -22386,6 +22392,12 @@
             "line": 26,
             "column": 6,
             "index": 864
+          },
+          {
+            "filePath": "src/courseware/course/lti-modal/ChatTrigger.jsx",
+            "line": 57,
+            "column": 10,
+            "index": 1268
           }
         ],
         "Tooltip": [
@@ -22620,6 +22632,12 @@
             "line": 31,
             "column": 10,
             "index": 984
+          },
+          {
+            "filePath": "src/courseware/course/lti-modal/ChatTrigger.jsx",
+            "line": 62,
+            "column": 14,
+            "index": 1405
           }
         ],
         "Popover.Content": [
@@ -22664,6 +22682,12 @@
             "line": 32,
             "column": 12,
             "index": 1006
+          },
+          {
+            "filePath": "src/courseware/course/lti-modal/ChatTrigger.jsx",
+            "line": 64,
+            "column": 16,
+            "index": 1560
           }
         ],
         "CheckCircle": [
@@ -22727,9 +22751,9 @@
           },
           {
             "filePath": "src/courseware/course/Course.jsx",
-            "line": 145,
+            "line": 153,
             "column": 22,
-            "index": 5189
+            "index": 5454
           },
           {
             "filePath": "src/courseware/course/sequence/lock-paywall/LockPaywall.jsx",
@@ -22831,15 +22855,15 @@
           },
           {
             "filePath": "src/courseware/course/Course.jsx",
-            "line": 53,
+            "line": 54,
             "column": 47,
-            "index": 1984
+            "index": 2035
           },
           {
             "filePath": "src/courseware/course/Course.jsx",
-            "line": 57,
+            "line": 58,
             "column": 64,
-            "index": 2216
+            "index": 2267
           },
           {
             "filePath": "src/courseware/course/Course.test.jsx",
@@ -23310,6 +23334,12 @@
             "index": 967
           },
           {
+            "filePath": "src/courseware/course/lti-modal/ChatTrigger.jsx",
+            "line": 21,
+            "column": 32,
+            "index": 485
+          },
+          {
             "filePath": "src/tab-page/LoadedTabPage.jsx",
             "line": 43,
             "column": 61,
@@ -23350,6 +23380,84 @@
             "line": 70,
             "column": 6,
             "index": 1827
+          }
+        ],
+        "Popover.Title": [
+          {
+            "filePath": "src/courseware/course/lti-modal/ChatTrigger.jsx",
+            "line": 63,
+            "column": 16,
+            "index": 1461
+          }
+        ],
+        "ChatBubbleOutline": [
+          {
+            "filePath": "src/courseware/course/lti-modal/ChatTrigger.jsx",
+            "line": 77,
+            "column": 27,
+            "index": 2133
+          }
+        ],
+        "ModalDialog": [
+          {
+            "filePath": "src/courseware/course/lti-modal/ChatTrigger.jsx",
+            "line": 81,
+            "column": 10,
+            "index": 2259
+          },
+          {
+            "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
+            "line": 147,
+            "column": 4,
+            "index": 5819
+          }
+        ],
+        "ModalDialog.Header": [
+          {
+            "filePath": "src/courseware/course/lti-modal/ChatTrigger.jsx",
+            "line": 88,
+            "column": 12,
+            "index": 2461
+          },
+          {
+            "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
+            "line": 158,
+            "column": 6,
+            "index": 6130
+          }
+        ],
+        "ModalDialog.Title": [
+          {
+            "filePath": "src/courseware/course/lti-modal/ChatTrigger.jsx",
+            "line": 89,
+            "column": 14,
+            "index": 2496
+          },
+          {
+            "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
+            "line": 30,
+            "column": 10,
+            "index": 830
+          },
+          {
+            "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
+            "line": 159,
+            "column": 8,
+            "index": 6184
+          }
+        ],
+        "ModalDialog.Body": [
+          {
+            "filePath": "src/courseware/course/lti-modal/ChatTrigger.jsx",
+            "line": 93,
+            "column": 12,
+            "index": 2655
+          },
+          {
+            "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
+            "line": 163,
+            "column": 6,
+            "index": 6314
           }
         ],
         "ActionRow.Spacer": [
@@ -23492,50 +23600,12 @@
             "index": 652
           }
         ],
-        "ModalDialog.Title": [
-          {
-            "filePath": "src/product-tours/newUserCourseHomeTour/NewUserCourseHomeTourModal.jsx",
-            "line": 30,
-            "column": 10,
-            "index": 830
-          },
-          {
-            "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 159,
-            "column": 8,
-            "index": 6184
-          }
-        ],
         "ProductTour": [
           {
             "filePath": "src/product-tours/ProductTours.jsx",
             "line": 145,
             "column": 6,
             "index": 4804
-          }
-        ],
-        "ModalDialog": [
-          {
-            "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 147,
-            "column": 4,
-            "index": 5819
-          }
-        ],
-        "ModalDialog.Header": [
-          {
-            "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 158,
-            "column": 6,
-            "index": 6130
-          }
-        ],
-        "ModalDialog.Body": [
-          {
-            "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
-            "line": 163,
-            "column": 6,
-            "index": 6314
           }
         ],
         "MoneyFilled": [
@@ -33891,9 +33961,9 @@
           },
           {
             "filePath": "src/packages/exec-ed-page/template/ExecEdDetailPage/index.jsx",
-            "line": 514,
+            "line": 517,
             "column": 18,
-            "index": 20216
+            "index": 20475
           },
           {
             "filePath": "src/packages/home-page/components/Audiences/index.jsx",
@@ -33923,7 +33993,7 @@
             "filePath": "src/packages/home-page/components/MarketingTakeover/index.jsx",
             "line": 48,
             "column": 6,
-            "index": 1574
+            "index": 1564
           },
           {
             "filePath": "src/packages/home-page/components/NewOnEdxCarousel/index.jsx",
@@ -34405,25 +34475,25 @@
             "filePath": "src/packages/common/ui/Footer/index.jsx",
             "line": 485,
             "column": 12,
-            "index": 20483
+            "index": 20503
           },
           {
             "filePath": "src/packages/common/ui/Footer/index.jsx",
             "line": 491,
             "column": 12,
-            "index": 20727
+            "index": 20747
           },
           {
             "filePath": "src/packages/common/ui/Footer/index.jsx",
             "line": 497,
             "column": 12,
-            "index": 20978
+            "index": 20998
           },
           {
             "filePath": "src/packages/common/ui/Footer/index.jsx",
             "line": 503,
             "column": 12,
-            "index": 21231
+            "index": 21251
           },
           {
             "filePath": "src/packages/common/ui/Header/components/mobile-navigation/MenuAccordion/index.jsx",
@@ -34547,9 +34617,9 @@
           },
           {
             "filePath": "src/packages/degree-page/template/DegreeDetailPage/index.jsx",
-            "line": 175,
+            "line": 181,
             "column": 14,
-            "index": 6269
+            "index": 6521
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CourseCurriculum/index.jsx",
@@ -35255,9 +35325,9 @@
           },
           {
             "filePath": "src/packages/exec-ed-page/template/ExecEdDetailPage/index.jsx",
-            "line": 366,
+            "line": 369,
             "column": 6,
-            "index": 14252
+            "index": 14511
           },
           {
             "filePath": "src/packages/learn-index-page/components/Hero.jsx",
@@ -35449,7 +35519,7 @@
             "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
             "line": 55,
             "column": 14,
-            "index": 2096
+            "index": 2157
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
@@ -35605,9 +35675,9 @@
           },
           {
             "filePath": "src/packages/degree-page/template/DegreeDetailPage/index.jsx",
-            "line": 175,
+            "line": 181,
             "column": 25,
-            "index": 6280
+            "index": 6532
           },
           {
             "filePath": "src/packages/home-page/components/Audiences/index.jsx",
@@ -35689,7 +35759,7 @@
             "filePath": "src/packages/common/ui/Footer/index.jsx",
             "line": 485,
             "column": 23,
-            "index": 20494
+            "index": 20514
           },
           {
             "filePath": "src/packages/instructor-page/components/InstructorBioDynamic/components/Overview/index.jsx",
@@ -35709,7 +35779,7 @@
             "filePath": "src/packages/common/ui/Footer/index.jsx",
             "line": 491,
             "column": 23,
-            "index": 20738
+            "index": 20758
           },
           {
             "filePath": "src/packages/instructor-page/components/InstructorBioDynamic/components/Overview/index.jsx",
@@ -35729,7 +35799,7 @@
             "filePath": "src/packages/common/ui/Footer/index.jsx",
             "line": 497,
             "column": 23,
-            "index": 20989
+            "index": 21009
           },
           {
             "filePath": "src/packages/open-course-page/components/SocialShare/index.jsx",
@@ -35743,7 +35813,7 @@
             "filePath": "src/packages/common/ui/Footer/index.jsx",
             "line": 503,
             "column": 23,
-            "index": 21242
+            "index": 21262
           }
         ],
         "Input": [
@@ -35751,7 +35821,7 @@
             "filePath": "src/packages/common/ui/Footer/index.jsx",
             "line": 928,
             "column": 18,
-            "index": 36923
+            "index": 36953
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/ChatFloatingActionButton/Survey/index.jsx",
