@@ -1,5 +1,5 @@
 {
-  "lastModified": 1688911773476,
+  "lastModified": 1688998096994,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -3640,15 +3640,15 @@
         "Badge": [
           {
             "filePath": "src/components/Admin/licenses/LicenseAllocationHeader.jsx",
-            "line": 22,
+            "line": 23,
             "column": 8,
-            "index": 1068
+            "index": 1181
           },
           {
             "filePath": "src/components/Admin/licenses/LicenseAllocationHeader.jsx",
-            "line": 26,
+            "line": 27,
             "column": 8,
-            "index": 1252
+            "index": 1365
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditManagement.jsx",
@@ -8458,7 +8458,7 @@
       }
     },
     {
-      "version": "20.40.2",
+      "version": "20.45.0",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -27088,25 +27088,25 @@
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 143,
             "column": 10,
-            "index": 5053
+            "index": 5056
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 158,
             "column": 10,
-            "index": 5648
+            "index": 5651
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.test.jsx",
-            "line": 314,
+            "line": 342,
             "column": 8,
-            "index": 10570
+            "index": 11412
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.test.jsx",
-            "line": 347,
+            "line": 375,
             "column": 8,
-            "index": 11814
+            "index": 12656
           },
           {
             "filePath": "src/components/Header/index.jsx",
@@ -27156,7 +27156,7 @@
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
             "line": 120,
             "column": 8,
-            "index": 4393
+            "index": 4396
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
@@ -29664,15 +29664,15 @@
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 43,
+            "line": 46,
             "column": 12,
-            "index": 1902
+            "index": 2023
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 74,
-            "column": 8,
-            "index": 2947
+            "line": 82,
+            "column": 10,
+            "index": 3357
           },
           {
             "filePath": "src/StudioHeader.test.jsx",
@@ -29686,31 +29686,31 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 30,
             "column": 4,
-            "index": 1238
+            "index": 1220
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 48,
             "column": 10,
-            "index": 1966
+            "index": 1948
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 51,
             "column": 10,
-            "index": 2128
+            "index": 2110
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 55,
             "column": 12,
-            "index": 2321
+            "index": 2303
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 59,
             "column": 10,
-            "index": 2484
+            "index": 2466
           },
           {
             "filePath": "src/StudioHeader.test.jsx",
@@ -29736,7 +29736,7 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 39,
             "column": 6,
-            "index": 1561
+            "index": 1543
           },
           {
             "filePath": "src/StudioHeader.test.jsx",
@@ -29750,7 +29750,7 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 40,
             "column": 8,
-            "index": 1611
+            "index": 1593
           },
           {
             "filePath": "src/StudioHeader.test.jsx",
@@ -29764,7 +29764,7 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 46,
             "column": 8,
-            "index": 1878
+            "index": 1860
           },
           {
             "filePath": "src/StudioHeader.test.jsx",
@@ -29891,12 +29891,20 @@
             "index": 3246
           }
         ],
+        "Spinner": [
+          {
+            "filePath": "src/Notifications/NotificationSections.jsx",
+            "line": 78,
+            "column": 10,
+            "index": 3178
+          }
+        ],
         "Tab": [
           {
             "filePath": "src/Notifications/NotificationTabs.jsx",
             "line": 29,
             "column": 4,
-            "index": 1307
+            "index": 1293
           }
         ],
         "Tabs": [
@@ -29904,7 +29912,7 @@
             "filePath": "src/Notifications/NotificationTabs.jsx",
             "line": 42,
             "column": 4,
-            "index": 1769
+            "index": 1755
           }
         ],
         "ActionRow": [
