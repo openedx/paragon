@@ -1,5 +1,5 @@
 {
-  "lastModified": 1688998096994,
+  "lastModified": 1689084518387,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -14818,7 +14818,7 @@
       }
     },
     {
-      "version": "20.34.0",
+      "version": "20.45.0",
       "name": "@edx/frontend-app-gradebook",
       "repository": {
         "type": "git",
@@ -15225,9 +15225,9 @@
           },
           {
             "filePath": "src/components/GradesView/ImportGradesButton/index.test.jsx",
-            "line": 39,
-            "column": 21,
-            "index": 1222
+            "line": 40,
+            "column": 36,
+            "index": 1438
           }
         ],
         "FilterAlt": [
@@ -23530,10 +23530,10 @@
         ],
         "Modal": [
           {
-            "filePath": "src/courseware/course/sequence/Unit.jsx",
-            "line": 224,
+            "filePath": "src/courseware/course/sequence/Unit/ContentIFrame.jsx",
+            "line": 78,
             "column": 8,
-            "index": 8603
+            "index": 2020
           }
         ],
         "ArrowBackIos": [
@@ -34199,7 +34199,7 @@
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 207,
             "column": 4,
-            "index": 8478
+            "index": 8466
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
@@ -34215,15 +34215,15 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/index.jsx",
-            "line": 236,
+            "line": 241,
             "column": 10,
-            "index": 9812
+            "index": 10046
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/index.jsx",
-            "line": 293,
+            "line": 298,
             "column": 8,
-            "index": 12257
+            "index": 12491
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunSelector/index.jsx",
@@ -34233,9 +34233,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseSnapshot/index.jsx",
-            "line": 176,
+            "line": 180,
             "column": 12,
-            "index": 5251
+            "index": 5444
           },
           {
             "filePath": "src/packages/open-course-page/components/FAQ/index.jsx",
@@ -34534,40 +34534,40 @@
             "index": 1791
           },
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/index.jsx",
-            "line": 338,
-            "column": 14,
-            "index": 10736
-          },
-          {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/XpertConversations.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversations.jsx",
             "line": 29,
             "column": 10,
             "index": 1265
           },
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/XpertConversations.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversations.jsx",
             "line": 39,
             "column": 10,
             "index": 1764
           },
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/XpertDisclaimer.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
             "line": 27,
             "column": 14,
             "index": 1095
           },
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/XpertDisclaimer.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
             "line": 40,
             "column": 12,
             "index": 1581
           },
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/XpertDisclaimer.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
             "line": 72,
             "column": 10,
             "index": 2729
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/index.jsx",
+            "line": 376,
+            "column": 14,
+            "index": 11840
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
@@ -34601,9 +34601,9 @@
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/shared/ProactiveMessage/index.jsx",
-            "line": 65,
+            "line": 75,
             "column": 14,
-            "index": 2310
+            "index": 2515
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/SkillsBuilderFloatingActionButton/index.jsx",
@@ -34793,9 +34793,9 @@
           },
           {
             "filePath": "src/packages/modular-page/modules/CollapsibleTextTabModule/index.jsx",
-            "line": 140,
+            "line": 125,
             "column": 16,
-            "index": 4425
+            "index": 3765
           },
           {
             "filePath": "src/packages/modular-page/modules/FeaturedProductsModule/index.jsx",
@@ -34873,25 +34873,25 @@
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 318,
             "column": 36,
-            "index": 14046
+            "index": 13990
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 343,
             "column": 36,
-            "index": 15313
+            "index": 15257
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 399,
             "column": 20,
-            "index": 18106
+            "index": 18050
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 412,
             "column": 20,
-            "index": 18784
+            "index": 18728
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseSnapshot/components/WeeksToComplete.jsx",
@@ -34901,21 +34901,21 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseSnapshot/index.jsx",
-            "line": 208,
+            "line": 213,
             "column": 24,
-            "index": 6489
+            "index": 6793
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseSnapshot/index.jsx",
-            "line": 222,
+            "line": 227,
             "column": 22,
-            "index": 6999
+            "index": 7303
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseSnapshot/index.jsx",
-            "line": 265,
+            "line": 270,
             "column": 24,
-            "index": 9372
+            "index": 9674
           },
           {
             "filePath": "src/packages/open-course-page/components/Instructors/components/InstructorCard.jsx",
@@ -35119,9 +35119,9 @@
           },
           {
             "filePath": "src/packages/modular-page/modules/CollapsibleTextTabModule/index.jsx",
-            "line": 141,
+            "line": 126,
             "column": 23,
-            "index": 4454
+            "index": 3794
           },
           {
             "filePath": "src/packages/modular-page/modules/FootnoteModule/index.jsx",
@@ -35279,15 +35279,15 @@
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/shared/ProactiveMessage/index.jsx",
-            "line": 57,
+            "line": 67,
             "column": 12,
-            "index": 1952
+            "index": 2157
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/shared/ProactiveMessage/index.jsx",
-            "line": 68,
+            "line": 78,
             "column": 10,
-            "index": 2422
+            "index": 2627
           },
           {
             "filePath": "src/packages/degree-page/components/TabNavigation/index.jsx",
@@ -35383,13 +35383,13 @@
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 224,
             "column": 14,
-            "index": 9170
+            "index": 9158
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/components/Enrollable.jsx",
-            "line": 36,
+            "line": 44,
             "column": 6,
-            "index": 1297
+            "index": 1623
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/components/FreeAccess.jsx",
@@ -35501,9 +35501,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/AutoComplete/components/ManagedAutoComplete/index.jsx",
-            "line": 280,
+            "line": 283,
             "column": 14,
-            "index": 9942
+            "index": 9928
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/PopularSearchLinks/index.jsx",
@@ -35570,22 +35570,22 @@
             "index": 2696
           },
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/index.jsx",
-            "line": 292,
-            "column": 22,
-            "index": 8879
-          },
-          {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/XpertDisclaimer.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
             "line": 13,
             "column": 20,
             "index": 416
           },
           {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/index.jsx",
+            "line": 329,
+            "column": 22,
+            "index": 9943
+          },
+          {
             "filePath": "src/packages/common/ui/xpert/experiments/shared/ProactiveMessage/index.jsx",
-            "line": 65,
+            "line": 75,
             "column": 67,
-            "index": 2363
+            "index": 2568
           },
           {
             "filePath": "src/packages/program-page/components/ProgramMain/components/ProgramTrackModal/index.jsx",
@@ -36135,13 +36135,13 @@
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 316,
             "column": 26,
-            "index": 13952
+            "index": 13896
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 341,
             "column": 26,
-            "index": 15219
+            "index": 15163
           }
         ],
         "Dropdown": [
@@ -36309,13 +36309,13 @@
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 308,
             "column": 24,
-            "index": 13564
+            "index": 13508
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 333,
             "column": 24,
-            "index": 14835
+            "index": 14779
           },
           {
             "filePath": "src/packages/program-page/components/ProgramPathway/components/ProgramPathwayCourse.jsx",
@@ -36561,9 +36561,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/index.jsx",
-            "line": 229,
+            "line": 234,
             "column": 10,
-            "index": 9470
+            "index": 9704
           },
           {
             "filePath": "src/packages/open-course-page/components/EnterpriseEnrollmentInformModal/index.jsx",
@@ -36636,17 +36636,9 @@
             "index": 24023
           }
         ],
-        "Send": [
-          {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/index.jsx",
-            "line": 338,
-            "column": 25,
-            "index": 10747
-          }
-        ],
         "ThumbUpOutline": [
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/XpertConversations.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversations.jsx",
             "line": 29,
             "column": 76,
             "index": 1331
@@ -36654,7 +36646,7 @@
         ],
         "ThumbDownOffAlt": [
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/XpertConversations.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversations.jsx",
             "line": 39,
             "column": 78,
             "index": 1832
@@ -36662,7 +36654,7 @@
         ],
         "Compass": [
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/XpertDisclaimer.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
             "line": 27,
             "column": 35,
             "index": 1116
@@ -36676,7 +36668,7 @@
         ],
         "Groups": [
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/XpertDisclaimer.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
             "line": 40,
             "column": 33,
             "index": 1602
@@ -36684,10 +36676,18 @@
         ],
         "Message": [
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/XpertDisclaimer.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
             "line": 72,
             "column": 21,
             "index": 2740
+          }
+        ],
+        "Send": [
+          {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/index.jsx",
+            "line": 376,
+            "column": 25,
+            "index": 11851
           }
         ],
         "Lightbulb": [
@@ -36861,13 +36861,13 @@
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 311,
             "column": 28,
-            "index": 13687
+            "index": 13631
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 336,
             "column": 28,
-            "index": 14958
+            "index": 14902
           },
           {
             "filePath": "src/packages/program-page/components/ProgramPathway/components/ProgramPathwayCourse.jsx",
@@ -36911,13 +36911,13 @@
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 443,
             "column": 20,
-            "index": 20160
+            "index": 20104
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/index.jsx",
-            "line": 192,
+            "line": 197,
             "column": 6,
-            "index": 8297
+            "index": 8509
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunSelector/index.jsx",
@@ -37019,9 +37019,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/index.jsx",
-            "line": 218,
+            "line": 223,
             "column": 6,
-            "index": 9101
+            "index": 9335
           },
           {
             "filePath": "src/packages/open-course-page/components/EnterpriseEnrollmentInformModal/index.jsx",
@@ -37051,9 +37051,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/index.jsx",
-            "line": 235,
+            "line": 240,
             "column": 8,
-            "index": 9783
+            "index": 10017
           },
           {
             "filePath": "src/packages/open-course-page/components/EnterpriseEnrollmentInformModal/index.jsx",
@@ -37171,9 +37171,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseSnapshot/index.jsx",
-            "line": 222,
+            "line": 227,
             "column": 33,
-            "index": 7010
+            "index": 7314
           },
           {
             "filePath": "src/packages/open-course-page/components/Instructors/components/InstructorCard.jsx",
@@ -37247,9 +37247,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/index.jsx",
-            "line": 273,
+            "line": 278,
             "column": 14,
-            "index": 11557
+            "index": 11791
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunSelector/components/SelectionTile.jsx",
@@ -37411,37 +37411,37 @@
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 370,
             "column": 20,
-            "index": 16511
+            "index": 16455
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 373,
             "column": 20,
-            "index": 16693
+            "index": 16637
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 383,
             "column": 20,
-            "index": 17217
+            "index": 17161
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 386,
             "column": 20,
-            "index": 17399
+            "index": 17343
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 396,
             "column": 20,
-            "index": 17924
+            "index": 17868
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 409,
             "column": 20,
-            "index": 18602
+            "index": 18546
           },
           {
             "filePath": "src/packages/product-page/components/ProductDetailHero/index.jsx",
@@ -37551,13 +37551,13 @@
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 317,
             "column": 33,
-            "index": 13997
+            "index": 13941
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 342,
             "column": 33,
-            "index": 15264
+            "index": 15208
           }
         ],
         "Remove": [
@@ -37565,21 +37565,21 @@
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 399,
             "column": 50,
-            "index": 18136
+            "index": 18080
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 412,
             "column": 50,
-            "index": 18814
+            "index": 18758
           }
         ],
         "Verified": [
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/components/Enrollable.jsx",
-            "line": 23,
-            "column": 8,
-            "index": 544
+            "line": 29,
+            "column": 12,
+            "index": 781
           }
         ],
         "Card.Divider": [
@@ -37593,9 +37593,9 @@
         "ModalDialog.Header": [
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/index.jsx",
-            "line": 228,
+            "line": 233,
             "column": 8,
-            "index": 9439
+            "index": 9673
           },
           {
             "filePath": "src/packages/open-course-page/components/EnterpriseEnrollmentInformModal/index.jsx",
@@ -37639,9 +37639,9 @@
         "MoneyOutline": [
           {
             "filePath": "src/packages/open-course-page/components/CourseSnapshot/index.jsx",
-            "line": 265,
+            "line": 270,
             "column": 35,
-            "index": 9383
+            "index": 9685
           }
         ],
         "ModalDialog.Footer": [
