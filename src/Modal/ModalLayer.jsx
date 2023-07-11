@@ -39,7 +39,7 @@ ModalContentContainer.defaultProps = {
  * component is that if a modal object is visible then it is "enabled"
  */
 function ModalLayer({
-  children, onClose, isOpen, isBlocking, zIndex,
+  children, onClose, isOpen, isHidden, isBlocking, zIndex,
 }) {
   useEffect(() => {
     if (isOpen) {
@@ -52,29 +52,31 @@ function ModalLayer({
     };
   }, [isOpen]);
 
-  if (!isOpen) {
+  if (!isOpen && !isHidden) {
     return null;
   }
 
   const onClickOutside = !isBlocking ? onClose : null;
 
   return (
-    <ModalContextProvider onClose={onClose} isOpen={isOpen} isBlocking={isBlocking}>
+    <ModalContextProvider onClose={onClose} isOpen={isOpen} isHidden={isHidden} isBlocking={isBlocking}>
       <Portal>
         <FocusOn
           allowPinchZoom
           scrollLock
-          enabled={isOpen}
+          enabled={isOpen && !isHidden}
           onEscapeKey={onClose}
           onClickOutside={onClickOutside}
-          className={classNames(
-            'pgn__modal-layer',
-            zIndex ? `zindex-${zIndex}` : '',
-          )}
+          className={classNames({
+            'pgn__modal-layer': isOpen && !isHidden,
+            [`zindex-${zIndex}`]: !!zIndex,
+          })}
         >
           <ModalContentContainer>
-            <ModalBackdrop onClick={onClickOutside} />
-            {children}
+            {!isHidden && <ModalBackdrop onClick={onClickOutside} />}
+            <div className={classNames({ 'd-none': isHidden })}>
+              {children}
+            </div>
           </ModalContentContainer>
         </FocusOn>
       </Portal>
