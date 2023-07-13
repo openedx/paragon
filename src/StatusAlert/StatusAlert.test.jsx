@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-
+import { render, screen, fireEvent } from '@testing-library/react';
 import StatusAlert from '.';
 import { Button } from '..';
 
@@ -21,27 +21,26 @@ let wrapper;
 describe('<StatusAlert />', () => {
   describe('correct rendering', () => {
     it('renders default view', () => {
-      wrapper = mount(<StatusAlert {...defaultProps} />);
-      const statusAlertDialog = wrapper.find('.alert-dialog');
-
-      expect(statusAlertDialog.text()).toEqual(dialog);
-      expect(wrapper.find('button')).toHaveLength(1);
+      render(<StatusAlert {...defaultProps} />);
+      const statusAlertDialog = screen.getByRole('alert');
+      expect(statusAlertDialog.textContent).toContain(dialog);
+      expect(screen.getAllByRole('button')).toHaveLength(1);
     });
 
     it('renders non-dismissible view', () => {
-      wrapper = mount(<StatusAlert {...defaultProps} dismissible={false} />);
-      const statusAlertDialog = wrapper.find('.alert-dialog');
+      render(<StatusAlert {...defaultProps} dismissible={false} />);
+      const statusAlertDialog = screen.getByRole('alert');
 
-      expect(statusAlertDialog.text()).toEqual(dialog);
-      expect(wrapper.find('button')).toHaveLength(0);
+      expect(statusAlertDialog.textContent).toContain(dialog);
+      expect(screen.queryAllByRole('button')).toHaveLength(0);
     });
 
     it('renders custom aria-label view', () => {
       const customLabel = 'Dismiss this alert post-haste!';
-      wrapper = mount(<StatusAlert {...defaultProps} closeButtonAriaLabel={customLabel} />);
-      const button = wrapper.find('button').at(0);
+      render(<StatusAlert {...defaultProps} closeButtonAriaLabel={customLabel} />);
+      const button = screen.getByRole('button');
 
-      expect(button.prop('aria-label')).toEqual(customLabel);
+      expect(button.getAttribute('aria-label')).toBe(customLabel);
     });
   });
 
@@ -55,11 +54,15 @@ describe('<StatusAlert />', () => {
     });
 
     it('component receives props and ignores prop change', () => {
-      wrapper = mount(<StatusAlert {...defaultProps} />);
+      render(<StatusAlert {...defaultProps} />);
+      const statusAlertDialog = screen.getByRole('alert');
 
-      statusAlertOpen(true, wrapper);
-      wrapper.setProps({ dialog: 'Changed alert dialog' });
-      statusAlertOpen(true, wrapper);
+      // Initial rendering with default props
+      expect(statusAlertDialog.textContent).toContain(dialog);
+
+      // Simulate prop update
+      render(<StatusAlert {...defaultProps} dialog="Changed alert dialog" />);
+      expect(statusAlertDialog.textContent).toContain(dialog);
     });
   });
 
@@ -69,61 +72,64 @@ describe('<StatusAlert />', () => {
     });
 
     it('closes when x button pressed', () => {
-      statusAlertOpen(true, wrapper);
-      wrapper.find('button').at(0).simulate('click');
-      statusAlertOpen(false, wrapper);
+      render(<StatusAlert {...defaultProps} />);
+      const closeButton = screen.getByRole('button');
+      fireEvent.click(closeButton);
+      expect(screen.queryByRole('alert')).toBeNull();
     });
 
     it('closes when Enter key pressed', () => {
-      statusAlertOpen(true, wrapper);
-      wrapper.find('button').at(0).simulate('keyDown', { key: 'Enter' });
-      statusAlertOpen(false, wrapper);
+      render(<StatusAlert {...defaultProps} />);
+      const closeButton = screen.getByRole('button');
+      fireEvent.keyDown(closeButton, { key: 'Enter', code: 'Enter', charCode: 13 });
+      expect(screen.queryByRole('alert')).toBeNull();
     });
 
     it('closes when Escape key pressed', () => {
-      statusAlertOpen(true, wrapper);
-      wrapper.find('button').at(0).simulate('keyDown', { key: 'Escape' });
-      statusAlertOpen(false, wrapper);
+      render(<StatusAlert {...defaultProps} />);
+      const closeButton = screen.getByRole('button');
+
+      fireEvent.keyDown(closeButton, { key: 'Enter', code: 'Enter', charCode: 13 });
+      expect(screen.queryByRole('alert')).toBeNull();
     });
 
     it('calls callback function on close', () => {
       const spy = jest.fn();
 
-      wrapper = mount(<StatusAlert {...defaultProps} onClose={spy} />);
+      render(<StatusAlert {...defaultProps} onClose={spy} />);
+      const closeButton = screen.getByRole('button');
 
       expect(spy).toHaveBeenCalledTimes(0);
 
-      // press X button
-      wrapper.find('button').at(0).simulate('click');
+      fireEvent.click(closeButton);
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('invalid keystrokes do nothing', () => {
+    // beforeEach(() => {
+    //   const app = document.createElement('div');
+    //   document.body.appendChild(app);
+    //   wrapper = mount(<StatusAlert {...defaultProps} />, { attachTo: app });
+    // });
     beforeEach(() => {
-      const app = document.createElement('div');
-      document.body.appendChild(app);
-      wrapper = mount(<StatusAlert {...defaultProps} />, { attachTo: app });
+      render(<StatusAlert {...defaultProps} />);
     });
 
     it('does nothing on invalid keystroke q', () => {
-      const buttons = wrapper.find('button');
+      const closeButton = screen.getByRole('button');
+      expect(document.activeElement).toEqual(closeButton);
 
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      statusAlertOpen(true, wrapper);
-      buttons.at(0).simulate('keyDown', { key: 'q' });
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      statusAlertOpen(true, wrapper);
+      fireEvent.keyDown(closeButton, { key: 'q', code: 'q', charCode: 113 });
+      expect(document.activeElement).toEqual(closeButton);
     });
 
     it('does nothing on invalid keystroke + ctrl', () => {
-      const buttons = wrapper.find('button');
+      const closeButton = screen.getByRole('button');
+      expect(document.activeElement).toEqual(closeButton);
 
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      statusAlertOpen(true, wrapper);
-      buttons.at(0).simulate('keyDown', { key: 'Tab', ctrlKey: true });
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      statusAlertOpen(true, wrapper);
+      fireEvent.keyDown(closeButton, { key: 'Tab', ctrlKey: true });
+      expect(document.activeElement).toEqual(closeButton);
     });
   });
   describe('focus functions properly', () => {

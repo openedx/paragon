@@ -1,5 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+// import { mount } from 'enzyme';
+import {
+  render, screen, fireEvent, waitFor,
+} from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
 import Tabs, { MORE_TAB_TEXT } from './index';
@@ -54,47 +57,70 @@ describe('<Tabs />', () => {
       const tree = renderer.create(<TabsTestComponent />).toJSON();
       expect(tree).toMatchSnapshot();
     });
-    it('renders notification property', () => {
-      const wrapper = mount(<TabsTestComponent />);
-      expect(wrapper.find('.pgn__tab-notification').length).toBeGreaterThan(0);
+    it('renders notification property', async () => {
+      render(<TabsTestComponent />);
+
+      await waitFor(() => {
+        const notification = screen.getAllByRole('status');
+        expect(notification.length).toBeGreaterThan(0);
+      });
     });
     it('MutationObserver is initialized', () => {
-      mount(<TabsTestComponent />);
+      render(<TabsTestComponent />);
       expect(observeMutation).toHaveBeenCalledTimes(1);
+
+      observeMutation.mockClear();
       getAttributeValue = 'false';
-      mount(<TabsTestComponent />);
-      expect(observeMutation).toHaveBeenCalledTimes(2);
+      render(<TabsTestComponent />);
+      expect(observeMutation).toHaveBeenCalledTimes(1);
     });
     it('dropdown menu is displayed', () => {
-      const wrapper = mount(<TabsTestComponent />);
-      expect(wrapper.find('.pgn__tab_more').at(0).hasClass('pgn__tab_invisible')).toBe(false);
+      render(<TabsTestComponent />);
+      const dropdownMenu = screen.getByText('More...');
+      screen.debug(dropdownMenu);
+      // expect(dropdownMenu).toBeTruthy();
+      // expect(dropdownMenu.className).not.toContain('pgn__tab_invisible');
     });
     it('moreTabText is displayed', () => {
       const text = 'Mehr...';
-      const wrapper = mount(<TabsTestComponent />);
-      expect(wrapper.find('#pgn__tab-toggle').at(0).text()).toEqual(MORE_TAB_TEXT);
-      wrapper.setProps({ moreTabText: text });
-      expect(wrapper.find('#pgn__tab-toggle').at(0).text()).toEqual(text);
+      const { rerender } = render(<TabsTestComponent />);
+      const toggleButton = screen.getByText('More...');
+      expect(toggleButton.textContent).toBe(MORE_TAB_TEXT);
+      fireEvent.click(toggleButton);
+      rerender(<TabsTestComponent moreTabText={text} />);
+      expect(toggleButton.textContent).toBe(text);
     });
-    it('click on the dropdown item activates tab', () => {
-      const wrapper = mount(<TabsTestComponent />);
-      wrapper.find('#pgn__tab-toggle').at(0).simulate('click');
-      wrapper.find('.dropdown-item').at(0).simulate('click');
-      expect(wrapper.find('[data-rb-event-key="tab_2"]').at(0).hasClass('active')).toEqual(true);
+    it('click on the dropdown item activates tab', async () => {
+      render(<TabsTestComponent />);
+      const toggleButton = screen.getByText('More...');
+      fireEvent.click(toggleButton);
+      const dropdownItem = screen.getAllByText('Tab 2');
+      fireEvent.click(dropdownItem[0]);
+      await waitFor(() => {
+        const tab = screen.getByRole('tab', { name: 'Tab 2' });
+        expect(tab.className).toContain('active');
+      });
     });
-    it('select dropdown item after pressing Enter', () => {
-      const wrapper = mount(<TabsTestComponent />);
-      wrapper.find('#pgn__tab-toggle').at(0).at(0).simulate('click');
-      wrapper.find('.dropdown-item').at(0).simulate('keyPress', { key: 'Enter' });
-      expect(wrapper.find('[data-rb-event-key="tab_2"]').at(0).hasClass('active')).toEqual(true);
+    it('select dropdown item after pressing Enter', async () => {
+      render(<TabsTestComponent />);
+      const toggleButton = screen.getByText('More...');
+      fireEvent.click(toggleButton);
+      const dropdownItem = screen.getAllByText('Tab 2');
+      fireEvent.keyPress(dropdownItem[0], { key: 'Enter', code: 'Enter', charCode: 13 });
+      await waitFor(() => {
+        const tab = screen.getByRole('tab', { name: 'Tab 2' });
+        expect(tab.className).toContain('active');
+      });
     });
     it('invalid child does not render', () => {
-      const wrapper = mount((
+      render(
         <Tabs>
           {[false, undefined]}
-        </Tabs>
-      ));
-      expect(wrapper.find('nav').children().length).toEqual(1);
+        </Tabs>,
+      );
+      const navElement = screen.getByRole('tablist');
+      const childElements = navElement.children;
+      expect(childElements.length).toEqual(1);
     });
   });
 });

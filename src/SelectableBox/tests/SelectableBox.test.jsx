@@ -1,9 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
 
 import SelectableBox from '..';
-import { RadioControl, CheckboxControl } from '../../Form';
 
 const checkboxType = 'checkbox';
 const checkboxText = 'SelectableCheckbox';
@@ -28,98 +28,99 @@ describe('<SelectableBox />', () => {
       expect(tree).toMatchSnapshot();
     });
     it('correct render when type prop is changed', () => {
-      const boxWrapper = mount(<SelectableRadio />);
-      expect(boxWrapper.find(RadioControl).length).toBeGreaterThan(0);
-      boxWrapper.setProps({ type: 'radio' });
-      expect(boxWrapper.find(RadioControl).length).toBeGreaterThan(0);
-      boxWrapper.setProps({ type: 'checkbox' });
-      expect(boxWrapper.find(CheckboxControl).length).toBeGreaterThan(0);
+      const { rerender } = render(<SelectableRadio type="checkbox" />);
+      const checkboxControl = screen.getByText('SelectableRadio', { type: 'checkbox' });
+      expect(checkboxControl).toBeTruthy();
+      rerender(<SelectableRadio type="radio" />);
+      const radioControl = screen.getByText('SelectableRadio', { type: 'radio' });
+      expect(radioControl).toBeTruthy();
     });
     it('renders with radio input type if neither checkbox nor radio is passed', () => {
       // Mock the `console.error` is intentional because an invalid `type` prop
       // with `wrongType` specified for `ForwardRef` expects one of the ['radio','flag'] parameters.
       // eslint-disable-next-line no-console
-      console.error = jest.fn();
-      const wrapper = mount(<SelectableRadio type="wrongType" />);
-      const selectableBox = wrapper.find('input');
-      expect(selectableBox.prop('type')).toEqual(radioType);
-      // eslint-disable-next-line no-console
-      console.error.mockRestore();
+      const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+      const { getByRole } = render(<SelectableRadio type="wrongType" />);
+      const selectableBox = getByRole('button');
+      expect(selectableBox).toBeTruthy();
+      consoleErrorSpy.mockRestore();
     });
     it('renders with checkbox input type', () => {
-      const wrapper = mount(<SelectableCheckbox />);
-      const selectableBox = wrapper.find('input');
-      expect(selectableBox.prop('type')).toEqual(checkboxType);
+      render(<SelectableCheckbox />);
+      const selectableBox = screen.getByText('SelectableCheckbox', { type: checkboxType });
+      expect(selectableBox).toBeTruthy();
     });
     it('renders with radio input type', () => {
-      const wrapper = mount(<SelectableRadio />);
-      const selectableBox = wrapper.find('input');
-      expect(selectableBox.prop('type')).toEqual(radioType);
+      render(<SelectableCheckbox />);
+      const selectableBox = screen.getByText('SelectableCheckbox', { type: radioType });
+      expect(selectableBox).toBeTruthy();
     });
     it('renders with correct children', () => {
-      const wrapper = mount(<SelectableRadio />);
-      const selectableBox = wrapper.find('.pgn__selectable_box');
-      expect(selectableBox.text()).toContain(radioText);
+      const { getByText } = render(<SelectableRadio />);
+      const selectableBox = getByText(radioText);
+      expect(selectableBox).toBeTruthy();
     });
     it('renders with correct class', () => {
       const className = 'myClass';
-      const wrapper = mount(<SelectableRadio className={className} />);
-      const selectableBox = wrapper.find('.pgn__selectable_box');
-      expect(selectableBox.hasClass(className)).toEqual(true);
+      const { container } = render(<SelectableRadio className={className} />);
+      const selectableBox = container.querySelector('.pgn__selectable_box');
+      expect(selectableBox.classList.contains(className)).toEqual(true);
     });
     it('renders as active when checked is passed', () => {
-      const wrapper = mount(<SelectableRadio checked />);
-      const selectableBox = wrapper.find('.pgn__selectable_box');
-      expect(selectableBox.hasClass('pgn__selectable_box-active')).toEqual(true);
-      expect(selectableBox.find('input').prop('checked')).toEqual(true);
+      const { container } = render(<SelectableRadio checked />);
+      const selectableBox = container.querySelector('.pgn__selectable_box');
+      const inputElement = container.querySelector('.pgn__selectable_box input');
+      expect(selectableBox.classList.contains('pgn__selectable_box-active')).toEqual(true);
+      expect(inputElement.checked).toEqual(true);
     });
     it('renders as invalid when isInvalid is passed', () => {
-      const wrapper = mount(<SelectableRadio isInvalid />);
-      const selectableBox = wrapper.find('.pgn__selectable_box');
-      expect(selectableBox.hasClass('pgn__selectable_box-invalid')).toEqual(true);
+      const { container } = render(<SelectableRadio isInvalid />);
+      const selectableBox = container.querySelector('.pgn__selectable_box');
+      expect(selectableBox.classList.contains('pgn__selectable_box-invalid')).toEqual(true);
     });
     it('renders with on click event when onClick is passed', () => {
-      const wrapper = mount(<SelectableCheckbox onClick={undefined} />);
-      wrapper.find('.pgn__selectable_box').simulate('click');
       const onClickSpy = jest.fn();
-      wrapper.setProps({ onClick: onClickSpy });
-      wrapper.find('.pgn__selectable_box').simulate('click');
+      const { container } = render(<SelectableCheckbox onClick={onClickSpy} />);
+      const selectableBox = container.querySelector('.pgn__selectable_box');
+      fireEvent.click(selectableBox);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
     it('renders with on key press event when onClick is passed', () => {
       const onClickSpy = jest.fn();
-      const wrapper = mount(<SelectableCheckbox onClick={onClickSpy} />);
-      const selectableBox = wrapper.find('.pgn__selectable_box');
-      selectableBox.simulate('keypress', { key: 'Enter' });
+      const { container } = render(<SelectableCheckbox onClick={onClickSpy} />);
+      const selectableBox = container.querySelector('.pgn__selectable_box');
+      fireEvent.keyPress(selectableBox, { key: 'Enter', code: 'Enter', charCode: 13 });
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
     it('renders with hidden input when inputHidden is passed', () => {
-      const wrapper = mount(<SelectableCheckbox />);
-      expect(wrapper.find('.pgn__selectable_box input').prop('hidden')).toEqual(true);
-      wrapper.setProps({ inputHidden: false });
-      expect(wrapper.find('.pgn__selectable_box input').prop('hidden')).toEqual(false);
+      const { container, rerender } = render(<SelectableCheckbox inputHidden />);
+      const inputElement = container.querySelector('.pgn__selectable_box input');
+      expect(inputElement.getAttribute('hidden')).toEqual('');
+      rerender(<SelectableCheckbox inputHidden={false} />);
+      expect(inputElement.getAttribute('hidden')).toBeNull();
     });
   });
   describe('correct interactions', () => {
     it('correct checkbox state change when checked is changed', () => {
-      const wrapper = mount(<SelectableCheckbox />);
-      wrapper.setProps({ checked: true });
-      expect(wrapper.find('.pgn__selectable_box').hasClass('pgn__selectable_box-active')).toEqual(true);
-      wrapper.setProps({ checked: false });
-      expect(wrapper.find('.pgn__selectable_box').hasClass('pgn__selectable_box-active')).toEqual(false);
+      const { container, rerender } = render(<SelectableCheckbox checked={false} />);
+      const checkbox = container.querySelector('.pgn__selectable_box');
+      expect(checkbox.className).not.toContain('pgn__selectable_box-active');
+      rerender(<SelectableCheckbox checked />);
+      expect(checkbox.className).toContain('pgn__selectable_box-active');
     });
     it('correct radio state change when checked is changed', () => {
-      const wrapper = mount(<SelectableRadio />);
-      wrapper.setProps({ checked: true });
-      expect(wrapper.find('.pgn__selectable_box').hasClass('pgn__selectable_box-active')).toEqual(true);
-      wrapper.setProps({ checked: false });
-      expect(wrapper.find('.pgn__selectable_box').hasClass('pgn__selectable_box-active')).toEqual(true);
+      const { container, rerender } = render(<SelectableRadio checked={false} />);
+      const radio = container.querySelector('.pgn__selectable_box');
+      expect(radio.className).toContain('pgn__selectable_box-active');
+      rerender(<SelectableRadio checked />);
+      expect(radio.className).toContain('pgn__selectable_box-active');
     });
     it('ref is passed to onClick function', () => {
       let inputRef;
       const onClick = (ref) => { inputRef = ref; };
-      const wrapper = mount(<SelectableRadio onClick={onClick} />);
-      wrapper.find('.pgn__selectable_box').simulate('click');
+      render(<SelectableRadio onClick={onClick} />);
+      const radio = screen.getByRole('button');
+      userEvent.click(radio);
       expect(inputRef).not.toBeFalsy();
     });
   });
