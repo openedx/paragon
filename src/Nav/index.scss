@@ -172,6 +172,10 @@
       background-color: $nav-tabs-hover-bg;
     }
 
+    .dropdown {
+      padding-bottom: .125rem;
+    }
+
     &:focus {
       border-bottom: $nav-tabs-border-width solid $nav-tabs-focus-border-color;
 
