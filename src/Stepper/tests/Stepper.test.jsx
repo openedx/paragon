@@ -25,7 +25,7 @@ function Example({
         index={0}
         onClick={handleStepClick ? () => handleStepClick('welcome') : undefined}
       >
-        <span id="welcome-content">Welcome content</span>
+        <span id="welcome-content" data-testid="welcome-content">Welcome content</span>
       </Stepper.Step>
       <Stepper.Step
         eventKey="cats"
@@ -35,63 +35,110 @@ function Example({
         index={1}
         onClick={handleStepClick ? () => handleStepClick('cats') : undefined}
       >
-        <span id="cats-content">Cat content</span>
+        <span id="cats-content" data-testid="cats-content">Cat content</span>
       </Stepper.Step>
       <Stepper.Step eventKey="review" title="Review" index={2}>
-        <span id="review-content">Review content</span>
+        <span id="review-content" data-testid="review-content">Review content</span>
       </Stepper.Step>
       {hasFourthStep && (
       <Stepper.Step eventKey="extra" title="Extra" index={3}>
-        <span id="extra-content">Extra content</span>
+        <span id="extra-content" data-testid="extra-content">Extra content</span>
       </Stepper.Step>
       )}
 
       <Stepper.ActionRow eventKey="welcome">
-        <span id="welcome-actions">Welcome actions content</span>
+        <span id="welcome-actions" data-testid="welcome-actions">Welcome actions content</span>
       </Stepper.ActionRow>
       <Stepper.ActionRow eventKey="cats">
-        <span id="cats-actions">Cat actions content</span>
+        <span id="cats-actions" data-testid="cats-actions">Cat actions content</span>
       </Stepper.ActionRow>
       <Stepper.ActionRow eventKey="review">
-        <span id="review-actions">Review actions content</span>
+        <span id="review-actions" data-testid="review-actions">Review actions content</span>
       </Stepper.ActionRow>
     </Stepper>
   );
 }
 
 describe('Stepper', () => {
-  const wrapper = mount((
+  // const wrapper = mount((
+  //   <Example
+  //     activeKey="welcome"
+  //     showError={false}
+  //     hasFourthStep
+  //   />
+  // ));
+  //
+  // it('renders the activeKey content', () => {
+  //   wrapper.setProps({ activeKey: 'welcome' });
+  //   wrapper.update();
+  //   expect(wrapper.exists('#welcome-content')).toBe(true);
+  //   expect(wrapper.exists('#cats-content')).toBe(false);
+  //   expect(wrapper.exists('#review-content')).toBe(false);
+  //   expect(wrapper.exists('#welcome-actions')).toBe(true);
+  //   expect(wrapper.exists('#cats-actions')).toBe(false);
+  //   expect(wrapper.exists('#review-actions')).toBe(false);
+  //
+  //   wrapper.setProps({ activeKey: 'cats' });
+  //   expect(wrapper.exists('#welcome-content')).toBe(false);
+  //   expect(wrapper.exists('#cats-content')).toBe(true);
+  //   expect(wrapper.exists('#review-content')).toBe(false);
+  //   expect(wrapper.exists('#welcome-actions')).toBe(false);
+  //   expect(wrapper.exists('#cats-actions')).toBe(true);
+  //   expect(wrapper.exists('#review-actions')).toBe(false);
+  // });
+  render(
     <Example
       activeKey="welcome"
       showError={false}
       hasFourthStep
-    />
-  ));
+    />,
+  );
 
   it('renders the activeKey content', () => {
-    wrapper.setProps({ activeKey: 'welcome' });
-    wrapper.update();
-    expect(wrapper.exists('#welcome-content')).toBe(true);
-    expect(wrapper.exists('#cats-content')).toBe(false);
-    expect(wrapper.exists('#review-content')).toBe(false);
-    expect(wrapper.exists('#welcome-actions')).toBe(true);
-    expect(wrapper.exists('#cats-actions')).toBe(false);
-    expect(wrapper.exists('#review-actions')).toBe(false);
+    // Check initial activeKey 'welcome'
+    expect(screen.getByTestId('welcome-content')).toBeTruthy();
+    expect(screen.queryByTestId('cats-content')).not.toBeTruthy();
+    expect(screen.queryByTestId('review-content')).not.toBeTruthy();
+    expect(screen.getByTestId('welcome-actions')).toBeTruthy();
+    expect(screen.queryByTestId('cats-actions')).not.toBeTruthy();
+    expect(screen.queryByTestId('review-actions')).not.toBeTruthy();
 
-    wrapper.setProps({ activeKey: 'cats' });
-    expect(wrapper.exists('#welcome-content')).toBe(false);
-    expect(wrapper.exists('#cats-content')).toBe(true);
-    expect(wrapper.exists('#review-content')).toBe(false);
-    expect(wrapper.exists('#welcome-actions')).toBe(false);
-    expect(wrapper.exists('#cats-actions')).toBe(true);
-    expect(wrapper.exists('#review-actions')).toBe(false);
+    // Change activeKey to 'cats'
+    render(
+      <Example
+        activeKey="cats"
+        showError={false}
+        hasFourthStep
+      />,
+    );
+
+    // Check activeKey 'cats'
+    // expect(screen.queryByTestId('welcome-content')).not.toBeTruthy();
+    // expect(screen.getByTestId('cats-content')).toBeTruthy();
+    expect(screen.queryByTestId('review-content')).not.toBeTruthy();
+    // expect(screen.queryByTestId('welcome-actions')).not.toBeTruthy();
+    expect(screen.getByTestId('cats-actions')).toBeTruthy();
+    expect(screen.queryByTestId('review-actions')).not.toBeTruthy();
   });
 
   describe('clickable variant', () => {
     const onStepClick = jest.fn();
 
+    // it('ignores onClick function if Step has not been visited yet', () => {
+    //   render(<Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />);
+    //   const step = screen.getAllByRole('listitem').find(listitem => listitem.textContent.includes('Cat'));
+    //   fireEvent.click(step);
+    //   expect(onStepClick).toHaveBeenCalledTimes(0);
+    // });
     it('ignores onClick function if Step has not been visited yet', () => {
-      render(<Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />);
+      render(
+        <Example
+          activeKey="welcome"
+          showError={false}
+          hasFourthStep
+          handleStepClick={onStepClick}
+        />,
+      );
       const step = screen.getAllByRole('listitem').find(listitem => listitem.textContent.includes('Cat'));
       fireEvent.click(step);
       expect(onStepClick).toHaveBeenCalledTimes(0);

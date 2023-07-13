@@ -1,7 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import {
+  render, screen, fireEvent,
+} from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
-import Toast from './index';
+import Toast from '.';
 
 /* eslint-disable-next-line react/prop-types */
 function ToastWrapper({ children, ...props }) {
@@ -21,7 +23,7 @@ describe('<Toast />', () => {
     show: true,
   };
   it('renders optional action as link', () => {
-    const wrapper = mount((
+    render(
       <ToastWrapper
         {...props}
         action={{
@@ -30,12 +32,14 @@ describe('<Toast />', () => {
         }}
       >
         Success message.
-      </ToastWrapper>));
-    const toastLink = wrapper.find('a.btn');
-    expect(toastLink).toHaveLength(1);
+      </ToastWrapper>,
+    );
+
+    const toastLink = screen.getByRole('button', { name: 'Optional action' });
+    expect(toastLink).toBeTruthy();
   });
   it('renders optional action as button', () => {
-    const wrapper = mount((
+    render(
       <ToastWrapper
         {...props}
         action={{
@@ -44,47 +48,44 @@ describe('<Toast />', () => {
         }}
       >
         Success message.
-      </ToastWrapper>));
-    const toastButton = wrapper.find('button.btn');
-    expect(toastButton).toHaveLength(1);
+      </ToastWrapper>,
+    );
+    const toastButton = screen.getByRole('button', { name: 'Optional action' });
+    expect(toastButton.className).toContain('btn');
   });
   it('autohide is set to false on onMouseOver and true on onMouseLeave', () => {
-    const wrapper = mount((
-      <ToastWrapper
-        {...props}
-      >
+    render(
+      <ToastWrapper data-testid="toast" {...props}>
         Success message.
-      </ToastWrapper>));
-    wrapper.prop('onMouseOver');
+      </ToastWrapper>,
+    );
+    const toast = screen.getByTestId('toast');
+    fireEvent.mouseOver(toast);
     setTimeout(() => {
-      const toast = wrapper.find(Toast);
-      expect(toast.props().autohide).toEqual(true);
+      expect(screen.getByText('Success message.')).toEqual(true);
       expect(toast).toHaveLength(1);
     }, 6000);
-    wrapper.prop('onMouseLeave');
+    fireEvent.mouseLeave(toast);
     setTimeout(() => {
-      const toast = wrapper.find('toast');
-      expect(toast.props().autohide).toEqual(false);
+      expect(screen.getByText('Success message.')).toEqual(false);
       expect(toast).toHaveLength(1);
     }, 6000);
   });
   it('autohide is set to false onFocus and true onBlur', () => {
-    const wrapper = mount((
-      <ToastWrapper
-        {...props}
-      >
+    render(
+      <ToastWrapper data-testid="toast" {...props}>
         Success message.
-      </ToastWrapper>));
-    wrapper.prop('onFocus');
+      </ToastWrapper>,
+    );
+    const toast = screen.getByTestId('toast');
+    fireEvent.focus(toast);
     setTimeout(() => {
-      const toast = wrapper.find(Toast);
-      expect(toast.props().autohide).toEqual(true);
+      expect(screen.getByText('Success message.')).toEqual(true);
       expect(toast).toHaveLength(1);
     }, 6000);
-    wrapper.prop('onBlur');
+    fireEvent.blur(toast);
     setTimeout(() => {
-      const toast = wrapper.find('toast');
-      expect(toast.props().autohide).toEqual(false);
+      expect(screen.getByText('Success message.')).toEqual(false);
       expect(toast).toHaveLength(1);
     }, 6000);
   });

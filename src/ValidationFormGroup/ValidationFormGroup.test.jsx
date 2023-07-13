@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
-import ValidationFormGroup from './index';
 import Input from '../Input';
 import { FormControl, Form } from '..';
+import ValidationFormGroup from '.';
 
 describe('ValidationFormGroup', () => {
   const labelAndInputComponents = (
@@ -102,7 +102,7 @@ describe('ValidationFormGroup', () => {
     const invalidMessage = 'Exterminate, Exterminate';
 
     it(`renders a ${name} child with the correct aria attributes and helptext`, () => {
-      const wrapper = shallow(
+      render(
         <ValidationFormGroup
           for={formControlId}
           helpText={formControlHelp}
@@ -112,11 +112,12 @@ describe('ValidationFormGroup', () => {
           <Component id={formControlId} />
         </ValidationFormGroup>,
       );
-      expect(wrapper.find(Component).props()['aria-describedby']).toEqual(`${formControlId}-help-text ${formControlId}-valid-feedback`);
-      expect(wrapper.find(`#${formControlId}-help-text`).text()).toEqual(formControlHelp);
+      const component = screen.getByRole('textbox');
+      expect(component.getAttribute('aria-describedby')).toBe(`${formControlId}-help-text ${formControlId}-valid-feedback`);
+      expect(screen.getByText(formControlHelp)).toBeTruthy();
     });
     it(`renders a ${name} child with the correct valid message`, () => {
-      const wrapper = shallow(
+      render(
         <ValidationFormGroup
           for={formControlId}
           helpText={formControlHelp}
@@ -126,10 +127,10 @@ describe('ValidationFormGroup', () => {
           <Component id={formControlId} />
         </ValidationFormGroup>,
       );
-      expect(wrapper.find(`#${formControlId}-valid-feedback`).text()).toEqual(validMessage);
+      expect(screen.getByText(validMessage)).toBeTruthy();
     });
     it(`renders a ${name} child with the correct invalid message`, () => {
-      const wrapper = shallow(
+      render(
         <ValidationFormGroup
           for={formControlId}
           helpText={formControlHelp}
@@ -139,7 +140,7 @@ describe('ValidationFormGroup', () => {
           <Component id={formControlId} />
         </ValidationFormGroup>,
       );
-      expect(wrapper.find(`#${formControlId}-invalid-feedback`).text()).toEqual(invalidMessage);
+      expect(screen.getByText(invalidMessage)).toBeTruthy();
     });
   });
 });

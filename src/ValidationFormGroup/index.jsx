@@ -99,7 +99,7 @@ function ValidationFormGroup(props) {
   };
 
   return (
-    <div className={classNames('form-group', className)}>
+    <div className={classNames('form-group', className)} data-testid="validation-form-group">
       {renderChildren()}
       {renderHelpText(helpText)}
       {renderInvalidFeedback(invalidMessage)}
