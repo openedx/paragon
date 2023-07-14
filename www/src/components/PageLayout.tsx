@@ -83,7 +83,7 @@ function Layout({
               {children}
               <Container size="md">
                 <hr />
-                <LeaveFeedback className="pgn__docs-page-feedback-link" />
+                <LeaveFeedback className="mb-5" />
               </Container>
             </Col>
             <Col
@@ -117,25 +117,37 @@ function Layout({
             <Nav.Link
               className="muted-link"
               href="https://github.com/openedx/.github/blob/master/CODE_OF_CONDUCT.md"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Code of Conduct
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link className="muted-link" href="https://open.edx.org/">
+            <Nav.Link
+              className="muted-link"
+              href="https://open.edx.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Open edX
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <LeaveFeedback />
+            <LeaveFeedback className="muted-link" isNavLink />
           </Nav.Item>
           <div className="flex-grow-1" />
-          <a href="https://www.netlify.com">
+          <Nav.Link
+            className="muted-link"
+            href="https://www.netlify.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src="https://www.netlify.com/img/global/badges/netlify-light.svg"
               alt="Deploys by Netlify"
             />
-          </a>
+          </Nav.Link>
         </Nav>
       </Container>
     </div>
