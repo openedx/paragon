@@ -15,7 +15,6 @@ import {
   Row,
   Col,
   Sticky,
-  Hyperlink,
   useMediaQuery,
   breakpoints,
 } from '~paragon-react';
@@ -115,40 +114,40 @@ function Layout({
             </Link>
           </Nav.Item>
           <Nav.Item>
-            <Hyperlink
-              className="muted-link nav-link"
-              destination="https://github.com/openedx/.github/blob/master/CODE_OF_CONDUCT.md"
-              showLaunchIcon={false}
+            <Nav.Link
+              className="muted-link"
+              href="https://github.com/openedx/.github/blob/master/CODE_OF_CONDUCT.md"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Code of Conduct
-            </Hyperlink>
+            </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Hyperlink
-              className="muted-link nav-link"
-              destination="https://open.edx.org/"
-              showLaunchIcon={false}
+            <Nav.Link
+              className="muted-link"
+              href="https://open.edx.org/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Open edX
-            </Hyperlink>
+            </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <LeaveFeedback isLink />
+            <LeaveFeedback className="muted-link" isNavLink />
           </Nav.Item>
           <div className="flex-grow-1" />
-          <Hyperlink
-            className="muted-link nav-link"
-            destination="https://www.netlify.com"
-            showLaunchIcon={false}
+          <Nav.Link
+            className="muted-link"
+            href="https://www.netlify.com"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <img
               src="https://www.netlify.com/img/global/badges/netlify-light.svg"
               alt="Deploys by Netlify"
             />
-          </Hyperlink>
+          </Nav.Link>
         </Nav>
       </Container>
     </div>
