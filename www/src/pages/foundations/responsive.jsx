@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Container, breakpoints } from '~paragon-react';
+import {
+  DataTable, Container, breakpoints, OverlayTrigger, Tooltip, Icon,
+} from '~paragon-react';
+import { QuestionMark } from '~paragon-icons';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import CodeBlock from '../../components/CodeBlock';
@@ -20,6 +23,25 @@ function IdentifierCell({ row }) {
   return <code>{row.values.identifier}</code>;
 }
 function MinWidthCell({ row }) {
+  if (row.values.identifier === 'xs') {
+    return (
+      <div className="d-flex align-items-center">
+        <code>-</code>
+        <OverlayTrigger
+          placement="top"
+          overlay={(
+            <Tooltip id={`tooltip-${row.values.identifier}`}>
+              The min-width for the &quot;XS&quot; breakpoint is <strong>320px</strong>.
+              That pixel width is the smallest that designers support for mobile devices,
+              and also covers 16x magnification for accessibility.
+            </Tooltip>
+          )}
+        >
+          <Icon src={QuestionMark} size="xs" />
+        </OverlayTrigger>
+      </div>
+    );
+  }
   return <code>{row.values.minWidth ? `${row.values.minWidth}px` : '-'}</code>;
 }
 function MaxWidthCell({ row }) {
