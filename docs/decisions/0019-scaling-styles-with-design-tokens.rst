@@ -64,9 +64,9 @@ However, one of the long-term visions for the Paragon design system is to be the
 
 By only transforming our hardcoded SCSS variables to hardcoded CSS variables, we would be missing out on the opportunity to iterate towards the vision of making the Paragon design system be platform-agnostic.
 
-As a result, Paragon's existing SCSS variables will be migrated to design tokens defined as JSON files that get transformed by ```style-dictonary``` into various platform-specific styles. To start, we are transforming the design tokens specified in JSON to CSS variables as well as some CSS utility classes. In the future, our approach may expand to transforming the design tokens to iOS and Android compatible files as well.
+As a result, Paragon's existing SCSS variables will be migrated to design tokens defined as JSON files that get transformed by ```style-dictionary``` into various platform-specific styles. To start, we are transforming the design tokens specified in JSON to CSS variables as well as some CSS utility classes. In the future, our approach may expand to transforming the design tokens to iOS and Android compatible files as well.
 
-By utilizing a tool like ``style-dictonary``, the naming convention of design tokens and the resulting CSS variables will be standardized and consistent (e.g., prefixed with ``pgn-``, defined within the context of specified categories like ``color``).
+By utilizing a tool like ``style-dictionary``, the naming convention of design tokens and the resulting CSS variables will be standardized and consistent (e.g., prefixed with ``pgn-``, defined within the context of specified categories like ``color``).
 
 An additional longer term vision may also include transforming the Paragon design tokens to be compatible with Figma, such that the Paragon design tokens are truly a single source of truth across both design and engineering.
 
@@ -180,7 +180,7 @@ Implications for theme authors (e.g., ``@edx/brand`` packages)
 
 Currently, Paragon recommends theme authors to create a theme package such as ``@edx/brand-openedx`` (`Github <https://github.com/openedx/brand-openedx>`__) and ``@edx/brand-edx.org`` (`Github <https://github.com/edx/brand-edx.org>`__).
 
-While the migration from SCSS variables to CSS variables is a breaking change for theme authors, we have tried to mitigate this by keeping the existing SCSS variables but defining them such that their values refer to the new CSS variables. Because SCSS can't evaluate the CSS variable at runtime, it utilizes the CSS variable in the resulting output CSS used in the browser.
+While the migration from SCSS variables to CSS variables is a breaking change for theme authors, we have tried to mitigate this by keeping the existing SCSS variables but defining them such that their values refer to the new CSS variables. Because SCSS can't evaluate the CSS variables at runtime, it utilizes the CSS variable in the resulting output CSS used in the browser.
 
 Currently, theme authors largely modify SCSS variables from core Paragon by creating a ``_variables.scss`` file and importing it *after* the core Paragon SCSS styles in consuming applications (e.g., micro-frontends). Doing so, SCSS will override the original variables' values defined by core Paragon with the new SCSS from the ``@edx/brand`` theme.
 
@@ -197,13 +197,13 @@ In such cases, consumers could also directly override CSS variables at runtime b
 Future considerations: Customizing the theme via a user interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-More forward thinking, we would also like to explore creating a UI on top of these design tokens such that the understanding and writing of JSON files is abstracted away from theme authors. Such a UI may also enable designers to self-serve update the theme.
+More forward thinking, we would also like to explore creating a UI on top of these design tokens such that the understanding and writing of JSON files is abstracted away from theme authors. Alternatively, we also plan to investigate integrating the Paragon design tokens implemented in code with Figma, a powerful industry-standard tool designers use when working with Paragon, potentially enabling a two-way sync between Figma and GitHub. Such a UI or Figma integration may also enable designers to self-serve update the theme with minimal engineering involvement.
 
 Though this theme customization UI is not included in the initial release of design tokens and CSS variables, there is desire to do some prototyping to see what might be possible; other groups in the community may also have the capacity to run with it as well.
 
 That said, such UI considerations thus far have largely been for theme authors at the system/provider level, not so much at the user level. It may be interesting to explore whether Paragon could (and/or should) expose some generic and flexible helper components, hooks, functions, etc. that consuming applications could utilize to simplify the creation and injection of a dynamic, user-driven theme's CSS variables. 
 
-As a more concrete example, consuming applications could, in theory, use an exported function from Paragon that accepts a list of JSON and/or JavaScript objects as design tokens (similar to importing all the token files in the tokens build) and then run ``style-dictionary`` with the same (or extended) config on these custom tokens and the core Paragon tokens to generate the dynamic CSS variables. This solution, too, is still pretty raw and is likely out of scope of the initial design tokens release and this ADR.
+As a more concrete example, consuming applications could, in theory, use an exported function from Paragon or a Node.js-based API that accepts a list of JSON and/or JavaScript objects as design tokens (similar to importing all the token files in the tokens build) and then run ``style-dictionary`` with the same (or extended) config on these custom tokens and the core Paragon tokens to  dynamically generate CSS variables at runtime without needing to write ``.css`` files to disk. This somewhat hypothetical solution is still pretty raw and is likely out of scope of the initial design tokens release and this ADR.
 
 Consequences
 ============
