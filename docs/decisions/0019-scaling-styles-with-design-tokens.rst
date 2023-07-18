@@ -45,7 +45,7 @@ Challenges with current styles architecture
   * The primary theming use case for Paragon is largely around system-wide theming, where all applications in the Open edX ecosystem share the same theme.
   * However, there are use cases for organizational themes, too (i.e., updating the colors for specific partners/organizations, enterprise customers, etc.).
   
-    * This is not well supported today and largely requires overriding CSS classes from Paragon rather than the desired approach of overriding underlying CSS variable(s). This an anti-pattern as Paragon class names should really be considered internal implementation details of Paragon components, and not used by consumers directly.
+    * This is not well supported today and largely requires overriding CSS classes from Paragon rather than the desired approach of overriding underlying CSS variable(s). This an anti-pattern as Paragon class names should really be considered internal implementation details of Paragon components, and not used by consumers directly. For example, the Enterprise MFEs within Open edX (e.g., frontend-app-learner-portal-enterprise) inject ``<style>`` tag in the HTML document with CSS class name overrides such as ``.btn-primary { background-color: $enterpriseCustomerPrimaryColor }``. Ideally, similar use cases could instead override a CSS variable such as ``--pgn-color-btn-primary-bg`` instead such that it gets re-used throughout all Paragon styles, not just ``.btn-primary``.
 
 * **Dependence on Bootstrap's internal styles.**
 
