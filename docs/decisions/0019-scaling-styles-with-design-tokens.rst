@@ -16,7 +16,7 @@ Within Paragon, "theming" predominantly refers to brand customization as it rela
 Current styles architecture
 ---------------------------
 
-Today, Paragon's core styles are heavily based on `Bootstrap 4 <https://getbootstrap.com/docs/4.6/getting-started/introduction/>`__. The decision to rely on Bootstrap was to extend a popular, existing repsonsive CSS framework to get an initial design system created more efficienctly than creating all styles from scratch in addition to general knowledge and awareness of Bootstrap throughout the frontend community (see `OEP-16 <https://open-edx-proposals.readthedocs.io/en/latest/best-practices/oep-0016-bp-adopt-bootstrap.html>`__ for more details).
+Today, Paragon's core styles are heavily based on `Bootstrap 4 <https://getbootstrap.com/docs/4.6/getting-started/introduction/>`__. The decision to rely on Bootstrap was to extend a popular, existing responsive CSS framework to get an initial design system created more efficiently than creating all styles from scratch in addition to general knowledge and awareness of Bootstrap throughout the frontend community (see `OEP-16 <https://open-edx-proposals.readthedocs.io/en/latest/best-practices/oep-0016-bp-adopt-bootstrap.html>`__ for more details).
 
 Bootstrap 4 supports theming of visual styles through SCSS variables. As a result, Paragon's current theming system also relies overriding SCSS variables, both from core Bootstrap and custom Paragon variables.
 
