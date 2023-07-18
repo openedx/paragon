@@ -33,6 +33,8 @@ jobs:
       run: npm run build-docs
     - name: Coverage
       uses: codecov/codecov-action@v3
+    - name: Type check
+      uses: codechecks/typecov@v1
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
