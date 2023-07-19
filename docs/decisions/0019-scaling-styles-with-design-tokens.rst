@@ -11,7 +11,7 @@ Context
 
 A critical component of the Open edX platform is the ability to customize its visual styles to reflect the custom brand of its consumers in the Open edX community. Historically, the Open edX platform (via ``edx-platform``) has supported a comprehensive theming system fulfilling the community's theming needs, including brand customization but also functionality, too (e.g., modifying, adding, or removing user interface elements). However, as we've moved towards React micro-frontends, the theming from a brand customization perspective has been largely replaced by the theming system provided by the Paragon design system.
 
-Within Paragon, "theming" predominantly refers to brand customization as it relates to visual styles. It does not intend to be responsible for customization of functionality as in the historical sense of comprehensive theming in ``edx-platform``. Enabling such customization to bring comprehensive theming support to micro-frontends is on the roadmap for the Frontend Working Group as a separate initiative outside of Paragon itself.
+Within Paragon, "theming" predominantly refers to brand customization as it relates to visual styles. It does not intend to be responsible for customization of functionality as in the historical sense of comprehensive theming in ``edx-platform``. The Frontend Working Group's roadmap includes improvements to micro-frontend customizability.
 
 Current styles architecture
 ---------------------------
