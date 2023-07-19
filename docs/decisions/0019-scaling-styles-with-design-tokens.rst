@@ -4,7 +4,7 @@
 Status
 ======
 
-Provisional
+Accepted
 
 Context
 =======
