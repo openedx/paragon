@@ -34,7 +34,7 @@ jobs:
     - name: Coverage
       uses: codecov/codecov-action@v3
     - name: Type check
-      uses: codechecks/typecov@v1
+      uses: codechecks/typecov
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
