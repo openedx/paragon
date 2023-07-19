@@ -1,5 +1,5 @@
 {
-  "lastModified": 1689689339527,
+  "lastModified": 1689775686276,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -23845,7 +23845,7 @@
       }
     },
     {
-      "version": "20.45.2",
+      "version": "20.45.4",
       "name": "@edx/frontend-app-library-authoring",
       "repository": {
         "type": "git",
@@ -35545,57 +35545,63 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 140,
+            "line": 141,
             "column": 6,
-            "index": 4689
+            "index": 4701
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 203,
+            "line": 204,
             "column": 10,
-            "index": 6593
+            "index": 6605
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 217,
+            "line": 218,
             "column": 6,
-            "index": 6977
+            "index": 6989
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 225,
+            "line": 226,
             "column": 8,
-            "index": 7244
+            "index": 7256
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 255,
+            "line": 256,
             "column": 10,
-            "index": 8543
+            "index": 8555
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 269,
+            "line": 270,
             "column": 12,
-            "index": 9146
+            "index": 9158
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 390,
-            "column": 20,
-            "index": 13809
+            "line": 402,
+            "column": 16,
+            "index": 14470
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 401,
-            "column": 20,
-            "index": 14419
+            "line": 413,
+            "column": 16,
+            "index": 15001
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 573,
+            "line": 424,
+            "column": 16,
+            "index": 15525
+          },
+          {
+            "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
+            "line": 631,
             "column": 20,
-            "index": 24012
+            "index": 26815
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
@@ -35959,57 +35965,51 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 167,
+            "line": 168,
             "column": 4,
-            "index": 5431
+            "index": 5443
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 173,
+            "line": 174,
             "column": 4,
-            "index": 5612
+            "index": 5624
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 183,
+            "line": 184,
             "column": 4,
-            "index": 5864
+            "index": 5876
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 268,
+            "line": 269,
             "column": 10,
-            "index": 9055
+            "index": 9067
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 329,
+            "line": 334,
             "column": 14,
-            "index": 10893
+            "index": 11199
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 416,
-            "column": 14,
-            "index": 15101
-          },
-          {
-            "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 572,
+            "line": 630,
             "column": 18,
-            "index": 23919
+            "index": 26722
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 767,
+            "line": 825,
             "column": 22,
-            "index": 35508
+            "index": 38311
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 866,
+            "line": 924,
             "column": 14,
-            "index": 40786
+            "index": 43589
           },
           {
             "filePath": "src/packages/resource-page/template/ResourcePage/index.jsx",
@@ -36113,9 +36113,9 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 269,
+            "line": 270,
             "column": 23,
-            "index": 9157
+            "index": 9169
           },
           {
             "filePath": "src/packages/queryless-pages/templates/Trademarks.jsx",
@@ -36803,9 +36803,9 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 573,
+            "line": 631,
             "column": 31,
-            "index": 24023
+            "index": 26826
           }
         ],
         "ThumbUpOutline": [
@@ -37323,15 +37323,15 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 141,
+            "line": 142,
             "column": 13,
-            "index": 4708
+            "index": 4720
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 204,
+            "line": 205,
             "column": 17,
-            "index": 6616
+            "index": 6628
           }
         ],
         "useToggle": [
@@ -37343,27 +37343,27 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 34,
+            "line": 35,
             "column": 32,
-            "index": 1145
-          },
-          {
-            "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 37,
-            "column": 50,
-            "index": 1300
+            "index": 1157
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 38,
-            "column": 62,
-            "index": 1380
+            "column": 50,
+            "index": 1312
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 42,
+            "line": 39,
+            "column": 62,
+            "index": 1392
+          },
+          {
+            "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
+            "line": 43,
             "column": 104,
-            "index": 1662
+            "index": 1674
           }
         ],
         "CallMade": [
@@ -37433,9 +37433,9 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 575,
+            "line": 633,
             "column": 18,
-            "index": 24154
+            "index": 26957
           }
         ],
         "ModalDialog.Body": [
@@ -37465,9 +37465,9 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 579,
+            "line": 637,
             "column": 20,
-            "index": 24418
+            "index": 27221
           }
         ],
         "DropdownButton": [
@@ -37609,9 +37609,9 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 402,
-            "column": 27,
-            "index": 14452
+            "line": 414,
+            "column": 23,
+            "index": 15030
           }
         ],
         "Search": [
@@ -37883,9 +37883,9 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 217,
+            "line": 218,
             "column": 17,
-            "index": 6988
+            "index": 7000
           },
           {
             "filePath": "src/packages/search-page/components/FilterProgramCard.jsx",
@@ -38007,9 +38007,9 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 576,
+            "line": 634,
             "column": 20,
-            "index": 24259
+            "index": 27062
           }
         ],
         "ModalDialog.Title": [
@@ -38033,9 +38033,9 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 577,
+            "line": 635,
             "column": 22,
-            "index": 24302
+            "index": 27105
           }
         ],
         "Timelapse": [
@@ -38053,9 +38053,9 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 391,
-            "column": 27,
-            "index": 13842
+            "line": 403,
+            "column": 23,
+            "index": 14499
           }
         ],
         "MoneyOutline": [
@@ -38359,9 +38359,9 @@
         "CheckCircle": [
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 226,
+            "line": 227,
             "column": 15,
-            "index": 7265
+            "index": 7277
           },
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
@@ -38373,9 +38373,17 @@
         "MoneyFilled": [
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 255,
+            "line": 256,
             "column": 21,
-            "index": 8554
+            "index": 8566
+          }
+        ],
+        "Calendar": [
+          {
+            "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
+            "line": 425,
+            "column": 23,
+            "index": 15554
           }
         ],
         "StarFilled": [
