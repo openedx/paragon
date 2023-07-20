@@ -1,5 +1,5 @@
 {
-  "lastModified": 1689775686276,
+  "lastModified": 1689862110520,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -8624,7 +8624,7 @@
       }
     },
     {
-      "version": "20.45.3",
+      "version": "20.45.4",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -8731,9 +8731,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 237,
+            "line": 243,
             "column": 14,
-            "index": 8632
+            "index": 8765
           },
           {
             "filePath": "src/recommendations/RecommendationCard.jsx",
@@ -8929,15 +8929,15 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 233,
+            "line": 239,
             "column": 8,
-            "index": 8464
+            "index": 8597
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 570,
+            "line": 571,
             "column": 12,
-            "index": 20435
+            "index": 20598
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
@@ -9339,9 +9339,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 228,
+            "line": 234,
             "column": 10,
-            "index": 8170
+            "index": 8303
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
@@ -9395,9 +9395,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 229,
+            "line": 235,
             "column": 12,
-            "index": 8257
+            "index": 8390
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
@@ -9577,15 +9577,15 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 250,
+            "line": 256,
             "column": 12,
-            "index": 9158
+            "index": 9291
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 262,
+            "line": 268,
             "column": 12,
-            "index": 9668
+            "index": 9801
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
@@ -9595,9 +9595,9 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 630,
+            "line": 631,
             "column": 14,
-            "index": 23289
+            "index": 23452
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
@@ -9707,9 +9707,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 228,
+            "line": 234,
             "column": 77,
-            "index": 8237
+            "index": 8370
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
@@ -9787,9 +9787,9 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 551,
+            "line": 552,
             "column": 12,
-            "index": 19745
+            "index": 19908
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
@@ -10434,217 +10434,119 @@
       },
       "folderName": "frontend-app-course-authoring",
       "usages": {
-        "useToggle": [
+        "Container": [
           {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 33,
-            "column": 86,
-            "index": 829
-          },
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 51,
-            "column": 32,
-            "index": 1521
-          },
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 52,
-            "column": 59,
-            "index": 1598
-          }
-        ],
-        "Icon": [
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 59,
-            "column": 15,
-            "index": 1574
-          },
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 76,
-            "column": 18,
-            "index": 2123
-          },
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 86,
-            "column": 18,
-            "index": 2578
-          },
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 96,
-            "column": 18,
-            "index": 3003
-          },
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 94,
-            "column": 15,
-            "index": 3007
-          },
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 95,
-            "column": 15,
-            "index": 3042
-          },
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 34,
-            "column": 63,
-            "index": 906
-          },
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 47,
-            "column": 22,
-            "index": 1305
-          },
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 53,
-            "column": 65,
-            "index": 1486
-          },
-          {
-            "filePath": "src/pages-and-resources/live/Settings.jsx",
-            "line": 108,
-            "column": 24,
-            "index": 4481
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 43,
-            "column": 22,
-            "index": 1474
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 54,
-            "column": 20,
-            "index": 1761
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 64,
-            "column": 16,
-            "index": 2039
-          }
-        ],
-        "SpinnerSimple": [
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 59,
-            "column": 26,
-            "index": 1585
-          },
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 95,
-            "column": 26,
-            "index": 3053
-          }
-        ],
-        "ActionRow": [
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 66,
+            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
+            "line": 135,
             "column": 6,
-            "index": 1696
-          },
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 107,
-            "column": 10,
-            "index": 3393
-          },
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 118,
-            "column": 8,
-            "index": 3847
-          },
-          {
-            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 83,
-            "column": 6,
-            "index": 2455
+            "index": 4868
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
-            "line": 134,
-            "column": 10,
-            "index": 4198
+            "line": 116,
+            "column": 4,
+            "index": 3410
           },
           {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 584,
-            "column": 10,
-            "index": 22780
+            "filePath": "src/pages-and-resources/discussions/app-list/AppList.jsx",
+            "line": 57,
+            "column": 6,
+            "index": 2284
           }
         ],
-        "ActionRow.Spacer": [
+        "Info": [
           {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 70,
-            "column": 8,
-            "index": 1853
+            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
+            "line": 139,
+            "column": 20,
+            "index": 5057
+          },
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 39,
+            "column": 23,
+            "index": 1478
+          },
+          {
+            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
+            "line": 214,
+            "column": 46,
+            "index": 6556
+          }
+        ],
+        "CheckCircle": [
+          {
+            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
+            "line": 149,
+            "column": 18,
+            "index": 5470
+          }
+        ],
+        "Layout": [
+          {
+            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
+            "line": 158,
+            "column": 10,
+            "index": 5917
           },
           {
             "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 122,
+            "line": 143,
+            "column": 8,
+            "index": 4619
+          }
+        ],
+        "Layout.Element": [
+          {
+            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
+            "line": 165,
+            "column": 12,
+            "index": 6169
+          },
+          {
+            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
+            "line": 221,
+            "column": 12,
+            "index": 9013
+          },
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 150,
             "column": 10,
-            "index": 3972
-          }
-        ],
-        "IconButtonWithTooltip": [
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 71,
-            "column": 8,
-            "index": 1882
+            "index": 4967
           },
           {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 81,
-            "column": 8,
-            "index": 2287
-          },
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 91,
-            "column": 8,
-            "index": 2756
-          }
-        ],
-        "EditOutline": [
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 75,
-            "column": 15,
-            "index": 2092
-          }
-        ],
-        "DeleteOutline": [
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 95,
-            "column": 15,
-            "index": 2970
-          }
-        ],
-        "AlertModal": [
-          {
-            "filePath": "src/custom-pages/CustomPageCard.jsx",
-            "line": 102,
-            "column": 6,
-            "index": 3196
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 196,
+            "column": 10,
+            "index": 6867
           }
         ],
         "Button": [
+          {
+            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
+            "line": 182,
+            "column": 22,
+            "index": 7082
+          },
+          {
+            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
+            "line": 244,
+            "column": 14,
+            "index": 9892
+          },
+          {
+            "filePath": "src/advanced-settings/modal-error/ModalError.jsx",
+            "line": 18,
+            "column": 8,
+            "index": 568
+          },
+          {
+            "filePath": "src/advanced-settings/modal-error/ModalError.jsx",
+            "line": 24,
+            "column": 8,
+            "index": 764
+          },
           {
             "filePath": "src/custom-pages/CustomPageCard.jsx",
             "line": 108,
@@ -10725,9 +10627,9 @@
           },
           {
             "filePath": "src/pages-and-resources/PagesAndResources.jsx",
-            "line": 52,
+            "line": 60,
             "column": 12,
-            "index": 1984
+            "index": 2256
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
@@ -10751,10 +10653,16 @@
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 404,
             "column": 8,
-            "index": 16605
+            "index": 16663
           }
         ],
         "StatefulButton": [
+          {
+            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
+            "line": 248,
+            "column": 12,
+            "index": 10071
+          },
           {
             "filePath": "src/custom-pages/CustomPageCard.jsx",
             "line": 111,
@@ -10771,7 +10679,7 @@
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
             "line": 202,
             "column": 16,
-            "index": 6063
+            "index": 6065
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigFormSaveButton.jsx",
@@ -10783,364 +10691,312 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 588,
             "column": 12,
-            "index": 22976
+            "index": 22858
           }
         ],
-        "Add": [
+        "Warning": [
           {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 94,
-            "column": 26,
-            "index": 3018
+            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
+            "line": 256,
+            "column": 16,
+            "index": 10383
           },
           {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 124,
-            "column": 24,
-            "index": 4035
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-restrictions/RestrictionSchedules.jsx",
-            "line": 70,
-            "column": 28,
-            "index": 2264
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/DiscussionTopics.jsx",
-            "line": 81,
-            "column": 30,
-            "index": 3061
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/Settings.jsx",
-            "line": 150,
-            "column": 34,
-            "index": 5517
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 61,
+            "column": 29,
+            "index": 2144
           }
         ],
-        "Breadcrumb": [
+        "AlertModal": [
           {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 110,
+            "filePath": "src/advanced-settings/modal-error/ModalError.jsx",
+            "line": 12,
+            "column": 2,
+            "index": 413
+          },
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 102,
+            "column": 6,
+            "index": 3196
+          }
+        ],
+        "ActionRow": [
+          {
+            "filePath": "src/advanced-settings/modal-error/ModalError.jsx",
+            "line": 17,
+            "column": 6,
+            "index": 548
+          },
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 66,
+            "column": 6,
+            "index": 1696
+          },
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 107,
             "column": 10,
-            "index": 3528
-          }
-        ],
-        "Hyperlink": [
+            "index": 3393
+          },
           {
             "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 130,
-            "column": 10,
-            "index": 4228
+            "line": 118,
+            "column": 8,
+            "index": 3847
           },
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 164,
-            "column": 4,
-            "index": 5024
+            "line": 83,
+            "column": 6,
+            "index": 2459
           },
           {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/AppExternalLinks.jsx",
-            "line": 30,
+            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
+            "line": 134,
+            "column": 10,
+            "index": 4198
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 584,
+            "column": 10,
+            "index": 22662
+          }
+        ],
+        "Alert": [
+          {
+            "filePath": "src/advanced-settings/modal-error/ModalErrorListItem.jsx",
+            "line": 13,
+            "column": 6,
+            "index": 444
+          },
+          {
+            "filePath": "src/advanced-settings/setting-alert/SettingAlert.jsx",
+            "line": 8,
+            "column": 2,
+            "index": 167
+          },
+          {
+            "filePath": "src/generic/alert-message/index.jsx",
+            "line": 6,
+            "column": 2,
+            "index": 165
+          },
+          {
+            "filePath": "src/generic/AlertProctoringError.jsx",
+            "line": 7,
+            "column": 4,
+            "index": 223
+          },
+          {
+            "filePath": "src/generic/ConnectionErrorAlert.jsx",
+            "line": 9,
+            "column": 2,
+            "index": 289
+          },
+          {
+            "filePath": "src/generic/PermissionDeniedAlert.jsx",
+            "line": 6,
+            "column": 2,
+            "index": 170
+          },
+          {
+            "filePath": "src/generic/SaveFormConnectionErrorAlert.jsx",
+            "line": 9,
+            "column": 2,
+            "index": 297
+          },
+          {
+            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
+            "line": 214,
             "column": 16,
-            "index": 834
+            "index": 6526
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
-            "line": 75,
-            "column": 8,
-            "index": 2341
-          },
-          {
-            "filePath": "src/pages-and-resources/live/BBBSettings.jsx",
             "line": 73,
-            "column": 6,
-            "index": 2336
-          },
-          {
-            "filePath": "src/pages-and-resources/live/BBBSettings.jsx",
-            "line": 94,
-            "column": 16,
-            "index": 3173
-          },
-          {
-            "filePath": "src/pages-and-resources/ora_settings/Settings.jsx",
-            "line": 27,
             "column": 8,
-            "index": 913
+            "index": 2216
           },
           {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 40,
-            "column": 10,
-            "index": 1356
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 51,
-            "column": 8,
-            "index": 1646
-          },
-          {
-            "filePath": "src/pages-and-resources/PagesAndResources.jsx",
-            "line": 46,
-            "column": 10,
-            "index": 1804
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 239,
-            "column": 4,
-            "index": 9231
-          }
-        ],
-        "Layout": [
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 143,
-            "column": 8,
-            "index": 4619
-          }
-        ],
-        "Layout.Element": [
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 150,
-            "column": 10,
-            "index": 4967
-          },
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 196,
-            "column": 10,
-            "index": 6867
-          }
-        ],
-        "ModalDialog": [
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 228,
-            "column": 8,
-            "index": 8071
-          },
-          {
-            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 65,
-            "column": 2,
-            "index": 2039
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
-            "line": 119,
-            "column": 6,
-            "index": 3525
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 555,
-            "column": 4,
-            "index": 21844
-          }
-        ],
-        "ModalDialog.Header": [
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 234,
-            "column": 10,
-            "index": 8245
-          },
-          {
-            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 74,
-            "column": 4,
-            "index": 2202
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
-            "line": 125,
-            "column": 8,
-            "index": 3736
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 566,
-            "column": 8,
-            "index": 22137
-          }
-        ],
-        "ModalDialog.Title": [
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 235,
-            "column": 12,
-            "index": 8278
-          },
-          {
-            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 75,
-            "column": 6,
-            "index": 2229
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
+            "filePath": "src/pages-and-resources/discussions/DiscussionsSettings.jsx",
             "line": 126,
-            "column": 10,
-            "index": 3784
+            "column": 18,
+            "index": 4058
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 567,
-            "column": 10,
-            "index": 22168
+            "line": 255,
+            "column": 12,
+            "index": 9745
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 422,
+            "column": 6,
+            "index": 16256
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 449,
+            "column": 6,
+            "index": 16986
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 232,
+            "column": 12,
+            "index": 8685
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 443,
+            "column": 6,
+            "index": 17596
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 465,
+            "column": 6,
+            "index": 18229
           }
         ],
-        "ModalDialog.Body": [
+        "Icon": [
+          {
+            "filePath": "src/advanced-settings/modal-error/ModalErrorListItem.jsx",
+            "line": 15,
+            "column": 10,
+            "index": 527
+          },
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 40,
+            "column": 26,
+            "index": 1510
+          },
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 59,
+            "column": 15,
+            "index": 1574
+          },
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 76,
+            "column": 18,
+            "index": 2123
+          },
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 86,
+            "column": 18,
+            "index": 2578
+          },
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 96,
+            "column": 18,
+            "index": 3003
+          },
           {
             "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 239,
+            "line": 94,
+            "column": 15,
+            "index": 3007
+          },
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 95,
+            "column": 15,
+            "index": 3042
+          },
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 34,
+            "column": 63,
+            "index": 906
+          },
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 47,
+            "column": 22,
+            "index": 1305
+          },
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 53,
+            "column": 65,
+            "index": 1486
+          },
+          {
+            "filePath": "src/pages-and-resources/live/Settings.jsx",
+            "line": 108,
+            "column": 20,
+            "index": 4421
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 43,
+            "column": 22,
+            "index": 1474
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 54,
+            "column": 20,
+            "index": 1761
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 64,
+            "column": 16,
+            "index": 2039
+          }
+        ],
+        "Error": [
+          {
+            "filePath": "src/advanced-settings/modal-error/ModalErrorListItem.jsx",
+            "line": 15,
+            "column": 21,
+            "index": 538
+          }
+        ],
+        "Alert.Heading": [
+          {
+            "filePath": "src/advanced-settings/setting-alert/SettingAlert.jsx",
+            "line": 9,
+            "column": 4,
+            "index": 190
+          },
+          {
+            "filePath": "src/generic/alert-message/index.jsx",
+            "line": 7,
+            "column": 4,
+            "index": 188
+          },
+          {
+            "filePath": "src/generic/AlertProctoringError.jsx",
+            "line": 10,
             "column": 10,
-            "index": 8444
+            "index": 338
           },
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 79,
-            "column": 4,
-            "index": 2348
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
-            "line": 130,
-            "column": 8,
-            "index": 3995
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 571,
-            "column": 8,
-            "index": 22293
-          }
-        ],
-        "Image": [
-          {
-            "filePath": "src/custom-pages/CustomPages.jsx",
-            "line": 240,
-            "column": 12,
-            "index": 8475
-          }
-        ],
-        "Collapsible.Advanced": [
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 19,
-            "column": 2,
-            "index": 365
-          }
-        ],
-        "Collapsible.Trigger": [
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 27,
-            "column": 4,
-            "index": 558
-          }
-        ],
-        "Collapsible.Visible": [
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 32,
-            "column": 6,
-            "index": 767
-          },
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 37,
-            "column": 6,
-            "index": 980
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/FeaturesList.jsx",
-            "line": 14,
-            "column": 8,
-            "index": 400
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/FeaturesList.jsx",
-            "line": 17,
-            "column": 8,
-            "index": 549
-          }
-        ],
-        "IconButton": [
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 34,
-            "column": 10,
-            "index": 853
-          },
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 40,
-            "column": 12,
-            "index": 1092
-          },
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 53,
-            "column": 10,
-            "index": 1431
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 41,
-            "column": 12,
-            "index": 1407
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 52,
-            "column": 10,
-            "index": 1698
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 62,
-            "column": 6,
-            "index": 1988
-          }
-        ],
-        "ExpandMore": [
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 34,
-            "column": 43,
-            "index": 886
-          }
-        ],
-        "Delete": [
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 46,
-            "column": 19,
-            "index": 1275
-          }
-        ],
-        "ExpandLess": [
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 53,
-            "column": 45,
-            "index": 1466
-          }
-        ],
-        "Collapsible.Body": [
-          {
-            "filePath": "src/generic/CollapsableEditor.jsx",
-            "line": 57,
-            "column": 4,
-            "index": 1585
+            "line": 215,
+            "column": 18,
+            "index": 6596
           }
         ],
         "Card": [
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 20,
+            "column": 6,
+            "index": 742
+          },
           {
             "filePath": "src/generic/ConfirmationPopup.jsx",
             "line": 17,
@@ -11178,33 +11034,13 @@
             "index": 2241
           }
         ],
-        "Card.Header": [
-          {
-            "filePath": "src/generic/ConfirmationPopup.jsx",
-            "line": 18,
-            "column": 4,
-            "index": 345
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
-            "line": 74,
-            "column": 6,
-            "index": 1897
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
-            "line": 33,
-            "column": 6,
-            "index": 1055
-          },
-          {
-            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
-            "line": 79,
-            "column": 6,
-            "index": 2403
-          }
-        ],
         "Card.Body": [
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 21,
+            "column": 8,
+            "index": 794
+          },
           {
             "filePath": "src/generic/ConfirmationPopup.jsx",
             "line": 23,
@@ -11230,7 +11066,119 @@
             "index": 2710
           }
         ],
+        "Card.Header": [
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 22,
+            "column": 10,
+            "index": 859
+          },
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 18,
+            "column": 4,
+            "index": 345
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 74,
+            "column": 6,
+            "index": 1897
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
+            "line": 33,
+            "column": 6,
+            "index": 1055
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 79,
+            "column": 6,
+            "index": 2403
+          }
+        ],
+        "OverlayTrigger": [
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 25,
+            "column": 14,
+            "index": 954
+          },
+          {
+            "filePath": "src/studio-header/Header.jsx",
+            "line": 139,
+            "column": 4,
+            "index": 5694
+          }
+        ],
+        "Popover": [
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 30,
+            "column": 18,
+            "index": 1108
+          }
+        ],
+        "Popover.Content": [
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 31,
+            "column": 20,
+            "index": 1162
+          }
+        ],
+        "IconButton": [
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 38,
+            "column": 16,
+            "index": 1443
+          },
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 34,
+            "column": 10,
+            "index": 853
+          },
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 40,
+            "column": 12,
+            "index": 1092
+          },
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 53,
+            "column": 10,
+            "index": 1431
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 41,
+            "column": 12,
+            "index": 1407
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 52,
+            "column": 10,
+            "index": 1698
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 62,
+            "column": 6,
+            "index": 1988
+          }
+        ],
         "Card.Section": [
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 47,
+            "column": 10,
+            "index": 1707
+          },
           {
             "filePath": "src/generic/ConfirmationPopup.jsx",
             "line": 24,
@@ -11256,201 +11204,13 @@
             "index": 2730
           }
         ],
-        "Card.Footer": [
-          {
-            "filePath": "src/generic/ConfirmationPopup.jsx",
-            "line": 25,
-            "column": 6,
-            "index": 570
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
-            "line": 83,
-            "column": 8,
-            "index": 2236
-          }
-        ],
-        "Alert": [
-          {
-            "filePath": "src/generic/ConnectionErrorAlert.jsx",
-            "line": 9,
-            "column": 2,
-            "index": 289
-          },
-          {
-            "filePath": "src/generic/PermissionDeniedAlert.jsx",
-            "line": 6,
-            "column": 2,
-            "index": 170
-          },
-          {
-            "filePath": "src/generic/SaveFormConnectionErrorAlert.jsx",
-            "line": 9,
-            "column": 2,
-            "index": 297
-          },
-          {
-            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 214,
-            "column": 16,
-            "index": 6524
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
-            "line": 73,
-            "column": 6,
-            "index": 2213
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/DiscussionsSettings.jsx",
-            "line": 126,
-            "column": 18,
-            "index": 4058
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 255,
-            "column": 12,
-            "index": 9731
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 422,
-            "column": 6,
-            "index": 16242
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 449,
-            "column": 6,
-            "index": 16972
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 232,
-            "column": 12,
-            "index": 8667
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 443,
-            "column": 6,
-            "index": 17538
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 465,
-            "column": 6,
-            "index": 18171
-          }
-        ],
-        "Alert.Link": [
-          {
-            "filePath": "src/generic/ConnectionErrorAlert.jsx",
-            "line": 15,
-            "column": 12,
-            "index": 685
-          },
-          {
-            "filePath": "src/generic/SaveFormConnectionErrorAlert.jsx",
-            "line": 15,
-            "column": 12,
-            "index": 697
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 157,
-            "column": 16,
-            "index": 6447
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 172,
-            "column": 35,
-            "index": 7054
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 437,
-            "column": 14,
-            "index": 16701
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 466,
-            "column": 14,
-            "index": 17595
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 148,
-            "column": 35,
-            "index": 5739
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 160,
-            "column": 35,
-            "index": 6295
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 457,
-            "column": 40,
-            "index": 18024
-          },
-          {
-            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
-            "line": 483,
-            "column": 14,
-            "index": 18806
-          }
-        ],
-        "TransitionReplace": [
-          {
-            "filePath": "src/generic/FieldFeedback.jsx",
-            "line": 14,
-            "column": 4,
-            "index": 276
-          },
-          {
-            "filePath": "src/generic/FieldFeedback.jsx",
-            "line": 24,
-            "column": 4,
-            "index": 709
-          },
-          {
-            "filePath": "src/generic/FormikErrorFeedback.jsx",
-            "line": 12,
-            "column": 4,
-            "index": 377
-          },
-          {
-            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 39,
-            "column": 0,
-            "index": 1345
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
-            "line": 90,
-            "column": 6,
-            "index": 2906
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
-            "line": 103,
-            "column": 12,
-            "index": 3528
-          },
-          {
-            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
-            "line": 40,
-            "column": 4,
-            "index": 1413
-          }
-        ],
         "Form.Group": [
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 48,
+            "column": 12,
+            "index": 1734
+          },
           {
             "filePath": "src/generic/FormikControl.jsx",
             "line": 23,
@@ -11503,7 +11263,7 @@
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
             "line": 109,
             "column": 22,
-            "index": 3790
+            "index": 3803
           },
           {
             "filePath": "src/pages-and-resources/live/BBBSettings.jsx",
@@ -11515,25 +11275,25 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 298,
             "column": 12,
-            "index": 11136
+            "index": 11150
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 324,
             "column": 10,
-            "index": 12297
+            "index": 12311
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 355,
             "column": 12,
-            "index": 13838
+            "index": 13852
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 378,
             "column": 12,
-            "index": 14932
+            "index": 14946
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
@@ -11545,34 +11305,40 @@
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 243,
             "column": 8,
-            "index": 9008
+            "index": 9026
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 265,
             "column": 12,
-            "index": 9991
+            "index": 10009
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 309,
-            "column": 8,
-            "index": 11897
+            "column": 10,
+            "index": 11917
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 333,
             "column": 10,
-            "index": 12981
+            "index": 13039
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 366,
             "column": 12,
-            "index": 14800
+            "index": 14858
           }
         ],
         "Form.Control": [
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 49,
+            "column": 14,
+            "index": 1777
+          },
           {
             "filePath": "src/generic/FormikControl.jsx",
             "line": 25,
@@ -11619,25 +11385,603 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 302,
             "column": 14,
-            "index": 11380
+            "index": 11394
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 328,
             "column": 12,
-            "index": 12537
+            "index": 12551
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 317,
-            "column": 10,
-            "index": 12244
+            "column": 12,
+            "index": 12280
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 341,
             "column": 12,
-            "index": 13347
+            "index": 13405
+          }
+        ],
+        "Card.Status": [
+          {
+            "filePath": "src/advanced-settings/setting-card/SettingCard.jsx",
+            "line": 61,
+            "column": 10,
+            "index": 2125
+          }
+        ],
+        "Hyperlink": [
+          {
+            "filePath": "src/advanced-settings/settings-sidebar/SettingsSidebar.jsx",
+            "line": 36,
+            "column": 14,
+            "index": 1834
+          },
+          {
+            "filePath": "src/advanced-settings/settings-sidebar/SettingsSidebar.jsx",
+            "line": 44,
+            "column": 14,
+            "index": 2230
+          },
+          {
+            "filePath": "src/advanced-settings/settings-sidebar/SettingsSidebar.jsx",
+            "line": 52,
+            "column": 14,
+            "index": 2606
+          },
+          {
+            "filePath": "src/advanced-settings/settings-sidebar/SettingsSidebar.jsx",
+            "line": 60,
+            "column": 14,
+            "index": 2984
+          },
+          {
+            "filePath": "src/advanced-settings/settings-sidebar/SettingsSidebar.jsx",
+            "line": 68,
+            "column": 14,
+            "index": 3354
+          },
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 130,
+            "column": 10,
+            "index": 4228
+          },
+          {
+            "filePath": "src/generic/help-sidebar/index.jsx",
+            "line": 66,
+            "column": 18,
+            "index": 2044
+          },
+          {
+            "filePath": "src/generic/help-sidebar/index.jsx",
+            "line": 75,
+            "column": 18,
+            "index": 2432
+          },
+          {
+            "filePath": "src/generic/help-sidebar/index.jsx",
+            "line": 82,
+            "column": 18,
+            "index": 2771
+          },
+          {
+            "filePath": "src/generic/help-sidebar/index.jsx",
+            "line": 90,
+            "column": 18,
+            "index": 3163
+          },
+          {
+            "filePath": "src/generic/help-sidebar/index.jsx",
+            "line": 102,
+            "column": 18,
+            "index": 3640
+          },
+          {
+            "filePath": "src/generic/help-sidebar/index.jsx",
+            "line": 114,
+            "column": 18,
+            "index": 4118
+          },
+          {
+            "filePath": "src/generic/help-sidebar/index.jsx",
+            "line": 124,
+            "column": 18,
+            "index": 4592
+          },
+          {
+            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
+            "line": 164,
+            "column": 4,
+            "index": 5026
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/AppExternalLinks.jsx",
+            "line": 30,
+            "column": 16,
+            "index": 834
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
+            "line": 75,
+            "column": 10,
+            "index": 2348
+          },
+          {
+            "filePath": "src/pages-and-resources/live/BBBSettings.jsx",
+            "line": 73,
+            "column": 6,
+            "index": 2336
+          },
+          {
+            "filePath": "src/pages-and-resources/live/BBBSettings.jsx",
+            "line": 94,
+            "column": 16,
+            "index": 3173
+          },
+          {
+            "filePath": "src/pages-and-resources/ora_settings/Settings.jsx",
+            "line": 27,
+            "column": 8,
+            "index": 913
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 40,
+            "column": 10,
+            "index": 1356
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 51,
+            "column": 8,
+            "index": 1646
+          },
+          {
+            "filePath": "src/pages-and-resources/PagesAndResources.jsx",
+            "line": 54,
+            "column": 10,
+            "index": 2076
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 239,
+            "column": 4,
+            "index": 9245
+          }
+        ],
+        "useToggle": [
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 33,
+            "column": 86,
+            "index": 829
+          },
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 51,
+            "column": 32,
+            "index": 1521
+          },
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 52,
+            "column": 59,
+            "index": 1598
+          }
+        ],
+        "SpinnerSimple": [
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 59,
+            "column": 26,
+            "index": 1585
+          },
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 95,
+            "column": 26,
+            "index": 3053
+          }
+        ],
+        "ActionRow.Spacer": [
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 70,
+            "column": 8,
+            "index": 1853
+          },
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 122,
+            "column": 10,
+            "index": 3972
+          }
+        ],
+        "IconButtonWithTooltip": [
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 71,
+            "column": 8,
+            "index": 1882
+          },
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 81,
+            "column": 8,
+            "index": 2287
+          },
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 91,
+            "column": 8,
+            "index": 2756
+          }
+        ],
+        "EditOutline": [
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 75,
+            "column": 15,
+            "index": 2092
+          }
+        ],
+        "DeleteOutline": [
+          {
+            "filePath": "src/custom-pages/CustomPageCard.jsx",
+            "line": 95,
+            "column": 15,
+            "index": 2970
+          }
+        ],
+        "Add": [
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 94,
+            "column": 26,
+            "index": 3018
+          },
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 124,
+            "column": 24,
+            "index": 4035
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-restrictions/RestrictionSchedules.jsx",
+            "line": 70,
+            "column": 28,
+            "index": 2264
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/DiscussionTopics.jsx",
+            "line": 81,
+            "column": 30,
+            "index": 3061
+          },
+          {
+            "filePath": "src/pages-and-resources/teams/Settings.jsx",
+            "line": 150,
+            "column": 34,
+            "index": 5517
+          }
+        ],
+        "Breadcrumb": [
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 110,
+            "column": 10,
+            "index": 3528
+          }
+        ],
+        "ModalDialog": [
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 228,
+            "column": 8,
+            "index": 8071
+          },
+          {
+            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
+            "line": 65,
+            "column": 2,
+            "index": 2043
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
+            "line": 119,
+            "column": 6,
+            "index": 3525
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 555,
+            "column": 4,
+            "index": 21726
+          }
+        ],
+        "ModalDialog.Header": [
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 234,
+            "column": 10,
+            "index": 8245
+          },
+          {
+            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
+            "line": 74,
+            "column": 4,
+            "index": 2206
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
+            "line": 125,
+            "column": 8,
+            "index": 3736
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 566,
+            "column": 8,
+            "index": 22019
+          }
+        ],
+        "ModalDialog.Title": [
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 235,
+            "column": 12,
+            "index": 8278
+          },
+          {
+            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
+            "line": 75,
+            "column": 6,
+            "index": 2233
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
+            "line": 126,
+            "column": 10,
+            "index": 3784
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 567,
+            "column": 10,
+            "index": 22050
+          }
+        ],
+        "ModalDialog.Body": [
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 239,
+            "column": 10,
+            "index": 8444
+          },
+          {
+            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
+            "line": 79,
+            "column": 4,
+            "index": 2352
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
+            "line": 130,
+            "column": 8,
+            "index": 3995
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 571,
+            "column": 8,
+            "index": 22175
+          }
+        ],
+        "Image": [
+          {
+            "filePath": "src/custom-pages/CustomPages.jsx",
+            "line": 240,
+            "column": 12,
+            "index": 8475
+          }
+        ],
+        "Collapsible.Advanced": [
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 19,
+            "column": 2,
+            "index": 365
+          }
+        ],
+        "Collapsible.Trigger": [
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 27,
+            "column": 4,
+            "index": 558
+          }
+        ],
+        "Collapsible.Visible": [
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 32,
+            "column": 6,
+            "index": 767
+          },
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 37,
+            "column": 6,
+            "index": 980
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/FeaturesList.jsx",
+            "line": 14,
+            "column": 8,
+            "index": 400
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/FeaturesList.jsx",
+            "line": 17,
+            "column": 8,
+            "index": 549
+          }
+        ],
+        "ExpandMore": [
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 34,
+            "column": 43,
+            "index": 886
+          }
+        ],
+        "Delete": [
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 46,
+            "column": 19,
+            "index": 1275
+          }
+        ],
+        "ExpandLess": [
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 53,
+            "column": 45,
+            "index": 1466
+          }
+        ],
+        "Collapsible.Body": [
+          {
+            "filePath": "src/generic/CollapsableEditor.jsx",
+            "line": 57,
+            "column": 4,
+            "index": 1585
+          }
+        ],
+        "Card.Footer": [
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 25,
+            "column": 6,
+            "index": 570
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 83,
+            "column": 8,
+            "index": 2236
+          }
+        ],
+        "Alert.Link": [
+          {
+            "filePath": "src/generic/ConnectionErrorAlert.jsx",
+            "line": 15,
+            "column": 10,
+            "index": 681
+          },
+          {
+            "filePath": "src/generic/SaveFormConnectionErrorAlert.jsx",
+            "line": 15,
+            "column": 10,
+            "index": 693
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 157,
+            "column": 16,
+            "index": 6463
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 172,
+            "column": 35,
+            "index": 7068
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 437,
+            "column": 14,
+            "index": 16715
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 466,
+            "column": 14,
+            "index": 17609
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 148,
+            "column": 35,
+            "index": 5757
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 160,
+            "column": 35,
+            "index": 6313
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 457,
+            "column": 40,
+            "index": 18082
+          },
+          {
+            "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
+            "line": 483,
+            "column": 14,
+            "index": 18864
+          }
+        ],
+        "TransitionReplace": [
+          {
+            "filePath": "src/generic/FieldFeedback.jsx",
+            "line": 14,
+            "column": 4,
+            "index": 276
+          },
+          {
+            "filePath": "src/generic/FieldFeedback.jsx",
+            "line": 24,
+            "column": 4,
+            "index": 707
+          },
+          {
+            "filePath": "src/generic/FormikErrorFeedback.jsx",
+            "line": 12,
+            "column": 4,
+            "index": 377
+          },
+          {
+            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
+            "line": 39,
+            "column": 2,
+            "index": 1347
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
+            "line": 90,
+            "column": 6,
+            "index": 2919
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
+            "line": 103,
+            "column": 12,
+            "index": 3541
+          },
+          {
+            "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
+            "line": 40,
+            "column": 4,
+            "index": 1413
           }
         ],
         "Form.Text": [
@@ -11663,13 +12007,13 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 311,
             "column": 14,
-            "index": 11757
+            "index": 11771
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 338,
             "column": 12,
-            "index": 13037
+            "index": 13051
           },
           {
             "filePath": "src/pages-and-resources/teams/Settings.jsx",
@@ -11681,31 +12025,31 @@
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 253,
             "column": 10,
-            "index": 9444
+            "index": 9462
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 293,
             "column": 14,
-            "index": 11232
+            "index": 11250
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 325,
-            "column": 10,
-            "index": 12550
+            "column": 12,
+            "index": 12602
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 351,
             "column": 12,
-            "index": 14008
+            "index": 14066
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 394,
             "column": 14,
-            "index": 16126
+            "index": 16184
           }
         ],
         "Form.Label": [
@@ -11725,25 +12069,25 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 299,
             "column": 14,
-            "index": 11198
+            "index": 11212
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 325,
             "column": 12,
-            "index": 12366
+            "index": 12380
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 356,
             "column": 14,
-            "index": 13899
+            "index": 13913
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 379,
             "column": 14,
-            "index": 14996
+            "index": 15010
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
@@ -11761,25 +12105,25 @@
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 266,
             "column": 14,
-            "index": 10052
+            "index": 10070
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 310,
-            "column": 10,
-            "index": 11955
+            "column": 12,
+            "index": 11977
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 334,
             "column": 12,
-            "index": 13050
+            "index": 13108
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 367,
             "column": 14,
-            "index": 14864
+            "index": 14922
           }
         ],
         "SwitchControl": [
@@ -11790,18 +12134,26 @@
             "index": 870
           }
         ],
+        "WarningIcon": [
+          {
+            "filePath": "src/generic/internet-connection-alert/index.jsx",
+            "line": 50,
+            "column": 12,
+            "index": 1362
+          }
+        ],
         "Spinner": [
           {
             "filePath": "src/generic/Loading.jsx",
             "line": 12,
             "column": 4,
-            "index": 294
+            "index": 291
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 417,
             "column": 33,
-            "index": 17011
+            "index": 17069
           }
         ],
         "ModalDialog.Footer": [
@@ -11809,7 +12161,7 @@
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
             "line": 82,
             "column": 4,
-            "index": 2412
+            "index": 2416
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
@@ -11821,7 +12173,7 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 579,
             "column": 8,
-            "index": 22675
+            "index": 22557
           }
         ],
         "ModalDialog.CloseButton": [
@@ -11829,7 +12181,7 @@
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
             "line": 84,
             "column": 8,
-            "index": 2475
+            "index": 2479
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
@@ -11841,7 +12193,7 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 585,
             "column": 12,
-            "index": 22804
+            "index": 22686
           }
         ],
         "Form": [
@@ -11849,7 +12201,7 @@
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
             "line": 192,
             "column": 10,
-            "index": 5726
+            "index": 5728
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
@@ -11867,29 +12219,13 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 565,
             "column": 6,
-            "index": 22069
+            "index": 21951
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 228,
             "column": 6,
-            "index": 8429
-          }
-        ],
-        "Info": [
-          {
-            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 214,
-            "column": 46,
-            "index": 6554
-          }
-        ],
-        "Alert.Heading": [
-          {
-            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 215,
-            "column": 18,
-            "index": 6594
+            "index": 8447
           }
         ],
         "Badge": [
@@ -11897,7 +12233,7 @@
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
             "line": 232,
             "column": 24,
-            "index": 7434
+            "index": 7436
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-restrictions/CollapseCardHeading.jsx",
@@ -11915,21 +12251,7 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 277,
             "column": 18,
-            "index": 10512
-          }
-        ],
-        "Container": [
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
-            "line": 116,
-            "column": 4,
-            "index": 3410
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/AppList.jsx",
-            "line": 57,
-            "column": 6,
-            "index": 2288
+            "index": 10526
           }
         ],
         "MailtoLink": [
@@ -11969,31 +12291,31 @@
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 244,
             "column": 10,
-            "index": 9067
+            "index": 9085
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 273,
             "column": 14,
-            "index": 10397
+            "index": 10415
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 283,
             "column": 14,
-            "index": 10815
+            "index": 10833
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 374,
             "column": 14,
-            "index": 15227
+            "index": 15285
           },
           {
             "filePath": "src/proctored-exam-settings/ProctoredExamSettings.jsx",
             "line": 384,
             "column": 14,
-            "index": 15677
+            "index": 15735
           }
         ],
         "Form.Row": [
@@ -12001,13 +12323,13 @@
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-restrictions/DiscussionRestrictionItem.jsx",
             "line": 98,
             "column": 6,
-            "index": 3419
+            "index": 3408
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-restrictions/DiscussionRestrictionItem.jsx",
             "line": 122,
             "column": 6,
-            "index": 4369
+            "index": 4358
           }
         ],
         "ButtonGroup": [
@@ -12023,7 +12345,7 @@
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
             "line": 110,
             "column": 24,
-            "index": 3844
+            "index": 3857
           }
         ],
         "Form.Checkbox": [
@@ -12031,7 +12353,7 @@
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
             "line": 118,
             "column": 30,
-            "index": 4271
+            "index": 4284
           }
         ],
         "CheckboxControl": [
@@ -12053,25 +12375,25 @@
             "filePath": "src/pages-and-resources/discussions/app-list/AppList.jsx",
             "line": 88,
             "column": 28,
-            "index": 3059
+            "index": 3055
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/AppList.test.jsx",
             "line": 40,
             "column": 39,
-            "index": 1607
+            "index": 1608
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/AppList.test.jsx",
             "line": 82,
             "column": 22,
-            "index": 2870
+            "index": 2871
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/AppList.test.jsx",
             "line": 92,
             "column": 22,
-            "index": 3289
+            "index": 3290
           }
         ],
         "CardGrid": [
@@ -12079,7 +12401,7 @@
             "filePath": "src/pages-and-resources/discussions/app-list/AppList.jsx",
             "line": 78,
             "column": 6,
-            "index": 2797
+            "index": 2793
           },
           {
             "filePath": "src/pages-and-resources/pages/PageGrid.jsx",
@@ -12100,8 +12422,8 @@
           {
             "filePath": "src/pages-and-resources/discussions/app-list/FeaturesTable.jsx",
             "line": 36,
-            "column": 20,
-            "index": 1429
+            "column": 18,
+            "index": 1425
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/SupportedFeature.jsx",
@@ -12114,8 +12436,8 @@
           {
             "filePath": "src/pages-and-resources/discussions/app-list/FeaturesTable.jsx",
             "line": 37,
-            "column": 20,
-            "index": 1504
+            "column": 18,
+            "index": 1498
           }
         ],
         "DataTable": [
@@ -12123,7 +12445,7 @@
             "filePath": "src/pages-and-resources/discussions/app-list/FeaturesTable.jsx",
             "line": 60,
             "column": 4,
-            "index": 2252
+            "index": 2244
           }
         ],
         "DataTable.Table": [
@@ -12131,7 +12453,7 @@
             "filePath": "src/pages-and-resources/discussions/app-list/FeaturesTable.jsx",
             "line": 87,
             "column": 6,
-            "index": 3110
+            "index": 3102
           }
         ],
         "FullscreenModal": [
@@ -12202,16 +12524,16 @@
           {
             "filePath": "src/pages-and-resources/live/Settings.jsx",
             "line": 97,
-            "column": 16,
-            "index": 3921
+            "column": 12,
+            "index": 3905
           }
         ],
         "SelectableBox": [
           {
             "filePath": "src/pages-and-resources/live/Settings.jsx",
             "line": 106,
-            "column": 20,
-            "index": 4315
+            "column": 16,
+            "index": 4263
           }
         ],
         "ArrowForward": [
@@ -12241,13 +12563,13 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 359,
             "column": 14,
-            "index": 14084
+            "index": 14098
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 382,
             "column": 14,
-            "index": 15183
+            "index": 15197
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
@@ -12261,25 +12583,25 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 364,
             "column": 16,
-            "index": 14270
+            "index": 14284
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 367,
             "column": 16,
-            "index": 14451
+            "index": 14465
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 387,
             "column": 16,
-            "index": 15381
+            "index": 15395
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 390,
             "column": 16,
-            "index": 15568
+            "index": 15582
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
@@ -12288,20 +12610,12 @@
             "index": 4632
           }
         ],
-        "OverlayTrigger": [
-          {
-            "filePath": "src/studio-header/Header.jsx",
-            "line": 148,
-            "column": 4,
-            "index": 5868
-          }
-        ],
         "Tooltip": [
           {
             "filePath": "src/studio-header/Header.jsx",
-            "line": 151,
+            "line": 142,
             "column": 8,
-            "index": 5934
+            "index": 5760
           }
         ]
       }
@@ -17072,7 +17386,7 @@
       }
     },
     {
-      "version": "20.36.0",
+      "version": "20.45.1",
       "name": "frontend-app-learner-portal-enterprise",
       "repository": {
         "type": "git",
@@ -17125,15 +17439,15 @@
           },
           {
             "filePath": "src/components/course/data/utils.jsx",
-            "line": 611,
+            "line": 622,
             "column": 12,
-            "index": 20831
+            "index": 21400
           },
           {
             "filePath": "src/components/course/data/utils.jsx",
-            "line": 630,
+            "line": 638,
             "column": 12,
-            "index": 21379
+            "index": 21778
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
@@ -17241,9 +17555,9 @@
           },
           {
             "filePath": "src/components/course/CoursePage.jsx",
-            "line": 247,
+            "line": 249,
             "column": 6,
-            "index": 8059
+            "index": 8117
           },
           {
             "filePath": "src/components/course/CourseReview.jsx",
@@ -17441,7 +17755,7 @@
             "filePath": "src/components/site-header/SiteHeader.jsx",
             "line": 19,
             "column": 6,
-            "index": 731
+            "index": 723
           },
           {
             "filePath": "src/components/skills-quiz/SkillsQuiz.jsx",
@@ -17462,6 +17776,12 @@
             "line": 14,
             "column": 6,
             "index": 413
+          },
+          {
+            "filePath": "src/components/course/data/utils.jsx",
+            "line": 657,
+            "column": 12,
+            "index": 22247
           },
           {
             "filePath": "src/components/dashboard/sidebar/SupportInformation.jsx",
@@ -17515,15 +17835,21 @@
           },
           {
             "filePath": "src/components/course/data/utils.jsx",
-            "line": 610,
+            "line": 621,
             "column": 6,
-            "index": 20811
+            "index": 21380
           },
           {
             "filePath": "src/components/course/data/utils.jsx",
-            "line": 628,
+            "line": 637,
             "column": 6,
-            "index": 21246
+            "index": 21758
+          },
+          {
+            "filePath": "src/components/course/data/utils.jsx",
+            "line": 656,
+            "column": 6,
+            "index": 22227
           },
           {
             "filePath": "src/components/course/enrollment/components/ToExecutiveEducation2UEnrollment.jsx",
@@ -19107,13 +19433,13 @@
             "filePath": "src/components/site-header/SiteHeader.jsx",
             "line": 79,
             "column": 6,
-            "index": 2809
+            "index": 2801
           },
           {
             "filePath": "src/components/site-header/SiteHeader.jsx",
             "line": 82,
             "column": 6,
-            "index": 2894
+            "index": 2886
           }
         ],
         "breakpoints": [
@@ -20696,12 +21022,12 @@
             "index": 2304
           }
         ],
-        "Menu": [
+        "MenuIcon": [
           {
             "filePath": "src/components/site-header/SiteHeader.jsx",
             "line": 51,
             "column": 14,
-            "index": 1837
+            "index": 1829
           }
         ],
         "InfoOutline": [
@@ -26527,6 +26853,12 @@
             "line": 51,
             "column": 4,
             "index": 1400
+          },
+          {
+            "filePath": "src/subscription/secure-3d/secure-3d-modal/Secure3dModal.jsx",
+            "line": 129,
+            "column": 4,
+            "index": 3986
           }
         ],
         "ModalDialog.Header": [
@@ -30316,7 +30648,7 @@
       }
     },
     {
-      "version": "19.25.1",
+      "version": "20.45.0",
       "name": "@edx/frontend-enterprise-catalog-search",
       "repository": {
         "type": "git",
@@ -31415,6 +31747,12 @@
             "line": 63,
             "column": 16,
             "index": 1799
+          },
+          {
+            "filePath": "src/editors/containers/GameEditor/index.jsx",
+            "line": 52,
+            "column": 12,
+            "index": 1273
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/index.jsx",
