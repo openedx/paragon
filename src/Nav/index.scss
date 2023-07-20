@@ -169,7 +169,7 @@
     @include border-top-radius($nav-tabs-border-radius);
 
     &:hover {
-      background-color: $nav-tabs-hover-bg;
+      background-color: $nav-tabs-link-hover-bg;
     }
 
     .dropdown {
