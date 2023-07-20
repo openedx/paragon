@@ -2,10 +2,8 @@ import React, { useContext } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Color from 'color';
 import { Container, DataTable } from '~paragon-react';
 import SEO from '../../components/SEO';
-import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
 import { SettingsContext } from '../../context/SettingsContext';
 import { CodeCell } from '../../components/TableCells';
@@ -57,30 +55,26 @@ export interface ISwatch {
   isUnused?: boolean,
 }
 
+const styles = getComputedStyle(document.body);
+
 function Swatch({ name, colorClassName, isUnused }: ISwatch) {
+  const computedValue = styles.getPropertyValue(name);
+
   return (
     <div className="d-flex align-items-center mb-2">
-      <MeasuredItem
-        properties={['background-color']}
-        renderAfter={(measurements: { [x: string]: JSX.Element; }) => (
-          <div style={{ lineHeight: 1 }} className="small">
-            <code className="mb-0 d-block text-lowercase text-dark-700">
-              {name}
-            </code>
-            {measurements['background-color'] && (
-            <code style={{ fontSize: '65%' }} className="text-muted">
-              {Color(measurements['background-color']).hex()}
-            </code>
-            )}
-          </div>
-        )}
-      >
-        <div
-          className={classNames('p-3 mr-2 rounded', colorClassName, {
-            'unused-level': isUnused,
-          })}
-        />
-      </MeasuredItem>
+      <div
+        className={classNames('p-3 mr-2 rounded', colorClassName, {
+          'unused-level': isUnused,
+        })}
+      />
+      <div style={{ lineHeight: 1 }} className="small">
+        <code className="mb-0 d-block text-lowercase text-dark-700">
+          {`var(${name})`}
+        </code>
+        <code style={{ fontSize: '65%' }} className="text-muted">
+          {computedValue}
+        </code>
+      </div>
     </div>
   );
 }
@@ -103,7 +97,7 @@ const renderColorRamp = (themeName: string, unusedLevels: number[]) => (
     {levels.map(level => (
       <Swatch
         key={`${themeName}-${level}`}
-        name={`var(--pgn-color-${themeName}-${level})`}
+        name={`--pgn-color-${themeName}-${level}`}
         colorClassName={utilityClasses.bg(themeName, level)}
         isUnused={unusedLevels.includes(level)}
       />
@@ -137,8 +131,8 @@ export default function ColorsPage({ data }: IColorsPage) {
           <div>
             <p className="h5">accents</p>
 
-            <Swatch name="var(--pgn-color-accent-a)" colorClassName="bg-accent-a" />
-            <Swatch name="var(--pgn-color-accent-b)" colorClassName="bg-accent-b" />
+            <Swatch name="--pgn-color-accent-a" colorClassName="bg-accent-a" />
+            <Swatch name="--pgn-color-accent-b" colorClassName="bg-accent-b" />
           </div>
 
           {colors
