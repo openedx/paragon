@@ -43,7 +43,7 @@
     border: $nav-pills-link-border-width solid $nav-pills-link-border-color;
 
     &:focus {
-      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color, $nav-pills-border-radius);
     }
 
     &:hover {
@@ -55,10 +55,10 @@
     .nav-item.show .nav-link {
       color: $nav-pills-link-active-color;
       background-color: $nav-pills-link-active-bg;
-      border-color: $nav-pills-link-active-bg;
+      border-color: $nav-pills-link-active-border-color;
 
       &:focus {
-        @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
+        @include nav-tabs-link-focus($nav-tabs-link-focus-border-color, $nav-pills-border-radius);
       }
     }
   }
@@ -97,10 +97,14 @@
         border-color: $nav-inverse-pills-link-active-hover-border-color;
       }
 
-      &:focus:hover {
-        background-color: $nav-inverse-pills-link-active-focus-hover-bg;
-        color: $nav-inverse-pills-link-active-focus-color;
+      &:focus {
         border-color: $nav-inverse-pills-link-active-focus-border-color;
+
+        &:hover {
+          background-color: $nav-inverse-pills-link-active-focus-hover-bg;
+          color: $nav-inverse-pills-link-active-focus-color;
+          border-color: $nav-inverse-pills-link-active-focus-hover-border-color;
+        }
       }
     }
   }
@@ -113,6 +117,14 @@
     .nav-link {
       color: $nav-inverse-tabs-link-color;
       border-bottom: $nav-tabs-border-width solid $nav-inverse-tabs-link-border-bottom-color;
+
+      .dropdown .dropdown-toggle {
+        border-bottom: $nav-tabs-border-width solid $nav-inverse-tabs-dropdown-border-color;
+
+        &:hover {
+          border-bottom: none;
+        }
+      }
 
       &:hover {
         background-color: $nav-inverse-tabs-link-hover-bg;
@@ -142,26 +154,37 @@
 .nav-tabs {
   border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
 
+  button.nav-link {
+    border: none;
+    border-bottom: $nav-tabs-border-width solid $nav-tabs-link-border-color;
+
+    &.disabled {
+      border-color: $nav-tabs-link-disabled-border-color;
+    }
+  }
+
   .nav-link {
     margin-bottom: calc(#{$nav-tabs-border-width} * -1);
-    border: $nav-tabs-border-width solid $nav-tabs-link-border-color;
-    border-bottom-width: $nav-tabs-link-border-bottom-width;
 
     @include border-top-radius($nav-tabs-border-radius);
 
     &:hover {
-      border-color: $nav-tabs-link-hover-border-color;
       background-color: $nav-tabs-link-hover-bg;
     }
 
+    .dropdown {
+      padding-bottom: .125rem;
+    }
+
     &:focus {
+      border-bottom: $nav-tabs-border-width solid $nav-tabs-focus-border-color;
+
       @include nav-tabs-link-focus($nav-tabs-link-focus-border-color);
     }
 
     &.disabled {
       color: $nav-link-disabled-color;
-      background-color: transparent;
-      border-color: transparent;
+      background-color: $nav-tabs-disabled-bg;
     }
   }
 
@@ -169,7 +192,7 @@
   .nav-item.show .nav-link {
     color: $nav-tabs-link-active-color;
     background-color: $nav-tabs-link-active-bg;
-    border-color: $nav-tabs-link-active-border-color;
+    border-bottom: $nav-tabs-border-width solid $nav-tabs-link-active-border-color;
 
     &:hover {
       background-color: $nav-tabs-link-hover-bg;

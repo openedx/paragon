@@ -9,19 +9,23 @@ $nav-link-font-weight:                             500 !default;
 $nav-tabs-border-color:                            $light-400 !default;
 $nav-tabs-border-width:                            2px !default;
 $nav-tabs-border-radius:                           0 !default;
+$nav-tabs-hover-bg:                                transparent !default;
+$nav-tabs-focus-border-color:                      $nav-tabs-hover-bg !default;
+$nav-tabs-disabled-bg:                             $nav-tabs-hover-bg !default;
 $nav-tabs-link-hover-border-color:                 transparent transparent $nav-tabs-border-color !default;
 $nav-tabs-link-hover-bg:                           $light-400 !default;
 $nav-tabs-link-active-color:                       $primary-500 !default;
+$nav-tabs-link-active-border-color:                $nav-tabs-link-active-color !default;
 $nav-tabs-link-active-bg:                          transparent !default;
-$nav-tabs-link-active-border-color:                transparent transparent $primary-500 !default;
 $nav-tabs-link-focus-border-color:                 $nav-tabs-link-active-color !default;
-$nav-tabs-link-distance-to-border:                 .313rem !default;
-$nav-tabs-link-border-bottom-width:                .188rem !default;
+$nav-tabs-link-distance-to-border:                 4px !default;
 $nav-tabs-link-border-color:                       transparent !default;
+$nav-tabs-link-disabled-border-color:              $nav-tabs-link-border-color !default;
 
 $nav-pills-border-radius:                          $border-radius !default;
 $nav-pills-link-active-color:                      $component-active-color !default;
 $nav-pills-link-active-bg:                         $component-active-bg !default;
+$nav-pills-link-active-border-color:               $white !default;
 $nav-pills-link-border-color:                      $nav-tabs-border-color !default;
 $nav-pills-link-border-width:                      1px !default;
 
@@ -37,7 +41,8 @@ $nav-inverse-pills-link-active-hover-color:        $nav-inverse-pills-link-color
 $nav-inverse-pills-link-active-hover-border-color: $nav-inverse-pills-link-border-color !default;
 $nav-inverse-pills-link-active-focus-hover-bg:     $nav-inverse-pills-link-color !default;
 $nav-inverse-pills-link-active-focus-color:        $nav-inverse-pills-link-active-color !default;
-$nav-inverse-pills-link-active-focus-border-color: $nav-inverse-pills-link-color !default;
+$nav-inverse-pills-link-active-focus-border-color: $primary !default;
+$nav-inverse-pills-link-active-focus-hover-border-color: $nav-inverse-pills-link-active-focus-border-color !default;
 $nav-inverse-pills-link-border-width:              $nav-pills-link-border-width !default;
 $nav-inverse-pills-tab-content-color:              $nav-inverse-pills-link-color !default;
 
@@ -48,5 +53,7 @@ $nav-inverse-tabs-link-active-hover-bg:            transparent !default;
 $nav-inverse-tabs-link-focus-bg:                   $nav-inverse-tabs-link-color !default;
 $nav-inverse-tabs-link-active-border-color:        $nav-inverse-tabs-link-color !default;
 $nav-inverse-tabs-link-active-bg:                  $nav-inverse-tabs-link-hover-bg !default;
-$nav-inverse-tabs-link-active-border-bottom-width: $nav-tabs-link-border-bottom-width !default;
+$nav-inverse-tabs-link-active-border-bottom-width: $nav-tabs-border-width !default;
 $nav-inverse-tabs-tab-content-color:               $nav-inverse-tabs-link-color !default;
+$nav-inverse-tabs-dropdown-border-color:           $nav-inverse-tabs-link-active-hover-bg !default;
+$nav-inverse-tabs-dropdown-bottom-gap:             .4375rem !default;
