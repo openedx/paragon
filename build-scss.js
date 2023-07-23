@@ -20,6 +20,7 @@ const paragonThemeOutputFilename = 'theme-urls.json';
  *  to the core and theme variant CSS files.
  * @param {string} args.name Name of the theme variant.
  * @param {boolean} args.isThemeVariant Indicates whether the stylesheet is a theme variant.
+ * @param {boolean} args.isDefaultThemeVariant Indicates whether the stylesheet is a default theme variant.
  *
  * @returns Updated paragonThemeOutput object.
  */
@@ -28,29 +29,37 @@ const updateParagonThemeOutput = ({
   name,
   isThemeVariant,
   isDefaultThemeVariant,
-  isDarkThemeVariant,
 }) => {
+  const themeOutput = { ...paragonThemeOutput };
+
+  // Check if the theme variant is a default theme variant. If so, add it to `defaults`.
+  if (isThemeVariant && isDefaultThemeVariant) {
+    if (!themeOutput.themeUrls.defaults) {
+      themeOutput.themeUrls.defaults = {};
+    }
+    themeOutput.themeUrls.defaults[name] = name;
+  }
+
   if (isThemeVariant) {
-    paragonThemeOutput.themeUrls.variants = {
-      ...paragonThemeOutput.themeUrls.variants,
+    themeOutput.themeUrls.variants = {
+      ...themeOutput.themeUrls.variants,
       [name]: {
         paths: {
           default: `./${name}.css`,
           minified: `./${name}.min.css`,
         },
-        default: isDefaultThemeVariant,
-        dark: isDarkThemeVariant,
       },
     };
   } else {
-    paragonThemeOutput.themeUrls[name] = {
+    themeOutput.themeUrls[name] = {
       paths: {
         default: `./${name}.css`,
         minified: `./${name}.min.css`,
       },
     };
   }
-  return paragonThemeOutput;
+
+  return themeOutput;
 };
 
 /**
@@ -63,14 +72,14 @@ const updateParagonThemeOutput = ({
  * @param {string} stylesPath - path to the stylesheet to be compiled
  * @param {string} outDir - indicates where to output compiled files
  * @param {boolean} isThemeVariant - indicates whether the stylesheet is a theme variant
+ * @param {boolean} isDefaultThemeVariant - indicates whether the stylesheet is a default theme variant
  */
 const compileAndWriteStyleSheets = ({
   name,
   stylesPath,
   outDir,
   isThemeVariant = false,
-  isDefaultThemeVariant = true,
-  isDarkThemeVariant = false,
+  isDefaultThemeVariant = false,
 }) => {
   const compiledStyleSheet = sass.compile(stylesPath, {
     importers: [{
@@ -110,7 +119,6 @@ const compileAndWriteStyleSheets = ({
           name,
           isThemeVariant,
           isDefaultThemeVariant,
-          isDarkThemeVariant,
         });
       } else {
         const existingParagonThemeOutput = JSON.parse(fs.readFileSync(`${outDir}/${paragonThemeOutputFilename}`, 'utf8'));
@@ -119,7 +127,6 @@ const compileAndWriteStyleSheets = ({
           name,
           isThemeVariant,
           isDefaultThemeVariant,
-          isDarkThemeVariant,
         });
       }
       fs.writeFileSync(`${outDir}/${paragonThemeOutputFilename}`, `${JSON.stringify(paragonThemeOutput, null, 2)}\n`);
@@ -163,30 +170,42 @@ program
       'Specifies directory where to out resulting CSS files.',
     ),
   )
-  .action(async (options) => {
-    const {
-      corePath = path.resolve(__dirname, 'styles/scss/core/core.scss'),
-      themesPath = path.resolve(__dirname, 'styles/css/themes'),
-      outDir = './dist',
-    } = options;
-    compileAndWriteStyleSheets({
-      name: 'core',
-      stylesPath: corePath,
-      outDir,
-    });
-    fs.readdirSync(themesPath, { withFileTypes: true })
-      .filter((item) => item.isDirectory())
-      .forEach((themeDir) => {
-        compileAndWriteStyleSheets({
-          name: themeDir.name,
-          stylesPath: `${themesPath}/${themeDir.name}/index.css`,
-          outDir,
-          isThemeVariant: true,
-          isDefaultThemeVariant: themeDir.name === 'light',
-          // "dark" theme dir does not exist yet, but no harm in having this here
-          isDarkThemeVariant: themeDir.name === 'dark',
-        });
-      });
-  });
+  .addOption(
+    new Option(
+      '--defaultThemeVariants <defaultThemeVariants...>',
+      `Specifies default theme variants. Defaults to a single 'light' theme variant.
+      You can provide multiple default theme variants by passing multiple \`--defaultThemeVariant\`
+      flags. For example: \`--defaultThemeVariants light dark\`
+      `,
+    ),
+  );
 
 program.parse(process.argv);
+
+const options = program.opts();
+const {
+  corePath = path.resolve(__dirname, 'styles/scss/core/core.scss'),
+  themesPath = path.resolve(__dirname, 'styles/css/themes'),
+  outDir = './dist',
+  defaultThemeVariants = ['light'],
+} = options;
+
+// Core CSS
+compileAndWriteStyleSheets({
+  name: 'core',
+  stylesPath: corePath,
+  outDir,
+});
+
+// Theme Variants CSS
+fs.readdirSync(themesPath, { withFileTypes: true })
+  .filter((item) => item.isDirectory())
+  .forEach((themeDir) => {
+    compileAndWriteStyleSheets({
+      name: themeDir.name,
+      stylesPath: `${themesPath}/${themeDir.name}/index.css`,
+      outDir,
+      isThemeVariant: true,
+      isDefaultThemeVariant: defaultThemeVariants.includes(themeDir.name),
+    });
+  });
