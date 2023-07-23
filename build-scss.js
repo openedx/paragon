@@ -174,7 +174,7 @@ program
     new Option(
       '--defaultThemeVariants <defaultThemeVariants...>',
       `Specifies default theme variants. Defaults to a single 'light' theme variant.
-      You can provide multiple default theme variants by passing multiple \`--defaultThemeVariant\`
+      You can provide multiple default theme variants by passing multiple \`--defaultThemeVariants\`
       flags. For example: \`--defaultThemeVariants light dark\`
       `,
     ),
