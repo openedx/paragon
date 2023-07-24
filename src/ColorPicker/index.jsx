@@ -49,7 +49,7 @@ function ColorPicker({
               `pgn__color-picker-${size}`,
             )}
             style={{
-              ...(color && hexValid ? { background: `${color}` } : {}),
+              ...(color && hexValid ? { background: `${color} !important` } : {}),
             }}
             onClick={open}
           />
@@ -66,18 +66,20 @@ function ColorPicker({
           style={{ textAlign: 'start' }}
         >
           <HexColorPicker color={color || ''} onChange={setColor} />
-          <Form.Group className="pgn__hex-form" size="sm">
-            <h5>Hex</h5>
-            <Form.Control
-              className="form-field"
-              isInvalid={!hexValid}
-              value={color}
-              onChange={(e) => validateHex(e.target.value)}
-              data-testid="hex-input"
-            />
+          <Form.Group className="pgn__hex-form flex-wrap" size="sm">
+            <div className="d-inline-flex">
+              <h5>Hex</h5>
+              <Form.Control
+                className="form-field"
+                isInvalid={!hexValid}
+                value={color}
+                onChange={(e) => validateHex(e.target.value)}
+                data-testid="hex-input"
+              />
+            </div>
             {!hexValid && (
               <Form.Control.Feedback
-                className="pgn__color-error"
+                className="pgn__color-error flex-fill ml-2"
                 type="invalid"
               >
                 Colors must be in hexadecimal format.
