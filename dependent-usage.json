@@ -1,5 +1,5 @@
 {
-  "lastModified": 1690121307179,
+  "lastModified": 1690207699199,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -8755,15 +8755,15 @@
           },
           {
             "filePath": "src/register/registrationFields/HonorCode.jsx",
-            "line": 38,
+            "line": 43,
             "column": 14,
-            "index": 1539
+            "index": 1649
           },
           {
             "filePath": "src/register/registrationFields/HonorCode.jsx",
-            "line": 65,
+            "line": 75,
             "column": 14,
-            "index": 2396
+            "index": 2616
           },
           {
             "filePath": "src/register/registrationFields/TermsOfService.jsx",
@@ -8937,7 +8937,7 @@
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 574,
             "column": 12,
-            "index": 20734
+            "index": 20747
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
@@ -9435,9 +9435,9 @@
           },
           {
             "filePath": "src/register/registrationFields/HonorCode.jsx",
-            "line": 50,
+            "line": 60,
             "column": 6,
-            "index": 1854
+            "index": 2074
           },
           {
             "filePath": "src/register/registrationFields/TermsOfService.jsx",
@@ -9597,7 +9597,7 @@
             "filePath": "src/register/RegistrationPage.jsx",
             "line": 634,
             "column": 14,
-            "index": 23588
+            "index": 23601
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
@@ -26920,7 +26920,7 @@
       }
     },
     {
-      "version": "20.45.2",
+      "version": "20.45.5",
       "name": "@edx/frontend-app-profile",
       "repository": {
         "type": "git",
@@ -30050,7 +30050,7 @@
       }
     },
     {
-      "version": "20.45.2",
+      "version": "20.45.5",
       "name": "@edx/frontend-component-header-edx",
       "repository": {
         "type": "git",
@@ -30069,7 +30069,7 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 58,
             "column": 6,
-            "index": 2144
+            "index": 2140
           }
         ],
         "Dropdown.Toggle": [
@@ -30083,7 +30083,7 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 59,
             "column": 8,
-            "index": 2194
+            "index": 2190
           }
         ],
         "AvatarButton": [
@@ -30111,7 +30111,7 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 65,
             "column": 8,
-            "index": 2480
+            "index": 2476
           }
         ],
         "Dropdown.Item": [
@@ -30125,43 +30125,43 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 31,
             "column": 4,
-            "index": 1255
+            "index": 1251
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 36,
             "column": 4,
-            "index": 1421
+            "index": 1417
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 45,
             "column": 6,
-            "index": 1780
+            "index": 1776
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 68,
             "column": 10,
-            "index": 2596
+            "index": 2592
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 71,
             "column": 10,
-            "index": 2758
+            "index": 2754
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 79,
             "column": 12,
-            "index": 3268
+            "index": 3264
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 83,
             "column": 10,
-            "index": 3441
+            "index": 3437
           }
         ],
         "Badge": [
@@ -30175,13 +30175,13 @@
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
             "line": 38,
             "column": 6,
-            "index": 1519
+            "index": 1515
           },
           {
             "filePath": "src/Notifications/index.jsx",
             "line": 112,
             "column": 10,
-            "index": 4052
+            "index": 4054
           }
         ],
         "Button": [
@@ -30201,13 +30201,13 @@
             "filePath": "src/Notifications/NotificationSections.jsx",
             "line": 46,
             "column": 12,
-            "index": 2023
+            "index": 2112
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 82,
-            "column": 10,
-            "index": 3379
+            "line": 81,
+            "column": 8,
+            "index": 3470
           }
         ],
         "useWindowSize": [
@@ -30287,13 +30287,13 @@
             "filePath": "src/Notifications/index.jsx",
             "line": 105,
             "column": 18,
-            "index": 3807
+            "index": 3809
           },
           {
             "filePath": "src/Notifications/NotificationRowItem.jsx",
             "line": 34,
             "column": 6,
-            "index": 1088
+            "index": 1117
           }
         ],
         "Settings": [
@@ -30325,7 +30325,7 @@
             "filePath": "src/Notifications/index.jsx",
             "line": 104,
             "column": 15,
-            "index": 3770
+            "index": 3772
           }
         ],
         "Spinner": [
@@ -30333,29 +30333,29 @@
             "filePath": "src/Notifications/NotificationSections.jsx",
             "line": 78,
             "column": 10,
-            "index": 3200
-          }
-        ],
-        "Tab": [
-          {
-            "filePath": "src/Notifications/NotificationTabs.jsx",
-            "line": 29,
-            "column": 4,
-            "index": 1293
+            "index": 3301
           }
         ],
         "Tabs": [
           {
             "filePath": "src/Notifications/NotificationTabs.jsx",
-            "line": 42,
+            "line": 30,
             "column": 4,
-            "index": 1755
+            "index": 1155
+          }
+        ],
+        "Tab": [
+          {
+            "filePath": "src/Notifications/NotificationTabs.jsx",
+            "line": 37,
+            "column": 8,
+            "index": 1356
           }
         ]
       }
     },
     {
-      "version": "20.45.0",
+      "version": "20.45.5",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
@@ -34718,7 +34718,7 @@
       }
     },
     {
-      "version": "20.45.2",
+      "version": "20.45.5",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
@@ -34761,7 +34761,7 @@
       }
     },
     {
-      "version": "20.45.2",
+      "version": "20.45.5",
       "name": "@edx/frontend-template-application",
       "repository": {
         "type": "git",
@@ -34937,9 +34937,9 @@
           },
           {
             "filePath": "src/packages/exec-ed-page/template/ExecEdDetailPage/index.jsx",
-            "line": 515,
+            "line": 513,
             "column": 18,
-            "index": 20323
+            "index": 20425
           },
           {
             "filePath": "src/packages/home-page/components/Audiences/index.jsx",
@@ -35381,9 +35381,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 65,
-            "column": 6,
-            "index": 2035
+            "line": 73,
+            "column": 4,
+            "index": 2375
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/index.jsx",
@@ -36289,9 +36289,9 @@
           },
           {
             "filePath": "src/packages/exec-ed-page/template/ExecEdDetailPage/index.jsx",
-            "line": 366,
+            "line": 364,
             "column": 6,
-            "index": 14300
+            "index": 14402
           },
           {
             "filePath": "src/packages/learn-index-page/components/Hero.jsx",
@@ -36433,9 +36433,15 @@
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
-            "line": 924,
+            "line": 914,
+            "column": 12,
+            "index": 43363
+          },
+          {
+            "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
+            "line": 933,
             "column": 14,
-            "index": 43589
+            "index": 44191
           },
           {
             "filePath": "src/packages/resource-page/template/ResourcePage/index.jsx",
@@ -36445,9 +36451,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/AutoComplete/components/ManagedAutoComplete/index.jsx",
-            "line": 350,
+            "line": 355,
             "column": 14,
-            "index": 11943
+            "index": 12149
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/PopularSearchLinks/index.jsx",
@@ -36949,9 +36955,9 @@
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
-            "line": 53,
+            "line": 59,
             "column": 6,
-            "index": 1962
+            "index": 2115
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/SearchBox/index.jsx",
@@ -36975,9 +36981,9 @@
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
-            "line": 70,
+            "line": 76,
             "column": 12,
-            "index": 2733
+            "index": 2886
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/SearchBox/index.jsx",
@@ -37001,9 +37007,9 @@
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
-            "line": 80,
+            "line": 86,
             "column": 12,
-            "index": 3136
+            "index": 3289
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/SearchBox/index.jsx",
@@ -37033,9 +37039,9 @@
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
-            "line": 82,
+            "line": 88,
             "column": 10,
-            "index": 3191
+            "index": 3344
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/SearchBox/index.jsx",
@@ -38565,9 +38571,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 67,
-            "column": 10,
-            "index": 2145
+            "line": 75,
+            "column": 8,
+            "index": 2481
           }
         ],
         "Warning": [
@@ -38791,9 +38797,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 67,
-            "column": 41,
-            "index": 2176
+            "line": 75,
+            "column": 39,
+            "index": 2512
           }
         ],
         "MoneyFilled": [
@@ -38865,9 +38871,9 @@
         "Alert.Heading": [
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 68,
-            "column": 12,
-            "index": 2219
+            "line": 76,
+            "column": 10,
+            "index": 2553
           }
         ],
         "CloseSmall": [
