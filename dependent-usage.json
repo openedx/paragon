@@ -1,5 +1,5 @@
 {
-  "lastModified": 1690380516956,
+  "lastModified": 1690466931219,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -8733,19 +8733,19 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 242,
             "column": 14,
-            "index": 8899
+            "index": 8909
           },
           {
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
-            "line": 22,
+            "line": 21,
             "column": 4,
-            "index": 422
+            "index": 415
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 63,
+            "line": 69,
             "column": 10,
-            "index": 2017
+            "index": 2290
           },
           {
             "filePath": "src/register/registrationFields/HonorCode.jsx",
@@ -8835,9 +8835,9 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 64,
+            "line": 70,
             "column": 12,
-            "index": 2091
+            "index": 2364
           }
         ],
         "breakpoints": [
@@ -8931,7 +8931,7 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 238,
             "column": 8,
-            "index": 8731
+            "index": 8741
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
@@ -9068,12 +9068,6 @@
             "line": 71,
             "column": 6,
             "index": 2456
-          },
-          {
-            "filePath": "src/recommendations/ProductCard/Footer/index.jsx",
-            "line": 51,
-            "column": 8,
-            "index": 1325
           },
           {
             "filePath": "src/register/registrationFields/EmailField.jsx",
@@ -9347,7 +9341,7 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 233,
             "column": 10,
-            "index": 8437
+            "index": 8447
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
@@ -9403,7 +9397,7 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 234,
             "column": 12,
-            "index": 8524
+            "index": 8534
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
@@ -9524,6 +9518,12 @@
             "index": 4069
           },
           {
+            "filePath": "src/recommendations/RecommendationsPage.jsx",
+            "line": 78,
+            "column": 12,
+            "index": 2880
+          },
+          {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 166,
             "column": 10,
@@ -9562,6 +9562,18 @@
             "index": 4284
           },
           {
+            "filePath": "src/recommendations/RecommendationsPage.jsx",
+            "line": 84,
+            "column": 14,
+            "index": 3069
+          },
+          {
+            "filePath": "src/recommendations/RecommendationsPage.jsx",
+            "line": 90,
+            "column": 14,
+            "index": 3357
+          },
+          {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 167,
             "column": 12,
@@ -9585,19 +9597,19 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 255,
             "column": 12,
-            "index": 9425
+            "index": 9435
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 267,
             "column": 12,
-            "index": 9935
+            "index": 9945
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 77,
-            "column": 14,
-            "index": 2751
+            "line": 99,
+            "column": 12,
+            "index": 3729
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
@@ -9715,7 +9727,7 @@
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
             "line": 233,
             "column": 77,
-            "index": 8504
+            "index": 8514
           },
           {
             "filePath": "src/register/RegistrationFailure.jsx",
@@ -9739,73 +9751,49 @@
         "Card": [
           {
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
-            "line": 29,
+            "line": 27,
             "column": 6,
-            "index": 577
+            "index": 546
           }
         ],
         "Card.ImageCap": [
           {
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
-            "line": 35,
+            "line": 32,
             "column": 8,
-            "index": 730
+            "index": 667
           }
         ],
         "Card.Header": [
           {
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
-            "line": 43,
+            "line": 40,
             "column": 8,
-            "index": 1022
+            "index": 959
           }
         ],
         "Card.Section": [
           {
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
-            "line": 48,
+            "line": 45,
             "column": 8,
-            "index": 1163
+            "index": 1100
           }
         ],
         "Badge": [
           {
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
-            "line": 50,
+            "line": 47,
             "column": 12,
-            "index": 1251
-          }
-        ],
-        "Launch": [
-          {
-            "filePath": "src/recommendations/ProductCard/Footer/index.jsx",
-            "line": 52,
-            "column": 15,
-            "index": 1346
+            "index": 1188
           }
         ],
         "Container": [
           {
-            "filePath": "src/recommendations/RecommendationsList.jsx",
-            "line": 19,
-            "column": 4,
-            "index": 546
-          }
-        ],
-        "DropdownButton": [
-          {
-            "filePath": "src/recommendations/RecommendationsList.jsx",
-            "line": 23,
-            "column": 6,
-            "index": 756
-          }
-        ],
-        "Dropdown.Item": [
-          {
-            "filePath": "src/recommendations/RecommendationsList.jsx",
-            "line": 33,
+            "filePath": "src/recommendations/RecommendationsPage.jsx",
+            "line": 74,
             "column": 10,
-            "index": 1076
+            "index": 2597
           }
         ],
         "FormAutosuggestOption": [
@@ -27306,33 +27294,33 @@
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 700,
+            "line": 705,
             "column": 8,
-            "index": 23541
+            "index": 23894
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 816,
+            "line": 821,
             "column": 10,
-            "index": 26957
+            "index": 27310
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 826,
+            "line": 831,
             "column": 10,
-            "index": 27240
+            "index": 27593
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 876,
+            "line": 881,
             "column": 10,
-            "index": 29090
+            "index": 29443
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 913,
+            "line": 918,
             "column": 12,
-            "index": 30474
+            "index": 30827
           },
           {
             "filePath": "src/components/EditCoursePage/TranscriptLanguage.jsx",
@@ -27428,9 +27416,9 @@
           },
           {
             "filePath": "src/components/EditCoursePage/index.jsx",
-            "line": 706,
+            "line": 711,
             "column": 10,
-            "index": 23656
+            "index": 24009
           },
           {
             "filePath": "src/components/StafferPage/index.jsx",
@@ -27654,27 +27642,27 @@
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 143,
+            "line": 145,
             "column": 10,
-            "index": 5056
+            "index": 5094
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 158,
+            "line": 160,
             "column": 10,
-            "index": 5651
+            "index": 5689
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.test.jsx",
-            "line": 342,
+            "line": 343,
             "column": 8,
-            "index": 11412
+            "index": 11445
           },
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.test.jsx",
-            "line": 375,
+            "line": 376,
             "column": 8,
-            "index": 12656
+            "index": 12689
           },
           {
             "filePath": "src/components/Header/index.jsx",
@@ -27722,9 +27710,9 @@
         "Add": [
           {
             "filePath": "src/components/EditCoursePage/EditCourseForm.jsx",
-            "line": 120,
+            "line": 122,
             "column": 8,
-            "index": 4396
+            "index": 4434
           },
           {
             "filePath": "src/components/SidePanes/UsersPane.jsx",
@@ -34887,9 +34875,9 @@
           },
           {
             "filePath": "src/packages/become-page/template/BecomePage/index.jsx",
-            "line": 19,
+            "line": 21,
             "column": 6,
-            "index": 714
+            "index": 786
           },
           {
             "filePath": "src/packages/careers-page/components/Hero/index.jsx",
@@ -35548,82 +35536,106 @@
             "index": 1791
           },
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversations.jsx",
-            "line": 31,
-            "column": 10,
-            "index": 1388
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsHeaderActions.jsx",
+            "line": 84,
+            "column": 8,
+            "index": 2289
           },
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversations.jsx",
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsInput.jsx",
+            "line": 47,
+            "column": 8,
+            "index": 1125
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsMessages.jsx",
+            "line": 32,
+            "column": 10,
+            "index": 1401
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsMessages.jsx",
             "line": 41,
             "column": 10,
-            "index": 1887
+            "index": 1929
           },
           {
             "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
-            "line": 27,
+            "line": 18,
             "column": 14,
-            "index": 1095
+            "index": 798
           },
           {
             "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
-            "line": 40,
+            "line": 31,
             "column": 12,
-            "index": 1581
+            "index": 1284
           },
           {
             "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
-            "line": 72,
+            "line": 64,
             "column": 10,
-            "index": 2729
+            "index": 2470
           },
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/index.jsx",
-            "line": 378,
-            "column": 14,
-            "index": 11726
-          },
-          {
-            "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
-            "line": 159,
-            "column": 21,
-            "index": 4825
-          },
-          {
-            "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
-            "line": 173,
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimerHeader.jsx",
+            "line": 21,
             "column": 8,
-            "index": 5293
+            "index": 654
           },
           {
-            "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
-            "line": 241,
-            "column": 16,
-            "index": 8347
-          },
-          {
-            "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
-            "line": 251,
-            "column": 16,
-            "index": 8820
-          },
-          {
-            "filePath": "src/packages/common/ui/xpert/experiments/shared/FloatingActionPopup/index.jsx",
-            "line": 107,
-            "column": 12,
-            "index": 3719
-          },
-          {
-            "filePath": "src/packages/common/ui/xpert/experiments/shared/ProactiveMessage/index.jsx",
-            "line": 75,
+            "filePath": "src/packages/common/ui/xpert/experiments/ChatFloatingActionButton/index.jsx",
+            "line": 148,
             "column": 14,
-            "index": 2515
+            "index": 5068
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
+            "line": 160,
+            "column": 21,
+            "index": 4805
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
+            "line": 174,
+            "column": 8,
+            "index": 5273
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
+            "line": 203,
+            "column": 12,
+            "index": 6392
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
+            "line": 264,
+            "column": 16,
+            "index": 9048
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
+            "line": 274,
+            "column": 16,
+            "index": 9521
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/SkillsBuilderFloatingActionButton/index.jsx",
             "line": 77,
             "column": 8,
-            "index": 2672
+            "index": 2643
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/shared/FloatingActionPopup/FloatingActionPopupHeader.jsx",
+            "line": 85,
+            "column": 10,
+            "index": 2816
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/shared/ProactiveMessage/index.jsx",
+            "line": 75,
+            "column": 14,
+            "index": 2515
           },
           {
             "filePath": "src/packages/degree-page/components/CTAButton/index.jsx",
@@ -36207,9 +36219,9 @@
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
-            "line": 179,
+            "line": 180,
             "column": 22,
-            "index": 5581
+            "index": 5561
           },
           {
             "filePath": "src/packages/learn-page/components/Breadcrumbs/index.jsx",
@@ -36250,6 +36262,60 @@
             "index": 2328
           },
           {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsHeaderActions.jsx",
+            "line": 21,
+            "column": 6,
+            "index": 511
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsHeaderActions.jsx",
+            "line": 40,
+            "column": 4,
+            "index": 1016
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsHeaderActions.jsx",
+            "line": 77,
+            "column": 6,
+            "index": 2072
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsInput.jsx",
+            "line": 40,
+            "column": 6,
+            "index": 920
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsMessages.jsx",
+            "line": 26,
+            "column": 8,
+            "index": 1097
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsMessages.jsx",
+            "line": 34,
+            "column": 8,
+            "index": 1565
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
+            "line": 58,
+            "column": 8,
+            "index": 2285
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimerHeader.jsx",
+            "line": 15,
+            "column": 6,
+            "index": 484
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/experiments/ChatFloatingActionButton/index.jsx",
+            "line": 143,
+            "column": 12,
+            "index": 4774
+          },
+          {
             "filePath": "src/packages/common/ui/xpert/experiments/ChatFloatingActionButton/Survey/index.jsx",
             "line": 262,
             "column": 14,
@@ -36263,30 +36329,42 @@
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
-            "line": 233,
-            "column": 14,
-            "index": 8006
+            "line": 198,
+            "column": 10,
+            "index": 6228
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
-            "line": 243,
+            "line": 256,
             "column": 14,
-            "index": 8470
+            "index": 8707
           },
           {
-            "filePath": "src/packages/common/ui/xpert/experiments/shared/FloatingActionButton/index.jsx",
-            "line": 16,
+            "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
+            "line": 266,
+            "column": 14,
+            "index": 9171
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/shared/FloatingActionButton/index.jsx",
+            "line": 17,
             "column": 4,
-            "index": 444
+            "index": 453
           },
           {
-            "filePath": "src/packages/common/ui/xpert/experiments/shared/ProactiveMessage/index.jsx",
+            "filePath": "src/packages/common/ui/xpert/shared/FloatingActionButton/index.jsx",
+            "line": 41,
+            "column": 5,
+            "index": 1037
+          },
+          {
+            "filePath": "src/packages/common/ui/xpert/shared/ProactiveMessage/index.jsx",
             "line": 67,
             "column": 12,
             "index": 2157
           },
           {
-            "filePath": "src/packages/common/ui/xpert/experiments/shared/ProactiveMessage/index.jsx",
+            "filePath": "src/packages/common/ui/xpert/shared/ProactiveMessage/index.jsx",
             "line": 78,
             "column": 10,
             "index": 2627
@@ -36566,19 +36644,19 @@
             "index": 2696
           },
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
-            "line": 13,
-            "column": 20,
-            "index": 416
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsHeaderActions.jsx",
+            "line": 84,
+            "column": 19,
+            "index": 2300
           },
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/index.jsx",
-            "line": 331,
-            "column": 22,
-            "index": 9829
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimerHeader.jsx",
+            "line": 21,
+            "column": 19,
+            "index": 665
           },
           {
-            "filePath": "src/packages/common/ui/xpert/experiments/shared/ProactiveMessage/index.jsx",
+            "filePath": "src/packages/common/ui/xpert/shared/ProactiveMessage/index.jsx",
             "line": 75,
             "column": 67,
             "index": 2568
@@ -36667,9 +36745,9 @@
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
-            "line": 159,
+            "line": 160,
             "column": 101,
-            "index": 4905
+            "index": 4885
           },
           {
             "filePath": "src/packages/degree-page/components/CTAButton/index.jsx",
@@ -37286,28 +37364,20 @@
             "index": 26149
           }
         ],
-        "ThumbUpOutline": [
+        "Send": [
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversations.jsx",
-            "line": 31,
-            "column": 76,
-            "index": 1454
-          }
-        ],
-        "ThumbDownOffAlt": [
-          {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversations.jsx",
-            "line": 41,
-            "column": 78,
-            "index": 1955
+            "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertConversationsInput.jsx",
+            "line": 47,
+            "column": 19,
+            "index": 1136
           }
         ],
         "Compass": [
           {
             "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
-            "line": 27,
+            "line": 18,
             "column": 35,
-            "index": 1116
+            "index": 819
           },
           {
             "filePath": "src/packages/program-page/components/ProgramPathway/index.jsx",
@@ -37319,25 +37389,25 @@
         "Groups": [
           {
             "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
-            "line": 40,
+            "line": 31,
             "column": 33,
-            "index": 1602
+            "index": 1305
           }
         ],
         "Message": [
           {
             "filePath": "src/packages/common/ui/xpert/Chatbot/components/XpertDisclaimer.jsx",
-            "line": 72,
-            "column": 21,
-            "index": 2740
+            "line": 64,
+            "column": 40,
+            "index": 2500
           }
         ],
-        "Send": [
+        "Minimize": [
           {
-            "filePath": "src/packages/common/ui/xpert/Chatbot/index.jsx",
-            "line": 378,
-            "column": 25,
-            "index": 11737
+            "filePath": "src/packages/common/ui/xpert/experiments/ChatFloatingActionButton/index.jsx",
+            "line": 148,
+            "column": 54,
+            "index": 5108
           }
         ],
         "Form": [
@@ -37375,29 +37445,51 @@
         "Lightbulb": [
           {
             "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
-            "line": 173,
+            "line": 174,
             "column": 19,
-            "index": 5304
+            "index": 5284
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/SkillsBuilderFloatingActionButton/index.jsx",
             "line": 77,
             "column": 19,
-            "index": 2683
+            "index": 2654
+          }
+        ],
+        "KeyboardArrowDown": [
+          {
+            "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
+            "line": 203,
+            "column": 23,
+            "index": 6403
+          },
+          {
+            "filePath": "src/packages/search-page/components/RefinementFilters/components/MobileFilterMenu/index.jsx",
+            "line": 75,
+            "column": 10,
+            "index": 2420
           }
         ],
         "Recommend": [
           {
             "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
-            "line": 241,
+            "line": 264,
             "column": 87,
-            "index": 8418
+            "index": 9119
           },
           {
             "filePath": "src/packages/common/ui/xpert/experiments/OCMFloatingActionButton/index.jsx",
-            "line": 251,
+            "line": 274,
             "column": 89,
-            "index": 8893
+            "index": 9594
+          }
+        ],
+        "useArrowKeyNavigation": [
+          {
+            "filePath": "src/packages/common/ui/xpert/shared/FloatingActionPopup/index.jsx",
+            "line": 21,
+            "column": 20,
+            "index": 528
           }
         ],
         "FormGroup": [
@@ -37433,7 +37525,7 @@
             "filePath": "src/packages/program-page/components/ProgramSubscriptionSection/index.jsx",
             "line": 65,
             "column": 10,
-            "index": 2393
+            "index": 2433
           }
         ],
         "Form.Group": [
@@ -38187,9 +38279,9 @@
           },
           {
             "filePath": "src/packages/program-page/components/ProgramSubscriptionSection/index.jsx",
-            "line": 224,
+            "line": 225,
             "column": 10,
-            "index": 8602
+            "index": 8686
           }
         ],
         "Row": [
@@ -38325,39 +38417,39 @@
           },
           {
             "filePath": "src/packages/program-page/components/ProgramSubscriptionSection/index.jsx",
-            "line": 165,
+            "line": 166,
             "column": 10,
-            "index": 5992
+            "index": 6076
           },
           {
             "filePath": "src/packages/program-page/components/ProgramSubscriptionSection/index.jsx",
-            "line": 175,
+            "line": 176,
             "column": 10,
-            "index": 6471
+            "index": 6555
           },
           {
             "filePath": "src/packages/program-page/components/ProgramSubscriptionSection/index.jsx",
-            "line": 184,
+            "line": 185,
             "column": 10,
-            "index": 6866
+            "index": 6950
           },
           {
             "filePath": "src/packages/program-page/components/ProgramSubscriptionSection/index.jsx",
-            "line": 193,
+            "line": 194,
             "column": 10,
-            "index": 7256
+            "index": 7340
           },
           {
             "filePath": "src/packages/program-page/components/ProgramSubscriptionSection/index.jsx",
-            "line": 202,
+            "line": 203,
             "column": 10,
-            "index": 7641
+            "index": 7725
           },
           {
             "filePath": "src/packages/program-page/components/ProgramSubscriptionSection/index.jsx",
-            "line": 211,
+            "line": 212,
             "column": 10,
-            "index": 8017
+            "index": 8101
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
@@ -38968,14 +39060,6 @@
             "line": 132,
             "column": 14,
             "index": 3925
-          }
-        ],
-        "KeyboardArrowDown": [
-          {
-            "filePath": "src/packages/search-page/components/RefinementFilters/components/MobileFilterMenu/index.jsx",
-            "line": 75,
-            "column": 10,
-            "index": 2420
           }
         ],
         "useMediaQuery": [
