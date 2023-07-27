@@ -9,7 +9,7 @@
     "access": "public"
   },
   "bin": {
-    "paragon": "paragon-cli.js"
+    "paragon": "./bin/paragon-cli.js"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,8 @@
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
     "generate-component": "npm start --workspace=component-generator",
-    "start-example-mfe": "npm run start --workspace=example",
+    "example:start": "npm start --workspace=example",
+    "example:start:with-theme": "npm run start:with-theme --workspace=example",
     "generate-changelog": "node generate-changelog.js",
     "i18n_compile": "formatjs compile-folder --format transifex ./src/i18n/messages ./src/i18n/messages",
     "i18n_extract": "formatjs extract 'src/**/*.{jsx,js,tsx,ts}' --out-file ./src/i18n/transifex_input.json --format transifex",
@@ -111,6 +112,7 @@
     "axios-mock-adapter": "^1.21.1",
     "babel-jest": "^28.1.2",
     "babel-loader": "^8.2.4",
+    "chalk": "^4.1.2",
     "child_process": "^1.0.2",
     "commander": "^9.3.0",
     "enzyme": "^3.9.0",

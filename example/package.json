@@ -10,12 +10,13 @@
     "precommit": "npm run lint",
     "snapshot": "fedx-scripts jest --updateSnapshot",
     "start": "fedx-scripts webpack-dev-server --progress",
+    "start:with-theme": "paragon install-theme && npm start",
     "test": "fedx-scripts jest --coverage --passWithNoTests"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@edx/brand-openedx": "^1.1.0",
+    "@edx/brand": "npm:@edx/brand-openedx@^1.1.0",
     "@edx/frontend-platform": "^4.2.0",
     "@faker-js/faker": "^7.6.0",
     "core-js": "^3.22.2",
