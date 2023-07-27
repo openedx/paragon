@@ -9,10 +9,10 @@ status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'To Do'
 notes: |
-  Replaced by Input and ValidationFormGroup
+  Replaced by Form.Control
 ---
 
-## basic usage
+## Basic usage
 
 ```jsx live
 <InputSelect
@@ -28,7 +28,7 @@ notes: |
 />
 ```
 
-## separate labels and values
+## Separate labels and values
 
 ```jsx live
 <InputSelect
@@ -46,7 +46,7 @@ notes: |
 />
 ```
 
-## separate option groups
+## Separate option groups
 
 ```jsx live
 <InputSelect
@@ -82,7 +82,7 @@ notes: |
 />
 ```
 
-## with validation
+## With validation
 
 ```jsx live
 <InputSelect
@@ -102,7 +102,7 @@ notes: |
 />
 ```
 
-## disabled usage
+## Disabled usage
 
 ```jsx live
 <InputSelect
@@ -110,8 +110,8 @@ notes: |
   label="Fruits"
   aria-label="Fruits"
   value="strawberry"
-  options={['
-    apple',
+  options={[
+    'apple',
     'orange',
     'strawberry',
     'banana',
@@ -120,7 +120,7 @@ notes: |
 />
 ```
 
-## with disabled option
+## With disabled option
 
 ```jsx live
 <InputSelect
