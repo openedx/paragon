@@ -14,19 +14,19 @@
       }
     }
   }
-}
 
-.pgn__chip-carousel__right-control,
-.pgn__chip-carousel__left-control {
-  position: absolute;
-  z-index: 2;
-  top: $chip-carousel-controls-top-offset;
-}
+  .pgn__chip-carousel__right-control,
+  .pgn__chip-carousel__left-control {
+    position: absolute;
+    z-index: 2;
+    top: $chip-carousel-controls-top-offset;
+  }
 
-.pgn__chip-carousel__right-control {
-  right: 0;
-}
+  .pgn__chip-carousel__right-control {
+    right: 0;
+  }
 
-.pgn__chip-carousel__left-control {
-  left: 0;
+  .pgn__chip-carousel__left-control {
+    left: 0;
+  }
 }
