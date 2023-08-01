@@ -1,6 +1,7 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useContext } from 'react';
 
 import { CheckboxControl } from '../../Form';
+import DataTableContext from '../DataTableContext';
 import useConvertIndeterminateProp from './useConvertIndeterminateProp';
 
 export const selectColumn = {
@@ -11,6 +12,7 @@ export const selectColumn = {
   // Proptypes disabled as these props are passed in separately
   /* eslint-disable-next-line react/prop-types */
   Header: ({ getToggleAllPageRowsSelectedProps, getToggleAllRowsSelectedProps, page }) => {
+    const { isSelectable, maxSelectedRows } = useContext(DataTableContext);
     const toggleRowsSelectedProps = useMemo(
       () => {
         // determine if this selection is for an individual page or the entire table
@@ -21,7 +23,7 @@ export const selectColumn = {
     );
     const updatedProps = useConvertIndeterminateProp(toggleRowsSelectedProps);
 
-    return (
+    return isSelectable && maxSelectedRows ? null : (
       <div className="pgn__data-table__controlled-select">
         <CheckboxControl
           {...updatedProps}
@@ -35,12 +37,22 @@ export const selectColumn = {
   // Proptypes disabled as this prop is passed in separately
   /* eslint-disable react/prop-types */
   Cell: ({ row }) => {
+    const {
+      isSelectable, maxSelectedRows, onMaxSelectedRows, state: { selectedRowIds },
+    } = useContext(DataTableContext);
     const updatedProps = useConvertIndeterminateProp(row.getToggleRowSelectedProps());
+    const { index } = row;
+    const isRowSelected = index in selectedRowIds;
+    const selectedRowsLength = Object.keys(selectedRowIds).length;
+    const hasMaxSelectedRows = maxSelectedRows && maxSelectedRows === selectedRowsLength;
+    const disableCheck = isSelectable && hasMaxSelectedRows && !isRowSelected;
+    if (hasMaxSelectedRows && selectedRowIds[index]) { onMaxSelectedRows?.(); }
 
     return (
       <div className="pgn__data-table__controlled-select">
         <CheckboxControl
           {...updatedProps}
+          disabled={disableCheck}
           data-testid="datatable-select-column-checkbox-cell"
         />
       </div>

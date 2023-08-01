@@ -52,6 +52,8 @@ function DataTable({
   isLoading,
   children,
   onSelectedRowsChanged,
+  maxSelectedRows,
+  onMaxSelectedRows,
   ...props
 }) {
   const defaultColumn = useMemo(
@@ -93,7 +95,7 @@ function DataTable({
       initialState,
       ...updatedTableOptions,
     };
-  }, [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions, manualSortBy]);
+  }, [initialTableOptions, columns, data, defaultColumn, manualFilters, manualPagination, manualSortBy, initialState]);
 
   const [selections, selectionsDispatch] = useReducer(selectionsReducer, initialSelectionsState);
 
@@ -176,6 +178,8 @@ function DataTable({
     isSelectable,
     isPaginated,
     manualSelectColumn,
+    maxSelectedRows,
+    onMaxSelectedRows,
     ...selectionProps,
     ...selectionActions,
     ...props,
@@ -236,6 +240,8 @@ DataTable.defaultProps = {
   isExpandable: false,
   isLoading: false,
   onSelectedRowsChanged: undefined,
+  maxSelectedRows: undefined,
+  onMaxSelectedRows: undefined,
 };
 
 DataTable.propTypes = {
@@ -405,6 +411,10 @@ DataTable.propTypes = {
   isLoading: PropTypes.bool,
   /** Callback function called when row selections change. */
   onSelectedRowsChanged: PropTypes.func,
+  /** Indicates the max of rows selectable in the table. Requires isSelectable prop */
+  maxSelectedRows: PropTypes.number,
+  /** Callback after selected max rows. Requires isSelectable and maxSelectedRows props */
+  onMaxSelectedRows: PropTypes.func,
 };
 
 DataTable.BulkActions = BulkActions;
