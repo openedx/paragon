@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const inquirer = require('inquirer');
 const childProcess = require('child_process');
 
