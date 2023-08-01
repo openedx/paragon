@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 @import "~bootstrap/scss/popover";
 
 .popover {
@@ -18,37 +19,13 @@
 }
 
 .popover-success {
-  background: $popover-success-bg;
-
-  .popover-header {
-    background: $popover-success-bg;
-  }
-
-  .pgn__icon {
-    color: $popover-success-icon-color;
-  }
+  @include get-popover-variant($popover-success-bg, $popover-success-icon-color);
 }
 
 .popover-warning {
-  background: $popover-warning-bg;
-
-  .popover-header {
-    background: $popover-warning-bg;
-  }
-
-  .pgn__icon {
-    color: $popover-warning-icon-color;
-  }
+  @include get-popover-variant($popover-warning-bg, $popover-warning-icon-color);
 }
 
 .popover-danger {
-  background: $popover-danger-bg;
-
-  .popover-header {
-    background: $popover-danger-bg;
-  }
-
-  .pgn__icon {
-    color: $popover-danger-icon-color;
-  }
+  @include get-popover-variant($popover-danger-bg, $popover-danger-icon-color);
 }
