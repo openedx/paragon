@@ -5,6 +5,7 @@ const StyleDictionary = require('style-dictionary');
 const chroma = require('chroma-js');
 const { colorYiq, darken, lighten } = require('./sass-helpers');
 const cssUtilities = require('./css-utilities');
+const { composeBreakpointName } = require('./utils');
 
 const { fileHeader, sortByReference } = StyleDictionary.formatHelpers;
 
@@ -182,9 +183,9 @@ StyleDictionary.registerFormat({
 
     for (let i = 0; i < breakpoints.length; i++) {
       const [currentBreakpoint, nextBreakpoint] = [breakpoints[i], breakpoints[i + 1]];
-      customMediaVariables += `@custom-media --min-${currentBreakpoint.name} (min-width: ${currentBreakpoint.value});\n`;
+      customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'min')} (min-width: ${currentBreakpoint.value});\n`;
       if (nextBreakpoint) {
-        customMediaVariables += `@custom-media --max-${currentBreakpoint.name} (max-width: ${nextBreakpoint.value});\n`;
+        customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'max')} (max-width: ${nextBreakpoint.value});\n`;
       }
     }
 
