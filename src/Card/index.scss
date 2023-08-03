@@ -88,6 +88,7 @@ a.pgn__card {
 
 .pgn__card {
   outline: none;
+  overflow: hidden;
 
   @include pgn-box-shadow(1, "down");
 
@@ -339,6 +340,8 @@ a.pgn__card {
         position: relative;
         top: -$loading-skeleton-spacer;
         height: 100%;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
       }
     }
 
