@@ -246,7 +246,7 @@
       align-items: center;
       background-color: var(--pgn-color-gray-100);
 
-      @media (--max-pgn-size-breakpoint-sm) {
+      @media (--pgn-size-breakpoint-max-width-sm) {
         max-width: 100%;
       }
     }
