@@ -86,7 +86,7 @@
   display: flex;
   align-items: flex-start;
 
-  @media (--max-pgn-size-breakpoint-xl) {
+  @media (--pgn-size-breakpoint-max-width-xl) {
     overflow-x: scroll;
   }
 

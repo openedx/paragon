@@ -45,7 +45,7 @@
   }
 
   .form-field {
-    @media (--min-pgn-size-breakpoint-sm) {
+    @media (--pgn-size-breakpoint-min-width-sm) {
       margin-inline-end: 0;
     }
   }

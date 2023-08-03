@@ -9,7 +9,7 @@
     left: 0;
   }
 
-  @media (--max-pgn-size-breakpoint-sm) {
+  @media (--pgn-size-breakpoint-max-width-sm) {
     bottom: var(--pgn-spacing-toast-container-gutter-sm);
     right: var(--pgn-spacing-toast-container-gutter-sm);
     left: var(--pgn-spacing-toast-container-gutter-sm);

@@ -190,9 +190,21 @@ function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'
   });
 }
 
+/**
+ * Composes a breakpoint name according to the Paragon namespace.
+ *
+ * @param {string} breakpointName - breakpoint initial name.
+ * @param {string} format - screen width format.
+ * @return {string} - new breakpoint name.
+ */
+function composeBreakpointName(breakpointName, format) {
+  return `@custom-media --${breakpointName.replace(/breakpoint/g, `breakpoint-${format}-width`)}`;
+}
+
 module.exports = {
   createIndexCssFile,
   getFilesWithExtension,
   getSCSStoCSSMap,
   transformInPath,
+  composeBreakpointName,
 };
