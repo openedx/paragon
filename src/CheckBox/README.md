@@ -9,7 +9,7 @@ status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'To Do'
 notes: |
-  Replaced by Input and ValidationFormGroup
+  Replaced by Form.Checkbox
 ---
 
 ## Basic usage
