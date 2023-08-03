@@ -10,7 +10,7 @@
   z-index: var(--pgn-elevation-product-tour-checkpoint-zindex);
   max-width: var(--pgn-size-product-tour-checkpoint-width-max);
 
-  @media (--max-pgn-size-breakpoint-sm) {
+  @media (--pgn-size-breakpoint-max-width-sm) {
     min-width: 90%;
     max-width: 90%;
   }
