@@ -144,11 +144,11 @@
 .pgn-doc__menu-all-components .pgn-doc__menu-component-list {
   columns: 4;
 
-  @media (--max-pgn-size-breakpoint-sm) {
+  @media (--pgn-size-breakpoint-max-width-sm) {
     columns: 2;
   }
 
-  @media (--max-pgn-size-breakpoint-xs) {
+  @media (--pgn-size-breakpoint-max-width-xs) {
     columns: 1;
   }
 }

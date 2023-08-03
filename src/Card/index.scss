@@ -483,7 +483,7 @@ a.pgn__card {
   }
 }
 
-@media (max-width: map-get($grid-breakpoints, "sm")) {
+@media (--pgn-size-breakpoint-max-width-xs) {
   .pgn__card-footer {
     &.horizontal > :not(:last-child) {
       margin-inline-end: 0;
