@@ -467,7 +467,7 @@ a .pgn__card {
   }
 }
 
-@media (--max-pgn-size-breakpoint-xs) {
+@media (--pgn-size-breakpoint-max-width-xs) {
   .pgn__card-footer {
     &.horizontal > :not(:last-child) {
       margin-inline-end: 0;
