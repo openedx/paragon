@@ -55,7 +55,7 @@
       width: 13.25rem;
       height: 2.75rem;
 
-      @media (--max-pgn-size-breakpoint-md) {
+      @media (--pgn-size-breakpoint-max-width-md) {
         width: 2.75rem;
         height: 2.75rem;
         border-radius: 50%;
@@ -63,7 +63,7 @@
         padding: .625rem .75rem;
       }
 
-      @media (--max-pgn-size-breakpoint-xs) {
+      @media (--pgn-size-breakpoint-max-width-xs) {
         margin: 0 0 0 .5rem;
         width: 2rem;
         height: 2rem;
@@ -103,7 +103,7 @@
   &-settings-and-search .DocSearch.DocSearch-Button {
     margin: 0 var(--pgn-spacing-spacer-base) 0 0;
 
-    @media (--max-pgn-size-breakpoint-xs) {
+    @media (--pgn-size-breakpoint-max-width-xs) {
       margin: 0 .5rem 0 0;
     }
   }

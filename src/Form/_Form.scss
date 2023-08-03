@@ -43,7 +43,7 @@
   flex-grow: 1;
   align-items: flex-start;
 
-  @media (--min-pgn-size-breakpoint-sm) {
+  @media (--pgn-size-breakpoint-min-width-sm) {
     margin-inline-end: var(--pgn-spacing-form-control-gutter);
   }
 
@@ -597,7 +597,7 @@ select.form-control {
   .pgn__form-autosuggest__dropdown {
     @include pgn-box-shadow(1, "centered");
 
-    @media (--min-pgn-size-breakpoint-sm) {
+    @media (--pgn-size-breakpoint-min-width-sm) {
       margin-inline-end: var(--pgn-spacing-form-control-gutter);
     }
 
