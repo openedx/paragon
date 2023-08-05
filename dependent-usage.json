@@ -1,5 +1,5 @@
 {
-  "lastModified": 1691158092760,
+  "lastModified": 1691244448449,
   "projectUsages": [
     {
       "version": "19.19.1",
@@ -8585,7 +8585,7 @@
       }
     },
     {
-      "version": "20.45.7",
+      "version": "20.46.0",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -10399,7 +10399,7 @@
       }
     },
     {
-      "version": "20.35.1",
+      "version": "20.45.4",
       "name": "@edx/frontend-app-course-authoring",
       "repository": {
         "type": "git",
@@ -10605,6 +10605,12 @@
             "line": 223,
             "column": 12,
             "index": 7951
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/TableActions.jsx",
+            "line": 40,
+            "column": 4,
+            "index": 1196
           },
           {
             "filePath": "src/generic/ConfirmationPopup.jsx",
@@ -10813,6 +10819,36 @@
             "index": 4068
           },
           {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 72,
+            "column": 12,
+            "index": 1966
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 87,
+            "column": 12,
+            "index": 2532
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 100,
+            "column": 12,
+            "index": 2982
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/GalleryCard.jsx",
+            "line": 43,
+            "column": 12,
+            "index": 972
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/ListCard.jsx",
+            "line": 63,
+            "column": 10,
+            "index": 1561
+          },
+          {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
             "line": 83,
             "column": 6,
@@ -10997,6 +11033,66 @@
             "index": 3068
           },
           {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 79,
+            "column": 24,
+            "index": 2194
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 94,
+            "column": 24,
+            "index": 2760
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 109,
+            "column": 24,
+            "index": 3385
+          },
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 28,
+            "column": 14,
+            "index": 557
+          },
+          {
+            "filePath": "src/files-and-uploads/FileThumbnail.jsx",
+            "line": 25,
+            "column": 40,
+            "index": 548
+          },
+          {
+            "filePath": "src/files-and-uploads/FileThumbnail.jsx",
+            "line": 26,
+            "column": 35,
+            "index": 657
+          },
+          {
+            "filePath": "src/files-and-uploads/FileThumbnail.jsx",
+            "line": 27,
+            "column": 36,
+            "index": 760
+          },
+          {
+            "filePath": "src/files-and-uploads/FileThumbnail.jsx",
+            "line": 28,
+            "column": 36,
+            "index": 864
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/GalleryCard.jsx",
+            "line": 61,
+            "column": 12,
+            "index": 1555
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/ListCard.jsx",
+            "line": 49,
+            "column": 12,
+            "index": 1120
+          },
+          {
             "filePath": "src/generic/CollapsableEditor.jsx",
             "line": 34,
             "column": 63,
@@ -11097,6 +11193,30 @@
             "line": 53,
             "column": 59,
             "index": 1624
+          },
+          {
+            "filePath": "src/files-and-uploads/FilesAndUploads.jsx",
+            "line": 44,
+            "column": 56,
+            "index": 1235
+          },
+          {
+            "filePath": "src/files-and-uploads/FilesAndUploads.jsx",
+            "line": 45,
+            "column": 47,
+            "index": 1300
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/GalleryCard.jsx",
+            "line": 24,
+            "column": 59,
+            "index": 477
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/ListCard.jsx",
+            "line": 24,
+            "column": 59,
+            "index": 474
           }
         ],
         "Card": [
@@ -11105,6 +11225,18 @@
             "line": 60,
             "column": 6,
             "index": 1460
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/GalleryCard.jsx",
+            "line": 40,
+            "column": 6,
+            "index": 848
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/ListCard.jsx",
+            "line": 40,
+            "column": 6,
+            "index": 845
           },
           {
             "filePath": "src/generic/ConfirmationPopup.jsx",
@@ -11151,6 +11283,12 @@
             "index": 1512
           },
           {
+            "filePath": "src/files-and-uploads/table-components/ListCard.jsx",
+            "line": 52,
+            "column": 8,
+            "index": 1218
+          },
+          {
             "filePath": "src/generic/ConfirmationPopup.jsx",
             "line": 23,
             "column": 4,
@@ -11183,6 +11321,12 @@
             "index": 1553
           },
           {
+            "filePath": "src/files-and-uploads/table-components/GalleryCard.jsx",
+            "line": 41,
+            "column": 8,
+            "index": 926
+          },
+          {
             "filePath": "src/generic/ConfirmationPopup.jsx",
             "line": 18,
             "column": 4,
@@ -11213,6 +11357,24 @@
             "line": 66,
             "column": 16,
             "index": 1671
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 77,
+            "column": 14,
+            "index": 2124
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 92,
+            "column": 14,
+            "index": 2690
+          },
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 26,
+            "column": 10,
+            "index": 511
           },
           {
             "filePath": "src/generic/CollapsableEditor.jsx",
@@ -11251,6 +11413,12 @@
             "line": 69,
             "column": 23,
             "index": 1773
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 108,
+            "column": 21,
+            "index": 3348
           }
         ],
         "ModalPopup": [
@@ -11267,6 +11435,18 @@
             "line": 92,
             "column": 10,
             "index": 2590
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/GalleryCard.jsx",
+            "line": 57,
+            "column": 8,
+            "index": 1421
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/ListCard.jsx",
+            "line": 53,
+            "column": 10,
+            "index": 1240
           },
           {
             "filePath": "src/generic/ConfirmationPopup.jsx",
@@ -11663,6 +11843,24 @@
             "line": 128,
             "column": 10,
             "index": 4193
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 76,
+            "column": 14,
+            "index": 2089
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 91,
+            "column": 14,
+            "index": 2655
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 113,
+            "column": 14,
+            "index": 3479
           }
         ],
         "IconButtonWithTooltip": [
@@ -11683,6 +11881,12 @@
             "line": 91,
             "column": 8,
             "index": 2756
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 104,
+            "column": 14,
+            "index": 3143
           }
         ],
         "EditOutline": [
@@ -11713,6 +11917,12 @@
             "line": 130,
             "column": 24,
             "index": 4256
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/TableActions.jsx",
+            "line": 40,
+            "column": 24,
+            "index": 1216
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-restrictions/RestrictionSchedules.jsx",
@@ -11749,6 +11959,12 @@
             "index": 8292
           },
           {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 36,
+            "column": 4,
+            "index": 780
+          },
+          {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
             "line": 65,
             "column": 2,
@@ -11779,6 +11995,12 @@
             "line": 240,
             "column": 10,
             "index": 8466
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 43,
+            "column": 6,
+            "index": 920
           },
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
@@ -11813,6 +12035,12 @@
             "index": 8499
           },
           {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 44,
+            "column": 8,
+            "index": 949
+          },
+          {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
             "line": 75,
             "column": 6,
@@ -11845,6 +12073,12 @@
             "index": 8665
           },
           {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 48,
+            "column": 6,
+            "index": 1062
+          },
+          {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
             "line": 79,
             "column": 4,
@@ -11875,6 +12109,346 @@
             "line": 246,
             "column": 12,
             "index": 8696
+          },
+          {
+            "filePath": "src/files-and-uploads/FileThumbnail.jsx",
+            "line": 22,
+            "column": 6,
+            "index": 375
+          }
+        ],
+        "Toast": [
+          {
+            "filePath": "src/files-and-uploads/ApiStatusToast.jsx",
+            "line": 22,
+            "column": 4,
+            "index": 436
+          }
+        ],
+        "Stack": [
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 59,
+            "column": 10,
+            "index": 1461
+          }
+        ],
+        "Truncate": [
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 73,
+            "column": 14,
+            "index": 1992
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 88,
+            "column": 14,
+            "index": 2558
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/GalleryCard.jsx",
+            "line": 63,
+            "column": 10,
+            "index": 1640
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/ListCard.jsx",
+            "line": 54,
+            "column": 12,
+            "index": 1267
+          }
+        ],
+        "ContentCopy": [
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 78,
+            "column": 21,
+            "index": 2157
+          },
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 93,
+            "column": 21,
+            "index": 2723
+          }
+        ],
+        "CheckboxControl": [
+          {
+            "filePath": "src/files-and-uploads/FileInfo.jsx",
+            "line": 114,
+            "column": 14,
+            "index": 3514
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
+            "line": 38,
+            "column": 12,
+            "index": 1339
+          }
+        ],
+        "Dropdown": [
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 23,
+            "column": 2,
+            "index": 390
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/TableActions.jsx",
+            "line": 16,
+            "column": 4,
+            "index": 418
+          }
+        ],
+        "Dropdown.Toggle": [
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 24,
+            "column": 4,
+            "index": 446
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/TableActions.jsx",
+            "line": 17,
+            "column": 6,
+            "index": 435
+          }
+        ],
+        "Dropdown.Menu": [
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 32,
+            "column": 4,
+            "index": 628
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/TableActions.jsx",
+            "line": 24,
+            "column": 6,
+            "index": 654
+          }
+        ],
+        "Dropdown.Item": [
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 33,
+            "column": 6,
+            "index": 650
+          },
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 38,
+            "column": 6,
+            "index": 827
+          },
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 43,
+            "column": 6,
+            "index": 1001
+          },
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 46,
+            "column": 6,
+            "index": 1143
+          },
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 49,
+            "column": 6,
+            "index": 1318
+          },
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 53,
+            "column": 6,
+            "index": 1463
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/TableActions.jsx",
+            "line": 25,
+            "column": 8,
+            "index": 678
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/TableActions.jsx",
+            "line": 32,
+            "column": 8,
+            "index": 936
+          }
+        ],
+        "Dropdown.Divider": [
+          {
+            "filePath": "src/files-and-uploads/FileMenu.jsx",
+            "line": 52,
+            "column": 6,
+            "index": 1436
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/TableActions.jsx",
+            "line": 31,
+            "column": 8,
+            "index": 907
+          }
+        ],
+        "DataTable": [
+          {
+            "filePath": "src/files-and-uploads/FilesAndUploads.jsx",
+            "line": 172,
+            "column": 8,
+            "index": 4909
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/FeaturesTable.jsx",
+            "line": 60,
+            "column": 4,
+            "index": 2244
+          }
+        ],
+        "Dropzone": [
+          {
+            "filePath": "src/files-and-uploads/FilesAndUploads.jsx",
+            "line": 225,
+            "column": 12,
+            "index": 6492
+          }
+        ],
+        "DataTable.TableControlBar": [
+          {
+            "filePath": "src/files-and-uploads/FilesAndUploads.jsx",
+            "line": 236,
+            "column": 14,
+            "index": 6925
+          }
+        ],
+        "CardView": [
+          {
+            "filePath": "src/files-and-uploads/FilesAndUploads.jsx",
+            "line": 237,
+            "column": 42,
+            "index": 6997
+          },
+          {
+            "filePath": "src/files-and-uploads/FilesAndUploads.jsx",
+            "line": 238,
+            "column": 42,
+            "index": 7153
+          }
+        ],
+        "DataTable.EmptyTable": [
+          {
+            "filePath": "src/files-and-uploads/FilesAndUploads.jsx",
+            "line": 239,
+            "column": 14,
+            "index": 7280
+          }
+        ],
+        "DataTable.TableFooter": [
+          {
+            "filePath": "src/files-and-uploads/FilesAndUploads.jsx",
+            "line": 240,
+            "column": 14,
+            "index": 7380
+          }
+        ],
+        "InsertDriveFile": [
+          {
+            "filePath": "src/files-and-uploads/FileThumbnail.jsx",
+            "line": 25,
+            "column": 51,
+            "index": 559
+          },
+          {
+            "filePath": "src/files-and-uploads/FileThumbnail.jsx",
+            "line": 28,
+            "column": 47,
+            "index": 875
+          }
+        ],
+        "Terminal": [
+          {
+            "filePath": "src/files-and-uploads/FileThumbnail.jsx",
+            "line": 26,
+            "column": 46,
+            "index": 668
+          }
+        ],
+        "AudioFile": [
+          {
+            "filePath": "src/files-and-uploads/FileThumbnail.jsx",
+            "line": 27,
+            "column": 47,
+            "index": 771
+          }
+        ],
+        "MoreVert": [
+          {
+            "filePath": "src/files-and-uploads/table-components/GalleryCard.jsx",
+            "line": 51,
+            "column": 25,
+            "index": 1304
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/ListCard.jsx",
+            "line": 71,
+            "column": 23,
+            "index": 1877
+          }
+        ],
+        "Card.ImageCap": [
+          {
+            "filePath": "src/files-and-uploads/table-components/GalleryCard.jsx",
+            "line": 59,
+            "column": 12,
+            "index": 1482
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/ListCard.jsx",
+            "line": 47,
+            "column": 12,
+            "index": 1047
+          }
+        ],
+        "Card.Footer": [
+          {
+            "filePath": "src/files-and-uploads/table-components/GalleryCard.jsx",
+            "line": 67,
+            "column": 8,
+            "index": 1790
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/ListCard.jsx",
+            "line": 62,
+            "column": 8,
+            "index": 1537
+          },
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 25,
+            "column": 6,
+            "index": 570
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 83,
+            "column": 8,
+            "index": 2236
+          }
+        ],
+        "Chip": [
+          {
+            "filePath": "src/files-and-uploads/table-components/GalleryCard.jsx",
+            "line": 68,
+            "column": 10,
+            "index": 1814
+          },
+          {
+            "filePath": "src/files-and-uploads/table-components/ListCard.jsx",
+            "line": 57,
+            "column": 12,
+            "index": 1401
           }
         ],
         "Collapsible.Advanced": [
@@ -11949,20 +12523,6 @@
             "line": 57,
             "column": 4,
             "index": 1585
-          }
-        ],
-        "Card.Footer": [
-          {
-            "filePath": "src/generic/ConfirmationPopup.jsx",
-            "line": 25,
-            "column": 6,
-            "index": 570
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
-            "line": 83,
-            "column": 8,
-            "index": 2236
           }
         ],
         "Alert.Link": [
@@ -12423,14 +12983,6 @@
             "index": 4284
           }
         ],
-        "CheckboxControl": [
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
-            "line": 38,
-            "column": 12,
-            "index": 1339
-          }
-        ],
         "breakpoints": [
           {
             "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
@@ -12519,14 +13071,6 @@
             "line": 37,
             "column": 18,
             "index": 1498
-          }
-        ],
-        "DataTable": [
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/FeaturesTable.jsx",
-            "line": 60,
-            "column": 4,
-            "index": 2244
           }
         ],
         "DataTable.Table": [
