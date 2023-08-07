@@ -62,7 +62,7 @@ function DataTable({
   );
   const tableOptions = useMemo(() => {
     const updatedTableOptions = {
-      stateReducer: (newState, action) => {
+      stateReducer: (newState, action, previousState) => {
         switch (action.type) {
           // Note: we override the `toggleAllRowsSelected` action
           // from react-table because it only clears the selections on the
@@ -77,6 +77,28 @@ function DataTable({
             return {
               ...newState,
               selectedRowIds: {},
+            };
+          }
+          /*  Note: We override the `toggleRowSelected` action from react-table
+              because we need to preserve the order of the selected rows.
+              While `selectedRowIds` is an object that contains the selected rows as key-value pairs,
+              it does not maintain the order of selection. Therefore, we have added the `selectedRowsOrdered` property
+              to keep track of the order in which the rows were selected.
+          */
+          case 'toggleRowSelected': {
+            const rowIndex = parseInt(action.id, 10);
+            const { selectedRowsOrdered = [] } = previousState;
+
+            let newSelectedRowsOrdered;
+            if (action.value) {
+              newSelectedRowsOrdered = [...selectedRowsOrdered, rowIndex];
+            } else {
+              newSelectedRowsOrdered = selectedRowsOrdered.filter((item) => item !== rowIndex);
+            }
+
+            return {
+              ...newState,
+              selectedRowsOrdered: newSelectedRowsOrdered,
             };
           }
           default:
@@ -314,6 +336,7 @@ DataTable.propTypes = {
     filters: requiredWhen(PropTypes.arrayOf(PropTypes.shape()), 'manualFilters'),
     sortBy: requiredWhen(PropTypes.arrayOf(PropTypes.shape()), 'manualSortBy'),
     selectedRowIds: PropTypes.shape(),
+    selectedRowsOrdered: PropTypes.arrayOf(PropTypes.number),
   }),
   /** Table options passed to react-table's useTable hook. Will override some options passed in to DataTable, such
      as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */

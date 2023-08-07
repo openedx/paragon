@@ -74,11 +74,9 @@ describe('selectColumn', () => {
     it('should render the CheckboxControl when isSelectable is true and maxSelectedRows is not reached', () => {
       const contextValue = {};
 
-      const { container } = renderWithTestWrapper(contextValue);
+      const { queryByTestId } = renderWithTestWrapper(contextValue);
 
-      const checkbox = container.querySelector(
-        '[data-testid="datatable-select-column-checkbox-header"]',
-      );
+      const checkbox = queryByTestId('datatable-select-column-checkbox-header');
 
       expect(checkbox).toBeInTheDocument();
     });
@@ -88,11 +86,8 @@ describe('selectColumn', () => {
         maxSelectedRows: 5,
       };
 
-      const { container } = renderWithTestWrapper(contextValue);
-      const checkbox = container.querySelector(
-        '[data-testid="datatable-select-column-checkbox-header"]',
-      );
-
+      const { queryByTestId } = renderWithTestWrapper(contextValue);
+      const checkbox = queryByTestId('datatable-select-column-checkbox-header');
       expect(checkbox).toBeInTheDocument();
     });
 
@@ -102,10 +97,8 @@ describe('selectColumn', () => {
         maxSelectedRows: 5,
       };
 
-      const { container } = renderWithTestWrapper(contextValue);
-      const checkbox = container.querySelector(
-        '[data-testid="datatable-select-column-checkbox-header"]',
-      );
+      const { queryByTestId } = renderWithTestWrapper(contextValue);
+      const checkbox = queryByTestId('datatable-select-column-checkbox-header');
 
       expect(checkbox).toBeNull();
     });
@@ -123,10 +116,8 @@ describe('selectColumn', () => {
 
       };
 
-      const { container } = renderWithTestWrapper(contextValue);
-      const checkbox = container.querySelector(
-        '[data-testid="datatable-select-column-checkbox-header"]',
-      );
+      const { queryByTestId } = renderWithTestWrapper(contextValue);
+      const checkbox = queryByTestId('datatable-select-column-checkbox-header');
 
       expect(checkbox).toBeInTheDocument();
     });
@@ -161,7 +152,7 @@ describe('selectColumn', () => {
     it('Should call onMaxSelectedRows callback when isSelectable is true and maxSelectedRows has passed the limit', async () => {
       const datatableContext = {
         ...mockDataTableContextValue,
-        state: { selectedRowIds: { 0: true } },
+        state: { selectedRowIds: { 0: true }, selectedRowsOrdered: [0] },
       };
 
       const [row1] = mockDataTableContextValue.rows;

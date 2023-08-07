@@ -43,7 +43,7 @@ export const selectColumn = {
   /* eslint-disable react/prop-types */
   Cell: ({ row }) => {
     const {
-      isSelectable, maxSelectedRows, onMaxSelectedRows, state: { selectedRowIds },
+      isSelectable, maxSelectedRows, onMaxSelectedRows, state: { selectedRowIds, selectedRowsOrdered },
     } = useContext(DataTableContext);
     const updatedProps = useConvertIndeterminateProp(row.getToggleRowSelectedProps());
     const { index } = row;
@@ -52,12 +52,13 @@ export const selectColumn = {
     const formatMaxSelectedRows = Math.max(0, maxSelectedRows);
     const hasMaxSelectedRows = formatMaxSelectedRows === selectedRowsLength;
     const disableCheck = isSelectable && hasMaxSelectedRows && !isRowSelected;
+    const lastRowSelected = selectedRowsOrdered?.[selectedRowsOrdered.length - 1] ?? null;
 
     useEffect(() => {
-      if (hasMaxSelectedRows && selectedRowIds[index]) {
+      if (hasMaxSelectedRows && lastRowSelected === index) {
         onMaxSelectedRows?.();
       }
-    }, [hasMaxSelectedRows, index, onMaxSelectedRows, selectedRowIds]);
+    }, [hasMaxSelectedRows, index, isRowSelected, lastRowSelected, onMaxSelectedRows, selectedRowIds]);
 
     return (
       <div className="pgn__data-table__controlled-select">
