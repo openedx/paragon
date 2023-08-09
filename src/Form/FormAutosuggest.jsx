@@ -39,7 +39,7 @@ function FormAutosuggest({
   });
 
   const handleItemClick = (e, onClick) => {
-    const clickedValue = e.currentTarget.value;
+    const clickedValue = e.currentTarget.getAttribute('data-value');
 
     if (onSelected && clickedValue !== value) {
       onSelected(clickedValue);
@@ -66,7 +66,7 @@ function FormAutosuggest({
       return React.cloneElement(child, {
         ...rest,
         children,
-        value: children,
+        'data-value': children,
         onClick: (e) => handleItemClick(e, onClick),
       });
     });
@@ -219,6 +219,9 @@ function FormAutosuggest({
         <FormControl
           aria-expanded={(state.dropDownItems.length > 0).toString()}
           aria-owns="pgn__form-autosuggest__dropdown-box"
+          role="combobox"
+          aria-autocomplete="list"
+          autoComplete="off"
           value={state.displayValue}
           aria-invalid={state.errorMessage}
           onChange={handleOnChange}
@@ -240,25 +243,25 @@ function FormAutosuggest({
         )}
       </FormGroup>
 
-      <div
+      <ul
         id="pgn__form-autosuggest__dropdown-box"
         className="pgn__form-autosuggest__dropdown"
+        role="listbox"
       >
         {isLoading ? (
           <div className="pgn__form-autosuggest__dropdown-loading">
             <Spinner animation="border" variant="dark" screenReaderText={screenReaderText} />
           </div>
         ) : state.dropDownItems.length > 0 && state.dropDownItems}
-      </div>
+      </ul>
     </div>
   );
 }
 
 FormAutosuggest.defaultProps = {
-  arrowKeyNavigationSelector: 'a:not(:disabled),button:not(:disabled, .btn-icon),input:not(:disabled)',
+  arrowKeyNavigationSelector: 'a:not(:disabled),li:not(:disabled, .btn-icon),input:not(:disabled)',
   ignoredArrowKeysNames: ['ArrowRight', 'ArrowLeft'],
   isLoading: false,
-  role: 'list',
   className: null,
   floatingLabel: null,
   onChange: null,
@@ -283,8 +286,6 @@ FormAutosuggest.propTypes = {
   ignoredArrowKeysNames: PropTypes.arrayOf(PropTypes.string),
   /** Specifies loading state. */
   isLoading: PropTypes.bool,
-  /** An ARIA role describing the form autosuggest. */
-  role: PropTypes.string,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies floating label to display for the input component. */
