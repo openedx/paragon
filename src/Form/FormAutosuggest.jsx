@@ -32,6 +32,7 @@ function FormAutosuggest({
     ignoredKeys: ignoredArrowKeysNames,
   });
   const [isMenuClosed, setIsMenuClosed] = useState(true);
+  const [isActive, setIsActive] = useState(false);
   const [state, setState] = useState({
     displayValue: value || '',
     errorMessage: '',
@@ -87,6 +88,7 @@ function FormAutosuggest({
     };
 
     if (isMenuClosed) {
+      setIsActive(true);
       newState.dropDownItems = getItems(state.displayValue);
       newState.errorMessage = '';
     }
@@ -111,8 +113,10 @@ function FormAutosuggest({
     />
   );
 
-  const handleClickOutside = (e) => {
-    if (parentRef.current && !parentRef.current.contains(e.target) && state.dropDownItems.length > 0) {
+  const handleDocumentClick = (e) => {
+    if (parentRef.current && !parentRef.current.contains(e.target) && isActive) {
+      setIsActive(false);
+
       setState(prevState => ({
         ...prevState,
         dropDownItems: [],
@@ -124,13 +128,12 @@ function FormAutosuggest({
   };
 
   const keyDownHandler = e => {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' && isActive) {
       e.preventDefault();
 
       setState(prevState => ({
         ...prevState,
         dropDownItems: [],
-        errorMessage: !state.displayValue ? errorMessageText : '',
       }));
 
       setIsMenuClosed(true);
@@ -139,10 +142,10 @@ function FormAutosuggest({
 
   useEffect(() => {
     document.addEventListener('keydown', keyDownHandler);
-    document.addEventListener('click', handleClickOutside, true);
+    document.addEventListener('click', handleDocumentClick, true);
 
     return () => {
-      document.removeEventListener('click', handleClickOutside, true);
+      document.removeEventListener('click', handleDocumentClick, true);
       document.removeEventListener('keydown', keyDownHandler);
     };
   });
@@ -173,6 +176,7 @@ function FormAutosuggest({
   };
 
   const handleClick = (e) => {
+    setIsActive(true);
     const dropDownItems = getItems(e.target.value);
 
     if (dropDownItems.length > 1) {
@@ -204,7 +208,6 @@ function FormAutosuggest({
       setState(prevState => ({
         ...prevState,
         dropDownItems: [],
-        errorMessageText,
       }));
 
       setIsMenuClosed(true);
