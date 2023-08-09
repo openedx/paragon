@@ -73,7 +73,7 @@ describe('FormAutosuggest', () => {
 
     it('renders component with options', () => {
       container.find('input').simulate('click');
-      const optionsList = container.find('.pgn__form-autosuggest__dropdown').find('button');
+      const optionsList = container.find('.pgn__form-autosuggest__dropdown').find('li');
 
       expect(optionsList.length).toEqual(3);
     });
@@ -94,7 +94,7 @@ describe('FormAutosuggest', () => {
   describe('controlled behavior', () => {
     it('selects option', () => {
       container.find('input').simulate('click');
-      container.find('.pgn__form-autosuggest__dropdown').find('button')
+      container.find('.pgn__form-autosuggest__dropdown').find('li')
         .at(0).simulate('click');
 
       expect(container.find('input').instance().value).toEqual('Option 1');
@@ -104,7 +104,7 @@ describe('FormAutosuggest', () => {
 
     it('when a function is passed to onClick, it is called', () => {
       container.find('input').simulate('change', { target: { value: 'Option 2' } });
-      container.find('.pgn__form-autosuggest__dropdown').find('button')
+      container.find('.pgn__form-autosuggest__dropdown').find('li')
         .at(0).simulate('click');
 
       expect(onClick).toHaveBeenCalledTimes(1);
@@ -112,7 +112,7 @@ describe('FormAutosuggest', () => {
 
     it('when a function is not passed to onClick, it is not called', () => {
       container.find('input').simulate('change', { target: { value: 'Option 1' } });
-      container.find('.pgn__form-autosuggest__dropdown').find('button')
+      container.find('.pgn__form-autosuggest__dropdown').find('li')
         .at(0).simulate('click');
 
       expect(onClick).toHaveBeenCalledTimes(0);
@@ -127,26 +127,26 @@ describe('FormAutosuggest', () => {
     it('options list depends on filled field value', () => {
       container.find('input').simulate('change', { target: { value: 'option 1' } });
 
-      expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(1);
+      expect(container.find('.pgn__form-autosuggest__dropdown').find('li').length).toEqual(1);
       expect(onSelected).toHaveBeenCalledTimes(0);
     });
 
     it('toggles options list', () => {
       const dropdownContainer = '.pgn__form-autosuggest__dropdown';
 
-      expect(container.find(dropdownContainer).find('button').length).toEqual(1);
+      expect(container.find(dropdownContainer).find('li').length).toEqual(1);
 
       container.find('button.pgn__form-autosuggest__icon-button').simulate('click');
-      expect(container.find(dropdownContainer).find('button').length).toEqual(0);
+      expect(container.find(dropdownContainer).find('li').length).toEqual(0);
 
       container.find('button.pgn__form-autosuggest__icon-button').simulate('click');
-      expect(container.find(dropdownContainer).find('button').length).toEqual(1);
+      expect(container.find(dropdownContainer).find('li').length).toEqual(1);
     });
 
     it('shows options list depends on field value', () => {
       container.find('input').simulate('change', { target: { value: '1' } });
 
-      expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(2);
+      expect(container.find('.pgn__form-autosuggest__dropdown').find('li').length).toEqual(2);
     });
 
     it('closes options list on click outside', () => {
@@ -154,12 +154,12 @@ describe('FormAutosuggest', () => {
       const dropdownContainer = '.pgn__form-autosuggest__dropdown';
 
       container.find('input').simulate('click');
-      expect(container.find(dropdownContainer).find('button').length).toEqual(2);
+      expect(container.find(dropdownContainer).find('li').length).toEqual(2);
 
       act(() => { fireEvent.click(document.body); });
       container.update();
 
-      expect(container.find(dropdownContainer).find('button').length).toEqual(0);
+      expect(container.find(dropdownContainer).find('li').length).toEqual(0);
     });
   });
 });
