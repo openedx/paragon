@@ -4,10 +4,6 @@ import PropTypes from 'prop-types';
 import {
   Tabs,
   Tab,
-  TextFilter,
-  CheckboxFilter,
-  useMediaQuery,
-  breakpoints,
 } from '~paragon-react';
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
