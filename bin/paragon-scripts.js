@@ -6,8 +6,6 @@ const themeCommand = require('./install-theme');
 // command: executor function
 const COMMANDS = {
   'install-theme': themeCommand,
-  // eslint-disable-next-line no-console
-  test: () => console.log('Executing "paragon test" function...'),
 };
 
 (async () => {
