@@ -41,7 +41,7 @@ $card-logo-bottom-offset-horizontal: .4375rem !default;
 $card-logo-width:                    7.25rem !default;
 $card-logo-height:                   4.125rem !default;
 
-$card-image-border-radius:           .3125rem !default;
+$card-image-border-radius:           $card-border-radius !default;
 $card-logo-border-radius:            .25rem !default;
 
 $card-footer-text-font-size:         $x-small-font-size;
