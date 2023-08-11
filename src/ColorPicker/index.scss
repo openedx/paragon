@@ -33,18 +33,28 @@
 
 .pgn__color-error {
   font-size: 70%;
+  flex: 1 1 auto;
+  margin-left: .5rem;
+}
+
+.pgn__hex-label {
+  font-weight: bold;
+  font-size: $h5-mobile-font-size;
+  padding: .5rem;
+  margin-bottom: 0 !important;
 }
 
 .pgn__hex-form {
   display: flex;
   max-width: 180px;
   margin: 5px;
+  flex-wrap: wrap;
 
-  h5 {
-    margin: 10px;
+  div {
+    display: inline-flex;
   }
 
-  .form-field {
+  .pgn__hex-field {
     @media (min-width: map-get($grid-breakpoints, "sm")) {
       margin-inline-end: 0;
     }
