@@ -317,6 +317,7 @@ a.pgn__card {
         border-top-left-radius: $card-image-border-radius;
         border-top-right-radius: 0;
         border-bottom-left-radius: $card-image-border-radius;
+        border-bottom-right-radius: 0;
         width: auto;
         object-fit: cover;
       }
