@@ -88,7 +88,6 @@ a.pgn__card {
 
 .pgn__card {
   outline: none;
-  overflow: hidden;
 
   @include pgn-box-shadow(1, "down");
 
@@ -295,6 +294,8 @@ a.pgn__card {
     object-fit: cover;
     max-height: inherit;
     width: 100%;
+    border-top-left-radius: $card-image-border-radius;
+    border-top-right-radius: $card-image-border-radius;
     display: none;
 
     &.show {
@@ -313,6 +314,9 @@ a.pgn__card {
       .pgn__card-image-cap {
         height: 100%;
         max-width: inherit;
+        border-top-left-radius: $card-image-border-radius;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: $card-image-border-radius;
         width: auto;
         object-fit: cover;
       }
