@@ -2,6 +2,7 @@
 
 exports[`<SelectableBox.Set /> correct rendering renders without props 1`] = `
 <div
+  aria-label="test-default-label"
   className="pgn__selectable_box-set pgn__selectable_box-set--2 pgn__form-control-set"
   role="radiogroup"
 >
