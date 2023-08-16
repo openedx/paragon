@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Form, DataTable } from '~paragon-react';
+import { Form, DataTable, Container } from '~paragon-react';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import MeasuredItem from '../../components/MeasuredItem';
-import ContentWrapper from '../../components/ContentWrapper';
+import { SettingsContext } from '../../context/SettingsContext';
 
 const directions = [
   { key: '', name: 'all' },
@@ -84,6 +84,7 @@ SpaceBlock.defaultProps = {
 };
 
 export default function SpacingPage() {
+  const { settings } = useContext(SettingsContext);
   const [size, setSize] = useState<number>(3);
   const [direction, setDirection] = useState<string>('r');
 
@@ -95,10 +96,10 @@ export default function SpacingPage() {
   }));
 
   return (
-    <Layout>
+    <Layout isAutoToc>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Spacing" />
-      <ContentWrapper addAnchors>
+      <Container size={settings.containerWidth} className="py-5">
         <h1>Spacing</h1>
         <h2>Spacing according to pixels</h2>
         <DataTable
@@ -221,7 +222,7 @@ export default function SpacingPage() {
             </tr>
           </tbody>
         </table>
-      </ContentWrapper>
+      </Container>
     </Layout>
   );
 }

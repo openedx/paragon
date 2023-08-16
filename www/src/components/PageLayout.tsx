@@ -25,6 +25,7 @@ import Settings from './Settings';
 import Toc from './Toc';
 import { SettingsContext } from '../context/SettingsContext';
 import LeaveFeedback from './LeaveFeedback';
+import AutoToc from './AutoToc';
 
 if (process.env.NODE_ENV === 'development') {
   /* eslint-disable-next-line global-require */
@@ -37,6 +38,8 @@ export interface ILayout {
   hideFooterComponentMenu: boolean,
   isMdx: boolean,
   tocData: Array<number>,
+  tab?: string,
+  isAutoToc?: boolean,
 }
 
 function Layout({
@@ -45,6 +48,8 @@ function Layout({
   hideFooterComponentMenu,
   isMdx,
   tocData,
+  isAutoToc,
+  tab,
 }: ILayout) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
   const { settings } = useContext(SettingsContext);
@@ -89,8 +94,9 @@ function Layout({
             <Col
               xl={2}
               lg={3}
-              as={Toc}
+              as={isAutoToc ? AutoToc : Toc}
               data={tocData}
+              tab={tab}
               className="d-none d-lg-block"
             />
           </Row>
@@ -169,6 +175,7 @@ Layout.propTypes = {
   showMinimizedTitle: PropTypes.bool,
   hideFooterComponentMenu: PropTypes.bool,
   isMdx: PropTypes.bool,
+  tab: PropTypes.string,
 };
 
 Layout.defaultProps = {
@@ -176,6 +183,8 @@ Layout.defaultProps = {
   showMinimizedTitle: false,
   hideFooterComponentMenu: false,
   isMdx: false,
+  tab: undefined,
+  isAutoToc: false,
 };
 
 export default Layout;

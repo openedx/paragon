@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import {
-  DataTable, breakpoints, OverlayTrigger, Tooltip, Icon,
+  DataTable, breakpoints, OverlayTrigger, Tooltip, Icon, Container,
 } from '~paragon-react';
 import { QuestionMark } from '~paragon-icons';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import CodeBlock from '../../components/CodeBlock';
-import ContentWrapper from '../../components/ContentWrapper';
+import { SettingsContext } from '../../context/SettingsContext';
 
 const BREAKPOINT_DESCRIPTIONS = {
   extraSmall: { name: 'Extra small', identifier: 'xs' },
@@ -50,6 +50,7 @@ function MaxWidthCell({ row }) {
 }
 
 function Responsive() {
+  const { settings } = useContext(SettingsContext);
   const breakpointsData = Object.keys(breakpoints).map(breakpoint => {
     const { minWidth, maxWidth } = breakpoints[breakpoint];
     const breakpointData = getBreakpointDescription(breakpoint);
@@ -59,10 +60,10 @@ function Responsive() {
   });
 
   return (
-    <Layout>
+    <Layout isAutoToc>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Responsive" />
-      <ContentWrapper addAnchors>
+      <Container size={settings.containerWidth} className="py-5">
         <h1>Responsive</h1>
         <h2>Available breakpoints</h2>
         <p>
@@ -97,7 +98,7 @@ function Responsive() {
         <CodeBlock className="language-scss">
           {'@include media-breakpoint-up(map-get($grid-breakpoints, \'lg\')) { // styles here }'}
         </CodeBlock>
-      </ContentWrapper>
+      </Container>
     </Layout>
   );
 }

@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Color from 'color';
+import { Container } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
-import ContentWrapper from '../../components/ContentWrapper';
+import { SettingsContext } from '../../context/SettingsContext';
 
 const utilityClasses = {
   bg: (color: string, level: number) => (level ? `bg-${color}-${level}` : `bg-${color}`),
@@ -124,13 +125,14 @@ export interface IColorsPage {
 
 // eslint-disable-next-line react/prop-types
 export default function ColorsPage({ data }: IColorsPage) {
+  const { settings } = useContext(SettingsContext);
   parseColors(data.allCssUtilityClasses.nodes); // eslint-disable-line react/prop-types
 
   return (
-    <Layout>
+    <Layout isAutoToc>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Colors" />
-      <ContentWrapper addAnchors>
+      <Container size={settings.containerWidth} className="py-5">
         <h1>Colors</h1>
         <div className="d-flex flex-wrap">
           {colors
@@ -437,7 +439,7 @@ export default function ColorsPage({ data }: IColorsPage) {
             );
           })}
         </div>
-      </ContentWrapper>
+      </Container>
     </Layout>
   );
 }

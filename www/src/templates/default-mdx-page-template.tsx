@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { MDXProvider } from '@mdx-js/react';
 import { Link } from 'gatsby';
+import { Container } from '~paragon-react';
 import CodeBlock from '../components/CodeBlock';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
-import ContentWrapper from '../components/ContentWrapper';
+import { SettingsContext } from '../context/SettingsContext';
 
 const shortcodes = {
   h1: (props: HTMLHeadingElement) => <LinkedHeading h="1" {...props} />,
@@ -32,13 +33,15 @@ export interface IPageTemplateType {
 }
 
 export default function PageTemplate({ children, pageContext }: IPageTemplateType) {
+  const { settings } = useContext(SettingsContext);
+
   return (
-    <Layout>
+    <Layout isAutoToc>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={pageContext?.frontmatter?.title} />
-      <ContentWrapper addAnchors={false}>
+      <Container size={settings.containerWidth} className="py-5">
         <MDXProvider components={shortcodes}>{children}</MDXProvider>
-      </ContentWrapper>
+      </Container>
     </Layout>
   );
 }

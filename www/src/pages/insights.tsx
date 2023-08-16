@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 import {
+  Container,
   Tabs,
   Tab,
 } from '~paragon-react';
@@ -18,9 +19,9 @@ import ComponentsUsage from '../components/insights/ComponentsUsage';
 // @ts-ignore
 import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
-import ContentWrapper from '../components/ContentWrapper';
 import componentsUsage from '../utils/componentsUsage';
 import { IInsightsContext } from '../types/types';
+import { SettingsContext } from '../context/SettingsContext';
 
 const {
   lastModified: analysisLastUpdated,
@@ -34,6 +35,7 @@ interface TabsDataType {
 }
 
 export default function InsightsPage({ pageContext: { tab } }: { pageContext: { tab: string } }) {
+  const { settings } = useContext(SettingsContext);
   const { paragonTypes = {}, isParagonIcon = () => false } = useContext(InsightsContext) as IInsightsContext;
   const {
     components, hooks, utils, icons,
@@ -59,10 +61,10 @@ export default function InsightsPage({ pageContext: { tab } }: { pageContext: { 
     }
   };
   return (
-    <Layout>
+    <Layout isAutoToc tab={tab}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Usage Insights" />
-      <ContentWrapper addAnchors>
+      <Container size={settings.containerWidth} className="py-5">
         <header className="mb-5">
           <h1>Usage Insights</h1>
           <p>Last updated: {new Date(analysisLastUpdated).toLocaleDateString()}</p>
@@ -103,7 +105,7 @@ export default function InsightsPage({ pageContext: { tab } }: { pageContext: { 
             )}
           </Tab>
         </Tabs>
-      </ContentWrapper>
+      </Container>
     </Layout>
   );
 }
