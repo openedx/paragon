@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Form, { FormLabel } from '../../Form';
 import Badge from '../../Badge';
 import { newId } from '../../utils';
-import LabelledCheckbox from './LabelledCheckbox';
 
 function CheckboxFilter({
   column: {
@@ -27,15 +26,19 @@ function CheckboxFilter({
   return (
     <Form.Group role="group" aria-labelledby={ariaLabel.current}>
       <FormLabel id={ariaLabel.current} className="pgn__checkbox-filter-label">{Header}</FormLabel>
-      {filterChoices.map(({ name, number, value }) => (
-        <LabelledCheckbox
-          id={headerBasedId}
-          key={headerBasedId + name}
-          checked={checkedBoxes.includes(value)}
-          onChange={() => { changeCheckbox(value); }}
-          label={<>{name} {number !== undefined && <Badge variant="light">{number}</Badge>}</>}
-        />
-      ))}
+      <Form.CheckboxSet name={Header}>
+        {filterChoices.map(({ name, number, value }) => (
+          <Form.Checkbox
+            key={headerBasedId + name}
+            value={name}
+            checked={checkedBoxes.includes(value)}
+            onChange={() => changeCheckbox(value)}
+            aria-label={name}
+          >
+            {name} {number !== undefined && <Badge className="ml-2" variant="light">{number}</Badge>}
+          </Form.Checkbox>
+        ))}
+      </Form.CheckboxSet>
     </Form.Group>
   );
 }
