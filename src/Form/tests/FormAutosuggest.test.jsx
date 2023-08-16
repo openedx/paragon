@@ -187,4 +187,15 @@ describe('controlled behavior', () => {
     const updatedList = queryAllByTestId('autosuggest_optionitem');
     expect(updatedList.length).toBe(0);
   });
+
+  it('check focus on input after esc', () => {
+    const { getByTestId } = render(<FormAutosuggestTestComponent />);
+    const input = getByTestId('autosuggest_textbox_input');
+    const dropdownBtn = getByTestId('autosuggest_iconbutton');
+    userEvent.click(dropdownBtn);
+
+    userEvent.keyboard('{esc}');
+
+    expect(input.matches(':focus')).toBe(true);
+  });
 });
