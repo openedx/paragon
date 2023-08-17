@@ -24,7 +24,11 @@ function MultiSelectDropdownFilter({
 
   return (
     <DropdownButton variant="outline-primary" id={ariaLabel.current} title={Header}>
-      <Form.CheckboxSet className="pgn__dropdown-filter-checkbox-group" name={Header} aria-label={Header}>
+      <Form.CheckboxSet
+        className="pgn__dropdown-filter-checkbox-group"
+        name={Header}
+        aria-label={Header}
+      >
         {filterChoices.map(({ name, number, value }) => (
           <Form.Checkbox
             key={name}

@@ -29,7 +29,7 @@ function CheckboxFilter({
       <Form.CheckboxSet name={Header}>
         {filterChoices.map(({ name, number, value }) => (
           <Form.Checkbox
-            key={headerBasedId + name}
+            key={`${headerBasedId}${name}`}
             value={name}
             checked={checkedBoxes.includes(value)}
             onChange={() => changeCheckbox(value)}
