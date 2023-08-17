@@ -1,28 +1,28 @@
 @import "variables";
 
 .pgn__menu {
-  border-radius: $menu-border-radius;
-  box-shadow: $menu-box-shadow;
-  background-color: $menu-bg;
+  border-radius: var(--pgn-size-menu-base-border-radius);
+  box-shadow: var(--pgn-elevation-menu-box-shadow);
+  background-color: var(--pgn-color-menu-bg);
   overflow: auto;
-  max-height: $menu-max-height;
+  max-height: var(--pgn-size-menu-base-max-height);
 
   .pgn__menu-item {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: $menu-item-width;
-    color: $menu-item-color;
+    width: var(--pgn-size-menu-item-width-base);
+    color: var(--pgn-color-menu-item-color);
     text-align: center;
     vertical-align: middle;
     user-select: none;
-    background-color: $menu-item-bg;
+    background-color: var(--pgn-color-menu-item-bg);
     border: $menu-item-border;
-    padding: $menu-item-padding-y $menu-item-padding-x;
-    height: $menu-item-height;
+    padding: var(--pgn-spacing-menu-item-padding-y) var(--pgn-spacing-menu-item-padding-x);
+    height: var(--pgn-size-menu-item-height);
 
-    @media (max-width: $max-width-xs) {
-      width: $menu-item-width-xs;
+    @media (max-width: var(--pgn-size-container-max-width-xs)) {
+      width: var(--pgn-size-menu-item-width-xs);
     }
 
     .pgn__menu-item-text {
@@ -38,40 +38,40 @@
 
     @include hover {
       text-decoration: none;
-      color: $menu-item-hover-color;
-      border-color: $menu-item-hover-border-color;
-      background: $menu-item-hover-bg;
+      color: var(--pgn-color-menu-item-hover-color);
+      border-color: var(--pgn-color-menu-item-hover-border);
+      background: var(--pgn-color-menu-item-hover-bg);
     }
 
     // Disabled comes first so active can properly restyle
     &.disabled,
     &:disabled {
-      opacity: $btn-disabled-opacity;
+      opacity: var(--pgn-other-btn-disabled-opacity);
     }
 
     &.focus,
     &:focus {
-      font-weight: $font-weight-bolder;
-      background-color: $menu-item-focus-bg;
+      font-weight: var(--pgn-typography-font-weight-bolder);
+      background-color: var(--pgn-color-menu-item-focus-bg);
     }
 
     .btn-icon-before {
       margin-inline-end: .5rem;
-      margin-left: calc(#{$menu-item-icon-margin-left} * -1);
+      margin-left: calc(var(--pgn-spacing-menu-item-icon-margin-left) * -1);
 
       [dir="rtl"] & {
-        margin-right: calc(#{$menu-item-icon-margin-right} * -1);
+        margin-right: calc(var(--pgn-spacing-menu-item-icon-margin-right) * -1);
         margin-left: .5rem;
       }
     }
 
     .btn-icon-after {
       margin-inline-start: .5rem;
-      margin-right: calc(#{$menu-item-icon-margin-right} * -1);
+      margin-right: calc(var(--pgn-spacing-menu-item-icon-margin-right) * -1);
 
       [dir="rtl"] & {
         margin-right: .5rem;
-        margin-left: calc(#{$menu-item-icon-margin-left} * -1);
+        margin-left: calc(var(--pgn-spacing-menu-item-icon-margin-left) * -1);
       }
     }
   }
@@ -79,12 +79,12 @@
 
 .pgn__menu-select {
   .btn.btn-link {
-    color: $menu-select-btn-link-color;
+    color: var(--pgn-color-menu-select-btn-link-color);
 
     &:hover,
     &:focus {
-      text-decoration-line: $menu-select-btn-link-text-decoration-line;
-      text-decoration-thickness: $menu-select-btn-link-text-decoration-thickness;
+      text-decoration-line: var(--pgn-typography-menu-select-btn-link-text-decoration-line);
+      text-decoration-thickness: var(--pgn-typography-menu-select-btn-link-text-decoration-thickness);
     }
   }
 

@@ -1,7 +1,7 @@
 @mixin nav-tabs-link-focus(
   $border-color,
-  $radius: $nav-tabs-border-radius,
-  $distance: $nav-tabs-link-distance-to-border
+  $radius: var(--pgn-size-nav-tabs-border-radius),
+  $distance: var(--pgn-spacing-nav-link-distance-to-border)
 ) {
   position: relative;
   outline: 0;

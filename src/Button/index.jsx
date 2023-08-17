@@ -66,7 +66,7 @@ Button.defaultProps = {
   disabled: false,
 };
 
-Button.Deprecated = ButtonDeprecated;
+// Button.Deprecated = ButtonDeprecated;
 
 function ButtonGroup(props) {
   return <BaseButtonGroup {...props} />;

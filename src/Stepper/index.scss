@@ -56,7 +56,7 @@
     }
 
     .pgn__stepper-header-step-description {
-      font-size: $x-small-font-size;
+      font-size: var(--pgn-typography-font-size-small-x);
     }
 
     &.pgn__stepper-header-step-active ~ .pgn__stepper-header-step {

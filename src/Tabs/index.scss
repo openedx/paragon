@@ -11,9 +11,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    min-height: $tab-notification-height;
-    min-width: $tab-notification-width;
-    font-size: $tab-notification-font-size;
+    min-height: var(--pgn-size-tabs-notification-height);
+    min-width: var(--pgn-size-tabs-notification-width);
+    font-size: var(--pgn-typography-tabs-notification-font-size);
   }
 
   .pgn__tab_more.nav-link {
@@ -32,28 +32,28 @@
       margin: 0;
 
       .dropdown .dropdown-toggle {
-        padding: $tab-more-link-dropdown-toggle-padding-x $tab-more-link-dropdown-toggle-padding-y;
+        padding: var(--pgn-spacing-tab-more-link-dropdown-toggle-padding-x) var(--pgn-spacing-tab-more-link-dropdown-toggle-padding-y);
 
         &:focus {
-          background-color: $tab-more-link-dropdown-toggle-focus-bg;
-          border-color: $tab-more-link-dropdown-toggle-focus-border-color;
-          color: $tab-more-link-dropdown-toggle-focus-color;
+          background-color: var(--pgn-color-tab-more-link-dropdown-toggle-bg-focus);
+          border-color: var(--pgn-color-tab-more-link-dropdown-toggle-border-focus);
+          color: var(--pgn-color-tab-more-link-dropdown-toggle-text-focus);
 
           &.btn.btn-link {
-            color: $tab-more-link-dropdown-toggle-btn-focus-color;
-            border-color: $tab-more-link-dropdown-toggle-btn-focus-border-color;
+            color: var(--pgn-color-tab-more-link-dropdown-toggle-btn-text-focus);
+            border-color: var(--pgn-color-tab-more-link-dropdown-toggle-btn-border-focus);
           }
         }
       }
 
       &.active {
         .dropdown .dropdown-toggle {
-          color: $tab-more-link-dropdown-toggle-active-color;
+          color: var(--pgn-color-tab-more-link-dropdown-toggle-text-active);
         }
 
         &:hover {
           .dropdown .dropdown-toggle {
-            background-color: $tab-more-link-dropdown-toggle-hover-color;
+            background-color: var(--pgn-color-tab-more-link-dropdown-toggle-text-hover);
           }
         }
       }
@@ -63,27 +63,27 @@
   // Nav inverse pills
   &.nav-inverse-pills .pgn__tab_more.nav-link {
     .dropdown .dropdown-toggle {
-      padding: $tab-inverse-pills-link-dropdown-toggle-padding-x $tab-inverse-pills-link-dropdown-toggle-padding-y;
+      padding: var(--pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-x) var(--pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-y);
       border: none;
 
       &:focus {
-        background-color: $tab-inverse-pills-link-dropdown-toggle-focus-bg;
-        color: $tab-inverse-pills-link-dropdown-toggle-focus-color;
+        background-color: var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-bg-focus);
+        color: var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-text-focus);
       }
     }
 
     &.active .dropdown .dropdown-toggle {
-      color: $tab-inverse-pills-link-dropdown-toggle-active-color;
+      color: var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-text-active);
 
       &:hover {
-        color: $tab-inverse-pills-link-dropdown-toggle-active-hover-color;
-        background-color: $tab-inverse-pills-link-dropdown-toggle-active-hover-bg;
+        color: var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-text-active-hover);
+        background-color: var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-bg-active-hover);
       }
 
       &:focus {
         @include nav-tabs-link-focus(
           $tab-inverse-pills-link-dropdown-toggle-focus-border-color,
-          $nav-tabs-border-radius,
+          var(--pgn-size-nav-tabs-border-radius),
           $tab-inverse-pills-link-dropdown-distance
         );
       }
@@ -92,15 +92,15 @@
 
   // Nav tabs
   &.nav-tabs .pgn__tab_more.nav-link .dropdown .dropdown-toggle {
-    padding: .563rem $tab-more-link-dropdown-toggle-padding-y;
+    padding: .563rem var(--pgn-spacing-tab-more-link-dropdown-toggle-padding-y);
   }
 
   // Nav inverse tabs
   &.nav-inverse-tabs .pgn__tab_more.nav-link .dropdown .dropdown-toggle {
-    padding: $tab-inverse-tabs-link-dropdown-toggle-padding-x $tab-inverse-tabs-link-dropdown-toggle-padding-y;
+    padding: var(--pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-padding-x) var(--pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-padding-y);
 
     &:hover {
-      background-color: $tab-inverse-tabs-link-dropdown-toggle-hover-bg;
+      background-color: var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-bg-hover);
     }
   }
 
