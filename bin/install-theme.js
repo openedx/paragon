@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 const inquirer = require('inquirer');
 const childProcess = require('child_process');
 
@@ -8,7 +7,7 @@ function promptUserForTheme() {
       type: 'input',
       name: 'theme',
       message: 'What @edx/brand package do you want to install?',
-      default: '',
+      default: '@edx/brand-openedx@latest',
     },
   ]);
 }

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// eslint-disable-next-line import/no-extraneous-dependencies
 const chalk = require('chalk');
 const themeCommand = require('./install-theme');
 
