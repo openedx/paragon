@@ -133,7 +133,7 @@ function IconsTable({ iconNames }) {
             className="pgn-doc__icons-table__preview-title"
             onClick={() => copyToClipboard(currentIcon)}
           >
-            <h3 className="rounded">{currentIcon}</h3>
+            <p className="rounded h3">{currentIcon}</p>
             <Icon
               key="ContentCopy"
               src={IconComponents.ContentCopy}
