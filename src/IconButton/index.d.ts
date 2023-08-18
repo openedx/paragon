@@ -4,7 +4,7 @@ export type IconButtonVariants = 'primary' | 'secondary' | 'success' | 'warning'
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
-    iconAs?: React.ReactNode;
+    iconAs?: React.ComponentType;
     src?: React.ReactElement;
     alt: string;
     invertColors?: boolean;
