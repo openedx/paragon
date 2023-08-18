@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
+import { SettingsContext } from '../../context/SettingsContext';
 
 export type WeightLabelsTypes = {
   [key: string]: string,
@@ -42,11 +43,13 @@ const measuredTypeProps = {
 };
 
 export default function TypographyPage() {
+  const { settings } = useContext(SettingsContext);
+
   return (
-    <Layout>
-      <Container size="xl" className="py-5">
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <SEO title="Typography" />
+    <Layout isAutoToc>
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <SEO title="Typography" />
+      <Container size={settings.containerWidth} className="py-5">
         <h1>Typography</h1>
         <table className="w-100 table pgn-doc__status-table">
           <tbody>
