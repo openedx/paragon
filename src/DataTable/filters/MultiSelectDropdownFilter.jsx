@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import Badge from '../../Badge';
+import Stack from '../../Stack';
 import { DropdownButton } from '../../Dropdown';
 import { newId } from '../../utils';
 import Form from '../../Form';
@@ -37,7 +38,9 @@ function MultiSelectDropdownFilter({
             onChange={() => changeCheckbox(value)}
             aria-label={name}
           >
-            {name} {number && <Badge className="ml-2" variant="light">{number}</Badge>}
+            <Stack direction="horizontal" gap={2}>
+              {name} {number && <Badge variant="light">{number}</Badge>}
+            </Stack>
           </Form.Checkbox>
         ))}
       </Form.CheckboxSet>

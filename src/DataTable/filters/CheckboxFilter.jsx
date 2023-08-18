@@ -2,6 +2,7 @@ import React, { useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import Form, { FormLabel } from '../../Form';
 import Badge from '../../Badge';
+import Stack from '../../Stack';
 import { newId } from '../../utils';
 
 function CheckboxFilter({
@@ -35,7 +36,9 @@ function CheckboxFilter({
             onChange={() => changeCheckbox(value)}
             aria-label={name}
           >
-            {name} {number !== undefined && <Badge className="ml-2" variant="light">{number}</Badge>}
+            <Stack direction="horizontal" gap={2}>
+              {name} {number !== undefined && <Badge variant="light">{number}</Badge>}
+            </Stack>
           </Form.Checkbox>
         ))}
       </Form.CheckboxSet>
