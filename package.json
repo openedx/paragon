@@ -8,6 +8,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "bin": {
+    "paragon": "./bin/paragon-scripts.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/openedx/paragon.git"
@@ -33,7 +36,8 @@
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
     "generate-component": "npm start --workspace=component-generator",
-    "start-example-mfe": "npm run start --workspace=example",
+    "example:start": "npm start --workspace=example",
+    "example:start:with-theme": "npm run start:with-theme --workspace=example",
     "generate-changelog": "node generate-changelog.js",
     "i18n_compile": "formatjs compile-folder --format transifex ./src/i18n/messages ./src/i18n/messages",
     "i18n_extract": "formatjs extract 'src/**/*.{jsx,js,tsx,ts}' --out-file ./src/i18n/transifex_input.json --format transifex",
@@ -48,10 +52,13 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@popperjs/core": "^2.11.4",
     "bootstrap": "^4.6.2",
+    "chalk": "^4.1.2",
+    "child_process": "^1.0.2",
     "classnames": "^2.3.1",
     "email-prop-type": "^3.0.0",
     "file-selector": "^0.6.0",
     "font-awesome": "^4.7.0",
+    "inquirer": "^8.2.5",
     "glob": "^8.0.3",
     "lodash.uniqby": "^4.7.0",
     "mailto-link": "^2.0.0",
