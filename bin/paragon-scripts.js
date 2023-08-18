@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const chalk = require('chalk');
-const themeCommand = require('./install-theme');
+const themeCommand = require('../lib/install-theme');
 
 // command: executor function
 const COMMANDS = {
