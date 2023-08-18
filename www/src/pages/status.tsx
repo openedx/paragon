@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { Table, Container } from '~paragon-react';
 import { ComponentStatus } from '../components/doc-elements';
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
+import { SettingsContext } from '../context/SettingsContext';
 
 export interface IComponents {
   frontmatter?: string,
@@ -11,11 +12,13 @@ export interface IComponents {
 }
 
 export default function StatusPage() {
+  const { settings } = useContext(SettingsContext);
+
   return (
-    <Layout>
-      <Container size="md" className="py-5">
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <SEO title="Status" />
+    <Layout isAutoToc>
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <SEO title="Status" />
+      <Container size={settings.containerWidth} className="py-5">
         <h1>Library Status</h1>
 
         <h3>Components Status</h3>
