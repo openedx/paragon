@@ -10,6 +10,8 @@ export interface OverflowScrollProps {
     disableOpacityMasks?: boolean;
     onScrollPrevious?: () => void;
     onScrollNext?: () => void;
+    offset?: number | string;
+    offsetType?: 'percentage' | 'fixed';
 }
 
 declare const OverflowScroll: React.FC<OverflowScrollProps> & {
