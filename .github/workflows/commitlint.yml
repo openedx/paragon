@@ -1,4 +1,5 @@
 # Run commitlint on the commit messages in a pull request.
+# Currently overrides common openedx action as a workaround for fixing https://github.com/conventional-changelog/commitlint/issues/3256
 
 name: Lint Commit Messages
 
@@ -7,4 +8,24 @@ on:
 
 jobs:
   commitlint:
-    uses: openedx/.github/.github/workflows/commitlint.yml@master
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+        with:
+          # Fetch 100 commits.  Should be enough?
+          fetch-depth: 100
+
+      # This step is needed to fix https://github.com/conventional-changelog/commitlint/issues/3256
+      - name: Remove tsconfig file
+        run: rm tsconfig.json
+
+      - name: Download a local configuration file if needed
+        run: |
+          if [[ ! -f commitlint.config.js ]]; then
+            echo "Downloading the default commitlint config from edx_lint"
+            wget --no-verbose -O commitlint.config.js https://raw.githubusercontent.com/openedx/edx-lint/HEAD/edx_lint/files/commitlint.config.js
+          fi
+
+      - name: Run commitlint
+        uses: wagoid/commitlint-github-action@v5

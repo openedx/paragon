@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, Icon, Bubble } from '@edx/paragon'; // eslint-disable-line
+import { Button, Form, Icon, Bubble, Skeleton } from '@edx/paragon'; // eslint-disable-line
 import { FavoriteBorder } from '@edx/paragon/icons'; // eslint-disable-line
 
 const MyComponent = () => {
@@ -27,6 +27,7 @@ const MyComponent = () => {
         </Form.Group>
         <Button onClick={handleClick}>Submit</Button>
       </Form>
+      <Skeleton />
     </div>
   );
 };
