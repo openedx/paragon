@@ -7,7 +7,7 @@ import { Container, DataTable } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
-
+import { SettingsContext } from '../../context/SettingsContext';
 import { CodeCell } from '../../components/TableCells';
 import { SettingsContext } from '../../context/SettingsContext';
 

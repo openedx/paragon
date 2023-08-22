@@ -11,6 +11,7 @@ const commandAliases = {
   '--version': 'version',
 };
 
+// command: executor function
 const COMMANDS = {
   /**
   *'command-name': {

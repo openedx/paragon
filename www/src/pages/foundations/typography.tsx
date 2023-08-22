@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from '~paragon-react';
 import Layout from '../../components/PageLayout';
 import SEO from '../../components/SEO';
@@ -12,6 +12,7 @@ import {
 } from '../../components/typography-page';
 
 export default function TypographyPage({ pageContext }) {
+  const { settings } = useContext(SettingsContext);
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}

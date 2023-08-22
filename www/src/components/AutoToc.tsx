@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import slugify from 'slugify';
 import { Sticky } from '~paragon-react';
+import slugify from 'slugify';
 
 interface IItems {
   url?: string,

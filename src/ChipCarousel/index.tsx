@@ -4,7 +4,9 @@ import { useIntl } from 'react-intl';
 import classNames from 'classnames';
 // @ts-ignore
 import { OverflowScroll, OverflowScrollContext } from '../OverflowScroll';
+// @ts-ignore
 import IconButton from '../IconButton';
+// @ts-ignore
 import Icon from '../Icon';
 // @ts-ignore
 import { ArrowForward, ArrowBack } from '../../icons';
