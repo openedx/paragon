@@ -79,7 +79,7 @@ function FormAutosuggest({
     return childrenOpt;
   }
 
-  const handleExpand = (e) => {
+  const handleExpand = () => {
     setIsMenuClosed(!isMenuClosed);
 
     const newState = {
@@ -87,7 +87,7 @@ function FormAutosuggest({
     };
 
     if (isMenuClosed) {
-      newState.dropDownItems = getItems(e.target.value);
+      newState.dropDownItems = getItems(state.displayValue);
       newState.errorMessage = '';
     }
 

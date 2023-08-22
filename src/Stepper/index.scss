@@ -1,0 +1,84 @@
+@import "variables";
+
+.pgn__stepper-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $stepper-header-bg;
+  padding: $stepper-header-padding-y $stepper-header-padding-x;
+  min-height: $stepper-header-min-height;
+
+  .pgn__stepper-header-step-list {
+    list-style: none;
+    padding: $stepper-header-step-list-padding-y $stepper-header-step-list-padding-x;
+    display: flex;
+    align-items: center;
+    margin: $stepper-header-step-list-margin;
+    flex-grow: 1;
+    justify-content: center;
+
+    .pgn__stepper-header-line {
+      display: block;
+      height: $stepper-header-line-height;
+      background: $stepper-header-line-bg;
+      flex-basis: 80px;
+      margin: 0 .5rem;
+    }
+
+    button.pgn__stepper-header-step {
+      border: $stepper-header-step-border;
+      background-color: $stepper-header-step-bg;
+    }
+  }
+
+  .pgn__stepper-header-step {
+    display: flex;
+    align-items: center;
+    color: $stepper-header-step-color;
+    flex-shrink: 1;
+    min-width: $stepper-header-step-min-width;
+    padding: $stepper-header-step-padding;
+
+    .pgn__bubble {
+      margin-inline-end: .5rem;
+      flex-shrink: 0;
+    }
+
+    .pgn__stepper-header-step-title-description {
+      min-width: 0;
+    }
+
+    .pgn__stepper-header-step-title {
+      white-space: nowrap;
+      overflow: hidden;
+      min-width: 0;
+      text-overflow: ellipsis;
+    }
+
+    .pgn__stepper-header-step-description {
+      font-size: var(--pgn-typography-font-size-small-x);
+    }
+
+    &.pgn__stepper-header-step-active ~ .pgn__stepper-header-step {
+      color: $stepper-header-active-step-bg;
+    }
+
+    &.pgn__stepper-header-step-has-error {
+      .pgn__bubble {
+        background: transparent;
+        box-shadow:
+          inset 0 0 0
+          $stepper-header-step-error-bubble-shadow-width
+          $stepper-header-step-error-bubble-color;
+
+        * {
+          color: $stepper-header-step-error-bubble-color;
+        }
+      }
+
+      .pgn__stepper-header-step-description {
+        color: $stepper-header-step-error-description-color;
+      }
+    }
+  }
+}
