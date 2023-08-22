@@ -4,7 +4,6 @@ import debounce from 'lodash.debounce';
 import { Icon, SearchField, Toast } from '~paragon-react';
 import * as IconComponents from '~paragon-icons';
 
-const ICON_NAMES = Object.keys(IconComponents);
 const WINDOW_HEIGHT = 2400;
 const ROW_HEIGHT = 100;
 const ROWS_PER_WINDOW = WINDOW_HEIGHT / ROW_HEIGHT;
@@ -59,14 +58,14 @@ function TableRow({
   ));
 }
 
-function IconsTable() {
+function IconsTable({ iconNames }) {
   const previewRef = React.useRef(null);
   const tableRef = React.useRef(null);
   const tableBottom = React.useRef(null);
   const [searchValue, setSearchValue] = useState('');
   const [tableWidth, setTableWidth] = useState(0);
-  const [data, setData] = useState({ iconsList: ICON_NAMES, rowsCount: ROWS_PER_WINDOW });
-  const [currentIcon, setCurrentIcon] = useState(ICON_NAMES[0]);
+  const [data, setData] = useState({ iconsList: iconNames, rowsCount: ROWS_PER_WINDOW });
+  const [currentIcon, setCurrentIcon] = useState(iconNames[0]);
   const [showToast, setShowToast] = useState(false);
   const currentIconImport = `import { ${currentIcon} } from '@edx/paragon/icons';`;
   const { rowsCount, iconsList } = data;
@@ -98,7 +97,9 @@ function IconsTable() {
           setTableWidth(entries[i].contentRect.width);
         }
       });
-      intersectionObserver.observe(tableBottom.current);
+      if (tableBottom.current) {
+        intersectionObserver.observe(tableBottom.current);
+      }
       resizeObserver.observe(tableRef.current);
       return () => {
         intersectionObserver.disconnect();
@@ -109,12 +110,12 @@ function IconsTable() {
   }, []);
 
   useEffect(() => {
-    const list = ICON_NAMES.filter(name => name.toLowerCase().includes(searchValue.toLowerCase()));
+    const list = iconNames.filter(name => name.toLowerCase().includes(searchValue.toLowerCase()));
     if (searchValue.trim() !== '') {
       global.analytics?.track('openedx.paragon.docs.icons-table.search', { value: searchValue, amount: list.length });
     }
     setData({ rowsCount: ROWS_PER_WINDOW, iconsList: list });
-  }, [searchValue]);
+  }, [iconNames, searchValue]);
 
   const rowsIndices = useMemo(() => [...Array(rowsCount).keys()], [rowsCount]);
 
@@ -132,7 +133,7 @@ function IconsTable() {
             className="pgn-doc__icons-table__preview-title"
             onClick={() => copyToClipboard(currentIcon)}
           >
-            <h3 className="rounded">{currentIcon}</h3>
+            <p className="rounded h3">{currentIcon}</p>
             <Icon
               key="ContentCopy"
               src={IconComponents.ContentCopy}
@@ -186,6 +187,10 @@ function IconsTable() {
     </>
   );
 }
+
+IconsTable.propTypes = {
+  iconNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 TableCell.propTypes = {
   iconName: PropTypes.string.isRequired,
