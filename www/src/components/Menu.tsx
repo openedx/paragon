@@ -172,7 +172,7 @@ interface IMenuQueryComponents {
 }
 
 const foundationLinks = [
-  'Colors', 'Design-Tokens', 'Elevation', 'Typography', 'Layout', 'Spacing', 'Icons', 'CSS-Utilities', 'Responsive',
+  'Colors', 'Design-Tokens', 'Elevation', 'Typography', 'Layout', 'Spacing', 'Icons', 'CSS-Utilities', 'Responsive', 'Brand-icons',
 ];
 
 function Menu() {
