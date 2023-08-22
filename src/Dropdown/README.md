@@ -18,7 +18,7 @@ devStatus: 'Done'
 
 <p className="lead">
   This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap.github.io/components/dropdowns/" target="_blank" rel="noopener noreferrer">
+  <a href="https://react-bootstrap-v4.netlify.app/components/dropdowns/" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for documentation.
   </a>
 </p>

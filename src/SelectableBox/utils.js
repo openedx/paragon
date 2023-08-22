@@ -1,15 +1,15 @@
-import Form from '../Form';
+import Form, { CheckboxControl, RadioControl } from '../Form';
 
 // eslint-disable-next-line import/prefer-default-export,consistent-return
 export const getInputType = (component, type) => {
   if (component === 'SelectableBox') {
     switch (type) {
       case 'radio':
-        return Form.Radio;
+        return RadioControl;
       case 'checkbox':
-        return Form.Checkbox;
+        return CheckboxControl;
       default:
-        return Form.Radio;
+        return RadioControl;
     }
   } else if (component === 'SelectableBoxSet') {
     switch (type) {

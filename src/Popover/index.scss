@@ -1,0 +1,31 @@
+@import "variables";
+@import "mixins";
+@import "~bootstrap/scss/popover";
+
+.popover {
+  filter: $popover-box-shadow;
+
+  .popover-header {
+    display: flex;
+    align-items: center;
+    font-size: $h5-font-size;
+  }
+
+  .pgn__icon {
+    margin-inline-end: $popover-icon-margin-right;
+    height: $popover-icon-height;
+    width: $popover-icon-width;
+  }
+}
+
+.popover-success {
+  @include get-popover-variant($popover-success-bg, $popover-success-icon-color);
+}
+
+.popover-warning {
+  @include get-popover-variant($popover-warning-bg, $popover-warning-icon-color);
+}
+
+.popover-danger {
+  @include get-popover-variant($popover-danger-bg, $popover-danger-icon-color);
+}
