@@ -1,0 +1,31 @@
+@mixin get-popover-variant($bg, $icon-color) {
+  background: $bg;
+
+  .popover-header {
+    background: $bg;
+
+    &::before {
+      border-bottom-color: $bg;
+    }
+  }
+
+  .pgn__icon {
+    color: $icon-color;
+  }
+
+  &.bs-popover-bottom .arrow::after {
+    border-bottom-color: $bg;
+  }
+
+  &.bs-popover-top .arrow::after {
+    border-top-color: $bg;
+  }
+
+  &.bs-popover-right .arrow::after {
+    border-right-color: $bg;
+  }
+
+  &.bs-popover-left .arrow::after {
+    border-left-color: $bg;
+  }
+}

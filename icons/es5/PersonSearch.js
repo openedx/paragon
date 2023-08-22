@@ -1,19 +1,17 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 import * as React from "react";
-function SvgPersonSearch(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    width: 24,
-    height: 24,
-    viewBox: "0 0 24 24",
-    fill: "none"
-  }, props), /*#__PURE__*/React.createElement("circle", {
-    cx: 10,
-    cy: 8,
-    r: 4
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M10.35 14.01C7.62 13.91 2 15.27 2 18v2h9.54c-2.47-2.76-1.23-5.89-1.19-5.99zm9.08 4.01c.36-.59.57-1.28.57-2.02 0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4c.74 0 1.43-.22 2.02-.57L20.59 22 22 20.59l-2.57-2.57zM16 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z",
-    fill: "currentColor"
-  }));
-}
+const SvgPersonSearch = props => /*#__PURE__*/React.createElement("svg", _extends({
+  xmlns: "http://www.w3.org/2000/svg",
+  width: 24,
+  height: 24,
+  viewBox: "0 0 24 24",
+  fill: "none"
+}, props), /*#__PURE__*/React.createElement("circle", {
+  cx: 10,
+  cy: 8,
+  r: 4
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M10.35 14.01C7.62 13.91 2 15.27 2 18v2h9.54c-2.47-2.76-1.23-5.89-1.19-5.99zm9.08 4.01c.36-.59.57-1.28.57-2.02 0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4c.74 0 1.43-.22 2.02-.57L20.59 22 22 20.59l-2.57-2.57zM16 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z",
+  fill: "currentColor"
+}));
 export default SvgPersonSearch;
