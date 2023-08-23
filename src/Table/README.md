@@ -9,10 +9,10 @@ status: 'Deprecate soon'
 designStatus: 'TBD'
 devStatus: 'TBD'
 notes: |
-  Potentially does too much work. Consider if should be multiple components: Table, TableHeader, SortableTable, etc.
+  Replaced by DataTable
 ---
 
-## unstyled
+## Unstyled
 
 ```jsx live
 <Table
@@ -77,7 +77,7 @@ notes: |
 />
 ```
 
-## table-striped
+## Table-striped
 
 ```jsx live
 <Table
@@ -143,7 +143,7 @@ notes: |
 />
 ```
 
-## default heading
+## Default heading
 
 ```jsx live
 <Table
@@ -209,7 +209,7 @@ notes: |
 />
 ```
 
-## responsive
+## Responsive
 
 ```jsx live
 <Table
@@ -275,7 +275,7 @@ notes: |
 />
 ```
 
-## sortable
+## Sortable
 
 ```jsx live
 () => {
@@ -373,7 +373,7 @@ notes: |
 };
 ```
 
-## fixed
+## Fixed
 
 ```jsx live
 <Table
@@ -439,7 +439,7 @@ notes: |
 />
 ```
 
-## row header
+## Row header
 
 ```jsx live
 <Table

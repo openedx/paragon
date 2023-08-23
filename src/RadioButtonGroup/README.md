@@ -9,11 +9,10 @@ status: 'Deprecate Soon'
 designStatus: 'To Do'
 devStatus: 'To Do'
 notes: |
-  Refactor to use Input component
-  and refresh checkbox designs
+  Replaced by Form.Radio and From.RadioSet
 ---
 
-## unselected minimal usage
+## Unselected minimal usage
 
 ```jsx live
 <RadioButtonGroup
@@ -31,7 +30,7 @@ notes: |
 </RadioButtonGroup>
 ```
 
-## selected minimal usage
+## Selected minimal usage
 
 ```jsx live
 <RadioButtonGroup
