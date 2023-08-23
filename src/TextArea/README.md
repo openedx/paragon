@@ -9,10 +9,10 @@ status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'To Do'
 notes: |
-  Replaced by Input and ValidationFormGroup
+  Replaced by Form.Control
 ---
 
-## minimal usage
+## Minimal usage
 
 ```jsx live
 <TextArea
@@ -22,7 +22,7 @@ notes: |
 />
 ```
 
-## scrollable
+## Scrollable
 
 ```jsx live
 <TextArea
@@ -32,7 +32,7 @@ notes: |
 />
 ```
 
-## validation
+## Validation
 
 ```jsx live
 <TextArea
@@ -52,7 +52,7 @@ notes: |
 />
 ```
 
-## label as element
+## Label as element
 
 ```jsx live
 <TextArea
