@@ -9,22 +9,22 @@ status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'To Do'
 notes: |
-  Replaced by Input and ValidationFormGroup
+  Replaced by Form.Control
 ---
 
-## minimal usage
+## Minimal usage
 
 ```jsx live
 <InputText name="name" label="First Name" value="Foo Bar" />
 ```
 
-## read only
+## Read only
 
 ```jsx live
 <InputText name="inputState" label="Input State" value="Read Only" readOnly />
 ```
 
-## validation
+## Validation
 
 ```jsx live
 <InputText
@@ -45,7 +45,7 @@ notes: |
 />
 ```
 
-### validation with danger theme
+### Validation with danger theme
 
 ```jsx live
 <InputText
@@ -67,7 +67,7 @@ notes: |
 />
 ```
 
-### label as element
+### Label as element
 
 ```jsx live
 <InputText
@@ -77,7 +77,7 @@ notes: |
 />
 ```
 
-### focus test
+### Focus test
 
 ```jsx live
 class FocusInputWrapper extends React.Component {
@@ -118,7 +118,7 @@ class FocusInputWrapper extends React.Component {
 }
 ```
 
-### different textual input types
+### Different textual input types
 
 ```jsx live
 <form>
@@ -209,7 +209,7 @@ class FocusInputWrapper extends React.Component {
 </form>
 ```
 
-### price with step
+### Price with step
 
 ```jsx live
 <InputText
@@ -222,13 +222,13 @@ class FocusInputWrapper extends React.Component {
 />
 ```
 
-### displayed inline
+### Displayed inline
 
 ```jsx live
 <InputText name="username" label="Username" value="foobar" inline />
 ```
 
-### with input group addons
+### With input group addons
 
 ```jsx live
 <form>

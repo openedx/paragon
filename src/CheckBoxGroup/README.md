@@ -9,7 +9,7 @@ status: 'Deprecate Soon'
 designStatus: 'To Do'
 devStatus: 'To Do'
 notes: |
-  Refactor to use Input component and refresh checkbox designs
+  Replaced by Form.Checkbox and Form.CheckboxSet
 ---
 
 ## Basic Usage
