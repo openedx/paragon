@@ -1,5 +1,13 @@
 @import "mixins";
 
+$nav-pills-link-active-border-color: var(--pgn-color-white);
+$nav-inverse-pills-link-active-focus-hover-border-color: var(--pgn-color-primary-base);
+$nav-tabs-link-active-border-color: transparent;
+$nav-inverse-tabs-dropdown-border-color: transparent;
+$nav-tabs-link-disabled-border-color: transparent;
+$nav-tabs-focus-border-color: transparent;
+$nav-tabs-disabled-bg: transparent;
+
 // Base class
 //
 // Kickstart any navigation component with a set of style resets. Works with
@@ -42,7 +50,7 @@
     border: var(--pgn-size-nav-pills-link-border-width) solid var(--pgn-color-nav-pills-base-link-border);
 
     &:focus {
-      @include nav-tabs-link-focus($nav-tabs-link-focus-border-color, $nav-pills-border-radius);
+      @include nav-tabs-link-focus(var(--pgn-border-color-nav-tabs-link-border-focus), var(--pgn-size-nav-pills-border-radius));
     }
 
     &:hover {
@@ -52,12 +60,12 @@
 
     &.active,
     .nav-item.show .nav-link {
-      color: $nav-pills-link-active-color;
-      background-color: $nav-pills-link-active-bg;
+      color: var(--pgn-color-nav-pills-base-link-active-text);
+      background-color: var(--pgn-color-nav-pills-base-link-active-bg);
       border-color: $nav-pills-link-active-border-color;
 
       &:focus {
-        @include nav-tabs-link-focus($nav-tabs-link-focus-border-color, $nav-pills-border-radius);
+        @include nav-tabs-link-focus(var(--pgn-border-color-nav-tabs-link-border-focus), var(--pgn-size-nav-pills-border-radius));
       }
     }
   }
@@ -98,11 +106,11 @@
       }
 
       &:focus {
-        border-color: $nav-inverse-pills-link-active-focus-border-color;
+        border-color: var(--pgn-color-nav-pills-inverse-link-border-active-focus);
 
         &:hover {
-          background-color: $nav-inverse-pills-link-active-focus-hover-bg;
-          color: $nav-inverse-pills-link-active-focus-color;
+          background-color: var(--pgn-color-nav-pills-inverse-link-bg-active-hover);
+          color: var(--pgn-color-nav-pills-inverse-link-text-active-focus);
           border-color: $nav-inverse-pills-link-active-focus-hover-border-color;
         }
       }
@@ -119,7 +127,7 @@
       border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-tabs-inverse-link-border-bottom);
 
       .dropdown .dropdown-toggle {
-        border-bottom: $nav-tabs-border-width solid $nav-inverse-tabs-dropdown-border-color;
+        border-bottom: var(--pgn-size-nav-tabs-border-width) solid $nav-inverse-tabs-dropdown-border-color;
 
         &:hover {
           border-bottom: none;
@@ -157,7 +165,7 @@
 
   button.nav-link {
     border: none;
-    border-bottom: $nav-tabs-border-width solid $nav-tabs-link-border-color;
+    border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-link-border);
 
     &.disabled {
       border-color: $nav-tabs-link-disabled-border-color;
@@ -165,12 +173,12 @@
   }
 
   .nav-link {
-    margin-bottom: calc(#{$nav-tabs-border-width} * -1);
+    margin-bottom: calc(var(--pgn-size-nav-tabs-border-width) * -1);
 
     @include border-top-radius(var(--pgn-size-nav-tabs-border-radius));
 
     &:hover {
-      background-color: $nav-tabs-link-hover-bg;
+      background-color: var(--pgn-color-nav-tabs-base-link-hover-bg);
     }
 
     .dropdown {
@@ -178,7 +186,7 @@
     }
 
     &:focus {
-      border-bottom: $nav-tabs-border-width solid $nav-tabs-focus-border-color;
+      border-bottom: var(--pgn-size-nav-tabs-border-width) solid $nav-tabs-focus-border-color;
 
       @include nav-tabs-link-focus(var(--pgn-border-color-nav-tabs-link-border-focus));
     }
@@ -191,9 +199,9 @@
 
   .nav-link.active,
   .nav-item.show .nav-link {
-    color: $nav-tabs-link-active-color;
-    background-color: $nav-tabs-link-active-bg;
-    border-bottom: $nav-tabs-border-width solid $nav-tabs-link-active-border-color;
+    color: var(--pgn-color-nav-tabs-base-link-active-text);
+    background-color: var(--pgn-color-nav-tabs-base-link-active-bg);
+    border-bottom: var(--pgn-size-nav-tabs-border-width) solid $nav-tabs-link-active-border-color;
 
     &:hover {
       background-color: var(--pgn-color-nav-tabs-base-link-hover-bg);
