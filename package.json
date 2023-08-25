@@ -8,13 +8,11 @@
   "bin": {
     "build-design-tokens": "./tokens/build-tokens.js",
     "replace-scss-with-css": "./tokens/replace-variables.js",
-    "build-scss": "./build-scss.js"
+    "build-scss": "./build-scss.js",
+    "paragon": "./bin/paragon-scripts.js"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "bin": {
-    "paragon": "./bin/paragon-scripts.js"
   },
   "repository": {
     "type": "git",
@@ -52,7 +50,7 @@
     "type-check:watch": "npm run type-check -- --watch",
     "build-types": "tsc --emitDeclarationOnly",
     "playroom:start": "npm run playroom:start --workspace=www",
-    "playroom:build": "npm run playroom:build --workspace=www"
+    "playroom:build": "npm run playroom:build --workspace=www",
     "build-tokens": "node tokens/build-tokens.js --build-dir ./styles/css",
     "replace-variables-usage-with-css": "node tokens/replace-variables.js -p src -t usage",
     "replace-variables-definition-with-css": "node tokens/replace-variables.js -p src -t definition"

@@ -5,7 +5,7 @@ function onCreateWebpackConfig(actions) {
     resolve: {
       alias: {
         '~paragon-react': path.resolve(__dirname, '../../src'),
-        '~paragon-style': path.resolve(__dirname, '../../scss'),
+        '~paragon-style': path.resolve(__dirname, '../../styles'),
         '~paragon-icons': path.resolve(__dirname, '../../icons'),
       },
     },
