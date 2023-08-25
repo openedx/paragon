@@ -1,3 +1,6 @@
+$tab-inverse-pills-link-dropdown-toggle-focus-border-color: var(--pgn-color-white);
+$tab-inverse-pills-link-dropdown-distance: 5px;
+
 .pgn__tabs {
   flex-wrap: nowrap;
 
@@ -83,7 +86,7 @@
       &:focus {
         @include nav-tabs-link-focus(
           $tab-inverse-pills-link-dropdown-toggle-focus-border-color,
-          $nav-tabs-border-radius,
+          var(--pgn-size-nav-tabs-border-radius),
           $tab-inverse-pills-link-dropdown-distance
         );
       }
@@ -92,7 +95,7 @@
 
   // Nav tabs
   &.nav-tabs .pgn__tab_more.nav-link .dropdown .dropdown-toggle {
-    padding: .563rem $tab-more-link-dropdown-toggle-padding-y;
+    padding: .563rem var(--pgn-spacing-tab-more-link-dropdown-toggle-padding-y);
   }
 
   // Nav inverse tabs
