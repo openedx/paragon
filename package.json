@@ -10,7 +10,8 @@
     "build-design-tokens": "./tokens/build-tokens.js",
     "paragon": "./bin/paragon-scripts.js",
     "replace-scss-with-css": "./tokens/replace-variables.js",
-    "build-scss": "./build-scss.js"
+    "build-scss": "./build-scss.js",
+    "paragon": "./bin/paragon-scripts.js"
   },
   "publishConfig": {
     "access": "public"

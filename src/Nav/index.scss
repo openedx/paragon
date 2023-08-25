@@ -1,5 +1,13 @@
 @import "mixins";
 
+$nav-pills-link-active-border-color: var(--pgn-color-white);
+$nav-inverse-pills-link-active-focus-hover-border-color: var(--pgn-color-primary-base);
+$nav-tabs-link-active-border-color: transparent;
+$nav-inverse-tabs-dropdown-border-color: transparent;
+$nav-tabs-link-disabled-border-color: transparent;
+$nav-tabs-focus-border-color: transparent;
+$nav-tabs-disabled-bg: transparent;
+
 // Base class
 //
 // Kickstart any navigation component with a set of style resets. Works with
@@ -101,10 +109,9 @@
 
       &:focus {
         border-color: var(--pgn-color-nav-pills-inverse-link-border-active-focus);
-        background-color: var(--pgn-color-white);
 
         &:hover {
-          background-color: var(--pgn-color-nav-pills-inverse-link-bg-active-focus-hover);
+          background-color: var(--pgn-color-nav-pills-inverse-link-bg-active-hover);
           color: var(--pgn-color-nav-pills-inverse-link-text-active-focus);
           border-color: var(--pgn-color-nav-pills-inverse-link-border-focus-hover);
         }
