@@ -1,5 +1,7 @@
 @import "card-bootstrap";
 
+$card-image-border-radius:           .3125rem !default;
+
 a .pgn__card,
 a.pgn__card {
   color: var(--pgn-color-gray-700);

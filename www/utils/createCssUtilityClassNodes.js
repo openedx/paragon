@@ -40,8 +40,8 @@ function createCssUtilityClassNodes({
           ({ property, value }) => `${property}: ${value};`,
         ),
         isUtility:
-          declarations.length === 1
-          && declarations[0].value.includes('!important'),
+            declarations.length === 1
+            && declarations[0].value.includes('!important'),
       };
 
       const nodeMeta = {
