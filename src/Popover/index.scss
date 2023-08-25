@@ -1,31 +1,30 @@
-@import "variables";
 @import "mixins";
-@import "~bootstrap/scss/popover";
+@import "popover-bootstrap";
 
 .popover {
-  filter: $popover-box-shadow;
+  filter: var(--pgn-elevation-popover-box-shadow);
 
   .popover-header {
     display: flex;
     align-items: center;
-    font-size: $h5-font-size;
+    font-size: var(--pgn-typography-font-size-h5);
   }
 
   .pgn__icon {
-    margin-inline-end: $popover-icon-margin-right;
-    height: $popover-icon-height;
-    width: $popover-icon-width;
+    margin-inline-end: var(--pgn-spacing-popover-icon-margin-right);
+    height: var(--pgn-size-popover-icon-height);
+    width: var(--pgn-size-popover-icon-width);
   }
 }
 
 .popover-success {
-  @include get-popover-variant($popover-success-bg, $popover-success-icon-color);
+  @include get-popover-variant(var(--pgn-color-popover-success-bg), var(--pgn-color-popover-success-icon));
 }
 
 .popover-warning {
-  @include get-popover-variant($popover-warning-bg, $popover-warning-icon-color);
+  @include get-popover-variant(var(--pgn-color-popover-warning-bg), var(--pgn-color-popover-warning-icon));
 }
 
 .popover-danger {
-  @include get-popover-variant($popover-danger-bg, $popover-danger-icon-color);
+  @include get-popover-variant(var(--pgn-color-popover-danger-bg), var(--pgn-color-popover-danger-icon));
 }

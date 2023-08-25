@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 const { INSIGHTS_PAGES } = require('../src/config');
-const { getThemesSCSSVariables, processComponentSCSSVariables } = require('../theme-utils');
 const componentsUsage = require('../src/utils/componentsUsage');
 
 async function createPages(graphql, actions, reporter) {
@@ -40,32 +39,39 @@ async function createPages(graphql, actions, reporter) {
   // Create component detail pages.
   const components = result.data.allMdx.edges;
 
-  const themesSCSSVariables = await getThemesSCSSVariables();
-
   // you'll call `createPage` for each result
   // eslint-disable-next-line no-restricted-syntax
   for (const { node } of components) {
     const componentDir = node.slug.split('/')[0];
-    const variablesPath = path.resolve(__dirname, `../../src/${componentDir}/_variables.scss`);
-    let scssVariablesData = {};
+    const cssVariablesData = [];
 
-    if (fs.existsSync(variablesPath)) {
-      // eslint-disable-next-line no-await-in-loop
-      scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
-    }
+    const pathToComponents = fs.readdirSync(`../src/${componentDir}`);
+
+    pathToComponents.forEach(componentFile => {
+      if (componentFile.endsWith('.scss')) {
+        const fileData = fs.readFileSync(`../src/${componentDir}/${componentFile}`, 'utf-8');
+        const customCSSVariables = fileData.match(/var\((\w|-|_)*\)/g);
+
+        customCSSVariables?.forEach(variable => {
+          if (!cssVariablesData.includes(variable)) {
+            cssVariablesData.push(variable);
+          }
+        });
+      }
+    });
 
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
       path: node.fields.slug,
       // This component will wrap our MDX content
-      component: path.resolve(__dirname, '../src/templates/component-page-template.tsx'),
+      component: path.resolve('./src/templates/component-page-template.tsx'),
       // You can use the values in this context in
       // our page layout component
       context: {
-        id: node.id,
-        components: node.frontmatter.components || [],
-        scssVariablesData,
+        id: node.id, 
+        components: node.frontmatter.components || [], 
+        cssVariablesData,
         componentsUsageInsights: Object.keys(componentsUsage),
       },
     });
