@@ -1,13 +1,5 @@
 @import "mixins";
 
-$nav-pills-link-active-border-color: var(--pgn-color-white);
-$nav-inverse-pills-link-active-focus-hover-border-color: var(--pgn-color-primary-base);
-$nav-tabs-link-active-border-color: transparent;
-$nav-inverse-tabs-dropdown-border-color: transparent;
-$nav-tabs-link-disabled-border-color: transparent;
-$nav-tabs-focus-border-color: transparent;
-$nav-tabs-disabled-bg: transparent;
-
 // Base class
 //
 // Kickstart any navigation component with a set of style resets. Works with
@@ -50,6 +42,7 @@ $nav-tabs-disabled-bg: transparent;
     border: var(--pgn-size-nav-pills-link-border-width) solid var(--pgn-color-nav-pills-base-link-border);
 
     &:focus {
+      // stylelint-disable-next-line max-line-length
       @include nav-tabs-link-focus(var(--pgn-border-color-nav-tabs-link-border-focus), var(--pgn-size-nav-pills-border-radius));
     }
 
@@ -62,9 +55,10 @@ $nav-tabs-disabled-bg: transparent;
     .nav-item.show .nav-link {
       color: var(--pgn-color-nav-pills-base-link-active-text);
       background-color: var(--pgn-color-nav-pills-base-link-active-bg);
-      border-color: $nav-pills-link-active-border-color;
+      border-color: var(--pgn-color-primary-base);
 
       &:focus {
+        // stylelint-disable-next-line max-line-length
         @include nav-tabs-link-focus(var(--pgn-border-color-nav-tabs-link-border-focus), var(--pgn-size-nav-pills-border-radius));
       }
     }
@@ -107,11 +101,12 @@ $nav-tabs-disabled-bg: transparent;
 
       &:focus {
         border-color: var(--pgn-color-nav-pills-inverse-link-border-active-focus);
+        background-color: var(--pgn-color-white);
 
         &:hover {
-          background-color: var(--pgn-color-nav-pills-inverse-link-bg-active-hover);
+          // background-color: var(--pgn-color-nav-pills-inverse-link-bg-active-hover);
           color: var(--pgn-color-nav-pills-inverse-link-text-active-focus);
-          border-color: $nav-inverse-pills-link-active-focus-hover-border-color;
+          // border-color: $nav-inverse-pills-link-active-focus-hover-border-color;
         }
       }
     }
@@ -127,7 +122,7 @@ $nav-tabs-disabled-bg: transparent;
       border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-tabs-inverse-link-border-bottom);
 
       .dropdown .dropdown-toggle {
-        border-bottom: var(--pgn-size-nav-tabs-border-width) solid $nav-inverse-tabs-dropdown-border-color;
+        border-bottom: var(--pgn-size-nav-tabs-border-width) solid transparent;
 
         &:hover {
           border-bottom: none;
@@ -168,7 +163,7 @@ $nav-tabs-disabled-bg: transparent;
     border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-link-border);
 
     &.disabled {
-      border-color: $nav-tabs-link-disabled-border-color;
+      border-color: transparent;
     }
   }
 
@@ -186,14 +181,14 @@ $nav-tabs-disabled-bg: transparent;
     }
 
     &:focus {
-      border-bottom: var(--pgn-size-nav-tabs-border-width) solid $nav-tabs-focus-border-color;
+      border-bottom: var(--pgn-size-nav-tabs-border-width) solid transparent;
 
       @include nav-tabs-link-focus(var(--pgn-border-color-nav-tabs-link-border-focus));
     }
 
     &.disabled {
       color: var(--pgn-color-nav-link-text-disabled);
-      background-color: $nav-tabs-disabled-bg;
+      background-color: transparent;
     }
   }
 
@@ -201,7 +196,7 @@ $nav-tabs-disabled-bg: transparent;
   .nav-item.show .nav-link {
     color: var(--pgn-color-nav-tabs-base-link-active-text);
     background-color: var(--pgn-color-nav-tabs-base-link-active-bg);
-    border-bottom: var(--pgn-size-nav-tabs-border-width) solid $nav-tabs-link-active-border-color;
+    border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-border-color-nav-tabs-link-border-active);
 
     &:hover {
       background-color: var(--pgn-color-nav-tabs-base-link-hover-bg);

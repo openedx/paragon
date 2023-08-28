@@ -6,7 +6,7 @@
   display: inline-block;
   width: var(--pgn-size-spinner-base-width);
   height: var(--pgn-size-spinner-base-height);
-  vertical-align: $spinner-vertical-align;
+  vertical-align: calc(var(--pgn-spacing-vertical-align) * -1);
   border: var(--pgn-size-spinner-base-border-width) solid currentcolor;
   border-right-color: transparent;
   border-radius: 50%;
@@ -34,7 +34,7 @@
   display: inline-block;
   width: var(--pgn-size-spinner-base-width);
   height: var(--pgn-size-spinner-base-height);
-  vertical-align: $spinner-vertical-align;
+  vertical-align: calc(var(--pgn-spacing-vertical-align) * -1);
   background-color: currentcolor;
   border-radius: 50%;
   opacity: 0;

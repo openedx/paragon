@@ -69,8 +69,8 @@ async function createPages(graphql, actions, reporter) {
       // You can use the values in this context in
       // our page layout component
       context: {
-        id: node.id, 
-        components: node.frontmatter.components || [], 
+        id: node.id,
+        components: node.frontmatter.components || [],
         cssVariablesData,
         componentsUsageInsights: Object.keys(componentsUsage),
       },
