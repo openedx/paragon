@@ -4,6 +4,6 @@
   &__external-icon {
     display: inline-block;
     vertical-align: middle;
-    margin-inline-start: map_get($spacers, 2);
+    margin-inline-start: var(--pgn-spacing-spacer-2);
   }
 }
