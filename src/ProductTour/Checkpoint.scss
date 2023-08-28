@@ -5,7 +5,7 @@
     var(--pgn-size-product-tour-checkpoint-width-border)
     solid var(--pgn-color-product-tour-checkpoint-border);
   border-radius: var(--pgn-size-border-radius-base);
-  padding: map_get($spacers, 4);
+  padding: var(--pgn-spacing-spacer-4);
   box-shadow: 0 .25rem .5rem var(--pgn-color-product-tour-checkpoint-box-shadow);
   z-index: var(--pgn-elevation-product-tour-checkpoint-zindex);
   max-width: var(--pgn-size-product-tour-checkpoint-width-max);
@@ -39,7 +39,7 @@
   }
 
   .pgn__checkpoint-button_dismiss {
-    margin-inline-end: map_get($spacers, 2);
+    margin-inline-end: var(--pgn-spacing-spacer-2);
   }
 
   .pgn__checkpoint-breadcrumb {

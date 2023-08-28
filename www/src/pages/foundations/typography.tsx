@@ -10,6 +10,7 @@ import {
   LinksTable,
   AlignmentTable,
 } from '../../components/typography-page';
+import { SettingsContext } from '../../context/SettingsContext';
 
 export default function TypographyPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
