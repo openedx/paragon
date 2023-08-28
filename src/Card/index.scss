@@ -1,8 +1,6 @@
 @import "variables";
 @import "~bootstrap/scss/card";
 
-$card-image-border-radius:           .3125rem !default;
-
 a .pgn__card,
 a.pgn__card {
   color: $gray-700;
@@ -296,8 +294,8 @@ a.pgn__card {
     object-fit: cover;
     max-height: inherit;
     width: 100%;
-    border-top-left-radius: $card-image-border-radius;
-    border-top-right-radius: $card-image-border-radius;
+    border-top-left-radius: var(--pgn-size-card-image-border-radius);
+    border-top-right-radius: var(--pgn-size-card-image-border-radius);
     display: none;
 
     &.show {
@@ -316,7 +314,7 @@ a.pgn__card {
       .pgn__card-image-cap {
         height: 100%;
         max-width: inherit;
-        border-radius: $card-image-border-radius 0 0 $card-image-border-radius;
+        border-radius: var(--pgn-size-card-image-border-radius) 0 0 var(--pgn-size-card-image-border-radius);
         width: auto;
         object-fit: cover;
       }

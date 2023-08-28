@@ -43,7 +43,7 @@
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  padding: map_get($spacers, 2) map_get($spacers, 2\.5);
+  padding: var(--pgn-spacing-spacer-2) var(--pgn-spacing-spacer-2-5);
   text-align: center;
 }
 
