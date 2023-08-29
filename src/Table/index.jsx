@@ -122,8 +122,12 @@ class Table extends React.Component {
     return (
       <tbody className={classNames({ 'd-inline': this.props.hasFixedColumnWidths })}>
         {this.props.data.map((row, i) => (
+          <tr
           // eslint-disable-next-line react/no-array-index-key
-          <tr key={i} className={classNames({ 'd-flex': this.props.hasFixedColumnWidths })}>
+            key={i}
+            className={classNames({ 'd-flex': this.props.hasFixedColumnWidths })}
+            data-testid="table-row"
+          >
             {this.props.columns.map(({ key, width }) => (
               React.createElement(
                 (key === this.props.rowHeaderColumnKey) ? 'th' : 'td',
@@ -131,6 +135,7 @@ class Table extends React.Component {
                   key,
                   className: classNames(this.props.hasFixedColumnWidths ? width : null),
                   scope: (key === this.props.rowHeaderColumnKey) ? 'row' : null,
+                  'data-testid': 'table-cell',
                 },
                 row[key],
               )

@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import Layout from './index';
 
 function TestLayout(props) {
@@ -22,22 +22,24 @@ function TestLayout(props) {
 describe('<Layout />', () => {
   describe('correct rendering', () => {
     it('renders correct number of children', () => {
-      const wrapper = mount(<TestLayout />);
-      const children = wrapper.find('.row div');
+      const { container } = render(<TestLayout />);
+      const children = container.querySelectorAll('.row div');
       expect(children.length).toEqual(3);
     });
-    it('renders correct number of children', () => {
-      const wrapper = mount(<TestLayout />);
-      const children = wrapper.find('.row div');
-      expect(children.at(0).hasClass(
-        'col-xl-3 col-lg-4 col-md-auto col-sm-8 col-4 offset-xl-0 offset-lg-0 offset-md-0 offset-sm-0 offset-0',
-      )).toEqual(true);
+
+    it('renders children with correct class names', () => {
+      const { container } = render(<TestLayout />);
+      const children = container.querySelectorAll('.row div');
+
+      const classNames = 'col-xl-3 col-lg-4 col-md-auto col-sm-8 col-4 offset-xl-0 offset-lg-0 offset-md-0 offset-sm-0 offset-0';
+      expect(children[0].className).toEqual(classNames);
     });
-    it('renders although dimensions are incorrect', () => {
-      const wrapper = mount(
+
+    it('renders correctly even with incorrect dimensions', () => {
+      const { container } = render(
         <TestLayout lg={[{ span: 6, offset: 0 }, { span: 6, offset: 0 }, { span: 6, offset: 0 }]} />,
       );
-      const children = wrapper.find('.row div');
+      const children = container.querySelectorAll('.row div');
       expect(children.length).not.toEqual(0);
     });
   });

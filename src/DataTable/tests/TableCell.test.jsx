@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import TableCell from '../TableCell';
 
@@ -10,27 +11,27 @@ const props = {
 };
 
 describe('<TableCell />', () => {
-  let wrapper;
-  beforeEach(() => {
-    // Rendering a cell outside of a table causes a warning, so it is wrapped the appropriate html
-    wrapper = mount(<table><tbody><tr><TableCell {...props} /></tr></tbody></table>);
+  it('renders a table cell', () => {
+    const { container } = render(<table><tbody><tr><TableCell {...props} /></tr></tbody></table>);
+    const cell = container.querySelector('td');
+    expect(cell).toBeInTheDocument();
   });
 
-  it('renders a table cell', () => {
-    const cell = wrapper.find('td');
-    expect(cell.length).toEqual(1);
-  });
   it('adds props to the cell', () => {
-    const cell = wrapper.find('td');
-    expect(cell.props().className).toEqual('pgn__data-table-cell-wrap red');
+    const { container } = render(<table><tbody><tr><TableCell {...props} /></tr></tbody></table>);
+    const cell = container.querySelector('td');
+    expect(cell).toHaveClass('pgn__data-table-cell-wrap red');
   });
+
   it('renders cell content', () => {
-    const cell = wrapper.find('td');
-    expect(cell.text()).toEqual('Cell data');
+    const { getByText } = render(<table><tbody><tr><TableCell {...props} /></tr></tbody></table>);
+    const cell = getByText('Cell data');
+    expect(cell).toBeInTheDocument();
   });
+
   it('adds class names to the cell span', () => {
     const addedClass = 'align-me';
-    wrapper = mount(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -39,7 +40,7 @@ describe('<TableCell />', () => {
         </tbody>
       </table>,
     );
-    const cell = wrapper.find('td');
-    expect(cell.props().className).toContain(addedClass);
+    const cell = container.querySelector('td');
+    expect(cell).toHaveClass(addedClass);
   });
 });

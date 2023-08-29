@@ -1,8 +1,6 @@
 import React from 'react';
-// import { mount } from 'enzyme';
-import {
-  render, screen, fireEvent, waitFor,
-} from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
 import Tabs, { MORE_TAB_TEXT } from './index';
@@ -39,7 +37,7 @@ window.ResizeObserver = jest.fn(() => ({
 function TabsTestComponent(props) {
   return (
     <Tabs {...props} defaultActiveKey="tab_1">
-      <Tab title="Tab 1" notification={4} eventKey="tab_1" />
+      <Tab title="Tab 1" eventKey="tab_1" notification={4} />
       <Tab title="Tab 2" eventKey="tab_2" />
       <Tab title="Tab 3" eventKey="tab_3" />
     </Tabs>
@@ -57,13 +55,11 @@ describe('<Tabs />', () => {
       const tree = renderer.create(<TabsTestComponent />).toJSON();
       expect(tree).toMatchSnapshot();
     });
-    it('renders notification property', async () => {
-      render(<TabsTestComponent />);
+    it('renders notification property', () => {
+      const { getAllByRole } = render(<TabsTestComponent />);
 
-      await waitFor(() => {
-        const notification = screen.getAllByRole('status');
-        expect(notification.length).toBeGreaterThan(0);
-      });
+      const notification = getAllByRole('status');
+      expect(notification.length).toBeGreaterThan(0);
     });
     it('MutationObserver is initialized', () => {
       render(<TabsTestComponent />);
@@ -75,50 +71,47 @@ describe('<Tabs />', () => {
       expect(observeMutation).toHaveBeenCalledTimes(1);
     });
     it('dropdown menu is displayed', () => {
-      render(<TabsTestComponent />);
-      const dropdownMenu = screen.getByText('More...');
-      screen.debug(dropdownMenu);
-      // expect(dropdownMenu).toBeTruthy();
-      // expect(dropdownMenu.className).not.toContain('pgn__tab_invisible');
+      const { getByTestId } = render(<TabsTestComponent />);
+      const dropdownMenu = getByTestId('tab-id');
+      expect(dropdownMenu).toBeInTheDocument();
+      expect(dropdownMenu.className).not.toContain('pgn__tab_invisible');
     });
     it('moreTabText is displayed', () => {
       const text = 'Mehr...';
-      const { rerender } = render(<TabsTestComponent />);
-      const toggleButton = screen.getByText('More...');
-      expect(toggleButton.textContent).toBe(MORE_TAB_TEXT);
+      const { rerender, getByText } = render(<TabsTestComponent />);
+      const toggleButton = getByText(MORE_TAB_TEXT);
+      expect(toggleButton).toBeInTheDocument();
       fireEvent.click(toggleButton);
       rerender(<TabsTestComponent moreTabText={text} />);
       expect(toggleButton.textContent).toBe(text);
     });
-    it('click on the dropdown item activates tab', async () => {
-      render(<TabsTestComponent />);
-      const toggleButton = screen.getByText('More...');
+    it('click on the dropdown item activates tab', () => {
+      const { container, getByText, getAllByText } = render(<TabsTestComponent />);
+      const toggleButton = getByText(MORE_TAB_TEXT);
       fireEvent.click(toggleButton);
-      const dropdownItem = screen.getAllByText('Tab 2');
+      const dropdownItem = getAllByText('Tab 2');
       fireEvent.click(dropdownItem[0]);
-      await waitFor(() => {
-        const tab = screen.getByRole('tab', { name: 'Tab 2' });
-        expect(tab.className).toContain('active');
-      });
+      const tab = container.querySelector('[data-rb-event-key="tab_2"]');
+      expect(tab.className).toContain('active');
     });
     it('select dropdown item after pressing Enter', async () => {
-      render(<TabsTestComponent />);
-      const toggleButton = screen.getByText('More...');
+      const { getByText, getAllByText, getByRole } = render(<TabsTestComponent />);
+      const toggleButton = getByText(MORE_TAB_TEXT);
       fireEvent.click(toggleButton);
-      const dropdownItem = screen.getAllByText('Tab 2');
+      const dropdownItem = getAllByText('Tab 2');
       fireEvent.keyPress(dropdownItem[0], { key: 'Enter', code: 'Enter', charCode: 13 });
       await waitFor(() => {
-        const tab = screen.getByRole('tab', { name: 'Tab 2' });
+        const tab = getByRole('tab', { name: 'Tab 2' });
         expect(tab.className).toContain('active');
       });
     });
     it('invalid child does not render', () => {
-      render(
+      const { getByRole } = render(
         <Tabs>
           {[false, undefined]}
         </Tabs>,
       );
-      const navElement = screen.getByRole('tablist');
+      const navElement = getByRole('tablist');
       const childElements = navElement.children;
       expect(childElements.length).toEqual(1);
     });

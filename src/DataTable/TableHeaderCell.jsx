@@ -6,14 +6,14 @@ import { ArrowDropDown, ArrowDropUp, ArrowDropUpDown } from '../../icons';
 
 export function SortIndicator({ isSorted, isSortedDesc }) {
   if (!isSorted) {
-    return <Icon style={{ opacity: 0.5 }} src={ArrowDropUpDown} />;
+    return <Icon style={{ opacity: 0.5 }} src={ArrowDropUpDown} data-testid="ArrowDropUpDown" />;
   }
 
   if (isSortedDesc) {
-    return <Icon src={ArrowDropDown} />;
+    return <Icon src={ArrowDropDown} data-testid="ArrowDropDown" />;
   }
 
-  return <Icon src={ArrowDropUp} />;
+  return <Icon src={ArrowDropUp} data-testid="ArrowDropUp" />;
 }
 
 SortIndicator.propTypes = {
@@ -27,7 +27,7 @@ function TableHeaderCell({
   const toggleProps = canSort && getSortByToggleProps ? getSortByToggleProps() : {};
 
   return (
-    <th {...getHeaderProps(toggleProps)}>
+    <th {...getHeaderProps(toggleProps)} data-testid="th-id">
       <span className={classNames('d-flex align-items-center', headerClassName)}>
         <span>{render('Header')}</span>
         {canSort && <SortIndicator isSorted={isSorted} isSortedDesc={isSortedDesc || false} />}

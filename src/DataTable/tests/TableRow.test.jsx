@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import TableRow from '../TableRow';
 import DataTableContext from '../DataTableContext';
@@ -30,49 +31,61 @@ const props = {
 };
 
 const contextValue = {
-  /* eslint-disable-next-line react/prop-types */
   renderRowSubComponent: ({ row }) => <div>{row.values.name}</div>,
   visibleColumns: [...props.cells],
 };
 
-/* eslint-disable-next-line react/prop-types */
+// eslint-disable-next-line react/prop-types
 function TableRowWrapper({ value, row }) {
   return (
     <DataTableContext.Provider value={value}>
-      <table><tbody><TableRow row={row} /></tbody></table>
+      <table>
+        <tbody>
+          <TableRow row={row} />
+        </tbody>
+      </table>
     </DataTableContext.Provider>
   );
 }
 
 describe('<TableRow />', () => {
-  const wrapper = mount(<TableRowWrapper value={contextValue} row={props} />);
   it('renders a table row', () => {
-    const row = wrapper.find('tr');
-    expect(row.length).toEqual(1);
+    const { container } = render(<TableRowWrapper value={contextValue} row={props} />);
+    const row = container.querySelector('tr');
+    expect(row).toBeInTheDocument();
   });
+
   it('adds props to the row', () => {
-    const row = wrapper.find('tr');
-    expect(row.props().className).toEqual('red');
+    const { container } = render(<TableRowWrapper value={contextValue} row={props} />);
+    const row = container.querySelector('tr');
+    expect(row).toHaveClass('red');
   });
+
   it('renders cells', () => {
-    const cells = wrapper.find('td');
-    expect(cells.length).toEqual(2);
-    expect(wrapper.text()).toContain('Fido');
-    expect(wrapper.text()).toContain('Bones');
+    const { getByText } = render(<TableRowWrapper value={contextValue} row={props} />);
+    expect(getByText('Fido')).toBeInTheDocument();
+    expect(getByText('Bones')).toBeInTheDocument();
   });
+
   it('renders subcomponent if row is in expanded state and has a renderRowSubComponent function defined', () => {
-    const tableWrapper = mount(<TableRowWrapper value={contextValue} row={{ ...props, isExpanded: true }} />);
-    const rows = tableWrapper.find('tr');
+    const { getAllByText, container } = render(
+      <TableRowWrapper
+        value={contextValue}
+        row={{ ...props, isExpanded: true }}
+      />,
+    );
+    const rows = container.querySelectorAll('tr');
     expect(rows.length).toEqual(2);
-    const subcomponentWrapper = rows.at(1);
-    expect(subcomponentWrapper.find('div').exists()).toEqual(true);
-    expect(subcomponentWrapper.text()).toContain('Fido');
-    expect(subcomponentWrapper.find('td').props().colSpan).toEqual(2);
+    const subcomponentWrapper = rows[1];
+    expect(subcomponentWrapper.querySelector('div')).toBeInTheDocument();
+    expect(getAllByText('Fido')[1]).toBeInTheDocument();
+    expect(subcomponentWrapper.querySelector('td')).toHaveAttribute('colSpan', '2');
   });
+
   it('does not render subcomponent if row is in expanded state and does not have renderRowSubComponent function defined', () => {
-    const tableWrapper = mount(<TableRowWrapper value={{}} row={{ ...props, isExpanded: true }} />);
-    const rows = tableWrapper.find('tr');
+    const { container } = render(<TableRowWrapper value={{}} row={{ ...props, isExpanded: true }} />);
+    const rows = container.querySelectorAll('tr');
     expect(rows.length).toEqual(1);
-    expect(tableWrapper.find('div').exists()).toEqual(false);
+    expect(container.querySelector('div')).not.toBeInTheDocument();
   });
 });

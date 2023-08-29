@@ -11,7 +11,7 @@ function TableFooter({ className, children }) {
   const RowStatus = RowStatusComponent || RowStatusDefault;
 
   return (
-    <div className={classNames(className, 'pgn__data-table-footer')}>
+    <div className={classNames(className, 'pgn__data-table-footer')} data-testid="table-footer-id">
       {children || (
         <>
           <RowStatus />

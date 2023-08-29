@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 import Tabs from './index';
 
 const props = {
@@ -9,34 +9,39 @@ const props = {
     'third',
   ],
   children: [
-    <div>first</div>,
-    <div>second</div>,
-    <div>third</div>,
+    <div key="first">first</div>,
+    <div key="second">second</div>,
+    <div key="third">third</div>,
   ],
 };
 
-const tabSelectedAtIndex = (index, wrapper) => {
-  wrapper.find('button').forEach((node, i) => {
-    expect(node.prop('aria-selected')).toEqual(i === index);
+const tabSelectedAtIndex = (index, container) => {
+  const tabButtons = container.querySelectorAll('button');
+  const tabPanes = container.querySelectorAll('.tab-pane');
+
+  tabButtons.forEach((node, i) => {
+    expect(node.getAttribute('aria-selected')).toEqual(i === index ? 'true' : 'false');
   });
 
-  wrapper.find('.tab-pane').forEach((node, i) => {
-    expect(node.hasClass('active')).toEqual(i === index);
+  tabPanes.forEach((node, i) => {
+    expect(node.classList.contains('active')).toEqual(i === index);
   });
 };
 
 describe('<Tabs />', () => {
   it('renders with first tab selected', () => {
-    const wrapper = shallow(<Tabs {...props} />);
-    tabSelectedAtIndex(0, wrapper);
+    const { container } = render(<Tabs {...props} />);
+    tabSelectedAtIndex(0, container);
   });
 
   describe('switches tab selection', () => {
     it('on click', () => {
-      const wrapper = shallow(<Tabs {...props} />);
-      wrapper.find('button').forEach((node, i) => {
-        node.simulate('click');
-        tabSelectedAtIndex(i, wrapper);
+      const { container } = render(<Tabs {...props} />);
+      const tabButtons = container.querySelectorAll('button');
+
+      tabButtons.forEach((node, i) => {
+        fireEvent.click(node);
+        tabSelectedAtIndex(i, container);
       });
     });
   });

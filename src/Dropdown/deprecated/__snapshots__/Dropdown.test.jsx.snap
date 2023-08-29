@@ -8,7 +8,7 @@ exports[`<Dropdown /> Backwards compatibility renders menu items as elements 1`]
     aria-expanded={false}
     aria-haspopup={true}
     className="dropdown-toggle btn btn-light"
-    id="pgn__dropdown-trigger-6"
+    id="pgn__dropdown-trigger-19"
     onClick={[Function]}
     type="button"
   >
@@ -16,7 +16,7 @@ exports[`<Dropdown /> Backwards compatibility renders menu items as elements 1`]
   </button>
   <div
     aria-hidden={true}
-    aria-labelledby="pgn__dropdown-trigger-6"
+    aria-labelledby="pgn__dropdown-trigger-19"
     className="dropdown-menu"
     onKeyDown={[Function]}
     role="menu"
@@ -51,7 +51,7 @@ exports[`<Dropdown /> Backwards compatibility renders the basic usage 1`] = `
     aria-expanded={false}
     aria-haspopup={true}
     className="dropdown-toggle btn btn-light"
-    id="pgn__dropdown-trigger-5"
+    id="pgn__dropdown-trigger-18"
     onClick={[Function]}
     type="button"
   >
@@ -59,7 +59,7 @@ exports[`<Dropdown /> Backwards compatibility renders the basic usage 1`] = `
   </button>
   <div
     aria-hidden={true}
-    aria-labelledby="pgn__dropdown-trigger-5"
+    aria-labelledby="pgn__dropdown-trigger-18"
     className="dropdown-menu"
     onKeyDown={[Function]}
     role="menu"
@@ -94,7 +94,7 @@ exports[`<Dropdown /> Backwards compatibility renders with icon element 1`] = `
     aria-expanded={false}
     aria-haspopup={true}
     className="dropdown-toggle btn btn-light"
-    id="pgn__dropdown-trigger-7"
+    id="pgn__dropdown-trigger-20"
     onClick={[Function]}
     type="button"
   >
@@ -107,7 +107,7 @@ exports[`<Dropdown /> Backwards compatibility renders with icon element 1`] = `
   </button>
   <div
     aria-hidden={true}
-    aria-labelledby="pgn__dropdown-trigger-7"
+    aria-labelledby="pgn__dropdown-trigger-20"
     className="dropdown-menu"
     onKeyDown={[Function]}
     role="menu"
@@ -142,7 +142,8 @@ exports[`<Dropdown /> Rendering renders the happy path 1`] = `
     aria-expanded={false}
     aria-haspopup={true}
     className="dropdown-toggle btn btn-light"
-    id="pgn__dropdown-trigger-2"
+    data-testid="menu-container"
+    id="pgn__dropdown-trigger-0"
     onClick={[Function]}
     type="button"
   >
@@ -150,25 +151,29 @@ exports[`<Dropdown /> Rendering renders the happy path 1`] = `
   </button>
   <div
     aria-hidden={true}
-    aria-labelledby="pgn__dropdown-trigger-2"
+    aria-labelledby="pgn__dropdown-trigger-0"
     className="dropdown-menu"
+    data-testid="menu-trigger"
     onKeyDown={[Function]}
     role="menu"
   >
     <a
       className="dropdown-item"
+      data-testid="menu-item"
       href="https://google.com"
     >
       Google
     </a>
     <a
       className="dropdown-item"
+      data-testid="menu-item"
       href="https://duckduckgo.com"
     >
       DuckDuckGo
     </a>
     <a
       className="dropdown-item"
+      data-testid="menu-item"
       href="https://yahoo.com"
     >
       Yahoo
@@ -185,7 +190,8 @@ exports[`<Dropdown /> Rendering renders when there is html content in the trigge
     aria-expanded={false}
     aria-haspopup={true}
     className="dropdown-toggle btn btn-light"
-    id="pgn__dropdown-trigger-3"
+    data-testid="menu-container"
+    id="pgn__dropdown-trigger-1"
     onClick={[Function]}
     type="button"
   >
@@ -193,25 +199,29 @@ exports[`<Dropdown /> Rendering renders when there is html content in the trigge
   </button>
   <div
     aria-hidden={true}
-    aria-labelledby="pgn__dropdown-trigger-3"
+    aria-labelledby="pgn__dropdown-trigger-1"
     className="dropdown-menu"
+    data-testid="menu-trigger"
     onKeyDown={[Function]}
     role="menu"
   >
     <a
       className="dropdown-item"
+      data-testid="menu-item"
       href="https://google.com"
     >
       Google
     </a>
     <a
       className="dropdown-item"
+      data-testid="menu-item"
       href="https://duckduckgo.com"
     >
       DuckDuckGo
     </a>
     <a
       className="dropdown-item"
+      data-testid="menu-item"
       href="https://yahoo.com"
     >
       Yahoo

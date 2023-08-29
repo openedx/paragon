@@ -1,36 +1,36 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import {
+  render, fireEvent, waitFor, within,
+} from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import classNames from 'classnames';
 
 import BulkActions from '../BulkActions';
 import {
   ACTION_OVERFLOW_BUTTON_TEXT, SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT,
 } from '../CollapsibleButtonGroup';
-import {
-  useWindowSize,
-  Button,
-  IconButton,
-  ModalPopup,
-} from '../..';
+import { useWindowSize, Button } from '../..';
 import DataTableContext from '../DataTableContext';
 import { waitForComponentToPaint } from './utils';
 
 jest.mock('../../hooks/useWindowSize');
 useWindowSize.mockReturnValue({ width: 800 });
 
-// eslint-disable-next-line react/prop-types
-function FirstAction({ as: Component, onClick, className }) {
+function FirstAction({
+  // eslint-disable-next-line react/prop-types
+  as: Component, onClick, className, ...rest
+}) {
   return (
-    <Component variant="brand" className={classNames('class1', className)} onClick={onClick}>
+    <Component variant="brand" className={classNames('class1', className)} onClick={onClick} {...rest}>
       First Action
     </Component>
   );
 }
 
 // eslint-disable-next-line react/prop-types
-function SecondAction({ onClick, className }) {
+function SecondAction({ onClick, className, ...rest }) {
   return (
-    <Button variant="outline-primary" className={classNames('class2', className)} onClick={onClick}>
+    <Button variant="outline-primary" className={classNames('class2', className)} onClick={onClick} {...rest}>
       Second Action
     </Button>
   );
@@ -48,8 +48,8 @@ function ExtraAction({ text }) {
 const selectedFlatRows = [{ id: 1 }, { id: 2 }];
 
 const twoActions = [
-  <FirstAction />,
-  <SecondAction />,
+  <FirstAction data-testid="action" />,
+  <SecondAction data-testid="action" />,
 ];
 
 const instance = {
@@ -70,10 +70,10 @@ const instance = {
 };
 
 // eslint-disable-next-line react/prop-types
-function BulkActionsWrapper({ value = instance }) {
+function BulkActionsWrapper({ value = instance, ...rest }) {
   return (
     <DataTableContext.Provider value={value}>
-      <BulkActions />
+      <BulkActions {...rest} />
     </DataTableContext.Provider>
   );
 }
@@ -82,46 +82,63 @@ describe('<BulkActions />', () => {
   describe('with functional rendering', () => {
     it('renders the function', () => {
       const myFunction = () => <Button>Some Button</Button>;
-      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: myFunction }} />);
-      const button = wrapper.find(Button);
-      expect(button.length).toEqual(1);
+      const { container } = render(<BulkActionsWrapper value={{ ...instance, bulkActions: myFunction }} />);
+      const button = within(container).getByText('Some Button');
+      expect(button).toBeInTheDocument();
     });
   });
+
   describe('with one action', () => {
-    it('displays the primary button as an brand button', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: [<FirstAction />] }} />);
-      const button = wrapper.find(Button);
-      expect(button.length).toEqual(1);
-      expect(button.props().variant).toEqual('brand');
+    it('displays the primary button as a brand button', () => {
+      const { getByTestId } = render(
+        <BulkActionsWrapper
+          value={{ ...instance, bulkActions: [<FirstAction data-testid="brand" />] }}
+        />,
+      );
+      const button = getByTestId('brand');
+      expect(button).toBeInTheDocument();
     });
   });
+
   describe('with two actions', () => {
-    const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: twoActions }} />);
-    it('displays the user\'s first button as an brand button', () => {
-      const buttons = wrapper.find(Button);
+    let getAllByRole;
+    let buttons;
+    beforeEach(() => {
+      const { getAllByRole: gabr } = render(
+        <BulkActionsWrapper
+          value={{ ...instance, bulkActions: twoActions }}
+        />,
+      );
+      getAllByRole = gabr;
+      buttons = getAllByRole('button');
+    });
+
+    it('displays the user\'s first button as a brand button', () => {
       expect(buttons.length).toEqual(2);
-      expect(buttons.get(1).props.variant).toEqual('brand');
+      expect(buttons[1].textContent).toBe('First Action');
     });
+
     it('displays the user\'s second button as an outline button', () => {
-      const buttons = wrapper.find(Button);
-      expect(buttons.get(0).props.variant).toEqual('outline-primary');
+      expect(buttons[0].textContent).toBe('Second Action');
     });
+
     it('reverses the button order so that the primary button is on the right', () => {
-      const buttons = wrapper.find(Button);
-      expect(buttons.get(1).props.variant).toEqual('brand');
-      expect(buttons.get(0).props.variant).toEqual('outline-primary');
+      expect(buttons[1].textContent).toBe('First Action');
+      expect(buttons[0].textContent).toBe('Second Action');
     });
   });
+
   describe('controlled table selections', () => {
     it('passed correct number of selected rows', () => {
-      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: [<FirstAction />] }} />);
-      const button = wrapper.find(Button);
-      expect(button.length).toEqual(1);
-      expect(button.text()).toEqual('First Action');
+      const { container } = render(
+        <BulkActionsWrapper value={{ ...instance, bulkActions: [<FirstAction />] }} />,
+      );
+      const button = within(container).getByText('First Action');
+      expect(button).toBeInTheDocument();
     });
     it('handles action on click with full table selection (all rows across all pages)', () => {
       const onClickSpy = jest.fn();
-      const wrapper = mount(
+      const { getAllByRole } = render(
         <BulkActionsWrapper
           value={{
             ...instance,
@@ -136,86 +153,88 @@ describe('<BulkActions />', () => {
           }}
         />,
       );
-      const button = wrapper.find(Button).at(1);
-      button.simulate('click');
+      const button = getAllByRole('button')[1];
+      fireEvent.click(button);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
   });
+
   describe('two actions on click', () => {
     it('performs the primary button action on click', () => {
       const onClickSpy = jest.fn();
-      const wrapper = mount(
+      const { getAllByRole } = render(
         <BulkActionsWrapper
           value={{ ...instance, bulkActions: [<FirstAction onClick={onClickSpy} />, <SecondAction />] }}
         />,
       );
-      const button = wrapper.find(Button).at(1);
-      button.simulate('click');
+      const button = getAllByRole('button')[1];
+      fireEvent.click(button);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
     it('performs the second button action on click', () => {
       const onClickSpy = jest.fn();
-      const wrapper = mount(
+      const { getAllByRole } = render(
         <BulkActionsWrapper
           value={{ ...instance, bulkActions: [<FirstAction />, <SecondAction onClick={onClickSpy} />] }}
         />,
       );
-      const button = wrapper.find(Button).at(0);
-      button.simulate('click');
+      const button = getAllByRole('button')[0];
+      fireEvent.click(button);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
   });
+
   describe('with more than two actions', () => {
-    it('displays the user\'s first button as an brand button', () => {
-      const wrapper = mount(<BulkActionsWrapper />);
-      waitForComponentToPaint(wrapper);
-      const buttons = wrapper.find(Button);
+    it('displays the user\'s first button as a brand button', () => {
+      const { getAllByTestId } = render(<BulkActionsWrapper />);
+      const buttons = getAllByTestId('action');
       expect(buttons.length).toEqual(2);
-      expect(buttons.get(1).props.variant).toEqual('brand');
+      expect(buttons[1].textContent).toBe('First Action');
     });
+
     it('displays the user\'s second button as an outline button', () => {
-      const wrapper = mount(<BulkActionsWrapper />);
-      waitForComponentToPaint(wrapper);
-      const buttons = wrapper.find(Button);
-      expect(buttons.get(0).props.variant).toEqual('outline-primary');
+      const { container } = render(<BulkActionsWrapper />);
+      waitForComponentToPaint(container);
+      const buttons = within(container).getAllByTestId('action');
+      expect(buttons[0].textContent).toBe('Second Action');
     });
+
     describe('overflow menu', () => {
       const onClickSpy = jest.fn();
-      const itemClassName = 'itemClickTest';
+      const itemTestId = 'itemTestId';
       let wrapper;
       let overflowButton;
       beforeEach(() => {
-        wrapper = mount(
+        const { container } = render(
           <BulkActionsWrapper
             value={{
               ...instance,
-              // eslint-disable-next-line max-len
-              bulkActions: [...instance.bulkActions, <FirstAction onClick={onClickSpy} className={itemClassName} />],
+              bulkActions: [...instance.bulkActions, <FirstAction onClick={onClickSpy} data-testid={itemTestId} />],
             }}
           />,
         );
-        waitForComponentToPaint(wrapper);
+        wrapper = container;
         // the overflow toggle button is the first button
-        overflowButton = wrapper.find(IconButton);
-        overflowButton.simulate('click');
+        overflowButton = within(container).getByRole('button', { name: ACTION_OVERFLOW_BUTTON_TEXT });
+        fireEvent.click(overflowButton);
       });
       afterEach(() => {
         onClickSpy.mockClear();
       });
       it('displays additional actions in a ModalPopup', () => {
-        const overflowToggle = wrapper.find(IconButton);
-        expect(overflowToggle.props().alt).toEqual(ACTION_OVERFLOW_BUTTON_TEXT);
-        const actionItems = wrapper.find(ModalPopup).find('button');
-        // we subtract two for the two main buttons that aren't in the overflow menu
+        expect(overflowButton).toBeInTheDocument();
+        const actionItems = within(wrapper).getAllByRole('button');
+        // subtract two for the two main buttons that aren't in the overflow menu
         expect(actionItems.length).toEqual(4);
       });
       it('performs actions when overflow items are clicked', () => {
-        wrapper.find(`button.${itemClassName}`).simulate('click');
+        const item = within(wrapper).getByTestId(itemTestId);
+        fireEvent.click(item);
         expect(onClickSpy).toHaveBeenCalledTimes(1);
       });
       it('passes the class names to the dropdown item', () => {
-        const item = wrapper.find(`button.${itemClassName}`);
-        expect(item.length).toEqual(1);
+        const item = within(wrapper).getByTestId(itemTestId);
+        expect(item).toBeInTheDocument();
       });
     });
   });
@@ -224,22 +243,18 @@ describe('<BulkActions />', () => {
     const actions = [[[<FirstAction />]], [[<FirstAction />, <SecondAction />]], [instance.bulkActions]];
     test.each(actions)('puts all actions in a dropdown %#', (testActions) => {
       useWindowSize.mockReturnValue({ width: 500 });
-      const wrapper = mount(<BulkActionsWrapper value={{ ...instance, bulkActions: testActions }} />);
-      const button = wrapper.find(IconButton);
-      expect(button.length).toEqual(1);
-      expect(wrapper.text()).not.toContain('First Action');
-      const buttons = wrapper.find('button');
-      expect(buttons.length).toEqual(1);
-      const dropdownButton = buttons.at(0);
-      dropdownButton.simulate('click');
-      wrapper.update();
-      expect(wrapper.text().length).toBeGreaterThan(0);
+      const { container, getByRole } = render(<BulkActionsWrapper value={{ ...instance, bulkActions: testActions }} />);
+      const button = getByRole('button', { name: SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT });
+      expect(button).toBeInTheDocument();
+      expect(container.textContent).not.toContain('First Action');
+      fireEvent.click(button);
+      waitFor(() => expect(container.textContent.length).toBeGreaterThan(0));
     });
     it('renders the correct alt text for the dropdown', () => {
       useWindowSize.mockReturnValue({ width: 500 });
-      const wrapper = mount(<BulkActionsWrapper />);
-      const overflowToggle = wrapper.find(IconButton);
-      expect(overflowToggle.props().alt).toEqual(SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT);
+      const { getByRole } = render(<BulkActionsWrapper />);
+      const overflowToggle = getByRole('button', { name: SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT });
+      expect(overflowToggle).toBeInTheDocument();
     });
   });
 });

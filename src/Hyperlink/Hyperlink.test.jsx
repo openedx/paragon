@@ -1,18 +1,19 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import Hyperlink from './index';
 
 const content = 'content';
 const destination = 'destination';
-const onClick = () => {};
+const onClick = jest.fn();
 const props = {
   content,
   destination,
   onClick,
 };
 const externalLinkAlternativeText = 'externalLinkAlternativeText';
-const externalLinkTitle = 'externalLinktTitle';
+const externalLinkTitle = 'externalLinkTitle';
 const externalLinkProps = {
   target: '_blank',
   externalLinkAlternativeText,
@@ -22,50 +23,51 @@ const externalLinkProps = {
 
 describe('correct rendering', () => {
   it('renders Hyperlink', () => {
-    const wrapper = mount(<Hyperlink {...props} />).find('a');
-    expect(wrapper).toHaveLength(1);
+    const { getByRole } = render(<Hyperlink {...props} />);
+    const wrapper = getByRole('link');
+    expect(wrapper).toBeInTheDocument();
 
-    expect(wrapper.prop('className')).toContain('pgn__hyperlink');
-    expect(wrapper.prop('children')).toEqual([content, undefined]);
-    expect(wrapper.prop('href')).toEqual(destination);
-    expect(wrapper.prop('target')).toEqual('_self');
-    expect(wrapper.prop('onClick')).toEqual(onClick);
+    expect(wrapper).toHaveClass('pgn__hyperlink');
+    expect(wrapper).toHaveTextContent(content);
+    expect(wrapper).toHaveAttribute('href', destination);
+    expect(wrapper).toHaveAttribute('target', '_self');
 
-    expect(wrapper.find('span')).toHaveLength(0);
-    expect(wrapper.find('i')).toHaveLength(0);
+    fireEvent.click(wrapper);
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   it('renders external Hyperlink', () => {
-    const wrapper = mount(<Hyperlink {...externalLinkProps} />);
+    const { getByRole, getByTestId } = render(<Hyperlink {...externalLinkProps} />);
+    const wrapper = getByRole('link');
+    const icon = getByTestId('icon-id');
+    const iconSvg = icon.querySelector('svg');
 
-    expect(wrapper.find('span')).toHaveLength(3);
+    expect(wrapper).toBeInTheDocument();
+    expect(icon).toBeInTheDocument();
 
-    const icon = wrapper.find('span').at(1);
-    const iconImage = icon.find('svg').at(0);
-
-    expect(icon.prop('className')).toEqual('pgn__icon');
-    expect(iconImage.prop('role')).toEqual('img');
-    expect(iconImage.prop('width')).toEqual(24);
-    expect(iconImage.prop('height')).toEqual(24);
+    expect(icon).toHaveClass('pgn__icon');
+    expect(iconSvg).toHaveAttribute('width', '24');
+    expect(iconSvg).toHaveAttribute('height', '24');
   });
 });
 
 describe('security', () => {
   it('prevents reverse tabnabbing for links with target="_blank"', () => {
-    const wrapper = mount(<Hyperlink {...externalLinkProps} />);
-    expect(wrapper.find('a').prop('rel')).toEqual('noopener noreferrer');
+    const { getByRole } = render(<Hyperlink {...externalLinkProps} />);
+    const wrapper = getByRole('link');
+    expect(wrapper).toHaveAttribute('rel', 'noopener noreferrer');
   });
 });
 
 describe('event handlers are triggered correctly', () => {
   let spy;
-
   beforeEach(() => { spy = jest.fn(); });
 
   it('should fire onClick', () => {
-    const wrapper = mount(<Hyperlink {...props} onClick={spy} />);
+    const { getByRole } = render(<Hyperlink {...props} onClick={spy} />);
+    const wrapper = getByRole('link');
     expect(spy).toHaveBeenCalledTimes(0);
-    wrapper.simulate('click');
+    fireEvent.click(wrapper);
     expect(spy).toHaveBeenCalledTimes(1);
   });
 });

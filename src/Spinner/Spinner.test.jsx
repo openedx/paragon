@@ -1,15 +1,20 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 import Spinner from '.';
 
 describe('Spinner', () => {
   it('should render a spinner', () => {
-    const wrapper = shallow(<Spinner animation="border" />);
-    expect(wrapper.html()).toMatchSnapshot();
+    const tree = renderer.create((
+      <Spinner animation="border" />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
   });
+
   it('should render a spinner with screen reader text', () => {
-    const wrapper = shallow(<Spinner animation="border" screenReaderText="loading" />);
-    expect(wrapper.html()).toMatchSnapshot();
+    const tree = renderer.create((
+      <Spinner animation="border" screenReaderText="loading" />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

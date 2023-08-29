@@ -1,8 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
+import '@testing-library/jest-dom/extend-expect';
+
 import UploadProgress from '../UploadProgress';
-import { Spinner, ProgressBar, Button } from '../..';
 
 const onCancel = jest.fn();
 
@@ -26,20 +27,22 @@ function UploadProgressWrapper({ children, ...props }) {
 
 describe('<Dropzone.UploadProgress />', () => {
   it('renders spinner if receives "spinner" as a variant prop', () => {
-    const wrapper = mount(<UploadProgressWrapper variant="spinner" />);
-    const spinner = wrapper.find(Spinner);
-    expect(spinner.exists()).toEqual(true);
-    expect(spinner.props().screenReaderText).toEqual(`Uploading ${defaultProps.name}, ${defaultProps.percent}% done.`);
+    const { getByTestId } = render(<UploadProgressWrapper variant="spinner" />);
+    const spinner = getByTestId('upload-spinner');
+    expect(spinner).toBeInTheDocument();
+    expect(spinner).toHaveTextContent(`Uploading ${defaultProps.name}, ${defaultProps.percent}% done.`);
   });
+
   it('renders progress bar if receives "bar" as a variant prop', () => {
-    const wrapper = mount(<UploadProgressWrapper variant="bar" />);
-    const bar = wrapper.find(ProgressBar);
-    expect(bar.exists()).toEqual(true);
-    expect(bar.props().now).toEqual(defaultProps.percent);
-    expect(bar.props().label).toEqual(`${defaultProps.percent}%`);
-    const cancelButton = wrapper.find(Button);
-    expect(cancelButton.exists()).toEqual(true);
-    cancelButton.simulate('click');
+    const { getByTestId, getByText } = render(<UploadProgressWrapper variant="bar" />);
+    const progressBar = getByTestId('upload-progress-bar');
+    expect(progressBar).toBeInTheDocument();
+    expect(progressBar).toHaveTextContent(`${defaultProps.percent}%`);
+
+    const cancelButton = getByText('Cancel');
+    expect(cancelButton).toBeInTheDocument();
+
+    fireEvent.click(cancelButton);
     expect(onCancel).toHaveBeenCalledTimes(1);
   });
 });

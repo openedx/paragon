@@ -1,6 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { Close } from '../../icons';
 import Chip from './index';
@@ -43,28 +45,38 @@ describe('<Chip />', () => {
 
   describe('correct rendering', () => {
     it('renders with correct class when variant is added', () => {
-      const wrapper = mount(<TestChip variant="dark" />);
-      const chip = wrapper.find('.pgn__chip');
-      expect(chip.hasClass('pgn__chip-dark')).toEqual(true);
+      const { getByTestId } = render(<TestChip variant="dark" data-testid="chip" />);
+      const chip = getByTestId('chip');
+      expect(chip).toHaveClass('pgn__chip pgn__chip-dark');
     });
     it('renders with active class when disabled prop is added', () => {
-      const wrapper = mount(<TestChip disabled />);
-      const chip = wrapper.find('.pgn__chip');
-      expect(chip.hasClass('disabled')).toEqual(true);
+      const { getByTestId } = render(<TestChip disabled data-testid="chip" />);
+      const chip = getByTestId('chip');
+      expect(chip).toHaveClass('pgn__chip disabled');
     });
     it('renders with the client\'s className', () => {
       const className = 'testClassName';
-      const wrapper = mount(<TestChip className={className} />);
-      const chip = wrapper.find('.pgn__chip');
-      expect(chip.hasClass(className)).toEqual(true);
+      const { getByTestId } = render(<TestChip className={className} data-testid="chip" />);
+      const chip = getByTestId('chip');
+      expect(chip).toHaveClass(className);
     });
-    it('onIconAfterClick is triggered', () => {
+    it('onIconAfterClick is triggered', async () => {
       const func = jest.fn();
-      const wrapper = mount(<TestChip iconAfter={Close} onIconAfterClick={func} />);
-      const iconAfter = wrapper.find('.pgn__chip__icon-after');
-      iconAfter.simulate('click');
-      iconAfter.simulate('keypress');
-      expect(func).toHaveBeenCalledTimes(2);
+      const { getByTestId } = render(
+        <TestChip iconAfter={Close} onIconAfterClick={func} />,
+      );
+      const iconAfter = getByTestId('icon-after');
+      userEvent.click(iconAfter);
+      expect(func).toHaveBeenCalled();
+    });
+    it('onIconAfterKeyDown is triggered', async () => {
+      const func = jest.fn();
+      const { getByTestId } = render(
+        <TestChip iconAfter={Close} onIconAfterClick={func} />,
+      );
+      const iconAfter = getByTestId('icon-after');
+      userEvent.type(iconAfter, '{enter}');
+      expect(func).toHaveBeenCalled();
     });
   });
 });

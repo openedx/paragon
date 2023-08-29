@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import MailtoLink from './index';
 
@@ -21,10 +21,12 @@ describe('correct rendering', () => {
         bcc={emailAddress}
       />
     );
-    const wrapper = mount(singleRecipientLink);
-    expect(wrapper.find('.pgn_mailtolink')).toBeTruthy();
-    const linkWrapper = wrapper.find('a');
-    expect(linkWrapper.prop('href')).toEqual('mailto:edx@example.com?bcc=edx%40example.com&body=body&cc=edx%40example.com&subject=subject');
+    const { getByText } = render(singleRecipientLink);
+    const linkElement = getByText('content');
+    expect(linkElement).toBeTruthy();
+    expect(linkElement.getAttribute('href')).toEqual(
+      'mailto:edx@example.com?bcc=edx%40example.com&body=body&cc=edx%40example.com&subject=subject',
+    );
   });
 
   it('renders mailtoLink with many to, cc, and bcc recipients', () => {
@@ -36,14 +38,16 @@ describe('correct rendering', () => {
         bcc={emailAddresses}
       />
     );
-    const wrapper = mount(multiRecipientLink).find('a');
-
-    expect(wrapper.prop('href')).toEqual('mailto:foo@example.com,bar@example.com,baz@example.com?bcc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com&body=body&cc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com&subject=subject');
+    const { getByText } = render(multiRecipientLink);
+    const linkElement = getByText('content');
+    expect(linkElement.getAttribute('href')).toEqual(
+      'mailto:foo@example.com,bar@example.com,baz@example.com?bcc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com&body=body&cc=foo%40example.com%2Cbar%40example.com%2Cbaz%40example.com&subject=subject',
+    );
   });
 
   it('renders empty mailtoLink', () => {
-    const wrapper = mount(<MailtoLink content={content} />).find('a');
-
-    expect(wrapper.prop('href')).toEqual('mailto:');
+    const { getByText } = render(<MailtoLink content={content} />);
+    const linkElement = getByText('content');
+    expect(linkElement.getAttribute('href')).toEqual('mailto:');
   });
 });

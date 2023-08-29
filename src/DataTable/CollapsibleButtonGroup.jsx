@@ -18,6 +18,7 @@ export const SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT = 'Actions';
 function CollapsibleButtonGroup({
   className,
   actions,
+  ...rest
 }) {
   const [isOverflowMenuOpen, openOverflowMenu, closeOverflowMenu] = useToggle(false);
   const [overflowMenuTarget, setOverflowMenuTarget] = useState(null);
@@ -58,7 +59,7 @@ function CollapsibleButtonGroup({
   );
 
   return (
-    <div className={className}>
+    <div className={className} {...rest}>
       {dropdownActions.length > 0 && (
         <>
           <IconButton

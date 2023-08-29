@@ -1,11 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
-import { Button } from '../..';
 import ActionDisplay from '../ActionDisplay';
 import DataTableContext from '../DataTableContext';
-import BulkActions from '../BulkActions';
-import TableActions from '../TableActions';
 
 const instance = {
   selectedFlatRows: null,
@@ -39,52 +37,57 @@ function SecondAction({ as: Component }) {
 }
 
 // eslint-disable-next-line react/prop-types
-function ActionDisplayWrapper({ value = instance, props = {} }) {
-  return <DataTableContext.Provider value={value}><ActionDisplay {...props} /></DataTableContext.Provider>;
+function ActionDisplayWrapper({ value = instance, props = {}, ...rest }) {
+  return <DataTableContext.Provider value={value}><ActionDisplay {...props} {...rest} /></DataTableContext.Provider>;
 }
 
 describe('<ActionDisplay />', () => {
   it('renders null if there are no actions', () => {
-    const wrapper = mount(<ActionDisplayWrapper />);
-    expect(wrapper.find(ActionDisplay).text()).toEqual('');
+    render(<ActionDisplayWrapper />);
+    expect(screen.queryByTestId('action-display')).not.toBeInTheDocument();
   });
+
   it('renders null if there are no rows', () => {
-    const wrapper = mount(
+    render(
       <ActionDisplayWrapper
         value={{
           ...instance, rows: null, tableActions: [<FirstAction />], bulkActions: [<SecondAction />],
         }}
       />,
     );
-    const button = wrapper.find(Button);
-    expect(button.length).toEqual(0);
+    expect(screen.queryByTestId('action-display')).not.toBeInTheDocument();
   });
+
   it('displays bulk actions when rows are selected', () => {
-    const wrapper = mount(
+    render(
       <ActionDisplayWrapper
         value={{ ...instance, bulkActions: [<FirstAction />, <SecondAction />], selectedFlatRows: [{}, {}] }}
+        data-testid=""
       />,
     );
-    expect(wrapper.find(BulkActions)).toHaveLength(1);
+    expect(screen.queryByTestId('bulk-actions')).toBeInTheDocument();
   });
+
   it('does not display bulk actions when no rows are selected (no table actions)', () => {
-    const wrapper = mount(
+    render(
       <ActionDisplayWrapper
         value={{ ...instance, bulkActions: [<FirstAction />, <SecondAction />], selectedFlatRows: [] }}
       />,
     );
-    expect(wrapper.find(ActionDisplay).text()).toEqual('');
+    expect(screen.queryByTestId('action-display')).not.toBeInTheDocument();
   });
+
   it('displays tableActions', () => {
-    const wrapper = mount(
+    render(
       <ActionDisplayWrapper
         value={{ ...instance, tableActions: [<FirstAction />, <SecondAction />], selectedFlatRows: [] }}
       />,
     );
-    expect(wrapper.find(TableActions)).toHaveLength(1);
+    expect(screen.queryByTestId('table-actions')).toBeInTheDocument();
   });
+
   it('displays table actions when both bulk actions and table actions are present - no selected rows', () => {
-    const wrapper = mount(
+    render(
       <ActionDisplayWrapper
         value={{
           ...instance,
@@ -94,19 +97,21 @@ describe('<ActionDisplay />', () => {
         }}
       />,
     );
-    expect(wrapper.find(TableActions)).toHaveLength(1);
+    expect(screen.queryByTestId('table-actions')).toBeInTheDocument();
   });
+
   it('displays table actions with rows selected and no bulk actions', () => {
     // This is an edge case
-    const wrapper = mount(
+    render(
       <ActionDisplayWrapper
         value={{ ...instance, tableActions: [<FirstAction />, <SecondAction />], selectedFlatRows: [{}, {}] }}
       />,
     );
-    expect(wrapper.find(TableActions)).toHaveLength(1);
+    expect(screen.queryByTestId('table-actions')).toBeInTheDocument();
   });
+
   it('displays bulk actions instead of table actions when rows are selected', () => {
-    const wrapper = mount(
+    render(
       <ActionDisplayWrapper
         value={{
           ...instance,
@@ -116,6 +121,6 @@ describe('<ActionDisplay />', () => {
         }}
       />,
     );
-    expect(wrapper.find(BulkActions)).toHaveLength(1);
+    expect(screen.queryByTestId('bulk-actions')).toBeInTheDocument();
   });
 });

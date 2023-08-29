@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import DropdownFilter from '../DropdownFilter';
 
@@ -24,32 +25,45 @@ describe('<DropdownFilter />', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
+
   it('renders a select button', () => {
-    const wrapper = mount(<DropdownFilter {...props} />);
-    expect(wrapper.text()).toContain(props.column.Header);
+    const { getByLabelText } = render(<DropdownFilter {...props} />);
+    expect(getByLabelText(props.column.Header)).toBeInTheDocument();
   });
+
   it('sets a filter - no initial filters', () => {
-    const wrapper = mount(<DropdownFilter {...props} />);
-    wrapper.find('select').simulate('click');
-    wrapper.find('option').at(2).simulate('change');
+    const { getByLabelText } = render(<DropdownFilter {...props} />);
+    const select = getByLabelText(props.column.Header);
+    fireEvent.click(select);
+    fireEvent.change(select, { target: { value: palomino.value } });
     expect(setFilterMock).toHaveBeenCalledWith(palomino.value);
   });
+
   it('sets a filter - initial filters', () => {
-    const wrapper = mount(<DropdownFilter {...props} />);
-    wrapper.find('select').simulate('click');
-    wrapper.find('option').at(2).simulate('change');
+    const { getByLabelText } = render(
+      <DropdownFilter column={{ ...props.column, filterValue: [palomino.value] }} />,
+    );
+    const select = getByLabelText(props.column.Header);
+    fireEvent.click(select);
+    fireEvent.change(select, { target: { value: palomino.value } });
     expect(setFilterMock).toHaveBeenCalledWith(palomino.value);
   });
+
   it('removes filters when default option is clicked', () => {
-    const wrapper = mount(<DropdownFilter column={{ ...props.column, filterValue: palomino.value }} />);
-    wrapper.find('select').simulate('click');
-    wrapper.find('option').at(0).simulate('change');
+    const { getByLabelText } = render(
+      <DropdownFilter column={{ ...props.column, filterValue: [palomino.value] }} />,
+    );
+    const select = getByLabelText(props.column.Header);
+    fireEvent.click(select);
+    fireEvent.change(select, { target: { value: '' } });
     expect(setFilterMock).toHaveBeenCalledWith(undefined);
   });
+
   it('displays a number if a number is provided', () => {
-    const wrapper = mount(<DropdownFilter {...props} />);
-    wrapper.find('select').simulate('click');
-    const option = wrapper.find('option').at(1);
-    expect(option.text()).toEqual(`${roan.name} (${roan.number})`);
+    const { getByLabelText, getByText } = render(<DropdownFilter {...props} />);
+    const select = getByLabelText(props.column.Header);
+    fireEvent.click(select);
+    const option = getByText(`${roan.name} (${roan.number})`);
+    expect(option).toBeInTheDocument();
   });
 });

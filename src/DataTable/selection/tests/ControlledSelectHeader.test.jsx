@@ -1,19 +1,18 @@
 import React, { useContext } from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import ControlledSelectHeader from '../ControlledSelectHeader';
 import DataTable from '../..';
-import { CheckboxControl } from '../../../Form';
 import DataTableContext from '../../DataTableContext';
 import * as selectActions from '../data/actions';
-import { toggleCheckbox } from './utils';
 import { getRowIds } from '../data/helpers';
 
 // eslint-disable-next-line react/prop-types
-function ControlledSelectHeaderWrapper({ tableProps, selectProps }) {
+function ControlledSelectHeaderWrapper({ tableProps, selectProps, ...rest }) {
   return (
     <DataTable {...tableProps}>
-      <ControlledSelectHeader {...selectProps} />
+      <ControlledSelectHeader {...selectProps} {...rest} />
       <DataTableContextChild />
     </DataTable>
   );
@@ -42,6 +41,7 @@ describe('<ControlledSelectHeader />', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
+
   it('correctly selects all page rows', () => {
     const isChecked = true;
     mockToggleAllPageRowsSelectedProps.mockReturnValue({
@@ -50,13 +50,21 @@ describe('<ControlledSelectHeader />', () => {
     });
     const spy = jest.spyOn(selectActions, 'setSelectedRowsAction');
     const selectProps = { rows };
-    const wrapper = mount(
-      <ControlledSelectHeaderWrapper tableProps={tableProps} selectProps={selectProps} />,
+    render(
+      <ControlledSelectHeaderWrapper
+        tableProps={tableProps}
+        selectProps={selectProps}
+        data-testid="select-all-checkbox"
+      />,
     );
-    toggleCheckbox({ isChecked, wrapper });
+
+    const checkbox = screen.getByTestId('select-all-checkbox');
+    userEvent.click(checkbox);
+
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith(rows, tableProps.itemCount);
   });
+
   it('correctly unselects all page rows', () => {
     const spy = jest.spyOn(selectActions, 'clearPageSelectionAction');
     mockToggleAllPageRowsSelectedProps.mockReturnValue({
@@ -73,14 +81,22 @@ describe('<ControlledSelectHeader />', () => {
       state: { selectedRowIds },
       isAllPageRowsSelected: true,
     };
-    const wrapper = mount(
-      <ControlledSelectHeaderWrapper tableProps={newTableProps} selectProps={selectProps} />,
+    render(
+      <ControlledSelectHeaderWrapper
+        tableProps={newTableProps}
+        selectProps={selectProps}
+        data-testid="select-all-checkbox"
+      />,
     );
-    toggleCheckbox({ isChecked: false, wrapper });
+
+    const checkbox = screen.getByTestId('select-all-checkbox');
+    userEvent.click(checkbox);
+
     expect(spy).toHaveBeenCalledTimes(1);
     const rowIds = getRowIds(rows).map(id => id.toString());
     expect(spy).toHaveBeenCalledWith(rowIds);
   });
+
   it('correctly shows indeterminate checkbox when some page rows (not all) are selected', () => {
     const isIndeterminate = true;
     mockToggleAllPageRowsSelectedProps.mockReturnValue({
@@ -95,11 +111,15 @@ describe('<ControlledSelectHeader />', () => {
         },
       },
     };
-    const wrapper = mount(
-      <ControlledSelectHeaderWrapper tableProps={newTableProps} selectProps={selectProps} />,
+    render(
+      <ControlledSelectHeaderWrapper
+        tableProps={newTableProps}
+        selectProps={selectProps}
+        data-testid="select-all-checkbox"
+      />,
     );
 
-    const actualIsIndeterminate = wrapper.find(CheckboxControl).prop('isIndeterminate');
-    expect(actualIsIndeterminate).toEqual(isIndeterminate);
+    const checkbox = screen.getByTestId('select-all-checkbox');
+    expect(checkbox.indeterminate).toEqual(isIndeterminate);
   });
 });

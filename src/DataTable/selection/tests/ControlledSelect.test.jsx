@@ -1,16 +1,16 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import ControlledSelect from '../ControlledSelect';
 import DataTable from '../..';
 import * as selectActions from '../data/actions';
-import { toggleCheckbox } from './utils';
 
 // eslint-disable-next-line react/prop-types
-function ControlledSelectWrapper({ tableProps, selectProps }) {
+function ControlledSelectWrapper({ tableProps, selectProps, ...rest }) {
   return (
     <DataTable {...tableProps}>
-      <ControlledSelect {...selectProps} />
+      <ControlledSelect {...selectProps} {...rest} />
     </DataTable>
   );
 }
@@ -30,29 +30,45 @@ describe('<ControlledSelect />', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
-  it('correctly selects a row', () => {
+
+  it('correctly selects a row', async () => {
     const isChecked = true;
     mockGetToggleRowSelectedProps.mockReturnValue({ checked: isChecked });
     const spy = jest.spyOn(selectActions, 'addSelectedRowAction');
     const row = { ...baseRow, isSelected: false };
     const selectProps = { row };
-    const wrapper = mount(
-      <ControlledSelectWrapper tableProps={tableProps} selectProps={selectProps} />,
+    render(
+      <ControlledSelectWrapper
+        tableProps={tableProps}
+        selectProps={selectProps}
+        data-testid="select-checkbox"
+      />,
     );
-    toggleCheckbox({ isChecked, wrapper });
+
+    const checkbox = screen.getByTestId('select-checkbox');
+    await userEvent.click(checkbox);
+
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith(row, tableProps.itemCount);
   });
-  it('correctly unselects a row', () => {
+
+  it('correctly unselects a row', async () => {
     const isChecked = false;
     mockGetToggleRowSelectedProps.mockReturnValue({ checked: isChecked });
     const spy = jest.spyOn(selectActions, 'deleteSelectedRowAction');
     const row = { ...baseRow, isSelected: true };
     const selectProps = { row };
-    const wrapper = mount(
-      <ControlledSelectWrapper tableProps={tableProps} selectProps={selectProps} />,
+    render(
+      <ControlledSelectWrapper
+        tableProps={tableProps}
+        selectProps={selectProps}
+        data-testid="select-checkbox"
+      />,
     );
-    toggleCheckbox({ isChecked, wrapper });
+
+    const checkbox = screen.getByTestId('select-checkbox');
+    await userEvent.click(checkbox);
+
     expect(spy).toHaveBeenCalledWith(row.id);
   });
 });

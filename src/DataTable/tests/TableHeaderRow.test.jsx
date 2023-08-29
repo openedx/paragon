@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import TableHeaderRow from '../TableHeaderRow';
 
@@ -32,21 +33,23 @@ const props = {
 };
 
 describe('<TableHeaderRow />', () => {
-  const wrapper = mount(<table><TableHeaderRow {...props} /></table>);
+  const { getByTestId, getAllByTestId } = render(<table><TableHeaderRow {...props} /></table>);
+  const head = getByTestId('thead-id');
+  const row = getByTestId('tr-id');
+  const cells = getAllByTestId('th-id');
+
   it('renders a table head and row', () => {
-    const head = wrapper.find('thead');
-    expect(head.length).toEqual(1);
-    const row = wrapper.find('tr');
-    expect(row.length).toEqual(1);
+    expect(head).toBeInTheDocument();
+    expect(row).toBeInTheDocument();
   });
+
   it('adds props to the row', () => {
-    const row = wrapper.find('tr');
-    expect(row.props().className).toEqual('red');
+    expect(row.className).toEqual('red');
   });
+
   it('renders cells', () => {
-    const cells = wrapper.find('th');
     expect(cells.length).toEqual(2);
-    expect(wrapper.text()).toContain(header1Name);
-    expect(wrapper.text()).toContain(header2Name);
+    expect(cells[0]).toHaveTextContent(header1Name);
+    expect(cells[1]).toHaveTextContent(header2Name);
   });
 });

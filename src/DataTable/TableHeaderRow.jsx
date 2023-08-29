@@ -4,9 +4,9 @@ import TableHeaderCell from './TableHeaderCell';
 
 function TableHeaderRow({ headerGroups }) {
   return (
-    <thead>
+    <thead data-testid="thead-id">
       {headerGroups.map(headerGroup => (
-        <tr {...headerGroup.getHeaderGroupProps()}>
+        <tr {...headerGroup.getHeaderGroupProps()} data-testid="tr-id">
           {headerGroup.headers.map(column => (
             <TableHeaderCell {...column} {...column.getHeaderProps()} />
           ))}

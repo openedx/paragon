@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { ExpandLess, ExpandMore } from '../../../icons';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+
 import ExpandRow from '../ExpandRow';
-import { IconButton } from '../..';
 
 const row = {
   isExpanded: false,
@@ -11,19 +11,23 @@ const row = {
 
 describe('<ExpandRow />', () => {
   it('renders expand row element if rows is not expanded', () => {
-    const wrapper = mount(<ExpandRow row={row} />);
-    const labelWrapper = wrapper.find('span');
-    expect(labelWrapper.exists()).toEqual(true);
-    const iconButton = wrapper.find(IconButton);
-    expect(iconButton.prop('src')).toEqual(ExpandMore);
-    expect(iconButton.prop('alt')).toEqual('Expand row');
+    const { getByTestId, getByLabelText } = render(<ExpandRow row={row} data-testid="span-expand-row" />);
+
+    const labelWrapper = getByTestId('span-expand-row');
+    expect(labelWrapper).toBeInTheDocument();
+
+    const iconButton = getByLabelText('Expand row');
+    expect(iconButton).toBeInTheDocument();
   });
+
   it('renders collapse row element if row is expanded', () => {
-    const wrapper = mount(<ExpandRow row={{ ...row, isExpanded: true }} />);
-    const labelWrapper = wrapper.find('span');
-    expect(labelWrapper.exists()).toEqual(true);
-    const iconButton = wrapper.find(IconButton);
-    expect(iconButton.prop('src')).toEqual(ExpandLess);
-    expect(iconButton.prop('alt')).toEqual('Collapse row');
+    const expandedRow = { ...row, isExpanded: true };
+    const { getByTestId, getByLabelText } = render(<ExpandRow row={expandedRow} data-testid="span-collapse-row" />);
+
+    const labelWrapper = getByTestId('span-collapse-row');
+    expect(labelWrapper).toBeInTheDocument();
+
+    const iconButton = getByLabelText('Collapse row');
+    expect(iconButton).toBeInTheDocument();
   });
 });

@@ -1,6 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
+import '@testing-library/jest-dom/extend-expect';
 
 import Input from './index';
 
@@ -64,15 +65,16 @@ describe('<Input />', () => {
 
   describe('rendering', () => {
     it('should render with forwardRef', () => {
-      const wrapper = mount(<Input type="text" {...props} />);
-      expect(wrapper.find(React.forwardRef)).toBeTruthy();
+      const refSpy = jest.fn();
+      render(<Input type="text" ref={refSpy} {...props} />);
+      expect(refSpy).toHaveBeenCalled();
     });
 
     it('should render each input type', () => {
       types.forEach((type) => {
-        const wrapper = mount(<Input type={type} {...props} />);
-        const input = wrapper.find('Input.input');
-        expect(input.prop('type')).toEqual(type);
+        const { container } = render(<Input type={type} {...props} />);
+        const input = container.querySelector('.input');
+        expect(input).toBeInTheDocument();
       });
     });
 

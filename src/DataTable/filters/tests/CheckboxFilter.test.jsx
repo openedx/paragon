@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import CheckboxFilter from '../CheckboxFilter';
-import Badge from '../../../Badge';
 
 const setFilterMock = jest.fn();
 const roan = { name: 'roan', number: 3, value: '10' };
@@ -25,49 +25,54 @@ describe('<CheckboxFilter />', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
+
   it('renders a list of checkboxes', () => {
-    const wrapper = mount(<CheckboxFilter {...props} />);
-    const checkbox = wrapper.find({ type: 'checkbox' }).find('input');
-    expect(checkbox.length).toEqual(3);
+    const { getAllByRole } = render(<CheckboxFilter {...props} />);
+    const checkboxes = getAllByRole('checkbox');
+    expect(checkboxes.length).toEqual(3);
   });
+
   it('renders a title', () => {
-    const wrapper = mount(<CheckboxFilter {...props} />);
-    expect(wrapper.text()).toContain(props.column.Header);
+    const { getByText } = render(<CheckboxFilter {...props} />);
+    expect(getByText(props.column.Header)).toBeInTheDocument();
   });
+
   it('sets a filter - no initial filters', () => {
-    const wrapper = mount(<CheckboxFilter {...props} />);
-    const checkbox = wrapper.find({ type: 'checkbox' }).find('input').at(1);
-    checkbox.simulate('change');
+    const { getByLabelText } = render(<CheckboxFilter {...props} />);
+    const checkbox = getByLabelText(palomino.name);
+    fireEvent.click(checkbox);
     expect(setFilterMock).toHaveBeenCalledWith([palomino.value]);
   });
+
   it('sets a filter - initial filters', () => {
-    const wrapper = mount(<CheckboxFilter column={{ ...props.column, filterValue: [roan.value] }} />);
-    const checkbox = wrapper.find({ type: 'checkbox' }).find('input').at(1);
-    checkbox.simulate('change');
+    const { getByLabelText } = render(<CheckboxFilter column={{ ...props.column, filterValue: [roan.value] }} />);
+    const checkbox = getByLabelText(palomino.name);
+    fireEvent.click(checkbox);
     expect(setFilterMock).toHaveBeenCalledWith([roan.value, palomino.value]);
   });
+
   it('removes a filter', () => {
-    const wrapper = mount(<CheckboxFilter column={{ ...props.column, filterValue: [palomino.value] }} />);
-    const checkbox = wrapper.find({ type: 'checkbox' }).find('input').at(1);
-    checkbox.simulate('change');
+    const { getByLabelText } = render(<CheckboxFilter column={{ ...props.column, filterValue: [palomino.value] }} />);
+    const checkbox = getByLabelText(palomino.name);
+    fireEvent.click(checkbox);
     expect(setFilterMock).toHaveBeenCalledWith([]);
   });
+
   it('renders checkbox label with filter name', () => {
-    const wrapper = mount(<CheckboxFilter column={{ ...props.column, filterValue: [roan.value] }} />);
-    const label = wrapper.find('.pgn__form-checkbox').at(0);
-    expect(label.text()).toContain(roan.name);
+    const { getByText } = render(<CheckboxFilter column={{ ...props.column, filterValue: [roan.value] }} />);
+    const checkbox = getByText(roan.name);
+    expect(checkbox).toBeInTheDocument();
   });
+
   it('renders checkbox label with number', () => {
-    const wrapper = mount(<CheckboxFilter column={{ ...props.column, filterValue: [roan.value] }} />);
-    const label = wrapper.find('.pgn__form-checkbox').at(0);
-    const badge = label.find(Badge);
-    expect(badge).toHaveLength(1);
-    expect(badge.text()).toEqual(String(roan.number));
+    const { getByText } = render(<CheckboxFilter column={{ ...props.column, filterValue: [roan.value] }} />);
+    const badge = getByText(String(roan.number));
+    expect(badge).toBeInTheDocument();
   });
-  it('renders checkbox label with number', () => {
-    const wrapper = mount(<CheckboxFilter column={{ ...props.column, filterValue: [roan.value] }} />);
-    const label = wrapper.find('.pgn__form-checkbox').at(1);
-    const badge = label.find(Badge);
-    expect(badge).toHaveLength(0);
+
+  it('does not render badge if number is not present', () => {
+    const { queryByText } = render(<CheckboxFilter column={{ ...props.column, filterValue: [roan.value] }} />);
+    const badge = queryByText(String(palomino.number));
+    expect(badge).toBeNull();
   });
 });

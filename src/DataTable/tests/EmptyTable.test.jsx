@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import EmptyTableContent from '../EmptyTable';
 import DataTableContext from '../DataTableContext';
@@ -10,32 +11,44 @@ const props = {
 };
 
 describe('<EmptyTableContent />', () => {
-  const wrapper = mount(
-    <DataTableContext.Provider value={{ rows: [] }}>
-      <EmptyTableContent {...props} />
-    </DataTableContext.Provider>,
-  );
   it('displays the content', () => {
-    expect(wrapper.text()).toEqual(props.content);
+    const { getByText } = render(
+      <DataTableContext.Provider value={{ rows: [] }}>
+        <EmptyTableContent {...props} />
+      </DataTableContext.Provider>,
+    );
+
+    expect(getByText(props.content)).toBeInTheDocument();
   });
+
   it('adds props to the div', () => {
-    const cell = wrapper.find('div');
-    expect(cell.props().className).toEqual(`pgn__data-table-empty ${props.className}`);
+    const { getByTestId } = render(
+      <DataTableContext.Provider value={{ rows: [] }}>
+        <EmptyTableContent {...props} data-testid="test-div" />
+      </DataTableContext.Provider>,
+    );
+
+    const divElement = getByTestId('test-div');
+    expect(divElement).toHaveClass(`pgn__data-table-empty ${props.className}`);
   });
+
   it('does not display if there are rows', () => {
-    const nonEmptyWrapper = mount(
+    const { container } = render(
       <DataTableContext.Provider value={{ rows: Array(1) }}>
         <EmptyTableContent {...props} />
       </DataTableContext.Provider>,
     );
-    expect(nonEmptyWrapper.text()).toEqual('');
+
+    expect(container.textContent).toBe('');
   });
+
   it('does not display if the table data is loading', () => {
-    const loadingWrapper = mount(
+    const { container } = render(
       <DataTableContext.Provider value={{ isLoading: true }}>
         <EmptyTableContent {...props} />
       </DataTableContext.Provider>,
     );
-    expect(loadingWrapper.text()).toEqual('');
+
+    expect(container.textContent).toBe('');
   });
 });
