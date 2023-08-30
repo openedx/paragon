@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import FormAutosuggest from '../FormAutosuggest';
+import FormAutosuggestOption from '../FormAutosuggestOption';
 
 function FormAutosuggestWrapper(props) {
   return (
@@ -11,15 +12,46 @@ function FormAutosuggestWrapper(props) {
   );
 }
 
+// const container = mount(
+  //     <FormAutosuggestWrapper
+  //       name="FormAutosuggest"
+  //       floatingLabel="floatingLabel text"
+  //       helpMessage="Example help message"
+  //       errorMessageText="Example error message"
+  //       onSelected={onSelected}
+  //     >
+  //       <FormAutosuggestOption>Option 1</FormAutosuggestOption>
+  //       <FormAutosuggestOption onClick={onClick}>Option 2</FormAutosuggestOption>
+  //       <FormAutosuggestOption>Learn from more than 160 member universities</FormAutosuggestOption>
+  //     </FormAutosuggestWrapper>,
+  //   );
+
 describe('render behavior', () => {
+  const onSelected = jest.fn();
+  const onClick = jest.fn();
+      const { container } = render(
+        <FormAutosuggestWrapper
+        name="FormAutosuggest"
+        floatingLabel="floatingLabel text"
+        helpMessage="Example help message"
+        errorMessageText="Example error message"
+        onSelected={onSelected}
+      >
+        <FormAutosuggestOption>Option 1</FormAutosuggestOption>
+        <FormAutosuggestOption onClick={onClick}>Option 2</FormAutosuggestOption>
+        <FormAutosuggestOption>Learn from more than 160 member universities</FormAutosuggestOption>
+        </FormAutosuggestWrapper>,
+      );
+
       it('renders component without error', () => {
         render(<FormAutosuggestWrapper />);
       });
   
-  //     it('render without loading state', () => {
-  //       expect(container.exists('.pgn__form-autosuggest__dropdown-loading')).toBe(false);
-  //       expect(container.props().isLoading).toBeUndefined();
-  //     });
+      it('renders without loading state', () => {
+        // expect(container.exists('.pgn__form-autosuggest__dropdown-loading')).toBe(false);
+        // expect(container.props().isLoading).toBeUndefined();
+        expect(container.querySelector('.pgn__form-autosuggest__dropdown-loading')).toBeNull();
+      });
   
   //     it('render with loading state', () => {
   //       const wrapper = mount(<FormAutosuggestWrapper isLoading />);
