@@ -1,3 +1,23 @@
+/*
+    render behavior
+      ✓ renders component without error (3 ms) - Paired done 
+      ✓ render without loading state (2 ms) - Paired done
+      ✓ render with loading state (3 ms) - Cindy 
+      ✓ renders the auto-populated value if it exists (5 ms) - Mena
+      ✓ renders component with options (5 ms) - Cindy
+      ✓ renders with error msg (8 ms) - Mena
+    controlled behavior
+      ✓ selects option (8 ms) - Pair
+      ✓ when a function is passed to onClick, it is called (6 ms)
+      ✓ when a function is not passed to onClick, it is not called (3 ms)
+      ✓ options list depends on empty field value (2 ms)
+      ✓ options list depends on filled field value (2 ms)
+      ✓ toggles options list (3 ms)
+      ✓ shows options list depends on field value (2 ms)
+      ✓ closes options list on click outside (4 ms)
+*/
+
+
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
