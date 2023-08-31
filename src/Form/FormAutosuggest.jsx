@@ -227,6 +227,7 @@ function FormAutosuggest({
           onChange={handleOnChange}
           onClick={handleClick}
           trailingElement={iconToggle}
+          data-testid="pgn__form-autosuggest__dropdown-box"
           {...props}
         />
 
