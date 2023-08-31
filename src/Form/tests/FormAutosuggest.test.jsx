@@ -5,7 +5,7 @@
       ✓ render with loading state (3 ms) - Cindy done
       ✓ renders the auto-populated value if it exists (5 ms) - Mena done
       ✓ renders component with options (5 ms) - Cindy done
-      ✓ renders with error msg (8 ms) - Mena
+      ✓ renders with error msg (8 ms) - Mena done
     controlled behavior
       ✓ selects option (8 ms) - Pair
       ✓ when a function is passed to onClick, it is called (6 ms)
@@ -87,28 +87,31 @@ describe('render behavior', () => {
 
       it('renders component with options', () => {
         const { getByTestId, container } = render(<FormAutosuggestTestComponent />);
-        const input = getByTestId("pgn__form-autosuggest__dropdown-box")
+        const input = getByTestId("autosuggest_textbox_input")
         fireEvent.click(input)
         const list = container.querySelectorAll('li');
         expect(list.length).toBe(3);
       });
   
-  //     it('renders with error msg', () => {
-  //       container.find('input').simulate('click');
-  //       act(() => {
-  //         const event = new Event('click', { bubbles: true });
-  //         document.dispatchEvent(event);
-  //       });
-  //       container.update();
-  //       const formControlFeedback = container.find('FormControlFeedback');
   
-  //       expect(formControlFeedback.text()).toEqual('Example error message');
-  //     });
+      it('renders with error msg', () => {
+        const { getByText, getByTestId } = render(<FormAutosuggestTestComponent />);
+        const input = getByTestId("autosuggest_textbox_input")
+
+        // if you click into the input and hit escape, you should see the error message
+        fireEvent.click(input)
+        fireEvent.keyDown(input, {
+          key: "Escape",
+          code: "Escape",
+          keyCode: 27,
+          charCode: 27
+        });
+
+        const formControlFeedback = getByText('Example error message');
+  
+        expect(formControlFeedback).toBeInTheDocument();
+      });
     });
-
-
-
-
 //
 //
 // OLD CODE BELOW --------------------- :
