@@ -20,6 +20,7 @@
 
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom'
 import { IntlProvider } from 'react-intl';
 import FormAutosuggest from '../FormAutosuggest';
 import FormAutosuggestOption from '../FormAutosuggestOption';
@@ -81,13 +82,12 @@ describe('render behavior', () => {
         expect(container.querySelector('.pgn__form-autosuggest__dropdown-loading')).toBeTruthy();
       });
   
-  //     it('renders the auto-populated value if it exists', () => {
-  //       const wrapper = mount(<FormAutosuggestWrapper value="Test Value" />);
+      it('renders the auto-populated value if it exists', () => {
+        render(<FormAutosuggestWrapper value="Test Value" />);
   
-  //       expect(wrapper.find('input').instance().value).toEqual('Test Value');
-  //       expect(wrapper.props().value).toEqual('Test Value');
-  //     });
-  
+        expect(screen.getByDisplayValue('Test Value')).toBeInTheDocument();
+      });
+
       it('renders component with options', () => {
         const { getByTestId, container } = render(<FormAutosuggestTestComponent />);
         const input = getByTestId("pgn__form-autosuggest__dropdown-box")
