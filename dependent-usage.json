@@ -1,5 +1,5 @@
 {
-  "lastModified": 1693404552348,
+  "lastModified": 1693490899404,
   "projectUsages": [
     {
       "version": "21.1.2",
@@ -37345,7 +37345,7 @@
       }
     },
     {
-      "version": "20.46.2",
+      "version": "21.1.2",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
@@ -37456,7 +37456,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 861,
             "column": 35,
-            "index": 40752
+            "index": 40759
           }
         ],
         "Container": [
@@ -37774,9 +37774,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseHeader/index.jsx",
-            "line": 34,
+            "line": 51,
             "column": 6,
-            "index": 955
+            "index": 1355
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseMain/variants/DesktopVariant.jsx",
@@ -38684,13 +38684,13 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 861,
             "column": 24,
-            "index": 40741
+            "index": 40748
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 864,
             "column": 24,
-            "index": 40889
+            "index": 40896
           },
           {
             "filePath": "src/packages/search-page/components/AutoComplete/components/PopularSearchItem/index.jsx",
@@ -38702,13 +38702,13 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 246,
             "column": 22,
-            "index": 6640
+            "index": 6655
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 247,
             "column": 23,
-            "index": 6753
+            "index": 6768
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
@@ -39060,9 +39060,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseHeader/components/CourseVideo.jsx",
-            "line": 36,
+            "line": 46,
             "column": 8,
-            "index": 1041
+            "index": 1701
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
@@ -39134,13 +39134,13 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 882,
             "column": 12,
-            "index": 41790
+            "index": 41797
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 926,
             "column": 14,
-            "index": 43776
+            "index": 43783
           },
           {
             "filePath": "src/packages/resource-page/template/ResourcePage/index.jsx",
@@ -39164,7 +39164,7 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/ClearRefinements/index.jsx",
             "line": 42,
             "column": 4,
-            "index": 1281
+            "index": 1296
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/MobileFilterMenu/index.jsx",
@@ -39208,7 +39208,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 864,
             "column": 35,
-            "index": 40900
+            "index": 40907
           }
         ],
         "Close": [
@@ -39590,7 +39590,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 852,
             "column": 18,
-            "index": 40156
+            "index": 40163
           }
         ],
         "Collapsible.Visible": [
@@ -39634,13 +39634,13 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 860,
             "column": 22,
-            "index": 40684
+            "index": 40691
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 863,
             "column": 22,
-            "index": 40834
+            "index": 40841
           }
         ],
         "Collapsible.Body": [
@@ -39666,7 +39666,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 867,
             "column": 20,
-            "index": 41023
+            "index": 41030
           }
         ],
         "SearchField.Advanced": [
@@ -39914,7 +39914,7 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 275,
             "column": 33,
-            "index": 7911
+            "index": 7926
           }
         ],
         "ChevronLeft": [
@@ -39951,6 +39951,12 @@
             "index": 3438
           },
           {
+            "filePath": "src/packages/common/ui/Video/newBasePlayer.jsx",
+            "line": 96,
+            "column": 16,
+            "index": 3062
+          },
+          {
             "filePath": "src/packages/exec-ed-page/components/CourseHeader2U/index.jsx",
             "line": 295,
             "column": 30,
@@ -39958,9 +39964,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseHeader/components/CourseVideo.jsx",
-            "line": 46,
+            "line": 54,
             "column": 10,
-            "index": 1300
+            "index": 1886
           }
         ],
         "Send": [
@@ -40026,7 +40032,7 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 268,
             "column": 22,
-            "index": 7511
+            "index": 7526
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
@@ -40680,15 +40686,15 @@
         "Skeleton": [
           {
             "filePath": "src/packages/home-page/template/HomePage/index.jsx",
-            "line": 103,
+            "line": 104,
             "column": 15,
-            "index": 3971
+            "index": 4019
           },
           {
             "filePath": "src/packages/home-page/template/HomePage/index.jsx",
-            "line": 118,
+            "line": 119,
             "column": 15,
-            "index": 4345
+            "index": 4393
           },
           {
             "filePath": "src/packages/modular-page/modules/ImageCarouselModule/index.jsx",
@@ -41468,7 +41474,7 @@
             "filePath": "src/packages/queryless-pages/templates/CS50PaidLandingPage/index.jsx",
             "line": 858,
             "column": 20,
-            "index": 40496
+            "index": 40503
           }
         ],
         "AddCircle": [
@@ -41660,19 +41666,19 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/CurrentRefinements/index.jsx",
             "line": 128,
             "column": 16,
-            "index": 4565
+            "index": 4580
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/CurrentRefinements/index.jsx",
             "line": 168,
             "column": 16,
-            "index": 6213
+            "index": 6228
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/CurrentRefinements/index.jsx",
             "line": 199,
             "column": 18,
-            "index": 7428
+            "index": 7443
           }
         ],
         "Menu": [
@@ -41680,7 +41686,7 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 262,
             "column": 10,
-            "index": 7278
+            "index": 7293
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
@@ -41694,7 +41700,7 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 264,
             "column": 16,
-            "index": 7364
+            "index": 7379
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
