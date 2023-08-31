@@ -2,9 +2,9 @@
     render behavior
       ✓ renders component without error (3 ms) - Paired done 
       ✓ render without loading state (2 ms) - Paired done
-      ✓ render with loading state (3 ms) - Cindy 
-      ✓ renders the auto-populated value if it exists (5 ms) - Mena
-      ✓ renders component with options (5 ms) - Cindy
+      ✓ render with loading state (3 ms) - Cindy done
+      ✓ renders the auto-populated value if it exists (5 ms) - Mena done
+      ✓ renders component with options (5 ms) - Cindy done
       ✓ renders with error msg (8 ms) - Mena
     controlled behavior
       ✓ selects option (8 ms) - Pair
@@ -66,8 +66,6 @@ function FormAutosuggestTestComponent(){
   //   );
 
 describe('render behavior', () => {
-     
-
       it('renders component without error', () => {
         render(<FormAutosuggestWrapper />);
       });
@@ -84,7 +82,6 @@ describe('render behavior', () => {
   
       it('renders the auto-populated value if it exists', () => {
         render(<FormAutosuggestWrapper value="Test Value" />);
-  
         expect(screen.getByDisplayValue('Test Value')).toBeInTheDocument();
       });
 
@@ -92,8 +89,8 @@ describe('render behavior', () => {
         const { getByTestId, container } = render(<FormAutosuggestTestComponent />);
         const input = getByTestId("pgn__form-autosuggest__dropdown-box")
         fireEvent.click(input)
-        const list = container.querySelectorAll('button');
-        expect(list.length).toBe(3); //TO DO: Change this to look for <li>
+        const list = container.querySelectorAll('li');
+        expect(list.length).toBe(3);
       });
   
   //     it('renders with error msg', () => {
