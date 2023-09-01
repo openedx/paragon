@@ -9,7 +9,7 @@ const CONFLICTING_ICONS = [
   'menu',
   'spinner',
   'tab',
-];
+]
 
 /*
   Copies all sharp svg mui icons from @material-icons package to svg directory skipping existing ones.
@@ -20,4 +20,4 @@ muiIcons.forEach((iconName) => {
     const resolvedName = CONFLICTING_ICONS.includes(iconName) ? `${iconName}_icon` : iconName;
     fs.copyFileSync(`../node_modules/@material-icons/svg/svg/${iconName}/sharp.svg`, `./svg/${resolvedName}.svg`);
   }
-});
+})

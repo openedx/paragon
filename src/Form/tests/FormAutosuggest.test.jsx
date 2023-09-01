@@ -140,7 +140,7 @@ describe('FormAutosuggest', () => {
       expect(container.find(dropdownContainer).find('button').length).toEqual(0);
 
       container.find('button.pgn__form-autosuggest__icon-button').simulate('click');
-      expect(container.find(dropdownContainer).find('button').length).toEqual(1);
+      expect(container.find(dropdownContainer).find('button').length).toEqual(3);
     });
 
     it('shows options list depends on field value', () => {

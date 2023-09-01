@@ -2,7 +2,6 @@
 
 exports[`<SelectableBox.Set /> correct rendering renders without props 1`] = `
 <div
-  aria-label="test-default-label"
   className="pgn__selectable_box-set pgn__selectable_box-set--2 pgn__form-control-set"
   role="radiogroup"
 >
@@ -14,16 +13,27 @@ exports[`<SelectableBox.Set /> correct rendering renders without props 1`] = `
     role="button"
     tabIndex={0}
   >
-    <input
-      className="pgn__form-radio-input"
-      defaultChecked={false}
-      hidden={true}
-      name="testName"
-      onChange={[Function]}
-      tabIndex={-1}
-      type="radio"
-      value={1}
-    />
+    <div
+      className="pgn__form-radio"
+    >
+      <input
+        className="pgn__form-radio-input"
+        defaultChecked={false}
+        hidden={true}
+        id="form-field1"
+        name="testName"
+        onChange={[Function]}
+        tabIndex={-1}
+        type="radio"
+        value={1}
+      />
+      <div>
+        <label
+          className="pgn__form-label"
+          htmlFor="form-field1"
+        />
+      </div>
+    </div>
     SelectableRadio1
   </div>
   <div
@@ -34,16 +44,27 @@ exports[`<SelectableBox.Set /> correct rendering renders without props 1`] = `
     role="button"
     tabIndex={0}
   >
-    <input
-      className="pgn__form-radio-input"
-      defaultChecked={false}
-      hidden={true}
-      name="testName"
-      onChange={[Function]}
-      tabIndex={-1}
-      type="radio"
-      value={2}
-    />
+    <div
+      className="pgn__form-radio"
+    >
+      <input
+        className="pgn__form-radio-input"
+        defaultChecked={false}
+        hidden={true}
+        id="form-field2"
+        name="testName"
+        onChange={[Function]}
+        tabIndex={-1}
+        type="radio"
+        value={2}
+      />
+      <div>
+        <label
+          className="pgn__form-label"
+          htmlFor="form-field2"
+        />
+      </div>
+    </div>
     SelectableRadio2
   </div>
   <div
@@ -54,16 +75,27 @@ exports[`<SelectableBox.Set /> correct rendering renders without props 1`] = `
     role="button"
     tabIndex={0}
   >
-    <input
-      className="pgn__form-radio-input"
-      defaultChecked={false}
-      hidden={true}
-      name="testName"
-      onChange={[Function]}
-      tabIndex={-1}
-      type="radio"
-      value={3}
-    />
+    <div
+      className="pgn__form-radio"
+    >
+      <input
+        className="pgn__form-radio-input"
+        defaultChecked={false}
+        hidden={true}
+        id="form-field3"
+        name="testName"
+        onChange={[Function]}
+        tabIndex={-1}
+        type="radio"
+        value={3}
+      />
+      <div>
+        <label
+          className="pgn__form-label"
+          htmlFor="form-field3"
+        />
+      </div>
+    </div>
     SelectableRadio3
   </div>
 </div>

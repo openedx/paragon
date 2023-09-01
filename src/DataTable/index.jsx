@@ -52,8 +52,6 @@ function DataTable({
   isLoading,
   children,
   onSelectedRowsChanged,
-  maxSelectedRows,
-  onMaxSelectedRows,
   ...props
 }) {
   const defaultColumn = useMemo(
@@ -62,7 +60,7 @@ function DataTable({
   );
   const tableOptions = useMemo(() => {
     const updatedTableOptions = {
-      stateReducer: (newState, action, previousState) => {
+      stateReducer: (newState, action) => {
         switch (action.type) {
           // Note: we override the `toggleAllRowsSelected` action
           // from react-table because it only clears the selections on the
@@ -77,28 +75,6 @@ function DataTable({
             return {
               ...newState,
               selectedRowIds: {},
-            };
-          }
-          /*  Note: We override the `toggleRowSelected` action from react-table
-              because we need to preserve the order of the selected rows.
-              While `selectedRowIds` is an object that contains the selected rows as key-value pairs,
-              it does not maintain the order of selection. Therefore, we have added the `selectedRowsOrdered` property
-              to keep track of the order in which the rows were selected.
-          */
-          case 'toggleRowSelected': {
-            const rowIndex = parseInt(action.id, 10);
-            const { selectedRowsOrdered = [] } = previousState;
-
-            let newSelectedRowsOrdered;
-            if (action.value) {
-              newSelectedRowsOrdered = [...selectedRowsOrdered, rowIndex];
-            } else {
-              newSelectedRowsOrdered = selectedRowsOrdered.filter((item) => item !== rowIndex);
-            }
-
-            return {
-              ...newState,
-              selectedRowsOrdered: newSelectedRowsOrdered,
             };
           }
           default:
@@ -117,7 +93,7 @@ function DataTable({
       initialState,
       ...updatedTableOptions,
     };
-  }, [initialTableOptions, columns, data, defaultColumn, manualFilters, manualPagination, manualSortBy, initialState]);
+  }, [columns, data, defaultColumn, manualFilters, manualPagination, initialState, initialTableOptions, manualSortBy]);
 
   const [selections, selectionsDispatch] = useReducer(selectionsReducer, initialSelectionsState);
 
@@ -200,8 +176,6 @@ function DataTable({
     isSelectable,
     isPaginated,
     manualSelectColumn,
-    maxSelectedRows,
-    onMaxSelectedRows,
     ...selectionProps,
     ...selectionActions,
     ...props,
@@ -262,8 +236,6 @@ DataTable.defaultProps = {
   isExpandable: false,
   isLoading: false,
   onSelectedRowsChanged: undefined,
-  maxSelectedRows: undefined,
-  onMaxSelectedRows: undefined,
 };
 
 DataTable.propTypes = {
@@ -336,7 +308,6 @@ DataTable.propTypes = {
     filters: requiredWhen(PropTypes.arrayOf(PropTypes.shape()), 'manualFilters'),
     sortBy: requiredWhen(PropTypes.arrayOf(PropTypes.shape()), 'manualSortBy'),
     selectedRowIds: PropTypes.shape(),
-    selectedRowsOrdered: PropTypes.arrayOf(PropTypes.number),
   }),
   /** Table options passed to react-table's useTable hook. Will override some options passed in to DataTable, such
      as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
@@ -434,10 +405,6 @@ DataTable.propTypes = {
   isLoading: PropTypes.bool,
   /** Callback function called when row selections change. */
   onSelectedRowsChanged: PropTypes.func,
-  /** Indicates the max of rows selectable in the table. Requires isSelectable prop */
-  maxSelectedRows: PropTypes.number,
-  /** Callback after selected max rows. Requires isSelectable and maxSelectedRows props */
-  onMaxSelectedRows: PropTypes.func,
 };
 
 DataTable.BulkActions = BulkActions;
