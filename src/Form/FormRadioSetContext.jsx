@@ -6,6 +6,7 @@ const identityFn = props => props;
 
 const FormRadioSetContext = React.createContext({
   getRadioControlProps: identityFn,
+  hasRadioSetProvider: false,
 });
 
 const useRadioSetContext = () => useContext(FormRadioSetContext);
@@ -40,6 +41,7 @@ function FormRadioSetContextProvider({
     onBlur,
     onFocus,
     onChange,
+    hasRadioSetProvider: true,
   };
   return (
     <FormRadioSetContext.Provider value={contextValue}>
