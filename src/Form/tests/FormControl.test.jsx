@@ -18,7 +18,7 @@ describe('FormControl', () => {
     ref.offsetHeight = 90;
     ref.clientHeight = 88;
     expect(useReferenceSpy).toHaveBeenCalledTimes(1);
-    expect(ref.current.style.height).toBe('0px');
+    expect(ref.current.style.height).toBeFalsy();
     wrapper.find('textarea').simulate('change');
     expect(onChangeFunc).toHaveBeenCalledTimes(1);
     expect(ref.current.style.height).toEqual(`${ref.current.scrollHeight + ref.current.offsets}px`);

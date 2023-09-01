@@ -42,7 +42,6 @@ As ``Checkbox``
         onChange={handleChange}
         name="cheeses"
         columns={isExtraSmall ? 1 : 2}
-        ariaLabel="cheese selection"
       >
         <SelectableBox value="swiss" type={type} aria-label="swiss checkbox">
           <div>
@@ -84,7 +83,6 @@ As ``Checkbox``
       onChange={handleChange}
       name="colors"
       columns={isExtraSmall ? 1 : 3}
-      ariaLabel="color selection"
     >
       <SelectableBox value="red" type={type} aria-label="red checkbox">
         <div>
@@ -146,7 +144,6 @@ As ``Checkbox`` with ``isIndeterminate``
         onChange={handleChange}
         name="cheeses"
         columns={isExtraSmall ? 1 : 3}
-        ariaLabel="cheese selection"
       >
         <SelectableBox value="swiss" type={type} aria-label="swiss checkbox">
           <div>
@@ -162,54 +159,6 @@ As ``Checkbox`` with ``isIndeterminate``
         </SelectableBox>
       </SelectableBox.Set>
     </>
-  );
-}
-```
-
-As ``Checkbox`` with ``ariaLabelledby``
-
-```jsx live
-() => {
-  const type = 'checkbox';
-  const allCheeseOptions = ['swiss', 'cheddar', 'pepperjack'];
-  const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues(['swiss']);
-
-  const handleChange = e => {
-    e.target.checked ? add(e.target.value) : remove(e.target.value);
-  };
-  
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
-  
-  return (
-    <div className="bg-light-200 p-3">
-      <h3 id="cheese selection" className="mb-4">
-        Select your favorite cheese
-      </h3>
-      <SelectableBox.Set
-        value={checkedCheeses}
-        type={type}
-        onChange={handleChange}
-        name="cheeses"
-        columns={isExtraSmall ? 1 : 3}
-        ariaLabelledby="cheese selection"
-      >
-        <SelectableBox value="swiss" inputHidden={false} type={type} aria-label="swiss checkbox">
-          <h3>
-            Swiss
-          </h3>
-        </SelectableBox>
-        <SelectableBox value="cheddar" inputHidden={false} type={type} aria-label="cheddar checkbox">
-          <h3>
-            Cheddar
-          </h3>
-        </SelectableBox>
-        <SelectableBox value="pepperjack" inputHidden={false} type={type} aria-label="pepperjack checkbox">
-          <h3>
-            Pepperjack
-          </h3>
-        </SelectableBox>
-      </SelectableBox.Set>
-    </div>
   );
 }
 ```

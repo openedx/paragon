@@ -1,7 +1,6 @@
-import React, { useMemo, useContext, useEffect } from 'react';
+import React, { useMemo } from 'react';
 
 import { CheckboxControl } from '../../Form';
-import DataTableContext from '../DataTableContext';
 import useConvertIndeterminateProp from './useConvertIndeterminateProp';
 
 export const selectColumn = {
@@ -12,7 +11,6 @@ export const selectColumn = {
   // Proptypes disabled as these props are passed in separately
   /* eslint-disable-next-line react/prop-types */
   Header: ({ getToggleAllPageRowsSelectedProps, getToggleAllRowsSelectedProps, page }) => {
-    const { isSelectable, maxSelectedRows } = useContext(DataTableContext);
     const toggleRowsSelectedProps = useMemo(
       () => {
         // determine if this selection is for an individual page or the entire table
@@ -22,11 +20,6 @@ export const selectColumn = {
       [getToggleAllPageRowsSelectedProps, getToggleAllRowsSelectedProps, page],
     );
     const updatedProps = useConvertIndeterminateProp(toggleRowsSelectedProps);
-    const formatMaxSelectedRows = Math.max(0, maxSelectedRows);
-
-    if (isSelectable && formatMaxSelectedRows >= 0) {
-      return null;
-    }
 
     return (
       <div className="pgn__data-table__controlled-select">
@@ -42,29 +35,12 @@ export const selectColumn = {
   // Proptypes disabled as this prop is passed in separately
   /* eslint-disable react/prop-types */
   Cell: ({ row }) => {
-    const {
-      isSelectable, maxSelectedRows, onMaxSelectedRows, state: { selectedRowIds, selectedRowsOrdered },
-    } = useContext(DataTableContext);
     const updatedProps = useConvertIndeterminateProp(row.getToggleRowSelectedProps());
-    const { index } = row;
-    const isRowSelected = index in selectedRowIds;
-    const selectedRowsLength = Object.keys(selectedRowIds).length;
-    const formatMaxSelectedRows = Math.max(0, maxSelectedRows);
-    const hasMaxSelectedRows = formatMaxSelectedRows === selectedRowsLength;
-    const disableCheck = isSelectable && hasMaxSelectedRows && !isRowSelected;
-    const lastRowSelected = selectedRowsOrdered?.[selectedRowsOrdered.length - 1] ?? null;
-
-    useEffect(() => {
-      if (hasMaxSelectedRows && lastRowSelected === index) {
-        onMaxSelectedRows?.();
-      }
-    }, [hasMaxSelectedRows, index, isRowSelected, lastRowSelected, onMaxSelectedRows, selectedRowIds]);
 
     return (
       <div className="pgn__data-table__controlled-select">
         <CheckboxControl
           {...updatedProps}
-          disabled={disableCheck}
           data-testid="datatable-select-column-checkbox-cell"
         />
       </div>

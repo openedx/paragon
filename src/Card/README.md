@@ -26,7 +26,7 @@ notes: |
 
 `Card` supports `vertical` and `horizontal` orientation which is controlled by `CardContext`, see examples below.
 
-This component uses a `Card` from react-bootstrap as a base component and extends it with additional subcomponents. <br/> <a href="https://react-bootstrap-v4.netlify.app/components/cards/" target="_blank" rel="noopener noreferrer">See React-Bootstrap for additional documentation.</a>
+This component uses a `Card` from react-bootstrap as a base component and extends it with additional subcomponents. <br/> <a href="https://react-bootstrap.github.io/components/cards/" target="_blank" rel="noopener noreferrer">See React-Bootstrap for additional documentation.</a>
 
 ## Basic Usage
 

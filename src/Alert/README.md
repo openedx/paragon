@@ -21,7 +21,7 @@ Alerts offer four severity levels that set a distinctive icon and color:
 - **Success**: used for success messages
 - **Danger**: used to communicate problems that have to be resolved immediately
 
-This component utilizes and extends the `Alert` component from react-bootstrap.<br/> <a href="https://react-bootstrap-v4.netlify.app/components/alerts/" target="_blank" rel="noopener noreferrer"> See React-Bootstrap for additional documentation.</a>
+This component utilizes and extends the `Alert` component from react-bootstrap.<br/> <a href="https://react-bootstrap.github.io/components/alerts/" target="_blank" rel="noopener noreferrer"> See React-Bootstrap for additional documentation.</a>
 
 ## Basic Usage
 

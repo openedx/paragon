@@ -4,7 +4,7 @@
       "tabs-link": {
         "border": {
           "active": {
-            "value": "{color.primary.500}",
+            "value": "transparent transparent {color.primary.500}",
             "type": "color",
             "source": "$nav-tabs-link-active-border-color"
           },
