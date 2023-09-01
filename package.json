@@ -8,7 +8,8 @@
   "bin": {
     "build-design-tokens": "./tokens/build-tokens.js",
     "replace-scss-with-css": "./tokens/replace-variables.js",
-    "build-scss": "./build-scss.js"
+    "build-scss": "./build-scss.js",
+    "paragon": "./bin/paragon-scripts.js"
   },
   "publishConfig": {
     "access": "public"
@@ -22,7 +23,8 @@
     "/icons",
     "/src",
     "/styles",
-    "/tokens"
+    "/tokens",
+    "/lib"
   ],
   "sideEffects": false,
   "scripts": {
@@ -39,13 +41,16 @@
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
     "generate-component": "npm start --workspace=component-generator",
-    "start-example-mfe": "npm run start --workspace=example",
+    "example:start": "npm start --workspace=example",
+    "example:start:with-theme": "npm run start:with-theme --workspace=example",
     "generate-changelog": "node generate-changelog.js",
     "i18n_compile": "formatjs compile-folder --format transifex ./src/i18n/messages ./src/i18n/messages",
     "i18n_extract": "formatjs extract 'src/**/*.{jsx,js,tsx,ts}' --out-file ./src/i18n/transifex_input.json --format transifex",
     "type-check": "tsc --noEmit && tsc --project www --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build-types": "tsc --emitDeclarationOnly",
+    "playroom:start": "npm run playroom:start --workspace=www",
+    "playroom:build": "npm run playroom:build --workspace=www",
     "build-tokens": "node tokens/build-tokens.js --build-dir ./styles/css",
     "replace-variables-usage-with-css": "node tokens/replace-variables.js -p src -t usage",
     "replace-variables-definition-with-css": "node tokens/replace-variables.js -p src -t definition"
@@ -54,11 +59,13 @@
     "@popperjs/core": "^2.11.4",
     "bootstrap": "^4.6.2",
     "chalk": "^4.1.2",
+    "child_process": "^1.0.2",
     "chroma-js": "^2.4.2",
     "classnames": "^2.3.1",
     "commander": "^9.4.1",
     "email-prop-type": "^3.0.0",
     "file-selector": "^0.6.0",
+    "inquirer": "^8.2.5",
     "glob": "^8.0.3",
     "lodash.uniqby": "^4.7.0",
     "mailto-link": "^2.0.0",
@@ -88,7 +95,7 @@
   "peerDependencies": {
     "react": "^16.8.6 || ^17.0.0",
     "react-dom": "^16.8.6 || ^17.0.0",
-    "react-intl": "^5.25.1"
+    "react-intl": "^5.25.1 || ^6.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.8",
@@ -102,6 +109,7 @@
     "@edx/browserslist-config": "^1.2.0",
     "@edx/eslint-config": "^3.2.0",
     "@edx/stylelint-config-edx": "^2.3.0",
+    "@edx/typescript-config": "^1.0.1",
     "@formatjs/cli": "^5.0.2",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from '~paragon-react';
 import Layout from '../../components/PageLayout';
 import SEO from '../../components/SEO';
@@ -10,13 +10,16 @@ import {
   LinksTable,
   AlignmentTable,
 } from '../../components/typography-page';
+import { SettingsContext } from '../../context/SettingsContext';
 
 export default function TypographyPage() {
+  const { settings } = useContext(SettingsContext);
+
   return (
-    <Layout>
-      <Container size="xl" className="py-5">
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <SEO title="Typography" />
+    <Layout isAutoToc>
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <SEO title="Typography" />
+      <Container size={settings.containerWidth} className="py-5">
         <h1>Typography</h1>
         <hr />
         <HeadingsTable />
