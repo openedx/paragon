@@ -6,7 +6,6 @@ import DataTableContext from '../DataTableContext';
 
 const instance = {
   isSelectable: false,
-  state: { selectedRowIds: {} },
   rows: [
     {
       id: '1',

@@ -93,4 +93,4 @@ Following this decision there will be a pull request containing 18 components th
 References
 ----------
 
-* https://react-bootstrap-v4.netlify.app/
+* https://react-bootstrap.github.io/

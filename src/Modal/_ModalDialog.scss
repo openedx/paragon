@@ -337,7 +337,7 @@
 
     .pgn__alert-modal__title_icon {
       flex-shrink: 0;
-      margin-right: var(--pgn-spacing-spacer-2-5);
+      margin-right: map-get($spacers, 2\.5);
     }
   }
 }

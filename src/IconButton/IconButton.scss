@@ -1,4 +1,7 @@
-@import "mixins";
+@mixin btn-icon-size($icon-size) {
+  width: $icon-size;
+  height: $icon-size;
+}
 
 .btn-icon {
   @include btn-icon-size(var(--pgn-size-icon-button-diameter-md));

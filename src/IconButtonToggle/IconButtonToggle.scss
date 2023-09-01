@@ -2,6 +2,6 @@
   display: flex;
 
   .btn-icon + .btn-icon {
-    margin-inline-start: var(--pgn-spacing-spacer-1);
+    margin-inline-start: map_get($spacers, 1);
   }
 }
