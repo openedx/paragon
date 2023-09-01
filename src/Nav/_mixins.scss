@@ -10,11 +10,11 @@
   &::before {
     content: "";
     position: absolute;
-    top: calc(var(--pgn-spacing-nav-link-distance-to-border) * -1);
-    right: calc(var(--pgn-spacing-nav-link-distance-to-border) * -1);
-    bottom: calc(var(--pgn-spacing-nav-link-distance-to-border) * -1);
-    left: calc(var(--pgn-spacing-nav-link-distance-to-border) * -1);
+    top: calc(#{$distance} * -1);
+    right: calc(#{$distance} * -1);
+    bottom: calc(#{$distance} * -1);
+    left: calc(#{$distance} * -1);
     border: solid var(--pgn-size-nav-tabs-border-width) $tabs-border-color;
-    border-radius: var(--pgn-size-nav-tabs-border-radius);
+    border-radius: $radius;
   }
 }

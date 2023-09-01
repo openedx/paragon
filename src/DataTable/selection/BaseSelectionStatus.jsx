@@ -22,10 +22,12 @@ function BaseSelectionStatus({
 }) {
   const {
     itemCount, filteredRows, isPaginated, state,
+    isSelectable, maxSelectedRows,
   } = useContext(DataTableContext);
   const hasAppliedFilters = state?.filters?.length > 0;
   const isAllRowsSelected = numSelectedRows === itemCount;
   const filteredItems = filteredRows?.length || itemCount;
+  const hasMaxSelectedRows = isSelectable && maxSelectedRows;
 
   const intlAllSelectedText = allSelectedText || (
     <FormattedMessage
@@ -57,7 +59,7 @@ function BaseSelectionStatus({
   return (
     <div className={className}>
       <span>{isAllRowsSelected ? intlAllSelectedText : intlSelectedText}</span>
-      {!isAllRowsSelected && (
+      {!isAllRowsSelected && !hasMaxSelectedRows && (
         <Button
           className={SELECT_ALL_TEST_ID}
           variant="link"

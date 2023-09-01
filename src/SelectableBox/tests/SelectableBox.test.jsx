@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import SelectableBox from '..';
-import { Form } from '../..';
+import { RadioControl, CheckboxControl } from '../../Form';
 
 const checkboxType = 'checkbox';
 const checkboxText = 'SelectableCheckbox';
@@ -29,11 +29,11 @@ describe('<SelectableBox />', () => {
     });
     it('correct render when type prop is changed', () => {
       const boxWrapper = mount(<SelectableRadio />);
-      expect(boxWrapper.find(Form.Radio).length).toBeGreaterThan(0);
+      expect(boxWrapper.find(RadioControl).length).toBeGreaterThan(0);
       boxWrapper.setProps({ type: 'radio' });
-      expect(boxWrapper.find(Form.Radio).length).toBeGreaterThan(0);
+      expect(boxWrapper.find(RadioControl).length).toBeGreaterThan(0);
       boxWrapper.setProps({ type: 'checkbox' });
-      expect(boxWrapper.find(Form.Checkbox).length).toBeGreaterThan(0);
+      expect(boxWrapper.find(CheckboxControl).length).toBeGreaterThan(0);
     });
     it('renders with radio input type if neither checkbox nor radio is passed', () => {
       // Mock the `console.error` is intentional because an invalid `type` prop
