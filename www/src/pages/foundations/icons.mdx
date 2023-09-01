@@ -8,6 +8,7 @@ import get from 'lodash/get';
 import { Icon } from '~paragon-react';
 import IconsTable from '../../components/IconsTable';
 import PropsTable from '../../components/PropsTable';
+import * as IconComponents from '~paragon-icons';
 
 ## Icons
 
@@ -23,4 +24,4 @@ Many of the icons below are sourced from <a href="https://material.io/resources/
 
 <br/>
 
-<IconsTable />
+<IconsTable iconNames={Object.keys(IconComponents)} />

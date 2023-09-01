@@ -35,13 +35,19 @@ module.exports = {
   svgoConfig: {
     plugins: [
       {
-        removeViewBox: false
-      },
-      {
-        addAttributesToSVGElement: {
-          attributes: ['fill="none"'],
+        name: 'preset-default',
+        params: {
+          overrides: {
+            removeViewBox: false,
+          },
         },
       },
+      {
+        name: 'addAttributesToSVGElement',
+        params: {
+          attributes: ['fill="none"', 'width=24', 'height=24'],
+        }
+      }
     ],
   },
   jsx: {

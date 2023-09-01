@@ -294,6 +294,8 @@ a.pgn__card {
     object-fit: cover;
     max-height: inherit;
     width: 100%;
+    border-top-left-radius: var(--pgn-size-card-image-border-radius);
+    border-top-right-radius: var(--pgn-size-card-image-border-radius);
     display: none;
 
     &.show {
@@ -312,6 +314,7 @@ a.pgn__card {
       .pgn__card-image-cap {
         height: 100%;
         max-width: inherit;
+        border-radius: var(--pgn-size-card-image-border-radius) 0 0 var(--pgn-size-card-image-border-radius);
         width: auto;
         object-fit: cover;
       }
@@ -339,6 +342,8 @@ a.pgn__card {
         position: relative;
         top: -$loading-skeleton-spacer;
         height: 100%;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
       }
     }
 

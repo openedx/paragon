@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import RBFormControl from 'react-bootstrap/FormControl';
@@ -36,13 +36,7 @@ const FormControl = React.forwardRef(({
     value: props.value,
   });
 
-  const controlProps = getControlProps({
-    ...props,
-    // eslint-disable-next-line react/prop-types
-    onBlur: callAllHandlers(checkInputEventValue, props.onBlur),
-  });
-
-  const handleOnChange = (e) => {
+  const handleResize = useCallback(() => {
     if (as === 'textarea' && autoResize) {
       if (!resolvedRef.current.initialHeight && !resolvedRef.current.offsets) {
         resolvedRef.current.initialHeight = resolvedRef.current.offsetHeight;
@@ -51,6 +45,20 @@ const FormControl = React.forwardRef(({
       resolvedRef.current.style.height = `${resolvedRef.current.initialHeight}px`;
       resolvedRef.current.style.height = `${resolvedRef.current.scrollHeight + resolvedRef.current.offsets}px`;
     }
+  }, [as, autoResize, resolvedRef]);
+
+  useEffect(() => {
+    handleResize();
+  }, [handleResize]);
+
+  const controlProps = getControlProps({
+    ...props,
+    // eslint-disable-next-line react/prop-types
+    onBlur: callAllHandlers(checkInputEventValue, props.onBlur),
+  });
+
+  const handleOnChange = (e) => {
+    handleResize();
     if (onChange) {
       onChange(e);
     }
