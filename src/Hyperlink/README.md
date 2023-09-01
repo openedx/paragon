@@ -58,6 +58,7 @@ notes: |
 <Hyperlink destination="https://www.edx.org">
   <Icon
     id="SampleIcon"
+    src={Add}
     className="fa fa-book"
     screenReaderText="Visit edX Home"
   />
