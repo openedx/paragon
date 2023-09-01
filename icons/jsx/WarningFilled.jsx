@@ -1,18 +1,17 @@
 import * as React from "react";
-const SvgWarningFilled = (props) => (
-  <svg
-    width={24}
-    height={24}
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <path
+function SvgWarningFilled(props) {
+  return (
+    <svg
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-      fill="currentColor"
-    />
-  </svg>
-);
+      {...props}
+    >
+      <path d="M12 2L1 21h22L12 2z" fill="currentColor" />
+      <path d="M13 16h-2v2h2v-2zM13 10h-2v4h2v-4z" fill="currentColor" />
+    </svg>
+  );
+}
 export default SvgWarningFilled;

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import RBContainer from 'react-bootstrap/Container';
 import PropTypes from 'prop-types';
@@ -11,18 +11,19 @@ const SIZE_CLASS_NAMES = {
   xl: 'container-mw-xl',
 };
 
-const Container = forwardRef(({ size, children, ...props }, ref) => (
-  <RBContainer
-    {...props}
-    ref={ref}
-    className={classNames(
-      props.className,
-      SIZE_CLASS_NAMES[size],
-    )}
-  >
-    {children}
-  </RBContainer>
-));
+function Container({ size, children, ...props }) {
+  return (
+    <RBContainer
+      {...props}
+      className={classNames(
+        props.className,
+        SIZE_CLASS_NAMES[size],
+      )}
+    >
+      {children}
+    </RBContainer>
+  );
+}
 
 Container.propTypes = {
   ...RBContainer.propTypes,

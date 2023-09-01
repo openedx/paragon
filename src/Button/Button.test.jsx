@@ -4,7 +4,6 @@ import renderer from 'react-test-renderer';
 
 import { Close } from '../../icons';
 import Button from './index';
-import Hyperlink from '../Hyperlink';
 
 describe('<Button />', () => {
   describe('correct rendering', () => {
@@ -82,12 +81,6 @@ describe('<Button />', () => {
         ));
         emptyHref.simulate('click');
         expect(onClick).toHaveBeenCalled();
-      });
-      test('test button as hyperlink', () => {
-        const wrapper = mount((
-          <Button as={Hyperlink} destination="https://www.poop.com/💩">Button</Button>
-        ));
-        expect(wrapper.find('a').prop('href')).toEqual('https://www.poop.com/💩');
       });
     });
   });

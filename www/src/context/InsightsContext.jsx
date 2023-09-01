@@ -12,9 +12,10 @@ function InsightsContextProvider({ children }) {
   const [paragonTypes, setParagonTypes] = useState({});
 
   useEffect(() => {
-    setParagonTypes(getParagonComponentsTypes({ paragon: 'Paragon', ...Components }));
+    setParagonTypes(getParagonComponentsTypes(Components));
   }, []);
-  const isParagonIcon = (name) => name in Icons || name.match('Icon');
+
+  const isParagonIcon = (name) => name in Icons;
 
   const contextValue = useMemo(() => ({
     paragonTypes,
