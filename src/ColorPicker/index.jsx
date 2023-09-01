@@ -67,14 +67,16 @@ function ColorPicker({
         >
           <HexColorPicker color={color || ''} onChange={setColor} />
           <Form.Group className="pgn__hex-form" size="sm">
-            <h5>Hex</h5>
-            <Form.Control
-              className="form-field"
-              isInvalid={!hexValid}
-              value={color}
-              onChange={(e) => validateHex(e.target.value)}
-              data-testid="hex-input"
-            />
+            <div>
+              <Form.Label className="pgn__hex-label">Hex</Form.Label>
+              <Form.Control
+                className="pgn__hex-field"
+                isInvalid={!hexValid}
+                value={color}
+                onChange={(e) => validateHex(e.target.value)}
+                data-testid="hex-input"
+              />
+            </div>
             {!hexValid && (
               <Form.Control.Feedback
                 className="pgn__color-error"

@@ -1,0 +1,7 @@
+.pgn__icon-button-toggle__container {
+  display: flex;
+
+  .btn-icon + .btn-icon {
+    margin-inline-start: var(--pgn-spacing-spacer-1);
+  }
+}

@@ -81,7 +81,7 @@ function addComponentToExports(componentName) {
   );
   fs.appendFileSync(
     path.resolve(__dirname, '../src/index.scss'),
-    `@import './${componentName}/${componentName}.scss';\n`,
+    `@import "./${componentName}";\n`,
   );
 }
 
