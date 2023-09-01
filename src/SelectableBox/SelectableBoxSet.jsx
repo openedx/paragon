@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { getInputType } from './utils';
+import { requiredWhenNot } from '../utils/propTypes';
 
 const INPUT_TYPES = [
   'radio',
@@ -19,6 +20,9 @@ const SelectableBoxSet = React.forwardRef(({
   type,
   columns,
   className,
+  ariaLabel,
+  ariaLabelledby,
+  ...props
 }, ref) => {
   const inputType = getInputType('SelectableBoxSet', type);
 
@@ -35,6 +39,9 @@ const SelectableBoxSet = React.forwardRef(({
         `pgn__selectable_box-set--${columns || DEFAULT_COLUMNS_NUMBER}`,
         className,
       ),
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledby,
+      ...props,
     },
     children,
   );
@@ -62,6 +69,17 @@ SelectableBoxSet.propTypes = {
   columns: PropTypes.number,
   /** A class that is be appended to the base element. */
   className: PropTypes.string,
+  /**
+   * The ID of the label for the `SelectableBoxSet`.
+   *
+   * An accessible label must be provided to the `SelectableBoxSet`.
+   */
+  ariaLabelledby: PropTypes.string,
+  /**
+   * A label for the `SelectableBoxSet`.
+   *
+   * If not using `ariaLabelledby`, then `ariaLabel` must be provided */
+  ariaLabel: requiredWhenNot(PropTypes.string, 'ariaLabelledby'),
 };
 
 SelectableBoxSet.defaultProps = {
@@ -72,6 +90,8 @@ SelectableBoxSet.defaultProps = {
   type: 'radio',
   columns: DEFAULT_COLUMNS_NUMBER,
   className: undefined,
+  ariaLabelledby: undefined,
+  ariaLabel: undefined,
 };
 
 export default SelectableBoxSet;

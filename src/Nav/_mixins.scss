@@ -1,4 +1,8 @@
-@mixin nav-tabs-link-focus($tabs-border-color) {
+@mixin nav-tabs-link-focus(
+  $tabs-border-color,
+  $radius: var(--pgn-size-nav-tabs-border-radius),
+  $distance: var(--pgn-spacing-nav-link-distance-to-border)
+) {
   position: relative;
   outline: 0;
   z-index: map-get($map: $indexes, $key: 1);
