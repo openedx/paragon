@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
+  Container,
   Button,
   Form,
-  Container,
   Toast,
   Icon,
   IconButtonWithTooltip,
@@ -11,6 +11,7 @@ import {
 import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
+import { SettingsContext } from '../../context/SettingsContext';
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
@@ -286,23 +287,25 @@ function BoxShadowGenerator() {
 }
 
 export default function ElevationPage() {
+  const { settings } = useContext(SettingsContext);
+
   const levelTitle = boxShadowLevels.map(level => (
-    <h3 key={level} className="pgn-doc__box-shadow-level-title">
+    <p key={level} className="pgn-doc__box-shadow-level-title h3">
       Level {level}
-    </h3>
+    </p>
   ));
 
   const sideTitle = boxShadowSides.map(side => (
-    <h3 key={side} className="pgn-doc__box-shadow-side-title">
+    <p key={side} className="pgn-doc__box-shadow-side-title h3">
       {side.charAt(0).toUpperCase() + side.substring(1)}
-    </h3>
+    </p>
   ));
 
   return (
-    <Layout>
-      <Container className="py-5" size="md">
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <SEO title="Elevation" />
+    <Layout isAutoToc>
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <SEO title="Elevation" />
+      <Container size={settings.containerWidth} className="py-5">
         <h1 className="mb-3">Elevation & Shadow</h1>
         <p className="mb-5">
           You can quickly add a <code>box-shadow</code> with the Clickable Box-Shadow Grid.

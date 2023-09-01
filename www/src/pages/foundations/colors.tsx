@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -7,7 +7,7 @@ import { Container, DataTable } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
-
+import { SettingsContext } from '../../context/SettingsContext';
 import { CodeCell } from '../../components/TableCells';
 
 const utilityClasses = {
@@ -100,7 +100,7 @@ const renderColorRamp = (themeName: string, unusedLevels: number[]) => (
     key={`${themeName}`}
     style={{ flexBasis: '24%', marginRight: '1%', marginBottom: '2rem' }}
   >
-    <h2 className="h5">{themeName}</h2>
+    <p className="h5">{themeName}</p>
     {levels.map(level => (
       <Swatch
         key={`$${themeName}-${level}`}
@@ -122,13 +122,14 @@ export interface IColorsPage {
 
 // eslint-disable-next-line react/prop-types
 export default function ColorsPage({ data }: IColorsPage) {
+  const { settings } = useContext(SettingsContext);
   parseColors(data.allCssUtilityClasses.nodes); // eslint-disable-line react/prop-types
 
   return (
-    <Layout>
-      <Container size="md" className="py-5">
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <SEO title="Colors" />
+    <Layout isAutoToc>
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <SEO title="Colors" />
+      <Container size={settings.containerWidth} className="py-5">
         <h1>Colors</h1>
         <div className="d-flex flex-wrap">
           {colors
@@ -141,7 +142,7 @@ export default function ColorsPage({ data }: IColorsPage) {
               marginBottom: '2rem',
             }}
           >
-            <h2 className="h5">accents</h2>
+            <p className="h5">accents</p>
 
             <Swatch name="$accent-a" colorClassName="bg-accent-a" />
             <Swatch name="$accent-b" colorClassName="bg-accent-b" />
@@ -341,9 +342,9 @@ export default function ColorsPage({ data }: IColorsPage) {
           backgrounds.
         </p>
         <div className="d-flex rounded overflow-hidden mb-3">
-          <h4 className="mb-0 w-100">Lighter Text</h4>
-          <h4 className="mb-0 w-100">Regular Text</h4>
-          <h4 className="mb-0 w-100">Darker Text</h4>
+          <p className="mb-0 w-100 h4">Lighter Text</p>
+          <p className="mb-0 w-100 h4">Regular Text</p>
+          <p className="mb-0 w-100 h4">Darker Text</p>
         </div>
         <div className="d-flex">
           {[500, 700, 900].map(level => (
@@ -371,13 +372,13 @@ export default function ColorsPage({ data }: IColorsPage) {
         <div>
           <div className="d-flex rounded overflow-hidden mb-3">
             <div className="w-100">
-              <h4 className="mb-0">Default State</h4>
+              <p className="mb-0 h4">Default State</p>
             </div>
             <div className="w-100">
-              <h4 className="mb-0">Hover State</h4>
+              <p className="mb-0 h4">Hover State</p>
             </div>
             <div className="w-100">
-              <h4 className="mb-0">Active State</h4>
+              <p className="mb-0 h4">Active State</p>
             </div>
           </div>
           {colors.map(({ themeName }) => {

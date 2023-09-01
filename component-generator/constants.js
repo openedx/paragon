@@ -23,8 +23,8 @@ exports.COMPONENT_FILES = [
     templatePath: path.resolve(__dirname, './templates/README.md'),
   },
   {
-    targetPath: path.resolve(__dirname, '../src/componentName/componentName.scss'),
-    templatePath: path.resolve(__dirname, './templates/styles.scss'),
+    targetPath: path.resolve(__dirname, '../src/componentName/index.scss'),
+    templatePath: path.resolve(__dirname, './templates/index.scss'),
   },
   {
     targetPath: path.resolve(__dirname, '../src/componentName/componentName.test.jsx'),
