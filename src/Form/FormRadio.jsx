@@ -8,16 +8,10 @@ import FormControlFeedback from './FormControlFeedback';
 
 const RadioControl = React.forwardRef((props, ref) => {
   const { getControlProps } = useFormGroupContext();
-  const { getRadioControlProps, hasRadioSetProvider } = useRadioSetContext();
-  let radioProps = getControlProps({
+  const radioProps = getControlProps({
     ...props,
     className: classNames('pgn__form-radio-input', props.className),
   });
-
-  if (hasRadioSetProvider) {
-    radioProps = getRadioControlProps(radioProps);
-  }
-
   return (
     <input {...radioProps} type="radio" ref={ref} />
   );
@@ -101,5 +95,4 @@ FormRadio.defaultProps = {
   isValid: false,
 };
 
-export { RadioControl };
 export default FormRadio;

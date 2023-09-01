@@ -18,7 +18,7 @@ A powerful, responsive navigation header, the navbar. Includes support for brand
 
 <p>
   This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap-v4.netlify.app/components/navbar/" target="_blank" rel="noopener noreferrer">
+  <a href="https://react-bootstrap.github.io/components/navbar/" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for documentation.
   </a>
 </p>

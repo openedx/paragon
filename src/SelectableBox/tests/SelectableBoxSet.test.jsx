@@ -1,8 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
 import { Form } from '../..';
 import SelectableBox from '..';
@@ -13,11 +11,9 @@ const checkboxText = (text) => `SelectableCheckbox${text}`;
 const radioType = 'radio';
 const radioText = (text) => `SelectableRadio${text}`;
 
-const ariaLabel = 'test-default-label';
-
 function SelectableCheckboxSet(props) {
   return (
-    <SelectableBox.Set name={radioType} type={checkboxType} ariaLabel={ariaLabel} {...props}>
+    <SelectableBox.Set name={radioType} type={checkboxType} {...props}>
       <SelectableBox value={1} type={checkboxType}>{checkboxText(1)}</SelectableBox>
       <SelectableBox value={2} type={checkboxType}>{checkboxText(2)}</SelectableBox>
       <SelectableBox value={3} type={checkboxType}>{checkboxText(3)}</SelectableBox>
@@ -27,7 +23,7 @@ function SelectableCheckboxSet(props) {
 
 function SelectableRadioSet(props) {
   return (
-    <SelectableBox.Set name={radioType} type={radioType} ariaLabel={ariaLabel} {...props}>
+    <SelectableBox.Set name={radioType} type={radioType} {...props}>
       <SelectableBox value={1} type={radioType}>{radioText(1)}</SelectableBox>
       <SelectableBox value={2} type={radioType}>{radioText(2)}</SelectableBox>
       <SelectableBox value={3} type={radioType}>{radioText(3)}</SelectableBox>
@@ -40,10 +36,6 @@ describe('<SelectableBox.Set />', () => {
     it('renders without props', () => {
       const tree = renderer.create((<SelectableRadioSet name="testName" />)).toJSON();
       expect(tree).toMatchSnapshot();
-    });
-    it('forwards props', () => {
-      render((<SelectableRadioSet name="testName" data-testid="test-radio-set-name" />));
-      expect(screen.getByTestId('test-radio-set-name')).toBeInTheDocument();
     });
     it('correct render when type prop is changed', () => {
       const setWrapper = mount(<SelectableRadioSet name="set" />);
@@ -91,22 +83,6 @@ describe('<SelectableBox.Set />', () => {
       const wrapper = mount(<SelectableRadioSet columns={columns} />);
       const selectableBoxSet = wrapper.find(Form.RadioSet);
       expect(selectableBoxSet.hasClass(`pgn__selectable_box-set--${columns}`)).toBe(true);
-    });
-    it('renders with an aria-label attribute', () => {
-      render((<SelectableRadioSet name="testName" ariaLabel="test-radio-set-label" />));
-      expect(screen.getByLabelText('test-radio-set-label')).toBeInTheDocument();
-    });
-    it('renders with an aria-labelledby attribute', () => {
-      render((
-        <>
-          <h2 id="test-radio-set-label">Radio Set Label text</h2>
-          <SelectableRadioSet
-            name="testName"
-            ariaLabelledby="test-radio-set-label"
-          />
-        </>
-      ));
-      expect(screen.getByLabelText('Radio Set Label text')).toBeInTheDocument();
     });
   });
 });

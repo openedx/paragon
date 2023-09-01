@@ -19,7 +19,7 @@ This component is used to power Tooltips and Popovers.
 
 <p>
   This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap-v4.netlify.app/components/overlays/" target="_blank" rel="noopener noreferrer">
+  <a href="https://react-bootstrap.github.io/components/overlays/" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for additional documentation.
   </a>
 </p>

@@ -8,9 +8,6 @@ const getParagonComponentsTypes = (components) => {
     const isContext = !!component.Consumer && !!component.Provider;
     let componentType;
     switch (true) {
-      case componentName.toLowerCase() === 'paragon':
-        componentType = 'Paragon';
-        break;
       case typeof component === 'string' || typeof component === 'number':
         componentType = 'Text';
         break;
@@ -20,7 +17,7 @@ const getParagonComponentsTypes = (components) => {
       case isFunctionComponent || isObjectComponent || isContext:
         componentType = 'Component';
         break;
-      case typeof component === 'object':
+      case component.constructor.name === 'Object':
         componentType = 'Object';
         break;
       case typeof component === 'function':
