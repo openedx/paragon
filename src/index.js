@@ -39,7 +39,6 @@ export {
   default as Carousel, CarouselItem, CAROUSEL_NEXT_LABEL_TEXT, CAROUSEL_PREV_LABEL_TEXT,
 } from './Carousel';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
-export { default as ChipCarousel } from './ChipCarousel';
 export { default as CloseButton } from './CloseButton';
 export { default as Container } from './Container';
 export { default as Layout, Col, Row } from './Layout';
@@ -55,7 +54,6 @@ export {
 export { default as Fade } from './Fade';
 export {
   default as Form,
-  RadioControl,
   CheckboxControl,
   SwitchControl,
   FormSwitchSet,

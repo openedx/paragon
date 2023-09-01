@@ -29,11 +29,6 @@ import LeaveFeedback from './LeaveFeedback';
 import AutoToc from './AutoToc';
 import PageEditBtn from './PageEditBtn';
 
-if (process.env.NODE_ENV === 'development') {
-  /* eslint-disable-next-line global-require */
-  require('~paragon-style/scss/core/core.scss');
-}
-
 export interface ILayout {
   children: React.ReactNode,
   showMinimizedTitle: boolean,
@@ -149,20 +144,14 @@ function Layout({
           <Nav.Item>
             <LeaveFeedback className="muted-link" isNavLink />
           </Nav.Item>
-          <Nav.Item>
-            <LeaveFeedback className="muted-link" isNavLink />
-          </Nav.Item>
-          <Nav.Item>
-            <LeaveFeedback className="muted-link" isNavLink />
-          </Nav.Item>
           {!hideFooterComponentMenu && (
-          <Nav.Item>
-            <PageEditBtn
-              className="muted-link"
-              githubEditPath={githubEditPath ?? ''}
-              isNavLink
-            />
-          </Nav.Item>
+            <Nav.Item>
+              <PageEditBtn
+                className="muted-link"
+                githubEditPath={githubEditPath ?? ''}
+                isNavLink
+              />
+            </Nav.Item>
           )}
           <div className="flex-grow-1" />
           <Nav.Link

@@ -82,7 +82,6 @@
   --pgn-typography-display-2: 4.875rem;
   --pgn-typography-display-1: 3.75rem;
   --pgn-typography-toast-font-size: .875rem;
-  --pgn-typography-spacer-line-height: 1px;
   --pgn-typography-pagination-line-height: 1.5rem;
   --pgn-typography-pagination-font-size-sm: .875rem;
   --pgn-typography-nav-link-text-decoration: none;
@@ -133,11 +132,6 @@
   --pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-x: .625rem;
   --pgn-spacing-tab-more-link-dropdown-toggle-padding-x: .7rem;
   --pgn-spacing-sticky-offset: 0;
-  --pgn-spacing-stepper-header-step-list-margin: 0;
-  --pgn-spacing-stepper-header-step-list-padding-x: 0;
-  --pgn-spacing-stepper-header-step-list-padding-y: .25rem;
-  --pgn-spacing-stepper-header-step-padding: .25rem;
-  --pgn-spacing-stepper-header-padding-y: .75rem;
   --pgn-spacing-vertical-align: .125em;
   --pgn-spacing-selectable-box-box-space: .75rem;
   --pgn-spacing-selectable-box-border-radius: .25rem;
@@ -221,7 +215,6 @@
   --pgn-spacing-collapsible-card-spacer-y-base: .5rem;
   --pgn-spacing-code-kbd-padding-x: .4rem;
   --pgn-spacing-code-kbd-padding-y: .2rem;
-  --pgn-spacing-chip-carousel-controls-top-offset: .188rem;
   --pgn-spacing-chip-padding-to-icon: 3px;
   --pgn-spacing-chip-padding-icon: .25rem;
   --pgn-spacing-chip-padding-x: .5rem;
@@ -277,9 +270,6 @@
   --pgn-size-toast-max-width: 400px;
   --pgn-size-tabs-notification-width: 1rem;
   --pgn-size-tabs-notification-height: 1rem;
-  --pgn-size-stepper-step-bubble-error-shadow-width: 3px;
-  --pgn-size-stepper-step-width-min: 0;
-  --pgn-size-stepper-header-height-min: 5.13rem;
   --pgn-size-stack-gap: 0;
   --pgn-size-spinner-sm-border-width: .2em;
   --pgn-size-spinner-sm-width: 1rem;
@@ -378,7 +368,6 @@
   --pgn-size-carousel-control-width-base: 15%;
   --pgn-size-card-logo-height: 4.125rem;
   --pgn-size-card-logo-width: 7.25rem;
-  --pgn-size-card-image-border-radius: .3125rem;
   --pgn-size-card-image-vertical-max-height: 140px;
   --pgn-size-card-image-horizontal-width-max: 240px;
   --pgn-size-card-focus-border-radius: 5px;
@@ -475,7 +464,6 @@
   --pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-padding-y: var(--pgn-spacing-spacer-base);
   --pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-y: var(--pgn-spacing-spacer-base);
   --pgn-spacing-tab-more-link-dropdown-toggle-padding-y: var(--pgn-spacing-spacer-base);
-  --pgn-spacing-stepper-header-padding-x: var(--pgn-spacing-spacer-base);
   --pgn-spacing-popover-body-padding-x: var(--pgn-spacing-popover-header-padding-x);
   --pgn-spacing-popover-body-padding-y: var(--pgn-spacing-popover-header-padding-y);
   --pgn-spacing-navbar-padding-x-base: var(--pgn-spacing-spacer-base);

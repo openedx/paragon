@@ -24,7 +24,6 @@ const MyComponent = () => {
         </Form.Group>
         <Button onClick={handleClick}>Submit</Button>
       </Form>
-      <Skeleton />
     </Container>
   );
 };

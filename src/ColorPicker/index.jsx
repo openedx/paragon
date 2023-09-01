@@ -106,10 +106,9 @@ function ColorPicker({
                 >
                     <HexColorPicker color={colorToDisplay} onChange={setValidatedColor} />
                     <Form.Group className="pgn__hex-form" size="sm">
-                        <div>
-                            <Form.Label className="pgn__hex-label">Hex</Form.Label>
+                        <h5>Hex</h5>
                             <Form.Control
-                                className="pgn__hex-field"
+                                className="form-field"
                                 isInvalid={!hexValid}
                                 value={hexColorString}
                                 onChange={(e) => setValidatedColor(e.target.value)}
@@ -117,7 +116,6 @@ function ColorPicker({
                                 spellCheck="false"
                             />
                         </div>
-            </div>
                         {!hexValid && (
                             <Form.Control.Feedback
                                 className="pgn__color-error"

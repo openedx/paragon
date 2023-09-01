@@ -108,7 +108,7 @@ const FormAutosuggest = forwardRef(
       return childrenOpt;
     }
 
-    const expandDropdown = () => {
+    const expandDropdown = (e) => {
       setDropdownItems(getItems(displayValue));
       setIsValid(true);
       setErrorMessage('');

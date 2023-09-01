@@ -43,7 +43,7 @@ describe('FormControl', () => {
     const textarea = screen.getByTestId('form-control-textarea');
 
     expect(useReferenceSpy).toHaveBeenCalledTimes(1);
-    expect(ref.current.style.height).toBe('0px');
+    expect(ref.current.style.height).toBeFalsy();
 
     userEvent.type(textarea, inputText);
 

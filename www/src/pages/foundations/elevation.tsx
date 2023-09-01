@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Container,
   Button,
   Form,
+  Container,
   Toast,
   Icon,
   IconButtonWithTooltip,
 } from '~paragon-react';
+import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import { SettingsContext } from '../../context/SettingsContext';
@@ -290,15 +291,15 @@ export default function ElevationPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
 
   const levelTitle = boxShadowLevels.map(level => (
-    <p key={level} className="pgn-doc__box-shadow-level-title h3">
+    <h3 key={level} className="pgn-doc__box-shadow-level-title">
       Level {level}
-    </p>
+    </h3>
   ));
 
   const sideTitle = boxShadowSides.map(side => (
-    <p key={side} className="pgn-doc__box-shadow-side-title h3">
+    <h3 key={side} className="pgn-doc__box-shadow-side-title">
       {side.charAt(0).toUpperCase() + side.substring(1)}
-    </p>
+    </h3>
   ));
 
   return (

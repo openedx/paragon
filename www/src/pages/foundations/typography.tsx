@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Container } from '~paragon-react';
+import PropTypes from 'prop-types';
 import Layout from '../../components/PageLayout';
 import SEO from '../../components/SEO';
 import {
@@ -10,10 +11,8 @@ import {
   LinksTable,
   AlignmentTable,
 } from '../../components/typography-page';
-import { SettingsContext } from '../../context/SettingsContext';
 
 export default function TypographyPage({ pageContext }) {
-  const { settings } = useContext(SettingsContext);
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
@@ -31,3 +30,9 @@ export default function TypographyPage({ pageContext }) {
     </Layout>
   );
 }
+
+TypographyPage.propTypes = {
+  pageContext: PropTypes.shape({
+    githubEditPath: PropTypes.string,
+  }).isRequired,
+};

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { QuestionMark } from '~paragon-icons';
 import {
   DataTable, breakpoints, OverlayTrigger, Tooltip, Icon, Container,
-} from '~paragon-react';import { QuestionMark } from '~paragon-icons';
+} from '~paragon-react';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import CodeBlock from '../../components/CodeBlock';
@@ -36,7 +36,7 @@ function MinWidthCell({ row }) {
               That pixel width is the smallest that designers support for mobile devices,
               and also covers 16x magnification for accessibility.
             </Tooltip>
-          )}
+                    )}
         >
           <Icon src={QuestionMark} size="xs" />
         </OverlayTrigger>

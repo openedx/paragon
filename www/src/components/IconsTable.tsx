@@ -70,15 +70,15 @@ const TableRow: React.FC<TableRowProps> = ({
   return (
     <>
       {
-        icons.map(iconName => (
-          <TableCell
-            key={iconName}
-            iconName={iconName}
-            setCurrentIcon={data.setCurrentIcon}
-            previewRef={data.previewRef}
-          />
-        ))
-      }
+          icons.map(iconName => (
+            <TableCell
+              key={iconName}
+              iconName={iconName}
+              setCurrentIcon={data.setCurrentIcon}
+              previewRef={data.previewRef}
+            />
+          ))
+        }
     </>
   );
 };

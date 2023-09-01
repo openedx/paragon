@@ -15,7 +15,7 @@ function Example({
 }) {
   return (
     <Stepper activeKey={activeKey}>
-      <Stepper.Header compactWidth="sm" />
+      <Stepper.Header />
 
       <Stepper.Step
         eventKey="welcome"
@@ -208,37 +208,6 @@ describe('Stepper', () => {
       const step = screen.getAllByRole('button').find(button => button.textContent.includes('Welcome'));
       fireEvent.click(step);
       expect(onStepClick).toHaveBeenCalledTimes(1);
-    });
-  });
-
-  describe('stepper header compact view', () => {
-    beforeEach(() => {
-      mockWindowSize.width = 200;
-      wrapper.update();
-    });
-
-    afterEach(() => {
-      mockWindowSize.width = 1000;
-      wrapper.update();
-    });
-
-    const step = '.flex-grow-1';
-
-    it('renders the compact view of stepper header', () => {
-      wrapper.setProps({ activeKey: 'cats' });
-      expect(wrapper.find(StepperHeader).exists(step)).toBe(true);
-    });
-
-    it('renders the standard view when the window is outside of the max width for compact view', () => {
-      mockWindowSize.width = 800;
-      wrapper.setProps({ activeKey: 'cats' });
-      expect(wrapper.find(StepperHeader).exists(step)).toBe(false);
-    });
-
-    it('renders the compact view when the desired max width is medium', () => {
-      wrapper.setProps({ compactWidth: 'md', activeKey: 'cats' });
-      mockWindowSize.width = 768;
-      expect(wrapper.find(StepperHeader).exists(step)).toBe(true);
     });
   });
 

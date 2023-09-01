@@ -28,8 +28,6 @@ function BaseSelectionStatus({
   const isAllRowsSelected = numSelectedRows === itemCount;
   const filteredItems = manualFilters ? itemCount : (filteredRows?.length || itemCount);
   const hasMaxSelectedRows = isSelectable && maxSelectedRows;
-  const hasMaxSelectedRows = isSelectable && maxSelectedRows;
-  const hasMaxSelectedRows = isSelectable && maxSelectedRows;
 
   const intlAllSelectedText = allSelectedText || (
     <FormattedMessage
@@ -63,7 +61,7 @@ function BaseSelectionStatus({
       <span data-testid="selection-status">
         {isAllRowsSelected ? intlAllSelectedText : intlSelectedText}
       </span>
-      {!isAllRowsSelected && !hasMaxSelectedRows && (
+      {!isAllRowsSelected && (
         <Button
           data-testid={SELECT_ALL_TEST_ID}
           variant="link"

@@ -10,8 +10,6 @@ import {
   Icon,
   Stack,
 } from '~paragon-react';
-import localforage from 'localforage';
-import localforage from 'localforage';
 
 import SEO from '../components/SEO';
 import { SiteTitle } from '../components/header';
@@ -36,13 +34,13 @@ export default function Playground({ location }) {
 
   useEffect(() => {
     /**
-     * We want to mirror the iframes url in the parent (aka browser) to support URL sharing.
-     * the iframes onload handler isn't invoked when the iframes url changes so we're polling here instead.
-     */
+         * We want to mirror the iframes url in the parent (aka browser) to support URL sharing.
+         * the iframes onload handler isn't invoked when the iframes url changes so we're polling here instead.
+         */
     const iframeUrlPoll = setInterval(() => {
       if (
         iframeRef?.current?.contentWindow
-        && iframeRef.current.contentWindow.location.search !== searchValue.current
+                && iframeRef.current.contentWindow.location.search !== searchValue.current
       ) {
         searchValue.current = iframeRef.current.contentWindow.location.search;
         navigate(`/playground${searchValue.current}`, { replace: true });
