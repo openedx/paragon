@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
+  Container,
   Button,
   Form,
-  Container,
   Toast,
   Icon,
   IconButtonWithTooltip,
@@ -291,15 +291,15 @@ export default function ElevationPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
 
   const levelTitle = boxShadowLevels.map(level => (
-    <h3 key={level} className="pgn-doc__box-shadow-level-title">
+    <p key={level} className="pgn-doc__box-shadow-level-title h3">
       Level {level}
-    </h3>
+    </p>
   ));
 
   const sideTitle = boxShadowSides.map(side => (
-    <h3 key={side} className="pgn-doc__box-shadow-side-title">
+    <p key={side} className="pgn-doc__box-shadow-side-title h3">
       {side.charAt(0).toUpperCase() + side.substring(1)}
-    </h3>
+    </p>
   ));
 
   return (

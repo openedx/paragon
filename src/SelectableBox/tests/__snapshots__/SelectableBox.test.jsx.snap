@@ -9,25 +9,14 @@ exports[`<SelectableBox /> correct rendering renders without props 1`] = `
   role="button"
   tabIndex={0}
 >
-  <div
-    className="pgn__form-radio"
-  >
-    <input
-      checked={false}
-      className="pgn__form-radio-input"
-      hidden={true}
-      id="form-field1"
-      onChange={[Function]}
-      tabIndex={-1}
-      type="radio"
-    />
-    <div>
-      <label
-        className="pgn__form-label"
-        htmlFor="form-field1"
-      />
-    </div>
-  </div>
+  <input
+    checked={false}
+    className="pgn__form-radio-input"
+    hidden={true}
+    onChange={[Function]}
+    tabIndex={-1}
+    type="radio"
+  />
   SelectableBox
 </div>
 `;

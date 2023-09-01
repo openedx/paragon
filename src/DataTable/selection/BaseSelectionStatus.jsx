@@ -61,7 +61,7 @@ function BaseSelectionStatus({
       <span data-testid="selection-status">
         {isAllRowsSelected ? intlAllSelectedText : intlSelectedText}
       </span>
-      {!isAllRowsSelected && (
+      {!isAllRowsSelected && !hasMaxSelectedRows && (
         <Button
           data-testid={SELECT_ALL_TEST_ID}
           variant="link"

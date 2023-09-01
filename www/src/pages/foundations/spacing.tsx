@@ -1,7 +1,7 @@
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Form, Container, DataTable } from '~paragon-react'; // eslint-disable-line
+import { Form, DataTable, Container } from '~paragon-react'; // eslint-disable-line
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import MeasuredItem from '../../components/MeasuredItem';

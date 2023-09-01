@@ -43,6 +43,22 @@ underlying `input` node. See MDN for documentation on available
 }
 ```
 
+## Unlabeled Control
+
+```jsx live
+() => {
+  const [value, setValue] = useState('green');
+  const handleChange = e => setValue(e.target.value);
+
+  return (
+    <Form.RadioSet name="colors-unlabeled" onChange={handleChange} value={value}>
+      <RadioControl value="red" />
+      <RadioControl value="green" />
+    </Form.RadioSet>
+  )
+}
+```
+
 ## Uncontrolled Usage
 
 ```jsx live

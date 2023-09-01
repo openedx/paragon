@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Icon from '../Icon';
 import { type Placement } from 'react-bootstrap/Overlay';
+import Icon from '../Icon';
 import { OverlayTrigger } from '../Overlay';
 import Tooltip from '../Tooltip';
-import Icon from '../Icon';
 
 interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   iconAs?: typeof Icon | typeof FontAwesomeIcon,

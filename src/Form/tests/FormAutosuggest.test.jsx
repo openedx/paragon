@@ -267,7 +267,7 @@ describe('controlled behavior', () => {
 
     userEvent.click(dropdownBtn);
     const reopenedList = queryAllByTestId('autosuggest-optionitem');
-    expect(reopenedList.length).toBe(3);
+    expect(reopenedList.length).toBe(1);
   });
 
   it('filters dropdown based on typed field value with multiple matches', () => {

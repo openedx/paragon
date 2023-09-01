@@ -5,7 +5,7 @@ import { DataTable, Container } from '~paragon-react'; // eslint-disable-line
 import { ComponentStatus } from '../components/doc-elements';
 import SEO from '../components/SEO';
 import Layout from '../components/PageLayout';
-import SettingsContext from '../context/SettingsContext';
+import { SettingsContext } from '../context/SettingsContext';
 
 export interface IComponents {
   frontmatter?: string,

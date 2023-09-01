@@ -1,5 +1,4 @@
 import { navigate } from 'gatsby';
-import localforage from 'localforage';
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ContentCopy, Check } from '~paragon-icons';
@@ -10,6 +9,7 @@ import {
   Icon,
   Stack,
 } from '~paragon-react';
+import localforage from 'localforage';
 
 import SEO from '../components/SEO';
 import { SiteTitle } from '../components/header';

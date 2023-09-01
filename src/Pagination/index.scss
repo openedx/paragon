@@ -1,0 +1,200 @@
+%pagination-icon-button-right {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+%pagination-icon-button-left {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.pagination {
+  display: flex;
+  margin: 0;
+
+  .dropdown {
+    z-index: 4;
+  }
+
+  .page-of-count {
+    margin: 0 .5rem;
+    border: 0;
+  }
+
+  .page-item {
+    &:first-child .page-link {
+      margin-left: 0;
+
+      @include border-left-radius(var(--pgn-size-border-radius-base));
+    }
+
+    &:last-child .page-link {
+      @include border-right-radius(var(--pgn-size-border-radius-base));
+    }
+
+    &:first-child .btn-icon.page-link {
+      @extend %pagination-icon-button-left;
+    }
+
+    &:last-child .btn-icon.page-link {
+      @extend %pagination-icon-button-right;
+    }
+
+    &.active .page-link {
+      z-index: 3;
+    }
+
+    > .btn {
+      transition: none;
+      line-height: var(--pgn-typography-pagination-line-height);
+    }
+  }
+
+  @include list-unstyled();
+  @include border-radius();
+
+  &-small {
+    .page-link {
+      font-size: var(--pgn-typography-pagination-font-size-sm);
+      line-height: var(--pgn-typography-pagination-line-height);
+      padding: .375rem .78rem;
+
+      &.previous,
+      &.next {
+        padding: 0 var(--pgn-spacing-pagination-padding-y-base);
+        line-height: var(--pgn-size-pagination-secondary-height-sm);
+
+        div {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    &:not(.pagination-default) .page-link {
+      &.previous,
+      &.next {
+        padding: 0;
+        width: var(--pgn-size-pagination-icon-width);
+      }
+    }
+  }
+
+  &-secondary {
+    button.next,
+    button.previous {
+      height: var(--pgn-size-pagination-secondary-height-base);
+      padding: 0 var(--pgn-spacing-pagination-padding-y-base);
+    }
+
+    &.pagination-small {
+      button.next,
+      button.previous {
+        height: var(--pgn-size-pagination-secondary-height-sm);
+        line-height: var(--pgn-typography-pagination-line-height);
+      }
+    }
+  }
+
+  .ellipsis {
+    border: 0;
+    margin-left: 0;
+  }
+
+  &-inverse {
+    .ellipsis {
+      color: var(--pgn-color-white);
+    }
+
+    .dropdown .dropdown-toggle::after {
+      border-top: var(--pgn-size-pagination-toggle-border-base) solid var(--pgn-color-pagination-dropdown-text-inverse);
+    }
+  }
+
+  &-reduced {
+    &-dropdown-menu {
+      overflow-y: auto;
+      max-height: var(--pgn-size-pagination-reduced-dropdown-max-height);
+      min-width: var(--pgn-size-pagination-reduced-dropdown-min-width);
+
+      a {
+        text-align: center;
+      }
+    }
+
+    .dropdown-toggle::after {
+      width: 0;
+      height: 0;
+      border-left: var(--pgn-size-pagination-toggle-border-base) solid transparent;
+      border-right: var(--pgn-size-pagination-toggle-border-base) solid transparent;
+      border-top: var(--pgn-size-pagination-toggle-border-base) solid var(--pgn-color-gray-700);
+      transform: rotate(0);
+      inset-inline-start: .5rem;
+      top: 0;
+      margin-inline-end: 1rem;
+    }
+
+    button.next,
+    button.previous {
+      height: var(--pgn-size-pagination-secondary-height-base);
+      padding: 0 var(--pgn-spacing-pagination-padding-y-base);
+    }
+
+    &.pagination-small {
+      .btn.dropdown-toggle {
+        font-size: var(--pgn-typography-pagination-font-size-sm);
+
+        &::after {
+          border-left-width: var(--pgn-size-pagination-toggle-border-sm);
+          border-right-width: var(--pgn-size-pagination-toggle-border-sm);
+          border-top-width: var(--pgn-size-pagination-toggle-border-sm);
+        }
+      }
+
+      button.previous,
+      button.next {
+        line-height: var(--pgn-size-pagination-icon-height);
+        height: var(--pgn-size-pagination-icon-height);
+      }
+    }
+  }
+
+  &-minimal {
+    .page-item:first-child {
+      margin-inline-end: .3rem;
+    }
+
+    button.next,
+    button.previous {
+      padding: var(--pgn-spacing-pagination-padding-y-base);
+      height: var(--pgn-size-pagination-secondary-height-base);
+    }
+
+    &.pagination-small {
+      button.next,
+      button.previous {
+        padding: 0 var(--pgn-spacing-pagination-padding-y-base);
+        height: var(--pgn-size-pagination-secondary-height-sm);
+      }
+    }
+  }
+}
+
+.page-link {
+  border: none;
+  margin-left: -var(--pgn-size-pagination-border-width);
+
+  &:focus {
+    z-index: 3;
+  }
+
+  div {
+    display: flex;
+  }
+
+  [dir="rtl"] & {
+    svg {
+      transform: scale(-1);
+    }
+  }
+}

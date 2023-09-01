@@ -26,7 +26,7 @@ function SelectableBoxSet(props) {
 
 function SelectableCheckboxSet(props) {
   return (
-    <SelectableBox.Set name={radioType} type={checkboxType} {...props}>
+    <SelectableBox.Set name={radioType} type={checkboxType} ariaLabel={ariaLabel} {...props}>
       <SelectableBox value={1} type={checkboxType}>{checkboxText(1)}</SelectableBox>
       <SelectableBox value={2} type={checkboxType}>{checkboxText(2)}</SelectableBox>
       <SelectableBox value={3} type={checkboxType}>{checkboxText(3)}</SelectableBox>
@@ -36,7 +36,7 @@ function SelectableCheckboxSet(props) {
 
 function SelectableRadioSet(props) {
   return (
-    <SelectableBox.Set name={radioType} type={radioType} {...props}>
+    <SelectableBox.Set name={radioType} type={radioType} ariaLabel={ariaLabel} {...props}>
       <SelectableBox value={1} type={radioType}>{radioText(1)}</SelectableBox>
       <SelectableBox value={2} type={radioType}>{radioText(2)}</SelectableBox>
       <SelectableBox value={3} type={radioType}>{radioText(3)}</SelectableBox>
@@ -49,6 +49,10 @@ describe('<SelectableBox.Set />', () => {
     it('renders without props', () => {
       const { container } = render(<SelectableRadioSet name="testName" />);
       expect(container).toMatchSnapshot();
+    });
+    it('forwards props', () => {
+      render((<SelectableRadioSet name="testName" data-testid="test-radio-set-name" />));
+      expect(screen.getByTestId('test-radio-set-name')).toBeInTheDocument();
     });
     it('forwards props', () => {
       render((<SelectableRadioSet name="testName" data-testid="test-radio-set-name" />));
@@ -96,6 +100,22 @@ describe('<SelectableBox.Set />', () => {
       render(<SelectableRadioSet columns={columns} data-testid="selectable-box-set" />);
       const selectableBoxSet = screen.getByTestId('selectable-box-set');
       expect(selectableBoxSet).toHaveClass(`pgn__selectable_box-set--${columns}`);
+    });
+    it('renders with an aria-label attribute', () => {
+      render((<SelectableRadioSet name="testName" ariaLabel="test-radio-set-label" />));
+      expect(screen.getByLabelText('test-radio-set-label')).toBeInTheDocument();
+    });
+    it('renders with an aria-labelledby attribute', () => {
+      render((
+        <>
+          <h2 id="test-radio-set-label">Radio Set Label text</h2>
+          <SelectableRadioSet
+            name="testName"
+            ariaLabelledby="test-radio-set-label"
+          />
+        </>
+      ));
+      expect(screen.getByLabelText('Radio Set Label text')).toBeInTheDocument();
     });
     it('renders with an aria-label attribute', () => {
       render((<SelectableRadioSet name="testName" ariaLabel="test-radio-set-label" />));

@@ -10,6 +10,7 @@
     "precommit": "npm run lint",
     "snapshot": "fedx-scripts jest --updateSnapshot",
     "start": "fedx-scripts webpack-dev-server --progress",
+    "start:with-theme": "../bin/paragon-scripts.js install-theme && npm start",
     "test": "fedx-scripts jest --coverage --passWithNoTests"
   },
   "author": "",

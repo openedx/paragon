@@ -119,6 +119,6 @@ module.exports = {
     author: '@edx',
   },
   // Match the location of the site on github pages if no path prefix is specified
-  pathPrefix: 'PATH_PREFIX' in process.env ? process.env.PATH_PREFIX : '/paragon',
+  pathPrefix: process.env.PATH_PREFIX || '',
   plugins,
 };

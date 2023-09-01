@@ -7,7 +7,7 @@ import { Container, DataTable } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
-
+import { SettingsContext } from '../../context/SettingsContext';
 import { CodeCell } from '../../components/TableCells';
 import { SettingsContext } from '../../context/SettingsContext';
 
@@ -101,7 +101,7 @@ const renderColorRamp = (themeName: string, unusedLevels: number[]) => (
     key={`${themeName}`}
     style={{ flexBasis: '24%', marginRight: '1%', marginBottom: '2rem' }}
   >
-    <h2 className="h5">{themeName}</h2>
+    <p className="h5">{themeName}</p>
     {levels.map(level => (
       <Swatch
         key={`$${themeName}-${level}`}
@@ -146,7 +146,7 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
               marginBottom: '2rem',
             }}
           >
-            <h2 className="h5">accents</h2>
+            <p className="h5">accents</p>
 
             <Swatch name="$accent-a" colorClassName="bg-accent-a" />
             <Swatch name="$accent-b" colorClassName="bg-accent-b" />
@@ -346,9 +346,9 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
           backgrounds.
         </p>
         <div className="d-flex rounded overflow-hidden mb-3">
-          <h4 className="mb-0 w-100">Lighter Text</h4>
-          <h4 className="mb-0 w-100">Regular Text</h4>
-          <h4 className="mb-0 w-100">Darker Text</h4>
+          <p className="mb-0 w-100 h4">Lighter Text</p>
+          <p className="mb-0 w-100 h4">Regular Text</p>
+          <p className="mb-0 w-100 h4">Darker Text</p>
         </div>
         <div className="d-flex">
           {[500, 700, 900].map(level => (
@@ -376,13 +376,13 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
         <div>
           <div className="d-flex rounded overflow-hidden mb-3">
             <div className="w-100">
-              <h4 className="mb-0">Default State</h4>
+              <p className="mb-0 h4">Default State</p>
             </div>
             <div className="w-100">
-              <h4 className="mb-0">Hover State</h4>
+              <p className="mb-0 h4">Hover State</p>
             </div>
             <div className="w-100">
-              <h4 className="mb-0">Active State</h4>
+              <p className="mb-0 h4">Active State</p>
             </div>
           </div>
           {colors.map(({ themeName }) => {

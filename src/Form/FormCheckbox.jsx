@@ -8,13 +8,19 @@ import FormControlFeedback from './FormControlFeedback';
 
 const CheckboxControl = React.forwardRef(
   ({ isIndeterminate, ...props }, ref) => {
+    const { getCheckboxControlProps, hasCheckboxSetProvider } = useCheckboxSetContext();
     const defaultRef = React.useRef();
     const resolvedRef = ref || defaultRef;
     const { getControlProps } = useFormGroupContext();
-    const checkboxProps = getControlProps({
+    let checkboxProps = getControlProps({
       ...props,
       className: classNames('pgn__form-checkbox-input', props.className),
     });
+
+    if (hasCheckboxSetProvider) {
+      checkboxProps = getCheckboxControlProps(checkboxProps);
+    }
+
     React.useEffect(() => {
       // this if(resolvedRef.current) prevents console errors in testing
       if (resolvedRef.current) {

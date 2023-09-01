@@ -16,7 +16,7 @@ A spinning animation that indicates loading.
 
 <p>
   This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap.github.io/components/spinners" target="_blank" rel="noopener noreferrer">
+  <a href="https://react-bootstrap-v4.netlify.app/components/spinners/" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for documentation.
   </a>
 </p>

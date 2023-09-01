@@ -4,6 +4,7 @@ import { QuestionMark } from '~paragon-icons';
 import {
   DataTable, breakpoints, OverlayTrigger, Tooltip, Icon, Container,
 } from '~paragon-react';
+import { QuestionMark } from '~paragon-icons';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import CodeBlock from '../../components/CodeBlock';
