@@ -27,6 +27,7 @@ import getOverflowElementScrollLeft from './getOverflowElementScrollLeft';
  * @param {boolean} args.disableOpacityMasks Whether the start/end opacity masks should be shown, when applicable.
  * @param {string} args.scrollAnimationBehavior Optional override for the scroll behavior. See https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo for
  *  more details.
+ * @param {string} args.offset Fixed increment in pixels or percentage for scroll.
  *
  * @returns {object} An object with the following properties:
  * - overflowRef
@@ -45,7 +46,10 @@ const useOverflowScroll = ({
   disableScroll = false,
   disableOpacityMasks = false,
   scrollAnimationBehavior = 'smooth',
+  offset,
+  offsetType = 'percentage',
 }) => {
+  const [currentOffset, setCurrentOffset] = useState(0);
   const [isScrolledToStart, setIsScrolledToStart] = useState(true);
   const [isScrolledToEnd, setIsScrolledToEnd] = useState(true);
 
@@ -153,6 +157,10 @@ const useOverflowScroll = ({
     scrollAnimationBehavior,
     onScrollPrevious: handleScrollPrevious,
     onScrollNext: handleScrollNext,
+    onChangeOffset: setCurrentOffset,
+    currentOffset,
+    offset,
+    offsetType,
   });
 
   return {
