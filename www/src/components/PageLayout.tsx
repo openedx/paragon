@@ -25,7 +25,6 @@ import Settings from './Settings';
 import Toc from './Toc';
 import { SettingsContext } from '../context/SettingsContext';
 import LeaveFeedback from './LeaveFeedback';
-import AutoToc from './AutoToc';
 
 if (process.env.NODE_ENV === 'development') {
   /* eslint-disable-next-line global-require */
@@ -38,8 +37,6 @@ export interface ILayout {
   hideFooterComponentMenu: boolean,
   isMdx: boolean,
   tocData: Array<number>,
-  tab?: string,
-  isAutoToc?: boolean,
 }
 
 function Layout({
@@ -48,8 +45,6 @@ function Layout({
   hideFooterComponentMenu,
   isMdx,
   tocData,
-  isAutoToc,
-  tab,
 }: ILayout) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
   const { settings } = useContext(SettingsContext);
@@ -88,15 +83,14 @@ function Layout({
               {children}
               <Container size="md">
                 <hr />
-                <LeaveFeedback className="mb-5" />
+                <LeaveFeedback className="pgn__docs-page-feedback-link" />
               </Container>
             </Col>
             <Col
               xl={2}
               lg={3}
-              as={isAutoToc ? AutoToc : Toc}
+              as={Toc}
               data={tocData}
-              tab={tab}
               className="d-none d-lg-block"
             />
           </Row>
@@ -123,37 +117,25 @@ function Layout({
             <Nav.Link
               className="muted-link"
               href="https://github.com/openedx/.github/blob/master/CODE_OF_CONDUCT.md"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Code of Conduct
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link
-              className="muted-link"
-              href="https://open.edx.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Nav.Link className="muted-link" href="https://open.edx.org/">
               Open edX
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <LeaveFeedback className="muted-link" isNavLink />
+            <LeaveFeedback />
           </Nav.Item>
           <div className="flex-grow-1" />
-          <Nav.Link
-            className="muted-link"
-            href="https://www.netlify.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.netlify.com">
             <img
               src="https://www.netlify.com/img/global/badges/netlify-light.svg"
               alt="Deploys by Netlify"
             />
-          </Nav.Link>
+          </a>
         </Nav>
       </Container>
     </div>
@@ -175,7 +157,6 @@ Layout.propTypes = {
   showMinimizedTitle: PropTypes.bool,
   hideFooterComponentMenu: PropTypes.bool,
   isMdx: PropTypes.bool,
-  tab: PropTypes.string,
 };
 
 Layout.defaultProps = {
@@ -183,8 +164,6 @@ Layout.defaultProps = {
   showMinimizedTitle: false,
   hideFooterComponentMenu: false,
   isMdx: false,
-  tab: undefined,
-  isAutoToc: false,
 };
 
 export default Layout;

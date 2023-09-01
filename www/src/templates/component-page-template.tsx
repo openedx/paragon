@@ -16,8 +16,7 @@ import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
-import ComponentsUsage from '../components/insights/ComponentsUsage';
-import LeaveFeedback from '../components/LeaveFeedback';
+import { componentsInUsage, ComponentsUsage } from '../pages/insights';
 import ComponentVariablesTable from '../components/ComponentVariablesTable';
 
 export interface IPageTemplate {
@@ -40,7 +39,6 @@ export interface IPageTemplate {
   },
   pageContext: {
     cssVariablesData: string[],
-    componentsUsageInsights: string[],
   }
 }
 
@@ -50,7 +48,7 @@ export type ShortCodesTypes = {
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
-  pageContext: { cssVariablesData, componentsUsageInsights },
+  pageContext: { cssVariablesData },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
@@ -94,10 +92,6 @@ export default function PageTemplate({
   const usageInsightsTitle = 'Usage Insights';
   const usageInsightsUrl = 'usage-insights';
 
-  const sortedComponentNames = mdx.frontmatter?.components || [];
-  const filteredComponentsUsageInsights = componentsUsageInsights.map(componentName => componentName.replace(/\./g, ''));
-  const isUsageInsights = (sortedComponentNames as []).some(value => filteredComponentsUsageInsights.includes(value));
-
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
     if (cssVariablesData?.length && !tableOfContents.items?.includes()) {
@@ -107,18 +101,31 @@ export default function PageTemplate({
       });
     }
     tableOfContents.items?.push({ title: propsAPITitle, url: `#${propsAPIUrl}` });
-    if (isUsageInsights) {
-      tableOfContents.items?.push({
-        title: usageInsightsTitle,
-        url: `#${usageInsightsUrl}`,
-      });
-    }
+    tableOfContents.items?.push({ title: usageInsightsTitle, url: `#${usageInsightsUrl}` });
     return tableOfContents;
   };
+
+  const sortedComponentNames = mdx.frontmatter?.components || [];
 
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
+
+  const usageComponents = {};
+
+  componentsInUsage.forEach(key => {
+    usageComponents[key] = null;
+  });
+
+  if (typeof sortedComponentNames !== 'string') {
+    sortedComponentNames.forEach(componentName => {
+      if (componentName in usageComponents) {
+        usageComponents[componentName] = componentName;
+      }
+    });
+  }
+
+  const noMatchingValues = (sortedComponentNames as []).every(componentName => !(componentName in usageComponents));
 
   return (
     <Layout
@@ -135,10 +142,7 @@ export default function PageTemplate({
             <p className="small mb-0">{mdx.frontmatter.notes}</p>
           </Alert>
         )}
-        <div className="d-flex justify-content-between align-items-start">
-          <h1 className="mb-4">{mdx.frontmatter.title}</h1>
-          <LeaveFeedback />
-        </div>
+        <h1 className="mb-4">{mdx.frontmatter.title}</h1>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
@@ -168,7 +172,7 @@ export default function PageTemplate({
           }
           return <GenericPropsTable key={node.displayName} {...node} />;
         })}
-        {isUsageInsights && (
+        {!noMatchingValues && (
           <>
             <h2 className="pgn-doc__heading m-0" id={usageInsightsUrl}>
               {usageInsightsTitle}
