@@ -1,12 +1,6 @@
 .pgn-doc-header {
   z-index: var(--pgn-www-zindex-header);
 
-  .pgn-doc__playground-title {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-
   .pgn-doc__header-title {
     display: flex;
     align-items: center;

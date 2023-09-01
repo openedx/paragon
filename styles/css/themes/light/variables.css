@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Mon, 28 Aug 2023 17:10:09 GMT
+ * Generated on Fri, 09 Jun 2023 07:34:35 GMT
  */
 
 :root {
@@ -29,8 +29,6 @@
   --pgn-color-white: #FFFFFFFF;
   --pgn-color-toast-base: inherit;
   --pgn-color-tab-inverse-pills-link-dropdown-toggle-bg-hover: #00000000;
-  --pgn-color-stepper-header-step-border: #000000FF;
-  --pgn-color-stepper-header-bg-base: #00000000;
   --pgn-color-progress-bar-bg: #00000000;
   --pgn-color-product-tour-checkpoint-arrow-border-transparent: #00000000;
   --pgn-color-popover-border: #00000033;
@@ -331,9 +329,6 @@
   --pgn-color-toast-bg: var(--pgn-color-gray-700);
   --pgn-color-tab-inverse-pills-link-dropdown-toggle-bg-focus: var(--pgn-color-white);
   --pgn-color-tab-more-link-dropdown-toggle-text-focus: var(--pgn-color-white);
-  --pgn-color-stepper-header-step-bg-base: var(--pgn-color-stepper-header-bg-base);
-  --pgn-color-stepper-header-step-base: var(--pgn-color-primary-base);
-  --pgn-color-stepper-header-bg-line: var(--pgn-color-light-base);
   --pgn-color-sheet-skrim-component-box-shadow: #00000026;
   --pgn-color-sheet-skrim-bg: #ADADAD80;
   --pgn-color-search-field-border-focus: var(--pgn-color-black);
@@ -604,7 +599,7 @@
   --pgn-elevation-input-btn-focus-box-shadow: 0 0 0 var(--pgn-size-input-btn-focus-width) var(--pgn-color-input-btn-focus);
   --pgn-elevation-form-control-file-base: var(--pgn-elevation-form-input-base);
   --pgn-elevation-form-control-indicator-base: var(--pgn-elevation-form-input-base);
-  --pgn-border-color-nav-tabs-link-border-active: var(--pgn-color-primary-500);
+  --pgn-border-color-nav-tabs-link-border-active: transparent transparent var(--pgn-color-primary-500);
   --pgn-content-navbar-toggler-light-icon-bg: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%2300000080' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --pgn-content-navbar-toggler-dark-icon-bg: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23FFFFFF80' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --pgn-content-carousel-control-bg-next-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFFFF' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
@@ -703,8 +698,6 @@
   --pgn-color-tab-more-link-dropdown-toggle-bg-focus: var(--pgn-color-primary-500);
   --pgn-color-tab-more-link-dropdown-toggle-text-active: var(--pgn-color-tab-more-link-dropdown-toggle-text-focus);
   --pgn-color-tab-more-link-dropdown-toggle-btn-text-focus: var(--pgn-color-tab-more-link-dropdown-toggle-text-focus);
-  --pgn-color-stepper-header-step-bubble-error: var(--pgn-color-danger-base);
-  --pgn-color-stepper-header-step-bg-active: var(--pgn-color-gray-500);
   --pgn-color-search-field-button-bg-brand: var(--pgn-color-brand-500);
   --pgn-color-search-field-button-bg-primary: var(--pgn-color-primary-500);
   --pgn-color-search-field-border-base: var(--pgn-color-gray-500);
@@ -1174,7 +1167,6 @@
   --pgn-color-tab-more-link-dropdown-toggle-border-focus: var(--pgn-color-tab-more-link-dropdown-toggle-bg-focus);
   --pgn-color-tab-more-link-dropdown-toggle-text-hover: var(--pgn-color-tab-more-link-dropdown-toggle-bg-focus);
   --pgn-color-tab-more-link-dropdown-toggle-btn-border-focus: var(--pgn-color-tab-more-link-dropdown-toggle-bg-focus);
-  --pgn-color-stepper-header-step-description-error: var(--pgn-color-stepper-header-step-bubble-error);
   --pgn-color-product-tour-checkpoint-arrow-border-top: var(--pgn-color-product-tour-checkpoint-bg);
   --pgn-color-popover-danger-icon: var(--pgn-color-warning-500);
   --pgn-color-popover-danger-bg: var(--pgn-color-danger-100);

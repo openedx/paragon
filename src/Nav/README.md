@@ -19,7 +19,7 @@ Navigation bits in Bootstrap all share a general ``Nav`` component and styles. S
 
 <p>
   This is a pass through component from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap-v4.netlify.app/components/navs/" target="_blank" rel="noopener noreferrer">
+  <a href="https://react-bootstrap.github.io/components/navs/" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for additional documentation.
   </a>
 </p>
