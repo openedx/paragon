@@ -4,6 +4,8 @@
   text-align: start;
 
   &__external-icon {
+    display: inline-block;
+    vertical-align: middle;
     margin-inline-start: var(--pgn-spacing-spacer-2);
   }
 }

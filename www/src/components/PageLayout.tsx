@@ -150,7 +150,7 @@ function Layout({
             <LeaveFeedback className="muted-link" isNavLink />
           </Nav.Item>
           <Nav.Item>
-            <LeaveFeedback />
+            <LeaveFeedback className="muted-link" isNavLink />
           </Nav.Item>
           <Nav.Item>
             <LeaveFeedback className="muted-link" isNavLink />

@@ -14,6 +14,7 @@
     right: calc(#{$distance} * -1);
     bottom: calc(#{$distance} * -1);
     left: calc(#{$distance} * -1);
-    border: solid var(--pgn-size-nav-tabs-border-width) $tabs-border-color;    border-radius: $radius;
+    border: solid var(--pgn-size-nav-tabs-border-width) $tabs-border-color;
+    border-radius: $radius;
   }
 }

@@ -60,4 +60,5 @@ module.exports = {
   iframeSandbox: 'allow-scripts allow-same-origin allow-modals',
   storageKey,
   storageKey,
+  storageKey,
 };

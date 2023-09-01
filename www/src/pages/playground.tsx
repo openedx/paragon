@@ -11,6 +11,7 @@ import {
   Stack,
 } from '~paragon-react';
 import localforage from 'localforage';
+import localforage from 'localforage';
 
 import SEO from '../components/SEO';
 import { SiteTitle } from '../components/header';

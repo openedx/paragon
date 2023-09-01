@@ -117,6 +117,7 @@ function ColorPicker({
                                 spellCheck="false"
                             />
                         </div>
+            </div>
                         {!hexValid && (
                             <Form.Control.Feedback
                                 className="pgn__color-error"

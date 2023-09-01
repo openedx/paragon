@@ -58,6 +58,10 @@ describe('<SelectableBox.Set />', () => {
       render((<SelectableRadioSet name="testName" data-testid="test-radio-set-name" />));
       expect(screen.getByTestId('test-radio-set-name')).toBeInTheDocument();
     });
+    it('forwards props', () => {
+      render((<SelectableRadioSet name="testName" data-testid="test-radio-set-name" />));
+      expect(screen.getByTestId('test-radio-set-name')).toBeInTheDocument();
+    });
     it('correct render when type prop is changed', () => {
       const { rerender } = render(<SelectableRadioSet name="set" data-testid="radio-set" />);
       expect(screen.getByTestId('radio-set')).toBeInTheDocument();
@@ -96,6 +100,22 @@ describe('<SelectableBox.Set />', () => {
       render(<SelectableRadioSet columns={columns} data-testid="selectable-box-set" />);
       const selectableBoxSet = screen.getByTestId('selectable-box-set');
       expect(selectableBoxSet).toHaveClass(`pgn__selectable_box-set--${columns}`);
+    });
+    it('renders with an aria-label attribute', () => {
+      render((<SelectableRadioSet name="testName" ariaLabel="test-radio-set-label" />));
+      expect(screen.getByLabelText('test-radio-set-label')).toBeInTheDocument();
+    });
+    it('renders with an aria-labelledby attribute', () => {
+      render((
+        <>
+          <h2 id="test-radio-set-label">Radio Set Label text</h2>
+          <SelectableRadioSet
+            name="testName"
+            ariaLabelledby="test-radio-set-label"
+          />
+        </>
+      ));
+      expect(screen.getByLabelText('Radio Set Label text')).toBeInTheDocument();
     });
     it('renders with an aria-label attribute', () => {
       render((<SelectableRadioSet name="testName" ariaLabel="test-radio-set-label" />));

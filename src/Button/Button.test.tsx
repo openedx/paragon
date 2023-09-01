@@ -7,6 +7,7 @@ import { Close } from '../../icons';
 import Button from '.';
 import Hyperlink from '../Hyperlink';
 import Hyperlink from '../Hyperlink';
+import Hyperlink from '../Hyperlink';
 
 describe('<Button />', () => {
   describe('correct rendering', () => {

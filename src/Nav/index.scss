@@ -167,6 +167,15 @@
     }
   }
 
+  button.nav-link {
+    border: none;
+    border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-link-border);
+
+    &.disabled {
+      border-color: transparent;
+    }
+  }
+
   .nav-link {
     margin-bottom: calc(var(--pgn-size-nav-tabs-border-width) * -1);
 
