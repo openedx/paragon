@@ -112,6 +112,18 @@ describe('render behavior', () => {
         expect(formControlFeedback).toBeInTheDocument();
       });
     });
+
+    describe('controlled behavior', () => {
+          it('selects option', () => {
+            container.find('input').simulate('click');
+            container.find('.pgn__form-autosuggest__dropdown').find('button')
+              .at(0).simulate('click');
+      
+            expect(container.find('input').instance().value).toEqual('Option 1');
+            expect(onSelected).toHaveBeenCalledWith('Option 1');
+            expect(onSelected).toHaveBeenCalledTimes(1);
+          });
+        });
 //
 //
 // OLD CODE BELOW --------------------- :
