@@ -1,8 +1,8 @@
 {
-  "lastModified": 1693750082283,
+  "lastModified": 1693922953894,
   "projectUsages": [
     {
-      "version": "21.1.3",
+      "version": "21.1.4",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -9073,28 +9073,28 @@
             "index": 2421
           },
           {
-            "filePath": "src/register/registrationFields/HonorCode.jsx",
+            "filePath": "src/register/RegistrationFields/HonorCodeField/HonorCode.jsx",
             "line": 33,
             "column": 14,
-            "index": 1281
+            "index": 1284
           },
           {
-            "filePath": "src/register/registrationFields/HonorCode.jsx",
+            "filePath": "src/register/RegistrationFields/HonorCodeField/HonorCode.jsx",
             "line": 43,
             "column": 14,
-            "index": 1649
+            "index": 1652
           },
           {
-            "filePath": "src/register/registrationFields/HonorCode.jsx",
+            "filePath": "src/register/RegistrationFields/HonorCodeField/HonorCode.jsx",
             "line": 75,
             "column": 14,
-            "index": 2616
+            "index": 2619
           },
           {
-            "filePath": "src/register/registrationFields/TermsOfService.jsx",
+            "filePath": "src/register/RegistrationFields/TermsOfServiceField/TermsOfService.jsx",
             "line": 34,
             "column": 14,
-            "index": 1118
+            "index": 1121
           }
         ],
         "Image": [
@@ -9260,15 +9260,15 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 577,
+            "line": 323,
             "column": 12,
-            "index": 20898
+            "index": 11021
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
-            "line": 174,
+            "line": 161,
             "column": 14,
-            "index": 5916
+            "index": 5557
           }
         ],
         "Button": [
@@ -9297,10 +9297,10 @@
             "index": 1082
           },
           {
-            "filePath": "src/register/registrationFields/UsernameField.jsx",
-            "line": 24,
+            "filePath": "src/register/RegistrationFields/UsernameField/UsernameField.jsx",
+            "line": 107,
             "column": 10,
-            "index": 928
+            "index": 3644
           }
         ],
         "Icon": [
@@ -9318,51 +9318,51 @@
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 33,
-            "column": 102,
-            "index": 1059
+            "line": 79,
+            "column": 14,
+            "index": 2567
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 37,
-            "column": 99,
-            "index": 1297
+            "line": 93,
+            "column": 14,
+            "index": 2867
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 43,
+            "line": 105,
             "column": 42,
-            "index": 1661
+            "index": 3260
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 43,
+            "line": 105,
             "column": 95,
-            "index": 1714
+            "index": 3313
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 47,
+            "line": 109,
             "column": 42,
-            "index": 1942
+            "index": 3541
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 47,
+            "line": 109,
             "column": 95,
-            "index": 1995
+            "index": 3594
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 51,
+            "line": 113,
             "column": 35,
-            "index": 2220
+            "index": 3819
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 51,
+            "line": 113,
             "column": 88,
-            "index": 2273
+            "index": 3872
           },
           {
             "filePath": "src/common-components/SocialAuthProviders.jsx",
@@ -9395,28 +9395,28 @@
             "index": 2673
           },
           {
-            "filePath": "src/register/registrationFields/EmailField.jsx",
-            "line": 31,
-            "column": 26,
-            "index": 981
+            "filePath": "src/register/RegistrationFields/EmailField/EmailField.jsx",
+            "line": 95,
+            "column": 12,
+            "index": 2964
           },
           {
-            "filePath": "src/register/registrationFields/UsernameField.jsx",
-            "line": 42,
+            "filePath": "src/register/RegistrationFields/UsernameField/UsernameField.jsx",
+            "line": 126,
             "column": 49,
-            "index": 1556
+            "index": 4255
           },
           {
-            "filePath": "src/register/registrationFields/UsernameField.jsx",
-            "line": 46,
+            "filePath": "src/register/RegistrationFields/UsernameField/UsernameField.jsx",
+            "line": 130,
             "column": 49,
-            "index": 1934
+            "index": 4627
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
-            "line": 143,
+            "line": 130,
             "column": 6,
-            "index": 4594
+            "index": 4235
           }
         ],
         "Login": [
@@ -9442,9 +9442,9 @@
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 58,
+            "line": 120,
             "column": 4,
-            "index": 2432
+            "index": 4031
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
@@ -9480,9 +9480,9 @@
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 60,
+            "line": 122,
             "column": 8,
-            "index": 2610
+            "index": 4209
           },
           {
             "filePath": "src/field-renderer/FieldRenderer.jsx",
@@ -9528,9 +9528,9 @@
         "useToggle": [
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 17,
+            "line": 23,
             "column": 60,
-            "index": 544
+            "index": 897
           },
           {
             "filePath": "src/login/ChangePasswordPrompt.jsx",
@@ -9542,99 +9542,99 @@
         "IconButton": [
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 33,
+            "line": 74,
             "column": 4,
-            "index": 961
+            "index": 2435
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 37,
+            "line": 88,
             "column": 4,
-            "index": 1202
+            "index": 2738
           },
           {
-            "filePath": "src/register/registrationFields/UsernameField.jsx",
-            "line": 42,
+            "filePath": "src/register/RegistrationFields/UsernameField/UsernameField.jsx",
+            "line": 126,
             "column": 17,
-            "index": 1524
+            "index": 4223
           },
           {
-            "filePath": "src/register/registrationFields/UsernameField.jsx",
-            "line": 46,
+            "filePath": "src/register/RegistrationFields/UsernameField/UsernameField.jsx",
+            "line": 130,
             "column": 17,
-            "index": 1902
+            "index": 4595
           }
         ],
         "VisibilityOff": [
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 33,
-            "column": 79,
-            "index": 1036
+            "line": 78,
+            "column": 11,
+            "index": 2538
           }
         ],
         "Visibility": [
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 37,
-            "column": 79,
-            "index": 1277
+            "line": 92,
+            "column": 11,
+            "index": 2841
           }
         ],
         "Tooltip": [
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 41,
+            "line": 103,
             "column": 4,
-            "index": 1499
+            "index": 3098
           }
         ],
         "Check": [
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 43,
+            "line": 105,
             "column": 83,
-            "index": 1702
+            "index": 3301
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 47,
+            "line": 109,
             "column": 83,
-            "index": 1983
+            "index": 3582
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 51,
+            "line": 113,
             "column": 76,
-            "index": 2261
+            "index": 3860
           }
         ],
         "Remove": [
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 43,
+            "line": 105,
             "column": 138,
-            "index": 1757
+            "index": 3356
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 47,
+            "line": 109,
             "column": 138,
-            "index": 2038
+            "index": 3637
           },
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 51,
+            "line": 113,
             "column": 131,
-            "index": 2316
+            "index": 3915
           }
         ],
         "OverlayTrigger": [
           {
             "filePath": "src/common-components/PasswordField.jsx",
-            "line": 59,
+            "line": 121,
             "column": 6,
-            "index": 2512
+            "index": 4111
           }
         ],
         "Alert": [
@@ -9669,16 +9669,16 @@
             "index": 8182
           },
           {
-            "filePath": "src/register/RegistrationFailure.jsx",
+            "filePath": "src/register/components/RegistrationFailure.jsx",
             "line": 57,
             "column": 4,
-            "index": 1660
+            "index": 1665
           },
           {
-            "filePath": "src/register/registrationFields/EmailField.jsx",
-            "line": 22,
+            "filePath": "src/register/RegistrationFields/EmailField/EmailField.jsx",
+            "line": 85,
             "column": 8,
-            "index": 572
+            "index": 2542
           },
           {
             "filePath": "src/reset-password/ResetPasswordFailure.jsx",
@@ -9725,10 +9725,10 @@
             "index": 8269
           },
           {
-            "filePath": "src/register/RegistrationFailure.jsx",
+            "filePath": "src/register/components/RegistrationFailure.jsx",
             "line": 58,
             "column": 6,
-            "index": 1744
+            "index": 1749
           },
           {
             "filePath": "src/reset-password/ResetPasswordFailure.jsx",
@@ -9759,16 +9759,16 @@
             "index": 3427
           },
           {
-            "filePath": "src/register/registrationFields/HonorCode.jsx",
+            "filePath": "src/register/RegistrationFields/HonorCodeField/HonorCode.jsx",
             "line": 60,
             "column": 6,
-            "index": 2074
+            "index": 2077
           },
           {
-            "filePath": "src/register/registrationFields/TermsOfService.jsx",
+            "filePath": "src/register/RegistrationFields/TermsOfServiceField/TermsOfService.jsx",
             "line": 18,
             "column": 6,
-            "index": 494
+            "index": 497
           }
         ],
         "Alert.Link": [
@@ -9785,16 +9785,16 @@
             "index": 1435
           },
           {
-            "filePath": "src/register/registrationFields/EmailField.jsx",
-            "line": 25,
+            "filePath": "src/register/RegistrationFields/EmailField/EmailField.jsx",
+            "line": 88,
             "column": 12,
-            "index": 790
+            "index": 2760
           },
           {
-            "filePath": "src/register/registrationFields/EmailField.jsx",
-            "line": 39,
+            "filePath": "src/register/RegistrationFields/EmailField/EmailField.jsx",
+            "line": 103,
             "column": 8,
-            "index": 1263
+            "index": 3255
           }
         ],
         "ChevronLeft": [
@@ -9812,9 +9812,9 @@
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
-            "line": 143,
+            "line": 130,
             "column": 17,
-            "index": 4605
+            "index": 4246
           }
         ],
         "Tabs": [
@@ -9850,9 +9850,9 @@
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
-            "line": 166,
+            "line": 153,
             "column": 10,
-            "index": 5375
+            "index": 5016
           }
         ],
         "Tab": [
@@ -9900,9 +9900,9 @@
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
-            "line": 167,
+            "line": 154,
             "column": 12,
-            "index": 5488
+            "index": 5129
           }
         ],
         "StatefulButton": [
@@ -9938,15 +9938,15 @@
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 637,
+            "line": 373,
             "column": 14,
-            "index": 23752
+            "index": 13457
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
-            "line": 193,
+            "line": 180,
             "column": 16,
-            "index": 6848
+            "index": 6489
           }
         ],
         "ModalDialog": [
@@ -10055,16 +10055,16 @@
             "index": 8249
           },
           {
-            "filePath": "src/register/RegistrationFailure.jsx",
+            "filePath": "src/register/components/RegistrationFailure.jsx",
             "line": 57,
             "column": 74,
-            "index": 1730
+            "index": 1735
           },
           {
-            "filePath": "src/register/registrationFields/EmailField.jsx",
-            "line": 22,
+            "filePath": "src/register/RegistrationFields/EmailField/EmailField.jsx",
+            "line": 85,
             "column": 84,
-            "index": 648
+            "index": 2618
           },
           {
             "filePath": "src/reset-password/ResetPasswordFailure.jsx",
@@ -10123,66 +10123,66 @@
         ],
         "FormAutosuggestOption": [
           {
-            "filePath": "src/register/registrationFields/CountryField.jsx",
-            "line": 37,
+            "filePath": "src/register/RegistrationFields/CountryField/CountryField.jsx",
+            "line": 85,
             "column": 4,
-            "index": 1244
+            "index": 2913
           }
         ],
         "FormAutosuggest": [
           {
-            "filePath": "src/register/registrationFields/CountryField.jsx",
-            "line": 44,
+            "filePath": "src/register/RegistrationFields/CountryField/CountryField.jsx",
+            "line": 92,
             "column": 6,
-            "index": 1417
+            "index": 3086
           }
         ],
         "FormControlFeedback": [
           {
-            "filePath": "src/register/registrationFields/CountryField.jsx",
-            "line": 57,
+            "filePath": "src/register/RegistrationFields/CountryField/CountryField.jsx",
+            "line": 105,
             "column": 8,
-            "index": 1921
+            "index": 3587
           }
         ],
         "Close": [
           {
-            "filePath": "src/register/registrationFields/EmailField.jsx",
-            "line": 31,
-            "column": 37,
-            "index": 992
+            "filePath": "src/register/RegistrationFields/EmailField/EmailField.jsx",
+            "line": 95,
+            "column": 23,
+            "index": 2975
           },
           {
-            "filePath": "src/register/registrationFields/UsernameField.jsx",
-            "line": 42,
+            "filePath": "src/register/RegistrationFields/UsernameField/UsernameField.jsx",
+            "line": 126,
             "column": 34,
-            "index": 1541
+            "index": 4240
           },
           {
-            "filePath": "src/register/registrationFields/UsernameField.jsx",
-            "line": 46,
+            "filePath": "src/register/RegistrationFields/UsernameField/UsernameField.jsx",
+            "line": 130,
             "column": 34,
-            "index": 1919
+            "index": 4612
           }
         ],
         "Spinner": [
           {
             "filePath": "src/register/RegistrationPage.jsx",
-            "line": 558,
+            "line": 304,
             "column": 12,
-            "index": 20195
+            "index": 10326
           },
           {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
-            "line": 151,
+            "line": 138,
             "column": 13,
-            "index": 4821
+            "index": 4462
           }
         ]
       }
     },
     {
-      "version": "20.45.0",
+      "version": "20.46.2",
       "name": "@edx/frontend-app-communications",
       "repository": {
         "type": "git",
@@ -28397,7 +28397,7 @@
       }
     },
     {
-      "version": "20.45.5",
+      "version": "20.46.2",
       "name": "@edx/frontend-app-ora-grading",
       "repository": {
         "type": "git",
@@ -32940,9 +32940,9 @@
           },
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 145,
+            "line": 155,
             "column": 10,
-            "index": 5467
+            "index": 5926
           }
         ],
         "Button": [
@@ -33008,59 +33008,59 @@
         "OverlayTrigger": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 70,
+            "line": 80,
             "column": 6,
-            "index": 2577
+            "index": 3038
           },
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 95,
+            "line": 105,
             "column": 18,
-            "index": 3607
+            "index": 4066
           }
         ],
         "Popover": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 77,
+            "line": 87,
             "column": 10,
-            "index": 2762
+            "index": 3223
           }
         ],
         "Popover.Title": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 88,
+            "line": 98,
             "column": 14,
-            "index": 3217
+            "index": 3693
           }
         ],
         "Tooltip": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 97,
+            "line": 107,
             "column": 22,
-            "index": 3676
+            "index": 4135
           }
         ],
         "Icon": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 102,
+            "line": 112,
             "column": 20,
-            "index": 3865
+            "index": 4324
           },
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 116,
+            "line": 126,
             "column": 18,
-            "index": 4454
+            "index": 4913
           },
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 137,
+            "line": 147,
             "column": 20,
-            "index": 5188
+            "index": 5647
           },
           {
             "filePath": "src/Notifications/NotificationRowItem.jsx",
@@ -33078,17 +33078,17 @@
         "Feedback": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 104,
+            "line": 114,
             "column": 27,
-            "index": 3953
+            "index": 4412
           }
         ],
         "Hyperlink": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 110,
+            "line": 120,
             "column": 16,
-            "index": 4204
+            "index": 4663
           },
           {
             "filePath": "src/Notifications/tours/constants.js",
@@ -33100,9 +33100,9 @@
         "Settings": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 117,
+            "line": 127,
             "column": 25,
-            "index": 4485
+            "index": 4944
           },
           {
             "filePath": "src/Notifications/tours/constants.js",
@@ -33114,25 +33114,25 @@
         "Popover.Content": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 124,
+            "line": 134,
             "column": 14,
-            "index": 4764
+            "index": 5223
           }
         ],
         "IconButton": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 132,
+            "line": 142,
             "column": 10,
-            "index": 4988
+            "index": 5447
           }
         ],
         "NotificationsNone": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 136,
+            "line": 146,
             "column": 17,
-            "index": 5149
+            "index": 5608
           }
         ],
         "Spinner": [
@@ -37535,7 +37535,7 @@
       }
     },
     {
-      "version": "21.1.2",
+      "version": "21.1.4",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
@@ -38195,6 +38195,12 @@
             "line": 46,
             "column": 6,
             "index": 1542
+          },
+          {
+            "filePath": "src/packages/search-page/components/HeaderSection.jsx",
+            "line": 83,
+            "column": 4,
+            "index": 3110
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/PopularSearchLinks/index.jsx",
@@ -39345,6 +39351,12 @@
             "index": 12566
           },
           {
+            "filePath": "src/packages/search-page/components/HeaderSection.jsx",
+            "line": 91,
+            "column": 6,
+            "index": 3442
+          },
+          {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/PopularSearchLinks/index.jsx",
             "line": 42,
             "column": 10,
@@ -39591,6 +39603,12 @@
             "line": 130,
             "column": 38,
             "index": 4608
+          },
+          {
+            "filePath": "src/packages/search-page/components/HeaderSection.jsx",
+            "line": 91,
+            "column": 52,
+            "index": 3488
           }
         ],
         "Form.Checkbox": [
