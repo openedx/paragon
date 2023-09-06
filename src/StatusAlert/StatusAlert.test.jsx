@@ -1,22 +1,16 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+
 import StatusAlert from '.';
 import { Button } from '..';
 
-const statusAlertOpen = (isOpen, wrapper) => {
-  wrapper.update();
-  expect(wrapper.find('.alert').hasClass('show')).toEqual(isOpen);
-  expect(wrapper.find('StatusAlert').state('open')).toEqual(isOpen);
-};
 const dialog = 'Status Alert dialog';
 const defaultProps = {
   dialog,
   onClose: () => {},
   open: true,
 };
-
-let wrapper;
 
 describe('<StatusAlert />', () => {
   describe('correct rendering', () => {
@@ -46,11 +40,21 @@ describe('<StatusAlert />', () => {
 
   describe('props received correctly', () => {
     it('component receives props', () => {
-      wrapper = mount(<StatusAlert dialog={dialog} onClose={() => {}} />);
+      const onCloseMock = jest.fn();
 
-      statusAlertOpen(false, wrapper);
-      wrapper.setProps({ open: true });
-      statusAlertOpen(true, wrapper);
+      const { rerender, getByRole } = render(
+        <StatusAlert dialog={dialog} onClose={onCloseMock} />,
+      );
+      const alertElement = getByRole('alert', { hidden: true });
+      expect(alertElement).not.toHaveClass('show');
+
+      rerender(<StatusAlert dialog={dialog} onClose={onCloseMock} open />);
+      expect(screen.getByRole('alert')).toHaveClass('show');
+
+      expect(onCloseMock).not.toHaveBeenCalled();
+      const closeButton = getByRole('button');
+      fireEvent.click(closeButton);
+      expect(onCloseMock).toHaveBeenCalled();
     });
 
     it('component receives props and ignores prop change', () => {
@@ -67,10 +71,6 @@ describe('<StatusAlert />', () => {
   });
 
   describe('close functions properly', () => {
-    beforeEach(() => {
-      wrapper = mount(<StatusAlert {...defaultProps} />);
-    });
-
     it('closes when x button pressed', () => {
       render(<StatusAlert {...defaultProps} />);
       const closeButton = screen.getByRole('button');
@@ -107,11 +107,6 @@ describe('<StatusAlert />', () => {
   });
 
   describe('invalid keystrokes do nothing', () => {
-    // beforeEach(() => {
-    //   const app = document.createElement('div');
-    //   document.body.appendChild(app);
-    //   wrapper = mount(<StatusAlert {...defaultProps} />, { attachTo: app });
-    // });
     beforeEach(() => {
       render(<StatusAlert {...defaultProps} />);
     });
@@ -134,21 +129,23 @@ describe('<StatusAlert />', () => {
   });
   describe('focus functions properly', () => {
     it('focus function changes focus', () => {
-      const app = document.createElement('div');
-      document.body.appendChild(app);
-      wrapper = mount(
-        <div><Button.Deprecated label="test" /><StatusAlert {...defaultProps} /></div>,
-        { attachTo: app },
+      render(
+        <div>
+          <Button label="test" />
+          <StatusAlert {...defaultProps} />
+        </div>,
       );
-      const buttons = wrapper.find('button');
+      const buttons = screen.getAllByRole('button');
+      const xButton = buttons[1];
+      const statusAlertButton = buttons[0];
 
-      // move focus away from default StatusAlert xButton
-      buttons.at(0).simulate('click');
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
+      // Move focus away from the default StatusAlert xButton
+      fireEvent.click(xButton);
+      expect(xButton.innerHTML).toEqual(document.activeElement.innerHTML);
 
-      const statusAlert = wrapper.find('StatusAlert').instance();
-      statusAlert.focus();
-      expect(buttons.at(1).html()).toEqual(document.activeElement.outerHTML);
+      fireEvent.focus(statusAlertButton);
+      statusAlertButton.focus();
+      expect(statusAlertButton.innerHTML).toEqual(document.activeElement.innerHTML);
     });
   });
 });

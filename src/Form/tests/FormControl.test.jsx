@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 
 import FormControl from '../FormControl';
 
@@ -11,16 +11,22 @@ describe('FormControl', () => {
   it('textarea changes its height with autoResize prop', () => {
     const useReferenceSpy = jest.spyOn(React, 'useRef').mockReturnValue(ref);
     const onChangeFunc = jest.fn();
-    const wrapper = mount((
-      <FormControl as="textarea" autoResize onChange={onChangeFunc} />
-    ));
+    const { getByTestId } = render(
+      <FormControl as="textarea" autoResize onChange={onChangeFunc} data-testid="textarea-id" />,
+    );
+
     ref.scrollHeight = 180;
     ref.offsetHeight = 90;
     ref.clientHeight = 88;
+
+    const textarea = getByTestId('textarea-id');
+
     expect(useReferenceSpy).toHaveBeenCalledTimes(1);
     expect(ref.current.style.height).toBe('0px');
-    wrapper.find('textarea').simulate('change');
+
+    fireEvent.change(textarea, { target: { value: 'new text' } });
+
     expect(onChangeFunc).toHaveBeenCalledTimes(1);
-    expect(ref.current.style.height).toEqual(`${ref.current.scrollHeight + ref.current.offsets}px`);
+    expect(ref.current.style.height).toEqual(`${ref.current.scrollHeight + ref.current.offsetHeight}px`);
   });
 });

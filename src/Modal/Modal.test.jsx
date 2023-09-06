@@ -1,17 +1,25 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
-import Modal from './index';
+import Modal from '.';
 import { Button } from '..';
 import Variant from '../utils/constants';
 
-const modalOpen = (isOpen, wrapper) => {
-  expect(wrapper.find('.modal').hasClass('d-block')).toEqual(isOpen);
-  expect(wrapper.find('.modal-backdrop').exists()).toEqual(isOpen);
-  expect(wrapper.find('.modal').hasClass('show')).toEqual(isOpen);
-  expect(wrapper.find('.modal').hasClass('fade')).toEqual(!isOpen);
-  expect(wrapper.state('open')).toEqual(isOpen);
+const modalOpen = (isOpen, container) => {
+  if (!isOpen) {
+    expect(container.getByTestId('modal-id').classList).not.toContain('d-block');
+    expect(container.getByTestId('modal-id').classList).not.toContain('show');
+    expect(container.getByTestId('modal-id').classList).toContain('fade');
+    expect(container.queryByTestId('modal-backdrop-id').classList).not.toContain('modal-backdrop');
+  } else {
+    expect(container.getByTestId('modal-id').classList).toContain('d-block');
+    expect(container.getByTestId('modal-id').classList).toContain('show');
+    expect(container.queryByTestId('modal-id').classList).not.toContain('fade');
+    expect(container.queryByTestId('modal-backdrop-id').classList).toContain('modal-backdrop');
+  }
 };
+
 const title = 'Modal title';
 const body = 'Modal body';
 const defaultProps = {
@@ -21,8 +29,6 @@ const defaultProps = {
   onClose: () => { },
 };
 const closeText = 'GO AWAY!';
-
-let wrapper;
 
 describe('<Modal />', () => {
   describe('correct rendering', () => {
@@ -36,82 +42,79 @@ describe('<Modal />', () => {
     ];
 
     it('renders default buttons', () => {
-      wrapper = mount(<Modal {...defaultProps} />);
-      const modalTitle = wrapper.find('.modal-title');
-      const modalBody = wrapper.find('.modal-body');
+      render(<Modal {...defaultProps} />);
+      const modalTitle = screen.getByText(title);
+      const modalBody = screen.getByText(body);
 
-      expect(modalTitle.text()).toEqual(title);
-      expect(modalBody.text()).toEqual(body);
-      expect(wrapper.find('button')).toHaveLength(2);
+      expect(modalTitle).toBeInTheDocument();
+      expect(modalBody).toBeInTheDocument();
+      expect(screen.queryAllByRole('button')).toHaveLength(2);
     });
 
     it('renders custom buttons', () => {
-      wrapper = mount(<Modal {...defaultProps} buttons={buttons} />);
-      expect(wrapper.find('button')).toHaveLength(buttons.length + 2);
+      render(<Modal {...defaultProps} buttons={buttons} />);
+      expect(screen.queryAllByRole('button')).toHaveLength(buttons.length + 2);
     });
 
     it('renders Warning Variant', () => {
-      wrapper = mount(<Modal {...defaultProps} variant={{ status: Variant.status.WARNING }} />);
+      render(
+        <Modal {...defaultProps} variant={{ status: Variant.status.WARNING }} />,
+      );
 
-      const modalBody = wrapper.find('.modal-body');
-      expect(modalBody.childAt(0).hasClass('container-fluid')).toEqual(true);
-      expect(modalBody.find('p').text()).toEqual(body);
+      const modalBody = screen.getByTestId('modal-body');
 
-      const icon = modalBody.find('Icon');
-      expect(icon.hasClass('fa')).toEqual(true);
-      expect(icon.hasClass('fa-exclamation-triangle')).toEqual(true);
-      expect(icon.hasClass('fa-3x')).toEqual(true);
-      expect(icon.hasClass('text-warning')).toEqual(true);
+      expect(modalBody.firstChild.classList).toContain('container-fluid');
+      expect(screen.getByText(body)).toBeInTheDocument();
+
+      const icon = screen.getByTestId('icon-id').firstChild;
+      expect(icon.classList).toContain('fa-exclamation-triangle');
+      expect(icon.classList).toContain('fa-3x');
+      expect(icon.classList).toContain('text-warning');
     });
 
     it('renders invalid Variant properly', () => {
-      wrapper = mount(<Modal {...defaultProps} variant={{ status: 'foo' }} />);
-      const modalTitle = wrapper.find('.modal-title');
-      const modalBody = wrapper.find('.modal-body');
+      render(<Modal {...defaultProps} variant={{ status: 'foo' }} />);
+      const modalTitle = screen.getByText(title);
+      const modalBody = screen.getByText(body);
 
-      expect(modalTitle.text()).toEqual(title);
-      expect(modalBody.text()).toEqual(body);
-      expect(wrapper.find('button')).toHaveLength(2);
+      expect(modalTitle).toBeInTheDocument();
+      expect(modalBody).toBeInTheDocument();
+      expect(screen.queryAllByRole('button')).toHaveLength(2);
     });
 
     it('render of the header close button is optional', () => {
-      wrapper = mount(<Modal {...defaultProps} renderHeaderCloseButton={false} />);
-      const modalHeader = wrapper.find('.modal-header');
-      const modalFooter = wrapper.find('.modal-footer');
+      render(<Modal {...defaultProps} renderHeaderCloseButton={false} />);
+      const modalHeaderBtn = screen.queryByTestId('modal-header-btn');
+      const modalFooterBtn = screen.getByTestId('modal-footer-btn');
 
-      expect(modalHeader.find('button')).toHaveLength(0);
-      expect(modalFooter.find('button')).toHaveLength(1);
-      expect(wrapper.find('button')).toHaveLength(1);
+      expect(modalHeaderBtn).not.toBeInTheDocument();
+      expect(modalFooterBtn).toBeInTheDocument();
     });
 
     it('render of the default footer close button is optional', () => {
-      wrapper = mount(<Modal {...defaultProps} renderDefaultCloseButton={false} />);
-      const modalHeader = wrapper.find('.modal-header');
-      const modalFooter = wrapper.find('.modal-footer');
+      render(<Modal {...defaultProps} renderDefaultCloseButton={false} />);
+      const modalHeaderBtn = screen.getByTestId('modal-header-btn');
+      const modalFooterBtn = screen.queryByTestId('modal-footer-btn');
 
-      expect(modalHeader.find('button')).toHaveLength(1);
-      expect(modalFooter.find('button')).toHaveLength(0);
-      expect(wrapper.find('button')).toHaveLength(1);
+      expect(modalHeaderBtn).toBeInTheDocument();
+      expect(modalFooterBtn).not.toBeInTheDocument();
     });
 
     it('renders custom close button string', () => {
-      wrapper = mount(<Modal {...defaultProps} closeText={closeText} />);
-      const modalFooter = wrapper.find('.modal-footer');
-      const closeButton = modalFooter.find('button');
-      expect(closeButton).toHaveLength(1);
-      expect(closeButton.text()).toEqual(closeText);
+      render(<Modal {...defaultProps} closeText={closeText} />);
+      const modalFooterBtn = screen.getByTestId('modal-footer-btn');
+      expect(modalFooterBtn).toBeInTheDocument();
+      expect(modalFooterBtn).toHaveTextContent(closeText);
     });
 
     it('renders custom close button element', () => {
       const closeElem = <span className="is-close-text">{closeText}</span>;
-      wrapper = mount(<Modal {...defaultProps} closeText={closeElem} />);
-      const modalFooter = wrapper.find('.modal-footer');
-      const closeButton = modalFooter.find('button');
+      render(<Modal {...defaultProps} closeText={closeElem} />);
+      const modalFooterBtn = screen.getByTestId('modal-footer-btn');
 
-      expect(closeButton).toHaveLength(1);
-      expect(closeButton.children()).toHaveLength(1);
-      expect(closeButton.find('.is-close-text')).toHaveLength(1);
-      expect(closeButton.text()).toEqual(closeText);
+      expect(modalFooterBtn).toBeInTheDocument();
+      expect(modalFooterBtn.firstChild.classList).toContain('is-close-text');
+      expect(modalFooterBtn.firstChild).toHaveTextContent(closeText);
     });
 
     it('renders with IE11-specific styling when IE11 is detected', () => {
@@ -121,9 +124,9 @@ describe('<Modal />', () => {
       // mimic IE11
       global.MSInputMethodContext = true;
       global.document.documentMode = true;
-      wrapper = mount(<Modal {...defaultProps} />);
-      const modal = wrapper.find('.modal');
-      expect(modal.hasClass('is-ie11')).toEqual(true);
+      render(<Modal {...defaultProps} />);
+      const modal = screen.queryByTestId('modal-id');
+      expect(modal.classList).toContain('is-ie11');
 
       global.MSInputMethodContext = MSInputMethodContext;
       global.document.documentMode = documentMode;
@@ -136,9 +139,9 @@ describe('<Modal />', () => {
       // mimic non-IE11 browser
       global.MSInputMethodContext = false;
       global.document.documentMode = false;
-      wrapper = mount(<Modal {...defaultProps} />);
-      const modal = wrapper.find('.modal');
-      expect(modal.hasClass('is-ie11')).toEqual(false);
+      render(<Modal {...defaultProps} />);
+      const modal = screen.queryByTestId('modal-id');
+      expect(modal).not.toContain('is-ie11');
 
       global.MSInputMethodContext = MSInputMethodContext;
       global.document.documentMode = documentMode;
@@ -146,132 +149,113 @@ describe('<Modal />', () => {
   });
 
   describe('props received correctly', () => {
-    beforeEach(() => {
-      // This is a gross hack to suppress error logs in the invalid parentSelector test
-      jest.spyOn(console, 'error');
-      global.console.error.mockImplementation(() => { });
-    });
-
-    afterEach(() => {
-      global.console.error.mockRestore();
-    });
-
     it('component receives props', () => {
-      wrapper = mount(<Modal {...defaultProps} open={false} />);
+      const { rerender } = render(<Modal {...defaultProps} open={false} />);
 
-      modalOpen(false, wrapper);
-      wrapper.setProps({ open: true });
-      wrapper.update();
-      modalOpen(true, wrapper);
+      modalOpen(false, screen);
+      rerender(<Modal {...defaultProps} open />);
+      modalOpen(true, screen);
     });
 
     it('component receives props and ignores prop change', () => {
-      wrapper = mount(<Modal {...defaultProps} />);
+      const { rerender } = render(<Modal {...defaultProps} />);
 
-      modalOpen(true, wrapper);
-      wrapper.setProps({ title: 'Changed modal title' });
-      wrapper.update();
-      modalOpen(true, wrapper);
+      modalOpen(true, screen);
+      rerender(<Modal {...defaultProps} title="Changed modal title" />);
+      modalOpen(true, screen);
     });
 
     it('throws an error when an invalid parentSelector prop is passed', () => {
-      expect(() => {
-        wrapper = shallow(<Modal
+      expect(() => render(
+        <Modal
           {...defaultProps}
-          parentSelector="this-selector-does-not-exist"
-        />);
-      }).toThrow('Modal received invalid parentSelector: this-selector-does-not-exist, no matching element found');
+          parentSelector=".this-selector-does-not-exist"
+        />,
+      )).toThrow('Modal received invalid parentSelector: .this-selector-does-not-exist, no matching element found');
     });
   });
 
   describe('close functions properly', () => {
-    beforeEach(() => {
-      wrapper = mount(<Modal {...defaultProps} />);
-    });
-
     it('closes when x button pressed', () => {
-      modalOpen(true, wrapper);
-      wrapper.find('button').at(0).simulate('click');
-      modalOpen(false, wrapper);
+      render(<Modal {...defaultProps} />);
+
+      modalOpen(true, screen);
+      fireEvent.click(screen.queryAllByRole('button')[0]);
+      modalOpen(false, screen);
     });
 
     it('closes when Close button pressed', () => {
-      modalOpen(true, wrapper);
-      wrapper.find('button').at(1).simulate('click');
-      modalOpen(false, wrapper);
+      render(<Modal {...defaultProps} />);
+
+      modalOpen(true, screen);
+      fireEvent.click(screen.queryAllByRole('button')[1]);
+      modalOpen(false, screen);
     });
 
     it('calls callback function on close', () => {
       const spy = jest.fn();
-
-      wrapper = mount(<Modal
-        {...defaultProps}
-        onClose={spy}
-      />);
+      render(<Modal {...defaultProps} onClose={spy} />);
 
       expect(spy).toHaveBeenCalledTimes(0);
 
       // press X button
-      wrapper.find('button').at(0).simulate('click');
+      fireEvent.click(screen.queryAllByRole('button')[0]);
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
     it('reopens after closed', () => {
-      modalOpen(true, wrapper);
-      wrapper.find('button').at(0).simulate('click');
-      modalOpen(false, wrapper);
-      wrapper.setProps({ open: true });
-      wrapper.update();
-      modalOpen(true, wrapper);
+      const { rerender } = render(<Modal {...defaultProps} />);
+
+      modalOpen(true, screen);
+      fireEvent.click(screen.queryAllByRole('button')[0]);
+      modalOpen(false, screen);
+      rerender(<Modal {...defaultProps} open />);
+      modalOpen(true, screen);
     });
   });
 
   describe('focus changes correctly', () => {
-    let buttons;
-
-    beforeEach(() => {
-      wrapper = mount(<Modal {...defaultProps} />);
-
-      buttons = wrapper.find('button');
-    });
-
     it('has correct initial focus', () => {
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
+      render(<Modal {...defaultProps} />);
+      const buttons = screen.queryAllByRole('button');
+      expect(buttons[0]).toHaveFocus();
     });
 
     it('has reset focus after close and reopen', () => {
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
-      wrapper.setProps({ open: false });
-      wrapper.update();
-      modalOpen(false, wrapper);
-      wrapper.setProps({ open: true });
-      wrapper.update();
-      modalOpen(true, wrapper);
-      expect(buttons.at(0).html()).toEqual(document.activeElement.outerHTML);
+      const { rerender } = render(<Modal {...defaultProps} />);
+      const buttons = screen.queryAllByRole('button');
+      expect(buttons[0]).toHaveFocus();
+      rerender(<Modal {...defaultProps} open={false} />);
+      modalOpen(false, screen);
+      rerender(<Modal {...defaultProps} open />);
+      modalOpen(true, screen);
+      expect(buttons[0]).toHaveFocus();
     });
 
     it('has focus on input in modal body', () => {
-      wrapper = mount((
+      const { getByTestId } = render(
         <Modal
           {...defaultProps}
-          // hide the header/footer close buttons so there's nothing tabbable in the modal
+          open
           renderDefaultCloseButton={false}
           renderHeaderCloseButton={false}
-          body={<div><input /></div>}
-        />
-      ));
-      expect(wrapper.find('input').html()).toEqual(document.activeElement.outerHTML);
+          body={<div><input data-testid="modal-input" /></div>}
+        />,
+      );
+      const input = getByTestId('modal-input');
+      expect(input).toHaveFocus();
     });
 
     it('has focus on `.modal-content` when nothing else is tabbable', () => {
-      wrapper = mount((
+      const { getByTestId } = render(
         <Modal
           {...defaultProps}
           renderDefaultCloseButton={false}
           renderHeaderCloseButton={false}
-        />
-      ));
-      expect(wrapper.find('.modal-content').html()).toEqual(document.activeElement.outerHTML);
+        />,
+      );
+      const modalContent = getByTestId('modal-content');
+      expect(modalContent).toHaveFocus();
     });
   });
 });

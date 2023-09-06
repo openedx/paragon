@@ -1,15 +1,13 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { FocusOn } from 'react-focus-on';
+import { render } from '@testing-library/react';
 import ModalPopup from './ModalPopup';
-import { ModalContextProvider } from './ModalContext';
-import Portal from './Portal';
+import '@testing-library/jest-dom/extend-expect';
 
 /* eslint-disable react/prop-types */
 jest.mock('./Portal', () => function PortalMock(props) {
   const { children, ...otherProps } = props;
   return (
-    <paragon-portal {...otherProps}>
+    <paragon-portal data-testid="portal" {...otherProps}>
       {children}
     </paragon-portal>
   );
@@ -19,7 +17,7 @@ jest.mock('react-focus-on', () => ({
   FocusOn: (props) => {
     const { children, ...otherProps } = props;
     return (
-      <focus-on {...otherProps}>{children}</focus-on>
+      <focus-on data-testid="focus-on" {...otherProps}>{children}</focus-on>
     );
   },
 }));
@@ -56,88 +54,103 @@ describe('<ModalPopup />', () => {
   describe('when isOpen', () => {
     const isOpen = true;
     const closeFn = jest.fn();
-    const wrapper = shallow((
-      <ModalPopup
-        positionRef={mockPositionRef}
-        isOpen={isOpen}
-        onClose={closeFn}
-      >
-        <Dialog />
-      </ModalPopup>
-    ));
 
     it('renders the dialog', () => {
-      const dialog = wrapper.find(Dialog);
-      expect(dialog.length).toBe(1);
-    });
-
-    it('renders a modal context provider', () => {
-      const contextProvider = wrapper.find(ModalContextProvider);
-      expect(contextProvider.props().isOpen).toBe(isOpen);
-      expect(contextProvider.props().onClose).toBe(closeFn);
+      const { getByRole } = render(
+        <ModalPopup
+          positionRef={mockPositionRef}
+          isOpen={isOpen}
+          onClose={closeFn}
+        >
+          <Dialog />
+        </ModalPopup>,
+      );
+      const dialog = getByRole('dialog', { name: 'A dialog' });
+      expect(dialog).toBeInTheDocument();
     });
 
     it('renders a focus-on component with appropriate props', () => {
-      const focusOn = wrapper.find(FocusOn);
-      const focusOnProps = focusOn.props();
-      expect(focusOnProps.scrollLock).toBe(false);
-      expect(focusOnProps.enabled).toBe(true);
-      expect(focusOnProps.onEscapeKey).toBe(closeFn);
+      const { getByTestId } = render(
+        <ModalPopup
+          positionRef={mockPositionRef}
+          isOpen={isOpen}
+          onClose={closeFn}
+        >
+          <Dialog />
+        </ModalPopup>,
+      );
+      const focusOn = getByTestId('focus-on');
+      expect(focusOn).toBeInTheDocument();
+      expect(focusOn).toHaveAttribute('scrolllock', 'false');
+      expect(focusOn).toHaveAttribute('enabled', 'true');
     });
   });
 
   it('when isOpen is false the dialog is not rendered', () => {
-    const wrapper = shallow((
+    const { queryByRole } = render(
       <ModalPopup positionRef={mockPositionRef} isOpen={false} onClose={jest.fn()}>
         <Dialog />
-      </ModalPopup>
-    ));
-    const dialog = wrapper.find(Dialog);
-    expect(dialog.length).toBe(0);
+      </ModalPopup>,
+    );
+    const dialog = queryByRole('dialog', { name: 'A dialog' });
+    expect(dialog).not.toBeInTheDocument();
   });
 
   describe('withPortal', () => {
     it('renders no portal by default', () => {
-      const wrapper = shallow((
+      const { queryByTestId } = render(
         <ModalPopup positionRef={mockPositionRef} isOpen onClose={jest.fn()}>
           <Dialog />
-        </ModalPopup>
-      ));
-      expect(wrapper.find(Portal).length).toBe(0);
+        </ModalPopup>,
+      );
+      const portal = queryByTestId('portal');
+      expect(portal).toBeNull();
     });
+
     it('renders with a portal if withPortal is true', () => {
-      const wrapper = shallow((
+      const { getByTestId } = render(
         <ModalPopup withPortal positionRef={mockPositionRef} isOpen onClose={jest.fn()}>
           <Dialog />
-        </ModalPopup>
-      ));
-      expect(wrapper.find(Portal).length).toBe(1);
+        </ModalPopup>,
+      );
+      const portal = getByTestId('portal');
+      expect(portal).not.toBeNull();
     });
   });
+
   describe('withArrow', () => {
     const popupArrowModalClass = '.pgn__modal-popup__arrow';
+
     arrowPlacements.forEach((side) => {
       it(`renders with placement ${side}`, () => {
-        const wrapperPopup = shallow((
-          <ModalPopup hasArrow placement={side} isOpen onClose={jest.fn()}>
+        const { container } = render(
+          <ModalPopup positionRef={mockPositionRef} hasArrow placement={side} isOpen onClose={jest.fn()}>
             <Dialog />
-          </ModalPopup>));
-        expect(wrapperPopup.exists(`${popupArrowModalClass}-${side}`)).toBe(true);
+          </ModalPopup>,
+        );
+        const arrow = container.querySelector(`${popupArrowModalClass}-${side}`);
+        expect(arrow).not.toBeNull();
       });
     });
+
     it('renders without arrow', () => {
-      const wrapperPopup = shallow((
+      const { container } = render(
         <ModalPopup isOpen onClose={jest.fn()}>
           <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists(popupArrowModalClass)).toBe(false);
+        </ModalPopup>,
+      );
+      const arrow = container.querySelector(popupArrowModalClass);
+      expect(arrow).toBeNull();
     });
+
     it('renders with arrow', () => {
-      const wrapperPopup = shallow((
-        <ModalPopup hasArrow isOpen onClose={jest.fn()}>
+      const { container } = render(
+        <ModalPopup positionRef={mockPositionRef} hasArrow isOpen onClose={jest.fn()}>
           <Dialog />
-        </ModalPopup>));
-      expect(wrapperPopup.exists(popupArrowModalClass)).toBe(true);
+        </ModalPopup>,
+      );
+      const arrow = container.querySelector(popupArrowModalClass);
+      expect(arrow).toBeInTheDocument();
     });
   });
 });

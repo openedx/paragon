@@ -1,5 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import {
+  render, screen, fireEvent, within,
+} from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import Table from './index';
 
@@ -79,111 +82,110 @@ const propsWithColWidths = {
 
 describe('<Table />', () => {
   describe('renders', () => {
-    const wrapper = mount(<Table {...props} />).find('Table');
-
     it('with display columns in the right order', () => {
-      wrapper.find('th').forEach((th, i) => {
-        expect(th.text()).toEqual(props.columns[i].label);
+      render(<Table {...props} />);
+      props.columns.forEach((column) => {
+        const columnHeader = screen.getByText(column.label);
+        expect(columnHeader).toBeInTheDocument();
       });
     });
 
     it('with data in the same order as the columns', () => {
-      wrapper.find('tr').at(1).find('td').forEach((td, i) => {
-        let parsed = Number(td.text());
-        if (Number.isNaN(parsed)) { parsed = td.text(); }
-        expect(parsed).toEqual(props.data[0][props.columns[i].key]);
-      });
-    });
+      render(<Table {...props} />);
 
-    it('with correct initial state', () => {
-      expect(wrapper.state('sortedColumn')).toEqual('');
-      expect(wrapper.state('sortDirection')).toEqual('');
+      const rows = screen.getAllByTestId('table-row');
+      rows.forEach((row, rowIndex) => {
+        const cells = within(row).getAllByTestId('table-cell');
+        cells.forEach((cell, columnIndex) => {
+          const cellContent = cell.textContent.trim();
+          let parsed = Number(cellContent);
+          if (Number.isNaN(parsed)) {
+            parsed = cellContent;
+          }
+          expect(parsed).toEqual(props.data[rowIndex][props.columns[columnIndex].key]);
+        });
+      });
     });
   });
 
   describe('that is non-sortable renders', () => {
-    const wrapper = mount(<Table {...sortableProps} tableSortable={false} />).find('Table');
-
     it('it sets column headers correctly even with hidden prop', () => {
-      const tableHeadings = wrapper.find('th');
+      render(<Table {...sortableProps} tableSortable={false} />);
+      const tableHeadings = screen.getAllByRole('columnheader');
 
       let hiddenHeader;
 
       tableHeadings.forEach((th, i) => {
-        expect(th.text()).toEqual(sortableProps.columns[i].label);
+        expect(th.textContent).toEqual(sortableProps.columns[i].label);
         if (sortableProps.columns[i].hideHeader) {
           hiddenHeader = sortableProps.columns[i].label;
         }
       });
-      expect(tableHeadings.find('span').text()).toEqual(hiddenHeader);
+
+      const spanElement = screen.getByText(hiddenHeader);
+      expect(spanElement).toBeInTheDocument();
     });
 
     it('without sortable columns', () => {
-      const tableHeadings = wrapper.find('th');
+      render(<Table {...sortableProps} tableSortable={false} />);
+      const tableHeadings = screen.getAllByRole('columnheader');
 
       tableHeadings.forEach((heading) => {
-        expect((heading).hasClass('sortable')).toEqual(false);
+        expect(heading).not.toHaveClass('sortable');
       });
     });
 
     it('without column buttons', () => {
-      const buttons = wrapper.find('button');
+      render(<Table {...sortableProps} tableSortable={false} />);
+      const buttons = screen.queryAllByRole('button');
       expect(buttons).toHaveLength(0);
-    });
-
-    it('with correct initial state', () => {
-      expect(wrapper.state('sortedColumn')).toEqual('');
-      expect(wrapper.state('sortDirection')).toEqual('');
     });
   });
 
   describe('that is sortable and has mixed columns renders', () => {
-    let wrapper = mount(<Table {...sortableProps} />).find('Table');
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = render(<Table {...sortableProps} />).container;
+    });
 
     it('with sortable classname on correct headings', () => {
-      const tableHeadings = wrapper.find('th');
+      const tableHeadings = wrapper.querySelectorAll('th');
 
       expect(tableHeadings).toHaveLength(sortableProps.columns.length);
-      expect(tableHeadings.at(0).hasClass('sortable')).toEqual(true);
-      expect(tableHeadings.at(1).hasClass('sortable')).toEqual(true);
-      expect(tableHeadings.at(2).hasClass('sortable')).toEqual(false);
+      expect(tableHeadings[0]).toHaveClass('sortable');
+      expect(tableHeadings[1]).toHaveClass('sortable');
+      expect(tableHeadings[2]).not.toHaveClass('sortable');
     });
 
     it('with sr-only classname on correct headings', () => {
-      const srOnly = wrapper.find('.sr-only');
+      const srOnly = wrapper.querySelectorAll('.sr-only');
 
       expect(srOnly).toHaveLength(sortableProps.columns.length - 1);
-      expect((srOnly).at(0).hasClass('sr-only')).toEqual(true);
-      expect((srOnly).at(1).hasClass('sr-only')).toEqual(true);
+      expect(srOnly[0]).toHaveClass('sr-only');
+      expect(srOnly[1]).toHaveClass('sr-only');
     });
 
     it('with correct initial sr-only text on correct headings', () => {
-      const headings = wrapper.find('.sr-only');
+      const headings = wrapper.querySelectorAll('.sr-only');
 
-      expect(headings.at(0).text()).toEqual(' sort descending');
-      expect(headings.at(1).text()).toEqual(' click to sort');
+      expect(headings[0]).toHaveTextContent('sort descending');
+      expect(headings[1]).toHaveTextContent('click to sort');
     });
-
-    it('with correct initial state', () => {
-      expect(wrapper.find('Table').state('sortedColumn')).toEqual(sortableProps.defaultSortedColumn);
-      expect(wrapper.find('Table').state('sortDirection')).toEqual(sortableProps.defaultSortDirection);
-    });
-
-    wrapper = mount(<Table {...sortableProps} />);
 
     it('with correct column buttons', () => {
-      const buttons = wrapper.find('button');
+      const buttons = wrapper.querySelectorAll('button');
       expect(buttons).toHaveLength(2);
-      expect(buttons.at(0).hasClass('btn-header')).toBe(true);
-      expect(buttons.at(1).hasClass('btn-header')).toBe(true);
+      expect(buttons[0].classList).toContain('btn-header');
+      expect(buttons[1].classList).toContain('btn-header');
     });
 
     it('with correct initial sort icons', () => {
-      const buttons = wrapper.find('button');
+      const buttons = wrapper.querySelectorAll('button');
 
-      expect(buttons.find('.fa')).toHaveLength(sortableProps.columns.length - 2);
-      expect(buttons.at(0).find('.fa-sort-desc')).toHaveLength(1);
-      expect(buttons.at(1).find('.fa-sort')).toHaveLength(1);
+      expect(buttons).toHaveLength(sortableProps.columns.length - 2);
+      expect(buttons[0].querySelector('.fa')).toHaveClass('fa-sort-desc');
+      expect(buttons[1].querySelector('.fa')).toHaveClass('fa-sort');
     });
   });
 
@@ -194,9 +196,9 @@ describe('<Table />', () => {
     let x2Spy;
 
     beforeEach(() => {
-      wrapper = mount(<Table {...sortableProps} />);
+      wrapper = render(<Table data-testid="sorted" {...sortableProps} />).container;
 
-      buttons = wrapper.find('button');
+      buttons = wrapper.querySelectorAll('button');
       numSpy = jest.fn();
       x2Spy = jest.fn();
 
@@ -205,90 +207,66 @@ describe('<Table />', () => {
     });
 
     it('changes sort icons appropriately on click', () => {
-      buttons.at(0).simulate('click');
-      buttons = wrapper.find('button');
+      fireEvent.click(buttons[0]);
+      buttons = wrapper.querySelectorAll('button');
 
-      expect(buttons.at(0).find('.fa')).toHaveLength(1);
-      expect(buttons.at(0).find('.fa-sort-asc')).toHaveLength(1);
-      expect(buttons.at(0).find('.fa-sort-desc')).toHaveLength(0);
-      expect(buttons.at(0).find('.fa-sort')).toHaveLength(0);
+      expect(buttons[0].querySelector('.fa')).toHaveClass('fa-sort-asc');
+      expect(buttons[0].querySelector('.fa')).not.toHaveClass('fa-sort-desc');
+      expect(buttons[0].querySelector('.fa')).not.toHaveClass('fa-sort');
 
-      expect(buttons.at(1).find('.fa')).toHaveLength(1);
-      expect(buttons.at(1).find('.fa-sort-asc')).toHaveLength(0);
-      expect(buttons.at(1).find('.fa-sort-desc')).toHaveLength(0);
-      expect(buttons.at(1).find('.fa-sort')).toHaveLength(1);
+      expect(buttons[1].querySelector('.fa')).toHaveClass('fa-sort');
+      expect(buttons[1].querySelector('.fa')).not.toHaveClass('fa-sort-asc');
+      expect(buttons[1].querySelector('.fa')).not.toHaveClass('fa-sort-desc');
 
-      buttons.at(1).simulate('click');
-      buttons = wrapper.find('button');
+      fireEvent.click(buttons[1]);
+      buttons = wrapper.querySelectorAll('button');
 
-      expect(buttons.at(0).find('.fa')).toHaveLength(1);
-      expect(buttons.at(0).find('.fa-sort-asc')).toHaveLength(0);
-      expect(buttons.at(0).find('.fa-sort-desc')).toHaveLength(0);
-      expect(buttons.at(0).find('.fa-sort')).toHaveLength(1);
+      expect(buttons[0].querySelector('.fa')).toHaveClass('fa-sort');
+      expect(buttons[0].querySelector('.fa')).not.toHaveClass('fa-sort-asc');
+      expect(buttons[0].querySelector('.fa')).not.toHaveClass('fa-sort-desc');
 
-      expect(buttons.at(1).find('.fa')).toHaveLength(1);
-      expect(buttons.at(1).find('.fa-sort-asc')).toHaveLength(0);
-      expect(buttons.at(1).find('.fa-sort-desc')).toHaveLength(1);
-      expect(buttons.at(1).find('.fa-sort')).toHaveLength(0);
+      expect(buttons[1].querySelector('.fa')).toHaveClass('fa-sort-desc');
+      expect(buttons[1].querySelector('.fa')).not.toHaveClass('fa-sort');
+      expect(buttons[1].querySelector('.fa')).not.toHaveClass('fa-sort-asc');
     });
 
     it('changes sr-only text appropriately on click', () => {
-      const headings = wrapper.find('.sr-only');
+      const headings = wrapper.querySelectorAll('.sr-only');
 
-      buttons.at(0).simulate('click');
-      buttons = wrapper.find('button');
+      fireEvent.click(buttons[0]);
+      buttons = wrapper.querySelectorAll('button');
 
-      expect(headings.at(0).text()).toEqual(' sort ascending');
-      expect(headings.at(1).text()).toEqual(' click to sort');
+      expect(headings[0]).toHaveTextContent('sort ascending');
+      expect(headings[1]).toHaveTextContent('click to sort');
 
-      buttons.at(1).simulate('click');
+      fireEvent.click(buttons[1]);
 
-      expect(headings.at(0).text()).toEqual(' click to sort');
-      expect(headings.at(1).text()).toEqual(' sort descending');
-    });
-
-    it('changes state appropriately on click', () => {
-      buttons.at(0).simulate('click');
-      buttons = wrapper.find('button');
-
-      expect(wrapper.find('Table').state('sortedColumn')).toEqual(sortableProps.defaultSortedColumn);
-      expect(wrapper.find('Table').state('sortDirection')).toEqual('asc');
-
-      buttons.at(0).simulate('click');
-      buttons = wrapper.find('button');
-
-      expect(wrapper.find('Table').state('sortedColumn')).toEqual(sortableProps.defaultSortedColumn);
-      expect(wrapper.find('Table').state('sortDirection')).toEqual('desc');
-
-      buttons.at(1).simulate('click');
-      buttons = wrapper.find('button');
-
-      expect(wrapper.find('Table').state('sortedColumn')).toEqual(sortableProps.columns[1].key);
-      expect(wrapper.find('Table').state('sortDirection')).toEqual('desc');
+      expect(headings[0]).toHaveTextContent('click to sort');
+      expect(headings[1]).toHaveTextContent('sort descending');
     });
 
     it('calls onSort function correctly on click', () => {
       expect(numSpy).toHaveBeenCalledTimes(0);
       expect(x2Spy).toHaveBeenCalledTimes(0);
 
-      buttons.at(0).simulate('click');
-      buttons = wrapper.find('button');
+      fireEvent.click(buttons[0]);
+      buttons = wrapper.querySelectorAll('button');
 
       expect(numSpy).toHaveBeenCalledTimes(1);
       expect(x2Spy).toHaveBeenCalledTimes(0);
 
       expect(numSpy).toBeCalledWith('asc');
 
-      buttons.at(0).simulate('click');
-      buttons = wrapper.find('button');
+      fireEvent.click(buttons[0]);
+      buttons = wrapper.querySelectorAll('button');
 
       expect(numSpy).toHaveBeenCalledTimes(2);
       expect(x2Spy).toHaveBeenCalledTimes(0);
 
       expect(numSpy).toBeCalledWith('desc');
 
-      buttons.at(1).simulate('click');
-      buttons = wrapper.find('button');
+      fireEvent.click(buttons[1]);
+      buttons = wrapper.querySelectorAll('button');
 
       expect(numSpy).toHaveBeenCalledTimes(2);
       expect(x2Spy).toHaveBeenCalledTimes(1);
@@ -296,79 +274,103 @@ describe('<Table />', () => {
       expect(x2Spy).toBeCalledWith('desc');
     });
   });
+
   describe('that is fixed', () => {
-    const wrapper = mount(<Table {...fixedProps} />);
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = render(<Table {...fixedProps} />).container;
+    });
 
     it('with col width classnames on headings', () => {
-      const tableHeadings = wrapper.find('th');
+      const tableHeadings = wrapper.querySelectorAll('th');
 
       expect(tableHeadings).toHaveLength(fixedProps.columns.length);
-      expect(tableHeadings.at(0).hasClass('col-4')).toEqual(true);
-      expect(tableHeadings.at(1).hasClass('col-2')).toEqual(true);
-      expect(tableHeadings.at(2).hasClass('col-3')).toEqual(true);
+      expect(tableHeadings[0]).toHaveClass('col-4');
+      expect(tableHeadings[1]).toHaveClass('col-2');
+      expect(tableHeadings[2]).toHaveClass('col-3');
     });
 
     it('with col width classnames on cells', () => {
-      const tableCells = wrapper.find('td');
+      const tableCells = wrapper.querySelectorAll('td');
 
       expect(tableCells).toHaveLength(fixedProps.columns.length * fixedProps.data.length);
-      expect(tableCells.at(0).hasClass('col-4')).toEqual(true);
-      expect(tableCells.at(1).hasClass('col-2')).toEqual(true);
-      expect(tableCells.at(2).hasClass('col-3')).toEqual(true);
+      expect(tableCells[0]).toHaveClass('col-4');
+      expect(tableCells[1]).toHaveClass('col-2');
+      expect(tableCells[2]).toHaveClass('col-3');
     });
-    it('with fixed-related classnames on head, body, and rows', () => {
-      const thead = wrapper.find('thead');
-      const tbody = wrapper.find('tbody');
-      const tr = wrapper.find('tr');
 
-      expect(thead.hasClass('d-inline')).toEqual(true);
-      expect(tbody.hasClass('d-inline')).toEqual(true);
-      expect(tr.at(0).hasClass('d-flex')).toEqual(true);
+    it('with fixed-related classnames on head, body, and rows', () => {
+      const thead = wrapper.querySelector('thead');
+      const tbody = wrapper.querySelector('tbody');
+      const tr = wrapper.querySelectorAll('tr')[0];
+
+      expect(thead).toHaveClass('d-inline');
+      expect(tbody).toHaveClass('d-inline');
+      expect(tr).toHaveClass('d-flex');
     });
   });
+
   describe('that is not fixed with col widths', () => {
-    const wrapper = mount(<Table {...propsWithColWidths} />);
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = render(<Table {...propsWithColWidths} />).container;
+    });
 
     it('with no col width classnames on headings', () => {
-      const tableHeadings = wrapper.find('th');
+      const tableHeadings = wrapper.querySelectorAll('th');
 
       expect(tableHeadings).toHaveLength(fixedProps.columns.length);
-      expect(tableHeadings.at(0).hasClass('col-4')).toEqual(false);
-      expect(tableHeadings.at(1).hasClass('col-2')).toEqual(false);
-      expect(tableHeadings.at(2).hasClass('col-3')).toEqual(false);
+      expect(tableHeadings[0]).not.toHaveClass('col-4');
+      expect(tableHeadings[1]).not.toHaveClass('col-2');
+      expect(tableHeadings[2]).not.toHaveClass('col-3');
     });
 
     it('with no col width classnames on cells', () => {
-      const tableCells = wrapper.find('td');
+      const tableCells = wrapper.querySelectorAll('td');
 
       expect(tableCells).toHaveLength(fixedProps.columns.length * fixedProps.data.length);
-      expect(tableCells.at(0).hasClass('col-4')).toEqual(false);
-      expect(tableCells.at(1).hasClass('col-2')).toEqual(false);
-      expect(tableCells.at(2).hasClass('col-3')).toEqual(false);
+      expect(tableCells[0]).not.toHaveClass('col-4');
+      expect(tableCells[1]).not.toHaveClass('col-2');
+      expect(tableCells[2]).not.toHaveClass('col-3');
     });
-    it('with no fixed-related classnames on head, body, and rows', () => {
-      const thead = wrapper.find('thead');
-      const tbody = wrapper.find('tbody');
-      const tr = wrapper.find('tr');
 
-      expect(thead.hasClass('d-inline')).toEqual(false);
-      expect(tbody.hasClass('d-inline')).toEqual(false);
-      expect(tr.at(0).hasClass('d-flex')).toEqual(false);
+    it('with no fixed-related classnames on head, body, and rows', () => {
+      const thead = wrapper.querySelector('thead');
+      const tbody = wrapper.querySelector('tbody');
+      const tr = wrapper.querySelectorAll('tr')[0];
+
+      expect(thead).not.toHaveClass('d-inline');
+      expect(tbody).not.toHaveClass('d-inline');
+      expect(tr).not.toHaveClass('d-flex');
     });
   });
+
   describe('renders row headers', () => {
-    const wrapper = mount(<Table {...props} rowHeaderColumnKey="num" />);
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = render(<Table {...props} rowHeaderColumnKey="num" />).container;
+    });
 
     it('with the row header as th with row scope', () => {
-      wrapper.find('tbody').at(0).find('th').forEach((th) => {
-        expect(th.getElement().key).toEqual('num');
-        expect(th.prop('scope')).toEqual('row');
+      const tableHeadings = wrapper.querySelectorAll('th');
+
+      tableHeadings.forEach((th) => {
+        if (th.getAttribute('data-colkey') === 'num') {
+          expect(th.getAttribute('scope')).toEqual('row');
+        }
       });
     });
 
     it('with all other columns unchanged', () => {
-      wrapper.find('tbody').at(0).find('td').forEach((th) => {
-        expect(th.getElement().key).not.toEqual('num');
+      const tableCells = wrapper.querySelectorAll('td');
+
+      tableCells.forEach((td) => {
+        if (td.getAttribute('data-colkey') !== 'num') {
+          expect(td.getAttribute('scope')).not.toEqual('row');
+        }
       });
     });
   });

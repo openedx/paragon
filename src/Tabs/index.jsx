@@ -142,6 +142,7 @@ function Tabs({
 
     childrenList.splice(indexOfOverflowStart, 0, (<Tab
       key="moreTabKey"
+      data-testid="tab-id"
       tabClassName={classNames(!overflowChildren.length && 'pgn__tab_invisible', 'pgn__tab_more')}
       title={(
         <Dropdown ref={overflowElementRef}>

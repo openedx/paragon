@@ -50,7 +50,9 @@ class Modal extends React.Component {
   }
 
   componentWillUnmount() {
-    ReactDOM.unmountComponentAtNode(this.parentElement);
+    if (this.parentElement) {
+      ReactDOM.unmountComponentAtNode(this.parentElement);
+    }
   }
 
   getVariantIconClassName() {
@@ -84,7 +86,7 @@ class Modal extends React.Component {
               {body}
             </div>
           </div>
-          <div className="col-md-2">
+          <div className="col-md-2" data-testid="icon-id">
             <Icon
               id={newId(`Modal-${variant.status}`)}
               className={this.getVariantIconClassName()}
@@ -180,6 +182,7 @@ class Modal extends React.Component {
             fade: !open,
           })}
           role="presentation"
+          data-testid="modal-backdrop-id"
         />
         <div
           className={classNames(
@@ -192,6 +195,7 @@ class Modal extends React.Component {
             },
           )}
           role="presentation"
+          data-testid="modal-id"
         >
           <div
             className={classNames(
@@ -211,6 +215,7 @@ class Modal extends React.Component {
             >
               <div
                 className="modal-content"
+                data-testid="modal-content"
                 // if the modal doesn't contain any tabbable elements, make this element programmatically focusable.
                 {...(!hasTabbableElements ? { tabIndex: -1 } : {})}
               >
@@ -220,12 +225,13 @@ class Modal extends React.Component {
                     <Button.Deprecated
                       className="p-1"
                       onClick={this.close}
+                      data-testid="modal-header-btn"
                     >
                       <Icon src={Close} screenReaderText={closeText} />
                     </Button.Deprecated>
                   )}
                 </div>
-                <div className="modal-body" ref={this.modalBodyRef}>
+                <div className="modal-body" ref={this.modalBodyRef} data-testid="modal-body">
                   {this.renderBody()}
                 </div>
                 {renderModalFooter && (
@@ -234,6 +240,7 @@ class Modal extends React.Component {
                       <Button
                         variant="link"
                         onClick={this.close}
+                        data-testid="modal-footer-btn"
                       >
                         {closeText}
                       </Button>

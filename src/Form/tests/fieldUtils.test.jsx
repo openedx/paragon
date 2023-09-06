@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, fireEvent, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import {
   callAllHandlers,
@@ -54,39 +55,52 @@ function IdListExample({ prefix, initialList }) {
   const id2 = useRegisteredId('explicit-id');
   return (
     <div>
-      <span id="id-list">{ids.join(' ')}</span>
-      <span id="first">{id1}</span>
-      <span id="second">{id2}</span>
+      <span data-testid="id-list">{ids.join(' ')}</span>
+      <span data-testid="first">{id1}</span>
+      <span data-testid="second">{id2}</span>
     </div>
   );
 }
+
 describe('useIdList', () => {
   describe('with default', () => {
-    const wrapper = mount(<IdListExample prefix="prefix" initialList={['id-0']} />);
-    const idList = wrapper.find('#id-list').first();
-    const renderedIds = idList.text().split(' ');
     it('starts with the default id', () => {
+      const { getByTestId } = render(
+        <IdListExample prefix="prefix" initialList={['id-0']} />,
+      );
+      const idList = getByTestId('id-list');
+      const renderedIds = idList.textContent.split(' ');
       expect(renderedIds[0]).toBe('id-0');
     });
     it('generates a registered id', () => {
-      expect(renderedIds[1]).toBe('prefix-1');
+      const { getByTestId } = render(
+        <IdListExample prefix="prefix" initialList={['id-0']} />,
+      );
+      const idList = getByTestId('id-list');
+      const renderedIds = idList.textContent.split(' ');
+      expect(renderedIds[1]).toBe('prefix-2');
     });
     it('registers an explicit id', () => {
+      const { getByTestId } = render(
+        <IdListExample prefix="prefix" initialList={['id-0']} />,
+      );
+      const idList = getByTestId('id-list');
+      const renderedIds = idList.textContent.split(' ');
       expect(renderedIds[2]).toBe('explicit-id');
     });
   });
   describe('with no default', () => {
-    const wrapper = mount(<IdListExample prefix="prefix" />);
-    const idList = wrapper.find('#id-list').first();
-    const renderedIds = idList.text().split(' ');
-    it('only have the two ids', () => {
+    it('only has the two ids', () => {
+      const { getByTestId } = render(<IdListExample prefix="prefix" />);
+      const idList = getByTestId('id-list');
+      const renderedIds = idList.textContent.split(' ');
       expect(renderedIds.length).toBe(2);
     });
   });
 });
 
 describe('mergeAttributeValues', () => {
-  it('joins not empty values with in a space delimited list', () => {
+  it('joins not empty values with a space-delimited list', () => {
     const output = mergeAttributeValues('one', 'two', undefined, null, 'four');
     expect(output).toBe('one two four');
   });
@@ -101,46 +115,59 @@ function HasValueExample({ defaultValue, value }) {
   const [hasValue, handleInputEvent] = useHasValue({ defaultValue, value });
   return (
     <div>
-      {hasValue && <div id="has-value">Has value</div>}
-      <input type="text" onBlur={handleInputEvent} />
+      {hasValue && <div data-testid="has-value">Has value</div>}
+      <input data-testid="input" type="text" onBlur={handleInputEvent} />
     </div>
   );
 }
 
 describe('useHasValue', () => {
   describe('uncontrolled input with no default', () => {
-    const wrapper = mount(<HasValueExample />);
-    const input = wrapper.find('input').at(0);
     it('starts with the default id', () => {
-      expect(wrapper.exists('#has-value')).toBe(false);
+      const { queryByText } = render(<HasValueExample />);
+      expect(queryByText('Has value')).toBe(null);
     });
-    it('has value when a targets blur event has a value', () => {
-      input.invoke('onBlur')({ target: { value: 'hello' } });
-      expect(wrapper.exists('#has-value')).toBe(true);
+    it('has value when a target blur event has a value', async () => {
+      const { getByTestId } = render(<HasValueExample />);
+      const input = getByTestId('input');
+      fireEvent.blur(input, { target: { value: 'hello' } });
+      await waitFor(() => {
+        expect(getByTestId('has-value')).toBeInTheDocument();
+      });
     });
   });
+});
 
-  describe('uncontrolled input with a default value', () => {
-    const wrapper = mount(<HasValueExample defaultValue="My value" />);
-    const input = wrapper.find('input').at(0);
-    it('starts with the default id', () => {
-      expect(wrapper.exists('#has-value')).toBe(true);
-    });
-    it('has no value when a targets blur event has no value', () => {
-      input.invoke('onBlur')({ target: { value: '' } });
-      expect(wrapper.exists('#has-value')).toBe(false);
+describe('uncontrolled input with a default value', () => {
+  it('starts with the default id', () => {
+    const { getByTestId } = render(
+      <HasValueExample defaultValue="My value" />,
+    );
+    expect(getByTestId('has-value')).toBeInTheDocument();
+  });
+  it('has no value when a target blur event has no value', async () => {
+    const { getByTestId, queryByTestId } = render(
+      <HasValueExample defaultValue="My value" />,
+    );
+    const input = getByTestId('input');
+    fireEvent.blur(input, { target: { value: '' } });
+    await waitFor(() => {
+      expect(queryByTestId('has-value')).toBe(null);
     });
   });
+});
 
-  describe('controlled value', () => {
-    const wrapper = mount(<HasValueExample value="My value" />);
-    const input = wrapper.find('input').at(0);
-    it('starts with the default id', () => {
-      expect(wrapper.exists('#has-value')).toBe(true);
-    });
-    it('continues to have a value despite a blur event saying there is not one but props say there is', () => {
-      input.invoke('onBlur')({ target: { value: '' } });
-      expect(wrapper.exists('#has-value')).toBe(true);
+describe('controlled value', () => {
+  it('starts with the default id', () => {
+    const { getByTestId } = render(<HasValueExample value="My value" />);
+    expect(getByTestId('has-value')).toBeInTheDocument();
+  });
+  it('continues to have a value despite a blur event saying there is not one but props say there is', async () => {
+    const { getByTestId } = render(<HasValueExample value="My value" />);
+    const input = getByTestId('input');
+    fireEvent.blur(input, { target: { value: '' } });
+    await waitFor(() => {
+      expect(getByTestId('has-value')).toBeInTheDocument();
     });
   });
 });

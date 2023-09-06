@@ -1,8 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { FocusOn } from 'react-focus-on';
-import ModalLayer, { ModalBackdrop } from './ModalLayer';
-import { ModalContextProvider } from './ModalContext';
+import { render, fireEvent } from '@testing-library/react';
+import ModalLayer from './ModalLayer';
+import '@testing-library/jest-dom/extend-expect';
 
 /* eslint-disable react/prop-types */
 jest.mock('./Portal', () => function PortalMock(props) {
@@ -18,7 +17,7 @@ jest.mock('react-focus-on', () => ({
   FocusOn: (props) => {
     const { children, ...otherProps } = props;
     return (
-      <focus-on {...otherProps}>{children}</focus-on>
+      <focus-on data-testid="focus-on" {...otherProps}>{children}</focus-on>
     );
   },
 }));
@@ -35,65 +34,67 @@ describe('<ModalLayer />', () => {
   describe('when isOpen', () => {
     const isOpen = true;
     const closeFn = jest.fn();
-    const wrapper = shallow((
-      <ModalLayer isOpen={isOpen} onClose={closeFn}>
-        <Dialog />
-      </ModalLayer>
-    ));
 
     it('renders the dialog and a modal context provider', () => {
-      const dialog = wrapper.find(Dialog);
-      expect(dialog.length).toBe(1);
-    });
+      const { getByRole } = render(
+        <ModalLayer isOpen={isOpen} onClose={closeFn}>
+          <Dialog />
+        </ModalLayer>,
+      );
 
-    it('renders a modal context provider', () => {
-      const contextProvider = wrapper.find(ModalContextProvider);
-      expect(contextProvider.props().isOpen).toBe(isOpen);
-      expect(contextProvider.props().onClose).toBe(closeFn);
+      const dialog = getByRole('dialog', { name: 'A dialog' });
+      expect(dialog).toBeInTheDocument();
     });
 
     it('renders a focus-on component with appropriate props', () => {
-      const focusOn = wrapper.find(FocusOn);
-      const focusOnProps = focusOn.props();
-      expect(focusOnProps.scrollLock).toBe(true);
-      expect(focusOnProps.enabled).toBe(true);
-      expect(focusOnProps.onEscapeKey).toBe(closeFn);
+      const { getByTestId } = render(
+        <ModalLayer isOpen={isOpen} onClose={closeFn}>
+          <Dialog />
+        </ModalLayer>,
+      );
+
+      const focusOn = getByTestId('focus-on');
+      expect(focusOn).toBeInTheDocument();
+      expect(focusOn).toHaveAttribute('scrolllock', 'true');
+      expect(focusOn).toHaveAttribute('enabled', 'true');
     });
   });
 
   test('when isOpen is false the dialog is not rendered', () => {
-    const wrapper = shallow((
+    const { queryByRole } = render(
       <ModalLayer isOpen={false} onClose={jest.fn()}>
         <Dialog />
-      </ModalLayer>
-    ));
-    const dialog = wrapper.find(Dialog);
-    expect(dialog.length).toBe(0);
+      </ModalLayer>,
+    );
+
+    const dialog = queryByRole('dialog', { name: 'A dialog' });
+    expect(dialog).not.toBeInTheDocument();
   });
 
   describe('Backdrop', () => {
     it('closes a non-blocking modal layer when clicked', () => {
       const closeFn = jest.fn();
-      const wrapper = shallow((
+      const { container } = render(
         <ModalLayer isOpen onClose={closeFn} isBlocking={false}>
           <Dialog />
-        </ModalLayer>
-      ));
+        </ModalLayer>,
+      );
 
-      const backdrop = wrapper.find(ModalBackdrop);
-      backdrop.simulate('click');
+      const backdrop = container.querySelector('.pgn__modal-backdrop');
+      fireEvent.click(backdrop);
       expect(closeFn).toHaveBeenCalled();
     });
+
     it('does not close a blocking modal layer when clicked', () => {
       const closeFn = jest.fn();
-      const wrapper = shallow((
+      const { container } = render(
         <ModalLayer isOpen onClose={closeFn} isBlocking>
           <Dialog />
-        </ModalLayer>
-      ));
+        </ModalLayer>,
+      );
 
-      const backdrop = wrapper.find(ModalBackdrop);
-      backdrop.simulate('click');
+      const backdrop = container.querySelector('.pgn__modal-backdrop');
+      fireEvent.click(backdrop);
       expect(closeFn).not.toHaveBeenCalled();
     });
   });

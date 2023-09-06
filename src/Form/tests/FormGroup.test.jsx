@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import FormGroup from '../FormGroup';
 import FormControl from '../FormControl';
@@ -20,56 +21,77 @@ jest.mock('react-bootstrap/FormControl', () => {
 
 describe('FormGroup', () => {
   describe('associate element ids and attributes', () => {
-    const wrapper = mount((
-      <FormGroup controlId="my-field">
-        <FormLabel>My Field</FormLabel>
-        <FormControl />
-        <FormControlFeedback>Default help text</FormControlFeedback>
-        <FormControlFeedback>Second help text</FormControlFeedback>
-      </FormGroup>
-    ));
-
     it('has a form control with the proper id', () => {
-      expect(wrapper.exists('form-control')).toBe(true);
-      const formControlNode = wrapper.find('form-control').first();
-      expect(formControlNode.props().id).toEqual('my-field');
+      const { getByTestId } = render(
+        <FormGroup controlId="my-field">
+          <FormLabel>My Field</FormLabel>
+          <FormControl data-testid="form-control" />
+          <FormControlFeedback>Default help text</FormControlFeedback>
+          <FormControlFeedback>Second help text</FormControlFeedback>
+        </FormGroup>,
+      );
+      const formControlNode = getByTestId('form-control');
+      expect(formControlNode).toBeInTheDocument();
+      expect(formControlNode).toHaveAttribute('id', 'my-field');
     });
 
     it('has a label with the proper htmlFor value', () => {
-      expect(wrapper.exists('label')).toBe(true);
-      const labelNode = wrapper.find('label').first();
-      expect(labelNode.props().htmlFor).toEqual('my-field');
+      const { getByText } = render(
+        <FormGroup controlId="my-field">
+          <FormLabel>My Field</FormLabel>
+          <FormControl data-testid="form-control" />
+          <FormControlFeedback>Default help text</FormControlFeedback>
+          <FormControlFeedback>Second help text</FormControlFeedback>
+        </FormGroup>,
+      );
+      const labelNode = getByText('My Field');
+      expect(labelNode).toBeInTheDocument();
+      expect(labelNode).toHaveAttribute('for', 'my-field');
     });
 
     it('has default description text with a generated id that appears on the form-control', () => {
-      const selector = '[children="Default help text"]';
-      const node = wrapper.find(selector).first().childAt(0);
-      const { id } = node.props();
-      const formControlNode = wrapper.find('form-control').first();
-      expect(wrapper.exists(selector)).toBe(true);
+      const { getByText, getByTestId } = render(
+        <FormGroup controlId="my-field">
+          <FormLabel>My Field</FormLabel>
+          <FormControl data-testid="form-control" />
+          <FormControlFeedback>Default help text</FormControlFeedback>
+          <FormControlFeedback>Second help text</FormControlFeedback>
+        </FormGroup>,
+      );
+      const defaultHelpTextNode = getByText('Default help text').parentElement;
+      const formControlNode = getByTestId('form-control');
+      expect(defaultHelpTextNode).toBeInTheDocument();
+      const id = defaultHelpTextNode.getAttribute('id');
       expect(id).toBeTruthy();
-      expect(formControlNode.props()['aria-describedby']).toContain(id);
+      expect(formControlNode).toHaveAttribute('aria-describedby', expect.stringContaining(id));
     });
 
     it('has another description text with a generated id that appears on the form-control', () => {
-      const selector = '[children="Second help text"]';
-      const node = wrapper.find(selector).first().childAt(0);
-      const { id } = node.props();
-      const formControlNode = wrapper.find('form-control').first();
-      expect(wrapper.exists(selector)).toBe(true);
+      const { getByText, getByTestId } = render(
+        <FormGroup controlId="my-field">
+          <FormLabel>My Field</FormLabel>
+          <FormControl data-testid="form-control" />
+          <FormControlFeedback>Default help text</FormControlFeedback>
+          <FormControlFeedback>Second help text</FormControlFeedback>
+        </FormGroup>,
+      );
+      const secondHelpTextNode = getByText('Second help text').parentElement;
+      const formControlNode = getByTestId('form-control');
+      expect(secondHelpTextNode).toBeInTheDocument();
+      const id = secondHelpTextNode.getAttribute('id');
       expect(id).toBeTruthy();
-      expect(formControlNode.props()['aria-describedby']).toContain(id);
+      expect(formControlNode).toHaveAttribute('aria-describedby', expect.stringContaining(id));
     });
   });
 
   it('renders a form control with a generated id', () => {
-    const wrapper = mount((
+    const { getByTestId } = render(
       <FormGroup>
-        <FormControl />
-      </FormGroup>
-    ));
-    expect(wrapper.exists('form-control')).toBe(true);
-    const formControlNode = wrapper.find('form-control').first();
-    expect(formControlNode.props().id).toBeTruthy();
+        <FormControl data-testid="form-control" />
+      </FormGroup>,
+    );
+    const formControlNode = getByTestId('form-control');
+    expect(formControlNode).toBeInTheDocument();
+    expect(formControlNode).toHaveAttribute('id', expect.any(String));
   });
 });
