@@ -100,7 +100,7 @@ function SearchFieldAdvanced(props) {
         role="search"
         onSubmit={handleSubmit}
         onReset={handleClear}
-        className="pgn__searchfield-form d-flex align-items-center w-100"
+        className="pgn__searchfield-form"
         aria-label={formAriaLabel}
       >
         <SearchFieldContext.Provider
