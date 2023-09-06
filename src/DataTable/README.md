@@ -53,97 +53,98 @@ or a filter component can be defined on the column. See <a href="https://react-t
 for more information.
 
 ```jsx live
-  <DataTable
-    isPaginated
-    isSelectable
-    initialState={{
-      pageSize: 2,
-    }}
-    isFilterable
-    isSortable
-    defaultColumnValues={{ Filter: TextFilter }}
-    itemCount={7}
-    data={[
-      {
-        name: 'Lil Bub',
-        color: 'brown tabby',
-        famous_for: 'weird tongue',
-      },
-      {
-        name: 'Grumpy Cat',
-        color: 'siamese',
-        famous_for: 'serving moods',
-      },
-      {
-        name: 'Smoothie',
-        color: 'orange tabby',
-        famous_for: 'modeling',
-      },
-      {
-        name: 'Maru',
-        color: 'brown tabby',
-        famous_for: 'being a lovable oaf',
-      },
-      {
-        name: 'Keyboard Cat',
-        color: 'orange tabby',
-        famous_for: 'piano virtuoso',
-      },
-      {
-        name: 'Long Cat',
-        color: 'russian white',
-        famous_for:
-          'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
-      },
-      {
-        name: 'Zeno',
-        color: 'brown tabby',
-        famous_for: 'getting halfway there'
-      },
-    ]}
-    columns={[
-      {
-        Header: 'Name',
-        accessor: 'name',
+() => {
+  const data = useMemo(() => [
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+    },
+    {
+      name: 'Long Cat',
+      color: 'russian white',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+    },
+    {
+      name: 'Zeno',
+      color: 'brown tabby',
+      famous_for: 'getting halfway there'
+    },
+  ], [])
 
-      },
-      {
-        Header: 'Famous For',
-        accessor: 'famous_for',
-      },
-      {
-        Header: 'Coat Color',
-        accessor: 'color',
-        Filter: CheckboxFilter,
-        filter: 'includesValue',
-        filterChoices: [{
-          name: 'russian white',
-          number: 1,
-          value: 'russian white',
+  const reducedChoices = data.reduce((acc, currentObject) => {
+    const { color } = currentObject;
+    if (color in acc) {
+      acc[color].number += 1;
+    } else {
+      acc[color] = {
+        name: color,
+        number: 1,
+        value: color,
+      };
+    }
+    return acc;
+  }, {});
+
+   return (
+    <DataTable
+      isPaginated
+      isSelectable
+      initialState={{
+        pageSize: 2,
+      }}
+      isFilterable
+      isSortable
+      defaultColumnValues={{ Filter: TextFilter }}
+      itemCount={data.length}
+      data={data}
+      columns={[
+        {
+          Header: 'Name',
+          accessor: 'name',
+
         },
         {
-          name: 'orange tabby',
-          number: 2,
-          value: 'orange tabby',
+          Header: 'Famous For',
+          accessor: 'famous_for',
         },
         {
-          name: 'brown tabby',
-          number: 3,
-          value: 'brown tabby',
+          Header: 'Coat Color',
+          accessor: 'color',
+          Filter: CheckboxFilter,
+          filter: 'includesValue',
+          filterChoices: Object.values(reducedChoices),
         },
-        {
-          name: 'siamese',
-          number: 1,
-          value: 'siamese',
-        }]
-      },
-    ]}
-  >
-    <DataTable.TableControlBar />
-    <DataTable.Table />
-    <DataTable.EmptyTable content="No results found" />
-    <DataTable.TableFooter />
-  </DataTable>
+      ]}
+    >
+      <DataTable.TableControlBar />
+      <DataTable.Table />
+      <DataTable.EmptyTable content="No results found" />
+      <DataTable.TableFooter />
+    </DataTable>
+   );
+}
 ```
 
 ## Backend filtering and sorting
@@ -360,6 +361,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       famous_for: 'modeling',
     },
   ], [])
+
   return (
     <DataTable
       isFilterable
@@ -371,7 +373,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       }}
       isSortable
       defaultColumnValues={{ Filter: TextFilter }}
-      itemCount={3}
+      itemCount={data.length}
       data={data}
       columns={[
         {
@@ -388,25 +390,20 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
           Filter: CheckboxFilter,
           filter: 'includesValue',
           filterChoices: [{
-            name: 'russian white',
-            number: 1,
-            value: 'russian white',
-          },
-          {
             name: 'orange tabby',
-            number: 2,
+            number: 1,
             value: 'orange tabby',
           },
           {
             name: 'brown tabby',
-            number: 3,
+            number: 1,
             value: 'brown tabby',
           },
           {
             name: 'siamese',
             number: 1,
             value: 'siamese',
-          }]
+          }],
         },
       ]}
     >
@@ -473,18 +470,13 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
           Filter: CheckboxFilter,
           filter: 'includesValue',
           filterChoices: [{
-            name: 'russian white',
-            number: 1,
-            value: 'russian white',
-          },
-          {
             name: 'orange tabby',
-            number: 2,
+            number: 1,
             value: 'orange tabby',
           },
           {
             name: 'brown tabby',
-            number: 3,
+            number: 1,
             value: 'brown tabby',
           },
           {
@@ -1280,18 +1272,13 @@ For a more desktop friendly view, you can move filters into a sidebar by providi
         Filter: CheckboxFilter,
         filter: 'includesValue',
         filterChoices: [{
-          name: 'russian white',
-          number: 1,
-          value: 'russian white',
-        },
-        {
           name: 'orange tabby',
           number: 2,
           value: 'orange tabby',
         },
         {
           name: 'brown tabby',
-          number: 3,
+          number: 2,
           value: 'brown tabby',
         },
         {
@@ -1668,3 +1655,4 @@ After selecting the maximum possible number of rows, you can display an error me
     </DataTable>
   );
 }
+```
