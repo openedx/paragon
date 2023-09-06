@@ -7,14 +7,14 @@
       ✓ renders component with options (5 ms) - Cindy done
       ✓ renders with error msg (8 ms) - Mena done
     controlled behavior
-      ✓ selects option (8 ms) - Pair
-      ✓ when a function is passed to onClick, it is called (6 ms)
-      ✓ when a function is not passed to onClick, it is not called (3 ms)
-      ✓ options list depends on empty field value (2 ms)
-      ✓ options list depends on filled field value (2 ms)
-      ✓ toggles options list (3 ms)
-      ✓ shows options list depends on field value (2 ms)
-      ✓ closes options list on click outside (4 ms)
+      ✓ selects option (8 ms) - Paired done
+      ✓ when a function is passed to onClick, it is called (6 ms) - Cindy 
+      ✓ when a function is not passed to onClick, it is not called (3 ms) - Cindy
+      ✓ filters dropdown based on typed field value (2 ms) - Mena
+      ✓ toggles options list (3 ms) - Mena
+      ✓ filters options list based on field value (2 ms) - Cindy
+      ✓ closes options list on click outside (4 ms) - Mena
+      ✓ check focus on input after esc - Cindy
 */
 
 
@@ -33,8 +33,8 @@ function FormAutosuggestWrapper(props) {
   );
 }
 
-function FormAutosuggestTestComponent(){
-  const onSelected = jest.fn();
+function FormAutosuggestTestComponent(props){
+  const onSelected = props.onSelected ?? jest.fn()
   const onClick = jest.fn();
   return (
     <FormAutosuggestWrapper
@@ -114,12 +114,26 @@ describe('render behavior', () => {
     });
 
     describe('controlled behavior', () => {
-          it('selects option', () => {
-            container.find('input').simulate('click');
-            container.find('.pgn__form-autosuggest__dropdown').find('button')
-              .at(0).simulate('click');
+          it('sets input value based on clicked option', () => {
+            const { getByText, getByTestId } = render(<FormAutosuggestTestComponent />);
+            const input = getByTestId("autosuggest_textbox_input")
+
+            fireEvent.click(input)
+            const menuItem = getByText("Option 1")
+            fireEvent.click(menuItem)
       
-            expect(container.find('input').instance().value).toEqual('Option 1');
+            expect(input.value).toEqual('Option 1');
+          });
+
+          it('calls onSelected based on clicked option', () => {
+            const onSelected = jest.fn();
+            const { getByText, getByTestId } = render(<FormAutosuggestTestComponent onSelected={onSelected}/>);
+            const input = getByTestId("autosuggest_textbox_input")
+            
+            fireEvent.click(input)
+            const menuItem = getByText("Option 1")
+            fireEvent.click(menuItem)
+      
             expect(onSelected).toHaveBeenCalledWith('Option 1');
             expect(onSelected).toHaveBeenCalledTimes(1);
           });
@@ -256,7 +270,7 @@ describe('render behavior', () => {
 //       expect(container.find('input').instance().value).toEqual('');
 //     });
 
-//     it('options list depends on filled field value', () => {
+//     it('filters dropdown based on typed field value', () => {
 //       container.find('input').simulate('change', { target: { value: 'option 1' } });
 
 //       expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(1);
@@ -264,18 +278,19 @@ describe('render behavior', () => {
 //     });
 
 //     it('toggles options list', () => {
+//      this is toggling when the dropdown button is clicked
 //       const dropdownContainer = '.pgn__form-autosuggest__dropdown';
 
-//       expect(container.find(dropdownContainer).find('button').length).toEqual(1);
+//       expect(container.find(dropdownContainer).find('button').length).toEqual(3);
 
 //       container.find('button.pgn__form-autosuggest__icon-button').simulate('click');
 //       expect(container.find(dropdownContainer).find('button').length).toEqual(0);
 
 //       container.find('button.pgn__form-autosuggest__icon-button').simulate('click');
-//       expect(container.find(dropdownContainer).find('button').length).toEqual(1);
+//       expect(container.find(dropdownContainer).find('button').length).toEqual(3);
 //     });
 
-//     it('shows options list depends on field value', () => {
+//     it('filters options list based on field value', () => {
 //       container.find('input').simulate('change', { target: { value: '1' } });
 
 //       expect(container.find('.pgn__form-autosuggest__dropdown').find('button').length).toEqual(2);
