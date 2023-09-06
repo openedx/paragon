@@ -4,6 +4,13 @@
   transition: $input-transition;
   border: $search-border-width solid $search-border-color;
 
+  .pgn__searchfield-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: $search-form-background-color;
+  }
+
   .btn:focus-visible {
     outline: none;
     position: relative;
