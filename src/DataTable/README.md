@@ -360,6 +360,20 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       famous_for: 'modeling',
     },
   ], [])
+  const reducedChoices = data.reduce((acc, currentObject) => {
+  const { color } = currentObject;
+   if (color in acc) {
+    color.number += 1;
+   } else {
+    acc[color] = {
+      name: color,
+      number: 1,
+      value: color,
+    };
+  }
+  return acc;
+}, {});
+
   return (
     <DataTable
       isFilterable
@@ -371,7 +385,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       }}
       isSortable
       defaultColumnValues={{ Filter: TextFilter }}
-      itemCount={3}
+      itemCount={data.length}
       data={data}
       columns={[
         {
@@ -387,26 +401,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
           accessor: 'color',
           Filter: CheckboxFilter,
           filter: 'includesValue',
-          filterChoices: [{
-            name: 'russian white',
-            number: 1,
-            value: 'russian white',
-          },
-          {
-            name: 'orange tabby',
-            number: 2,
-            value: 'orange tabby',
-          },
-          {
-            name: 'brown tabby',
-            number: 3,
-            value: 'brown tabby',
-          },
-          {
-            name: 'siamese',
-            number: 1,
-            value: 'siamese',
-          }]
+          filterChoices: Object.values(reducedChoices),
         },
       ]}
     >
