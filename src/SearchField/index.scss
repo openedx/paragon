@@ -4,6 +4,10 @@
   transition: $input-transition;
   border: $search-border-width solid $search-border-color;
 
+  .pgn__searchfield-form {
+    background-color: $search-form-background-color;
+  }
+
   .btn:focus-visible {
     outline: none;
     position: relative;
