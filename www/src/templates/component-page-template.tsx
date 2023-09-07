@@ -9,6 +9,7 @@ import {
   Alert,
   breakpoints,
   useMediaQuery,
+  Stack,
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 import { DEFAULT_THEME } from '../../theme-config';
@@ -19,6 +20,7 @@ import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
 import ComponentsUsage from '../components/insights/ComponentsUsage';
 import LeaveFeedback from '../components/LeaveFeedback';
+import PageEditBtn from '../components/PageEditBtn';
 
 export interface IPageTemplate {
   data: {
@@ -139,7 +141,10 @@ export default function PageTemplate({
         )}
         <div className="d-flex justify-content-between align-items-start">
           <h1 className="mb-4">{mdx.frontmatter.title}</h1>
-          <LeaveFeedback />
+          <Stack direction="horizontal" gap={3}>
+            <PageEditBtn />
+            <LeaveFeedback />
+          </Stack>
         </div>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
