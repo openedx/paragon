@@ -74,7 +74,7 @@ class Table extends React.Component {
         >
           <span>
             {column.label}
-            <span className={classNames('sr-only')}>
+            <span className={classNames('sr-only')} data-testid="table-heading-sr">
               {' '}
               {this.getSortButtonScreenReaderText(column.key)}
             </span>
@@ -84,7 +84,7 @@ class Table extends React.Component {
         </Button>
       );
     } else if (column.hideHeader) {
-      heading = (<span className={classNames('sr-only')}>{column.label}</span>);
+      heading = (<span className={classNames('sr-only')} data-testid="table-heading-sr">{column.label}</span>);
     } else {
       heading = column.label;
     }
@@ -126,7 +126,6 @@ class Table extends React.Component {
           // eslint-disable-next-line react/no-array-index-key
             key={i}
             className={classNames({ 'd-flex': this.props.hasFixedColumnWidths })}
-            data-testid="table-row"
           >
             {this.props.columns.map(({ key, width }) => (
               React.createElement(
@@ -135,7 +134,6 @@ class Table extends React.Component {
                   key,
                   className: classNames(this.props.hasFixedColumnWidths ? width : null),
                   scope: (key === this.props.rowHeaderColumnKey) ? 'row' : null,
-                  'data-testid': 'table-cell',
                 },
                 row[key],
               )

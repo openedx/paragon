@@ -37,15 +37,9 @@ describe('<ControlledSelect />', () => {
     const spy = jest.spyOn(selectActions, 'addSelectedRowAction');
     const row = { ...baseRow, isSelected: false };
     const selectProps = { row };
-    render(
-      <ControlledSelectWrapper
-        tableProps={tableProps}
-        selectProps={selectProps}
-        data-testid="select-checkbox"
-      />,
-    );
+    render(<ControlledSelectWrapper tableProps={tableProps} selectProps={selectProps} />);
 
-    const checkbox = screen.getByTestId('select-checkbox');
+    const checkbox = screen.getByRole('checkbox');
     await userEvent.click(checkbox);
 
     expect(spy).toHaveBeenCalledTimes(1);
@@ -58,15 +52,9 @@ describe('<ControlledSelect />', () => {
     const spy = jest.spyOn(selectActions, 'deleteSelectedRowAction');
     const row = { ...baseRow, isSelected: true };
     const selectProps = { row };
-    render(
-      <ControlledSelectWrapper
-        tableProps={tableProps}
-        selectProps={selectProps}
-        data-testid="select-checkbox"
-      />,
-    );
+    render(<ControlledSelectWrapper tableProps={tableProps} selectProps={selectProps} />);
 
-    const checkbox = screen.getByTestId('select-checkbox');
+    const checkbox = screen.getByRole('checkbox');
     await userEvent.click(checkbox);
 
     expect(spy).toHaveBeenCalledWith(row.id);

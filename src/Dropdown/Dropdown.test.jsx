@@ -1,9 +1,8 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
 import userEvent from '@testing-library/user-event';
-import Dropdown from './index';
+import Dropdown from '.';
 
 const mockOnToggle = jest.fn();
 
@@ -32,7 +31,7 @@ describe('<Dropdown />', () => {
 
   it('Dropdown functions without autoClose or show props', async () => {
     render(
-      <Dropdown data-testid="dropdown">
+      <Dropdown>
         <Dropdown.Toggle id={1}>
           Dropdown Button
         </Dropdown.Toggle>
@@ -71,7 +70,7 @@ describe('<Dropdown />', () => {
       ...outsideAutoCloseProps,
     };
     render(
-      <Dropdown data-testid="dropdown" {...props}>
+      <Dropdown {...props}>
         <Dropdown.Toggle id={1}>
           Dropdown Button
         </Dropdown.Toggle>
@@ -110,7 +109,7 @@ describe('<Dropdown />', () => {
       ...insideAutoCloseProps,
     };
     render(
-      <Dropdown data-testid="dropdown" {...props}>
+      <Dropdown {...props}>
         <Dropdown.Toggle id={1}>
           Dropdown Button
         </Dropdown.Toggle>

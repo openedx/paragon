@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
 
 import { Close } from '../../icons';
-import Button from './index';
+import Button from '.';
 import Hyperlink from '../Hyperlink';
 
 describe('<Button />', () => {
@@ -71,24 +71,25 @@ describe('<Button />', () => {
         expect(tree).toMatchSnapshot();
       });
 
-      test('cannot click if disabled', () => {
+      test('cannot click if disabled', async () => {
         const onClick = jest.fn();
         render(<Button as="a" href="https://edx.org" disabled onClick={onClick}>Button</Button>);
         const link = screen.getByRole('link');
-        userEvent.click(link);
+        await userEvent.click(link);
         expect(onClick).not.toHaveBeenCalled();
       });
 
-      test('invalid disabled if without href', () => {
+      test('invalid disabled if without href', async () => {
         const onClick = jest.fn();
-        render(<Button as="a" disabled onClick={onClick} data-testid="button">Button</Button>);
-        const link = screen.getAllByTestId('button');
-        userEvent.click(link[0]);
+        const { rerender } = render(<Button as="a" disabled onClick={onClick}>Button</Button>);
+        const link = screen.getByText('Button');
+        await userEvent.click(link);
         expect(onClick).toHaveBeenCalled();
+        onClick.mockClear();
 
-        render(<Button as="a" href="" disabled onClick={onClick} data-testid="button">Button</Button>);
-        const emptyHrefLink = screen.getAllByTestId('button');
-        userEvent.click(emptyHrefLink[1]);
+        rerender(<Button as="a" href="" disabled onClick={onClick}>Button</Button>);
+        const emptyHrefLink = screen.getByRole('link', { name: 'Button' });
+        await userEvent.click(emptyHrefLink);
         expect(onClick).toHaveBeenCalled();
       });
 

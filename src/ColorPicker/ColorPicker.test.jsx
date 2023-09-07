@@ -3,8 +3,7 @@ import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
-import '@testing-library/jest-dom';
-import ColorPicker from './index';
+import ColorPicker from '.';
 
 describe('renders correctly', () => {
   const color = '';

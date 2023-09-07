@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
 import Modal from '.';
 import { Button } from '..';
@@ -8,15 +7,15 @@ import Variant from '../utils/constants';
 
 const modalOpen = (isOpen, container) => {
   if (!isOpen) {
-    expect(container.getByTestId('modal-id').classList).not.toContain('d-block');
-    expect(container.getByTestId('modal-id').classList).not.toContain('show');
-    expect(container.getByTestId('modal-id').classList).toContain('fade');
-    expect(container.queryByTestId('modal-backdrop-id').classList).not.toContain('modal-backdrop');
+    expect(container.getByTestId('modal').classList).not.toContain('d-block');
+    expect(container.getByTestId('modal').classList).not.toContain('show');
+    expect(container.getByTestId('modal').classList).toContain('fade');
+    expect(container.queryByTestId('modal-backdrop').classList).not.toContain('modal-backdrop');
   } else {
-    expect(container.getByTestId('modal-id').classList).toContain('d-block');
-    expect(container.getByTestId('modal-id').classList).toContain('show');
-    expect(container.queryByTestId('modal-id').classList).not.toContain('fade');
-    expect(container.queryByTestId('modal-backdrop-id').classList).toContain('modal-backdrop');
+    expect(container.getByTestId('modal').classList).toContain('d-block');
+    expect(container.getByTestId('modal').classList).toContain('show');
+    expect(container.queryByTestId('modal').classList).not.toContain('fade');
+    expect(container.queryByTestId('modal-backdrop').classList).toContain('modal-backdrop');
   }
 };
 
@@ -66,7 +65,7 @@ describe('<Modal />', () => {
       expect(modalBody.firstChild.classList).toContain('container-fluid');
       expect(screen.getByText(body)).toBeInTheDocument();
 
-      const icon = screen.getByTestId('icon-id').firstChild;
+      const icon = screen.getByTestId('modal-icon').firstChild;
       expect(icon.classList).toContain('fa-exclamation-triangle');
       expect(icon.classList).toContain('fa-3x');
       expect(icon.classList).toContain('text-warning');
@@ -125,7 +124,7 @@ describe('<Modal />', () => {
       global.MSInputMethodContext = true;
       global.document.documentMode = true;
       render(<Modal {...defaultProps} />);
-      const modal = screen.queryByTestId('modal-id');
+      const modal = screen.queryByTestId('modal');
       expect(modal.classList).toContain('is-ie11');
 
       global.MSInputMethodContext = MSInputMethodContext;
@@ -140,7 +139,7 @@ describe('<Modal />', () => {
       global.MSInputMethodContext = false;
       global.document.documentMode = false;
       render(<Modal {...defaultProps} />);
-      const modal = screen.queryByTestId('modal-id');
+      const modal = screen.queryByTestId('modal');
       expect(modal).not.toContain('is-ie11');
 
       global.MSInputMethodContext = MSInputMethodContext;

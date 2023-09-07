@@ -1,10 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
 
 import FormControlFeedback from '../FormControlFeedback';
 import { FORM_TEXT_TYPES } from '../FormText';
 import { FormGroupContext } from '../FormGroupContext';
+
+const THIS_IS_FEEDBACK = 'This is feedback';
 
 describe('FormControlFeedback', () => {
   it('renders a form control with an id', () => {
@@ -12,35 +13,35 @@ describe('FormControlFeedback', () => {
     const contextValue = {
       getDescriptorProps,
     };
-    const { getByText } = render(
+    render(
       <FormGroupContext.Provider value={contextValue}>
         <FormControlFeedback>
-          This is feedback
+          {THIS_IS_FEEDBACK}
         </FormControlFeedback>
       </FormGroupContext.Provider>,
     );
-    const FeedbackNode = getByText('This is feedback');
+    const FeedbackNode = screen.getByText(THIS_IS_FEEDBACK);
     expect(FeedbackNode).toBeInTheDocument();
     expect(getDescriptorProps).toHaveBeenCalled();
     expect(FeedbackNode.parentElement).toHaveAttribute('id', 'descriptor-id');
   });
 
   it('renders with a default icon for a variant', () => {
-    const { getByTestId } = render(
+    render(
       <FormControlFeedback data-testid={FORM_TEXT_TYPES.VALID} type={FORM_TEXT_TYPES.VALID}>
-        This is feedback
+        {THIS_IS_FEEDBACK}
       </FormControlFeedback>,
     );
-    expect(getByTestId(FORM_TEXT_TYPES.VALID)).toBeInTheDocument();
+    expect(screen.getByTestId(FORM_TEXT_TYPES.VALID)).toBeInTheDocument();
   });
 
   it('renders with a custom icon', () => {
     const customIcon = <custom-icon>!</custom-icon>;
-    const { getByText } = render(
+    render(
       <FormControlFeedback icon={customIcon}>
-        This is feedback
+        {THIS_IS_FEEDBACK}
       </FormControlFeedback>,
     );
-    expect(getByText('!')).toBeInTheDocument();
+    expect(screen.getByText('!')).toBeInTheDocument();
   });
 });

@@ -1,28 +1,27 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
 
 import FormText, { resolveTextType, FORM_TEXT_TYPES } from '../FormText';
 
 describe('FormText', () => {
   it('renders with a default icon for a variant', () => {
-    const { getByTestId } = render(
+    render(
       <FormText data-testid={FORM_TEXT_TYPES.VALID} type={FORM_TEXT_TYPES.VALID}>
         This is feedback
       </FormText>,
     );
-    const icon = getByTestId(`${FORM_TEXT_TYPES.VALID}`);
+    const icon = screen.getByTestId(`${FORM_TEXT_TYPES.VALID}`);
     expect(icon).toBeInTheDocument();
   });
 
   it('renders with a custom icon', () => {
     const customIcon = <custom-icon>!</custom-icon>;
-    const { getByTestId } = render(
+    render(
       <FormText data-testid="form-text-custom-icon" icon={customIcon}>
         This is feedback
       </FormText>,
     );
-    const icon = getByTestId('form-text-custom-icon');
+    const icon = screen.getByTestId('form-text-custom-icon');
     expect(icon).toBeInTheDocument();
   });
 });

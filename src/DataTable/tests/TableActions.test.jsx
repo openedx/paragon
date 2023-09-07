@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  render, fireEvent, screen, waitFor,
-} from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import classNames from 'classnames';
 import TableActions from '../TableActions';
@@ -154,47 +151,39 @@ describe('<TableActions />', () => {
   });
 
   describe('with more than two actions', () => {
-    it('displays the user\'s first button as a brand button', async () => {
+    it('displays the user\'s first button as a brand button', () => {
       render(<TableActionsWrapper />);
       const buttons = screen.getAllByTestId('action-btn');
-      await waitFor(() => {
-        expect(buttons.length).toEqual(2);
-        expect(buttons[1]).toHaveClass('btn-brand');
-      });
+      expect(buttons.length).toEqual(2);
+      expect(buttons[1]).toHaveClass('btn-brand');
     });
 
-    it('displays the user\'s second button as an outline button', async () => {
+    it('displays the user\'s second button as an outline button', () => {
       render(<TableActionsWrapper />);
       const buttons = screen.getAllByTestId('action-btn');
-      await waitFor(() => {
-        expect(buttons[0]).toHaveClass('btn-outline-primary');
-      });
+      expect(buttons[0]).toHaveClass('btn-outline-primary');
     });
 
     describe('overflow menu', () => {
       const onClickSpy = jest.fn();
       const itemClassName = 'itemClickTest';
-      let tableInstance;
-      let overflowButton;
+      const tableInstance = {
+        ...instance,
+        tableActions: [
+          ...instance.tableActions,
+          <FirstAction
+            onClick={onClickSpy}
+            className={itemClassName}
+            data-testid="extra-first-action"
+          />,
+        ],
+      };
 
       beforeEach(async () => {
-        tableInstance = {
-          ...instance,
-          tableActions: [
-            ...instance.tableActions,
-            <FirstAction
-              onClick={onClickSpy}
-              className={itemClassName}
-              data-testid="extra-first-action"
-            />,
-          ],
-        };
         render(<TableActionsWrapper value={tableInstance} />);
-        await waitFor(() => {
-          // the overflow toggle button is the first button
-          overflowButton = screen.getByRole('button', { name: ACTION_OVERFLOW_BUTTON_TEXT });
-        });
-        fireEvent.click(overflowButton);
+        // the overflow toggle button is the first button
+        const overflowButton = screen.getByRole('button', { name: ACTION_OVERFLOW_BUTTON_TEXT });
+        await userEvent.click(overflowButton);
       });
 
       afterEach(() => {
@@ -202,21 +191,17 @@ describe('<TableActions />', () => {
       });
 
       it('displays additional actions in a ModalPopup', () => {
-        const overflowToggle = overflowButton;
-        expect(overflowToggle).toBeInTheDocument();
         const actionItems = screen.getAllByRole('button');
         expect(actionItems.length).toEqual(4);
       });
 
       it('performs actions when dropdown items are clicked', async () => {
         const item = screen.getByTestId('extra-first-action');
-        userEvent.click(item);
-        await waitFor(() => {
-          expect(onClickSpy).toHaveBeenCalledTimes(1);
-        });
+        await userEvent.click(item);
+        expect(onClickSpy).toHaveBeenCalledTimes(1);
       });
 
-      it('passes the class names to the dropdown item', async () => {
+      it('passes the class names to the dropdown item', () => {
         const item = screen.getByTestId('extra-first-action');
         expect(item).toHaveClass(itemClassName);
       });
@@ -232,12 +217,10 @@ describe('<TableActions />', () => {
       const overflowToggle = screen.getByRole('button', { name: SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT });
       expect(overflowToggle).toBeInTheDocument();
 
-      fireEvent.click(overflowToggle);
+      userEvent.click(overflowToggle);
 
-      waitFor(() => {
-        const buttons = screen.getAllByRole('button');
-        expect(buttons.length).toBeGreaterThan(1);
-      });
+      const buttons = screen.getAllByRole('button');
+      expect(buttons.length).toBeGreaterThan(1);
     });
 
     it('renders the correct alt text for the dropdown', () => {

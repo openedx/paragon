@@ -1,7 +1,6 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import ModalLayer from './ModalLayer';
-import '@testing-library/jest-dom/extend-expect';
 
 /* eslint-disable react/prop-types */
 jest.mock('./Portal', () => function PortalMock(props) {
@@ -36,24 +35,24 @@ describe('<ModalLayer />', () => {
     const closeFn = jest.fn();
 
     it('renders the dialog and a modal context provider', () => {
-      const { getByRole } = render(
+      render(
         <ModalLayer isOpen={isOpen} onClose={closeFn}>
           <Dialog />
         </ModalLayer>,
       );
 
-      const dialog = getByRole('dialog', { name: 'A dialog' });
+      const dialog = screen.getByRole('dialog', { name: 'A dialog' });
       expect(dialog).toBeInTheDocument();
     });
 
     it('renders a focus-on component with appropriate props', () => {
-      const { getByTestId } = render(
+      render(
         <ModalLayer isOpen={isOpen} onClose={closeFn}>
           <Dialog />
         </ModalLayer>,
       );
 
-      const focusOn = getByTestId('focus-on');
+      const focusOn = screen.getByTestId('focus-on');
       expect(focusOn).toBeInTheDocument();
       expect(focusOn).toHaveAttribute('scrolllock', 'true');
       expect(focusOn).toHaveAttribute('enabled', 'true');
@@ -61,39 +60,39 @@ describe('<ModalLayer />', () => {
   });
 
   test('when isOpen is false the dialog is not rendered', () => {
-    const { queryByRole } = render(
+    render(
       <ModalLayer isOpen={false} onClose={jest.fn()}>
         <Dialog />
       </ModalLayer>,
     );
 
-    const dialog = queryByRole('dialog', { name: 'A dialog' });
+    const dialog = screen.queryByRole('dialog', { name: 'A dialog' });
     expect(dialog).not.toBeInTheDocument();
   });
 
   describe('Backdrop', () => {
     it('closes a non-blocking modal layer when clicked', () => {
       const closeFn = jest.fn();
-      const { container } = render(
+      render(
         <ModalLayer isOpen onClose={closeFn} isBlocking={false}>
           <Dialog />
         </ModalLayer>,
       );
 
-      const backdrop = container.querySelector('.pgn__modal-backdrop');
+      const backdrop = screen.getByTestId('modal-backdrop');
       fireEvent.click(backdrop);
       expect(closeFn).toHaveBeenCalled();
     });
 
     it('does not close a blocking modal layer when clicked', () => {
       const closeFn = jest.fn();
-      const { container } = render(
+      render(
         <ModalLayer isOpen onClose={closeFn} isBlocking>
           <Dialog />
         </ModalLayer>,
       );
 
-      const backdrop = container.querySelector('.pgn__modal-backdrop');
+      const backdrop = screen.getByTestId('modal-backdrop');
       fireEvent.click(backdrop);
       expect(closeFn).not.toHaveBeenCalled();
     });

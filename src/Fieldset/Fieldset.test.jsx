@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
-import Fieldset from './index';
+import Fieldset from '.';
 import Variant from '../utils/constants';
 
 const dangerVariant = {

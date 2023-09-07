@@ -1,10 +1,11 @@
 import React from 'react';
-import { render, fireEvent, act } from '@testing-library/react';
+import {
+  render, fireEvent, act, screen,
+} from '@testing-library/react';
 import { Context as ResponsiveContext } from 'react-responsive';
-import '@testing-library/jest-dom/extend-expect';
 
 import breakpoints from '../utils/breakpoints';
-import Pagination from './index';
+import Pagination from '.';
 
 const baseProps = {
   state: { pageIndex: 1 },
@@ -34,8 +35,8 @@ describe('<Pagination />', () => {
       ...baseProps,
       buttonLabels,
     };
-    const { getByText } = render(<Pagination {...props} />);
-    const srText = getByText(`${buttonLabels.page} 1, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} ${baseProps.pageCount}`);
+    render(<Pagination {...props} />);
+    const srText = screen.getByText(`${buttonLabels.page} 1, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} ${baseProps.pageCount}`);
     expect(srText).toBeInTheDocument();
   });
 
@@ -47,10 +48,10 @@ describe('<Pagination />', () => {
         ...baseProps,
         currentPage: initialPage,
       };
-      const { rerender, getByText } = render(<Pagination {...props} />);
-      expect(getByText('Page 1, Current Page, of 5')).toBeInTheDocument();
+      const { rerender } = render(<Pagination {...props} />);
+      expect(screen.getByText('Page 1, Current Page, of 5')).toBeInTheDocument();
       rerender(<Pagination {...props} currentPage={newPage} />);
-      expect(getByText('Page 2, Current Page, of 5')).toBeInTheDocument();
+      expect(screen.getByText('Page 2, Current Page, of 5')).toBeInTheDocument();
     });
 
     it('does not override state currentPage when props currentPage changes with existing value', () => {
@@ -59,10 +60,10 @@ describe('<Pagination />', () => {
         ...baseProps,
         currentPage,
       };
-      const { rerender, getByText } = render(<Pagination {...props} />);
-      expect(getByText(`Page ${currentPage}, Current Page, of 5`)).toBeInTheDocument();
+      const { rerender } = render(<Pagination {...props} />);
+      expect(screen.getByText(`Page ${currentPage}, Current Page, of 5`)).toBeInTheDocument();
       rerender(<Pagination {...props} currentPage={currentPage} />);
-      expect(getByText(`Page ${currentPage}, Current Page, of 5`)).toBeInTheDocument();
+      expect(screen.getByText(`Page ${currentPage}, Current Page, of 5`)).toBeInTheDocument();
     });
   });
 
@@ -72,9 +73,9 @@ describe('<Pagination />', () => {
         ...baseProps,
         currentPage: 2,
       };
-      const { getByLabelText } = render(<Pagination {...props} />);
-      const previousButton = getByLabelText(/Previous/);
-      const nextButton = getByLabelText(/Next/);
+      render(<Pagination {...props} />);
+      const previousButton = screen.getByLabelText(/Previous/);
+      const nextButton = screen.getByLabelText(/Next/);
       fireEvent.click(previousButton);
       expect(document.activeElement).toEqual(nextButton);
     });
@@ -84,9 +85,9 @@ describe('<Pagination />', () => {
         ...baseProps,
         currentPage: baseProps.pageCount - 1,
       };
-      const { getByLabelText } = render(<Pagination {...props} />);
-      const previousButton = getByLabelText(/Previous/);
-      const nextButton = getByLabelText(/Next/);
+      render(<Pagination {...props} />);
+      const previousButton = screen.getByLabelText(/Previous/);
+      const nextButton = screen.getByLabelText(/Next/);
       fireEvent.click(nextButton);
       expect(document.activeElement).toEqual(previousButton);
     });
@@ -99,30 +100,30 @@ describe('<Pagination />', () => {
         ...baseProps,
         paginationLabel,
       };
-      const { getByLabelText } = render(<Pagination {...props} />);
-      expect(getByLabelText(paginationLabel)).toBeInTheDocument();
+      render(<Pagination {...props} />);
+      expect(screen.getByLabelText(paginationLabel)).toBeInTheDocument();
     });
 
     describe('should use correct number of pages', () => {
       it('should show 5 buttons on desktop', () => {
-        const { getAllByLabelText } = render(
+        render(
           <ResponsiveContext.Provider value={{ width: breakpoints.large.maxWidth }}>
             <Pagination {...baseProps} />
           </ResponsiveContext.Provider>,
         );
 
-        const pageButtons = getAllByLabelText(/^Page/);
+        const pageButtons = screen.getAllByLabelText(/^Page/);
         expect(pageButtons.length).toBe(5);
       });
 
       it('should show 1 button on mobile', () => {
         // Use extra small window size to display the mobile version of Pagination.
-        const { getAllByLabelText } = render(
+        render(
           <ResponsiveContext.Provider value={{ width: breakpoints.extraSmall.maxWidth }}>
             <Pagination {...baseProps} />
           </ResponsiveContext.Provider>,
         );
-        const pageButtons = getAllByLabelText(/^Page/);
+        const pageButtons = screen.getAllByLabelText(/^Page/);
         expect(pageButtons.length).toBe(1);
       });
     });
@@ -134,13 +135,13 @@ describe('<Pagination />', () => {
           ...baseProps,
           onPageSelect: spy,
         };
-        const { getByLabelText } = render(
+        render(
           <ResponsiveContext.Provider value={{ width: breakpoints.large.maxWidth }}>
             <Pagination {...props} />
           </ResponsiveContext.Provider>,
         );
 
-        const previousButton = getByLabelText(/Previous/);
+        const previousButton = screen.getByLabelText(/Previous/);
         fireEvent.click(previousButton);
         expect(spy).toHaveBeenCalledTimes(0);
       });
@@ -151,13 +152,13 @@ describe('<Pagination />', () => {
           ...baseProps,
           onPageSelect: spy,
         };
-        const { getAllByLabelText } = render(
+        render(
           <ResponsiveContext.Provider value={{ width: breakpoints.large.maxWidth }}>
             <Pagination {...props} />
           </ResponsiveContext.Provider>,
         );
 
-        const pageButtons = getAllByLabelText(/^Page/);
+        const pageButtons = screen.getAllByLabelText(/^Page/);
         fireEvent.click(pageButtons[1]);
         expect(spy).toHaveBeenCalledTimes(1);
 
@@ -175,8 +176,8 @@ describe('<Pagination />', () => {
         currentPage: 2,
         onPageSelect: spy,
       };
-      const { getByLabelText } = render(<Pagination {...props} />);
-      fireEvent.click(getByLabelText(/Previous/));
+      render(<Pagination {...props} />);
+      fireEvent.click(screen.getByLabelText(/Previous/));
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
@@ -186,8 +187,8 @@ describe('<Pagination />', () => {
         ...baseProps,
         onPageSelect: spy,
       };
-      const { getByLabelText } = render(<Pagination {...props} />);
-      fireEvent.click(getByLabelText(/Next/));
+      render(<Pagination {...props} />);
+      fireEvent.click(screen.getByLabelText(/Next/));
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
@@ -220,66 +221,66 @@ describe('<Pagination />', () => {
     }
 
     it('uses passed in previous button label', () => {
-      const { getByText, getByLabelText } = render(
+      render(
         <Proxy currentPage={baseProps.pageCount} width={breakpoints.large.minWidth} />,
       );
-      expect(getByText(buttonLabels.previous)).toBeInTheDocument();
+      expect(screen.getByText(buttonLabels.previous)).toBeInTheDocument();
 
-      fireEvent.click(getByText(buttonLabels.next));
-      expect(getByLabelText(`${buttonLabels.previous}, ${buttonLabels.page} 4`)).toBeInTheDocument();
+      fireEvent.click(screen.getByText(buttonLabels.next));
+      expect(screen.getByLabelText(`${buttonLabels.previous}, ${buttonLabels.page} 4`)).toBeInTheDocument();
     });
 
     it('uses passed in next button label', () => {
-      const { rerender, getByLabelText } = render(
+      const { rerender } = render(
         <Proxy currentPage={1} width={breakpoints.large.minWidth} />,
       );
-      expect(getByLabelText(`${buttonLabels.next}, ${buttonLabels.page} 2`)).toBeInTheDocument();
+      expect(screen.getByLabelText(`${buttonLabels.next}, ${buttonLabels.page} 2`)).toBeInTheDocument();
 
       rerender(
         <Proxy currentPage={baseProps.pageCount} width={breakpoints.large.minWidth} />,
       );
-      expect(getByLabelText(buttonLabels.next)).toBeInTheDocument();
+      expect(screen.getByLabelText(buttonLabels.next)).toBeInTheDocument();
     });
 
     it('uses passed in page button label', () => {
-      const { rerender, getByText, getByLabelText } = render(
+      const { rerender } = render(
         <ResponsiveContext.Provider value={{ width: breakpoints.large.minWidth }}>
           <Pagination {...props} />
         </ResponsiveContext.Provider>,
       );
-      expect(getByText(`${buttonLabels.page} 1, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} 5`)).toBeInTheDocument();
-      expect(getByLabelText(`${buttonLabels.page} 1, ${buttonLabels.currentPage}`)).toBeInTheDocument();
+      expect(screen.getByText(`${buttonLabels.page} 1, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} 5`)).toBeInTheDocument();
+      expect(screen.getByLabelText(`${buttonLabels.page} 1, ${buttonLabels.currentPage}`)).toBeInTheDocument();
 
       rerender(
         <ResponsiveContext.Provider value={{ width: breakpoints.large.minWidth }}>
           <Pagination {...props} currentPage={2} />
         </ResponsiveContext.Provider>,
       );
-      expect(getByText(`${buttonLabels.page} 2, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} 5`)).toBeInTheDocument();
-      expect(getByLabelText(`${buttonLabels.page} 1`)).toBeInTheDocument();
+      expect(screen.getByText(`${buttonLabels.page} 2, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} 5`)).toBeInTheDocument();
+      expect(screen.getByLabelText(`${buttonLabels.page} 1`)).toBeInTheDocument();
 
       rerender(
         <Proxy currentPage={1} width={breakpoints.extraSmall.maxWidth} />,
       );
-      expect(getByText(`${buttonLabels.page} 1, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} 5`)).toBeInTheDocument();
+      expect(screen.getByText(`${buttonLabels.page} 1, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} 5`)).toBeInTheDocument();
     });
 
     it('for the reduced variant shows dropdown button with the page count as label', async () => {
-      const { getByRole, getAllByTestId } = render(<Pagination variant="reduced" {...props} />);
+      render(<Pagination variant="reduced" {...props} />);
 
-      const dropdownButton = getByRole('button', { name: /1 of 5/i, attributes: { 'aria-haspopup': 'true' } });
+      const dropdownButton = screen.getByRole('button', { name: /1 of 5/i, attributes: { 'aria-haspopup': 'true' } });
       expect(dropdownButton.textContent).toContain(`${baseProps.state.pageIndex} of ${baseProps.pageCount}`);
 
       fireEvent.click(dropdownButton);
 
       await act(async () => {
-        const dropdownChoices = getAllByTestId('pagination-dropdown-item');
+        const dropdownChoices = screen.getAllByTestId('pagination-dropdown-item');
         expect(dropdownChoices.length).toBe(baseProps.pageCount);
       });
     });
 
     it('renders only previous and next buttons in minimal variant', () => {
-      const { getAllByRole } = render(
+      render(
         <Pagination
           variant="minimal"
           onPageSelect={(pageNumber) => pageNumber}
@@ -287,12 +288,11 @@ describe('<Pagination />', () => {
           paginationLabel="Label"
         />,
       );
-      const items = getAllByRole('listitem');
+      const items = screen.getAllByRole('listitem');
       expect(items.length).toBe(2);
     });
 
     it('renders chevrons and buttons disabled when pageCount is 1 or 0 for all variants', () => {
-      const screen = render(<Pagination {...props} />);
       const variantTypes = ['default', 'secondary', 'reduced', 'minimal'];
       variantTypes.forEach((variantType) => {
         for (let i = 0; i < 3; i++) {
@@ -301,8 +301,8 @@ describe('<Pagination />', () => {
             variant: variantType,
             pageCount: i,
           };
-          screen.rerender(<Pagination {...props} />);
-          const disabledButtons = screen.container.querySelectorAll('button[disabled]');
+          const { container } = render(<Pagination {...props} />);
+          const disabledButtons = container.querySelectorAll('button[disabled]');
           expect(props.pageCount).toEqual(i);
           expect(disabledButtons.length).toEqual(i === 2 ? 1 : 2);
         }

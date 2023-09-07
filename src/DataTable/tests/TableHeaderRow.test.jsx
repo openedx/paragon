@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
 
 import TableHeaderRow from '../TableHeaderRow';
 
@@ -33,10 +32,10 @@ const props = {
 };
 
 describe('<TableHeaderRow />', () => {
-  const { getByTestId, getAllByTestId } = render(<table><TableHeaderRow {...props} /></table>);
-  const head = getByTestId('thead-id');
-  const row = getByTestId('tr-id');
-  const cells = getAllByTestId('th-id');
+  render(<table><TableHeaderRow {...props} /></table>);
+  const head = screen.getByRole('rowgroup');
+  const row = screen.getByRole('row');
+  const cells = screen.getAllByRole('columnheader');
 
   it('renders a table head and row', () => {
     expect(head).toBeInTheDocument();

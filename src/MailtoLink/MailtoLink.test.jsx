@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import MailtoLink from './index';
+import MailtoLink from '.';
 
 const emailAddress = 'edx@example.com';
 const emailAddresses = ['foo@example.com', 'bar@example.com', 'baz@example.com'];

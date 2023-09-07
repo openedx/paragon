@@ -1,8 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
-import ListBox from './index';
+import ListBox from '.';
 import ListBoxOption from '../ListBoxOption';
 
 describe('ListBox', () => {

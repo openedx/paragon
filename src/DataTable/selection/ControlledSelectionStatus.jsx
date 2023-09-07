@@ -46,7 +46,7 @@ function ControlledSelectionStatus({ className, clearSelectionText, ...rest }) {
     onClear: () => dispatch(clearSelectionAction()),
     ...rest,
   };
-  return <BaseSelectionStatus {...selectionStatusProps} {...rest} />;
+  return <BaseSelectionStatus {...selectionStatusProps} />;
 }
 
 ControlledSelectionStatus.defaultProps = {

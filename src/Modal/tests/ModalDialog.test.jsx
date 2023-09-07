@@ -1,6 +1,5 @@
 import React from 'react';
-import { render, within } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
 
 import ModalDialog from '../ModalDialog';
 
@@ -15,10 +14,9 @@ jest.mock('../ModalLayer', () => function ModalLayerMock(props) {
 });
 
 describe('ModalDialog', () => {
-  const onClose = jest.fn();
-  let dialogNode;
-  beforeEach(() => {
-    const { getByRole } = render(
+  it('renders a dialog with aria-label and content', () => {
+    const onClose = jest.fn();
+    render(
       <ModalDialog
         title="My dialog"
         isOpen
@@ -40,28 +38,19 @@ describe('ModalDialog', () => {
         </ModalDialog.Footer>
       </ModalDialog>,
     );
-    // eslint-disable-next-line prefer-destructuring
-    dialogNode = getByRole('dialog');
-  });
 
-  it('renders a dialog', () => {
+    const dialogNode = screen.getByRole('dialog');
+
     expect(dialogNode).toBeInTheDocument();
-  });
-
-  it('has a label', () => {
     expect(dialogNode).toHaveAttribute('aria-label', 'My dialog');
-  });
-
-  it('has content', () => {
-    expect(within(dialogNode).getByText('The content')).toBeInTheDocument();
+    expect(screen.getByText('The content')).toBeInTheDocument();
   });
 });
 
 describe('ModalDialog with Hero', () => {
-  const onClose = jest.fn();
-  let dialogNode;
-  beforeEach(() => {
-    const { getByRole } = render(
+  it('renders a dialog with aria-label and hero with img', () => {
+    const onClose = jest.fn();
+    render(
       <ModalDialog
         title="My dialog"
         isOpen
@@ -86,19 +75,12 @@ describe('ModalDialog with Hero', () => {
         </ModalDialog.Footer>
       </ModalDialog>,
     );
-    dialogNode = getByRole('dialog');
-  });
+    const dialogNode = screen.getByRole('dialog');
 
-  it('renders a dialog', () => {
     expect(dialogNode).toBeInTheDocument();
-  });
-
-  it('has a label', () => {
     expect(dialogNode).toHaveAttribute('aria-label', 'My dialog');
-  });
 
-  it('has a hero with image', () => {
-    const heroContentNode = within(dialogNode).getByTestId('modal-hero-content');
+    const heroContentNode = screen.getByTestId('modal-hero-content');
     expect(heroContentNode.previousSibling).toHaveStyle('backgroundImage: url(imageurl)');
   });
 });

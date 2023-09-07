@@ -1,8 +1,7 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, fireEvent, screen } from '@testing-library/react';
 
-import asInput, { getDisplayName } from './index';
+import asInput, { getDisplayName } from '.';
 
 function testComponent(props) {
   return (
@@ -38,10 +37,10 @@ describe('asInput()', () => {
       ...baseProps,
       value: 'foofoo',
     };
-    const { getByText } = render(<InputTestComponent {...props} />);
-    const label = getByText(props.label);
-    const description = getByText(baseProps.description);
-    const input = getByText(baseProps.label);
+    render(<InputTestComponent {...props} />);
+    const label = screen.getByText(props.label);
+    const description = screen.getByText(baseProps.description);
+    const input = screen.getByText(baseProps.label);
 
     expect(label).toBeInTheDocument();
     expect(description).toBeInTheDocument();
@@ -52,10 +51,10 @@ describe('asInput()', () => {
     const props = {
       ...baseProps,
     };
-    const { getByText } = render(<InputTestComponent {...props} />);
-    const labelElement = getByText(baseProps.label);
+    render(<InputTestComponent {...props} />);
+    const labelElement = screen.getByText(baseProps.label);
     const inputElement = labelElement.nextSibling;
-    const smallElement = getByText(baseProps.description);
+    const smallElement = screen.getByText(baseProps.description);
 
     expect(labelElement.getAttribute('id')).toContain('asInput');
     expect(inputElement.getAttribute('id')).toContain('asInput');
@@ -68,10 +67,10 @@ describe('asInput()', () => {
       ...baseProps,
       id: testId,
     };
-    const { getByText } = render(<InputTestComponent {...props} />);
-    const labelElement = getByText(baseProps.label);
+    render(<InputTestComponent {...props} />);
+    const labelElement = screen.getByText(baseProps.label);
     const inputElement = labelElement.nextSibling;
-    const smallElement = getByText(baseProps.description);
+    const smallElement = screen.getByText(baseProps.description);
 
     expect(labelElement.getAttribute('id')).toContain('asInput');
     expect(inputElement.getAttribute('id')).toContain('asInput');
@@ -84,10 +83,10 @@ describe('asInput()', () => {
       ...baseProps,
       id: testId,
     };
-    const { getByText } = render(<InputTestComponent {...props} />);
-    const labelElement = getByText(baseProps.label);
+    render(<InputTestComponent {...props} />);
+    const labelElement = screen.getByText(baseProps.label);
     const inputElement = labelElement.nextSibling;
-    const smallElement = getByText(baseProps.description);
+    const smallElement = screen.getByText(baseProps.description);
 
     expect(labelElement.getAttribute('id')).toEqual(`label-${testId}`);
     expect(inputElement.getAttribute('id')).toEqual(testId);
@@ -100,8 +99,8 @@ describe('asInput()', () => {
       ...baseProps,
       label: testLabel,
     };
-    const { getByText } = render(<InputTestComponent {...props} />);
-    const label = getByText('Label').parentElement;
+    render(<InputTestComponent {...props} />);
+    const label = screen.getByText('Label').parentElement;
     expect(label).toBeInTheDocument();
     expect(label.children).toHaveLength(1);
     expect(label.children[0]).toHaveAttribute('lang', 'en');
@@ -114,14 +113,14 @@ describe('asInput()', () => {
       ...baseProps,
       value: initValue,
     };
-    const { getByText, rerender } = render(<InputTestComponent {...props} />);
+    const { rerender } = render(<InputTestComponent {...props} />);
 
-    expect(getByText(baseProps.label).nextSibling.getAttribute('value')).toEqual(initValue);
+    expect(screen.getByText(baseProps.label).nextSibling.getAttribute('value')).toEqual(initValue);
 
     props.value = newValue;
     rerender(<InputTestComponent {...props} />);
 
-    expect(getByText(baseProps.label).nextSibling.getAttribute('value')).toEqual(newValue);
+    expect(screen.getByText(baseProps.label).nextSibling.getAttribute('value')).toEqual(newValue);
   });
 
   describe('fires', () => {
@@ -131,8 +130,8 @@ describe('asInput()', () => {
         ...baseProps,
         onBlur: spy,
       };
-      const { getByText } = render(<InputTestComponent {...props} />);
-      const input = getByText(baseProps.label).nextSibling;
+      render(<InputTestComponent {...props} />);
+      const input = screen.getByText(baseProps.label).nextSibling;
 
       fireEvent.blur(input);
       expect(spy).toHaveBeenCalledTimes(1);
@@ -144,8 +143,8 @@ describe('asInput()', () => {
         ...baseProps,
         onChange: spy,
       };
-      const { getByText } = render(<InputTestComponent {...props} />);
-      const input = getByText(baseProps.label).nextSibling;
+      render(<InputTestComponent {...props} />);
+      const input = screen.getByText(baseProps.label).nextSibling;
 
       fireEvent.change(input, { target: { value: 'new' } });
       expect(spy).toHaveBeenCalledTimes(1);
@@ -157,8 +156,8 @@ describe('asInput()', () => {
         ...baseProps,
         onKeyPress: spy,
       };
-      const { getByText } = render(<InputTestComponent {...props} />);
-      const input = getByText(baseProps.label).nextSibling;
+      render(<InputTestComponent {...props} />);
+      const input = screen.getByText(baseProps.label).nextSibling;
 
       fireEvent.keyPress(input, { key: 'Enter', code: 'Enter', charCode: 13 });
       expect(spy).toHaveBeenCalledTimes(1);
@@ -176,15 +175,15 @@ describe('asInput()', () => {
         validationMessage: 'Prop',
         dangerIconDescription: 'Prop',
       };
-      const { rerender, getByText, queryByText } = render(<InputTestComponent {...props} />);
+      const { rerender } = render(<InputTestComponent {...props} />);
 
-      expect(queryByText('Spy')).not.toBeInTheDocument();
-      expect(queryByText('Prop')).not.toBeInTheDocument();
+      expect(screen.queryByText('Spy')).not.toBeInTheDocument();
+      expect(screen.queryByText('Prop')).not.toBeInTheDocument();
 
       props.validator = null;
       rerender(<InputTestComponent {...props} />);
 
-      expect(getByText('Prop')).toBeInTheDocument();
+      expect(screen.getByText('Prop')).toBeInTheDocument();
     });
 
     it('uses validationMessage as element type', () => {
@@ -194,8 +193,8 @@ describe('asInput()', () => {
         isValid: false,
         validationMessage: testMessage,
       };
-      const { getByText } = render(<InputTestComponent {...props} />);
-      const validationMessage = getByText('Validation Message');
+      render(<InputTestComponent {...props} />);
+      const validationMessage = screen.getByText('Validation Message');
       expect(validationMessage).toBeInTheDocument();
       expect(validationMessage).toHaveAttribute('lang', 'en');
     });
@@ -206,17 +205,17 @@ describe('asInput()', () => {
         isValid: false,
         validationMessage: 'Nope!',
       };
-      const { rerender, getByText, queryByText } = render(<InputTestComponent {...props} />);
-      const errorElement = getByText('Nope!');
+      const { rerender } = render(<InputTestComponent {...props} />);
+      const errorElement = screen.getByText('Nope!');
       expect(errorElement).toBeInTheDocument();
 
       props.validationMessage = 'New Message';
       rerender(<InputTestComponent {...props} />);
-      expect(getByText('New Message')).toBeInTheDocument();
+      expect(screen.getByText('New Message')).toBeInTheDocument();
 
       props.isValid = true;
       rerender(<InputTestComponent {...props} />);
-      expect(queryByText('New Message')).not.toBeInTheDocument();
+      expect(screen.queryByText('New Message')).not.toBeInTheDocument();
     });
 
     it('uses isValid to display validation message and danger icon with danger theme', () => {
@@ -227,11 +226,11 @@ describe('asInput()', () => {
         validationMessage: 'Nope!',
         dangerIconDescription: 'Error ',
       };
-      const { rerender, getByText, getByTestId } = render(<InputTestComponent {...props} />);
-      const validationMessage = getByTestId('validation-message');
+      const { rerender } = render(<InputTestComponent {...props} />);
+      const validationMessage = screen.getByTestId('validation-message');
       expect(validationMessage.textContent).toEqual('Error Nope!');
 
-      const dangerIcon = getByText('Error');
+      const dangerIcon = screen.getByText('Error');
       expect(dangerIcon).toBeInTheDocument();
 
       props.validationMessage = 'New Message';
@@ -256,8 +255,8 @@ describe('asInput()', () => {
         ...baseProps,
         validator: spy,
       };
-      const { getByText } = render(<InputTestComponent {...props} />);
-      const input = getByText(baseProps.label).nextSibling;
+      render(<InputTestComponent {...props} />);
+      const input = screen.getByText(baseProps.label).nextSibling;
 
       fireEvent.blur(input);
 
@@ -284,20 +283,20 @@ describe('asInput()', () => {
       });
 
       it('without theme', () => {
-        const { getByText } = render(<InputTestComponent {...props} />);
-        const input = getByText(baseProps.label).nextSibling;
+        render(<InputTestComponent {...props} />);
+        const input = screen.getByText(baseProps.label).nextSibling;
 
         fireEvent.blur(input);
 
         expect(spy).toHaveBeenCalledTimes(1);
 
-        const err = getByText(validationResult.validationMessage);
+        const err = screen.getByText(validationResult.validationMessage);
         expect(err).toBeInTheDocument();
       });
 
       it('with danger theme', () => {
-        const { getByText, getByTestId, rerender } = render(<InputTestComponent {...props} />);
-        const input = getByText(baseProps.label).nextSibling;
+        const { rerender } = render(<InputTestComponent {...props} />);
+        const input = screen.getByText(baseProps.label).nextSibling;
         fireEvent.blur(input);
         expect(spy).toHaveBeenCalledTimes(1);
 
@@ -308,7 +307,7 @@ describe('asInput()', () => {
         validationResult.dangerIconDescription = 'Error';
         rerender(<InputTestComponent {...updatedProps} />);
 
-        const err = getByTestId('validation-message');
+        const err = screen.getByTestId('validation-message');
 
         expect(err).toBeInTheDocument();
         expect(err.textContent).toEqual(validationResult.validationMessage);
@@ -321,15 +320,15 @@ describe('asInput()', () => {
       ...baseProps,
       inline: true,
     };
-    const { getByText } = render(<InputTestComponent {...props} />);
-    const inputComponent = getByText(props.label).parentElement;
+    render(<InputTestComponent {...props} />);
+    const inputComponent = screen.getByText(props.label).parentElement;
     expect(inputComponent.classList.contains('form-inline')).toEqual(true);
   });
 
   describe('input group addons', () => {
     it('does not create an input-group div if no input group addons are given', () => {
-      const { queryByTestId } = render(<InputTestComponent {...baseProps} />);
-      const inputGroup = queryByTestId('input-group-id');
+      render(<InputTestComponent {...baseProps} />);
+      const inputGroup = screen.queryByTestId('input-group');
       expect(inputGroup).not.toBeInTheDocument();
     });
 
@@ -342,9 +341,9 @@ describe('asInput()', () => {
           </div>
         ),
       };
-      const { getByTestId, getByText } = render(<InputTestComponent {...props} />);
-      const inputGroup = getByTestId('input-group-id');
-      const inputGroupText = getByText('$');
+      render(<InputTestComponent {...props} />);
+      const inputGroup = screen.getByTestId('input-group');
+      const inputGroupText = screen.getByText('$');
 
       expect(inputGroup).toBeInTheDocument();
       expect(inputGroupText).toBeInTheDocument();
@@ -359,8 +358,8 @@ describe('asInput()', () => {
           </div>
         ),
       };
-      const { getByText } = render(<InputTestComponent {...props} />);
-      const inputGroupText = getByText('.00');
+      render(<InputTestComponent {...props} />);
+      const inputGroupText = screen.getByText('.00');
 
       expect(inputGroupText).toBeInTheDocument();
     });
@@ -379,9 +378,9 @@ describe('asInput()', () => {
           </div>
         ),
       };
-      const { getByText } = render(<InputTestComponent {...props} />);
-      const inputGroupTextAppend = getByText('.00');
-      const inputGroupTextPrepend = getByText('$');
+      render(<InputTestComponent {...props} />);
+      const inputGroupTextAppend = screen.getByText('.00');
+      const inputGroupTextPrepend = screen.getByText('$');
 
       expect(inputGroupTextAppend).toBeInTheDocument();
       expect(inputGroupTextPrepend).toBeInTheDocument();
@@ -399,9 +398,9 @@ describe('asInput()', () => {
           </div>,
         ],
       };
-      const { getByText } = render(<InputTestComponent {...props} />);
-      const inputGroupText = getByText('.00');
-      const button = getByText('Go');
+      render(<InputTestComponent {...props} />);
+      const inputGroupText = screen.getByText('.00');
+      const button = screen.getByText('Go');
 
       expect(inputGroupText).toBeInTheDocument();
       expect(button).toBeInTheDocument();
@@ -419,9 +418,9 @@ describe('asInput()', () => {
           </div>,
         ],
       };
-      const { getByText } = render(<InputTestComponent {...props} />);
-      const inputGroupText1 = getByText('$');
-      const inputGroupText2 = getByText('0.');
+      render(<InputTestComponent {...props} />);
+      const inputGroupText1 = screen.getByText('$');
+      const inputGroupText2 = screen.getByText('0.');
 
       expect(inputGroupText1).toBeInTheDocument();
       expect(inputGroupText2).toBeInTheDocument();

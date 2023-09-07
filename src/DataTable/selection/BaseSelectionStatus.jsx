@@ -63,7 +63,6 @@ function BaseSelectionStatus({
       </span>
       {!isAllRowsSelected && !hasMaxSelectedRows && (
         <Button
-          className={SELECT_ALL_TEST_ID}
           data-testid={SELECT_ALL_TEST_ID}
           variant="link"
           size="inline"
@@ -81,7 +80,6 @@ function BaseSelectionStatus({
       )}
       {numSelectedRows > 0 && (
         <Button
-          className={CLEAR_SELECTION_TEST_ID}
           data-testid={CLEAR_SELECTION_TEST_ID}
           variant="link"
           size="inline"

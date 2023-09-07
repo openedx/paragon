@@ -1,7 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ModalPopup from './ModalPopup';
-import '@testing-library/jest-dom/extend-expect';
 
 /* eslint-disable react/prop-types */
 jest.mock('./Portal', () => function PortalMock(props) {
@@ -56,7 +55,7 @@ describe('<ModalPopup />', () => {
     const closeFn = jest.fn();
 
     it('renders the dialog', () => {
-      const { getByRole } = render(
+      render(
         <ModalPopup
           positionRef={mockPositionRef}
           isOpen={isOpen}
@@ -65,12 +64,12 @@ describe('<ModalPopup />', () => {
           <Dialog />
         </ModalPopup>,
       );
-      const dialog = getByRole('dialog', { name: 'A dialog' });
+      const dialog = screen.getByRole('dialog', { name: 'A dialog' });
       expect(dialog).toBeInTheDocument();
     });
 
     it('renders a focus-on component with appropriate props', () => {
-      const { getByTestId } = render(
+      render(
         <ModalPopup
           positionRef={mockPositionRef}
           isOpen={isOpen}
@@ -79,7 +78,7 @@ describe('<ModalPopup />', () => {
           <Dialog />
         </ModalPopup>,
       );
-      const focusOn = getByTestId('focus-on');
+      const focusOn = screen.getByTestId('focus-on');
       expect(focusOn).toBeInTheDocument();
       expect(focusOn).toHaveAttribute('scrolllock', 'false');
       expect(focusOn).toHaveAttribute('enabled', 'true');
@@ -87,69 +86,69 @@ describe('<ModalPopup />', () => {
   });
 
   it('when isOpen is false the dialog is not rendered', () => {
-    const { queryByRole } = render(
+    render(
       <ModalPopup positionRef={mockPositionRef} isOpen={false} onClose={jest.fn()}>
         <Dialog />
       </ModalPopup>,
     );
-    const dialog = queryByRole('dialog', { name: 'A dialog' });
+    const dialog = screen.queryByRole('dialog', { name: 'A dialog' });
     expect(dialog).not.toBeInTheDocument();
   });
 
   describe('withPortal', () => {
     it('renders no portal by default', () => {
-      const { queryByTestId } = render(
+      render(
         <ModalPopup positionRef={mockPositionRef} isOpen onClose={jest.fn()}>
           <Dialog />
         </ModalPopup>,
       );
-      const portal = queryByTestId('portal');
+      const portal = screen.queryByTestId('portal');
       expect(portal).toBeNull();
     });
 
     it('renders with a portal if withPortal is true', () => {
-      const { getByTestId } = render(
+      render(
         <ModalPopup withPortal positionRef={mockPositionRef} isOpen onClose={jest.fn()}>
           <Dialog />
         </ModalPopup>,
       );
-      const portal = getByTestId('portal');
+      const portal = screen.getByTestId('portal');
       expect(portal).not.toBeNull();
     });
   });
 
   describe('withArrow', () => {
-    const popupArrowModalClass = '.pgn__modal-popup__arrow';
+    const popupArrowModal = 'modal-popup-arrow';
 
     arrowPlacements.forEach((side) => {
       it(`renders with placement ${side}`, () => {
-        const { container } = render(
+        render(
           <ModalPopup positionRef={mockPositionRef} hasArrow placement={side} isOpen onClose={jest.fn()}>
             <Dialog />
           </ModalPopup>,
         );
-        const arrow = container.querySelector(`${popupArrowModalClass}-${side}`);
+        const arrow = screen.getByTestId(popupArrowModal);
         expect(arrow).not.toBeNull();
       });
     });
 
     it('renders without arrow', () => {
-      const { container } = render(
+      render(
         <ModalPopup isOpen onClose={jest.fn()}>
           <Dialog />
         </ModalPopup>,
       );
-      const arrow = container.querySelector(popupArrowModalClass);
+      const arrow = screen.queryByTestId(popupArrowModal);
       expect(arrow).toBeNull();
     });
 
     it('renders with arrow', () => {
-      const { container } = render(
+      render(
         <ModalPopup positionRef={mockPositionRef} hasArrow isOpen onClose={jest.fn()}>
           <Dialog />
         </ModalPopup>,
       );
-      const arrow = container.querySelector(popupArrowModalClass);
+      const arrow = screen.getByTestId(popupArrowModal);
       expect(arrow).toBeInTheDocument();
     });
   });

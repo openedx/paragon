@@ -1,10 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom/extend-expect';
 
 import { InfoOutline } from '../../icons';
-import IconButton from './index';
+import IconButton from '.';
 import Icon from '../Icon';
 
 describe('<IconButton />', () => {

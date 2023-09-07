@@ -1,11 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { Close } from '../../icons';
-import Chip from './index';
+import Chip from '.';
 
 function TestChip(props) {
   return (
@@ -45,37 +44,37 @@ describe('<Chip />', () => {
 
   describe('correct rendering', () => {
     it('renders with correct class when variant is added', () => {
-      const { getByTestId } = render(<TestChip variant="dark" data-testid="chip" />);
-      const chip = getByTestId('chip');
+      render(<TestChip variant="dark" data-testid="chip" />);
+      const chip = screen.getByTestId('chip');
       expect(chip).toHaveClass('pgn__chip pgn__chip-dark');
     });
     it('renders with active class when disabled prop is added', () => {
-      const { getByTestId } = render(<TestChip disabled data-testid="chip" />);
-      const chip = getByTestId('chip');
-      expect(chip).toHaveClass('pgn__chip disabled');
+      render(<TestChip disabled data-testid="chip" />);
+      const chip = screen.getByTestId('chip');
+      expect(chip).toHaveClass('disabled');
     });
     it('renders with the client\'s className', () => {
       const className = 'testClassName';
-      const { getByTestId } = render(<TestChip className={className} data-testid="chip" />);
-      const chip = getByTestId('chip');
+      render(<TestChip className={className} data-testid="chip" />);
+      const chip = screen.getByTestId('chip');
       expect(chip).toHaveClass(className);
     });
     it('onIconAfterClick is triggered', async () => {
       const func = jest.fn();
-      const { getByTestId } = render(
+      render(
         <TestChip iconAfter={Close} onIconAfterClick={func} />,
       );
-      const iconAfter = getByTestId('icon-after');
-      userEvent.click(iconAfter);
+      const iconAfter = screen.getByTestId('icon-after');
+      await userEvent.click(iconAfter);
       expect(func).toHaveBeenCalled();
     });
     it('onIconAfterKeyDown is triggered', async () => {
       const func = jest.fn();
-      const { getByTestId } = render(
+      render(
         <TestChip iconAfter={Close} onIconAfterClick={func} />,
       );
-      const iconAfter = getByTestId('icon-after');
-      userEvent.type(iconAfter, '{enter}');
+      const iconAfter = screen.getByTestId('icon-after');
+      await userEvent.type(iconAfter, '{enter}');
       expect(func).toHaveBeenCalled();
     });
   });

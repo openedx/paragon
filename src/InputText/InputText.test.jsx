@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
-import InputText from './index';
+import InputText from '.';
 
 describe('<InputText />', () => {
   const label = 'label';

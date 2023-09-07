@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import {
+  render, fireEvent, waitFor, screen,
+} from '@testing-library/react';
 
 import {
   callAllHandlers,
@@ -65,18 +66,18 @@ function IdListExample({ prefix, initialList }) {
 describe('useIdList', () => {
   describe('with default', () => {
     it('starts with the default id', () => {
-      const { getByTestId } = render(
+      render(
         <IdListExample prefix="prefix" initialList={['id-0']} />,
       );
-      const idList = getByTestId('id-list');
+      const idList = screen.getByTestId('id-list');
       const renderedIds = idList.textContent.split(' ');
       expect(renderedIds[0]).toBe('id-0');
     });
     it('generates a registered id', () => {
-      const { getByTestId } = render(
+      render(
         <IdListExample prefix="prefix" initialList={['id-0']} />,
       );
-      const idList = getByTestId('id-list');
+      const idList = screen.getByTestId('id-list');
       const renderedIds = idList.textContent.split(' ');
       expect(renderedIds[1]).toBe('prefix-2');
     });
@@ -124,15 +125,15 @@ function HasValueExample({ defaultValue, value }) {
 describe('useHasValue', () => {
   describe('uncontrolled input with no default', () => {
     it('starts with the default id', () => {
-      const { queryByText } = render(<HasValueExample />);
-      expect(queryByText('Has value')).toBe(null);
+      render(<HasValueExample />);
+      expect(screen.queryByText('Has value')).toBe(null);
     });
     it('has value when a target blur event has a value', async () => {
-      const { getByTestId } = render(<HasValueExample />);
-      const input = getByTestId('input');
+      render(<HasValueExample />);
+      const input = screen.getByTestId('input');
       fireEvent.blur(input, { target: { value: 'hello' } });
       await waitFor(() => {
-        expect(getByTestId('has-value')).toBeInTheDocument();
+        expect(screen.getByTestId('has-value')).toBeInTheDocument();
       });
     });
   });
@@ -140,34 +141,37 @@ describe('useHasValue', () => {
 
 describe('uncontrolled input with a default value', () => {
   it('starts with the default id', () => {
-    const { getByTestId } = render(
+    render(
       <HasValueExample defaultValue="My value" />,
     );
-    expect(getByTestId('has-value')).toBeInTheDocument();
+    expect(screen.getByTestId('has-value')).toBeInTheDocument();
   });
   it('has no value when a target blur event has no value', async () => {
-    const { getByTestId, queryByTestId } = render(
+    render(
       <HasValueExample defaultValue="My value" />,
     );
-    const input = getByTestId('input');
+    const input = screen.getByTestId('input');
     fireEvent.blur(input, { target: { value: '' } });
     await waitFor(() => {
-      expect(queryByTestId('has-value')).toBe(null);
+      expect(screen.queryByTestId('has-value')).toBe(null);
     });
   });
 });
 
 describe('controlled value', () => {
   it('starts with the default id', () => {
-    const { getByTestId } = render(<HasValueExample value="My value" />);
-    expect(getByTestId('has-value')).toBeInTheDocument();
+    render(<HasValueExample value="My value" />);
+    expect(screen.getByTestId('has-value')).toBeInTheDocument();
   });
-  it('continues to have a value despite a blur event saying there is not one but props say there is', async () => {
-    const { getByTestId } = render(<HasValueExample value="My value" />);
-    const input = getByTestId('input');
-    fireEvent.blur(input, { target: { value: '' } });
-    await waitFor(() => {
-      expect(getByTestId('has-value')).toBeInTheDocument();
-    });
-  });
+  it(
+    'continues to have a value despite a blur event saying there is not one but props say there is',
+    async () => {
+      render(<HasValueExample value="My value" />);
+      const input = screen.getByTestId('input');
+      fireEvent.blur(input, { target: { value: '' } });
+      await waitFor(() => {
+        expect(screen.getByTestId('has-value')).toBeInTheDocument();
+      });
+    },
+  );
 });

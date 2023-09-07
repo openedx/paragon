@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Layout from './index';
+import Layout from '.';
 
 function TestLayout(props) {
   return (

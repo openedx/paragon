@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
@@ -10,6 +9,8 @@ import Menu from '.';
 import Hyperlink from '../Hyperlink';
 import Button from '../Button';
 import Form from '../Form';
+
+const MENU_ITEM_TEXT = 'Cant Touch This';
 
 describe('Menu Item renders correctly', () => {
   it('renders as just a div with empty usage', () => {
@@ -36,11 +37,18 @@ describe('Menu Item renders correctly', () => {
     const clickFn = jest.fn();
     render(
       <Menu>
-        <MenuItem as={Button} iconBefore={Add} onClick={clickFn} disabled>Cant Touch This</MenuItem>
+        <MenuItem
+          as={Button}
+          iconBefore={Add}
+          onClick={clickFn}
+          disabled
+        >
+          {MENU_ITEM_TEXT}
+        </MenuItem>
       </Menu>,
     );
 
-    const button = screen.getByText('Cant Touch This');
+    const button = screen.getByText(MENU_ITEM_TEXT);
     fireEvent.click(button);
     expect(clickFn).toHaveBeenCalledTimes(0);
   });
@@ -51,7 +59,7 @@ describe('Keyboard Interactions', () => {
     render(
       <Menu>
         <MenuItem autofocus>Default</MenuItem>
-        <MenuItem as={Button} iconBefore={Add}>Cant Touch This</MenuItem>
+        <MenuItem as={Button} iconBefore={Add}>{MENU_ITEM_TEXT}</MenuItem>
         <MenuItem iconBefore={Add}>Icon Before</MenuItem>
       </Menu>,
     );
@@ -66,7 +74,7 @@ describe('Keyboard Interactions', () => {
 
   it('should focus the next item after ArrowDown keyDown', () => {
     const defaultItem = screen.getByText('Default');
-    const cantTouchThisItem = screen.getByText('Cant Touch This').parentElement;
+    const cantTouchThisItem = screen.getByText(MENU_ITEM_TEXT).parentElement;
 
     userEvent.type(defaultItem, '{arrowdown}');
 
@@ -75,7 +83,7 @@ describe('Keyboard Interactions', () => {
 
   it('should focus the next item after Tab keyDown', () => {
     const defaultItem = screen.getByText('Default').parentElement;
-    const cantTouchThisItem = screen.getByText('Cant Touch This').parentElement;
+    const cantTouchThisItem = screen.getByText(MENU_ITEM_TEXT).parentElement;
     defaultItem.focus();
     userEvent.tab();
 

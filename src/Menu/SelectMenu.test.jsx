@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 
 import { Add, Check } from '../../icons';
@@ -62,27 +61,26 @@ describe('correct rendering', () => {
 });
 
 describe('mouse behavior & keyboard behavior', () => {
-  it('opens on trigger click', () => {
+  it('opens on trigger click', async () => {
     const { getByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     expect(menuTrigger).toHaveAttribute('aria-expanded', 'true');
   });
 
-  it('should focus on the first item after opening', () => {
+  it('should focus on the first item after opening', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     expect(menuTrigger).toHaveAttribute('aria-expanded', 'true');
     const menuItem = getAllByRole('link')[0];
-    userEvent.tab();
     expect(menuItem).toHaveFocus();
   });
 
-  it('returns focus to trigger on close', () => {
+  it('returns focus to trigger on close', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     const menuItems = getAllByRole('link');
     fireEvent.click(menuItems[7]);
     expect(menuTrigger).toHaveFocus();
@@ -90,86 +88,85 @@ describe('mouse behavior & keyboard behavior', () => {
 });
 
 describe('keyboard Interactions', () => {
-  it('should focus on the first item after opening', () => {
+  it('should focus on the first item after opening', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     const menuItems = getAllByRole('link');
-    userEvent.tab();
     expect(menuItems[0]).toHaveFocus();
   });
 
-  it('should focus the next item after ArrowDown keyDown', () => {
+  it('should focus the next item after ArrowDown keyDown', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     const menuItems = getAllByRole('link');
-    userEvent.keyboard('[arrowdown]');
+    await userEvent.keyboard('[arrowdown]');
     expect(menuItems[1]).toHaveFocus();
   });
 
-  it('should focus the next item after ArrowRight keyDown', () => {
+  it('should focus the next item after ArrowRight keyDown', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     const menuItems = getAllByRole('link');
-    userEvent.keyboard('[arrowright]');
+    await userEvent.keyboard('[arrowright]');
     expect(menuItems[1]).toHaveFocus();
   });
 
-  it('should focus the previous item after ArrowUp keyDown', () => {
+  it('should focus the previous item after ArrowUp keyDown', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     const menuItems = getAllByRole('link');
     menuItems[1].focus();
-    userEvent.keyboard('[arrowup]');
+    await userEvent.keyboard('[arrowup]');
     expect(menuItems[0]).toHaveFocus();
   });
 
-  it('should focus the previous item after ArrowLeft keyDown', () => {
+  it('should focus the previous item after ArrowLeft keyDown', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     const menuItems = getAllByRole('link');
     menuItems[1].focus();
-    userEvent.keyboard('[arrowleft]');
+    await userEvent.keyboard('[arrowleft]');
     expect(menuItems[0]).toHaveFocus();
   });
 
-  it('edge behavior should loop start to end', () => {
+  it('edge behavior should loop start to end', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     const menuItems = getAllByRole('link');
-    userEvent.keyboard('[arrowup]');
+    await userEvent.keyboard('[arrowup]');
     expect(menuItems[menuItems.length - 1]).toHaveFocus();
   });
-  it('edge behavior should loop end to start', () => {
+  it('edge behavior should loop end to start', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     const menuItems = getAllByRole('link');
-    userEvent.keyboard('[arrowup]');
-    userEvent.keyboard('[arrowdown]');
+    await userEvent.keyboard('[arrowup]');
+    await userEvent.keyboard('[arrowdown]');
     expect(menuItems[0]).toHaveFocus();
   });
 
-  it('should move focus to the last item when pressing the End key', () => {
+  it('should move focus to the last item when pressing the End key', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     const menuItems = getAllByRole('link');
-    userEvent.keyboard('[end]');
+    await userEvent.keyboard('[end]');
     expect(menuItems[menuItems.length - 1]).toHaveFocus();
   });
-  it('should move focus to the first item when pressing the Home key', () => {
+  it('should move focus to the first item when pressing the Home key', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { name: 'Select...', expanded: false });
-    userEvent.click(menuTrigger);
+    await userEvent.click(menuTrigger);
     const menuItems = getAllByRole('link');
     menuItems[menuItems.length - 1].focus();
-    userEvent.keyboard('[home]');
+    await userEvent.keyboard('[home]');
     expect(menuItems[0]).toHaveFocus();
   });
 });

@@ -1,6 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
 import FilterStatus from '../FilterStatus';
@@ -37,27 +36,27 @@ function FilterStatusWrapper({ value, props }) {
 
 describe('<FilterStatus />', () => {
   it('passes props to the button', () => {
-    const { getByText } = render(<FilterStatusWrapper value={instance} props={filterProps} />);
-    const button = getByText(filterProps.clearFiltersText);
+    render(<FilterStatusWrapper value={instance} props={filterProps} />);
+    const button = screen.getByText(filterProps.clearFiltersText);
     expect(button).toHaveClass(filterProps.buttonClassName);
   });
   it('clears the selection on click', () => {
     const clearSpy = jest.fn();
-    const { getByText } = render(
+    render(
       <FilterStatusWrapper value={{ ...instance, setAllFilters: clearSpy }} props={filterProps} />,
     );
-    const button = getByText(filterProps.clearFiltersText);
+    const button = screen.getByText(filterProps.clearFiltersText);
     fireEvent.click(button);
     expect(clearSpy).toHaveBeenCalledTimes(1);
     expect(clearSpy).toHaveBeenCalledWith([]);
   });
   it('displays the current filter names', () => {
-    const { getByText } = render(<FilterStatusWrapper value={instance} props={filterProps} />);
-    expect(getByText(`Filtered by ${filterNames.join(', ')}`)).toBeInTheDocument();
+    render(<FilterStatusWrapper value={instance} props={filterProps} />);
+    expect(screen.getByText(`Filtered by ${filterNames.join(', ')}`)).toBeInTheDocument();
   });
   it('sets class names on the parent', () => {
     const { container } = render(<FilterStatusWrapper value={instance} props={filterProps} />);
-    const statusDiv = container.querySelector('div');
+    const statusDiv = container.firstChild;
     expect(statusDiv).toHaveClass(filterProps.className);
   });
   it('returns null if setAllFilters is not present (table is not filterable)', () => {
@@ -65,7 +64,7 @@ describe('<FilterStatus />', () => {
     expect(container.firstChild).toBeNull();
   });
   it('hides filter text', () => {
-    const { queryByText } = render(<FilterStatusWrapper value={instance} props={filterPropsNoFiltered} />);
-    expect(queryByText(filterProps.clearFiltersText)).toBeNull();
+    render(<FilterStatusWrapper value={instance} props={filterPropsNoFiltered} />);
+    expect(screen.queryByText(filterProps.clearFiltersText)).toBeNull();
   });
 });

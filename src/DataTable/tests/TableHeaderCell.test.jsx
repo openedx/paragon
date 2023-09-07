@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
 
 import TableHeaderCell from '../TableHeaderCell';
 
@@ -22,13 +21,13 @@ function FakeTable({ children }) {
 
 describe('<TableHeaderCell />', () => {
   describe('unsorted', () => {
-    const { getByTestId } = render(
+    render(
       <FakeTable>
         <TableHeaderCell {...props} />
       </FakeTable>,
     );
-    const cell = getByTestId('th-id');
-    const innerCell = getByTestId('th-id').firstChild;
+    const cell = screen.getByRole('columnheader');
+    const innerCell = cell.firstChild;
 
     it('renders a table header cell', () => {
       expect(cell).toBeInTheDocument();
@@ -45,20 +44,20 @@ describe('<TableHeaderCell />', () => {
 
   describe('with sorting', () => {
     it('renders a sortable indicator if sorting is available', () => {
-      const { getByTestId } = render(<TableHeaderCell {...props} canSort />);
-      const sortIndicator = getByTestId('ArrowDropUpDown');
+      render(<TableHeaderCell {...props} canSort />);
+      const sortIndicator = screen.getByTestId('arrow-drop-up-down');
       expect(sortIndicator).toBeInTheDocument();
     });
 
     it('renders a sorted ascending indicator when sorted ascending', () => {
-      const { getByTestId } = render(<TableHeaderCell {...props} canSort isSorted />);
-      const sortIndicator = getByTestId('ArrowDropUp');
+      render(<TableHeaderCell {...props} canSort isSorted />);
+      const sortIndicator = screen.getByTestId('arrow-drop-up');
       expect(sortIndicator).toBeInTheDocument();
     });
 
     it('renders a sorted descending indicator when sorted descending', () => {
-      const { getByTestId } = render(<TableHeaderCell {...props} canSort isSorted isSortedDesc />);
-      const sortIndicator = getByTestId('ArrowDropDown');
+      render(<TableHeaderCell {...props} canSort isSorted isSortedDesc />);
+      const sortIndicator = screen.getByTestId('arrow-drop-down');
       expect(sortIndicator).toBeInTheDocument();
     });
 

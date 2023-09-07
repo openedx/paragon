@@ -1,8 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
-import Hyperlink from './index';
+import Hyperlink from '.';
 
 const content = 'content';
 const destination = 'destination';
@@ -39,7 +38,7 @@ describe('correct rendering', () => {
   it('renders external Hyperlink', () => {
     const { getByRole, getByTestId } = render(<Hyperlink {...externalLinkProps} />);
     const wrapper = getByRole('link');
-    const icon = getByTestId('icon-id');
+    const icon = getByTestId('hyperlink-icon');
     const iconSvg = icon.querySelector('svg');
 
     expect(wrapper).toBeInTheDocument();

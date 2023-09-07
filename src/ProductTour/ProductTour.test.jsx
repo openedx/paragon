@@ -1,9 +1,8 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import * as popper from '@popperjs/core';
 
-import ProductTour from './index';
+import ProductTour from '.';
 
 const popperMock = jest.spyOn(popper, 'createPopper');
 

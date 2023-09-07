@@ -1,11 +1,8 @@
 import React, { useContext } from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
-// import { act } from 'react-dom/test-utils';
 import * as reactTable from 'react-table';
 import { IntlProvider } from 'react-intl';
-import '@testing-library/jest-dom';
 
 import DataTable from '..';
 import DataTableContext from '../DataTableContext';
@@ -137,33 +134,33 @@ describe('<DataTable />', () => {
 
   it('displays a control bar', () => {
     render(<DataTableWrapper {...props} />);
-    expect(screen.getByTestId('control-bar-id')).toBeInTheDocument();
+    expect(screen.getByTestId('table-control-bar')).toBeInTheDocument();
     expect(screen.getAllByText('Showing 7 of 7.')[0]).toBeInTheDocument();
   });
 
   it('displays a table', () => {
     render(<DataTableWrapper {...props} />);
-    expect(screen.getAllByRole('columnheader')).toHaveLength(3); // Assuming 3 columns
-    expect(screen.getAllByRole('row')).toHaveLength(8); // Assuming 8 rows
+    expect(screen.getAllByRole('columnheader')).toHaveLength(props.columns.length);
+    expect(screen.getAllByRole('row')).toHaveLength(props.data.length + 1); // (need + 1 to include header row)
   });
 
   it('displays a table footer', () => {
     render(<DataTableWrapper {...props} />);
-    expect(screen.getByTestId('table-footer-id')).toBeInTheDocument();
+    expect(screen.getByTestId('table-footer')).toBeInTheDocument();
   });
 
   it('adds a column when table is selectable', () => {
     render(<DataTableWrapper {...props} isSelectable />);
-    expect(screen.getAllByRole('columnheader')).toHaveLength(4); // Assuming 4 columns (1 extra for selection)
+    expect(screen.getAllByRole('columnheader')).toHaveLength(props.columns.length + 1); // (need + 1 extra to include selection)
   });
 
   it('adds additional columns', () => {
     render(<DataTableWrapper {...props} additionalColumns={additionalColumns} />);
-    expect(screen.getAllByRole('columnheader')).toHaveLength(5); // Assuming 5 columns (original + 2 additional)
+    expect(screen.getAllByRole('columnheader')).toHaveLength(props.columns.length + 2); // (original + 2 additional)
     expect(screen.getByText('Action')).toBeInTheDocument();
     expect(screen.getByText('More')).toBeInTheDocument();
   });
-  test('calls useTable with the data and columns', () => {
+  it('calls useTable with the data and columns', () => {
     const spy = jest.spyOn(reactTable, 'useTable');
     render(<DataTableWrapper {...props} />);
     expect(spy).toHaveBeenCalledTimes(1);
@@ -173,7 +170,7 @@ describe('<DataTable />', () => {
     expect(spy.mock.calls[0][0].initialState).toEqual({});
     expect(spy.mock.calls[0]).toHaveLength(2);
   });
-  test.each([
+  it.each([
     [{}, { manualFilters: false, manualPagination: false, manualSortBy: false }],
     [{ manualFilters: true, pageCount: 1 }, { manualFilters: true, manualPagination: false, manualSortBy: false }],
     [{ manualPagination: true, pageCount: 1 }, { manualFilters: false, manualPagination: true, manualSortBy: false }],
@@ -187,29 +184,29 @@ describe('<DataTable />', () => {
     expect(spy.mock.calls[0][0].manualPagination).toEqual(expected.manualPagination);
     expect(spy.mock.calls[0][0].manualSortBy).toEqual(expected.manualSortBy);
   });
-  test('passes the initial state to useTable', () => {
+  it('passes the initial state to useTable', () => {
     const spy = jest.spyOn(reactTable, 'useTable');
     const initialState = { foo: 'bar' };
     render(<DataTableWrapper {...props} initialState={initialState} />);
     expect(spy.mock.calls[0][0].initialState).toEqual(initialState);
   });
-  test('displays loading state', () => {
-    const { container } = render(<DataTableWrapper {...props} isLoading />);
-    const tableContainer = container.querySelector('.pgn__data-table-container.is-loading');
+  it('displays loading state', () => {
+    render(<DataTableWrapper {...props} isLoading />);
+    const tableContainer = screen.getByTestId('data-table-container');
+    const spinner = screen.getByTestId('data-table-spinner');
     expect(tableContainer).toBeTruthy();
 
-    const spinner = container.querySelector('.pgn__data-table-spinner');
     expect(spinner).toBeTruthy();
   });
 
   describe('[legacy] controlled table selections', () => {
-    test('passes initial controlledTableSelections to context', async () => {
-      const { getByTestId } = render(
+    it('passes initial controlledTableSelections to context', async () => {
+      render(
         <DataTableWrapper {...props}>
           <DataTableContextProviderChild />
         </DataTableWrapper>,
       );
-      const contextDiv = getByTestId('context-value');
+      const contextDiv = screen.getByTestId('context-value');
       expect(contextDiv).toBeInTheDocument();
 
       const contextValue = JSON.parse(contextDiv.getAttribute('data-contextvalue'));
@@ -224,7 +221,7 @@ describe('<DataTable />', () => {
     beforeEach(() => {
       jest.clearAllMocks();
     });
-    it('calls onSelectedRowsChanged when selected rows are updated', () => {
+    it('calls onSelectedRowsChanged when selected rows are updated', async () => {
       const mockOnSelectedRowsChange = jest.fn();
       const propsWithSelection = {
         ...props,
@@ -233,7 +230,7 @@ describe('<DataTable />', () => {
       };
       render(<DataTableWrapper {...propsWithSelection} />);
       // select first row
-      userEvent.click(screen.getAllByTestId('datatable-select-column-checkbox-cell')[0]);
+      await userEvent.click(screen.getAllByTestId('datatable-select-column-checkbox-cell')[0]);
       expect(mockOnSelectedRowsChange).toHaveBeenCalledTimes(1);
       expect(mockOnSelectedRowsChange).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -241,7 +238,7 @@ describe('<DataTable />', () => {
         }),
       );
       // select third row
-      userEvent.click(screen.getAllByTestId('datatable-select-column-checkbox-cell')[2]);
+      await userEvent.click(screen.getAllByTestId('datatable-select-column-checkbox-cell')[2]);
       expect(mockOnSelectedRowsChange).toHaveBeenCalledTimes(2);
       expect(mockOnSelectedRowsChange).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -250,7 +247,7 @@ describe('<DataTable />', () => {
         }),
       );
       // unselect third row
-      userEvent.click(screen.getAllByTestId('datatable-select-column-checkbox-cell')[2]);
+      await userEvent.click(screen.getAllByTestId('datatable-select-column-checkbox-cell')[2]);
       expect(mockOnSelectedRowsChange).toHaveBeenCalledTimes(3);
       expect(mockOnSelectedRowsChange).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -258,7 +255,7 @@ describe('<DataTable />', () => {
         }),
       );
     });
-    it('deselects all rows across all pages when `toggleAllRowsSelected(false)` is called', () => {
+    it('deselects all rows across all pages when `toggleAllRowsSelected(false)` is called', async () => {
       const mockOnSelectedRowsChange = jest.fn();
       const propsWithSelection = {
         ...props,
@@ -279,7 +276,7 @@ describe('<DataTable />', () => {
         },
       };
       render(<DataTableWrapper {...propsWithSelection} />);
-      userEvent.click(screen.getByText('Clear selection'));
+      await userEvent.click(screen.getByText('Clear selection'));
 
       expect(mockOnSelectedRowsChange).toHaveBeenCalledTimes(1);
       expect(mockOnSelectedRowsChange).toHaveBeenCalledWith({});

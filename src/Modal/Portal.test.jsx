@@ -2,22 +2,13 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Portal from './Portal';
 
-const getPortalRoot = () => {
-  const portalRoot = global.document.getElementById('paragon-portal-root');
-  if (!portalRoot) {
-    const newPortalRoot = document.createElement('div');
-    newPortalRoot.setAttribute('id', 'paragon-portal-root');
-    document.body.appendChild(newPortalRoot);
-    return newPortalRoot;
-  }
-  return portalRoot;
-};
+const getPortalRoot = () => global.document.getElementById('paragon-portal-root');
 
 describe('<Portal />', () => {
   beforeEach(() => {
     const portalRoot = getPortalRoot();
-    while (portalRoot.firstChild) {
-      portalRoot.removeChild(portalRoot.firstChild);
+    if (portalRoot) {
+      portalRoot.remove();
     }
   });
 

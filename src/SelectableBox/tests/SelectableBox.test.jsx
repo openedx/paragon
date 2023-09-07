@@ -29,10 +29,10 @@ describe('<SelectableBox />', () => {
     });
     it('correct render when type prop is changed', () => {
       const { rerender } = render(<SelectableRadio type="checkbox" />);
-      const checkboxControl = screen.getByText('SelectableRadio', { type: 'checkbox' });
+      const checkboxControl = screen.getByText(radioText);
       expect(checkboxControl).toBeTruthy();
       rerender(<SelectableRadio type="radio" />);
-      const radioControl = screen.getByText('SelectableRadio', { type: 'radio' });
+      const radioControl = screen.getByText(radioText);
       expect(radioControl).toBeTruthy();
     });
     it('renders with radio input type if neither checkbox nor radio is passed', () => {
@@ -40,61 +40,61 @@ describe('<SelectableBox />', () => {
       // with `wrongType` specified for `ForwardRef` expects one of the ['radio','flag'] parameters.
       // eslint-disable-next-line no-console
       const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
-      const { getByRole } = render(<SelectableRadio type="wrongType" />);
-      const selectableBox = getByRole('button');
+      render(<SelectableRadio type="wrongType" />);
+      const selectableBox = screen.getByRole('button');
       expect(selectableBox).toBeTruthy();
       consoleErrorSpy.mockRestore();
     });
     it('renders with checkbox input type', () => {
       render(<SelectableCheckbox />);
-      const selectableBox = screen.getByText('SelectableCheckbox', { type: checkboxType });
+      const selectableBox = screen.getByRole('button');
       expect(selectableBox).toBeTruthy();
     });
     it('renders with radio input type', () => {
       render(<SelectableCheckbox />);
-      const selectableBox = screen.getByText('SelectableCheckbox', { type: radioType });
+      const selectableBox = screen.getByRole('button');
       expect(selectableBox).toBeTruthy();
     });
     it('renders with correct children', () => {
-      const { getByText } = render(<SelectableRadio />);
-      const selectableBox = getByText(radioText);
+      render(<SelectableRadio />);
+      const selectableBox = screen.getByText(radioText);
       expect(selectableBox).toBeTruthy();
     });
     it('renders with correct class', () => {
       const className = 'myClass';
-      const { container } = render(<SelectableRadio className={className} />);
-      const selectableBox = container.querySelector('.pgn__selectable_box');
+      render(<SelectableRadio className={className} />);
+      const selectableBox = screen.getByRole('button');
       expect(selectableBox.classList.contains(className)).toEqual(true);
     });
     it('renders as active when checked is passed', () => {
-      const { container } = render(<SelectableRadio checked />);
-      const selectableBox = container.querySelector('.pgn__selectable_box');
-      const inputElement = container.querySelector('.pgn__selectable_box input');
+      render(<SelectableRadio checked />);
+      const selectableBox = screen.getByRole('button');
+      const inputElement = screen.getByRole('radio', { hidden: true });
       expect(selectableBox.classList.contains('pgn__selectable_box-active')).toEqual(true);
       expect(inputElement.checked).toEqual(true);
     });
     it('renders as invalid when isInvalid is passed', () => {
-      const { container } = render(<SelectableRadio isInvalid />);
-      const selectableBox = container.querySelector('.pgn__selectable_box');
+      render(<SelectableRadio isInvalid />);
+      const selectableBox = screen.getByRole('button');
       expect(selectableBox.classList.contains('pgn__selectable_box-invalid')).toEqual(true);
     });
     it('renders with on click event when onClick is passed', () => {
       const onClickSpy = jest.fn();
-      const { container } = render(<SelectableCheckbox onClick={onClickSpy} />);
-      const selectableBox = container.querySelector('.pgn__selectable_box');
+      render(<SelectableCheckbox onClick={onClickSpy} />);
+      const selectableBox = screen.getByRole('button');
       fireEvent.click(selectableBox);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
     it('renders with on key press event when onClick is passed', () => {
       const onClickSpy = jest.fn();
-      const { container } = render(<SelectableCheckbox onClick={onClickSpy} />);
-      const selectableBox = container.querySelector('.pgn__selectable_box');
+      render(<SelectableCheckbox onClick={onClickSpy} />);
+      const selectableBox = screen.getByRole('button');
       fireEvent.keyPress(selectableBox, { key: 'Enter', code: 'Enter', charCode: 13 });
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
     it('renders with hidden input when inputHidden is passed', () => {
-      const { container, rerender } = render(<SelectableCheckbox inputHidden />);
-      const inputElement = container.querySelector('.pgn__selectable_box input');
+      const { rerender } = render(<SelectableCheckbox inputHidden />);
+      const inputElement = screen.getByRole('checkbox', { hidden: true });
       expect(inputElement.getAttribute('hidden')).toEqual('');
       rerender(<SelectableCheckbox inputHidden={false} />);
       expect(inputElement.getAttribute('hidden')).toBeNull();
@@ -102,15 +102,15 @@ describe('<SelectableBox />', () => {
   });
   describe('correct interactions', () => {
     it('correct checkbox state change when checked is changed', () => {
-      const { container, rerender } = render(<SelectableCheckbox checked={false} />);
-      const checkbox = container.querySelector('.pgn__selectable_box');
+      const { rerender } = render(<SelectableCheckbox checked={false} />);
+      const checkbox = screen.getByRole('button');
       expect(checkbox.className).not.toContain('pgn__selectable_box-active');
       rerender(<SelectableCheckbox checked />);
       expect(checkbox.className).toContain('pgn__selectable_box-active');
     });
     it('correct radio state change when checked is changed', () => {
-      const { container, rerender } = render(<SelectableRadio checked={false} />);
-      const radio = container.querySelector('.pgn__selectable_box');
+      const { rerender } = render(<SelectableRadio checked={false} />);
+      const radio = screen.getByRole('button');
       expect(radio.className).toContain('pgn__selectable_box-active');
       rerender(<SelectableRadio checked />);
       expect(radio.className).toContain('pgn__selectable_box-active');

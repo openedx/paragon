@@ -2,9 +2,8 @@ import React from 'react';
 import {
   render, screen, fireEvent, within,
 } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
-import Table from './index';
+import Table from '.';
 
 const props = {
   columns: [
@@ -93,16 +92,17 @@ describe('<Table />', () => {
     it('with data in the same order as the columns', () => {
       render(<Table {...props} />);
 
-      const rows = screen.getAllByTestId('table-row');
+      const rows = screen.getAllByRole('row');
       rows.forEach((row, rowIndex) => {
-        const cells = within(row).getAllByTestId('table-cell');
+        const cells = within(row).queryAllByRole('cell');
         cells.forEach((cell, columnIndex) => {
           const cellContent = cell.textContent.trim();
           let parsed = Number(cellContent);
           if (Number.isNaN(parsed)) {
             parsed = cellContent;
           }
-          expect(parsed).toEqual(props.data[rowIndex][props.columns[columnIndex].key]);
+          // rowIndex - 1 due to the absence of td elements at the first circle
+          expect(parsed).toEqual(props.data[rowIndex - 1][props.columns[columnIndex].key]);
         });
       });
     });
@@ -143,14 +143,12 @@ describe('<Table />', () => {
   });
 
   describe('that is sortable and has mixed columns renders', () => {
-    let wrapper;
-
     beforeEach(() => {
-      wrapper = render(<Table {...sortableProps} />).container;
+      render(<Table {...sortableProps} />);
     });
 
     it('with sortable classname on correct headings', () => {
-      const tableHeadings = wrapper.querySelectorAll('th');
+      const tableHeadings = screen.queryAllByRole('columnheader');
 
       expect(tableHeadings).toHaveLength(sortableProps.columns.length);
       expect(tableHeadings[0]).toHaveClass('sortable');
@@ -159,7 +157,7 @@ describe('<Table />', () => {
     });
 
     it('with sr-only classname on correct headings', () => {
-      const srOnly = wrapper.querySelectorAll('.sr-only');
+      const srOnly = screen.queryAllByTestId('table-heading-sr');
 
       expect(srOnly).toHaveLength(sortableProps.columns.length - 1);
       expect(srOnly[0]).toHaveClass('sr-only');
@@ -167,21 +165,21 @@ describe('<Table />', () => {
     });
 
     it('with correct initial sr-only text on correct headings', () => {
-      const headings = wrapper.querySelectorAll('.sr-only');
+      const headings = screen.queryAllByTestId('table-heading-sr');
 
       expect(headings[0]).toHaveTextContent('sort descending');
       expect(headings[1]).toHaveTextContent('click to sort');
     });
 
     it('with correct column buttons', () => {
-      const buttons = wrapper.querySelectorAll('button');
+      const buttons = screen.queryAllByRole('button');
       expect(buttons).toHaveLength(2);
       expect(buttons[0].classList).toContain('btn-header');
       expect(buttons[1].classList).toContain('btn-header');
     });
 
     it('with correct initial sort icons', () => {
-      const buttons = wrapper.querySelectorAll('button');
+      const buttons = screen.queryAllByRole('button');
 
       expect(buttons).toHaveLength(sortableProps.columns.length - 2);
       expect(buttons[0].querySelector('.fa')).toHaveClass('fa-sort-desc');
@@ -190,15 +188,14 @@ describe('<Table />', () => {
   });
 
   describe('that is sortable and has mixed columns has behavior that', () => {
-    let wrapper;
     let buttons;
     let numSpy;
     let x2Spy;
 
     beforeEach(() => {
-      wrapper = render(<Table data-testid="sorted" {...sortableProps} />).container;
+      render(<Table data-testid="sorted" {...sortableProps} />);
 
-      buttons = wrapper.querySelectorAll('button');
+      buttons = screen.queryAllByRole('button');
       numSpy = jest.fn();
       x2Spy = jest.fn();
 
@@ -208,7 +205,7 @@ describe('<Table />', () => {
 
     it('changes sort icons appropriately on click', () => {
       fireEvent.click(buttons[0]);
-      buttons = wrapper.querySelectorAll('button');
+      buttons = screen.queryAllByRole('button');
 
       expect(buttons[0].querySelector('.fa')).toHaveClass('fa-sort-asc');
       expect(buttons[0].querySelector('.fa')).not.toHaveClass('fa-sort-desc');
@@ -219,7 +216,7 @@ describe('<Table />', () => {
       expect(buttons[1].querySelector('.fa')).not.toHaveClass('fa-sort-desc');
 
       fireEvent.click(buttons[1]);
-      buttons = wrapper.querySelectorAll('button');
+      buttons = screen.queryAllByRole('button');
 
       expect(buttons[0].querySelector('.fa')).toHaveClass('fa-sort');
       expect(buttons[0].querySelector('.fa')).not.toHaveClass('fa-sort-asc');
@@ -231,10 +228,10 @@ describe('<Table />', () => {
     });
 
     it('changes sr-only text appropriately on click', () => {
-      const headings = wrapper.querySelectorAll('.sr-only');
+      const headings = screen.queryAllByTestId('table-heading-sr');
 
       fireEvent.click(buttons[0]);
-      buttons = wrapper.querySelectorAll('button');
+      buttons = screen.queryAllByRole('button');
 
       expect(headings[0]).toHaveTextContent('sort ascending');
       expect(headings[1]).toHaveTextContent('click to sort');
@@ -250,7 +247,7 @@ describe('<Table />', () => {
       expect(x2Spy).toHaveBeenCalledTimes(0);
 
       fireEvent.click(buttons[0]);
-      buttons = wrapper.querySelectorAll('button');
+      buttons = screen.queryAllByRole('button');
 
       expect(numSpy).toHaveBeenCalledTimes(1);
       expect(x2Spy).toHaveBeenCalledTimes(0);
@@ -258,7 +255,7 @@ describe('<Table />', () => {
       expect(numSpy).toBeCalledWith('asc');
 
       fireEvent.click(buttons[0]);
-      buttons = wrapper.querySelectorAll('button');
+      buttons = screen.queryAllByRole('button');
 
       expect(numSpy).toHaveBeenCalledTimes(2);
       expect(x2Spy).toHaveBeenCalledTimes(0);
@@ -266,7 +263,7 @@ describe('<Table />', () => {
       expect(numSpy).toBeCalledWith('desc');
 
       fireEvent.click(buttons[1]);
-      buttons = wrapper.querySelectorAll('button');
+      buttons = screen.queryAllByRole('button');
 
       expect(numSpy).toHaveBeenCalledTimes(2);
       expect(x2Spy).toHaveBeenCalledTimes(1);
@@ -276,14 +273,12 @@ describe('<Table />', () => {
   });
 
   describe('that is fixed', () => {
-    let wrapper;
-
     beforeEach(() => {
-      wrapper = render(<Table {...fixedProps} />).container;
+      render(<Table {...fixedProps} />);
     });
 
     it('with col width classnames on headings', () => {
-      const tableHeadings = wrapper.querySelectorAll('th');
+      const tableHeadings = screen.queryAllByRole('columnheader');
 
       expect(tableHeadings).toHaveLength(fixedProps.columns.length);
       expect(tableHeadings[0]).toHaveClass('col-4');
@@ -292,7 +287,7 @@ describe('<Table />', () => {
     });
 
     it('with col width classnames on cells', () => {
-      const tableCells = wrapper.querySelectorAll('td');
+      const tableCells = screen.queryAllByRole('cell');
 
       expect(tableCells).toHaveLength(fixedProps.columns.length * fixedProps.data.length);
       expect(tableCells[0]).toHaveClass('col-4');
@@ -301,9 +296,9 @@ describe('<Table />', () => {
     });
 
     it('with fixed-related classnames on head, body, and rows', () => {
-      const thead = wrapper.querySelector('thead');
-      const tbody = wrapper.querySelector('tbody');
-      const tr = wrapper.querySelectorAll('tr')[0];
+      const thead = screen.queryAllByRole('rowgroup')[0];
+      const tbody = screen.queryAllByRole('rowgroup')[1];
+      const tr = screen.queryAllByRole('row')[0];
 
       expect(thead).toHaveClass('d-inline');
       expect(tbody).toHaveClass('d-inline');
@@ -312,14 +307,12 @@ describe('<Table />', () => {
   });
 
   describe('that is not fixed with col widths', () => {
-    let wrapper;
-
     beforeEach(() => {
-      wrapper = render(<Table {...propsWithColWidths} />).container;
+      render(<Table {...propsWithColWidths} />);
     });
 
     it('with no col width classnames on headings', () => {
-      const tableHeadings = wrapper.querySelectorAll('th');
+      const tableHeadings = screen.queryAllByRole('columnheader');
 
       expect(tableHeadings).toHaveLength(fixedProps.columns.length);
       expect(tableHeadings[0]).not.toHaveClass('col-4');
@@ -328,7 +321,7 @@ describe('<Table />', () => {
     });
 
     it('with no col width classnames on cells', () => {
-      const tableCells = wrapper.querySelectorAll('td');
+      const tableCells = screen.queryAllByRole('cell');
 
       expect(tableCells).toHaveLength(fixedProps.columns.length * fixedProps.data.length);
       expect(tableCells[0]).not.toHaveClass('col-4');
@@ -337,9 +330,9 @@ describe('<Table />', () => {
     });
 
     it('with no fixed-related classnames on head, body, and rows', () => {
-      const thead = wrapper.querySelector('thead');
-      const tbody = wrapper.querySelector('tbody');
-      const tr = wrapper.querySelectorAll('tr')[0];
+      const thead = screen.queryAllByRole('rowgroup')[0];
+      const tbody = screen.queryAllByRole('rowgroup')[1];
+      const tr = screen.queryAllByRole('row')[0];
 
       expect(thead).not.toHaveClass('d-inline');
       expect(tbody).not.toHaveClass('d-inline');
@@ -348,14 +341,12 @@ describe('<Table />', () => {
   });
 
   describe('renders row headers', () => {
-    let wrapper;
-
     beforeEach(() => {
-      wrapper = render(<Table {...props} rowHeaderColumnKey="num" />).container;
+      render(<Table {...props} rowHeaderColumnKey="num" />);
     });
 
     it('with the row header as th with row scope', () => {
-      const tableHeadings = wrapper.querySelectorAll('th');
+      const tableHeadings = screen.queryAllByRole('rowheader');
 
       tableHeadings.forEach((th) => {
         if (th.getAttribute('data-colkey') === 'num') {
@@ -365,7 +356,7 @@ describe('<Table />', () => {
     });
 
     it('with all other columns unchanged', () => {
-      const tableCells = wrapper.querySelectorAll('td');
+      const tableCells = screen.queryAllByRole('cell');
 
       tableCells.forEach((td) => {
         if (td.getAttribute('data-colkey') !== 'num') {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
-import '@testing-library/jest-dom/extend-expect';
 
 import SmartStatus from '../SmartStatus';
 import DataTableContext from '../DataTableContext';

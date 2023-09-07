@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import ValidationMessage from './index';
+import ValidationMessage from '.';
 import Variant from '../utils/constants';
 
 const dangerVariant = {
@@ -35,22 +35,22 @@ describe('ValidationMessage', () => {
   });
 
   it('renders invalidMessage when isValid is false', () => {
-    const { getByTestId } = render(<ValidationMessage {...baseProps} isValid={false} />);
-    const feedback = getByTestId('validation-message');
+    render(<ValidationMessage {...baseProps} isValid={false} />);
+    const feedback = screen.getByTestId('validation-message');
     expect(feedback.textContent).toBe(invalidMessage);
   });
 
   it('renders with danger variant when isValid is false and variant is DANGER', () => {
-    const { getByTestId } = render(
+    render(
       <ValidationMessage
         {...baseProps}
         isValid={false}
         variant={dangerVariant}
       />,
     );
-    const feedback = getByTestId('validation-message');
+    const feedback = screen.getByTestId('validation-message');
     expect(feedback.className).not.toBe('invalid-feedback-nodanger');
-    expect(feedback.textContent).toBe(variantIconDescription + invalidMessage);
+    expect(feedback.textContent).toBe(`${variantIconDescription}${invalidMessage}`);
     const icon = feedback.querySelector('.fa-exclamation-circle');
     expect(icon).toBeTruthy();
   });

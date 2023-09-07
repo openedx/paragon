@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import CheckBoxGroup from './index';
+import CheckBoxGroup from '.';
 import CheckBox from '../CheckBox';
 
 describe('<CheckBoxGroup />', () => {

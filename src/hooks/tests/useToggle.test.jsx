@@ -1,7 +1,6 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { useToggle } from '../..';
 
@@ -38,7 +37,7 @@ describe('useToggle hook', () => {
   });
 
   it('toggles respect defaults on or off', () => {
-    const { getByTestId } = render(<FakeComponent
+    render(<FakeComponent
       defaultIsOn={false}
       handlers={{
         handleToggleOn: mockHandleToggleOn,
@@ -46,8 +45,8 @@ describe('useToggle hook', () => {
         handleToggle: mockHandleToggle,
       }}
     />);
-    expect(getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
-    const { getAllByTestId } = render(<FakeComponent
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
+    render(<FakeComponent
       defaultIsOn
       handlers={{
         handleToggleOn: mockHandleToggleOn,
@@ -55,11 +54,11 @@ describe('useToggle hook', () => {
         handleToggle: mockHandleToggle,
       }}
     />);
-    expect(getAllByTestId('toggle-value')[1]).toHaveTextContent(TOGGLE_IS_ON);
+    expect(screen.getAllByTestId('toggle-value')[1]).toHaveTextContent(TOGGLE_IS_ON);
   });
 
   it('setOn turns toggle on', () => {
-    const { getByText, getByTestId } = render(<FakeComponent
+    render(<FakeComponent
       defaultIsOn={false}
       handlers={{
         handleToggleOn: mockHandleToggleOn,
@@ -67,16 +66,16 @@ describe('useToggle hook', () => {
         handleToggle: mockHandleToggle,
       }}
     />);
-    fireEvent.click(getByText('set on'));
-    expect(getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_ON);
+    fireEvent.click(screen.getByText('set on'));
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_ON);
     expect(mockHandleToggleOn).toHaveBeenCalled();
     expect(mockHandleToggle).toHaveBeenCalled();
-    fireEvent.click(getByText('set on'));
-    expect(getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_ON);
+    fireEvent.click(screen.getByText('set on'));
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_ON);
   });
 
   it('setOff turns toggle off', () => {
-    const { getByText, getByTestId } = render(<FakeComponent
+    render(<FakeComponent
       defaultIsOn
       handlers={{
         handleToggleOn: mockHandleToggleOn,
@@ -84,16 +83,16 @@ describe('useToggle hook', () => {
         handleToggle: mockHandleToggle,
       }}
     />);
-    fireEvent.click(getByText('set off'));
-    expect(getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
+    fireEvent.click(screen.getByText('set off'));
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
     expect(mockHandleToggleOff).toHaveBeenCalled();
     expect(mockHandleToggle).toHaveBeenCalled();
-    fireEvent.click(getByText('set off'));
-    expect(getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
+    fireEvent.click(screen.getByText('set off'));
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
   });
 
   it('toggle toggles', () => {
-    const { getByText, getByTestId } = render(<FakeComponent
+    render(<FakeComponent
       defaultIsOn={false}
       handlers={{
         handleToggleOn: mockHandleToggleOn,
@@ -101,14 +100,14 @@ describe('useToggle hook', () => {
         handleToggle: mockHandleToggle,
       }}
     />);
-    fireEvent.click(getByText('toggle'));
-    expect(getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_ON);
+    fireEvent.click(screen.getByText('toggle'));
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_ON);
     expect(mockHandleToggleOn).toHaveBeenCalled();
     expect(mockHandleToggleOff).not.toHaveBeenCalled();
     expect(mockHandleToggle).toHaveBeenCalled();
     resetHandlerMocks();
-    fireEvent.click(getByText('toggle')); // Try again to ensure it changes it back.
-    expect(getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
+    fireEvent.click(screen.getByText('toggle')); // Try again to ensure it changes it back.
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
     expect(mockHandleToggleOn).not.toHaveBeenCalled();
     expect(mockHandleToggleOff).toHaveBeenCalled();
     expect(mockHandleToggle).toHaveBeenCalled();

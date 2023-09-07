@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom/extend-expect';
 
 import { Add, Check } from '../../icons';
 import { MenuItem } from '..';

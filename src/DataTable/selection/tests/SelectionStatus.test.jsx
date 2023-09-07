@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
-import '@testing-library/jest-dom/extend-expect';
 
 import SelectionStatus from '../SelectionStatus';
 import DataTableContext from '../../DataTableContext';

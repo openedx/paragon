@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Tabs from './index';
+import Tabs from '.';
 
 const props = {
   labels: [

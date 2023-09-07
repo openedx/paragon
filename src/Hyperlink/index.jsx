@@ -53,7 +53,7 @@ const Hyperlink = React.forwardRef((props, ref) => {
             src={Launch}
             screenReaderText={externalLinkAlternativeText}
             style={{ height: '1em', width: '1em' }}
-            data-testid="icon-id"
+            data-testid="hyperlink-icon"
           />
         </span>
       );

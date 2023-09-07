@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
 
 import { usePopper } from 'react-popper';
 import PopperElement from './PopperElement';
@@ -40,13 +39,13 @@ const defaultPopperOptions = {
 describe('<PopperElement />', () => {
   it('should use Popper and apply styles and attributes to child div', () => {
     const targetRef = { current: <div /> };
-    const { container, getByText } = render(
+    const { container } = render(
       <PopperElement target={targetRef}>
         <div id="popper-content">Popper content</div>
       </PopperElement>,
     );
 
-    const popperEl = getByText('Popper content');
+    const popperEl = screen.getByText('Popper content');
 
     expect(usePopper).toHaveBeenCalledWith(targetRef, null, defaultPopperOptions);
     expect(popperEl).toBeInTheDocument();

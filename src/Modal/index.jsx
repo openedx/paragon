@@ -86,7 +86,7 @@ class Modal extends React.Component {
               {body}
             </div>
           </div>
-          <div className="col-md-2" data-testid="icon-id">
+          <div className="col-md-2" data-testid="modal-icon">
             <Icon
               id={newId(`Modal-${variant.status}`)}
               className={this.getVariantIconClassName()}
@@ -182,7 +182,7 @@ class Modal extends React.Component {
             fade: !open,
           })}
           role="presentation"
-          data-testid="modal-backdrop-id"
+          data-testid="modal-backdrop"
         />
         <div
           className={classNames(
@@ -195,7 +195,7 @@ class Modal extends React.Component {
             },
           )}
           role="presentation"
-          data-testid="modal-id"
+          data-testid="modal"
         >
           <div
             className={classNames(

@@ -50,15 +50,9 @@ describe('<ControlledSelectHeader />', () => {
     });
     const spy = jest.spyOn(selectActions, 'setSelectedRowsAction');
     const selectProps = { rows };
-    render(
-      <ControlledSelectHeaderWrapper
-        tableProps={tableProps}
-        selectProps={selectProps}
-        data-testid="select-all-checkbox"
-      />,
-    );
+    render(<ControlledSelectHeaderWrapper tableProps={tableProps} selectProps={selectProps} />);
 
-    const checkbox = screen.getByTestId('select-all-checkbox');
+    const checkbox = screen.getByRole('checkbox');
     userEvent.click(checkbox);
 
     expect(spy).toHaveBeenCalledTimes(1);
@@ -81,15 +75,9 @@ describe('<ControlledSelectHeader />', () => {
       state: { selectedRowIds },
       isAllPageRowsSelected: true,
     };
-    render(
-      <ControlledSelectHeaderWrapper
-        tableProps={newTableProps}
-        selectProps={selectProps}
-        data-testid="select-all-checkbox"
-      />,
-    );
+    render(<ControlledSelectHeaderWrapper tableProps={newTableProps} selectProps={selectProps} />);
 
-    const checkbox = screen.getByTestId('select-all-checkbox');
+    const checkbox = screen.getByRole('checkbox');
     userEvent.click(checkbox);
 
     expect(spy).toHaveBeenCalledTimes(1);
@@ -111,15 +99,9 @@ describe('<ControlledSelectHeader />', () => {
         },
       },
     };
-    render(
-      <ControlledSelectHeaderWrapper
-        tableProps={newTableProps}
-        selectProps={selectProps}
-        data-testid="select-all-checkbox"
-      />,
-    );
+    render(<ControlledSelectHeaderWrapper tableProps={newTableProps} selectProps={selectProps} />);
 
-    const checkbox = screen.getByTestId('select-all-checkbox');
+    const checkbox = screen.getByRole('checkbox');
     expect(checkbox.indeterminate).toEqual(isIndeterminate);
   });
 });

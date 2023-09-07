@@ -1,9 +1,10 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom/extend-expect';
 
 import Collapsible from '.';
+
+const EXAMPLE_CONTENT = 'Example content';
 
 const collapsibleContent = (
   <>
@@ -21,7 +22,7 @@ const collapsibleContent = (
 
     <Collapsible.Body transitionWrapper={<div />}>
       <p className="example-content">
-        Example content
+        {EXAMPLE_CONTENT}
       </p>
     </Collapsible.Body>
   </>
@@ -67,28 +68,23 @@ describe('<Collapsible />', () => {
   });
 
   describe('Imperative Methods', () => {
-    let getByText;
-    let queryByText;
     const ref = React.createRef();
     beforeEach(() => {
-      const { getByText: gbt, queryByText: qbt } = render(
+      render(
         <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
       );
-      getByText = gbt;
-      queryByText = qbt;
-      queryByText = qbt;
     });
     it('opens on .open()', () => {
-      expect(queryByText('Example content')).not.toBeInTheDocument();
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
       ref.current.open();
-      expect(getByText('Example content')).toBeInTheDocument();
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
 
     it('closes on .close()', () => {
       ref.current.open();
-      expect(getByText('Example content')).toBeInTheDocument();
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
       ref.current.close();
-      expect(queryByText('Example content')).not.toBeInTheDocument();
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('correct behavior with unmountOnExit', () => {
@@ -113,129 +109,96 @@ describe('<Collapsible />', () => {
   });
 
   describe('Mouse Interactions', () => {
-    let getByText;
-    let getByTestId;
-    let getAllByRole;
-    let queryByText;
-    let trigger;
-    let closeOnlyTrigger;
-    let openOnlyTrigger;
     let collapsible;
     const ref = React.createRef();
     beforeEach(() => {
-      const {
-        getAllByRole: gabr, getByText: gbt, getByTestId: gbti, queryByText: qbt,
-      } = render(
+      render(
         <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
       );
-      getByText = gbt;
-      getByTestId = gbti;
-      getAllByRole = gabr;
-      queryByText = qbt;
-      // eslint-disable-next-line prefer-destructuring
-      trigger = getAllByRole('button')[0];
-      closeOnlyTrigger = getByTestId('close-only');
-      openOnlyTrigger = getByTestId('open-only');
       collapsible = ref.current;
     });
 
     it('opens on trigger click', () => {
-      expect(trigger).toBeInTheDocument();
-      fireEvent.click(trigger); // Open
-      expect(getByText('Example content')).toBeInTheDocument();
+      expect(screen.getAllByRole('button')[0]).toBeInTheDocument();
+      fireEvent.click(screen.getAllByRole('button')[0]); // Open
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
 
     it('closes on trigger click', () => {
       collapsible.open();
-      expect(getByText('Example content')).toBeInTheDocument();
-      fireEvent.click(trigger); // Close
-      expect(queryByText('Example content')).not.toBeInTheDocument();
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+      fireEvent.click(screen.getAllByRole('button')[0]); // Close
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('does not open on close only trigger click', () => {
       collapsible.close();
-      fireEvent.click(closeOnlyTrigger); // No-op
-      expect(queryByText('Example content')).not.toBeInTheDocument();
+      fireEvent.click(screen.getByTestId('close-only')); // No-op
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('closes on close only trigger click', () => {
       collapsible.open();
-      fireEvent.click(closeOnlyTrigger); // Close
-      expect(queryByText('Example content')).not.toBeInTheDocument();
+      fireEvent.click(screen.getByTestId('close-only')); // Close
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('does not close on open only trigger click', () => {
       collapsible.open();
-      fireEvent.click(openOnlyTrigger); // No-op
-      expect(getByText('Example content')).toBeInTheDocument();
+      fireEvent.click(screen.getByTestId('open-only')); // No-op
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
 
     it('opens on open only trigger click', () => {
       collapsible.close();
-      fireEvent.click(openOnlyTrigger); // Open
-      expect(getByText('Example content')).toBeInTheDocument();
+      fireEvent.click(screen.getByTestId('open-only')); // Open
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
   });
 
   describe('Keyboard Interactions', () => {
-    let getAllByRole;
-    let getByTestId;
-    let getByText;
-    let queryByText;
     let collapsible;
-    let trigger;
-    let closeOnlyTrigger;
-    let openOnlyTrigger;
     const ref = React.createRef();
     beforeEach(() => {
-      const {
-        getAllByRole: gabr, getByText: gbt, getByTestId: gbti, queryByText: qbt,
-      } = render(
+      render(
         <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
       );
-      getAllByRole = gabr;
-      getByTestId = gbti;
-      getByText = gbt;
-      queryByText = qbt;
-      [trigger] = getAllByRole('button');
-      closeOnlyTrigger = getByTestId('close-only');
-      openOnlyTrigger = getByTestId('open-only');
       collapsible = ref.current;
     });
 
     it('opens on trigger enter keydown', () => {
-      fireEvent.keyDown(trigger, { key: 'Enter' }); // Open
-      expect(getByText('Example content')).toBeInTheDocument();
+      fireEvent.keyDown(screen.getAllByRole('button')[0], { key: 'Enter' }); // Open
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
 
     it('closes on trigger enter keydown', () => {
       collapsible.open();
-      fireEvent.keyDown(trigger, { key: 'Enter' }); // Close
-      expect(queryByText('Example content')).not.toBeInTheDocument();
+      fireEvent.keyDown(screen.getAllByRole('button')[0], { key: 'Enter' }); // Close
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('does not open on close only trigger enter keydown', () => {
       collapsible.close();
-      fireEvent.keyDown(closeOnlyTrigger, { key: 'Enter' }); // No-op
-      expect(queryByText('Example content')).not.toBeInTheDocument();
+      fireEvent.keyDown(screen.getByTestId('close-only'), { key: 'Enter' }); // No-op
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('closes on close only trigger enter keydown', () => {
       collapsible.open();
-      fireEvent.keyDown(closeOnlyTrigger, { key: 'Enter' }); // Close
-      expect(queryByText('Example content')).not.toBeInTheDocument();
+      fireEvent.keyDown(screen.getByTestId('close-only'), { key: 'Enter' }); // Close
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('does not close on open only trigger enter keydown', () => {
       collapsible.open();
-      fireEvent.keyDown(openOnlyTrigger, { key: 'Enter' }); // No-op
-      expect(getByText('Example content')).toBeInTheDocument();
+      fireEvent.keyDown(screen.getByTestId('open-only'), { key: 'Enter' }); // No-op
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
 
     it('opens on open only trigger enter keydown', () => {
       collapsible.close();
-      fireEvent.keyDown(openOnlyTrigger, { key: 'Enter' }); // Open
-      expect(getByText('Example content')).toBeInTheDocument();
+      fireEvent.keyDown(screen.getByTestId('open-only'), { key: 'Enter' }); // Open
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
   });
 });

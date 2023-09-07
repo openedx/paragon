@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
 
 import { FormGroupContext } from '../FormGroupContext';
 import FormControlDecoratorGroup from '../FormControlDecoratorGroup';
@@ -8,7 +7,7 @@ import { FORM_CONTROL_SIZES } from '../constants';
 
 describe('FormControlDecoratorGroup', () => {
   it('renders', () => {
-    const { getByText } = render(
+    render(
       <FormControlDecoratorGroup
         leadingElement="before"
         trailingElement="after"
@@ -17,25 +16,25 @@ describe('FormControlDecoratorGroup', () => {
         <span>Form control</span>
       </FormControlDecoratorGroup>,
     );
-    expect(getByText('before')).toBeInTheDocument();
-    expect(getByText('after')).toBeInTheDocument();
-    expect(getByText('label')).toBeInTheDocument();
+    expect(screen.getByText('before')).toBeInTheDocument();
+    expect(screen.getByText('after')).toBeInTheDocument();
+    expect(screen.getByText('label')).toBeInTheDocument();
   });
 
   it('renders a size reflecting a context', () => {
-    const { getByTestId } = render(
+    render(
       <FormGroupContext.Provider value={{ size: FORM_CONTROL_SIZES.LARGE }}>
         <FormControlDecoratorGroup
           leadingElement="before"
           trailingElement="after"
           floatingLabel="label"
-          data-testid="decoration-id"
+          data-testid="form-control-decoration-group"
         >
           <span>Form control</span>
         </FormControlDecoratorGroup>
       </FormGroupContext.Provider>,
     );
-    const groupNode = getByTestId('decoration-id');
+    const groupNode = screen.getByTestId('form-control-decoration-group');
     expect(groupNode).toBeInTheDocument();
     expect(groupNode.classList).toContain('pgn__form-control-decorator-group-lg');
   });
@@ -44,18 +43,17 @@ describe('FormControlDecoratorGroup', () => {
     const beforeNode = <span data-testid="before-node">before</span>;
     const afterNode = <span data-testid="after-node">after</span>;
     const labelNode = <span data-testid="label-node">label</span>;
-    const { getByTestId } = render(
+    render(
       <FormControlDecoratorGroup
         leadingElement={beforeNode}
         trailingElement={afterNode}
         floatingLabel={labelNode}
-        data-testid="decoration-id"
       >
         <span>Form control</span>
       </FormControlDecoratorGroup>,
     );
-    expect(getByTestId('before-node')).toBeInTheDocument();
-    expect(getByTestId('after-node')).toBeInTheDocument();
-    expect(getByTestId('label-node')).toBeInTheDocument();
+    expect(screen.getByTestId('before-node')).toBeInTheDocument();
+    expect(screen.getByTestId('after-node')).toBeInTheDocument();
+    expect(screen.getByTestId('label-node')).toBeInTheDocument();
   });
 });

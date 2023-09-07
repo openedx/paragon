@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
-import Annotation from './index';
+import Annotation from '.';
 
 const VARIANTS = ['error', 'success', 'warning', 'light', 'dark'];
 const ARROW_PLACEMENTS = ['top', 'right', 'bottom', 'left'];

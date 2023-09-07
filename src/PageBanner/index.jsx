@@ -45,7 +45,6 @@ function PageBanner({
             size="inline"
             invertColors={variant === 'dark'}
             variant={variant === 'dark' ? 'dark' : 'black'}
-            data-testid="dismiss-button"
           />
         </span>
       )}

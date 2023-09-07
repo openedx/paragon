@@ -1,8 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
 
 import AlertModal from './AlertModal';
+import { Info } from '../../icons';
 
 /* eslint-disable react/prop-types */
 jest.mock('./Portal', () => function PortalMock(props) {
@@ -36,7 +36,7 @@ describe('<AlertModal />', () => {
   const closeFn = jest.fn();
 
   it('renders the body when isOpen', () => {
-    const { getByText } = render(
+    render(
       <AlertModal
         title="some title"
         isOpen={isOpen}
@@ -47,59 +47,59 @@ describe('<AlertModal />', () => {
       </AlertModal>,
     );
 
-    const body = getByText('The body of alert.');
+    const body = screen.getByText('The body of alert.');
     expect(body).toBeInTheDocument();
   });
 
   describe('with variant prop', () => {
     it('renders warning variant', () => {
-      const { getByTestId } = render(
+      render(
         <AlertModal
           title="warning"
           isOpen={isOpen}
           onClose={closeFn}
-          icon="warning"
+          icon={Info}
           footerNode={<p>footer</p>}
         >
           <Body />
         </AlertModal>,
       );
 
-      const modalTitle = getByTestId('title-icon');
+      const modalTitle = screen.getByTestId('title-icon');
       expect(modalTitle.nextSibling.textContent).toEqual('warning');
     });
 
     it('renders success variant', () => {
-      const { getByTestId } = render(
+      render(
         <AlertModal
           title="success"
           isOpen={isOpen}
           onClose={closeFn}
-          icon="success"
+          icon={Info}
           footerNode={<p>footer</p>}
         >
           <Body />
         </AlertModal>,
       );
 
-      const modalTitle = getByTestId('title-icon');
+      const modalTitle = screen.getByTestId('title-icon');
       expect(modalTitle.nextSibling.textContent).toEqual('success');
     });
 
     it('renders danger variant', () => {
-      const { getByTestId } = render(
+      render(
         <AlertModal
           title="danger"
           isOpen={isOpen}
           onClose={closeFn}
-          icon="danger"
+          icon={Info}
           footerNode={<p>footer</p>}
         >
           <Body />
         </AlertModal>,
       );
 
-      const modalTitle = getByTestId('title-icon');
+      const modalTitle = screen.getByTestId('title-icon');
       expect(modalTitle.nextSibling.textContent).toEqual('danger');
     });
   });

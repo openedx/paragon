@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import CardBody from '../CardBody';
 import Card from '..';
@@ -13,21 +13,21 @@ describe('correct rendering', () => {
   });
 
   it('renders correct base className', () => {
-    const { container } = render(<CardBody />);
-    const body = container.querySelector('div');
+    render(<CardBody data-testid="card-body" />);
+    const body = screen.getByTestId('card-body');
     expect(body.classList.contains('pgn__card-body')).toBe(true);
   });
 
   it('renders correct variant', () => {
-    const { container } = render(<Card variant="dark" />);
-    const wrapper = container.querySelector('div');
+    render(<Card variant="dark" data-testid="card" />);
+    const wrapper = screen.getByTestId('card');
     expect(wrapper.classList.contains('pgn__card-dark')).toBe(true);
   });
 
   it('renders body with custom className', () => {
     const className = 'my-class-name';
-    const { container } = render(<CardBody className={className} />);
-    const body = container.querySelector('div');
+    render(<CardBody className={className} data-testid="card-body" />);
+    const body = screen.getByTestId('card-body');
     expect(body.classList.contains(className)).toBe(true);
   });
 });

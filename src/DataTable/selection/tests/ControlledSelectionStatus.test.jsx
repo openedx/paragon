@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import { IntlProvider } from 'react-intl';
 
 import ControlledSelectionStatus from '../ControlledSelectionStatus';

@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
 import StatusAlert from '.';
 import { Button } from '..';
@@ -42,17 +41,17 @@ describe('<StatusAlert />', () => {
     it('component receives props', () => {
       const onCloseMock = jest.fn();
 
-      const { rerender, getByRole } = render(
+      const { rerender } = render(
         <StatusAlert dialog={dialog} onClose={onCloseMock} />,
       );
-      const alertElement = getByRole('alert', { hidden: true });
+      const alertElement = screen.getByRole('alert', { hidden: true });
       expect(alertElement).not.toHaveClass('show');
 
       rerender(<StatusAlert dialog={dialog} onClose={onCloseMock} open />);
       expect(screen.getByRole('alert')).toHaveClass('show');
 
       expect(onCloseMock).not.toHaveBeenCalled();
-      const closeButton = getByRole('button');
+      const closeButton = screen.getByRole('button');
       fireEvent.click(closeButton);
       expect(onCloseMock).toHaveBeenCalled();
     });

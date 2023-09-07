@@ -1,6 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import RadioButtonGroup, { RadioButton } from '.';
 
@@ -26,13 +25,13 @@ describe('<RadioButton />', () => {
   };
   describe('correct rendering', () => {
     it('renders RadioButton', () => {
-      const { getByRole } = render(
+      render(
         <RadioButton {...props}>
           {text}
         </RadioButton>,
       );
 
-      const radioButton = getByRole('radio');
+      const radioButton = screen.getByRole('radio');
       expect(radioButton).toBeInTheDocument();
       expect(radioButton).toHaveAttribute('name', name);
       expect(radioButton).toHaveAttribute('value', value);
@@ -53,26 +52,26 @@ describe('<RadioButton />', () => {
     });
 
     it('should fire onBlur', () => {
-      const { getByRole } = render((<RadioButton {...props} onBlur={spy} />));
-      const radioButton = getByRole('radio');
+      render((<RadioButton {...props} onBlur={spy} />));
+      const radioButton = screen.getByRole('radio');
       fireEvent.blur(radioButton);
       expect(spy).toHaveBeenCalledTimes(1);
     });
     it('should fire onClick', () => {
-      const { getByRole } = render((<RadioButton {...props} onClick={spy} />));
-      const radioButton = getByRole('radio');
+      render((<RadioButton {...props} onClick={spy} />));
+      const radioButton = screen.getByRole('radio');
       fireEvent.click(radioButton);
       expect(spy).toHaveBeenCalledTimes(1);
     });
     it('should fire onFocus', () => {
-      const { getByRole } = render((<RadioButton {...props} onFocus={spy} />));
-      const radioButton = getByRole('radio');
+      render((<RadioButton {...props} onFocus={spy} />));
+      const radioButton = screen.getByRole('radio');
       fireEvent.focus(radioButton);
       expect(spy).toHaveBeenCalledTimes(1);
     });
     it('should fire onKeyDown', () => {
-      const { getByRole } = render((<RadioButton {...props} onKeyDown={spy} />));
-      const radioButton = getByRole('radio');
+      render((<RadioButton {...props} onKeyDown={spy} />));
+      const radioButton = screen.getByRole('radio');
       fireEvent.keyDown(radioButton);
       expect(spy).toHaveBeenCalledTimes(1);
     });
@@ -102,14 +101,14 @@ describe('<RadioButtonGroup />', () => {
   };
 
   it('renders RadioButtonGroup', () => {
-    const { getByRole, getAllByRole } = render(
+    render(
       <RadioButtonGroup {...props}>
         <RadioButton value={firstValue}>{firstText}</RadioButton>
         <RadioButton value={secondValue}>{secondText}</RadioButton>
       </RadioButtonGroup>,
     );
 
-    const radioButtons = getAllByRole('radio');
+    const radioButtons = screen.getAllByRole('radio');
     expect(radioButtons.length).toBe(2);
 
     radioButtons.forEach((radioButton, index) => {
@@ -117,7 +116,7 @@ describe('<RadioButtonGroup />', () => {
       expect(radioButton).toHaveAttribute('value', index === 0 ? firstValue : secondValue);
     });
 
-    const radioButtonGroupDiv = getByRole('radiogroup');
+    const radioButtonGroupDiv = screen.getByRole('radiogroup');
     expect(radioButtonGroupDiv).toBeInTheDocument();
     expect(radioButtonGroupDiv).toHaveAttribute('aria-label', label);
     expect(radioButtonGroupDiv).toHaveAttribute('tabIndex', '-1');

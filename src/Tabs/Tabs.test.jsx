@@ -1,9 +1,8 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
-import Tabs, { MORE_TAB_TEXT } from './index';
+import Tabs, { MORE_TAB_TEXT } from '.';
 import Tab from './Tab';
 
 jest.mock('../hooks/useIndexOfLastVisibleChild', () => ({
@@ -71,8 +70,8 @@ describe('<Tabs />', () => {
       expect(observeMutation).toHaveBeenCalledTimes(1);
     });
     it('dropdown menu is displayed', () => {
-      const { getByTestId } = render(<TabsTestComponent />);
-      const dropdownMenu = getByTestId('tab-id');
+      const { getAllByRole } = render(<TabsTestComponent />);
+      const dropdownMenu = getAllByRole('tabpanel', { hidden: true })[1];
       expect(dropdownMenu).toBeInTheDocument();
       expect(dropdownMenu.className).not.toContain('pgn__tab_invisible');
     });

@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
-import Sticky from './index';
+import Sticky from '.';
 
 const observe = jest.fn();
 const unobserve = jest.fn();
