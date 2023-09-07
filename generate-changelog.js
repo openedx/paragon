@@ -6,12 +6,18 @@ program
   .requiredOption('--repoUrl <name>', 'Provide a git repo url', 'https://github.com/openedx/paragon')
   .action((options) => {
     if (fs.existsSync('CHANGELOG.md')) {
-      throw new Error('CHANGELOG file already exists.');
+      fs.unlink('CHANGELOG.md', (err) => {
+        if (err) {
+          throw err;
+        }
+      });
     }
 
     const { repoUrl } = options;
     const cmd = 'git log --pretty=format:"%h|%H|%ad|%s|%d|%b||" --date=short';
     const commitLog = execSync(cmd, { encoding: 'utf8' }).split('||\n');
+
+    const replaceCurlyBraces = (breakingChangesData) => breakingChangesData.replace(/<(?=[A-Z])|(\s)\/>/g, '`');
 
     // store information of the current release while we go over all
     // commits between this release and previous one
@@ -73,8 +79,8 @@ program
         }
       }
 
-      if (body) {
-        breakingChanges = body.includes('BREAKING CHANGE') && body.split('BREAKING CHANGE').pop().slice(2);
+      if (body && body.includes('BREAKING CHANGE')) {
+        breakingChanges = replaceCurlyBraces(body.split('BREAKING CHANGE').pop().slice(2));
       }
 
       if (prevTag) {
