@@ -50,7 +50,7 @@ const COMMANDS = {
 };
 
 (async () => {
-  const [command] = process.argv.slice(2);
+  const [command, ...commandArgs] = process.argv.slice(2);
   const executor = COMMANDS[command];
 
   if (!executor) {
@@ -65,7 +65,7 @@ const COMMANDS = {
   }
 
   try {
-    await executor.executor();
+    await executor.executor(commandArgs);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(chalk.red.bold('An error occurred:', error.message));
