@@ -5,7 +5,7 @@ $card-spacer-x:                      1.25rem !default;
 $card-border-width:                  $border-width !default;
 $card-border-radius:                 $border-radius !default;
 $card-border-color:                  rgba($black, .125) !default;
-$card-border-focus-color:            rgba($black, .5) !default;
+$card-border-focus-color:            $primary-500 !default;
 $card-border-focus-color-dark:       theme-color("primary", "focus") !default;
 $card-inner-border-radius:           subtract($card-border-radius, $card-border-width) !default;
 $card-cap-bg:                        rgba($black, .03) !default;
@@ -53,4 +53,4 @@ $loading-skeleton-spacer:            .313rem !default;
 
 $card-focus-border-offset:           5px !default;
 $card-focus-border-width:            2px !default;
-$card-focus-border-radius:           5px !default;
+$card-focus-border-radius:           .625rem !default;
