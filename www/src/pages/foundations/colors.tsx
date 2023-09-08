@@ -55,10 +55,10 @@ export interface ISwatch {
   isUnused?: boolean,
 }
 
-const styles = getComputedStyle(document.body);
+const styles = typeof window !== 'undefined' ? getComputedStyle(document.body) : null;
 
 function Swatch({ name, colorClassName, isUnused }: ISwatch) {
-  const computedValue = styles.getPropertyValue(name);
+  const computedValue = styles?.getPropertyValue(name);
 
   return (
     <div className="d-flex align-items-center mb-2">
@@ -71,6 +71,7 @@ function Swatch({ name, colorClassName, isUnused }: ISwatch) {
         <code className="mb-0 d-block text-lowercase text-dark-700">
           {`var(${name})`}
         </code>
+
         <code style={{ fontSize: '65%' }} className="text-muted">
           {computedValue}
         </code>
@@ -128,16 +129,15 @@ export default function ColorsPage({ data }: IColorsPage) {
           {colors
             .slice(0, 3)
             .map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels))}
+          {colors
+            .slice(3)
+            .map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels))}
           <div>
             <p className="h5">accents</p>
 
             <Swatch name="--pgn-color-accent-a" colorClassName="bg-accent-a" />
             <Swatch name="--pgn-color-accent-b" colorClassName="bg-accent-b" />
           </div>
-
-          {colors
-            .slice(3)
-            .map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels))}
         </div>
 
         <h3>CSS Color Usage</h3>
