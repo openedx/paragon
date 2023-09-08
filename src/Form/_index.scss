@@ -465,6 +465,7 @@ select.form-control {
 .pgn__form-switch,
 .pgn__form-radio {
   display: inline-flex;
+  align-items: center;
 
   .pgn__form-label {
     display: flex;
