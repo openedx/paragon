@@ -1,5 +1,5 @@
 {
-  "lastModified": 1694095756827,
+  "lastModified": 1694182105115,
   "projectUsages": [
     {
       "version": "21.1.6",
@@ -9062,21 +9062,21 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 228,
+            "line": 234,
             "column": 14,
-            "index": 8644
+            "index": 8389
           },
           {
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
             "line": 21,
             "column": 4,
-            "index": 415
+            "index": 402
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 71,
+            "line": 81,
             "column": 10,
-            "index": 2421
+            "index": 2853
           },
           {
             "filePath": "src/register/RegistrationFields/HonorCodeField/HonorCode.jsx",
@@ -9166,9 +9166,9 @@
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 72,
+            "line": 82,
             "column": 12,
-            "index": 2495
+            "index": 2927
           }
         ],
         "breakpoints": [
@@ -9237,6 +9237,12 @@
             "line": 13,
             "column": 69,
             "index": 523
+          },
+          {
+            "filePath": "src/recommendations/RecommendationsPage.jsx",
+            "line": 27,
+            "column": 49,
+            "index": 1038
           }
         ],
         "Form": [
@@ -9260,9 +9266,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 224,
+            "line": 230,
             "column": 8,
-            "index": 8476
+            "index": 8221
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
@@ -9670,9 +9676,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 219,
+            "line": 225,
             "column": 10,
-            "index": 8182
+            "index": 7927
           },
           {
             "filePath": "src/register/components/RegistrationFailure.jsx",
@@ -9726,9 +9732,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 220,
+            "line": 226,
             "column": 12,
-            "index": 8269
+            "index": 8014
           },
           {
             "filePath": "src/register/components/RegistrationFailure.jsx",
@@ -9849,12 +9855,6 @@
             "index": 4216
           },
           {
-            "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 80,
-            "column": 12,
-            "index": 3011
-          },
-          {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 153,
             "column": 10,
@@ -9893,18 +9893,6 @@
             "index": 4431
           },
           {
-            "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 86,
-            "column": 14,
-            "index": 3200
-          },
-          {
-            "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 92,
-            "column": 14,
-            "index": 3487
-          },
-          {
             "filePath": "src/reset-password/ResetPasswordPage.jsx",
             "line": 154,
             "column": 12,
@@ -9926,21 +9914,21 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 241,
+            "line": 247,
             "column": 12,
-            "index": 9170
+            "index": 8915
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 253,
+            "line": 259,
             "column": 12,
-            "index": 9680
+            "index": 9425
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 101,
-            "column": 12,
-            "index": 3858
+            "line": 109,
+            "column": 16,
+            "index": 3993
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
@@ -10056,9 +10044,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 219,
+            "line": 225,
             "column": 77,
-            "index": 8249
+            "index": 7994
           },
           {
             "filePath": "src/register/components/RegistrationFailure.jsx",
@@ -10084,7 +10072,7 @@
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
             "line": 27,
             "column": 6,
-            "index": 546
+            "index": 533
           }
         ],
         "Card.ImageCap": [
@@ -10092,7 +10080,7 @@
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
             "line": 32,
             "column": 8,
-            "index": 667
+            "index": 654
           }
         ],
         "Card.Header": [
@@ -10100,7 +10088,7 @@
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
             "line": 40,
             "column": 8,
-            "index": 959
+            "index": 946
           }
         ],
         "Card.Section": [
@@ -10108,7 +10096,7 @@
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
             "line": 45,
             "column": 8,
-            "index": 1100
+            "index": 1087
           }
         ],
         "Badge": [
@@ -10116,15 +10104,73 @@
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
             "line": 47,
             "column": 12,
-            "index": 1188
+            "index": 1175
+          }
+        ],
+        "useMediaQuery": [
+          {
+            "filePath": "src/recommendations/RecommendationsPage.jsx",
+            "line": 27,
+            "column": 23,
+            "index": 1012
+          },
+          {
+            "filePath": "src/recommendations/tests/RecommendationsPage.test.jsx",
+            "line": 104,
+            "column": 4,
+            "index": 3223
+          },
+          {
+            "filePath": "src/recommendations/tests/RecommendationsPage.test.jsx",
+            "line": 113,
+            "column": 4,
+            "index": 3633
+          },
+          {
+            "filePath": "src/recommendations/tests/RecommendationsPage.test.jsx",
+            "line": 122,
+            "column": 4,
+            "index": 4042
+          },
+          {
+            "filePath": "src/recommendations/tests/RecommendationsPage.test.jsx",
+            "line": 134,
+            "column": 4,
+            "index": 4483
+          },
+          {
+            "filePath": "src/recommendations/tests/RecommendationsPage.test.jsx",
+            "line": 151,
+            "column": 4,
+            "index": 5022
           }
         ],
         "Container": [
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
-            "line": 76,
+            "line": 86,
             "column": 10,
-            "index": 2728
+            "index": 3156
+          }
+        ],
+        "Skeleton": [
+          {
+            "filePath": "src/recommendations/RecommendationsPage.jsx",
+            "line": 106,
+            "column": 16,
+            "index": 3859
+          },
+          {
+            "filePath": "src/recommendations/RecommendationsPageLayouts/LargeLayout.jsx",
+            "line": 22,
+            "column": 8,
+            "index": 553
+          },
+          {
+            "filePath": "src/recommendations/RecommendationsPageLayouts/SmallLayout.jsx",
+            "line": 22,
+            "column": 8,
+            "index": 553
           }
         ],
         "FormAutosuggestOption": [
@@ -19185,7 +19231,7 @@
             "filePath": "src/containers/LearnerDashboardHeader/CollapsedHeader/index.jsx",
             "line": 23,
             "column": 10,
-            "index": 711
+            "index": 715
           }
         ],
         "MoreVert": [
@@ -19219,7 +19265,7 @@
             "filePath": "src/containers/LearnerDashboardHeader/CollapsedHeader/index.jsx",
             "line": 27,
             "column": 20,
-            "index": 829
+            "index": 837
           },
           {
             "filePath": "src/containers/MasqueradeBar/index.jsx",
@@ -38218,9 +38264,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/HeaderSection.jsx",
-            "line": 83,
+            "line": 105,
             "column": 4,
-            "index": 3110
+            "index": 3896
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/PopularSearchLinks/index.jsx",
@@ -39372,9 +39418,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/HeaderSection.jsx",
-            "line": 91,
+            "line": 113,
             "column": 6,
-            "index": 3442
+            "index": 4228
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/PopularSearchLinks/index.jsx",
@@ -39626,9 +39672,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/HeaderSection.jsx",
-            "line": 91,
-            "column": 52,
-            "index": 3488
+            "line": 113,
+            "column": 84,
+            "index": 4306
           }
         ],
         "Form.Checkbox": [
