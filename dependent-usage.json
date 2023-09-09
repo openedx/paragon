@@ -1,5 +1,5 @@
 {
-  "lastModified": 1694182105115,
+  "lastModified": 1694268528816,
   "projectUsages": [
     {
       "version": "21.1.6",
@@ -2090,6 +2090,30 @@
             "index": 1284
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/CopyButton.jsx",
+            "line": 28,
+            "column": 6,
+            "index": 790
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 41,
+            "column": 6,
+            "index": 1164
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 79,
+            "column": 12,
+            "index": 2358
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
+            "line": 71,
+            "column": 8,
+            "index": 2552
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
             "line": 145,
             "column": 10,
@@ -2205,15 +2229,15 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 161,
+            "line": 158,
             "column": 12,
-            "index": 6175
+            "index": 6119
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 180,
+            "line": 177,
             "column": 14,
-            "index": 6744
+            "index": 6688
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/NoConfigCard.jsx",
@@ -2483,9 +2507,9 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 200,
+            "line": 197,
             "column": 55,
-            "index": 7369
+            "index": 7313
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
@@ -2902,6 +2926,12 @@
             "index": 412
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/APICredentialsPage.jsx",
+            "line": 57,
+            "column": 8,
+            "index": 1782
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
             "line": 84,
             "column": 12,
@@ -3175,9 +3205,9 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 177,
+            "line": 174,
             "column": 16,
-            "index": 6639
+            "index": 6583
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
@@ -3408,6 +3438,18 @@
             "line": 154,
             "column": 20,
             "index": 5007
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 60,
+            "column": 14,
+            "index": 1627
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
+            "line": 67,
+            "column": 10,
+            "index": 2441
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
@@ -3838,6 +3880,12 @@
             "index": 1733
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/FailedAlert.jsx",
+            "line": 6,
+            "column": 2,
+            "index": 167
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
             "line": 97,
             "column": 6,
@@ -3845,9 +3893,9 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 174,
+            "line": 171,
             "column": 8,
-            "index": 6538
+            "index": 6482
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
@@ -4018,6 +4066,18 @@
             "line": 461,
             "column": 14,
             "index": 13962
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/FailedAlert.jsx",
+            "line": 6,
+            "column": 32,
+            "index": 197
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
+            "line": 67,
+            "column": 44,
+            "index": 2475
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/SyncHistory.jsx",
@@ -4208,6 +4268,12 @@
             "index": 1792
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/FailedAlert.jsx",
+            "line": 7,
+            "column": 4,
+            "index": 209
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
             "line": 105,
             "column": 8,
@@ -4215,9 +4281,9 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 184,
+            "line": 181,
             "column": 10,
-            "index": 6829
+            "index": 6773
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/NewSSOConfigForm.jsx",
@@ -4576,6 +4642,18 @@
             "index": 105
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/CopiedToast.jsx",
+            "line": 6,
+            "column": 2,
+            "index": 152
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/index.jsx",
+            "line": 55,
+            "column": 12,
+            "index": 2010
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
             "line": 136,
             "column": 6,
@@ -4595,9 +4673,9 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 223,
+            "line": 220,
             "column": 8,
-            "index": 8157
+            "index": 8101
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
@@ -5114,6 +5192,18 @@
             "index": 1262
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/index.jsx",
+            "line": 41,
+            "column": 10,
+            "index": 1482
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 75,
+            "column": 10,
+            "index": 2217
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
             "line": 144,
             "column": 8,
@@ -5368,6 +5458,12 @@
             "index": 537
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 48,
+            "column": 6,
+            "index": 1320
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
             "line": 66,
             "column": 4,
@@ -5436,6 +5532,12 @@
             "index": 667
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 57,
+            "column": 8,
+            "index": 1525
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
             "line": 74,
             "column": 6,
@@ -5498,6 +5600,12 @@
             "index": 694
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 58,
+            "column": 10,
+            "index": 1556
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
             "line": 75,
             "column": 8,
@@ -5558,6 +5666,12 @@
             "line": 51,
             "column": 4,
             "index": 1066
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 65,
+            "column": 8,
+            "index": 1838
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
@@ -5682,6 +5796,12 @@
             "line": 54,
             "column": 4,
             "index": 1126
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 74,
+            "column": 8,
+            "index": 2186
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
@@ -5840,6 +5960,12 @@
             "index": 2048
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 20,
+            "column": 32,
+            "index": 518
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
             "line": 23,
             "column": 65,
@@ -5865,9 +5991,9 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 46,
+            "line": 47,
             "column": 62,
-            "index": 1797
+            "index": 1838
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
@@ -6190,6 +6316,12 @@
             "index": 916
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
+            "line": 34,
+            "column": 4,
+            "index": 1133
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
             "line": 25,
             "column": 4,
@@ -6334,6 +6466,12 @@
             "line": 39,
             "column": 10,
             "index": 933
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
+            "line": 40,
+            "column": 6,
+            "index": 1304
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
@@ -6752,6 +6890,12 @@
             "index": 607
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
+            "line": 78,
+            "column": 24,
+            "index": 2736
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/DownloadCsvButton.jsx",
             "line": 75,
             "column": 19,
@@ -6815,27 +6959,33 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 53,
+            "line": 59,
             "column": 8,
-            "index": 1487
+            "index": 1624
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 68,
+            "line": 78,
             "column": 8,
-            "index": 1950
+            "index": 2359
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 87,
+            "line": 92,
             "column": 8,
-            "index": 2685
+            "index": 2757
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 101,
+            "line": 109,
             "column": 8,
-            "index": 3083
+            "index": 3289
+          },
+          {
+            "filePath": "src/components/settings/SettingsTabs.jsx",
+            "line": 124,
+            "column": 8,
+            "index": 3793
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionTabs.jsx",
@@ -6871,9 +7021,9 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 151,
+            "line": 173,
             "column": 6,
-            "index": 4433
+            "index": 5096
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionTabs.jsx",
@@ -6939,9 +7089,9 @@
           },
           {
             "filePath": "src/components/settings/SettingsTabs.jsx",
-            "line": 150,
+            "line": 172,
             "column": 4,
-            "index": 4392
+            "index": 5055
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionManagementPage.jsx",
@@ -7054,6 +7204,12 @@
             "line": 12,
             "column": 17,
             "index": 309
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 60,
+            "column": 25,
+            "index": 1638
           }
         ],
         "Close": [
@@ -7258,6 +7414,24 @@
             "index": 1327
           },
           {
+            "filePath": "src/components/settings/HelpCenterButton.jsx",
+            "line": 13,
+            "column": 4,
+            "index": 217
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/APICredentialsPage.jsx",
+            "line": 77,
+            "column": 10,
+            "index": 2393
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
+            "line": 47,
+            "column": 10,
+            "index": 1669
+          },
+          {
             "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
             "line": 132,
             "column": 10,
@@ -7286,12 +7460,6 @@
             "line": 45,
             "column": 9,
             "index": 1774
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 152,
-            "column": 8,
-            "index": 5854
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/index.jsx",
@@ -7381,9 +7549,9 @@
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
-            "line": 164,
+            "line": 161,
             "column": 26,
-            "index": 6279
+            "index": 6223
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/NoConfigCard.jsx",
@@ -7494,6 +7662,12 @@
             "index": 238
           },
           {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
+            "line": 35,
+            "column": 6,
+            "index": 1171
+          },
+          {
             "filePath": "src/components/settings/SettingsLMSTab/NoConfigCard.jsx",
             "line": 20,
             "column": 6,
@@ -7568,6 +7742,12 @@
             "line": 6,
             "column": 2,
             "index": 168
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
+            "line": 64,
+            "column": 6,
+            "index": 2279
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/ThemeCard.jsx",
@@ -7680,6 +7860,12 @@
             "line": 19,
             "column": 4,
             "index": 499
+          },
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/index.jsx",
+            "line": 43,
+            "column": 12,
+            "index": 1543
           }
         ],
         "FullscreenModal": [
@@ -8624,6 +8810,52 @@
             "index": 805
           }
         ],
+        "ContentCopy": [
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/CopyButton.jsx",
+            "line": 30,
+            "column": 19,
+            "index": 843
+          }
+        ],
+        "ModalDialog.CloseButton": [
+          {
+            "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
+            "line": 76,
+            "column": 12,
+            "index": 2241
+          },
+          {
+            "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
+            "line": 176,
+            "column": 10,
+            "index": 6290
+          },
+          {
+            "filePath": "src/components/subscriptions/expiration/SubscriptionExpiredModal.jsx",
+            "line": 37,
+            "column": 10,
+            "index": 1305
+          },
+          {
+            "filePath": "src/components/subscriptions/expiration/SubscriptionExpiringModal.jsx",
+            "line": 58,
+            "column": 10,
+            "index": 1915
+          },
+          {
+            "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRemindModal.jsx",
+            "line": 211,
+            "column": 10,
+            "index": 6468
+          },
+          {
+            "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRevokeModal.jsx",
+            "line": 188,
+            "column": 10,
+            "index": 5517
+          }
+        ],
         "Dropzone": [
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
@@ -8786,38 +9018,6 @@
             "line": 241,
             "column": 14,
             "index": 9063
-          }
-        ],
-        "ModalDialog.CloseButton": [
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
-            "line": 176,
-            "column": 10,
-            "index": 6290
-          },
-          {
-            "filePath": "src/components/subscriptions/expiration/SubscriptionExpiredModal.jsx",
-            "line": 37,
-            "column": 10,
-            "index": 1305
-          },
-          {
-            "filePath": "src/components/subscriptions/expiration/SubscriptionExpiringModal.jsx",
-            "line": 58,
-            "column": 10,
-            "index": 1915
-          },
-          {
-            "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRemindModal.jsx",
-            "line": 211,
-            "column": 10,
-            "index": 6468
-          },
-          {
-            "filePath": "src/components/subscriptions/licenses/LicenseManagementModals/LicenseManagementRevokeModal.jsx",
-            "line": 188,
-            "column": 10,
-            "index": 5517
           }
         ],
         "Bubble": [
@@ -38054,15 +38254,15 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
-            "line": 240,
+            "line": 246,
             "column": 6,
-            "index": 10674
+            "index": 10893
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
-            "line": 288,
+            "line": 302,
             "column": 6,
-            "index": 13205
+            "index": 14053
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
@@ -38294,15 +38494,15 @@
           },
           {
             "filePath": "src/packages/search-page/components/Results/FirstLevelResult.jsx",
-            "line": 54,
+            "line": 55,
             "column": 4,
-            "index": 1436
+            "index": 1585
           },
           {
             "filePath": "src/packages/search-page/components/Results/SecondLevelResult.jsx",
-            "line": 45,
+            "line": 46,
             "column": 4,
-            "index": 1393
+            "index": 1506
           },
           {
             "filePath": "src/packages/search-page/components/SearchBreadcrumb/index.jsx",
@@ -38962,15 +39162,15 @@
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 246,
+            "line": 251,
             "column": 22,
-            "index": 6655
+            "index": 7091
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 247,
+            "line": 252,
             "column": 23,
-            "index": 6768
+            "index": 7204
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
@@ -39946,9 +40146,9 @@
         "SearchField.Advanced": [
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 99,
+            "line": 100,
             "column": 6,
-            "index": 3185
+            "index": 3285
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
@@ -39964,17 +40164,17 @@
           },
           {
             "filePath": "src/packages/search-page/components/SearchBox/index.jsx",
-            "line": 112,
+            "line": 115,
             "column": 10,
-            "index": 3665
+            "index": 3815
           }
         ],
         "SearchField.Input": [
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 116,
+            "line": 117,
             "column": 10,
-            "index": 4001
+            "index": 4101
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
@@ -39990,17 +40190,17 @@
           },
           {
             "filePath": "src/packages/search-page/components/SearchBox/index.jsx",
-            "line": 125,
+            "line": 136,
             "column": 14,
-            "index": 4201
+            "index": 4524
           }
         ],
         "SearchField.ClearButton": [
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 127,
-            "column": 10,
-            "index": 4416
+            "line": 128,
+            "column": 35,
+            "index": 4541
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
@@ -40016,23 +40216,23 @@
           },
           {
             "filePath": "src/packages/search-page/components/SearchBox/index.jsx",
-            "line": 136,
-            "column": 14,
-            "index": 4707
+            "line": 147,
+            "column": 39,
+            "index": 5055
           }
         ],
         "SearchField.SubmitButton": [
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 129,
+            "line": 130,
             "column": 12,
-            "index": 4488
+            "index": 4614
           },
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 137,
+            "line": 138,
             "column": 10,
-            "index": 4699
+            "index": 4825
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
@@ -40048,9 +40248,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/SearchBox/index.jsx",
-            "line": 138,
+            "line": 149,
             "column": 12,
-            "index": 4766
+            "index": 5115
           }
         ],
         "IconButton": [
@@ -40186,9 +40386,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 275,
-            "column": 33,
-            "index": 7926
+            "line": 284,
+            "column": 35,
+            "index": 8662
           }
         ],
         "ChevronLeft": [
@@ -40304,9 +40504,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 268,
+            "line": 273,
             "column": 22,
-            "index": 7526
+            "index": 7993
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
@@ -40766,9 +40966,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
-            "line": 212,
+            "line": 218,
             "column": 6,
-            "index": 9938
+            "index": 10157
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/index.jsx",
@@ -41074,9 +41274,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
-            "line": 252,
+            "line": 258,
             "column": 14,
-            "index": 11263
+            "index": 11482
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/index.jsx",
@@ -41278,9 +41478,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
-            "line": 269,
+            "line": 275,
             "column": 102,
-            "index": 12326
+            "index": 12545
           },
           {
             "filePath": "src/packages/product-page/components/ProductDetailHero/index.jsx",
@@ -41366,15 +41566,15 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
-            "line": 258,
+            "line": 264,
             "column": 16,
-            "index": 11673
+            "index": 11892
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
-            "line": 268,
+            "line": 274,
             "column": 18,
-            "index": 12192
+            "index": 12411
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/components/SectionTile.jsx",
@@ -41428,17 +41628,17 @@
         "Card.Header": [
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
-            "line": 253,
+            "line": 259,
             "column": 16,
-            "index": 11318
+            "index": 11537
           }
         ],
         "Card.Divider": [
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
-            "line": 266,
+            "line": 272,
             "column": 16,
-            "index": 12098
+            "index": 12317
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/components/SectionTile.jsx",
@@ -41450,9 +41650,9 @@
         "Lock": [
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
-            "line": 269,
+            "line": 275,
             "column": 66,
-            "index": 12290
+            "index": 12509
           }
         ],
         "Verified": [
@@ -41958,9 +42158,9 @@
         "Menu": [
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 262,
+            "line": 267,
             "column": 10,
-            "index": 7293
+            "index": 7729
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
@@ -41972,9 +42172,9 @@
         "MenuItem": [
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 264,
+            "line": 269,
             "column": 16,
-            "index": 7379
+            "index": 7828
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
