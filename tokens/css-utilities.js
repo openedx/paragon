@@ -12,7 +12,7 @@ a${parent}:hover,
 a${parent}:focus,
 button${parent}:hover,
 button${parent}:focus {
-  background-color: ${actions.default}  !important;
+  background-color: ${actions.default} !important;
 }
 
 `;
