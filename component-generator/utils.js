@@ -33,25 +33,6 @@ function validateComponentName(value) {
 }
 
 /**
- * Sends request to the Netlify function to inform about generate-component usage.
- * @param {string} componentName - component name
- */
-function sendTrackInfo(componentName) {
-  const { BASE_URL, TRACK_ANONYMOUS_ANALYTICS } = process.env;
-  if (TRACK_ANONYMOUS_ANALYTICS) {
-    const url = `${BASE_URL}/.netlify/functions/trackGenerateComponent`;
-    axios.post(url, { componentName })
-      .then(result => {
-        // eslint-disable-next-line no-console
-        console.log(`Track info is successfully sent (status ${result.status})`);
-      }).catch(error => {
-        // eslint-disable-next-line no-console
-        console.log(`Track info request failed (${error})`);
-      });
-  }
-}
-
-/**
  * Creates a file for the component based on the template.
  * Note that 'componentName' string is a reserved placeholder,
  * all its occurrences in both targetPath and provided template will
@@ -97,7 +78,6 @@ function addComponentToGit(componentName) {
 }
 
 exports.validateComponentName = validateComponentName;
-exports.sendTrackInfo = sendTrackInfo;
 exports.createFile = createFile;
 exports.addComponentToExports = addComponentToExports;
 exports.addComponentToGit = addComponentToGit;

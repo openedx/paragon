@@ -5,6 +5,7 @@ const helpCommand = require('../lib/help');
 const buildTokensCommand = require('../lib/build-tokens');
 const replaceVariablesCommand = require('../lib/replace-variables');
 const buildScssCommand = require('../lib/build-scss');
+const { sendTrackInfo } = require('../utils');
 
 const COMMANDS = {
   /**
@@ -172,6 +173,8 @@ const COMMANDS = {
 (async () => {
   const [command, ...commandArgs] = process.argv.slice(2);
   const executor = COMMANDS[command];
+
+  sendTrackInfo(command, 'trackCLICommands');
 
   if (!executor) {
     // eslint-disable-next-line no-console
