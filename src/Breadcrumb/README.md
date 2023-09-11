@@ -1,5 +1,5 @@
 ---
-title: 'Breadcrumbs'
+title: 'Breadcrumb'
 type: 'component'
 components:
 - Breadcrumb

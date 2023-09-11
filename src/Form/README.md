@@ -1,5 +1,5 @@
 ---
-title: 'Forms'
+title: 'Form'
 type: 'component'
 components:
 - Form

@@ -1,0 +1,35 @@
+const PATH_TO_EDIT_PAGE = 'https://github.com/openedx/paragon/edit/master/src';
+
+const componentsNamesMap = {
+  AlertModal: 'Modal/alert-modal.mdx',
+  ButtonGroup: 'Button/button-group.mdx',
+  'Data views': 'DataTable/dataviews.mdx',
+  'Form.Autosuggest': 'Form/form-autosuggest.mdx',
+  'Form.Checkbox': 'Form/form-checkbox.mdx',
+  'Form.Control': 'Form/form-control.mdx',
+  'Form.Control.Feedback': 'Form/form-control-feedback.mdx',
+  'Form.Group': 'Form/form-group.mdx',
+  'Form.Label': 'Form/form-label.mdx',
+  'Form.Radio': 'Form/form-radio.mdx',
+  'Form.Switch': 'Form/form-switch.mdx',
+  FullscreenModal: 'Modal/fullscreen-modal.mdx',
+  InputGroup: 'Form/input-group.mdx',
+  MarketingModal: 'Modal/marketing-modal.mdx',
+  ModalDialog: 'Modal/modal-dialog.mdx',
+  ModalLayer: 'Modal/modal-layer.mdx',
+  ModalPopup: 'Modal/modal-popup.mdx',
+  OverflowScroll: 'OverflowScroll/OverflowScroll.mdx',
+  SelectMenu: 'Menu/select-menu.md',
+  StandardModal: 'Modal/standard-modal.mdx',
+  TableControlBar: 'DataTable/tablecontrolbar.mdx',
+  TableFilters: 'DataTable/tablefilters.mdx',
+  TableFooter: 'DataTable/tablefooter.mdx',
+  useArrowKeyNavigation: 'hooks/useArrowKeyNavigation.mdx',
+  useIndexOfLastVisibleChild: 'hooks/useIndexOfLastVisibleChild.mdx',
+  useIsVisible: 'hooks/useIsVisible.mdx',
+  useOverflowScroll: 'OverflowScroll/useOverflowScroll.mdx',
+  useToggle: 'hooks/useToggle.mdx',
+  useWindowSize: 'hooks/useWindowSize.mdx',
+};
+
+export { PATH_TO_EDIT_PAGE, componentsNamesMap };

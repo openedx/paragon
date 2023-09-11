@@ -99,6 +99,7 @@ export default function PageTemplate({
   const usageInsightsUrl = 'usage-insights';
 
   const sortedComponentNames = mdx.frontmatter?.components || [];
+  const componentTitle = mdx.frontmatter.title;
   const filteredComponentsUsageInsights = componentsUsageInsights.map(componentName => componentName.replace(/\./g, ''));
   const isUsageInsights = (sortedComponentNames as []).some(value => filteredComponentsUsageInsights.includes(value));
 
@@ -142,7 +143,7 @@ export default function PageTemplate({
         <div className="d-flex justify-content-between align-items-start">
           <h1 className="mb-4">{mdx.frontmatter.title}</h1>
           <Stack direction="horizontal" gap={3}>
-            <PageEditBtn />
+            <PageEditBtn componentTitle={componentTitle} />
             <LeaveFeedback />
           </Stack>
         </div>
