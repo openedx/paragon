@@ -1,5 +1,5 @@
 {
-  "lastModified": 1694354874164,
+  "lastModified": 1694441277054,
   "projectUsages": [
     {
       "version": "21.1.6",
@@ -17303,7 +17303,7 @@
       }
     },
     {
-      "version": "20.45.5",
+      "version": "20.46.2",
       "name": "@edx/frontend-app-ecommerce",
       "repository": {
         "type": "git",
@@ -17713,9 +17713,9 @@
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 63,
+            "line": 60,
             "column": 12,
-            "index": 1965
+            "index": 1845
           }
         ],
         "Launch": [
@@ -17856,12 +17856,6 @@
             "index": 748
           },
           {
-            "filePath": "src/components/catalogSearchResults/associatedComponents/catalogBadges/CatalogBadges.jsx",
-            "line": 29,
-            "column": 8,
-            "index": 1054
-          },
-          {
             "filePath": "src/components/catalogSearchResults/CatalogSearchResults.jsx",
             "line": 444,
             "column": 12,
@@ -17880,12 +17874,6 @@
             "index": 2357
           },
           {
-            "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
-            "line": 71,
-            "column": 10,
-            "index": 3141
-          },
-          {
             "filePath": "src/components/courseCard/CourseCard.jsx",
             "line": 66,
             "column": 12,
@@ -17898,34 +17886,22 @@
             "index": 2280
           },
           {
-            "filePath": "src/components/courseCard/CourseCard.jsx",
-            "line": 83,
-            "column": 12,
-            "index": 2633
-          },
-          {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 59,
+            "line": 56,
             "column": 10,
-            "index": 1830
+            "index": 1710
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 72,
+            "line": 69,
             "column": 12,
-            "index": 2263
+            "index": 2143
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 77,
+            "line": 74,
             "column": 12,
-            "index": 2486
-          },
-          {
-            "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 82,
-            "column": 12,
-            "index": 2697
+            "index": 2366
           }
         ],
         "useToggle": [
@@ -18076,12 +18052,6 @@
             "line": 58,
             "column": 8,
             "index": 2231
-          },
-          {
-            "filePath": "src/components/catalogSelectionDeck/CatalogSelectionDeck.jsx",
-            "line": 70,
-            "column": 8,
-            "index": 3012
           }
         ],
         "Card": [
@@ -18093,9 +18063,9 @@
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 37,
+            "line": 34,
             "column": 4,
-            "index": 1171
+            "index": 1051
           }
         ],
         "Card.ImageCap": [
@@ -18107,9 +18077,9 @@
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 43,
+            "line": 40,
             "column": 6,
-            "index": 1297
+            "index": 1177
           }
         ],
         "Card.Header": [
@@ -18121,9 +18091,9 @@
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 49,
+            "line": 46,
             "column": 6,
-            "index": 1485
+            "index": 1365
           }
         ],
         "Card.Section": [
@@ -18135,17 +18105,17 @@
           },
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 57,
+            "line": 54,
             "column": 6,
-            "index": 1699
+            "index": 1579
           }
         ],
         "Program": [
           {
             "filePath": "src/components/programCard/ProgramCard.jsx",
-            "line": 63,
+            "line": 60,
             "column": 23,
-            "index": 1976
+            "index": 1856
           }
         ]
       }
@@ -37801,7 +37771,7 @@
       }
     },
     {
-      "version": "21.1.4",
+      "version": "20.46.2",
       "name": "@edx/frontend-platform",
       "repository": {
         "type": "git",
@@ -37933,12 +37903,6 @@
             "line": 9,
             "column": 6,
             "index": 319
-          },
-          {
-            "filePath": "src/packages/become-page/components/steps.jsx",
-            "line": 21,
-            "column": 6,
-            "index": 775
           },
           {
             "filePath": "src/packages/careers-page/components/Hero/index.jsx",
@@ -38464,9 +38428,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/HeaderSection.jsx",
-            "line": 105,
+            "line": 134,
             "column": 4,
-            "index": 3896
+            "index": 4726
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/PopularSearchLinks/index.jsx",
@@ -39618,9 +39582,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/HeaderSection.jsx",
-            "line": 113,
+            "line": 142,
             "column": 6,
-            "index": 4228
+            "index": 5058
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/PopularSearchLinks/index.jsx",
@@ -39872,9 +39836,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/HeaderSection.jsx",
-            "line": 113,
+            "line": 142,
             "column": 84,
-            "index": 4306
+            "index": 5136
           }
         ],
         "Form.Checkbox": [
