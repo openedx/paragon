@@ -12,7 +12,7 @@ exports.handler = async function eventHandler(event) {
   // dispatch event to Segment
   analytics.track({
     anonymousId: uuidv4(),
-    event: 'openedx.paragon.functions.track-generate-component.created',
+    event: 'openedx.paragon.functions.track-cli-commands.run',
     properties: { eventName },
   });
 
