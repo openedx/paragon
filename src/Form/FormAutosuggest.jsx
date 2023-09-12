@@ -102,6 +102,7 @@ function FormAutosuggest({
   const iconToggle = (
     <IconButton
       className="pgn__form-autosuggest__icon-button"
+      data-testid="autosuggest_iconbutton"
       src={isMenuClosed ? KeyboardArrowDown : KeyboardArrowUp}
       iconAs={Icon}
       size="sm"
@@ -230,6 +231,7 @@ function FormAutosuggest({
           onChange={handleOnChange}
           onClick={handleClick}
           trailingElement={iconToggle}
+          data-testid="autosuggest_textbox_input"
           {...props}
         />
 
@@ -253,7 +255,7 @@ function FormAutosuggest({
       >
         {isLoading ? (
           <div className="pgn__form-autosuggest__dropdown-loading">
-            <Spinner animation="border" variant="dark" screenReaderText={screenReaderText} />
+            <Spinner animation="border" variant="dark" screenReaderText={screenReaderText} data-testid="autosuggest_loading_spinner" />
           </div>
         ) : state.dropDownItems.length > 0 && state.dropDownItems}
       </ul>
