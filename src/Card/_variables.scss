@@ -53,4 +53,4 @@ $loading-skeleton-spacer:            .313rem !default;
 
 $card-focus-border-offset:           5px !default;
 $card-focus-border-width:            2px !default;
-$card-focus-border-radius:           .625rem !default;
+$card-focus-border-radius:           calc($card-focus-border-offset + $card-border-radius) !default;
