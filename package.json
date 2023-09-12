@@ -48,7 +48,7 @@
     "build-types": "tsc --emitDeclarationOnly",
     "playroom:start": "npm run playroom:start --workspace=www",
     "playroom:build": "npm run playroom:build --workspace=www",
-    "build-tokens": "./bin/paragon-scripts.js build-tokens --build-dir ./styles/css",
+    "build-tokens": "./bin/paragon-scripts.js build-tokens --build-dir ../styles/css",
     "replace-variables-usage-with-css": "./bin/paragon-scripts.js replace-variables -p src -t usage",
     "replace-variables-definition-with-css": "./bin/paragon-scripts.js replace-variables -p src -t definition"
   },
