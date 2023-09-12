@@ -12,7 +12,7 @@ function FormAutosuggestOption({
   return (
     <MenuItem
       as="li"
-      data-testid="autosuggest_optionitem"
+      data-testid="autosuggest-optionitem"
       role="option"
       tabIndex="-1"
       onClick={onClick}
