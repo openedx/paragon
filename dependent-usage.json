@@ -1,5 +1,5 @@
 {
-  "lastModified": 1694529169751,
+  "lastModified": 1694614173030,
   "projectUsages": [
     {
       "version": "21.1.7",
@@ -11611,6 +11611,12 @@
             "line": 37,
             "column": 8,
             "index": 1044
+          },
+          {
+            "filePath": "src/studio-header/HeaderBody.jsx",
+            "line": 40,
+            "column": 6,
+            "index": 924
           }
         ],
         "StatefulButton": [
@@ -11877,6 +11883,12 @@
             "line": 67,
             "column": 12,
             "index": 2125
+          },
+          {
+            "filePath": "src/studio-header/HeaderBody.jsx",
+            "line": 38,
+            "column": 2,
+            "index": 828
           }
         ],
         "Alert": [
@@ -12305,6 +12317,12 @@
             "line": 25,
             "column": 44,
             "index": 589
+          },
+          {
+            "filePath": "src/studio-header/MobileHeader.jsx",
+            "line": 13,
+            "column": 36,
+            "index": 382
           }
         ],
         "Card": [
@@ -12587,6 +12605,12 @@
             "line": 75,
             "column": 16,
             "index": 1998
+          },
+          {
+            "filePath": "src/studio-header/MobileHeader.jsx",
+            "line": 25,
+            "column": 6,
+            "index": 642
           }
         ],
         "Card.Section": [
@@ -13583,6 +13607,18 @@
             "line": 77,
             "column": 14,
             "index": 2474
+          },
+          {
+            "filePath": "src/studio-header/HeaderBody.jsx",
+            "line": 71,
+            "column": 8,
+            "index": 1607
+          },
+          {
+            "filePath": "src/studio-header/HeaderBody.jsx",
+            "line": 99,
+            "column": 4,
+            "index": 2653
           }
         ],
         "EditOutline": [
@@ -14231,6 +14267,12 @@
             "line": 134,
             "column": 16,
             "index": 4276
+          },
+          {
+            "filePath": "src/studio-header/NavDropdownMenu.jsx",
+            "line": 18,
+            "column": 6,
+            "index": 276
           }
         ],
         "Dropdown.Divider": [
@@ -14519,6 +14561,12 @@
             "line": 31,
             "column": 6,
             "index": 953
+          },
+          {
+            "filePath": "src/studio-header/HeaderBody.jsx",
+            "line": 51,
+            "column": 6,
+            "index": 1232
           }
         ],
         "ErrorOutline": [
@@ -15121,6 +15169,24 @@
             "line": 10,
             "column": 2,
             "index": 308
+          },
+          {
+            "filePath": "src/studio-header/MobileMenu.jsx",
+            "line": 23,
+            "column": 8,
+            "index": 741
+          },
+          {
+            "filePath": "src/studio-header/MobileMenu.jsx",
+            "line": 37,
+            "column": 8,
+            "index": 1199
+          },
+          {
+            "filePath": "src/studio-header/MobileMenu.jsx",
+            "line": 51,
+            "column": 8,
+            "index": 1659
           }
         ],
         "Check": [
@@ -15343,10 +15409,10 @@
             "index": 869
           },
           {
-            "filePath": "src/studio-header/Header.jsx",
-            "line": 139,
-            "column": 4,
-            "index": 5602
+            "filePath": "src/studio-header/CourseLockUp.jsx",
+            "line": 18,
+            "column": 2,
+            "index": 354
           }
         ],
         "Tooltip": [
@@ -15363,10 +15429,10 @@
             "index": 932
           },
           {
-            "filePath": "src/studio-header/Header.jsx",
-            "line": 142,
-            "column": 8,
-            "index": 5668
+            "filePath": "src/studio-header/CourseLockUp.jsx",
+            "line": 21,
+            "column": 6,
+            "index": 414
           }
         ],
         "CheckCircleOutline": [
@@ -15473,6 +15539,36 @@
             "line": 66,
             "column": 15,
             "index": 1920
+          }
+        ],
+        "Nav": [
+          {
+            "filePath": "src/studio-header/HeaderBody.jsx",
+            "line": 81,
+            "column": 6,
+            "index": 1782
+          },
+          {
+            "filePath": "src/studio-header/HeaderBody.jsx",
+            "line": 100,
+            "column": 4,
+            "index": 2678
+          }
+        ],
+        "DropdownButton": [
+          {
+            "filePath": "src/studio-header/NavDropdownMenu.jsx",
+            "line": 12,
+            "column": 2,
+            "index": 166
+          }
+        ],
+        "Avatar": [
+          {
+            "filePath": "src/studio-header/UserMenu.jsx",
+            "line": 27,
+            "column": 4,
+            "index": 584
           }
         ]
       }
@@ -20504,9 +20600,9 @@
           },
           {
             "filePath": "src/components/enterprise-user-subsidy/UserSubsidy.jsx",
-            "line": 94,
+            "line": 104,
             "column": 6,
-            "index": 2546
+            "index": 2941
           },
           {
             "filePath": "src/components/error-page/ErrorPageContent.jsx",
@@ -20778,9 +20874,9 @@
           },
           {
             "filePath": "src/components/dashboard/sidebar/SubsidiesSummary.jsx",
-            "line": 67,
+            "line": 84,
             "column": 6,
-            "index": 2545
+            "index": 3341
           },
           {
             "filePath": "src/components/enterprise-banner/EnterpriseBanner.jsx",
@@ -20989,10 +21085,10 @@
             "index": 1045
           },
           {
-            "filePath": "src/components/dashboard/sidebar/EnterpriseOffersSummaryCard.jsx",
-            "line": 50,
-            "column": 8,
-            "index": 1610
+            "filePath": "src/components/dashboard/sidebar/LearnerCreditSummaryCard.jsx",
+            "line": 44,
+            "column": 6,
+            "index": 1247
           },
           {
             "filePath": "src/components/executive-education-2u/components/CourseSummaryCard.jsx",
@@ -21255,10 +21351,10 @@
             "index": 2704
           },
           {
-            "filePath": "src/components/dashboard/sidebar/EnterpriseOffersSummaryCard.jsx",
-            "line": 51,
-            "column": 10,
-            "index": 1670
+            "filePath": "src/components/dashboard/sidebar/LearnerCreditSummaryCard.jsx",
+            "line": 45,
+            "column": 8,
+            "index": 1305
           },
           {
             "filePath": "src/components/error-page/ErrorPage.jsx",
@@ -23007,10 +23103,10 @@
             "index": 2792
           },
           {
-            "filePath": "src/components/dashboard/sidebar/EnterpriseOffersSummaryCard.jsx",
-            "line": 29,
-            "column": 12,
-            "index": 872
+            "filePath": "src/components/dashboard/sidebar/LearnerCreditSummaryCard.jsx",
+            "line": 21,
+            "column": 10,
+            "index": 643
           },
           {
             "filePath": "src/components/dashboard/sidebar/SubscriptionSummaryCard.jsx",
@@ -27283,51 +27379,51 @@
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 446,
+            "line": 456,
             "column": 6,
-            "index": 14766
+            "index": 15278
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 503,
+            "line": 513,
             "column": 16,
-            "index": 17123
+            "index": 17635
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 515,
+            "line": 525,
             "column": 12,
-            "index": 17631
+            "index": 18143
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 529,
+            "line": 539,
             "column": 18,
-            "index": 18258
+            "index": 18770
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 532,
+            "line": 542,
             "column": 18,
-            "index": 18415
-          },
-          {
-            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 571,
-            "column": 6,
-            "index": 20134
-          },
-          {
-            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 574,
-            "column": 12,
-            "index": 20244
+            "index": 18927
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
             "line": 581,
+            "column": 6,
+            "index": 20646
+          },
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 584,
             "column": 12,
-            "index": 20782
+            "index": 20756
+          },
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 591,
+            "column": 12,
+            "index": 21294
           },
           {
             "filePath": "src/library-authoring/common/ErrorAlert.jsx",
@@ -27495,27 +27591,27 @@
         "Card": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 85,
+            "line": 86,
             "column": 2,
-            "index": 2565
+            "index": 2597
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 150,
+            "line": 156,
             "column": 6,
-            "index": 4746
+            "index": 5028
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 447,
+            "line": 457,
             "column": 8,
-            "index": 14802
+            "index": 15314
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 582,
+            "line": 592,
             "column": 14,
-            "index": 20846
+            "index": 21358
           },
           {
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
@@ -27575,15 +27671,15 @@
         "Card.Header": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 86,
+            "line": 87,
             "column": 4,
-            "index": 2599
+            "index": 2631
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 583,
+            "line": 593,
             "column": 16,
-            "index": 20869
+            "index": 21381
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportListItem.jsx",
@@ -27613,27 +27709,27 @@
         "ActionRow": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 90,
+            "line": 91,
             "column": 8,
-            "index": 2724
+            "index": 2756
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 139,
+            "line": 145,
             "column": 8,
-            "index": 4310
+            "index": 4592
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 429,
+            "line": 439,
             "column": 6,
-            "index": 14192
+            "index": 14704
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 449,
+            "line": 459,
             "column": 12,
-            "index": 14843
+            "index": 15355
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportListItem.jsx",
@@ -27687,63 +27783,63 @@
         "Button": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 91,
+            "line": 92,
             "column": 10,
-            "index": 2746
+            "index": 2778
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 98,
+            "line": 99,
             "column": 10,
-            "index": 3067
+            "index": 3099
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 143,
+            "line": 149,
             "column": 10,
-            "index": 4438
+            "index": 4720
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 303,
+            "line": 312,
             "column": 4,
-            "index": 10297
+            "index": 10777
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 517,
+            "line": 527,
             "column": 14,
-            "index": 17779
+            "index": 18291
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 555,
+            "line": 565,
             "column": 20,
-            "index": 19462
+            "index": 19974
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 558,
+            "line": 568,
             "column": 20,
-            "index": 19641
+            "index": 20153
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 561,
+            "line": 571,
             "column": 20,
-            "index": 19831
+            "index": 20343
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 587,
+            "line": 597,
             "column": 18,
-            "index": 21066
+            "index": 21578
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 590,
+            "line": 600,
             "column": 18,
-            "index": 21257
+            "index": 21769
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
@@ -27899,15 +27995,15 @@
         "ModalDialog": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 108,
+            "line": 109,
             "column": 4,
-            "index": 3367
+            "index": 3399
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 126,
+            "line": 132,
             "column": 4,
-            "index": 3849
+            "index": 4131
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -27919,9 +28015,9 @@
         "ModalDialog.Header": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 130,
+            "line": 136,
             "column": 6,
-            "index": 3953
+            "index": 4235
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -27933,9 +28029,9 @@
         "ModalDialog.Title": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 131,
+            "line": 137,
             "column": 8,
-            "index": 3982
+            "index": 4264
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -27947,9 +28043,9 @@
         "ModalDialog.Body": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 135,
+            "line": 141,
             "column": 6,
-            "index": 4149
+            "index": 4431
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -27961,9 +28057,9 @@
         "ModalDialog.Footer": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 138,
+            "line": 144,
             "column": 6,
-            "index": 4281
+            "index": 4563
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -27975,9 +28071,9 @@
         "ModalDialog.CloseButton": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 140,
+            "line": 146,
             "column": 10,
-            "index": 4332
+            "index": 4614
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -27989,29 +28085,29 @@
         "Card.Body": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 151,
+            "line": 157,
             "column": 8,
-            "index": 4761
+            "index": 5043
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 448,
+            "line": 458,
             "column": 10,
-            "index": 14819
+            "index": 15331
           }
         ],
         "Form.Control": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 373,
+            "line": 383,
             "column": 10,
-            "index": 12611
+            "index": 13123
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 460,
+            "line": 470,
             "column": 16,
-            "index": 15338
+            "index": 15850
           },
           {
             "filePath": "src/library-authoring/common/FormGroup.jsx",
@@ -28047,25 +28143,25 @@
         "IconButton": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 389,
+            "line": 399,
             "column": 12,
-            "index": 13040
+            "index": 13552
           }
         ],
         "Edit": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 392,
+            "line": 402,
             "column": 22,
-            "index": 13124
+            "index": 13636
           }
         ],
         "Container": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 426,
+            "line": 436,
             "column": 2,
-            "index": 14017
+            "index": 14529
           },
           {
             "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
@@ -28077,15 +28173,15 @@
         "ActionRow.Spacer": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 433,
+            "line": 443,
             "column": 8,
-            "index": 14287
+            "index": 14799
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 459,
+            "line": 469,
             "column": 16,
-            "index": 15301
+            "index": 15813
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
@@ -28121,21 +28217,21 @@
         "Row": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 443,
+            "line": 453,
             "column": 4,
-            "index": 14563
+            "index": 15075
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 528,
+            "line": 538,
             "column": 16,
-            "index": 18234
+            "index": 18746
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 573,
+            "line": 583,
             "column": 10,
-            "index": 20226
+            "index": 20738
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
@@ -28207,17 +28303,17 @@
         "SearchField": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 452,
+            "line": 462,
             "column": 16,
-            "index": 14975
+            "index": 15487
           }
         ],
         "Pagination": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 504,
+            "line": 514,
             "column": 18,
-            "index": 17155
+            "index": 17667
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
@@ -28241,9 +28337,9 @@
         "Card.Footer": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 586,
+            "line": 596,
             "column": 16,
-            "index": 21034
+            "index": 21546
           },
           {
             "filePath": "src/library-authoring/empty-page/EmptyPage.jsx",
@@ -30799,6 +30895,12 @@
             "line": 11,
             "column": 4,
             "index": 385
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyEditView/SubsidyEditViewContainer.jsx",
+            "line": 18,
+            "column": 6,
+            "index": 540
           }
         ],
         "Stack": [
@@ -31047,6 +31149,12 @@
             "index": 430
           },
           {
+            "filePath": "src/Configuration/Provisioning/SubsidyEditView/SubsidyEditViewContainer.jsx",
+            "line": 19,
+            "column": 8,
+            "index": 587
+          },
+          {
             "filePath": "src/users/account-actions/CancelRetirement.jsx",
             "line": 71,
             "column": 10,
@@ -31155,6 +31263,12 @@
             "line": 14,
             "column": 8,
             "index": 490
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyEditView/SubsidyEditViewContainer.jsx",
+            "line": 21,
+            "column": 10,
+            "index": 651
           }
         ],
         "Button": [
@@ -31172,9 +31286,9 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogDropdown.jsx",
-            "line": 75,
+            "line": 85,
             "column": 8,
-            "index": 3035
+            "index": 3477
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormSubmissionButton.jsx",
@@ -31184,9 +31298,21 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/SubsidyDetailView/EditButton.jsx",
-            "line": 4,
+            "line": 17,
+            "column": 4,
+            "index": 458
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyEditView/CancelButton.jsx",
+            "line": 5,
             "column": 2,
-            "index": 69
+            "index": 124
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyEditView/SaveEditsButton.jsx",
+            "line": 5,
+            "column": 2,
+            "index": 127
           },
           {
             "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentIndexPage.jsx",
@@ -31384,15 +31510,15 @@
         "Form.AutosuggestOption": [
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogDropdown.jsx",
-            "line": 17,
+            "line": 27,
             "column": 6,
-            "index": 956
+            "index": 1398
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogDropdown.jsx",
-            "line": 25,
+            "line": 35,
             "column": 10,
-            "index": 1250
+            "index": 1692
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormCustomerDropdown.jsx",
@@ -31404,9 +31530,9 @@
         "Form.Group": [
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogDropdown.jsx",
-            "line": 51,
+            "line": 61,
             "column": 8,
-            "index": 2070
+            "index": 2512
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogTitle.jsx",
@@ -31416,39 +31542,39 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
-            "line": 60,
+            "line": 66,
+            "column": 6,
+            "index": 2810
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
+            "line": 94,
+            "column": 8,
+            "index": 3647
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormCatalog.jsx",
+            "line": 72,
             "column": 6,
             "index": 2482
           },
           {
-            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
-            "line": 80,
-            "column": 6,
-            "index": 3052
-          },
-          {
-            "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormCatalog.jsx",
-            "line": 56,
-            "column": 6,
-            "index": 2104
-          },
-          {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormDescription.jsx",
-            "line": 31,
+            "line": 41,
             "column": 6,
-            "index": 1028
+            "index": 1377
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCap.jsx",
-            "line": 37,
+            "line": 42,
             "column": 6,
-            "index": 1296
+            "index": 1514
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCapAmount.jsx",
-            "line": 36,
+            "line": 41,
             "column": 6,
-            "index": 1483
+            "index": 1718
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormAccountType.jsx",
@@ -31476,15 +31602,15 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormInternalOnly.jsx",
-            "line": 30,
+            "line": 37,
             "column": 6,
-            "index": 759
+            "index": 1046
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormSubsidy.jsx",
-            "line": 30,
+            "line": 35,
             "column": 6,
-            "index": 1047
+            "index": 1219
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
@@ -31494,17 +31620,17 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTitle.jsx",
-            "line": 31,
+            "line": 41,
             "column": 6,
-            "index": 1072
+            "index": 1398
           }
         ],
         "Form.Autosuggest": [
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormCustomCatalogDropdown.jsx",
-            "line": 54,
+            "line": 64,
             "column": 10,
-            "index": 2131
+            "index": 2573
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormCustomerDropdown.jsx",
@@ -31544,27 +31670,27 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
-            "line": 65,
+            "line": 71,
             "column": 8,
-            "index": 2608
+            "index": 2936
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormAccountDetails.jsx",
-            "line": 83,
-            "column": 8,
-            "index": 3107
+            "line": 97,
+            "column": 10,
+            "index": 3708
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormDescription.jsx",
-            "line": 33,
+            "line": 43,
             "column": 8,
-            "index": 1133
+            "index": 1482
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCapAmount.jsx",
-            "line": 39,
+            "line": 44,
             "column": 8,
-            "index": 1538
+            "index": 1773
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormCustomer.jsx",
@@ -31586,9 +31712,9 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTitle.jsx",
-            "line": 35,
+            "line": 45,
             "column": 8,
-            "index": 1177
+            "index": 1503
           }
         ],
         "Warning": [
@@ -31682,21 +31808,21 @@
         "Form.Label": [
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormCatalog.jsx",
-            "line": 57,
+            "line": 73,
             "column": 8,
-            "index": 2144
+            "index": 2522
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormDescription.jsx",
-            "line": 32,
+            "line": 42,
             "column": 8,
-            "index": 1049
+            "index": 1398
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCap.jsx",
-            "line": 40,
+            "line": 45,
             "column": 8,
-            "index": 1351
+            "index": 1569
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormAccountType.jsx",
@@ -31706,23 +31832,23 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormSubsidy.jsx",
-            "line": 31,
+            "line": 36,
             "column": 8,
-            "index": 1087
+            "index": 1259
           }
         ],
         "Form.RadioSet": [
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormCatalog.jsx",
-            "line": 65,
+            "line": 81,
             "column": 12,
-            "index": 2402
+            "index": 2780
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCap.jsx",
-            "line": 41,
+            "line": 46,
             "column": 8,
-            "index": 1427
+            "index": 1645
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormAccountType.jsx",
@@ -31732,23 +31858,23 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormSubsidy.jsx",
-            "line": 32,
+            "line": 37,
             "column": 8,
-            "index": 1164
+            "index": 1336
           }
         ],
         "Form.Radio": [
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormCatalog.jsx",
-            "line": 72,
+            "line": 88,
             "column": 14,
-            "index": 2672
+            "index": 3050
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/PolicyForm/ProvisioningFormPerLearnerCap.jsx",
-            "line": 48,
+            "line": 53,
             "column": 12,
-            "index": 1687
+            "index": 1905
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormAccountType.jsx",
@@ -31758,9 +31884,9 @@
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormSubsidy.jsx",
-            "line": 39,
+            "line": 44,
             "column": 12,
-            "index": 1389
+            "index": 1561
           }
         ],
         "Spinner": [
@@ -31882,9 +32008,9 @@
         "Form.Checkbox": [
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormInternalOnly.jsx",
-            "line": 33,
+            "line": 40,
             "column": 8,
-            "index": 814
+            "index": 1101
           }
         ],
         "StatefulButton": [
@@ -40381,6 +40507,34 @@
             "index": 2389
           }
         ],
+        "useMediaQuery": [
+          {
+            "filePath": "src/packages/common/ui/RecommendationsLoader/index.jsx",
+            "line": 16,
+            "column": 23,
+            "index": 503
+          },
+          {
+            "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
+            "line": 19,
+            "column": 23,
+            "index": 517
+          }
+        ],
+        "breakpoints": [
+          {
+            "filePath": "src/packages/common/ui/RecommendationsLoader/index.jsx",
+            "line": 16,
+            "column": 49,
+            "index": 529
+          },
+          {
+            "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
+            "line": 19,
+            "column": 49,
+            "index": 543
+          }
+        ],
         "PlayCircleFilled": [
           {
             "filePath": "src/packages/common/ui/Video/index.jsx",
@@ -42145,22 +42299,6 @@
             "line": 132,
             "column": 14,
             "index": 3925
-          }
-        ],
-        "useMediaQuery": [
-          {
-            "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
-            "line": 19,
-            "column": 23,
-            "index": 517
-          }
-        ],
-        "breakpoints": [
-          {
-            "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
-            "line": 19,
-            "column": 49,
-            "index": 543
           }
         ],
         "Tabs": [
