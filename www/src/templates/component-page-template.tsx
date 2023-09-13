@@ -43,6 +43,7 @@ export interface IPageTemplate {
   pageContext: {
     scssVariablesData: Record<string, string>,
     componentsUsageInsights: string[],
+    githubEditPath: string,
   }
 }
 
@@ -52,7 +53,7 @@ export type ShortCodesTypes = {
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
-  pageContext: { scssVariablesData, componentsUsageInsights },
+  pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
@@ -99,7 +100,6 @@ export default function PageTemplate({
   const usageInsightsUrl = 'usage-insights';
 
   const sortedComponentNames = mdx.frontmatter?.components || [];
-  const componentTitle = mdx.frontmatter.title;
   const filteredComponentsUsageInsights = componentsUsageInsights.map(componentName => componentName.replace(/\./g, ''));
   const isUsageInsights = (sortedComponentNames as []).some(value => filteredComponentsUsageInsights.includes(value));
 
@@ -130,6 +130,7 @@ export default function PageTemplate({
       showMinimizedTitle={showMinimizedTitle}
       isMdx
       tocData={getTocData()}
+      githubEditPath={githubEditPath}
     >
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={mdx.frontmatter.title} />
@@ -140,13 +141,22 @@ export default function PageTemplate({
             <p className="small mb-0">{mdx.frontmatter.notes}</p>
           </Alert>
         )}
-        <div className="d-flex justify-content-between align-items-start">
-          <h1 className="mb-4">{mdx.frontmatter.title}</h1>
-          <Stack direction="horizontal" gap={3}>
-            <PageEditBtn componentTitle={componentTitle} />
+        <Stack
+          className="justify-content-between"
+          direction={isMobile ? 'vertical' : 'horizontal'}
+        >
+          <h1 className={isMobile ? 'mb-2' : 'mb-4'}>
+            {mdx.frontmatter.title}
+          </h1>
+          <Stack
+            className="mb-4"
+            direction={isMobile ? 'vertical' : 'horizontal'}
+            gap={2}
+          >
+            <PageEditBtn githubEditPath={githubEditPath} />
             <LeaveFeedback />
           </Stack>
-        </div>
+        </Stack>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>

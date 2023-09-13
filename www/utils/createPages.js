@@ -29,6 +29,7 @@ async function createPages(graphql, actions, reporter) {
               components
             }
             slug
+            fileAbsolutePath
           }
         }
       }
@@ -47,6 +48,7 @@ async function createPages(graphql, actions, reporter) {
   for (const { node } of components) {
     const componentDir = node.slug.split('/')[0];
     const variablesPath = path.resolve(__dirname, `../../src/${componentDir}/_variables.scss`);
+    const githubEditPath = node.fileAbsolutePath.split('src')[1];
     let scssVariablesData = {};
 
     if (fs.existsSync(variablesPath)) {
@@ -67,6 +69,7 @@ async function createPages(graphql, actions, reporter) {
         components: node.frontmatter.components || [],
         scssVariablesData,
         componentsUsageInsights: Object.keys(componentsUsage),
+        githubEditPath,
       },
     });
   }
