@@ -2,6 +2,7 @@ import React, {
   useEffect, useState,
 } from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 import { useIntl } from 'react-intl';
 import { KeyboardArrowUp, KeyboardArrowDown } from '../../icons';
 import Icon from '../Icon';
@@ -38,6 +39,11 @@ function FormAutosuggest({
     errorMessage: '',
     dropDownItems: [],
   });
+  const [activeMenuItemId, setActiveMenuItemId] = useState(null);
+
+  const handleMenuItemFocus = (menuItemId) => {
+    setActiveMenuItemId(menuItemId);
+  };
 
   const handleItemClick = (e, onClick) => {
     const clickedValue = e.currentTarget.getAttribute('data-value');
@@ -63,12 +69,15 @@ function FormAutosuggest({
     let childrenOpt = React.Children.map(children, (child) => {
       // eslint-disable-next-line no-shadow
       const { children, onClick, ...rest } = child.props;
+      const menuItemId = uuidv4();
 
       return React.cloneElement(child, {
         ...rest,
         children,
         'data-value': children,
         onClick: (e) => handleItemClick(e, onClick),
+        id: menuItemId,
+        onFocus: () => handleMenuItemFocus(menuItemId),
       });
     });
 
@@ -219,6 +228,9 @@ function FormAutosuggest({
 
   return (
     <div className="pgn__form-autosuggest__wrapper" ref={parentRef}>
+      <div aria-live="assertive" className="sr-only" data-testid="autosuggest-screen-reader-options-count">
+        {`${state.dropDownItems.length} options found`}
+      </div>
       <FormGroup isInvalid={!!state.errorMessage}>
         <FormControl
           aria-expanded={(state.dropDownItems.length > 0).toString()}
@@ -228,6 +240,7 @@ function FormAutosuggest({
           autoComplete="off"
           value={state.displayValue}
           aria-invalid={state.errorMessage}
+          aria-activedescendant={activeMenuItemId}
           onChange={handleOnChange}
           onClick={handleClick}
           trailingElement={iconToggle}
