@@ -966,7 +966,7 @@
         "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.25" }],
         "description": "Dark color of level 400.",
         "actions": {
-          "default": "{color.action.default.dark.400.path}"
+          "default": "{color.action.default.dark.400}"
         }
       },
       "500": {
@@ -985,7 +985,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
         "description": "Dark color of level 600.",
         "actions": {
-          "default": "{color.action.default.dark.600.path}"
+          "default": "{color.action.default.dark.600}"
         }
       },
       "700": {
@@ -995,7 +995,7 @@
         "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
         "description": "Info color of level 700.",
         "actions": {
-          "default": "{color.action.default.dark.700.path}"
+          "default": "{color.action.default.dark.700}"
         }
       },
       "800": {
