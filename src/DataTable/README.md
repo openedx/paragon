@@ -1062,7 +1062,7 @@ a responsive grid of cards.
 ### Customizing number of Cards shown per row
 Use `columnSizes` prop of `CardView` component to define how many `Cards` are shown per row at each breakpoint.
 
-`columnSizes` is an object containing the desired column size at each breakpoint. The example below shows 1 `Card` per row at `xs` breakpoint, 2 `Cards` at `sm` and `md`, and 4 `Cards` at `lg` and higher. You can read more about the API at https://react-bootstrap.netlify.app/layout/grid/.
+`columnSizes` is an object containing the desired column size at each breakpoint. The example below shows 1 `Card` per row at `xs` breakpoint, 2 `Cards` at `sm` and `md`, and 4 `Cards` at `lg` and higher. You can read more about the API at [React-Bootstrap's grid documentation](https://react-bootstrap-v4.netlify.app/layout/grid/).
 
 ```jsx live
 () => {
