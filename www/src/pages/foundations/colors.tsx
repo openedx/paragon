@@ -49,15 +49,18 @@ function parseColors(cssSelectors: { selector: string; declarations: string; }[]
   });
 }
 
+export type CSSStyleDeclarationType = CSSStyleDeclaration | null;
+
 export interface ISwatch {
   name: string,
   colorClassName: string,
   isUnused?: boolean,
+  styles: CSSStyleDeclarationType,
 }
 
-const styles = typeof window !== 'undefined' ? getComputedStyle(document.body) : null;
-
-function Swatch({ name, colorClassName, isUnused }: ISwatch) {
+function Swatch({
+  name, colorClassName, isUnused, styles,
+}: ISwatch) {
   const computedValue = styles?.getPropertyValue(name);
 
   return (
@@ -90,7 +93,7 @@ Swatch.defaultProps = {
   isUnused: false,
 };
 
-const renderColorRamp = (themeName: string, unusedLevels: number[]) => (
+const renderColorRamp = (themeName: string, unusedLevels: number[], styles: CSSStyleDeclarationType) => (
   <div
     key={`${themeName}`}
   >
@@ -101,6 +104,7 @@ const renderColorRamp = (themeName: string, unusedLevels: number[]) => (
         name={`--pgn-color-${themeName}-${level}`}
         colorClassName={utilityClasses.bg(themeName, level)}
         isUnused={unusedLevels.includes(level)}
+        styles={styles}
       />
     ))}
   </div>
@@ -117,6 +121,8 @@ export interface IColorsPage {
 // eslint-disable-next-line react/prop-types
 export default function ColorsPage({ data }: IColorsPage) {
   const { settings } = useContext(SettingsContext);
+  const styles = typeof window !== 'undefined' ? getComputedStyle(document.body) : null;
+
   parseColors(data.allCssUtilityClasses.nodes); // eslint-disable-line react/prop-types
 
   return (
@@ -128,15 +134,15 @@ export default function ColorsPage({ data }: IColorsPage) {
         <div className="color-palette mb-3">
           {colors
             .slice(0, 3)
-            .map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels))}
+            .map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels, styles))}
           {colors
             .slice(3)
-            .map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels))}
+            .map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels, styles))}
           <div>
             <p className="h5">accents</p>
 
-            <Swatch name="--pgn-color-accent-a" colorClassName="bg-accent-a" />
-            <Swatch name="--pgn-color-accent-b" colorClassName="bg-accent-b" />
+            <Swatch name="--pgn-color-accent-a" colorClassName="bg-accent-a" styles={styles} />
+            <Swatch name="--pgn-color-accent-b" colorClassName="bg-accent-b" styles={styles} />
           </div>
         </div>
 
