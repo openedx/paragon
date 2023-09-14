@@ -175,6 +175,10 @@
 .pgn__data-table-filters-dropdown-item {
   padding: $data-table-padding-small 14px;
   min-width: 15em;
+
+  .pgn__form-checkbox {
+    align-items: center;
+  }
 }
 
 .pgn__data-table-status {
