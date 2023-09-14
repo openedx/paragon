@@ -8,7 +8,6 @@ export interface PageEditBtnProps extends Partial<AnchorHTMLAttributes<HTMLAncho
 }
 
 function PageEditBtn({ githubEditPath, isNavLink, ...props }: PageEditBtnProps) {
-  const pageEditUrl = `https://github.com/openedx/paragon/edit/master/src${githubEditPath}`;
   const pageEditLinkTitle = 'Edit this page';
 
   const handlePageEditBtnClick = () => {
@@ -19,7 +18,7 @@ function PageEditBtn({ githubEditPath, isNavLink, ...props }: PageEditBtnProps) 
     return (
       <Nav.Link
         onClick={handlePageEditBtnClick}
-        href={pageEditUrl}
+        href={githubEditPath}
         target="_blank"
         {...props}
       >
@@ -32,7 +31,7 @@ function PageEditBtn({ githubEditPath, isNavLink, ...props }: PageEditBtnProps) 
     <Button
       size="sm"
       as={Hyperlink}
-      destination={pageEditUrl}
+      destination={githubEditPath}
       variant="tertiary"
       onClick={handlePageEditBtnClick}
       target="_blank"

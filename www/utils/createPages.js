@@ -48,7 +48,7 @@ async function createPages(graphql, actions, reporter) {
   for (const { node } of components) {
     const componentDir = node.slug.split('/')[0];
     const variablesPath = path.resolve(__dirname, `../../src/${componentDir}/_variables.scss`);
-    const githubEditPath = node.fileAbsolutePath.split('src')[1];
+    const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.fileAbsolutePath.split('src')[1]}`;
     let scssVariablesData = {};
 
     if (fs.existsSync(variablesPath)) {
