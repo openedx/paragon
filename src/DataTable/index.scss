@@ -112,6 +112,12 @@
       display: flex;
       justify-content: flex-end;
     }
+
+    .pgn__data-table-side-filters-item {
+      .pgn__form-checkbox {
+        align-items: center;
+      }
+    }
   }
 
   .pgn__data-table-layout-main {
