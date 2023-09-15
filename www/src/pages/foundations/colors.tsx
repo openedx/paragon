@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -125,7 +125,16 @@ export interface IColorsPage {
 // eslint-disable-next-line react/prop-types
 export default function ColorsPage({ data, pageContext }: IColorsPage) {
   const { settings } = useContext(SettingsContext);
-  const styles = typeof window !== 'undefined' ? getComputedStyle(document.body) : null;
+  const [styles, setStyles] = useState<CSSStyleDeclarationType>(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (typeof window !== 'undefined') {
+        const newStyles = getComputedStyle(document.body);
+        setStyles(newStyles);
+      }
+    }, 500);
+  }, [settings.theme]);
 
   parseColors(data.allCssUtilityClasses.nodes); // eslint-disable-line react/prop-types
 
