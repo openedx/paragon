@@ -2,9 +2,9 @@
   "elevation": {
     "form": {
       "input": {
-        "base": { "value": "inset 0 1px 1px rgba(0, 0, 0, .075)", "type": "shadow", "source": "$input-box-shadow" },
+        "base": { "value": "none", "type": "shadow", "source": "$input-box-shadow" },
         "focus": {
-          "value": "{elevation.input.btn-focus.box-shadow}",
+          "value": "none",
           "type": "shadow",
           "source": "$input-focus-box-shadow"
         }
@@ -35,13 +35,13 @@
         },
         "range": {
           "track": {
-            "value": "inset 0 .25rem .25rem rgba(0, 0, 0, .1)",
+            "value": "none",
             "type": "shadow",
             "source": "$custom-range-track-box-shadow"
           },
           "thumb": {
             "base": {
-              "value": "0 .1rem .25rem rgba(0, 0, 0, .1)", "type": "shadow", "source": "$custom-range-thumb-box-shadow"
+              "value": "none", "type": "shadow", "source": "$custom-range-thumb-box-shadow"
             },
             "focus": {
               "value": "0 0 0 1px {color.body.bg}, {size.form.input.width.focus}",
@@ -61,7 +61,7 @@
         "select": {
           "border": {
             "base": {
-              "value": "inset 0 1px 2px rgba(0, 0, 0, .075)", "type": "shadow", "source": "$custom-select-box-shadow"
+              "value": "none", "type": "shadow", "source": "$custom-select-box-shadow"
             },
             "focus": {
               "value": "{elevation.input.btn-focus.box-shadow}",

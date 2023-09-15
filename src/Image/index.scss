@@ -23,9 +23,9 @@
   padding: var(--pgn-spacing-image-thumbnail-padding);
   background-color: var(--pgn-color-image-thumbnail-bg);
   border: var(--pgn-size-image-thumbnail-border-width) solid var(--pgn-color-image-thumbnail-border);
+  box-shadow: var(--pgn-elevation-image-thumbnail-box-shadow);
 
   @include border-radius(var(--pgn-size-image-thumbnail-border-radius));
-  @include box-shadow(var(--pgn-elevation-image-thumbnail-box-shadow));
 
   // Keep them at most 100% wide
   @include img-fluid();
