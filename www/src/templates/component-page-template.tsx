@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import classNames from 'classnames';
 import {
   Container,
   Alert,
@@ -142,15 +143,17 @@ export default function PageTemplate({
           </Alert>
         )}
         <Stack
-          className="justify-content-between"
-          direction={isMobile ? 'vertical' : 'horizontal'}
+          className={classNames('justify-content-between', {
+            'flex-column-reverse align-items-start': isMobile,
+          })}
+          direction="horizontal"
         >
-          <h1 className={isMobile ? 'mb-2' : 'mb-4'}>
+          <h1>
             {mdx.frontmatter.title}
           </h1>
           <Stack
-            className="mb-4"
-            direction={isMobile ? 'vertical' : 'horizontal'}
+            className={classNames('mb-2', { 'justify-content-end': isMobile })}
+            direction="horizontal"
             gap={2}
           >
             <PageEditBtn githubEditPath={githubEditPath} />
