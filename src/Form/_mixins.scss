@@ -50,15 +50,7 @@
     background-color: var(--pgn-color-form-input-focus-bg);
     border-color: var(--pgn-color-form-input-focus-border);
     outline: 0;
-
-    @if $enable-shadows {
-      @include box-shadow(var(--pgn-elevation-form-input-base), var(--pgn-elevation-form-input-focus));
-    }
-
-    @else {
-      // Avoid using mixin so we can pass custom focus shadow properly
-      box-shadow: var(--pgn-elevation-form-input-focus);
-    }
+    box-shadow: var(--pgn-elevation-form-input-focus);
   }
 
   @include deprecate("The `form-control-focus()` mixin", "v4.4.0", "v5", $ignore-warning);

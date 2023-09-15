@@ -13,9 +13,9 @@
   background-color: var(--pgn-color-popover-bg);
   background-clip: padding-box;
   border: var(--pgn-size-popover-border-width) solid var(--pgn-color-popover-border);
+  box-shadow: var(--pgn-elevation-popover-box-shadow);
 
   @include border-radius(var(--pgn-size-popover-border-radius));
-  @include box-shadow(var(--pgn-elevation-popover-box-shadow));
 
   .arrow {
     position: absolute;
