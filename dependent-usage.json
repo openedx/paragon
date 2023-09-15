@@ -1,8 +1,8 @@
 {
-  "lastModified": 1694700664034,
+  "lastModified": 1694786882053,
   "projectUsages": [
     {
-      "version": "21.1.7",
+      "version": "21.1.10",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -16405,9 +16405,9 @@
           },
           {
             "filePath": "src/components/TinyMCEEditor.jsx",
-            "line": 143,
+            "line": 167,
             "column": 12,
-            "index": 4889
+            "index": 5767
           },
           {
             "filePath": "src/discussions/common/ActionsDropdown.jsx",
@@ -16591,17 +16591,17 @@
         "AlertModal": [
           {
             "filePath": "src/components/TinyMCEEditor.jsx",
-            "line": 136,
+            "line": 160,
             "column": 6,
-            "index": 4670
+            "index": 5548
           }
         ],
         "ActionRow": [
           {
             "filePath": "src/components/TinyMCEEditor.jsx",
-            "line": 142,
+            "line": 166,
             "column": 10,
-            "index": 4865
+            "index": 5743
           },
           {
             "filePath": "src/discussions/common/Confirmation.jsx",
@@ -34539,21 +34539,21 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ResetCard.jsx",
-            "line": 32,
-            "column": 8,
-            "index": 1235
+            "line": 34,
+            "column": 10,
+            "index": 1320
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
-            "line": 79,
-            "column": 6,
-            "index": 2631
+            "line": 81,
+            "column": 8,
+            "index": 2669
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 36,
-            "column": 8,
-            "index": 1035
+            "line": 38,
+            "column": 10,
+            "index": 1075
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/AdvanceTypeSelect.jsx",
@@ -34825,15 +34825,15 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ResetCard.jsx",
-            "line": 37,
+            "line": 40,
             "column": 8,
-            "index": 1478
+            "index": 1578
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ResetCard.jsx",
-            "line": 40,
+            "line": 43,
             "column": 8,
-            "index": 1669
+            "index": 1769
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/ProblemTypeSelect.jsx",
@@ -34915,9 +34915,9 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/index.jsx",
-            "line": 28,
+            "line": 29,
             "column": 6,
-            "index": 978
+            "index": 992
           },
           {
             "filePath": "src/editors/sharedComponents/Button/index.jsx",
@@ -35085,9 +35085,9 @@
           },
           {
             "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
-            "line": 38,
+            "line": 25,
             "column": 10,
-            "index": 1101
+            "index": 665
           },
           {
             "filePath": "src/editors/sharedComponents/SelectionModal/Gallery.jsx",
@@ -35129,27 +35129,27 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
-            "line": 47,
+            "line": 48,
             "column": 6,
-            "index": 1491
+            "index": 1504
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
-            "line": 58,
+            "line": 59,
             "column": 6,
-            "index": 1860
+            "index": 1873
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 40,
+            "line": 43,
             "column": 6,
-            "index": 1260
+            "index": 1315
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 64,
+            "line": 67,
             "column": 8,
-            "index": 2065
+            "index": 2120
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/TimerCard.jsx",
@@ -35299,27 +35299,27 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
-            "line": 48,
+            "line": 49,
             "column": 8,
-            "index": 1512
+            "index": 1525
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
-            "line": 59,
+            "line": 60,
             "column": 8,
-            "index": 1881
+            "index": 1894
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 41,
+            "line": 44,
             "column": 8,
-            "index": 1303
+            "index": 1358
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ShowAnswerCard.jsx",
-            "line": 65,
+            "line": 68,
             "column": 10,
-            "index": 2115
+            "index": 2170
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/TimerCard.jsx",
@@ -35441,9 +35441,9 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ResetCard.jsx",
-            "line": 36,
+            "line": 39,
             "column": 6,
-            "index": 1408
+            "index": 1508
           }
         ],
         "IconButtonWithTooltip": [
@@ -35747,27 +35747,27 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/index.jsx",
-            "line": 38,
+            "line": 39,
             "column": 8,
-            "index": 1198
-          },
-          {
-            "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
-            "line": 30,
-            "column": 22,
-            "index": 895
+            "index": 1212
           },
           {
             "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
-            "line": 18,
+            "line": 21,
             "column": 8,
-            "index": 647
+            "index": 842
           },
           {
             "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
-            "line": 63,
+            "line": 43,
             "column": 22,
-            "index": 2428
+            "index": 2108
+          },
+          {
+            "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
+            "line": 79,
+            "column": 18,
+            "index": 3137
           },
           {
             "filePath": "src/editors/sharedComponents/DraggableList/SortableItem.jsx",
@@ -35832,10 +35832,10 @@
             "index": 707
           },
           {
-            "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
-            "line": 29,
-            "column": 19,
-            "index": 866
+            "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
+            "line": 78,
+            "column": 15,
+            "index": 3112
           },
           {
             "filePath": "src/editors/sharedComponents/SelectionModal/SearchSort.jsx",
@@ -35932,16 +35932,16 @@
             "index": 1305
           },
           {
-            "filePath": "src/editors/containers/VideoUploadEditor/index.jsx",
-            "line": 27,
+            "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
+            "line": 39,
             "column": 12,
-            "index": 767
+            "index": 1935
           },
           {
             "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
-            "line": 60,
-            "column": 12,
-            "index": 2292
+            "line": 75,
+            "column": 8,
+            "index": 2971
           },
           {
             "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/DimensionControls.jsx",
@@ -36567,9 +36567,9 @@
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
-            "line": 69,
+            "line": 70,
             "column": 8,
-            "index": 2282
+            "index": 2295
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/SocialShareWidget/index.jsx",
@@ -37107,9 +37107,9 @@
           },
           {
             "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
-            "line": 18,
+            "line": 21,
             "column": 19,
-            "index": 658
+            "index": 853
           }
         ],
         "Copyright": [
@@ -37259,9 +37259,9 @@
         "ArrowBackIos": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/index.jsx",
-            "line": 38,
+            "line": 39,
             "column": 19,
-            "index": 1209
+            "index": 1223
           },
           {
             "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/index.jsx",
@@ -37270,36 +37270,36 @@
             "index": 1970
           }
         ],
-        "Dropzone": [
-          {
-            "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
-            "line": 45,
-            "column": 6,
-            "index": 1627
-          }
-        ],
         "InputGroup": [
           {
             "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
-            "line": 51,
+            "line": 29,
             "column": 8,
-            "index": 1837
+            "index": 1408
           }
         ],
         "FormControl": [
           {
             "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
-            "line": 52,
+            "line": 30,
             "column": 10,
-            "index": 1860
+            "index": 1431
           }
         ],
         "ArrowForward": [
           {
             "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
-            "line": 62,
+            "line": 42,
             "column": 19,
-            "index": 2392
+            "index": 2072
+          }
+        ],
+        "Dropzone": [
+          {
+            "filePath": "src/editors/containers/VideoUploadEditor/VideoUploader.jsx",
+            "line": 83,
+            "column": 6,
+            "index": 3206
           }
         ],
         "DragIndicator": [
@@ -38220,7 +38220,7 @@
             "filePath": "src/packages/become-page/components/BecomeHero.jsx",
             "line": 9,
             "column": 6,
-            "index": 319
+            "index": 332
           },
           {
             "filePath": "src/packages/careers-page/components/Hero/index.jsx",
@@ -38332,9 +38332,9 @@
           },
           {
             "filePath": "src/packages/home-page/components/MarketingTakeover/index.jsx",
-            "line": 19,
+            "line": 22,
             "column": 6,
-            "index": 578
+            "index": 668
           },
           {
             "filePath": "src/packages/home-page/components/NewOnEdxCarousel/index.jsx",
@@ -38764,9 +38764,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 73,
+            "line": 78,
             "column": 4,
-            "index": 2375
+            "index": 2496
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/index.jsx",
@@ -42114,9 +42114,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 75,
+            "line": 80,
             "column": 8,
-            "index": 2481
+            "index": 2602
           }
         ],
         "Warning": [
@@ -42366,9 +42366,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 75,
+            "line": 80,
             "column": 39,
-            "index": 2512
+            "index": 2633
           }
         ],
         "Calendar": [
@@ -42440,9 +42440,9 @@
         "Alert.Heading": [
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 76,
+            "line": 81,
             "column": 10,
-            "index": 2553
+            "index": 2674
           }
         ],
         "CloseSmall": [
