@@ -30,7 +30,7 @@
   },
   "elevation": {
     "dropdown": {
-      "box-shadow": { "value": "0 .5rem 1rem rgba(0, 0, 0, .175)", "type": "shadow", "source": "$dropdown-box-shadow" }
+      "box-shadow": { "value": "none", "type": "shadow", "source": "$dropdown-box-shadow" }
     }
   }
 }
