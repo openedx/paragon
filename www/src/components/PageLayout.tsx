@@ -27,11 +27,6 @@ import { SettingsContext } from '../context/SettingsContext';
 import LeaveFeedback from './LeaveFeedback';
 import AutoToc from './AutoToc';
 
-if (process.env.NODE_ENV === 'development') {
-  /* eslint-disable-next-line global-require */
-  require('~paragon-style/scss/core/core.scss');
-}
-
 export interface ILayout {
   children: React.ReactNode,
   showMinimizedTitle: boolean,
