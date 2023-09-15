@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import RBFormControl from 'react-bootstrap/FormControl';
+import { IMaskInput } from 'react-imask';
 import { useFormGroupContext } from './FormGroupContext';
 import FormControlFeedback from './FormControlFeedback';
 import FormControlDecoratorGroup from './FormControlDecoratorGroup';
@@ -17,6 +18,7 @@ const FormControl = React.forwardRef(({
   floatingLabel,
   autoResize,
   onChange,
+  withMask,
   ...props
 }, ref) => {
   const {
@@ -71,7 +73,7 @@ const FormControl = React.forwardRef(({
       className={className}
     >
       <RBFormControl
-        as={as}
+        as={withMask ? IMaskInput : as}
         ref={resolvedRef}
         size={size}
         isInvalid={isInvalid}

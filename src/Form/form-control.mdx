@@ -43,6 +43,89 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 }
 ```
 
+## Input phone mask
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+
+  return (
+    <Form.Group>
+      <Form.Control withMask mask="+{7}(000)000-00-00"
+        leadingElement={<Icon src={FavoriteBorder} />}
+        trailingElement={<Icon src={Verified} />}
+        floatingLabel="What kind of cats?"
+        value={value}
+        onAccept={
+          (value, unmaskedValue, mask) => console.log(unmaskedValue)
+        }
+        onChange={(e) => setValue(e.target.value)}
+      />
+    </Form.Group>
+  );
+}
+```
+
+## Input card number mask
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+  console.log('============ value ===========', value);
+  return (
+    <Form.Group>
+      <Form.Control withMask mask="0000 0000 0000 0000"
+        leadingElement={<Icon src={FavoriteBorder} />}
+        trailingElement={<Icon src={Verified} />}
+        floatingLabel="What kind of cats?"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    </Form.Group>
+  );
+}
+```
+
+## Input date mask
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+  console.log('============ value ===========', value);
+  return (
+    <Form.Group>
+      <Form.Control withMask mask={Date} min={new Date(1990, 0, 1)} max={new Date(2020, 0, 1)}
+        leadingElement={<Icon src={FavoriteBorder} />}
+        trailingElement={<Icon src={Verified} />}
+        floatingLabel="What kind of cats?"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    </Form.Group>
+  );
+}
+```
+
+## Input Google-style OTP mask
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+  console.log('============ value ===========', value);
+  return (
+    <Form.Group>
+      <Form.Control withMask mask="G-000000000000"
+        leadingElement={<Icon src={FavoriteBorder} />}
+        trailingElement={<Icon src={Verified} />}
+        floatingLabel="What kind of cats?"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    </Form.Group>
+  );
+}
+```
+
 
 ## Input types
 
