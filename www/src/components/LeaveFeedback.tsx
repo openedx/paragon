@@ -22,7 +22,6 @@ function LeaveFeedback({ isNavLink, ...props }: LeaveFeedbackProps) {
         onClick={handleLinkFeedbackClick}
         href={FEEDBACK_URL}
         target="_blank"
-        rel="noopener noreferrer"
         {...props}
       >
         {leaveFeedbackLinkTitle}

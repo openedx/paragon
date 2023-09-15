@@ -17,6 +17,7 @@ import {
   Sticky,
   useMediaQuery,
   breakpoints,
+  Stack,
 } from '~paragon-react';
 import ComponentsList from './ComponentsList';
 import Header from './header';
@@ -26,6 +27,7 @@ import Toc from './Toc';
 import { SettingsContext } from '../context/SettingsContext';
 import LeaveFeedback from './LeaveFeedback';
 import AutoToc from './AutoToc';
+import PageEditBtn from './PageEditBtn';
 
 if (process.env.NODE_ENV === 'development') {
   /* eslint-disable-next-line global-require */
@@ -40,6 +42,7 @@ export interface ILayout {
   tocData: Array<number>,
   tab?: string,
   isAutoToc?: boolean,
+  githubEditPath?: string,
 }
 
 function Layout({
@@ -50,6 +53,7 @@ function Layout({
   tocData,
   isAutoToc,
   tab,
+  githubEditPath,
 }: ILayout) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
   const { settings } = useContext(SettingsContext);
@@ -88,7 +92,12 @@ function Layout({
               {children}
               <Container size="md">
                 <hr />
-                <LeaveFeedback className="mb-5" />
+                <Stack direction="horizontal" gap={2}>
+                  {isMdx && (
+                    <PageEditBtn className="mb-5" githubEditPath={githubEditPath ?? ''} />
+                  )}
+                  <LeaveFeedback className="mb-5" />
+                </Stack>
               </Container>
             </Col>
             <Col
@@ -142,6 +151,15 @@ function Layout({
           <Nav.Item>
             <LeaveFeedback className="muted-link" isNavLink />
           </Nav.Item>
+          {isMdx && (
+            <Nav.Item>
+              <PageEditBtn
+                className="muted-link"
+                githubEditPath={githubEditPath ?? ''}
+                isNavLink
+              />
+            </Nav.Item>
+          )}
           <div className="flex-grow-1" />
           <Nav.Link
             className="muted-link"
@@ -176,6 +194,7 @@ Layout.propTypes = {
   hideFooterComponentMenu: PropTypes.bool,
   isMdx: PropTypes.bool,
   tab: PropTypes.string,
+  githubEditPath: PropTypes.string,
 };
 
 Layout.defaultProps = {
@@ -185,6 +204,7 @@ Layout.defaultProps = {
   isMdx: false,
   tab: undefined,
   isAutoToc: false,
+  githubEditPath: undefined,
 };
 
 export default Layout;

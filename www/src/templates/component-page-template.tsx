@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import classNames from 'classnames';
 import {
   Container,
   Alert,
   breakpoints,
   useMediaQuery,
+  Stack,
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 import { DEFAULT_THEME } from '../../theme-config';
@@ -19,6 +21,7 @@ import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
 import ComponentsUsage from '../components/insights/ComponentsUsage';
 import LeaveFeedback from '../components/LeaveFeedback';
+import PageEditBtn from '../components/PageEditBtn';
 
 export interface IPageTemplate {
   data: {
@@ -41,6 +44,7 @@ export interface IPageTemplate {
   pageContext: {
     scssVariablesData: Record<string, string>,
     componentsUsageInsights: string[],
+    githubEditPath: string,
   }
 }
 
@@ -50,7 +54,7 @@ export type ShortCodesTypes = {
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
-  pageContext: { scssVariablesData, componentsUsageInsights },
+  pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
@@ -127,6 +131,7 @@ export default function PageTemplate({
       showMinimizedTitle={showMinimizedTitle}
       isMdx
       tocData={getTocData()}
+      githubEditPath={githubEditPath}
     >
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={mdx.frontmatter.title} />
@@ -137,10 +142,24 @@ export default function PageTemplate({
             <p className="small mb-0">{mdx.frontmatter.notes}</p>
           </Alert>
         )}
-        <div className="d-flex justify-content-between align-items-start">
-          <h1 className="mb-4">{mdx.frontmatter.title}</h1>
-          <LeaveFeedback />
-        </div>
+        <Stack
+          className={classNames('justify-content-between', {
+            'flex-column-reverse align-items-start': isMobile,
+          })}
+          direction="horizontal"
+        >
+          <h1>
+            {mdx.frontmatter.title}
+          </h1>
+          <Stack
+            className={classNames('mb-2', { 'justify-content-end': isMobile })}
+            direction="horizontal"
+            gap={2}
+          >
+            <PageEditBtn githubEditPath={githubEditPath} />
+            <LeaveFeedback />
+          </Stack>
+        </Stack>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
