@@ -27,7 +27,6 @@ import Toc from './Toc';
 import { SettingsContext } from '../context/SettingsContext';
 import LeaveFeedback from './LeaveFeedback';
 import AutoToc from './AutoToc';
-import PageEditBtn from './PageEditBtn';
 
 export interface ILayout {
   children: React.ReactNode,
