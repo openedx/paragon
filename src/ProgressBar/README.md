@@ -1,5 +1,5 @@
 ---
-title: 'Progress Bar'
+title: 'ProgressBar'
 type: 'component'
 components:
 - ProgressBar
