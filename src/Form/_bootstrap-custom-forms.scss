@@ -33,20 +33,13 @@
   &:checked ~ .custom-control-label::before {
     color: var(--pgn-color-form-control-indicator-checked-base);
     border-color: var(--pgn-color-form-control-indicator-checked-border-base);
+    box-shadow: var(--pgn-elevation-form-control-indicator-checked-base);
 
     @include gradient-bg(var(--pgn-color-form-control-indicator-checked-bg-base));
-    @include box-shadow(var(--pgn-elevation-form-control-indicator-checked-base));
   }
 
   &:focus ~ .custom-control-label::before {
-    // the mixin is not used here to make sure there is feedback
-    @if $enable-shadows {
-      box-shadow: var(--pgn-elevation-form-input-base), var(--pgn-elevation-form-control-indicator-checked-focus);
-    }
-
-    @else {
-      box-shadow: var(--pgn-elevation-form-control-indicator-checked-focus);
-    }
+    box-shadow: var(--pgn-elevation-form-control-indicator-checked-focus);
   }
 
   &:focus:not(:checked) ~ .custom-control-label::before {
@@ -57,8 +50,7 @@
     color: var(--pgn-color-form-control-indicator-active-base);
     background-color: var(--pgn-color-form-control-indicator-active-bg);
     border-color: var(--pgn-color-form-control-indicator-active-border);
-
-    @include box-shadow(var(--pgn-elevation-form-control-indicator-active));
+    box-shadow: var(--pgn-elevation-form-control-indicator-active);
   }
 
   // Use [disabled] and :disabled to work around https://github.com/twbs/bootstrap/issues/28247
@@ -98,8 +90,7 @@
     pointer-events: none;
     background-color: var(--pgn-color-form-control-indicator-bg-base);
     border: var(--pgn-size-form-control-indicator-border-width) solid var(--pgn-color-form-control-indicator-border);
-
-    @include box-shadow(var(--pgn-elevation-form-control-indicator-base));
+    box-shadow: var(--pgn-elevation-form-control-indicator-base);
   }
 
   // Foreground (icon)
@@ -135,9 +126,9 @@
   .custom-control-input:indeterminate ~ .custom-control-label {
     &::before {
       border-color: var(--pgn-color-form-control-checkbox-indicator-indeterminate-border);
+      box-shadow: var(--pgn-elevation-form-control-checkbox-indicator-indeterminate);
 
       @include gradient-bg(var(--pgn-color-form-control-checkbox-indicator-indeterminate-bg));
-      @include box-shadow(var(--pgn-elevation-form-control-checkbox-indicator-indeterminate));
     }
 
     &::after {
@@ -250,26 +241,15 @@
   background: var(--pgn-color-form-control-select-bg-base) var(--pgn-other-content-form-control-select-bg);
   border: var(--pgn-size-form-control-select-border-width-base) solid var(--pgn-color-form-control-select-border-base);
   appearance: none;
+  box-shadow: var(--pgn-elevation-form-control-select-border-base);
 
   @include font-size(var(--pgn-typography-form-control-select-font-size-base));
   @include border-radius(var(--pgn-size-form-control-select-border-radius),0);
-  @include box-shadow(var(--pgn-elevation-form-control-select-border-base));
 
   &:focus {
     border-color: var(--pgn-color-form-control-select-border-focus);
     outline: 0;
-
-    @if $enable-shadows {
-      @include box-shadow(
-        var(--pgn-elevation-form-control-select-border-base),
-        var(--pgn-elevation-form-control-select-border-focus)
-      );
-    }
-
-    @else {
-      // Avoid using mixin so we can pass custom focus shadow properly
-      box-shadow: var(--pgn-elevation-form-control-select-border-focus);
-    }
+    box-shadow: var(--pgn-elevation-form-control-select-border-focus);
 
     &::-ms-value {
       // For visual consistency with other platforms/browsers,
@@ -381,9 +361,9 @@
   color: var(--pgn-color-form-control-file-base);
   background-color: var(--pgn-color-form-control-file-bg-base);
   border: var(--pgn-size-form-control-file-width) solid var(--pgn-color-form-control-file-border-base);
+  box-shadow: var(--pgn-elevation-form-control-file-base);
 
   @include border-radius(var(--pgn-size-form-control-file-border-radius));
-  @include box-shadow(var(--pgn-elevation-form-control-file-base));
 
   &::after {
     content: "Browse";
@@ -448,10 +428,10 @@
     border: var(--pgn-size-form-control-range-thumb-border-base);
     appearance: none;
     transition: var(--pgn-transition-form-control);
+    box-shadow: var(--pgn-elevation-form-control-range-thumb-base);
 
     @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-base));
     @include border-radius(var(--pgn-size-form-control-range-thumb-border-radius));
-    @include box-shadow(var(--pgn-elevation-form-control-range-thumb-base));
 
     &:active {
       @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-active));
@@ -465,9 +445,9 @@
     cursor: var(--pgn-other-form-control-range-track-cursor);
     background-color: var(--pgn-color-form-control-range-track-bg);
     border-color: transparent;
+    box-shadow: var(--pgn-elevation-form-control-range-track);
 
     @include border-radius(var(--pgn-size-form-control-range-track-border-radius));
-    @include box-shadow(var(--pgn-elevation-form-control-range-track));
   }
 
   &::-moz-range-thumb {
@@ -476,10 +456,10 @@
     border: var(--pgn-size-form-control-range-thumb-border-base);
     appearance: none;
     transition: var(--pgn-transition-form-control);
+    box-shadow: var(--pgn-elevation-form-control-range-thumb-base);
 
     @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-base));
     @include border-radius(var(--pgn-size-form-control-range-thumb-border-radius));
-    @include box-shadow(var(--pgn-elevation-form-control-range-thumb-base));
 
     &:active {
       @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-active));
@@ -493,9 +473,9 @@
     cursor: var(--pgn-other-form-control-range-track-cursor);
     background-color: var(--pgn-color-form-control-range-track-bg);
     border-color: transparent; // Firefox specific?
+    box-shadow: var(--pgn-elevation-form-control-range-track);
 
     @include border-radius(var(--pgn-size-form-control-range-track-border-radius));
-    @include box-shadow(var(--pgn-elevation-form-control-range-track));
   }
 
   &::-ms-thumb {
@@ -507,10 +487,10 @@
     border: var(--pgn-size-form-control-range-thumb-border-base);
     appearance: none;
     transition: var(--pgn-transition-form-control);
+    box-shadow: var(--pgn-elevation-form-control-range-thumb-base);
 
     @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-base));
     @include border-radius(var(--pgn-size-form-control-range-thumb-border-radius));
-    @include box-shadow(var(--pgn-elevation-form-control-range-thumb-base));
 
     &:active {
       @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-active));
@@ -525,8 +505,7 @@
     background-color: transparent;
     border-color: transparent;
     border-width: calc(var(--pgn-size-form-control-range-thumb-height) * .5);
-
-    @include box-shadow(var(--pgn-elevation-form-control-range-track));
+    box-shadow: var(--pgn-elevation-form-control-range-track);
   }
 
   &::-ms-fill-lower {

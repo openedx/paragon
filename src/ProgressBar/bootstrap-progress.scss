@@ -11,10 +11,10 @@
   overflow: hidden;
   line-height: 0;
   background-color: var(--pgn-color-progress-bar-bg);
+  box-shadow: var(--pgn-elevation-progress-bar-box-shadow);
 
   @include font-size(var(--pgn-typography-progress-bar-font-size));
   @include border-radius(var(--pgn-size-progress-bar-border-radius));
-  @include box-shadow(var(--pgn-elevation-progress-bar-box-shadow));
 }
 
 .progress-bar {
