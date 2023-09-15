@@ -21,10 +21,10 @@
   background-clip: padding-box;
   border: var(--pgn-size-form-input-width-border) solid var(--pgn-color-form-input-border);
   transition: var(--pgn-transition-form-input);
+  box-shadow: var(--pgn-elevation-form-input-base);
 
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
   @include border-radius(var(--pgn-size-form-input-radius-border-base), 0);
-  @include box-shadow(var(--pgn-elevation-form-input-base));
 
   // Unstyle the caret on `<select>`s in IE10+.
   &::-ms-expand {

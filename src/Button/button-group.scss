@@ -78,10 +78,10 @@
 }
 
 .btn-group.show .dropdown-toggle {
-  @include box-shadow(var(--pgn-elevation-btn-box-shadow-active));
+  box-shadow: var(--pgn-elevation-btn-box-shadow-active);
 
   &.btn-link {
-    @include box-shadow(none);
+    box-shadow: none;
   }
 }
 
