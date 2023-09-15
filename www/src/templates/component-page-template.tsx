@@ -142,7 +142,7 @@ export default function PageTemplate({
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-        {!!cssVariablesData.length && (
+        {!!cssVariablesData?.length && (
           <div className="mb-5">
             <h2 className="mb-4 pgn-doc__heading" id={cssVariablesUrl}>
               {cssVariablesTitle}
