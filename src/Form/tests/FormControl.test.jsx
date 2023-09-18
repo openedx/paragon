@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -7,6 +7,23 @@ import FormControl from '../FormControl';
 const ref = {
   current: null,
 };
+
+// eslint-disable-next-line react/prop-types
+function Component({ isClearValue }) {
+  const onChangeFunc = jest.fn();
+  const [inputValue, setInputValue] = useState('');
+
+  return (
+    <FormControl
+      hasInputMask
+      mask="+{1}(000)000-00-00"
+      value={inputValue}
+      onChange={isClearValue ? onChangeFunc : (e) => setInputValue(e.target.value)}
+      onAccept={isClearValue ? onChangeFunc : (value) => setInputValue(value)}
+      data-testid="form-control-with-mask"
+    />
+  );
+}
 
 describe('FormControl', () => {
   it('textarea changes its height with autoResize prop', async () => {
@@ -30,5 +47,20 @@ describe('FormControl', () => {
 
     expect(onChangeFunc).toHaveBeenCalledTimes(inputText.length);
     expect(ref.current.style.height).toEqual(`${ref.current.scrollHeight + ref.current.offsetHeight}px`);
+  });
+
+  it('should apply and accept input mask for phone numbers', () => {
+    render(<Component />);
+
+    const input = screen.getByTestId('form-control-with-mask');
+    fireEvent.change(input, { target: { value: '1234567890' } });
+    expect(input.value).toBe('+1(234)567-89-0');
+  });
+  it('should be cleared from the mask elements value', () => {
+    render(<Component isClearValue />);
+
+    const input = screen.getByTestId('form-control-with-mask');
+    fireEvent.change(input, { target: { value: '1234567890' } });
+    expect(input.value).toBe('1234567890');
   });
 });

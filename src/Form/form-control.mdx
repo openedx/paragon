@@ -298,6 +298,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
 ```jsx live
 () => {
   const [value, setValue] = useState('');
+  console.log(value);
 
   return (
     <Form.Group>
@@ -306,13 +307,9 @@ See [react-imask](https://imask.js.org) for documentation on available props.
         mask="+{1}(000)000-00-00"
         leadingElement={<Icon src={FavoriteBorder} />}
         trailingElement={<Icon src={Verified} />}
-        floatingLabel="What kind of cats?"
+        floatingLabel="What is your phone number?"
         value={value}
-        unmask
-        onChange={(e) => setValue(e.target.value)}
-          onAccept={
-            (value) => console.log(value)
-          }
+        onAccept={(_, mask) => setValue(mask._unmaskedValue)}
       />
     </Form.Group>
   );
