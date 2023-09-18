@@ -43,90 +43,6 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 }
 ```
 
-## Input phone mask
-
-```jsx live
-() => {
-  const [value, setValue] = useState('');
-
-  return (
-    <Form.Group>
-      <Form.Control withMask mask="+{7}(000)000-00-00"
-        leadingElement={<Icon src={FavoriteBorder} />}
-        trailingElement={<Icon src={Verified} />}
-        floatingLabel="What kind of cats?"
-        value={value}
-        onAccept={
-          (value, unmaskedValue, mask) => console.log(unmaskedValue)
-        }
-        onChange={(e) => setValue(e.target.value)}
-      />
-    </Form.Group>
-  );
-}
-```
-
-## Input card number mask
-
-```jsx live
-() => {
-  const [value, setValue] = useState('');
-  console.log('============ value ===========', value);
-  return (
-    <Form.Group>
-      <Form.Control withMask mask="0000 0000 0000 0000"
-        leadingElement={<Icon src={FavoriteBorder} />}
-        trailingElement={<Icon src={Verified} />}
-        floatingLabel="What kind of cats?"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
-    </Form.Group>
-  );
-}
-```
-
-## Input date mask
-
-```jsx live
-() => {
-  const [value, setValue] = useState('');
-  console.log('============ value ===========', value);
-  return (
-    <Form.Group>
-      <Form.Control withMask mask={Date} min={new Date(1990, 0, 1)} max={new Date(2020, 0, 1)}
-        leadingElement={<Icon src={FavoriteBorder} />}
-        trailingElement={<Icon src={Verified} />}
-        floatingLabel="What kind of cats?"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
-    </Form.Group>
-  );
-}
-```
-
-## Input Google-style OTP mask
-
-```jsx live
-() => {
-  const [value, setValue] = useState('');
-  console.log('============ value ===========', value);
-  return (
-    <Form.Group>
-      <Form.Control withMask mask="G-000000000000"
-        leadingElement={<Icon src={FavoriteBorder} />}
-        trailingElement={<Icon src={Verified} />}
-        floatingLabel="What kind of cats?"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
-    </Form.Group>
-  );
-}
-```
-
-
 ## Input types
 
 ```jsx live
@@ -242,6 +158,163 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
       
       {inputs[type]}
     </>
+  );
+}
+```
+
+## Input masks
+Paragon uses the [react-imask](https://www.npmjs.com/package/react-imask) library, which allows you to add masks of different types for inputs.
+To create your own mask, you need to pass the required mask pattern (`+{1}(000)000-00-00`) to the `mask` property. <br />
+See [react-imask](https://imask.js.org) for documentation on available props.
+
+```jsx live
+() => {
+  {/* start example state */}
+  const [maskType, setMaskType] = useState('phone');
+  {/* end example state */}
+
+  const inputsWithMask = {
+    phone: (
+      <>
+        <h3>Phone</h3>
+        <Form.Group>
+          <Form.Control
+            hasInputMask
+            mask="+{1}(000)000-00-00"
+            value={value}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="What is your phone number?"
+          />
+        </Form.Group>
+      </>
+    ),
+    creditCard: (<>
+      <h3>Credit card</h3>
+      <Form.Group>
+        <Form.Control
+          hasInputMask
+          mask="0000 0000 0000 0000"
+          value={value}
+          onChange={handleChange}
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="What is your credit card number?"
+        />
+      </Form.Group>
+    </>),
+    date: (<>
+      <h3>Date</h3>
+      <Form.Group>
+        <Form.Control
+          hasInputMask
+          mask={Date}
+          value={value}
+          onChange={handleChange}
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="What is your date of birth?"
+        />
+      </Form.Group>
+    </>),
+    securePassword: (<>
+      <h3>Secure password</h3>
+      <Form.Group>
+        <Form.Control
+          hasInputMask
+          mask="XXX-XX-0000"
+          value={value}
+          definitions={{
+            X: {
+              mask: '0',
+              displayChar: 'X',
+              placeholderChar: '#',
+            },
+          }}
+          onChange={handleChange}
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="What is your password?"
+        />
+      </Form.Group>
+    </>),
+    OTPpassword: (<>
+      <h3>OTP password</h3>
+      <Form.Group>
+        <Form.Control
+          hasInputMask
+          mask="G-00000"
+          value={value}
+          onChange={handleChange}
+          leadingElement={<Icon src={FavoriteBorder} />}
+          floatingLabel="What is your OPT password?"
+        />
+      </Form.Group>
+    </>),
+    price: (
+        <>
+          <h3>Course prise</h3>
+          <Form.Group>
+            <Form.Control
+              hasInputMask
+              mask="$num"
+              blocks={{
+                num: {
+                  // nested masks are available!
+                  mask: Number,
+                  thousandsSeparator: ' '
+                }
+              }}
+              value={value}
+              onChange={handleChange}
+              leadingElement={<Icon src={FavoriteBorder} />}
+              floatingLabel="What is the price of this course?"
+            />
+          </Form.Group>
+        </>
+    ),
+  };
+
+  const [value, setValue] = useState('');
+
+  const handleChange = (e) => setValue(e.target.value);
+
+  return (
+    <>
+      {/* start example form block */}
+      <ExamplePropsForm
+        inputs={[
+          { value: maskType, setValue: setMaskType, options: Object.keys(inputsWithMask), name: 'Mask variants' },
+        ]}
+      />
+      {/* end example form block */}
+
+      {inputsWithMask[maskType]}
+    </>
+  );
+}
+```
+
+## Input masks with clear value
+`unmask` prop allows get and set value and unmasked value easily
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+
+  return (
+    <Form.Group>
+      <Form.Control
+        hasInputMask
+        mask="+{1}(000)000-00-00"
+        leadingElement={<Icon src={FavoriteBorder} />}
+        trailingElement={<Icon src={Verified} />}
+        floatingLabel="What kind of cats?"
+        value={value}
+        unmask
+        onChange={(e) => setValue(e.target.value)}
+          onAccept={
+            (value) => console.log(value)
+          }
+      />
+    </Form.Group>
   );
 }
 ```
