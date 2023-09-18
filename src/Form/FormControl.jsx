@@ -9,8 +9,6 @@ import FormControlDecoratorGroup from './FormControlDecoratorGroup';
 
 import { callAllHandlers, useHasValue } from './fieldUtils';
 
-const DEFAULT_MASK_VALUE = '00-00-000';
-
 const FormControl = React.forwardRef(({
   as,
   className,
@@ -21,7 +19,6 @@ const FormControl = React.forwardRef(({
   autoResize,
   onChange,
   hasInputMask,
-  mask,
   ...props
 }, ref) => {
   const {
@@ -76,7 +73,7 @@ const FormControl = React.forwardRef(({
       className={className}
     >
       <RBFormControl
-        as={hasInputMask ? IMaskInput : as}
+        as={hasInputMask?.length ? IMaskInput : as}
         ref={resolvedRef}
         size={size}
         isInvalid={isInvalid}
@@ -85,7 +82,7 @@ const FormControl = React.forwardRef(({
           'has-value': hasValue,
         })}
         onChange={handleOnChange}
-        mask={mask}
+        mask={hasInputMask}
         {...controlProps}
       />
     </FormControlDecoratorGroup>
@@ -128,10 +125,8 @@ FormControl.propTypes = {
   isInvalid: PropTypes.bool,
   /** Only for `as="textarea"`. Specifies whether the input can be resized according to the height of content. */
   autoResize: PropTypes.bool,
-  /** Specifies whether to use an input mask for the input. */
-  hasInputMask: PropTypes.bool,
-  /** Specifies the input mask to be used if `hasInputMask` is set to `true`. */
-  mask: PropTypes.string,
+  /** Specifies what format to use for the input mask. */
+  hasInputMask: PropTypes.string,
 };
 
 FormControl.defaultProps = {
@@ -150,8 +145,7 @@ FormControl.defaultProps = {
   isValid: undefined,
   isInvalid: undefined,
   autoResize: false,
-  hasInputMask: false,
-  mask: DEFAULT_MASK_VALUE,
+  hasInputMask: undefined,
 };
 
 export default FormControl;

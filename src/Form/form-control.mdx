@@ -163,8 +163,9 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 ```
 
 ## Input masks
-Paragon uses the [react-imask](https://www.npmjs.com/package/react-imask) library, which allows you to add masks of different types for inputs.
-To create your own mask, you need to pass the required mask pattern (`+{1}(000)000-00-00`) to the `mask` property. <br />
+Paragon uses the [react-imask](https://www.npmjs.com/package/react-imask) library,
+which allows you to add masks of different types for inputs.
+To create your own mask, you need to pass the required mask pattern (`+{1}(000)000-00-00`) to the `hasInputMask` property. <br />
 See [react-imask](https://imask.js.org) for documentation on available props.
 
 ```jsx live
@@ -179,8 +180,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
         <h3>Phone</h3>
         <Form.Group>
           <Form.Control
-            hasInputMask
-            mask="+{1}(000)000-00-00"
+            hasInputMask="+{1}(000)000-00-00"
             value={value}
             onChange={handleChange}
             leadingElement={<Icon src={FavoriteBorder} />}
@@ -193,8 +193,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
       <h3>Credit card</h3>
       <Form.Group>
         <Form.Control
-          hasInputMask
-          mask="0000 0000 0000 0000"
+          hasInputMask="0000 0000 0000 0000"
           value={value}
           onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
@@ -206,8 +205,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
       <h3>Date</h3>
       <Form.Group>
         <Form.Control
-          hasInputMask
-          mask={Date}
+          hasInputMask={Date}
           value={value}
           onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
@@ -219,8 +217,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
       <h3>Secure password</h3>
       <Form.Group>
         <Form.Control
-          hasInputMask
-          mask="XXX-XX-0000"
+          hasInputMask="XXX-XX-0000"
           value={value}
           definitions={{
             X: {
@@ -239,8 +236,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
       <h3>OTP password</h3>
       <Form.Group>
         <Form.Control
-          hasInputMask
-          mask="G-00000"
+          hasInputMask="G-00000"
           value={value}
           onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
@@ -253,8 +249,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
           <h3>Course prise</h3>
           <Form.Group>
             <Form.Control
-              hasInputMask
-              mask="$num"
+              hasInputMask="$num"
               blocks={{
                 num: {
                   // nested masks are available!
@@ -293,25 +288,30 @@ See [react-imask](https://imask.js.org) for documentation on available props.
 ```
 
 ## Input masks with clear value
-`unmask` prop allows get and set value and unmasked value easily
+To get a value without a mask, you need to use `onChange` instead of `onAccept` to handle changes.
 
 ```jsx live
 () => {
   const [value, setValue] = useState('');
-  console.log(value);
 
   return (
-    <Form.Group>
-      <Form.Control
-        hasInputMask
-        mask="+{1}(000)000-00-00"
-        leadingElement={<Icon src={FavoriteBorder} />}
-        trailingElement={<Icon src={Verified} />}
-        floatingLabel="What is your phone number?"
-        value={value}
-        onAccept={(_, mask) => setValue(mask._unmaskedValue)}
-      />
-    </Form.Group>
+      <>
+        <Form.Group>
+          <Form.Control
+            hasInputMask="+{1}(000)000-00-00"
+            leadingElement={<Icon src={FavoriteBorder} />}
+            trailingElement={<Icon src={Verified} />}
+            floatingLabel="What is your phone number?"
+            value={value}
+            // depending on prop above first argument is
+            // `value` if `unmask=false`,
+            // `unmaskedValue` if `unmask=true`,
+            // `typedValue` if `unmask='typed'`
+            onAccept={(_, mask) => setValue(mask._unmaskedValue)}
+          />
+        </Form.Group>
+        Unmasked value: {JSON.stringify(value)}
+      </>
   );
 }
 ```
