@@ -1,5 +1,5 @@
 {
-  "lastModified": 1694959732064,
+  "lastModified": 1695048126950,
   "projectUsages": [
     {
       "version": "21.1.10",
@@ -955,9 +955,9 @@
           },
           {
             "filePath": "src/notification-preferences/NotificationCourses.jsx",
-            "line": 73,
+            "line": 74,
             "column": 8,
-            "index": 2380
+            "index": 2425
           }
         ],
         "WarningFilled": [
@@ -1009,9 +1009,9 @@
           },
           {
             "filePath": "src/notification-preferences/NotificationCourses.jsx",
-            "line": 56,
+            "line": 57,
             "column": 16,
-            "index": 1942
+            "index": 1987
           },
           {
             "filePath": "src/notification-preferences/NotificationPreferenceRow.jsx",
@@ -1657,9 +1657,9 @@
           },
           {
             "filePath": "src/notification-preferences/NotificationCourses.jsx",
-            "line": 64,
+            "line": 65,
             "column": 10,
-            "index": 2147
+            "index": 2192
           },
           {
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
@@ -1719,9 +1719,9 @@
         "ArrowForwardIos": [
           {
             "filePath": "src/notification-preferences/NotificationCourses.jsx",
-            "line": 56,
+            "line": 57,
             "column": 27,
-            "index": 1953
+            "index": 1998
           }
         ],
         "Collapsible.Advanced": [
@@ -33508,15 +33508,15 @@
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 49,
+            "line": 50,
             "column": 12,
-            "index": 2268
+            "index": 2356
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 84,
+            "line": 85,
             "column": 8,
-            "index": 3707
+            "index": 3833
           }
         ],
         "useWindowSize": [
@@ -33618,15 +33618,15 @@
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 100,
+            "line": 101,
             "column": 12,
-            "index": 4218
+            "index": 4344
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 105,
+            "line": 106,
             "column": 14,
-            "index": 4537
+            "index": 4663
           },
           {
             "filePath": "src/Notifications/tours/constants.js",
@@ -33676,41 +33676,41 @@
         "Spinner": [
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 81,
+            "line": 82,
             "column": 10,
-            "index": 3494
+            "index": 3620
           }
         ],
         "CheckCircleOutline": [
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 100,
+            "line": 101,
             "column": 56,
-            "index": 4262
+            "index": 4388
           }
         ],
         "AutoAwesome": [
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 105,
+            "line": 106,
             "column": 25,
-            "index": 4548
+            "index": 4674
           }
         ],
         "Tabs": [
           {
             "filePath": "src/Notifications/NotificationTabs.jsx",
-            "line": 34,
-            "column": 4,
-            "index": 1362
+            "line": 36,
+            "column": 8,
+            "index": 1408
           }
         ],
         "Tab": [
           {
             "filePath": "src/Notifications/NotificationTabs.jsx",
-            "line": 41,
-            "column": 8,
-            "index": 1602
+            "line": 43,
+            "column": 12,
+            "index": 1676
           }
         ],
         "ProductTour": [
@@ -38530,9 +38530,15 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 232,
+            "line": 257,
             "column": 4,
-            "index": 9323
+            "index": 10251
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 200,
+            "column": 4,
+            "index": 8248
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
@@ -39246,27 +39252,51 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 343,
-            "column": 36,
-            "index": 14847
-          },
-          {
-            "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
             "line": 368,
             "column": 36,
-            "index": 16114
+            "index": 15775
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 424,
-            "column": 20,
-            "index": 18907
+            "line": 393,
+            "column": 36,
+            "index": 17042
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 437,
+            "line": 449,
             "column": 20,
-            "index": 19585
+            "index": 19835
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
+            "line": 462,
+            "column": 20,
+            "index": 20513
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 284,
+            "column": 20,
+            "index": 12377
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 309,
+            "column": 36,
+            "index": 13719
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 334,
+            "column": 36,
+            "index": 14986
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 364,
+            "column": 20,
+            "index": 16359
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseSnapshot/components/WeeksToComplete.jsx",
@@ -39810,9 +39840,15 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 249,
+            "line": 274,
             "column": 14,
-            "index": 10015
+            "index": 10943
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 217,
+            "column": 14,
+            "index": 8940
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunModal/components/EnrollButton.jsx",
@@ -40556,15 +40592,27 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 341,
+            "line": 366,
             "column": 26,
-            "index": 14753
+            "index": 15681
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 366,
+            "line": 391,
             "column": 26,
-            "index": 16020
+            "index": 16948
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 307,
+            "column": 26,
+            "index": 13625
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 332,
+            "column": 26,
+            "index": 14892
           }
         ],
         "Dropdown": [
@@ -41182,15 +41230,27 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 333,
+            "line": 358,
             "column": 24,
-            "index": 14365
+            "index": 15293
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 358,
+            "line": 383,
             "column": 24,
-            "index": 15636
+            "index": 16564
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 299,
+            "column": 24,
+            "index": 13237
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 324,
+            "column": 24,
+            "index": 14508
           },
           {
             "filePath": "src/packages/program-page/components/ProgramPathway/components/ProgramPathwayCourse.jsx",
@@ -41220,15 +41280,27 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 336,
+            "line": 361,
             "column": 28,
-            "index": 14488
+            "index": 15416
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 361,
+            "line": 386,
             "column": 28,
-            "index": 15759
+            "index": 16687
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 302,
+            "column": 28,
+            "index": 13360
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 327,
+            "column": 28,
+            "index": 14631
           },
           {
             "filePath": "src/packages/program-page/components/ProgramPathway/components/ProgramPathwayCourse.jsx",
@@ -41270,9 +41342,15 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 467,
+            "line": 492,
             "column": 20,
-            "index": 20920
+            "index": 21848
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 434,
+            "column": 20,
+            "index": 19836
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
@@ -41752,39 +41830,75 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 395,
+            "line": 420,
             "column": 20,
-            "index": 17312
+            "index": 18240
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 398,
+            "line": 423,
             "column": 20,
-            "index": 17494
+            "index": 18422
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 408,
+            "line": 433,
             "column": 20,
-            "index": 18018
+            "index": 18946
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 411,
+            "line": 436,
             "column": 20,
-            "index": 18200
+            "index": 19128
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 421,
+            "line": 446,
             "column": 20,
-            "index": 18725
+            "index": 19653
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 434,
+            "line": 459,
             "column": 20,
-            "index": 19403
+            "index": 20331
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 281,
+            "column": 20,
+            "index": 12195
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 361,
+            "column": 20,
+            "index": 16177
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 374,
+            "column": 20,
+            "index": 16862
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 377,
+            "column": 20,
+            "index": 17044
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 387,
+            "column": 20,
+            "index": 17568
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 390,
+            "column": 20,
+            "index": 17750
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/Variant/index.jsx",
@@ -41910,29 +42024,53 @@
         "InfoOutline": [
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 342,
+            "line": 367,
             "column": 33,
-            "index": 14798
+            "index": 15726
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 367,
+            "line": 392,
             "column": 33,
-            "index": 16065
+            "index": 16993
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 308,
+            "column": 33,
+            "index": 13670
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 333,
+            "column": 33,
+            "index": 14937
           }
         ],
         "Remove": [
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 424,
+            "line": 449,
             "column": 50,
-            "index": 18937
+            "index": 19865
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseModes/index.jsx",
-            "line": 437,
+            "line": 462,
             "column": 50,
-            "index": 19615
+            "index": 20543
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 284,
+            "column": 50,
+            "index": 12407
+          },
+          {
+            "filePath": "src/packages/open-course-page/components/CourseModes/TerminologyUpdateVariant/index.jsx",
+            "line": 364,
+            "column": 50,
+            "index": 16389
           }
         ],
         "Card.Header": [
