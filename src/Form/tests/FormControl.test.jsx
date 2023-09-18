@@ -1,5 +1,6 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import FormControl from '../FormControl';
 
@@ -8,9 +9,10 @@ const ref = {
 };
 
 describe('FormControl', () => {
-  it('textarea changes its height with autoResize prop', () => {
+  it('textarea changes its height with autoResize prop', async () => {
     const useReferenceSpy = jest.spyOn(React, 'useRef').mockReturnValue(ref);
     const onChangeFunc = jest.fn();
+    const inputText = 'new text';
     render(
       <FormControl as="textarea" autoResize onChange={onChangeFunc} data-testid="form-control-textarea" />,
     );
@@ -24,9 +26,9 @@ describe('FormControl', () => {
     expect(useReferenceSpy).toHaveBeenCalledTimes(1);
     expect(ref.current.style.height).toBe('0px');
 
-    fireEvent.change(textarea, { target: { value: 'new text' } });
+    await userEvent.type(textarea, inputText);
 
-    expect(onChangeFunc).toHaveBeenCalledTimes(1);
+    expect(onChangeFunc).toHaveBeenCalledTimes(inputText.length);
     expect(ref.current.style.height).toEqual(`${ref.current.scrollHeight + ref.current.offsetHeight}px`);
   });
 });

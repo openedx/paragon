@@ -6,7 +6,7 @@ exports[`<SearchField /> with basic usage should match the snapshot 1`] = `
     class="pgn__searchfield d-flex"
   >
     <form
-      class="d-flex align-items-center w-100"
+      class="pgn__searchfield-form"
       role="search"
     >
       <label

@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import asInput, { getDisplayName } from '.';
 
@@ -124,7 +125,7 @@ describe('asInput()', () => {
   });
 
   describe('fires', () => {
-    it('blur handler', () => {
+    it('blur handler', async () => {
       const spy = jest.fn();
       const props = {
         ...baseProps,
@@ -132,12 +133,14 @@ describe('asInput()', () => {
       };
       render(<InputTestComponent {...props} />);
       const input = screen.getByText(baseProps.label).nextSibling;
-
-      fireEvent.blur(input);
+      input.focus();
+      await userEvent.tab();
       expect(spy).toHaveBeenCalledTimes(1);
+      expect(input).not.toHaveFocus();
     });
 
-    it('change handler', () => {
+    it('change handler', async () => {
+      const message = 'new';
       const spy = jest.fn();
       const props = {
         ...baseProps,
@@ -146,11 +149,11 @@ describe('asInput()', () => {
       render(<InputTestComponent {...props} />);
       const input = screen.getByText(baseProps.label).nextSibling;
 
-      fireEvent.change(input, { target: { value: 'new' } });
-      expect(spy).toHaveBeenCalledTimes(1);
+      await userEvent.type(input, message);
+      expect(spy).toHaveBeenCalledTimes(message.length);
     });
 
-    it('keypress handler', () => {
+    it('keypress handler', async () => {
       const spy = jest.fn();
       const props = {
         ...baseProps,
@@ -158,8 +161,9 @@ describe('asInput()', () => {
       };
       render(<InputTestComponent {...props} />);
       const input = screen.getByText(baseProps.label).nextSibling;
+      input.focus();
 
-      fireEvent.keyPress(input, { key: 'Enter', code: 'Enter', charCode: 13 });
+      await userEvent.keyboard('{enter}');
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
@@ -248,7 +252,7 @@ describe('asInput()', () => {
   });
 
   describe('validator', () => {
-    it('on blur', () => {
+    it('on blur', async () => {
       const spy = jest.fn();
       spy.mockReturnValueOnce({ isValid: true });
       const props = {
@@ -257,8 +261,8 @@ describe('asInput()', () => {
       };
       render(<InputTestComponent {...props} />);
       const input = screen.getByText(baseProps.label).nextSibling;
-
-      fireEvent.blur(input);
+      input.focus();
+      await userEvent.tab();
 
       expect(spy).toHaveBeenCalledTimes(1);
     });
@@ -282,11 +286,11 @@ describe('asInput()', () => {
         spy.mockClear();
       });
 
-      it('without theme', () => {
+      it('without theme', async () => {
         render(<InputTestComponent {...props} />);
         const input = screen.getByText(baseProps.label).nextSibling;
-
-        fireEvent.blur(input);
+        input.focus();
+        await userEvent.tab();
 
         expect(spy).toHaveBeenCalledTimes(1);
 
@@ -294,10 +298,11 @@ describe('asInput()', () => {
         expect(err).toBeInTheDocument();
       });
 
-      it('with danger theme', () => {
+      it('with danger theme', async () => {
         const { rerender } = render(<InputTestComponent {...props} />);
         const input = screen.getByText(baseProps.label).nextSibling;
-        fireEvent.blur(input);
+        input.focus();
+        await userEvent.tab();
         expect(spy).toHaveBeenCalledTimes(1);
 
         const updatedProps = {

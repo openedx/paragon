@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
+import userEvent from '@testing-library/user-event';
 
 import SelectionStatus from '../SelectionStatus';
 import DataTableContext from '../../DataTableContext';
@@ -62,7 +63,7 @@ describe('<SelectionStatus />', () => {
     expect(selectAllButton).not.toBeInTheDocument();
   });
 
-  it('toggles select all on select all button click', () => {
+  it('toggles select all on select all button click', async () => {
     const toggleAllRowsSpy = jest.fn();
     render(
       <SelectionStatusWrapper
@@ -70,7 +71,7 @@ describe('<SelectionStatus />', () => {
       />,
     );
     const selectAllButton = screen.getByTestId(SELECT_ALL_TEST_ID);
-    fireEvent.click(selectAllButton);
+    await userEvent.click(selectAllButton);
     expect(toggleAllRowsSpy).toHaveBeenCalledTimes(1);
     expect(toggleAllRowsSpy).toHaveBeenCalledWith(true);
   });
@@ -102,13 +103,13 @@ describe('<SelectionStatus />', () => {
     expect(screen.queryByTestId(CLEAR_SELECTION_TEST_ID)).not.toBeInTheDocument();
   });
 
-  it('toggles select all on clear all button click', () => {
+  it('toggles select all on clear all button click', async () => {
     const toggleAllRowsSpy = jest.fn();
     render(
       <SelectionStatusWrapper value={{ ...instance, toggleAllRowsSelected: toggleAllRowsSpy }} />,
     );
     const clearSelectionButton = screen.getByTestId(CLEAR_SELECTION_TEST_ID);
-    fireEvent.click(clearSelectionButton);
+    await userEvent.click(clearSelectionButton);
     expect(toggleAllRowsSpy).toHaveBeenCalledTimes(1);
     expect(toggleAllRowsSpy).toHaveBeenCalledWith(false);
   });

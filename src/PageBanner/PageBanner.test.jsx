@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import PageBanner from '.';
 
@@ -47,7 +48,7 @@ describe('<PageBanner />', () => {
       const spy = jest.fn();
       render(<PageBanner dismissible onDismiss={spy} />);
       const dismissButton = screen.getByRole('button');
-      await fireEvent.click(dismissButton);
+      await userEvent.click(dismissButton);
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });

@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Hyperlink from '.';
 
@@ -21,7 +22,7 @@ const externalLinkProps = {
 };
 
 describe('correct rendering', () => {
-  it('renders Hyperlink', () => {
+  it('renders Hyperlink', async () => {
     const { getByRole } = render(<Hyperlink {...props} />);
     const wrapper = getByRole('link');
     expect(wrapper).toBeInTheDocument();
@@ -31,7 +32,7 @@ describe('correct rendering', () => {
     expect(wrapper).toHaveAttribute('href', destination);
     expect(wrapper).toHaveAttribute('target', '_self');
 
-    fireEvent.click(wrapper);
+    await userEvent.click(wrapper);
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
@@ -62,11 +63,11 @@ describe('event handlers are triggered correctly', () => {
   let spy;
   beforeEach(() => { spy = jest.fn(); });
 
-  it('should fire onClick', () => {
+  it('should fire onClick', async () => {
     const { getByRole } = render(<Hyperlink {...props} onClick={spy} />);
     const wrapper = getByRole('link');
     expect(spy).toHaveBeenCalledTimes(0);
-    fireEvent.click(wrapper);
+    await userEvent.click(wrapper);
     expect(spy).toHaveBeenCalledTimes(1);
   });
 });

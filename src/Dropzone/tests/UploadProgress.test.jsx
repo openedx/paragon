@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
+import userEvent from '@testing-library/user-event';
 
 import UploadProgress from '../UploadProgress';
 
@@ -26,22 +27,22 @@ function UploadProgressWrapper({ children, ...props }) {
 
 describe('<Dropzone.UploadProgress />', () => {
   it('renders spinner if receives "spinner" as a variant prop', () => {
-    const { getByTestId } = render(<UploadProgressWrapper variant="spinner" />);
-    const spinner = getByTestId('upload-spinner');
+    render(<UploadProgressWrapper variant="spinner" />);
+    const spinner = screen.getByTestId('upload-spinner');
     expect(spinner).toBeInTheDocument();
     expect(spinner).toHaveTextContent(`Uploading ${defaultProps.name}, ${defaultProps.percent}% done.`);
   });
 
-  it('renders progress bar if receives "bar" as a variant prop', () => {
-    const { getByTestId, getByText } = render(<UploadProgressWrapper variant="bar" />);
-    const progressBar = getByTestId('upload-progress-bar');
+  it('renders progress bar if receives "bar" as a variant prop', async () => {
+    render(<UploadProgressWrapper variant="bar" />);
+    const progressBar = screen.getByTestId('upload-progress-bar');
     expect(progressBar).toBeInTheDocument();
     expect(progressBar).toHaveTextContent(`${defaultProps.percent}%`);
 
-    const cancelButton = getByText('Cancel');
+    const cancelButton = screen.getByText('Cancel');
     expect(cancelButton).toBeInTheDocument();
 
-    fireEvent.click(cancelButton);
+    await userEvent.click(cancelButton);
     expect(onCancel).toHaveBeenCalledTimes(1);
   });
 });

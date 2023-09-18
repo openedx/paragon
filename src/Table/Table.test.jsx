@@ -1,7 +1,6 @@
 import React from 'react';
-import {
-  render, screen, fireEvent, within,
-} from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Table from '.';
 
@@ -203,8 +202,8 @@ describe('<Table />', () => {
       sortableProps.columns.find(column => (column.key === 'x2')).onSort = x2Spy;
     });
 
-    it('changes sort icons appropriately on click', () => {
-      fireEvent.click(buttons[0]);
+    it('changes sort icons appropriately on click', async () => {
+      await userEvent.click(buttons[0]);
       buttons = screen.queryAllByRole('button');
 
       expect(buttons[0].querySelector('.fa')).toHaveClass('fa-sort-asc');
@@ -215,7 +214,7 @@ describe('<Table />', () => {
       expect(buttons[1].querySelector('.fa')).not.toHaveClass('fa-sort-asc');
       expect(buttons[1].querySelector('.fa')).not.toHaveClass('fa-sort-desc');
 
-      fireEvent.click(buttons[1]);
+      await userEvent.click(buttons[1]);
       buttons = screen.queryAllByRole('button');
 
       expect(buttons[0].querySelector('.fa')).toHaveClass('fa-sort');
@@ -227,26 +226,26 @@ describe('<Table />', () => {
       expect(buttons[1].querySelector('.fa')).not.toHaveClass('fa-sort-asc');
     });
 
-    it('changes sr-only text appropriately on click', () => {
+    it('changes sr-only text appropriately on click', async () => {
       const headings = screen.queryAllByTestId('table-heading-sr');
 
-      fireEvent.click(buttons[0]);
+      await userEvent.click(buttons[0]);
       buttons = screen.queryAllByRole('button');
 
       expect(headings[0]).toHaveTextContent('sort ascending');
       expect(headings[1]).toHaveTextContent('click to sort');
 
-      fireEvent.click(buttons[1]);
+      await userEvent.click(buttons[1]);
 
       expect(headings[0]).toHaveTextContent('click to sort');
       expect(headings[1]).toHaveTextContent('sort descending');
     });
 
-    it('calls onSort function correctly on click', () => {
+    it('calls onSort function correctly on click', async () => {
       expect(numSpy).toHaveBeenCalledTimes(0);
       expect(x2Spy).toHaveBeenCalledTimes(0);
 
-      fireEvent.click(buttons[0]);
+      await userEvent.click(buttons[0]);
       buttons = screen.queryAllByRole('button');
 
       expect(numSpy).toHaveBeenCalledTimes(1);
@@ -254,7 +253,7 @@ describe('<Table />', () => {
 
       expect(numSpy).toBeCalledWith('asc');
 
-      fireEvent.click(buttons[0]);
+      await userEvent.click(buttons[0]);
       buttons = screen.queryAllByRole('button');
 
       expect(numSpy).toHaveBeenCalledTimes(2);
@@ -262,7 +261,7 @@ describe('<Table />', () => {
 
       expect(numSpy).toBeCalledWith('desc');
 
-      fireEvent.click(buttons[1]);
+      await userEvent.click(buttons[1]);
       buttons = screen.queryAllByRole('button');
 
       expect(numSpy).toHaveBeenCalledTimes(2);

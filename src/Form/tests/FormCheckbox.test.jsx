@@ -1,7 +1,6 @@
 import React from 'react';
-import {
-  render, fireEvent, screen, waitFor,
-} from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import FormCheckbox from '../FormCheckbox';
 import FormGroup from '../FormGroup';
@@ -46,11 +45,11 @@ describe('FormCheckbox', () => {
     expect(describerNode).toBeInTheDocument();
   });
 
-  it('calls the change handler', () => {
+  it('calls the change handler', async () => {
     render(FormCheckboxComponent());
 
     const inputNode = screen.getByLabelText('Green');
-    fireEvent.change(inputNode, { target: { value: 'green' } });
+    await userEvent.type(inputNode, 'green');
 
     waitFor(() => {
       expect(handleChange).toHaveBeenCalledWith(
@@ -62,11 +61,11 @@ describe('FormCheckbox', () => {
     });
   });
 
-  it('calls the focus handler', () => {
+  it('calls the focus handler', async () => {
     render(FormCheckboxComponent());
 
     const inputNode = screen.getByLabelText('Green');
-    fireEvent.focus(inputNode);
+    inputNode.focus();
 
     expect(handleFocus).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -76,11 +75,12 @@ describe('FormCheckbox', () => {
     );
   });
 
-  it('calls the blur handler', () => {
+  it('calls the blur handler', async () => {
     render(FormCheckboxComponent());
 
     const inputNode = screen.getByLabelText('Green');
-    fireEvent.blur(inputNode);
+    inputNode.focus();
+    await userEvent.tab();
 
     expect(handleBlur).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -92,10 +92,6 @@ describe('FormCheckbox', () => {
 });
 
 describe('FormCheckbox with FormGroup', () => {
-  // const handleChange = jest.fn();
-  // const handleFocus = jest.fn();
-  // const handleBlur = jest.fn();
-
   it('renders a group with a label', () => {
     render(
       <FormGroup controlId="group-id">

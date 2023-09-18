@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
+import userEvent from '@testing-library/user-event';
 
 import { InfoOutline } from '../../icons';
 import IconButton from '.';
@@ -64,15 +65,15 @@ describe('<IconButton />', () => {
   });
 
   describe('onClick', () => {
-    it('performs the onClick action when clicked', () => {
+    it('performs the onClick action when clicked', async () => {
       const spy = jest.fn();
       const { getByRole } = render(<IconButton {...props} onClick={spy} />);
       const button = getByRole('button');
-      fireEvent.click(button);
+      await userEvent.click(button);
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
-    it('only clicks one icon at a time', () => {
+    it('only clicks one icon at a time', async () => {
       const spy1 = jest.fn();
       const spy2 = jest.fn();
       const { getAllByRole } = render(
@@ -84,11 +85,11 @@ describe('<IconButton />', () => {
 
       const buttons = getAllByRole('button');
 
-      fireEvent.click(buttons[0]);
+      await userEvent.click(buttons[0]);
       expect(spy1).toHaveBeenCalledTimes(1);
       expect(spy2).toHaveBeenCalledTimes(0);
 
-      fireEvent.click(buttons[1]);
+      await userEvent.click(buttons[1]);
       expect(spy1).toHaveBeenCalledTimes(1);
       expect(spy2).toHaveBeenCalledTimes(1);
     });

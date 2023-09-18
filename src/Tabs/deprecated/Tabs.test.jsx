@@ -1,5 +1,7 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import Tabs from '.';
 
 const props = {
@@ -40,7 +42,7 @@ describe('<Tabs />', () => {
       const tabButtons = container.querySelectorAll('button');
 
       tabButtons.forEach((node, i) => {
-        fireEvent.click(node);
+        userEvent.click(node);
         tabSelectedAtIndex(i, container);
       });
     });

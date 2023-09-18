@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
@@ -33,7 +33,7 @@ describe('Menu Item renders correctly', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('Renders disabled menu items, but you can\'t click them', () => {
+  it('Renders disabled menu items, but you can\'t click them', async () => {
     const clickFn = jest.fn();
     render(
       <Menu>
@@ -49,7 +49,7 @@ describe('Menu Item renders correctly', () => {
     );
 
     const button = screen.getByText(MENU_ITEM_TEXT);
-    fireEvent.click(button);
+    await userEvent.click(button);
     expect(clickFn).toHaveBeenCalledTimes(0);
   });
 });
@@ -65,10 +65,9 @@ describe('Keyboard Interactions', () => {
     );
   });
 
-  it('should focus on the first item after click', () => {
+  it('should focus on the first item after click', async () => {
     const defaultItem = screen.getByText('Default').parentElement;
-    fireEvent.click(defaultItem);
-    userEvent.tab();
+    await userEvent.click(defaultItem);
     expect(defaultItem).toHaveFocus();
   });
 

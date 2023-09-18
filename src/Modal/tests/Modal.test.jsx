@@ -1,9 +1,10 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-import Modal from '.';
-import { Button } from '..';
-import Variant from '../utils/constants';
+import Modal from '..';
+import { Button } from '../..';
+import Variant from '../../utils/constants';
 
 const modalOpen = (isOpen, container) => {
   if (!isOpen) {
@@ -175,38 +176,38 @@ describe('<Modal />', () => {
   });
 
   describe('close functions properly', () => {
-    it('closes when x button pressed', () => {
+    it('closes when x button pressed', async () => {
       render(<Modal {...defaultProps} />);
 
       modalOpen(true, screen);
-      fireEvent.click(screen.queryAllByRole('button')[0]);
+      await userEvent.click(screen.queryAllByRole('button')[0]);
       modalOpen(false, screen);
     });
 
-    it('closes when Close button pressed', () => {
+    it('closes when Close button pressed', async () => {
       render(<Modal {...defaultProps} />);
 
       modalOpen(true, screen);
-      fireEvent.click(screen.queryAllByRole('button')[1]);
+      await userEvent.click(screen.queryAllByRole('button')[1]);
       modalOpen(false, screen);
     });
 
-    it('calls callback function on close', () => {
+    it('calls callback function on close', async () => {
       const spy = jest.fn();
       render(<Modal {...defaultProps} onClose={spy} />);
 
       expect(spy).toHaveBeenCalledTimes(0);
 
       // press X button
-      fireEvent.click(screen.queryAllByRole('button')[0]);
+      await userEvent.click(screen.queryAllByRole('button')[0]);
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
-    it('reopens after closed', () => {
+    it('reopens after closed', async () => {
       const { rerender } = render(<Modal {...defaultProps} />);
 
       modalOpen(true, screen);
-      fireEvent.click(screen.queryAllByRole('button')[0]);
+      await userEvent.click(screen.queryAllByRole('button')[0]);
       modalOpen(false, screen);
       rerender(<Modal {...defaultProps} open />);
       modalOpen(true, screen);

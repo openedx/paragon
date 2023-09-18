@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import ModalPopup from './ModalPopup';
+import ModalPopup from '../ModalPopup';
 
 /* eslint-disable react/prop-types */
-jest.mock('./Portal', () => function PortalMock(props) {
+jest.mock('../Portal', () => function PortalMock(props) {
   const { children, ...otherProps } = props;
   return (
     <paragon-portal data-testid="portal" {...otherProps}>

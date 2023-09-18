@@ -1,7 +1,6 @@
 import React from 'react';
-import {
-  render, fireEvent, waitFor, screen,
-} from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import {
   callAllHandlers,
@@ -82,18 +81,18 @@ describe('useIdList', () => {
       expect(renderedIds[1]).toBe('prefix-2');
     });
     it('registers an explicit id', () => {
-      const { getByTestId } = render(
+      render(
         <IdListExample prefix="prefix" initialList={['id-0']} />,
       );
-      const idList = getByTestId('id-list');
+      const idList = screen.getByTestId('id-list');
       const renderedIds = idList.textContent.split(' ');
       expect(renderedIds[2]).toBe('explicit-id');
     });
   });
   describe('with no default', () => {
     it('only has the two ids', () => {
-      const { getByTestId } = render(<IdListExample prefix="prefix" />);
-      const idList = getByTestId('id-list');
+      render(<IdListExample prefix="prefix" />);
+      const idList = screen.getByTestId('id-list');
       const renderedIds = idList.textContent.split(' ');
       expect(renderedIds.length).toBe(2);
     });
@@ -131,10 +130,10 @@ describe('useHasValue', () => {
     it('has value when a target blur event has a value', async () => {
       render(<HasValueExample />);
       const input = screen.getByTestId('input');
-      fireEvent.blur(input, { target: { value: 'hello' } });
-      await waitFor(() => {
-        expect(screen.getByTestId('has-value')).toBeInTheDocument();
-      });
+      await userEvent.type(input, 'hello');
+      await userEvent.tab();
+
+      expect(screen.getByTestId('has-value')).toBeInTheDocument();
     });
   });
 });
@@ -151,10 +150,10 @@ describe('uncontrolled input with a default value', () => {
       <HasValueExample defaultValue="My value" />,
     );
     const input = screen.getByTestId('input');
-    fireEvent.blur(input, { target: { value: '' } });
-    await waitFor(() => {
-      expect(screen.queryByTestId('has-value')).toBe(null);
-    });
+    await userEvent.type(input, '');
+    await userEvent.tab();
+
+    expect(screen.queryByTestId('has-value')).toBe(null);
   });
 });
 
@@ -168,10 +167,10 @@ describe('controlled value', () => {
     async () => {
       render(<HasValueExample value="My value" />);
       const input = screen.getByTestId('input');
-      fireEvent.blur(input, { target: { value: '' } });
-      await waitFor(() => {
-        expect(screen.getByTestId('has-value')).toBeInTheDocument();
-      });
+      await userEvent.type(input, '');
+      await userEvent.tab();
+
+      expect(screen.getByTestId('has-value')).toBeInTheDocument();
     },
   );
 });

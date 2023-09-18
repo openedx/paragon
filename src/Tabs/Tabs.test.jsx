@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import renderer from 'react-test-renderer';
+import userEvent from '@testing-library/user-event';
 
 import Tabs, { MORE_TAB_TEXT } from '.';
 import Tab from './Tab';
@@ -75,30 +76,31 @@ describe('<Tabs />', () => {
       expect(dropdownMenu).toBeInTheDocument();
       expect(dropdownMenu.className).not.toContain('pgn__tab_invisible');
     });
-    it('moreTabText is displayed', () => {
+    it('moreTabText is displayed', async () => {
       const text = 'Mehr...';
       const { rerender, getByText } = render(<TabsTestComponent />);
       const toggleButton = getByText(MORE_TAB_TEXT);
       expect(toggleButton).toBeInTheDocument();
-      fireEvent.click(toggleButton);
+      await userEvent.click(toggleButton);
       rerender(<TabsTestComponent moreTabText={text} />);
       expect(toggleButton.textContent).toBe(text);
     });
-    it('click on the dropdown item activates tab', () => {
+    it('click on the dropdown item activates tab', async () => {
       const { container, getByText, getAllByText } = render(<TabsTestComponent />);
       const toggleButton = getByText(MORE_TAB_TEXT);
-      fireEvent.click(toggleButton);
+      await userEvent.click(toggleButton);
       const dropdownItem = getAllByText('Tab 2');
-      fireEvent.click(dropdownItem[0]);
+      await userEvent.click(dropdownItem[0], undefined, { skipPointerEventsCheck: true });
       const tab = container.querySelector('[data-rb-event-key="tab_2"]');
       expect(tab.className).toContain('active');
     });
     it('select dropdown item after pressing Enter', async () => {
       const { getByText, getAllByText, getByRole } = render(<TabsTestComponent />);
       const toggleButton = getByText(MORE_TAB_TEXT);
-      fireEvent.click(toggleButton);
+      await userEvent.click(toggleButton);
       const dropdownItem = getAllByText('Tab 2');
-      fireEvent.keyPress(dropdownItem[0], { key: 'Enter', code: 'Enter', charCode: 13 });
+      dropdownItem[0].focus();
+      await userEvent.keyboard('{enter}');
       await waitFor(() => {
         const tab = getByRole('tab', { name: 'Tab 2' });
         expect(tab.className).toContain('active');

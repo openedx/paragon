@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import RadioButtonGroup, { RadioButton } from '.';
 
@@ -51,28 +52,30 @@ describe('<RadioButton />', () => {
       spy.mockClear();
     });
 
-    it('should fire onBlur', () => {
+    it('should fire onBlur', async () => {
       render((<RadioButton {...props} onBlur={spy} />));
       const radioButton = screen.getByRole('radio');
-      fireEvent.blur(radioButton);
+      radioButton.focus();
+      await userEvent.tab();
       expect(spy).toHaveBeenCalledTimes(1);
     });
-    it('should fire onClick', () => {
+    it('should fire onClick', async () => {
       render((<RadioButton {...props} onClick={spy} />));
       const radioButton = screen.getByRole('radio');
-      fireEvent.click(radioButton);
+      await userEvent.click(radioButton);
       expect(spy).toHaveBeenCalledTimes(1);
     });
-    it('should fire onFocus', () => {
+    it('should fire onFocus', async () => {
       render((<RadioButton {...props} onFocus={spy} />));
       const radioButton = screen.getByRole('radio');
-      fireEvent.focus(radioButton);
+      radioButton.focus();
       expect(spy).toHaveBeenCalledTimes(1);
     });
-    it('should fire onKeyDown', () => {
+    it('should fire onKeyDown', async () => {
       render((<RadioButton {...props} onKeyDown={spy} />));
       const radioButton = screen.getByRole('radio');
-      fireEvent.keyDown(radioButton);
+      radioButton.focus();
+      await userEvent.keyboard('{enter}');
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });

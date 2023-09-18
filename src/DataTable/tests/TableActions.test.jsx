@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import classNames from 'classnames';
 import TableActions from '../TableActions';
@@ -98,12 +98,12 @@ describe('<TableActions />', () => {
   });
 
   describe('with one action', () => {
-    it('performs the button action on click', () => {
+    it('performs the button action on click', async () => {
       const onClickSpy = jest.fn();
       const tableInstance = { ...instance, tableActions: [<FirstAction onClick={onClickSpy} />] };
       render(<TableActionsWrapper value={tableInstance} />);
       const button = screen.getByText('First Action');
-      fireEvent.click(button);
+      await userEvent.click(button);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
   });
@@ -131,21 +131,21 @@ describe('<TableActions />', () => {
   });
 
   describe('two actions on click', () => {
-    it('performs the primary button action on click', () => {
+    it('performs the primary button action on click', async () => {
       const onClickSpy = jest.fn();
       const tableInstance = { ...instance, tableActions: [<FirstAction onClick={onClickSpy} />, <SecondAction />] };
       render(<TableActionsWrapper value={tableInstance} />);
       const button = screen.getByText('First Action');
-      fireEvent.click(button);
+      await userEvent.click(button);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
 
-    it('performs the second button action on click', () => {
+    it('performs the second button action on click', async () => {
       const onClickSpy = jest.fn();
       const tableInstance = { ...instance, tableActions: [<FirstAction />, <SecondAction onClick={onClickSpy} />] };
       render(<TableActionsWrapper value={tableInstance} />);
       const button = screen.getByText('Second Action');
-      fireEvent.click(button);
+      await userEvent.click(button);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
   });

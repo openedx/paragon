@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
@@ -82,7 +82,7 @@ describe('mouse behavior & keyboard behavior', () => {
     const menuTrigger = getByRole('button', { expanded: false });
     await userEvent.click(menuTrigger);
     const menuItems = getAllByRole('link');
-    fireEvent.click(menuItems[7]);
+    await userEvent.click(menuItems[7]);
     expect(menuTrigger).toHaveFocus();
   });
 });

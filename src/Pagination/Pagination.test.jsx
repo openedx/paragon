@@ -1,7 +1,7 @@
 import React from 'react';
-import {
-  render, fireEvent, act, screen,
-} from '@testing-library/react';
+import { render, act, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { Context as ResponsiveContext } from 'react-responsive';
 
 import breakpoints from '../utils/breakpoints';
@@ -68,7 +68,7 @@ describe('<Pagination />', () => {
   });
 
   describe('handles focus properly', () => {
-    it('should change focus to next button if previous page is first page', () => {
+    it('should change focus to next button if previous page is first page', async () => {
       const props = {
         ...baseProps,
         currentPage: 2,
@@ -76,11 +76,11 @@ describe('<Pagination />', () => {
       render(<Pagination {...props} />);
       const previousButton = screen.getByLabelText(/Previous/);
       const nextButton = screen.getByLabelText(/Next/);
-      fireEvent.click(previousButton);
+      await userEvent.click(previousButton);
       expect(document.activeElement).toEqual(nextButton);
     });
 
-    it('should change focus to previous button if next page is last page', () => {
+    it('should change focus to previous button if next page is last page', async () => {
       const props = {
         ...baseProps,
         currentPage: baseProps.pageCount - 1,
@@ -88,7 +88,7 @@ describe('<Pagination />', () => {
       render(<Pagination {...props} />);
       const previousButton = screen.getByLabelText(/Previous/);
       const nextButton = screen.getByLabelText(/Next/);
-      fireEvent.click(nextButton);
+      await userEvent.click(nextButton);
       expect(document.activeElement).toEqual(previousButton);
     });
   });
@@ -129,7 +129,7 @@ describe('<Pagination />', () => {
     });
 
     describe('should fire callbacks properly', () => {
-      it('should not fire onPageSelect when selecting current page', () => {
+      it('should not fire onPageSelect when selecting current page', async () => {
         const spy = jest.fn();
         const props = {
           ...baseProps,
@@ -142,11 +142,11 @@ describe('<Pagination />', () => {
         );
 
         const previousButton = screen.getByLabelText(/Previous/);
-        fireEvent.click(previousButton);
+        await userEvent.click(previousButton);
         expect(spy).toHaveBeenCalledTimes(0);
       });
 
-      it('should fire onPageSelect callback when selecting new page', () => {
+      it('should fire onPageSelect callback when selecting new page', async () => {
         const spy = jest.fn();
         const props = {
           ...baseProps,
@@ -159,17 +159,17 @@ describe('<Pagination />', () => {
         );
 
         const pageButtons = screen.getAllByLabelText(/^Page/);
-        fireEvent.click(pageButtons[1]);
+        await userEvent.click(pageButtons[1]);
         expect(spy).toHaveBeenCalledTimes(1);
 
-        fireEvent.click(pageButtons[2]);
+        await userEvent.click(pageButtons[2]);
         expect(spy).toHaveBeenCalledTimes(2);
       });
     });
   });
 
   describe('fires previous and next button click handlers', () => {
-    it('previous button onClick', () => {
+    it('previous button onClick', async () => {
       const spy = jest.fn();
       const props = {
         ...baseProps,
@@ -177,18 +177,18 @@ describe('<Pagination />', () => {
         onPageSelect: spy,
       };
       render(<Pagination {...props} />);
-      fireEvent.click(screen.getByLabelText(/Previous/));
+      await userEvent.click(screen.getByLabelText(/Previous/));
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
-    it('next button onClick', () => {
+    it('next button onClick', async () => {
       const spy = jest.fn();
       const props = {
         ...baseProps,
         onPageSelect: spy,
       };
       render(<Pagination {...props} />);
-      fireEvent.click(screen.getByLabelText(/Next/));
+      await userEvent.click(screen.getByLabelText(/Next/));
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
@@ -220,13 +220,13 @@ describe('<Pagination />', () => {
       );
     }
 
-    it('uses passed in previous button label', () => {
+    it('uses passed in previous button label', async () => {
       render(
         <Proxy currentPage={baseProps.pageCount} width={breakpoints.large.minWidth} />,
       );
       expect(screen.getByText(buttonLabels.previous)).toBeInTheDocument();
 
-      fireEvent.click(screen.getByText(buttonLabels.next));
+      await userEvent.click(screen.getByText(buttonLabels.next));
       expect(screen.getByLabelText(`${buttonLabels.previous}, ${buttonLabels.page} 4`)).toBeInTheDocument();
     });
 
@@ -271,7 +271,7 @@ describe('<Pagination />', () => {
       const dropdownButton = screen.getByRole('button', { name: /1 of 5/i, attributes: { 'aria-haspopup': 'true' } });
       expect(dropdownButton.textContent).toContain(`${baseProps.state.pageIndex} of ${baseProps.pageCount}`);
 
-      fireEvent.click(dropdownButton);
+      await userEvent.click(dropdownButton);
 
       await act(async () => {
         const dropdownChoices = screen.getAllByTestId('pagination-dropdown-item');

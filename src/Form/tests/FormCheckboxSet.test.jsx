@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import FormGroup from '../FormGroup';
@@ -101,7 +101,7 @@ describe('FormCheckboxSet', () => {
     it('calls the change handlers with the right value', async () => {
       renderFormWithoutLabel();
       const checkboxNode = screen.getByLabelText('green');
-      await userEvent.type(checkboxNode, { target: { value: 'green' } });
+      await userEvent.type(checkboxNode, 'green');
       expect(setValue).toHaveBeenCalledWith('green');
     });
   });
@@ -110,7 +110,7 @@ describe('FormCheckboxSet', () => {
     it('calls the change handlers with the right value', async () => {
       renderFormWithHandlers();
       const checkboxNode = screen.getByLabelText('green');
-      await userEvent.type(checkboxNode, { target: { value: 'green' } });
+      await userEvent.type(checkboxNode, 'green');
       expect(onChange).toHaveBeenCalledWith(
         expect.objectContaining({
           target: expect.objectContaining({ value: 'green' }),
@@ -119,10 +119,11 @@ describe('FormCheckboxSet', () => {
       );
     });
 
-    it('calls the focus handler', () => {
+    it('calls the focus handler', async () => {
       renderFormWithHandlers();
       const checkboxNode = screen.getByLabelText('green');
-      fireEvent.focus(checkboxNode);
+      checkboxNode.focus();
+      await userEvent.tab();
       expect(onFocus).toHaveBeenCalledWith(
         expect.objectContaining({
           target: expect.objectContaining({ value: 'green' }),
@@ -131,10 +132,11 @@ describe('FormCheckboxSet', () => {
       );
     });
 
-    it('calls the blur handler', () => {
+    it('calls the blur handler', async () => {
       renderFormWithHandlers();
       const checkboxNode = screen.getByLabelText('green');
-      fireEvent.blur(checkboxNode);
+      checkboxNode.focus();
+      await userEvent.tab();
       expect(onBlur).toHaveBeenCalledWith(
         expect.objectContaining({
           target: expect.objectContaining({ value: 'green' }),

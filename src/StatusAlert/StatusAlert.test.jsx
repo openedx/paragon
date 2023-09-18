@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import StatusAlert from '.';
 import { Button } from '..';
@@ -38,7 +39,7 @@ describe('<StatusAlert />', () => {
   });
 
   describe('props received correctly', () => {
-    it('component receives props', () => {
+    it('component receives props', async () => {
       const onCloseMock = jest.fn();
 
       const { rerender } = render(
@@ -52,7 +53,7 @@ describe('<StatusAlert />', () => {
 
       expect(onCloseMock).not.toHaveBeenCalled();
       const closeButton = screen.getByRole('button');
-      fireEvent.click(closeButton);
+      await userEvent.click(closeButton);
       expect(onCloseMock).toHaveBeenCalled();
     });
 
@@ -70,29 +71,30 @@ describe('<StatusAlert />', () => {
   });
 
   describe('close functions properly', () => {
-    it('closes when x button pressed', () => {
+    it('closes when x button pressed', async () => {
       render(<StatusAlert {...defaultProps} />);
       const closeButton = screen.getByRole('button');
-      fireEvent.click(closeButton);
+      await userEvent.click(closeButton);
       expect(screen.queryByRole('alert')).toBeNull();
     });
 
-    it('closes when Enter key pressed', () => {
+    it('closes when Enter key pressed', async () => {
       render(<StatusAlert {...defaultProps} />);
       const closeButton = screen.getByRole('button');
-      fireEvent.keyDown(closeButton, { key: 'Enter', code: 'Enter', charCode: 13 });
+      closeButton.focus();
+      await userEvent.keyboard('{enter}');
       expect(screen.queryByRole('alert')).toBeNull();
     });
 
-    it('closes when Escape key pressed', () => {
+    it('closes when Escape key pressed', async () => {
       render(<StatusAlert {...defaultProps} />);
       const closeButton = screen.getByRole('button');
-
-      fireEvent.keyDown(closeButton, { key: 'Enter', code: 'Enter', charCode: 13 });
+      closeButton.focus();
+      await userEvent.keyboard('{enter}');
       expect(screen.queryByRole('alert')).toBeNull();
     });
 
-    it('calls callback function on close', () => {
+    it('calls callback function on close', async () => {
       const spy = jest.fn();
 
       render(<StatusAlert {...defaultProps} onClose={spy} />);
@@ -100,7 +102,7 @@ describe('<StatusAlert />', () => {
 
       expect(spy).toHaveBeenCalledTimes(0);
 
-      fireEvent.click(closeButton);
+      await userEvent.click(closeButton);
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
@@ -110,24 +112,23 @@ describe('<StatusAlert />', () => {
       render(<StatusAlert {...defaultProps} />);
     });
 
-    it('does nothing on invalid keystroke q', () => {
+    it('does nothing on invalid keystroke q', async () => {
       const closeButton = screen.getByRole('button');
       expect(document.activeElement).toEqual(closeButton);
-
-      fireEvent.keyDown(closeButton, { key: 'q', code: 'q', charCode: 113 });
+      closeButton.focus();
+      await userEvent.keyboard('{q}');
       expect(document.activeElement).toEqual(closeButton);
     });
 
-    it('does nothing on invalid keystroke + ctrl', () => {
+    it('does nothing on invalid keystroke + ctrl', async () => {
       const closeButton = screen.getByRole('button');
       expect(document.activeElement).toEqual(closeButton);
-
-      fireEvent.keyDown(closeButton, { key: 'Tab', ctrlKey: true });
+      await userEvent.keyboard('{ctrl>tab}');
       expect(document.activeElement).toEqual(closeButton);
     });
   });
   describe('focus functions properly', () => {
-    it('focus function changes focus', () => {
+    it('focus function changes focus', async () => {
       render(
         <div>
           <Button label="test" />
@@ -139,10 +140,9 @@ describe('<StatusAlert />', () => {
       const statusAlertButton = buttons[0];
 
       // Move focus away from the default StatusAlert xButton
-      fireEvent.click(xButton);
+      await userEvent.click(xButton);
       expect(xButton.innerHTML).toEqual(document.activeElement.innerHTML);
 
-      fireEvent.focus(statusAlertButton);
       statusAlertButton.focus();
       expect(statusAlertButton.innerHTML).toEqual(document.activeElement.innerHTML);
     });

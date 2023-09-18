@@ -1,5 +1,7 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import * as popper from '@popperjs/core';
 
 import Checkpoint from './Checkpoint';
@@ -57,15 +59,15 @@ describe('Checkpoint', () => {
       expect(screen.getByRole('button', { name: 'Next' })).toBeInTheDocument();
     });
 
-    it('dismiss button onClick calls handleDismiss', () => {
+    it('dismiss button onClick calls handleDismiss', async () => {
       const dismissButton = screen.getByRole('button', { name: 'Dismiss' });
-      fireEvent.click(dismissButton);
+      await userEvent.click(dismissButton);
       expect(handleDismiss).toHaveBeenCalledTimes(1);
     });
 
-    it('advance button onClick calls handleAdvance', () => {
+    it('advance button onClick calls handleAdvance', async () => {
       const advanceButton = screen.getByRole('button', { name: 'Next' });
-      fireEvent.click(advanceButton);
+      await userEvent.click(advanceButton);
       expect(handleAdvance).toHaveBeenCalledTimes(1);
     });
   });
@@ -96,9 +98,9 @@ describe('Checkpoint', () => {
       expect(screen.getByText('End', { selector: 'button' })).toBeInTheDocument();
     });
 
-    it('end button onClick calls handleEnd', () => {
+    it('end button onClick calls handleEnd', async () => {
       const endButton = screen.getByText('End', { selector: 'button' });
-      fireEvent.click(endButton);
+      await userEvent.click(endButton, undefined, { skipPointerEventsCheck: true });
       expect(handleEnd).toHaveBeenCalledTimes(1);
     });
   });

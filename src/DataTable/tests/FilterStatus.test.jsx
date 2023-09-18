@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
+import userEvent from '@testing-library/user-event';
 
 import FilterStatus from '../FilterStatus';
 import DataTableContext from '../DataTableContext';
@@ -40,13 +41,13 @@ describe('<FilterStatus />', () => {
     const button = screen.getByText(filterProps.clearFiltersText);
     expect(button).toHaveClass(filterProps.buttonClassName);
   });
-  it('clears the selection on click', () => {
+  it('clears the selection on click', async () => {
     const clearSpy = jest.fn();
     render(
       <FilterStatusWrapper value={{ ...instance, setAllFilters: clearSpy }} props={filterProps} />,
     );
     const button = screen.getByText(filterProps.clearFiltersText);
-    fireEvent.click(button);
+    await userEvent.click(button);
     expect(clearSpy).toHaveBeenCalledTimes(1);
     expect(clearSpy).toHaveBeenCalledWith([]);
   });

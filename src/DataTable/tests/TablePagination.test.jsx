@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import TablePagination from '../TablePagination';
 import DataTableContext from '../DataTableContext';
@@ -25,19 +26,21 @@ describe('<TablePagination />', () => {
     expect(container.textContent).toBe('');
   });
 
-  it('Shows dropdown button with the page count as label and performs actions when dropdown items are clicked', () => {
-    const { getAllByTestId, getByRole } = render(<PaginationWrapper value={instance} />);
-    const dropdownButton = getByRole('button', { name: /2 of 3/i });
-    expect(dropdownButton).toBeInTheDocument();
+  it(
+    'Shows dropdown button with the page count as label and performs actions when dropdown items are clicked',
+    async () => {
+      const { getAllByTestId, getByRole } = render(<PaginationWrapper value={instance} />);
+      const dropdownButton = getByRole('button', { name: /2 of 3/i });
+      expect(dropdownButton).toBeInTheDocument();
 
-    fireEvent.click(dropdownButton);
+      await userEvent.click(dropdownButton);
 
-    const dropdownChoices = getAllByTestId('pagination-dropdown-item');
-    expect(dropdownChoices.length).toEqual(instance.pageCount);
+      const dropdownChoices = getAllByTestId('pagination-dropdown-item');
+      expect(dropdownChoices.length).toEqual(instance.pageCount);
+      await userEvent.click(dropdownChoices[1], undefined, { skipPointerEventsCheck: true });
 
-    fireEvent.click(dropdownChoices[1]);
-
-    expect(instance.gotoPage).toHaveBeenCalledTimes(1);
-    expect(instance.gotoPage).toHaveBeenCalledWith(1);
-  });
+      expect(instance.gotoPage).toHaveBeenCalledTimes(1);
+      expect(instance.gotoPage).toHaveBeenCalledWith(1);
+    },
+  );
 });

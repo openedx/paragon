@@ -1,9 +1,11 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-import ModalLayer from './ModalLayer';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+import ModalLayer from '../ModalLayer';
 
 /* eslint-disable react/prop-types */
-jest.mock('./Portal', () => function PortalMock(props) {
+jest.mock('../Portal', () => function PortalMock(props) {
   const { children, ...otherProps } = props;
   return (
     <paragon-portal {...otherProps}>
@@ -71,7 +73,7 @@ describe('<ModalLayer />', () => {
   });
 
   describe('Backdrop', () => {
-    it('closes a non-blocking modal layer when clicked', () => {
+    it('closes a non-blocking modal layer when clicked', async () => {
       const closeFn = jest.fn();
       render(
         <ModalLayer isOpen onClose={closeFn} isBlocking={false}>
@@ -80,11 +82,11 @@ describe('<ModalLayer />', () => {
       );
 
       const backdrop = screen.getByTestId('modal-backdrop');
-      fireEvent.click(backdrop);
+      await userEvent.click(backdrop);
       expect(closeFn).toHaveBeenCalled();
     });
 
-    it('does not close a blocking modal layer when clicked', () => {
+    it('does not close a blocking modal layer when clicked', async () => {
       const closeFn = jest.fn();
       render(
         <ModalLayer isOpen onClose={closeFn} isBlocking>
@@ -93,7 +95,7 @@ describe('<ModalLayer />', () => {
       );
 
       const backdrop = screen.getByTestId('modal-backdrop');
-      fireEvent.click(backdrop);
+      await userEvent.click(backdrop);
       expect(closeFn).not.toHaveBeenCalled();
     });
   });

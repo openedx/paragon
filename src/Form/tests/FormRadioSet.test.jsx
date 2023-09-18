@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import FormGroup from '../FormGroup';
 import FormRadioSet from '../FormRadioSet';
@@ -75,10 +76,10 @@ describe('FormRadioSet', () => {
       expect(redRadio).toBeChecked();
     });
 
-    it('calls the change handlers with the right value', () => {
+    it('calls the change handlers with the right value', async () => {
       renderFormRadioSet();
       const greenRadio = screen.getByLabelText('green');
-      fireEvent.click(greenRadio);
+      await userEvent.click(greenRadio);
       expect(setValue).toHaveBeenCalledWith('green');
     });
   });

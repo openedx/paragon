@@ -1,7 +1,6 @@
 import React from 'react';
-import {
-  render, fireEvent, screen, act,
-} from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import MultiSelectDropdownFilter from '../MultiSelectDropdownFilter';
 
@@ -28,7 +27,7 @@ describe('<MultiSelectDropdownFilter />', () => {
   });
   it('renders a list of checkboxes', async () => {
     render(<MultiSelectDropdownFilter {...props} />);
-    fireEvent.click(screen.getByText(props.column.Header));
+    await userEvent.click(screen.getByText(props.column.Header));
     await act(async () => {
       const checkboxes = screen.getAllByRole('checkbox');
       expect(checkboxes.length).toEqual(3);
@@ -40,34 +39,28 @@ describe('<MultiSelectDropdownFilter />', () => {
   });
   it('sets a filter - no initial filters', async () => {
     render(<MultiSelectDropdownFilter {...props} />);
-    fireEvent.click(screen.getByText(props.column.Header));
+    await userEvent.click(screen.getByText(props.column.Header));
     const checkbox = screen.getAllByRole('checkbox')[1];
-    await act(async () => {
-      fireEvent.click(checkbox);
-    });
+    await userEvent.click(checkbox, undefined, { skipPointerEventsCheck: true });
     expect(setFilterMock).toHaveBeenCalledWith([palomino.value]);
   });
   it('sets a filter - initial filters', async () => {
     render(<MultiSelectDropdownFilter column={{ ...props.column, filterValue: [roan.value] }} />);
-    fireEvent.click(screen.getByText(props.column.Header));
+    await userEvent.click(screen.getByText(props.column.Header));
     const checkbox = screen.getAllByRole('checkbox')[1];
-    await act(async () => {
-      fireEvent.click(checkbox);
-    });
+    await userEvent.click(checkbox, undefined, { skipPointerEventsCheck: true });
     expect(setFilterMock).toHaveBeenCalledWith([roan.value, palomino.value]);
   });
   it('removes a filter', async () => {
     render(<MultiSelectDropdownFilter column={{ ...props.column, filterValue: [palomino.value] }} />);
-    fireEvent.click(screen.getByText(props.column.Header));
+    await userEvent.click(screen.getByText(props.column.Header));
     const checkbox = screen.getAllByRole('checkbox')[1];
-    await act(async () => {
-      fireEvent.click(checkbox);
-    });
+    await userEvent.click(checkbox, undefined, { skipPointerEventsCheck: true });
     expect(setFilterMock).toHaveBeenCalledWith([]);
   });
   it('renders checkbox label with filter name', async () => {
     render(<MultiSelectDropdownFilter column={{ ...props.column, filterValue: [roan.value] }} />);
-    fireEvent.click(screen.getByText(props.column.Header));
+    await userEvent.click(screen.getByText(props.column.Header));
     await act(async () => {
       const label = screen.getByText(roan.name);
       expect(label).toBeInTheDocument();
@@ -75,7 +68,7 @@ describe('<MultiSelectDropdownFilter />', () => {
   });
   it('renders checkbox label with number - with badge', async () => {
     render(<MultiSelectDropdownFilter column={{ ...props.column, filterValue: [roan.value] }} />);
-    fireEvent.click(screen.getByText(props.column.Header));
+    await userEvent.click(screen.getByText(props.column.Header));
     await act(async () => {
       const label = screen.getByText(roan.name);
       expect(label).toBeInTheDocument();
@@ -87,7 +80,7 @@ describe('<MultiSelectDropdownFilter />', () => {
     render(
       <MultiSelectDropdownFilter column={{ ...props.column, filterValue: [roan.value] }} />,
     );
-    fireEvent.click(screen.getByText(props.column.Header));
+    await userEvent.click(screen.getByText(props.column.Header));
     await act(async () => {
       const label = screen.getByText(palomino.name);
       expect(label).toBeInTheDocument();

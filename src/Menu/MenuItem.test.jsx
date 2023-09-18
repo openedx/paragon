@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
+import userEvent from '@testing-library/user-event';
 
 import { Add, Check } from '../../icons';
 import { MenuItem } from '..';
@@ -16,7 +17,7 @@ describe('Menu Item', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('The Button can be clicked', () => {
+  it('The Button can be clicked', async () => {
     const clickFn = jest.fn();
     render(
       <MenuItem as={Button} iconBefore={Add} onClick={clickFn}>
@@ -25,12 +26,12 @@ describe('Menu Item', () => {
     );
     const button = screen.getByRole('button');
 
-    fireEvent.click(button);
+    await userEvent.click(button);
 
     expect(clickFn).toHaveBeenCalledTimes(1);
   });
 
-  it('Disabled Button can\'t be clicked', () => {
+  it('Disabled Button can\'t be clicked', async () => {
     const clickFn = jest.fn();
     render(
       <MenuItem as={Button} iconBefore={Add} onClick={clickFn} disabled>
@@ -39,7 +40,7 @@ describe('Menu Item', () => {
     );
     const button = screen.getByRole('button');
 
-    fireEvent.click(button);
+    await userEvent.click(button);
 
     expect(clickFn).toHaveBeenCalledTimes(0);
   });

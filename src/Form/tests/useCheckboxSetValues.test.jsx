@@ -1,6 +1,8 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import useCheckboxSetValues from '../useCheckboxSetValues';
 
 const VALUES = 'values';
@@ -27,42 +29,42 @@ describe('useCheckboxSetValues', () => {
     expect(values.textContent).toBe('cheddar');
   });
 
-  it('can append a value', () => {
+  it('can append a value', async () => {
     render(<Example />);
     const addButton = screen.getByTestId('add');
     const values = screen.getByTestId(VALUES);
 
-    fireEvent.click(addButton);
+    await userEvent.click(addButton);
 
     expect(values.textContent).toBe('cheddar provolone');
   });
 
-  it('can remove a value', () => {
+  it('can remove a value', async () => {
     render(<Example />);
     const removeButton = screen.getByTestId('remove');
     const values = screen.getByTestId(VALUES);
 
-    fireEvent.click(removeButton);
+    await userEvent.click(removeButton);
 
     expect(values.textContent).toBe('cheddar');
   });
 
-  it('can replace all values', () => {
+  it('can replace all values', async () => {
     render(<Example />);
     const setButton = screen.getByTestId('set');
     const values = screen.getByTestId(VALUES);
 
-    fireEvent.click(setButton);
+    await userEvent.click(setButton);
 
     expect(values.textContent).toBe('cheddar swiss provolone');
   });
 
-  it('can clear all values', () => {
+  it('can clear all values', async () => {
     render(<Example />);
     const clearButton = screen.getByTestId('clear');
     const values = screen.getByTestId(VALUES);
 
-    fireEvent.click(clearButton);
+    await userEvent.click(clearButton);
 
     expect(values.textContent).toBe('');
   });

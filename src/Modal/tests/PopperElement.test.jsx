@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { usePopper } from 'react-popper';
-import PopperElement from './PopperElement';
+import PopperElement from '../PopperElement';
 
 jest.mock('react-popper', () => ({
   usePopper: jest.fn(() => ({

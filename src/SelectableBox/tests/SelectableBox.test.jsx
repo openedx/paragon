@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
 
@@ -78,18 +78,19 @@ describe('<SelectableBox />', () => {
       const selectableBox = screen.getByRole('button');
       expect(selectableBox.classList.contains('pgn__selectable_box-invalid')).toEqual(true);
     });
-    it('renders with on click event when onClick is passed', () => {
+    it('renders with on click event when onClick is passed', async () => {
       const onClickSpy = jest.fn();
       render(<SelectableCheckbox onClick={onClickSpy} />);
       const selectableBox = screen.getByRole('button');
-      fireEvent.click(selectableBox);
+      await userEvent.click(selectableBox);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
-    it('renders with on key press event when onClick is passed', () => {
+    it('renders with on key press event when onClick is passed', async () => {
       const onClickSpy = jest.fn();
       render(<SelectableCheckbox onClick={onClickSpy} />);
       const selectableBox = screen.getByRole('button');
-      fireEvent.keyPress(selectableBox, { key: 'Enter', code: 'Enter', charCode: 13 });
+      selectableBox.focus();
+      await userEvent.keyboard('{enter}');
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
     it('renders with hidden input when inputHidden is passed', () => {

@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
+import userEvent from '@testing-library/user-event';
 
 import ControlledSelectionStatus from '../ControlledSelectionStatus';
 import { clearSelectionAction, setSelectAllRowsAllPagesAction, setSelectedRowsAction } from '../data/actions';
@@ -132,7 +133,7 @@ describe('<ControlledSelectionStatus />', () => {
       expect(screen.queryByText(CLEAR_SELECTION_TEXT)).not.toBeInTheDocument();
     });
 
-    it('toggles select all on select all button click', () => {
+    it('toggles select all on select all button click', async () => {
       const dispatchSpy = jest.fn();
       render(
         <ControlledSelectionStatusWrapper
@@ -146,13 +147,13 @@ describe('<ControlledSelectionStatus />', () => {
         />,
       );
       const selectAllButton = screen.getByTestId(SELECT_ALL_TEST_ID);
-      fireEvent.click(selectAllButton);
+      await userEvent.click(selectAllButton);
       expect(dispatchSpy).toHaveBeenCalledTimes(1);
       const action = setSelectAllRowsAllPagesAction();
       expect(dispatchSpy).toHaveBeenCalledWith(action);
     });
 
-    it('clears selection on clear selection button click', () => {
+    it('clears selection on clear selection button click', async () => {
       const dispatchSpy = jest.fn();
       render(
         <ControlledSelectionStatusWrapper
@@ -166,7 +167,7 @@ describe('<ControlledSelectionStatus />', () => {
         />,
       );
       const clearSelectionButton = screen.getByTestId(CLEAR_SELECTION_TEST_ID);
-      fireEvent.click(clearSelectionButton);
+      await userEvent.click(clearSelectionButton);
       expect(dispatchSpy).toHaveBeenCalledTimes(1);
       const action = clearSelectionAction();
       expect(dispatchSpy).toHaveBeenCalledWith(action);

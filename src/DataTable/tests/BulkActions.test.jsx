@@ -1,5 +1,6 @@
 import React from 'react';
-import { screen, render, fireEvent } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import classNames from 'classnames';
 
@@ -143,7 +144,7 @@ describe('<BulkActions />', () => {
       const button = screen.getByText(FIRST_ACTION);
       expect(button).toBeInTheDocument();
     });
-    it('handles action on click with full table selection (all rows across all pages)', () => {
+    it('handles action on click with full table selection (all rows across all pages)', async () => {
       const onClickSpy = jest.fn();
       render(
         <BulkActionsWrapper
@@ -161,13 +162,13 @@ describe('<BulkActions />', () => {
         />,
       );
       const button = screen.getAllByRole('button')[1];
-      fireEvent.click(button);
+      await userEvent.click(button);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('two actions on click', () => {
-    it('performs the primary button action on click', () => {
+    it('performs the primary button action on click', async () => {
       const onClickSpy = jest.fn();
       render(
         <BulkActionsWrapper
@@ -175,10 +176,10 @@ describe('<BulkActions />', () => {
         />,
       );
       const button = screen.getAllByRole('button')[1];
-      fireEvent.click(button);
+      await userEvent.click(button);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
-    it('performs the second button action on click', () => {
+    it('performs the second button action on click', async () => {
       const onClickSpy = jest.fn();
       render(
         <BulkActionsWrapper
@@ -186,7 +187,7 @@ describe('<BulkActions />', () => {
         />,
       );
       const button = screen.getAllByRole('button')[0];
-      fireEvent.click(button);
+      await userEvent.click(button);
       expect(onClickSpy).toHaveBeenCalledTimes(1);
     });
   });
@@ -209,7 +210,7 @@ describe('<BulkActions />', () => {
     describe('overflow menu', () => {
       const onClickSpy = jest.fn();
       const itemTestId = 'itemTestId';
-      beforeEach(() => {
+      beforeEach(async () => {
         render(
           <BulkActionsWrapper
             value={{
@@ -219,19 +220,19 @@ describe('<BulkActions />', () => {
           />,
         );
         // the overflow toggle button is the first button
-        fireEvent.click(screen.getByRole('button', { name: ACTION_OVERFLOW_BUTTON_TEXT }));
+        await userEvent.click(screen.getByRole('button', { name: ACTION_OVERFLOW_BUTTON_TEXT }));
       });
       afterEach(() => {
         onClickSpy.mockClear();
       });
-      it('displays additional actions in a ModalPopup', () => {
+      it('displays additional actions in a ModalPopup', async () => {
         const actionItems = screen.getAllByRole('button');
         // subtract two for the two main buttons that aren't in the overflow menu
         expect(actionItems.length).toEqual(4);
       });
-      it('performs actions when overflow items are clicked', () => {
+      it('performs actions when overflow items are clicked', async () => {
         const item = screen.getByTestId(itemTestId);
-        fireEvent.click(item);
+        await userEvent.click(item);
         expect(onClickSpy).toHaveBeenCalledTimes(1);
       });
       it('passes the class names to the dropdown item', () => {
@@ -243,13 +244,13 @@ describe('<BulkActions />', () => {
 
   describe('small screen', () => {
     const actions = [[[<FirstAction />]], [[<FirstAction />, <SecondAction />]], [instance.bulkActions]];
-    test.each(actions)('puts all actions in a dropdown %#', (testActions) => {
+    test.each(actions)('puts all actions in a dropdown %#', async (testActions) => {
       useWindowSize.mockReturnValue({ width: 500 });
       const { container } = render(<BulkActionsWrapper value={{ ...instance, bulkActions: testActions }} />);
       const button = screen.getByRole('button', { name: SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT });
       expect(button).toBeInTheDocument();
       expect(container.textContent).not.toContain(FIRST_ACTION);
-      fireEvent.click(button);
+      await userEvent.click(button);
       expect(container.textContent.length).toBeGreaterThan(0);
     });
     it('renders the correct alt text for the dropdown', () => {

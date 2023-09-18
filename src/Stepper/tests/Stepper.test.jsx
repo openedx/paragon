@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Stepper from '../Stepper';
 import { stepsReducer } from '../StepperContext';
@@ -82,23 +83,23 @@ describe('Stepper', () => {
   });
 
   describe('clickable variant', () => {
-    it('ignores onClick function if Step has not been visited yet', () => {
+    it('ignores onClick function if Step has not been visited yet', async () => {
       const onStepClick = jest.fn();
       render(
         <Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />,
       );
 
-      fireEvent.click(screen.getByText('Cat'));
+      await userEvent.click(screen.getByText('Cat'));
       expect(onStepClick).toHaveBeenCalledTimes(0);
     });
 
-    it('invokes onClick function if Step has been visited', () => {
+    it('invokes onClick function if Step has been visited', async () => {
       const onStepClick = jest.fn();
       render(
         <Example activeKey="review" showError={false} hasFourthStep handleStepClick={onStepClick} />,
       );
 
-      fireEvent.click(screen.getByText('Welcome'));
+      await userEvent.click(screen.getByText('Welcome'));
       expect(onStepClick).toHaveBeenCalledTimes(1);
     });
   });

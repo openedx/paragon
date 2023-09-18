@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import AlertModal from './AlertModal';
-import { Info } from '../../icons';
+import AlertModal from '../AlertModal';
+import { Info } from '../../../icons';
 
 /* eslint-disable react/prop-types */
-jest.mock('./Portal', () => function PortalMock(props) {
+jest.mock('../Portal', () => function PortalMock(props) {
   const { children, ...otherProps } = props;
   return (
     <paragon-portal {...otherProps}>

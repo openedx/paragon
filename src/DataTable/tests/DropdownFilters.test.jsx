@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import DropdownFilters from '../DropdownFilters';
 import { useWindowSize } from '../..';
@@ -56,7 +57,7 @@ describe('<DropdownFilters />', () => {
       // clicking the button.
       expect(screen.queryByText('Occupation filter')).toBeNull();
       const filtersButton = screen.getByRole('button', { name: /Filters/i });
-      await fireEvent.click(filtersButton);
+      await userEvent.click(filtersButton);
       expect(screen.getByText('Occupation filter')).toBeInTheDocument();
     });
 
@@ -65,7 +66,7 @@ describe('<DropdownFilters />', () => {
       render(<DropdownFiltersWrapper />);
       expect(screen.queryByText('DOB filter')).toBeNull();
       const filtersButton = screen.getByRole('button', { name: /Filters/i });
-      fireEvent.click(filtersButton);
+      await userEvent.click(filtersButton);
       expect(screen.queryByText('DOB filter')).toBeNull();
     });
 
@@ -88,7 +89,7 @@ describe('<DropdownFilters />', () => {
       useWindowSize.mockReturnValue({ width: 500 });
       render(<DropdownFiltersWrapper />);
       const filtersButton = screen.getByRole('button', { name: /Filters/i });
-      fireEvent.click(filtersButton);
+      await userEvent.click(filtersButton);
       expect(screen.getByText('Bears filter')).toBeInTheDocument();
       expect(screen.getByText('Occupation filter')).toBeInTheDocument();
     });

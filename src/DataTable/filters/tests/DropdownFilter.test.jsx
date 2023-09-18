@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import DropdownFilter from '../DropdownFilter';
 
@@ -26,43 +27,43 @@ describe('<DropdownFilter />', () => {
   });
 
   it('renders a select button', () => {
-    const { getByLabelText } = render(<DropdownFilter {...props} />);
-    expect(getByLabelText(props.column.Header)).toBeInTheDocument();
+    render(<DropdownFilter {...props} />);
+    expect(screen.getByLabelText(props.column.Header)).toBeInTheDocument();
   });
 
-  it('sets a filter - no initial filters', () => {
-    const { getByLabelText } = render(<DropdownFilter {...props} />);
-    const select = getByLabelText(props.column.Header);
-    fireEvent.click(select);
-    fireEvent.change(select, { target: { value: palomino.value } });
+  it('sets a filter - no initial filters', async () => {
+    render(<DropdownFilter {...props} />);
+    const select = screen.getByLabelText(props.column.Header);
+    await userEvent.click(select);
+    await userEvent.selectOptions(select, palomino.value);
     expect(setFilterMock).toHaveBeenCalledWith(palomino.value);
   });
 
-  it('sets a filter - initial filters', () => {
-    const { getByLabelText } = render(
+  it('sets a filter - initial filters', async () => {
+    render(
       <DropdownFilter column={{ ...props.column, filterValue: [palomino.value] }} />,
     );
-    const select = getByLabelText(props.column.Header);
-    fireEvent.click(select);
-    fireEvent.change(select, { target: { value: palomino.value } });
+    const select = screen.getByLabelText(props.column.Header);
+    await userEvent.click(select);
+    await userEvent.selectOptions(select, palomino.value);
     expect(setFilterMock).toHaveBeenCalledWith(palomino.value);
   });
 
-  it('removes filters when default option is clicked', () => {
-    const { getByLabelText } = render(
+  it('removes filters when default option is clicked', async () => {
+    render(
       <DropdownFilter column={{ ...props.column, filterValue: [palomino.value] }} />,
     );
-    const select = getByLabelText(props.column.Header);
-    fireEvent.click(select);
-    fireEvent.change(select, { target: { value: '' } });
+    const select = screen.getByLabelText(props.column.Header);
+    await userEvent.click(select);
+    await userEvent.selectOptions(select, '');
     expect(setFilterMock).toHaveBeenCalledWith(undefined);
   });
 
-  it('displays a number if a number is provided', () => {
-    const { getByLabelText, getByText } = render(<DropdownFilter {...props} />);
-    const select = getByLabelText(props.column.Header);
-    fireEvent.click(select);
-    const option = getByText(`${roan.name} (${roan.number})`);
+  it('displays a number if a number is provided', async () => {
+    render(<DropdownFilter {...props} />);
+    const select = screen.getByLabelText(props.column.Header);
+    await userEvent.click(select);
+    const option = screen.getByText(`${roan.name} (${roan.number})`);
     expect(option).toBeInTheDocument();
   });
 });
