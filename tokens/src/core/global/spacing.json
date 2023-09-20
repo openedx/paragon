@@ -28,7 +28,7 @@
     },
     "grid": {
       "gutter-width": {
-        "value": "24px", "type": "dimension", "description": "Grid gutter width value."
+        "value": "24px", "type": "dimension", "source": "$grid-gutter-width", "description": "Grid gutter width value."
       }
     }
   }
