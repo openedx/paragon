@@ -55,6 +55,16 @@ Usage on with `@edx/brand`:
 
 Note that including fonts will affect performance.  In some applications may choose not to load the custom font to keep it highly performant.
 
+## Paragon CLI
+
+The Paragon CLI (Command Line Interface) is a tool that provides various utility commands to automate actions within the Open edX environment.
+
+### Available Commands
+
+- `paragon install-theme [theme]`: Installs the specific @edx/brand package.
+
+Use `paragon help` to see more information.
+
 ## Getting Help
 
 Please reach out to the Paragon Working Group (PWG):
