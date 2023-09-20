@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
 import FormAutosuggest from '../FormAutosuggest';
 import FormAutosuggestOption from '../FormAutosuggestOption';
@@ -50,13 +50,13 @@ describe('render behavior', () => {
 
   it('renders without loading state', () => {
     const { queryByTestId } = render(<FormAutosuggestTestComponent />);
-    const spinner = queryByTestId('autosuggest_loading_spinner');
+    const spinner = queryByTestId('autosuggest-loading-spinner');
     expect(spinner).not.toBeInTheDocument();
   });
 
   it('render with loading state', () => {
     const { queryByTestId } = render(<FormAutosuggestWrapper isLoading />);
-    const spinner = queryByTestId('autosuggest_loading_spinner');
+    const spinner = queryByTestId('autosuggest-loading-spinner');
     expect(spinner).toBeInTheDocument();
   });
 
@@ -67,15 +67,15 @@ describe('render behavior', () => {
 
   it('renders component with options', () => {
     const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
-    const input = getByTestId('autosuggest_textbox_input');
+    const input = getByTestId('autosuggest-textbox-input');
     userEvent.click(input);
-    const list = queryAllByTestId('autosuggest_optionitem');
+    const list = queryAllByTestId('autosuggest-optionitem');
     expect(list.length).toBe(3);
   });
 
   it('renders with error msg', () => {
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent />);
-    const input = getByTestId('autosuggest_textbox_input');
+    const input = getByTestId('autosuggest-textbox-input');
 
     // if you click into the input and click outside, you should see the error message
     userEvent.click(input);
@@ -90,7 +90,7 @@ describe('render behavior', () => {
 describe('controlled behavior', () => {
   it('sets input value based on clicked option', () => {
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent />);
-    const input = getByTestId('autosuggest_textbox_input');
+    const input = getByTestId('autosuggest-textbox-input');
 
     userEvent.click(input);
     const menuItem = getByText('Option 1');
@@ -102,7 +102,7 @@ describe('controlled behavior', () => {
   it('calls onSelected based on clicked option', () => {
     const onSelected = jest.fn();
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent onSelected={onSelected} />);
-    const input = getByTestId('autosuggest_textbox_input');
+    const input = getByTestId('autosuggest-textbox-input');
 
     userEvent.click(input);
     const menuItem = getByText('Option 1');
@@ -115,7 +115,7 @@ describe('controlled behavior', () => {
   it('calls the function passed to onClick when an option with it is selected', () => {
     const onClick = jest.fn();
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent onClick={onClick} />);
-    const input = getByTestId('autosuggest_textbox_input');
+    const input = getByTestId('autosuggest-textbox-input');
 
     userEvent.click(input);
     const menuItem = getByText('Option 2');
@@ -127,7 +127,7 @@ describe('controlled behavior', () => {
   it('does not call onClick when an option without it is selected', () => {
     const onClick = jest.fn();
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent onClick={onClick} />);
-    const input = getByTestId('autosuggest_textbox_input');
+    const input = getByTestId('autosuggest-textbox-input');
 
     userEvent.click(input);
     const menuItem = getByText('Option 1');
@@ -138,53 +138,53 @@ describe('controlled behavior', () => {
 
   it('filters dropdown based on typed field value with one match', () => {
     const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
-    const input = getByTestId('autosuggest_textbox_input');
+    const input = getByTestId('autosuggest-textbox-input');
 
     userEvent.click(input);
     userEvent.type(input, 'Option 1');
 
-    const list = queryAllByTestId('autosuggest_optionitem');
+    const list = queryAllByTestId('autosuggest-optionitem');
     expect(list.length).toBe(1);
   });
 
   it('toggles options list', () => {
     const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
-    const dropdownBtn = getByTestId('autosuggest_iconbutton');
+    const dropdownBtn = getByTestId('autosuggest-iconbutton');
 
     userEvent.click(dropdownBtn);
-    const list = queryAllByTestId('autosuggest_optionitem');
+    const list = queryAllByTestId('autosuggest-optionitem');
     expect(list.length).toBe(3);
 
     userEvent.click(dropdownBtn);
-    const updatedList = queryAllByTestId('autosuggest_optionitem');
+    const updatedList = queryAllByTestId('autosuggest-optionitem');
     expect(updatedList.length).toBe(0);
 
     userEvent.click(dropdownBtn);
-    const reopenedList = queryAllByTestId('autosuggest_optionitem');
+    const reopenedList = queryAllByTestId('autosuggest-optionitem');
     expect(reopenedList.length).toBe(3);
   });
 
   it('filters dropdown based on typed field value with multiple matches', () => {
     const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
-    const input = getByTestId('autosuggest_textbox_input');
+    const input = getByTestId('autosuggest-textbox-input');
 
     userEvent.click(input);
     userEvent.type(input, '1');
 
-    const list = queryAllByTestId('autosuggest_optionitem');
+    const list = queryAllByTestId('autosuggest-optionitem');
     expect(list.length).toBe(2);
   });
 
   it('closes options list on click outside', () => {
     const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
-    const input = getByTestId('autosuggest_textbox_input');
+    const input = getByTestId('autosuggest-textbox-input');
 
     userEvent.click(input);
-    const list = queryAllByTestId('autosuggest_optionitem');
+    const list = queryAllByTestId('autosuggest-optionitem');
     expect(list.length).toBe(3);
 
     userEvent.click(document.body);
-    const updatedList = queryAllByTestId('autosuggest_optionitem');
+    const updatedList = queryAllByTestId('autosuggest-optionitem');
     expect(updatedList.length).toBe(0);
   });
 });
