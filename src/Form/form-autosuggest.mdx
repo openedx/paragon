@@ -19,7 +19,15 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
 ```jsx live
 () => {
-    const [selected, setSelected] = useState('');
+    const [selectedDisplay, setSelectedDisplay] = useState('');
+    const [selectedData, setSelectedData] = useState('');
+    const handleSelected = (selectedObject) => {
+        setSelectedDisplay(selectedObject.displayValue)
+        setSelectedData(selectedObject.dataValue)
+    }
+
+    console.log("SELECTEDDISPLAY:", selectedDisplay)
+    console.log("SELECTEDDATA:", selectedData)
 
     return (
         <Form.Autosuggest
@@ -27,15 +35,15 @@ Form auto-suggest enables users to manually select or type to find matching opti
             aria-label="form autosuggest"
             helpMessage="Select language"
             errorMessageText="Error, no selected value"
-            value={selected}
-            onSelected={(value) => setSelected(value)}
+            errorNoMatchingText="Error, no matching value"
+            value={selectedData}
+            freeformValue={selectedDisplay}
+            onSelected={(value) => handleSelected(value)}
+            allowFreeFormInput={true}
         >
-            <Form.AutosuggestOption>JavaScript</Form.AutosuggestOption>
-            <Form.AutosuggestOption>Python</Form.AutosuggestOption>
-            <Form.AutosuggestOption>Rube</Form.AutosuggestOption>
-            <Form.AutosuggestOption onClick={(e) => alert(e.currentTarget.getAttribute('data-value'))}>
-                Option with custom onClick
-            </Form.AutosuggestOption>
+            <Form.AutosuggestOption value="js">JavaScript</Form.AutosuggestOption>
+            <Form.AutosuggestOption value="py">Python</Form.AutosuggestOption>
+            <Form.AutosuggestOption value="rb">Ruby</Form.AutosuggestOption>
         </Form.Autosuggest>
     );
 }
