@@ -17,7 +17,7 @@ function Component({ isClearValue }) {
 
   return (
     <FormControl
-      hasInputMask="+{1}(000)000-00-00"
+      inputMask="+{1}(000)000-00-00"
       value={inputValue}
       onChange={isClearValue ? onChangeFunc : (e) => setInputValue(e.target.value)}
       onAccept={isClearValue ? onChangeFunc : (value) => setInputValue(value)}

@@ -18,7 +18,7 @@ const FormControl = React.forwardRef(({
   floatingLabel,
   autoResize,
   onChange,
-  hasInputMask,
+  inputMask,
   ...props
 }, ref) => {
   const {
@@ -73,7 +73,7 @@ const FormControl = React.forwardRef(({
       className={className}
     >
       <RBFormControl
-        as={hasInputMask?.length ? IMaskInput : as}
+        as={inputMask ? IMaskInput : as}
         ref={resolvedRef}
         size={size}
         isInvalid={isInvalid}
@@ -82,7 +82,7 @@ const FormControl = React.forwardRef(({
           'has-value': hasValue,
         })}
         onChange={handleOnChange}
-        mask={hasInputMask}
+        mask={inputMask}
         {...controlProps}
       />
     </FormControlDecoratorGroup>
@@ -126,7 +126,7 @@ FormControl.propTypes = {
   /** Only for `as="textarea"`. Specifies whether the input can be resized according to the height of content. */
   autoResize: PropTypes.bool,
   /** Specifies what format to use for the input mask. */
-  hasInputMask: PropTypes.string,
+  inputMask: PropTypes.string,
 };
 
 FormControl.defaultProps = {
@@ -145,7 +145,7 @@ FormControl.defaultProps = {
   isValid: undefined,
   isInvalid: undefined,
   autoResize: false,
-  hasInputMask: undefined,
+  inputMask: undefined,
 };
 
 export default FormControl;

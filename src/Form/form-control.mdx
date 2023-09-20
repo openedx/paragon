@@ -165,7 +165,7 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 ## Input masks
 Paragon uses the [react-imask](https://www.npmjs.com/package/react-imask) library,
 which allows you to add masks of different types for inputs.
-To create your own mask, you need to pass the required mask pattern (`+{1}(000)000-00-00`) to the `hasInputMask` property. <br />
+To create your own mask, you need to pass the required mask pattern (`+{1}(000)000-00-00`) to the `inputMask` property. <br />
 See [react-imask](https://imask.js.org) for documentation on available props.
 
 ```jsx live
@@ -180,7 +180,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
         <h3>Phone</h3>
         <Form.Group>
           <Form.Control
-            hasInputMask="+{1}(000)000-00-00"
+            inputMask="+{1}(000)000-00-00"
             value={value}
             onChange={handleChange}
             leadingElement={<Icon src={FavoriteBorder} />}
@@ -193,7 +193,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
       <h3>Credit card</h3>
       <Form.Group>
         <Form.Control
-          hasInputMask="0000 0000 0000 0000"
+          inputMask="0000 0000 0000 0000"
           value={value}
           onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
@@ -205,7 +205,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
       <h3>Date</h3>
       <Form.Group>
         <Form.Control
-          hasInputMask={Date}
+          inputMask={Date}
           value={value}
           onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
@@ -217,7 +217,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
       <h3>Secure password</h3>
       <Form.Group>
         <Form.Control
-          hasInputMask="XXX-XX-0000"
+          inputMask="XXX-XX-0000"
           value={value}
           definitions={{
             X: {
@@ -236,7 +236,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
       <h3>OTP password</h3>
       <Form.Group>
         <Form.Control
-          hasInputMask="G-00000"
+          inputMask="G-00000"
           value={value}
           onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
@@ -249,7 +249,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
           <h3>Course prise</h3>
           <Form.Group>
             <Form.Control
-              hasInputMask="$num"
+              inputMask="$num"
               blocks={{
                 num: {
                   // nested masks are available!
@@ -298,7 +298,7 @@ To get a value without a mask, you need to use `onChange` instead of `onAccept` 
       <>
         <Form.Group>
           <Form.Control
-            hasInputMask="+{1}(000)000-00-00"
+            inputMask="+{1}(000)000-00-00"
             leadingElement={<Icon src={FavoriteBorder} />}
             trailingElement={<Icon src={Verified} />}
             floatingLabel="What is your phone number?"
