@@ -40,7 +40,7 @@ async function replaceVariablesUsage(filePath, variablesMap, direction = 'scss-t
     variableRegex = /(\$|#{\$)(\w|-|_)*(}|,|;|\)|\s|$)/g;
   }
 
-  const fileStream = fs.createReadStream(path.resolve(__dirname, '..', filePath));
+  const fileStream = fs.createReadStream(filePath);
 
   const rl = readline.createInterface({
     input: fileStream,
