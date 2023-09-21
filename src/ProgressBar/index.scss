@@ -13,6 +13,7 @@
   width: 100%;
   position: relative;
   overflow: visible;
+  padding: 3.125rem 0;
 
   .progress {
     overflow: visible;
@@ -58,6 +59,11 @@
           height: $progress-threshold-circle;
           border-radius: calc($progress-threshold-circle / 2);
           z-index: 1;
+
+          [dir="rtl"] & {
+            left: -(calc($progress-threshold-circle / 2));
+            right: auto;
+          }
         }
       }
     }
@@ -77,8 +83,13 @@
   }
 
   .pgn__progress-info {
-    display: inline-block;
-    position: relative;
+    position: absolute;
+    display: flex;
+    align-items: baseline;
+
+    &:first-child {
+      top: 0;
+    }
   }
 
   .pgn__progress-hint {

@@ -31,18 +31,27 @@ function ProgressBarAnnotated({
   thresholdHint,
   ...props
 }) {
+  const [direction, setDirection] = React.useState('ltr');
   const progressInfoRef = React.useRef();
   const thresholdInfoRef = React.useRef();
+  const progressAnnotatedRef = React.useRef();
   const thresholdPercent = (threshold || 0) - (now || 0);
   const isProgressHintAfter = now < HINT_SWAP_PERCENT;
   const isThresholdHintAfter = threshold < HINT_SWAP_PERCENT;
   const progressColor = VARIANTS.includes(variant) ? variant : PROGRESS_DEFAULT_VARIANT;
   const thresholdColor = VARIANTS.includes(thresholdVariant) ? thresholdVariant : THRESHOLD_DEFAULT_VARIANT;
 
+  useEffect(() => {
+    if (progressAnnotatedRef.current) {
+      const pageDirection = window.getComputedStyle(progressAnnotatedRef.current).getPropertyValue('direction');
+      setDirection(pageDirection);
+    }
+  }, []);
+
   const positionAnnotations = useCallback(() => {
-    placeInfoAtZero(progressInfoRef, isProgressHintAfter, ANNOTATION_CLASS);
-    placeInfoAtZero(thresholdInfoRef, isThresholdHintAfter, ANNOTATION_CLASS);
-  }, [isProgressHintAfter, isThresholdHintAfter]);
+    placeInfoAtZero(progressInfoRef, direction, isProgressHintAfter, ANNOTATION_CLASS);
+    placeInfoAtZero(thresholdInfoRef, direction, isThresholdHintAfter, ANNOTATION_CLASS);
+  }, [direction, isProgressHintAfter, isThresholdHintAfter]);
 
   useEffect(() => {
     positionAnnotations();
@@ -61,11 +70,11 @@ function ProgressBarAnnotated({
   );
 
   return (
-    <div className="pgn__progress-annotated">
+    <div ref={progressAnnotatedRef} className="pgn__progress-annotated">
       {!!label && (
         <div
           className="pgn__progress-info"
-          style={{ left: `${now}%` }}
+          style={direction === 'rtl' ? { right: `${now}%` } : { left: `${now}%` }}
           ref={progressInfoRef}
         >
           {!isProgressHintAfter && getHint(progressHint)}
@@ -96,7 +105,7 @@ function ProgressBarAnnotated({
       {(!!threshold && !!thresholdLabel) && (
         <div
           className="pgn__progress-info"
-          style={{ left: `${threshold}%` }}
+          style={direction === 'rtl' ? { right: `${threshold}%` } : { left: `${threshold}%` }}
           ref={thresholdInfoRef}
         >
           {!isThresholdHintAfter && getHint(thresholdHint)}
