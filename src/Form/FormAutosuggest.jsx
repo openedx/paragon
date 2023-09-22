@@ -183,7 +183,7 @@ const FormAutosuggest = forwardRef(
         return;
       }
 
-      if (e.key === 'Escape') {
+      if (e.key === 'Escape' && isActive) {
         e.preventDefault();
 
         if (formControlRef) {
@@ -226,6 +226,7 @@ const FormAutosuggest = forwardRef(
     };
 
     const handleTextInput = (e) => {
+      setIsActive(true);
       const userProvidedText = e.target.value;
 
       // If the user has removed all text from the textbox
