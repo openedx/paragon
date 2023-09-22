@@ -110,6 +110,12 @@
       display: flex;
       justify-content: flex-end;
     }
+
+    .pgn__data-table-side-filters-item {
+      .pgn__form-checkbox {
+        align-items: center;
+      }
+    }
   }
 
   .pgn__data-table-layout-main {
@@ -173,6 +179,10 @@
 .pgn__data-table-filters-dropdown-item {
   padding: var(--pgn-spacing-data-table-padding-small) 14px;
   min-width: 15em;
+
+  .pgn__form-checkbox {
+    align-items: center;
+  }
 }
 
 .pgn__data-table-status {
@@ -270,6 +280,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  overflow: hidden;
 }
 
 .pgn__data-table__overflow-actions-menu {
