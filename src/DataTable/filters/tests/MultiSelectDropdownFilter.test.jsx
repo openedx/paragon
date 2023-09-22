@@ -69,7 +69,7 @@ describe('<MultiSelectDropdownFilter />', () => {
     const wrapper = mount(<MultiSelectDropdownFilter column={{ ...props.column, filterValue: [roan.value] }} />);
     wrapper.find('button').simulate('click');
     await act(async () => {
-      const label = wrapper.find('.form-check-label').at(0);
+      const label = wrapper.find('.pgn__form-label').at(0);
       expect(label.text()).toContain(roan.name);
     });
   });
@@ -78,7 +78,7 @@ describe('<MultiSelectDropdownFilter />', () => {
     wrapper.find('button').simulate('click');
 
     await act(async () => {
-      const label = wrapper.find('.pgn__checkbox-filter').at(0);
+      const label = wrapper.find('.pgn__form-checkbox').at(0);
       const badge = label.find(Badge);
       expect(badge).toHaveLength(1);
       expect(badge.text()).toEqual(String(roan.number));
@@ -89,8 +89,8 @@ describe('<MultiSelectDropdownFilter />', () => {
     wrapper.find('button').simulate('click');
 
     await act(async () => {
-      const label = wrapper.find('.pgn__checkbox-filter').at(1);
-      const badge = label.find(Badge);
+      const label = wrapper.find('.pgn__form-checkbox').at(1);
+      const badge = label.find('.badge');
       expect(badge).toHaveLength(0);
     });
   });

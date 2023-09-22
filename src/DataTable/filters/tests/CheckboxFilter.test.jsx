@@ -54,19 +54,19 @@ describe('<CheckboxFilter />', () => {
   });
   it('renders checkbox label with filter name', () => {
     const wrapper = mount(<CheckboxFilter column={{ ...props.column, filterValue: [roan.value] }} />);
-    const label = wrapper.find('.form-check-label').at(0);
+    const label = wrapper.find('.pgn__form-checkbox').at(0);
     expect(label.text()).toContain(roan.name);
   });
   it('renders checkbox label with number', () => {
     const wrapper = mount(<CheckboxFilter column={{ ...props.column, filterValue: [roan.value] }} />);
-    const label = wrapper.find('.pgn__checkbox-filter').at(0);
+    const label = wrapper.find('.pgn__form-checkbox').at(0);
     const badge = label.find(Badge);
     expect(badge).toHaveLength(1);
     expect(badge.text()).toEqual(String(roan.number));
   });
   it('renders checkbox label with number', () => {
     const wrapper = mount(<CheckboxFilter column={{ ...props.column, filterValue: [roan.value] }} />);
-    const label = wrapper.find('.pgn__checkbox-filter').at(1);
+    const label = wrapper.find('.pgn__form-checkbox').at(1);
     const badge = label.find(Badge);
     expect(badge).toHaveLength(0);
   });
