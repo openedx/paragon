@@ -3,7 +3,7 @@ import ProgressBarBase from 'react-bootstrap/ProgressBar';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Annotation from '../Annotation';
-import { placeInfoAtZero } from './utils';
+import { getOffsetStyles, placeInfoAtZero } from './utils';
 
 export const ANNOTATION_CLASS = 'pgn__annotation';
 const HINT_SWAP_PERCENT = 50;
@@ -20,7 +20,7 @@ function ProgressBar(props) {
   return <ProgressBarBase {...props} />;
 }
 
-function ProgressBarAnnotated({
+const ProgressBarAnnotated = React.forwardRef(({
   now,
   label,
   variant,
@@ -30,11 +30,12 @@ function ProgressBarAnnotated({
   progressHint,
   thresholdHint,
   ...props
-}) {
+}, ref) => {
   const [direction, setDirection] = React.useState('ltr');
   const progressInfoRef = React.useRef();
   const thresholdInfoRef = React.useRef();
   const progressAnnotatedRef = React.useRef();
+  const resolvedRef = ref || progressAnnotatedRef;
   const thresholdPercent = (threshold || 0) - (now || 0);
   const isProgressHintAfter = now < HINT_SWAP_PERCENT;
   const isThresholdHintAfter = threshold < HINT_SWAP_PERCENT;
@@ -42,11 +43,11 @@ function ProgressBarAnnotated({
   const thresholdColor = VARIANTS.includes(thresholdVariant) ? thresholdVariant : THRESHOLD_DEFAULT_VARIANT;
 
   useEffect(() => {
-    if (progressAnnotatedRef.current) {
-      const pageDirection = window.getComputedStyle(progressAnnotatedRef.current).getPropertyValue('direction');
+    if (resolvedRef.current) {
+      const pageDirection = window.getComputedStyle(resolvedRef.current).getPropertyValue('direction');
       setDirection(pageDirection);
     }
-  }, []);
+  }, [resolvedRef]);
 
   const positionAnnotations = useCallback(() => {
     placeInfoAtZero(progressInfoRef, direction, isProgressHintAfter, ANNOTATION_CLASS);
@@ -74,7 +75,7 @@ function ProgressBarAnnotated({
       {!!label && (
         <div
           className="pgn__progress-info"
-          style={direction === 'rtl' ? { right: `${now}%` } : { left: `${now}%` }}
+          style={getOffsetStyles(now, direction)}
           ref={progressInfoRef}
         >
           {!isProgressHintAfter && getHint(progressHint)}
@@ -105,7 +106,7 @@ function ProgressBarAnnotated({
       {(!!threshold && !!thresholdLabel) && (
         <div
           className="pgn__progress-info"
-          style={direction === 'rtl' ? { right: `${threshold}%` } : { left: `${threshold}%` }}
+          style={getOffsetStyles(threshold, direction)}
           ref={thresholdInfoRef}
         >
           {!isThresholdHintAfter && getHint(thresholdHint)}
@@ -120,7 +121,7 @@ function ProgressBarAnnotated({
       )}
     </div>
   );
-}
+});
 
 ProgressBarAnnotated.propTypes = {
   /** Current value of progress. */
