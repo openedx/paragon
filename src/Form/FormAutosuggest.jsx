@@ -32,6 +32,7 @@ function FormAutosuggest({
     ignoredKeys: ignoredArrowKeysNames,
   });
   const [isMenuClosed, setIsMenuClosed] = useState(true);
+  const [isActive, setIsActive] = useState(false);
   const [state, setState] = useState({
     displayValue: value || '',
     errorMessage: '',
@@ -39,7 +40,7 @@ function FormAutosuggest({
   });
 
   const handleItemClick = (e, onClick) => {
-    const clickedValue = e.currentTarget.value;
+    const clickedValue = e.currentTarget.getAttribute('data-value');
 
     if (onSelected && clickedValue !== value) {
       onSelected(clickedValue);
@@ -66,7 +67,7 @@ function FormAutosuggest({
       return React.cloneElement(child, {
         ...rest,
         children,
-        value: children,
+        'data-value': children,
         onClick: (e) => handleItemClick(e, onClick),
       });
     });
@@ -87,6 +88,7 @@ function FormAutosuggest({
     };
 
     if (isMenuClosed) {
+      setIsActive(true);
       newState.dropDownItems = getItems(state.displayValue);
       newState.errorMessage = '';
     }
@@ -100,6 +102,7 @@ function FormAutosuggest({
   const iconToggle = (
     <IconButton
       className="pgn__form-autosuggest__icon-button"
+      data-testid="autosuggest-iconbutton"
       src={isMenuClosed ? KeyboardArrowDown : KeyboardArrowUp}
       iconAs={Icon}
       size="sm"
@@ -111,8 +114,10 @@ function FormAutosuggest({
     />
   );
 
-  const handleClickOutside = (e) => {
-    if (parentRef.current && !parentRef.current.contains(e.target) && state.dropDownItems.length > 0) {
+  const handleDocumentClick = (e) => {
+    if (parentRef.current && !parentRef.current.contains(e.target) && isActive) {
+      setIsActive(false);
+
       setState(prevState => ({
         ...prevState,
         dropDownItems: [],
@@ -124,13 +129,12 @@ function FormAutosuggest({
   };
 
   const keyDownHandler = e => {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' && isActive) {
       e.preventDefault();
 
       setState(prevState => ({
         ...prevState,
         dropDownItems: [],
-        errorMessage: !state.displayValue ? errorMessageText : '',
       }));
 
       setIsMenuClosed(true);
@@ -139,10 +143,10 @@ function FormAutosuggest({
 
   useEffect(() => {
     document.addEventListener('keydown', keyDownHandler);
-    document.addEventListener('click', handleClickOutside, true);
+    document.addEventListener('click', handleDocumentClick, true);
 
     return () => {
-      document.removeEventListener('click', handleClickOutside, true);
+      document.removeEventListener('click', handleDocumentClick, true);
       document.removeEventListener('keydown', keyDownHandler);
     };
   });
@@ -173,6 +177,7 @@ function FormAutosuggest({
   };
 
   const handleClick = (e) => {
+    setIsActive(true);
     const dropDownItems = getItems(e.target.value);
 
     if (dropDownItems.length > 1) {
@@ -204,7 +209,6 @@ function FormAutosuggest({
       setState(prevState => ({
         ...prevState,
         dropDownItems: [],
-        errorMessageText,
       }));
 
       setIsMenuClosed(true);
@@ -219,11 +223,15 @@ function FormAutosuggest({
         <FormControl
           aria-expanded={(state.dropDownItems.length > 0).toString()}
           aria-owns="pgn__form-autosuggest__dropdown-box"
+          role="combobox"
+          aria-autocomplete="list"
+          autoComplete="off"
           value={state.displayValue}
           aria-invalid={state.errorMessage}
           onChange={handleOnChange}
           onClick={handleClick}
           trailingElement={iconToggle}
+          data-testid="autosuggest-textbox-input"
           {...props}
         />
 
@@ -240,25 +248,30 @@ function FormAutosuggest({
         )}
       </FormGroup>
 
-      <div
+      <ul
         id="pgn__form-autosuggest__dropdown-box"
         className="pgn__form-autosuggest__dropdown"
+        role="listbox"
       >
         {isLoading ? (
           <div className="pgn__form-autosuggest__dropdown-loading">
-            <Spinner animation="border" variant="dark" screenReaderText={screenReaderText} />
+            <Spinner
+              animation="border"
+              variant="dark"
+              screenReaderText={screenReaderText}
+              data-testid="autosuggest-loading-spinner"
+            />
           </div>
         ) : state.dropDownItems.length > 0 && state.dropDownItems}
-      </div>
+      </ul>
     </div>
   );
 }
 
 FormAutosuggest.defaultProps = {
-  arrowKeyNavigationSelector: 'a:not(:disabled),button:not(:disabled, .btn-icon),input:not(:disabled)',
+  arrowKeyNavigationSelector: 'a:not(:disabled),li:not(:disabled, .btn-icon),input:not(:disabled)',
   ignoredArrowKeysNames: ['ArrowRight', 'ArrowLeft'],
   isLoading: false,
-  role: 'list',
   className: null,
   floatingLabel: null,
   onChange: null,
@@ -283,8 +296,6 @@ FormAutosuggest.propTypes = {
   ignoredArrowKeysNames: PropTypes.arrayOf(PropTypes.string),
   /** Specifies loading state. */
   isLoading: PropTypes.bool,
-  /** An ARIA role describing the form autosuggest. */
-  role: PropTypes.string,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
   /** Specifies floating label to display for the input component. */
