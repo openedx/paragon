@@ -28,6 +28,7 @@ async function createPages(graphql, actions, reporter) {
               components
             }
             slug
+            fileAbsolutePath
           }
         }
       }
@@ -44,6 +45,7 @@ async function createPages(graphql, actions, reporter) {
   for (const { node } of components) {
     const componentDir = node.slug.split('/')[0];
     const cssVariablesData = [];
+    const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.fileAbsolutePath.split('src')[1]}`;
 
     const pathToComponents = fs.readdirSync(`../src/${componentDir}`);
 
@@ -73,6 +75,7 @@ async function createPages(graphql, actions, reporter) {
         components: node.frontmatter.components || [],
         cssVariablesData,
         componentsUsageInsights: Object.keys(componentsUsage),
+        githubEditPath,
       },
     });
   }

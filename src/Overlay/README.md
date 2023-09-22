@@ -1,5 +1,5 @@
 ---
-title: 'Overlays'
+title: 'Overlay'
 type: 'component'
 components:
 - Overlay

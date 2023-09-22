@@ -608,6 +608,7 @@ select.form-control {
     width: calc(100% - .5rem);
     z-index: var(--pgn-elevation-dropdown-zindex);
     top: 3.125rem;
+    padding: 0;
 
     .dropdown-item {
       display: block;

@@ -50,7 +50,11 @@
       "focus": {
         "border": {
           "width": { "value": "2px", "type": "dimension", "source": "$card-focus-border-width" },
-          "radius": { "value": "5px", "type": "dimension", "source": "$card-focus-border-radius" }
+          "radius": {
+            "value": "calc({spacing.card.focus.border-offset} + {size.card.border.radius.base})",
+            "type": "dimension",
+            "source": "$card-focus-border-radius"
+          }
         }
       },
       "image": {
