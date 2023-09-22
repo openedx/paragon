@@ -19,6 +19,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import debounce from 'lodash.debounce';
 
 // This object is inserted into the global scope of the Playroom editor.
 // We expose the React methods here as they're often used in examples assuming
@@ -46,5 +47,6 @@ export default function useScope() {
     useReducer,
     useRef,
     useState,
+    debounce,
   };
 }
