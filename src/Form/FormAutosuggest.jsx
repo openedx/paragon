@@ -227,6 +227,7 @@ const FormAutosuggest = forwardRef(
 
     const handleTextInput = (e) => {
       setIsActive(true);
+      setIsActive(true);
       const userProvidedText = e.target.value;
 
       // If the user has removed all text from the textbox
