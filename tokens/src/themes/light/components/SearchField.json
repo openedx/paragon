@@ -11,6 +11,9 @@
           "primary": { "value": "{color.primary.500}", "type": "color", "source": "$search-btn-primary-bg" },
           "brand": { "value": "{color.brand.500}", "type": "color", "source": "$search-btn-brand-bg" }
         }
+      },
+      "form-bg": {
+        "value": "{color.white}", "type": "color", "source": "$search-form-background-color"
       }
     }
   },

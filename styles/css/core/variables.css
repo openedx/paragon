@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Mon, 28 Aug 2023 17:10:09 GMT
+ * Generated on Fri, 22 Sep 2023 08:20:17 GMT
  */
 
 :root {
@@ -381,7 +381,6 @@
   --pgn-size-card-image-border-radius: .3125rem;
   --pgn-size-card-image-vertical-max-height: 140px;
   --pgn-size-card-image-horizontal-width-max: 240px;
-  --pgn-size-card-focus-border-radius: 5px;
   --pgn-size-card-focus-border-width: 2px;
   --pgn-size-card-border-radius-logo: .25rem;
   --pgn-size-btn-focus-width: 2px;
@@ -544,6 +543,7 @@
   --pgn-size-dropdown-border-radius-base: var(--pgn-size-border-radius-base);
   --pgn-size-dropdown-border-width: var(--pgn-size-border-width);
   --pgn-size-card-image-horizontal-width-min: var(--pgn-size-card-image-horizontal-width-max);
+  --pgn-size-card-focus-border-radius: calc(var(--pgn-spacing-card-focus-border-offset) + var(--pgn-size-card-border-radius-base));
   --pgn-size-card-border-radius-base: var(--pgn-size-border-radius-base);
   --pgn-size-card-border-width: var(--pgn-size-border-width);
   --pgn-size-btn-border-radius-sm: var(--pgn-size-border-radius-sm);
