@@ -11,6 +11,10 @@ function FormAutosuggestOption({
 }) {
   return (
     <MenuItem
+      as="li"
+      data-testid="autosuggest-optionitem"
+      role="option"
+      tabIndex="-1"
       onClick={onClick}
       className={classNames(className, 'dropdown-item')}
       {...props}

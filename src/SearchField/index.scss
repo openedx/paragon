@@ -2,6 +2,13 @@
   transition: var(--pgn-transition-form-input);
   border: var(--pgn-size-search-field-border-width-base) solid var(--pgn-color-search-field-border-base);
 
+  .pgn__searchfield-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: $search-form-background-color;
+  }
+
   .btn:focus-visible {
     outline: none;
     position: relative;

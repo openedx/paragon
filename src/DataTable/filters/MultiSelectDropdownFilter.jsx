@@ -1,9 +1,10 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import Badge from '../../Badge';
+import Stack from '../../Stack';
 import { DropdownButton } from '../../Dropdown';
 import { newId } from '../../utils';
-import LabelledCheckbox from './LabelledCheckbox';
+import Form from '../../Form';
 
 function MultiSelectDropdownFilter({
   column: {
@@ -21,20 +22,28 @@ function MultiSelectDropdownFilter({
     checkedBoxes.push(value);
     return setFilter(checkedBoxes);
   };
-  const headerBasedId = useMemo(() => `checkbox-filter-check-${getHeaderProps().key}-`, [getHeaderProps]);
+
   return (
     <DropdownButton variant="outline-primary" id={ariaLabel.current} title={Header}>
-      <div role="group" aria-label={Header} className="pgn__dropdown-filter-checkbox-group">
+      <Form.CheckboxSet
+        className="pgn__dropdown-filter-checkbox-group"
+        name={Header}
+        aria-label={Header}
+      >
         {filterChoices.map(({ name, number, value }) => (
-          <LabelledCheckbox
+          <Form.Checkbox
             key={name}
-            id={headerBasedId}
+            value={name}
             checked={checkedBoxes.includes(value)}
-            onChange={() => { changeCheckbox(value); }}
-            label={<>{name} {number && <Badge variant="light">{number}</Badge>}</>}
-          />
+            onChange={() => changeCheckbox(value)}
+            aria-label={name}
+          >
+            <Stack direction="horizontal" gap={2}>
+              {name} {number && <Badge variant="light">{number}</Badge>}
+            </Stack>
+          </Form.Checkbox>
         ))}
-      </div>
+      </Form.CheckboxSet>
     </DropdownButton>
   );
 }
