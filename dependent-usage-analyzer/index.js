@@ -40,7 +40,7 @@ function getDependencyVersion(dir, options = {}) {
   const { projectsDir } = options;
   if (dir === projectsDir) {
     // At the top-level directory containing all projects; Paragon version not found.
-    return {};
+    return "";
   }
   const parentDir = dir.split('/').slice(0, -1).join('/');
   if (!fs.existsSync(`${dir}/${packageFilename}`)) {
