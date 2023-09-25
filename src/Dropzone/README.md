@@ -277,3 +277,44 @@ This example validates that only `400x479` images can be uploaded.
   );
 }
 ```
+
+## Reading file contents into memory
+
+Accepts only .xml files up to a size of 20MB. You can read in the contents of the `File` object into memory. The ``onProcessUpload`` prop should retrieve the file Blob from the passed ``fileData`` param and pass it into a file reader.
+
+Note that `Dropzone` does not handle unexpected errors that might happen in your function, they should be handled by the ``handleProcessUpload`` method.
+
+```jsx live
+() => {
+  const [text, setText] = useState("");
+
+  async function handleProcessUpload({
+    fileData, requestConfig, handleError
+  }) {
+    const blob = fileData.get('file');
+    const reader = new FileReader();
+    reader.readAsDataURL(blob);
+    reader.onloadend = function() {
+      const base64data = reader.result.split(',')[1];                
+      console.log(atob(base64data));
+      setText(atob(base64data));
+    }
+  };
+
+  return (
+    <>
+      <Dropzone
+        onProcessUpload={handleProcessUpload}
+        onUploadProgress={(percent) => console.log(percent)}
+        onUploadCancel={() => console.log('UPLOAD CANCEL')}
+        progressVariant="bar"
+        maxSize={20 * 1048576}
+        accept={{
+          "application/xml": ['.xml']
+        }}
+      />
+      <p>{text}</p>
+    </>
+  )
+}
+```
