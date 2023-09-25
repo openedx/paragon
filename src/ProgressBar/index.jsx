@@ -20,7 +20,7 @@ function ProgressBar(props) {
   return <ProgressBarBase {...props} />;
 }
 
-const ProgressBarAnnotated = React.forwardRef(({
+function ProgressBarAnnotated({
   now,
   label,
   variant,
@@ -30,24 +30,15 @@ const ProgressBarAnnotated = React.forwardRef(({
   progressHint,
   thresholdHint,
   ...props
-}, ref) => {
-  const [direction, setDirection] = React.useState('ltr');
+}) {
   const progressInfoRef = React.useRef();
   const thresholdInfoRef = React.useRef();
-  const progressAnnotatedRef = React.useRef();
-  const resolvedRef = ref || progressAnnotatedRef;
   const thresholdPercent = (threshold || 0) - (now || 0);
   const isProgressHintAfter = now < HINT_SWAP_PERCENT;
   const isThresholdHintAfter = threshold < HINT_SWAP_PERCENT;
   const progressColor = VARIANTS.includes(variant) ? variant : PROGRESS_DEFAULT_VARIANT;
   const thresholdColor = VARIANTS.includes(thresholdVariant) ? thresholdVariant : THRESHOLD_DEFAULT_VARIANT;
-
-  useEffect(() => {
-    if (resolvedRef.current) {
-      const pageDirection = window.getComputedStyle(resolvedRef.current).getPropertyValue('direction');
-      setDirection(pageDirection);
-    }
-  }, [resolvedRef]);
+  const direction = window.getComputedStyle(document.body).getPropertyValue('direction');
 
   const positionAnnotations = useCallback(() => {
     placeInfoAtZero(progressInfoRef, direction, isProgressHintAfter, ANNOTATION_CLASS);
@@ -71,7 +62,7 @@ const ProgressBarAnnotated = React.forwardRef(({
   );
 
   return (
-    <div ref={progressAnnotatedRef} className="pgn__progress-annotated">
+    <div className="pgn__progress-annotated">
       {!!label && (
         <div
           className="pgn__progress-info"
@@ -121,7 +112,7 @@ const ProgressBarAnnotated = React.forwardRef(({
       )}
     </div>
   );
-});
+}
 
 ProgressBarAnnotated.propTypes = {
   /** Current value of progress. */
