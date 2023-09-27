@@ -61,7 +61,10 @@ The Paragon CLI (Command Line Interface) is a tool that provides various utility
 
 ### Available Commands
 
-- `paragon install-theme [theme]`: Installs the specific @edx/brand package.
+- `paragon install-theme [theme]`: Installs the specific [@edx/brand](https://github.com/edx/brand-edx.org) package.
+- `build-tokens`: Build Paragon's design tokens.
+- `replace-variables`: Replace SCSS variables usages or definitions to CSS variables and vice versa in `.scss` files.
+- `build-scss`: Compile Paragon's core and themes SCSS into CSS.
 
 Use `paragon help` to see more information.
 

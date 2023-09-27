@@ -2,6 +2,9 @@
 const chalk = require('chalk');
 const themeCommand = require('../lib/install-theme');
 const helpCommand = require('../lib/help');
+const buildTokensCommand = require('../lib/build-tokens');
+const replaceVariablesCommand = require('../lib/replace-variables');
+const buildScssCommand = require('../lib/build-scss');
 
 const HELP_COMMAND = 'help';
 
@@ -25,6 +28,9 @@ const COMMANDS = {
   *    {
   *      name: '--optionName',
   *      description: 'optionDescription',
+  *      choices: 'optionChoices',
+  *      defaultValue: 'optionDefaultValue',
+  *      required: true/false,
   *    },
   *    ...
   *  ],
@@ -43,12 +49,128 @@ const COMMANDS = {
       },
     ],
   },
+  'build-tokens': {
+    executor: buildTokensCommand,
+    description: 'CLI to build Paragon design tokens.',
+    options: [
+      {
+        name: '-s, --source',
+        description: 'Specify the source directory for design tokens.',
+        defaultValue: '[]',
+        required: false,
+      },
+      {
+        name: '-b, --build-dir',
+        description: 'Specify the build directory for the generated tokens.',
+        defaultValue: './build/',
+        required: false,
+      },
+      {
+        name: '--source-tokens-only',
+        description: 'Include only source design tokens in the build.',
+        defaultValue: false,
+        required: false,
+      },
+      {
+        name: '-t, --themes',
+        description: 'Specify themes to include in the token build.',
+        defaultValue: 'light',
+        required: false,
+      },
+    ],
+  },
+  'replace-variables': {
+    executor: replaceVariablesCommand,
+    description: 'CLI to replace SCSS variables usages or definitions to CSS variables and vice versa in .scss files.',
+    options: [
+      {
+        name: '-p, --filePath',
+        description: 'Path to the file or directory where to replace variables.',
+        defaultValue: '[]',
+        required: true,
+      },
+      {
+        name: '-s, --source',
+        description: 'Type of replacement: usage or definition. If set to "definition" the command will only update SCSS variables definitions with CSS variables, if set to "usage" - all occurrences of SCSS variables will we replaced',
+        required: false,
+      },
+      {
+        name: '-t, --replacementType',
+        description: 'Type of replacement: usage or definition. If set to "definition" the command will only update SCSS variables definitions with CSS variables, if set to "usage" - all occurrences of SCSS variables will we replaced',
+        choices: ['usage', 'definition'],
+        defaultValue: 'definition',
+        required: false,
+      },
+      {
+        name: '-d, --direction',
+        description: 'Map direction: css-to-scss or scss-to-css, if replacement type parameter is set to "definition" this has no effect.',
+        choices: ['scss-to-css', 'css-to-scss'],
+        defaultValue: 'scss-to-css',
+        required: false,
+      },
+    ],
+  },
+  'build-scss': {
+    executor: buildScssCommand,
+    description: 'CLI to compile Paragon\'s core and themes SCSS into CSS.',
+    options: [
+      {
+        name: '--corePath',
+        description: 'Path to the theme\'s core SCSS file, defaults to Paragon\'s core.scss.',
+        defaultValue: 'styles/scss/core/core.scss',
+        required: false,
+      },
+      {
+        name: '--themesPath',
+        description: `Path to the directory that contains themes' files. Expects directory to have following structure:
+          themes/
+            light/
+            │  ├─ index.css
+            │  ├─ other_css_files
+            dark/
+            │  ├─ index.css
+            │  ├─ other_css_files
+            some_other_custom_theme/
+            │  ├─ index.css
+            │  ├─ other_css_files
+          ...
+
+          where index.css has imported all other CSS files in the theme's subdirectory. The script will output
+          light.css, dark.css and some_other_custom_theme.css files (together with maps and minified versions).
+          You can provide any amount of themes. Default to paragon's themes.
+      `,
+        defaultValue: 'styles/css/themes',
+        required: false,
+      },
+      {
+        name: '--outDir',
+        description: 'Specifies directory where to out resulting CSS files.',
+        defaultValue: './dist',
+        required: false,
+      },
+      {
+        name: '--defaultThemeVariants',
+        description: `Specifies default theme variants. Defaults to a single 'light' theme variant.
+          You can provide multiple default theme variants by passing multiple values, for
+          example: \`--defaultThemeVariants light dark\`
+        `,
+        defaultValue: 'light',
+        required: false,
+      },
+    ],
+  },
   help: {
     executor: helpCommand,
     description: 'Displays help for available commands.',
   },
 };
 
+/**
+ * Executes a Paragon CLI command based on the provided command-line arguments.
+ *
+ * @async
+ * @function executeParagonCommand
+ */
 (async () => {
   const [command, ...commandArgs] = process.argv.slice(2);
   const executor = COMMANDS[command];
