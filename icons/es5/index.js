@@ -475,6 +475,7 @@ export { default as CheckBoxOutlineBlank } from "./CheckBoxOutlineBlank";
 export { default as CheckCircle } from "./CheckCircle";
 export { default as CheckCircleLightOutline } from "./CheckCircleLightOutline";
 export { default as CheckCircleOutline } from "./CheckCircleOutline";
+export { default as CheckCircleLightOutline } from "./CheckCircleLightOutline";
 export { default as Checklist } from "./Checklist";
 export { default as ChecklistRtl } from "./ChecklistRtl";
 export { default as Checkroom } from "./Checkroom";
