@@ -78,7 +78,7 @@ async function createPages(graphql, actions, reporter) {
     createPage({
       path: pagePath,
       component: require.resolve('../src/pages/insights.tsx'),
-      context: { tab },
+      context: { tab, githubEditPath: 'https://github.com/openedx/paragon/blob/master/www/src/pages/insights.tsx' },
     });
   });
 
