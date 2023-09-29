@@ -94,13 +94,13 @@ const COMMANDS = {
       {
         name: '-t, --replacementType',
         description: 'Type of replacement: usage or definition. If set to "definition" the command will only update SCSS variables definitions with CSS variables, if set to "usage" - all occurrences of SCSS variables will we replaced',
-        choices: ['usage', 'definition'],
+        choices: '[usage|definition]',
         defaultValue: 'definition',
       },
       {
         name: '-d, --direction',
         description: 'Map direction: css-to-scss or scss-to-css, if replacement type parameter is set to "definition" this has no effect.',
-        choices: ['scss-to-css', 'css-to-scss'],
+        choices: '[scss-to-css|css-to-scss]',
         defaultValue: 'scss-to-css',
       },
     ],
