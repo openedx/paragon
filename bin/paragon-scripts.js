@@ -56,57 +56,52 @@ const COMMANDS = {
       {
         name: '-s, --source',
         description: 'Specify the source directory for design tokens.',
-        defaultValue: '[]',
-        required: false,
+        defaultValue: '\'\'',
       },
       {
         name: '-b, --build-dir',
         description: 'Specify the build directory for the generated tokens.',
         defaultValue: './build/',
-        required: false,
       },
       {
         name: '--source-tokens-only',
         description: 'Include only source design tokens in the build.',
         defaultValue: false,
-        required: false,
       },
       {
         name: '-t, --themes',
         description: 'Specify themes to include in the token build.',
         defaultValue: 'light',
-        required: false,
       },
     ],
   },
   'replace-variables': {
     executor: replaceVariablesCommand,
     description: 'CLI to replace SCSS variables usages or definitions to CSS variables and vice versa in .scss files.',
-    options: [
+    parameters: [
       {
         name: '-p, --filePath',
         description: 'Path to the file or directory where to replace variables.',
-        defaultValue: '[]',
-        required: true,
+        defaultValue: '\'\'',
       },
+    ],
+    options: [
       {
         name: '-s, --source',
         description: 'Type of replacement: usage or definition. If set to "definition" the command will only update SCSS variables definitions with CSS variables, if set to "usage" - all occurrences of SCSS variables will we replaced',
-        required: false,
+        defaultValue: '\'\'',
       },
       {
         name: '-t, --replacementType',
         description: 'Type of replacement: usage or definition. If set to "definition" the command will only update SCSS variables definitions with CSS variables, if set to "usage" - all occurrences of SCSS variables will we replaced',
         choices: ['usage', 'definition'],
         defaultValue: 'definition',
-        required: false,
       },
       {
         name: '-d, --direction',
         description: 'Map direction: css-to-scss or scss-to-css, if replacement type parameter is set to "definition" this has no effect.',
         choices: ['scss-to-css', 'css-to-scss'],
         defaultValue: 'scss-to-css',
-        required: false,
       },
     ],
   },
@@ -118,7 +113,6 @@ const COMMANDS = {
         name: '--corePath',
         description: 'Path to the theme\'s core SCSS file, defaults to Paragon\'s core.scss.',
         defaultValue: 'styles/scss/core/core.scss',
-        required: false,
       },
       {
         name: '--themesPath',
@@ -140,13 +134,11 @@ const COMMANDS = {
           You can provide any amount of themes. Default to paragon's themes.
       `,
         defaultValue: 'styles/css/themes',
-        required: false,
       },
       {
         name: '--outDir',
         description: 'Specifies directory where to out resulting CSS files.',
         defaultValue: './dist',
-        required: false,
       },
       {
         name: '--defaultThemeVariants',
@@ -155,7 +147,6 @@ const COMMANDS = {
           example: \`--defaultThemeVariants light dark\`
         `,
         defaultValue: 'light',
-        required: false,
       },
     ],
   },
