@@ -122,6 +122,12 @@
         background: map-get($search-btn-variants, "dark");
       }
     }
+
+    &:hover {
+      .btn-brand {
+        background: map-get($search-btn-variants, "dark");
+      }
+    }
   }
 
   .pgn__searchfield_wrapper {
