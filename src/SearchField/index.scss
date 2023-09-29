@@ -91,6 +91,14 @@
   &.pgn__searchfield--external {
     border: none;
 
+    .pgn__searchfield-form {
+      background-color: unset;
+
+      .pgn__searchfield_wrapper {
+        background-color: $search-form-background-color;
+      }
+    }
+
     .btn-primary {
       background: map-get($search-btn-variants, "light");
     }
