@@ -10,22 +10,30 @@ const DIRECTION_VARIANTS = [
 const Stack = forwardRef(({
   direction,
   gap,
+  reverse,
   children,
   className,
   ...rest
-}, ref) => (
-  <div
-    ref={ref}
-    className={classNames(
-      direction === 'horizontal' ? 'pgn__hstack' : 'pgn__vstack',
-      gap ? `pgn__stack-gap--${gap}` : '',
-      className,
-    )}
-    {...rest}
-  >
-    {children}
-  </div>
-));
+}, ref) => {
+  const childrenArray = React.Children.toArray(children);
+
+  if (reverse) {
+    childrenArray.reverse();
+  }
+  return (
+    <div
+      ref={ref}
+      className={classNames(
+        direction === 'horizontal' ? 'pgn__hstack' : 'pgn__vstack',
+        gap ? `pgn__stack-gap--${gap}` : '',
+        className,
+      )}
+      {...rest}
+    >
+      {childrenArray}
+    </div>
+  );
+});
 
 Stack.propTypes = {
   /** Specifies the content of the `Stack`. */
@@ -39,6 +47,8 @@ Stack.propTypes = {
    * `0, 0.5, ... 6`.
    */
   gap: PropTypes.number,
+  /** Specifies the order of the children. */
+  reverse: PropTypes.bool,
   /** Specifies an additional `className` to add to the base element. */
   className: PropTypes.string,
 };
@@ -47,6 +57,7 @@ Stack.defaultProps = {
   direction: 'vertical',
   gap: 0,
   className: undefined,
+  reverse: false,
 };
 
 export default Stack;
