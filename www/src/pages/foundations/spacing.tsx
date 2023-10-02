@@ -95,6 +95,17 @@ export default function SpacingPage() {
     pixelValue: <PixelCell spacer={value} />,
   }));
 
+  const allUtilityClassesTabel= (prefix) => sizes.map(size => {
+    const rowData = {};
+    
+    directions.forEach(({ key, name }) => {
+      rowData[name] = getUtilityClassName(prefix, key, size);
+    });
+  
+    return rowData;
+  });
+
+
   return (
     <Layout isAutoToc>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
@@ -186,49 +197,39 @@ export default function SpacingPage() {
         </p>
 
         <h3>All Spacing Utility Classes</h3>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>All directions</th>
-              <th>Top</th>
-              <th>Right</th>
-              <th>Bottom</th>
-              <th>Left</th>
-              <th>X Direction</th>
-              <th>Y Direction</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th colSpan={7}>Margin</th>
-            </tr>
-            <tr>
-              {directions.map(({ key }) => (
-                <td>
-                  {sizes.map(_size => (
-                    <code className="d-block">
-                      .{getUtilityClassName('m', key, _size)}
-                    </code>
-                  ))}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <th colSpan={7}>Padding</th>
-            </tr>
-            <tr>
-              {directions.map(({ key }) => (
-                <td>
-                  {sizes.map(_size => (
-                    <code className="d-block">
-                      .{getUtilityClassName('p', key, _size)}
-                    </code>
-                  ))}
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
+
+        <h4>Margin</h4>
+        <DataTable
+          className="pgn-doc__spacing-table"
+          data={allUtilityClassesTabel('m')}
+          columns={[
+            { Header: 'All directions', accessor: "all" },
+            { Header: 'Top', accessor: "top" },
+            { Header: 'Right', accessor: 'right' },
+            { Header: 'Bottom', accessor: "bottom" },
+            { Header: 'Left', accessor: 'left' },
+            { Header: 'X Direction', accessor: "x direction" },
+            { Header: 'Y Direction', accessor: 'y direction' },
+          ]}
+        >
+          <DataTable.Table />
+        </DataTable>
+        <h4>Padding</h4>
+        <DataTable
+          className="pgn-doc__spacing-table"
+          data={allUtilityClassesTabel('p')}
+          columns={[
+            { Header: 'All directions', accessor: "all" },
+            { Header: 'Top', accessor: "top" },
+            { Header: 'Right', accessor: 'right' },
+            { Header: 'Bottom', accessor: "bottom" },
+            { Header: 'Left', accessor: 'left' },
+            { Header: 'X Direction', accessor: "x direction" },
+            { Header: 'Y Direction', accessor: 'y direction' },
+          ]}
+        >
+          <DataTable.Table />
+        </DataTable>
       </Container>
     </Layout>
   );
