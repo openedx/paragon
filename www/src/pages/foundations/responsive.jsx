@@ -49,7 +49,7 @@ function MaxWidthCell({ row }) {
   return <code>{row.values.maxWidth ? `${row.values.maxWidth}px` : '-'}</code>;
 }
 
-function Responsive() {
+function Responsive({ pageContext }) {
   const { settings } = useContext(SettingsContext);
   const breakpointsData = Object.keys(breakpoints).map(breakpoint => {
     const { minWidth, maxWidth } = breakpoints[breakpoint];
@@ -60,7 +60,7 @@ function Responsive() {
   });
 
   return (
-    <Layout isAutoToc>
+    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Responsive" />
       <Container size={settings.containerWidth} className="py-5">

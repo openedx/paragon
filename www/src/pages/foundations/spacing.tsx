@@ -83,7 +83,7 @@ SpaceBlock.defaultProps = {
   utilityClass: '',
 };
 
-export default function SpacingPage() {
+export default function SpacingPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
   const [size, setSize] = useState<number>(3);
   const [direction, setDirection] = useState<string>('r');
@@ -96,7 +96,7 @@ export default function SpacingPage() {
   }));
 
   return (
-    <Layout isAutoToc>
+    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Spacing" />
       <Container size={settings.containerWidth} className="py-5">

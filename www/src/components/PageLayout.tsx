@@ -64,19 +64,8 @@ function Layout({
           title
         }
       }
-    allSitePage {
-      nodes {
-        component
-      }
-    }
     }
   `);
-
-  const currentURL = typeof window !== 'undefined' ? window.location.pathname.split('/')[2] : '';
-  const filteredData = data.allSitePage.nodes.filter(item => !item.component.includes('components'));
-  const elementWithLayout = filteredData.find(item => item.component.includes(currentURL))?.component;
-  const componentName = elementWithLayout?.split('src')[1];
-  const foundationLinkBase = `https://github.com/openedx/paragon/blob/master/www/src${componentName}`;
 
   return (
     <div className="d-flex flex-column">
@@ -104,7 +93,7 @@ function Layout({
               <Container size="md">
                 <hr />
                 <Stack direction="horizontal" gap={2}>
-                  <PageEditBtn className="mb-5" githubEditPath={githubEditPath || foundationLinkBase} />
+                  <PageEditBtn className="mb-5" githubEditPath={githubEditPath} />
                   <LeaveFeedback className="mb-5" />
                 </Stack>
               </Container>

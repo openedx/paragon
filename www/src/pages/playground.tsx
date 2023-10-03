@@ -20,7 +20,7 @@ const FEEDBACK_URL = 'https://github.com/openedx/paragon/issues/new?assignees=&l
 const playroomStorage = localforage.createInstance({ name: storageKey });
 const EMPTY_PLAYROOM_URL_QUERY = '?code=N4XyA';
 
-export default function Playground({ location }) {
+export default function Playground({ location, pageContext }) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [initialSearchParams, setInitialSearchParams] = useState('');
   const searchValue = useRef(location.search || '');
@@ -84,6 +84,13 @@ export default function Playground({ location }) {
               copied: <Icon src={Check} />,
             }}
           />
+          <Hyperlink
+            destination={pageContext.githubEditPath}
+            target="_blank"
+            className="text-white"
+          >
+            Edit this page
+          </Hyperlink>
           <Hyperlink
             destination={FEEDBACK_URL}
             target="_blank"

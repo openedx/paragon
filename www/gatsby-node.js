@@ -18,3 +18,18 @@ exports.createPages = ({ graphql, actions, reporter }) => createPages(graphql, a
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   createCssUtilityClassNodes({ actions, createNodeId, createContentDigest });
 };
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+  const githubEditPath = `https://github.com/openedx/paragon/edit/master/www/src${page.componentPath.split('src')[1]}`;
+  deletePage(page);
+  // console.log('=================== page ====================', page.component);
+  // You can access the variable "house" in your page queries now
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      githubEditPath,
+    },
+  });
+};
