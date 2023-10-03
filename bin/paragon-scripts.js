@@ -173,7 +173,7 @@ const COMMANDS = {
   }
 
   if (command === HELP_COMMAND) {
-    helpCommand(COMMANDS);
+    helpCommand(COMMANDS, commandArgs);
     return;
   }
 
