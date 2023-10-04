@@ -152,6 +152,15 @@ const COMMANDS = {
   },
   help: {
     executor: helpCommand,
+    parameters: [
+      {
+        name: 'command',
+        description: 'Specifies command name.',
+        defaultValue: '\'\'',
+        choices: '[install-theme|build-tokens|replace-variables|build-scss]',
+        required: false,
+      },
+    ],
     description: 'Displays help for available commands.',
   },
 };
