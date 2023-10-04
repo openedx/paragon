@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { Table, Container } from '~paragon-react';
 import { ComponentStatus } from '../components/doc-elements';
@@ -91,3 +92,9 @@ export default function StatusPage({ pageContext }) {
     </Layout>
   );
 }
+
+StatusPage.propTypes = {
+  pageContext: PropTypes.shape({
+    githubEditPath: PropTypes.string,
+  }).isRequired,
+};

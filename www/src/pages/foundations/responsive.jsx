@@ -79,6 +79,7 @@ function Responsive({ pageContext }) {
             { Header: 'Min width', accessor: 'minWidth', Cell: MinWidthCell },
             { Header: 'Max Width', accessor: 'maxWidth', Cell: MaxWidthCell },
           ]}
+          itemCount={0}
         >
           <DataTable.Table />
         </DataTable>
@@ -102,6 +103,12 @@ function Responsive({ pageContext }) {
     </Layout>
   );
 }
+
+Responsive.propTypes = {
+  pageContext: PropTypes.shape({
+    githubEditPath: PropTypes.string,
+  }).isRequired,
+};
 
 const cellPropTypes = {
   row: PropTypes.shape({

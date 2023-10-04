@@ -109,6 +109,7 @@ export default function SpacingPage({ pageContext }) {
             { Header: 'Spacer value', accessor: 'spacer' },
             { Header: 'Pixel value', accessor: 'pixelValue' },
           ]}
+          itemCount={0}
         >
           <DataTable.Table />
         </DataTable>
@@ -197,9 +198,9 @@ export default function SpacingPage({ pageContext }) {
             </tr>
             <tr>
               {directions.map(({ key }) => (
-                <td>
+                <td key={key}>
                   {sizes.map(_size => (
-                    <code className="d-block">
+                    <code key={_size} className="d-block">
                       .{getUtilityClassName('m', key, _size)}
                     </code>
                   ))}
@@ -211,9 +212,9 @@ export default function SpacingPage({ pageContext }) {
             </tr>
             <tr>
               {directions.map(({ key }) => (
-                <td>
+                <td key={key}>
                   {sizes.map(_size => (
-                    <code className="d-block">
+                    <code key={_size} className="d-block">
                       .{getUtilityClassName('p', key, _size)}
                     </code>
                   ))}
@@ -226,3 +227,9 @@ export default function SpacingPage({ pageContext }) {
     </Layout>
   );
 }
+
+SpacingPage.propTypes = {
+  pageContext: PropTypes.shape({
+    githubEditPath: PropTypes.string,
+  }).isRequired,
+};

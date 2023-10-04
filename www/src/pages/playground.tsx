@@ -127,4 +127,7 @@ Playground.propTypes = {
     search: PropTypes.string,
     href: PropTypes.string,
   }).isRequired,
+  pageContext: PropTypes.shape({
+    githubEditPath: PropTypes.string,
+  }).isRequired,
 };

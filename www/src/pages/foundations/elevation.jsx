@@ -399,3 +399,9 @@ export default function ElevationPage({ pageContext }) {
     </Layout>
   );
 }
+
+ElevationPage.propTypes = {
+  pageContext: PropTypes.shape({
+    githubEditPath: PropTypes.string,
+  }).isRequired,
+};

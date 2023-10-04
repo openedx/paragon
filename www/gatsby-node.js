@@ -20,11 +20,9 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 };
 
 exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions;
+  const { createPage } = actions;
   const githubEditPath = `https://github.com/openedx/paragon/edit/master/www/src${page.componentPath.split('src')[1]}`;
-  deletePage(page);
-  // console.log('=================== page ====================', page.component);
-  // You can access the variable "house" in your page queries now
+
   createPage({
     ...page,
     context: {

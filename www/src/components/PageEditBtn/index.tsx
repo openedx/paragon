@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, Hyperlink, Nav } from '~paragon-react';
 
 export interface PageEditBtnProps extends Partial<AnchorHTMLAttributes<HTMLAnchorElement>> {
-  githubEditPath: string,
+  githubEditPath?: string,
   isNavLink?: boolean;
 }
 
