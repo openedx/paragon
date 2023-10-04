@@ -9,7 +9,7 @@ const SvgWoman2 = (props) => (
     {...props}
   >
     <path d="M13.41 7h-2.82L7 16h3.5v6h3v-6H17z" fill="currentColor" />
-    <circle cx={12} cy={4} r={2} />
+    <circle cx={12} cy={4} r={2} fill="currentColor" />
   </svg>
 );
 export default SvgWoman2;

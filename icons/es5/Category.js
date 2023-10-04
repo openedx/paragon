@@ -12,7 +12,8 @@ const SvgCategory = props => /*#__PURE__*/React.createElement("svg", _extends({
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 17.5,
   cy: 17.5,
-  r: 4.5
+  r: 4.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M3 13.5h8v8H3z",
   fill: "currentColor"
