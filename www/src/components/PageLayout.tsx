@@ -149,14 +149,14 @@ function Layout({
           <Nav.Item>
             <LeaveFeedback className="muted-link" isNavLink />
           </Nav.Item>
-          {isMdx && (
-            <Nav.Item>
-              <PageEditBtn
-                className="muted-link"
-                githubEditPath={githubEditPath ?? ''}
-                isNavLink
-              />
-            </Nav.Item>
+          {!hideFooterComponentMenu && (
+          <Nav.Item>
+            <PageEditBtn
+              className="muted-link"
+              githubEditPath={githubEditPath ?? ''}
+              isNavLink
+            />
+          </Nav.Item>
           )}
           <div className="flex-grow-1" />
           <Nav.Link
