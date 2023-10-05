@@ -27,6 +27,14 @@ describe('<Stack />', () => {
       const wrapper = mount(<Stack gap={gap}>Content</Stack>);
       expect(wrapper.find('.pgn__vstack').hasClass(`pgn__stack-gap--${gap}`)).toEqual(true);
     });
+    it('renders reversed children with the vertical direction', () => {
+      const wrapper = mount(<Stack reversed>Content</Stack>);
+      expect(wrapper.find('.pgn__vstack').hasClass('pgn__stack-reversed')).toEqual(true);
+    });
+    it('renders reversed children with the horizontal direction', () => {
+      const wrapper = mount(<Stack direction="horizontal" reversed>Content</Stack>);
+      expect(wrapper.find('.pgn__hstack').hasClass('pgn__stack-reversed')).toEqual(true);
+    });
     it('renders with the className prop', () => {
       const className = 'className';
       const wrapper = mount(<Stack className={className}>Content</Stack>);
