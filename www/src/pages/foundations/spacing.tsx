@@ -95,16 +95,15 @@ export default function SpacingPage() {
     pixelValue: <PixelCell spacer={value} />,
   }));
 
-  const allUtilityClassesTabel= (prefix) => sizes.map(size => {
+  const createUtilityClassesTabel = (prefix) => sizes.map(el => {
     const rowData = {};
-    
+
     directions.forEach(({ key, name }) => {
-      rowData[name] = getUtilityClassName(prefix, key, size);
+      rowData[name] = <code>.{getUtilityClassName(prefix, key, el)}</code>;
     });
-  
+
     return rowData;
   });
-
 
   return (
     <Layout isAutoToc>
@@ -196,35 +195,35 @@ export default function SpacingPage() {
           <code>{'.p{direction}-{level}'}</code>.
         </p>
 
-        <h3>All Spacing Utility Classes</h3>
+        <h3 className="mt-4">All Spacing Utility Classes</h3>
 
-        <h4>Margin</h4>
+        <h4 className="mt-3">Margin</h4>
         <DataTable
           className="pgn-doc__spacing-table"
-          data={allUtilityClassesTabel('m')}
+          data={createUtilityClassesTabel('m')}
           columns={[
-            { Header: 'All directions', accessor: "all" },
-            { Header: 'Top', accessor: "top" },
+            { Header: 'All directions', accessor: 'all' },
+            { Header: 'Top', accessor: 'top' },
             { Header: 'Right', accessor: 'right' },
-            { Header: 'Bottom', accessor: "bottom" },
+            { Header: 'Bottom', accessor: 'bottom' },
             { Header: 'Left', accessor: 'left' },
-            { Header: 'X Direction', accessor: "x direction" },
+            { Header: 'X Direction', accessor: 'x direction' },
             { Header: 'Y Direction', accessor: 'y direction' },
           ]}
         >
           <DataTable.Table />
         </DataTable>
-        <h4>Padding</h4>
+        <h4 className="mt-3">Padding</h4>
         <DataTable
           className="pgn-doc__spacing-table"
-          data={allUtilityClassesTabel('p')}
+          data={createUtilityClassesTabel('p')}
           columns={[
-            { Header: 'All directions', accessor: "all" },
-            { Header: 'Top', accessor: "top" },
+            { Header: 'All directions', accessor: 'all' },
+            { Header: 'Top', accessor: 'top' },
             { Header: 'Right', accessor: 'right' },
-            { Header: 'Bottom', accessor: "bottom" },
+            { Header: 'Bottom', accessor: 'bottom' },
             { Header: 'Left', accessor: 'left' },
-            { Header: 'X Direction', accessor: "x direction" },
+            { Header: 'X Direction', accessor: 'x direction' },
             { Header: 'Y Direction', accessor: 'y direction' },
           ]}
         >
