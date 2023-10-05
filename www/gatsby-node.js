@@ -8,6 +8,7 @@ const createPages = require('./utils/createPages');
 const onCreateNode = require('./utils/onCreateNode');
 const onCreateWebpackConfig = require('./utils/onCreateWebpackConfig');
 const createCssUtilityClassNodes = require('./utils/createCssUtilityClassNodes');
+const onCreatePage = require('./utils/onCreatePage');
 
 exports.onCreateWebpackConfig = ({ actions }) => onCreateWebpackConfig(actions);
 
@@ -19,15 +20,4 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   createCssUtilityClassNodes({ actions, createNodeId, createContentDigest });
 };
 
-exports.onCreatePage = ({ page, actions }) => {
-  const { createPage } = actions;
-  const githubEditPath = `https://github.com/openedx/paragon/edit/master/www/src${page.componentPath.split('src')[1]}`;
-
-  createPage({
-    ...page,
-    context: {
-      ...page.context,
-      githubEditPath,
-    },
-  });
-};
+exports.onCreatePage = ({ page, actions }) => onCreatePage(page, actions);
