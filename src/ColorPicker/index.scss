@@ -37,7 +37,7 @@
 
 .pgn__hex-label {
   font-weight: bold;
-  font-size: $h5-mobile-font-size;
+  font-size: var(--pgn-typography-font-size-mobile-h5);
   padding: .5rem;
   margin-bottom: 0 !important;
 }
