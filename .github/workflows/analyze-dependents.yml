@@ -290,3 +290,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.requirements_bot_github_token }}
         MERGE_METHOD: squash
+        MERGE_RETRY_SLEEP: 240000
