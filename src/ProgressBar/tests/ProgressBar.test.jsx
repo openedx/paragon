@@ -116,5 +116,14 @@ describe('<ProgressBar.Annotated />', () => {
       expect(computedStyles.getPropertyValue('directory')).toBe('rtl');
       window.getComputedStyle.mockRestore();
     });
+    it('should apply styles based on direction for threshold', () => {
+      window.getComputedStyle = jest.fn().mockReturnValue({ getPropertyValue: () => 'rtl' });
+      const { container } = render(<ProgressBarElement />);
+      const progressInfo = container.querySelector('.pgn__progress-info');
+      const computedStyles = window.getComputedStyle(progressInfo);
+
+      expect(computedStyles.getPropertyValue('directory')).toBe('rtl');
+      window.getComputedStyle.mockRestore();
+    });
   });
 });
