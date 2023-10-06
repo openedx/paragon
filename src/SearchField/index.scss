@@ -91,22 +91,6 @@
   &.pgn__searchfield--external {
     border: none;
 
-    .btn-primary {
-      background: map-get($search-btn-variants, "light");
-
-      &:hover {
-        background: darken(map-get($search-btn-variants, "light"), 7.5%);
-      }
-    }
-
-    .btn-brand {
-      background: map-get($search-btn-variants, "dark");
-
-      &:hover {
-        background: darken(map-get($search-btn-variants, "dark"), 7.5%);
-      }
-    }
-
     &.has-focus {
       box-shadow: none;
 
