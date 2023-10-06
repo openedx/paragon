@@ -145,13 +145,13 @@ function Layout({
             <LeaveFeedback className="muted-link" isNavLink />
           </Nav.Item>
           {!hideFooterComponentMenu && (
-            <Nav.Item>
-              <PageEditBtn
-                className="muted-link"
-                githubEditPath={githubEditPath ?? ''}
-                isNavLink
-              />
-            </Nav.Item>
+          <Nav.Item>
+            <PageEditBtn
+              className="muted-link"
+              githubEditPath={githubEditPath ?? ''}
+              isNavLink
+            />
+          </Nav.Item>
           )}
           <div className="flex-grow-1" />
           <Nav.Link

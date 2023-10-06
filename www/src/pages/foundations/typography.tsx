@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container } from '~paragon-react';
 import PropTypes from 'prop-types';
+import { Container } from '~paragon-react';
 import Layout from '../../components/PageLayout';
 import SEO from '../../components/SEO';
 import {
