@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 
-function NotFoundPage() {
+function NotFoundPage({ pageContext }) {
   return (
-    <Layout>
+    <Layout githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="404: Not found" />
       <h1>404: Not Found</h1>
@@ -13,5 +14,11 @@ function NotFoundPage() {
     </Layout>
   );
 }
+
+NotFoundPage.propTypes = {
+  pageContext: PropTypes.shape({
+    githubEditPath: PropTypes.string,
+  }).isRequired,
+};
 
 export default NotFoundPage;

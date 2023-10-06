@@ -29,6 +29,7 @@ export interface IPageTemplateType {
     frontmatter: {
       title: string,
     },
+    githubEditPath: string,
   },
 }
 
@@ -36,7 +37,7 @@ export default function PageTemplate({ children, pageContext }: IPageTemplateTyp
   const { settings } = useContext(SettingsContext);
 
   return (
-    <Layout isAutoToc>
+    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={pageContext?.frontmatter?.title} />
       <Container size={settings.containerWidth} className="py-5">
@@ -53,5 +54,6 @@ PageTemplate.propTypes = {
     frontmatter: PropTypes.shape({
       title: PropTypes.string,
     }),
+    githubEditPath: PropTypes.string,
   }).isRequired,
 };

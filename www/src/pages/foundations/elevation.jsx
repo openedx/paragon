@@ -268,7 +268,7 @@ function BoxShadowGenerator() {
   );
 }
 
-export default function ElevationPage() {
+export default function ElevationPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
 
   const levelTitle = boxShadowLevels.map(level => (
@@ -284,7 +284,7 @@ export default function ElevationPage() {
   ));
 
   return (
-    <Layout isAutoToc>
+    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Elevation" />
       <Container size={settings.containerWidth} className="py-5">
@@ -399,3 +399,9 @@ export default function ElevationPage() {
     </Layout>
   );
 }
+
+ElevationPage.propTypes = {
+  pageContext: PropTypes.shape({
+    githubEditPath: PropTypes.string,
+  }).isRequired,
+};

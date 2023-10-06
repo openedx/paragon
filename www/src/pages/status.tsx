@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { Table, Container } from '~paragon-react';
 import { ComponentStatus } from '../components/doc-elements';
@@ -11,11 +12,11 @@ export interface IComponents {
   title?: string,
 }
 
-export default function StatusPage() {
+export default function StatusPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
 
   return (
-    <Layout isAutoToc>
+    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Status" />
       <Container size={settings.containerWidth} className="py-5">
@@ -91,3 +92,9 @@ export default function StatusPage() {
     </Layout>
   );
 }
+
+StatusPage.propTypes = {
+  pageContext: PropTypes.shape({
+    githubEditPath: PropTypes.string,
+  }).isRequired,
+};

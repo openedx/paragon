@@ -83,7 +83,7 @@ SpaceBlock.defaultProps = {
   utilityClass: '',
 };
 
-export default function SpacingPage() {
+export default function SpacingPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
   const [size, setSize] = useState<number>(3);
   const [direction, setDirection] = useState<string>('r');
@@ -96,7 +96,7 @@ export default function SpacingPage() {
   }));
 
   return (
-    <Layout isAutoToc>
+    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Spacing" />
       <Container size={settings.containerWidth} className="py-5">
@@ -109,6 +109,7 @@ export default function SpacingPage() {
             { Header: 'Spacer value', accessor: 'spacer' },
             { Header: 'Pixel value', accessor: 'pixelValue' },
           ]}
+          itemCount={0}
         >
           <DataTable.Table />
         </DataTable>
@@ -197,9 +198,9 @@ export default function SpacingPage() {
             </tr>
             <tr>
               {directions.map(({ key }) => (
-                <td>
+                <td key={key}>
                   {sizes.map(_size => (
-                    <code className="d-block">
+                    <code key={_size} className="d-block">
                       .{getUtilityClassName('m', key, _size)}
                     </code>
                   ))}
@@ -211,9 +212,9 @@ export default function SpacingPage() {
             </tr>
             <tr>
               {directions.map(({ key }) => (
-                <td>
+                <td key={key}>
                   {sizes.map(_size => (
-                    <code className="d-block">
+                    <code key={_size} className="d-block">
                       .{getUtilityClassName('p', key, _size)}
                     </code>
                   ))}
@@ -226,3 +227,9 @@ export default function SpacingPage() {
     </Layout>
   );
 }
+
+SpacingPage.propTypes = {
+  pageContext: PropTypes.shape({
+    githubEditPath: PropTypes.string,
+  }).isRequired,
+};
