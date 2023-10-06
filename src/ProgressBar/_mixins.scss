@@ -7,11 +7,16 @@
     background: $bg;
     position: absolute;
     // stylelint-disable-next-line max-line-length
-    top: calc(var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2);
+    top: calc(calc(var(--pgn-size-progress-bar-threshold-circle) / 2 - var(--pgn-size-progress-bar-height-annotated) / 2) * -1);
     right: calc(var(--pgn-size-progress-bar-threshold-circle) / -2);
     width: var(--pgn-size-progress-bar-threshold-circle);
     height: var(--pgn-size-progress-bar-threshold-circle);
     border-radius: calc(var(--pgn-size-progress-bar-threshold-circle) / 2);
     z-index: 1;
+
+    [dir="rtl"] & {
+      left: calc(calc(var(--pgn-size-progress-bar-threshold-circle) / 2) * -1);
+      right: auto;
+    }
   }
 }
