@@ -117,10 +117,13 @@ export interface IColorsPage {
       nodes: [],
     },
   },
+  pageContext: {
+    githubEditPath: string,
+  }
 }
 
 // eslint-disable-next-line react/prop-types
-export default function ColorsPage({ data }: IColorsPage) {
+export default function ColorsPage({ data, pageContext }: IColorsPage) {
   const { settings } = useContext(SettingsContext);
   const [styles, setStyles] = useState<CSSStyleDeclarationType>(null);
 
@@ -136,7 +139,7 @@ export default function ColorsPage({ data }: IColorsPage) {
   parseColors(data.allCssUtilityClasses.nodes); // eslint-disable-line react/prop-types
 
   return (
-    <Layout isAutoToc>
+    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Colors" />
       <Container size={settings.containerWidth} className="py-5">

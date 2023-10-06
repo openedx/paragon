@@ -280,25 +280,21 @@ This example validates that only `400x479` images can be uploaded.
 
 ## Reading file contents into memory
 
-Accepts only .xml files up to a size of 20MB. You can read in the contents of the `File` object into memory. The ``onProcessUpload`` prop should retrieve the file Blob from the passed ``fileData`` param and pass it into a file reader.
+Accepts only .xml files up to a size of 20MB. You can read in the contents of the `File` object into memory. The ``onProcessUpload`` prop can retrieve the file Blob from the passed ``fileData`` param and either pass it into a file reader or use text() promise.
 
 Note that `Dropzone` does not handle unexpected errors that might happen in your function, they should be handled by the ``handleProcessUpload`` method.
 
 ```jsx live
 () => {
   const [text, setText] = useState("");
+  const [fileName, setFileName] = useState("");
 
-  async function handleProcessUpload({
-    fileData, requestConfig, handleError
-  }) {
+  const handleProcessUpload = ({ fileData }) => {
     const blob = fileData.get('file');
-    const reader = new FileReader();
-    reader.readAsDataURL(blob);
-    reader.onloadend = function() {
-      const base64data = reader.result.split(',')[1];                
-      console.log(atob(base64data));
-      setText(atob(base64data));
-    }
+    blob.text().then(xmlText => {
+      setText(xmlText);
+      setFileName(blob.name);
+    });
   };
 
   return (
@@ -313,6 +309,12 @@ Note that `Dropzone` does not handle unexpected errors that might happen in your
           "application/xml": ['.xml']
         }}
       />
+      {fileName && (
+        <Form.Control.Feedback type="valid">
+          Uploaded{' '}
+          {fileName}
+        </Form.Control.Feedback>
+      )}
       <p>{text}</p>
     </>
   )
