@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { Container } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
@@ -42,11 +43,11 @@ const measuredTypeProps = {
   },
 };
 
-export default function TypographyPage() {
+export default function TypographyPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
 
   return (
-    <Layout isAutoToc>
+    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Typography" />
       <Container size={settings.containerWidth} className="py-5">
@@ -64,7 +65,7 @@ export default function TypographyPage() {
               <th>CSS Class</th>
             </tr>
             {[1, 2, 3, 4, 5, 6].map(headingSize => (
-              <tr>
+              <tr key={headingSize}>
                 <td>
                   <MeasuredItem {...measuredTypeProps}>
                     <p className={`m-0 h${headingSize}`}>
@@ -166,7 +167,7 @@ export default function TypographyPage() {
               <th>CSS Class</th>
             </tr>
             {[1, 2, 3, 4].map(displaySize => (
-              <tr>
+              <tr key={displaySize}>
                 <td>
                   <MeasuredItem {...measuredTypeProps}>
                     <p className={`m-0 display-${displaySize}`}>
@@ -398,3 +399,9 @@ export default function TypographyPage() {
     </Layout>
   );
 }
+
+TypographyPage.propTypes = {
+  pageContext: PropTypes.shape({
+    githubEditPath: PropTypes.string,
+  }).isRequired,
+};
