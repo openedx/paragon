@@ -88,9 +88,7 @@ function Layout({
               <Container size="md">
                 <hr />
                 <Stack direction="horizontal" gap={2}>
-                  {isMdx && (
-                    <PageEditBtn className="mb-5" githubEditPath={githubEditPath ?? ''} />
-                  )}
+                  <PageEditBtn className="mb-5" githubEditPath={githubEditPath} />
                   <LeaveFeedback className="mb-5" />
                 </Stack>
               </Container>
@@ -146,14 +144,14 @@ function Layout({
           <Nav.Item>
             <LeaveFeedback className="muted-link" isNavLink />
           </Nav.Item>
-          {isMdx && (
-            <Nav.Item>
-              <PageEditBtn
-                className="muted-link"
-                githubEditPath={githubEditPath ?? ''}
-                isNavLink
-              />
-            </Nav.Item>
+          {!hideFooterComponentMenu && (
+          <Nav.Item>
+            <PageEditBtn
+              className="muted-link"
+              githubEditPath={githubEditPath ?? ''}
+              isNavLink
+            />
+          </Nav.Item>
           )}
           <div className="flex-grow-1" />
           <Nav.Link

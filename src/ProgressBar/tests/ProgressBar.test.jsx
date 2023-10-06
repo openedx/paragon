@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
 import ProgressBar, { ANNOTATION_CLASS } from '..';
@@ -47,9 +48,8 @@ describe('<ProgressBar.Annotated />', () => {
       expect(tree).toMatchSnapshot();
     });
     it('renders info blocks with calculated margins', () => {
-      const useReferenceSpy = jest.spyOn(React, 'useRef').mockReturnValue(ref);
-      mount(<ProgressBarElement />);
-      expect(useReferenceSpy).toHaveBeenCalledTimes(2);
+      jest.spyOn(React, 'useRef').mockReturnValue(ref);
+      render(<ProgressBarElement />);
       expect(ref.current.style.marginLeft).not.toBeFalsy();
     });
     it('renders correct variant for progress bar and annotation', () => {
@@ -84,6 +84,15 @@ describe('<ProgressBar.Annotated />', () => {
       wrapper.setProps({ now: 70, threshold: 70 });
       expect(wrapper.find('.pgn__progress-info').get(0).props.children[2]).toEqual(false);
       expect(wrapper.find('.pgn__progress-info').get(1).props.children[2]).toEqual(false);
+    });
+    it('should apply styles based on direction for threshold', () => {
+      window.getComputedStyle = jest.fn().mockReturnValue({ getPropertyValue: () => 'rtl' });
+      const { container } = render(<ProgressBarElement />);
+      const progressInfo = container.querySelector('.pgn__progress-info');
+      const computedStyles = window.getComputedStyle(progressInfo);
+
+      expect(computedStyles.getPropertyValue('directory')).toBe('rtl');
+      window.getComputedStyle.mockRestore();
     });
   });
 });

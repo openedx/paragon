@@ -3,7 +3,7 @@ import ProgressBarBase from 'react-bootstrap/ProgressBar';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Annotation from '../Annotation';
-import { placeInfoAtZero } from './utils';
+import { getOffsetStyles, placeInfoAtZero } from './utils';
 
 export const ANNOTATION_CLASS = 'pgn__annotation';
 const HINT_SWAP_PERCENT = 50;
@@ -38,11 +38,12 @@ function ProgressBarAnnotated({
   const isThresholdHintAfter = threshold < HINT_SWAP_PERCENT;
   const progressColor = VARIANTS.includes(variant) ? variant : PROGRESS_DEFAULT_VARIANT;
   const thresholdColor = VARIANTS.includes(thresholdVariant) ? thresholdVariant : THRESHOLD_DEFAULT_VARIANT;
+  const direction = window.getComputedStyle(document.body).getPropertyValue('direction');
 
   const positionAnnotations = useCallback(() => {
-    placeInfoAtZero(progressInfoRef, isProgressHintAfter, ANNOTATION_CLASS);
-    placeInfoAtZero(thresholdInfoRef, isThresholdHintAfter, ANNOTATION_CLASS);
-  }, [isProgressHintAfter, isThresholdHintAfter]);
+    placeInfoAtZero(progressInfoRef, direction, isProgressHintAfter, ANNOTATION_CLASS);
+    placeInfoAtZero(thresholdInfoRef, direction, isThresholdHintAfter, ANNOTATION_CLASS);
+  }, [direction, isProgressHintAfter, isThresholdHintAfter]);
 
   useEffect(() => {
     positionAnnotations();
@@ -65,7 +66,7 @@ function ProgressBarAnnotated({
       {!!label && (
         <div
           className="pgn__progress-info"
-          style={{ left: `${now}%` }}
+          style={getOffsetStyles(now, direction)}
           ref={progressInfoRef}
         >
           {!isProgressHintAfter && getHint(progressHint)}
@@ -96,7 +97,7 @@ function ProgressBarAnnotated({
       {(!!threshold && !!thresholdLabel) && (
         <div
           className="pgn__progress-info"
-          style={{ left: `${threshold}%` }}
+          style={getOffsetStyles(threshold, direction)}
           ref={thresholdInfoRef}
         >
           {!isThresholdHintAfter && getHint(thresholdHint)}
