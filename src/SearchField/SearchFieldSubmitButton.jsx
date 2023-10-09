@@ -42,7 +42,7 @@ function SearchFieldSubmitButton(props) {
   ) : (
     <button
       type="submit"
-      className={classNames('btn')}
+      className={classNames('btn pgn__searchfield__action-btn')}
       ref={refs.submitButton}
       disabled={disabled}
       {...others}
