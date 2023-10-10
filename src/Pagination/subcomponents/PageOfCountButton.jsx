@@ -9,14 +9,13 @@ export default function PageOfCountButton() {
   const label = getPageOfText();
 
   return (
-    <li className={classNames(['page-item', 'disabled'])}>
+    <li className={classNames('page-item', 'disabled')}>
       <span
-        className={classNames([
+        className={classNames(
           'btn',
           'page-link',
-          'mx-2',
-          'border-0',
-        ])}
+          'page-of-count',
+        )}
         aria-label={ariaLabel}
       >
         {label}

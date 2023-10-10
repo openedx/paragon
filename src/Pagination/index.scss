@@ -17,6 +17,11 @@
     z-index: 4;
   }
 
+  .page-of-count {
+    margin: 0 .5rem;
+    border: 0;
+  }
+
   .page-item {
     &:first-child .page-link {
       margin-left: 0;

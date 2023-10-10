@@ -7,7 +7,7 @@ import MinimalPagination from './MinimalPagination';
 import DefaultPagination from './DefaultPagination';
 import { PaginationContextProvider } from './PaginationContext';
 import { PAGINATION_VARIANTS } from './constants';
-import PaginationScreenReaderText from './subcomponents/ScreenReaderComponent';
+import { ScreenReaderText } from './subcomponents';
 
 import { greaterThan } from '../utils/propTypes';
 import { ChevronLeft, ChevronRight } from '../../icons';
@@ -43,7 +43,7 @@ function Pagination(props) {
           'pagination-small': size !== PAGINATION_VARIANTS.default,
         })}
       >
-        <PaginationScreenReaderText />
+        <ScreenReaderText />
         {renderPaginationComponent()}
       </nav>
     </PaginationContextProvider>

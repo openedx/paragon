@@ -1,7 +1,5 @@
 import React from 'react';
-import PreviousPageButton from './subcomponents/PreviousPageButton';
-import NextPageButton from './subcomponents/NextPageButton';
-import PaginationDropdown from './subcomponents/PaginationDropdown';
+import { PreviousPageButton, NextPageButton, PaginationDropdown } from './subcomponents';
 
 export default function ReducedPagination() {
   return (

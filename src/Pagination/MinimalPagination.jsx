@@ -1,6 +1,5 @@
 import React from 'react';
-import PreviousPageButton from './subcomponents/PreviousPageButton';
-import NextPageButton from './subcomponents/NextPageButton';
+import { PreviousPageButton, NextPageButton } from './subcomponents';
 
 export default function MinimalPagination() {
   return (

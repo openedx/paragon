@@ -1,24 +1,16 @@
 import React, { useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import PaginationContext from './PaginationContext';
-import PreviousPageButton from './subcomponents/PreviousPageButton';
-import NextPageButton from './subcomponents/NextPageButton';
-import PageOfCountButton from './subcomponents/PageOfCountButton';
-import breakpoints from '../utils/breakpoints';
 import { ELLIPSIS } from './constants';
-import Ellipsis from './subcomponents/Ellipsis';
+import {
+  PreviousPageButton,
+  NextPageButton,
+  PageOfCountButton,
+  PageButton,
+  Ellipsis,
+} from './subcomponents';
+import breakpoints from '../utils/breakpoints';
 import newId from '../utils/newId';
-import PageButton from './subcomponents/PageButton';
-
-export default function DefaultPagination() {
-  return (
-    <ul className="pagination">
-      <PreviousPageButton />
-      <PaginationPages />
-      <NextPageButton />
-    </ul>
-  );
-}
 
 function PaginationPages() {
   const { displayPages } = useContext(PaginationContext);
@@ -37,5 +29,15 @@ function PaginationPages() {
         return <PageButton key={pageIndex} pageNum={pageIndex + 1} />;
       })}
     </>
+  );
+}
+
+export default function DefaultPagination() {
+  return (
+    <ul className="pagination">
+      <PreviousPageButton />
+      <PaginationPages />
+      <NextPageButton />
+    </ul>
   );
 }
