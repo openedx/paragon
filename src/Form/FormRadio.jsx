@@ -59,7 +59,7 @@ const FormRadio = React.forwardRef(({
           'pgn__form-control-disabled': radioInputProps.disabled,
         })}
       >
-        <RadioControl {...radioInputProps} ref={ref} />
+        <RadioControl ref={ref} className={controlClassName} {...props} />
         <div>
           <FormLabel className={labelClassName}>
             {children}

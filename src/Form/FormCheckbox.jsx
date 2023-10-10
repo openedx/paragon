@@ -74,7 +74,7 @@ const FormCheckbox = React.forwardRef(({
     ...props,
     className: controlClassName,
   });
-  const control = React.createElement(controlAs, { ...checkboxInputProps, ref });
+  const control = React.createElement(controlAs, { ...props, className: controlClassName, ref });
   return (
     <FormGroupContextProvider
       controlId={checkboxInputProps.id}
