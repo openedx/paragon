@@ -1,16 +1,27 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import Stack from './index';
 
+const stackList = ['First', 'Second'];
+
 describe('<Stack />', () => {
   describe('correct rendering', () => {
     it('renders without props', () => {
       const tree = renderer.create((
-        <Stack>content</Stack>
+        <Stack>{stackList.map((el) => <div>{el}</div>)}</Stack>
       )).toJSON();
       expect(tree).toMatchSnapshot();
+    });
+    it('renders with the reversed prop', () => {
+      const { container } = render(
+        <Stack reversed>
+          {stackList.reverse().map((el) => <div>{el}</div>)}
+        </Stack>,
+      );
+      expect(container).toMatchSnapshot();
     });
     it('renders with the vertical direction', () => {
       const wrapper = mount(<Stack>Content</Stack>);
