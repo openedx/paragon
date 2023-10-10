@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import TablePagination from '../TablePagination';
@@ -32,12 +32,15 @@ describe('<TablePagination />', () => {
       const { getAllByTestId, getByRole } = render(<PaginationWrapper value={instance} />);
       const dropdownButton = getByRole('button', { name: /2 of 3/i });
       expect(dropdownButton).toBeInTheDocument();
-
-      await userEvent.click(dropdownButton);
+      await act(async () => {
+        await userEvent.click(dropdownButton);
+      });
 
       const dropdownChoices = getAllByTestId('pagination-dropdown-item');
       expect(dropdownChoices.length).toEqual(instance.pageCount);
-      await userEvent.click(dropdownChoices[1], undefined, { skipPointerEventsCheck: true });
+      await act(async () => {
+        await userEvent.click(dropdownChoices[1], undefined, { skipPointerEventsCheck: true });
+      });
 
       expect(instance.gotoPage).toHaveBeenCalledTimes(1);
       expect(instance.gotoPage).toHaveBeenCalledWith(1);

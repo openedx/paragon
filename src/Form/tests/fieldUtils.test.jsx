@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import {
@@ -130,8 +130,10 @@ describe('useHasValue', () => {
     it('has value when a target blur event has a value', async () => {
       render(<HasValueExample />);
       const input = screen.getByTestId('input');
-      await userEvent.type(input, 'hello');
-      await userEvent.tab();
+      await act(async () => {
+        await userEvent.type(input, 'hello');
+        await userEvent.tab();
+      });
 
       expect(screen.getByTestId('has-value')).toBeInTheDocument();
     });
@@ -150,8 +152,10 @@ describe('uncontrolled input with a default value', () => {
       <HasValueExample defaultValue="My value" />,
     );
     const input = screen.getByTestId('input');
-    await userEvent.type(input, '');
-    await userEvent.tab();
+    await act(async () => {
+      input.focus();
+      await userEvent.tab();
+    });
 
     expect(screen.queryByTestId('has-value')).toBe(null);
   });
@@ -166,9 +170,9 @@ describe('controlled value', () => {
     'continues to have a value despite a blur event saying there is not one but props say there is',
     async () => {
       render(<HasValueExample value="My value" />);
-      const input = screen.getByTestId('input');
-      await userEvent.type(input, '');
-      await userEvent.tab();
+      await act(async () => {
+        await userEvent.tab();
+      });
 
       expect(screen.getByTestId('has-value')).toBeInTheDocument();
     },

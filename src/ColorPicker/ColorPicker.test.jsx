@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 
 import ColorPicker from '.';
 
@@ -30,7 +30,9 @@ describe('picker works as expected', () => {
   const setColor = jest.fn();
   it('validates hex color', async () => {
     const { rerender } = render(<ColorPicker color={color} setColor={setColor} />);
-    await userEvent.click(screen.getByRole('button'));
+    await act(async () => {
+      await userEvent.click(screen.getByRole('button'));
+    });
     expect(screen.queryByText('Colors must be in hexadecimal format.')).toBeInTheDocument();
 
     rerender(<ColorPicker color="#32116c" setColor={setColor} />);

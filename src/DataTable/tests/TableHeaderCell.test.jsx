@@ -15,17 +15,13 @@ const props = {
 };
 
 // eslint-disable-next-line react/prop-types
-function FakeTable({ children }) {
-  return <table><thead><tr>{children}</tr></thead></table>;
+function FakeTable({ ...rest }) {
+  return <table><thead><tr><TableHeaderCell {...rest} /></tr></thead></table>;
 }
 
 describe('<TableHeaderCell />', () => {
   describe('unsorted', () => {
-    render(
-      <FakeTable>
-        <TableHeaderCell {...props} />
-      </FakeTable>,
-    );
+    render(<FakeTable {...props} />);
     const cell = screen.getByRole('columnheader');
     const innerCell = cell.firstChild;
 
@@ -44,26 +40,26 @@ describe('<TableHeaderCell />', () => {
 
   describe('with sorting', () => {
     it('renders a sortable indicator if sorting is available', () => {
-      render(<TableHeaderCell {...props} canSort />);
+      render(<FakeTable {...props} canSort />);
       const sortIndicator = screen.getByTestId('arrow-drop-up-down');
       expect(sortIndicator).toBeInTheDocument();
     });
 
     it('renders a sorted ascending indicator when sorted ascending', () => {
-      render(<TableHeaderCell {...props} canSort isSorted />);
+      render(<FakeTable {...props} canSort isSorted />);
       const sortIndicator = screen.getByTestId('arrow-drop-up');
       expect(sortIndicator).toBeInTheDocument();
     });
 
     it('renders a sorted descending indicator when sorted descending', () => {
-      render(<TableHeaderCell {...props} canSort isSorted isSortedDesc />);
+      render(<FakeTable {...props} canSort isSorted isSortedDesc />);
       const sortIndicator = screen.getByTestId('arrow-drop-down');
       expect(sortIndicator).toBeInTheDocument();
     });
 
     it('adds the toggle props to the header props if toggle props are available', () => {
       const headerPropsSpy = jest.fn().mockReturnValueOnce({});
-      render(<TableHeaderCell {...props} canSort getHeaderProps={headerPropsSpy} />);
+      render(<FakeTable {...props} canSort getHeaderProps={headerPropsSpy} />);
       expect(headerPropsSpy).toHaveBeenCalledWith(sortByToggleProps);
     });
   });

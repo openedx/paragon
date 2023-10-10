@@ -29,8 +29,6 @@ function Dialog() {
   );
 }
 
-const mockPositionRef = { current: null };
-
 const arrowPlacements = [
   'auto',
   'auto-start',
@@ -50,11 +48,14 @@ const arrowPlacements = [
 ];
 
 describe('<ModalPopup />', () => {
+  const mockPositionRef = React.createRef();
+
   describe('when isOpen', () => {
     const isOpen = true;
     const closeFn = jest.fn();
 
     it('renders the dialog', () => {
+      mockPositionRef.current = document.createElement('div');
       render(
         <ModalPopup
           positionRef={mockPositionRef}

@@ -16,7 +16,7 @@ describe('<Button />', () => {
       expect(tree).toMatchSnapshot();
     });
     it('renders with correct class when variant is added', () => {
-      render(<Button variant="brand" />);
+      render(<Button variant="brand">Button</Button>);
       const button = screen.getByRole('button');
       expect(button.className).toContain('btn-brand');
     });

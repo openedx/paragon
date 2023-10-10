@@ -1,5 +1,7 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import {
+  render, screen, waitFor, act,
+} from '@testing-library/react';
 
 import userEvent from '@testing-library/user-event';
 import Dropdown from '.';
@@ -46,22 +48,30 @@ describe('<Dropdown />', () => {
 
     // Open the dropdown
     const button = screen.getByText('Dropdown Button');
-    userEvent.click(button);
+    await act(async () => {
+      await userEvent.click(button);
+    });
 
     // Expect the dropdown item to be visible
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
     // Close the dropdown by clicking off the element
-    userEvent.click(document.body);
+    await act(async () => {
+      userEvent.click(document.body);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).not.toBeVisible());
 
     // Reopen the dropdown
-    userEvent.click(button);
+    await act(async () => {
+      userEvent.click(button);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
     // Close the dropdown by clicking the item
     const dropdownItem = screen.getByText('foobar');
-    userEvent.click(dropdownItem);
+    await act(async () => {
+      userEvent.click(dropdownItem);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).not.toBeVisible());
   });
 
@@ -85,22 +95,30 @@ describe('<Dropdown />', () => {
 
     // Open the dropdown
     const button = screen.getByText('Dropdown Button');
-    userEvent.click(button);
+    await act(async () => {
+      userEvent.click(button);
+    });
 
     // Expect the dropdown item to be visible
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
     // Close the dropdown by clicking off the element
-    userEvent.click(document.body);
+    await act(async () => {
+      userEvent.click(document.body);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).not.toBeVisible());
 
     // Reopen the dropdown
-    userEvent.click(button);
+    await act(async () => {
+      userEvent.click(button);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
     // Assert the dropdown stays open when clicking the item
     const dropdownItem = screen.getByText('foobar');
-    userEvent.click(dropdownItem);
+    await act(async () => {
+      userEvent.click(dropdownItem);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
   });
 
@@ -124,18 +142,24 @@ describe('<Dropdown />', () => {
 
     // Open the dropdown
     const button = screen.getByText('Dropdown Button');
-    userEvent.click(button);
+    await act(async () => {
+      await userEvent.click(button);
+    });
 
     // Expect the dropdown item to be visible
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
     // Assert the dropdown stays open when clicking outside the dropdown
-    userEvent.click(document.body);
+    await act(async () => {
+      await userEvent.click(document.body);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
     // Close the dropdown by clicking the element
     const dropdownItem = screen.getByText('foobar');
-    userEvent.click(dropdownItem);
+    await act(async () => {
+      userEvent.click(dropdownItem);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).not.toBeVisible());
   });
 });

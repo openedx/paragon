@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, act } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
@@ -81,26 +81,36 @@ describe('<Tabs />', () => {
       const { rerender, getByText } = render(<TabsTestComponent />);
       const toggleButton = getByText(MORE_TAB_TEXT);
       expect(toggleButton).toBeInTheDocument();
-      await userEvent.click(toggleButton);
+      await act(async () => {
+        await userEvent.click(toggleButton);
+      });
       rerender(<TabsTestComponent moreTabText={text} />);
       expect(toggleButton.textContent).toBe(text);
     });
     it('click on the dropdown item activates tab', async () => {
       const { container, getByText, getAllByText } = render(<TabsTestComponent />);
       const toggleButton = getByText(MORE_TAB_TEXT);
-      await userEvent.click(toggleButton);
+      await act(async () => {
+        await userEvent.click(toggleButton);
+      });
       const dropdownItem = getAllByText('Tab 2');
-      await userEvent.click(dropdownItem[0], undefined, { skipPointerEventsCheck: true });
+      await act(async () => {
+        await userEvent.click(dropdownItem[0], undefined, { skipPointerEventsCheck: true });
+      });
       const tab = container.querySelector('[data-rb-event-key="tab_2"]');
       expect(tab.className).toContain('active');
     });
     it('select dropdown item after pressing Enter', async () => {
       const { getByText, getAllByText, getByRole } = render(<TabsTestComponent />);
       const toggleButton = getByText(MORE_TAB_TEXT);
-      await userEvent.click(toggleButton);
+      await act(async () => {
+        await userEvent.click(toggleButton);
+      });
       const dropdownItem = getAllByText('Tab 2');
       dropdownItem[0].focus();
-      await userEvent.keyboard('{enter}');
+      await act(async () => {
+        await userEvent.keyboard('{enter}');
+      });
       await waitFor(() => {
         const tab = getByRole('tab', { name: 'Tab 2' });
         expect(tab.className).toContain('active');

@@ -54,15 +54,13 @@ function ExtraAction({ text }) {
   );
 }
 
-const selectedFlatRows = [{ id: 1 }, { id: 2 }];
-
 const twoActions = [
   <FirstAction data-testid="action-btn" />,
   <SecondAction data-testid="action-btn" />,
 ];
 
 const instance = {
-  selectedFlatRows,
+  selectedFlatRows: [{ id: 1 }, { id: 2 }],
   controlledTableSelections: [
     {
       selectedRows: [],

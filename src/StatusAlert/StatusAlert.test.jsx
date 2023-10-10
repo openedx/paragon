@@ -123,7 +123,7 @@ describe('<StatusAlert />', () => {
     it('does nothing on invalid keystroke + ctrl', async () => {
       const closeButton = screen.getByRole('button');
       expect(document.activeElement).toEqual(closeButton);
-      await userEvent.keyboard('{ctrl>tab}');
+      await userEvent.keyboard('{ctrl>}{tab}{/ctrl}');
       expect(document.activeElement).toEqual(closeButton);
     });
   });
@@ -131,7 +131,7 @@ describe('<StatusAlert />', () => {
     it('focus function changes focus', async () => {
       render(
         <div>
-          <Button label="test" />
+          <Button label="test">Button</Button>
           <StatusAlert {...defaultProps} />
         </div>,
       );

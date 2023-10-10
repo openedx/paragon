@@ -58,7 +58,7 @@ describe('Keyboard Interactions', () => {
   beforeEach(() => {
     render(
       <Menu>
-        <MenuItem autofocus>Default</MenuItem>
+        <MenuItem>Default</MenuItem>
         <MenuItem as={Button} iconBefore={Add}>{MENU_ITEM_TEXT}</MenuItem>
         <MenuItem iconBefore={Add}>Icon Before</MenuItem>
       </Menu>,

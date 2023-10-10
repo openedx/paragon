@@ -57,15 +57,13 @@ function ExtraAction({ text }) {
   );
 }
 
-const selectedFlatRows = [{ id: 1 }, { id: 2 }];
-
 const twoActions = [
   <FirstAction data-testid="action" />,
   <SecondAction data-testid="action" />,
 ];
 
 const instance = {
-  selectedFlatRows,
+  selectedFlatRows: [{ id: 1 }, { id: 2 }],
   controlledTableSelections: [
     {
       selectedRows: [],
@@ -82,10 +80,10 @@ const instance = {
 };
 
 // eslint-disable-next-line react/prop-types
-function BulkActionsWrapper({ value = instance, ...rest }) {
+function BulkActionsWrapper({ value = instance }) {
   return (
     <DataTableContext.Provider value={value}>
-      <BulkActions {...rest} />
+      <BulkActions />
     </DataTableContext.Provider>
   );
 }
