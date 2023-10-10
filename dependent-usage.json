@@ -1,5 +1,5 @@
 {
-  "lastModified": 1696860500747,
+  "lastModified": 1696946933288,
   "projectUsages": [
     {
       "version": "21.3.1",
@@ -997,9 +997,9 @@
           },
           {
             "filePath": "src/notification-preferences/NotificationPreferenceRow.jsx",
-            "line": 56,
+            "line": 59,
             "column": 14,
-            "index": 1938
+            "index": 2104
           },
           {
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
@@ -1701,25 +1701,25 @@
         "OverlayTrigger": [
           {
             "filePath": "src/notification-preferences/NotificationPreferenceRow.jsx",
-            "line": 45,
+            "line": 48,
             "column": 10,
-            "index": 1630
+            "index": 1796
           }
         ],
         "Tooltip": [
           {
             "filePath": "src/notification-preferences/NotificationPreferenceRow.jsx",
-            "line": 50,
+            "line": 53,
             "column": 14,
-            "index": 1773
+            "index": 1939
           }
         ],
         "InfoOutline": [
           {
             "filePath": "src/notification-preferences/NotificationPreferenceRow.jsx",
-            "line": 56,
+            "line": 59,
             "column": 25,
-            "index": 1949
+            "index": 2115
           }
         ],
         "ArrowBack": [
@@ -34396,21 +34396,21 @@
           },
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 261,
+            "line": 250,
             "column": 16,
-            "index": 9723
+            "index": 9309
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 50,
+            "line": 56,
             "column": 12,
-            "index": 2361
+            "index": 2596
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 85,
+            "line": 97,
             "column": 8,
-            "index": 3838
+            "index": 4154
           },
           {
             "filePath": "src/studio-header/HeaderBody.jsx",
@@ -34456,9 +34456,9 @@
         "OverlayTrigger": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 219,
+            "line": 205,
             "column": 6,
-            "index": 7998
+            "index": 7400
           },
           {
             "filePath": "src/studio-header/CourseLockUp.jsx",
@@ -34470,25 +34470,25 @@
         "Popover": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 226,
+            "line": 212,
             "column": 10,
-            "index": 8183
+            "index": 7585
           }
         ],
         "Popover.Title": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 237,
-            "column": 14,
-            "index": 8653
+            "line": 225,
+            "column": 16,
+            "index": 8153
           }
         ],
         "Hyperlink": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 243,
-            "column": 16,
-            "index": 8964
+            "line": 231,
+            "column": 18,
+            "index": 8474
           },
           {
             "filePath": "src/Notifications/tours/constants.js",
@@ -34506,15 +34506,15 @@
         "Icon": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 249,
-            "column": 18,
-            "index": 9214
+            "line": 237,
+            "column": 20,
+            "index": 8736
           },
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 280,
+            "line": 269,
             "column": 20,
-            "index": 10335
+            "index": 9921
           },
           {
             "filePath": "src/Notifications/NotificationRowItem.jsx",
@@ -34524,15 +34524,21 @@
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 101,
+            "line": 113,
             "column": 12,
-            "index": 4349
+            "index": 4693
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 106,
+            "line": 118,
             "column": 14,
-            "index": 4691
+            "index": 5035
+          },
+          {
+            "filePath": "src/Notifications/NotificationSections.jsx",
+            "line": 138,
+            "column": 19,
+            "index": 5836
           },
           {
             "filePath": "src/Notifications/tours/constants.js",
@@ -34544,9 +34550,9 @@
         "Settings": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 250,
-            "column": 25,
-            "index": 9245
+            "line": 238,
+            "column": 27,
+            "index": 8769
           },
           {
             "filePath": "src/Notifications/tours/constants.js",
@@ -34558,73 +34564,85 @@
         "Popover.Content": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 257,
+            "line": 246,
             "column": 14,
-            "index": 9524
+            "index": 9081
           }
         ],
         "IconButton": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 275,
+            "line": 264,
             "column": 10,
-            "index": 10135
+            "index": 9721
+          },
+          {
+            "filePath": "src/Notifications/NotificationSections.jsx",
+            "line": 134,
+            "column": 9,
+            "index": 5710
           }
         ],
         "NotificationsNone": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 279,
+            "line": 268,
             "column": 17,
-            "index": 10296
+            "index": 9882
+          },
+          {
+            "filePath": "src/Notifications/NotificationSections.jsx",
+            "line": 137,
+            "column": 16,
+            "index": 5798
           }
         ],
         "Bubble": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 288,
+            "line": 277,
             "column": 10,
-            "index": 10614
+            "index": 10200
           }
         ],
         "Spinner": [
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 82,
+            "line": 94,
             "column": 10,
-            "index": 3625
+            "index": 3941
           }
         ],
         "CheckCircleLightOutline": [
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 101,
+            "line": 113,
             "column": 56,
-            "index": 4393
+            "index": 4737
           }
         ],
         "AutoAwesome": [
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
-            "line": 106,
+            "line": 118,
             "column": 25,
-            "index": 4702
+            "index": 5046
           }
         ],
         "Tabs": [
           {
             "filePath": "src/Notifications/NotificationTabs.jsx",
-            "line": 36,
+            "line": 38,
             "column": 8,
-            "index": 1408
+            "index": 1509
           }
         ],
         "Tab": [
           {
             "filePath": "src/Notifications/NotificationTabs.jsx",
-            "line": 43,
+            "line": 45,
             "column": 12,
-            "index": 1676
+            "index": 1777
           }
         ],
         "ProductTour": [
