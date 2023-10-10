@@ -14,9 +14,18 @@
 .pgn__vstack {
   flex: 1 1 auto;
   flex-direction: column;
+
+  &.pgn__stack-reversed {
+    flex-direction: column-reverse;
+  }
 }
 
 .pgn__hstack {
   flex-direction: row;
   align-items: center;
+
+  &.pgn__stack-reversed {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
 }
