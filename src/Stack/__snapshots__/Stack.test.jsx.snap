@@ -1,9 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Stack /> correct rendering renders with the reversed prop 1`] = `
+<div>
+  <div
+    class="pgn__vstack pgn__stack-reversed"
+  >
+    <div>
+      Second
+    </div>
+    <div>
+      First
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<Stack /> correct rendering renders without props 1`] = `
 <div
   className="pgn__vstack"
 >
-  content
+  <div>
+    First
+  </div>
+  <div>
+    Second
+  </div>
 </div>
 `;
