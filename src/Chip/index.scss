@@ -1,37 +1,44 @@
 @import "variables";
+@import "mixins";
 
 .pgn__chip {
-  background: $light-500;
   border-radius: $chip-border-radius;
   display: inline-flex;
   margin: $chip-margin;
-  box-sizing: border-box;
+  border: 1px solid $chip-border-color;
+  padding: $chip-padding-y $chip-padding-x;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  transition: all .3s;
 
   .pgn__chip__label {
-    font-size: $font-size-sm;
-    padding: $chip-padding-y $chip-padding-x;
+    font-size: $font-size-xs;
+    line-height: 1.5rem;
+    font-weight: $font-weight-bold;
+    color: $chip-label-color;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    box-sizing: border-box;
-    cursor: default;
 
-    &.p-before {
-      padding-left: $chip-padding-to-icon;
-
-      [dir="rtl"] & {
-        padding-left: $chip-padding-x;
-        padding-right: $chip-padding-to-icon;
-      }
+    [dir="rtl"] & {
+      margin-left: $chip-icon-margin;
     }
+  }
 
-    &.p-after {
-      padding-right: $chip-padding-to-icon;
+  .pgn__chip__icon-before {
+    margin-right: $chip-icon-margin;
 
-      [dir="rtl"] & {
-        padding-right: $chip-padding-x;
-        padding-left: $chip-padding-to-icon;
-      }
+    [dir="rtl"] & {
+      margin-right: 0;
+    }
+  }
+
+  .pgn__chip__icon-after {
+    margin-left: $chip-icon-margin;
+
+    [dir="rtl"] & {
+      margin-left: 0;
     }
   }
 
@@ -39,52 +46,160 @@
   .pgn__chip__icon-after {
     align-items: center;
     display: flex;
-    padding-left: $chip-icon-padding;
-    padding-right: $chip-icon-padding;
-    box-sizing: border-box;
-    cursor: default;
+    outline: none;
 
-    .pgn__icon {
+    .btn-icon {
       width: $chip-icon-size;
       height: $chip-icon-size;
     }
 
-    &.active:hover,
-    &.active:focus {
-      cursor: pointer;
-      background: $black;
+    &.active {
+      border-radius: 50%;
+    }
+  }
 
-      * {
-        color: $white;
-        fill: $white;
+  &.pgn__chip-light {
+    background-color: $chip-light-bg-color;
+
+    &.selected {
+      @include chip-outline(
+        $chip-light-outline-color,
+        calc($chip-light-selected-outline-distance * -1),
+        calc($chip-border-radius + .188rem),
+        $chip-light-selected-outline-distance
+      );
+
+      &:focus {
+        border: 1px solid $chip-light-selected-focus-border-color;
       }
     }
-  }
 
-  .pgn__chip__icon-before {
-    border-radius: $chip-border-radius 0 0 $chip-border-radius;
+    &:hover {
+      background-color: $chip-light-hover-bg;
+      border-color: $chip-light-hover-border-color;
 
-    [dir="rtl"] & {
-      border-radius: 0 $chip-border-radius $chip-border-radius 0;
-    }
-  }
-
-  .pgn__chip__icon-after {
-    border-radius: 0 $chip-border-radius $chip-border-radius 0;
-
-    [dir="rtl"] & {
-      border-radius: $chip-border-radius 0 0 $chip-border-radius;
-    }
-  }
-
-  @each $color, $styles in $chip-theme-variants {
-    &.pgn__chip-#{$color} {
-      background: map-get($styles, "background");
-
-      * {
-        color: map-get($styles, "color");
-        fill: map-get($styles, "color");
+      .pgn__chip__label {
+        color: $chip-light-hover-label-color;
       }
+
+      .pgn__chip__icon-before,
+      .pgn__chip__icon-after {
+        .pgn__icon {
+          color: $chip-light-hover-icon-color;
+        }
+
+        &.active {
+          &:hover .btn-icon .pgn__icon {
+            color: $chip-light-hover-bg;
+          }
+
+          .btn-icon:focus {
+            .pgn__icon {
+              border-color: $chip-light-hover-icon-color;
+            }
+
+            &:hover .pgn__icon {
+              border-color: $chip-light-hover-icon-color;
+              background-color: $chip-light-hover-icon-color;
+              color: $chip-light-hover-bg;
+            }
+          }
+        }
+      }
+    }
+
+    .pgn__chip__icon-before,
+    .pgn__chip__icon-after {
+      .pgn__icon {
+        color: $chip-label-color;
+        border: 2px solid $chip-dark-icon-border-color;
+      }
+
+      &.active .btn-icon:focus .pgn__icon {
+        border: 2px solid $chip-light-selected-focus-border-color;
+        border-radius: 50%;
+      }
+    }
+
+    &:focus {
+      @include chip-outline(
+        $chip-light-selected-focus-border-color,
+        calc($chip-light-focus-outline-distance * -1),
+        calc($chip-border-radius + .188rem)
+      );
+    }
+  }
+
+  &.pgn__chip-dark {
+    background-color: $chip-dark-bg;
+
+    &.selected {
+      @include chip-outline($chip-dark-outline-color,
+      calc($chip-dark-selected-outline-distance * -1),
+      calc($chip-border-radius + .188rem),
+      $chip-dark-selected-outline-distance
+    );
+
+      &:focus {
+        border: 1px solid $chip-dark-selected-focus-border-color;
+      }
+    }
+
+    .pgn__chip__label {
+      color: $chip-dark-label-color;
+    }
+
+    &:hover {
+      background-color: $chip-dark-hover-bg;
+      border-color: $chip-dark-hover-border-color;
+
+      .pgn__chip__label {
+        color: $chip-dark-hover-label-color;
+      }
+
+      .pgn__chip__icon-before,
+      .pgn__chip__icon-after {
+        .pgn__icon {
+          color: $chip-dark-hover-icon-color;
+          border-radius: 50%;
+        }
+
+        &.active {
+          &:hover .btn-icon .pgn__icon {
+            background-color: $chip-dark-hover-icon-color;
+            color: $chip-dark-hover-bg;
+          }
+
+          .btn-icon:focus .pgn__icon {
+            border: 2px solid $chip-dark-hover-icon-color;
+
+            &:hover {
+              background-color: $chip-dark-hover-icon-color;
+              color: $chip-dark-hover-bg;
+            }
+          }
+        }
+      }
+    }
+
+    .pgn__chip__icon-before,
+    .pgn__chip__icon-after {
+      .pgn__icon {
+        color: $chip-dark-outline-color;
+        border: 2px solid $chip-dark-icon-border-color;
+      }
+
+      &.active .btn-icon:focus .pgn__icon {
+        border: 2px solid $chip-dark-icon-border-color;
+      }
+    }
+
+    &:focus {
+      @include chip-outline(
+        $chip-dark-outline-color,
+        calc($chip-dark-focus-outline-distance * -1),
+        calc($chip-border-radius + .188rem)
+      );
     }
   }
 

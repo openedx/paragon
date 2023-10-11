@@ -1,0 +1,12 @@
+@mixin chip-outline($ring-color: $white, $distance-to-border: 0, $border-radius: 50%, $border-width: .125rem) {
+  &::before {
+    content: "";
+    position: absolute;
+    top: $distance-to-border;
+    right: $distance-to-border;
+    bottom: $distance-to-border;
+    left: $distance-to-border;
+    border: solid $border-width $ring-color;
+    border-radius: $border-radius;
+  }
+}

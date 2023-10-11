@@ -77,5 +77,23 @@ describe('<Chip />', () => {
       await userEvent.type(iconAfter, '{enter}');
       expect(func).toHaveBeenCalled();
     });
+    it('onIconBeforeClick is triggered', async () => {
+      const func = jest.fn();
+      render(
+        <TestChip iconBefore={Close} onIconBeforeClick={func} />,
+      );
+      const iconBefore = screen.getByTestId('icon-before');
+      await userEvent.click(iconBefore);
+      expect(func).toHaveBeenCalled();
+    });
+    it('onIconBeforeKeyDown is triggered', async () => {
+      const func = jest.fn();
+      render(
+        <TestChip iconBefore={Close} onIconBeforeClick={func} />,
+      );
+      const iconBefore = screen.getByTestId('icon-before');
+      await userEvent.type(iconBefore, '{enter}');
+      expect(func).toHaveBeenCalled();
+    });
   });
 });

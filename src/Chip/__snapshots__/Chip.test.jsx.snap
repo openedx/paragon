@@ -3,6 +3,10 @@
 exports[`<Chip /> snapshots renders with props iconAfter 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
+  onClick={[Function]}
+  onKeyPress={[Function]}
+  role="button"
+  tabIndex={0}
 >
   <div
     className="pgn__chip__label p-after"
@@ -11,9 +15,6 @@ exports[`<Chip /> snapshots renders with props iconAfter 1`] = `
   </div>
   <div
     className="pgn__chip__icon-after"
-    data-testid="icon-after"
-    role="button"
-    tabIndex={0}
   >
     <span
       className="pgn__icon"
@@ -41,6 +42,10 @@ exports[`<Chip /> snapshots renders with props iconAfter 1`] = `
 exports[`<Chip /> snapshots renders with props iconBefore 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
+  onClick={[Function]}
+  onKeyPress={[Function]}
+  role="button"
+  tabIndex={0}
 >
   <div
     className="pgn__chip__icon-before"
@@ -76,6 +81,10 @@ exports[`<Chip /> snapshots renders with props iconBefore 1`] = `
 exports[`<Chip /> snapshots renders with props iconBefore and iconAfter 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
+  onClick={[Function]}
+  onKeyPress={[Function]}
+  role="button"
+  tabIndex={0}
 >
   <div
     className="pgn__chip__icon-before"
@@ -107,9 +116,6 @@ exports[`<Chip /> snapshots renders with props iconBefore and iconAfter 1`] = `
   </div>
   <div
     className="pgn__chip__icon-after"
-    data-testid="icon-after"
-    role="button"
-    tabIndex={0}
   >
     <span
       className="pgn__icon"
@@ -137,6 +143,10 @@ exports[`<Chip /> snapshots renders with props iconBefore and iconAfter 1`] = `
 exports[`<Chip /> snapshots renders without props 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
+  onClick={[Function]}
+  onKeyPress={[Function]}
+  role="button"
+  tabIndex={0}
 >
   <div
     className="pgn__chip__label"

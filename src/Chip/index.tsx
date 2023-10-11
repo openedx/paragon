@@ -1,8 +1,12 @@
-import React, { ForwardedRef, KeyboardEventHandler, MouseEventHandler } from 'react';
+import React, {
+  ForwardedRef, KeyboardEventHandler, MouseEventHandler, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // @ts-ignore
 import Icon from '../Icon';
+// @ts-ignore
+import IconButton from '../IconButton';
 
 const STYLE_VARIANTS = [
   'light',
@@ -32,46 +36,73 @@ const Chip = React.forwardRef(({
   onIconAfterClick,
   disabled,
   ...props
-}: IChip, ref: ForwardedRef<HTMLDivElement>) => (
-  <div
-    className={classNames(
-      CHIP_PGN_CLASS,
-      `pgn__chip-${variant}`,
-      className,
-      { disabled },
-    )}
-    ref={ref}
-    {...props}
-  >
-    {iconBefore && (
-      <div
-        className={classNames('pgn__chip__icon-before')}
-      >
-        <Icon src={iconBefore} />
-      </div>
-    )}
+}: IChip, ref: ForwardedRef<HTMLDivElement>) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleClick = () => {
+    setIsSelected(!isSelected);
+  };
+
+  return (
     <div
-      className={classNames('pgn__chip__label', {
-        'p-before': iconBefore,
-        'p-after': iconAfter,
-      })}
+      tabIndex={0}
+      role="button"
+      onClick={handleClick}
+      onKeyPress={handleClick}
+      className={classNames(
+        CHIP_PGN_CLASS,
+        `pgn__chip-${variant}`,
+        className,
+        { disabled, selected: isSelected },
+      )}
+      ref={ref}
+      {...props}
     >
-      {children}
-    </div>
-    {iconAfter && (
+      {iconBefore && (
+        <div className={classNames('pgn__chip__icon-before', { active: onIconBeforeClick })}>
+          {onIconBeforeClick ? (
+            <IconButton
+              src={iconBefore}
+              onClick={onIconBeforeClick}
+              onKeyPress={onIconBeforeClick}
+              iconAs={Icon}
+              alt="Chip icon before"
+              invertColors
+              data-testid="icon-before"
+            />
+          ) : (
+            <Icon src={iconBefore} />
+          )}
+        </div>
+      )}
       <div
-        className={classNames('pgn__chip__icon-after', { active: onIconAfterClick })}
-        role="button"
-        onClick={onIconAfterClick}
-        onKeyPress={onIconAfterClick}
-        tabIndex={disabled ? -1 : 0}
-        data-testid="icon-after"
+        className={classNames('pgn__chip__label', {
+          'p-before': iconBefore,
+          'p-after': iconAfter,
+        })}
       >
-        <Icon src={iconAfter} />
+        {children}
       </div>
-    )}
-  </div>
-));
+      {iconAfter && (
+        <div className={classNames('pgn__chip__icon-after', { active: onIconAfterClick })}>
+          {onIconAfterClick ? (
+            <IconButton
+              onClick={onIconAfterClick}
+              onKeyPress={onIconAfterClick}
+              src={iconAfter}
+              iconAs={Icon}
+              alt="Chip icon after"
+              invertColors
+              data-testid="icon-after"
+            />
+          ) : (
+            <Icon src={iconAfter} />
+          )}
+        </div>
+      )}
+    </div>
+  );
+});
 
 Chip.propTypes = {
   /** Specifies the content of the `Chip`. */
