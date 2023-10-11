@@ -85,6 +85,33 @@ describe('render behavior', () => {
 
     expect(formControlFeedback).toBeInTheDocument();
   });
+
+  it('renders component with options that all have IDs', () => {
+    const { getByTestId, getAllByTestId } = render(<FormAutosuggestTestComponent />);
+    const input = getByTestId('autosuggest-textbox-input');
+
+    userEvent.click(input);
+    const optionItemIds = getAllByTestId('autosuggest-optionitem').map(item => item.id);
+
+    expect(optionItemIds).not.toContain(null);
+    expect(optionItemIds).not.toContain(undefined);
+  });
+
+  it('confirms that the value of the aria-live attribute on the wrapper component is assertive', () => {
+    const { getByTestId } = render(<FormAutosuggestWrapper />);
+
+    expect(getByTestId('autosuggest-screen-reader-options-count').getAttribute('aria-live')).toEqual('assertive');
+  });
+
+  it('displays correct amount of options found to screen readers', () => {
+    const { getByText, getByTestId } = render(<FormAutosuggestTestComponent />);
+    const input = getByTestId('autosuggest-textbox-input');
+
+    expect(getByText('0 options found')).toBeInTheDocument();
+    userEvent.click(input);
+
+    expect(getByText('3 options found')).toBeInTheDocument();
+  });
 });
 
 describe('controlled behavior', () => {
@@ -134,6 +161,17 @@ describe('controlled behavior', () => {
     userEvent.click(menuItem);
 
     expect(onClick).toHaveBeenCalledTimes(0);
+  });
+
+  it('should set the correct activedescendant', () => {
+    const { getByTestId, getAllByTestId } = render(<FormAutosuggestTestComponent />);
+    const input = getByTestId('autosuggest-textbox-input');
+
+    userEvent.click(input);
+    const expectedOptionId = getAllByTestId('autosuggest-optionitem')[0].id;
+    userEvent.keyboard('{arrowdown}');
+
+    expect(input.getAttribute('aria-activedescendant')).toEqual(expectedOptionId);
   });
 
   it('filters dropdown based on typed field value with one match', () => {
@@ -186,5 +224,20 @@ describe('controlled behavior', () => {
     userEvent.click(document.body);
     const updatedList = queryAllByTestId('autosuggest-optionitem');
     expect(updatedList.length).toBe(0);
+  });
+
+  it('updates screen reader option count based on typed field value with multiple matches', () => {
+    const { getByText, getByTestId } = render(<FormAutosuggestTestComponent />);
+    const input = getByTestId('autosuggest-textbox-input');
+
+    expect(getByText('0 options found')).toBeInTheDocument();
+    userEvent.click(input);
+
+    expect(getByText('3 options found')).toBeInTheDocument();
+
+    userEvent.click(input);
+    userEvent.type(input, '1');
+
+    expect(getByText('2 options found')).toBeInTheDocument();
   });
 });
