@@ -97,7 +97,6 @@ const FormAutosuggest = forwardRef(
           onClick: (e) => handleItemSelect(e, onClick),
           id: menuItemId,
           onFocus: () => handleMenuItemFocus(menuItemId),
-        });
       });
 
       if (strToFind.length > 0) {
