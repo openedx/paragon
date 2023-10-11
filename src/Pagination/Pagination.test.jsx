@@ -4,13 +4,20 @@ import renderer from 'react-test-renderer';
 import {
   render,
   act,
-  fireEvent,
   screen,
 } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import breakpoints from '../utils/breakpoints';
-import Pagination from './index';
-import { PAGINATION_VARIANTS, ELLIPSIS } from './constants';
+import Pagination from '.';
+import {
+  PAGINATION_VARIANTS,
+  ELLIPSIS,
+  PAGINATION_BUTTON_LABEL_CURRENT_PAGE,
+  PAGINATION_BUTTON_LABEL_NEXT,
+  PAGINATION_BUTTON_LABEL_PREV,
+  PAGINATION_BUTTON_LABEL_PAGE,
+} from './constants';
 
 const baseProps = {
   currentPage: 1,
@@ -50,7 +57,7 @@ describe('<Pagination />', () => {
 
   it('correctly handles initial page prop', () => {
     render(<Pagination {...baseProps} currentPage={undefined} initialPage={3} />);
-    expect(screen.getByLabelText(/current page/i)).toHaveTextContent('3');
+    expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('3');
   });
 
   it('renders ellipsis if there are too many pages', () => {
@@ -61,41 +68,41 @@ describe('<Pagination />', () => {
   describe('handles controlled and uncontrolled behaviour properly', () => {
     it('does not internally change page on page click if currentPage is provided', () => {
       render(<Pagination {...baseProps} />);
-      expect(screen.getByLabelText(/current page/i)).toHaveTextContent('1');
+      expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
 
-      fireEvent.click(screen.getByText('Next'));
-      expect(screen.getByLabelText(/current page/i)).toHaveTextContent('1');
+      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT));
+      expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
 
-      fireEvent.click(screen.getByRole('button', { name: 'Page 3' }));
-      expect(screen.getByLabelText(/current page/i)).toHaveTextContent('1');
+      userEvent.click(screen.getByRole('button', { name: `${PAGINATION_BUTTON_LABEL_PAGE} 3` }));
+      expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
     });
 
     it('controls page selection internally if currentPage is not provided', () => {
       render(<Pagination {...baseProps} currentPage={undefined} />);
-      expect(screen.getByLabelText(/current page/i)).toHaveTextContent('1');
+      expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
 
-      fireEvent.click(screen.getByText('Next'));
-      expect(screen.getByLabelText(/current page/i)).toHaveTextContent('2');
+      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT));
+      expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('2');
 
-      fireEvent.click(screen.getByRole('button', { name: 'Page 3' }));
-      expect(screen.getByLabelText(/current page/i)).toHaveTextContent('3');
+      userEvent.click(screen.getByRole('button', { name: `${PAGINATION_BUTTON_LABEL_PAGE} 3` }));
+      expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('3');
 
-      fireEvent.click(screen.getByText('Previous'));
-      expect(screen.getByLabelText(/current page/i)).toHaveTextContent('2');
+      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_PREV));
+      expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('2');
     });
 
     it('does not chang page if you click "next" button while on last page', () => {
       render(<Pagination {...baseProps} currentPage={undefined} initialPage={5} />);
-      expect(screen.getByLabelText(/current page/i)).toHaveTextContent('5');
-      fireEvent.click(screen.getByText('Next'));
-      expect(screen.getByLabelText(/current page/i)).toHaveTextContent('5');
+      expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('5');
+      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT));
+      expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('5');
     });
 
     it('does not chang page if you click "previous" button while on first page', () => {
       render(<Pagination {...baseProps} currentPage={undefined} initialPage={1} />);
-      expect(screen.getByLabelText(/current page/i)).toHaveTextContent('1');
-      fireEvent.click(screen.getByText('Previous'));
-      expect(screen.getByLabelText(/current page/i)).toHaveTextContent('1');
+      expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
+      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_PREV));
+      expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
     });
   });
 
@@ -110,8 +117,8 @@ describe('<Pagination />', () => {
         },
       };
       render(<Pagination {...props} />);
-      fireEvent.click(screen.getByText('Previous'));
-      expect(screen.getByText('Next')).toHaveFocus();
+      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_PREV));
+      expect(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT)).toHaveFocus();
     });
 
     it('should change focus to previous button if next page is last page', () => {
@@ -124,8 +131,8 @@ describe('<Pagination />', () => {
         },
       };
       render(<Pagination {...props} />);
-      fireEvent.click(screen.getByText('Next'));
-      expect(screen.getByText('Previous')).toHaveFocus();
+      userEvent.click(screen.getByText(props.buttonLabel.next));
+      expect(screen.getByText(props.buttonLabel.previous)).toHaveFocus();
     });
   });
 
@@ -148,7 +155,8 @@ describe('<Pagination />', () => {
           </ResponsiveContext.Provider>
         ));
 
-        expect(screen.queryAllByRole('button', { name: /^Page/ })).toHaveLength(5);
+        const buttonsAriaLabel = new RegExp(`^${PAGINATION_BUTTON_LABEL_PAGE}`);
+        expect(screen.queryAllByRole('button', { name: buttonsAriaLabel })).toHaveLength(5);
       });
 
       it('should show page of count text instead of pag buttons on mobile', () => {
@@ -176,7 +184,8 @@ describe('<Pagination />', () => {
         ));
 
         const pageOfCountLabel = `${buttonLabels.page} ${currentPage}, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} ${pageCount}`;
-        expect(screen.queryAllByRole('button', { name: /^Page/ })).toHaveLength(0);
+        const buttonsAriaLabel = new RegExp(`^${PAGINATION_BUTTON_LABEL_PAGE}`);
+        expect(screen.queryAllByRole('button', { name: buttonsAriaLabel })).toHaveLength(0);
         expect(screen.queryByLabelText(pageOfCountLabel)).toBeInTheDocument();
       });
     });
@@ -194,7 +203,7 @@ describe('<Pagination />', () => {
           </ResponsiveContext.Provider>
         ));
 
-        fireEvent.click(screen.getByLabelText(/current page/i));
+        userEvent.click(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false }));
         expect(spy).toHaveBeenCalledTimes(0);
       });
 
@@ -210,10 +219,10 @@ describe('<Pagination />', () => {
           </ResponsiveContext.Provider>
         ));
 
-        fireEvent.click(screen.getByLabelText('Page 2'));
+        userEvent.click(screen.getByLabelText(`${PAGINATION_BUTTON_LABEL_PAGE} 2`));
         expect(spy).toHaveBeenCalledTimes(1);
 
-        fireEvent.click(screen.getByLabelText('Page 3'));
+        userEvent.click(screen.getByLabelText(`${PAGINATION_BUTTON_LABEL_PAGE} 3`));
         expect(spy).toHaveBeenCalledTimes(2);
       });
     });
@@ -228,7 +237,8 @@ describe('<Pagination />', () => {
         currentPage: 3,
       };
       render(<Pagination {...props} />);
-      fireEvent.click(screen.getByRole('button', { name: 'Previous, Page 2' }));
+      const expectedPrevButtonAriaLabel = `${PAGINATION_BUTTON_LABEL_PREV}, ${PAGINATION_BUTTON_LABEL_PAGE} 2`;
+      userEvent.click(screen.getByRole('button', { name: expectedPrevButtonAriaLabel }));
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
@@ -239,7 +249,8 @@ describe('<Pagination />', () => {
         onPageSelect: spy,
       };
       render(<Pagination {...props} />);
-      fireEvent.click(screen.getByRole('button', { name: 'Next, Page 2' }));
+      const expectedNextButtonAriaLabel = `${PAGINATION_BUTTON_LABEL_NEXT}, ${PAGINATION_BUTTON_LABEL_PAGE} 2`;
+      userEvent.click(screen.getByRole('button', { name: expectedNextButtonAriaLabel }));
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
@@ -312,7 +323,7 @@ describe('<Pagination />', () => {
       const dropdownLabel = `${baseProps.currentPage} de ${baseProps.pageCount}`;
 
       await act(async () => {
-        fireEvent.click(screen.getByRole('button', { name: dropdownLabel }));
+        userEvent.click(screen.getByRole('button', { name: dropdownLabel }));
       });
       expect(screen.queryAllByRole('button', { name: /^\d+$/ }).length).toEqual(baseProps.pageCount);
     });
@@ -326,16 +337,20 @@ describe('<Pagination />', () => {
       'renders chevrons and buttons disabled when pageCount is 1 || 0 for %s variant',
       (variant) => {
         const { rerender } = render(<Pagination {...baseProps} variant={variant} pageCount={0} />);
-        expect(screen.getByRole('button', { name: /next/i })).toBeDisabled();
-        expect(screen.getByRole('button', { name: /previous/i })).toBeDisabled();
+
+        const nextButtonLabel = new RegExp(PAGINATION_BUTTON_LABEL_NEXT, 'i');
+        const prevButtonLabel = new RegExp(PAGINATION_BUTTON_LABEL_PREV, 'i');
+
+        expect(screen.getByRole('button', { name: nextButtonLabel })).toBeDisabled();
+        expect(screen.getByRole('button', { name: prevButtonLabel })).toBeDisabled();
 
         rerender(<Pagination {...baseProps} variant={variant} pageCount={1} />);
-        expect(screen.getByRole('button', { name: /next/i })).toBeDisabled();
-        expect(screen.getByRole('button', { name: /previous/i })).toBeDisabled();
+        expect(screen.getByRole('button', { name: nextButtonLabel })).toBeDisabled();
+        expect(screen.getByRole('button', { name: prevButtonLabel })).toBeDisabled();
 
         rerender(<Pagination {...baseProps} variant={variant} pageCount={2} />);
-        expect(screen.getByRole('button', { name: /next/i })).not.toBeDisabled();
-        expect(screen.getByRole('button', { name: /previous/i })).toBeDisabled();
+        expect(screen.getByRole('button', { name: nextButtonLabel })).not.toBeDisabled();
+        expect(screen.getByRole('button', { name: prevButtonLabel })).toBeDisabled();
       },
     );
   });

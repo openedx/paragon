@@ -178,7 +178,7 @@ PaginationContextProvider.propTypes = {
     leftIcon: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
     rightIcon: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   }).isRequired,
-  variant: PropTypes.oneOf(['default', 'secondary', 'reduced', 'minimal']).isRequired,
+  variant: PropTypes.oneOf(Object.values(PAGINATION_VARIANTS)).isRequired,
   invertColors: PropTypes.bool.isRequired,
   initialPage: PropTypes.number.isRequired,
 };
