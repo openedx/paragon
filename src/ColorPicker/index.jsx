@@ -10,6 +10,8 @@ import { OverlayTrigger } from '../Overlay';
 import Tooltip from '../Tooltip';
 import useToggle from '../hooks/useToggle';
 
+const DEFAULT_COLOR = '#fefefe';
+
 function ColorPicker({
   color, setColor, className, size,
 }) {
@@ -65,7 +67,7 @@ function ColorPicker({
           className="pgn__color-modal rounded shadow"
           style={{ textAlign: 'start' }}
         >
-          <HexColorPicker color={color || ''} onChange={setColor} />
+          <HexColorPicker color={hexValid ? color : DEFAULT_COLOR} onChange={setColor} />
           <Form.Group className="pgn__hex-form" size="sm">
             <div>
               <Form.Label className="pgn__hex-label">Hex</Form.Label>
