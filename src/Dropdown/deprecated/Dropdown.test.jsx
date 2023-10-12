@@ -1,6 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
+import userEvent from '@testing-library/user-event';
 
 import Dropdown from './index';
 import Icon from '../../Icon';
@@ -19,9 +20,8 @@ const menuContent = (
 );
 
 const menuOpen = (isOpen, wrapper) => {
-  expect(wrapper.find('.dropdown').hasClass('show')).toEqual(isOpen);
-  expect(wrapper.find('button').prop('aria-expanded')).toEqual(isOpen);
-  expect(wrapper.find('[aria-hidden=false]').exists()).toEqual(isOpen);
+  expect(wrapper.container.querySelector('.dropdown').classList.contains('show')).toBe(isOpen);
+  expect(wrapper.getByRole('button', { name: 'Search Engines' })).toHaveAttribute('aria-expanded', isOpen ? 'true' : 'false');
 };
 
 describe('<Dropdown />', () => {
@@ -55,160 +55,184 @@ describe('<Dropdown />', () => {
   });
 
   describe('Mouse Interactions', () => {
-    const app = document.createElement('div');
-    document.body.appendChild(app);
+    let wrapper;
 
-    const wrapper = mount(<Dropdown>{menuContent}</Dropdown>, { attachTo: app });
-    const menuTrigger = wrapper.find('button');
-    const menuContainer = wrapper.find('.dropdown-menu');
-    const menuItems = wrapper.find('.dropdown-menu a');
+    beforeEach(() => {
+      wrapper = render(<Dropdown>{menuContent}</Dropdown>);
+    });
 
-    it('opens on trigger click', () => {
-      menuTrigger.simulate('click'); // Open
+    it('opens on trigger click', async () => {
+      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
       menuOpen(true, wrapper);
     });
 
-    it('should focus on the first item after opening', () => {
-      expect(menuItems.first().is(':focus')).toBe(true);
+    it('should focus on the first item after opening', async () => {
+      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
+      expect(wrapper.getByText('Google')).toHaveFocus();
     });
 
-    it('does not close on click inside the menu', () => {
-      menuContainer.simulate('click'); // Do nothing
+    it('does not close on click inside the menu', async () => {
+      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
+      await userEvent.click(wrapper.getByText('Google')); // Do nothing
       menuOpen(true, wrapper);
     });
 
-    it('closes on trigger click', () => {
-      menuTrigger.simulate('click'); // Close
+    it('closes on trigger click', async () => {
+      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
+      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' })); // Close
       menuOpen(false, wrapper);
     });
 
-    it('should focus on the trigger button after closing', () => {
-      expect(menuTrigger.is(':focus')).toBe(true);
+    it('should focus on the trigger button after closing', async () => {
+      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
+      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' })); // Close
+      expect(wrapper.getByRole('button', { name: 'Search Engines' })).toHaveFocus();
     });
 
-    it('closes on document click when open', () => {
-      menuTrigger.simulate('click'); // Open
+    it('closes on document click when open', async () => {
+      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
       menuOpen(true, wrapper);
       document.dispatchEvent(new MouseEvent('click'));
-      wrapper.update(); // Let react re-render
       menuOpen(false, wrapper);
     });
   });
 
   describe('Keyboard Interactions', () => {
-    // Note: menuContent has three items
-    const app = document.createElement('div');
-    document.body.appendChild(app);
+    let wrapper;
 
-    const wrapper = mount(<Dropdown>{menuContent}</Dropdown>, { attachTo: app });
-    const menuTrigger = wrapper.find('button');
-    const menuContainer = wrapper.find('.dropdown-menu');
-    const menuItems = wrapper.find('.dropdown-menu a');
+    beforeEach(() => {
+      wrapper = render(<Dropdown>{menuContent}</Dropdown>);
+    });
 
-    it('opens on click', () => {
-      menuTrigger.simulate('click'); // Open
+    it('opens on Enter keyDown', async () => {
+      wrapper.getByRole('button', { name: 'Search Engines' }).focus();
+      await userEvent.keyboard('{Enter}');
       menuOpen(true, wrapper);
     });
 
-    it('should focus on the first item after opening', () => {
-      expect(menuItems.first().is(':focus')).toBe(true);
+    it('opens on Space keyDown', async () => {
+      wrapper.getByRole('button', { name: 'Search Engines' }).focus();
+      await userEvent.keyboard('{space}');
+      menuOpen(true, wrapper);
     });
 
-    it('should focus the next item after ArrowDown keyDown', () => {
-      menuContainer.simulate('keyDown', { key: 'ArrowDown' });
-      expect(menuItems.at(1).is(':focus')).toBe(true);
+    it('should focus on the first item after opening', async () => {
+      wrapper.getByRole('button', { name: 'Search Engines' }).focus();
+      await userEvent.keyboard('{Enter}');
+      expect(wrapper.getByText('Google')).toHaveFocus();
     });
 
-    it('should focus the next item after Tab keyDown', () => {
-      menuContainer.simulate('keyDown', { key: 'Tab' });
-      expect(menuItems.at(2).is(':focus')).toBe(true);
+    it('should focus the next item after ArrowDown keyDown', async () => {
+      wrapper.getByRole('button', { name: 'Search Engines' }).focus();
+      await userEvent.keyboard('{Enter}');
+      await userEvent.keyboard('{arrowdown}');
+      expect(wrapper.getByText('DuckDuckGo')).toHaveFocus();
     });
 
-    it('should loop focus to the first item after Tab keyDown on last item', () => {
-      menuContainer.simulate('keyDown', { key: 'Tab' });
-      expect(menuItems.at(0).is(':focus')).toBe(true);
+    it('should focus the next item after Tab keyDown', async () => {
+      wrapper.getByRole('button', { name: 'Search Engines' }).focus();
+      await userEvent.keyboard('{Enter}');
+      await userEvent.tab();
+      expect(wrapper.getByText('DuckDuckGo')).toHaveFocus();
     });
 
-    it('should loop focus to the last item after ArrowUp keyDown on first item', () => {
-      menuContainer.simulate('keyDown', { key: 'ArrowUp' });
-      expect(menuItems.at(2).is(':focus')).toBe(true);
+    it('should loop focus to the first item after Tab keyDown on last item', async () => {
+      wrapper.getByRole('button', { name: 'Search Engines' }).focus();
+      await userEvent.keyboard('{Enter}');
+      wrapper.getByRole('link', { name: 'Yahoo' }).focus();
+      await userEvent.tab();
+      expect(wrapper.getByText('Google')).toHaveFocus();
     });
 
-    it('should focus the previous item after Shift + Tab keyDown', () => {
-      menuContainer.simulate('keyDown', { key: 'Tab', shiftKey: true });
-      expect(menuItems.at(1).is(':focus')).toBe(true);
+    it('should loop focus to the last item after ArrowUp keyDown on first item', async () => {
+      wrapper.getByRole('button', { name: 'Search Engines' }).focus();
+      await userEvent.keyboard('{Enter}');
+      wrapper.getByRole('link', { name: 'Google' }).focus();
+      await userEvent.keyboard('{arrowup}');
+      expect(wrapper.getByText('Yahoo')).toHaveFocus();
     });
 
-    it('should close the menu on Escape keyDown', () => {
-      menuContainer.simulate('keyDown', { key: 'Escape' });
+    it('should focus the previous item after Shift + Tab keyDown', async () => {
+      wrapper.getByRole('button', { name: 'Search Engines' }).focus();
+      await userEvent.keyboard('{Enter}');
+      wrapper.getByRole('link', { name: 'Yahoo' }).focus();
+      await userEvent.keyboard('{Shift>}{Tab}');
+      expect(wrapper.getByText('DuckDuckGo')).toHaveFocus();
+    });
+
+    it('should close the menu on Escape keyDown', async () => {
+      wrapper.getByRole('button', { name: 'Search Engines' }).focus();
+      await userEvent.keyboard('{Enter}');
+      await userEvent.keyboard('{escape}');
       menuOpen(false, wrapper);
     });
 
-    it('should focus on the trigger button after closing', () => {
-      expect(menuTrigger.is(':focus')).toBe(true);
+    it('should focus on the trigger button after closing', async () => {
+      wrapper.getByRole('button', { name: 'Search Engines' }).focus();
+      await userEvent.keyboard('{Enter}');
+      await userEvent.keyboard('{escape}');
+      expect(wrapper.getByRole('button', { name: 'Search Engines' })).toHaveFocus();
     });
   });
 
-  describe('Backwards compatibility', () => {
-    it('renders the basic usage', () => {
-      const tree = renderer.create((
-        <Dropdown
-          title="Search Engines"
-          menuItems={[
-            {
-              label: 'Google',
-              href: 'https://google.com',
-            },
-            {
-              label: 'DuckDuckGo',
-              href: 'https://duckduckgo.com',
-            },
-            {
-              label: 'Yahoo',
-              href: 'https://yahoo.com',
-            },
-          ]}
-        />
-      )).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
+  it('renders the basic usage', () => {
+    const tree = renderer.create((
+      <Dropdown
+        title="Search Engines"
+        menuItems={[
+          {
+            label: 'Google',
+            href: 'https://google.com',
+          },
+          {
+            label: 'DuckDuckGo',
+            href: 'https://duckduckgo.com',
+          },
+          {
+            label: 'Yahoo',
+            href: 'https://yahoo.com',
+          },
+        ]}
+      />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-    it('renders menu items as elements', () => {
-      const tree = renderer.create((
-        <Dropdown
-          title="Search Engines"
-          menuItems={[
-            <a href="http://www.google.com">Google</a>,
-            <a href="http://www.duckduckgo.com">DuckDuckGo</a>,
-            <a href="http://www.yahoo.com">Yahoo</a>,
-          ]}
-        />
-      )).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
+  it('renders menu items as elements', () => {
+    const tree = renderer.create((
+      <Dropdown
+        title="Search Engines"
+        menuItems={[
+          <a href="http://www.google.com">Google</a>,
+          <a href="http://www.duckduckgo.com">DuckDuckGo</a>,
+          <a href="http://www.yahoo.com">Yahoo</a>,
+        ]}
+      />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-    it('renders with icon element', () => {
-      const tree = renderer.create((
-        <Dropdown
-          title="Search Engines"
-          iconElement={<Icon className="fa fa-user px-3" />}
-          menuItems={[
-            {
-              label: 'Google',
-              href: 'https://google.com',
-            },
-            {
-              label: 'DuckDuckGo',
-              href: 'https://duckduckgo.com',
-            },
-            {
-              label: 'Yahoo',
-              href: 'https://yahoo.com',
-            },
-          ]}
-        />
-      )).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
+  it('renders with icon element', () => {
+    const tree = renderer.create((
+      <Dropdown
+        title="Search Engines"
+        iconElement={<Icon className="fa fa-user px-3" />}
+        menuItems={[
+          {
+            label: 'Google',
+            href: 'https://google.com',
+          },
+          {
+            label: 'DuckDuckGo',
+            href: 'https://duckduckgo.com',
+          },
+          {
+            label: 'Yahoo',
+            href: 'https://yahoo.com',
+          },
+        ]}
+      />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

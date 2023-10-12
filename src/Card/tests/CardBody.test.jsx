@@ -1,7 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-
 import CardBody from '../CardBody';
 import Card from '..';
 
@@ -14,19 +13,21 @@ describe('correct rendering', () => {
   });
 
   it('renders correct base className', () => {
-    const body = mount(<CardBody />).find('div');
-
-    expect(body.hasClass('pgn__card-body')).toBe(true);
+    render(<CardBody data-testid="card-body" />);
+    const body = screen.getByTestId('card-body');
+    expect(body.classList.contains('pgn__card-body')).toBe(true);
   });
 
   it('renders correct variant', () => {
-    const wrapper = mount(<Card variant="dark" />).find('div');
-    expect(wrapper.hasClass('pgn__card-dark')).toBe(true);
+    render(<Card variant="dark" data-testid="card" />);
+    const wrapper = screen.getByTestId('card');
+    expect(wrapper.classList.contains('pgn__card-dark')).toBe(true);
   });
 
   it('renders body with custom className', () => {
     const className = 'my-class-name';
-    const body = mount(<CardBody className={className} />).find('div');
-    expect(body.hasClass('my-class-name')).toBe(true);
+    render(<CardBody className={className} data-testid="card-body" />);
+    const body = screen.getByTestId('card-body');
+    expect(body.classList.contains(className)).toBe(true);
   });
 });

@@ -1,5 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Spinner should render a spinner 1`] = `"<div class=\\"pgn__spinner spinner-border\\"></div>"`;
+exports[`Spinner should render a spinner 1`] = `
+<div
+  className="pgn__spinner spinner-border"
+/>
+`;
 
-exports[`Spinner should render a spinner with screen reader text 1`] = `"<div role=\\"status\\" class=\\"pgn__spinner spinner-border\\"><span class=\\"sr-only\\">loading</span></div>"`;
+exports[`Spinner should render a spinner with screen reader text 1`] = `
+<div
+  className="pgn__spinner spinner-border"
+  role="status"
+>
+  <span
+    className="sr-only"
+  >
+    loading
+  </span>
+</div>
+`;

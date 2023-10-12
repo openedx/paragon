@@ -56,7 +56,7 @@ function ProgressBarAnnotated({
   }, [positionAnnotations]);
 
   const getHint = (text) => (
-    <span className="pgn__progress-hint">
+    <span className="pgn__progress-hint" data-testid="progress-hint">
       {text}
     </span>
   );

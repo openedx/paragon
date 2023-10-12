@@ -57,11 +57,13 @@ function BaseSelectionStatus({
   const intlSelectedText = selectedText || defaultSelectedText;
 
   return (
-    <div className={className}>
-      <span>{isAllRowsSelected ? intlAllSelectedText : intlSelectedText}</span>
+    <div className={className} data-testid="selection-status-component">
+      <span data-testid="selection-status">
+        {isAllRowsSelected ? intlAllSelectedText : intlSelectedText}
+      </span>
       {!isAllRowsSelected && !hasMaxSelectedRows && (
         <Button
-          className={SELECT_ALL_TEST_ID}
+          data-testid={SELECT_ALL_TEST_ID}
           variant="link"
           size="inline"
           onClick={onSelectAll}
@@ -78,7 +80,7 @@ function BaseSelectionStatus({
       )}
       {numSelectedRows > 0 && (
         <Button
-          className={CLEAR_SELECTION_TEST_ID}
+          data-testid={CLEAR_SELECTION_TEST_ID}
           variant="link"
           size="inline"
           onClick={onClear}

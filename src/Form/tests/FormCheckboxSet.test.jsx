@@ -1,108 +1,116 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import FormGroup from '../FormGroup';
 import FormCheckboxSet from '../FormCheckboxSet';
 import FormCheckbox from '../FormCheckbox';
 import FormLabel from '../FormLabel';
 
+function renderFormCheckbox() {
+  const handleChange = jest.fn();
+  const value = ['green'];
+  return render(
+    <FormGroup controlId="my-field">
+      <FormLabel>Which color?</FormLabel>
+      <FormCheckboxSet
+        name="colors"
+        onChange={handleChange}
+        value={value}
+      >
+        <FormCheckbox value="red">Red</FormCheckbox>
+        <FormCheckbox value="green">Green</FormCheckbox>
+        <FormCheckbox value="blue" description="Blue description">Blue</FormCheckbox>
+        <FormCheckbox value="cyan" disabled>Cyan</FormCheckbox>
+      </FormCheckboxSet>
+    </FormGroup>,
+  );
+}
+
+const setValue = jest.fn();
+function renderFormWithoutLabel() {
+  return render(
+    <FormCheckboxSet
+      value={['red']}
+      name="colors"
+      onChange={(e) => {
+        setValue(e.target.value);
+      }}
+    >
+      <FormCheckbox value="red">red</FormCheckbox>
+      <FormCheckbox value="green">green</FormCheckbox>
+      <FormCheckbox value="blue">blue</FormCheckbox>
+    </FormCheckboxSet>,
+  );
+}
+
+const onChange = jest.fn();
+const onBlur = jest.fn();
+const onFocus = jest.fn();
+
+function renderFormWithHandlers() {
+  return render(
+    <FormCheckboxSet
+      value={['red']}
+      name="colors"
+      onBlur={onBlur}
+      onFocus={onFocus}
+      onChange={onChange}
+    >
+      <FormCheckbox value="red">red</FormCheckbox>
+      <FormCheckbox value="green">green</FormCheckbox>
+      <FormCheckbox value="blue">blue</FormCheckbox>
+    </FormCheckboxSet>,
+  );
+}
+
 describe('FormCheckboxSet', () => {
   describe('associate element ids and attributes', () => {
-    const handleChange = jest.fn();
-    const value = ['green'];
-    const wrapper = mount((
-      <FormGroup controlId="my-field">
-        <FormLabel>Which color?</FormLabel>
-        <FormCheckboxSet
-          name="colors"
-          onChange={handleChange}
-          value={value}
-        >
-          <FormCheckbox value="red">Red</FormCheckbox>
-          <FormCheckbox value="green">Green</FormCheckbox>
-          <FormCheckbox value="blue" description="Blue description">Blue</FormCheckbox>
-          <FormCheckbox value="cyan" disabled>Cyan</FormCheckbox>
-        </FormCheckboxSet>
-      </FormGroup>
-    ));
-
     it('has a group div with the proper id', () => {
-      expect(wrapper.exists('div[role="group"]')).toBe(true);
-      const groupNode = wrapper.find('div[role="group"]').first();
-      expect(groupNode.props().id).toEqual('my-field');
+      renderFormCheckbox();
+      const groupNode = screen.getByRole('group');
+      expect(groupNode).toBeInTheDocument();
+      expect(groupNode.getAttribute('id')).toEqual('my-field');
     });
 
-    it('has an element labelling the group', () => {
-      expect(wrapper.exists('FormLabel')).toBe(true);
-      const labelNode = wrapper.find('FormLabel').first().childAt(0);
-      const labelNodeId = labelNode.props().id;
-      expect(labelNode.props().id).toBeTruthy();
-      const groupNode = wrapper.find('div[role="group"]').first();
-      expect(groupNode.props()['aria-labelledby']).toContain(labelNodeId);
+    it('has an element labeling the group', () => {
+      renderFormCheckbox();
+      const labelNode = screen.getByLabelText('Which color?');
+      expect(labelNode).toBeInTheDocument();
+      const groupNode = screen.getByRole('group');
+      expect(groupNode.getAttribute('aria-labelledby')).toContain(labelNode.getAttribute('id'));
     });
 
     it('has a description for a checkbox value', () => {
-      expect(wrapper.exists({ children: 'Blue description' })).toBe(true);
-      const checkboxNode = wrapper.find('input[value="blue"]').first();
-      const describerIds = checkboxNode.props()['aria-describedby'];
-      expect(describerIds).toBeTruthy();
-      expect(wrapper.exists(`#${describerIds}`)).toBe(true);
-      const descriptionNode = wrapper.find(`#${describerIds}`).first();
-      const descriptionNodeContent = descriptionNode.props().children;
-      expect(descriptionNodeContent).toBe('Blue description');
+      renderFormCheckbox();
+      const describerIds = screen.getByDisplayValue('blue');
+      expect(describerIds).toBeInTheDocument();
+      expect(describerIds.getAttribute('aria-describedby')).toBeTruthy();
+      const descriptionNode = screen.getByText('Blue description');
+      expect(descriptionNode.textContent).toBe('Blue description');
     });
   });
 
   describe('controlled behavior', () => {
-    const setValue = jest.fn();
-    const wrapper = mount((
-      <FormCheckboxSet
-        value={['red']}
-        name="colors"
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-      >
-        <FormCheckbox value="red">red</FormCheckbox>
-        <FormCheckbox value="green">green</FormCheckbox>
-        <FormCheckbox value="blue">blue</FormCheckbox>
-      </FormCheckboxSet>
-    ));
-
     it('checks the right checkbox button', () => {
-      const checkboxNode = wrapper.find('input[value="red"]').first();
-      expect(checkboxNode.props().checked).toBe(true);
+      renderFormWithoutLabel();
+      const checkboxNode = screen.getByDisplayValue('red');
+      expect(checkboxNode.checked).toBe(true);
     });
 
-    it('calls the change handlers with the right value', () => {
-      const checkboxNode = wrapper.find('input[value="green"]').first();
-      const eventData = { target: { value: 'green' } };
-      checkboxNode.simulate('change', eventData);
+    it('calls the change handlers with the right value', async () => {
+      renderFormWithoutLabel();
+      const checkboxNode = screen.getByLabelText('green');
+      await userEvent.type(checkboxNode, 'green');
       expect(setValue).toHaveBeenCalledWith('green');
     });
   });
 
   describe('event handlers', () => {
-    const onChange = jest.fn();
-    const onBlur = jest.fn();
-    const onFocus = jest.fn();
-    const wrapper = mount((
-      <FormCheckboxSet
-        value={['red']}
-        name="colors"
-        onBlur={onBlur}
-        onFocus={onFocus}
-        onChange={onChange}
-      >
-        <FormCheckbox value="red">red</FormCheckbox>
-        <FormCheckbox value="green">green</FormCheckbox>
-        <FormCheckbox value="blue">blue</FormCheckbox>
-      </FormCheckboxSet>
-    ));
-
-    const checkboxNode = wrapper.find('input[value="green"]').first();
-
-    it('calls the change handlers with the right value', () => {
-      checkboxNode.simulate('change');
+    it('calls the change handlers with the right value', async () => {
+      renderFormWithHandlers();
+      const checkboxNode = screen.getByLabelText('green');
+      await userEvent.type(checkboxNode, 'green');
       expect(onChange).toHaveBeenCalledWith(
         expect.objectContaining({
           target: expect.objectContaining({ value: 'green' }),
@@ -110,8 +118,12 @@ describe('FormCheckboxSet', () => {
         }),
       );
     });
-    it('calls the focus handler', () => {
-      checkboxNode.simulate('focus');
+
+    it('calls the focus handler', async () => {
+      renderFormWithHandlers();
+      const checkboxNode = screen.getByLabelText('green');
+      checkboxNode.focus();
+      await userEvent.tab();
       expect(onFocus).toHaveBeenCalledWith(
         expect.objectContaining({
           target: expect.objectContaining({ value: 'green' }),
@@ -119,8 +131,12 @@ describe('FormCheckboxSet', () => {
         }),
       );
     });
-    it('calls the blur handler', () => {
-      checkboxNode.simulate('blur');
+
+    it('calls the blur handler', async () => {
+      renderFormWithHandlers();
+      const checkboxNode = screen.getByLabelText('green');
+      checkboxNode.focus();
+      await userEvent.tab();
       expect(onBlur).toHaveBeenCalledWith(
         expect.objectContaining({
           target: expect.objectContaining({ value: 'green' }),
@@ -131,22 +147,22 @@ describe('FormCheckboxSet', () => {
   });
 
   describe('uncontrolled behavior', () => {
-    const wrapper = mount((
-      <FormCheckboxSet
-        defaultValue={['red']}
-        name="colors"
-        id="my-field"
-        label="Which color?"
-      >
-        <FormCheckbox value="red">red</FormCheckbox>
-        <FormCheckbox value="green">green</FormCheckbox>
-        <FormCheckbox value="blue">blue</FormCheckbox>
-      </FormCheckboxSet>
-    ));
-
     it('checks the right checkbox button', () => {
-      const checkboxNode = wrapper.find('input[value="red"]').first();
-      expect(checkboxNode.props().defaultChecked).toBe(true);
+      render(
+        <FormCheckboxSet
+          defaultValue={['red']}
+          name="colors"
+          id="my-field"
+          label="Which color?"
+        >
+          <FormCheckbox value="red">red</FormCheckbox>
+          <FormCheckbox value="green">green</FormCheckbox>
+          <FormCheckbox value="blue">blue</FormCheckbox>
+        </FormCheckboxSet>,
+      );
+
+      const checkboxNode = screen.getByLabelText('red');
+      expect(checkboxNode.defaultChecked).toBe(true);
     });
   });
 });

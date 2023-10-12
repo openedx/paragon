@@ -1,19 +1,19 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+
 import { usePopper } from 'react-popper';
-import PopperElement from './PopperElement';
+import PopperElement from '../PopperElement';
 
 jest.mock('react-popper', () => ({
-  // eslint-disable-next-line no-unused-vars
-  usePopper: jest.fn((targetEl, popperEl, options) => ({
+  usePopper: jest.fn(() => ({
     styles: {
       popper: {
-        someProperty: 'someValue',
+        content: 'someValue',
       },
     },
     attributes: {
       popper: {
-        'data-test': 'someValue',
+        'data-testid': 'someValue',
       },
     },
   })),
@@ -37,16 +37,19 @@ const defaultPopperOptions = {
 };
 
 describe('<PopperElement />', () => {
-  it('popper element to usePopper and apply styles and attributes to child div', () => {
+  it('should use Popper and apply styles and attributes to child div', () => {
     const targetRef = { current: <div /> };
-    const wrapper = shallow((
+    const { container } = render(
       <PopperElement target={targetRef}>
         <div id="popper-content">Popper content</div>
-      </PopperElement>
-    ));
-    const popperEl = wrapper.find('[data-test="someValue"]');
+      </PopperElement>,
+    );
+
+    const popperEl = screen.getByText('Popper content');
+
     expect(usePopper).toHaveBeenCalledWith(targetRef, null, defaultPopperOptions);
-    expect(popperEl.length).toBe(1);
-    expect(popperEl.props().style.someProperty).toBe('someValue');
+    expect(popperEl).toBeInTheDocument();
+    expect(container.firstChild).toHaveAttribute('data-testid', 'someValue');
+    expect(container.firstChild).toHaveStyle('content: someValue');
   });
 });

@@ -3,6 +3,7 @@
 exports[`ValidationFormGroup renders 1`] = `
 <div
   className="form-group"
+  data-testid="validation-form-group"
 >
   <label
     htmlFor="firstName"
@@ -23,6 +24,7 @@ exports[`ValidationFormGroup renders 1`] = `
 exports[`ValidationFormGroup renders a valid message 1`] = `
 <div
   className="form-group"
+  data-testid="validation-form-group"
 >
   <label
     htmlFor="firstName"
@@ -55,6 +57,7 @@ exports[`ValidationFormGroup renders a valid message 1`] = `
 exports[`ValidationFormGroup renders an invalid message 1`] = `
 <div
   className="form-group"
+  data-testid="validation-form-group"
 >
   <label
     htmlFor="firstName"
@@ -87,6 +90,7 @@ exports[`ValidationFormGroup renders an invalid message 1`] = `
 exports[`ValidationFormGroup renders an invalid message with a select input 1`] = `
 <div
   className="form-group"
+  data-testid="validation-form-group"
 >
   <label
     htmlFor="weatherToday"
@@ -132,6 +136,7 @@ exports[`ValidationFormGroup renders an invalid message with a select input 1`] 
 exports[`ValidationFormGroup renders with help text 1`] = `
 <div
   className="form-group"
+  data-testid="validation-form-group"
 >
   <label
     htmlFor="firstName"

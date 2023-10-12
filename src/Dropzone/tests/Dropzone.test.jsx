@@ -9,7 +9,6 @@ import {
   fireEvent,
   screen,
 } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import { formatBytes } from '../utils';
 import messages from '../messages';
