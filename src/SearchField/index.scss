@@ -8,7 +8,10 @@
     display: flex;
     align-items: center;
     width: 100%;
-    background-color: $search-form-background-color;
+  }
+
+  .pgn__searchfield__action-btn {
+    background-color: $search-button-background-color;
   }
 
   .btn:focus-visible {
@@ -86,6 +89,10 @@
 
   label.has-label-text {
     padding-inline-start: .75rem;
+    background-color: $search-label-background-color;
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
 
   &.pgn__searchfield--external {
