@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useState,
+  useEffect, useState, useRef,
 } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
@@ -28,6 +28,7 @@ function FormAutosuggest({
   ...props
 }) {
   const intl = useIntl();
+  const formControlRef = useRef();
   const parentRef = useArrowKeyNavigation({
     selectors: arrowKeyNavigationSelector,
     ignoredKeys: ignoredArrowKeysNames,
@@ -146,6 +147,10 @@ function FormAutosuggest({
     if (e.key === 'Escape' && isActive) {
       e.preventDefault();
 
+      if (formControlRef) {
+        formControlRef.current.focus();
+      }
+
       setState(prevState => ({
         ...prevState,
         dropDownItems: [],
@@ -241,6 +246,7 @@ function FormAutosuggest({
       </div>
       <FormGroup isInvalid={!!state.errorMessage}>
         <FormControl
+          ref={formControlRef}
           aria-expanded={(state.dropDownItems.length > 0).toString()}
           aria-owns="pgn__form-autosuggest__dropdown-box"
           role="combobox"
