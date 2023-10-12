@@ -31,6 +31,7 @@ function SearchFieldAdvanced(props) {
     formAriaLabel,
     disabled,
     submitButtonLocation,
+    ...rest
   } = props;
 
   const [hasFocus, setHasFocus] = useState(false);
@@ -95,6 +96,7 @@ function SearchFieldAdvanced(props) {
         },
         className,
       )}
+      {...rest}
     >
       <form
         role="search"

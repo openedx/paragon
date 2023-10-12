@@ -1,78 +1,65 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import CheckBox from './index';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+import CheckBox from '.';
 
 describe('<CheckBox />', () => {
   it('attributes are set correctly', () => {
-    const wrapper = mount(<CheckBox name="checkbox" label="check me out!" />);
-
-    expect(wrapper.find('[name="checkbox"]').exists()).toEqual(true);
-    expect(wrapper.find('[type="checkbox"]').exists()).toEqual(true);
-    expect(wrapper.find('[checked=false]').exists()).toEqual(true);
-    expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
+    render(<CheckBox name="checkbox" label="check me out!" />);
+    const checkbox = screen.getByLabelText('check me out!');
+    expect(checkbox).toBeInTheDocument();
+    expect(checkbox).toHaveAttribute('type', 'checkbox');
+    expect(checkbox).not.toBeChecked();
+    expect(checkbox).toHaveAttribute('aria-checked', 'false');
   });
 
-  it('aria-label changes after click', () => {
-    const wrapper = mount(<CheckBox name="checkbox" label="check me out!" />);
-
-    expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
-
-    wrapper.find('[type="checkbox"]').simulate('change');
-    expect(wrapper.find('[aria-checked=false]').exists()).toEqual(false);
-    expect(wrapper.find('[aria-checked=true]').exists()).toEqual(true);
-
-    wrapper.find('[type="checkbox"]').simulate('change');
-    expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
-    expect(wrapper.find('[aria-checked=true]').exists()).toEqual(false);
+  it('aria-label changes after click', async () => {
+    render(<CheckBox name="checkbox" label="check me out!" />);
+    const checkbox = screen.getByLabelText('check me out!');
+    expect(checkbox).toHaveAttribute('aria-checked', 'false');
+    await userEvent.click(checkbox);
+    expect(checkbox).toHaveAttribute('aria-checked', 'true');
+    await userEvent.click(checkbox);
+    expect(checkbox).toHaveAttribute('aria-checked', 'false');
   });
 
-  it('check that callback function is triggered when clicked', () => {
-    const spy = jest.fn();
-    const wrapper = mount(<CheckBox name="checkbox" label="check me out!" onChange={spy} />);
-
-    expect(spy).toHaveBeenCalledTimes(0);
-    // check
-    wrapper.find('input').simulate('change', { target: { checked: true, type: 'checkbox' } });
-    expect(spy).toHaveBeenCalledTimes(1);
-    expect(spy).toHaveBeenLastCalledWith(true, 'checkbox');
-    // uncheck
-    wrapper.find('input').simulate('change', { target: { checked: false, type: 'checkbox' } });
-    expect(spy).toHaveBeenCalledTimes(2);
-    expect(spy).toHaveBeenLastCalledWith(false, 'checkbox');
+  it('check that callback function is triggered when clicked', async () => {
+    const onChangeSpy = jest.fn();
+    render(<CheckBox name="checkbox" label="check me out!" onChange={onChangeSpy} />);
+    const checkbox = screen.getByLabelText('check me out!');
+    expect(onChangeSpy).toHaveBeenCalledTimes(0);
+    await userEvent.click(checkbox);
+    expect(onChangeSpy).toHaveBeenCalledTimes(1);
+    expect(onChangeSpy).toHaveBeenCalledWith(true, 'checkbox');
+    await userEvent.click(checkbox);
+    expect(onChangeSpy).toHaveBeenCalledTimes(2);
+    expect(onChangeSpy).toHaveBeenCalledWith(false, 'checkbox');
   });
 
-  it('checks if start state can be set to checked', () => {
-    const wrapper = mount(<CheckBox name="checkbox" label="I start checked" checked />);
-
-    expect(wrapper.find('[checked=true]').exists()).toEqual(true);
-    expect(wrapper.find('[aria-checked=true]').exists()).toEqual(true);
-
-    wrapper.find('input').simulate('change');
-    expect(wrapper.find('[checked=false]').exists()).toEqual(true);
-    expect(wrapper.find('[aria-checked=false]').exists()).toEqual(true);
+  it('checks if start state can be set to checked', async () => {
+    render(<CheckBox name="checkbox" label="I start checked" checked />);
+    const checkbox = screen.getByLabelText('I start checked');
+    expect(checkbox).toBeChecked();
+    expect(checkbox).toHaveAttribute('aria-checked', 'true');
+    await userEvent.click(checkbox);
+    expect(checkbox).not.toBeChecked();
+    expect(checkbox).toHaveAttribute('aria-checked', 'false');
   });
 
-  it('checkbox can be disabled', () => {
-    const wrapper = mount(<CheckBox name="checkbox" label="I am disabled" disabled />);
-
-    expect(wrapper.props().disabled).toEqual(true);
-
-    wrapper.find('input').simulate('change');
-    expect(wrapper.props().disabled).toEqual(true);
+  it('checkbox can be disabled', async () => {
+    render(<CheckBox name="checkbox" label="I am disabled" disabled />);
+    const checkbox = screen.getByLabelText('I am disabled');
+    expect(checkbox).toBeDisabled();
+    await userEvent.click(checkbox);
+    expect(checkbox).toBeDisabled();
   });
 
   it('overrides state value when props value changes', () => {
-    const wrapper = mount(<CheckBox name="checkbox" label="I start checked" checked />);
-    expect(wrapper.find('[checked=true]').exists()).toEqual(true);
-    expect(wrapper.find('[aria-checked=true]').exists()).toEqual(true);
-
-    wrapper.setProps({
-      checked: false,
-    });
-
-    wrapper.update();
-
-    expect(wrapper.find('[checked=true]').exists()).toEqual(false);
-    expect(wrapper.find('[aria-checked=true]').exists()).toEqual(false);
+    const { rerender } = render(<CheckBox name="checkbox" label="I start checked" checked />);
+    const checkbox = screen.getByLabelText('I start checked');
+    expect(checkbox).toBeChecked();
+    rerender(<CheckBox name="checkbox" label="I start checked" checked={false} />);
+    expect(checkbox).not.toBeChecked();
   });
 });

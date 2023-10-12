@@ -1,7 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
-import InputText from './index';
+import InputText from '.';
 
 describe('<InputText />', () => {
   const label = 'label';
@@ -13,64 +13,62 @@ describe('<InputText />', () => {
 
   describe('rendering', () => {
     it('should render with default type when type is not defined', () => {
-      const wrapper = mount(<InputText {...props} />);
-      expect(wrapper.find('input')).toHaveLength(1);
-
-      const input = wrapper.find('input').at(0);
-      expect(input.prop('type')).toEqual('text');
+      const { container } = render(<InputText {...props} />);
+      const input = container.querySelector('input');
+      expect(input).toBeInTheDocument();
+      expect(input.type).toEqual('text');
     });
 
     it('should render with default type when type is defined as undefined', () => {
-      const wrapper = mount(<InputText {...props} type={undefined} />);
-      expect(wrapper.find('input')).toHaveLength(1);
-
-      const input = wrapper.find('input').at(0);
-      expect(input.prop('type')).toEqual('text');
+      const { container } = render(<InputText {...props} type={undefined} />);
+      const input = container.querySelector('input');
+      expect(input).toBeInTheDocument();
+      expect(input.type).toEqual('text');
     });
 
     it('should render with default type when type is defined as null', () => {
-      const wrapper = mount(<InputText {...props} type={null} />);
-      expect(wrapper.find('input')).toHaveLength(1);
-
-      const input = wrapper.find('input').at(0);
-      expect(input.prop('type')).toEqual('text');
+      const { container } = render(<InputText {...props} type={null} />);
+      const input = container.querySelector('input');
+      expect(input).toBeInTheDocument();
+      expect(input.type).toEqual('text');
     });
 
     it('should render with specified type when type is defined', () => {
       const type = 'foobar';
-      const wrapper = mount(<InputText {...props} type={type} />);
-      expect(wrapper.find('input')).toHaveLength(1);
-
-      const input = wrapper.find('input').at(0);
-      expect(input.prop('type')).toEqual(type);
+      const { getByRole } = render(<InputText {...props} type={type} />);
+      const input = getByRole('textbox', { type: 'foobar' });
+      expect(input).toBeInTheDocument();
+      expect(input.getAttribute('type')).toEqual(type);
     });
 
-    it('should render with the autocomplete property if set', () => {
-      const wrapper = mount(<InputText {...props} autoComplete="off" />);
-      expect(wrapper.find('input')).toHaveLength(1);
-
-      const input = wrapper.find('input').at(0);
-      expect(input.prop('autoComplete')).toEqual('off');
+    it('should render with the autoComplete property if set', () => {
+      const { container } = render(<InputText {...props} autoComplete="off" />);
+      const input = container.querySelector('input');
+      expect(input).toBeInTheDocument();
+      expect(input.getAttribute('autocomplete')).toEqual('off');
     });
 
     it('should render with custom classNames if set', () => {
-      const wrapper = mount(<InputText {...props} className={['first', 'last']} />);
-      expect(wrapper.find('input')).toHaveLength(1);
-
-      const input = wrapper.find('input').at(0);
-      expect(input.prop('type')).toEqual('text');
-      expect(input.hasClass('first')).toEqual(true);
-      expect(input.hasClass('last')).toEqual(true);
+      const { container } = render(<InputText {...props} className={['first', 'last']} />);
+      const input = container.querySelector('input');
+      expect(input).toBeInTheDocument();
+      expect(input.type).toEqual('text');
+      expect(input.classList.contains('first')).toBe(true);
+      expect(input.classList.contains('last')).toBe(true);
     });
 
     it('should not be readOnly if the readOnly property is not set', () => {
-      const wrapper = mount(<InputText {...props} />);
-      expect(wrapper.props().readOnly).toBeUndefined();
+      const { container } = render(<InputText {...props} />);
+      const input = container.querySelector('input');
+      expect(input).toBeInTheDocument();
+      expect(input.readOnly).toBe(false);
     });
 
     it('should render with the readOnly property if set', () => {
-      const wrapper = mount(<InputText {...props} readOnly />);
-      expect(wrapper.props().readOnly).toEqual(true);
+      const { container } = render(<InputText {...props} readOnly />);
+      const input = container.querySelector('input');
+      expect(input).toBeInTheDocument();
+      expect(input.readOnly).toBe(true);
     });
   });
 });

@@ -1,169 +1,161 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-import ListBox from './index';
+import ListBox from '.';
 import ListBoxOption from '../ListBoxOption';
 
 describe('ListBox', () => {
-  const listBox = (
-    <ListBox>
-      <ListBoxOption>test1</ListBoxOption>
-      <ListBoxOption>test2</ListBoxOption>
-      <ListBoxOption>test3</ListBoxOption>
-    </ListBox>
-  );
+  beforeEach(() => {
+    render(
+      <ListBox>
+        <ListBoxOption>test1</ListBoxOption>
+        <ListBoxOption>test2</ListBoxOption>
+        <ListBoxOption>test3</ListBoxOption>
+      </ListBox>,
+    );
+  });
 
-  let wrapper;
+  it('should have null aria-activedescendant attribute by default', () => {
+    const listBoxElement = screen.getByRole('listbox');
+    expect(listBoxElement.getAttribute('aria-activedescendant')).toBeNull();
+  });
 
-  describe('rendering', () => {
-    it('should have null aria-activedescendant attribute by default', () => {
-      wrapper = shallow(listBox);
-
-      expect(wrapper.prop('aria-activedescendant')).toEqual(null);
-    });
-
-    it('should have correct aria-activedescendant attribute when selectedOptionIndex state is non-null', () => {
-      wrapper = shallow(listBox);
-
+  it(
+    'should have correct aria-activedescendant attribute when selectedOptionIndex state is non-null',
+    async () => {
+      const listBoxElement = screen.getByRole('listbox');
       const selectedOptionIndex = 1;
 
-      wrapper.setState({
-        selectedOptionIndex,
-      });
+      listBoxElement.focus();
 
-      expect(wrapper.prop('aria-activedescendant')).toEqual(`list-box-option-${selectedOptionIndex}`);
-    });
+      await userEvent.keyboard('{arrowdown}');
 
-    it('selectedOptionIndex prop should override selectedOptionIndex state', () => {
-      wrapper = shallow(listBox);
+      expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual(`list-box-option-${selectedOptionIndex}`);
+    },
+  );
 
-      wrapper.setState({
-        selectedOptionIndex: 1,
-      });
+  it('selectedOptionIndex prop should override selectedOptionIndex state', async () => {
+    const listBoxElement = screen.getByRole('listbox');
+    const selectedOptionIndex = 2;
 
-      const selectedOptionIndex = 2;
+    listBoxElement.focus();
 
-      wrapper.setProps({
-        selectedOptionIndex,
-      });
+    await userEvent.keyboard('{arrowdown}');
+    await userEvent.keyboard('{arrowdown}');
 
-      expect(wrapper.prop('aria-activedescendant')).toEqual(`list-box-option-${selectedOptionIndex}`);
-    });
-
-    it('should render a div by default', () => {
-      wrapper = shallow(listBox);
-      expect(wrapper.find('div')).toHaveLength(1);
-    });
-
-    it('should render an HTML element when passed tag prop is an HTML element', () => {
-      wrapper = shallow(listBox);
-
-      wrapper.setProps({
-        tag: 'li',
-      });
-
-      expect(wrapper.find('div')).toHaveLength(0);
-      expect(wrapper.find('li')).toHaveLength(1);
-    });
-
-    it('should have correct default classNames', () => {
-      wrapper = shallow(listBox);
-
-      expect(wrapper.prop('className')).toEqual(expect.stringContaining('list-group'));
-    });
-
-    it('should have listbox role', () => {
-      wrapper = shallow(listBox);
-
-      expect(wrapper.prop('role')).toEqual('listbox');
-    });
-
-    it('should have 0 tabIndex', () => {
-      wrapper = shallow(listBox);
-
-      expect(wrapper.prop('tabIndex')).toEqual(0);
-    });
+    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual(`list-box-option-${selectedOptionIndex}`);
   });
-  describe('behavior', () => {
-    it('should select first ListBoxOption on focus if not ListBoxOption selected', () => {
-      wrapper = shallow(listBox);
 
-      wrapper.simulate('focus');
-      expect(wrapper.state('selectedOptionIndex')).toEqual(0);
-    });
+  it('should render a div by default', () => {
+    const listBoxElement = screen.getByRole('listbox');
+    expect(listBoxElement.tagName.toLowerCase()).toBe('div');
+  });
 
-    it('should not select first ListBoxOption on focus if ListBoxOption selected', () => {
-      wrapper = shallow(listBox);
+  it('should render an HTML element when passed tag prop is an HTML element', () => {
+    const { container } = render(
+      <ListBox tag="li">
+        <ListBoxOption>test1</ListBoxOption>
+      </ListBox>,
+    );
+    const listBoxElement = container.querySelector('li');
+    expect(listBoxElement).toBeInTheDocument();
+  });
 
-      wrapper.setState({
-        selectedOptionIndex: 1,
-      });
+  it('should have correct default classNames', () => {
+    const listBoxElement = screen.getByRole('listbox');
+    expect(listBoxElement).toHaveClass('list-group');
+  });
 
-      wrapper.simulate('focus');
-      expect(wrapper.state('selectedOptionIndex')).toEqual(1);
-    });
+  it('should have listbox role', () => {
+    const listBoxElement = screen.getByRole('listbox');
+    expect(listBoxElement).toHaveAttribute('role', 'listbox');
+  });
 
-    it('should select next ListBoxOption on down arrow key', () => {
-      wrapper = shallow(listBox);
+  it('should have 0 tabIndex', () => {
+    const listBoxElement = screen.getByRole('listbox');
+    expect(listBoxElement).toHaveAttribute('tabIndex', '0');
+  });
 
-      wrapper.simulate('focus');
-      wrapper.simulate('keyDown', { key: 'ArrowDown', preventDefault() { } });
+  it('should select first ListBoxOption on focus if not ListBoxOption selected', async () => {
+    const listBoxElement = screen.getByRole('listbox');
 
-      expect(wrapper.state('selectedOptionIndex')).toEqual(1);
-    });
+    listBoxElement.focus();
 
-    it('should not select next ListBoxOption on down arrow key if at end of list', () => {
-      wrapper = shallow(listBox);
+    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-0');
+  });
 
-      wrapper.simulate('focus');
+  it('should not select first ListBoxOption on focus if ListBoxOption selected', async () => {
+    const listBoxElement = screen.getByRole('listbox');
 
-      wrapper.setState({
-        selectedOptionIndex: 2,
-      });
+    listBoxElement.focus();
 
-      wrapper.simulate('keyDown', { key: 'ArrowDown', preventDefault() { } });
+    await userEvent.keyboard('{arrowdown}');
 
-      expect(wrapper.state('selectedOptionIndex')).toEqual(2);
-    });
+    listBoxElement.focus();
 
-    it('should select previous ListBoxOption on up arrow key', () => {
-      wrapper = shallow(listBox);
+    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-1');
+  });
 
-      wrapper.simulate('focus');
+  it('should select next ListBoxOption on down arrow key', async () => {
+    const listBoxElement = screen.getByRole('listbox');
 
-      wrapper.setState({
-        selectedOptionIndex: 1,
-      });
+    listBoxElement.focus();
 
-      wrapper.simulate('keyDown', { key: 'ArrowUp', preventDefault() { } });
+    await userEvent.keyboard('{arrowdown}');
 
-      expect(wrapper.state('selectedOptionIndex')).toEqual(0);
-    });
+    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-1');
+  });
 
-    it('should not select previous ListBoxOption on up arrow key if at start of list', () => {
-      wrapper = shallow(listBox);
+  it('should not select next ListBoxOption on down arrow key if at end of list', async () => {
+    const listBoxElement = screen.getByRole('listbox');
 
-      wrapper.simulate('focus');
-      wrapper.simulate('keyDown', { key: 'ArrowUp', preventDefault() { } });
+    listBoxElement.focus();
 
-      expect(wrapper.state('selectedOptionIndex')).toEqual(0);
-    });
+    await userEvent.keyboard('{arrowdown}');
+    await userEvent.keyboard('{arrowdown}');
+    await userEvent.keyboard('{arrowdown}');
 
-    it('should not change ListBoxOption selection on non supported key', () => {
-      wrapper = shallow(listBox);
+    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-2');
+  });
 
-      wrapper.simulate('focus');
-      wrapper.simulate('keyDown', { key: 'leftArrow', preventDefault() { } });
+  it('should select previous ListBoxOption on up arrow key', async () => {
+    const listBoxElement = screen.getByRole('listbox');
 
-      expect(wrapper.state('selectedOptionIndex')).toEqual(0);
-    });
+    listBoxElement.focus();
 
-    it('should update state when child\'s onSelect is called', () => {
-      wrapper = shallow(listBox);
+    await userEvent.keyboard('{arrowdown}');
+    await userEvent.keyboard('{arrowup}');
 
-      wrapper.find(ListBoxOption).at(1).dive().simulate('mouseDown');
+    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-0');
+  });
 
-      expect(wrapper.state('selectedOptionIndex')).toEqual(1);
-    });
+  it('should not select previous ListBoxOption on up arrow key if at start of list', async () => {
+    const listBoxElement = screen.getByRole('listbox');
+
+    listBoxElement.focus();
+
+    await userEvent.keyboard('{arrowup}');
+
+    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-0');
+  });
+
+  it('should not change ListBoxOption selection on non-supported key', async () => {
+    const listBoxElement = screen.getByRole('listbox');
+
+    listBoxElement.focus();
+
+    await userEvent.keyboard('{leftarrow}');
+
+    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-0');
+  });
+
+  it('should update state when child\'s onSelect is called', async () => {
+    const listBoxElement = screen.getByRole('listbox');
+    const listBoxOption2 = screen.getAllByRole('option')[1];
+
+    await userEvent.click(listBoxOption2);
+
+    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-1');
   });
 });

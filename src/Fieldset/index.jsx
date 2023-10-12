@@ -84,6 +84,7 @@ class Fieldset extends React.Component {
             className,
           )}
           aria-describedby={errorId}
+          data-testid="fieldset"
         >
           <legend className="p-1">{legend}</legend>
           {children}
