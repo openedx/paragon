@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import TableHeaderRow from '../TableHeaderRow';
 
@@ -32,21 +32,23 @@ const props = {
 };
 
 describe('<TableHeaderRow />', () => {
-  const wrapper = mount(<table><TableHeaderRow {...props} /></table>);
+  render(<table><TableHeaderRow {...props} /></table>);
+  const head = screen.getByRole('rowgroup');
+  const row = screen.getByRole('row');
+  const cells = screen.getAllByRole('columnheader');
+
   it('renders a table head and row', () => {
-    const head = wrapper.find('thead');
-    expect(head.length).toEqual(1);
-    const row = wrapper.find('tr');
-    expect(row.length).toEqual(1);
+    expect(head).toBeInTheDocument();
+    expect(row).toBeInTheDocument();
   });
+
   it('adds props to the row', () => {
-    const row = wrapper.find('tr');
-    expect(row.props().className).toEqual('red');
+    expect(row.className).toEqual('red');
   });
+
   it('renders cells', () => {
-    const cells = wrapper.find('th');
     expect(cells.length).toEqual(2);
-    expect(wrapper.text()).toContain(header1Name);
-    expect(wrapper.text()).toContain(header2Name);
+    expect(cells[0]).toHaveTextContent(header1Name);
+    expect(cells[1]).toHaveTextContent(header2Name);
   });
 });

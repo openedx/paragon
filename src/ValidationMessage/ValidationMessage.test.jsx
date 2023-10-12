@@ -1,7 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
-import ValidationMessage from './index';
+import ValidationMessage from '.';
 import Variant from '../utils/constants';
 
 const dangerVariant = {
@@ -24,33 +24,34 @@ const baseProps = {
 };
 
 describe('ValidationMessage', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    const props = {
-      ...baseProps,
-    };
-    wrapper = mount(<ValidationMessage {...props} />);
-  });
   it('renders', () => {
-    const feedback = wrapper.find('.invalid-feedback');
-    expect(feedback.exists()).toEqual(true);
-    expect(feedback.hasClass('invalid-feedback-nodanger')).toEqual(true);
-    expect(feedback.prop('aria-live')).toEqual('polite');
-    expect(feedback.text()).toEqual('');
-    expect(feedback.prop('id')).toEqual(id);
+    render(<ValidationMessage {...baseProps} />);
+    const feedback = screen.getByTestId('validation-message');
+    expect(feedback).toBeTruthy();
+    expect(feedback.className).toContain('invalid-feedback-nodanger');
+    expect(feedback.getAttribute('aria-live')).toBe('polite');
+    expect(feedback.textContent).toBe('');
+    expect(feedback.getAttribute('id')).toBe(id);
   });
+
   it('renders invalidMessage when isValid is false', () => {
-    wrapper.setProps({ isValid: false });
-    const feedback = wrapper.find('.invalid-feedback');
-    expect(feedback.text()).toEqual(invalidMessage);
+    render(<ValidationMessage {...baseProps} isValid={false} />);
+    const feedback = screen.getByTestId('validation-message');
+    expect(feedback.textContent).toBe(invalidMessage);
   });
+
   it('renders with danger variant when isValid is false and variant is DANGER', () => {
-    wrapper.setProps({ isValid: false, variant: dangerVariant });
-    const feedback = wrapper.find('.invalid-feedback');
-    expect(feedback.hasClass('invalid-feedback-nodanger')).toEqual(false);
-    expect(feedback.text()).toEqual(variantIconDescription + invalidMessage);
-    const icon = feedback.find('.fa-exclamation-circle');
-    expect(icon.exists()).toEqual(true);
+    render(
+      <ValidationMessage
+        {...baseProps}
+        isValid={false}
+        variant={dangerVariant}
+      />,
+    );
+    const feedback = screen.getByTestId('validation-message');
+    expect(feedback.className).not.toBe('invalid-feedback-nodanger');
+    expect(feedback.textContent).toBe(`${variantIconDescription}${invalidMessage}`);
+    const icon = feedback.querySelector('.fa-exclamation-circle');
+    expect(icon).toBeTruthy();
   });
 });

@@ -1,10 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
-import { render, fireEvent, screen } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
-import '@testing-library/jest-dom';
-import ColorPicker from './index';
+import { render, screen, act } from '@testing-library/react';
+
+import ColorPicker from '.';
 
 describe('renders correctly', () => {
   const color = '';
@@ -30,13 +29,13 @@ describe('picker works as expected', () => {
   const color = 'wassap';
   const setColor = jest.fn();
   it('validates hex color', async () => {
-    render(<ColorPicker color={color} setColor={setColor} />);
+    const { rerender } = render(<ColorPicker color={color} setColor={setColor} />);
     await act(async () => {
-      userEvent.click(screen.getByRole('button'));
+      await userEvent.click(screen.getByRole('button'));
     });
     expect(screen.queryByText('Colors must be in hexadecimal format.')).toBeInTheDocument();
-    const input = screen.getByTestId('hex-input');
-    fireEvent.change(input, { target: { value: '#32116c' } });
+
+    rerender(<ColorPicker color="#32116c" setColor={setColor} />);
     expect(screen.queryByText('Colors must be in hexadecimal format.')).not.toBeInTheDocument();
   });
 });

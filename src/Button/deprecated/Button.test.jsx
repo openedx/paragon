@@ -1,39 +1,34 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import Button from './index';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import Button from '.';
 
 const defaultProps = {
   label: 'Click me!',
 };
 
 describe('<Button />', () => {
-  let wrapper;
-  let button;
-
-  beforeEach(() => {
-    const app = document.createElement('div');
-    document.body.appendChild(app);
-    wrapper = mount(<Button
-      {...defaultProps}
-    />, { attachTo: app });
-
-    button = wrapper.find('button');
-  });
   it('renders', () => {
-    expect(button).toHaveLength(1);
+    const { getByText } = render(<Button {...defaultProps} />);
+    const button = getByText(defaultProps.label);
+    expect(button).toBeInTheDocument();
   });
+
   it('puts focus on button on click', () => {
-    expect(button.matchesElement(document.activeElement)).toEqual(false);
-    button.simulate('click');
-    button = wrapper.find('button');
-    expect(button.at(0).html()).toEqual(document.activeElement.outerHTML);
+    const { getByText } = render(<Button {...defaultProps} />);
+    const button = getByText(defaultProps.label);
+
+    expect(button).not.toHaveFocus();
+    userEvent.click(button);
+    expect(button).toHaveFocus();
   });
+
   it('calls onClick prop on click', () => {
     const onClickSpy = jest.fn();
-    wrapper.setProps({ onClick: onClickSpy });
+    const { getByText } = render(<Button {...defaultProps} onClick={onClickSpy} />);
+    const button = getByText(defaultProps.label);
 
-    expect(onClickSpy).toHaveBeenCalledTimes(0);
-    button.simulate('click');
+    userEvent.click(button);
     expect(onClickSpy).toHaveBeenCalledTimes(1);
   });
 });
