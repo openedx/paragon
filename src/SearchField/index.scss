@@ -11,17 +11,18 @@
     background-color: $search-form-background-color;
   }
 
-  .btn:focus-visible {
+  .pgn__searchfield__action-btn:focus {
     outline: none;
     position: relative;
-    transition: $input-transition;
 
-    &::after {
+    &::before {
       content: "";
-      border: $search-border-focus-width double $search-border-focus-color;
+      border: $search-border-focus-width solid $search-border-focus-color;
       position: absolute;
-      width: 100%;
-      height: 100%;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
     }
   }
 
@@ -138,6 +139,5 @@
 }
 
 .pgn__searchfield__button.btn[type="submit"] {
-  border-radius: 0;
   margin-inline-start: $search-button-margin;
 }
