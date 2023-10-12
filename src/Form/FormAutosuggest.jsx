@@ -112,6 +112,7 @@ function FormAutosuggest({
     <IconButton
       className="pgn__form-autosuggest__icon-button"
       data-testid="autosuggest-iconbutton"
+      tabindex="-1"
       src={isMenuClosed ? KeyboardArrowDown : KeyboardArrowUp}
       iconAs={Icon}
       size="sm"
@@ -123,17 +124,21 @@ function FormAutosuggest({
     />
   );
 
+  const leaveControl = () => {
+    setIsActive(false);
+
+    setState(prevState => ({
+      ...prevState,
+      dropDownItems: [],
+      errorMessage: !state.displayValue ? errorMessageText : '',
+    }));
+
+    setIsMenuClosed(true);
+  };
+
   const handleDocumentClick = (e) => {
     if (parentRef.current && !parentRef.current.contains(e.target) && isActive) {
-      setIsActive(false);
-
-      setState(prevState => ({
-        ...prevState,
-        dropDownItems: [],
-        errorMessage: !state.displayValue ? errorMessageText : '',
-      }));
-
-      setIsMenuClosed(true);
+      leaveControl();
     }
   };
 
@@ -147,6 +152,9 @@ function FormAutosuggest({
       }));
 
       setIsMenuClosed(true);
+    }
+    if (e.key === 'Tab' && isActive) {
+      leaveControl();
     }
   };
 
