@@ -1,8 +1,8 @@
 {
-  "lastModified": 1697119750613,
+  "lastModified": 1697206173382,
   "projectUsages": [
     {
-      "version": "21.5.0",
+      "version": "21.5.2",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -21422,9 +21422,9 @@
           },
           {
             "filePath": "src/components/course/routes/CourseAbout.jsx",
-            "line": 18,
+            "line": 20,
             "column": 6,
-            "index": 592
+            "index": 706
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
@@ -21798,15 +21798,15 @@
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 109,
+            "line": 113,
             "column": 10,
-            "index": 3699
+            "index": 3828
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 131,
+            "line": 135,
             "column": 8,
-            "index": 4370
+            "index": 4499
           },
           {
             "filePath": "src/components/my-career/SearchJobRole.jsx",
@@ -21956,9 +21956,9 @@
           },
           {
             "filePath": "src/components/course/routes/CourseAbout.jsx",
-            "line": 19,
+            "line": 21,
             "column": 8,
-            "index": 639
+            "index": 753
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
@@ -22508,21 +22508,21 @@
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 20,
+            "line": 23,
             "column": 60,
-            "index": 798
+            "index": 872
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 21,
+            "line": 24,
             "column": 64,
-            "index": 880
+            "index": 954
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 22,
+            "line": 25,
             "column": 55,
-            "index": 953
+            "index": 1027
           },
           {
             "filePath": "src/components/my-career/VisualizeCareer.jsx",
@@ -22628,9 +22628,9 @@
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 105,
+            "line": 109,
             "column": 4,
-            "index": 3519
+            "index": 3648
           },
           {
             "filePath": "src/components/pathway-progress/PathwayNode.jsx",
@@ -22774,21 +22774,21 @@
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 107,
+            "line": 111,
             "column": 6,
-            "index": 3616
+            "index": 3745
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 121,
+            "line": 125,
             "column": 8,
-            "index": 4062
+            "index": 4191
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 151,
-            "column": 6,
-            "index": 4894
+            "line": 156,
+            "column": 8,
+            "index": 5069
           },
           {
             "filePath": "src/components/pathway-progress/PathwayNode.jsx",
@@ -23238,9 +23238,9 @@
           },
           {
             "filePath": "src/components/course/routes/CourseAbout.jsx",
-            "line": 23,
+            "line": 25,
             "column": 10,
-            "index": 738
+            "index": 852
           },
           {
             "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
@@ -23306,21 +23306,21 @@
           },
           {
             "filePath": "src/components/course/routes/CourseAbout.jsx",
-            "line": 23,
+            "line": 25,
             "column": 32,
-            "index": 760
+            "index": 874
           },
           {
             "filePath": "src/components/course/routes/tests/CourseAbout.test.jsx",
-            "line": 37,
+            "line": 43,
             "column": 36,
-            "index": 1130
+            "index": 1272
           },
           {
             "filePath": "src/components/course/routes/tests/CourseAbout.test.jsx",
-            "line": 70,
+            "line": 80,
             "column": 64,
-            "index": 2735
+            "index": 2999
           },
           {
             "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
@@ -23496,9 +23496,9 @@
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
-            "line": 106,
+            "line": 110,
             "column": 6,
-            "index": 3551
+            "index": 3680
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressCard.jsx",
@@ -24274,9 +24274,9 @@
         "ResponsiveContext.Provider": [
           {
             "filePath": "src/components/course/routes/tests/CourseAbout.test.jsx",
-            "line": 40,
+            "line": 48,
             "column": 2,
-            "index": 1222
+            "index": 1403
           }
         ],
         "StatefulButton": [
@@ -26633,6 +26633,12 @@
             "index": 1452
           },
           {
+            "filePath": "src/course-home/courseware-search/CoursewareSearch.jsx",
+            "line": 20,
+            "column": 4,
+            "index": 673
+          },
+          {
             "filePath": "src/course-home/goal-unsubscribe/ResultPage.jsx",
             "line": 42,
             "column": 6,
@@ -26893,6 +26899,12 @@
             "index": 3343
           },
           {
+            "filePath": "src/course-home/courseware-search/CoursewareSearch.jsx",
+            "line": 21,
+            "column": 6,
+            "index": 862
+          },
+          {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
             "line": 137,
             "column": 14,
@@ -27091,6 +27103,14 @@
             "line": 117,
             "column": 4,
             "index": 3591
+          }
+        ],
+        "Search": [
+          {
+            "filePath": "src/course-home/courseware-search/CoursewareSearch.jsx",
+            "line": 21,
+            "column": 17,
+            "index": 873
           }
         ],
         "Badge": [
