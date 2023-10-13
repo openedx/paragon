@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 
 import { SearchFieldContext } from './SearchFieldAdvanced';
+import Icon from '../Icon';
+import IconButton from '../IconButton';
 
 function SearchFieldClearButton(props) {
   const {
@@ -18,11 +20,15 @@ function SearchFieldClearButton(props) {
   };
 
   return (
-    // eslint-disable-next-line react/button-has-type
-    <button type="reset" className="btn" disabled={disabled} onClick={handleClick} {...props}>
-      {icons.clear}
-      <span className="sr-only">{screenReaderText.clearButton}</span>
-    </button>
+    <IconButton
+      type="reset"
+      src={icons.clear.props.src}
+      iconAs={Icon}
+      alt={screenReaderText.clearButton}
+      disabled={disabled}
+      onClick={handleClick}
+      {...props}
+    />
   );
 }
 
