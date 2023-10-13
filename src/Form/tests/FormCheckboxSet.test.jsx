@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import userEvent from '@testing-library/user-event';
+import { render } from '@testing-library/react';
 import FormGroup from '../FormGroup';
 import FormCheckboxSet from '../FormCheckboxSet';
 import FormCheckbox from '../FormCheckbox';
@@ -148,5 +150,24 @@ describe('FormCheckboxSet', () => {
       const checkboxNode = wrapper.find('input[value="red"]').first();
       expect(checkboxNode.props().defaultChecked).toBe(true);
     });
+  });
+
+  it('checks if onClick is called once in FormCheckboxSet', () => {
+    const handleChange = jest.fn();
+    const { getByLabelText } = render(
+      <FormGroup controlId="my-field">
+        <FormLabel>Which color?</FormLabel>
+        <FormCheckboxSet
+          name="colors"
+          onChange={handleChange}
+        >
+          <FormCheckbox value="red">Red</FormCheckbox>
+          <FormCheckbox value="green">Green</FormCheckbox>
+        </FormCheckboxSet>
+      </FormGroup>,
+    );
+
+    userEvent.click(getByLabelText('Red'));
+    expect(handleChange).toHaveBeenCalledTimes(1);
   });
 });

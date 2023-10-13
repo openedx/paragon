@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import userEvent from '@testing-library/user-event';
+import { render } from '@testing-library/react';
 import FormGroup from '../FormGroup';
 import FormRadioSet from '../FormRadioSet';
 import FormRadio from '../FormRadio';
@@ -101,5 +103,24 @@ describe('FormRadioSet', () => {
     expect(wrapper.exists('input[type="radio"]')).toBe(true);
     const radioNode = wrapper.find('input[type="radio"]').first();
     expect(radioNode.props().name).toBe('trees');
+  });
+
+  it('checks if onClick is called once in FormRadioSet', () => {
+    const handleChange = jest.fn();
+    const { getByLabelText } = render(
+      <FormGroup>
+        <FormLabel>Which color?</FormLabel>
+        <FormRadioSet
+          name="colors"
+          onChange={handleChange}
+        >
+          <FormRadio value="red">Red</FormRadio>
+          <FormRadio value="green">Green</FormRadio>
+        </FormRadioSet>
+      </FormGroup>,
+    );
+
+    userEvent.click(getByLabelText('Red'));
+    expect(handleChange).toHaveBeenCalledTimes(1);
   });
 });
