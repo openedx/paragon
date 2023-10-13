@@ -21,7 +21,11 @@ export default function PaginationDropdown() {
       </Dropdown.Toggle>
       <Dropdown.Menu className="pagination-reduced-dropdown-menu">
         {[...Array(pageCount).keys()].map(pageNum => (
-          <Dropdown.Item onClick={() => handlePageSelect(pageNum + 1)} key={pageNum}>
+          <Dropdown.Item
+            onClick={() => handlePageSelect(pageNum + 1)}
+            key={pageNum}
+            data-testid="pagination-dropdown-item"
+          >
             {pageNum + 1}
           </Dropdown.Item>
         ))}
