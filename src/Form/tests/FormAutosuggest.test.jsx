@@ -260,8 +260,8 @@ describe('controlled behavior', () => {
 
   it('check focus on input after esc', () => {
     const { getByTestId } = render(<FormAutosuggestTestComponent />);
-    const input = getByTestId('autosuggest_textbox_input');
-    const dropdownBtn = getByTestId('autosuggest_iconbutton');
+    const input = getByTestId('autosuggest-textbox-input');
+    const dropdownBtn = getByTestId('autosuggest-iconbutton');
     userEvent.click(dropdownBtn);
 
     userEvent.keyboard('{esc}');
