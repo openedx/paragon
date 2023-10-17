@@ -65,7 +65,7 @@
       @include chip-outline(
         $chip-light-outline-color,
         calc($chip-light-selected-outline-distance * -1),
-        calc($chip-border-radius + .188rem),
+        calc($chip-border-radius + $chip-outline-width),
         $chip-light-selected-outline-distance
       );
 
@@ -125,7 +125,7 @@
       @include chip-outline(
         $chip-light-selected-focus-border-color,
         calc($chip-light-focus-outline-distance * -1),
-        calc($chip-border-radius + .188rem)
+        calc($chip-border-radius + $chip-outline-width)
       );
     }
   }
@@ -136,7 +136,7 @@
     &.selected {
       @include chip-outline($chip-dark-outline-color,
       calc($chip-dark-selected-outline-distance * -1),
-      calc($chip-border-radius + .188rem),
+      calc($chip-border-radius + $chip-outline-width),
       $chip-dark-selected-outline-distance
     );
 
@@ -198,16 +198,16 @@
       @include chip-outline(
         $chip-dark-outline-color,
         calc($chip-dark-focus-outline-distance * -1),
-        calc($chip-border-radius + .188rem)
+        calc($chip-border-radius + $chip-outline-width)
       );
     }
   }
 
   &.disabled,
   &:disabled {
-    cursor: default;
     opacity: $chip-disable-opacity;
     pointer-events: none;
+    user-select: none;
 
     &::before {
       display: none;

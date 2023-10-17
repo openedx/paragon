@@ -1,12 +1,13 @@
-import React, {
-  ForwardedRef, KeyboardEventHandler, MouseEventHandler, useState,
-} from 'react';
+import React, { ForwardedRef, KeyboardEventHandler, MouseEventHandler } from 'react';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // @ts-ignore
 import Icon from '../Icon';
 // @ts-ignore
 import IconButton from '../IconButton';
+// @ts-ignore
+import messages from './messages';
 
 const STYLE_VARIANTS = [
   'light',
@@ -22,6 +23,7 @@ export interface IChip {
   onIconBeforeClick?: KeyboardEventHandler & MouseEventHandler,
   onIconAfterClick?: KeyboardEventHandler & MouseEventHandler,
   disabled?: boolean,
+  isSelected?: boolean,
 }
 
 export const CHIP_PGN_CLASS = 'pgn__chip';
@@ -35,20 +37,15 @@ const Chip = React.forwardRef(({
   onIconBeforeClick,
   onIconAfterClick,
   disabled,
+  isSelected,
   ...props
 }: IChip, ref: ForwardedRef<HTMLDivElement>) => {
-  const [isSelected, setIsSelected] = useState(false);
-
-  const handleClick = () => {
-    setIsSelected(!isSelected);
-  };
+  const intl = useIntl();
 
   return (
     <div
       tabIndex={0}
       role="button"
-      onClick={handleClick}
-      onKeyPress={handleClick}
       className={classNames(
         CHIP_PGN_CLASS,
         `pgn__chip-${variant}`,
@@ -66,7 +63,7 @@ const Chip = React.forwardRef(({
               onClick={onIconBeforeClick}
               onKeyPress={onIconBeforeClick}
               iconAs={Icon}
-              alt="Chip icon before"
+              alt={intl.formatMessage(messages.iconBeforeAltText)}
               invertColors
               data-testid="icon-before"
             />
@@ -91,7 +88,7 @@ const Chip = React.forwardRef(({
               onKeyPress={onIconAfterClick}
               src={iconAfter}
               iconAs={Icon}
-              alt="Chip icon after"
+              alt={intl.formatMessage(messages.iconAfterAltText)}
               invertColors
               data-testid="icon-after"
             />
@@ -131,6 +128,7 @@ Chip.propTypes = {
   iconAfter: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** A click handler for the `Chip` icon after. */
   onIconAfterClick: PropTypes.func,
+  isSelected: PropTypes.bool,
 };
 
 Chip.defaultProps = {
@@ -141,6 +139,7 @@ Chip.defaultProps = {
   iconAfter: undefined,
   onIconBeforeClick: undefined,
   onIconAfterClick: undefined,
+  isSelected: false,
 };
 
 export default Chip;

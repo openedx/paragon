@@ -35,7 +35,6 @@ notes: |
 >
     <Chip iconBefore={Person}>New</Chip>
     <Chip
-        iconBefore={Person}
         iconAfter={Close}
         onIconAfterClick={() => console.log('onIconAfterClick')}
     >
@@ -43,7 +42,6 @@ notes: |
     </Chip>
     <Chip
         iconBefore={Person}
-        iconAfter={Close}
         onIconBeforeClick={() => console.log('Remove Chip')}
     >
         New
@@ -78,7 +76,6 @@ notes: |
     <Chip variant="dark" iconBefore={Person}>New</Chip>
     <Chip
         variant="dark"
-        iconBefore={Person}
         iconAfter={Close}
         onIconAfterClick={() => console.log('onIconAfterClick')}
     >
@@ -87,7 +84,6 @@ notes: |
     <Chip
         variant="dark"
         iconBefore={Person}
-        iconAfter={Close}
         onIconBeforeClick={() => console.log('Remove Chip')}
     >
         New
@@ -103,7 +99,6 @@ notes: |
     </Chip>
     <Chip
         variant="dark"
-        iconBefore={Person}
         iconAfter={Close}
         onIconAfterClick={() => console.log('onIconAfterClick')}
         disabled

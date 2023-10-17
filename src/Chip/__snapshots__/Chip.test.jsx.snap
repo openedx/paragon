@@ -3,8 +3,6 @@
 exports[`<Chip /> snapshots renders with props iconAfter 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
-  onClick={[Function]}
-  onKeyPress={[Function]}
   role="button"
   tabIndex={0}
 >
@@ -42,8 +40,6 @@ exports[`<Chip /> snapshots renders with props iconAfter 1`] = `
 exports[`<Chip /> snapshots renders with props iconBefore 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
-  onClick={[Function]}
-  onKeyPress={[Function]}
   role="button"
   tabIndex={0}
 >
@@ -81,8 +77,6 @@ exports[`<Chip /> snapshots renders with props iconBefore 1`] = `
 exports[`<Chip /> snapshots renders with props iconBefore and iconAfter 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
-  onClick={[Function]}
-  onKeyPress={[Function]}
   role="button"
   tabIndex={0}
 >
@@ -143,8 +137,6 @@ exports[`<Chip /> snapshots renders with props iconBefore and iconAfter 1`] = `
 exports[`<Chip /> snapshots renders without props 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
-  onClick={[Function]}
-  onKeyPress={[Function]}
   role="button"
   tabIndex={0}
 >

@@ -2,15 +2,18 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { IntlProvider } from 'react-intl';
 
 import { Close } from '../../icons';
 import Chip from '.';
 
 function TestChip(props) {
   return (
-    <Chip {...props}>
-      Test
-    </Chip>
+    <IntlProvider locale="en">
+      <Chip {...props}>
+        Test
+      </Chip>
+    </IntlProvider>
   );
 }
 
