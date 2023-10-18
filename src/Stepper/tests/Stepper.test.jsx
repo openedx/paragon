@@ -1,7 +1,6 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
 import Stepper from '../Stepper';
 import { stepsReducer } from '../StepperContext';
 
@@ -194,51 +193,64 @@ describe('Stepper', () => {
   });
 
   describe('clickable variant', () => {
-    const onStepClick = jest.fn();
+    it('ignores onClick function if Step has not been visited yet', async () => {
+      const onStepClick = jest.fn();
+      render(
+        <Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />,
+      );
 
-    it('ignores onClick function if Step has not been visited yet', () => {
-      render(<Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />);
-      const step = screen.getAllByRole('listitem').find(listitem => listitem.textContent.includes('Cat'));
-      fireEvent.click(step);
+      await userEvent.click(screen.getByText('Cat'));
       expect(onStepClick).toHaveBeenCalledTimes(0);
     });
 
-    it('invokes onClick function if Step has been visited', () => {
-      render(<Example activeKey="review" showError={false} hasFourthStep handleStepClick={onStepClick} />);
-      const step = screen.getAllByRole('button').find(button => button.textContent.includes('Welcome'));
-      fireEvent.click(step);
+    it('invokes onClick function if Step has been visited', async () => {
+      const onStepClick = jest.fn();
+      render(
+        <Example activeKey="review" showError={false} hasFourthStep handleStepClick={onStepClick} />,
+      );
+
+      await userEvent.click(screen.getByText('Welcome'));
       expect(onStepClick).toHaveBeenCalledTimes(1);
     });
   });
-
   describe('stepper header compact view', () => {
     beforeEach(() => {
       mockWindowSize.width = 200;
-      wrapper.update();
     });
 
     afterEach(() => {
       mockWindowSize.width = 1000;
-      wrapper.update();
     });
 
     const step = '.flex-grow-1';
 
     it('renders the compact view of stepper header', () => {
-      wrapper.setProps({ activeKey: 'cats' });
-      expect(wrapper.find(StepperHeader).exists(step)).toBe(true);
+      const { container } = render(
+        <Example activeKey="cats" />,
+      );
+
+      expect(screen.getByText('Cat')).toBeInTheDocument();
+      expect(container.querySelector(step)).toBeInTheDocument();
     });
 
     it('renders the standard view when the window is outside of the max width for compact view', () => {
       mockWindowSize.width = 800;
-      wrapper.setProps({ activeKey: 'cats' });
-      expect(wrapper.find(StepperHeader).exists(step)).toBe(false);
+
+      const { container } = render(
+        <Example activeKey="cats" />,
+      );
+
+      expect(container.querySelector(step)).not.toBeInTheDocument();
     });
 
     it('renders the compact view when the desired max width is medium', () => {
-      wrapper.setProps({ compactWidth: 'md', activeKey: 'cats' });
+      const { container } = render(
+        <Example compactWidth="md" activeKey="cats" />,
+      );
+
       mockWindowSize.width = 768;
-      expect(wrapper.find(StepperHeader).exists(step)).toBe(true);
+
+      expect(container.querySelector(step)).toBeInTheDocument();
     });
   });
 

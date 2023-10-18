@@ -34,6 +34,8 @@ describe('<MultiSelectDropdownFilter />', () => {
       const checkboxes = screen.getAllByRole('checkbox');
       expect(checkboxes.length).toEqual(3);
     });
+    const checkboxes = screen.getAllByRole('checkbox');
+    expect(checkboxes.length).toEqual(3);
   });
   it('renders a title', () => {
     render(<MultiSelectDropdownFilter {...props} />);
@@ -81,6 +83,10 @@ describe('<MultiSelectDropdownFilter />', () => {
       const label = screen.getByText(roan.name);
       expect(label).toBeInTheDocument();
     });
+    const label = screen.getByText(roan.name);
+    expect(label).toBeInTheDocument();
+    const badge = screen.getByText(roan.number.toString());
+    expect(badge).toBeInTheDocument();
   });
   it('renders checkbox label with number - with badge', async () => {
     render(<MultiSelectDropdownFilter column={{ ...props.column, filterValue: [roan.value] }} />);

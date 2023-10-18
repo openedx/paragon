@@ -85,6 +85,7 @@ describe('<ModalLayer />', () => {
           <Dialog />
         </ModalLayer>,
       );
+
       const backdrop = screen.getByTestId('modal-backdrop');
       userEvent.click(backdrop);
       expect(closeFn).toHaveBeenCalled();

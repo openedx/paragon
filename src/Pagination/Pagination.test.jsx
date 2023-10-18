@@ -107,7 +107,7 @@ describe('<Pagination />', () => {
   });
 
   describe('handles focus properly', () => {
-    it('should change focus to next button if previous page is first page', () => {
+    it('should change focus to next button if previous page is first page', async () => {
       const props = {
         ...baseProps,
         currentPage: 2,
@@ -121,7 +121,7 @@ describe('<Pagination />', () => {
       expect(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT)).toHaveFocus();
     });
 
-    it('should change focus to previous button if next page is last page', () => {
+    it('should change focus to previous button if next page is last page', async () => {
       const props = {
         ...baseProps,
         currentPage: baseProps.pageCount - 1,
@@ -149,7 +149,7 @@ describe('<Pagination />', () => {
 
     describe('should use correct number of pages', () => {
       it('should show 5 buttons on desktop', () => {
-        render((
+        render(
           <ResponsiveContext.Provider value={{ width: breakpoints.large.maxWidth }}>
             <Pagination {...baseProps} />
           </ResponsiveContext.Provider>
@@ -176,8 +176,8 @@ describe('<Pagination />', () => {
           currentPage,
         };
 
-        // Use extra small window size to display the mobile version of `Pagination`.
-        render((
+        // Use extra small window size to display the mobile version of Pagination.
+        render(
           <ResponsiveContext.Provider value={{ width: breakpoints.extraSmall.maxWidth }}>
             <Pagination {...props} />
           </ResponsiveContext.Provider>
@@ -191,33 +191,33 @@ describe('<Pagination />', () => {
     });
 
     describe('should fire callbacks properly', () => {
-      it('should not fire onPageSelect when selecting current page', () => {
+      it('should not fire onPageSelect when selecting current page', async () => {
         const spy = jest.fn();
         const props = {
           ...baseProps,
           onPageSelect: spy,
         };
-        render((
+        render(
           <ResponsiveContext.Provider value={{ width: breakpoints.large.maxWidth }}>
             <Pagination {...props} />
-          </ResponsiveContext.Provider>
-        ));
+          </ResponsiveContext.Provider>,
+        );
 
         userEvent.click(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false }));
         expect(spy).toHaveBeenCalledTimes(0);
       });
 
-      it('should fire onPageSelect callback when selecting new page', () => {
+      it('should fire onPageSelect callback when selecting new page', async () => {
         const spy = jest.fn();
         const props = {
           ...baseProps,
           onPageSelect: spy,
         };
-        render((
+        render(
           <ResponsiveContext.Provider value={{ width: breakpoints.large.maxWidth }}>
             <Pagination {...props} />
-          </ResponsiveContext.Provider>
-        ));
+          </ResponsiveContext.Provider>,
+        );
 
         userEvent.click(screen.getByLabelText(`${PAGINATION_BUTTON_LABEL_PAGE} 2`));
         expect(spy).toHaveBeenCalledTimes(1);
@@ -229,10 +229,11 @@ describe('<Pagination />', () => {
   });
 
   describe('fires previous and next button click handlers', () => {
-    it('previous button onClick', () => {
+    it('previous button onClick', async () => {
       const spy = jest.fn();
       const props = {
         ...baseProps,
+        currentPage: 2,
         onPageSelect: spy,
         currentPage: 3,
       };
@@ -242,7 +243,7 @@ describe('<Pagination />', () => {
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
-    it('next button onClick', () => {
+    it('next button onClick', async () => {
       const spy = jest.fn();
       const props = {
         ...baseProps,
@@ -303,8 +304,10 @@ describe('<Pagination />', () => {
       rerender((
         <ResponsiveContext.Provider value={{ width: breakpoints.large.minWidth }}>
           <Pagination {...props} currentPage={2} />
-        </ResponsiveContext.Provider>
-      ));
+        </ResponsiveContext.Provider>,
+      );
+      expect(screen.getByText(`${buttonLabels.page} 2, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} 5`)).toBeInTheDocument();
+      expect(screen.getByLabelText(`${buttonLabels.page} 1`)).toBeInTheDocument();
       expect(screen.getByText('1')).toHaveAttribute('aria-label', pageLabel);
 
       rerender((

@@ -28,7 +28,7 @@ function Component({ isClearValue }) {
 }
 
 describe('FormControl', () => {
-  it('textarea changes its height with autoResize prop', () => {
+  it('textarea changes its height with autoResize prop', async () => {
     const useReferenceSpy = jest.spyOn(React, 'useRef').mockReturnValue(ref);
     const onChangeFunc = jest.fn();
     const inputText = 'new text';

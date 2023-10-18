@@ -69,10 +69,11 @@ describe('correct rendering', () => {
     expect(wrapper.find(Button).prop('variant')).toEqual('brand');
     expect(wrapper.find('button').hasClass('btn-brand')).toEqual(true);
   });
-  it('rendering with Brand button variant', () => {
-    const wrapper = mount(<DefaultSelectMenu variant="brand" />);
-    expect(wrapper.find(Button).prop('variant')).toEqual('brand');
-    expect(wrapper.find('button').hasClass('btn-brand')).toEqual(true);
+
+  it('renders with Brand button variant', () => {
+    render(DefaultSelectMenu({ variant: 'brand' }));
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('btn-brand');
   });
 });
 

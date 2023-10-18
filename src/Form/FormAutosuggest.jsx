@@ -202,7 +202,10 @@ const FormAutosuggest = forwardRef(
       if (parentRef.current && !parentRef.current.contains(e.target) && isActive) {
         leaveControl();
       }
-    };
+    if (e.key === 'Tab' && isActive) {
+      leaveControl();
+    }
+  };
 
     useEffect(() => {
       document.addEventListener('keydown', keyDownHandler);
