@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const CardBody = React.forwardRef(({ className, children }, ref) => (
-  <div className={classNames('pgn__card-body', className)} ref={ref}>
+const CardBody = React.forwardRef(({ className, children, ...rest }, ref) => (
+  <div className={classNames('pgn__card-body', className)} ref={ref} {...rest}>
     {children}
   </div>
 ));

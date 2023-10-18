@@ -11,6 +11,7 @@ exports[`<Chip /> snapshots renders with props iconAfter 1`] = `
   </div>
   <div
     className="pgn__chip__icon-after"
+    data-testid="icon-after"
     role="button"
     tabIndex={0}
   >
@@ -106,6 +107,7 @@ exports[`<Chip /> snapshots renders with props iconBefore and iconAfter 1`] = `
   </div>
   <div
     className="pgn__chip__icon-after"
+    data-testid="icon-after"
     role="button"
     tabIndex={0}
   >

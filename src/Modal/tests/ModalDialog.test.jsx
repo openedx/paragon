@@ -1,9 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+
 import ModalDialog from '../ModalDialog';
 
-/* eslint-disable react/prop-types */
 jest.mock('../ModalLayer', () => function ModalLayerMock(props) {
+  // eslint-disable-next-line react/prop-types
   const { children, ...otherProps } = props;
   return (
     <modal-layer {...otherProps}>
@@ -13,88 +14,73 @@ jest.mock('../ModalLayer', () => function ModalLayerMock(props) {
 });
 
 describe('ModalDialog', () => {
-  const onClose = jest.fn();
-  const wrapper = mount((
-    <ModalDialog
-      title="My dialog"
-      isOpen
-      onClose={onClose}
-      size="md"
-      variant="default"
-      hasCloseButton
-    >
-      <ModalDialog.Header>
-        <ModalDialog.Title>The title</ModalDialog.Title>
-      </ModalDialog.Header>
+  it('renders a dialog with aria-label and content', () => {
+    const onClose = jest.fn();
+    render(
+      <ModalDialog
+        title="My dialog"
+        isOpen
+        onClose={onClose}
+        size="md"
+        variant="default"
+        hasCloseButton
+      >
+        <ModalDialog.Header>
+          <ModalDialog.Title>The title</ModalDialog.Title>
+        </ModalDialog.Header>
 
-      <ModalDialog.Body>
-        <p>The content</p>
-      </ModalDialog.Body>
+        <ModalDialog.Body>
+          <p>The content</p>
+        </ModalDialog.Body>
 
-      <ModalDialog.Footer>
-        <ModalDialog.CloseButton>Cancel</ModalDialog.CloseButton>
-      </ModalDialog.Footer>
-    </ModalDialog>
-  ));
+        <ModalDialog.Footer>
+          <ModalDialog.CloseButton>Cancel</ModalDialog.CloseButton>
+        </ModalDialog.Footer>
+      </ModalDialog>,
+    );
 
-  const dialogNode = wrapper.find('div[role="dialog"]').hostNodes().first();
+    const dialogNode = screen.getByRole('dialog');
 
-  it('renders a dialog', () => {
-    expect(wrapper.exists('div[role="dialog"]')).toBe(true);
-  });
-
-  it('has a label', () => {
-    expect(dialogNode.props()['aria-label']).toBe('My dialog');
-  });
-
-  it('has content', () => {
-    expect(wrapper.exists({ children: 'The content' })).toBe(true);
+    expect(dialogNode).toBeInTheDocument();
+    expect(dialogNode).toHaveAttribute('aria-label', 'My dialog');
+    expect(screen.getByText('The content')).toBeInTheDocument();
   });
 });
 
 describe('ModalDialog with Hero', () => {
-  const onClose = jest.fn();
-  const wrapper = mount((
-    <ModalDialog
-      title="My dialog"
-      isOpen
-      onClose={onClose}
-      size="md"
-      variant="default"
-      hasCloseButton
-    >
-      <ModalDialog.Hero>
-        <ModalDialog.Hero.Background backgroundSrc="imageurl" />
-        <ModalDialog.Hero.Content>
-          <ModalDialog.Title>The title</ModalDialog.Title>
-        </ModalDialog.Hero.Content>
-      </ModalDialog.Hero>
+  it('renders a dialog with aria-label and hero with img', () => {
+    const onClose = jest.fn();
+    render(
+      <ModalDialog
+        title="My dialog"
+        isOpen
+        onClose={onClose}
+        size="md"
+        variant="default"
+        hasCloseButton
+      >
+        <ModalDialog.Hero>
+          <ModalDialog.Hero.Background backgroundSrc="imageurl" />
+          <ModalDialog.Hero.Content data-testid="modal-hero-content">
+            <ModalDialog.Title>The title</ModalDialog.Title>
+          </ModalDialog.Hero.Content>
+        </ModalDialog.Hero>
 
-      <ModalDialog.Body>
-        <p>The content</p>
-      </ModalDialog.Body>
+        <ModalDialog.Body>
+          <p>The content</p>
+        </ModalDialog.Body>
 
-      <ModalDialog.Footer>
-        <ModalDialog.CloseButton>Cancel</ModalDialog.CloseButton>
-      </ModalDialog.Footer>
-    </ModalDialog>
-  ));
+        <ModalDialog.Footer>
+          <ModalDialog.CloseButton>Cancel</ModalDialog.CloseButton>
+        </ModalDialog.Footer>
+      </ModalDialog>,
+    );
+    const dialogNode = screen.getByRole('dialog');
 
-  const dialogNode = wrapper.find('div[role="dialog"]').hostNodes().first();
+    expect(dialogNode).toBeInTheDocument();
+    expect(dialogNode).toHaveAttribute('aria-label', 'My dialog');
 
-  it('renders a dialog', () => {
-    expect(wrapper.exists('div[role="dialog"]')).toBe(true);
-  });
-
-  it('has a label', () => {
-    expect(dialogNode.props()['aria-label']).toBe('My dialog');
-  });
-
-  it('has a hero with image', () => {
-    expect(wrapper.exists({
-      style: {
-        backgroundImage: 'url(imageurl)',
-      },
-    })).toBe(true);
+    const heroContentNode = screen.getByTestId('modal-hero-content');
+    expect(heroContentNode.previousSibling).toHaveStyle('backgroundImage: url(imageurl)');
   });
 });

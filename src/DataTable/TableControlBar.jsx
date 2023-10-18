@@ -22,7 +22,7 @@ function TableControlBar({ className }) {
     'pgn__data-table-actions-right': invalidTogglePlacement || togglePlacement === 'left',
   });
   return (
-    <div className={classNames('pgn__data-table-status-bar', className)}>
+    <div className={classNames('pgn__data-table-status-bar', className)} data-testid="table-control-bar">
       {/* Using setFilter as a proxy for isFilterable */}
       {(setFilter && !showFiltersInSidebar) && (
       <div className="pgn__data-table-actions">

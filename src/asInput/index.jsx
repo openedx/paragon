@@ -278,7 +278,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
         >
           {labelFirst && this.getLabel()}
           {this.props.inputGroupPrepend || this.props.inputGroupAppend ? (
-            <div className={classNames('input-group')}>
+            <div className={classNames('input-group')} data-testid="input-group">
               {this.renderInputGroupPrepend()}
               {this.renderInput(describedBy)}
               {this.renderInputGroupAppend()}
