@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
-import Annotation from './index';
+import { render, screen } from '@testing-library/react';
+import Annotation from '.';
 
 const VARIANTS = ['error', 'success', 'warning', 'light', 'dark'];
 const ARROW_PLACEMENTS = ['top', 'right', 'bottom', 'left'];
@@ -34,9 +34,17 @@ describe('Annotation', () => {
   test.each(classNameTestData)(
     'renders with correct className for variant: %s, with arrow placement: %s',
     (variant, arrowPlacement, expectedClassName) => {
-      const wrapper = mount(<Annotation variant={variant} arrowPlacement={arrowPlacement}>Test text</Annotation>);
-      const annotation = wrapper.find('.pgn__annotation');
-      expect(annotation.hasClass(expectedClassName)).toEqual(true);
+      render(
+        <Annotation
+          variant={variant}
+          arrowPlacement={arrowPlacement}
+          data-testid="annotation"
+        >
+          Test text
+        </Annotation>,
+      );
+      const annotation = screen.getByTestId('annotation');
+      expect(annotation.className).toContain(expectedClassName);
     },
   );
 });

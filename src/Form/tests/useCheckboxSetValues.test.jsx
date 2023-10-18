@@ -1,7 +1,11 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import useCheckboxSetValues from '../useCheckboxSetValues';
+
+const VALUES = 'values';
 
 function Example() {
   const [values, {
@@ -9,57 +13,59 @@ function Example() {
   }] = useCheckboxSetValues(['cheddar']);
   return (
     <>
-      <span id="values">{values.join(' ')}</span>
-      <button id="add" onClick={() => add('provolone')}>Add</button>
-      <button id="remove" onClick={() => remove('provolone')}>Add</button>
-      <button id="set" onClick={() => set(['cheddar', 'swiss', 'provolone'])}>Add</button>
-      <button id="clear" onClick={() => clear()}>Add</button>
+      <span data-testid={VALUES}>{values.join(' ')}</span>
+      <button data-testid="add" onClick={() => add('provolone')}>Add</button>
+      <button data-testid="remove" onClick={() => remove('provolone')}>Remove</button>
+      <button data-testid="set" onClick={() => set(['cheddar', 'swiss', 'provolone'])}>Set</button>
+      <button data-testid="clear" onClick={() => clear()}>Clear</button>
     </>
   );
 }
 
 describe('useCheckboxSetValues', () => {
-  const wrapper = mount(<Example />);
-
-  const getValues = () => {
-    const valueStr = wrapper.find('#values').first().text();
-    if (valueStr === '') {
-      return [];
-    }
-    return valueStr.split(' ');
-  };
-
-  const addButton = wrapper.find('#add').first();
-  const removeButton = wrapper.find('#remove').first();
-  const setButton = wrapper.find('#set').first();
-  const clearButton = wrapper.find('#clear').first();
-
   it('has a default value', () => {
-    const values = getValues();
-    expect(values).toEqual(['cheddar']);
+    render(<Example />);
+    const values = screen.getByTestId(VALUES);
+    expect(values.textContent).toBe('cheddar');
   });
 
-  it('can append a value', () => {
-    addButton.simulate('click');
-    const values = getValues();
-    expect(values).toEqual(['cheddar', 'provolone']);
+  it('can append a value', async () => {
+    render(<Example />);
+    const addButton = screen.getByTestId('add');
+    const values = screen.getByTestId(VALUES);
+
+    await userEvent.click(addButton);
+
+    expect(values.textContent).toBe('cheddar provolone');
   });
 
-  it('can remove a value', () => {
-    removeButton.simulate('click');
-    const values = getValues();
-    expect(values).toEqual(['cheddar']);
+  it('can remove a value', async () => {
+    render(<Example />);
+    const removeButton = screen.getByTestId('remove');
+    const values = screen.getByTestId(VALUES);
+
+    await userEvent.click(removeButton);
+
+    expect(values.textContent).toBe('cheddar');
   });
 
-  it('can replace all values', () => {
-    setButton.simulate('click');
-    const values = getValues();
-    expect(values).toEqual(['cheddar', 'swiss', 'provolone']);
+  it('can replace all values', async () => {
+    render(<Example />);
+    const setButton = screen.getByTestId('set');
+    const values = screen.getByTestId(VALUES);
+
+    await userEvent.click(setButton);
+
+    expect(values.textContent).toBe('cheddar swiss provolone');
   });
 
-  it('can clear all values', () => {
-    clearButton.simulate('click');
-    const values = getValues();
-    expect(values).toEqual([]);
+  it('can clear all values', async () => {
+    render(<Example />);
+    const clearButton = screen.getByTestId('clear');
+    const values = screen.getByTestId(VALUES);
+
+    await userEvent.click(clearButton);
+
+    expect(values.textContent).toBe('');
   });
 });

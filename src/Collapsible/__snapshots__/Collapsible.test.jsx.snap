@@ -28,6 +28,7 @@ exports[`<Collapsible /> Controlled Rendering renders closed by default 1`] = `
   <div
     aria-expanded={false}
     className="close-only"
+    data-testid="close-only"
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"
@@ -38,6 +39,7 @@ exports[`<Collapsible /> Controlled Rendering renders closed by default 1`] = `
   <div
     aria-expanded={false}
     className="open-only"
+    data-testid="open-only"
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"
@@ -78,6 +80,7 @@ exports[`<Collapsible /> Controlled Rendering renders open by default 1`] = `
   <div
     aria-expanded={false}
     className="close-only"
+    data-testid="close-only"
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"
@@ -88,6 +91,7 @@ exports[`<Collapsible /> Controlled Rendering renders open by default 1`] = `
   <div
     aria-expanded={false}
     className="open-only"
+    data-testid="open-only"
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"
@@ -128,6 +132,7 @@ exports[`<Collapsible /> Uncontrolled Rendering renders closed by default 1`] = 
   <div
     aria-expanded={false}
     className="close-only"
+    data-testid="close-only"
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"
@@ -138,6 +143,7 @@ exports[`<Collapsible /> Uncontrolled Rendering renders closed by default 1`] = 
   <div
     aria-expanded={false}
     className="open-only"
+    data-testid="open-only"
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"
@@ -178,6 +184,7 @@ exports[`<Collapsible /> Uncontrolled Rendering renders open by default 1`] = `
   <div
     aria-expanded={true}
     className="close-only"
+    data-testid="close-only"
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"
@@ -188,6 +195,7 @@ exports[`<Collapsible /> Uncontrolled Rendering renders open by default 1`] = `
   <div
     aria-expanded={true}
     className="open-only"
+    data-testid="open-only"
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"

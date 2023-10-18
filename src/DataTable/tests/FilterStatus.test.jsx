@@ -1,9 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
+import userEvent from '@testing-library/user-event';
 
 import FilterStatus from '../FilterStatus';
-import { Button } from '../..';
 import DataTableContext from '../DataTableContext';
 
 const filterNames = ['color', 'breed', 'discipline'];
@@ -37,38 +37,35 @@ function FilterStatusWrapper({ value, props }) {
 
 describe('<FilterStatus />', () => {
   it('passes props to the button', () => {
-    const wrapper = mount(<FilterStatusWrapper value={instance} props={filterProps} />);
-    const buttonProps = wrapper.find(Button).props();
-    expect(buttonProps.className).toEqual(filterProps.buttonClassName);
-    expect(buttonProps.variant).toEqual(filterProps.variant);
-    expect(buttonProps.size).toEqual(filterProps.size);
+    render(<FilterStatusWrapper value={instance} props={filterProps} />);
+    const button = screen.getByText(filterProps.clearFiltersText);
+    expect(button).toHaveClass(filterProps.buttonClassName);
   });
-  it('sets the button text', () => {
-    const wrapper = mount(<FilterStatusWrapper value={instance} props={filterProps} />);
-    expect(wrapper.find(Button).text()).toEqual(filterProps.clearFiltersText);
-  });
-  it('clears the selection on click', () => {
+  it('clears the selection on click', async () => {
     const clearSpy = jest.fn();
-    const wrapper = mount(<FilterStatusWrapper value={{ ...instance, setAllFilters: clearSpy }} props={filterProps} />);
-    wrapper.find(Button).simulate('click');
+    render(
+      <FilterStatusWrapper value={{ ...instance, setAllFilters: clearSpy }} props={filterProps} />,
+    );
+    const button = screen.getByText(filterProps.clearFiltersText);
+    await userEvent.click(button);
     expect(clearSpy).toHaveBeenCalledTimes(1);
     expect(clearSpy).toHaveBeenCalledWith([]);
   });
   it('displays the current filter names', () => {
-    const wrapper = mount(<FilterStatusWrapper value={instance} props={filterProps} />);
-    expect(wrapper.text()).toContain(filterNames.join(', '));
+    render(<FilterStatusWrapper value={instance} props={filterProps} />);
+    expect(screen.getByText(`Filtered by ${filterNames.join(', ')}`)).toBeInTheDocument();
   });
   it('sets class names on the parent', () => {
-    const wrapper = mount(<FilterStatusWrapper value={instance} props={filterProps} />);
-    const statusDiv = wrapper.find('div');
-    expect(statusDiv.props().className).toEqual(filterProps.className);
+    const { container } = render(<FilterStatusWrapper value={instance} props={filterProps} />);
+    const statusDiv = container.firstChild;
+    expect(statusDiv).toHaveClass(filterProps.className);
   });
   it('returns null if setAllFilters is not present (table is not filterable)', () => {
-    const wrapper = mount(<FilterStatusWrapper value={{}} props={filterProps} />);
-    expect(wrapper.text()).toEqual('');
+    const { container } = render(<FilterStatusWrapper value={{}} props={filterProps} />);
+    expect(container.firstChild).toBeNull();
   });
   it('hides filter text', () => {
-    const wrapper = mount(<FilterStatusWrapper value={instance} props={filterPropsNoFiltered} />);
-    expect(wrapper.text()).toEqual('');
+    render(<FilterStatusWrapper value={instance} props={filterPropsNoFiltered} />);
+    expect(screen.queryByText(filterProps.clearFiltersText)).toBeNull();
   });
 });

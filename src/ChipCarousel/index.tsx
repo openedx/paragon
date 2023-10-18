@@ -99,12 +99,13 @@ const ChipCarousel = React.forwardRef(({
               </>
               <div ref={setOverflowRef} className="d-flex">
                 <OverflowScroll.Items>
-                  {items?.map(item => {
+                  {items?.map((item, id) => {
                     const { children } = item?.props || {};
                     if (!children) {
                       return null;
                     }
-                    return React.createElement(Chip, item.props);
+                    // eslint-disable-next-line react/no-array-index-key
+                    return React.createElement(Chip, { ...item.props, key: id });
                   })}
                 </OverflowScroll.Items>
               </div>

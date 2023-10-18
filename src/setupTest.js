@@ -1,7 +1,6 @@
 import 'regenerator-runtime/runtime';
 
-import Enzyme from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import '@testing-library/jest-dom';
 
 const crypto = require('crypto');
 
@@ -24,5 +23,3 @@ window.ResizeObserver = ResizeObserver;
 window.crypto = {
   getRandomValues: arr => crypto.randomBytes(arr.length),
 };
-
-Enzyme.configure({ adapter: new Adapter() });
