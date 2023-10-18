@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { selectColumn } from '../utils/getVisibleColumns';
 import CardView, { DEFAULT_SKELETON_CARD_COUNT } from '../CardView';
 import DataTableContext from '../DataTableContext';

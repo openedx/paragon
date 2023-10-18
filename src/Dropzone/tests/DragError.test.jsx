@@ -1,11 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import DragError from '../DragError';
 
 describe('<Dropzone.DragError />', () => {
   it('renders error message', () => {
-    const wrapper = mount(<DragError message="Drag error message" />);
-    const content = wrapper.find('div.pgn__dropzone-error-wrapper');
-    expect(content.text()).toEqual('Drag error message');
+    const { getByText } = render(<DragError message="Drag error message" />);
+    const errorMessage = getByText('Drag error message');
+    expect(errorMessage).toBeInTheDocument();
   });
 });

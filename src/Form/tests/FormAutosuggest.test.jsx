@@ -240,4 +240,32 @@ describe('controlled behavior', () => {
 
     expect(getByText('2 options found')).toBeInTheDocument();
   });
+
+  it('closes options list when tabbed out and the input is no longer active', () => {
+    const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
+    const input = getByTestId('autosuggest-textbox-input');
+
+    userEvent.click(input);
+    expect(document.activeElement).toBe(getByTestId('autosuggest-textbox-input'));
+
+    const list = queryAllByTestId('autosuggest-optionitem');
+    expect(list.length).toBe(3);
+
+    userEvent.tab();
+    expect(document.activeElement).not.toBe(getByTestId('autosuggest-textbox-input'));
+
+    const updatedList = queryAllByTestId('autosuggest-optionitem');
+    expect(updatedList.length).toBe(0);
+  });
+
+  it('check focus on input after esc', () => {
+    const { getByTestId } = render(<FormAutosuggestTestComponent />);
+    const input = getByTestId('autosuggest-textbox-input');
+    const dropdownBtn = getByTestId('autosuggest-iconbutton');
+    userEvent.click(dropdownBtn);
+
+    userEvent.keyboard('{esc}');
+
+    expect(input.matches(':focus')).toBe(true);
+  });
 });

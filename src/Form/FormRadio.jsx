@@ -40,42 +40,37 @@ const FormRadio = React.forwardRef(({
   isInvalid,
   isValid,
   ...props
-}, ref) => {
-  const { getRadioControlProps } = useRadioSetContext();
-  const radioInputProps = getRadioControlProps({
-    ...props,
-    className: controlClassName,
-  });
-  return (
-    <FormGroupContextProvider
-      controlId={radioInputProps.id}
-      isInvalid={isInvalid}
-      isValid={isValid}
+}, ref) => (
+  <FormGroupContextProvider
+    controlId={props.id}
+    isInvalid={isInvalid}
+    isValid={isValid}
+  >
+    <div
+      className={classNames('pgn__form-radio', className, {
+        'pgn__form-control-valid': isValid,
+        'pgn__form-control-invalid': isInvalid,
+        'pgn__form-control-disabled': props.disabled,
+      })}
     >
-      <div
-        className={classNames('pgn__form-radio', className, {
-          'pgn__form-control-valid': isValid,
-          'pgn__form-control-invalid': isInvalid,
-          'pgn__form-control-disabled': radioInputProps.disabled,
-        })}
-      >
-        <RadioControl {...radioInputProps} ref={ref} />
-        <div>
-          <FormLabel className={labelClassName}>
-            {children}
-          </FormLabel>
-          {description && (
-            <FormControlFeedback hasIcon={false}>
-              {description}
-            </FormControlFeedback>
-          )}
-        </div>
+      <RadioControl ref={ref} className={controlClassName} {...props} />
+      <div>
+        <FormLabel className={labelClassName}>
+          {children}
+        </FormLabel>
+        {description && (
+        <FormControlFeedback hasIcon={false}>
+          {description}
+        </FormControlFeedback>
+        )}
       </div>
-    </FormGroupContextProvider>
-  );
-});
+    </div>
+  </FormGroupContextProvider>
+));
 
 FormRadio.propTypes = {
+  /** Specifies id of the FormRadio component. */
+  id: PropTypes.string,
   /** Specifies contents of the component. */
   children: PropTypes.node.isRequired,
   /** Specifies class name to append to the base element. */
@@ -90,15 +85,19 @@ FormRadio.propTypes = {
   isInvalid: PropTypes.bool,
   /** Specifies whether to display component in valid state, this affects styling. */
   isValid: PropTypes.bool,
+  /** Specifies whether the `FormRadio` is disabled. */
+  disabled: PropTypes.bool,
 };
 
 FormRadio.defaultProps = {
+  id: undefined,
   className: undefined,
   controlClassName: undefined,
   labelClassName: undefined,
   description: undefined,
   isInvalid: false,
   isValid: false,
+  disabled: false,
 };
 
 export { RadioControl };

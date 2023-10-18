@@ -14,6 +14,7 @@ class SheetContainer extends React.Component {
       const rootElement = document.createElement('div');
       rootElement.setAttribute('id', this.sheetRootName);
       rootElement.setAttribute('class', 'sheet-container');
+      rootElement.setAttribute('data-testid', 'sheet-container');
       this.rootElement = document.body.appendChild(rootElement);
     }
   }

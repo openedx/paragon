@@ -1,8 +1,5 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-
-// adds special assertions like toHaveTextContent
-import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 
 import { Info, Home } from '../../icons';

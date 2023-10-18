@@ -1,6 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
+import userEvent from '@testing-library/user-event';
+
 import { Add, Check } from '../../icons';
 import { MenuItem } from '..';
 import Menu from '.';
@@ -8,11 +10,14 @@ import Hyperlink from '../Hyperlink';
 import Button from '../Button';
 import Form from '../Form';
 
+const MENU_ITEM_TEXT = 'Cant Touch This';
+
 describe('Menu Item renders correctly', () => {
-  it('renders as just a div With empty usage', () => {
-    const wrapper = mount(<Menu />);
-    expect(wrapper.find('div').exists()).toEqual(true);
+  it('renders as just a div with empty usage', () => {
+    render(<Menu data-testid="menu" />);
+    expect(screen.getByTestId('menu')).toBeInTheDocument();
   });
+
   it('renders as expected with menu items', () => {
     const tree = renderer.create((
       <Menu>
@@ -27,59 +32,88 @@ describe('Menu Item renders correctly', () => {
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('Renders disabled menutitems, but you cant click them', () => {
+
+  it('Renders disabled menu items, but you can\'t click them', async () => {
     const clickFn = jest.fn();
-    const wrapper = mount((
+    render(
       <Menu>
-        <MenuItem as={Button} iconBefore={Add} onClick={clickFn} disabled>Cant Touch This</MenuItem>
-      </Menu>
-    ));
-    expect(clickFn).toHaveBeenCalledTimes(0);
-    wrapper
-      .find('button')
-      .simulate('click');
+        <MenuItem
+          as={Button}
+          iconBefore={Add}
+          onClick={clickFn}
+          disabled
+        >
+          {MENU_ITEM_TEXT}
+        </MenuItem>
+      </Menu>,
+    );
+
+    const button = screen.getByText(MENU_ITEM_TEXT);
+    await userEvent.click(button);
     expect(clickFn).toHaveBeenCalledTimes(0);
   });
 });
 
-describe('Keyoard Interactions', () => {
-  const wrapper = mount(
-    <Menu>
-      <MenuItem>Default</MenuItem>
-      <MenuItem as={Button} iconBefore={Add}>Cant Touch This</MenuItem>
-      <MenuItem iconBefore={Add}>Icon Before</MenuItem>
-    </Menu>,
-  );
-
-  const menuContainer = wrapper.find(Menu);
-  const menuItems = wrapper.find(MenuItem);
-
-  it('should focus on the first item after click', () => {
-    menuItems.at(0).simulate('click');
-    expect(menuItems.at(0) === document.activeElement);
+describe('Keyboard Interactions', () => {
+  beforeEach(() => {
+    render(
+      <Menu>
+        <MenuItem>Default</MenuItem>
+        <MenuItem as={Button} iconBefore={Add}>{MENU_ITEM_TEXT}</MenuItem>
+        <MenuItem iconBefore={Add}>Icon Before</MenuItem>
+      </Menu>,
+    );
   });
+
+  it('should focus on the first item after click', async () => {
+    const defaultItem = screen.getByText('Default').parentElement;
+    await userEvent.click(defaultItem);
+    expect(defaultItem).toHaveFocus();
+  });
+
   it('should focus the next item after ArrowDown keyDown', () => {
-    menuContainer
-      .simulate('keyDown', { key: 'ArrowDown' });
-    expect(menuItems.at(1) === document.activeElement);
+    const defaultItem = screen.getByText('Default');
+    const cantTouchThisItem = screen.getByText(MENU_ITEM_TEXT).parentElement;
+
+    userEvent.type(defaultItem, '{arrowdown}');
+
+    expect(cantTouchThisItem).toHaveFocus();
   });
+
   it('should focus the next item after Tab keyDown', () => {
-    menuContainer.simulate('keyDown', { key: 'Tab' });
-    expect(menuItems.at(2) === document.activeElement);
+    const defaultItem = screen.getByText('Default').parentElement;
+    const cantTouchThisItem = screen.getByText(MENU_ITEM_TEXT).parentElement;
+    defaultItem.focus();
+    userEvent.tab();
+
+    expect(cantTouchThisItem).toHaveFocus();
   });
 
   it('should loop focus to the first item after Tab keyDown on last item', () => {
-    menuContainer.simulate('keyDown', { key: 'Tab' });
-    expect(menuItems.at(0) === document.activeElement);
+    const defaultItem = screen.getByText('Default').parentElement;
+    const iconBeforeItem = screen.getByText('Icon Before');
+    iconBeforeItem.focus();
+    userEvent.tab();
+
+    expect(defaultItem).toHaveFocus();
   });
 
   it('should loop focus to the last item after ArrowUp keyDown on first item', () => {
-    menuContainer.simulate('keyDown', { key: 'ArrowUp' });
-    expect(menuItems.at(2) === document.activeElement);
+    const defaultItem = screen.getByText('Default').parentElement;
+    const iconBeforeItem = screen.getByText('Icon Before').parentElement;
+    defaultItem.focus();
+    userEvent.type(defaultItem, '{arrowup}');
+
+    expect(iconBeforeItem).toHaveFocus();
   });
 
   it('should focus the previous item after Shift + Tab keyDown', () => {
-    menuContainer.simulate('keyDown', { key: 'Tab', shiftKey: true });
-    expect(menuItems.at(1) === document.activeElement);
+    const button1 = screen.getAllByRole('button')[0];
+    const button2 = screen.getAllByRole('button')[1];
+
+    button2.focus();
+    userEvent.tab({ shift: true });
+
+    expect(button1).toHaveFocus();
   });
 });
