@@ -25,6 +25,24 @@ notes: |
 </Stack>
 ```
 
+## With isSelected prop
+
+```jsx live
+<Stack
+    gap={2}
+    direction="horizontal"
+>
+    <Chip isSelected>New</Chip>
+    <Chip
+        isSelected
+        iconAfter={Close}
+        onIconAfterClick={() => console.log('onIconAfterClick')}
+    >
+        New
+    </Chip>
+</Stack>
+```
+
 ## With Icon Before and After
 ### Basic Usage
 
@@ -39,20 +57,6 @@ notes: |
         onIconAfterClick={() => console.log('onIconAfterClick')}
     >
         New 1
-    </Chip>
-    <Chip
-        iconBefore={Person}
-        onIconBeforeClick={() => console.log('Remove Chip')}
-    >
-        New
-    </Chip>
-    <Chip
-        iconBefore={Person}
-        iconAfter={Close}
-        onIconBeforeClick={() => console.log('onIconBeforeClick')}
-        onIconAfterClick={() => console.log('onIconAfterClick')}
-    >
-        New
     </Chip>
     <Chip
         iconBefore={Person}
@@ -80,22 +84,6 @@ notes: |
         onIconAfterClick={() => console.log('onIconAfterClick')}
     >
         New 1
-    </Chip>
-    <Chip
-        variant="dark"
-        iconBefore={Person}
-        onIconBeforeClick={() => console.log('Remove Chip')}
-    >
-        New
-    </Chip>
-    <Chip
-        variant="dark"
-        iconBefore={Person}
-        iconAfter={Close}
-        onIconBeforeClick={() => console.log('onIconBeforeClick')}
-        onIconAfterClick={() => console.log('onIconAfterClick')}
-    >
-        New
     </Chip>
     <Chip
         variant="dark"

@@ -4,6 +4,7 @@
 .pgn__chip {
   border-radius: $chip-border-radius;
   display: inline-flex;
+  justify-content: space-between;
   margin: $chip-margin;
   border: 1px solid $chip-border-color;
   padding: $chip-padding-y $chip-padding-x;

@@ -2,18 +2,15 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { IntlProvider } from 'react-intl';
 
 import { Close } from '../../icons';
 import Chip from '.';
 
 function TestChip(props) {
   return (
-    <IntlProvider locale="en">
-      <Chip {...props}>
-        Test
-      </Chip>
-    </IntlProvider>
+    <Chip {...props}>
+      Test
+    </Chip>
   );
 }
 
@@ -97,6 +94,20 @@ describe('<Chip />', () => {
       const iconBefore = screen.getByTestId('icon-before');
       await userEvent.type(iconBefore, '{enter}');
       expect(func).toHaveBeenCalled();
+    });
+    it('checks the absence of the `selected` class in the chip', async () => {
+      render(
+        <TestChip data-testid="chip" />,
+      );
+      const iconBefore = screen.getByTestId('chip');
+      expect(iconBefore).not.toHaveClass('selected');
+    });
+    it('checks the presence of the `selected` class in the chip', async () => {
+      render(
+        <TestChip isSelected data-testid="chip" />,
+      );
+      const iconBefore = screen.getByTestId('chip');
+      expect(iconBefore).toHaveClass('selected');
     });
   });
 });
