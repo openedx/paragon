@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import Portal from './Portal';
+import { render } from '@testing-library/react';
+import Portal from '../Portal';
 
 const getPortalRoot = () => global.document.getElementById('paragon-portal-root');
 
@@ -13,20 +13,19 @@ describe('<Portal />', () => {
   });
 
   it('renders content in a #paragon-portal-root div', () => {
-    mount((
-      <div>
-        <Portal>
-          <div id="portal-content-a">Content A</div>
-        </Portal>
-      </div>
-    ));
+    render(
+      <Portal>
+        <div id="portal-content-a">Content A</div>
+      </Portal>,
+    );
+
     const portalRoot = getPortalRoot();
     expect(portalRoot).not.toBeNull();
     expect(portalRoot.children[0].id).toBe('portal-content-a');
   });
 
   it('renders both contents in a single #paragon-portal-root div', () => {
-    mount((
+    render(
       <div>
         <Portal>
           <div id="portal-content-a">Content A</div>
@@ -34,8 +33,9 @@ describe('<Portal />', () => {
         <Portal>
           <div id="portal-content-b">Content B</div>
         </Portal>
-      </div>
-    ));
+      </div>,
+    );
+
     const portalRoot = getPortalRoot();
     expect(portalRoot).not.toBeNull();
     expect(portalRoot.children[0].id).toBe('portal-content-a');

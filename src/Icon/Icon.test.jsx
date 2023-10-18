@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Icon from './index';
 
@@ -14,55 +14,57 @@ function BlankSrc() {
   return <div />;
 }
 
-let wrapper;
-
 describe('<Icon />', () => {
   describe('props received correctly', () => {
     it('receives required props', () => {
-      wrapper = mount(<Icon className={classNames} />);
-      const iconSpans = wrapper.find('span');
-      const iconSpan = iconSpans.at(0);
+      const { container } = render(<Icon className={classNames} />);
+      const iconSpans = container.querySelectorAll('span');
+      const iconSpan = iconSpans[0];
 
-      expect(iconSpan.prop('id')).toContain('Icon');
-      expect(iconSpan.hasClass(classNames[0])).toEqual(true);
-      expect(iconSpan.hasClass(classNames[1])).toEqual(true);
+      expect(iconSpan.getAttribute('id')).toContain('Icon');
+      expect(iconSpan.classList.contains(classNames[0])).toEqual(true);
+      expect(iconSpan.classList.contains(classNames[1])).toEqual(true);
     });
+
     it('handles null id properly', () => {
       const nullId = null;
-      wrapper = mount(<Icon id={nullId} className={classNames} />);
-      const iconSpans = wrapper.find('span');
-      const iconSpan = iconSpans.at(0);
+      const { container } = render(<Icon id={nullId} className={classNames} />);
+      const iconSpans = container.querySelectorAll('span');
+      const iconSpan = iconSpans[0];
 
-      expect(iconSpan.prop('id')).toContain('Icon');
-      expect(iconSpan.hasClass(classNames[0])).toEqual(true);
-      expect(iconSpan.hasClass(classNames[1])).toEqual(true);
+      expect(iconSpan.getAttribute('id')).toContain('Icon');
+      expect(iconSpan.classList.contains(classNames[0])).toEqual(true);
+      expect(iconSpan.classList.contains(classNames[1])).toEqual(true);
     });
+
     it('generates unique ids when no id is provided', () => {
-      wrapper = mount(<><Icon className={classNames} /><Icon className={classNames} /></>);
-      const iconSpans = wrapper.find('span');
-      const iconSpan1 = iconSpans.at(0);
-      const iconSpan2 = iconSpans.at(1);
-      const id1 = iconSpan1.prop('id');
-      const id2 = iconSpan2.prop('id');
+      const { container } = render(<><Icon className={classNames} /><Icon className={classNames} /></>);
+      const iconSpans = container.querySelectorAll('span');
+      const iconSpan1 = iconSpans[0];
+      const iconSpan2 = iconSpans[1];
+      const id1 = iconSpan1.getAttribute('id');
+      const id2 = iconSpan2.getAttribute('id');
 
       expect(id1).toContain('Icon');
       expect(id2).toContain('Icon');
       expect(id1).not.toEqual(id2);
     });
+
     it('handles screenReaderText correctly', () => {
-      wrapper = mount(<Icon id={testId} className={classNames} screenReaderText={srTest} />);
-      const iconSpans = wrapper.find('span');
+      const { container } = render(<Icon id={testId} className={classNames} screenReaderText={srTest} />);
+      const iconSpans = container.querySelectorAll('span');
 
       expect(iconSpans.length).toEqual(2);
-      expect(iconSpans.at(0).prop('id')).toEqual(testId);
-      expect(iconSpans.at(1).hasClass('sr-only')).toEqual(true);
+      expect(iconSpans[0].getAttribute('id')).toEqual(testId);
+      expect(iconSpans[1].classList.contains('sr-only')).toEqual(true);
     });
-    it('receives size prop correctly', () => {
-      wrapper = mount(<Icon src={BlankSrc} className={classNames} size="xs" />);
-      const iconSpans = wrapper.find('span');
-      const iconSpan = iconSpans.at(0);
 
-      expect(iconSpan.hasClass('pgn__icon__xs')).toEqual(true);
+    it('receives size prop correctly', () => {
+      const { container } = render(<Icon src={BlankSrc} className={classNames} size="xs" />);
+      const iconSpans = container.querySelectorAll('span');
+      const iconSpan = iconSpans[0];
+
+      expect(iconSpan.classList.contains('pgn__icon__xs')).toEqual(true);
     });
   });
 });

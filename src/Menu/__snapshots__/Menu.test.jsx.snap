@@ -126,6 +126,7 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
   >
     <input
       className="pgn__form-checkbox-input"
+      disabled={false}
       id="form-field1"
       type="checkbox"
     />
