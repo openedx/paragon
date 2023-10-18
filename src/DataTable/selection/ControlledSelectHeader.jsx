@@ -9,7 +9,7 @@ import {
   setSelectedRowsAction,
 } from './data/actions';
 
-function ControlledSelectHeader({ rows }) {
+function ControlledSelectHeader({ rows, ...rest }) {
   const {
     itemCount,
     controlledTableSelections: [, dispatch],
@@ -44,6 +44,7 @@ function ControlledSelectHeader({ rows }) {
       <CheckboxControl
         {...toggleAllPageRowsSelectedProps}
         onChange={toggleAllPageRowsSelected}
+        {...rest}
       />
     </div>
   );

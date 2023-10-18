@@ -7,6 +7,7 @@ const Annotation = React.forwardRef(({
   variant,
   children,
   arrowPlacement,
+  ...props
 }, ref) => (
   <span
     className={classNames(
@@ -15,6 +16,7 @@ const Annotation = React.forwardRef(({
       `pgn__annotation-${variant}-${arrowPlacement}`,
     )}
     ref={ref}
+    {...props}
   >
     {children}
   </span>

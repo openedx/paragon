@@ -7,8 +7,15 @@ import { ModalContextProvider } from './ModalContext';
 
 // istanbul ignore next
 function ModalBackdrop({ onClick }) {
-  // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-  return <div className="pgn__modal-backdrop" onClick={onClick} onKeyDown={onClick} />;
+  return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div
+      className="pgn__modal-backdrop"
+      onClick={onClick}
+      onKeyDown={onClick}
+      data-testid="modal-backdrop"
+    />
+  );
 }
 
 ModalBackdrop.propTypes = {

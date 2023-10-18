@@ -1,14 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
-import Tooltip from './index';
+import Tooltip from '.';
 
 describe('<Tootltip />', () => {
-  describe('correct rendering', () => {
-    it('renders with correct class when variant is added', () => {
-      const wrapper = mount(<Tooltip id="tooltip" variant="light" />);
-      const tooltip = wrapper.find('.tooltip');
-      expect(tooltip.hasClass('tooltip-light')).toEqual(true);
-    });
+  it('renders with correct class when variant is added', () => {
+    render(<Tooltip id="tooltip" variant="light" />);
+    const tooltip = screen.getByRole('tooltip');
+    expect(tooltip.classList.contains('tooltip-light')).toBe(true);
   });
 });
