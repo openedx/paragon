@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 
@@ -16,23 +15,26 @@ describe('correct rendering', () => {
     expect(tree).toMatchSnapshot();
   });
   it('renders correct base className', () => {
-    const wrapper = mount(<CardStatus>Text</CardStatus>);
-    expect(wrapper.find('.pgn__card-status').length).toBeGreaterThan(0);
+    render(<CardStatus data-testid="card-status">Text</CardStatus>);
+    expect(screen.getByTestId('card-status').className).toContain('pgn__card-status');
   });
+
   it('renders body with custom className', () => {
     const className = 'my-class-name';
-    const wrapper = mount(<CardStatus className={className}>Text</CardStatus>);
-    expect(wrapper.find('.my-class-name').length).toBeGreaterThan(0);
+    render(<CardStatus className={className} data-testid="card-status">Text</CardStatus>);
+    expect(screen.getByTestId('card-status').className).toContain(className);
   });
+
   it('renders with correct variant', () => {
     const variant = 'primary';
-    const wrapper = mount(<CardStatus variant={variant}>Text</CardStatus>);
-    expect(wrapper.find('.pgn__card-status__primary').length).toBeGreaterThan(0);
+    render(<CardStatus variant={variant} data-testid="card-status">Text</CardStatus>);
+    expect(screen.getByTestId('card-status').className).toContain(`pgn__card-status__${variant}`);
   });
+
   it('renders with icon', () => {
     const icon = WarningFilled;
-    const wrapper = mount(<CardStatus icon={icon}>Text</CardStatus>);
-    expect(wrapper.find('.pgn__icon').length).toBeGreaterThan(0);
+    const { container } = render(<CardStatus icon={icon}>Text</CardStatus>);
+    expect(container.querySelector('svg')).toBeTruthy();
   });
   it('renders with title', () => {
     const titleText = 'Hello world!';

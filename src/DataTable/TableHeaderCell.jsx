@@ -6,14 +6,14 @@ import { ArrowDropDown, ArrowDropUp, ArrowDropUpDown } from '../../icons';
 
 export function SortIndicator({ isSorted, isSortedDesc }) {
   if (!isSorted) {
-    return <Icon style={{ opacity: 0.5 }} src={ArrowDropUpDown} />;
+    return <Icon style={{ opacity: 0.5 }} src={ArrowDropUpDown} data-testid="arrow-drop-up-down" />;
   }
 
   if (isSortedDesc) {
-    return <Icon src={ArrowDropDown} />;
+    return <Icon src={ArrowDropDown} data-testid="arrow-drop-down" />;
   }
 
-  return <Icon src={ArrowDropUp} />;
+  return <Icon src={ArrowDropUp} data-testid="arrow-drop-up" />;
 }
 
 SortIndicator.propTypes = {

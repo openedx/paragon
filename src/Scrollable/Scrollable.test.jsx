@@ -1,12 +1,8 @@
 import React from 'react';
-
 import { render, screen } from '@testing-library/react'; // (or /dom, /vue, ...)
 import useIsVisible from '../hooks/useIsVisible';
 
-// adds special assertions like toHaveTextContent
-import '@testing-library/jest-dom/extend-expect';
-
-import Scrollable, { CLASSNAME_SCROLL_BOTTOM, CLASSNAME_SCROLL_TOP } from './index';
+import Scrollable, { CLASSNAME_SCROLL_BOTTOM, CLASSNAME_SCROLL_TOP } from '.';
 
 jest.mock('../hooks/useIsVisible');
 
