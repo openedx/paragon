@@ -1,6 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Sheet, { POSITIONS, VARIANTS } from './index';
+import { render } from '@testing-library/react';
+
+import Sheet, { POSITIONS, VARIANTS } from '.';
 
 /* eslint-disable react/prop-types */
 jest.mock('./SheetContainer', () => function SheetContainerMock(props) {
@@ -46,8 +48,10 @@ describe('<Sheet />', () => {
   });
   describe('correct rendering', () => {
     it('returns empty render if show is false', () => {
-      expect(renderJSON(<Sheet show={false} />)).toEqual(null);
-      expect(renderJSON(<Sheet />)).not.toEqual(null);
+      const { container } = render(<Sheet show={false} />);
+      expect(container.firstChild).toBeNull();
+      const { container: container2 } = render(<Sheet />);
+      expect(container2.firstChild).not.toBeNull();
     });
   });
 });

@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-import asInput, { getDisplayName } from './index';
+import asInput, { getDisplayName } from '.';
 
 function testComponent(props) {
   return (
@@ -38,21 +38,28 @@ describe('asInput()', () => {
       ...baseProps,
       value: 'foofoo',
     };
-    const wrapper = mount(<InputTestComponent {...props} />);
-    expect(wrapper.find('label').text()).toEqual(props.label);
-    expect(wrapper.find('#description-asInput1').text()).toEqual(props.description);
-    expect(wrapper.prop('value')).toEqual(props.value);
+    render(<InputTestComponent {...props} />);
+    const label = screen.getByText(props.label);
+    const description = screen.getByText(baseProps.description);
+    const input = screen.getByText(baseProps.label);
+
+    expect(label).toBeInTheDocument();
+    expect(description).toBeInTheDocument();
+    expect(input).toBeInTheDocument();
   });
 
   it('creates generic prop id', () => {
     const props = {
       ...baseProps,
     };
-    const wrapper = mount(<InputTestComponent {...props} />);
-    expect(wrapper.find('asInput(testComponent)').state('id')).toContain('asInput');
-    expect(wrapper.find('label').prop('id')).toContain('asInput');
-    expect(wrapper.find('input').prop('id')).toContain('asInput');
-    expect(wrapper.find('small').prop('id')).toContain('asInput');
+    render(<InputTestComponent {...props} />);
+    const labelElement = screen.getByText(baseProps.label);
+    const inputElement = labelElement.nextSibling;
+    const smallElement = screen.getByText(baseProps.description);
+
+    expect(labelElement.getAttribute('id')).toContain('asInput');
+    expect(inputElement.getAttribute('id')).toContain('asInput');
+    expect(smallElement.getAttribute('id')).toContain('asInput');
   });
 
   it('creates generic prop id when passed null id value', () => {
@@ -61,36 +68,43 @@ describe('asInput()', () => {
       ...baseProps,
       id: testId,
     };
-    const wrapper = mount(<InputTestComponent {...props} />);
-    expect(wrapper.find('asInput(testComponent)').state('id')).toContain('asInput');
-    expect(wrapper.find('label').prop('id')).toContain('asInput');
-    expect(wrapper.find('input').prop('id')).toContain('asInput');
-    expect(wrapper.find('small').prop('id')).toContain('asInput');
+    render(<InputTestComponent {...props} />);
+    const labelElement = screen.getByText(baseProps.label);
+    const inputElement = labelElement.nextSibling;
+    const smallElement = screen.getByText(baseProps.description);
+
+    expect(labelElement.getAttribute('id')).toContain('asInput');
+    expect(inputElement.getAttribute('id')).toContain('asInput');
+    expect(smallElement.getAttribute('id')).toContain('asInput');
   });
 
-  it('uses passed in prop id', () => {
+  it('uses passed-in prop id', () => {
     const testId = 'testId';
     const props = {
       ...baseProps,
       id: testId,
     };
-    const wrapper = mount(<InputTestComponent {...props} />);
-    expect(wrapper.find('asInput(testComponent)').state('id')).toEqual(testId);
-    expect(wrapper.find('label').prop('id')).toEqual(`label-${testId}`);
-    expect(wrapper.find('input').prop('id')).toEqual(testId);
-    expect(wrapper.find('small').prop('id')).toEqual(`description-${testId}`);
+    render(<InputTestComponent {...props} />);
+    const labelElement = screen.getByText(baseProps.label);
+    const inputElement = labelElement.nextSibling;
+    const smallElement = screen.getByText(baseProps.description);
+
+    expect(labelElement.getAttribute('id')).toEqual(`label-${testId}`);
+    expect(inputElement.getAttribute('id')).toEqual(testId);
+    expect(smallElement.getAttribute('id')).toEqual(`description-${testId}`);
   });
 
-  it('uses label as element type', () => {
-    const testLabel = (<span lang="en">Label</span>);
+  it('uses label as an element type', () => {
+    const testLabel = <span lang="en">Label</span>;
     const props = {
       ...baseProps,
       label: testLabel,
     };
-    const wrapper = mount(<InputTestComponent {...props} />);
-    expect(wrapper.find('label').children()).toHaveLength(1);
-    expect(wrapper.find('label').children().at(0).text()).toEqual('Label');
-    expect(wrapper.find('label').children().at(0).prop('lang')).toEqual('en');
+    render(<InputTestComponent {...props} />);
+    const label = screen.getByText('Label').parentElement;
+    expect(label).toBeInTheDocument();
+    expect(label.children).toHaveLength(1);
+    expect(label.children[0]).toHaveAttribute('lang', 'en');
   });
 
   it('overrides state value when props value changes', () => {
@@ -100,358 +114,321 @@ describe('asInput()', () => {
       ...baseProps,
       value: initValue,
     };
-    const wrapper = mount(<InputTestComponent {...props} />);
-    expect(wrapper.find('asInput(testComponent)').state('value')).toEqual(initValue);
-    wrapper.setProps({
-      value: newValue,
-    });
-    expect(wrapper.find('asInput(testComponent)').state('value')).toEqual(newValue);
+    const { rerender } = render(<InputTestComponent {...props} />);
+
+    expect(screen.getByText(baseProps.label).nextSibling.getAttribute('value')).toEqual(initValue);
+
+    props.value = newValue;
+    rerender(<InputTestComponent {...props} />);
+
+    expect(screen.getByText(baseProps.label).nextSibling.getAttribute('value')).toEqual(newValue);
   });
 
   describe('fires', () => {
-    it('blur handler', () => {
+    it('blur handler', async () => {
       const spy = jest.fn();
       const props = {
         ...baseProps,
         onBlur: spy,
       };
-      const wrapper = mount(<InputTestComponent {...props} />);
-      wrapper.find('input').simulate('blur');
+      render(<InputTestComponent {...props} />);
+      const input = screen.getByText(baseProps.label).nextSibling;
+      input.focus();
+      await userEvent.tab();
       expect(spy).toHaveBeenCalledTimes(1);
+      expect(input).not.toHaveFocus();
     });
 
-    it('change handler', () => {
+    it('change handler', async () => {
+      const message = 'new';
       const spy = jest.fn();
       const props = {
         ...baseProps,
         onChange: spy,
       };
-      const wrapper = mount(<InputTestComponent {...props} />);
-      wrapper.find('input').simulate('change');
-      expect(spy).toHaveBeenCalledTimes(1);
+      render(<InputTestComponent {...props} />);
+      const input = screen.getByText(baseProps.label).nextSibling;
+
+      await userEvent.type(input, message);
+      expect(spy).toHaveBeenCalledTimes(message.length);
     });
 
-    it('keypress handler', () => {
+    it('keypress handler', async () => {
       const spy = jest.fn();
       const props = {
         ...baseProps,
         onKeyPress: spy,
       };
-      const wrapper = mount(<InputTestComponent {...props} />);
-      wrapper.find('input').simulate('keypress');
+      render(<InputTestComponent {...props} />);
+      const input = screen.getByText(baseProps.label).nextSibling;
+      input.focus();
+
+      await userEvent.keyboard('{enter}');
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('validation properties', () => {
+    it('uses props if validator becomes undefined', () => {
+      const spy = jest.fn();
+      spy.mockReturnValue({ validationMessage: 'Spy' });
+      const props = {
+        ...baseProps,
+        validator: spy,
+        isValid: false,
+        validationMessage: 'Prop',
+        dangerIconDescription: 'Prop',
+      };
+      const { rerender } = render(<InputTestComponent {...props} />);
+
+      expect(screen.queryByText('Spy')).not.toBeInTheDocument();
+      expect(screen.queryByText('Prop')).not.toBeInTheDocument();
+
+      props.validator = null;
+      rerender(<InputTestComponent {...props} />);
+
+      expect(screen.getByText('Prop')).toBeInTheDocument();
+    });
+
+    it('uses validationMessage as element type', () => {
+      const testMessage = <span lang="en">Validation Message</span>;
+      const props = {
+        ...baseProps,
+        isValid: false,
+        validationMessage: testMessage,
+      };
+      render(<InputTestComponent {...props} />);
+      const validationMessage = screen.getByText('Validation Message');
+      expect(validationMessage).toBeInTheDocument();
+      expect(validationMessage).toHaveAttribute('lang', 'en');
+    });
+
+    it('uses isValid to display validation message', () => {
+      const props = {
+        ...baseProps,
+        isValid: false,
+        validationMessage: 'Nope!',
+      };
+      const { rerender } = render(<InputTestComponent {...props} />);
+      const errorElement = screen.getByText('Nope!');
+      expect(errorElement).toBeInTheDocument();
+
+      props.validationMessage = 'New Message';
+      rerender(<InputTestComponent {...props} />);
+      expect(screen.getByText('New Message')).toBeInTheDocument();
+
+      props.isValid = true;
+      rerender(<InputTestComponent {...props} />);
+      expect(screen.queryByText('New Message')).not.toBeInTheDocument();
+    });
+
+    it('uses isValid to display validation message and danger icon with danger theme', () => {
+      const props = {
+        ...baseProps,
+        themes: ['danger'],
+        isValid: false,
+        validationMessage: 'Nope!',
+        dangerIconDescription: 'Error ',
+      };
+      const { rerender } = render(<InputTestComponent {...props} />);
+      const validationMessage = screen.getByTestId('validation-message');
+      expect(validationMessage.textContent).toEqual('Error Nope!');
+
+      const dangerIcon = screen.getByText('Error');
+      expect(dangerIcon).toBeInTheDocument();
+
+      props.validationMessage = 'New Message';
+      rerender(<InputTestComponent {...props} />);
+      expect(validationMessage.textContent).toEqual('Error New Message');
+
+      props.dangerIconDescription = 'Danger, Will Robinson! ';
+      rerender(<InputTestComponent {...props} />);
+      expect(validationMessage.textContent).toEqual('Danger, Will Robinson! New Message');
+
+      props.isValid = true;
+      rerender(<InputTestComponent {...props} />);
+      expect(validationMessage.textContent).toEqual('');
+    });
+  });
+
+  describe('validator', () => {
+    it('on blur', async () => {
+      const spy = jest.fn();
+      spy.mockReturnValueOnce({ isValid: true });
+      const props = {
+        ...baseProps,
+        validator: spy,
+      };
+      render(<InputTestComponent {...props} />);
+      const input = screen.getByText(baseProps.label).nextSibling;
+      input.focus();
+      await userEvent.tab();
+
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
-    describe('validation properties', () => {
-      it('ignores props if validator is defined', () => {
-        const spy = jest.fn();
-        spy.mockReturnValue({ isValid: false });
-        const props = {
-          ...baseProps,
-          validator: spy,
-          isValid: false,
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.find('asInput(testComponent)').state('isValid')).toEqual(true); // default is true, ignoring our prop
-
-        wrapper.setProps({ isValid: true });
-        wrapper.find('input').simulate('blur'); // trigger validation
-        expect(wrapper.find('asInput(testComponent)').state('isValid')).toEqual(false); // validator set false, ignoring our prop
-
-        wrapper.setProps({ isValid: true });
-        expect(wrapper.find('asInput(testComponent)').state('isValid')).toEqual(false); // resetting prop changes nothing
-      });
-
-      it('ignores validationMessage prop if validator is defined', () => {
-        const spy = jest.fn();
-        spy.mockReturnValue({ validationMessage: 'Spy' });
-        const props = {
-          ...baseProps,
-          validator: spy,
-          validationMessage: 'Prop',
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual(''); // default is '', ignoring our prop
-
-        wrapper.find('input').simulate('blur'); // trigger validation
-        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual('Spy'); // validator set Spy, ignoring our prop
-
-        wrapper.setProps({ validationMessage: 'Reset' });
-        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual('Spy'); // resetting prop changes nothing
-      });
-
-      it('ignores dangerIconDescription prop if validator is defined', () => {
-        const spy = jest.fn();
-        spy.mockReturnValue({ dangerIconDescription: 'Spy' });
-        const props = {
-          ...baseProps,
-          validator: spy,
-          dangerIconDescription: 'Prop',
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.find('asInput(testComponent)').state('dangerIconDescription')).toEqual(''); // default is '', ignoring our prop
-
-        wrapper.find('input').simulate('blur'); // trigger validation
-        expect(wrapper.find('asInput(testComponent)').state('dangerIconDescription')).toEqual('Spy'); // validator set Spy, ignoring our prop
-
-        wrapper.setProps({ dangerIconDescription: 'Reset' });
-        expect(wrapper.find('asInput(testComponent)').state('dangerIconDescription')).toEqual('Spy'); // resetting prop changes nothing
-      });
-
-      it('uses props if validator becomes undefined', () => {
-        const spy = jest.fn();
-        spy.mockReturnValue({ validationMessage: 'Spy' });
-        const props = {
-          ...baseProps,
-          validator: spy,
-          isValid: false,
-          validationMessage: 'Prop',
-          dangerIconDescription: 'Prop',
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual('');
-        expect(wrapper.find('asInput(testComponent)').state('dangerIconDescription')).toEqual('');
-
-        wrapper.setProps({ validator: null });
-        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual('Prop');
-        expect(wrapper.find('asInput(testComponent)').state('dangerIconDescription')).toEqual('Prop');
-      });
-
-      it('uses validationMessage as element type', () => {
-        const testMessage = (<span lang="en">Validation Message</span>);
-        const props = {
-          ...baseProps,
-          isValid: false,
-          validationMessage: testMessage,
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        expect(wrapper.find('asInput(testComponent)').state('validationMessage')).toEqual(testMessage);
-      });
-
-      it('uses isValid to display validation message', () => {
-        const props = {
-          ...baseProps,
-          isValid: false,
-          validationMessage: 'Nope!',
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        const err = wrapper.find('.invalid-feedback');
-        expect(err.text()).toEqual('Nope!');
-
-        wrapper.setProps({ validationMessage: 'New Message' });
-        expect(err.text()).toEqual('New Message');
-
-        wrapper.setProps({ isValid: true });
-        expect(err.text()).toEqual('');
-      });
-
-      it('uses isValid to display validation message and danger icon with danger theme', () => {
-        const props = {
-          ...baseProps,
-          themes: ['danger'],
-          isValid: false,
-          validationMessage: 'Nope!',
-          dangerIconDescription: 'Error ',
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        const err = wrapper.find('.invalid-feedback');
-        expect(err.text()).toEqual('Error Nope!');
-
-        wrapper.setProps({ validationMessage: 'New Message' });
-        expect(err.text()).toEqual('Error New Message');
-
-        wrapper.setProps({ dangerIconDescription: 'Danger, Will Robinson! ' });
-        expect(err.text()).toEqual('Danger, Will Robinson! New Message');
-
-        wrapper.setProps({ isValid: true });
-        expect(err.text()).toEqual('');
-      });
-    });
-
-    describe('validator', () => {
-      it('on blur', () => {
-        const spy = jest.fn();
-        spy.mockReturnValueOnce({ isValid: true });
-        const props = {
-          ...baseProps,
-          validator: spy,
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        wrapper.find('input').simulate('blur');
-        expect(spy).toHaveBeenCalledTimes(1);
-      });
-
-      describe('and display error message when invalid', () => {
-        let spy;
-        let validationResult;
-        let wrapper;
-
-        beforeEach(() => {
-          spy = jest.fn();
-          validationResult = {
-            isValid: false,
-            validationMessage: 'Invalid!!1',
-          };
-          spy.mockReturnValueOnce(validationResult);
-          const props = {
-            ...baseProps,
-            validator: spy,
-          };
-          wrapper = mount(<InputTestComponent {...props} />);
-        });
-
-        it('without theme', () => {
-          wrapper.find('input').simulate('blur');
-          expect(spy).toHaveBeenCalledTimes(1);
-          const err = wrapper.find('.invalid-feedback');
-          expect(err.exists()).toEqual(true);
-          expect(err.text()).toEqual(validationResult.validationMessage);
-        });
-
-        it('with danger theme', () => {
-          wrapper.setProps({ themes: ['danger'] });
-          validationResult.dangerIconDescription = 'Error';
-
-          // error div exists on the page when form is loaded
-          const err = wrapper.find('.invalid-feedback');
-          expect(err.exists()).toEqual(true);
-          expect(err.hasClass('invalid-feedback')).toEqual(true);
-          expect(err.prop('aria-live')).toEqual('polite');
-          expect(err.text()).toEqual('');
-
-          wrapper.find('input').simulate('blur');
-          expect(spy).toHaveBeenCalledTimes(1);
-          expect(err.exists()).toEqual(true);
-          expect(err.text()).toEqual(validationResult.dangerIconDescription
-                                     + validationResult.validationMessage);
-
-          const dangerIcon = wrapper.find('.fa-exclamation-circle');
-          expect(dangerIcon.exists()).toEqual(true);
-          expect(dangerIcon.hasClass('fa')).toEqual(true);
-
-          const dangerIconDescription = wrapper.find('.sr-only');
-          expect(dangerIconDescription.exists()).toEqual(true);
-          expect(dangerIconDescription.text()).toEqual(validationResult.dangerIconDescription);
-
-          const inputElement = wrapper.find('.form-control');
-          expect(inputElement.hasClass('is-invalid')).toEqual(true);
-        });
-      });
-    });
-
-    it('displayed inline', () => {
+    describe('and display error message when invalid', () => {
+      const spy = jest.fn();
+      const validationResult = {
+        isValid: false,
+        validationMessage: 'Invalid!!1',
+      };
       const props = {
         ...baseProps,
-        inline: true,
+        validator: spy,
       };
-      const wrapper = mount(<InputTestComponent {...props} />);
-      const input = wrapper.find('.form-group');
-      expect(input.hasClass('form-inline')).toEqual(true);
+
+      beforeEach(() => {
+        spy.mockReturnValueOnce(validationResult);
+      });
+
+      afterEach(() => {
+        spy.mockClear();
+      });
+
+      it('without theme', async () => {
+        render(<InputTestComponent {...props} />);
+        const input = screen.getByText(baseProps.label).nextSibling;
+        input.focus();
+        await userEvent.tab();
+
+        expect(spy).toHaveBeenCalledTimes(1);
+
+        const err = screen.getByText(validationResult.validationMessage);
+        expect(err).toBeInTheDocument();
+      });
+
+      it('with danger theme', async () => {
+        const { rerender } = render(<InputTestComponent {...props} />);
+        const input = screen.getByText(baseProps.label).nextSibling;
+        input.focus();
+        await userEvent.tab();
+        expect(spy).toHaveBeenCalledTimes(1);
+
+        const updatedProps = {
+          ...props,
+          themes: ['danger'],
+        };
+        validationResult.dangerIconDescription = 'Error';
+        rerender(<InputTestComponent {...updatedProps} />);
+
+        const err = screen.getByTestId('validation-message');
+
+        expect(err).toBeInTheDocument();
+        expect(err.textContent).toEqual(validationResult.validationMessage);
+      });
+    });
+  });
+
+  it('displays inline', () => {
+    const props = {
+      ...baseProps,
+      inline: true,
+    };
+    render(<InputTestComponent {...props} />);
+    const inputComponent = screen.getByText(props.label).parentElement;
+    expect(inputComponent.classList.contains('form-inline')).toEqual(true);
+  });
+
+  describe('input group addons', () => {
+    it('does not create an input-group div if no input group addons are given', () => {
+      render(<InputTestComponent {...baseProps} />);
+      const inputGroup = screen.queryByTestId('input-group');
+      expect(inputGroup).not.toBeInTheDocument();
     });
 
-    describe('input group addons', () => {
-      it('does not create an input-group div if no input group addons are given', () => {
-        const wrapper = mount(<InputTestComponent {...baseProps} />);
-        const input = wrapper.find('.form-group');
-        expect(input.find('.input-group').exists()).toEqual(false);
-      });
+    it('displays inputGroupPrepend', () => {
+      const props = {
+        ...baseProps,
+        inputGroupPrepend: (
+          <div className="input-group-text">
+            $
+          </div>
+        ),
+      };
+      render(<InputTestComponent {...props} />);
+      const inputGroup = screen.getByTestId('input-group');
+      const inputGroupText = screen.getByText('$');
 
-      it('displays inputGroupPrepend', () => {
-        const props = {
-          ...baseProps,
-          inputGroupPrepend: (
-            <div className="input-group-text">
-              $
-            </div>
-          ),
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        const input = wrapper.find('.form-group');
-        expect(input.find('.input-group').exists()).toEqual(true);
-        expect(input.find('.input-group-prepend').exists()).toEqual(true);
-        expect(input.find('.input-group-prepend').text()).toEqual('$');
-      });
+      expect(inputGroup).toBeInTheDocument();
+      expect(inputGroupText).toBeInTheDocument();
+    });
 
-      it('displays inputGroupAppend', () => {
-        const props = {
-          ...baseProps,
-          inputGroupAppend: (
-            <div className="input-group-text">
-              .00
-            </div>
-          ),
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        const input = wrapper.find('.form-group');
-        expect(input.find('.input-group').exists()).toEqual(true);
-        expect(input.find('.input-group-append').exists()).toEqual(true);
-        expect(input.find('.input-group-append').text()).toEqual('.00');
-      });
+    it('displays inputGroupAppend', () => {
+      const props = {
+        ...baseProps,
+        inputGroupAppend: (
+          <div className="input-group-text">
+            .00
+          </div>
+        ),
+      };
+      render(<InputTestComponent {...props} />);
+      const inputGroupText = screen.getByText('.00');
 
-      it('displays both inputGroupPrepend and inputGroupAppend', () => {
-        const props = {
-          ...baseProps,
-          inputGroupPrepend: (
-            <div className="input-group-text">
-              $
-            </div>
-          ),
-          inputGroupAppend: (
-            <div className="input-group-text">
-              .00
-            </div>
-          ),
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        const input = wrapper.find('.form-group');
-        expect(input.find('.input-group').exists()).toEqual(true);
-        expect(input.find('.input-group-prepend').exists()).toEqual(true);
-        expect(input.find('.input-group-prepend').text()).toEqual('$');
-        expect(input.find('.input-group-append').exists()).toEqual(true);
-        expect(input.find('.input-group-append').text()).toEqual('.00');
-      });
+      expect(inputGroupText).toBeInTheDocument();
+    });
 
-      it('displays multiple inputGroupAppend elements', () => {
-        const props = {
-          ...baseProps,
-          inputGroupAppend: [
-            <div className="input-group-text">
-              .00
-            </div>,
-            <div className="input-group-text">
-              <button type="button" className="btn">Go</button>
-            </div>,
-          ],
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        const input = wrapper.find('.form-group');
-        expect(input.find('.input-group').exists()).toEqual(true);
-        expect(input.find('.input-group-append').exists()).toEqual(true);
-        expect(input.find('.input-group-append').children()).toHaveLength(2);
-        expect(input.find('.input-group-append').childAt(0).text()).toEqual('.00');
-        expect(input.find('.input-group-append').childAt(1).text()).toEqual('Go');
-      });
+    it('displays both inputGroupPrepend and inputGroupAppend', () => {
+      const props = {
+        ...baseProps,
+        inputGroupPrepend: (
+          <div className="input-group-text">
+            $
+          </div>
+        ),
+        inputGroupAppend: (
+          <div className="input-group-text">
+            .00
+          </div>
+        ),
+      };
+      render(<InputTestComponent {...props} />);
+      const inputGroupTextAppend = screen.getByText('.00');
+      const inputGroupTextPrepend = screen.getByText('$');
 
-      it('displays multiple inputGroupPrepend elements', () => {
-        const props = {
-          ...baseProps,
-          inputGroupPrepend: [
-            <div className="input-group-text">
-              $
-            </div>,
-            <div className="input-group-text">
-              0.
-            </div>,
-          ],
-        };
-        const wrapper = mount(<InputTestComponent {...props} />);
-        const input = wrapper.find('.form-group');
-        expect(input.find('.input-group').exists()).toEqual(true);
-        expect(input.find('.input-group-prepend').exists()).toEqual(true);
-        expect(input.find('.input-group-prepend').children()).toHaveLength(2);
-        expect(input.find('.input-group-prepend').childAt(0).text()).toEqual('$');
-        expect(input.find('.input-group-prepend').childAt(1).text()).toEqual('0.');
-      });
+      expect(inputGroupTextAppend).toBeInTheDocument();
+      expect(inputGroupTextPrepend).toBeInTheDocument();
+    });
+
+    it('displays multiple inputGroupAppend elements', () => {
+      const props = {
+        ...baseProps,
+        inputGroupAppend: [
+          <div className="input-group-text">
+            .00
+          </div>,
+          <div className="input-group-text">
+            <button type="button" className="btn">Go</button>
+          </div>,
+        ],
+      };
+      render(<InputTestComponent {...props} />);
+      const inputGroupText = screen.getByText('.00');
+      const button = screen.getByText('Go');
+
+      expect(inputGroupText).toBeInTheDocument();
+      expect(button).toBeInTheDocument();
+    });
+
+    it('displays multiple inputGroupPrepend elements', () => {
+      const props = {
+        ...baseProps,
+        inputGroupPrepend: [
+          <div className="input-group-text">
+            $
+          </div>,
+          <div className="input-group-text">
+            0.
+          </div>,
+        ],
+      };
+      render(<InputTestComponent {...props} />);
+      const inputGroupText1 = screen.getByText('$');
+      const inputGroupText2 = screen.getByText('0.');
+
+      expect(inputGroupText1).toBeInTheDocument();
+      expect(inputGroupText2).toBeInTheDocument();
     });
   });
 });

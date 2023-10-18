@@ -1,24 +1,42 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
-import Popover from './index';
+import Popover from '.';
 
 describe('<Popover />', () => {
   describe('correct rendering', () => {
     it('renders with correct class for variant success', () => {
-      const wrapper = mount(<Popover id="popover-id" variant="success" />);
-      const popover = wrapper.find('.popover');
-      expect(popover.hasClass('popover-success')).toEqual(true);
+      const { getByTestId } = render(
+        <Popover
+          id="popover-id"
+          variant="success"
+          data-testid="popover"
+        />,
+      );
+      const popover = getByTestId('popover');
+      expect(popover).toHaveClass('popover-success');
     });
     it('renders with correct class for variant warning', () => {
-      const wrapper = mount(<Popover id="popover-id" variant="warning" />);
-      const popover = wrapper.find('.popover');
-      expect(popover.hasClass('popover-warning')).toEqual(true);
+      const { getByTestId } = render(
+        <Popover
+          id="popover-id"
+          variant="warning"
+          data-testid="popover"
+        />,
+      );
+      const popover = getByTestId('popover');
+      expect(popover).toHaveClass('popover-warning');
     });
     it('renders with correct class for variant danger', () => {
-      const wrapper = mount(<Popover id="popover-id" variant="danger" />);
-      const popover = wrapper.find('.popover');
-      expect(popover.hasClass('popover-danger')).toEqual(true);
+      const { getByTestId } = render(
+        <Popover
+          id="popover-id"
+          variant="danger"
+          data-testid="popover"
+        />,
+      );
+      const popover = getByTestId('popover');
+      expect(popover).toHaveClass('popover-danger');
     });
   });
 });
