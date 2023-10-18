@@ -133,6 +133,10 @@ const handlePlaygroundClick = () => {
   global.analytics.track('openedx.paragon.docs.menu.playground.visit_playground.clicked');
 };
 
+const handleContrastCheckerClick = () => {
+  global.analytics.track('openedx.paragon.docs.menu.tools.visit_contrast_checker');
+};
+
 MenuComponentListCategory.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
@@ -227,6 +231,17 @@ function Menu() {
             </li>
             <li>
               <Link to="/tools/component-generator">Component Generator</Link>
+            </li>
+            <li>
+              <Hyperlink
+                destination="https://webaim.org/resources/contrastchecker"
+                target="_blank"
+                externalLinkAlternativeText="Contrast checker page"
+                externalLinkTitle="Contrast checker"
+                onClick={handleContrastCheckerClick}
+              >
+                Contrast Checker
+              </Hyperlink>
             </li>
           </ul>
         </Collapsible>
