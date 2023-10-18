@@ -19,14 +19,18 @@ exports[`<SearchField /> with basic usage should match the snapshot 1`] = `
           search
         </span>
       </label>
-      <input
-        class="form-control"
-        id="pgn-searchfield-input-1"
-        name="searchfield-input"
-        role="searchbox"
-        type="text"
-        value=""
-      />
+      <div
+        class="pgn__form-control-decorator-group"
+      >
+        <input
+          class="form-control"
+          id="pgn-searchfield-input-1"
+          name="searchfield-input"
+          role="searchbox"
+          type="text"
+          value=""
+        />
+      </div>
       <button
         class="btn"
         type="submit"
