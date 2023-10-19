@@ -17,11 +17,11 @@ notes: |
 
 ```jsx live
 <Stack
-    gap={2}
-    direction="horizontal"
+  gap={2}
+  direction="horizontal"
 >
-    <Chip>New</Chip>
-    <Chip disabled>New</Chip>
+  <Chip>New</Chip>
+  <Chip disabled>New</Chip>
 </Stack>
 ```
 
@@ -29,17 +29,17 @@ notes: |
 
 ```jsx live
 <Stack
-    gap={2}
-    direction="horizontal"
+  gap={2}
+  direction="horizontal"
 >
-    <Chip isSelected>New</Chip>
-    <Chip
-        isSelected
-        iconAfter={Close}
-        onIconAfterClick={() => console.log('onIconAfterClick')}
-    >
-        New
-    </Chip>
+  <Chip isSelected>New</Chip>
+  <Chip
+    isSelected
+    iconAfter={Close}
+    onIconAfterClick={() => console.log('onIconAfterClick')}
+  >
+    New
+  </Chip>
 </Stack>
 ```
 
@@ -48,24 +48,24 @@ notes: |
 
 ```jsx live
 <Stack
-    gap={2}
-    direction="horizontal"
+  gap={2}
+  direction="horizontal"
 >
-    <Chip iconBefore={Person}>New</Chip>
-    <Chip
-        iconAfter={Close}
-        onIconAfterClick={() => console.log('onIconAfterClick')}
-    >
-        New 1
-    </Chip>
-    <Chip
-        iconBefore={Person}
-        iconAfter={Close}
-        onIconAfterClick={() => console.log('onIconAfterClick')}
-        disabled
-    >
-        New
-    </Chip>
+  <Chip iconBefore={Person}>New</Chip>
+  <Chip
+    iconAfter={Close}
+    onIconAfterClick={() => console.log('onIconAfterClick')}
+  >
+    New 1
+  </Chip>
+  <Chip
+    iconBefore={Person}
+    iconAfter={Close}
+    onIconAfterClick={() => console.log('onIconAfterClick')}
+    disabled
+  >
+    New
+  </Chip>
 </Stack>
 ```
 
@@ -73,25 +73,25 @@ notes: |
 
 ```jsx live
 <Stack
-    className="bg-dark-700 p-4"
-    gap={2}
-    direction="horizontal"
+  className="bg-dark-700 p-4"
+  gap={2}
+  direction="horizontal"
 >
-    <Chip variant="dark" iconBefore={Person}>New</Chip>
-    <Chip
-        variant="dark"
-        iconAfter={Close}
-        onIconAfterClick={() => console.log('onIconAfterClick')}
-    >
-        New 1
-    </Chip>
-    <Chip
-        variant="dark"
-        iconAfter={Close}
-        onIconAfterClick={() => console.log('onIconAfterClick')}
-        disabled
-    >
-        New
-    </Chip>
+  <Chip variant="dark" iconBefore={Person}>New</Chip>
+  <Chip
+    variant="dark"
+    iconAfter={Close}
+    onIconAfterClick={() => console.log('onIconAfterClick')}
+  >
+    New 1
+  </Chip>
+  <Chip
+    variant="dark"
+    iconAfter={Close}
+    onIconAfterClick={() => console.log('onIconAfterClick')}
+    disabled
+  >
+    New
+  </Chip>
 </Stack>
 ```

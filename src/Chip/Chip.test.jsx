@@ -44,70 +44,82 @@ describe('<Chip />', () => {
 
   describe('correct rendering', () => {
     it('renders with correct class when variant is added', () => {
-      render(<TestChip variant="dark" data-testid="chip" />);
-      const chip = screen.getByTestId('chip');
+      render(<TestChip variant="dark" />);
+      const chip = screen.getByRole('button');
       expect(chip).toHaveClass('pgn__chip pgn__chip-dark');
     });
     it('renders with active class when disabled prop is added', () => {
-      render(<TestChip disabled data-testid="chip" />);
-      const chip = screen.getByTestId('chip');
+      render(<TestChip disabled />);
+      const chip = screen.getByRole('button');
       expect(chip).toHaveClass('disabled');
     });
     it('renders with the client\'s className', () => {
       const className = 'testClassName';
-      render(<TestChip className={className} data-testid="chip" />);
-      const chip = screen.getByTestId('chip');
+      render(<TestChip className={className} />);
+      const chip = screen.getByRole('button');
       expect(chip).toHaveClass(className);
     });
     it('onIconAfterClick is triggered', async () => {
       const func = jest.fn();
       render(
-        <TestChip iconAfter={Close} onIconAfterClick={func} />,
+        <TestChip
+          iconAfter={Close}
+          onIconAfterClick={func}
+          iconAfterAlt="icon-after"
+        />,
       );
-      const iconAfter = screen.getByTestId('icon-after');
+      const iconAfter = screen.getByLabelText('icon-after');
       await userEvent.click(iconAfter);
       expect(func).toHaveBeenCalled();
     });
     it('onIconAfterKeyDown is triggered', async () => {
       const func = jest.fn();
       render(
-        <TestChip iconAfter={Close} onIconAfterClick={func} />,
+        <TestChip
+          iconAfter={Close}
+          onIconAfterClick={func}
+          iconAfterAlt="icon-after"
+        />,
       );
-      const iconAfter = screen.getByTestId('icon-after');
+      const iconAfter = screen.getByLabelText('icon-after');
       await userEvent.type(iconAfter, '{enter}');
       expect(func).toHaveBeenCalled();
     });
     it('onIconBeforeClick is triggered', async () => {
       const func = jest.fn();
       render(
-        <TestChip iconBefore={Close} onIconBeforeClick={func} />,
+        <TestChip
+          iconBefore={Close}
+          onIconBeforeClick={func}
+          iconBeforeAlt="icon-before"
+        />,
       );
-      const iconBefore = screen.getByTestId('icon-before');
+      const iconBefore = screen.getByLabelText('icon-before');
       await userEvent.click(iconBefore);
       expect(func).toHaveBeenCalled();
     });
     it('onIconBeforeKeyDown is triggered', async () => {
       const func = jest.fn();
       render(
-        <TestChip iconBefore={Close} onIconBeforeClick={func} />,
+        <TestChip
+          iconBefore={Close}
+          onIconBeforeClick={func}
+          iconBeforeAlt="icon-before"
+        />,
       );
-      const iconBefore = screen.getByTestId('icon-before');
+      const iconBefore = screen.getByLabelText('icon-before');
       await userEvent.type(iconBefore, '{enter}');
       expect(func).toHaveBeenCalled();
     });
     it('checks the absence of the `selected` class in the chip', async () => {
-      render(
-        <TestChip data-testid="chip" />,
-      );
-      const iconBefore = screen.getByTestId('chip');
-      expect(iconBefore).not.toHaveClass('selected');
+      render(<TestChip />);
+      const chip = screen.getByRole('button');
+      expect(chip).not.toHaveClass('selected');
     });
     it('checks the presence of the `selected` class in the chip', async () => {
-      render(
-        <TestChip isSelected data-testid="chip" />,
-      );
-      const iconBefore = screen.getByTestId('chip');
-      expect(iconBefore).toHaveClass('selected');
+      render(<TestChip isSelected />);
+      const chip = screen.getByRole('button');
+      expect(chip).toHaveClass('selected');
     });
   });
 });

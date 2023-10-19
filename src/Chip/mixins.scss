@@ -10,3 +10,33 @@
     border-radius: $border-radius;
   }
 }
+
+@mixin chip-hover($base-color, $secondary-color) {
+  &:hover {
+    background-color: $base-color;
+    border-color: $base-color;
+
+    .pgn__chip__label {
+      color: $secondary-color;
+    }
+
+    .pgn__chip__icon-before,
+    .pgn__chip__icon-after {
+      &.pgn__icon,
+      &.btn-icon {
+        color: $secondary-color;
+      }
+
+      &.btn-icon:hover {
+        background-color: $secondary-color;
+        color: $base-color;
+      }
+
+      &.btn-icon:focus {
+        color: $secondary-color;
+        border: 2px solid $secondary-color;
+        background-color: $base-color;
+      }
+    }
+  }
+}

@@ -2,19 +2,11 @@ import React, { ForwardedRef, KeyboardEventHandler, MouseEventHandler } from 're
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // @ts-ignore
-import Icon from '../Icon';
+import { requiredWhen } from '../utils/propTypes';
 // @ts-ignore
-import IconButton from '../IconButton';
-
-export const ICON_AFTER_ALT_TEXT = 'Chip icon after';
-export const ICON_BEFORE_ALT_TEXT = 'Chip icon before';
-
-export const STYLE_VARIANTS = [
-  'light',
-  'dark',
-];
-
-export const CHIP_PGN_CLASS = 'pgn__chip';
+import { CHIP_PGN_CLASS, STYLE_VARIANTS } from './constants';
+// @ts-ignore
+import ChipIcon from './ChipIcon';
 
 export interface IChip {
   children: React.ReactNode,
@@ -57,24 +49,16 @@ const Chip = React.forwardRef(({
     {...props}
   >
     {iconBefore && (
-      <div className={classNames('pgn__chip__icon-before', { active: onIconBeforeClick })}>
-        {onIconBeforeClick ? (
-          <IconButton
-            src={iconBefore}
-            onClick={onIconBeforeClick}
-            onKeyPress={onIconBeforeClick}
-            iconAs={Icon}
-            alt={iconBeforeAlt}
-            invertColors
-            data-testid="icon-before"
-          />
-        ) : (
-          <Icon src={iconBefore} />
-        )}
-      </div>
+      <ChipIcon
+        className={`${CHIP_PGN_CLASS}__icon-before`}
+        src={iconBefore}
+        onClick={onIconBeforeClick}
+        alt={iconBeforeAlt}
+        variant={variant}
+      />
     )}
     <div
-      className={classNames('pgn__chip__label', {
+      className={classNames(`${CHIP_PGN_CLASS}__label`, {
         'p-before': iconBefore,
         'p-after': iconAfter,
       })}
@@ -82,21 +66,13 @@ const Chip = React.forwardRef(({
       {children}
     </div>
     {iconAfter && (
-      <div className={classNames('pgn__chip__icon-after', { active: onIconAfterClick })}>
-        {onIconAfterClick ? (
-          <IconButton
-            onClick={onIconAfterClick}
-            onKeyPress={onIconAfterClick}
-            src={iconAfter}
-            iconAs={Icon}
-            alt={iconAfterAlt}
-            invertColors
-            data-testid="icon-after"
-          />
-        ) : (
-          <Icon src={iconAfter} />
-        )}
-      </div>
+      <ChipIcon
+        className={`${CHIP_PGN_CLASS}__icon-after`}
+        src={iconAfter}
+        onClick={onIconAfterClick}
+        alt={iconAfterAlt}
+        variant={variant}
+      />
     )}
   </div>
 ));
@@ -118,7 +94,7 @@ Chip.propTypes = {
    */
   iconBefore: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** Specifies icon alt text. */
-  iconBeforeAlt: PropTypes.string,
+  iconBeforeAlt: requiredWhen(PropTypes.string, 'iconBefore'),
   /** A click handler for the `Chip` icon before. */
   onIconBeforeClick: PropTypes.func,
   /**
@@ -129,7 +105,7 @@ Chip.propTypes = {
    */
   iconAfter: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** Specifies icon alt text. */
-  iconAfterAlt: PropTypes.string,
+  iconAfterAlt: requiredWhen(PropTypes.string, 'iconAfter'),
   /** A click handler for the `Chip` icon after. */
   onIconAfterClick: PropTypes.func,
   /** Indicates if `Chip` has been selected. */
@@ -138,15 +114,15 @@ Chip.propTypes = {
 
 Chip.defaultProps = {
   className: undefined,
-  variant: 'light',
+  variant: STYLE_VARIANTS[0],
   disabled: false,
   iconBefore: undefined,
   iconAfter: undefined,
   onIconBeforeClick: undefined,
   onIconAfterClick: undefined,
   isSelected: false,
-  iconAfterAlt: ICON_AFTER_ALT_TEXT,
-  iconBeforeAlt: ICON_BEFORE_ALT_TEXT,
+  iconAfterAlt: undefined,
+  iconBeforeAlt: undefined,
 };
 
 export default Chip;

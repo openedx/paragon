@@ -45,17 +45,9 @@
 
   .pgn__chip__icon-before,
   .pgn__chip__icon-after {
-    align-items: center;
-    display: flex;
-    outline: none;
-
-    .btn-icon {
+    &.btn-icon {
       width: $chip-icon-size;
       height: $chip-icon-size;
-    }
-
-    &.active {
-      border-radius: 50%;
     }
   }
 
@@ -75,50 +67,12 @@
       }
     }
 
-    &:hover {
-      background-color: $chip-light-hover-bg;
-      border-color: $chip-light-hover-border-color;
-
-      .pgn__chip__label {
-        color: $chip-light-hover-label-color;
-      }
-
-      .pgn__chip__icon-before,
-      .pgn__chip__icon-after {
-        .pgn__icon {
-          color: $chip-light-hover-icon-color;
-        }
-
-        &.active {
-          &:hover .btn-icon .pgn__icon {
-            color: $chip-light-hover-bg;
-          }
-
-          .btn-icon:focus {
-            .pgn__icon {
-              border-color: $chip-light-hover-icon-color;
-            }
-
-            &:hover .pgn__icon {
-              border-color: $chip-light-hover-icon-color;
-              background-color: $chip-light-hover-icon-color;
-              color: $chip-light-hover-bg;
-            }
-          }
-        }
-      }
-    }
+    @include chip-hover($dark-500, $white);
 
     .pgn__chip__icon-before,
     .pgn__chip__icon-after {
-      .pgn__icon {
+      &.pgn__icon {
         color: $chip-label-color;
-        border: 2px solid $chip-dark-icon-border-color;
-      }
-
-      &.active .btn-icon:focus .pgn__icon {
-        border: 2px solid $chip-light-selected-focus-border-color;
-        border-radius: 50%;
       }
     }
 
@@ -150,48 +104,12 @@
       color: $chip-dark-label-color;
     }
 
-    &:hover {
-      background-color: $chip-dark-hover-bg;
-      border-color: $chip-dark-hover-border-color;
-
-      .pgn__chip__label {
-        color: $chip-dark-hover-label-color;
-      }
-
-      .pgn__chip__icon-before,
-      .pgn__chip__icon-after {
-        .pgn__icon {
-          color: $chip-dark-hover-icon-color;
-          border-radius: 50%;
-        }
-
-        &.active {
-          &:hover .btn-icon .pgn__icon {
-            background-color: $chip-dark-hover-icon-color;
-            color: $chip-dark-hover-bg;
-          }
-
-          .btn-icon:focus .pgn__icon {
-            border: 2px solid $chip-dark-hover-icon-color;
-
-            &:hover {
-              background-color: $chip-dark-hover-icon-color;
-              color: $chip-dark-hover-bg;
-            }
-          }
-        }
-      }
-    }
+    @include chip-hover($white, $primary-500);
 
     .pgn__chip__icon-before,
     .pgn__chip__icon-after {
-      .pgn__icon {
+      &.pgn__icon {
         color: $chip-dark-outline-color;
-        border: 2px solid $chip-dark-icon-border-color;
-      }
-
-      &.active .btn-icon:focus .pgn__icon {
-        border: 2px solid $chip-dark-icon-border-color;
       }
     }
 
