@@ -134,7 +134,7 @@ const handlePlaygroundClick = () => {
 };
 
 const handleContrastCheckerClick = () => {
-  global.analytics.track('openedx.paragon.docs.menu.tools.visit_contrast_checker');
+  global.analytics.track('openedx.paragon.docs.menu.tools.visit_contrast_checker.clicked');
 };
 
 MenuComponentListCategory.propTypes = {
