@@ -6,8 +6,6 @@ const buildTokensCommand = require('../lib/build-tokens');
 const replaceVariablesCommand = require('../lib/replace-variables');
 const buildScssCommand = require('../lib/build-scss');
 
-const HELP_COMMAND = 'help';
-
 const COMMANDS = {
   /**
   *'command-name': {
@@ -151,7 +149,7 @@ const COMMANDS = {
     ],
   },
   help: {
-    executor: helpCommand,
+    executor: (args) => helpCommand(COMMANDS, args),
     parameters: [
       {
         name: 'command',
@@ -178,11 +176,6 @@ const COMMANDS = {
   if (!executor) {
     // eslint-disable-next-line no-console
     console.log(chalk.red.bold('Unknown command. Usage: paragon <command>.'));
-    return;
-  }
-
-  if (command === HELP_COMMAND) {
-    helpCommand(COMMANDS, commandArgs);
     return;
   }
 
