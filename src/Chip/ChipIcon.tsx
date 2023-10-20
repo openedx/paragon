@@ -26,7 +26,7 @@ function ChipIcon({
         onKeyPress={onClick}
         iconAs={Icon}
         alt={alt}
-        invertColors={variant === STYLE_VARIANTS[2]}
+        invertColors={variant === STYLE_VARIANTS[1]}
       />
     );
   }
@@ -36,7 +36,7 @@ function ChipIcon({
 
 ChipIcon.propTypes = {
   className: PropTypes.string.isRequired,
-  src: PropTypes.node.isRequired,
+  src: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
   onClick: PropTypes.func,
   alt: PropTypes.string.isRequired,
   variant: PropTypes.string,
@@ -44,7 +44,7 @@ ChipIcon.propTypes = {
 
 ChipIcon.defaultProps = {
   onClick: undefined,
-  variant: STYLE_VARIANTS[1],
+  variant: STYLE_VARIANTS[0],
 };
 
 export default ChipIcon;

@@ -4,9 +4,11 @@ import classNames from 'classnames';
 // @ts-ignore
 import { requiredWhen } from '../utils/propTypes';
 // @ts-ignore
-import { CHIP_PGN_CLASS, STYLE_VARIANTS } from './constants';
+import { STYLE_VARIANTS } from './constants';
 // @ts-ignore
 import ChipIcon from './ChipIcon';
+
+export const CHIP_PGN_CLASS = 'pgn__chip';
 
 export interface IChip {
   children: React.ReactNode,

@@ -37,6 +37,7 @@ notes: |
     isSelected
     iconAfter={Close}
     onIconAfterClick={() => console.log('onIconAfterClick')}
+    iconAfterAlt="icon-after"
   >
     New
   </Chip>
@@ -51,10 +52,11 @@ notes: |
   gap={2}
   direction="horizontal"
 >
-  <Chip iconBefore={Person}>New</Chip>
+  <Chip iconBefore={Person} iconBeforeAlt="icon-before">New</Chip>
   <Chip
     iconAfter={Close}
     onIconAfterClick={() => console.log('onIconAfterClick')}
+    iconAfterAlt="icon-after"
   >
     New 1
   </Chip>
@@ -62,6 +64,8 @@ notes: |
     iconBefore={Person}
     iconAfter={Close}
     onIconAfterClick={() => console.log('onIconAfterClick')}
+    iconAfterAlt="icon-after"
+    iconBeforeAlt="icon-before"
     disabled
   >
     New
@@ -77,11 +81,12 @@ notes: |
   gap={2}
   direction="horizontal"
 >
-  <Chip variant="dark" iconBefore={Person}>New</Chip>
+  <Chip variant="dark" iconBefore={Person} iconBeforeAlt="icon-before">New</Chip>
   <Chip
     variant="dark"
     iconAfter={Close}
     onIconAfterClick={() => console.log('onIconAfterClick')}
+    iconAfterAlt="icon-after"
   >
     New 1
   </Chip>
@@ -89,6 +94,7 @@ notes: |
     variant="dark"
     iconAfter={Close}
     onIconAfterClick={() => console.log('onIconAfterClick')}
+    iconAfterAlt="icon-after"
     disabled
   >
     New

@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Close } from '../../icons';
+import { STYLE_VARIANTS } from './constants';
 import Chip from '.';
 
 function TestChip(props) {
@@ -44,7 +45,7 @@ describe('<Chip />', () => {
 
   describe('correct rendering', () => {
     it('renders with correct class when variant is added', () => {
-      render(<TestChip variant="dark" />);
+      render(<TestChip variant={STYLE_VARIANTS[1]} />);
       const chip = screen.getByRole('button');
       expect(chip).toHaveClass('pgn__chip pgn__chip-dark');
     });
