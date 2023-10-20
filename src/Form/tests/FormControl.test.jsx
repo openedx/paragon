@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-   render, screen, act,
+  render, screen, act, fireEvent,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
