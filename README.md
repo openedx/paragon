@@ -473,6 +473,6 @@ To get treeshaking to work, your app may require some updates - most notably, Ba
 The assigned maintainers for this component and other project details may be found in [Backstage](https://backstage.openedx.org/catalog/default/component/paragon). Backstage pulls this data from the `catalog-info.yml` file in this repository.
 
 ## Reporting Security Issues
-Please do not report security issues in public. Please email security@edx.org.
+Please do not report security issues in public. Please email security@openedx.org.
 
 We tend to prioritize security issues which impact the published `@edx/paragon` NPM library more so than the [documentation website](https://paragon-openedx.netlify.app/) or example React application.
