@@ -1,5 +1,12 @@
 # Paragon
 
+## Warning: Package Moved
+
+While the Paragon design system will continue to receive updates, these updates
+will no longer be published at the @edx/paragon NPM package. Instead, the
+latest versions can be found with
+[@openedx/paragon](https://www.npmjs.com/package/@openedx/paragon) instead.
+
 [![Build Status](https://github.com/openedx/paragon/actions/workflows/release.yml/badge.svg)](https://github.com/openedx/paragon/actions/workflows/release.yml)
 [![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon)
 ![status](https://img.shields.io/badge/status-Maintained-brightgreen)
