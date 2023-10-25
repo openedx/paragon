@@ -1,8 +1,8 @@
 {
-  "lastModified": 1698156494911,
+  "lastModified": 1698242957501,
   "projectUsages": [
     {
-      "version": "21.5.5",
+      "version": "21.5.6",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -859,21 +859,21 @@
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 65,
+            "line": 66,
             "column": 13,
-            "index": 1434
+            "index": 1471
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 137,
+            "line": 138,
             "column": 16,
-            "index": 4012
+            "index": 4049
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 153,
+            "line": 154,
             "column": 16,
-            "index": 4617
+            "index": 4654
           },
           {
             "filePath": "src/account-settings/EditableSelectField.jsx",
@@ -1167,9 +1167,9 @@
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 99,
+            "line": 100,
             "column": 14,
-            "index": 2260
+            "index": 2297
           },
           {
             "filePath": "src/account-settings/EditableSelectField.jsx",
@@ -1223,9 +1223,9 @@
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 103,
+            "line": 104,
             "column": 16,
-            "index": 2377
+            "index": 2414
           },
           {
             "filePath": "src/account-settings/EditableSelectField.jsx",
@@ -1373,9 +1373,9 @@
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 118,
+            "line": 119,
             "column": 16,
-            "index": 2998
+            "index": 3035
           },
           {
             "filePath": "src/account-settings/EditableSelectField.jsx",
@@ -1475,9 +1475,9 @@
           },
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 104,
+            "line": 105,
             "column": 16,
-            "index": 2472
+            "index": 2509
           },
           {
             "filePath": "src/account-settings/EditableSelectField.jsx",
@@ -1521,9 +1521,9 @@
         "Form.Text": [
           {
             "filePath": "src/account-settings/EditableField.jsx",
-            "line": 113,
+            "line": 114,
             "column": 31,
-            "index": 2761
+            "index": 2798
           },
           {
             "filePath": "src/account-settings/EditableSelectField.jsx",
@@ -27302,9 +27302,9 @@
           },
           {
             "filePath": "src/course-home/courseware-search/CoursewareSearch.jsx",
-            "line": 23,
+            "line": 25,
             "column": 8,
-            "index": 818
+            "index": 878
           },
           {
             "filePath": "src/course-home/courseware-search/CoursewareSearchToggle.jsx",
@@ -27574,9 +27574,9 @@
           },
           {
             "filePath": "src/course-home/courseware-search/CoursewareSearch.jsx",
-            "line": 29,
+            "line": 31,
             "column": 9,
-            "index": 1072
+            "index": 1132
           },
           {
             "filePath": "src/course-home/courseware-search/CoursewareSearchToggle.jsx",
@@ -27788,15 +27788,55 @@
         "Close": [
           {
             "filePath": "src/course-home/courseware-search/CoursewareSearch.jsx",
-            "line": 29,
+            "line": 31,
             "column": 20,
-            "index": 1083
+            "index": 1143
           },
           {
             "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
             "line": 72,
             "column": 25,
             "index": 2422
+          }
+        ],
+        "SearchField.Advanced": [
+          {
+            "filePath": "src/course-home/courseware-search/CoursewareSearchForm.jsx",
+            "line": 10,
+            "column": 2,
+            "index": 189
+          }
+        ],
+        "SearchField.Label": [
+          {
+            "filePath": "src/course-home/courseware-search/CoursewareSearchForm.jsx",
+            "line": 17,
+            "column": 6,
+            "index": 428
+          }
+        ],
+        "SearchField.Input": [
+          {
+            "filePath": "src/course-home/courseware-search/CoursewareSearchForm.jsx",
+            "line": 18,
+            "column": 6,
+            "index": 456
+          }
+        ],
+        "SearchField.ClearButton": [
+          {
+            "filePath": "src/course-home/courseware-search/CoursewareSearchForm.jsx",
+            "line": 19,
+            "column": 6,
+            "index": 510
+          }
+        ],
+        "SearchField.SubmitButton": [
+          {
+            "filePath": "src/course-home/courseware-search/CoursewareSearchForm.jsx",
+            "line": 21,
+            "column": 4,
+            "index": 553
           }
         ],
         "Search": [
@@ -40318,7 +40358,7 @@
             "filePath": "src/packages/modular-page/modules/BlurbModule/components/SlantedBlurbModule.jsx",
             "line": 47,
             "column": 6,
-            "index": 1577
+            "index": 1606
           },
           {
             "filePath": "src/packages/modular-page/modules/FeaturedProductsModule/index.jsx",
@@ -41242,15 +41282,15 @@
           },
           {
             "filePath": "src/packages/product-page/components/ProductDetailHero/components/BootCampHero.jsx",
-            "line": 82,
+            "line": 90,
             "column": 20,
-            "index": 3089
+            "index": 3244
           },
           {
             "filePath": "src/packages/product-page/components/ProductDetailHero/components/DegreeHero.jsx",
-            "line": 75,
+            "line": 83,
             "column": 18,
-            "index": 2902
+            "index": 3057
           },
           {
             "filePath": "src/packages/program-page/components/AboutRouting/components/TopicRouting/index.jsx",
@@ -41442,15 +41482,15 @@
           },
           {
             "filePath": "src/packages/product-page/components/ProductDetailHero/components/BootCampHero.jsx",
-            "line": 83,
+            "line": 91,
             "column": 27,
-            "index": 3122
+            "index": 3277
           },
           {
             "filePath": "src/packages/product-page/components/ProductDetailHero/components/DegreeHero.jsx",
-            "line": 76,
+            "line": 84,
             "column": 25,
-            "index": 2933
+            "index": 3088
           }
         ],
         "ChevronRight": [
@@ -41688,7 +41728,7 @@
             "filePath": "src/packages/modular-page/modules/StatisticIconModule/index.jsx",
             "line": 89,
             "column": 12,
-            "index": 2949
+            "index": 2978
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseHeader/components/CourseDescription.jsx",
