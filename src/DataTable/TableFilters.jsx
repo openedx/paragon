@@ -30,12 +30,12 @@ TableFilters.defaultProps = {
 
 TableFilters.propTypes = {
   columns: PropTypes.arrayOf(PropTypes.shape({
-    Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
+    Header: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]).isRequired,
     canFilter: PropTypes.bool,
     render: PropTypes.func.isRequired,
   })).isRequired,
   manualFilters: PropTypes.bool,
-  onFilter: PropTypes.func,
+  onFilter: PropTypes.elementType,
   currentFilters: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
