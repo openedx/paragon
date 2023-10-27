@@ -116,8 +116,8 @@ Pagination.propTypes = {
    * string, symbol, etc. Default is chevrons rendered using fa-css.
    */
   icons: PropTypes.shape({
-    leftIcon: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    rightIcon: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    leftIcon: PropTypes.elementType,
+    rightIcon: PropTypes.elementType,
   }),
   variant: PropTypes.oneOf(['default', 'secondary', 'reduced', 'minimal']),
   invertColors: PropTypes.bool,
@@ -147,3 +147,4 @@ Pagination.defaultProps = {
 };
 
 export default Pagination;
+export * from './constants';
