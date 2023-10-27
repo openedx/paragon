@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import PropTypes from 'prop-types';
 import { createPopper } from '@popperjs/core';
+import { FormattedMessage } from 'react-intl';
 
 import breakpoints from '../utils/breakpoints';
 
@@ -95,8 +96,13 @@ const Checkpoint = React.forwardRef(({
       role="dialog"
       style={{ visibility: checkpointVisible ? 'visible' : 'hidden', pointerEvents: checkpointVisible ? 'auto' : 'none' }}
     >
-      {/* This text is not translated due to Paragon's lack of i18n support */}
-      <span className="sr-only">Top of step {index + 1}</span>
+      <span className="sr-only">
+        <FormattedMessage
+          id="pgn.checkpoint.sr-only.message"
+          defaultMessage={`Top of step ${index + 1}`}
+          description="Screen-reader message to indicate the user's position in a sequence of checkpoints."
+        />
+      </span>
       {(title || !isOnlyCheckpoint) && (
         <div className="pgn__checkpoint-header">
           <CheckpointTitle>{title}</CheckpointTitle>
