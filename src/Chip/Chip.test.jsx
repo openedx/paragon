@@ -25,38 +25,59 @@ describe('<Chip />', () => {
     });
     it('renders with props iconBefore', () => {
       const tree = renderer.create((
-        <TestChip iconBefore={Close} />
+        <TestChip iconBefore={Close} iconBeforeAlt="close icon" />
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('renders with props iconAfter', () => {
       const tree = renderer.create((
-        <TestChip iconAfter={Close} />
+        <TestChip iconAfter={Close} iconAfterAlt="close icon" />
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('renders with props iconBefore and iconAfter', () => {
       const tree = renderer.create((
-        <TestChip iconBefore={Close} iconAfter={Close}>Chip</TestChip>
+        <TestChip
+          iconBefore={Close}
+          iconBeforeAlt="close icon"
+          iconAfter={Close}
+          iconAfterAlt="close icon"
+        >
+          Chip
+        </TestChip>
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+    it('renders div with "button" role when onClick is provided', () => {
+      const tree = renderer.create((
+        <TestChip onClick={jest.fn}>Chip</TestChip>
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });
 
   describe('correct rendering', () => {
+    it('render a non-interactive element if onClick handlers are not provided', () => {
+      render(<TestChip />);
+      expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    });
+    it('render an interactive element if onClick handler is provided', () => {
+      render(<TestChip onClick={jest.fn} />);
+      expect(screen.queryByRole('button')).toBeInTheDocument();
+    });
     it('renders with correct class when variant is added', () => {
-      render(<TestChip variant={STYLE_VARIANTS[1]} />);
+      render(<TestChip variant={STYLE_VARIANTS.DARK} onClick={jest.fn} />);
       const chip = screen.getByRole('button');
       expect(chip).toHaveClass('pgn__chip pgn__chip-dark');
     });
     it('renders with active class when disabled prop is added', () => {
-      render(<TestChip disabled />);
+      render(<TestChip disabled onClick={jest.fn} />);
       const chip = screen.getByRole('button');
       expect(chip).toHaveClass('disabled');
     });
     it('renders with the client\'s className', () => {
       const className = 'testClassName';
-      render(<TestChip className={className} />);
+      render(<TestChip className={className} onClick={jest.fn} />);
       const chip = screen.getByRole('button');
       expect(chip).toHaveClass(className);
     });
@@ -71,7 +92,7 @@ describe('<Chip />', () => {
       );
       const iconAfter = screen.getByLabelText('icon-after');
       await userEvent.click(iconAfter);
-      expect(func).toHaveBeenCalled();
+      expect(func).toHaveBeenCalledTimes(1);
     });
     it('onIconAfterKeyDown is triggered', async () => {
       const func = jest.fn();
@@ -83,8 +104,8 @@ describe('<Chip />', () => {
         />,
       );
       const iconAfter = screen.getByLabelText('icon-after');
-      await userEvent.type(iconAfter, '{enter}');
-      expect(func).toHaveBeenCalled();
+      await userEvent.click(iconAfter, '{enter}', { skipClick: true });
+      expect(func).toHaveBeenCalledTimes(1);
     });
     it('onIconBeforeClick is triggered', async () => {
       const func = jest.fn();
@@ -97,7 +118,7 @@ describe('<Chip />', () => {
       );
       const iconBefore = screen.getByLabelText('icon-before');
       await userEvent.click(iconBefore);
-      expect(func).toHaveBeenCalled();
+      expect(func).toHaveBeenCalledTimes(1);
     });
     it('onIconBeforeKeyDown is triggered', async () => {
       const func = jest.fn();
@@ -109,16 +130,16 @@ describe('<Chip />', () => {
         />,
       );
       const iconBefore = screen.getByLabelText('icon-before');
-      await userEvent.type(iconBefore, '{enter}');
-      expect(func).toHaveBeenCalled();
+      await userEvent.click(iconBefore, '{enter}', { skipClick: true });
+      expect(func).toHaveBeenCalledTimes(1);
     });
     it('checks the absence of the `selected` class in the chip', async () => {
-      render(<TestChip />);
+      render(<TestChip onClick={jest.fn} />);
       const chip = screen.getByRole('button');
       expect(chip).not.toHaveClass('selected');
     });
     it('checks the presence of the `selected` class in the chip', async () => {
-      render(<TestChip isSelected />);
+      render(<TestChip isSelected onClick={jest.fn} />);
       const chip = screen.getByRole('button');
       expect(chip).toHaveClass('selected');
     });

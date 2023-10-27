@@ -1,10 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Chip /> snapshots renders div with "button" role when onClick is provided 1`] = `
+<div
+  className="pgn__chip pgn__chip-light interactive"
+  onClick={[Function]}
+  onKeyPress={[Function]}
+  role="button"
+  tabIndex={0}
+>
+  <div
+    className="pgn__chip__label"
+  >
+    Test
+  </div>
+</div>
+`;
+
 exports[`<Chip /> snapshots renders with props iconAfter 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
-  role="button"
-  tabIndex={0}
 >
   <div
     className="pgn__chip__label p-after"
@@ -12,7 +26,7 @@ exports[`<Chip /> snapshots renders with props iconAfter 1`] = `
     Test
   </div>
   <span
-    className="pgn__icon pgn__chip__icon-after"
+    className="pgn__icon pgn__icon__sm pgn__chip__icon-after"
   >
     <svg
       aria-hidden={true}
@@ -36,11 +50,9 @@ exports[`<Chip /> snapshots renders with props iconAfter 1`] = `
 exports[`<Chip /> snapshots renders with props iconBefore 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
-  role="button"
-  tabIndex={0}
 >
   <span
-    className="pgn__icon pgn__chip__icon-before"
+    className="pgn__icon pgn__icon__sm pgn__chip__icon-before"
   >
     <svg
       aria-hidden={true}
@@ -69,11 +81,9 @@ exports[`<Chip /> snapshots renders with props iconBefore 1`] = `
 exports[`<Chip /> snapshots renders with props iconBefore and iconAfter 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
-  role="button"
-  tabIndex={0}
 >
   <span
-    className="pgn__icon pgn__chip__icon-before"
+    className="pgn__icon pgn__icon__sm pgn__chip__icon-before"
   >
     <svg
       aria-hidden={true}
@@ -97,7 +107,7 @@ exports[`<Chip /> snapshots renders with props iconBefore and iconAfter 1`] = `
     Test
   </div>
   <span
-    className="pgn__icon pgn__chip__icon-after"
+    className="pgn__icon pgn__icon__sm pgn__chip__icon-after"
   >
     <svg
       aria-hidden={true}
@@ -121,8 +131,6 @@ exports[`<Chip /> snapshots renders with props iconBefore and iconAfter 1`] = `
 exports[`<Chip /> snapshots renders without props 1`] = `
 <div
   className="pgn__chip pgn__chip-light"
-  role="button"
-  tabIndex={0}
 >
   <div
     className="pgn__chip__label"

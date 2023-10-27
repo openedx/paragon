@@ -23,15 +23,14 @@ function ChipIcon({
         className={className}
         src={src}
         onClick={onClick}
-        onKeyPress={onClick}
         iconAs={Icon}
         alt={alt}
-        invertColors={variant === STYLE_VARIANTS[1]}
+        invertColors={variant === STYLE_VARIANTS.DARK}
       />
     );
   }
 
-  return <Icon src={src} className={className} />;
+  return <Icon src={src} className={className} size="sm" />;
 }
 
 ChipIcon.propTypes = {
@@ -44,7 +43,7 @@ ChipIcon.propTypes = {
 
 ChipIcon.defaultProps = {
   onClick: undefined,
-  variant: STYLE_VARIANTS[0],
+  variant: STYLE_VARIANTS.LIGHT,
 };
 
 export default ChipIcon;

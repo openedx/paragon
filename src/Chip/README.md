@@ -25,52 +25,103 @@ notes: |
 </Stack>
 ```
 
+## Clickable Variant
+
+Use `onClick` prop to make the whole `Chip` clickable, this will also add appropriate styles to make `Chip` interactive.
+
+```jsx live
+<Chip onClick={() => console.log('Click!')}>Click Me</Chip>
+```
+
 ## With isSelected prop
 
 ```jsx live
-<Stack
-  gap={2}
-  direction="horizontal"
->
-  <Chip isSelected>New</Chip>
-  <Chip
-    isSelected
-    iconAfter={Close}
-    onIconAfterClick={() => console.log('onIconAfterClick')}
-    iconAfterAlt="icon-after"
-  >
-    New
-  </Chip>
-</Stack>
+<Chip isSelected>New</Chip>
 ```
 
 ## With Icon Before and After
 ### Basic Usage
 
+Use `iconBefore` and `iconAfter` props to provide icons for the `Chip`, note that you also have to provide
+accessible names for these icons for screen reader support via `iconBeforeAlt` and `iconAfterAlt` respectively. 
+
 ```jsx live
 <Stack
   gap={2}
   direction="horizontal"
 >
-  <Chip iconBefore={Person} iconBeforeAlt="icon-before">New</Chip>
+  <Chip iconBefore={Person} iconBeforeAlt="icon-before">Person</Chip>
+  <Chip iconAfter={Close} iconAfterAlt="icon-after">Close</Chip>
+  <Chip
+    iconBefore={Person}
+    iconAfter={Close}
+    iconAfterAlt="icon-after"
+    iconBeforeAlt="icon-before"
+  >
+    Both
+  </Chip>
+</Stack>
+```
+
+### Clickable variant
+
+Provide click handlers for icons via `onIconAfterClick` and `onIconBeforeClick` props. 
+
+```jsx live
+<Stack
+  gap={2}
+  direction="horizontal"
+>
+  <Chip
+    iconBefore={Person}
+    iconBeforeAlt="icon-before"
+    onIconBeforeClick={() => console.log('onIconBeforeClick')}
+  >
+    Person
+  </Chip>
   <Chip
     iconAfter={Close}
     onIconAfterClick={() => console.log('onIconAfterClick')}
     iconAfterAlt="icon-after"
   >
-    New 1
+    Close
   </Chip>
   <Chip
     iconBefore={Person}
     iconAfter={Close}
     onIconAfterClick={() => console.log('onIconAfterClick')}
+    onIconBeforeClick={() => console.log('onIconBeforeClick')}
+    iconAfterAlt="icon-after"
+    iconBeforeAlt="icon-before"
+  >
+    Both
+  </Chip>
+  <Chip
+    iconBefore={Person}
+    iconAfter={Close}
+    onIconAfterClick={() => console.log('onIconAfterClick')}
+    onIconBeforeClick={() => console.log('onIconBeforeClick')}
     iconAfterAlt="icon-after"
     iconBeforeAlt="icon-before"
     disabled
   >
-    New
+    Both
   </Chip>
 </Stack>
+```
+
+**Note**, however, that both `Chip` and its icons cannot be made interactive at the same time, e.g. if you provide both `onClick` and `onIconAfterClick` props,
+`onClick` will be ignored and only the icon will get interactive behaviour, see example below (this is done to avoid usability issues where users might click on the `Chip` itself by mistake when they meant to click the icon instead).
+
+```jsx live
+<Chip
+  iconBefore={Person}
+  iconBeforeAlt="icon-before"
+  onIconBeforeClick={() => console.log('onIconBeforeClick')}
+  onClick={() => console.log('onClick')}
+>
+  Person
+</Chip>
 ```
 
 ### Inverse Pallete
