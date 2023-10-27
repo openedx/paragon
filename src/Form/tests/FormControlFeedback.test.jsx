@@ -1,9 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import FormControlFeedback from '../FormControlFeedback';
-import { FORM_TEXT_TYPES, FORM_TEXT_ICONS } from '../FormText';
+import { FORM_TEXT_TYPES } from '../FormText';
 import { FormGroupContext } from '../FormGroupContext';
+
+const THIS_IS_FEEDBACK = 'This is feedback';
 
 describe('FormControlFeedback', () => {
   it('renders a form control with an id', () => {
@@ -11,35 +13,35 @@ describe('FormControlFeedback', () => {
     const contextValue = {
       getDescriptorProps,
     };
-    const wrapper = mount((
+    render(
       <FormGroupContext.Provider value={contextValue}>
         <FormControlFeedback>
-          This is feedback
+          {THIS_IS_FEEDBACK}
         </FormControlFeedback>
-      </FormGroupContext.Provider>
-    ));
-    expect(wrapper.exists('[children="This is feedback"]')).toBe(true);
-    const FeedbackNode = wrapper.find(FormControlFeedback).first().childAt(0);
+      </FormGroupContext.Provider>,
+    );
+    const FeedbackNode = screen.getByText(THIS_IS_FEEDBACK);
+    expect(FeedbackNode).toBeInTheDocument();
     expect(getDescriptorProps).toHaveBeenCalled();
-    expect(FeedbackNode.props().id).toContain('descriptor-id');
+    expect(FeedbackNode.parentElement).toHaveAttribute('id', 'descriptor-id');
   });
 
   it('renders with a default icon for a variant', () => {
-    const wrapper = mount((
-      <FormControlFeedback type={FORM_TEXT_TYPES.VALID}>
-        This is feedback
-      </FormControlFeedback>
-    ));
-    expect(wrapper.exists(FORM_TEXT_ICONS[FORM_TEXT_TYPES.VALID])).toBe(true);
+    render(
+      <FormControlFeedback data-testid={FORM_TEXT_TYPES.VALID} type={FORM_TEXT_TYPES.VALID}>
+        {THIS_IS_FEEDBACK}
+      </FormControlFeedback>,
+    );
+    expect(screen.getByTestId(FORM_TEXT_TYPES.VALID)).toBeInTheDocument();
   });
 
   it('renders with a custom icon', () => {
     const customIcon = <custom-icon>!</custom-icon>;
-    const wrapper = mount((
+    render(
       <FormControlFeedback icon={customIcon}>
-        This is feedback
-      </FormControlFeedback>
-    ));
-    expect(wrapper.exists('custom-icon')).toBe(true);
+        {THIS_IS_FEEDBACK}
+      </FormControlFeedback>,
+    );
+    expect(screen.getByText('!')).toBeInTheDocument();
   });
 });
