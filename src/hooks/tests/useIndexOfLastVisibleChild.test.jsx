@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { useIndexOfLastVisibleChild } from '../..';
 
 const dropdownId = 'dropdown';
@@ -21,14 +21,16 @@ function TestComponent() {
       <div style={{ width: '250px' }} className="element">Element 1</div>
       <div style={{ width: '250px' }} className="element">Element 2</div>
       <div style={{ width: '250px' }} className="element">Element 3</div>
-      <div ref={overflowElementRef} id={dropdownId}>{indexOfLastVisibleChild}</div>
+      <div ref={overflowElementRef} data-testid={dropdownId} id={dropdownId}>{indexOfLastVisibleChild}</div>
     </div>
   );
 }
 
 describe('useIndexOfLastVisibleChild hook', () => {
   it('hooks display correct index', () => {
-    const wrapper = mount(<TestComponent />);
-    expect(wrapper.find(`#${dropdownId}`).text()).toEqual((wrapper.find('.element').length - 1).toString());
+    const { getByTestId } = render(<TestComponent />);
+    const dropdownElement = getByTestId(dropdownId);
+    const elements = document.querySelectorAll('.element');
+    expect(dropdownElement.textContent).toEqual((elements.length - 1).toString());
   });
 });

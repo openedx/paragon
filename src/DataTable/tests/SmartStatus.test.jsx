@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
 import SmartStatus from '../SmartStatus';
@@ -46,41 +46,37 @@ describe('<SmartStatus />', () => {
         },
       },
     };
-    const wrapper = mount(
+    const { getByTestId } = render(
       <SmartStatusWrapper value={contextValue} />,
     );
-    expect(wrapper.find(SelectionStatus)).toHaveLength(1);
+    expect(getByTestId('selection-status')).toBeInTheDocument();
   });
   it('Shows the filter state with selection turned off', () => {
-    const wrapper = mount(<SmartStatusWrapper value={{ ...instance, state: { filters } }} />);
-    const status = wrapper.find(SmartStatus);
-    expect(status.text()).toContain(filterNames.join(', '));
+    const { getByText } = render(<SmartStatusWrapper value={{ ...instance, state: { filters } }} />);
+    expect(getByText(`Filtered by ${filterNames.join(', ')}`)).toBeInTheDocument();
   });
   it('Shows the filter state when there are no selected rows', () => {
-    const wrapper = mount(
+    const { getByText } = render(
       <SmartStatusWrapper value={{ ...instance, state: { filters }, selectedFlatRows: [] }} />,
     );
-    const status = wrapper.find(SmartStatus);
-    expect(status.text()).toContain(filterNames.join(', '));
+    expect(getByText(`Filtered by ${filterNames.join(', ')}`)).toBeInTheDocument();
   });
-  it('Shows the number of items on the page if the there are no selected rows and no filters', () => {
-    const wrapper = mount(
+  it('Shows the number of items on the page if there are no selected rows and no filters', () => {
+    const { getByText } = render(
       <SmartStatusWrapper value={instance} />,
     );
-    const status = wrapper.find(SmartStatus);
-    expect(status.text()).toContain(`Showing ${instance.page.length} of ${itemCount}`);
+    expect(getByText(`Showing ${instance.page.length} of ${itemCount}.`)).toBeInTheDocument();
   });
   it('Shows the number of items on the page if selection is off and there are no filters', () => {
-    const wrapper = mount(
+    const { getByText } = render(
       <SmartStatusWrapper value={instance} />,
     );
-    const status = wrapper.find(SmartStatus);
-    expect(status.text()).toContain(`Showing ${instance.page.length} of ${itemCount}`);
+    expect(getByText(`Showing ${instance.page.length} of ${itemCount}.`)).toBeInTheDocument();
   });
   it('shows an alternate selection status', () => {
     const altStatusText = 'horses R cool';
     function AltStatus() {
-      return <div>{altStatusText}</div>;
+      return <div data-testid="alternate-status">{altStatusText}</div>;
     }
     const contextValue = {
       ...instance,
@@ -92,27 +88,27 @@ describe('<SmartStatus />', () => {
         },
       },
     };
-    const wrapper = mount(<SmartStatusWrapper value={contextValue} />);
-    expect(wrapper.text()).toContain(altStatusText);
+    const { getByTestId } = render(<SmartStatusWrapper value={contextValue} />);
+    expect(getByTestId('alternate-status')).toBeInTheDocument();
   });
   it('shows an alternate row status', () => {
     const altStatusText = 'horses R cool';
     function AltStatus() {
-      return <div>{altStatusText}</div>;
+      return <div data-testid="alternate-status">{altStatusText}</div>;
     }
-    const wrapper = mount(<SmartStatusWrapper
+    const { getByTestId } = render(<SmartStatusWrapper
       value={{ ...instance, RowStatusComponent: AltStatus }}
     />);
-    expect(wrapper.text()).toContain(altStatusText);
+    expect(getByTestId('alternate-status')).toBeInTheDocument();
   });
   it('shows an alternate filter status', () => {
     const altStatusText = 'horses R cool';
     function AltStatus() {
-      return <div>{altStatusText}</div>;
+      return <div data-testid="alternate-status">{altStatusText}</div>;
     }
-    const wrapper = mount(<SmartStatusWrapper
+    const { getByTestId } = render(<SmartStatusWrapper
       value={{ ...instance, FilterStatusComponent: AltStatus, state: { filters } }}
     />);
-    expect(wrapper.text()).toContain(altStatusText);
+    expect(getByTestId('alternate-status')).toBeInTheDocument();
   });
 });

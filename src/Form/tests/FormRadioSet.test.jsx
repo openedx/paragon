@@ -1,15 +1,17 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import FormGroup from '../FormGroup';
 import FormRadioSet from '../FormRadioSet';
 import FormRadio from '../FormRadio';
 import FormLabel from '../FormLabel';
 
-describe('FormRadioSet', () => {
-  describe('associate element ids and attributes', () => {
-    const handleChange = jest.fn();
-    const value = 'green';
-    const wrapper = mount((
+function renderFormGroup() {
+  const handleChange = jest.fn();
+  const value = 'green';
+  return (
+    render(
       <FormGroup controlId="my-field">
         <FormLabel>Which color?</FormLabel>
         <FormRadioSet
@@ -22,30 +24,18 @@ describe('FormRadioSet', () => {
           <FormRadio value="blue">Blue</FormRadio>
           <FormRadio value="cyan" disabled>Cyan</FormRadio>
         </FormRadioSet>
-      </FormGroup>
-    ));
+      </FormGroup>,
+    )
+  );
+}
 
-    it('has a radiogroup div with the proper id', () => {
-      expect(wrapper.exists('div[role="radiogroup"]')).toBe(true);
-      const radioGroupNode = wrapper.find('div[role="radiogroup"]').first();
-      expect(radioGroupNode.props().id).toEqual('my-field');
-    });
-
-    it('has an element labelling the radiogroup', () => {
-      expect(wrapper.exists('FormLabel')).toBe(true);
-      const labelNode = wrapper.find('FormLabel').first().childAt(0);
-      const labelNodeId = labelNode.props().id;
-      expect(labelNode.props().id).toBeTruthy();
-      const radioGroupNode = wrapper.find('div[role="radiogroup"]').first();
-      expect(radioGroupNode.props()['aria-labelledby']).toContain(labelNodeId);
-    });
-  });
-
-  describe('controlled behavior', () => {
-    const setValue = jest.fn();
-    const wrapper = mount((
+const setValue = jest.fn();
+function renderFormRadioSet(isDefault) {
+  return (
+    render(
       <FormRadioSet
-        value="red"
+        {...(isDefault ? { defaultValue: 'red' } : {})}
+        {...(!isDefault ? { value: 'red' } : {})}
         name="colors"
         onChange={(e) => {
           setValue(e.target.value);
@@ -54,52 +44,87 @@ describe('FormRadioSet', () => {
         <FormRadio value="red">red</FormRadio>
         <FormRadio value="green" isInvalid description="Nope">green</FormRadio>
         <FormRadio value="blue">blue</FormRadio>
-      </FormRadioSet>
-    ));
+      </FormRadioSet>,
+    )
+  );
+}
 
-    it('checks the right radio button', () => {
-      const radioNode = wrapper.find('input[value="red"]').first();
-      expect(radioNode.props().checked).toBe(true);
+describe('FormRadioSet', () => {
+  describe('associate element ids and attributes', () => {
+    it('has a radiogroup div with the proper id', () => {
+      renderFormGroup();
+      const radioGroupNode = screen.getByRole('radiogroup', { name: /Which color\?/i });
+      expect(radioGroupNode).toBeInTheDocument();
+      expect(radioGroupNode).toHaveAttribute('id', 'my-field');
     });
 
-    it('calls the change handlers with the right value', () => {
-      const radioNode = wrapper.find('input[value="green"]').first();
-      const eventData = { target: { value: 'green' } };
-      radioNode.simulate('change', eventData);
+    it('has an element labelling the radiogroup', () => {
+      renderFormGroup();
+      const labelNode = screen.getByText('Which color?');
+      const radioGroupNode = screen.getByRole('radiogroup', { name: /Which color\?/i });
+      const labelNodeId = labelNode.getAttribute('id');
+      expect(labelNode).toBeInTheDocument();
+      expect(labelNodeId).toBeTruthy();
+      expect(radioGroupNode).toHaveAttribute('aria-labelledby', expect.stringContaining(labelNodeId));
+    });
+  });
+
+  describe('controlled behavior', () => {
+    it('checks the right radio button', () => {
+      renderFormRadioSet();
+      const redRadio = screen.getByLabelText('red');
+      expect(redRadio).toBeChecked();
+    });
+
+    it('calls the change handlers with the right value', async () => {
+      renderFormRadioSet();
+      const greenRadio = screen.getByLabelText('green');
+      await userEvent.click(greenRadio);
       expect(setValue).toHaveBeenCalledWith('green');
     });
   });
 
   describe('uncontrolled behavior', () => {
-    const wrapper = mount((
-      <FormRadioSet
-        defaultValue="red"
-        name="colors"
-        id="my-field"
-        label="Which color?"
-      >
-        <FormRadio value="red">red</FormRadio>
-        <FormRadio value="green" isInvalid description="Nope">green</FormRadio>
-        <FormRadio value="blue">blue</FormRadio>
-      </FormRadioSet>
-    ));
-
     it('checks the right radio button', () => {
-      const radioNode = wrapper.find('input[value="red"]').first();
-      expect(radioNode.props().defaultChecked).toBe(true);
+      renderFormRadioSet();
+      const redRadio = screen.getByLabelText('red');
+      expect(redRadio).toBeChecked();
     });
   });
 
   it('renders radio controls without a context', () => {
-    const wrapper = mount((
+    render(
       <>
         <FormRadio name="trees" value="evergreen">Evergreen</FormRadio>
         <FormRadio name="trees" value="deciduous">Deciduous</FormRadio>
-      </>
-    ));
+      </>,
+    );
 
-    expect(wrapper.exists('input[type="radio"]')).toBe(true);
-    const radioNode = wrapper.find('input[type="radio"]').first();
-    expect(radioNode.props().name).toBe('trees');
+    const evergreenRadio = screen.getByLabelText('Evergreen');
+    const deciduousRadio = screen.getByLabelText('Deciduous');
+
+    expect(evergreenRadio).toBeInTheDocument();
+    expect(deciduousRadio).toBeInTheDocument();
+    expect(evergreenRadio).toHaveAttribute('name', 'trees');
+    expect(deciduousRadio).toHaveAttribute('name', 'trees');
+  });
+
+  it('checks if onClick is called once in FormRadioSet', () => {
+    const handleChange = jest.fn();
+    const { getByLabelText } = render(
+      <FormGroup>
+        <FormLabel>Which color?</FormLabel>
+        <FormRadioSet
+          name="colors"
+          onChange={handleChange}
+        >
+          <FormRadio value="red">Red</FormRadio>
+          <FormRadio value="green">Green</FormRadio>
+        </FormRadioSet>
+      </FormGroup>,
+    );
+
+    userEvent.click(getByLabelText('Red'));
+    expect(handleChange).toHaveBeenCalledTimes(1);
   });
 });

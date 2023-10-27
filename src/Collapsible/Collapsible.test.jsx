@@ -1,7 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
+import userEvent from '@testing-library/user-event';
+
 import Collapsible from '.';
+
+const EXAMPLE_CONTENT = 'Example content';
 
 const collapsibleContent = (
   <>
@@ -14,24 +18,16 @@ const collapsibleContent = (
       </span>
     </Collapsible.Trigger>
 
-    <Collapsible.Trigger className="close-only" closeOnly>Close</Collapsible.Trigger>
-    <Collapsible.Trigger className="open-only" openOnly>Open</Collapsible.Trigger>
+    <Collapsible.Trigger data-testid="close-only" className="close-only" closeOnly>Close</Collapsible.Trigger>
+    <Collapsible.Trigger data-testid="open-only" className="open-only" openOnly>Open</Collapsible.Trigger>
 
     <Collapsible.Body transitionWrapper={<div />}>
       <p className="example-content">
-        Example content
+        {EXAMPLE_CONTENT}
       </p>
     </Collapsible.Body>
   </>
 );
-
-const collapsibleIsOpen = (wrapper) => {
-  expect(wrapper.find('.example-content').length).toEqual(1);
-};
-
-const collapsibleIsClosed = (wrapper) => {
-  expect(wrapper.find('.example-content').length).toEqual(0);
-};
 
 describe('<Collapsible />', () => {
   describe('Uncontrolled Rendering', () => {
@@ -73,136 +69,143 @@ describe('<Collapsible />', () => {
   });
 
   describe('Imperative Methods', () => {
-    const wrapper = mount(<Collapsible.Advanced>{collapsibleContent}</Collapsible.Advanced>);
-    const collapsible = wrapper.instance();
-
-    collapsibleIsClosed(wrapper);
-
+    const ref = React.createRef();
+    beforeEach(() => {
+      render(
+        <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
+      );
+    });
     it('opens on .open()', () => {
-      collapsible.open();
-      wrapper.update();
-      collapsibleIsOpen(wrapper);
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
+      ref.current.open();
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
 
     it('closes on .close()', () => {
-      collapsible.close();
-      wrapper.update();
-      collapsibleIsClosed(wrapper);
+      ref.current.open();
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+      ref.current.close();
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
+
     it('correct behavior with unmountOnExit', () => {
       let i = 0;
       function Comp() {
         i += 1;
         return <h1>Hello world</h1>;
       }
-      const component = mount((
-        <Collapsible.Advanced unmountOnExit={false}>
+      render(
+        <Collapsible.Advanced ref={ref} unmountOnExit={false}>
           <Collapsible.Body>
             <Comp />
           </Collapsible.Body>
-        </Collapsible.Advanced>
-      ));
-      const instance = component.instance();
-      instance.open();
-      component.update();
+        </Collapsible.Advanced>,
+      );
+      ref.current.open();
       expect(i).toEqual(1);
-      instance.close();
-      component.update();
-      instance.open();
-      component.update();
+      ref.current.close();
+      ref.current.open();
       expect(i).toEqual(1);
     });
   });
 
   describe('Mouse Interactions', () => {
-    const wrapper = mount(<Collapsible.Advanced>{collapsibleContent}</Collapsible.Advanced>);
-    const collapsible = wrapper.instance();
-    const trigger = wrapper.find('.trigger[role="button"]');
-    const closeOnlyTrigger = wrapper.find('.close-only[role="button"]');
-    const openOnlyTrigger = wrapper.find('.open-only[role="button"]');
-
-    it('opens on trigger click', () => {
-      trigger.simulate('click'); // Open
-      collapsibleIsOpen(wrapper);
+    let collapsible;
+    const ref = React.createRef();
+    beforeEach(() => {
+      render(
+        <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
+      );
+      collapsible = ref.current;
     });
 
-    it('closes on trigger click', () => {
-      trigger.simulate('click'); // Close
-      collapsibleIsClosed(wrapper);
+    it('opens on trigger click', async () => {
+      expect(screen.getAllByRole('button')[0]).toBeInTheDocument();
+      await userEvent.click(screen.getAllByRole('button')[0]); // Open
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
 
-    it('does not open on close only trigger click', () => {
-      collapsible.close();
-      wrapper.update();
-      closeOnlyTrigger.simulate('click'); // No-op
-      collapsibleIsClosed(wrapper);
-    });
-
-    it('closes on close only trigger click', () => {
+    it('closes on trigger click', async () => {
       collapsible.open();
-      wrapper.update();
-      closeOnlyTrigger.simulate('click'); // Close
-      collapsibleIsClosed(wrapper);
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+      await userEvent.click(screen.getAllByRole('button')[0]); // Close
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
-    it('does not close on open only trigger click', () => {
-      collapsible.open();
-      wrapper.update();
-      openOnlyTrigger.simulate('click'); // No-op
-      collapsibleIsOpen(wrapper);
-    });
-
-    it('opens on opens only trigger click', () => {
+    it('does not open on close only trigger click', async () => {
       collapsible.close();
-      wrapper.update();
-      openOnlyTrigger.simulate('click'); // Open
-      collapsibleIsOpen(wrapper);
+      await userEvent.click(screen.getByTestId('close-only')); // No-op
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
+    });
+
+    it('closes on close only trigger click', async () => {
+      collapsible.open();
+      await userEvent.click(screen.getByTestId('close-only')); // Close
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
+    });
+
+    it('does not close on open only trigger click', async () => {
+      collapsible.open();
+      await userEvent.click(screen.getByTestId('open-only')); // No-op
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+    });
+
+    it('opens on open only trigger click', async () => {
+      collapsible.close();
+      await userEvent.click(screen.getByTestId('open-only')); // Open
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
   });
 
   describe('Keyboard Interactions', () => {
-    const wrapper = mount(<Collapsible.Advanced>{collapsibleContent}</Collapsible.Advanced>);
-    const collapsible = wrapper.instance();
-    const trigger = wrapper.find('.trigger[role="button"]');
-    const closeOnlyTrigger = wrapper.find('.close-only[role="button"]');
-    const openOnlyTrigger = wrapper.find('.open-only[role="button"]');
-
-    it('opens on trigger enter keydown', () => {
-      trigger.simulate('keyDown', { key: 'Enter' }); // Open
-      collapsibleIsOpen(wrapper);
+    let collapsible;
+    const ref = React.createRef();
+    beforeEach(() => {
+      render(
+        <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
+      );
+      collapsible = ref.current;
     });
 
-    it('closes on trigger enter keydown', () => {
-      trigger.simulate('keyDown', { key: 'Enter' }); // Close
-      collapsibleIsClosed(wrapper);
+    it('opens on trigger enter keydown', async () => {
+      screen.getAllByRole('button')[0].focus();
+      await userEvent.keyboard('{enter}'); // Open
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
 
-    it('does not open on close only trigger enter keydown', () => {
-      collapsible.close();
-      wrapper.update();
-      closeOnlyTrigger.simulate('keyDown', { key: 'Enter' }); // No-op
-      collapsibleIsClosed(wrapper);
-    });
-
-    it('closes on close only trigger enter keydown', () => {
+    it('closes on trigger enter keydown', async () => {
       collapsible.open();
-      wrapper.update();
-      closeOnlyTrigger.simulate('keyDown', { key: 'Enter' }); // Close
-      collapsibleIsClosed(wrapper);
+      screen.getAllByRole('button')[0].focus();
+      await userEvent.keyboard('{enter}'); // Close
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
-    it('does not close on open only trigger enter keydown', () => {
-      collapsible.open();
-      wrapper.update();
-      openOnlyTrigger.simulate('keyDown', { key: 'Enter' }); // No-op
-      collapsibleIsOpen(wrapper);
-    });
-
-    it('opens on opens only trigger enter keydown', () => {
+    it('does not open on close only trigger enter keydown', async () => {
       collapsible.close();
-      wrapper.update();
-      openOnlyTrigger.simulate('keyDown', { key: 'Enter' }); // Open
-      collapsibleIsOpen(wrapper);
+      screen.getByTestId('close-only').focus();
+      await userEvent.keyboard('{enter}'); // No-op
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
+    });
+
+    it('closes on close only trigger enter keydown', async () => {
+      collapsible.open();
+      screen.getByTestId('close-only').focus();
+      await userEvent.keyboard('{enter}'); // Close
+      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
+    });
+
+    it('does not close on open only trigger enter keydown', async () => {
+      collapsible.open();
+      screen.getByTestId('open-only').focus();
+      await userEvent.keyboard('{enter}'); // No-op
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+    });
+
+    it('opens on open only trigger enter keydown', async () => {
+      collapsible.close();
+      screen.getByTestId('open-only').focus();
+      await userEvent.keyboard('{enter}'); // Open
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
   });
 });

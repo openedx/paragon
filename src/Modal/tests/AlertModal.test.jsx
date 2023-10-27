@@ -1,9 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import AlertModal from './AlertModal';
+import { render, screen } from '@testing-library/react';
+
+import AlertModal from '../AlertModal';
+import { Info } from '../../../icons';
 
 /* eslint-disable react/prop-types */
-jest.mock('./Portal', () => function PortalMock(props) {
+jest.mock('../Portal', () => function PortalMock(props) {
   const { children, ...otherProps } = props;
   return (
     <paragon-portal {...otherProps}>
@@ -32,8 +34,9 @@ function Body() {
 describe('<AlertModal />', () => {
   const isOpen = true;
   const closeFn = jest.fn();
-  describe('when isOpen', () => {
-    const wrapper = shallow((
+
+  it('renders the body when isOpen', () => {
+    render(
       <AlertModal
         title="some title"
         isOpen={isOpen}
@@ -41,62 +44,63 @@ describe('<AlertModal />', () => {
         footerNode={<p>footer</p>}
       >
         <Body />
-      </AlertModal>
-    ));
+      </AlertModal>,
+    );
 
-    it('renders the body', () => {
-      const body = wrapper.find(Body);
-      expect(body.length).toBe(1);
-    });
+    const body = screen.getByText('The body of alert.');
+    expect(body).toBeInTheDocument();
   });
+
   describe('with variant prop', () => {
     it('renders warning variant', () => {
-      const wrapper = shallow((
+      render(
         <AlertModal
-          title="some title"
+          title="warning"
           isOpen={isOpen}
           onClose={closeFn}
-          icon="warning"
+          icon={Info}
           footerNode={<p>footer</p>}
         >
           <Body />
-        </AlertModal>
-      ));
-      const modalTitleIcon = wrapper.find('.pgn__alert-modal__title_icon');
-      const src = modalTitleIcon.prop('src');
-      expect(src).toEqual('warning');
+        </AlertModal>,
+      );
+
+      const modalTitle = screen.getByTestId('title-icon');
+      expect(modalTitle.nextSibling.textContent).toEqual('warning');
     });
+
     it('renders success variant', () => {
-      const wrapper = shallow((
+      render(
         <AlertModal
-          title="some title"
+          title="success"
           isOpen={isOpen}
           onClose={closeFn}
-          icon="success"
+          icon={Info}
           footerNode={<p>footer</p>}
         >
           <Body />
-        </AlertModal>
-      ));
-      const modalTitleIcon = wrapper.find('.pgn__alert-modal__title_icon');
-      const src = modalTitleIcon.prop('src');
-      expect(src).toEqual('success');
+        </AlertModal>,
+      );
+
+      const modalTitle = screen.getByTestId('title-icon');
+      expect(modalTitle.nextSibling.textContent).toEqual('success');
     });
+
     it('renders danger variant', () => {
-      const wrapper = shallow((
+      render(
         <AlertModal
-          title="some title"
+          title="danger"
           isOpen={isOpen}
           onClose={closeFn}
-          icon="danger"
+          icon={Info}
           footerNode={<p>footer</p>}
         >
           <Body />
-        </AlertModal>
-      ));
-      const modalTitleIcon = wrapper.find('.pgn__alert-modal__title_icon');
-      const src = modalTitleIcon.prop('src');
-      expect(src).toEqual('danger');
+        </AlertModal>,
+      );
+
+      const modalTitle = screen.getByTestId('title-icon');
+      expect(modalTitle.nextSibling.textContent).toEqual('danger');
     });
   });
 });

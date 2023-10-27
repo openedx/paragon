@@ -55,6 +55,7 @@ function ModalPopup({
                 {hasArrow && (
                   <div
                     id="arrow"
+                    data-testid="modal-popup-arrow"
                     className={`pgn__modal-popup__arrow pgn__modal-popup__arrow-${placement}`}
                     data-popper-arrow=""
                   />
