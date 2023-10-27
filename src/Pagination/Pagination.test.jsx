@@ -149,7 +149,7 @@ describe('<Pagination />', () => {
 
     describe('should use correct number of pages', () => {
       it('should show 5 buttons on desktop', () => {
-        render(
+        render((
           <ResponsiveContext.Provider value={{ width: breakpoints.large.maxWidth }}>
             <Pagination {...baseProps} />
           </ResponsiveContext.Provider>
@@ -177,7 +177,7 @@ describe('<Pagination />', () => {
         };
 
         // Use extra small window size to display the mobile version of Pagination.
-        render(
+        render((
           <ResponsiveContext.Provider value={{ width: breakpoints.extraSmall.maxWidth }}>
             <Pagination {...props} />
           </ResponsiveContext.Provider>
@@ -233,7 +233,6 @@ describe('<Pagination />', () => {
       const spy = jest.fn();
       const props = {
         ...baseProps,
-        currentPage: 2,
         onPageSelect: spy,
         currentPage: 3,
       };
@@ -304,8 +303,8 @@ describe('<Pagination />', () => {
       rerender((
         <ResponsiveContext.Provider value={{ width: breakpoints.large.minWidth }}>
           <Pagination {...props} currentPage={2} />
-        </ResponsiveContext.Provider>,
-      );
+        </ResponsiveContext.Provider>
+      ));
       expect(screen.getByText(`${buttonLabels.page} 2, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} 5`)).toBeInTheDocument();
       expect(screen.getByLabelText(`${buttonLabels.page} 1`)).toBeInTheDocument();
       expect(screen.getByText('1')).toHaveAttribute('aria-label', pageLabel);

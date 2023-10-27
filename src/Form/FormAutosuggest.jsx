@@ -205,6 +205,9 @@ const FormAutosuggest = forwardRef(
     if (e.key === 'Tab' && isActive) {
       leaveControl();
     }
+    if (e.key === 'Tab' && isActive) {
+      leaveControl();
+    }
   };
 
     useEffect(() => {

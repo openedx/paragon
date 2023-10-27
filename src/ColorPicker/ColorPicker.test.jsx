@@ -29,7 +29,7 @@ describe('picker works as expected', () => {
   const color = 'wassap';
   const setColor = jest.fn();
   it('validates hex color', async () => {
-    const { rerender } = render(<ColorPicker color={color} setColor={setColor} />);
+    render(<ColorPicker color={color} setColor={setColor} />);
 
     await act(async () => {
       await userEvent.click(screen.getByRole('button'));
