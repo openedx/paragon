@@ -65,6 +65,7 @@ const Chip = React.forwardRef(({
         onClick={onIconAfterClick}
         onKeyPress={onIconAfterClick}
         tabIndex={disabled ? -1 : 0}
+        data-testid="icon-after"
       >
         <Icon src={iconAfter} />
       </div>

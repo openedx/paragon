@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useState,
+  useEffect, useState, useRef,
 } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
@@ -28,6 +28,7 @@ function FormAutosuggest({
   ...props
 }) {
   const intl = useIntl();
+  const formControlRef = useRef();
   const parentRef = useArrowKeyNavigation({
     selectors: arrowKeyNavigationSelector,
     ignoredKeys: ignoredArrowKeysNames,
@@ -112,6 +113,7 @@ function FormAutosuggest({
     <IconButton
       className="pgn__form-autosuggest__icon-button"
       data-testid="autosuggest-iconbutton"
+      tabindex="-1"
       src={isMenuClosed ? KeyboardArrowDown : KeyboardArrowUp}
       iconAs={Icon}
       size="sm"
@@ -123,17 +125,21 @@ function FormAutosuggest({
     />
   );
 
+  const leaveControl = () => {
+    setIsActive(false);
+
+    setState(prevState => ({
+      ...prevState,
+      dropDownItems: [],
+      errorMessage: !state.displayValue ? errorMessageText : '',
+    }));
+
+    setIsMenuClosed(true);
+  };
+
   const handleDocumentClick = (e) => {
     if (parentRef.current && !parentRef.current.contains(e.target) && isActive) {
-      setIsActive(false);
-
-      setState(prevState => ({
-        ...prevState,
-        dropDownItems: [],
-        errorMessage: !state.displayValue ? errorMessageText : '',
-      }));
-
-      setIsMenuClosed(true);
+      leaveControl();
     }
   };
 
@@ -141,12 +147,19 @@ function FormAutosuggest({
     if (e.key === 'Escape' && isActive) {
       e.preventDefault();
 
+      if (formControlRef) {
+        formControlRef.current.focus();
+      }
+
       setState(prevState => ({
         ...prevState,
         dropDownItems: [],
       }));
 
       setIsMenuClosed(true);
+    }
+    if (e.key === 'Tab' && isActive) {
+      leaveControl();
     }
   };
 
@@ -233,6 +246,7 @@ function FormAutosuggest({
       </div>
       <FormGroup isInvalid={!!state.errorMessage}>
         <FormControl
+          ref={formControlRef}
           aria-expanded={(state.dropDownItems.length > 0).toString()}
           aria-owns="pgn__form-autosuggest__dropdown-box"
           role="combobox"

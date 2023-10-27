@@ -1,6 +1,8 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { useToggle } from '../..';
 
 const TOGGLE_IS_ON = 'on';
@@ -16,20 +18,13 @@ const resetHandlerMocks = () => {
   mockHandleToggle.mockReset();
 };
 
-const expectToggleToBeOn = (wrapper) => {
-  expect(wrapper.find('#toggle-value').text()).toMatch(TOGGLE_IS_ON);
-};
-const expectToggleToBeOff = (wrapper) => {
-  expect(wrapper.find('#toggle-value').text()).toMatch(TOGGLE_IS_OFF);
-};
-
 // eslint-disable-next-line react/prop-types
 function FakeComponent({ defaultIsOn, handlers }) {
   const [isOn, setOn, setOff, toggle] = useToggle(defaultIsOn, handlers);
 
   return (
     <div>
-      <div id="toggle-value">{isOn ? TOGGLE_IS_ON : TOGGLE_IS_OFF}</div>
+      <div data-testid="toggle-value">{isOn ? TOGGLE_IS_ON : TOGGLE_IS_OFF}</div>
       <button id="set-on" onClick={setOn}>set on</button>
       <button id="set-off" onClick={setOff}>set off</button>
       <button id="toggle" onClick={toggle}>toggle</button>
@@ -42,63 +37,78 @@ describe('useToggle hook', () => {
     resetHandlerMocks();
   });
 
-  const wrapper = mount((
-    <FakeComponent
+  it('toggles respect defaults on or off', () => {
+    render(<FakeComponent
       defaultIsOn={false}
       handlers={{
         handleToggleOn: mockHandleToggleOn,
         handleToggleOff: mockHandleToggleOff,
         handleToggle: mockHandleToggle,
       }}
-    />
-  ));
-  const wrapperDefaultOnNoHandlers = mount(<FakeComponent defaultIsOn />);
-
-  it('toggles respect defaults on or off', () => {
-    expectToggleToBeOff(wrapper);
-    expectToggleToBeOn(wrapperDefaultOnNoHandlers);
+    />);
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
+    render(<FakeComponent
+      defaultIsOn
+      handlers={{
+        handleToggleOn: mockHandleToggleOn,
+        handleToggleOff: mockHandleToggleOff,
+        handleToggle: mockHandleToggle,
+      }}
+    />);
+    expect(screen.getAllByTestId('toggle-value')[1]).toHaveTextContent(TOGGLE_IS_ON);
   });
 
-  it('setOn turns toggle on', () => {
-    wrapper.find('#set-on').simulate('click');
-    wrapper.update();
-    expectToggleToBeOn(wrapper);
+  it('setOn turns toggle on', async () => {
+    render(<FakeComponent
+      defaultIsOn={false}
+      handlers={{
+        handleToggleOn: mockHandleToggleOn,
+        handleToggleOff: mockHandleToggleOff,
+        handleToggle: mockHandleToggle,
+      }}
+    />);
+    await userEvent.click(screen.getByText('set on'));
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_ON);
     expect(mockHandleToggleOn).toHaveBeenCalled();
     expect(mockHandleToggle).toHaveBeenCalled();
-
-    // try again to ensure on only sets it on.
-    wrapper.find('#set-on').simulate('click');
-    wrapper.update();
-    expectToggleToBeOn(wrapper);
+    await userEvent.click(screen.getByText('set on'));
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_ON);
   });
-  // Toggle is on
-  it('setOff turns toggle off', () => {
-    wrapper.find('#set-off').simulate('click');
-    wrapper.update();
-    expectToggleToBeOff(wrapper);
+
+  it('setOff turns toggle off', async () => {
+    render(<FakeComponent
+      defaultIsOn
+      handlers={{
+        handleToggleOn: mockHandleToggleOn,
+        handleToggleOff: mockHandleToggleOff,
+        handleToggle: mockHandleToggle,
+      }}
+    />);
+    await userEvent.click(screen.getByText('set off'));
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
     expect(mockHandleToggleOff).toHaveBeenCalled();
     expect(mockHandleToggle).toHaveBeenCalled();
-
-    // try again to ensure on only sets it off.
-    wrapper.find('#set-off').simulate('click');
-    wrapper.update();
-    expectToggleToBeOff(wrapper);
+    await userEvent.click(screen.getByText('set off'));
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
   });
-  // Toggle is off
-  it('toggle toggles', () => {
-    wrapper.find('#toggle').simulate('click');
-    wrapper.update();
-    expectToggleToBeOn(wrapper);
+
+  it('toggle toggles', async () => {
+    render(<FakeComponent
+      defaultIsOn={false}
+      handlers={{
+        handleToggleOn: mockHandleToggleOn,
+        handleToggleOff: mockHandleToggleOff,
+        handleToggle: mockHandleToggle,
+      }}
+    />);
+    await userEvent.click(screen.getByText('toggle'));
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_ON);
     expect(mockHandleToggleOn).toHaveBeenCalled();
     expect(mockHandleToggleOff).not.toHaveBeenCalled();
     expect(mockHandleToggle).toHaveBeenCalled();
-
     resetHandlerMocks();
-
-    // try again to ensure it changes it back
-    wrapper.find('#toggle').simulate('click');
-    wrapper.update();
-    expectToggleToBeOff(wrapper);
+    await userEvent.click(screen.getByText('toggle')); // Try again to ensure it changes it back.
+    expect(screen.getByTestId('toggle-value')).toHaveTextContent(TOGGLE_IS_OFF);
     expect(mockHandleToggleOn).not.toHaveBeenCalled();
     expect(mockHandleToggleOff).toHaveBeenCalled();
     expect(mockHandleToggle).toHaveBeenCalled();

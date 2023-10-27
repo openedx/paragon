@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ValidationFormGroup renders 1`] = `
+<div
+  className="form-group"
+  data-testid="validation-form-group"
+>
+  <label
+    htmlFor="firstName"
+  >
+    First Name
+  </label>
+  <input
+    className="form-control"
+    id="firstName"
+    name="first-name"
+    onChange={[Function]}
+    type="text"
+    value="Adam"
+  />
+</div>
+`;
+
+exports[`ValidationFormGroup renders a valid message 1`] = `
+<div
+  className="form-group"
+  data-testid="validation-form-group"
+>
+  <label
+    htmlFor="firstName"
+  >
+    First Name
+  </label>
+  <input
+    className="form-control"
+    id="firstName"
+    name="first-name"
+    onChange={[Function]}
+    type="text"
+    value="Adam"
+  />
+  <small
+    className="form-text text-muted"
+    id="firstName-help-text"
+  >
+    This is your first name.
+  </small>
+  <div
+    className="valid-feedback"
+    id="firstName-valid-feedback"
+  >
+    What a nice name.
+  </div>
+</div>
+`;
+
+exports[`ValidationFormGroup renders an invalid message 1`] = `
+<div
+  className="form-group"
+  data-testid="validation-form-group"
+>
+  <label
+    htmlFor="firstName"
+  >
+    First Name
+  </label>
+  <input
+    className="form-control"
+    id="firstName"
+    name="first-name"
+    onChange={[Function]}
+    type="text"
+    value="Adam"
+  />
+  <small
+    className="form-text text-muted"
+    id="firstName-help-text"
+  >
+    This is your first name.
+  </small>
+  <strong
+    className="invalid-feedback"
+    id="firstName-invalid-feedback"
+  >
+    This is not your name.
+  </strong>
+</div>
+`;
+
+exports[`ValidationFormGroup renders an invalid message with a select input 1`] = `
+<div
+  className="form-group"
+  data-testid="validation-form-group"
+>
+  <label
+    htmlFor="weatherToday"
+  >
+    How is the weather today?
+  </label>
+  <select
+    aria-describedby="weatherToday-help-text weatherToday-valid-feedback"
+    className="is-valid"
+    id="weatherToday"
+    name="weather"
+    onChange={[Function]}
+    value="Sunny"
+  >
+    <option>
+      Sunny
+    </option>
+    <option>
+      Cloudy
+    </option>
+    <option>
+      Rainy
+    </option>
+    <option>
+      Snowy
+    </option>
+  </select>
+  <small
+    className="form-text text-muted"
+    id="weatherToday-help-text"
+  >
+    Look out the window to see.
+  </small>
+  <div
+    className="valid-feedback"
+    id="weatherToday-valid-feedback"
+  >
+    Correct!
+  </div>
+</div>
+`;
+
+exports[`ValidationFormGroup renders with help text 1`] = `
+<div
+  className="form-group"
+  data-testid="validation-form-group"
+>
+  <label
+    htmlFor="firstName"
+  >
+    First Name
+  </label>
+  <input
+    className="form-control"
+    id="firstName"
+    name="first-name"
+    onChange={[Function]}
+    type="text"
+    value="Adam"
+  />
+  <small
+    className="form-text text-muted"
+    id="firstName-help-text"
+  >
+    This is your first name.
+  </small>
+</div>
+`;
