@@ -14,7 +14,7 @@ import {
   getRowIds,
 } from './data/helpers';
 
-function ControlledSelectionStatus({ className, clearSelectionText }) {
+function ControlledSelectionStatus({ className, clearSelectionText, ...rest }) {
   const {
     itemCount,
     page,
@@ -44,6 +44,7 @@ function ControlledSelectionStatus({ className, clearSelectionText }) {
     clearSelectionText,
     onSelectAll: () => dispatch(setSelectAllRowsAllPagesAction()),
     onClear: () => dispatch(clearSelectionAction()),
+    ...rest,
   };
   return <BaseSelectionStatus {...selectionStatusProps} />;
 }

@@ -117,7 +117,6 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^13.5.0",
-    "@types/enzyme": "^3.10.12",
     "@types/jest": "^27.5.0",
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.11",
@@ -125,7 +124,6 @@
     "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "axios": "^0.27.2",
     "axios-mock-adapter": "^1.21.1",
     "babel-jest": "^28.1.2",
@@ -162,7 +160,7 @@
       "^icons/index.js$": "babel-jest",
       "^.+\\.tsx?$": "ts-jest"
     },
-    "setupFiles": [
+    "setupFilesAfterEnv": [
       "./src/setupTest.js"
     ],
     "moduleNameMapper": {
