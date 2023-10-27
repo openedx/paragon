@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
 import RowStatus from '../RowStatus';
@@ -26,21 +26,24 @@ function RowStatusWrapper({ value = instance, props = statusProps }) {
 
 describe('<RowStatus />', () => {
   it('returns null if there is no pageSize', () => {
-    const wrapper = mount(<RowStatusWrapper />);
-    expect(wrapper.text()).toEqual('');
+    const { container } = render(<RowStatusWrapper />);
+    expect(container.firstChild).toBeNull();
   });
   it('displays the row status with pagination', () => {
     const pageSize = 10;
-    const wrapper = mount(<RowStatusWrapper value={{ ...instance, page: Array(pageSize) }} />);
-    expect(wrapper.text()).toEqual(`Showing ${pageSize} of ${instance.itemCount}.`);
+    const { getByText } = render(<RowStatusWrapper value={{ ...instance, page: Array(pageSize) }} />);
+    const statusText = getByText(`Showing ${pageSize} of ${instance.itemCount}.`);
+    expect(statusText).toBeInTheDocument();
   });
   it('displays the row status without pagination', () => {
     const pageSize = 10;
-    const wrapper = mount(<RowStatusWrapper value={{ ...instance, rows: Array(pageSize) }} />);
-    expect(wrapper.text()).toEqual(`Showing ${pageSize} of ${instance.itemCount}.`);
+    const { getByText } = render(<RowStatusWrapper value={{ ...instance, rows: Array(pageSize) }} />);
+    const statusText = getByText(`Showing ${pageSize} of ${instance.itemCount}.`);
+    expect(statusText).toBeInTheDocument();
   });
   it('sets class names on the parent', () => {
-    const wrapper = mount(<RowStatusWrapper value={{ ...instance, page: Array(15) }} />);
-    expect(wrapper.find('div').props().className).toEqual(statusProps.className);
+    const { container } = render(<RowStatusWrapper value={{ ...instance, page: Array(15) }} />);
+    const statusDiv = container.querySelector('div');
+    expect(statusDiv).toHaveClass(statusProps.className);
   });
 });

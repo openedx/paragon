@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const CardDivider = React.forwardRef(({ className }, ref) => (
-  <div className={classNames('pgn__card-divider', className)} ref={ref} />
+const CardDivider = React.forwardRef(({ className, ...props }, ref) => (
+  <div className={classNames('pgn__card-divider', className)} ref={ref} {...props} />
 ));
 
 CardDivider.propTypes = {

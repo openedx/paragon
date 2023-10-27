@@ -12,6 +12,7 @@ const CardStatus = React.forwardRef(({
   icon,
   title,
   actions,
+  ...props
 }, ref) => {
   const { isLoading } = useContext(CardContext);
 
@@ -38,6 +39,7 @@ const CardStatus = React.forwardRef(({
         className,
       )}
       ref={ref}
+      {...props}
     >
       <div className="pgn__card-status__content">
         {icon && <Icon className="pgn__card-status__content-icon" src={icon} />}
