@@ -10,10 +10,7 @@ const row = {
 
 describe('<ExpandRow />', () => {
   it('renders expand row element if rows is not expanded', () => {
-    const { getByTestId, getByLabelText } = render(<ExpandRow row={row} data-testid="span-expand-row" />);
-
-    const labelWrapper = getByTestId('span-expand-row');
-    expect(labelWrapper).toBeInTheDocument();
+    const { getByLabelText } = render(<ExpandRow row={row} />);
 
     const iconButton = getByLabelText('Expand row');
     expect(iconButton).toBeInTheDocument();
@@ -21,10 +18,7 @@ describe('<ExpandRow />', () => {
 
   it('renders collapse row element if row is expanded', () => {
     const expandedRow = { ...row, isExpanded: true };
-    const { getByTestId, getByLabelText } = render(<ExpandRow row={expandedRow} data-testid="span-collapse-row" />);
-
-    const labelWrapper = getByTestId('span-collapse-row');
-    expect(labelWrapper).toBeInTheDocument();
+    const { getByLabelText } = render(<ExpandRow row={expandedRow} />);
 
     const iconButton = getByLabelText('Collapse row');
     expect(iconButton).toBeInTheDocument();
