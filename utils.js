@@ -3,6 +3,7 @@ const axios = require('axios');
 /**
  * Sends request to the Netlify function to inform about specified event.
  * @param {string} eventName - tracking event name
+ * @param {string} trackFunctionName - tracking function name
  */
 function sendTrackInfo(eventName, trackFunctionName) {
   const { BASE_URL, TRACK_ANONYMOUS_ANALYTICS } = process.env;
