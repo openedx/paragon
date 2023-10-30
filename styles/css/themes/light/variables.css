@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Fri, 22 Sep 2023 08:20:17 GMT
+ * Generated on Mon, 30 Oct 2023 14:36:05 GMT
  */
 
 :root {
@@ -439,7 +439,6 @@
   --pgn-color-icon-button-bg-secondary-inverse-base: var(--pgn-color-icon-button-bg-base);
   --pgn-color-icon-button-bg-secondary-focus: var(--pgn-color-icon-button-bg-base);
   --pgn-color-icon-button-bg-secondary-base: var(--pgn-color-icon-button-bg-base);
-  --pgn-color-icon-button-bg-primary-inverse-active-base: var(--pgn-color-icon-button-bg-base);
   --pgn-color-icon-button-bg-primary-inverse-focus: var(--pgn-color-icon-button-bg-base);
   --pgn-color-icon-button-bg-primary-inverse-base: var(--pgn-color-icon-button-bg-base);
   --pgn-color-icon-button-bg-primary-focus: var(--pgn-color-icon-button-bg-base);
@@ -881,6 +880,7 @@
   --pgn-color-icon-button-bg-secondary-hover: var(--pgn-color-secondary-base);
   --pgn-color-icon-button-bg-primary-inverse-active-focus: var(--pgn-color-icon-button-accent);
   --pgn-color-icon-button-bg-primary-inverse-active-hover: var(--pgn-color-icon-button-accent);
+  --pgn-color-icon-button-bg-primary-inverse-active-base: var(--pgn-color-icon-button-accent);
   --pgn-color-icon-button-bg-primary-active-focus: var(--pgn-color-icon-button-text-primary-base);
   --pgn-color-icon-button-bg-primary-active-hover: var(--pgn-color-icon-button-text-primary-base);
   --pgn-color-icon-button-bg-primary-active-base: var(--pgn-color-icon-button-text-primary-base);
