@@ -69,6 +69,7 @@ const Chip = React.forwardRef(({
           onClick={onIconBeforeClick}
           alt={iconBeforeAlt}
           variant={variant}
+          disabled={disabled}
         />
       )}
       <div
@@ -86,6 +87,7 @@ const Chip = React.forwardRef(({
           onClick={onIconAfterClick}
           alt={iconAfterAlt}
           variant={variant}
+          disabled={disabled}
         />
       )}
     </div>

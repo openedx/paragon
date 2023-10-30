@@ -12,10 +12,11 @@ export interface ChipIconProps {
   onClick?: KeyboardEventHandler & MouseEventHandler,
   alt?: string,
   variant: string,
+  disabled?: boolean,
 }
 
 function ChipIcon({
-  className, src, onClick, alt, variant,
+  className, src, onClick, alt, variant, disabled,
 }: ChipIconProps) {
   if (onClick) {
     return (
@@ -26,6 +27,7 @@ function ChipIcon({
         iconAs={Icon}
         alt={alt}
         invertColors={variant === STYLE_VARIANTS.DARK}
+        tabIndex={disabled ? -1 : 0}
       />
     );
   }
@@ -39,11 +41,13 @@ ChipIcon.propTypes = {
   onClick: PropTypes.func,
   alt: PropTypes.string.isRequired,
   variant: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 ChipIcon.defaultProps = {
   onClick: undefined,
   variant: STYLE_VARIANTS.LIGHT,
+  disabled: false,
 };
 
 export default ChipIcon;
