@@ -18,7 +18,7 @@
             "focus": { "value": "{color.icon-button.text.primary.base}", "type": "color" }
           },
           "inverse-active": {
-            "base": { "value": "{color.icon-button.bg.base}", "type": "color" },
+            "base": { "value": "{color.icon-button.accent}", "type": "color" },
             "hover": { "value": "{color.icon-button.accent}", "type": "color" },
             "focus": { "value": "{color.icon-button.accent}", "type": "color" }
           }
