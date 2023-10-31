@@ -8,12 +8,12 @@ exports.handler = async function eventHandler(event) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
-  const { eventName } = JSON.parse(event.body);
+  const { eventId, properties } = JSON.parse(event.body);
   // dispatch event to Segment
   analytics.track({
     anonymousId: uuidv4(),
-    event: 'openedx.paragon.functions.track-cli-commands.run',
-    properties: { eventName },
+    event: eventId,
+    properties,
   });
 
   return {

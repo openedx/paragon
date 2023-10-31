@@ -1,23 +1,12 @@
-const { v4: uuidv4 } = require('uuid');
-const Analytics = require('analytics-node');
-
-const analytics = new Analytics(process.env.SEGMENT_KEY);
+const { handler: actualHandler } = require('./sendAnalyticsData');
 
 exports.handler = async function eventHandler(event) {
-  // Only allow POST
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
-  }
-  const { eventName } = JSON.parse(event.body);
-  // dispatch event to Segment
-  analytics.track({
-    anonymousId: uuidv4(),
-    event: 'openedx.paragon.functions.track-generate-component.created',
-    properties: { eventName },
+  const body = JSON.parse(event.body);
+  event.body = JSON.stringify({
+    ...body,
+    eventId: 'openedx.paragon.functions.track-generate-component.created',
+    properties: { componentName: body.componentName },
   });
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ success: true }),
-  };
+  return actualHandler(event);
 };

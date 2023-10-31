@@ -174,7 +174,7 @@ const COMMANDS = {
   const [command, ...commandArgs] = process.argv.slice(2);
   const executor = COMMANDS[command];
 
-  sendTrackInfo(command, 'trackCLICommands');
+  sendTrackInfo('openedx.paragon.cli-command.used', { command });
 
   if (!executor) {
     // eslint-disable-next-line no-console
