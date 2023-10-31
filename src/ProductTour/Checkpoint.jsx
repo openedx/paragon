@@ -98,8 +98,9 @@ const Checkpoint = React.forwardRef(({
     >
       <span className="sr-only">
         <FormattedMessage
-          id="pgn.checkpoint.sr-only.message"
-          defaultMessage={`Top of step ${index + 1}`}
+          id="pgn.ProductTour.Checkpoint.position-text"
+          defaultMessage="Top of step {step}"
+          value={{ step: index + 1 }}
           description="Screen-reader message to indicate the user's position in a sequence of checkpoints."
         />
       </span>
