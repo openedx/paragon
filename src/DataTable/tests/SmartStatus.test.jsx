@@ -9,6 +9,7 @@ import RowStatus from '../RowStatus';
 import SelectionStatus from '../selection/SelectionStatus';
 
 const filters = [{ id: 'name' }, { id: 'age' }];
+const headers = [{ id: 'name', Header: 'name' }, { id: 'age', Header: 'age' }];
 const filterNames = ['name', 'age'];
 const itemCount = 101;
 const instance = {
@@ -22,6 +23,7 @@ const instance = {
   SelectionStatusComponent: SelectionStatus,
   FilterStatusComponent: FilterStatus,
   RowStatusComponent: RowStatus,
+  headers,
 };
 
 // eslint-disable-next-line react/prop-types
