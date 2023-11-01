@@ -97,8 +97,6 @@ export default function SpacingPage({ pageContext }) {
 
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
-      <SEO title="Spacing" />
       <Container size={settings.containerWidth} className="py-5">
         <h1>Spacing</h1>
         <h2>Spacing according to pixels</h2>
@@ -233,3 +231,7 @@ SpacingPage.propTypes = {
     githubEditPath: PropTypes.string,
   }).isRequired,
 };
+
+export function Head() {
+  return <SEO title="Spacing" />;
+}

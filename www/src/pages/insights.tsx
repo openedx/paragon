@@ -69,8 +69,6 @@ export default function InsightsPage({ pageContext: { tab, githubEditPath } }: I
   };
   return (
     <Layout isAutoToc tab={tab} githubEditPath={githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
-      <SEO title="Usage Insights" />
       <Container size={settings.containerWidth} className="py-5">
         <header className="mb-5">
           <h1>Usage Insights</h1>
@@ -123,3 +121,7 @@ InsightsPage.propTypes = {
     githubEditPath: PropTypes.string,
   }).isRequired,
 };
+
+export function Head() {
+  return <SEO title="Usage Insights" />;
+}

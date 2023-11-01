@@ -23,23 +23,11 @@ const shortcodes = {
   Link,
 };
 
-export interface IPageTemplateType {
-  children: React.ReactNode,
-  pageContext: {
-    frontmatter: {
-      title: string,
-    },
-    githubEditPath: string,
-  },
-}
-
-export default function PageTemplate({ children, pageContext }: IPageTemplateType) {
+export default function PageTemplate({ children, pageContext }) {
   const { settings } = useContext(SettingsContext);
 
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
-      <SEO title={pageContext?.frontmatter?.title} />
       <Container size={settings.containerWidth} className="py-5">
         <MDXProvider components={shortcodes}>{children}</MDXProvider>
       </Container>
@@ -57,3 +45,5 @@ PageTemplate.propTypes = {
     githubEditPath: PropTypes.string,
   }).isRequired,
 };
+
+export const Head = ({ pageContext }) => <SEO title={pageContext?.frontmatter?.title} />;

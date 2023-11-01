@@ -17,15 +17,13 @@ export default function StatusPage({ pageContext }) {
 
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
-      <SEO title="Status" />
       <Container size={settings.containerWidth} className="py-5">
         <h1>Library Status</h1>
 
         <h3>Components Status</h3>
         <StaticQuery
           query={graphql`query ComponentStatusQuery {
-            allMdx(filter: {frontmatter: {type: {eq: "component"}}}, sort: {fields: frontmatter___title}) {
+            allMdx(filter: {frontmatter: {type: {eq: "component"}}}, sort: { frontmatter: { title: ASC } }) {
               nodes {
                 frontmatter {
                   designStatus
@@ -98,3 +96,7 @@ StatusPage.propTypes = {
     githubEditPath: PropTypes.string,
   }).isRequired,
 };
+
+export function Head() {
+  return <SEO title="Status" />;
+}

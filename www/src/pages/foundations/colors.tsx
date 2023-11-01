@@ -133,8 +133,6 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
 
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
-      <SEO title="Colors" />
       <Container size={settings.containerWidth} className="py-5">
         <h1>Colors</h1>
         <div className="d-flex flex-wrap">
@@ -451,13 +449,17 @@ export const query = graphql`
   {
     allCssUtilityClasses(
       filter: { declarations: { regex: "/color/" }, isUtility: { eq: true } }
-      sort: { fields: selector, order: ASC }
+      sort: { selector: ASC }
     ) {
       nodes {
         selector
         declarations
       }
-      distinct(field: selector)
+      distinct(field: { selector: SELECT })
     }
   }
 `;
+
+export function Head() {
+  return <SEO title="Colors" />;
+}

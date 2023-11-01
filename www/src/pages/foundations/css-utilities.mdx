@@ -47,7 +47,7 @@ export const pageQuery = graphql`
 {
   utilities: allCssUtilityClasses(
     filter: {isUtility: {eq: true}},
-    sort: {fields: selector, order: ASC}
+    sort: {selector: ASC}
   ) {
     nodes {
       selector

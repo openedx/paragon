@@ -1,10 +1,14 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, {
+  createContext,
+  useState,
+  useEffect,
+} from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { IntlProvider } from 'react-intl';
 import { messages } from '~paragon-react';
 
-import { THEMES, DEFAULT_THEME } from '../../theme-config';
+import { IntlProvider } from 'react-intl';
+
+import { DEFAULT_THEME } from '../../theme-config';
 
 export interface IDefaultValue {
   settings: {
@@ -76,22 +80,6 @@ function SettingsContextProvider({ children }) {
 
   return (
     <SettingsContext.Provider value={contextValue}>
-      <Helmet>
-        {/* Open edX theme is the base and default theme which should always be included and active in the <head>.
-            Other themes generally inherit from it and override its values, so if they are included after the base
-            one they wil get applied to the site. This is done to avoid flickering when changing themes,
-            if you simply change href of the stylesheet there is a small window of time when the previous
-            theme gets unapplied and new one loaded which leaves whose site without styles.
-         */}
-        {THEMES.map(({ stylesheet, id }) => id !== DEFAULT_THEME && (
-          <link
-            key={id}
-            href={`/static/${stylesheet}.css`}
-            rel={`stylesheet${settings.theme === id ? '' : ' alternate'}`}
-            type="text/css"
-          />
-        ))}
-      </Helmet>
       <IntlProvider messages={messages[settings.language]} locale={settings.language.split('-')[0]}>
         {children}
       </IntlProvider>

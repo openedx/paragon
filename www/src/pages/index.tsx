@@ -7,8 +7,6 @@ import ComponentsList from '../components/ComponentsList';
 function HomePage() {
   return (
     <Layout showMinimizedTitle hideFooterComponentMenu>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
-      <SEO title="Home" />
       <div className="bg-dark text-white text-center py-5">
         <p className="x-small text-uppercase text-monospace mb-0">
           Technical Documentation{' '}
@@ -46,3 +44,7 @@ function HomePage() {
 }
 
 export default HomePage;
+
+export function Head() {
+  return <SEO title="Home" />;
+}

@@ -26,15 +26,15 @@ const menuQuery = graphql`
         }
         frontmatter: { type: {} }
       }
-      sort: { fields: frontmatter___title }
+      sort: { frontmatter: { title: ASC } }
     ) {
-      categories: group(field: frontmatter___categories) {
+      categories: group(field: {frontmatter: {categories: SELECT}}) {
         nodes {
           ...ComponentPage
         }
         fieldValue
       }
-      types: group(field: frontmatter___type) {
+      types: group(field: {frontmatter: {type: SELECT}}) {
         nodes {
           ...ComponentPage
         }

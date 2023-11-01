@@ -24,12 +24,14 @@ async function createPages(graphql, actions, reporter) {
             id
             fields {
               slug
+              source
             }
             frontmatter {
               components
             }
-            slug
-            fileAbsolutePath
+            internal {
+              contentFilePath
+            }
           }
         }
       }
@@ -39,39 +41,55 @@ async function createPages(graphql, actions, reporter) {
     reporter.panicOnBuild('🚨  ERROR: Loading createPages query');
   }
   // Create component detail pages.
-  const components = result.data.allMdx.edges;
+  const pages = result.data.allMdx.edges;
 
   const themesSCSSVariables = await getThemesSCSSVariables();
 
   // you'll call `createPage` for each result
   // eslint-disable-next-line no-restricted-syntax
-  for (const { node } of components) {
-    const componentDir = node.slug.split('/')[0];
-    const variablesPath = path.resolve(__dirname, `../../src/${componentDir}/_variables.scss`);
-    const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.fileAbsolutePath.split('src')[1]}`;
-    let scssVariablesData = {};
+  for (const { node } of pages) {
+    const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.internal.contentFilePath.split('src')[1]}`;
 
-    if (fs.existsSync(variablesPath)) {
-      // eslint-disable-next-line no-await-in-loop
-      scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
+    if (node.fields.source === 'components') {
+      const componentDir = node.internal.contentFilePath.split('/').slice(0, -1).join('/');
+      const variablesPath = `${componentDir}/_variables.scss`;
+      let scssVariablesData = {};
+
+      if (fs.existsSync(variablesPath)) {
+        // eslint-disable-next-line no-await-in-loop
+        scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
+      }
+
+      createPage({
+        // This is the slug you created before
+        // (or `node.frontmatter.slug`)
+        path: node.fields.slug,
+        // This component will wrap our MDX content
+        component: `${path.resolve(__dirname, '../src/templates/component-page-template.tsx')}?__contentFilePath=${node.internal.contentFilePath}`,
+        // You can use the values in this context in
+        // our page layout component
+        context: {
+          id: node.id,
+          frontmatter: node.frontmatter,
+          toc: node.tableOfContents,
+          scssVariablesData,
+          componentsUsageInsights: Object.keys(componentsUsage),
+          githubEditPath,
+        },
+      });
+    } else {
+      createPage({
+        path: node.fields.slug.slice(11),
+        component: `${path.resolve(__dirname, '../src/templates/default-mdx-page-template.tsx')}?__contentFilePath=${node.internal.contentFilePath}`,
+        context: {
+          id: node.id,
+          githubEditPath,
+          frontmatter: {
+            title: node.frontmatter.title,
+          },
+        },
+      });
     }
-
-    createPage({
-      // This is the slug you created before
-      // (or `node.frontmatter.slug`)
-      path: node.fields.slug,
-      // This component will wrap our MDX content
-      component: path.resolve(__dirname, '../src/templates/component-page-template.tsx'),
-      // You can use the values in this context in
-      // our page layout component
-      context: {
-        id: node.id,
-        components: node.frontmatter.components || [],
-        scssVariablesData,
-        componentsUsageInsights: Object.keys(componentsUsage),
-        githubEditPath,
-      },
-    });
   }
 
   INSIGHTS_PAGES.forEach(({ path: pagePath, tab }) => {

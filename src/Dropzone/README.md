@@ -15,9 +15,9 @@ The `Dropzone` allows users to upload files via drag and drop, or by clicking th
 
 You will also need to provide upload logic yourself via `onProcessUpload` prop which accepts function that should take care of uploading the file to the backend (i.e. send HTTP request). 
 This function accepts an object with following content as its only argument:
-- {object} fileData - Metadata about the uploaded file.
-- {object} requestConfig - Config to pass to `axios` call (this is required to display progress bar and hande cancel action).
-- {function} handleError - Function to communicate to `Dropzone` that file upload resulted in failure, expects `Error` object as its only argument.
+- `{object}` fileData - Metadata about the uploaded file.
+- `{object}` requestConfig - Config to pass to `axios` call (this is required to display progress bar and hande cancel action).
+- `{function}` handleError - Function to communicate to `Dropzone` that file upload resulted in failure, expects `Error` object as its only argument.
 
 Each example below implements such a function.
 
