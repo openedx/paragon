@@ -1,5 +1,5 @@
 {
-  "lastModified": 1698761306633,
+  "lastModified": 1698847697253,
   "projectUsages": [
     {
       "version": "21.5.6",
@@ -666,7 +666,7 @@
       }
     },
     {
-      "version": "21.5.3",
+      "version": "20.46.3",
       "name": "@edx/frontend-app-account",
       "repository": {
         "type": "git",
@@ -2004,6 +2004,12 @@
             "line": 192,
             "column": 10,
             "index": 5398
+          },
+          {
+            "filePath": "src/components/learner-credit-management/AssignmentsTableRefreshAction.jsx",
+            "line": 12,
+            "column": 4,
+            "index": 310
           },
           {
             "filePath": "src/components/learner-credit-management/AssignMoreCoursesEmptyStateMinimal.jsx",
@@ -4647,7 +4653,7 @@
             "filePath": "src/components/learner-credit-management/search/CatalogSearchResults.jsx",
             "line": 71,
             "column": 6,
-            "index": 2081
+            "index": 2095
           },
           {
             "filePath": "src/components/NewFeatureAlertBrowseAndRequest/index.jsx",
@@ -5299,21 +5305,21 @@
           },
           {
             "filePath": "src/components/learner-credit-management/BudgetAssignmentsTable.jsx",
-            "line": 19,
+            "line": 20,
             "column": 2,
-            "index": 694
+            "index": 771
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAllocationTable.jsx",
-            "line": 19,
+            "line": 22,
             "column": 2,
-            "index": 622
+            "index": 573
           },
           {
             "filePath": "src/components/learner-credit-management/search/CatalogSearchResults.jsx",
             "line": 84,
             "column": 6,
-            "index": 2486
+            "index": 2500
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
@@ -5387,7 +5393,7 @@
             "filePath": "src/components/learner-credit-management/search/CatalogSearchResults.jsx",
             "line": 104,
             "column": 8,
-            "index": 3064
+            "index": 3089
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
@@ -6219,7 +6225,7 @@
             "filePath": "src/components/learner-credit-management/search/CatalogSearchResults.jsx",
             "line": 99,
             "column": 8,
-            "index": 2925
+            "index": 2950
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
@@ -6301,7 +6307,7 @@
             "filePath": "src/components/learner-credit-management/search/CatalogSearchResults.jsx",
             "line": 105,
             "column": 8,
-            "index": 3124
+            "index": 3149
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ContentMetadataTable.jsx",
@@ -8539,7 +8545,7 @@
             "filePath": "src/components/learner-credit-management/search/CatalogSearchResults.jsx",
             "line": 100,
             "column": 8,
-            "index": 2963
+            "index": 2988
           }
         ],
         "EditCircle": [
@@ -9131,15 +9137,15 @@
         "DataTable.FilterStatus": [
           {
             "filePath": "src/components/learner-credit-management/BudgetAssignmentsTable.jsx",
-            "line": 12,
+            "line": 13,
             "column": 31,
-            "index": 540
+            "index": 617
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAllocationTable.jsx",
-            "line": 12,
+            "line": 15,
             "column": 31,
-            "index": 462
+            "index": 413
           }
         ],
         "Breadcrumb": [
@@ -29312,7 +29318,7 @@
       }
     },
     {
-      "version": "20.46.3",
+      "version": "21.5.6",
       "name": "@edx/frontend-app-library-authoring",
       "repository": {
         "type": "git",
@@ -29329,51 +29335,51 @@
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 462,
+            "line": 467,
             "column": 6,
-            "index": 14989
+            "index": 15100
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 518,
-            "column": 16,
-            "index": 17304
+            "line": 542,
+            "column": 8,
+            "index": 18009
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 530,
+            "line": 556,
+            "column": 14,
+            "index": 18618
+          },
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 559,
+            "column": 14,
+            "index": 18780
+          },
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 643,
             "column": 12,
-            "index": 17812
+            "index": 22423
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 544,
-            "column": 18,
-            "index": 18405
-          },
-          {
-            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 547,
-            "column": 18,
-            "index": 18562
-          },
-          {
-            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 621,
+            "line": 656,
             "column": 6,
-            "index": 21858
+            "index": 22894
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 624,
+            "line": 659,
             "column": 12,
-            "index": 21968
+            "index": 23004
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 632,
+            "line": 667,
             "column": 12,
-            "index": 22581
+            "index": 23617
           },
           {
             "filePath": "src/library-authoring/common/ErrorAlert.jsx",
@@ -29535,21 +29541,15 @@
         "Card": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 96,
+            "line": 95,
             "column": 2,
-            "index": 2587
+            "index": 2579
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 463,
-            "column": 8,
-            "index": 15025
-          },
-          {
-            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 633,
+            "line": 668,
             "column": 14,
-            "index": 22645
+            "index": 23681
           },
           {
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
@@ -29595,23 +29595,23 @@
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 137,
+            "line": 143,
             "column": 22,
-            "index": 4023
+            "index": 4351
           }
         ],
         "Card.Header": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 97,
+            "line": 96,
             "column": 4,
-            "index": 2621
+            "index": 2614
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 634,
+            "line": 669,
             "column": 16,
-            "index": 22668
+            "index": 23704
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportListItem.jsx",
@@ -29630,44 +29630,44 @@
             "line": 29,
             "column": 8,
             "index": 930
-          },
-          {
-            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 143,
-            "column": 24,
-            "index": 4278
           }
         ],
         "ActionRow": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 101,
+            "line": 100,
             "column": 8,
-            "index": 2746
+            "index": 2739
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 155,
+            "line": 154,
             "column": 8,
-            "index": 4676
+            "index": 4669
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 403,
+            "line": 410,
             "column": 10,
-            "index": 13195
+            "index": 13335
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 445,
+            "line": 450,
             "column": 6,
-            "index": 14415
+            "index": 14526
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 465,
-            "column": 12,
-            "index": 15066
+            "line": 468,
+            "column": 8,
+            "index": 15136
+          },
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 492,
+            "column": 8,
+            "index": 16025
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportListItem.jsx",
@@ -29713,69 +29713,69 @@
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 115,
+            "line": 122,
             "column": 14,
-            "index": 3150
+            "index": 3487
           }
         ],
         "IconButtonWithTooltip": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 102,
+            "line": 101,
             "column": 10,
-            "index": 2768
+            "index": 2761
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 109,
+            "line": 108,
             "column": 10,
-            "index": 3093
+            "index": 3086
           }
         ],
         "EditOutline": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 105,
+            "line": 104,
             "column": 17,
-            "index": 2944
+            "index": 2937
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 408,
+            "line": 413,
             "column": 22,
-            "index": 13331
+            "index": 13421
           }
         ],
         "Icon": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 106,
+            "line": 105,
             "column": 20,
-            "index": 2977
+            "index": 2970
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 113,
+            "line": 112,
             "column": 20,
-            "index": 3306
+            "index": 3299
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 587,
-            "column": 26,
-            "index": 20381
+            "line": 599,
+            "column": 22,
+            "index": 20476
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 598,
-            "column": 26,
-            "index": 20927
+            "line": 613,
+            "column": 22,
+            "index": 21139
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 609,
-            "column": 26,
-            "index": 21474
+            "line": 628,
+            "column": 22,
+            "index": 21849
           },
           {
             "filePath": "src/library-authoring/common/License.jsx",
@@ -29871,9 +29871,9 @@
         "DeleteOutline": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 112,
+            "line": 111,
             "column": 17,
-            "index": 3271
+            "index": 3264
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -29885,15 +29885,15 @@
         "ModalDialog": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 119,
+            "line": 118,
             "column": 4,
-            "index": 3455
+            "index": 3448
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 142,
+            "line": 141,
             "column": 4,
-            "index": 4215
+            "index": 4208
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -29905,9 +29905,9 @@
         "ModalDialog.Header": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 146,
+            "line": 145,
             "column": 6,
-            "index": 4319
+            "index": 4312
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -29919,9 +29919,9 @@
         "ModalDialog.Title": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 147,
+            "line": 146,
             "column": 8,
-            "index": 4348
+            "index": 4341
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -29933,9 +29933,9 @@
         "ModalDialog.Body": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 151,
+            "line": 150,
             "column": 6,
-            "index": 4515
+            "index": 4508
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -29947,9 +29947,9 @@
         "ModalDialog.Footer": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 154,
+            "line": 153,
             "column": 6,
-            "index": 4647
+            "index": 4640
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -29961,9 +29961,9 @@
         "ModalDialog.CloseButton": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 156,
+            "line": 155,
             "column": 10,
-            "index": 4698
+            "index": 4691
           },
           {
             "filePath": "src/library-authoring/library-access/UserAccessWidget.jsx",
@@ -29975,33 +29975,39 @@
         "Button": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 159,
+            "line": 158,
             "column": 10,
-            "index": 4884
+            "index": 4877
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 310,
+            "line": 303,
             "column": 4,
-            "index": 10349
+            "index": 9923
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 532,
-            "column": 14,
-            "index": 17960
+            "line": 314,
+            "column": 4,
+            "index": 10408
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 638,
+            "line": 544,
+            "column": 10,
+            "index": 18149
+          },
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 673,
             "column": 18,
-            "index": 22893
+            "index": 23929
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 641,
+            "line": 676,
             "column": 18,
-            "index": 23094
+            "index": 24130
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
@@ -30131,63 +30137,69 @@
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 118,
+            "line": 125,
             "column": 16,
-            "index": 3324
+            "index": 3695
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 156,
+            "line": 162,
             "column": 20,
-            "index": 4849
+            "index": 5290
           }
         ],
         "Card.Body": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 166,
+            "line": 165,
             "column": 6,
-            "index": 5192
+            "index": 5185
+          }
+        ],
+        "Add": [
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 322,
+            "column": 18,
+            "index": 10683
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 464,
-            "column": 10,
-            "index": 15042
-          }
-        ],
-        "Sync": [
-          {
-            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 314,
-            "column": 18,
-            "index": 10475
+            "line": 549,
+            "column": 24,
+            "index": 18328
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportListItem.jsx",
-            "line": 47,
-            "column": 24,
-            "index": 1556
+            "line": 44,
+            "column": 26,
+            "index": 1418
           },
           {
-            "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
-            "line": 57,
-            "column": 24,
-            "index": 1813
+            "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
+            "line": 58,
+            "column": 26,
+            "index": 2018
+          },
+          {
+            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+            "line": 165,
+            "column": 34,
+            "index": 5439
           }
         ],
         "Form.Control": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 389,
+            "line": 396,
             "column": 10,
-            "index": 12809
+            "index": 12949
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 475,
-            "column": 16,
-            "index": 15519
+            "line": 478,
+            "column": 12,
+            "index": 15523
           },
           {
             "filePath": "src/library-authoring/common/FormGroup.jsx",
@@ -30223,9 +30235,9 @@
         "IconButton": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 405,
+            "line": 412,
             "column": 12,
-            "index": 13247
+            "index": 13387
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
@@ -30243,9 +30255,9 @@
         "Container": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 442,
+            "line": 447,
             "column": 2,
-            "index": 14240
+            "index": 14351
           },
           {
             "filePath": "src/library-authoring/edit-block/LibraryBlockPage.jsx",
@@ -30257,15 +30269,21 @@
         "ActionRow.Spacer": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 449,
+            "line": 454,
             "column": 8,
-            "index": 14510
+            "index": 14621
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 474,
-            "column": 16,
-            "index": 15482
+            "line": 477,
+            "column": 12,
+            "index": 15490
+          },
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 502,
+            "column": 10,
+            "index": 16429
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
@@ -30287,29 +30305,47 @@
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 117,
+            "line": 124,
             "column": 16,
-            "index": 3287
+            "index": 3658
           }
         ],
         "Row": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 459,
+            "line": 464,
             "column": 4,
-            "index": 14786
+            "index": 14897
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 543,
-            "column": 16,
-            "index": 18381
+            "line": 555,
+            "column": 12,
+            "index": 18526
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 623,
+            "line": 598,
+            "column": 20,
+            "index": 20390
+          },
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 612,
+            "column": 20,
+            "index": 21053
+          },
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 627,
+            "column": 20,
+            "index": 21763
+          },
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 658,
             "column": 10,
-            "index": 21950
+            "index": 22986
           },
           {
             "filePath": "src/library-authoring/common/License.jsx",
@@ -30393,17 +30429,23 @@
         "SearchField": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 468,
-            "column": 16,
-            "index": 15198
+            "line": 471,
+            "column": 12,
+            "index": 15230
           }
         ],
         "Pagination": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 519,
-            "column": 18,
-            "index": 17336
+            "line": 504,
+            "column": 12,
+            "index": 16509
+          },
+          {
+            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
+            "line": 644,
+            "column": 14,
+            "index": 22451
           },
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
@@ -30419,101 +30461,69 @@
           },
           {
             "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 168,
+            "line": 174,
             "column": 18,
-            "index": 5319
-          }
-        ],
-        "Add": [
-          {
-            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 537,
-            "column": 28,
-            "index": 18159
-          },
-          {
-            "filePath": "src/library-authoring/course-import/CourseImportListItem.jsx",
-            "line": 44,
-            "column": 26,
-            "index": 1418
-          },
-          {
-            "filePath": "src/library-authoring/library-access/LibraryAccessPage.jsx",
-            "line": 58,
-            "column": 26,
-            "index": 2018
-          },
-          {
-            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 121,
-            "column": 30,
-            "index": 3461
-          },
-          {
-            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 159,
-            "column": 34,
-            "index": 4998
+            "index": 5760
           }
         ],
         "SelectableBox.Set": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 548,
-            "column": 20,
-            "index": 18620
+            "line": 560,
+            "column": 16,
+            "index": 18834
           }
         ],
         "SelectableBox": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 580,
-            "column": 22,
-            "index": 20062
+            "line": 593,
+            "column": 18,
+            "index": 20219
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 591,
-            "column": 22,
-            "index": 20602
+            "line": 607,
+            "column": 18,
+            "index": 20876
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 602,
-            "column": 22,
-            "index": 21152
+            "line": 621,
+            "column": 18,
+            "index": 21546
           }
         ],
         "TextFields": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 587,
-            "column": 37,
-            "index": 20392
+            "line": 600,
+            "column": 29,
+            "index": 20511
           }
         ],
         "HelpOutline": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 598,
-            "column": 37,
-            "index": 20938
+            "line": 614,
+            "column": 29,
+            "index": 21174
           }
         ],
         "VideoCamera": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 609,
-            "column": 37,
-            "index": 21485
+            "line": 629,
+            "column": 29,
+            "index": 21884
           }
         ],
         "Card.Footer": [
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 637,
+            "line": 672,
             "column": 16,
-            "index": 22861
+            "index": 23897
           },
           {
             "filePath": "src/library-authoring/empty-page/EmptyPage.jsx",
@@ -30730,6 +30740,12 @@
             "line": 67,
             "column": 8,
             "index": 2517
+          },
+          {
+            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+            "line": 149,
+            "column": 24,
+            "index": 4610
           }
         ],
         "Form.Label": [
@@ -30820,6 +30836,20 @@
             "index": 1521
           }
         ],
+        "Sync": [
+          {
+            "filePath": "src/library-authoring/course-import/CourseImportListItem.jsx",
+            "line": 47,
+            "column": 24,
+            "index": 1556
+          },
+          {
+            "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
+            "line": 57,
+            "column": 24,
+            "index": 1813
+          }
+        ],
         "Form.Row": [
           {
             "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
@@ -30878,6 +30908,12 @@
             "line": 265,
             "column": 10,
             "index": 7563
+          },
+          {
+            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
+            "line": 115,
+            "column": 12,
+            "index": 3147
           }
         ],
         "AlertModal": [
