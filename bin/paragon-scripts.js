@@ -33,7 +33,7 @@ const COMMANDS = {
   */
   'install-theme': {
     executor: themeCommand,
-    description: 'Installs the specific @edx/brand package.',
+    description: 'Installs the specific @edx/brand package. \n    Run npm install is necessary to reset to default.',
     parameters: [
       {
         name: 'theme',
