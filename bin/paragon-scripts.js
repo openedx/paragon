@@ -174,8 +174,6 @@ const COMMANDS = {
   const [command, ...commandArgs] = process.argv.slice(2);
   const executor = COMMANDS[command];
 
-  sendTrackInfo('openedx.paragon.cli-command.used', { command });
-
   if (!executor) {
     // eslint-disable-next-line no-console
     console.log(chalk.red.bold('Unknown command. Usage: paragon <command>.'));
@@ -184,9 +182,11 @@ const COMMANDS = {
 
   try {
     await executor.executor(commandArgs);
+    sendTrackInfo('openedx.paragon.cli-command.used', { command, status: 'success' });
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(chalk.red.bold('An error occurred:', error.message));
+    sendTrackInfo('openedx.paragon.cli-command.used', { command, status: 'error', errorMsg: error.message });
     process.exit(1);
   }
 })();
