@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import {render, waitFor} from '@testing-library/react';
+import renderer, {act} from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
 import Dropdown from './index';
@@ -92,8 +92,10 @@ describe('<Dropdown />', () => {
     it('closes on document click when open', async () => {
       await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
       menuOpen(true, wrapper);
-      document.dispatchEvent(new MouseEvent('click'));
-      menuOpen(false, wrapper);
+      await act(() => {
+        document.dispatchEvent(new MouseEvent('click'));
+      });
+      await menuOpen(false, wrapper);
     });
   });
 

@@ -2,6 +2,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
+import { act } from 'react-test-renderer';
 import TransitionReplace from '.';
 
 function TestReplacement({ showContentA, ...props }) {

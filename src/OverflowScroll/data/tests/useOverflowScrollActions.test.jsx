@@ -1,5 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks/dom';
-import { act } from 'react-test-renderer';
+import { act, renderHook } from '@testing-library/react';
 import useOverflowScrollActions from '../useOverflowScrollActions';
 
 const divElement = document.createElement('div');

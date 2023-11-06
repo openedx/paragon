@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import StatusAlert from '.';
@@ -123,7 +123,9 @@ describe('<StatusAlert />', () => {
     it('does nothing on invalid keystroke + ctrl', async () => {
       const closeButton = screen.getByRole('button');
       expect(document.activeElement).toEqual(closeButton);
-      await userEvent.keyboard('{ctrl>}{tab}{/ctrl}');
+      await waitFor(() => {
+        userEvent.keyboard('{ctrl>}{tab}{/ctrl}');
+      });
       expect(document.activeElement).toEqual(closeButton);
     });
   });

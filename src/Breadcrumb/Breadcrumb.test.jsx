@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import {render, screen, waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Breadcrumb from '.';
@@ -48,16 +48,17 @@ describe('<Breadcrumb />', () => {
     expect(screen.getAllByRole('presentation').length).toBe(2);
   });
 
-  it('fires the passed in click handler', () => {
+  it('fires the passed in click handler', async () => {
     const clickHandler = jest.fn();
-    render(<Breadcrumb {...baseProps} clickHandler={clickHandler} />);
+    render(<Breadcrumb {...baseProps} clickHandler={clickHandler}/>);
 
     const listItems = screen.queryAllByRole('listitem');
     const links = screen.queryAllByRole('link');
     expect(listItems.length).toBe(baseProps.links.length);
-
-    userEvent.click(links[0]);
-    expect(clickHandler).toHaveBeenCalled();
+    await waitFor(() => {
+      userEvent.click(links[0]);
+      expect(clickHandler).toHaveBeenCalled();
+    });
   });
 
   it('renders in mobile view', () => {

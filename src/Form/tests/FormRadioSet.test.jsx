@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import FormGroup from '../FormGroup';
@@ -109,7 +109,7 @@ describe('FormRadioSet', () => {
     expect(deciduousRadio).toHaveAttribute('name', 'trees');
   });
 
-  it('checks if onClick is called once in FormRadioSet', () => {
+  it('checks if onClick is called once in FormRadioSet', async () => {
     const handleChange = jest.fn();
     const { getByLabelText } = render(
       <FormGroup>
@@ -125,6 +125,9 @@ describe('FormRadioSet', () => {
     );
 
     userEvent.click(getByLabelText('Red'));
-    expect(handleChange).toHaveBeenCalledTimes(1);
+
+    await waitFor(() => {
+      expect(handleChange).toHaveBeenCalledTimes(1);
+    });
   });
 });

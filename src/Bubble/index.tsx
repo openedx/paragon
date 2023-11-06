@@ -7,7 +7,7 @@ const STYLE_VARIANTS = ['primary', 'success', 'error', 'warning'] as const;
 export type BubbleVariant = typeof STYLE_VARIANTS[number];
 
 export interface BubbleProps {
-  children: React.ReactNode;
+  children?: any;
   variant?: BubbleVariant;
   disabled?: boolean;
   className?: string;
@@ -50,7 +50,7 @@ Bubble.propTypes = {
 };
 
 Bubble.defaultProps = {
-  children: null,
+  children: undefined,
   variant: 'primary',
   disabled: false,
   className: undefined,

@@ -10,11 +10,11 @@ const STYLE_VARIANTS = [
 ];
 
 export interface IChip {
-  children: React.ReactNode,
+  children: any,
   className?: string,
   variant?: string,
-  iconBefore?: React.ReactElement | Function,
-  iconAfter?: React.ReactElement | Function,
+  iconBefore?: any,
+  iconAfter?: any,
   onIconBeforeClick?: KeyboardEventHandler & MouseEventHandler,
   onIconAfterClick?: KeyboardEventHandler & MouseEventHandler,
   disabled?: boolean,

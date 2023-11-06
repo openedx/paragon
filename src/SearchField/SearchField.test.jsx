@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { act } from 'react-test-renderer';
 import SearchField from '.';
 
 const BUTTON_LOCATION_VARIANTS = [
@@ -87,12 +88,14 @@ describe('<SearchField /> with basic usage', () => {
   });
 
   describe('should fire', () => {
-    it('focus handler', () => {
+    it('focus handler', async () => {
       const spy = jest.fn();
       const props = { ...baseProps, onFocus: spy };
       render(<SearchField {...props} />);
       const inputElement = screen.getByRole('searchbox');
-      inputElement.focus();
+      await act(() => {
+        inputElement.focus();
+      });
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
@@ -101,7 +104,9 @@ describe('<SearchField /> with basic usage', () => {
       const props = { ...baseProps, onBlur: spy };
       render(<SearchField {...props} />);
       const inputElement = screen.getByRole('searchbox');
-      inputElement.focus();
+      await act(() => {
+        inputElement.focus();
+      });
       await userEvent.tab();
       expect(spy).toHaveBeenCalledTimes(1);
     });

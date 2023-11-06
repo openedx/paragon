@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
 import FormAutosuggest from '../FormAutosuggest';
@@ -65,36 +64,42 @@ describe('render behavior', () => {
     expect(screen.getByDisplayValue('Test Value')).toBeInTheDocument();
   });
 
-  it('renders component with options', () => {
+  it('renders component with options', async () => {
     const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
-    userEvent.click(input);
-    const list = queryAllByTestId('autosuggest-optionitem');
-    expect(list.length).toBe(3);
+    await userEvent.click(input);
+
+    await waitFor(() => {
+      const list = queryAllByTestId('autosuggest-optionitem');
+      expect(list.length).toBe(3);
+    });
   });
 
-  it('renders with error msg', () => {
+  it('renders with error msg', async () => {
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
 
     // if you click into the input and click outside, you should see the error message
-    userEvent.click(input);
-    userEvent.click(document.body);
+    await userEvent.click(input);
+    await userEvent.click(document.body);
+    await waitFor(() => {
+      const formControlFeedback = getByText('Example error message');
 
-    const formControlFeedback = getByText('Example error message');
-
-    expect(formControlFeedback).toBeInTheDocument();
+      expect(formControlFeedback).toBeInTheDocument();
+    });
   });
 
-  it('renders component with options that all have IDs', () => {
+  it('renders component with options that all have IDs', async () => {
     const { getByTestId, getAllByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
 
-    userEvent.click(input);
-    const optionItemIds = getAllByTestId('autosuggest-optionitem').map(item => item.id);
+    await userEvent.click(input);
+    await waitFor(() => {
+      const optionItemIds = getAllByTestId('autosuggest-optionitem').map(item => item.id);
 
-    expect(optionItemIds).not.toContain(null);
-    expect(optionItemIds).not.toContain(undefined);
+      expect(optionItemIds).not.toContain(null);
+      expect(optionItemIds).not.toContain(undefined);
+    });
   });
 
   it('confirms that the value of the aria-live attribute on the wrapper component is assertive', () => {
@@ -103,169 +108,198 @@ describe('render behavior', () => {
     expect(getByTestId('autosuggest-screen-reader-options-count').getAttribute('aria-live')).toEqual('assertive');
   });
 
-  it('displays correct amount of options found to screen readers', () => {
+  it('displays correct amount of options found to screen readers', async () => {
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
 
     expect(getByText('0 options found')).toBeInTheDocument();
     userEvent.click(input);
 
-    expect(getByText('3 options found')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(getByText('3 options found')).toBeInTheDocument();
+    });
   });
 });
 
 describe('controlled behavior', () => {
-  it('sets input value based on clicked option', () => {
+  it('sets input value based on clicked option', async () => {
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
-
-    userEvent.click(input);
-    const menuItem = getByText('Option 1');
-    userEvent.click(menuItem);
-
-    expect(input.value).toEqual('Option 1');
+    await waitFor(() => {
+      userEvent.click(input);
+      const menuItem = getByText('Option 1');
+      userEvent.click(menuItem);
+    });
+    await waitFor(() => {
+      expect(input.value).toEqual('Option 1');
+    });
   });
 
-  it('calls onSelected based on clicked option', () => {
+  it('calls onSelected based on clicked option', async () => {
     const onSelected = jest.fn();
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent onSelected={onSelected} />);
     const input = getByTestId('autosuggest-textbox-input');
-
-    userEvent.click(input);
-    const menuItem = getByText('Option 1');
-    userEvent.click(menuItem);
-
-    expect(onSelected).toHaveBeenCalledWith('Option 1');
-    expect(onSelected).toHaveBeenCalledTimes(1);
+    await waitFor(() => {
+      userEvent.click(input);
+      const menuItem = getByText('Option 1');
+      userEvent.click(menuItem);
+    });
+    await waitFor(() => {
+      expect(onSelected).toHaveBeenCalledWith('Option 1');
+      expect(onSelected).toHaveBeenCalledTimes(1);
+    });
   });
 
-  it('calls the function passed to onClick when an option with it is selected', () => {
+  it('calls the function passed to onClick when an option with it is selected', async () => {
     const onClick = jest.fn();
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent onClick={onClick} />);
     const input = getByTestId('autosuggest-textbox-input');
-
-    userEvent.click(input);
-    const menuItem = getByText('Option 2');
-    userEvent.click(menuItem);
-
-    expect(onClick).toHaveBeenCalledTimes(1);
+    await waitFor(() => {
+      userEvent.click(input);
+      const menuItem = getByText('Option 2');
+      userEvent.click(menuItem);
+    });
+    await waitFor(() => {
+      expect(onClick).toHaveBeenCalledTimes(1);
+    });
   });
 
-  it('does not call onClick when an option without it is selected', () => {
+  it('does not call onClick when an option without it is selected', async () => {
     const onClick = jest.fn();
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent onClick={onClick} />);
     const input = getByTestId('autosuggest-textbox-input');
-
-    userEvent.click(input);
-    const menuItem = getByText('Option 1');
-    userEvent.click(menuItem);
-
-    expect(onClick).toHaveBeenCalledTimes(0);
+    await waitFor(() => {
+      userEvent.click(input);
+      const menuItem = getByText('Option 1');
+      userEvent.click(menuItem);
+    });
+    await waitFor(() => {
+      expect(onClick).toHaveBeenCalledTimes(0);
+    });
   });
 
-  it('should set the correct activedescendant', () => {
+  it('should set the correct activedescendant', async () => {
     const { getByTestId, getAllByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
-
-    userEvent.click(input);
-    const expectedOptionId = getAllByTestId('autosuggest-optionitem')[0].id;
-    userEvent.keyboard('{arrowdown}');
-
-    expect(input.getAttribute('aria-activedescendant')).toEqual(expectedOptionId);
+    await waitFor(() => {
+      userEvent.click(input);
+      const expectedOptionId = getAllByTestId('autosuggest-optionitem')[0].id;
+      userEvent.keyboard('{arrowdown}');
+      expect(input.getAttribute('aria-activedescendant')).toEqual(expectedOptionId);
+    });
   });
 
-  it('filters dropdown based on typed field value with one match', () => {
+  it('filters dropdown based on typed field value with one match', async () => {
     const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
-
-    userEvent.click(input);
-    userEvent.type(input, 'Option 1');
-
-    const list = queryAllByTestId('autosuggest-optionitem');
-    expect(list.length).toBe(1);
+    await waitFor(() => {
+      userEvent.click(input);
+      userEvent.type(input, 'Option 1');
+    });
+    await waitFor(() => {
+      const list = queryAllByTestId('autosuggest-optionitem');
+      expect(list.length).toBe(1);
+    });
   });
 
-  it('toggles options list', () => {
+  it('toggles options list', async () => {
     const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
     const dropdownBtn = getByTestId('autosuggest-iconbutton');
-
-    userEvent.click(dropdownBtn);
-    const list = queryAllByTestId('autosuggest-optionitem');
-    expect(list.length).toBe(3);
-
-    userEvent.click(dropdownBtn);
-    const updatedList = queryAllByTestId('autosuggest-optionitem');
-    expect(updatedList.length).toBe(0);
-
-    userEvent.click(dropdownBtn);
-    const reopenedList = queryAllByTestId('autosuggest-optionitem');
-    expect(reopenedList.length).toBe(3);
+    await waitFor(() => {
+      userEvent.click(dropdownBtn);
+      const list = queryAllByTestId('autosuggest-optionitem');
+      expect(list.length).toBe(3);
+    });
+    await waitFor(() => {
+      userEvent.click(dropdownBtn);
+      const updatedList = queryAllByTestId('autosuggest-optionitem');
+      expect(updatedList.length).toBe(0);
+    });
+    await waitFor(() => {
+      userEvent.click(dropdownBtn);
+      const reopenedList = queryAllByTestId('autosuggest-optionitem');
+      expect(reopenedList.length).toBe(3);
+    });
   });
 
-  it('filters dropdown based on typed field value with multiple matches', () => {
+  it('filters dropdown based on typed field value with multiple matches', async () => {
     const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
-
-    userEvent.click(input);
-    userEvent.type(input, '1');
-
-    const list = queryAllByTestId('autosuggest-optionitem');
-    expect(list.length).toBe(2);
+    await waitFor(() => {
+      userEvent.click(input);
+      userEvent.type(input, '1');
+    });
+    await waitFor(() => {
+      const list = queryAllByTestId('autosuggest-optionitem');
+      expect(list.length).toBe(2);
+    });
   });
 
-  it('closes options list on click outside', () => {
+  it('closes options list on click outside', async () => {
     const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
-
-    userEvent.click(input);
-    const list = queryAllByTestId('autosuggest-optionitem');
-    expect(list.length).toBe(3);
-
-    userEvent.click(document.body);
-    const updatedList = queryAllByTestId('autosuggest-optionitem');
-    expect(updatedList.length).toBe(0);
+    await waitFor(() => {
+      userEvent.click(input);
+      const list = queryAllByTestId('autosuggest-optionitem');
+      expect(list.length).toBe(3);
+    });
+    await waitFor(() => {
+      userEvent.click(document.body);
+      const updatedList = queryAllByTestId('autosuggest-optionitem');
+      expect(updatedList.length).toBe(0);
+    });
   });
 
-  it('updates screen reader option count based on typed field value with multiple matches', () => {
+  it('updates screen reader option count based on typed field value with multiple matches', async () => {
     const { getByText, getByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
 
-    expect(getByText('0 options found')).toBeInTheDocument();
-    userEvent.click(input);
+    await waitFor(() => {
+      expect(getByText('0 options found')).toBeInTheDocument();
+      userEvent.click(input);
+    });
 
-    expect(getByText('3 options found')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(getByText('3 options found')).toBeInTheDocument();
+    });
 
-    userEvent.click(input);
-    userEvent.type(input, '1');
-
-    expect(getByText('2 options found')).toBeInTheDocument();
+    await waitFor(() => {
+      userEvent.click(input);
+      userEvent.type(input, '1');
+      expect(getByText('2 options found')).toBeInTheDocument();
+    });
   });
 
-  it('closes options list when tabbed out and the input is no longer active', () => {
+  it('closes options list when tabbed out and the input is no longer active', async () => {
     const { getByTestId, queryAllByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
-
-    userEvent.click(input);
-    expect(document.activeElement).toBe(getByTestId('autosuggest-textbox-input'));
-
-    const list = queryAllByTestId('autosuggest-optionitem');
-    expect(list.length).toBe(3);
-
-    userEvent.tab();
-    expect(document.activeElement).not.toBe(getByTestId('autosuggest-textbox-input'));
-
-    const updatedList = queryAllByTestId('autosuggest-optionitem');
-    expect(updatedList.length).toBe(0);
+    await waitFor(() => {
+      userEvent.click(input);
+      expect(document.activeElement).toBe(getByTestId('autosuggest-textbox-input'));
+    });
+    await waitFor(() => {
+      const list = queryAllByTestId('autosuggest-optionitem');
+      expect(list.length).toBe(3);
+    });
+    await waitFor(() => {
+      userEvent.tab();
+      expect(document.activeElement).not.toBe(getByTestId('autosuggest-textbox-input'));
+    });
+    await waitFor(() => {
+      const updatedList = queryAllByTestId('autosuggest-optionitem');
+      expect(updatedList.length).toBe(0);
+    });
   });
 
-  it('check focus on input after esc', () => {
+  it('check focus on input after esc', async () => {
     const { getByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
     const dropdownBtn = getByTestId('autosuggest-iconbutton');
-    userEvent.click(dropdownBtn);
+    await userEvent.click(dropdownBtn);
+    await userEvent.keyboard('{escape}');
 
-    userEvent.keyboard('{esc}');
-
-    expect(input.matches(':focus')).toBe(true);
+    await waitFor(() => {
+      expect(input.matches(':focus')).toBe(true);
+    });
   });
 });

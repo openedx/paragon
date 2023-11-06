@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, act } from '@testing-library/react';
+import {render, screen, act, waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
 
@@ -292,12 +292,14 @@ describe('<ProductTour />', () => {
         render(<ProductTourWrapper tours={[overrideTourData]} />);
         expect(screen.getByText('Checkpoint 3')).toBeInTheDocument();
         const container = screen.getByRole('dialog');
-        container.focus();
+        await container.focus();
         await act(async () => {
           await userEvent.keyboard('{escape}');
         });
-        expect(handleEscape).toHaveBeenCalledTimes(1);
-        expect(screen.queryByText('Checkpoint 3')).not.toBeInTheDocument();
+        await waitFor(async () => {
+          await expect(handleEscape).toHaveBeenCalledTimes(1);
+          await expect(screen.queryByText('Checkpoint 3')).not.toBeInTheDocument();
+        });
       });
     });
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { act } from 'react-test-renderer';
 
 import ListBox from '.';
 import ListBoxOption from '../ListBoxOption';
@@ -21,25 +22,26 @@ describe('ListBox', () => {
     expect(listBoxElement.getAttribute('aria-activedescendant')).toBeNull();
   });
 
-  it(
-    'should have correct aria-activedescendant attribute when selectedOptionIndex state is non-null',
-    async () => {
-      const listBoxElement = screen.getByRole('listbox');
-      const selectedOptionIndex = 1;
+  it('should have correct aria-activedescendant attribute when selectedOptionIndex state is non-null', async () => {
+    const listBoxElement = screen.getByRole('listbox');
+    const selectedOptionIndex = 1;
 
+    await act(() => {
       listBoxElement.focus();
+    });
 
-      await userEvent.keyboard('{arrowdown}');
+    await userEvent.keyboard('{arrowdown}');
 
-      expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual(`list-box-option-${selectedOptionIndex}`);
-    },
-  );
+    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual(`list-box-option-${selectedOptionIndex}`);
+  });
 
   it('selectedOptionIndex prop should override selectedOptionIndex state', async () => {
     const listBoxElement = screen.getByRole('listbox');
     const selectedOptionIndex = 2;
 
-    listBoxElement.focus();
+    await act(() => {
+      listBoxElement.focus();
+    });
 
     await userEvent.keyboard('{arrowdown}');
     await userEvent.keyboard('{arrowdown}');
@@ -80,19 +82,27 @@ describe('ListBox', () => {
   it('should select first ListBoxOption on focus if not ListBoxOption selected', async () => {
     const listBoxElement = screen.getByRole('listbox');
 
-    listBoxElement.focus();
+    await act(() => {
+      listBoxElement.focus();
+    });
 
-    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-0');
+    await waitFor(() => {
+      expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-0');
+    });
   });
 
   it('should not select first ListBoxOption on focus if ListBoxOption selected', async () => {
     const listBoxElement = screen.getByRole('listbox');
 
-    listBoxElement.focus();
+    await act(() => {
+      listBoxElement.focus();
+    });
 
     await userEvent.keyboard('{arrowdown}');
 
-    listBoxElement.focus();
+    await act(() => {
+      listBoxElement.focus();
+    });
 
     expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-1');
   });
@@ -100,7 +110,9 @@ describe('ListBox', () => {
   it('should select next ListBoxOption on down arrow key', async () => {
     const listBoxElement = screen.getByRole('listbox');
 
-    listBoxElement.focus();
+    await act(() => {
+      listBoxElement.focus();
+    });
 
     await userEvent.keyboard('{arrowdown}');
 
@@ -110,7 +122,9 @@ describe('ListBox', () => {
   it('should not select next ListBoxOption on down arrow key if at end of list', async () => {
     const listBoxElement = screen.getByRole('listbox');
 
-    listBoxElement.focus();
+    await act(() => {
+      listBoxElement.focus();
+    });
 
     await userEvent.keyboard('{arrowdown}');
     await userEvent.keyboard('{arrowdown}');
@@ -122,7 +136,9 @@ describe('ListBox', () => {
   it('should select previous ListBoxOption on up arrow key', async () => {
     const listBoxElement = screen.getByRole('listbox');
 
-    listBoxElement.focus();
+    await act(() => {
+      listBoxElement.focus();
+    });
 
     await userEvent.keyboard('{arrowdown}');
     await userEvent.keyboard('{arrowup}');
@@ -133,7 +149,9 @@ describe('ListBox', () => {
   it('should not select previous ListBoxOption on up arrow key if at start of list', async () => {
     const listBoxElement = screen.getByRole('listbox');
 
-    listBoxElement.focus();
+    await act(() => {
+      listBoxElement.focus();
+    });
 
     await userEvent.keyboard('{arrowup}');
 
@@ -143,7 +161,9 @@ describe('ListBox', () => {
   it('should not change ListBoxOption selection on non-supported key', async () => {
     const listBoxElement = screen.getByRole('listbox');
 
-    listBoxElement.focus();
+    await act(() => {
+      listBoxElement.focus();
+    });
 
     await userEvent.keyboard('{leftarrow}');
 

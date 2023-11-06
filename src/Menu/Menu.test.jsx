@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
@@ -71,49 +71,58 @@ describe('Keyboard Interactions', () => {
     expect(defaultItem).toHaveFocus();
   });
 
-  it('should focus the next item after ArrowDown keyDown', () => {
+  it('should focus the next item after ArrowDown keyDown', async () => {
     const defaultItem = screen.getByText('Default');
     const cantTouchThisItem = screen.getByText(MENU_ITEM_TEXT).parentElement;
-
-    userEvent.type(defaultItem, '{arrowdown}');
-
-    expect(cantTouchThisItem).toHaveFocus();
+    await waitFor(() => {
+      userEvent.type(defaultItem, '{arrowdown}');
+      expect(cantTouchThisItem).toHaveFocus();
+    });
   });
 
-  it('should focus the next item after Tab keyDown', () => {
+  it('should focus the next item after Tab keyDown', async () => {
     const defaultItem = screen.getByText('Default').parentElement;
     const cantTouchThisItem = screen.getByText(MENU_ITEM_TEXT).parentElement;
-    defaultItem.focus();
-    userEvent.tab();
-
-    expect(cantTouchThisItem).toHaveFocus();
+    await waitFor(() => {
+      defaultItem.focus();
+      userEvent.tab();
+    });
+    await waitFor(() => {
+      expect(cantTouchThisItem).toHaveFocus();
+    });
   });
 
-  it('should loop focus to the first item after Tab keyDown on last item', () => {
+  it('should loop focus to the first item after Tab keyDown on last item', async () => {
     const defaultItem = screen.getByText('Default').parentElement;
     const iconBeforeItem = screen.getByText('Icon Before');
-    iconBeforeItem.focus();
-    userEvent.tab();
-
-    expect(defaultItem).toHaveFocus();
+    await waitFor(() => {
+      iconBeforeItem.focus();
+      userEvent.tab();
+      expect(defaultItem).toHaveFocus();
+    });
   });
 
-  it('should loop focus to the last item after ArrowUp keyDown on first item', () => {
+  it('should loop focus to the last item after ArrowUp keyDown on first item', async () => {
     const defaultItem = screen.getByText('Default').parentElement;
     const iconBeforeItem = screen.getByText('Icon Before').parentElement;
-    defaultItem.focus();
-    userEvent.type(defaultItem, '{arrowup}');
-
-    expect(iconBeforeItem).toHaveFocus();
+    await waitFor(() => {
+      defaultItem.focus();
+      userEvent.type(defaultItem, '{arrowup}');
+    });
+    await waitFor(() => {
+      expect(iconBeforeItem).toHaveFocus();
+    });
   });
 
-  it('should focus the previous item after Shift + Tab keyDown', () => {
+  it('should focus the previous item after Shift + Tab keyDown', async () => {
     const button1 = screen.getAllByRole('button')[0];
     const button2 = screen.getAllByRole('button')[1];
-
-    button2.focus();
-    userEvent.tab({ shift: true });
-
-    expect(button1).toHaveFocus();
+    await waitFor(() => {
+      button2.focus();
+      userEvent.tab({ shift: true });
+    });
+    await waitFor(() => {
+      expect(button1).toHaveFocus();
+    });
   });
 });
