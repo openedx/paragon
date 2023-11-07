@@ -92,34 +92,41 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
 
   return (
     <>
-        <Stack
-          className="mb-2"
-          gap={2}
-          direction={ isExtraSmall ? "vertical" : "horizontal" }
-        >
-          <Button variant="primary" size="lg" className="mb-2 mb-sm-0">
-            Large button
-          </Button>
-          <Button variant="outline-primary" size="lg" className="mb-2 mb-sm-0">
-            Large button
-          </Button>
-        </Stack>
-        <Stack
-          className="mb-2"
-          gap={2}
-          direction={ isExtraSmall ? "vertical" : "horizontal" }
-        >
-          <Button variant="primary" size="sm" className="mb-2 mb-sm-0">
-            Small button
-          </Button>
-          <Button variant="outline-primary" size="sm" className="mb-2 mb-sm-0">
-            Small button
-          </Button>
-        </Stack>
-        <Button variant="link" size="inline" className="mb-2 mb-sm-0">Inline button</Button>
-        <Button variant="link" size="inline" className="mb-2 mb-sm-0">Inline button</Button>
+      <Stack
+        className="mb-2"
+        gap={2}
+        direction={ isExtraSmall ? "vertical" : "horizontal" }
+      >
+        <Button variant="primary" size="lg">
+          Large button
+        </Button>
+        <Button variant="outline-primary" size="lg">
+          Large button
+        </Button>
+      </Stack>
+      <Stack
+        className="mb-2"
+        gap={2}
+        direction={ isExtraSmall ? "vertical" : "horizontal" }
+      >
+        <Button variant="primary" size="sm">
+          Small button
+        </Button>
+        <Button variant="outline-primary" size="sm">
+          Small button
+        </Button>
+      </Stack>
+      <Stack
+        className="mb-2"
+        gap={2}
+        direction={ isExtraSmall ? "vertical" : "horizontal" }
+      >
+        <Button variant="link" size="inline">Inline button</Button>
+        <Button variant="link" size="inline">Inline button</Button>
+      </Stack>
     </>
-)}
+  )
+}
 ```
 
 ### When to use the inline size
@@ -152,21 +159,41 @@ Use inline size buttons for when a button sits with a line of text.
 ### Disabled
 
 ```jsx live
-<>
-  <Button variant="primary" disabled>Primary disabled</Button>
-  <Button variant="secondary" disabled>Secondary disabled</Button>
-  <Button as="a" href="https://edx.org" disabled>Link disabled</Button>
-</>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Stack
+      className="mb-2"
+      gap={2}
+      direction={ isExtraSmall ? "vertical" : "horizontal" }
+    >
+      <Button variant="primary" disabled>Primary disabled</Button>
+      <Button variant="secondary" disabled>Secondary disabled</Button>
+      <Button as="a" href="https://edx.org" disabled>Link disabled</Button>
+    </Stack>
+    )
+}
 ```
 
 ### With empty href
 For link to be `disabled`, it must have href defined with some value.
 
 ```jsx live
-<>
-  <Button as='a' disabled>No href</Button>
-  <Button as='a' href='' disabled>Empty string href</Button>
-</>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Stack
+      className="mb-2"
+      gap={2}
+      direction={ isExtraSmall ? "vertical" : "horizontal" }
+    >
+      <Button as='a' disabled>No href</Button>
+      <Button as='a' href='' disabled>Empty string href</Button>
+    </Stack>
+  )
+}
 ```
 
 ### With Icons before or after
@@ -197,7 +224,8 @@ For link to be `disabled`, it must have href defined with some value.
         Tertiary
       </Button>
     </Stack>
-)}
+  )
+}
 ```
 
 ## Stateful buttons
@@ -219,33 +247,63 @@ user-friendly experience.
 ### (Deprecated) color variants
 
 ```jsx live
-<div>
-  <Button.Deprecated className="btn-primary">Primary</Button.Deprecated>
-  <Button.Deprecated className="btn-success">Success</Button.Deprecated>
-  <Button.Deprecated className="btn-danger">Danger</Button.Deprecated>
-  <Button.Deprecated className="btn-light">Light</Button.Deprecated>
-  <Button.Deprecated className="btn-dark">Dark</Button.Deprecated>
-</div>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
+
+  return (
+    <Stack
+      className="mb-2"
+      gap={2}
+      direction={ isExtraSmall ? "vertical" : "horizontal" }
+    >
+      <Button.Deprecated className="btn-primary">Primary</Button.Deprecated>
+      <Button.Deprecated className="btn-success">Success</Button.Deprecated>
+      <Button.Deprecated className="btn-danger">Danger</Button.Deprecated>
+      <Button.Deprecated className="btn-light">Light</Button.Deprecated>
+      <Button.Deprecated className="btn-dark">Dark</Button.Deprecated>
+    </Stack>
+  )
+}
 ```
 
 ### (Deprecated) outline variants
 
 ```jsx live
-<div>
-  <Button.Deprecated className="btn-outline-primary">Primary</Button.Deprecated>
-  <Button.Deprecated className="btn-outline-success">Success</Button.Deprecated>
-  <Button.Deprecated className="btn-outline-danger">Danger</Button.Deprecated>
-</div>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Stack
+      className="mb-2"
+      gap={2}
+      direction={ isExtraSmall ? "vertical" : "horizontal" }
+    >
+      <Button.Deprecated className="btn-outline-primary">Primary</Button.Deprecated>
+      <Button.Deprecated className="btn-outline-success">Success</Button.Deprecated>
+      <Button.Deprecated className="btn-outline-danger">Danger</Button.Deprecated>
+    </Stack>
+  )
+}
 ```
 
 ### (Deprecated) inverse variants
 
 ```jsx live
-<div className="bg-gray-700 p-3">
-  <Button.Deprecated className="btn-inverse-primary">Primary</Button.Deprecated>
-  <Button.Deprecated className="btn-inverse-success">Success</Button.Deprecated>
-  <Button.Deprecated className="btn-inverse-danger">Danger</Button.Deprecated>
-</div>
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <Stack
+      className="mb-2 p-3 bg-gray-700"
+      gap={2}
+      direction={ isExtraSmall ? "vertical" : "horizontal" }
+    >
+      <Button.Deprecated className="btn-inverse-primary">Primary</Button.Deprecated>
+      <Button.Deprecated className="btn-inverse-success">Success</Button.Deprecated>
+      <Button.Deprecated className="btn-inverse-danger">Danger</Button.Deprecated>
+    </Stack>
+  )
+}
 ```
 
 ### (Deprecated) link variant
