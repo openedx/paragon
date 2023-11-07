@@ -63,7 +63,7 @@ accessible names for these icons for screen reader support via `iconBeforeAlt` a
 </Stack>
 ```
 
-### Clickable variant
+### Clickable icon variant
 
 Provide click handlers for icons via `onIconAfterClick` and `onIconBeforeClick` props. 
 
@@ -110,7 +110,7 @@ Provide click handlers for icons via `onIconAfterClick` and `onIconBeforeClick` 
 </Stack>
 ```
 
-**Note**, however, that both `Chip` and its icons cannot be made interactive at the same time, e.g. if you provide both `onClick` and `onIconAfterClick` props,
+**Note**: both `Chip` and its icons cannot be made interactive at the same time, e.g. if you provide both `onClick` and `onIconAfterClick` props,
 `onClick` will be ignored and only the icon will get interactive behaviour, see example below (this is done to avoid usability issues where users might click on the `Chip` itself by mistake when they meant to click the icon instead).
 
 ```jsx live

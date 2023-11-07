@@ -39,13 +39,14 @@ ChipIcon.propTypes = {
   className: PropTypes.string.isRequired,
   src: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
   onClick: PropTypes.func,
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
   variant: PropTypes.string,
   disabled: PropTypes.bool,
 };
 
 ChipIcon.defaultProps = {
   onClick: undefined,
+  alt: undefined,
   variant: STYLE_VARIANTS.LIGHT,
   disabled: false,
 };

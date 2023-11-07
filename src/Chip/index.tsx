@@ -113,7 +113,7 @@ Chip.propTypes = {
    */
   iconBefore: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** Specifies icon alt text. */
-  iconBeforeAlt: requiredWhen(PropTypes.string, 'iconBefore'),
+  iconBeforeAlt: requiredWhen(PropTypes.string, ['iconBefore', 'onIconBeforeClick']),
   /** A click handler for the `Chip` icon before. */
   onIconBeforeClick: PropTypes.func,
   /**
@@ -124,7 +124,7 @@ Chip.propTypes = {
    */
   iconAfter: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** Specifies icon alt text. */
-  iconAfterAlt: requiredWhen(PropTypes.string, 'iconAfter'),
+  iconAfterAlt: requiredWhen(PropTypes.string, ['iconAfter', 'onIconAfterClick']),
   /** A click handler for the `Chip` icon after. */
   onIconAfterClick: PropTypes.func,
   /** Indicates if `Chip` has been selected. */
