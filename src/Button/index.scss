@@ -150,11 +150,11 @@
     }
 
     &.btn-lg::before {
-      border-radius: $btn-focus-border-radius;
+      border-radius: $btn-focus-border-radius-lg;
     }
 
     &.btn-sm::before {
-      border-radius: $btn-focus-border-radius;
+      border-radius: $btn-focus-border-radius-sm;
     }
 
     &:active,
