@@ -22,11 +22,11 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
 
   return (
     <Stack gap={2} direction={ isExtraSmall ? "vertical" : "horizontal" }>
-      <Button variant="brand" className="mb-2 mb-sm-0">Brand</Button>
-      <Button variant="outline-brand" className="mb-2 mb-sm-0">Outline Brand</Button>
-      <Button variant="primary" className="mb-2 mb-sm-0">Primary</Button>
-      <Button variant="outline-primary" className="mb-2 mb-sm-0">Outline Primary</Button>
-      <Button variant="tertiary" className="mb-2 mb-sm-0">Tertiary</Button>
+      <Button variant="brand">Brand</Button>
+      <Button variant="outline-brand">Outline Brand</Button>
+      <Button variant="primary">Primary</Button>
+      <Button variant="outline-primary">Outline Primary</Button>
+      <Button variant="tertiary">Tertiary</Button>
     </Stack>
 )}
 ```
@@ -43,11 +43,11 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
       gap={2}
       direction={ isExtraSmall ? "vertical" : "horizontal" }
     >
-      <Button variant="inverse-brand" className="mb-2 mb-sm-0">Brand</Button>
-      <Button variant="inverse-outline-brand" className="mb-2 mb-sm-0">Outline Brand</Button>
-      <Button variant="inverse-primary" className="mb-2 mb-sm-0">Primary</Button>
-      <Button variant="inverse-outline-primary" className="mb-2 mb-sm-0">Outline Primary</Button>
-      <Button variant="inverse-tertiary" className="mb-2 mb-sm-0">Tertiary</Button>
+      <Button variant="inverse-brand">Brand</Button>
+      <Button variant="inverse-outline-brand">Outline Brand</Button>
+      <Button variant="inverse-primary">Primary</Button>
+      <Button variant="inverse-outline-primary">Outline Primary</Button>
+      <Button variant="inverse-tertiary">Tertiary</Button>
     </Stack>
 )}
 ```
@@ -65,20 +65,20 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
         gap={2}
         direction={ isExtraSmall ? "vertical" : "horizontal" }
       >
-        <Button variant="success" className="mb-2 mb-sm-0">Success</Button>
-        <Button variant="danger" className="mb-2 mb-sm-0">Danger</Button>
-        <Button variant="outline-success" className="mb-2 mb-sm-0">Success</Button>
-        <Button variant="outline-danger" className="mb-2 mb-sm-0">Danger</Button>
+        <Button variant="success">Success</Button>
+        <Button variant="danger">Danger</Button>
+        <Button variant="outline-success">Success</Button>
+        <Button variant="outline-danger">Danger</Button>
       </Stack>
       <Stack
         gap={2}
         direction={ isExtraSmall ? "vertical" : "horizontal" }
       >
-        <Button variant="link" className="mb-2 mb-sm-0">Link</Button>
-        <Button variant="light" className="mb-2 mb-sm-0">Light</Button>
-        <Button variant="dark" className="mb-2 mb-sm-0">Dark</Button>
-        <Button variant="outline-light" className="mb-2 mb-sm-0">Light</Button>
-        <Button variant="outline-dark" className="mb-2 mb-sm-0">Dark</Button>
+        <Button variant="link">Link</Button>
+        <Button variant="light">Light</Button>
+        <Button variant="dark">Dark</Button>
+        <Button variant="outline-light">Light</Button>
+        <Button variant="outline-dark">Dark</Button>
       </Stack>
     </>
 )}
@@ -134,13 +134,11 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
 Use inline size buttons for when a button sits with a line of text.
 
 ```jsx live
-<>
-  <p>
-    <span className="mr-1">2 items selected.</span>
-    <Button variant="link" size="inline" className="mr-1">Select all</Button>
-    <Button variant="link" size="inline">Clear</Button>
-  </p>
-</>
+<p>
+  <span className="mr-1">2 items selected.</span>
+  <Button variant="link" size="inline" className="mr-1">Select all</Button>
+  <Button variant="link" size="inline">Clear</Button>
+</p>
 ```
 
 ## Block Buttons
@@ -189,8 +187,8 @@ For link to be `disabled`, it must have href defined with some value.
       gap={2}
       direction={ isExtraSmall ? "vertical" : "horizontal" }
     >
-      <Button as='a' disabled>No href</Button>
-      <Button as='a' href='' disabled>Empty string href</Button>
+      <Button as="a" disabled>No href</Button>
+      <Button as="a" href="" disabled>Empty string href</Button>
     </Stack>
   )
 }
@@ -208,19 +206,19 @@ For link to be `disabled`, it must have href defined with some value.
       gap={2}
       direction={ isExtraSmall ? "vertical" : "horizontal" }
     >
-      <Button variant="brand" iconBefore={ArrowBack} className="mb-2 mb-sm-0">
+      <Button variant="brand" iconBefore={ArrowBack}>
         Brand
       </Button>
-      <Button variant="outline-brand" iconAfter={ArrowDropDown} className="mb-2 mb-sm-0">
+      <Button variant="outline-brand" iconAfter={ArrowDropDown}>
         Outline Brand
       </Button>
-      <Button variant="primary" iconBefore={Remove} iconAfter={Add} className="mb-2 mb-sm-0">
+      <Button variant="primary" iconBefore={Remove} iconAfter={Add}>
         Primary
       </Button>
-      <Button variant="outline-primary" iconBefore={Highlight} className="mb-2 mb-sm-0">
+      <Button variant="outline-primary" iconBefore={Highlight}>
         Outline Primary
       </Button>
-      <Button variant="tertiary" iconAfter={Add} className="mb-2 mb-sm-0">
+      <Button variant="tertiary" iconAfter={Add}>
         Tertiary
       </Button>
     </Stack>
