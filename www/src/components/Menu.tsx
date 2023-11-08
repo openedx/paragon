@@ -10,6 +10,7 @@ import {
   Hyperlink,
   ButtonGroup,
 } from '~paragon-react';
+import classNames from 'classnames';
 import Search from './Search';
 import { SettingsContext } from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
@@ -69,7 +70,7 @@ export interface IComponentNavItem {
 }
 
 export function ComponentNavItem({
-  id, fields, frontmatter, ...props
+  id, fields, frontmatter, componentName, ...props
 }: IComponentNavItem) {
   const isDeprecated = frontmatter?.status?.toLowerCase().includes('deprecate') || false;
   const linkNode = isDeprecated ? (
@@ -77,10 +78,21 @@ export function ComponentNavItem({
       placement="right"
       overlay={<Tooltip id={`tooltip-deprecated-${id}`}>Deprecated</Tooltip>}
     >
-      <Link className="text-muted" to={fields.slug}>{frontmatter.title}</Link>
+      <Link 
+        className={classNames('text-muted', { 'font-weight-bold': frontmatter.title === componentName })}
+        style={{ textDecoration: frontmatter.title === componentName ? 'underline' : '' }}
+        to={fields.slug}
+      >
+        {frontmatter.title}
+        </Link>
     </OverlayTrigger>
   ) : (
-    <Link to={fields.slug}>{frontmatter.title}</Link>
+    <Link 
+      className={classNames({ 'font-weight-bold': frontmatter.title === componentName })}
+      style={{ textDecoration: frontmatter.title === componentName ? 'underline' : '' }}
+      to={fields.slug}>
+        {frontmatter.title}
+    </Link>
   );
 
   return (
@@ -154,7 +166,7 @@ const foundationLinks = [
   'Colors', 'Elevation', 'Typography', 'Layout', 'Spacing', 'Icons', 'CSS-Utilities', 'Responsive', 'Brand-icons',
 ];
 
-function Menu() {
+function Menu({ componentName, componentCategories }) {
   const {
     settings,
     handleSettingsChange,
@@ -252,9 +264,10 @@ function Menu() {
               key={fieldValue}
               styling="basic"
               title={fieldValue}
+              defaultOpen={componentCategories?.includes(fieldValue)}
             >
               <ul className="list-unstyled">
-                {nodes.map((node) => <ComponentNavItem key={node.id} {...node} />)}
+                {nodes.map((node) => <ComponentNavItem key={node.id} componentName={componentName} {...node} />)}
               </ul>
             </Collapsible>
           ))}

@@ -54,7 +54,7 @@ export type ShortCodesTypes = {
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
-  pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath },
+  pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath, componentCategories },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
@@ -132,6 +132,8 @@ export default function PageTemplate({
       isMdx
       tocData={getTocData()}
       githubEditPath={githubEditPath}
+      componentCategories={componentCategories}
+      componentTitle={mdx.frontmatter.title}
     >
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={mdx.frontmatter.title} />

@@ -27,6 +27,7 @@ async function createPages(graphql, actions, reporter) {
             }
             frontmatter {
               components
+              categories
             }
             slug
             fileAbsolutePath
@@ -70,6 +71,7 @@ async function createPages(graphql, actions, reporter) {
         scssVariablesData,
         componentsUsageInsights: Object.keys(componentsUsage),
         githubEditPath,
+        componentCategories: node.frontmatter.categories,
       },
     });
   }
