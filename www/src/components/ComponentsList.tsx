@@ -6,13 +6,8 @@ import { ComponentNavItem, IComponentNavItem } from './Menu';
 const componentsQuery = graphql`
   query componentsQuery {
     components: allMdx(
-      filter: {
-        parent: {
-          internal: { owner: { nin: "gatsby-transformer-react-docgen" } }
-        }
-        frontmatter: { type: {} }
-      }
-      sort: { fields: frontmatter___title }
+      filter: { parent: { internal: { owner: { nin: "gatsby-transformer-react-docgen" } } }, frontmatter: { type: {} } }
+      sort: { frontmatter: { title: ASC } }
     ) {
       all: nodes {
         ...ComponentPage

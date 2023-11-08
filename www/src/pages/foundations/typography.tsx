@@ -48,8 +48,6 @@ export default function TypographyPage({ pageContext }) {
 
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
-      <SEO title="Typography" />
       <Container size={settings.containerWidth} className="py-5">
         <h1>Typography</h1>
         <table className="w-100 table pgn-doc__status-table">
@@ -405,3 +403,7 @@ TypographyPage.propTypes = {
     githubEditPath: PropTypes.string,
   }).isRequired,
 };
+
+export function Head() {
+  return <SEO title="Typography" />;
+}

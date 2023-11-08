@@ -32,7 +32,7 @@ ActionRow assumes that its last child is the primary action and lays out actions
 
 ## Usage with a Spacer
 
-ActionRow can also be used with a helper component ``ActionRow.Spacer`` to insert empty space between children
+ActionRow can also be used with a helper component `ActionRow.Spacer` to insert empty space between children
 
 ```jsx live
 <ActionRow>

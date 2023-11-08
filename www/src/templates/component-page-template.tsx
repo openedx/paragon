@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import classNames from 'classnames';
 import {
   Container,
@@ -35,7 +34,6 @@ export interface IPageTemplate {
       tableOfContents: {
         items: Array<{}>,
       },
-      body: string,
     },
     components: {
       nodes: [],
@@ -46,16 +44,28 @@ export interface IPageTemplate {
     componentsUsageInsights: string[],
     githubEditPath: string,
   }
+  children: React.ReactNode,
 }
 
 export type ShortCodesTypes = {
   displayName: string,
 };
 
+const shortcodes = {
+  h2: (props) => <LinkedHeading h="2" {...props} />,
+  h3: (props) => <LinkedHeading h="3" {...props} />,
+  h4: (props) => <LinkedHeading h="4" {...props} />,
+  h5: (props) => <LinkedHeading h="5" {...props} />,
+  h6: (props) => <LinkedHeading h="6" {...props} />,
+  pre: ({ children }) => <div><CodeBlock {...children.props} /></div>,
+  Link,
+};
+
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath },
-}: IPageTemplate) {
+  children,
+} : IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
   const { settings } = useContext(SettingsContext);
@@ -67,29 +77,6 @@ export default function PageTemplate({
       acc[currentValue.displayName] = currentValue;
       return acc;
     }, {});
-
-  const shortcodes = React.useMemo(() => {
-    function PropsTable({ displayName, ...props }: ShortCodesTypes) { // eslint-disable-line react/prop-types
-      if (components[displayName]) {
-        return <GenericPropsTable {...components[displayName]} {...props} />;
-      }
-      return null;
-    }
-    // Provide common components here
-    return {
-      h2: (props: HTMLElement) => <LinkedHeading h="2" {...props} />,
-      h3: (props: HTMLElement) => <LinkedHeading h="3" {...props} />,
-      h4: (props: HTMLElement) => <LinkedHeading h="4" {...props} />,
-      h5: (props: HTMLElement) => <LinkedHeading h="5" {...props} />,
-      h6: (props: HTMLElement) => <LinkedHeading h="6" {...props} />,
-      pre: (props:
-      JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> &
-      React.HTMLAttributes<HTMLDivElement>) => <div {...props} />,
-      code: CodeBlock,
-      Link,
-      PropsTable,
-    };
-  }, [components]);
 
   const scssVariablesTitle = 'Theme Variables (SCSS)';
   const scssVariablesUrl = 'theme-variables-scss';
@@ -133,8 +120,6 @@ export default function PageTemplate({
       tocData={getTocData()}
       githubEditPath={githubEditPath}
     >
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
-      <SEO title={mdx.frontmatter.title} />
       <Container size={settings.containerWidth} className="py-5">
         {isDeprecated && (
           <Alert variant="warning">
@@ -161,7 +146,7 @@ export default function PageTemplate({
           </Stack>
         </Stack>
         <MDXProvider components={shortcodes}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
+          {children}
         </MDXProvider>
         {scssVariables && (
           <div className="mb-5">
@@ -212,7 +197,6 @@ PageTemplate.propTypes = {
         title: PropTypes.string,
         status: PropTypes.string,
       }),
-      body: PropTypes.any, // eslint-disable-line react/forbid-prop-types
       tableOfContents: PropTypes.shape({
         items: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
       }),
@@ -237,7 +221,6 @@ export const pageQuery = graphql`
   query ComponentPageQuery($id: String, $components: [String]) {
     mdx(id: { eq: $id }) {
       id
-      body
       frontmatter {
         title
         status
@@ -268,15 +251,15 @@ export const pageQuery = graphql`
         value
       }
       required
-      docblock
-      doclets
       description {
         id
         text
-        childMdx {
-          body
-        }
       }
     }
   }
 `;
+
+export const Head = ({ data }) => {
+  const { mdx } = data;
+  return <SEO title={mdx.frontmatter.title} />;
+};

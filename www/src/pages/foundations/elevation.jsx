@@ -285,8 +285,6 @@ export default function ElevationPage({ pageContext }) {
 
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
-      <SEO title="Elevation" />
       <Container size={settings.containerWidth} className="py-5">
         <h1 className="mb-3">Elevation & Shadow</h1>
         <p className="mb-5">
@@ -405,3 +403,7 @@ ElevationPage.propTypes = {
     githubEditPath: PropTypes.string,
   }).isRequired,
 };
+
+export function Head() {
+  return <SEO title="Elevation" />;
+}

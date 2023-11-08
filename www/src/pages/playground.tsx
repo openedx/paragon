@@ -54,7 +54,6 @@ export default function Playground({ location }) {
 
   return (
     <div className="d-flex flex-column w-100 vh-100 m-0 p-0">
-      <SEO title="Playground" />
       <div className="pgn-doc__header py-3 bg-dark text-white sticky-top">
         <Stack direction="horizontal" className="d-flex align-items-center justify-content-end px-4" gap={4}>
           <Button
@@ -124,3 +123,7 @@ Playground.propTypes = {
     githubEditPath: PropTypes.string,
   }).isRequired,
 };
+
+export function Head() {
+  return <SEO title="Playground" />;
+}

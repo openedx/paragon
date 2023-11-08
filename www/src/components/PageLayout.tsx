@@ -8,7 +8,7 @@
 import * as React from 'react';
 import { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import {
   Container,
   Nav,
@@ -28,6 +28,7 @@ import { SettingsContext } from '../context/SettingsContext';
 import LeaveFeedback from './LeaveFeedback';
 import AutoToc from './AutoToc';
 import PageEditBtn from './PageEditBtn';
+import useSiteMetadata from '../hooks/use-site-metadata';
 
 if (process.env.NODE_ENV === 'development') {
   /* eslint-disable-next-line global-require */
@@ -57,20 +58,12 @@ function Layout({
 }: ILayout) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
   const { settings } = useContext(SettingsContext);
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+  const { title } = useSiteMetadata();
 
   return (
     <div className="d-flex flex-column">
       <Header
-        siteTitle={data.site.siteMetadata?.title || 'Title'}
+        siteTitle={title}
         showMinimizedTitle={isMobile || showMinimizedTitle}
       />
       <Settings showMinimizedTitle={showMinimizedTitle} />
