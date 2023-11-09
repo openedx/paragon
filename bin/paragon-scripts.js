@@ -107,6 +107,16 @@ const COMMANDS = {
         description: 'Enable verbose logging.',
         defaultValue: false,
       },
+      {
+        name: '--base-theme',
+        description: 'Specify the base theme to use in the token build. For example, to build the "high-contrast" theme on top of the light theme use "--theme high-contrast --base-theme light".',
+        defaultValue: 'Same as theme',
+      },
+      {
+        name: '--all-themes',
+        description: 'Build tokens for all themes in the source directory.',
+        defaultValue: false,
+      },
     ],
   },
   'replace-variables': {
