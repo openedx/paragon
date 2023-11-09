@@ -43,6 +43,8 @@ export interface ILayout {
   tab?: string,
   isAutoToc?: boolean,
   githubEditPath?: string,
+  componentName: string,
+  componentCategories: string[],
 }
 
 function Layout({
@@ -55,7 +57,7 @@ function Layout({
   tab,
   githubEditPath,
   componentCategories,
-  componentTitle,
+  componentName,
 }: ILayout) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
   const { settings } = useContext(SettingsContext);
@@ -81,7 +83,7 @@ function Layout({
           <Row className="flex-xl-nowrap">
             <Col className="d-none d-xl-block p-0" xl={settings.containerWidth === 'xl' ? 'auto' : 2}>
               <Sticky offset={6} className="pgn-doc__toc p-0 pt-3">
-                <Menu componentName={componentTitle} componentCategories={componentCategories} />
+                <Menu componentName={componentName} componentCategories={componentCategories} />
               </Sticky>
             </Col>
             <Col

@@ -67,20 +67,21 @@ export interface IComponentNavItem {
     type: string,
     status?: string,
   },
+  componentName: string,
 }
 
 export function ComponentNavItem({
   id, fields, frontmatter, componentName, ...props
 }: IComponentNavItem) {
   const isDeprecated = frontmatter?.status?.toLowerCase().includes('deprecate') || false;
+  const isCurrentComponent = frontmatter.title === componentName;
   const linkNode = isDeprecated ? (
     <OverlayTrigger
       placement="right"
       overlay={<Tooltip id={`tooltip-deprecated-${id}`}>Deprecated</Tooltip>}
     >
       <Link 
-        className={classNames('text-muted', { 'font-weight-bold': frontmatter.title === componentName })}
-        style={{ textDecoration: frontmatter.title === componentName ? 'underline' : '' }}
+        className={classNames('text-muted', { 'active': isCurrentComponent })}
         to={fields.slug}
       >
         {frontmatter.title}
@@ -88,9 +89,9 @@ export function ComponentNavItem({
     </OverlayTrigger>
   ) : (
     <Link 
-      className={classNames({ 'font-weight-bold': frontmatter.title === componentName })}
-      style={{ textDecoration: frontmatter.title === componentName ? 'underline' : '' }}
-      to={fields.slug}>
+      className={classNames({ 'active': isCurrentComponent })}
+      to={fields.slug}
+    >
         {frontmatter.title}
     </Link>
   );
@@ -111,6 +112,7 @@ ComponentNavItem.propTypes = {
     title: PropTypes.string.isRequired,
     status: PropTypes.string,
   }).isRequired,
+  componentName: PropTypes.string.isRequired,
 };
 
 export type MenuComponentListTypes = {
@@ -267,7 +269,16 @@ function Menu({ componentName, componentCategories }) {
               defaultOpen={componentCategories?.includes(fieldValue)}
             >
               <ul className="list-unstyled">
-                {nodes.map((node) => <ComponentNavItem key={node.id} componentName={componentName} {...node} />)}
+                {nodes.map((node) => {
+                  console.log(node);
+                    return (
+                      <ComponentNavItem
+                        key={node.id}
+                        componentName={componentName}
+                        {...node}
+                      />
+                  )}
+                )}
               </ul>
             </Collapsible>
           ))}

@@ -45,6 +45,7 @@ export interface IPageTemplate {
     scssVariablesData: Record<string, string>,
     componentsUsageInsights: string[],
     githubEditPath: string,
+    componentCategories: string[],
   }
 }
 
@@ -133,7 +134,7 @@ export default function PageTemplate({
       tocData={getTocData()}
       githubEditPath={githubEditPath}
       componentCategories={componentCategories}
-      componentTitle={mdx.frontmatter.title}
+      componentName={mdx.frontmatter.title}
     >
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={mdx.frontmatter.title} />
