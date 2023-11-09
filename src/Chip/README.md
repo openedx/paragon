@@ -42,7 +42,7 @@ Use `onClick` prop to make the whole `Chip` clickable, this will also add approp
 ## With Icon Before and After
 ### Basic Usage
 
-Use `iconBefore` and `iconAfter` props to provide icons for the `Chip`, note that you also have to provide
+Use `iconBefore` and `iconAfter` props to provide icons for the `Chip`, note that you also can provide
 accessible names for these icons for screen reader support via `iconBeforeAlt` and `iconAfterAlt` respectively. 
 
 ```jsx live
