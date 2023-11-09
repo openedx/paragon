@@ -5,6 +5,7 @@ const helpCommand = require('../lib/help');
 const buildTokensCommand = require('../lib/build-tokens');
 const replaceVariablesCommand = require('../lib/replace-variables');
 const buildScssCommand = require('../lib/build-scss');
+const { sendTrackInfo } = require('../utils');
 
 const COMMANDS = {
   /**
@@ -181,9 +182,11 @@ const COMMANDS = {
 
   try {
     await executor.executor(commandArgs);
+    sendTrackInfo('openedx.paragon.cli-command.used', { command, status: 'success' });
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(chalk.red.bold('An error occurred:', error.message));
+    sendTrackInfo('openedx.paragon.cli-command.used', { command, status: 'error', errorMsg: error.message });
     process.exit(1);
   }
 })();
