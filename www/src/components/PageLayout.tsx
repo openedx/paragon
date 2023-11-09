@@ -71,6 +71,9 @@ function Layout({
     }
   `);
 
+  // console.log('componentName', componentName);
+  // console.log('componentCategories', componentCategories);
+
   return (
     <div className="d-flex flex-column">
       <Header

@@ -78,10 +78,17 @@ async function createPages(graphql, actions, reporter) {
 
   INSIGHTS_PAGES.forEach(({ path: pagePath, tab }) => {
     const githubEditPath = 'https://github.com/openedx/paragon/edit/master/www/src/pages/insights.tsx';
+    const pageName = pagePath.split('/')[1];
+
     createPage({
       path: pagePath,
       component: require.resolve('../src/pages/insights.tsx'),
-      context: { tab, githubEditPath },
+      context: {
+        tab,
+        githubEditPath,
+        componentCategories: 'tools',
+        componentName: pageName,
+      },
     });
   });
 

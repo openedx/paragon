@@ -51,6 +51,7 @@ function MaxWidthCell({ row }) {
 
 function Responsive({ pageContext }) {
   const { settings } = useContext(SettingsContext);
+  const { githubEditPath, componentCategories, componentName } = pageContext;
   const breakpointsData = Object.keys(breakpoints).map(breakpoint => {
     const { minWidth, maxWidth } = breakpoints[breakpoint];
     const breakpointData = getBreakpointDescription(breakpoint);
@@ -60,7 +61,12 @@ function Responsive({ pageContext }) {
   });
 
   return (
-    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
+    <Layout
+      isAutoToc
+      githubEditPath={githubEditPath}
+      componentCategories={componentCategories}
+      componentName={componentName}
+    >
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Responsive" />
       <Container size={settings.containerWidth} className="py-5">
@@ -107,6 +113,8 @@ function Responsive({ pageContext }) {
 Responsive.propTypes = {
   pageContext: PropTypes.shape({
     githubEditPath: PropTypes.string,
+    componentName: PropTypes.string,
+    componentCategories: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
 

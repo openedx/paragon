@@ -45,9 +45,15 @@ const measuredTypeProps = {
 
 export default function TypographyPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
+  const { githubEditPath, componentCategories, componentName } = pageContext;
 
   return (
-    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
+    <Layout
+      isAutoToc
+      githubEditPath={githubEditPath}
+      componentCategories={componentCategories}
+      componentName={componentName}
+    >
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Typography" />
       <Container size={settings.containerWidth} className="py-5">

@@ -55,7 +55,9 @@ export type ShortCodesTypes = {
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
-  pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath, componentCategories },
+  pageContext: {
+    scssVariablesData, componentsUsageInsights, githubEditPath, componentCategories,
+  },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);

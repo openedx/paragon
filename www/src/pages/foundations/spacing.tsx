@@ -85,6 +85,7 @@ SpaceBlock.defaultProps = {
 
 export default function SpacingPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
+  const { githubEditPath, componentCategories, componentName } = pageContext;
   const [size, setSize] = useState<number>(3);
   const [direction, setDirection] = useState<string>('r');
 
@@ -96,7 +97,12 @@ export default function SpacingPage({ pageContext }) {
   }));
 
   return (
-    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
+    <Layout
+      isAutoToc
+      githubEditPath={githubEditPath}
+      componentCategories={componentCategories}
+      componentName={componentName}
+    >
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Spacing" />
       <Container size={settings.containerWidth} className="py-5">
@@ -231,5 +237,7 @@ export default function SpacingPage({ pageContext }) {
 SpacingPage.propTypes = {
   pageContext: PropTypes.shape({
     githubEditPath: PropTypes.string,
+    componentCategories: PropTypes.arrayOf(PropTypes.string),
+    componentName: PropTypes.string,
   }).isRequired,
 };

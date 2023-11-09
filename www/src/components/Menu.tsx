@@ -80,19 +80,19 @@ export function ComponentNavItem({
       placement="right"
       overlay={<Tooltip id={`tooltip-deprecated-${id}`}>Deprecated</Tooltip>}
     >
-      <Link 
-        className={classNames('text-muted', { 'active': isCurrentComponent })}
+      <Link
+        className={classNames('text-muted', { active: isCurrentComponent })}
         to={fields.slug}
       >
         {frontmatter.title}
-        </Link>
+      </Link>
     </OverlayTrigger>
   ) : (
-    <Link 
-      className={classNames({ 'active': isCurrentComponent })}
+    <Link
+      className={classNames({ active: isCurrentComponent })}
       to={fields.slug}
     >
-        {frontmatter.title}
+      {frontmatter.title}
     </Link>
   );
 
@@ -199,32 +199,41 @@ function Menu({ componentName, componentCategories }) {
         <Collapsible
           styling="basic"
           title="Guides"
+          defaultOpen={componentCategories === 'guides'}
         >
           <ul className="list-unstyled">
             <li>
-              <Link to="/guides/installation-and-usage">
+              <Link
+                className={classNames({ active: componentName === 'getting-started' })}
+                to="/guides/getting-started"
+              >
                 Getting started
               </Link>
             </li>
             <li>
-              <a
+              <Hyperlink
+                destination="https://openedx.atlassian.net/wiki/spaces/BPL/pages/1773502564/Component+Contribution+Process"
                 target="_blank"
-                rel="noopener noreferrer"
-                href="https://openedx.atlassian.net/wiki/spaces/BPL/pages/1773502564/Component+Contribution+Process"
               >
                 Contributing
-              </a>
+              </Hyperlink>
             </li>
           </ul>
         </Collapsible>
         <Collapsible
           styling="basic"
           title="Foundations"
+          defaultOpen={componentCategories === 'foundations'}
         >
           <ul className="list-unstyled foundations-list">
             {foundationLinks.map(link => (
               <li key={link}>
-                <Link to={`/foundations/${link.toLowerCase().trim()}`}>{link.replace(/-/g, ' ')}</Link>
+                <Link
+                  className={classNames({ active: componentName === link.toLowerCase().trim() })}
+                  to={`/foundations/${link.toLowerCase().trim()}`}
+                >
+                  {link.replace(/-/g, ' ')}
+                </Link>
               </li>
             ))}
           </ul>
@@ -232,10 +241,11 @@ function Menu({ componentName, componentCategories }) {
         <Collapsible
           styling="basic"
           title="Tools"
+          defaultOpen={componentCategories === 'tools'}
         >
           <ul className="list-unstyled foundations-list">
             <li>
-              <Link to="/insights">Usage Insights</Link>
+              <Link className={classNames({ active: componentName === 'insights' })} to="/insights">Usage Insights</Link>
             </li>
             <li>
               <Link to="/playground" onClick={handlePlaygroundClick}>
@@ -244,7 +254,12 @@ function Menu({ componentName, componentCategories }) {
               </Link>
             </li>
             <li>
-              <Link to="/tools/component-generator">Component Generator</Link>
+              <Link
+                className={classNames({ active: componentName === 'component-generator' })}
+                to="/tools/component-generator"
+              >
+                Component Generator
+              </Link>
             </li>
             <li>
               <Hyperlink
@@ -269,16 +284,13 @@ function Menu({ componentName, componentCategories }) {
               defaultOpen={componentCategories?.includes(fieldValue)}
             >
               <ul className="list-unstyled">
-                {nodes.map((node) => {
-                  console.log(node);
-                    return (
-                      <ComponentNavItem
-                        key={node.id}
-                        componentName={componentName}
-                        {...node}
-                      />
-                  )}
-                )}
+                {nodes.map((node) => (
+                  <ComponentNavItem
+                    key={node.id}
+                    componentName={componentName}
+                    {...node}
+                  />
+                ))}
               </ul>
             </Collapsible>
           ))}
@@ -301,5 +313,10 @@ function Menu({ componentName, componentCategories }) {
     </div>
   );
 }
+
+Menu.propTypes = {
+  componentName: PropTypes.string.isRequired,
+  componentCategories: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Menu;
