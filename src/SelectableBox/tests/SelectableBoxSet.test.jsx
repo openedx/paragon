@@ -4,6 +4,8 @@ import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 import SelectableBox from '..';
 
+const boxText = (text) => `SelectableBox${text}`;
+
 const checkboxType = 'checkbox';
 const checkboxText = (text) => `SelectableCheckbox${text}`;
 
@@ -11,6 +13,16 @@ const radioType = 'radio';
 const radioText = (text) => `SelectableRadio${text}`;
 
 const ariaLabel = 'test-default-label';
+
+function SelectableBoxSet(props) {
+  return (
+    <SelectableBox.Set name="box" ariaLabel={ariaLabel} {...props}>
+      <SelectableBox value={1}>{boxText(1)}</SelectableBox>
+      <SelectableBox value={2}>{boxText(2)}</SelectableBox>
+      <SelectableBox value={3}>{boxText(3)}</SelectableBox>
+    </SelectableBox.Set>
+  );
+}
 
 function SelectableCheckboxSet(props) {
   return (
@@ -68,11 +80,8 @@ describe('<SelectableBox.Set />', () => {
       expect(screen.getByTestId('checkbox-set')).toBeInTheDocument();
     });
     it('renders with radio type if neither checkbox nor radio is passed', () => {
-      const originalError = console.error;
-      console.error = jest.fn();
-      render(<SelectableCheckboxSet type="text" data-testid="radio-set" />);
+      render(<SelectableBoxSet data-testid="radio-set" />);
       expect(screen.getByTestId('radio-set')).toBeInTheDocument();
-      console.error = originalError;
     });
     it('renders with radio type', () => {
       render(<SelectableRadioSet type={radioType} data-testid="radio-set" />);
