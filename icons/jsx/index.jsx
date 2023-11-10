@@ -2183,6 +2183,7 @@ export { default as VideoStable } from "./VideoStable";
 export { default as VideoTranscript } from "./VideoTranscript";
 export { default as Videocam } from "./Videocam";
 export { default as VideocamOff } from "./VideocamOff";
+export { default as VideocamOutlined } from "./VideocamOutlined";
 export { default as VideogameAsset } from "./VideogameAsset";
 export { default as VideogameAssetOff } from "./VideogameAssetOff";
 export { default as ViewAgenda } from "./ViewAgenda";

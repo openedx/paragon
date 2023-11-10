@@ -1,5 +1,5 @@
 {
-  "name": "@edx/paragon",
+  "name": "@openedx/paragon",
   "version": "20.18.1",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "main": "dist/index.js",
@@ -42,7 +42,7 @@
     "example:start:with-theme": "npm run start:with-theme --workspace=example",
     "generate-changelog": "node generate-changelog.js",
     "i18n_compile": "formatjs compile-folder --format transifex ./src/i18n/messages ./src/i18n/messages",
-    "i18n_extract": "formatjs extract 'src/**/*.{jsx,js,tsx,ts}' --out-file ./src/i18n/transifex_input.json --format transifex",
+    "i18n_extract": "formatjs extract 'src/**/*.{jsx,js,tsx,ts}' --out-file ./src/i18n/transifex_input.json --ignore='**/*.d.ts' --format transifex",
     "type-check": "tsc --noEmit && tsc --project www --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build-types": "tsc --emitDeclarationOnly",

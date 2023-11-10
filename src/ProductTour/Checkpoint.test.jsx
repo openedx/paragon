@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { IntlProvider } from 'react-intl';
 
 import * as popper from '@popperjs/core';
 
@@ -24,7 +25,7 @@ describe('Checkpoint', () => {
   describe('second Checkpoint in Tour', () => {
     beforeEach(() => {
       render(
-        <>
+        <IntlProvider locale="en" messages={{}}>
           <div id="target-element">...</div>
           <Checkpoint
             advanceButtonText="Next"
@@ -39,7 +40,7 @@ describe('Checkpoint', () => {
             title="Checkpoint title"
             totalCheckpoints={5}
           />
-        </>,
+        </IntlProvider>,
       );
     });
 
@@ -75,7 +76,7 @@ describe('Checkpoint', () => {
   describe('last Checkpoint in Tour', () => {
     beforeEach(() => {
       render(
-        <>
+        <IntlProvider locale="en" messages={{}}>
           <div id="#last-element" />
           <Checkpoint
             advanceButtonText="Next"
@@ -90,7 +91,7 @@ describe('Checkpoint', () => {
             title="Checkpoint title"
             totalCheckpoints={5}
           />
-        </>,
+        </IntlProvider>,
       );
     });
 
@@ -108,7 +109,7 @@ describe('Checkpoint', () => {
   describe('only one Checkpoint in Tour', () => {
     beforeEach(() => {
       render(
-        <>
+        <IntlProvider locale="en" messages={{}}>
           <div id="#target-element" />
           <Checkpoint
             advanceButtonText="Next"
@@ -123,7 +124,7 @@ describe('Checkpoint', () => {
             title="Checkpoint title"
             totalCheckpoints={1}
           />
-        </>,
+        </IntlProvider>,
       );
     });
 
@@ -140,7 +141,7 @@ describe('Checkpoint', () => {
   describe('only one Checkpoint in Tour and showDismissButton set to true', () => {
     it('it renders dismiss button and end button', () => {
       render(
-        <>
+        <IntlProvider locale="en" messages={{}}>
           <div id="#target-element" />
           <Checkpoint
             advanceButtonText="Next"
@@ -156,7 +157,7 @@ describe('Checkpoint', () => {
             totalCheckpoints={1}
             showDismissButton
           />
-        </>,
+        </IntlProvider>,
       );
       expect(screen.getByText('Dismiss', { selector: 'button' })).toBeInTheDocument();
       expect(screen.getByText('End', { selector: 'button' })).toBeInTheDocument();

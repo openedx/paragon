@@ -7,8 +7,9 @@ import FilterStatus from '../FilterStatus';
 import DataTableContext from '../DataTableContext';
 
 const filterNames = ['color', 'breed', 'discipline'];
+const headers = [{ id: 'color', Header: 'color' }, { id: 'breed', Header: 'breed' }, { id: 'discipline', Header: 'discipline' }];
 const filters = filterNames.map((name) => ({ id: name }));
-const instance = { state: { filters }, setAllFilters: () => {} };
+const instance = { state: { filters }, setAllFilters: () => {}, headers };
 const filterProps = {
   buttonClassName: 'buttonClass',
   variant: 'variant',
