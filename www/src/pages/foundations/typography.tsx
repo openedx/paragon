@@ -409,5 +409,7 @@ export default function TypographyPage({ pageContext }) {
 TypographyPage.propTypes = {
   pageContext: PropTypes.shape({
     githubEditPath: PropTypes.string,
+    componentCategories: PropTypes.arrayOf(PropTypes.string),
+    componentName: PropTypes.string,
   }).isRequired,
 };

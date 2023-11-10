@@ -1,5 +1,5 @@
 ---
-title: 'Table (Deprecated)'
+title: 'Table'
 type: 'component'
 components:
 - TableDeprecated

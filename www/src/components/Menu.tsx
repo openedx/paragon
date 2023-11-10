@@ -9,6 +9,7 @@ import {
   Collapsible,
   Hyperlink,
   ButtonGroup,
+  Image,
 } from '~paragon-react';
 import classNames from 'classnames';
 import Search from './Search';
@@ -112,7 +113,11 @@ ComponentNavItem.propTypes = {
     title: PropTypes.string.isRequired,
     status: PropTypes.string,
   }).isRequired,
-  componentName: PropTypes.string.isRequired,
+  componentName: PropTypes.string,
+};
+
+ComponentNavItem.defaultProps = {
+  componentName: undefined,
 };
 
 export type MenuComponentListTypes = {
@@ -287,8 +292,8 @@ function Menu({ componentName, componentCategories }) {
                 {nodes.map((node) => (
                   <ComponentNavItem
                     key={node.id}
-                    componentName={componentName}
                     {...node}
+                    componentName={componentName}
                   />
                 ))}
               </ul>
@@ -302,8 +307,8 @@ function Menu({ componentName, componentCategories }) {
         externalLinkTitle="Paragon npm"
         target="_blank"
       >
-        <img
-          className="d-inline-block mr-2"
+        <Image
+          className="mr-2"
           src="https://img.shields.io/npm/v/@edx/paragon.svg"
           alt="npm_version"
           width={94}
@@ -315,8 +320,13 @@ function Menu({ componentName, componentCategories }) {
 }
 
 Menu.propTypes = {
-  componentName: PropTypes.string.isRequired,
-  componentCategories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  componentName: PropTypes.string,
+  componentCategories: PropTypes.arrayOf(PropTypes.string),
+};
+
+Menu.defaultProps = {
+  componentName: undefined,
+  componentCategories: undefined,
 };
 
 export default Menu;

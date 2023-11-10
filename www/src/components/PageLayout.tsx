@@ -43,8 +43,8 @@ export interface ILayout {
   tab?: string,
   isAutoToc?: boolean,
   githubEditPath?: string,
-  componentName: string,
-  componentCategories: string[],
+  componentName?: string,
+  componentCategories?: string[],
 }
 
 function Layout({
@@ -71,14 +71,13 @@ function Layout({
     }
   `);
 
-  // console.log('componentName', componentName);
-  // console.log('componentCategories', componentCategories);
-
   return (
     <div className="d-flex flex-column">
       <Header
         siteTitle={data.site.siteMetadata?.title || 'Title'}
         showMinimizedTitle={isMobile || showMinimizedTitle}
+        componentCategories={componentCategories}
+        componentName={componentName}
       />
       <Settings showMinimizedTitle={showMinimizedTitle} />
       {isMdx || !hideFooterComponentMenu ? (
@@ -200,6 +199,8 @@ Layout.propTypes = {
   isMdx: PropTypes.bool,
   tab: PropTypes.string,
   githubEditPath: PropTypes.string,
+  componentName: PropTypes.string,
+  componentCategories: PropTypes.arrayOf(PropTypes.string),
 };
 
 Layout.defaultProps = {
@@ -210,6 +211,8 @@ Layout.defaultProps = {
   tab: undefined,
   isAutoToc: false,
   githubEditPath: undefined,
+  componentName: undefined,
+  componentCategories: undefined,
 };
 
 export default Layout;
