@@ -68,15 +68,17 @@ function AutoToc({ className, tab = '', addAnchors = true }: IAutoToc) {
     };
 
     observer.current = new IntersectionObserver(handleObserver, { rootMargin: '-50px 0px -80% 0px', threshold: 0.5 });
-    const elements = document.querySelectorAll<HTMLHeadElement>('main h2, main h3, main h4, main h5, main h6');
+    const elements = document.querySelectorAll<HTMLHeadElement>('main h1, main h2, main h3, main h4, main h5, main h6');
     if (addAnchors) {
-      elements.forEach(el => {
+      elements.forEach((el, index) => {
         if (el.textContent) {
           el.classList.add('pgn-doc__heading');
           const slug = slugify(el.textContent, { lower: true });
           el.id = slug;
-          const anchor = createAnchor(slug);
-          el.appendChild(anchor);
+          if (el.children[index]?.tagName !== 'A') {
+            const anchor = createAnchor(slug);
+            el.appendChild(anchor);
+          }
         }
       });
     }
