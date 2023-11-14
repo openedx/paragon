@@ -1,5 +1,5 @@
 {
-  "lastModified": 1699884556125,
+  "lastModified": 1699970870586,
   "projectUsages": [
     {
       "version": "12.8.0",
@@ -10418,9 +10418,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 234,
-            "column": 14,
-            "index": 8389
+            "line": 238,
+            "column": 18,
+            "index": 8633
           },
           {
             "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
@@ -10622,9 +10622,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 230,
-            "column": 8,
-            "index": 8221
+            "line": 234,
+            "column": 12,
+            "index": 8449
           },
           {
             "filePath": "src/register/RegistrationPage.jsx",
@@ -11032,9 +11032,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 225,
-            "column": 10,
-            "index": 7927
+            "line": 229,
+            "column": 14,
+            "index": 8135
           },
           {
             "filePath": "src/register/components/RegistrationFailure.jsx",
@@ -11088,9 +11088,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 226,
-            "column": 12,
-            "index": 8014
+            "line": 230,
+            "column": 16,
+            "index": 8226
           },
           {
             "filePath": "src/register/components/RegistrationFailure.jsx",
@@ -11270,15 +11270,15 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 247,
-            "column": 12,
-            "index": 8915
+            "line": 251,
+            "column": 16,
+            "index": 9211
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 259,
-            "column": 12,
-            "index": 9425
+            "line": 263,
+            "column": 16,
+            "index": 9769
           },
           {
             "filePath": "src/recommendations/RecommendationsPage.jsx",
@@ -11400,9 +11400,9 @@
           },
           {
             "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
-            "line": 225,
-            "column": 77,
-            "index": 7994
+            "line": 229,
+            "column": 81,
+            "index": 8202
           },
           {
             "filePath": "src/register/components/RegistrationFailure.jsx",
@@ -11421,6 +11421,26 @@
             "line": 37,
             "column": 76,
             "index": 1266
+          }
+        ],
+        "Spinner": [
+          {
+            "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
+            "line": 222,
+            "column": 10,
+            "index": 7795
+          },
+          {
+            "filePath": "src/register/RegistrationPage.jsx",
+            "line": 289,
+            "column": 12,
+            "index": 9779
+          },
+          {
+            "filePath": "src/reset-password/ResetPasswordPage.jsx",
+            "line": 138,
+            "column": 13,
+            "index": 4462
           }
         ],
         "Card": [
@@ -11571,20 +11591,6 @@
             "line": 130,
             "column": 34,
             "index": 4612
-          }
-        ],
-        "Spinner": [
-          {
-            "filePath": "src/register/RegistrationPage.jsx",
-            "line": 289,
-            "column": 12,
-            "index": 9779
-          },
-          {
-            "filePath": "src/reset-password/ResetPasswordPage.jsx",
-            "line": 138,
-            "column": 13,
-            "index": 4462
           }
         ]
       }
@@ -12764,21 +12770,33 @@
           },
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 253,
+            "line": 255,
             "column": 12,
-            "index": 7493
+            "index": 7480
           },
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 256,
+            "line": 258,
             "column": 12,
-            "index": 7652
+            "index": 7639
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/FilterStatus.jsx",
-            "line": 28,
-            "column": 6,
-            "index": 758
+            "line": 37,
+            "column": 8,
+            "index": 1058
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 150,
+            "column": 8,
+            "index": 4328
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 160,
+            "column": 10,
+            "index": 4732
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/table-custom-columns/MoreInfoColumn.jsx",
@@ -12824,21 +12842,15 @@
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 34,
+            "line": 26,
             "column": 6,
-            "index": 833
+            "index": 679
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 70,
+            "line": 62,
             "column": 6,
-            "index": 2179
-          },
-          {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 149,
-            "column": 12,
-            "index": 4980
+            "index": 2043
           },
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/transcript-item/Transcript.jsx",
@@ -12872,15 +12884,15 @@
           },
           {
             "filePath": "src/files-and-videos/videos-page/VideosPage.jsx",
-            "line": 179,
+            "line": 194,
             "column": 14,
-            "index": 5344
+            "index": 6083
           },
           {
             "filePath": "src/files-and-videos/videos-page/VideoThumbnail.jsx",
-            "line": 89,
+            "line": 78,
             "column": 12,
-            "index": 2491
+            "index": 2358
           },
           {
             "filePath": "src/generic/ConfirmationPopup.jsx",
@@ -13144,9 +13156,9 @@
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 588,
+            "line": 589,
             "column": 12,
-            "index": 22859
+            "index": 22958
           },
           {
             "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
@@ -13232,9 +13244,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 247,
+            "line": 249,
             "column": 6,
-            "index": 7272
+            "index": 7259
           },
           {
             "filePath": "src/generic/modal-error/ModalError.jsx",
@@ -13330,9 +13342,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 252,
+            "line": 254,
             "column": 10,
-            "index": 7469
+            "index": 7456
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/GalleryCard.jsx",
@@ -13341,10 +13353,10 @@
             "index": 747
           },
           {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 145,
-            "column": 10,
-            "index": 4793
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 156,
+            "column": 8,
+            "index": 4553
           },
           {
             "filePath": "src/files-and-videos/videos-page/transcript-settings/TranscriptSettings.jsx",
@@ -13354,9 +13366,9 @@
           },
           {
             "filePath": "src/files-and-videos/videos-page/VideosPage.jsx",
-            "line": 173,
+            "line": 188,
             "column": 10,
-            "index": 5134
+            "index": 5873
           },
           {
             "filePath": "src/generic/create-or-rerun-course/CreateOrRerunCourseForm.jsx",
@@ -13402,9 +13414,9 @@
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 584,
+            "line": 585,
             "column": 10,
-            "index": 22663
+            "index": 22762
           },
           {
             "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
@@ -13500,15 +13512,15 @@
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 422,
+            "line": 423,
             "column": 6,
-            "index": 16257
+            "index": 16356
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 449,
+            "line": 450,
             "column": 6,
-            "index": 16987
+            "index": 17086
           },
           {
             "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
@@ -13724,9 +13736,9 @@
           },
           {
             "filePath": "src/files-and-videos/videos-page/VideoThumbnail.jsx",
-            "line": 75,
+            "line": 64,
             "column": 12,
-            "index": 2099
+            "index": 1966
           },
           {
             "filePath": "src/generic/CollapsableEditor.jsx",
@@ -13938,27 +13950,27 @@
           },
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 55,
-            "column": 56,
-            "index": 1319
-          },
-          {
-            "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 56,
-            "column": 59,
-            "index": 1396
-          },
-          {
-            "filePath": "src/files-and-videos/generic/FileTable.jsx",
             "line": 57,
-            "column": 47,
-            "index": 1461
+            "column": 56,
+            "index": 1271
+          },
+          {
+            "filePath": "src/files-and-videos/generic/FileTable.jsx",
+            "line": 58,
+            "column": 59,
+            "index": 1348
           },
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
             "line": 59,
+            "column": 47,
+            "index": 1413
+          },
+          {
+            "filePath": "src/files-and-videos/generic/FileTable.jsx",
+            "line": 61,
             "column": 86,
-            "index": 1621
+            "index": 1573
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/table-custom-columns/MoreInfoColumn.jsx",
@@ -13968,9 +13980,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 27,
+            "line": 23,
             "column": 44,
-            "index": 665
+            "index": 637
           },
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/transcript-item/Transcript.jsx",
@@ -13980,9 +13992,9 @@
           },
           {
             "filePath": "src/files-and-videos/videos-page/VideosPage.jsx",
-            "line": 50,
+            "line": 52,
             "column": 86,
-            "index": 1385
+            "index": 1437
           }
         ],
         "Card": [
@@ -14444,9 +14456,9 @@
           },
           {
             "filePath": "src/files-and-videos/videos-page/VideosPage.jsx",
-            "line": 177,
+            "line": 192,
             "column": 12,
-            "index": 5267
+            "index": 6006
           },
           {
             "filePath": "src/schedule-and-details/license-section/license-commons-options/index.jsx",
@@ -14583,6 +14595,12 @@
             "line": 100,
             "column": 12,
             "index": 3490
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 138,
+            "column": 8,
+            "index": 3947
           },
           {
             "filePath": "src/files-and-videos/videos-page/transcript-settings/Cielo24Form.jsx",
@@ -14768,13 +14786,13 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 355,
             "column": 12,
-            "index": 13853
+            "index": 13902
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 378,
+            "line": 379,
             "column": 12,
-            "index": 14947
+            "index": 15046
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
@@ -15506,13 +15524,13 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 356,
             "column": 14,
-            "index": 13914
+            "index": 13963
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 379,
+            "line": 380,
             "column": 14,
-            "index": 15011
+            "index": 15110
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
@@ -15638,15 +15656,15 @@
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/table-custom-columns/StatusColumn.jsx",
-            "line": 8,
+            "line": 14,
             "column": 4,
-            "index": 192
+            "index": 278
           },
           {
             "filePath": "src/files-and-videos/videos-page/VideoThumbnail.jsx",
-            "line": 79,
+            "line": 68,
             "column": 14,
-            "index": 2268
+            "index": 2135
           },
           {
             "filePath": "src/generic/processing-notification/index.jsx",
@@ -15920,9 +15938,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 70,
+            "line": 62,
             "column": 26,
-            "index": 2199
+            "index": 2063
           },
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/TranscriptTab.jsx",
@@ -15971,10 +15989,10 @@
             "index": 466
           },
           {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 73,
-            "column": 6,
-            "index": 2323
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 60,
+            "column": 4,
+            "index": 1434
           },
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
@@ -15990,9 +16008,9 @@
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 555,
+            "line": 556,
             "column": 4,
-            "index": 21727
+            "index": 21826
           },
           {
             "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
@@ -16015,10 +16033,10 @@
             "index": 626
           },
           {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 80,
-            "column": 8,
-            "index": 2514
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 67,
+            "column": 6,
+            "index": 1602
           },
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
@@ -16034,9 +16052,9 @@
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 566,
+            "line": 567,
             "column": 8,
-            "index": 22020
+            "index": 22119
           },
           {
             "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
@@ -16059,10 +16077,10 @@
             "index": 653
           },
           {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 81,
-            "column": 10,
-            "index": 2545
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 68,
+            "column": 8,
+            "index": 1631
           },
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
@@ -16078,9 +16096,9 @@
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 567,
+            "line": 568,
             "column": 10,
-            "index": 22051
+            "index": 22150
           },
           {
             "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
@@ -16103,10 +16121,10 @@
             "index": 920
           },
           {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 85,
-            "column": 8,
-            "index": 2701
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 72,
+            "column": 6,
+            "index": 1770
           },
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
@@ -16122,9 +16140,9 @@
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 571,
+            "line": 572,
             "column": 8,
-            "index": 22176
+            "index": 22275
           },
           {
             "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
@@ -16148,9 +16166,9 @@
           },
           {
             "filePath": "src/files-and-videos/videos-page/VideoThumbnail.jsx",
-            "line": 61,
+            "line": 50,
             "column": 10,
-            "index": 1648
+            "index": 1515
           },
           {
             "filePath": "src/generic/course-upload-image/index.jsx",
@@ -16244,9 +16262,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 37,
+            "line": 29,
             "column": 6,
-            "index": 968
+            "index": 832
           },
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/transcript-item/LanguageSelect.jsx",
@@ -16300,9 +16318,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 38,
+            "line": 30,
             "column": 8,
-            "index": 1004
+            "index": 868
           },
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/transcript-item/LanguageSelect.jsx",
@@ -16376,9 +16394,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 45,
+            "line": 37,
             "column": 8,
-            "index": 1237
+            "index": 1101
           },
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/transcript-item/LanguageSelect.jsx",
@@ -16468,21 +16486,21 @@
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 47,
+            "line": 39,
             "column": 12,
-            "index": 1301
+            "index": 1165
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 54,
+            "line": 46,
             "column": 10,
-            "index": 1561
+            "index": 1425
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 61,
+            "line": 53,
             "column": 10,
-            "index": 1833
+            "index": 1697
           },
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/transcript-item/LanguageSelect.jsx",
@@ -16578,17 +16596,17 @@
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 60,
+            "line": 52,
             "column": 10,
-            "index": 1802
+            "index": 1666
           }
         ],
         "DataTable": [
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 175,
+            "line": 176,
             "column": 6,
-            "index": 4525
+            "index": 4488
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/FeaturesTable.jsx",
@@ -16606,9 +16624,9 @@
         "Dropzone": [
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 200,
+            "line": 202,
             "column": 10,
-            "index": 5357
+            "index": 5344
           },
           {
             "filePath": "src/generic/course-upload-image/index.jsx",
@@ -16626,17 +16644,17 @@
         "DataTable.TableControlBar": [
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 212,
+            "line": 214,
             "column": 12,
-            "index": 5831
+            "index": 5818
           }
         ],
         "CardView": [
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 213,
+            "line": 215,
             "column": 40,
-            "index": 5901
+            "index": 5888
           },
           {
             "filePath": "src/taxonomy/TaxonomyListPage.jsx",
@@ -16648,9 +16666,9 @@
         "DataTable.Table": [
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 214,
+            "line": 216,
             "column": 40,
-            "index": 6055
+            "index": 6042
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/FeaturesTable.jsx",
@@ -16662,17 +16680,59 @@
         "DataTable.EmptyTable": [
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 215,
+            "line": 217,
             "column": 12,
-            "index": 6089
+            "index": 6076
           }
         ],
         "DataTable.TableFooter": [
           {
             "filePath": "src/files-and-videos/generic/FileTable.jsx",
-            "line": 216,
+            "line": 218,
             "column": 12,
-            "index": 6187
+            "index": 6174
+          }
+        ],
+        "Row": [
+          {
+            "filePath": "src/files-and-videos/generic/table-components/FilterStatus.jsx",
+            "line": 26,
+            "column": 6,
+            "index": 690
+          },
+          {
+            "filePath": "src/files-and-videos/generic/UsageMetricsMessage.jsx",
+            "line": 31,
+            "column": 6,
+            "index": 956
+          }
+        ],
+        "Chip": [
+          {
+            "filePath": "src/files-and-videos/generic/table-components/FilterStatus.jsx",
+            "line": 29,
+            "column": 10,
+            "index": 839
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/GalleryCard.jsx",
+            "line": 75,
+            "column": 8,
+            "index": 2411
+          }
+        ],
+        "Close": [
+          {
+            "filePath": "src/files-and-videos/generic/table-components/FilterStatus.jsx",
+            "line": 31,
+            "column": 23,
+            "index": 892
+          },
+          {
+            "filePath": "src/files-and-videos/videos-page/transcript-settings/TranscriptSettings.jsx",
+            "line": 76,
+            "column": 51,
+            "index": 2545
           }
         ],
         "Card.Footer": [
@@ -16731,20 +16791,200 @@
             "index": 2239
           }
         ],
-        "Chip": [
-          {
-            "filePath": "src/files-and-videos/generic/table-components/GalleryCard.jsx",
-            "line": 75,
-            "column": 8,
-            "index": 2411
-          }
-        ],
         "ClosedCaption": [
           {
             "filePath": "src/files-and-videos/generic/table-components/GalleryCard.jsx",
             "line": 78,
             "column": 66,
             "index": 2533
+          }
+        ],
+        "useCheckboxSetValues": [
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 29,
+            "column": 7,
+            "index": 833
+          }
+        ],
+        "SelectableBox.Set": [
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 76,
+            "column": 8,
+            "index": 1904
+          },
+          {
+            "filePath": "src/files-and-videos/videos-page/transcript-settings/OrderTranscriptForm.jsx",
+            "line": 101,
+            "column": 6,
+            "index": 3243
+          },
+          {
+            "filePath": "src/pages-and-resources/live/Settings.jsx",
+            "line": 99,
+            "column": 12,
+            "index": 3997
+          }
+        ],
+        "SelectableBox": [
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 85,
+            "column": 10,
+            "index": 2146
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 93,
+            "column": 10,
+            "index": 2421
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 101,
+            "column": 10,
+            "index": 2694
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 109,
+            "column": 10,
+            "index": 2973
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 117,
+            "column": 10,
+            "index": 3249
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 125,
+            "column": 10,
+            "index": 3520
+          },
+          {
+            "filePath": "src/files-and-videos/videos-page/transcript-settings/OrderTranscriptForm.jsx",
+            "line": 111,
+            "column": 8,
+            "index": 3511
+          },
+          {
+            "filePath": "src/files-and-videos/videos-page/transcript-settings/OrderTranscriptForm.jsx",
+            "line": 118,
+            "column": 8,
+            "index": 3716
+          },
+          {
+            "filePath": "src/files-and-videos/videos-page/transcript-settings/OrderTranscriptForm.jsx",
+            "line": 126,
+            "column": 8,
+            "index": 4000
+          },
+          {
+            "filePath": "src/pages-and-resources/live/Settings.jsx",
+            "line": 108,
+            "column": 16,
+            "index": 4355
+          }
+        ],
+        "Form.CheckboxSet": [
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 139,
+            "column": 10,
+            "index": 3970
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
+            "line": 110,
+            "column": 24,
+            "index": 3857
+          }
+        ],
+        "Form.Checkbox": [
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 146,
+            "column": 14,
+            "index": 4187
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
+            "line": 118,
+            "column": 30,
+            "index": 4284
+          },
+          {
+            "filePath": "src/schedule-and-details/requirements-section/entrance-exam/index.jsx",
+            "line": 33,
+            "column": 10,
+            "index": 1046
+          }
+        ],
+        "ModalDialog.Footer": [
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 155,
+            "column": 6,
+            "index": 4524
+          },
+          {
+            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
+            "line": 82,
+            "column": 4,
+            "index": 2416
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
+            "line": 134,
+            "column": 8,
+            "index": 4208
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 580,
+            "column": 8,
+            "index": 22657
+          },
+          {
+            "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
+            "line": 89,
+            "column": 4,
+            "index": 2672
+          }
+        ],
+        "ModalDialog.CloseButton": [
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 157,
+            "column": 10,
+            "index": 4575
+          },
+          {
+            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
+            "line": 84,
+            "column": 8,
+            "index": 2479
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
+            "line": 136,
+            "column": 12,
+            "index": 4263
+          },
+          {
+            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
+            "line": 586,
+            "column": 12,
+            "index": 22786
+          },
+          {
+            "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
+            "line": 91,
+            "column": 8,
+            "index": 2735
           }
         ],
         "OverlayTrigger": [
@@ -16893,158 +17133,12 @@
             "index": 3297
           }
         ],
-        "SelectableBox.Set": [
+        "Tune": [
           {
             "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 86,
-            "column": 10,
-            "index": 2730
-          },
-          {
-            "filePath": "src/files-and-videos/videos-page/transcript-settings/OrderTranscriptForm.jsx",
-            "line": 101,
-            "column": 6,
-            "index": 3243
-          },
-          {
-            "filePath": "src/pages-and-resources/live/Settings.jsx",
-            "line": 99,
-            "column": 12,
-            "index": 3997
-          }
-        ],
-        "SelectableBox": [
-          {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 94,
-            "column": 12,
-            "index": 2959
-          },
-          {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 102,
-            "column": 12,
-            "index": 3250
-          },
-          {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 110,
-            "column": 12,
-            "index": 3539
-          },
-          {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 118,
-            "column": 12,
-            "index": 3835
-          },
-          {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 126,
-            "column": 12,
-            "index": 4127
-          },
-          {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 134,
-            "column": 12,
-            "index": 4414
-          },
-          {
-            "filePath": "src/files-and-videos/videos-page/transcript-settings/OrderTranscriptForm.jsx",
-            "line": 111,
-            "column": 8,
-            "index": 3511
-          },
-          {
-            "filePath": "src/files-and-videos/videos-page/transcript-settings/OrderTranscriptForm.jsx",
-            "line": 118,
-            "column": 8,
-            "index": 3716
-          },
-          {
-            "filePath": "src/files-and-videos/videos-page/transcript-settings/OrderTranscriptForm.jsx",
-            "line": 126,
-            "column": 8,
-            "index": 4000
-          },
-          {
-            "filePath": "src/pages-and-resources/live/Settings.jsx",
-            "line": 108,
-            "column": 16,
-            "index": 4355
-          }
-        ],
-        "ModalDialog.Footer": [
-          {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 144,
-            "column": 8,
-            "index": 4762
-          },
-          {
-            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 82,
-            "column": 4,
-            "index": 2416
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
-            "line": 134,
-            "column": 8,
-            "index": 4208
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 579,
-            "column": 8,
-            "index": 22558
-          },
-          {
-            "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
-            "line": 89,
-            "column": 4,
-            "index": 2672
-          }
-        ],
-        "ModalDialog.CloseButton": [
-          {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 146,
-            "column": 12,
-            "index": 4817
-          },
-          {
-            "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
-            "line": 84,
-            "column": 8,
-            "index": 2479
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
-            "line": 136,
-            "column": 12,
-            "index": 4263
-          },
-          {
-            "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 585,
-            "column": 12,
-            "index": 22687
-          },
-          {
-            "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
-            "line": 91,
-            "column": 8,
-            "index": 2735
-          }
-        ],
-        "Row": [
-          {
-            "filePath": "src/files-and-videos/generic/UsageMetricsMessage.jsx",
-            "line": 31,
-            "column": 6,
-            "index": 956
+            "line": 26,
+            "column": 71,
+            "index": 744
           }
         ],
         "ErrorOutline": [
@@ -17154,9 +17248,9 @@
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 565,
+            "line": 566,
             "column": 6,
-            "index": 21952
+            "index": 22051
           },
           {
             "filePath": "src/pages-and-resources/xpert-unit-summary/settings-modal/SettingsModal.jsx",
@@ -17185,14 +17279,6 @@
             "line": 65,
             "column": 21,
             "index": 2103
-          }
-        ],
-        "Close": [
-          {
-            "filePath": "src/files-and-videos/videos-page/transcript-settings/TranscriptSettings.jsx",
-            "line": 76,
-            "column": 51,
-            "index": 2545
           }
         ],
         "Collapsible.Advanced": [
@@ -17258,9 +17344,9 @@
         "VideoFile": [
           {
             "filePath": "src/files-and-videos/videos-page/VideoThumbnail.jsx",
-            "line": 75,
+            "line": 64,
             "column": 23,
-            "index": 2110
+            "index": 1977
           }
         ],
         "Alert.Heading": [
@@ -17398,15 +17484,15 @@
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 437,
+            "line": 438,
             "column": 14,
-            "index": 16716
+            "index": 16815
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 466,
+            "line": 467,
             "column": 14,
-            "index": 17610
+            "index": 17709
           }
         ],
         "FileUploadIcon": [
@@ -17647,28 +17733,6 @@
             "index": 1456
           }
         ],
-        "Form.CheckboxSet": [
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
-            "line": 110,
-            "column": 24,
-            "index": 3857
-          }
-        ],
-        "Form.Checkbox": [
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
-            "line": 118,
-            "column": 30,
-            "index": 4284
-          },
-          {
-            "filePath": "src/schedule-and-details/requirements-section/entrance-exam/index.jsx",
-            "line": 33,
-            "column": 10,
-            "index": 1046
-          }
-        ],
         "breakpoints": [
           {
             "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
@@ -17838,13 +17902,13 @@
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
             "line": 359,
             "column": 14,
-            "index": 14099
+            "index": 14148
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 382,
+            "line": 383,
             "column": 14,
-            "index": 15198
+            "index": 15297
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
@@ -17868,27 +17932,27 @@
         "Form.Radio": [
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 364,
+            "line": 365,
             "column": 16,
-            "index": 14285
+            "index": 14384
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 367,
+            "line": 368,
             "column": 16,
-            "index": 14466
+            "index": 14565
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 387,
+            "line": 388,
             "column": 16,
-            "index": 15396
+            "index": 15495
           },
           {
             "filePath": "src/pages-and-resources/proctoring/Settings.jsx",
-            "line": 390,
+            "line": 391,
             "column": 16,
-            "index": 15583
+            "index": 15682
           },
           {
             "filePath": "src/pages-and-resources/teams/GroupEditor.jsx",
@@ -41364,19 +41428,19 @@
             "filePath": "src/packages/learn-page/template/LearnPage/index.jsx",
             "line": 237,
             "column": 12,
-            "index": 8612
+            "index": 8597
           },
           {
             "filePath": "src/packages/learn-page/template/LearnPage/index.jsx",
             "line": 274,
             "column": 10,
-            "index": 9839
+            "index": 9824
           },
           {
             "filePath": "src/packages/learn-page/template/LearnPage/index.jsx",
             "line": 327,
             "column": 10,
-            "index": 11659
+            "index": 11628
           },
           {
             "filePath": "src/packages/modular-page/components/Section/index.jsx",
@@ -42440,13 +42504,13 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 246,
             "column": 22,
-            "index": 6850
+            "index": 6875
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 247,
             "column": 23,
-            "index": 6963
+            "index": 6988
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
@@ -43664,7 +43728,7 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 279,
             "column": 35,
-            "index": 8421
+            "index": 8446
           }
         ],
         "ChevronLeft": [
@@ -43770,7 +43834,7 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 268,
             "column": 22,
-            "index": 7752
+            "index": 7777
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
@@ -45478,7 +45542,7 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 262,
             "column": 10,
-            "index": 7488
+            "index": 7513
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
@@ -45492,7 +45556,7 @@
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
             "line": 264,
             "column": 16,
-            "index": 7587
+            "index": 7612
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/LearningTypeRadioSelect/index.jsx",
