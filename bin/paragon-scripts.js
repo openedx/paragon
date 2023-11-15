@@ -43,7 +43,7 @@ const COMMANDS = {
       {
         name: 'theme',
         description: 'The @edx/brand package to install.',
-        defaultValue: '@edx/brand-openedx@latest',
+        defaultValue: '@openedx/brand-openedx@latest',
         required: false,
       },
     ],
