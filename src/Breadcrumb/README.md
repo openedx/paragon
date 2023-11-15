@@ -38,9 +38,9 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
 ```jsx live
 <Breadcrumb ariaLabel="Breadcrumb mobile view"
   links={[
-    { label: 'Link 1', href: '/link-1' },
-    { label: 'Link 2', href: '/link-2' },
-    { label: 'Link 3', href: '/link-3' },
+    { label: 'Link 1', href: '#link-1' },
+    { label: 'Link 2', href: '#link-2' },
+    { label: 'Link 3', href: '#link-3' },
   ]}
   isMobile
 />
@@ -56,9 +56,9 @@ Use as a secondary navigation pattern to help convey hierarchy and enable naviga
     <div className="bg-dark-700 p-4">
       <Breadcrumb ariaLabel="Breadcrumb inverse pallete"
         links={[
-          {label: 'Link 1', href: '/link-1'},
-          {label: 'Link 2', href: '/link-2'},
-          {label: 'Link 3', href: '/link-3'},
+          {label: 'Link 1', href: '#link-1'},
+          {label: 'Link 2', href: '#link-2'},
+          {label: 'Link 3', href: '#link-3'},
         ]}
         variant="dark"
         isMobile={isExtraSmall}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { IntlProvider } from 'react-intl';
 
 import * as popper from '@popperjs/core';
 
@@ -85,17 +86,20 @@ describe('<ProductTour />', () => {
     popperMock.mockReset();
   });
 
+  // eslint-disable-next-line react/prop-types
+  function ProductTourWrapper({ tours }) {
+    return (
+      <IntlProvider locale="en" messages={{}}>
+        <ProductTour tours={tours} />
+        {targets}
+      </IntlProvider>
+    );
+  }
+
   describe('one enabled tour', () => {
     describe('with default settings', () => {
       it('renders checkpoint with correct title, body, and breadcrumbs', () => {
-        render(
-          <>
-            <ProductTour
-              tours={[tourData]}
-            />
-            {targets}
-          </>,
-        );
+        render(<ProductTourWrapper tours={[tourData]} />);
 
         expect(screen.getByRole('dialog', { name: 'Checkpoint 1' })).toBeInTheDocument();
         expect(screen.getByText('Checkpoint 1')).toBeInTheDocument();
@@ -103,14 +107,7 @@ describe('<ProductTour />', () => {
       });
 
       it('onClick of advance button advances to next checkpoint', async () => {
-        const { rerender } = render(
-          <>
-            <ProductTour
-              tours={[tourData]}
-            />
-            {targets}
-          </>,
-        );
+        const { rerender } = render(<ProductTourWrapper tours={[tourData]} />);
         // Verify the first Checkpoint has rendered
         expect(screen.getByRole('heading', { name: 'Checkpoint 1' })).toBeInTheDocument();
 
@@ -120,14 +117,7 @@ describe('<ProductTour />', () => {
           await userEvent.click(advanceButton);
         });
 
-        rerender(
-          <>
-            <ProductTour
-              tours={[tourData]}
-            />
-            {targets}
-          </>,
-        );
+        rerender(<ProductTourWrapper tours={[tourData]} />);
 
         const heading = screen.getByRole('heading', { name: 'Checkpoint 2' });
 
@@ -136,14 +126,7 @@ describe('<ProductTour />', () => {
       });
 
       it('onClick of dismiss button disables tour', async () => {
-        render(
-          <>
-            <ProductTour
-              tours={[tourData]}
-            />
-            {targets}
-          </>,
-        );
+        render(<ProductTourWrapper tours={[tourData]} />);
 
         // Verify a Checkpoint has rendered
         expect(screen.getByRole('dialog', { name: 'Checkpoint 1' })).toBeInTheDocument();
@@ -161,14 +144,7 @@ describe('<ProductTour />', () => {
       });
 
       it('onClick of end button disables tour', async () => {
-        const { rerender } = render(
-          <>
-            <ProductTour
-              tours={[tourData]}
-            />
-            {targets}
-          </>,
-        );
+        const { rerender } = render(<ProductTourWrapper tours={[tourData]} />);
 
         // Verify a Checkpoint has rendered
         expect(screen.getByRole('dialog', { name: 'Checkpoint 1' })).toBeInTheDocument();
@@ -184,28 +160,14 @@ describe('<ProductTour />', () => {
           await userEvent.click(advanceButton2);
         });
 
-        rerender(
-          <>
-            <ProductTour
-              tours={[tourData]}
-            />
-            {targets}
-          </>,
-        );
+        rerender(<ProductTourWrapper tours={[tourData]} />);
 
         const advanceButton3 = screen.getByRole('button', { name: 'Override advance' });
         await act(async () => {
           await userEvent.click(advanceButton3);
         });
 
-        rerender(
-          <>
-            <ProductTour
-              tours={[tourData]}
-            />
-            {targets}
-          </>,
-        );
+        rerender(<ProductTourWrapper tours={[tourData]} />);
 
         // Click the end button
         const endButton = screen.getByRole('button', { name: 'End' });
@@ -220,14 +182,7 @@ describe('<ProductTour />', () => {
       });
 
       it('onClick of escape key disables tour', async () => {
-        render(
-          <>
-            <ProductTour
-              tours={[tourData]}
-            />
-            {targets}
-          </>,
-        );
+        render(<ProductTourWrapper tours={[tourData]} />);
 
         // Verify a Checkpoint has rendered
         expect(screen.getByRole('dialog', { name: 'Checkpoint 1' })).toBeInTheDocument();
@@ -283,27 +238,13 @@ describe('<ProductTour />', () => {
         ],
       };
       it('renders correct checkpoint on index override', () => {
-        render(
-          <>
-            <ProductTour
-              tours={[overrideTourData]}
-            />
-            {targets}
-          </>,
-        );
+        render(<ProductTourWrapper tours={[overrideTourData]} />);
         expect(screen.getByRole('dialog', { name: 'Checkpoint 3' })).toBeInTheDocument();
         expect(screen.getByRole('heading', { name: 'Checkpoint 3' })).toBeInTheDocument();
       });
 
       it('applies override for advanceButtonText', async () => {
-        const { rerender } = render(
-          <>
-            <ProductTour
-              tours={[overrideTourData]}
-            />
-            {targets}
-          </>,
-        );
+        const { rerender } = render(<ProductTourWrapper tours={[overrideTourData]} />);
         expect(screen.getByRole('button', { name: 'Override advance' })).toBeInTheDocument();
         const advanceButton = screen.getByRole('button', { name: 'Override advance' });
         await act(async () => {
@@ -312,37 +253,16 @@ describe('<ProductTour />', () => {
         expect(screen.queryByRole('button', { name: 'Override advance' })).not.toBeInTheDocument();
         expect(customOnAdvance).toHaveBeenCalledTimes(1);
 
-        rerender(
-          <>
-            <ProductTour
-              tours={[overrideTourData]}
-            />
-            {targets}
-          </>,
-        );
+        rerender(<ProductTourWrapper tours={[overrideTourData]} />);
 
         expect(screen.getByText('Checkpoint 4')).toBeInTheDocument();
       });
       it('applies override for dismissButtonText', () => {
-        render(
-          <>
-            <ProductTour
-              tours={[overrideTourData]}
-            />
-            {targets}
-          </>,
-        );
+        render(<ProductTourWrapper tours={[overrideTourData]} />);
         expect(screen.getByRole('button', { name: 'Override dismiss' })).toBeInTheDocument();
       });
       it('calls customHandleDismiss onClick of dismiss button', async () => {
-        render(
-          <>
-            <ProductTour
-              tours={[overrideTourData]}
-            />
-            {targets}
-          </>,
-        );
+        render(<ProductTourWrapper tours={[overrideTourData]} />);
         const dismissButton = screen.getByRole('button', { name: 'Override dismiss' });
         await act(async () => {
           await userEvent.click(dismissButton);
@@ -351,27 +271,13 @@ describe('<ProductTour />', () => {
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
       });
       it('calls customHandleOnEnd onClick of end button', async () => {
-        const { rerender } = render(
-          <>
-            <ProductTour
-              tours={[overrideTourData]}
-            />
-            {targets}
-          </>,
-        );
+        const { rerender } = render(<ProductTourWrapper tours={[overrideTourData]} />);
         const advanceButton = screen.getByRole('button', { name: 'Override advance' });
         await act(async () => {
           await userEvent.click(advanceButton);
         });
 
-        rerender(
-          <>
-            <ProductTour
-              tours={[overrideTourData]}
-            />
-            {targets}
-          </>,
-        );
+        rerender(<ProductTourWrapper tours={[overrideTourData]} />);
 
         expect(screen.getByText('Checkpoint 4')).toBeInTheDocument();
         const endButton = screen.getByRole('button', { name: 'Override end' });
@@ -383,14 +289,7 @@ describe('<ProductTour />', () => {
         expect(screen.queryByText('Checkpoint 4')).not.toBeInTheDocument();
       });
       it('calls onEscape on escape button key press', async () => {
-        render(
-          <>
-            <ProductTour
-              tours={[overrideTourData]}
-            />
-            {targets}
-          </>,
-        );
+        render(<ProductTourWrapper tours={[overrideTourData]} />);
         expect(screen.getByText('Checkpoint 3')).toBeInTheDocument();
         const container = screen.getByRole('dialog');
         container.focus();
@@ -421,14 +320,7 @@ describe('<ProductTour />', () => {
           ],
         };
 
-        render(
-          <>
-            <ProductTour
-              tours={[badTourData]}
-            />
-            {targets}
-          </>,
-        );
+        render(<ProductTourWrapper tours={[badTourData]} />);
 
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
       });
@@ -456,14 +348,7 @@ describe('<ProductTour />', () => {
           ],
         };
 
-        render(
-          <>
-            <ProductTour
-              tours={[badTourData]}
-            />
-            {targets}
-          </>,
-        );
+        render(<ProductTourWrapper tours={[badTourData]} />);
 
         expect(screen.queryByRole('dialog', { name: 'Checkpoint 1' })).not.toBeInTheDocument();
         expect(screen.getByRole('dialog', { name: 'Checkpoint 2' })).toBeInTheDocument();
@@ -491,14 +376,7 @@ describe('<ProductTour />', () => {
         ],
       };
 
-      render(
-        <>
-          <ProductTour
-            tours={[disabledTourData, tourData, secondEnabledTourData]}
-          />
-          {targets}
-        </>,
-      );
+      render(<ProductTourWrapper tours={[disabledTourData, tourData, secondEnabledTourData]} />);
 
       expect(screen.getByText('Checkpoint 1')).toBeInTheDocument();
       expect(screen.queryByText('Second enabled tour')).not.toBeInTheDocument();
@@ -507,14 +385,7 @@ describe('<ProductTour />', () => {
 
   describe('disabled tour', () => {
     it('does not render', () => {
-      render(
-        <>
-          <ProductTour
-            tours={[disabledTourData]}
-          />
-          {targets}
-        </>,
-      );
+      render(<ProductTourWrapper tours={[disabledTourData]} />);
 
       expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     });
