@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Wed, 15 Nov 2023 20:16:06 GMT
+ * Generated on Wed, 15 Nov 2023 20:38:34 GMT
  */
 
 :root {
@@ -562,7 +562,6 @@
   --pgn-color-bubble-text-warning: var(--pgn-color-white);
   --pgn-color-bubble-text-success: var(--pgn-color-white);
   --pgn-color-breadcrumb-inverse-base: var(--pgn-color-white);
-  --pgn-color-breadcrumb-divider: var(--pgn-color-gray-600);
   --pgn-color-breadcrumb-bg: var(--pgn-color-gray-200);
   --pgn-color-badge-bg-dark: var(--pgn-color-dark-base);
   --pgn-color-badge-bg-light: var(--pgn-color-light-base);
