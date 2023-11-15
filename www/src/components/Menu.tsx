@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useLocation } from '@reach/router';
 import PropTypes from 'prop-types';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import {
@@ -68,21 +69,20 @@ export interface IComponentNavItem {
     type: string,
     status?: string,
   },
-  componentName: string,
+  isActive: boolean,
 }
 
 export function ComponentNavItem({
-  id, fields, frontmatter, componentName, ...props
+  id, fields, frontmatter, isActive, ...props
 }: IComponentNavItem) {
   const isDeprecated = frontmatter?.status?.toLowerCase().includes('deprecate') || false;
-  const isCurrentComponent = frontmatter.title === componentName;
   const linkNode = isDeprecated ? (
     <OverlayTrigger
       placement="right"
       overlay={<Tooltip id={`tooltip-deprecated-${id}`}>Deprecated</Tooltip>}
     >
       <Link
-        className={classNames('text-muted', { active: isCurrentComponent })}
+        className={classNames('text-muted', { active: isActive })}
         to={fields.slug}
       >
         {frontmatter.title}
@@ -90,7 +90,7 @@ export function ComponentNavItem({
     </OverlayTrigger>
   ) : (
     <Link
-      className={classNames({ active: isCurrentComponent })}
+      className={classNames({ active: isActive })}
       to={fields.slug}
     >
       {frontmatter.title}
@@ -113,11 +113,7 @@ ComponentNavItem.propTypes = {
     title: PropTypes.string.isRequired,
     status: PropTypes.string,
   }).isRequired,
-  componentName: PropTypes.string,
-};
-
-ComponentNavItem.defaultProps = {
-  componentName: undefined,
+  isActive: PropTypes.bool.isRequired,
 };
 
 export type MenuComponentListTypes = {
@@ -173,11 +169,12 @@ const foundationLinks = [
   'Colors', 'Elevation', 'Typography', 'Layout', 'Spacing', 'Icons', 'CSS-Utilities', 'Responsive', 'Brand-icons',
 ];
 
-function Menu({ componentName, componentCategories }) {
+function Menu() {
   const {
     settings,
     handleSettingsChange,
   } = useContext(SettingsContext);
+  const { pathname } = useLocation();
   const { components } = useStaticQuery(menuQuery);
   const { categories }: IMenuQueryComponents = components;
 
@@ -204,12 +201,12 @@ function Menu({ componentName, componentCategories }) {
         <Collapsible
           styling="basic"
           title="Guides"
-          defaultOpen={componentCategories === 'guides'}
+          defaultOpen={pathname.startsWith('/guides')}
         >
           <ul className="list-unstyled">
             <li>
               <Link
-                className={classNames({ active: componentName === 'getting-started' })}
+                className={classNames({ active: pathname.endsWith('getting-started') })}
                 to="/guides/getting-started"
               >
                 Getting started
@@ -228,29 +225,37 @@ function Menu({ componentName, componentCategories }) {
         <Collapsible
           styling="basic"
           title="Foundations"
-          defaultOpen={componentCategories === 'foundations'}
+          defaultOpen={pathname.startsWith('/foundations')}
         >
           <ul className="list-unstyled foundations-list">
-            {foundationLinks.map(link => (
-              <li key={link}>
-                <Link
-                  className={classNames({ active: componentName === link.toLowerCase().trim() })}
-                  to={`/foundations/${link.toLowerCase().trim()}`}
-                >
-                  {link.replace(/-/g, ' ')}
-                </Link>
-              </li>
-            ))}
+            {foundationLinks.map(link => {
+              const isActive = pathname.endsWith(link.toLowerCase()) && !pathname.endsWith(`brand-${link.toLowerCase()}`);
+              return (
+                <li key={link}>
+                  <Link
+                    className={classNames({ active: isActive })}
+                    to={`/foundations/${link.toLowerCase().trim()}`}
+                  >
+                    {link.replace(/-/g, ' ')}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </Collapsible>
         <Collapsible
           styling="basic"
           title="Tools"
-          defaultOpen={componentCategories === 'tools'}
+          defaultOpen={pathname.startsWith('/tools') || pathname.startsWith('/insights')}
         >
           <ul className="list-unstyled foundations-list">
             <li>
-              <Link className={classNames({ active: componentName === 'insights' })} to="/insights">Usage Insights</Link>
+              <Link
+                className={classNames({ active: pathname.endsWith('insights') })}
+                to="/insights"
+              >
+                Usage Insights
+              </Link>
             </li>
             <li>
               <Link to="/playground" onClick={handlePlaygroundClick}>
@@ -260,7 +265,7 @@ function Menu({ componentName, componentCategories }) {
             </li>
             <li>
               <Link
-                className={classNames({ active: componentName === 'component-generator' })}
+                className={classNames({ active: pathname.endsWith('component-generator') })}
                 to="/tools/component-generator"
               >
                 Component Generator
@@ -286,14 +291,14 @@ function Menu({ componentName, componentCategories }) {
               key={fieldValue}
               styling="basic"
               title={fieldValue}
-              defaultOpen={componentCategories?.includes(fieldValue)}
+              defaultOpen={nodes.some(({ fields }) => fields.slug === pathname)}
             >
               <ul className="list-unstyled">
                 {nodes.map((node) => (
                   <ComponentNavItem
                     key={node.id}
                     {...node}
-                    componentName={componentName}
+                    isActive={pathname === node.fields.slug}
                   />
                 ))}
               </ul>
@@ -318,15 +323,5 @@ function Menu({ componentName, componentCategories }) {
     </div>
   );
 }
-
-Menu.propTypes = {
-  componentName: PropTypes.string,
-  componentCategories: PropTypes.arrayOf(PropTypes.string),
-};
-
-Menu.defaultProps = {
-  componentName: undefined,
-  componentCategories: undefined,
-};
 
 export default Menu;

@@ -27,7 +27,6 @@ async function createPages(graphql, actions, reporter) {
             }
             frontmatter {
               components
-              categories
             }
             slug
             fileAbsolutePath
@@ -71,24 +70,16 @@ async function createPages(graphql, actions, reporter) {
         scssVariablesData,
         componentsUsageInsights: Object.keys(componentsUsage),
         githubEditPath,
-        componentCategories: node.frontmatter.categories,
       },
     });
   }
 
   INSIGHTS_PAGES.forEach(({ path: pagePath, tab }) => {
     const githubEditPath = 'https://github.com/openedx/paragon/edit/master/www/src/pages/insights.tsx';
-    const pageName = pagePath.split('/')[1];
-
     createPage({
       path: pagePath,
       component: require.resolve('../src/pages/insights.tsx'),
-      context: {
-        tab,
-        githubEditPath,
-        componentCategories: 'tools',
-        componentName: pageName,
-      },
+      context: { tab, githubEditPath },
     });
   });
 

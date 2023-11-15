@@ -37,17 +37,11 @@ export interface TabsDataType {
 export interface InsightsPageTypes {
   pageContext: {
     tab: string,
-    githubEditPath: string,
-    componentName: string,
-    componentCategories: string[],
+    githubEditPath: string
   }
 }
 
-export default function InsightsPage({
-  pageContext: {
-    tab, githubEditPath, componentCategories, componentName,
-  },
-}: InsightsPageTypes) {
+export default function InsightsPage({ pageContext: { tab, githubEditPath } }: InsightsPageTypes) {
   const { settings } = useContext(SettingsContext);
   const { paragonTypes = {}, isParagonIcon = () => false } = useContext(InsightsContext) as IInsightsContext;
   const {
@@ -74,13 +68,7 @@ export default function InsightsPage({
     }
   };
   return (
-    <Layout
-      isAutoToc
-      tab={tab}
-      githubEditPath={githubEditPath}
-      componentCategories={componentCategories}
-      componentName={componentName}
-    >
+    <Layout isAutoToc tab={tab} githubEditPath={githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Usage Insights" />
       <Container size={settings.containerWidth} className="py-5">
@@ -133,7 +121,5 @@ InsightsPage.propTypes = {
   pageContext: PropTypes.shape({
     tab: PropTypes.oneOf(Object.values(INSIGHTS_TABS)),
     githubEditPath: PropTypes.string,
-    componentName: PropTypes.string,
-    componentCategories: PropTypes.oneOfType([PropTypes.string]),
   }).isRequired,
 };
