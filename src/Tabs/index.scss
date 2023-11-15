@@ -79,6 +79,14 @@
         color: var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-text-active-hover);
         background-color: var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-bg-active-hover);
       }
+
+      &:focus {
+        @include nav-tabs-link-focus(
+          var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-border-focus),
+          var(--pgn-size-nav-tabs-border-radius),
+          var(--pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-distance)
+        );
+      }
     }
   }
 

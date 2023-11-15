@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Wed, 15 Nov 2023 19:49:28 GMT
+ * Generated on Wed, 15 Nov 2023 20:16:06 GMT
  */
 
 :root {
@@ -708,6 +708,7 @@
   --pgn-color-secondary-200: #D1D1D1FF;
   --pgn-color-secondary-100: #F4F4F4FF;
   --pgn-color-tooltip-arrow-base: var(--pgn-color-tooltip-bg-base);
+  --pgn-color-tab-inverse-pills-link-dropdown-toggle-border-focus: var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-bg-focus);
   --pgn-color-tab-inverse-pills-link-dropdown-toggle-bg-active-hover: var(--pgn-color-primary-300);
   --pgn-color-tab-inverse-pills-link-dropdown-toggle-text-active-hover: var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-bg-focus);
   --pgn-color-tab-inverse-pills-link-dropdown-toggle-text-focus: var(--pgn-color-primary-500);
