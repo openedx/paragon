@@ -4,8 +4,8 @@
       "checkpoint": {
         "bg": { "value": "{color.light.300}", "type": "color", "source": "$checkpoint-background-color" },
         "body": { "value": "{color.gray.700}", "type": "color", "source": "$checkpoint-body-color" },
-        "border": { "value": "{color.brand.500}", "type": "color", "source": "$checkpoint-border-color" },
-        "breadcrumb": { "value": "{color.primary.500}", "type": "color", "source": "$checkpoint-breadcrumb-color" },
+        "border": { "value": "{color.brand.base}", "type": "color", "source": "$checkpoint-border-color" },
+        "breadcrumb": { "value": "{color.primary.base}", "type": "color", "source": "$checkpoint-breadcrumb-color" },
         "box-shadow": {
           "value": "{color.black}",
           "type": "color",

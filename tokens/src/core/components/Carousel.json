@@ -11,7 +11,7 @@
         "width": { "value": "30px", "type": "dimension", "source": "$carousel-indicator-width" },
         "height": {
           "base": { "value": "3px", "type": "dimension", "source": "$carousel-indicator-height" },
-          "area-hit": { "value": "3px", "type": "dimension", "source": "$carousel-indicator-hit-area-height" }
+          "area-hit": { "value": "10px", "type": "dimension", "source": "$carousel-indicator-hit-area-height" }
         }
       },
       "caption-width": { "value": "70%", "type": "percentage", "source": "$carousel-caption-width" }
@@ -27,7 +27,7 @@
       "base": {
         "value": "transform {transition.carousel.duration} ease-in-out",
         "type": "transition",
-        "source": "$carousel-transition-duration"
+        "source": "$carousel-transition"
       },
       "duration": { "value": ".6s", "type": "duration", "source": "$carousel-transition-duration" },
       "indicator": { "value": "opacity .6s ease", "type": "transition", "source": "$carousel-indicator-transition" },
