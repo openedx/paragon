@@ -28,9 +28,6 @@ export default function SiteTitle({ title, isFullVersion, className } : SiteTitl
         {isFullVersion && (
           <div className="ml-3 mr-3">
             <h1 className="pgn-doc__header-title-heading h4">{title}</h1>
-            <p className="pgn-doc__header-title-description x-small">
-              Technical Documentation
-            </p>
           </div>
         )}
       </div>
