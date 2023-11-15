@@ -10,7 +10,7 @@ import {
   addSelectedRowAction,
 } from './data/actions';
 
-function ControlledSelect({ row, ...rest }) {
+function ControlledSelect({ row }) {
   const {
     itemCount,
     controlledTableSelections: [, dispatch],
@@ -34,7 +34,6 @@ function ControlledSelect({ row, ...rest }) {
       <CheckboxControl
         {...updatedProps}
         onChange={toggleSelected}
-        {...rest}
       />
     </div>
   );
