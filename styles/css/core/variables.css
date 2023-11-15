@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Wed, 15 Nov 2023 08:37:46 GMT
+ * Generated on Wed, 15 Nov 2023 19:14:34 GMT
  */
 
 :root {
@@ -156,7 +156,7 @@
   --pgn-spacing-navbar-toggler-padding-x: .75rem;
   --pgn-spacing-navbar-toggler-padding-y: .25rem;
   --pgn-spacing-navbar-padding-x-nav-link: .5rem;
-  --pgn-spacing-nav-link-distance-to-border: .313rem;
+  --pgn-spacing-nav-link-distance-to-border: 4px;
   --pgn-spacing-nav-link-padding-x: 1rem;
   --pgn-spacing-nav-link-padding-y: .5rem;
   --pgn-spacing-modal-dialog-margin: 1.5rem;
