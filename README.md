@@ -15,6 +15,14 @@ Documentation lives at https://paragon-openedx.netlify.app/.
 
 ## Getting Started
 
+### Getting Help
+
+Please reach out to the Paragon Working Group (PWG):
+
+* Open edX Slack ([request an invite](https://openedx.org/slack)): [#wg-paragon](https://openedx.slack.com/archives/C02NR285KV4)
+* [Github Issues](https://github.com/openedx/paragon/issues/new?template=blank-issue.md)
+* [Weekly PWG Meeting](https://calendar.google.com/calendar/embed?src=c_v86shrnegshsqgp4fj2k94u7bc%40group.calendar.google.com&ctz=America%2FNew_York)
+
 ### React Components
 
 Paragon components require React 16 or higher. To install Paragon into your project:
@@ -67,14 +75,6 @@ The Paragon CLI (Command Line Interface) is a tool that provides various utility
 - `paragon build-scss`: Compile Paragon's core and themes SCSS into CSS.
 
 Use `paragon help` to see more information.
-
-## Getting Help
-
-Please reach out to the Paragon Working Group (PWG):
-
-* Open edX Slack ([request an invite](https://openedx.org/slack)): [#wg-paragon](https://openedx.slack.com/archives/C02NR285KV4)
-* [Github Issues](https://github.com/openedx/paragon/issues/new?template=blank-issue.md)
-* [Weekly PWG Meeting](https://calendar.google.com/calendar/embed?src=c_v86shrnegshsqgp4fj2k94u7bc%40group.calendar.google.com&ctz=America%2FNew_York)
 
 ## Internationalization
 
