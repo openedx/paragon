@@ -46,6 +46,10 @@ $select-icon-padding: .5625rem !default;
   flex-grow: 1;
   align-items: flex-start;
 
+  .form-control {
+    min-height: 2.75rem;
+  }
+
   @media (min-width: map-get($grid-breakpoints, "sm")) {
     margin-inline-end: $custom-control-gutter;
   }
