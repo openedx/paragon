@@ -12,7 +12,7 @@
       "md": { "value": "500px", "type": "dimension", "source": "$modal-md" },
       "sm": { "value": "400px", "type": "dimension", "source": "$modal-sm" },
       "content-border": {
-        "width": { "value": "0", "type": "dimension", "source": "$modal-content-border-width" },
+        "width": { "value": "0px", "type": "dimension", "source": "$modal-content-border-width" },
         "radius": {
           "value": "{size.border.radius.lg}", "type": "dimension", "source": "$modal-content-border-radius"
         }
