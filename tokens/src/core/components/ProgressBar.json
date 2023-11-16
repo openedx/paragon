@@ -19,11 +19,6 @@
       "threshold-circle": { "value": ".5625rem", "type": "dimension", "source": "$progress-threshold-circle" }
     }
   },
-  "elevation": {
-    "progress-bar": {
-      "box-shadow": { "value": "none", "type": "shadow", "source": "$progress-box-shadow" }
-    }
-  },
   "spacing": {
     "progress-bar": {
       "hint": {

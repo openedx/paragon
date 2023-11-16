@@ -54,7 +54,7 @@
     .nav-item.show .nav-link {
       color: var(--pgn-color-nav-pills-base-link-active-text);
       background-color: var(--pgn-color-nav-pills-base-link-active-bg);
-      border-color: var(--pgn-color-nav-pills-base-link-active-bg);
+      border-color: var(--pgn-color-nav-pills-base-link-active-border);
 
       &:focus {
         @include nav-tabs-link-focus(var(--pgn-border-color-nav-tabs-link-border-focus));
@@ -104,9 +104,9 @@
         background-color: var(--pgn-color-white);
 
         &:hover {
-          // background-color: var(--pgn-color-nav-pills-inverse-link-bg-active-focus-hover);
+          background-color: var(--pgn-color-nav-pills-inverse-link-bg-active-focus-hover);
           color: var(--pgn-color-nav-pills-inverse-link-text-active-focus);
-          // border-color: var(--pgn-color-nav-pills-inverse-link-border-focus-hover);
+          border-color: var(--pgn-color-nav-pills-inverse-link-border-focus-hover);
         }
       }
     }
@@ -188,7 +188,6 @@
     &.disabled {
       color: var(--pgn-color-nav-link-text-disabled);
       background-color: var(--pgn-color-nav-tabs-base-text-disabled);
-      border-color: transparent;
     }
   }
 
