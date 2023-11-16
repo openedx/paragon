@@ -10,9 +10,6 @@ function HomePage() {
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Home" />
       <div className="bg-dark text-white text-center py-5">
-        <p className="x-small text-uppercase text-monospace mb-0">
-          Technical Documentation{' '}
-        </p>
         <h1 className="display-3 text-white">Paragon Design System</h1>
         <p className="lead mx-auto my-3 mb-4" style={{ maxWidth: '28em' }}>
           An accessible, theme-ready, and open source design system built for
