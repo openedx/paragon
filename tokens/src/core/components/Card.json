@@ -71,7 +71,7 @@
         "vertical": {
           "max-height": { "value": "140px", "type": "dimension", "source": "$card-image-vertical-max-height" }
         },
-        "border-radius": { "value": ".3125rem", "type": "dimension", "source": "$card-image-border-radius" }
+        "border-radius": { "value": "{size.card.border.radius.base}", "type": "dimension", "source": "$card-image-border-radius" }
       },
       "logo": {
         "width": { "value": "7.25rem", "type": "dimension", "source": "$card-logo-width" },
