@@ -45,7 +45,7 @@
           "y": { "value": ".5rem", "type": "dimension", "source": "$nav-link-padding-y" },
           "x": { "value": "1rem", "type": "dimension", "source": "$nav-link-padding-x" }
         },
-        "distance-to-border": { "value": ".313rem", "type": "dimension", "source": "$nav-tabs-link-distance-to-border" }
+        "distance-to-border": { "value": "4px", "type": "dimension", "source": "$nav-tabs-link-distance-to-border" }
       },
       "divider": {
         "margin-y": { "value": "calc({spacing.spacer.base} / 2)", "type": "dimension", "source": "$nav-divider-margin-y" }

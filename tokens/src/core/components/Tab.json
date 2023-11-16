@@ -11,7 +11,8 @@
       },
       "inverse-tabs-link-dropdown-toggle": {
         "padding-x": { "value": ".625rem", "type": "dimension", "source": "$tab-inverse-tabs-link-dropdown-toggle-padding-x" },
-        "padding-y": { "value": "{spacing.spacer.base}", "type": "dimension", "source": "$tab-inverse-tabs-link-dropdown-toggle-padding-y" }
+        "padding-y": { "value": "{spacing.spacer.base}", "type": "dimension", "source": "$tab-inverse-tabs-link-dropdown-toggle-padding-y" },
+        "distance": { "value": "5px", "type": "dimension", "source": "$tab-inverse-pills-link-dropdown-distance" }
       }
     }
   }
