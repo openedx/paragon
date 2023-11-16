@@ -5,7 +5,7 @@ status: 'Stable'
 components:
 - Spinner
 categories:
-- Choreography
+- Status & metadata
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
