@@ -1,6 +1,5 @@
-import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { DocSearch } from '@docsearch/react';
+import React from 'react';
 
 import '@docsearch/css';
 
@@ -9,7 +8,7 @@ import HitComponent from './HitComponent';
 function Search() {
   let userId = global.localStorage?.getItem('pgn__algolia-usedId');
   if (!userId) {
-    userId = uuidv4();
+    userId = global.analytics.user().anonymousId();
     global.localStorage?.setItem('pgn__algolia-usedId', userId);
   }
 
