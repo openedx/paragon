@@ -3,6 +3,8 @@ title: 'Truncate'
 type: 'component'
 components:
 - Truncate
+categories:
+- Content
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
