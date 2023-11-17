@@ -156,7 +156,7 @@ const FOUNDATION_PAGES = [
     path: '/foundations/icons/',
   },
   {
-    label: 'CSS-Utilities',
+    label: 'CSS Utilities',
     path: '/foundations/css-utilities/',
   },
   {
@@ -164,7 +164,7 @@ const FOUNDATION_PAGES = [
     path: '/foundations/responsive/',
   },
   {
-    label: 'Brand-icons',
+    label: 'Brand icons',
     path: '/foundations/brand-icons/',
   },
 ];

@@ -229,7 +229,7 @@ function Menu() {
               <li key={path}>
                 <Link
                   className={classNames({ active: pathname.endsWith(path) })}
-                  to={`${path}`}
+                  to={path}
                 >
                   {label}
                 </Link>
