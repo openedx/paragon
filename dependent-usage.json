@@ -1,5 +1,5 @@
 {
-  "lastModified": 1700402870525,
+  "lastModified": 1700489275599,
   "projectUsages": [
     {
       "version": "12.8.0",
@@ -23361,6 +23361,12 @@
             "index": 3074
           },
           {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ContinueLearningButton.jsx",
+            "line": 54,
+            "column": 10,
+            "index": 1604
+          },
+          {
             "filePath": "src/components/dashboard/sidebar/SupportInformation.jsx",
             "line": 50,
             "column": 10,
@@ -23782,9 +23788,15 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/AssignedCourseCard.jsx",
-            "line": 17,
+            "line": 16,
             "column": 4,
-            "index": 522
+            "index": 474
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ContinueLearningButton.jsx",
+            "line": 53,
+            "column": 4,
+            "index": 1586
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
@@ -24021,6 +24033,12 @@
             "line": 80,
             "column": 10,
             "index": 2686
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+            "line": 489,
+            "column": 14,
+            "index": 13745
           },
           {
             "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
@@ -24295,6 +24313,12 @@
             "index": 2704
           },
           {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+            "line": 490,
+            "column": 16,
+            "index": 13796
+          },
+          {
             "filePath": "src/components/dashboard/sidebar/LearnerCreditSummaryCard.jsx",
             "line": 45,
             "column": 8,
@@ -24546,9 +24570,15 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 452,
-            "column": 24,
-            "index": 12478
+            "line": 446,
+            "column": 13,
+            "index": 12220
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/CourseSection.jsx",
+            "line": 39,
+            "column": 20,
+            "index": 1242
           },
           {
             "filePath": "src/components/dashboard/sidebar/CouponCodesSummaryCard.jsx",
@@ -25878,9 +25908,15 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 258,
+            "line": 227,
             "column": 22,
-            "index": 7163
+            "index": 6257
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+            "line": 315,
+            "column": 12,
+            "index": 8956
           },
           {
             "filePath": "src/components/my-career/AddJobRole.jsx",
@@ -26096,9 +26132,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 438,
+            "line": 468,
             "column": 12,
-            "index": 11848
+            "index": 12862
           },
           {
             "filePath": "src/components/executive-education-2u/ExecutiveEducation2UPage.jsx",
@@ -26209,6 +26245,12 @@
             "line": 27,
             "column": 10,
             "index": 811
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+            "line": 306,
+            "column": 10,
+            "index": 8682
           }
         ],
         "Popover": [
@@ -26444,9 +26486,9 @@
         "Dropdown": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 254,
+            "line": 223,
             "column": 10,
-            "index": 7042
+            "index": 6136
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
@@ -26476,9 +26518,9 @@
         "Dropdown.Toggle": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 255,
+            "line": 224,
             "column": 12,
-            "index": 7065
+            "index": 6159
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
@@ -26508,25 +26550,25 @@
         "IconButton": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 256,
+            "line": 225,
             "column": 18,
-            "index": 7100
+            "index": 6194
           }
         ],
         "MoreVert": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 257,
+            "line": 226,
             "column": 19,
-            "index": 7131
+            "index": 6225
           }
         ],
         "Dropdown.Menu": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 263,
+            "line": 232,
             "column": 12,
-            "index": 7357
+            "index": 6451
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
@@ -26556,9 +26598,9 @@
         "Dropdown.Item": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 265,
+            "line": 234,
             "column": 16,
-            "index": 7432
+            "index": 6526
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
@@ -26619,6 +26661,28 @@
             "line": 29,
             "column": 10,
             "index": 1056
+          }
+        ],
+        "Tooltip": [
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+            "line": 310,
+            "column": 14,
+            "index": 8804
+          }
+        ],
+        "InfoOutline": [
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+            "line": 315,
+            "column": 23,
+            "index": 8967
+          },
+          {
+            "filePath": "src/components/skills-quiz/JobDescriptions.jsx",
+            "line": 16,
+            "column": 8,
+            "index": 741
           }
         ],
         "Input": [
@@ -26698,9 +26762,9 @@
         "Collapsible": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseSection.jsx",
-            "line": 129,
+            "line": 145,
             "column": 8,
-            "index": 3692
+            "index": 4077
           },
           {
             "filePath": "src/components/pathway-progress/PathwayStep.jsx",
@@ -27337,14 +27401,6 @@
             "line": 51,
             "column": 14,
             "index": 1829
-          }
-        ],
-        "InfoOutline": [
-          {
-            "filePath": "src/components/skills-quiz/JobDescriptions.jsx",
-            "line": 16,
-            "column": 8,
-            "index": 741
           }
         ],
         "SelectableBox.Set": [
@@ -36806,9 +36862,9 @@
           },
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 124,
+            "line": 125,
             "column": 16,
-            "index": 4658
+            "index": 4659
           },
           {
             "filePath": "src/Notifications/NotificationSections.jsx",
@@ -36866,9 +36922,9 @@
         "OverlayTrigger": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 77,
+            "line": 79,
             "column": 6,
-            "index": 2636
+            "index": 2667
           },
           {
             "filePath": "src/studio-header/CourseLockUp.jsx",
@@ -36880,25 +36936,25 @@
         "Popover": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 84,
+            "line": 85,
             "column": 10,
-            "index": 2821
+            "index": 2822
           }
         ],
         "Popover.Title": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 97,
+            "line": 98,
             "column": 16,
-            "index": 3409
+            "index": 3410
           }
         ],
         "Hyperlink": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 103,
+            "line": 104,
             "column": 18,
-            "index": 3730
+            "index": 3731
           },
           {
             "filePath": "src/Notifications/tours/constants.js",
@@ -36916,15 +36972,15 @@
         "Icon": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 109,
+            "line": 110,
             "column": 20,
-            "index": 3992
+            "index": 3993
           },
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 143,
+            "line": 144,
             "column": 20,
-            "index": 5299
+            "index": 5322
           },
           {
             "filePath": "src/Notifications/NotificationEmptySection.jsx",
@@ -36960,9 +37016,9 @@
         "Settings": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 110,
+            "line": 111,
             "column": 27,
-            "index": 4025
+            "index": 4026
           },
           {
             "filePath": "src/Notifications/tours/constants.js",
@@ -36974,17 +37030,17 @@
         "Popover.Content": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 118,
+            "line": 119,
             "column": 14,
-            "index": 4337
+            "index": 4338
           }
         ],
         "IconButton": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 138,
+            "line": 139,
             "column": 10,
-            "index": 5062
+            "index": 5085
           },
           {
             "filePath": "src/Notifications/NotificationEmptySection.jsx",
@@ -36996,9 +37052,9 @@
         "NotificationsNone": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 142,
+            "line": 143,
             "column": 17,
-            "index": 5260
+            "index": 5283
           },
           {
             "filePath": "src/Notifications/NotificationEmptySection.jsx",
@@ -37010,9 +37066,9 @@
         "Bubble": [
           {
             "filePath": "src/Notifications/index.jsx",
-            "line": 151,
+            "line": 152,
             "column": 10,
-            "index": 5578
+            "index": 5601
           }
         ],
         "Spinner": [
@@ -41574,15 +41630,15 @@
         "Container": [
           {
             "filePath": "src/packages/about-edx-page/template/AboutEdXPage/index.jsx",
-            "line": 269,
-            "column": 12,
-            "index": 12711
+            "line": 229,
+            "column": 10,
+            "index": 11047
           },
           {
             "filePath": "src/packages/about-edx-page/template/AboutEdXPage/index.jsx",
-            "line": 296,
-            "column": 12,
-            "index": 14414
+            "line": 256,
+            "column": 10,
+            "index": 12696
           },
           {
             "filePath": "src/packages/become-page/components/BecomeCards.jsx",
@@ -41928,15 +41984,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 83,
+            "line": 81,
             "column": 10,
-            "index": 3259
-          },
-          {
-            "filePath": "src/packages/open-course-page/components/CourseRecommendations/Variant1/index.jsx",
-            "line": 15,
-            "column": 4,
-            "index": 409
+            "index": 3141
           },
           {
             "filePath": "src/packages/open-course-page/components/CourseRunSelector/index.jsx",
@@ -43680,51 +43730,45 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 68,
+            "line": 66,
             "column": 6,
-            "index": 2645
+            "index": 2527
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 82,
+            "line": 80,
             "column": 8,
-            "index": 3140
+            "index": 3022
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 88,
+            "line": 86,
             "column": 6,
-            "index": 3379
+            "index": 3261
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 100,
+            "line": 98,
             "column": 8,
-            "index": 4038
+            "index": 3920
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 112,
+            "line": 110,
             "column": 8,
-            "index": 4469
+            "index": 4351
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 128,
+            "line": 126,
             "column": 8,
-            "index": 5001
+            "index": 4883
           },
           {
             "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 133,
+            "line": 131,
             "column": 8,
-            "index": 5294
-          },
-          {
-            "filePath": "src/packages/open-course-page/components/CoursePageMobile.jsx",
-            "line": 142,
-            "column": 8,
-            "index": 5665
+            "index": 5127
           }
         ],
         "Collapsible.Advanced": [
