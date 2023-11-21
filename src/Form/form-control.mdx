@@ -165,7 +165,7 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 ## Input masks
 Paragon uses the [react-imask](https://www.npmjs.com/package/react-imask) library,
 which allows you to add masks of different types for inputs.
-To create your own mask, you need to pass the required mask pattern (`+{1}(000)000-00-00`) to the `inputMask` property. <br />
+To create your own mask, you need to pass the required mask pattern (`+{1} (000) 000-0000`) to the `inputMask` property. <br />
 See [react-imask](https://imask.js.org) for documentation on available props.
 
 ```jsx live
@@ -180,7 +180,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
         <h3>Phone</h3>
         <Form.Group>
           <Form.Control
-            inputMask="+{1}(000)000-00-00"
+            inputMask="+{1} (000) 000-0000"
             value={value}
             onChange={handleChange}
             leadingElement={<Icon src={FavoriteBorder} />}
@@ -198,18 +198,6 @@ See [react-imask](https://imask.js.org) for documentation on available props.
           onChange={handleChange}
           leadingElement={<Icon src={FavoriteBorder} />}
           floatingLabel="What is your credit card number?"
-        />
-      </Form.Group>
-    </>),
-    date: (<>
-      <h3>Date</h3>
-      <Form.Group>
-        <Form.Control
-          inputMask={Date}
-          value={value}
-          onChange={handleChange}
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="What is your date of birth?"
         />
       </Form.Group>
     </>),
@@ -246,7 +234,7 @@ See [react-imask](https://imask.js.org) for documentation on available props.
     </>),
     price: (
         <>
-          <h3>Course prise</h3>
+          <h3>Course priсe</h3>
           <Form.Group>
             <Form.Control
               inputMask="$num"
@@ -298,7 +286,7 @@ To get a value without a mask, you need to use `onChange` instead of `onAccept` 
       <>
         <Form.Group>
           <Form.Control
-            inputMask="+{1}(000)000-00-00"
+            inputMask="+{1} (000) 000-0000"
             leadingElement={<Icon src={FavoriteBorder} />}
             trailingElement={<Icon src={Verified} />}
             floatingLabel="What is your phone number?"
