@@ -9,8 +9,6 @@ import SearchFieldInput from './SearchFieldInput';
 import SearchFieldClearButton from './SearchFieldClearButton';
 import SearchFieldSubmitButton from './SearchFieldSubmitButton';
 
-import Icon from '../Icon';
-
 export const SEARCH_FIELD_SCREEN_READER_TEXT_LABEL = 'search';
 export const SEARCH_FIELD_SCREEN_READER_TEXT_SUBMIT_BUTTON = 'submit search';
 export const SEARCH_FIELD_SCREEN_READER_TEXT_CLEAR_BUTTON = 'clear search';
@@ -170,8 +168,8 @@ SearchField.defaultProps = {
     clearButton: SEARCH_FIELD_SCREEN_READER_TEXT_CLEAR_BUTTON,
   },
   icons: {
-    clear: <Icon src={Close} />,
-    submit: <Icon src={Search} />,
+    clear: Close,
+    submit: Search,
   },
   onBlur: () => {},
   onChange: () => {},

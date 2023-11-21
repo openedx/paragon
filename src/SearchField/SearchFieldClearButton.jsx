@@ -22,7 +22,7 @@ function SearchFieldClearButton(props) {
   return (
     <IconButton
       type="reset"
-      src={icons.clear.props.src}
+      src={icons.clear}
       iconAs={Icon}
       alt={screenReaderText.clearButton}
       disabled={disabled}

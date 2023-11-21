@@ -43,7 +43,7 @@ function SearchFieldSubmitButton(props) {
   ) : (
     <IconButton
       type="submit"
-      src={icons.submit.props.src}
+      src={icons.submit}
       iconAs={Icon}
       alt={screenReaderText.submitButton}
       disabled={disabled}
