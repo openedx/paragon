@@ -191,5 +191,8 @@
     "www",
     "icons",
     "dependent-usage-analyzer"
-  ]
+  ],
+  "overrides": {
+    "@testing-library/dom": "9.3.3"
+  }
 }
