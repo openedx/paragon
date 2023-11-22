@@ -2,6 +2,7 @@ import React, { AnchorHTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 import { Nav, Button, Hyperlink } from '~paragon-react';
 import { useLocation } from '@reach/router';
+import { sendLeaveFeedbackClick } from '../../segment-constants';
 
 export interface LeaveFeedbackProps extends Partial<AnchorHTMLAttributes<HTMLAnchorElement>> {
   isNavLink?: boolean;
@@ -12,9 +13,7 @@ function LeaveFeedback({ isNavLink, ...props }: LeaveFeedbackProps) {
   const FEEDBACK_URL = `https://github.com/openedx/paragon/issues/new?title=%5Bparagon-openedx.netlify.app%5D%20Feedback%20(on%20${location.pathname})&amp;labels=docs&template=feedback_template.md`;
   const leaveFeedbackLinkTitle = 'Leave feedback';
 
-  const handleLinkFeedbackClick = () => {
-    global.analytics.track('openedx.paragon.docs.leave_feedback.clicked');
-  };
+  const handleLinkFeedbackClick = () => sendLeaveFeedbackClick();
 
   if (isNavLink) {
     return (

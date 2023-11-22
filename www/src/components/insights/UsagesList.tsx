@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Hyperlink } from '~paragon-react';
+import { sendComponentUsageLinkClick } from '../../../segment-constants';
 
 type UsagesType = {
   filePath: string,
@@ -21,10 +22,7 @@ export default function UsagesList({
   projectName,
 } : UsagesListPropTypes) {
   const handleUsageLinkClick = (linkToUsage) => {
-    global.analytics.track(
-      'openedx.paragon.docs.usage-insights.component-usage-link.clicked',
-      { project: projectName, component: componentName, linkToUsage },
-    );
+    sendComponentUsageLinkClick({ project: projectName, component: componentName, linkToUsage });
   };
 
   return (

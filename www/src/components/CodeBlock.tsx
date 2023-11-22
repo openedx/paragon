@@ -21,6 +21,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import * as ParagonReact from '~paragon-react';
 import * as ParagonIcons from '~paragon-icons';
 import { ContentCopy } from '~paragon-icons';
+import { sendExampleWithHeading, sendExampleWithoutHeading } from '../../segment-constants';
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
 import ExamplePropsForm from './exampleComponents/ExamplePropsForm';
@@ -64,14 +65,14 @@ function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: Coll
     const headingElement = getCodeBlockHeading(e.target);
 
     if (!headingElement) {
-      global.analytics.track(`openedx.paragon.docs.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
+      sendExampleWithoutHeading(collapseIsOpen, {
         value: `${componentNameAndCategory}id-not-generated`,
       });
 
       return;
     }
 
-    global.analytics.track(`openedx.paragon.docs.ui.example-code-block.${collapseIsOpen ? 'closed' : 'opened'}`, {
+    sendExampleWithHeading(collapseIsOpen, {
       value: `${componentNameAndCategory}${headingElement.id}`,
     });
   };

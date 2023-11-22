@@ -13,6 +13,13 @@ import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import { SettingsContext } from '../../context/SettingsContext';
+import {
+  sendShadowGeneratorLayerAdded,
+  sendShadowGeneratorLayerDisabled,
+  sendShadowGeneratorLayerEnabled,
+  sendShadowGeneratorLayerRemoved,
+  sendShadowGeneratorUpdated,
+} from '../../../segment-constants';
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
@@ -86,7 +93,7 @@ function BoxShadowToolkit({
   });
 
   const updateBoxShadowModel = (property, value) => {
-    global.analytics.track('openedx.paragon.docs.elevation.generator.updated', { property, value });
+    sendShadowGeneratorUpdated({ property, value });
 
     const newBoxShadowModel = {
       ...boxShadowModel,
@@ -196,7 +203,7 @@ function BoxShadowGenerator() {
   };
 
   const addNewBoxShadowLayer = () => {
-    global.analytics.track('openedx.paragon.elevation.generator.layer.added');
+    sendShadowGeneratorLayerAdded();
     setBoxShadows([
       ...boxShadows,
       { id: boxShadows[boxShadows.length - 1].id + 1, enabled: true, style: DEFAULT_BOX_SHADOW },
@@ -204,12 +211,12 @@ function BoxShadowGenerator() {
   };
 
   const removeBoxShadowLayer = (toolkitId) => {
-    global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.removed');
+    sendShadowGeneratorLayerRemoved();
     setBoxShadows(boxShadows.filter((shadow) => shadow.id !== toolkitId));
   };
 
   const disableBoxShadowLayer = (toolkitId) => {
-    global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.disabled');
+    sendShadowGeneratorLayerDisabled();
     const updatedBoxShadows = boxShadows
       .map((shadow) => {
         if (shadow.id === toolkitId) {
@@ -221,7 +228,7 @@ function BoxShadowGenerator() {
   };
 
   const enableBoxShadowLayer = (toolkitId) => {
-    global.analytics.track('openedx.paragon.elevation.shadow-generator.layer.enabled');
+    sendShadowGeneratorLayerEnabled();
     const updatedBoxShadows = boxShadows
       .map((shadow) => {
         if (shadow.id === toolkitId) {
