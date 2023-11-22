@@ -306,6 +306,16 @@ a.pgn__card {
   .pgn__card-wrapper-image-cap {
     position: relative;
 
+    .image-loader {
+      display: none;
+
+        &.show {
+          display: block;
+          height: 100%;
+        }
+    }
+
+
     &.horizontal {
       max-width: $card-image-horizontal-max-width;
       min-width: $card-image-horizontal-min-width;

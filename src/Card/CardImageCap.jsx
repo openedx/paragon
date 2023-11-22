@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
@@ -27,6 +27,22 @@ const CardImageCap = React.forwardRef(({
   const [showImageCap, setShowImageCap] = useState(false);
   const [showLogoCap, setShowLogoCap] = useState(false);
 
+  const showSkeleton = useMemo(() => {
+    let show;
+    if (src && logoSrc) {
+      show = !(showImageCap && showLogoCap);
+    } else if (src) {
+      show = !showImageCap;
+    } else if (logoSrc) {
+      show = !showLogoCap;
+    }
+    return show;
+  }, [src, logoSrc, showImageCap, showLogoCap]);
+
+  const imageSkeletonHeight = useMemo(() => (
+    orientation === 'horizontal' ? '100%' : skeletonHeight
+  ), [orientation, skeletonHeight]);
+
   const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
 
   if (isLoading) {
@@ -37,7 +53,7 @@ const CardImageCap = React.forwardRef(({
       >
         <Skeleton
           containerClassName="pgn__card-image-cap-loader"
-          height={orientation === 'horizontal' ? '100%' : skeletonHeight}
+          height={imageSkeletonHeight}
           width={skeletonWidth}
         />
         {logoSkeleton && (
@@ -57,6 +73,7 @@ const CardImageCap = React.forwardRef(({
     if (!altSrc || currentTarget.src.endsWith(altSrc)) {
       if (imageKey === 'imageCap') {
         currentTarget.src = cardSrcFallbackImg;
+        setShowImageCap(false);
       } else {
         setShowLogoCap(false);
       }
@@ -69,9 +86,26 @@ const CardImageCap = React.forwardRef(({
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
+      <div
+        className={classNames('image-loader', className, { show: showSkeleton })}
+        data-testid="image-loader-wrapper"
+      >
+        <Skeleton
+          containerClassName="pgn__card-image-cap-loader"
+          height={imageSkeletonHeight}
+          width={skeletonWidth}
+        />
+        {logoSkeleton && (
+          <Skeleton
+            containerClassName="pgn__card-logo-cap"
+            height={logoSkeletonHeight}
+            width={logoSkeletonWidth}
+          />
+        )}
+      </div>
       {!!src && (
         <img
-          className={classNames('pgn__card-image-cap', { show: showImageCap })}
+          className={classNames('pgn__card-image-cap', { show: !showSkeleton })}
           src={src}
           onError={(event) => handleSrcFallback(event, fallbackSrc, 'imageCap')}
           onLoad={() => setShowImageCap(true)}
@@ -81,7 +115,7 @@ const CardImageCap = React.forwardRef(({
       )}
       {!!logoSrc && (
         <img
-          className={classNames('pgn__card-logo-cap', { show: showLogoCap })}
+          className={classNames('pgn__card-logo-cap', { show: !showSkeleton })}
           src={logoSrc}
           onError={(event) => handleSrcFallback(event, fallbackLogoSrc, 'logoCap')}
           onLoad={() => setShowLogoCap(true)}
