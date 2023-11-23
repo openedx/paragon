@@ -130,9 +130,49 @@ const INSIGHTS_PAGES = [
   },
 ];
 
+const FOUNDATION_PAGES = [
+  {
+    label: 'Colors',
+    path: '/foundations/colors/',
+  },
+  {
+    label: 'Elevation',
+    path: '/foundations/elevation/',
+  },
+  {
+    label: 'Typography',
+    path: '/foundations/typography/',
+  },
+  {
+    label: 'Layout',
+    path: '/foundations/layout/',
+  },
+  {
+    label: 'Spacing',
+    path: '/foundations/spacing/',
+  },
+  {
+    label: 'Icons',
+    path: '/foundations/icons/',
+  },
+  {
+    label: 'CSS Utilities',
+    path: '/foundations/css-utilities/',
+  },
+  {
+    label: 'Responsive',
+    path: '/foundations/responsive/',
+  },
+  {
+    label: 'Brand icons',
+    path: '/foundations/brand-icons/',
+  },
+];
+
 module.exports = {
   INSIGHTS_TABS,
   INSIGHTS_PAGES,
   FEATURES,
   LANGUAGES,
+  FOUNDATION_PAGES,
 };
