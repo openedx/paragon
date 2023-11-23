@@ -18,7 +18,8 @@ import ComponentsUsage from '../components/insights/ComponentsUsage';
 
 // @ts-ignore
 import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
-import { sendInsightsTabClick } from '../../segment-constants';
+
+import { sendUserAnalyticsEvent, INSIGHTS_TAB_CLICKED } from '../../segment-events';
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
 import componentsUsage from '../utils/componentsUsage';
 import { IInsightsContext } from '../types/types';
@@ -64,7 +65,7 @@ export default function InsightsPage({ pageContext: { tab, githubEditPath } }: I
 
   const handleOnSelect = (value: string) => {
     if (value !== tab) {
-      sendInsightsTabClick(value);
+      sendUserAnalyticsEvent(INSIGHTS_TAB_CLICKED, { tabName: value });
       navigate(INSIGHTS_PAGES.find(item => item.tab === value).path);
     }
   };
