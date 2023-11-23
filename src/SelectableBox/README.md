@@ -6,7 +6,6 @@ components:
 - SelectableBoxSet
 categories:
 - Forms
-- Content
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
