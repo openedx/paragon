@@ -1,9 +1,10 @@
-import React, { useContext, useState, useMemo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 import cardSrcFallbackImg from './fallback-default.png';
+import useImagesLoader from './hooks/useImagesLoader';
 
 const SKELETON_HEIGHT_VALUE = 140;
 const LOGO_SKELETON_HEIGHT_VALUE = 41;
@@ -24,20 +25,15 @@ const CardImageCap = React.forwardRef(({
   imageLoadingType,
 }, ref) => {
   const { orientation, isLoading } = useContext(CardContext);
-  const [showImageCap, setShowImageCap] = useState(false);
-  const [showLogoCap, setShowLogoCap] = useState(false);
+  const urls = useMemo(() => (
+    [
+      { mainSrc: src, fallback: fallbackSrc, type: 'image' },
+      { mainSrc: logoSrc, fallback: fallbackLogoSrc, type: 'logo' },
+    ]
+      .filter(obj => obj.mainSrc || obj.fallback)
+  ), [src, logoSrc, fallbackSrc, fallbackLogoSrc]);
 
-  const showSkeleton = useMemo(() => {
-    let show;
-    if (src && logoSrc) {
-      show = !(showImageCap && showLogoCap);
-    } else if (src) {
-      show = !showImageCap;
-    } else if (logoSrc) {
-      show = !showLogoCap;
-    }
-    return show;
-  }, [src, logoSrc, showImageCap, showLogoCap]);
+  const { loadedImages, allLoaded } = useImagesLoader(urls);
 
   const imageSkeletonHeight = useMemo(() => (
     orientation === 'horizontal' ? '100%' : skeletonHeight
@@ -67,27 +63,10 @@ const CardImageCap = React.forwardRef(({
     );
   }
 
-  const handleSrcFallback = (event, altSrc, imageKey) => {
-    const { currentTarget } = event;
-
-    if (!altSrc || currentTarget.src.endsWith(altSrc)) {
-      if (imageKey === 'imageCap') {
-        currentTarget.src = cardSrcFallbackImg;
-        setShowImageCap(false);
-      } else {
-        setShowLogoCap(false);
-      }
-
-      return;
-    }
-
-    currentTarget.src = altSrc;
-  };
-
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
       <div
-        className={classNames('image-loader', className, { show: showSkeleton })}
+        className={classNames('image-loader', className, { show: !allLoaded })}
         data-testid="image-loader-wrapper"
       >
         <Skeleton
@@ -105,20 +84,16 @@ const CardImageCap = React.forwardRef(({
       </div>
       {!!src && (
         <img
-          className={classNames('pgn__card-image-cap', { show: !showSkeleton })}
+          className={classNames('pgn__card-image-cap', { show: loadedImages[src] || loadedImages[fallbackSrc] })}
           src={src}
-          onError={(event) => handleSrcFallback(event, fallbackSrc, 'imageCap')}
-          onLoad={() => setShowImageCap(true)}
           alt={srcAlt}
           loading={imageLoadingType}
         />
       )}
       {!!logoSrc && (
         <img
-          className={classNames('pgn__card-logo-cap', { show: !showSkeleton })}
+          className={classNames('pgn__card-logo-cap', { show: loadedImages[logoSrc] || loadedImages[fallbackLogoSrc] })}
           src={logoSrc}
-          onError={(event) => handleSrcFallback(event, fallbackLogoSrc, 'logoCap')}
-          onLoad={() => setShowLogoCap(true)}
           alt={logoAlt}
           loading={imageLoadingType}
         />
