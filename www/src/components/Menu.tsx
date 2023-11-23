@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { useLocation } from '@reach/router';
 import PropTypes from 'prop-types';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import classNames from 'classnames';
 import {
   Tooltip,
   OverlayTrigger,
@@ -13,6 +12,7 @@ import {
   ButtonGroup,
   Image,
 } from '~paragon-react';
+import classNames from 'classnames';
 import Search from './Search';
 import { SettingsContext } from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
@@ -157,14 +157,6 @@ function MenuComponentListCategory({ children, title }: IMenuComponentListCatego
 const handlePlaygroundClick = () => sendUserAnalyticsEvent(PLAYGROUND_EVENTS.LINK_CLICKED);
 
 const handleContrastCheckerClick = () => sendUserAnalyticsEvent(CONTRAST_CHECKER_CLICKED_EVENT);
-
-const handleContrastCheckerClick = () => {
-  global.analytics.track('openedx.paragon.docs.menu.tools.visit_contrast_checker.clicked');
-};
-
-const handleContrastCheckerClick = () => {
-  global.analytics.track('openedx.paragon.docs.menu.tools.visit_contrast_checker.clicked');
-};
 
 MenuComponentListCategory.propTypes = {
   children: PropTypes.node.isRequired,
