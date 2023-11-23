@@ -35,7 +35,7 @@ TableFilters.propTypes = {
     render: PropTypes.func.isRequired,
   })).isRequired,
   manualFilters: PropTypes.bool,
-  onFilter: PropTypes.elementType,
+  onFilter: PropTypes.func,
   currentFilters: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
