@@ -6,7 +6,6 @@ components:
 - Spinner
 categories:
 - Status & metadata
-- Choreography
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
