@@ -1,0 +1,14 @@
+$search-btn-variants: (
+  "light":  $primary-500,
+  "dark":   $brand-500,
+);
+$search-border-radius:                0 !default;
+$search-border-color:                 $gray-500 !default;
+$search-form-background-color:        $white !default;
+$search-border-color-interaction:     $black !default;
+$search-border-width:                 .0625rem !default;
+$search-disabled-opacity:             .3 !default;
+$search-button-margin:                .5rem !default;
+$input-height-search:                 calc(#{$input-line-height * 1em} + #{$input-padding-y * 2}) !default;
+$search-border-focus-color:           $black !default;
+$search-border-focus-width:           .3125rem !default;

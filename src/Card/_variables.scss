@@ -1,0 +1,55 @@
+// Card
+
+$card-spacer-y:                      .75rem !default;
+$card-spacer-x:                      1.25rem !default;
+$card-border-width:                  $border-width !default;
+$card-border-radius:                 $border-radius !default;
+$card-border-color:                  rgba($black, .125) !default;
+$card-border-focus-color:            $primary-500 !default;
+$card-border-focus-color-dark:       theme-color("primary", "focus") !default;
+$card-inner-border-radius:           subtract($card-border-radius, $card-border-width) !default;
+$card-cap-bg:                        rgba($black, .03) !default;
+$card-cap-color:                     null !default;
+$card-height:                        null !default;
+$card-color:                         null !default;
+$card-bg:                            $white !default;
+$card-bg-dark:                       $primary-500 !default;
+$card-bg-muted:                      $light-200 !default;
+
+$card-img-overlay-padding:           1.25rem !default;
+
+$card-group-margin:                  calc($grid-gutter-width / 2) !default;
+$card-deck-margin:                   $card-group-margin !default;
+$card-grid-margin:                   $card-group-margin !default;
+$card-deck-margin-bottom:            map_get($spacers, 3) !default;
+$card-grid-margin-bottom:            map_get($spacers, 3) !default;
+
+$card-columns-count:                 3 !default;
+$card-columns-gap:                   1.25rem !default;
+$card-columns-margin:                $card-spacer-y !default;
+
+$card-divider-bg:                    $light-400 !default;
+
+$card-footer-actions-gap:            .5rem !default;
+
+$card-logo-left-offset:              1.5rem !default;
+$card-logo-bottom-offset:            1rem !default;
+$card-logo-left-offset-horizontal:   .4375rem !default;
+$card-logo-bottom-offset-horizontal: .4375rem !default;
+
+$card-logo-width:                    7.25rem !default;
+$card-logo-height:                   4.125rem !default;
+
+$card-image-border-radius:           $card-border-radius !default;
+$card-logo-border-radius:            .25rem !default;
+
+$card-footer-text-font-size:         $x-small-font-size;
+
+$card-image-horizontal-max-width:    240px !default;
+$card-image-horizontal-min-width:    $card-image-horizontal-max-width !default;
+$card-image-vertical-max-height:     140px !default;
+$loading-skeleton-spacer:            .313rem !default;
+
+$card-focus-border-offset:           5px !default;
+$card-focus-border-width:            2px !default;
+$card-focus-border-radius:           calc($card-focus-border-offset + $card-border-radius) !default;
