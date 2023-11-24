@@ -22,7 +22,6 @@ function ActionRow({
 }
 
 ActionRow.propTypes = {
-  /** Specifies the base element */
   as: PropTypes.elementType,
   /** Specifies class name to append to the base element */
   className: PropTypes.string,

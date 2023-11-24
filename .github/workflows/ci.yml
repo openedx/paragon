@@ -41,4 +41,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_NPM_TOKEN }}
-      run: npx semantic-release --dry-run --branches="${{ steps.extract_branch.outputs.branch}}"
+      run:
+        git switch -c ${{ steps.extract_branch.outputs.branch}}
+        npx semantic-release --dry-run --branches=${{ steps.extract_branch.outputs.branch }}
