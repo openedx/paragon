@@ -5,7 +5,6 @@ components:
 - Avatar
 categories:
 - Imagery & Iconography
-- Content
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

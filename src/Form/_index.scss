@@ -42,6 +42,20 @@
   flex-grow: 1;
   align-items: flex-start;
 
+  textarea {
+    &.form-control {
+      min-height: var(--pgn-size-form-input-height-base);
+    }
+
+    &.form-control-lg {
+      min-height: var(--pgn-size-form-input-height-lg);
+    }
+
+    &.form-control-sm {
+      min-height: var(--pgn-size-form-input-height-sm);
+    }
+  }
+
   @media (--pgn-size-breakpoint-min-width-sm) {
     margin-inline-end: var(--pgn-spacing-form-control-gutter);
   }
