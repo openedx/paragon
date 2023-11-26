@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { DataTable } from '~paragon-react';
+import { DataTable, Skeleton } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 
+const initialTableData = Array(5).fill({ variableName: <Skeleton />, computedValue: <Skeleton /> });
+
 function ComponentVariablesTable({ rawStylesheet }: ComponentVariablesTableProps) {
-  const [tableData, setTableData] = useState<Array<TableRowData>>([]);
+  const [tableData, setTableData] = useState<Array<TableRowData>>(initialTableData);
   const { settings: { theme } } = useContext(SettingsContext);
 
   useEffect(() => {
