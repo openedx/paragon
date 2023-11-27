@@ -10,20 +10,27 @@
   box-sizing: border-box;
   cursor: pointer;
 
+  &:hover,
+  &:focus,
+  &.pgn__dropzone-validation-error,
+  &.pgn__dropzone-active {
+    border-color: transparent;
+  }
+
   &:hover {
-    border: $dropzone-border-hover;
+    box-shadow: $dropzone-box-shadow-hover;
   }
 
   &:focus {
-    border: $dropzone-border-focus;
+    box-shadow: $dropzone-box-shadow-focus;
   }
 
   &.pgn__dropzone-validation-error {
-    border: $dropzone-border-error;
+    box-shadow: $dropzone-box-shadow-error;
   }
 
   &.pgn__dropzone-active {
-    border: $dropzone-border-active;
+    box-shadow: $dropzone-box-shadow-active;
   }
 }
 
