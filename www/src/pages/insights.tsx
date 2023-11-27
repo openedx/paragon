@@ -18,7 +18,6 @@ import ComponentsUsage from '../components/insights/ComponentsUsage';
 
 // @ts-ignore
 import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
-
 import { sendUserAnalyticsEvent, INSIGHTS_TAB_CLICKED } from '../../segment-events';
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
 import componentsUsage from '../utils/componentsUsage';

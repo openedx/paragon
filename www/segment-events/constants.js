@@ -1,6 +1,6 @@
 /**
  * Events are identified by the following structured pattern:
- * openedx.paragon.event_environment.event_name.event_action.
+ * openedx.paragon.event_environment.event_name.event_action
  */
 
 export const ICON_COPIED = 'openedx.paragon.docs.icons-table.selected-icon.copied';
