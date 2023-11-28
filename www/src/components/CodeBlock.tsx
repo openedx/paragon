@@ -21,13 +21,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import * as ParagonReact from '~paragon-react';
 import * as ParagonIcons from '~paragon-icons';
 import { ContentCopy } from '~paragon-icons';
-import {
-  EXAMPLE_CODE_BLOCK_WITH_HEADING_CLOSED,
-  EXAMPLE_CODE_BLOCK_WITH_HEADING_OPENED,
-  EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_CLOSED,
-  EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_OPENED,
-  sendUserAnalyticsEvent,
-} from '../../segment-events';
+import { EXAMPLE_CODE_BLOCK_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
 import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
 import ExamplePropsForm from './exampleComponents/ExamplePropsForm';
@@ -69,18 +63,17 @@ function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: Coll
     const componentNameAndCategory = window.location.pathname.replace(/\//g, '.')
       .replace(/.components./gi, '');
     const headingElement = getCodeBlockHeading(e.target);
+    const { WITHOUT_HEADING, WITH_HEADING } = EXAMPLE_CODE_BLOCK_EVENTS;
 
     if (!headingElement) {
-      sendUserAnalyticsEvent(collapseIsOpen
-        ? EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_CLOSED : EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_OPENED, {
+      sendUserAnalyticsEvent(collapseIsOpen ? WITHOUT_HEADING.CLOSED : WITHOUT_HEADING.OPENED, {
         value: `${componentNameAndCategory}id-not-generated`,
       });
 
       return;
     }
 
-    sendUserAnalyticsEvent(collapseIsOpen
-      ? EXAMPLE_CODE_BLOCK_WITH_HEADING_CLOSED : EXAMPLE_CODE_BLOCK_WITH_HEADING_OPENED, {
+    sendUserAnalyticsEvent(collapseIsOpen ? WITH_HEADING.CLOSED : WITH_HEADING.OPENED, {
       value: `${componentNameAndCategory}${headingElement.id}`,
     });
   };

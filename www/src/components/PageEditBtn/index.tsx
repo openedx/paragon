@@ -1,7 +1,7 @@
 import React, { AnchorHTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Hyperlink, Nav } from '~paragon-react';
-import { PAGE_EDIT_BTN_CLICKED, sendUserAnalyticsEvent } from '../../../segment-events';
+import { PAGE_EDIT_BTN_CLICKED_EVENT, sendUserAnalyticsEvent } from '../../../segment-events';
 
 export interface PageEditBtnProps extends Partial<AnchorHTMLAttributes<HTMLAnchorElement>> {
   githubEditPath?: string,
@@ -11,7 +11,7 @@ export interface PageEditBtnProps extends Partial<AnchorHTMLAttributes<HTMLAncho
 function PageEditBtn({ githubEditPath, isNavLink, ...props }: PageEditBtnProps) {
   const pageEditLinkTitle = 'Edit this page';
 
-  const handlePageEditBtnClick = () => sendUserAnalyticsEvent(PAGE_EDIT_BTN_CLICKED);
+  const handlePageEditBtnClick = () => sendUserAnalyticsEvent(PAGE_EDIT_BTN_CLICKED_EVENT);
 
   if (isNavLink) {
     return (

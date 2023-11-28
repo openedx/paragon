@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Hyperlink } from '~paragon-react';
-import { COMPONENT_USAGE_LINK_CLICKED, sendUserAnalyticsEvent } from '../../../segment-events';
+import { USAGE_INSIGHTS_EVENTS, sendUserAnalyticsEvent } from '../../../segment-events';
 
 type UsagesType = {
   filePath: string,
@@ -22,7 +22,7 @@ export default function UsagesList({
   projectName,
 } : UsagesListPropTypes) {
   const handleUsageLinkClick = (linkToUsage) => {
-    sendUserAnalyticsEvent(COMPONENT_USAGE_LINK_CLICKED, {
+    sendUserAnalyticsEvent(USAGE_INSIGHTS_EVENTS.CLICKED.COMPONENT_LINK, {
       project: projectName, component: componentName, linkToUsage,
     });
   };

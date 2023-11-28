@@ -14,7 +14,7 @@ import localforage from 'localforage';
 import SEO from '../components/SEO';
 import { SiteTitle } from '../components/header';
 import { storageKey } from '../../playroom/constants';
-import { PLAYGROUND_URL_COPIED, sendUserAnalyticsEvent } from '../../segment-events';
+import { PLAYGROUND_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
 
 const FEEDBACK_URL = 'https://github.com/openedx/paragon/issues/new?assignees=&labels=playground&template=feedback_template.md&title=[Playground]';
 
@@ -74,7 +74,7 @@ export default function Playground({ location }) {
             onClick={() => {
               setCopyUrlState('copied');
               navigator.clipboard.writeText(location.href);
-              sendUserAnalyticsEvent(PLAYGROUND_URL_COPIED);
+              sendUserAnalyticsEvent(PLAYGROUND_EVENTS.URL_COPIED);
             }}
             labels={{
               default: 'Copy URL',
