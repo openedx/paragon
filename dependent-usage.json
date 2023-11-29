@@ -1,5 +1,5 @@
 {
-  "lastModified": 1701180508245,
+  "lastModified": 1701266923998,
   "projectUsages": [
     {
       "version": "12.8.0",
@@ -5625,9 +5625,27 @@
           },
           {
             "filePath": "src/components/learner-credit-management/BudgetAssignmentsTable.jsx",
-            "line": 45,
+            "line": 33,
+            "column": 10,
+            "index": 1247
+          },
+          {
+            "filePath": "src/components/learner-credit-management/BudgetAssignmentsTable.jsx",
+            "line": 34,
+            "column": 8,
+            "index": 1289
+          },
+          {
+            "filePath": "src/components/learner-credit-management/BudgetAssignmentsTable.jsx",
+            "line": 52,
             "column": 4,
-            "index": 1586
+            "index": 1735
+          },
+          {
+            "filePath": "src/components/learner-credit-management/BudgetAssignmentsTable.jsx",
+            "line": 64,
+            "column": 32,
+            "index": 2080
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAllocationTable.jsx",
@@ -12414,13 +12432,13 @@
             "filePath": "src/files-and-videos/files-page/FilesPage.jsx",
             "line": 172,
             "column": 6,
-            "index": 5137
+            "index": 5118
           },
           {
             "filePath": "src/files-and-videos/videos-page/VideosPage.jsx",
             "line": 186,
             "column": 6,
-            "index": 5718
+            "index": 5636
           },
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
@@ -12495,6 +12513,12 @@
             "line": 137,
             "column": 20,
             "index": 5172
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/table-custom-columns/TranscriptColumn.jsx",
+            "line": 16,
+            "column": 19,
+            "index": 695
           },
           {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
@@ -13128,7 +13152,7 @@
             "filePath": "src/files-and-videos/videos-page/VideosPage.jsx",
             "line": 200,
             "column": 12,
-            "index": 6220
+            "index": 6138
           },
           {
             "filePath": "src/files-and-videos/videos-page/VideoThumbnail.jsx",
@@ -13616,7 +13640,7 @@
             "filePath": "src/files-and-videos/videos-page/VideosPage.jsx",
             "line": 194,
             "column": 8,
-            "index": 6022
+            "index": 5940
           },
           {
             "filePath": "src/generic/create-or-rerun-course/CreateOrRerunCourseForm.jsx",
@@ -13911,6 +13935,12 @@
             "index": 635
           },
           {
+            "filePath": "src/files-and-videos/generic/InfoModal.jsx",
+            "line": 63,
+            "column": 16,
+            "index": 1658
+          },
+          {
             "filePath": "src/files-and-videos/generic/table-components/GalleryCard.jsx",
             "line": 78,
             "column": 45,
@@ -13939,6 +13969,12 @@
             "line": 41,
             "column": 16,
             "index": 793
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/table-custom-columns/TranscriptColumn.jsx",
+            "line": 16,
+            "column": 8,
+            "index": 684
           },
           {
             "filePath": "src/files-and-videos/generic/UsageMetricsMessage.jsx",
@@ -14171,6 +14207,12 @@
             "index": 538
           },
           {
+            "filePath": "src/files-and-videos/generic/InfoModal.jsx",
+            "line": 63,
+            "column": 27,
+            "index": 1669
+          },
+          {
             "filePath": "src/generic/modal-error/ModalError.jsx",
             "line": 13,
             "column": 10,
@@ -14272,7 +14314,7 @@
             "filePath": "src/files-and-videos/videos-page/VideosPage.jsx",
             "line": 53,
             "column": 86,
-            "index": 1450
+            "index": 1436
           }
         ],
         "Card": [
@@ -14760,7 +14802,7 @@
             "filePath": "src/files-and-videos/videos-page/VideosPage.jsx",
             "line": 198,
             "column": 10,
-            "index": 6147
+            "index": 6065
           },
           {
             "filePath": "src/schedule-and-details/license-section/license-commons-options/index.jsx",
@@ -15834,9 +15876,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/InfoModal.jsx",
-            "line": 49,
-            "column": 10,
-            "index": 1117
+            "line": 72,
+            "column": 12,
+            "index": 2010
           },
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/InfoTab.jsx",
@@ -16484,9 +16526,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/InfoModal.jsx",
-            "line": 27,
-            "column": 2,
-            "index": 475
+            "line": 39,
+            "column": 4,
+            "index": 911
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
@@ -16534,9 +16576,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/InfoModal.jsx",
-            "line": 36,
-            "column": 4,
-            "index": 670
+            "line": 48,
+            "column": 6,
+            "index": 1124
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
@@ -16584,9 +16626,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/InfoModal.jsx",
-            "line": 37,
-            "column": 6,
-            "index": 697
+            "line": 49,
+            "column": 8,
+            "index": 1153
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
@@ -16634,9 +16676,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/InfoModal.jsx",
-            "line": 45,
-            "column": 4,
-            "index": 964
+            "line": 57,
+            "column": 6,
+            "index": 1436
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
@@ -16724,9 +16766,9 @@
           },
           {
             "filePath": "src/files-and-videos/generic/InfoModal.jsx",
-            "line": 39,
-            "column": 10,
-            "index": 777
+            "line": 51,
+            "column": 12,
+            "index": 1237
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/GalleryCard.jsx",
@@ -17700,9 +17742,9 @@
         "Tabs": [
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/VideoInfoModalSidebar.jsx",
-            "line": 17,
+            "line": 20,
             "column": 2,
-            "index": 367
+            "index": 461
           },
           {
             "filePath": "src/studio-home/tabs-section/index.jsx",
@@ -17714,15 +17756,15 @@
         "Tab": [
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/VideoInfoModalSidebar.jsx",
-            "line": 18,
+            "line": 25,
             "column": 4,
-            "index": 378
+            "index": 580
           },
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/VideoInfoModalSidebar.jsx",
-            "line": 21,
+            "line": 28,
             "column": 4,
-            "index": 502
+            "index": 704
           },
           {
             "filePath": "src/studio-home/tabs-section/index.jsx",
@@ -42460,15 +42502,15 @@
           },
           {
             "filePath": "src/packages/search-page/components/CourseRecommendations/PostQuery/index.jsx",
-            "line": 51,
+            "line": 49,
             "column": 6,
-            "index": 1836
+            "index": 1706
           },
           {
             "filePath": "src/packages/search-page/components/HeaderSection.jsx",
-            "line": 141,
+            "line": 140,
             "column": 4,
-            "index": 5105
+            "index": 5084
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/PopularSearchLinks/index.jsx",
@@ -42484,9 +42526,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 83,
+            "line": 81,
             "column": 4,
-            "index": 2790
+            "index": 2660
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/index.jsx",
@@ -42496,15 +42538,15 @@
           },
           {
             "filePath": "src/packages/search-page/components/Results/FirstLevelResult.jsx",
-            "line": 53,
+            "line": 52,
             "column": 4,
-            "index": 1539
+            "index": 1410
           },
           {
             "filePath": "src/packages/search-page/components/Results/SecondLevelResult.jsx",
-            "line": 45,
+            "line": 44,
             "column": 4,
-            "index": 1461
+            "index": 1368
           },
           {
             "filePath": "src/packages/search-page/components/SearchBreadcrumb/index.jsx",
@@ -42514,9 +42556,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/SearchPage/index.jsx",
-            "line": 542,
+            "line": 537,
             "column": 10,
-            "index": 20317
+            "index": 20186
           },
           {
             "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
@@ -43200,15 +43242,15 @@
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 246,
+            "line": 239,
             "column": 22,
-            "index": 6875
+            "index": 6626
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 247,
+            "line": 240,
             "column": 23,
-            "index": 6988
+            "index": 6739
           },
           {
             "filePath": "src/packages/search-page/components/SearchBreadcrumb/index.jsx",
@@ -43632,15 +43674,15 @@
           },
           {
             "filePath": "src/packages/search-page/components/AutoComplete/components/ManagedAutoComplete/index.jsx",
-            "line": 361,
+            "line": 359,
             "column": 14,
-            "index": 12383
+            "index": 12321
           },
           {
             "filePath": "src/packages/search-page/components/HeaderSection.jsx",
-            "line": 149,
+            "line": 148,
             "column": 6,
-            "index": 5437
+            "index": 5416
           },
           {
             "filePath": "src/packages/search-page/components/PreQueryPage/components/PopularSearchLinks/index.jsx",
@@ -43650,15 +43692,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/ClearRefinements/index.jsx",
-            "line": 44,
+            "line": 41,
             "column": 4,
-            "index": 1371
-          },
-          {
-            "filePath": "src/packages/search-page/components/RefinementFilters/components/MobileFilterMenu/index.jsx",
-            "line": 140,
-            "column": 22,
-            "index": 4957
+            "index": 1245
           },
           {
             "filePath": "src/packages/search-page/components/SkillsBuilderCTA/index.jsx",
@@ -43777,12 +43813,6 @@
             "line": 150,
             "column": 42,
             "index": 9442
-          },
-          {
-            "filePath": "src/packages/search-page/components/RefinementFilters/components/MobileFilterMenu/index.jsx",
-            "line": 125,
-            "column": 24,
-            "index": 4312
           }
         ],
         "ArrowBack": [
@@ -43892,9 +43922,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/HeaderSection.jsx",
-            "line": 149,
+            "line": 148,
             "column": 84,
-            "index": 5515
+            "index": 5494
           }
         ],
         "Form.Checkbox": [
@@ -44160,9 +44190,9 @@
         "SearchField.Advanced": [
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 101,
+            "line": 99,
             "column": 6,
-            "index": 3302
+            "index": 3185
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
@@ -44178,17 +44208,17 @@
           },
           {
             "filePath": "src/packages/search-page/components/SearchBox/index.jsx",
-            "line": 115,
+            "line": 105,
             "column": 10,
-            "index": 3831
+            "index": 3335
           }
         ],
         "SearchField.Input": [
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 118,
+            "line": 116,
             "column": 10,
-            "index": 4118
+            "index": 4001
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
@@ -44204,49 +44234,23 @@
           },
           {
             "filePath": "src/packages/search-page/components/SearchBox/index.jsx",
-            "line": 136,
+            "line": 123,
             "column": 14,
-            "index": 4540
-          }
-        ],
-        "SearchField.ClearButton": [
-          {
-            "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 129,
-            "column": 35,
-            "index": 4558
-          },
-          {
-            "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
-            "line": 86,
-            "column": 12,
-            "index": 3078
-          },
-          {
-            "filePath": "src/packages/search-page/components/PreQueryPage/components/SearchBox/index.jsx",
-            "line": 103,
-            "column": 14,
-            "index": 3592
-          },
-          {
-            "filePath": "src/packages/search-page/components/SearchBox/index.jsx",
-            "line": 147,
-            "column": 39,
-            "index": 5071
+            "index": 3965
           }
         ],
         "SearchField.SubmitButton": [
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 131,
+            "line": 128,
             "column": 12,
-            "index": 4631
+            "index": 4450
           },
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 139,
+            "line": 136,
             "column": 10,
-            "index": 4842
+            "index": 4661
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
@@ -44262,9 +44266,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/SearchBox/index.jsx",
-            "line": 149,
+            "line": 135,
             "column": 12,
-            "index": 5131
+            "index": 4488
           }
         ],
         "IconButton": [
@@ -44403,12 +44407,6 @@
             "line": 121,
             "column": 16,
             "index": 3836
-          },
-          {
-            "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 279,
-            "column": 35,
-            "index": 8524
           }
         ],
         "ChevronLeft": [
@@ -44512,9 +44510,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 268,
+            "line": 261,
             "column": 22,
-            "index": 7855
+            "index": 7599
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
@@ -44546,9 +44544,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/MobileFilterMenu/index.jsx",
-            "line": 93,
+            "line": 76,
             "column": 10,
-            "index": 3148
+            "index": 2619
           }
         ],
         "Recommend": [
@@ -45129,6 +45127,20 @@
             "line": 221,
             "column": 20,
             "index": 7797
+          }
+        ],
+        "SearchField.ClearButton": [
+          {
+            "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
+            "line": 86,
+            "column": 12,
+            "index": 3078
+          },
+          {
+            "filePath": "src/packages/search-page/components/PreQueryPage/components/SearchBox/index.jsx",
+            "line": 103,
+            "column": 14,
+            "index": 3592
           }
         ],
         "useWindowSize": [
@@ -45846,9 +45858,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 90,
+            "line": 88,
             "column": 8,
-            "index": 2971
+            "index": 2829
           }
         ],
         "Warning": [
@@ -46104,9 +46116,9 @@
           },
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 90,
+            "line": 88,
             "column": 39,
-            "index": 3002
+            "index": 2860
           }
         ],
         "Calendar": [
@@ -46178,53 +46190,53 @@
         "Alert.Heading": [
           {
             "filePath": "src/packages/search-page/components/QuizMatchRecommendations/index.jsx",
-            "line": 91,
+            "line": 89,
             "column": 10,
-            "index": 3043
+            "index": 2901
           }
         ],
         "Chip": [
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/CurrentRefinements/index.jsx",
-            "line": 28,
+            "line": 27,
             "column": 6,
-            "index": 1241
+            "index": 1154
           }
         ],
         "CloseSmall": [
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/CurrentRefinements/index.jsx",
-            "line": 154,
+            "line": 148,
             "column": 25,
-            "index": 5333
+            "index": 5015
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/CurrentRefinements/index.jsx",
-            "line": 181,
+            "line": 174,
             "column": 25,
-            "index": 6387
+            "index": 5959
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/CurrentRefinements/index.jsx",
-            "line": 204,
+            "line": 196,
             "column": 27,
-            "index": 7555
+            "index": 7059
           }
         ],
         "Menu": [
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 262,
+            "line": 255,
             "column": 10,
-            "index": 7513
+            "index": 7264
           }
         ],
         "MenuItem": [
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
-            "line": 264,
+            "line": 257,
             "column": 16,
-            "index": 7612
+            "index": 7356
           }
         ],
         "Tabs": [
