@@ -32,13 +32,13 @@ describe('<RowStatus />', () => {
   it('displays the row status with pagination', () => {
     const pageSize = 10;
     const { getByText } = render(<RowStatusWrapper value={{ ...instance, page: Array(pageSize) }} />);
-    const statusText = getByText(`Showing ${pageSize} of ${instance.itemCount}.`);
+    const statusText = getByText(`Showing 1 - ${pageSize} of ${instance.itemCount}.`);
     expect(statusText).toBeInTheDocument();
   });
   it('displays the row status without pagination', () => {
     const pageSize = 10;
     const { getByText } = render(<RowStatusWrapper value={{ ...instance, rows: Array(pageSize) }} />);
-    const statusText = getByText(`Showing ${pageSize} of ${instance.itemCount}.`);
+    const statusText = getByText(`Showing 1 - ${pageSize} of ${instance.itemCount}.`);
     expect(statusText).toBeInTheDocument();
   });
   it('sets class names on the parent', () => {
