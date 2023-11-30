@@ -43,6 +43,7 @@ async function createPages(graphql, actions, reporter) {
   // console.log('components', components);
   const themesSCSSVariables = await getThemesSCSSVariables();
   const actionRowNodes = [];
+
   // you'll call `createPage` for each result
   // eslint-disable-next-line no-restricted-syntax
   for (const { node } of components) {
@@ -55,10 +56,11 @@ async function createPages(graphql, actions, reporter) {
       // eslint-disable-next-line no-await-in-loop
       scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
     }
-    console.log('componentDir', componentDir);
+    // console.log('node.fields.slug', node.fields.slug);
     if (node.slug.split('/')[1] !== 'README') {
       actionRowNodes.push(node.slug);
     }
+    // console.log('componentDir', componentDir);
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
@@ -75,9 +77,10 @@ async function createPages(graphql, actions, reporter) {
         githubEditPath,
         mdFiles: actionRowNodes.filter(item => {
           // console.log('componentDir', componentDir);
-          // console.log('item.includes(componentDir)', item.includes(componentDir));
+          // console.log('item', item);
           return item.includes(componentDir);
         }),
+        // mdFiles: [`${componentDir}/accessibility-guidelines`, `${componentDir}/testing-guidelines`, `${componentDir}/design-guidelines`],
       },
     });
   }

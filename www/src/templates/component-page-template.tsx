@@ -69,7 +69,7 @@ export default function PageTemplate({
   const { settings } = useContext(SettingsContext);
   const { theme } = settings;
   const scssVariables = scssVariablesData[theme!] || scssVariablesData[DEFAULT_THEME!];
-  console.log('mdFiles', mdFiles);
+  console.log('mdx', mdx);
   // console.log('location', location);
 
   const components = componentNodes.nodes
@@ -135,12 +135,12 @@ export default function PageTemplate({
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
-
+  // console.log('mdFiles', mdFiles);
   const handleOnSelect = (value: string) => {
     if (mdFiles.some((item) => item.includes(value))) {
       return navigate(value);
     }
-    return navigate(-1);
+    return navigate(`/components/${mdx.frontmatter.title.trim().toLowerCase()}/`);
   };
 
   return (
