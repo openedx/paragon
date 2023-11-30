@@ -61,7 +61,9 @@ export type ShortCodesTypes = {
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
-  pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath, mdFiles },
+  pageContext: {
+    scssVariablesData, componentsUsageInsights, githubEditPath, markdownFiles, componentUrl,
+  },
 }: IPageTemplate) {
   const location = useLocation();
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
@@ -69,7 +71,8 @@ export default function PageTemplate({
   const { settings } = useContext(SettingsContext);
   const { theme } = settings;
   const scssVariables = scssVariablesData[theme!] || scssVariablesData[DEFAULT_THEME!];
-  console.log('mdx', mdx);
+
+  // console.log('componentUrl', componentUrl);
   // console.log('location', location);
 
   const components = componentNodes.nodes
@@ -135,12 +138,19 @@ export default function PageTemplate({
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
-  // console.log('mdFiles', mdFiles);
+  // console.log('currentTab', currentTab);
   const handleOnSelect = (value: string) => {
-    if (mdFiles.some((item) => item.includes(value))) {
-      return navigate(value);
+    const isCurrentTab = (value === mdx.frontmatter.tabName);
+
+    if (!isCurrentTab) {
+      if (markdownFiles.some((item: string | string[]) => item.includes(value))) {
+        return navigate(value);
+      }
+
+      return navigate(`${componentUrl.split('/').slice(0, -2).join('/')}/`);
     }
-    return navigate(`/components/${mdx.frontmatter.title.trim().toLowerCase()}/`);
+
+    return null;
   };
 
   return (
@@ -227,7 +237,7 @@ export default function PageTemplate({
               )}
             </div>
           </Tab>
-          {mdFiles.map((tabTitle) => {
+          {markdownFiles.map((tabTitle) => {
             const updatedString = tabTitle.split('/')[1]
               .split('-')
               .map((title, i) => (i === 0 ? title.charAt(0).toUpperCase() + title.slice(1) : title))

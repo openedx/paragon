@@ -6,6 +6,7 @@ components:
 - Spinner
 categories:
 - Status & metadata
+tabName: 'implementation'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |

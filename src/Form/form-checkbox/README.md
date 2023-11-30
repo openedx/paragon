@@ -7,6 +7,7 @@ components:
 - FormCheckboxSet
 categories:
 - Forms
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

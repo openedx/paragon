@@ -14,6 +14,7 @@ components:
 - CardView
 categories:
 - Table
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'

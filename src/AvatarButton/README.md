@@ -4,6 +4,7 @@ components:
 - AvatarButton
 categories:
 - Buttonlike
+tabName: 'implementation'
 type: 'component'
 status: 'New'
 designStatus: 'Done'

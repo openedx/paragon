@@ -5,6 +5,7 @@ components:
 - OverflowScroll
 categories:
 - Content
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

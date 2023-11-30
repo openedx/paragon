@@ -5,6 +5,7 @@ components:
 - TransitionReplace
 categories:
 - Choreography
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

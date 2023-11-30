@@ -6,6 +6,7 @@ components:
 - PaginationReduced
 categories:
 - Navigation
+tabName: 'implementation'
 status: 'Needs Work'
 designStatus: 'Done'
 devStatus: 'To Do'

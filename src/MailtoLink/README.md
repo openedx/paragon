@@ -5,6 +5,7 @@ components:
 - MailtoLink
 categories:
 - Buttonlike
+tabName: 'implementation'
 status: 'Needs Work'
 designStatus: 'Done'
 devStatus: 'To Do'

@@ -5,6 +5,7 @@ categories:
 - Hooks
 components:
 - useIsVisible
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

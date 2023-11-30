@@ -5,6 +5,7 @@ categories:
 - Imagery & Iconography
 components:
 - Image
+tabName: 'design-guidelines'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

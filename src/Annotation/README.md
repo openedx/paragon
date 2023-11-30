@@ -5,6 +5,7 @@ components:
 - Annotation
 categories:
 - Status & metadata
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'

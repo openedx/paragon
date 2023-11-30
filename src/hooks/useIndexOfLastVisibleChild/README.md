@@ -5,6 +5,7 @@ categories:
 - Hooks
 components:
 - useIndexOfLastVisibleChild
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

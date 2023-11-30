@@ -9,6 +9,7 @@ components:
 - CollapsibleVisible
 categories:
 - Content
+tabName: 'implementation'
 status: "Stable"
 designStatus: "Needs Review"
 devStatus: "Done"

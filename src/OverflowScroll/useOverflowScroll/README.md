@@ -3,6 +3,7 @@ title: 'useOverflowScroll'
 type: 'hook'
 categories:
 - Hooks
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

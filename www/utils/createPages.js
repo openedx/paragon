@@ -60,7 +60,7 @@ async function createPages(graphql, actions, reporter) {
     if (node.slug.split('/')[1] !== 'README') {
       actionRowNodes.push(node.slug);
     }
-    // console.log('componentDir', componentDir);
+    // console.log('node.fields.slug', node.fields.slug);
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
@@ -75,11 +75,13 @@ async function createPages(graphql, actions, reporter) {
         scssVariablesData,
         componentsUsageInsights: Object.keys(componentsUsage),
         githubEditPath,
-        mdFiles: actionRowNodes.filter(item => {
-          // console.log('componentDir', componentDir);
-          // console.log('item', item);
-          return item.includes(componentDir);
-        }),
+        // mdFiles: actionRowNodes.filter(item => {
+        //   // console.log('componentDir', componentDir);
+        //   // console.log('item', item);
+        //   return item.includes(componentDir);
+        // }),
+        componentUrl: node.fields.slug,
+        markdownFiles: [`${componentDir}/design-guidelines`],
         // mdFiles: [`${componentDir}/accessibility-guidelines`, `${componentDir}/testing-guidelines`, `${componentDir}/design-guidelines`],
       },
     });

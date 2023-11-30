@@ -1,5 +1,5 @@
 ---
-title: 'Form'
+title: 'ButtonGroup'
 type: 'component'
 categories:
 - Imagery & Iconography
@@ -13,7 +13,7 @@ notes: |
 
 ---
 
-<p>We are excited to announce upcoming improvements to the Design Guidelines section for the <strong>Form</strong> component.
+<p>We are excited to announce upcoming improvements to the Design Guidelines section for the <strong>ButtonGroup</strong> component.
 These updates aim to enhance the ease and effectiveness of utilizing the component in your projects.
 Please review the preliminary list of changes that will soon be available:</p>
 
@@ -31,4 +31,4 @@ Please review the preliminary list of changes that will soon be available:</p>
   <li><strong>Extra Resources:</strong> Delivering supplementary resources such as graphics, templates, and guides to facilitate the integration process.</li>
 </ol>
 
-<p>Stay tuned for updates, as we strive to make the use of <strong>Form</strong> even more convenient and productive! If you have specific requests or suggestions, feel free to share them with us.</p>
+<p>Stay tuned for updates, as we strive to make the use of <strong>ButtonGroup</strong> even more convenient and productive! If you have specific requests or suggestions, feel free to share them with us.</p>

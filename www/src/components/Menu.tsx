@@ -29,6 +29,7 @@ const menuQuery = graphql`
           internal: { owner: { nin: "gatsby-transformer-react-docgen" } }
         }
         frontmatter: { type: {} }
+        fields: { slug: { regex: "/^((?!guidelines).)*$/" } }
       }
       sort: { fields: frontmatter___title }
     ) {

@@ -10,6 +10,7 @@ components:
 - SearchFieldSubmitButton
 categories:
 - Forms
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Needs Review'
 devStatus: 'Done'

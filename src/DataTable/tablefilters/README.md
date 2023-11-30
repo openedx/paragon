@@ -8,6 +8,7 @@ components:
 - MultiSelectDropdownFilter
 categories:
 - Table
+tabName: 'implementation'
 status: 'New'
 designStatus: 'In progress'
 devStatus: 'In progress'

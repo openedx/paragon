@@ -5,6 +5,7 @@ categories:
 - Forms
 components:
 - InputGroup
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

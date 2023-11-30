@@ -8,6 +8,7 @@ components:
 - NavDropdown
 categories:
 - Navigation
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

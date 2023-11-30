@@ -5,6 +5,7 @@ categories:
 - Hooks
 components:
 - useWindowSize
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

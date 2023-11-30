@@ -5,6 +5,7 @@ components:
 - FormControlFeedback
 categories:
 - Forms
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

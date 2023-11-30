@@ -5,6 +5,7 @@ components:
 - StatusAlert
 categories:
 - Status & metadata
+tabName: 'implementation'
 status: 'Deprecate Soon'
 designStatus: 'Done'
 devStatus: 'Done'

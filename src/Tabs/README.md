@@ -6,6 +6,7 @@ components:
 - Tab
 categories:
 - Navigation
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'TO DO'
