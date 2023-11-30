@@ -40,9 +40,9 @@ async function createPages(graphql, actions, reporter) {
   }
   // Create component detail pages.
   const components = result.data.allMdx.edges;
-
+  // console.log('components', components);
   const themesSCSSVariables = await getThemesSCSSVariables();
-
+  const actionRowNodes = [];
   // you'll call `createPage` for each result
   // eslint-disable-next-line no-restricted-syntax
   for (const { node } of components) {
@@ -55,7 +55,10 @@ async function createPages(graphql, actions, reporter) {
       // eslint-disable-next-line no-await-in-loop
       scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
     }
-
+    console.log('componentDir', componentDir);
+    if (node.slug.split('/')[1] !== 'README') {
+      actionRowNodes.push(node.slug);
+    }
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
@@ -70,6 +73,11 @@ async function createPages(graphql, actions, reporter) {
         scssVariablesData,
         componentsUsageInsights: Object.keys(componentsUsage),
         githubEditPath,
+        mdFiles: actionRowNodes.filter(item => {
+          // console.log('componentDir', componentDir);
+          // console.log('item.includes(componentDir)', item.includes(componentDir));
+          return item.includes(componentDir);
+        }),
       },
     });
   }

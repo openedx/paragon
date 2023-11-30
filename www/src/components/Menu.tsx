@@ -285,14 +285,16 @@ function Menu() {
               key={fieldValue}
               styling="basic"
               title={fieldValue}
-              defaultOpen={nodes.some(({ fields }) => fields.slug === pathname)}
+              defaultOpen={nodes.some(({
+                fields,
+              }) => fields.slug === pathname.replace('/design-guidelines', '/'))}
             >
               <ul className="list-unstyled">
                 {nodes.map((node) => (
                   <ComponentNavItem
                     key={node.id}
                     {...node}
-                    isActive={pathname === node.fields.slug}
+                    isActive={pathname.replace('/design-guidelines', '/') === node.fields.slug}
                   />
                 ))}
               </ul>

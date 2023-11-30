@@ -1,6 +1,7 @@
 ---
 title: 'Image'
 type: 'component'
+test: 'Design123'
 categories:
 - Imagery & Iconography
 components:

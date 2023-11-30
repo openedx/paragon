@@ -6,6 +6,7 @@ components:
 - ActionRowSpacer
 categories:
 - Buttonlike
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
