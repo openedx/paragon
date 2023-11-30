@@ -27,20 +27,17 @@ export const SETTINGS_EVENTS = {
   CHANGED: 'openedx.paragon.docs.setting.changed',
 };
 
-export const EXAMPLE_CODE_BLOCK_EVENTS = {
-  WITH_HEADING: {
-    CLOSED: 'openedx.paragon.docs.example-code-block.closed',
-    OPENED: 'openedx.paragon.docs.example-code-block.opened',
-  },
-  WITHOUT_HEADING: {
-    CLOSED: 'openedx.paragon.docs.example-code-block.without-heading.closed',
-    OPENED: 'openedx.paragon.docs.example-code-block.without-heading.opened',
-  },
+export const EXAMPLE_CODE_BLOCK_WITH_HEADING_EVENTS = {
+  CLOSED: 'openedx.paragon.docs.example-code-block.closed',
+  OPENED: 'openedx.paragon.docs.example-code-block.opened',
+};
+
+export const EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_EVENTS = {
+  CLOSED: 'openedx.paragon.docs.example-code-block.without-heading.closed',
+  OPENED: 'openedx.paragon.docs.example-code-block.without-heading.opened',
 };
 
 export const USAGE_INSIGHTS_EVENTS = {
-  CLICKED: {
-    TAB: 'openedx.paragon.docs.usage-insights.tab.clicked',
-    COMPONENT_LINK: 'openedx.paragon.docs.usage-insights.component-usage-link.clicked',
-  },
+  TAB_CLICKED: 'openedx.paragon.docs.usage-insights.tab.clicked',
+  COMPONENT_LINK_CLICKED: 'openedx.paragon.docs.usage-insights.component-usage-link.clicked',
 };

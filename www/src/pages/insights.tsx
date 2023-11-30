@@ -64,7 +64,7 @@ export default function InsightsPage({ pageContext: { tab, githubEditPath } }: I
 
   const handleOnSelect = (value: string) => {
     if (value !== tab) {
-      sendUserAnalyticsEvent(USAGE_INSIGHTS_EVENTS.CLICKED.TAB, { tabName: value });
+      sendUserAnalyticsEvent(USAGE_INSIGHTS_EVENTS.TAB_CLICKED, { tabName: value });
       navigate(INSIGHTS_PAGES.find(item => item.tab === value).path);
     }
   };

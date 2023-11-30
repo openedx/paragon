@@ -22,7 +22,7 @@ export default function UsagesList({
   projectName,
 } : UsagesListPropTypes) {
   const handleUsageLinkClick = (linkToUsage) => {
-    sendUserAnalyticsEvent(USAGE_INSIGHTS_EVENTS.CLICKED.COMPONENT_LINK, {
+    sendUserAnalyticsEvent(USAGE_INSIGHTS_EVENTS.COMPONENT_LINK_CLICKED, {
       project: projectName, component: componentName, linkToUsage,
     });
   };
