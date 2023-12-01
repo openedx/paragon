@@ -44,7 +44,7 @@ const CardImageWithSkeleton = memo(({
       />
       <img
         className={classNames(className, { show: !showSkeleton })}
-        src={loadedImage[src] ? loadedImage[src].src : src}
+        src={loadedImage[src]?.src}
         onLoad={() => setShowSkeleton(false)}
         alt={alt}
         loading={imageLoadingType}
