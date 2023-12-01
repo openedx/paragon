@@ -1,5 +1,6 @@
-/* eslint-disable @typescript-eslint/no-shadow */
-import { useState, useEffect } from 'react';
+import {
+  useState, useEffect, useRef, RefObject,
+} from 'react';
 import cardSrcFallbackImg from '../fallback-default.png';
 
 interface ImageLoaderProps {
@@ -8,69 +9,78 @@ interface ImageLoaderProps {
   useDefaultSrc?: boolean;
 }
 
-interface LoadedImage {
-  [key: string]: HTMLImageElement;
-}
-
 interface UseImageLoaderResult {
-  loadedImage: LoadedImage;
+  ref: RefObject<HTMLImageElement>;
+  loadedImage: string | null;
   isSrcLoading: boolean;
 }
 
-const useImageLoader = ({ mainSrc, fallback, useDefaultSrc = false }: ImageLoaderProps): UseImageLoaderResult => {
-  const [loadedImage, setLoadedImage] = useState<LoadedImage>({});
+const useImageLoader = ({
+  mainSrc,
+  fallback,
+  useDefaultSrc = false,
+}: ImageLoaderProps): UseImageLoaderResult => {
+  const ref = useRef<HTMLImageElement>(null);
+  const [loadedImage, setLoadedImage] = useState<string | null>(null);
   const [isSrcLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (!mainSrc || !fallback) {
+    if (!mainSrc || !fallback || !ref.current) {
       return;
     }
+    const img = ref.current;
 
-    const loadImageWithRetry = async (src: string): Promise<LoadedImage> => {
-      const img = new Image();
-      await new Promise((resolve, reject) => {
-        img.onload = resolve;
-        img.onerror = reject;
+    const loadImageWithRetry = async (src: string): Promise<void> => {
+      await new Promise<void>((resolve, reject) => {
+        img.onload = () => resolve();
+        img.onerror = () => reject(new Error(`Failed to load image: ${src}`));
         img.src = src;
       });
-      return { [mainSrc]: img };
     };
 
-    const loadImage = async (): Promise<LoadedImage> => {
-      let objWithImage: LoadedImage = {};
+    const loadImage = async (): Promise<string | null> => {
+      let imageSrc: string | null = null;
+      const sources = [mainSrc];
 
-      try {
-        objWithImage = await loadImageWithRetry(mainSrc);
-      } catch (error) {
-        if (fallback) {
-          try {
-            objWithImage = await loadImageWithRetry(fallback);
-          } catch (error) {
-            if (useDefaultSrc) {
-              const defaultImage = new Image();
-              defaultImage.src = cardSrcFallbackImg;
-              objWithImage = { [mainSrc]: defaultImage };
-            }
-          }
+      if (fallback) {
+        sources.push(fallback);
+      }
+
+      // Add default image source if useDefaultSrc is true
+      if (useDefaultSrc) {
+        sources.push(cardSrcFallbackImg);
+      }
+
+      // eslint-disable-next-line no-restricted-syntax
+      for (const src of sources) {
+        if (!src) {
+          // eslint-disable-next-line no-continue
+          continue;
+        }
+
+        try {
+          // eslint-disable-next-line no-await-in-loop
+          await loadImageWithRetry(src);
+          imageSrc = src;
+          break;
+        } catch (error) {
+          // Continue to the next source if loading fails
         }
       }
 
-      return objWithImage;
+      return imageSrc;
     };
 
-    const loadAllImages = async (): Promise<void> => {
-      try {
-        const loadedImageObject = await loadImage();
-        setLoadedImage(loadedImageObject);
-      } finally {
-        setIsLoading(false);
-      }
+    const loadImages = async (): Promise<void> => {
+      const imageSrc = await loadImage();
+      setLoadedImage(imageSrc);
+      setIsLoading(false);
     };
 
-    loadAllImages();
+    loadImages();
   }, [mainSrc, fallback, useDefaultSrc]);
 
-  return { loadedImage, isSrcLoading };
+  return { ref, loadedImage, isSrcLoading };
 };
 
 export default useImageLoader;
