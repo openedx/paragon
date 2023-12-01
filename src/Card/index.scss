@@ -337,6 +337,7 @@ a.pgn__card {
     }
 
     .pgn__card-image-cap-loader {
+      margin-top: $loading-skeleton-spacer;
       display: none;
 
         &.show {
@@ -345,9 +346,6 @@ a.pgn__card {
         }
 
       .react-loading-skeleton {
-        margin-bottom: -$loading-skeleton-spacer;
-        position: relative;
-        top: -$loading-skeleton-spacer;
         height: 100%;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;

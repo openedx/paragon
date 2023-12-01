@@ -1,15 +1,12 @@
-import React, { useContext, useMemo, memo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 import cardSrcFallbackImg from './fallback-default.png';
 import CardImageWithSkeleton from './CardImageWithSkeleton';
+import { LOGO_SKELETON_HEIGHT_VALUE, SKELETON_HEIGHT_VALUE } from './constants';
 
-const SKELETON_HEIGHT_VALUE = 140;
-const LOGO_SKELETON_HEIGHT_VALUE = 41;
-
-const CardImageCap = memo(React.forwardRef(({
+const CardImageCap = React.forwardRef(({
   src,
   fallbackSrc,
   srcAlt,
@@ -32,28 +29,6 @@ const CardImageCap = memo(React.forwardRef(({
 
   const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
 
-  if (isLoading) {
-    return (
-      <div
-        className={classNames(wrapperClassName, className)}
-        data-testid="image-loader-wrapper"
-      >
-        <Skeleton
-          containerClassName="pgn__card-image-cap-loader"
-          height={imageSkeletonHeight}
-          width={skeletonWidth}
-        />
-        {logoSkeleton && (
-          <Skeleton
-            containerClassName="pgn__card-logo-cap"
-            height={logoSkeletonHeight}
-            width={logoSkeletonWidth}
-          />
-        )}
-      </div>
-    );
-  }
-
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
       {!!src && (
@@ -67,9 +42,10 @@ const CardImageCap = memo(React.forwardRef(({
           skeletonHeight={imageSkeletonHeight}
           imageLoadingType={imageLoadingType}
           skeletonClassName="pgn__card-image-cap-loader"
+          isLoading={isLoading}
         />
       )}
-      {!!logoSrc && (
+      {!!logoSrc && !isLoading && (
         <CardImageWithSkeleton
           src={logoSrc}
           alt={logoAlt}
@@ -84,7 +60,7 @@ const CardImageCap = memo(React.forwardRef(({
       )}
     </div>
   );
-}));
+});
 
 CardImageCap.propTypes = {
   /** Specifies class name to append to the base element. */
@@ -102,9 +78,9 @@ CardImageCap.propTypes = {
   /** Specifies logo image alt text. */
   logoAlt: PropTypes.string,
   /** Specifies height of Image skeleton in loading state. */
-  skeletonHeight: PropTypes.number,
+  skeletonHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /** Specifies width of Image skeleton in loading state. */
-  skeletonWidth: PropTypes.number,
+  skeletonWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /** Specifies whether the cap should be displayed during loading. */
   logoSkeleton: PropTypes.bool,
   /** Specifies height of Logo skeleton in loading state. */
