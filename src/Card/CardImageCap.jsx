@@ -1,15 +1,15 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 import cardSrcFallbackImg from './fallback-default.png';
-import useImagesLoader from './hooks/useImagesLoader';
+import CardImageWithSkeleton from './CardImageWithSkeleton';
 
 const SKELETON_HEIGHT_VALUE = 140;
 const LOGO_SKELETON_HEIGHT_VALUE = 41;
 
-const CardImageCap = React.forwardRef(({
+const CardImageCap = memo(React.forwardRef(({
   src,
   fallbackSrc,
   srcAlt,
@@ -25,15 +25,6 @@ const CardImageCap = React.forwardRef(({
   imageLoadingType,
 }, ref) => {
   const { orientation, isLoading } = useContext(CardContext);
-  const urls = useMemo(() => (
-    [
-      { mainSrc: src, fallback: fallbackSrc, type: 'image' },
-      { mainSrc: logoSrc, fallback: fallbackLogoSrc, type: 'logo' },
-    ]
-      .filter(obj => obj.mainSrc || obj.fallback)
-  ), [src, logoSrc, fallbackSrc, fallbackLogoSrc]);
-
-  const { loadedImages, allLoaded } = useImagesLoader(urls);
 
   const imageSkeletonHeight = useMemo(() => (
     orientation === 'horizontal' ? '100%' : skeletonHeight
@@ -65,42 +56,35 @@ const CardImageCap = React.forwardRef(({
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
-      <div
-        className={classNames('image-loader', className, { show: !allLoaded })}
-        data-testid="image-loader-wrapper"
-      >
-        <Skeleton
-          containerClassName="pgn__card-image-cap-loader"
-          height={imageSkeletonHeight}
-          width={skeletonWidth}
-        />
-        {logoSkeleton && (
-          <Skeleton
-            containerClassName="pgn__card-logo-cap"
-            height={logoSkeletonHeight}
-            width={logoSkeletonWidth}
-          />
-        )}
-      </div>
       {!!src && (
-        <img
-          className={classNames('pgn__card-image-cap', { show: loadedImages[src] || loadedImages[fallbackSrc] })}
+        <CardImageWithSkeleton
           src={src}
           alt={srcAlt}
-          loading={imageLoadingType}
+          fallback={fallbackSrc}
+          className="pgn__card-image-cap"
+          useDefaultSrc
+          skeletonWidth={skeletonWidth}
+          skeletonHeight={imageSkeletonHeight}
+          imageLoadingType={imageLoadingType}
+          skeletonClassName="pgn__card-image-cap-loader"
         />
       )}
       {!!logoSrc && (
-        <img
-          className={classNames('pgn__card-logo-cap', { show: loadedImages[logoSrc] || loadedImages[fallbackLogoSrc] })}
+        <CardImageWithSkeleton
           src={logoSrc}
           alt={logoAlt}
-          loading={imageLoadingType}
+          fallback={fallbackLogoSrc}
+          withSkeleton={logoSkeleton}
+          className="pgn__card-logo-cap"
+          skeletonWidth={logoSkeletonWidth}
+          skeletonHeight={logoSkeletonHeight}
+          imageLoadingType={imageLoadingType}
+          skeletonClassName="pgn__card-logo-cap"
         />
       )}
     </div>
   );
-});
+}));
 
 CardImageCap.propTypes = {
   /** Specifies class name to append to the base element. */

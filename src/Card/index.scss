@@ -306,16 +306,6 @@ a.pgn__card {
   .pgn__card-wrapper-image-cap {
     position: relative;
 
-    .image-loader {
-      display: none;
-
-        &.show {
-          display: block;
-          height: 100%;
-        }
-    }
-
-
     &.horizontal {
       max-width: $card-image-horizontal-max-width;
       min-width: $card-image-horizontal-min-width;
@@ -347,6 +337,13 @@ a.pgn__card {
     }
 
     .pgn__card-image-cap-loader {
+      display: none;
+
+        &.show {
+          display: block;
+          height: 100%;
+        }
+
       .react-loading-skeleton {
         margin-bottom: -$loading-skeleton-spacer;
         position: relative;
@@ -369,9 +366,9 @@ a.pgn__card {
       background-color: $white;
       display: none;
 
-      &.show {
-        display: block;
-      }
+        &.show {
+          display: block;
+        }
     }
   }
 
