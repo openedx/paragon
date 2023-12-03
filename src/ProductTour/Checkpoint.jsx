@@ -98,10 +98,10 @@ const Checkpoint = React.forwardRef(({
     >
       <span className="sr-only">
         <FormattedMessage
-          id="pgn.ProductTour.Checkpoint.position-text"
+          id="pgn.ProductTour.Checkpoint.top-position-text"
           defaultMessage="Top of step {step}"
-          value={{ step: index + 1 }}
-          description="Screen-reader message to indicate the user's position in a sequence of checkpoints."
+          values={{ step: index + 1 }}
+          description="Screen-reader message to notify user that they are located at the bottom of the product tour step."
         />
       </span>
       {(title || !isOnlyCheckpoint) && (
@@ -117,8 +117,14 @@ const Checkpoint = React.forwardRef(({
         {...props}
       />
       <div id="pgn__checkpoint-arrow" data-popper-arrow />
-      {/* This text is not translated due to Paragon's lack of i18n support */}
-      <span className="sr-only">Bottom of step {index + 1}</span>
+      <span className="sr-only">
+        <FormattedMessage
+          id="pgn.ProductTour.Checkpoint.bottom-position-text"
+          defaultMessage="Bottom of step {step}"
+          values={{ step: index + 1 }}
+          description="Screen-reader message to notify user that they are located at the bottom of the product tour step."
+        />
+      </span>
     </div>
   );
 });

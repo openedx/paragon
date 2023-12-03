@@ -114,7 +114,11 @@ ComponentNavItem.propTypes = {
     title: PropTypes.string.isRequired,
     status: PropTypes.string,
   }).isRequired,
-  isActive: PropTypes.bool.isRequired,
+  isActive: PropTypes.bool,
+};
+
+ComponentNavItem.defaultProps = {
+  isActive: false,
 };
 
 export type MenuComponentListTypes = {
