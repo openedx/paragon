@@ -523,6 +523,11 @@ select.form-control {
       background-image: escape-svg($custom-checkbox-indicator-icon-valid-checked);
     }
   }
+
+  &.pgn__form-control-disabled {
+    user-select: none;
+    pointer-events: none;
+  }
 }
 
 .pgn__form-radio {
