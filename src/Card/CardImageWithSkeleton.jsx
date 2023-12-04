@@ -54,7 +54,6 @@ CardImageWithSkeleton.propTypes = {
   skeletonClassName: PropTypes.string,
   imageLoadingType: PropTypes.oneOf(['eager', 'lazy']),
   isLoading: PropTypes.bool,
-  parentRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
 };
 
 CardImageWithSkeleton.defaultProps = {
@@ -66,7 +65,6 @@ CardImageWithSkeleton.defaultProps = {
   skeletonHeight: undefined,
   skeletonWidth: undefined,
   isLoading: false,
-  parentRef: { current: null },
 };
 
 export default CardImageWithSkeleton;

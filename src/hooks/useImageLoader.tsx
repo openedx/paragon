@@ -1,7 +1,7 @@
 import {
   useState, useEffect, useRef, RefObject,
 } from 'react';
-import cardSrcFallbackImg from '../fallback-default.png';
+import cardSrcFallbackImg from '../Card/fallback-default.png';
 
 interface ImageLoaderProps {
   mainSrc: string;
