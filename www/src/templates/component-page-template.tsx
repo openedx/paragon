@@ -3,7 +3,6 @@ import React, {
   useContext, useEffect, useState,
 } from 'react';
 import PropTypes from 'prop-types';
-import { useLocation } from '@reach/router';
 import { graphql, Link, navigate } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -52,6 +51,8 @@ export interface IPageTemplate {
     scssVariablesData: Record<string, string>,
     componentsUsageInsights: string[],
     githubEditPath: string,
+    markdownFiles: string[],
+    componentUrl: string,
   }
 }
 
@@ -65,15 +66,11 @@ export default function PageTemplate({
     scssVariablesData, componentsUsageInsights, githubEditPath, markdownFiles, componentUrl,
   },
 }: IPageTemplate) {
-  const location = useLocation();
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
   const { settings } = useContext(SettingsContext);
   const { theme } = settings;
   const scssVariables = scssVariablesData[theme!] || scssVariablesData[DEFAULT_THEME!];
-
-  // console.log('componentUrl', componentUrl);
-  // console.log('location', location);
 
   const components = componentNodes.nodes
     .reduce((acc: { [x: string]: { displayName: string, props?: [] }; }, currentValue: { displayName: string; }) => {

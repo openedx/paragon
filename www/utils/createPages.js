@@ -42,7 +42,6 @@ async function createPages(graphql, actions, reporter) {
   const components = result.data.allMdx.edges;
   // console.log('components', components);
   const themesSCSSVariables = await getThemesSCSSVariables();
-  const actionRowNodes = [];
 
   // you'll call `createPage` for each result
   // eslint-disable-next-line no-restricted-syntax
@@ -56,11 +55,7 @@ async function createPages(graphql, actions, reporter) {
       // eslint-disable-next-line no-await-in-loop
       scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
     }
-    // console.log('node.fields.slug', node.fields.slug);
-    if (node.slug.split('/')[1] !== 'README') {
-      actionRowNodes.push(node.slug);
-    }
-    // console.log('node.fields.slug', node.fields.slug);
+
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
@@ -75,14 +70,8 @@ async function createPages(graphql, actions, reporter) {
         scssVariablesData,
         componentsUsageInsights: Object.keys(componentsUsage),
         githubEditPath,
-        // mdFiles: actionRowNodes.filter(item => {
-        //   // console.log('componentDir', componentDir);
-        //   // console.log('item', item);
-        //   return item.includes(componentDir);
-        // }),
         componentUrl: node.fields.slug,
         markdownFiles: [`${componentDir}/design-guidelines`],
-        // mdFiles: [`${componentDir}/accessibility-guidelines`, `${componentDir}/testing-guidelines`, `${componentDir}/design-guidelines`],
       },
     });
   }
