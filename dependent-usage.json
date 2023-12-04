@@ -1,5 +1,5 @@
 {
-  "lastModified": 1701612507946,
+  "lastModified": 1701698886984,
   "projectUsages": [
     {
       "version": "12.8.0",
@@ -18796,7 +18796,7 @@
       }
     },
     {
-      "version": "20.44.0",
+      "version": "20.46.3",
       "name": "@edx/frontend-app-discussions",
       "repository": {
         "type": "git",
@@ -19217,13 +19217,13 @@
             "filePath": "src/discussions/post-comments/comments/comment/CommentEditor.jsx",
             "line": 107,
             "column": 8,
-            "index": 3799
+            "index": 3757
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 244,
             "column": 6,
-            "index": 8937
+            "index": 8895
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
@@ -19255,7 +19255,7 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 250,
             "column": 8,
-            "index": 9252
+            "index": 9210
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
@@ -19335,7 +19335,7 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 189,
             "column": 10,
-            "index": 7619
+            "index": 7577
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
@@ -19391,15 +19391,15 @@
           },
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 111,
+            "line": 110,
             "column": 21,
-            "index": 3822
+            "index": 3794
           },
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 116,
+            "line": 115,
             "column": 21,
-            "index": 3958
+            "index": 3930
           },
           {
             "filePath": "src/discussions/discussions-home/DiscussionSidebar.jsx",
@@ -19567,7 +19567,7 @@
             "filePath": "src/discussions/post-comments/comments/comment/CommentEditor.jsx",
             "line": 159,
             "column": 12,
-            "index": 5737
+            "index": 5695
           },
           {
             "filePath": "src/discussions/post-comments/comments/CommentsSort.jsx",
@@ -19615,7 +19615,7 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 450,
             "column": 10,
-            "index": 16792
+            "index": 16750
           },
           {
             "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
@@ -19991,9 +19991,9 @@
           },
           {
             "filePath": "src/discussions/common/AlertBanner.jsx",
-            "line": 44,
+            "line": 43,
             "column": 21,
-            "index": 1520
+            "index": 1422
           },
           {
             "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
@@ -20041,21 +20041,21 @@
           },
           {
             "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 45,
+            "line": 44,
             "column": 71,
-            "index": 2256
+            "index": 2158
+          },
+          {
+            "filePath": "src/discussions/posts/post/Post.jsx",
+            "line": 45,
+            "column": 72,
+            "index": 2248
           },
           {
             "filePath": "src/discussions/posts/post/Post.jsx",
             "line": 46,
-            "column": 72,
-            "index": 2346
-          },
-          {
-            "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 47,
             "column": 62,
-            "index": 2426
+            "index": 2328
           }
         ],
         "MoreHoriz": [
@@ -20123,9 +20123,9 @@
         "Alert": [
           {
             "filePath": "src/discussions/common/AlertBanner.jsx",
-            "line": 44,
+            "line": 43,
             "column": 8,
-            "index": 1507
+            "index": 1409
           },
           {
             "filePath": "src/discussions/common/AlertBar.jsx",
@@ -20243,15 +20243,15 @@
         "breakpoints": [
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 112,
+            "line": 111,
             "column": 29,
-            "index": 3868
+            "index": 3840
           },
           {
             "filePath": "src/discussions/data/hooks.js",
-            "line": 117,
+            "line": 116,
             "column": 29,
-            "index": 4004
+            "index": 3976
           }
         ],
         "PageBanner": [
@@ -20407,43 +20407,43 @@
             "filePath": "src/discussions/post-comments/comments/comment/CommentEditor.jsx",
             "line": 109,
             "column": 12,
-            "index": 3903
+            "index": 3861
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 272,
             "column": 10,
-            "index": 10043
+            "index": 10001
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 334,
             "column": 10,
-            "index": 12637
+            "index": 12595
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 354,
             "column": 10,
-            "index": 13442
+            "index": 13400
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 374,
             "column": 10,
-            "index": 14080
+            "index": 14038
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 419,
             "column": 12,
-            "index": 15769
+            "index": 15727
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 433,
             "column": 12,
-            "index": 16249
+            "index": 16207
           },
           {
             "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
@@ -20457,31 +20457,31 @@
             "filePath": "src/discussions/post-comments/comments/comment/CommentEditor.jsx",
             "line": 115,
             "column": 14,
-            "index": 4076
+            "index": 4034
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 273,
             "column": 12,
-            "index": 10090
+            "index": 10048
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 335,
             "column": 12,
-            "index": 12690
+            "index": 12648
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 361,
             "column": 12,
-            "index": 13628
+            "index": 13586
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 381,
             "column": 12,
-            "index": 14281
+            "index": 14239
           },
           {
             "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
@@ -20495,13 +20495,13 @@
             "filePath": "src/discussions/post-comments/comments/comment/CommentEditor.jsx",
             "line": 165,
             "column": 12,
-            "index": 5944
+            "index": 5902
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 456,
             "column": 10,
-            "index": 16980
+            "index": 16938
           }
         ],
         "Post": [
@@ -20509,7 +20509,7 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 262,
             "column": 18,
-            "index": 9703
+            "index": 9661
           }
         ],
         "Help": [
@@ -20517,7 +20517,7 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 268,
             "column": 18,
-            "index": 9912
+            "index": 9870
           }
         ],
         "Form.Checkbox": [
@@ -20525,13 +20525,13 @@
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 420,
             "column": 14,
-            "index": 15796
+            "index": 15754
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
             "line": 434,
             "column": 14,
-            "index": 16276
+            "index": 16234
           }
         ],
         "Card": [
@@ -20553,9 +20553,9 @@
         "Hyperlink": [
           {
             "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 201,
+            "line": 198,
             "column": 10,
-            "index": 8220
+            "index": 8001
           }
         ],
         "People": [
@@ -23668,9 +23668,9 @@
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
-            "line": 91,
+            "line": 98,
             "column": 30,
-            "index": 3074
+            "index": 3400
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ContinueLearningButton.jsx",
@@ -23802,15 +23802,15 @@
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
-            "line": 79,
+            "line": 86,
             "column": 8,
-            "index": 2637
+            "index": 2963
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollmentConfirmation.jsx",
-            "line": 25,
+            "line": 31,
             "column": 8,
-            "index": 920
+            "index": 1071
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
@@ -24100,9 +24100,9 @@
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
-            "line": 91,
+            "line": 98,
             "column": 18,
-            "index": 3062
+            "index": 3388
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/AssignedCourseCard.jsx",
@@ -24354,9 +24354,9 @@
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
-            "line": 80,
+            "line": 87,
             "column": 10,
-            "index": 2686
+            "index": 3012
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
@@ -24638,9 +24638,9 @@
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
-            "line": 81,
+            "line": 88,
             "column": 12,
-            "index": 2704
+            "index": 3030
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
@@ -25616,9 +25616,9 @@
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
-            "line": 85,
+            "line": 92,
             "column": 14,
-            "index": 2817
+            "index": 3143
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
@@ -26680,9 +26680,9 @@
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
-            "line": 96,
+            "line": 103,
             "column": 16,
-            "index": 3253
+            "index": 3579
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseAssignmentAlert.jsx",
@@ -26712,9 +26712,9 @@
         "CheckCircle": [
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
-            "line": 88,
+            "line": 95,
             "column": 22,
-            "index": 2915
+            "index": 3241
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
@@ -44512,9 +44512,9 @@
           },
           {
             "filePath": "src/packages/program-page/components/ProgramPathway/index.jsx",
-            "line": 319,
+            "line": 285,
             "column": 18,
-            "index": 11401
+            "index": 10542
           }
         ],
         "Groups": [
@@ -46032,9 +46032,9 @@
           },
           {
             "filePath": "src/packages/program-page/components/ProgramPathway/index.jsx",
-            "line": 301,
+            "line": 267,
             "column": 18,
-            "index": 10671
+            "index": 9814
           }
         ],
         "Collapsible.Trigger": [
@@ -46100,9 +46100,9 @@
           },
           {
             "filePath": "src/packages/program-page/components/ProgramPathway/index.jsx",
-            "line": 224,
-            "column": 16,
-            "index": 7622
+            "line": 190,
+            "column": 14,
+            "index": 6882
           }
         ],
         "StatusAlert": [
