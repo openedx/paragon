@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 
-import useImageLoader from './hooks/useImageLoader';
+import useImageLoader from '../hooks/useImageLoader';
 
 function CardImageWithSkeleton({
   src,

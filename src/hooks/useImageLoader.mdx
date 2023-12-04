@@ -1,0 +1,47 @@
+---
+title: 'useImageLoader'
+type: 'hook'
+categories:
+- Hooks
+components:
+- useImageLoader
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: ''
+---
+
+## Sample Usage
+This hook designed to simplify the loading and handling of images in a React application. It provides a convenient way to asynchronously load images with fallbacks and retry mechanisms, making it robust for scenarios where primary image sources may fail.
+
+
+```jsx live
+
+export const MyImageComponent = ({ mainSrc, fallback, alt, useDefaultSrc }) => {
+  const { ref, isSrcLoading } = useImageLoader({
+    mainSrc,
+    fallback,
+    useDefaultSrc,
+  });
+
+  return (
+    <div>
+      {isSrcLoading && <div>Loading...</div>}
+      <img ref={ref} alt={alt} />
+    </div>
+  );
+};
+
+// Now you can use your custom component within the MDX content
+# My MDX Document
+
+Here's an example of using the `MyImageComponent` with the `useImageLoader` hook:
+
+<MyImageComponent
+  mainSrc="path-to-main-image.jpg"
+  fallback="path-to-fallback-image.jpg"
+  alt="Image Alt Text"
+  useDefaultSrc={true}
+/>
+
+```

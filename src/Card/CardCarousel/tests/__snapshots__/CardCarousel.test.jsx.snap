@@ -108,12 +108,26 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -157,12 +171,26 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -206,12 +234,26 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -255,12 +297,26 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -304,12 +360,26 @@ exports[`<CardCarousel /> renders card carousel with custom title and subtitles 
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -459,12 +529,26 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -508,12 +592,26 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -557,12 +655,26 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -606,12 +718,26 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -655,12 +781,26 @@ exports[`<CardCarousel /> renders card carousel with title and subtitles 1`] = `
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -799,12 +939,26 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -848,12 +1002,26 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -897,12 +1065,26 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -946,12 +1128,26 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div
@@ -995,12 +1191,26 @@ exports[`<CardCarousel /> renders default card carousel 1`] = `
             <div
               className="pgn__card-wrapper-image-cap vertical"
             >
+              <span
+                aria-busy={true}
+                aria-live="polite"
+                className="pgn__card-image-cap-loader show"
+              >
+                <span
+                  className="react-loading-skeleton"
+                  style={
+                    Object {
+                      "height": 140,
+                    }
+                  }
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
               <img
                 className="pgn__card-image-cap"
                 loading="eager"
-                onError={[Function]}
-                onLoad={[Function]}
-                src="http://fake.image"
               />
             </div>
             <div

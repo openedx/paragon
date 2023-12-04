@@ -11,7 +11,6 @@ interface ImageLoaderProps {
 
 interface UseImageLoaderResult {
   ref: RefObject<HTMLImageElement>;
-  loadedImage: string | null;
   isSrcLoading: boolean;
 }
 
@@ -21,7 +20,6 @@ const useImageLoader = ({
   useDefaultSrc = false,
 }: ImageLoaderProps): UseImageLoaderResult => {
   const ref = useRef<HTMLImageElement>(null);
-  const [loadedImage, setLoadedImage] = useState<string | null>(null);
   const [isSrcLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -31,6 +29,8 @@ const useImageLoader = ({
     const img = ref.current;
 
     const loadImageWithRetry = async (src: string): Promise<void> => {
+      setIsLoading(true);
+
       await new Promise<void>((resolve, reject) => {
         img.onload = () => resolve();
         img.onerror = () => reject(new Error(`Failed to load image: ${src}`));
@@ -72,15 +72,14 @@ const useImageLoader = ({
     };
 
     const loadImages = async (): Promise<void> => {
-      const imageSrc = await loadImage();
-      setLoadedImage(imageSrc);
+      await loadImage();
       setIsLoading(false);
     };
 
     loadImages();
   }, [mainSrc, fallback, useDefaultSrc]);
 
-  return { ref, loadedImage, isSrcLoading };
+  return { ref, isSrcLoading };
 };
 
 export default useImageLoader;
