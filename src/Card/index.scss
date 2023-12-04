@@ -340,10 +340,10 @@ a.pgn__card {
       margin-top: $loading-skeleton-spacer;
       display: none;
 
-        &.show {
-          display: block;
-          height: 100%;
-        }
+      &.show {
+        display: block;
+        height: 100%;
+      }
 
       .react-loading-skeleton {
         height: 100%;
@@ -364,9 +364,9 @@ a.pgn__card {
       background-color: $white;
       display: none;
 
-        &.show {
-          display: block;
-        }
+      &.show {
+        display: block;
+      }
     }
   }
 
