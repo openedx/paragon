@@ -1,45 +1,32 @@
-import {
-  useState, useEffect, useRef, RefObject,
-} from 'react';
+import { useState, useEffect, useRef } from 'react';
 import cardSrcFallbackImg from '../Card/fallback-default.png';
-
-interface ImageLoaderProps {
-  mainSrc: string;
-  fallback: string;
-  useDefaultSrc?: boolean;
-}
-
-interface UseImageLoaderResult {
-  ref: RefObject<HTMLImageElement>;
-  isSrcLoading: boolean;
-}
 
 const useImageLoader = ({
   mainSrc,
   fallback,
   useDefaultSrc = false,
-}: ImageLoaderProps): UseImageLoaderResult => {
-  const ref = useRef<HTMLImageElement>(null);
+}) => {
+  const ref = useRef(null);
   const [isSrcLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (!mainSrc || !fallback || !ref.current) {
+    if ((!mainSrc && !fallback) || !ref.current) {
       return;
     }
     const img = ref.current;
 
-    const loadImageWithRetry = async (src: string): Promise<void> => {
+    const loadImageWithRetry = async (src) => {
       setIsLoading(true);
 
-      await new Promise<void>((resolve, reject) => {
+      await new Promise((resolve, reject) => {
         img.onload = () => resolve();
         img.onerror = () => reject(new Error(`Failed to load image: ${src}`));
         img.src = src;
       });
     };
 
-    const loadImage = async (): Promise<string | null> => {
-      let imageSrc: string | null = null;
+    const loadImage = async () => {
+      let imageSrc = null;
       const sources = [mainSrc];
 
       if (fallback) {
@@ -64,14 +51,14 @@ const useImageLoader = ({
           imageSrc = src;
           break;
         } catch (error) {
+          console.error(error);
           // Continue to the next source if loading fails
         }
       }
-
       return imageSrc;
     };
 
-    const loadImages = async (): Promise<void> => {
+    const loadImages = async () => {
       await loadImage();
       setIsLoading(false);
     };

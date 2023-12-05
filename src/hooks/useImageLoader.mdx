@@ -1,0 +1,46 @@
+---
+title: 'useImageLoader'
+type: 'hook'
+categories:
+- Hooks
+components:
+- useImageLoader
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: ''
+---
+
+## Base Usage
+This hook designed to simplify the loading and handling of images. It provides a convenient
+way to asynchronously load images with fallbacks and retry mechanisms, making it robust for scenarios where primary
+image sources may fail.
+
+```jsx live
+
+() => {
+  const MyImageComponent = ({ mainSrc, fallback, alt, useDefaultSrc }) => {
+    const { ref, isSrcLoading } = useImageLoader({
+      mainSrc,
+      fallback,
+      useDefaultSrc,
+    });
+
+    return (
+      <div>
+        {isSrcLoading && <div>Loading...</div>}
+        <Image ref={ref} alt={alt} />
+      </div>
+    );
+  }
+
+  return (
+    <MyImageComponent
+      mainSrc="https://picsum.photos/360/200/"
+      fallback="https://picsum.photos/360/200/"
+      alt="Image Alt Text"
+      useDefaultSrc
+    />
+  );
+}
+```

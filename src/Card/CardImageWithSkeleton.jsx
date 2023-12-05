@@ -10,6 +10,7 @@ function CardImageWithSkeleton({
   alt,
   fallback,
   className,
+  withSkeleton,
   useDefaultSrc,
   skeletonWidth,
   skeletonHeight,
@@ -29,7 +30,7 @@ function CardImageWithSkeleton({
   return (
     <>
       <Skeleton
-        containerClassName={classNames(skeletonClassName, { show: isSrcLoading || isLoading })}
+        containerClassName={classNames(skeletonClassName, { show: (isSrcLoading || isLoading) && withSkeleton })}
         height={skeletonHeight}
         width={skeletonWidth}
       />
@@ -54,6 +55,7 @@ CardImageWithSkeleton.propTypes = {
   skeletonClassName: PropTypes.string,
   imageLoadingType: PropTypes.oneOf(['eager', 'lazy']),
   isLoading: PropTypes.bool,
+  withSkeleton: PropTypes.bool,
 };
 
 CardImageWithSkeleton.defaultProps = {
@@ -65,6 +67,7 @@ CardImageWithSkeleton.defaultProps = {
   skeletonHeight: undefined,
   skeletonWidth: undefined,
   isLoading: false,
+  withSkeleton: false,
 };
 
 export default CardImageWithSkeleton;

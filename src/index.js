@@ -166,6 +166,7 @@ export { default as useToggle } from './hooks/useToggle';
 export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigation';
 export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChild';
 export { default as useIsVisible } from './hooks/useIsVisible';
+export { default as useImageLoader } from './hooks/useImageLoader';
 export {
   OverflowScrollContext,
   OverflowScroll,

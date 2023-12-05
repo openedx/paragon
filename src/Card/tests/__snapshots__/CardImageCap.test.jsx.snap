@@ -28,7 +28,7 @@ exports[`<CardImageCap /> renders with loading equals lazy 1`] = `
   <span
     aria-busy={true}
     aria-live="polite"
-    className="pgn__card-logo-cap show"
+    className="pgn__card-logo-cap"
   >
     <span
       className="react-loading-skeleton"
@@ -135,7 +135,7 @@ exports[`<CardImageCap /> renders with src and logoSrc prop in horizontal orient
   <span
     aria-busy={true}
     aria-live="polite"
-    className="pgn__card-logo-cap show"
+    className="pgn__card-logo-cap"
   >
     <span
       className="react-loading-skeleton"
@@ -184,7 +184,7 @@ exports[`<CardImageCap /> renders with src, logoSrc and logoAlt props 1`] = `
   <span
     aria-busy={true}
     aria-live="polite"
-    className="pgn__card-logo-cap show"
+    className="pgn__card-logo-cap"
   >
     <span
       className="react-loading-skeleton"

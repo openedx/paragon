@@ -38,6 +38,7 @@ const CardImageCap = React.forwardRef(({
           fallback={fallbackSrc}
           className="pgn__card-image-cap"
           useDefaultSrc
+          withSkeleton
           skeletonWidth={skeletonWidth}
           skeletonHeight={imageSkeletonHeight}
           imageLoadingType={imageLoadingType}
