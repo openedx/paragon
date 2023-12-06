@@ -8,20 +8,27 @@
   box-sizing: border-box;
   cursor: pointer;
 
+  &:hover,
+  &:focus,
+  &.pgn__dropzone-validation-error,
+  &.pgn__dropzone-active {
+    border-color: transparent;
+  }
+
   &:hover {
-    border: var(--pgn-spacing-dropzone-border-hover) solid var(--pgn-color-dropzone-border-hover);
+    box-shadow: var(--pgn-elevation-dropzone-hover);
   }
 
   &:focus {
-    border: var(--pgn-spacing-dropzone-border-focus) solid var(--pgn-color-dropzone-border-focus);
+    box-shadow: var(--pgn-elevation-dropzone-focus);
   }
 
   &.pgn__dropzone-validation-error {
-    border: var(--pgn-spacing-dropzone-border-error) solid var(--pgn-color-dropzone-border-error);
+    box-shadow: var(--pgn-elevation-dropzone-error);
   }
 
   &.pgn__dropzone-active {
-    border: var(--pgn-spacing-dropzone-border-active) solid var(--pgn-color-dropzone-border-active);
+    box-shadow: var(--pgn-elevation-dropzone-active);
   }
 }
 

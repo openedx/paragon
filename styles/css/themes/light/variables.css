@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Mon, 30 Oct 2023 14:36:05 GMT
+ * Generated on Wed, 06 Dec 2023 09:28:09 GMT
  */
 
 :root {
@@ -922,7 +922,6 @@
   --pgn-color-form-input-border: var(--pgn-color-gray-500);
   --pgn-color-form-input-plaintext: var(--pgn-color-body-base);
   --pgn-color-form-input-placeholder: var(--pgn-color-gray-500);
-  --pgn-color-dropzone-border-active: var(--pgn-color-primary-500);
   --pgn-color-dropzone-border-base: var(--pgn-color-gray-500);
   --pgn-color-dropzone-restriction-msg: var(--pgn-color-gray-500);
   --pgn-color-dropdown-link-active-base: var(--pgn-color-active);
@@ -1130,6 +1129,7 @@
   --pgn-color-bg-active: var(--pgn-color-primary-500);
   --pgn-elevation-pagination-focus-box-shadow: var(--pgn-elevation-input-btn-focus-box-shadow);
   --pgn-elevation-form-control-select-border-focus: var(--pgn-elevation-input-btn-focus-box-shadow);
+  --pgn-elevation-dropzone-active: inset 0 0 0 2px var(--pgn-color-primary-500);
   --pgn-border-color-nav-tabs-link-border-focus: var(--pgn-color-nav-tabs-base-link-active-text);
   --pgn-border-color-nav-tabs-link-border-hover: transparent transparent var(--pgn-color-nav-tabs-base-border-base);
   --pgn-color-action-default-danger-900: #60161DFF;
@@ -1263,9 +1263,6 @@
   --pgn-color-form-input-focus-bg: var(--pgn-color-form-input-bg-base);
   --pgn-color-form-input-focus-border: var(--pgn-color-input-focus);
   --pgn-color-form-input-group-addon-border: var(--pgn-color-form-input-border);
-  --pgn-color-dropzone-border-error: var(--pgn-color-danger-300);
-  --pgn-color-dropzone-border-focus: var(--pgn-color-info-300);
-  --pgn-color-dropzone-border-hover: var(--pgn-color-info-300);
   --pgn-color-dropzone-error-wrapper: var(--pgn-color-danger-500);
   --pgn-color-dropdown-link-disabled: var(--pgn-color-disabled);
   --pgn-color-dropdown-link-active-bg: var(--pgn-color-bg-active);
@@ -1470,6 +1467,9 @@
   --pgn-other-content-form-control-checkbox-indicator-icon-checked-invalid: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='%23C32D3AFF'/></svg>");
   --pgn-other-content-form-control-checkbox-indicator-icon-checked-valid: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='%23178253FF'/></svg>");
   --pgn-elevation-form-control-range-thumb-focus: 0 0 0 1px var(--pgn-color-body-bg), var(--pgn-size-form-input-width-focus);
+  --pgn-elevation-dropzone-error: inset 0 0 0 2px var(--pgn-color-danger-300);
+  --pgn-elevation-dropzone-focus: inset 0 0 0 2px var(--pgn-color-info-300);
+  --pgn-elevation-dropzone-hover: inset 0 0 0 2px var(--pgn-color-info-300);
   --pgn-color-pagination-border-active: var(--pgn-color-pagination-bg-active);
   --pgn-color-pagination-text-base: var(--pgn-color-link-base);
   --pgn-color-nav-tabs-inverse-link-bg-active: var(--pgn-color-nav-tabs-inverse-link-bg-hover);

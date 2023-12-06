@@ -14,11 +14,7 @@
     "dropzone": {
       "padding": { "value": "1.5rem", "type": "dimension", "source": "$dropzone-padding" },
       "border": {
-        "base": { "value": "1px", "type": "dimension", "source": "$dropzone-border-default" },
-        "hover": { "value": "2px", "type": "dimension", "source": "$dropzone-border-hover" },
-        "focus": { "value": "2px", "type": "dimension", "source": "$dropzone-border-focus" },
-        "active": { "value": "2px", "type": "dimension", "source": "$dropzone-border-active" },
-        "error": { "value": "2px", "type": "dimension", "source": "$dropzone-border-error" }
+        "base": { "value": "1px", "type": "dimension", "source": "$dropzone-border-default" }
       }
     }
   }
