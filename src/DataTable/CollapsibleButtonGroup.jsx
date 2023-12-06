@@ -102,7 +102,7 @@ CollapsibleButtonGroup.propTypes = {
   className: PropTypes.string,
   /** Array of action objects, containing a component and their callback args */
   actions: PropTypes.arrayOf(PropTypes.shape({
-    component: PropTypes.oneOfType([PropTypes.func, PropTypes.element]).isRequired,
+    component: PropTypes.oneOfType([PropTypes.element, PropTypes.elementType]).isRequired,
     args: PropTypes.shape({}),
   })).isRequired,
 };
