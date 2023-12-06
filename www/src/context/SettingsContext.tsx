@@ -49,8 +49,12 @@ function SettingsContextProvider({ children }) {
   };
 
   const toggleSettings = (value: boolean) => {
+    const event = value
+      ? SETTINGS_EVENTS.OPENED
+      : SETTINGS_EVENTS.CLOSED;
+
     setShowSettings(value);
-    sendUserAnalyticsEvent(value ? SETTINGS_EVENTS.OPENED : SETTINGS_EVENTS.CLOSED);
+    sendUserAnalyticsEvent(event);
   };
 
   // this hook will be called after the first render, so we can safely access localStorage
