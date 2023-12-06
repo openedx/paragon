@@ -25,11 +25,7 @@ function TableFooter({ className, children }) {
 
 TableFooter.propTypes = {
   /** Specifies the content of the `TableFooter` */
-  children: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.node])),
-  ]),
+  children: PropTypes.node,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
 };

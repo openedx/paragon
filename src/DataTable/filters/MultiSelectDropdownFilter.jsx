@@ -66,7 +66,7 @@ MultiSelectDropdownFilter.propTypes = {
     /** Function to set the filter value */
     setFilter: PropTypes.func.isRequired,
     /** Column header used for labels and placeholders */
-    Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
+    Header: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]).isRequired,
     /** Names and values for the select options */
     filterChoices: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
