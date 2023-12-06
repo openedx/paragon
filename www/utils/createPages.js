@@ -40,8 +40,9 @@ async function createPages(graphql, actions, reporter) {
   }
   // Create component detail pages.
   const components = result.data.allMdx.edges;
-  // console.log('components', components);
+
   const themesSCSSVariables = await getThemesSCSSVariables();
+  const componentPages = {};
 
   // you'll call `createPage` for each result
   // eslint-disable-next-line no-restricted-syntax
@@ -54,6 +55,16 @@ async function createPages(graphql, actions, reporter) {
     if (fs.existsSync(variablesPath)) {
       // eslint-disable-next-line no-await-in-loop
       scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
+    }
+
+    const subcomponent = node.slug.split('/').slice(1).join('/');
+
+    if (!componentPages[componentDir]) {
+      componentPages[componentDir] = [];
+    }
+
+    if (!subcomponent.includes('README')) {
+      componentPages[componentDir].push(subcomponent);
     }
 
     createPage({
@@ -71,7 +82,7 @@ async function createPages(graphql, actions, reporter) {
         componentsUsageInsights: Object.keys(componentsUsage),
         githubEditPath,
         componentUrl: node.fields.slug,
-        markdownFiles: [`${componentDir}/design-guidelines`],
+        markdownFiles: componentPages[componentDir],
       },
     });
   }

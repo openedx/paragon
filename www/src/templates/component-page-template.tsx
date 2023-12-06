@@ -7,6 +7,7 @@ import { graphql, Link, navigate } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import classNames from 'classnames';
+import startcase from 'lodash.startcase';
 import {
   Container,
   Alert,
@@ -135,13 +136,13 @@ export default function PageTemplate({
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
-  // console.log('currentTab', currentTab);
+
   const handleOnSelect = (value: string) => {
     const isCurrentTab = (value === mdx.frontmatter.tabName);
 
     if (!isCurrentTab) {
       if (markdownFiles.some((item: string | string[]) => item.includes(value))) {
-        return navigate(value);
+        return navigate(`/components/${mdx.frontmatter.title.toLowerCase()}/${value}`);
       }
 
       return navigate(`${componentUrl.split('/').slice(0, -2).join('/')}/`);
@@ -234,22 +235,15 @@ export default function PageTemplate({
               )}
             </div>
           </Tab>
-          {markdownFiles.map((tabTitle) => {
-            const updatedString = tabTitle.split('/')[1]
-              .split('-')
-              .map((title, i) => (i === 0 ? title.charAt(0).toUpperCase() + title.slice(1) : title))
-              .join(' ');
-
-            return (
-              <Tab eventKey={tabTitle.split('/')[1]} title={updatedString}>
-                <div className="mt-4">
-                  <MDXProvider components={shortcodes}>
-                    <MDXRenderer>{mdx.body}</MDXRenderer>
-                  </MDXProvider>
-                </div>
-              </Tab>
-            );
-          })}
+          {markdownFiles.map((tabTitle) => (
+            <Tab eventKey={tabTitle} title={startcase(tabTitle)}>
+              <div className="mt-4">
+                <MDXProvider components={shortcodes}>
+                  <MDXRenderer>{mdx.body}</MDXRenderer>
+                </MDXProvider>
+              </div>
+            </Tab>
+          ))}
         </Tabs>
       </Container>
     </Layout>
