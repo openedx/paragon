@@ -270,13 +270,13 @@ DataTable.propTypes = {
   /** Definition of table columns */
   columns: PropTypes.arrayOf(PropTypes.shape({
     /** User visible column name */
-    Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
+    Header: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]).isRequired,
     /** String used to access the correct cell data for this column */
     accessor: requiredWhenNot(PropTypes.string, 'Cell'),
     /** Specifies a function that receives `row` as argument and returns cell content */
-    Cell: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+    Cell: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
     /** Specifies filter component */
-    Filter: PropTypes.func,
+    Filter: PropTypes.elementType,
     /** Specifies filter type */
     filter: PropTypes.string,
     /** Specifies filter choices */
@@ -293,8 +293,8 @@ DataTable.propTypes = {
   /** Alternate column for selecting rows. See react table useSort docs for more information */
   manualSelectColumn: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
-    Cell: PropTypes.func.isRequired,
+    Header: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]).isRequired,
+    Cell: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
     disableSortBy: PropTypes.bool.isRequired,
   }),
   /** Table columns can be sorted */
@@ -315,16 +315,16 @@ DataTable.propTypes = {
   /** defaults that will be set on each column. Will be overridden by individual column values */
   defaultColumnValues: PropTypes.shape({
     /** A default filter component for the column */
-    Filter: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+    Filter: PropTypes.elementType,
   }),
   /** Actions or other additional non-data columns can be added here  */
   additionalColumns: PropTypes.arrayOf(PropTypes.shape({
     /** id must be unique from other columns ids */
     id: PropTypes.string.isRequired,
     /** column header that will be displayed to the user */
-    Header: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    Header: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
     /** Component that renders in the added column. It will receive the row as a prop */
-    Cell: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+    Cell: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
   })),
   /** Function that will fetch table data. Called when page size, page index or filters change.
     * Meant to be used with manual filters and pagination */
@@ -401,15 +401,15 @@ DataTable.propTypes = {
   /** Number between one and four filters that can be shown on the top row. */
   numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
   /** Component to be displayed when the table is empty */
-  EmptyTableComponent: PropTypes.func,
+  EmptyTableComponent: PropTypes.elementType,
   /** Component to be displayed for row status, ie, 10 of 20 rows. Displayed by default in the TableControlBar */
-  RowStatusComponent: PropTypes.func,
+  RowStatusComponent: PropTypes.elementType,
   /** Component to be displayed for selection status. Displayed when there are selected rows and no active filters */
-  SelectionStatusComponent: PropTypes.func,
+  SelectionStatusComponent: PropTypes.elementType,
   /** Component to be displayed for filter status. Displayed when there are active filters. */
-  FilterStatusComponent: PropTypes.func,
+  FilterStatusComponent: PropTypes.elementType,
   /** If children are not provided a table with control bar and footer will be rendered */
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  children: PropTypes.node,
   /** If true filters will be shown on sidebar instead */
   showFiltersInSidebar: PropTypes.bool,
   /** options for data view toggle */
