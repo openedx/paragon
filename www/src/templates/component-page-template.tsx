@@ -64,7 +64,7 @@ export type ShortCodesTypes = {
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: {
-    scssVariablesData, componentsUsageInsights, githubEditPath, markdownFiles, componentUrl,
+    scssVariablesData, componentsUsageInsights, githubEditPath, markdownFiles, componentUrl, subComponentName,
   },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
@@ -134,6 +134,7 @@ export default function PageTemplate({
   };
 
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
+  const tabsItems = markdownFiles[subComponentName];
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
 
@@ -141,7 +142,7 @@ export default function PageTemplate({
     const isCurrentTab = (value === mdx.frontmatter.tabName);
 
     if (!isCurrentTab) {
-      if (markdownFiles.some((item: string | string[]) => item.includes(value))) {
+      if (tabsItems?.some((item: string | string[]) => item.includes(value))) {
         return navigate(`/components/${mdx.frontmatter.title.toLowerCase()}/${value}`);
       }
 
@@ -235,7 +236,7 @@ export default function PageTemplate({
               )}
             </div>
           </Tab>
-          {markdownFiles.map((tabTitle) => (
+          {tabsItems?.map((tabTitle) => (
             <Tab eventKey={tabTitle} title={startcase(tabTitle)}>
               <div className="mt-4">
                 <MDXProvider components={shortcodes}>

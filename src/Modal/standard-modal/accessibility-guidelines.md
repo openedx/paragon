@@ -1,11 +1,11 @@
 ---
-title: 'ActionRow'
+title: 'StandardModal'
 type: 'component'
 categories:
 - Imagery & Iconography
 components:
 - Image
-tabName: 'testing-guidelines'
+tabName: 'accessibility-guidelines'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -13,4 +13,4 @@ notes: |
 
 ---
 
-<h2>Testing - ActionRow</h2>
+<h2>Accessibility - StandardModal</h2>

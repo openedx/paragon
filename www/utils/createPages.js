@@ -58,13 +58,17 @@ async function createPages(graphql, actions, reporter) {
     }
 
     const subcomponent = node.slug.split('/').slice(1).join('/');
-
+    const [mainComponent, subComponent] = subcomponent.split('/');
     if (!componentPages[componentDir]) {
-      componentPages[componentDir] = [];
+      componentPages[componentDir] = {};
     }
 
     if (!subcomponent.includes('README')) {
-      componentPages[componentDir].push(subcomponent);
+      if (componentPages[componentDir][mainComponent]) {
+        componentPages[componentDir][mainComponent].push(subComponent || mainComponent);
+      } else {
+        componentPages[componentDir][mainComponent] = [subComponent || mainComponent];
+      }
     }
 
     createPage({
@@ -82,7 +86,8 @@ async function createPages(graphql, actions, reporter) {
         componentsUsageInsights: Object.keys(componentsUsage),
         githubEditPath,
         componentUrl: node.fields.slug,
-        markdownFiles: componentPages[componentDir],
+        subComponentName: mainComponent,
+        markdownFiles: componentPages[componentDir] || {},
       },
     });
   }
