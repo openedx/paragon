@@ -16,19 +16,19 @@
   }
 
   &:hover {
-    box-shadow: var(--pgn-spacing-dropzone-box-shadow-hover) solid var(--pgn-color-dropzone-box-shadow-hover);
+    box-shadow: var(--pgn-elevation-dropzone-hover);
   }
 
   &:focus {
-    box-shadow: var(--pgn-spacing-dropzone-box-shadow-focus) solid var(--pgn-color-dropzone-box-shadow-focus);
+    box-shadow: var(--pgn-elevation-dropzone-focus);
   }
 
   &.pgn__dropzone-validation-error {
-    box-shadow: var(--pgn-spacing-dropzone-box-shadow-error) solid var(--pgn-color-dropzone-box-shadow-error);
+    box-shadow: var(--pgn-elevation-dropzone-error);
   }
 
   &.pgn__dropzone-active {
-    box-shadow: var(--pgn-spacing-dropzone-box-shadow-active) solid var(--pgn-color-dropzone-box-shadow-active);
+    box-shadow: var(--pgn-elevation-dropzone-active);
   }
 }
 
