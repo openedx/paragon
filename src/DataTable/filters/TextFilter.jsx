@@ -51,7 +51,7 @@ TextFilter.propTypes = {
    */
   column: PropTypes.shape({
     setFilter: PropTypes.func.isRequired,
-    Header: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
+    Header: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]).isRequired,
     getHeaderProps: PropTypes.func.isRequired,
     filterValue: PropTypes.string,
   }).isRequired,
