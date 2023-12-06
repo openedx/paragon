@@ -10,13 +10,6 @@
 @import "../components/exampleComponents/ExamplePropsForm";
 @import "~react-loading-skeleton/dist/skeleton";
 
-:root {
-  --pgn-elevation-modal-zindex: 2503;
-  --pgn-elevation-sheet-zindex-backdrop: 2501;
-  --pgn-elevation-sheet-zindex-main: 2502;
-  --pgn-www-zindex-header: 2500;
-}
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,8 +18,4 @@ body {
 // Remove this line after the edx.org brand removes a problematic max-width
 .container-fluid {
   max-width: none;
-}
-
-.fs-16 {
-  font-size: 16px;
 }

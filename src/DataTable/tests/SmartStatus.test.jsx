@@ -67,13 +67,13 @@ describe('<SmartStatus />', () => {
     const { getByText } = render(
       <SmartStatusWrapper value={instance} />,
     );
-    expect(getByText(`Showing ${instance.page.length} of ${itemCount}.`)).toBeInTheDocument();
+    expect(getByText(`Showing 1 - ${instance.page.length} of ${itemCount}.`)).toBeInTheDocument();
   });
   it('Shows the number of items on the page if selection is off and there are no filters', () => {
     const { getByText } = render(
       <SmartStatusWrapper value={instance} />,
     );
-    expect(getByText(`Showing ${instance.page.length} of ${itemCount}.`)).toBeInTheDocument();
+    expect(getByText(`Showing 1 - ${instance.page.length} of ${itemCount}.`)).toBeInTheDocument();
   });
   it('shows an alternate selection status', () => {
     const altStatusText = 'horses R cool';
