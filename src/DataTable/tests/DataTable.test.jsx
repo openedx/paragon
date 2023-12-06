@@ -135,7 +135,7 @@ describe('<DataTable />', () => {
   it('displays a control bar', () => {
     render(<DataTableWrapper {...props} />);
     expect(screen.getByTestId('table-control-bar')).toBeInTheDocument();
-    expect(screen.getAllByText('Showing 7 of 7.')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('Showing 1 - 7 of 7.')[0]).toBeInTheDocument();
   });
 
   it('displays a table', () => {
