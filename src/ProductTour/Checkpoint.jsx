@@ -10,6 +10,7 @@ import CheckpointActionRow from './CheckpointActionRow';
 import CheckpointBody from './CheckpointBody';
 import CheckpointBreadcrumbs from './CheckpointBreadcrumbs';
 import CheckpointTitle from './CheckpointTitle';
+import messages from './messages';
 
 const Checkpoint = React.forwardRef(({
   body,
@@ -98,10 +99,8 @@ const Checkpoint = React.forwardRef(({
     >
       <span className="sr-only">
         <FormattedMessage
-          id="pgn.ProductTour.Checkpoint.top-position-text"
-          defaultMessage="Top of step {step}"
+          {...messages.topPositionText}
           values={{ step: index + 1 }}
-          description="Screen-reader message to notify user that they are located at the bottom of the product tour step."
         />
       </span>
       {(title || !isOnlyCheckpoint) && (
@@ -119,10 +118,8 @@ const Checkpoint = React.forwardRef(({
       <div id="pgn__checkpoint-arrow" data-popper-arrow />
       <span className="sr-only">
         <FormattedMessage
-          id="pgn.ProductTour.Checkpoint.bottom-position-text"
-          defaultMessage="Bottom of step {step}"
+          {...messages.bottomPositionText}
           values={{ step: index + 1 }}
-          description="Screen-reader message to notify user that they are located at the bottom of the product tour step."
         />
       </span>
     </div>
