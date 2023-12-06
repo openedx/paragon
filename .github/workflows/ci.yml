@@ -27,4 +27,5 @@ jobs:
         NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_NPM_TOKEN }}
       run: |
         git checkout $GITHUB_HEAD_REF
+        unset GITHUB_ACTIONS
         npx semantic-release --dry-run --no-ci --branches=$GITHUB_HEAD_REF
