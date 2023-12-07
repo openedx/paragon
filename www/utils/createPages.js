@@ -27,6 +27,7 @@ async function createPages(graphql, actions, reporter) {
             }
             frontmatter {
               components
+              tabName
             }
             slug
             fileAbsolutePath
@@ -58,6 +59,7 @@ async function createPages(graphql, actions, reporter) {
     }
 
     const subcomponent = node.slug.split('/').slice(1).join('/');
+
     const [mainComponent, subComponent] = subcomponent.split('/');
     if (!componentPages[componentDir]) {
       componentPages[componentDir] = {};
@@ -87,6 +89,7 @@ async function createPages(graphql, actions, reporter) {
         githubEditPath,
         componentUrl: node.fields.slug,
         subComponentName: mainComponent,
+        tabName: node.frontmatter.tabName,
         markdownFiles: componentPages[componentDir] || {},
       },
     });

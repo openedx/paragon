@@ -286,18 +286,19 @@ function Menu() {
               key={fieldValue}
               styling="basic"
               title={fieldValue}
-              defaultOpen={nodes.some(({
-                fields,
-              }) => fields.slug === pathname.replace('/design-guidelines', '/'))}
+              defaultOpen={nodes.some(({ fields }) => pathname.includes(fields.slug))}
             >
               <ul className="list-unstyled">
-                {nodes.map((node) => (
-                  <ComponentNavItem
-                    key={node.id}
-                    {...node}
-                    isActive={pathname.replace('/design-guidelines', '/') === node.fields.slug}
-                  />
-                ))}
+                {nodes.map((node) => {
+                  const componentPagePath = `${pathname.split('/').slice(0, -1).join('/')}/`;
+                  return (
+                    <ComponentNavItem
+                      key={node.id}
+                      {...node}
+                      isActive={componentPagePath === node.fields.slug}
+                    />
+                  );
+                })}
               </ul>
             </Collapsible>
           ))}

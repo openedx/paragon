@@ -64,7 +64,7 @@ export type ShortCodesTypes = {
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: {
-    scssVariablesData, componentsUsageInsights, githubEditPath, markdownFiles, componentUrl, subComponentName,
+    scssVariablesData, componentsUsageInsights, githubEditPath, markdownFiles, componentUrl, subComponentName, tabName,
   },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
@@ -134,22 +134,20 @@ export default function PageTemplate({
   };
 
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
-  const tabsItems = markdownFiles[subComponentName];
+  const tabsItems = subComponentName === 'README' ? Object.keys(markdownFiles) : markdownFiles[subComponentName];
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
 
-  const handleOnSelect = (value: string) => {
-    const isCurrentTab = (value === mdx.frontmatter.tabName);
+  const handleOnSelect = (newTabName: string) => {
+    const isCurrentTab = (newTabName === mdx.frontmatter.tabName);
+    const isNextTab = tabsItems?.some((tab: string | string[]) => tab.includes(newTabName));
+    const componentBaseUrl = componentUrl.replace(`/${tabName}`, '');
 
-    if (!isCurrentTab) {
-      if (tabsItems?.some((item: string | string[]) => item.includes(value))) {
-        return navigate(`/components/${mdx.frontmatter.title.toLowerCase()}/${value}`);
-      }
-
-      return navigate(`${componentUrl.split('/').slice(0, -2).join('/')}/`);
+    if (!isCurrentTab && isNextTab) {
+      return navigate(`${componentBaseUrl}${newTabName}`);
     }
 
-    return null;
+    return navigate(componentBaseUrl);
   };
 
   return (
