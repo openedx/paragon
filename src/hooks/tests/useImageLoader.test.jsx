@@ -2,53 +2,56 @@ import React from 'react';
 import {
   render, screen, act, waitFor, fireEvent,
 } from '@testing-library/react';
+import { Image } from '../..';
 
 import useImageLoader from '../useImageLoader';
 
 const MAIN_SRC = 'main-source.jpg';
-const FALLBACK = 'fallback-source.jpg';
-const ALT = 'test';
+const FALLBACK_SRC = 'fallback-source.jpg';
+const ALT_TEXT = 'test';
 const TEST_ID = 'loading-indicator';
 
 function TestComponent({
 // eslint-disable-next-line react/prop-types
-  mainSrc, fallback, alt, ...rest
+  mainSrc, fallbackSrc, alt, ...rest
 }) {
-  const { ref, isSrcLoading } = useImageLoader({ mainSrc, fallback, ...rest });
+  const { ref, isSrcLoading } = useImageLoader({ mainSrc, fallbackSrc, ...rest });
   return (
     <>
       {isSrcLoading && <div data-testid={TEST_ID}>Loading...</div>}
-      <img ref={ref} alt={alt} />
+      <Image ref={ref} alt={alt} />
     </>
   );
 }
 
 describe('useImageLoader', () => {
-  it('should set loading state to false when the main source loads successfully and update img src', async () => {
-    render(<TestComponent mainSrc={MAIN_SRC} fallback={FALLBACK} alt={ALT} />);
-    const imgElement = screen.getByAltText(ALT);
+  describe('should set loading state to false', () => {
+    it('when the main source loads successfully and update img src', async () => {
+      render(<TestComponent mainSrc={MAIN_SRC} fallbackSrc={FALLBACK_SRC} alt={ALT_TEXT} />);
+      const imgElement = screen.getByAltText(ALT_TEXT);
 
-    expect(screen.getByTestId(TEST_ID)).toBeInTheDocument();
+      expect(screen.getByTestId(TEST_ID)).toBeInTheDocument();
 
-    await act(async () => {
-      fireEvent.load(imgElement);
+      await act(async () => {
+        fireEvent.load(imgElement);
+      });
+
+      await waitFor(() => expect(screen.queryByTestId(TEST_ID)).not.toBeInTheDocument());
+
+      expect(imgElement.src).toContain(MAIN_SRC);
     });
 
-    await waitFor(() => expect(screen.queryByTestId(TEST_ID)).not.toBeInTheDocument());
+    it('when the main source fails to load and falls back to the fallback source, and update img src', async () => {
+      render(<TestComponent mainSrc={MAIN_SRC} fallbackSrc={FALLBACK_SRC} alt={ALT_TEXT} />);
+      const imgElement = screen.getByAltText(ALT_TEXT);
 
-    expect(imgElement.src).toContain(MAIN_SRC);
-  });
+      expect(screen.getByTestId(TEST_ID)).toBeInTheDocument();
 
-  it('should set loading state to false when the main source fails to load and falls back to the fallback source, and update img src', async () => {
-    render(<TestComponent mainSrc={MAIN_SRC} fallback={FALLBACK} alt={ALT} />);
-    const imgElement = screen.getByAltText(ALT);
+      await act(async () => {
+        fireEvent.error(imgElement);
+      });
 
-    expect(screen.getByTestId(TEST_ID)).toBeInTheDocument();
-
-    await act(async () => {
-      fireEvent.error(imgElement);
+      expect(imgElement.src).toContain(FALLBACK_SRC);
     });
-
-    expect(imgElement.src).toContain(FALLBACK);
   });
 });

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 
+import Image from '../Image';
 import useImageLoader from '../hooks/useImageLoader';
 
 function CardImageWithSkeleton({
@@ -20,7 +21,7 @@ function CardImageWithSkeleton({
 }) {
   const config = useMemo(
     () => ({
-      mainSrc: src, fallback, useDefaultSrc,
+      mainSrc: src, fallbackSrc: fallback, useDefaultSrc,
     }),
     [src, fallback, useDefaultSrc],
   );
@@ -34,7 +35,7 @@ function CardImageWithSkeleton({
         height={skeletonHeight}
         width={skeletonWidth}
       />
-      <img
+      <Image
         ref={ref}
         className={classNames(className, { show: !isSrcLoading && !isLoading })}
         alt={alt}

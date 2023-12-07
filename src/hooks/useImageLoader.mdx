@@ -19,10 +19,10 @@ image sources may fail.
 ```jsx live
 
 () => {
-  const MyImageComponent = ({ mainSrc, fallback, alt, useDefaultSrc }) => {
+  const MyImageComponent = ({ mainSrc, fallbackSrc, alt, useDefaultSrc }) => {
     const { ref, isSrcLoading } = useImageLoader({
       mainSrc,
-      fallback,
+      fallbackSrc,
       useDefaultSrc,
     });
 
@@ -37,7 +37,7 @@ image sources may fail.
   return (
     <MyImageComponent
       mainSrc="https://picsum.photos/360/200/"
-      fallback="https://picsum.photos/360/200/"
+      fallbackSrc="https://picsum.photos/360/200/"
       alt="Image Alt Text"
       useDefaultSrc
     />

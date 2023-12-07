@@ -3,14 +3,14 @@ import cardSrcFallbackImg from '../Card/fallback-default.png';
 
 const useImageLoader = ({
   mainSrc,
-  fallback,
+  fallbackSrc,
   useDefaultSrc = false,
 }) => {
   const ref = useRef(null);
   const [isSrcLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if ((!mainSrc && !fallback) || !ref.current) {
+    if ((!mainSrc && !fallbackSrc) || !ref.current) {
       return;
     }
     const img = ref.current;
@@ -29,8 +29,8 @@ const useImageLoader = ({
       let imageSrc = null;
       const sources = [mainSrc];
 
-      if (fallback) {
-        sources.push(fallback);
+      if (fallbackSrc) {
+        sources.push(fallbackSrc);
       }
 
       // Add default image source if useDefaultSrc is true
@@ -64,7 +64,7 @@ const useImageLoader = ({
     };
 
     loadImages();
-  }, [mainSrc, fallback, useDefaultSrc]);
+  }, [mainSrc, fallbackSrc, useDefaultSrc]);
 
   return { ref, isSrcLoading };
 };
