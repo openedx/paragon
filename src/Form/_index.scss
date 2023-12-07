@@ -509,6 +509,11 @@ select.form-control {
       order: 2;
     }
   }
+
+  &.pgn__form-control-disabled {
+    user-select: none;
+    pointer-events: none;
+  }
 }
 
 .pgn__form-checkbox {
@@ -522,11 +527,6 @@ select.form-control {
     &:checked {
       background-image: escape-svg($custom-checkbox-indicator-icon-valid-checked);
     }
-  }
-
-  &.pgn__form-control-disabled {
-    user-select: none;
-    pointer-events: none;
   }
 }
 
