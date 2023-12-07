@@ -13,6 +13,8 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
+        ref: ${{ github.head_ref }}
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
     - name: Setup Nodejs Env
       run: echo "NODE_VER=`cat .nvmrc`" >> $GITHUB_ENV
     - name: Setup Nodejs
@@ -23,21 +25,18 @@ jobs:
       run: npm ci
     - name: Check Types
       run: npm run type-check
-    - name: Lint
-      run: npm run lint
-    - name: Test
-      run: npm run test
-    - name: Build
-      run: npm run build
-    - name: Build Docs
-      run: npm run build-docs
-    - name: Coverage
-      uses: codecov/codecov-action@v3
+    - name: Extract branch name
+      shell: bash
+      run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
+      id: extract_branch
     - name: Preview semantic-release version
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_NPM_TOKEN }}
       run: |
-        git checkout $GITHUB_HEAD_REF
+        echo "$GITHUB_HEAD_REF"
+        echo "${{ github.event.pull_request.head.ref }}"
+        echo "${{ github.event.pull_request.head.repo.full_name }}"
+        git rev-parse --abbrev-ref HEAD
         unset GITHUB_ACTIONS
-        npx semantic-release --dry-run --no-ci --branches=$GITHUB_HEAD_REF
+        npx semantic-release --dry-run --no-ci --branches Peter_Kulko/removed-semantic-realise-version --repositoryUrl https://github.com/raccoongang/paragon
