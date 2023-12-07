@@ -7,7 +7,6 @@ import { graphql, Link, navigate } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import classNames from 'classnames';
-import startcase from 'lodash.startcase';
 import {
   Container,
   Alert,
@@ -27,6 +26,7 @@ import LinkedHeading from '../components/LinkedHeading';
 import ComponentsUsage from '../components/insights/ComponentsUsage';
 import LeaveFeedback from '../components/LeaveFeedback';
 import PageEditBtn from '../components/PageEditBtn';
+import upperFirstLetter from '../utils/helpers';
 
 export interface IPageTemplate {
   data: {
@@ -72,7 +72,9 @@ export default function PageTemplate({
   const { settings } = useContext(SettingsContext);
   const { theme } = settings;
   const scssVariables = scssVariablesData[theme!] || scssVariablesData[DEFAULT_THEME!];
-
+  console.log('markdownFiles', markdownFiles);
+  console.log('subComponentName', subComponentName);
+  // console.log('tabName', tabName);
   const components = componentNodes.nodes
     .reduce((acc: { [x: string]: { displayName: string, props?: [] }; }, currentValue: { displayName: string; }) => {
       acc[currentValue.displayName] = currentValue;
@@ -134,20 +136,27 @@ export default function PageTemplate({
   };
 
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
-  const tabsItems = subComponentName === 'README' ? Object.keys(markdownFiles) : markdownFiles[subComponentName];
+  const filteredKeys = Object.entries(markdownFiles)
+    .filter(([key, value]) => key.includes('guidelines'))
+    .map(([key, value]) => key);
+  const tabsItems = subComponentName === 'README' ? filteredKeys : markdownFiles[subComponentName];
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
 
   const handleOnSelect = (newTabName: string) => {
     const isCurrentTab = (newTabName === mdx.frontmatter.tabName);
-    const isNextTab = tabsItems?.some((tab: string | string[]) => tab.includes(newTabName));
+    const isNextTab = tabsItems.some((tab: string | string[]) => tab.includes(newTabName));
     const componentBaseUrl = componentUrl.replace(`/${tabName}`, '');
 
-    if (!isCurrentTab && isNextTab) {
-      return navigate(`${componentBaseUrl}${newTabName}`);
+    if (!isCurrentTab) {
+      if (isNextTab) {
+        return navigate(`${componentBaseUrl}${newTabName}`);
+      }
+
+      return navigate(componentBaseUrl);
     }
 
-    return navigate(componentBaseUrl);
+    return null;
   };
 
   return (
@@ -234,15 +243,18 @@ export default function PageTemplate({
               )}
             </div>
           </Tab>
-          {tabsItems?.map((tabTitle) => (
-            <Tab eventKey={tabTitle} title={startcase(tabTitle)}>
-              <div className="mt-4">
-                <MDXProvider components={shortcodes}>
-                  <MDXRenderer>{mdx.body}</MDXRenderer>
-                </MDXProvider>
-              </div>
-            </Tab>
-          ))}
+          {tabsItems.map((tabTitle: string) => {
+            const prettyTabTitle = upperFirstLetter(tabTitle.replace('-', ' '));
+            return (
+              <Tab eventKey={tabTitle} title={prettyTabTitle}>
+                <div className="mt-4">
+                  <MDXProvider components={shortcodes}>
+                    <MDXRenderer>{mdx.body}</MDXRenderer>
+                  </MDXProvider>
+                </div>
+              </Tab>
+            );
+          })}
         </Tabs>
       </Container>
     </Layout>
