@@ -10,14 +10,14 @@ describe('<Stack />', () => {
   describe('correct rendering', () => {
     it('renders without props', () => {
       const tree = renderer.create((
-        <Stack>{stackList.map((el) => <div>{el}</div>)}</Stack>
+        <Stack>{stackList.map((el) => <div key={el}>{el}</div>)}</Stack>
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('renders with the reversed prop', () => {
       const { container } = render(
         <Stack reversed>
-          {stackList.reverse().map((el) => <div>{el}</div>)}
+          {stackList.reverse().map((el) => <div key={el}>{el}</div>)}
         </Stack>,
       );
       expect(container).toMatchSnapshot();

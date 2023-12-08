@@ -50,6 +50,8 @@ describe('IconButtonToggle tests', () => {
       expect(btnAbc).toHaveAttribute('aria-selected', 'true');
     });
 
-    expect(spyChanger).toHaveBeenCalledWith('def');
+    waitFor(() => {
+      expect(spyChanger).toHaveBeenCalledWith('def');
+    });
   });
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen, render } from '@testing-library/react';
+import { screen, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import classNames from 'classnames';
@@ -198,11 +198,13 @@ describe('<BulkActions />', () => {
       expect(buttons[1].textContent).toBe(FIRST_ACTION);
     });
 
-    it('displays the user\'s second button as an outline button', () => {
-      const { container } = render(<BulkActionsWrapper />);
-      waitForComponentToPaint(container);
-      const buttons = screen.getAllByTestId('action');
-      expect(buttons[0].textContent).toBe(SECOND_ACTION);
+    it('displays the user\'s second button as an outline button', async () => {
+      const {container} = render(<BulkActionsWrapper/>);
+      await waitFor(() => {
+        // waitForComponentToPaint(container);
+        const buttons = screen.getAllByTestId('action');
+        expect(buttons[0].textContent).toBe(SECOND_ACTION);
+      });
     });
 
     describe('overflow menu', () => {
@@ -217,25 +219,33 @@ describe('<BulkActions />', () => {
             }}
           />,
         );
-        // the overflow toggle button is the first button
-        await userEvent.click(screen.getByRole('button', { name: ACTION_OVERFLOW_BUTTON_TEXT }));
+        await waitFor(async () => {
+          // the overflow toggle button is the first button
+          await userEvent.click(screen.getByRole('button', { name: ACTION_OVERFLOW_BUTTON_TEXT }));
+        });
       });
       afterEach(() => {
         onClickSpy.mockClear();
       });
       it('displays additional actions in a ModalPopup', async () => {
         const actionItems = screen.getAllByRole('button');
-        // subtract two for the two main buttons that aren't in the overflow menu
-        expect(actionItems.length).toEqual(4);
+        await waitFor(() => {
+          // subtract two for the two main buttons that aren't in the overflow menu
+          expect(actionItems.length).toEqual(4);
+        });
       });
       it('performs actions when overflow items are clicked', async () => {
         const item = screen.getByTestId(itemTestId);
         await userEvent.click(item);
-        expect(onClickSpy).toHaveBeenCalledTimes(1);
+        await waitFor(() => {
+          expect(onClickSpy).toHaveBeenCalledTimes(1);
+        });
       });
-      it('passes the class names to the dropdown item', () => {
+      it('passes the class names to the dropdown item', async () => {
         const item = screen.getByTestId(itemTestId);
-        expect(item).toBeInTheDocument();
+        await waitFor(() => {
+          expect(item).toBeInTheDocument();
+        });
       });
     });
   });
@@ -251,11 +261,13 @@ describe('<BulkActions />', () => {
       await userEvent.click(button);
       expect(container.textContent.length).toBeGreaterThan(0);
     });
-    it('renders the correct alt text for the dropdown', () => {
+    it('renders the correct alt text for the dropdown', async () => {
       useWindowSize.mockReturnValue({ width: 500 });
       render(<BulkActionsWrapper />);
       const overflowToggle = screen.getByRole('button', { name: SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT });
-      expect(overflowToggle).toBeInTheDocument();
+      await waitFor(() => {
+        expect(overflowToggle).toBeInTheDocument();
+      });
     });
   });
 });

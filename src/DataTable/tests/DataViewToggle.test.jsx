@@ -96,13 +96,13 @@ describe('data view toggle behavior', () => {
     expect(screen.queryByRole('group')).toBeInTheDocument();
     const cardButton = screen.getByLabelText(DATA_VIEW_TOGGLE_VALUES.card.alt);
     await act(async () => {
-      userEvent.click(cardButton);
+      await userEvent.click(cardButton);
     });
     expect(onDataViewToggle).toHaveBeenCalledWith(DATA_VIEW_TOGGLE_VALUES.card.value);
 
     const listButton = screen.getByLabelText(DATA_VIEW_TOGGLE_VALUES.list.alt);
     await act(async () => {
-      userEvent.click(listButton);
+      await userEvent.click(listButton);
     });
     expect(onDataViewToggle).toHaveBeenCalledWith(DATA_VIEW_TOGGLE_VALUES.list.value);
   });

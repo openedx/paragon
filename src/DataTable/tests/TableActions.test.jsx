@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import classNames from 'classnames';
 import TableActions from '../TableActions';
@@ -209,16 +209,20 @@ describe('<TableActions />', () => {
   describe('small screen', () => {
     const actions = [[[<FirstAction />]], [[<FirstAction />, <SecondAction />]], [instance.tableActions]];
 
-    test.each(actions)('puts all actions in a dropdown %#', (testActions) => {
+    test.each(actions)('puts all actions in a dropdown %#', async (testActions) => {
       useWindowSize.mockReturnValue({ width: 500 });
       render(<TableActionsWrapper value={{ ...instance, tableActions: testActions }} />);
-      const overflowToggle = screen.getByRole('button', { name: SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT });
-      expect(overflowToggle).toBeInTheDocument();
 
-      userEvent.click(overflowToggle);
+      await waitFor(() => {
+        const overflowToggle = screen.getByRole('button', { name: SMALL_SCREEN_ACTION_OVERFLOW_BUTTON_TEXT });
+        expect(overflowToggle).toBeInTheDocument();
 
-      const buttons = screen.getAllByRole('button');
-      expect(buttons.length).toBeGreaterThan(1);
+        userEvent.click(overflowToggle);
+      });
+      await waitFor(() => {
+        const buttons = screen.getAllByRole('button');
+        expect(buttons.length).toBeGreaterThan(1);
+      });
     });
 
     it('renders the correct alt text for the dropdown', () => {

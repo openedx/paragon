@@ -145,7 +145,7 @@ Input.defaultProps = {
 
 // eslint-disable-next-line react/no-multi-comp
 const InputWithRefForwarding = React.forwardRef((props, ref) => (
-  <Input forwardedRef={ref} {...props} />
+  <Input type="text" forwardedRef={ref} {...props} />
 ));
 
 export default InputWithRefForwarding;

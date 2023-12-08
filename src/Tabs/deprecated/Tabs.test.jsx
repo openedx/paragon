@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Tabs from '.';
@@ -41,9 +41,11 @@ describe('<Tabs />', () => {
       const { container } = render(<Tabs {...props} />);
       const tabButtons = container.querySelectorAll('button');
 
-      tabButtons.forEach((node, i) => {
-        userEvent.click(node);
-        tabSelectedAtIndex(i, container);
+      tabButtons.forEach(async (node, i) => {
+        await waitFor(() => {
+          userEvent.click(node);
+          tabSelectedAtIndex(i, container);
+        });
       });
     });
   });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import {render, screen, waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
 
@@ -116,13 +116,15 @@ describe('<SelectableBox />', () => {
       rerender(<SelectableRadio checked />);
       expect(radio.className).toContain('pgn__selectable_box-active');
     });
-    it('ref is passed to onClick function', () => {
+    it('ref is passed to onClick function', async () => {
       let inputRef;
       const onClick = (ref) => { inputRef = ref; };
       render(<SelectableRadio onClick={onClick} />);
       const radio = screen.getByRole('button');
       userEvent.click(radio);
-      expect(inputRef).not.toBeFalsy();
+      await waitFor(() => {
+        expect(inputRef).not.toBeFalsy();
+      });
     });
   });
 });
