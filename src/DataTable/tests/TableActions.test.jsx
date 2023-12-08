@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import classNames from 'classnames';
 import TableActions from '../TableActions';
@@ -216,9 +216,10 @@ describe('<TableActions />', () => {
       expect(overflowToggle).toBeInTheDocument();
 
       userEvent.click(overflowToggle);
-
-      const buttons = screen.getAllByRole('button');
-      expect(buttons.length).toBeGreaterThan(1);
+      waitFor(() => {
+        const buttons = screen.getAllByRole('button');
+        expect(buttons.length).toBeGreaterThan(1);
+      });
     });
 
     it('renders the correct alt text for the dropdown', () => {
