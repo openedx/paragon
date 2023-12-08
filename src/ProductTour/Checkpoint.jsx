@@ -30,6 +30,7 @@ const Checkpoint = React.forwardRef(({
       // Use the Popper library to translate the Checkpoint to its target's coordinates
       const checkpointPopper = createPopper(targetElement, checkpoint, {
         placement: isMobile ? 'top' : placement,
+        strategy: 'fixed',
         modifiers: [
           {
             name: 'arrow',
