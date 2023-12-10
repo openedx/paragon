@@ -3,7 +3,7 @@ const fs = require('fs');
 const { getThemesSCSSVariables, processComponentSCSSVariables } = require('../theme-utils');
 const { INSIGHTS_PAGES } = require('../src/config');
 const componentsUsage = require('../src/utils/componentsUsage');
-const { createTabsData } = require('./tabs-utils');
+const { retrieveRootFiles } = require('./tabs-utils');
 
 async function createPages(graphql, actions, reporter) {
   // Destructure the createPage function from the actions object
@@ -47,25 +47,16 @@ async function createPages(graphql, actions, reporter) {
   // you'll call `createPage` for each result
   // eslint-disable-next-line no-restricted-syntax
   for (const { node } of components) {
+    /* eslint-disable no-await-in-loop */
     const componentDir = node.slug.split('/')[0];
     const variablesPath = path.resolve(__dirname, `../../src/${componentDir}/_variables.scss`);
     const componentPath = path.resolve(__dirname, `../../src/${componentDir}`);
     const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.fileAbsolutePath.split('src')[1]}`;
+    const componentTabsData = await retrieveRootFiles(componentPath, componentDir, node.slug);
     let scssVariablesData = {};
-    let componentTabsData = {};
 
     if (fs.existsSync(variablesPath)) {
-      // eslint-disable-next-line no-await-in-loop
       scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
-    }
-
-    const subcomponent = node.slug.split('/').slice(1).join('/');
-    // eslint-disable-next-line no-unused-vars
-    const [mainComponent, subComponent] = subcomponent.split('/');
-
-    if (fs.existsSync(componentPath)) {
-      // eslint-disable-next-line no-await-in-loop
-      componentTabsData = await createTabsData(componentPath, componentDir, mainComponent);
     }
 
     createPage({
@@ -84,7 +75,7 @@ async function createPages(graphql, actions, reporter) {
         githubEditPath,
         componentUrl: node.fields.slug,
         tabName: node.frontmatter.tabName,
-        markdownFiles: componentTabsData || [],
+        componentTabsData,
       },
     });
   }

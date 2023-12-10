@@ -1,43 +1,48 @@
-const fs = require('fs');
+const fsp = require('fs').promises;
 const path = require('path');
 
-function readComponentDir(componentPath, result) {
-  const files = fs.readdirSync(componentPath);
+async function exploreComponentDirectory(directoryPath, componentStructure) {
+  try {
+    const files = await fsp.readdir(directoryPath);
 
-  const componentData = {
-    rootFiles: [],
-    subdirectories: {},
-  };
+    const componentData = {
+      rootFiles: [],
+      subdirectories: {},
+    };
 
-  // eslint-disable-next-line no-restricted-syntax
-  for (const file of files) {
-    const filePath = path.join(componentPath, file);
-    const stats = fs.statSync(filePath);
+    await Promise.all(files.map(async (fileName) => {
+      const filePath = path.join(directoryPath, fileName);
+      const fileStats = await fsp.stat(filePath);
 
-    if (stats.isDirectory()) {
-      componentData.subdirectories[file] = readComponentDir(filePath, result);
-    } else if (path.extname(file) === '.md' && !file.includes('README')) {
-      const nameWithoutExtension = path.parse(file).name;
-      componentData.rootFiles.push(nameWithoutExtension);
-    }
+      if (fileStats.isDirectory()) {
+        componentData.subdirectories[fileName] = await exploreComponentDirectory(filePath, componentStructure);
+      } else if (path.extname(fileName) === '.md' && !fileName.includes('README')) {
+        const fileNameWithoutExtension = path.parse(fileName).name;
+        componentData.rootFiles.push(fileNameWithoutExtension);
+      }
+    }));
+
+    componentStructure[path.basename(directoryPath)] = componentData;
+    return componentData;
+  } catch (error) {
+    console.error(`Error exploring component directory: ${directoryPath}`, error);
+    throw error;
   }
-
-  // eslint-disable-next-line no-return-assign
-  return result[path.basename(componentPath)] = componentData;
 }
 
-function createTabsData(componentPath, componentDir, mainComponent) {
-  const result = {};
-  readComponentDir(componentPath, result);
+async function retrieveRootFiles(componentPath, componentDir, nodeSlug) {
+  const [subComponentName] = nodeSlug.split('/').slice(1);
+  const componentStructure = {};
+  await exploreComponentDirectory(componentPath, componentStructure);
 
-  const subdirectories = result[componentDir]?.subdirectories;
+  const componentSubDirectories = componentStructure[componentDir]?.subdirectories;
 
-  if (subdirectories !== undefined) {
-    const selectedComponent = subdirectories[mainComponent] || result[componentDir];
+  if (componentSubDirectories !== undefined) {
+    const selectedComponent = componentSubDirectories[subComponentName] || componentStructure[componentDir];
     return selectedComponent.rootFiles || [];
   }
 
   return [];
 }
 
-module.exports = { createTabsData };
+module.exports = { retrieveRootFiles };

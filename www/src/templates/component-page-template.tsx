@@ -51,7 +51,7 @@ export interface IPageTemplate {
     scssVariablesData: Record<string, string>,
     componentsUsageInsights: string[],
     githubEditPath: string,
-    markdownFiles: string[],
+    componentTabsData: string[],
     componentUrl: string,
     tabName: string,
   }
@@ -64,7 +64,7 @@ export type ShortCodesTypes = {
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: {
-    scssVariablesData, componentsUsageInsights, githubEditPath, markdownFiles, componentUrl, tabName,
+    scssVariablesData, componentsUsageInsights, githubEditPath, componentTabsData, componentUrl, tabName,
   },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
@@ -137,20 +137,18 @@ export default function PageTemplate({
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
 
-  const handleOnSelect = (newTabName: string) => {
-    const isCurrentTab = (newTabName === mdx.frontmatter.tabName);
-    const isNextTab = markdownFiles.some((tab: string | string[]) => tab.includes(newTabName));
+  const handleOnSelect = (selectedTab: string) => {
+    const isCurrentTab = selectedTab === mdx.frontmatter.tabName;
+    const hasSelectedTab = componentTabsData
+      .some((availableTabs) => (
+        Array.isArray(availableTabs) ? availableTabs.includes(selectedTab) : availableTabs === selectedTab));
+
     const componentBaseUrl = componentUrl.replace(`/${tabName}`, '');
 
     if (!isCurrentTab) {
-      if (isNextTab) {
-        return navigate(`${componentBaseUrl}${newTabName}`);
-      }
-
-      return navigate(componentBaseUrl);
+      const newUrl = hasSelectedTab ? `${componentBaseUrl}${selectedTab}` : componentBaseUrl;
+      navigate(newUrl);
     }
-
-    return null;
   };
 
   return (
@@ -237,7 +235,7 @@ export default function PageTemplate({
               )}
             </div>
           </Tab>
-          {markdownFiles.map((tabTitle: string) => {
+          {componentTabsData.map((tabTitle: string) => {
             const prettyTabTitle = upperFirstLetter(tabTitle.replace('-', ' '));
             return (
               <Tab key={tabTitle} eventKey={tabTitle} title={prettyTabTitle}>
