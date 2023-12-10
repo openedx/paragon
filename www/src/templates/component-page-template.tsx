@@ -37,7 +37,6 @@ export interface IPageTemplate {
         components: string,
         notes: string,
         tabName: string,
-        tabs: string[],
       },
       tableOfContents: {
         items: Array<{}>,
@@ -54,6 +53,7 @@ export interface IPageTemplate {
     githubEditPath: string,
     markdownFiles: string[],
     componentUrl: string,
+    tabName: string,
   }
 }
 
@@ -64,7 +64,7 @@ export type ShortCodesTypes = {
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: {
-    scssVariablesData, componentsUsageInsights, githubEditPath, markdownFiles, componentUrl, subComponentName, tabName,
+    scssVariablesData, componentsUsageInsights, githubEditPath, markdownFiles, componentUrl, tabName,
   },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
@@ -137,12 +137,9 @@ export default function PageTemplate({
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
 
-  const isSubComponent = Object.keys(markdownFiles.subdirectories).includes(subComponentName);
-  const tabItems = isSubComponent ? markdownFiles.subdirectories[subComponentName].rootFiles : markdownFiles.rootFiles;
-
   const handleOnSelect = (newTabName: string) => {
     const isCurrentTab = (newTabName === mdx.frontmatter.tabName);
-    const isNextTab = tabItems?.some((tab: string | string[]) => tab.includes(newTabName));
+    const isNextTab = markdownFiles.some((tab: string | string[]) => tab.includes(newTabName));
     const componentBaseUrl = componentUrl.replace(`/${tabName}`, '');
 
     if (!isCurrentTab) {
@@ -240,10 +237,10 @@ export default function PageTemplate({
               )}
             </div>
           </Tab>
-          {tabItems?.map((tabTitle: string) => {
+          {markdownFiles.map((tabTitle: string) => {
             const prettyTabTitle = upperFirstLetter(tabTitle.replace('-', ' '));
             return (
-              <Tab eventKey={tabTitle.replace('.md', '')} title={prettyTabTitle.replace('.md', '')}>
+              <Tab key={tabTitle} eventKey={tabTitle} title={prettyTabTitle}>
                 <div className="mt-4">
                   <MDXProvider components={shortcodes}>
                     <MDXRenderer>{mdx.body}</MDXRenderer>

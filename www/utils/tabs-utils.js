@@ -17,7 +17,8 @@ function readComponentDir(componentPath, result) {
     if (stats.isDirectory()) {
       componentData.subdirectories[file] = readComponentDir(filePath, result);
     } else if (path.extname(file) === '.md' && !file.includes('README')) {
-      componentData.rootFiles.push(file);
+      const nameWithoutExtension = path.parse(file).name;
+      componentData.rootFiles.push(nameWithoutExtension);
     }
   }
 
@@ -25,10 +26,18 @@ function readComponentDir(componentPath, result) {
   return result[path.basename(componentPath)] = componentData;
 }
 
-function createTabsData(componentPath, componentDir) {
+function createTabsData(componentPath, componentDir, mainComponent) {
   const result = {};
   readComponentDir(componentPath, result);
-  return result[componentDir];
+
+  const subdirectories = result[componentDir]?.subdirectories;
+
+  if (subdirectories !== undefined) {
+    const selectedComponent = subdirectories[mainComponent] || result[componentDir];
+    return selectedComponent.rootFiles || [];
+  }
+
+  return [];
 }
 
 module.exports = { createTabsData };

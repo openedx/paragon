@@ -60,11 +60,12 @@ async function createPages(graphql, actions, reporter) {
     }
 
     const subcomponent = node.slug.split('/').slice(1).join('/');
+    // eslint-disable-next-line no-unused-vars
     const [mainComponent, subComponent] = subcomponent.split('/');
 
     if (fs.existsSync(componentPath)) {
       // eslint-disable-next-line no-await-in-loop
-      componentTabsData = await createTabsData(componentPath, componentDir);
+      componentTabsData = await createTabsData(componentPath, componentDir, mainComponent);
     }
 
     createPage({
@@ -82,7 +83,6 @@ async function createPages(graphql, actions, reporter) {
         componentsUsageInsights: Object.keys(componentsUsage),
         githubEditPath,
         componentUrl: node.fields.slug,
-        subComponentName: mainComponent,
         tabName: node.frontmatter.tabName,
         markdownFiles: componentTabsData || [],
       },
