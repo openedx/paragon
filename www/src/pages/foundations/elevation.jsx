@@ -14,6 +14,7 @@ import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import { SettingsContext } from '../../context/SettingsContext';
 import { sendUserAnalyticsEvent, SHADOW_GENERATOR_LAYER_EVENTS } from '../../../segment-events';
+import upperFirstLetter from '../../utils/helpers';
 
 const boxShadowSides = ['down', 'up', 'right', 'left', 'centered'];
 const boxShadowLevels = [1, 2, 3, 4, 5];
@@ -280,7 +281,7 @@ export default function ElevationPage({ pageContext }) {
 
   const sideTitle = boxShadowSides.map(side => (
     <p key={side} className="pgn-doc__box-shadow-side-title h3">
-      {side.charAt(0).toUpperCase() + side.substring(1)}
+      {upperFirstLetter(side)}
     </p>
   ));
 

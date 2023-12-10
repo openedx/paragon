@@ -14,7 +14,7 @@ import Menu from '../Menu';
 export interface IHeaderProps {
   siteTitle: string,
   showMinimizedTitle?: boolean,
-  tabName: string,
+  tabName?: string,
 }
 
 function Header({ siteTitle, showMinimizedTitle, tabName }: IHeaderProps) {
@@ -74,12 +74,13 @@ function Header({ siteTitle, showMinimizedTitle, tabName }: IHeaderProps) {
 Header.propTypes = {
   siteTitle: PropTypes.string,
   showMinimizedTitle: PropTypes.bool,
-  tabName: PropTypes.string.isRequired,
+  tabName: PropTypes.string,
 };
 
 Header.defaultProps = {
   siteTitle: '',
   showMinimizedTitle: false,
+  tabName: undefined,
 };
 
 export default Header;

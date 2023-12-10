@@ -1,7 +1,5 @@
 /* eslint-disable react/no-unstable-nested-components */
-import React, {
-  useContext, useEffect, useState,
-} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link, navigate } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
@@ -141,7 +139,8 @@ export default function PageTemplate({
     const isCurrentTab = selectedTab === mdx.frontmatter.tabName;
     const hasSelectedTab = componentTabsData
       .some((availableTabs) => (
-        Array.isArray(availableTabs) ? availableTabs.includes(selectedTab) : availableTabs === selectedTab));
+        Array.isArray(availableTabs)
+          ? availableTabs.includes(selectedTab) : availableTabs === selectedTab));
 
     const componentBaseUrl = componentUrl.replace(`/${tabName}`, '');
 
