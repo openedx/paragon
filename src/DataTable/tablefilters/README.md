@@ -1,0 +1,300 @@
+---
+title: 'TableFilters'
+type: 'component'
+components:
+- TextFilter
+- CheckboxFilter
+- DropdownFilter
+- MultiSelectDropdownFilter
+categories:
+- Table
+tabName: 'implementation'
+status: 'New'
+designStatus: 'In progress'
+devStatus: 'In progress'
+---
+
+
+The ``DataTable`` component is a wrapper that uses the <a href="https://github.com/TanStack/table/tree/v7/docs/src/pages/docs" target="_blank" rel="noopener noreferrer">react-table</a> library to
+create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
+
+## Filtering and sorting
+Paragon currently provides a variety of filter types, and you can also define your own filter types.
+
+In the example below, a default ``TextFilter`` component is used as the default filter for all columns. A default filter can be passed in,
+or a filter component can be defined on the column using the ``Filter`` attribute. See <a href="https://github.com/TanStack/table/blob/v7/docs/src/pages/docs/api/useFilters.md" target="_blank" rel="noopener noreferrer">react-table filters documentation</a>
+for more information.
+
+## Available filter functions
+A filtering function can be defined on the column as well as the filter component. Custom filtering functions can also be defined, see <a href="https://github.com/TanStack/table/blob/v7/docs/src/pages/docs/api/useFilters.md#column-options" target="_blank" rel="noopener noreferrer">react-table filters documentation</a>
+for more information.
+Filter functions are defined on the column as the ``filter`` attribute.
+<dl>
+<dt>text</dt><dd>This is the default filter function. It lower-cases the search string and checks if the row value includes the search string</dd>
+<dt>exactText</dt><dd>Checks that the row value matches the search string exactly (case-insensitive)</dd>
+<dt>exactTextCase</dt><dd>Checks that the row value matches the search string exactly (case-sensitive)</dd>
+<dt>includes</dt><dd>Check that the row value includes the search string</dd>
+<dt>includesAll</dt><dd>Check that the row value includes every item in the array</dd>
+<dt>includesSome</dt><dd>Check that row value includes some item in the array</dd>
+<dt>includesValue</dt><dd>Check that the filter value includes the value of the row</dd>
+<dt>exact</dt><dd>Checks for exact equality between the row value and the search term. <pre>===</pre></dd>
+<dt>equals</dt><dd>Checks for equality between the row value and the search term. <pre>==</pre></dd>
+<dt>between</dt><dd>Expects an array with a min and max value as the search term. Checks that the row value is between the min and max</dd>
+</dl>
+
+## Using Filter components with filter functions
+The `MultiSelectDropdownFilter` and `CheckboxFilter` components expect an array of values. It is best to use them with the `includesValue` filter function.
+The `TextFilter` and `DropdownFilter` components can be used with a variety of the above `filter` functions.
+
+## TextFilter, MultiSelectDropdownFilter, CheckboxFilter
+
+The checkbox filter is used in the dropdown.
+A CheckboxFilter is used on the coat color column. Filters can be defined on the columns themselves.
+The `CheckboxFilter`, `DropdownFilter`, and `MultiSelectDropdownFilter` additionally require that the `filterChoices` property be defined on the column.
+
+The number of filters displayed in the `TableControlBar` can be modified by passing the `numBreakoutFilters` prop. When the screen size is small,
+all filters will be rendered in the dropdown.
+
+```jsx live
+<DataTable
+  isFilterable
+  defaultColumnValues={{ Filter: TextFilter }}
+  numBreakoutFilters={2}
+  columns={[
+    {
+      Header: 'Name',
+      accessor: 'name',
+
+    },
+    {
+      Header: 'Age',
+      accessor: 'age',
+      Filter: MultiSelectDropdownFilter,
+      filter: 'includesValue',
+      filterChoices: [
+        {
+          name: 'Four',
+          value: 4,
+        },
+        {
+          name: 'One',
+          value: 1,
+        },
+        {
+          name: 'Twelve',
+          value: 12,
+        },
+        {
+          name: 'Nine',
+          value: 9,
+        },
+        {
+          name: 'Seventeen',
+          number: 17,
+          value: 17,
+        },
+      ]
+    },
+    {
+      Header: 'Famous For',
+      accessor: 'famous_for',
+    },
+    {
+      Header: 'Coat Color',
+      accessor: 'color',
+      Filter: CheckboxFilter,
+      filter: 'includesValue',
+      filterChoices: [{
+        name: 'russian white',
+        number: 1,
+        value: 'russian white',
+      },
+      {
+        name: 'orange tabby',
+        number: 2,
+        value: 'orange tabby',
+      },
+      {
+        name: 'brown tabby',
+        number: 3,
+        value: 'brown tabby',
+      },
+      {
+        name: 'siamese',
+        number: 1,
+        value: 'siamese',
+      }]
+    },
+  ]}
+  itemCount={7}
+  data={[
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+      age: 4,
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+      age: 4,
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+      age: 1,
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+      age: 12,
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+      age: 9,
+    },
+    {
+      name: 'Long Cat',
+      color: 'russian white',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      age: 9,
+    },
+    {
+      name: 'Zeno',
+      color: 'brown tabby',
+      famous_for: 'getting halfway there',
+      age: 17,
+    },
+  ]}
+
+/>
+```
+
+## DropdownFilter
+
+```jsx live
+<DataTable
+  isFilterable
+  defaultColumnValues={{ Filter: TextFilter }}
+  numBreakoutFilters={2}
+  columns={[
+    {
+      Header: 'Name',
+      accessor: 'name',
+
+    },
+    {
+      Header: 'Age',
+      accessor: 'age',
+      Filter: DropdownFilter,
+      filter: 'equals',
+      filterChoices: [
+        {
+          name: 'Four',
+          value: 4,
+        },
+        {
+          name: 'One',
+          value: 1,
+        },
+        {
+          name: 'Twelve',
+          value: 12,
+        },
+        {
+          name: 'Nine',
+          value: 9,
+        },
+        {
+          name: 'Seventeen',
+          number: 17,
+          value: 17,
+        },
+      ]
+    },
+    {
+      Header: 'Famous For',
+      accessor: 'famous_for',
+    },
+    {
+      Header: 'Coat Color',
+      accessor: 'color',
+      Filter: CheckboxFilter,
+      filter: 'includesValue',
+      filterChoices: [{
+        name: 'russian white',
+        number: 1,
+        value: 'russian white',
+      },
+      {
+        name: 'orange tabby',
+        number: 2,
+        value: 'orange tabby',
+      },
+      {
+        name: 'brown tabby',
+        number: 3,
+        value: 'brown tabby',
+      },
+      {
+        name: 'siamese',
+        number: 1,
+        value: 'siamese',
+      }]
+    },
+  ]}
+  itemCount={7}
+  data={[
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+      age: 4,
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+      age: 4,
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+      age: 1,
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+      age: 12,
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+      age: 9,
+    },
+    {
+      name: 'Long Cat',
+      color: 'russian white',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      age: 9,
+    },
+    {
+      name: 'Zeno',
+      color: 'brown tabby',
+      famous_for: 'getting halfway there',
+      age: 17,
+    },
+  ]}
+
+/>
+```

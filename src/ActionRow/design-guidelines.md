@@ -1,15 +1,6 @@
 ---
 title: 'ActionRow'
-type: 'component'
-categories:
-- Imagery & Iconography
-components:
-- Image
 tabName: 'design-guidelines'
-status: 'Stable'
-designStatus: 'Done'
-devStatus: 'Done'
-notes: |
 ---
 
 <p>We are excited to announce upcoming improvements to the Design Guidelines section for the <strong>ActionRow</strong> component.

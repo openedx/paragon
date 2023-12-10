@@ -7,6 +7,7 @@ components:
 - CarouselCaption
 categories:
 - Content
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

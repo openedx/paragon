@@ -6,6 +6,7 @@ components:
 - OverlayTrigger
 categories:
 - Overlays
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

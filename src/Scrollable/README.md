@@ -6,6 +6,7 @@ components:
 - Scrollable
 categories:
 - Content
+tabName: 'implementation'
 status: 'New'
 designStatus: 'In Progress'
 devStatus: 'In Progress'

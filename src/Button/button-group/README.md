@@ -1,0 +1,67 @@
+---
+title: 'ButtonGroup'
+type: 'component'
+components:
+- ButtonGroup
+- ButtonToolbar
+categories:
+- Buttonlike
+tabName: 'implementation'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+  A pass through from react-bootstrap
+---
+
+<p className="lead">
+  This is a pass through component from React-Bootstrap.<br/>
+  <a href="https://react-bootstrap-v4.netlify.app/components/button-group/" target="_blank" rel="noopener noreferrer">
+    See React-Bootstrap for documentation.
+  </a>
+</p>
+
+## Basic Usage
+
+```jsx live
+<>
+  <ButtonGroup size="lg" className="mb-2">
+    <Button variant="primary">Left</Button>
+    <Button variant="primary">Middle</Button>
+    <Button variant="primary">Right</Button>
+  </ButtonGroup>
+  <br />
+  <ButtonGroup className="mb-2">
+    <Button variant="primary">Left</Button>
+    <Button variant="primary">Middle</Button>
+    <Button variant="primary">Right</Button>
+  </ButtonGroup>
+  <br />
+  <ButtonGroup size="sm">
+    <Button variant="primary">Left</Button>
+    <Button variant="primary">Middle</Button>
+    <Button variant="primary">Right</Button>
+  </ButtonGroup>
+</>
+```
+
+## ButtonToolbar
+
+```jsx live
+<ButtonToolbar aria-label="Toolbar with button groups">
+  <ButtonGroup className="mie-2" aria-label="First group">
+    <Button variant="primary">1</Button>
+    <Button variant="primary">2</Button>
+    <Button variant="primary">3</Button>
+    <Button variant="primary">4</Button>
+  </ButtonGroup>
+  <ButtonGroup className="mie-2" aria-label="Second group">
+    <Button variant="primary">5</Button>
+    <Button variant="primary">6</Button>
+    <Button variant="primary">7</Button>
+  </ButtonGroup>
+  <ButtonGroup aria-label="Third group">
+    <Button variant="primary">8</Button>
+  </ButtonGroup>
+</ButtonToolbar>
+```

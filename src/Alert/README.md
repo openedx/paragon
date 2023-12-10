@@ -7,6 +7,7 @@ components:
 - AlertLink
 categories:
 - Status & metadata
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

@@ -6,6 +6,7 @@ components:
 - MenuItem
 categories:
 - Navigation
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

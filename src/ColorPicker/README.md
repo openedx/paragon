@@ -5,6 +5,7 @@ components:
 - ColorPicker
 categories:
 - Imagery & Iconography
+tabName: 'implementation'
 status: 'In progress'
 designStatus: 'In progress'
 devStatus: 'In progress'

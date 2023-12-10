@@ -11,6 +11,7 @@ components:
 - DropdownDivider
 categories:
 - Navigation
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

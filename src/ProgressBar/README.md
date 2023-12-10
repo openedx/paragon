@@ -6,6 +6,7 @@ components:
 - ProgressBarAnnotated
 categories:
 - Status & metadata
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

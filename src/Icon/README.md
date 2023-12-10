@@ -5,6 +5,7 @@ components:
 - Icon
 categories:
 - Imagery & Iconography
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

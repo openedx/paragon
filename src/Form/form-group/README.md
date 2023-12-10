@@ -1,0 +1,81 @@
+---
+title: 'Form.Group'
+type: 'component'
+components:
+- FormGroup
+categories:
+- Forms
+tabName: 'implementation'
+status: 'Stable'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: |
+
+---
+
+`Form.Group` provides its children a context that contains ids and attributes
+that enable these components to relate to each other according to WCAG guidelines.
+
+`Form.Group` renders a `FormGroupContextProvider` which will autogenerate a
+controlId if none is supplied and offers `size`, `isInvalid`, `isValid` in the
+context. `Form.Control`, `Form.Label`, and `Form.Control.Feedback` consume this context.
+
+## Basic Usage
+
+```jsx live
+  <Form.Group
+    isInvalid
+    controlId="explicit-id-1"
+  >
+    <Form.Label>What kind of cats?</Form.Label>
+    <Form.Control />
+    <Form.Control.Feedback type="invalid">You are incorrect!</Form.Control.Feedback>
+  </Form.Group>
+```
+
+```jsx live
+  <Form.Group
+    isValid
+    controlId="explicit-id-2"
+  >
+    <Form.Label>What kind of cats?</Form.Label>
+    <Form.Control />
+    <Form.Control.Feedback type="valid">You are correct!</Form.Control.Feedback>
+  </Form.Group>
+```
+
+## Sizes
+
+```jsx live
+() => {
+  const [value, setValue] = useState('');
+  const handleChange = (e) => setValue(e.target.value);
+  return (
+    <>
+      <Form.Group size="sm">
+        <Form.Label>What kind of cats?</Form.Label>
+        <Form.Control
+          value={value}
+          onChange={handleChange}
+        />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Label>What kind of cats?</Form.Label>
+        <Form.Control
+          value={value}
+          onChange={handleChange}
+        />
+      </Form.Group>
+
+      <Form.Group size="lg">
+        <Form.Label>What kind of cats?</Form.Label>
+        <Form.Control
+          value={value}
+          onChange={handleChange}
+        />
+      </Form.Group>
+    </>
+  );
+}
+```
