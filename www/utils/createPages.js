@@ -1,8 +1,9 @@
 const path = require('path');
 const fs = require('fs');
-const { INSIGHTS_PAGES } = require('../src/config');
 const { getThemesSCSSVariables, processComponentSCSSVariables } = require('../theme-utils');
+const { INSIGHTS_PAGES } = require('../src/config');
 const componentsUsage = require('../src/utils/componentsUsage');
+const { createTabsData } = require('./tabs-utils');
 
 async function createPages(graphql, actions, reporter) {
   // Destructure the createPage function from the actions object
@@ -41,17 +42,17 @@ async function createPages(graphql, actions, reporter) {
   }
   // Create component detail pages.
   const components = result.data.allMdx.edges;
-
   const themesSCSSVariables = await getThemesSCSSVariables();
-  const componentPages = {};
 
   // you'll call `createPage` for each result
   // eslint-disable-next-line no-restricted-syntax
   for (const { node } of components) {
     const componentDir = node.slug.split('/')[0];
     const variablesPath = path.resolve(__dirname, `../../src/${componentDir}/_variables.scss`);
+    const componentPath = path.resolve(__dirname, `../../src/${componentDir}`);
     const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.fileAbsolutePath.split('src')[1]}`;
     let scssVariablesData = {};
+    let componentTabsData = {};
 
     if (fs.existsSync(variablesPath)) {
       // eslint-disable-next-line no-await-in-loop
@@ -59,18 +60,11 @@ async function createPages(graphql, actions, reporter) {
     }
 
     const subcomponent = node.slug.split('/').slice(1).join('/');
-
     const [mainComponent, subComponent] = subcomponent.split('/');
-    if (!componentPages[componentDir]) {
-      componentPages[componentDir] = {};
-    }
 
-    if (!subcomponent.includes('README')) {
-      if (componentPages[componentDir][mainComponent]) {
-        componentPages[componentDir][mainComponent].push(subComponent || mainComponent);
-      } else {
-        componentPages[componentDir][mainComponent] = [subComponent || mainComponent];
-      }
+    if (fs.existsSync(componentPath)) {
+      // eslint-disable-next-line no-await-in-loop
+      componentTabsData = await createTabsData(componentPath, componentDir);
     }
 
     createPage({
@@ -90,7 +84,7 @@ async function createPages(graphql, actions, reporter) {
         componentUrl: node.fields.slug,
         subComponentName: mainComponent,
         tabName: node.frontmatter.tabName,
-        markdownFiles: componentPages[componentDir] || {},
+        markdownFiles: componentTabsData || [],
       },
     });
   }

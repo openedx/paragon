@@ -72,9 +72,7 @@ export default function PageTemplate({
   const { settings } = useContext(SettingsContext);
   const { theme } = settings;
   const scssVariables = scssVariablesData[theme!] || scssVariablesData[DEFAULT_THEME!];
-  console.log('markdownFiles', markdownFiles);
-  console.log('subComponentName', subComponentName);
-  // console.log('tabName', tabName);
+
   const components = componentNodes.nodes
     .reduce((acc: { [x: string]: { displayName: string, props?: [] }; }, currentValue: { displayName: string; }) => {
       acc[currentValue.displayName] = currentValue;
@@ -136,16 +134,15 @@ export default function PageTemplate({
   };
 
   const isDeprecated = mdx.frontmatter?.status?.toLowerCase().includes('deprecate') || false;
-  const filteredKeys = Object.entries(markdownFiles)
-    .filter(([key, value]) => key.includes('guidelines'))
-    .map(([key, value]) => key);
-  const tabsItems = subComponentName === 'README' ? filteredKeys : markdownFiles[subComponentName];
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
 
+  const isSubComponent = Object.keys(markdownFiles.subdirectories).includes(subComponentName);
+  const tabItems = isSubComponent ? markdownFiles.subdirectories[subComponentName].rootFiles : markdownFiles.rootFiles;
+
   const handleOnSelect = (newTabName: string) => {
     const isCurrentTab = (newTabName === mdx.frontmatter.tabName);
-    const isNextTab = tabsItems.some((tab: string | string[]) => tab.includes(newTabName));
+    const isNextTab = tabItems?.some((tab: string | string[]) => tab.includes(newTabName));
     const componentBaseUrl = componentUrl.replace(`/${tabName}`, '');
 
     if (!isCurrentTab) {
@@ -243,10 +240,10 @@ export default function PageTemplate({
               )}
             </div>
           </Tab>
-          {tabsItems.map((tabTitle: string) => {
+          {tabItems?.map((tabTitle: string) => {
             const prettyTabTitle = upperFirstLetter(tabTitle.replace('-', ' '));
             return (
-              <Tab eventKey={tabTitle} title={prettyTabTitle}>
+              <Tab eventKey={tabTitle.replace('.md', '')} title={prettyTabTitle.replace('.md', '')}>
                 <div className="mt-4">
                   <MDXProvider components={shortcodes}>
                     <MDXRenderer>{mdx.body}</MDXRenderer>
