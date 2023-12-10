@@ -14,9 +14,10 @@ import Menu from '../Menu';
 export interface IHeaderProps {
   siteTitle: string,
   showMinimizedTitle?: boolean,
+  tabName: string,
 }
 
-function Header({ siteTitle, showMinimizedTitle }: IHeaderProps) {
+function Header({ siteTitle, showMinimizedTitle, tabName }: IHeaderProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isOpen, , close, toggle] = useToggle(false);
   const [target, setTarget] = useState(null);
@@ -48,7 +49,7 @@ function Header({ siteTitle, showMinimizedTitle }: IHeaderProps) {
             isFullscreenOnMobile
           >
             <div className="pgn-doc__header-home--menu">
-              <Menu />
+              <Menu tabName={tabName} />
             </div>
           </ModalDialog>
         ) : (
@@ -61,7 +62,7 @@ function Header({ siteTitle, showMinimizedTitle }: IHeaderProps) {
             onEscapeKey={close}
           >
             <div className="pgn-doc__header-home--menu">
-              <Menu />
+              <Menu tabName={tabName} />
             </div>
           </ModalPopup>
         )}
@@ -73,6 +74,7 @@ function Header({ siteTitle, showMinimizedTitle }: IHeaderProps) {
 Header.propTypes = {
   siteTitle: PropTypes.string,
   showMinimizedTitle: PropTypes.bool,
+  tabName: PropTypes.string.isRequired,
 };
 
 Header.defaultProps = {

@@ -34,6 +34,7 @@ const menuQuery = graphql`
           internal: { owner: { nin: "gatsby-transformer-react-docgen" } }
         }
         frontmatter: { type: {} }
+        fields: { slug: { regex: "/^((?!guidelines).)*$/" } }
       }
       sort: { fields: frontmatter___title }
     ) {
@@ -167,7 +168,11 @@ interface IMenuQueryComponents {
   all: Array<IComponentNavItem>
 }
 
-function Menu() {
+export type MenuProps = {
+  tabName?: string,
+};
+
+function Menu({ tabName }: MenuProps) {
   const {
     settings,
     handleSettingsChange,
@@ -286,14 +291,14 @@ function Menu() {
               key={fieldValue}
               styling="basic"
               title={fieldValue}
-              defaultOpen={nodes.some(({ fields }) => fields.slug === pathname)}
+              defaultOpen={nodes.some(({ fields }) => pathname.includes(fields.slug))}
             >
               <ul className="list-unstyled">
                 {nodes.map((node) => (
                   <ComponentNavItem
                     key={node.id}
                     {...node}
-                    isActive={pathname === node.fields.slug}
+                    isActive={pathname.replace(tabName ?? '', '') === node.fields.slug}
                   />
                 ))}
               </ul>
@@ -318,5 +323,13 @@ function Menu() {
     </div>
   );
 }
+
+Menu.propTypes = {
+  tabName: PropTypes.string,
+};
+
+Menu.defaultProps = {
+  tabName: undefined,
+};
 
 export default Menu;

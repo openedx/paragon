@@ -155,6 +155,7 @@ export default function PageTemplate({
     <Layout
       showMinimizedTitle={showMinimizedTitle}
       isMdx
+      tabName={mdx.frontmatter.tabName}
       tocData={getTocData()}
       githubEditPath={githubEditPath}
     >

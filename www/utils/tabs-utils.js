@@ -25,6 +25,7 @@ async function exploreComponentDirectory(directoryPath, componentStructure) {
     componentStructure[path.basename(directoryPath)] = componentData;
     return componentData;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(`Error exploring component directory: ${directoryPath}`, error);
     throw error;
   }
