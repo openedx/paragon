@@ -4,11 +4,13 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
-const createPages = require('./utils/createPages');
-const onCreateNode = require('./utils/onCreateNode');
-const onCreateWebpackConfig = require('./utils/onCreateWebpackConfig');
-const createCssUtilityClassNodes = require('./utils/createCssUtilityClassNodes');
-const onCreatePage = require('./utils/onCreatePage');
+const {
+  createPages,
+  onCreateNode,
+  onCreateWebpackConfig,
+  createCssUtilityClassNodes,
+  onCreatePage,
+} = require('./gatsby-node-functions');
 
 exports.onCreateWebpackConfig = ({ actions }) => onCreateWebpackConfig(actions);
 

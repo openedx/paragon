@@ -1,9 +1,8 @@
 const path = require('path');
 const fs = require('fs');
-const { getThemesSCSSVariables, processComponentSCSSVariables } = require('../theme-utils');
+const { getThemesSCSSVariables, processComponentSCSSVariables, retrieveRootFiles } = require('./utils');
 const { INSIGHTS_PAGES } = require('../src/config');
 const componentsUsage = require('../src/utils/componentsUsage');
-const { retrieveRootFiles } = require('./tabs-utils');
 
 async function createPages(graphql, actions, reporter) {
   // Destructure the createPage function from the actions object

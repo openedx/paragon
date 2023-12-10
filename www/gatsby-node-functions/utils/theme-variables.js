@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /**
  * This module contains utilities functions
  * which deal with displaying multiple themes on docs site.
@@ -6,7 +7,7 @@
 const path = require('path');
 const fs = require('fs');
 const readline = require('readline');
-const { THEMES } = require('./theme-config');
+const { THEMES } = require('../../theme-config');
 
 /**
  * Parses SCSS variables stylesheet into JS object of the form {variable: value}
@@ -30,7 +31,6 @@ async function parseSCSSIntoObject(pathToVariables) {
   let currentVariable = '';
   let currentValue = '';
 
-  // eslint-disable-next-line no-restricted-syntax
   for await (const line of rl) {
     // we encountered new variable
     if (line.startsWith('$')) {
@@ -64,11 +64,10 @@ async function parseSCSSIntoObject(pathToVariables) {
 async function getThemesSCSSVariables() {
   const themeSCSSVariables = {};
 
-  // eslint-disable-next-line no-restricted-syntax
   for (const { id, pathToVariables } of THEMES) {
     if (pathToVariables) {
       // eslint-disable-next-line no-await-in-loop
-      themeSCSSVariables[id] = await parseSCSSIntoObject(path.resolve(__dirname, '../node_modules', pathToVariables));
+      themeSCSSVariables[id] = await parseSCSSIntoObject(path.resolve(__dirname, '../../../node_modules', pathToVariables));
     } else {
       themeSCSSVariables[id] = {};
     }
@@ -110,7 +109,6 @@ async function processComponentSCSSVariables(pathToStylesheet, themesData) {
     });
   }
 
-  // eslint-disable-next-line no-restricted-syntax
   for await (const line of rl) {
     if (line.startsWith('$')) {
       if (currentVar && currentValue) {
