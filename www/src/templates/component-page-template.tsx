@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unstable-nested-components */
-import React, { useContext, useEffect, useState } from 'react';
+import React, {
+  useContext, useEffect, useState,
+} from 'react';
 import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, navigate } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import classNames from 'classnames';
@@ -11,6 +13,8 @@ import {
   breakpoints,
   useMediaQuery,
   Stack,
+  Tabs,
+  Tab,
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 import { DEFAULT_THEME } from '../../theme-config';
@@ -22,6 +26,7 @@ import LinkedHeading from '../components/LinkedHeading';
 import ComponentsUsage from '../components/insights/ComponentsUsage';
 import LeaveFeedback from '../components/LeaveFeedback';
 import PageEditBtn from '../components/PageEditBtn';
+import upperFirstLetter from '../utils/helpers';
 
 export interface IPageTemplate {
   data: {
@@ -31,6 +36,7 @@ export interface IPageTemplate {
         status: string,
         components: string,
         notes: string,
+        tabName: string,
       },
       tableOfContents: {
         items: Array<{}>,
@@ -45,6 +51,9 @@ export interface IPageTemplate {
     scssVariablesData: Record<string, string>,
     componentsUsageInsights: string[],
     githubEditPath: string,
+    componentTabsData: string[],
+    componentUrl: string,
+    tabName: string,
   }
 }
 
@@ -54,7 +63,9 @@ export type ShortCodesTypes = {
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
-  pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath },
+  pageContext: {
+    scssVariablesData, componentsUsageInsights, githubEditPath, componentTabsData, componentUrl, tabName,
+  },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
@@ -126,6 +137,20 @@ export default function PageTemplate({
 
   useEffect(() => setShowMinimizedTitle(!!isMobile), [isMobile]);
 
+  const handleOnSelect = (selectedTab: string) => {
+    const isCurrentTab = selectedTab === mdx.frontmatter.tabName;
+    const hasSelectedTab = componentTabsData
+      .some((availableTabs) => (
+        Array.isArray(availableTabs) ? availableTabs.includes(selectedTab) : availableTabs === selectedTab));
+
+    const componentBaseUrl = componentUrl.replace(`/${tabName}`, '');
+
+    if (!isCurrentTab) {
+      const newUrl = hasSelectedTab ? `${componentBaseUrl}${selectedTab}` : componentBaseUrl;
+      navigate(newUrl);
+    }
+  };
+
   return (
     <Layout
       showMinimizedTitle={showMinimizedTitle}
@@ -160,46 +185,69 @@ export default function PageTemplate({
             <LeaveFeedback />
           </Stack>
         </Stack>
-        <MDXProvider components={shortcodes}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </MDXProvider>
-        {scssVariables && (
-          <div className="mb-5">
-            <h2 className="mb-4 pgn-doc__heading" id={scssVariablesUrl}>
-              {scssVariablesTitle}
-              <a href={`#${scssVariablesUrl}`} aria-label="Jump to SCSS variables">
-                <span className="pgn-doc__anchor">#</span>
-              </a>
-            </h2>
-            <CodeBlock className="language-scss">{scssVariables}</CodeBlock>
-          </div>
-        )}
-        {components[sortedComponentNames[0]]?.props && (
-          <h2 className="mb-5 pgn-doc__heading" id={propsAPIUrl}>
-            {propsAPITitle}
-            <a href={`#${propsAPIUrl}`} aria-label="Props API">
-              <span className="pgn-doc__anchor">#</span>
-            </a>
-          </h2>
-        )}
-        {typeof sortedComponentNames !== 'string' && sortedComponentNames?.map((componentName: string | number) => {
-          const node: { displayName: string } = components[componentName];
-          if (!node) {
-            return null;
-          }
-          return <GenericPropsTable key={node.displayName} {...node} />;
-        })}
-        {isUsageInsights && (
-          <>
-            <h2 className="pgn-doc__heading m-0" id={usageInsightsUrl}>
-              {usageInsightsTitle}
-              <a href={`#${usageInsightsUrl}`} aria-label="Usage Insights">
-                <span className="pgn-doc__anchor">#</span>
-              </a>
-            </h2>
-            <ComponentsUsage data={(sortedComponentNames as string[])} />
-          </>
-        )}
+        <Tabs
+          variant="tabs"
+          id="uncontrolled-tab-example"
+          activeKey={mdx.frontmatter.tabName}
+          onSelect={handleOnSelect}
+        >
+          <Tab eventKey="implementation" title="Implementation">
+            <div className="mt-4">
+              <MDXProvider components={shortcodes}>
+                <MDXRenderer>{mdx.body}</MDXRenderer>
+              </MDXProvider>
+              {scssVariables && (
+                <div className="mb-5">
+                  <h2 className="mb-4 pgn-doc__heading" id={scssVariablesUrl}>
+                    {scssVariablesTitle}
+                    <a href={`#${scssVariablesUrl}`} aria-label="Jump to SCSS variables">
+                      <span className="pgn-doc__anchor">#</span>
+                    </a>
+                  </h2>
+                  <CodeBlock className="language-scss">{scssVariables}</CodeBlock>
+                </div>
+              )}
+              {components[sortedComponentNames[0]]?.props && (
+                <h2 className="mb-5 pgn-doc__heading" id={propsAPIUrl}>
+                  {propsAPITitle}
+                  <a href={`#${propsAPIUrl}`} aria-label="Props API">
+                    <span className="pgn-doc__anchor">#</span>
+                  </a>
+                </h2>
+              )}
+              {typeof sortedComponentNames !== 'string' && sortedComponentNames?.map((componentName: string | number) => {
+                const node: { displayName: string } = components[componentName];
+                if (!node) {
+                  return null;
+                }
+                return <GenericPropsTable key={node.displayName} {...node} />;
+              })}
+              {isUsageInsights && (
+                <>
+                  <h2 className="pgn-doc__heading m-0" id={usageInsightsUrl}>
+                    {usageInsightsTitle}
+                    <a href={`#${usageInsightsUrl}`} aria-label="Usage Insights">
+                      <span className="pgn-doc__anchor">#</span>
+                    </a>
+                  </h2>
+                  <ComponentsUsage data={(sortedComponentNames as string[])} />
+                </>
+              )}
+            </div>
+          </Tab>
+          {componentTabsData.map((tabTitle: string) => {
+            const prettyTabTitle = upperFirstLetter(tabTitle.replace('-', ' '));
+            return (
+              <Tab key={tabTitle} eventKey={tabTitle} title={prettyTabTitle}>
+                <div className="mt-4">
+                  <MDXProvider components={shortcodes}>
+                    <MDXRenderer>{mdx.body}</MDXRenderer>
+                  </MDXProvider>
+                </div>
+              </Tab>
+            );
+          })}
+        </Tabs>
       </Container>
     </Layout>
   );
@@ -243,6 +291,7 @@ export const pageQuery = graphql`
         status
         notes
         components
+        tabName
       }
       tableOfContents
     }
