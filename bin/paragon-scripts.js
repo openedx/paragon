@@ -2,8 +2,10 @@
 const chalk = require('chalk');
 const themeCommand = require('../lib/install-theme');
 const helpCommand = require('../lib/help');
+const versionCommand = require('../lib/version');
 
 const HELP_COMMAND = 'help';
+const VERSION_COMMANDS = ['-v', '--version'];
 
 const COMMANDS = {
   /**
@@ -47,11 +49,20 @@ const COMMANDS = {
     executor: helpCommand,
     description: 'Displays help for available commands.',
   },
+  version: {
+    executor: versionCommand,
+    description: 'Displays the current version of Paragon CLI.',
+  },
 };
 
 (async () => {
   const [command] = process.argv.slice(2);
   const executor = COMMANDS[command];
+
+  if (VERSION_COMMANDS.includes(command)) {
+    versionCommand();
+    return;
+  }
 
   if (!executor) {
     // eslint-disable-next-line no-console
