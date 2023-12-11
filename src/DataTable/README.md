@@ -436,7 +436,7 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       }}
       isSortable
       defaultColumnValues={{ Filter: TextFilter }}
-      itemCount={7}
+      itemCount={3}
       data={[
         {
           name: 'Lil Bub',
