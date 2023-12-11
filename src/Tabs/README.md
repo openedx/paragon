@@ -226,6 +226,60 @@ notes: |
 </Tabs>
 ```
 
+## Conditional rendering
+
+```jsx live
+() => {
+  const librariesEnabled = true;
+  const visibleTabs = useMemo(() => {
+    const tabs = [];
+        
+    tabs.push(
+      <Tab
+        key="courses"
+        eventKey="courses"
+        title="Courses"
+      >
+        Hello I am the courses panel.
+      </Tab>
+    );
+
+    tabs.push(
+      <Tab
+        key="programs"
+        eventKey="programs"
+        title="Programs"
+      >
+        Hello I am the programs panel.
+      </Tab>
+    );
+    
+    if (librariesEnabled) {
+      tabs.push(
+        <Tab
+          key="libraries"
+          eventKey="libraries"
+          title="Libraries"
+        >
+          Hello I am the libraries panel.
+        </Tab>
+      );   
+    }
+
+    return tabs;
+  }, [librariesEnabled]);
+
+  return (
+    <Tabs
+      id="tabs"
+      defaultActiveKey="courses"
+    >
+      {visibleTabs}
+    </Tabs>
+  );
+}
+```
+
 ***
 
 ## Tabs.Deprecated
