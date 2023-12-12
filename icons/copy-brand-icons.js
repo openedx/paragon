@@ -5,7 +5,7 @@ const fs = require('fs');
 */
 
 const brandIconNames = [
-  'github', 'google', 'linkedin', 'slack', 'instagram', 'facebook', 'twitter', 'twitch', 'youtube', 'discord',
+  'github', 'google', 'linkedin', 'slack', 'instagram', 'facebook', 'twitter', 'twitter-x', 'twitch', 'youtube', 'discord',
   'telegram', 'whatsapp', 'messenger', 'mastodon', 'reddit', 'skype', 'microsoft', 'windows', 'apple', 'medium',
   'signal', 'stack-overflow', 'wordpress', 'spotify', 'snapchat', 'pinterest', 'dribbble', 'behance', 'paypal',
   'line', 'strava', 'vimeo', 'nintendo-switch', 'playstation', 'xbox', 'steam', 'bluetooth', 'meta', 'git', 'tiktok',
