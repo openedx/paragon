@@ -212,3 +212,50 @@ As ``Checkbox`` with ``ariaLabelledby``
   );
 }
 ```
+
+## Without active outline
+The `showActiveBoxState` property only affects `SelectableBox` that have `inputHidden` set to `false`.
+If a component has no input, the border is always rendered in an active state.
+
+```jsx live
+() => {
+  const [value, setValue] = useState('apples');
+  const handleChange = e => setValue(e.target.value);
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <SelectableBox.Set
+      value={value}
+      onChange={handleChange}
+      name="fruits"
+      columns={isExtraSmall ? 1 : 3}
+      ariaLabel="fruits selection"
+    >
+      <SelectableBox
+        value="apples"
+        inputHidden={false}
+        showActiveBoxState={false}
+        aria-label="apple radio-button"
+      >
+        <h3>Apples</h3>
+      </SelectableBox>
+      <SelectableBox
+        value="oranges"
+        inputHidden={false}
+        showActiveBoxState={false}
+        aria-label="orange radio-button"
+      >
+        <h3>Oranges</h3>
+      </SelectableBox>
+      <SelectableBox
+        value="bananas"
+        inputHidden={false}
+        showActiveBoxState={false}
+        aria-label="banana radio-button"
+      >
+        <h3>Bananas</h3>
+      </SelectableBox>
+    </SelectableBox.Set>
+  );
+}
+```
