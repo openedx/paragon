@@ -312,7 +312,7 @@ export default function ElevationPage({ pageContext }) {
         <p>Include these box-shadows colors in scss files in this ways:</p>
 
         <h4>Mixin</h4>
-        <code className="d-block mb-4 lead bg-gray-100 p-3">
+        <code className="d-block mb-4 bg-gray-100 p-3">
           pgn-box-shadow($level, $side)
         </code>
         <div className="pgn-doc__box-shadow--table-wrapper">
