@@ -21,6 +21,12 @@ const THEMES = [
     stylesheet: 'edxorg-theme',
     pathToVariables: '@edx/brand-edx.org/paragon/_variables.scss',
   },
+  {
+    id: 'ridiculous',
+    label: 'ridiculous',
+    stylesheet: 'ridiculous-theme',
+    // pathToVariables: '../../../brand-openedx/paragon/_variables.scss',
+  }
 ];
 
 const DEFAULT_THEME = 'openedx';
