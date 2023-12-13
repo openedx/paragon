@@ -26,6 +26,18 @@
     max-height: none;
     margin: $modal-dialog-margin;
   }
+
+  .pgn__modal-header {
+    padding-bottom: calc(#{$modal-inner-padding} / 2);
+  }
+
+  .pgn__modal-body {
+    padding: calc(#{$modal-inner-padding} / 2) $modal-inner-padding;
+
+    &::before {
+      top: calc(#{$modal-inner-padding} / 2 * -1);
+    }
+  }
 }
 
 // Sizes
@@ -230,22 +242,6 @@
 
 // Color Variants
 
-.pgn__modal-default {
-  // Default style modals don't have a background on the header which
-  // ends up looking spaced too far away from the body content.
-  .pgn__modal-header {
-    padding-bottom: calc(#{$modal-inner-padding} / 2);
-  }
-
-  .pgn__modal-body {
-    padding: calc(#{$modal-inner-padding} / 2) $modal-inner-padding;
-
-    &::before {
-      top: calc(#{$modal-inner-padding} / 2 * -1);
-    }
-  }
-}
-
 .pgn__modal-dark {
   .pgn__modal-header,
   .pgn__modal-hero {
@@ -255,10 +251,6 @@
     * {
       color: inherit;
     }
-  }
-
-  .pgn__modal-header {
-    border-bottom: solid 1px $light;
   }
 }
 
