@@ -8,8 +8,8 @@ const SvgSupportAgent = (props) => (
     fill="none"
     {...props}
   >
-    <circle cx={9} cy={13} r={1} />
-    <circle cx={15} cy={13} r={1} />
+    <circle cx={9} cy={13} r={1} fill="currentColor" />
+    <circle cx={15} cy={13} r={1} fill="currentColor" />
     <path
       d="M18 11.03A6.04 6.04 0 0 0 12.05 6c-3.03 0-6.29 2.51-6.03 6.45a8.075 8.075 0 0 0 4.86-5.89c1.31 2.63 4 4.44 7.12 4.47z"
       fill="currentColor"

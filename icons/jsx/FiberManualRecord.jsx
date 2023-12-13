@@ -8,7 +8,7 @@ const SvgFiberManualRecord = (props) => (
     fill="none"
     {...props}
   >
-    <circle cx={12} cy={12} r={8} />
+    <circle cx={12} cy={12} r={8} fill="currentColor" />
   </svg>
 );
 export default SvgFiberManualRecord;

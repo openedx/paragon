@@ -12,7 +12,8 @@ const SvgSpeakerGroup = props => /*#__PURE__*/React.createElement("svg", _extend
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 14,
   cy: 12.5,
-  r: 2.5
+  r: 2.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M6 5H4v18h12v-2H6z",
   fill: "currentColor"
