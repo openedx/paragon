@@ -163,7 +163,7 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
         <p>Include these colors in scss files in one of two ways:</p>
 
         <h4>Variable name</h4>
-        <code className="d-block mb-4 lead bg-gray-100 p-3">
+        <code className="d-block mb-4 bg-gray-100 p-3">
           {'// $color_name-level '}
           <br />
           $primary-100
@@ -176,7 +176,7 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
         </code>
 
         <h4>Mixin (deprecated)</h4>
-        <code className="d-block mb-4 lead bg-gray-100 p-3">
+        <code className="d-block mb-4 bg-gray-100 p-3">
           theme-color($color-name, $variant)
         </code>
 
