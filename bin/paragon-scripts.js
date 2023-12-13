@@ -5,7 +5,10 @@ const helpCommand = require('../lib/help');
 const versionCommand = require('../lib/version');
 
 const HELP_COMMAND = 'help';
-const VERSION_COMMANDS = ['-v', '--version'];
+const commandAliases = {
+  '-v': 'version',
+  '--version': 'version',
+};
 
 const COMMANDS = {
   /**
@@ -57,12 +60,8 @@ const COMMANDS = {
 
 (async () => {
   const [command] = process.argv.slice(2);
-  const executor = COMMANDS[command];
-
-  if (VERSION_COMMANDS.includes(command)) {
-    versionCommand();
-    return;
-  }
+  const resolvedCommand = commandAliases[command] || command;
+  const executor = COMMANDS[resolvedCommand];
 
   if (!executor) {
     // eslint-disable-next-line no-console
