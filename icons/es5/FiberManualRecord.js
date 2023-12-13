@@ -9,6 +9,7 @@ const SvgFiberManualRecord = props => /*#__PURE__*/React.createElement("svg", _e
 }, props), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 12,
-  r: 8
+  r: 8,
+  fill: "currentColor"
 }));
 export default SvgFiberManualRecord;

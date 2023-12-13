@@ -9,6 +9,7 @@ const SvgBrightness1 = props => /*#__PURE__*/React.createElement("svg", _extends
 }, props), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 12,
-  r: 10
+  r: 10,
+  fill: "currentColor"
 }));
 export default SvgBrightness1;

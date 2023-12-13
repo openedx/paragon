@@ -12,7 +12,8 @@ const SvgStreetview = props => /*#__PURE__*/React.createElement("svg", _extends(
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 18,
   cy: 6,
-  r: 5
+  r: 5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M11.5 6c0-1.08.27-2.1.74-3H5c-1.1 0-2 .9-2 2v14c0 .55.23 1.05.59 1.41l9.82-9.82A6.435 6.435 0 0 1 11.5 6z",
   fill: "currentColor"
