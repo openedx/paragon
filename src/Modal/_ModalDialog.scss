@@ -26,6 +26,18 @@
     max-height: none;
     margin: $modal-dialog-margin;
   }
+
+  .pgn__modal-header {
+    padding-bottom: calc(#{$modal-inner-padding} / 2);
+  }
+
+  .pgn__modal-body {
+    padding: calc(#{$modal-inner-padding} / 2) $modal-inner-padding;
+
+    &::before {
+      top: calc(#{$modal-inner-padding} / 2 * -1);
+    }
+  }
 }
 
 // Sizes
