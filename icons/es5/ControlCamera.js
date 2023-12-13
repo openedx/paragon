@@ -12,6 +12,7 @@ const SvgControlCamera = props => /*#__PURE__*/React.createElement("svg", _exten
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 12,
-  r: 3
+  r: 3,
+  fill: "currentColor"
 }));
 export default SvgControlCamera;
