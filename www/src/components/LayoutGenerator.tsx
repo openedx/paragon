@@ -107,22 +107,22 @@ function LayoutGenerator() {
         [`offset-${offset}`]: offset > 0,
       });
       return `
-  <div className="${className}">
-    ${width || 'auto'}
-  </div>
+        <div className="${className}">
+          ${width || 'auto'}
+        </div>
       `;
     });
 
     const rowString = `
-<div className="row">
-${columnsString.join('')}
-</div>
+      <div className="row">
+        ${columnsString.join('')}
+      </div>
     `;
     return rowString;
   };
 
   return (
-    <div>
+    <>
       <p>
         Drag the slider to add or remove columns. Edit the width and offset
         values for each column and see the output below.
@@ -145,9 +145,8 @@ ${columnsString.join('')}
         </Form.Group>
       </div>
       <div className="row">{columns}</div>
-
       <CodeBlock className="language-jsx">{renderMarkupString()}</CodeBlock>
-    </div>
+    </>
   );
 }
 
