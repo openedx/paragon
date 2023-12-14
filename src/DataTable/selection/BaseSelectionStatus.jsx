@@ -22,11 +22,11 @@ function BaseSelectionStatus({
 }) {
   const {
     itemCount, filteredRows, isPaginated, state,
-    isSelectable, maxSelectedRows,
+    isSelectable, maxSelectedRows, fetchData,
   } = useContext(DataTableContext);
   const hasAppliedFilters = state?.filters?.length > 0;
   const isAllRowsSelected = numSelectedRows === itemCount;
-  const filteredItems = filteredRows?.length || itemCount;
+  const filteredItems = fetchData ? itemCount : (filteredRows?.length || itemCount);
   const hasMaxSelectedRows = isSelectable && maxSelectedRows;
 
   const intlAllSelectedText = allSelectedText || (

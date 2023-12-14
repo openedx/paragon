@@ -187,6 +187,7 @@ function DataTable({
 
   const enhancedInstance = {
     ...instance,
+    fetchData,
     itemCount,
     numBreakoutFilters,
     bulkActions,
