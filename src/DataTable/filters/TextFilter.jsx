@@ -23,10 +23,9 @@ function TextFilter({
   const formattedHeader = formatHeaderForLabel(Header);
   const inputText = React.isValidElement(formattedHeader) ? formattedHeader : `Search ${formattedHeader}`;
   return (
-    <Form.Group>
-      <FormLabel id={ariaLabel.current} className="sr-only">{inputText}</FormLabel>
-      <Input
-        aria-labelledby={ariaLabel.current}
+    <Form.Group controlId={ariaLabel.current}>
+      <Form.Label className="sr-only">{inputText}</Form.Label>
+      <Form.Control
         value={filterValue || ''}
         type="text"
         onChange={e => {
