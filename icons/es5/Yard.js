@@ -12,6 +12,7 @@ const SvgYard = props => /*#__PURE__*/React.createElement("svg", _extends({
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 9.62,
-  r: 1.56
+  r: 1.56,
+  fill: "currentColor"
 }));
 export default SvgYard;

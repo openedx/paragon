@@ -12,6 +12,7 @@ const SvgWoman2 = props => /*#__PURE__*/React.createElement("svg", _extends({
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 4,
-  r: 2
+  r: 2,
+  fill: "currentColor"
 }));
 export default SvgWoman2;
