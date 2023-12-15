@@ -30,6 +30,7 @@ function ModalDialog({
   isFullscreenOnMobile,
   isBlocking,
   zIndex,
+  isOverflowVisible,
 }) {
   const isMobile = useMediaQuery({ query: '(max-width: 767.98px)' });
   const showFullScreen = (isFullscreenOnMobile && isMobile);
@@ -44,6 +45,7 @@ function ModalDialog({
             [`pgn__modal-${showFullScreen ? 'fullscreen' : size}`]: size,
             [`pgn__modal-${variant}`]: variant,
             'pgn__modal-scroll-fullscreen': isFullscreenScroll,
+            'pgn__modal-visible-overflow': isOverflowVisible,
           },
           className,
         )}
@@ -120,6 +122,8 @@ ModalDialog.propTypes = {
    * Specifies the z-index of the modal
    */
   zIndex: PropTypes.number,
+  /** Specifies whether overflow is visible in the modal */
+  isOverflowVisible: PropTypes.bool,
 };
 
 ModalDialog.defaultProps = {
@@ -133,6 +137,7 @@ ModalDialog.defaultProps = {
   isFullscreenOnMobile: false,
   isBlocking: false,
   zIndex: undefined,
+  isOverflowVisible: true,
 };
 
 ModalDialog.Header = ModalDialogHeader;
