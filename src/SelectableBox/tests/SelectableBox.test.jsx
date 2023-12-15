@@ -100,6 +100,13 @@ describe('<SelectableBox />', () => {
       rerender(<SelectableCheckbox inputHidden={false} />);
       expect(inputElement.getAttribute('hidden')).toBeNull();
     });
+    it('renders with active state and updates to inactive when showActiveBoxState is false', async () => {
+      const { rerender } = render(<SelectableCheckbox inputHidden={false} checked />);
+      const selectableBox = screen.getByRole('button');
+      expect(selectableBox.classList.contains('pgn__selectable_box-active')).toEqual(true);
+      rerender(<SelectableCheckbox inputHidden={false} showActiveBoxState={false} checked />);
+      expect(selectableBox.classList.contains('pgn__selectable_box-active')).toEqual(false);
+    });
   });
   describe('correct interactions', () => {
     it('correct checkbox state change when checked is changed', () => {

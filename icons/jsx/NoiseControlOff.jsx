@@ -8,7 +8,7 @@ const SvgNoiseControlOff = (props) => (
     fill="none"
     {...props}
   >
-    <circle cx={12} cy={12} r={5} />
+    <circle cx={12} cy={12} r={5} fill="currentColor" />
   </svg>
 );
 export default SvgNoiseControlOff;

@@ -8,7 +8,7 @@ const SvgBrightness1 = (props) => (
     fill="none"
     {...props}
   >
-    <circle cx={12} cy={12} r={10} />
+    <circle cx={12} cy={12} r={10} fill="currentColor" />
   </svg>
 );
 export default SvgBrightness1;
