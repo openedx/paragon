@@ -45,7 +45,7 @@ function SettingsContextProvider({ children }) {
     }
     setSettings(prevState => ({ ...prevState, [key]: value }));
     global.localStorage.setItem('pgn__settings', JSON.stringify({ ...settings, [key]: value }));
-    sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { [key]: value });
+    sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: key, value });
   };
 
   const toggleSettings = (value: boolean) => {
