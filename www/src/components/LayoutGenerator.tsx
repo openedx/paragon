@@ -128,7 +128,7 @@ ${columnsString.join('').slice(0, -1)}
   };
 
   return (
-    <div>
+    <>
       <p>
         Drag the slider to add or remove columns. Edit the width and offset
         values for each column and see the output below.
@@ -149,9 +149,8 @@ ${columnsString.join('').slice(0, -1)}
         />
       </FormGroup>
       <div className="row">{columns}</div>
-
       <CodeBlock className="language-jsx">{renderMarkupString()}</CodeBlock>
-    </div>
+    </>
   );
 }
 

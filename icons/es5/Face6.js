@@ -12,10 +12,12 @@ const SvgFace6 = props => /*#__PURE__*/React.createElement("svg", _extends({
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 9,
   cy: 13,
-  r: 1.25
+  r: 1.25,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 15,
   cy: 13,
-  r: 1.25
+  r: 1.25,
+  fill: "currentColor"
 }));
 export default SvgFace6;
