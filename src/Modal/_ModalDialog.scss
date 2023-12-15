@@ -28,22 +28,14 @@
   }
 
   .pgn__modal-header {
-    padding-bottom: calc(#{$modal-inner-padding} / 2);
+    padding-bottom: calc(var(--pgn-spacing-modal-inner-padding-base) / 2);
   }
 
   .pgn__modal-body {
-    padding: calc(#{$modal-inner-padding} / 2) $modal-inner-padding;
+    padding: calc(var(--pgn-spacing-modal-inner-padding-base) / 2) var(--pgn-spacing-modal-inner-padding-base);
 
     &::before {
-      top: calc(#{$modal-inner-padding} / 2 * -1);
-    }
-  }
-
-  &.pgn__modal-visible-overflow {
-    overflow: visible;
-
-    .pgn__modal-body {
-      overflow: visible;
+      top: calc(var(--pgn-spacing-modal-inner-padding-base) / 2 * -1);
     }
   }
 }

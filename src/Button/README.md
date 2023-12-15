@@ -220,6 +220,11 @@ For link to be `disabled`, it must have href defined with some value.
         Tertiary
       </Button>
     </Stack>
-  )
-}
+)}
 ```
+
+## Stateful buttons
+To implement loading state using a `Button` component, the [StatefulButton](https://paragon-openedx.netlify.app/components/statefulbutton/) component
+is available for use. <br/>
+This specialized component is designed to seamlessly manage and display boot states, providing a more efficient and 
+user-friendly experience.
