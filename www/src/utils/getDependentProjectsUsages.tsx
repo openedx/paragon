@@ -1,7 +1,7 @@
 // @ts-ignore
 import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
 import getGithubProjectUrl from './getGithubProjectUrl';
-import { IDependentProjectsUsages, IDependentUsage, IUsage } from '../types/types';
+import { IDependentUsage, IUsage } from '../types/types';
 
 const {
   projectUsages: dependentProjectsUsages,
@@ -10,7 +10,7 @@ const {
 export default function getDependentProjectsUsages() {
   const dependentProjects: IDependentUsage[] = [];
 
-  dependentProjectsUsages.forEach((project: IDependentProjectsUsages) => {
+  dependentProjectsUsages.forEach((project: any) => {
     dependentProjects.push({
       ...project,
       repositoryUrl: getGithubProjectUrl(project.repository),
