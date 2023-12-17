@@ -7,6 +7,7 @@ export const ICON_COPIED_EVENT = 'openedx.paragon.docs.icons-table.selected-icon
 export const LEAVE_FEEDBACK_CLICKED_EVENT = 'openedx.paragon.docs.leave-feedback.clicked';
 export const CONTRAST_CHECKER_CLICKED_EVENT = 'openedx.paragon.docs.menu.tools.visit-contrast-checker.clicked';
 export const PAGE_EDIT_BTN_CLICKED_EVENT = 'openedx.paragon.docs.page-edit.clicked';
+export const COMPONENT_GENERATED_EVENT = 'openedx.paragon.functions.track-generate-component.created';
 
 export const PLAYGROUND_EVENTS = {
   LINK_CLICKED: 'openedx.paragon.docs.menu.playground.visit-playground.clicked',
