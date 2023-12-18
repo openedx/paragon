@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Badge, Card } from '~paragon-react';
+import { Badge, Card, Hyperlink } from '~paragon-react';
 import PropType from './PropType';
 
 const IGNORED_COMPONENT_PROPS = ['intl'];
@@ -91,11 +91,18 @@ export interface IPropsTable {
   content: string,
 }
 
-function PropsTable({ props: componentProps, displayName, content }: IPropsTable) {
+function PropsTable({
+  props: componentProps, displayName, content, originalApiUrl,
+}: IPropsTable) {
   return (
     <Card className="mb-5" id={`props-api-table-${displayName}`}>
       <Card.Header as="h3" title={`${displayName} Props API`} className="pb-1" />
       {content && <p className="px-4 small">{content}</p>}
+      {originalApiUrl && (
+        <Hyperlink className="px-4 small mb-3" destination={originalApiUrl} target="_blank">
+          Original component Props API
+        </Hyperlink>
+      )}
       {componentProps.length > 0 ? (
         <ul className="list-unstyled">
           {componentProps
