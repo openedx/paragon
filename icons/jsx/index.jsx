@@ -2303,3 +2303,4 @@ export { default as ZoomIn } from "./ZoomIn";
 export { default as ZoomInMap } from "./ZoomInMap";
 export { default as ZoomOut } from "./ZoomOut";
 export { default as ZoomOutMap } from "./ZoomOutMap";
+export { default as WebBlack } from "./WebBlack";
