@@ -178,8 +178,7 @@ function Dropzone({
     <div
       data-testid="dropzone-container"
       {...getRootProps({
-        className: classNames('pgn__dropzone', {
-          className,
+        className: classNames('pgn__dropzone', className, {
           'pgn__dropzone-validation-error': isMultipleDragged || errors.length > 0 || isDragReject,
           'pgn__dropzone-active': isDragActive && !isDragReject,
         }),
