@@ -6,6 +6,26 @@ import PropType from './PropType';
 
 const IGNORED_COMPONENT_PROPS = ['intl'];
 
+const bootstrapLinks = {
+  Button: 'https://react-bootstrap-v4.netlify.app/components/buttons/#button-props',
+  Card: 'https://react-bootstrap-v4.netlify.app/components/cards/#card-props',
+  CardBody: 'https://react-bootstrap-v4.netlify.app/components/cards/#card-body-props',
+  CardDeck: 'https://react-bootstrap-v4.netlify.app/components/cards/#card-deck-props',
+  Dropdown: 'https://react-bootstrap-v4.netlify.app/components/dropdowns/#dropdown-props',
+  DropdownToggle: 'https://react-bootstrap-v4.netlify.app/components/dropdowns/#dropdown-toggle-props',
+  DropdownItem: 'https://react-bootstrap-v4.netlify.app/components/dropdowns/#dropdown-item-props',
+  DropdownMenu: 'https://react-bootstrap-v4.netlify.app/components/dropdowns/#dropdown-menu-props',
+  DropdownButton: 'https://react-bootstrap-v4.netlify.app/components/dropdowns/#dropdown-button-props',
+  FormControl: 'https://react-bootstrap-v4.netlify.app/components/forms/#form-control-props',
+  Nav: 'https://react-bootstrap-v4.netlify.app/components/navs/#nav-props',
+  WrapperPopover: 'https://react-bootstrap-v4.netlify.app/components/overlays/#popover-props',
+  ProgressBar: 'https://react-bootstrap-v4.netlify.app/components/progress/#progress-bar-props',
+  Spinner: 'https://react-bootstrap-v4.netlify.app/components/spinners/#spinner-props',
+  Tabs: 'https://react-bootstrap-v4.netlify.app/components/tabs/#tabs-api',
+  Tab: 'https://react-bootstrap-v4.netlify.app/components/tabs/#tab-props',
+  Toast: 'https://react-bootstrap-v4.netlify.app/components/toasts/#toast-props',
+};
+
 export type DefaultValueTypes = {
   value: string | undefined,
 };
@@ -91,15 +111,15 @@ export interface IPropsTable {
   content: string,
 }
 
-function PropsTable({
-  props: componentProps, displayName, content, originalApiUrl,
-}: IPropsTable) {
+function PropsTable({ props: componentProps, displayName, content }: IPropsTable) {
+  const bootstrapLink = bootstrapLinks[displayName];
+
   return (
     <Card className="mb-5" id={`props-api-table-${displayName}`}>
       <Card.Header as="h3" title={`${displayName} Props API`} className="pb-1" />
       {content && <p className="px-4 small">{content}</p>}
-      {originalApiUrl && (
-        <Hyperlink className="px-4 small mb-3" destination={originalApiUrl} target="_blank">
+      {bootstrapLink && (
+        <Hyperlink className="px-4 small mb-3" destination={bootstrapLink} target="_blank">
           Original component Props API
         </Hyperlink>
       )}

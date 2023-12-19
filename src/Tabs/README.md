@@ -11,7 +11,6 @@ designStatus: 'Done'
 devStatus: 'TO DO'
 notes: |
   TODO: Remove subcomponent of deprecated implementation soon
-originalApiUrls: '{"Tabs":"https://react-bootstrap-v4.netlify.app/components/tabs/#tabs-api"}'
 ---
 
 <p>

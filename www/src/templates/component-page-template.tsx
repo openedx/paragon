@@ -56,13 +56,11 @@ export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath },
 }: IPageTemplate) {
-  // console.log('mdx.frontmatter.originalApiUrls', mdx.frontmatter.originalApiUrls);
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
   const { settings } = useContext(SettingsContext);
   const { theme } = settings;
   const scssVariables = scssVariablesData[theme!] || scssVariablesData[DEFAULT_THEME!];
-  const originalPropsApi = JSON.parse(mdx.frontmatter.originalApiUrls);
 
   const components = componentNodes.nodes
     .reduce((acc: { [x: string]: { displayName: string, props?: [] }; }, currentValue: { displayName: string; }) => {
@@ -178,7 +176,7 @@ export default function PageTemplate({
         )}
         {components[sortedComponentNames[0]]?.props && (
           <h2 className="mb-5 pgn-doc__heading" id={propsAPIUrl}>
-            {propsAPITitle}123
+            {propsAPITitle}
             <a href={`#${propsAPIUrl}`} aria-label="Props API">
               <span className="pgn-doc__anchor">#</span>
             </a>
@@ -189,13 +187,7 @@ export default function PageTemplate({
           if (!node) {
             return null;
           }
-          return (
-            <GenericPropsTable
-              key={node.displayName}
-              originalApiUrl={originalPropsApi[node.displayName]}
-              {...node}
-            />
-          );
+          return <GenericPropsTable key={node.displayName} {...node} />;
         })}
         {isUsageInsights && (
           <>
@@ -251,7 +243,6 @@ export const pageQuery = graphql`
         status
         notes
         components
-        originalApiUrls
       }
       tableOfContents
     }

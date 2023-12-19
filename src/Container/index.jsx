@@ -33,6 +33,8 @@ Container.propTypes = {
   fluid: PropTypes.bool,
   /** Set the maximum width for the container */
   size: PropTypes.oneOf(Object.keys(SIZE_CLASS_NAMES)),
+  /** Overrides underlying component base CSS class name */
+  bsPrefix: PropTypes.string,
 };
 
 Container.defaultProps = {
@@ -40,6 +42,7 @@ Container.defaultProps = {
   children: undefined,
   fluid: true,
   size: undefined,
+  bsPrefix: 'container',
 };
 
 export default Container;
