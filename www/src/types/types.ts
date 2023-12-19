@@ -9,7 +9,7 @@ export interface IUsage {
   filePath: string,
   line: number,
   column: number,
-  version: string,
+  index: number,
 }
 
 export interface IComponentUsageData {
@@ -24,14 +24,14 @@ export interface IComponentUsageData {
 export interface IDependentProjectsUsages extends Omit<IDependentUsage, 'count'> {
   version: string,
   name: string,
-  repository: { type: string, url: string },
+  repository: { type: string, url: string } | string,
   folderName: string,
 }
 
 export interface IDependentUsage {
   version?: string,
   name?: string,
-  repository?: { type: string, url: string },
+  repository?: { type: string, url: string } | string,
   repositoryUrl?: string,
   count: number,
   folderName?: string,
