@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useIntl } from 'react-intl';
 import { KeyboardArrowUp, KeyboardArrowDown } from '../../icons';
 import Icon from '../Icon';
-import FormGroup from './FormGroup';
+import { FormGroupContextProvider, useFormGroupContext } from './FormGroupContext';
 import FormControl from './FormControl';
 import FormControlFeedback from './FormControlFeedback';
 import IconButton from '../IconButton';
@@ -239,12 +239,18 @@ function FormAutosuggest({
     setDisplayValue(e.target.value);
   };
 
+  const { getControlProps } = useFormGroupContext();
+  const controlProps = getControlProps(props);
+
   return (
     <div className="pgn__form-autosuggest__wrapper" ref={parentRef}>
       <div aria-live="assertive" className="sr-only" data-testid="autosuggest-screen-reader-options-count">
         {`${state.dropDownItems.length} options found`}
       </div>
-      <FormGroup isInvalid={!!state.errorMessage}>
+      <FormGroupContextProvider
+        controlId={controlProps.id}
+        isInvalid={!!state.errorMessage}
+      >
         <FormControl
           ref={formControlRef}
           aria-expanded={(state.dropDownItems.length > 0).toString()}
@@ -259,7 +265,7 @@ function FormAutosuggest({
           onClick={handleClick}
           trailingElement={iconToggle}
           data-testid="autosuggest-textbox-input"
-          {...props}
+          {...controlProps}
         />
 
         {helpMessage && !state.errorMessage && (
@@ -269,11 +275,11 @@ function FormAutosuggest({
         )}
 
         {state.errorMessage && (
-          <FormControlFeedback type="invalid" feedback-for={props.name}>
+          <FormControlFeedback type="invalid" feedback-for={controlProps.name}>
             {errorMessageText}
           </FormControlFeedback>
         )}
-      </FormGroup>
+      </FormGroupContextProvider>
 
       <ul
         id="pgn__form-autosuggest__dropdown-box"
