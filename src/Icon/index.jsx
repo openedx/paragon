@@ -70,28 +70,35 @@ function Icon({
 }
 
 Icon.propTypes = {
-  // eslint-disable-next-line max-len
-  /** An icon component to render. Example import of a Paragon icon component: `import { Check } from '@edx/paragon/dist/icon';` */
+  /**
+   * An icon component to render.
+   * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/dist/icon';`
+   */
   src: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** HTML element attributes to pass through to the underlying svg element */
   svgAttrs: PropTypes.shape({
     'aria-label': PropTypes.string,
     'aria-labelledby': PropTypes.string,
   }),
-  // eslint-disable-next-line max-len
-  /** the `id` property of the Icon element, by default this value is generated with the `newId` function with the `prefix` of `Icon`. */
+  /**
+   * the `id` property of the Icon element, by default this value is generated
+   * with the `newId` function with the `prefix` of `Icon`.
+   */
   id: PropTypes.string,
-  // eslint-disable-next-line max-len
   /** The size of the icon. */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
-  // eslint-disable-next-line max-len
   /** A class name that will define what the Icon looks like. */
   className: PropTypes.string,
-  // eslint-disable-next-line max-len
-  /** a boolean that determines the value of `aria-hidden` attribute on the Icon span, this value is `true` by default. */
+  /**
+   * a boolean that determines the value of `aria-hidden` attribute on the Icon span,
+   * this value is `true` by default.
+   */
   hidden: PropTypes.bool,
-  // eslint-disable-next-line max-len
-  /** a string or an element that will be used on a secondary span leveraging the `sr-only` style for screenreader only text, this value is `undefined` by default. This value is recommended for use unless the Icon is being used in a way that is purely decorative or provides no additional context for screen reader users. This field should be thought of the same way an `alt` attribute would be used for `image` tags.
+  /**
+   * a string or an element that will be used on a secondary span leveraging the `sr-only` style
+   * for screenreader only text, this value is `undefined` by default. This value is recommended for use unless
+   * the Icon is being used in a way that is purely decorative or provides no additional context for screen
+   * reader users. This field should be thought of the same way an `alt` attribute would be used for `image` tags.
    */
   screenReaderText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };

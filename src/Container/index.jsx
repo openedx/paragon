@@ -28,6 +28,7 @@ Container.propTypes = {
   ...RBContainer.propTypes,
   /** Override the base element */
   as: PropTypes.elementType,
+  /** Specifies the contents of the container */
   children: PropTypes.node,
   /** Fill all available space at any breakpoint */
   fluid: PropTypes.bool,
