@@ -2,9 +2,9 @@
 title: 'Checkbox'
 type: 'component'
 components:
-- Check
+  - Check
 categories:
-- Forms (deprecated)
+  - Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'Done'
@@ -15,30 +15,19 @@ notes: |
 ## Basic usage
 
 ```jsx live
-<CheckBox
-  name="checkbox"
-  label="check me out!"
-/>
+<CheckBox name="checkbox" label="check me out!" />
 ```
 
 ## Disabled
 
 ```jsx live
-<CheckBox
-  name="checkbox"
-  label="you cannot check me out"
-  disabled
-/>
+<CheckBox name="checkbox" label="you cannot check me out" disabled />
 ```
 
 ## Default checked
 
 ```jsx live
-<CheckBox
-  name="checkbox"
-  label="(un)check me out"
-  checked
-/>
+<CheckBox name="checkbox" label="(un)check me out" checked />
 ```
 
 ## Call a function
@@ -74,11 +63,7 @@ class CheckBoxWrapper extends React.Component {
   render() {
     return (
       <div className="d-flex align-items-center">
-        <Button
-          variant="light"
-          className="mr-3"
-          onClick={this.toggleCheckBox}
-        >
+        <Button variant="light" className="mr-3" onClick={this.toggleCheckBox}>
           Click me to toggle the check box!
         </Button>
         <CheckBox

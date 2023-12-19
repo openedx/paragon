@@ -2,12 +2,12 @@
 title: 'TableFooter'
 type: 'component'
 components:
-- TableFooter
-- RowStatus
-- TablePagination
-- TablePaginationMinimal
+  - TableFooter
+  - RowStatus
+  - TablePagination
+  - TablePaginationMinimal
 categories:
-- Table
+  - Table
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
@@ -27,13 +27,12 @@ Alternately, it will accept children.
   isPaginated
   initialState={{
     pageSize: 3,
-    pageIndex: 0
+    pageIndex: 0,
   }}
   columns={[
     {
       Header: 'Name',
       accessor: 'name',
-
     },
     {
       Header: 'Age',
@@ -50,86 +49,86 @@ Alternately, it will accept children.
   ]}
   itemCount={7}
   data={[
-      {
-        name: 'Lil Bub',
-        color: 'brown tabby',
-        famous_for: 'weird tongue',
-      },
-      {
-        name: 'Grumpy Cat',
-        color: 'siamese',
-        famous_for: 'serving moods',
-      },
-      {
-        name: 'Smoothie',
-        color: 'orange tabby',
-        famous_for: 'modeling',
-      },
-      {
-        name: 'Maru',
-        color: 'brown tabby',
-        famous_for: 'being a lovable oaf',
-      },
-      {
-        name: 'Keyboard Cat',
-        color: 'orange tabby',
-        famous_for: 'piano virtuoso',
-      },
-      {
-        name: 'Long Cat',
-        color: 'russian white',
-        famous_for:
-          'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
-      },
-      {
-        name: 'Zeno',
-        color: 'brown tabby',
-        famous_for: 'getting halfway there'
-      },
-    ]}
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+    },
+    {
+      name: 'Long Cat',
+      color: 'russian white',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+    },
+    {
+      name: 'Zeno',
+      color: 'brown tabby',
+      famous_for: 'getting halfway there',
+    },
+  ]}
 >
   <TableFooter />
 </DataTable>
 ```
 
 ## Rendering with override components
+
 ```jsx live
 <DataTable
   isPaginated
   initialState={{
     pageSize: 3,
-    pageIndex: 0
+    pageIndex: 0,
   }}
   columns={[
     {
       Header: 'Name',
       accessor: 'name',
-
     },
   ]}
   itemCount={7}
   data={[
-      {
-        name: 'Lil Bub',
-        color: 'brown tabby',
-        famous_for: 'weird tongue',
-      },
-      {
-        name: 'Grumpy Cat',
-        color: 'siamese',
-        famous_for: 'serving moods',
-      },
-      {
-        name: 'Maru',
-        color: 'brown tabby',
-        famous_for: 'being a lovable oaf',
-      },
-      {
-        name: 'Keyboard Cat',
-        color: 'orange tabby',
-        famous_for: 'piano virtuoso',
-      },
-    ]}
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+    },
+  ]}
 >
   <TableFooter>
     <div>Custom component</div>
@@ -140,8 +139,10 @@ Alternately, it will accept children.
 ```
 
 ## Footer subcomponents
+
 These components can be rendered independently of the `TableFooter` component with a `DataTableContext`: `RowStatus`,
 `TablePagination`, `TablePaginationMinimal`.
+
 - `RowStatus` expects to receive `page`, `rows`, and `itemCount` from `DataTableContext`
 - `TablePagination` expects to receive `pageCount`, `state`, and `gotoPage` from `DataTableContext`
 - `TablePaginationMinimal` expects to receive `nextPage`, `previousPage`, `canPreviousPage`, and `canNextPage` from `DataTableContext`

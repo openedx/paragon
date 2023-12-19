@@ -2,9 +2,9 @@
 title: 'Modal'
 type: 'component'
 components:
-- Modal
+  - Modal
 categories:
-- Overlays
+  - Overlays
 status: 'Deprecate soon'
 designStatus: 'Done'
 devStatus: 'To Do'
@@ -42,22 +42,18 @@ class ModalWrapper extends React.Component {
           body={
             <div>
               <p>Enter your e-mail address to receive free cat facts!</p>
-              <InputText
-                name="e-mail"
-                label="E-Mail Address"
-              />
+              <InputText name="e-mail" label="E-Mail Address" />
             </div>
           }
           parentSelector={this.props.parentSelector}
           onClose={this.resetModalWrapperState}
           buttons={[
-            <Button variant="success" data-autofocus>Green button!</Button>
+            <Button variant="success" data-autofocus>
+              Green button!
+            </Button>,
           ]}
         />
-        <Button
-          onClick={this.openModal}
-          variant="light"
-        >
+        <Button onClick={this.openModal} variant="light">
           Click me to open a modal!
         </Button>
       </div>
@@ -92,9 +88,7 @@ class ModalWrapper extends React.Component {
   open
   title="Custom title!"
   body="Custom body!"
-  buttons={[
-    <Button variant="dark">Dark button!</Button>
-  ]}
+  buttons={[<Button variant="dark">Dark button!</Button>]}
   onClose={() => {}}
 />
 ```
@@ -107,10 +101,7 @@ class ModalWrapper extends React.Component {
   title="Modal title."
   body="Modal body."
   buttons={[
-    <Button
-      variant="light"
-      onClick={action('button-click')}
-    >
+    <Button variant="light" onClick={action('button-click')}>
       Click me and check the console!
     </Button>,
   ]}
@@ -137,12 +128,7 @@ class ModalWrapper extends React.Component {
   open
   title="Modal title."
   body="Modal body."
-  closeText={
-    <Icon
-      className="fa fa-ship"
-      screenReaderText="Close"
-    />
-  }
+  closeText={<Icon className="fa fa-ship" screenReaderText="Close" />}
   onClose={() => {}}
 />
 ```

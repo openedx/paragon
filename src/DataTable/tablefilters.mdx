@@ -2,46 +2,75 @@
 title: 'TableFilters'
 type: 'component'
 components:
-- TextFilter
-- CheckboxFilter
-- DropdownFilter
-- MultiSelectDropdownFilter
+  - TextFilter
+  - CheckboxFilter
+  - DropdownFilter
+  - MultiSelectDropdownFilter
 categories:
-- Table
+  - Table
 status: 'New'
 designStatus: 'In progress'
 devStatus: 'In progress'
 ---
 
-
-The ``DataTable`` component is a wrapper that uses the <a href="https://github.com/TanStack/table/tree/v7/docs/src/pages/docs" target="_blank" rel="noopener noreferrer">react-table</a> library to
+The `DataTable` component is a wrapper that uses the <a href="https://github.com/TanStack/table/tree/v7/docs/src/pages/docs" target="_blank" rel="noopener noreferrer">react-table</a> library to
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
 
 ## Filtering and sorting
+
 Paragon currently provides a variety of filter types, and you can also define your own filter types.
 
-In the example below, a default ``TextFilter`` component is used as the default filter for all columns. A default filter can be passed in,
-or a filter component can be defined on the column using the ``Filter`` attribute. See <a href="https://github.com/TanStack/table/blob/v7/docs/src/pages/docs/api/useFilters.md" target="_blank" rel="noopener noreferrer">react-table filters documentation</a>
+In the example below, a default `TextFilter` component is used as the default filter for all columns. A default filter can be passed in,
+or a filter component can be defined on the column using the `Filter` attribute. See <a href="https://github.com/TanStack/table/blob/v7/docs/src/pages/docs/api/useFilters.md" target="_blank" rel="noopener noreferrer">react-table filters documentation</a>
 for more information.
 
 ## Available filter functions
+
 A filtering function can be defined on the column as well as the filter component. Custom filtering functions can also be defined, see <a href="https://github.com/TanStack/table/blob/v7/docs/src/pages/docs/api/useFilters.md#column-options" target="_blank" rel="noopener noreferrer">react-table filters documentation</a>
 for more information.
-Filter functions are defined on the column as the ``filter`` attribute.
+Filter functions are defined on the column as the `filter` attribute.
+
 <dl>
-<dt>text</dt><dd>This is the default filter function. It lower-cases the search string and checks if the row value includes the search string</dd>
-<dt>exactText</dt><dd>Checks that the row value matches the search string exactly (case-insensitive)</dd>
-<dt>exactTextCase</dt><dd>Checks that the row value matches the search string exactly (case-sensitive)</dd>
-<dt>includes</dt><dd>Check that the row value includes the search string</dd>
-<dt>includesAll</dt><dd>Check that the row value includes every item in the array</dd>
-<dt>includesSome</dt><dd>Check that row value includes some item in the array</dd>
-<dt>includesValue</dt><dd>Check that the filter value includes the value of the row</dd>
-<dt>exact</dt><dd>Checks for exact equality between the row value and the search term. <pre>===</pre></dd>
-<dt>equals</dt><dd>Checks for equality between the row value and the search term. <pre>==</pre></dd>
-<dt>between</dt><dd>Expects an array with a min and max value as the search term. Checks that the row value is between the min and max</dd>
+  <dt>text</dt>
+  <dd>
+    This is the default filter function. It lower-cases the search string and
+    checks if the row value includes the search string
+  </dd>
+  <dt>exactText</dt>
+  <dd>
+    Checks that the row value matches the search string exactly
+    (case-insensitive)
+  </dd>
+  <dt>exactTextCase</dt>
+  <dd>
+    Checks that the row value matches the search string exactly (case-sensitive)
+  </dd>
+  <dt>includes</dt>
+  <dd>Check that the row value includes the search string</dd>
+  <dt>includesAll</dt>
+  <dd>Check that the row value includes every item in the array</dd>
+  <dt>includesSome</dt>
+  <dd>Check that row value includes some item in the array</dd>
+  <dt>includesValue</dt>
+  <dd>Check that the filter value includes the value of the row</dd>
+  <dt>exact</dt>
+  <dd>
+    Checks for exact equality between the row value and the search term.{' '}
+    <pre>===</pre>
+  </dd>
+  <dt>equals</dt>
+  <dd>
+    Checks for equality between the row value and the search term. <pre>==</pre>
+  </dd>
+  <dt>between</dt>
+  <dd>
+    Expects an array with a min and max value as the search term. Checks that
+    the row value is between the min and max
+  </dd>
 </dl>
 
 ## Using Filter components with filter functions
+
 The `MultiSelectDropdownFilter` and `CheckboxFilter` components expect an array of values. It is best to use them with the `includesValue` filter function.
 The `TextFilter` and `DropdownFilter` components can be used with a variety of the above `filter` functions.
 
@@ -63,7 +92,6 @@ all filters will be rendered in the dropdown.
     {
       Header: 'Name',
       accessor: 'name',
-
     },
     {
       Header: 'Age',
@@ -92,7 +120,7 @@ all filters will be rendered in the dropdown.
           number: 17,
           value: 17,
         },
-      ]
+      ],
     },
     {
       Header: 'Famous For',
@@ -103,26 +131,28 @@ all filters will be rendered in the dropdown.
       accessor: 'color',
       Filter: CheckboxFilter,
       filter: 'includesValue',
-      filterChoices: [{
-        name: 'russian white',
-        number: 1,
-        value: 'russian white',
-      },
-      {
-        name: 'orange tabby',
-        number: 2,
-        value: 'orange tabby',
-      },
-      {
-        name: 'brown tabby',
-        number: 3,
-        value: 'brown tabby',
-      },
-      {
-        name: 'siamese',
-        number: 1,
-        value: 'siamese',
-      }]
+      filterChoices: [
+        {
+          name: 'russian white',
+          number: 1,
+          value: 'russian white',
+        },
+        {
+          name: 'orange tabby',
+          number: 2,
+          value: 'orange tabby',
+        },
+        {
+          name: 'brown tabby',
+          number: 3,
+          value: 'brown tabby',
+        },
+        {
+          name: 'siamese',
+          number: 1,
+          value: 'siamese',
+        },
+      ],
     },
   ]}
   itemCount={7}
@@ -171,7 +201,6 @@ all filters will be rendered in the dropdown.
       age: 17,
     },
   ]}
-
 />
 ```
 
@@ -186,7 +215,6 @@ all filters will be rendered in the dropdown.
     {
       Header: 'Name',
       accessor: 'name',
-
     },
     {
       Header: 'Age',
@@ -215,7 +243,7 @@ all filters will be rendered in the dropdown.
           number: 17,
           value: 17,
         },
-      ]
+      ],
     },
     {
       Header: 'Famous For',
@@ -226,26 +254,28 @@ all filters will be rendered in the dropdown.
       accessor: 'color',
       Filter: CheckboxFilter,
       filter: 'includesValue',
-      filterChoices: [{
-        name: 'russian white',
-        number: 1,
-        value: 'russian white',
-      },
-      {
-        name: 'orange tabby',
-        number: 2,
-        value: 'orange tabby',
-      },
-      {
-        name: 'brown tabby',
-        number: 3,
-        value: 'brown tabby',
-      },
-      {
-        name: 'siamese',
-        number: 1,
-        value: 'siamese',
-      }]
+      filterChoices: [
+        {
+          name: 'russian white',
+          number: 1,
+          value: 'russian white',
+        },
+        {
+          name: 'orange tabby',
+          number: 2,
+          value: 'orange tabby',
+        },
+        {
+          name: 'brown tabby',
+          number: 3,
+          value: 'brown tabby',
+        },
+        {
+          name: 'siamese',
+          number: 1,
+          value: 'siamese',
+        },
+      ],
     },
   ]}
   itemCount={7}
@@ -294,6 +324,5 @@ all filters will be rendered in the dropdown.
       age: 17,
     },
   ]}
-
 />
 ```

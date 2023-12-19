@@ -1,17 +1,15 @@
 ---
-
 title: 'Scrollable'
 type: 'component'
 components:
-- Scrollable
+  - Scrollable
 categories:
-- Content
+  - Content
 status: 'New'
 designStatus: 'In Progress'
 devStatus: 'In Progress'
 notes: |
   Adds overflow:auto scrolling to wrapped elements. And adds dropshadows when content wrapped within is scrolled up or down
-
 ---
 
 ## Scrollable area adorned with top and bottom drop shadows on scroll detection
@@ -26,8 +24,11 @@ If you don't specify height you will get a default height per the Scrollable com
 ## Basic usage of scrollable with provided height
 
 ```jsx live
-<Scrollable id="test" style={{'height': '40vh'}}>
-  <p>Do not use overflow in wrapped component, Scrollable provides overflow:auto around wrapped element</p>
+<Scrollable id="test" style={{ height: '40vh' }}>
+  <p>
+    Do not use overflow in wrapped component, Scrollable provides overflow:auto
+    around wrapped element
+  </p>
   <p>A very long scrollable Content.</p>
   <p>A very long scrollable Content.</p>
   <p>A very long scrollable Content.</p>
@@ -70,9 +71,12 @@ If you don't specify height you will get a default height per the Scrollable com
 ## With padding used by consumer
 
 ```jsx live
-<Scrollable style={{'height': '40vh'}}>
+<Scrollable style={{ height: '40vh' }}>
   <div className="p-4">
-    <p>Do not use overflow in wrapped component, Scrollable provides overflow:auto around wrapped element</p>
+    <p>
+      Do not use overflow in wrapped component, Scrollable provides
+      overflow:auto around wrapped element
+    </p>
     <p>A very long scrollable Content.</p>
     <p>A very long scrollable Content.</p>
     <p>A very long scrollable Content.</p>

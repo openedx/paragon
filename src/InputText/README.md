@@ -2,9 +2,9 @@
 title: 'InputText'
 type: 'component'
 components:
-- InputText
+  - InputText
 categories:
-- Forms (deprecated)
+  - Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'To Do'
@@ -32,7 +32,7 @@ notes: |
   name="username"
   label="Username"
   description="The unique name that identifies you throughout the site."
-  validator={value => {
+  validator={(value) => {
     let feedback = { isValid: true };
     if (value.length < 3) {
       feedback = {
@@ -52,7 +52,7 @@ notes: |
   name="username"
   label="Username"
   description="The unique name that identifies you throughout the site."
-  validator={value => {
+  validator={(value) => {
     let feedback = { isValid: true };
     if (value.length < 3) {
       feedback = {
@@ -85,9 +85,8 @@ class FocusInputWrapper extends React.Component {
     super(props);
     this.state = { open: true };
 
-    this.resetStatusAlertWrapperState = this.resetStatusAlertWrapperState.bind(
-      this,
-    );
+    this.resetStatusAlertWrapperState =
+      this.resetStatusAlertWrapperState.bind(this);
   }
 
   resetStatusAlertWrapperState() {
@@ -108,7 +107,7 @@ class FocusInputWrapper extends React.Component {
           id="data"
           name="data"
           label="Data Input"
-          inputRef={input => {
+          inputRef={(input) => {
             this.inputForm = input;
           }}
         />
@@ -256,9 +255,7 @@ class FocusInputWrapper extends React.Component {
     name="search"
     label="Search"
     value="what is paragon"
-    inputGroupAppend={(
-      <Button variant="outline-secondary">Go</Button>
-    )}
+    inputGroupAppend={<Button variant="outline-secondary">Go</Button>}
   />
   <InputText
     name="username"

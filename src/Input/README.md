@@ -2,9 +2,9 @@
 title: 'Input'
 type: 'component'
 components:
-- Input
+  - Input
 categories:
-- Forms (deprecated)
+  - Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'Done'
 devStatus: 'Done'

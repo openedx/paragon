@@ -2,15 +2,14 @@
 title: 'Form.Autosuggest'
 type: 'component'
 components:
-- FormAutosuggest
-- FormAutosuggestOption
+  - FormAutosuggest
+  - FormAutosuggestOption
 categories:
-- Forms
+  - Forms
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
 notes: |
-
 ---
 
 Form auto-suggest enables users to manually select or type to find matching options to partial text input.
@@ -24,23 +23,24 @@ Form auto-suggest enables users to manually select or type to find matching opti
   return (
     <Form.Group>
       <Form.Label>
-        <h4>Programming language</h4>
+      <h4>Programming language</h4>
       </Form.Label>
       <Form.Autosuggest
-        aria-label="form autosuggest"
-        helpMessage="Select language"
-        errorMessageText="Error, no selected value"
-        value={selected}
-        onSelected={(value) => setSelected(value)}
+      aria-label="form autosuggest"
+      helpMessage="Select language"
+      errorMessageText="Error, no selected value"
+      value={selected}
+      onSelected={(value) => setSelected(value)}
+    >
+      <Form.AutosuggestOption>JavaScript</Form.AutosuggestOption>
+      <Form.AutosuggestOption>Python</Form.AutosuggestOption>
+      <Form.AutosuggestOption>Rube</Form.AutosuggestOption>
+      <Form.AutosuggestOption
+        onClick={(e) => alert(e.currentTarget.getAttribute('data-value'))}
       >
-        <Form.AutosuggestOption>JavaScript</Form.AutosuggestOption>
-        <Form.AutosuggestOption>Python</Form.AutosuggestOption>
-        <Form.AutosuggestOption>Rube</Form.AutosuggestOption>
-        <Form.AutosuggestOption onClick={(e) => alert(e.currentTarget.getAttribute('data-value'))}>
-          Option with custom onClick
-        </Form.AutosuggestOption>
-      </Form.Autosuggest>
-    </Form.Group>
+        Option with custom onClick
+      </Form.AutosuggestOption>
+    </Form.Autosuggest></Form.Group>
   );
 };
 ```
@@ -79,8 +79,8 @@ Form auto-suggest enables users to manually select or type to find matching opti
   useEffect(() => {
     setShowLoading(true);
     fetch('https://api.sampleapis.com/coffee/hot')
-      .then(data => data.json())
-      .then(items => {
+      .then((data) => data.json())
+      .then((items) => {
         setTimeout(() => {
           setData(items);
           setShowLoading(false);
@@ -106,14 +106,18 @@ Form auto-suggest enables users to manually select or type to find matching opti
         <h4>Café API</h4>
       </Form.Label>
       <Form.Autosuggest
-        isLoading={showLoading}
-        placeholder="This is placeholder"
-        screenReaderText="Loading..."
-        onChange={searchCoffee}
-      >
-        {data.map((item, index) => <Form.AutosuggestOption key={index}>{item.title}</Form.AutosuggestOption>)}
-      </Form.Autosuggest>
-    </Form.Group>
+      isLoading={showLoading}
+      placeholder="This is placeholder"
+
+      screenReaderText="Loading..."
+      onChange={searchCoffee}
+    >
+      {data.map((item, index) => (
+        <Form.AutosuggestOption key={index}>
+          {item.title}
+        </Form.AutosuggestOption>
+      ))}
+    </Form.Autosuggest></Form.Group>
   );
 };
 ```

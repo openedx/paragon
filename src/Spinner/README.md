@@ -3,13 +3,12 @@ title: 'Spinner'
 type: 'component'
 status: 'Stable'
 components:
-- Spinner
+  - Spinner
 categories:
-- Status & metadata
+  - Status & metadata
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 A spinning animation that indicates loading.
@@ -29,13 +28,28 @@ A spinning animation that indicates loading.
   <Spinner animation="grow" className="mie-3" screenReaderText="loading" />
 </>
 ```
+
 ## Color Variants
 
 ```jsx live
 () => {
-  const variants = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
+  const variants = [
+    'primary',
+    'secondary',
+    'success',
+    'danger',
+    'warning',
+    'info',
+    'light',
+    'dark',
+  ];
   return variants.map((variant) => (
-    <Spinner animation="border" variant={variant} className="mr-3" screenReaderText="loading" />
+    <Spinner
+      animation="border"
+      variant={variant}
+      className="mr-3"
+      screenReaderText="loading"
+    />
   ));
-}
+};
 ```

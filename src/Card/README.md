@@ -2,19 +2,19 @@
 title: 'Card'
 type: 'component'
 components:
-- Card
-- CardHeader
-- CardGrid
-- CardSection
-- CardDivider
-- CardFooter
-- CardBody
-- CardImageCap
-- CardStatus
-- CardDeck
-- CardCarousel
+  - Card
+  - CardHeader
+  - CardGrid
+  - CardSection
+  - CardDivider
+  - CardFooter
+  - CardBody
+  - CardImageCap
+  - CardStatus
+  - CardDeck
+  - CardCarousel
 categories:
-- Content
+  - Content
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -32,25 +32,25 @@ This component uses a `Card` from react-bootstrap as a base component and extend
 
 ```jsx live
 () => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
-    <Card style={{ width: isExtraSmall ? "100%" : "18rem" }}>
-      <Card.ImageCap
-        src="https://picsum.photos/360/200/"
-        srcAlt="Card image"
-      />
-      <Card.Header
-        title="Card Title"
-      />
+    <Card style={{ width: isExtraSmall ? '100%' : '18rem' }}>
+      <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
+      <Card.Header title="Card Title" />
       <Card.Section>
-        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+        This is a card section. It can contain anything but usually text, a
+        list, or list of links. Multiple sections have a card divider between
+        them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
       </Card.Footer>
     </Card>
-)}
+  );
+};
 ```
 
 ## Card variants
@@ -60,26 +60,38 @@ Use `variant` prop to use `Card` specific style variant.
 ```jsx live
 () => {
   const [cardVariant, setCardVariant] = useState('light');
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
     <>
       {/* start example form block */}
       <ExamplePropsForm
         inputs={[
-          { value: cardVariant, setValue: setCardVariant, options: ['light', 'dark', 'muted'], name: 'variant' },
+          {
+            value: cardVariant,
+            setValue: setCardVariant,
+            options: ['light', 'dark', 'muted'],
+            name: 'variant',
+          },
         ]}
       />
       {/* end example form block */}
-      
-      <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} variant={cardVariant}>
-        <Card.ImageCap 
+
+      <Card
+        style={{ width: isExtraSmall ? '100%' : '18rem' }}
+        variant={cardVariant}
+      >
+        <Card.ImageCap
           src="https://picsum.photos/360/200/"
           srcAlt="Card image"
         />
         <Card.Header title="Card Title" />
         <Card.Section>
-          This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+          This is a card section. It can contain anything but usually text, a
+          list, or list of links. Multiple sections have a card divider between
+          them.
         </Card.Section>
         <Card.Footer textElement="Course">
           <Button
@@ -90,7 +102,8 @@ Use `variant` prop to use `Card` specific style variant.
         </Card.Footer>
       </Card>
     </>
-)}
+  );
+};
 ```
 
 ## Clickable card
@@ -99,60 +112,63 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
 
 ```jsx live
 () => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
-    <Card style={{ width: isExtraSmall ? "100%" : "18rem" }} isClickable>
-      <Card.ImageCap
-        src="https://picsum.photos/360/200/"
-        srcAlt="Card image"
-      />
-      <Card.Header
-        title="Card Title"
-      />
+    <Card style={{ width: isExtraSmall ? '100%' : '18rem' }} isClickable>
+      <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
+      <Card.Header title="Card Title" />
       <Card.Section>
-        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+        This is a card section. It can contain anything but usually text, a
+        list, or list of links. Multiple sections have a card divider between
+        them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
       </Card.Footer>
     </Card>
-)};
+  );
+};
 ```
 
 ### As link
+
 You can also use `Card` as a link by passing the value `HyperLink` (or `a`, `Link`) to the `as` property, note that
 `Card` will override the default link styling to make its content appear as regular text.
 
 ```jsx live
 () => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
     <Card
       as={Hyperlink}
       destination="https://www.edx.org"
-      style={{ width: isExtraSmall ? "100%" : "18rem" }}
+      style={{ width: isExtraSmall ? '100%' : '18rem' }}
       isClickable
     >
-      <Card.ImageCap
-        src="https://picsum.photos/360/200/"
-        srcAlt="Card image"
-      />
-      <Card.Header title="Card Title"/>
+      <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
+      <Card.Header title="Card Title" />
       <Card.Section>
-        This is a card section. It can contain anything but usually text, a list, or list of links.
-        Multiple sections have a card divider between them.
+        This is a card section. It can contain anything but usually text, a
+        list, or list of links. Multiple sections have a card divider between
+        them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
       </Card.Footer>
     </Card>
-)}
+  );
+};
 ```
 
 ## Header
-You may add a header by adding a ``Card.Header`` component.
+
+You may add a header by adding a `Card.Header` component.
 This header displays a title, subtitle, and may contain actions.
 
 ```jsx live
@@ -161,20 +177,20 @@ This header displays a title, subtitle, and may contain actions.
     <Card.Header title="Title" />
   </Card>
   <Card>
-    <Card.Header 
-      title="Title"
-      subtitle="Subtitle"
-    />
+    <Card.Header title="Title" subtitle="Subtitle" />
   </Card>
 </div>
 ```
 
 ### Actions
+
 The `Card.Header` supports custom actions via the actions prop and renders them on the top right of the header.
 
 ```jsx live
 () => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
     <div>
@@ -184,14 +200,14 @@ The `Card.Header` supports custom actions via the actions prop and renders them 
           subtitle="Subtitle"
           isStacked={!!isExtraSmall}
           actions={
-            <ActionRow 
+            <ActionRow
               isStacked={!!isExtraSmall}
-              style={{  marginBottom: isExtraSmall ? ".5rem" : 0 }}
+              style={{ marginBottom: isExtraSmall ? '.5rem' : 0 }}
             >
               <Button variant="tertiary">Action 1</Button>
               <Button>Action 2</Button>
             </ActionRow>
-          } 
+          }
         />
       </Card>
       <Card>
@@ -218,12 +234,14 @@ The `Card.Header` supports custom actions via the actions prop and renders them 
         />
       </Card>
     </div>
-)}
+  );
+};
 ```
 
 ### Sizes
-The `Card.Header` supports two size variants, ``"sm"`` and ``"md"``. 
-Add ``size="sm"`` for smaller header content and actions.
+
+The `Card.Header` supports two size variants, `"sm"` and `"md"`.
+Add `size="sm"` for smaller header content and actions.
 
 ```jsx live
 <Card>
@@ -241,15 +259,18 @@ Add ``size="sm"`` for smaller header content and actions.
 ```
 
 ## Section
+
 `Card.Section` is the main block to display card content. Can include its own title and actions separate from other card components. Multiple sections have a `Card.Divider` between them.
 
 ```jsx live
 () => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
     <Card>
-      <Card.Section 
+      <Card.Section
         title="Section title"
         actions={
           <ActionRow isStacked={!!isExtraSmall}>
@@ -258,10 +279,12 @@ Add ``size="sm"`` for smaller header content and actions.
           </ActionRow>
         }
       >
-        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+        This is a card section. It can contain anything but usually text, a
+        list, or list of links. Multiple sections have a card divider between
+        them.
       </Card.Section>
       <Card.Divider />
-      <Card.Section 
+      <Card.Section
         title="Section"
         actions={
           <ActionRow isStacked={!!isExtraSmall}>
@@ -277,7 +300,8 @@ Add ``size="sm"`` for smaller header content and actions.
         This is a section without title or actions, just content.
       </Card.Section>
     </Card>
-)}
+  );
+};
 ```
 
 ## Footer
@@ -289,19 +313,21 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 
 ```jsx live
 () => {
-  const footerLink = <a href='#link'>Footer text as a link</a>;
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const footerLink = <a href="#link">Footer text as a link</a>;
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
     <>
       <Card>
-        <Card.Footer orientation={isExtraSmall ? "horizontal" : "vertical"}>
+        <Card.Footer orientation={isExtraSmall ? 'horizontal' : 'vertical'}>
           <Button>Action 1</Button>
           <Button>Action 2</Button>
         </Card.Footer>
         <Card.Divider />
-        <Card.Footer 
-          orientation={isExtraSmall ? "horizontal" : "vertical"} 
+        <Card.Footer
+          orientation={isExtraSmall ? 'horizontal' : 'vertical'}
           textElement="Optional footer text to display"
         >
           <Button>Action 1</Button>
@@ -309,22 +335,22 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
         </Card.Footer>
         <Card.Divider />
         <Card.Footer
-          orientation={isExtraSmall ? "horizontal" : "vertical"} 
+          orientation={isExtraSmall ? 'horizontal' : 'vertical'}
           textElement={footerLink}
         >
           <Button>Action 1</Button>
           <Button>Action 2</Button>
         </Card.Footer>
       </Card>
-      <Card style={{ width: isExtraSmall ? "100%" : "40%" }}>
+      <Card style={{ width: isExtraSmall ? '100%' : '40%' }}>
         <Card.Footer textElement="Stacked vertical variant" isStacked>
           <Button>Action 1</Button>
           <Button>Action 2</Button>
         </Card.Footer>
       </Card>
     </>
-  )
-}
+  );
+};
 ```
 
 ### Footer horizontal variant
@@ -332,25 +358,33 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 ```jsx live
 () => {
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
-  
+
   return (
-    <Card style={{ width: isExtraSmall ? "100%" : "40%" }}>
-    <Card.Footer orientation="horizontal">
-      <Button>Action 1</Button>
-      <Button>Action 2</Button>
-    </Card.Footer>
-    <Card.Divider />
-    <Card.Footer orientation="horizontal" textElement="Optional footer text to display">
-      <Button>Action 1</Button>
-      <Button>Action 2</Button>
-    </Card.Footer>
-    <Card.Divider />
-    <Card.Footer orientation="horizontal" textElement="Horizontal stacked variant" isStacked>
-      <Button>Action 1</Button>
-      <Button>Action 2</Button>
-    </Card.Footer>
-  </Card>
-)}
+    <Card style={{ width: isExtraSmall ? '100%' : '40%' }}>
+      <Card.Footer orientation="horizontal">
+        <Button>Action 1</Button>
+        <Button>Action 2</Button>
+      </Card.Footer>
+      <Card.Divider />
+      <Card.Footer
+        orientation="horizontal"
+        textElement="Optional footer text to display"
+      >
+        <Button>Action 1</Button>
+        <Button>Action 2</Button>
+      </Card.Footer>
+      <Card.Divider />
+      <Card.Footer
+        orientation="horizontal"
+        textElement="Horizontal stacked variant"
+        isStacked
+      >
+        <Button>Action 1</Button>
+        <Button>Action 2</Button>
+      </Card.Footer>
+    </Card>
+  );
+};
 ```
 
 ## With Image Cap
@@ -358,32 +392,29 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 `ImageCap` is an image that sits on the top or the left edge of a `Card`. Can contain an optional logo image.
 
 ```jsx live
-
 () => {
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
   return (
-    <Card style={{ width: isExtraSmall ? "100%" : "40%" }}>
+    <Card style={{ width: isExtraSmall ? '100%' : '40%' }}>
       <Card.ImageCap
         src="https://picsum.photos/360/200/"
         srcAlt="Card image"
         logoSrc="https://via.placeholder.com/150"
         logoAlt="Card logo"
       />
-      <Card.Header
-        title="Title"
-        subtitle="Subtitle"
-      />
-      <Card.Section 
-        title="Section title"
-      >
-        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+      <Card.Header title="Title" subtitle="Subtitle" />
+      <Card.Section title="Section title">
+        This is a card section. It can contain anything but usually text, a
+        list, or list of links. Multiple sections have a card divider between
+        them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
       </Card.Footer>
     </Card>
-)}
+  );
+};
 ```
 
 ## Horizontal variant
@@ -391,17 +422,15 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
 When using horizontal variant Paragon provides additional component `Card.Body` which acts as a wrapper for content you want to display between `ImageCap` and `Footer`. Use it if content contains multiple components.
 
 ```jsx live
-
 () => {
   const isSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
-  
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
+
   return (
     <>
-      <Card
-        className="mb-4" 
-        orientation={isSmall ? "vertical" : "horizontal"}
-      >
+      <Card className="mb-4" orientation={isSmall ? 'vertical' : 'horizontal'}>
         <Card.ImageCap
           src="https://picsum.photos/360/200/"
           srcAlt="Card image"
@@ -409,40 +438,34 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
           logoAlt="Card logo"
         />
         <Card.Body>
-          <Card.Header
-            title="Title"
-            subtitle="Subtitle"
-          />
-          <Card.Section 
-            title="Section title"
-          >
-            Here we want to display both Header and Section between ImageCap and Footer components, so we use Card.
-            Body to accomplish that. 
+          <Card.Header title="Title" subtitle="Subtitle" />
+          <Card.Section title="Section title">
+            Here we want to display both Header and Section between ImageCap and
+            Footer components, so we use Card. Body to accomplish that.
           </Card.Section>
         </Card.Body>
-        <Card.Footer orientation={isExtraSmall ? "horizontal" : "vertical"}>
+        <Card.Footer orientation={isExtraSmall ? 'horizontal' : 'vertical'}>
           <Button>Action 1</Button>
           <Button>Action 2</Button>
         </Card.Footer>
       </Card>
-      <Card className="mb-4" orientation={isSmall ? "vertical" : "horizontal"}>
+      <Card className="mb-4" orientation={isSmall ? 'vertical' : 'horizontal'}>
         <Card.ImageCap
           src="https://picsum.photos/360/200/"
           srcAlt="Card image"
           logoSrc="https://via.placeholder.com/150"
           logoAlt="Card logo"
         />
-        <Card.Section 
-          title="Section title"
-        >
-          In this Card we only want to display Section, therefore no need to use Card.Body wrapper.
+        <Card.Section title="Section title">
+          In this Card we only want to display Section, therefore no need to use
+          Card.Body wrapper.
         </Card.Section>
-        <Card.Footer orientation={isExtraSmall ? "horizontal" : "vertical"}>
+        <Card.Footer orientation={isExtraSmall ? 'horizontal' : 'vertical'}>
           <Button>Action 1</Button>
           <Button>Action 2</Button>
         </Card.Footer>
       </Card>
-      <Card orientation={isSmall ? "vertical" : "horizontal"}>
+      <Card orientation={isSmall ? 'vertical' : 'horizontal'}>
         <Card.ImageCap
           src="https://picsum.photos/360/200/"
           srcAlt="Card image"
@@ -450,22 +473,23 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
           logoAlt="Card logo"
         />
         <Card.Body>
-          <Card.Header
-            title="Title"
-          />
-          <Card.Section 
-            title="Section title"
-          >
-            This is a special case where we want to have Footer with vertical orientation in the Card with horizontal orientation.
+          <Card.Header title="Title" />
+          <Card.Section title="Section title">
+            This is a special case where we want to have Footer with vertical
+            orientation in the Card with horizontal orientation.
           </Card.Section>
-          <Card.Footer orientation={isExtraSmall ? "horizontal" : "vertical"} textElement="Some footer text">
+          <Card.Footer
+            orientation={isExtraSmall ? 'horizontal' : 'vertical'}
+            textElement="Some footer text"
+          >
             <Button>Action 1</Button>
             <Button>Action 2</Button>
           </Card.Footer>
         </Card.Body>
       </Card>
     </>
-)}
+  );
+};
 ```
 
 ## Card status
@@ -491,11 +515,11 @@ An optional `actions` prop may be passed to include call-to-action button(s).
           logoSrc="https://via.placeholder.com/150"
           logoAlt="Card logo"
         />
-        <Card.Header title="Card title"/>
+        <Card.Header title="Card title" />
         <Card.Section>
-          This is a wider card with supporting text below as a natural lead-in to
-          additional content. This card has even longer content than the first to
-          show that equal height action.
+          This is a wider card with supporting text below as a natural lead-in
+          to additional content. This card has even longer content than the
+          first to show that equal height action.
         </Card.Section>
       </>
     ),
@@ -508,11 +532,11 @@ An optional `actions` prop may be passed to include call-to-action button(s).
           logoAlt="Card logo"
         />
         <Card.Body>
-          <Card.Header title="Card title"/>
+          <Card.Header title="Card title" />
           <Card.Section>
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This card has even longer content than the first to
-            show that equal height action.
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This card has even longer content than the
+            first to show that equal height action.
           </Card.Section>
         </Card.Body>
       </div>
@@ -524,13 +548,28 @@ An optional `actions` prop may be passed to include call-to-action button(s).
       {/* start example form block */}
       <ExamplePropsForm
         inputs={[
-          { value: orientation, setValue: setOrientation, options: ['horizontal', 'vertical'], name: 'orientation' },
-          { value: variant, setValue: setVariant, options: ['primary', 'warning', 'danger', 'success'], name: 'status-variant' },
-          { value: showCardStatusActions, setValue: setCardStatusActions, options: ['true', 'false'], name: 'card-status-actions' },
+          {
+            value: orientation,
+            setValue: setOrientation,
+            options: ['horizontal', 'vertical'],
+            name: 'orientation',
+          },
+          {
+            value: variant,
+            setValue: setVariant,
+            options: ['primary', 'warning', 'danger', 'success'],
+            name: 'status-variant',
+          },
+          {
+            value: showCardStatusActions,
+            setValue: setCardStatusActions,
+            options: ['true', 'false'],
+            name: 'card-status-actions',
+          },
         ]}
       />
       {/* end example form block */}
-      
+
       <CardGrid
         columnSizes={{
           xs: 12,
@@ -546,11 +585,18 @@ An optional `actions` prop may be passed to include call-to-action button(s).
             icon={Warning}
             variant={variant}
             actions={(() => {
-              if (showCardStatusActions === "false") { return undefined; }
+              if (showCardStatusActions === 'false') {
+                return undefined;
+              }
               if (orientation === 'horizontal') {
                 return (
                   <ActionRow>
-                    <Button size="sm" variant={variant === 'primary' ? 'inverse-tertiary' : 'tertiary'}>
+                    <Button
+                      size="sm"
+                      variant={
+                        variant === 'primary' ? 'inverse-tertiary' : 'tertiary'
+                      }
+                    >
                       Dismiss
                     </Button>
                     <Button size="sm" variant="brand">
@@ -567,7 +613,7 @@ An optional `actions` prop may be passed to include call-to-action button(s).
             })()}
           >
             <HipsterIpsum
-              numShortParagraphs={orientation === "vertical" ? 1 : undefined}
+              numShortParagraphs={orientation === 'vertical' ? 1 : undefined}
               numParagraphs={1}
             />
           </Card.Status>
@@ -579,6 +625,7 @@ An optional `actions` prop may be passed to include call-to-action button(s).
 ```
 
 ## Card Content Block Empty
+
 ### With image
 
 ```jsx live
@@ -586,36 +633,34 @@ An optional `actions` prop may be passed to include call-to-action button(s).
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
   return (
-    <Card style={{ width: isExtraSmall ? "100%" : "25rem" }}>
-      <Card.ImageCap
-        src="https://picsum.photos/360/200/" 
-        srcAlt="Card image"
-      />
+    <Card style={{ width: isExtraSmall ? '100%' : '25rem' }}>
+      <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
       <Card.Section className="text-center">
         <h2>Headline</h2>
         <p>This is an optional text description.</p>
         <Button variant="brand">Action</Button>
       </Card.Section>
     </Card>
-)}
+  );
+};
 ```
 
 ### Without image
 
 ```jsx live
-
 () => {
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
   return (
-    <Card style={{ width: isExtraSmall ? "100%" : "25rem" }}>
+    <Card style={{ width: isExtraSmall ? '100%' : '25rem' }}>
       <Card.Section className="text-center">
         <h2>Headline</h2>
         <p>This is an optional text description.</p>
         <Button variant="brand">Action</Button>
       </Card.Section>
     </Card>
-)}
+  );
+};
 ```
 
 ### Horizontal variant with image
@@ -625,11 +670,8 @@ An optional `actions` prop may be passed to include call-to-action button(s).
   const isSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
   return (
-    <Card orientation={isSmall ? "vertical" : "horizontal"}>
-      <Card.ImageCap
-        src="https://picsum.photos/360/200/" 
-        srcAlt="Card image"
-      />
+    <Card orientation={isSmall ? 'vertical' : 'horizontal'}>
+      <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
       <Card.Body>
         <Card.Section>
           <h2>Headline</h2>
@@ -640,7 +682,8 @@ An optional `actions` prop may be passed to include call-to-action button(s).
         <Button variant="brand">Action</Button>
       </Card.Footer>
     </Card>
-)}
+  );
+};
 ```
 
 ### Horizontal variant without image
@@ -650,7 +693,7 @@ An optional `actions` prop may be passed to include call-to-action button(s).
   const isSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
   return (
-    <Card orientation={isSmall ? "vertical" : "horizontal"}>
+    <Card orientation={isSmall ? 'vertical' : 'horizontal'}>
       <Card.Section>
         <h2>Headline</h2>
         <p>This is an optional text description.</p>
@@ -659,9 +702,12 @@ An optional `actions` prop may be passed to include call-to-action button(s).
         <Button variant="brand">Action</Button>
       </Card.Footer>
     </Card>
-)}
+  );
+};
 ```
+
 ## Fallback Image
+
 ### With Fallback custom Image
 
 You can specify `fallbackSrc` image to show in case your main `src` fails to load.
@@ -669,10 +715,10 @@ A fallback source is available for both the main `ImageCap` component image and 
 
 ```jsx live
 () => {
-  const isExtraSmall = useMediaQuery({maxWidth: breakpoints.small.maxWidth});
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
   return (
-    <Card style={{width: isExtraSmall ? "100%" : "40%"}}>
+    <Card style={{ width: isExtraSmall ? '100%' : '40%' }}>
       <Card.ImageCap
         src="fakeURL"
         fallbackSrc="https://picsum.photos/360/200/"
@@ -683,14 +729,16 @@ A fallback source is available for both the main `ImageCap` component image and 
       />
       <Card.Header title="Title" subtitle="Subtitle" />
       <Card.Section title="Section title">
-        This is a card section. It can contain anything but usually text, a list, or list of links.
-        Multiple sections have a card divider between them.
+        This is a card section. It can contain anything but usually text, a
+        list, or list of links. Multiple sections have a card divider between
+        them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
       </Card.Footer>
-  </Card>
-)}
+    </Card>
+  );
+};
 ```
 
 ### With default Fallback Image
@@ -699,11 +747,11 @@ The default fallback image will be displayed if `fallbackSrc` is not specified.
 
 ```jsx live
 () => {
-  const isExtraSmall = useMediaQuery({maxWidth: breakpoints.small.maxWidth});
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
   return (
-    <Card style={{width: isExtraSmall ? "100%" : "40%"}}>
-      <Card.ImageCap 
+    <Card style={{ width: isExtraSmall ? '100%' : '40%' }}>
+      <Card.ImageCap
         src="fakeURL"
         srcAlt="Card image"
         logoSrc="fakeURL"
@@ -712,48 +760,55 @@ The default fallback image will be displayed if `fallbackSrc` is not specified.
       />
       <Card.Header title="Title" subtitle="Subtitle" />
       <Card.Section title="Section title">
-        This is a card section. It can contain anything but usually text, a list, or list of links.
-        Multiple sections have a card divider between them.
-      </Card.Section>
-      <Card.Footer>
-        <Button>Action 1</Button>
-      </Card.Footer>
-  </Card>
-)}
-```
-
-## With loading state
-### Vertical variant
-
-```jsx live
-() => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
-
-  return (
-    <Card isLoading style={{ width: isExtraSmall ? "100%" : "18rem" }}>
-      <Card.ImageCap
-        src="https://picsum.photos/360/200/"
-        srcAlt="Card image"
-      />
-      <Card.Header title="Card Title" />
-      <Card.Section>
-        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections have a card divider between them.
+        This is a card section. It can contain anything but usually text, a
+        list, or list of links. Multiple sections have a card divider between
+        them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
       </Card.Footer>
     </Card>
-)}
+  );
+};
+```
+
+## With loading state
+
+### Vertical variant
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
+
+  return (
+    <Card isLoading style={{ width: isExtraSmall ? '100%' : '18rem' }}>
+      <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
+      <Card.Header title="Card Title" />
+      <Card.Section>
+        This is a card section. It can contain anything but usually text, a
+        list, or list of links. Multiple sections have a card divider between
+        them.
+      </Card.Section>
+      <Card.Footer>
+        <Button>Action 1</Button>
+      </Card.Footer>
+    </Card>
+  );
+};
 ```
 
 ### Horizontal variant
 
 ```jsx live
 () => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
-    <Card isLoading orientation={isExtraSmall ? "vertical" : "horizontal"}>
+    <Card isLoading orientation={isExtraSmall ? 'vertical' : 'horizontal'}>
       <Card.ImageCap
         skeletonHeight={isExtraSmall ? 140 : null}
         src="https://picsum.photos/360/200/"
@@ -764,7 +819,7 @@ The default fallback image will be displayed if `fallbackSrc` is not specified.
       <Card.Body>
         <Card.Header title="Title" />
         <Card.Section title="Section title">
-          This is a special case where we want to have Footer with vertical 
+          This is a special case where we want to have Footer with vertical
           orientation in the Card with horizontal orientation.
         </Card.Section>
         <Card.Footer orientation="vertical" textElement="Some footer text">
@@ -773,7 +828,8 @@ The default fallback image will be displayed if `fallbackSrc` is not specified.
         </Card.Footer>
       </Card.Body>
     </Card>
-)}
+  );
+};
 ```
 
 ## CardGrid
@@ -788,19 +844,16 @@ behavior.
 
   const ExampleCard = () => (
     <Card>
-      <Card.ImageCap
-        src="https://picsum.photos/360/200/"
-        srcAlt="Card image"
-      />
-      <Card.Header
-        title="Card title"
-      />
-      <Card.Section 
-        title="Section title"
-      >
+      <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
+      <Card.Header title="Card title" />
+      <Card.Section title="Section title">
         <HipsterIpsum numShortParagraphs={1} />
       </Card.Section>
-      <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
+      <Card.Footer
+        textElement={
+          <small className="text-muted">Last updated 3 mins ago</small>
+        }
+      />
     </Card>
   );
 
@@ -836,7 +889,7 @@ behavior.
       </CardGrid>
     </>
   );
-}
+};
 ```
 
 ## CardDeck
@@ -852,10 +905,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
 
   const CardComponent = () => (
     <Card isClickable={hasInteractiveChildren === 'true'}>
-      <Card.ImageCap
-        src="https://picsum.photos/360/200/"
-        srcAlt="Card image"
-      />
+      <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
       <Card.Header title="Card title" />
       <Card.Section>
         <HipsterIpsum numShortParagraphs={1} />
@@ -896,7 +946,7 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
       </CardDeck>
     </>
   );
-}
+};
 ```
 
 ### CardDeck.Deprecated
@@ -909,10 +959,7 @@ Note: This component is a pass-thru from `react-bootstrap`.
 () => {
   const CardComponent = () => (
     <Card>
-      <Card.ImageCap
-        src="https://picsum.photos/360/200/"
-        srcAlt="Card image"
-      />
+      <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
       <Card.Header title="Card title" />
       <Card.Section title="Section title">
         <HipsterIpsum numShortParagraphs={1} />
@@ -926,8 +973,8 @@ Note: This component is a pass-thru from `react-bootstrap`.
       <CardComponent />
       <CardComponent />
     </CardDeck.Deprecated>
-  )
-}
+  );
+};
 ```
 
 ## CardCarousel
@@ -944,12 +991,9 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
 
   const CardComponent = () => (
     <Card isClickable>
-      <Card.ImageCap
-        src="https://picsum.photos/360/200/"
-        srcAlt="Card image"
-      />
+      <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
       <Card.Header title="Card title" />
-      <Card.Section  title="Section title">
+      <Card.Section title="Section title">
         <HipsterIpsum numShortParagraphs={1} />
       </Card.Section>
     </Card>
@@ -957,9 +1001,13 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
 
   const cardItems = useMemo(() => {
     if (hasOverflowCards === 'true') {
-      return Array.from({ length: 8 }).map(() => <CardComponent key={uuidv4()} />);
+      return Array.from({ length: 8 }).map(() => (
+        <CardComponent key={uuidv4()} />
+      ));
     }
-    return Array.from({ length: 2 }).map(() => <CardComponent key={uuidv4()} />);
+    return Array.from({ length: 2 }).map(() => (
+      <CardComponent key={uuidv4()} />
+    ));
   }, [hasOverflowCards]);
 
   return (
@@ -984,7 +1032,7 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
             setValue: setHasOverflowCards,
             options: ['true', 'false'],
             name: 'hasOverflowCards',
-          }
+          },
         ]}
       />
       {/* end example form block */}
@@ -995,12 +1043,16 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
         subtitle="The following content was picked just for you."
         canScrollHorizontal={canScrollHorizontal === 'true'}
         disableOpacityMasks={disableOpacityMasks === 'true'}
-        onScrollPrevious={() => { console.log('onScrollPrevious'); } }
-        onScrollNext={() => { console.log('onScrollNext'); } }
+        onScrollPrevious={() => {
+          console.log('onScrollPrevious');
+        }}
+        onScrollNext={() => {
+          console.log('onScrollNext');
+        }}
       >
         {cardItems}
       </CardCarousel>
     </>
   );
-}
+};
 ```

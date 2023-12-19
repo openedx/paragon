@@ -2,10 +2,10 @@
 title: 'Bubble'
 type: 'component'
 components:
-- Bubble
+  - Bubble
 status: 'New'
 categories:
-- Status & metadata
+  - Status & metadata
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
@@ -20,18 +20,10 @@ Represents the filled circle with a number of an icon, supporting the usual colo
   return (
     <>
       <Stack direction="horizontal" gap={4} className="mb-2">
-        <Bubble>
-          1
-        </Bubble>
-        <Bubble variant="error">
-          1
-        </Bubble>
-        <Bubble variant="warning">
-          1
-        </Bubble>
-        <Bubble variant="success">
-          1
-        </Bubble>
+        <Bubble>1</Bubble>
+        <Bubble variant="error">1</Bubble>
+        <Bubble variant="warning">1</Bubble>
+        <Bubble variant="success">1</Bubble>
       </Stack>
       <Stack direction="horizontal" gap={4} className="mb-2">
         <Bubble>
@@ -49,7 +41,7 @@ Represents the filled circle with a number of an icon, supporting the usual colo
       </Stack>
     </>
   );
-}
+};
 ```
 
 ### Disabled variant
@@ -58,15 +50,13 @@ Represents the filled circle with a number of an icon, supporting the usual colo
 () => {
   return (
     <Stack direction="horizontal" gap={4} className="mb-2">
-      <Bubble disabled>
-        1
-      </Bubble>
+      <Bubble disabled>1</Bubble>
       <Bubble disabled>
         <Icon src={Check} />
       </Bubble>
     </Stack>
   );
-}
+};
 ```
 
 ### Expandable
@@ -75,16 +65,24 @@ In the case of long content use `expandable` prop. It adds padding to `Bubble`. 
 
 ```jsx live
 () => {
-  {/* start example state */}
+  {
+    /* start example state */
+  }
   const [isExpandable, setIsExpandable] = useState(true);
-  {/* end example state */}
+  {
+    /* end example state */
+  }
 
   return (
     <>
       {/* start example form block */}
       <ExamplePropsForm
         inputs={[
-          { value: isExpandable, setValue: () => setIsExpandable(!isExpandable), name: 'isExpandable' },
+          {
+            value: isExpandable,
+            setValue: () => setIsExpandable(!isExpandable),
+            name: 'isExpandable',
+          },
         ]}
       />
       {/* end example form block */}
@@ -93,5 +91,5 @@ In the case of long content use `expandable` prop. It adds padding to `Bubble`. 
       </Bubble>
     </>
   );
-}
+};
 ```

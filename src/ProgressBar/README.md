@@ -2,15 +2,14 @@
 title: 'ProgressBar'
 type: 'component'
 components:
-- ProgressBar
-- ProgressBarAnnotated
+  - ProgressBar
+  - ProgressBarAnnotated
 categories:
-- Status & metadata
+  - Status & metadata
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 A bar to indicate the completed progress of a task.

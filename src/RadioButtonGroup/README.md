@@ -2,9 +2,9 @@
 title: 'RadioButtonGroup'
 type: 'component'
 components:
-- RadioButtonGroup
+  - RadioButtonGroup
 categories:
-- Forms (deprecated)
+  - Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'To Do'
 devStatus: 'To Do'

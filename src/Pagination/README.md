@@ -2,10 +2,10 @@
 title: 'Pagination'
 type: 'component'
 components:
-- Pagination
-- PaginationReduced
+  - Pagination
+  - PaginationReduced
 categories:
-- Navigation
+  - Navigation
 status: 'Needs Work'
 designStatus: 'Done'
 devStatus: 'To Do'

@@ -2,9 +2,9 @@
 title: 'CheckBoxGroup'
 type: 'component'
 components:
-- CheckBoxGroup
+  - CheckBoxGroup
 categories:
-- Forms (deprecated)
+  - Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'To Do'
 devStatus: 'To Do'
@@ -16,20 +16,8 @@ notes: |
 
 ```jsx live
 <CheckBoxGroup>
-  <CheckBox
-    id="checkbox1"
-    name="basicCheckBox1"
-    label="CheckBox 1"
-  />
-  <CheckBox
-    id="checkbox2"
-    name="basicCheckBox2"
-    label="CheckBox 2"
-  />
-  <CheckBox
-    id="checkbox3"
-    name="basicCheckBox3"
-    label="CheckBox 3"
-  />
+  <CheckBox id="checkbox1" name="basicCheckBox1" label="CheckBox 1" />
+  <CheckBox id="checkbox2" name="basicCheckBox2" label="CheckBox 2" />
+  <CheckBox id="checkbox3" name="basicCheckBox3" label="CheckBox 3" />
 </CheckBoxGroup>
 ```

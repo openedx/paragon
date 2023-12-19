@@ -2,9 +2,9 @@
 title: 'Stack'
 type: 'component'
 components:
-- Stack
+  - Stack
 categories:
-- Layout
+  - Layout
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
@@ -40,6 +40,7 @@ Stacks are vertical by default and stacked items are full-width by default. Watc
 ## Reversed props
 
 - **Vertical** with `reversed` prop
+
 ```jsx live
 <Stack gap={3} reversed>
   <Button>first button</Button>
@@ -47,7 +48,9 @@ Stacks are vertical by default and stacked items are full-width by default. Watc
   <Button>third button</Button>
 </Stack>
 ```
+
 - **Horizontal** with `reversed` prop
+
 ```jsx live
 <Stack direction="horizontal" gap={3} reversed>
   <div className="border p-2">first block</div>

@@ -21,6 +21,10 @@ Displays a brand SVG icon from `@edx/paragon/icons`. See the <Link to="/componen
 
 The icons below are sourced from <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>. They are designed to be sharp at 24px by 24px.
 
-<br/>
+<br />
 
-<IconsTable iconNames={Object.keys(IconComponents).filter((iconName) => iconName.startsWith('Bs'))} />
+<IconsTable
+  iconNames={Object.keys(IconComponents).filter((iconName) =>
+    iconName.startsWith('Bs'),
+  )}
+/>

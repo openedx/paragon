@@ -2,15 +2,14 @@
 title: 'Form.Switch'
 type: 'component'
 components:
-- FormSwitch
-- SwitchControl
+  - FormSwitch
+  - SwitchControl
 categories:
-- Forms
+  - Forms
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 A switch control for use with `Form.SwitchSet`. This component has identical
@@ -21,19 +20,18 @@ Note: extra props added to this component are passed as attributes to the
 underlying `input` node. See MDN for documentation on available
 [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes).
 
-
 ## Controlled Standalone Usage
 
 ```jsx live
 () => {
   const [isChecked, setChecked] = useState(false);
-  const handleChange = e => setChecked(e.target.checked);
+  const handleChange = (e) => setChecked(e.target.checked);
   return (
     <Form.Switch checked={isChecked} onChange={handleChange}>
       I want pizza.
     </Form.Switch>
   );
-}
+};
 ```
 
 ## Unlabeled control
@@ -41,7 +39,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 () => {
   const [isChecked, setChecked] = useState(false);
-  const handleChange = e => setChecked(e.target.checked);
+  const handleChange = (e) => setChecked(e.target.checked);
   return (
     <SwitchControl
       checked={isChecked}
@@ -49,7 +47,7 @@ underlying `input` node. See MDN for documentation on available
       aria-label="Form switch"
     />
   );
-}
+};
 ```
 
 ## Controlled Group Usage with useCheckboxSetValues
@@ -60,35 +58,30 @@ underlying `input` node. See MDN for documentation on available
 
 ```jsx live
 () => {
-
   const [colorValues, { add, remove }] = useCheckboxSetValues(['green']);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     if (e.target.checked) {
       add(e.target.value);
     } else {
       remove(e.target.value);
     }
-  }
+  };
   return (
     <Form.Group>
       <Form.Label>Which Color?</Form.Label>
-      <Form.SwitchSet
-        name="colors"
-        onChange={handleChange}
-        value={colorValues}
-      >
+      <Form.SwitchSet name="colors" onChange={handleChange} value={colorValues}>
         <Form.Switch value="red">Red</Form.Switch>
         <Form.Switch value="green">Green</Form.Switch>
         <Form.Switch value="blue">Blue</Form.Switch>
-        <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
+        <Form.Switch value="cyan" disabled>
+          Cyan
+        </Form.Switch>
       </Form.SwitchSet>
     </Form.Group>
   );
-}
+};
 ```
-
-
 
 ## Uncontrolled Usage
 
@@ -103,7 +96,9 @@ underlying `input` node. See MDN for documentation on available
     <Form.Switch value="red">Red</Form.Switch>
     <Form.Switch value="green">Green</Form.Switch>
     <Form.Switch value="blue">Blue</Form.Switch>
-    <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
+    <Form.Switch value="cyan" disabled>
+      Cyan
+    </Form.Switch>
   </Form.SwitchSet>
 </Form.Group>
 ```
@@ -113,18 +108,24 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 () => {
   const allCheeseOptions = ['swiss', 'cheddar', 'pepperjack'];
-  const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues(['swiss']);
+  const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues([
+    'swiss',
+  ]);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     e.target.checked ? add(e.target.value) : remove(e.target.value);
   };
 
-  const handleCheckAllChange = e => {
+  const handleCheckAllChange = (e) => {
     e.target.checked ? set(allCheeseOptions) : clear();
   };
 
-  const allChecked = allCheeseOptions.every(value => checkedCheeses.includes(value));
-  const someChecked = allCheeseOptions.some(value => checkedCheeses.includes(value));
+  const allChecked = allCheeseOptions.every((value) =>
+    checkedCheeses.includes(value),
+  );
+  const someChecked = allCheeseOptions.some((value) =>
+    checkedCheeses.includes(value),
+  );
   const isIndeterminate = someChecked && !allChecked;
 
   return (
@@ -149,7 +150,7 @@ underlying `input` node. See MDN for documentation on available
       </Form.SwitchSet>
     </>
   );
-}
+};
 ```
 
 ## Inline layout
@@ -166,7 +167,9 @@ underlying `input` node. See MDN for documentation on available
     <Form.Switch value="red">Red</Form.Switch>
     <Form.Switch value="green">Green</Form.Switch>
     <Form.Switch value="blue">Blue</Form.Switch>
-    <Form.Switch value="cyan" disabled>Cyan</Form.Switch>
+    <Form.Switch value="cyan" disabled>
+      Cyan
+    </Form.Switch>
   </Form.SwitchSet>
 </Form.Group>
 ```
@@ -180,7 +183,9 @@ by passing the `floatLabelLeft` prop.
 <Form.Group>
   <Form.SwitchSet>
     <Form.Switch value="red">Red</Form.Switch>
-    <Form.Switch value="blue" floatLabelLeft>Blue</Form.Switch>
+    <Form.Switch value="blue" floatLabelLeft>
+      Blue
+    </Form.Switch>
   </Form.SwitchSet>
 </Form.Group>
 ```
@@ -194,17 +199,13 @@ A helper text component can be passed in to be rendered below the switch control
   <Form.SwitchSet>
     <Form.Switch
       value="red"
-      helperText={
-        <span>Helper text for red switch</span>
-      }
+      helperText={<span>Helper text for red switch</span>}
     >
       Red
     </Form.Switch>
     <Form.Switch
       value="blue"
-      helperText={
-        <span>Helper text for blue switch</span>
-      }
+      helperText={<span>Helper text for blue switch</span>}
     >
       Blue
     </Form.Switch>

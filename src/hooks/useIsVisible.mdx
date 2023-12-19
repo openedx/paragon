@@ -2,9 +2,9 @@
 title: 'useIsVisible'
 type: 'hook'
 categories:
-- Hooks
+  - Hooks
 components:
-- useIsVisible
+  - useIsVisible
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -12,8 +12,9 @@ notes: ''
 ---
 
 A React hook that can be used to determine whether an element is visible in the DOM. It returns an array with 2 elements:
-* A boolean value whether the element is visible.
-* A React `ref` to pass to the desired element.
+
+- A boolean value whether the element is visible.
+- A React `ref` to pass to the desired element.
 
 Note that the element's visibility is determined by whether the element can be accessed by the browser in the current viewport. Elements hidden with `opacity: 0;` or
 `visibility: hidden;` are considered to be visible, whereas `display: none;` is considered to be not visible. The element is considered to be not visible when its hidden
@@ -30,7 +31,7 @@ visibility is toggled. The returned boolean value of the element's visibility is
   const [isHidden, setIsHidden] = useState(false);
 
   const toggleElementVisibility = () => {
-    setIsHidden(s => !s);
+    setIsHidden((s) => !s);
   };
 
   return (
@@ -41,7 +42,11 @@ visibility is toggled. The returned boolean value of the element's visibility is
         </Button>
         <p>Is element visible? {isElementVisible ? 'yes' : 'no'}</p>
       </div>
-      <div ref={elementVisibleRef} className="p-1 border" style={{ display: isHidden ? 'none' : 'block' }}>
+      <div
+        ref={elementVisibleRef}
+        className="p-1 border"
+        style={{ display: isHidden ? 'none' : 'block' }}
+      >
         Visible element
       </div>
     </>

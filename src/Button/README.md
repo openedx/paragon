@@ -2,9 +2,9 @@
 title: 'Button'
 type: 'component'
 components:
-- Button
+  - Button
 categories:
-- Buttonlike
+  - Buttonlike
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -21,14 +21,25 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.medium.maxWidth });
 
   return (
-    <Stack gap={2} direction={ isExtraSmall ? "vertical" : "horizontal" }>
-      <Button variant="brand">Brand</Button>
-      <Button variant="outline-brand">Outline Brand</Button>
-      <Button variant="primary">Primary</Button>
-      <Button variant="outline-primary">Outline Primary</Button>
-      <Button variant="tertiary">Tertiary</Button>
+    <Stack gap={2} direction={isExtraSmall ? 'vertical' : 'horizontal'}>
+      <Button variant="brand">
+        Brand
+      </Button>
+      <Button variant="outline-brand">
+        Outline Brand
+      </Button>
+      <Button variant="primary">
+        Primary
+      </Button>
+      <Button variant="outline-primary">
+        Outline Primary
+      </Button>
+      <Button variant="tertiary">
+        Tertiary
+      </Button>
     </Stack>
-)}
+  );
+};
 ```
 
 ## Core Buttons (Inverse Pallete)
@@ -41,61 +52,92 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
     <Stack
       className="bg-dark-700 p-4"
       gap={2}
-      direction={ isExtraSmall ? "vertical" : "horizontal" }
+      direction={isExtraSmall ? 'vertical' : 'horizontal'}
     >
-      <Button variant="inverse-brand">Brand</Button>
-      <Button variant="inverse-outline-brand">Outline Brand</Button>
-      <Button variant="inverse-primary">Primary</Button>
-      <Button variant="inverse-outline-primary">Outline Primary</Button>
-      <Button variant="inverse-tertiary">Tertiary</Button>
+      <Button variant="inverse-brand">
+        Brand
+      </Button>
+      <Button variant="inverse-outline-brand">
+        Outline Brand
+      </Button>
+      <Button variant="inverse-primary">
+        Primary
+      </Button>
+      <Button variant="inverse-outline-primary">
+        Outline Primary
+      </Button>
+      <Button variant="inverse-tertiary">
+        Tertiary
+      </Button>
     </Stack>
-)}
+  );
+};
 ```
 
 ## Utility Buttons
 
 ```jsx live
 () => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
     <>
       <Stack
         className="mb-2"
         gap={2}
-        direction={ isExtraSmall ? "vertical" : "horizontal" }
+        direction={isExtraSmall ? 'vertical' : 'horizontal'}
       >
-        <Button variant="success">Success</Button>
-        <Button variant="danger">Danger</Button>
-        <Button variant="outline-success">Success</Button>
-        <Button variant="outline-danger">Danger</Button>
+        <Button variant="success">
+          Success
+        </Button>
+        <Button variant="danger">
+          Danger
+        </Button>
+        <Button variant="outline-success">
+          Success
+        </Button>
+        <Button variant="outline-danger">
+          Danger
+        </Button>
       </Stack>
-      <Stack
-        gap={2}
-        direction={ isExtraSmall ? "vertical" : "horizontal" }
-      >
-        <Button variant="link">Link</Button>
-        <Button variant="light">Light</Button>
-        <Button variant="dark">Dark</Button>
-        <Button variant="outline-light">Light</Button>
-        <Button variant="outline-dark">Dark</Button>
+      <Stack gap={2} direction={isExtraSmall ? 'vertical' : 'horizontal'}>
+        <Button variant="link">
+          Link
+        </Button>
+        <Button variant="light">
+          Light
+        </Button>
+        <Button variant="dark">
+          Dark
+        </Button>
+        <Button variant="outline-light">
+          Light
+        </Button>
+        <Button variant="outline-dark">
+          Dark
+        </Button>
       </Stack>
     </>
-)}
+  );
+};
 ```
 
 ## Size
 
 ```jsx live
 () => {
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
     <>
       <Stack
         className="mb-2"
         gap={2}
-        direction={ isExtraSmall ? "vertical" : "horizontal" }
+        direction={isExtraSmall ? 'vertical' : 'horizontal'}
       >
         <Button variant="primary" size="lg">
           Large button
@@ -107,7 +149,7 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
       <Stack
         className="mb-2"
         gap={2}
-        direction={ isExtraSmall ? "vertical" : "horizontal" }
+        direction={isExtraSmall ? 'vertical' : 'horizontal'}
       >
         <Button variant="primary" size="sm">
           Small button
@@ -121,12 +163,16 @@ This component utilizes `Button` from React-Bootstrap and extends it with an abi
         gap={2}
         direction={ isExtraSmall ? "vertical" : "horizontal" }
       >
-        <Button variant="link" size="inline">Inline button</Button>
-        <Button variant="link" size="inline">Inline button</Button>
+        <Button variant="link" size="inline">
+        Inline button
+      </Button>
+      <Button variant="link" size="inline">
+        Inline button
+      </Button>
       </Stack>
     </>
-  )
-}
+  );
+};
 ```
 
 ### When to use the inline size
@@ -136,8 +182,12 @@ Use inline size buttons for when a button sits with a line of text.
 ```jsx live
 <p>
   <span className="mr-1">2 items selected.</span>
-  <Button variant="link" size="inline" className="mr-1">Select all</Button>
-  <Button variant="link" size="inline">Clear</Button>
+  <Button variant="link" size="inline" className="mr-1">
+      Select all
+    </Button>
+  <Button variant="link" size="inline">
+      Clear
+    </Button>
 </p>
 ```
 
@@ -166,15 +216,22 @@ Use inline size buttons for when a button sits with a line of text.
       gap={2}
       direction={ isExtraSmall ? "vertical" : "horizontal" }
     >
-      <Button variant="primary" disabled>Primary disabled</Button>
-      <Button variant="secondary" disabled>Secondary disabled</Button>
-      <Button as="a" href="https://edx.org" disabled>Link disabled</Button>
+      <Button variant="primary" disabled>
+    Primary disabled
+  </Button>
+      <Button variant="secondary" disabled>
+    Secondary disabled
+  </Button>
+      <Button as="a" href="https://edx.org" disabled>
+    Link disabled
+  </Button>
     </Stack>
     )
 }
 ```
 
 ### With empty href
+
 For link to be `disabled`, it must have href defined with some value.
 
 ```jsx live
@@ -187,8 +244,12 @@ For link to be `disabled`, it must have href defined with some value.
       gap={2}
       direction={ isExtraSmall ? "vertical" : "horizontal" }
     >
-      <Button as="a" disabled>No href</Button>
-      <Button as="a" href="" disabled>Empty string href</Button>
+      <Button as="a" disabled>
+    No href
+  </Button>
+      <Button as="a" href="" disabled>
+    Empty string href
+  </Button>
     </Stack>
   )
 }
@@ -204,35 +265,49 @@ For link to be `disabled`, it must have href defined with some value.
     <Stack
       className="mb-2"
       gap={2}
-      direction={ isExtraSmall ? "vertical" : "horizontal" }
+      direction={isExtraSmall ? 'vertical' : 'horizontal'}
     >
       <Button variant="brand" iconBefore={ArrowBack}>
         Brand
       </Button>
-      <Button variant="outline-brand" iconAfter={ArrowDropDown}>
+      <Button
+        variant="outline-brand"
+        iconAfter={ArrowDropDown}
+        
+      >
         Outline Brand
       </Button>
-      <Button variant="primary" iconBefore={Remove} iconAfter={Add}>
+      <Button
+        variant="primary"
+        iconBefore={Remove}
+        iconAfter={Add}
+        
+      >
         Primary
       </Button>
-      <Button variant="outline-primary" iconBefore={Highlight}>
+      <Button
+        variant="outline-primary"
+        iconBefore={Highlight}
+        
+      >
         Outline Primary
       </Button>
       <Button variant="tertiary" iconAfter={Add}>
         Tertiary
       </Button>
     </Stack>
-  )
-}
+  );
+};
 ```
 
 ## Stateful buttons
+
 To implement loading state using a `Button` component, the [StatefulButton](https://paragon-openedx.netlify.app/components/statefulbutton/) component
 is available for use. <br/>
-This specialized component is designed to seamlessly manage and display boot states, providing a more efficient and 
+This specialized component is designed to seamlessly manage and display boot states, providing a more efficient and
 user-friendly experience.
 
-***
+---
 
 ## Button.Deprecated
 
@@ -308,8 +383,12 @@ user-friendly experience.
 
 ```jsx live
 <div className="bg-gray-200 p-3">
-  <Button.Deprecated className="btn-link">Link with button container</Button.Deprecated>
+  <Button.Deprecated className="btn-link">
+    Link with button container
+  </Button.Deprecated>
   <br />
-  <Button.Deprecated className="btn-link px-0">Button with no horizontal padding</Button.Deprecated>
+  <Button.Deprecated className="btn-link px-0">
+    Button with no horizontal padding
+  </Button.Deprecated>
 </div>
 ```

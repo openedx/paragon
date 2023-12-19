@@ -2,16 +2,15 @@
 title: 'Form.Checkbox'
 type: 'component'
 components:
-- FormCheckbox
-- CheckboxControl
-- FormCheckboxSet
+  - FormCheckbox
+  - CheckboxControl
+  - FormCheckboxSet
 categories:
-- Forms
+  - Forms
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 A simple checkbox for use with `Form.CheckboxSet`.
@@ -20,19 +19,18 @@ Note: extra props added to this component are passed as attributes to the
 underlying `input` node. See MDN for documentation on available
 [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes).
 
-
 ## Controlled Standalone Usage
 
 ```jsx live
 () => {
   const [isChecked, setChecked] = useState(false);
-  const handleChange = e => setChecked(e.target.checked);
+  const handleChange = (e) => setChecked(e.target.checked);
   return (
     <Form.Checkbox checked={isChecked} onChange={handleChange}>
       I want pizza.
     </Form.Checkbox>
   );
-}
+};
 ```
 
 ## Unlabeled control
@@ -40,7 +38,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 () => {
   const [isChecked, setChecked] = useState(false);
-  const handleChange = e => setChecked(e.target.checked);
+  const handleChange = (e) => setChecked(e.target.checked);
   return (
     <CheckboxControl
       checked={isChecked}
@@ -48,7 +46,7 @@ underlying `input` node. See MDN for documentation on available
       aria-label="Checkbox"
     />
   );
-}
+};
 ```
 
 ## Controlled Group Usage with useCheckboxSetValues
@@ -59,16 +57,15 @@ underlying `input` node. See MDN for documentation on available
 
 ```jsx live
 () => {
-
   const [colorValues, { add, remove }] = useCheckboxSetValues(['green']);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     if (e.target.checked) {
       add(e.target.value);
     } else {
       remove(e.target.value);
     }
-  }
+  };
   return (
     <Form.Group>
       <Form.Label>Which Color?</Form.Label>
@@ -80,14 +77,14 @@ underlying `input` node. See MDN for documentation on available
         <Form.Checkbox value="red">Red</Form.Checkbox>
         <Form.Checkbox value="green">Green</Form.Checkbox>
         <Form.Checkbox value="blue">Blue</Form.Checkbox>
-        <Form.Checkbox value="cyan" disabled>Cyan</Form.Checkbox>
+        <Form.Checkbox value="cyan" disabled>
+          Cyan
+        </Form.Checkbox>
       </Form.CheckboxSet>
     </Form.Group>
   );
-}
+};
 ```
-
-
 
 ### Uncontrolled Usage
 
@@ -102,7 +99,9 @@ underlying `input` node. See MDN for documentation on available
     <Form.Checkbox value="red">Red</Form.Checkbox>
     <Form.Checkbox value="green">Green</Form.Checkbox>
     <Form.Checkbox value="blue">Blue</Form.Checkbox>
-    <Form.Checkbox value="cyan" disabled>Cyan</Form.Checkbox>
+    <Form.Checkbox value="cyan" disabled>
+      Cyan
+    </Form.Checkbox>
   </Form.CheckboxSet>
 </Form.Group>
 ```
@@ -112,18 +111,24 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 () => {
   const allCheeseOptions = ['swiss', 'cheddar', 'pepperjack'];
-  const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues(['swiss']);
+  const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues([
+    'swiss',
+  ]);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     e.target.checked ? add(e.target.value) : remove(e.target.value);
   };
 
-  const handleCheckAllChange = e => {
+  const handleCheckAllChange = (e) => {
     e.target.checked ? set(allCheeseOptions) : clear();
   };
 
-  const allChecked = allCheeseOptions.every(value => checkedCheeses.includes(value));
-  const someChecked = allCheeseOptions.some(value => checkedCheeses.includes(value));
+  const allChecked = allCheeseOptions.every((value) =>
+    checkedCheeses.includes(value),
+  );
+  const someChecked = allCheeseOptions.some((value) =>
+    checkedCheeses.includes(value),
+  );
   const isIndeterminate = someChecked && !allChecked;
 
   return (
@@ -138,7 +143,7 @@ underlying `input` node. See MDN for documentation on available
         </Form.Checkbox>
       </div>
       <Form.CheckboxSet
-      	name="color-six"
+        name="color-six"
         className="p-2"
         value={checkedCheeses}
         onChange={handleChange}
@@ -149,7 +154,7 @@ underlying `input` node. See MDN for documentation on available
       </Form.CheckboxSet>
     </>
   );
-}
+};
 ```
 
 ### Inline layout
@@ -166,7 +171,9 @@ underlying `input` node. See MDN for documentation on available
     <Form.Checkbox value="red">Red</Form.Checkbox>
     <Form.Checkbox value="green">Green</Form.Checkbox>
     <Form.Checkbox value="blue">Blue</Form.Checkbox>
-    <Form.Checkbox value="cyan" disabled>Cyan</Form.Checkbox>
+    <Form.Checkbox value="cyan" disabled>
+      Cyan
+    </Form.Checkbox>
   </Form.CheckboxSet>
 </Form.Group>
 ```
@@ -185,11 +192,11 @@ underlying `input` node. See MDN for documentation on available
     <Form.Checkbox value="red">Red</Form.Checkbox>
     <Form.Checkbox value="green">Green</Form.Checkbox>
     <Form.Checkbox value="blue">Blue</Form.Checkbox>
-    <Form.Checkbox value="cyan" disabled>Cyan</Form.Checkbox>
+    <Form.Checkbox value="cyan" disabled>
+      Cyan
+    </Form.Checkbox>
   </Form.CheckboxSet>
-  <Form.Control.Feedback>
-    Please choose an option.
-  </Form.Control.Feedback>
+  <Form.Control.Feedback>Please choose an option.</Form.Control.Feedback>
 </Form.Group>
 ```
 
@@ -199,30 +206,16 @@ underlying `input` node. See MDN for documentation on available
 <Form.Group>
   <Form.Label>Which Color?</Form.Label>
   <Form.CheckboxSet name="color-four">
-    <Form.Checkbox
-      value="red"
-      description="Red's cool"
-    >
+    <Form.Checkbox value="red" description="Red's cool">
       Red
     </Form.Checkbox>
-    <Form.Checkbox
-      value="green"
-      description="Excellent choice"
-      isValid
-    >
+    <Form.Checkbox value="green" description="Excellent choice" isValid>
       Green
     </Form.Checkbox>
-    <Form.Checkbox
-      value="blue"
-      description="Poor choice"
-      isInvalid
-    >
+    <Form.Checkbox value="blue" description="Poor choice" isInvalid>
       Blue
     </Form.Checkbox>
-    <Form.Checkbox
-      value="cyan"
-      disabled
-    >
+    <Form.Checkbox value="cyan" disabled>
       Cyan
     </Form.Checkbox>
   </Form.CheckboxSet>
@@ -237,7 +230,9 @@ by passing the `floatLabelLeft` prop.
 ```jsx live
 <Form.Group>
   <Form.CheckboxSet name="color-single">
-    <Form.Checkbox value="red" floatLabelLeft>Red</Form.Checkbox>
+    <Form.Checkbox value="red" floatLabelLeft>
+      Red
+    </Form.Checkbox>
   </Form.CheckboxSet>
 </Form.Group>
 ```

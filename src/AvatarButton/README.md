@@ -1,16 +1,14 @@
 ---
 title: 'AvatarButton'
 components:
-- AvatarButton
+  - AvatarButton
 categories:
-- Buttonlike
+  - Buttonlike
 type: 'component'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
-
 ---
 
 A button that contains the user’s Avatar.
@@ -20,17 +18,22 @@ A button that contains the user’s Avatar.
 ```jsx live
 <>
   <div>
-    <AvatarButton size="lg" src="https://picsum.photos/128/128/">Casey</AvatarButton>
+    <AvatarButton size="lg" src="https://picsum.photos/128/128/">
+      Casey
+    </AvatarButton>
   </div>
   <div>
-    <AvatarButton size="md" src="https://picsum.photos/128/128/">Casey</AvatarButton>
+    <AvatarButton size="md" src="https://picsum.photos/128/128/">
+      Casey
+    </AvatarButton>
   </div>
   <div>
-    <AvatarButton size="sm" src="https://picsum.photos/128/128/">Casey</AvatarButton>
+    <AvatarButton size="sm" src="https://picsum.photos/128/128/">
+      Casey
+    </AvatarButton>
   </div>
 </>
 ```
-
 
 ## With Dropdown
 
@@ -55,7 +58,11 @@ Props set on Dropdown.Toggle get passed through to the "as" component
 
 ```jsx live
 <Dropdown>
-  <Dropdown.Toggle as={AvatarButton} size="sm" src="https://picsum.photos/128/128/">
+  <Dropdown.Toggle
+    as={AvatarButton}
+    size="sm"
+    src="https://picsum.photos/128/128/"
+  >
     Casey
   </Dropdown.Toggle>
 
@@ -77,17 +84,39 @@ For use in mobile viewports or constrained views.
 ```jsx live
 <>
   <div>
-    <AvatarButton showLabel={false} size="lg" src="https://picsum.photos/128/128/">Casey</AvatarButton>
+    <AvatarButton
+      showLabel={false}
+      size="lg"
+      src="https://picsum.photos/128/128/"
+    >
+      Casey
+    </AvatarButton>
   </div>
   <div>
-    <AvatarButton showLabel={false} size="md" src="https://picsum.photos/128/128/">Casey</AvatarButton>
+    <AvatarButton
+      showLabel={false}
+      size="md"
+      src="https://picsum.photos/128/128/"
+    >
+      Casey
+    </AvatarButton>
   </div>
   <div>
-    <AvatarButton showLabel={false} size="sm" src="https://picsum.photos/128/128/">Casey</AvatarButton>
+    <AvatarButton
+      showLabel={false}
+      size="sm"
+      src="https://picsum.photos/128/128/"
+    >
+      Casey
+    </AvatarButton>
   </div>
 
   <Dropdown>
-    <Dropdown.Toggle  showLabel={false} as={AvatarButton} src="https://picsum.photos/128/128/">
+    <Dropdown.Toggle
+      showLabel={false}
+      as={AvatarButton}
+      src="https://picsum.photos/128/128/"
+    >
       Casey
     </Dropdown.Toggle>
 

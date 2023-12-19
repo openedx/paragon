@@ -7,52 +7,125 @@ import { Table } from '~paragon-react';
 import getCssSelectors from '../../utils/getCssSelectors.ts';
 import CSSUtilitiesTable from '../../components/CSSUtilitiesTable';
 
-
 # CSS Utilities
-
 
 ### Utility Classes
 
 <CSSUtilitiesTable
   selectors={getCssSelectors(props.data.utilities.nodes).concat([
-    { selector: 'w-xs-25', declarations: ['@media(min-width: 0px) { width: 25% !important; }']},
-    { selector: 'w-xs-50', declarations: ['@media(min-width: 0px) { width: 50% !important; }']},
-    { selector: 'w-xs-75', declarations: ['@media(min-width: 0px) { width: 75% !important; }']},
-    { selector: 'w-xs-100', declarations: ['@media(min-width: 0px) { width: 100% !important; }']},
-    { selector: 'w-xs-auto', declarations: ['@media(min-width: 0px) { width: auto !important; }']},
-    { selector: 'w-sm-25', declarations: ['@media(min-width: 576px) { width: 25% !important; }']},
-    { selector: 'w-sm-50', declarations: ['@media(min-width: 576px) { width: 50% !important; }']},
-    { selector: 'w-sm-75', declarations: ['@media(min-width: 576px) { width: 75% !important; }']},
-    { selector: 'w-sm-100', declarations: ['@media(min-width: 576px) { width: 100% !important; }']},
-    { selector: 'w-sm-auto', declarations: ['@media(min-width: 576px) { width: auto !important; }']},
-    { selector: 'w-md-25', declarations: ['@media(min-width: 768px) { width: 25% !important; }']},
-    { selector: 'w-md-50', declarations: ['@media(min-width: 768px) { width: 50% !important; }']},
-    { selector: 'w-md-75', declarations: ['@media(min-width: 768px) { width: 75% !important; }']},
-    { selector: 'w-md-100', declarations: ['@media(min-width: 768px) { width: 100% !important; }']},
-    { selector: 'w-md-auto', declarations: ['@media(min-width: 768px) { width: auto !important; }']},
-    { selector: 'w-lg-25', declarations: ['@media(min-width: 992px) { width: 25% !important; }']},
-    { selector: 'w-lg-50', declarations: ['@media(min-width: 992px) { width: 50% !important; }']},
-    { selector: 'w-lg-75', declarations: ['@media(min-width: 992px) { width: 75% !important; }']},
-    { selector: 'w-lg-100', declarations: ['@media(min-width: 992px) { width: 100% !important; }']},
-    { selector: 'w-lg-auto', declarations: ['@media(min-width: 992px) { width: auto !important; }']},
-    { selector: 'w-xl-25', declarations: ['@media(min-width: 1200px) { width: 25% !important; }']},
-    { selector: 'w-xl-50', declarations: ['@media(min-width: 1200px) { width: 50% !important; }']},
-    { selector: 'w-xl-75', declarations: ['@media(min-width: 1200px) { width: 75% !important; }']},
-    { selector: 'w-xl-100', declarations: ['@media(min-width: 1200px) { width: 100% !important; }']},
-    { selector: 'w-xl-auto', declarations: ['@media(min-width: 1200px) { width: auto !important; }']},
+    {
+      selector: 'w-xs-25',
+      declarations: ['@media(min-width: 0px) { width: 25% !important; }'],
+    },
+    {
+      selector: 'w-xs-50',
+      declarations: ['@media(min-width: 0px) { width: 50% !important; }'],
+    },
+    {
+      selector: 'w-xs-75',
+      declarations: ['@media(min-width: 0px) { width: 75% !important; }'],
+    },
+    {
+      selector: 'w-xs-100',
+      declarations: ['@media(min-width: 0px) { width: 100% !important; }'],
+    },
+    {
+      selector: 'w-xs-auto',
+      declarations: ['@media(min-width: 0px) { width: auto !important; }'],
+    },
+    {
+      selector: 'w-sm-25',
+      declarations: ['@media(min-width: 576px) { width: 25% !important; }'],
+    },
+    {
+      selector: 'w-sm-50',
+      declarations: ['@media(min-width: 576px) { width: 50% !important; }'],
+    },
+    {
+      selector: 'w-sm-75',
+      declarations: ['@media(min-width: 576px) { width: 75% !important; }'],
+    },
+    {
+      selector: 'w-sm-100',
+      declarations: ['@media(min-width: 576px) { width: 100% !important; }'],
+    },
+    {
+      selector: 'w-sm-auto',
+      declarations: ['@media(min-width: 576px) { width: auto !important; }'],
+    },
+    {
+      selector: 'w-md-25',
+      declarations: ['@media(min-width: 768px) { width: 25% !important; }'],
+    },
+    {
+      selector: 'w-md-50',
+      declarations: ['@media(min-width: 768px) { width: 50% !important; }'],
+    },
+    {
+      selector: 'w-md-75',
+      declarations: ['@media(min-width: 768px) { width: 75% !important; }'],
+    },
+    {
+      selector: 'w-md-100',
+      declarations: ['@media(min-width: 768px) { width: 100% !important; }'],
+    },
+    {
+      selector: 'w-md-auto',
+      declarations: ['@media(min-width: 768px) { width: auto !important; }'],
+    },
+    {
+      selector: 'w-lg-25',
+      declarations: ['@media(min-width: 992px) { width: 25% !important; }'],
+    },
+    {
+      selector: 'w-lg-50',
+      declarations: ['@media(min-width: 992px) { width: 50% !important; }'],
+    },
+    {
+      selector: 'w-lg-75',
+      declarations: ['@media(min-width: 992px) { width: 75% !important; }'],
+    },
+    {
+      selector: 'w-lg-100',
+      declarations: ['@media(min-width: 992px) { width: 100% !important; }'],
+    },
+    {
+      selector: 'w-lg-auto',
+      declarations: ['@media(min-width: 992px) { width: auto !important; }'],
+    },
+    {
+      selector: 'w-xl-25',
+      declarations: ['@media(min-width: 1200px) { width: 25% !important; }'],
+    },
+    {
+      selector: 'w-xl-50',
+      declarations: ['@media(min-width: 1200px) { width: 50% !important; }'],
+    },
+    {
+      selector: 'w-xl-75',
+      declarations: ['@media(min-width: 1200px) { width: 75% !important; }'],
+    },
+    {
+      selector: 'w-xl-100',
+      declarations: ['@media(min-width: 1200px) { width: 100% !important; }'],
+    },
+    {
+      selector: 'w-xl-auto',
+      declarations: ['@media(min-width: 1200px) { width: auto !important; }'],
+    },
   ])}
 />
 
 export const pageQuery = graphql`
-{
-  utilities: allCssUtilityClasses(
-    filter: {isUtility: {eq: true}},
-    sort: {fields: selector, order: ASC}
-  ) {
-    nodes {
-      selector
-      declarations
+  {
+    utilities: allCssUtilityClasses(
+      filter: { isUtility: { eq: true } }
+      sort: { fields: selector, order: ASC }
+    ) {
+      nodes {
+        selector
+        declarations
+      }
     }
   }
-}
 `;

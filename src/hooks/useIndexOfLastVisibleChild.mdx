@@ -2,9 +2,9 @@
 title: 'useIndexOfLastVisibleChild'
 type: 'hook'
 categories:
-- Hooks
+  - Hooks
 components:
-- useIndexOfLastVisibleChild
+  - useIndexOfLastVisibleChild
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -12,10 +12,10 @@ notes: ''
 ---
 
 ## Sample Usage
+
 This hook will find the index of the last child of a containing element
 that fits within its bounding rectangle. This is done by summing the widths
 of the children until they exceed the width of the container.
-
 
 ```jsx live
 () => {
@@ -31,8 +31,16 @@ of the children until they exceed the width of the container.
     containerElementRef,
     overflowElementRef.current,
   );
-  const elements = ['Element 1', 'Element 2', 'Element 3', 'Element 4', 'Element 5', 'Element 6', 'Element 7'];
-  
+  const elements = [
+    'Element 1',
+    'Element 2',
+    'Element 3',
+    'Element 4',
+    'Element 5',
+    'Element 6',
+    'Element 7',
+  ];
+
   const children = useMemo(() => {
     const indexOfOverflowStart = indexOfLastVisibleChild + 1;
     const childrenList = elements.map((element, i) => (
@@ -45,25 +53,28 @@ of the children until they exceed the width of the container.
       </div>
     ));
 
-    const overflowChildren = elements.slice(indexOfOverflowStart)
-      .map(overflowChild => (
+    const overflowChildren = elements
+      .slice(indexOfOverflowStart)
+      .map((overflowChild) => (
         <Dropdown.Item key={`${overflowChild}-overflow`}>
           {overflowChild}
         </Dropdown.Item>
-      )
-    );
+      ));
 
     const MoreDropdown = (
-    	<Dropdown ref={overflowElementRef} style={!overflowChildren.length ? invisibleStyles : {}} key="overflow-example">
-        <Dropdown.Toggle
-          variant="link"
-          id="more-toggle"
-        >
+      <Dropdown
+        ref={overflowElementRef}
+        style={!overflowChildren.length ? invisibleStyles : {}}
+        key="overflow-example"
+      >
+        <Dropdown.Toggle variant="link" id="more-toggle">
           More...
         </Dropdown.Toggle>
-        <Dropdown.Menu className="dropdown-menu-right">{overflowChildren}</Dropdown.Menu>
+        <Dropdown.Menu className="dropdown-menu-right">
+          {overflowChildren}
+        </Dropdown.Menu>
       </Dropdown>
-    )
+    );
 
     childrenList.push(MoreDropdown);
 
@@ -74,7 +85,6 @@ of the children until they exceed the width of the container.
     <div className="d-flex" ref={setContainerElementRef}>
       {children}
     </div>
-  )
+  );
 };
-
 ```

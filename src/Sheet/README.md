@@ -2,9 +2,9 @@
 title: 'Sheet'
 type: 'component'
 components:
-- Sheet
+  - Sheet
 categories:
-- Overlays
+  - Overlays
 status: 'New'
 designStatus: 'In Progress'
 devStatus: 'In Progress'
@@ -15,7 +15,6 @@ notes: |
 ## Basic Usage
 
 ```jsx live
-
 () => {
   const [blocking, setBlocking] = useState(false);
   const [dark, setDark] = useState(false);
@@ -31,20 +30,20 @@ notes: |
         onSelect={setPosition}
         title="Sheet Position"
       >
-        {positions.map(position => (
+        {positions.map((position) => (
           <Dropdown.Item eventKey={position}>{position}</Dropdown.Item>
         ))}
-      </DropdownButton><br />
+      </DropdownButton>
+      <br />
       <Button onClick={() => setShow(true)} className="mb-2 mb-md-0">
         Show the Sheet
       </Button>{' '}
       <Button onClick={() => setBlocking(!blocking)} className="mb-2 mb-md-0">
-        {blocking ? "Disable": "Enable"} blocking content
+        {blocking ? 'Disable' : 'Enable'} blocking content
       </Button>{' '}
       <Button onClick={() => setDark(!dark)} className="mb-2 mb-md-0">
-        Set {dark ? "Light": "Dark"} mode
+        Set {dark ? 'Light' : 'Dark'} mode
       </Button>
-
       <Sheet
         position={position}
         show={show}
@@ -61,6 +60,6 @@ notes: |
         </Button>
       </Sheet>
     </>
-  )
-}
+  );
+};
 ```

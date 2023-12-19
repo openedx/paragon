@@ -2,15 +2,14 @@
 title: 'ModalPopup'
 type: 'component'
 components:
-- ModalPopup
-- ModalCloseButton
+  - ModalPopup
+  - ModalCloseButton
 categories:
-- Overlays
+  - Overlays
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 A generic component for creating accessible modal popup objects.
@@ -28,30 +27,28 @@ A proper way to implement this is to use [callback refs](https://reactjs.org/doc
   return (
     <>
       <div className="d-flex">
-        <Button
-          ref={setTarget}
-          variant="outline-primary"
-          onClick={open}>
+        <Button ref={setTarget} variant="outline-primary" onClick={open}>
           Open modal popup
         </Button>
       </div>
-      <ModalPopup
-        positionRef={target}
-        isOpen={isOpen}
-        onClose={close}>
+      <ModalPopup positionRef={target} isOpen={isOpen} onClose={close}>
         <div
           className="bg-white p-3 rounded shadow"
-          style={{textAlign: 'start'}}>
+          style={{ textAlign: 'start' }}
+        >
           <p>This could be a menu or tray.</p>
 
-          <Button variant="primary" className="mie-2">Action</Button>
+          <Button variant="primary" className="mie-2">
+            Action
+          </Button>
           <ModalCloseButton variant="outline-primary">Close</ModalCloseButton>
         </div>
       </ModalPopup>
     </>
-  )
-}
+  );
+};
 ```
+
 ### With arrow
 
 The arrow modifier positions an inner element of the modal popup so it appears centered relative to the reference.
@@ -64,10 +61,7 @@ The arrow modifier positions an inner element of the modal popup so it appears c
   return (
     <>
       <div className="d-flex">
-        <Button
-          ref={setTarget}
-          variant="outline-primary"
-          onClick={open}>
+        <Button ref={setTarget} variant="outline-primary" onClick={open}>
           Open modal popup
         </Button>
       </div>
@@ -76,19 +70,23 @@ The arrow modifier positions an inner element of the modal popup so it appears c
         placement="right"
         positionRef={target}
         isOpen={isOpen}
-        onClose={close}>
+        onClose={close}
+      >
         <div
           className="bg-white p-3 rounded shadow border"
-          style={{textAlign: 'start'}}>
+          style={{ textAlign: 'start' }}
+        >
           <p>This could be a menu or tray.</p>
 
-          <Button variant="primary" className="mie-2">Action</Button>
+          <Button variant="primary" className="mie-2">
+            Action
+          </Button>
           <ModalCloseButton variant="outline-primary">Close</ModalCloseButton>
         </div>
       </ModalPopup>
     </>
-  )
-}
+  );
+};
 ```
 
 Extra props supplied to ModalPopup are passed through to an underlying PopperElement component.

@@ -2,14 +2,13 @@
 title: 'Tooltip'
 type: 'component'
 components:
-- Tooltip
+  - Tooltip
 categories:
-- Overlays
+  - Overlays
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 `Tooltips` display informative text when users hover over, focus on, or tap an element.
@@ -28,7 +27,9 @@ notes: |
         </Tooltip>
       }
     >
-      <Button variant="primary" className="mr-2 mb-2">Tooltip on {placement}</Button>
+      <Button variant="primary" className="mr-2 mb-2">
+        Tooltip on {placement}
+      </Button>
     </OverlayTrigger>
   ))}
 </>
@@ -48,7 +49,9 @@ notes: |
         </Tooltip>
       }
     >
-      <Button variant="inverse-outline-brand" className="mr-2 mb-2">Tooltip on {placement}</Button>
+      <Button variant="inverse-outline-brand" className="mr-2 mb-2">
+        Tooltip on {placement}
+      </Button>
     </OverlayTrigger>
   ))}
 </div>

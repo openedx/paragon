@@ -2,11 +2,11 @@
 title: 'Carousel'
 type: 'component'
 components:
-- Carousel
-- CarouselItem
-- CarouselCaption
+  - Carousel
+  - CarouselItem
+  - CarouselCaption
 categories:
-- Content
+  - Content
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

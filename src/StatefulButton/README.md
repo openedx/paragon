@@ -2,9 +2,9 @@
 title: 'StatefulButton'
 type: 'component'
 components:
-- StatefulButton
+  - StatefulButton
 categories:
-- Buttonlike
+  - Buttonlike
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -22,7 +22,7 @@ The stateful button is a button used to display an actionable icon.
       default: 'Save',
       pending: 'Saving',
       complete: 'Saved',
-      error: 'Error'
+      error: 'Error',
     },
     variant: 'primary',
   };

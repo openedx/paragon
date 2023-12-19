@@ -2,9 +2,9 @@
 title: 'TextArea'
 type: 'component'
 components:
-- TextArea
+  - TextArea
 categories:
-- Forms (deprecated)
+  - Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'To Do'
@@ -15,11 +15,7 @@ notes: |
 ## Minimal usage
 
 ```jsx live
-<TextArea
-  name="name"
-  label="First Name"
-  value="Foo Bar"
-/>
+<TextArea name="name" label="First Name" value="Foo Bar" />
 ```
 
 ## Scrollable
@@ -39,7 +35,7 @@ notes: |
   name="username"
   label="Username"
   description="The unique name that identifies you throughout the site."
-  validator={value => {
+  validator={(value) => {
     let feedback = { isValid: true };
     if (value.length < 3) {
       feedback = {

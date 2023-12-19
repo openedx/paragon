@@ -2,14 +2,13 @@
 title: 'Image'
 type: 'component'
 categories:
-- Imagery & Iconography
+  - Imagery & Iconography
 components:
-- Image
+  - Image
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 <p className="lead">
@@ -49,5 +48,3 @@ notes: |
 ```jsx live
 <Image src="https://picsum.photos/1600/800/" fluid alt="Image description" />
 ```
-
-

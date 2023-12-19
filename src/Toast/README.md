@@ -2,18 +2,18 @@
 title: 'Toast'
 type: 'component'
 components:
-- Toast
+  - Toast
 categories:
-- Overlays
+  - Overlays
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: ''
 ---
 
-``Toast`` is a pop-up style message that shows the user a brief, fleeting, dismissible message about a successful app process.
+`Toast` is a pop-up style message that shows the user a brief, fleeting, dismissible message about a successful app process.
 
-``Toasts`` sit fixed to the bottom left of the window.
+`Toasts` sit fixed to the bottom left of the window.
 
 ## Behaviors
 
@@ -32,17 +32,16 @@ notes: ''
 
   return (
     <>
-      <Toast
-        onClose={() => setShow(false)}
-        show={show}
-      >
+      <Toast onClose={() => setShow(false)} show={show}>
         Example of a basic Toast.
       </Toast>
 
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
+      <Button variant="primary" onClick={() => setShow(true)}>
+        Show Toast
+      </Button>
     </>
   );
-}
+};
 ```
 
 ## With Button
@@ -55,8 +54,8 @@ notes: ''
     <>
       <Toast
         action={{
-          label: "Optional Button",
-          onClick: () => console.log('You clicked the action button.')
+          label: 'Optional Button',
+          onClick: () => console.log('You clicked the action button.'),
         }}
         onClose={() => setShow(false)}
         show={show}
@@ -64,10 +63,12 @@ notes: ''
         Success! Example of a Toast with a button.
       </Toast>
 
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
+      <Button variant="primary" onClick={() => setShow(true)}>
+        Show Toast
+      </Button>
     </>
   );
-}
+};
 ```
 
 ## With Link
@@ -80,8 +81,8 @@ notes: ''
     <>
       <Toast
         action={{
-          label: "Optional Link",
-          href: "#"
+          label: 'Optional Link',
+          href: '#',
         }}
         onClose={() => setShow(false)}
         show={show}
@@ -89,8 +90,10 @@ notes: ''
         Success! Example of a Toast with a link.
       </Toast>
 
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
+      <Button variant="primary" onClick={() => setShow(true)}>
+        Show Toast
+      </Button>
     </>
   );
-}
+};
 ```

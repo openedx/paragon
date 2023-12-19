@@ -19,9 +19,9 @@ Documentation lives at https://paragon-openedx.netlify.app/.
 
 Please reach out to the Paragon Working Group (PWG):
 
-* Open edX Slack ([request an invite](https://openedx.org/slack)): [#wg-paragon](https://openedx.slack.com/archives/C02NR285KV4)
-* [Github Issues](https://github.com/openedx/paragon/issues/new?template=blank-issue.md)
-* [Weekly PWG Meeting](https://calendar.google.com/calendar/embed?src=c_v86shrnegshsqgp4fj2k94u7bc%40group.calendar.google.com&ctz=America%2FNew_York)
+- Open edX Slack ([request an invite](https://openedx.org/slack)): [#wg-paragon](https://openedx.slack.com/archives/C02NR285KV4)
+- [Github Issues](https://github.com/openedx/paragon/issues/new?template=blank-issue.md)
+- [Weekly PWG Meeting](https://calendar.google.com/calendar/embed?src=c_v86shrnegshsqgp4fj2k94u7bc%40group.calendar.google.com&ctz=America%2FNew_York)
 
 ### React Components
 
@@ -61,7 +61,7 @@ Usage on with `@edx/brand`:
 @import '~@edx/brand/paragon/overrides.scss';
 ```
 
-Note that including fonts will affect performance.  In some applications may choose not to load the custom font to keep it highly performant.
+Note that including fonts will affect performance. In some applications may choose not to load the custom font to keep it highly performant.
 
 ## Paragon CLI
 
@@ -77,21 +77,21 @@ Use `paragon help` to see more information.
 
 Paragon supports internationalization for its components out of the box with the support of [react-intl](https://formatjs.io/docs/react-intl/). You may view translated strings for each component on the documentation website by switching languages in the settings.
 
-Due to Paragon's dependence on ``react-intl``, that means that your whole app needs to be wrapped in its provider, e.g.:
+Due to Paragon's dependence on `react-intl`, that means that your whole app needs to be wrapped in its provider, e.g.:
 
 ```javascript
-  import { IntlProvider } from 'react-intl';
-  import { messages as paragonMessages } from '@edx/paragon';
+import { IntlProvider } from 'react-intl';
+import { messages as paragonMessages } from '@edx/paragon';
 
-  ReactDOM.render(
-    <IntlProvider locale={usersLocale} messages={paragonMessages[usersLocale]}>
-      <App />
-    </IntlProvider>,
-    document.getElementById('root')
-  )
+ReactDOM.render(
+  <IntlProvider locale={usersLocale} messages={paragonMessages[usersLocale]}>
+    <App />
+  </IntlProvider>,
+  document.getElementById('root'),
+);
 ```
 
-Note that if you are using ``@edx/frontend-platform``'s ``AppProvider`` component, you don't need a separate context as `IntlProvider` is already included; you would only need to add Paragon's i18n messages like this:
+Note that if you are using `@edx/frontend-platform`'s `AppProvider` component, you don't need a separate context as `IntlProvider` is already included; you would only need to add Paragon's i18n messages like this:
 
 ```javascript
   import { APP_READY, subscribe, initialize } from '@edx/frontend-platform';
@@ -148,7 +148,11 @@ module.exports = {
   dist: The sub-directory of the source code where it puts its build artifact. Often "dist".
   */
   localModules: [
-    { moduleName: '@edx/paragon/scss/core', dir: '../src/paragon', dist: 'scss/core' },
+    {
+      moduleName: '@edx/paragon/scss/core',
+      dir: '../src/paragon',
+      dist: 'scss/core',
+    },
     { moduleName: '@edx/paragon/icons', dir: '../src/paragon', dist: 'icons' },
     // Note that using dist: 'dist' will require you to run 'npm build' in Paragon
     // to add local changes to the 'dist' directory, so that they can be picked up by the MFE.
@@ -163,79 +167,81 @@ Then, when importing Paragon's core SCSS in your MFE the import needs to begin w
 #### Internationalization
 
 When developing a new component you should generally follow three rules:
+
 1. The component should not have **any** hardcoded strings as it would be impossible for consumers to translate it
 2. Internationalize all default values of props that expect strings, i.e.
-   
-   - For places where you need to display a string, and it's okay if it is a React element use ``FormattedMessage``, e.g. (see [Alert](src/Alert/index.jsx) component for a full example)
-   
-      ```javascript
-      import { FormattedMessage } from 'react-intl';
-      
-      <FormattedMessage 
-        id="pgn.Alert.closeLabel"
-        defaultMessage="Dismiss"
-        description="Label of a close button on Alert component"
-      />
-      ```
-     
-   - For places where the display string has to be a plain JavaScript string use ``formatMessage``, this would require access to ``intl`` object from ``react-intl``, e.g.
-      
-      - For class components use ``injectIntl`` HOC
 
-          ```javascript
-          import { injectIntl } from 'react-intl';
-          
-          class MyClassComponent extends React.Component {
-            render() {
-              const { altText, intl } = this.props;
-              const intlAltText = altText || intl.formatMessage({
-                id: 'pgn.MyComponent.altText',
-                defaultMessage: 'Close',
-                description: 'Close label for Toast component',
-              });
-              
-              return (
-                <IconButton
-                  alt={intlCloseLabel}
-                  onClick={() => {}}
-                  variant="primary"
-                />
-              )
-            }
-          }
-          
-          export default injectIntl(MyClassComponent);
-          ```
+   - For places where you need to display a string, and it's okay if it is a React element use `FormattedMessage`, e.g. (see [Alert](src/Alert/index.jsx) component for a full example)
 
-      - For functional components use ``useIntl`` hook
+     ```javascript
+     import { FormattedMessage } from 'react-intl';
+     <FormattedMessage
+       id="pgn.Alert.closeLabel"
+       defaultMessage="Dismiss"
+       description="Label of a close button on Alert component"
+     />;
+     ```
 
-          ```javascript 
-          import { useIntl } from 'react-intl';
-    
-          const MyFunctionComponent = ({ altText }) => {
-            const intls = useIntl();
-            const intlAltText = altText || intl.formatMessage({
-              id: 'pgn.MyComponent.altText',
-              defaultMessage: 'Close',
-              description: 'Close label for Toast component',
-            });
-    
-            return (
-              <IconButton
-                alt={intlCloseLabel}
-                onClick={() => {}}
-                variant="primary"
-              />
-            )
-          
-          export default MyFunctionComponent;
-          ```
-      
+   - For places where the display string has to be a plain JavaScript string use `formatMessage`, this would require access to `intl` object from `react-intl`, e.g.
+
+     - For class components use `injectIntl` HOC
+
+       ```javascript
+       import { injectIntl } from 'react-intl';
+
+       class MyClassComponent extends React.Component {
+         render() {
+           const { altText, intl } = this.props;
+           const intlAltText =
+             altText ||
+             intl.formatMessage({
+               id: 'pgn.MyComponent.altText',
+               defaultMessage: 'Close',
+               description: 'Close label for Toast component',
+             });
+
+           return (
+             <IconButton
+               alt={intlCloseLabel}
+               onClick={() => {}}
+               variant="primary"
+             />
+           );
+         }
+       }
+
+       export default injectIntl(MyClassComponent);
+       ```
+
+     - For functional components use `useIntl` hook
+
+       ```javascript
+       import { useIntl } from 'react-intl';
+
+       const MyFunctionComponent = ({ altText }) => {
+         const intls = useIntl();
+         const intlAltText = altText || intl.formatMessage({
+           id: 'pgn.MyComponent.altText',
+           defaultMessage: 'Close',
+           description: 'Close label for Toast component',
+         });
+
+         return (
+           <IconButton
+             alt={intlCloseLabel}
+             onClick={() => {}}
+             variant="primary"
+           />
+         )
+
+       export default MyFunctionComponent;
+       ```
+
    **Notes on the format above**:
+
    - `id` is required and must be a dot-separated string of the format `pgn.<componentName>.<subcomponentName>.<propName>`
    - The `defaultMessage` is required, and should be the English display string.
    - The `description` is optional, but highly recommended, this text gives context to translators about the string.
-
 
 3. If your component expects a string as a prop, allow the prop to also be an element since consumers may want to also pass instance of their own translated string, for example you might define a string prop like this:
    ```javascript
@@ -266,6 +272,7 @@ npm run generate-component MyComponent
 where `MyComponent` is your new component's name.
 
 This will create a directory in `/src/` that will contain templates for all necessary files to start developing the component:
+
 ```
 MyComponent
 ├── index.jsx
@@ -281,7 +288,7 @@ The script will also automatically export your component from Paragon.
 
 `/src/MyComponent/index.jsx` is where your component lives, the file is created with the following template, edit it to implement your own component.
 
-``` jsx
+```jsx
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -304,7 +311,6 @@ MyComponent.propTypes = {
 };
 
 export default MyComponent;
-
 ```
 
 ##### 4. (Optional) Add styles to your component.
@@ -322,12 +328,12 @@ This way the variables will also get automatically picked up by documentation si
 
 The documentation for your component lives in `src/MyComponent/README.md`. The documentation site scans this directory for markdown or mdx files to create pages. By default, the file is created with following content:
 
-```` md
+````md
 ---
 title: 'MyComponent'
 type: 'component'
 components:
-- MyComponent
+  - MyComponent
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -340,11 +346,8 @@ Describe your component here and give usage examples.
 ### Basic Usage
 
 ```jsx live
-<MyComponent>
-  Hello!
-</MyComponent>
+<MyComponent>Hello!</MyComponent>
 ```
-
 ````
 
 Some notes on the format above:
@@ -372,7 +375,7 @@ $ npm run lint
 
 Paragon's ESLint config is based off [eslint-config-edx](https://github.com/openedx/eslint-config-edx/tree/master/packages/eslint-config-edx), which itself is based off [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). Paragon uses ESLint 3 (and will upgrade to v4 as soon as eslint-config-airbnb releases a supported version), which itself comes with a number of built-in rules. This configuration is highly opinionated and may contain some rules with which you aren't yet familiar, like [comma-dangle](http://eslint.org/docs/rules/comma-dangle), but rest assured, you're writing modern, best-practice JS 💅
 
-One of the most powerful features of this ESLint config is its inclusion of [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y). This plugin actually enforces accessibility best practices at the _linter_ level. It will catch things reviewers might not notice, like [event handlers bound to noninteractive elements](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-interactions.md). Of course, it won't catch *all* accessibility violations, but it's a pretty good low-pass filter.
+One of the most powerful features of this ESLint config is its inclusion of [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y). This plugin actually enforces accessibility best practices at the _linter_ level. It will catch things reviewers might not notice, like [event handlers bound to noninteractive elements](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-interactions.md). Of course, it won't catch _all_ accessibility violations, but it's a pretty good low-pass filter.
 
 ## Testing
 
@@ -418,7 +421,7 @@ If the snapshot tests fail, it's generally pretty easy to tell whether it's happ
 
 ### Coverage
 
-Paragon measures code coverage using Jest's built-in `--coverage` flag and report it via [Codecov](https://codecov.io/gh/edx/paragon). Shoot for 100% test coverage on your PRs, but use your best judgment if you're really struggling to cover those last few lines. At the very least, don't *reduce* total coverage. Codecov will fail your build if your PR reduces coverage.
+Paragon measures code coverage using Jest's built-in `--coverage` flag and report it via [Codecov](https://codecov.io/gh/edx/paragon). Shoot for 100% test coverage on your PRs, but use your best judgment if you're really struggling to cover those last few lines. At the very least, don't _reduce_ total coverage. Codecov will fail your build if your PR reduces coverage.
 
 ### Example app
 
@@ -436,7 +439,8 @@ Steps to install the `example` app.
 Paragon uses the [`semantic-release` package](https://github.com/semantic-release/semantic-release) to automate its release process (creating Git tags, creating GitHub releases, and publishing to NPM).
 
 Preview next release version from Pull Requests
-*****
+
+---
 
 As a convenience, the "Node.js CI / build (push)" check on Pull Requests includes a step to analyze the commit(s) and outputs a preview of what version semantic-release will publish if a PR gets merged. This is done using the "--dry-run" option for the semantic-release CLI, which will skip the publish/release steps. Look for a message in this CI step along the lines of "The next release version is <NEXT_RELEASE_VERSION>".
 
@@ -444,6 +448,7 @@ As a convenience, the "Node.js CI / build (push)" check on Pull Requests include
 
 [`semantic-release` analyzes commit messages to determine whether to create a `major`, `minor`, or `patch` release](https://github.com/semantic-release/semantic-release#default-commit-message-format) (or to skip a release).
 Paragon currently uses [the default conventional Angular changelog rules](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular) which means that there are **3** commit types that will trigger a release:
+
 1. `feat` (`minor` release)
 2. `fix` (`patch` release)
 3. `perf` (`patch` release)
@@ -464,15 +469,16 @@ BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite
 
 ## Treeshaking
 
-Paragon is distributed on npm as ES6 modules.  This means that webpack can use treeshaking on any Paragon components that a consuming app is not using, resulting in greatly reduced bundle sizes.
+Paragon is distributed on npm as ES6 modules. This means that webpack can use treeshaking on any Paragon components that a consuming app is not using, resulting in greatly reduced bundle sizes.
 
-To get treeshaking to work, your app may require some updates - most notably, Babel 7.  See this PR for an example of the changes necessary to update an app to take advantage of treeshaking with Paragon: https://github.com/openedx/frontend-app-payment/pull/48
+To get treeshaking to work, your app may require some updates - most notably, Babel 7. See this PR for an example of the changes necessary to update an app to take advantage of treeshaking with Paragon: https://github.com/openedx/frontend-app-payment/pull/48
 
 ## People
 
 The assigned maintainers for this component and other project details may be found in [Backstage](https://backstage.openedx.org/catalog/default/component/paragon). Backstage pulls this data from the `catalog-info.yml` file in this repository.
 
 ## Reporting Security Issues
+
 Please do not report security issues in public. Please email security@openedx.org.
 
 We tend to prioritize security issues which impact the published `@edx/paragon` NPM library more so than the [documentation website](https://paragon-openedx.netlify.app/) or example React application.

@@ -2,10 +2,10 @@
 title: 'ListBox'
 type: 'component'
 components:
-- ListBox
-- ListBoxOption
+  - ListBox
+  - ListBoxOption
 categories:
-- Forms (deprecated)
+  - Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'To Do'
@@ -16,18 +16,10 @@ notes: 'Not used anywhere in code on Github. Consult design.'
 
 ```jsx live
 <ListBox>
-  <ListBoxOption>
-    Apple
-  </ListBoxOption>
-  <ListBoxOption>
-    Orange
-  </ListBoxOption>
-  <ListBoxOption>
-    Strawberry
-  </ListBoxOption>
-  <ListBoxOption>
-    Banana
-  </ListBoxOption>
+  <ListBoxOption>Apple</ListBoxOption>
+  <ListBoxOption>Orange</ListBoxOption>
+  <ListBoxOption>Strawberry</ListBoxOption>
+  <ListBoxOption>Banana</ListBoxOption>
 </ListBox>
 ```
 
@@ -37,18 +29,12 @@ notes: 'Not used anywhere in code on Github. Consult design.'
 <React.Fragment>
   <div>This is an ordered list!</div>
   <ListBox tag="ol">
-    <ListBoxOption tag="li">
-      Apple
-    </ListBoxOption>
+    <ListBoxOption tag="li">Apple</ListBoxOption>
     <ListBoxOption tag="li">
       <div>Orange</div>
     </ListBoxOption>
-    <ListBoxOption tag="li">
-      Strawberry
-    </ListBoxOption>
-    <ListBoxOption tag="li">
-      Banana
-    </ListBoxOption>
+    <ListBoxOption tag="li">Strawberry</ListBoxOption>
+    <ListBoxOption tag="li">Banana</ListBoxOption>
   </ListBox>
 </React.Fragment>
 ```
@@ -105,17 +91,13 @@ class ListBoxWrapperForOnSelect extends React.Component {
             <span className="sr-only">none</span>
           ) : (
             <span
-              arialabelledby={`list-box-option-${
-                this.state.selectedOptionIndex
-              }`}
+              arialabelledby={`list-box-option-${this.state.selectedOptionIndex}`}
             >
               {this.getSelectedFruitEmoji(this.state.selectedOption)}
             </span>
           )}
         </span>
-        <ListBox style={{ width: '200px' }}>
-          {children}
-        </ListBox>
+        <ListBox style={{ width: '200px' }}>{children}</ListBox>
       </React.Fragment>
     );
   }
@@ -157,7 +139,7 @@ class ListBoxWrapperForSelectedOptionIndex extends React.Component {
   }
 
   render() {
-    const children = this.fruits.map(fruit => (
+    const children = this.fruits.map((fruit) => (
       <ListBoxOption
         key={fruit}
         onSelect={this.onSelect}

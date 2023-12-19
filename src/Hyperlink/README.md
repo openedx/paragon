@@ -2,9 +2,9 @@
 title: 'Hyperlink'
 type: 'component'
 components:
-- Hyperlink
+  - Hyperlink
 categories:
-- Buttonlike
+  - Buttonlike
 status: 'Needs Work'
 designStatus: 'Done'
 devStatus: 'To Do'
@@ -16,9 +16,7 @@ notes: |
 ## minimal usage
 
 ```jsx live
-<Hyperlink destination="https://www.edx.org">
-  edX.org
-</Hyperlink>
+<Hyperlink destination="https://www.edx.org">edX.org</Hyperlink>
 ```
 
 ## with blank target
@@ -32,7 +30,11 @@ notes: |
 ### blank target without Icon
 
 ```jsx live
-<Hyperlink destination="https://www.edx.org" target="_blank" showLaunchIcon={false}>
+<Hyperlink
+  destination="https://www.edx.org"
+  target="_blank"
+  showLaunchIcon={false}
+>
   edX.org
 </Hyperlink>
 ```
@@ -43,7 +45,7 @@ notes: |
 <Hyperlink
   destination="https://www.edx.org"
   target="_blank"
-  onClick={e => {
+  onClick={(e) => {
     e.preventDefault();
     console.log('click');
   }}
@@ -69,17 +71,15 @@ notes: |
 
 ```jsx live
 <div className="d-flex flex-column">
-    <Hyperlink destination="https://www.edx.org">
-      Default
-    </Hyperlink>
-    
-    <Hyperlink variant="muted" destination="https://www.edx.org">
-      Muted
-    </Hyperlink>
-    
-    <Hyperlink variant="brand" destination="https://www.edx.org">
-      Brand
-    </Hyperlink>
+  <Hyperlink destination="https://www.edx.org">Default</Hyperlink>
+
+  <Hyperlink variant="muted" destination="https://www.edx.org">
+    Muted
+  </Hyperlink>
+
+  <Hyperlink variant="brand" destination="https://www.edx.org">
+    Brand
+  </Hyperlink>
 </div>
 ```
 
@@ -88,11 +88,9 @@ notes: |
 ```jsx live
 <div className="row">
   <div className="col-2">
-    <Hyperlink destination="https://www.edx.org">
-      Standalone
-    </Hyperlink>
+    <Hyperlink destination="https://www.edx.org">Standalone</Hyperlink>
   </div>
-    
+
   <div className="col-2">
     <Hyperlink isInline destination="https://www.edx.org">
       Inline

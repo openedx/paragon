@@ -1,0 +1,11 @@
+{
+  "overrides": [
+    {
+      "files": "*.{md,mdx}",
+      "options": {
+        "semi": true,
+        "singleQuote": true
+      }
+    }
+  ]
+}

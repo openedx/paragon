@@ -2,9 +2,9 @@
 title: 'InputSelect'
 type: 'component'
 components:
-- InputSelect
+  - InputSelect
 categories:
-- Forms (deprecated)
+  - Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'To Do'
@@ -19,12 +19,7 @@ notes: |
   name="fruits"
   label="Fruits"
   value="strawberry"
-  options={[
-    'apple',
-    'orange',
-    'strawberry',
-    'banana',
-  ]}
+  options={['apple', 'orange', 'strawberry', 'banana']}
 />
 ```
 
@@ -89,7 +84,7 @@ notes: |
   name="color"
   label="Favorite Color"
   options={['', 'red', 'orange', 'yellow', 'green', 'blue', 'purple']}
-  validator={value => {
+  validator={(value) => {
     let feedback = { isValid: true };
     if (!value) {
       feedback = {
@@ -110,12 +105,7 @@ notes: |
   label="Fruits"
   aria-label="Fruits"
   value="strawberry"
-  options={[
-    'apple',
-    'orange',
-    'strawberry',
-    'banana',
-  ]}
+  options={['apple', 'orange', 'strawberry', 'banana']}
   disabled
 />
 ```

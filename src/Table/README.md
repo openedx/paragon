@@ -2,9 +2,9 @@
 title: 'Table'
 type: 'component'
 components:
-- TableDeprecated
+  - TableDeprecated
 categories:
-- Table
+  - Table
 status: 'Deprecate soon'
 designStatus: 'TBD'
 devStatus: 'TBD'
@@ -356,7 +356,7 @@ notes: |
       data={catDataSortable.sort((firstElement, secondElement) =>
         sort(firstElement, secondElement, catColumns[0].key, 'desc'),
       )}
-      columns={catColumns.map(column => ({
+      columns={catColumns.map((column) => ({
         ...column,
         onSort(direction) {
           catDataSortable.sort((firstElement, secondElement) =>

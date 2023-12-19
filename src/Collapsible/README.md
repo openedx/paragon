@@ -1,23 +1,24 @@
 ---
-title: "Collapsible"
-type: "component"
+title: 'Collapsible'
+type: 'component'
 components:
-- Collapsible
-- CollapsibleAdvanced
-- CollapsibleBody
-- CollapsibleTrigger
-- CollapsibleVisible
+  - Collapsible
+  - CollapsibleAdvanced
+  - CollapsibleBody
+  - CollapsibleTrigger
+  - CollapsibleVisible
 categories:
-- Content
-status: "Stable"
-designStatus: "Needs Review"
-devStatus: "Done"
+  - Content
+status: 'Stable'
+designStatus: 'Needs Review'
+devStatus: 'Done'
 notes:
 ---
 
 Collapsible is an element that allows a user to toggle (view/hide) supplemental information or actions.
 
 When to use:
+
 - To organize related information.
 - To shorten pages and reduce scrolling when content is not crucial to read in full.
 - When space is at a premium and long content cannot be displayed all at once.
@@ -29,10 +30,7 @@ The `styling` prop at the top level `<Collapsible />` component determines if th
 ### Basic Style
 
 ```jsx live
-<Collapsible
-  styling="basic"
-  title="Toggle Collapsible"
->
+<Collapsible styling="basic" title="Toggle Collapsible">
   <p>Your stuff goes here.</p>
 </Collapsible>
 ```
@@ -49,27 +47,40 @@ This is the default style if no `styling` prop is supplied.
     iconWhenOpen: <span>CLOSE SESAME</span>,
     iconWhenClosed: <span>OPEN SESAME</span>,
   };
-  
+
   return (
     <>
       {/* start example form block */}
       <ExamplePropsForm
         inputs={[
-          { value: styling, setValue: setStyling, options: ['card', 'card-lg'], name: 'styling' },
-          { value: withIcon, setValue: () => setWithIcon(!withIcon), name: 'with icon' },
+          {
+            value: styling,
+            setValue: setStyling,
+            options: ['card', 'card-lg'],
+            name: 'styling',
+          },
+          {
+            value: withIcon,
+            setValue: () => setWithIcon(!withIcon),
+            name: 'with icon',
+          },
         ]}
       />
       {/* end example form block */}
       <Collapsible
         styling={styling}
-        title={<p><strong>Toggle Collapsible</strong></p>}
-        {...withIcon ? iconProps : {}}
+        title={
+          <p>
+            <strong>Toggle Collapsible</strong>
+          </p>
+        }
+        {...(withIcon ? iconProps : {})}
       >
         <p>Your stuff goes here.</p>
       </Collapsible>
     </>
   );
-}
+};
 ```
 
 ### Default Open
@@ -79,13 +90,16 @@ This is the default style if no `styling` prop is supplied.
   <p>Your stuff goes here.</p>
 </Collapsible>
 ```
+
 ### With Callbacks
 
 ```jsx live
 <Collapsible
   title="Toggle Collapsible"
   defaultOpen
-  onToggle={(isOpen) => console.log('Collapsible toggled and open is: ', isOpen)}
+  onToggle={(isOpen) =>
+    console.log('Collapsible toggled and open is: ', isOpen)
+  }
   onOpen={() => console.log('Collapsible opened.')}
   onClose={() => console.log('Collapsible closed.')}
 >
@@ -103,9 +117,7 @@ For needs that deviate from the three styles above, use `<Collapsible.Advanced /
 
 ```jsx live
 <Collapsible.Advanced>
-  <Collapsible.Trigger>
-    Toggle Collapsible
-  </Collapsible.Trigger>
+  <Collapsible.Trigger>Toggle Collapsible</Collapsible.Trigger>
   <Collapsible.Body>
     <p>Your stuff goes here</p>
   </Collapsible.Body>
@@ -122,9 +134,7 @@ For needs that deviate from the three styles above, use `<Collapsible.Advanced /
     <Collapsible.Visible whenOpen> - </Collapsible.Visible>
   </Collapsible.Trigger>
 
-  <Collapsible.Body className="collapsible-body">
-    The content
-  </Collapsible.Body>
+  <Collapsible.Body className="collapsible-body">The content</Collapsible.Body>
 </Collapsible.Advanced>
 ```
 
@@ -148,7 +158,6 @@ For needs that deviate from the three styles above, use `<Collapsible.Advanced /
 </Collapsible.Advanced>
 ```
 
-
 ### onOpen, onClose and onToggle callbacks
 
 See the developer console for logging.
@@ -156,20 +165,18 @@ See the developer console for logging.
 ```jsx live
 <Collapsible.Advanced
   className="collapsible-card-lg"
-  onToggle={(isOpen) => console.log('Collapsible toggled and open is: ', isOpen)}
+  onToggle={(isOpen) =>
+    console.log('Collapsible toggled and open is: ', isOpen)
+  }
   onOpen={() => console.log('Collapsible opened.')}
   onClose={() => console.log('Collapsible closed.')}
 >
   <Collapsible.Trigger className="collapsible-trigger">
     <h4 className="flex-grow-1">I'm a heading</h4>
 
-      <Collapsible.Visible whenClosed>
-        +
-      </Collapsible.Visible>
+    <Collapsible.Visible whenClosed>+</Collapsible.Visible>
 
-      <Collapsible.Visible whenOpen>
-        -
-      </Collapsible.Visible>
+    <Collapsible.Visible whenOpen>-</Collapsible.Visible>
   </Collapsible.Trigger>
 
   <Collapsible.Body className="collapsible-body">

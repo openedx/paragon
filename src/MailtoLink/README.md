@@ -2,9 +2,9 @@
 title: 'MailtoLink'
 type: 'component'
 components:
-- MailtoLink
+  - MailtoLink
 categories:
-- Buttonlike
+  - Buttonlike
 status: 'Needs Work'
 designStatus: 'Done'
 devStatus: 'To Do'
@@ -17,9 +17,7 @@ notes: |
 ## minimal usage
 
 ```jsx live
-<MailtoLink to="edx@example.com">
-  edx@example.com
-</MailtoLink>
+<MailtoLink to="edx@example.com">edx@example.com</MailtoLink>
 ```
 
 ## with blank target
@@ -36,7 +34,9 @@ notes: |
 <MailtoLink
   to="edx@example.com"
   target="_blank"
-  onClick={() => { /* some actions */ }}
+  onClick={() => {
+    /* some actions */
+  }}
 >
   edx@example.com
 </MailtoLink>
@@ -57,10 +57,7 @@ notes: |
 ## with cc and bcc
 
 ```jsx live
-<MailtoLink
-  cc="edx@example.com"
-  bcc="edx@example.com"
->
+<MailtoLink cc="edx@example.com" bcc="edx@example.com">
   More mail, this time with cc and bcc
 </MailtoLink>
 ```

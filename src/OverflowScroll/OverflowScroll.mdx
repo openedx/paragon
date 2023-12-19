@@ -2,9 +2,9 @@
 title: 'OverflowScroll'
 type: 'component'
 components:
-- OverflowScroll
+  - OverflowScroll
 categories:
-- Content
+  - Content
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -12,8 +12,9 @@ notes: ''
 ---
 
 A set of React components that encapsulates the logic from [`useOverflowScroll`](/components/overflowscroll/useoverflowscroll) for building carousel-like UI components:
-* `OverflowScroll`
-* `OverflowScroll.Items`
+
+- `OverflowScroll`
+- `OverflowScroll.Items`
 
 ## Sample Usage
 
@@ -23,7 +24,10 @@ The following example demonstrates how to use `OverflowScroll` and `OverflowScro
 () => {
   const ExampleItem = ({ className }) => (
     <div
-      className={classNames('example-item border flex-shrink-0 text-center', className)}
+      className={classNames(
+        'example-item border flex-shrink-0 text-center',
+        className,
+      )}
       style={{ width: 160 }}
     >
       Item
@@ -33,10 +37,7 @@ The following example demonstrates how to use `OverflowScroll` and `OverflowScro
   const OverflowScrollContent = () => {
     const { overflowRef, setOverflowRef } = useContext(OverflowScrollContext);
     return (
-      <div
-        ref={setOverflowRef}
-        className="d-flex"
-      >
+      <div ref={setOverflowRef} className="d-flex">
         <OverflowScroll.Items>{items}</OverflowScroll.Items>
       </div>
     );
@@ -60,11 +61,7 @@ The following example demonstrates how to use `OverflowScroll` and `OverflowScro
         >
           Previous
         </Button>
-        <Button
-          onClick={scrollToNext}
-          disabled={isScrolledToEnd}
-          size="sm"
-        >
+        <Button onClick={scrollToNext} disabled={isScrolledToEnd} size="sm">
           Next
         </Button>
       </div>
@@ -72,13 +69,17 @@ The following example demonstrates how to use `OverflowScroll` and `OverflowScro
   };
 
   const itemCount = 20;
-  const items = useMemo(() => Array.from({ length: itemCount }).map((index) => {
-    if (index !== itemCount - 1) {
-      return <ExampleItem key={uuidv4()} className="mr-2" />;
-    }
-    // last element, no right margin
-    return <ExampleItem key={uuidv4()} />;
-  }), [itemCount]);
+  const items = useMemo(
+    () =>
+      Array.from({ length: itemCount }).map((index) => {
+        if (index !== itemCount - 1) {
+          return <ExampleItem key={uuidv4()} className="mr-2" />;
+        }
+        // last element, no right margin
+        return <ExampleItem key={uuidv4()} />;
+      }),
+    [itemCount],
+  );
 
   return (
     <OverflowScroll ariaLabel="example overflow scroll usage">

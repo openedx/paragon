@@ -2,9 +2,9 @@
 title: 'TransitionReplace'
 type: 'component'
 components:
-- TransitionReplace
+  - TransitionReplace
 categories:
-- Choreography
+  - Choreography
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

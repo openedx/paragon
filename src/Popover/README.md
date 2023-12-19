@@ -2,16 +2,15 @@
 title: 'Popover'
 type: 'component'
 components:
-- Popover
-- PopoverTitle
-- PopoverContent
+  - Popover
+  -  PopoverTitle
+  - PopoverContent
 categories:
-- Overlays
+  - Overlays
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 Popovers are small overlays that present additional content without cluttering the page.
@@ -38,7 +37,9 @@ Try using <Link to="/components/modal/modal-popup/">ModalPopup</Link> instead if
         </Popover>
       }
     >
-      <Button variant="secondary" className="mr-2 mb-2">Popover on {placement}</Button>
+      <Button variant="secondary" className="mr-2 mb-2">
+        Popover on {placement}
+      </Button>
     </OverlayTrigger>
   ))}
 </>
@@ -71,7 +72,9 @@ Try using <Link to="/components/modal/modal-popup/">ModalPopup</Link> instead if
     placement="top"
     overlay={
       <Popover className="popover-positioned-top" variant="success">
-        <Popover.Title as="h5"><Icon src={CheckCircle}/> Popover Success</Popover.Title>
+        <Popover.Title as="h5">
+          <Icon src={CheckCircle} /> Popover Success
+        </Popover.Title>
         <Popover.Content>
           <strong>Holy guacamole!</strong> Check this info.
         </Popover.Content>
@@ -88,7 +91,9 @@ Try using <Link to="/components/modal/modal-popup/">ModalPopup</Link> instead if
     placement="top"
     overlay={
       <Popover className="popover-positioned-top" variant="warning">
-        <Popover.Title as="h5"><Icon src={WarningFilled} /> Popover Warning</Popover.Title>
+        <Popover.Title as="h5">
+          <Icon src={WarningFilled} /> Popover Warning
+        </Popover.Title>
         <Popover.Content>
           <strong>Holy guacamole!</strong> Check this info.
         </Popover.Content>
@@ -105,7 +110,9 @@ Try using <Link to="/components/modal/modal-popup/">ModalPopup</Link> instead if
     placement="top"
     overlay={
       <Popover className="popover-positioned-top" variant="danger">
-        <Popover.Title as="h5"><Icon src={Info} /> Popover Danger</Popover.Title>
+        <Popover.Title as="h5">
+          <Icon src={Info} /> Popover Danger
+        </Popover.Title>
         <Popover.Content>
           <strong>Holy guacamole!</strong> Check this info.
         </Popover.Content>

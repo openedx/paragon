@@ -2,14 +2,13 @@
 title: 'Form.Control'
 type: 'component'
 components:
-- FormControl
+  - FormControl
 categories:
-- Forms
+  - Forms
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 A form control renders a space for user input (`input` or `select`). It can be
@@ -40,16 +39,20 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
       />
     </Form.Group>
   );
-}
+};
 ```
 
 ## Input types
 
 ```jsx live
 () => {
-  {/* start example state */}
+  {
+    /* start example state */
+  }
   const [type, setType] = useState('default');
-  {/* end example state */}
+  {
+    /* end example state */
+  }
 
   const inputs = {
     default: (
@@ -65,84 +68,96 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
         </Form.Group>
       </>
     ),
-    textarea: (<>
-      <h3>Textarea</h3>
-      <Form.Group>
-        <Form.Control
-          as="textarea"
-          value={value}
-          onChange={handleChange}
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="What kind of cats?"
-        />
-      </Form.Group>
-    </>),
-    select: (<>
-      <h3>Select</h3>
-      <Form.Group>
-        <Form.Control
-          as="select"
-          value={value}
-          onChange={handleChange}
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="What kind of cats?"
-        >
-          <option value="">Select a cat</option>
-          <option>Persian cat</option>
-          <option>British Shorthair</option>
-          <option>Maine Coon</option>
-          <option>Siamese cat</option>
-        </Form.Control>
-      </Form.Group>
-    </>),
-    password: (<>
-      <h3>Password</h3>
-      <Form.Group>
-        <Form.Control
-          type="password"
-          value={value}
-          onChange={handleChange}
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="Password cats?"
-        />
-      </Form.Group>
-    </>),
-    date: (<>
-      <h3>Date picker</h3>
-      <Form.Group>
-        <Form.Control
-          type="date"
-          value={value}
-          onChange={handleChange}
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="When cats?"
-        />
-      </Form.Group>
-    </>),
-    number: (<>
-      <h3>Number</h3>
-      <Form.Group>
-        <Form.Control
-          type="number"
-          value={value}
-          onChange={handleChange}
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="How many cats?"
-        />
-      </Form.Group>
-    </>),
-    time: (<>
-      <h3>Time picker</h3>
-      <Form.Group>
-        <Form.Control
-          type="time"
-          value={value}
-          onChange={handleChange}
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="Time cats?"
-        />
-      </Form.Group>
-    </>),
+    textarea: (
+      <>
+        <h3>Textarea</h3>
+        <Form.Group>
+          <Form.Control
+            as="textarea"
+            value={value}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="What kind of cats?"
+          />
+        </Form.Group>
+      </>
+    ),
+    select: (
+      <>
+        <h3>Select</h3>
+        <Form.Group>
+          <Form.Control
+            as="select"
+            value={value}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="What kind of cats?"
+          >
+            <option value="">Select a cat</option>
+            <option>Persian cat</option>
+            <option>British Shorthair</option>
+            <option>Maine Coon</option>
+            <option>Siamese cat</option>
+          </Form.Control>
+        </Form.Group>
+      </>
+    ),
+    password: (
+      <>
+        <h3>Password</h3>
+        <Form.Group>
+          <Form.Control
+            type="password"
+            value={value}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="Password cats?"
+          />
+        </Form.Group>
+      </>
+    ),
+    date: (
+      <>
+        <h3>Date picker</h3>
+        <Form.Group>
+          <Form.Control
+            type="date"
+            value={value}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="When cats?"
+          />
+        </Form.Group>
+      </>
+    ),
+    number: (
+      <>
+        <h3>Number</h3>
+        <Form.Group>
+          <Form.Control
+            type="number"
+            value={value}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="How many cats?"
+          />
+        </Form.Group>
+      </>
+    ),
+    time: (
+      <>
+        <h3>Time picker</h3>
+        <Form.Group>
+          <Form.Control
+            type="time"
+            value={value}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="Time cats?"
+          />
+        </Form.Group>
+      </>
+    ),
   };
   const [value, setValue] = useState('');
   const handleChange = (e) => setValue(e.target.value);
@@ -151,18 +166,24 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
       {/* start example form block */}
       <ExamplePropsForm
         inputs={[
-          { value: type, setValue: setType, options: Object.keys(inputs), name: 'Input type' },
+          {
+            value: type,
+            setValue: setType,
+            options: Object.keys(inputs),
+            name: 'Input type',
+          },
         ]}
       />
       {/* end example form block */}
-      
+
       {inputs[type]}
     </>
   );
-}
+};
 ```
 
 ## Input masks
+
 Paragon uses the [react-imask](https://www.npmjs.com/package/react-imask) library,
 which allows you to add masks of different types for inputs.
 To create your own mask, you need to pass the required mask pattern (`+{1} (000) 000-0000`) to the `inputMask` property. <br />
@@ -170,9 +191,13 @@ See [react-imask](https://imask.js.org) for documentation on available props.
 
 ```jsx live
 () => {
-  {/* start example state */}
+  {
+    /* start example state */
+  }
   const [maskType, setMaskType] = useState('phone');
-  {/* end example state */}
+  {
+    /* end example state */
+  }
 
   const inputsWithMask = {
     phone: (
@@ -189,69 +214,75 @@ See [react-imask](https://imask.js.org) for documentation on available props.
         </Form.Group>
       </>
     ),
-    creditCard: (<>
-      <h3>Credit card</h3>
-      <Form.Group>
-        <Form.Control
-          inputMask="0000 0000 0000 0000"
-          value={value}
-          onChange={handleChange}
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="What is your credit card number?"
-        />
-      </Form.Group>
-    </>),
-    securePassword: (<>
-      <h3>Secure password</h3>
-      <Form.Group>
-        <Form.Control
-          inputMask="XXX-XX-0000"
-          value={value}
-          definitions={{
-            X: {
-              mask: '0',
-              displayChar: 'X',
-              placeholderChar: '#',
-            },
-          }}
-          onChange={handleChange}
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="What is your password?"
-        />
-      </Form.Group>
-    </>),
-    OTPpassword: (<>
-      <h3>OTP password</h3>
-      <Form.Group>
-        <Form.Control
-          inputMask="G-00000"
-          value={value}
-          onChange={handleChange}
-          leadingElement={<Icon src={FavoriteBorder} />}
-          floatingLabel="What is your OPT password?"
-        />
-      </Form.Group>
-    </>),
+    creditCard: (
+      <>
+        <h3>Credit card</h3>
+        <Form.Group>
+          <Form.Control
+            inputMask="0000 0000 0000 0000"
+            value={value}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="What is your credit card number?"
+          />
+        </Form.Group>
+      </>
+    ),
+    securePassword: (
+      <>
+        <h3>Secure password</h3>
+        <Form.Group>
+          <Form.Control
+            inputMask="XXX-XX-0000"
+            value={value}
+            definitions={{
+              X: {
+                mask: '0',
+                displayChar: 'X',
+                placeholderChar: '#',
+              },
+            }}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="What is your password?"
+          />
+        </Form.Group>
+      </>
+    ),
+    OTPpassword: (
+      <>
+        <h3>OTP password</h3>
+        <Form.Group>
+          <Form.Control
+            inputMask="G-00000"
+            value={value}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="What is your OPT password?"
+          />
+        </Form.Group>
+      </>
+    ),
     price: (
-        <>
-          <h3>Course priсe</h3>
-          <Form.Group>
-            <Form.Control
-              inputMask="$num"
-              blocks={{
-                num: {
-                  // nested masks are available!
-                  mask: Number,
-                  thousandsSeparator: ' '
-                }
-              }}
-              value={value}
-              onChange={handleChange}
-              leadingElement={<Icon src={FavoriteBorder} />}
-              floatingLabel="What is the price of this course?"
-            />
-          </Form.Group>
-        </>
+      <>
+        <h3>Course priсe</h3>
+        <Form.Group>
+          <Form.Control
+            inputMask="$num"
+            blocks={{
+              num: {
+                // nested masks are available!
+                mask: Number,
+                thousandsSeparator: ' ',
+              },
+            }}
+            value={value}
+            onChange={handleChange}
+            leadingElement={<Icon src={FavoriteBorder} />}
+            floatingLabel="What is the price of this course?"
+          />
+        </Form.Group>
+      </>
     ),
   };
 
@@ -264,7 +295,12 @@ See [react-imask](https://imask.js.org) for documentation on available props.
       {/* start example form block */}
       <ExamplePropsForm
         inputs={[
-          { value: maskType, setValue: setMaskType, options: Object.keys(inputsWithMask), name: 'Mask variants' },
+          {
+            value: maskType,
+            setValue: setMaskType,
+            options: Object.keys(inputsWithMask),
+            name: 'Mask variants',
+          },
         ]}
       />
       {/* end example form block */}
@@ -272,10 +308,11 @@ See [react-imask](https://imask.js.org) for documentation on available props.
       {inputsWithMask[maskType]}
     </>
   );
-}
+};
 ```
 
 ## Input masks with clear value
+
 To get a value without a mask, you need to use `onChange` instead of `onAccept` to handle changes.
 
 ```jsx live
@@ -283,25 +320,25 @@ To get a value without a mask, you need to use `onChange` instead of `onAccept` 
   const [value, setValue] = useState('');
 
   return (
-      <>
-        <Form.Group>
-          <Form.Control
-            inputMask="+{1} (000) 000-0000"
-            leadingElement={<Icon src={FavoriteBorder} />}
-            trailingElement={<Icon src={Verified} />}
-            floatingLabel="What is your phone number?"
-            value={value}
-            // depending on prop above first argument is
-            // `value` if `unmask=false`,
-            // `unmaskedValue` if `unmask=true`,
-            // `typedValue` if `unmask='typed'`
-            onAccept={(_, mask) => setValue(mask._unmaskedValue)}
-          />
-        </Form.Group>
-        Unmasked value: {JSON.stringify(value)}
-      </>
+    <>
+      <Form.Group>
+        <Form.Control
+          inputMask="+{1} (000) 000-0000"
+          leadingElement={<Icon src={FavoriteBorder} />}
+          trailingElement={<Icon src={Verified} />}
+          floatingLabel="What is your phone number?"
+          value={value}
+          // depending on prop above first argument is
+          // `value` if `unmask=false`,
+          // `unmaskedValue` if `unmask=true`,
+          // `typedValue` if `unmask='typed'`
+          onAccept={(_, mask) => setValue(mask._unmaskedValue)}
+        />
+      </Form.Group>
+      Unmasked value: {JSON.stringify(value)}
+    </>
   );
-}
+};
 ```
 
 ## Textarea autoResize
@@ -309,11 +346,7 @@ To get a value without a mask, you need to use `onChange` instead of `onAccept` 
 `autoResize` prop allows input to be resized according to the content height.
 
 ```jsx live
-<Form.Control
-  as="textarea"
-  autoResize
-  floatingLabel="Write something long"
-/>
+<Form.Control as="textarea" autoResize floatingLabel="Write something long" />
 ```
 
 ## Validation
@@ -340,7 +373,7 @@ To get a value without a mask, you need to use `onChange` instead of `onAccept` 
       </Form.Group>
     </>
   );
-}
+};
 ```
 
 ## Sizes
@@ -379,5 +412,5 @@ To get a value without a mask, you need to use `onChange` instead of `onAccept` 
       </Form.Group>
     </>
   );
-}
+};
 ```

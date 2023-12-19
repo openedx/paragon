@@ -2,15 +2,15 @@
 title: 'TableControlBar'
 type: 'component'
 components:
-- TableControlBar
-- BulkActions
-- DropdownFilters
-- FilterStatus
-- SmartStatus
-- SelectionStatus
-- RowStatus
+  - TableControlBar
+  - BulkActions
+  - DropdownFilters
+  - FilterStatus
+  - SmartStatus
+  - SelectionStatus
+  - RowStatus
 categories:
-- Table
+  - Table
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
@@ -32,7 +32,6 @@ It always shows the `SmartStatus` component. If applicable, it displays the `Dro
     {
       Header: 'Name',
       accessor: 'name',
-
     },
     {
       Header: 'Age',
@@ -61,7 +60,7 @@ It always shows the `SmartStatus` component. If applicable, it displays the `Dro
           number: 17,
           value: 17,
         },
-      ]
+      ],
     },
     {
       Header: 'Famous For',
@@ -72,26 +71,28 @@ It always shows the `SmartStatus` component. If applicable, it displays the `Dro
       accessor: 'color',
       Filter: CheckboxFilter,
       filter: 'includesValue',
-      filterChoices: [{
-        name: 'russian white',
-        number: 1,
-        value: 'russian white',
-      },
-      {
-        name: 'orange tabby',
-        number: 2,
-        value: 'orange tabby',
-      },
-      {
-        name: 'brown tabby',
-        number: 3,
-        value: 'brown tabby',
-      },
-      {
-        name: 'siamese',
-        number: 1,
-        value: 'siamese',
-      }]
+      filterChoices: [
+        {
+          name: 'russian white',
+          number: 1,
+          value: 'russian white',
+        },
+        {
+          name: 'orange tabby',
+          number: 2,
+          value: 'orange tabby',
+        },
+        {
+          name: 'brown tabby',
+          number: 3,
+          value: 'brown tabby',
+        },
+        {
+          name: 'siamese',
+          number: 1,
+          value: 'siamese',
+        },
+      ],
     },
   ]}
   itemCount={7}
@@ -143,7 +144,8 @@ It always shows the `SmartStatus` component. If applicable, it displays the `Dro
   bulkActions={[
     {
       buttonText: 'Download CSV',
-      handleClick: (selectedRows) => console.log('Downloading CSV ', selectedRows),
+      handleClick: (selectedRows) =>
+        console.log('Downloading CSV ', selectedRows),
     },
   ]}
 >
@@ -152,4 +154,5 @@ It always shows the `SmartStatus` component. If applicable, it displays the `Dro
 ```
 
 ## TableControlBar Subcomponents
+
 These components are used by the `TableControlBar` but can also be used individually as children of `DataTable`.

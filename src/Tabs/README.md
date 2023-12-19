@@ -2,10 +2,10 @@
 title: 'Tabs'
 type: 'component'
 components:
-- Tabs
-- Tab
+  - Tabs
+  - Tab
 categories:
-- Navigation
+  - Navigation
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'TO DO'
@@ -23,11 +23,7 @@ notes: |
 ## Uncontrolled usage
 
 ```jsx live
-<Tabs
-  variant="tabs"
-  defaultActiveKey="profile"
-  id="uncontrolled-tab-example"
->
+<Tabs variant="tabs" defaultActiveKey="profile" id="uncontrolled-tab-example">
   <Tab eventKey="home" title="Home">
     Hello I am the first panel.
   </Tab>
@@ -63,7 +59,7 @@ notes: |
       </Tab>
     </Tabs>
   );
-}
+};
 ```
 
 ## Button group usage
@@ -171,14 +167,13 @@ notes: |
     Hello I am the first panel.
   </Tab>
   <Tab
-    eventKey="profile" 
-    title="Profile" 
-    notification={(
+    eventKey="profile"
+    title="Profile"
+    notification={
       <span>
-        1
-        <span className="sr-only">notification</span>
+        1<span className="sr-only">notification</span>
       </span>
-    )}
+    }
   >
     Hello I am the second panel.
   </Tab>
@@ -188,11 +183,7 @@ notes: |
 ### Responsive support
 
 ```jsx live
-<Tabs
-  variant="tabs"
-  defaultActiveKey="profile"
-  id="uncontrolled-tab-example"
->
+<Tabs variant="tabs" defaultActiveKey="profile" id="uncontrolled-tab-example">
   <Tab eventKey="home" title="Home">
     Hello I am the first panel.
   </Tab>
@@ -233,54 +224,39 @@ notes: |
   const librariesEnabled = true;
   const visibleTabs = useMemo(() => {
     const tabs = [];
-        
+
     tabs.push(
-      <Tab
-        key="courses"
-        eventKey="courses"
-        title="Courses"
-      >
+      <Tab key="courses" eventKey="courses" title="Courses">
         Hello I am the courses panel.
-      </Tab>
+      </Tab>,
     );
 
     tabs.push(
-      <Tab
-        key="programs"
-        eventKey="programs"
-        title="Programs"
-      >
+      <Tab key="programs" eventKey="programs" title="Programs">
         Hello I am the programs panel.
-      </Tab>
+      </Tab>,
     );
-    
+
     if (librariesEnabled) {
       tabs.push(
-        <Tab
-          key="libraries"
-          eventKey="libraries"
-          title="Libraries"
-        >
+        <Tab key="libraries" eventKey="libraries" title="Libraries">
           Hello I am the libraries panel.
-        </Tab>
-      );   
+        </Tab>,
+      );
     }
 
     return tabs;
   }, [librariesEnabled]);
 
   return (
-    <Tabs
-      id="tabs"
-      defaultActiveKey="courses"
-    >
+    <Tabs id="tabs" defaultActiveKey="courses">
       {visibleTabs}
     </Tabs>
   );
-}
+};
 ```
 
-***
+---
 
 ## Tabs.Deprecated
 
@@ -289,13 +265,7 @@ notes: |
 ### (Deprecated) basic usage
 
 ```jsx live
-<Tabs.Deprecated
-  labels={[
-    'Panel 1',
-    'Panel 2',
-    'Panel 3'
-  ]}
->
+<Tabs.Deprecated labels={['Panel 1', 'Panel 2', 'Panel 3']}>
   <div>Hello I am the first panel</div>
   <div>Hello I am the second panel</div>
   <div>Hello I am the third panel</div>
