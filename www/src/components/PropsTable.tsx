@@ -6,24 +6,26 @@ import PropType from './PropType';
 
 const IGNORED_COMPONENT_PROPS = ['intl'];
 
+const BOOTSTRAP_BASE_URL = 'https://react-bootstrap-v4.netlify.app/components';
+
 const bootstrapLinks = {
-  Button: 'https://react-bootstrap-v4.netlify.app/components/buttons/#button-props',
-  Card: 'https://react-bootstrap-v4.netlify.app/components/cards/#card-props',
-  CardBody: 'https://react-bootstrap-v4.netlify.app/components/cards/#card-body-props',
-  CardDeck: 'https://react-bootstrap-v4.netlify.app/components/cards/#card-deck-props',
-  Dropdown: 'https://react-bootstrap-v4.netlify.app/components/dropdowns/#dropdown-props',
-  DropdownToggle: 'https://react-bootstrap-v4.netlify.app/components/dropdowns/#dropdown-toggle-props',
-  DropdownItem: 'https://react-bootstrap-v4.netlify.app/components/dropdowns/#dropdown-item-props',
-  DropdownMenu: 'https://react-bootstrap-v4.netlify.app/components/dropdowns/#dropdown-menu-props',
-  DropdownButton: 'https://react-bootstrap-v4.netlify.app/components/dropdowns/#dropdown-button-props',
-  FormControl: 'https://react-bootstrap-v4.netlify.app/components/forms/#form-control-props',
-  Nav: 'https://react-bootstrap-v4.netlify.app/components/navs/#nav-props',
-  WrapperPopover: 'https://react-bootstrap-v4.netlify.app/components/overlays/#popover-props',
-  ProgressBar: 'https://react-bootstrap-v4.netlify.app/components/progress/#progress-bar-props',
-  Spinner: 'https://react-bootstrap-v4.netlify.app/components/spinners/#spinner-props',
-  Tabs: 'https://react-bootstrap-v4.netlify.app/components/tabs/#tabs-api',
-  Tab: 'https://react-bootstrap-v4.netlify.app/components/tabs/#tab-props',
-  Toast: 'https://react-bootstrap-v4.netlify.app/components/toasts/#toast-props',
+  Button: `${BOOTSTRAP_BASE_URL}/buttons/#button-props`,
+  Card: `${BOOTSTRAP_BASE_URL}/cards/#card-props`,
+  CardBody: `${BOOTSTRAP_BASE_URL}/cards/#card-body-props`,
+  CardDeck: `${BOOTSTRAP_BASE_URL}/cards/#card-deck-props`,
+  Dropdown: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-props`,
+  DropdownToggle: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-toggle-props`,
+  DropdownItem: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-item-props`,
+  DropdownMenu: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-menu-props`,
+  DropdownButton: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-button-props`,
+  FormControl: `${BOOTSTRAP_BASE_URL}/forms/#form-control-props`,
+  Nav: `${BOOTSTRAP_BASE_URL}/navs/#nav-props`,
+  Popover: `${BOOTSTRAP_BASE_URL}/overlays/#popover-props`,
+  ProgressBar: `${BOOTSTRAP_BASE_URL}/progress/#progress-bar-props`,
+  Spinner: `${BOOTSTRAP_BASE_URL}/spinners/#spinner-props`,
+  Tabs: `${BOOTSTRAP_BASE_URL}/tabs/#tabs-api`,
+  Tab: `${BOOTSTRAP_BASE_URL}/tabs/#tab-props`,
+  Toast: `${BOOTSTRAP_BASE_URL}/toasts/#toast-props`,
 };
 
 export type DefaultValueTypes = {

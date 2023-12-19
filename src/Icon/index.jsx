@@ -72,7 +72,7 @@ function Icon({
 Icon.propTypes = {
   /**
    * An icon component to render.
-   * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/dist/icon';`
+   * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';`
    */
   src: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** HTML element attributes to pass through to the underlying svg element */
