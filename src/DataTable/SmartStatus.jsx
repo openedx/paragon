@@ -14,19 +14,19 @@ function SmartStatus() {
     RowStatusComponent,
     showFiltersInSidebar,
   } = useContext(DataTableContext);
-  const { selectedRowIds } = state;
-  const numSelectedRows = Object.keys(selectedRowIds || {}).length;
+  // const { selectedRowIds } = state;
+  // const numSelectedRows = Object.keys(selectedRowIds || {}).length;
   const SelectionStatus = SelectionStatusComponent || SelectionStatusDefault;
   const FilterStatus = FilterStatusComponent || FilterStatusDefault;
   const RowStatus = RowStatusComponent || RowStatusDefault;
 
-  if (numSelectedRows > 0) {
-    return (
-      <SelectionStatus
-        className={SMART_STATUS_CLASS}
-      />
-    );
-  }
+  // if (numSelectedRows > 0) {
+  //   return (
+  //     <SelectionStatus
+  //       className={SMART_STATUS_CLASS}
+  //     />
+  //   );
+  // }
   if (state?.filters?.length > 0 && !showFiltersInSidebar) {
     return (
       <FilterStatus
