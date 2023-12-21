@@ -56,7 +56,7 @@ module.exports = {
         [
           "@svgr/babel-plugin-add-jsx-attribute",
           {
-            "elements": ["path"],
+            "elements": ["path", "circle"],
             "attributes": [
               {
                 "name": "fill",

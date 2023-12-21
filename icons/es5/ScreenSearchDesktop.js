@@ -12,6 +12,7 @@ const SvgScreenSearchDesktop = props => /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 11.5,
   cy: 10,
-  r: 2
+  r: 2,
+  fill: "currentColor"
 }));
 export default SvgScreenSearchDesktop;

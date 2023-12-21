@@ -26,6 +26,18 @@
     max-height: none;
     margin: var(--pgn-spacing-modal-dialog-margin);
   }
+
+  .pgn__modal-header {
+    padding-bottom: calc(var(--pgn-spacing-modal-inner-padding-base) / 2);
+  }
+
+  .pgn__modal-body {
+    padding: calc(var(--pgn-spacing-modal-inner-padding-base) / 2) var(--pgn-spacing-modal-inner-padding-base);
+
+    &::before {
+      top: calc(var(--pgn-spacing-modal-inner-padding-base) / 2 * -1);
+    }
+  }
 }
 
 // Sizes
@@ -232,22 +244,6 @@
 
 // Color Variants
 
-.pgn__modal-default {
-  // Default style modals don't have a background on the header which
-  // ends up looking spaced too far away from the body content.
-  .pgn__modal-header {
-    padding-bottom: calc(var(--pgn-spacing-modal-inner-padding-base) / 2);
-  }
-
-  .pgn__modal-body {
-    padding: calc(var(--pgn-spacing-modal-inner-padding-base) / 2) var(--pgn-spacing-modal-inner-padding-base);
-
-    &::before {
-      top: calc(var(--pgn-spacing-modal-inner-padding-base) / 2 * -1);
-    }
-  }
-}
-
 .pgn__modal-dark {
   .pgn__modal-header,
   .pgn__modal-hero {
@@ -257,10 +253,6 @@
     * {
       color: inherit;
     }
-  }
-
-  .pgn__modal-header {
-    border-bottom: solid 1px var(--pgn-color-light-base);
   }
 }
 
