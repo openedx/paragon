@@ -9,7 +9,7 @@ const SvgMan = (props) => (
     {...props}
   >
     <path d="M16 7H8v8h2v7h4v-7h2z" fill="currentColor" />
-    <circle cx={12} cy={4} r={2} />
+    <circle cx={12} cy={4} r={2} fill="currentColor" />
   </svg>
 );
 export default SvgMan;

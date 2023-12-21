@@ -198,27 +198,8 @@ For link to be `disabled`, it must have href defined with some value.
 )}
 ```
 
-### With a Spinner
-
-```jsx live
-<>
-  <Button variant="primary" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-  <Button variant="brand" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-  <Button variant="outline-primary" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-  <Button variant="outline-brand" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-  <Button variant="inverse-primary" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-  <Button variant="inverse-brand" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-</>
-```
+## Stateful buttons
+To implement loading state using a `Button` component, the [StatefulButton](https://paragon-openedx.netlify.app/components/statefulbutton/) component
+is available for use. <br/>
+This specialized component is designed to seamlessly manage and display boot states, providing a more efficient and 
+user-friendly experience.

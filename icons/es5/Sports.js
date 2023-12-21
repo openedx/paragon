@@ -12,6 +12,7 @@ const SvgSports = props => /*#__PURE__*/React.createElement("svg", _extends({
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 11,
   cy: 12,
-  r: 2
+  r: 2,
+  fill: "currentColor"
 }));
 export default SvgSports;

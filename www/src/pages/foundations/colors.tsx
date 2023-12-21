@@ -161,7 +161,7 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
         <h3>CSS Color Usage</h3>
 
         <h4>Variable name</h4>
-        <code className="d-block mb-4 lead bg-gray-100 p-3">
+        <code className="d-block mb-4 bg-gray-100 p-3">
           {'// var(--pgn-color-name-level) '}
           <br />
           var(--pgn-color-primary-100)
@@ -178,7 +178,7 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
           Using a default value in CSS variables allows to set a default value for a variable,
           which will be used if the primary value of the variable is not defined or not available.
         </p>
-        <code className="d-block mb-4 lead bg-gray-100 p-3">
+        <code className="d-block mb-4 bg-gray-100 p-3">
           {'// var(--pgn-color-name-level), default variable '}
           <br />
           var(--pgn-color-brand-100, var(--pgn-color-primary-200))

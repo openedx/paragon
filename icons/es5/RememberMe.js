@@ -12,6 +12,7 @@ const SvgRememberMe = props => /*#__PURE__*/React.createElement("svg", _extends(
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 10,
-  r: 3
+  r: 3,
+  fill: "currentColor"
 }));
 export default SvgRememberMe;

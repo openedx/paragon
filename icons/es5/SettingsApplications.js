@@ -12,6 +12,7 @@ const SvgSettingsApplications = props => /*#__PURE__*/React.createElement("svg",
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 12,
-  r: 2.45
+  r: 2.45,
+  fill: "currentColor"
 }));
 export default SvgSettingsApplications;

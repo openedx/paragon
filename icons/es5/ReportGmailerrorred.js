@@ -12,7 +12,8 @@ const SvgReportGmailerrorred = props => /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 16,
-  r: 1
+  r: 1,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M11 7h2v7h-2z",
   fill: "currentColor"

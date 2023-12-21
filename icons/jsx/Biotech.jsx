@@ -16,7 +16,7 @@ const SvgBiotech = (props) => (
       d="M10.56 5.51C11.91 5.54 13 6.64 13 8c0 .75-.33 1.41-.85 1.87l.59 1.62.94-.34.34.94 1.88-.68-.34-.94.94-.34-2.74-7.53-.94.34-.34-.94-1.88.68.34.94-.94.35.56 1.54z"
       fill="currentColor"
     />
-    <circle cx={10.5} cy={8} r={1.5} />
+    <circle cx={10.5} cy={8} r={1.5} fill="currentColor" />
   </svg>
 );
 export default SvgBiotech;
