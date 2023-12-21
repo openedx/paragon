@@ -122,7 +122,7 @@ function PropsTable({ props: componentProps, displayName, content }: IPropsTable
       {content && <p className="px-4 small">{content}</p>}
       {bootstrapLink && (
         <Hyperlink className="px-4 small mb-3" destination={bootstrapLink} target="_blank">
-          Original component Props API
+          This is a pass through component from React-Bootstrap, see original props documentation here.
         </Hyperlink>
       )}
       {componentProps.length > 0 ? (
