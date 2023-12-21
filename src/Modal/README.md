@@ -112,13 +112,7 @@ class ModalWrapper extends React.Component {
 ## configurable close button string
 
 ```jsx
-<Modal
-  open
-  title="Modal title."
-  body="Modal body."
-  closeText="SHOO!"
-  onClose={() => {}}
-/>
+<Modal open title="Modal title." body="Modal body." closeText="SHOO!" onClose={() => {}} />
 ```
 
 ## configurable close button element

@@ -40,9 +40,7 @@ notes: |
 ```jsx live
 <>
   <Dropdown
-    onToggle={(isOpen, event, metadata) =>
-      console.log('debug', 'onToggle', { isOpen, event, metadata })
-    }
+    onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })}
     className="mb-3"
   >
     <Dropdown.Toggle variant="success" id="dropdown-basic-1">
@@ -59,9 +57,7 @@ notes: |
 
   <Dropdown
     variant="dark"
-    onToggle={(isOpen, event, metadata) =>
-      console.log('debug', 'onToggle', { isOpen, event, metadata })
-    }
+    onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })}
     className="mb-3"
   >
     <Dropdown.Toggle variant="success" id="dropdown-basic-2">
@@ -77,9 +73,7 @@ notes: |
   </Dropdown>
   <Dropdown
     autoClose={false}
-    onToggle={(isOpen, event, metadata) =>
-      console.log('debug', 'onToggle', { isOpen, event, metadata })
-    }
+    onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })}
     className="mb-3"
   >
     <Dropdown.Toggle variant="success" id="dropdown-basic-2">
@@ -95,9 +89,7 @@ notes: |
   </Dropdown>
   <Dropdown
     autoClose="inside"
-    onToggle={(isOpen, event, metadata) =>
-      console.log('debug', 'onToggle', { isOpen, event, metadata })
-    }
+    onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })}
     className="mb-3"
   >
     <Dropdown.Toggle variant="success" id="dropdown-basic-3">
@@ -113,9 +105,7 @@ notes: |
   </Dropdown>
   <Dropdown
     autoClose="outside"
-    onToggle={(isOpen, event, metadata) =>
-      console.log('debug', 'onToggle', { isOpen, event, metadata })
-    }
+    onToggle={(isOpen, event, metadata) => console.log('debug', 'onToggle', { isOpen, event, metadata })}
     className="mb-3"
   >
     <Dropdown.Toggle variant="success" id="dropdown-basic-4">
@@ -161,15 +151,9 @@ You can use `Dropdown.Toggle` with [IconButton](/components/iconbutton) componen
 <Dropdown.Deprecated>
   <Dropdown.Deprecated.Button>Search Engines</Dropdown.Deprecated.Button>
   <Dropdown.Deprecated.Menu>
-    <Dropdown.Deprecated.Item href="https://google.com">
-      Google
-    </Dropdown.Deprecated.Item>
-    <Dropdown.Deprecated.Item href="https://duckduckgo.com">
-      DuckDuckGo
-    </Dropdown.Deprecated.Item>
-    <Dropdown.Deprecated.Item href="https://yahoo.com">
-      Yahoo
-    </Dropdown.Deprecated.Item>
+    <Dropdown.Deprecated.Item href="https://google.com">Google</Dropdown.Deprecated.Item>
+    <Dropdown.Deprecated.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Deprecated.Item>
+    <Dropdown.Deprecated.Item href="https://yahoo.com">Yahoo</Dropdown.Deprecated.Item>
   </Dropdown.Deprecated.Menu>
 </Dropdown.Deprecated>
 ```
@@ -183,15 +167,9 @@ You can use `Dropdown.Toggle` with [IconButton](/components/iconbutton) componen
     Search Engines
   </Dropdown.Deprecated.Button>
   <Dropdown.Deprecated.Menu>
-    <Dropdown.Deprecated.Item href="https://google.com">
-      Google
-    </Dropdown.Deprecated.Item>
-    <Dropdown.Deprecated.Item href="https://duckduckgo.com">
-      DuckDuckGo
-    </Dropdown.Deprecated.Item>
-    <Dropdown.Deprecated.Item href="https://yahoo.com">
-      Yahoo
-    </Dropdown.Deprecated.Item>
+    <Dropdown.Deprecated.Item href="https://google.com">Google</Dropdown.Deprecated.Item>
+    <Dropdown.Deprecated.Item href="https://duckduckgo.com">DuckDuckGo</Dropdown.Deprecated.Item>
+    <Dropdown.Deprecated.Item href="https://yahoo.com">Yahoo</Dropdown.Deprecated.Item>
   </Dropdown.Deprecated.Menu>
 </Dropdown.Deprecated>
 ```

@@ -84,8 +84,7 @@ It displays the data provided by the `DataTableContext` as an html table.
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for:
-        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
       age: 9,
     },
     {
@@ -149,11 +148,7 @@ a responsive grid of cards.
   }}
   itemCount={20}
   fetchData={(currentState) =>
-    console.log(
-      `This function will be called with the value: ${JSON.stringify(
-        currentState,
-      )}}`,
-    )
+    console.log(`This function will be called with the value: ${JSON.stringify(currentState)}}`)
   }
   data={[
     {
@@ -334,8 +329,7 @@ a responsive grid of cards.
   bulkActions={[
     {
       buttonText: 'Download CSV',
-      handleClick: (selectedRows) =>
-        console.log('Downloading CSV ', selectedRows),
+      handleClick: (selectedRows) => console.log('Downloading CSV ', selectedRows),
     },
   ]}
 >

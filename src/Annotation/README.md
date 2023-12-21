@@ -41,10 +41,7 @@ Display informative text related to an object on screen. Unlike the tooltip an a
 ```jsx live
 () => {
   const [arrowPlacement, setArrowPlacement] = useState('left');
-  const wrapperClass =
-    arrowPlacement === 'top' || arrowPlacement === 'bottom'
-      ? 'flex-column'
-      : '';
+  const wrapperClass = arrowPlacement === 'top' || arrowPlacement === 'bottom' ? 'flex-column' : '';
   return (
     <>
       {/* start example form block */}
@@ -64,30 +61,12 @@ Display informative text related to an object on screen. Unlike the tooltip an a
         ]}
       />
       {/* end example form block */}
-      <div
-        className={`d-flex align-items-center justify-content-center ${wrapperClass}`}
-      >
-        {arrowPlacement === 'bottom' && (
-          <Annotation arrowPlacement={arrowPlacement}>
-            Annotation on top
-          </Annotation>
-        )}
-        {arrowPlacement === 'right' && (
-          <Annotation arrowPlacement={arrowPlacement}>
-            Annotation on left
-          </Annotation>
-        )}
+      <div className={`d-flex align-items-center justify-content-center ${wrapperClass}`}>
+        {arrowPlacement === 'bottom' && <Annotation arrowPlacement={arrowPlacement}>Annotation on top</Annotation>}
+        {arrowPlacement === 'right' && <Annotation arrowPlacement={arrowPlacement}>Annotation on left</Annotation>}
         <Button>This is an example button</Button>
-        {arrowPlacement === 'left' && (
-          <Annotation arrowPlacement={arrowPlacement}>
-            Annotation on right
-          </Annotation>
-        )}
-        {arrowPlacement === 'top' && (
-          <Annotation arrowPlacement={arrowPlacement}>
-            Annotation on bottom
-          </Annotation>
-        )}
+        {arrowPlacement === 'left' && <Annotation arrowPlacement={arrowPlacement}>Annotation on right</Annotation>}
+        {arrowPlacement === 'top' && <Annotation arrowPlacement={arrowPlacement}>Annotation on bottom</Annotation>}
       </div>
     </>
   );

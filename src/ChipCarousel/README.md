@@ -68,10 +68,7 @@ The `ChipCarousel` component creates a scrollable horizontal block of chips with
         ariaLabel="example chip carousel"
         gap={gap}
         items={Array.from({ length: 40 }, (_, index) => (
-          <Chip
-            key={`Chip-${index}`}
-            onClick={() => console.log(`Chip #${index + 1} clicked`)}
-          >
+          <Chip key={`Chip-${index}`} onClick={() => console.log(`Chip #${index + 1} clicked`)}>
             Chip #{index + 1}
           </Chip>
         ))}

@@ -33,11 +33,7 @@ you can also set the number of columns in the displayed `Skeleton`.
 
   return (
     <>
-      <Form.Checkbox
-        className="mb-3"
-        checked={isChecked}
-        onChange={handleChange}
-      >
+      <Form.Checkbox className="mb-3" checked={isChecked} onChange={handleChange}>
         Show loading state
       </Form.Checkbox>
       <h3>{isChecked ? <Skeleton /> : exampleTitle}</h3>
@@ -58,22 +54,14 @@ you can also set the number of columns in the displayed `Skeleton`.
 
   return (
     <>
-      <Form.Checkbox
-        className="mb-3"
-        checked={isChecked}
-        onChange={handleChange}
-      >
+      <Form.Checkbox className="mb-3" checked={isChecked} onChange={handleChange}>
         Show loading state
       </Form.Checkbox>
       <div>
         {isChecked ? (
           <Skeleton circle width={200} height={200} />
         ) : (
-          <Image
-            alt="some image"
-            roundedCircle
-            src="https://picsum.photos/200/200/"
-          />
+          <Image alt="some image" roundedCircle src="https://picsum.photos/200/200/" />
         )}
       </div>
     </>
@@ -100,19 +88,10 @@ Settings will be passed on to the rest of the `Skeleton` components in the hiera
 
   return (
     <>
-      <Form.Checkbox
-        className="mb-3"
-        checked={isChecked}
-        onChange={handleChange}
-      >
+      <Form.Checkbox className="mb-3" checked={isChecked} onChange={handleChange}>
         Show loading state
       </Form.Checkbox>
-      <SkeletonTheme
-        baseColor="lightgrey"
-        highlightColor="darkslategrey"
-        duration={5}
-        direction="rtl"
-      >
+      <SkeletonTheme baseColor="lightgrey" highlightColor="darkslategrey" duration={5} direction="rtl">
         <h3>{isChecked ? <Skeleton /> : exampleTitle}</h3>
         <div>{isChecked ? <Skeleton count={4} /> : exampleDescription}</div>
       </SkeletonTheme>
@@ -154,21 +133,11 @@ By wrapping the `Skeleton` in a container, you can flexibly customize the elemen
 
   return (
     <>
-      <Form.Checkbox
-        className="mb-3"
-        checked={isChecked}
-        onChange={handleChange}
-      >
+      <Form.Checkbox className="mb-3" checked={isChecked} onChange={handleChange}>
         Show loading state
       </Form.Checkbox>
       <h3>{isChecked ? <Skeleton wrapper={customWrapper} /> : exampleTitle}</h3>
-      <div>
-        {isChecked ? (
-          <Skeleton wrapper={customWrapper} count={3} />
-        ) : (
-          exampleDescription
-        )}
-      </div>
+      <div>{isChecked ? <Skeleton wrapper={customWrapper} count={3} /> : exampleDescription}</div>
     </>
   );
 };

@@ -28,24 +28,16 @@ This component utilizes and extends the `Alert` component from react-bootstrap.<
 ```jsx live
 <>
   <Alert variant="success">
-    This is a "success" alert with{' '}
-    <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you
-    like.
+    This is a "success" alert with <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you like.
   </Alert>
   <Alert variant="info">
-    This is a "info" alert with{' '}
-    <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you
-    like.
+    This is a "info" alert with <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you like.
   </Alert>
   <Alert variant="danger">
-    This is a "danger" alert with{' '}
-    <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you
-    like.
+    This is a "danger" alert with <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you like.
   </Alert>
   <Alert variant="warning">
-    This is a "warning" alert with{' '}
-    <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you
-    like.
+    This is a "warning" alert with <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you like.
   </Alert>
 </>
 ```
@@ -72,26 +64,16 @@ The stacked variant should be used for:
       console.log('closed', e);
     }}
   >
-    This is a "info" alert with{' '}
-    <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you
-    like.
+    This is a "info" alert with <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you like.
   </Alert>
   <Alert variant="warning" dismissible>
-    This is a "info" alert with{' '}
-    <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you
-    like.
+    This is a "info" alert with <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you like.
   </Alert>
-  <Alert
-    variant="success"
-    icon={CheckCircle}
-    dismissible
-    actions={[<Button>Hello</Button>]}
-  >
+  <Alert variant="success" icon={CheckCircle} dismissible actions={[<Button>Hello</Button>]}>
     <Alert.Heading>Hey, nice to see you</Alert.Heading>
     <p>
-      Aww yeah, you successfully read this important alert message. This example
-      text is going to run a bit longer so that you can see how spacing within
-      an alert works with this kind of content.
+      Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so
+      that you can see how spacing within an alert works with this kind of content.
     </p>
   </Alert>
   <Alert
@@ -106,9 +88,8 @@ The stacked variant should be used for:
   >
     <Alert.Heading>Hey, nice to see you</Alert.Heading>
     <p>
-      Aww yeah, you successfully read this important alert message. This example
-      text is going to run a bit longer so that you can see how spacing within
-      an alert works with this kind of content.
+      Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so
+      that you can see how spacing within an alert works with this kind of content.
     </p>
   </Alert>
 </>
@@ -121,25 +102,22 @@ The stacked variant should be used for:
   <Alert variant="success" dismissible icon={CheckCircle}>
     <Alert.Heading>Hey, nice to see you</Alert.Heading>
     <p>
-      Aww yeah, you successfully read this important alert message. This example
-      text is going to run a bit longer so that you can see how spacing within
-      an alert works with this kind of content.
+      Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so
+      that you can see how spacing within an alert works with this kind of content.
     </p>
   </Alert>
   <Alert variant="warning" dismissible icon={WarningFilled}>
     <Alert.Heading>Hey, nice to see you</Alert.Heading>
     <p>
-      Aww yeah, you successfully read this important alert message. This example
-      text is going to run a bit longer so that you can see how spacing within
-      an alert works with this kind of content.
+      Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so
+      that you can see how spacing within an alert works with this kind of content.
     </p>
   </Alert>
   <Alert variant="danger" dismissible icon={Info}>
     <Alert.Heading>Hey, nice to see you</Alert.Heading>
     <p>
-      Aww yeah, you successfully read this important alert message. This example
-      text is going to run a bit longer so that you can see how spacing within
-      an alert works with this kind of content.
+      Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so
+      that you can see how spacing within an alert works with this kind of content.
     </p>
   </Alert>
 </>
@@ -151,14 +129,10 @@ The stacked variant should be used for:
 <Alert variant="success" actions={[<Button>Hello</Button>]} dismissible stacked>
   <Alert.Heading>Hey, nice to see you</Alert.Heading>
   <p>
-    Aww yeah, you successfully read this important alert message. This example
-    text is going to run a bit longer so that you can see how spacing within an
-    alert works with this kind of content.
+    Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that
+    you can see how spacing within an alert works with this kind of content.
   </p>
   <hr />
-  <p className="mb-0">
-    Whenever you need to, be sure to use margin utilities to keep things nice
-    and tidy.
-  </p>
+  <p className="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
 </Alert>
 ```

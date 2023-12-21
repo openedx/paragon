@@ -41,9 +41,8 @@ This component uses a `Card` from react-bootstrap as a base component and extend
       <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
       <Card.Header title="Card Title" />
       <Card.Section>
-        This is a card section. It can contain anything but usually text, a
-        list, or list of links. Multiple sections have a card divider between
-        them.
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections
+        have a card divider between them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
@@ -79,26 +78,15 @@ Use `variant` prop to use `Card` specific style variant.
       />
       {/* end example form block */}
 
-      <Card
-        style={{ width: isExtraSmall ? '100%' : '18rem' }}
-        variant={cardVariant}
-      >
-        <Card.ImageCap
-          src="https://picsum.photos/360/200/"
-          srcAlt="Card image"
-        />
+      <Card style={{ width: isExtraSmall ? '100%' : '18rem' }} variant={cardVariant}>
+        <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
         <Card.Header title="Card Title" />
         <Card.Section>
-          This is a card section. It can contain anything but usually text, a
-          list, or list of links. Multiple sections have a card divider between
-          them.
+          This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections
+          have a card divider between them.
         </Card.Section>
         <Card.Footer textElement="Course">
-          <Button
-            variant={cardVariant === 'dark' ? 'inverse-primary' : 'primary'}
-          >
-            Action
-          </Button>
+          <Button variant={cardVariant === 'dark' ? 'inverse-primary' : 'primary'}>Action</Button>
         </Card.Footer>
       </Card>
     </>
@@ -121,9 +109,8 @@ You use `isClickable` prop to add additional `hover` and `focus` styling to the 
       <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
       <Card.Header title="Card Title" />
       <Card.Section>
-        This is a card section. It can contain anything but usually text, a
-        list, or list of links. Multiple sections have a card divider between
-        them.
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections
+        have a card divider between them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
@@ -154,9 +141,8 @@ You can also use `Card` as a link by passing the value `HyperLink` (or `a`, `Lin
       <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
       <Card.Header title="Card Title" />
       <Card.Section>
-        This is a card section. It can contain anything but usually text, a
-        list, or list of links. Multiple sections have a card divider between
-        them.
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections
+        have a card divider between them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
@@ -200,10 +186,7 @@ The `Card.Header` supports custom actions via the actions prop and renders them 
           subtitle="Subtitle"
           isStacked={!!isExtraSmall}
           actions={
-            <ActionRow
-              isStacked={!!isExtraSmall}
-              style={{ marginBottom: isExtraSmall ? '.5rem' : 0 }}
-            >
+            <ActionRow isStacked={!!isExtraSmall} style={{ marginBottom: isExtraSmall ? '.5rem' : 0 }}>
               <Button variant="tertiary">Action 1</Button>
               <Button>Action 2</Button>
             </ActionRow>
@@ -279,9 +262,8 @@ Add `size="sm"` for smaller header content and actions.
           </ActionRow>
         }
       >
-        This is a card section. It can contain anything but usually text, a
-        list, or list of links. Multiple sections have a card divider between
-        them.
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections
+        have a card divider between them.
       </Card.Section>
       <Card.Divider />
       <Card.Section
@@ -296,9 +278,7 @@ Add `size="sm"` for smaller header content and actions.
         This is another section variant.
       </Card.Section>
       <Card.Divider />
-      <Card.Section>
-        This is a section without title or actions, just content.
-      </Card.Section>
+      <Card.Section>This is a section without title or actions, just content.</Card.Section>
     </Card>
   );
 };
@@ -334,10 +314,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
           <Button>Action 2</Button>
         </Card.Footer>
         <Card.Divider />
-        <Card.Footer
-          orientation={isExtraSmall ? 'horizontal' : 'vertical'}
-          textElement={footerLink}
-        >
+        <Card.Footer orientation={isExtraSmall ? 'horizontal' : 'vertical'} textElement={footerLink}>
           <Button>Action 1</Button>
           <Button>Action 2</Button>
         </Card.Footer>
@@ -366,19 +343,12 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
         <Button>Action 2</Button>
       </Card.Footer>
       <Card.Divider />
-      <Card.Footer
-        orientation="horizontal"
-        textElement="Optional footer text to display"
-      >
+      <Card.Footer orientation="horizontal" textElement="Optional footer text to display">
         <Button>Action 1</Button>
         <Button>Action 2</Button>
       </Card.Footer>
       <Card.Divider />
-      <Card.Footer
-        orientation="horizontal"
-        textElement="Horizontal stacked variant"
-        isStacked
-      >
+      <Card.Footer orientation="horizontal" textElement="Horizontal stacked variant" isStacked>
         <Button>Action 1</Button>
         <Button>Action 2</Button>
       </Card.Footer>
@@ -405,9 +375,8 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
       />
       <Card.Header title="Title" subtitle="Subtitle" />
       <Card.Section title="Section title">
-        This is a card section. It can contain anything but usually text, a
-        list, or list of links. Multiple sections have a card divider between
-        them.
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections
+        have a card divider between them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
@@ -440,8 +409,8 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
         <Card.Body>
           <Card.Header title="Title" subtitle="Subtitle" />
           <Card.Section title="Section title">
-            Here we want to display both Header and Section between ImageCap and
-            Footer components, so we use Card. Body to accomplish that.
+            Here we want to display both Header and Section between ImageCap and Footer components, so we use Card. Body
+            to accomplish that.
           </Card.Section>
         </Card.Body>
         <Card.Footer orientation={isExtraSmall ? 'horizontal' : 'vertical'}>
@@ -457,8 +426,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
           logoAlt="Card logo"
         />
         <Card.Section title="Section title">
-          In this Card we only want to display Section, therefore no need to use
-          Card.Body wrapper.
+          In this Card we only want to display Section, therefore no need to use Card.Body wrapper.
         </Card.Section>
         <Card.Footer orientation={isExtraSmall ? 'horizontal' : 'vertical'}>
           <Button>Action 1</Button>
@@ -475,13 +443,10 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
         <Card.Body>
           <Card.Header title="Title" />
           <Card.Section title="Section title">
-            This is a special case where we want to have Footer with vertical
-            orientation in the Card with horizontal orientation.
+            This is a special case where we want to have Footer with vertical orientation in the Card with horizontal
+            orientation.
           </Card.Section>
-          <Card.Footer
-            orientation={isExtraSmall ? 'horizontal' : 'vertical'}
-            textElement="Some footer text"
-          >
+          <Card.Footer orientation={isExtraSmall ? 'horizontal' : 'vertical'} textElement="Some footer text">
             <Button>Action 1</Button>
             <Button>Action 2</Button>
           </Card.Footer>
@@ -517,9 +482,8 @@ An optional `actions` prop may be passed to include call-to-action button(s).
         />
         <Card.Header title="Card title" />
         <Card.Section>
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This card has even longer content than the
-          first to show that equal height action.
+          This is a wider card with supporting text below as a natural lead-in to additional content. This card has even
+          longer content than the first to show that equal height action.
         </Card.Section>
       </>
     ),
@@ -534,9 +498,8 @@ An optional `actions` prop may be passed to include call-to-action button(s).
         <Card.Body>
           <Card.Header title="Card title" />
           <Card.Section>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This card has even longer content than the
-            first to show that equal height action.
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has
+            even longer content than the first to show that equal height action.
           </Card.Section>
         </Card.Body>
       </div>
@@ -576,10 +539,7 @@ An optional `actions` prop may be passed to include call-to-action button(s).
           lg: isVertical ? 6 : 12,
         }}
       >
-        <Card
-          orientation={orientation}
-          className={classNames({ 'flex-column': !isVertical })}
-        >
+        <Card orientation={orientation} className={classNames({ 'flex-column': !isVertical })}>
           {cardBodyByOrientation[orientation]}
           <Card.Status
             icon={Warning}
@@ -591,12 +551,7 @@ An optional `actions` prop may be passed to include call-to-action button(s).
               if (orientation === 'horizontal') {
                 return (
                   <ActionRow>
-                    <Button
-                      size="sm"
-                      variant={
-                        variant === 'primary' ? 'inverse-tertiary' : 'tertiary'
-                      }
-                    >
+                    <Button size="sm" variant={variant === 'primary' ? 'inverse-tertiary' : 'tertiary'}>
                       Dismiss
                     </Button>
                     <Button size="sm" variant="brand">
@@ -612,10 +567,7 @@ An optional `actions` prop may be passed to include call-to-action button(s).
               );
             })()}
           >
-            <HipsterIpsum
-              numShortParagraphs={orientation === 'vertical' ? 1 : undefined}
-              numParagraphs={1}
-            />
+            <HipsterIpsum numShortParagraphs={orientation === 'vertical' ? 1 : undefined} numParagraphs={1} />
           </Card.Status>
         </Card>
       </CardGrid>
@@ -729,9 +681,8 @@ A fallback source is available for both the main `ImageCap` component image and 
       />
       <Card.Header title="Title" subtitle="Subtitle" />
       <Card.Section title="Section title">
-        This is a card section. It can contain anything but usually text, a
-        list, or list of links. Multiple sections have a card divider between
-        them.
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections
+        have a card divider between them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
@@ -760,9 +711,8 @@ The default fallback image will be displayed if `fallbackSrc` is not specified.
       />
       <Card.Header title="Title" subtitle="Subtitle" />
       <Card.Section title="Section title">
-        This is a card section. It can contain anything but usually text, a
-        list, or list of links. Multiple sections have a card divider between
-        them.
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections
+        have a card divider between them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
@@ -787,9 +737,8 @@ The default fallback image will be displayed if `fallbackSrc` is not specified.
       <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
       <Card.Header title="Card Title" />
       <Card.Section>
-        This is a card section. It can contain anything but usually text, a
-        list, or list of links. Multiple sections have a card divider between
-        them.
+        This is a card section. It can contain anything but usually text, a list, or list of links. Multiple sections
+        have a card divider between them.
       </Card.Section>
       <Card.Footer>
         <Button>Action 1</Button>
@@ -819,8 +768,8 @@ The default fallback image will be displayed if `fallbackSrc` is not specified.
       <Card.Body>
         <Card.Header title="Title" />
         <Card.Section title="Section title">
-          This is a special case where we want to have Footer with vertical
-          orientation in the Card with horizontal orientation.
+          This is a special case where we want to have Footer with vertical orientation in the Card with horizontal
+          orientation.
         </Card.Section>
         <Card.Footer orientation="vertical" textElement="Some footer text">
           <Button>Action 1</Button>
@@ -849,11 +798,7 @@ behavior.
       <Card.Section title="Section title">
         <HipsterIpsum numShortParagraphs={1} />
       </Card.Section>
-      <Card.Footer
-        textElement={
-          <small className="text-muted">Last updated 3 mins ago</small>
-        }
-      />
+      <Card.Footer textElement={<small className="text-muted">Last updated 3 mins ago</small>} />
     </Card>
   );
 
@@ -1001,13 +946,9 @@ Includes support for an optional `title` and `subtitle`. You may rely on the def
 
   const cardItems = useMemo(() => {
     if (hasOverflowCards === 'true') {
-      return Array.from({ length: 8 }).map(() => (
-        <CardComponent key={uuidv4()} />
-      ));
+      return Array.from({ length: 8 }).map(() => <CardComponent key={uuidv4()} />);
     }
-    return Array.from({ length: 2 }).map(() => (
-      <CardComponent key={uuidv4()} />
-    ));
+    return Array.from({ length: 2 }).map(() => <CardComponent key={uuidv4()} />);
   }, [hasOverflowCards]);
 
   return (

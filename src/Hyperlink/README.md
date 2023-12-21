@@ -30,11 +30,7 @@ notes: |
 ### blank target without Icon
 
 ```jsx live
-<Hyperlink
-  destination="https://www.edx.org"
-  target="_blank"
-  showLaunchIcon={false}
->
+<Hyperlink destination="https://www.edx.org" target="_blank" showLaunchIcon={false}>
   edX.org
 </Hyperlink>
 ```
@@ -58,12 +54,7 @@ notes: |
 
 ```jsx live
 <Hyperlink destination="https://www.edx.org">
-  <Icon
-    id="SampleIcon"
-    src={Add}
-    className="fa fa-book"
-    screenReaderText="Visit edX Home"
-  />
+  <Icon id="SampleIcon" src={Add} className="fa fa-book" screenReaderText="Visit edX Home" />
 </Hyperlink>
 ```
 

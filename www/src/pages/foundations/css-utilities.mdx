@@ -118,10 +118,7 @@ import CSSUtilitiesTable from '../../components/CSSUtilitiesTable';
 
 export const pageQuery = graphql`
   {
-    utilities: allCssUtilityClasses(
-      filter: { isUtility: { eq: true } }
-      sort: { fields: selector, order: ASC }
-    ) {
+    utilities: allCssUtilityClasses(filter: { isUtility: { eq: true } }, sort: { fields: selector, order: ASC }) {
       nodes {
         selector
         declarations

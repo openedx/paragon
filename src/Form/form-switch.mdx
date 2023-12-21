@@ -40,13 +40,7 @@ underlying `input` node. See MDN for documentation on available
 () => {
   const [isChecked, setChecked] = useState(false);
   const handleChange = (e) => setChecked(e.target.checked);
-  return (
-    <SwitchControl
-      checked={isChecked}
-      onChange={handleChange}
-      aria-label="Form switch"
-    />
-  );
+  return <SwitchControl checked={isChecked} onChange={handleChange} aria-label="Form switch" />;
 };
 ```
 
@@ -88,11 +82,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 <Form.Group>
   <Form.Label>Which Color?</Form.Label>
-  <Form.SwitchSet
-    name="color-two"
-    onChange={(e) => console.log(e.target.value)}
-    defaultValue={['green']}
-  >
+  <Form.SwitchSet name="color-two" onChange={(e) => console.log(e.target.value)} defaultValue={['green']}>
     <Form.Switch value="red">Red</Form.Switch>
     <Form.Switch value="green">Green</Form.Switch>
     <Form.Switch value="blue">Blue</Form.Switch>
@@ -108,9 +98,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 () => {
   const allCheeseOptions = ['swiss', 'cheddar', 'pepperjack'];
-  const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues([
-    'swiss',
-  ]);
+  const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues(['swiss']);
 
   const handleChange = (e) => {
     e.target.checked ? add(e.target.value) : remove(e.target.value);
@@ -120,30 +108,18 @@ underlying `input` node. See MDN for documentation on available
     e.target.checked ? set(allCheeseOptions) : clear();
   };
 
-  const allChecked = allCheeseOptions.every((value) =>
-    checkedCheeses.includes(value),
-  );
-  const someChecked = allCheeseOptions.some((value) =>
-    checkedCheeses.includes(value),
-  );
+  const allChecked = allCheeseOptions.every((value) => checkedCheeses.includes(value));
+  const someChecked = allCheeseOptions.some((value) => checkedCheeses.includes(value));
   const isIndeterminate = someChecked && !allChecked;
 
   return (
     <>
       <div className="d-flex">
-        <Form.Switch
-          checked={allChecked}
-          isIndeterminate={isIndeterminate}
-          onChange={handleCheckAllChange}
-        >
+        <Form.Switch checked={allChecked} isIndeterminate={isIndeterminate} onChange={handleCheckAllChange}>
           All the cheese
         </Form.Switch>
       </div>
-      <Form.SwitchSet
-        className="p-2"
-        value={checkedCheeses}
-        onChange={handleChange}
-      >
+      <Form.SwitchSet className="p-2" value={checkedCheeses} onChange={handleChange}>
         <Form.Switch value="swiss">Swiss</Form.Switch>
         <Form.Switch value="cheddar">Cheddar</Form.Switch>
         <Form.Switch value="pepperjack">Pepperjack</Form.Switch>
@@ -158,12 +134,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 <Form.Group>
   <Form.Label>Which Color?</Form.Label>
-  <Form.SwitchSet
-    name="color-three"
-    onChange={(e) => console.log(e.target.value)}
-    defaultValue={['green']}
-    isInline
-  >
+  <Form.SwitchSet name="color-three" onChange={(e) => console.log(e.target.value)} defaultValue={['green']} isInline>
     <Form.Switch value="red">Red</Form.Switch>
     <Form.Switch value="green">Green</Form.Switch>
     <Form.Switch value="blue">Blue</Form.Switch>
@@ -197,16 +168,10 @@ A helper text component can be passed in to be rendered below the switch control
 ```jsx live
 <Form.Group>
   <Form.SwitchSet>
-    <Form.Switch
-      value="red"
-      helperText={<span>Helper text for red switch</span>}
-    >
+    <Form.Switch value="red" helperText={<span>Helper text for red switch</span>}>
       Red
     </Form.Switch>
-    <Form.Switch
-      value="blue"
-      helperText={<span>Helper text for blue switch</span>}
-    >
+    <Form.Switch value="blue" helperText={<span>Helper text for blue switch</span>}>
       Blue
     </Form.Switch>
   </Form.SwitchSet>

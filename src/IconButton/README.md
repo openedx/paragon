@@ -16,17 +16,7 @@ notes: ''
 
 ```jsx live
 () => {
-  const variants = [
-    'brand',
-    'primary',
-    'secondary',
-    'success',
-    'warning',
-    'danger',
-    'light',
-    'dark',
-    'black',
-  ];
+  const variants = ['brand', 'primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black'];
   return (
     <div className="d-flex flex-wrap">
       {variants.map((variant) => (
@@ -49,17 +39,7 @@ notes: ''
 
 ```jsx live
 () => {
-  const variants = [
-    'brand',
-    'primary',
-    'secondary',
-    'success',
-    'warning',
-    'danger',
-    'light',
-    'dark',
-    'black',
-  ];
+  const variants = ['brand', 'primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black'];
   return (
     <div className="d-flex">
       {variants.map((variant) => (
@@ -84,17 +64,7 @@ notes: ''
 
 ```jsx live
 () => {
-  const variants = [
-    'brand',
-    'primary',
-    'secondary',
-    'success',
-    'warning',
-    'danger',
-    'light',
-    'dark',
-    'black',
-  ];
+  const variants = ['brand', 'primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black'];
   return (
     <div className="d-flex">
       {variants.map((variant) => (
@@ -118,17 +88,7 @@ notes: ''
 
 ```jsx live
 () => {
-  const variants = [
-    'brand',
-    'primary',
-    'secondary',
-    'success',
-    'warning',
-    'danger',
-    'light',
-    'dark',
-    'black',
-  ];
+  const variants = ['brand', 'primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black'];
   return (
     <div className="d-flex">
       {variants.map((variant) => (
@@ -242,38 +202,17 @@ notes: ''
 <>
   <div className="mb-1">
     Small
-    <IconButton
-      src={MenuIcon}
-      iconAs={Icon}
-      alt="Menu"
-      onClick={() => {}}
-      variant="primary"
-      size="sm"
-    />
+    <IconButton src={MenuIcon} iconAs={Icon} alt="Menu" onClick={() => {}} variant="primary" size="sm" />
   </div>
   <div className="mb-1">
     Inline:
-    <IconButton
-      src={MenuIcon}
-      iconAs={Icon}
-      alt="Menu"
-      onClick={() => {}}
-      variant="primary"
-      size="inline"
-    />
+    <IconButton src={MenuIcon} iconAs={Icon} alt="Menu" onClick={() => {}} variant="primary" size="inline" />
   </div>
   <div className="x-small mb-1">
-    An <strong>inline</strong> Icon Button inherits font size! For example,
-    applying className="x-small" will make the Icon Button look like this:
-    <IconButton
-      src={Favorite}
-      iconAs={Icon}
-      alt="Favorite"
-      onClick={() => {}}
-      variant="primary"
-      size="inline"
-    />. The Icon Button will also wrap with the text as long as it is not a direct
-    child of a flex box.
+    An <strong>inline</strong> Icon Button inherits font size! For example, applying className="x-small" will make the
+    Icon Button look like this:
+    <IconButton src={Favorite} iconAs={Icon} alt="Favorite" onClick={() => {}} variant="primary" size="inline" />. The Icon
+    Button will also wrap with the text as long as it is not a direct child of a flex box.
   </div>
 </>
 ```

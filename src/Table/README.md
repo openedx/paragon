@@ -45,8 +45,7 @@ notes: |
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for:
-        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ]}
   columns={[
@@ -110,8 +109,7 @@ notes: |
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for:
-        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ]}
   columns={[
@@ -176,8 +174,7 @@ notes: |
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for:
-        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ]}
   columns={[
@@ -242,8 +239,7 @@ notes: |
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for:
-        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ]}
   columns={[
@@ -308,8 +304,7 @@ notes: |
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for:
-        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ];
 
@@ -406,8 +401,7 @@ notes: |
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for:
-        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ]}
   columns={[
@@ -472,8 +466,7 @@ notes: |
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for:
-        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
   ]}
   columns={[

@@ -23,8 +23,6 @@ notes: |
 ```jsx live
 <Figure>
   <Figure.Image alt="nature flower" src="https://picsum.photos/200/200/" />
-  <Figure.Caption>
-    Nulla vitae elit libero, a pharetra augue mollis interdum.
-  </Figure.Caption>
+  <Figure.Caption>Nulla vitae elit libero, a pharetra augue mollis interdum.</Figure.Caption>
 </Figure>
 ```

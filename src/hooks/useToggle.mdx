@@ -32,11 +32,7 @@ Toggle a boolean value on or off with handlers
     <div>
       <p>
         Toggle is
-        {isOn ? (
-          <Badge variant="success">On</Badge>
-        ) : (
-          <Badge variant="light">Off</Badge>
-        )}
+        {isOn ? <Badge variant="success">On</Badge> : <Badge variant="light">Off</Badge>}
       </p>
 
       <Button onClick={setOn} className="mr-2" variant="outline-primary">
@@ -61,25 +57,17 @@ Toggle a boolean value on or off with handlers
 
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.ImageCap
-        src="https://picsum.photos/400/200/"
-        srcAlt="Image description"
-      />
+      <Card.ImageCap src="https://picsum.photos/400/200/" srcAlt="Image description" />
       <Card.Header title="Card Title" />
       <Card.Section>
-        <p>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         {isOpen ? (
           <>
             <p>
-              Poutine cred portland heirloom seitan sartorial 90's cray.
-              Humblebrag blue bottle venmo, cloud bread cronut neutra sartorial
-              whatever slow-carb tattooed cliche helvetica poutine squid. Direct
-              trade health goth gentrify kitsch, heirloom blog umami synth ennui
-              seitan messenger bag. Literally poutine slow-carb, hexagon
-              leggings seitan readymade.
+              Poutine cred portland heirloom seitan sartorial 90's cray. Humblebrag blue bottle venmo, cloud bread
+              cronut neutra sartorial whatever slow-carb tattooed cliche helvetica poutine squid. Direct trade health
+              goth gentrify kitsch, heirloom blog umami synth ennui seitan messenger bag. Literally poutine slow-carb,
+              hexagon leggings seitan readymade.
             </p>
             <Button block variant="outline-primary" onClick={close}>
               Close

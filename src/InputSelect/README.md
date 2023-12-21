@@ -15,12 +15,7 @@ notes: |
 ## Basic usage
 
 ```jsx live
-<InputSelect
-  name="fruits"
-  label="Fruits"
-  value="strawberry"
-  options={['apple', 'orange', 'strawberry', 'banana']}
-/>
+<InputSelect name="fruits" label="Fruits" value="strawberry" options={['apple', 'orange', 'strawberry', 'banana']} />
 ```
 
 ## Separate labels and values

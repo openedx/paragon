@@ -32,9 +32,7 @@ ActionRow can also be used with a helper component `ActionRow.Spacer` to insert 
 
 ```jsx live
 <ActionRow>
-  <Form.Checkbox className="flex-column flex-sm-row">
-    Don't ask me again.
-  </Form.Checkbox>
+  <Form.Checkbox className="flex-column flex-sm-row">Don't ask me again.</Form.Checkbox>
   <ActionRow.Spacer />
   <Button variant="tertiary">Cancel</Button>
   <Button variant="primary">Submit</Button>
@@ -45,10 +43,7 @@ ActionRow can also be used with a helper component `ActionRow.Spacer` to insert 
 
 ```jsx live
 <ActionRow isStacked>
-  <p className="x-small">
-    Bespoke leggings yuccie, portland umami readymade craft beer vaporware
-    sriracha.
-  </p>
+  <p className="x-small">Bespoke leggings yuccie, portland umami readymade craft beer vaporware sriracha.</p>
   <Button variant="tertiary">Go back</Button>
   <Button variant="primary">Continue</Button>
 </ActionRow>

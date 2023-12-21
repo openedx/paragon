@@ -42,11 +42,7 @@ visibility is toggled. The returned boolean value of the element's visibility is
         </Button>
         <p>Is element visible? {isElementVisible ? 'yes' : 'no'}</p>
       </div>
-      <div
-        ref={elementVisibleRef}
-        className="p-1 border"
-        style={{ display: isHidden ? 'none' : 'block' }}
-      >
+      <div ref={elementVisibleRef} className="p-1 border" style={{ display: isHidden ? 'none' : 'block' }}>
         Visible element
       </div>
     </>

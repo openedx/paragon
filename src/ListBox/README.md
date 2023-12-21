@@ -74,11 +74,7 @@ class ListBoxWrapperForOnSelect extends React.Component {
 
   render() {
     const children = Object.keys(this.fruits).map((fruit, index) => (
-      <ListBoxOption
-        key={fruit}
-        onSelect={() => this.onSelect(fruit, index)}
-        style={{ textAlign: 'center' }}
-      >
+      <ListBoxOption key={fruit} onSelect={() => this.onSelect(fruit, index)} style={{ textAlign: 'center' }}>
         {fruit}
       </ListBoxOption>
     ));
@@ -90,9 +86,7 @@ class ListBoxWrapperForOnSelect extends React.Component {
           {this.state.selectedOptionIndex === undefined ? (
             <span className="sr-only">none</span>
           ) : (
-            <span
-              arialabelledby={`list-box-option-${this.state.selectedOptionIndex}`}
-            >
+            <span arialabelledby={`list-box-option-${this.state.selectedOptionIndex}`}>
               {this.getSelectedFruitEmoji(this.state.selectedOption)}
             </span>
           )}
@@ -140,11 +134,7 @@ class ListBoxWrapperForSelectedOptionIndex extends React.Component {
 
   render() {
     const children = this.fruits.map((fruit) => (
-      <ListBoxOption
-        key={fruit}
-        onSelect={this.onSelect}
-        style={{ textAlign: 'center' }}
-      >
+      <ListBoxOption key={fruit} onSelect={this.onSelect} style={{ textAlign: 'center' }}>
         {fruit}
       </ListBoxOption>
     ));
@@ -154,10 +144,7 @@ class ListBoxWrapperForSelectedOptionIndex extends React.Component {
         <Button variant="primary" onClick={this.onButtonClick}>
           Click me to reset your selected fruit!
         </Button>
-        <ListBox
-          selectedOptionIndex={this.state.reset ? null : undefined}
-          style={{ margin: '10px' }}
-        >
+        <ListBox selectedOptionIndex={this.state.reset ? null : undefined} style={{ margin: '10px' }}>
           {children}
         </ListBox>
       </React.Fragment>

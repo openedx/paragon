@@ -64,9 +64,7 @@ The checkpoint objects themselves have additional props that can override the pr
   return (
     <>
       <ProductTour tours={[myFirstTour]} />
-      <Button onClick={() => setIsTourEnabled(true)}>
-        Open a product tour
-      </Button>
+      <Button onClick={() => setIsTourEnabled(true)}>Open a product tour</Button>
       <Row className="w-100 m-0 mt-3 p-2 justify-content-around">
         <div id="checkpoint-1">
           <Icon src={Check} />

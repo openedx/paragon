@@ -45,11 +45,7 @@ notes: |
 ## with subject and body
 
 ```jsx live
-<MailtoLink
-  to="edx@example.com"
-  subject="Check out this mailto component!"
-  body="This mailto component is awesome!"
->
+<MailtoLink to="edx@example.com" subject="Check out this mailto component!" body="This mailto component is awesome!">
   email with subject and body
 </MailtoLink>
 ```

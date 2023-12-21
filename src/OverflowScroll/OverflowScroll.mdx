@@ -23,13 +23,7 @@ The following example demonstrates how to use `OverflowScroll` and `OverflowScro
 ```jsx live
 () => {
   const ExampleItem = ({ className }) => (
-    <div
-      className={classNames(
-        'example-item border flex-shrink-0 text-center',
-        className,
-      )}
-      style={{ width: 160 }}
-    >
+    <div className={classNames('example-item border flex-shrink-0 text-center', className)} style={{ width: 160 }}>
       Item
     </div>
   );
@@ -44,21 +38,11 @@ The following example demonstrates how to use `OverflowScroll` and `OverflowScro
   };
 
   const OverflowScrollControls = () => {
-    const {
-      isScrolledToStart,
-      isScrolledToEnd,
-      scrollToPrevious,
-      scrollToNext,
-    } = useContext(OverflowScrollContext);
+    const { isScrolledToStart, isScrolledToEnd, scrollToPrevious, scrollToNext } = useContext(OverflowScrollContext);
 
     return (
       <div className="mb-3">
-        <Button
-          onClick={scrollToPrevious}
-          disabled={isScrolledToStart}
-          size="sm"
-          className="mr-2"
-        >
+        <Button onClick={scrollToPrevious} disabled={isScrolledToStart} size="sm" className="mr-2">
           Previous
         </Button>
         <Button onClick={scrollToNext} disabled={isScrolledToEnd} size="sm">

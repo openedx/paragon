@@ -86,8 +86,7 @@ for more information.
       {
         name: 'Long Cat',
         color: 'russian white',
-        famous_for:
-          'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+        famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
       },
       {
         name: 'Zeno',
@@ -250,11 +249,7 @@ To enable proper selection behavior with backend pagination (i.e., when `isSelec
   };
 
   const DownloadCSVAction = ({ as: Component, selectedFlatRows, ...rest }) => (
-    <Component
-      onClick={() => console.log('Download CSV', selectedFlatRows, rest)}
-    >
-      Download CSV
-    </Component>
+    <Component onClick={() => console.log('Download CSV', selectedFlatRows, rest)}>Download CSV</Component>
   );
 
   const ClearAction = ({ as: Component, tableInstance, ...rest }) => (
@@ -330,10 +325,7 @@ See `dataViewToggleOptions` props documentation for all supported props.
 
     return (
       <Card className={className}>
-        <Card.ImageCap
-          src="https://picsum.photos/360/200/"
-          srcAlt="Card image"
-        />
+        <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
         <Card.Header title={name} />
         <Card.Section>
           <dl>
@@ -618,31 +610,20 @@ You can pass a function to render custom components for bulk actions and table a
 () => {
   const TableAction = ({ tableInstance }) => (
     // Here is access to the tableInstance
-    <Button onClick={() => console.log('TableAction', tableInstance)}>
-      Enroll
-    </Button>
+    <Button onClick={() => console.log('TableAction', tableInstance)}>Enroll</Button>
   );
 
   const EnrollAction = ({ selectedFlatRows, ...rest }) => (
     // Here is access to the selectedFlatRows, isEntireTableSelected, tableInstance
-    <Button
-      variant="danger"
-      onClick={() => console.log('Enroll', selectedFlatRows, rest)}
-    >
+    <Button variant="danger" onClick={() => console.log('Enroll', selectedFlatRows, rest)}>
       Enroll
     </Button>
   );
 
-  const AssignAction = (props) => (
-    <Button onClick={() => console.log('Assign', props)}>Assign</Button>
-  );
+  const AssignAction = (props) => <Button onClick={() => console.log('Assign', props)}>Assign</Button>;
 
   const ExtraAction = ({ text, selectedFlatRows, ...rest }) => (
-    <Button
-      onClick={() =>
-        console.log(`Extra Action ${text}`, selectedFlatRows, rest)
-      }
-    >
+    <Button onClick={() => console.log(`Extra Action ${text}`, selectedFlatRows, rest)}>
       {`Extra Action ${text}`}
     </Button>
   );
@@ -652,22 +633,13 @@ You can pass a function to render custom components for bulk actions and table a
       isSelectable
       itemCount={7}
       tableActions={[<TableAction />]}
-      bulkActions={[
-        <EnrollAction />,
-        <AssignAction />,
-        <ExtraAction text="1" />,
-        <ExtraAction text="2" />,
-      ]}
+      bulkActions={[<EnrollAction />, <AssignAction />, <ExtraAction text="1" />, <ExtraAction text="2" />]}
       additionalColumns={[
         {
           id: 'action',
           Header: 'Action',
           Cell: ({ row }) => (
-            <Button
-              variant="link"
-              size="sm"
-              onClick={() => console.log(`Assigning ${row.values.name}`)}
-            >
+            <Button variant="link" size="sm" onClick={() => console.log(`Assigning ${row.values.name}`)}>
               Assign
             </Button>
           ),
@@ -702,8 +674,7 @@ You can pass a function to render custom components for bulk actions and table a
         {
           name: 'Long Cat',
           color: 'russian white',
-          famous_for:
-            'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+          famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
         },
         {
           name: 'Zeno',
@@ -748,26 +719,17 @@ You can pass a function to render custom components for bulk actions and table a
 
   const EnrollAction = ({ selectedFlatRows, ...rest }) => (
     // Here is access to the selectedFlatRows, isEntireTableSelected, tableInstance
-    <Button
-      variant="danger"
-      onClick={() => console.log('Enroll', selectedFlatRows, rest)}
-    >
+    <Button variant="danger" onClick={() => console.log('Enroll', selectedFlatRows, rest)}>
       Enroll ({selectedFlatRows.length})
     </Button>
   );
 
   const AssignAction = ({ selectedFlatRows, ...rest }) => (
-    <Button onClick={() => console.log('Assign', selectedFlatRows, rest)}>
-      Assign ({selectedFlatRows.length})
-    </Button>
+    <Button onClick={() => console.log('Assign', selectedFlatRows, rest)}>Assign ({selectedFlatRows.length})</Button>
   );
 
   const ExtraAction = ({ text, selectedFlatRows, ...rest }) => (
-    <Button
-      onClick={() =>
-        console.log(`Extra Action ${text}`, selectedFlatRows, rest)
-      }
-    >
+    <Button onClick={() => console.log(`Extra Action ${text}`, selectedFlatRows, rest)}>
       {`Extra Action ${text}`}
     </Button>
   );
@@ -794,11 +756,7 @@ You can pass a function to render custom components for bulk actions and table a
           id: 'action',
           Header: 'Action',
           Cell: ({ row }) => (
-            <Button
-              variant="link"
-              size="sm"
-              onClick={() => console.log(`Assigning ${row.values.name}`)}
-            >
+            <Button variant="link" size="sm" onClick={() => console.log(`Assigning ${row.values.name}`)}>
               Assign
             </Button>
           ),
@@ -833,8 +791,7 @@ You can pass a function to render custom components for bulk actions and table a
         {
           name: 'Long Cat',
           color: 'russian white',
-          famous_for:
-            'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+          famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
         },
         {
           name: 'Zeno',
@@ -882,11 +839,7 @@ a responsive grid of cards.
 ```jsx live
 () => {
   const DownloadCSVAction = ({ as: Component, selectedFlatRows, ...rest }) => (
-    <Component
-      onClick={() => console.log('Download CSV', selectedFlatRows, rest)}
-    >
-      Download CSV
-    </Component>
+    <Component onClick={() => console.log('Download CSV', selectedFlatRows, rest)}>Download CSV</Component>
   );
 
   const ClearAction = ({ as: Component, tableInstance, ...rest }) => (
@@ -912,13 +865,7 @@ a responsive grid of cards.
         pageIndex: 0,
       }}
       itemCount={20}
-      fetchData={(data) =>
-        console.log(
-          `This function will be called with the value: ${JSON.stringify(
-            data,
-          )}}`,
-        )
-      }
+      fetchData={(data) => console.log(`This function will be called with the value: ${JSON.stringify(data)}}`)}
       data={[
         {
           id: '2baf70d1-42bb-4437-b551-e5fed5a87abe',
@@ -1120,10 +1067,7 @@ Use `columnSizes` prop of `CardView` component to define how many `Cards` are sh
 
     return (
       <Card className={className}>
-        <Card.ImageCap
-          src="https://picsum.photos/360/200/"
-          srcAlt="Card image"
-        />
+        <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
         <Card.Body>
           <Card.Header title={name} />
           <Card.Section>
@@ -1208,10 +1152,7 @@ You can also display `Cards` with horizontal view. If the table is selectable co
 
     return (
       <Card className={className} orientation="horizontal">
-        <Card.ImageCap
-          src="https://picsum.photos/360/200/"
-          srcAlt="Card image"
-        />
+        <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
         <Card.Body>
           <Card.Header title={name} />
           <Card.Section>
@@ -1266,11 +1207,7 @@ You can also display `Cards` with horizontal view. If the table is selectable co
       ]}
     >
       <TableControlBar />
-      <CardView
-        CardComponent={ExampleCard}
-        columnSizes={columnSizes}
-        selectionPlacement="left"
-      />
+      <CardView CardComponent={ExampleCard} columnSizes={columnSizes} selectionPlacement="left" />
       <TableFooter />
     </DataTable>
   );
@@ -1371,9 +1308,7 @@ Here we use default expander column offered by Paragon and for each row render v
 <DataTable
   isExpandable
   itemCount={7}
-  renderRowSubComponent={({ row }) => (
-    <div className="text-center">{row.values.name}</div>
-  )}
+  renderRowSubComponent={({ row }) => <div className="text-center">{row.values.name}</div>}
   data={[
     {
       name: 'Lil Bub',
@@ -1403,8 +1338,7 @@ Here we use default expander column offered by Paragon and for each row render v
     {
       name: 'Long Cat',
       color: 'russian white',
-      famous_for:
-        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      famous_for: 'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
     },
     {
       name: 'Zeno',
@@ -1448,16 +1382,10 @@ You can create your own custom expander column and use it, see code example belo
     id: 'expander',
     // getToggleAllRowsExpandedProps and isAllRowsExpanded props will be automatically passed to the component
     Header: ({ getToggleAllRowsExpandedProps, isAllRowsExpanded }) => (
-      <span {...getToggleAllRowsExpandedProps()}>
-        {isAllRowsExpanded ? <Remove /> : <Add />}
-      </span>
+      <span {...getToggleAllRowsExpandedProps()}>{isAllRowsExpanded ? <Remove /> : <Add />}</span>
     ),
     // Cell will receive row prop
-    Cell: ({ row }) => (
-      <span {...row.getToggleRowExpandedProps()}>
-        {row.isExpanded ? 'Collapse' : 'Expand'}
-      </span>
-    ),
+    Cell: ({ row }) => <span {...row.getToggleRowExpandedProps()}>{row.isExpanded ? 'Collapse' : 'Expand'}</span>,
   };
 
   const currentDate = new Date().toDateString();
@@ -1581,27 +1509,15 @@ You can create your own cell content by passing the `Cell` property to a specifi
       columns={[
         {
           Header: 'Name',
-          Cell: ({ row }) => (
-            <Badge variant={variants[cellColors[row.id] % 4]}>
-              {row.original.name}
-            </Badge>
-          ),
+          Cell: ({ row }) => <Badge variant={variants[cellColors[row.id] % 4]}>{row.original.name}</Badge>,
         },
         {
           Header: 'Famous For',
-          Cell: ({ row }) => (
-            <Badge variant={variants[(cellColors[row.id] + 1) % 4]}>
-              {row.original.famous_for}
-            </Badge>
-          ),
+          Cell: ({ row }) => <Badge variant={variants[(cellColors[row.id] + 1) % 4]}>{row.original.famous_for}</Badge>,
         },
         {
           Header: 'Coat Color',
-          Cell: ({ row }) => (
-            <Badge variant={variants[(cellColors[row.id] + 2) % 4]}>
-              {row.original.color}
-            </Badge>
-          ),
+          Cell: ({ row }) => <Badge variant={variants[(cellColors[row.id] + 2) % 4]}>{row.original.color}</Badge>,
         },
       ]}
       additionalColumns={[
@@ -1609,11 +1525,7 @@ You can create your own cell content by passing the `Cell` property to a specifi
           id: 'action',
           Header: 'Action',
           Cell: ({ row }) => (
-            <Button
-              variant="link"
-              size="sm"
-              onClick={() => handleColorChange(row.id)}
-            >
+            <Button variant="link" size="sm" onClick={() => handleColorChange(row.id)}>
               Change
             </Button>
           ),

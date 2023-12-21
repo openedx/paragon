@@ -43,11 +43,7 @@ notes: |
   const [key, setKey] = useState('home');
 
   return (
-    <Tabs
-      id="controlled-tab-example"
-      activeKey={key}
-      onSelect={(k) => setKey(k)}
-    >
+    <Tabs id="controlled-tab-example" activeKey={key} onSelect={(k) => setKey(k)}>
       <Tab eventKey="home" title="Home">
         Hello I am the first panel.
       </Tab>
@@ -65,11 +61,7 @@ notes: |
 ## Button group usage
 
 ```jsx live
-<Tabs
-  defaultActiveKey="profile"
-  id="uncontrolled-pills-tab-example"
-  variant="button-group"
->
+<Tabs defaultActiveKey="profile" id="uncontrolled-pills-tab-example" variant="button-group">
   <Tab eventKey="home" title="Home">
     Hello I am the first panel.
   </Tab>
@@ -85,11 +77,7 @@ notes: |
 ## Pills usage
 
 ```jsx live
-<Tabs
-  defaultActiveKey="profile"
-  id="uncontrolled-pills-tab-example"
-  variant="pills"
->
+<Tabs defaultActiveKey="profile" id="uncontrolled-pills-tab-example" variant="pills">
   <Tab eventKey="home" title="Home">
     Hello I am the first panel.
   </Tab>
@@ -106,11 +94,7 @@ notes: |
 
 ```jsx live
 <Stack className="bg-dark-700 p-4">
-  <Tabs
-    variant="inverse-pills"
-    defaultActiveKey="profile"
-    id="uncontrolled-pills-tab-example"
-  >
+  <Tabs variant="inverse-pills" defaultActiveKey="profile" id="uncontrolled-pills-tab-example">
     <Tab eventKey="home" title="Home">
       Hello I am the first panel.
     </Tab>
@@ -128,11 +112,7 @@ notes: |
 
 ```jsx live
 <Stack className="bg-dark-700 p-4">
-  <Tabs
-    variant="inverse-tabs"
-    defaultActiveKey="profile"
-    id="uncontrolled-pills-tab-example"
-  >
+  <Tabs variant="inverse-tabs" defaultActiveKey="profile" id="uncontrolled-pills-tab-example">
     <Tab eventKey="home" title="Home">
       Hello I am the first panel.
     </Tab>

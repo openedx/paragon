@@ -28,12 +28,7 @@ notes: |
 ```jsx live
 <div>
   <Chip iconBefore={Person}>New</Chip>
-  <Chip
-    variant="dark"
-    iconBefore={Person}
-    iconAfter={Close}
-    onIconAfterClick={() => console.log('Remove Chip')}
-  >
+  <Chip variant="dark" iconBefore={Person} iconAfter={Close} onIconAfterClick={() => console.log('Remove Chip')}>
     New
   </Chip>
   <Chip

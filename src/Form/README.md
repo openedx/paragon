@@ -29,17 +29,13 @@ notes: |
 
     <Form.Group as={Col} controlId="formGridPassword" isInvalid>
       <Form.Control type="password" floatingLabel="Password" />
-      <Form.Control.Feedback type="invalid">
-        We don't like that password. Try a different one.
-      </Form.Control.Feedback>
+      <Form.Control.Feedback type="invalid">We don't like that password. Try a different one.</Form.Control.Feedback>
     </Form.Group>
   </Form.Row>
 
   <Form.Group controlId="formGridAddress1" isValid>
     <Form.Control floatingLabel="Address" />
-    <Form.Control.Feedback type="valid">
-      This is a nice place!
-    </Form.Control.Feedback>
+    <Form.Control.Feedback type="valid">This is a nice place!</Form.Control.Feedback>
   </Form.Group>
 
   <Form.Row>
@@ -100,18 +96,14 @@ notes: |
     <Form.Group isInvalid as={Col} controlId="formGridPassword-2">
       <Form.Label>Password</Form.Label>
       <Form.Control type="password" placeholder="Password" />
-      <Form.Control.Feedback type="invalid">
-        We don't like that password. Try a different one.
-      </Form.Control.Feedback>
+      <Form.Control.Feedback type="invalid">We don't like that password. Try a different one.</Form.Control.Feedback>
     </Form.Group>
   </Form.Row>
 
   <Form.Group controlId="formGridAddress1-2">
     <Form.Label>Address</Form.Label>
     <Form.Control placeholder="1234 Main St" />
-    <Form.Control.Feedback type="valid">
-      This is a nice place!
-    </Form.Control.Feedback>
+    <Form.Control.Feedback type="valid">This is a nice place!</Form.Control.Feedback>
   </Form.Group>
 
   <Form.Row>

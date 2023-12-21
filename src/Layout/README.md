@@ -39,9 +39,7 @@ A wrapper component that allows to control the size of child blocks on different
   xl={[{ span: 3 }, { span: 6 }, { span: 3 }]}
 >
   <Layout.Element style={{ background: '#FFD89E' }}>first block</Layout.Element>
-  <Layout.Element style={{ background: '#4CAF50' }}>
-    second block
-  </Layout.Element>
+  <Layout.Element style={{ background: '#4CAF50' }}>second block</Layout.Element>
   <Layout.Element style={{ background: '#FFEB3B' }}>third block</Layout.Element>
 </Layout>
 ```

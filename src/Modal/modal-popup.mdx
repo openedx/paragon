@@ -32,10 +32,7 @@ A proper way to implement this is to use [callback refs](https://reactjs.org/doc
         </Button>
       </div>
       <ModalPopup positionRef={target} isOpen={isOpen} onClose={close}>
-        <div
-          className="bg-white p-3 rounded shadow"
-          style={{ textAlign: 'start' }}
-        >
+        <div className="bg-white p-3 rounded shadow" style={{ textAlign: 'start' }}>
           <p>This could be a menu or tray.</p>
 
           <Button variant="primary" className="mie-2">
@@ -65,17 +62,8 @@ The arrow modifier positions an inner element of the modal popup so it appears c
           Open modal popup
         </Button>
       </div>
-      <ModalPopup
-        hasArrow
-        placement="right"
-        positionRef={target}
-        isOpen={isOpen}
-        onClose={close}
-      >
-        <div
-          className="bg-white p-3 rounded shadow border"
-          style={{ textAlign: 'start' }}
-        >
+      <ModalPopup hasArrow placement="right" positionRef={target} isOpen={isOpen} onClose={close}>
+        <div className="bg-white p-3 rounded shadow border" style={{ textAlign: 'start' }}>
           <p>This could be a menu or tray.</p>
 
           <Button variant="primary" className="mie-2">

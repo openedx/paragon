@@ -97,9 +97,7 @@ This is the default style if no `styling` prop is supplied.
 <Collapsible
   title="Toggle Collapsible"
   defaultOpen
-  onToggle={(isOpen) =>
-    console.log('Collapsible toggled and open is: ', isOpen)
-  }
+  onToggle={(isOpen) => console.log('Collapsible toggled and open is: ', isOpen)}
   onOpen={() => console.log('Collapsible opened.')}
   onClose={() => console.log('Collapsible closed.')}
 >
@@ -165,9 +163,7 @@ See the developer console for logging.
 ```jsx live
 <Collapsible.Advanced
   className="collapsible-card-lg"
-  onToggle={(isOpen) =>
-    console.log('Collapsible toggled and open is: ', isOpen)
-  }
+  onToggle={(isOpen) => console.log('Collapsible toggled and open is: ', isOpen)}
   onOpen={() => console.log('Collapsible opened.')}
   onClose={() => console.log('Collapsible closed.')}
 >

@@ -87,10 +87,7 @@ The order of steps is dictated by the order of `Stepper.Step` components in the 
         </Stepper.ActionRow>
 
         <Stepper.ActionRow eventKey="choose-cats">
-          <Button
-            variant="outline-primary"
-            onClick={() => setCurrentStep('welcome')}
-          >
+          <Button variant="outline-primary" onClick={() => setCurrentStep('welcome')}>
             Previous
           </Button>
           <Stepper.ActionRow.Spacer />
@@ -98,10 +95,7 @@ The order of steps is dictated by the order of `Stepper.Step` components in the 
         </Stepper.ActionRow>
 
         <Stepper.ActionRow eventKey="review">
-          <Button
-            variant="outline-primary"
-            onClick={() => setCurrentStep('choose-cats')}
-          >
+          <Button variant="outline-primary" onClick={() => setCurrentStep('choose-cats')}>
             Previous
           </Button>
           <Stepper.ActionRow.Spacer />
@@ -132,29 +126,17 @@ implement navigation between steps by clicking on their headers.
       <Stepper.Header />
 
       <Container size="sm" className="py-5">
-        <Stepper.Step
-          onClick={() => setCurrentStep('introduction')}
-          eventKey="introduction"
-          title="Introduction"
-        >
+        <Stepper.Step onClick={() => setCurrentStep('introduction')} eventKey="introduction" title="Introduction">
           <h2>Introduction</h2>
           <HipsterIpsum numParagraphs={1} />
         </Stepper.Step>
 
-        <Stepper.Step
-          onClick={() => setCurrentStep('benefits')}
-          eventKey="benefits"
-          title="Benefits"
-        >
+        <Stepper.Step onClick={() => setCurrentStep('benefits')} eventKey="benefits" title="Benefits">
           <h2>Benefits</h2>
           <HipsterIpsum numParagraphs={1} />
         </Stepper.Step>
 
-        <Stepper.Step
-          onClick={() => setCurrentStep('finally')}
-          eventKey="finally"
-          title="Finally!"
-        >
+        <Stepper.Step onClick={() => setCurrentStep('finally')} eventKey="finally" title="Finally!">
           <h2>Finally</h2>
           <HipsterIpsum numParagraphs={1} />
         </Stepper.Step>
@@ -170,10 +152,7 @@ implement navigation between steps by clicking on their headers.
         </Stepper.ActionRow>
 
         <Stepper.ActionRow eventKey="benefits">
-          <Button
-            variant="outline-primary"
-            onClick={() => setCurrentStep('introduction')}
-          >
+          <Button variant="outline-primary" onClick={() => setCurrentStep('introduction')}>
             Previous
           </Button>
           <Stepper.ActionRow.Spacer />
@@ -181,10 +160,7 @@ implement navigation between steps by clicking on their headers.
         </Stepper.ActionRow>
 
         <Stepper.ActionRow eventKey="finally">
-          <Button
-            variant="outline-primary"
-            onClick={() => setCurrentStep('benefits')}
-          >
+          <Button variant="outline-primary" onClick={() => setCurrentStep('benefits')}>
             Previous
           </Button>
           <Stepper.ActionRow.Spacer />
@@ -258,12 +234,7 @@ implement navigation between steps by clicking on their headers.
           </Form.Checkbox>
         </Stepper.Step>
 
-        <Stepper.Step
-          eventKey="success"
-          title="Success!"
-          index={steps.indexOf('success')}
-          onClick={evaluateCheckbox}
-        >
+        <Stepper.Step eventKey="success" title="Success!" index={steps.indexOf('success')} onClick={evaluateCheckbox}>
           <h2>Success!</h2>
           <p>You may now complete this demo.</p>
         </Stepper.Step>
@@ -279,10 +250,7 @@ implement navigation between steps by clicking on their headers.
         </Stepper.ActionRow>
 
         <Stepper.ActionRow eventKey="success">
-          <Button
-            variant="outline-primary"
-            onClick={() => setCurrentStep('checkbox')}
-          >
+          <Button variant="outline-primary" onClick={() => setCurrentStep('checkbox')}>
             Previous
           </Button>
           <Stepper.ActionRow.Spacer />
@@ -315,9 +283,7 @@ A composition of a stepper with a `FullscreenModal`.
           className="bg-light-200"
           isOpen={isOpen}
           onClose={close}
-          beforeBodyNode={
-            <Stepper.Header className="border-bottom border-light" />
-          }
+          beforeBodyNode={<Stepper.Header className="border-bottom border-light" />}
           footerNode={
             <>
               <Stepper.ActionRow eventKey="welcome">
@@ -325,16 +291,11 @@ A composition of a stepper with a `FullscreenModal`.
                   Cancel
                 </Button>
                 <Stepper.ActionRow.Spacer />
-                <Button onClick={() => setCurrentStep('choose-cats')}>
-                  Next
-                </Button>
+                <Button onClick={() => setCurrentStep('choose-cats')}>Next</Button>
               </Stepper.ActionRow>
 
               <Stepper.ActionRow eventKey="choose-cats">
-                <Button
-                  variant="outline-primary"
-                  onClick={() => setCurrentStep('welcome')}
-                >
+                <Button variant="outline-primary" onClick={() => setCurrentStep('welcome')}>
                   Previous
                 </Button>
                 <Stepper.ActionRow.Spacer />
@@ -342,10 +303,7 @@ A composition of a stepper with a `FullscreenModal`.
               </Stepper.ActionRow>
 
               <Stepper.ActionRow eventKey="review">
-                <Button
-                  variant="outline-primary"
-                  onClick={() => setCurrentStep('choose-cats')}
-                >
+                <Button variant="outline-primary" onClick={() => setCurrentStep('choose-cats')}>
                   Previous
                 </Button>
                 <Stepper.ActionRow.Spacer />
@@ -441,11 +399,7 @@ also required for steps to rerender correctly here.
           </Form.Checkbox>
         </Stepper.Step>
 
-        <Stepper.Step
-          eventKey="success"
-          title="Success!"
-          index={steps.indexOf('success')}
-        >
+        <Stepper.Step eventKey="success" title="Success!" index={steps.indexOf('success')}>
           <h2>Success!</h2>
           <p>You may now complete this demo.</p>
         </Stepper.Step>
@@ -461,10 +415,7 @@ also required for steps to rerender correctly here.
         </Stepper.ActionRow>
 
         <Stepper.ActionRow eventKey="success">
-          <Button
-            variant="outline-primary"
-            onClick={() => setCurrentStep('checkbox')}
-          >
+          <Button variant="outline-primary" onClick={() => setCurrentStep('checkbox')}>
             Previous
           </Button>
           <Stepper.ActionRow.Spacer />

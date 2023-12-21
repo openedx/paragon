@@ -25,11 +25,7 @@ notes: |
 
   return (
     <>
-      <DropdownButton
-        id="position-dropdown-btn"
-        onSelect={setPosition}
-        title="Sheet Position"
-      >
+      <DropdownButton id="position-dropdown-btn" onSelect={setPosition} title="Sheet Position">
         {positions.map((position) => (
           <Dropdown.Item eventKey={position}>{position}</Dropdown.Item>
         ))}
@@ -52,10 +48,7 @@ notes: |
         onClose={() => setShow(false)}
       >
         This is a Sheet component <br />
-        <Button
-          onClick={() => setShow(false)}
-          variant={dark ? 'inverse-primary' : 'primary'}
-        >
+        <Button onClick={() => setShow(false)} variant={dark ? 'inverse-primary' : 'primary'}>
           Hide Me!
         </Button>
       </Sheet>

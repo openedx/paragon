@@ -27,19 +27,13 @@ Search allows users to quickly find content. The `Search field` is made up of th
 ## With an initial value
 
 ```jsx live
-<SearchField
-  onSubmit={(value) => console.log(`search submitted: ${value}`)}
-  value="foobar"
-/>
+<SearchField onSubmit={(value) => console.log(`search submitted: ${value}`)} value="foobar" />
 ```
 
 ## With a placeholder
 
 ```jsx live
-<SearchField
-  onSubmit={(value) => console.log(`search submitted: ${value}`)}
-  placeholder="foobar"
-/>
+<SearchField onSubmit={(value) => console.log(`search submitted: ${value}`)} placeholder="foobar" />
 ```
 
 ## With callbacks
@@ -57,10 +51,7 @@ Search allows users to quickly find content. The `Search field` is made up of th
 ## With a custom label
 
 ```jsx live
-<SearchField
-  onSubmit={(value) => console.log(`search submitted: ${value}`)}
-  label="Search:"
-/>
+<SearchField onSubmit={(value) => console.log(`search submitted: ${value}`)} label="Search:" />
 ```
 
 ## With custom screenreader text
@@ -79,10 +70,7 @@ Search allows users to quickly find content. The `Search field` is made up of th
 ## With the submit button outside the input
 
 ```jsx live
-<SearchField
-  submitButtonLocation="external"
-  onSubmit={(value) => console.log(`search submitted: ${value}`)}
-/>
+<SearchField submitButtonLocation="external" onSubmit={(value) => console.log(`search submitted: ${value}`)} />
 ```
 
 ## Advanced Usage
@@ -92,9 +80,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 ## With a custom label
 
 ```jsx live
-<SearchField.Advanced
-  onSubmit={(value) => console.log(`search submitted: ${value}`)}
->
+<SearchField.Advanced onSubmit={(value) => console.log(`search submitted: ${value}`)}>
   <SearchField.Label>Search:</SearchField.Label>
   <SearchField.Input />
   <SearchField.ClearButton />
@@ -105,10 +91,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 ## With an initial value
 
 ```jsx live
-<SearchField.Advanced
-  onSubmit={(value) => console.log(`search submitted: ${value}`)}
-  value="foobar"
->
+<SearchField.Advanced onSubmit={(value) => console.log(`search submitted: ${value}`)} value="foobar">
   <SearchField.Label>Search:</SearchField.Label>
   <SearchField.Input />
   <SearchField.ClearButton />
@@ -119,9 +102,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 ## With a placeholder
 
 ```jsx live
-<SearchField.Advanced
-  onSubmit={(value) => console.log(`search submitted: ${value}`)}
->
+<SearchField.Advanced onSubmit={(value) => console.log(`search submitted: ${value}`)}>
   <SearchField.Label>Search:</SearchField.Label>
   <SearchField.Input placeholder="foobar" />
   <SearchField.ClearButton />
@@ -132,9 +113,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 ## With no clear button
 
 ```jsx live
-<SearchField.Advanced
-  onSubmit={(value) => console.log(`search submitted: ${value}`)}
->
+<SearchField.Advanced onSubmit={(value) => console.log(`search submitted: ${value}`)}>
   <SearchField.Label />
   <SearchField.Input />
   <SearchField.SubmitButton />
@@ -144,9 +123,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 ## With no submit or clear buttons
 
 ```jsx live
-<SearchField.Advanced
-  onSubmit={(value) => console.log(`search submitted: ${value}`)}
->
+<SearchField.Advanced onSubmit={(value) => console.log(`search submitted: ${value}`)}>
   <SearchField.Label />
   <SearchField.Input />
 </SearchField.Advanced>
@@ -157,10 +134,7 @@ For needs that deviate from the basic usage above, use `<SearchField.Advanced />
 Use class `pgn__searchfield_wrapper` to group input elements apart from the submit button.
 
 ```jsx live
-<SearchField.Advanced
-  onSubmit={(value) => console.log(`search submitted: ${value}`)}
-  submitButtonLocation="external"
->
+<SearchField.Advanced onSubmit={(value) => console.log(`search submitted: ${value}`)} submitButtonLocation="external">
   <div className="pgn__searchfield_wrapper">
     <SearchField.Label />
     <SearchField.Input />

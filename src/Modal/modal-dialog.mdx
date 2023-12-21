@@ -53,11 +53,7 @@ label for the dialog element.
         <ModalDialog.Body>
           <Form.Group>
             <Form.Label>Size</Form.Label>
-            <Form.RadioSet
-              name="size"
-              value={modalSize}
-              onChange={(e) => setModalSize(e.target.value)}
-            >
+            <Form.RadioSet name="size" value={modalSize} onChange={(e) => setModalSize(e.target.value)}>
               {sizes.map((s) => (
                 <Form.Radio key={s} value={s}>
                   {s}
@@ -67,11 +63,7 @@ label for the dialog element.
           </Form.Group>
           <Form.Group>
             <Form.Label>Variant</Form.Label>
-            <Form.RadioSet
-              name="variant"
-              value={modalVariant}
-              onChange={(e) => setModalVariant(e.target.value)}
-            >
+            <Form.RadioSet name="variant" value={modalVariant} onChange={(e) => setModalVariant(e.target.value)}>
               {variants.map((v) => (
                 <Form.Radio key={v} value={v}>
                   {v}
@@ -80,20 +72,16 @@ label for the dialog element.
             </Form.RadioSet>
           </Form.Group>
           <p>
-            I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo
-            whatever. Beard man braid migas single-origin coffee forage ramps.
-            Tumeric messenger bag bicycle rights wayfarers, try-hard cronut blue
-            bottle health goth. Sriracha tumblr cardigan, cloud bread succulents
-            tumeric copper mug marfa semiotics woke next level organic roof
-            party +1 try-hard.
+            I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever. Beard man braid migas
+            single-origin coffee forage ramps. Tumeric messenger bag bicycle rights wayfarers, try-hard cronut blue
+            bottle health goth. Sriracha tumblr cardigan, cloud bread succulents tumeric copper mug marfa semiotics woke
+            next level organic roof party +1 try-hard.
           </p>
         </ModalDialog.Body>
 
         <ModalDialog.Footer>
           <ActionRow>
-            <ModalDialog.CloseButton variant="tertiary">
-              Cancel
-            </ModalDialog.CloseButton>
+            <ModalDialog.CloseButton variant="tertiary">Cancel</ModalDialog.CloseButton>
             <Button variant="primary">A button</Button>
           </ActionRow>
         </ModalDialog.Footer>
@@ -137,11 +125,7 @@ label for the dialog element.
         <ModalDialog.Body>
           <Form.Group>
             <Form.Label>Size</Form.Label>
-            <Form.RadioSet
-              name="size"
-              value={modalSize}
-              onChange={(e) => setModalSize(e.target.value)}
-            >
+            <Form.RadioSet name="size" value={modalSize} onChange={(e) => setModalSize(e.target.value)}>
               {sizes.map((size) => (
                 <Form.Radio key={size} value={size}>
                   {size}
@@ -151,11 +135,7 @@ label for the dialog element.
           </Form.Group>
           <Form.Group>
             <Form.Label>Variant</Form.Label>
-            <Form.RadioSet
-              name="variant"
-              value={modalVariant}
-              onChange={(e) => setModalVariant(e.target.value)}
-            >
+            <Form.RadioSet name="variant" value={modalVariant} onChange={(e) => setModalVariant(e.target.value)}>
               {['default', 'dark'].map((variant) => (
                 <Form.Radio key={variant} value={variant}>
                   {variant}
@@ -164,20 +144,16 @@ label for the dialog element.
             </Form.RadioSet>
           </Form.Group>
           <p>
-            I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo
-            whatever. Beard man braid migas single-origin coffee forage ramps.
-            Tumeric messenger bag bicycle rights wayfarers, try-hard cronut blue
-            bottle health goth. Sriracha tumblr cardigan, cloud bread succulents
-            tumeric copper mug marfa semiotics woke next level organic roof
-            party +1 try-hard.
+            I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever. Beard man braid migas
+            single-origin coffee forage ramps. Tumeric messenger bag bicycle rights wayfarers, try-hard cronut blue
+            bottle health goth. Sriracha tumblr cardigan, cloud bread succulents tumeric copper mug marfa semiotics woke
+            next level organic roof party +1 try-hard.
           </p>
         </ModalDialog.Body>
 
         <ModalDialog.Footer>
           <ActionRow isStacked>
-            <ModalDialog.CloseButton variant="tertiary">
-              Cancel
-            </ModalDialog.CloseButton>
+            <ModalDialog.CloseButton variant="tertiary">Cancel</ModalDialog.CloseButton>
             <Button variant="primary">A button</Button>
           </ActionRow>
         </ModalDialog.Footer>

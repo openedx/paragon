@@ -18,11 +18,7 @@ Paragon's layout is controlled by the Bootstrap grid system. Documentation can b
 <p>
   These components are pass throughs from React-Bootstrap.
   <br />
-  <a
-    href="https://react-bootstrap-v4.netlify.app/layout/grid/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
+  <a href="https://react-bootstrap-v4.netlify.app/layout/grid/" target="_blank" rel="noopener noreferrer">
     See React-Bootstrap for documentation.
   </a>
 </p>
@@ -156,73 +152,52 @@ the style only at a certain breakpoint and above.
 
 ### Display Utilities
 
-<CSSUtilitiesTable
-  selectors={getCssSelectors(props.data.displayUtilities.nodes)}
-/>
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.displayUtilities.nodes)} />
 
 ### Position
 
-<CSSUtilitiesTable
-  selectors={getCssSelectors(props.data.positionUtilities.nodes)}
-/>
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.positionUtilities.nodes)} />
 
 ### Flexbox
 
-<CSSUtilitiesTable
-  selectors={getCssSelectors(props.data.flexUtilities.nodes)}
-/>
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.flexUtilities.nodes)} />
 
 ### Max Width
 
-<CSSUtilitiesTable
-  selectors={getCssSelectors(props.data.maxWidthUtilities.nodes)}
-/>
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.maxWidthUtilities.nodes)} />
 
 ### Misc Layout
 
-<CSSUtilitiesTable
-  selectors={getCssSelectors(props.data.miscUtilities.nodes)}
-/>
+<CSSUtilitiesTable selectors={getCssSelectors(props.data.miscUtilities.nodes)} />
 
 export const pageQuery = graphql`
   {
-    flexUtilities: allCssUtilityClasses(
-      filter: { declarations: { regex: "/flex/" }, isUtility: { eq: true } }
-    ) {
+    flexUtilities: allCssUtilityClasses(filter: { declarations: { regex: "/flex/" }, isUtility: { eq: true } }) {
       nodes {
         selector
         declarations
       }
     }
-    displayUtilities: allCssUtilityClasses(
-      filter: { declarations: { regex: "/display/" }, isUtility: { eq: true } }
-    ) {
+    displayUtilities: allCssUtilityClasses(filter: { declarations: { regex: "/display/" }, isUtility: { eq: true } }) {
       nodes {
         selector
         declarations
       }
     }
-    positionUtilities: allCssUtilityClasses(
-      filter: { selector: { regex: "/(^fixed-)|(position)/" } }
-    ) {
+    positionUtilities: allCssUtilityClasses(filter: { selector: { regex: "/(^fixed-)|(position)/" } }) {
       nodes {
         selector
         declarations
       }
     }
-    maxWidthUtilities: allCssUtilityClasses(
-      filter: { selector: { regex: "/(^mw-)/" } }
-    ) {
+    maxWidthUtilities: allCssUtilityClasses(filter: { selector: { regex: "/(^mw-)/" } }) {
       nodes {
         selector
         declarations
       }
     }
     miscUtilities: allCssUtilityClasses(
-      filter: {
-        declarations: { regex: "/(float)|(overflow)/" }
-        isUtility: { eq: true }
-      }
+      filter: { declarations: { regex: "/(float)|(overflow)/" }, isUtility: { eq: true } }
     ) {
       nodes {
         selector

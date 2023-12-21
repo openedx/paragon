@@ -19,20 +19,13 @@ The following example demonstrates how to use `useOverflowScroll` to build a car
 () => {
   const [overflowRef, setOverflowRef] = useState();
 
-  const { isScrolledToStart, isScrolledToEnd, scrollToPrevious, scrollToNext } =
-    useOverflowScroll({
-      childQuerySelector: '.example-item',
-      overflowRef,
-    });
+  const { isScrolledToStart, isScrolledToEnd, scrollToPrevious, scrollToNext } = useOverflowScroll({
+    childQuerySelector: '.example-item',
+    overflowRef,
+  });
 
   const ExampleItem = ({ className }) => (
-    <div
-      className={classNames(
-        'example-item border flex-shrink-0 text-center',
-        className,
-      )}
-      style={{ width: 160 }}
-    >
+    <div className={classNames('example-item border flex-shrink-0 text-center', className)} style={{ width: 160 }}>
       Item
     </div>
   );
@@ -52,23 +45,14 @@ The following example demonstrates how to use `useOverflowScroll` to build a car
   return (
     <>
       <div className="mb-3">
-        <Button
-          onClick={scrollToPrevious}
-          disabled={isScrolledToStart}
-          size="sm"
-          className="mr-2"
-        >
+        <Button onClick={scrollToPrevious} disabled={isScrolledToStart} size="sm" className="mr-2">
           Previous
         </Button>
         <Button onClick={scrollToNext} disabled={isScrolledToEnd} size="sm">
           Next
         </Button>
       </div>
-      <div
-        ref={setOverflowRef}
-        aria-label="example overflow scroll container"
-        className="d-flex"
-      >
+      <div ref={setOverflowRef} aria-label="example overflow scroll container" className="d-flex">
         {items}
       </div>
     </>
@@ -109,22 +93,15 @@ See [`OverflowScroll`](/components/overflowscroll/overflowscroll) for React comp
 
   const [overflowRef, setOverflowRef] = useState();
 
-  const { isScrolledToStart, isScrolledToEnd, scrollToPrevious, scrollToNext } =
-    useOverflowScroll({
-      childQuerySelector: '.example-item',
-      overflowRef,
-      offset,
-      offsetType,
-    });
+  const { isScrolledToStart, isScrolledToEnd, scrollToPrevious, scrollToNext } = useOverflowScroll({
+    childQuerySelector: '.example-item',
+    overflowRef,
+    offset,
+    offsetType,
+  });
 
   const ExampleItem = ({ className }) => (
-    <div
-      className={classNames(
-        'example-item border flex-shrink-0 text-center',
-        className,
-      )}
-      style={{ width: 160 }}
-    >
+    <div className={classNames('example-item border flex-shrink-0 text-center', className)} style={{ width: 160 }}>
       Item
     </div>
   );
@@ -167,23 +144,14 @@ See [`OverflowScroll`](/components/overflowscroll/overflowscroll) for React comp
       {/* end example form block */}
 
       <div className="mb-3">
-        <Button
-          onClick={scrollToPrevious}
-          disabled={isScrolledToStart}
-          size="sm"
-          className="mr-2"
-        >
+        <Button onClick={scrollToPrevious} disabled={isScrolledToStart} size="sm" className="mr-2">
           Previous
         </Button>
         <Button onClick={scrollToNext} disabled={isScrolledToEnd} size="sm">
           Next
         </Button>
       </div>
-      <div
-        ref={setOverflowRef}
-        aria-label="example overflow scroll container"
-        className="d-flex"
-      >
+      <div ref={setOverflowRef} aria-label="example overflow scroll container" className="d-flex">
         {items}
       </div>
     </>

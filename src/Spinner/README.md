@@ -33,23 +33,9 @@ A spinning animation that indicates loading.
 
 ```jsx live
 () => {
-  const variants = [
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'info',
-    'light',
-    'dark',
-  ];
+  const variants = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
   return variants.map((variant) => (
-    <Spinner
-      animation="border"
-      variant={variant}
-      className="mr-3"
-      screenReaderText="loading"
-    />
+    <Spinner animation="border" variant={variant} className="mr-3" screenReaderText="loading" />
   ));
 };
 ```

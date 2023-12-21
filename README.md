@@ -148,11 +148,7 @@ module.exports = {
   dist: The sub-directory of the source code where it puts its build artifact. Often "dist".
   */
   localModules: [
-    {
-      moduleName: '@edx/paragon/scss/core',
-      dir: '../src/paragon',
-      dist: 'scss/core',
-    },
+    { moduleName: '@edx/paragon/scss/core', dir: '../src/paragon', dist: 'scss/core' },
     { moduleName: '@edx/paragon/icons', dir: '../src/paragon', dist: 'icons' },
     // Note that using dist: 'dist' will require you to run 'npm build' in Paragon
     // to add local changes to the 'dist' directory, so that they can be picked up by the MFE.
@@ -175,6 +171,7 @@ When developing a new component you should generally follow three rules:
 
      ```javascript
      import { FormattedMessage } from 'react-intl';
+
      <FormattedMessage
        id="pgn.Alert.closeLabel"
        defaultMessage="Dismiss"
@@ -200,13 +197,7 @@ When developing a new component you should generally follow three rules:
                description: 'Close label for Toast component',
              });
 
-           return (
-             <IconButton
-               alt={intlCloseLabel}
-               onClick={() => {}}
-               variant="primary"
-             />
-           );
+           return <IconButton alt={intlCloseLabel} onClick={() => {}} variant="primary" />;
          }
        }
 

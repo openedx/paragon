@@ -24,11 +24,7 @@ It is used in the global navigation’s user menu and may also be used to indica
   });
 
   return (
-    <Stack
-      className="bg-light p-2"
-      gap={2}
-      direction={isExtraSmall ? 'vertical' : 'horizontal'}
-    >
+    <Stack className="bg-light p-2" gap={2} direction={isExtraSmall ? 'vertical' : 'horizontal'}>
       <Avatar size="xxl" />
       <Avatar size="xl" />
       <Avatar size="lg" />

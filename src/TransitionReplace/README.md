@@ -81,10 +81,7 @@ Children are not required. When this component is empty, the a child inserted in
 function DemoTransitionReplace() {
   const contentOptions = [
     <blockquote className="h2 m-0" key={0}>
-      <p>
-        You know the golden rule, don’t you boy? Those who have the gold make
-        the rules.
-      </p>
+      <p>You know the golden rule, don’t you boy? Those who have the gold make the rules.</p>
       <footer>— Crazy hunch-backed old guy in Aladdin</footer>
     </blockquote>,
     <blockquote className="m-0" key={1}>
@@ -93,9 +90,8 @@ function DemoTransitionReplace() {
     </blockquote>,
     <blockquote className="h2 m-0" key={2}>
       <p>
-        I won’t go into a big spiel about reincarnation, but the first time I
-        was in the Gucci store in Chicago was the closest I’ve ever felt to
-        home.
+        I won’t go into a big spiel about reincarnation, but the first time I was in the Gucci store in Chicago was the
+        closest I’ve ever felt to home.
       </p>
       <footer>— Kanye</footer>
     </blockquote>,
@@ -122,9 +118,7 @@ function DemoTransitionReplace() {
           maxWidth: '15rem',
         }}
       >
-        <TransitionReplace>
-          {contentOptions[currentContentIndex]}
-        </TransitionReplace>
+        <TransitionReplace>{contentOptions[currentContentIndex]}</TransitionReplace>
       </div>
     </div>
   );

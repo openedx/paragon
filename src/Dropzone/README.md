@@ -41,12 +41,7 @@ Drag and drop a file to begin uploading, only one file at a time is allowed, no 
     }
   }
 
-  return (
-    <Dropzone
-      onProcessUpload={handleProcessUpload}
-      onUploadProgress={(percent) => console.log(percent)}
-    />
-  );
+  return <Dropzone onProcessUpload={handleProcessUpload} onUploadProgress={(percent) => console.log(percent)} />;
 };
 ```
 
@@ -299,11 +294,7 @@ Note that `Dropzone` does not handle unexpected errors that might happen in your
           'application/xml': ['.xml'],
         }}
       />
-      {fileName && (
-        <Form.Control.Feedback type="valid">
-          Uploaded {fileName}
-        </Form.Control.Feedback>
-      )}
+      {fileName && <Form.Control.Feedback type="valid">Uploaded {fileName}</Form.Control.Feedback>}
       <p>{text}</p>
     </>
   );

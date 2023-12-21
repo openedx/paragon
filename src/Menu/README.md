@@ -26,10 +26,7 @@ A `MenuItem` is its own distinct component that is used by any kind of menu over
       <MenuItem iconBefore={Check}>A Menu Item With an Icon Before</MenuItem>
       <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
       <MenuItem disabled>A Disabled Menu Item</MenuItem>
-      <MenuItem
-        as={Hyperlink}
-        destination="https://en.wikipedia.org/wiki/Hyperlink"
-      >
+      <MenuItem as={Hyperlink} destination="https://en.wikipedia.org/wiki/Hyperlink">
         A Link Menu Item
       </MenuItem>
       <MenuItem as={Button} variant="tertiary" size="inline">
@@ -49,11 +46,7 @@ A `Menu` can include things like forms.
 () => {
   return (
     <Form.Group>
-      <Form.CheckboxSet
-        name="color-two"
-        onChange={(e) => console.log(e.target.value)}
-        defaultValue={['green']}
-      >
+      <Form.CheckboxSet name="color-two" onChange={(e) => console.log(e.target.value)} defaultValue={['green']}>
         <Form.Label>Which Color?</Form.Label>
         <Menu>
           <MenuItem as={Form.Checkbox} value="red">
@@ -102,36 +95,16 @@ A `Menu` can be implemented to appear inside a `modalpopup` for a wide variety o
       >
         <div className="bg-white">
           <Menu>
-            <MenuItem
-              as={Button}
-              variant="tertiary"
-              size="inline"
-              onClick={() => setSelected('Beans')}
-            >
+            <MenuItem as={Button} variant="tertiary" size="inline" onClick={() => setSelected('Beans')}>
               Beans
             </MenuItem>
-            <MenuItem
-              as={Button}
-              variant="tertiary"
-              size="inline"
-              onClick={() => setSelected('Greens')}
-            >
+            <MenuItem as={Button} variant="tertiary" size="inline" onClick={() => setSelected('Greens')}>
               Greens
             </MenuItem>
-            <MenuItem
-              as={Button}
-              variant="tertiary"
-              size="inline"
-              onClick={() => setSelected('Tomatoes')}
-            >
+            <MenuItem as={Button} variant="tertiary" size="inline" onClick={() => setSelected('Tomatoes')}>
               Tomatoes
             </MenuItem>
-            <MenuItem
-              as={Button}
-              variant="tertiary"
-              size="inline"
-              onClick={() => setSelected('Potatoes')}
-            >
+            <MenuItem as={Button} variant="tertiary" size="inline" onClick={() => setSelected('Potatoes')}>
               Potatoes
             </MenuItem>
           </Menu>

@@ -34,10 +34,6 @@ HTML attributes can be passed to this component allowing for customization of th
   <Icon src={Add} className="mx-3 text-white" size="sm" />
   <Icon src={Add} className="mx-3 text-white" size="md" />
   <Icon src={Add} className="mx-3 text-white" size="lg" />
-  <Icon
-    src={Add}
-    className="text-white"
-    style={{ height: '48px', width: '48px' }}
-  />
+  <Icon src={Add} className="text-white" style={{ height: '48px', width: '48px' }} />
 </div>
 ```

@@ -39,13 +39,7 @@ underlying `input` node. See MDN for documentation on available
 () => {
   const [isChecked, setChecked] = useState(false);
   const handleChange = (e) => setChecked(e.target.checked);
-  return (
-    <CheckboxControl
-      checked={isChecked}
-      onChange={handleChange}
-      aria-label="Checkbox"
-    />
-  );
+  return <CheckboxControl checked={isChecked} onChange={handleChange} aria-label="Checkbox" />;
 };
 ```
 
@@ -69,11 +63,7 @@ underlying `input` node. See MDN for documentation on available
   return (
     <Form.Group>
       <Form.Label>Which Color?</Form.Label>
-      <Form.CheckboxSet
-        name="colors"
-        onChange={handleChange}
-        value={colorValues}
-      >
+      <Form.CheckboxSet name="colors" onChange={handleChange} value={colorValues}>
         <Form.Checkbox value="red">Red</Form.Checkbox>
         <Form.Checkbox value="green">Green</Form.Checkbox>
         <Form.Checkbox value="blue">Blue</Form.Checkbox>
@@ -91,11 +81,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 <Form.Group>
   <Form.Label>Which Color?</Form.Label>
-  <Form.CheckboxSet
-    name="color-two"
-    onChange={(e) => console.log(e.target.value)}
-    defaultValue={['green']}
-  >
+  <Form.CheckboxSet name="color-two" onChange={(e) => console.log(e.target.value)} defaultValue={['green']}>
     <Form.Checkbox value="red">Red</Form.Checkbox>
     <Form.Checkbox value="green">Green</Form.Checkbox>
     <Form.Checkbox value="blue">Blue</Form.Checkbox>
@@ -111,9 +97,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 () => {
   const allCheeseOptions = ['swiss', 'cheddar', 'pepperjack'];
-  const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues([
-    'swiss',
-  ]);
+  const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues(['swiss']);
 
   const handleChange = (e) => {
     e.target.checked ? add(e.target.value) : remove(e.target.value);
@@ -123,31 +107,18 @@ underlying `input` node. See MDN for documentation on available
     e.target.checked ? set(allCheeseOptions) : clear();
   };
 
-  const allChecked = allCheeseOptions.every((value) =>
-    checkedCheeses.includes(value),
-  );
-  const someChecked = allCheeseOptions.some((value) =>
-    checkedCheeses.includes(value),
-  );
+  const allChecked = allCheeseOptions.every((value) => checkedCheeses.includes(value));
+  const someChecked = allCheeseOptions.some((value) => checkedCheeses.includes(value));
   const isIndeterminate = someChecked && !allChecked;
 
   return (
     <>
       <div className="d-flex">
-        <Form.Checkbox
-          checked={allChecked}
-          isIndeterminate={isIndeterminate}
-          onChange={handleCheckAllChange}
-        >
+        <Form.Checkbox checked={allChecked} isIndeterminate={isIndeterminate} onChange={handleCheckAllChange}>
           All the cheese
         </Form.Checkbox>
       </div>
-      <Form.CheckboxSet
-        name="color-six"
-        className="p-2"
-        value={checkedCheeses}
-        onChange={handleChange}
-      >
+      <Form.CheckboxSet name="color-six" className="p-2" value={checkedCheeses} onChange={handleChange}>
         <Form.Checkbox value="swiss">Swiss</Form.Checkbox>
         <Form.Checkbox value="cheddar">Cheddar</Form.Checkbox>
         <Form.Checkbox value="pepperjack">Pepperjack</Form.Checkbox>
@@ -162,12 +133,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 <Form.Group>
   <Form.Label>Which Color?</Form.Label>
-  <Form.CheckboxSet
-    name="color-three"
-    onChange={(e) => console.log(e.target.value)}
-    defaultValue={['green']}
-    isInline
-  >
+  <Form.CheckboxSet name="color-three" onChange={(e) => console.log(e.target.value)} defaultValue={['green']} isInline>
     <Form.Checkbox value="red">Red</Form.Checkbox>
     <Form.Checkbox value="green">Green</Form.Checkbox>
     <Form.Checkbox value="blue">Blue</Form.Checkbox>
@@ -185,10 +151,7 @@ underlying `input` node. See MDN for documentation on available
 ```jsx live
 <Form.Group isInvalid>
   <Form.Label>Which Color?</Form.Label>
-  <Form.CheckboxSet
-    name="color-five"
-    onChange={(e) => console.log(e.target.value)}
-  >
+  <Form.CheckboxSet name="color-five" onChange={(e) => console.log(e.target.value)}>
     <Form.Checkbox value="red">Red</Form.Checkbox>
     <Form.Checkbox value="green">Green</Form.Checkbox>
     <Form.Checkbox value="blue">Blue</Form.Checkbox>

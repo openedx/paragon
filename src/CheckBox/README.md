@@ -33,11 +33,7 @@ notes: |
 ## Call a function
 
 ```jsx live
-<CheckBox
-  name="checkbox"
-  label="check out the console"
-  onChange={() => console.log('the checkbox changed state')}
-/>
+<CheckBox name="checkbox" label="check out the console" onChange={() => console.log('the checkbox changed state')} />
 ```
 
 ## Controlled example
@@ -66,11 +62,7 @@ class CheckBoxWrapper extends React.Component {
         <Button variant="light" className="mr-3" onClick={this.toggleCheckBox}>
           Click me to toggle the check box!
         </Button>
-        <CheckBox
-          name="checkbox"
-          label="click the button"
-          checked={this.state.checked}
-        />
+        <CheckBox name="checkbox" label="click the button" checked={this.state.checked} />
       </div>
     );
   }

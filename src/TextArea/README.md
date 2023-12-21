@@ -51,9 +51,5 @@ notes: |
 ## Label as element
 
 ```jsx live
-<TextArea
-  name="username"
-  label={<span lang="en">Element</span>}
-  value="Label is wrapped in language span"
-/>
+<TextArea name="username" label={<span lang="en">Element</span>} value="Label is wrapped in language span" />
 ```

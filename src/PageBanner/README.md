@@ -40,20 +40,11 @@ A `Page Banner` displays an important, succinct message, and provides actions fo
       />
 
       <div>
-        <PageBanner
-          show={showPageBanner}
-          variant={variant}
-          dismissible
-          onDismiss={() => setShowPageBanner(false)}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore.
+        <PageBanner show={showPageBanner} variant={variant} dismissible onDismiss={() => setShowPageBanner(false)}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
         </PageBanner>
         {!showPageBanner && (
-          <Button
-            className="my-2 mie-2"
-            onClick={() => setShowPageBanner(true)}
-          >
+          <Button className="my-2 mie-2" onClick={() => setShowPageBanner(true)}>
             Show Page Banner
           </Button>
         )}
@@ -72,8 +63,7 @@ The system warning banner is similar to the `Alert Banner` banner in styling, ex
   return (
     <>
       <PageBanner variant="warning">
-        <Icon src={WarningFilled} className="mie-2" /> We will no longer support
-        Internet Explorer 11.
+        <Icon src={WarningFilled} className="mie-2" /> We will no longer support Internet Explorer 11.
       </PageBanner>
     </>
   );

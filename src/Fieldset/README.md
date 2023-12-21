@@ -70,10 +70,7 @@ class ValidatedForm extends React.Component {
   }
 
   handleSubmit(event) {
-    if (
-      this.firstInputRef.value.length === 0 &&
-      this.secondInputRef.value.length === 0
-    ) {
+    if (this.firstInputRef.value.length === 0 && this.secondInputRef.value.length === 0) {
       this.setState({
         isValid: false,
       });
