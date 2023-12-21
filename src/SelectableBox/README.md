@@ -260,9 +260,9 @@ As ``Checkbox`` with ``ariaLabelledby``
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
   
   return (
-    <div className="bg-light-200 p-3">
+    <Stack className="bg-light-200 p-3">
       <h3 id="cheese selection" className="mb-4">
-        Select your favorite cheese
+        Select your favorite cheese:
       </h3>
       <SelectableBox.Set
         value={checkedCheeses}
@@ -273,22 +273,63 @@ As ``Checkbox`` with ``ariaLabelledby``
         ariaLabelledby="cheese selection"
       >
         <SelectableBox value="swiss" inputHidden={false} type={type} aria-label="swiss checkbox">
-          <h3>
-            Swiss
-          </h3>
+          <h3>Swiss</h3>
         </SelectableBox>
         <SelectableBox value="cheddar" inputHidden={false} type={type} aria-label="cheddar checkbox">
-          <h3>
-            Cheddar
-          </h3>
+          <h3>Cheddar</h3>
         </SelectableBox>
         <SelectableBox value="pepperjack" inputHidden={false} type={type} aria-label="pepperjack checkbox">
-          <h3>
-            Pepperjack
-          </h3>
+          <h3>Pepperjack</h3>
         </SelectableBox>
       </SelectableBox.Set>
-    </div>
+    </Stack>
+  );
+}
+```
+
+## Without active outline
+The `showActiveBoxState` property only affects `SelectableBox` that have `inputHidden` set to `false`.
+If a component has no input, the border is always rendered in an active state.
+
+```jsx live
+() => {
+  const [value, setValue] = useState('apples');
+  const handleChange = (e) => setValue(e.target.value);
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+
+  return (
+    <SelectableBox.Set
+      value={value}
+      onChange={handleChange}
+      name="fruits"
+      columns={isExtraSmall ? 1 : 3}
+      ariaLabel="fruits selection"
+    >
+      <SelectableBox
+        value="apples"
+        inputHidden={false}
+        showActiveBoxState={false}
+        aria-label="apple radio-button"
+      >
+        <h3>Apples</h3>
+      </SelectableBox>
+      <SelectableBox
+        value="oranges"
+        inputHidden={false}
+        showActiveBoxState={false}
+        aria-label="orange radio-button"
+      >
+        <h3>Oranges</h3>
+      </SelectableBox>
+      <SelectableBox
+        value="bananas"
+        inputHidden={false}
+        showActiveBoxState={false}
+        aria-label="banana radio-button"
+      >
+        <h3>Bananas</h3>
+      </SelectableBox>
+    </SelectableBox.Set>
   );
 }
 ```
