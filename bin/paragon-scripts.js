@@ -5,37 +5,43 @@ const helpCommand = require('../lib/help');
 const buildTokensCommand = require('../lib/build-tokens');
 const replaceVariablesCommand = require('../lib/replace-variables');
 const buildScssCommand = require('../lib/build-scss');
-const { sendTrackInfo } = require('../utils');
+const { sendTrackInfo } = require('../lib/utils');
+const versionCommand = require('../lib/version');
+
+const commandAliases = {
+  '-v': 'version',
+  '--version': 'version',
+};
 
 const COMMANDS = {
   /**
-  *'command-name': {
-  *  executor: executorFunc,
-  *
-  *  ********** Block for help command start **********
-  *  description: 'Command description',
-  *  parameters: [
-  *    {
-  *      name: 'paramName',
-  *      description: 'paramDescription',
-  *      defaultValue: 'paramDefaultValue',
-  *      required: true/false,
-  *    },
-  *    ...
-  *  ],
-  *  options: [
-  *    {
-  *      name: '--optionName',
-  *      description: 'optionDescription',
-  *      choices: 'optionChoices',
-  *      defaultValue: 'optionDefaultValue',
-  *      required: true/false,
-  *    },
-  *    ...
-  *  ],
-  *  ********** Block for help command end **********
-  *},
-  */
+     *'command-name': {
+     *  executor: executorFunc,
+     *
+     *  ********** Block for help command start **********
+     *  description: 'Command description',
+     *  parameters: [
+     *    {
+     *      name: 'paramName',
+     *      description: 'paramDescription',
+     *      defaultValue: 'paramDefaultValue',
+     *      required: true/false,
+     *    },
+     *    ...
+     *  ],
+     *  options: [
+     *    {
+     *      name: '--optionName',
+     *      description: 'optionDescription',
+     *      choices: 'optionChoices',
+     *      defaultValue: 'optionDefaultValue',
+     *      required: true/false,
+     *    },
+     *    ...
+     *  ],
+     *  ********** Block for help command end **********
+     *},
+     */
   'install-theme': {
     executor: themeCommand,
     description: 'Installs the specific @edx/brand package.',
@@ -162,6 +168,10 @@ const COMMANDS = {
     ],
     description: 'Displays help for available commands.',
   },
+  version: {
+    executor: versionCommand,
+    description: 'Displays the current version of Paragon CLI.',
+  },
 };
 
 /**
@@ -172,7 +182,8 @@ const COMMANDS = {
  */
 (async () => {
   const [command, ...commandArgs] = process.argv.slice(2);
-  const executor = COMMANDS[command];
+  const resolvedCommand = commandAliases[command] || command;
+  const executor = COMMANDS[resolvedCommand];
 
   if (!executor) {
     // eslint-disable-next-line no-console

@@ -3,9 +3,8 @@ import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint
 import getGithubProjectUrl from './getGithubProjectUrl';
 import { IDependentProjectsUsages, IDependentUsage, IUsage } from '../types/types';
 
-const {
-  projectUsages: dependentProjectsUsages,
-} = dependentProjectsAnalysis;
+const { projectUsages } = dependentProjectsAnalysis;
+const dependentProjectsUsages = projectUsages as unknown as IDependentProjectsUsages[];
 
 export default function getDependentProjectsUsages() {
   const dependentProjects: IDependentUsage[] = [];

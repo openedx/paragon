@@ -12,6 +12,7 @@ const SvgFireHydrantAlt = props => /*#__PURE__*/React.createElement("svg", _exte
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 14,
-  r: 1.5
+  r: 1.5,
+  fill: "currentColor"
 }));
 export default SvgFireHydrantAlt;
