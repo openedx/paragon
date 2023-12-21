@@ -12,15 +12,18 @@ const SvgSportsGolf = props => /*#__PURE__*/React.createElement("svg", _extends(
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 10,
   cy: 8,
-  r: 1
+  r: 1,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 14,
   cy: 8,
-  r: 1
+  r: 1,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 6,
-  r: 1
+  r: 1,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M7 19h2c1.1 0 2 .9 2 2v1h2v-1c0-1.1.9-2 2-2h2v-2H7v2z",
   fill: "currentColor"
