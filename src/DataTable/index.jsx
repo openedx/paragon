@@ -329,7 +329,7 @@ DataTable.propTypes = {
   /** Function that will fetch table data. Called when page size, page index or filters change.
     * Meant to be used with manual filters and pagination */
   fetchData: PropTypes.func,
-  /** Initial state passed to react-table's documentation https://react-table.tanstack.com/docs/api/useTable */
+  /** Initial state passed to react-table's documentation https://github.com/TanStack/table/blob/v7/docs/src/pages/docs/api/useTable.md */
   initialState: PropTypes.shape({
     pageSize: requiredWhen(PropTypes.number, 'isPaginated'),
     pageIndex: requiredWhen(PropTypes.number, 'isPaginated'),
