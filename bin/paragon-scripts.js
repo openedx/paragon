@@ -6,6 +6,12 @@ const buildTokensCommand = require('../lib/build-tokens');
 const replaceVariablesCommand = require('../lib/replace-variables');
 const buildScssCommand = require('../lib/build-scss');
 const { sendTrackInfo } = require('../utils');
+const versionCommand = require('../lib/version');
+
+const commandAliases = {
+  '-v': 'version',
+  '--version': 'version',
+};
 
 const COMMANDS = {
   /**
@@ -162,6 +168,10 @@ const COMMANDS = {
     ],
     description: 'Displays help for available commands.',
   },
+  version: {
+    executor: versionCommand,
+    description: 'Displays the current version of Paragon CLI.',
+  },
 };
 
 /**
@@ -172,7 +182,8 @@ const COMMANDS = {
  */
 (async () => {
   const [command, ...commandArgs] = process.argv.slice(2);
-  const executor = COMMANDS[command];
+  const resolvedCommand = commandAliases[command] || command;
+  const executor = COMMANDS[resolvedCommand];
 
   if (!executor) {
     // eslint-disable-next-line no-console
