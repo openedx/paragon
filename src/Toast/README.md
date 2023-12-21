@@ -2,7 +2,8 @@
 title: 'Toast'
 type: 'component'
 components:
-- Toast
+- ToastContainer
+- toast
 categories:
 - Overlays
 status: 'New'
@@ -11,85 +12,88 @@ devStatus: 'Done'
 notes: ''
 ---
 
-``Toast`` is a pop-up style message that shows the user a brief, fleeting, dismissible message about a successful app process.
+`Toast` is a pop-up style message that shows the user a brief, fleeting, dismissible message about a successful app process.
 
-``Toasts`` sit fixed to the bottom left of the window.
+## Features
+
+- **Customizable Appearance**: Choose the window position for toast.
+- **Interactive**: Includes a close button for manual dismissal.
+- **Auto-dismiss**: Disappears automatically after a set duration.
+- **Hover Interactivity**: Auto-dismiss timer pauses on hover or focus, allowing users to interact with the content.
 
 ## Behaviors
 
-<ul>
-  <li>Auto-dismiss: Toast automatically dismisses after 5 seconds by default.</li>
-  <li>Disable timer: On hover of the Toast container. On hover or focus of dismiss icon or optional button</li>
-  <li>Re-enable timer: On mouse leave of the Toast container. On blur of dismiss icon or option button</li>
-  <li>Auto-dismiss timer: 5 - 15 second range.</li>
-</ul>
+- Auto-dismiss: Toast automatically dismisses after a default duration of 5 seconds.
+- Disable timer: Pause the auto-dismiss timer on hover or focus of the Toast or the dismiss icon.
+- Re-enable timer: Resume the auto-dismiss timer on mouse leave or blur of the Toast component.
 
 ## Basic Usage
 
 ```jsx live
 () => {
-  const [show, setShow] = useState(false);
+  const [position, setPosition] = useState('bottom-left');
+  const [timer, setTimer] = useState(5000);
+  const [message, setMessage] = useState('Example of a basic Toast.');
+  const [actions, setActions] = useState([]);
+
+  const testAction = {
+    label: "Optional Button",
+    onClick: () => console.log('You clicked the action button.')
+  };
 
   return (
     <>
-      <Toast
-        onClose={() => setShow(false)}
-        show={show}
-      >
-        Example of a basic Toast.
-      </Toast>
+       <div className="mt-3">
+        Message:
+        <Form.Control
+          className="mt-1"
+          as="textarea"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+      </div>
+      
+      <div className="mt-3">
+        Duration (ms):
+        <Form.Control className="mt-1" type="number" value={timer} onChange={(e) => setTimer(Number(e.target.value))} />
+      </div>
 
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
-    </>
-  );
-}
-```
+      <div className="mt-3 mb-4">
+        Position:
+        <Form.Control
+          as="select"
+          className="mt-1"
+          value={position}
+          onChange={(e) => setPosition(e.target.value)}
+        >
+          <option value="top-left">Top Left</option>
+          <option value="top-right">Top Right</option>
+          <option value="bottom-left">Bottom Left</option>
+          <option value="bottom-right">Bottom Right</option>
+        </Form.Control>
+      </div>
 
-## With Button
+      <div className="mt-3 mb-4">
+        Add and remove actions:
 
-```jsx live
-() => {
-  const [show, setShow] = useState(false);
+        <p>Total added: {actions.length}</p>
 
-  return (
-    <>
-      <Toast
-        action={{
-          label: "Optional Button",
-          onClick: () => console.log('You clicked the action button.')
-        }}
-        onClose={() => setShow(false)}
-        show={show}
-      >
-        Success! Example of a Toast with a button.
-      </Toast>
+        <Stack className="mt-2" direction="horizontal" gap="2">
+          <Button onClick={() => setActions(prevState => [...prevState, testAction])} variant="tertiary">
+            Add action
+          </Button>
+          <Button onClick={() => setActions([])} variant="tertiary">
+            Clear actions
+          </Button>
+        </Stack>
+      </div>
 
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
-    </>
-  );
-}
-```
 
-## With Link
+      <Button onClick={() => toast({ message, duration: timer, actions})}>
+        Show Toast
+      </Button>
 
-```jsx live
-() => {
-  const [show, setShow] = useState(false);
-
-  return (
-    <>
-      <Toast
-        action={{
-          label: "Optional Link",
-          href: "#"
-        }}
-        onClose={() => setShow(false)}
-        show={show}
-      >
-        Success! Example of a Toast with a link.
-      </Toast>
-
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
+      <ToastContainer position={position} />
     </>
   );
 }

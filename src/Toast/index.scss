@@ -1,5 +1,4 @@
 @import "variables";
-@import "~bootstrap/scss/toasts";
 
 .toast {
   background-color: $toast-background-color;
@@ -8,38 +7,37 @@
   padding: 1rem;
   position: relative;
   border-radius: $toast-border-radius;
-  z-index: 2;
-
-  &.show {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .toast-header-btn-container {
-    margin: -.25rem -.5rem;
-    align-self: flex-start;
-  }
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
 
   .btn {
     margin-top: .75rem;
     align-self: flex-start;
   }
 
-  .toast-header {
+  .toast__header {
+    display: flex;
     align-items: center;
     border-bottom: 0;
     justify-content: space-between;
     padding: 0;
 
-    p {
+    .toast__message {
       font-size: $small-font-size;
       margin: 0;
       padding-right: .75rem;
+      color: $toast-header-color;
     }
 
     & + .btn {
       margin-top: 1rem;
     }
+  }
+
+  .toast__optional-actions {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   @media only screen and (max-width: 768px) {
@@ -50,4 +48,12 @@
     min-width: $toast-max-width;
     max-width: $toast-max-width;
   }
+}
+
+.toast-container {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  position: fixed;
+  z-index: 3000;
 }

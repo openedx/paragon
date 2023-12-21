@@ -1,111 +1,104 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
+/* eslint-disable react/prop-types */
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-
-import BaseToast from 'react-bootstrap/Toast';
 import { useIntl } from 'react-intl';
+import classNames from 'classnames';
 
-import { Close } from '../../icons';
-import ToastContainer from './ToastContainer';
-import Button from '../Button';
 import Icon from '../Icon';
 import IconButton from '../IconButton';
-
-export const TOAST_CLOSE_LABEL_TEXT = 'Close';
-export const TOAST_DELAY = 5000;
+import Button from '../Button';
+import { Close } from '../../icons';
 
 function Toast({
-  action, children, className, closeLabel, onClose, show, ...rest
+  id, message, onDismiss, actions, className, duration, ...rest
 }) {
   const intl = useIntl();
-  const [autoHide, setAutoHide] = useState(true);
-  const intlCloseLabel = closeLabel || intl.formatMessage({
+  const intlCloseLabel = intl.formatMessage({
     id: 'pgn.Toast.closeLabel',
     defaultMessage: 'Close',
     description: 'Close label for Toast component',
   });
+
+  const timerRef = useRef();
+
+  useEffect(() => {
+    timerRef.current = setTimeout(() => onDismiss(id), duration);
+
+    return () => clearTimeout(timerRef.current);
+  }, [id, onDismiss, duration]);
+
+  const clearTimer = () => {
+    clearTimeout(timerRef.current);
+  };
+
+  const startTimer = () => {
+    clearTimer();
+    timerRef.current = setTimeout(() => onDismiss(id), duration);
+  };
+
   return (
-    <ToastContainer>
-      <BaseToast
-        autohide={autoHide}
-        className={classNames('pgn__toast', className)}
-        onClose={onClose}
-        onBlur={() => setAutoHide(true)}
-        onFocus={() => setAutoHide(false)}
-        onMouseOut={() => setAutoHide(true)}
-        onMouseOver={() => setAutoHide(false)}
-        show={show}
-        {...rest}
-      >
-        <div
-          className="toast-header"
-        >
-          <p className="small">{children}</p>
-          <div className="toast-header-btn-container">
-            <IconButton
-              iconAs={Icon}
-              alt={intlCloseLabel}
-              className="align-self-start"
-              src={Close}
-              onClick={onClose}
-              variant="primary"
-              invertColors
-            />
+    <div
+      className={classNames('toast', className)}
+      onMouseOver={clearTimer}
+      onMouseOut={startTimer}
+      onFocus={clearTimer}
+      onBlur={startTimer}
+      {...rest}
+    >
+      <div className="toast__header small">
+        <p className="toast__message">{message}</p>
+
+        <IconButton
+          iconAs={Icon}
+          alt={intlCloseLabel}
+          className="toast__close-btn align-self-start"
+          src={Close}
+          onClick={() => onDismiss(id)}
+          variant="primary"
+          invertColors
+        />
+      </div>
+      {actions
+        ? (
+          <div className="toast__optional-actions">
+            {actions.map((action) => (
+              <Button
+                as={action.href ? 'a' : 'button'}
+                href={action.href}
+                onClick={action.onClick}
+                size="sm"
+                variant="inverse-outline-primary"
+              >
+                {action.label}
+              </Button>
+            ))}
           </div>
-        </div>
-        {action && (
-          <Button
-            as={action.href ? 'a' : 'button'}
-            href={action.href}
-            onClick={action.onClick}
-            size="sm"
-            variant="inverse-outline-primary"
-          >
-            {action.label}
-          </Button>
-        )}
-      </BaseToast>
-    </ToastContainer>
+        )
+        : null}
+    </div>
   );
 }
 
-Toast.defaultProps = {
-  action: null,
-  closeLabel: undefined,
-  delay: TOAST_DELAY,
-  className: undefined,
-};
+export default Toast;
 
 Toast.propTypes = {
-  /** A string or an element that is rendered inside the main body of the `Toast`. */
-  children: PropTypes.string.isRequired,
-  /**
-   * A function that is called on close. It can be used to perform
-   * actions upon closing of the `Toast`, such as setting the "show"
-   * element to false.
-   * */
-  onClose: PropTypes.func.isRequired,
-  /** Boolean used to control whether the `Toast` shows */
-  show: PropTypes.bool.isRequired,
-  /**
-   * Fields used to build optional action button.
-   * `label` is a string rendered inside the button.
-   * `href` is a link that will render the action button as an anchor tag.
-   * `onClick` is a function that is called when the button is clicked.
-   */
-  action: PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    href: PropTypes.string,
-    onClick: PropTypes.func,
-  }),
-  /**
-   * Alt text for the `Toast`'s dismiss button. Defaults to 'Close'.
-   */
-  closeLabel: PropTypes.string,
-  /** Time in milliseconds for which the `Toast` will display. */
-  delay: PropTypes.number,
-  /** Class names for the `BaseToast` component */
+  id: PropTypes.number.isRequired,
+  message: PropTypes.string.isRequired,
+  onDismiss: PropTypes.func,
+  actions: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      onClick: PropTypes.func,
+      href: PropTypes.string,
+    }),
+  ),
   className: PropTypes.string,
+  duration: PropTypes.number,
 };
 
-export default Toast;
+Toast.defaultProps = {
+  onDismiss: () => {},
+  actions: null,
+  className: '',
+  duration: 5000,
+};
