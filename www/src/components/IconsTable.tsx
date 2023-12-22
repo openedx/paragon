@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import { Icon, SearchField, Toast } from '~paragon-react';
 import * as IconComponents from '~paragon-icons';
+import { ICON_COPIED_EVENT, sendUserAnalyticsEvent } from '../../segment-events';
 
 const WINDOW_HEIGHT = 2400;
 const ROW_HEIGHT = 100;
@@ -75,7 +76,7 @@ function IconsTable({ iconNames }) {
   const copyToClipboard = (content) => {
     navigator.clipboard.writeText(content);
     setShowToast(true);
-    global.analytics.track('openedx.paragon.docs.icons-table.selected-icon.copied', { name: currentIcon });
+    sendUserAnalyticsEvent(ICON_COPIED_EVENT, { name: currentIcon });
   };
 
   const handleChangeSearchValue = useMemo(() => debounce(setSearchValue, 500, { leading: false }), []);
