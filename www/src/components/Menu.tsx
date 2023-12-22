@@ -75,7 +75,7 @@ export interface IComponentNavItem {
     type: string,
     status?: string,
   },
-  isActive: boolean,
+  isActive?: boolean,
 }
 
 export function ComponentNavItem({

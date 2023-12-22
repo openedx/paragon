@@ -89,7 +89,7 @@ Overlay.propTypes = {
    * Animate the entering and exiting of the Overlay. `true` will use the `<Fade>` transition,
    * or a custom react-transition-group `<Transition>` component can be provided.
    */
-  transition: PropTypes.func,
+  transition: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 };
 
 OverlayTrigger.propTypes = {

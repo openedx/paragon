@@ -270,7 +270,7 @@ Dropzone.propTypes = {
    */
   validator: PropTypes.func,
   /** A component to display initial state of the `Dropzone`. */
-  inputComponent: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  inputComponent: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
 };
 
 export default Dropzone;
