@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -21,8 +20,9 @@ function SearchFieldLabel({ children, ...props }) {
 
 SearchFieldLabel.propTypes = {
   /**
-   * specifies the label to use for the input field (e.g., for i18n translations). Note: if `children` is not provided,
-   * a screenreader-only label will be used in its placed based on the `screenReaderText.label` prop for `SearchField.Advanced`.
+   * specifies the label to use for the input field (e.g., for i18n translations).
+   * Note: if `children` is not provided, a screenreader-only label will be used in
+   * its placed based on the `screenReaderText.label` prop for `SearchField.Advanced`.
    */
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };

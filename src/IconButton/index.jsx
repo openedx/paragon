@@ -87,7 +87,7 @@ IconButton.propTypes = {
   alt: PropTypes.string.isRequired,
   /** Changes icon styles for dark background */
   invertColors: PropTypes.bool,
-  /** Accepts a React fontawesome icon. https://fontawesome.com/how-to-use/on-the-web/using-with/react */
+  /** Accepts a React fontawesome icon. */
   icon: PropTypes.shape({
     prefix: PropTypes.string,
     iconName: PropTypes.string,
