@@ -26,7 +26,7 @@ function ToastContainer({ position, className }) {
   const portalDivRef = useRef(null);
   const positionStyle = positionStyles[position] || positionStyles['bottom-left'];
 
-  if (!portalDivRef.current) {
+  if (!portalDivRef.current && typeof document !== 'undefined') {
     portalDivRef.current = document.createElement('div');
     portalDivRef.current.setAttribute('class', 'toast-portal');
     portalDivRef.current.setAttribute('role', 'alert');

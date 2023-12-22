@@ -5,7 +5,8 @@ import {
   Button,
   Form,
   Input,
-  Toast,
+  ToastContainer,
+  toast,
   Icon,
   IconButtonWithTooltip,
 } from '~paragon-react';
@@ -28,11 +29,9 @@ const controlsProps = [
 ];
 
 function BoxShadowNode() {
-  const [showToast, setShowToast] = useState(false);
-
   const isBoxShadowCopied = (level, side) => {
     navigator.clipboard.writeText(`@include pgn-box-shadow(${level}, "${side}");`);
-    setShowToast(true);
+    toast({ message: 'Box-shadow copied to clipboard!', duration: 2000 });
   };
 
   const boxShadowCells = boxShadowLevels.map(level => (
@@ -56,14 +55,7 @@ function BoxShadowNode() {
   return (
     <div className="pgn-doc__box-shadow-cells">
       { boxShadowCells }
-      <Toast
-        className="pgn-doc__box-shadow--toast"
-        onClose={() => setShowToast(false)}
-        show={showToast}
-        delay={2000}
-      >
-        Box-shadow copied to clipboard!
-      </Toast>
+      <ToastContainer />
     </div>
   );
 }
