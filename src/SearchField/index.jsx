@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
