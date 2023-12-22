@@ -121,9 +121,12 @@ function PropsTable({ props: componentProps, displayName, content }: IPropsTable
       <Card.Header as="h3" title={`${displayName} Props API`} className="pb-1" />
       {content && <p className="px-4 small">{content}</p>}
       {bootstrapLink && (
-        <Hyperlink className="px-4 small mb-3" destination={bootstrapLink} target="_blank">
-          This is a pass through component from React-Bootstrap, see original props documentation here.
-        </Hyperlink>
+        <p className="px-4 small mb-3">
+          This is a pass through component from React-Bootstrap, see original props documentation{' '}
+          <Hyperlink destination={bootstrapLink}>
+            here.
+          </Hyperlink>
+        </p>
       )}
       {componentProps.length > 0 ? (
         <ul className="list-unstyled">
