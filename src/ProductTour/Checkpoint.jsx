@@ -10,6 +10,7 @@ import CheckpointActionRow from './CheckpointActionRow';
 import CheckpointBody from './CheckpointBody';
 import CheckpointBreadcrumbs from './CheckpointBreadcrumbs';
 import CheckpointTitle from './CheckpointTitle';
+import messages from './messages';
 
 const Checkpoint = React.forwardRef(({
   body,
@@ -99,10 +100,8 @@ const Checkpoint = React.forwardRef(({
     >
       <span className="sr-only">
         <FormattedMessage
-          id="pgn.ProductTour.Checkpoint.position-text"
-          defaultMessage="Top of step {step}"
-          value={{ step: index + 1 }}
-          description="Screen-reader message to indicate the user's position in a sequence of checkpoints."
+          {...messages.topPositionText}
+          values={{ step: index + 1 }}
         />
       </span>
       {(title || !isOnlyCheckpoint) && (
@@ -118,8 +117,12 @@ const Checkpoint = React.forwardRef(({
         {...props}
       />
       <div id="pgn__checkpoint-arrow" data-popper-arrow />
-      {/* This text is not translated due to Paragon's lack of i18n support */}
-      <span className="sr-only">Bottom of step {index + 1}</span>
+      <span className="sr-only">
+        <FormattedMessage
+          {...messages.bottomPositionText}
+          values={{ step: index + 1 }}
+        />
+      </span>
     </div>
   );
 });
