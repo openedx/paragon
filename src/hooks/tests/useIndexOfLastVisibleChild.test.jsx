@@ -12,12 +12,12 @@ window.ResizeObserver = window.ResizeObserver
   }));
 
 function TestComponent() {
-  const containerElementRef = React.useRef(null);
+  const [containerElementRef, setContainerElementRef] = React.useState(null);
   const overflowElementRef = React.useRef(null);
-  const indexOfLastVisibleChild = useIndexOfLastVisibleChild(containerElementRef.current, overflowElementRef.current);
+  const indexOfLastVisibleChild = useIndexOfLastVisibleChild(containerElementRef, overflowElementRef.current);
 
   return (
-    <div ref={containerElementRef} style={{ display: 'flex' }}>
+    <div ref={setContainerElementRef} style={{ display: 'flex' }}>
       <div style={{ width: '250px' }} className="element">Element 1</div>
       <div style={{ width: '250px' }} className="element">Element 2</div>
       <div style={{ width: '250px' }} className="element">Element 3</div>
