@@ -1,5 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 const Analytics = require('analytics-node');
+const { COMPONENT_GENERATED_EVENT } = require('../../segment-events');
 
 const analytics = new Analytics(process.env.SEGMENT_KEY);
 
@@ -12,7 +13,7 @@ exports.handler = async function eventHandler(event) {
   // dispatch event to Segment
   analytics.track({
     anonymousId: uuidv4(),
-    event: 'openedx.paragon.functions.track-generate-component.created',
+    event: COMPONENT_GENERATED_EVENT,
     properties: { componentName },
   });
 
