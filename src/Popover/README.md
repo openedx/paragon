@@ -3,7 +3,7 @@ title: 'Popover'
 type: 'component'
 components:
   - Popover
-  -  PopoverTitle
+  - PopoverTitle
   - PopoverContent
 categories:
   - Overlays
