@@ -116,6 +116,9 @@ ModalDialog.propTypes = {
    * Prevent clicking on the backdrop to close the modal
    */
   isBlocking: PropTypes.bool,
+  /**
+   * Specifies the z-index of the modal
+   */
   zIndex: PropTypes.number,
 };
 

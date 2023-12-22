@@ -101,18 +101,19 @@ Hyperlink.propTypes = {
   children: PropTypes.node.isRequired,
   /** Custom class names for the hyperlink */
   className: PropTypes.string,
-  /** specifies where the link should open. The default behavior is `_self`, which means that the URL will be loaded into the same browsing context as the current one. If the target is `_blank` (opening a new window) `rel='noopener'` will be added to the anchor tag to prevent any potential [reverse tabnabbing attack](https://www.owasp.org/index.php/Reverse_Tabnabbing).
-   */
+  /** specifies where the link should open. The default behavior is `_self`, which means that the URL will be
+   * loaded into the same browsing context as the current one.
+   * If the target is `_blank` (opening a new window) `rel='noopener'` will be added to the anchor tag to prevent
+   * any potential [reverse tabnabbing attack](https://www.owasp.org/index.php/Reverse_Tabnabbing).
+  */
   target: PropTypes.string,
   /** specifies the callback function when the link is clicked */
   onClick: PropTypes.func,
-  // eslint-disable-next-line max-len
   /** specifies the text for links with a `_blank` target (which loads the URL in a new browsing context). */
   externalLinkAlternativeText: isRequiredIf(
     PropTypes.string,
     props => props.target === '_blank',
   ),
-  // eslint-disable-next-line max-len
   /** specifies the title for links with a `_blank` target (which loads the URL in a new browsing context). */
   externalLinkTitle: isRequiredIf(
     PropTypes.string,
@@ -120,9 +121,9 @@ Hyperlink.propTypes = {
   ),
   /** type of hyperlink */
   variant: PropTypes.oneOf(['default', 'muted', 'brand']),
-  /** specify the link style. By default it will be underlined. */
+  /** specify the link style. By default, it will be underlined. */
   isInline: PropTypes.bool,
-  /** specify if we need to show launch Icon. By default it will be visible. */
+  /** specify if we need to show launch Icon. By default, it will be visible. */
   showLaunchIcon: PropTypes.bool,
 };
 
