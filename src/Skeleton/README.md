@@ -5,6 +5,7 @@ components:
 - Skeleton
 categories:
 - Status & metadata
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

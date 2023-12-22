@@ -1,0 +1,156 @@
+---
+title: 'TableControlBar'
+type: 'component'
+components:
+- TableControlBar
+- BulkActions
+- DropdownFilters
+- FilterStatus
+- SmartStatus
+- SelectionStatus
+- RowStatus
+categories:
+- Table
+tabName: 'implementation'
+status: 'New'
+designStatus: 'Done'
+devStatus: 'In progress'
+---
+
+The `TableControlBar` component is meant to be rendered within a `DataTableContext` (provided by `DataTable` here). The context provides necessary information
+to the control bar, such as the filters and filter state, the selection state of the table, as well as any bulk actions.
+
+It always shows the `SmartStatus` component. If applicable, it displays the `DropdownFilters` component, the `BulkActions` component.
+
+## Basic usage
+
+```jsx live
+<DataTable
+  isFilterable
+  defaultColumnValues={{ Filter: TextFilter }}
+  numBreakoutFilters={2}
+  columns={[
+    {
+      Header: 'Name',
+      accessor: 'name',
+
+    },
+    {
+      Header: 'Age',
+      accessor: 'age',
+      Filter: MultiSelectDropdownFilter,
+      filter: 'includesValue',
+      filterChoices: [
+        {
+          name: 'Four',
+          value: 4,
+        },
+        {
+          name: 'One',
+          value: 1,
+        },
+        {
+          name: 'Twelve',
+          value: 12,
+        },
+        {
+          name: 'Nine',
+          value: 9,
+        },
+        {
+          name: 'Seventeen',
+          number: 17,
+          value: 17,
+        },
+      ]
+    },
+    {
+      Header: 'Famous For',
+      accessor: 'famous_for',
+    },
+    {
+      Header: 'Coat Color',
+      accessor: 'color',
+      Filter: CheckboxFilter,
+      filter: 'includesValue',
+      filterChoices: [{
+        name: 'russian white',
+        number: 1,
+        value: 'russian white',
+      },
+      {
+        name: 'orange tabby',
+        number: 2,
+        value: 'orange tabby',
+      },
+      {
+        name: 'brown tabby',
+        number: 3,
+        value: 'brown tabby',
+      },
+      {
+        name: 'siamese',
+        number: 1,
+        value: 'siamese',
+      }]
+    },
+  ]}
+  itemCount={7}
+  data={[
+    {
+      name: 'Lil Bub',
+      color: 'brown tabby',
+      famous_for: 'weird tongue',
+      age: 4,
+    },
+    {
+      name: 'Grumpy Cat',
+      color: 'siamese',
+      famous_for: 'serving moods',
+      age: 4,
+    },
+    {
+      name: 'Smoothie',
+      color: 'orange tabby',
+      famous_for: 'modeling',
+      age: 1,
+    },
+    {
+      name: 'Maru',
+      color: 'brown tabby',
+      famous_for: 'being a lovable oaf',
+      age: 12,
+    },
+    {
+      name: 'Keyboard Cat',
+      color: 'orange tabby',
+      famous_for: 'piano virtuoso',
+      age: 9,
+    },
+    {
+      name: 'Long Cat',
+      color: 'russian white',
+      famous_for:
+        'being loooooooooooooooooooooooooooooooooooooooooooooooooooooong',
+      age: 9,
+    },
+    {
+      name: 'Zeno',
+      color: 'brown tabby',
+      famous_for: 'getting halfway there',
+      age: 17,
+    },
+  ]}
+  bulkActions={[
+    {
+      buttonText: 'Download CSV',
+      handleClick: (selectedRows) => console.log('Downloading CSV ', selectedRows),
+    },
+  ]}
+>
+  <TableControlBar />
+</DataTable>
+```
+
+## TableControlBar Subcomponents
+These components are used by the `TableControlBar` but can also be used individually as children of `DataTable`.

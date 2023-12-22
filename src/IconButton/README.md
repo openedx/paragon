@@ -6,6 +6,7 @@ components:
 - IconButtonWithTooltip
 categories:
 - Buttonlike
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

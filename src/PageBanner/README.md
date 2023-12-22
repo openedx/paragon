@@ -5,6 +5,7 @@ components:
 - PageBanner
 categories:
 - Status & metadata
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Complete'
 devStatus: 'In Progress'

@@ -5,6 +5,7 @@ components:
 - ProductTour
 categories:
 - Overlays
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

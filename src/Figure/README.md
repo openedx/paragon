@@ -5,6 +5,7 @@ categories:
 - Content
 components:
 - Figure
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

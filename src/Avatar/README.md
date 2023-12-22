@@ -5,6 +5,7 @@ components:
 - Avatar
 categories:
 - Imagery & Iconography
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'

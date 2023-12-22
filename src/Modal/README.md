@@ -5,6 +5,7 @@ components:
 - Modal
 categories:
 - Overlays
+tabName: 'implementation'
 status: 'Deprecate soon'
 designStatus: 'Done'
 devStatus: 'To Do'

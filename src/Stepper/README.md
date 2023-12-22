@@ -10,6 +10,7 @@ components:
 - StepperHeaderStep
 categories:
 - Navigation
+tabName: 'implementation'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |

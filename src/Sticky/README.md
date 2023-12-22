@@ -5,6 +5,7 @@ components:
 - Sticky
 categories:
 - Content
+tabName: 'implementation'
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'

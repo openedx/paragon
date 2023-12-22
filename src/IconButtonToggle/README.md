@@ -5,6 +5,7 @@ components:
 - IconButtonToggle
 categories:
 - Buttonlike
+tabName: 'implementation'
 status: 'Stable'
 designStatus: 'In Progress'
 devStatus: 'Done'

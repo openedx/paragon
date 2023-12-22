@@ -1,0 +1,120 @@
+---
+title: 'Form.Autosuggest'
+type: 'component'
+components:
+- FormAutosuggest
+- FormAutosuggestOption
+categories:
+- Forms
+tabName: 'implementation'
+status: 'New'
+designStatus: 'Done'
+devStatus: 'In progress'
+notes: |
+
+---
+
+Form auto-suggest enables users to manually select or type to find matching options to partial text input.
+
+## Basic Usage
+
+```jsx live
+() => {
+  const [selected, setSelected] = useState('');
+
+  return (
+    <Form.Group>
+      <Form.Label>
+        <h4>Programming language</h4>
+      </Form.Label>
+      <Form.Autosuggest
+        aria-label="form autosuggest"
+        helpMessage="Select language"
+        errorMessageText="Error, no selected value"
+        value={selected}
+        onSelected={(value) => setSelected(value)}
+      >
+        <Form.AutosuggestOption>JavaScript</Form.AutosuggestOption>
+        <Form.AutosuggestOption>Python</Form.AutosuggestOption>
+        <Form.AutosuggestOption>Rube</Form.AutosuggestOption>
+        <Form.AutosuggestOption onClick={(e) => alert(e.currentTarget.getAttribute('data-value'))}>
+          Option with custom onClick
+        </Form.AutosuggestOption>
+      </Form.Autosuggest>
+    </Form.Group>
+  );
+};
+```
+
+## Search Usage
+
+```jsx live
+() => {
+  const [selected, setSelected] = useState('');
+
+  return (
+    <Form.Autosuggest
+      placeholder="Type 'T'"
+      aria-label="form autosuggest"
+      errorMessageText="Error, no selected value"
+      helpMessage="Select language"
+      value={selected}
+      onSelected={(value) => setSelected(value)}
+    >
+      <Form.AutosuggestOption>PHP</Form.AutosuggestOption>
+      <Form.AutosuggestOption>Java</Form.AutosuggestOption>
+      <Form.AutosuggestOption>Turbo Pascal</Form.AutosuggestOption>
+      <Form.AutosuggestOption>Flask</Form.AutosuggestOption>
+    </Form.Autosuggest>
+  );
+};
+```
+
+## Loading state
+
+```jsx live
+() => {
+  const [data, setData] = useState([]);
+  const [showLoading, setShowLoading] = useState(false);
+
+  useEffect(() => {
+    setShowLoading(true);
+    fetch('https://api.sampleapis.com/coffee/hot')
+      .then(data => data.json())
+      .then(items => {
+        setTimeout(() => {
+          setData(items);
+          setShowLoading(false);
+        }, 1500);
+      });
+  }, []);
+
+  const searchCoffee = (title) => {
+    setShowLoading(true);
+    fetch('https://api.sampleapis.com/coffee/hot')
+      .then(data => data.json())
+      .then(items => setTimeout(() => {
+        const filteredCoffee = items.filter(res => res.title.toLowerCase().includes(title.toLowerCase()));
+        setShowLoading(false);
+        if (filteredCoffee) { return filteredCoffee; }
+        return { ...title, filteredCoffee };
+      }, 1500));
+  };
+
+  return (
+    <Form.Group>
+      <Form.Label>
+        <h4>Café API</h4>
+      </Form.Label>
+      <Form.Autosuggest
+        isLoading={showLoading}
+        placeholder="This is placeholder"
+        screenReaderText="Loading..."
+        onChange={searchCoffee}
+      >
+        {data.map((item, index) => <Form.AutosuggestOption key={index}>{item.title}</Form.AutosuggestOption>)}
+      </Form.Autosuggest>
+    </Form.Group>
+  );
+};
+```

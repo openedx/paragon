@@ -43,6 +43,7 @@ export interface ILayout {
   tab?: string,
   isAutoToc?: boolean,
   githubEditPath?: string,
+  tabName?: string,
 }
 
 function Layout({
@@ -54,6 +55,7 @@ function Layout({
   isAutoToc,
   tab,
   githubEditPath,
+  tabName,
 }: ILayout) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.extraLarge.minWidth });
   const { settings } = useContext(SettingsContext);
@@ -72,6 +74,7 @@ function Layout({
       <Header
         siteTitle={data.site.siteMetadata?.title || 'Title'}
         showMinimizedTitle={isMobile || showMinimizedTitle}
+        tabName={tabName}
       />
       <Settings showMinimizedTitle={showMinimizedTitle} />
       {isMdx || !hideFooterComponentMenu ? (
@@ -79,7 +82,7 @@ function Layout({
           <Row className="flex-xl-nowrap">
             <Col className="d-none d-xl-block p-0" xl={settings.containerWidth === 'xl' ? 'auto' : 2}>
               <Sticky offset={6} className="pgn-doc__toc p-0 pt-3">
-                <Menu />
+                <Menu tabName={tabName} />
               </Sticky>
             </Col>
             <Col
@@ -193,6 +196,7 @@ Layout.propTypes = {
   isMdx: PropTypes.bool,
   tab: PropTypes.string,
   githubEditPath: PropTypes.string,
+  tabName: PropTypes.string,
 };
 
 Layout.defaultProps = {
@@ -203,6 +207,7 @@ Layout.defaultProps = {
   tab: undefined,
   isAutoToc: false,
   githubEditPath: undefined,
+  tabName: undefined,
 };
 
 export default Layout;
