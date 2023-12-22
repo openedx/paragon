@@ -5,6 +5,7 @@ components:
 - TableDeprecated
 categories:
 - Table
+tabName: 'implementation'
 status: 'Deprecate soon'
 designStatus: 'TBD'
 devStatus: 'TBD'

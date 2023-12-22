@@ -5,6 +5,7 @@ components:
 - CheckBoxGroup
 categories:
 - Forms (deprecated)
+tabName: 'implementation'
 status: 'Deprecate Soon'
 designStatus: 'To Do'
 devStatus: 'To Do'

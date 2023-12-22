@@ -5,6 +5,7 @@ components:
 - ValidationFormGroup
 categories:
 - Forms (deprecated)
+tabName: 'implementation'
 status: 'Deprecate Soon'
 designStatus: 'Done'
 devStatus: 'Done'

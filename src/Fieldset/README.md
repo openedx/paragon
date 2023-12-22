@@ -5,6 +5,7 @@ components:
 - Fieldset
 categories:
 - Forms (deprecated)
+tabName: 'implementation'
 status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'To Do'
