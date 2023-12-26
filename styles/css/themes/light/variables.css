@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Wed, 06 Dec 2023 09:28:09 GMT
+ * Generated on Tue, 26 Dec 2023 14:13:40 GMT
  */
 
 :root {
@@ -580,7 +580,6 @@
   --pgn-color-alert-title: var(--pgn-color-black);
   --pgn-color-theme-active-gray: var(--pgn-color-gray-900);
   --pgn-color-theme-hover-gray: var(--pgn-color-gray-700);
-  --pgn-color-theme-focus-gray: var(--pgn-color-gray-300);
   --pgn-color-theme-border-gray: var(--pgn-color-gray-200);
   --pgn-color-theme-bg-gray: var(--pgn-color-gray-100);
   --pgn-color-border: var(--pgn-color-gray-200);
@@ -1112,10 +1111,11 @@
   --pgn-color-theme-default-light: var(--pgn-color-light-500);
   --pgn-color-theme-default-brand: var(--pgn-color-brand-500);
   --pgn-color-theme-default-primary: var(--pgn-color-primary-500);
-  --pgn-color-theme-focus-dark: var(--pgn-color-dark-300);
-  --pgn-color-theme-focus-light: var(--pgn-color-light-300);
-  --pgn-color-theme-focus-brand: var(--pgn-color-brand-300);
-  --pgn-color-theme-focus-primary: var(--pgn-color-primary-300);
+  --pgn-color-theme-focus-gray: var(--pgn-color-gray-500);
+  --pgn-color-theme-focus-dark: var(--pgn-color-dark-500);
+  --pgn-color-theme-focus-light: var(--pgn-color-light-500);
+  --pgn-color-theme-focus-brand: var(--pgn-color-brand-500);
+  --pgn-color-theme-focus-primary: var(--pgn-color-primary-500);
   --pgn-color-theme-border-dark: var(--pgn-color-dark-200);
   --pgn-color-theme-border-light: var(--pgn-color-light-200);
   --pgn-color-theme-border-brand: var(--pgn-color-brand-200);
@@ -1444,11 +1444,11 @@
   --pgn-color-theme-default-info: var(--pgn-color-info-500);
   --pgn-color-theme-default-success: var(--pgn-color-success-500);
   --pgn-color-theme-default-secondary: var(--pgn-color-secondary-500);
-  --pgn-color-theme-focus-danger: var(--pgn-color-danger-300);
-  --pgn-color-theme-focus-warning: var(--pgn-color-warning-300);
-  --pgn-color-theme-focus-info: var(--pgn-color-info-300);
-  --pgn-color-theme-focus-success: var(--pgn-color-success-300);
-  --pgn-color-theme-focus-secondary: var(--pgn-color-secondary-300);
+  --pgn-color-theme-focus-danger: var(--pgn-color-danger-500);
+  --pgn-color-theme-focus-warning: var(--pgn-color-warning-500);
+  --pgn-color-theme-focus-info: var(--pgn-color-info-500);
+  --pgn-color-theme-focus-success: var(--pgn-color-success-500);
+  --pgn-color-theme-focus-secondary: var(--pgn-color-secondary-500);
   --pgn-color-theme-border-danger: var(--pgn-color-danger-200);
   --pgn-color-theme-border-warning: var(--pgn-color-warning-200);
   --pgn-color-theme-border-info: var(--pgn-color-info-200);
