@@ -41,15 +41,15 @@
         bottom: calc(var(--pgn-spacing-btn-focus-distance-to-border) * -1);
         left: calc(var(--pgn-spacing-btn-focus-distance-to-border) * -1);
         border: solid var(--pgn-size-btn-focus-width) var(--pgn-btn-focus-outline-color, var(--pgn-color-body-base));
-        border-radius: var(--pgn-size-btn-focus-border-radius);
+        border-radius: var(--pgn-size-btn-focus-border-radius-base);
       }
 
       &.btn-lg::before {
-        border-radius: var(--pgn-size-btn-focus-border-radius);
+        border-radius: var(--pgn-size-btn-focus-border-radius-lg);
       }
 
       &.btn-sm::before {
-        border-radius: var(--pgn-size-btn-focus-border-radius);
+        border-radius: var(--pgn-size-btn-focus-border-radius-sm);
       }
 
       &:active,
