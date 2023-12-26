@@ -68,6 +68,7 @@ const Dropdown = React.forwardRef(
     );
   },
 );
+
 Dropdown.propTypes = {
   autoClose: PropTypes.oneOfType([
     PropTypes.string,
@@ -78,6 +79,7 @@ Dropdown.propTypes = {
   show: PropTypes.bool,
   variant: PropTypes.oneOf(['light', 'dark']),
 };
+
 Dropdown.defaultProps = {
   autoClose: true,
   className: '',
@@ -126,9 +128,11 @@ Dropdown.Item = React.forwardRef(
     );
   },
 );
+
 Dropdown.Item.propTypes = {
   className: PropTypes.string,
 };
+
 Dropdown.Item.defaultProps = {
   className: undefined,
 };
