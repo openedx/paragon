@@ -62,16 +62,16 @@
         "gray": { "value": "{color.gray.200}", "type": "color", "description": "Theme-specific gray border color." }
       },
       "focus": {
-        "primary": { "value": "{color.primary.300}", "type": "color", "description": "Theme-specific primary focus color." },
-        "secondary": { "value": "{color.secondary.300}", "type": "color", "description": "Theme-specific secondary focus color." },
-        "brand": { "value": "{color.brand.300}", "type": "color", "description": "Theme-specific brand focus color." },
-        "success": { "value": "{color.success.300}", "type": "color", "description": "Theme-specific success focus color." },
-        "info": { "value": "{color.info.300}", "type": "color", "description": "Theme-specific info focus color." },
-        "warning": { "value": "{color.warning.300}", "type": "color", "description": "Theme-specific warning focus color." },
-        "danger": { "value": "{color.danger.300}", "type": "color", "description": "Theme-specific danger focus color." },
-        "light": { "value": "{color.light.300}", "type": "color", "description": "Theme-specific light focus color." },
-        "dark": { "value": "{color.dark.300}", "type": "color", "description": "Theme-specific dark focus color." },
-        "gray": { "value": "{color.gray.300}", "type": "color", "description": "Theme-specific gray focus color." }
+        "primary": { "value": "{color.primary.500}", "type": "color", "description": "Theme-specific primary focus color." },
+        "secondary": { "value": "{color.secondary.500}", "type": "color", "description": "Theme-specific secondary focus color." },
+        "brand": { "value": "{color.brand.500}", "type": "color", "description": "Theme-specific brand focus color." },
+        "success": { "value": "{color.success.500}", "type": "color", "description": "Theme-specific success focus color." },
+        "info": { "value": "{color.info.500}", "type": "color", "description": "Theme-specific info focus color." },
+        "warning": { "value": "{color.warning.500}", "type": "color", "description": "Theme-specific warning focus color." },
+        "danger": { "value": "{color.danger.500}", "type": "color", "description": "Theme-specific danger focus color." },
+        "light": { "value": "{color.light.500}", "type": "color", "description": "Theme-specific light focus color." },
+        "dark": { "value": "{color.dark.500}", "type": "color", "description": "Theme-specific dark focus color." },
+        "gray": { "value": "{color.gray.500}", "type": "color", "description": "Theme-specific gray focus color." }
       },
       "default": {
         "primary": { "value": "{color.primary.500}", "type": "color", "description": "Theme-specific primary default color." },
