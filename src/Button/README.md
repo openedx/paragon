@@ -220,7 +220,8 @@ For link to be `disabled`, it must have href defined with some value.
         Tertiary
       </Button>
     </Stack>
-)}
+  )
+}
 ```
 
 ## Stateful buttons

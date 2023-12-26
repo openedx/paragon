@@ -311,7 +311,7 @@ const FormAutosuggest = forwardRef(
     const { getControlProps } = useFormGroupContext();
     const controlProps = getControlProps(props);
 
-    return (
+  return (
       <div className="pgn__form-autosuggest__wrapper" ref={parentRef} onFocus={enterControl}>
         <div aria-live="assertive" className="sr-only" data-testid="autosuggest-screen-reader-options-count">
           {`${dropdownItems.length} options found`}
