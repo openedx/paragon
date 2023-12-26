@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, {
   useRef, createContext, useState, useEffect,
 } from 'react';
@@ -138,27 +137,32 @@ SearchFieldAdvanced.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   /** specifies a custom class name. */
   className: PropTypes.string,
-  /** specifies a callback function for when the user loses focus in the `SearchField` component. The default is an empty function. For example:
+  /** specifies a callback function for when the user loses focus in the `SearchField` component.
+   * The default is an empty function. For example:
   ```jsx
   <SearchField onBlur={event => console.log(event)} />
   ``` */
   onBlur: PropTypes.func,
-  /** specifies a callback function for when the value in `SearchField` is changed by the user. The default is an empty function. For example:
+  /** specifies a callback function for when the value in `SearchField` is changed by the user.
+   * The default is an empty function. For example:
   ```jsx
   <SearchField onChange={value => console.log(value)} />
   ``` */
   onChange: PropTypes.func,
-  /** specifies a callback function for when the value in `SearchField` is cleared by the user. The default is an empty function. For example:
+  /** specifies a callback function for when the value in `SearchField` is cleared by the user.
+   * The default is an empty function. For example:
   ```jsx
   <SearchField onClear={() => console.log('search cleared')} />
   ``` */
   onClear: PropTypes.func,
-  /** specifies a callback function for when the user focuses in the `SearchField` component. The default is an empty function. For example:
+  /** specifies a callback function for when the user focuses in the `SearchField` component.
+   * The default is an empty function. For example:
   ```jsx
   <SearchField onFocus={event => console.log(event)} />
   ``` */
   onFocus: PropTypes.func,
-  /** specifies the screenreader text for both the clear and submit buttons (e.g., for i18n translations). The default is `{ label: 'search', clearButton: 'clear search', searchButton: 'submit search' }`. */
+  /** specifies the screenreader text for both the clear and submit buttons (e.g., for i18n translations).
+   * The default is `{ label: 'search', clearButton: 'clear search', searchButton: 'submit search' }`. */
   screenReaderText: PropTypes.shape({
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     submitButton: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
@@ -171,7 +175,8 @@ SearchFieldAdvanced.propTypes = {
     submit: PropTypes.element.isRequired,
     clear: PropTypes.element,
   }),
-  /** specifies the aria-label attribute on the form element. This is useful if you use the `SearchField` component more than once on a page. */
+  /** specifies the aria-label attribute on the form element. This is useful if you use the `SearchField` component
+   * more than once on a page. */
   formAriaLabel: PropTypes.string,
   /** Specifies whether the `SearchField` is disabled. */
   disabled: PropTypes.bool,

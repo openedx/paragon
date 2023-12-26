@@ -25,10 +25,10 @@ of the children until they exceed the width of the container.
     pointerEvents: 'none',
     visibility: 'hidden',
   };
-  const containerElementRef = React.useRef(null);
+  const [containerElementRef, setContainerElementRef] = React.useState(null);
   const overflowElementRef = React.useRef(null);
   const indexOfLastVisibleChild = useIndexOfLastVisibleChild(
-    containerElementRef.current,
+    containerElementRef,
     overflowElementRef.current,
   );
   const elements = ['Element 1', 'Element 2', 'Element 3', 'Element 4', 'Element 5', 'Element 6', 'Element 7'];
@@ -71,7 +71,7 @@ of the children until they exceed the width of the container.
   }, [indexOfLastVisibleChild]);
 
   return (
-    <div className="d-flex" ref={containerElementRef}>
+    <div className="d-flex" ref={setContainerElementRef}>
       {children}
     </div>
   )
