@@ -6,6 +6,8 @@ import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
 import FormAutosuggest from '../FormAutosuggest';
 import FormAutosuggestOption from '../FormAutosuggestOption';
+import FormGroup from '../FormGroup';
+import FormLabel from '../FormLabel';
 
 function FormAutosuggestWrapper(props) {
   return (
@@ -28,6 +30,19 @@ function FormAutosuggestTestComponent(props) {
       <FormAutosuggestOption onClick={props.onClick}>Option 2</FormAutosuggestOption>
       <FormAutosuggestOption>Learn from more than 160 member universities</FormAutosuggestOption>
     </FormAutosuggestWrapper>
+  );
+}
+
+function FormAutosuggestLabelTestComponent() {
+  return (
+    <FormGroup>
+      <FormLabel data-testid="autosuggest-label">
+        <h3>Label</h3>
+      </FormLabel>
+      <FormAutosuggestWrapper>
+        <FormAutosuggestOption>Option</FormAutosuggestOption>
+      </FormAutosuggestWrapper>
+    </FormGroup>
   );
 }
 
@@ -111,6 +126,12 @@ describe('render behavior', () => {
     userEvent.click(input);
 
     expect(getByText('3 options found')).toBeInTheDocument();
+  });
+
+  it('associates labels with the input textbox', () => {
+    const { getByTestId } = render(<FormAutosuggestLabelTestComponent />);
+
+    expect(getByTestId('autosuggest-label').getAttribute('for')).toEqual(getByTestId('autosuggest-textbox-input').getAttribute('id'));
   });
 });
 

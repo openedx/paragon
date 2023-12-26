@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Popover from 'react-bootstrap/Popover';
+import BasePopover from 'react-bootstrap/Popover';
 import BasePopoverTitle from 'react-bootstrap/PopoverTitle';
 import BasePopoverContent from 'react-bootstrap/PopoverContent';
 
@@ -13,18 +13,18 @@ const PLACEMENT_VARIANTS = [
   'right',
 ];
 
-const WrapperPopover = React.forwardRef(({
+const Popover = React.forwardRef(({
   children,
   variant,
   ...props
 }, ref) => (
-  <Popover
+  <BasePopover
     {...props}
     className={classNames({ [`popover-${variant}`]: !!variant }, props.className)}
     ref={ref}
   >
     {children}
-  </Popover>
+  </BasePopover>
 ));
 
 function PopoverTitle(props) {
@@ -44,8 +44,8 @@ const commonPropTypes = {
 PopoverTitle.propTypes = commonPropTypes;
 PopoverContent.propTypes = commonPropTypes;
 
-WrapperPopover.propTypes = {
-  ...Popover.propTypes,
+Popover.propTypes = {
+  ...BasePopover.propTypes,
   /** An html id attribute, necessary for accessibility. */
   id: PropTypes.string.isRequired,
   /**
@@ -88,8 +88,8 @@ WrapperPopover.propTypes = {
   variant: PropTypes.string,
 };
 
-WrapperPopover.defaultProps = {
-  ...Popover.defaultProps,
+Popover.defaultProps = {
+  ...BasePopover.defaultProps,
   placement: 'right',
   title: undefined,
   arrowProps: undefined,
@@ -111,8 +111,8 @@ PopoverContent.defaultProps = {
   bsPrefix: 'popover-body',
 };
 
-WrapperPopover.Title = PopoverTitle;
-WrapperPopover.Content = PopoverContent;
+Popover.Title = PopoverTitle;
+Popover.Content = PopoverContent;
 
 export { PopoverTitle, PopoverContent };
-export default WrapperPopover;
+export default Popover;
