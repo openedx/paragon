@@ -4,7 +4,7 @@ exports.handler = async function eventHandler(event) {
   const body = JSON.parse(event.body);
   event.body = JSON.stringify({
     ...body,
-    eventId: 'openedx.paragon.functions.track-generate-component.created',
+    eventId: COMPONENT_GENERATED_EVENT,
     properties: { componentName: body.componentName },
   });
 
