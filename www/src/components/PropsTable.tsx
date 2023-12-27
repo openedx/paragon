@@ -1,10 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Badge, Card } from '~paragon-react';
+import { Badge, Card, Hyperlink } from '~paragon-react';
 import PropType from './PropType';
 
 const IGNORED_COMPONENT_PROPS = ['intl'];
+
+const BOOTSTRAP_BASE_URL = 'https://react-bootstrap-v4.netlify.app/components';
+
+const bootstrapLinks = {
+  Button: `${BOOTSTRAP_BASE_URL}/buttons/#button-props`,
+  Card: `${BOOTSTRAP_BASE_URL}/cards/#card-props`,
+  CardBody: `${BOOTSTRAP_BASE_URL}/cards/#card-body-props`,
+  CardDeck: `${BOOTSTRAP_BASE_URL}/cards/#card-deck-props`,
+  Dropdown: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-props`,
+  DropdownToggle: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-toggle-props`,
+  DropdownItem: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-item-props`,
+  DropdownMenu: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-menu-props`,
+  DropdownButton: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-button-props`,
+  FormControl: `${BOOTSTRAP_BASE_URL}/forms/#form-control-props`,
+  Nav: `${BOOTSTRAP_BASE_URL}/navs/#nav-props`,
+  Popover: `${BOOTSTRAP_BASE_URL}/overlays/#popover-props`,
+  ProgressBar: `${BOOTSTRAP_BASE_URL}/progress/#progress-bar-props`,
+  Spinner: `${BOOTSTRAP_BASE_URL}/spinners/#spinner-props`,
+  Tabs: `${BOOTSTRAP_BASE_URL}/tabs/#tabs-api`,
+  Tab: `${BOOTSTRAP_BASE_URL}/tabs/#tab-props`,
+  Toast: `${BOOTSTRAP_BASE_URL}/toasts/#toast-props`,
+};
 
 export type DefaultValueTypes = {
   value: string | undefined,
@@ -92,10 +114,20 @@ export interface IPropsTable {
 }
 
 function PropsTable({ props: componentProps, displayName, content }: IPropsTable) {
+  const bootstrapLink = bootstrapLinks[displayName];
+
   return (
     <Card className="mb-5" id={`props-api-table-${displayName}`}>
       <Card.Header as="h3" title={`${displayName} Props API`} className="pb-1" />
       {content && <p className="px-4 small">{content}</p>}
+      {bootstrapLink && (
+        <p className="px-4 small mb-3">
+          This is a pass through component from React-Bootstrap, see original props documentation{' '}
+          <Hyperlink destination={bootstrapLink}>
+            here.
+          </Hyperlink>
+        </p>
+      )}
       {componentProps.length > 0 ? (
         <ul className="list-unstyled">
           {componentProps

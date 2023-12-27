@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import Icon from '../Icon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { OverlayTrigger } from '../Overlay';
 import Tooltip from '../Tooltip';
 
@@ -22,8 +22,14 @@ const IconButton = React.forwardRef(({
 }, ref) => {
   const invert = invertColors ? 'inverse-' : '';
   const activeStyle = isActive ? `${variant}-` : '';
-  const IconComponent = iconAs;
-
+  if (!iconAs && process.env.NODE_ENV === 'development' && console) {
+    const msg = '[Deprecated] IconButton: you have not provided a value for iconAs prop and '
+      + 'are using a default one - FontAwesomeIcon, the default value is going to be changed soon '
+      + 'as Paragon is moving away from FontAwesome, please use Paragon\'s icons instead.';
+    // eslint-disable-next-line no-console
+    console.warn(msg);
+  }
+  const IconComponent = iconAs || FontAwesomeIcon;
   return (
     <button
       aria-label={alt}
@@ -53,7 +59,7 @@ const IconButton = React.forwardRef(({
 });
 
 IconButton.defaultProps = {
-  iconAs: Icon,
+  iconAs: undefined,
   src: null,
   icon: undefined,
   iconClassNames: undefined,
@@ -68,19 +74,20 @@ IconButton.defaultProps = {
 IconButton.propTypes = {
   /** A custom class name. */
   className: PropTypes.string,
-  /** Component that renders the icon, currently defaults to `Icon` */
+  /** Component that renders the icon, currently defaults to `FontAwesomeIcon`,
+   *  but is going to be deprecated soon, please use Paragon's icons instead. */
   iconAs: PropTypes.elementType,
   /** An icon component to render. Example import of a Paragon icon component:
    * `import { Check } from '@edx/paragon/dist/icon';`
    * */
-  src: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  src: PropTypes.oneOfType([PropTypes.element, PropTypes.elementType]),
   /** Alt text for your icon. For best practice, avoid using alt text to describe
    * the image in the `IconButton`. Instead, we recommend describing the function
    * of the button. */
   alt: PropTypes.string.isRequired,
   /** Changes icon styles for dark background */
   invertColors: PropTypes.bool,
-  /** Accepts a [Paragon icon](https://paragon-openedx.netlify.app/foundations/icons) */
+  /** Accepts a React fontawesome icon. */
   icon: PropTypes.shape({
     prefix: PropTypes.string,
     iconName: PropTypes.string,

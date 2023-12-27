@@ -27,7 +27,7 @@
         "spacing-y": { "value": ".5rem", "type": "dimension", "source": "$btn-block-spacing-y" }
       },
       "focus": {
-        "gap": { "value": "1px", "type": "dimension", "source": "$btn-focus-gap" },
+        "gap": { "value": "{size.btn.focus.width}", "type": "dimension", "source": "$btn-focus-gap" },
         "border-gap": {
           "value": "calc({size.btn.focus.width} + {spacing.btn.focus.gap})",
           "type": "dimension",
@@ -88,9 +88,13 @@
       "focus": {
         "width": { "value": "2px", "type": "dimension", "source": "$btn-focus-width" },
         "border-radius": {
-          "value": "calc({size.btn.border.radius.base} + {spacing.btn.focus.border-gap})",
-          "type": "dimension",
-          "source": "$btn-focus-border-radius"
+          "base": {
+            "value": "calc({size.btn.border.radius.base} + {spacing.btn.focus.border-gap})",
+            "type": "dimension",
+            "source": "$btn-focus-border-radius"
+          },
+          "lg": { "value": "{size.btn.focus.border-radius.base}", "type": "dimension", "source": "$btn-focus-border-radius-lg" },
+          "sm": { "value": "{size.btn.border.radius.base}", "type": "dimension", "source": "$btn-focus-border-radius-sm" }
         }
       }
     }

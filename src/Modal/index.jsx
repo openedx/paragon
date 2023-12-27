@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
@@ -271,21 +270,26 @@ class Modal extends React.Component {
 Modal.propTypes = {
   /** specifies whether the modal renders open or closed on the initial render. It defaults to false. */
   open: PropTypes.bool,
-  /** is the selector for an element in the dom which the modal should be rendered under. It uses querySelector to find the first element that matches that selector, and then creates a react portal to a div underneath the parent element.
- */
+  /** is the selector for an element in the dom which the modal should be rendered under.
+   * It uses querySelector to find the first element that matches that selector,
+   * and then creates a React portal to a div underneath the parent element.
+   */
   parentSelector: PropTypes.string,
   /** a string or an element that is rendered inside of the modal title, above the modal body. */
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   /** a string or an element that is rendered inside of the modal body, between the title and the footer. */
   body: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  /** an array of either elements or shapes that take the form of the buttonPropTypes. See the [buttonPropTypes](https://github.com/openedx/paragon/blob/master/src/Button/index.jsx#L40) for a list of acceptable props to pass as part of a button. */
+  /** an array of either elements or shapes that take the form of the buttonPropTypes.
+   * See the [buttonPropTypes](https://github.com/openedx/paragon/blob/master/src/Button/index.jsx#L40)
+   * for a list of acceptable props to pass as part of a button. */
   buttons: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.shape({}), // TODO: Only accept nodes in the future
   ])),
   /** specifies the display text of the default Close button. It defaults to "Close". */
   closeText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  /** a function that is called on close. It can be used to perform actions upon closing of the modal, such as restoring focus to the previous logical focusable element. */
+  /** a function that is called on close. It can be used to perform actions upon closing of the modal,
+   * such as restoring focus to the previous logical focusable element. */
   onClose: PropTypes.func.isRequired,
   variant: PropTypes.shape({
     status: PropTypes.string,
@@ -295,7 +299,8 @@ Modal.propTypes = {
   /** specifies whether a close button is rendered in the modal header. It defaults to true. */
   renderHeaderCloseButton: PropTypes.bool,
   /**
-   * Specifies optional classes to add to the element with the '.modal-dialog' class.  See Bootstrap documentation for possible classes.  Some options: modal-lg, modal-sm, modal-dialog-centered
+   * Specifies optional classes to add to the element with the '.modal-dialog' class.
+   * See Bootstrap documentation for possible classes.  Some options: modal-lg, modal-sm, modal-dialog-centered
    */
   dialogClassName: PropTypes.string,
 };
