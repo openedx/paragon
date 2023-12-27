@@ -18,6 +18,7 @@ import ComponentsUsage from '../components/insights/ComponentsUsage';
 
 // @ts-ignore
 import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
+import { sendUserAnalyticsEvent, USAGE_INSIGHTS_EVENTS } from '../../segment-events';
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
 import componentsUsage from '../utils/componentsUsage';
 import { IInsightsContext } from '../types/types';
@@ -63,7 +64,7 @@ export default function InsightsPage({ pageContext: { tab, githubEditPath } }: I
 
   const handleOnSelect = (value: string) => {
     if (value !== tab) {
-      global.analytics.track(`openedx.paragon.docs.insights.tabs.${value.toLowerCase().trim()}.clicked`);
+      sendUserAnalyticsEvent(USAGE_INSIGHTS_EVENTS.TAB_CLICKED, { tabName: value });
       navigate(INSIGHTS_PAGES.find(item => item.tab === value).path);
     }
   };

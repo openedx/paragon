@@ -29,13 +29,35 @@ describe('picker works as expected', () => {
   const color = 'wassap';
   const setColor = jest.fn();
   it('validates hex color', async () => {
-    const { rerender } = render(<ColorPicker color={color} setColor={setColor} />);
+    render(<ColorPicker color={color} setColor={setColor} />);
+
     await act(async () => {
       await userEvent.click(screen.getByRole('button'));
     });
+    expect(screen.queryByTestId('hex-input').value).toEqual('#wassap');
     expect(screen.queryByText('Colors must be in hexadecimal format.')).toBeInTheDocument();
 
-    rerender(<ColorPicker color="#32116c" setColor={setColor} />);
+    await act(async () => {
+      await userEvent.clear(screen.getByTestId('hex-input'));
+      await userEvent.paste(screen.getByTestId('hex-input'), '32116c');
+    });
+    expect(screen.queryByTestId('hex-input').value).toEqual('#32116c');
+    expect(screen.queryByText('Colors must be in hexadecimal format.')).not.toBeInTheDocument();
+
+    await act(async () => {
+      await userEvent.clear(screen.getByTestId('hex-input'));
+      await userEvent.paste(screen.getByTestId('hex-input'), 'yuk');
+    });
+
+    expect(screen.queryByTestId('hex-input').value).toEqual('#yuk');
+    expect(screen.queryByText('Colors must be in hexadecimal format.')).toBeInTheDocument();
+
+    await act(async () => {
+      await userEvent.clear(screen.getByTestId('hex-input'));
+      await userEvent.paste(screen.getByTestId('hex-input'), '#fad');
+    });
+
+    expect(screen.queryByTestId('hex-input').value).toEqual('#fad');
     expect(screen.queryByText('Colors must be in hexadecimal format.')).not.toBeInTheDocument();
   });
 });
