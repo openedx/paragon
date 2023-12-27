@@ -79,8 +79,11 @@ FormSwitch.propTypes = {
   children: PropTypes.node.isRequired,
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
+  /** Specifies class name to append to the label element. */
   labelClassName: PropTypes.string,
+  /** Specifies helper text to display below the switch. */
   helperText: PropTypes.node,
+  /** Determines whether the label should float to the left when the switch is active. */
   floatLabelLeft: PropTypes.bool,
 };
 

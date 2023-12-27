@@ -40,9 +40,9 @@ MenuItem.propTypes = {
   /** Specifies the base element */
   as: PropTypes.elementType,
   /** Specifies the jsx before the content of the ``MenuItem`` */
-  iconBefore: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  iconBefore: PropTypes.oneOfType([PropTypes.element, PropTypes.elementType]),
   /** Specifies the jsx after the content of the ``MenuItem`` */
-  iconAfter: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  iconAfter: PropTypes.oneOfType([PropTypes.element, PropTypes.elementType]),
 };
 
 MenuItem.defaultProps = {
