@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Wed, 06 Dec 2023 09:28:09 GMT
+ * Generated on Tue, 26 Dec 2023 14:13:40 GMT
  */
 
 :root {
@@ -236,7 +236,6 @@
   --pgn-spacing-card-margin-group: 12px;
   --pgn-spacing-card-spacer-y: .75rem;
   --pgn-spacing-card-spacer-x: 1.25rem;
-  --pgn-spacing-btn-focus-gap: 1px;
   --pgn-spacing-btn-block-spacing-y: .5rem;
   --pgn-spacing-bubble-expandable-padding-x: .25rem;
   --pgn-spacing-bubble-expandable-padding-y: 0;
@@ -493,6 +492,7 @@
   --pgn-spacing-card-margin-grid: var(--pgn-spacing-card-margin-group);
   --pgn-spacing-card-margin-deck: var(--pgn-spacing-card-margin-group);
   --pgn-spacing-btn-focus-border-gap: calc(var(--pgn-size-btn-focus-width) + var(--pgn-spacing-btn-focus-gap));
+  --pgn-spacing-btn-focus-gap: var(--pgn-size-btn-focus-width);
   --pgn-spacing-btn-padding-x-sm: var(--pgn-spacing-input-btn-padding-sm-x);
   --pgn-spacing-btn-padding-x-lg: var(--pgn-spacing-input-btn-padding-lg-x);
   --pgn-spacing-btn-padding-x-base: var(--pgn-spacing-input-btn-padding-x);
@@ -584,7 +584,8 @@
   --pgn-size-form-input-height-base: calc(var(--pgn-typography-form-input-line-height-base) * 1em + var(--pgn-spacing-form-input-padding-y-base) * 2 + var(--pgn-size-form-input-height-border));
   --pgn-size-dropdown-border-radius-inner: calc(var(--pgn-size-dropdown-border-radius-base) - var(--pgn-size-dropdown-border-width));
   --pgn-size-card-image-border-radius: var(--pgn-size-card-border-radius-base);
-  --pgn-size-btn-focus-border-radius: calc(var(--pgn-size-btn-border-radius-base) + var(--pgn-spacing-btn-focus-border-gap));
+  --pgn-size-btn-focus-border-radius-sm: var(--pgn-size-btn-border-radius-base);
+  --pgn-size-btn-focus-border-radius-base: calc(var(--pgn-size-btn-border-radius-base) + var(--pgn-spacing-btn-focus-border-gap));
   --pgn-size-btn-border-width: var(--pgn-size-input-btn-border-width);
   --pgn-typography-form-control-file-font-weight: var(--pgn-typography-form-input-font-weight);
   --pgn-typography-form-control-select-font-weight: var(--pgn-typography-form-input-font-weight);
@@ -600,5 +601,6 @@
   --pgn-size-form-control-select-height-base: var(--pgn-size-form-input-height-base);
   --pgn-size-form-input-height-border: calc(var(--pgn-size-form-input-width-border) * 2);
   --pgn-size-form-input-height-lg: calc(var(--pgn-typography-form-input-line-height-lg) * 1em + var(--pgn-spacing-input-btn-padding-lg-y) * 2 + var(--pgn-size-form-input-height-border));
+  --pgn-size-btn-focus-border-radius-lg: var(--pgn-size-btn-focus-border-radius-base);
   --pgn-size-form-control-select-height-lg: var(--pgn-size-form-input-height-lg);
 }

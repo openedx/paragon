@@ -28,11 +28,11 @@ designStatus: 'Done'
 devStatus: 'In progress'
 ---
 
-The DataTable component is a wrapper that uses the <a href="https://react-table.tanstack.com/docs/overview">react-table</a> library to
+The DataTable component is a wrapper that uses the <a href="https://github.com/TanStack/table/tree/v7/docs/src/pages/docs" target="_blank" rel="noopener noreferrer">react-table</a> library to
 create tables. It can be used as is, or its subcomponents can be used on their own, allowing the developer full control.
 
 Paragon also exports all React hooks from ``react-table`` allowing the developers to use them and make customizations more freely without adding ``react-table`` as a separate dependency to their project.
-For full list of available hooks view <a href="https://react-table.tanstack.com/docs/api/overview">react-table API reference</a>.
+For full list of available hooks view <a href="https://github.com/TanStack/table/tree/v7/docs/src/pages/docs/api" target="_blank" rel="noopener noreferrer">react-table API reference</a>.
 
 ## How children get information
 
@@ -49,7 +49,7 @@ const instance = useContext(DataTableContext)
 For small tables (less than ~10,000 rows), filtering, sorting and pagination can be done quickly and easily on the frontend.
 
 In this example, a default TextFilter component is used for all columns. A default filter can be passed in,
-or a filter component can be defined on the column. See <a href="https://react-table.tanstack.com/docs/api/useFilters">react-table filters documentation</a>
+or a filter component can be defined on the column. See <a href="https://github.com/TanStack/table/blob/v7/docs/src/pages/docs/api/useFilters.md" target="_blank" rel="noopener noreferrer">react-table filters documentation</a>
 for more information.
 
 ```jsx live

@@ -38,7 +38,7 @@ This component is used to power Tooltips and Popovers.
           Click me to see
         </Button>
       </div>
-      <Overlay target={target.current} show={open} placement="right">
+      <Overlay target={target.current} show={isOpen} placement="right">
         {({ placement, arrowProps, show: _show, popper, ...props }) => (
           <div
             {...props}
