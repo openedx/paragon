@@ -73,7 +73,7 @@ IconButton.propTypes = {
   /** An icon component to render. Example import of a Paragon icon component:
    * `import { Check } from '@edx/paragon/dist/icon';`
    * */
-  src: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  src: PropTypes.oneOfType([PropTypes.element, PropTypes.elementType]),
   /** Alt text for your icon. For best practice, avoid using alt text to describe
    * the image in the `IconButton`. Instead, we recommend describing the function
    * of the button. */
