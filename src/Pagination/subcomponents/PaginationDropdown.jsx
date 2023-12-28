@@ -15,21 +15,23 @@ export default function PaginationDropdown() {
   }
 
   return (
-    <Dropdown>
-      <Dropdown.Toggle variant={getPageButtonVariant()} id="Pagination dropdown">
-        {getPageOfText()}
-      </Dropdown.Toggle>
-      <Dropdown.Menu className="pagination-reduced-dropdown-menu">
-        {[...Array(pageCount).keys()].map(pageNum => (
-          <Dropdown.Item
-            onClick={() => handlePageSelect(pageNum + 1)}
-            key={pageNum}
-            data-testid="pagination-dropdown-item"
-          >
-            {pageNum + 1}
-          </Dropdown.Item>
-        ))}
-      </Dropdown.Menu>
-    </Dropdown>
+    <li>
+      <Dropdown>
+        <Dropdown.Toggle variant={getPageButtonVariant()} id="Pagination dropdown">
+          {getPageOfText()}
+        </Dropdown.Toggle>
+        <Dropdown.Menu className="pagination-reduced-dropdown-menu">
+          {[...Array(pageCount).keys()].map(pageNum => (
+            <Dropdown.Item
+              onClick={() => handlePageSelect(pageNum + 1)}
+              key={pageNum}
+              data-testid="pagination-dropdown-item"
+            >
+              {pageNum + 1}
+            </Dropdown.Item>
+          ))}
+        </Dropdown.Menu>
+      </Dropdown>
+    </li>
   );
 }
