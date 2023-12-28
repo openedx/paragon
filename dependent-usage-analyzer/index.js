@@ -54,10 +54,24 @@ function getDependencyVersion(dir, options = {}) {
     peerDependencies
   } = JSON.parse(fs.readFileSync(`${dir}/${packageFilename}`, { encoding: 'utf-8' }));
 
+  const getVersion = (depsObjectName, org = '@edx') => {
+    switch (depsObjectName) {
+      case 'packages':
+        return packages && packages[`node_modules/${org}/paragon`]?.version;
+      case 'dependencies':
+        return dependencies && dependencies[`${org}/paragon`]?.version;
+      case 'peerDependencies':
+        return peerDependencies && peerDependencies[`${org}/paragon`]?.version;
+      default:
+        console.error(`Unexpected organization: ${org} or dependence object name: ${depsObjectName}`);
+        return undefined;
+    }
+  };
+
   // first handle lockfileVersion 3 that contains all dependencies data in 'packages' key
-  const packagesDependencyVersion = packages && packages['node_modules/@edx/paragon']?.version;
-  const directDependencyVersion = dependencies && dependencies['@edx/paragon']?.version;
-  const peerDependencyVersion = peerDependencies && peerDependencies['@edx/paragon']?.version;
+  const packagesDependencyVersion = getVersion('packages') || getVersion('packages', '@openedx');
+  const directDependencyVersion = getVersion('dependencies') || getVersion('dependencies', '@openedx');
+  const peerDependencyVersion = getVersion('peerDependencies') || getVersion('peerDependencies', '@openedx');
   const resolvedVersion = packagesDependencyVersion || directDependencyVersion || peerDependencyVersion;
   if (resolvedVersion) {
     return resolvedVersion;
@@ -117,8 +131,9 @@ function getComponentUsagesInFiles(files, rootDir) {
     walk.simple({
       // ImportDeclaration nodes contains data about imports in the files
       ImportDeclaration(node) {
+        const allowedPackages = ['@edx/paragon', '@edx/paragon/icons', '@openedx/paragon', '@openedx/paragon/icons'];
         // Ignore direct imports for now
-        if (node.source.value === '@edx/paragon' || node.source.value === '@edx/paragon/icons') {
+        if (allowedPackages.includes(node.source.value)) {
           node.specifiers.forEach(addParagonImport);
         }
       },
@@ -209,8 +224,14 @@ function findProjectsToAnalyze(dir) {
   // If paragon isn't included in the package.json file then skip analyzing it
   const packageJSONFilesWithParagon = packageJSONFiles.filter(packageJSONFile => {
     const { dependencies, peerDependencies } = JSON.parse(fs.readFileSync(packageJSONFile, { encoding: 'utf-8' }));
-    const hasDirectDependency = dependencies && dependencies['@edx/paragon'] !== undefined;
-    const hasPeerDependency = peerDependencies && peerDependencies['@edx/paragon'] !== undefined
+
+    const hasDependency = (depsObject, orgs) => {
+      return orgs.some(org => depsObject && depsObject[`${org}/paragon`] !== undefined);
+    };
+
+    const hasDirectDependency = hasDependency(dependencies, ['@edx', '@openedx']);
+    const hasPeerDependency = hasDependency(peerDependencies, ['@edx', '@openedx']);
+
     return hasDirectDependency || hasPeerDependency;
   });
 
