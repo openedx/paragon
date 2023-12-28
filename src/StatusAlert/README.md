@@ -2,9 +2,9 @@
 title: 'StatusAlert'
 type: 'component'
 components:
-- StatusAlert
+  - StatusAlert
 categories:
-- Status & metadata
+  - Status & metadata
 status: 'Deprecate Soon'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -15,44 +15,25 @@ notes: |
 ## basic usage
 
 ```jsx live
-<StatusAlert
-  dialog="You have a status alert!"
-  onClose={() => {}}
-  open
-/>
+<StatusAlert dialog="You have a status alert!" onClose={() => {}} open />
 ```
 
 ## success alert
 
 ```jsx live
-<StatusAlert
-  alertType="success"
-  dialog="Success!"
-  onClose={() => {}}
-  open
-/>
+<StatusAlert alertType="success" dialog="Success!" onClose={() => {}} open />
 ```
 
 ## danger alert
 
 ```jsx live
-<StatusAlert
-  alertType="danger"
-  dialog="Error!"
-  onClose={() => {}}
-  open
-/>
+<StatusAlert alertType="danger" dialog="Error!" onClose={() => {}} open />
 ```
 
 ## informational alert
 
 ```jsx live
-<StatusAlert
-  alertType="info"
-  dialog="Get some info here!"
-  onClose={() => {}}
-  open
-/>
+<StatusAlert alertType="info" dialog="Get some info here!" onClose={() => {}} open />
 ```
 
 ## alert with a custom aria-label on the close button
@@ -70,12 +51,7 @@ notes: |
 ## Non-dismissible alert
 
 ```jsx live
-<StatusAlert
-  alertType="danger"
-  dismissible={false}
-  dialog="You can't get rid of me!"
-  open
-/>
+<StatusAlert alertType="danger" dismissible={false} dialog="You can't get rid of me!" open />
 ```
 
 ## alert invoked via a button
@@ -86,9 +62,7 @@ class StatusAlertWrapper extends React.Component {
     super(props);
 
     this.openStatusAlert = this.openStatusAlert.bind(this);
-    this.resetStatusAlertWrapperState = this.resetStatusAlertWrapperState.bind(
-      this,
-    );
+    this.resetStatusAlertWrapperState = this.resetStatusAlertWrapperState.bind(this);
 
     this.state = { open: false };
   }
@@ -114,7 +88,7 @@ class StatusAlertWrapper extends React.Component {
         <Button
           onClick={this.openStatusAlert}
           variant="light"
-          inputRef={input => {
+          inputRef={(input) => {
             this.button = input;
           }}
         >
@@ -134,11 +108,7 @@ class StatusAlertWrapper extends React.Component {
   dialog={
     <div>
       <span>Love cats? </span>
-      <a
-        href="https://www.factretriever.com/cat-facts"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://www.factretriever.com/cat-facts" target="_blank" rel="noopener noreferrer">
         Click me!
       </a>
     </div>

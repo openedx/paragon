@@ -3,17 +3,16 @@ title: 'Stepper'
 type: 'component'
 status: 'Stable'
 components:
-- Stepper
-- StepperStep
-- StepperActionRow
-- StepperHeader
-- StepperHeaderStep
+  - Stepper
+  - StepperStep
+  - StepperActionRow
+  - StepperHeader
+  - StepperHeaderStep
 categories:
-- Navigation
+  - Navigation
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 Steppers display progress through a sequence of separate steps towards a particular goal for more complex tasks. This provides a more manageable experience by allowing the user to focus on smaller pieces of the task at hand.
@@ -42,14 +41,15 @@ Display a browser confirmation dialog when closing the tab or navigating with th
 
 ## Basic Usage
 
-A ``Stepper`` must wrap a set of composed subcomponents:
-- ``Stepper.Header``
-- ``Stepper.Step``
-- ``Stepper.ActionRow``
+A `Stepper` must wrap a set of composed subcomponents:
 
-The order of steps is dictated by the order of ``Stepper.Step`` components in the code.
+- `Stepper.Header`
+- `Stepper.Step`
+- `Stepper.ActionRow`
 
-``Stepper.Step`` and ``Stepper.ActionRow`` are hidden until their ``eventKey`` props match the ``activeKey`` on ``Stepper``.
+The order of steps is dictated by the order of `Stepper.Step` components in the code.
+
+`Stepper.Step` and `Stepper.ActionRow` are hidden until their `eventKey` props match the `activeKey` on `Stepper`.
 
 ```jsx live
 () => {
@@ -103,13 +103,13 @@ The order of steps is dictated by the order of ``Stepper.Step`` components in th
         </Stepper.ActionRow>
       </div>
     </Stepper>
-  )
-}
+  );
+};
 ```
 
 ## Clickable Header
 
-Use ``Stepper.Step``'s ``onClick`` prop to enable clickable behaviour for step's header. This should primarily be used to
+Use `Stepper.Step`'s `onClick` prop to enable clickable behaviour for step's header. This should primarily be used to
 implement navigation between steps by clicking on their headers.
 
 **Note**: this prop takes effect (i.e., header becomes clickable) only after the step has been visited.
@@ -168,8 +168,8 @@ implement navigation between steps by clicking on their headers.
         </Stepper.ActionRow>
       </div>
     </Stepper>
-  )
-}
+  );
+};
 ```
 
 ### With Error State
@@ -180,7 +180,7 @@ implement navigation between steps by clicking on their headers.
   const [currentStep, setCurrentStep] = useState(steps[0]);
   const [isChecked, check, uncheck, toggleChecked] = useToggle(false);
   const [hasError, setError, removeError] = useToggle(false);
-  const [isAlertOpen, openAlert, closeAlert] = useToggle(false)
+  const [isAlertOpen, openAlert, closeAlert] = useToggle(false);
 
   const evaluateCheckbox = () => {
     if (isChecked) {
@@ -205,16 +205,18 @@ implement navigation between steps by clicking on their headers.
         title="Confirm reset"
         isOpen={isAlertOpen}
         onClose={closeAlert}
-        footerNode={(
+        footerNode={
           <ActionRow>
-            <Button variant="tertiary" onClick={closeAlert}>Cancel</Button>
-            <Button variant="danger" onClick={resetCheckbox}>Confirm</Button>
+            <Button variant="tertiary" onClick={closeAlert}>
+              Cancel
+            </Button>
+            <Button variant="danger" onClick={resetCheckbox}>
+              Confirm
+            </Button>
           </ActionRow>
-        )}
+        }
       >
-        <p>
-          Are you sure you wish to reset the checkbox?
-        </p>
+        <p>Are you sure you wish to reset the checkbox?</p>
       </AlertModal>
 
       <Container size="sm" className="py-5">
@@ -232,12 +234,7 @@ implement navigation between steps by clicking on their headers.
           </Form.Checkbox>
         </Stepper.Step>
 
-        <Stepper.Step
-          eventKey="success"
-          title="Success!"
-          index={steps.indexOf('success')}
-          onClick={evaluateCheckbox}
-        >
+        <Stepper.Step eventKey="success" title="Success!" index={steps.indexOf('success')} onClick={evaluateCheckbox}>
           <h2>Success!</h2>
           <p>You may now complete this demo.</p>
         </Stepper.Step>
@@ -253,10 +250,7 @@ implement navigation between steps by clicking on their headers.
         </Stepper.ActionRow>
 
         <Stepper.ActionRow eventKey="success">
-          <Button
-            variant="outline-primary"
-            onClick={() => setCurrentStep('checkbox')}
-          >
+          <Button variant="outline-primary" onClick={() => setCurrentStep('checkbox')}>
             Previous
           </Button>
           <Stepper.ActionRow.Spacer />
@@ -264,8 +258,8 @@ implement navigation between steps by clicking on their headers.
         </Stepper.ActionRow>
       </div>
     </Stepper>
-  )
-}
+  );
+};
 ```
 
 ## In a modal
@@ -279,7 +273,9 @@ A composition of a stepper with a `FullscreenModal`.
   const [isOpen, open, close] = useToggle(false);
   return (
     <>
-      <Button variant="outline-primary" onClick={open}>Open fullscreen modal</Button>
+      <Button variant="outline-primary" onClick={open}>
+        Open fullscreen modal
+      </Button>
 
       <Stepper activeKey={currentStep}>
         <FullscreenModal
@@ -288,7 +284,7 @@ A composition of a stepper with a `FullscreenModal`.
           isOpen={isOpen}
           onClose={close}
           beforeBodyNode={<Stepper.Header className="border-bottom border-light" />}
-          footerNode={(
+          footerNode={
             <>
               <Stepper.ActionRow eventKey="welcome">
                 <Button variant="outline-primary" onClick={close}>
@@ -314,7 +310,7 @@ A composition of a stepper with a `FullscreenModal`.
                 <Button onClick={close}>Apply</Button>
               </Stepper.ActionRow>
             </>
-          )}
+          }
         >
           <Container size="md">
             <Stepper.Step eventKey="welcome" title="Welcome">
@@ -335,8 +331,8 @@ A composition of a stepper with a `FullscreenModal`.
         </FullscreenModal>
       </Stepper>
     </>
-  )
-}
+  );
+};
 ```
 
 ## Error State
@@ -350,7 +346,7 @@ also required for steps to rerender correctly here.
   const [currentStep, setCurrentStep] = useState(steps[0]);
   const [isChecked, check, uncheck, toggleChecked] = useToggle(false);
   const [hasError, setError, removeError] = useToggle(false);
-  const [isAlertOpen, openAlert, closeAlert] = useToggle(false)
+  const [isAlertOpen, openAlert, closeAlert] = useToggle(false);
 
   const evaluateCheckbox = () => {
     if (isChecked) {
@@ -375,16 +371,18 @@ also required for steps to rerender correctly here.
         title="Confirm reset"
         isOpen={isAlertOpen}
         onClose={closeAlert}
-        footerNode={(
+        footerNode={
           <ActionRow>
-            <Button variant="tertiary" onClick={closeAlert}>Cancel</Button>
-            <Button variant="danger" onClick={resetCheckbox}>Confirm</Button>
+            <Button variant="tertiary" onClick={closeAlert}>
+              Cancel
+            </Button>
+            <Button variant="danger" onClick={resetCheckbox}>
+              Confirm
+            </Button>
           </ActionRow>
-        )}
+        }
       >
-        <p>
-          Are you sure you wish to reset the checkbox?
-        </p>
+        <p>Are you sure you wish to reset the checkbox?</p>
       </AlertModal>
 
       <Container size="sm" className="py-5">
@@ -401,11 +399,7 @@ also required for steps to rerender correctly here.
           </Form.Checkbox>
         </Stepper.Step>
 
-        <Stepper.Step
-          eventKey="success"
-          title="Success!"
-          index={steps.indexOf('success')}
-        >
+        <Stepper.Step eventKey="success" title="Success!" index={steps.indexOf('success')}>
           <h2>Success!</h2>
           <p>You may now complete this demo.</p>
         </Stepper.Step>
@@ -421,10 +415,7 @@ also required for steps to rerender correctly here.
         </Stepper.ActionRow>
 
         <Stepper.ActionRow eventKey="success">
-          <Button
-            variant="outline-primary"
-            onClick={() => setCurrentStep('checkbox')}
-          >
+          <Button variant="outline-primary" onClick={() => setCurrentStep('checkbox')}>
             Previous
           </Button>
           <Stepper.ActionRow.Spacer />
@@ -432,6 +423,6 @@ also required for steps to rerender correctly here.
         </Stepper.ActionRow>
       </div>
     </Stepper>
-  )
-}
+  );
+};
 ```

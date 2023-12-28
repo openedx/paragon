@@ -26,6 +26,7 @@ npm run generate-component MyComponent
 where `MyComponent` is your new component's name.
 
 This will create a directory in `/src/` that will contain templates for all necessary files to start developing the component:
+
 ```
 MyComponent
 ├── index.jsx
@@ -41,7 +42,7 @@ The script will also automatically export your component from Paragon.
 
 `/src/MyComponent/index.jsx` is where your component lives, the file is created with the following template, edit it to implement your own component.
 
-``` jsx
+```jsx
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -64,7 +65,6 @@ MyComponent.propTypes = {
 };
 
 export default MyComponent;
-
 ```
 
 ## 4. (Optional) Add styles to your component.
@@ -82,12 +82,12 @@ This way the variables will also get automatically picked up by documentation si
 
 The documentation for your component lives in `src/MyComponent/README.md`. The documentation site scans this directory for markdown or mdx files to create pages. By default, the file is created with following content:
 
-```` md
+````md
 ---
 title: 'MyComponent'
 type: 'component'
 components:
-- MyComponent
+  - MyComponent
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -100,9 +100,6 @@ Describe your component here and give usage examples.
 ### Basic Usage
 
 ```jsx live
-<MyComponent>
-  Hello!
-</MyComponent>
+<MyComponent>Hello!</MyComponent>
 ```
-
 ````

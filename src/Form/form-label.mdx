@@ -2,14 +2,13 @@
 title: 'Form.Label'
 type: 'component'
 components:
-- FormLabel
+  - FormLabel
 categories:
-- Forms
+  - Forms
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 Provide a label for a form control.
@@ -43,7 +42,9 @@ it has an htmlFor attribute matching the `Form.Control` according to WCAG guidel
     <Form.Radio value="red">Red</Form.Radio>
     <Form.Radio value="green">Green</Form.Radio>
     <Form.Radio value="blue">Blue</Form.Radio>
-    <Form.Radio value="cyan" disabled>Cyan</Form.Radio>
+    <Form.Radio value="cyan" disabled>
+      Cyan
+    </Form.Radio>
   </Form.RadioSet>
 </Form.Group>
 ```
@@ -52,14 +53,14 @@ it has an htmlFor attribute matching the `Form.Control` according to WCAG guidel
 
 ```jsx live
 <>
-<Form.Group size="sm">
-  <Form.Label>What kind of cats?</Form.Label>
-  <Form.Control />
-</Form.Group>
-<Form.Group size="lg">
-  <Form.Label>What kind of cats?</Form.Label>
-  <Form.Control />
-</Form.Group>
+  <Form.Group size="sm">
+    <Form.Label>What kind of cats?</Form.Label>
+    <Form.Control />
+  </Form.Group>
+  <Form.Group size="lg">
+    <Form.Label>What kind of cats?</Form.Label>
+    <Form.Control />
+  </Form.Group>
 </>
 ```
 

@@ -2,10 +2,10 @@
 title: 'Pagination'
 type: 'component'
 components:
-- Pagination
-- PaginationReduced
+  - Pagination
+  - PaginationReduced
 categories:
-- Navigation
+  - Navigation
 status: 'Needs Work'
 designStatus: 'Done'
 devStatus: 'To Do'
@@ -21,11 +21,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
 ## Basic usage (Default Size)
 
 ```jsx live
-<Pagination
-  paginationLabel="pagination navigation"
-  pageCount={20}
-  onPageSelect={() => console.log('page selected')}
-/>
+<Pagination paginationLabel="pagination navigation" pageCount={20} onPageSelect={() => console.log('page selected')} />
 ```
 
 ## Secondary

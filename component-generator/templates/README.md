@@ -2,7 +2,7 @@
 title: 'componentName'
 type: 'component'
 components:
-- componentName
+  - componentName
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -15,7 +15,5 @@ Describe your component here and give usage examples.
 ### Basic Usage
 
 ```jsx live
-<componentName>
-  Hello!
-</componentName>
+<componentName>Hello!</componentName>
 ```

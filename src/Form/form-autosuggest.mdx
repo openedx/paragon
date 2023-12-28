@@ -2,15 +2,14 @@
 title: 'Form.Autosuggest'
 type: 'component'
 components:
-- FormAutosuggest
-- FormAutosuggestOption
+  - FormAutosuggest
+  - FormAutosuggestOption
 categories:
-- Forms
+  - Forms
 status: 'New'
 designStatus: 'Done'
 devStatus: 'In progress'
 notes: |
-
 ---
 
 Form auto-suggest enables users to manually select or type to find matching options to partial text input.
@@ -79,8 +78,8 @@ Form auto-suggest enables users to manually select or type to find matching opti
   useEffect(() => {
     setShowLoading(true);
     fetch('https://api.sampleapis.com/coffee/hot')
-      .then(data => data.json())
-      .then(items => {
+      .then((data) => data.json())
+      .then((items) => {
         setTimeout(() => {
           setData(items);
           setShowLoading(false);
@@ -91,13 +90,17 @@ Form auto-suggest enables users to manually select or type to find matching opti
   const searchCoffee = (title) => {
     setShowLoading(true);
     fetch('https://api.sampleapis.com/coffee/hot')
-      .then(data => data.json())
-      .then(items => setTimeout(() => {
-        const filteredCoffee = items.filter(res => res.title.toLowerCase().includes(title.toLowerCase()));
-        setShowLoading(false);
-        if (filteredCoffee) { return filteredCoffee; }
-        return { ...title, filteredCoffee };
-      }, 1500));
+      .then((data) => data.json())
+      .then((items) =>
+        setTimeout(() => {
+          const filteredCoffee = items.filter((res) => res.title.toLowerCase().includes(title.toLowerCase()));
+          setShowLoading(false);
+          if (filteredCoffee) {
+            return filteredCoffee;
+          }
+          return { ...title, filteredCoffee };
+        }, 1500),
+      );
   };
 
   return (
@@ -111,7 +114,9 @@ Form auto-suggest enables users to manually select or type to find matching opti
         screenReaderText="Loading..."
         onChange={searchCoffee}
       >
-        {data.map((item, index) => <Form.AutosuggestOption key={index}>{item.title}</Form.AutosuggestOption>)}
+        {data.map((item, index) => (
+          <Form.AutosuggestOption key={index}>{item.title}</Form.AutosuggestOption>
+        ))}
       </Form.Autosuggest>
     </Form.Group>
   );

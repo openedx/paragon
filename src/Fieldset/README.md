@@ -2,9 +2,9 @@
 title: 'Fieldset'
 type: 'component'
 components:
-- Fieldset
+  - Fieldset
 categories:
-- Forms (deprecated)
+  - Forms (deprecated)
 status: 'Deprecate Soon'
 designStatus: 'TBD'
 devStatus: 'To Do'
@@ -17,16 +17,8 @@ notes: |
 ```jsx live
 <form>
   <Fieldset legend="Name">
-    <InputText
-      name="firstName"
-      label="First Name"
-      value=""
-    />
-    <InputText
-      name="lastName"
-      label="Last Name"
-      value=""
-    />
+    <InputText name="firstName" label="First Name" value="" />
+    <InputText name="lastName" label="Last Name" value="" />
   </Fieldset>
 </form>
 ```
@@ -36,16 +28,8 @@ notes: |
 ```jsx live
 <form>
   <Fieldset legend="Name" invalidMessage="This is invalid!" isValid={false}>
-    <InputText
-      name="firstName"
-      label="First Name"
-      value=""
-    />
-    <InputText
-      name="lastName"
-      label="Last Name"
-      value=""
-    />
+    <InputText name="firstName" label="First Name" value="" />
+    <InputText name="lastName" label="Last Name" value="" />
   </Fieldset>
 </form>
 ```
@@ -63,16 +47,8 @@ notes: |
     }}
     variantIconDescription="Error"
   >
-    <InputText
-      name="firstName"
-      label="First Name"
-      value=""
-    />
-    <InputText
-      name="lastName"
-      label="Last Name"
-      value=""
-    />
+    <InputText name="firstName" label="First Name" value="" />
+    <InputText name="lastName" label="Last Name" value="" />
   </Fieldset>
 </form>
 ```
@@ -94,10 +70,7 @@ class ValidatedForm extends React.Component {
   }
 
   handleSubmit(event) {
-    if (
-      this.firstInputRef.value.length === 0 &&
-      this.secondInputRef.value.length === 0
-    ) {
+    if (this.firstInputRef.value.length === 0 && this.secondInputRef.value.length === 0) {
       this.setState({
         isValid: false,
       });
@@ -125,7 +98,7 @@ class ValidatedForm extends React.Component {
             name="firstName"
             label="First Name"
             value=""
-            inputRef={ref => {
+            inputRef={(ref) => {
               this.firstInputRef = ref;
             }}
           />
@@ -133,7 +106,7 @@ class ValidatedForm extends React.Component {
             name="lastName"
             label="Last Name"
             value=""
-            inputRef={ref => {
+            inputRef={(ref) => {
               this.secondInputRef = ref;
             }}
           />

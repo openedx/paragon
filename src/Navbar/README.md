@@ -2,12 +2,12 @@
 title: 'Navbar'
 type: 'component'
 components:
-- Navbar
-- NavbarBrand
-- NavbarToggle
-- NavbarCollapse
+  - Navbar
+  - NavbarBrand
+  - NavbarToggle
+  - NavbarCollapse
 categories:
-- Navigation
+  - Navigation
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'

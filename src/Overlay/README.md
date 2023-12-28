@@ -2,15 +2,14 @@
 title: 'Overlay'
 type: 'component'
 components:
-- Overlay
-- OverlayTrigger
+  - Overlay
+  - OverlayTrigger
 categories:
-- Overlays
+  - Overlays
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 A set of components for positioning beautiful overlays, tooltips, popovers, and anything else you need.
@@ -56,5 +55,5 @@ This component is used to power Tooltips and Popovers.
       </Overlay>
     </>
   );
-}
+};
 ```

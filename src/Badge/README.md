@@ -2,14 +2,13 @@
 title: 'Badge'
 type: 'component'
 components:
-- Badge
+  - Badge
 categories:
-- Status & metadata
+  - Status & metadata
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 Badges are composed of text and an accompanying indicator color, and are typically used to add meaning, status, or context when paired with another component.
@@ -31,7 +30,7 @@ Badges are composed of text and an accompanying indicator color, and are typical
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
   return (
-    <Stack gap={2} direction={ isExtraSmall ? "vertical" : "horizontal" }>
+    <Stack gap={2} direction={isExtraSmall ? 'vertical' : 'horizontal'}>
       <Badge variant="primary">Primary</Badge>
       <Badge variant="secondary">Secondary</Badge>
       <Badge variant="success">Success</Badge>
@@ -41,5 +40,6 @@ Badges are composed of text and an accompanying indicator color, and are typical
       <Badge variant="light">Light</Badge>
       <Badge variant="dark">Dark</Badge>
     </Stack>
-)}
+  );
+};
 ```

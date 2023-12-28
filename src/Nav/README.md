@@ -2,20 +2,19 @@
 title: 'Nav'
 type: 'component'
 components:
-- Nav
-- NavItem
-- NavLink
-- NavDropdown
+  - Nav
+  - NavItem
+  - NavLink
+  - NavDropdown
 categories:
-- Navigation
+  - Navigation
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
-Navigation bits in Bootstrap all share a general ``Nav`` component and styles. Swap ``variant``s to switch between each style. The base ``Nav`` component is built with flexbox and provide a strong foundation for building all types of navigation components.
+Navigation bits in Bootstrap all share a general `Nav` component and styles. Swap `variant`s to switch between each style. The base `Nav` component is built with flexbox and provide a strong foundation for building all types of navigation components.
 
 <p>
   This is a pass through component from React-Bootstrap.<br/>
@@ -56,5 +55,5 @@ Navigation bits in Bootstrap all share a general ``Nav`` component and styles. S
       </NavDropdown>
     </Nav>
   );
-}
+};
 ```

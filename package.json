@@ -46,7 +46,9 @@
     "type-check:watch": "npm run type-check -- --watch",
     "build-types": "tsc --emitDeclarationOnly",
     "playroom:start": "npm run playroom:start --workspace=www",
-    "playroom:build": "npm run playroom:build --workspace=www"
+    "playroom:build": "npm run playroom:build --workspace=www",
+    "prepare": "husky install",
+    "format-mdx": "prettier --write \"**/*.md\" \"**/*.mdx\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -128,6 +130,7 @@
     "jest-cli": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2",
     "markdown-loader-jest": "^0.1.1",
+    "prettier": "3.1.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-test-renderer": "^17.0.0",
@@ -175,11 +178,6 @@
     "transformIgnorePatterns": [
       "/node_modules/(?!(@edx/paragon)/).*/"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
   },
   "workspaces": [
     "example",

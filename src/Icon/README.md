@@ -2,9 +2,9 @@
 title: 'Icon'
 type: 'component'
 components:
-- Icon
+  - Icon
 categories:
-- Imagery & Iconography
+  - Imagery & Iconography
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -20,6 +20,7 @@ Displays an svg icon from `@edx/paragon/icons`. See [Icons Foundation Documentat
 // import { Add, AddCircle } from '@edx/paragon/icons';
 <Icon src={Add} />
 ```
+
 ### With HTML attributes
 
 HTML attributes can be passed to this component allowing for customization of the color, size, or addition of any necessary ARIA attributes.

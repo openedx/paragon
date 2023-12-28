@@ -2,16 +2,16 @@
 title: 'Chip'
 type: 'component'
 components:
-- Chip
+  - Chip
 categories:
-- Buttonlike
+  - Buttonlike
 status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
 ---
 
-``Chips`` are compact elements that represent an input, attribute, or action. Similar to the [Badge](/components/badge) component, but interactive.
+`Chips` are compact elements that represent an input, attribute, or action. Similar to the [Badge](/components/badge) component, but interactive.
 
 ## Basic Usage
 
@@ -28,12 +28,7 @@ notes: |
 ```jsx live
 <div>
   <Chip iconBefore={Person}>New</Chip>
-  <Chip
-    variant="dark"
-    iconBefore={Person}
-    iconAfter={Close}
-    onIconAfterClick={() => console.log('Remove Chip')}
-  >
+  <Chip variant="dark" iconBefore={Person} iconAfter={Close} onIconAfterClick={() => console.log('Remove Chip')}>
     New
   </Chip>
   <Chip

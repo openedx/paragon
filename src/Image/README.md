@@ -2,14 +2,13 @@
 title: 'Image'
 type: 'component'
 categories:
-- Imagery & Iconography
+  - Imagery & Iconography
 components:
-- Image
+  - Image
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: |
-
 ---
 
 <p className="lead">
@@ -23,24 +22,9 @@ notes: |
 
 ```jsx live
 <>
-  <Image
-    className="mr-2"
-    src="https://picsum.photos/100/100/"
-    rounded
-    alt="Image description"
-  />
-  <Image
-    className="mr-2"
-    src="https://picsum.photos/100/100/"
-    roundedCircle
-    alt="Image description"
-  />
-  <Image
-    className="mr-2"
-    src="https://picsum.photos/100/100/"
-    thumbnail
-    alt="Image description"
-  />
+  <Image className="mr-2" src="https://picsum.photos/100/100/" rounded alt="Image description" />
+  <Image className="mr-2" src="https://picsum.photos/100/100/" roundedCircle alt="Image description" />
+  <Image className="mr-2" src="https://picsum.photos/100/100/" thumbnail alt="Image description" />
 </>
 ```
 
@@ -49,5 +33,3 @@ notes: |
 ```jsx live
 <Image src="https://picsum.photos/1600/800/" fluid alt="Image description" />
 ```
-
-

@@ -2,10 +2,10 @@
 title: 'SelectableBox'
 type: 'component'
 components:
-- SelectableBox
-- SelectableBoxSet
+  - SelectableBox
+  - SelectableBoxSet
 categories:
-- Forms
+  - Forms
 status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
@@ -14,11 +14,11 @@ notes: |
 
 A box that has selection states. It can be used as an alternative to a radio button or checkbox set.
 
-The ``SelectableBox`` can contain any kind of content as long as it is not clickable. In other words, there should be no clickable targets distinct from selection.
+The `SelectableBox` can contain any kind of content as long as it is not clickable. In other words, there should be no clickable targets distinct from selection.
 
 ## Basic Usage
 
-As ``Checkbox``
+As `Checkbox`
 
 ```jsx live
 () => {
@@ -29,10 +29,12 @@ As ``Checkbox``
   const handleChange = (e) => {
     e.target.checked ? add(e.target.value) : remove(e.target.value);
   };
-  
+
   const isInvalid = () => checkedCheeses.includes('swiss');
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
-  
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
+
   return (
     <SelectableBox.Set
       className="bg-light-200 p-3"
@@ -61,7 +63,7 @@ As ``Checkbox``
       </SelectableBox>
     </SelectableBox.Set>
   );
-}
+};
 ```
 
 ## As Radio
@@ -70,7 +72,9 @@ As ``Checkbox``
 () => {
   const [value, setValue] = useState('green');
   const handleChange = (e) => setValue(e.target.value);
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
     <SelectableBox.Set
@@ -94,11 +98,12 @@ As ``Checkbox``
       </SelectableBox>
     </SelectableBox.Set>
   );
-}
+};
 ```
 
 ## As Checkbox
-As ``Checkbox`` with ``isIndeterminate``
+
+As `Checkbox` with `isIndeterminate`
 
 ```jsx live
 () => {
@@ -106,8 +111,8 @@ As ``Checkbox`` with ``isIndeterminate``
   const allCheeseOptions = ['swiss', 'cheddar', 'pepperjack'];
   const [checkedCheeses, { add, remove, set, clear }] = useCheckboxSetValues(['swiss']);
 
-  const allChecked = allCheeseOptions.every(value => checkedCheeses.includes(value));
-  const someChecked = allCheeseOptions.some(value => checkedCheeses.includes(value));
+  const allChecked = allCheeseOptions.every((value) => checkedCheeses.includes(value));
+  const someChecked = allCheeseOptions.some((value) => checkedCheeses.includes(value));
   const isIndeterminate = someChecked && !allChecked;
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
@@ -153,10 +158,10 @@ As ``Checkbox`` with ``isIndeterminate``
       </SelectableBox.Set>
     </>
   );
-}
+};
 ```
 
-As ``Checkbox`` with ``ariaLabelledby``
+As `Checkbox` with `ariaLabelledby`
 
 ```jsx live
 () => {
@@ -167,9 +172,11 @@ As ``Checkbox`` with ``ariaLabelledby``
   const handleChange = (e) => {
     e.target.checked ? add(e.target.value) : remove(e.target.value);
   };
-  
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
-  
+
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
+
   return (
     <Stack className="bg-light-200 p-3">
       <h3 id="cheese selection" className="mb-4">
@@ -195,10 +202,11 @@ As ``Checkbox`` with ``ariaLabelledby``
       </SelectableBox.Set>
     </Stack>
   );
-}
+};
 ```
 
 ## Without active outline
+
 The `showActiveBoxState` property only affects `SelectableBox` that have `inputHidden` set to `false`.
 If a component has no input, the border is always rendered in an active state.
 
@@ -206,7 +214,9 @@ If a component has no input, the border is always rendered in an active state.
 () => {
   const [value, setValue] = useState('apples');
   const handleChange = (e) => setValue(e.target.value);
-  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isExtraSmall = useMediaQuery({
+    maxWidth: breakpoints.extraSmall.maxWidth,
+  });
 
   return (
     <SelectableBox.Set
@@ -216,31 +226,16 @@ If a component has no input, the border is always rendered in an active state.
       columns={isExtraSmall ? 1 : 3}
       ariaLabel="fruits selection"
     >
-      <SelectableBox
-        value="apples"
-        inputHidden={false}
-        showActiveBoxState={false}
-        aria-label="apple radio-button"
-      >
+      <SelectableBox value="apples" inputHidden={false} showActiveBoxState={false} aria-label="apple radio-button">
         <h3>Apples</h3>
       </SelectableBox>
-      <SelectableBox
-        value="oranges"
-        inputHidden={false}
-        showActiveBoxState={false}
-        aria-label="orange radio-button"
-      >
+      <SelectableBox value="oranges" inputHidden={false} showActiveBoxState={false} aria-label="orange radio-button">
         <h3>Oranges</h3>
       </SelectableBox>
-      <SelectableBox
-        value="bananas"
-        inputHidden={false}
-        showActiveBoxState={false}
-        aria-label="banana radio-button"
-      >
+      <SelectableBox value="bananas" inputHidden={false} showActiveBoxState={false} aria-label="banana radio-button">
         <h3>Bananas</h3>
       </SelectableBox>
     </SelectableBox.Set>
   );
-}
+};
 ```
