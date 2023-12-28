@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
-import { Button, Form, Icon, Bubble, Skeleton } from '@openedx/paragon'; // eslint-disable-line
+import { Button, Form, Icon, Bubble, Stack, Container } from '@openedx/paragon'; // eslint-disable-line
 import { FavoriteBorder } from '@openedx/paragon/icons'; // eslint-disable-line
 
 const MyComponent = () => {
   const [value, setValue] = useState('');
   const handleChange = (e) => setValue(e.target.value);
-  // eslint-disable-next-line no-alert
-  const handleClick = () => alert('Form is submitted!');
+  const handleClick = () => alert('Form is submitted!'); // eslint-disable-line no-alert
 
   return (
-    <div className="p-5">
-      <div className="d-flex align-items-center">
-        <h1 className="mr-2">
-          My Form
-        </h1>
+    <Container className="p-5">
+      <Stack direction="horizontal" gap={2}>
+        <h1>My Form</h1>
         <Bubble variant="error">1</Bubble>
-      </div>
+      </Stack>
       <Form>
         <Form.Group>
           <Form.Control
@@ -27,8 +24,7 @@ const MyComponent = () => {
         </Form.Group>
         <Button onClick={handleClick}>Submit</Button>
       </Form>
-      <Skeleton />
-    </div>
+    </Container>
   );
 };
 
