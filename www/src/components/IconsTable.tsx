@@ -68,7 +68,7 @@ function IconsTable({ iconNames }) {
   const [data, setData] = useState({ iconsList: iconNames, rowsCount: ROWS_PER_WINDOW });
   const [currentIcon, setCurrentIcon] = useState(iconNames[0]);
   const [showToast, setShowToast] = useState(false);
-  const currentIconImport = `import { ${currentIcon} } from '@edx/paragon/icons';`;
+  const currentIconImport = `import { ${currentIcon} } from '@openedx/paragon/icons';`;
   const { rowsCount, iconsList } = data;
 
   const columnsCount = useMemo(() => Math.floor(tableWidth / COLUMN_WIDTH), [tableWidth]);

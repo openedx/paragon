@@ -128,8 +128,8 @@ SearchField.propTypes = {
    *
    * ```jsx
    * {
-   *   submit: import {Search} from '@edx/paragon/icons';,
-   *   clear: import {Close} from '@edx/paragon/icons'.
+   *   submit: import {Search} from '@openedx/paragon/icons';,
+   *   clear: import {Close} from '@openedx/paragon/icons'.
    * }
    * ```
    */
