@@ -175,7 +175,7 @@
       "/component-generator/"
     ],
     "transformIgnorePatterns": [
-      "/node_modules/(?!(@edx/paragon)/).*/"
+      "/node_modules/(?!(@openedx/paragon)/).*/"
     ]
   },
   "lint-staged": {

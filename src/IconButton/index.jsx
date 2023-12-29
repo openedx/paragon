@@ -78,7 +78,7 @@ IconButton.propTypes = {
    *  but is going to be deprecated soon, please use Paragon's icons instead. */
   iconAs: PropTypes.elementType,
   /** An icon component to render. Example import of a Paragon icon component:
-   * `import { Check } from '@edx/paragon/dist/icon';`
+   * `import { Check } from '@openedx/paragon/dist/icon';`
    * */
   src: PropTypes.oneOfType([PropTypes.element, PropTypes.elementType]),
   /** Alt text for your icon. For best practice, avoid using alt text to describe
