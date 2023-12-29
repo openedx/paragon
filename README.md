@@ -1,11 +1,11 @@
 # Paragon
 
 [![Build Status](https://github.com/openedx/paragon/actions/workflows/release.yml/badge.svg)](https://github.com/openedx/paragon/actions/workflows/release.yml)
-[![npm_version](https://img.shields.io/npm/v/@edx/paragon.svg)](@edx/paragon)
+[![npm_version](https://img.shields.io/npm/v/@openedx/paragon.svg)](@openedx/paragon)
 ![status](https://img.shields.io/badge/status-Maintained-brightgreen)
 ![license](https://img.shields.io/github/license/openedx/paragon.svg)
 [![codecov](https://codecov.io/gh/edx/paragon/branch/master/graph/badge.svg?token=x1tZmNduy9)](https://codecov.io/gh/edx/paragon)
-[![NPM downloads](https://img.shields.io/npm/dw/@edx/paragon)](https://www.npmjs.com/package/@edx/paragon)
+[![NPM downloads](https://img.shields.io/npm/dw/@openedx/paragon)](https://www.npmjs.com/package/@openedx/paragon)
 
 ## Purpose
 
@@ -30,13 +30,13 @@ Paragon components require React 16 or higher. To install Paragon into your proj
 In terminal:
 
 ```
-npm i --save @edx/paragon
+npm i --save @openedx/paragon
 ```
 
 In your React project:
 
 ```
-import { ComponentName } from '@edx/paragon';
+import { ComponentName } from '@openedx/paragon';
 ```
 
 #### SCSS Foundation
@@ -47,7 +47,7 @@ Usage for Open edX and others:
 
 ```
 // ... Any custom SCSS variables should be defined here
-@import '~@edx/paragon/scss/core/core.scss';
+@import '~@openedx/paragon/scss/core/core.scss';
 ```
 
 Usage on with `@edx/brand`:
@@ -57,7 +57,7 @@ Usage on with `@edx/brand`:
 ```
 @import '~@edx/brand/paragon/fonts.scss';
 @import '~@edx/brand/paragon/variables.scss';
-@import '~@edx/paragon/scss/core/core.scss';
+@import '~@openedx/paragon/scss/core/core.scss';
 @import '~@edx/brand/paragon/overrides.scss';
 ```
 
@@ -81,7 +81,7 @@ Due to Paragon's dependence on ``react-intl``, that means that your whole app ne
 
 ```javascript
   import { IntlProvider } from 'react-intl';
-  import { messages as paragonMessages } from '@edx/paragon';
+  import { messages as paragonMessages } from '@openedx/paragon';
 
   ReactDOM.render(
     <IntlProvider locale={usersLocale} messages={paragonMessages[usersLocale]}>
@@ -96,7 +96,7 @@ Note that if you are using ``@edx/frontend-platform``'s ``AppProvider`` componen
 ```javascript
   import { APP_READY, subscribe, initialize } from '@edx/frontend-platform';
   import { AppProvider } from '@edx/frontend-platform/react';
-  import { messages as paragonMessages } from '@edx/paragon';
+  import { messages as paragonMessages } from '@openedx/paragon';
   import App from './App';
   // this is your app's i18n messages
   import appMessages from './i18n';
@@ -148,17 +148,17 @@ module.exports = {
   dist: The sub-directory of the source code where it puts its build artifact. Often "dist".
   */
   localModules: [
-    { moduleName: '@edx/paragon/scss/core', dir: '../src/paragon', dist: 'scss/core' },
-    { moduleName: '@edx/paragon/icons', dir: '../src/paragon', dist: 'icons' },
+    { moduleName: '@openedx/paragon/scss/core', dir: '../src/paragon', dist: 'scss/core' },
+    { moduleName: '@openedx/paragon/icons', dir: '../src/paragon', dist: 'icons' },
     // Note that using dist: 'dist' will require you to run 'npm build' in Paragon
     // to add local changes to the 'dist' directory, so that they can be picked up by the MFE.
     // To avoid doing that you can use dist: 'src' to get any local changes hot reloaded on save in the MFE.
-    { moduleName: '@edx/paragon', dir: '../src/paragon', dist: 'dist' },
+    { moduleName: '@openedx/paragon', dir: '../src/paragon', dist: 'dist' },
   ],
 };
 ```
 
-Then, when importing Paragon's core SCSS in your MFE the import needs to begin with a tilde `~` so that path to your local Paragon repository gets resolved correctly: `@import "~@edx/paragon/scss/core";`
+Then, when importing Paragon's core SCSS in your MFE the import needs to begin with a tilde `~` so that path to your local Paragon repository gets resolved correctly: `@import "~@openedx/paragon/scss/core";`
 
 #### Internationalization
 
@@ -227,7 +227,8 @@ When developing a new component you should generally follow three rules:
                 variant="primary"
               />
             )
-          
+          }
+
           export default MyFunctionComponent;
           ```
       
@@ -475,4 +476,4 @@ The assigned maintainers for this component and other project details may be fou
 ## Reporting Security Issues
 Please do not report security issues in public. Please email security@openedx.org.
 
-We tend to prioritize security issues which impact the published `@edx/paragon` NPM library more so than the [documentation website](https://paragon-openedx.netlify.app/) or example React application.
+We tend to prioritize security issues which impact the published `@openedx/paragon` NPM library more so than the [documentation website](https://paragon-openedx.netlify.app/) or example React application.

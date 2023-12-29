@@ -51,10 +51,10 @@ Button.propTypes = {
    * */
   variant: PropTypes.string,
   /** An icon component to render.
-  * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
+  * Example import of a Paragon icon component: `import { Check } from '@openedx/paragon/icons';` */
   iconBefore: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
   /** An icon component to render.
-  * Example import of a Paragon icon component: `import { Check } from '@edx/paragon/icons';` */
+  * Example import of a Paragon icon component: `import { Check } from '@openedx/paragon/icons';` */
   iconAfter: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
 };
 

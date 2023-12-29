@@ -18,6 +18,6 @@ Include a direct link to your changes in this PR's deploy preview here (e.g., a 
 
 ## Post-merge Checklist
 
-* [ ] Verify your changes were released to [NPM](https://www.npmjs.com/package/@edx/paragon) at the expected version.
+* [ ] Verify your changes were released to [NPM](https://www.npmjs.com/package/@openedx/paragon) at the expected version.
 * [ ] If you'd like, [share](https://github.com/openedx/paragon/discussions/new?category=show-and-tell) your contribution in [#show-and-tell](https://github.com/openedx/paragon/discussions/categories/show-and-tell).
 * [ ] 🎉 🙌 Celebrate! Thanks for your contribution.
