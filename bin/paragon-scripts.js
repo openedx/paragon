@@ -55,8 +55,8 @@ const COMMANDS = {
     parameters: [
       {
         name: 'path',
-        description: 'Path to the directory where to replace Paragon package name.',
-        required: true,
+        description: 'Path to the directory where to replace Paragon package name, default to root of the repository',
+        required: false,
       },
     ],
   },
