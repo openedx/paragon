@@ -18,7 +18,7 @@ program
     const analysis = {
       lastModified: Date.now(),
       projectUsages: analyzedProjects,
-    }
+    };
     fs.writeFileSync(outputFilePath, JSON.stringify(analysis, null, 2));
     console.log(`Analyzed ${projectDirectories.length} projects:`);
     console.log(analysis);

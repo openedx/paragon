@@ -8,19 +8,19 @@ const { getPackageInfo, getProjectFiles, getComponentUsagesInFiles } = require('
  * including package details, component usages, and Paragon version associated with each usage.
  */
 function analyzeProject(dir, options = {}) {
-    const packageInfo = getPackageInfo(dir, options);
-    const files = getProjectFiles(dir);
-    const usages = getComponentUsagesInFiles(files, dir);
+  const packageInfo = getPackageInfo(dir, options);
+  const files = getProjectFiles(dir);
+  const usages = getComponentUsagesInFiles(files, dir);
 
-    // Add Paragon version to each component usage
-    Object.keys(usages).forEach(componentName => {
-        usages[componentName].usages = usages[componentName].map(usage => ({
-            ...usage,
-            version: packageInfo.version,
-        }));
-    });
+  // Add Paragon version to each component usage
+  Object.keys(usages).forEach(componentName => {
+    usages[componentName].usages = usages[componentName].map(usage => ({
+      ...usage,
+      version: packageInfo.version,
+    }));
+  });
 
-    return { ...packageInfo, usages };
+  return { ...packageInfo, usages };
 }
 
 module.exports = { analyzeProject };
