@@ -3,6 +3,7 @@ const chalk = require('chalk');
 const themeCommand = require('../lib/install-theme');
 const helpCommand = require('../lib/help');
 const versionCommand = require('../lib/version');
+const migrateToOpenEdxScopeCommand = require('../lib/migrate-to-openedx-scope');
 
 const HELP_COMMAND = 'help';
 const commandAliases = {
@@ -45,6 +46,17 @@ const COMMANDS = {
         description: 'The @edx/brand package to install.',
         defaultValue: '@openedx/brand-openedx@latest',
         required: false,
+      },
+    ],
+  },
+  'migrate-to-openedx-scope': {
+    executor: migrateToOpenEdxScopeCommand,
+    description: 'CLI for migrate from "@edx/paragon" to "@openedx/paragon".',
+    parameters: [
+      {
+        name: 'path',
+        description: 'Path to the directory where to replace Paragon package name.',
+        required: true,
       },
     ],
   },
