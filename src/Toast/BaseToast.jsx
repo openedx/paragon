@@ -47,7 +47,6 @@ function Toast({
     >
       <div className="pgn__toast__header small">
         <p className="pgn__toast__message">{message}</p>
-
         <IconButton
           iconAs={Icon}
           alt={intlCloseLabel}
