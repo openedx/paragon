@@ -1,104 +1,72 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import { useIntl } from 'react-intl';
-import classNames from 'classnames';
 
-import Icon from '../Icon';
-import IconButton from '../IconButton';
-import Button from '../Button';
-import { Close } from '../../icons';
+import { toastEmitter } from './utils';
+import BaseToast from './BaseToast';
+import { positionStyles, TOAST_POSITIONS } from './constants';
 
-function Toast({
-  id, message, onDismiss, actions, className, duration, ...rest
-}) {
-  const intl = useIntl();
-  const intlCloseLabel = intl.formatMessage({
-    id: 'pgn.Toast.closeLabel',
-    defaultMessage: 'Close',
-    description: 'Close label for Toast component',
-  });
+function ToastContainer({ position: defaultPosition, className }) {
+  const [toasts, setToasts] = useState([]);
+  const portalDivRef = useRef(null);
 
-  const timerRef = useRef();
+  if (!portalDivRef.current && typeof document !== 'undefined') {
+    portalDivRef.current = document.createElement('div');
+    portalDivRef.current.setAttribute('class', 'pgn__toast-portal');
+    portalDivRef.current.setAttribute('role', 'alert');
+    portalDivRef.current.setAttribute('aria-live', 'polite');
+    portalDivRef.current.setAttribute('aria-atomic', 'true');
+    document.body.appendChild(portalDivRef.current);
+  }
+
+  const removeToast = (id) => {
+    setToasts(currentToasts => currentToasts.filter(toast => toast.id !== id));
+  };
 
   useEffect(() => {
-    timerRef.current = setTimeout(() => onDismiss(id), duration);
+    const handleShowToast = ({
+      message, duration, actions, position,
+    }) => {
+      const id = Date.now();
+      setToasts(currentToasts => [...currentToasts, {
+        id, message, duration, actions, position: position || defaultPosition,
+      }]);
+    };
 
-    return () => clearTimeout(timerRef.current);
-  }, [id, onDismiss, duration]);
+    toastEmitter.subscribe('showToast', handleShowToast);
 
-  const clearTimer = () => {
-    clearTimeout(timerRef.current);
-  };
+    return () => {
+      toastEmitter.events.showToast = toastEmitter.events.showToast.filter(
+        callback => callback !== handleShowToast,
+      );
+      if (portalDivRef.current) {
+        document.body.removeChild(portalDivRef.current);
+      }
+    };
+  }, [defaultPosition]);
 
-  const startTimer = () => {
-    clearTimer();
-    timerRef.current = setTimeout(() => onDismiss(id), duration);
-  };
-
-  return (
-    <div
-      className={classNames('toast', className)}
-      onMouseOver={clearTimer}
-      onMouseOut={startTimer}
-      onFocus={clearTimer}
-      onBlur={startTimer}
-      {...rest}
-    >
-      <div className="toast__header small">
-        <p className="toast__message">{message}</p>
-
-        <IconButton
-          iconAs={Icon}
-          alt={intlCloseLabel}
-          className="toast__close-btn align-self-start"
-          src={Close}
-          onClick={() => onDismiss(id)}
-          variant="primary"
-          invertColors
-        />
+  return portalDivRef.current ? ReactDOM.createPortal(
+    Object.keys(positionStyles).map(position => (
+      <div key={position} className={`pgn__toast-container ${className}`} style={positionStyles[position]}>
+        {toasts.filter(toast => toast.position === position).map(toast => (
+          <BaseToast key={toast.id} {...toast} onDismiss={() => removeToast(toast.id)} />
+        ))}
       </div>
-      {actions
-        ? (
-          <div className="toast__optional-actions">
-            {actions.map((action) => (
-              <Button
-                as={action.href ? 'a' : 'button'}
-                href={action.href}
-                onClick={action.onClick}
-                size="sm"
-                variant="inverse-outline-primary"
-              >
-                {action.label}
-              </Button>
-            ))}
-          </div>
-        )
-        : null}
-    </div>
-  );
+    )),
+    portalDivRef.current,
+  ) : null;
 }
 
-export default Toast;
+export default ToastContainer;
+export { toast } from './utils';
 
-Toast.propTypes = {
-  id: PropTypes.number.isRequired,
-  message: PropTypes.string.isRequired,
-  onDismiss: PropTypes.func,
-  actions: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      onClick: PropTypes.func,
-      href: PropTypes.string,
-    }),
-  ),
+ToastContainer.propTypes = {
+  position: PropTypes.oneOf(TOAST_POSITIONS),
   className: PropTypes.string,
-  duration: PropTypes.number,
 };
 
-Toast.defaultProps = {
-  onDismiss: () => {},
-  actions: null,
+ToastContainer.defaultProps = {
+  position: 'bottom-left',
   className: '',
-  duration: 5000,
 };

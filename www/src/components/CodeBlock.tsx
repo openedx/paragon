@@ -30,9 +30,7 @@ import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
 import ExamplePropsForm from './exampleComponents/ExamplePropsForm';
 
-const {
-  Collapsible, IconButton, Icon, toast, ToastContainer
-} = ParagonReact;
+const { Collapsible, IconButton, Icon, toast } = ParagonReact;
 
 export type CollapsibleLiveEditorTypes = {
   children: React.ReactNode;
@@ -167,7 +165,6 @@ function CodeBlock({
           </CollapsibleLiveEditor>
           <LiveError className="pgn-doc__code-block-error" />
         </LiveProvider>
-        <ToastContainer />
       </div>
     );
   }

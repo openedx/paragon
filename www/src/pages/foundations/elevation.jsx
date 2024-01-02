@@ -5,7 +5,6 @@ import {
   Button,
   Form,
   Input,
-  ToastContainer,
   toast,
   Icon,
   IconButtonWithTooltip,
@@ -55,7 +54,6 @@ function BoxShadowNode() {
   return (
     <div className="pgn-doc__box-shadow-cells">
       { boxShadowCells }
-      <ToastContainer />
     </div>
   );
 }

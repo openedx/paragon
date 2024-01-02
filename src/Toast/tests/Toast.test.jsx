@@ -3,8 +3,8 @@ import { render, act, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import userEvent from '@testing-library/user-event';
 
-import ToastContainer from '../ToastContainer';
-import { toast } from '../toast';
+import ToastContainer from '..';
+import { toast } from '../utils';
 
 jest.useFakeTimers();
 

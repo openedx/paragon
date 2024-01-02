@@ -1,6 +1,6 @@
 @import "variables";
 
-.toast {
+.pgn__toast {
   background-color: $toast-background-color;
   box-shadow: $toast-box-shadow;
   margin: 0;
@@ -16,14 +16,14 @@
     align-self: flex-start;
   }
 
-  .toast__header {
+  .pgn__toast__header {
     display: flex;
     align-items: center;
     border-bottom: 0;
     justify-content: space-between;
     padding: 0;
 
-    .toast__message {
+    .pgn__toast__message {
       font-size: $small-font-size;
       margin: 0;
       padding-right: .75rem;
@@ -35,7 +35,7 @@
     }
   }
 
-  .toast__optional-actions {
+  .pgn__toast__optional-actions {
     display: flex;
     flex-wrap: wrap;
   }
@@ -50,7 +50,7 @@
   }
 }
 
-.toast-container {
+.pgn__toast-container {
   display: flex;
   flex-direction: column;
   gap: .5rem;

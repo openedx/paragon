@@ -133,8 +133,7 @@ export {
   TabPane,
 } from './Tabs';
 export { default as TextArea } from './TextArea';
-export { default as ToastContainer } from './Toast/ToastContainer';
-export { toast } from './Toast/toast';
+export { default as ToastContainer, toast } from './Toast';
 export { default as Tooltip } from './Tooltip';
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';

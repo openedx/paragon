@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
-import { Icon, SearchField, ToastContainer, toast } from '~paragon-react';
+import { Icon, SearchField, toast } from '~paragon-react';
 import * as IconComponents from '~paragon-icons';
 import { ICON_COPIED_EVENT, sendUserAnalyticsEvent } from '../../segment-events';
 
@@ -177,7 +177,6 @@ function IconsTable({ iconNames }) {
       </div>
 
       <div ref={tableBottom} />
-      <ToastContainer />
     </>
   );
 }
