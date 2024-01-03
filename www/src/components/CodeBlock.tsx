@@ -30,7 +30,9 @@ import MiyazakiCard from './exampleComponents/MiyazakiCard';
 import HipsterIpsum from './exampleComponents/HipsterIpsum';
 import ExamplePropsForm from './exampleComponents/ExamplePropsForm';
 
-const { Collapsible, IconButton, Icon, toast } = ParagonReact;
+const {
+  Collapsible, IconButton, Icon, toast,
+} = ParagonReact;
 
 export type CollapsibleLiveEditorTypes = {
   children: React.ReactNode;
@@ -129,7 +131,7 @@ function CodeBlock({
 
   const handleCopyCodeExample = () => {
     navigator.clipboard.writeText(codeExample);
-    toast({message: 'Code example copied to clipboard!', duration: 2000 });
+    toast({ message: 'Code example copied to clipboard!', duration: 2000 });
   };
 
   if (live) {
