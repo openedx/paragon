@@ -1,4 +1,4 @@
-import { toastEmitter } from '../EventEmitter';
+import { toastEmitter } from '../utils';
 
 describe('EventEmitter', () => {
   test('subscribes and emits an event', () => {
