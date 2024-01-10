@@ -4,6 +4,9 @@
 // in the Algolia DocSearch crawler editor (https://crawler.algolia.com/). Otherwise, changes to this persisted
 // configuration will not actually apply to the Paragon documentation website as intended.
 
+// Note: there are REDACTED Algolia `appId` and `apiKey` values below; these should not be committed to the repository
+// but should be included in the crawler configuration in the Algolia DocSearch crawler editor.
+
 new Crawler({
   rateLimit: 8,
   startUrls: ["https://paragon-openedx.netlify.app/"],
