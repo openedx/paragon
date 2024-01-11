@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import Form, { FormLabel } from '../../Form';
-import Input from '../../Input';
+import Form from '../../Form';
 import { newId } from '../../utils';
 
 const formatHeaderForLabel = (header) => {
