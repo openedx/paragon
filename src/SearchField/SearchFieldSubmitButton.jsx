@@ -42,6 +42,7 @@ function SearchFieldSubmitButton(props) {
     </Button>
   ) : (
     <IconButton
+      className="pgn__searchfield__iconbutton-submit"
       type="submit"
       src={icons.submit}
       iconAs={Icon}

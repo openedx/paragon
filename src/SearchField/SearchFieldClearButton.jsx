@@ -21,6 +21,7 @@ function SearchFieldClearButton(props) {
 
   return (
     <IconButton
+      className="pgn__searchfield__iconbutton-reset"
       type="reset"
       src={icons.clear}
       iconAs={Icon}

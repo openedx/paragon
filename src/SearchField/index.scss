@@ -125,3 +125,8 @@
   border-radius: 0;
   margin-inline-start: $search-button-margin;
 }
+
+.pgn__searchfield__iconbutton-submit,
+.pgn__searchfield__iconbutton-reset {
+  flex-shrink: 0;
+}
