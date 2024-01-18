@@ -29,7 +29,7 @@ exports[`<SearchField /> with basic usage should match the snapshot 1`] = `
       />
       <button
         aria-label="submit search"
-        class="btn-icon btn-icon-primary btn-icon-md"
+        class="btn-icon btn-icon-primary btn-icon-sm pgn__searchfield__iconbutton-submit"
         type="submit"
       >
         <span
