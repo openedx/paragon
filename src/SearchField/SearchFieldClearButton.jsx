@@ -24,6 +24,7 @@ function SearchFieldClearButton(props) {
       className="pgn__searchfield__iconbutton-reset"
       type="reset"
       src={icons.clear}
+      size="sm"
       iconAs={Icon}
       alt={screenReaderText.clearButton}
       disabled={disabled}

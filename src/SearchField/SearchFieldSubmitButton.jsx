@@ -45,6 +45,7 @@ function SearchFieldSubmitButton(props) {
       className="pgn__searchfield__iconbutton-submit"
       type="submit"
       src={icons.submit}
+      size="sm"
       iconAs={Icon}
       alt={screenReaderText.submitButton}
       disabled={disabled}

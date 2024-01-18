@@ -129,4 +129,5 @@
 .pgn__searchfield__iconbutton-submit,
 .pgn__searchfield__iconbutton-reset {
   flex-shrink: 0;
+  margin-inline-end: map-get($spacers, 1);
 }
