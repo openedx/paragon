@@ -1,53 +1,420 @@
-import React from 'react';
+/* eslint-disable max-len */
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import React from 'react';
+import MediaQuery from 'react-responsive';
 
-import ReducedPagination from './ReducedPagination';
-import MinimalPagination from './MinimalPagination';
-import DefaultPagination from './DefaultPagination';
-import { PaginationContextProvider } from './PaginationContext';
-import { PAGINATION_VARIANTS } from './constants';
-import { ScreenReaderText } from './subcomponents';
-
+import {
+  ChevronLeft, ChevronRight, ArrowBackIos, ArrowForwardIos,
+} from '../../icons';
 import { greaterThan } from '../utils/propTypes';
-import { ChevronLeft, ChevronRight } from '../../icons';
+import Button from '../Button';
+import Dropdown from '../Dropdown';
+import IconButton from '../IconButton';
+import Icon from '../Icon';
+import breakpoints from '../utils/breakpoints';
+import newId from '../utils/newId';
+import { ELLIPSIS } from './constants';
+import getPaginationRange from './getPaginationRange';
 
-function Pagination(props) {
-  const {
-    invertColors,
-    variant,
-    size,
-    paginationLabel,
-    className,
-  } = props;
+export const PAGINATION_BUTTON_LABEL_PREV = 'Previous';
+export const PAGINATION_BUTTON_LABEL_NEXT = 'Next';
+export const PAGINATION_BUTTON_LABEL_PAGE = 'Page';
+export const PAGINATION_BUTTON_LABEL_CURRENT_PAGE = 'Current Page';
+export const PAGINATION_BUTTON_LABEL_PAGE_OF_COUNT = 'of';
+export const PAGINATION_BUTTON_ICON_BUTTON_NEXT_ALT = 'Go to next page';
+export const PAGINATION_BUTTON_ICON_BUTTON_PREV_ALT = 'Go to previous page';
 
-  const renderPaginationComponent = () => {
-    if (variant === PAGINATION_VARIANTS.reduced) {
-      return <ReducedPagination />;
-    }
+const VARIANTS = {
+  default: 'default',
+  secondary: 'secondary',
+  reduced: 'reduced',
+  minimal: 'minimal',
+};
 
-    if (variant === PAGINATION_VARIANTS.minimal) {
-      return <MinimalPagination />;
-    }
-
-    return <DefaultPagination />;
-  };
-
+function ReducedPagination({ currentPage, pageCount, handlePageSelect }) {
+  if (pageCount <= 1) { return null; }
   return (
-    <PaginationContextProvider {...props}>
+    <Dropdown>
+      <Dropdown.Toggle variant="tertiary" id="Pagination dropdown">
+        {currentPage} of {pageCount}
+      </Dropdown.Toggle>
+      <Dropdown.Menu className="pgn__reduced-pagination-dropdown">
+        {[...Array(pageCount).keys()].map(pageNum => (
+          <Dropdown.Item
+            onClick={() => handlePageSelect(pageNum + 1)}
+            key={pageNum}
+            data-testid="pagination-dropdown-item"
+          >
+            {pageNum + 1}
+          </Dropdown.Item>
+        ))}
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+}
+
+class Pagination extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.previousButtonRef = null;
+    this.nextButtonRef = null;
+
+    this.pageRefs = {};
+
+    this.state = {
+      currentPage: this.props.currentPage,
+      pageButtonSelected: false,
+    };
+
+    this.handlePageSelect = this.handlePageSelect.bind(this);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    // Update only when the props and currentPage state changes to avoid re-render
+    // if only the pageButtonSelected state is changed.
+    return nextProps !== this.props || nextState.currentPage !== this.state.currentPage;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { currentPage, pageButtonSelected } = this.state;
+    const currentPageRef = this.pageRefs[currentPage];
+
+    if (currentPageRef && pageButtonSelected) {
+      currentPageRef.focus();
+      this.setPageButtonSelectedState(false);
+    }
+    /* eslint-disable react/no-did-update-set-state */
+    if (
+      this.state.currentPage === prevState.currentPage
+      && (this.props.currentPage !== prevProps.currentPage
+      || this.props.currentPage !== this.state.currentPage)
+    ) {
+      this.setState({
+        currentPage: this.props.currentPage,
+      });
+    }
+  }
+
+  handlePageSelect(page) {
+    if (page !== this.state.currentPage) {
+      this.setState({
+        currentPage: page,
+        pageButtonSelected: true,
+      });
+      this.props.onPageSelect(page);
+    }
+  }
+
+  handlePreviousNextButtonClick(page) {
+    const { pageCount } = this.props;
+
+    if (page === 1) {
+      this.nextButtonRef.focus();
+    } else if (page === pageCount) {
+      this.previousButtonRef.focus();
+    }
+    this.setState({ currentPage: page });
+    this.props.onPageSelect(page);
+  }
+
+  setPageButtonSelectedState(value) {
+    this.setState({ pageButtonSelected: value });
+  }
+
+  renderEllipsisButton() {
+    return (
+      <li
+        className={classNames(['page-item', 'disabled'])}
+        key={newId('pagination-ellipsis-')}
+      >
+        <span
+          className={classNames([
+            'btn',
+            'page-link',
+            'ml-0',
+            'border-0',
+          ])}
+        >
+          ...
+        </span>
+      </li>
+    );
+  }
+
+  renderPageButton(page) {
+    const { buttonLabels } = this.props;
+    const active = page === this.state.currentPage || null;
+
+    let ariaLabel = `${buttonLabels.page} ${page}`;
+    if (active) {
+      ariaLabel += `, ${buttonLabels.currentPage}`;
+    }
+
+    return (
+      <li
+        className={classNames([
+          'page-item',
+          {
+            active,
+          },
+        ])}
+        key={page}
+      >
+        <Button
+          className="page-link"
+          aria-label={ariaLabel}
+          ref={(element) => { this.pageRefs[page] = element; }}
+          onClick={() => { this.handlePageSelect(page); }}
+        >
+          {page.toString()}
+        </Button>
+      </li>
+    );
+  }
+
+  renderPageOfCountButton() {
+    const { currentPage } = this.state;
+    const { pageCount, buttonLabels } = this.props;
+
+    const ariaLabel = `${buttonLabels.page} ${currentPage}, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} ${pageCount}`;
+
+    const label = (
+      <span>
+        {`${currentPage} `}
+        {buttonLabels.pageOfCount}
+        {` ${pageCount}`}
+      </span>
+    );
+
+    return (
+      <li
+        className={classNames(['page-item', 'disabled'])}
+        key={currentPage}
+      >
+        <span
+          className={classNames([
+            'btn',
+            'page-link',
+            'mx-2',
+            'border-0',
+          ])}
+          aria-label={ariaLabel}
+        >
+          {label}
+        </span>
+      </li>
+    );
+  }
+
+  renderPreviousButton() {
+    const {
+      buttonLabels, icons, variant, size, pageCount,
+    } = this.props;
+    const { currentPage } = this.state;
+    const isFirstPage = currentPage === 1;
+    const isDisabled = isFirstPage || pageCount === 0;
+    const previousPage = isFirstPage ? null : currentPage - 1;
+    const iconSize = (variant !== VARIANTS.reduced && size !== 'small') || variant === VARIANTS.minimal;
+
+    let ariaLabel = `${buttonLabels.previous}`;
+    if (previousPage) {
+      ariaLabel += `, ${buttonLabels.page} ${previousPage}`;
+    }
+
+    return (
+      <li
+        className={classNames(
+          'page-item',
+          {
+            disabled: isDisabled,
+          },
+        )}
+      >
+        {
+          variant === VARIANTS.default
+            ? (
+              <Button
+                className="previous page-link"
+                aria-label={ariaLabel}
+                tabIndex={isDisabled ? '-1' : undefined}
+                onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
+                ref={(element) => { this.previousButtonRef = element; }}
+                disabled={isDisabled}
+              >
+                <div>
+                  {icons.leftIcon}
+                  {variant === VARIANTS.default ? buttonLabels.previous : null}
+                </div>
+              </Button>
+            )
+            : (
+              <IconButton
+                src={iconSize ? ArrowBackIos : ChevronLeft}
+                iconAs={Icon}
+                className="previous page-link"
+                aria-label={ariaLabel}
+                tabIndex={isDisabled ? '-1' : undefined}
+                onClick={() => { this.handlePreviousNextButtonClick(previousPage); }}
+                ref={(element) => { this.previousButtonRef = element; }}
+                disabled={isDisabled}
+                alt={PAGINATION_BUTTON_ICON_BUTTON_PREV_ALT}
+              />
+            )
+        }
+      </li>
+    );
+  }
+
+  renderNextButton() {
+    const {
+      buttonLabels, pageCount, icons, variant, size,
+    } = this.props;
+    const { currentPage } = this.state;
+    const isLastPage = (currentPage === pageCount);
+    const isDisabled = isLastPage || (pageCount <= 1);
+    const nextPage = isLastPage ? null : currentPage + 1;
+    const iconSize = (variant !== VARIANTS.reduced && size !== 'small') || variant === VARIANTS.minimal;
+
+    let ariaLabel = `${buttonLabels.next}`;
+    if (nextPage) {
+      ariaLabel += `, ${buttonLabels.page} ${nextPage}`;
+    }
+
+    return (
+      <li
+        className={classNames(
+          'page-item',
+          {
+            disabled: isDisabled,
+          },
+        )}
+      >
+        {variant === VARIANTS.default ? (
+          <Button
+            className="next page-link"
+            aria-label={ariaLabel}
+            tabIndex={isDisabled ? '-1' : undefined}
+            onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
+            ref={(element) => { this.nextButtonRef = element; }}
+            disabled={isDisabled}
+          >
+            <div>
+              {variant === VARIANTS.default ? buttonLabels.next : null}
+              {icons.rightIcon}
+            </div>
+          </Button>
+        ) : (
+          <IconButton
+            src={iconSize ? ArrowForwardIos : ChevronRight}
+            iconAs={Icon}
+            className="next page-link"
+            aria-label={ariaLabel}
+            tabIndex={isDisabled ? '-1' : undefined}
+            onClick={() => { this.handlePreviousNextButtonClick(nextPage); }}
+            ref={(element) => { this.nextButtonRef = element; }}
+            disabled={isDisabled}
+            alt={PAGINATION_BUTTON_ICON_BUTTON_NEXT_ALT}
+          />
+        )}
+      </li>
+    );
+  }
+
+  renderScreenReaderSection() {
+    const { currentPage } = this.state;
+    const { buttonLabels, pageCount } = this.props;
+
+    const description = `${buttonLabels.page} ${currentPage}, ${buttonLabels.currentPage}, ${buttonLabels.pageOfCount} ${pageCount}`;
+
+    return (
+      <div
+        className="sr-only"
+        aria-live="polite"
+        aria-relevant="text"
+        aria-atomic
+      >
+        {description}
+      </div>
+    );
+  }
+
+  renderPageButtons() {
+    const { currentPage } = this.state;
+    const { pageCount, maxPagesDisplayed } = this.props;
+
+    const pages = getPaginationRange({
+      currentIndex: currentPage,
+      count: pageCount,
+      length: maxPagesDisplayed,
+      requireFirstAndLastPages: true,
+    });
+
+    if (pageCount <= 1) {
+      return null;
+    }
+    return pages.map((pageIndex) => {
+      if (pageIndex === ELLIPSIS) {
+        return this.renderEllipsisButton();
+      }
+      return this.renderPageButton(pageIndex + 1);
+    });
+  }
+
+  renderReducedPagination() {
+    const { currentPage } = this.state;
+    const { pageCount } = this.props;
+
+    return (
+      <ul className="pagination">
+        {this.renderPreviousButton()}
+        <ReducedPagination currentPage={currentPage} pageCount={pageCount} handlePageSelect={this.handlePageSelect} />
+        {this.renderNextButton()}
+      </ul>
+    );
+  }
+
+  renderMinimalPaginations() {
+    return (
+      <ul className="pagination">
+        {this.renderPreviousButton()}
+        {this.renderNextButton()}
+      </ul>
+    );
+  }
+
+  render() {
+    const { variant, invertColors, size } = this.props;
+    return (
       <nav
-        aria-label={paginationLabel}
-        className={classNames(className, {
+        aria-label={this.props.paginationLabel}
+        className={classNames(this.props.className, {
           [`pagination-${variant}`]: variant,
           'pagination-inverse': invertColors,
-          'pagination-small': size !== PAGINATION_VARIANTS.default,
+          'pagination-small': size !== VARIANTS.default,
         })}
       >
-        <ScreenReaderText />
-        {renderPaginationComponent()}
+        {this.renderScreenReaderSection()}
+        {variant === VARIANTS.default || variant === VARIANTS.secondary
+          ? (
+            <ul className="pagination">
+              {this.renderPreviousButton()}
+              <MediaQuery maxWidth={breakpoints.extraSmall.maxWidth}>
+                {this.renderPageOfCountButton()}
+              </MediaQuery>
+              <MediaQuery minWidth={breakpoints.small.minWidth}>
+                {this.renderPageButtons()}
+              </MediaQuery>
+              {this.renderNextButton()}
+            </ul>
+          )
+          : null}
+        {variant === VARIANTS.reduced ? this.renderReducedPagination() : null}
+        {variant === VARIANTS.minimal ? this.renderMinimalPaginations() : null}
       </nav>
-    </PaginationContextProvider>
-  );
+    );
+  }
 }
 
 Pagination.propTypes = {
@@ -116,35 +483,40 @@ Pagination.propTypes = {
    * string, symbol, etc. Default is chevrons rendered using fa-css.
    */
   icons: PropTypes.shape({
-    leftIcon: PropTypes.elementType,
-    rightIcon: PropTypes.elementType,
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
   }),
   variant: PropTypes.oneOf(['default', 'secondary', 'reduced', 'minimal']),
   invertColors: PropTypes.bool,
   size: PropTypes.oneOf(['default', 'small']),
-  initialPage: PropTypes.number,
 };
 
 Pagination.defaultProps = {
   icons: {
-    leftIcon: ChevronLeft,
-    rightIcon: ChevronRight,
+    leftIcon: <Icon src={ChevronLeft} />,
+    rightIcon: <Icon src={ChevronRight} />,
   },
   buttonLabels: {
-    previous: 'Previous',
-    next: 'Next',
-    page: 'Page',
-    currentPage: 'Current Page',
-    pageOfCount: 'of',
+    previous: PAGINATION_BUTTON_LABEL_PREV,
+    next: PAGINATION_BUTTON_LABEL_NEXT,
+    page: PAGINATION_BUTTON_LABEL_PAGE,
+    currentPage: PAGINATION_BUTTON_LABEL_CURRENT_PAGE,
+    pageOfCount: PAGINATION_BUTTON_LABEL_PAGE_OF_COUNT,
   },
   className: undefined,
-  initialPage: 1,
-  currentPage: undefined,
+  currentPage: 1,
   maxPagesDisplayed: 7,
   variant: 'default',
   invertColors: false,
   size: 'default',
 };
 
+ReducedPagination.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  pageCount: PropTypes.number.isRequired,
+  handlePageSelect: PropTypes.func.isRequired,
+};
+
+Pagination.Reduced = ReducedPagination;
+
 export default Pagination;
-export * from './constants';

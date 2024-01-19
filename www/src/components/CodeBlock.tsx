@@ -6,7 +6,6 @@ import React, {
   useReducer,
   useState,
   useMemo,
-  useRef,
 } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
@@ -151,7 +150,6 @@ function CodeBlock({
             useState,
             useReducer,
             useMemo,
-            useRef,
             ExamplePropsForm,
             MiyazakiCard,
             HipsterIpsum,

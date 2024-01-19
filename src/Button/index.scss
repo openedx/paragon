@@ -358,12 +358,6 @@ fieldset:disabled a.btn {
     $btn-tertiary-color,
     $btn-tertiary-color
   );
-
-  &.disabled,
-  &:disabled {
-    color: $yiq-text-dark;
-  }
-
   @include button-focus(theme-color("primary", "focus"));
 }
 
@@ -386,12 +380,6 @@ fieldset:disabled a.btn {
     $btn-inverse-tertiary-color,
     $btn-inverse-tertiary-color
   );
-
-  &.disabled,
-  &:disabled {
-    color: $yiq-text-light;
-  }
-
   @include button-focus($white);
 }
 

@@ -23,15 +23,10 @@ function FormAutosuggestTestComponent(props) {
       name="FormAutosuggest"
       floatingLabel="floatingLabel text"
       helpMessage="Example help message"
-      valueRequiredErrorMessageText="Example value required error message"
-      selectionRequiredErrorMessageText="Example selection required error message"
-      customErrorMessageText="Example custom error message"
-      onChange={props.onChange}
-      isValueRequired={props.isValueRequired}
-      isSelectionRequired={props.isSelectionRequired}
-      hasCustomError={props.hasCustomError}
+      errorMessageText="Example error message"
+      onSelected={props.onSelected}
     >
-      <FormAutosuggestOption id="option-1-id">Option 1</FormAutosuggestOption>
+      <FormAutosuggestOption>Option 1</FormAutosuggestOption>
       <FormAutosuggestOption onClick={props.onClick}>Option 2</FormAutosuggestOption>
       <FormAutosuggestOption>Learn from more than 160 member universities</FormAutosuggestOption>
     </FormAutosuggestWrapper>
@@ -52,19 +47,15 @@ function FormAutosuggestLabelTestComponent() {
 }
 
 FormAutosuggestTestComponent.defaultProps = {
-  onChange: jest.fn(),
+  onSelected: jest.fn(),
   onClick: jest.fn(),
-  isValueRequired: false,
-  isSelectionRequired: false,
-  hasCustomError: false,
 };
 
 FormAutosuggestTestComponent.propTypes = {
-  onChange: PropTypes.func,
+  /** Specifies onSelected event handler. */
+  onSelected: PropTypes.func,
+  /** Specifies onClick event handler. */
   onClick: PropTypes.func,
-  isValueRequired: PropTypes.bool,
-  isSelectionRequired: PropTypes.bool,
-  hasCustomError: PropTypes.bool,
 };
 
 describe('render behavior', () => {
@@ -85,7 +76,7 @@ describe('render behavior', () => {
   });
 
   it('renders the auto-populated value if it exists', () => {
-    render(<FormAutosuggestWrapper value={{ userProvidedText: 'Test Value' }} />);
+    render(<FormAutosuggestWrapper value="Test Value" />);
     expect(screen.getByDisplayValue('Test Value')).toBeInTheDocument();
   });
 
@@ -97,42 +88,15 @@ describe('render behavior', () => {
     expect(list.length).toBe(3);
   });
 
-  it('renders with value required error msg', () => {
-    const { getByText, getByTestId } = render(<FormAutosuggestTestComponent isValueRequired />);
+  it('renders with error msg', () => {
+    const { getByText, getByTestId } = render(<FormAutosuggestTestComponent />);
     const input = getByTestId('autosuggest-textbox-input');
 
     // if you click into the input and click outside, you should see the error message
     userEvent.click(input);
     userEvent.click(document.body);
 
-    const formControlFeedback = getByText('Example value required error message');
-
-    expect(formControlFeedback).toBeInTheDocument();
-  });
-
-  it('renders with selection required error msg', () => {
-    const { getByText, getByTestId } = render(<FormAutosuggestTestComponent isSelectionRequired />);
-    const input = getByTestId('autosuggest-textbox-input');
-
-    // if you click into the input and click outside, you should see the error message
-    userEvent.click(input);
-    userEvent.type(input, '1');
-    userEvent.click(document.body);
-
-    const formControlFeedback = getByText('Example selection required error message');
-
-    expect(formControlFeedback).toBeInTheDocument();
-  });
-
-  it('renders with custom error msg', () => {
-    const { getByText, getByTestId } = render(<FormAutosuggestTestComponent hasCustomError />);
-    const input = getByTestId('autosuggest-textbox-input');
-
-    // if you click into the input and click outside, you should see the error message
-    userEvent.click(input);
-    userEvent.click(document.body);
-
-    const formControlFeedback = getByText('Example custom error message');
+    const formControlFeedback = getByText('Example error message');
 
     expect(formControlFeedback).toBeInTheDocument();
   });
@@ -183,28 +147,17 @@ describe('controlled behavior', () => {
     expect(input.value).toEqual('Option 1');
   });
 
-  it('calls onChange based on clicked option', () => {
-    const onChange = jest.fn();
-    const { getByText, getByTestId } = render(<FormAutosuggestTestComponent onChange={onChange} />);
+  it('calls onSelected based on clicked option', () => {
+    const onSelected = jest.fn();
+    const { getByText, getByTestId } = render(<FormAutosuggestTestComponent onSelected={onSelected} />);
     const input = getByTestId('autosuggest-textbox-input');
 
     userEvent.click(input);
     const menuItem = getByText('Option 1');
     userEvent.click(menuItem);
 
-    expect(onChange).toHaveBeenCalledWith({ selectionId: 'option-1-id', selectionValue: 'Option 1', userProvidedText: 'Option 1' });
-    expect(onChange).toHaveBeenCalledTimes(1);
-  });
-
-  it('calls onChange when the textbox is cleared', () => {
-    const onChange = jest.fn();
-    const { getByTestId } = render(<FormAutosuggestTestComponent onChange={onChange} />);
-    const input = getByTestId('autosuggest-textbox-input');
-
-    userEvent.type(input, '1');
-    userEvent.type(input, '{backspace}');
-
-    expect(onChange).toHaveBeenCalledWith({ selectionId: '', selectionValue: '', userProvidedText: '' });
+    expect(onSelected).toHaveBeenCalledWith('Option 1');
+    expect(onSelected).toHaveBeenCalledTimes(1);
   });
 
   it('calls the function passed to onClick when an option with it is selected', () => {
