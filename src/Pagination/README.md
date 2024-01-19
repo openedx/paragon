@@ -18,102 +18,61 @@ notes: |
 
 Navigation between multiple pages of some set of results. Controls are provided to navigate through multiple pages of related data.
 
-## Default Size
-
-### Uncontrolled Usage
+## Basic usage (Default Size)
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={20}
-  onPageSelect={(page) => console.log(`page ${page} selected`)}
+  onPageSelect={() => console.log('page selected')}
 />
 ```
 
-### Controlled Usage
-
-```jsx live
-() => {
-  const [currentPage, setCurrentPage] = useState(1);
-  
-  const handlePageSelect = (page) => setTimeout(() => setCurrentPage(page), 1000);
-  
-  return (
-    <Pagination
-      paginationLabel="pagination navigation"
-      pageCount={20}
-      currentPage={currentPage}
-      onPageSelect={(page) => handlePageSelect(page)}
-    />
-  );
-}
-```
-
-### Uncontrolled usage with initial page
-
-```jsx live
-<Pagination
-  paginationLabel="pagination navigation"
-  pageCount={20}
-  initialPage={5}
-  onPageSelect={(page) => console.log(`page ${page} selected`)}
-/>
-```
-
-### Secondary
+## Secondary
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={20}
   variant="secondary"
-  onPageSelect={(page) => console.log(`page ${page} selected`)}
-  icons={{
-    leftIcon: ArrowBackIos,
-    rightIcon: ArrowForwardIos,
-  }}
+  onPageSelect={() => console.log('page selected')}
 />
 ```
 
-### Reduced
+## Reduced
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={20}
   variant="reduced"
-  onPageSelect={(page) => console.log(`page ${page} selected`)}
+  onPageSelect={() => console.log('page selected')}
 />
 ```
 
-### Minimal
+## Minimal
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={5}
   variant="minimal"
-  onPageSelect={(page) => console.log(`page ${page} selected`)}
-  icons={{
-    leftIcon: ArrowBackIos,
-    rightIcon: ArrowForwardIos,
-  }}
+  onPageSelect={() => console.log('page selected')}
 />
 ```
 
-## Small Size
+## Basic usage (Small Size)
 
-### Default variant
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={20}
   size="small"
-  onPageSelect={(page) => console.log(`page ${page} selected`)}
+  onPageSelect={() => console.log('page selected')}
 />
 ```
 
-### Secondary (Small Size)
+## Secondary (Small Size)
 
 ```jsx live
 <Pagination
@@ -121,11 +80,11 @@ Navigation between multiple pages of some set of results. Controls are provided 
   pageCount={20}
   variant="secondary"
   size="small"
-  onPageSelect={(page) => console.log(`page ${page} selected`)}
+  onPageSelect={() => console.log('page selected')}
 />
 ```
 
-### Reduced (Small Size)
+## Reduced (Small Size)
 
 ```jsx live
 <Pagination
@@ -133,11 +92,11 @@ Navigation between multiple pages of some set of results. Controls are provided 
   pageCount={20}
   variant="reduced"
   size="small"
-  onPageSelect={(page) => console.log(`page ${page} selected`)}
+  onPageSelect={() => console.log('page selected')}
 />
 ```
 
-### Minimal (Small Size)
+## Minimal (Small Size)
 
 ```jsx live
 <Pagination
@@ -145,7 +104,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
   pageCount={5}
   variant="minimal"
   size="small"
-  onPageSelect={(page) => console.log(`page ${page} selected`)}
+  onPageSelect={() => console.log('page selected')}
 />
 ```
 
@@ -157,36 +116,21 @@ Navigation between multiple pages of some set of results. Controls are provided 
     paginationLabel="pagination navigation"
     pageCount={20}
     invertColors
-    onPageSelect={(page) => console.log(`page ${page} selected`)}
-  />
-  <Pagination
-    paginationLabel="pagination navigation"
-    pageCount={20}
-    invertColors
-    variant="secondary"
-    onPageSelect={(page) => console.log(`page ${page} selected`)}
-    icons={{
-      leftIcon: ArrowBackIos,
-      rightIcon: ArrowForwardIos,
-    }}
+    onPageSelect={() => console.log('page selected')}
   />
   <Pagination
     paginationLabel="pagination navigation"
     pageCount={20}
     invertColors
     variant="reduced"
-    onPageSelect={(page) => console.log(`page ${page} selected`)}
+    onPageSelect={() => console.log('page selected')}
   />
   <Pagination
     paginationLabel="pagination navigation"
     pageCount={5}
     invertColors
     variant="minimal"
-    onPageSelect={(page) => console.log(`page ${page} selected`)}
-    icons={{
-      leftIcon: ArrowBackIos,
-      rightIcon: ArrowForwardIos,
-    }}
+    onPageSelect={() => console.log('page selected')}
   />
 </div>
 ```
@@ -200,15 +144,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
     pageCount={20}
     invertColors
     size="small"
-    onPageSelect={(page) => console.log(`page ${page} selected`)}
-  />
-  <Pagination
-    paginationLabel="pagination navigation"
-    pageCount={20}
-    invertColors
-    size="small"
-    variant="secondary"
-    onPageSelect={(page) => console.log(`page ${page} selected`)}
+    onPageSelect={() => console.log('page selected')}
   />
   <Pagination
     paginationLabel="pagination navigation"
@@ -216,7 +152,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
     invertColors
     variant="reduced"
     size="small"
-    onPageSelect={(page) => console.log(`page ${page} selected`)}
+    onPageSelect={() => console.log('page selected')}
   />
   <Pagination
     paginationLabel="pagination navigation"
@@ -224,7 +160,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
     invertColors
     variant="minimal"
     size="small"
-    onPageSelect={(page) => console.log(`page ${page} selected`)}
+    onPageSelect={() => console.log('page selected')}
   />
 </div>
 ```

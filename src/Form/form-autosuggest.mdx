@@ -19,79 +19,52 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
 ```jsx live
 () => {
-  const [value, setValue] = useState({});
-  const [isValueRequired, setIsValueRequired] = useState(false);
-  const [isSelectionRequired, setIsSelectionRequired] = useState(false);
-  const [hasCustomValidation, setHasCustomValidation] = useState(false);
-
-  const hasCustomError = () => (hasCustomValidation ? value.selectionId !== 'c-option-id' : false);
-
-  const autosuggestRef = useRef();
-  const forceUpdateErrorState = () => {
-    autosuggestRef.current.updateErrorStateAndErrorMessage();
-  };
+  const [selected, setSelected] = useState('');
 
   return (
-    <>
-      <Form.Group>
-        <Form.Label>
-          <h4>Programming language</h4>
-        </Form.Label>
-        <Form.Autosuggest
-          ref={autosuggestRef}
-          aria-label="form autosuggest"
-          helpMessage="Select language"
-          value={value}
-          onChange={(v) => setValue(v)}
-          isValueRequired={isValueRequired}
-          valueRequiredErrorMessageText="Error: value required"
-          isSelectionRequired={isSelectionRequired}
-          selectionRequiredErrorMessageText="Error: selection required"
-          hasCustomError={hasCustomError()}
-          customErrorMessageText="Error: selected language less than 50 years old"
-        >
-          <Form.AutosuggestOption id="javascript-option-id">JavaScript</Form.AutosuggestOption>
-          <Form.AutosuggestOption id="python-option-id">Python</Form.AutosuggestOption>
-          <Form.AutosuggestOption id="ruby-option-id">Ruby</Form.AutosuggestOption>
-          <Form.AutosuggestOption id="c-option-id">C</Form.AutosuggestOption>
-        </Form.Autosuggest>
-      </Form.Group>
-      <Form.Group>
-        <Form.CheckboxSet isInline>
-          <Form.Checkbox checked={isValueRequired} onChange={e => setIsValueRequired(e.target.checked)}>Value Required</Form.Checkbox>
-          <Form.Checkbox checked={isSelectionRequired} onChange={e => setIsSelectionRequired(e.target.checked)}>Selection Required</Form.Checkbox>
-          <Form.Checkbox checked={hasCustomValidation} onChange={e => setHasCustomValidation(e.target.checked)}>Custom Validation</Form.Checkbox>
-        </Form.CheckboxSet>
-      </Form.Group>
-      <Collapsible styling="basic" title="Value details">
-        <Row>
-          <Col xs={3}><pre>userProvidedText:</pre></Col>
-          <Col><pre>{value.userProvidedText}</pre></Col>
-        </Row>
-        <Row>
-          <Col xs={3}><pre>selectionValue:</pre></Col>
-          <Col><pre>{value.selectionValue}</pre></Col>
-        </Row>
-        <Row>
-          <Col xs={3}><pre>selectionId:</pre></Col>
-          <Col><pre>{value.selectionId}</pre></Col>
-        </Row>
-      </Collapsible>
-      <Collapsible styling="basic" title="External modification">
-        <Form.Group className="mb-3">
-          <Form.Label>User provided text</Form.Label>
-          <Form.Control
-            onChange={(e) => setValue({
-              userProvidedText: e.target.value,
-              selectionValue: '',
-              selectionId: '',
-            })}
-            value={value.userProvidedText}
-          />
-        </Form.Group>
-        <Button onClick={forceUpdateErrorState}>Trigger validation</Button>
-      </Collapsible>
-    </>
+    <Form.Group>
+      <Form.Label>
+        <h4>Programming language</h4>
+      </Form.Label>
+      <Form.Autosuggest
+        aria-label="form autosuggest"
+        helpMessage="Select language"
+        errorMessageText="Error, no selected value"
+        value={selected}
+        onSelected={(value) => setSelected(value)}
+      >
+        <Form.AutosuggestOption>JavaScript</Form.AutosuggestOption>
+        <Form.AutosuggestOption>Python</Form.AutosuggestOption>
+        <Form.AutosuggestOption>Rube</Form.AutosuggestOption>
+        <Form.AutosuggestOption onClick={(e) => alert(e.currentTarget.getAttribute('data-value'))}>
+          Option with custom onClick
+        </Form.AutosuggestOption>
+      </Form.Autosuggest>
+    </Form.Group>
+  );
+};
+```
+
+## Search Usage
+
+```jsx live
+() => {
+  const [selected, setSelected] = useState('');
+
+  return (
+    <Form.Autosuggest
+      placeholder="Type 'T'"
+      aria-label="form autosuggest"
+      errorMessageText="Error, no selected value"
+      helpMessage="Select language"
+      value={selected}
+      onSelected={(value) => setSelected(value)}
+    >
+      <Form.AutosuggestOption>PHP</Form.AutosuggestOption>
+      <Form.AutosuggestOption>Java</Form.AutosuggestOption>
+      <Form.AutosuggestOption>Turbo Pascal</Form.AutosuggestOption>
+      <Form.AutosuggestOption>Flask</Form.AutosuggestOption>
+    </Form.Autosuggest>
   );
 };
 ```
@@ -100,9 +73,6 @@ Form auto-suggest enables users to manually select or type to find matching opti
 
 ```jsx live
 () => {
-  const [userProvidedText, setUserProvidedText] = useState('');
-  const [selectionValue, setSelectionValue] = useState('');
-  const [selectionId, setSelectionId] = useState('');
   const [data, setData] = useState([]);
   const [showLoading, setShowLoading] = useState(false);
 
@@ -118,10 +88,8 @@ Form auto-suggest enables users to manually select or type to find matching opti
       });
   }, []);
 
-  const searchCoffee = (title, id) => {
-    if (!id) {
-      setShowLoading(true);
-    }
+  const searchCoffee = (title) => {
+    setShowLoading(true);
     fetch('https://api.sampleapis.com/coffee/hot')
       .then(data => data.json())
       .then(items => setTimeout(() => {
@@ -132,45 +100,20 @@ Form auto-suggest enables users to manually select or type to find matching opti
       }, 1500));
   };
 
-  const valueChanged = (value) => {
-    if (userProvidedText !== value.userProvidedText) {
-      searchCoffee(value.userProvidedText, value.selectionId);
-    }
-    setUserProvidedText(value.userProvidedText);
-    setSelectionValue(value.selectionValue);
-    setSelectionId(value.selectionId);
-  };
-
   return (
-    <>
-      <Form.Group>
-        <Form.Label>
-          <h4>Café API</h4>
-        </Form.Label>
-        <Form.Autosuggest
-          isLoading={showLoading}
-          placeholder="This is placeholder"
-          screenReaderText="Loading..."
-          onChange={valueChanged}
-        >
-          {data.map((item, index) => <Form.AutosuggestOption key={index}>{item.title}</Form.AutosuggestOption>)}
-        </Form.Autosuggest>
-      </Form.Group>
-      <Collapsible styling="basic" title="Value details">
-        <Row>
-          <Col xs={3}><pre>userProvidedText:</pre></Col>
-          <Col><pre>{userProvidedText}</pre></Col>
-        </Row>
-        <Row>
-          <Col xs={3}><pre>selectionValue:</pre></Col>
-          <Col><pre>{selectionValue}</pre></Col>
-        </Row>
-        <Row>
-          <Col xs={3}><pre>selectionId:</pre></Col>
-          <Col><pre>{selectionId}</pre></Col>
-        </Row>
-      </Collapsible>
-    </>
+    <Form.Group>
+      <Form.Label>
+        <h4>Café API</h4>
+      </Form.Label>
+      <Form.Autosuggest
+        isLoading={showLoading}
+        placeholder="This is placeholder"
+        screenReaderText="Loading..."
+        onChange={searchCoffee}
+      >
+        {data.map((item, index) => <Form.AutosuggestOption key={index}>{item.title}</Form.AutosuggestOption>)}
+      </Form.Autosuggest>
+    </Form.Group>
   );
 };
 ```
