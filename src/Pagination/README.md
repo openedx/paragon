@@ -18,73 +18,114 @@ notes: |
 
 Navigation between multiple pages of some set of results. Controls are provided to navigate through multiple pages of related data.
 
-## Basic usage (Default Size)
+## Default Size
+
+### Uncontrolled Usage
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={20}
-  onPageSelect={() => console.log('page selected')}
+  onPageSelect={(page) => console.log(`page ${page} selected`)}
 />
 ```
 
-## Secondary
+### Controlled Usage
+
+```jsx live
+() => {
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const handlePageSelect = (page) => setTimeout(() => setCurrentPage(page), 1000);
+  
+  return (
+    <Pagination
+      paginationLabel="pagination navigation"
+      pageCount={20}
+      currentPage={currentPage}
+      onPageSelect={(page) => handlePageSelect(page)}
+    />
+  );
+}
+```
+
+### Uncontrolled usage with initial page
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={20}
-  variant="secondary"
-  onPageSelect={() => console.log('page selected')}
+  initialPage={5}
+  onPageSelect={(page) => console.log(`page ${page} selected`)}
 />
 ```
 
-## Reduced
-
-```jsx live
-<Pagination
-  paginationLabel="pagination navigation"
-  pageCount={20}
-  variant="reduced"
-  onPageSelect={() => console.log('page selected')}
-/>
-```
-
-## Minimal
-
-```jsx live
-<Pagination
-  paginationLabel="pagination navigation"
-  pageCount={5}
-  variant="minimal"
-  onPageSelect={() => console.log('page selected')}
-/>
-```
-
-## Basic usage (Small Size)
-
-```jsx live
-<Pagination
-  paginationLabel="pagination navigation"
-  pageCount={20}
-  size="small"
-  onPageSelect={() => console.log('page selected')}
-/>
-```
-
-## Secondary (Small Size)
+### Secondary
 
 ```jsx live
 <Pagination
   paginationLabel="pagination navigation"
   pageCount={20}
   variant="secondary"
-  size="small"
-  onPageSelect={() => console.log('page selected')}
+  onPageSelect={(page) => console.log(`page ${page} selected`)}
+  icons={{
+    leftIcon: ArrowBackIos,
+    rightIcon: ArrowForwardIos,
+  }}
 />
 ```
 
-## Reduced (Small Size)
+### Reduced
+
+```jsx live
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={20}
+  variant="reduced"
+  onPageSelect={(page) => console.log(`page ${page} selected`)}
+/>
+```
+
+### Minimal
+
+```jsx live
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={5}
+  variant="minimal"
+  onPageSelect={(page) => console.log(`page ${page} selected`)}
+  icons={{
+    leftIcon: ArrowBackIos,
+    rightIcon: ArrowForwardIos,
+  }}
+/>
+```
+
+## Small Size
+
+### Default variant
+```jsx live
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={20}
+  size="small"
+  onPageSelect={(page) => console.log(`page ${page} selected`)}
+/>
+```
+
+### Secondary (Small Size)
+
+```jsx live
+<Pagination
+  paginationLabel="pagination navigation"
+  pageCount={20}
+  variant="secondary"
+  size="small"
+  onPageSelect={(page) => console.log(`page ${page} selected`)}
+/>
+```
+
+### Reduced (Small Size)
 
 ```jsx live
 <Pagination
@@ -92,11 +133,11 @@ Navigation between multiple pages of some set of results. Controls are provided 
   pageCount={20}
   variant="reduced"
   size="small"
-  onPageSelect={() => console.log('page selected')}
+  onPageSelect={(page) => console.log(`page ${page} selected`)}
 />
 ```
 
-## Minimal (Small Size)
+### Minimal (Small Size)
 
 ```jsx live
 <Pagination
@@ -104,7 +145,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
   pageCount={5}
   variant="minimal"
   size="small"
-  onPageSelect={() => console.log('page selected')}
+  onPageSelect={(page) => console.log(`page ${page} selected`)}
 />
 ```
 
@@ -116,21 +157,36 @@ Navigation between multiple pages of some set of results. Controls are provided 
     paginationLabel="pagination navigation"
     pageCount={20}
     invertColors
-    onPageSelect={() => console.log('page selected')}
+    onPageSelect={(page) => console.log(`page ${page} selected`)}
+  />
+  <Pagination
+    paginationLabel="pagination navigation"
+    pageCount={20}
+    invertColors
+    variant="secondary"
+    onPageSelect={(page) => console.log(`page ${page} selected`)}
+    icons={{
+      leftIcon: ArrowBackIos,
+      rightIcon: ArrowForwardIos,
+    }}
   />
   <Pagination
     paginationLabel="pagination navigation"
     pageCount={20}
     invertColors
     variant="reduced"
-    onPageSelect={() => console.log('page selected')}
+    onPageSelect={(page) => console.log(`page ${page} selected`)}
   />
   <Pagination
     paginationLabel="pagination navigation"
     pageCount={5}
     invertColors
     variant="minimal"
-    onPageSelect={() => console.log('page selected')}
+    onPageSelect={(page) => console.log(`page ${page} selected`)}
+    icons={{
+      leftIcon: ArrowBackIos,
+      rightIcon: ArrowForwardIos,
+    }}
   />
 </div>
 ```
@@ -144,7 +200,15 @@ Navigation between multiple pages of some set of results. Controls are provided 
     pageCount={20}
     invertColors
     size="small"
-    onPageSelect={() => console.log('page selected')}
+    onPageSelect={(page) => console.log(`page ${page} selected`)}
+  />
+  <Pagination
+    paginationLabel="pagination navigation"
+    pageCount={20}
+    invertColors
+    size="small"
+    variant="secondary"
+    onPageSelect={(page) => console.log(`page ${page} selected`)}
   />
   <Pagination
     paginationLabel="pagination navigation"
@@ -152,7 +216,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
     invertColors
     variant="reduced"
     size="small"
-    onPageSelect={() => console.log('page selected')}
+    onPageSelect={(page) => console.log(`page ${page} selected`)}
   />
   <Pagination
     paginationLabel="pagination navigation"
@@ -160,7 +224,7 @@ Navigation between multiple pages of some set of results. Controls are provided 
     invertColors
     variant="minimal"
     size="small"
-    onPageSelect={() => console.log('page selected')}
+    onPageSelect={(page) => console.log(`page ${page} selected`)}
   />
 </div>
 ```
