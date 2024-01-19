@@ -6,6 +6,8 @@ import classNames from 'classnames';
 import { Search, Close } from '../../icons';
 import newId from '../utils/newId';
 
+import Icon from '../Icon';
+
 export const SearchFieldContext = createContext();
 
 const BUTTON_LOCATION_VARIANTS = [
@@ -192,8 +194,8 @@ SearchFieldAdvanced.defaultProps = {
     clearButton: 'clear search',
   },
   icons: {
-    clear: Close,
-    submit: Search,
+    clear: <Icon src={Close} />,
+    submit: <Icon src={Search} />,
   },
   onBlur: () => {},
   onChange: () => {},

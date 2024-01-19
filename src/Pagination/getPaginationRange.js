@@ -6,10 +6,6 @@ const getPaginationRange = ({
   length,
   requireFirstAndLastPages = true,
 }) => {
-  if (count === 0) {
-    return [];
-  }
-
   const boundedLength = Math.min(count, length);
   const unboundedStartIndex = currentIndex - Math.ceil(boundedLength / 2);
   const zeroBoundedStartIndex = Math.max(0, unboundedStartIndex);
