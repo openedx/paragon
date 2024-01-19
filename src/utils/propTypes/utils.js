@@ -23,16 +23,6 @@ export const customPropTypeRequirement = (targetType, conditionFn, filterString)
 );
 
 /**
- * Checks if all specified properties are defined in the `props` object.
- *
- * @param {Object} props - The object in which the properties are checked.
- * @param {string[]} otherPropNames - An array of strings representing the property names to be checked.
- * @returns {boolean} `true` if all properties are defined and not equal to `undefined`, `false` otherwise.
- */
-export const isEveryPropDefined = (props, otherPropNames) => otherPropNames
-  .every(propName => props[propName] !== undefined);
-
-/**
  * Returns a PropType entry with the given propType that is required if otherPropName
  * is truthy.
  * @param {func} propType - target PropType
@@ -44,13 +34,8 @@ export const isEveryPropDefined = (props, otherPropNames) => otherPropNames
 export const requiredWhen = (propType, otherPropName) => (
   customPropTypeRequirement(
     propType,
-    (props) => {
-      if (Array.isArray(otherPropName)) {
-        return isEveryPropDefined(props, otherPropName);
-      }
-      return props[otherPropName] === true;
-    },
-    `${otherPropName} ${Array.isArray(otherPropName) ? 'are defined' : 'is truthy'}`,
+    (props) => props[otherPropName] === true,
+    `${otherPropName} is truthy`,
   )
 );
 
