@@ -2,8 +2,8 @@ name: Analyze Dependents
 
 on:
   workflow_dispatch:
-  schedule:
-  - cron: "0 14 * * *" # daily at 10am EST (Github Actions works with UTC)
+  # schedule:
+  # - cron: "0 14 * * *" # daily at 10am EST (Github Actions works with UTC)
 
 jobs:
   # clones known dependent Git repositories from Open edX
