@@ -92,7 +92,7 @@ const FormAutosuggest = forwardRef(
 
         return React.cloneElement(child, {
           ...rest,
-          childChildren,
+          children: childChildren,
           'data-value': childChildren,
           onClick: (e) => handleItemSelect(e, onClick),
           id: menuItemId,
