@@ -163,3 +163,53 @@ label for the dialog element.
   )
 }
 ```
+
+## With hidden modal contents
+
+By default, ``ModalDialog`` only render its modal contents to the DOM when the modal is explicitly marked as open via the `isOpen` prop. However, in some cases, needing to re-render the contents of the modal body each and every time the modal closes and re-opens can be expensive and/or a poor user experience (UX), e.g. if the modal contents are dynamic and loaded from an external source like some iframed content or a slow loading API request.
+
+To mitigate these performance concerns, ``ModalDialog`` supports an optional ``isHidden`` prop that when used in conjunction with ``isOpen``, would result in the modal contents and the backdrop still being kept in the React Portal DOM, but visually hidden in the UI.
+
+```jsx live
+() => {
+  const [isHidden, hideModal, showModal] = useToggle(true);
+  return (
+    <>
+      <div className="d-flex">
+        <Button variant="outline-primary" onClick={showModal}>Open standard modal dialog</Button>
+      </div>
+      <ModalDialog
+        title="My dialog"
+        isOpen /* always "open" */
+        isHidden={isHidden}
+        onClose={hideModal}
+        hasCloseButton
+        isFullscreenOnMobile
+      >
+        <ModalDialog.Header>
+          <ModalDialog.Title>
+            I'm a dialog box
+          </ModalDialog.Title>
+        </ModalDialog.Header>
+
+        <ModalDialog.Body>
+          <p>
+            I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever. Beard man braid migas single-origin coffee forage ramps. Tumeric messenger bag bicycle rights wayfarers, try-hard cronut blue bottle health goth. Sriracha tumblr cardigan, cloud bread succulents tumeric copper mug marfa semiotics woke next level organic roof party +1 try-hard.
+          </p>
+        </ModalDialog.Body>
+
+        <ModalDialog.Footer>
+          <ActionRow>
+            <ModalDialog.CloseButton variant="tertiary">
+              Cancel
+            </ModalDialog.CloseButton>
+            <Button variant="primary">
+              Continue
+            </Button>
+          </ActionRow>
+        </ModalDialog.Footer>
+      </ModalDialog>
+    </>
+  )
+}
+```

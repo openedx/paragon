@@ -20,6 +20,7 @@ function ModalDialog({
   children,
   title,
   isOpen,
+  isHidden,
   onClose,
   size,
   variant,
@@ -35,7 +36,7 @@ function ModalDialog({
   const isMobile = useMediaQuery({ query: '(max-width: 767.98px)' });
   const showFullScreen = (isFullscreenOnMobile && isMobile);
   return (
-    <ModalLayer isOpen={isOpen} onClose={onClose} isBlocking={isBlocking} zIndex={zIndex}>
+    <ModalLayer isOpen={isOpen} isHidden={isHidden} onClose={onClose} isBlocking={isBlocking} zIndex={zIndex}>
       <div
         role="dialog"
         aria-label={title}

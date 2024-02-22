@@ -6,11 +6,11 @@ const ModalContext = React.createContext({
 });
 
 function ModalContextProvider({
-  onClose, isOpen, isBlocking, children,
+  onClose, isOpen, isHidden, isBlocking, children,
 }) {
   const modalContextValue = useMemo(
-    () => ({ onClose, isOpen, isBlocking }),
-    [onClose, isOpen, isBlocking],
+    () => ({ onClose, isOpen, isHidden, isBlocking }),
+    [onClose, isOpen, isHidden, isBlocking],
   );
 
   return (
