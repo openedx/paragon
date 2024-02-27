@@ -2,8 +2,8 @@ name: Analyze Dependents
 
 on:
   workflow_dispatch:
-  # schedule:
-  # - cron: "0 14 * * *" # daily at 10am EST (Github Actions works with UTC)
+   schedule:
+   - cron: "0 14 * * *" # daily at 10am EST (Github Actions works with UTC)
 
 jobs:
   # clones known dependent Git repositories from Open edX
@@ -227,7 +227,7 @@ jobs:
       with:
         node-version: ${{ env.NODE_VER }}
     - name: Install dependencies
-      run: npm ci
+      run: npm ci --ignore-scripts
       working-directory: dependent-usage-analyzer
     - name: Download dependent project checkouts
       uses: actions/download-artifact@v2
