@@ -1,0 +1,2 @@
+export const SKELETON_HEIGHT_VALUE = 140;
+export const LOGO_SKELETON_HEIGHT_VALUE = 41;
