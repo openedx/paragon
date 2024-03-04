@@ -2,7 +2,8 @@ import React, {
   useEffect, useMemo, useReducer,
 } from 'react';
 import PropTypes from 'prop-types';
-import { useTable, useMountedLayoutEffect } from 'react-table';
+// import { useTable, useMountedLayoutEffect } from 'react-table';
+import { useReactTable } from '@tanstack/react-table';
 
 import classNames from 'classnames';
 import Table from './Table';
@@ -156,32 +157,32 @@ function DataTable({
   const controlledTableSelections = [selections, selectionsDispatch];
 
   // Use the state and functions returned from useTable to build your UI
-  const instance = useTable(...tableArgs);
+  const instance = useReactTable(...tableArgs);
+  console.log('instance', instance);
+  // const {
+  //   pageSize: tableStatePageSize,
+  //   pageIndex: tableStatePageIndex,
+  //   sortBy: tableStateSortBy,
+  //   filters: tableStateFilters,
+  //   selectedRowIds: tableStateSelectedRowIds,
+  // } = instance.state;
 
-  const {
-    pageSize: tableStatePageSize,
-    pageIndex: tableStatePageIndex,
-    sortBy: tableStateSortBy,
-    filters: tableStateFilters,
-    selectedRowIds: tableStateSelectedRowIds,
-  } = instance.state;
+  // useEffect(() => {
+  //   if (fetchData) {
+  //     fetchData({
+  //       pageSize: tableStatePageSize,
+  //       pageIndex: tableStatePageIndex,
+  //       sortBy: tableStateSortBy,
+  //       filters: tableStateFilters,
+  //     });
+  //   }
+  // }, [fetchData, tableStatePageSize, tableStatePageIndex, tableStateSortBy, tableStateFilters]);
 
-  useEffect(() => {
-    if (fetchData) {
-      fetchData({
-        pageSize: tableStatePageSize,
-        pageIndex: tableStatePageIndex,
-        sortBy: tableStateSortBy,
-        filters: tableStateFilters,
-      });
-    }
-  }, [fetchData, tableStatePageSize, tableStatePageIndex, tableStateSortBy, tableStateFilters]);
-
-  useMountedLayoutEffect(() => {
-    if (onSelectedRowsChanged) {
-      onSelectedRowsChanged(tableStateSelectedRowIds);
-    }
-  }, [tableStateSelectedRowIds, onSelectedRowsChanged]);
+  // useMountedLayoutEffect(() => {
+  //   if (onSelectedRowsChanged) {
+  //     onSelectedRowsChanged(tableStateSelectedRowIds);
+  //   }
+  // }, [tableStateSelectedRowIds, onSelectedRowsChanged]);
 
   const selectionActions = useSelectionActions(instance, controlledTableSelections);
 

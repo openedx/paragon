@@ -1,6 +1,12 @@
+// import {
+//   useSortBy, useFilters, useRowSelect, usePagination, useExpanded,
+// } from 'react-table';
 import {
-  useSortBy, useFilters, useRowSelect, usePagination, useExpanded,
-} from 'react-table';
+  useReactTable,
+  getCoreRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+} from '@tanstack/react-table';
 
 const getTableArgs = ({
   tableOptions, isFilterable, isSortable, isPaginated, isSelectable, isExpandable,
@@ -8,21 +14,21 @@ const getTableArgs = ({
   const tableArgs = [
     tableOptions,
   ];
-  if (isFilterable) {
-    tableArgs.push(useFilters);
-  }
+  // if (isFilterable) {
+  //   tableArgs.push(useFilters);
+  // }
   if (isSortable) {
-    tableArgs.push(useSortBy);
+    tableArgs.push(getSortedRowModel);
   }
-  if (isExpandable) {
-    tableArgs.push(useExpanded);
-  }
+  // if (isExpandable) {
+  //   tableArgs.push(useExpanded);
+  // }
   if (isPaginated) {
-    tableArgs.push(usePagination);
+    tableArgs.push(getPaginationRowModel);
   }
-  if (isSelectable) {
-    tableArgs.push(useRowSelect);
-  }
+  // if (isSelectable) {
+  //   tableArgs.push(useRowSelect);
+  // }
 
   return tableArgs;
 };

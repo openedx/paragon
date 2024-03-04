@@ -121,16 +121,16 @@ for more information.
       data={data}
       columns={[
         {
-          Header: 'Name',
+          header: 'Name',
           accessor: 'name',
 
         },
         {
-          Header: 'Famous For',
+          header: 'Famous For',
           accessor: 'famous_for',
         },
         {
-          Header: 'Coat Color',
+          header: 'Coat Color',
           accessor: 'color',
           Filter: CheckboxFilter,
           filter: 'includesValue',
@@ -242,8 +242,8 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
 
   const selectColumn = {
     id: 'selection',
-    Header: DataTable.ControlledSelectHeader,
-    Cell: DataTable.ControlledSelect,
+    header: DataTable.ControlledSelectHeader,
+    cell: DataTable.ControlledSelect,
     disableSortBy: true,
   };
 
@@ -290,15 +290,15 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
       data={data}
       columns={[
         {
-          Header: 'Title',
+          header: 'Title',
           accessor: 'title',
         },
         {
-          Header: 'Director',
+          header: 'Director',
           accessor: 'director',
         },
         {
-          Header: 'Release date',
+          header: 'Release date',
           accessor: 'release_date',
         },
       ]}
@@ -377,15 +377,15 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       data={data}
       columns={[
         {
-          Header: 'Name',
+          header: 'Name',
           accessor: 'name',
         },
         {
-          Header: 'Famous For',
+          header: 'Famous For',
           accessor: 'famous_for',
         },
         {
-          Header: 'Coat Color',
+          header: 'Coat Color',
           accessor: 'color',
           Filter: CheckboxFilter,
           filter: 'includesValue',
@@ -456,16 +456,16 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
       ]}
       columns={[
         {
-          Header: 'Name',
+          header: 'Name',
           accessor: 'name',
 
         },
         {
-          Header: 'Famous For',
+          header: 'Famous For',
           accessor: 'famous_for',
         },
         {
-          Header: 'Coat Color',
+          header: 'Coat Color',
           accessor: 'color',
           Filter: CheckboxFilter,
           filter: 'includesValue',
@@ -551,15 +551,15 @@ Can be used to show the loading state when ``DataTable`` is asynchronously fetch
         data={hasData ? data : []}
         columns={[
           {
-            Header: 'Title',
+            header: 'Title',
             accessor: 'title',
           },
           {
-            Header: 'Director',
+            header: 'Director',
             accessor: 'director',
           },
           {
-            Header: 'Release date',
+            header: 'Release date',
             accessor: 'release_date',
           },
         ]}
@@ -637,8 +637,8 @@ You can pass a function to render custom components for bulk actions and table a
       additionalColumns={[
         {
           id: 'action',
-          Header: 'Action',
-          Cell: ({ row }) => <Button variant="link" size="sm" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
+          header: 'Action',
+          cell: ({ row }) => <Button variant="link" size="sm" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
         }
       ]}
       data={[
@@ -681,15 +681,15 @@ You can pass a function to render custom components for bulk actions and table a
       ]}
       columns={[
         {
-          Header: 'Name',
+          header: 'Name',
           accessor: 'name',
         },
         {
-          Header: 'Famous For',
+          header: 'Famous For',
           accessor: 'famous_for',
         },
         {
-          Header: 'Coat Color',
+          header: 'Coat Color',
           accessor: 'color',
         },
       ]}
@@ -759,8 +759,8 @@ You can pass a function to render custom components for bulk actions and table a
     additionalColumns={[
       {
         id: 'action',
-        Header: 'Action',
-        Cell: ({ row }) => <Button variant="link" size="sm" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
+        header: 'Action',
+        cell: ({ row }) => <Button variant="link" size="sm" onClick={() => console.log(`Assigning ${row.values.name}`)}>Assign</Button>,
       }
     ]}
     data={[
@@ -803,16 +803,16 @@ You can pass a function to render custom components for bulk actions and table a
     ]}
     columns={[
       {
-        Header: 'Name',
+        header: 'Name',
         accessor: 'name',
 
       },
       {
-        Header: 'Famous For',
+        header: 'Famous For',
         accessor: 'famous_for',
       },
       {
-        Header: 'Coat Color',
+        header: 'Coat Color',
         accessor: 'color',
       },
     ]}
@@ -1033,16 +1033,16 @@ a responsive grid of cards.
       ]}
       columns={[
         {
-          Header: 'Title',
+          header: 'Title',
           accessor: 'title',
 
         },
         {
-          Header: 'Director',
+          header: 'Director',
           accessor: 'director',
         },
         {
-          Header: 'Release date',
+          header: 'Release date',
           accessor: 'release_date',
         },
       ]}
@@ -1124,15 +1124,15 @@ Use `columnSizes` prop of `CardView` component to define how many `Cards` are sh
       ]}
       columns={[
         {
-          Header: 'Name',
+          header: 'Name',
           accessor: 'name',
         },
         {
-          Header: 'Color',
+          header: 'Color',
           accessor: 'color',
         },
         {
-          Header: 'Famous For',
+          header: 'Famous For',
           accessor: 'famous_for',
         },
       ]}
@@ -1198,15 +1198,15 @@ You can also display `Cards` with horizontal view. If the table is selectable co
       ]}
       columns={[
         {
-          Header: 'Name',
+          header: 'Name',
           accessor: 'name',
         },
         {
-          Header: 'Color',
+          header: 'Color',
           accessor: 'color',
         },
         {
-          Header: 'Famous For',
+          header: 'Famous For',
           accessor: 'famous_for',
         },
       ]}
@@ -1258,16 +1258,16 @@ For a more desktop friendly view, you can move filters into a sidebar by providi
     ]}
     columns={[
       {
-        Header: 'Name',
+        header: 'Name',
         accessor: 'name',
 
       },
       {
-        Header: 'Famous For',
+        header: 'Famous For',
         accessor: 'famous_for',
       },
       {
-        Header: 'Coat Color',
+        header: 'Coat Color',
         accessor: 'color',
         Filter: CheckboxFilter,
         filter: 'includesValue',
@@ -1351,19 +1351,19 @@ Here we use default expander column offered by Paragon and for each row render v
   columns={[
     {
       id: 'expander',
-      Header: DataTable.ExpandAll,
-      Cell: DataTable.ExpandRow,
+      header: DataTable.ExpandAll,
+      cell: DataTable.ExpandRow,
     },
     {
-      Header: 'Name',
+      header: 'Name',
       accessor: 'name',
     },
     {
-      Header: 'Famous For',
+      header: 'Famous For',
       accessor: 'famous_for',
     },
     {
-      Header: 'Coat Color',
+      header: 'Coat Color',
       accessor: 'color',
     },
   ]}
@@ -1383,13 +1383,13 @@ You can create your own custom expander column and use it, see code example belo
   const expanderColumn = {
     id: 'expander',
     // getToggleAllRowsExpandedProps and isAllRowsExpanded props will be automatically passed to the component
-    Header: ({ getToggleAllRowsExpandedProps, isAllRowsExpanded }) => (
+    header: ({ getToggleAllRowsExpandedProps, isAllRowsExpanded }) => (
       <span {...getToggleAllRowsExpandedProps()}>
         {isAllRowsExpanded ? <Remove /> : <Add />}
       </span>
     ),
     // Cell will receive row prop
-    Cell: ({ row }) => (
+    cell: ({ row }) => (
       <span {...row.getToggleRowExpandedProps()}>
         {row.isExpanded ? 'Collapse' : 'Expand'}
       </span>
@@ -1407,15 +1407,15 @@ You can create your own custom expander column and use it, see code example belo
         ]}
         columns={[
           {
-            Header: 'Date modified',
+            header: 'Date modified',
             accessor: 'date_modified',
           },
           {
-            Header: 'Modified by',
+            header: 'Modified by',
             accessor: 'modified_by',
           },
           {
-            Header: 'Reason',
+            header: 'Reason',
             accessor: 'reason',
           },
         ]}
@@ -1459,15 +1459,15 @@ You can create your own custom expander column and use it, see code example belo
       columns={[
         { ...expanderColumn },
         {
-          Header: 'Name',
+          header: 'Name',
           accessor: 'name',
         },
         {
-          Header: 'Famous For',
+          header: 'Famous For',
           accessor: 'famous_for',
         },
         {
-          Header: 'Coat Color',
+          header: 'Coat Color',
           accessor: 'color',
         },
       ]}
@@ -1518,24 +1518,24 @@ You can create your own cell content by passing the `Cell` property to a specifi
       ]}
       columns={[
         {
-          Header: 'Name',
-          Cell: ({ row }) => (
+          header: 'Name',
+          cell: ({ row }) => (
             <Badge variant={variants[cellColors[row.id] % 4]}>
               {row.original.name}
             </Badge>
           ),
         },
         {
-          Header: 'Famous For',
-          Cell: ({ row }) => (
+          header: 'Famous For',
+          cell: ({ row }) => (
             <Badge variant={variants[(cellColors[row.id] + 1) % 4]}>
               {row.original.famous_for}
             </Badge>
           ),
         },
         {
-          Header: 'Coat Color',
-          Cell: ({ row }) => (
+          header: 'Coat Color',
+          cell: ({ row }) => (
             <Badge variant={variants[(cellColors[row.id] + 2) % 4]}>
               {row.original.color}
             </Badge>
@@ -1545,8 +1545,8 @@ You can create your own cell content by passing the `Cell` property to a specifi
       additionalColumns={[
         {
           id: 'action',
-          Header: 'Action',
-          Cell: ({ row }) => <Button variant="link" size="sm" onClick={() => handleColorChange(row.id)}>Change</Button>,
+          header: 'Action',
+          cell: ({ row }) => <Button variant="link" size="sm" onClick={() => handleColorChange(row.id)}>Change</Button>,
         }
       ]}
     >
@@ -1612,15 +1612,15 @@ After selecting the maximum possible number of rows, you can display an error me
       ]}
       columns={[
         {
-          Header: 'Name',
+          header: 'Name',
           accessor: 'name',
         },
         {
-          Header: 'Famous For',
+          header: 'Famous For',
           accessor: 'famous_for',
         },
         {
-          Header: 'Coat Color',
+          header: 'Coat Color',
           accessor: 'color',
           filter: 'includesValue',
           filterChoices: [

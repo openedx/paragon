@@ -182,22 +182,28 @@ export {
   useMediaQuery,
   Context as ResponsiveContext,
 } from 'react-responsive';
-export {
-  useTable,
-  useFilters,
-  useGlobalFilter,
-  useSortBy,
-  useGroupBy,
-  useExpanded,
-  usePagination,
-  useRowSelect,
-  useRowState,
-  useColumnOrder,
-  useResizeColumns,
-  useBlockLayout,
-  useAbsoluteLayout,
-  useFlexLayout,
-} from 'react-table';
+// export {
+//   useTable,
+//   useFilters,
+//   useGlobalFilter,
+//   useSortBy,
+//   useGroupBy,
+//   useExpanded,
+//   usePagination,
+//   useRowSelect,
+//   useRowState,
+//   useColumnOrder,
+//   useResizeColumns,
+//   useBlockLayout,
+//   useAbsoluteLayout,
+//   useFlexLayout,
+// } from 'react-table';
+import {
+  useReactTable,
+  getCoreRowModel,
+  getPaginationRowModel,
+  getSortedRowModel
+} from '@tanstack/react-table';
 export { default as Skeleton, SkeletonTheme } from './Skeleton/index';
 export { default as Bubble } from './Bubble';
 export { default as Dropzone } from './Dropzone';
