@@ -32,7 +32,7 @@ import HipsterIpsum from './exampleComponents/HipsterIpsum';
 import ExamplePropsForm from './exampleComponents/ExamplePropsForm';
 
 const {
-  Collapsible, Toast, IconButton, Icon,
+  Collapsible, IconButton, Icon, toast,
 } = ParagonReact;
 
 export type CollapsibleLiveEditorTypes = {
@@ -126,14 +126,13 @@ function CodeBlock({
 }: ICodeBlock) {
   const intl = useIntl();
   const language: any = className ? className.replace(/language-/, '') : 'jsx';
-  const [showToast, setShowToast] = useState(false);
   const [codeExample, setCodeExample] = useState(children);
 
   const handleCodeChange = (e) => setCodeExample(e.target.value);
 
   const handleCopyCodeExample = () => {
     navigator.clipboard.writeText(codeExample);
-    setShowToast(true);
+    toast({ message: 'Code example copied to clipboard!', duration: 2000 });
   };
 
   if (live) {
@@ -170,13 +169,6 @@ function CodeBlock({
           </CollapsibleLiveEditor>
           <LiveError className="pgn-doc__code-block-error" />
         </LiveProvider>
-        <Toast
-          onClose={() => setShowToast(false)}
-          show={showToast}
-          delay={2000}
-        >
-          Code example copied to clipboard!
-        </Toast>
       </div>
     );
   }

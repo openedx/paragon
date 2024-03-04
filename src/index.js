@@ -133,7 +133,7 @@ export {
   TabPane,
 } from './Tabs';
 export { default as TextArea } from './TextArea';
-export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
+export { default as ToastContainer, toast } from './Toast';
 export { default as Tooltip } from './Tooltip';
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';

@@ -1,4 +1,5 @@
 const React = require('react');
+const { ToastContainer } = require('~paragon-react');
 const { SettingsContextProvider } = require('./src/context/SettingsContext');
 const { InsightsContextProvider } = require('./src/context/InsightsContext');
 
@@ -7,6 +8,7 @@ exports.wrapRootElement = ({ element }) => (
   <SettingsContextProvider>
     <InsightsContextProvider>
       {element}
+      <ToastContainer />
     </InsightsContextProvider>
   </SettingsContextProvider>
 );

@@ -2,7 +2,7 @@
 title: 'Toast'
 type: 'component'
 components:
-- Toast
+- ToastContainer
 categories:
 - Overlays
 status: 'New'
@@ -11,85 +11,63 @@ devStatus: 'Done'
 notes: ''
 ---
 
-``Toast`` is a pop-up style message that shows the user a brief, fleeting, dismissible message about a successful app process.
-
-``Toasts`` sit fixed to the bottom left of the window.
+`Toast` is a pop-up style message that shows the user a brief, fleeting, dismissible message about a successful app process.
 
 ## Behaviors
 
-<ul>
-  <li>Auto-dismiss: Toast automatically dismisses after 5 seconds by default.</li>
-  <li>Disable timer: On hover of the Toast container. On hover or focus of dismiss icon or optional button</li>
-  <li>Re-enable timer: On mouse leave of the Toast container. On blur of dismiss icon or option button</li>
-  <li>Auto-dismiss timer: 5 - 15 second range.</li>
-</ul>
+- **Customizable Appearance**: Choose the window position for toast.
+- **Auto-dismiss**: Toast automatically dismisses after a default duration of 5 seconds.
+- **Disable timer**: Pause the auto-dismiss timer on hover or focus of the Toast or the dismiss icon.
+- **Re-enable timer**: Resume the auto-dismiss timer on mouse leave or blur of the Toast component.
 
 ## Basic Usage
 
 ```jsx live
 () => {
-  const [show, setShow] = useState(false);
+  const [position, setPosition] = useState('bottom-left');
+  const [timer, setTimer] = useState(5000);
+  const [message, setMessage] = useState('Example of a basic Toast.');
+  const [withActions, setWithActions] = useState('false');
+
+  const testAction = {
+    label: "Optional Button",
+    onClick: () => console.log('You clicked the action button.')
+  };
 
   return (
     <>
-      <Toast
-        onClose={() => setShow(false)}
-        show={show}
-      >
-        Example of a basic Toast.
-      </Toast>
 
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
-    </>
-  );
-}
-```
+      {/* start example form block */}
+        <ExamplePropsForm
+          inputs={[
+            { value: position, setValue: (value) => setPosition(value), name: 'Position', options: [
+              { value: "top-left", name: "top-left" },
+              { value: "top-right", name: "top-right" },
+              { value: "bottom-left", name: "bottom-left" },
+              { value: "bottom-right", name: "bottom-right" }]
+            },
+            { value: timer, setValue: (value) => setTimer(value), name: 'Duration (ms)', range: { min: 1000 , max: 10000, step: 1000 } },
+            { value: withActions, setValue: (value) => setWithActions(value), name: 'With actions', options: [
+              { value: 'true', name: "True" },
+              { value: 'false', name: "False" },
+            ]},
+          ]}
+        />
+      {/* end example form block */}
 
-## With Button
+       <div className="mt-3 mb-3">
+        Message:
+        <Form.Control
+          className="mt-1"
+          as="textarea"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+      </div>
 
-```jsx live
-() => {
-  const [show, setShow] = useState(false);
-
-  return (
-    <>
-      <Toast
-        action={{
-          label: "Optional Button",
-          onClick: () => console.log('You clicked the action button.')
-        }}
-        onClose={() => setShow(false)}
-        show={show}
-      >
-        Success! Example of a Toast with a button.
-      </Toast>
-
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
-    </>
-  );
-}
-```
-
-## With Link
-
-```jsx live
-() => {
-  const [show, setShow] = useState(false);
-
-  return (
-    <>
-      <Toast
-        action={{
-          label: "Optional Link",
-          href: "#"
-        }}
-        onClose={() => setShow(false)}
-        show={show}
-      >
-        Success! Example of a Toast with a link.
-      </Toast>
-
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
+      <Button onClick={() => toast({ message, duration: timer, actions: withActions === 'true' ? [testAction] : [], position })}>
+        Show Toast
+      </Button>
     </>
   );
 }

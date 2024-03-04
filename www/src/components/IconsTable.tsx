@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
-import { Icon, SearchField, Toast } from '~paragon-react';
+import { Icon, SearchField, toast } from '~paragon-react';
 import * as IconComponents from '~paragon-icons';
 import { ICON_COPIED_EVENT, sendUserAnalyticsEvent } from '../../segment-events';
 
@@ -67,7 +67,6 @@ function IconsTable({ iconNames }) {
   const [tableWidth, setTableWidth] = useState(0);
   const [data, setData] = useState({ iconsList: iconNames, rowsCount: ROWS_PER_WINDOW });
   const [currentIcon, setCurrentIcon] = useState(iconNames[0]);
-  const [showToast, setShowToast] = useState(false);
   const currentIconImport = `import { ${currentIcon} } from '@openedx/paragon/icons';`;
   const { rowsCount, iconsList } = data;
 
@@ -75,7 +74,7 @@ function IconsTable({ iconNames }) {
 
   const copyToClipboard = (content) => {
     navigator.clipboard.writeText(content);
-    setShowToast(true);
+    toast({ message: 'Copied to clipboard!', duration: 2000 });
     sendUserAnalyticsEvent(ICON_COPIED_EVENT, { name: currentIcon });
   };
 
@@ -178,13 +177,6 @@ function IconsTable({ iconNames }) {
       </div>
 
       <div ref={tableBottom} />
-      <Toast
-        onClose={() => setShowToast(false)}
-        show={showToast}
-        delay={2000}
-      >
-        Copied to clipboard!
-      </Toast>
     </>
   );
 }
