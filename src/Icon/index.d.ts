@@ -6,9 +6,9 @@ export interface IconProps {
     'aria-label'?: string;
     'aria-labelledby'?: string;
   };
-  id?: string;
+  id?: string | null;
   size?: 'xs' | 'sm' | 'md' | 'lg';
-  className?: string;
+  className?: string | string[];
   hidden?: boolean;
   screenReaderText?: React.ReactNode;
 }
