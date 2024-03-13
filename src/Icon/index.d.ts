@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface IconProps {
+export interface IconProps extends React.ComponentPropsWithoutRef<'span'> {
   src?: React.ReactElement | Function;
   svgAttrs?: {
     'aria-label'?: string;

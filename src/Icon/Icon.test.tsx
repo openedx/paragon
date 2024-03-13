@@ -102,5 +102,13 @@ describe('<Icon />', () => {
 
       expect(iconSpan.classList.contains('pgn__icon__xs')).toEqual(true);
     });
+
+    it('receives style or other arbitrary HTML properties correctly', () => {
+      const { container } = render(<Icon src={BlankSrc} style={{ color: 'red' }} size="xs" />);
+      const iconSpans = container.querySelectorAll('span');
+      const iconSpan = iconSpans[0];
+
+      expect(iconSpan.style.color).toEqual('red');
+    });
   });
 });
