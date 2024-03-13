@@ -1,4 +1,17 @@
-// @ts-nocheck (TODO: remove this pragma once more typings are available.)
+// To keep this file in sync with the .d.ts file, it's in the same order
+// and each line number is the same
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+// Things that have types
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+export { default as Bubble } from './Bubble';
+export { default as Chip, CHIP_PGN_CLASS } from './Chip';
+export { default as ChipCarousel } from './ChipCarousel';
+export { default as Icon } from './Icon';
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+// Things that don't have types
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
 export { default as asInput } from './asInput';
 export { default as ActionRow } from './ActionRow';
 export { default as Alert, ALERT_CLOSE_LABEL_TEXT } from './Alert';
@@ -23,8 +36,6 @@ export {
 } from './Carousel';
 export { default as CheckBox } from './CheckBox';
 export { default as CheckBoxGroup } from './CheckBoxGroup';
-export { default as Chip, CHIP_PGN_CLASS } from './Chip';
-export { default as ChipCarousel } from './ChipCarousel';
 export { default as CloseButton } from './CloseButton';
 export { default as Container } from './Container';
 export { default as Layout, Col, Row } from './Layout';
@@ -62,7 +73,6 @@ export {
   InputGroup,
 } from './Form';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
-export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
 export { default as IconButtonToggle } from './IconButtonToggle';
 export { default as Input } from './Input';
@@ -156,6 +166,7 @@ export { default as BulkActions } from './DataTable/BulkActions';
 export { default as TableControlBar } from './DataTable/TableControlBar';
 export { default as TableFooter } from './DataTable/TableFooter';
 export { default as CardView } from './DataTable/CardView';
+export { default as Skeleton, SkeletonTheme } from './Skeleton/index';
 export { default as Stack } from './Stack';
 export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
 export { default as Sticky } from './Sticky';
@@ -173,6 +184,10 @@ export {
   useOverflowScroll,
   useOverflowScrollItems,
 } from './OverflowScroll';
+export { default as Dropzone } from './Dropzone';
+export { default as messages } from './i18n';
+export { default as Truncate } from './Truncate';
+export { default as ColorPicker } from './ColorPicker';
 
 // Pass through any needed whole third-party library functionality
 // useTable for example is needed to use the DataTable component seamlessly
@@ -199,10 +214,3 @@ export {
   useAbsoluteLayout,
   useFlexLayout,
 } from 'react-table';
-export { default as Skeleton, SkeletonTheme } from './Skeleton/index';
-export { default as Bubble } from './Bubble';
-export { default as Dropzone } from './Dropzone';
-
-export { default as messages } from './i18n';
-export { default as Truncate } from './Truncate';
-export { default as ColorPicker } from './ColorPicker';
