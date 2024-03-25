@@ -19,9 +19,9 @@ import {
   LiveProvider, LiveEditor, LiveError, LivePreview,
 } from 'react-live';
 import { FormattedMessage, useIntl } from 'react-intl';
-import * as ParagonReact from '~paragon-react';
 import * as ParagonIcons from '~paragon-icons';
 import { ContentCopy } from '~paragon-icons';
+import * as ParagonReact from '~paragon-react';
 import {
   EXAMPLE_CODE_BLOCK_WITH_HEADING_EVENTS,
   EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_EVENTS,
