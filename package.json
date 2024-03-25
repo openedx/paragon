@@ -4,6 +4,7 @@
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
@@ -107,6 +108,8 @@
     "@types/jest": "^29.5.10",
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.11",
+    "@types/react-responsive": "^8.0.8",
+    "@types/react-table": "^7.7.19",
     "@types/react-test-renderer": "^18.0.0",
     "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
