@@ -170,8 +170,8 @@ SearchFieldAdvanced.propTypes = {
   value: PropTypes.string,
   /** specifies the icon element(s) to use for the clear and submit buttons. */
   icons: PropTypes.shape({
-    submit: PropTypes.element.isRequired,
-    clear: PropTypes.element,
+    submit: PropTypes.elementType.isRequired,
+    clear: PropTypes.elementType,
   }),
   /** specifies the aria-label attribute on the form element. This is useful if you use the `SearchField` component
    * more than once on a page. */
