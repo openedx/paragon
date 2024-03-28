@@ -57,6 +57,6 @@ module.exports = {
       ],
     },
   }),
-  iframeSandbox: 'allow-scripts allow-same-origin',
+  iframeSandbox: 'allow-scripts allow-same-origin allow-modals',
   storageKey,
 };
