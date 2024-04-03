@@ -27,6 +27,14 @@ jobs:
       run: npm run lint
     - name: Test
       run: npm run test
+    - name: Verify icon changes
+      run: |
+        cd icons
+        npm run build
+        if [[ -n $(git status -s) ]]; then
+          echo "::error::Generated icons do not match committed icons. Please run \`npm run build\` in the icons directory."
+          exit 1
+        fi
     - name: Build
       run: npm run build
     - name: Build Docs
