@@ -8,7 +8,7 @@ const {
   addComponentToExports,
   addComponentToGit,
 } = require('./utils');
-const { sendTrackInfo } = require('../utils');
+const { sendTrackInfo } = require('../lib/utils');
 
 program
   .argument('<ComponentName>', 'Component must have a name', validateComponentName)
