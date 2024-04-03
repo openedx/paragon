@@ -5,7 +5,7 @@ const helpCommand = require('../lib/help');
 const buildTokensCommand = require('../lib/build-tokens');
 const replaceVariablesCommand = require('../lib/replace-variables');
 const buildScssCommand = require('../lib/build-scss');
-const { sendTrackInfo } = require('../utils');
+const { sendTrackInfo } = require('../lib/utils');
 const versionCommand = require('../lib/version');
 
 const commandAliases = {
