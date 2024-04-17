@@ -115,7 +115,7 @@ ModalDialog.propTypes = {
    */
   isFullscreenOnMobile: PropTypes.bool,
   /**
-   * Prevent clicking on the backdrop to close the modal
+   * Prevent clicking on the backdrop or pressing Esc to close the modal
    */
   isBlocking: PropTypes.bool,
   /**
