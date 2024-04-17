@@ -96,7 +96,7 @@ ModalLayer.propTypes = {
   onClose: PropTypes.func.isRequired,
   /** Is the modal dialog open or closed */
   isOpen: PropTypes.bool.isRequired,
-  /** Prevent clicking on the backdrop to close the modal */
+  /** Prevent clicking on the backdrop or pressing Esc to close the modal */
   isBlocking: PropTypes.bool,
   /** Specifies the z-index of the modal */
   zIndex: PropTypes.number,
