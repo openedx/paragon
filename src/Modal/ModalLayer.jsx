@@ -63,7 +63,7 @@ function ModalLayer({
     return null;
   }
 
-  const handleClose = !isBlocking ? onClose : null;
+  const handleClose = isBlocking ? null : onClose;
 
   return (
     <ModalContextProvider onClose={onClose} isOpen={isOpen} isBlocking={isBlocking}>
