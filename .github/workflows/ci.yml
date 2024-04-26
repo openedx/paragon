@@ -42,4 +42,6 @@ jobs:
     - name: Build Docs
       run: npm run build-docs
     - name: Coverage
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
