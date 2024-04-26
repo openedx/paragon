@@ -30,6 +30,8 @@ jobs:
     - name: Verify icon changes
       run: |
         cd icons
+        rm -rf jsx
+        rm -rf es5
         npm run build
         if [[ -n $(git status -s) ]]; then
           echo "::error::Generated icons do not match committed icons. Please run \`npm run build\` in the icons directory."
