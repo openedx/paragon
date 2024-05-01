@@ -14,7 +14,7 @@ const brandIconNames = [
   'nvidia', 'wikipedia', 'sina-weibo', 'tencent-qq',
 ];
 
-const PATH_TO_BOOTSTRAP_ICONS = '../node_modules/bootstrap-icons/icons/';
+const PATH_TO_BOOTSTRAP_ICONS = './node_modules/bootstrap-icons/icons/';
 
 const filteredIconNames = fs.readdirSync(PATH_TO_BOOTSTRAP_ICONS).filter((iconName) => {
   return brandIconNames.includes(iconName.replace('.svg', ''));
