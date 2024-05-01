@@ -132,8 +132,8 @@ SearchField.propTypes = {
    * ```
    */
   icons: PropTypes.shape({
-    submit: PropTypes.element.isRequired,
-    clear: PropTypes.element,
+    submit: PropTypes.elementType.isRequired,
+    clear: PropTypes.elementType,
   }),
   /**
    * Specifies the aria-label attribute on the form element.
