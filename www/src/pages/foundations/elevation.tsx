@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
+import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 import {
   Button,
   Form,
@@ -8,7 +9,6 @@ import {
   Icon,
   IconButtonWithTooltip,
 } from '~paragon-react';
-import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import { SettingsContext } from '../../context/SettingsContext';

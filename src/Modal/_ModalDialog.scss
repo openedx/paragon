@@ -46,6 +46,14 @@
       overflow: visible;
     }
   }
+
+  &.pgn__modal-visible-overflow {
+    overflow: visible;
+
+    .pgn__modal-body {
+      overflow: visible;
+    }
+  }
 }
 
 // Sizes

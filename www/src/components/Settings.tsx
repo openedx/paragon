@@ -11,7 +11,6 @@ import {
   Nav,
 } from '~paragon-react';
 
-import { Link } from 'gatsby';
 import { LANGUAGES } from '../config';
 
 import { SettingsContext } from '../context/SettingsContext';
