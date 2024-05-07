@@ -1,7 +1,8 @@
 build:
 	rm -rf ./dist
-	tsc --emitDeclarationOnly
-	./node_modules/.bin/babel src --config-file ./babel.config.json --out-dir dist --source-maps --ignore **/*.test.jsx,**/*.test.tsx,**/__mocks__,**/__snapshots__,**/setupTest.js --copy-files --extensions ".tsx,.jsx"
+	tsc --project tsconfig.build.json
+	rm icons/es5/index.d.ts  # We don't need this; not sure how to tell tsc not to generate it
+	./node_modules/.bin/babel src --config-file ./babel.config.json --out-dir dist --source-maps --ignore **/*.d.ts,**/*.test.jsx,**/*.test.tsx,**/__mocks__,**/__snapshots__,**/setupTest.js --copy-files --extensions ".ts,.tsx,.jsx"
 	# --copy-files will bring in everything else that wasn't processed by babel. Remove what we don't want.
 	find ./dist -name "tests" -type d -prune -exec rm -rf "{}" \; # delete tests directories
 	find ./dist -name "*.test.*" -delete # delete other tests files that weren't in tests directories

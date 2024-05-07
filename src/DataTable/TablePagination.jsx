@@ -14,10 +14,15 @@ function TablePagination() {
   const pageIndex = state?.pageIndex;
 
   return (
-    <Pagination.Reduced
+    <Pagination
+      variant="reduced"
       currentPage={pageIndex + 1}
-      handlePageSelect={(pageNum) => gotoPage(pageNum - 1)}
+      onPageSelect={(pageNum) => gotoPage(pageNum - 1)}
       pageCount={pageCount}
+      icons={{
+        leftIcon: null,
+        rightIcon: null,
+      }}
     />
   );
 }

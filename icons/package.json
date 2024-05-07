@@ -5,7 +5,7 @@
   "main": "index.js",
   "sideEffects": false,
   "scripts": {
-    "build": "node copy-mui-icons.js && node copy-brand-icons.js && svgr svg --out-dir jsx && babel jsx -d es5",
+    "build": "node copy-mui-icons.js && node copy-brand-icons.js && svgr svg --out-dir jsx && babel jsx -d es5 && echo '// @ts-nocheck'  > es5/index.ts && cat es5/index.js >> es5/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -22,5 +22,11 @@
   },
   "peerDependencies": {
     "react": "^16.8.6 || ^17.0.2"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "types": "./index.d.ts"
+    }
   }
 }

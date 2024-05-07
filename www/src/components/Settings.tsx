@@ -1,5 +1,7 @@
+import { Link } from 'gatsby';
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { Close } from '~paragon-icons';
 import {
   Sheet,
   Form,
@@ -8,9 +10,7 @@ import {
   Stack,
   Nav,
 } from '~paragon-react';
-import { Close } from '~paragon-icons';
 
-import { Link } from 'gatsby';
 import { LANGUAGES } from '../config';
 
 import { SettingsContext } from '../context/SettingsContext';

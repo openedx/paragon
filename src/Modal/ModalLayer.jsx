@@ -63,7 +63,7 @@ function ModalLayer({
     return null;
   }
 
-  const onClickOutside = !isBlocking ? onClose : null;
+  const handleClose = isBlocking ? null : onClose;
 
   return (
     <ModalContextProvider onClose={onClose} isOpen={isOpen} isBlocking={isBlocking}>
@@ -72,15 +72,15 @@ function ModalLayer({
           allowPinchZoom
           scrollLock
           enabled={isOpen}
-          onEscapeKey={onClose}
-          onClickOutside={onClickOutside}
+          onEscapeKey={handleClose}
+          onClickOutside={handleClose}
           className={classNames(
             'pgn__modal-layer',
             zIndex ? `zindex-${zIndex}` : '',
           )}
         >
           <ModalContentContainer>
-            <ModalBackdrop onClick={onClickOutside} />
+            <ModalBackdrop onClick={handleClose} />
             {children}
           </ModalContentContainer>
         </FocusOn>
@@ -96,7 +96,7 @@ ModalLayer.propTypes = {
   onClose: PropTypes.func.isRequired,
   /** Is the modal dialog open or closed */
   isOpen: PropTypes.bool.isRequired,
-  /** Prevent clicking on the backdrop to close the modal */
+  /** Prevent clicking on the backdrop or pressing Esc to close the modal */
   isBlocking: PropTypes.bool,
   /** Specifies the z-index of the modal */
   zIndex: PropTypes.number,
