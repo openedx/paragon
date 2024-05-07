@@ -106,8 +106,8 @@
   justify-content: center;
   position: sticky;
   top: 0;
-  border-top-left-radius: $modal-content-border-radius;
-  border-top-right-radius: $modal-content-border-radius;
+  border-top-left-radius: var(--pgn-size-modal-content-border-radius);
+  border-top-right-radius: var(--pgn-size-modal-content-border-radius);
   padding: var(--pgn-spacing-modal-header-padding-base);
   background-color: var(--pgn-color-modal-content-bg);
   transition: box-shadow 150ms ease;
