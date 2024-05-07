@@ -1,4 +1,5 @@
 import React from 'react';
+import { FocusOn } from 'react-focus-on';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -15,12 +16,12 @@ jest.mock('../Portal', () => function PortalMock(props) {
 });
 
 jest.mock('react-focus-on', () => ({
-  FocusOn: (props) => {
+  FocusOn: jest.fn().mockImplementation((props) => {
     const { children, ...otherProps } = props;
     return (
       <focus-on data-testid="focus-on" {...otherProps}>{children}</focus-on>
     );
-  },
+  }),
 }));
 
 function Dialog() {
@@ -32,6 +33,10 @@ function Dialog() {
 }
 
 describe('<ModalLayer />', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   describe('when isOpen', () => {
     const isOpen = true;
     const closeFn = jest.fn();
@@ -72,30 +77,64 @@ describe('<ModalLayer />', () => {
     expect(dialog).not.toBeInTheDocument();
   });
 
-  describe('Backdrop', () => {
-    it('closes a non-blocking modal layer when clicked', async () => {
+  describe('Dismiss modal', () => {
+    it('closes a non-blocking modal layer when backdrop is clicked', () => {
       const closeFn = jest.fn();
       render(
         <ModalLayer isOpen onClose={closeFn} isBlocking={false}>
           <Dialog />
         </ModalLayer>,
       );
-
       const backdrop = screen.getByTestId('modal-backdrop');
-      await userEvent.click(backdrop);
+      userEvent.click(backdrop);
       expect(closeFn).toHaveBeenCalled();
     });
 
-    it('does not close a blocking modal layer when clicked', async () => {
+    it('should configure FocusOn to close a non-blocking modal layer when Esc key is pressed', () => {
+      const closeFn = jest.fn();
+      render(
+        <ModalLayer isOpen onClose={closeFn} isBlocking={false}>
+          <Dialog />
+        </ModalLayer>,
+      );
+      expect(FocusOn).toHaveBeenCalledWith(
+        expect.objectContaining({
+          onEscapeKey: closeFn,
+        }),
+        // note: this 2nd function argument represents the
+        // `refOrContext` (in this case, the context value
+        // provided by `ModalContextProvider`).
+        {},
+      );
+    });
+
+    it('should not configure FocusOn to close a blocking modal layer when Esc key is pressed', () => {
       const closeFn = jest.fn();
       render(
         <ModalLayer isOpen onClose={closeFn} isBlocking>
           <Dialog />
         </ModalLayer>,
       );
+      expect(FocusOn).toHaveBeenCalledWith(
+        expect.objectContaining({
+          onEscapeKey: null,
+        }),
+        // note: this 2nd function argument represents the
+        // `refOrContext` (in this case, the context value
+        // provided by `ModalContextProvider`).
+        {},
+      );
+    });
 
+    it('does not close a blocking modal layer when backdrop is clicked', () => {
+      const closeFn = jest.fn();
+      render(
+        <ModalLayer isOpen onClose={closeFn} isBlocking>
+          <Dialog />
+        </ModalLayer>,
+      );
       const backdrop = screen.getByTestId('modal-backdrop');
-      await userEvent.click(backdrop);
+      userEvent.click(backdrop);
       expect(closeFn).not.toHaveBeenCalled();
     });
   });

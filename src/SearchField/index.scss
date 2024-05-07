@@ -1,6 +1,8 @@
+@import "variables";
+
 .pgn__searchfield {
-  transition: var(--pgn-transition-form-input);
-  border: var(--pgn-size-search-field-border-width-base) solid var(--pgn-color-search-field-border-base);
+  transition: $input-transition;
+  border: $search-border-width solid $search-border-color;
 
   .pgn__searchfield-form {
     display: flex;
@@ -12,11 +14,11 @@
   .btn:focus-visible {
     outline: none;
     position: relative;
-    transition: var(--pgn-transition-form-input);
+    transition: $input-transition;
 
     &::after {
       content: "";
-      border: var(--pgn-size-search-field-border-width-focus) double var(--pgn-color-search-field-border-focus);
+      border: $search-border-focus-width double $search-border-focus-color;
       position: absolute;
       width: 100%;
       height: 100%;
@@ -25,7 +27,7 @@
 
   &.disabled,
   &:disabled {
-    opacity: var(--pgn-other-search-field-disabled-opacity);
+    opacity: $search-disabled-opacity;
     pointer-events: none;
   }
 
@@ -34,26 +36,26 @@
 
     &::after {
       content: "";
-      border: var(--pgn-size-search-field-border-width-focus) double var(--pgn-color-search-field-border-focus);
+      border: $search-border-focus-width double $search-border-focus-color;
       position: absolute;
       width: 100%;
       height: 100%;
     }
 
     .pgn__searchfield_wrapper {
-      box-shadow: 0 0 0 var(--pgn-size-search-field-border-width-base) var(--pgn-color-search-field-border-interaction);
+      box-shadow: 0 0 0 $search-border-width $search-border-color-interaction;
     }
   }
 
   &:hover,
   &:active {
-    border-color: var(--pgn-color-search-field-border-interaction);
+    border-color: $search-border-color-interaction;
   }
 
   .form-control {
     border: none;
-    border-radius: var(--pgn-size-search-field-border-radius);
-    height: var(--pgn-size-search-field-search-input-height);
+    border-radius: $search-border-radius;
+    height: $input-height-search;
 
     &:focus {
       box-shadow: none;
@@ -89,14 +91,6 @@
   &.pgn__searchfield--external {
     border: none;
 
-    .btn-primary {
-      background: var(--pgn-color-search-field-button-bg-primary);
-    }
-
-    .btn-brand {
-      background: var(--pgn-color-search-field-button-bg-brand);
-    }
-
     &.has-focus {
       box-shadow: none;
 
@@ -105,19 +99,11 @@
 
         &::after {
           content: "";
-          border: var(--pgn-size-search-field-border-width-focus) double var(--pgn-color-search-field-border-focus);
+          border: $search-border-focus-width double $search-border-focus-color;
           position: absolute;
           width: 100%;
           height: 100%;
         }
-      }
-
-      .btn-primary {
-        background: var(--pgn-color-search-field-button-bg-primary);
-      }
-
-      .btn-brand {
-        background: var(--pgn-color-search-field-button-bg-brand);
       }
     }
   }
@@ -126,16 +112,22 @@
     display: flex;
     align-items: center;
     width: 100%;
-    border: var(--pgn-size-search-field-border-width-base) solid var(--pgn-color-search-field-border-base);
+    border: $search-border-width solid $search-border-color;
 
     &:hover,
     &:active {
-      border-color: var(--pgn-color-search-field-border-interaction);
+      border-color: $search-border-color-interaction;
     }
   }
 }
 
 .pgn__searchfield__button.btn[type="submit"] {
   border-radius: 0;
-  margin-inline-start: var(--pgn-spacing-search-field-margin-button);
+  margin-inline-start: $search-button-margin;
+}
+
+.pgn__searchfield__iconbutton-submit,
+.pgn__searchfield__iconbutton-reset {
+  flex-shrink: 0;
+  margin-inline-end: map-get($spacers, 1);
 }
