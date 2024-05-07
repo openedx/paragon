@@ -182,7 +182,7 @@ const FormAutosuggest = forwardRef(
         return;
       }
 
-      if (e.key === 'Escape' && isActive) {
+      if (e.key === 'Escape') {
         e.preventDefault();
 
         if (formControlRef) {
@@ -202,13 +202,7 @@ const FormAutosuggest = forwardRef(
       if (parentRef.current && !parentRef.current.contains(e.target) && isActive) {
         leaveControl();
       }
-    if (e.key === 'Tab' && isActive) {
-      leaveControl();
-    }
-    if (e.key === 'Tab' && isActive) {
-      leaveControl();
-    }
-  };
+    };
 
     useEffect(() => {
       document.addEventListener('keydown', keyDownHandler);
@@ -231,8 +225,6 @@ const FormAutosuggest = forwardRef(
     };
 
     const handleTextInput = (e) => {
-      setIsActive(true);
-      setIsActive(true);
       const userProvidedText = e.target.value;
 
       // If the user has removed all text from the textbox
@@ -311,7 +303,7 @@ const FormAutosuggest = forwardRef(
     const { getControlProps } = useFormGroupContext();
     const controlProps = getControlProps(props);
 
-  return (
+    return (
       <div className="pgn__form-autosuggest__wrapper" ref={parentRef} onFocus={enterControl}>
         <div aria-live="assertive" className="sr-only" data-testid="autosuggest-screen-reader-options-count">
           {`${dropdownItems.length} options found`}

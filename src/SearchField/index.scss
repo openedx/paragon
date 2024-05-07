@@ -89,14 +89,6 @@
   &.pgn__searchfield--external {
     border: none;
 
-    .btn-primary {
-      background: var(--pgn-color-search-field-button-bg-primary);
-    }
-
-    .btn-brand {
-      background: var(--pgn-color-search-field-button-bg-brand);
-    }
-
     &.has-focus {
       box-shadow: none;
 
@@ -110,14 +102,6 @@
           width: 100%;
           height: 100%;
         }
-      }
-
-      .btn-primary {
-        background: var(--pgn-color-search-field-button-bg-primary);
-      }
-
-      .btn-brand {
-        background: var(--pgn-color-search-field-button-bg-brand);
       }
     }
   }

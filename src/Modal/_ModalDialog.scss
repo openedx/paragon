@@ -38,6 +38,14 @@
       top: calc(var(--pgn-spacing-modal-inner-padding-base) / 2 * -1);
     }
   }
+
+  &.pgn__modal-visible-overflow {
+    overflow: visible;
+
+    .pgn__modal-body {
+      overflow: visible;
+    }
+  }
 }
 
 // Sizes
