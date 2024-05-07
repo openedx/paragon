@@ -1,5 +1,3 @@
-@import "variables";
-
 %pagination-icon-button-right {
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
@@ -27,11 +25,11 @@
     &:first-child .page-link {
       margin-left: 0;
 
-      @include border-left-radius($border-radius);
+      @include border-left-radius(var(--pgn-size-border-radius-base));
     }
 
     &:last-child .page-link {
-      @include border-right-radius($border-radius);
+      @include border-right-radius(var(--pgn-size-border-radius-base));
     }
 
     &:first-child .btn-icon.page-link {
@@ -48,7 +46,7 @@
 
     > .btn {
       transition: none;
-      line-height: $pagination-line-height;
+      line-height: var(--pgn-typography-pagination-line-height);
     }
   }
 
@@ -109,15 +107,15 @@
     }
 
     .dropdown .dropdown-toggle::after {
-      border-top: $pagination-toggle-border solid $pagination-dropdown-color-inverse;
+      border-top: var(--pgn-size-pagination-toggle-border-base) solid $pagination-dropdown-color-inverse;
     }
   }
 
   &-reduced {
     &-dropdown-menu {
       overflow-y: auto;
-      max-height: $pagination-reduced-dropdown-max-height;
-      min-width: $pagination-reduced-dropdown-min-width;
+      max-height: var(--pgn-size-pagination-reduced-dropdown-max-height);
+      min-width: var(--pgn-size-pagination-reduced-dropdown-min-width);
 
       a {
         text-align: center;
@@ -184,7 +182,7 @@
 
 .page-link {
   border: none;
-  margin-left: -$pagination-border-width;
+  margin-left: -var(--pgn-size-pagination-border-width);
 
   &:focus {
     z-index: 3;

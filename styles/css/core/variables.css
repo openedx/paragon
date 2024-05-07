@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Tue, 26 Dec 2023 14:13:40 GMT
+ * Generated on Tue, 07 May 2024 17:25:08 GMT
  */
 
 :root {
@@ -218,11 +218,17 @@
   --pgn-spacing-code-kbd-padding-x: .4rem;
   --pgn-spacing-code-kbd-padding-y: .2rem;
   --pgn-spacing-chip-carousel-controls-top-offset: .188rem;
+  --pgn-spacing-chip-outline-width: 3px;
+  --pgn-spacing-chip-outline-focus-distance-dark: .313rem;
+  --pgn-spacing-chip-outline-focus-distance-light: .313rem;
+  --pgn-spacing-chip-outline-selected-distance-dark: 3px;
+  --pgn-spacing-chip-outline-selected-distance-light: 3px;
   --pgn-spacing-chip-padding-to-icon: 3px;
   --pgn-spacing-chip-padding-icon: .25rem;
   --pgn-spacing-chip-padding-x: .5rem;
   --pgn-spacing-chip-padding-y: .125rem;
-  --pgn-spacing-chip-margin: .125rem;
+  --pgn-spacing-chip-margin-icon: .25rem;
+  --pgn-spacing-chip-margin-base: .125rem;
   --pgn-spacing-carousel-indicator-spacer: 3px;
   --pgn-spacing-card-focus-border-offset: 5px;
   --pgn-spacing-card-logo-bottom-offset-horizontal: .4375rem;

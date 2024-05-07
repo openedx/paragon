@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Tue, 26 Dec 2023 14:13:40 GMT
+ * Generated on Tue, 07 May 2024 17:25:08 GMT
  */
 
 :root {
@@ -477,6 +477,8 @@
   --pgn-color-code-kbd-bg: var(--pgn-color-gray-700);
   --pgn-color-code-kbd-base: var(--pgn-color-white);
   --pgn-color-close-button: var(--pgn-color-black);
+  --pgn-color-chip-outline-dark: var(--pgn-color-white);
+  --pgn-color-chip-bg-light: var(--pgn-color-white);
   --pgn-color-chip-text-dark: var(--pgn-color-white);
   --pgn-color-chip-text-light: var(--pgn-color-black);
   --pgn-color-carousel-caption: var(--pgn-color-white);
@@ -929,8 +931,12 @@
   --pgn-color-dropdown-header: var(--pgn-color-gray-500);
   --pgn-color-dropdown-text: var(--pgn-color-body-base);
   --pgn-color-data-table-bg-base: var(--pgn-color-bg-base);
+  --pgn-color-chip-label-dark: var(--pgn-color-chip-outline-dark);
+  --pgn-color-chip-label-base: var(--pgn-color-primary-700);
+  --pgn-color-chip-border-focus-selected-light: var(--pgn-color-dark-500);
+  --pgn-color-chip-border-focus-selected-dark: var(--pgn-color-chip-outline-dark);
+  --pgn-color-chip-border-base: var(--pgn-color-light-800);
   --pgn-color-chip-bg-dark: var(--pgn-color-dark-200);
-  --pgn-color-chip-bg-light: var(--pgn-color-light-500);
   --pgn-color-card-divider-bg: var(--pgn-color-light-400);
   --pgn-color-card-border-focus-base: #0A305580;
   --pgn-color-card-bg-muted: var(--pgn-color-light-200);
@@ -1267,6 +1273,7 @@
   --pgn-color-dropzone-error-wrapper: var(--pgn-color-danger-500);
   --pgn-color-dropdown-link-disabled: var(--pgn-color-disabled);
   --pgn-color-dropdown-link-active-bg: var(--pgn-color-bg-active);
+  --pgn-color-chip-outline-light: var(--pgn-color-chip-label-base);
   --pgn-color-card-border-focus-dark: var(--pgn-color-theme-focus-primary);
   --pgn-color-btn-disabled-link: var(--pgn-color-disabled);
   --pgn-color-btn-disabled-border-outline-warning: var(--pgn-color-btn-border-outline-warning);
