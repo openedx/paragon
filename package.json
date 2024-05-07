@@ -182,8 +182,12 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["npx eslint"],
-    "*.scss": ["npx stylelint"]
+    "*.{js,jsx,ts,tsx}": [
+      "npx eslint"
+    ],
+    "*.scss": [
+      "npx stylelint"
+    ]
   },
   "workspaces": [
     "example",
