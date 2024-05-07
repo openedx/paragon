@@ -11,13 +11,13 @@ devStatus: 'Done'
 notes: |
 ---
 
-Displays an svg icon from `@edx/paragon/icons`. See [Icons Foundation Documentation](/foundations/icons) for a list of all available icons.
+Displays an svg icon from `@openedx/paragon/icons`. See [Icons Foundation Documentation](/foundations/icons) for a list of all available icons.
 
 ## Basic Usage
 
 ```jsx live
 // Included in this live jsx scope:
-// import { Add, AddCircle } from '@edx/paragon/icons';
+// import { Add, AddCircle } from '@openedx/paragon/icons';
 <Icon src={Add} />
 ```
 ### With HTML attributes
@@ -26,7 +26,7 @@ HTML attributes can be passed to this component allowing for customization of th
 
 ```jsx live
 // Included in this live jsx scope:
-// import { Add, AddCircle } from '@edx/paragon/icons';
+// import { Add, AddCircle } from '@openedx/paragon/icons';
 <div className="d-flex align-items-center bg-dark">
   <Icon src={Add} className="mx-3 text-white" />
   <Icon src={Add} className="mx-3 text-white" size="xs" />

@@ -13,7 +13,7 @@ exports[`<ProgressBar.Annotated /> correct rendering renders without props 1`] =
       className="pgn__progress-bar--warning pgn__progress-tick--black progress-bar"
       role="progressbar"
       style={
-        Object {
+        {
           "width": "NaN%",
         }
       }

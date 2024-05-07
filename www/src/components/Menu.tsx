@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useLocation } from '@reach/router';
 import PropTypes from 'prop-types';
 import { Link, graphql, useStaticQuery } from 'gatsby';
+import classNames from 'classnames';
 import {
   Tooltip,
   OverlayTrigger,
@@ -12,7 +13,6 @@ import {
   ButtonGroup,
   Image,
 } from '~paragon-react';
-import classNames from 'classnames';
 import Search from './Search';
 import { SettingsContext } from '../context/SettingsContext';
 import { THEMES } from '../../theme-config';
@@ -306,14 +306,14 @@ function Menu() {
         </MenuComponentList>
       </div>
       <Hyperlink
-        destination="https://www.npmjs.com/package/@edx/paragon"
+        destination="https://www.npmjs.com/package/@openedx/paragon"
         externalLinkAlternativeText="npm Paragon package page"
         externalLinkTitle="Paragon npm"
         target="_blank"
       >
         <Image
           className="mr-2"
-          src="https://img.shields.io/npm/v/@edx/paragon.svg"
+          src="https://img.shields.io/npm/v/@openedx/paragon.svg"
           alt="npm_version"
           width={94}
           height={20}

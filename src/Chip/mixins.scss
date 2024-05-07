@@ -1,0 +1,42 @@
+@mixin chip-outline($outline-color: $white, $distance-to-border: 0, $border-radius: 50%, $border-width: .125rem) {
+  &::before {
+    content: "";
+    position: absolute;
+    top: $distance-to-border;
+    right: $distance-to-border;
+    bottom: $distance-to-border;
+    left: $distance-to-border;
+    border: solid $border-width $outline-color;
+    border-radius: $border-radius;
+  }
+}
+
+@mixin chip-hover($base-color, $secondary-color) {
+  &:hover {
+    background-color: $base-color;
+    border-color: $base-color;
+
+    .pgn__chip__label {
+      color: $secondary-color;
+    }
+
+    .pgn__chip__icon-before,
+    .pgn__chip__icon-after {
+      &.pgn__icon,
+      &.btn-icon {
+        color: $secondary-color;
+      }
+
+      &.btn-icon:hover {
+        background-color: $secondary-color;
+        color: $base-color;
+      }
+
+      &.btn-icon:focus {
+        color: $secondary-color;
+        border: 2px solid $secondary-color;
+        background-color: $base-color;
+      }
+    }
+  }
+}
