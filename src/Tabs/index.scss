@@ -66,6 +66,7 @@
       padding:
         var(--pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-x)
         var(--pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-y);
+      border: none;
 
       &:focus {
         background-color: var(--pgn-color-tab-inverse-pills-link-dropdown-toggle-bg-focus);
@@ -93,7 +94,7 @@
 
   // Nav tabs
   &.nav-tabs .pgn__tab_more.nav-link .dropdown .dropdown-toggle {
-    padding: .563rem 1rem;
+    padding: .563rem var(--pgn-spacing-tab-more-link-dropdown-toggle-padding-y);
   }
 
   // Nav inverse tabs

@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import { SearchFieldContext } from './SearchFieldAdvanced';
 import Button from '../Button';
+import IconButton from '../IconButton';
+import Icon from '../Icon';
 
 const STYLE_VARIANTS = [
   'light',
@@ -40,16 +41,17 @@ function SearchFieldSubmitButton(props) {
       <span className="sr-only">{screenReaderText.submitButton}</span>
     </Button>
   ) : (
-    <button
+    <IconButton
+      className="pgn__searchfield__iconbutton-submit"
       type="submit"
-      className={classNames('btn')}
-      ref={refs.submitButton}
+      src={icons.submit}
+      size="sm"
+      iconAs={Icon}
+      alt={screenReaderText.submitButton}
       disabled={disabled}
+      ref={refs.submitButton}
       {...others}
-    >
-      {icons.submit}
-      <span className="sr-only">{screenReaderText.submitButton}</span>
-    </button>
+    />
   );
 }
 

@@ -6,8 +6,6 @@ import classNames from 'classnames';
 import { Search, Close } from '../../icons';
 import newId from '../utils/newId';
 
-import Icon from '../Icon';
-
 export const SearchFieldContext = createContext();
 
 const BUTTON_LOCATION_VARIANTS = [
@@ -172,8 +170,8 @@ SearchFieldAdvanced.propTypes = {
   value: PropTypes.string,
   /** specifies the icon element(s) to use for the clear and submit buttons. */
   icons: PropTypes.shape({
-    submit: PropTypes.element.isRequired,
-    clear: PropTypes.element,
+    submit: PropTypes.elementType.isRequired,
+    clear: PropTypes.elementType,
   }),
   /** specifies the aria-label attribute on the form element. This is useful if you use the `SearchField` component
    * more than once on a page. */
@@ -194,8 +192,8 @@ SearchFieldAdvanced.defaultProps = {
     clearButton: 'clear search',
   },
   icons: {
-    clear: <Icon src={Close} />,
-    submit: <Icon src={Search} />,
+    clear: Close,
+    submit: Search,
   },
   onBlur: () => {},
   onChange: () => {},

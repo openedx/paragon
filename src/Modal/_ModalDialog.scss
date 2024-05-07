@@ -28,14 +28,22 @@
   }
 
   .pgn__modal-header {
-    padding-bottom: calc(#{$modal-inner-padding} / 2);
+    padding-bottom: calc(var(--pgn-spacing-modal-inner-padding-base) / 2);
   }
 
   .pgn__modal-body {
-    padding: calc(#{$modal-inner-padding} / 2) $modal-inner-padding;
+    padding: calc(var(--pgn-spacing-modal-inner-padding-base) / 2) var(--pgn-spacing-modal-inner-padding-base);
 
     &::before {
-      top: calc(#{$modal-inner-padding} / 2 * -1);
+      top: calc(var(--pgn-spacing-modal-inner-padding-base) / 2 * -1);
+    }
+  }
+
+  &.pgn__modal-visible-overflow {
+    overflow: visible;
+
+    .pgn__modal-body {
+      overflow: visible;
     }
   }
 }
@@ -68,6 +76,10 @@
     border-top: solid 1px var(--pgn-color-light-base);
     padding-top: var(--pgn-spacing-modal-footer-padding-y);
   }
+
+  .pgn__modal-header {
+    border-radius: 0;
+  }
 }
 
 // Made specific due to a selector in Modal.scss
@@ -94,6 +106,8 @@
   justify-content: center;
   position: sticky;
   top: 0;
+  border-top-left-radius: var(--pgn-size-modal-content-border-radius);
+  border-top-right-radius: var(--pgn-size-modal-content-border-radius);
   padding: var(--pgn-spacing-modal-header-padding-base);
   background-color: var(--pgn-color-modal-content-bg);
   transition: box-shadow 150ms ease;

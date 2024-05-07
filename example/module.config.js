@@ -1,7 +1,7 @@
 module.exports = {
   localModules: [
-    { moduleName: '@edx/paragon/scss/core', dir: '..', dist: 'styles/scss/core' },
-    { moduleName: '@edx/paragon/icons', dir: '..', dist: 'icons' },
-    { moduleName: '@edx/paragon', dir: '..', dist: 'src' },
+    { moduleName: '@openedx/paragon/scss/core', dir: '..', dist: 'styles/scss/core' },
+    { moduleName: '@openedx/paragon/icons', dir: '..', dist: 'icons' },
+    { moduleName: '@openedx/paragon', dir: '..', dist: 'src' },
   ],
 };
