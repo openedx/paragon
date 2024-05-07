@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Fri, 02 Aug 2024 08:16:57 GMT
+ * Generated on Tue, 07 May 2024 17:25:08 GMT
  */
 
 :root {
@@ -461,6 +461,8 @@
   --pgn-color-code-kbd-bg: var(--pgn-color-gray-700);
   --pgn-color-code-kbd-base: var(--pgn-color-white);
   --pgn-color-close-button: var(--pgn-color-black);
+  --pgn-color-chip-outline-dark: var(--pgn-color-white);
+  --pgn-color-chip-bg-light: var(--pgn-color-white);
   --pgn-color-chip-text-dark: var(--pgn-color-white);
   --pgn-color-chip-text-light: var(--pgn-color-black);
   --pgn-color-carousel-caption: var(--pgn-color-white);
