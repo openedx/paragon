@@ -20,7 +20,7 @@
   .pgn__chip-carousel__left-control {
     position: absolute;
     z-index: 2;
-    top: calc(var(--pgn-spacing-chip-carousel-controls-top-offset) * -1);
+    top: var(--pgn-spacing-chip-carousel-controls-top-offset);
   }
 
   .pgn__chip-carousel__right-control {
