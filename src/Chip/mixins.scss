@@ -2,7 +2,7 @@
   $outline-color: var(--pgn-color-white),
   $distance-to-border: 0,
   $border-radius: 50%,
-  $border-width: .125rem
+  $border-width-value: .125rem
 ) {
   &::before {
     content: "";
@@ -11,7 +11,7 @@
     right: $distance-to-border;
     bottom: $distance-to-border;
     left: $distance-to-border;
-    border: solid var(--pgn-size-border-width) $outline-color;
+    border: solid $border-width-value $outline-color;
     border-radius: var(--pgn-size-border-radius-base);
   }
 }
