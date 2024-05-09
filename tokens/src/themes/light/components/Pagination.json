@@ -23,6 +23,11 @@
       "focus": {
         "base": { "value": "{color.primary.500}", "type": "color", "source": "$pagination-focus-color" },
         "text": { "value": "{color.black}", "type": "color", "source": "$pagination-focus-color-text" }
+      },
+      "dropdown": {
+        "text-inverse": {
+          "value": "{color.white}", "type": "color", "source": "$pagination-dropdown-color-inverse"
+        }
       }
     }
   },
