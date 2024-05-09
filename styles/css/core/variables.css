@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Tue, 07 May 2024 17:25:08 GMT
+ * Generated on Thu, 09 May 2024 12:14:13 GMT
  */
 
 :root {
@@ -217,6 +217,8 @@
   --pgn-spacing-collapsible-card-spacer-y-base: .5rem;
   --pgn-spacing-code-kbd-padding-x: .4rem;
   --pgn-spacing-code-kbd-padding-y: .2rem;
+  --pgn-spacing-chip-carousel-container-padding-y: .313rem;
+  --pgn-spacing-chip-carousel-container-padding-x: .625rem;
   --pgn-spacing-chip-carousel-controls-top-offset: .188rem;
   --pgn-spacing-chip-outline-width: 3px;
   --pgn-spacing-chip-outline-focus-distance-dark: .313rem;
