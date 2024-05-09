@@ -904,8 +904,12 @@
   --pgn-color-dropdown-header: var(--pgn-color-gray-500);
   --pgn-color-dropdown-text: var(--pgn-color-body-base);
   --pgn-color-data-table-bg-base: var(--pgn-color-bg-base);
-  --pgn-color-chip-bg-dark: var(--pgn-color-dark-200);
-  --pgn-color-chip-bg-light: var(--pgn-color-light-500);
+  --pgn-color-chip-label-dark: var(--pgn-color-chip-outline-dark);
+  --pgn-color-chip-label-base: var(--pgn-color-primary-700);
+  --pgn-color-chip-border-focus-selected-light: var(--pgn-color-dark-500);
+  --pgn-color-chip-border-focus-selected-dark: var(--pgn-color-chip-outline-dark);
+  --pgn-color-chip-border-base: var(--pgn-color-light-800);
+  --pgn-color-chip-bg-dark: var(--pgn-color-primary-300);
   --pgn-color-card-divider-bg: var(--pgn-color-light-400);
   --pgn-color-card-bg-muted: var(--pgn-color-light-200);
   --pgn-color-card-bg-dark: var(--pgn-color-primary-500);
@@ -1231,6 +1235,7 @@
   --pgn-color-dropzone-error-wrapper: var(--pgn-color-danger-500);
   --pgn-color-dropdown-link-disabled: var(--pgn-color-disabled);
   --pgn-color-dropdown-link-active-bg: var(--pgn-color-bg-active);
+  --pgn-color-chip-outline-light: var(--pgn-color-chip-label-base);
   --pgn-color-card-border-focus-dark: var(--pgn-color-theme-focus-primary);
   --pgn-color-badge-focus-box-shadow-info: #006DAA0D;
   --pgn-color-badge-focus-box-shadow-warning: #FFD9000D;
