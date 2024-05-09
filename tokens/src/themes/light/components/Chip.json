@@ -7,7 +7,7 @@
       },
       "bg": {
         "light": { "value": "{color.white}", "type": "color", "source": "$chip-light-bg-color" },
-        "dark": { "value": "{color.dark.200}", "type": "color", "source": "$chip-dark-bg" }
+        "dark": { "value": "{color.primary.300}", "type": "color", "source": "$chip-dark-bg" }
       },
       "border": {
         "base": {
