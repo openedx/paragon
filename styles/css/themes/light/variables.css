@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Thu, 09 May 2024 12:14:13 GMT
+ * Generated on Thu, 09 May 2024 13:33:11 GMT
  */
 
 :root {
@@ -937,7 +937,7 @@
   --pgn-color-chip-border-focus-selected-light: var(--pgn-color-dark-500);
   --pgn-color-chip-border-focus-selected-dark: var(--pgn-color-chip-outline-dark);
   --pgn-color-chip-border-base: var(--pgn-color-light-800);
-  --pgn-color-chip-bg-dark: var(--pgn-color-dark-200);
+  --pgn-color-chip-bg-dark: var(--pgn-color-primary-300);
   --pgn-color-card-divider-bg: var(--pgn-color-light-400);
   --pgn-color-card-border-focus-base: #0A305580;
   --pgn-color-card-bg-muted: var(--pgn-color-light-200);
