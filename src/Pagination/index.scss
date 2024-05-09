@@ -107,7 +107,7 @@
     }
 
     .dropdown .dropdown-toggle::after {
-      border-top: var(--pgn-size-pagination-toggle-border-base) solid $pagination-dropdown-color-inverse;
+      border-top: var(--pgn-size-pagination-toggle-border-base) solid var(--pgn-color-pagination-dropdown-text-inverse);
     }
   }
 

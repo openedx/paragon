@@ -3,6 +3,12 @@
     "chip-carousel": {
       "controls-top-offset": {
         "value": ".188rem", "type": "dimension", "source": "$chip-carousel-controls-top-offset"
+      },
+      "container": {
+        "padding": {
+          "x": { "value": ".625rem", "type": "dimension", "source": "$chip-carousel-container-padding-x" },
+          "y": { "value": ".313rem", "type": "dimension", "source": "$chip-carousel-container-padding-y" }
+        }
       }
     }
   }
