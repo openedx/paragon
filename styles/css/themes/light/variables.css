@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Tue, 07 May 2024 17:25:08 GMT
+ * Generated on Thu, 09 May 2024 12:14:13 GMT
  */
 
 :root {
@@ -350,6 +350,7 @@
   --pgn-color-popover-header-border-bottom-dark: #F2F2F2FF;
   --pgn-color-popover-header-bg-dark: #808080FF;
   --pgn-color-popover-header-bg: var(--pgn-color-white);
+  --pgn-color-pagination-dropdown-text-inverse: var(--pgn-color-white);
   --pgn-color-pagination-focus-text: var(--pgn-color-black);
   --pgn-color-pagination-border-disabled: var(--pgn-color-gray-100);
   --pgn-color-pagination-border-hover: var(--pgn-color-gray-200);
