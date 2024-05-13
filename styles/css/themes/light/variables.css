@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Thu, 09 May 2024 13:33:11 GMT
+ * Generated on Mon, 13 May 2024 08:42:31 GMT
  */
 
 :root {
@@ -453,11 +453,13 @@
   --pgn-color-icon-button-bg-primary-inverse-base: var(--pgn-color-icon-button-bg-base);
   --pgn-color-icon-button-bg-primary-focus: var(--pgn-color-icon-button-bg-base);
   --pgn-color-icon-button-bg-primary-base: var(--pgn-color-icon-button-bg-base);
+  --pgn-color-yiq-light: var(--pgn-color-white);
   --pgn-color-list-group-action-active-bg: var(--pgn-color-gray-200);
   --pgn-color-list-group-action-base: var(--pgn-color-gray-700);
   --pgn-color-list-group-disabled-base: var(--pgn-color-gray-600);
   --pgn-color-list-group-border: #00000020;
   --pgn-color-list-group-bg-hover: var(--pgn-color-gray-100);
+  --pgn-color-list-group-bg-base: var(--pgn-color-white);
   --pgn-color-hr-border: #0000001A;
   --pgn-color-headings-base: var(--pgn-color-black);
   --pgn-color-body-base: var(--pgn-color-gray-700);
@@ -896,11 +898,12 @@
   --pgn-color-icon-button-bg-primary-active-base: var(--pgn-color-icon-button-text-primary-base);
   --pgn-color-icon-button-bg-primary-inverse-hover: var(--pgn-color-icon-button-accent);
   --pgn-color-icon-button-bg-primary-hover: var(--pgn-color-icon-button-text-primary-base);
+  --pgn-color-blockquote-small: var(--pgn-color-gray-500);
   --pgn-color-text-muted: var(--pgn-color-gray-500);
   --pgn-color-list-group-action-active-base: var(--pgn-color-body-base);
   --pgn-color-list-group-action-hover: var(--pgn-color-list-group-action-base);
+  --pgn-color-list-group-disabled-bg: var(--pgn-color-list-group-bg-base);
   --pgn-color-list-group-active-base: var(--pgn-color-active);
-  --pgn-color-list-group-bg-base: var(--pgn-color-bg-base);
   --pgn-color-link-brand-inline-base: var(--pgn-color-brand-500);
   --pgn-color-link-brand-base: var(--pgn-color-brand-500);
   --pgn-color-link-muted-inline-base: var(--pgn-color-primary-500);
@@ -1233,7 +1236,6 @@
   --pgn-color-icon-button-bg-success-active-hover: var(--pgn-color-icon-button-bg-success-active-base);
   --pgn-color-icon-button-bg-secondary-active-focus: var(--pgn-color-icon-button-bg-secondary-active-base);
   --pgn-color-icon-button-bg-secondary-active-hover: var(--pgn-color-icon-button-bg-secondary-active-base);
-  --pgn-color-list-group-disabled-bg: var(--pgn-color-list-group-bg-base);
   --pgn-color-list-group-active-bg: var(--pgn-color-bg-active);
   --pgn-color-link-brand-inline-hover-base: #51002BFF;
   --pgn-color-link-brand-inline-decoration: #9D00544D;
@@ -1468,7 +1470,7 @@
   --pgn-color-theme-bg-success: var(--pgn-color-success-100);
   --pgn-color-theme-bg-secondary: var(--pgn-color-secondary-100);
   --pgn-color-table-caption: var(--pgn-color-text-muted);
-  --pgn-color-input-btn-focus: var(--pgn-color-input-focus);
+  --pgn-color-input-btn-focus: var(--pgn-color-bg-active);
   --pgn-other-content-form-control-select-indicator-icon: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.58984L12 13.1698L7.41 8.58984L6 9.99984L12 15.9998L18 9.99984L16.59 8.58984Z" fill="%23454545FF"/></svg>');
   --pgn-other-content-form-control-switch-indicator-icon-on: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23FFFFFFFF'/%3e%3c/svg%3e");
   --pgn-other-content-form-control-radio-indicator-icon-checked-invalid: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23C32D3AFF'/%3e%3c/svg%3e");
