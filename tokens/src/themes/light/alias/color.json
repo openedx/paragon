@@ -29,10 +29,10 @@
     },
     "table": {
       "caption": {
-        "value": "{color.text-muted}", "type": "color", "description": "Table caption color."
+        "value": "{color.text-muted}", "type": "color", "source": "$table-caption-color", "description": "Table caption color."
       },
       "border": {
-        "value": "{color.border}", "type": "color", "description": "Table border color."
+        "value": "{color.border}", "type": "color", "source": "$table-border-color", "description": "Table border color."
       }
     },
     "border": { "value": "{color.gray.200}", "type": "color", "source": "$border-color", "description": "Border color." },

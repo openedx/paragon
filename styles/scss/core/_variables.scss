@@ -303,7 +303,7 @@ $yiq-contrasted-threshold:  150 !default;
 
 // Customize the light and dark text colors for use in our YIQ color contrast function.
 $yiq-text-dark:             theme-color("gray", "text") !default;
-$yiq-text-light:            $white !default;
+$yiq-text-light:            var(--pgn-color-yiq-light) !default;
 
 // Characters which are escaped by the escape-svg function
 $escaped-characters: (
@@ -323,7 +323,6 @@ $enable-rounded:                              true !default;
 $enable-gradients:                            false !default;
 $enable-transitions:                          true !default;
 $enable-prefers-reduced-motion-media-query:   true !default;
-$enable-hover-media-query:                    false !default; // Deprecated, no longer affects any compiled CSS
 $enable-grid-classes:                         true !default;
 $enable-pointer-cursor-for-buttons:           true !default;
 $enable-print-styles:                         true !default;
@@ -750,7 +749,7 @@ $micro-line-height: var(--pgn-typography-line-height-micro);
 
 $text-muted: var(--pgn-color-text-muted) !default;
 
-$blockquote-small-color: theme-color("gray", "light-text") !default;
+$blockquote-small-color: var(--pgn-color-blockquote-small) !default;
 $blockquote-small-font-size: var(--pgn-typography-blockquote-small-font-size) !default;
 $blockquote-font-size: var(--pgn-typography-blockquote-font-size) !default;
 
@@ -837,7 +836,7 @@ $user-selects: all, auto, none !default;
 
 // Printing
 
-$print-page-size:                   a3 !default;
+$print-page-size:                   var(--pgn-typography-print-page-size) !default;
 $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
 
 // List group

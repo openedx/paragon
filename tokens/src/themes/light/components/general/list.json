@@ -3,7 +3,7 @@
     "list-group": {
       "base": { "value": "inherit", "type": "color", "source": "$list-group-color" },
       "bg": {
-        "base": { "value": "{color.bg.base}", "type": "color", "source": "$list-group-bg" },
+        "base": { "value": "{color.white}", "type": "color", "source": "$list-group-bg" },
         "hover": { "value": "{color.gray.100}", "type": "color", "source": "$list-group-hover-bg" }
       },
       "border": {
