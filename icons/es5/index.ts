@@ -385,6 +385,7 @@ export { default as BsTencentQq } from "./BsTencentQq";
 export { default as BsTiktok } from "./BsTiktok";
 export { default as BsTrello } from "./BsTrello";
 export { default as BsTwitch } from "./BsTwitch";
+export { default as BsTwitterX } from "./BsTwitterX";
 export { default as BsTwitter } from "./BsTwitter";
 export { default as BsUbuntu } from "./BsUbuntu";
 export { default as BsUnity } from "./BsUnity";

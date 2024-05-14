@@ -5,7 +5,7 @@ const fs = require('fs');
 */
 
 const brandIconNames = [
-  'github', 'google', 'linkedin', 'slack', 'instagram', 'facebook', 'twitter', 'twitch', 'youtube', 'discord',
+  'github', 'google', 'linkedin', 'slack', 'instagram', 'facebook', 'twitter', 'twitter-x', 'twitch', 'youtube', 'discord',
   'telegram', 'whatsapp', 'messenger', 'mastodon', 'reddit', 'skype', 'microsoft', 'windows', 'apple', 'medium',
   'signal', 'stack-overflow', 'wordpress', 'spotify', 'snapchat', 'pinterest', 'dribbble', 'behance', 'paypal',
   'line', 'strava', 'vimeo', 'nintendo-switch', 'playstation', 'xbox', 'steam', 'bluetooth', 'meta', 'git', 'tiktok',
@@ -14,7 +14,7 @@ const brandIconNames = [
   'nvidia', 'wikipedia', 'sina-weibo', 'tencent-qq',
 ];
 
-const PATH_TO_BOOTSTRAP_ICONS = '../node_modules/bootstrap-icons/icons/';
+const PATH_TO_BOOTSTRAP_ICONS = './node_modules/bootstrap-icons/icons/';
 
 const filteredIconNames = fs.readdirSync(PATH_TO_BOOTSTRAP_ICONS).filter((iconName) => {
   return brandIconNames.includes(iconName.replace('.svg', ''));
