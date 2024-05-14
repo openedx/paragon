@@ -40,4 +40,4 @@ export type BsPropsWithAs<As extends React.ElementType = React.ElementType> = Bs
  * Note that you need to define the default (e.g. `'div'`) in three different places.
  */
 export type ComponentWithAsProp<DefaultElementType extends React.ElementType, Props>
-    = BsPrefixRefForwardingComponent<DefaultElementType, Props>;
+  = BsPrefixRefForwardingComponent<DefaultElementType, Props>;
