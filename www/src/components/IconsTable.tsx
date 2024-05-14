@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
-import { Icon, SearchField, Toast } from '~paragon-react';
 import * as IconComponents from '~paragon-icons';
+import { type IconName } from '~paragon-icons';
+import { Icon, SearchField, Toast } from '~paragon-react';
 import { ICON_COPIED_EVENT, sendUserAnalyticsEvent } from '../../segment-events';
 
 const WINDOW_HEIGHT = 2400;
@@ -10,11 +10,17 @@ const ROW_HEIGHT = 100;
 const ROWS_PER_WINDOW = WINDOW_HEIGHT / ROW_HEIGHT;
 const COLUMN_WIDTH = 150;
 
-function TableCell({
+interface TableCellProps {
+  iconName: IconName;
+  setCurrentIcon: (name: IconName) => void;
+  previewRef: React.RefObject<HTMLDivElement>;
+}
+
+const TableCell: React.FC<TableCellProps> = ({
   iconName,
   setCurrentIcon,
   previewRef,
-}) {
+}) => {
   const handleClick = () => {
     setCurrentIcon(iconName);
     if (previewRef.current) {
@@ -42,11 +48,18 @@ function TableCell({
       <span className="pgn-doc__icons-table__cell-text">{iconName}</span>
     </div>
   );
+};
+
+interface TableRowProps {
+  rowIndex: number;
+  columnsCount: number;
+  iconsList: IconName[];
+  data: Pick<TableCellProps, 'previewRef' | 'setCurrentIcon'>
 }
 
-function TableRow({
+const TableRow: React.FC<TableRowProps> = ({
   rowIndex, columnsCount, iconsList, data,
-}) {
+}) => {
   const startIndex = rowIndex * columnsCount;
   const endIndex = startIndex + columnsCount;
   if (startIndex > iconsList.length) {
@@ -54,26 +67,37 @@ function TableRow({
   }
   const icons = iconsList.slice(startIndex, endIndex);
 
-  return icons.map(iconName => (
-    <TableCell key={iconName} iconName={iconName} setCurrentIcon={data.setCurrentIcon} previewRef={data.previewRef} />
-  ));
-}
+  return (
+    <>
+      {
+        icons.map(iconName => (
+          <TableCell
+            key={iconName}
+            iconName={iconName}
+            setCurrentIcon={data.setCurrentIcon}
+            previewRef={data.previewRef}
+          />
+        ))
+      }
+    </>
+  );
+};
 
-function IconsTable({ iconNames }) {
-  const previewRef = React.useRef(null);
-  const tableRef = React.useRef(null);
-  const tableBottom = React.useRef(null);
+function IconsTable({ iconNames }: { iconNames: IconName[] }) {
+  const previewRef = React.useRef<HTMLDivElement>(null);
+  const tableRef = React.useRef<HTMLDivElement>(null);
+  const tableBottom = React.useRef<HTMLDivElement>(null);
   const [searchValue, setSearchValue] = useState('');
   const [tableWidth, setTableWidth] = useState(0);
   const [data, setData] = useState({ iconsList: iconNames, rowsCount: ROWS_PER_WINDOW });
   const [currentIcon, setCurrentIcon] = useState(iconNames[0]);
   const [showToast, setShowToast] = useState(false);
-  const currentIconImport = `import { ${currentIcon} } from '@edx/paragon/icons';`;
+  const currentIconImport = `import { ${currentIcon} } from '@openedx/paragon/icons';`;
   const { rowsCount, iconsList } = data;
 
   const columnsCount = useMemo(() => Math.floor(tableWidth / COLUMN_WIDTH), [tableWidth]);
 
-  const copyToClipboard = (content) => {
+  const copyToClipboard = (content: string) => {
     navigator.clipboard.writeText(content);
     setShowToast(true);
     sendUserAnalyticsEvent(ICON_COPIED_EVENT, { name: currentIcon });
@@ -188,33 +212,5 @@ function IconsTable({ iconNames }) {
     </>
   );
 }
-
-IconsTable.propTypes = {
-  iconNames: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
-
-TableCell.propTypes = {
-  iconName: PropTypes.string.isRequired,
-  setCurrentIcon: PropTypes.func.isRequired,
-  previewRef: PropTypes.shape({
-    current: PropTypes.shape({
-      scrollIntoView: PropTypes.func,
-    }),
-  }).isRequired,
-};
-
-TableRow.propTypes = {
-  rowIndex: PropTypes.number.isRequired,
-  columnsCount: PropTypes.number.isRequired,
-  iconsList: PropTypes.arrayOf(PropTypes.string).isRequired,
-  data: PropTypes.shape({
-    setCurrentIcon: PropTypes.func,
-    previewRef: PropTypes.shape({
-      current: PropTypes.shape({
-        scrollIntoView: PropTypes.func,
-      }),
-    }),
-  }).isRequired,
-};
 
 export default IconsTable;

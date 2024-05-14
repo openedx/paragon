@@ -2,8 +2,8 @@ import React, {
   createContext, useState, useEffect, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
-import * as Components from '~paragon-react';
 import * as Icons from '~paragon-icons';
+import * as Components from '~paragon-react';
 import getParagonComponentsTypes from '../utils/getParagonComponentsTypes';
 
 const InsightsContext = createContext({});
