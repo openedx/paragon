@@ -1,13 +1,18 @@
-// To keep this file in sync with the .d.ts file, it's in the same order
-// and each line number is the same
+// Keep this file in sync with the .d.ts file (manually). It's in the same order
+// and each line number is the same, to make it easier.
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that have types
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 export { default as Bubble } from './Bubble';
+export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
+export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as Icon } from './Icon';
+export { default as IconButton, IconButtonWithTooltip } from './IconButton';
+export { default as Overlay, OverlayTrigger } from './Overlay';
+export { default as Tooltip } from './Tooltip';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
@@ -20,7 +25,6 @@ export { default as Avatar } from './Avatar';
 export { default as AvatarButton } from './AvatarButton';
 export { default as Badge } from './Badge';
 export { default as Breadcrumb } from './Breadcrumb';
-export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export {
   default as Card,
   CardColumns,
@@ -72,8 +76,6 @@ export {
   FormAutosuggestOption,
   InputGroup,
 } from './Form';
-export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
-export { default as IconButton, IconButtonWithTooltip } from './IconButton';
 export { default as IconButtonToggle } from './IconButtonToggle';
 export { default as Input } from './Input';
 export { default as InputSelect } from './InputSelect';
@@ -106,7 +108,6 @@ export {
   NavLink,
 } from './Nav';
 export { default as Navbar, NavbarBrand, NAVBAR_LABEL } from './Navbar';
-export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as PageBanner, PAGE_BANNER_DISMISS_ALT_TEXT } from './PageBanner';
 export {
   default as Pagination,
@@ -145,7 +146,6 @@ export {
 } from './Tabs';
 export { default as TextArea } from './TextArea';
 export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
-export { default as Tooltip } from './Tooltip';
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';

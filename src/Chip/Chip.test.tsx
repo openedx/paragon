@@ -7,7 +7,7 @@ import { Close } from '../../icons';
 import { STYLE_VARIANTS } from './constants';
 import Chip from '.';
 
-function TestChip(props) {
+function TestChip(props: Omit<React.ComponentProps<typeof Chip>, 'children'>) {
   return (
     <Chip {...props}>
       Test
@@ -42,15 +42,13 @@ describe('<Chip />', () => {
           iconBeforeAlt="close icon"
           iconAfter={Close}
           iconAfterAlt="close icon"
-        >
-          Chip
-        </TestChip>
+        />
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('renders div with "button" role when onClick is provided', () => {
       const tree = renderer.create((
-        <TestChip onClick={jest.fn}>Chip</TestChip>
+        <TestChip onClick={jest.fn} />
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
@@ -104,7 +102,7 @@ describe('<Chip />', () => {
         />,
       );
       const iconAfter = screen.getByLabelText('icon-after');
-      await userEvent.click(iconAfter, '{enter}', { skipClick: true });
+      await userEvent.click(iconAfter);
       expect(func).toHaveBeenCalledTimes(1);
     });
     it('onIconBeforeClick is triggered', async () => {
@@ -130,7 +128,7 @@ describe('<Chip />', () => {
         />,
       );
       const iconBefore = screen.getByLabelText('icon-before');
-      await userEvent.click(iconBefore, '{enter}', { skipClick: true });
+      await userEvent.click(iconBefore);
       expect(func).toHaveBeenCalledTimes(1);
     });
     it('checks the absence of the `selected` class in the chip', async () => {

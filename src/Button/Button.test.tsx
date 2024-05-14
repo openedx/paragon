@@ -30,7 +30,7 @@ describe('<Button />', () => {
 
     it('renders with props iconAfter and size', () => {
       const tree = renderer.create((
-        <Button iconAfter={Close} size="md">Button</Button>
+        <Button iconAfter={Close} size="sm">Button</Button>
       )).toJSON();
       expect(tree).toMatchSnapshot();
     });
@@ -94,9 +94,21 @@ describe('<Button />', () => {
       });
 
       test('test button as hyperlink', () => {
-        render(<Button as={Hyperlink} destination="https://www.poop.com/💩">Button</Button>);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const ref = (_current: HTMLAnchorElement) => {}; // Check typing of a ref - should not show type errors.
+        render(<Button as={Hyperlink} ref={ref} destination="https://www.poop.com/💩">Button</Button>);
         expect(screen.getByRole('link').getAttribute('href')).toEqual('https://www.poop.com/💩');
       });
+    });
+
+    test('with size="inline"', () => {
+      const tree = renderer.create((
+        <p>
+          <span className="mr-1">2 items selected.</span>
+          <Button variant="link" size="inline">Clear</Button>
+        </p>
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
     });
   });
 });

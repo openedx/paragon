@@ -2,183 +2,183 @@ name: Analyze Dependents
 
 on:
   workflow_dispatch:
-   schedule:
-   - cron: "0 14 * * *" # daily at 10am EST (Github Actions works with UTC)
+  schedule:
+  - cron: "0 14 * * *" # daily at 10am EST (Github Actions works with UTC)
 
 jobs:
   # clones known dependent Git repositories from Open edX
   checkout-dependents:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout edx/credentials-themes
+    - name: Checkout openedx/credentials-themes
       uses: actions/checkout@v3
       with:
-        repository: edx/credentials-themes
+        repository: openedx/credentials-themes
         path: dependent-usage-analyzer/.projects/credentials-themes
-    - name: Checkout edx/credentials
+    - name: Checkout openedx/credentials
       uses: actions/checkout@v3
       with:
-        repository: edx/credentials
+        repository: openedx/credentials
         path: dependent-usage-analyzer/.projects/credentials
-    - name: Checkout edx/edx-enterprise
+    - name: Checkout openedx/edx-enterprise
       uses: actions/checkout@v3
       with:
-        repository: edx/edx-enterprise
+        repository: openedx/edx-enterprise
         path: dependent-usage-analyzer/.projects/edx-enterprise
-    - name: Checkout edx/edx-ora2
+    - name: Checkout openedx/edx-ora2
       uses: actions/checkout@v3
       with:
-        repository: edx/edx-ora2
+        repository: openedx/edx-ora2
         path: dependent-usage-analyzer/.projects/edx-ora2
-    - name: Checkout edx/edx-platform
+    - name: Checkout openedx/edx-platform
       uses: actions/checkout@v3
       with:
-        repository: edx/edx-platform
+        repository: openedx/edx-platform
         path: dependent-usage-analyzer/.projects/edx-platform
-    - name: Checkout edx/frontend-app-account
+    - name: Checkout openedx/frontend-app-account
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-account
+        repository: openedx/frontend-app-account
         path: dependent-usage-analyzer/.projects/frontend-app-account
-    - name: Checkout edx/frontend-app-admin-portal
+    - name: Checkout openedx/frontend-app-admin-portal
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-admin-portal
+        repository: openedx/frontend-app-admin-portal
         path: dependent-usage-analyzer/.projects/frontend-app-admin-portal
-    - name: Checkout edx/frontend-app-authn
+    - name: Checkout openedx/frontend-app-authn
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-authn
+        repository: openedx/frontend-app-authn
         path: dependent-usage-analyzer/.projects/frontend-app-authn
-    - name: Checkout edx/frontend-app-communications
+    - name: Checkout openedx/frontend-app-communications
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-communications
+        repository: openedx/frontend-app-communications
         path: dependent-usage-analyzer/.projects/frontend-app-communications
-    - name: Checkout edx/frontend-app-course-authoring
+    - name: Checkout openedx/frontend-app-course-authoring
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-course-authoring
+        repository: openedx/frontend-app-course-authoring
         path: dependent-usage-analyzer/.projects/frontend-app-course-authoring
-    - name: Checkout edx/frontend-app-discussions
+    - name: Checkout openedx/frontend-app-discussions
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-discussions
+        repository: openedx/frontend-app-discussions
         path: dependent-usage-analyzer/.projects/frontend-app-discussions
-    - name: Checkout edx/frontend-app-ecommerce
+    - name: Checkout openedx/frontend-app-ecommerce
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-ecommerce
+        repository: openedx/frontend-app-ecommerce
         path: dependent-usage-analyzer/.projects/frontend-app-ecommerce
-    - name: Checkout edx/frontend-app-enterprise-public-catalog
+    - name: Checkout openedx/frontend-app-enterprise-public-catalog
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-enterprise-public-catalog
+        repository: openedx/frontend-app-enterprise-public-catalog
         path: dependent-usage-analyzer/.projects/frontend-app-enterprise-public-catalog
-    - name: Checkout edx/frontend-app-gradebook
+    - name: Checkout openedx/frontend-app-gradebook
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-gradebook
+        repository: openedx/frontend-app-gradebook
         path: dependent-usage-analyzer/.projects/frontend-app-gradebook
-    - name: Checkout edx/frontend-app-learner-portal-enterprise
+    - name: Checkout openedx/frontend-app-learner-portal-enterprise
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-learner-portal-enterprise
+        repository: openedx/frontend-app-learner-portal-enterprise
         path: dependent-usage-analyzer/.projects/frontend-app-learner-portal-enterprise
-    - name: Checkout edx/frontend-app-learner-portal-programs
+    - name: Checkout openedx/frontend-app-learner-portal-programs
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-learner-portal-programs
+        repository: openedx/frontend-app-learner-portal-programs
         path: dependent-usage-analyzer/.projects/frontend-app-learner-portal-programs
-    - name: Checkout edx/frontend-app-learner-record
+    - name: Checkout openedx/frontend-app-learner-record
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-learner-record
+        repository: openedx/frontend-app-learner-record
         path: dependent-usage-analyzer/.projects/frontend-app-learner-record
-    - name: Checkout edx/frontend-app-learning
+    - name: Checkout openedx/frontend-app-learning
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-learning
+        repository: openedx/frontend-app-learning
         path: dependent-usage-analyzer/.projects/frontend-app-learning
-    - name: Checkout edx/frontend-app-library-authoring
+    - name: Checkout openedx/frontend-app-library-authoring
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-library-authoring
+        repository: openedx/frontend-app-library-authoring
         path: dependent-usage-analyzer/.projects/frontend-app-library-authoring
-    - name: Checkout edx/frontend-app-ora-grading
+    - name: Checkout openedx/frontend-app-ora-grading
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-ora-grading
+        repository: openedx/frontend-app-ora-grading
         path: dependent-usage-analyzer/.projects/frontend-app-ora-grading
-    - name: Checkout edx/frontend-app-payment
+    - name: Checkout openedx/frontend-app-payment
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-payment
+        repository: openedx/frontend-app-payment
         path: dependent-usage-analyzer/.projects/frontend-app-payment
-    - name: Checkout edx/frontend-app-profile
+    - name: Checkout openedx/frontend-app-profile
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-profile
+        repository: openedx/frontend-app-profile
         path: dependent-usage-analyzer/.projects/frontend-app-profile
-    - name: Checkout edx/frontend-app-program-console
+    - name: Checkout openedx/frontend-app-program-console
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-program-console
+        repository: openedx/frontend-app-program-console
         path: dependent-usage-analyzer/.projects/frontend-app-program-console
-    - name: Checkout edx/frontend-app-publisher
+    - name: Checkout openedx/frontend-app-publisher
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-publisher
+        repository: openedx/frontend-app-publisher
         path: dependent-usage-analyzer/.projects/frontend-app-publisher
-    - name: Checkout edx/frontend-app-support-tools
+    - name: Checkout openedx/frontend-app-support-tools
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-support-tools
+        repository: openedx/frontend-app-support-tools
         path: dependent-usage-analyzer/.projects/frontend-app-support-tools
-    - name: Checkout edx/frontend-component-cookie-policy-banner
+    - name: Checkout openedx/frontend-component-cookie-policy-banner
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-component-cookie-policy-banner
+        repository: openedx/frontend-component-cookie-policy-banner
         path: dependent-usage-analyzer/.projects/frontend-component-cookie-policy-banner
     - name: Checkout edx/frontend-component-header-edx
       uses: actions/checkout@v3
       with:
         repository: edx/frontend-component-header-edx
         path: dependent-usage-analyzer/.projects/frontend-component-header-edx
-    - name: Checkout edx/frontend-component-header
+    - name: Checkout openedx/frontend-component-header
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-component-header
+        repository: openedx/frontend-component-header
         path: dependent-usage-analyzer/.projects/frontend-component-header
-    - name: Checkout edx/frontend-enterprise
+    - name: Checkout openedx/frontend-enterprise
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-enterprise
+        repository: openedx/frontend-enterprise
         path: dependent-usage-analyzer/.projects/frontend-enterprise
-    - name: Checkout edx/frontend-learner-portal-base
+    - name: Checkout openedx/frontend-learner-portal-base
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-learner-portal-base
+        repository: openedx/frontend-learner-portal-base
         path: dependent-usage-analyzer/.projects/frontend-learner-portal-base
-    - name: Checkout edx/frontend-lib-content-components
+    - name: Checkout openedx/frontend-lib-content-components
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-lib-content-components
+        repository: openedx/frontend-lib-content-components
         path: dependent-usage-analyzer/.projects/frontend-lib-content-components
-    - name: Checkout edx/frontend-lib-special-exams
+    - name: Checkout openedx/frontend-lib-special-exams
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-lib-special-exams
+        repository: openedx/frontend-lib-special-exams
         path: dependent-usage-analyzer/.projects/frontend-lib-special-exams
-    - name: Checkout edx/frontend-platform
+    - name: Checkout openedx/frontend-platform
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-platform
+        repository: openedx/frontend-platform
         path: dependent-usage-analyzer/.projects/frontend-platform
-    - name: Checkout edx/frontend-template-application
+    - name: Checkout openedx/frontend-template-application
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-template-application
+        repository: openedx/frontend-template-application
         path: dependent-usage-analyzer/.projects/frontend-template-application
     - name: Checkout edx/prospectus
       uses: actions/checkout@v3
@@ -186,20 +186,20 @@ jobs:
         repository: edx/prospectus
         path: dependent-usage-analyzer/.projects/prospectus
         token: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
-    - name: Checkout edx/studio-frontend
+    - name: Checkout openedx/studio-frontend
       uses: actions/checkout@v3
       with:
-        repository: edx/studio-frontend
+        repository: openedx/studio-frontend
         path: dependent-usage-analyzer/.projects/studio-frontend
-    - name: Checkout edx/frontend-app-communications
+    - name: Checkout openedx/frontend-app-communications
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-communications
+        repository: openedx/frontend-app-communications
         path: dependent-usage-analyzer/.projects/frontend-app-communications
-    - name: Checkout edx/frontend-app-learner-dashboard
+    - name: Checkout openedx/frontend-app-learner-dashboard
       uses: actions/checkout@v3
       with:
-        repository: edx/frontend-app-learner-dashboard
+        repository: openedx/frontend-app-learner-dashboard
         path: dependent-usage-analyzer/.projects/frontend-app-learner-dashboard
     - name: Verify checkouts
       working-directory: dependent-usage-analyzer

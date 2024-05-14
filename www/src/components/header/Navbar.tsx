@@ -16,8 +16,8 @@ import Search from '../Search';
 export interface INavbar {
   siteTitle: string,
   onMenuClick: () => boolean,
-  setTarget: React.Dispatch<React.SetStateAction<null>>,
-  onSettingsClick: Function | undefined,
+  setTarget: React.Dispatch<React.SetStateAction<HTMLButtonElement | null>>,
+  onSettingsClick?: () => void,
   menuIsOpen?: boolean,
   showMinimizedTitle?: boolean,
   showSettingsIcon?: boolean,
