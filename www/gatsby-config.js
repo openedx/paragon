@@ -46,6 +46,10 @@ const plugins = [
     options: {
       path: `${__dirname}/../src`,
       name: 'components',
+      // Ignore our .d.ts files, which don't contain documentation. If we include them in the build,
+      // gatsby-transformer-react-docgen gives a warning "Missing initializer in const declaration"
+      // due to https://github.com/babel/babel/issues/14871
+      ignore: ['**/*.d.ts'],
     },
   },
   {

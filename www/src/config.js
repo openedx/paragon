@@ -152,10 +152,6 @@ const FOUNDATION_PAGES = [
     path: '/foundations/spacing/',
   },
   {
-    label: 'Icons',
-    path: '/foundations/icons/',
-  },
-  {
     label: 'CSS Utilities',
     path: '/foundations/css-utilities/',
   },
@@ -164,8 +160,16 @@ const FOUNDATION_PAGES = [
     path: '/foundations/responsive/',
   },
   {
+    label: 'Icons',
+    path: '/foundations/icons/',
+  },
+  {
     label: 'Brand icons',
     path: '/foundations/brand-icons/',
+  },
+  {
+    label: 'LMS icons',
+    path: '/foundations/lms-icons/',
   },
 ];
 
