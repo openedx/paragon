@@ -153,7 +153,7 @@
         "value": "{color.primary.base}",
         "type": "color",
         "source": "$primary-300",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50"}],
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
         "description": "Primary color of level 300.",
         "actions": {
           "default": "{color.action.default.primary.300}"
@@ -602,7 +602,7 @@
         "value": "{color.info.base}",
         "type": "color",
         "source": "$info-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25"}],
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
         "description": "Info color of level 800.",
         "actions": {
           "default": "{color.action.default.info.800}"

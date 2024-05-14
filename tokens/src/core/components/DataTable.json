@@ -1,7 +1,7 @@
 {
   "size": {
     "data-table": {
-      "border": { "value": "1px", "type": "dimension", "source": "$data-table-border" },
+      "border": { "value": "2px", "type": "dimension", "source": "$data-table-border" },
       "dropdown": {
         "pagination": {
           "max-height": { "value": "60vh", "type": "dimension", "source": "$data-table-pagination-dropdown-max-height" },

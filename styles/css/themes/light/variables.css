@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Mon, 13 May 2024 08:42:31 GMT
+ * Generated on Wed, 15 May 2024 07:58:56 GMT
  */
 
 :root {
@@ -253,7 +253,6 @@
   --pgn-elevation-form-control-indicator-active: none;
   --pgn-elevation-form-control-indicator-checked-focus: 0 0 0 4px rgba(0, 0, 0, .1);
   --pgn-elevation-form-control-indicator-checked-base: none;
-  --pgn-elevation-form-input-focus: none;
   --pgn-elevation-form-input-base: none;
   --pgn-elevation-code-kbd-box-shadow: none;
   --pgn-elevation-btn-box-shadow-active: none;
@@ -474,7 +473,6 @@
   --pgn-color-dropdown-link-base: var(--pgn-color-gray-900);
   --pgn-color-dropdown-divider-bg: var(--pgn-color-gray-100);
   --pgn-color-dropdown-border: #00000026;
-  --pgn-color-data-table-border: var(--pgn-color-gray-200);
   --pgn-color-data-table-bg-is-loading: #FFFFFFB3;
   --pgn-color-code-pre: var(--pgn-color-gray-900);
   --pgn-color-code-kbd-bg: var(--pgn-color-gray-700);
@@ -613,7 +611,6 @@
   --pgn-elevation-icon-button-box-shadow-primary-inverse: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
   --pgn-elevation-icon-button-box-shadow-primary-base: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-text-primary-base);
   --pgn-elevation-input-btn-focus-box-shadow: 0 0 0 var(--pgn-size-input-btn-focus-width) var(--pgn-color-input-btn-focus);
-  --pgn-elevation-form-control-file-focus: var(--pgn-elevation-form-input-focus);
   --pgn-elevation-form-control-file-base: var(--pgn-elevation-form-input-base);
   --pgn-elevation-form-control-indicator-base: var(--pgn-elevation-form-input-base);
   --pgn-elevation-data-table-box-shadow: var(--pgn-elevation-box-shadow-sm);
@@ -934,6 +931,7 @@
   --pgn-color-dropdown-bg: var(--pgn-color-bg-base);
   --pgn-color-dropdown-header: var(--pgn-color-gray-500);
   --pgn-color-dropdown-text: var(--pgn-color-body-base);
+  --pgn-color-data-table-border: var(--pgn-color-light-300);
   --pgn-color-data-table-bg-base: var(--pgn-color-bg-base);
   --pgn-color-chip-label-dark: var(--pgn-color-chip-outline-dark);
   --pgn-color-chip-label-base: var(--pgn-color-primary-700);
@@ -1140,6 +1138,7 @@
   --pgn-color-bg-active: var(--pgn-color-primary-500);
   --pgn-elevation-pagination-focus-box-shadow: var(--pgn-elevation-input-btn-focus-box-shadow);
   --pgn-elevation-form-control-select-border-focus: var(--pgn-elevation-input-btn-focus-box-shadow);
+  --pgn-elevation-form-input-focus: 0 0 0 1px var(--pgn-color-primary-500);
   --pgn-elevation-dropzone-active: inset 0 0 0 2px var(--pgn-color-primary-500);
   --pgn-border-color-nav-tabs-link-border-focus: var(--pgn-color-nav-tabs-base-link-active-text);
   --pgn-border-color-nav-tabs-link-border-hover: transparent transparent var(--pgn-color-nav-tabs-base-border-base);
@@ -1477,6 +1476,7 @@
   --pgn-other-content-form-control-radio-indicator-icon-checked-valid: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23178253FF'/%3e%3c/svg%3e");
   --pgn-other-content-form-control-checkbox-indicator-icon-checked-invalid: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='%23C32D3AFF'/></svg>");
   --pgn-other-content-form-control-checkbox-indicator-icon-checked-valid: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='%23178253FF'/></svg>");
+  --pgn-elevation-form-control-file-focus: var(--pgn-elevation-form-input-focus);
   --pgn-elevation-form-control-range-thumb-focus: 0 0 0 1px var(--pgn-color-body-bg), var(--pgn-size-form-input-width-focus);
   --pgn-elevation-dropzone-error: inset 0 0 0 2px var(--pgn-color-danger-300);
   --pgn-elevation-dropzone-focus: inset 0 0 0 2px var(--pgn-color-info-300);
