@@ -281,23 +281,3 @@ notes: |
 ```
 
 ***
-
-## Tabs.Deprecated
-
-<br/>
-
-### (Deprecated) basic usage
-
-```jsx live
-<Tabs.Deprecated
-  labels={[
-    'Panel 1',
-    'Panel 2',
-    'Panel 3'
-  ]}
->
-  <div>Hello I am the first panel</div>
-  <div>Hello I am the second panel</div>
-  <div>Hello I am the third panel</div>
-</Tabs.Deprecated>
-```

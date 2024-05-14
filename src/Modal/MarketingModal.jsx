@@ -36,7 +36,7 @@ MarketingModal.propTypes = {
   title: PropTypes.string.isRequired,
   /** Is the modal dialog open or closed */
   isOpen: PropTypes.bool,
-  /** Prevent clicking on the backdrop to close the modal */
+  /** Prevent clicking on the backdrop or pressing Esc to close the modal */
   isBlocking: PropTypes.bool,
   /** The close 'x' icon button in the top right corner */
   hasCloseButton: PropTypes.bool,
