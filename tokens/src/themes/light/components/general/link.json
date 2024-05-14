@@ -37,7 +37,7 @@
           "value": "{color.link.muted.base}",
           "type": "color",
           "source": "$muted-link-hover-color",
-          "modify": [{ "type": "darken", "amount": 0.15}]
+          "modify": [{ "type": "darken", "amount": 0.15 }]
         },
         "inline": {
           "base": { "value": "{color.primary.500}", "type": "color", "source": "$muted-inline-link-color" },
