@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Thu, 09 May 2024 13:33:11 GMT
+ * Generated on Mon, 13 May 2024 08:42:31 GMT
  */
 
 :root {
@@ -73,6 +73,7 @@
   --pgn-typography-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",  "Courier New", monospace;
   --pgn-typography-font-family-serif: serif;
   --pgn-typography-font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",  Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --pgn-typography-print-page-size: a3;
   --pgn-typography-display-mobile: 3.25rem;
   --pgn-typography-display-line-height-mobile: 3.5rem;
   --pgn-typography-display-line-height-base: 1;
@@ -364,7 +365,7 @@
   --pgn-size-data-table-dropdown-pagination-max-height: 60vh;
   --pgn-size-data-table-border: 1px;
   --pgn-size-container-max-width-xl: 1440px;
-  --pgn-size-container-max-width-lg: 1192px;
+  --pgn-size-container-max-width-lg: 1196px;
   --pgn-size-container-max-width-md: 952px;
   --pgn-size-container-max-width-sm: 708px;
   --pgn-size-container-max-width-xs: 464px;
@@ -406,9 +407,9 @@
   --pgn-size-annotation-arrow-border-width: .5rem;
   --pgn-size-alert-border-width: 0;
   --pgn-size-rounded-pill: 50rem;
-  --pgn-size-border-radius-sm: 4px;
-  --pgn-size-border-radius-lg: 7px;
-  --pgn-size-border-radius-base: 6px;
+  --pgn-size-border-radius-sm: .25rem;
+  --pgn-size-border-radius-lg: .425rem;
+  --pgn-size-border-radius-base: .375rem;
   --pgn-size-border-width: 1px;
   --pgn-transition-carousel-base: transform var(--pgn-transition-carousel-duration) ease-in-out;
   --pgn-typography-font-weight-base: var(--pgn-typography-font-weight-normal);
