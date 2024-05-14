@@ -1,12 +1,36 @@
 {
   "spacing": {
     "chip": {
-      "margin": { "value": ".125rem", "type": "dimension", "source": "$chip-margin" },
+      "margin": {
+        "base": {
+          "value": ".125rem", "type": "dimension", "source": "$chip-margin"
+        },
+        "icon": { "value": ".25rem", "type": "dimension", "source": "$chip-icon-margin" }
+      },
       "padding": {
         "y": { "value": ".125rem", "type": "dimension", "source": "$chip-padding-y" },
         "x": { "value": ".5rem", "type": "dimension", "source": "$chip-padding-x" },
         "icon": { "value": ".25rem", "type": "dimension", "source": "$chip-icon-padding" },
         "to-icon": { "value": "3px", "type": "dimension", "source": "$chip-padding-to-icon" }
+      },
+      "outline": {
+        "selected-distance": {
+          "light": {
+            "value": "3px", "type": "dimension", "source": "$chip-light-selected-outline-distance"
+          },
+          "dark": {
+            "value": "3px", "type": "dimension", "source": "$chip-dark-selected-outline-distance"
+          }
+        },
+        "focus-distance": {
+          "light": {
+            "value": ".313rem", "type": "dimension", "source": "$chip-light-focus-outline-distance"
+          },
+          "dark": {
+            "value": ".313rem", "type": "dimension", "source": "$chip-dark-focus-outline-distance"
+          }
+        },
+        "width": { "value": "3px", "type": "dimension", "source": "$chip-outline-width" }
       }
     }
   },

@@ -28,9 +28,10 @@ module.exports = {
       {
         devDependencies: [
           '**/*.stories.jsx',
-          'src/setupTest.js',
+          'src/setupTest.ts',
           '**/*.test.jsx',
           '**/*.test.js',
+          '**/*.test.ts',
           'config/*.js',
           '*.config.ts',
           '*.config.*.js',

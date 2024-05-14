@@ -1,0 +1,24 @@
+---
+title: LMS-Icons
+---
+
+import { Link, graphql } from 'gatsby';
+import get from 'lodash/get';
+import { Icon } from '~paragon-react';
+import IconsTable from '../../components/IconsTable';
+import PropsTable from '../../components/PropsTable';
+import * as IconComponents from '~paragon-icons';
+
+## LMS Icons
+
+Displays an LMS SVG icon from `@openedx/paragon/icons`. See the <Link to="/components/icon">Icon Component</Link> for more information.
+
+```jsx live
+// Included in this live jsx scope:
+// import { LmsVideocam, LmsBookComplete } from '@openedx/paragon/icons';
+<Icon src={LmsEditSquare} />
+```
+
+<br/>
+
+<IconsTable iconNames={Object.keys(IconComponents).filter((iconName) => iconName.startsWith('Lms'))} />

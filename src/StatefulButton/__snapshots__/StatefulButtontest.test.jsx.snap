@@ -100,7 +100,7 @@ exports[`StatefulButton renders basic usage 1`] = `
 `;
 
 exports[`StatefulButton renders custom icons and disable during state 1`] = `
-Array [
+[
   <button
     aria-disabled={false}
     aria-live="assertive"
@@ -180,7 +180,7 @@ Array [
 `;
 
 exports[`StatefulButton renders custom states 1`] = `
-Array [
+[
   <button
     aria-disabled={true}
     aria-live="assertive"

@@ -1,7 +1,7 @@
 import React, { AnchorHTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
-import { Nav, Button, Hyperlink } from '~paragon-react';
 import { useLocation } from '@reach/router';
+import { Nav, Button, Hyperlink } from '~paragon-react';
 import { LEAVE_FEEDBACK_CLICKED_EVENT, sendUserAnalyticsEvent } from '../../segment-events';
 
 export interface LeaveFeedbackProps extends Partial<AnchorHTMLAttributes<HTMLAnchorElement>> {

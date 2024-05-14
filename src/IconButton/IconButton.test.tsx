@@ -11,21 +11,27 @@ describe('<IconButton />', () => {
   const alt = 'alternative';
   const iconAs = Icon;
   const src = InfoOutline;
-  const variant = 'secondary';
+  const variant = 'secondary' as const;
   const props = {
     alt,
     src,
     iconAs,
     variant,
   };
-  const iconParams = {
+  const deprecatedFontAwesomeExample = {
     prefix: 'pgn',
     iconName: 'InfoOutlineIcon',
     icon: [InfoOutline],
   };
   it('renders with required props', () => {
     const tree = renderer.create((
-      <IconButton icon={iconParams} alt={alt} />
+      <IconButton iconAs={Icon} src={InfoOutline} alt={alt} />
+    )).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders with deprecated props', () => {
+    const tree = renderer.create((
+      <IconButton icon={deprecatedFontAwesomeExample} alt={alt} />
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -92,6 +98,21 @@ describe('<IconButton />', () => {
       await userEvent.click(buttons[1]);
       expect(spy1).toHaveBeenCalledTimes(1);
       expect(spy2).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('<IconButton.IconButtonWithTooltip>', () => {
+    it('renders with required props', () => {
+      const tree = renderer.create((
+        <IconButton.IconButtonWithTooltip
+          iconAs={Icon}
+          src={InfoOutline}
+          alt={alt}
+          tooltipContent="Hello"
+          tooltipPlacement="left-end"
+        />
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
     });
   });
 });

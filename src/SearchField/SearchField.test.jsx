@@ -176,7 +176,7 @@ describe('<SearchField /> with basic usage', () => {
       const inputElement = screen.getByRole('searchbox');
       await userEvent.type(inputElement, 'foobar');
       const buttonClear = screen.getByRole('button', { type: 'reset', variant: buttonProps.variant });
-      expect(buttonClear).toHaveAttribute('variant', 'inline');
+      expect(buttonClear).toHaveClass(`btn-icon-${buttonProps.variant}`);
     });
 
     it('should pass props to the label', () => {
