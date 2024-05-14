@@ -94,6 +94,16 @@
         overflow: hidden;  // Ensure text gets truncated properly if needed
       }
     }
+
+    &.pgn__form-checkbox {
+      > input {
+        flex-shrink: 0;  // When the menu item text is long, don't squish the checkbox, if present
+      }
+
+      > div {
+        overflow: hidden;  // Ensure text gets truncated properly if needed
+      }
+    }
   }
 }
 
