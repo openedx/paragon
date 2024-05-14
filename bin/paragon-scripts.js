@@ -7,6 +7,7 @@ const replaceVariablesCommand = require('../lib/replace-variables');
 const buildScssCommand = require('../lib/build-scss');
 const { sendTrackInfo } = require('../lib/utils');
 const versionCommand = require('../lib/version');
+const migrateToOpenEdxScopeCommand = require('../lib/migrate-to-openedx-scope');
 
 const commandAliases = {
   '-v': 'version',
@@ -50,6 +51,17 @@ const COMMANDS = {
         name: 'theme',
         description: 'The @edx/brand package to install.',
         defaultValue: '@openedx/brand-openedx@latest',
+        required: false,
+      },
+    ],
+  },
+  'migrate-to-openedx-scope': {
+    executor: migrateToOpenEdxScopeCommand,
+    description: 'CLI for migrate from "@edx/paragon" to "@openedx/paragon".',
+    parameters: [
+      {
+        name: 'path',
+        description: 'Path to the directory where to replace Paragon package name, default to root of the repository',
         required: false,
       },
     ],

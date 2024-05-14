@@ -31,9 +31,11 @@ jobs:
     - name: Build Docs
       run: npm run build-docs
     - name: Coverage
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
     - name: Release
       env:
         GITHUB_TOKEN: ${{ secrets.OPENEDX_SEMANTIC_RELEASE_GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.OPENEDX_SEMANTIC_RELEASE_NPM_TOKEN }}
-      run: npx semantic-release
+      run: npx semantic-release@22
