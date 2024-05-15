@@ -30,7 +30,7 @@
           "border": {
             "value": "{color.gray.700}", "type": "color", "source": "$custom-control-indicator-border-color"
           },
-          "bg": { 
+          "bg": {
             "base": {
               "value": "{color.form.input.bg.base}", "type": "color", "source": "$custom-control-indicator-bg"
             },
@@ -68,7 +68,7 @@
               }
             }
           },
-          "active": { 
+          "active": {
             "base": {
               "value": "{color.active}", "type": "color", "source": "$custom-control-indicator-active-color"
             },
@@ -88,7 +88,7 @@
             "value": "{color.disabled}", "type": "color", "source": "$custom-control-label-disabled-color"
           },
           "floating": {
-            "text": { 
+            "text": {
               "value": "{color.form.input.bg.base}",
               "type": "color",
               "source": "$form-control-floating-label-text-bg",
@@ -217,7 +217,7 @@
             "value": "{color.form.feedback.valid}",
             "type": "color",
             "source": "$form-feedback-tooltip-valid-color",
-            "modify": [{"type": "color-yiq"}]
+            "modify": [{ "type": "color-yiq" }]
           },
           "bg": {
             "valid": {

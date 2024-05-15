@@ -20,9 +20,6 @@
           "sm": { "value": ".6rem", "type": "dimension", "source": "$pagination-padding-x-sm" },
           "lg": { "value": "1.5rem", "type": "dimension", "source": "$pagination-padding-x-lg" }
         }
-      },
-      "margin": {
-        "x": { "value": ".5rem", "type": "dimension", "source": "$pagination-margin-x" }
       }
     }
   },
@@ -62,7 +59,6 @@
         }
       },
       "focus": {
-        "border-width": { "value": ".125rem", "type": "dimension", "source": "$pagination-focus-border-width" },
         "outline": { "value": "0", "type": "dimension", "source": "$pagination-focus-outline" }
       }
     }
