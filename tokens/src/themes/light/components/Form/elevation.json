@@ -4,7 +4,7 @@
       "input": {
         "base": { "value": "none", "type": "shadow", "source": "$input-box-shadow" },
         "focus": {
-          "value": "none",
+          "value": "0 0 0 1px {color.primary.500}",
           "type": "shadow",
           "source": "$input-focus-box-shadow"
         }
