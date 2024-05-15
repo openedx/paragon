@@ -57,7 +57,7 @@
         }
       },
       "control": {
-        "indicator": { 
+        "indicator": {
           "base": { "value": "1.25rem", "type": "dimension", "source": "$custom-control-indicator-size" },
           "bg": { "value": "100%", "type": "percentage", "source": "$custom-control-indicator-bg-size" },
           "border": {
@@ -101,7 +101,8 @@
             "icon": {
               "value": "{size.form.input.height.inner.half} {size.form.input.height.inner.half}",
               "type": "dimension",
-              "source": "$custom-select-feedback-icon-size" }
+              "source": "$custom-select-feedback-icon-size"
+            }
           },
           "border": {
             "width": {
@@ -109,11 +110,6 @@
                 "value": "{size.form.input.width.border}",
                 "type": "dimension",
                 "source": "$custom-select-border-width"
-              },
-              "focus": {
-                "value": "{size.form.input.width.focus}",
-                "type": "dimension",
-                "source": "$custom-select-focus-width"
               }
             },
             "radius": {
