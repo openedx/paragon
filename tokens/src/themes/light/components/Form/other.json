@@ -52,21 +52,21 @@
                   "type": "file",
                   "source": "$custom-radio-indicator-icon-checked",
                   "outputReferences": false,
-                  "modify": [{ "type": "str-replace", "toReplace": "#", "replaceWith": "%23"}]
+                  "modify": [{ "type": "str-replace", "toReplace": "#", "replaceWith": "%23" }]
                 },
                 "valid": {
                   "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{color.form.control.indicator.checked.valid}'/%3e%3c/svg%3e\")",
                   "type": "file",
                   "source": "$custom-radio-indicator-icon-valid-checked",
                   "outputReferences": false,
-                  "modify": [{ "type": "str-replace", "toReplace": "#", "replaceWith": "%23"}]
+                  "modify": [{ "type": "str-replace", "toReplace": "#", "replaceWith": "%23" }]
                 },
                 "invalid": {
                   "value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{color.form.control.indicator.checked.invalid}'/%3e%3c/svg%3e\")",
                   "type": "file",
                   "source": "$custom-radio-indicator-icon-invalid-checked",
                   "outputReferences": false,
-                  "modify": [{ "type": "str-replace", "toReplace": "#", "replaceWith": "%23"}]
+                  "modify": [{ "type": "str-replace", "toReplace": "#", "replaceWith": "%23" }]
                 }
               }
             }
