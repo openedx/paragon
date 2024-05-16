@@ -274,8 +274,7 @@ This will create a directory in `/src/` that will contain templates for all nece
 MyComponent
 ├── index.jsx
 ├── README.md
-├── MyComponent.scss
-├── _variables.scss
+├── index.scss
 └── MyComponent.test.jsx
 ```
 
@@ -314,10 +313,10 @@ export default MyComponent;
 ##### 4. (Optional) Add styles to your component.
 
 If your component requires additional styling (which most likely is the case), edit created SCSS style sheet in your
-component's directory `/src/MyComponent/MyComponent.scss` which by default contains an empty class for your component.
+component's directory `/src/MyComponent/index.scss` which by default contains an empty class for your component.
 
-If you wish to use SASS variables (which is the preferred way of styling the components since values can be
-easily overridden and customized by the consumers of Paragon), add them in `/src/MyComponent/_variables.scss` (this file should contain all variables specific to your component).
+If you wish to use CSS variables (which is the preferred way of styling the components since values can be
+easily overridden and customized by the consumers of Paragon), create specific design tokens in `tokens` directory (in the `core` and `themes` directories) and then generate (`npm run build-tokens`) CSS variables for your component.
 This way the variables will also get automatically picked up by documentation site and displayed on your component's page.
 
 **Please note that you need to follow [Paragon's CSS styling conventions](docs/decisions/0012-css-styling-conventions).**
