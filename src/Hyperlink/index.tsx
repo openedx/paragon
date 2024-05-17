@@ -1,29 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import isRequiredIf from 'react-proptype-conditional-require';
 import { Launch } from '../../icons';
 import Icon from '../Icon';
-
-import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 export const HYPER_LINK_EXTERNAL_LINK_ALT_TEXT = 'in a new tab';
 export const HYPER_LINK_EXTERNAL_LINK_TITLE = 'Opens in a new tab';
 
-const Hyperlink = React.forwardRef((props, ref) => {
-  const {
-    className,
-    destination,
-    children,
-    target,
-    onClick,
-    externalLinkAlternativeText,
-    externalLinkTitle,
-    variant,
-    isInline,
-    showLaunchIcon,
-    ...attrs
-  } = props;
+interface Props extends Omit<React.ComponentPropsWithoutRef<'a'>, 'href' | 'target'> {
+  /** specifies the URL */
+  destination: string;
+  /** Content of the hyperlink */
+  children: React.ReactNode;
+  /** Custom class names for the hyperlink */
+  className?: string;
+  /** Alt text for the icon indicating that this link opens in a new tab, if target="_blank". e.g. _("in a new tab") */
+  externalLinkAlternativeText?: string;
+  /** Tooltip text for the "opens in new tab" icon, if target="_blank". e.g. _("Opens in a new tab"). */
+  externalLinkTitle?: string;
+  /** type of hyperlink */
+  variant?: 'default' | 'muted' | 'brand';
+  /** Display the link with an underline. By default, it is only underlined on hover. */
+  isInline?: boolean;
+  /** specify if we need to show launch Icon. By default, it will be visible. */
+  showLaunchIcon?: boolean;
+  target?: '_blank' | '_self';
+}
+
+const Hyperlink = React.forwardRef<HTMLAnchorElement, Props>(({
+  className,
+  destination,
+  children,
+  target,
+  onClick,
+  externalLinkAlternativeText,
+  externalLinkTitle,
+  variant,
+  isInline,
+  showLaunchIcon,
+  ...attrs
+}, ref) => {
   let externalLinkIcon;
 
   if (target === '_blank') {
@@ -105,32 +121,20 @@ Hyperlink.propTypes = {
    * loaded into the same browsing context as the current one.
    * If the target is `_blank` (opening a new window) `rel='noopener'` will be added to the anchor tag to prevent
    * any potential [reverse tabnabbing attack](https://www.owasp.org/index.php/Reverse_Tabnabbing).
-  */
-  target: PropTypes.string,
+   */
+  target: PropTypes.oneOf(['_blank', '_self']),
   /** specifies the callback function when the link is clicked */
   onClick: PropTypes.func,
-  /** specifies the text for links with a `_blank` target (which loads the URL in a new browsing context). */
-  externalLinkAlternativeText: isRequiredIf(
-    PropTypes.string,
-    props => props.target === '_blank',
-  ),
-  /** specifies the title for links with a `_blank` target (which loads the URL in a new browsing context). */
-  externalLinkTitle: isRequiredIf(
-    PropTypes.string,
-    props => props.target === '_blank',
-  ),
+  /** Alt text for the icon indicating that this link opens in a new tab, if target="_blank". e.g. _("in a new tab") */
+  externalLinkAlternativeText: PropTypes.string,
+  /** Tooltip text for the "opens in new tab" icon, if target="_blank". e.g. _("Opens in a new tab"). */
+  externalLinkTitle: PropTypes.string,
   /** type of hyperlink */
   variant: PropTypes.oneOf(['default', 'muted', 'brand']),
-  /** specify the link style. By default, it will be underlined. */
+  /** Display the link with an underline. By default, it is only underlined on hover. */
   isInline: PropTypes.bool,
   /** specify if we need to show launch Icon. By default, it will be visible. */
   showLaunchIcon: PropTypes.bool,
 };
 
-export default withDeprecatedProps(Hyperlink, 'Hyperlink', {
-  /** specifies the text or element that a URL should be associated with */
-  content: {
-    deprType: DeprTypes.MOVED,
-    newName: 'children',
-  },
-});
+export default Hyperlink;
