@@ -60,6 +60,7 @@ and transparency of elements. This allows you to visually represent a specific t
 To apply these theme-specific styles, include the following import:
 
 ```
+@use "@openedx/paragon/dist/core.min.css";
 @use "@my-brand/light.min.css";
 ```
 
@@ -78,7 +79,7 @@ The Paragon CLI (Command Line Interface) is a tool that provides various utility
 
 ### Available Commands
 
-- `paragon install-theme`: Installs the specific [brand package](https://github.com/openedx/brand-openedx).
+- `paragon install-theme`: Install a [brand package](https://github.com/openedx/brand-openedx).
 - `paragon migrate-to-openedx-scope`: Migrate from "@edx/paragon" to "@openedx/paragon".
 - `paragon build-tokens`: Build Paragon's design tokens.
 - `paragon replace-variables`: Replace SCSS variables usages or definitions to CSS variables and vice versa in `.scss` files.
