@@ -39,29 +39,38 @@ In your React project:
 import { ComponentName } from '@openedx/paragon';
 ```
 
-#### SCSS Foundation
+#### CSS Foundation
 
-Usage for Open edX and others:
+**Usage with no theme:**
 
-**index.scss**
+The Paragon CSS Foundation offers a collection of fundamental styles, encompassing padding, typography, and sizing.
+When applied, these styles contribute to the creation of a straightforward and neat appearance for your application.
 
-```
-// ... Any custom SCSS variables should be defined here
-@import '~@openedx/paragon/styles/scss/core/core.scss';
-```
-
-Usage on with `@edx/brand`:
-
-**index.scss**
+To integrate these foundational styles into your project, include the following import:
 
 ```
-@import '~@edx/brand/paragon/fonts.scss';
-@import '~@edx/brand/paragon/variables.scss';
-@import '~@openedx/paragon/styles/scss/core/core.scss';
-@import '~@edx/brand/paragon/overrides.scss';
+@use "@openedx/paragon/dist/core.min.css";
 ```
 
-Note that including fonts will affect performance.  In some applications may choose not to load the custom font to keep it highly performant.
+**Usage with a theme:**
+
+In addition to the basic styles, you can provide a theme layer that includes styles for colors, shadows, backgrounds
+and transparency of elements. This allows you to visually represent a specific theme in your application.
+
+To apply these theme-specific styles, include the following import:
+
+```
+@use "@my-brand/light.min.css";
+```
+
+**CDN links:**
+
+Alternative style integration is available when using CDN links:
+
+```
+@import url("https://cdn.jsdelivr.net/npm/@my-brand/core.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@my-brand/light.min.css");
+```
 
 ## Paragon CLI
 
@@ -69,7 +78,8 @@ The Paragon CLI (Command Line Interface) is a tool that provides various utility
 
 ### Available Commands
 
-- `paragon install-theme [theme]`: Installs the specific [brand package](https://github.com/openedx/brand-openedx).
+- `paragon install-theme`: Installs the specific [brand package](https://github.com/openedx/brand-openedx).
+- `paragon migrate-to-openedx-scope`: Migrate from "@edx/paragon" to "@openedx/paragon".
 - `paragon build-tokens`: Build Paragon's design tokens.
 - `paragon replace-variables`: Replace SCSS variables usages or definitions to CSS variables and vice versa in `.scss` files.
 - `paragon build-scss`: Compile Paragon's core and themes SCSS into CSS.
@@ -161,7 +171,7 @@ module.exports = {
 };
 ```
 
-Then, when importing Paragon's core SCSS in your MFE the import needs to begin with a tilde `~` so that path to your local Paragon repository gets resolved correctly: `@import "~@openedx/paragon/styles/scss/core";`
+Then, when importing Paragon's core SCSS in your MFE the import needs to begin with a tilde `~` so that path to your local Paragon repository gets resolved correctly: `@import "~@openedx/paragon/styles/scss/core/core.scss";`
 
 #### Internationalization
 
@@ -502,9 +512,9 @@ Paragon uses [style-dictionary](https://github.com/amzn/style-dictionary) to bui
 6. Consuming applications would inject the `core.css` and `light.css` theme files into their applications via a mechanism similar to https://github.com/openedx/frontend-platform/pull/440 (ideally pulling from a public CDN for NPM packages, but falling back to locally installed copies, if needed).
 
 #### Compiling CSS from design tokens for `@edx/brand` theme authors (in `@edx/brand` repos)
-1. **`npm install`.** Install dependencies, including `@edx/paragon`.
+1. **`npm install`.** Install dependencies, including `@openedx/paragon`.
 2. Create tokens that will override Paragon's default tokens (matching same JSON schema).
-3. **`npm run build-scss`.** This `@edx/brand` repo will have a new NPM script that utilizes a new CLI exported by `@edx/paragon` which exposes the `build-tokens.js` script (or possibly another if we end up needing one for the brand packages to run specifically, TBD) for `@edx/brand` consumers.
+3. **`npm run build-scss`.** This `@edx/brand` repo will have a new NPM script that utilizes a new CLI exported by `@openedx/paragon` which exposes the `build-tokens.js` script (or possibly another if we end up needing one for the brand packages to run specifically, TBD) for `@edx/brand` consumers.
     - The intent of running this command is to effectively deep merge the tokens defined in Paragon's default tokens with the override tokens defined by `@edx/brand`, generating its own `core.css` and `light.css` output files (exact output files still a TBD) containing CSS variable overrides based on the token overrides.
 5. Ensure any changes to the generated `core.css` and `light.css` files are committed & released to NPM (which also "releases" them on versioned public CDNs for NPM packages).
     - _Note: It is a bit unclear still in the above linked implementation POC for `@edx/frontend-platform` how it would integrate with `@edx/brand` in this way. Open to suggestions/feedback/ideas here._
