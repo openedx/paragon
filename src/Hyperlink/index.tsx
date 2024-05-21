@@ -7,7 +7,7 @@ import Icon from '../Icon';
 export const HYPER_LINK_EXTERNAL_LINK_ALT_TEXT = 'in a new tab';
 export const HYPER_LINK_EXTERNAL_LINK_TITLE = 'Opens in a new tab';
 
-interface Props extends Omit<React.ComponentPropsWithoutRef<'a'>, 'href' | 'target'> {
+interface Props extends Omit<React.ComponentPropsWithRef<'a'>, 'href' | 'target'> {
   /** specifies the URL */
   destination: string;
   /** Content of the hyperlink */
