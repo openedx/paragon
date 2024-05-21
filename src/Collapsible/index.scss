@@ -6,7 +6,7 @@
 
   .collapsible-trigger {
     padding: var(--pgn-spacing-collapsible-card-spacer-y-base) var(--pgn-spacing-collapsible-card-spacer-x-base);
-    border-radius: calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width));
+    border-radius: var(--pgn-size-card-border-radius-inner);
     border-bottom: var(--pgn-size-card-border-width) solid transparent;
     transition: border-color 100ms ease 150ms;
     cursor: pointer;
@@ -22,8 +22,8 @@
 
     &[aria-expanded="true"] {
       border-radius:
-        calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width))
-        calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width)) 0 0;
+        var(--pgn-size-card-border-radius-inner)
+        var(--pgn-size-card-border-radius-inner) 0 0;
       border-color: var(--pgn-color-card-border-base);
       transition: none;
       text-align: start;
