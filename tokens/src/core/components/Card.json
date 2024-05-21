@@ -44,7 +44,12 @@
         "width": { "value": "{size.border.width}", "type": "dimension", "source": "$card-border-width" },
         "radius": {
           "base": { "value": "{size.border.radius.base}", "type": "dimension", "source": "$card-border-radius" },
-          "logo": { "value": ".25rem", "type": "dimension", "source": "$card-logo-border-radius" }
+          "logo": { "value": ".25rem", "type": "dimension", "source": "$card-logo-border-radius" },
+          "inner": {
+            "value": "calc({size.card.border.radius.base} - {size.card.border.width})",
+            "type": "dimension",
+            "source": "$card-inner-border-radius"
+          }
         }
       },
       "focus": {
