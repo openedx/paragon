@@ -8,8 +8,9 @@
 
   .pgn__stepper-header-step-list {
     list-style: none;
-    // stylelint-disable-next-line max-line-length
-    padding: var(--pgn-spacing-stepper-header-step-list-padding-y) var(--pgn-spacing-stepper-header-step-list-padding-x);
+    padding:
+      var(--pgn-spacing-stepper-header-step-list-padding-y)
+      var(--pgn-spacing-stepper-header-step-list-padding-x);
     display: flex;
     align-items: center;
     margin: var(--pgn-spacing-stepper-header-step-list-margin);
