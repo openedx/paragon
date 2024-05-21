@@ -8,11 +8,6 @@
           "max": { "value": "480px", "type": "dimension", "source": "$checkpoint-max-width" }
         },
         "arrow": {
-          "bottom": {
-            "value": "{size.product-tour.checkpoint.width.arrow} {size.product-tour.checkpoint.width.border}",
-            "type": "dimension",
-            "source": "$checkpoint-arrow-border-bottom"
-          },
           "top": {
             "value": "{size.product-tour.checkpoint.width.arrow}",
             "type": "dimension",
