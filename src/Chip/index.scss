@@ -93,11 +93,12 @@
     background-color: var(--pgn-color-chip-bg-dark);
 
     &.selected {
-      @include chip-outline(var(--pgn-color-chip-outline-dark),
-      calc(var(--pgn-spacing-chip-outline-selected-distance-dark) * -1),
-      calc(var(--pgn-size-chip-border-radius) + var(--pgn-spacing-chip-outline-width)),
-      var(--pgn-spacing-chip-outline-selected-distance-dark)
-    );
+      @include chip-outline(
+        var(--pgn-color-chip-outline-dark),
+        calc(var(--pgn-spacing-chip-outline-selected-distance-dark) * -1),
+        calc(var(--pgn-size-chip-border-radius) + var(--pgn-spacing-chip-outline-width)),
+        var(--pgn-spacing-chip-outline-selected-distance-dark)
+      );
 
       &:focus {
         border: 1px solid var(--pgn-color-chip-border-focus-selected-dark);

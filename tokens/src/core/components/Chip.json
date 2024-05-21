@@ -8,10 +8,8 @@
         "icon": { "value": ".25rem", "type": "dimension", "source": "$chip-icon-margin" }
       },
       "padding": {
-        "y": { "value": ".125rem", "type": "dimension", "source": "$chip-padding-y" },
-        "x": { "value": ".5rem", "type": "dimension", "source": "$chip-padding-x" },
-        "icon": { "value": ".25rem", "type": "dimension", "source": "$chip-icon-padding" },
-        "to-icon": { "value": "3px", "type": "dimension", "source": "$chip-padding-to-icon" }
+        "y": { "value": "1px", "type": "dimension", "source": "$chip-padding-y" },
+        "x": { "value": ".5rem", "type": "dimension", "source": "$chip-padding-x" }
       },
       "outline": {
         "selected-distance": {
@@ -36,8 +34,8 @@
   },
   "size": {
     "chip": {
-      "border-radius": { "value": ".25rem", "type": "dimension", "source": "$chip-border-radius" },
-      "icon": { "value": "1.25rem", "type": "dimension", "source": "$chip-icon-size" }
+      "border-radius": { "value": ".375rem", "type": "dimension", "source": "$chip-border-radius" },
+      "icon": { "value": "1.5rem", "type": "dimension", "source": "$chip-icon-size" }
     }
   }
 }
