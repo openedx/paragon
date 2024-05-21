@@ -8,7 +8,7 @@
         "muted": { "value": "{color.light.200}", "type": "color", "source": "$card-bg-muted" }
       },
       "border": {
-        "base": { 
+        "base": {
           "value": "{color.black}",
           "type": "color",
           "source": "$card-border-color",
@@ -21,11 +21,7 @@
           "base": {
             "value": "{color.primary.500}",
             "type": "color",
-            "source": "$card-border-focus-color",
-            "modify": [{
-              "type": "alpha",
-              "amount": 0.5
-            }]
+            "source": "$card-border-focus-color"
           },
           "dark": {
             "value": "{color.theme.focus.primary}",
