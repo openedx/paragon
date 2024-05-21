@@ -1,8 +1,8 @@
 @mixin chip-outline(
   $outline-color: var(--pgn-color-white),
   $distance-to-border: 0,
-  $border-radius: 50%,
-  $border-width-value: .125rem
+  $outline-border-radius: 50%,
+  $outline-border-width: .125rem
 ) {
   &::before {
     content: "";
@@ -11,8 +11,8 @@
     right: $distance-to-border;
     bottom: $distance-to-border;
     left: $distance-to-border;
-    border: solid $border-width-value $outline-color;
-    border-radius: var(--pgn-size-border-radius-base);
+    border: solid $outline-border-width $outline-color;
+    border-radius: $outline-border-radius;
   }
 }
 

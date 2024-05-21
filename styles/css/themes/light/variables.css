@@ -257,8 +257,7 @@
   --pgn-elevation-code-kbd-box-shadow: none;
   --pgn-elevation-btn-box-shadow-active: none;
   --pgn-elevation-btn-box-shadow-base: none;
-  --pgn-elevation-annotation-box-shadow: drop-shadow(0 2px 4px rgba(0, 0, 0, .15))  drop-shadow(0 2px 8px rgba(0, 0, 0, .15));
-  --pgn-elevation-alert-box-shadow: 0 1px 2px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15);
+  --pgn-elevation-annotation-box-shadow: drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15));
   --pgn-elevation-tooltip-box-shadow: drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15));
   --pgn-elevation-popover-box-shadow: none;
   --pgn-elevation-modal-content-box-shadow-sm-up: 0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15);
@@ -565,7 +564,6 @@
   --pgn-color-bubble-text-warning: var(--pgn-color-white);
   --pgn-color-bubble-text-success: var(--pgn-color-white);
   --pgn-color-breadcrumb-inverse-base: var(--pgn-color-white);
-  --pgn-color-breadcrumb-bg: var(--pgn-color-gray-200);
   --pgn-color-badge-bg-dark: var(--pgn-color-dark-base);
   --pgn-color-badge-bg-light: var(--pgn-color-light-base);
   --pgn-color-badge-bg-primary: var(--pgn-color-primary-base);
@@ -940,7 +938,7 @@
   --pgn-color-chip-border-base: var(--pgn-color-light-800);
   --pgn-color-chip-bg-dark: var(--pgn-color-primary-300);
   --pgn-color-card-divider-bg: var(--pgn-color-light-400);
-  --pgn-color-card-border-focus-base: #0A305580;
+  --pgn-color-card-border-focus-base: var(--pgn-color-primary-500);
   --pgn-color-card-bg-muted: var(--pgn-color-light-200);
   --pgn-color-card-bg-dark: var(--pgn-color-primary-500);
   --pgn-color-card-bg-base: var(--pgn-color-bg-base);

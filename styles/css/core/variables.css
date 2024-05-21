@@ -112,7 +112,6 @@
   --pgn-typography-headings-font-family: inherit;
   --pgn-typography-dropdown-item-text-decoration: none;
   --pgn-typography-code-font-size: 87.5%;
-  --pgn-typography-breadcrumb-font-size: inherit;
   --pgn-typography-badge-font-size: 75%;
   --pgn-typography-alert-line-height: 1.5rem;
   --pgn-typography-alert-font-size: .875rem;
@@ -225,10 +224,8 @@
   --pgn-spacing-chip-outline-focus-distance-light: .313rem;
   --pgn-spacing-chip-outline-selected-distance-dark: 3px;
   --pgn-spacing-chip-outline-selected-distance-light: 3px;
-  --pgn-spacing-chip-padding-to-icon: 3px;
-  --pgn-spacing-chip-padding-icon: .25rem;
   --pgn-spacing-chip-padding-x: .5rem;
-  --pgn-spacing-chip-padding-y: .125rem;
+  --pgn-spacing-chip-padding-y: 1px;
   --pgn-spacing-chip-margin-icon: .25rem;
   --pgn-spacing-chip-margin-base: .125rem;
   --pgn-spacing-carousel-indicator-spacer: 3px;
@@ -248,10 +245,6 @@
   --pgn-spacing-bubble-expandable-padding-x: .25rem;
   --pgn-spacing-bubble-expandable-padding-y: 0;
   --pgn-spacing-breadcrumb-margin-left: .5rem;
-  --pgn-spacing-breadcrumb-margin-bottom: 1rem;
-  --pgn-spacing-breadcrumb-padding-item: .5rem;
-  --pgn-spacing-breadcrumb-padding-x: 1rem;
-  --pgn-spacing-breadcrumb-padding-y: .75rem;
   --pgn-spacing-badge-padding-y: .125rem;
   --pgn-spacing-badge-padding-x-pill: .6em;
   --pgn-spacing-badge-padding-x-base: .5rem;
@@ -370,8 +363,8 @@
   --pgn-size-color-picker-md: calc(1.3333em + 1.125rem + 2px);
   --pgn-size-color-picker-sm: 2rem;
   --pgn-size-code-pre-scrollable-max-height: 340px;
-  --pgn-size-chip-icon: 1.25rem;
-  --pgn-size-chip-border-radius: .25rem;
+  --pgn-size-chip-icon: 1.5rem;
+  --pgn-size-chip-border-radius: .375rem;
   --pgn-size-carousel-caption-width: 70%;
   --pgn-size-carousel-indicator-height-area-hit: 10px;
   --pgn-size-carousel-indicator-height-base: 3px;
@@ -549,7 +542,6 @@
   --pgn-size-btn-border-radius-sm: var(--pgn-size-border-radius-sm);
   --pgn-size-btn-border-radius-lg: var(--pgn-size-border-radius-lg);
   --pgn-size-btn-border-radius-base: var(--pgn-size-border-radius-base);
-  --pgn-size-breadcrumb-border-radius-base: var(--pgn-size-border-radius-base);
   --pgn-size-badge-focus-width: var(--pgn-size-input-btn-focus-width);
   --pgn-size-alert-border-radius: var(--pgn-size-border-radius-base);
   --pgn-typography-form-control-file-font-family: var(--pgn-typography-form-input-font-family);
@@ -589,6 +581,7 @@
   --pgn-size-form-input-height-base: calc(var(--pgn-typography-form-input-line-height-base) * 1em + var(--pgn-spacing-form-input-padding-y-base) * 2 + var(--pgn-size-form-input-height-border));
   --pgn-size-dropdown-border-radius-inner: calc(var(--pgn-size-dropdown-border-radius-base) - var(--pgn-size-dropdown-border-width));
   --pgn-size-card-image-border-radius: var(--pgn-size-card-border-radius-base);
+  --pgn-size-card-border-radius-inner: calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width));
   --pgn-size-btn-focus-border-radius-sm: var(--pgn-size-btn-border-radius-base);
   --pgn-size-btn-focus-border-radius-base: calc(var(--pgn-size-btn-border-radius-base) + var(--pgn-spacing-btn-focus-border-gap));
   --pgn-size-btn-border-width: var(--pgn-size-input-btn-border-width);
