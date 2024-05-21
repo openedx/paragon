@@ -23,7 +23,7 @@
     "table": {
       "cell": {
         "padding": {
-          "base": { "value": "75rem", "type": "dimension", "source": "$table-cell-padding", "description": "Padding for tables." },
+          "base": { "value": ".75rem", "type": "dimension", "source": "$table-cell-padding", "description": "Padding for tables." },
           "sm": { "value": ".3rem", "type": "dimension", "source": "$table-cell-padding-sm", "description": "Padding sm for tables." }
         }
       }

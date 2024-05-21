@@ -1,7 +1,7 @@
 /**
  * IMPORTANT: This file is the result of assembling design tokens
  * Do not edit directly
- * Generated on Wed, 15 May 2024 08:37:24 GMT
+ * Generated on Wed, 15 May 2024 12:30:36 GMT
  */
 
 :root {
@@ -118,7 +118,7 @@
   --pgn-typography-headings-font-family: inherit;
   --pgn-spacing-grid-gutter-width: 24px;
   --pgn-spacing-table-cell-padding-sm: .3rem;
-  --pgn-spacing-table-cell-padding-base: 75rem;
+  --pgn-spacing-table-cell-padding-base: .75rem;
   --pgn-spacing-label-margin-bottom: .5rem;
   --pgn-spacing-spacer-base: 1rem;
   --pgn-spacing-spacer-0: 0;
@@ -505,7 +505,6 @@
   --pgn-size-spinner-base-height: var(--pgn-size-spinner-base-width);
   --pgn-size-product-tour-checkpoint-arrow-transparent: var(--pgn-size-product-tour-checkpoint-width-arrow);
   --pgn-size-product-tour-checkpoint-arrow-top: var(--pgn-size-product-tour-checkpoint-width-arrow);
-  --pgn-size-product-tour-checkpoint-arrow-bottom: var(--pgn-size-product-tour-checkpoint-width-arrow) var(--pgn-size-product-tour-checkpoint-width-border);
   --pgn-size-popover-border-radius: var(--pgn-size-border-radius-sm);
   --pgn-size-popover-border-width: var(--pgn-size-border-width);
   --pgn-size-pagination-border-radius-lg: var(--pgn-size-border-radius-lg);
