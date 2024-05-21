@@ -197,10 +197,8 @@
   --pgn-spacing-chip-outline-focus-distance-light: .313rem;
   --pgn-spacing-chip-outline-selected-distance-dark: 3px;
   --pgn-spacing-chip-outline-selected-distance-light: 3px;
-  --pgn-spacing-chip-padding-to-icon: 3px;
-  --pgn-spacing-chip-padding-icon: .25rem;
   --pgn-spacing-chip-padding-x: .5rem;
-  --pgn-spacing-chip-padding-y: .125rem;
+  --pgn-spacing-chip-padding-y: 1px;
   --pgn-spacing-chip-margin-icon: .25rem;
   --pgn-spacing-chip-margin-base: .125rem;
   --pgn-spacing-carousel-indicator-spacer: 3px;
@@ -219,10 +217,6 @@
   --pgn-spacing-bubble-expandable-padding-x: .25rem;
   --pgn-spacing-bubble-expandable-padding-y: 0;
   --pgn-spacing-breadcrumb-margin-left: .5rem;
-  --pgn-spacing-breadcrumb-margin-bottom: 1rem;
-  --pgn-spacing-breadcrumb-padding-item: .5rem;
-  --pgn-spacing-breadcrumb-padding-x: 1rem;
-  --pgn-spacing-breadcrumb-padding-y: .75rem;
   --pgn-spacing-badge-padding-y: .125rem;
   --pgn-spacing-badge-padding-x-pill: .6em;
   --pgn-spacing-badge-padding-x-base: .5rem;
@@ -348,8 +342,8 @@
   --pgn-size-color-picker-md: calc(1.3333em + 1.125rem + 2px);
   --pgn-size-color-picker-sm: 2rem;
   --pgn-size-code-pre-scrollable-max-height: 340px;
-  --pgn-size-chip-icon: 1.25rem;
-  --pgn-size-chip-border-radius: .25rem;
+  --pgn-size-chip-icon: 1.5rem;
+  --pgn-size-chip-border-radius: .375rem;
   --pgn-size-carousel-caption-width: 70%;
   --pgn-size-carousel-indicator-height-area-hit: 10px;
   --pgn-size-carousel-indicator-height-base: 3px;
