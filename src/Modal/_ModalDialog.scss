@@ -76,6 +76,10 @@
     border-top: solid 1px var(--pgn-color-light-base);
     padding-top: var(--pgn-spacing-modal-footer-padding-y);
   }
+
+  .pgn__modal-header {
+    border-radius: 0;
+  }
 }
 
 // Made specific due to a selector in Modal.scss
