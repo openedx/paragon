@@ -316,8 +316,7 @@ If your component requires additional styling (which most likely is the case), e
 component's directory `/src/MyComponent/index.scss` which by default contains an empty class for your component.
 
 If you wish to use CSS variables (which is the preferred way of styling the components since values can be
-easily overridden and customized by the consumers of Paragon), create specific design tokens in `tokens` directory (in the `core` and `themes` directories) and then generate (`npm run build-tokens`) CSS variables for your component.
-This way the variables will also get automatically picked up by documentation site and displayed on your component's page.
+easily overridden and customized by the consumers of Paragon), you can do so by utilizing [design tokens](/tokens).
 
 **Please note that you need to follow [Paragon's CSS styling conventions](docs/decisions/0012-css-styling-conventions).**
 
