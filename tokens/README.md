@@ -1,7 +1,6 @@
 # Design Tokens
 
-This module is responsible for handling design tokens in Paragon, for rationale behind design tokens see [Scaling Paragon's styles architecture with design tokens](https://openedx.atlassian.net/wiki/spaces/BPL/pages/3630923811/Scaling+Paragon+s+styles+architecture+with+design+tokens)
-and relevant ADR(TODO: add link when we merge an ADR). 
+This module is responsible for handling design tokens in Paragon, for rationale behind design tokens see [Scaling Paragon's styles architecture with design tokens](https://openedx.atlassian.net/wiki/spaces/BPL/pages/3630923811/Scaling+Paragon+s+styles+architecture+with+design+tokens). 
 
 ## Overview
 
