@@ -87,8 +87,18 @@ const COMMANDS = {
       },
       {
         name: '-t, --themes',
-        description: 'Specify themes to include in the token build.',
+        description: 'Specify themes to include in the token build. Eg. light,dark or "light dark"',
         defaultValue: 'light',
+      },
+      {
+        name: '--base-theme',
+        description: 'Specify the base theme to use in the token build. For example, to build the "high-contrast" theme on top of the ligth theme use "--theme high-contrast --base-theme light".',
+        defaultValue: 'Same as theme',
+      },
+      {
+        name: '--all-themes',
+        description: 'Build tokens for all themes in the source directory.',
+        defaultValue: false,
       },
     ],
   },
