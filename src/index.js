@@ -7,6 +7,7 @@
 export { default as Bubble } from './Bubble';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
+export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as Icon } from './Icon';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
@@ -69,7 +70,6 @@ export {
   FormAutosuggestOption,
   InputGroup,
 } from './Form';
-export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
 export { default as IconButtonToggle } from './IconButtonToggle';
 export { default as Image, Figure } from './Image';
