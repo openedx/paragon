@@ -121,7 +121,7 @@ Hyperlink.propTypes = {
    * loaded into the same browsing context as the current one.
    * If the target is `_blank` (opening a new window) `rel='noopener'` will be added to the anchor tag to prevent
    * any potential [reverse tabnabbing attack](https://www.owasp.org/index.php/Reverse_Tabnabbing).
-  */
+   */
   target: PropTypes.oneOf(['_blank', '_self']),
   /** specifies the callback function when the link is clicked */
   onClick: PropTypes.func,
