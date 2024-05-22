@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import 'regenerator-runtime/runtime';
 
 import '@testing-library/jest-dom';
@@ -20,6 +21,6 @@ class ResizeObserver {
 
 window.ResizeObserver = ResizeObserver;
 
-window.crypto = {
-  getRandomValues: arr => crypto.randomBytes(arr.length),
+(window as any).crypto = {
+  getRandomValues: (arr: any) => crypto.randomBytes(arr.length),
 };
