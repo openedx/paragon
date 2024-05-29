@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import BaseButton, { type ButtonProps as BaseButtonProps } from 'react-bootstrap/Button';
 import BaseButtonGroup, { type ButtonGroupProps as BaseButtonGroupProps } from 'react-bootstrap/ButtonGroup';
 import BaseButtonToolbar, { type ButtonToolbarProps } from 'react-bootstrap/ButtonToolbar';
-import { type BsPrefixRefForwardingComponent as ComponentWithAsProp } from 'react-bootstrap/esm/helpers';
+import type { ComponentWithAsProp } from '../utils/types/bootstrap';
 // @ts-ignore - we're not going to bother adding types for the deprecated button
 import ButtonDeprecated from './deprecated';
 
