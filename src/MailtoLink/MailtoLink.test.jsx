@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { IntlProvider } from 'react-intl';
 
 import MailtoLink from '.';
 
@@ -11,10 +12,18 @@ const content = 'content';
 
 const baseProps = { subject, body, content };
 
+function MailtoLinkWrapper(props) {
+  return (
+    <IntlProvider locale="en">
+      <MailtoLink {...props} />
+    </IntlProvider>
+  );
+}
+
 describe('correct rendering', () => {
   it('renders MailtoLink with single to, cc, and bcc recipient', () => {
     const singleRecipientLink = (
-      <MailtoLink
+      <MailtoLinkWrapper
         {...baseProps}
         to={emailAddress}
         cc={emailAddress}
@@ -31,7 +40,7 @@ describe('correct rendering', () => {
 
   it('renders mailtoLink with many to, cc, and bcc recipients', () => {
     const multiRecipientLink = (
-      <MailtoLink
+      <MailtoLinkWrapper
         {...baseProps}
         to={emailAddresses}
         cc={emailAddresses}
@@ -46,7 +55,7 @@ describe('correct rendering', () => {
   });
 
   it('renders empty mailtoLink', () => {
-    const { getByText } = render(<MailtoLink content={content} />);
+    const { getByText } = render(<MailtoLinkWrapper content={content} />);
     const linkElement = getByText('content');
     expect(linkElement.getAttribute('href')).toEqual('mailto:');
   });

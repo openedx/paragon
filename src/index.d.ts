@@ -31,7 +31,7 @@ export {
   FormAutosuggestOption,
   InputGroup,
 } from './Form';
-export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
+export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
 export { default as ModalContext } from './Modal/ModalContext';

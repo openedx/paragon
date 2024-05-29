@@ -1,4 +1,5 @@
 import React from 'react';
+import { IntlProvider } from 'react-intl';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
@@ -96,7 +97,11 @@ describe('<Button />', () => {
       test('test button as hyperlink', () => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const ref = (_current: HTMLAnchorElement) => {}; // Check typing of a ref - should not show type errors.
-        render(<Button as={Hyperlink} ref={ref} destination="https://www.poop.com/💩">Button</Button>);
+        render(
+          <IntlProvider locale="en">
+            <Button as={Hyperlink} ref={ref} destination="https://www.poop.com/💩">Button</Button>
+          </IntlProvider>,
+        );
         expect(screen.getByRole('link').getAttribute('href')).toEqual('https://www.poop.com/💩');
       });
     });

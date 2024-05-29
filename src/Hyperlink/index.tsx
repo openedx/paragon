@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import {
+  type BsPrefixRefForwardingComponent as ComponentWithAsProp,
+  type BsPrefixProps,
+} from 'react-bootstrap/esm/helpers';
+import { defineMessages, useIntl } from 'react-intl';
 import { Launch } from '../../icons';
 import Icon from '../Icon';
+// @ts-ignore
+import { customPropTypeRequirement } from '../utils/propTypes/utils';
 
-export const HYPER_LINK_EXTERNAL_LINK_ALT_TEXT = 'in a new tab';
-export const HYPER_LINK_EXTERNAL_LINK_TITLE = 'Opens in a new tab';
-
-interface Props extends Omit<React.ComponentPropsWithRef<'a'>, 'href' | 'target'> {
+export interface HyperlinkProps extends BsPrefixProps, Omit<React.ComponentPropsWithRef<'a'>, 'href' | 'target'> {
   /** specifies the URL */
-  destination: string;
+  destination?: string;
   /** Content of the hyperlink */
   children: React.ReactNode;
   /** Custom class names for the hyperlink */
@@ -24,22 +28,42 @@ interface Props extends Omit<React.ComponentPropsWithRef<'a'>, 'href' | 'target'
   isInline?: boolean;
   /** specify if we need to show launch Icon. By default, it will be visible. */
   showLaunchIcon?: boolean;
+  /** specifies where the link should open. The default behavior is `_self`, which means that the URL will be
+   * loaded into the same browsing context as the current one.
+   * If the target is `_blank` (opening a new window) `rel='noopener'` will be added to the anchor tag to prevent
+   * any potential [reverse tabnabbing attack](https://www.owasp.org/index.php/Reverse_Tabnabbing).
+   */
   target?: '_blank' | '_self';
 }
 
-const Hyperlink = React.forwardRef<HTMLAnchorElement, Props>(({
+export type HyperlinkType = ComponentWithAsProp<'a', HyperlinkProps>;
+
+const messages = defineMessages({
+  externalLinkAltText: {
+    id: 'Hyperlink.externalLinkAltText',
+    defaultMessage: 'in a new tab',
+  },
+  externalLinkTitle: {
+    id: 'Hyperlink.externalLinkTitle',
+    defaultMessage: 'Opens in a new tab',
+  },
+});
+
+const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(({
+  as: Component = 'a',
   className,
   destination,
   children,
-  target,
+  target = '_self',
   onClick,
   externalLinkAlternativeText,
   externalLinkTitle,
-  variant,
-  isInline,
-  showLaunchIcon,
+  variant = 'default',
+  isInline = false,
+  showLaunchIcon = true,
   ...attrs
 }, ref) => {
+  const intl = useIntl();
   let externalLinkIcon;
 
   if (target === '_blank') {
@@ -63,11 +87,11 @@ const Hyperlink = React.forwardRef<HTMLAnchorElement, Props>(({
       externalLinkIcon = (
         <span
           className="pgn__hyperlink__external-icon"
-          title={externalLinkTitle}
+          title={externalLinkTitle || intl.formatMessage(messages.externalLinkTitle)}
         >
           <Icon
             src={Launch}
-            screenReaderText={externalLinkAlternativeText}
+            screenReaderText={externalLinkAlternativeText || intl.formatMessage(messages.externalLinkAltText)}
             style={{ height: '1em', width: '1em' }}
             data-testid="hyperlink-icon"
           />
@@ -76,8 +100,13 @@ const Hyperlink = React.forwardRef<HTMLAnchorElement, Props>(({
     }
   }
 
+  const additionalProps: Record<string, any> = { ...attrs };
+  if (destination) {
+    additionalProps.href = destination;
+  }
+
   return (
-    <a
+    <Component
       ref={ref}
       className={classNames(
         'pgn__hyperlink',
@@ -88,31 +117,27 @@ const Hyperlink = React.forwardRef<HTMLAnchorElement, Props>(({
         },
         className,
       )}
-      href={destination}
       target={target}
       onClick={onClick}
-      {...attrs}
+      {...additionalProps}
     >
       {children}
       {externalLinkIcon}
-    </a>
+    </Component>
   );
 });
 
-Hyperlink.defaultProps = {
-  className: undefined,
-  target: '_self',
-  onClick: () => {},
-  externalLinkAlternativeText: HYPER_LINK_EXTERNAL_LINK_ALT_TEXT,
-  externalLinkTitle: HYPER_LINK_EXTERNAL_LINK_TITLE,
-  variant: 'default',
-  isInline: false,
-  showLaunchIcon: true,
-};
-
 Hyperlink.propTypes = {
-  /** specifies the URL */
-  destination: PropTypes.string.isRequired,
+  /** specifies the component element type to render for the hyperlink */
+  // @ts-ignore
+  as: PropTypes.elementType,
+  /** specifies the URL; required iff `as` prop is a standard anchor tag */
+  destination: customPropTypeRequirement(
+    PropTypes.string,
+    ({ as }: { as: React.ElementType }) => as && as === 'a',
+    // "[`destination` is required when]..."
+    'the `as` prop is a standard anchor element (i.e., "a")',
+  ),
   /** Content of the hyperlink */
   // @ts-ignore
   children: PropTypes.node.isRequired,
@@ -137,5 +162,20 @@ Hyperlink.propTypes = {
   /** specify if we need to show launch Icon. By default, it will be visible. */
   showLaunchIcon: PropTypes.bool,
 };
+
+Hyperlink.defaultProps = {
+  as: 'a',
+  className: undefined,
+  destination: undefined,
+  externalLinkAlternativeText: undefined,
+  externalLinkTitle: undefined,
+  isInline: false,
+  onClick: undefined,
+  showLaunchIcon: true,
+  target: '_self',
+  variant: 'default',
+};
+
+Hyperlink.displayName = 'Hyperlink';
 
 export default Hyperlink;
