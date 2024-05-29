@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import {
+  type BsPrefixRefForwardingComponent as ComponentWithAsProp,
+  type BsPrefixProps,
+} from 'react-bootstrap/esm/helpers';
 import { Launch } from '../../icons';
 import Icon from '../Icon';
 
 export const HYPER_LINK_EXTERNAL_LINK_ALT_TEXT = 'in a new tab';
 export const HYPER_LINK_EXTERNAL_LINK_TITLE = 'Opens in a new tab';
 
-interface Props extends Omit<React.ComponentPropsWithRef<'a'>, 'href' | 'target'> {
+interface HyperlinkProps extends BsPrefixProps, Omit<React.ComponentPropsWithRef<'a'>, 'href' | 'target'> {
   /** specifies the URL */
   destination: string;
   /** Content of the hyperlink */
@@ -27,7 +31,10 @@ interface Props extends Omit<React.ComponentPropsWithRef<'a'>, 'href' | 'target'
   target?: '_blank' | '_self';
 }
 
-const Hyperlink = React.forwardRef<HTMLAnchorElement, Props>(({
+type HyperlinkType = ComponentWithAsProp<'a', HyperlinkProps>;
+
+const Hyperlink: HyperlinkType = React.forwardRef<HTMLAnchorElement, HyperlinkProps>(({
+  as: Component = 'a',
   className,
   destination,
   children,
@@ -77,7 +84,7 @@ const Hyperlink = React.forwardRef<HTMLAnchorElement, Props>(({
   }
 
   return (
-    <a
+    <Component
       ref={ref}
       className={classNames(
         'pgn__hyperlink',
@@ -95,11 +102,12 @@ const Hyperlink = React.forwardRef<HTMLAnchorElement, Props>(({
     >
       {children}
       {externalLinkIcon}
-    </a>
+    </Component>
   );
 });
 
 Hyperlink.defaultProps = {
+  as: 'a',
   className: undefined,
   target: '_self',
   onClick: () => {},
@@ -111,6 +119,7 @@ Hyperlink.defaultProps = {
 };
 
 Hyperlink.propTypes = {
+  as: PropTypes.elementType,
   /** specifies the URL */
   destination: PropTypes.string.isRequired,
   /** Content of the hyperlink */
