@@ -119,6 +119,7 @@ Hyperlink.defaultProps = {
 };
 
 Hyperlink.propTypes = {
+  /** specifies the component element type to render for the hyperlink */
   as: PropTypes.elementType,
   /** specifies the URL */
   destination: PropTypes.string.isRequired,
