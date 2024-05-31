@@ -30,7 +30,7 @@ function PageEditBtn({ githubEditPath, isNavLink, ...props }: PageEditBtnProps) 
     <Button
       size="sm"
       as={Hyperlink}
-      destination={githubEditPath}
+      destination={githubEditPath ?? ''}
       variant="tertiary"
       onClick={handlePageEditBtnClick}
       target="_blank"
