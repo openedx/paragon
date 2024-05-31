@@ -61,7 +61,7 @@ exports[`<Button /> correct rendering renders with props iconAfter and size 1`] 
 >
   Button
   <span
-    className="pgn__icon btn-icon-after pgn__icon__sm"
+    className="pgn__icon pgn__icon__sm btn-icon-after"
   >
     <svg
       aria-hidden={true}
@@ -166,7 +166,7 @@ exports[`<Button /> correct rendering renders with props iconBefore and size 1`]
   type="button"
 >
   <span
-    className="pgn__icon btn-icon-before pgn__icon__md"
+    className="pgn__icon pgn__icon__md btn-icon-before"
   >
     <svg
       aria-hidden={true}
