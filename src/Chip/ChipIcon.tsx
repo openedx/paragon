@@ -7,7 +7,9 @@ import { STYLE_VARIANTS } from './constants';
 export type ChipIconProps = {
   className: string,
   src: React.ComponentType,
-  variant: typeof STYLE_VARIANTS[keyof typeof STYLE_VARIANTS],
+  onClick?: KeyboardEventHandler & MouseEventHandler,
+  alt?: string,
+  variant: string,
   disabled?: boolean,
 } & (
   // Either _both_ onClick and alt are provided, or neither is:
