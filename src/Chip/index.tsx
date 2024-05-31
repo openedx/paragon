@@ -1,5 +1,5 @@
 import React, { ForwardedRef, KeyboardEventHandler, MouseEventHandler } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { type Requireable } from 'prop-types';
 import classNames from 'classnames';
 // @ts-ignore
 import { requiredWhen } from '../utils/propTypes';
@@ -15,9 +15,9 @@ export interface IChip {
   onClick?: KeyboardEventHandler & MouseEventHandler,
   className?: string,
   variant?: string,
-  iconBefore?: React.ReactElement | Function,
+  iconBefore?: React.ComponentType,
   iconBeforeAlt?: string,
-  iconAfter?: React.ReactElement | Function,
+  iconAfter?: React.ComponentType,
   iconAfterAlt?: string,
   onIconBeforeClick?: KeyboardEventHandler & MouseEventHandler,
   onIconAfterClick?: KeyboardEventHandler & MouseEventHandler,
@@ -111,7 +111,7 @@ Chip.propTypes = {
    *
    * `import { Check } from '@openedx/paragon/icons';`
    */
-  iconBefore: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  iconBefore: PropTypes.elementType as Requireable<React.ComponentType>,
   /** Specifies icon alt text. */
   iconBeforeAlt: requiredWhen(PropTypes.string, ['iconBefore', 'onIconBeforeClick']),
   /** A click handler for the `Chip` icon before. */
@@ -122,7 +122,7 @@ Chip.propTypes = {
    *
    * `import { Check } from '@openedx/paragon/icons';`
    */
-  iconAfter: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  iconAfter: PropTypes.elementType as Requireable<React.ComponentType>,
   /** Specifies icon alt text. */
   iconAfterAlt: requiredWhen(PropTypes.string, ['iconAfter', 'onIconAfterClick']),
   /** A click handler for the `Chip` icon after. */
