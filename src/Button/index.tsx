@@ -1,32 +1,57 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { type Requireable } from 'prop-types';
 import classNames from 'classnames';
-import BaseButton from 'react-bootstrap/Button';
-import BaseButtonGroup from 'react-bootstrap/ButtonGroup';
-import BaseButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import BaseButton, { type ButtonProps as BaseButtonProps } from 'react-bootstrap/Button';
+import BaseButtonGroup, { type ButtonGroupProps as BaseButtonGroupProps } from 'react-bootstrap/ButtonGroup';
+import BaseButtonToolbar, { type ButtonToolbarProps } from 'react-bootstrap/ButtonToolbar';
+import type { ComponentWithAsProp } from '../utils/types/bootstrap';
+// @ts-ignore - we're not going to bother adding types for the deprecated button
 import ButtonDeprecated from './deprecated';
 
 import Icon from '../Icon';
 
-const Button = React.forwardRef(({
+interface ButtonProps extends Omit<BaseButtonProps, 'size'> {
+  /**
+   * An icon component to render. Example:
+   * ```
+   * import { Close } from '@openedx/paragon/icons';
+   * <Button iconBefore={Close}>Close</Button>
+   * ```
+   */
+  iconBefore?: React.ComponentType;
+  /**
+   * An icon component to render. Example:
+   * ```
+   * import { Close } from '@openedx/paragon/icons';
+   * <Button iconAfter={Close}>Close</Button>
+   * ```
+   */
+  iconAfter?: React.ComponentType;
+  size?: 'sm' | 'md' | 'lg' | 'inline';
+}
+
+type ButtonType = ComponentWithAsProp<'button', ButtonProps> & { Deprecated?: any };
+
+const Button: ButtonType = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   children,
   iconAfter,
   iconBefore,
+  size,
   ...props
 }, ref) => (
   <BaseButton
+    size={size as 'sm' | 'lg' | undefined} // Bootstrap's <Button> types do not allow 'md' or 'inline', but we do.
     {...props}
     className={classNames(props.className)}
     ref={ref}
   >
-    {iconBefore && <Icon className="btn-icon-before" size={props.size} src={iconBefore} />}
+    {iconBefore && <Icon className="btn-icon-before" size={size} src={iconBefore} />}
     {children}
-    {iconAfter && <Icon className="btn-icon-after" size={props.size} src={iconAfter} />}
+    {iconAfter && <Icon className="btn-icon-after" size={size} src={iconAfter} />}
   </BaseButton>
 ));
 
 Button.propTypes = {
-  ...Button.propTypes,
   /** Specifies class name to apply to the button */
   className: PropTypes.string,
   /** Disables the Button, preventing mouse events, even if the underlying component is an `<a>` element */
@@ -52,10 +77,13 @@ Button.propTypes = {
   variant: PropTypes.string,
   /** An icon component to render.
   * Example import of a Paragon icon component: `import { Check } from '@openedx/paragon/icons';` */
-  iconBefore: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
+  iconBefore: PropTypes.elementType as Requireable<React.ComponentType>,
   /** An icon component to render.
   * Example import of a Paragon icon component: `import { Check } from '@openedx/paragon/icons';` */
-  iconAfter: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
+  iconAfter: PropTypes.elementType as Requireable<React.ComponentType>,
+  // The 'as' type casting above is required for TypeScript checking, because the 'PropTypes.elementType' type normally
+  // allows strings as a value (for use cases like 'div') but we don't support that for <Icon />/iconBefore/iconAfter.
+  // The React TypeScript type definitions are more specific (React.ComponentType vs React.ElementType).
 };
 
 Button.defaultProps = {
@@ -69,12 +97,21 @@ Button.defaultProps = {
 
 Button.Deprecated = ButtonDeprecated;
 
-function ButtonGroup(props) {
-  return <BaseButtonGroup {...props} />;
+// We could just re-export 'ButtonGroup' and 'ButtonToolbar', but we currently
+// override them to add propTypes validation at runtime, since most Paragon
+// consumers aren't using TypeScript yet. We also force ButtonGroup's 'size'
+// prop to accept our custom values of 'md' and 'inline' which are used in
+// Paragon but not used in the base Bootstrap classes.
+
+interface ButtonGroupProps extends Omit<BaseButtonGroupProps, 'size'> {
+  size?: 'sm' | 'md' | 'lg' | 'inline';
 }
-function ButtonToolbar(props) {
-  return <BaseButtonToolbar {...props} />;
-}
+
+const ButtonGroup: ComponentWithAsProp<'div', ButtonGroupProps> = (
+  React.forwardRef<HTMLButtonElement, ButtonGroupProps>(({ size, ...props }, ref) => (
+    <BaseButtonGroup size={size as 'sm' | 'lg'} {...props} ref={ref} />
+  ))
+);
 
 ButtonGroup.propTypes = {
   /** Specifies element type for this component. */
@@ -82,7 +119,7 @@ ButtonGroup.propTypes = {
   /** An ARIA role describing the button group. */
   role: PropTypes.string,
   /** Specifies the size for all Buttons in the group. */
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg', 'inline']),
   /** Display as a button toggle group. */
   toggle: PropTypes.bool,
   /** Specifies if the set of Buttons should appear vertically stacked. */
@@ -99,6 +136,12 @@ ButtonGroup.defaultProps = {
   bsPrefix: 'btn-group',
   size: 'md',
 };
+
+const ButtonToolbar: ComponentWithAsProp<'div', ButtonToolbarProps> = (
+  React.forwardRef<HTMLButtonElement, ButtonToolbarProps>((props, ref) => (
+    <BaseButtonToolbar {...props} ref={ref} />
+  ))
+);
 
 ButtonToolbar.propTypes = {
   /** An ARIA role describing the button group. */
