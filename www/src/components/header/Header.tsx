@@ -19,7 +19,7 @@ export interface IHeaderProps {
 function Header({ siteTitle, showMinimizedTitle }: IHeaderProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isOpen, , close, toggle] = useToggle(false);
-  const [target, setTarget] = useState(null);
+  const [target, setTarget] = useState<HTMLButtonElement | null>(null);
   const { openSettings } = useContext(SettingsContext);
   const isMobile = useMediaQuery({ maxWidth: breakpoints.small.maxWidth });
 
