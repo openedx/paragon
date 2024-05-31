@@ -84,13 +84,13 @@ exports[`<Button /> correct rendering renders with props iconAfter and size 1`] 
 
 exports[`<Button /> correct rendering renders with props iconAfter and size 1`] = `
 <button
-  className="btn btn-primary btn-md"
+  className="btn btn-primary btn-sm"
   disabled={false}
   type="button"
 >
   Button
   <span
-    className="pgn__icon pgn__icon__md btn-icon-after"
+    className="pgn__icon pgn__icon__sm btn-icon-after"
   >
     <svg
       aria-hidden={true}
