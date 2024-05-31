@@ -74,7 +74,7 @@ Icon.propTypes = {
    * An icon component to render.
    * Example import of a Paragon icon component: `import { Check } from '@openedx/paragon/icons';`
    */
-  src: PropTypes.oneOfType([PropTypes.element, PropTypes.elementType]),
+  src: PropTypes.elementType,
   /** HTML element attributes to pass through to the underlying svg element */
   svgAttrs: PropTypes.shape({
     'aria-label': PropTypes.string,

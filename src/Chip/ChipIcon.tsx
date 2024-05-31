@@ -8,7 +8,7 @@ import { STYLE_VARIANTS } from './constants';
 
 export interface ChipIconProps {
   className: string,
-  src: React.ReactElement | Function,
+  src: React.ComponentType,
   onClick?: KeyboardEventHandler & MouseEventHandler,
   alt?: string,
   variant: string,
