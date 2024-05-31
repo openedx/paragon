@@ -5,6 +5,7 @@
 // Things that have types
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 export { default as Bubble } from './Bubble';
+export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
@@ -21,7 +22,6 @@ export const Avatar: any; // from './Avatar';
 export const AvatarButton: any; // from './AvatarButton';
 export const Badge: any; // from './Badge';
 export const Breadcrumb: any; // from './Breadcrumb';
-export const Button: any, ButtonGroup: any, ButtonToolbar: any; // from './Button';
 export const
   Card: any,
   CardColumns: any,
