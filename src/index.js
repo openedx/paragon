@@ -1,10 +1,11 @@
-// To keep this file in sync with the .d.ts file, it's in the same order
-// and each line number is the same
+// Keep this file in sync with the .d.ts file (manually). It's in the same order
+// and each line number is the same, to make it easier.
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that have types
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 export { default as Bubble } from './Bubble';
+export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
@@ -21,7 +22,6 @@ export { default as Avatar } from './Avatar';
 export { default as AvatarButton } from './AvatarButton';
 export { default as Badge } from './Badge';
 export { default as Breadcrumb } from './Breadcrumb';
-export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export {
   default as Card,
   CardColumns,
