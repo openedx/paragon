@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "config:base",
+    ":preserveSemverRanges"
+  ],
+  "patch": {
+    "automerge": true
+  },
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["@edx", "@openedx"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ],
+  "rebaseStalePrs": true
+}
