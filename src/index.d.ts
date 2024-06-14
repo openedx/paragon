@@ -10,6 +10,7 @@ export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as Icon } from './Icon';
+export { default as Overlay, OverlayTrigger } from './Overlay';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
@@ -106,7 +107,6 @@ export const
   NavLink: any;
 // from './Nav';
 export const Navbar: any, NavbarBrand: any, NAVBAR_LABEL: string; // from './Navbar';
-export const Overlay: any, OverlayTrigger: any; // from './Overlay';
 export const PageBanner: any, PAGE_BANNER_DISMISS_ALT_TEXT: string; // from './PageBanner';
 export const
   Pagination: any,
