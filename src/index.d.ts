@@ -11,6 +11,7 @@ export { default as ChipCarousel } from './ChipCarousel';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as Overlay, OverlayTrigger } from './Overlay';
+export { default as Tooltip } from './Tooltip';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
@@ -145,7 +146,6 @@ export const
 // from './Tabs';
 export const TextArea: any; // from './TextArea';
 export const Toast: any, TOAST_CLOSE_LABEL_TEXT: string, TOAST_DELAY: number; // from './Toast';
-export const Tooltip: any; // from './Tooltip';
 export const ValidationFormGroup: any; // from './ValidationFormGroup';
 export const TransitionReplace: any; // from './TransitionReplace';
 export const ValidationMessage: any; // from './ValidationMessage';
