@@ -198,6 +198,9 @@
     "dependent-usage-analyzer"
   ],
   "overrides": {
-    "@testing-library/dom": "9.3.3"
+    "@testing-library/dom": "9.3.3",
+    "gatsby": {
+      "react-server-dom-webpack": "0.0.1"
+    }
   }
 }
