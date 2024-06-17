@@ -1,6 +1,7 @@
 /**
  * This module creates and exports custom StyleDictionary instance for Paragon.
  */
+const toml = require('js-toml');
 const StyleDictionary = require('style-dictionary');
 const chroma = require('chroma-js');
 const { colorYiq, darken, lighten } = require('./sass-helpers');
@@ -211,6 +212,11 @@ StyleDictionary.registerFileHeader({
 StyleDictionary.registerFilter({
   name: 'isSource',
   matcher: token => token?.isSource === true,
+});
+
+StyleDictionary.registerParser({
+  pattern: /\.toml$/,
+  parse: ({ contents }) => toml.load(contents),
 });
 
 module.exports = {
