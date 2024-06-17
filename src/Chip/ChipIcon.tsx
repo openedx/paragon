@@ -10,7 +10,7 @@ export interface ChipIconProps {
   className: string,
   src: React.ComponentType,
   onClick?: KeyboardEventHandler & MouseEventHandler,
-  alt?: string,
+  alt: string,
   variant: string,
   disabled?: boolean,
 }

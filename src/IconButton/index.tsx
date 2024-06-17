@@ -1,12 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { type Placement } from 'react-bootstrap/Overlay';
+
 import { OverlayTrigger } from '../Overlay';
 import Tooltip from '../Tooltip';
+import Icon from '../Icon';
 
-const IconButton = React.forwardRef(({
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {
+  iconAs?: typeof Icon | typeof FontAwesomeIcon,
+  /** Additional CSS class[es] to apply to this button */
+  className?: string;
+  /** Alt text for your icon. For best practice, avoid using alt text to describe
+   * the image in the `IconButton`. Instead, we recommend describing the function
+   * of the button. */
+  alt: string;
+  /** Changes icon styles for dark background */
+  invertColors?: boolean;
+  /** An icon component to render. Example import of a Paragon icon component:
+   * `import { Check } from '@openedx/paragon/icons';`
+   * */
+  // Note: React.ComponentType is what we want here. React.ElementType would allow some element type strings like "div",
+  // but we only want to allow components like 'Add' (a specific icon component function/class)
+  src?: React.ComponentType;
+  /** Extra class names that will be added to the icon */
+  iconClassNames?: string;
+  /** Click handler for the button */
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  /** whether to show the `IconButton` in an active state, whose styling is distinct from default state */
+  isActive?: boolean;
+  /** @deprecated Using FontAwesome icons is deprecated. Instead, pass iconAs={Icon} src={...} */
+  icon?: { prefix?: string; iconName?: string, icon?: any[] },
+  /** Type of button (uses Bootstrap options) */
+  variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'light' | 'dark' | 'black' | 'brand';
+  /** size of button to render */
+  size?: 'sm' | 'md' | 'inline';
+  /** no children */
+  children?: never;
+}
+
+const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
   className,
   alt,
   invertColors,
@@ -18,6 +52,7 @@ const IconButton = React.forwardRef(({
   variant,
   iconAs,
   isActive,
+  children, // unused, just here because we don't want it to be part of 'attrs'
   ...attrs
 }, ref) => {
   const invert = invertColors ? 'inverse-' : '';
@@ -50,7 +85,7 @@ const IconButton = React.forwardRef(({
       <span className="btn-icon__icon-container">
         <IconComponent
           className={classNames('btn-icon__icon', iconClassNames)}
-          icon={icon}
+          icon={icon as any}
           src={src}
         />
       </span>
@@ -60,7 +95,7 @@ const IconButton = React.forwardRef(({
 
 IconButton.defaultProps = {
   iconAs: undefined,
-  src: null,
+  src: undefined,
   icon: undefined,
   iconClassNames: undefined,
   className: undefined,
@@ -69,6 +104,7 @@ IconButton.defaultProps = {
   size: 'md',
   onClick: () => {},
   isActive: false,
+  children: undefined,
 };
 
 IconButton.propTypes = {
@@ -76,11 +112,11 @@ IconButton.propTypes = {
   className: PropTypes.string,
   /** Component that renders the icon, currently defaults to `FontAwesomeIcon`,
    *  but is going to be deprecated soon, please use Paragon's icons instead. */
-  iconAs: PropTypes.elementType,
+  iconAs: PropTypes.elementType as any,
   /** An icon component to render. Example import of a Paragon icon component:
-   * `import { Check } from '@openedx/paragon/dist/icon';`
+   * `import { Check } from '@openedx/paragon/icons';`
    * */
-  src: PropTypes.oneOfType([PropTypes.element, PropTypes.elementType]),
+  src: PropTypes.elementType as any,
   /** Alt text for your icon. For best practice, avoid using alt text to describe
    * the image in the `IconButton`. Instead, we recommend describing the function
    * of the button. */
@@ -93,7 +129,7 @@ IconButton.propTypes = {
     iconName: PropTypes.string,
     // eslint-disable-next-line react/forbid-prop-types
     icon: PropTypes.array,
-  }),
+  }) as any,
   /** Extra class names that will be added to the icon */
   iconClassNames: PropTypes.string,
   /** Click handler for the button */
@@ -106,38 +142,40 @@ IconButton.propTypes = {
   isActive: PropTypes.bool,
 };
 
+interface PropsWithTooltip extends Props {
+  /** choose from https://popper.js.org/docs/v2/constructors/#options */
+  tooltipPlacement: Placement,
+  /** any content to pass to tooltip content area */
+  tooltipContent: React.ReactNode,
+}
+
 /**
- *
- * @param { object } args Arguments
- * @param { string } args.tooltipPlacement choose from https://popper.js.org/docs/v2/constructors/#options
- * @param { React.Component } args.tooltipContent any content to pass to tooltip content area
- * @returns { IconButton } a button wrapped in overlaytrigger
+ * An icon button wrapped in overlaytrigger to display a tooltip.
  */
 function IconButtonWithTooltip({
-  tooltipPlacement, tooltipContent, variant, invertColors, ...props
-}) {
-  const invert = invertColors ? 'inverse-' : '';
+  tooltipPlacement, tooltipContent, ...props
+}: PropsWithTooltip) {
+  const invert = props.invertColors ? 'inverse-' : '';
   return (
     <OverlayTrigger
       placement={tooltipPlacement}
       overlay={(
         <Tooltip
           id={`iconbutton-tooltip-${tooltipPlacement}`}
-          variant={invert ? 'light' : ''}
+          variant={invert ? 'light' : undefined}
         >
           {tooltipContent}
         </Tooltip>
       )}
     >
-      <IconButton variant={variant} invertColors={invertColors} {...props} />
+      <IconButton {...props} />
     </OverlayTrigger>
   );
 }
 
 IconButtonWithTooltip.defaultProps = {
+  ...IconButton.defaultProps,
   tooltipPlacement: 'top',
-  variant: 'primary',
-  invertColors: false,
 };
 
 IconButtonWithTooltip.propTypes = {
@@ -151,7 +189,9 @@ IconButtonWithTooltip.propTypes = {
   invertColors: PropTypes.bool,
 };
 
-IconButton.IconButtonWithTooltip = IconButtonWithTooltip;
+(IconButton as any).IconButtonWithTooltip = IconButtonWithTooltip;
 
-export default IconButton;
+export default IconButton as typeof IconButton & {
+  IconButtonWithTooltip: typeof IconButtonWithTooltip,
+};
 export { IconButtonWithTooltip };
