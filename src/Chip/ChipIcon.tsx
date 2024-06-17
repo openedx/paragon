@@ -1,19 +1,19 @@
 import React, { KeyboardEventHandler, MouseEventHandler } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
-// @ts-ignore
 import IconButton from '../IconButton';
-// @ts-ignore
 import { STYLE_VARIANTS } from './constants';
 
-export interface ChipIconProps {
+export type ChipIconProps = {
   className: string,
   src: React.ComponentType,
-  onClick?: KeyboardEventHandler & MouseEventHandler,
-  alt: string,
   variant: string,
   disabled?: boolean,
-}
+} & (
+  // Either _both_ onClick and alt are provided, or neither is:
+  | { onClick: KeyboardEventHandler & MouseEventHandler, alt: string }
+  | { onClick?: undefined, alt?: undefined }
+);
 
 function ChipIcon({
   className, src, onClick, alt, variant, disabled,
