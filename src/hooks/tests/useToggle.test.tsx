@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useToggle } from '../..';
+import { ToggleHandlers } from '../useToggle';
 
 const TOGGLE_IS_ON = 'on';
 const TOGGLE_IS_OFF = 'off';
@@ -19,7 +20,7 @@ const resetHandlerMocks = () => {
 };
 
 // eslint-disable-next-line react/prop-types
-function FakeComponent({ defaultIsOn, handlers }) {
+function FakeComponent({ defaultIsOn, handlers }: { defaultIsOn: boolean, handlers: ToggleHandlers }) {
   const [isOn, setOn, setOff, toggle] = useToggle(defaultIsOn, handlers);
 
   return (

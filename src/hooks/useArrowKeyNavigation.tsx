@@ -4,13 +4,21 @@ import { useRef, useEffect } from 'react';
  * A React hook to enable arrow key navigation on a component.
  */
 
-function handleEnter({ event, currentIndex, activeElement }) {
+function handleEnter(
+  { event, currentIndex, activeElement }: { event: KeyboardEvent, currentIndex: number, activeElement: HTMLElement },
+) {
   if (currentIndex === -1) { return; }
   activeElement.click();
   event.preventDefault();
 }
 
-function handleArrowKey({ event, currentIndex, availableElements }) {
+function handleArrowKey(
+  { event, currentIndex, availableElements }: {
+    event: KeyboardEvent,
+    currentIndex: number,
+    availableElements: NodeListOf<HTMLElement>,
+  },
+) {
   // If the focus isn't in the container, focus on the first thing
   if (currentIndex === -1) { availableElements[0].focus(); }
 
@@ -44,7 +52,7 @@ function handleEvents({
   ignoredKeys = [],
   parentNode,
   selectors = 'a,button,input',
-}) {
+}: { event: KeyboardEvent, ignoredKeys?: string[], parentNode: HTMLElement | undefined, selectors?: string }) {
   if (!parentNode) { return; }
 
   const { key } = event;
@@ -60,7 +68,7 @@ function handleEvents({
   if (!parentNode.contains(activeElement)) { return; }
 
   // Get the list of elements we're allowed to scroll through
-  const availableElements = parentNode.querySelectorAll(selectors);
+  const availableElements = parentNode.querySelectorAll<HTMLElement>(selectors);
 
   // No elements are available to loop through.
   if (!availableElements.length) { return; }
@@ -70,18 +78,24 @@ function handleEvents({
     (availableElement) => availableElement === activeElement,
   );
 
-  if (key === 'Enter') {
-    handleEnter({ event, currentIndex, activeElement });
+  if (key === 'Enter' && activeElement) {
+    handleEnter({ event, currentIndex, activeElement: activeElement as HTMLElement });
   }
   handleArrowKey({ event, currentIndex, availableElements });
 }
 
-export default function useArrowKeyNavigation(props) {
-  const { selectors, ignoredKeys } = props || {};
-  const parentNode = useRef();
+export interface ArrowKeyNavProps {
+  /** e.g. 'a,button,input' */
+  selectors?: string;
+  ignoredKeys?: string[];
+}
+
+export default function useArrowKeyNavigation(props: ArrowKeyNavProps = {}) {
+  const { selectors, ignoredKeys } = props;
+  const parentNode = useRef<HTMLElement>();
 
   useEffect(() => {
-    const eventHandler = (event) => {
+    const eventHandler = (event: KeyboardEvent) => {
       handleEvents({
         event, ignoredKeys, parentNode: parentNode.current, selectors,
       });
