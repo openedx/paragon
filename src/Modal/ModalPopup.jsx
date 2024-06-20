@@ -34,6 +34,14 @@ function ModalPopup({
     },
   ];
 
+  const handleOnClickOutside = (e) => {
+    if (e.type === 'touchstart') {
+      return;
+    }
+
+    onClose();
+  };
+
   return (
     <ModalContextProvider onClose={onClose} isOpen={isOpen} isBlocking={isBlocking}>
       <RootComponent>
@@ -47,7 +55,7 @@ function ModalPopup({
             scrollLock={false}
             enabled={isOpen}
             onEscapeKey={onClose}
-            onClickOutside={onClose}
+            onClickOutside={handleOnClickOutside}
           >
             {isOpen && (
               <div className="pgn__modal-popup__tooltip">
