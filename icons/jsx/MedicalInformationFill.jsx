@@ -1,0 +1,17 @@
+import * as React from "react";
+const SvgMedicalInformationFill = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    viewBox="0 -960 960 960"
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M290-240h60v-90h90v-60h-90v-90h-60v90h-90v60h90v90Zm230-150h240v-40H520v40Zm0 120h160v-40H520v40ZM80-80v-600h310v-200h180v200h310v600H80Zm370-510h60v-230h-60v230Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+export default SvgMedicalInformationFill;

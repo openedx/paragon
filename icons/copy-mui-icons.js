@@ -12,12 +12,24 @@ const CONFLICTING_ICONS = [
 ];
 
 /*
-  Copies all sharp svg mui icons from @material-icons package to svg directory skipping existing ones.
+  Copies all sharp svg mui icons from @material-design-icons package to svg directory skipping existing ones.
  */
-const muiIcons = fs.readdirSync('../node_modules/@material-icons/svg/svg/');
+const muiIcons = fs.readdirSync('../node_modules/@material-design-icons/svg/sharp');
 muiIcons.forEach((iconName) => {
-  if (!fs.existsSync(`./svg/${iconName}.svg`) && !fs.existsSync(`./svg/${iconName.replaceAll('-', '').replaceAll('_', '')}.svg`)) {
+  if (!fs.existsSync(`./svg/${iconName}`) && !fs.existsSync(`./svg/${iconName.replaceAll('-', '').replaceAll('_', '')}`)) {
     const resolvedName = CONFLICTING_ICONS.includes(iconName) ? `${iconName}_icon` : iconName;
-    fs.copyFileSync(`../node_modules/@material-icons/svg/svg/${iconName}/sharp.svg`, `./svg/${resolvedName}.svg`);
+    fs.copyFileSync(`../node_modules/@material-design-icons/svg/sharp/${iconName}`, `./svg/${resolvedName}`);
   }
 });
+
+/*
+  Copies all sharp svg mui symbols from @material-symbols package to svg directory skipping existing ones.
+ */
+  const muiSymbols = fs.readdirSync('../node_modules/@material-symbols/svg-400/sharp');
+  muiSymbols.forEach((iconName) => {
+    if (!fs.existsSync(`./svg/${iconName}`) && !fs.existsSync(`./svg/${iconName.replaceAll('-', '').replaceAll('_', '')}`)) {
+      const resolvedName = CONFLICTING_ICONS.includes(iconName) ? `${iconName}_icon` : iconName;
+      fs.copyFileSync(`../node_modules/@material-symbols/svg-400/sharp/${iconName}`, `./svg/${resolvedName}`);
+    }
+  });
+  

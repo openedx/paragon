@@ -50,9 +50,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build --prefix-paths && npm run build-themes && playroom build",
+    "build": "NODE_OPTIONS=--max-old-space-size=8192 gatsby build --prefix-paths && npm run build-themes && playroom build",
     "clean": "gatsby clean",
-    "develop": "npm run build-themes && gatsby develop",
+    "develop": "npm run build-themes && NODE_OPTIONS=--max-old-space-size=8192 gatsby develop",
     "develop:with-theme": "npm run develop",
     "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx .",
     "start": "npm run develop",
