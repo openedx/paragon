@@ -1,390 +1,1150 @@
-## [20.18.1](https://github.com/openedx/paragon/compare/v20.18.0...v20.18.1) (2022-11-10)
-
+## [v21.1.6](https://github.com/openedx/paragon/compare/v21.1.5...v21.1.6) (2023-09-07)
 
 ### Bug Fixes
 
-* added translations English strings in FormAutosuggest component ([#1711](https://github.com/openedx/paragon/issues/1711)) ([782cfb8](https://github.com/openedx/paragon/commit/782cfb8147aef728a85eeee8c91551dd0eebf4b4))
-* fixed close button positioning in modal components ([#1733](https://github.com/openedx/paragon/issues/1733)) ([9d24187](https://github.com/openedx/paragon/commit/9d24187f5ee02159caed517c238dc8e4b2c704c9))
-* fixed onToggle prop ([#1719](https://github.com/openedx/paragon/issues/1719)) ([fe21655](https://github.com/openedx/paragon/commit/fe216550f3b5326304d1230eb5ee3d6119ee9bb7))
-* hooks are displayed in production ([#1715](https://github.com/openedx/paragon/issues/1715)) ([d726ad1](https://github.com/openedx/paragon/commit/d726ad10ad5e176ae6d4a83ddc4a645a9b08b024))
+*  update SearchField's background color to be white ([#2597](https://github.com/openedx/paragon/issues/2597)) ([a0e6f3cd2](https://github.com/openedx/paragon/commit/a0e6f3cd24f59960f8437f70f2e9cdfd3d8e5e7a)) 
 
-# [20.18.0](https://github.com/openedx/paragon/compare/v20.17.0...v20.18.0) (2022-10-26)
 
+
+## [v21.1.5](https://github.com/openedx/paragon/compare/v21.1.4...v21.1.5) (2023-09-06)
+
+### Bug Fixes
+
+*  remove visual glitch for DataTable loading state ([#2599](https://github.com/openedx/paragon/issues/2599)) ([e1994a0fc](https://github.com/openedx/paragon/commit/e1994a0fce11b76d5448215c62900fc9400a8018)) 
+
+
+
+## [v21.1.4](https://github.com/openedx/paragon/compare/v21.1.3...v21.1.4) (2023-09-01)
+
+### Bug Fixes
+
+*  use `Form.Checkbox` instead of default checkboxes in DataTable filters ([#2555](https://github.com/openedx/paragon/issues/2555)) ([d07827d9a](https://github.com/openedx/paragon/commit/d07827d9a0ff8f01395a39f571daed0b8ad6f6db)) 
+
+
+
+## [v21.1.3](https://github.com/openedx/paragon/compare/v21.1.2...v21.1.3) (2023-08-09)
+
+### Bug Fixes
+
+*  disable browser autocomplete and edit dropdown items elements ([93bf239d2](https://github.com/openedx/paragon/commit/93bf239d2e354f188ebf7349b0389a89d5d87a90)) 
+
+
+
+## [v21.1.2](https://github.com/openedx/paragon/compare/v21.1.1...v21.1.2) (2023-08-18)
+
+
+
+## [v21.1.1](https://github.com/openedx/paragon/compare/v21.1.0...v21.1.1) (2023-08-18)
+
+### Bug Fixes
+
+*  move install-theme.js to lib directory ([#2560](https://github.com/openedx/paragon/issues/2560)) ([4ec284a05](https://github.com/openedx/paragon/commit/4ec284a059c68d1b6c5b32bfe1d476eee7e3a3b8)) 
+*  [BD-46] skeleton.css for both dev and prod ([#2531](https://github.com/openedx/paragon/issues/2531)) ([7e96a0a6b](https://github.com/openedx/paragon/commit/7e96a0a6bba91f3a00a85d3fd40a7c3afb26b4d1)) 
+
+
+
+## [v21.1.0](https://github.com/openedx/paragon/compare/v21.0.1...v21.1.0) (2023-08-18)
 
 ### Features
 
-* add creative common icons ([#1716](https://github.com/openedx/paragon/issues/1716)) ([3fac8c4](https://github.com/openedx/paragon/commit/3fac8c4e27b19a26997ccbf5c35ca5ae7e8cf247))
-
-# [20.17.0](https://github.com/openedx/paragon/compare/v20.16.0...v20.17.0) (2022-10-21)
-
-
-### Features
-
-* FormAutosuggest component ([#1586](https://github.com/openedx/paragon/issues/1586)) ([7fbf86d](https://github.com/openedx/paragon/commit/7fbf86de5110bdf3e26a17c0848337f8be0b2b23))
-
-# [20.16.0](https://github.com/openedx/paragon/compare/v20.15.0...v20.16.0) (2022-10-21)
-
-
-### Features
-
-* [BD-46] add Layout component ([#1659](https://github.com/openedx/paragon/issues/1659)) ([f8cddda](https://github.com/openedx/paragon/commit/f8cddda5a96a6fed24fcca97a8d641501ebb7865))
-
-# [20.15.0](https://github.com/openedx/paragon/compare/v20.14.0...v20.15.0) (2022-10-19)
-
-
-### Features
-
-* added accentB background for page banner ([#1688](https://github.com/openedx/paragon/issues/1688)) ([0942daa](https://github.com/openedx/paragon/commit/0942daa1f23ae5880c6e8278f97d4c777f60ed08))
-
-# [20.14.0](https://github.com/openedx/paragon/compare/v20.13.0...v20.14.0) (2022-10-19)
-
-
-### Features
-
-* Added fallback image src props to Card component ([#1682](https://github.com/openedx/paragon/issues/1682)) ([c0a1f6c](https://github.com/openedx/paragon/commit/c0a1f6cd80b4aaf66cbff2af35770f9d0901fc2c))
-
-# [20.13.0](https://github.com/openedx/paragon/compare/v20.12.1...v20.13.0) (2022-10-07)
-
+*  maximum selectable rows on the Datatable ([#2451](https://github.com/openedx/paragon/issues/2451)) ([7194fba89](https://github.com/openedx/paragon/commit/7194fba8982b9c3f1b7866ad07aee2f631fc5e1e))
+*  [BD-46] add paragon-cli ([#2460](https://github.com/openedx/paragon/issues/2460)) ([33a7c7441](https://github.com/openedx/paragon/commit/33a7c7441529a0c970f4b9c30cd6aefe74b89aa9))
 
 ### Bug Fixes
 
-* remove body width jumping on open ([#1644](https://github.com/openedx/paragon/issues/1644)) ([0d1f4d7](https://github.com/openedx/paragon/commit/0d1f4d73f6c4a8435b9eb3ea3e66febfb0f5ba0f))
+*  filtered dropdown items by display value instead of event target ([#2547](https://github.com/openedx/paragon/issues/2547)) ([cac6984b0](https://github.com/openedx/paragon/commit/cac6984b07b4cf5e34d87cb4a226f9a888af9e21)) 
 
 
-### Features
 
-* truncate v2 supports inner tags ([#1642](https://github.com/openedx/paragon/issues/1642)) ([8aa2fa6](https://github.com/openedx/paragon/commit/8aa2fa66ccfc60857faf580a8dfc8007eaa9efa3))
-
-## [20.12.1](https://github.com/openedx/paragon/compare/v20.12.0...v20.12.1) (2022-09-30)
+## [v21.0.1](https://github.com/openedx/paragon/compare/v21.0.0...v21.0.1) (2023-08-17)
 
 
-### Bug Fixes
 
-* floating label expand beyond input field ([#1605](https://github.com/openedx/paragon/issues/1605)) ([2f89035](https://github.com/openedx/paragon/commit/2f89035e741858b2c97e1b2542a137c1b116a1a8))
-* update styles for Chip ([#1606](https://github.com/openedx/paragon/issues/1606)) ([df4583f](https://github.com/openedx/paragon/commit/df4583fd5fd6d056ddd8be2c11b1ad87733d353e))
-
-# [20.12.0](https://github.com/openedx/paragon/compare/v20.11.1...v20.12.0) (2022-09-21)
-
-
-### Features
-
-* dark mode variant for dropdown ([#1613](https://github.com/openedx/paragon/issues/1613)) ([7133e21](https://github.com/openedx/paragon/commit/7133e212c50826681d4ab3acc09e0a020c853909))
-
-## [20.11.1](https://github.com/openedx/paragon/compare/v20.11.0...v20.11.1) (2022-09-07)
-
+## [v21.0.0](https://github.com/openedx/paragon/compare/v20.46.2...v21.0.0) (2023-08-15)
 
 ### Bug Fixes
 
-* handle non-Tab component ([#1604](https://github.com/openedx/paragon/issues/1604)) ([7ab6207](https://github.com/openedx/paragon/commit/7ab6207623ae0552b037f7a7eabc694f25338932))
-
-# [20.11.0](https://github.com/openedx/paragon/compare/v20.10.2...v20.11.0) (2022-09-02)
-
-
-### Features
-
-* update Chip ([#1574](https://github.com/openedx/paragon/issues/1574)) ([79d4744](https://github.com/openedx/paragon/commit/79d4744ed0be64daf5427c822c21ef8250c5cce3))
-
-## [20.10.2](https://github.com/openedx/paragon/compare/v20.10.1...v20.10.2) (2022-09-02)
-
-
-### Bug Fixes
-
-* fixed MarketingModal/AlertModal/ModalDialog scroll ([#1594](https://github.com/openedx/paragon/issues/1594)) ([952c1de](https://github.com/openedx/paragon/commit/952c1de22b9681d99827b47bbc643fcd8d24a7db))
-
-## [20.10.1](https://github.com/openedx/paragon/compare/v20.10.0...v20.10.1) (2022-08-26)
-
-
-### Bug Fixes
-
-* release es-419 Spanish language translations ([#1589](https://github.com/openedx/paragon/issues/1589)) ([f7cf489](https://github.com/openedx/paragon/commit/f7cf489f55a56b944dec967a881a789bbdb850c4))
-
-# [20.10.0](https://github.com/openedx/paragon/compare/v20.9.3...v20.10.0) (2022-08-19)
-
-
-### Features
-
-* [BD-46] add Truncate component ([#1472](https://github.com/openedx/paragon/issues/1472)) ([da3a247](https://github.com/openedx/paragon/commit/da3a247db3aa6e0358430bd2fd7daabaf130a737))
-
-## [20.9.3](https://github.com/openedx/paragon/compare/v20.9.2...v20.9.3) (2022-08-18)
-
-
-### Bug Fixes
-
-* correct missing interpolation ([#1568](https://github.com/openedx/paragon/issues/1568)) ([88fe9fd](https://github.com/openedx/paragon/commit/88fe9fd73da90ab4b5e71807875324702b3e9148))
-
-## [20.9.2](https://github.com/openedx/paragon/compare/v20.9.1...v20.9.2) (2022-08-16)
-
-
-### Bug Fixes
-
-* bootstrap update with additional variable ([#1562](https://github.com/openedx/paragon/issues/1562)) ([ae1f06f](https://github.com/openedx/paragon/commit/ae1f06f29992d955ca1772a6e8937841b4904baf))
-
-## [20.9.1](https://github.com/openedx/paragon/compare/v20.9.0...v20.9.1) (2022-08-12)
-
-
-### Bug Fixes
-
-* added support for making `Card` a hyperlink ([#1478](https://github.com/openedx/paragon/issues/1478)) ([f0a0768](https://github.com/openedx/paragon/commit/f0a07687e6608fadf6b7eab0af505c9d0bcc0d7c))
-
-# [20.9.0](https://github.com/openedx/paragon/compare/v20.8.0...v20.9.0) (2022-08-12)
-
-
-### Bug Fixes
-
-* begin using shared stylelint-config-edx ([#1517](https://github.com/openedx/paragon/issues/1517)) ([7a35814](https://github.com/openedx/paragon/commit/7a35814ad4474e0562e470a54f26fc70b34314e4))
-
-
-### Features
-
-* [BD-46] add Card.Status ([#1439](https://github.com/openedx/paragon/issues/1439)) ([aa5a4a4](https://github.com/openedx/paragon/commit/aa5a4a4f3da931804a44e3da7a51b6b233f093d8))
-
-# [20.8.0](https://github.com/openedx/paragon/compare/v20.7.0...v20.8.0) (2022-08-05)
-
-
-### Bug Fixes
-
-* fixed Card import ([#1522](https://github.com/openedx/paragon/issues/1522)) ([ebcf090](https://github.com/openedx/paragon/commit/ebcf0905e04404df8a389e7ba393fcd484664bfe))
-
-
-### Features
-
-* add typescript support ([#1267](https://github.com/openedx/paragon/issues/1267)) ([a31591e](https://github.com/openedx/paragon/commit/a31591e51d39ce157ca5a5701057419b8da63465))
-
-# [20.7.0](https://github.com/openedx/paragon/compare/v20.6.1...v20.7.0) (2022-08-05)
-
-
-### Features
-
-* add unmountOnExit ([#1502](https://github.com/openedx/paragon/issues/1502)) ([fbcd1ba](https://github.com/openedx/paragon/commit/fbcd1ba6d2c6fd4be0d6d62362bf2aa4905560fa))
-
-## [20.6.1](https://github.com/openedx/paragon/compare/v20.6.0...v20.6.1) (2022-08-01)
-
-
-### Bug Fixes
-
-* filter break style is not align correctly ([f719510](https://github.com/openedx/paragon/commit/f7195106cb601058af16952eb6e3b7bf36c05264))
-
-# [20.6.0](https://github.com/openedx/paragon/compare/v20.5.0...v20.6.0) (2022-07-29)
-
-
-### Bug Fixes
-
-* incorrect display of responsive tables in the DataTable component ([#1332](https://github.com/openedx/paragon/issues/1332)) ([d112c31](https://github.com/openedx/paragon/commit/d112c311f0f93ce2fe1dfd72adb5da7669821e05))
-* update dependencies and fix vulnerabilities ([#1431](https://github.com/openedx/paragon/issues/1431)) ([c442bb0](https://github.com/openedx/paragon/commit/c442bb01b28f3dd0f63f0648dcdbeb5dcb87d0d2))
-
-
-### Features
-
-* add message about file restrictions to default state of `Dropzone` ([#1470](https://github.com/openedx/paragon/issues/1470)) ([a4027b8](https://github.com/openedx/paragon/commit/a4027b880b59aa7e9a6c601e64d994680f2d9188))
-* muted prop for card to give light gray background ([#1455](https://github.com/openedx/paragon/issues/1455)) ([5f1645d](https://github.com/openedx/paragon/commit/5f1645d6c2d9d7260dcbc5788e1c09549f529e3a))
-
-# [20.5.0](https://github.com/openedx/paragon/compare/v20.4.2...v20.5.0) (2022-07-15)
-
-
-### Bug Fixes
-
-* update script for copying mui-icons and add additional docs ([#1449](https://github.com/openedx/paragon/issues/1449)) ([0a8ce7f](https://github.com/openedx/paragon/commit/0a8ce7f4e2ddd62d61ba104fbed55011d83c1ff4))
-
-
-### Features
-
-* add autoResize for textarea Form.Control [BD-46] ([#1461](https://github.com/openedx/paragon/issues/1461)) ([6bc5320](https://github.com/openedx/paragon/commit/6bc53200b2d99c1a1e6e60b25800e3cf1ea1fe8e))
-* add box shadow variables for all levels and sides ([#1443](https://github.com/openedx/paragon/issues/1443)) ([90d0316](https://github.com/openedx/paragon/commit/90d031604e0b46fb0b9ace31e8a46912b952059a))
-
-## [20.4.2](https://github.com/openedx/paragon/compare/v20.4.1...v20.4.2) (2022-07-15)
-
-
-### Bug Fixes
-
-* added role=status for Bubble notification in Tabs ([#1477](https://github.com/openedx/paragon/issues/1477)) ([f491acb](https://github.com/openedx/paragon/commit/f491acb23a1a6212cd79480a9ee0e55d948d0a65))
-
-## [20.4.1](https://github.com/openedx/paragon/compare/v20.4.0...v20.4.1) (2022-07-08)
-
-
-### Bug Fixes
-
-* export default export from react-loading-skeleton as Skeleton ([#1462](https://github.com/openedx/paragon/issues/1462)) ([d0f6dea](https://github.com/openedx/paragon/commit/d0f6dea0d60aef22f48dd91074b74453fea25620))
-
-# [20.4.0](https://github.com/openedx/paragon/compare/v20.3.2...v20.4.0) (2022-07-08)
-
-
-### Features
-
-* support automatic loading skeleton states on Card with isLoading prop  ([#1379](https://github.com/openedx/paragon/issues/1379)) ([38bbde1](https://github.com/openedx/paragon/commit/38bbde125468b3a3d0cbc5d7a9896809d634f220))
-
-## [20.3.2](https://github.com/openedx/paragon/compare/v20.3.1...v20.3.2) (2022-07-08)
-
-
-### Bug Fixes
-
-* add expandable bubble ([#1448](https://github.com/openedx/paragon/issues/1448)) ([86f9ca7](https://github.com/openedx/paragon/commit/86f9ca7536c11bfb1214f8c34a334e078cc5c36d))
-
-## [20.3.1](https://github.com/openedx/paragon/compare/v20.3.0...v20.3.1) (2022-07-07)
-
-
-### Bug Fixes
-
-* TextFilter component Header prop usage only handles string, not components (functions)  ([#1441](https://github.com/openedx/paragon/issues/1441)) ([a241c8b](https://github.com/openedx/paragon/commit/a241c8b196a4c2a224366565961b45de2e5756e1))
-
-# [20.3.0](https://github.com/openedx/paragon/compare/v20.2.0...v20.3.0) (2022-07-01)
-
-
-### Features
-
-* [BD-46] add `Dropzone` component ([#1342](https://github.com/openedx/paragon/issues/1342)) ([facda6b](https://github.com/openedx/paragon/commit/facda6b97e73ce79ecc0db27d83a0d2787da4fc3))
-
-# [20.2.0](https://github.com/openedx/paragon/compare/v20.1.3...v20.2.0) (2022-06-24)
-
-
-### Features
-
-* added BigBlueButton bbb icon in repo ([#1414](https://github.com/openedx/paragon/issues/1414)) ([7c846ad](https://github.com/openedx/paragon/commit/7c846ada9edd3562c5410bebab2a4bc10e99e56d))
-
-## [20.1.3](https://github.com/openedx/paragon/compare/v20.1.2...v20.1.3) (2022-06-24)
-
-
-### Bug Fixes
-
-* [BD-46] refactoring Card component on the mobile page styles [#1314](https://github.com/openedx/paragon/issues/1314) ([#1381](https://github.com/openedx/paragon/issues/1381)) ([5177354](https://github.com/openedx/paragon/commit/5177354e6c6685d8e3946a4329ff1b8b3d52055e))
-
-## [20.1.2](https://github.com/openedx/paragon/compare/v20.1.1...v20.1.2) (2022-06-23)
-
-
-### Bug Fixes
-
-* update linting to support paver sass compile ([e7704c0](https://github.com/openedx/paragon/commit/e7704c0def94cc123fb90ac1e5ad2f60efbf7084))
-
-## [20.1.1](https://github.com/openedx/paragon/compare/v20.1.0...v20.1.1) (2022-06-22)
-
-
-### Bug Fixes
-
-* flip sort direction icons in TableHeaderCell and add white bg color ([#1404](https://github.com/openedx/paragon/issues/1404)) ([957bd0a](https://github.com/openedx/paragon/commit/957bd0ab8e65cd2ebd6b37791bfd7c5b35fa21b4))
-
-# [20.1.0](https://github.com/openedx/paragon/compare/v20.0.1...v20.1.0) (2022-06-22)
-
-
-### Features
-
-* [BD-46] adding optional arrow for ModalPopup component ([#1363](https://github.com/openedx/paragon/issues/1363)) ([ab0b164](https://github.com/openedx/paragon/commit/ab0b164b7c1adcad7918fda307e0b84f23a873bc))
-
-## [20.0.1](https://github.com/openedx/paragon/compare/v20.0.0...v20.0.1) (2022-06-17)
-
-
-### Bug Fixes
-
-* added/updated focus state styling in some components ([#1202](https://github.com/openedx/paragon/issues/1202)) ([74f9ce9](https://github.com/openedx/paragon/commit/74f9ce991f4ed997c19c69f5f010951b8592b358))
-
-# [20.0.0](https://github.com/openedx/paragon/compare/v19.25.3...v20.0.0) (2022-06-17)
-
-
-* feat!: implement i18n in Paragon components and in docs site (#1100) ([53e0ac6](https://github.com/openedx/paragon/commit/53e0ac632b45b045c0932741b05c2251ee056c47)), closes [#1100](https://github.com/openedx/paragon/issues/1100)
-
+*  selectable box set props forwarding ([#2461](https://github.com/openedx/paragon/issues/2461)) ([1d6f95ecf](https://github.com/openedx/paragon/commit/1d6f95ecf845393fc4c7084e719f0b35c5bb4318)) 
 
 ### BREAKING CHANGES
+aria-label is required when not using aria-labelledby
+in the SelectableBoxSet component. An associated label for the component is a WCAG requirement.
 
-* By adding i18n support to the Paragon design system, we are introducing a peer dependency on `react-intl@5.25.0` or greater. This may be a breaking change for some consumers, if your repository:
+Co-authored-by: Maxwell Frank <mfrank@2u.com>
+
+
+
+## [v20.46.2](https://github.com/openedx/paragon/compare/v20.46.1...v20.46.2) (2023-08-11)
+
+### Bug Fixes
+
+*  color picker error message fix ([#2472](https://github.com/openedx/paragon/issues/2472)) ([cbfb47f76](https://github.com/openedx/paragon/commit/cbfb47f76ca53a81c408c240c6a53b84ad8e1373)) 
+
+
+
+## [v20.46.1](https://github.com/openedx/paragon/compare/v20.46.0...v20.46.1) (2023-08-11)
+
+### Bug Fixes
+
+*  resolve stylelint ([#2530](https://github.com/openedx/paragon/issues/2530)) ([b77488e45](https://github.com/openedx/paragon/commit/b77488e45c88f9a883cd492c623a167ca8979c87)) 
+*  fixed Gatsby local build ([#2527](https://github.com/openedx/paragon/issues/2527)) ([5ddce1f15](https://github.com/openedx/paragon/commit/5ddce1f1501c42aca9b84f5aa72b02e5b7398ba8)) 
+*  add border-bottom-right-radius to card image cap styles ([#2529](https://github.com/openedx/paragon/issues/2529)) ([9ab09a0bf](https://github.com/openedx/paragon/commit/9ab09a0bfb3c580dc5462d601900a83221ade6cb)) 
+*  fixed border-radius of the card img ([#2511](https://github.com/openedx/paragon/issues/2511)) ([3a83b2a08](https://github.com/openedx/paragon/commit/3a83b2a084a6b6383189db658340f9801721ae86)) 
+
+
+
+## [v20.46.0](https://github.com/openedx/paragon/compare/v20.45.7...v20.46.0) (2023-08-04)
+
+### Features
+
+*  create chip carousel ([#2378](https://github.com/openedx/paragon/issues/2378)) ([c1ecb7158](https://github.com/openedx/paragon/commit/c1ecb7158b5c1b589cb162cd13f4c8eb1afd2515))
+
+
+
+## [v20.45.7](https://github.com/openedx/paragon/compare/v20.45.6...v20.45.7) (2023-08-03)
+
+### Bug Fixes
+
+*  fixed rounded corners for Card.ImageCap component ([#2496](https://github.com/openedx/paragon/issues/2496)) ([4c6061bc0](https://github.com/openedx/paragon/commit/4c6061bc02bc086d71373819a8b8a5afc6a3fb23)) 
+
+
+
+## [v20.45.6](https://github.com/openedx/paragon/compare/v20.45.5...v20.45.6) (2023-08-01)
+
+### Bug Fixes
+
+*  added arrow bg color for Popover component ([#2477](https://github.com/openedx/paragon/issues/2477)) ([fe8f1ae60](https://github.com/openedx/paragon/commit/fe8f1ae60955380c2d20c9963e40d8111112b201)) 
+
+
+
+## [v20.45.5](https://github.com/openedx/paragon/compare/v20.45.4...v20.45.5) (2023-07-21)
+
+### Bug Fixes
+
+*  initial autoResize functionality ([#2453](https://github.com/openedx/paragon/issues/2453)) ([be5cf271c](https://github.com/openedx/paragon/commit/be5cf271cb65e410830b7522aea61679140912cf)) 
+*  fixed odd trapezoid-like underline on active tab in Tabs component ([#2377](https://github.com/openedx/paragon/issues/2377)) ([8a32af8e6](https://github.com/openedx/paragon/commit/8a32af8e6a5999103227e36b13a3d2e6b3fbd637)) 
+
+
+
+## [v20.45.4](https://github.com/openedx/paragon/compare/v20.45.3...v20.45.4) (2023-07-19)
+
+### Bug Fixes
+
+*  removed duplication of components names in imports ([#2408](https://github.com/openedx/paragon/issues/2408)) ([abaf527b9](https://github.com/openedx/paragon/commit/abaf527b962c070dc5324ad6332e0ce691876dcb)) 
+
+
+
+## [v20.45.3](https://github.com/openedx/paragon/compare/v20.45.2...v20.45.3) (2023-07-18)
+
+### Bug Fixes
+
+*  add ref support in `Container` component ([#2452](https://github.com/openedx/paragon/issues/2452)) ([d55001f91](https://github.com/openedx/paragon/commit/d55001f916265ea51640b11e0c333ae9ac5a3269)) 
+
+
+
+## [v20.45.2](https://github.com/openedx/paragon/compare/v20.45.1...v20.45.2) (2023-07-16)
+
+### Bug Fixes
+
+*  make icons package tree-shakeable ([#2441](https://github.com/openedx/paragon/issues/2441)) ([bcdbff98f](https://github.com/openedx/paragon/commit/bcdbff98f1feb23f33fbc25b7124c5a16680f97d)) 
+
+
+
+## [v20.45.1](https://github.com/openedx/paragon/compare/v20.45.0...v20.45.1) (2023-07-14)
+
+### Bug Fixes
+
+*  specific icons fix to ensure icons display correctly when used ([#2442](https://github.com/openedx/paragon/issues/2442)) ([1ae20f352](https://github.com/openedx/paragon/commit/1ae20f352d3a4f6e3fb35b19060dbd51b34adfc3)) 
+
+
+
+## [v20.45.0](https://github.com/openedx/paragon/compare/v20.44.0...v20.45.0) (2023-06-22)
+
+### Features
+
+*  Add Django Icon icon ([#2397](https://github.com/openedx/paragon/issues/2397)) ([57ddebfb7](https://github.com/openedx/paragon/commit/57ddebfb784ccf3e6f333385dbfe1d92f9275824))
+
+
+
+## [v20.44.0](https://github.com/openedx/paragon/compare/v20.43.3...v20.44.0) (2023-06-09)
+
+### Features
+
+*  add fixed increment scroll behaviour to useOverflowScroll ([#2151](https://github.com/openedx/paragon/issues/2151)) ([4f54e6248](https://github.com/openedx/paragon/commit/4f54e6248b8c4e3d568413f45f731e5a36ce44c5))
+
+
+
+## [v20.43.3](https://github.com/openedx/paragon/compare/v20.43.2...v20.43.3) (2023-06-08)
+
+### Bug Fixes
+
+*  use .css extension on react-loading-skeleton import ([#2362](https://github.com/openedx/paragon/issues/2362)) ([979fc9d7f](https://github.com/openedx/paragon/commit/979fc9d7f7f847e8902cf9dbff3a24eea554326a)) 
+
+
+
+## [v20.43.2](https://github.com/openedx/paragon/compare/v20.43.1...v20.43.2) (2023-06-08)
+
+### Bug Fixes
+
+*  removed white background on Stepper.Header component ([#2358](https://github.com/openedx/paragon/issues/2358)) ([4da189cbc](https://github.com/openedx/paragon/commit/4da189cbc5e6093f8325d33bf645539083d648b8)) 
+
+
+
+## [v20.43.1](https://github.com/openedx/paragon/compare/v20.43.0...v20.43.1) (2023-06-06)
+
+### Bug Fixes
+
+*  hyperlink button bug fix ([#2360](https://github.com/openedx/paragon/issues/2360)) ([b9b53866a](https://github.com/openedx/paragon/commit/b9b53866a65d584b31f9fcc8d81bc48856838ecd)) 
+
+
+
+## [v20.43.0](https://github.com/openedx/paragon/compare/v20.42.0...v20.43.0) (2023-06-02)
+
+### Features
+
+*  add customizability to the stepper header's compact view, so preferred max width can determine when compact view occurs ([#2338](https://github.com/openedx/paragon/issues/2338)) ([4485a3c4a](https://github.com/openedx/paragon/commit/4485a3c4a26ee6675188f1f8cbf73e4ce7a65fc1))
+
+
+
+## [v20.42.0](https://github.com/openedx/paragon/compare/v20.41.0...v20.42.0) (2023-06-02)
+
+### Features
+
+*  add ability to use unlabeled Radio and Checkbox components in respective Form sets ([#1988](https://github.com/openedx/paragon/issues/1988)) ([309189d4b](https://github.com/openedx/paragon/commit/309189d4bd61d7f2ca7cd378c11dba3562079c5a))
+
+
+
+## [v20.41.0](https://github.com/openedx/paragon/compare/v20.40.2...v20.41.0) (2023-06-02)
+
+### Features
+
+*  added Bootstrap brand icons ([#2324](https://github.com/openedx/paragon/issues/2324)) ([ea83de0ab](https://github.com/openedx/paragon/commit/ea83de0ab4caa6d55e1f69cb205be76df396c826))
+
+
+
+## [v20.40.2](https://github.com/openedx/paragon/compare/v20.40.1...v20.40.2) (2023-06-01)
+
+### Bug Fixes
+
+*  paragon vulnerablities resolution ([#1649](https://github.com/openedx/paragon/issues/1649)) ([0a2fbb302](https://github.com/openedx/paragon/commit/0a2fbb302e75fb98a6ab3bab671776d533aa4b2b)) 
+
+
+
+## [v20.40.1](https://github.com/openedx/paragon/compare/v20.40.0...v20.40.1) (2023-05-31)
+
+### Bug Fixes
+
+*  typo for bootstrap link  and responsive docs ([18a1f7f4b](https://github.com/openedx/paragon/commit/18a1f7f4b882667dc9170c908eaf82265bf472d4)) 
+
+
+
+## [v20.40.0](https://github.com/openedx/paragon/compare/v20.39.3...v20.40.0) (2023-05-29)
+
+### Features
+
+*  allows users to set loading type to images on CardImageCap component ([64d9397d0](https://github.com/openedx/paragon/commit/64d9397d06fbeda1e9c4cd741994a186f339c6d5))
+
+
+
+## [v20.39.3](https://github.com/openedx/paragon/compare/v20.39.2...v20.39.3) (2023-05-26)
+
+### Features
+
+*  allows users to set loading type to images on CardImageCap component ([63a83c523](https://github.com/openedx/paragon/commit/63a83c52369ac2723dbdad14fd7ff3342f052f82))
+
+### Bug Fixes
+
+*  resolve styles for using Button as a MailtoLink ([#2326](https://github.com/openedx/paragon/issues/2326)) ([ff813e492](https://github.com/openedx/paragon/commit/ff813e492c418765cd4a42a72d6029e524b5722c)) 
+
+
+
+## [v20.39.2](https://github.com/openedx/paragon/compare/v20.39.1...v20.39.2) (2023-05-22)
+
+### Bug Fixes
+
+*  rename icons that conflict with components' names ([#2315](https://github.com/openedx/paragon/issues/2315)) ([2d6c05057](https://github.com/openedx/paragon/commit/2d6c05057db4e88951b67d7f1228bdece0ff4ff7)) 
+
+
+
+## [v20.39.1](https://github.com/openedx/paragon/compare/v20.39.0...v20.39.1) (2023-05-19)
+
+### Bug Fixes
+
+*  fixed double tab and styles clickable card component ([#2290](https://github.com/openedx/paragon/issues/2290)) ([cf8a387c0](https://github.com/openedx/paragon/commit/cf8a387c0e4447915c6c63d6e907709d0f96818a)) 
+
+
+
+## [v20.39.0](https://github.com/openedx/paragon/compare/v20.38.0...v20.39.0) (2023-05-18)
+
+### Features
+
+*  added variants for the Select Menu component ([#2291](https://github.com/openedx/paragon/issues/2291)) ([4f8fc5cfb](https://github.com/openedx/paragon/commit/4f8fc5cfb8164fba0c8389c62f4bbf41003ba06e))
+
+
+
+## [v20.38.0](https://github.com/openedx/paragon/compare/v20.37.0...v20.38.0) (2023-05-18)
+
+### Features
+
+*  upgraded to node v18, added .nvmrc and updated workflows ([#2227](https://github.com/openedx/paragon/issues/2227)) ([5d10aab2b](https://github.com/openedx/paragon/commit/5d10aab2bd70cf8a7008c42918bdc6b1cd1948da))
+
+
+
+## [v20.37.0](https://github.com/openedx/paragon/compare/v20.36.2...v20.37.0) (2023-05-17)
+
+### Features
+
+*  add new variants to Tabs component and fix nested links ([#2222](https://github.com/openedx/paragon/issues/2222)) ([6118e2c1e](https://github.com/openedx/paragon/commit/6118e2c1eb20168aece6c4e5998652b043663dc2))
+
+
+
+## [v20.36.2](https://github.com/openedx/paragon/compare/v20.36.1...v20.36.2) (2023-05-16)
+
+### Bug Fixes
+
+*  use `currentTarget` in `FormAutosuggest` component to get selected option ([#2304](https://github.com/openedx/paragon/issues/2304)) ([8988f1114](https://github.com/openedx/paragon/commit/8988f1114178c180ddbc979eafed164e8eab27f0)) 
+
+
+
+## [v20.36.1](https://github.com/openedx/paragon/compare/v20.36.0...v20.36.1) (2023-05-15)
+
+### Bug Fixes
+
+*  correctly handle `value` change in controlled variant of `Form.Autosuggest` component ([#2300](https://github.com/openedx/paragon/issues/2300)) ([0c92c7826](https://github.com/openedx/paragon/commit/0c92c7826fe5d87a35ec57fabc5cb019494f50fc)) 
+
+
+
+## [v20.36.0](https://github.com/openedx/paragon/compare/v20.35.2...v20.36.0) (2023-05-10)
+
+### Features
+
+*  add `actions` prop to `Card.Status` and resolve few `Card`-related style issues ([#2272](https://github.com/openedx/paragon/issues/2272)) ([5894df142](https://github.com/openedx/paragon/commit/5894df1426adf780a8b44f513c9e9993326a224f))
+*  add `enableEqualColumnHeights` prop to `CardGrid` and `CardDeck` ([#2287](https://github.com/openedx/paragon/issues/2287)) ([7147a198e](https://github.com/openedx/paragon/commit/7147a198e6539fd7d7d737dcdb5076efa4cff818))
+
+
+
+## [v20.35.2](https://github.com/openedx/paragon/compare/v20.35.1...v20.35.2) (2023-05-10)
+
+### Bug Fixes
+
+*  correctly handle onClick prop in Form.AutosuggestOption component ([#2286](https://github.com/openedx/paragon/issues/2286)) ([c3c7b744d](https://github.com/openedx/paragon/commit/c3c7b744dc3b11324e69d969664bd1bc7341c6c1)) 
+
+
+
+## [v20.35.1](https://github.com/openedx/paragon/compare/v20.35.0...v20.35.1) (2023-05-10)
+
+### Bug Fixes
+
+*  update selected state of `SelectMenu` to match figma design ([#2279](https://github.com/openedx/paragon/issues/2279)) ([b3388a2c9](https://github.com/openedx/paragon/commit/b3388a2c95690a98f56c8b35591fc8ae29cb57f6)) 
+
+
+
+## [v20.35.0](https://github.com/openedx/paragon/compare/v20.34.0...v20.35.0) (2023-05-10)
+
+### Features
+
+*  provide functionality for inital value in autosuggest component ([#2277](https://github.com/openedx/paragon/issues/2277)) ([5677f62e9](https://github.com/openedx/paragon/commit/5677f62e938beecd111b8aae2c3809d7947c606e))
+
+
+
+## [v20.34.0](https://github.com/openedx/paragon/compare/v20.33.0...v20.34.0) (2023-05-05)
+
+### Features
+
+*  implement clickable steps in Stepper component ([#1712](https://github.com/openedx/paragon/issues/1712)) ([29f680c61](https://github.com/openedx/paragon/commit/29f680c61bb605cb701717d90f95ff66a7e078f9))
+
+
+
+## [v20.33.0](https://github.com/openedx/paragon/compare/v20.32.3...v20.33.0) (2023-05-02)
+
+
+
+## [v20.32.3](https://github.com/openedx/paragon/compare/v20.32.2...v20.32.3) (2023-04-28)
+
+### Bug Fixes
+
+*  stretch the message block to the full width ([#2219](https://github.com/openedx/paragon/issues/2219)) ([5acea870b](https://github.com/openedx/paragon/commit/5acea870bb2bfeeea20ab8a14a6ba0f24b310bb3)) 
+
+
+
+## [v20.32.2](https://github.com/openedx/paragon/compare/v20.32.1...v20.32.2) (2023-04-27)
+
+### Bug Fixes
+
+*  revert PopperElement changes ([#2234](https://github.com/openedx/paragon/issues/2234)) ([9017b69c4](https://github.com/openedx/paragon/commit/9017b69c4ef5026f72915a0987461f9c85decd2d)) 
+
+
+
+## [v20.32.1](https://github.com/openedx/paragon/compare/v20.32.0...v20.32.1) (2023-04-27)
+
+### Bug Fixes
+
+*  update various component to remove console errors ([#2226](https://github.com/openedx/paragon/issues/2226)) ([3b2eead91](https://github.com/openedx/paragon/commit/3b2eead9133e469c15831985f400135c8d4e9e5a)) 
+
+
+
+## [v20.32.0](https://github.com/openedx/paragon/compare/v20.31.1...v20.32.0) (2023-04-24)
+
+### Features
+
+*  added npm workspaces ([#2190](https://github.com/openedx/paragon/issues/2190)) ([e6b1f7a90](https://github.com/openedx/paragon/commit/e6b1f7a90e45ee56d4c954617067f24901d69b2d))
+
+
+
+## [v20.31.1](https://github.com/openedx/paragon/compare/v20.31.0...v20.31.1) (2023-04-21)
+
+### Bug Fixes
+
+*  wrap FormText children in div for flex styling ([#2215](https://github.com/openedx/paragon/issues/2215)) ([8d8b3b760](https://github.com/openedx/paragon/commit/8d8b3b76066e5a6485e822066249513540c11453)) 
+
+
+
+## [v20.31.0](https://github.com/openedx/paragon/compare/v20.30.4...v20.31.0) (2023-04-21)
+
+### Features
+
+*  add alert modal variants ([#1914](https://github.com/openedx/paragon/issues/1914)) ([4bdc46902](https://github.com/openedx/paragon/commit/4bdc4690203840fce6315747747055f6c17f6f36))
+
+
+
+## [v20.30.4](https://github.com/openedx/paragon/compare/v20.30.3...v20.30.4) (2023-04-21)
+
+### Bug Fixes
+
+*  fixed links width in Usage Insights Summary tables ([#2006](https://github.com/openedx/paragon/issues/2006)) ([6ddf5b9c8](https://github.com/openedx/paragon/commit/6ddf5b9c8915569fc5a69e2d56b7220e5f786c18)) 
+
+
+
+## [v20.30.3](https://github.com/openedx/paragon/compare/v20.30.2...v20.30.3) (2023-04-21)
+
+### Bug Fixes
+
+*  fixed incorrect label in Select All button ([#2020](https://github.com/openedx/paragon/issues/2020)) ([e2f67271d](https://github.com/openedx/paragon/commit/e2f67271dc799445878de38206437999dab9dd96)) 
+
+
+
+## [v20.30.2](https://github.com/openedx/paragon/compare/v20.30.1...v20.30.2) (2023-04-21)
+
+### Bug Fixes
+
+*  fixed misaligned form validation text with icon ([#2202](https://github.com/openedx/paragon/issues/2202)) ([334a9e6da](https://github.com/openedx/paragon/commit/334a9e6da354397bd3dce30639d065016576ab2b)) 
+
+
+
+## [v20.30.1](https://github.com/openedx/paragon/compare/v20.30.0...v20.30.1) (2023-04-07)
+
+### Bug Fixes
+
+*  add success and danger checked svgs ([#2001](https://github.com/openedx/paragon/issues/2001)) ([e4a2e487d](https://github.com/openedx/paragon/commit/e4a2e487d8ad1685b267a474f7fd8a9332f4aabd)) 
+
+
+
+## [v20.30.0](https://github.com/openedx/paragon/compare/v20.29.0...v20.30.0) (2023-04-04)
+
+### Features
+
+*  create new ColorPicker component ([#2003](https://github.com/openedx/paragon/issues/2003)) ([fc24230c5](https://github.com/openedx/paragon/commit/fc24230c51204174d15f4588431290b908c4f19e))
+
+
+
+## [v20.29.0](https://github.com/openedx/paragon/compare/v20.28.5...v20.29.0) (2023-03-24)
+
+### Features
+
+*  add icon size xs that looks good against a 1rem font ([#2149](https://github.com/openedx/paragon/issues/2149)) ([b14ea5f0c](https://github.com/openedx/paragon/commit/b14ea5f0cd8e5bd260f4f0d900cb6c5313e97a91))
+
+
+
+## [v20.28.5](https://github.com/openedx/paragon/compare/v20.28.4...v20.28.5) (2023-03-17)
+
+### Bug Fixes
+
+*  onChange behavior ([41fc8e455](https://github.com/openedx/paragon/commit/41fc8e455b6a8518ebe5bd730ac1641804d72763)) 
+
+
+
+## [v20.28.4](https://github.com/openedx/paragon/compare/v20.28.3...v20.28.4) (2023-02-09)
+
+### Bug Fixes
+
+*  fixed undefined/null image logo src ([#1994](https://github.com/openedx/paragon/issues/1994)) ([146579644](https://github.com/openedx/paragon/commit/146579644d2c1459d32c5d3e2579e5842cf15df4)) 
+
+
+
+## [v20.28.3](https://github.com/openedx/paragon/compare/v20.28.2...v20.28.3) (2023-01-27)
+
+### Bug Fixes
+
+*  add type-check step to CI and update typescript configs to transpile to ES6, not ES2019 ([#1962](https://github.com/openedx/paragon/issues/1962)) ([5ea0bb0bb](https://github.com/openedx/paragon/commit/5ea0bb0bb8ffde65064e93e6257af01a5c3ee68b)) 
+
+
+
+## [v20.28.2](https://github.com/openedx/paragon/compare/v20.28.1...v20.28.2) (2023-01-27)
+
+### Bug Fixes
+
+*  resolve bug with ProductTour to ensure individual checkpoints may define a custom `onEnd` ([27ca431eb](https://github.com/openedx/paragon/commit/27ca431ebb24dfff2d0cfa573a97fe0aeb9b4adc)) 
+
+
+
+## [v20.28.1](https://github.com/openedx/paragon/compare/v20.28.0...v20.28.1) (2023-01-26)
+
+### Bug Fixes
+
+*  update button styles to resolve inconsistencies with design spec ([#1910](https://github.com/openedx/paragon/issues/1910)) ([6bc91fb96](https://github.com/openedx/paragon/commit/6bc91fb9685714efaab67b5b641fc3cde16e89b4)) 
+
+
+
+## [v20.28.0](https://github.com/openedx/paragon/compare/v20.27.3...v20.28.0) (2023-01-26)
+
+### Features
+
+*  add text-to-speech icon ([#1955](https://github.com/openedx/paragon/issues/1955)) ([380b79ad6](https://github.com/openedx/paragon/commit/380b79ad61e9851f75f2e60223d9ddb7eb0af504))
+
+
+
+## [v20.27.3](https://github.com/openedx/paragon/compare/v20.27.2...v20.27.3) (2023-01-24)
+
+### Bug Fixes
+
+*  resolve critical security vulnerabilities ([#1922](https://github.com/openedx/paragon/issues/1922)) ([dc9d4fce2](https://github.com/openedx/paragon/commit/dc9d4fce2138c42c8b50ff9bfe96a2e40b89ef3e)) 
+
+
+
+## [v20.27.2](https://github.com/openedx/paragon/compare/v20.27.1...v20.27.2) (2023-01-24)
+
+### Bug Fixes
+
+*  added white color for section title in Card component ([#1919](https://github.com/openedx/paragon/issues/1919)) ([88e3c03a0](https://github.com/openedx/paragon/commit/88e3c03a05b29718e050444b51ca2af063c74cef)) 
+
+
+
+## [v20.27.1](https://github.com/openedx/paragon/compare/v20.27.0...v20.27.1) (2023-01-23)
+
+### Bug Fixes
+
+*  aria label fix for SelectableBox ([#1930](https://github.com/openedx/paragon/issues/1930)) ([d8e73b094](https://github.com/openedx/paragon/commit/d8e73b09404da9f7d7773110951e52ef96bf459b)) 
+
+
+
+## [v20.27.0](https://github.com/openedx/paragon/compare/v20.26.3...v20.27.0) (2023-01-13)
+
+### Features
+
+*  add feedbackOutline icon ([#1913](https://github.com/openedx/paragon/issues/1913)) ([b50ee9326](https://github.com/openedx/paragon/commit/b50ee93262a6da5692141ea9b0030d453a0e8170))
+
+
+
+## [v20.26.3](https://github.com/openedx/paragon/compare/v20.26.2...v20.26.3) (2023-01-06)
+
+### Bug Fixes
+
+*  add missing EditCircle icon ([#1898](https://github.com/openedx/paragon/issues/1898)) ([6bb46d93b](https://github.com/openedx/paragon/commit/6bb46d93b3efd856e4e7a7b48debe2a0f7a82c80)) 
+
+
+
+## [v20.26.2](https://github.com/openedx/paragon/compare/v20.26.1...v20.26.2) (2023-01-06)
+
+### Bug Fixes
+
+*  Providing default fallback images for Card.ImageCap ([#1730](https://github.com/openedx/paragon/issues/1730)) ([f9d281b0b](https://github.com/openedx/paragon/commit/f9d281b0bbd8acc79b1eb57e764767e83d93906e)) 
+
+
+
+## [v20.26.1](https://github.com/openedx/paragon/compare/v20.26.0...v20.26.1) (2023-01-05)
+
+### Bug Fixes
+
+*  use callback refs instead of `useRef` and fallback to offsetLeft: 0 when first child element ref no longer exists ([#1894](https://github.com/openedx/paragon/issues/1894)) ([b4b60bb5a](https://github.com/openedx/paragon/commit/b4b60bb5a5fb56bbe859a6019309ffca9bf7a221)) 
+
+
+
+## [v20.26.0](https://github.com/openedx/paragon/compare/v20.25.0...v20.26.0) (2023-01-05)
+
+### Features
+
+*  adds OverflowScroll, useOverflowScroll, CardCarousel ([#1884](https://github.com/openedx/paragon/issues/1884)) ([8f6ed5ac2](https://github.com/openedx/paragon/commit/8f6ed5ac22edcc0f173057cc7ea6109748d81a5e))
+
+
+
+## [v20.25.0](https://github.com/openedx/paragon/compare/v20.24.1...v20.25.0) (2022-12-23)
+
+### Features
+
+*  updated CardDeck ([#1866](https://github.com/openedx/paragon/issues/1866)) ([a0feb0257](https://github.com/openedx/paragon/commit/a0feb02573fd22434a0bf8c00484d927f2801ae5))
+
+
+
+## [v20.24.1](https://github.com/openedx/paragon/compare/v20.24.0...v20.24.1) (2022-12-23)
+
+### Bug Fixes
+
+*  Takes into account pagination pageCount <=1 page ([#1870](https://github.com/openedx/paragon/issues/1870)) ([32293209b](https://github.com/openedx/paragon/commit/32293209b5a9a4fc4a571b20403a582fecb39252)) 
+
+
+
+## [v20.24.0](https://github.com/openedx/paragon/compare/v20.23.0...v20.24.0) (2022-12-23)
+
+### Features
+
+*  add manual publish workflow ([e2939f2ff](https://github.com/openedx/paragon/commit/e2939f2ff54dbea48e7445c3e43ef5eed63ccacb))
+
+
+
+## [v20.23.0](https://github.com/openedx/paragon/compare/v20.22.4...v20.23.0) (2022-12-23)
+
+### Features
+
+*  add ability to render Breadcrumbs with custom elements ([#1867](https://github.com/openedx/paragon/issues/1867)) ([2206ccc63](https://github.com/openedx/paragon/commit/2206ccc63aa966de98935a15eb59fccc87bcf679))
+
+
+
+## [v20.22.4](https://github.com/openedx/paragon/compare/v20.22.3...v20.22.4) (2022-12-22)
+
+### Bug Fixes
+
+*  ensure CardHeader subtitle is also changed to white ([#1865](https://github.com/openedx/paragon/issues/1865)) ([b81156b05](https://github.com/openedx/paragon/commit/b81156b05f21c2c55d06e428cbeac0105047fd8a)) 
+
+
+
+## [v20.22.3](https://github.com/openedx/paragon/compare/v20.22.2...v20.22.3) (2022-12-21)
+
+### Bug Fixes
+
+*  ensure `SelectableBox` has white background ([#1863](https://github.com/openedx/paragon/issues/1863)) ([b920e8a0c](https://github.com/openedx/paragon/commit/b920e8a0c702d366fdabbd82ae7e56197fc370e2)) 
+
+
+
+## [v20.22.2](https://github.com/openedx/paragon/compare/v20.22.1...v20.22.2) (2022-12-21)
+
+### Bug Fixes
+
+*  ensure CardHeader title and subtitle turn white with dark variant ([#1862](https://github.com/openedx/paragon/issues/1862)) ([f4d3337b0](https://github.com/openedx/paragon/commit/f4d3337b04758fb398a64476c36cbece1b4e80b8)) 
+
+
+
+## [v20.22.1](https://github.com/openedx/paragon/compare/v20.22.0...v20.22.1) (2022-12-21)
+
+### Bug Fixes
+
+*  ensure card footer switches to white when card variant is dark ([#1861](https://github.com/openedx/paragon/issues/1861)) ([b2d270f0f](https://github.com/openedx/paragon/commit/b2d270f0fae48a58aa0cd722a81763b01e60485f)) 
+
+
+
+## [v20.22.0](https://github.com/openedx/paragon/compare/v20.21.5...v20.22.0) (2022-12-21)
+
+### Features
+
+*  [BD-46] add variants for Card ([#1789](https://github.com/openedx/paragon/issues/1789)) ([f12a01b06](https://github.com/openedx/paragon/commit/f12a01b06393f65ef3cfcf15332ed18b9ad93a4a))
+
+
+
+## [v20.21.5](https://github.com/openedx/paragon/compare/v20.21.4...v20.21.5) (2022-12-16)
+
+### Bug Fixes
+
+*  update truncate v3 ([#1702](https://github.com/openedx/paragon/issues/1702)) ([33c0ec053](https://github.com/openedx/paragon/commit/33c0ec053da55f6697b4fe2b88fe99cb7ed7d111)) 
+*  remove ResizeObserver from useIndexOfLastVisibleChild hook ([#1842](https://github.com/openedx/paragon/issues/1842)) ([3586b4602](https://github.com/openedx/paragon/commit/3586b4602eaea0cd7a3997169785b198e583eb5d)) 
+
+
+
+## [v20.21.4](https://github.com/openedx/paragon/compare/v20.21.3...v20.21.4) (2022-12-16)
+
+### Bug Fixes
+
+*  consider 0 a truthy value in input components ([#1848](https://github.com/openedx/paragon/issues/1848)) ([d77b5fc45](https://github.com/openedx/paragon/commit/d77b5fc450d30f0bdec0f335016597f25fe07430)) 
+
+
+
+## [v20.21.3](https://github.com/openedx/paragon/compare/v20.21.2...v20.21.3) (2022-12-14)
+
+### Bug Fixes
+
+*  [BD-46] fixed Icon Button svg color ([#1821](https://github.com/openedx/paragon/issues/1821)) ([b84a331b8](https://github.com/openedx/paragon/commit/b84a331b8c84c3bed8134bfff4ba78ac2ee57ccd)) 
+
+
+
+## [v20.21.2](https://github.com/openedx/paragon/compare/v20.21.1...v20.21.2) (2022-12-09)
+
+### Bug Fixes
+
+*  update SelectionStatus message based on applied filters ([#1832](https://github.com/openedx/paragon/issues/1832)) ([c6e286216](https://github.com/openedx/paragon/commit/c6e286216d166c0720b2375def6302b0993245c6)) 
+
+
+
+## [v20.21.1](https://github.com/openedx/paragon/compare/v20.21.0...v20.21.1) (2022-12-05)
+
+### Bug Fixes
+
+*  ensure SmartStatus renders SelectionStatus based on selectedRowIds ([#1815](https://github.com/openedx/paragon/issues/1815)) ([5ac76ae51](https://github.com/openedx/paragon/commit/5ac76ae514b4f20d26627d02521f2291bbe22fb4)) 
+
+
+
+## [v20.21.0](https://github.com/openedx/paragon/compare/v20.20.0...v20.21.0) (2022-11-30)
+
+### Features
+
+*  support for externally controlled DataTable selections ([#1804](https://github.com/openedx/paragon/issues/1804)) ([eac3925bc](https://github.com/openedx/paragon/commit/eac3925bcd7710e711f3988a504834f28a93060e))
+
+
+
+## [v20.20.0](https://github.com/openedx/paragon/compare/v20.19.0...v20.20.0) (2022-11-23)
+
+### Features
+
+*  export useArrowKeyNavigation and adds page about it documentation website ([#1720](https://github.com/openedx/paragon/issues/1720)) ([363c61672](https://github.com/openedx/paragon/commit/363c61672056125ff1234fd4af71796fcfdd0910))
+
+### Bug Fixes
+
+*  throw non-tab component error for development env ([#1792](https://github.com/openedx/paragon/issues/1792)) ([0538d2f5a](https://github.com/openedx/paragon/commit/0538d2f5adccf29d276b4af186361900a51d209b)) 
+*  skeleton height in Card component in loading state ([#1746](https://github.com/openedx/paragon/issues/1746)) ([bf766cfce](https://github.com/openedx/paragon/commit/bf766cfce76c902d7020be9f10b665406be0f0eb)) 
+
+
+
+## [v20.19.0](https://github.com/openedx/paragon/compare/v20.18.2...v20.19.0) (2022-11-21)
+
+### Features
+
+*  add support for selectable CardView in DataTable ([#1698](https://github.com/openedx/paragon/issues/1698)) ([5ffc3c706](https://github.com/openedx/paragon/commit/5ffc3c706146779ad6530671b3a289755c341df6))
+
+
+
+## [v20.18.2](https://github.com/openedx/paragon/compare/v20.18.1...v20.18.2) (2022-11-14)
+
+### Bug Fixes
+
+*  remove semantic-release/git plugin ([#1760](https://github.com/openedx/paragon/issues/1760)) ([5723a2ac4](https://github.com/openedx/paragon/commit/5723a2ac4bf873a6e701c79b16ef1cb12625571b)) 
+
+
+
+## [v20.18.1](https://github.com/openedx/paragon/compare/v20.18.0...v20.18.1) (2022-11-10)
+
+### Bug Fixes
+
+*  fixed close button positioning in modal components ([#1733](https://github.com/openedx/paragon/issues/1733)) ([9d24187f5](https://github.com/openedx/paragon/commit/9d24187f5ee02159caed517c238dc8e4b2c704c9)) 
+*  fixed onToggle prop ([#1719](https://github.com/openedx/paragon/issues/1719)) ([fe216550f](https://github.com/openedx/paragon/commit/fe216550f3b5326304d1230eb5ee3d6119ee9bb7)) 
+*  hooks are displayed in production ([#1715](https://github.com/openedx/paragon/issues/1715)) ([d726ad10a](https://github.com/openedx/paragon/commit/d726ad10ad5e176ae6d4a83ddc4a645a9b08b024)) 
+*  added translations English strings in FormAutosuggest component ([#1711](https://github.com/openedx/paragon/issues/1711)) ([782cfb814](https://github.com/openedx/paragon/commit/782cfb8147aef728a85eeee8c91551dd0eebf4b4)) 
+
+
+
+## [v20.18.0](https://github.com/openedx/paragon/compare/v20.17.0...v20.18.0) (2022-10-26)
+
+### Features
+
+*  add creative common icons ([#1716](https://github.com/openedx/paragon/issues/1716)) ([3fac8c4e2](https://github.com/openedx/paragon/commit/3fac8c4e27b19a26997ccbf5c35ca5ae7e8cf247))
+
+
+
+## [v20.17.0](https://github.com/openedx/paragon/compare/v20.16.0...v20.17.0) (2022-10-21)
+
+### Features
+
+*  FormAutosuggest component ([#1586](https://github.com/openedx/paragon/issues/1586)) ([7fbf86de5](https://github.com/openedx/paragon/commit/7fbf86de5110bdf3e26a17c0848337f8be0b2b23))
+
+
+
+## [v20.16.0](https://github.com/openedx/paragon/compare/v20.15.0...v20.16.0) (2022-10-21)
+
+### Features
+
+*  [BD-46] add Layout component ([#1659](https://github.com/openedx/paragon/issues/1659)) ([f8cddda5a](https://github.com/openedx/paragon/commit/f8cddda5a96a6fed24fcca97a8d641501ebb7865))
+
+
+
+## [v20.15.0](https://github.com/openedx/paragon/compare/v20.14.0...v20.15.0) (2022-10-19)
+
+### Features
+
+*  added accentB background for page banner ([#1688](https://github.com/openedx/paragon/issues/1688)) ([0942daa1f](https://github.com/openedx/paragon/commit/0942daa1f23ae5880c6e8278f97d4c777f60ed08))
+
+
+
+## [v20.14.0](https://github.com/openedx/paragon/compare/v20.13.0...v20.14.0) (2022-10-19)
+
+### Features
+
+*  Added fallback image src props to Card component ([#1682](https://github.com/openedx/paragon/issues/1682)) ([c0a1f6cd8](https://github.com/openedx/paragon/commit/c0a1f6cd80b4aaf66cbff2af35770f9d0901fc2c))
+
+
+
+## [v20.13.0](https://github.com/openedx/paragon/compare/v20.12.1...v20.13.0) (2022-10-07)
+
+### Features
+
+*  truncate v2 supports inner tags ([#1642](https://github.com/openedx/paragon/issues/1642)) ([8aa2fa66c](https://github.com/openedx/paragon/commit/8aa2fa66ccfc60857faf580a8dfc8007eaa9efa3))
+
+### Bug Fixes
+
+*  remove body width jumping on open ([#1644](https://github.com/openedx/paragon/issues/1644)) ([0d1f4d73f](https://github.com/openedx/paragon/commit/0d1f4d73f6c4a8435b9eb3ea3e66febfb0f5ba0f)) 
+
+
+
+## [v20.12.1](https://github.com/openedx/paragon/compare/v20.12.0...v20.12.1) (2022-09-30)
+
+### Bug Fixes
+
+*  floating label expand beyond input field ([#1605](https://github.com/openedx/paragon/issues/1605)) ([2f89035e7](https://github.com/openedx/paragon/commit/2f89035e741858b2c97e1b2542a137c1b116a1a8)) 
+*  update styles for Chip ([#1606](https://github.com/openedx/paragon/issues/1606)) ([df4583fd5](https://github.com/openedx/paragon/commit/df4583fd5fd6d056ddd8be2c11b1ad87733d353e)) 
+
+
+
+## [v20.12.0](https://github.com/openedx/paragon/compare/v20.11.1...v20.12.0) (2022-09-21)
+
+### Features
+
+*  dark mode variant for dropdown ([#1613](https://github.com/openedx/paragon/issues/1613)) ([7133e212c](https://github.com/openedx/paragon/commit/7133e212c50826681d4ab3acc09e0a020c853909))
+
+
+
+## [v20.11.1](https://github.com/openedx/paragon/compare/v20.11.0...v20.11.1) (2022-09-07)
+
+### Bug Fixes
+
+*  handle non-Tab component ([#1604](https://github.com/openedx/paragon/issues/1604)) ([7ab620762](https://github.com/openedx/paragon/commit/7ab6207623ae0552b037f7a7eabc694f25338932)) 
+
+
+
+## [v20.11.0](https://github.com/openedx/paragon/compare/v20.10.2...v20.11.0) (2022-09-02)
+
+### Features
+
+*  update Chip ([#1574](https://github.com/openedx/paragon/issues/1574)) ([79d4744ed](https://github.com/openedx/paragon/commit/79d4744ed0be64daf5427c822c21ef8250c5cce3))
+
+
+
+## [v20.10.2](https://github.com/openedx/paragon/compare/v20.10.1...v20.10.2) (2022-09-02)
+
+### Bug Fixes
+
+*  fixed MarketingModal/AlertModal/ModalDialog scroll ([#1594](https://github.com/openedx/paragon/issues/1594)) ([952c1de22](https://github.com/openedx/paragon/commit/952c1de22b9681d99827b47bbc643fcd8d24a7db)) 
+
+
+
+## [v20.10.1](https://github.com/openedx/paragon/compare/v20.10.0...v20.10.1) (2022-08-26)
+
+### Bug Fixes
+
+*  release es-419 Spanish language translations ([#1589](https://github.com/openedx/paragon/issues/1589)) ([f7cf489f5](https://github.com/openedx/paragon/commit/f7cf489f55a56b944dec967a881a789bbdb850c4)) 
+
+
+
+## [v20.10.0](https://github.com/openedx/paragon/compare/v20.9.3...v20.10.0) (2022-08-19)
+
+### Features
+
+*  [BD-46] add Truncate component ([#1472](https://github.com/openedx/paragon/issues/1472)) ([da3a247db](https://github.com/openedx/paragon/commit/da3a247db3aa6e0358430bd2fd7daabaf130a737))
+
+
+
+## [v20.9.3](https://github.com/openedx/paragon/compare/v20.9.2...v20.9.3) (2022-08-18)
+
+### Bug Fixes
+
+*  correct missing interpolation ([#1568](https://github.com/openedx/paragon/issues/1568)) ([88fe9fd73](https://github.com/openedx/paragon/commit/88fe9fd73da90ab4b5e71807875324702b3e9148)) 
+
+
+
+## [v20.9.2](https://github.com/openedx/paragon/compare/v20.9.1...v20.9.2) (2022-08-16)
+
+### Bug Fixes
+
+*  bootstrap update with additional variable ([#1562](https://github.com/openedx/paragon/issues/1562)) ([ae1f06f29](https://github.com/openedx/paragon/commit/ae1f06f29992d955ca1772a6e8937841b4904baf)) 
+
+
+
+## [v20.9.1](https://github.com/openedx/paragon/compare/v20.9.0...v20.9.1) (2022-08-12)
+
+### Bug Fixes
+
+*  added support for making `Card` a hyperlink ([#1478](https://github.com/openedx/paragon/issues/1478)) ([f0a07687e](https://github.com/openedx/paragon/commit/f0a07687e6608fadf6b7eab0af505c9d0bcc0d7c)) 
+
+
+
+## [v20.9.0](https://github.com/openedx/paragon/compare/v20.8.0...v20.9.0) (2022-08-12)
+
+### Features
+
+*  [BD-46] add Card.Status ([#1439](https://github.com/openedx/paragon/issues/1439)) ([aa5a4a4f3](https://github.com/openedx/paragon/commit/aa5a4a4f3da931804a44e3da7a51b6b233f093d8))
+
+### Bug Fixes
+
+*  begin using shared stylelint-config-edx ([#1517](https://github.com/openedx/paragon/issues/1517)) ([7a35814ad](https://github.com/openedx/paragon/commit/7a35814ad4474e0562e470a54f26fc70b34314e4)) 
+
+
+
+## [v20.8.0](https://github.com/openedx/paragon/compare/v20.7.0...v20.8.0) (2022-08-05)
+
+### Features
+
+*  add typescript support ([#1267](https://github.com/openedx/paragon/issues/1267)) ([a31591e51](https://github.com/openedx/paragon/commit/a31591e51d39ce157ca5a5701057419b8da63465))
+
+### Bug Fixes
+
+*  fixed Card import ([#1522](https://github.com/openedx/paragon/issues/1522)) ([ebcf0905e](https://github.com/openedx/paragon/commit/ebcf0905e04404df8a389e7ba393fcd484664bfe)) 
+
+
+
+## [v20.7.0](https://github.com/openedx/paragon/compare/v20.6.1...v20.7.0) (2022-08-05)
+
+### Features
+
+*  add unmountOnExit ([#1502](https://github.com/openedx/paragon/issues/1502)) ([fbcd1ba6d](https://github.com/openedx/paragon/commit/fbcd1ba6d2c6fd4be0d6d62362bf2aa4905560fa))
+
+
+
+## [v20.6.1](https://github.com/openedx/paragon/compare/v20.6.0...v20.6.1) (2022-08-01)
+
+### Bug Fixes
+
+*  filter break style is not align correctly ([f7195106c](https://github.com/openedx/paragon/commit/f7195106cb601058af16952eb6e3b7bf36c05264)) 
+
+
+
+## [v20.6.0](https://github.com/openedx/paragon/compare/v20.5.0...v20.6.0) (2022-07-29)
+
+### Features
+
+*  muted prop for card to give light gray background ([#1455](https://github.com/openedx/paragon/issues/1455)) ([5f1645d6c](https://github.com/openedx/paragon/commit/5f1645d6c2d9d7260dcbc5788e1c09549f529e3a))
+*  add message about file restrictions to default state of `Dropzone` ([#1470](https://github.com/openedx/paragon/issues/1470)) ([a4027b880](https://github.com/openedx/paragon/commit/a4027b880b59aa7e9a6c601e64d994680f2d9188))
+
+### Bug Fixes
+
+*  update dependencies and fix vulnerabilities ([#1431](https://github.com/openedx/paragon/issues/1431)) ([c442bb01b](https://github.com/openedx/paragon/commit/c442bb01b28f3dd0f63f0648dcdbeb5dcb87d0d2)) 
+*  incorrect display of responsive tables in the DataTable component ([#1332](https://github.com/openedx/paragon/issues/1332)) ([d112c311f](https://github.com/openedx/paragon/commit/d112c311f0f93ce2fe1dfd72adb5da7669821e05)) 
+
+
+
+## [v20.5.0](https://github.com/openedx/paragon/compare/v20.4.2...v20.5.0) (2022-07-15)
+
+### Features
+
+*  add box shadow variables for all levels and sides ([#1443](https://github.com/openedx/paragon/issues/1443)) ([90d031604](https://github.com/openedx/paragon/commit/90d031604e0b46fb0b9ace31e8a46912b952059a))
+*  add autoResize for textarea Form.Control [BD-46] ([#1461](https://github.com/openedx/paragon/issues/1461)) ([6bc53200b](https://github.com/openedx/paragon/commit/6bc53200b2d99c1a1e6e60b25800e3cf1ea1fe8e))
+
+### Bug Fixes
+
+*  update script for copying mui-icons and add additional docs ([#1449](https://github.com/openedx/paragon/issues/1449)) ([0a8ce7f4e](https://github.com/openedx/paragon/commit/0a8ce7f4e2ddd62d61ba104fbed55011d83c1ff4)) 
+
+
+
+## [v20.4.2](https://github.com/openedx/paragon/compare/v20.4.1...v20.4.2) (2022-07-15)
+
+### Bug Fixes
+
+*  added role=status for Bubble notification in Tabs ([#1477](https://github.com/openedx/paragon/issues/1477)) ([f491acb23](https://github.com/openedx/paragon/commit/f491acb23a1a6212cd79480a9ee0e55d948d0a65)) 
+
+
+
+## [v20.4.1](https://github.com/openedx/paragon/compare/v20.4.0...v20.4.1) (2022-07-08)
+
+### Bug Fixes
+
+*  export default export from react-loading-skeleton as Skeleton ([#1462](https://github.com/openedx/paragon/issues/1462)) ([d0f6dea0d](https://github.com/openedx/paragon/commit/d0f6dea0d60aef22f48dd91074b74453fea25620)) 
+
+
+
+## [v20.4.0](https://github.com/openedx/paragon/compare/v20.3.2...v20.4.0) (2022-07-08)
+
+### Features
+
+*  support automatic loading skeleton states on Card with isLoading prop  ([#1379](https://github.com/openedx/paragon/issues/1379)) ([38bbde125](https://github.com/openedx/paragon/commit/38bbde125468b3a3d0cbc5d7a9896809d634f220))
+
+
+
+## [v20.3.2](https://github.com/openedx/paragon/compare/v20.3.1...v20.3.2) (2022-07-08)
+
+### Bug Fixes
+
+*  add expandable bubble ([#1448](https://github.com/openedx/paragon/issues/1448)) ([86f9ca753](https://github.com/openedx/paragon/commit/86f9ca7536c11bfb1214f8c34a334e078cc5c36d)) 
+
+
+
+## [v20.3.1](https://github.com/openedx/paragon/compare/v20.3.0...v20.3.1) (2022-07-07)
+
+### Bug Fixes
+
+*  TextFilter component Header prop usage only handles string, not components (functions)  ([#1441](https://github.com/openedx/paragon/issues/1441)) ([a241c8b19](https://github.com/openedx/paragon/commit/a241c8b196a4c2a224366565961b45de2e5756e1)) 
+
+
+
+## [v20.3.0](https://github.com/openedx/paragon/compare/v20.2.0...v20.3.0) (2022-07-01)
+
+### Features
+
+*  [BD-46] add `Dropzone` component ([#1342](https://github.com/openedx/paragon/issues/1342)) ([facda6b97](https://github.com/openedx/paragon/commit/facda6b97e73ce79ecc0db27d83a0d2787da4fc3))
+
+
+
+## [v20.2.0](https://github.com/openedx/paragon/compare/v20.1.3...v20.2.0) (2022-06-24)
+
+### Features
+
+*  added BigBlueButton bbb icon in repo ([#1414](https://github.com/openedx/paragon/issues/1414)) ([7c846ada9](https://github.com/openedx/paragon/commit/7c846ada9edd3562c5410bebab2a4bc10e99e56d))
+
+
+
+## [v20.1.3](https://github.com/openedx/paragon/compare/v20.1.2...v20.1.3) (2022-06-24)
+
+### Bug Fixes
+
+*  [BD-46] refactoring Card component on the mobile page styles #1314 ([#1381](https://github.com/openedx/paragon/issues/1381)) ([5177354e6](https://github.com/openedx/paragon/commit/5177354e6c6685d8e3946a4329ff1b8b3d52055e)) 
+
+
+
+## [v20.1.2](https://github.com/openedx/paragon/compare/v20.1.1...v20.1.2) (2022-06-23)
+
+### Bug Fixes
+
+*  update linting to support paver sass compile ([e7704c0de](https://github.com/openedx/paragon/commit/e7704c0def94cc123fb90ac1e5ad2f60efbf7084)) 
+
+
+
+## [v20.1.1](https://github.com/openedx/paragon/compare/v20.1.0...v20.1.1) (2022-06-22)
+
+### Bug Fixes
+
+*  flip sort direction icons in TableHeaderCell and add white bg color ([#1404](https://github.com/openedx/paragon/issues/1404)) ([957bd0ab8](https://github.com/openedx/paragon/commit/957bd0ab8e65cd2ebd6b37791bfd7c5b35fa21b4)) 
+
+
+
+## [v20.1.0](https://github.com/openedx/paragon/compare/v20.0.1...v20.1.0) (2022-06-22)
+
+### Features
+
+*  [BD-46] adding optional arrow for ModalPopup component ([#1363](https://github.com/openedx/paragon/issues/1363)) ([ab0b164b7](https://github.com/openedx/paragon/commit/ab0b164b7c1adcad7918fda307e0b84f23a873bc))
+
+
+
+## [v20.0.1](https://github.com/openedx/paragon/compare/v20.0.0...v20.0.1) (2022-06-17)
+
+### Bug Fixes
+
+*  added/updated focus state styling in some components ([#1202](https://github.com/openedx/paragon/issues/1202)) ([74f9ce991](https://github.com/openedx/paragon/commit/74f9ce991f4ed997c19c69f5f010951b8592b358)) 
+
+
+
+## [v20.0.0](https://github.com/openedx/paragon/compare/v19.25.3...v20.0.0) (2022-06-17)
+
+### BREAKING CHANGES
+By adding i18n support to the Paragon design system, we are introducing a peer dependency on `react-intl@5.25.0` or greater. This may be a breaking change for some consumers, if your repository:
 * Uses v1 of `@edx/frontend-platform`
 * Uses older version of `react-intl` than v5.25.0 directly.
 * Does not use `react-intl`.
 
-## [19.25.3](https://github.com/openedx/paragon/compare/v19.25.2...v19.25.3) (2022-06-15)
 
 
-### Bug Fixes
 
-* [BD-46] added default elevation on Card component per Figma spec ([#1364](https://github.com/openedx/paragon/issues/1364)) ([0765840](https://github.com/openedx/paragon/commit/076584097475327eaa2d4e64bf2149efbb85882d))
 
-## [19.25.2](https://github.com/openedx/paragon/compare/v19.25.1...v19.25.2) (2022-06-14)
-
+## [v19.25.3](https://github.com/openedx/paragon/compare/v19.25.2...v19.25.3) (2022-06-15)
 
 ### Bug Fixes
 
-* remove prop type warning and use only CSS for threshold dot in ProgressBar ([#1380](https://github.com/openedx/paragon/issues/1380)) ([81cae2e](https://github.com/openedx/paragon/commit/81cae2e716f5fe0b40f57216487fcd0db8d3d487))
+*  [BD-46] added default elevation on Card component per Figma spec ([#1364](https://github.com/openedx/paragon/issues/1364)) ([076584097](https://github.com/openedx/paragon/commit/076584097475327eaa2d4e64bf2149efbb85882d)) 
 
-## [19.25.1](https://github.com/openedx/paragon/compare/v19.25.0...v19.25.1) (2022-06-02)
 
+
+## [v19.25.2](https://github.com/openedx/paragon/compare/v19.25.1...v19.25.2) (2022-06-14)
 
 ### Bug Fixes
 
-* `useWindowSize` to use `useLayoutEffect` instead of `useEffect` ([#1343](https://github.com/openedx/paragon/issues/1343)) ([80481ba](https://github.com/openedx/paragon/commit/80481ba7a9a1ff2396eb2f91c3ac9a0f15a92d30))
+*  remove prop type warning and use only CSS for threshold dot in ProgressBar ([#1380](https://github.com/openedx/paragon/issues/1380)) ([81cae2e71](https://github.com/openedx/paragon/commit/81cae2e716f5fe0b40f57216487fcd0db8d3d487)) 
 
-# [19.25.0](https://github.com/openedx/paragon/compare/v19.24.0...v19.25.0) (2022-05-27)
 
+
+## [v19.25.1](https://github.com/openedx/paragon/compare/v19.25.0...v19.25.1) (2022-06-02)
+
+### Bug Fixes
+
+*  `useWindowSize` to use `useLayoutEffect` instead of `useEffect` ([#1343](https://github.com/openedx/paragon/issues/1343)) ([80481ba7a](https://github.com/openedx/paragon/commit/80481ba7a9a1ff2396eb2f91c3ac9a0f15a92d30)) 
+
+
+
+## [v19.25.0](https://github.com/openedx/paragon/compare/v19.24.0...v19.25.0) (2022-05-27)
 
 ### Features
 
-* [BD-46] add all MUI icons ([#1313](https://github.com/openedx/paragon/issues/1313)) ([404692e](https://github.com/openedx/paragon/commit/404692eef7c7aa140a96bb5272d5f143c44abb72))
-
-# [19.24.0](https://github.com/openedx/paragon/compare/v19.23.1...v19.24.0) (2022-05-27)
+*  [BD-46] add all MUI icons ([#1313](https://github.com/openedx/paragon/issues/1313)) ([404692eef](https://github.com/openedx/paragon/commit/404692eef7c7aa140a96bb5272d5f143c44abb72))
 
 
-### Features
 
-* [BD-46] exports useIndexOfLastVisibleChild, responsive tabs ([#1287](https://github.com/openedx/paragon/issues/1287)) ([75311f6](https://github.com/openedx/paragon/commit/75311f69d37f7016b08956f7c63a9194b9c63269))
-
-## [19.23.1](https://github.com/openedx/paragon/compare/v19.23.0...v19.23.1) (2022-05-20)
-
-
-### Bug Fixes
-
-* add border: 0 to dropdown toggle ([#1310](https://github.com/openedx/paragon/issues/1310)) ([45887c9](https://github.com/openedx/paragon/commit/45887c9b213e44bbc0b1ad0ccbe24df519a360c6))
-
-# [19.23.0](https://github.com/openedx/paragon/compare/v19.22.2...v19.23.0) (2022-05-20)
-
+## [v19.24.0](https://github.com/openedx/paragon/compare/v19.23.1...v19.24.0) (2022-05-27)
 
 ### Features
 
-* installation, setting up @axe-core/react module, Paragon components accessibility refactoring ([#1218](https://github.com/openedx/paragon/issues/1218)) ([68d2f82](https://github.com/openedx/paragon/commit/68d2f82688c88d83314b007ce02c7c6a9c652733))
-
-## [19.22.2](https://github.com/openedx/paragon/compare/v19.22.1...v19.22.2) (2022-05-20)
+*  [BD-46] exports useIndexOfLastVisibleChild, responsive tabs ([#1287](https://github.com/openedx/paragon/issues/1287)) ([75311f69d](https://github.com/openedx/paragon/commit/75311f69d37f7016b08956f7c63a9194b9c63269))
 
 
-### Bug Fixes
 
-* [BD-46] eslint config upgrade, refactor ([#1263](https://github.com/openedx/paragon/issues/1263)) ([fff81a9](https://github.com/openedx/paragon/commit/fff81a97d79a47877a1cedf6daae089b9d0afd70))
-
-## [19.22.1](https://github.com/openedx/paragon/compare/v19.22.0...v19.22.1) (2022-05-13)
-
+## [v19.23.1](https://github.com/openedx/paragon/compare/v19.23.0...v19.23.1) (2022-05-20)
 
 ### Bug Fixes
 
-* fix select popup styles ([#1281](https://github.com/openedx/paragon/issues/1281)) ([f409171](https://github.com/openedx/paragon/commit/f409171435e81fd252e5136e4ab9c9cae07b1ce3))
+*  add border: 0 to dropdown toggle ([#1310](https://github.com/openedx/paragon/issues/1310)) ([45887c9b2](https://github.com/openedx/paragon/commit/45887c9b213e44bbc0b1ad0ccbe24df519a360c6)) 
 
-# [19.22.0](https://github.com/openedx/paragon/compare/v19.21.2...v19.22.0) (2022-05-11)
 
+
+## [v19.23.0](https://github.com/openedx/paragon/compare/v19.22.2...v19.23.0) (2022-05-20)
 
 ### Features
 
-* Add package-lock file version check ([#1277](https://github.com/openedx/paragon/issues/1277)) ([abe4121](https://github.com/openedx/paragon/commit/abe41214f0bbc9c1fa5efc5e0b8d916adfec1751))
-
-## [19.21.2](https://github.com/openedx/paragon/compare/v19.21.1...v19.21.2) (2022-05-10)
+*  installation, setting up @axe-core/react module, Paragon components accessibility refactoring ([#1218](https://github.com/openedx/paragon/issues/1218)) ([68d2f8268](https://github.com/openedx/paragon/commit/68d2f82688c88d83314b007ce02c7c6a9c652733))
 
 
-### Bug Fixes
 
-* create Playground in menu ([#1264](https://github.com/openedx/paragon/issues/1264)) ([9394b0b](https://github.com/openedx/paragon/commit/9394b0b34099dae0eb3155ec72c869a589b89783))
-
-## [19.21.1](https://github.com/openedx/paragon/compare/v19.21.0...v19.21.1) (2022-05-10)
-
+## [v19.22.2](https://github.com/openedx/paragon/compare/v19.22.1...v19.22.2) (2022-05-20)
 
 ### Bug Fixes
 
-* another force release ([eb34f80](https://github.com/openedx/paragon/commit/eb34f808ec13b7f0cf1db8be843a78947988a749))
+*  [BD-46] eslint config upgrade, refactor ([#1263](https://github.com/openedx/paragon/issues/1263)) ([fff81a97d](https://github.com/openedx/paragon/commit/fff81a97d79a47877a1cedf6daae089b9d0afd70)) 
 
-# [19.21.0](https://github.com/openedx/paragon/compare/v19.20.0...v19.21.0) (2022-05-10)
 
+
+## [v19.22.1](https://github.com/openedx/paragon/compare/v19.22.0...v19.22.1) (2022-05-13)
 
 ### Bug Fixes
 
-* force publish release ([448f419](https://github.com/openedx/paragon/commit/448f41910cb5529faed15bdae3b3ceb29a13cf0a))
-* force release ([bc5b53a](https://github.com/openedx/paragon/commit/bc5b53a43fc5d25b17b29ea6719f2f27357127d1))
+*  fix select popup styles ([#1281](https://github.com/openedx/paragon/issues/1281)) ([f40917143](https://github.com/openedx/paragon/commit/f409171435e81fd252e5136e4ab9c9cae07b1ce3)) 
 
+
+
+## [v19.22.0](https://github.com/openedx/paragon/compare/v19.21.2...v19.22.0) (2022-05-11)
 
 ### Features
 
-* [BD-46] add support for React 17 ([#1248](https://github.com/openedx/paragon/issues/1248)) ([1e0cfd9](https://github.com/openedx/paragon/commit/1e0cfd9531d075782fa6aaf8a48964bfd69fc678))
-* [BD-46] create consumer app ([#1257](https://github.com/openedx/paragon/issues/1257)) ([a750d88](https://github.com/openedx/paragon/commit/a750d88c57b74895ab59cc86238edf53e8512b6a))
+*  Add package-lock file version check ([#1277](https://github.com/openedx/paragon/issues/1277)) ([abe41214f](https://github.com/openedx/paragon/commit/abe41214f0bbc9c1fa5efc5e0b8d916adfec1751))
+
+
+
+## [v19.21.2](https://github.com/openedx/paragon/compare/v19.21.1...v19.21.2) (2022-05-10)
+
+### Bug Fixes
+
+*  create Playground in menu ([#1264](https://github.com/openedx/paragon/issues/1264)) ([9394b0b34](https://github.com/openedx/paragon/commit/9394b0b34099dae0eb3155ec72c869a589b89783)) 
+
+
+
+## [v19.21.1](https://github.com/openedx/paragon/compare/v19.21.0...v19.21.1) (2022-05-10)
+
+### Bug Fixes
+
+*  another force release ([eb34f808e](https://github.com/openedx/paragon/commit/eb34f808ec13b7f0cf1db8be843a78947988a749)) 
+
+
+
+## [v19.21.0](https://github.com/openedx/paragon/compare/v19.20.0...v19.21.0) (2022-05-10)
+
+### Features
+
+*  [BD-46] create consumer app ([#1257](https://github.com/openedx/paragon/issues/1257)) ([a750d88c5](https://github.com/openedx/paragon/commit/a750d88c57b74895ab59cc86238edf53e8512b6a))
+*  [BD-46] add support for React 17 ([#1248](https://github.com/openedx/paragon/issues/1248)) ([1e0cfd953](https://github.com/openedx/paragon/commit/1e0cfd9531d075782fa6aaf8a48964bfd69fc678))
+
+### Bug Fixes
+
+*  force release ([bc5b53a43](https://github.com/openedx/paragon/commit/bc5b53a43fc5d25b17b29ea6719f2f27357127d1)) 
+*  force publish release ([448f41910](https://github.com/openedx/paragon/commit/448f41910cb5529faed15bdae3b3ceb29a13cf0a)) 
+
+
 
 ## [v19.20.0](https://github.com/openedx/paragon/compare/v19.19.1...v19.20.0) (2022-04-29)
 
@@ -829,6 +1589,22 @@ Refactors to make the configuration of bulk and table actions in `DataTable` mor
 
 *  Make BulkAction buttons more configurable ([#1000](https://github.com/openedx/paragon/issues/1000)) ([54622e70b](https://github.com/openedx/paragon/commit/54622e70b28a7db53516b0e617b7eaa7a0d230a8))
 
+### BREAKING CHANGES
+
+Refactors to make the configuration of bulk and table actions in `DataTable` more flexible to support additional use cases. Rather than passing array of objects to configure these actions, you may pass an array of custom component nodes. These custom components will receive props from `DataTable` (e.g., selected rows, the `tableInstance`, etc.).
+
+* feat: Make BulkAction buttons more configurable
+
+* feat: rebase updates to examples
+
+* feat: provide API for bulkActions
+
+* feat: tests update
+
+* feat: fix test according to comment
+
+Co-authored-by: vzadorozhnii <vladyslav.zadorozhnii@raccoongang.com>
+
 
 
 ## [v17.5.3](https://github.com/openedx/paragon/compare/v17.5.2...v17.5.3) (2022-01-25)
@@ -964,6 +1740,29 @@ Refactors to make the configuration of bulk and table actions in `DataTable` mor
 ### Features
 
 *  pass through functionality from react-responsive ([#942](https://github.com/openedx/paragon/issues/942)) ([cc01f218d](https://github.com/openedx/paragon/commit/cc01f218d54f5570d485635be6a3a7b6c60e3aec))
+
+### BREAKING CHANGES
+Custom Responsive components have
+been removed in favor of passing through components
+and functionality from react-responsive directly.
+
+Components that have been removed:
+- `ExtraSmall`
+- `Small`
+- `Medium`
+- `Large`
+- `ExtraLarge`
+- `ExtraExtraLarge`
+- `LargerThanExtraSmall`
+
+New passthroughs:
+- `MediaQuery`
+- `useMediaQuery`
+- `ResponsiveContext`
+
+Please refer to
+[react-responsive](https://www.npmjs.com/package/react-responsive)
+documentation for more information.
 
 
 
@@ -2308,7 +3107,7 @@ The tooltip has been removed from IconButton.
 *  add button, dropdown, and tabs from react-bootstrap ([#553](https://github.com/openedx/paragon/issues/553)) ([a7f0e663d](https://github.com/openedx/paragon/commit/a7f0e663d7483a070f43903928281d40ee07b119))
 
 ### BREAKING CHANGES
-`Tabs`has been replaced by the react-bootstrap `Tabs`. The old implementation is available at `Tabs.Deprecated`. The old implementation matched the order of labels with the order of children. The new implementation uses the Tab child component's title prop to create labels dynamically.
+`Tabs` has been replaced by the react-bootstrap `Tabs`. The old implementation is available at `Tabs.Deprecated`. The old implementation matched the order of labels with the order of children. The new implementation uses the Tab child component's title prop to create labels dynamically.
 
 
 
@@ -3065,6 +3864,10 @@ Modal now renders through a Portal, this may cause failures in tests or styling 
 
 ## [v2.0.0](https://github.com/openedx/paragon/compare/v1.7.2...v2.0.0) (2018-01-25)
 
+### BREAKING CHANGES
+add a componentWillReceiveProps function to CheckBox to allow for CheckBox to be updated by changes to prop, prop defaultChecked has been replaced by prop checked.
+
+
 
 
 ## [v1.7.2](https://github.com/openedx/paragon/compare/v1.7.1...v1.7.2) (2018-01-17)
@@ -3180,3 +3983,6 @@ Modal now renders through a Portal, this may cause failures in tests or styling 
 
 
 ## [v0.1.0](https://github.com/openedx/paragon/compare/v0.0.1...v0.1.0) (2017-10-16)
+
+
+
