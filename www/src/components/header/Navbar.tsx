@@ -17,7 +17,7 @@ export interface INavbar {
   siteTitle: string,
   onMenuClick: () => boolean,
   setTarget: React.Dispatch<React.SetStateAction<HTMLButtonElement | null>>,
-  onSettingsClick: Function | undefined,
+  onSettingsClick?: () => void,
   menuIsOpen?: boolean,
   showMinimizedTitle?: boolean,
   showSettingsIcon?: boolean,

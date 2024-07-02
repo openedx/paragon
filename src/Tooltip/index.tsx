@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import BaseTooltip from 'react-bootstrap/Tooltip';
+import BaseTooltip, { type TooltipProps as BaseTooltipProps } from 'react-bootstrap/Tooltip';
+import { type Placement } from 'react-bootstrap/Overlay';
+import type { ComponentWithAsProp } from '../utils/types/bootstrap';
 
-const PLACEMENT_VARIANTS = [
+interface TooltipProps extends BaseTooltipProps {
+  variant?: 'light';
+}
+
+const PLACEMENT_VARIANTS: Placement[] = [
   'auto-start',
   'auto',
   'auto-end',
@@ -21,7 +27,7 @@ const PLACEMENT_VARIANTS = [
   'left-start',
 ];
 
-const Tooltip = React.forwardRef(({
+const Tooltip: ComponentWithAsProp<'div', TooltipProps> = React.forwardRef(({
   children,
   variant,
   ...props
