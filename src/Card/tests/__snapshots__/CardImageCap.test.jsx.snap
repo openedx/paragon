@@ -1,16 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<CardImageCap /> renders with loading equals lazy 1`] = `
+<div
+  className="pgn__card-wrapper-image-cap vertical"
+>
+  <span
+    aria-busy={true}
+    aria-live="polite"
+    className="pgn__card-image-cap-loader show"
+  >
+    <span
+      className="react-loading-skeleton"
+      style={
+        Object {
+          "height": 140,
+        }
+      }
+    >
+      ‌
+    </span>
+    <br />
+  </span>
+  <img
+    className="pgn__card-image-cap"
+    loading="lazy"
+  />
+  <span
+    aria-busy={true}
+    aria-live="polite"
+    className="pgn__card-logo-cap"
+  >
+    <span
+      className="react-loading-skeleton"
+      style={
+        Object {
+          "height": 41,
+        }
+      }
+    >
+      ‌
+    </span>
+    <br />
+  </span>
+  <img
+    alt="Logo alt"
+    className="pgn__card-logo-cap"
+    loading="lazy"
+  />
+</div>
+`;
+
 exports[`<CardImageCap /> renders with scr prop and srcAlt 1`] = `
 <div
   className="pgn__card-wrapper-image-cap vertical"
 >
+  <span
+    aria-busy={true}
+    aria-live="polite"
+    className="pgn__card-image-cap-loader show"
+  >
+    <span
+      className="react-loading-skeleton"
+      style={
+        Object {
+          "height": 140,
+        }
+      }
+    >
+      ‌
+    </span>
+    <br />
+  </span>
   <img
     alt="Alt text"
     className="pgn__card-image-cap"
     loading="eager"
-    onError={[Function]}
-    onLoad={[Function]}
-    src="http://fake.image"
   />
 </div>
 `;
@@ -19,12 +83,26 @@ exports[`<CardImageCap /> renders with scr prop in horizontal orientation 1`] = 
 <div
   className="pgn__card-wrapper-image-cap horizontal"
 >
+  <span
+    aria-busy={true}
+    aria-live="polite"
+    className="pgn__card-image-cap-loader show"
+  >
+    <span
+      className="react-loading-skeleton"
+      style={
+        Object {
+          "height": "100%",
+        }
+      }
+    >
+      ‌
+    </span>
+    <br />
+  </span>
   <img
     className="pgn__card-image-cap"
     loading="eager"
-    onError={[Function]}
-    onLoad={[Function]}
-    src="http://fake.image"
   />
 </div>
 `;
@@ -33,19 +111,47 @@ exports[`<CardImageCap /> renders with src and logoSrc prop in horizontal orient
 <div
   className="pgn__card-wrapper-image-cap horizontal"
 >
+  <span
+    aria-busy={true}
+    aria-live="polite"
+    className="pgn__card-image-cap-loader show"
+  >
+    <span
+      className="react-loading-skeleton"
+      style={
+        Object {
+          "height": "100%",
+        }
+      }
+    >
+      ‌
+    </span>
+    <br />
+  </span>
   <img
     className="pgn__card-image-cap"
     loading="eager"
-    onError={[Function]}
-    onLoad={[Function]}
-    src="http://fake.image"
   />
+  <span
+    aria-busy={true}
+    aria-live="polite"
+    className="pgn__card-logo-cap"
+  >
+    <span
+      className="react-loading-skeleton"
+      style={
+        Object {
+          "height": 41,
+        }
+      }
+    >
+      ‌
+    </span>
+    <br />
+  </span>
   <img
     className="pgn__card-logo-cap"
     loading="eager"
-    onError={[Function]}
-    onLoad={[Function]}
-    src="http://fake.image"
   />
 </div>
 `;
@@ -54,42 +160,48 @@ exports[`<CardImageCap /> renders with src, logoSrc and logoAlt props 1`] = `
 <div
   className="pgn__card-wrapper-image-cap vertical"
 >
+  <span
+    aria-busy={true}
+    aria-live="polite"
+    className="pgn__card-image-cap-loader show"
+  >
+    <span
+      className="react-loading-skeleton"
+      style={
+        Object {
+          "height": 140,
+        }
+      }
+    >
+      ‌
+    </span>
+    <br />
+  </span>
   <img
     className="pgn__card-image-cap"
     loading="eager"
-    onError={[Function]}
-    onLoad={[Function]}
-    src="http://fake.image"
   />
+  <span
+    aria-busy={true}
+    aria-live="polite"
+    className="pgn__card-logo-cap"
+  >
+    <span
+      className="react-loading-skeleton"
+      style={
+        Object {
+          "height": 41,
+        }
+      }
+    >
+      ‌
+    </span>
+    <br />
+  </span>
   <img
     alt="Logo alt"
     className="pgn__card-logo-cap"
     loading="eager"
-    onError={[Function]}
-    onLoad={[Function]}
-    src="http://fake.image"
-  />
-</div>
-`;
-
-exports[`<CardImageCap /> renders with loading equals lazy 1`] = `
-<div
-  className="pgn__card-wrapper-image-cap vertical"
->
-  <img
-    className="pgn__card-image-cap"
-    loading="lazy"
-    onError={[Function]}
-    onLoad={[Function]}
-    src="http://fake.image"
-  />
-  <img
-    alt="Logo alt"
-    className="pgn__card-logo-cap"
-    loading="lazy"
-    onError={[Function]}
-    onLoad={[Function]}
-    src="http://fake.image"
   />
 </div>
 `;

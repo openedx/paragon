@@ -1,12 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
 import cardSrcFallbackImg from './fallback-default.png';
-
-const SKELETON_HEIGHT_VALUE = 140;
-const LOGO_SKELETON_HEIGHT_VALUE = 41;
+import CardImageWithSkeleton from './CardImageWithSkeleton';
+import { LOGO_SKELETON_HEIGHT_VALUE, SKELETON_HEIGHT_VALUE } from './constants';
 
 const CardImageCap = React.forwardRef(({
   src,
@@ -24,69 +22,41 @@ const CardImageCap = React.forwardRef(({
   imageLoadingType,
 }, ref) => {
   const { orientation, isLoading } = useContext(CardContext);
-  const [showImageCap, setShowImageCap] = useState(false);
-  const [showLogoCap, setShowLogoCap] = useState(false);
+
+  const imageSkeletonHeight = useMemo(() => (
+    orientation === 'horizontal' ? '100%' : skeletonHeight
+  ), [orientation, skeletonHeight]);
 
   const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
-
-  if (isLoading) {
-    return (
-      <div
-        className={classNames(wrapperClassName, className)}
-        data-testid="image-loader-wrapper"
-      >
-        <Skeleton
-          containerClassName="pgn__card-image-cap-loader"
-          height={orientation === 'horizontal' ? '100%' : skeletonHeight}
-          width={skeletonWidth}
-        />
-        {logoSkeleton && (
-          <Skeleton
-            containerClassName="pgn__card-logo-cap"
-            height={logoSkeletonHeight}
-            width={logoSkeletonWidth}
-          />
-        )}
-      </div>
-    );
-  }
-
-  const handleSrcFallback = (event, altSrc, imageKey) => {
-    const { currentTarget } = event;
-
-    if (!altSrc || currentTarget.src.endsWith(altSrc)) {
-      if (imageKey === 'imageCap') {
-        currentTarget.src = cardSrcFallbackImg;
-      } else {
-        setShowLogoCap(false);
-      }
-
-      return;
-    }
-
-    currentTarget.src = altSrc;
-  };
 
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
       {!!src && (
-        <img
-          className={classNames('pgn__card-image-cap', { show: showImageCap })}
+        <CardImageWithSkeleton
           src={src}
-          onError={(event) => handleSrcFallback(event, fallbackSrc, 'imageCap')}
-          onLoad={() => setShowImageCap(true)}
           alt={srcAlt}
-          loading={imageLoadingType}
+          fallback={fallbackSrc}
+          className="pgn__card-image-cap"
+          useDefaultSrc
+          withSkeleton
+          skeletonWidth={skeletonWidth}
+          skeletonHeight={imageSkeletonHeight}
+          imageLoadingType={imageLoadingType}
+          skeletonClassName="pgn__card-image-cap-loader"
+          isLoading={isLoading}
         />
       )}
-      {!!logoSrc && (
-        <img
-          className={classNames('pgn__card-logo-cap', { show: showLogoCap })}
+      {!!logoSrc && !isLoading && (
+        <CardImageWithSkeleton
           src={logoSrc}
-          onError={(event) => handleSrcFallback(event, fallbackLogoSrc, 'logoCap')}
-          onLoad={() => setShowLogoCap(true)}
           alt={logoAlt}
-          loading={imageLoadingType}
+          fallback={fallbackLogoSrc}
+          withSkeleton={logoSkeleton}
+          className="pgn__card-logo-cap"
+          skeletonWidth={logoSkeletonWidth}
+          skeletonHeight={logoSkeletonHeight}
+          imageLoadingType={imageLoadingType}
+          skeletonClassName="pgn__card-logo-cap"
         />
       )}
     </div>
@@ -109,9 +79,9 @@ CardImageCap.propTypes = {
   /** Specifies logo image alt text. */
   logoAlt: PropTypes.string,
   /** Specifies height of Image skeleton in loading state. */
-  skeletonHeight: PropTypes.number,
+  skeletonHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /** Specifies width of Image skeleton in loading state. */
-  skeletonWidth: PropTypes.number,
+  skeletonWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /** Specifies whether the cap should be displayed during loading. */
   logoSkeleton: PropTypes.bool,
   /** Specifies height of Logo skeleton in loading state. */
