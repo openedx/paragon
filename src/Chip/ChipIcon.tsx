@@ -7,11 +7,11 @@ import { STYLE_VARIANTS } from './constants';
 export type ChipIconProps = {
   className: string,
   src: React.ComponentType,
-  variant: string,
+  variant: typeof STYLE_VARIANTS[keyof typeof STYLE_VARIANTS],
   disabled?: boolean,
 } & (
   // Either _both_ onClick and alt are provided, or neither is:
-  | { onClick: KeyboardEventHandler & MouseEventHandler, alt: string }
+  | { onClick: KeyboardEventHandler<HTMLButtonElement> & MouseEventHandler<HTMLButtonElement>, alt: string }
   | { onClick?: undefined, alt?: undefined }
 );
 

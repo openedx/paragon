@@ -12,7 +12,7 @@ export interface IChip {
   children: React.ReactNode,
   onClick?: KeyboardEventHandler & MouseEventHandler,
   className?: string,
-  variant?: string,
+  variant?: typeof STYLE_VARIANTS[keyof typeof STYLE_VARIANTS],
   iconBefore?: React.ComponentType,
   iconBeforeAlt?: string,
   iconAfter?: React.ComponentType,
