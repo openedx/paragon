@@ -4,30 +4,34 @@ import userEvent from '@testing-library/user-event';
 
 import Hyperlink from '.';
 
-const content = 'content';
 const destination = 'destination';
+const content = 'content';
 const onClick = jest.fn();
 const props = {
-  content,
   destination,
   onClick,
 };
 const externalLinkAlternativeText = 'externalLinkAlternativeText';
 const externalLinkTitle = 'externalLinkTitle';
 const externalLinkProps = {
-  target: '_blank',
+  target: '_blank' as const,
   externalLinkAlternativeText,
   externalLinkTitle,
   ...props,
 };
 
 describe('correct rendering', () => {
+  beforeEach(() => {
+    onClick.mockClear();
+  });
+
   it('renders Hyperlink', async () => {
-    const { getByRole } = render(<Hyperlink {...props} />);
+    const { getByRole } = render(<Hyperlink {...props}>{content}</Hyperlink>);
     const wrapper = getByRole('link');
     expect(wrapper).toBeInTheDocument();
 
     expect(wrapper).toHaveClass('pgn__hyperlink');
+    expect(wrapper).toHaveClass('standalone-link');
     expect(wrapper).toHaveTextContent(content);
     expect(wrapper).toHaveAttribute('href', destination);
     expect(wrapper).toHaveAttribute('target', '_self');
@@ -36,8 +40,17 @@ describe('correct rendering', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
+  it('renders an underlined Hyperlink', async () => {
+    const { getByRole } = render(<Hyperlink isInline {...props}>{content}</Hyperlink>);
+    const wrapper = getByRole('link');
+    expect(wrapper).toBeInTheDocument();
+    expect(wrapper).toHaveClass('pgn__hyperlink');
+    expect(wrapper).not.toHaveClass('standalone-link');
+    expect(wrapper).toHaveClass('inline-link');
+  });
+
   it('renders external Hyperlink', () => {
-    const { getByRole, getByTestId } = render(<Hyperlink {...externalLinkProps} />);
+    const { getByRole, getByTestId } = render(<Hyperlink {...externalLinkProps}>{content}</Hyperlink>);
     const wrapper = getByRole('link');
     const icon = getByTestId('hyperlink-icon');
     const iconSvg = icon.querySelector('svg');
@@ -53,18 +66,16 @@ describe('correct rendering', () => {
 
 describe('security', () => {
   it('prevents reverse tabnabbing for links with target="_blank"', () => {
-    const { getByRole } = render(<Hyperlink {...externalLinkProps} />);
+    const { getByRole } = render(<Hyperlink {...externalLinkProps}>{content}</Hyperlink>);
     const wrapper = getByRole('link');
     expect(wrapper).toHaveAttribute('rel', 'noopener noreferrer');
   });
 });
 
 describe('event handlers are triggered correctly', () => {
-  let spy;
-  beforeEach(() => { spy = jest.fn(); });
-
   it('should fire onClick', async () => {
-    const { getByRole } = render(<Hyperlink {...props} onClick={spy} />);
+    const spy = jest.fn();
+    const { getByRole } = render(<Hyperlink {...props} onClick={spy}>{content}</Hyperlink>);
     const wrapper = getByRole('link');
     expect(spy).toHaveBeenCalledTimes(0);
     await userEvent.click(wrapper);
