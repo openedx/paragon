@@ -20,7 +20,3 @@ class ResizeObserver {
 }
 
 window.ResizeObserver = ResizeObserver;
-
-(window as any).crypto = {
-  getRandomValues: (arr: any) => crypto.randomBytes(arr.length),
-};
