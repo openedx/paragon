@@ -17,8 +17,8 @@ export interface IDefaultValue {
   theme?: string,
   handleSettingsChange: Function,
   showSettings?: React.SyntheticEvent | React.ReactNode,
-  closeSettings?: React.SyntheticEvent | React.ReactNode,
-  openSettings?: Function,
+  closeSettings?: () => void,
+  openSettings?: () => void,
 }
 
 const defaultValue = {

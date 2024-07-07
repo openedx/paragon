@@ -10,6 +10,9 @@ export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as Icon } from './Icon';
+export { default as IconButton, IconButtonWithTooltip } from './IconButton';
+export { default as Overlay, OverlayTrigger } from './Overlay';
+export { default as Tooltip } from './Tooltip';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
@@ -70,7 +73,6 @@ export {
   FormAutosuggestOption,
   InputGroup,
 } from './Form';
-export { default as IconButton, IconButtonWithTooltip } from './IconButton';
 export { default as IconButtonToggle } from './IconButtonToggle';
 export { default as Image, Figure } from './Image';
 export { default as MailtoLink, MAIL_TO_LINK_EXTERNAL_LINK_ALTERNATIVE_TEXT, MAIL_TO_LINK_EXTERNAL_LINK_TITLE } from './MailtoLink';
@@ -97,7 +99,6 @@ export {
   NavLink,
 } from './Nav';
 export { default as Navbar, NavbarBrand, NAVBAR_LABEL } from './Navbar';
-export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as PageBanner, PAGE_BANNER_DISMISS_ALT_TEXT } from './PageBanner';
 export {
   default as Pagination,
@@ -132,7 +133,6 @@ export {
   TabPane,
 } from './Tabs';
 export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
-export { default as Tooltip } from './Tooltip';
 export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';
 export { default as DataTable } from './DataTable';
