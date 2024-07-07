@@ -3,9 +3,7 @@ import PropTypes, { type Requireable } from 'prop-types';
 import classNames from 'classnames';
 // @ts-ignore
 import { requiredWhen } from '../utils/propTypes';
-// @ts-ignore
 import { STYLE_VARIANTS } from './constants';
-// @ts-ignore
 import ChipIcon from './ChipIcon';
 
 export const CHIP_PGN_CLASS = 'pgn__chip';
@@ -14,7 +12,7 @@ export interface IChip {
   children: React.ReactNode,
   onClick?: KeyboardEventHandler & MouseEventHandler,
   className?: string,
-  variant?: string,
+  variant?: typeof STYLE_VARIANTS[keyof typeof STYLE_VARIANTS],
   iconBefore?: React.ComponentType,
   iconBeforeAlt?: string,
   iconAfter?: React.ComponentType,
