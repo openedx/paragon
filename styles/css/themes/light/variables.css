@@ -238,8 +238,7 @@
   --pgn-elevation-icon-button-box-shadow-primary-inverse-active: none;
   --pgn-elevation-icon-button-box-shadow-primary-active: none;
   --pgn-elevation-code-kbd-box-shadow: none;
-  --pgn-elevation-annotation-box-shadow: drop-shadow(0 2px 4px rgba(0, 0, 0, .15))  drop-shadow(0 2px 8px rgba(0, 0, 0, .15));
-  --pgn-elevation-alert-box-shadow: 0 1px 2px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15);
+  --pgn-elevation-annotation-box-shadow: drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15));
   --pgn-elevation-form-control-select-border-base: none;
   --pgn-elevation-form-control-range-thumb-base: none;
   --pgn-elevation-form-control-range-track: none;
@@ -467,7 +466,7 @@
   --pgn-color-carousel-caption: var(--pgn-color-white);
   --pgn-color-carousel-indicator-active-bg: var(--pgn-color-white);
   --pgn-color-carousel-control-base: var(--pgn-color-white);
-  --pgn-color-card-border-focus-base: #00000080;
+  --pgn-color-card-border-focus-base: var(--pgn-color-black);
   --pgn-color-card-border-base: #00000020;
   --pgn-color-bubble-bg-primary: var(--pgn-color-primary-base);
   --pgn-color-bubble-text-primary: var(--pgn-color-white);
@@ -475,7 +474,6 @@
   --pgn-color-bubble-text-warning: var(--pgn-color-white);
   --pgn-color-bubble-text-success: var(--pgn-color-white);
   --pgn-color-breadcrumb-inverse-base: var(--pgn-color-white);
-  --pgn-color-breadcrumb-bg: var(--pgn-color-gray-200);
   --pgn-color-badge-bg-dark: var(--pgn-color-dark-base);
   --pgn-color-badge-bg-light: var(--pgn-color-light-base);
   --pgn-color-badge-bg-primary: var(--pgn-color-primary-base);
@@ -902,6 +900,7 @@
   --pgn-color-dropdown-bg: var(--pgn-color-bg-base);
   --pgn-color-dropdown-header: var(--pgn-color-gray-500);
   --pgn-color-dropdown-text: var(--pgn-color-body-base);
+  --pgn-color-data-table-border: var(--pgn-color-light-300);
   --pgn-color-data-table-bg-base: var(--pgn-color-bg-base);
   --pgn-color-chip-label-dark: var(--pgn-color-chip-outline-dark);
   --pgn-color-chip-label-base: var(--pgn-color-primary-700);
@@ -1137,6 +1136,7 @@
   --pgn-elevation-pagination-focus-box-shadow: var(--pgn-elevation-input-btn-focus-box-shadow);
   --pgn-elevation-dropzone-active: inset 0 0 0 2px var(--pgn-color-primary-500);
   --pgn-elevation-form-control-select-border-focus: var(--pgn-elevation-input-btn-focus-box-shadow);
+  --pgn-elevation-form-input-focus: 0 0 0 1px var(--pgn-color-primary-500);
   --pgn-border-color-nav-tabs-link-border-focus: var(--pgn-color-nav-tabs-base-link-active-text);
   --pgn-border-color-nav-tabs-link-border-hover: transparent transparent var(--pgn-color-nav-tabs-base-border-base);
   --pgn-color-action-default-danger-900: #60161DFF;
@@ -1470,6 +1470,7 @@
   --pgn-elevation-dropzone-error: inset 0 0 0 2px var(--pgn-color-danger-300);
   --pgn-elevation-dropzone-focus: inset 0 0 0 2px var(--pgn-color-info-300);
   --pgn-elevation-dropzone-hover: inset 0 0 0 2px var(--pgn-color-info-300);
+  --pgn-elevation-form-control-file-focus: var(--pgn-elevation-form-input-focus);
   --pgn-elevation-form-control-range-thumb-focus: 0 0 0 1px var(--pgn-color-body-bg), var(--pgn-size-form-input-width-focus);
   --pgn-other-content-form-control-select-indicator-icon: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.58984L12 13.1698L7.41 8.58984L6 9.99984L12 15.9998L18 9.99984L16.59 8.58984Z" fill="%23454545FF"/></svg>');
   --pgn-other-content-form-control-switch-indicator-icon-on: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23FFFFFFFF'/%3e%3c/svg%3e");

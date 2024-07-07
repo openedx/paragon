@@ -7,7 +7,7 @@ import { colorCSSDeclaration } from './utils';
 
 function CSSUtilitiesTable({ selectors }: CSSUtilities) {
   const [showPopover, setShowPopover] = useState<boolean>(false);
-  const [popoverTarget, setPopoverTarget] = useState<EventTarget | undefined>(undefined);
+  const [popoverTarget, setPopoverTarget] = useState<HTMLElement | undefined>(undefined);
   const [computedStyle, setComputedStyle] = useState<string>('');
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function CSSUtilitiesTable({ selectors }: CSSUtilities) {
   }, []);
 
   const handleCSSVariableMouseEnter = (e: React.MouseEvent, declaration: string) => {
-    setPopoverTarget(e.target);
+    setPopoverTarget(e.target as HTMLElement);
     setShowPopover(true);
 
     const propertyName = declaration.split(':')[0];

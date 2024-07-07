@@ -92,7 +92,6 @@
   --pgn-typography-image-figure-caption-font-size: 90%;
   --pgn-typography-dropdown-item-text-decoration: none;
   --pgn-typography-code-font-size: 87.5%;
-  --pgn-typography-breadcrumb-font-size: inherit;
   --pgn-typography-badge-font-size: 75%;
   --pgn-typography-alert-line-height: 1.5rem;
   --pgn-typography-alert-font-size: .875rem;
@@ -522,7 +521,6 @@
   --pgn-size-card-image-horizontal-width-min: var(--pgn-size-card-image-horizontal-width-max);
   --pgn-size-card-border-radius-base: var(--pgn-size-border-radius-base);
   --pgn-size-card-border-width: var(--pgn-size-border-width);
-  --pgn-size-breadcrumb-border-radius-base: var(--pgn-size-border-radius-base);
   --pgn-size-badge-focus-width: var(--pgn-size-input-btn-focus-width);
   --pgn-size-alert-border-radius: var(--pgn-size-border-radius-base);
   --pgn-size-list-group-border-radius: var(--pgn-size-border-radius-base);
@@ -575,6 +573,7 @@
   --pgn-size-navbar-brand-height: calc(var(--pgn-typography-navbar-brand-font-size) * var(--pgn-typography-line-height-base));
   --pgn-size-dropdown-border-radius-inner: calc(var(--pgn-size-dropdown-border-radius-base) - var(--pgn-size-dropdown-border-width));
   --pgn-size-card-image-border-radius: var(--pgn-size-card-border-radius-base);
+  --pgn-size-card-border-radius-inner: calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width));
   --pgn-size-form-control-file-border-radius: var(--pgn-size-form-input-radius-border-base);
   --pgn-size-form-input-width-border: var(--pgn-size-input-btn-border-width);
   --pgn-size-form-input-height-inner-quarter: calc(var(--pgn-typography-form-input-line-height-base) * .25em + calc(var(--pgn-spacing-form-input-padding-y-base) / 2));
