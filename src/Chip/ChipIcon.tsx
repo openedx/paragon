@@ -1,9 +1,7 @@
 import React, { KeyboardEventHandler, MouseEventHandler } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
-// @ts-ignore
 import IconButton from '../IconButton';
-// @ts-ignore
 import { STYLE_VARIANTS } from './constants';
 
 export type ChipIconProps = {

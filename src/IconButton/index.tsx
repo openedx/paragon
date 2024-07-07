@@ -7,7 +7,7 @@ import { OverlayTrigger } from '../Overlay';
 import Tooltip from '../Tooltip';
 
 interface Props extends React.HTMLAttributes<HTMLButtonElement> {
-  iconAs?: typeof Icon | typeof FontAwesomeIcon,
+  iconAs?: React.ComponentType<any>,
   /** Additional CSS class[es] to apply to this button */
   className?: string;
   /** Alt text for your icon. For best practice, avoid using alt text to describe
@@ -75,11 +75,13 @@ const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
       {...attrs}
     >
       <span className="btn-icon__icon-container">
-        <IconComponent
-          className={classNames('btn-icon__icon', iconClassNames)}
-          icon={icon as any}
-          src={src}
-        />
+        {IconComponent && (
+          <IconComponent
+            className={classNames('btn-icon__icon', iconClassNames)}
+            icon={icon as any}
+            src={src}
+          />
+        )}
       </span>
     </button>
   );
