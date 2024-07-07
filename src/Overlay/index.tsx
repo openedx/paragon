@@ -1,10 +1,14 @@
 import React from 'react';
-import BaseOverlay from 'react-bootstrap/Overlay';
-import BaseOverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import BaseOverlay, { type OverlayProps, type Placement } from 'react-bootstrap/Overlay';
+import BaseOverlayTrigger, { type OverlayTriggerProps, type OverlayTriggerType } from 'react-bootstrap/OverlayTrigger';
 import Fade from 'react-bootstrap/Fade';
 import PropTypes from 'prop-types';
 
-const PLACEMENT_VARIANTS = [
+// Note: The only thing this file adds to the base component is propTypes validation.
+// As more Paragon consumers adopt TypeScript, we could consider removing almost all of this code
+// and just re-export the Overlay and OverlayTrigger components from react-bootstrap unmodified.
+
+const PLACEMENT_VARIANTS: Placement[] = [
   'auto-start',
   'auto',
   'auto-end',
@@ -22,16 +26,16 @@ const PLACEMENT_VARIANTS = [
   'left-start',
 ];
 
-const TRIGGER_VARIANTS = [
+const TRIGGER_VARIANTS: OverlayTriggerType[] = [
   'hover',
   'click',
   'focus',
 ];
 
-function Overlay(props) {
+function Overlay(props: OverlayProps) {
   return <BaseOverlay {...props} />;
 }
-function OverlayTrigger(props) {
+function OverlayTrigger(props: OverlayTriggerProps) {
   return (
     <BaseOverlayTrigger {...props}>
       {props.children}
