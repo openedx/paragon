@@ -2,9 +2,9 @@ import React, { useRef, useState, useEffect } from 'react';
 
 const useIsVisible = (defaultIsVisible = true): [
   isVisible: boolean,
-  sentinelRef: React.MutableRefObject<HTMLDivElement | null>,
+  sentinelRef: React.MutableRefObject<HTMLElement | null>,
 ] => {
-  const sentinelRef = useRef<HTMLDivElement | null>(null);
+  const sentinelRef = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(defaultIsVisible);
 
   useEffect(() => {
