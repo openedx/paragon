@@ -1,5 +1,5 @@
 {
-  "lastModified": 1720447697100,
+  "lastModified": 1720534029510,
   "projectUsages": [
     {
       "version": "22.6.1",
@@ -5387,9 +5387,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
-            "line": 102,
+            "line": 156,
             "column": 12,
-            "index": 4533
+            "index": 7373
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableColumnHeader.jsx",
@@ -6288,6 +6288,18 @@
             "line": 7,
             "column": 39,
             "index": 249
+          },
+          {
+            "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
+            "line": 67,
+            "column": 4,
+            "index": 3047
+          },
+          {
+            "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
+            "line": 94,
+            "column": 4,
+            "index": 4365
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
@@ -7745,9 +7757,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
-            "line": 118,
+            "line": 172,
             "column": 24,
-            "index": 5341
+            "index": 8181
           },
           {
             "filePath": "src/components/learner-credit-management/MultipleBudgetsPage.jsx",
@@ -9515,9 +9527,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
-            "line": 95,
+            "line": 149,
             "column": 4,
-            "index": 4335
+            "index": 7175
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableColumnHeader.jsx",
@@ -9607,9 +9619,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
-            "line": 100,
+            "line": 154,
             "column": 8,
-            "index": 4457
+            "index": 7297
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/utils.jsx",
@@ -9651,9 +9663,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
-            "line": 101,
+            "line": 155,
             "column": 10,
-            "index": 4497
+            "index": 7337
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
@@ -9683,9 +9695,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
-            "line": 105,
+            "line": 159,
             "column": 10,
-            "index": 4618
+            "index": 7458
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/utils.jsx",
@@ -10191,7 +10203,7 @@
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
             "line": 50,
             "column": 4,
-            "index": 2124
+            "index": 2131
           },
           {
             "filePath": "src/components/SaveTemplateButton/index.jsx",
@@ -11869,9 +11881,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
-            "line": 131,
+            "line": 185,
             "column": 6,
-            "index": 5677
+            "index": 8517
           }
         ],
         "Send": [
@@ -11905,7 +11917,7 @@
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
             "line": 23,
             "column": 4,
-            "index": 612
+            "index": 619
           }
         ],
         "DoNotDisturbOn": [
@@ -12099,9 +12111,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberStatusTableCell.jsx",
-            "line": 67,
+            "line": 121,
             "column": 4,
-            "index": 2990
+            "index": 5830
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
@@ -14443,7 +14455,7 @@
       }
     },
     {
-      "version": "22.5.1",
+      "version": "22.6.1",
       "name": "@edx/frontend-app-course-authoring",
       "repository": {
         "type": "git",
@@ -16673,12 +16685,6 @@
             "line": 33,
             "column": 12,
             "index": 864
-          },
-          {
-            "filePath": "src/studio-home/tabs-section/libraries-v2-tab/index.jsx",
-            "line": 56,
-            "column": 12,
-            "index": 1760
           },
           {
             "filePath": "src/taxonomy/delete-dialog/index.jsx",
@@ -23975,18 +23981,6 @@
             "index": 811
           },
           {
-            "filePath": "src/studio-home/tabs-section/libraries-v2-tab/index.jsx",
-            "line": 34,
-            "column": 6,
-            "index": 965
-          },
-          {
-            "filePath": "src/studio-home/tabs-section/libraries-v2-tab/index.jsx",
-            "line": 55,
-            "column": 10,
-            "index": 1707
-          },
-          {
             "filePath": "src/textbooks/Textbooks.jsx",
             "line": 55,
             "column": 6,
@@ -24809,12 +24803,6 @@
             "line": 158,
             "column": 14,
             "index": 4882
-          },
-          {
-            "filePath": "src/studio-home/tabs-section/libraries-v2-tab/index.jsx",
-            "line": 92,
-            "column": 12,
-            "index": 2821
           }
         ],
         "ClosedCaption": [
@@ -25896,19 +25884,19 @@
       }
     },
     {
-      "version": "22.5.1",
+      "version": "22.6.1",
       "name": "@openedx-plugins/course-app-calculator",
       "folderName": "calculator",
       "usages": {}
     },
     {
-      "version": "22.5.1",
+      "version": "22.6.1",
       "name": "@openedx-plugins/course-app-edxnotes",
       "folderName": "edxnotes",
       "usages": {}
     },
     {
-      "version": "22.5.1",
+      "version": "22.6.1",
       "name": "@openedx-plugins/course-app-learning_assistant",
       "folderName": "learning_assistant",
       "usages": {
@@ -25929,7 +25917,7 @@
       }
     },
     {
-      "version": "22.5.1",
+      "version": "22.6.1",
       "name": "@openedx-plugins/course-app-live",
       "folderName": "live",
       "usages": {
@@ -25982,7 +25970,7 @@
       }
     },
     {
-      "version": "22.5.1",
+      "version": "22.6.1",
       "name": "@openedx-plugins/course-app-ora_settings",
       "folderName": "ora_settings",
       "usages": {
@@ -25997,7 +25985,7 @@
       }
     },
     {
-      "version": "22.5.1",
+      "version": "22.6.1",
       "name": "@openedx-plugins/course-app-proctoring",
       "folderName": "proctoring",
       "usages": {
@@ -26258,13 +26246,13 @@
       }
     },
     {
-      "version": "22.5.1",
+      "version": "22.6.1",
       "name": "@openedx-plugins/course-app-progress",
       "folderName": "progress",
       "usages": {}
     },
     {
-      "version": "22.5.1",
+      "version": "22.6.1",
       "name": "@openedx-plugins/course-app-teams",
       "folderName": "teams",
       "usages": {
@@ -26353,13 +26341,13 @@
       }
     },
     {
-      "version": "22.5.1",
+      "version": "22.6.1",
       "name": "@openedx-plugins/course-app-wiki",
       "folderName": "wiki",
       "usages": {}
     },
     {
-      "version": "22.5.1",
+      "version": "22.6.1",
       "name": "@openedx-plugins/course-app-xpert_unit_summary",
       "folderName": "xpert_unit_summary",
       "usages": {
