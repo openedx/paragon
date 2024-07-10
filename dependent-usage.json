@@ -1,5 +1,5 @@
 {
-  "lastModified": 1720534029510,
+  "lastModified": 1720620430795,
   "projectUsages": [
     {
       "version": "22.6.1",
@@ -5585,57 +5585,57 @@
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 98,
+            "line": 117,
             "column": 12,
-            "index": 3475
+            "index": 4185
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 103,
+            "line": 122,
             "column": 12,
-            "index": 3608
+            "index": 4318
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 109,
+            "line": 128,
             "column": 12,
-            "index": 3822
-          },
-          {
-            "filePath": "src/components/Sidebar/index.jsx",
-            "line": 116,
-            "column": 12,
-            "index": 4104
-          },
-          {
-            "filePath": "src/components/Sidebar/index.jsx",
-            "line": 124,
-            "column": 12,
-            "index": 4413
+            "index": 4532
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
             "line": 135,
             "column": 12,
-            "index": 4808
+            "index": 4814
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 142,
+            "line": 143,
             "column": 12,
-            "index": 5115
+            "index": 5123
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 149,
+            "line": 154,
             "column": 12,
-            "index": 5370
+            "index": 5518
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 155,
+            "line": 161,
             "column": 12,
-            "index": 5543
+            "index": 5825
+          },
+          {
+            "filePath": "src/components/Sidebar/index.jsx",
+            "line": 168,
+            "column": 12,
+            "index": 6080
+          },
+          {
+            "filePath": "src/components/Sidebar/index.jsx",
+            "line": 174,
+            "column": 12,
+            "index": 6253
           },
           {
             "filePath": "src/components/subscriptions/buttons/DownloadCsvButton.jsx",
@@ -5857,9 +5857,9 @@
           },
           {
             "filePath": "src/components/ErrorPage/index.jsx",
-            "line": 21,
-            "column": 10,
-            "index": 630
+            "line": 33,
+            "column": 12,
+            "index": 850
           },
           {
             "filePath": "src/components/FeatureAnnouncementBanner/index.jsx",
@@ -6467,9 +6467,9 @@
           },
           {
             "filePath": "src/components/ErrorPage/index.jsx",
-            "line": 25,
-            "column": 12,
-            "index": 719
+            "line": 37,
+            "column": 14,
+            "index": 947
           },
           {
             "filePath": "src/components/FeatureAnnouncementBanner/index.jsx",
@@ -6711,7 +6711,7 @@
             "filePath": "src/components/EnterpriseList/index.jsx",
             "line": 67,
             "column": 8,
-            "index": 1921
+            "index": 1777
           },
           {
             "filePath": "src/components/learner-credit-management/BudgetAssignmentsTable.jsx",
@@ -7086,6 +7086,12 @@
             "index": 1497
           },
           {
+            "filePath": "src/components/EnterpriseList/index.jsx",
+            "line": 62,
+            "column": 8,
+            "index": 1675
+          },
+          {
             "filePath": "src/components/learner-credit-management/assignment-modal/AssignmentModalContent.jsx",
             "line": 84,
             "column": 8,
@@ -7284,6 +7290,12 @@
             "line": 43,
             "column": 6,
             "index": 1526
+          },
+          {
+            "filePath": "src/components/EnterpriseList/index.jsx",
+            "line": 63,
+            "column": 10,
+            "index": 1691
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/AssignmentModalContent.jsx",
@@ -8261,9 +8273,9 @@
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 135,
+            "line": 154,
             "column": 23,
-            "index": 4819
+            "index": 5529
           },
           {
             "filePath": "src/components/subscriptions/licenses/LicenseManagementTable/bulk-actions/EnrollBulkAction.jsx",
@@ -9227,7 +9239,7 @@
             "filePath": "src/components/ForbiddenPage/index.jsx",
             "line": 17,
             "column": 10,
-            "index": 519
+            "index": 539
           },
           {
             "filePath": "src/components/UserActivationPage/index.jsx",
@@ -10104,6 +10116,12 @@
             "line": 11,
             "column": 2,
             "index": 322
+          },
+          {
+            "filePath": "src/components/EnterpriseList/index.jsx",
+            "line": 61,
+            "column": 6,
+            "index": 1638
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/AssignmentModalContent.jsx",
@@ -11099,17 +11117,17 @@
         "MediaQuery": [
           {
             "filePath": "src/components/EnterpriseApp/index.jsx",
-            "line": 130,
+            "line": 127,
             "column": 10,
-            "index": 4110
+            "index": 3995
           }
         ],
         "breakpoints": [
           {
             "filePath": "src/components/EnterpriseApp/index.jsx",
-            "line": 130,
+            "line": 127,
             "column": 32,
-            "index": 4132
+            "index": 4017
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
@@ -11143,17 +11161,17 @@
           },
           {
             "filePath": "src/containers/EnterpriseApp/EnterpriseApp.test.jsx",
-            "line": 204,
+            "line": 191,
             "column": 26,
-            "index": 5952
+            "index": 5555
           }
         ],
         "ErrorIcon": [
           {
             "filePath": "src/components/ErrorPage/index.jsx",
-            "line": 23,
-            "column": 18,
-            "index": 684
+            "line": 35,
+            "column": 20,
+            "index": 908
           },
           {
             "filePath": "src/components/InviteLearnersModal/index.jsx",
@@ -11365,9 +11383,9 @@
         "Dropdown": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 49,
+            "line": 46,
             "column": 4,
-            "index": 1337
+            "index": 1181
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/LearnerCreditGroupMembersTable.jsx",
@@ -11397,9 +11415,9 @@
         "Dropdown.Toggle": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 50,
+            "line": 47,
             "column": 6,
-            "index": 1354
+            "index": 1198
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/LearnerCreditGroupMembersTable.jsx",
@@ -11429,17 +11447,17 @@
         "AvatarButton": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 51,
+            "line": 48,
             "column": 12,
-            "index": 1383
+            "index": 1227
           }
         ],
         "Dropdown.Menu": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 59,
+            "line": 56,
             "column": 6,
-            "index": 1565
+            "index": 1409
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/LearnerCreditGroupMembersTable.jsx",
@@ -11469,9 +11487,9 @@
         "Dropdown.Item": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 60,
+            "line": 57,
             "column": 8,
-            "index": 1589
+            "index": 1433
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/LearnerCreditGroupMembersTable.jsx",
@@ -11549,31 +11567,31 @@
         "Navbar": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 100,
+            "line": 88,
             "column": 6,
-            "index": 2649
+            "index": 2167
           }
         ],
         "Nav": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 101,
+            "line": 89,
             "column": 8,
-            "index": 2732
+            "index": 2250
           },
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 111,
+            "line": 99,
             "column": 10,
-            "index": 3077
+            "index": 2595
           }
         ],
         "Nav.Link": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 103,
+            "line": 91,
             "column": 10,
-            "index": 2816
+            "index": 2334
           }
         ],
         "useWindowSize": [
@@ -12485,65 +12503,65 @@
         "TrendingUp": [
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 98,
+            "line": 117,
             "column": 23,
-            "index": 3486
+            "index": 4196
           }
         ],
         "InsertChartOutlined": [
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 103,
+            "line": 122,
             "column": 23,
-            "index": 3619
+            "index": 4329
           }
         ],
         "Tag": [
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 109,
+            "line": 128,
             "column": 23,
-            "index": 3833
+            "index": 4543
           }
         ],
         "CreditCard": [
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 116,
+            "line": 135,
             "column": 23,
-            "index": 4115
+            "index": 4825
           }
         ],
         "MoneyOutline": [
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 124,
+            "line": 143,
             "column": 23,
-            "index": 4424
+            "index": 5134
           }
         ],
         "Description": [
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 142,
+            "line": 161,
             "column": 23,
-            "index": 5126
+            "index": 5836
           }
         ],
         "Settings": [
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 149,
+            "line": 168,
             "column": 23,
-            "index": 5381
+            "index": 6091
           }
         ],
         "Support": [
           {
             "filePath": "src/components/Sidebar/index.jsx",
-            "line": 155,
+            "line": 174,
             "column": 23,
-            "index": 5554
+            "index": 6264
           }
         ],
         "Email": [
@@ -16658,9 +16676,9 @@
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 123,
+            "line": 134,
             "column": 14,
-            "index": 3762
+            "index": 4090
           },
           {
             "filePath": "src/studio-home/tabs-section/archived-tab/index.jsx",
@@ -19512,15 +19530,15 @@
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 73,
+            "line": 79,
             "column": 8,
-            "index": 2182
+            "index": 2478
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 96,
+            "line": 107,
             "column": 6,
-            "index": 3089
+            "index": 3361
           },
           {
             "filePath": "src/studio-home/tabs-section/courses-tab/contact-administrator/index.jsx",
@@ -20484,9 +20502,9 @@
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 67,
+            "line": 73,
             "column": 8,
-            "index": 1994
+            "index": 2290
           }
         ],
         "Container": [
@@ -20636,15 +20654,9 @@
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 167,
+            "line": 178,
             "column": 6,
-            "index": 5121
-          },
-          {
-            "filePath": "src/studio-home/tabs-section/LibraryV2Placeholder.jsx",
-            "line": 17,
-            "column": 6,
-            "index": 472
+            "index": 5449
           },
           {
             "filePath": "src/taxonomy/delete-dialog/index.jsx",
@@ -20826,9 +20838,9 @@
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 134,
+            "line": 145,
             "column": 6,
-            "index": 4044
+            "index": 4372
           },
           {
             "filePath": "src/studio-home/verify-email-layout/index.jsx",
@@ -21020,15 +21032,15 @@
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 141,
+            "line": 152,
             "column": 8,
-            "index": 4268
+            "index": 4596
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 157,
+            "line": 168,
             "column": 8,
-            "index": 4965
+            "index": 5293
           },
           {
             "filePath": "src/studio-home/verify-email-layout/index.jsx",
@@ -21194,9 +21206,9 @@
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 123,
+            "line": 134,
             "column": 25,
-            "index": 3773
+            "index": 4101
           },
           {
             "filePath": "src/studio-home/tabs-section/archived-tab/index.jsx",
@@ -21511,12 +21523,6 @@
             "line": 22,
             "column": 6,
             "index": 744
-          },
-          {
-            "filePath": "src/header/Header.jsx",
-            "line": 22,
-            "column": 69,
-            "index": 669
           },
           {
             "filePath": "src/taxonomy/import-tags/ImportTagsWizard.jsx",
@@ -22806,15 +22812,15 @@
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 75,
+            "line": 81,
             "column": 22,
-            "index": 2248
+            "index": 2544
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 98,
+            "line": 109,
             "column": 20,
-            "index": 3151
+            "index": 3423
           },
           {
             "filePath": "src/textbooks/textbook-form/TextbookForm.jsx",
@@ -23940,9 +23946,9 @@
           },
           {
             "filePath": "src/studio-home/StudioHome.jsx",
-            "line": 122,
+            "line": 133,
             "column": 12,
-            "index": 3707
+            "index": 4035
           },
           {
             "filePath": "src/studio-home/tabs-section/archived-tab/index.jsx",
