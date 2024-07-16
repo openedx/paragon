@@ -1,5 +1,5 @@
 {
-  "lastModified": 1721052436334,
+  "lastModified": 1721138882070,
   "projectUsages": [
     {
       "version": "22.6.1",
@@ -31608,9 +31608,15 @@
           },
           {
             "filePath": "src/components/course/EnrollModal.jsx",
-            "line": 90,
-            "column": 8,
-            "index": 2958
+            "line": 267,
+            "column": 10,
+            "index": 9670
+          },
+          {
+            "filePath": "src/components/course/EnrollModal.jsx",
+            "line": 274,
+            "column": 10,
+            "index": 9947
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
@@ -31632,9 +31638,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ContinueLearningButton.jsx",
-            "line": 55,
+            "line": 56,
             "column": 4,
-            "index": 1876
+            "index": 1894
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
@@ -31650,9 +31656,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpgradeCourseButton.jsx",
-            "line": 47,
+            "line": 46,
             "column": 6,
-            "index": 1294
+            "index": 1272
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseAssignmentAlert.jsx",
@@ -31978,9 +31984,9 @@
           },
           {
             "filePath": "src/components/course/EnrollModal.jsx",
-            "line": 94,
-            "column": 24,
-            "index": 3064
+            "line": 280,
+            "column": 14,
+            "index": 10227
           },
           {
             "filePath": "src/components/DelayedFallback/DelayedFallbackContainer.jsx",
@@ -32986,9 +32992,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ContinueLearningButton.jsx",
-            "line": 56,
+            "line": 57,
             "column": 10,
-            "index": 1894
+            "index": 1912
           },
           {
             "filePath": "src/components/dashboard/sidebar/SupportInformation.jsx",
@@ -33053,6 +33059,12 @@
             "index": 2424
           },
           {
+            "filePath": "src/components/course/EnrollModal.jsx",
+            "line": 261,
+            "column": 4,
+            "index": 9494
+          },
+          {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
             "line": 59,
             "column": 4,
@@ -33071,6 +33083,12 @@
             "line": 93,
             "column": 12,
             "index": 2586
+          },
+          {
+            "filePath": "src/components/course/EnrollModal.jsx",
+            "line": 266,
+            "column": 8,
+            "index": 9648
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
@@ -34150,9 +34168,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseSection.jsx",
-            "line": 113,
+            "line": 114,
             "column": 14,
-            "index": 3520
+            "index": 3613
           },
           {
             "filePath": "src/components/my-career/MyCareerTabSkeleton.jsx",
@@ -34289,6 +34307,18 @@
             "index": 4042
           },
           {
+            "filePath": "src/components/course/EnrollModal.jsx",
+            "line": 109,
+            "column": 4,
+            "index": 5161
+          },
+          {
+            "filePath": "src/components/course/EnrollModal.jsx",
+            "line": 147,
+            "column": 12,
+            "index": 6342
+          },
+          {
             "filePath": "src/components/course/routes/ExternalCourseEnrollmentConfirmation.jsx",
             "line": 31,
             "column": 14,
@@ -34311,6 +34341,12 @@
             "line": 553,
             "column": 16,
             "index": 17275
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/InProgressCourseCard.jsx",
+            "line": 70,
+            "column": 4,
+            "index": 2460
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
@@ -34849,6 +34885,12 @@
             "index": 310
           },
           {
+            "filePath": "src/components/course/EnrollModal.jsx",
+            "line": 110,
+            "column": 6,
+            "index": 5206
+          },
+          {
             "filePath": "src/components/course/VerifiedCertPitch.jsx",
             "line": 11,
             "column": 4,
@@ -35125,50 +35167,6 @@
             "line": 41,
             "column": 16,
             "index": 1359
-          }
-        ],
-        "Modal": [
-          {
-            "filePath": "src/components/course/EnrollModal.jsx",
-            "line": 84,
-            "column": 4,
-            "index": 2808
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 114,
-            "column": 6,
-            "index": 2684
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
-            "line": 76,
-            "column": 6,
-            "index": 2455
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
-            "line": 70,
-            "column": 6,
-            "index": 1949
-          },
-          {
-            "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
-            "line": 142,
-            "column": 6,
-            "index": 4754
-          },
-          {
-            "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
-            "line": 182,
-            "column": 4,
-            "index": 6062
-          },
-          {
-            "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
-            "line": 30,
-            "column": 4,
-            "index": 919
           }
         ],
         "CheckCircle": [
@@ -35523,6 +35521,44 @@
             "index": 16404
           }
         ],
+        "Modal": [
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+            "line": 114,
+            "column": 6,
+            "index": 2684
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
+            "line": 76,
+            "column": 6,
+            "index": 2455
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
+            "line": 70,
+            "column": 6,
+            "index": 1949
+          },
+          {
+            "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
+            "line": 142,
+            "column": 6,
+            "index": 4754
+          },
+          {
+            "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
+            "line": 182,
+            "column": 4,
+            "index": 6062
+          },
+          {
+            "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
+            "line": 30,
+            "column": 4,
+            "index": 919
+          }
+        ],
         "Input": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
@@ -35574,9 +35610,9 @@
         "Collapsible": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseSection.jsx",
-            "line": 139,
+            "line": 136,
             "column": 6,
-            "index": 4095
+            "index": 4070
           },
           {
             "filePath": "src/components/pathway-progress/PathwayStep.jsx",
