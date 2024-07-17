@@ -56,3 +56,11 @@ The ``Modal`` brings focus to the first menu element upon the click of the trigg
   <MenuItem>M. Hortens</MenuItem>
 </SelectMenu>
 ```
+
+## Disabled 
+
+```jsx live
+<SelectMenu disabled>
+  <MenuItem>A Menu Item</MenuItem>
+</SelectMenu>
+```

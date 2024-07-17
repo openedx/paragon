@@ -58,6 +58,12 @@ describe('correct rendering', () => {
     const button = screen.getByRole('button');
     expect(button).toHaveClass('btn-brand');
   });
+
+  it('renders as disabled', () => {
+    render(DefaultSelectMenu({ disabled: true }));
+    const button = screen.getByRole('button');
+    expect(button).toBeDisabled();
+  });
 });
 
 describe('mouse behavior & keyboard behavior', () => {
