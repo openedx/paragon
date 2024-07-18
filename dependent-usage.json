@@ -1,8 +1,8 @@
 {
-  "lastModified": 1721225222168,
+  "lastModified": 1721311649612,
   "projectUsages": [
     {
-      "version": "22.6.1",
+      "version": "22.7.0",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -31610,13 +31610,13 @@
             "filePath": "src/components/course/EnrollModal.jsx",
             "line": 267,
             "column": 10,
-            "index": 9670
+            "index": 9672
           },
           {
             "filePath": "src/components/course/EnrollModal.jsx",
             "line": 274,
             "column": 10,
-            "index": 9947
+            "index": 9949
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
@@ -31986,7 +31986,7 @@
             "filePath": "src/components/course/EnrollModal.jsx",
             "line": 280,
             "column": 14,
-            "index": 10227
+            "index": 10229
           },
           {
             "filePath": "src/components/DelayedFallback/DelayedFallbackContainer.jsx",
@@ -32350,7 +32350,7 @@
             "filePath": "src/components/dashboard/sidebar/SubsidiesSummary.jsx",
             "line": 121,
             "column": 4,
-            "index": 4229
+            "index": 4230
           },
           {
             "filePath": "src/components/executive-education-2u/components/CourseSummaryCard.jsx",
@@ -33062,7 +33062,7 @@
             "filePath": "src/components/course/EnrollModal.jsx",
             "line": 261,
             "column": 4,
-            "index": 9494
+            "index": 9496
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
@@ -33088,7 +33088,7 @@
             "filePath": "src/components/course/EnrollModal.jsx",
             "line": 266,
             "column": 8,
-            "index": 9648
+            "index": 9650
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
@@ -37840,15 +37840,15 @@
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigation.jsx",
-            "line": 77,
+            "line": 83,
             "column": 6,
-            "index": 2273
+            "index": 2406
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigation.jsx",
-            "line": 98,
-            "column": 6,
-            "index": 3051
+            "line": 123,
+            "column": 8,
+            "index": 3612
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
@@ -38802,9 +38802,9 @@
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigation.jsx",
-            "line": 50,
+            "line": 56,
             "column": 53,
-            "index": 1453
+            "index": 1586
           },
           {
             "filePath": "src/courseware/course/sidebar/SidebarContextProvider.jsx",
@@ -38966,9 +38966,9 @@
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/SequenceNavigation.jsx",
-            "line": 50,
+            "line": 56,
             "column": 77,
-            "index": 1477
+            "index": 1610
           },
           {
             "filePath": "src/courseware/course/sequence/Sequence.test.jsx",
@@ -39401,6 +39401,12 @@
             "line": 26,
             "column": 32,
             "index": 971
+          },
+          {
+            "filePath": "src/courseware/course/sequence/Sequence.jsx",
+            "line": 41,
+            "column": 32,
+            "index": 1469
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
