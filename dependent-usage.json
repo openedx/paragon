@@ -1,5 +1,5 @@
 {
-  "lastModified": 1721570806944,
+  "lastModified": 1721657285599,
   "projectUsages": [
     {
       "version": "22.7.0",
@@ -29922,7 +29922,7 @@
       }
     },
     {
-      "version": "22.6.1",
+      "version": "22.7.0",
       "name": "@edx/frontend-app-learner-dashboard",
       "repository": {
         "type": "git",
@@ -31638,9 +31638,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ContinueLearningButton.jsx",
-            "line": 56,
+            "line": 57,
             "column": 4,
-            "index": 1894
+            "index": 1903
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
@@ -31656,9 +31656,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpgradeCourseButton.jsx",
-            "line": 46,
-            "column": 6,
-            "index": 1272
+            "line": 99,
+            "column": 8,
+            "index": 3233
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseAssignmentAlert.jsx",
@@ -32105,6 +32105,12 @@
             "index": 770
           },
           {
+            "filePath": "src/components/microlearning/VideoDetailPage.jsx",
+            "line": 66,
+            "column": 4,
+            "index": 1959
+          },
+          {
             "filePath": "src/components/NotFoundPage/index.jsx",
             "line": 16,
             "column": 4,
@@ -32207,6 +32213,12 @@
             "line": 73,
             "column": 16,
             "index": 2540
+          },
+          {
+            "filePath": "src/components/microlearning/VideoDetailPage.jsx",
+            "line": 68,
+            "column": 8,
+            "index": 2062
           },
           {
             "filePath": "src/components/pathway-progress/PathwayProgressHeader.jsx",
@@ -32991,10 +33003,28 @@
             "index": 4561
           },
           {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ContinueLearningButton.jsx",
-            "line": 57,
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+            "line": 166,
+            "column": 4,
+            "index": 6003
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/CompletedCourseCard.jsx",
+            "line": 54,
+            "column": 12,
+            "index": 1668
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/CompletedCourseCard.jsx",
+            "line": 70,
             "column": 10,
-            "index": 1912
+            "index": 2158
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ContinueLearningButton.jsx",
+            "line": 58,
+            "column": 10,
+            "index": 1921
           },
           {
             "filePath": "src/components/dashboard/sidebar/SupportInformation.jsx",
@@ -33472,27 +33502,15 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 462,
-            "column": 8,
-            "index": 14774
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 477,
+            "line": 503,
             "column": 6,
-            "index": 14985
+            "index": 15691
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 572,
-            "column": 12,
-            "index": 18146
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 580,
-            "column": 14,
-            "index": 18553
+            "line": 601,
+            "column": 16,
+            "index": 18629
           },
           {
             "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
@@ -33607,6 +33625,12 @@
             "line": 437,
             "column": 16,
             "index": 19926
+          },
+          {
+            "filePath": "src/components/microlearning/VideoDetailPage.jsx",
+            "line": 74,
+            "column": 6,
+            "index": 2204
           },
           {
             "filePath": "src/components/my-career/AddJobRole.jsx",
@@ -33792,21 +33816,15 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 463,
-            "column": 10,
-            "index": 14790
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 478,
+            "line": 504,
             "column": 8,
-            "index": 14999
+            "index": 15705
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 573,
-            "column": 14,
-            "index": 18195
+            "line": 602,
+            "column": 18,
+            "index": 18682
           },
           {
             "filePath": "src/components/enterprise-banner/EnterpriseBanner.jsx",
@@ -34052,9 +34070,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 518,
+            "line": 535,
             "column": 11,
-            "index": 15901
+            "index": 16352
           },
           {
             "filePath": "src/components/dashboard/sidebar/CouponCodesSummaryCard.jsx",
@@ -34081,10 +34099,16 @@
             "index": 4057
           },
           {
+            "filePath": "src/components/microlearning/VideoDetailPage.jsx",
+            "line": 100,
+            "column": 22,
+            "index": 3406
+          },
+          {
             "filePath": "src/components/pathway-progress/PathwayNode.jsx",
             "line": 46,
             "column": 20,
-            "index": 1522
+            "index": 1521
           },
           {
             "filePath": "src/components/pathway-progress/SubscriptionStatusCard.jsx",
@@ -34162,15 +34186,21 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 545,
-            "column": 10,
-            "index": 17054
+            "line": 568,
+            "column": 12,
+            "index": 17306
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseSection.jsx",
             "line": 114,
             "column": 14,
             "index": 3613
+          },
+          {
+            "filePath": "src/components/microlearning/VideoDetailPage.jsx",
+            "line": 17,
+            "column": 6,
+            "index": 751
           },
           {
             "filePath": "src/components/my-career/MyCareerTabSkeleton.jsx",
@@ -34326,27 +34356,45 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 359,
+            "line": 390,
             "column": 6,
-            "index": 11206
+            "index": 11929
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 407,
+            "line": 439,
             "column": 6,
-            "index": 13079
+            "index": 13851
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 553,
-            "column": 16,
-            "index": 17275
+            "line": 541,
+            "column": 6,
+            "index": 16594
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+            "line": 572,
+            "column": 12,
+            "index": 17382
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
+            "line": 575,
+            "column": 18,
+            "index": 17506
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/InProgressCourseCard.jsx",
-            "line": 70,
+            "line": 92,
             "column": 4,
-            "index": 2460
+            "index": 3770
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/InProgressCourseCard.jsx",
+            "line": 118,
+            "column": 6,
+            "index": 4558
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
@@ -34503,6 +34551,12 @@
             "index": 757
           },
           {
+            "filePath": "src/components/microlearning/VideoDetailPage.jsx",
+            "line": 117,
+            "column": 8,
+            "index": 4017
+          },
+          {
             "filePath": "src/components/my-career/AddJobRole.jsx",
             "line": 95,
             "column": 6,
@@ -34593,6 +34647,12 @@
             "line": 353,
             "column": 62,
             "index": 11282
+          },
+          {
+            "filePath": "src/components/microlearning/VideoDetailPage.jsx",
+            "line": 117,
+            "column": 30,
+            "index": 4039
           },
           {
             "filePath": "src/components/my-career/AddJobRole.jsx",
@@ -34898,27 +34958,27 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 291,
+            "line": 322,
             "column": 20,
-            "index": 9315
+            "index": 10096
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 366,
+            "line": 397,
             "column": 18,
-            "index": 11572
+            "index": 12290
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 413,
+            "line": 445,
             "column": 20,
-            "index": 13512
+            "index": 14284
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 526,
+            "line": 546,
             "column": 8,
-            "index": 16393
+            "index": 16711
           },
           {
             "filePath": "src/components/my-career/AddJobRole.jsx",
@@ -35143,6 +35203,12 @@
             "line": 34,
             "column": 10,
             "index": 1060
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpgradeCourseButton.jsx",
+            "line": 43,
+            "column": 4,
+            "index": 1754
           }
         ],
         "Popover": [
@@ -35294,9 +35360,9 @@
         "Dropdown": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 287,
+            "line": 318,
             "column": 8,
-            "index": 9202
+            "index": 9983
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
@@ -35326,9 +35392,9 @@
         "Dropdown.Toggle": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 288,
+            "line": 319,
             "column": 10,
-            "index": 9223
+            "index": 10004
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
@@ -35358,25 +35424,25 @@
         "IconButton": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 289,
+            "line": 320,
             "column": 16,
-            "index": 9256
+            "index": 10037
           }
         ],
         "MoreVert": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 290,
+            "line": 321,
             "column": 17,
-            "index": 9285
+            "index": 10066
           }
         ],
         "Dropdown.Menu": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 296,
+            "line": 328,
             "column": 10,
-            "index": 9516
+            "index": 10323
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
@@ -35406,9 +35472,9 @@
         "Dropdown.Item": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 298,
+            "line": 330,
             "column": 14,
-            "index": 9587
+            "index": 10394
           },
           {
             "filePath": "src/components/error-page/ErrorPageHeader.jsx",
@@ -35474,23 +35540,23 @@
         "IconButtonWithTooltip": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 363,
+            "line": 394,
             "column": 8,
-            "index": 11466
+            "index": 12184
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 410,
+            "line": 442,
             "column": 10,
-            "index": 13340
+            "index": 14112
           }
         ],
         "InfoOutline": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 367,
+            "line": 398,
             "column": 15,
-            "index": 11593
+            "index": 12311
           },
           {
             "filePath": "src/components/skills-quiz/JobDescriptions.jsx",
@@ -35502,9 +35568,9 @@
         "Warning": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 414,
+            "line": 446,
             "column": 17,
-            "index": 13535
+            "index": 14307
           },
           {
             "filePath": "src/components/search/SearchError.jsx",
@@ -35516,9 +35582,9 @@
         "Info": [
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/BaseCourseCard.jsx",
-            "line": 526,
+            "line": 546,
             "column": 19,
-            "index": 16404
+            "index": 16722
           }
         ],
         "Modal": [
@@ -35579,6 +35645,14 @@
             "line": 11,
             "column": 42,
             "index": 412
+          }
+        ],
+        "Tooltip": [
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpgradeCourseButton.jsx",
+            "line": 46,
+            "column": 8,
+            "index": 1817
           }
         ],
         "Bubble": [
@@ -36600,7 +36674,7 @@
       }
     },
     {
-      "version": "22.6.1",
+      "version": "22.7.0",
       "name": "@edx/frontend-app-learner-record",
       "repository": {
         "type": "git",
@@ -46602,7 +46676,7 @@
       }
     },
     {
-      "version": "22.6.1",
+      "version": "22.7.0",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
@@ -50920,7 +50994,7 @@
       }
     },
     {
-      "version": "22.6.1",
+      "version": "22.7.0",
       "name": "@edx/frontend-template-application",
       "repository": {
         "type": "git",
