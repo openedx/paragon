@@ -1,0 +1,23 @@
+{
+  "spacing": {
+    "breadcrumb": {
+      "margin": {
+        "left": { "value": ".5rem", "type": "dimension", "source": "$breadcrumb-margin-left" }
+      }
+    }
+  },
+  "size": {
+    "breadcrumb": {
+      "border": {
+        "radius": {
+          "focus": { "value": ".125rem", "type": "dimension", "source": "$breadcrumb-focus-border-radius" }
+        },
+        "axis": {
+          "x-focus": { "value": ".25rem", "type": "dimension", "source": "$breadcrumb-border-focus-axis-x" },
+          "y-focus": { "value": ".5rem", "type": "dimension", "source": "$breadcrumb-border-focus-axis-y" }
+        },
+        "width-focus": { "value": ".0625rem", "type": "dimension", "source": "$breadcrumb-border-focus-width" }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "size": {
+    "spinner": {
+      "base": {
+        "width": { "value": "2rem", "type": "dimension", "source": "$spinner-width" },
+        "height": { "value": "{size.spinner.base.width}", "type": "dimension", "source": "$spinner-height" },
+        "border-width": { "value": ".25em", "type": "dimension", "source": "$spinner-border-width" }
+      },
+      "sm": {
+        "width": { "value": "1rem", "type": "dimension", "source": "$spinner-width-sm" },
+        "height": { "value": "{size.spinner.sm.width}", "type": "dimension", "source": "$spinner-height-sm" },
+        "border-width": { "value": ".2em", "type": "dimension", "source": "$spinner-border-width-sm" }
+      }
+    }
+  },
+  "spacing": {
+    "vertical-align": { "value": ".125em", "type": "dimension", "source": "$spinner-vertical-align" }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "color": {
+    "pagination": {
+      "text": {
+        "base": { "value": "{color.link.base}", "type": "color", "source": "$pagination-color" },
+        "inverse": { "value": "{color.white}", "type": "color", "source": "$pagination-color-inverse" },
+        "hover": { "value": "{color.link.hover}", "type": "color", "source": "$pagination-hover-color" },
+        "active": { "value": "{color.active}", "type": "color", "source": "$pagination-active-color" },
+        "disabled": { "value": "{color.disabled}", "type": "color", "source": "$pagination-disabled-color" }
+      },
+      "bg": {
+        "base": { "value": "{color.bg.base}", "type": "color", "source": "$pagination-bg" },
+        "hover": { "value": "{color.gray.100}", "type": "color", "source": "$pagination-hover-bg" },
+        "active": { "value": "{color.bg.active}", "type": "color", "source": "$pagination-active-bg" },
+        "disabled": { "value": "{color.white}", "type": "color", "source": "$pagination-disabled-bg" }
+      },
+      "border": {
+        "base": { "value": "{color.gray.200}", "type": "color", "source": "$pagination-border-color" },
+        "hover": { "value": "{color.gray.200}", "type": "color", "source": "$pagination-hover-border-color" },
+        "active": { "value": "{color.pagination.bg.active}", "type": "color", "source": "$pagination-active-border-color" },
+        "disabled": { "value": "{color.gray.100}", "type": "color", "source": "$pagination-disabled-border-color" }
+      },
+      "focus": {
+        "base": { "value": "{color.primary.500}", "type": "color", "source": "$pagination-focus-color" },
+        "text": { "value": "{color.black}", "type": "color", "source": "$pagination-focus-color-text" }
+      },
+      "dropdown": {
+        "text-inverse": {
+          "value": "{color.white}", "type": "color", "source": "$pagination-dropdown-color-inverse"
+        }
+      }
+    }
+  },
+  "elevation": {
+    "pagination": {
+      "focus": {
+        "box-shadow": {
+          "value": "{elevation.input.btn-focus.box-shadow}",
+          "type": "shadow",
+          "source": "$pagination-focus-box-shadow"
+        }
+      }
+    }
+  }
+}

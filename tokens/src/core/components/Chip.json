@@ -1,0 +1,41 @@
+{
+  "spacing": {
+    "chip": {
+      "margin": {
+        "base": {
+          "value": ".125rem", "type": "dimension", "source": "$chip-margin"
+        },
+        "icon": { "value": ".25rem", "type": "dimension", "source": "$chip-icon-margin" }
+      },
+      "padding": {
+        "y": { "value": "1px", "type": "dimension", "source": "$chip-padding-y" },
+        "x": { "value": ".5rem", "type": "dimension", "source": "$chip-padding-x" }
+      },
+      "outline": {
+        "selected-distance": {
+          "light": {
+            "value": "3px", "type": "dimension", "source": "$chip-light-selected-outline-distance"
+          },
+          "dark": {
+            "value": "3px", "type": "dimension", "source": "$chip-dark-selected-outline-distance"
+          }
+        },
+        "focus-distance": {
+          "light": {
+            "value": ".313rem", "type": "dimension", "source": "$chip-light-focus-outline-distance"
+          },
+          "dark": {
+            "value": ".313rem", "type": "dimension", "source": "$chip-dark-focus-outline-distance"
+          }
+        },
+        "width": { "value": "3px", "type": "dimension", "source": "$chip-outline-width" }
+      }
+    }
+  },
+  "size": {
+    "chip": {
+      "border-radius": { "value": ".375rem", "type": "dimension", "source": "$chip-border-radius" },
+      "icon": { "value": "1.5rem", "type": "dimension", "source": "$chip-icon-size" }
+    }
+  }
+}

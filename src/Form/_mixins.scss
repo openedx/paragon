@@ -3,7 +3,7 @@
   $padding-y,
   $line-height,
   $font-size,
-  $border-width
+  $label-initial-border-width
 ) {
   padding: 0 $padding-x;
 
@@ -19,12 +19,225 @@
   $padding-y,
   $line-height,
   $font-size,
-  $border-width
+  $label-float-border-width
 ) {
   .pgn__form-control-floating-label-text {
     $half-leading: calc(($line-height - .8) / 2);
     $percent-height-minus-no-bottom-leading: calc((($line-height - $half-leading) / $line-height) * 100%);
 
-    transform: translateY(-$padding-y) scale(.75)  translateY(-$percent-height-minus-no-bottom-leading);
+    transform:
+      translateY(calc($padding-y * -1)) scale(.75)
+      translateY(calc($percent-height-minus-no-bottom-leading * -1));
+  }
+}
+
+
+// Form control focus state
+//
+// Generate a customized focus state and for any input with the specified color,
+// which defaults to the `var(--pgn-color-form-input-focus-border)` variable.
+//
+// We highly encourage you to not customize the default value, but instead use
+// this to tweak colors on an as-needed basis. This aesthetic change is based on
+// WebKit's default styles, but applicable to a wider range of browsers. Its
+// usability and accessibility should be taken into account with any change.
+//
+// Example usage: change the default blue border and shadow to white for better
+// contrast against a dark gray background.
+@mixin form-control-focus($ignore-warning: false) {
+  &:focus {
+    color: var(--pgn-color-form-input-focus-base);
+    background-color: var(--pgn-color-form-input-focus-bg);
+    border-color: var(--pgn-color-form-input-focus-border);
+    outline: 0;
+    box-shadow: var(--pgn-elevation-form-input-focus);
+  }
+
+  @include deprecate("The `form-control-focus()` mixin", "v4.4.0", "v5", $ignore-warning);
+}
+
+// This mixin uses an `if()` technique to be compatible with Dart Sass
+// See https://github.com/sass/sass/issues/1873#issuecomment-152293725 for more details
+@mixin form-validation-state-selector($state) {
+  @if ($state == "valid" or $state == "invalid") {
+    .was-validated #{if(&, "&", "")}:#{$state},
+    #{if(&, "&", "")}.is-#{$state} {
+      @content;
+    }
+  }
+
+  @else {
+    #{if(&, "&", "")}.is-#{$state} {
+      @content;
+    }
+  }
+}
+
+@mixin form-validation-state(
+  $state, $color, $icon, $form-tooltip-color,
+  $form-tooltip-bg, $focus-box-shadow-color, $checked-border-color
+) {
+  .#{$state}-feedback {
+    display: none;
+    width: 100%;
+    margin-top: var(--pgn-spacing-form-control-select-feedback-margin-top);
+
+    @include font-size(var(--pgn-typography-form-feedback-font-size));
+
+    color: $color;
+  }
+
+  .#{$state}-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 5;
+    display: none;
+    max-width: 100%; // Contain to parent when possible
+    padding:
+      var(--pgn-spacing-form-control-select-feedback-tooltip-padding-y)
+      var(--pgn-spacing-form-control-select-feedback-tooltip-padding-x);
+    margin-top: .1rem;
+
+    @include font-size(var(--pgn-typography-form-feedback-tooltip-font-size));
+
+    line-height: var(--pgn-typography-form-feedback-tooltip-line-height);
+    color: $form-tooltip-color;
+    background-color: $form-tooltip-bg;
+
+    @include border-radius(var(--pgn-size-form-feedback-tooltip-border-radius));
+
+    // See https://github.com/twbs/bootstrap/pull/31557
+    // Align tooltip to form elements
+    .form-row > .col > &,
+    .form-row > [class*="col-"] > & {
+      left: calc(var(--pgn-size-form-grid-gutter-width) * .5);
+    }
+  }
+
+  @include form-validation-state-selector($state) {
+    ~ .#{$state}-feedback,
+    ~ .#{$state}-tooltip {
+      display: block;
+    }
+  }
+
+  .form-control {
+    @include form-validation-state-selector($state) {
+      border-color: $color;
+
+      @if $enable-validation-icons {
+        padding-right: var(--pgn-size-form-input-height-inner-base) !important;
+        background-image: $icon;
+        background-repeat: no-repeat;
+        background-position: right var(--pgn-size-form-input-height-inner-quarter) center;
+        background-size: var(--pgn-size-form-input-height-inner-half) var(--pgn-size-form-input-height-inner-half);
+      }
+
+      &:focus {
+        border-color: $color;
+        box-shadow: 0 0 0 var(--pgn-size-form-input-width-focus) $focus-box-shadow-color;
+      }
+    }
+  }
+
+  // stylelint-disable-next-line selector-no-qualifying-type
+  select.form-control {
+    @include form-validation-state-selector($state) {
+      @if $enable-validation-icons {
+        padding-right: calc(var(--pgn-spacing-form-input-padding-x-base) * 4) !important;
+        background-position: right calc(var(--pgn-spacing-form-input-padding-x-base) * 2) center;
+      }
+    }
+  }
+
+  // stylelint-disable-next-line selector-no-qualifying-type
+  textarea.form-control {
+    @include form-validation-state-selector($state) {
+      @if $enable-validation-icons {
+        padding-right: var(--pgn-size-form-input-height-inner-base);
+        background-position:
+          top var(--pgn-size-form-input-height-inner-quarter)
+          right var(--pgn-size-form-input-height-inner-quarter);
+      }
+    }
+  }
+
+  .custom-select {
+    @include form-validation-state-selector($state) {
+      border-color: $color;
+
+      @if $enable-validation-icons {
+        padding-right: var(--pgn-spacing-form-control-select-feedback-icon-padding-right) !important;
+        background:
+          var(--pgn-other-content-form-control-select-bg),
+          var(--pgn-color-form-control-select-bg-base) $icon
+          var(--pgn-spacing-form-control-select-feedback-icon-position) / var(--pgn-size-form-control-select-feedback-icon) no-repeat; // stylelint-disable-line max-line-length
+      }
+
+      &:focus {
+        border-color: $color;
+        box-shadow: 0 0 0 var(--pgn-size-form-input-width-focus) $focus-box-shadow-color;
+      }
+    }
+  }
+
+  .form-check-input {
+    @include form-validation-state-selector($state) {
+      ~ .form-check-label {
+        color: $color;
+      }
+
+      ~ .#{$state}-feedback,
+      ~ .#{$state}-tooltip {
+        display: block;
+      }
+    }
+  }
+
+  .custom-control-input {
+    @include form-validation-state-selector($state) {
+      ~ .custom-control-label {
+        color: $color;
+
+        &::before {
+          border-color: $color;
+        }
+      }
+
+      &:checked {
+        ~ .custom-control-label::before {
+          border-color: $checked-border-color;
+
+          @include gradient-bg($checked-border-color);
+        }
+      }
+
+      &:focus {
+        ~ .custom-control-label::before {
+          box-shadow: 0 0 0 var(--pgn-size-form-input-width-focus) $focus-box-shadow-color;
+        }
+
+        &:not(:checked) ~ .custom-control-label::before {
+          border-color: $color;
+        }
+      }
+    }
+  }
+
+  // custom file
+  .custom-file-input {
+    @include form-validation-state-selector($state) {
+      ~ .custom-file-label {
+        border-color: $color;
+      }
+
+      &:focus {
+        ~ .custom-file-label {
+          border-color: $color;
+          box-shadow: 0 0 0 var(--pgn-size-form-input-width-focus) $focus-box-shadow-color;
+        }
+      }
+    }
   }
 }

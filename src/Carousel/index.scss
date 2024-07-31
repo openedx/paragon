@@ -1,2 +1,168 @@
-@import "variables";
-@import "~bootstrap/scss/carousel";
+.carousel {
+  position: relative;
+}
+
+.carousel.pointer-event {
+  touch-action: pan-y;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  @include clearfix();
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+  transition: var(--pgn-transition-carousel-base);
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block;
+}
+
+.carousel-item-next:not(.carousel-item-left),
+.active.carousel-item-right {
+  transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-right),
+.active.carousel-item-left {
+  transform: translateX(-100%);
+}
+
+.carousel-fade {
+  .carousel-item {
+    opacity: 0;
+    transition-property: opacity;
+    transform: none;
+  }
+
+  .carousel-item.active,
+  .carousel-item-next.carousel-item-left,
+  .carousel-item-prev.carousel-item-right {
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .active.carousel-item-left,
+  .active.carousel-item-right {
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0s var(--pgn-transition-carousel-base);
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--pgn-size-carousel-control-width-base);
+  padding: 0;
+  color: var(--pgn-color-carousel-control-base);
+  text-align: center;
+  background: none;
+  border: 0;
+  opacity: var(--pgn-other-carousel-control-opacity-base);
+  transition: var(--pgn-transition-carousel-control);
+
+  @include hover-focus() {
+    color: var(--pgn-carousel-control-color);
+    text-decoration: none;
+    outline: 0;
+    opacity: var(--pgn-other-carousel-control-opacity-hover);
+  }
+}
+
+.carousel-control-prev {
+  left: 0;
+
+  @if $enable-gradients {
+    background-image: linear-gradient(90deg, rgba(var(--pgn-color-black), .25), rgba(var(--pgn-color-black), .001));
+  }
+}
+
+.carousel-control-next {
+  right: 0;
+
+  @if $enable-gradients {
+    background-image: linear-gradient(270deg, rgba(var(--pgn-color-black), .25), rgba(var(--pgn-color-black), .001));
+  }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: inline-block;
+  width: var(--pgn-size-carousel-control-width-icon);
+  height: var(--pgn-size-carousel-control-width-icon);
+  background: 50% / 100% 100% no-repeat;
+}
+
+.carousel-control-prev-icon {
+  background-image: var(--pgn-content-carousel-control-bg-prev-icon);
+}
+
+.carousel-control-next-icon {
+  background-image: var(--pgn-content-carousel-control-bg-next-icon);
+}
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: var(--pgn-size-carousel-control-width-base);
+  margin-left: var(--pgn-size-carousel-control-width-base);
+  list-style: none;
+
+  li {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: var(--pgn-size-carousel-indicator-width);
+    height: var(--pgn-size-carousel-indicator-height-base);
+    margin-right: var(--pgn-spacing-carousel-indicator-spacer);
+    margin-left: var(--pgn-spacing-carousel-indicator-spacer);
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: var(--pgn-color-carousel-indicator-active-bg);
+    background-clip: padding-box;
+    border-top: var(--pgn-size-carousel-indicator-height-area-hit) solid transparent;
+    border-bottom: var(--pgn-size-carousel-indicator-height-area-hit) solid transparent;
+    opacity: .5;
+    transition: var(--pgn-transition-carousel-indicator);
+  }
+
+  .active {
+    opacity: 1;
+  }
+}
+
+.carousel-caption {
+  position: absolute;
+  right: calc((calc(100% - var(--pgn-size-carousel-caption-width))) * .5);
+  bottom: 20px;
+  left: calc((calc(100% - var(--pgn-size-carousel-caption-width))) * .5);
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: var(--pgn-color-carousel-caption);
+  text-align: center;
+}

@@ -1,0 +1,23 @@
+{
+  "color": {
+    "dropzone": {
+      "error-wrapper": {
+        "value": "{color.danger.500}", "type": "color", "source": "$dropzone-error-wrapper-color"
+      },
+      "restriction-msg": {
+        "value": "{color.gray.500}", "type": "color", "source": "$dropzone-restriction-msg-color"
+      },
+      "border": {
+        "base": { "value": "{color.gray.500}", "type": "color", "source": "$dropzone-border-color-default" }
+      }
+    }
+  },
+  "elevation": {
+    "dropzone": {
+      "hover": { "value": "inset 0 0 0 2px {color.info.300}", "type": "shadow", "source": "$dropzone-box-shadow-hover" },
+      "focus": { "value": "inset 0 0 0 2px {color.info.300}", "type": "shadow", "source": "$dropzone-box-shadow-focus" },
+      "active": { "value": "inset 0 0 0 2px {color.primary.500}", "type": "shadow", "source": "$dropzone-box-shadow-active" },
+      "error": { "value": "inset 0 0 0 2px {color.danger.300}", "type": "shadow", "source": "$dropzone-box-shadow-error" }
+    }
+  }
+}

@@ -1,18 +1,18 @@
 // stylelint-disable selector-class-pattern
 .DocSearch.DocSearch-Button {
   border-radius: 0;
-  background-color: $white;
-  border: $border-width solid $gray-500;
+  background-color: var(--pgn-color-white);
+  border: var(--pgn-size-border-width) solid var(--pgn-color-gray-500);
   width: 100%;
   height: 2.25rem;
   margin-left: 0;
   margin-bottom: .75rem;
-  padding: .625rem $spacer;
-  transition: $transition-base;
+  padding: .625rem var(--pgn-spacing-spacer-base);
+  transition: var(--pgn-transition-base);
 
   &:active,
   &:focus {
-    background: $white;
+    background: var(--pgn-color-white);
     box-shadow: none;
     border-radius: 0;
     outline: auto;
@@ -25,14 +25,14 @@
   .DocSearch {
     width: 1.125rem;
     height: 1.125rem;
-    color: $gray-500;
+    color: var(--pgn-color-gray-500);
   }
 
   .DocSearch-Button-Placeholder {
-    font-weight: $font-weight-normal;
-    font-size: $font-size-sm;
-    line-height: $line-height-base;
-    color: $gray-500;
+    font-weight: var(--pgn-typography-font-weight-normal);
+    font-size: var(--pgn-typography-font-size-sm);
+    line-height: var(--pgn-typography-line-height-base);
+    color: var(--pgn-color-gray-500);
     padding-left: .6875rem;
   }
 
@@ -43,17 +43,17 @@
 
 .DocSearch {
   &.DocSearch-Container {
-    z-index: $zindex-modal;
+    z-index: var(--pgn-elevation-modal-zindex);
     background: rgba(125, 125, 125, .65);
   }
 
   .DocSearch-Modal {
     max-width: 31.25rem;
-    background-color: $white;
+    background-color: var(--pgn-color-white);
     margin: 6.875rem auto auto;
     cursor: auto;
 
-    @media (max-width: map-get($grid-breakpoints, "md")) {
+    @media (--pgn-size-breakpoint-max-width-sm) {
       max-width: 100%;
       margin: auto;
       border-radius: 0;
@@ -62,10 +62,10 @@
 
     .DocSearch-Footer {
       box-shadow: none;
-      border-top: $border-width solid $light-400;
+      border-top: var(--pgn-size-border-width) solid var(--pgn-color-light-400);
       padding: 0 1.625rem;
 
-      @media (max-width: map-get($grid-breakpoints, "md")) {
+      @media (--pgn-size-breakpoint-max-width-sm) {
         position: absolute;
         border-radius: 0;
         bottom: 0;
@@ -74,8 +74,8 @@
       .DocSearch-Label {
         font-size: .5rem;
         line-height: 1.1875rem;
-        font-weight: $font-weight-normal;
-        color: $gray-500;
+        font-weight: var(--pgn-typography-font-weight-normal);
+        color: var(--pgn-color-gray-500);
       }
 
       .DocSearch-Logo svg {
@@ -88,11 +88,11 @@
     }
 
     .DocSearch-Dropdown {
-      background-color: $white;
+      background-color: var(--pgn-color-white);
       padding: 0 1.625rem;
       max-height: 20.9375rem;
 
-      @media (max-width: map-get($grid-breakpoints, "md")) {
+      @media (--pgn-size-breakpoint-max-width-sm) {
         height: 100%;
         // stylelint-disable-next-line max-line-length
         max-height: calc(var(--docsearch-vh, 1vh) * 100 - var(--docsearch-searchbox-height) - var(--docsearch-spacing) - var(--docsearch-footer-height));
@@ -104,37 +104,37 @@
         .DocSearch-Help {
           font-size: .6875rem;
           line-height: .9375rem;
-          font-weight: $font-weight-normal;
-          color: $dark;
+          font-weight: var(--pgn-typography-font-weight-normal);
+          color: var(--pgn-color-dark-base);
           text-align: center;
         }
       }
 
       .DocSearch-Hit-source,
       .DocSearch-Title {
-        font-size: $font-size-base;
-        line-height: $line-height-base;
-        font-weight: $font-weight-bold;
-        background: $white;
-        color: $dark;
+        font-size: var(--pgn-typography-font-size-base);
+        line-height: var(--pgn-typography-line-height-base);
+        font-weight: var(--pgn-typography-font-weight-bold);
+        background: var(--pgn-color-white);
+        color: var(--pgn-color-dark-base);
         padding: 0 0 .5rem;
         overflow: hidden;
       }
 
       .DocSearch-Hits mark {
-        color: $red;
+        color: var(--pgn-color-red);
         padding: 0;
       }
 
       .DocSearch-Hit {
-        border: $border-width solid $light-400;
-        border-radius: $border-radius;
+        border: var(--pgn-size-border-width) solid var(--pgn-color-light-400);
+        border-radius: var(--pgn-size-border-radius-base);
         padding: 0;
         margin-bottom: .375rem;
       }
 
       .DocSearch-Hit a:focus {
-        border: $border-width solid $dark;
+        border: var(--pgn-size-border-width) solid var(--pgn-color-dark-base);
         outline: none;
       }
 
@@ -143,17 +143,17 @@
       }
 
       .DocSearch-Hit[aria-selected="true"] a {
-        background: $dark;
+        background: var(--pgn-color-dark-base);
       }
 
       .DocSearch-Hit[aria-selected="true"] mark {
         text-decoration: none;
-        color: $red !important;
+        color: var(--pgn-color-red) !important;
         padding: 0;
       }
 
       .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-icon svg {
-        color: $white;
+        color: var(--pgn-color-white);
       }
 
       .DocSearch-Screen-Icon svg {
@@ -170,13 +170,12 @@
       }
 
       .DocSearch-Hit .DocSearch-Hit-icon svg {
-        color: lighten($color: $dark, $amount: .5);
         position: absolute;
       }
 
       .DocSearch-Hit a {
-        background: $light-200;
-        padding: $spacer 1.625rem $spacer 1.875rem;
+        background: var(--pgn-color-light-200);
+        padding: var(--pgn-spacing-spacer-base) 1.625rem var(--pgn-spacing-spacer-base) 1.875rem;
         box-shadow: none;
       }
 
@@ -195,14 +194,14 @@
 
       .DocSearch-Hit-action-button:focus {
         background: transparent;
-        border: $border-width solid $dark;
+        border: var(--pgn-size-border-width) solid var(--pgn-color-dark-base);
         outline: none;
-        color: $dark;
+        color: var(--pgn-color-dark-base);
       }
 
       .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-action-button:focus {
-        border: $border-width solid $white;
-        color: $white;
+        border: var(--pgn-size-border-width) solid var(--pgn-color-white);
+        color: var(--pgn-color-white);
       }
 
       .DocSearch-Hit-Container .DocSearch-Hit-action {
@@ -219,9 +218,9 @@
       }
 
       .DocSearch-Hit a .DocSearch-Hit-title {
-        font-size: $spacer;
-        line-height: $line-height-base;
-        font-weight: $font-weight-semi-bold;
+        font-size: var(--pgn-spacing-spacer-base);
+        line-height: var(--pgn-typography-line-height-base);
+        font-weight: var(--pgn-typography-font-weight-semi-bold);
       }
     }
   }
@@ -230,20 +229,20 @@
     padding: 1.625rem;
 
     .DocSearch-Form {
-      font-size: $font-size-sm;
-      line-height: $line-height-base;
-      font-weight: $font-weight-normal;
-      border: .125rem solid $black;
+      font-size: var(--pgn-typography-font-size-sm);
+      line-height: var(--pgn-typography-line-height-base);
+      font-weight: var(--pgn-typography-font-weight-normal);
+      border: .125rem solid var(--pgn-color-black);
       border-radius: 0;
       box-shadow: none;
-      color: $gray-500;
+      color: var(--pgn-color-gray-500);
       height: 3.0625rem;
       padding: .125rem;
       position: relative;
 
       .DocSearch-MagnifierLabel {
         position: absolute;
-        right: $spacer;
+        right: var(--pgn-spacing-spacer-base);
       }
 
       .DocSearch-LoadingIndicator {
@@ -254,16 +253,16 @@
       .DocSearch-MagnifierLabel .DocSearch-Search-Icon {
         width: 1.125rem;
         height: 1.125rem;
-        color: $gray-500;
+        color: var(--pgn-color-gray-500);
       }
 
       .DocSearch-Input {
-        font-size: $font-size-sm;
-        line-height: $line-height-base;
-        font-weight: $font-weight-normal;
+        font-size: var(--pgn-typography-font-size-sm);
+        line-height: var(--pgn-typography-line-height-base);
+        font-weight: var(--pgn-typography-font-weight-normal);
         padding: 0 2.8125rem 0 .625rem;
         z-index: 1;
-        border: $border-width solid $black;
+        border: var(--pgn-size-border-width) solid var(--pgn-color-black);
       }
 
       .DocSearch-Reset {
@@ -272,16 +271,16 @@
         z-index: 1;
         width: 1.5625rem;
         height: 1.5625rem;
-        background-color: $white;
+        background-color: var(--pgn-color-white);
       }
 
       .DocSearch-Reset:focus {
-        border: $border-width solid $dark;
+        border: var(--pgn-size-border-width) solid var(--pgn-color-dark-base);
         border-radius: 50%;
       }
 
       .DocSearch-Reset svg {
-        color: $gray-500;
+        color: var(--pgn-color-gray-500);
       }
     }
   }
@@ -291,11 +290,11 @@
       text-decoration: underline;
     }
 
-    @media (max-width: map-get($grid-breakpoints, "md")) {
-      font-size: $font-size-base;
-      line-height: $line-height-base;
-      font-weight: $font-weight-semi-bold;
-      color: $gray-700;
+    @media (--pgn-size-breakpoint-max-width-sm) {
+      font-size: var(--pgn-typography-font-size-base);
+      line-height: var(--pgn-typography-line-height-base);
+      font-weight: var(--pgn-typography-font-weight-semi-bold);
+      color: var(--pgn-color-gray-700);
       margin-left: 1.1875rem;
       display: block;
       background: none;
@@ -319,7 +318,7 @@
   }
 
   .DocSearch-Cancel {
-    @media (max-width: map-get($grid-breakpoints, "md")) {
+    @media (--pgn-size-breakpoint-max-width-sm) {
       margin-right: 1.1875rem;
     }
   }
