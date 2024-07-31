@@ -1,0 +1,17 @@
+import * as React from "react";
+const SvgLtePlusMobiledataBadgeFill = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    viewBox="0 -960 960 960"
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M160-320h153v-60h-93v-260h-60v320Zm218 0h60v-260h65v-60H313v60h65v260Zm189 0h153v-60h-93v-70h73v-60h-73v-70h93v-60H567v320ZM40-120v-720h880v330h-50v-50h-60v50h-50v60h50v50h60v-50h50v330H40Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+export default SvgLtePlusMobiledataBadgeFill;

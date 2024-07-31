@@ -1,0 +1,17 @@
+import * as React from "react";
+const SvgHdrEnhancedSelectFill = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    viewBox="0 -960 960 960"
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M480-422q-95.42 0-162.21-66.79T251-651q0-95.42 66.79-162.21T480-880q95.42 0 162.21 66.79T709-651q0 95.42-66.79 162.21T480-422Zm-30-115v-84h-84v-60h84v-84h60v84h84v60h-84v84h-60ZM831-97v-80h-80v-49h80v-80h49v80h80v49h-80v80h-49ZM527-80v-251h192v156h-43l39 95h-53l-35-89h-52v89h-48Zm48-137v-66h96v66h-96ZM0-80v-251h48v87h93v-87h48v251h-48v-116H48v116H0Zm263 0v-251h164l24 24v203l-24 24H263Zm48-48v-155h92v155h-92Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+export default SvgHdrEnhancedSelectFill;
