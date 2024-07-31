@@ -1,0 +1,14 @@
+{
+  "other": {
+    "form": {
+      "control": {
+        "cursor": { "value": "auto", "type": "cursorStyle", "source": "$custom-control-cursor" },
+        "range-track-cursor": { "value": "pointer", "type": "cursorStyle", "source": "$custom-range-track-cursor" },
+        "custom-file": {
+          "lang": { "value": "en", "type": "text" },
+          "content": { "value": "Browse", "type": "text" }
+        }
+      }
+    }
+  }
+}

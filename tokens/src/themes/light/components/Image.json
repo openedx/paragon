@@ -1,0 +1,18 @@
+{
+  "color": {
+    "image": {
+      "figure-caption": { "value": "{color.gray.500}", "type": "color", "source": "$figure-caption-color" },
+      "thumbnail": {
+        "bg": { "value": "{color.body.bg}", "type": "color", "source": "$thumbnail-bg" },
+        "border": { "value": "{color.gray.200}", "type": "color", "source": "$thumbnail-border-color" }
+      }
+    }
+  },
+  "elevation": {
+    "image": {
+      "thumbnail": {
+        "box-shadow": { "value": "none", "type": "shadow", "source": "$thumbnail-box-shadow" }
+      }
+    }
+  }
+}

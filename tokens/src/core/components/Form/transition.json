@@ -1,0 +1,16 @@
+{
+  "transition": {
+    "form": {
+      "input": {
+        "value": "border-color .15s ease-in-out, box-shadow .15s ease-in-out",
+        "type": "transition",
+        "source": "$input-transition"
+      },
+      "control": { 
+        "value": "background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out",
+        "type": "transition",
+        "source": "$custom-forms-transition" 
+      }
+    }
+  }
+}

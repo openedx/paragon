@@ -1,0 +1,14 @@
+{
+  "transition": {
+    "base": { "value": "all .2s ease-in-out", "type": "transition", "source": "$transition-base", "description": "Generic transition for any property change" },
+    "fade": { "value": "opacity .15s linear", "type": "transition", "source": "$transition-fade", "description": "Opacity transition that takes 150ms" },
+    "collapse": {
+      "height": {
+        "value": "height .35s ease", "type": "transition", "source": "$transition-collapse", "description": "Collapse transition for height that takes 350ms"
+      },
+      "width": {
+        "value": "width .35s ease", "type": "transition", "source": "$transition-collapse-width", "description": "Collapse transition for width that takes 350ms"
+      }
+    }
+  }
+}

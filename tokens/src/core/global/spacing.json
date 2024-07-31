@@ -1,0 +1,37 @@
+{
+  "spacing": {
+    "spacer": {
+      "base": { "value": "1rem", "type": "dimension", "source": "$spacer", "description": "Basic space value" },
+      "0": { "value": "0", "type": "dimension", "description": "Space value of level 0" },
+      "1": { "value": "calc({spacing.spacer.base} * .25)", "type": "dimension", "description": "Space value of level 1" },
+      "1,5": { "value": "calc({spacing.spacer.base} * .375)", "type": "dimension", "description": "Space value of level 1.5" },
+      "2": { "value": "calc({spacing.spacer.base} * .5)", "type": "dimension", "description": "Space value of level 2" },
+      "2,5": { "value": "calc({spacing.spacer.base} * .75)", "type": "dimension", "description": "Space value of level 2.5" },
+      "3": { "value": "{spacing.spacer.base}", "type": "dimension", "description": "Space value of level 3" },
+      "3,5": { "value": "calc({spacing.spacer.base} * 1.25)", "type": "dimension", "description": "Space value of level 3.5" },
+      "4": { "value": "calc({spacing.spacer.base} * 1.5)", "type": "dimension", "description": "Space value of level 4" },
+      "4,5": { "value": "calc({spacing.spacer.base} * 2)", "type": "dimension", "description": "Space value of level 4.5" },
+      "5": { "value": "calc({spacing.spacer.base} * 3)", "type": "dimension", "description": "Space value of level 5" },
+      "5,5": { "value": "calc({spacing.spacer.base} * 4)", "type": "dimension", "description": "Space value of level 5.5" },
+      "6": { "value": "calc({spacing.spacer.base} * 5)", "type": "dimension", "description": "Space value of level 6" }
+    },
+    "label": {
+      "margin-bottom": {
+        "value": ".5rem", "type": "dimension", "source": "$label-margin-bottom", "description": "Margin bottom for label."
+      }
+    },
+    "table": {
+      "cell": {
+        "padding": {
+          "base": { "value": ".75rem", "type": "dimension", "source": "$table-cell-padding", "description": "Padding for tables." },
+          "sm": { "value": ".3rem", "type": "dimension", "source": "$table-cell-padding-sm", "description": "Padding sm for tables." }
+        }
+      }
+    },
+    "grid": {
+      "gutter-width": {
+        "value": "24px", "type": "dimension", "source": "$grid-gutter-width", "description": "Grid gutter width value."
+      }
+    }
+  }
+}

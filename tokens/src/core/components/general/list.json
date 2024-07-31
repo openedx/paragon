@@ -1,0 +1,26 @@
+{
+  "typography": {
+    "dt": {
+      "font-weight": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$dt-font-weight" }
+    }
+  },
+  "spacing": {
+    "list": {
+      "inline-padding": { "value": ".5rem", "type": "dimension", "source": "$list-inline-padding" },
+      "group-item": {
+        "padding": {
+          "y": { "value": ".75rem", "type": "dimension", "source": "$list-group-item-padding-y" },
+          "x": { "value": "1.25rem", "type": "dimension", "source": "$list-group-item-padding-x" }
+        }
+      }
+    }
+  },
+  "size": {
+    "list-group": {
+      "border": {
+        "width": { "value": "{size.border.width}", "type": "dimension", "source": "$list-group-border-width" },
+        "radius": { "value": "{size.border.radius.base}", "type": "dimension", "source": "$list-group-border-radius" }
+      }
+    }
+  }
+}

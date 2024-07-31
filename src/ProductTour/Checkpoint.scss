@@ -1,20 +1,16 @@
-@import "variables";
-
-$checkpoint-arrow-top-color: solid $checkpoint-arrow-width $checkpoint-border-color;
-$checkpoint-arrow-default-color: solid $checkpoint-arrow-width $checkpoint-background-color;
-$checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
-
 .pgn__checkpoint {
   position: absolute;
-  background: $checkpoint-background-color;
-  border-top: $checkpoint-border-width solid $checkpoint-border-color;
-  border-radius: $border-radius;
-  padding: map_get($spacers, 4);
-  box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .3);
-  z-index: $checkpoint-z-index;
-  max-width: $checkpoint-max-width;
+  background: var(--pgn-color-product-tour-checkpoint-bg);
+  border-top:
+    var(--pgn-size-product-tour-checkpoint-width-border)
+    solid var(--pgn-color-product-tour-checkpoint-border);
+  border-radius: var(--pgn-size-border-radius-base);
+  padding: var(--pgn-spacing-spacer-4);
+  box-shadow: 0 .25rem .5rem var(--pgn-color-product-tour-checkpoint-box-shadow);
+  z-index: var(--pgn-elevation-product-tour-checkpoint-zindex);
+  max-width: var(--pgn-size-product-tour-checkpoint-width-max);
 
-  @media (max-width: map-get($grid-breakpoints, "md")) {
+  @media (--pgn-size-breakpoint-max-width-sm) {
     min-width: 90%;
     max-width: 90%;
   }
@@ -38,12 +34,12 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
 
   #pgn__checkpoint-arrow::before,
   #pgn__checkpoint-arrow::after {
-    visibility: visible;
     content: "";
+    visibility: visible;
   }
 
   .pgn__checkpoint-button_dismiss {
-    margin-inline-end: map_get($spacers, 2);
+    margin-inline-end: var(--pgn-spacing-spacer-2);
   }
 
   .pgn__checkpoint-breadcrumb {
@@ -52,11 +48,11 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     border-radius: 50%;
 
     &.pgn__checkpoint-breadcrumb_active {
-      background: $checkpoint-breadcrumb-color;
+      background: var(--pgn-color-product-tour-checkpoint-breadcrumb);
     }
 
     &.pgn__checkpoint-breadcrumb_inactive {
-      border: 1px solid $checkpoint-breadcrumb-color;
+      border: 1px solid var(--pgn-color-product-tour-checkpoint-breadcrumb);
       background: transparent;
     }
 
@@ -80,7 +76,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
   }
 
   .pgn__checkpoint-body {
-    color: $checkpoint-body-color;
+    color: var(--pgn-color-product-tour-checkpoint-body);
     margin-bottom: map_get($spacers, 3\.5);
     text-align: start;
   }
@@ -92,25 +88,33 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
   }
 
   #pgn__checkpoint-title {
-    font-size: $h3-font-size;
+    font-size: var(--pgn-typography-font-size-h3);
     margin-inline-end: map_get($spacers, 2\.5);
     margin-bottom: 0;
   }
 }
 
 .pgn__checkpoint[data-popper-placement^="top"] > #pgn__checkpoint-arrow {
-  left: -$checkpoint-arrow-width !important; // Override PopperJS arrow placement
+  left: calc(var(--pgn-size-product-tour-checkpoint-width-arrow) * -1) !important;
   bottom: 1px;
 
   [dir="rtl"] & {
-    left: $checkpoint-arrow-width !important;
+    left: var(--pgn-size-product-tour-checkpoint-width-arrow) !important;
   }
 
   &::after {
-    border-bottom: $checkpoint-arrow-transparent;
-    border-top: $checkpoint-arrow-default-color;
-    border-left: $checkpoint-arrow-transparent;
-    border-right: $checkpoint-arrow-transparent;
+    border-bottom:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-top:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-top)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-top);
+    border-left:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-right:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
     filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
     -webkit-filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
   }
@@ -118,39 +122,63 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
 
 .pgn__checkpoint[data-popper-placement^="bottom"] > #pgn__checkpoint-arrow {
   top: -36px;
-  left: -$checkpoint-arrow-width !important; // Override PopperJS arrow placement
+  left: calc(var(--pgn-size-product-tour-checkpoint-width-arrow) * -1) !important;
 
   &::after {
-    border-bottom: $checkpoint-arrow-top-color;
-    border-top: $checkpoint-arrow-transparent;
-    border-left: $checkpoint-arrow-transparent;
-    border-right: $checkpoint-arrow-transparent;
+    border-bottom:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-border);
+    border-top:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-left:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-right:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
   }
 }
 
 .pgn__checkpoint[data-popper-placement^="left"] > #pgn__checkpoint-arrow {
-  top: -$checkpoint-arrow-width !important; // Override PopperJS arrow placement
+  top: calc(var(--pgn-size-product-tour-checkpoint-width-arrow) * -1) !important; // Override PopperJS arrow placement
   right: 1px;
 
   &::after {
-    border-bottom: $checkpoint-arrow-transparent;
-    border-top: $checkpoint-arrow-transparent;
-    border-left: $checkpoint-arrow-default-color;
-    border-right: $checkpoint-arrow-transparent;
+    border-bottom:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-top:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-left:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-top)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-top);
+    border-right:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
     filter: drop-shadow(3px 1px 2px rgba(0, 0, 0, .1));
   }
 }
 
 .pgn__checkpoint[data-popper-placement^="right"] > #pgn__checkpoint-arrow {
-  top: -$checkpoint-arrow-width !important; // Override PopperJS arrow placement
+  top: calc(var(--pgn-size-product-tour-checkpoint-width-arrow) * -1) !important; // Override PopperJS arrow placement
   left: 1px;
 
   &::after {
-    left: -2 * $checkpoint-arrow-width;
-    border-bottom: $checkpoint-arrow-transparent;
-    border-top: $checkpoint-arrow-transparent;
-    border-left: $checkpoint-arrow-transparent;
-    border-right: $checkpoint-arrow-default-color;
+    left: calc(-2 * var(--pgn-size-product-tour-checkpoint-width-arrow));
+    border-bottom:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-top:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-left:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
+    border-right:
+      solid var(--pgn-size-product-tour-checkpoint-arrow-top)
+      var(--pgn-color-product-tour-checkpoint-arrow-border-top);
     filter: drop-shadow(-3px 1px 2px rgba(0, 0, 0, .1));
   }
 }

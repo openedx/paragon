@@ -33,7 +33,7 @@
 
   .pgn-doc__icons-table__cell-text {
     display: block;
-    font-size: $font-size-xs;
+    font-size: var(--pgn-typography-font-size-xs);
     padding: 0 5px;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -43,7 +43,7 @@
   }
 
   &:hover {
-    outline: 1px inset $primary-500;
+    outline: 1px inset var(--pgn-color-primary-500);
     cursor: pointer;
   }
 }
@@ -60,7 +60,7 @@
   }
 
   code {
-    background: $danger-100;
+    background: var(--pgn-color-danger-100);
     padding: 0 .25rem;
   }
 
@@ -87,13 +87,13 @@
     cursor: pointer;
 
     h3 {
-      color: $white;
-      background: $info-300;
+      color: var(--pgn-color-white);
+      background: var(--pgn-color-info-300);
     }
 
     code {
-      color: $white;
-      background: $info-300;
+      color: var(--pgn-color-white);
+      background: var(--pgn-color-info-300);
     }
 
     .pgn__icon {

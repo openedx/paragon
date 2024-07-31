@@ -1,0 +1,67 @@
+{
+  "typography": {
+    "dropdown": {
+      "font-size": {
+        "value": "{typography.font.size.base}", "type": "dimension", "source": "$dropdown-font-size"
+      },
+      "item": {
+        "text-decoration": {
+          "value": "none", "type": "textDecoration"
+        }
+      }
+    }
+  },
+  "size": {
+    "dropdown": {
+      "min-width": { "value": "18rem", "type": "dimension", "source": "$dropdown-min-width" },
+      "border": {
+        "width": { "value": "{size.border.width}", "type": "dimension", "source": "$dropdown-border-width" },
+        "radius": {
+          "base": {
+            "value": "{size.border.radius.base}", "type": "dimension", "source": "$dropdown-border-radius"
+          },
+          "inner": {
+            "value": "calc({size.dropdown.border.radius.base} - {size.dropdown.border.width})",
+            "type": "dimension",
+            "source": "$dropdown-inner-border-radius"
+          }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "dropdown": {
+      "spacer": { "value": ".125rem", "type": "dimension", "source": "$dropdown-spacer" },
+      "padding": {
+        "x": {
+          "base": { "value": "0", "type": "dimension", "source": "$dropdown-padding-x" },
+          "item": { "value": "1rem", "type": "dimension", "source": "$dropdown-item-padding-x" }
+        },
+        "y": {
+          "base": { "value": ".5rem", "type": "dimension", "source": "$dropdown-padding-y" },
+          "item": { "value": ".25rem", "type": "dimension", "source": "$dropdown-item-padding-y" }
+        },
+        "header": {
+          "value": "{spacing.dropdown.padding.y.base} {spacing.dropdown.padding.x.item}",
+          "type": "dimension",
+          "source": "$dropdown-header-padding"
+        }
+      },
+      "divider": {
+        "margin-y": {
+          "value": "calc({spacing.spacer.base} / 2)",
+          "type": "dimension",
+          "source": "$dropdown-divider-margin-y"
+        }
+      },
+      "close-container": {
+        "top": { "value": ".625rem", "type": "dimension", "source": "$modal-close-container-top" }
+      }
+    }
+  },
+  "elevation": {
+    "dropdown": {
+      "zindex": { "value": "1000", "type": "ratio", "source": "$zindex-dropdown" }
+    }
+  }
+}

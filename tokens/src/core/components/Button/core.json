@@ -1,0 +1,105 @@
+{
+  "spacing": {
+    "btn": {
+      "padding": {
+        "y": {
+          "base": {
+            "value": "{spacing.input.btn.padding.y}", "type": "dimension", "source": "$btn-padding-y"
+          },
+          "lg": {
+            "value": "{spacing.input.btn.padding.lg.y}", "type": "dimension", "source": "$btn-padding-y-lg"
+          },
+          "sm": {
+            "value": "{spacing.input.btn.padding.sm.y}", "type": "dimension", "source": "$btn-padding-y-sm"
+          }
+        },
+        "x": {
+          "base": { "value": "{spacing.input.btn.padding.x}", "type": "dimension", "source": "$btn-padding-x" },
+          "lg": {
+            "value": "{spacing.input.btn.padding.lg.x}", "type": "dimension", "source": "$btn-padding-x-lg"
+          },
+          "sm": {
+            "value": "{spacing.input.btn.padding.sm.x}", "type": "dimension", "source": "$btn-padding-x-sm"
+          }
+        }
+      },
+      "block": {
+        "spacing-y": { "value": ".5rem", "type": "dimension", "source": "$btn-block-spacing-y" }
+      },
+      "focus": {
+        "gap": { "value": "{size.btn.focus.width}", "type": "dimension", "source": "$btn-focus-gap" },
+        "border-gap": {
+          "value": "calc({size.btn.focus.width} + {spacing.btn.focus.gap})",
+          "type": "dimension",
+          "source": "$btn-focus-border-gap"
+        },
+        "distance-to-border": {
+          "value": "calc({spacing.btn.focus.border-gap} + {size.btn.border.width})",
+          "type": "dimension",
+          "source": "$btn-focus-distance-to-border"
+        }
+      }
+    }
+  },
+  "typography": {
+    "btn": {
+      "font": {
+        "family": {
+          "value": "{typography.input.btn.font.family}", "type": "fontFamily", "source": "$btn-font-family"
+        },
+        "size": {
+          "base": {
+            "value": "{typography.input.btn.font.size.base}", "type": "dimension", "source": "$btn-font-size"
+          },
+          "sm": {
+            "value": "{typography.input.btn.font.size.sm}", "type": "dimension", "source": "$btn-font-size-sm"
+          },
+          "lg": {
+            "value": "{typography.input.btn.font.size.lg}", "type": "dimension", "source": "$btn-font-size-lg"
+          }
+        },
+        "weight": {
+          "value": "{typography.font.weight.normal}", "type": "fontWeight", "source": "$btn-font-weight"
+        }
+      },
+      "line-height": {
+        "base": {
+          "value": "{typography.input.btn.line-height.base}", "type": "dimension", "source": "$btn-line-height"
+        },
+        "sm": {
+          "value": "{typography.input.btn.line-height.sm}", "type": "dimension", "source": "$btn-line-height-sm"
+        },
+        "lg": {
+          "value": "{typography.input.btn.line-height.lg}", "type": "dimension", "source": "$btn-line-height-lg"
+        }
+      }
+    }
+  },
+  "size": {
+    "btn": {
+      "border": {
+        "width": { "value": "{size.input.btn.border-width}", "type": "dimension", "source": "$btn-border-width" },
+        "radius": {
+          "base": { "value": "{size.border.radius.base}", "type": "dimension", "source": "$btn-border-radius" },
+          "lg": { "value": "{size.border.radius.lg}", "type": "dimension", "source": "$btn-border-radius-lg" },
+          "sm": { "value": "{size.border.radius.sm}", "type": "dimension", "source": "$btn-border-radius-sm" }
+        }
+      },
+      "focus": {
+        "width": { "value": "2px", "type": "dimension", "source": "$btn-focus-width" },
+        "border-radius": {
+          "base": {
+            "value": "calc({size.btn.border.radius.base} + {spacing.btn.focus.border-gap})",
+            "type": "dimension",
+            "source": "$btn-focus-border-radius"
+          },
+          "lg": { "value": "{size.btn.focus.border-radius.base}", "type": "dimension", "source": "$btn-focus-border-radius-lg" },
+          "sm": { "value": "{size.btn.border.radius.base}", "type": "dimension", "source": "$btn-focus-border-radius-sm" }
+        }
+      }
+    }
+  },
+  "transition": {
+    "btn": { "value": "none", "type": "transition", "source": "$btn-transition" }
+  }
+}

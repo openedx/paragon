@@ -1,0 +1,119 @@
+// explicitly import bootstrap's utility module to exclude some modules which do not work
+// with CSS variables, they are instead overriden by Paragon
+@import "~bootstrap/scss/utilities/align";
+@import "~bootstrap/scss/utilities/clearfix";
+@import "~bootstrap/scss/utilities/display";
+@import "~bootstrap/scss/utilities/embed";
+@import "~bootstrap/scss/utilities/flex";
+@import "~bootstrap/scss/utilities/float";
+@import "~bootstrap/scss/utilities/interactions";
+@import "~bootstrap/scss/utilities/overflow";
+@import "~bootstrap/scss/utilities/position";
+@import "~bootstrap/scss/utilities/screenreaders";
+@import "~bootstrap/scss/utilities/shadows";
+@import "~bootstrap/scss/utilities/sizing";
+@import "~bootstrap/scss/utilities/stretched-link";
+@import "~bootstrap/scss/utilities/visibility";
+@import "./bootstrap-override/utilities";
+
+// Add background, border, and text color utilities
+// for all theme color levels.
+$color-levels: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+.x-small {
+  font-size: $x-small-font-size;
+}
+
+.micro {
+  font-size: $micro-font-size;
+  font-weight: normal;
+  line-height: $micro-line-height;
+}
+
+.mw-xs {
+  max-width: $max-width-xs !important;
+}
+
+.mw-sm {
+  max-width: $max-width-sm !important;
+}
+
+.mw-md {
+  max-width: $max-width-md !important;
+}
+
+.mw-lg {
+  max-width: $max-width-lg !important;
+}
+
+.mw-xl {
+  max-width: $max-width-xl !important;
+}
+
+.icon-spin {
+  animation: spinner-border .75s linear infinite;
+  -webkit-animation: spinner-border .75s linear infinite;
+}
+
+// Define breakpoints for `.w-*` class (e.g. `.w-md-100`)
+@each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
+  @each $size-name, $size-value in $sizes {
+    @media (min-width: $breakpoint-value) {
+      .w-#{$breakpoint-name}-#{$size-name} {
+        width: $size-value !important;
+      }
+    }
+  }
+}
+
+// Define classes for rtl (margin-inline-start == margin-left, margin-inline-end == margin-right)
+@each $size, $length in $spacers {
+  .mis-#{$size} {
+    margin-inline-start: $length !important;
+  }
+
+  .mie-#{$size} {
+    margin-inline-end: $length !important;
+  }
+}
+
+.mis-auto {
+  margin-inline-start: auto !important;
+}
+
+.mie-auto {
+  margin-inline-end: auto !important;
+}
+
+// Define classes for z-index
+$indexes: () !default;
+$indexes: map-merge(
+  (
+    0: 0,
+    1: 200,
+    2: 400,
+    3: 600,
+    4: 800,
+    5: 1000,
+    6: 1200,
+    7: 1400,
+    8: 1600,
+    9: 1800,
+    10: 2000
+  ),
+  $indexes
+);
+
+@each $index, $size in $indexes {
+  .zindex-#{$index} {
+    z-index: $size !important;
+  }
+}
+
+@each $level in $levels {
+  @each $box-shadow-side in $box-shadow-sides {
+    .box-shadow-#{$box-shadow-side}-#{$level} {
+      @include pgn-box-shadow($level, $box-shadow-side);
+    }
+  }
+}

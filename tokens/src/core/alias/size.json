@@ -1,0 +1,15 @@
+{
+  "size": {
+    "border": {
+      "width": { "value": "1px", "type": "dimension", "source": "$border-width", "description": "Default border width." },
+      "radius": {
+        "base": { "value": ".375rem", "type": "dimension", "source": "$border-radius", "description": "Default border radius." },
+        "lg": { "value": ".425rem", "type": "dimension", "source": "$border-radius-lg", "description": "Large border radius." },
+        "sm": { "value": ".25rem", "type": "dimension", "source": "$border-radius-sm", "description": "Small border radius." }
+      }
+    },
+    "rounded": {
+      "pill": { "value": "50rem", "type": "dimension", "source": "$rounded-pill", "description": "Pill border radius." }
+    }
+  }
+}
