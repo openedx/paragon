@@ -11,7 +11,7 @@ function RowStatus({ className, statusText }) {
     return null;
   }
   return (
-    <div className={className}>
+    <div className={className} data-testid="row-status">
       {statusText || (
         <FormattedMessage
           id="pgn.DataTable.RowStatus.statusText"

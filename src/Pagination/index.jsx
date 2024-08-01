@@ -41,7 +41,11 @@ function ReducedPagination({ currentPage, pageCount, handlePageSelect }) {
       </Dropdown.Toggle>
       <Dropdown.Menu className="pgn__reduced-pagination-dropdown">
         {[...Array(pageCount).keys()].map(pageNum => (
-          <Dropdown.Item onClick={() => handlePageSelect(pageNum + 1)} key={pageNum}>
+          <Dropdown.Item
+            onClick={() => handlePageSelect(pageNum + 1)}
+            key={pageNum}
+            data-testid="pagination-dropdown-item"
+          >
             {pageNum + 1}
           </Dropdown.Item>
         ))}

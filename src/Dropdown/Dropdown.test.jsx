@@ -1,10 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { render, screen, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import {
+  render, screen, waitFor, act,
+} from '@testing-library/react';
 
 import userEvent from '@testing-library/user-event';
-import Dropdown from './index';
+import Dropdown from '.';
 
 const mockOnToggle = jest.fn();
 
@@ -27,9 +27,10 @@ describe('<Dropdown />', () => {
     const props = {
       ...baseProps,
     };
-    const wrapper = mount(<Dropdown {...props} />);
-    expect(wrapper.exists()).toEqual(true);
+    render(<Dropdown {...props} />);
+    expect(screen.getByTestId('dropdown')).toBeInTheDocument();
   });
+
   it('Dropdown functions without autoClose or show props', async () => {
     render(
       <Dropdown>
@@ -41,28 +42,39 @@ describe('<Dropdown />', () => {
         </Dropdown.Menu>
       </Dropdown>,
     );
+
     expect(screen.queryByText('foobar')).not.toBeInTheDocument();
     expect(screen.getByText('Dropdown Button')).toBeInTheDocument();
 
     // Open the dropdown
     const button = screen.getByText('Dropdown Button');
-    userEvent.click(button);
+    await act(async () => {
+      await userEvent.click(button);
+    });
+
     // Expect the dropdown item to be visible
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
     // Close the dropdown by clicking off the element
-    userEvent.click(document.body);
+    await act(async () => {
+      userEvent.click(document.body);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).not.toBeVisible());
 
     // Reopen the dropdown
-    userEvent.click(button);
+    await act(async () => {
+      userEvent.click(button);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
-    //  Close the dropdown by clicking the item
+    // Close the dropdown by clicking the item
     const dropdownItem = screen.getByText('foobar');
-    userEvent.click(dropdownItem);
+    await act(async () => {
+      userEvent.click(dropdownItem);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).not.toBeVisible());
   });
+
   it('Dropdown functions when autoClose is outside', async () => {
     const props = {
       ...outsideAutoCloseProps,
@@ -77,28 +89,39 @@ describe('<Dropdown />', () => {
         </Dropdown.Menu>
       </Dropdown>,
     );
+
     expect(screen.queryByText('foobar')).not.toBeInTheDocument();
     expect(screen.getByText('Dropdown Button')).toBeInTheDocument();
 
     // Open the dropdown
     const button = screen.getByText('Dropdown Button');
-    userEvent.click(button);
+    await act(async () => {
+      userEvent.click(button);
+    });
+
     // Expect the dropdown item to be visible
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
     // Close the dropdown by clicking off the element
-    userEvent.click(document.body);
+    await act(async () => {
+      userEvent.click(document.body);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).not.toBeVisible());
 
     // Reopen the dropdown
-    userEvent.click(button);
+    await act(async () => {
+      userEvent.click(button);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
     // Assert the dropdown stays open when clicking the item
     const dropdownItem = screen.getByText('foobar');
-    userEvent.click(dropdownItem);
+    await act(async () => {
+      userEvent.click(dropdownItem);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
   });
+
   it('Dropdown functions when autoClose is inside', async () => {
     const props = {
       ...insideAutoCloseProps,
@@ -113,22 +136,30 @@ describe('<Dropdown />', () => {
         </Dropdown.Menu>
       </Dropdown>,
     );
+
     expect(screen.queryByText('foobar')).not.toBeInTheDocument();
     expect(screen.getByText('Dropdown Button')).toBeInTheDocument();
 
     // Open the dropdown
     const button = screen.getByText('Dropdown Button');
-    userEvent.click(button);
+    await act(async () => {
+      await userEvent.click(button);
+    });
+
     // Expect the dropdown item to be visible
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
     // Assert the dropdown stays open when clicking outside the dropdown
-    userEvent.click(document.body);
+    await act(async () => {
+      await userEvent.click(document.body);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).toBeVisible());
 
     // Close the dropdown by clicking the element
     const dropdownItem = screen.getByText('foobar');
-    userEvent.click(dropdownItem);
+    await act(async () => {
+      userEvent.click(dropdownItem);
+    });
     await waitFor(() => expect(screen.queryByText('foobar')).not.toBeVisible());
   });
 });

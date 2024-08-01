@@ -6,9 +6,9 @@ import IconButton from '../IconButton';
 
 const EXPAND_COLLAPSE_ICON_SIZE = 'inline';
 
-function ExpandRow({ row }) {
+function ExpandRow({ row, ...rest }) {
   return (
-    <span {...row.getToggleRowExpandedProps()}>
+    <span {...row.getToggleRowExpandedProps()} {...rest}>
       {row.isExpanded
         ? <IconButton src={ExpandLess} iconAs={Icon} alt="Collapse row" size={EXPAND_COLLAPSE_ICON_SIZE} />
         : <IconButton src={ExpandMore} iconAs={Icon} alt="Expand row" size={EXPAND_COLLAPSE_ICON_SIZE} />}
