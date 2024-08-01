@@ -200,27 +200,60 @@ For link to be `disabled`, it must have href defined with some value.
 )}
 ```
 
-### With a Spinner
+## Stateful buttons
+To implement loading state using a `Button` component, the [StatefulButton](https://paragon-openedx.netlify.app/components/statefulbutton/) component
+is available for use. <br/>
+This specialized component is designed to seamlessly manage and display boot states, providing a more efficient and 
+user-friendly experience.
+
+***
+
+## Button.Deprecated
+
+### (Deprecated) basic usage
 
 ```jsx live
-<>
-  <Button variant="primary" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-  <Button variant="brand" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-  <Button variant="outline-primary" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-  <Button variant="outline-brand" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-  <Button variant="inverse-primary" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-  <Button variant="inverse-brand" className="mb-2 mr-2 mb-sm-0" aria-label="Loading some stuff">
-    <Spinner animation="border" />
-  </Button>
-</>
+<Button.Deprecated className="btn-primary">Hello World!</Button.Deprecated>
+```
+
+### (Deprecated) color variants
+
+```jsx live
+<div>
+  <Button.Deprecated className="btn-primary">Primary</Button.Deprecated>
+  <Button.Deprecated className="btn-success">Success</Button.Deprecated>
+  <Button.Deprecated className="btn-danger">Danger</Button.Deprecated>
+  <Button.Deprecated className="btn-light">Light</Button.Deprecated>
+  <Button.Deprecated className="btn-dark">Dark</Button.Deprecated>
+</div>
+```
+
+### (Deprecated) outline variants
+
+```jsx live
+<div>
+  <Button.Deprecated className="btn-outline-primary">Primary</Button.Deprecated>
+  <Button.Deprecated className="btn-outline-success">Success</Button.Deprecated>
+  <Button.Deprecated className="btn-outline-danger">Danger</Button.Deprecated>
+</div>
+```
+
+### (Deprecated) inverse variants
+
+```jsx live
+<div className="bg-gray-700 p-3">
+  <Button.Deprecated className="btn-inverse-primary">Primary</Button.Deprecated>
+  <Button.Deprecated className="btn-inverse-success">Success</Button.Deprecated>
+  <Button.Deprecated className="btn-inverse-danger">Danger</Button.Deprecated>
+</div>
+```
+
+### (Deprecated) link variant
+
+```jsx live
+<div className="bg-gray-200 p-3">
+  <Button.Deprecated className="btn-link">Link with button container</Button.Deprecated>
+  <br />
+  <Button.Deprecated className="btn-link px-0">Button with no horizontal padding</Button.Deprecated>
+</div>
 ```

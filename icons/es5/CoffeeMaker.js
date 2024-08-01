@@ -12,6 +12,7 @@ const SvgCoffeeMaker = props => /*#__PURE__*/React.createElement("svg", _extends
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 13,
   cy: 9,
-  r: 1
+  r: 1,
+  fill: "currentColor"
 }));
 export default SvgCoffeeMaker;

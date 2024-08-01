@@ -12,90 +12,112 @@ const SvgFace5 = props => /*#__PURE__*/React.createElement("svg", _extends({
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 9,
   cy: 13,
-  r: 1.25
+  r: 1.25,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 5.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 14,
   cy: 5.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 10,
   cy: 5.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 17,
   cy: 6.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 9,
   cy: 6.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 7,
   cy: 6.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 11,
   cy: 6.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 13,
   cy: 6.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 15,
   cy: 6.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 7.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 14,
   cy: 7.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 16,
   cy: 7.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 10,
   cy: 7.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 8,
   cy: 7.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 9,
   cy: 8.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 7,
   cy: 8.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 11,
   cy: 8.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 13,
   cy: 8.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 15,
   cy: 8.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 17,
   cy: 8.5,
-  r: 0.5
+  r: 0.5,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 15,
   cy: 13,
-  r: 1.25
+  r: 1.25,
+  fill: "currentColor"
 }));
 export default SvgFace5;

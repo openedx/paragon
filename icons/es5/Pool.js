@@ -12,6 +12,7 @@ const SvgPool = props => /*#__PURE__*/React.createElement("svg", _extends({
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 16.5,
   cy: 5.5,
-  r: 2.5
+  r: 2.5,
+  fill: "currentColor"
 }));
 export default SvgPool;

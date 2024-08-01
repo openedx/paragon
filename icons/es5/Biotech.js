@@ -15,6 +15,7 @@ const SvgBiotech = props => /*#__PURE__*/React.createElement("svg", _extends({
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 10.5,
   cy: 8,
-  r: 1.5
+  r: 1.5,
+  fill: "currentColor"
 }));
 export default SvgBiotech;

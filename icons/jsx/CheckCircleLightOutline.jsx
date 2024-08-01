@@ -1,28 +1,21 @@
 import * as React from "react";
-
-const CheckCircleLightOutline = (props) => (
+const SvgCheckCircleLightOutline = (props) => (
   <svg
-    width="57"
-    height="57"
+    width={24}
+    height={24}
     viewBox="0 0 57 57"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <circle
-      cx="28.5"
-      cy="28.5"
-      r="26.5"
-      stroke="#00262B"
-      stroke-width="3"
+    <path
+      d="M28.5.5C13.054.5.5 13.054.5 28.5s12.554 28 28 28 28-12.554 28-28-12.554-28-28-28zm0 3c13.825 0 25 11.175 25 25s-11.175 25-25 25-25-11.175-25-25 11.175-25 25-25z"
+      fill="currentColor"
     />
     <path
-      d="M12.658 29.9736L22.2369 39.5525L44.3422 17.4473"
-      stroke="#00262B"
-      stroke-width="3"
+      d="M43.281 16.387 22.236 37.432l-8.517-8.52-2.121 2.123 10.638 10.639 23.166-23.166Z"
+      fill="currentColor"
     />
   </svg>
-
 );
-
-export default CheckCircleLightOutline;
+export default SvgCheckCircleLightOutline;

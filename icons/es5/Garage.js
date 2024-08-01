@@ -9,11 +9,13 @@ const SvgGarage = props => /*#__PURE__*/React.createElement("svg", _extends({
 }, props), /*#__PURE__*/React.createElement("circle", {
   cx: 15,
   cy: 13,
-  r: 1
+  r: 1,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: 9,
   cy: 13,
-  r: 1
+  r: 1,
+  fill: "currentColor"
 }), /*#__PURE__*/React.createElement("path", {
   d: "m8.33 7.5-.66 2h8.66l-.66-2z",
   fill: "currentColor"

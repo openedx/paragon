@@ -8,7 +8,7 @@ const SvgPriorityHigh = (props) => (
     fill="none"
     {...props}
   >
-    <circle cx={12} cy={19} r={2} />
+    <circle cx={12} cy={19} r={2} fill="currentColor" />
     <path d="M10 3h4v12h-4z" fill="currentColor" />
   </svg>
 );

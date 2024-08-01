@@ -9,6 +9,7 @@ const SvgNoiseControlOff = props => /*#__PURE__*/React.createElement("svg", _ext
 }, props), /*#__PURE__*/React.createElement("circle", {
   cx: 12,
   cy: 12,
-  r: 5
+  r: 5,
+  fill: "currentColor"
 }));
 export default SvgNoiseControlOff;
