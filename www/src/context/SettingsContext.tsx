@@ -5,6 +5,7 @@ import { IntlProvider } from 'react-intl';
 import { messages } from '~paragon-react';
 
 import { THEMES, DEFAULT_THEME } from '../../theme-config';
+import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
 
 export interface IDefaultValue {
   settings: {
@@ -44,12 +45,16 @@ function SettingsContextProvider({ children }) {
     }
     setSettings(prevState => ({ ...prevState, [key]: value }));
     global.localStorage.setItem('pgn__settings', JSON.stringify({ ...settings, [key]: value }));
-    global.analytics.track(`openedx.paragon.docs.settings.${key}.changed`, { [key]: value });
+    sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: key, value });
   };
 
   const toggleSettings = (value: boolean) => {
+    const event = value
+      ? SETTINGS_EVENTS.OPENED
+      : SETTINGS_EVENTS.CLOSED;
+
     setShowSettings(value);
-    global.analytics.track(`openedx.paragon.docs.settings.${value ? 'opened' : 'closed'}`);
+    sendUserAnalyticsEvent(event);
   };
 
   // this hook will be called after the first render, so we can safely access localStorage

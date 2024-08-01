@@ -1694,6 +1694,8 @@ export { default as RestoreFromTrash } from "./RestoreFromTrash";
 export { default as RestorePage } from "./RestorePage";
 export { default as Reviews } from "./Reviews";
 export { default as RiceBowl } from "./RiceBowl";
+export { default as RightSidebarFilled } from "./RightSidebarFilled";
+export { default as RightSidebarOutlined } from "./RightSidebarOutlined";
 export { default as RingVolume } from "./RingVolume";
 export { default as Rocket } from "./Rocket";
 export { default as RocketLaunch } from "./RocketLaunch";

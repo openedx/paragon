@@ -6,6 +6,8 @@ import { IntlProvider } from 'react-intl';
 
 import DataTable from '..';
 import DataTableContext from '../DataTableContext';
+import { TextFilter } from '../..';
+import { SELECT_ALL_TEST_ID } from '../selection/data/constants';
 
 const additionalColumns = [
   {
@@ -197,6 +199,35 @@ describe('<DataTable />', () => {
     expect(tableContainer).toBeTruthy();
 
     expect(spinner).toBeTruthy();
+  });
+  it('displays the total number of items when applying filter and selecting all items', async () => {
+    const propsWithSelection = {
+      ...props,
+      isSelectable: true,
+      isFilterable: true,
+      manualFilters: true,
+      defaultColumnValues: { Filter: TextFilter },
+      isPaginated: true,
+      initialState: { pageSize: 3, pageIndex: 0 },
+      pageCount: 3,
+      fetchData: jest.fn(),
+    };
+
+    render(<DataTableWrapper {...propsWithSelection} />);
+    const filtersButton = screen.getByRole('button', { name: 'Filters' });
+
+    await userEvent.click(filtersButton);
+
+    const searchFormControl = screen.getByPlaceholderText('Search coat color');
+    await userEvent.type(searchFormControl, 'brown tabby');
+
+    const selectAllCheckBox = screen.getByTitle('Toggle All Current Page Rows Selected');
+    await userEvent.click(selectAllCheckBox);
+
+    const selectAllButton = screen.getByTestId(SELECT_ALL_TEST_ID);
+    // A filtered array is returned from the backend,
+    // and the element counter displays its length.
+    expect(selectAllButton).toHaveTextContent('Select all 7');
   });
 
   describe('[legacy] controlled table selections', () => {
