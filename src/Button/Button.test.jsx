@@ -18,6 +18,18 @@ describe('<Button />', () => {
       const tooltip = wrapper.find('.btn');
       expect(tooltip.hasClass('btn-brand')).toEqual(true);
     });
+    it('renders with props iconBefore and size', () => {
+      const tree = renderer.create((
+        <Button iconBefore={Close} size="md">Button</Button>
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+    it('renders with props iconAfter and size', () => {
+      const tree = renderer.create((
+        <Button iconAfter={Close} size="md">Button</Button>
+      )).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
     it('renders with props iconBefore', () => {
       const tree = renderer.create((
         <Button iconBefore={Close}>Button</Button>

@@ -496,6 +496,34 @@ select.form-control {
   }
 }
 
+.pgn__form-checkbox {
+  &.pgn__form-control-invalid input {
+    &:checked {
+      background-image: escape-svg($custom-checkbox-indicator-icon-invalid-checked);
+    }
+  }
+
+  &.pgn__form-control-valid input {
+    &:checked {
+      background-image: escape-svg($custom-checkbox-indicator-icon-valid-checked);
+    }
+  }
+}
+
+.pgn__form-radio {
+  &.pgn__form-control-invalid input {
+    &:checked {
+      background-image: escape-svg($custom-radio-indicator-icon-invalid-checked);
+    }
+  }
+
+  &.pgn__form-control-valid input {
+    &:checked {
+      background-image: escape-svg($custom-radio-indicator-icon-valid-checked);
+    }
+  }
+}
+
 .input-group > .input-group-prepend > .btn,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group:not(.has-validation) > .input-group-append:not(:last-child) > .btn,
