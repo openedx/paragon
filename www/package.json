@@ -5,12 +5,14 @@
   "dependencies": {
     "@docsearch/react": "^3.1.0",
     "@edx/brand-edx.org": "^2.1.2",
-    "@edx/brand-openedx": "^1.1.0",
+    "@openedx/brand-openedx": "^1.2.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "analytics-node": "^6.0.0",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
+    "color": "^4.2.3",
     "gatsby": "^4.23.1",
     "gatsby-plugin-manifest": "^4.17.0",
     "gatsby-plugin-mdx": "^3.17.0",
@@ -36,8 +38,8 @@
     "rehype-slug": "^4.0.1",
     "sass": "^1.53.0",
     "sass-loader": "12.6.0",
-    "slugify": "^1.6.5",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "slugify": "^1.6.5"
   },
   "keywords": [
     "paragon",
@@ -68,14 +70,13 @@
     "@babel/preset-typescript": "^7.16.7",
     "@edx/eslint-config": "^3.1.0",
     "@svgr/webpack": "6.5.1",
+    "@types/color": "^3.0.3",
     "@types/mdx": "^2.0.3",
     "@types/mdx-js__react": "^1.5.5",
     "@types/react-helmet": "^6.1.6",
     "css": "^3.0.0",
     "eslint": "8.18.0",
     "eslint-import-resolver-webpack": "^0.13.2",
-    "postcss": "^8.4.21",
-    "postcss-custom-media": "^9.1.2",
     "file-loader": "6.2.0",
     "playroom": "^0.31.0"
   },
