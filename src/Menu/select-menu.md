@@ -16,7 +16,7 @@ The ``SelectMenu`` component is triggered on the click of a button or your choic
 
 The ``Modal`` brings focus to the first menu element upon the click of the trigger, and can be escaped on click away or key press. Set a default message with the `defaultMessage` prop string. Use the `defaultSelected` prop to signify that a menuItem is the default to open to.
 
-### Basic usage
+## Basic usage
 
 ```jsx live
 <SelectMenu>
@@ -28,7 +28,7 @@ The ``Modal`` brings focus to the first menu element upon the click of the trigg
 </SelectMenu>
 ```
 
-#### Linked variant
+### Linked variant
 
 ```jsx live
 <SelectMenu isLink={true} defaultMessage="Choose Your New Best Friend">

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '~paragon-react';
-import Menu from '../components/Menu';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
+import ComponentsList from '../components/ComponentsList';
 
 function HomePage() {
   return (
@@ -40,7 +40,7 @@ function HomePage() {
           </Button>
         </div>
       </div>
-      <Menu />
+      <ComponentsList />
     </Layout>
   );
 }
