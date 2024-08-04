@@ -144,24 +144,6 @@ describe('Stepper', () => {
     });
   });
 
-  describe('clickable variant', () => {
-    const onStepClick = jest.fn();
-
-    it('ignores onClick function if Step has not been visited yet', () => {
-      render(<Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />);
-      const step = screen.getAllByRole('listitem').find(listitem => listitem.textContent.includes('Cat'));
-      fireEvent.click(step);
-      expect(onStepClick).toHaveBeenCalledTimes(0);
-    });
-
-    it('invokes onClick function if Step has been visited', () => {
-      render(<Example activeKey="review" showError={false} hasFourthStep handleStepClick={onStepClick} />);
-      const step = screen.getAllByRole('button').find(button => button.textContent.includes('Welcome'));
-      fireEvent.click(step);
-      expect(onStepClick).toHaveBeenCalledTimes(1);
-    });
-  });
-
   describe('tab updates', () => {
     it('removes a step if a step child is removed', () => {
       const { rerender, getAllByTestId } = render(

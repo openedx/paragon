@@ -1,8 +1,8 @@
 {
   "color": {
     "icon-button": {
-      "bg": { 
-        "base": { "value": "transparent", "type": "color", "source": "$btn-icon-bg" }, 
+      "bg": {
+        "base": { "value": "transparent", "type": "color", "source": "$btn-icon-bg" },
         "primary": {
           "base": { "value": "{color.icon-button.bg.base}", "type": "color" },
           "hover": { "value": "{color.icon-button.text.primary.base}", "type": "color" },

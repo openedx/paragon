@@ -20,7 +20,7 @@
         }
       },
       "body": { "value": "{color.body.base}", "type": "color", "source": "$popover-body-color" },
-      "arrow": { 
+      "arrow": {
         "base": { "value": "{color.popover.bg}", "type": "color", "source": "$popover-arrow-color" },
         "outer": {
           "value": "{color.popover.border}",
@@ -39,7 +39,7 @@
       },
       "danger": {
         "bg": { "value": "{color.danger.100}", "type": "color", "source": "$popover-danger-bg" },
-        "icon": { "value": "{color.warning.500}", "type": "color", "source": "$popover-danger-icon-color" }
+        "icon": { "value": "{color.danger.500}", "type": "color", "source": "$popover-danger-icon-color" }
       }
     }
   },

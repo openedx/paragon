@@ -28,7 +28,7 @@ function Column({
       >
         <FormGroup className="form-inline m-2">
           <FormLabel isInline className="font-weight-normal" htmlFor={`column-${index}-width`}>
-              Width
+            Width
           </FormLabel>
           <FormControl
             type="number"
@@ -36,28 +36,28 @@ function Column({
             size="sm"
             value={width}
             placeholder="Width (1 - 12)"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeWidth(index, e.target.value)}
             style={{ width: '3.5rem' }}
             min={0}
             step={1}
             max={12}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeWidth(index, e.target.value)}
           />
         </FormGroup>
         <FormGroup className="form-inline m-2">
           <FormLabel isInline className="font-weight-normal" htmlFor={`column-${index}-offset`}>
-              Offset
+            Offset
           </FormLabel>
           <FormControl
+            type="number"
             id={`column-${index}-offset`}
             size="sm"
-            type="number"
             value={offset}
             placeholder="Offset (1 - 11)"
             style={{ width: '3.5rem' }}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeOffset(index, e.target.value)}
             min={0}
             step={1}
             max={11}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeOffset(index, e.target.value)}
           />
         </FormGroup>
       </div>

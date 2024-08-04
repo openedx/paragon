@@ -7,9 +7,6 @@
   "types": "dist/index.d.ts",
   "license": "Apache-2.0",
   "bin": {
-    "build-design-tokens": "./tokens/build-tokens.js",
-    "replace-scss-with-css": "./tokens/replace-variables.js",
-    "build-scss": "./build-scss.js",
     "paragon": "./bin/paragon-scripts.js"
   },
   "publishConfig": {
@@ -53,17 +50,19 @@
     "playroom:start": "npm run playroom:start --workspace=www",
     "playroom:build": "npm run playroom:build --workspace=www",
     "prepare": "husky || true",
-    "build-tokens": "node tokens/build-tokens.js --build-dir ./styles/css/",
-    "replace-variables-usage-with-css": "node tokens/replace-variables.js -p src -t usage",
-    "replace-variables-definition-with-css": "node tokens/replace-variables.js -p src -t definition"
+    "build-tokens": "./bin/paragon-scripts.js build-tokens --build-dir ./styles/css",
+    "replace-variables-usage-with-css": "./bin/paragon-scripts.js replace-variables -p src -t usage",
+    "replace-variables-definition-with-css": "./bin/paragon-scripts.js replace-variables -p src -t definition"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.4",
+    "axios": "^0.27.2",
     "bootstrap": "^4.6.2",
-    "chroma-js": "^2.4.2",
     "chalk": "^4.1.2",
     "child_process": "^1.0.2",
+    "chroma-js": "^2.4.2",
     "classnames": "^2.3.1",
+    "cli-progress": "^3.12.0",
     "commander": "^9.4.1",
     "email-prop-type": "^3.0.0",
     "file-selector": "^0.6.0",
@@ -71,7 +70,10 @@
     "inquirer": "^8.2.5",
     "js-toml": "^1.0.0",
     "lodash.uniqby": "^4.7.0",
+    "log-update": "^4.0.0",
     "mailto-link": "^2.0.0",
+    "minimist": "^1.2.8",
+    "ora": "^5.4.1",
     "postcss": "^8.4.21",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-custom-media": "^9.1.2",
@@ -133,7 +135,6 @@
     "axios-mock-adapter": "^1.21.1",
     "babel-jest": "^29.7.0",
     "babel-loader": "^8.2.4",
-    "enzyme": "^3.9.0",
     "commander": "^9.3.0",
     "eslint": "8.18.0",
     "eslint-config-airbnb": "19.0.4",
@@ -197,10 +198,10 @@
     ]
   },
   "lint-staged": {
-    "*.{mjs}": [
+    "*.{js,jsx,ts,tsx}": [
       "npx eslint"
     ],
-    "*.sass": [
+    "*.scss": [
       "npx stylelint"
     ]
   },

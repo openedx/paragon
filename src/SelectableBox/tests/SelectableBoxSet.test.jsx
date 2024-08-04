@@ -4,8 +4,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import SelectableBox from '..';
 
-import { Form } from '../..';
-import SelectableBox from '..';
+const boxText = (text) => `SelectableBox${text}`;
 
 const checkboxType = 'checkbox';
 const checkboxText = (text) => `SelectableCheckbox${text}`;

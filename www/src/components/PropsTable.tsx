@@ -72,10 +72,10 @@ function Prop({
           <span className="mr-2 font-weight-bold">{`${name} `}</span>
           <PropType {...type} />
           {required && (
-          <>
-            {' '}
-            <Badge variant="light">Required</Badge>
-          </>
+            <>
+              {' '}
+              <Badge variant="light">Required</Badge>
+            </>
           )}
         </div>
         <div className="x-small">

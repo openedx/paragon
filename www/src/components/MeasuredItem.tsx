@@ -41,7 +41,7 @@ function MeasuredItem({
         }, {});
         setMeasurements(measurementsItems);
       };
-      // Needs a moment to finish switching theme and re-render children to DOM first.
+        // Needs a moment to finish switching theme and re-render children to DOM first.
       setMeasurements(initialMeasurements);
       const timeout = setTimeout(measure, 1000);
       return () => clearTimeout(timeout);

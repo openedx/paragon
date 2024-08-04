@@ -56,7 +56,7 @@
             "amount": 0.5
           }]
         },
-        "hover": { 
+        "hover": {
           "value": "{color.black}",
           "type": "color",
           "source": "$navbar-light-hover-color",
@@ -65,7 +65,7 @@
             "amount": 0.7
           }]
         },
-        "active": { 
+        "active": {
           "value": "{color.black}",
           "type": "color",
           "source": "$navbar-light-active-color",
@@ -74,7 +74,7 @@
             "amount": 0.9
           }]
         },
-        "disabled": { 
+        "disabled": {
           "value": "{color.black}",
           "type": "color",
           "source": "$navbar-light-disabled-color",

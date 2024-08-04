@@ -9,7 +9,7 @@
             "source": "$nav-tabs-link-active-border-color"
           },
           "hover": {
-            "value": "transparent transparent {color.nav.tabs.base.border}",
+            "value": "transparent transparent {color.nav.tabs.base.border.base}",
             "type": "color",
             "source": "$nav-tabs-link-hover-border-color"
           },
@@ -33,7 +33,16 @@
       },
       "tabs": {
         "base": {
-          "border": { "value": "{color.light.400}", "type": "color", "source": "$nav-tabs-border-color" },
+          "text": {
+            "disabled": { "value": "{color.nav.tabs.base.bg.hover}", "type": "color", "source": "$nav-tabs-disabled-bg" }
+          },
+          "bg": {
+            "hover": { "value": "transparent", "type": "color", "source": "$nav-tabs-hover-bg" }
+          },
+          "border": {
+            "base": { "value": "{color.light.400}", "type": "color", "source": "$nav-tabs-border-color" },
+            "focus": { "value": "{color.nav.tabs.base.bg.hover}", "type": "color", "source": "$nav-tabs-focus-border-color" }
+          },
           "link": {
             "hover": {
               "bg": { "value": "{color.light.400}", "type": "color", "source": "$nav-tabs-link-hover-bg" }
@@ -41,6 +50,9 @@
             "active": {
               "text": { "value": "{color.primary.500}", "type": "color", "source": "$nav-tabs-link-active-color" },
               "bg": { "value": "transparent", "type": "color", "source": "$nav-tabs-link-active-bg" }
+            },
+            "disabled": {
+              "border": { "value": "{color.nav.link.border}", "type": "color", "source": "$nav-tabs-link-disabled-border-color" }
             }
           }
         },
@@ -63,7 +75,10 @@
                 "source": "$nav-inverse-tabs-link-active-hover-bg"
               }
             },
-          "tab-content-color": { "value": "{color.nav.tabs.inverse.link.text.base}", "type": "color", "source": "$nav-inverse-tabs-tab-content-color" }
+            "tab-content-color": { "value": "{color.nav.tabs.inverse.link.text.base}", "type": "color", "source": "$nav-inverse-tabs-tab-content-color" }
+          },
+          "dropdown": {
+            "border": { "value": "{color.nav.tabs.inverse.link.bg.active-hover}", "type": "color", "source": "$nav-inverse-tabs-dropdown-border-color" }
           }
         }
       },
@@ -72,9 +87,10 @@
           "link": {
             "active": {
               "text": { "value": "{color.active}", "type": "color", "source": "$nav-pills-link-active-color" },
-              "bg": { "value": "{color.bg.active}", "type": "color", "source": "$nav-pills-link-active-bg" }
+              "bg": { "value": "{color.bg.active}", "type": "color", "source": "$nav-pills-link-active-bg" },
+              "border": { "value": "{color.white}", "type": "color", "source": "$nav-pills-link-active-border-color" }
             },
-            "border": { "value": "{color.nav.tabs.base.border}", "type": "color", "source": "$nav-pills-link-border-color" }
+            "border": { "value": "{color.nav.tabs.base.border.base}", "type": "color", "source": "$nav-pills-link-border-color" }
           }
         },
         "inverse": {
@@ -104,9 +120,14 @@
                 "source": "$nav-inverse-pills-link-active-hover-border-color"
               },
               "active-focus": {
-                "value": "{color.nav.pills.inverse.link.text.base}",
+                "value": "{color.primary.base}",
                 "type": "color",
                 "source": "$nav-inverse-pills-link-active-focus-border-color"
+              },
+              "focus-hover": {
+                "value": "{color.nav.pills.inverse.link.border.active-focus}",
+                "type": "color",
+                "source": "$nav-inverse-pills-link-active-focus-hover-border-color"
               }
             },
             "bg": {

@@ -1,14 +1,17 @@
 {
   "color": {
-    "hr": {
-      "border": {
-        "value": "{color.black}",
-        "type": "color",
-        "source": "$hr-border-color",
-        "modify": [{
-          "type": "alpha",
-          "amount": 0.1
-        }]
+    "input": {
+      "btn-focus": { "value": "{color.bg.active}", "type": "color", "source": "$input-btn-focus-color" }
+    }
+  },
+  "elevation": {
+    "input": {
+      "btn-focus": {
+        "box-shadow": {
+          "value": "0 0 0 {size.input.btn.focus-width} {color.input.btn-focus}",
+          "type": "shadow",
+          "source": "$input-btn-focus-box-shadow"
+        }
       }
     }
   }

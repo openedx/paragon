@@ -12,7 +12,7 @@ export function ComponentStatus({ status, noLeftMargin }: IComponentStatus) {
   return (
     <span
       className={`status-indicator ${noLeftMargin
-        && 'status-no-left-margin'} ${status.toLowerCase().replace(' ', '-')}`}
+          && 'status-no-left-margin'} ${status.toLowerCase().replace(' ', '-')}`}
     >
       <span>{status}</span>
     </span>

@@ -48,6 +48,13 @@
             "type": "color",
             "source": "$tab-inverse-pills-link-dropdown-toggle-active-hover-bg"
           }
+        },
+        "border": {
+          "focus": {
+            "value": "{color.tab.inverse-pills-link-dropdown-toggle.bg.focus}",
+            "type": "color",
+            "source": "$tab-inverse-pills-link-dropdown-toggle-focus-border-color"
+          }
         }
       }
     }

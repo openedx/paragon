@@ -158,6 +158,9 @@ StyleDictionary.registerFormat({
 
       // eslint-disable-next-line no-restricted-syntax
       for (const token of tokens) {
+        // Get action token by reference
+        const ref = dictionary.getReferences(token.original.actions.default)[0];
+        token.actions = { default: `var(--${ref.name})` };
         // eslint-disable-next-line no-restricted-syntax
         for (const funcName of utilityFunctionsToApply) {
           utilityClasses += cssUtilities[funcName](token);

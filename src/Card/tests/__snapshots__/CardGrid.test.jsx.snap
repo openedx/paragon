@@ -19,61 +19,6 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
         >
           <img
             className="pgn__card-image-cap"
-            onError={[Function]}
-            onLoad={[Function]}
-            src="http://fake.image"
-          />
-        </div>
-        <div
-          className="pgn__card-body"
-        >
-          <div
-            className="pgn__card-header"
-          >
-            <div
-              className="pgn__card-header-content"
-            />
-          </div>
-          <div
-            className="pgn__card-section"
-          >
-            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-          </div>
-        </div>
-        <div
-          className="pgn__card-footer vertical"
-        >
-          <small
-            className="text-muted"
-          >
-            Last updated 3 mins ago
-          </small>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<CardGrid /> Controlled Rendering renders with disabled equal height 1`] = `
-<div
-  className="pgn__card-grid"
->
-  <div
-    className="row"
-  >
-    <div
-      className="pgn__card-grid__card-item pgn__card__disable-equal-column-heights col-xl-4 col-lg-6 col-sm-12"
-    >
-      <div
-        className="pgn__card pgn__card-light card"
-        tabIndex={-1}
-      >
-        <div
-          className="pgn__card-wrapper-image-cap vertical"
-        >
-          <img
-            className="pgn__card-image-cap"
             loading="eager"
             onError={[Function]}
             onLoad={[Function]}

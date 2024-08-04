@@ -2,7 +2,7 @@
   "color": {
     "stepper": {
       "header": {
-        "bg": { 
+        "bg": {
           "base": { "value": "transparent", "type": "color", "source": "$stepper-header-bg" },
           "line": { "value": "{color.light.base}", "type": "color", "source": "$stepper-header-line-bg" }
         },
@@ -23,8 +23,8 @@
             "value": "{color.danger.base}", "type": "color", "source": "$stepper-header-step-error-bubble-color"
           },
           "description-error": {
-            "value": "{color.stepper.header.step.bubble-error}", 
-            "type": "color", 
+            "value": "{color.stepper.header.step.bubble-error}",
+            "type": "color",
             "source": "$stepper-header-step-error-description-color"
           }
         }

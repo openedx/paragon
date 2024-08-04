@@ -1,17 +1,5 @@
 .pgn-doc__header {
-  z-index: $zindex-header;
-
-  .pgn-doc__playground-title {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-
-  .pgn-doc__playground-title {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
+  z-index: var(--pgn-www-zindex-header);
 
   .pgn-doc__playground-title {
     position: absolute;
@@ -29,25 +17,18 @@
     }
 
     &-logo {
-      font-size: $h1-mobile-font-size;
-      line-height: $display-line-height;
+      font-size: var(--pgn-typography-font-size-mobile-h1);
+      line-height: var(--pgn-typography-display-line-height-base);
     }
 
     &-heading {
-      font-size: $h3-font-size;
-      line-height: $line-height-base;
       font-size: var(--pgn-typography-font-size-h3);
       line-height: var(--pgn-typography-line-height-base);
       margin: 0;
-      color: $white;
       color: var(--pgn-color-white);
     }
 
     &-description {
-      font-family: $font-family-sans-serif;
-      font-size: $font-size-sm;
-      line-height: $line-height-base;
-      color: $light;
       font-family: var(--pgn-typography-font-family-sans-serif);
       font-size: var(--pgn-typography-font-size-sm);
       line-height: var(--pgn-typography-line-height-base);
@@ -62,8 +43,6 @@
     width: 28rem;
     left: -3rem;
     box-shadow: var(--pgn-elevation-box-shadow-down-2);
-
-    @include pgn-box-shadow(2, "down");
 
     .pgn-doc__menu-items {
       max-height: 28rem;

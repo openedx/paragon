@@ -37,7 +37,7 @@ const {
 
 export type CollapsibleLiveEditorTypes = {
   children: React.ReactNode;
-  clickToCopy: (arg: string) => void;
+  clickToCopy: () => void;
   handleCodeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
@@ -70,19 +70,19 @@ function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: Coll
     const headingElement = getCodeBlockHeading(e.target);
 
     if (!headingElement) {
-        const event = collapseIsOpen
-            ? EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_EVENTS.CLOSED
-            : EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_EVENTS.OPENED;
+      const event = collapseIsOpen
+        ? EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_EVENTS.CLOSED
+        : EXAMPLE_CODE_BLOCK_WITHOUT_HEADING_EVENTS.OPENED;
 
-        sendUserAnalyticsEvent(event, { value: `${componentNameAndCategory}id-not-generated` });
-        return;
+      sendUserAnalyticsEvent(event, { value: `${componentNameAndCategory}id-not-generated` });
+      return;
     }
 
-      const event = collapseIsOpen
-          ? EXAMPLE_CODE_BLOCK_WITH_HEADING_EVENTS.CLOSED
-          : EXAMPLE_CODE_BLOCK_WITH_HEADING_EVENTS.OPENED;
+    const event = collapseIsOpen
+      ? EXAMPLE_CODE_BLOCK_WITH_HEADING_EVENTS.CLOSED
+      : EXAMPLE_CODE_BLOCK_WITH_HEADING_EVENTS.OPENED;
 
-      sendUserAnalyticsEvent(event, { value: `${componentNameAndCategory}${headingElement.id}` });
+    sendUserAnalyticsEvent(event, { value: `${componentNameAndCategory}${headingElement.id}` });
   };
 
   return (

@@ -12,7 +12,7 @@ function ComponentUsage({ name, componentUsageInProjects }: IComponentUsage) {
       <DataTable
         isExpandable
         isSortable
-        itemCount={componentUsageInProjects.length} // eslint-disable-line
+            itemCount={componentUsageInProjects.length} // eslint-disable-line
         data={componentUsageInProjects}
         renderRowSubComponent={({ row }: IComponentUsageExamples) => (
           <ComponentUsageExamples row={row} componentName={name} />

@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    background-color: $search-form-background-color;
+    background-color: var(--pgn-color-search-field-form-bg);
   }
 
   .btn:focus-visible {

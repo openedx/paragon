@@ -41,15 +41,15 @@
             }
           },
           "checked": {
-            "base": {
-              "value": "{color.bg.active}", "type": "color", "source": "$custom-control-indicator-checked-color"
-            },
+            "base": { "value": "{color.bg.active}", "type": "color", "source": "$custom-control-indicator-checked-color" },
+            "valid": { "value": "{color.success.base}", "type": "color", "source": "$custom-control-indicator-checked-valid-color" },
+            "invalid": { "value": "{color.danger.base}", "type": "color", "source": "$custom-control-indicator-checked-invalid-color" },
             "bg": {
               "base": {
                 "value": "{color.bg.active}", "type": "color", "source": "$custom-control-indicator-checked-bg"
               },
               "disabled": {
-                "value": "{color.primary.500}",
+                "value": "{color.primary.base}",
                 "type": "color",
                 "source": "$custom-control-indicator-checked-disabled-bg",
                 "modify": [{ "type": "alpha", "amount": 0.5 }]
@@ -57,7 +57,7 @@
             },
             "border": {
               "base": {
-                "value": "{color.primary.500}",
+                "value": "{color.form.control.indicator.checked.base}",
                 "type": "color",
                 "source": "$custom-control-indicator-checked-border-color"
               },

@@ -2,7 +2,6 @@
   "color": {
     "breadcrumb": {
       "base": { "value": "{color.primary.500}", "type": "color", "source": "$breadcrumb-color" },
-      "divider": { "value": "{color.gray.600}", "type": "color", "source": "$breadcrumb-divider-color" },
       "active": { "value": "{color.gray.500}", "type": "color", "source": "$breadcrumb-active-color" },
       "inverse": {
         "base": { "value": "{color.white}", "type": "color", "source": "$breadcrumb-inverse-color" },

@@ -133,7 +133,7 @@
 
   &.disabled,
   &:disabled {
-    opacity: $chip-disable-opacity;
+    opacity: var(--pgn-other-chip-opacity-disabled);
     pointer-events: none;
     user-select: none;
 
@@ -141,4 +141,14 @@
       display: none;
     }
   }
+}
+
+.pgn__chip-light {
+  --pgn-chip-color: var(--pgn-color-chip-text-light);
+  --pgn-chip-bg: var(--pgn-color-chip-bg-light);
+}
+
+.pgn__chip-dark {
+  --pgn-chip-color: var(--pgn-color-chip-text-dark);
+  --pgn-chip-bg: var(--pgn-color-chip-bg-dark);
 }

@@ -36,7 +36,7 @@ const getParagonComponentsTypes = (components) => {
       Object.keys(component).forEach(subcomponentName => {
         const subcomponent = component[subcomponentName];
         const isFunctionSubcomponent = typeof subcomponent === 'function'
-          && subcomponentName[0] === subcomponentName[0].toUpperCase();
+            && subcomponentName[0] === subcomponentName[0].toUpperCase();
         // Case for React.forwardRef() returns an object
         const isObjectSubcomponent = subcomponent?.constructor.name === 'Object' && subcomponent?.render;
         const isContextSubcomponent = subcomponentName === 'Consumer' || subcomponentName === 'Provider';

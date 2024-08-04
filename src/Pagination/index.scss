@@ -55,14 +55,14 @@
 
   &-small {
     .page-link {
-      font-size: $pagination-font-size-sm;
-      line-height: $pagination-line-height;
+      font-size: var(--pgn-typography-pagination-font-size-sm);
+      line-height: var(--pgn-typography-pagination-line-height);
       padding: .375rem .78rem;
 
       &.previous,
       &.next {
-        padding: 0 $pagination-padding-y;
-        line-height: $pagination-secondary-height-sm;
+        padding: 0 var(--pgn-spacing-pagination-padding-y-base);
+        line-height: var(--pgn-size-pagination-secondary-height-sm);
 
         div {
           display: flex;
@@ -75,7 +75,7 @@
       &.previous,
       &.next {
         padding: 0;
-        width: $pagination-icon-width;
+        width: var(--pgn-size-pagination-icon-width);
       }
     }
   }
@@ -83,15 +83,15 @@
   &-secondary {
     button.next,
     button.previous {
-      height: $pagination-secondary-height;
-      padding: 0 $pagination-padding-y;
+      height: var(--pgn-size-pagination-secondary-height-base);
+      padding: 0 var(--pgn-spacing-pagination-padding-y-base);
     }
 
     &.pagination-small {
       button.next,
       button.previous {
-        height: $pagination-secondary-height-sm;
-        line-height: $pagination-line-height;
+        height: var(--pgn-size-pagination-secondary-height-sm);
+        line-height: var(--pgn-typography-pagination-line-height);
       }
     }
   }
@@ -103,7 +103,7 @@
 
   &-inverse {
     .ellipsis {
-      color: $white;
+      color: var(--pgn-color-white);
     }
 
     .dropdown .dropdown-toggle::after {
@@ -125,9 +125,9 @@
     .dropdown-toggle::after {
       width: 0;
       height: 0;
-      border-left: $pagination-toggle-border solid transparent;
-      border-right: $pagination-toggle-border solid transparent;
-      border-top: $pagination-toggle-border solid $gray-700;
+      border-left: var(--pgn-size-pagination-toggle-border-base) solid transparent;
+      border-right: var(--pgn-size-pagination-toggle-border-base) solid transparent;
+      border-top: var(--pgn-size-pagination-toggle-border-base) solid var(--pgn-color-gray-700);
       transform: rotate(0);
       inset-inline-start: .5rem;
       top: 0;
@@ -136,25 +136,25 @@
 
     button.next,
     button.previous {
-      height: $pagination-secondary-height;
-      padding: 0 $pagination-padding-y;
+      height: var(--pgn-size-pagination-secondary-height-base);
+      padding: 0 var(--pgn-spacing-pagination-padding-y-base);
     }
 
     &.pagination-small {
       .btn.dropdown-toggle {
-        font-size: $pagination-font-size-sm;
+        font-size: var(--pgn-typography-pagination-font-size-sm);
 
         &::after {
-          border-left-width: $pagination-toggle-border-sm;
-          border-right-width: $pagination-toggle-border-sm;
-          border-top-width: $pagination-toggle-border-sm;
+          border-left-width: var(--pgn-size-pagination-toggle-border-sm);
+          border-right-width: var(--pgn-size-pagination-toggle-border-sm);
+          border-top-width: var(--pgn-size-pagination-toggle-border-sm);
         }
       }
 
       button.previous,
       button.next {
-        line-height: $pagination-icon-height;
-        height: $pagination-icon-height;
+        line-height: var(--pgn-size-pagination-icon-height);
+        height: var(--pgn-size-pagination-icon-height);
       }
     }
   }
@@ -166,15 +166,15 @@
 
     button.next,
     button.previous {
-      padding: $pagination-padding-y;
-      height: $pagination-secondary-height;
+      padding: var(--pgn-spacing-pagination-padding-y-base);
+      height: var(--pgn-size-pagination-secondary-height-base);
     }
 
     &.pagination-small {
       button.next,
       button.previous {
-        padding: 0 $pagination-padding-y;
-        height: $pagination-secondary-height-sm;
+        padding: 0 var(--pgn-spacing-pagination-padding-y-base);
+        height: var(--pgn-size-pagination-secondary-height-sm);
       }
     }
   }

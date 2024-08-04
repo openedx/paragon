@@ -11,34 +11,40 @@ Paragon components require React 16 or higher. To install Paragon into your proj
 In terminal:
 
 ```
-npm i --save @edx/paragon
+npm i --save @openedx/paragon
 ```
 
 In your React project:
 
 ```jsx
-import { ComponentName } from '@edx/paragon';
+import { ComponentName } from '@openedx/paragon';
 ```
 
-## SCSS Foundation
+## CSS Foundation
 
-Usage with no theme:
+### Usage with no theme
+The Paragon CSS Foundation offers a collection of fundamental styles, encompassing padding, typography, and sizing.
+When applied, these styles contribute to the creation of a straightforward and neat appearance for your application.
+
+To integrate these foundational styles into your project, include the following import:
 
 ```scss
-@import "@edx/paragon/styles/scss/core/core.scss";
+@use "@openedx/paragon/dist/core.min.css";
 ```
 
-Usage with a theme:
+### Usage with a theme
+In addition to the basic styles, you can provide a theme layer that includes styles for colors, shadows,
+backgrounds and transparency of elements. This allows you to visually represent a specific theme in your application.
 
-When working with a theme the order of imports is important: if you need to override Paragon's variables you must import theme's variables before Paragon core (that's because all variables in Paragon use `!default` flag which allows you to override them before importing, you can read more [here](https://sass-lang.com/documentation/variables#default-values)), while to override Paragon's styles, the theme's style overrides must be imported after.
+To apply these theme-specific styles, include the following import:
 
 ```scss
-@import "@my-brand/fonts.scss";
-@import "@my-brand/variables.scss";
-// Import the Paragon core after setting brand-themed variables.
-@import "@edx/paragon/styles/scss/core/core.scss";
-// Import brand overrides after the Paragon core.
-@import "@my-brand/overrides.scss";
+@use "@my-brand/light.min.css";
 ```
+### CDN links
+Alternative style integration is available when using CDN links:
 
-Note that including fonts will affect load performance.  In some pages you may choose not to load the custom font.
+```scss
+@import url("https://cdn.jsdelivr.net/npm/@my-brand/core.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@my-brand/light.min.css");
+```
