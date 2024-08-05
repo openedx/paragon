@@ -256,8 +256,13 @@ function Menu() {
                 Usage Insights
               </Link>
             </li>
-            <li className="mr-3">
-              <Link to="/foundations/design-tokens">Design Tokens</Link>
+            <li>
+              <Link
+                className={classNames({ active: pathname.endsWith('design-tokens') })}
+                to="/foundations/design-tokens"
+              >
+                Design Tokens
+              </Link>
             </li>
             <li>
               <Link to="/playground" onClick={handlePlaygroundClick}>
@@ -272,28 +277,6 @@ function Menu() {
               >
                 Component Generator
               </Link>
-            </li>
-            <li>
-              <Hyperlink
-                destination="https://webaim.org/resources/contrastchecker"
-                target="_blank"
-                externalLinkAlternativeText="Contrast checker page"
-                externalLinkTitle="Contrast checker"
-                onClick={handleContrastCheckerClick}
-              >
-                Contrast Checker
-              </Hyperlink>
-            </li>
-            <li>
-              <Hyperlink
-                destination="https://webaim.org/resources/contrastchecker"
-                target="_blank"
-                externalLinkAlternativeText="Contrast checker page"
-                externalLinkTitle="Contrast checker"
-                onClick={handleContrastCheckerClick}
-              >
-                Contrast Checker
-              </Hyperlink>
             </li>
             <li>
               <Hyperlink

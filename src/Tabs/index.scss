@@ -9,9 +9,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    min-height: $tab-notification-height;
-    min-width: $tab-notification-width;
-    font-size: $tab-notification-font-size;
+    min-height: var(--pgn-size-tabs-notification-height);
+    min-width: var(--pgn-size-tabs-notification-width);
+    font-size: var(--pgn-typography-tabs-notification-font-size);
   }
 
   .pgn__tab_more.nav-link {

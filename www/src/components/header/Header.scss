@@ -44,8 +44,6 @@
     left: -3rem;
     box-shadow: var(--pgn-elevation-box-shadow-down-2);
 
-    @include pgn-box-shadow(2, "down");
-
     .pgn-doc__menu-items {
       max-height: 28rem;
       overflow-y: scroll;

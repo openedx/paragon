@@ -7,7 +7,6 @@ import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import { SettingsContext } from '../../context/SettingsContext';
 import { CodeCell } from '../../components/TableCells';
-import { SettingsContext } from '../../context/SettingsContext';
 
 const utilityClasses = {
   bg: (color: string, level: number) => (level ? `bg-${color}-${level}` : `bg-${color}`),

@@ -97,6 +97,7 @@ const FormAutosuggest = forwardRef(
           onClick: (e) => handleItemSelect(e, onClick),
           id: menuItemId,
           onFocus: () => handleMenuItemFocus(menuItemId),
+        });
       });
 
       if (strToFind.length > 0) {
@@ -229,7 +230,7 @@ const FormAutosuggest = forwardRef(
 
       // If the user has removed all text from the textbox
       if (!userProvidedText.length) {
-      // reset to a "no text, nothing selected" state
+        // reset to a "no text, nothing selected" state
         setDisplayValue('');
         setHasValue(false);
         setHasSelection(false);
@@ -240,7 +241,7 @@ const FormAutosuggest = forwardRef(
 
         // if the consumer has provided an onChange handler
         if (onChange) {
-        // send a default empty object
+          // send a default empty object
           onChange({
             userProvidedText: '',
             selectionValue: '',
@@ -264,7 +265,7 @@ const FormAutosuggest = forwardRef(
 
       // if we didn't find a match
       if (!matchingDropdownItem) {
-      // no match means no selection
+        // no match means no selection
         setHasSelection(false);
 
         // set the text in the state
@@ -272,7 +273,7 @@ const FormAutosuggest = forwardRef(
 
         // if the consumer has provided an onChange handler
         if (onChange) {
-        // send an object with the user provided text only
+          // send an object with the user provided text only
           onChange({
             userProvidedText,
             selectionValue: '',
@@ -291,7 +292,7 @@ const FormAutosuggest = forwardRef(
 
       // if the consumer has provided an onChange handler
       if (onChange) {
-      // send an object with the selected item values
+        // send an object with the selected item values
         onChange({
           userProvidedText: matchingDropdownItem.props.children,
           selectionValue: matchingDropdownItem.props.children,
@@ -388,7 +389,7 @@ FormAutosuggest.propTypes = {
   /**
    * Specifies the CSS selector string that indicates to which elements
    * the user can navigate using the arrow keys
-  */
+   */
   arrowKeyNavigationSelector: PropTypes.string,
   /** Specifies ignored hook keys. */
   ignoredArrowKeysNames: PropTypes.arrayOf(PropTypes.string),

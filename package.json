@@ -31,7 +31,7 @@
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "stylelint": "stylelint \"src/**/*.scss\" \"scss/**/*.scss\" \"www/src/**/*.scss\" --config .stylelintrc.json",
-    "lint": "npm run stylelint && eslint --ext .js --ext .jsx --ext .ts --ext .tsx . && npm run lint --workspaces --if-present",
+    "lint": "npm run stylelint -- --fix && eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx . && npm run lint --workspaces --if-present",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "snapshot": "jest --updateSnapshot",

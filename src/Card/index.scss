@@ -1,5 +1,4 @@
-@import "variables";
-@import "~bootstrap/scss/card";
+@import "card-bootstrap";
 
 a .pgn__card,
 a.pgn__card {
@@ -10,7 +9,7 @@ a.pgn__card {
 
 .pgn__card-grid {
   .row > div[class*="col-"] {
-    margin-bottom: $card-grid-margin-bottom;
+    margin-bottom: var(--pgn-spacing-card-margin-grid-bottom);
   }
 }
 
@@ -28,7 +27,7 @@ a.pgn__card {
 
 .pgn__card-deck {
   position: relative;
-  margin-bottom: $card-deck-margin-bottom;
+  margin-bottom: var(--pgn-spacing-card-margin-deck-bottom);
 
   &.pgn__card-deck-has-horizontal-scroll {
     .pgn__card-deck-row {
@@ -39,12 +38,12 @@ a.pgn__card {
   .pgn__card-deck-row {
     overflow: hidden;
     flex-wrap: nowrap;
-    padding-top: $card-focus-border-offset;
-    padding-bottom: $card-focus-border-offset;
+    padding-top: var(--pgn-spacing-card-focus-border-offset);
+    padding-bottom: var(--pgn-spacing-card-focus-border-offset);
 
     &:focus-visible {
-      outline: $card-focus-border-width solid $card-border-focus-color;
-      border-radius: $card-focus-border-radius;
+      outline: var(--pgn-size-card-focus-border-width) solid var(--pgn-color-card-border-focus-base);
+      border-radius: var(--pgn-size-card-focus-border-radius);
     }
   }
 }
@@ -55,7 +54,7 @@ a.pgn__card {
   }
 
   .pgn__card-carousel-subtitle {
-    font-size: $font-size-sm;
+    font-size: var(--pgn-typography-font-size-sm);
     margin-bottom: map-get($spacers, 2);
   }
 
