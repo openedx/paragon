@@ -200,10 +200,10 @@
     ]
   },
   "lint-staged": {
-    "*.{mjs}": [
+    "*.{js,jsx,ts,tsx}": [
       "npx eslint"
     ],
-    "*.sass": [
+    "*.scss": [
       "npx stylelint"
     ]
   },

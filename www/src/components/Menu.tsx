@@ -259,7 +259,7 @@ function Menu() {
             <li>
               <Link
                 className={classNames({ active: pathname.endsWith('design-tokens') })}
-                to="/foundations/design-tokens"
+                to="/tools/design-tokens"
               >
                 Design Tokens
               </Link>
