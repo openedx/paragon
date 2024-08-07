@@ -1,5 +1,5 @@
 {
-  "lastModified": 1722953297155,
+  "lastModified": 1723039700246,
   "projectUsages": [
     {
       "version": "22.7.0",
@@ -43755,6 +43755,12 @@
             "index": 448
           },
           {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomersPage.jsx",
+            "line": 52,
+            "column": 4,
+            "index": 1238
+          },
+          {
             "filePath": "src/Configuration/Provisioning/ErrorPage/ErrorPageContainer.jsx",
             "line": 27,
             "column": 4,
@@ -43793,6 +43799,12 @@
             "index": 531
           },
           {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 31,
+            "column": 2,
+            "index": 906
+          },
+          {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormDefineCustomCatalogHeader.jsx",
             "line": 33,
             "column": 10,
@@ -43823,6 +43835,18 @@
             "line": 19,
             "column": 10,
             "index": 602
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 25,
+            "column": 8,
+            "index": 664
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 38,
+            "column": 8,
+            "index": 1020
           },
           {
             "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
@@ -43891,15 +43915,225 @@
             "index": 4402
           }
         ],
-        "DataTable.FilterStatus": [
+        "Icon": [
           {
-            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardDataTable.jsx",
-            "line": 20,
-            "column": 31,
-            "index": 869
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 53,
+            "column": 10,
+            "index": 1491
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 75,
+            "column": 6,
+            "index": 1972
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 84,
+            "column": 6,
+            "index": 2163
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 93,
+            "column": 6,
+            "index": 2356
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 11,
+            "column": 11,
+            "index": 426
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 18,
+            "column": 11,
+            "index": 599
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 25,
+            "column": 11,
+            "index": 780
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 54,
+            "column": 6,
+            "index": 1718
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
+            "line": 45,
+            "column": 16,
+            "index": 1519
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormDefineCustomCatalogHeader.jsx",
+            "line": 34,
+            "column": 12,
+            "index": 1196
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormHelpText.jsx",
+            "line": 12,
+            "column": 55,
+            "index": 373
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
+            "line": 66,
+            "column": 18,
+            "index": 2080
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/InternalOnlyDetail.jsx",
+            "line": 16,
+            "column": 10,
+            "index": 497
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/TermDetail.jsx",
+            "line": 23,
+            "column": 20,
+            "index": 742
+          }
+        ],
+        "ContentCopy": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 55,
+            "column": 17,
+            "index": 1544
+          }
+        ],
+        "Toast": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 61,
+            "column": 6,
+            "index": 1698
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardToast.jsx",
+            "line": 16,
+            "column": 4,
+            "index": 499
+          }
+        ],
+        "Check": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 75,
+            "column": 17,
+            "index": 1983
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 84,
+            "column": 17,
+            "index": 2174
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 93,
+            "column": 17,
+            "index": 2367
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 11,
+            "column": 22,
+            "index": 437
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 18,
+            "column": 22,
+            "index": 610
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 25,
+            "column": 22,
+            "index": 791
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/InternalOnlyDetail.jsx",
+            "line": 16,
+            "column": 21,
+            "index": 508
+          }
+        ],
+        "OverlayTrigger": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 39,
+            "column": 4,
+            "index": 1232
+          },
+          {
+            "filePath": "src/users/VerifiedName.jsx",
+            "line": 43,
+            "column": 8,
+            "index": 1548
+          }
+        ],
+        "Tooltip": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 43,
+            "column": 8,
+            "index": 1331
+          }
+        ],
+        "InfoOutline": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 54,
+            "column": 27,
+            "index": 1739
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
+            "line": 62,
+            "column": 15,
+            "index": 1954
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/TermDetail.jsx",
+            "line": 19,
+            "column": 17,
+            "index": 608
           }
         ],
         "DataTable": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 64,
+            "column": 6,
+            "index": 2046
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomersPage.jsx",
+            "line": 55,
+            "column": 8,
+            "index": 1333
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomersPage.jsx",
+            "line": 70,
+            "column": 22,
+            "index": 1830
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomersPage.jsx",
+            "line": 71,
+            "column": 20,
+            "index": 1871
+          },
           {
             "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardDataTable.jsx",
             "line": 49,
@@ -43911,6 +44145,22 @@
             "line": 71,
             "column": 10,
             "index": 1860
+          }
+        ],
+        "DataTable.Table": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 86,
+            "column": 8,
+            "index": 2626
+          }
+        ],
+        "DataTable.FilterStatus": [
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardDataTable.jsx",
+            "line": 20,
+            "column": 31,
+            "index": 869
           }
         ],
         "Badge": [
@@ -43953,44 +44203,6 @@
             "line": 44,
             "column": 13,
             "index": 1490
-          }
-        ],
-        "Icon": [
-          {
-            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
-            "line": 45,
-            "column": 16,
-            "index": 1519
-          },
-          {
-            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormDefineCustomCatalogHeader.jsx",
-            "line": 34,
-            "column": 12,
-            "index": 1196
-          },
-          {
-            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormHelpText.jsx",
-            "line": 12,
-            "column": 55,
-            "index": 373
-          },
-          {
-            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
-            "line": 66,
-            "column": 18,
-            "index": 2080
-          },
-          {
-            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/InternalOnlyDetail.jsx",
-            "line": 16,
-            "column": 10,
-            "index": 497
-          },
-          {
-            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/TermDetail.jsx",
-            "line": 23,
-            "column": 20,
-            "index": 742
           }
         ],
         "ActionRow": [
@@ -44395,14 +44607,6 @@
             "line": 26,
             "column": 20,
             "index": 685
-          }
-        ],
-        "Toast": [
-          {
-            "filePath": "src/Configuration/Provisioning/DashboardToast.jsx",
-            "line": 16,
-            "column": 4,
-            "index": 499
           }
         ],
         "Image": [
@@ -45013,28 +45217,6 @@
             "line": 18,
             "column": 10,
             "index": 568
-          }
-        ],
-        "InfoOutline": [
-          {
-            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
-            "line": 62,
-            "column": 15,
-            "index": 1954
-          },
-          {
-            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/TermDetail.jsx",
-            "line": 19,
-            "column": 17,
-            "index": 608
-          }
-        ],
-        "Check": [
-          {
-            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/InternalOnlyDetail.jsx",
-            "line": 16,
-            "column": 21,
-            "index": 508
           }
         ],
         "ModalDialog": [
@@ -46137,14 +46319,6 @@
             "index": 758
           }
         ],
-        "OverlayTrigger": [
-          {
-            "filePath": "src/users/VerifiedName.jsx",
-            "line": 43,
-            "column": 8,
-            "index": 1548
-          }
-        ],
         "Popover": [
           {
             "filePath": "src/users/VerifiedName.jsx",
@@ -47038,7 +47212,7 @@
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 35,
             "column": 6,
-            "index": 1524
+            "index": 1538
           }
         ],
         "Dropdown.Toggle": [
@@ -47052,7 +47226,7 @@
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 36,
             "column": 8,
-            "index": 1582
+            "index": 1596
           }
         ],
         "Dropdown.Menu": [
@@ -47066,7 +47240,7 @@
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 47,
             "column": 8,
-            "index": 1991
+            "index": 2005
           }
         ],
         "Dropdown.Item": [
@@ -47080,31 +47254,31 @@
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 48,
             "column": 10,
-            "index": 2017
+            "index": 2031
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 64,
             "column": 10,
-            "index": 2732
+            "index": 2746
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 80,
             "column": 10,
-            "index": 3502
+            "index": 3516
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 100,
             "column": 14,
-            "index": 4514
+            "index": 4528
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 120,
-            "column": 14,
-            "index": 5439
+            "line": 119,
+            "column": 10,
+            "index": 5420
           }
         ],
         "Input": [
@@ -47118,31 +47292,31 @@
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 49,
             "column": 12,
-            "index": 2104
+            "index": 2118
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 65,
             "column": 12,
-            "index": 2819
+            "index": 2833
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 81,
             "column": 12,
-            "index": 3589
+            "index": 3603
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
             "line": 101,
             "column": 16,
-            "index": 4605
+            "index": 4619
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 121,
-            "column": 16,
-            "index": 5530
+            "line": 120,
+            "column": 12,
+            "index": 5507
           },
           {
             "filePath": "src/TypeaheadFacetDropdown.jsx",
@@ -53390,9 +53564,9 @@
         "SearchField.Advanced": [
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 103,
+            "line": 105,
             "column": 6,
-            "index": 3282
+            "index": 3415
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
@@ -53422,9 +53596,9 @@
         "SearchField.Input": [
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 120,
+            "line": 122,
             "column": 10,
-            "index": 4098
+            "index": 4231
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
@@ -53454,15 +53628,15 @@
         "SearchField.SubmitButton": [
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 132,
+            "line": 134,
             "column": 12,
-            "index": 4547
+            "index": 4680
           },
           {
             "filePath": "src/packages/common/ui/Header/components/SearchBox.jsx",
-            "line": 140,
+            "line": 142,
             "column": 10,
-            "index": 4758
+            "index": 4891
           },
           {
             "filePath": "src/packages/home-page/components/Hero/components/HomeSearchBar/components/HomeSearchInput/index.jsx",
