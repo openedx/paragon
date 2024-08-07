@@ -76,7 +76,7 @@
           "description": "Basic font weight."
         },
         "lead": { "value": "inherit", "type": "fontWeight", "source": "$lead-font-weight", "description": "Lead text font weight." },
-        "table-th": { "value": "normal", "type": "fontWeight", "source": "$table-th-font-weight", "description": "Table th font weight." }
+        "table-th": { "value": "bold", "type": "fontWeight", "source": "$table-th-font-weight", "description": "Table th font weight." }
       }
     },
     "line-height": {
