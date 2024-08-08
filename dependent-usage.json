@@ -1,5 +1,5 @@
 {
-  "lastModified": 1723039700246,
+  "lastModified": 1723126058522,
   "projectUsages": [
     {
       "version": "22.7.0",
@@ -16564,13 +16564,13 @@
             "filePath": "src/files-and-videos/videos-page/upload-modal/UploadStatusIcon.jsx",
             "line": 10,
             "column": 14,
-            "index": 336
+            "index": 345
           },
           {
             "filePath": "src/files-and-videos/videos-page/upload-modal/UploadStatusIcon.jsx",
             "line": 12,
             "column": 14,
-            "index": 404
+            "index": 413
           },
           {
             "filePath": "src/files-and-videos/videos-page/VideoThumbnail.jsx",
@@ -20392,9 +20392,9 @@
           },
           {
             "filePath": "src/files-and-videos/videos-page/upload-modal/UploadProgressList.jsx",
-            "line": 12,
+            "line": 25,
             "column": 8,
-            "index": 449
+            "index": 718
           },
           {
             "filePath": "src/generic/clipboard/paste-component/components/PopoverContent.jsx",
@@ -23225,6 +23225,12 @@
             "index": 1487
           },
           {
+            "filePath": "src/files-and-videos/videos-page/upload-modal/UploadStatusIcon.jsx",
+            "line": 15,
+            "column": 8,
+            "index": 502
+          },
+          {
             "filePath": "src/generic/Loading.jsx",
             "line": 7,
             "column": 2,
@@ -23992,9 +23998,9 @@
           },
           {
             "filePath": "src/files-and-videos/videos-page/upload-modal/UploadProgressList.jsx",
-            "line": 15,
+            "line": 28,
             "column": 12,
-            "index": 625
+            "index": 894
           },
           {
             "filePath": "src/group-configurations/common/TitleButton.jsx",
@@ -24974,7 +24980,7 @@
             "filePath": "src/files-and-videos/videos-page/upload-modal/UploadStatusIcon.jsx",
             "line": 10,
             "column": 25,
-            "index": 347
+            "index": 356
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-list/FeaturesTable.jsx",
@@ -25138,7 +25144,7 @@
             "filePath": "src/files-and-videos/videos-page/upload-modal/UploadStatusIcon.jsx",
             "line": 12,
             "column": 25,
-            "index": 415
+            "index": 424
           }
         ],
         "ExpandMore": [
@@ -25285,14 +25291,6 @@
             "line": 68,
             "column": 6,
             "index": 2152
-          }
-        ],
-        "ProgressBar": [
-          {
-            "filePath": "src/files-and-videos/videos-page/upload-modal/UploadProgressList.jsx",
-            "line": 25,
-            "column": 14,
-            "index": 974
           }
         ],
         "VideoFile": [
@@ -26762,6 +26760,18 @@
             "index": 3576
           },
           {
+            "filePath": "src/components/PostHelpPanel.jsx",
+            "line": 24,
+            "column": 18,
+            "index": 776
+          },
+          {
+            "filePath": "src/components/PostHelpPanel.jsx",
+            "line": 42,
+            "column": 20,
+            "index": 1390
+          },
+          {
             "filePath": "src/components/PostPreviewPanel.jsx",
             "line": 29,
             "column": 20,
@@ -27087,9 +27097,9 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 243,
+            "line": 244,
             "column": 6,
-            "index": 8855
+            "index": 8918
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
@@ -27119,9 +27129,9 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 249,
+            "line": 250,
             "column": 8,
-            "index": 9157
+            "index": 9220
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
@@ -27199,9 +27209,9 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 188,
+            "line": 189,
             "column": 10,
-            "index": 7537
+            "index": 7600
           },
           {
             "filePath": "src/discussions/posts/post-filter-bar/PostFilterBar.jsx",
@@ -27280,7 +27290,41 @@
             "index": 1634
           }
         ],
+        "IconButtonWithTooltip": [
+          {
+            "filePath": "src/components/PostHelpPanel.jsx",
+            "line": 19,
+            "column": 8,
+            "index": 510
+          }
+        ],
+        "HelpOutline": [
+          {
+            "filePath": "src/components/PostHelpPanel.jsx",
+            "line": 23,
+            "column": 15,
+            "index": 745
+          },
+          {
+            "filePath": "src/components/TopicStats.jsx",
+            "line": 61,
+            "column": 21,
+            "index": 2063
+          },
+          {
+            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
+            "line": 91,
+            "column": 27,
+            "index": 3850
+          }
+        ],
         "IconButton": [
+          {
+            "filePath": "src/components/PostHelpPanel.jsx",
+            "line": 38,
+            "column": 10,
+            "index": 1225
+          },
           {
             "filePath": "src/components/PostPreviewPanel.jsx",
             "line": 25,
@@ -27350,6 +27394,12 @@
         ],
         "Close": [
           {
+            "filePath": "src/components/PostHelpPanel.jsx",
+            "line": 41,
+            "column": 17,
+            "index": 1363
+          },
+          {
             "filePath": "src/components/PostPreviewPanel.jsx",
             "line": 28,
             "column": 17,
@@ -27360,6 +27410,26 @@
             "line": 73,
             "column": 19,
             "index": 2835
+          }
+        ],
+        "Hyperlink": [
+          {
+            "filePath": "src/components/PostHelpPanel.jsx",
+            "line": 51,
+            "column": 12,
+            "index": 1802
+          },
+          {
+            "filePath": "src/components/PostHelpPanel.jsx",
+            "line": 59,
+            "column": 12,
+            "index": 2161
+          },
+          {
+            "filePath": "src/discussions/posts/post/Post.jsx",
+            "line": 197,
+            "column": 10,
+            "index": 7995
           }
         ],
         "Button": [
@@ -27491,9 +27561,9 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 449,
+            "line": 451,
             "column": 10,
-            "index": 16647
+            "index": 16738
           },
           {
             "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
@@ -27844,20 +27914,6 @@
             "line": 73,
             "column": 27,
             "index": 3129
-          }
-        ],
-        "HelpOutline": [
-          {
-            "filePath": "src/components/TopicStats.jsx",
-            "line": 61,
-            "column": 21,
-            "index": 2063
-          },
-          {
-            "filePath": "src/discussions/topics/topic-group/topic/Topic.jsx",
-            "line": 91,
-            "column": 27,
-            "index": 3850
           }
         ],
         "Report": [
@@ -28287,39 +28343,39 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 271,
+            "line": 272,
             "column": 10,
-            "index": 9948
+            "index": 10011
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 333,
+            "line": 334,
             "column": 10,
-            "index": 12542
+            "index": 12605
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 353,
+            "line": 354,
             "column": 10,
-            "index": 13347
+            "index": 13410
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 373,
+            "line": 374,
             "column": 10,
-            "index": 13985
+            "index": 14048
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 418,
+            "line": 420,
             "column": 12,
-            "index": 15674
+            "index": 15765
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 432,
+            "line": 434,
             "column": 12,
-            "index": 16129
+            "index": 16220
           },
           {
             "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
@@ -28337,27 +28393,27 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 272,
+            "line": 273,
             "column": 12,
-            "index": 9995
+            "index": 10058
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 334,
+            "line": 335,
             "column": 12,
-            "index": 12595
+            "index": 12658
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 360,
+            "line": 361,
             "column": 12,
-            "index": 13533
+            "index": 13596
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 380,
+            "line": 381,
             "column": 12,
-            "index": 14186
+            "index": 14249
           },
           {
             "filePath": "src/discussions/posts/post/ClosePostReasonModal.jsx",
@@ -28375,39 +28431,39 @@
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 455,
+            "line": 457,
             "column": 10,
-            "index": 16835
+            "index": 16926
           }
         ],
         "Post": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 261,
+            "line": 262,
             "column": 18,
-            "index": 9608
+            "index": 9671
           }
         ],
         "Help": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 267,
+            "line": 268,
             "column": 18,
-            "index": 9817
+            "index": 9880
           }
         ],
         "Form.Checkbox": [
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 419,
+            "line": 421,
             "column": 14,
-            "index": 15701
+            "index": 15792
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 433,
+            "line": 435,
             "column": 14,
-            "index": 16156
+            "index": 16247
           }
         ],
         "Card": [
@@ -28424,14 +28480,6 @@
             "line": 27,
             "column": 8,
             "index": 900
-          }
-        ],
-        "Hyperlink": [
-          {
-            "filePath": "src/discussions/posts/post/Post.jsx",
-            "line": 197,
-            "column": 10,
-            "index": 7995
           }
         ],
         "People": [
@@ -32294,9 +32342,9 @@
           },
           {
             "filePath": "src/components/search/Search.jsx",
-            "line": 44,
+            "line": 46,
             "column": 70,
-            "index": 1884
+            "index": 1966
           },
           {
             "filePath": "src/components/skills-quiz-v2/SkillsQuiz.jsx",
@@ -34454,9 +34502,9 @@
           },
           {
             "filePath": "src/components/search/Search.jsx",
-            "line": 172,
+            "line": 181,
             "column": 10,
-            "index": 6295
+            "index": 6619
           },
           {
             "filePath": "src/components/site-header/SiteHeaderLogos.jsx",
