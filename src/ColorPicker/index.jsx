@@ -118,12 +118,12 @@ function ColorPicker({
               />
             </div>
             {!hexValid && (
-              <Form.Control.Feedback
-                className="pgn__color-error"
-                type="invalid"
-              >
-                Colors must be in hexadecimal format.
-              </Form.Control.Feedback>
+            <Form.Control.Feedback
+              className="pgn__color-error"
+              type="invalid"
+            >
+              Colors must be in hexadecimal format.
+            </Form.Control.Feedback>
             )}
           </Form.Group>
         </div>

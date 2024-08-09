@@ -43,7 +43,6 @@ describe('picker works as expected', () => {
     });
     expect(screen.queryByTestId('hex-input').value).toEqual('#32116c');
     expect(screen.queryByText('Colors must be in hexadecimal format.')).not.toBeInTheDocument();
-
     await act(async () => {
       await userEvent.clear(screen.getByTestId('hex-input'));
       await userEvent.paste(screen.getByTestId('hex-input'), 'yuk');

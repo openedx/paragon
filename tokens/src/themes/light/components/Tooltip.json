@@ -1,0 +1,30 @@
+{
+  "color": {
+    "tooltip": {
+      "text": { "value": "{color.white}", "type": "color", "source": "$tooltip-color" },
+      "light": { "value": "{color.black}", "type": "color", "source": "$tooltip-color-light" },
+      "bg": {
+        "base": { "value": "{color.black}", "type": "color", "source": "$tooltip-bg" },
+        "light": { "value": "{color.white}", "type": "color", "source": "$tooltip-bg-light" }
+      },
+      "arrow": {
+        "base": { "value": "{color.tooltip.bg.base}", "type": "color", "source": "$tooltip-arrow-color" },
+        "light": { "value": "{color.white}", "type": "color", "source": "$tooltip-arrow-color-light" }
+      }
+    }
+  },
+  "elevation": {
+    "tooltip": {
+      "box-shadow": {
+        "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
+        "type": "shadow",
+        "source": "$tooltip-box-shadow"
+      }
+    }
+  },
+  "other": {
+    "tooltip": {
+      "opacity": { "value": "1", "type": "ratio", "source": "$tooltip-opacity" }
+    }
+  }
+}

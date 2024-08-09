@@ -1,0 +1,15 @@
+{
+  "color": {
+    "hr": {
+      "border": {
+        "value": "{color.black}",
+        "type": "color",
+        "source": "$hr-border-color",
+        "modify": [{
+          "type": "alpha",
+          "amount": 0.1
+        }]
+      }
+    }
+  }
+}

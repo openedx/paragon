@@ -306,6 +306,7 @@ describe('<Pagination />', () => {
         </ResponsiveContext.Provider>
       ));
       expect(screen.getByText('1')).toHaveAttribute('aria-label', pageLabel);
+      expect(screen.getByText('1')).toHaveAttribute('aria-label', pageLabel);
 
       rerender((
         <ResponsiveContext.Provider value={{ width: breakpoints.extraSmall.maxWidth }}>

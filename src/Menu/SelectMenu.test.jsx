@@ -64,6 +64,18 @@ describe('correct rendering', () => {
     const button = screen.getByRole('button');
     expect(button).toBeDisabled();
   });
+
+  it('renders with Brand button variant', () => {
+    render(DefaultSelectMenu({ variant: 'brand' }));
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('btn-brand');
+  });
+
+  it('renders with Brand button variant', () => {
+    render(DefaultSelectMenu({ variant: 'brand' }));
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('btn-brand');
+  });
 });
 
 describe('mouse behavior & keyboard behavior', () => {
@@ -110,7 +122,6 @@ describe('keyboard Interactions', () => {
     await userEvent.keyboard('[arrowdown]');
     expect(menuItems[1]).toHaveFocus();
   });
-
   it('should focus the next item after ArrowRight keyDown', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });
@@ -119,7 +130,6 @@ describe('keyboard Interactions', () => {
     await userEvent.keyboard('[arrowright]');
     expect(menuItems[1]).toHaveFocus();
   });
-
   it('should focus the previous item after ArrowUp keyDown', async () => {
     const { getByRole, getAllByRole } = render(defaultSelectMenu());
     const menuTrigger = getByRole('button', { expanded: false });

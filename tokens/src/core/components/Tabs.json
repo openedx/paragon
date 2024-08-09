@@ -1,0 +1,19 @@
+{
+  "size": {
+    "tabs": {
+      "notification": {
+        "height": { "value": "1rem", "type": "dimension", "source": "$tab-notification-height" },
+        "width": { "value": "1rem", "type": "dimension", "source": "$tab-notification-width" }
+      }
+    }
+  },
+  "typography": {
+    "tabs": {
+      "notification": {
+        "font-size": {
+          "value": "{typography.font.size.xs}", "type": "dimension", "source": "$tab-notification-font-size"
+        }
+      }
+    }
+  }
+}

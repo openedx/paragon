@@ -1,2 +1,112 @@
-@import "variables";
-@import "~bootstrap/scss/badge";
+.badge {
+  display: inline-block;
+  padding: var(--pgn-spacing-badge-padding-y) var(--pgn-spacing-badge-padding-x-base);
+  color: var(--pgn-badge-color, inherit);
+  background-color: var(--pgn-badge-bg, transparent);
+
+  @include font-size(var(--pgn-typography-badge-font-size));
+
+  font-weight: var(--pgn-typography-badge-font-weight);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  transition: var(--pgn-transition-badge);
+
+  @include border-radius(var(--pgn-size-badge-border-radius-base));
+
+  @at-root a#{&} {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: var(--pgn-badge-focus-color, inherit);
+      background-color: var(--pgn-badge-focus-bg, transparent);
+    }
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 var(--pgn-size-badge-focus-width) var(--pgn-badge-focus-box-shadow, rgba(0, 0, 0, .15));
+    }
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+.badge-pill {
+  padding-right: var(--pgn-spacing-badge-padding-x-pill);
+  padding-left: var(--pgn-spacing-badge-padding-x-pill);
+
+  @include border-radius(var(--pgn-size-badge-border-radius-pill));
+}
+
+.badge-primary {
+  --pgn-badge-color: var(--pgn-color-badge-text-primary);
+  --pgn-badge-bg: var(--pgn-color-badge-bg-primary);
+  --pgn-badge-focus-color: var(--pgn-color-badge-focus-primary);
+  --pgn-badge-focus-bg: var(--pgn-color-badge-focus-bg-primary);
+  --pgn-badge-focus-box-shadow: var(--pgn-color-badge-focus-box-shadow-primary);
+}
+
+.badge-secondary {
+  --pgn-badge-color: var(--pgn-color-badge-text-secondary);
+  --pgn-badge-bg: var(--pgn-color-badge-bg-secondary);
+  --pgn-badge-focus-color: var(--pgn-color-badge-focus-secondary);
+  --pgn-badge-focus-bg: var(--pgn-color-badge-focus-bg-secondary);
+  --pgn-badge-focus-box-shadow: var(--pgn-color-badge-focus-box-shadow-secondary);
+}
+
+.badge-success {
+  --pgn-badge-color: var(--pgn-color-badge-text-success);
+  --pgn-badge-bg: var(--pgn-color-badge-bg-success);
+  --pgn-badge-focus-color: var(--pgn-color-badge-focus-success);
+  --pgn-badge-focus-bg: var(--pgn-color-badge-focus-bg-success);
+  --pgn-badge-focus-box-shadow: var(--pgn-color-badge-focus-box-shadow-success);
+}
+
+.badge-danger {
+  --pgn-badge-color: var(--pgn-color-badge-text-danger);
+  --pgn-badge-bg: var(--pgn-color-badge-bg-danger);
+  --pgn-badge-focus-color: var(--pgn-color-badge-focus-danger);
+  --pgn-badge-focus-bg: var(--pgn-color-badge-focus-bg-danger);
+  --pgn-badge-focus-box-shadow: var(--pgn-color-badge-focus-box-shadow-danger);
+}
+
+.badge-warning {
+  --pgn-badge-color: var(--pgn-color-badge-text-warning);
+  --pgn-badge-bg: var(--pgn-color-badge-bg-warning);
+  --pgn-badge-focus-color: var(--pgn-color-badge-focus-warning);
+  --pgn-badge-focus-bg: var(--pgn-color-badge-focus-bg-warning);
+  --pgn-badge-focus-box-shadow: var(--pgn-color-badge-focus-box-shadow-warning);
+}
+
+.badge-info {
+  --pgn-badge-color: var(--pgn-color-badge-text-info);
+  --pgn-badge-bg: var(--pgn-color-badge-bg-info);
+  --pgn-badge-focus-color: var(--pgn-color-badge-focus-info);
+  --pgn-badge-focus-bg: var(--pgn-color-badge-focus-bg-info);
+  --pgn-badge-focus-box-shadow: var(--pgn-color-badge-focus-box-shadow-info);
+}
+
+.badge-light {
+  --pgn-badge-color: var(--pgn-color-badge-text-light);
+  --pgn-badge-bg: var(--pgn-color-badge-bg-light);
+  --pgn-badge-focus-color: var(--pgn-color-badge-focus-light);
+  --pgn-badge-focus-bg: var(--pgn-color-badge-focus-bg-light);
+  --pgn-badge-focus-box-shadow: var(--pgn-color-badge-focus-box-shadow-light);
+}
+
+.badge-dark {
+  --pgn-badge-color: var(--pgn-color-badge-text-dark);
+  --pgn-badge-bg: var(--pgn-color-badge-bg-dark);
+  --pgn-badge-focus-color: var(--pgn-color-badge-focus-dark);
+  --pgn-badge-focus-bg: var(--pgn-color-badge-focus-bg-dark);
+  --pgn-badge-focus-box-shadow: var(--pgn-color-badge-focus-box-shadow-dark);
+}

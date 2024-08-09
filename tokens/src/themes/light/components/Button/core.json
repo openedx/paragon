@@ -1,0 +1,24 @@
+{
+  "color": {
+    "btn": {
+      "disabled-link": { "value": "{color.disabled}", "type": "color", "source": "$btn-link-disabled-color" }
+    }
+  },
+  "elevation":  {
+    "btn": {
+      "box-shadow": {
+        "base": {
+          "value": "none",
+          "type": "shadow",
+          "source": "$btn-box-shadow"
+        },
+        "active": { "value": "none", "type": "shadow", "source": "$btn-active-box-shadow" }
+      }
+    }
+  },
+  "other": {
+    "btn": {
+      "disabled-opacity": { "value": ".65", "type": "ratio", "source": "$btn-disabled-opacity" }
+    }
+  }
+}

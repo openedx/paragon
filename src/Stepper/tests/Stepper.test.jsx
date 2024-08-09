@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
 import Stepper from '../Stepper';
 import { stepsReducer } from '../StepperContext';
 
@@ -80,6 +79,130 @@ describe('Stepper', () => {
     expect(screen.queryByText('Welcome actions content')).not.toBeInTheDocument();
     expect(screen.getByText('Cat actions content')).toBeInTheDocument();
     expect(screen.queryByText('Review actions content')).not.toBeInTheDocument();
+  });
+
+  describe('clickable variant', () => {
+    it('ignores onClick function if Step has not been visited yet', async () => {
+      const onStepClick = jest.fn();
+      render(
+        <Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />,
+      );
+
+      await userEvent.click(screen.getByText('Cat'));
+      expect(onStepClick).toHaveBeenCalledTimes(0);
+    });
+
+    it('invokes onClick function if Step has been visited', async () => {
+      const onStepClick = jest.fn();
+      render(
+        <Example activeKey="review" showError={false} hasFourthStep handleStepClick={onStepClick} />,
+      );
+
+      await userEvent.click(screen.getByText('Welcome'));
+      expect(onStepClick).toHaveBeenCalledTimes(1);
+    });
+  });
+  describe('stepper header compact view', () => {
+    beforeEach(() => {
+      mockWindowSize.width = 200;
+    });
+
+    afterEach(() => {
+      mockWindowSize.width = 1000;
+    });
+
+    const step = '.flex-grow-1';
+
+    it('renders the compact view of stepper header', () => {
+      const { container } = render(
+        <Example activeKey="cats" />,
+      );
+
+      expect(screen.getByText('Cat')).toBeInTheDocument();
+      expect(container.querySelector(step)).toBeInTheDocument();
+    });
+
+    it('renders the standard view when the window is outside of the max width for compact view', () => {
+      mockWindowSize.width = 800;
+
+      const { container } = render(
+        <Example activeKey="cats" />,
+      );
+
+      expect(container.querySelector(step)).not.toBeInTheDocument();
+    });
+
+    it('renders the compact view when the desired max width is medium', () => {
+      const { container } = render(
+        <Example compactWidth="md" activeKey="cats" />,
+      );
+
+      mockWindowSize.width = 768;
+
+      expect(container.querySelector(step)).toBeInTheDocument();
+    });
+  });
+
+  describe('clickable variant', () => {
+    it('ignores onClick function if Step has not been visited yet', async () => {
+      const onStepClick = jest.fn();
+      render(
+        <Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />,
+      );
+
+      await userEvent.click(screen.getByText('Cat'));
+      expect(onStepClick).toHaveBeenCalledTimes(0);
+    });
+
+    it('invokes onClick function if Step has been visited', async () => {
+      const onStepClick = jest.fn();
+      render(
+        <Example activeKey="review" showError={false} hasFourthStep handleStepClick={onStepClick} />,
+      );
+
+      await userEvent.click(screen.getByText('Welcome'));
+      expect(onStepClick).toHaveBeenCalledTimes(1);
+    });
+  });
+  describe('stepper header compact view', () => {
+    beforeEach(() => {
+      mockWindowSize.width = 200;
+    });
+
+    afterEach(() => {
+      mockWindowSize.width = 1000;
+    });
+
+    const step = '.flex-grow-1';
+
+    it('renders the compact view of stepper header', () => {
+      const { container } = render(
+        <Example activeKey="cats" />,
+      );
+
+      expect(screen.getByText('Cat')).toBeInTheDocument();
+      expect(container.querySelector(step)).toBeInTheDocument();
+    });
+
+    it('renders the standard view when the window is outside of the max width for compact view', () => {
+      mockWindowSize.width = 800;
+
+      const { container } = render(
+        <Example activeKey="cats" />,
+      );
+
+      expect(container.querySelector(step)).not.toBeInTheDocument();
+    });
+
+    it('renders the compact view when the desired max width is medium', () => {
+      const { container } = render(
+        <Example compactWidth="md" activeKey="cats" />,
+      );
+
+      mockWindowSize.width = 768;
+
+      expect(container.querySelector(step)).toBeInTheDocument();
+    });
   });
 
   describe('clickable variant', () => {

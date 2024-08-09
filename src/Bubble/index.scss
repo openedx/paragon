@@ -1,5 +1,3 @@
-@import "variables";
-
 .pgn__bubble {
   line-height: normal;
   min-height: 1.5rem;
@@ -8,21 +6,36 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: $font-size-xs;
-
-  @each $name, $colors in $bubble-variants {
-    &.pgn__bubble-#{$name} {
-      background-color: map-get($colors, "background-color");
-      color: map-get($colors, "color");
-    }
-  }
+  font-size: var(--pgn-typography-font-size-xs);
+  color: var(--pgn-bubble-color, inherit);
+  background-color: var(--pgn-bubble-bg, transparent);
 
   &:disabled,
   &.disabled {
-    background: $gray-500;
+    background: var(--pgn-color-gray-500);
   }
 
   &.expandable {
-    padding: $bubble-expandable-padding-y $bubble-expandable-padding-x;
+    padding: var(--pgn-spacing-bubble-expandable-padding-y) var(--pgn-spacing-bubble-expandable-padding-x);
   }
+}
+
+.pgn__bubble-primary {
+  --pgn-bubble-color: var(--pgn-color-bubble-text-primary);
+  --pgn-bubble-bg: var(--pgn-color-bubble-bg-primary);
+}
+
+.pgn__bubble-success {
+  --pgn-bubble-color: var(--pgn-color-bubble-text-success);
+  --pgn-bubble-bg: var(--pgn-color-bubble-bg-success);
+}
+
+.pgn__bubble-warning {
+  --pgn-bubble-color: var(--pgn-color-bubble-text-warning);
+  --pgn-bubble-bg: var(--pgn-color-bubble-bg-warning);
+}
+
+.pgn__bubble-error {
+  --pgn-bubble-color: var(--pgn-color-bubble-text-error);
+  --pgn-bubble-bg: var(--pgn-color-bubble-bg-error);
 }

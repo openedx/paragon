@@ -1,7 +1,7 @@
 @mixin nav-tabs-link-focus(
-  $border-color,
-  $radius: $nav-tabs-border-radius,
-  $distance: $nav-tabs-link-distance-to-border
+  $tabs-border-color,
+  $radius: var(--pgn-size-nav-tabs-border-radius),
+  $distance: var(--pgn-spacing-nav-link-distance-to-border)
 ) {
   position: relative;
   outline: 0;
@@ -14,7 +14,7 @@
     right: calc(#{$distance} * -1);
     bottom: calc(#{$distance} * -1);
     left: calc(#{$distance} * -1);
-    border: solid $nav-tabs-border-width $border-color;
+    border: solid var(--pgn-size-nav-tabs-border-width) $tabs-border-color;
     border-radius: $radius;
   }
 }

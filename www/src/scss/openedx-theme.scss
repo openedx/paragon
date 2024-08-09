@@ -1,6 +1,7 @@
 @import "~@openedx/brand-openedx/paragon/fonts";
-@import "variables";
 @import "~@openedx/brand-openedx/paragon/variables";
-@import "~paragon-style/core/core";
+@import "~paragon-style/scss/core/core";
+@import "~paragon-style/css/themes/light/variables";
+@import "~paragon-style/css/themes/light/utility-classes";
 @import "~@openedx/brand-openedx/paragon/overrides";
 @import "base";

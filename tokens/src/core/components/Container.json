@@ -1,0 +1,13 @@
+{
+  "size": {
+    "container": {
+      "max-width": {
+        "xs": { "value": "464px", "type": "dimension", "source": "$max-width-xs" },
+        "sm": { "value": "708px", "type": "dimension", "source": "$max-width-sm" },
+        "md": { "value": "952px", "type": "dimension", "source": "$max-width-md" },
+        "lg": { "value": "1192px", "type": "dimension", "source": "$max-width-lg" },
+        "xl": { "value": "1440px", "type": "dimension", "source": "$max-width-xl" }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "color": {
+    "text-muted": { "value": "{color.gray.500}", "type": "color", "source": "$text-muted" },
+    "mark-bg": { "value": "#FFF243", "type": "color", "source": "$mark-bg" },
+    "blockquote": {
+      "small": {
+        "value": "{color.gray.500}", "type": "color", "source": "$blockquote-small-color"
+      }
+    },
+    "yiq-light": { "value": "{color.white}", "type": "color", "source": "$yiq-text-light" }
+  }
+}

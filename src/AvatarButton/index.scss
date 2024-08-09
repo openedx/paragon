@@ -1,14 +1,12 @@
-@import "variables";
-
 .btn.pgn__avatar-button-avatar {
-  padding-left: $avatar-button-padding-left;
+  padding-left: var(--pgn-spacing-avatar-button-padding-left-base);
 
   &.pgn__avatar-button-avatar-sm {
-    padding-left: $avatar-button-padding-left-sm;
+    padding-left: var(--pgn-spacing-avatar-button-padding-left-sm);
   }
 
   &.pgn__avatar-button-avatar-lg {
-    padding-left: $avatar-button-padding-left-lg;
+    padding-left: var(--pgn-spacing-avatar-button-padding-left-lg);
   }
 
   .pgn__avatar {

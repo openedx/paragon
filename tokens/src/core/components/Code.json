@@ -1,0 +1,34 @@
+{
+  "typography": {
+    "code": {
+      "font-size": { "value": "87.5%", "type": "percentage", "source": "$code-font-size" },
+      "kbd": {
+        "font-size": { "value": "{typography.code.font-size}", "type": "dimension", "source": "$kbd-font-size" },
+        "nested": {
+          "font-weight": {
+            "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$nested-kbd-font-weight"
+          }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "code": {
+      "kbd": {
+        "padding": {
+          "y": { "value": ".2rem", "type": "dimension", "source": "$kbd-padding-y" },
+          "x": { "value": ".4rem", "type": "dimension", "source": "$kbd-padding-x" }
+        }
+      }
+    }
+  },
+  "size": {
+    "code": {
+      "pre": {
+        "scrollable": {
+          "max-height": { "value": "340px", "type": "dimension", "source": "$pre-scrollable-max-height" }
+        }
+      }
+    }
+  }
+}

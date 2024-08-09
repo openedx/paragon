@@ -1,7 +1,6 @@
 const { InvalidOptionArgumentError } = require('commander');
 const fs = require('fs');
 const path = require('path');
-const axios = require('axios');
 const { exec } = require('child_process');
 require('dotenv').config();
 
@@ -30,25 +29,6 @@ function validateComponentName(value) {
     throw new InvalidOptionArgumentError('The component already exists.');
   }
   return value;
-}
-
-/**
- * Sends request to the Netlify function to inform about generate-component usage.
- * @param {string} componentName - component name
- */
-function sendTrackInfo(componentName) {
-  const { BASE_URL, TRACK_ANONYMOUS_ANALYTICS } = process.env;
-  if (TRACK_ANONYMOUS_ANALYTICS) {
-    const url = `${BASE_URL}/.netlify/functions/trackGenerateComponent`;
-    axios.post(url, { componentName })
-      .then(result => {
-        // eslint-disable-next-line no-console
-        console.log(`Track info is successfully sent (status ${result.status})`);
-      }).catch(error => {
-        // eslint-disable-next-line no-console
-        console.log(`Track info request failed (${error})`);
-      });
-  }
 }
 
 /**
@@ -97,7 +77,6 @@ function addComponentToGit(componentName) {
 }
 
 exports.validateComponentName = validateComponentName;
-exports.sendTrackInfo = sendTrackInfo;
 exports.createFile = createFile;
 exports.addComponentToExports = addComponentToExports;
 exports.addComponentToGit = addComponentToGit;

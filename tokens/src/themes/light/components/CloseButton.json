@@ -1,0 +1,10 @@
+{
+  "color": {
+    "close-button": { "value": "{color.black}", "type": "color", "source": "$close-color" }
+  },
+  "elevation": {
+    "close-button": {
+      "text-shadow": { "value": "0 1px 0 {color.white}", "type": "shadow", "source": "$close-text-shadow" }
+    }
+  }
+}

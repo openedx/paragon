@@ -36,7 +36,7 @@ function MinWidthCell({ row }) {
               That pixel width is the smallest that designers support for mobile devices,
               and also covers 16x magnification for accessibility.
             </Tooltip>
-          )}
+                    )}
         >
           <Icon src={QuestionMark} size="xs" />
         </OverlayTrigger>

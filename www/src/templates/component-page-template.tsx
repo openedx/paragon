@@ -13,7 +13,6 @@ import {
   Stack,
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
-import { DEFAULT_THEME } from '../../theme-config';
 import CodeBlock from '../components/CodeBlock';
 import GenericPropsTable from '../components/PropsTable';
 import Layout from '../components/PageLayout';
@@ -22,6 +21,7 @@ import LinkedHeading from '../components/LinkedHeading';
 import ComponentsUsage from '../components/insights/ComponentsUsage';
 import LeaveFeedback from '../components/LeaveFeedback';
 import PageEditBtn from '../components/PageEditBtn';
+import ComponentVariablesTable from '../components/ComponentVariablesTable';
 
 export interface IPageTemplate {
   data: {
@@ -42,7 +42,7 @@ export interface IPageTemplate {
     }
   },
   pageContext: {
-    scssVariablesData: Record<string, string>,
+    cssVariablesData: string[],
     componentsUsageInsights: string[],
     githubEditPath: string,
   }
@@ -54,13 +54,11 @@ export type ShortCodesTypes = {
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
-  pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath },
+  pageContext: { cssVariablesData, componentsUsageInsights, githubEditPath },
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
   const { settings } = useContext(SettingsContext);
-  const { theme } = settings;
-  const scssVariables = scssVariablesData[theme!] || scssVariablesData[DEFAULT_THEME!];
 
   const components = componentNodes.nodes
     .reduce((acc: { [x: string]: { displayName: string, props?: [] }; }, currentValue: { displayName: string; }) => {
@@ -91,8 +89,8 @@ export default function PageTemplate({
     };
   }, [components]);
 
-  const scssVariablesTitle = 'Theme Variables (SCSS)';
-  const scssVariablesUrl = 'theme-variables-scss';
+  const cssVariablesTitle = 'Theme Variables';
+  const cssVariablesUrl = 'theme-variables';
 
   const propsAPITitle = 'Props API';
   const propsAPIUrl = 'props-api';
@@ -106,10 +104,10 @@ export default function PageTemplate({
 
   const getTocData = () => {
     const tableOfContents = JSON.parse(JSON.stringify(mdx.tableOfContents));
-    if (Object.values(scssVariablesData).some(data => data) && !tableOfContents.items?.includes()) {
+    if (cssVariablesData?.length && !tableOfContents.items?.includes()) {
       tableOfContents.items?.push({
-        title: scssVariablesTitle,
-        url: `#${scssVariablesUrl}`,
+        title: cssVariablesTitle,
+        url: `#${cssVariablesUrl}`,
       });
     }
     tableOfContents.items?.push({ title: propsAPITitle, url: `#${propsAPIUrl}` });
@@ -137,10 +135,10 @@ export default function PageTemplate({
       <SEO title={mdx.frontmatter.title} />
       <Container size={settings.containerWidth} className="py-5">
         {isDeprecated && (
-          <Alert variant="warning">
-            <Alert.Heading>This component will be removed soon.</Alert.Heading>
-            <p className="small mb-0">{mdx.frontmatter.notes}</p>
-          </Alert>
+        <Alert variant="warning">
+          <Alert.Heading>This component will be removed soon.</Alert.Heading>
+          <p className="small mb-0">{mdx.frontmatter.notes}</p>
+        </Alert>
         )}
         <Stack
           className={classNames('justify-content-between', {
@@ -163,24 +161,24 @@ export default function PageTemplate({
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-        {scssVariables && (
-          <div className="mb-5">
-            <h2 className="mb-4 pgn-doc__heading" id={scssVariablesUrl}>
-              {scssVariablesTitle}
-              <a href={`#${scssVariablesUrl}`} aria-label="Jump to SCSS variables">
-                <span className="pgn-doc__anchor">#</span>
-              </a>
-            </h2>
-            <CodeBlock className="language-scss">{scssVariables}</CodeBlock>
-          </div>
-        )}
-        {components[sortedComponentNames[0]]?.props && (
-          <h2 className="mb-5 pgn-doc__heading" id={propsAPIUrl}>
-            {propsAPITitle}
-            <a href={`#${propsAPIUrl}`} aria-label="Props API">
+        {!!cssVariablesData?.length && (
+        <div className="mb-5">
+          <h2 className="mb-4 pgn-doc__heading" id={cssVariablesUrl}>
+            {cssVariablesTitle}
+            <a href={`#${cssVariablesUrl}`} aria-label="Jump to CSS variables">
               <span className="pgn-doc__anchor">#</span>
             </a>
           </h2>
+          <ComponentVariablesTable rawStylesheet={cssVariablesData} />
+        </div>
+        )}
+        {components[sortedComponentNames[0]]?.props && (
+        <h2 className="mb-5 pgn-doc__heading" id={propsAPIUrl}>
+          {propsAPITitle}
+          <a href={`#${propsAPIUrl}`} aria-label="Props API">
+            <span className="pgn-doc__anchor">#</span>
+          </a>
+        </h2>
         )}
         {typeof sortedComponentNames !== 'string' && sortedComponentNames?.map((componentName: string | number) => {
           const node: { displayName: string } = components[componentName];
@@ -190,15 +188,15 @@ export default function PageTemplate({
           return <GenericPropsTable key={node.displayName} {...node} />;
         })}
         {isUsageInsights && (
-          <>
-            <h2 className="pgn-doc__heading m-0" id={usageInsightsUrl}>
-              {usageInsightsTitle}
-              <a href={`#${usageInsightsUrl}`} aria-label="Usage Insights">
-                <span className="pgn-doc__anchor">#</span>
-              </a>
-            </h2>
-            <ComponentsUsage data={(sortedComponentNames as string[])} />
-          </>
+        <>
+          <h2 className="pgn-doc__heading m-0" id={usageInsightsUrl}>
+            {usageInsightsTitle}
+            <a href={`#${usageInsightsUrl}`} aria-label="Usage Insights">
+              <span className="pgn-doc__anchor">#</span>
+            </a>
+          </h2>
+          <ComponentsUsage data={(sortedComponentNames as string[])} />
+        </>
         )}
       </Container>
     </Layout>

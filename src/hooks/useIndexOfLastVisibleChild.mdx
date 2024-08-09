@@ -32,7 +32,7 @@ of the children until they exceed the width of the container.
     overflowElementRef.current,
   );
   const elements = ['Element 1', 'Element 2', 'Element 3', 'Element 4', 'Element 5', 'Element 6', 'Element 7'];
-  
+
   const children = useMemo(() => {
     const indexOfOverflowStart = indexOfLastVisibleChild + 1;
     const childrenList = elements.map((element, i) => (

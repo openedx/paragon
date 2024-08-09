@@ -1,0 +1,124 @@
+---
+title: Design Tokens
+---
+
+# Design Tokens
+
+Design tokens are names used to express design decisions in your organisation's design language. Design decisions can be a color, a typeface, a border radius, an icon, a font size, a gradient or even an animation duration.
+
+## Description
+
+In Paragon Design Tokens are represented as variables in `JSON` format organized by the categories.
+
+Example:
+
+```
+# color.tokens.json
+{
+  "color": {
+    "white": { "value": "#FFFFFF", "themeable": true, "source": "$white" },
+    "black": { "value": "#000000", "themeable": true, "source": "$black" },
+    "blue": { "value": "#23419F", "themeable": true, "source": "$blue" },
+    ...
+  },
+}
+# breakpoints.tokens.json
+{
+  "breakpoint": {
+    "xs": { "value": "0", "themeable": true },
+    "sm": { "value": "576px", "themeable": true },
+    "md": { "value": "768px", "themeable": true },
+    "lg": { "value": "992px", "themeable": true },
+    "xl": { "value": "1200px", "themeable": true },
+    "xxl": { "value": "1400px", "themeable": true }
+  },
+}
+```
+
+They can be transformed into required format like `css`, `scss` to use in the application code.
+
+Example:
+
+```
+# original json
+{
+  "color": {
+    "white": { "value": "#FFFFFF", "themeable": true, "source": "$white" },
+  ...
+  },
+}
+# scss
+$pgn-color-white: #FFFFFF !default;
+# css
+--pgn-color-white: #FFFFFF;
+```
+
+```
+# original json
+{
+  "breakpoint": {
+    ...
+    "md": { "value": "768px", "themeable": true },
+    "lg": { "value": "992px", "themeable": true },
+    ...
+  },
+}
+# scss
+$pgn-breakpoint-md: 768px !default;
+$pgn-breakpoint-lg: 992px !default;
+# css
+--pgn-breakpoint-md: 768px;
+--pgn-breakpoint-lg: 992px;
+```
+
+## Design token types
+
+All tokens can be of two types: general (global) and specific (component) tokens.
+
+### Global tokens
+
+Color palette, elevation levels, typography, and dimension values are all global tokens. These can be directly used, and are inherited by component-specific tokens.
+
+Example:
+
+```
+"color": {
+  ...
+  "black": { "value": "#000000", "themeable": true, "source": "$black" },
+  ...
+  "gray": {
+    "100": { "value": "#EBEBEB", "themeable": true, "source": "$gray-100" },
+    "200": { "value": "#CCCCCC", "themeable": true, "source": "$gray-200" },
+    "300": { "value": "#ADADAD", "themeable": true, "source": "$gray-300" },
+    "400": { "value": "#8F8F8F", "themeable": true, "source": "$gray-400" },
+    "500": { "value": "#707070", "themeable": true, "source": "$gray-500" },
+    "600": { "value": "#5C5C5C", "themeable": true, "source": "$gray-600" },
+    "700": { "value": "#454545", "themeable": true, "source": "$gray-700" },
+  },
+  ...
+}
+```
+
+### Component-specific tokens
+
+Component-specific tokens are a comprehensive representation of each value associated with a component. They are often inherited from global tokens, but are named so that engineering teams can apply the tokens as accurately as possible when developing components.
+
+Example:
+
+```
+"alert": {
+  "color": {
+    "title": {
+      "value": "{color.black.value}",
+      "themeable": true,
+      "source": "$alert-title-color"
+    },
+    "content": {
+      "value": "{color.gray.700.value}",
+      "themeable": true,
+      "source": "$alert-content-color"
+     }
+  },
+  ...
+},
+```
