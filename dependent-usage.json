@@ -1,5 +1,5 @@
 {
-  "lastModified": 1723212475884,
+  "lastModified": 1723298829623,
   "projectUsages": [
     {
       "version": "22.7.0",
@@ -43809,6 +43809,18 @@
             "index": 1238
           },
           {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 41,
+            "column": 8,
+            "index": 1015
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 58,
+            "column": 6,
+            "index": 1610
+          },
+          {
             "filePath": "src/Configuration/Provisioning/ErrorPage/ErrorPageContainer.jsx",
             "line": 27,
             "column": 4,
@@ -43853,6 +43865,12 @@
             "index": 906
           },
           {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 59,
+            "column": 8,
+            "index": 1647
+          },
+          {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormDefineCustomCatalogHeader.jsx",
             "line": 33,
             "column": 10,
@@ -43886,15 +43904,21 @@
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
-            "line": 25,
+            "line": 21,
             "column": 8,
-            "index": 664
+            "index": 602
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
-            "line": 38,
+            "line": 34,
             "column": 8,
-            "index": 1020
+            "index": 958
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
+            "line": 45,
+            "column": 10,
+            "index": 1367
           },
           {
             "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
@@ -43966,27 +43990,27 @@
         "Icon": [
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
-            "line": 53,
+            "line": 49,
             "column": 10,
-            "index": 1491
+            "index": 1429
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
-            "line": 75,
+            "line": 71,
             "column": 6,
-            "index": 1972
+            "index": 1910
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
-            "line": 84,
+            "line": 80,
             "column": 6,
-            "index": 2163
+            "index": 2101
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
-            "line": 93,
+            "line": 89,
             "column": 6,
-            "index": 2356
+            "index": 2294
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
@@ -44011,6 +44035,12 @@
             "line": 54,
             "column": 6,
             "index": 1718
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
+            "line": 61,
+            "column": 12,
+            "index": 1894
           },
           {
             "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
@@ -44052,17 +44082,29 @@
         "ContentCopy": [
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
-            "line": 55,
+            "line": 51,
             "column": 17,
-            "index": 1544
+            "index": 1482
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
+            "line": 63,
+            "column": 19,
+            "index": 1951
           }
         ],
         "Toast": [
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
-            "line": 61,
+            "line": 57,
             "column": 6,
-            "index": 1698
+            "index": 1636
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
+            "line": 73,
+            "column": 6,
+            "index": 2315
           },
           {
             "filePath": "src/Configuration/Provisioning/DashboardToast.jsx",
@@ -44074,21 +44116,21 @@
         "Check": [
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
-            "line": 75,
+            "line": 71,
             "column": 17,
-            "index": 1983
+            "index": 1921
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
-            "line": 84,
+            "line": 80,
             "column": 17,
-            "index": 2174
+            "index": 2112
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
-            "line": 93,
+            "line": 89,
             "column": 17,
-            "index": 2367
+            "index": 2305
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
@@ -44203,57 +44245,77 @@
             "index": 2626
           }
         ],
-        "DataTable.FilterStatus": [
+        "Card": [
           {
-            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardDataTable.jsx",
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
             "line": 20,
-            "column": 31,
-            "index": 869
-          }
-        ],
-        "Badge": [
+            "column": 6,
+            "index": 531
+          },
           {
-            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableBadges.jsx",
-            "line": 9,
+            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
+            "line": 10,
             "column": 4,
-            "index": 176
-          },
-          {
-            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
-            "line": 16,
-            "column": 40,
-            "index": 388
-          },
-          {
-            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
-            "line": 16,
-            "column": 83,
-            "index": 431
+            "index": 242
           },
           {
             "filePath": "src/users/licenses/LicenseCard.jsx",
-            "line": 67,
-            "column": 14,
-            "index": 1785
-          }
-        ],
-        "IconButton": [
-          {
-            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
-            "line": 42,
+            "line": 56,
             "column": 6,
-            "index": 1447
+            "index": 1463
+          },
+          {
+            "filePath": "src/users/SingleSignOnRecordCard.jsx",
+            "line": 95,
+            "column": 6,
+            "index": 2786
           }
         ],
-        "DjangoShort": [
+        "Card.Section": [
           {
-            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
-            "line": 44,
-            "column": 13,
-            "index": 1490
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
+            "line": 21,
+            "column": 8,
+            "index": 578
+          },
+          {
+            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
+            "line": 21,
+            "column": 6,
+            "index": 534
+          },
+          {
+            "filePath": "src/users/licenses/LicenseCard.jsx",
+            "line": 64,
+            "column": 8,
+            "index": 1692
+          },
+          {
+            "filePath": "src/users/licenses/LicenseCard.jsx",
+            "line": 83,
+            "column": 8,
+            "index": 2279
+          },
+          {
+            "filePath": "src/users/SingleSignOnRecordCard.jsx",
+            "line": 103,
+            "column": 8,
+            "index": 3053
+          },
+          {
+            "filePath": "src/users/SingleSignOnRecordCard.jsx",
+            "line": 134,
+            "column": 8,
+            "index": 3925
           }
         ],
         "ActionRow": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
+            "line": 23,
+            "column": 12,
+            "index": 625
+          },
           {
             "filePath": "src/Configuration/Provisioning/DashboardHeader.jsx",
             "line": 20,
@@ -44381,39 +44443,19 @@
             "index": 5334
           }
         ],
-        "ActionRow.Spacer": [
-          {
-            "filePath": "src/Configuration/Provisioning/DashboardHeader.jsx",
-            "line": 22,
-            "column": 6,
-            "index": 574
-          },
-          {
-            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormDefineCustomCatalogHeader.jsx",
-            "line": 22,
-            "column": 8,
-            "index": 737
-          },
-          {
-            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormAccountType.jsx",
-            "line": 104,
-            "column": 14,
-            "index": 3615
-          },
-          {
-            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/SubsidyDetailViewContainer.jsx",
-            "line": 16,
-            "column": 10,
-            "index": 606
-          },
-          {
-            "filePath": "src/Configuration/Provisioning/SubsidyEditView/SubsidyEditViewContainer.jsx",
-            "line": 21,
-            "column": 10,
-            "index": 659
-          }
-        ],
         "Button": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
+            "line": 24,
+            "column": 14,
+            "index": 651
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
+            "line": 25,
+            "column": 14,
+            "index": 695
+          },
           {
             "filePath": "src/Configuration/Provisioning/DashboardHeader.jsx",
             "line": 23,
@@ -44647,6 +44689,118 @@
             "line": 55,
             "column": 10,
             "index": 2099
+          }
+        ],
+        "Launch": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
+            "line": 32,
+            "column": 27,
+            "index": 1022
+          }
+        ],
+        "Breadcrumb": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 42,
+            "column": 10,
+            "index": 1054
+          }
+        ],
+        "Skeleton": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 57,
+            "column": 10,
+            "index": 1590
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 60,
+            "column": 83,
+            "index": 1746
+          }
+        ],
+        "DataTable.FilterStatus": [
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardDataTable.jsx",
+            "line": 20,
+            "column": 31,
+            "index": 869
+          }
+        ],
+        "Badge": [
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableBadges.jsx",
+            "line": 9,
+            "column": 4,
+            "index": 176
+          },
+          {
+            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
+            "line": 16,
+            "column": 40,
+            "index": 388
+          },
+          {
+            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
+            "line": 16,
+            "column": 83,
+            "index": 431
+          },
+          {
+            "filePath": "src/users/licenses/LicenseCard.jsx",
+            "line": 67,
+            "column": 14,
+            "index": 1785
+          }
+        ],
+        "IconButton": [
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
+            "line": 42,
+            "column": 6,
+            "index": 1447
+          }
+        ],
+        "DjangoShort": [
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
+            "line": 44,
+            "column": 13,
+            "index": 1490
+          }
+        ],
+        "ActionRow.Spacer": [
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardHeader.jsx",
+            "line": 22,
+            "column": 6,
+            "index": 574
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormDefineCustomCatalogHeader.jsx",
+            "line": 22,
+            "column": 8,
+            "index": 737
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormAccountType.jsx",
+            "line": 104,
+            "column": 14,
+            "index": 3615
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/SubsidyDetailViewContainer.jsx",
+            "line": 16,
+            "column": 10,
+            "index": 606
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyEditView/SubsidyEditViewContainer.jsx",
+            "line": 21,
+            "column": 10,
+            "index": 659
           }
         ],
         "Add": [
@@ -45869,26 +46023,6 @@
             "index": 1597
           }
         ],
-        "Card": [
-          {
-            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
-            "line": 10,
-            "column": 4,
-            "index": 242
-          },
-          {
-            "filePath": "src/users/licenses/LicenseCard.jsx",
-            "line": 56,
-            "column": 6,
-            "index": 1463
-          },
-          {
-            "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 95,
-            "column": 6,
-            "index": 2786
-          }
-        ],
         "Card.Header": [
           {
             "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
@@ -45919,38 +46053,6 @@
             "line": 126,
             "column": 8,
             "index": 3768
-          }
-        ],
-        "Card.Section": [
-          {
-            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
-            "line": 21,
-            "column": 6,
-            "index": 534
-          },
-          {
-            "filePath": "src/users/licenses/LicenseCard.jsx",
-            "line": 64,
-            "column": 8,
-            "index": 1692
-          },
-          {
-            "filePath": "src/users/licenses/LicenseCard.jsx",
-            "line": 83,
-            "column": 8,
-            "index": 2279
-          },
-          {
-            "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 103,
-            "column": 8,
-            "index": 3053
-          },
-          {
-            "filePath": "src/users/SingleSignOnRecordCard.jsx",
-            "line": 134,
-            "column": 8,
-            "index": 3925
           }
         ],
         "Card.Footer": [
