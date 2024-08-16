@@ -1,5 +1,5 @@
 {
-  "lastModified": 1723730837962,
+  "lastModified": 1723817218608,
   "projectUsages": [
     {
       "version": "22.7.0",
@@ -43649,16 +43649,22 @@
             "index": 1238
           },
           {
-            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
-            "line": 41,
-            "column": 8,
-            "index": 1015
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerIntegrations.jsx",
+            "line": 17,
+            "column": 4,
+            "index": 712
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
-            "line": 58,
+            "line": 42,
+            "column": 8,
+            "index": 1074
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 59,
             "column": 6,
-            "index": 1610
+            "index": 1669
           },
           {
             "filePath": "src/Configuration/Provisioning/ErrorPage/ErrorPageContainer.jsx",
@@ -43706,9 +43712,9 @@
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
-            "line": 59,
+            "line": 60,
             "column": 8,
-            "index": 1647
+            "index": 1706
           },
           {
             "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormDefineCustomCatalogHeader.jsx",
@@ -43756,9 +43762,15 @@
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
-            "line": 45,
+            "line": 46,
             "column": 10,
-            "index": 1367
+            "index": 1417
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewCard.jsx",
+            "line": 21,
+            "column": 8,
+            "index": 531
           },
           {
             "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
@@ -43878,9 +43890,9 @@
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
-            "line": 61,
+            "line": 62,
             "column": 12,
-            "index": 1894
+            "index": 1944
           },
           {
             "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
@@ -43928,9 +43940,9 @@
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
-            "line": 63,
+            "line": 64,
             "column": 19,
-            "index": 1951
+            "index": 2001
           }
         ],
         "Toast": [
@@ -43942,9 +43954,9 @@
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
-            "line": 73,
+            "line": 74,
             "column": 6,
-            "index": 2315
+            "index": 2365
           },
           {
             "filePath": "src/Configuration/Provisioning/DashboardToast.jsx",
@@ -44088,9 +44100,15 @@
         "Card": [
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
-            "line": 20,
+            "line": 21,
             "column": 6,
-            "index": 531
+            "index": 572
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewCard.jsx",
+            "line": 11,
+            "column": 2,
+            "index": 197
           },
           {
             "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
@@ -44114,9 +44132,21 @@
         "Card.Section": [
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
-            "line": 21,
+            "line": 22,
             "column": 8,
-            "index": 578
+            "index": 619
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewCard.jsx",
+            "line": 12,
+            "column": 4,
+            "index": 225
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewCard.jsx",
+            "line": 16,
+            "column": 4,
+            "index": 376
           },
           {
             "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
@@ -44152,9 +44182,9 @@
         "ActionRow": [
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
-            "line": 23,
+            "line": 24,
             "column": 12,
-            "index": 625
+            "index": 666
           },
           {
             "filePath": "src/Configuration/Provisioning/DashboardHeader.jsx",
@@ -44286,15 +44316,21 @@
         "Button": [
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
-            "line": 24,
+            "line": 25,
             "column": 14,
-            "index": 651
+            "index": 692
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
-            "line": 25,
+            "line": 26,
             "column": 14,
-            "index": 695
+            "index": 736
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewCard.jsx",
+            "line": 20,
+            "column": 6,
+            "index": 514
           },
           {
             "filePath": "src/Configuration/Provisioning/DashboardHeader.jsx",
@@ -44534,31 +44570,45 @@
         "Launch": [
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
-            "line": 32,
+            "line": 33,
             "column": 27,
-            "index": 1022
+            "index": 1072
+          }
+        ],
+        "Card.Footer": [
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewCard.jsx",
+            "line": 19,
+            "column": 4,
+            "index": 494
+          },
+          {
+            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
+            "line": 39,
+            "column": 6,
+            "index": 961
           }
         ],
         "Breadcrumb": [
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
-            "line": 42,
+            "line": 43,
             "column": 10,
-            "index": 1054
+            "index": 1113
           }
         ],
         "Skeleton": [
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
-            "line": 57,
+            "line": 58,
             "column": 10,
-            "index": 1590
+            "index": 1649
           },
           {
             "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
-            "line": 60,
+            "line": 61,
             "column": 83,
-            "index": 1746
+            "index": 1805
           }
         ],
         "DataTable.FilterStatus": [
@@ -45893,14 +45943,6 @@
             "line": 126,
             "column": 8,
             "index": 3768
-          }
-        ],
-        "Card.Footer": [
-          {
-            "filePath": "src/FeatureBasedEnrollments/FeatureBasedEnrollmentCard.jsx",
-            "line": 39,
-            "column": 6,
-            "index": 961
           }
         ],
         "Input": [
