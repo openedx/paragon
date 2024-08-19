@@ -1,5 +1,5 @@
 {
-  "lastModified": 1723990027425,
+  "lastModified": 1724076530877,
   "projectUsages": [
     {
       "version": "22.7.0",
@@ -31460,9 +31460,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/AssignedCourseCard.jsx",
-            "line": 24,
+            "line": 21,
             "column": 4,
-            "index": 990
+            "index": 853
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ContinueLearningButton.jsx",
@@ -31490,9 +31490,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseAssignmentAlert.jsx",
-            "line": 88,
+            "line": 87,
             "column": 4,
-            "index": 3181
+            "index": 3097
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollmentsEmptyState.jsx",
@@ -33048,9 +33048,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseAssignmentAlert.jsx",
-            "line": 88,
+            "line": 87,
             "column": 16,
-            "index": 3193
+            "index": 3109
           },
           {
             "filePath": "src/components/dashboard/sidebar/SupportInformation.jsx",
@@ -33158,9 +33158,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseAssignmentAlert.jsx",
-            "line": 98,
+            "line": 97,
             "column": 4,
-            "index": 3545
+            "index": 3461
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseEnrollmentsAlert.jsx",
@@ -33250,9 +33250,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseAssignmentAlert.jsx",
-            "line": 117,
+            "line": 116,
             "column": 6,
-            "index": 4342
+            "index": 4258
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/NewGroupAssignmentAlert.jsx",
@@ -37393,6 +37393,12 @@
             "index": 3327
           },
           {
+            "filePath": "src/preferences-unsubscribe/index.jsx",
+            "line": 71,
+            "column": 24,
+            "index": 3070
+          },
+          {
             "filePath": "src/shared/links.jsx",
             "line": 10,
             "column": 2,
@@ -38129,6 +38135,12 @@
             "line": 504,
             "column": 24,
             "index": 16299
+          },
+          {
+            "filePath": "src/preferences-unsubscribe/index.jsx",
+            "line": 57,
+            "column": 16,
+            "index": 2082
           },
           {
             "filePath": "src/product-tours/newUserCourseHomeTour/LaunchCourseHomeTourButton.jsx",
@@ -39655,6 +39667,22 @@
             "line": 49,
             "column": 6,
             "index": 1069
+          }
+        ],
+        "ErrorOutline": [
+          {
+            "filePath": "src/preferences-unsubscribe/index.jsx",
+            "line": 42,
+            "column": 4,
+            "index": 1468
+          }
+        ],
+        "Container": [
+          {
+            "filePath": "src/preferences-unsubscribe/index.jsx",
+            "line": 51,
+            "column": 6,
+            "index": 1748
           }
         ],
         "Compass": [
@@ -42717,7 +42745,7 @@
       }
     },
     {
-      "version": "22.6.1",
+      "version": "22.7.0",
       "name": "@edx/frontend-app-profile",
       "repository": {
         "type": "git",
