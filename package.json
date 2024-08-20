@@ -1,6 +1,7 @@
 {
   "name": "@openedx/paragon",
   "version": "20.18.1",
+  "type": "module",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -93,7 +94,7 @@
     "react-table": "^7.7.0",
     "react-transition-group": "^4.4.2",
     "sass": "^1.58.3",
-    "style-dictionary": "^3.7.1",
+    "style-dictionary": "^4.0.1",
     "tabbable": "^5.3.3",
     "uncontrollable": "^7.2.1",
     "uuid": "^9.0.0"

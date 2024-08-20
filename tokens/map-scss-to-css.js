@@ -1,8 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const { getSCSStoCSSMap, getFilesWithExtension } = require('./utils');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { getSCSStoCSSMap, getFilesWithExtension } from './utils.js';
 
-const BASE_PATH = path.resolve(__dirname, './src');
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
+
+const BASE_PATH = path.resolve(dirname, './src');
 const TOKEN_PREFIX = '--pgn';
 
 function mapSCSStoCSS(sourcePath) {
@@ -21,4 +25,4 @@ function mapSCSStoCSS(sourcePath) {
   return SCSStoCSSMap;
 }
 
-module.exports = mapSCSStoCSS;
+export default mapSCSStoCSS;

@@ -1,7 +1,11 @@
-const path = require('path');
-const fs = require('fs');
-const chroma = require('chroma-js');
-const chalk = require('chalk');
+import path from 'path';
+import fs from 'fs';
+import chroma from 'chroma-js';
+import chalk from 'chalk';
+import { fileURLToPath } from 'url';
+
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
 /**
  * Javascript version of bootstrap's color-yiq function. Decides whether to return light color variant or dark one
@@ -25,10 +29,10 @@ function colorYiq({
   threshold,
   themeVariant = 'light',
 }) {
-  const defaultThresholdFile = fs.readFileSync(path.resolve(__dirname, 'src/core/global', 'other.json'), 'utf8');
+  const defaultThresholdFile = fs.readFileSync(path.resolve(dirname, 'src/core/global', 'other.json'), 'utf8');
   const defaultThreshold = JSON.parse(defaultThresholdFile)['yiq-contrasted-threshold'];
 
-  const defaultColorsFile = fs.readFileSync(path.resolve(__dirname, `src/themes/${themeVariant}/global`, 'other.json'), 'utf8');
+  const defaultColorsFile = fs.readFileSync(path.resolve(dirname, `src/themes/${themeVariant}/global`, 'other.json'), 'utf8');
   const {
     'yiq-text-dark': defaultDark,
     'yiq-text-light': defaultLight,
@@ -91,7 +95,7 @@ function colorYiq({
 const lighten = (color, hslPercent) => color.set('hsl.l', color.get('hsl.l') + hslPercent);
 const darken = (color, hslPercent) => lighten(color, -hslPercent);
 
-module.exports = {
+export {
   colorYiq,
   darken,
   lighten,

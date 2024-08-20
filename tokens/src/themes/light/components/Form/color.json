@@ -137,7 +137,7 @@
           "bg": {
             "base": { "value": "{color.form.input.bg.base}", "type": "color", "source": "$custom-select-bg" },
             "disabled": { "value": "{color.gray.100}", "type": "color", "source": "$custom-select-disabled-bg" },
-            "size": { "value": "24px 24px", "type": "dimension", "source": "$custom-select-bg-size" }
+            "size": { "value": "{color.gray.100}", "type": "dimension", "source": "$custom-select-bg-size" }
           },
           "border": {
             "base": {

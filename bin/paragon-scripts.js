@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-const chalk = require('chalk');
-const themeCommand = require('../lib/install-theme');
-const helpCommand = require('../lib/help');
-const buildTokensCommand = require('../lib/build-tokens');
-const replaceVariablesCommand = require('../lib/replace-variables');
-const buildScssCommand = require('../lib/build-scss');
-const { sendTrackInfo } = require('../lib/utils');
-const versionCommand = require('../lib/version');
-const migrateToOpenEdxScopeCommand = require('../lib/migrate-to-openedx-scope');
+import chalk from 'chalk';
+import themeCommand from '../lib/install-theme.js';
+import helpCommand from '../lib/help.js';
+import buildTokensCommand from '../lib/build-tokens.js';
+import replaceVariablesCommand from '../lib/replace-variables.js';
+import buildScssCommand from '../lib/build-scss.js';
+import { sendTrackInfo } from '../lib/utils.js';
+import versionCommand from '../lib/version.js';
+import migrateToOpenEdxScopeCommand from '../lib/migrate-to-openedx-scope.js';
 
 const commandAliases = {
   '-v': 'version',
