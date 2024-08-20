@@ -1,0 +1,11 @@
+[object Promise]@custom-media --pgn-size-breakpoint-min-width-xs (min-width: 0rem);
+@custom-media --pgn-size-breakpoint-max-width-xs (max-width: 576px);
+@custom-media --pgn-size-breakpoint-min-width-sm (min-width: 576px);
+@custom-media --pgn-size-breakpoint-max-width-sm (max-width: 768px);
+@custom-media --pgn-size-breakpoint-min-width-md (min-width: 768px);
+@custom-media --pgn-size-breakpoint-max-width-md (max-width: 992px);
+@custom-media --pgn-size-breakpoint-min-width-lg (min-width: 992px);
+@custom-media --pgn-size-breakpoint-max-width-lg (max-width: 1200px);
+@custom-media --pgn-size-breakpoint-min-width-xl (min-width: 1200px);
+@custom-media --pgn-size-breakpoint-max-width-xl (max-width: 1400px);
+@custom-media --pgn-size-breakpoint-min-width-xxl (min-width: 1400px);
