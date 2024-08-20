@@ -1,30 +1,53 @@
 {
   "color": {
+    "$type": "color",
     "tooltip": {
-      "text": { "value": "{color.white}", "type": "color", "source": "$tooltip-color" },
-      "light": { "value": "{color.black}", "type": "color", "source": "$tooltip-color-light" },
+      "text": {
+        "source": "$tooltip-color",
+        "$value": "{color.white}"
+      },
+      "light": {
+        "source": "$tooltip-color-light",
+        "$value": "{color.black}"
+      },
       "bg": {
-        "base": { "value": "{color.black}", "type": "color", "source": "$tooltip-bg" },
-        "light": { "value": "{color.white}", "type": "color", "source": "$tooltip-bg-light" }
+        "base": {
+          "source": "$tooltip-bg",
+          "$value": "{color.black}"
+        },
+        "light": {
+          "source": "$tooltip-bg-light",
+          "$value": "{color.white}"
+        }
       },
       "arrow": {
-        "base": { "value": "{color.tooltip.bg.base}", "type": "color", "source": "$tooltip-arrow-color" },
-        "light": { "value": "{color.white}", "type": "color", "source": "$tooltip-arrow-color-light" }
+        "base": {
+          "source": "$tooltip-arrow-color",
+          "$value": "{color.tooltip.bg.base}"
+        },
+        "light": {
+          "source": "$tooltip-arrow-color-light",
+          "$value": "{color.white}"
+        }
       }
     }
   },
   "elevation": {
+    "$type": "shadow",
     "tooltip": {
       "box-shadow": {
-        "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
-        "type": "shadow",
-        "source": "$tooltip-box-shadow"
+        "source": "$tooltip-box-shadow",
+        "$value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15))"
       }
     }
   },
   "other": {
+    "$type": "ratio",
     "tooltip": {
-      "opacity": { "value": "1", "type": "ratio", "source": "$tooltip-opacity" }
+      "opacity": {
+        "source": "$tooltip-opacity",
+        "$value": "1"
+      }
     }
   }
 }

@@ -199,10 +199,10 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{mjs}": [
       "npx eslint"
     ],
-    "*.scss": [
+    "*.sass": [
       "npx stylelint"
     ]
   },

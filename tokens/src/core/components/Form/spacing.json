@@ -1,151 +1,189 @@
 {
+  "$type": "dimension",
   "spacing": {
     "form": {
       "input": {
         "padding": {
           "y": {
             "base": {
-              "value": "{spacing.input.btn.padding.y}", "type": "dimension", "source": "$input-padding-y"
+              "source": "$input-padding-y",
+              "$value": "{spacing.input.btn.padding.y}"
             },
             "sm": {
-              "value": "{spacing.input.btn.padding.sm.y}", "type": "dimension", "source": "$input-padding-y-sm"
+              "source": "$input-padding-y-sm",
+              "$value": "{spacing.input.btn.padding.sm.y}"
             },
             "lg": {
-              "value": "{spacing.input.btn.padding.lg.y}", "type": "dimension", "source": "$input-padding-y-lg"
+              "source": "$input-padding-y-lg",
+              "$value": "{spacing.input.btn.padding.lg.y}"
             }
           },
           "x": {
             "base": {
-              "value": "{spacing.input.btn.padding.x}", "type": "dimension", "source": "$input-padding-x"
+              "source": "$input-padding-x",
+              "$value": "{spacing.input.btn.padding.x}"
             },
             "sm": {
-              "value": "{spacing.input.btn.padding.sm.x}", "type": "dimension", "source": "$input-padding-x-sm"
+              "source": "$input-padding-x-sm",
+              "$value": "{spacing.input.btn.padding.sm.x}"
             },
             "lg": {
-              "value": "{spacing.input.btn.padding.lg.x}", "type": "dimension", "source": "$input-padding-x-lg"
+              "source": "$input-padding-x-lg",
+              "$value": "{spacing.input.btn.padding.lg.x}"
             }
           }
         },
         "check": {
-          "gutter" : { "value": "1.25rem", "type": "dimension", "source": "$form-check-input-gutter" },
+          "gutter": {
+            "source": "$form-check-input-gutter",
+            "$value": "1.25rem"
+          },
           "margin": {
             "x": {
-              "base": { "value": ".25rem", "type": "dimension", "source": "$form-check-input-margin-x" },
-              "inline": { "value": ".3125rem", "type": "dimension", "source": "$form-check-inline-input-margin-x" }
+              "base": {
+                "source": "$form-check-input-margin-x",
+                "$value": ".25rem"
+              },
+              "inline": {
+                "source": "$form-check-inline-input-margin-x",
+                "$value": ".3125rem"
+              }
             },
-            "y": { "value": ".3rem", "type": "dimension", "source": "$form-check-input-margin-y" }
+            "y": {
+              "source": "$form-check-input-margin-y",
+              "$value": ".3rem"
+            }
           }
         }
       },
       "text": {
         "margin": {
-          "top": { "value": ".25rem", "type": "dimension", "source": "$form-text-margin-top" }
+          "top": {
+            "source": "$form-text-margin-top",
+            "$value": ".25rem"
+          }
         }
       },
       "check": {
         "inline": {
           "margin": {
-            "x": { "value": ".75rem", "type": "dimension", "source": "$form-check-inline-margin-x" }
+            "x": {
+              "source": "$form-check-inline-margin-x",
+              "$value": ".75rem"
+            }
           }
         },
         "position": {
-          "axis": { "value": ".375rem", "type": "dimension", "source": "$form-check-position-axis" }
+          "axis": {
+            "source": "$form-check-position-axis",
+            "$value": ".375rem"
+          }
         }
       },
       "group": {
         "margin": {
-          "bottom": { "value": "1rem", "type": "dimension", "source": "$form-group-margin-bottom" }
+          "bottom": {
+            "source": "$form-group-margin-bottom",
+            "$value": "1rem"
+          }
         }
       },
       "control": {
-        "gutter": { "value": ".5rem", "type": "dimension", "source": "$custom-control-gutter" },
+        "gutter": {
+          "source": "$custom-control-gutter",
+          "$value": ".5rem"
+        },
         "spacer": {
-          "x": { "value": "1rem", "type": "dimension", "source": "$custom-control-spacer-x" }
+          "x": {
+            "source": "$custom-control-spacer-x",
+            "$value": "1rem"
+          }
         },
         "select": {
           "padding": {
             "y": {
               "base": {
-                "value": "{spacing.form.input.padding.y.base}",
-                "type": "dimension",
-                "source": "$custom-select-padding-y"
+                "source": "$custom-select-padding-y",
+                "$value": "{spacing.form.input.padding.y.base}"
               },
               "sm": {
-                "value": "{spacing.form.input.padding.y.sm}",
-                "type": "dimension",
-                "source": "$custom-select-padding-y-sm"
+                "source": "$custom-select-padding-y-sm",
+                "$value": "{spacing.form.input.padding.y.sm}"
               },
               "lg": {
-                "value": "{spacing.form.input.padding.y.lg}",
-                "type": "dimension",
-                "source": "$custom-select-padding-y-lg"
+                "source": "$custom-select-padding-y-lg",
+                "$value": "{spacing.form.input.padding.y.lg}"
               }
             },
             "x": {
               "base": {
-                "value": "{spacing.form.input.padding.x.base}",
-                "type": "dimension",
-                "source": "$custom-select-padding-x"
+                "source": "$custom-select-padding-x",
+                "$value": "{spacing.form.input.padding.x.base}"
               },
               "sm": {
-                "value": "{spacing.form.input.padding.x.sm}",
-                "type": "dimension",
-                "source": "$custom-select-padding-x-sm"
+                "source": "$custom-select-padding-x-sm",
+                "$value": "{spacing.form.input.padding.x.sm}"
               },
               "lg": {
-                "value": "{spacing.form.input.padding.x.lg}",
-                "type": "dimension",
-                "source": "$custom-select-padding-x-lg"
+                "source": "$custom-select-padding-x-lg",
+                "$value": "{spacing.form.input.padding.x.lg}"
               }
             }
           },
           "indicator": {
-            "padding": { "value": "1rem", "type": "dimension", "source": "$custom-select-indicator-padding" }
+            "padding": {
+              "source": "$custom-select-indicator-padding",
+              "$value": "1rem"
+            }
           },
           "feedback": {
             "icon": {
               "padding": {
                 "right": {
-                  "value": "calc((1em + 2 * {spacing.form.control.select.padding.y.base}) * 3 / 4 + {spacing.form.control.select.padding.x.base} + {spacing.form.control.select.indicator.padding})",
-                  "type": "dimension",
-                  "source": "$custom-select-feedback-icon-padding-right"
+                  "source": "$custom-select-feedback-icon-padding-right",
+                  "$value": "calc((1em + 2 * {spacing.form.control.select.padding.y.base}) * 3 / 4 + {spacing.form.control.select.padding.x.base} + {spacing.form.control.select.indicator.padding})"
                 }
               },
               "position": {
-                "value": "center right calc({spacing.form.control.select.padding.x.base} + {spacing.form.control.select.indicator.padding})",
-                "type": "dimension",
-                "source": "$custom-select-feedback-icon-position"
+                "source": "$custom-select-feedback-icon-position",
+                "$value": "center right calc({spacing.form.control.select.padding.x.base} + {spacing.form.control.select.indicator.padding})"
               }
             },
             "margin": {
               "top": {
-                "value": "{spacing.form.text.margin.top}",
-                "type": "dimension",
-                "source": "$form-feedback-margin-top"
+                "source": "$form-feedback-margin-top",
+                "$value": "{spacing.form.text.margin.top}"
               }
             },
             "tooltip": {
               "padding": {
-                "y": { "value": ".25rem", "type": "dimension", "source": "$form-feedback-tooltip-padding-y" },
-                "x": { "value": ".5rem", "type": "dimension", "source": "$form-feedback-tooltip-padding-x" }
+                "y": {
+                  "source": "$form-feedback-tooltip-padding-y",
+                  "$value": ".25rem"
+                },
+                "x": {
+                  "source": "$form-feedback-tooltip-padding-x",
+                  "$value": ".5rem"
+                }
               }
             }
           },
           "icon": {
-            "padding": { "value": ".5625rem", "type": "dimension", "source": "$select-icon-padding" }
+            "padding": {
+              "source": "$select-icon-padding",
+              "$value": ".5625rem"
+            }
           }
         },
         "file": {
           "padding": {
             "y": {
-              "value": "{spacing.form.input.padding.y.base}",
-              "type": "dimension",
-              "source": "$custom-file-padding-y"
+              "source": "$custom-file-padding-y",
+              "$value": "{spacing.form.input.padding.y.base}"
             },
             "x": {
-              "value": "{spacing.form.input.padding.x.base}",
-              "type": "dimension",
-              "source": "$custom-file-padding-x"
+              "source": "$custom-file-padding-x",
+              "$value": "{spacing.form.input.padding.x.base}"
             }
           }
         }

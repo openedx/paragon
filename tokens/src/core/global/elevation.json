@@ -1,19 +1,61 @@
 {
+  "$type": "ratio",
   "elevation": {
     "zindex": {
-      "0": { "value": 0, "type": "ratio", "description": "z-index of level 0." },
-      "200": { "value": 200, "type": "ratio", "description": "z-index of level 200." },
-      "400": { "value": 400, "type": "ratio", "description": "z-index of level 400." },
-      "600": { "value": 600, "type": "ratio", "description": "z-index of level 600." },
-      "800": { "value": 800, "type": "ratio", "description": "z-index of level 800." },
-      "1000": { "value": 1000, "type": "ratio", "description": "z-index of level 1000." },
-      "1200": { "value": 1200, "type": "ratio", "description": "z-index of level 1200." },
-      "1400": { "value": 1400, "type": "ratio", "description": "z-index of level 1400." },
-      "1600": { "value": 1600, "type": "ratio", "description": "z-index of level 1600." },
-      "1800": { "value": 1800, "type": "ratio", "description": "z-index of level 1800." },
-      "2000": { "value": 2000, "type": "ratio", "description": "z-index of level 2000." },
-      "sticky": { "value": 1020, "source": "$zindex-sticky", "type": "ratio", "description": "z-index for sticky element." },
-      "fixed": { "value": 1030, "source": "$zindex-fixed", "type": "ratio", "description": "z-index of for fixed element." }
+      "0": {
+        "$value": 0,
+        "$description": "z-index of level 0."
+      },
+      "200": {
+        "$value": 200,
+        "$description": "z-index of level 200."
+      },
+      "400": {
+        "$value": 400,
+        "$description": "z-index of level 400."
+      },
+      "600": {
+        "$value": 600,
+        "$description": "z-index of level 600."
+      },
+      "800": {
+        "$value": 800,
+        "$description": "z-index of level 800."
+      },
+      "1000": {
+        "$value": 1000,
+        "$description": "z-index of level 1000."
+      },
+      "1200": {
+        "$value": 1200,
+        "$description": "z-index of level 1200."
+      },
+      "1400": {
+        "$value": 1400,
+        "$description": "z-index of level 1400."
+      },
+      "1600": {
+        "$value": 1600,
+        "$description": "z-index of level 1600."
+      },
+      "1800": {
+        "$value": 1800,
+        "$description": "z-index of level 1800."
+      },
+      "2000": {
+        "$value": 2000,
+        "$description": "z-index of level 2000."
+      },
+      "sticky": {
+        "source": "$zindex-sticky",
+        "$value": 1020,
+        "$description": "z-index for sticky element."
+      },
+      "fixed": {
+        "source": "$zindex-fixed",
+        "$value": 1030,
+        "$description": "z-index of for fixed element."
+      }
     }
   }
 }

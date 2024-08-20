@@ -1,36 +1,67 @@
 {
+  "$type": "color",
   "color": {
     "alert": {
-      "title": { "value": "{color.black}", "type": "color", "source": "$alert-title-color" },
-      "content": { "value": "{color.gray.700}", "type": "color", "source": "$alert-content-color" },
+      "title": {
+        "source": "$alert-title-color",
+        "$value": "{color.black}"
+      },
+      "content": {
+        "source": "$alert-content-color",
+        "$value": "{color.gray.700}"
+      },
       "icon": {
         "success": {
-          "value": "{color.theme.default.success}", "type": "color", "source": "$alert-success-icon-color"
+          "source": "$alert-success-icon-color",
+          "$value": "{color.theme.default.success}"
         },
-        "info": { "value": "{color.theme.default.info}", "type": "color", "source": "$alert-info-icon-color" },
+        "info": {
+          "source": "$alert-info-icon-color",
+          "$value": "{color.theme.default.info}"
+        },
         "danger": {
-          "value": "{color.theme.default.danger}", "type": "color", "source": "$alert-danger-icon-color"
+          "source": "$alert-danger-icon-color",
+          "$value": "{color.theme.default.danger}"
         },
         "warning": {
-          "value": "{color.theme.default.warning}", "type": "color", "source": "$alert-warning-icon-color"
+          "source": "$alert-warning-icon-color",
+          "$value": "{color.theme.default.warning}"
         }
       },
       "bg": {
-        "success": { "value": "{color.theme.bg.success}", "type": "color", "source": "$alert-success-bg" },
-        "info": { "value": "{color.theme.bg.info}", "type": "color", "source": "$alert-info-bg" },
-        "danger": { "value": "{color.theme.bg.danger}", "type": "color", "source": "$alert-danger-bg" },
-        "warning": { "value": "{color.theme.bg.warning}", "type": "color", "source": "$alert-warning-bg" }
+        "success": {
+          "source": "$alert-success-bg",
+          "$value": "{color.theme.bg.success}"
+        },
+        "info": {
+          "source": "$alert-info-bg",
+          "$value": "{color.theme.bg.info}"
+        },
+        "danger": {
+          "source": "$alert-danger-bg",
+          "$value": "{color.theme.bg.danger}"
+        },
+        "warning": {
+          "source": "$alert-warning-bg",
+          "$value": "{color.theme.bg.warning}"
+        }
       },
       "border": {
         "success": {
-          "value": "{color.theme.border.success}", "type": "color", "source": "$alert-success-border-color"
+          "source": "$alert-success-border-color",
+          "$value": "{color.theme.border.success}"
         },
-        "info": { "value": "{color.theme.border.info}", "type": "color", "source": "$alert-info-border-color" },
+        "info": {
+          "source": "$alert-info-border-color",
+          "$value": "{color.theme.border.info}"
+        },
         "danger": {
-          "value": "{color.theme.border.danger}", "type": "color", "source": "$alert-danger-border-color"
+          "source": "$alert-danger-border-color",
+          "$value": "{color.theme.border.danger}"
         },
         "warning": {
-          "value": "{color.theme.border.warning}", "type": "color", "source": "$alert-warning-border-color"
+          "source": "$alert-warning-border-color",
+          "$value": "{color.theme.border.warning}"
         }
       }
     }

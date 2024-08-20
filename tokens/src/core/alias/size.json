@@ -1,15 +1,36 @@
 {
+  "$type": "dimension",
   "size": {
     "border": {
-      "width": { "value": "1px", "type": "dimension", "source": "$border-width", "description": "Default border width." },
+      "width": {
+        "source": "$border-width",
+        "$value": "1px",
+        "$description": "Default border width."
+      },
       "radius": {
-        "base": { "value": ".375rem", "type": "dimension", "source": "$border-radius", "description": "Default border radius." },
-        "lg": { "value": ".425rem", "type": "dimension", "source": "$border-radius-lg", "description": "Large border radius." },
-        "sm": { "value": ".25rem", "type": "dimension", "source": "$border-radius-sm", "description": "Small border radius." }
+        "base": {
+          "source": "$border-radius",
+          "$value": ".375rem",
+          "$description": "Default border radius."
+        },
+        "lg": {
+          "source": "$border-radius-lg",
+          "$value": ".425rem",
+          "$description": "Large border radius."
+        },
+        "sm": {
+          "source": "$border-radius-sm",
+          "$value": ".25rem",
+          "$description": "Small border radius."
+        }
       }
     },
     "rounded": {
-      "pill": { "value": "50rem", "type": "dimension", "source": "$rounded-pill", "description": "Pill border radius." }
+      "pill": {
+        "source": "$rounded-pill",
+        "$value": "50rem",
+        "$description": "Pill border radius."
+      }
     }
   }
 }

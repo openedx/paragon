@@ -1,24 +1,35 @@
 {
   "color": {
+    "$type": "color",
     "btn": {
-      "disabled-link": { "value": "{color.disabled}", "type": "color", "source": "$btn-link-disabled-color" }
+      "disabled-link": {
+        "source": "$btn-link-disabled-color",
+        "$value": "{color.disabled}"
+      }
     }
   },
-  "elevation":  {
+  "elevation": {
+    "$type": "shadow",
     "btn": {
       "box-shadow": {
         "base": {
-          "value": "none",
-          "type": "shadow",
-          "source": "$btn-box-shadow"
+          "source": "$btn-box-shadow",
+          "$value": "none"
         },
-        "active": { "value": "none", "type": "shadow", "source": "$btn-active-box-shadow" }
+        "active": {
+          "source": "$btn-active-box-shadow",
+          "$value": "none"
+        }
       }
     }
   },
   "other": {
+    "$type": "ratio",
     "btn": {
-      "disabled-opacity": { "value": ".65", "type": "ratio", "source": "$btn-disabled-opacity" }
+      "disabled-opacity": {
+        "source": "$btn-disabled-opacity",
+        "$value": ".65"
+      }
     }
   }
 }

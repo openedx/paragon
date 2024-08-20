@@ -1,23 +1,42 @@
 {
   "color": {
+    "$type": "color",
     "dropzone": {
       "error-wrapper": {
-        "value": "{color.danger.500}", "type": "color", "source": "$dropzone-error-wrapper-color"
+        "source": "$dropzone-error-wrapper-color",
+        "$value": "{color.danger.500}"
       },
       "restriction-msg": {
-        "value": "{color.gray.500}", "type": "color", "source": "$dropzone-restriction-msg-color"
+        "source": "$dropzone-restriction-msg-color",
+        "$value": "{color.gray.500}"
       },
       "border": {
-        "base": { "value": "{color.gray.500}", "type": "color", "source": "$dropzone-border-color-default" }
+        "base": {
+          "source": "$dropzone-border-color-default",
+          "$value": "{color.gray.500}"
+        }
       }
     }
   },
   "elevation": {
+    "$type": "shadow",
     "dropzone": {
-      "hover": { "value": "inset 0 0 0 2px {color.info.300}", "type": "shadow", "source": "$dropzone-box-shadow-hover" },
-      "focus": { "value": "inset 0 0 0 2px {color.info.300}", "type": "shadow", "source": "$dropzone-box-shadow-focus" },
-      "active": { "value": "inset 0 0 0 2px {color.primary.500}", "type": "shadow", "source": "$dropzone-box-shadow-active" },
-      "error": { "value": "inset 0 0 0 2px {color.danger.300}", "type": "shadow", "source": "$dropzone-box-shadow-error" }
+      "hover": {
+        "source": "$dropzone-box-shadow-hover",
+        "$value": "inset 0 0 0 2px {color.info.300}"
+      },
+      "focus": {
+        "source": "$dropzone-box-shadow-focus",
+        "$value": "inset 0 0 0 2px {color.info.300}"
+      },
+      "active": {
+        "source": "$dropzone-box-shadow-active",
+        "$value": "inset 0 0 0 2px {color.primary.500}"
+      },
+      "error": {
+        "source": "$dropzone-box-shadow-error",
+        "$value": "inset 0 0 0 2px {color.danger.300}"
+      }
     }
   }
 }

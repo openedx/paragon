@@ -1,16 +1,20 @@
 {
   "color": {
+    "$type": "color",
     "input": {
-      "btn-focus": { "value": "{color.bg.active}", "type": "color", "source": "$input-btn-focus-color" }
+      "btn-focus": {
+        "source": "$input-btn-focus-color",
+        "$value": "{color.bg.active}"
+      }
     }
   },
   "elevation": {
+    "$type": "shadow",
     "input": {
       "btn-focus": {
         "box-shadow": {
-          "value": "0 0 0 {size.input.btn.focus-width} {color.input.btn-focus}",
-          "type": "shadow",
-          "source": "$input-btn-focus-box-shadow"
+          "source": "$input-btn-focus-box-shadow",
+          "$value": "0 0 0 {size.input.btn.focus-width} {color.input.btn-focus}"
         }
       }
     }

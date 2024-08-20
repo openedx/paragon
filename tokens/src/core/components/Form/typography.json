@@ -4,38 +4,44 @@
       "input": {
         "font": {
           "family": {
-            "value": "{typography.input.btn.font.family}", "type": "fontFamily", "source": "$input-font-family"
+            "source": "$input-font-family",
+            "$value": "{typography.input.btn.font.family}",
+            "$type": "fontFamily"
           },
           "size": {
+            "$type": "dimension",
             "base": {
-              "value": "{typography.input.btn.font.size.base}", "type": "dimension", "source": "$input-font-size"
+              "source": "$input-font-size",
+              "$value": "{typography.input.btn.font.size.base}"
             },
             "sm": {
-              "value": "{typography.input.btn.font.size.sm}", "type": "dimension", "source": "$input-font-size-sm"
+              "source": "$input-font-size-sm",
+              "$value": "{typography.input.btn.font.size.sm}"
             },
             "lg": {
-              "value": "{typography.input.btn.font.size.lg}", "type": "dimension", "source": "$input-font-size-lg"
+              "source": "$input-font-size-lg",
+              "$value": "{typography.input.btn.font.size.lg}"
             }
           },
           "weight": {
-            "value": "{typography.font.weight.base}", "type": "fontWeight", "source": "$input-font-weight"
+            "source": "$input-font-weight",
+            "$value": "{typography.font.weight.base}",
+            "$type": "fontWeight"
           }
         },
         "line-height": {
+          "$type": "dimension",
           "base": {
-            "value": "{typography.input.btn.line-height.base}",
-            "type": "dimension",
-            "source": "$input-line-height"
+            "source": "$input-line-height",
+            "$value": "{typography.input.btn.line-height.base}"
           },
           "sm": {
-            "value": "{typography.input.btn.line-height.sm}",
-            "type": "dimension",
-            "source": "$input-line-height-sm"
+            "source": "$input-line-height-sm",
+            "$value": "{typography.input.btn.line-height.sm}"
           },
           "lg": {
-            "value": "{typography.input.btn.line-height.lg}",
-            "type": "dimension",
-            "source": "$input-line-height-lg"
+            "source": "$input-line-height-lg",
+            "$value": "{typography.input.btn.line-height.lg}"
           }
         }
       },
@@ -43,77 +49,75 @@
         "select": {
           "font": {
             "family": {
-              "value": "{typography.form.input.font.family}",
-              "type": "fontFamily",
-              "source": "$custom-select-font-family"
+              "source": "$custom-select-font-family",
+              "$value": "{typography.form.input.font.family}",
+              "$type": "fontFamily"
             },
             "size": {
+              "$type": "dimension",
               "base": {
-                "value": "{typography.form.input.font.size.base}",
-                "type": "dimension",
-                "source": "$custom-select-font-size"
+                "source": "$custom-select-font-size",
+                "$value": "{typography.form.input.font.size.base}"
               },
               "sm": {
-                "value": "{typography.form.input.font.size.sm}",
-                "type": "dimension",
-                "source": "$custom-select-font-size-sm"
+                "source": "$custom-select-font-size-sm",
+                "$value": "{typography.form.input.font.size.sm}"
               },
               "lg": {
-                "value": "{typography.form.input.font.size.lg}",
-                "type": "dimension",
-                "source": "$custom-select-font-size-lg"
+                "source": "$custom-select-font-size-lg",
+                "$value": "{typography.form.input.font.size.lg}"
               }
             },
             "weight": {
-              "value": "{typography.form.input.font.weight}",
-              "type": "fontWeight",
-              "source": "$custom-select-font-weight"
+              "source": "$custom-select-font-weight",
+              "$value": "{typography.form.input.font.weight}",
+              "$type": "fontWeight"
             }
           },
           "line-height": {
-            "value": "{typography.form.input.line-height.base}",
-            "type": "dimension",
-            "source": "$custom-select-line-height"
+            "source": "$custom-select-line-height",
+            "$value": "{typography.form.input.line-height.base}",
+            "$type": "dimension"
           }
         },
         "file": {
           "line-height": {
-            "value": "{typography.form.input.line-height.base}",
-            "type": "dimension",
-            "source": "$custom-file-line-height"
+            "source": "$custom-file-line-height",
+            "$value": "{typography.form.input.line-height.base}",
+            "$type": "dimension"
           },
           "font": {
-            "family": { "value": "{typography.form.input.font.family}",
-              "type": "fontFamily",
-              "source": "$custom-file-font-family" },
+            "family": {
+              "source": "$custom-file-font-family",
+              "$value": "{typography.form.input.font.family}",
+              "$type": "fontFamily"
+            },
             "weight": {
-              "value": "{typography.form.input.font.weight}",
-              "type": "fontWeight",
-              "source": "$custom-file-font-weight"
+              "source": "$custom-file-font-weight",
+              "$value": "{typography.form.input.font.weight}",
+              "$type": "fontWeight"
             }
           }
         }
       },
       "feedback": {
+        "$type": "dimension",
         "font": {
           "size": {
-            "value": "{typography.font.size.small.base}",
-            "type": "dimension",
-            "source": "$form-feedback-font-size"
+            "source": "$form-feedback-font-size",
+            "$value": "{typography.font.size.small.base}"
           }
         },
         "tooltip": {
           "font": {
             "size": {
-              "value": "{typography.font.size.sm}",
-              "type": "dimension",
-              "source": "$form-feedback-tooltip-font-size"
+              "source": "$form-feedback-tooltip-font-size",
+              "$value": "{typography.font.size.sm}"
             }
           },
           "line-height": {
-            "value": "{typography.line-height.base}",
-            "type": "dimension",
-            "source": "$form-feedback-tooltip-line-height"
+            "source": "$form-feedback-tooltip-line-height",
+            "$value": "{typography.line-height.base}"
           }
         }
       }

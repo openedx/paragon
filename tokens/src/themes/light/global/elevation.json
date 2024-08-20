@@ -1,199 +1,182 @@
 {
+  "$type": "shadow",
   "elevation": {
     "box-shadow": {
       "level": {
         "1": {
-          "value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$level-1-box-shadow",
-          "description": "Basic box shadow of level 1."
+          "$value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",
+          "$description": "Basic box shadow of level 1."
         },
         "2": {
-          "value": "0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$level-2-box-shadow",
-          "description": "Basic box shadow of level 2."
+          "$value": "0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15)",
+          "$description": "Basic box shadow of level 2."
         },
         "3": {
-          "value": "0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$level-3-box-shadow",
-          "description": "Basic box shadow of level 3."
+          "$value": "0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15)",
+          "$description": "Basic box shadow of level 3."
         },
         "4": {
-          "value": "0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$level-4-box-shadow",
-          "description": "Basic box shadow of level 4."
+          "$value": "0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15)",
+          "$description": "Basic box shadow of level 4."
         },
         "5": {
-          "value": "0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$level-5-box-shadow",
-          "description": "Basic box shadow of level 5."
+          "$value": "0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem rgba(0, 0, 0, .15)",
+          "$description": "Basic box shadow of level 5."
         }
       },
-      "base": { "value": "0 .125rem .25rem rgba(0, 0, 0, .3)", "type": "shadow", "source": "$box-shadow", "description": "Default box shadow." },
-      "sm": { "value": "0 .0625rem .125rem rgba(0, 0, 0, .2)", "type": "shadow", "source": "$box-shadow-sm", "description": "Small box shadow." },
-      "lg": { "value": "0 .25rem .5rem rgba(0, 0, 0, .3)", "type": "shadow", "source": "$box-shadow-lg", "description": "Large box shadow." },
+      "base": {
+        "source": "$box-shadow",
+        "$value": "0 .125rem .25rem rgba(0, 0, 0, .3)",
+        "$description": "Default box shadow."
+      },
+      "sm": {
+        "source": "$box-shadow-sm",
+        "$value": "0 .0625rem .125rem rgba(0, 0, 0, .2)",
+        "$description": "Small box shadow."
+      },
+      "lg": {
+        "source": "$box-shadow-lg",
+        "$value": "0 .25rem .5rem rgba(0, 0, 0, .3)",
+        "$description": "Large box shadow."
+      },
       "down": {
         "1": {
-          "value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-down-1",
-          "description": "Bottom box shadow of level 1."
+          "$value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",
+          "$description": "Bottom box shadow of level 1."
         },
         "2": {
-          "value": "0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-down-2",
-          "description": "Bottom box shadow of level 2."
+          "$value": "0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15)",
+          "$description": "Bottom box shadow of level 2."
         },
         "3": {
-          "value": "0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-down-3",
-          "description": "Bottom box shadow of level 3."
+          "$value": "0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15)",
+          "$description": "Bottom box shadow of level 3."
         },
         "4": {
-          "value": "0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-down-4",
-          "description": "Bottom box shadow of level 4."
+          "$value": "0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15)",
+          "$description": "Bottom box shadow of level 4."
         },
         "5": {
-          "value": "0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-down-5",
-          "description": "Bottom box shadow of level 5."
+          "$value": "0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem rgba(0, 0, 0, .15)",
+          "$description": "Bottom box shadow of level 5."
         }
       },
       "left": {
         "1": {
-          "value": "-.0625rem 0 .125rem rgba(0, 0, 0, .15), -.0625rem 0 .25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-left-1",
-          "description": "Left box shadow of level 1."
+          "$value": "-.0625rem 0 .125rem rgba(0, 0, 0, .15), -.0625rem 0 .25rem rgba(0, 0, 0, .15)",
+          "$description": "Left box shadow of level 1."
         },
         "2": {
-          "value": "-.125rem 0 .25rem rgba(0, 0, 0, .15), -.125rem 0 .5rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-left-2",
-          "description": "Left box shadow of level 2."
+          "$value": "-.125rem 0 .25rem rgba(0, 0, 0, .15), -.125rem 0 .5rem rgba(0, 0, 0, .15)",
+          "$description": "Left box shadow of level 2."
         },
         "3": {
-          "value": "-.5rem 0 1rem rgba(0, 0, 0, .15), -.25rem 0 .625rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-left-3",
-          "description": "Left box shadow of level 3."
+          "$value": "-.5rem 0 1rem rgba(0, 0, 0, .15), -.25rem 0 .625rem rgba(0, 0, 0, .15)",
+          "$description": "Left box shadow of level 3."
         },
         "4": {
-          "value": "-.625rem 0 1.25rem rgba(0, 0, 0, .15), -.5rem 0 1.25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-left-4",
-          "description": "Left box shadow of level 4."
+          "$value": "-.625rem 0 1.25rem rgba(0, 0, 0, .15), -.5rem 0 1.25rem rgba(0, 0, 0, .15)",
+          "$description": "Left box shadow of level 4."
         },
         "5": {
-          "value": "-1.25rem 0 2.5rem rgba(0, 0, 0, .15), -.5rem 0 3rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-left-5",
-          "description": "Left box shadow of level 5."
+          "$value": "-1.25rem 0 2.5rem rgba(0, 0, 0, .15), -.5rem 0 3rem rgba(0, 0, 0, .15)",
+          "$description": "Left box shadow of level 5."
         }
       },
       "up": {
         "1": {
-          "value": "0 -.0625rem .125rem rgba(0, 0, 0, .15), 0 -.0625rem .25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-up-1",
-          "description": "Top box shadow of level 1."
+          "$value": "0 -.0625rem .125rem rgba(0, 0, 0, .15), 0 -.0625rem .25rem rgba(0, 0, 0, .15)",
+          "$description": "Top box shadow of level 1."
         },
         "2": {
-          "value": "0 -.125rem .25rem rgba(0, 0, 0, .15), 0 -.125rem .5rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-up-2",
-          "description": "Top box shadow of level 2."
+          "$value": "0 -.125rem .25rem rgba(0, 0, 0, .15), 0 -.125rem .5rem rgba(0, 0, 0, .15)",
+          "$description": "Top box shadow of level 2."
         },
         "3": {
-          "value": "0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-up-3",
-          "description": "Top box shadow of level 3."
+          "$value": "0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15)",
+          "$description": "Top box shadow of level 3."
         },
         "4": {
-          "value": "0 -.625rem 1.25rem rgba(0, 0, 0, .15), 0 -.5rem 1.25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-up-4",
-          "description": "Top box shadow of level 4."
+          "$value": "0 -.625rem 1.25rem rgba(0, 0, 0, .15), 0 -.5rem 1.25rem rgba(0, 0, 0, .15)",
+          "$description": "Top box shadow of level 4."
         },
         "5": {
-          "value": "0 -1.25rem 2.5rem rgba(0, 0, 0, .15), 0 -.5rem 3rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-up-5",
-          "description": "Basic box shadow of level 5."
+          "$value": "0 -1.25rem 2.5rem rgba(0, 0, 0, .15), 0 -.5rem 3rem rgba(0, 0, 0, .15)",
+          "$description": "Basic box shadow of level 5."
         }
       },
       "right": {
         "1": {
-          "value": ".0625rem 0 .125rem rgba(0, 0, 0, .15), .0625rem 0 .25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-right-1",
-          "description": "Right box shadow of level 1."
+          "$value": ".0625rem 0 .125rem rgba(0, 0, 0, .15), .0625rem 0 .25rem rgba(0, 0, 0, .15)",
+          "$description": "Right box shadow of level 1."
         },
         "2": {
-          "value": ".125rem 0 .25rem rgba(0, 0, 0, .15), .125rem 0 .5rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-right-2",
-          "description": "Right box shadow of level 2."
+          "$value": ".125rem 0 .25rem rgba(0, 0, 0, .15), .125rem 0 .5rem rgba(0, 0, 0, .15)",
+          "$description": "Right box shadow of level 2."
         },
         "3": {
-          "value": ".5rem 0 1rem rgba(0, 0, 0, .15), .25rem 0 .625rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-right-3",
-          "description": "Right box shadow of level 3."
+          "$value": ".5rem 0 1rem rgba(0, 0, 0, .15), .25rem 0 .625rem rgba(0, 0, 0, .15)",
+          "$description": "Right box shadow of level 3."
         },
         "4": {
-          "value": ".625rem 0 1.25rem rgba(0, 0, 0, .15), .5rem 0 1.25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-right-4",
-          "description": "Right box shadow of level 4."
+          "$value": ".625rem 0 1.25rem rgba(0, 0, 0, .15), .5rem 0 1.25rem rgba(0, 0, 0, .15)",
+          "$description": "Right box shadow of level 4."
         },
         "5": {
-          "value": "1.25rem 0 2.5rem rgba(0, 0, 0, .15), .5rem 0 3rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-right-5",
-          "description": "Right box shadow of level 5."
+          "$value": "1.25rem 0 2.5rem rgba(0, 0, 0, .15), .5rem 0 3rem rgba(0, 0, 0, .15)",
+          "$description": "Right box shadow of level 5."
         }
       },
       "centered": {
         "1": {
-          "value": "0 0 .125rem rgba(0, 0, 0, .15), 0 0 .25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-centered-1",
-          "description": "Centered box shadow of level 1."
+          "$value": "0 0 .125rem rgba(0, 0, 0, .15), 0 0 .25rem rgba(0, 0, 0, .15)",
+          "$description": "Centered box shadow of level 1."
         },
         "2": {
-          "value": "0 0 .25rem rgba(0, 0, 0, .15), 0 0 .5rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-centered-2",
-          "description": "Centered box shadow of level 2."
+          "$value": "0 0 .25rem rgba(0, 0, 0, .15), 0 0 .5rem rgba(0, 0, 0, .15)",
+          "$description": "Centered box shadow of level 2."
         },
         "3": {
-          "value": "0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-centered-3",
-          "description": "Centered box shadow of level 3."
+          "$value": "0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15)",
+          "$description": "Centered box shadow of level 3."
         },
         "4": {
-          "value": "0 0 1.25rem rgba(0, 0, 0, .15), 0 0 1.25rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-centered-4",
-          "description": "Centered box shadow of level 4."
+          "$value": "0 0 1.25rem rgba(0, 0, 0, .15), 0 0 1.25rem rgba(0, 0, 0, .15)",
+          "$description": "Centered box shadow of level 4."
         },
         "5": {
-          "value": "0 0 2.5rem rgba(0, 0, 0, .15), 0 0 3rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
           "source": "$box-shadow-centered-5",
-          "description": "Centered box shadow of level 5."
+          "$value": "0 0 2.5rem rgba(0, 0, 0, .15), 0 0 3rem rgba(0, 0, 0, .15)",
+          "$description": "Centered box shadow of level 5."
         }
       }
     }

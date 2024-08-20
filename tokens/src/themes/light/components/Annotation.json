@@ -1,28 +1,59 @@
 {
   "elevation": {
+    "$type": "shadow",
     "annotation": {
       "box-shadow": {
-        "value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15))",
-        "type": "shadow",
-        "source": "$annotation-box-shadow"
+        "source": "$annotation-box-shadow",
+        "$value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15))"
       }
     }
   },
   "color": {
+    "$type": "color",
     "annotation": {
       "text": {
-        "success": { "value": "{color.white}", "type": "color", "source": "$annotation-success-color" },
-        "warning": { "value": "{color.black}", "type": "color", "source": "$annotation-warning-color" },
-        "error": { "value": "{color.white}", "type": "color", "source": "$annotation-error-color" },
-        "light": { "value": "{color.primary.500}", "type": "color", "source": "$annotation-light-color" },
-        "dark": { "value": "{color.white}", "type": "color", "source": "$annotation-dark-color" }
+        "success": {
+          "source": "$annotation-success-color",
+          "$value": "{color.white}"
+        },
+        "warning": {
+          "source": "$annotation-warning-color",
+          "$value": "{color.black}"
+        },
+        "error": {
+          "source": "$annotation-error-color",
+          "$value": "{color.white}"
+        },
+        "light": {
+          "source": "$annotation-light-color",
+          "$value": "{color.primary.500}"
+        },
+        "dark": {
+          "source": "$annotation-dark-color",
+          "$value": "{color.white}"
+        }
       },
       "bg": {
-        "success": { "value": "{color.success.base}", "type": "color", "source": "$annotation-success-bg" },
-        "warning": { "value": "{color.accent.b}", "type": "color", "source": "$annotation-warning-bg" },
-        "error": { "value": "{color.danger.base}", "type": "color", "source": "$annotation-error-bg" },
-        "light": { "value": "{color.white}", "type": "color", "source": "$annotation-light-bg" },
-        "dark": { "value": "{color.dark.base}", "type": "color", "source": "$annotation-dark-bg" }
+        "success": {
+          "source": "$annotation-success-bg",
+          "$value": "{color.success.base}"
+        },
+        "warning": {
+          "source": "$annotation-warning-bg",
+          "$value": "{color.accent.b}"
+        },
+        "error": {
+          "source": "$annotation-error-bg",
+          "$value": "{color.danger.base}"
+        },
+        "light": {
+          "source": "$annotation-light-bg",
+          "$value": "{color.white}"
+        },
+        "dark": {
+          "source": "$annotation-dark-bg",
+          "$value": "{color.dark.base}"
+        }
       }
     }
   }

@@ -1,22 +1,20 @@
 {
+  "$type": "color",
   "border-color": {
     "nav": {
       "tabs-link": {
         "border": {
           "active": {
-            "value": "{color.primary.500}",
-            "type": "color",
-            "source": "$nav-tabs-link-active-border-color"
+            "source": "$nav-tabs-link-active-border-color",
+            "$value": "{color.primary.500}"
           },
           "hover": {
-            "value": "transparent transparent {color.nav.tabs.base.border.base}",
-            "type": "color",
-            "source": "$nav-tabs-link-hover-border-color"
+            "source": "$nav-tabs-link-hover-border-color",
+            "$value": "transparent transparent {color.nav.tabs.base.border.base}"
           },
           "focus": {
-            "value": "{color.nav.tabs.base.link.active.text}",
-            "type": "color",
-            "source": "$nav-tabs-link-focus-border-color"
+            "source": "$nav-tabs-link-focus-border-color",
+            "$value": "{color.nav.tabs.base.link.active.text}"
           }
         }
       }
@@ -26,59 +24,115 @@
     "nav": {
       "link": {
         "text": {
-          "base": { "value": "{color.gray.700}", "type": "color", "source": "$nav-link-color" },
-          "disabled": { "value": "{color.gray.300}", "type": "color", "source": "$nav-link-disabled-color" }
+          "base": {
+            "source": "$nav-link-color",
+            "$value": "{color.gray.700}"
+          },
+          "disabled": {
+            "source": "$nav-link-disabled-color",
+            "$value": "{color.gray.300}"
+          }
         },
-        "border": { "value": "transparent", "type": "color", "source": "$nav-tabs-link-border-color" }
+        "border": {
+          "source": "$nav-tabs-link-border-color",
+          "$value": "transparent"
+        }
       },
       "tabs": {
         "base": {
           "text": {
-            "disabled": { "value": "{color.nav.tabs.base.bg.hover}", "type": "color", "source": "$nav-tabs-disabled-bg" }
+            "disabled": {
+              "source": "$nav-tabs-disabled-bg",
+              "$value": "{color.nav.tabs.base.bg.hover}"
+            }
           },
           "bg": {
-            "hover": { "value": "transparent", "type": "color", "source": "$nav-tabs-hover-bg" }
+            "hover": {
+              "source": "$nav-tabs-hover-bg",
+              "$value": "transparent"
+            }
           },
           "border": {
-            "base": { "value": "{color.light.400}", "type": "color", "source": "$nav-tabs-border-color" },
-            "focus": { "value": "{color.nav.tabs.base.bg.hover}", "type": "color", "source": "$nav-tabs-focus-border-color" }
+            "base": {
+              "source": "$nav-tabs-border-color",
+              "$value": "{color.light.400}"
+            },
+            "focus": {
+              "source": "$nav-tabs-focus-border-color",
+              "$value": "{color.nav.tabs.base.bg.hover}"
+            }
           },
           "link": {
             "hover": {
-              "bg": { "value": "{color.light.400}", "type": "color", "source": "$nav-tabs-link-hover-bg" }
+              "bg": {
+                "source": "$nav-tabs-link-hover-bg",
+                "$value": "{color.light.400}"
+              }
             },
             "active": {
-              "text": { "value": "{color.primary.500}", "type": "color", "source": "$nav-tabs-link-active-color" },
-              "bg": { "value": "transparent", "type": "color", "source": "$nav-tabs-link-active-bg" }
+              "text": {
+                "source": "$nav-tabs-link-active-color",
+                "$value": "{color.primary.500}"
+              },
+              "bg": {
+                "source": "$nav-tabs-link-active-bg",
+                "$value": "transparent"
+              }
             },
             "disabled": {
-              "border": { "value": "{color.nav.link.border}", "type": "color", "source": "$nav-tabs-link-disabled-border-color" }
+              "border": {
+                "source": "$nav-tabs-link-disabled-border-color",
+                "$value": "{color.nav.link.border}"
+              }
             }
           }
         },
         "inverse": {
           "link": {
             "text": {
-              "base": { "value": "{color.white}", "type": "color", "source": "$nav-inverse-tabs-link-color" }
-            },
-            "border": {
-              "bottom": { "value": "{color.dark.300}", "type": "color", "source": "$nav-inverse-tabs-link-border-bottom-color" },
-              "active": { "value": "{color.nav.tabs.inverse.link.text.base}", "type": "color", "source": "$nav-inverse-tabs-link-active-border-color" }
-            },
-            "bg": {
-              "hover": { "value": "{color.nav.tabs.inverse.link.border.bottom}", "type": "color", "source": "$nav-inverse-tabs-link-hover-bg" },
-              "active": { "value": "{color.nav.tabs.inverse.link.bg.hover}", "type": "color", "source": "$nav-inverse-tabs-link-active-bg" },
-              "focus": { "value": "{color.nav.tabs.inverse.link.text.base}", "type": "color", "source": "$nav-inverse-tabs-link-focus-bg" },
-              "active-hover": {
-                "value": "transparent",
-                "type": "color",
-                "source": "$nav-inverse-tabs-link-active-hover-bg"
+              "base": {
+                "source": "$nav-inverse-tabs-link-color",
+                "$value": "{color.white}"
               }
             },
-          "tab-content-color": { "value": "{color.nav.tabs.inverse.link.text.base}", "type": "color", "source": "$nav-inverse-tabs-tab-content-color" }
+            "border": {
+              "bottom": {
+                "source": "$nav-inverse-tabs-link-border-bottom-color",
+                "$value": "{color.dark.300}"
+              },
+              "active": {
+                "source": "$nav-inverse-tabs-link-active-border-color",
+                "$value": "{color.nav.tabs.inverse.link.text.base}"
+              }
+            },
+            "bg": {
+              "hover": {
+                "source": "$nav-inverse-tabs-link-hover-bg",
+                "$value": "{color.nav.tabs.inverse.link.border.bottom}"
+              },
+              "active": {
+                "source": "$nav-inverse-tabs-link-active-bg",
+                "$value": "{color.nav.tabs.inverse.link.bg.hover}"
+              },
+              "focus": {
+                "source": "$nav-inverse-tabs-link-focus-bg",
+                "$value": "{color.nav.tabs.inverse.link.text.base}"
+              },
+              "active-hover": {
+                "source": "$nav-inverse-tabs-link-active-hover-bg",
+                "$value": "transparent"
+              }
+            },
+            "tab-content-color": {
+              "source": "$nav-inverse-tabs-tab-content-color",
+              "$value": "{color.nav.tabs.inverse.link.text.base}"
+            }
           },
           "dropdown": {
-            "border": { "value": "{color.nav.tabs.inverse.link.bg.active-hover}", "type": "color", "source": "$nav-inverse-tabs-dropdown-border-color" }
+            "border": {
+              "source": "$nav-inverse-tabs-dropdown-border-color",
+              "$value": "{color.nav.tabs.inverse.link.bg.active-hover}"
+            }
           }
         }
       },
@@ -86,80 +140,123 @@
         "base": {
           "link": {
             "active": {
-              "text": { "value": "{color.active}", "type": "color", "source": "$nav-pills-link-active-color" },
-              "bg": { "value": "{color.bg.active}", "type": "color", "source": "$nav-pills-link-active-bg" },
-              "border": { "value": "{color.white}", "type": "color", "source": "$nav-pills-link-active-border-color" }
+              "text": {
+                "source": "$nav-pills-link-active-color",
+                "$value": "{color.active}"
+              },
+              "bg": {
+                "source": "$nav-pills-link-active-bg",
+                "$value": "{color.bg.active}"
+              },
+              "border": {
+                "source": "$nav-pills-link-active-border-color",
+                "$value": "{color.white}"
+              }
             },
-            "border": { "value": "{color.nav.tabs.base.border.base}", "type": "color", "source": "$nav-pills-link-border-color" }
+            "border": {
+              "source": "$nav-pills-link-border-color",
+              "$value": "{color.nav.tabs.base.border.base}"
+            }
           }
         },
         "inverse": {
           "link": {
             "text": {
-              "base": { "value": "{color.white}", "type": "color", "source": "$nav-inverse-pills-link-color" },
-              "focus": { "value": "{color.nav.pills.inverse.link.text.base}", "type": "color", "source": "$nav-inverse-pills-link-focus-color" },
-              "active": { "value": "{color.primary.500}", "type": "color", "source": "$nav-inverse-pills-link-active-color" },
-              "hover": { "value": "{color.nav.pills.inverse.link.text.base}", "type": "color", "source": "$nav-inverse-pills-link-hover-color" },
+              "base": {
+                "source": "$nav-inverse-pills-link-color",
+                "$value": "{color.white}"
+              },
+              "focus": {
+                "source": "$nav-inverse-pills-link-focus-color",
+                "$value": "{color.nav.pills.inverse.link.text.base}"
+              },
+              "active": {
+                "source": "$nav-inverse-pills-link-active-color",
+                "$value": "{color.primary.500}"
+              },
+              "hover": {
+                "source": "$nav-inverse-pills-link-hover-color",
+                "$value": "{color.nav.pills.inverse.link.text.base}"
+              },
               "active-focus": {
-                "value": "{color.nav.pills.inverse.link.text.active}",
-                "type": "color",
-                "source": "$nav-inverse-pills-link-active-focus-color"
+                "source": "$nav-inverse-pills-link-active-focus-color",
+                "$value": "{color.nav.pills.inverse.link.text.active}"
               },
               "active-hover": {
-                "value": "{color.nav.pills.inverse.link.text.base}",
-                "type": "color",
-                "source": "$nav-inverse-pills-link-active-hover-color"
+                "source": "$nav-inverse-pills-link-active-hover-color",
+                "$value": "{color.nav.pills.inverse.link.text.base}"
               }
             },
             "border": {
-              "base": { "value": "{color.dark.300}", "type": "color", "source": "$nav-inverse-pills-link-border-color" },
-              "active": { "value": "{color.nav.pills.inverse.link.text.base}", "type": "color", "source": "$nav-inverse-pills-link-active-border-color" },
+              "base": {
+                "source": "$nav-inverse-pills-link-border-color",
+                "$value": "{color.dark.300}"
+              },
+              "active": {
+                "source": "$nav-inverse-pills-link-active-border-color",
+                "$value": "{color.nav.pills.inverse.link.text.base}"
+              },
               "active-hover": {
-                "value": "{color.nav.pills.inverse.link.border.base}",
-                "type": "color",
-                "source": "$nav-inverse-pills-link-active-hover-border-color"
+                "source": "$nav-inverse-pills-link-active-hover-border-color",
+                "$value": "{color.nav.pills.inverse.link.border.base}"
               },
               "active-focus": {
-                "value": "{color.primary.base}",
-                "type": "color",
-                "source": "$nav-inverse-pills-link-active-focus-border-color"
+                "source": "$nav-inverse-pills-link-active-focus-border-color",
+                "$value": "{color.primary.base}"
               },
               "focus-hover": {
-                "value": "{color.nav.pills.inverse.link.border.active-focus}",
-                "type": "color",
-                "source": "$nav-inverse-pills-link-active-focus-hover-border-color"
+                "source": "$nav-inverse-pills-link-active-focus-hover-border-color",
+                "$value": "{color.nav.pills.inverse.link.border.active-focus}"
               }
             },
             "bg": {
-              "hover": { "value": "{color.nav.pills.inverse.link.border.base}", "type": "color", "source": "$nav-inverse-pills-link-hover-bg" },
-              "active": { "value": "{color.nav.pills.inverse.link.text.base}", "type": "color", "source": "$nav-inverse-pills-link-active-bg" },
+              "hover": {
+                "source": "$nav-inverse-pills-link-hover-bg",
+                "$value": "{color.nav.pills.inverse.link.border.base}"
+              },
+              "active": {
+                "source": "$nav-inverse-pills-link-active-bg",
+                "$value": "{color.nav.pills.inverse.link.text.base}"
+              },
               "active-hover": {
-                "value": "{color.nav.pills.inverse.link.border.base}",
-                "type": "color",
-                "source": "$nav-inverse-pills-link-active-hover-bg"
+                "source": "$nav-inverse-pills-link-active-hover-bg",
+                "$value": "{color.nav.pills.inverse.link.border.base}"
               },
               "active-focus-hover": {
-                "value": "{color.nav.pills.inverse.link.text.base}",
-                "type": "color",
-                "source": "$nav-inverse-pills-link-active-focus-hover-bg"
+                "source": "$nav-inverse-pills-link-active-focus-hover-bg",
+                "$value": "{color.nav.pills.inverse.link.text.base}"
               }
             }
           },
-          "tab-content-color": { "value": "{color.nav.pills.inverse.link.text.base}", "type": "color", "source": "$nav-inverse-pills-tab-content-color" }
+          "tab-content-color": {
+            "source": "$nav-inverse-pills-tab-content-color",
+            "$value": "{color.nav.pills.inverse.link.text.base}"
+          }
         }
       },
-      "divider": { "value": "{color.gray.100}", "type": "color", "source": "$nav-divider-color" },
+      "divider": {
+        "source": "$nav-divider-color",
+        "$value": "{color.gray.100}"
+      },
       "dark": {
-        "value": "{color.white}",
-        "type": "color",
         "source": "$navbar-dark-color",
-        "modify": [{ "type": "alpha", "amount": 0.5 }]
+        "modify": [
+          {
+            "type": "alpha",
+            "amount": 0.5
+          }
+        ],
+        "$value": "{color.white}"
       },
       "light": {
-        "value": "{color.black}",
-        "type": "color",
         "source": "$navbar-light-color",
-        "modify": [{ "type": "alpha", "amount": 0.5 }]
+        "modify": [
+          {
+            "type": "alpha",
+            "amount": 0.5
+          }
+        ],
+        "$value": "{color.black}"
       }
     }
   }

@@ -1,26 +1,36 @@
 {
   "color": {
+    "$type": "color",
     "data-table": {
       "bg": {
-        "base": { "value": "{color.bg.base}", "type": "color", "source": "$data-table-background-color" },
+        "base": {
+          "source": "$data-table-background-color",
+          "$value": "{color.bg.base}"
+        },
         "is-loading": {
-          "value": "{color.white}",
-          "type": "color",
           "source": "$data-table-is-loading-bg",
           "modify": [
             {
               "type": "alpha",
               "amount": 0.7
             }
-          ]
+          ],
+          "$value": "{color.white}"
         }
       },
-      "border": { "value": "{color.light.300}", "type": "color", "source": "$data-table-border-color" }
+      "border": {
+        "source": "$data-table-border-color",
+        "$value": "{color.light.300}"
+      }
     }
   },
   "elevation": {
+    "$type": "shadow",
     "data-table": {
-      "box-shadow": { "value": "{elevation.box-shadow.sm}", "type": "shadow", "source": "$data-table-box-shadow" }
+      "box-shadow": {
+        "source": "$data-table-box-shadow",
+        "$value": "{elevation.box-shadow.sm}"
+      }
     }
   }
 }

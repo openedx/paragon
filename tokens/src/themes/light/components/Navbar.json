@@ -1,133 +1,161 @@
 {
   "color": {
+    "$type": "color",
     "navbar": {
       "dark": {
         "text": {
-          "value": "{color.white}",
-          "type": "color",
           "source": "$navbar-dark-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.5
-          }]
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.5
+            }
+          ],
+          "$value": "{color.white}"
         },
         "hover": {
-          "value": "{color.white}",
-          "type": "color",
           "source": "$navbar-dark-hover-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.75
-          }]
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.75
+            }
+          ],
+          "$value": "{color.white}"
         },
-        "active": { "value": "{color.active}", "type": "color", "source": "$navbar-dark-active-color" },
+        "active": {
+          "source": "$navbar-dark-active-color",
+          "$value": "{color.active}"
+        },
         "disabled": {
-          "value": "{color.white}",
-          "type": "color",
           "source": "$navbar-dark-disabled-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.25
-          }]
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.25
+            }
+          ],
+          "$value": "{color.white}"
         },
         "toggler": {
           "border": {
-            "value": "{color.white}",
-            "type": "color",
             "source": "$navbar-dark-toggler-border-color",
-            "modify": [{
-              "type": "alpha",
-              "amount": 0.1
-            }]
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.white}"
           }
         },
         "brand": {
-          "text": { "value": "{color.navbar.dark.active}", "type": "color", "source": "$navbar-dark-brand-color" },
-          "hover": { "value": "{color.navbar.dark.active}", "type": "color", "source": "$navbar-dark-brand-hover-color" }
+          "text": {
+            "source": "$navbar-dark-brand-color",
+            "$value": "{color.navbar.dark.active}"
+          },
+          "hover": {
+            "source": "$navbar-dark-brand-hover-color",
+            "$value": "{color.navbar.dark.active}"
+          }
         }
       },
       "light": {
         "text": {
-          "value": "{color.black}",
-          "type": "color",
           "source": "$navbar-light-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.5
-          }]
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.5
+            }
+          ],
+          "$value": "{color.black}"
         },
-        "hover": { 
-          "value": "{color.black}",
-          "type": "color",
+        "hover": {
           "source": "$navbar-light-hover-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.7
-          }]
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.7
+            }
+          ],
+          "$value": "{color.black}"
         },
-        "active": { 
-          "value": "{color.black}",
-          "type": "color",
+        "active": {
           "source": "$navbar-light-active-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.9
-          }]
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.9
+            }
+          ],
+          "$value": "{color.black}"
         },
-        "disabled": { 
-          "value": "{color.black}",
-          "type": "color",
+        "disabled": {
           "source": "$navbar-light-disabled-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.3
-          }]
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.3
+            }
+          ],
+          "$value": "{color.black}"
         },
         "toggler": {
           "border": {
-            "value": "{color.black}",
-            "type": "color",
             "source": "$navbar-light-toggler-border-color",
-            "modify": [{
-              "type": "alpha",
-              "amount": 0.1
-            }]
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.black}"
           }
         },
         "brand": {
-          "text": { "value": "{color.navbar.light.active}", "type": "color", "source": "$navbar-light-brand-color" },
-          "hover": { "value": "{color.navbar.light.active}", "type": "color", "source": "$navbar-light-brand-hover-color" }
+          "text": {
+            "source": "$navbar-light-brand-color",
+            "$value": "{color.navbar.light.active}"
+          },
+          "hover": {
+            "source": "$navbar-light-brand-hover-color",
+            "$value": "{color.navbar.light.active}"
+          }
         }
       }
     }
   },
   "content": {
+    "$type": "file",
     "navbar": {
       "toggler": {
         "dark": {
           "icon-bg": {
-            "value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.dark.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
-            "type": "file",
             "source": "$navbar-dark-toggler-icon-bg",
             "outputReferences": false,
-            "modify": [{
-              "type": "str-replace",
-              "toReplace": "#",
-              "replaceWith": "%23"
-            }]
+            "modify": [
+              {
+                "type": "str-replace",
+                "toReplace": "#",
+                "replaceWith": "%23"
+              }
+            ],
+            "$value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.dark.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")"
           }
         },
         "light": {
           "icon-bg": {
-            "value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.light.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
-            "type": "file",
             "source": "$navbar-light-toggler-icon-bg",
             "outputReferences": false,
-            "modify": [{
-              "type": "str-replace",
-              "toReplace": "#",
-              "replaceWith": "%23"
-            }]
+            "modify": [
+              {
+                "type": "str-replace",
+                "toReplace": "#",
+                "replaceWith": "%23"
+              }
+            ],
+            "$value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.light.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")"
           }
         }
       }

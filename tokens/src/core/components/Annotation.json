@@ -1,25 +1,47 @@
 {
+  "$type": "dimension",
   "spacing": {
     "annotation": {
-      "padding": { "value": ".5rem", "type": "dimension", "source": "$annotation-padding" },
+      "padding": {
+        "source": "$annotation-padding",
+        "$value": ".5rem"
+      },
       "arrow-side": {
-        "margin": { "value": ".25rem", "type": "dimension", "source": "$annotation-arrow-side-margin" }
+        "margin": {
+          "source": "$annotation-arrow-side-margin",
+          "$value": ".25rem"
+        }
       }
     }
   },
   "typography": {
     "annotation": {
-      "font-size": { "value": "{typography.font.size.sm}", "type": "dimension", "source": "$annotation-font-size" },
-      "line-height": { "value": "{typography.line-height.sm}", "type": "dimension", "source": "$annotation-line-height" }
+      "font-size": {
+        "source": "$annotation-font-size",
+        "$value": "{typography.font.size.sm}"
+      },
+      "line-height": {
+        "source": "$annotation-line-height",
+        "$value": "{typography.line-height.sm}"
+      }
     }
   },
   "size": {
     "annotation": {
       "arrow-border": {
-        "width": { "value": ".5rem", "type": "dimension", "source": "$annotation-arrow-border-width" }
+        "width": {
+          "source": "$annotation-arrow-border-width",
+          "$value": ".5rem"
+        }
       },
-      "max-width": { "value": "18.75rem", "type": "dimension", "source": "$annotation-max-width" },
-      "border-radius": { "value": ".25rem", "type": "dimension", "source": "$annotation-border-radius" }
+      "max-width": {
+        "source": "$annotation-max-width",
+        "$value": "18.75rem"
+      },
+      "border-radius": {
+        "source": "$annotation-border-radius",
+        "$value": ".25rem"
+      }
     }
   }
 }

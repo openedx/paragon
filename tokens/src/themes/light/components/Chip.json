@@ -1,50 +1,74 @@
 {
   "color": {
+    "$type": "color",
     "chip": {
       "text": {
-        "light": { "value": "{color.black}", "type": "color", "source": "$chip-light-color" },
-        "dark": { "value": "{color.white}", "type": "color", "source": "$chip-dark-color" }
+        "light": {
+          "source": "$chip-light-color",
+          "$value": "{color.black}"
+        },
+        "dark": {
+          "source": "$chip-dark-color",
+          "$value": "{color.white}"
+        }
       },
       "bg": {
-        "light": { "value": "{color.white}", "type": "color", "source": "$chip-light-bg-color" },
-        "dark": { "value": "{color.primary.300}", "type": "color", "source": "$chip-dark-bg" }
+        "light": {
+          "source": "$chip-light-bg-color",
+          "$value": "{color.white}"
+        },
+        "dark": {
+          "source": "$chip-dark-bg",
+          "$value": "{color.primary.300}"
+        }
       },
       "border": {
         "base": {
-          "value": "{color.light.800}", "type": "color", "source": "$chip-border-color"
+          "source": "$chip-border-color",
+          "$value": "{color.light.800}"
         },
         "focus": {
           "selected": {
             "dark": {
-              "value": "{color.chip.outline.dark}", "type": "color", "source": "$chip-dark-selected-focus-border-color"
+              "source": "$chip-dark-selected-focus-border-color",
+              "$value": "{color.chip.outline.dark}"
             },
             "light": {
-              "value": "{color.dark.500}", "type": "color", "source": "$chip-light-selected-focus-border-color"
+              "source": "$chip-light-selected-focus-border-color",
+              "$value": "{color.dark.500}"
             }
           }
         }
       },
       "label": {
         "base": {
-          "value": "{color.primary.700}", "type": "color", "source": "$chip-label-color"
+          "source": "$chip-label-color",
+          "$value": "{color.primary.700}"
         },
         "dark": {
-          "value": "{color.chip.outline.dark}", "type": "color", "source": "$chip-dark-label-color"
+          "source": "$chip-dark-label-color",
+          "$value": "{color.chip.outline.dark}"
         }
       },
       "outline": {
         "dark": {
-          "value": "{color.white}", "type": "color", "source": "$chip-dark-outline-color"
+          "source": "$chip-dark-outline-color",
+          "$value": "{color.white}"
         },
         "light": {
-          "value": "{color.chip.label.base}", "type": "color", "source": "$chip-light-outline-color"
+          "source": "$chip-light-outline-color",
+          "$value": "{color.chip.label.base}"
         }
       }
     }
   },
   "other": {
+    "$type": "ratio",
     "chip": {
-      "opacity-disabled": { "value": ".3", "type": "ratio", "source": "$chip-disable-opacity" }
+      "opacity-disabled": {
+        "source": "$chip-disable-opacity",
+        "$value": ".3"
+      }
     }
   }
 }

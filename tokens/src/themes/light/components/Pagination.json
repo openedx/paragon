@@ -1,43 +1,90 @@
 {
   "color": {
+    "$type": "color",
     "pagination": {
       "text": {
-        "base": { "value": "{color.link.base}", "type": "color", "source": "$pagination-color" },
-        "inverse": { "value": "{color.white}", "type": "color", "source": "$pagination-color-inverse" },
-        "hover": { "value": "{color.link.hover}", "type": "color", "source": "$pagination-hover-color" },
-        "active": { "value": "{color.active}", "type": "color", "source": "$pagination-active-color" },
-        "disabled": { "value": "{color.disabled}", "type": "color", "source": "$pagination-disabled-color" }
+        "base": {
+          "source": "$pagination-color",
+          "$value": "{color.link.base}"
+        },
+        "inverse": {
+          "source": "$pagination-color-inverse",
+          "$value": "{color.white}"
+        },
+        "hover": {
+          "source": "$pagination-hover-color",
+          "$value": "{color.link.hover}"
+        },
+        "active": {
+          "source": "$pagination-active-color",
+          "$value": "{color.active}"
+        },
+        "disabled": {
+          "source": "$pagination-disabled-color",
+          "$value": "{color.disabled}"
+        }
       },
       "bg": {
-        "base": { "value": "{color.bg.base}", "type": "color", "source": "$pagination-bg" },
-        "hover": { "value": "{color.gray.100}", "type": "color", "source": "$pagination-hover-bg" },
-        "active": { "value": "{color.bg.active}", "type": "color", "source": "$pagination-active-bg" },
-        "disabled": { "value": "{color.white}", "type": "color", "source": "$pagination-disabled-bg" }
+        "base": {
+          "source": "$pagination-bg",
+          "$value": "{color.bg.base}"
+        },
+        "hover": {
+          "source": "$pagination-hover-bg",
+          "$value": "{color.gray.100}"
+        },
+        "active": {
+          "source": "$pagination-active-bg",
+          "$value": "{color.bg.active}"
+        },
+        "disabled": {
+          "source": "$pagination-disabled-bg",
+          "$value": "{color.white}"
+        }
       },
       "border": {
-        "base": { "value": "{color.gray.200}", "type": "color", "source": "$pagination-border-color" },
-        "hover": { "value": "{color.gray.200}", "type": "color", "source": "$pagination-hover-border-color" },
-        "active": { "value": "{color.pagination.bg.active}", "type": "color", "source": "$pagination-active-border-color" },
-        "disabled": { "value": "{color.gray.100}", "type": "color", "source": "$pagination-disabled-border-color" }
+        "base": {
+          "source": "$pagination-border-color",
+          "$value": "{color.gray.200}"
+        },
+        "hover": {
+          "source": "$pagination-hover-border-color",
+          "$value": "{color.gray.200}"
+        },
+        "active": {
+          "source": "$pagination-active-border-color",
+          "$value": "{color.pagination.bg.active}"
+        },
+        "disabled": {
+          "source": "$pagination-disabled-border-color",
+          "$value": "{color.gray.100}"
+        }
       },
       "focus": {
-        "base": { "value": "{color.primary.500}", "type": "color", "source": "$pagination-focus-color" },
-        "text": { "value": "{color.black}", "type": "color", "source": "$pagination-focus-color-text" }
+        "base": {
+          "source": "$pagination-focus-color",
+          "$value": "{color.primary.500}"
+        },
+        "text": {
+          "source": "$pagination-focus-color-text",
+          "$value": "{color.black}"
+        }
       },
       "dropdown": {
         "text-inverse": {
-          "value": "{color.white}", "type": "color", "source": "$pagination-dropdown-color-inverse"
+          "source": "$pagination-dropdown-color-inverse",
+          "$value": "{color.white}"
         }
       }
     }
   },
   "elevation": {
+    "$type": "shadow",
     "pagination": {
       "focus": {
         "box-shadow": {
-          "value": "{elevation.input.btn-focus.box-shadow}",
-          "type": "shadow",
-          "source": "$pagination-focus-box-shadow"
+          "source": "$pagination-focus-box-shadow",
+          "$value": "{elevation.input.btn-focus.box-shadow}"
         }
       }
     }

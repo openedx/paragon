@@ -1,31 +1,43 @@
 {
+  "$type": "color",
   "color": {
     "product-tour": {
       "checkpoint": {
-        "bg": { "value": "{color.light.300}", "type": "color", "source": "$checkpoint-background-color" },
-        "body": { "value": "{color.gray.700}", "type": "color", "source": "$checkpoint-body-color" },
-        "border": { "value": "{color.brand.base}", "type": "color", "source": "$checkpoint-border-color" },
-        "breadcrumb": { "value": "{color.primary.base}", "type": "color", "source": "$checkpoint-breadcrumb-color" },
+        "bg": {
+          "source": "$checkpoint-background-color",
+          "$value": "{color.light.300}"
+        },
+        "body": {
+          "source": "$checkpoint-body-color",
+          "$value": "{color.gray.700}"
+        },
+        "border": {
+          "source": "$checkpoint-border-color",
+          "$value": "{color.brand.base}"
+        },
+        "breadcrumb": {
+          "source": "$checkpoint-breadcrumb-color",
+          "$value": "{color.primary.base}"
+        },
         "box-shadow": {
-          "value": "{color.black}",
-          "type": "color",
           "source": "$checkpoint-box-shadow-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.3
-          }]
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.3
+            }
+          ],
+          "$value": "{color.black}"
         },
         "arrow": {
           "border": {
             "top": {
-              "value": "{color.product-tour.checkpoint.bg}",
-              "type": "color",
-              "source": "$checkpoint-arrow-border-top-color"
+              "source": "$checkpoint-arrow-border-top-color",
+              "$value": "{color.product-tour.checkpoint.bg}"
             },
             "transparent": {
-              "value": "transparent",
-              "type": "color",
-              "source": "$checkpoint-arrow-border-color-transparent"
+              "source": "$checkpoint-arrow-border-color-transparent",
+              "$value": "transparent"
             }
           }
         }

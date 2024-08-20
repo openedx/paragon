@@ -14,17 +14,17 @@ import { composeBreakpointName } from './utils.js';
 const colorTransform = (token, theme) => {
   const {
     name: tokenName,
-    value,
+    $value,
     original,
     modify = [],
   } = token;
   const reservedColorValues = ['inherit', 'initial', 'revert', 'unset', 'currentColor', 'none'];
 
-  if (reservedColorValues.includes(original.value)) {
-    return original.value;
+  if (reservedColorValues.includes(original.$value)) {
+    return original.$value;
   }
 
-  let color = chroma(value);
+  let color = chroma($value);
 
   if (modify && modify.length > 0) {
     modify.forEach((modifier) => {
@@ -76,19 +76,22 @@ const createCustomCSSVariables = ({
     : dictionary.allTokens;
 
   const variables = outputTokens.sort(sortByReference(dictionary)).map(token => {
-    let { value } = token;
+    let { $value } = token;
+
     const outputReferencesForToken = (token.original.outputReferences === false) ? false : options.outputReferences;
-    if (usesReferences(token.original.value) && outputReferencesForToken) {
-      const refs = getReferences(token.original.value, dictionary.tokens);
+
+    if (usesReferences(token.original.$value) && outputReferencesForToken) {
+      const refs = getReferences(token.original.$value, dictionary.tokens);
       refs.forEach(ref => {
-        value = value.replace(ref.value, `var(--${ref.name})`);
+        $value = $value.replace(ref.$value, `var(--${ref.name})`);
       });
     }
 
-    return `  --${token.name}: ${value};`;
+    return `  --${token.name}: ${$value};`;
   }).join('\n');
 
-  return `${fileHeader({ file })}:root {\n${variables}\n}\n`;
+  // return `${fileHeader({ file })}:root {\n${variables}\n}\n`;
+  return `:root {\n${variables}\n}\n`;
 };
 
 /**
@@ -98,7 +101,7 @@ StyleDictionary.registerTransform({
   name: 'color/sass-color-functions',
   transitive: true,
   type: 'value',
-  filter: (token) => token.attributes.category === 'color' || token.value?.toString().startsWith('#'),
+  filter: (token) => token.attributes.category === 'color' || token.$value?.toString().startsWith('#'),
   transform: (token) => colorTransform(token),
 });
 
@@ -111,9 +114,9 @@ StyleDictionary.registerTransform({
   type: 'value',
   filter: (token) => token.modify && token.modify[0].type === 'str-replace',
   transform: (token) => {
-    const { value, modify } = token;
+    const { $value, modify } = token;
     const { toReplace, replaceWith } = modify[0];
-    return value.replaceAll(toReplace, replaceWith);
+    return $value.replaceAll(toReplace, replaceWith);
   },
 });
 
@@ -136,7 +139,6 @@ StyleDictionary.registerFormat({
   name: 'css/utility-classes',
   format: async ({ dictionary, file }) => {
     const { utilities } = dictionary.tokens;
-
     if (!utilities) {
       return '';
     }
@@ -162,8 +164,8 @@ StyleDictionary.registerFormat({
       }
     });
 
-    const header = StyleDictionary.hooks.fileHeaders.customFileHeader({ file });
-    return header + utilityClasses;
+    // const header = StyleDictionary.hooks.fileHeaders.customFileHeader({ file });
+    return utilityClasses;
   },
 });
 
@@ -182,20 +184,20 @@ StyleDictionary.registerFormat({
 
     for (let i = 0; i < breakpoints.length; i++) {
       const [currentBreakpoint, nextBreakpoint] = [breakpoints[i], breakpoints[i + 1]];
-      customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'min')} (min-width: ${currentBreakpoint.value});\n`;
+      customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'min')} (min-width: ${currentBreakpoint.$value});\n`;
       if (nextBreakpoint) {
-        customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'max')} (max-width: ${nextBreakpoint.value});\n`;
+        customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'max')} (max-width: ${nextBreakpoint.$value});\n`;
       }
     }
 
-    return fileHeader({ file }) + customMediaVariables;
+    // return fileHeader({ file }) + customMediaVariables;
+    return customMediaVariables;
   },
 });
 
 /**
  * Custom file header for custom and built-in formatters.
  */
-// Регистрация кастомного fileHeader
 StyleDictionary.registerFileHeader({
   name: 'customFileHeader',
   fileHeader: (defaultMessages = []) => {

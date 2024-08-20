@@ -1,25 +1,46 @@
 {
   "color": {
+    "$type": "color",
     "search-field": {
       "border": {
-        "base": { "value": "{color.gray.500}", "type": "color", "source": "$search-border-color" },
-        "interaction": { "value": "{color.black}", "type": "color", "source": "$search-border-color-interaction" },
-        "focus": { "value": "{color.black}", "type": "color", "source": "$search-border-focus-color" }
+        "base": {
+          "source": "$search-border-color",
+          "$value": "{color.gray.500}"
+        },
+        "interaction": {
+          "source": "$search-border-color-interaction",
+          "$value": "{color.black}"
+        },
+        "focus": {
+          "source": "$search-border-focus-color",
+          "$value": "{color.black}"
+        }
       },
       "button": {
         "bg": {
-          "primary": { "value": "{color.primary.500}", "type": "color", "source": "$search-btn-primary-bg" },
-          "brand": { "value": "{color.brand.500}", "type": "color", "source": "$search-btn-brand-bg" }
+          "primary": {
+            "source": "$search-btn-primary-bg",
+            "$value": "{color.primary.500}"
+          },
+          "brand": {
+            "source": "$search-btn-brand-bg",
+            "$value": "{color.brand.500}"
+          }
         }
       },
       "form-bg": {
-        "value": "{color.white}", "type": "color", "source": "$search-form-background-color"
+        "source": "$search-form-background-color",
+        "$value": "{color.white}"
       }
     }
   },
   "other": {
+    "$type": "ratio",
     "search-field": {
-      "disabled-opacity": { "value": ".3", "type": "ratio", "source": "$search-disabled-opacity" }
+      "disabled-opacity": {
+        "source": "$search-disabled-opacity",
+        "$value": ".3"
+      }
     }
   }
 }
