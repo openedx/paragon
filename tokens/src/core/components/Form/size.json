@@ -2,224 +2,301 @@
   "size": {
     "form": {
       "input": {
+        "$type": "dimension",
         "height": {
           "base": {
-            "value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2 + {size.form.input.height.border})",
-            "type": "dimension",
-            "source": "$input-height"
+            "source": "$input-height",
+            "$value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2 + {size.form.input.height.border})"
           },
           "sm": {
-            "value": "calc({typography.form.input.line-height.sm} * 1em + {spacing.input.btn.padding.sm.y} * 2 + {size.form.input.height.border})",
-            "type": "dimension",
-            "source": "$input-height-sm"
+            "source": "$input-height-sm",
+            "$value": "calc({typography.form.input.line-height.sm} * 1em + {spacing.input.btn.padding.sm.y} * 2 + {size.form.input.height.border})"
           },
           "lg": {
-            "value": "calc({typography.form.input.line-height.lg} * 1em + {spacing.input.btn.padding.lg.y} * 2 + {size.form.input.height.border})",
-            "type": "dimension",
-            "source": "$input-height-lg"
+            "source": "$input-height-lg",
+            "$value": "calc({typography.form.input.line-height.lg} * 1em + {spacing.input.btn.padding.lg.y} * 2 + {size.form.input.height.border})"
           },
           "inner": {
             "base": {
-              "value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2)",
-              "type": "dimension",
-              "source": "$input-height-inner"
+              "source": "$input-height-inner",
+              "$value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2)"
             },
             "half": {
-              "value": "calc({typography.form.input.line-height.base} * .5em + {spacing.form.input.padding.y.base})",
-              "type": "dimension",
-              "source": "$input-height-inner-half"
+              "source": "$input-height-inner-half",
+              "$value": "calc({typography.form.input.line-height.base} * .5em + {spacing.form.input.padding.y.base})"
             },
             "quarter": {
-              "value": "calc({typography.form.input.line-height.base} * .25em + calc({spacing.form.input.padding.y.base} / 2))",
-              "type": "dimension",
-              "source": "$input-height-inner-quarter"
+              "source": "$input-height-inner-quarter",
+              "$value": "calc({typography.form.input.line-height.base} * .25em + calc({spacing.form.input.padding.y.base} / 2))"
             }
           },
           "border": {
-            "value": "calc({size.form.input.width.border} * 2)",
-            "type": "dimension",
-            "source": "$input-height-border"
+            "source": "$input-height-border",
+            "$value": "calc({size.form.input.width.border} * 2)"
           }
         },
         "width": {
-          "hover": { "value": "0.063rem", "type": "dimension", "source": "$input-hover-width" },
-          "focus": { "value": "0.063rem", "type": "dimension", "source": "$input-focus-width" },
+          "hover": {
+            "source": "$input-hover-width",
+            "$value": "0.063rem"
+          },
+          "focus": {
+            "source": "$input-focus-width",
+            "$value": "0.063rem"
+          },
           "border": {
-            "value": "{size.input.btn.border-width}", "type": "dimension", "source": "$input-border-width"
+            "source": "$input-border-width",
+            "$value": "{size.input.btn.border-width}"
           }
         },
         "radius": {
           "border": {
-            "base": { "value": "{size.border.radius.base}", "type": "dimension", "source": "$input-border-radius" },
-            "lg": { "value": "{size.border.radius.lg}", "type": "dimension", "source": "$input-border-radius-lg" },
-            "sm": { "value": "{size.border.radius.sm}", "type": "dimension", "source": "$input-border-radius-sm" }
+            "base": {
+              "source": "$input-border-radius",
+              "$value": "{size.border.radius.base}"
+            },
+            "lg": {
+              "source": "$input-border-radius-lg",
+              "$value": "{size.border.radius.lg}"
+            },
+            "sm": {
+              "source": "$input-border-radius-sm",
+              "$value": "{size.border.radius.sm}"
+            }
           }
         }
       },
       "control": {
         "indicator": {
-          "base": { "value": "1.25rem", "type": "dimension", "source": "$custom-control-indicator-size" },
-          "bg": { "value": "100%", "type": "percentage", "source": "$custom-control-indicator-bg-size" },
+          "base": {
+            "source": "$custom-control-indicator-size",
+            "$value": "1.25rem",
+            "$type": "dimension"
+          },
+          "bg": {
+            "source": "$custom-control-indicator-bg-size",
+            "$value": "100%",
+            "$type": "percentage"
+          },
           "border": {
-            "width": { "value": "0.125rem", "type": "dimension", "source": "$custom-control-indicator-border-width" }
+            "$type": "dimension",
+            "width": {
+              "source": "$custom-control-indicator-border-width",
+              "$value": "0.125rem"
+            }
           }
         },
         "switch": {
+          "$type": "dimension",
           "width": {
-            "value": "calc({size.form.control.indicator.base} * 1.75)",
-            "type": "dimension",
-            "source": "$custom-switch-width"
+            "source": "$custom-switch-width",
+            "$value": "calc({size.form.control.indicator.base} * 1.75)"
           },
           "indicator": {
             "base": {
-              "value": "calc({size.form.control.indicator.base} - {size.form.control.indicator.border.width} * 4)",
-              "type": "dimension",
-              "source": "$custom-switch-indicator-size"
+              "source": "$custom-switch-indicator-size",
+              "$value": "calc({size.form.control.indicator.base} - {size.form.control.indicator.border.width} * 4)"
             },
             "border": {
               "radius": {
-                "value": "calc({size.form.control.indicator.base} / 2)",
-                "type": "dimension",
-                "source": "$custom-switch-indicator-border-radius"
+                "source": "$custom-switch-indicator-border-radius",
+                "$value": "calc({size.form.control.indicator.base} / 2)"
               }
             }
           }
         },
         "select": {
+          "$type": "dimension",
           "height": {
             "base": {
-              "value": "{size.form.input.height.base}", "type": "dimension", "source": "$custom-select-height"
+              "source": "$custom-select-height",
+              "$value": "{size.form.input.height.base}"
             },
             "lg": {
-              "value": "{size.form.input.height.lg}", "type": "dimension", "source": "$custom-select-height-lg"
+              "source": "$custom-select-height-lg",
+              "$value": "{size.form.input.height.lg}"
             },
             "sm": {
-              "value": "{size.form.input.height.sm}", "type": "dimension", "source": "$custom-select-height-sm"
+              "source": "$custom-select-height-sm",
+              "$value": "{size.form.input.height.sm}"
             }
           },
           "feedback": {
             "icon": {
-              "value": "{size.form.input.height.inner.half} {size.form.input.height.inner.half}",
-              "type": "dimension",
-              "source": "$custom-select-feedback-icon-size"
+              "source": "$custom-select-feedback-icon-size",
+              "$value": "{size.form.input.height.inner.half} {size.form.input.height.inner.half}"
             }
           },
           "border": {
             "width": {
               "base": {
-                "value": "{size.form.input.width.border}",
-                "type": "dimension",
-                "source": "$custom-select-border-width"
+                "source": "$custom-select-border-width",
+                "$value": "{size.form.input.width.border}"
               }
             },
             "radius": {
-              "value": "{size.border.radius.base}", "type": "dimension", "source": "$custom-select-border-radius"
+              "source": "$custom-select-border-radius",
+              "$value": "{size.border.radius.base}"
             }
           }
         },
         "range": {
           "track": {
-            "width": { "value": "100%", "type": "percentage", "source": "$custom-range-track-width" },
-            "height": { "value": ".5rem", "type": "dimension", "source": "$custom-range-track-height" },
+            "width": {
+              "source": "$custom-range-track-width",
+              "$value": "100%",
+              "$type": "percentage"
+            },
+            "height": {
+              "source": "$custom-range-track-height",
+              "$value": ".5rem",
+              "$type": "dimension"
+            },
             "border": {
-              "radius": { "value": "1rem", "type": "dimension", "source": "$custom-range-track-border-radius" }
+              "$type": "dimension",
+              "radius": {
+                "source": "$custom-range-track-border-radius",
+                "$value": "1rem"
+              }
             }
           },
           "thumb": {
-            "width": { "value": "1rem", "type": "dimension", "source": "$custom-range-thumb-width" },
+            "$type": "dimension",
+            "width": {
+              "source": "$custom-range-thumb-width",
+              "$value": "1rem"
+            },
             "height": {
-              "value": "{size.form.control.range.thumb.width}",
-              "type": "dimension",
-              "source": "$custom-range-thumb-height"
+              "source": "$custom-range-thumb-height",
+              "$value": "{size.form.control.range.thumb.width}"
             },
             "border": {
-              "base": { "value": "0", "type": "dimension", "source": "$custom-range-thumb-border" },
-              "radius": { "value": "1rem", "type": "dimension", "source": "$custom-range-thumb-border-radius" }
+              "base": {
+                "source": "$custom-range-thumb-border",
+                "$value": "0"
+              },
+              "radius": {
+                "source": "$custom-range-thumb-border-radius",
+                "$value": "1rem"
+              }
             },
             "focus": {
               "width": {
-                "value": "{size.form.input.width.focus}",
-                "type": "dimension",
-                "source": "$custom-range-thumb-focus-box-shadow-width"
+                "source": "$custom-range-thumb-focus-box-shadow-width",
+                "$value": "{size.form.input.width.focus}"
               }
             }
           }
         },
         "file": {
+          "$type": "dimension",
           "width": {
-            "value": "{size.form.input.width.border}", "type": "dimension", "source": "$custom-file-border-width"
+            "source": "$custom-file-border-width",
+            "$value": "{size.form.input.width.border}"
           },
           "height": {
             "base": {
-              "value": "{size.form.input.height.base}", "type": "dimension", "source": "$custom-file-height"
+              "source": "$custom-file-height",
+              "$value": "{size.form.input.height.base}"
             },
             "inner": {
-              "value": "{size.form.input.height.inner.base}",
-              "type": "dimension",
-              "source": "$custom-file-height-inner"
+              "source": "$custom-file-height-inner",
+              "$value": "{size.form.input.height.inner.base}"
             }
           },
           "border": {
             "radius": {
-              "value": "{size.form.input.radius.border.base}",
-              "type": "dimension",
-              "source": "$custom-file-border-radius"
+              "source": "$custom-file-border-radius",
+              "$value": "{size.form.input.radius.border.base}"
             }
           }
         },
         "icon": {
-          "width": { "value": "2rem", "type": "dimension", "source": "$form-control-icon-width" }
+          "$type": "dimension",
+          "width": {
+            "source": "$form-control-icon-width",
+            "$value": "2rem"
+          }
         },
         "border": {
           "checkbox": {
+            "$type": "dimension",
             "indicator": {
-              "radius": { "value": "0", "type": "dimension", "source": "$custom-checkbox-indicator-border-radius" }
+              "radius": {
+                "source": "$custom-checkbox-indicator-border-radius",
+                "$value": "0"
+              }
             }
           },
           "radio": {
+            "$type": "percentage",
             "indicator": {
-              "radius": { "value": "50%", "type": "percentage", "source": "$custom-radio-indicator-border-radius" }
+              "radius": {
+                "source": "$custom-radio-indicator-border-radius",
+                "$value": "50%"
+              }
             }
           }
         }
       },
       "grid": {
-        "gutter-width": { "value": "0.625rem", "type": "dimension", "source": "$form-grid-gutter-width" }
+        "$type": "dimension",
+        "gutter-width": {
+          "source": "$form-grid-gutter-width",
+          "$value": "0.625rem"
+        }
       },
       "autosuggest": {
+        "$type": "dimension",
         "icon": {
-          "width": { "value": "2.4rem", "type": "dimension", "source": "$form-autosuggest-icon-width" },
+          "width": {
+            "source": "$form-autosuggest-icon-width",
+            "$value": "2.4rem"
+          },
           "height": {
-            "value": "{size.form.autosuggest.icon.width}", "type": "dimension", "source": "$form-autosuggest-icon-height"
+            "source": "$form-autosuggest-icon-height",
+            "$value": "{size.form.autosuggest.icon.width}"
           }
         },
         "spinner": {
-          "width": { "value": "1.25rem", "type": "dimension", "source": "$form-autosuggest-spinner-width" },
+          "width": {
+            "source": "$form-autosuggest-spinner-width",
+            "$value": "1.25rem"
+          },
           "height": {
-            "value": "{size.form.autosuggest.spinner.width}",
-            "type": "dimension",
-            "source": "$form-autosuggest-spinner-height"
+            "source": "$form-autosuggest-spinner-height",
+            "$value": "{size.form.autosuggest.spinner.width}"
           }
         },
         "border": {
-          "width": { "value": ".125rem", "type": "dimension", "source": "$form-autosuggest-border-width" }
+          "width": {
+            "source": "$form-autosuggest-border-width",
+            "$value": ".125rem"
+          }
         }
       },
       "border": {
+        "$type": "dimension",
         "radius": {
           "check": {
-            "focus": { "value": ".0625rem", "type": "dimension", "source": "$form-check-focus-border-radius" }
+            "focus": {
+              "source": "$form-check-focus-border-radius",
+              "$value": ".0625rem"
+            }
           },
-          "width": { "value": ".125rem", "type": "dimension", "source": "$form-check-border-width" }
+          "width": {
+            "source": "$form-check-border-width",
+            "$value": ".125rem"
+          }
         }
       },
       "feedback": {
+        "$type": "dimension",
         "tooltip": {
           "border": {
             "radius": {
-              "value": "{size.border.radius.base}",
-              "type": "dimension",
-              "source": "$form-feedback-tooltip-border-radius"
+              "source": "$form-feedback-tooltip-border-radius",
+              "$value": "{size.border.radius.base}"
             }
           }
         }

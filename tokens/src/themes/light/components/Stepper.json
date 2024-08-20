@@ -1,31 +1,44 @@
 {
+  "$type": "color",
   "color": {
     "stepper": {
       "header": {
-        "bg": { 
-          "base": { "value": "transparent", "type": "color", "source": "$stepper-header-bg" },
-          "line": { "value": "{color.light.base}", "type": "color", "source": "$stepper-header-line-bg" }
+        "bg": {
+          "base": {
+            "source": "$stepper-header-bg",
+            "$value": "transparent"
+          },
+          "line": {
+            "source": "$stepper-header-line-bg",
+            "$value": "{color.light.base}"
+          }
         },
         "step": {
           "base": {
-            "value": "{color.primary.base}", "type": "color", "source": "$stepper-header-step-color"
+            "source": "$stepper-header-step-color",
+            "$value": "{color.primary.base}"
           },
           "bg": {
             "base": {
-              "value": "{color.stepper.header.bg.base}", "type": "color", "source": "$stepper-header-step-bg"
+              "source": "$stepper-header-step-bg",
+              "$value": "{color.stepper.header.bg.base}"
             },
             "active": {
-              "value": "{color.gray.500}", "type": "color", "source": "$stepper-header-active-step-bg"
+              "source": "$stepper-header-active-step-bg",
+              "$value": "{color.gray.500}"
             }
           },
-          "border": { "value": "none", "type": "color", "source": "$stepper-header-step-border" },
+          "border": {
+            "source": "$stepper-header-step-border",
+            "$value": "none"
+          },
           "bubble-error": {
-            "value": "{color.danger.base}", "type": "color", "source": "$stepper-header-step-error-bubble-color"
+            "source": "$stepper-header-step-error-bubble-color",
+            "$value": "{color.danger.base}"
           },
           "description-error": {
-            "value": "{color.stepper.header.step.bubble-error}", 
-            "type": "color", 
-            "source": "$stepper-header-step-error-description-color"
+            "source": "$stepper-header-step-error-description-color",
+            "$value": "{color.stepper.header.step.bubble-error}"
           }
         }
       }

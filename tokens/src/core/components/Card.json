@@ -1,86 +1,162 @@
 {
+  "$type": "dimension",
   "spacing": {
     "card": {
       "spacer": {
-        "x": { "value": "1.25rem", "type": "dimension", "source": "$card-spacer-x" },
-        "y": { "value": ".75rem", "type": "dimension", "source": "$card-spacer-y" }
+        "x": {
+          "source": "$card-spacer-x",
+          "$value": "1.25rem"
+        },
+        "y": {
+          "source": "$card-spacer-y",
+          "$value": ".75rem"
+        }
       },
       "margin": {
-        "group": { "value": "12px", "type": "dimension", "source": "$card-group-margin" },
-        "deck": { "value": "{spacing.card.margin.group}", "type": "dimension", "source": "$card-deck-margin" },
-        "deck-bottom": { "value": "{spacing.spacer.3}", "type": "dimension", "source": "$card-deck-margin-bottom" },
-        "grid": { "value": "{spacing.card.margin.group}", "type": "dimension", "source": "$card-grid-margin" },
-        "grid-bottom": { "value": "{spacing.spacer.3}", "type": "dimension", "source": "$card-grid-margin-bottom" }
+        "group": {
+          "source": "$card-group-margin",
+          "$value": "12px"
+        },
+        "deck": {
+          "source": "$card-deck-margin",
+          "$value": "{spacing.card.margin.group}"
+        },
+        "deck-bottom": {
+          "source": "$card-deck-margin-bottom",
+          "$value": "{spacing.spacer.3}"
+        },
+        "grid": {
+          "source": "$card-grid-margin",
+          "$value": "{spacing.card.margin.group}"
+        },
+        "grid-bottom": {
+          "source": "$card-grid-margin-bottom",
+          "$value": "{spacing.spacer.3}"
+        }
       },
       "columns": {
-        "margin": { "value": "{spacing.card.spacer.y}", "type": "dimension", "source": "$card-columns-margin" },
-        "count": { "value": "3", "type": "dimension", "source": "$card-columns-count" },
-        "gap": { "value": "1.25rem", "type": "dimension", "source": "$card-columns-gap" }
+        "margin": {
+          "source": "$card-columns-margin",
+          "$value": "{spacing.card.spacer.y}"
+        },
+        "count": {
+          "source": "$card-columns-count",
+          "$value": "3"
+        },
+        "gap": {
+          "source": "$card-columns-gap",
+          "$value": "1.25rem"
+        }
       },
       "footer": {
-        "action-gap": { "value": ".5rem", "type": "dimension", "source": "$card-footer-actions-gap" }
+        "action-gap": {
+          "source": "$card-footer-actions-gap",
+          "$value": ".5rem"
+        }
       },
       "loading-skeleton": {
-        "spacer": { "value": ".313rem", "type": "dimension", "source": "$loading-skeleton-spacer" }
+        "spacer": {
+          "source": "$loading-skeleton-spacer",
+          "$value": ".313rem"
+        }
       },
       "logo": {
         "left-offset": {
-          "base": { "value": "1.5rem", "type": "dimension", "source": "$card-logo-left-offset" },
-          "horizontal": { "value": ".4375rem", "type": "dimension", "source": "$card-logo-left-offset-horizontal" }
+          "base": {
+            "source": "$card-logo-left-offset",
+            "$value": "1.5rem"
+          },
+          "horizontal": {
+            "source": "$card-logo-left-offset-horizontal",
+            "$value": ".4375rem"
+          }
         },
         "bottom-offset": {
-          "base": { "value": "1rem", "type": "dimension", "source": "$card-logo-bottom-offset" },
-          "horizontal": { "value": ".4375rem", "type": "dimension", "source": "$card-logo-bottom-offset-horizontal" }
+          "base": {
+            "source": "$card-logo-bottom-offset",
+            "$value": "1rem"
+          },
+          "horizontal": {
+            "source": "$card-logo-bottom-offset-horizontal",
+            "$value": ".4375rem"
+          }
         }
       },
       "focus": {
-        "border-offset": { "value": "5px", "type": "dimension", "source": "$card-focus-border-offset" }
+        "border-offset": {
+          "source": "$card-focus-border-offset",
+          "$value": "5px"
+        }
       }
     }
   },
   "size": {
     "card": {
       "border": {
-        "width": { "value": "{size.border.width}", "type": "dimension", "source": "$card-border-width" },
+        "width": {
+          "source": "$card-border-width",
+          "$value": "{size.border.width}"
+        },
         "radius": {
-          "base": { "value": "{size.border.radius.base}", "type": "dimension", "source": "$card-border-radius" },
-          "logo": { "value": ".25rem", "type": "dimension", "source": "$card-logo-border-radius" },
+          "base": {
+            "source": "$card-border-radius",
+            "$value": "{size.border.radius.base}"
+          },
+          "logo": {
+            "source": "$card-logo-border-radius",
+            "$value": ".25rem"
+          },
           "inner": {
-            "value": "calc({size.card.border.radius.base} - {size.card.border.width})",
-            "type": "dimension",
-            "source": "$card-inner-border-radius"
+            "source": "$card-inner-border-radius",
+            "$value": "calc({size.card.border.radius.base} - {size.card.border.width})"
           }
         }
       },
       "focus": {
         "border": {
-          "width": { "value": "2px", "type": "dimension", "source": "$card-focus-border-width" },
+          "width": {
+            "source": "$card-focus-border-width",
+            "$value": "2px"
+          },
           "radius": {
-            "value": "calc({spacing.card.focus.border-offset} + {size.card.border.radius.base})",
-            "type": "dimension",
-            "source": "$card-focus-border-radius"
+            "source": "$card-focus-border-radius",
+            "$value": "calc({spacing.card.focus.border-offset} + {size.card.border.radius.base})"
           }
         }
       },
       "image": {
         "horizontal": {
           "width": {
-            "max": { "value": "240px", "type": "dimension", "source": "$card-image-horizontal-max-width" },
+            "max": {
+              "source": "$card-image-horizontal-max-width",
+              "$value": "240px"
+            },
             "min": {
-              "value": "{size.card.image.horizontal.width.max}",
-              "type": "dimension",
-              "source": "$card-image-horizontal-min-width"
+              "source": "$card-image-horizontal-min-width",
+              "$value": "{size.card.image.horizontal.width.max}"
             }
           }
         },
         "vertical": {
-          "max-height": { "value": "140px", "type": "dimension", "source": "$card-image-vertical-max-height" }
+          "max-height": {
+            "source": "$card-image-vertical-max-height",
+            "$value": "140px"
+          }
         },
-        "border-radius": { "value": "{size.card.border.radius.base}", "type": "dimension", "source": "$card-image-border-radius" }
+        "border-radius": {
+          "source": "$card-image-border-radius",
+          "$value": "{size.card.border.radius.base}"
+        }
       },
       "logo": {
-        "width": { "value": "7.25rem", "type": "dimension", "source": "$card-logo-width" },
-        "height": { "value": "4.125rem", "type": "dimension", "source": "$card-logo-height" }
+        "width": {
+          "source": "$card-logo-width",
+          "$value": "7.25rem"
+        },
+        "height": {
+          "source": "$card-logo-height",
+          "$value": "4.125rem"
+        }
       }
     }
   },
@@ -88,7 +164,8 @@
     "footer": {
       "text": {
         "font-size": {
-          "value": "{typography.font.size.small.x}", "type": "dimension", "source": "$card-footer-text-font-size"
+          "source": "$card-footer-text-font-size",
+          "$value": "{typography.font.size.small.x}"
         }
       }
     }

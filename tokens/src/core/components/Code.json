@@ -1,32 +1,53 @@
 {
   "typography": {
     "code": {
-      "font-size": { "value": "87.5%", "type": "percentage", "source": "$code-font-size" },
+      "font-size": {
+        "source": "$code-font-size",
+        "$value": "87.5%",
+        "$type": "percentage"
+      },
       "kbd": {
-        "font-size": { "value": "{typography.code.font-size}", "type": "dimension", "source": "$kbd-font-size" },
+        "font-size": {
+          "source": "$kbd-font-size",
+          "$value": "{typography.code.font-size}",
+          "$type": "dimension"
+        },
         "nested": {
+          "$type": "fontWeight",
           "font-weight": {
-            "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$nested-kbd-font-weight"
+            "source": "$nested-kbd-font-weight",
+            "$value": "{typography.font.weight.bold}"
           }
         }
       }
     }
   },
   "spacing": {
+    "$type": "dimension",
     "code": {
       "kbd": {
         "padding": {
-          "y": { "value": ".2rem", "type": "dimension", "source": "$kbd-padding-y" },
-          "x": { "value": ".4rem", "type": "dimension", "source": "$kbd-padding-x" }
+          "y": {
+            "source": "$kbd-padding-y",
+            "$value": ".2rem"
+          },
+          "x": {
+            "source": "$kbd-padding-x",
+            "$value": ".4rem"
+          }
         }
       }
     }
   },
   "size": {
+    "$type": "dimension",
     "code": {
       "pre": {
         "scrollable": {
-          "max-height": { "value": "340px", "type": "dimension", "source": "$pre-scrollable-max-height" }
+          "max-height": {
+            "source": "$pre-scrollable-max-height",
+            "$value": "340px"
+          }
         }
       }
     }

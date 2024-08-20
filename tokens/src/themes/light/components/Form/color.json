@@ -2,266 +2,402 @@
   "color": {
     "form": {
       "input": {
-        "base": { "value": "{color.gray.700}", "type": "color", "source": "$input-color" },
-        "placeholder": { "value": "{color.gray.500}", "type": "color", "source": "$input-placeholder-color" },
-        "plaintext": { "value": "{color.body.base}", "type": "color", "source": "$input-plaintext-color" },
-        "border": { "value": "{color.gray.500}", "type": "color", "source": "$input-border-color" },
+        "$type": "color",
+        "base": {
+          "source": "$input-color",
+          "$value": "{color.gray.700}"
+        },
+        "placeholder": {
+          "source": "$input-placeholder-color",
+          "$value": "{color.gray.500}"
+        },
+        "plaintext": {
+          "source": "$input-plaintext-color",
+          "$value": "{color.body.base}"
+        },
+        "border": {
+          "source": "$input-border-color",
+          "$value": "{color.gray.500}"
+        },
         "bg": {
-          "base": { "value": "{color.bg.base}", "type": "color", "source": "$input-bg" },
-          "disabled": { "value": "{color.gray.100}", "type": "color", "source": "$input-disabled-bg" }
+          "base": {
+            "source": "$input-bg",
+            "$value": "{color.bg.base}"
+          },
+          "disabled": {
+            "source": "$input-disabled-bg",
+            "$value": "{color.gray.100}"
+          }
         },
         "group": {
           "addon": {
-            "base": { "value": "{color.form.input.base}", "type": "color", "source": "$input-group-addon-color" },
-            "border": {
-              "value": "{color.form.input.border}", "type": "color", "source": "$input-group-addon-border-color"
+            "base": {
+              "source": "$input-group-addon-color",
+              "$value": "{color.form.input.base}"
             },
-            "bg": { "value": "{color.gray.100}", "type": "color", "source": "$input-group-addon-bg" }
+            "border": {
+              "source": "$input-group-addon-border-color",
+              "$value": "{color.form.input.border}"
+            },
+            "bg": {
+              "source": "$input-group-addon-bg",
+              "$value": "{color.gray.100}"
+            }
           }
         },
         "focus": {
-          "base": { "value": "{color.form.input.base}", "type": "color", "source": "$input-focus-color" },
-          "border": { "value": "{color.input.focus}", "type": "color", "source": "$input-focus-border-color" },
-          "bg": { "value": "{color.form.input.bg.base}", "type": "color", "source": "$input-focus-bg" }
+          "base": {
+            "source": "$input-focus-color",
+            "$value": "{color.form.input.base}"
+          },
+          "border": {
+            "source": "$input-focus-border-color",
+            "$value": "{color.input.focus}"
+          },
+          "bg": {
+            "source": "$input-focus-bg",
+            "$value": "{color.form.input.bg.base}"
+          }
         }
       },
       "control": {
         "indicator": {
+          "$type": "color",
           "border": {
-            "value": "{color.gray.700}", "type": "color", "source": "$custom-control-indicator-border-color"
+            "source": "$custom-control-indicator-border-color",
+            "$value": "{color.gray.700}"
           },
           "bg": {
             "base": {
-              "value": "{color.form.input.bg.base}", "type": "color", "source": "$custom-control-indicator-bg"
+              "source": "$custom-control-indicator-bg",
+              "$value": "{color.form.input.bg.base}"
             },
             "disabled": {
-              "value": "{color.form.input.bg.disabled}",
-              "type": "color",
-              "source": "$custom-control-indicator-disabled-bg"
+              "source": "$custom-control-indicator-disabled-bg",
+              "$value": "{color.form.input.bg.disabled}"
             }
           },
           "checked": {
-            "base": { "value": "{color.bg.active}", "type": "color", "source": "$custom-control-indicator-checked-color" },
-            "valid": { "value": "{color.success.base}", "type": "color", "source": "$custom-control-indicator-checked-valid-color" },
-            "invalid": { "value": "{color.danger.base}", "type": "color", "source": "$custom-control-indicator-checked-invalid-color" },
+            "base": {
+              "source": "$custom-control-indicator-checked-color",
+              "$value": "{color.bg.active}"
+            },
+            "valid": {
+              "source": "$custom-control-indicator-checked-valid-color",
+              "$value": "{color.success.base}"
+            },
+            "invalid": {
+              "source": "$custom-control-indicator-checked-invalid-color",
+              "$value": "{color.danger.base}"
+            },
             "bg": {
               "base": {
-                "value": "{color.bg.active}", "type": "color", "source": "$custom-control-indicator-checked-bg"
+                "source": "$custom-control-indicator-checked-bg",
+                "$value": "{color.bg.active}"
               },
               "disabled": {
-                "value": "{color.primary.base}",
-                "type": "color",
                 "source": "$custom-control-indicator-checked-disabled-bg",
-                "modify": [{ "type": "alpha", "amount": 0.5 }]
+                "modify": [
+                  {
+                    "type": "alpha",
+                    "amount": 0.5
+                  }
+                ],
+                "$value": "{color.primary.base}"
               }
             },
             "border": {
               "base": {
-                "value": "{color.form.control.indicator.checked.base}",
-                "type": "color",
-                "source": "$custom-control-indicator-checked-border-color"
+                "source": "$custom-control-indicator-checked-border-color",
+                "$value": "{color.form.control.indicator.checked.base}"
               },
               "focus": {
-                "value": "{color.form.input.focus.border}",
-                "type": "color",
-                "source": "$custom-control-indicator-focus-border-color"
+                "source": "$custom-control-indicator-focus-border-color",
+                "$value": "{color.form.input.focus.border}"
               }
             }
           },
           "active": {
             "base": {
-              "value": "{color.active}", "type": "color", "source": "$custom-control-indicator-active-color"
+              "source": "$custom-control-indicator-active-color",
+              "$value": "{color.active}"
             },
             "bg": {
-              "value": "{color.bg.active}", "type": "color", "source": "$custom-control-indicator-active-bg"
+              "source": "$custom-control-indicator-active-bg",
+              "$value": "{color.bg.active}"
             },
             "border": {
-              "value": "{color.form.control.indicator.active.bg}",
-              "type": "color",
-              "source": "$custom-control-indicator-active-border-color"
+              "source": "$custom-control-indicator-active-border-color",
+              "$value": "{color.form.control.indicator.active.bg}"
             }
           }
         },
         "label": {
-          "base": { "value": "inherit", "type": "color", "source": "$custom-control-label-color" },
+          "$type": "color",
+          "base": {
+            "source": "$custom-control-label-color",
+            "$value": "inherit"
+          },
           "disabled": {
-            "value": "{color.disabled}", "type": "color", "source": "$custom-control-label-disabled-color"
+            "source": "$custom-control-label-disabled-color",
+            "$value": "{color.disabled}"
           },
           "floating": {
             "text": {
-              "value": "{color.form.input.bg.base}",
-              "type": "color",
               "source": "$form-control-floating-label-text-bg",
-              "modify": [{ "type": "alpha", "amount": 0.1 }]
+              "modify": [
+                {
+                  "type": "alpha",
+                  "amount": 0.1
+                }
+              ],
+              "$value": "{color.form.input.bg.base}"
             }
           }
         },
         "checkbox": {
+          "$type": "color",
           "indicator": {
             "indeterminate": {
               "base": {
-                "value": "{color.form.control.indicator.checked.base}",
-                "type": "color",
-                "source": "$custom-checkbox-indicator-indeterminate-color"
+                "source": "$custom-checkbox-indicator-indeterminate-color",
+                "$value": "{color.form.control.indicator.checked.base}"
               },
               "bg": {
-                "value": "{color.bg.active}",
-                "type": "color",
-                "source": "$custom-checkbox-indicator-indeterminate-bg"
+                "source": "$custom-checkbox-indicator-indeterminate-bg",
+                "$value": "{color.bg.active}"
               },
               "border": {
-                "value": "{color.form.control.checkbox.indicator.indeterminate.bg}",
-                "type": "color",
-                "source": "$custom-checkbox-indicator-indeterminate-border-color"
+                "source": "$custom-checkbox-indicator-indeterminate-border-color",
+                "$value": "{color.form.control.checkbox.indicator.indeterminate.bg}"
               }
             }
           }
         },
         "switch": {
+          "$type": "color",
           "indicator": {
             "checked": {
               "bg": {
-                "value": "{color.success.base}",
-                "type": "color",
-                "source": "$custom-switch-indicator-checked-bg"
+                "source": "$custom-switch-indicator-checked-bg",
+                "$value": "{color.success.base}"
               }
             }
           }
         },
         "select": {
-          "base": { "value": "{color.form.input.base}", "type": "color", "source": "$custom-select-color" },
-          "disabled": { "value": "{color.disabled}", "type": "color", "source": "$custom-select-disabled-color" },
+          "base": {
+            "source": "$custom-select-color",
+            "$value": "{color.form.input.base}",
+            "$type": "color"
+          },
+          "disabled": {
+            "source": "$custom-select-disabled-color",
+            "$value": "{color.disabled}",
+            "$type": "color"
+          },
           "indicator": {
-            "base": { "value": "{color.theme.hover.gray}", "type": "color", "source": "$custom-select-indicator-color" }
+            "$type": "color",
+            "base": {
+              "source": "$custom-select-indicator-color",
+              "$value": "{color.theme.hover.gray}"
+            }
           },
           "bg": {
-            "base": { "value": "{color.form.input.bg.base}", "type": "color", "source": "$custom-select-bg" },
-            "disabled": { "value": "{color.gray.100}", "type": "color", "source": "$custom-select-disabled-bg" },
-            "size": { "value": "{color.gray.100}", "type": "dimension", "source": "$custom-select-bg-size" }
+            "base": {
+              "source": "$custom-select-bg",
+              "$value": "{color.form.input.bg.base}",
+              "$type": "color"
+            },
+            "disabled": {
+              "source": "$custom-select-disabled-bg",
+              "$value": "{color.gray.100}",
+              "$type": "color"
+            },
+            "size": {
+              "source": "$custom-select-bg-size",
+              "$value": "{color.gray.100}",
+              "$type": "dimension"
+            }
           },
           "border": {
+            "$type": "color",
             "base": {
-              "value": "{color.form.input.border}", "type": "color", "source": "$custom-select-border-color"
+              "source": "$custom-select-border-color",
+              "$value": "{color.form.input.border}"
             },
             "focus": {
-              "value": "{color.form.input.focus.border}",
-              "type": "color",
-              "source": "$custom-select-focus-border-color"
+              "source": "$custom-select-focus-border-color",
+              "$value": "{color.form.input.focus.border}"
             }
           }
         },
         "range": {
+          "$type": "color",
           "track": {
-            "bg": { "value": "{color.gray.300}", "type": "color", "source": "$custom-range-track-bg" }
+            "bg": {
+              "source": "$custom-range-track-bg",
+              "$value": "{color.gray.300}"
+            }
           },
           "thumb": {
             "bg": {
-              "base": { "value": "{color.bg.active}", "type": "color", "source": "$custom-range-thumb-bg" },
+              "base": {
+                "source": "$custom-range-thumb-bg",
+                "$value": "{color.bg.active}"
+              },
               "disabled": {
-                "value": "{color.disabled}", "type": "color", "source": "$custom-range-thumb-disabled-bg"
+                "source": "$custom-range-thumb-disabled-bg",
+                "$value": "{color.disabled}"
               },
               "active": {
-                "value": "{color.bg.active}",
-                "type": "color",
                 "source": "$custom-range-thumb-active-bg",
-                "modify": [{ "type": "lighten", "amount": "0.35" }]
+                "modify": [
+                  {
+                    "type": "lighten",
+                    "amount": "0.35"
+                  }
+                ],
+                "$value": "{color.bg.active}"
               }
             }
           }
         },
         "file": {
-          "base": { "value": "{color.form.input.base}", "type": "color", "source": "$custom-file-color" },
+          "$type": "color",
+          "base": {
+            "source": "$custom-file-color",
+            "$value": "{color.form.input.base}"
+          },
           "bg": {
-            "base": { "value": "{color.form.input.bg.base}", "type": "color", "source": "$custom-file-bg" },
+            "base": {
+              "source": "$custom-file-bg",
+              "$value": "{color.form.input.bg.base}"
+            },
             "disabled": {
-              "value": "{color.form.input.bg.disabled}", "type": "color", "source": "$custom-file-disabled-bg"
+              "source": "$custom-file-disabled-bg",
+              "$value": "{color.form.input.bg.disabled}"
             }
           },
           "button": {
             "base": {
-              "value": "{color.form.control.file.base}", "type": "color", "source": "$custom-file-button-color"
+              "source": "$custom-file-button-color",
+              "$value": "{color.form.control.file.base}"
             },
             "bg": {
-              "value": "{color.form.input.group.addon.bg}", "type": "color", "source": "$custom-file-button-bg"
+              "source": "$custom-file-button-bg",
+              "$value": "{color.form.input.group.addon.bg}"
             }
           },
           "border": {
             "base": {
-              "value": "{color.form.input.border}", "type": "color", "source": "$custom-file-border-color"
+              "source": "$custom-file-border-color",
+              "$value": "{color.form.input.border}"
             },
             "focus": {
-              "value": "{color.form.input.focus.border}",
-              "type": "color",
-              "source": "$custom-file-focus-border-color"
+              "source": "$custom-file-focus-border-color",
+              "$value": "{color.form.input.focus.border}"
             }
           }
         }
       },
       "feedback": {
-        "valid": { "value": "{color.success.base}", "type": "color", "source": "$form-feedback-valid-color" },
-        "invalid": { "value": "{color.danger.base}", "type": "color", "source": "$form-feedback-invalid-color" },
+        "$type": "color",
+        "valid": {
+          "source": "$form-feedback-valid-color",
+          "$value": "{color.success.base}"
+        },
+        "invalid": {
+          "source": "$form-feedback-invalid-color",
+          "$value": "{color.danger.base}"
+        },
         "icon": {
           "valid": {
-            "value": "{color.form.feedback.valid}",
-            "type": "color",
-            "source": "$form-feedback-icon-valid-color"
+            "source": "$form-feedback-icon-valid-color",
+            "$value": "{color.form.feedback.valid}"
           },
           "invalid": {
-            "value": "{color.form.feedback.invalid}",
-            "type": "color",
-            "source": "$form-feedback-icon-invalid-color"
+            "source": "$form-feedback-icon-invalid-color",
+            "$value": "{color.form.feedback.invalid}"
           }
         },
         "tooltip": {
           "valid": {
-            "value": "{color.form.feedback.valid}",
-            "type": "color",
             "source": "$form-feedback-tooltip-valid-color",
-            "modify": [{ "type": "color-yiq" }]
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "$value": "{color.form.feedback.valid}"
           },
           "bg": {
             "valid": {
-              "value": "{color.form.feedback.valid}",
-              "type": "color",
               "source": "$form-feedback-tooltip-valid-bg",
-              "modify": [{ "type": "alpha", "amount": 0.9 }]
+              "modify": [
+                {
+                  "type": "alpha",
+                  "amount": 0.9
+                }
+              ],
+              "$value": "{color.form.feedback.valid}"
             },
             "invalid": {
-              "value": "{color.form.feedback.invalid}",
-              "type": "color",
               "source": "$form-feedback-tooltip-invalid-bg",
-              "modify": [{ "type": "alpha", "amount": 0.9 }]
+              "modify": [
+                {
+                  "type": "alpha",
+                  "amount": 0.9
+                }
+              ],
+              "$value": "{color.form.feedback.invalid}"
             }
           },
           "box-shadow": {
             "focus": {
               "valid": {
-                "value": "{color.form.feedback.valid}",
-                "type": "color",
                 "source": "$form-feedback-focus-box-shadow-valid-color",
-                "modify": [{ "type": "alpha", "amount": 0.25 }]
+                "modify": [
+                  {
+                    "type": "alpha",
+                    "amount": 0.25
+                  }
+                ],
+                "$value": "{color.form.feedback.valid}"
               },
               "invalid": {
-                "value": "{color.form.feedback.invalid}",
-                "type": "color",
                 "source": "$form-feedback-focus-box-shadow-invalid-color",
-                "modify": [{ "type": "alpha", "amount": 0.25 }]
+                "modify": [
+                  {
+                    "type": "alpha",
+                    "amount": 0.25
+                  }
+                ],
+                "$value": "{color.form.feedback.invalid}"
               }
             }
           }
         },
         "checked": {
           "valid": {
-            "value": "{color.form.feedback.valid}",
-            "type": "color",
             "source": "$form-feedback-checked-valid-color",
-            "modify": [{ "type": "lighten", "amount": 0.1 }]
+            "modify": [
+              {
+                "type": "lighten",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.form.feedback.valid}"
           },
           "invalid": {
-            "value": "{color.form.feedback.invalid}",
-            "type": "color",
             "source": "$form-feedback-checked-invalid-color",
-            "modify": [{ "type": "lighten", "amount": 0.1 }]
+            "modify": [
+              {
+                "type": "lighten",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.form.feedback.invalid}"
           }
         }
       }

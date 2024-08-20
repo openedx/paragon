@@ -2,89 +2,222 @@
   "typography": {
     "font": {
       "family": {
+        "$type": "fontFamily",
         "base": {
-          "value": "{typography.font.family.sans.serif}",
-          "type": "fontFamily",
           "source": "$font-family-base",
-          "description": "Basic font family."
+          "$value": "{typography.font.family.sans.serif}",
+          "$description": "Basic font family."
         },
         "sans": {
           "serif": {
-            "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\",  Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\",  \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-            "type": "fontFamily",
             "source": "$font-family-sans-serif",
-            "description": "Sans-serif font family."
+            "$value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\",  Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\",  \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "$description": "Sans-serif font family."
           }
         },
-        "serif": { "value": "serif", "source": "$font-family-serif", "description": "Serif font family." },
+        "serif": {
+          "source": "$font-family-serif",
+          "$value": "serif",
+          "$description": "Serif font family."
+        },
         "monospace": {
-          "value": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\",  \"Courier New\", monospace",
-          "type": "fontFamily",
           "source": "$font-family-monospace",
-          "description": "Monospace font family."
+          "$value": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\",  \"Courier New\", monospace",
+          "$description": "Monospace font family."
         }
       },
       "size": {
-        "base": { "value": "1.125rem", "type": "dimension", "source": "$font-size-base", "description": "Base font size." },
-        "lg": { "value": "1.4063rem", "type": "dimension", "source": "$font-size-lg", "description": "Large font size." },
-        "sm": { "value": ".875rem", "type": "dimension", "source": "$font-size-sm", "description": "Small font size." },
-        "xs": { "value": ".75rem", "type": "dimension", "source": "$font-size-xs", "description": "Extra-small font size." },
-        "small": {
-          "base": { "value": "87.5%", "type": "percentage", "source": "$small-font-size", "description": "Small font size." },
-          "x": { "value": "75%", "type": "percentage", "source": "$x-small-font-size", "description": "X-small font size." }
+        "base": {
+          "source": "$font-size-base",
+          "$value": "1.125rem",
+          "$type": "dimension",
+          "$description": "Base font size."
         },
-        "h1": { "value": "2.5rem", "type": "dimension", "source": "$h1-font-size", "description": "Font size of heading level 1." },
-        "h2": { "value": "2rem", "type": "dimension", "source": "$h2-font-size", "description": "Font size of heading level 2." },
-        "h3": { "value": "1.375rem", "type": "dimension", "source": "$h3-font-size", "description": "Font size of heading level 3." },
-        "h4": { "value": "1.125rem", "type": "dimension", "source": "$h4-font-size", "description": "Font size of heading level 4." },
-        "h5": { "value": ".875rem", "type": "dimension", "source": "$h5-font-size", "description": "Font size of heading level 5." },
-        "h6": { "value": ".75rem", "type": "dimension", "source": "$h6-font-size", "description": "Font size of heading level 6." },
+        "lg": {
+          "source": "$font-size-lg",
+          "$value": "1.4063rem",
+          "$type": "dimension",
+          "$description": "Large font size."
+        },
+        "sm": {
+          "source": "$font-size-sm",
+          "$value": ".875rem",
+          "$type": "dimension",
+          "$description": "Small font size."
+        },
+        "xs": {
+          "source": "$font-size-xs",
+          "$value": ".75rem",
+          "$type": "dimension",
+          "$description": "Extra-small font size."
+        },
+        "small": {
+          "$type": "percentage",
+          "base": {
+            "source": "$small-font-size",
+            "$value": "87.5%",
+            "$description": "Small font size."
+          },
+          "x": {
+            "source": "$x-small-font-size",
+            "$value": "75%",
+            "$description": "X-small font size."
+          }
+        },
+        "h1": {
+          "source": "$h1-font-size",
+          "$value": "2.5rem",
+          "$type": "dimension",
+          "$description": "Font size of heading level 1."
+        },
+        "h2": {
+          "source": "$h2-font-size",
+          "$value": "2rem",
+          "$type": "dimension",
+          "$description": "Font size of heading level 2."
+        },
+        "h3": {
+          "source": "$h3-font-size",
+          "$value": "1.375rem",
+          "$type": "dimension",
+          "$description": "Font size of heading level 3."
+        },
+        "h4": {
+          "source": "$h4-font-size",
+          "$value": "1.125rem",
+          "$type": "dimension",
+          "$description": "Font size of heading level 4."
+        },
+        "h5": {
+          "source": "$h5-font-size",
+          "$value": ".875rem",
+          "$type": "dimension",
+          "$description": "Font size of heading level 5."
+        },
+        "h6": {
+          "source": "$h6-font-size",
+          "$value": ".75rem",
+          "$type": "dimension",
+          "$description": "Font size of heading level 6."
+        },
         "mobile": {
-          "h1": { "value": "2.25rem", "type": "dimension", "source": "$h1-mobile-font-size", "description": "Mobile font size of heading level 1." },
-          "h2": { "value": "{typography.font.size.h2}", "type": "dimension", "source": "$h2-mobile-font-size", "description": "Mobile font size of heading level 2." },
-          "h3": { "value": "{typography.font.size.h3}", "type": "dimension", "source": "$h3-mobile-font-size", "description": "Mobile font size of heading level 3." },
-          "h4": { "value": "{typography.font.size.h4}", "type": "dimension", "source": "$h4-mobile-font-size", "description": "Mobile font size of heading level 4." },
-          "h5": { "value": "{typography.font.size.h5}", "type": "dimension", "source": "$h5-mobile-font-size", "description": "Mobile font size of heading level 5." },
-          "h6": { "value": "{typography.font.size.h6}", "type": "dimension", "source": "$h6-mobile-font-size", "description": "Mobile font size of heading level 6." }
+          "$type": "dimension",
+          "h1": {
+            "source": "$h1-mobile-font-size",
+            "$value": "2.25rem",
+            "$description": "Mobile font size of heading level 1."
+          },
+          "h2": {
+            "source": "$h2-mobile-font-size",
+            "$value": "{typography.font.size.h2}",
+            "$description": "Mobile font size of heading level 2."
+          },
+          "h3": {
+            "source": "$h3-mobile-font-size",
+            "$value": "{typography.font.size.h3}",
+            "$description": "Mobile font size of heading level 3."
+          },
+          "h4": {
+            "source": "$h4-mobile-font-size",
+            "$value": "{typography.font.size.h4}",
+            "$description": "Mobile font size of heading level 4."
+          },
+          "h5": {
+            "source": "$h5-mobile-font-size",
+            "$value": "{typography.font.size.h5}",
+            "$description": "Mobile font size of heading level 5."
+          },
+          "h6": {
+            "source": "$h6-mobile-font-size",
+            "$value": "{typography.font.size.h6}",
+            "$description": "Mobile font size of heading level 6."
+          }
         },
         "lead": {
-          "value": "calc({typography.font.size.base} * 1.25)",
-          "type": "dimension",
           "source": "$lead-font-size",
-          "description": "Lead text font size."
+          "$value": "calc({typography.font.size.base} * 1.25)",
+          "$type": "dimension",
+          "$description": "Lead text font size."
         },
         "micro": {
-          "value": ".688rem",
-          "type": "dimension",
           "source": "$micro-font-size",
-          "description": "Micro utils text font size."
+          "$value": ".688rem",
+          "$type": "dimension",
+          "$description": "Micro utils text font size."
         }
       },
       "weight": {
-        "lighter": { "value": "lighter", "type": "fontWeight", "source": "$font-weight-lighter", "description": "Lighter font weight." },
-        "light": { "value": "300", "type": "fontWeight", "source": "$font-weight-light", "description": "Light font weight." },
-        "normal": { "value": "400", "type": "fontWeight", "source": "$font-weight-normal", "description": "Normal font weight." },
+        "$type": "fontWeight",
+        "lighter": {
+          "source": "$font-weight-lighter",
+          "$value": "lighter",
+          "$description": "Lighter font weight."
+        },
+        "light": {
+          "source": "$font-weight-light",
+          "$value": "300",
+          "$description": "Light font weight."
+        },
+        "normal": {
+          "source": "$font-weight-normal",
+          "$value": "400",
+          "$description": "Normal font weight."
+        },
         "semi": {
-          "bold": { "value": "500", "type": "fontWeight", "source": "$font-weight-semi-bold", "description": "Semi-bold font weight." }
+          "bold": {
+            "source": "$font-weight-semi-bold",
+            "$value": "500",
+            "$description": "Semi-bold font weight."
+          }
         },
-        "bold": { "value": "700", "type": "fontWeight", "source": "$font-weight-bold", "description": "Bold font weight." },
-        "bolder": { "value": "bolder", "type": "fontWeight", "source": "$font-weight-bolder", "description": "Bolder font weight." },
+        "bold": {
+          "source": "$font-weight-bold",
+          "$value": "700",
+          "$description": "Bold font weight."
+        },
+        "bolder": {
+          "source": "$font-weight-bolder",
+          "$value": "bolder",
+          "$description": "Bolder font weight."
+        },
         "base": {
-          "value": "{typography.font.weight.normal}",
-          "type": "fontWeight",
           "source": "$font-weight-base",
-          "description": "Basic font weight."
+          "$value": "{typography.font.weight.normal}",
+          "$description": "Basic font weight."
         },
-        "lead": { "value": "inherit", "type": "fontWeight", "source": "$lead-font-weight", "description": "Lead text font weight." },
-        "table-th": { "value": "normal", "type": "fontWeight", "source": "$table-th-font-weight", "description": "Table th font weight." }
+        "lead": {
+          "source": "$lead-font-weight",
+          "$value": "inherit",
+          "$description": "Lead text font weight."
+        },
+        "table-th": {
+          "source": "$table-th-font-weight",
+          "$value": "normal",
+          "$description": "Table th font weight."
+        }
       }
     },
     "line-height": {
-      "base": { "value": "1.5556", "type": "dimension", "source": "$line-height-base", "description": "Basic line height." },
-      "lg": { "value": "1.5", "type": "dimension", "source": "$line-height-lg", "description": "Large line height." },
-      "sm": { "value": "1.5", "type": "dimension", "source": "$line-height-sm", "description": "Small line height." },
+      "$type": "dimension",
+      "base": {
+        "source": "$line-height-base",
+        "$value": "1.5556",
+        "$description": "Basic line height."
+      },
+      "lg": {
+        "source": "$line-height-lg",
+        "$value": "1.5",
+        "$description": "Large line height."
+      },
+      "sm": {
+        "source": "$line-height-sm",
+        "$value": "1.5",
+        "$description": "Small line height."
+      },
       "micro": {
-        "value": ".938rem", "type": "dimension", "source": "$micro-line-height", "description": "Micro utils line height."
+        "source": "$micro-line-height",
+        "$value": ".938rem",
+        "$description": "Micro utils line height."
       }
     }
   }

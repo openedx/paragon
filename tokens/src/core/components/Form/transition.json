@@ -1,15 +1,14 @@
 {
+  "$type": "transition",
   "transition": {
     "form": {
       "input": {
-        "value": "border-color .15s ease-in-out, box-shadow .15s ease-in-out",
-        "type": "transition",
-        "source": "$input-transition"
+        "source": "$input-transition",
+        "$value": "border-color .15s ease-in-out, box-shadow .15s ease-in-out"
       },
-      "control": { 
-        "value": "background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out",
-        "type": "transition",
-        "source": "$custom-forms-transition" 
+      "control": {
+        "source": "$custom-forms-transition",
+        "$value": "background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out"
       }
     }
   }

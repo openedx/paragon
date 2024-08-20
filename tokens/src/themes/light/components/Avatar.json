@@ -1,7 +1,10 @@
 {
+  "$type": "color",
   "color": {
     "avatar": {
-      "border": { "value": "{color.light.300}", "type": "color" }
+      "border": {
+        "$value": "{color.light.300}"
+      }
     }
   }
 }

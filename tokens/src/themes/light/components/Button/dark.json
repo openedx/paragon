@@ -1,227 +1,348 @@
 {
+  "$type": "color",
   "color": {
     "btn": {
       "text": {
         "dark": {
-          "value": "{color.btn.bg.dark}",
-          "type": "color",
           "source": "$btn-dark-color",
-          "modify": [{ "type": "color-yiq" }]
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "$value": "{color.btn.bg.dark}"
         },
-        "outline-dark": { "value": "{color.dark.base}", "type": "color", "source": "$btn-dark-outline-color" },
-        "inverse-dark": { "value": "{color.dark.base}", "type": "color", "source": "$btn-dark-inverse-color" },
+        "outline-dark": {
+          "source": "$btn-dark-outline-color",
+          "$value": "{color.dark.base}"
+        },
+        "inverse-dark": {
+          "source": "$btn-dark-inverse-color",
+          "$value": "{color.dark.base}"
+        },
         "inverse-outline-dark": {
-          "value": "{color.white}", "type": "color", "source": "$btn-dark-inverse-outline-color"
+          "source": "$btn-dark-inverse-outline-color",
+          "$value": "{color.white}"
         }
       },
       "bg": {
-        "dark": { "value": "{color.dark.base}", "type": "color", "source": "$btn-dark-bg" },
-        "outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-outline-bg" },
-        "inverse-dark": {
-          "value": "{color.btn.text.inverse-dark}",
-          "type": "color",
-          "source": "$btn-dark-inverse-bg",
-          "modify": [{ "type": "color-yiq" }]
+        "dark": {
+          "source": "$btn-dark-bg",
+          "$value": "{color.dark.base}"
         },
-        "inverse-outline-dark": { "value": "transparent", "type": "color", "source": "$btn-dark-inverse-outline-bg" }
+        "outline-dark": {
+          "source": "$btn-dark-outline-bg",
+          "$value": "inherit"
+        },
+        "inverse-dark": {
+          "source": "$btn-dark-inverse-bg",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "$value": "{color.btn.text.inverse-dark}"
+        },
+        "inverse-outline-dark": {
+          "source": "$btn-dark-inverse-outline-bg",
+          "$value": "transparent"
+        }
       },
       "border": {
-        "dark": { "value": "{color.btn.bg.dark}", "type": "color", "source": "$btn-dark-border-color" },
-        "outline-dark": {
-          "value": "{color.dark.base}", "type": "color", "source": "$btn-dark-outline-border-color"
+        "dark": {
+          "source": "$btn-dark-border-color",
+          "$value": "{color.btn.bg.dark}"
         },
-        "inverse-dark": { "value": "transparent", "type": "color", "source": "$btn-dark-inverse-border-color" },
+        "outline-dark": {
+          "source": "$btn-dark-outline-border-color",
+          "$value": "{color.dark.base}"
+        },
+        "inverse-dark": {
+          "source": "$btn-dark-inverse-border-color",
+          "$value": "transparent"
+        },
         "inverse-outline-dark": {
-          "value": "{color.white}", "type": "color", "source": "$btn-dark-inverse-outline-border-color"
+          "source": "$btn-dark-inverse-outline-border-color",
+          "$value": "{color.white}"
         }
       },
       "hover": {
         "text": {
           "dark": {
-            "value": "{color.btn.hover.bg.dark}",
-            "type": "color",
             "source": "$btn-dark-hover-color",
-            "modify": [{ "type": "color-yiq" }]
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "$value": "{color.btn.hover.bg.dark}"
           },
           "outline-dark": {
-            "value": "{color.theme.hover.dark}", "type": "color",  "source": "$btn-dark-outline-hover-color"
+            "source": "$btn-dark-outline-hover-color",
+            "$value": "{color.theme.hover.dark}"
           },
           "inverse-dark": {
-            "value": "{color.btn.text.inverse-dark}",
-            "type": "color",
             "source": "$btn-dark-inverse-hover-color",
-            "modify": [{ "type": "darken", "amount": 0.075 }]
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.075
+              }
+            ],
+            "$value": "{color.btn.text.inverse-dark}"
           },
           "inverse-outline-dark": {
-            "value": "{color.theme.hover.dark}", "type": "color", "source": "$btn-dark-inverse-outline-hover-color"
+            "source": "$btn-dark-inverse-outline-hover-color",
+            "$value": "{color.theme.hover.dark}"
           }
         },
         "bg": {
-          "dark": { "value": "{color.theme.hover.dark}", "type": "color", "source": "$btn-dark-hover-bg" },
-          "outline-dark": { "value": "{color.dark.100}", "type": "color", "source": "$btn-dark-outline-hover-bg" },
+          "dark": {
+            "source": "$btn-dark-hover-bg",
+            "$value": "{color.theme.hover.dark}"
+          },
+          "outline-dark": {
+            "source": "$btn-dark-outline-hover-bg",
+            "$value": "{color.dark.100}"
+          },
           "inverse-dark": {
-            "value": "{color.btn.bg.inverse-dark}",
-            "type": "color",
             "source": "$btn-dark-inverse-hover-bg",
-            "modify": [{ "type": "darken", "amount": 0.075 }]
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.075
+              }
+            ],
+            "$value": "{color.btn.bg.inverse-dark}"
           },
           "inverse-outline-dark": {
-            "value": "{color.dark.100}", "type": "color", "source": "$btn-dark-inverse-outline-hover-bg"
+            "source": "$btn-dark-inverse-outline-hover-bg",
+            "$value": "{color.dark.100}"
           }
         },
         "border": {
           "dark": {
-            "value": "{color.theme.hover.dark}", "type": "color",  "source": "$btn-dark-hover-border-color"
+            "source": "$btn-dark-hover-border-color",
+            "$value": "{color.theme.hover.dark}"
           },
           "outline-dark": {
-            "value": "{color.dark.900}", "type": "color", "source": "$btn-dark-outline-hover-border-color"
+            "source": "$btn-dark-outline-hover-border-color",
+            "$value": "{color.dark.900}"
           },
-          "inverse-dark": { "value": "transparent", "type": "color", "source": "$btn-dark-inverse-hover-border-color" },
+          "inverse-dark": {
+            "source": "$btn-dark-inverse-hover-border-color",
+            "$value": "transparent"
+          },
           "inverse-outline-dark": {
-            "value": "transparent", "type": "color", "source": "$btn-dark-inverse-outline-hover-border-color"
+            "source": "$btn-dark-inverse-outline-hover-border-color",
+            "$value": "transparent"
           }
         }
       },
       "active": {
         "text": {
           "dark": {
-            "value": "{color.btn.active.bg.dark}",
-            "type": "color",
             "source": "$btn-dark-active-color",
-            "modify": [{ "type": "color-yiq" }]
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "$value": "{color.btn.active.bg.dark}"
           },
           "outline-dark": {
-            "value": "{color.btn.active.bg.outline-dark}",
-            "type": "color",
             "source": "$btn-dark-outline-active-color",
-            "modify": [{ "type": "color-yiq" }]
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "$value": "{color.btn.active.bg.outline-dark}"
           },
           "inverse-dark": {
-            "value": "{color.btn.text.inverse-dark}",
-            "type": "color",
             "source": "$btn-dark-inverse-active-color",
-            "modify": [{ "type": "darken", "amount": 0.1 }]
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.btn.text.inverse-dark}"
           },
           "inverse-outline-dark": {
-            "value": "{color.btn.active.bg.inverse-outline-dark}",
-            "type": "color",
             "source": "$btn-dark-inverse-outline-active-color",
-            "modify": [{ "type": "color-yiq" }] }
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "$value": "{color.btn.active.bg.inverse-outline-dark}"
+          }
         },
         "bg": {
-          "dark": { "value": "{color.theme.active.dark}", "type": "color", "source": "$btn-dark-active-bg" },
-          "outline-dark": {
-            "value": "{color.theme.bg.dark}", "type": "color", "source": "$btn-dark-outline-active-bg"
+          "dark": {
+            "source": "$btn-dark-active-bg",
+            "$value": "{color.theme.active.dark}"
           },
-          "inverse-dark": { "value": "{color.gray.100}", "type": "color", "source": "$btn-dark-inverse-active-bg" },
+          "outline-dark": {
+            "source": "$btn-dark-outline-active-bg",
+            "$value": "{color.theme.bg.dark}"
+          },
+          "inverse-dark": {
+            "source": "$btn-dark-inverse-active-bg",
+            "$value": "{color.gray.100}"
+          },
           "inverse-outline-dark": {
-            "value": "{color.theme.bg.dark}", "type": "color", "source": "$btn-dark-inverse-outline-active-bg"
+            "source": "$btn-dark-inverse-outline-active-bg",
+            "$value": "{color.theme.bg.dark}"
           }
         },
         "border": {
           "dark": {
-            "value": "{color.theme.active.dark}", "type": "color", "source": "$btn-dark-active-border-color"
+            "source": "$btn-dark-active-border-color",
+            "$value": "{color.theme.active.dark}"
           },
           "outline-dark": {
-            "value": "{color.theme.active.dark}", "type": "color", "source": "$btn-dark-outline-active-border-color"
+            "source": "$btn-dark-outline-active-border-color",
+            "$value": "{color.theme.active.dark}"
           },
           "inverse-dark": {
-            "value": "transparent",
-            "type": "color",
-            "source": "$btn-dark-inverse-active-border-color"
+            "source": "$btn-dark-inverse-active-border-color",
+            "$value": "transparent"
           },
           "inverse-outline-dark": {
-            "value": "transparent", "type": "color", "source": "$btn-dark-inverse-outline-active-border-color"
+            "source": "$btn-dark-inverse-outline-active-border-color",
+            "$value": "transparent"
           }
         }
       },
       "focus": {
         "text": {
-          "dark": { "value": "{color.btn.text.dark}", "type": "color", "source": "$btn-dark-focus-color" },
-          "inverse-dark": { "value": "{color.btn.text.inverse-dark}", "type": "color", "source": "$btn-dark-inverse-focus-color" },
-          "outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-outline-focus-color" },
+          "dark": {
+            "source": "$btn-dark-focus-color",
+            "$value": "{color.btn.text.dark}"
+          },
+          "inverse-dark": {
+            "source": "$btn-dark-inverse-focus-color",
+            "$value": "{color.btn.text.inverse-dark}"
+          },
+          "outline-dark": {
+            "source": "$btn-dark-outline-focus-color",
+            "$value": "inherit"
+          },
           "inverse-outline-dark": {
-            "value": "{color.btn.text.inverse-outline-dark}",
-            "type": "color",
-            "source": "$btn-dark-inverse-outline-focus-color"
+            "source": "$btn-dark-inverse-outline-focus-color",
+            "$value": "{color.btn.text.inverse-outline-dark}"
           }
         },
         "border": {
-          "dark": { "value": "{color.btn.focus.bg.dark}", "type": "color", "source": "$btn-dark-focus-border-color" },
+          "dark": {
+            "source": "$btn-dark-focus-border-color",
+            "$value": "{color.btn.focus.bg.dark}"
+          },
           "outline-dark": {
-            "value": "{color.btn.border.outline-dark}",
-            "type": "color",
-            "source": "$btn-dark-outline-focus-border-color"
+            "source": "$btn-dark-outline-focus-border-color",
+            "$value": "{color.btn.border.outline-dark}"
           },
           "inverse-dark": {
-            "value": "{color.white}",
-            "type": "color",
-            "source": "$btn-dark-inverse-focus-border-color"
+            "source": "$btn-dark-inverse-focus-border-color",
+            "$value": "{color.white}"
           },
           "inverse-outline-dark": {
-            "value": "{color.white}",
-            "type": "color",
-            "source": "$btn-dark-inverse-outline-focus-border-color"
+            "source": "$btn-dark-inverse-outline-focus-border-color",
+            "$value": "{color.white}"
           }
         },
         "bg": {
-          "dark": { "value": "{color.btn.bg.dark}", "type": "color", "source": "$btn-dark-focus-bg" },
-          "outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-outline-focus-bg" },
-          "inverse-dark": { "value": "{color.btn.bg.inverse-dark}", "type": "color", "source": "$btn-dark-inverse-focus-bg" },
-          "inverse-outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-inverse-outline-focus-bg" }
-        },
-        "outline": {
-          "dark": { "value": "{color.theme.focus.dark}", "type": "color", "source": "$btn-dark-focus-outline-color" },
-          "outline-dark": { "value": "{color.theme.focus.dark}", "type": "color", "source": "$btn-dark-outline-focus-outline-color" },
+          "dark": {
+            "source": "$btn-dark-focus-bg",
+            "$value": "{color.btn.bg.dark}"
+          },
+          "outline-dark": {
+            "source": "$btn-dark-outline-focus-bg",
+            "$value": "inherit"
+          },
           "inverse-dark": {
-            "value": "{color.btn.focus.border.inverse-dark}",
-            "type": "color",
-            "source": "$btn-dark-inverse-focus-outline-color"
+            "source": "$btn-dark-inverse-focus-bg",
+            "$value": "{color.btn.bg.inverse-dark}"
           },
           "inverse-outline-dark": {
-            "value": "{color.btn.focus.border.inverse-outline-dark}",
-            "type": "color",
-            "source": "$btn-dark-inverse-outline-focus-border-color"
+            "source": "$btn-dark-inverse-outline-focus-bg",
+            "$value": "inherit"
+          }
+        },
+        "outline": {
+          "dark": {
+            "source": "$btn-dark-focus-outline-color",
+            "$value": "{color.theme.focus.dark}"
+          },
+          "outline-dark": {
+            "source": "$btn-dark-outline-focus-outline-color",
+            "$value": "{color.theme.focus.dark}"
+          },
+          "inverse-dark": {
+            "source": "$btn-dark-inverse-focus-outline-color",
+            "$value": "{color.btn.focus.border.inverse-dark}"
+          },
+          "inverse-outline-dark": {
+            "source": "$btn-dark-inverse-outline-focus-border-color",
+            "$value": "{color.btn.focus.border.inverse-outline-dark}"
           }
         }
       },
       "disabled": {
         "text": {
-          "dark": { "value": "{color.btn.text.dark}", "type": "color", "source": "$btn-dark-disabled-color" },
-          "outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-outline-disabled-color" },
+          "dark": {
+            "source": "$btn-dark-disabled-color",
+            "$value": "{color.btn.text.dark}"
+          },
+          "outline-dark": {
+            "source": "$btn-dark-outline-disabled-color",
+            "$value": "inherit"
+          },
           "inverse-dark": {
-            "value": "{color.btn.text.inverse-dark}",
-            "type": "color",
-            "source": "$btn-dark-inverse-disabled-color"
+            "source": "$btn-dark-inverse-disabled-color",
+            "$value": "{color.btn.text.inverse-dark}"
           },
           "inverse-outline-dark": {
-            "value": "{color.btn.text.inverse-outline-dark}",
-            "type": "color",
-            "source": "$btn-dark-inverse-outline-disabled-color"
+            "source": "$btn-dark-inverse-outline-disabled-color",
+            "$value": "{color.btn.text.inverse-outline-dark}"
           }
         },
         "bg": {
-          "dark": { "value": "{color.btn.bg.dark}", "type": "color", "source": "$btn-dark-disabled-bg" },
-          "outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-outline-disabled-bg" },
-          "inverse-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-inverse-disabled-bg" },
-          "inverse-outline-dark": { "value": "inherit", "type": "color", "source": "$btn-dark-inverse-outline-disabled-bg" }
+          "dark": {
+            "source": "$btn-dark-disabled-bg",
+            "$value": "{color.btn.bg.dark}"
+          },
+          "outline-dark": {
+            "source": "$btn-dark-outline-disabled-bg",
+            "$value": "inherit"
+          },
+          "inverse-dark": {
+            "source": "$btn-dark-inverse-disabled-bg",
+            "$value": "inherit"
+          },
+          "inverse-outline-dark": {
+            "source": "$btn-dark-inverse-outline-disabled-bg",
+            "$value": "inherit"
+          }
         },
         "border": {
           "dark": {
-            "value": "{color.btn.border.dark}",
-            "type": "color",
-            "source": "$btn-dark-disabled-border-color"
+            "source": "$btn-dark-disabled-border-color",
+            "$value": "{color.btn.border.dark}"
           },
           "outline-dark": {
-            "value": "{color.btn.hover.text.outline-dark}",
-            "type": "color",
-            "source": "$btn-dark-outline-disabled-border-color"
+            "source": "$btn-dark-outline-disabled-border-color",
+            "$value": "{color.btn.hover.text.outline-dark}"
           },
-          "inverse-dark": { "value": "transparent", "type": "color", "source": "$btn-dark-inverse-disabled-border-color" },
+          "inverse-dark": {
+            "source": "$btn-dark-inverse-disabled-border-color",
+            "$value": "transparent"
+          },
           "inverse-outline-dark": {
-            "value": "{color.btn.focus.border.inverse-outline-dark}",
-            "type": "color",
-            "source": "$btn-dark-inverse-outline-disabled-border-color"
+            "source": "$btn-dark-inverse-outline-disabled-border-color",
+            "$value": "{color.btn.focus.border.inverse-outline-dark}"
           }
         }
       }

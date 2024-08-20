@@ -1,59 +1,82 @@
 {
+  "$type": "color",
   "color": {
     "tab": {
       "more-link-dropdown-toggle": {
         "btn": {
           "text": {
             "focus": {
-              "value": "{color.tab.more-link-dropdown-toggle.text.focus}",
-              "type": "color",
-              "source": "$tab-more-link-dropdown-toggle-btn-focus-color"
+              "source": "$tab-more-link-dropdown-toggle-btn-focus-color",
+              "$value": "{color.tab.more-link-dropdown-toggle.text.focus}"
             }
           },
           "border": {
             "focus": {
-              "value": "{color.tab.more-link-dropdown-toggle.bg.focus}",
-              "type": "color",
-              "source": "$tab-more-link-dropdown-toggle-btn-focus-border-color"
+              "source": "$tab-more-link-dropdown-toggle-btn-focus-border-color",
+              "$value": "{color.tab.more-link-dropdown-toggle.bg.focus}"
             }
           }
         },
         "text": {
-          "focus": { "value": "{color.white}", "type": "color", "source": "$tab-more-link-dropdown-toggle-focus-color" },
-          "active": { "value": "{color.tab.more-link-dropdown-toggle.text.focus}", "type": "color", "source": "$tab-more-link-dropdown-toggle-active-color" },
-          "hover": { "value": "{color.tab.more-link-dropdown-toggle.bg.focus}", "type": "color", "source": "$tab-more-link-dropdown-toggle-hover-color" }
-        },
-        "bg": {
-          "focus": { "value": "{color.primary.500}", "type": "color", "source": "$tab-more-link-dropdown-toggle-focus-bg" }
-        },
-        "border": {
-          "focus": { "value": "{color.tab.more-link-dropdown-toggle.bg.focus}", "type": "color", "source": "$tab-more-link-dropdown-toggle-focus-border-color" }
-        }
-      },
-      "inverse-pills-link-dropdown-toggle": {
-        "text": {
-          "focus": { "value": "{color.primary.500}", "type": "color", "source": "$tab-inverse-pills-link-dropdown-toggle-focus-color" },
-          "active": { "value": "{color.tab.inverse-pills-link-dropdown-toggle.text.focus}", "type": "color", "source": "$tab-inverse-pills-link-dropdown-toggle-active-color" },
-          "active-hover": {
-            "value": "{color.tab.inverse-pills-link-dropdown-toggle.bg.focus}",
-            "type": "color",
-            "source": "$tab-inverse-pills-link-dropdown-toggle-active-hover-color"
+          "focus": {
+            "source": "$tab-more-link-dropdown-toggle-focus-color",
+            "$value": "{color.white}"
+          },
+          "active": {
+            "source": "$tab-more-link-dropdown-toggle-active-color",
+            "$value": "{color.tab.more-link-dropdown-toggle.text.focus}"
+          },
+          "hover": {
+            "source": "$tab-more-link-dropdown-toggle-hover-color",
+            "$value": "{color.tab.more-link-dropdown-toggle.bg.focus}"
           }
         },
         "bg": {
-          "focus": { "value": "{color.white}", "type": "color", "source": "$tab-inverse-pills-link-dropdown-toggle-focus-bg" },
-          "hover": { "value": "transparent", "type": "color", "source": "$tab-inverse-tabs-link-dropdown-toggle-hover-bg" },
-          "active-hover": {
-            "value": "{color.primary.300}",
-            "type": "color",
-            "source": "$tab-inverse-pills-link-dropdown-toggle-active-hover-bg"
+          "focus": {
+            "source": "$tab-more-link-dropdown-toggle-focus-bg",
+            "$value": "{color.primary.500}"
           }
         },
         "border": {
           "focus": {
-            "value": "{color.tab.inverse-pills-link-dropdown-toggle.bg.focus}",
-            "type": "color",
-            "source": "$tab-inverse-pills-link-dropdown-toggle-focus-border-color"
+            "source": "$tab-more-link-dropdown-toggle-focus-border-color",
+            "$value": "{color.tab.more-link-dropdown-toggle.bg.focus}"
+          }
+        }
+      },
+      "inverse-pills-link-dropdown-toggle": {
+        "text": {
+          "focus": {
+            "source": "$tab-inverse-pills-link-dropdown-toggle-focus-color",
+            "$value": "{color.primary.500}"
+          },
+          "active": {
+            "source": "$tab-inverse-pills-link-dropdown-toggle-active-color",
+            "$value": "{color.tab.inverse-pills-link-dropdown-toggle.text.focus}"
+          },
+          "active-hover": {
+            "source": "$tab-inverse-pills-link-dropdown-toggle-active-hover-color",
+            "$value": "{color.tab.inverse-pills-link-dropdown-toggle.bg.focus}"
+          }
+        },
+        "bg": {
+          "focus": {
+            "source": "$tab-inverse-pills-link-dropdown-toggle-focus-bg",
+            "$value": "{color.white}"
+          },
+          "hover": {
+            "source": "$tab-inverse-tabs-link-dropdown-toggle-hover-bg",
+            "$value": "transparent"
+          },
+          "active-hover": {
+            "source": "$tab-inverse-pills-link-dropdown-toggle-active-hover-bg",
+            "$value": "{color.primary.300}"
+          }
+        },
+        "border": {
+          "focus": {
+            "source": "$tab-inverse-pills-link-dropdown-toggle-focus-border-color",
+            "$value": "{color.tab.inverse-pills-link-dropdown-toggle.bg.focus}"
           }
         }
       }

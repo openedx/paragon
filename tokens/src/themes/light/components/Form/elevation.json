@@ -1,72 +1,81 @@
 {
+  "$type": "shadow",
   "elevation": {
     "form": {
       "input": {
-        "base": { "value": "none", "type": "shadow", "source": "$input-box-shadow" },
+        "base": {
+          "source": "$input-box-shadow",
+          "$value": "none"
+        },
         "focus": {
-          "value": "0 0 0 1px {color.primary.500}",
-          "type": "shadow",
-          "source": "$input-focus-box-shadow"
+          "source": "$input-focus-box-shadow",
+          "$value": "0 0 0 1px {color.primary.500}"
         }
       },
       "control": {
         "indicator": {
           "base": {
-            "value": "{elevation.form.input.base}",
-            "type": "shadow",
-            "source": "$custom-control-indicator-box-shadow"
+            "source": "$custom-control-indicator-box-shadow",
+            "$value": "{elevation.form.input.base}"
           },
           "checked": {
-            "base": { "value": "none", "type": "shadow", "source": "$custom-control-indicator-checked-box-shadow" },
+            "base": {
+              "source": "$custom-control-indicator-checked-box-shadow",
+              "$value": "none"
+            },
             "focus": {
-              "value": "0 0 0 4px rgba(0, 0, 0, .1)",
-              "type": "shadow",
-              "source": "$custom-control-indicator-focus-box-shadow"
+              "source": "$custom-control-indicator-focus-box-shadow",
+              "$value": "0 0 0 4px rgba(0, 0, 0, .1)"
             }
           },
-          "active": { "value": "none", "type": "shadow", "source": "$custom-control-indicator-active-box-shadow" }
+          "active": {
+            "source": "$custom-control-indicator-active-box-shadow",
+            "$value": "none"
+          }
         },
         "checkbox": {
           "indicator": {
             "indeterminate": {
-              "value": "none", "type": "shadow", "source": "$custom-checkbox-indicator-indeterminate-box-shadow"
+              "source": "$custom-checkbox-indicator-indeterminate-box-shadow",
+              "$value": "none"
             }
           }
         },
         "range": {
           "track": {
-            "value": "none",
-            "type": "shadow",
-            "source": "$custom-range-track-box-shadow"
+            "source": "$custom-range-track-box-shadow",
+            "$value": "none"
           },
           "thumb": {
             "base": {
-              "value": "none", "type": "shadow", "source": "$custom-range-thumb-box-shadow"
+              "source": "$custom-range-thumb-box-shadow",
+              "$value": "none"
             },
             "focus": {
-              "value": "0 0 0 1px {color.body.bg}, {size.form.input.width.focus}",
-              "type": "shadow",
-              "source": "$custom-range-thumb-focus-box-shadow"
+              "source": "$custom-range-thumb-focus-box-shadow",
+              "$value": "0 0 0 1px {color.body.bg}, {size.form.input.width.focus}"
             }
           }
         },
         "file": {
           "base": {
-            "value": "{elevation.form.input.base}", "type": "shadow", "source": "$custom-file-box-shadow"
+            "source": "$custom-file-box-shadow",
+            "$value": "{elevation.form.input.base}"
           },
           "focus": {
-            "value": "{elevation.form.input.focus}", "type": "shadow", "source": "$custom-file-focus-box-shadow"
+            "source": "$custom-file-focus-box-shadow",
+            "$value": "{elevation.form.input.focus}"
           }
         },
         "select": {
           "border": {
             "base": {
-              "value": "none", "type": "shadow", "source": "$custom-select-box-shadow"
+              "source": "$custom-select-box-shadow",
+              "$value": "none"
             },
             "focus": {
-              "value": "{elevation.input.btn-focus.box-shadow}",
-              "type": "shadow",
-              "source": "$custom-select-focus-box-shadow"
+              "source": "$custom-select-focus-box-shadow",
+              "$value": "{elevation.input.btn-focus.box-shadow}"
             }
           }
         }

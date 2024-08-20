@@ -1,17 +1,31 @@
 {
   "color": {
+    "$type": "color",
     "image": {
-      "figure-caption": { "value": "{color.gray.500}", "type": "color", "source": "$figure-caption-color" },
+      "figure-caption": {
+        "source": "$figure-caption-color",
+        "$value": "{color.gray.500}"
+      },
       "thumbnail": {
-        "bg": { "value": "{color.body.bg}", "type": "color", "source": "$thumbnail-bg" },
-        "border": { "value": "{color.gray.200}", "type": "color", "source": "$thumbnail-border-color" }
+        "bg": {
+          "source": "$thumbnail-bg",
+          "$value": "{color.body.bg}"
+        },
+        "border": {
+          "source": "$thumbnail-border-color",
+          "$value": "{color.gray.200}"
+        }
       }
     }
   },
   "elevation": {
+    "$type": "shadow",
     "image": {
       "thumbnail": {
-        "box-shadow": { "value": "none", "type": "shadow", "source": "$thumbnail-box-shadow" }
+        "box-shadow": {
+          "source": "$thumbnail-box-shadow",
+          "$value": "none"
+        }
       }
     }
   }

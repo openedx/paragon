@@ -1,21 +1,38 @@
 {
+  "$type": "dimension",
   "spacing": {
     "stepper": {
       "header": {
         "padding": {
-          "y": { "value": ".75rem", "type": "dimension", "source": "$stepper-header-padding-y" },
-          "x": { "value": "{spacing.spacer.base}", "type": "dimension", "source": "$stepper-header-padding-x" }
+          "y": {
+            "source": "$stepper-header-padding-y",
+            "$value": ".75rem"
+          },
+          "x": {
+            "source": "$stepper-header-padding-x",
+            "$value": "{spacing.spacer.base}"
+          }
         },
         "step": {
           "padding": {
-            "value": ".25rem", "type": "dimension", "source": "$stepper-header-step-padding"
+            "source": "$stepper-header-step-padding",
+            "$value": ".25rem"
           },
           "list": {
             "padding": {
-              "y": { "value": ".25rem", "type": "dimension", "source": "$stepper-header-step-list-padding-y" },
-              "x": { "value": "0", "type": "dimension", "source": "$stepper-header-step-list-padding-x" }
+              "y": {
+                "source": "$stepper-header-step-list-padding-y",
+                "$value": ".25rem"
+              },
+              "x": {
+                "source": "$stepper-header-step-list-padding-x",
+                "$value": "0"
+              }
             },
-            "margin": { "value": "0", "type": "dimension", "source": "$stepper-header-step-list-margin" }
+            "margin": {
+              "source": "$stepper-header-step-list-margin",
+              "$value": "0"
+            }
           }
         }
       }
@@ -24,19 +41,29 @@
   "size": {
     "stepper": {
       "header": {
-        "height-min": { "value": "5.13rem", "type": "dimension", "source": "$stepper-header-min-height" }
+        "height-min": {
+          "source": "$stepper-header-min-height",
+          "$value": "5.13rem"
+        }
       },
       "step": {
-        "width-min": { "value": "0", "type": "dimension", "source": "$stepper-header-step-min-width" },
+        "width-min": {
+          "source": "$stepper-header-step-min-width",
+          "$value": "0"
+        },
         "bubble-error-shadow-width": {
-          "value": "3px", "type": "dimension", "source": "$stepper-header-step-error-bubble-shadow-width"
+          "source": "$stepper-header-step-error-bubble-shadow-width",
+          "$value": "3px"
         }
       }
     }
   },
   "typography": {
     "spacer": {
-      "line-height": { "value": "1px", "type": "dimension", "source": "$stepper-header-line-height" }
+      "line-height": {
+        "source": "$stepper-header-line-height",
+        "$value": "1px"
+      }
     }
   }
 }

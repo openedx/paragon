@@ -1,10 +1,18 @@
 {
   "color": {
-    "close-button": { "value": "{color.black}", "type": "color", "source": "$close-color" }
+    "$type": "color",
+    "close-button": {
+      "source": "$close-color",
+      "$value": "{color.black}"
+    }
   },
   "elevation": {
+    "$type": "shadow",
     "close-button": {
-      "text-shadow": { "value": "0 1px 0 {color.white}", "type": "shadow", "source": "$close-text-shadow" }
+      "text-shadow": {
+        "source": "$close-text-shadow",
+        "$value": "0 1px 0 {color.white}"
+      }
     }
   }
 }

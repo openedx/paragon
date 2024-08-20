@@ -1,27 +1,40 @@
 {
   "typography": {
+    "$type": "percentage",
     "image": {
       "figure-caption": {
-        "font-size": { "value": "90%", "type": "percentage", "source": "$figure-caption-font-size" }
+        "font-size": {
+          "source": "$figure-caption-font-size",
+          "$value": "90%"
+        }
       }
     }
   },
   "size": {
+    "$type": "dimension",
     "image": {
       "thumbnail": {
         "border": {
-          "width": { "value": "{size.border.width}", "type": "dimension", "source": "$thumbnail-border-width" },
+          "width": {
+            "source": "$thumbnail-border-width",
+            "$value": "{size.border.width}"
+          },
           "radius": {
-            "value": "{size.border.radius.base}", "type": "dimension", "source": "$thumbnail-border-radius"
+            "source": "$thumbnail-border-radius",
+            "$value": "{size.border.radius.base}"
           }
         }
       }
     }
   },
   "spacing": {
+    "$type": "dimension",
     "image": {
       "thumbnail": {
-        "padding": { "value": ".25rem", "type": "dimension", "source": "$thumbnail-padding" }
+        "padding": {
+          "source": "$thumbnail-padding",
+          "$value": ".25rem"
+        }
       }
     }
   }

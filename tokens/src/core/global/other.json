@@ -1,4 +1,8 @@
 {
+  "$type": "percentage",
   "yiq-contrasted-threshold": 128,
-  "theme-interval": { "value": "8%", "type": "percentage", "source": "$theme-color-interval" }
+  "theme-interval": {
+    "source": "$theme-color-interval",
+    "$value": "8%"
+  }
 }

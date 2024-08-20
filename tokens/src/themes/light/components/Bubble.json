@@ -1,17 +1,42 @@
 {
+  "$type": "color",
   "color": {
     "bubble": {
       "text": {
-        "success": { "value": "{color.white}", "type": "color", "source": "$bubble-success-color" },
-        "warning": { "value": "{color.white}", "type": "color", "source": "$bubble-warning-color" },
-        "error": { "value": "{color.white}", "type": "color", "source": "$bubble-error-color" },
-        "primary": { "value": "{color.white}", "type": "color", "source": "$bubble-primary-color" }
+        "success": {
+          "source": "$bubble-success-color",
+          "$value": "{color.white}"
+        },
+        "warning": {
+          "source": "$bubble-warning-color",
+          "$value": "{color.white}"
+        },
+        "error": {
+          "source": "$bubble-error-color",
+          "$value": "{color.white}"
+        },
+        "primary": {
+          "source": "$bubble-primary-color",
+          "$value": "{color.white}"
+        }
       },
       "bg": {
-        "success": { "value": "{color.success.base}", "type": "color", "source": "$bubble-success-bg" },
-        "warning": { "value": "{color.warning.base}", "type": "color", "source": "$bubble-warning-bg" },
-        "error": { "value": "{color.danger.base}", "type": "color", "source": "$bubble-error-bg" },
-        "primary": { "value": "{color.primary.base}", "type": "color", "source": "$bubble-primary-bg" }
+        "success": {
+          "source": "$bubble-success-bg",
+          "$value": "{color.success.base}"
+        },
+        "warning": {
+          "source": "$bubble-warning-bg",
+          "$value": "{color.warning.base}"
+        },
+        "error": {
+          "source": "$bubble-error-bg",
+          "$value": "{color.danger.base}"
+        },
+        "primary": {
+          "source": "$bubble-primary-bg",
+          "$value": "{color.primary.base}"
+        }
       }
     }
   }

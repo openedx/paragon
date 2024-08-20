@@ -1,22 +1,77 @@
 {
   "typography": {
     "display": {
-      "line-height": {
-        "base": { "value": "1", "type": "dimension", "source": "$display-line-height", "description": "Standard line height." },
-        "mobile": { "value": "3.5rem", "type": "dimension", "source": "$display-mobile-line-height", "description": "Mobile line height." }
+      "1": {
+        "source": "$display1-size",
+        "$value": "3.75rem",
+        "$type": "dimension",
+        "$description": "Font size for heading of level 1."
       },
-      "1": { "value": "3.75rem", "type": "dimension", "source": "$display1-size", "description": "Font size for heading of level 1." },
-      "2": { "value": "4.875rem", "type": "dimension", "source": "$display2-size", "description": "Font size for heading of level 2." },
-      "3": { "value": "5.625rem", "type": "dimension", "source": "$display3-size", "description": "Font size for heading of level 3." },
-      "4": { "value": "7.5rem", "type": "dimension", "source": "$display4-size", "description": "Font size for heading of level 4." },
-      "mobile": { "value": "3.25rem", "type": "dimension", "source": "$display-mobile-size", "description": "Font size for mobile devices." },
+      "2": {
+        "source": "$display2-size",
+        "$value": "4.875rem",
+        "$type": "dimension",
+        "$description": "Font size for heading of level 2."
+      },
+      "3": {
+        "source": "$display3-size",
+        "$value": "5.625rem",
+        "$type": "dimension",
+        "$description": "Font size for heading of level 3."
+      },
+      "4": {
+        "source": "$display4-size",
+        "$value": "7.5rem",
+        "$type": "dimension",
+        "$description": "Font size for heading of level 4."
+      },
+      "line-height": {
+        "$type": "dimension",
+        "base": {
+          "source": "$display-line-height",
+          "$value": "1",
+          "$description": "Standard line height."
+        },
+        "mobile": {
+          "source": "$display-mobile-line-height",
+          "$value": "3.5rem",
+          "$description": "Mobile line height."
+        }
+      },
+      "mobile": {
+        "source": "$display-mobile-size",
+        "$value": "3.25rem",
+        "$type": "dimension",
+        "$description": "Font size for mobile devices."
+      },
       "weight": {
-        "1": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display1-weight", "description": "Font weight of level 1." },
-        "2": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display2-weight", "description": "Font weight of level 2." },
-        "3": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display3-weight", "description": "Font weight of level 3." },
-        "4": { "value": "{typography.font.weight.bold}", "type": "fontWeight", "source": "$display4-weight", "description": "Font weight of level 4." }
+        "1": {
+          "source": "$display1-weight",
+          "$value": "{typography.font.weight.bold}",
+          "$description": "Font weight of level 1."
+        },
+        "2": {
+          "source": "$display2-weight",
+          "$value": "{typography.font.weight.bold}",
+          "$description": "Font weight of level 2."
+        },
+        "3": {
+          "source": "$display3-weight",
+          "$value": "{typography.font.weight.bold}",
+          "$description": "Font weight of level 3."
+        },
+        "4": {
+          "source": "$display4-weight",
+          "$value": "{typography.font.weight.bold}",
+          "$description": "Font weight of level 4."
+        },
+        "$type": "fontWeight"
       }
     },
-    "print-page-size": { "value": "a3", "type": "dimension", "source": "$print-page-size" }
+    "print-page-size": {
+      "source": "$print-page-size",
+      "$value": "a3",
+      "$type": "dimension"
+    }
   }
 }

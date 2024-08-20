@@ -1,26 +1,50 @@
 {
+  "$type": "dimension",
   "spacing": {
     "collapsible": {
       "card": {
         "spacer": {
           "y": {
-            "base": { "value": ".5rem", "type": "dimension", "source": "$collapsible-card-spacer-y" },
+            "base": {
+              "source": "$collapsible-card-spacer-y",
+              "$value": ".5rem"
+            },
             "lg": {
-              "value": "{spacing.card.spacer.y}", "type": "dimension", "source": "$collapsible-card-spacer-y-lg"
+              "source": "$collapsible-card-spacer-y-lg",
+              "$value": "{spacing.card.spacer.y}"
             }
           },
           "x": {
-            "base": { "value": ".5rem", "type": "dimension", "source": "$collapsible-card-spacer-x" },
+            "base": {
+              "source": "$collapsible-card-spacer-x",
+              "$value": ".5rem"
+            },
             "lg": {
-              "value": "{spacing.card.spacer.x}", "type": "dimension", "source": "$collapsible-card-spacer-x-lg"
+              "source": "$collapsible-card-spacer-x-lg",
+              "$value": "{spacing.card.spacer.x}"
             }
           },
-          "left-body": { "value": ".75rem", "type": "dimension", "source": "$collapsible-card-body-spacer-left" },
-          "icon": { "value": "2.5rem", "type": "dimension", "source": "$collapsible-card-spacer-icon" },
+          "left-body": {
+            "source": "$collapsible-card-body-spacer-left",
+            "$value": ".75rem"
+          },
+          "icon": {
+            "source": "$collapsible-card-spacer-icon",
+            "$value": "2.5rem"
+          },
           "basic": {
-            "y": { "value": ".5rem", "type": "dimension", "source": "$collapsible-basic-spacer-y" },
-            "x": { "value": ".5rem", "type": "dimension", "source": "$collapsible-basic-spacer-x" },
-            "icon": { "value": ".625rem", "type": "dimension", "source": "$collapsible-basic-spacer-icon" }
+            "y": {
+              "source": "$collapsible-basic-spacer-y",
+              "$value": ".5rem"
+            },
+            "x": {
+              "source": "$collapsible-basic-spacer-x",
+              "$value": ".5rem"
+            },
+            "icon": {
+              "source": "$collapsible-basic-spacer-icon",
+              "$value": ".625rem"
+            }
           }
         }
       }

@@ -1,36 +1,51 @@
 {
+  "$type": "color",
   "color": {
     "card": {
-      "base": { "value": "inherit", "type": "color", "source": "$card-color" },
+      "base": {
+        "source": "$card-color",
+        "$value": "inherit"
+      },
       "bg": {
-        "base": { "value": "{color.bg.base}", "type": "color", "source": "$card-bg" },
-        "dark": { "value": "{color.primary.500}", "type": "color", "source": "$card-bg-dark" },
-        "muted": { "value": "{color.light.200}", "type": "color", "source": "$card-bg-muted" }
+        "base": {
+          "source": "$card-bg",
+          "$value": "{color.bg.base}"
+        },
+        "dark": {
+          "source": "$card-bg-dark",
+          "$value": "{color.primary.500}"
+        },
+        "muted": {
+          "source": "$card-bg-muted",
+          "$value": "{color.light.200}"
+        }
       },
       "border": {
         "base": {
-          "value": "{color.black}",
-          "type": "color",
           "source": "$card-border-color",
-          "modify": [{
-            "type": "alpha",
-            "amount": 0.125
-          }]
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.125
+            }
+          ],
+          "$value": "{color.black}"
         },
         "focus": {
           "base": {
-            "value": "{color.primary.500}",
-            "type": "color",
-            "source": "$card-border-focus-color"
+            "source": "$card-border-focus-color",
+            "$value": "{color.primary.500}"
           },
           "dark": {
-            "value": "{color.theme.focus.primary}",
-            "type": "color",
-            "source": "$card-border-focus-color-dark"
+            "source": "$card-border-focus-color-dark",
+            "$value": "{color.theme.focus.primary}"
           }
         }
       },
-      "divider-bg": { "value": "{color.light.400}", "type": "color", "source": "$card-divider-bg" }
+      "divider-bg": {
+        "source": "$card-divider-bg",
+        "$value": "{color.light.400}"
+      }
     }
   }
 }

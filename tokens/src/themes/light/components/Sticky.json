@@ -1,16 +1,15 @@
 {
+  "$type": "shadow",
   "elevation": {
     "sticky": {
       "shadow": {
         "top": {
-          "value": "0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
-          "source": "$sticky-shadow-top"
+          "source": "$sticky-shadow-top",
+          "$value": "0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15)"
         },
         "bottom": {
-          "value": "0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15)",
-          "type": "shadow",
-          "source": "$sticky-shadow-bottom"
+          "source": "$sticky-shadow-bottom",
+          "$value": "0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15)"
         }
       }
     }

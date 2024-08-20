@@ -1,32 +1,61 @@
 {
   "typography": {
+    "$type": "dimension",
     "tooltip": {
-      "font-size": { "value": "{typography.font.size.sm}", "type": "dimension", "source": "$tooltip-font-size" }
+      "font-size": {
+        "source": "$tooltip-font-size",
+        "$value": "{typography.font.size.sm}"
+      }
     }
   },
   "spacing": {
+    "$type": "dimension",
     "tooltip": {
       "padding": {
-        "y": { "value": ".5rem", "type": "dimension", "source": "$tooltip-padding-y" },
-        "x": { "value": ".5rem", "type": "dimension", "source": "$tooltip-padding-x" }
+        "y": {
+          "source": "$tooltip-padding-y",
+          "$value": ".5rem"
+        },
+        "x": {
+          "source": "$tooltip-padding-x",
+          "$value": ".5rem"
+        }
       },
-      "margin": { "value": "0", "type": "dimension", "source": "$tooltip-margin" }
+      "margin": {
+        "source": "$tooltip-margin",
+        "$value": "0"
+      }
     }
   },
   "elevation": {
+    "$type": "ratio",
     "tooltip": {
-      "zindex": { "value": "1070", "type": "ratio", "source": "$zindex-tooltip" }
+      "zindex": {
+        "source": "$zindex-tooltip",
+        "$value": "1070"
+      }
     }
   },
   "size": {
+    "$type": "dimension",
     "tooltip": {
-      "max-width": { "value": "200px", "type": "dimension", "source": "$tooltip-max-width" },
+      "max-width": {
+        "source": "$tooltip-max-width",
+        "$value": "200px"
+      },
       "arrow": {
-        "height": { "value": ".4rem", "type": "dimension", "source": "$tooltip-arrow-height" },
-        "width": { "value": ".8rem", "type": "dimension", "source": "$tooltip-arrow-width" }
+        "height": {
+          "source": "$tooltip-arrow-height",
+          "$value": ".4rem"
+        },
+        "width": {
+          "source": "$tooltip-arrow-width",
+          "$value": ".8rem"
+        }
       },
       "border-radius": {
-        "value": "{size.border.radius.base}", "type": "dimension", "source": "$tooltip-border-radius"
+        "source": "$tooltip-border-radius",
+        "$value": "{size.border.radius.base}"
       }
     }
   }

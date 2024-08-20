@@ -1,13 +1,21 @@
 {
+  "$type": "dimension",
   "spacing": {
     "chip-carousel": {
       "controls-top-offset": {
-        "value": ".375rem", "type": "dimension", "source": "$chip-carousel-controls-top-offset"
+        "source": "$chip-carousel-controls-top-offset",
+        "$value": ".375rem"
       },
       "container": {
         "padding": {
-          "x": { "value": ".625rem", "type": "dimension", "source": "$chip-carousel-container-padding-x" },
-          "y": { "value": ".313rem", "type": "dimension", "source": "$chip-carousel-container-padding-y" }
+          "x": {
+            "source": "$chip-carousel-container-padding-x",
+            "$value": ".625rem"
+          },
+          "y": {
+            "source": "$chip-carousel-container-padding-y",
+            "$value": ".313rem"
+          }
         }
       }
     }
