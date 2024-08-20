@@ -49,7 +49,7 @@ function borderColor(token) {
 `;
 }
 
-module.exports = {
+export default {
   bgVariant,
   textEmphasisVariant,
   borderColor,

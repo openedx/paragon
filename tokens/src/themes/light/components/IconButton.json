@@ -5,7 +5,7 @@
         "base": { "value": "transparent", "type": "color", "source": "$btn-icon-bg" }, 
         "primary": {
           "base": { "value": "{color.icon-button.bg.base}", "type": "color" },
-          "hover": { "value": "{color.icon-button.text.primary.base}", "type": "color" },
+          "hover": { "value": "{color.icon-button.bg.base}", "type": "color" },
           "focus": { "value": "{color.icon-button.bg.base}", "type": "color" },
           "inverse": {
             "base": { "value": "{color.icon-button.bg.base}", "type": "color" },
@@ -13,9 +13,9 @@
             "focus": { "value": "{color.icon-button.bg.base}", "type": "color" }
           },
           "active": {
-            "base": { "value": "{color.icon-button.text.primary.base}", "type": "color" },
-            "hover": { "value": "{color.icon-button.text.primary.base}", "type": "color" },
-            "focus": { "value": "{color.icon-button.text.primary.base}", "type": "color" }
+            "base": { "value": "{color.icon-button.bg.base}", "type": "color" },
+            "hover": { "value": "{color.icon-button.bg.base}", "type": "color" },
+            "focus": { "value": "{color.icon-button.bg.base}", "type": "color" }
           },
           "inverse-active": {
             "base": { "value": "{color.icon-button.accent}", "type": "color" },
@@ -188,10 +188,10 @@
         "primary": {
           "base": { "value": "{color.primary.base}", "type": "color" },
           "hover": { "value": "{color.icon-button.accent}", "type": "color" },
-          "focus": { "value": "{color.icon-button.text.primary.base}", "type": "color" },
+          "focus": { "value": "{color.icon-button.bg.base}", "type": "color" },
           "inverse": {
             "base": { "value": "{color.icon-button.accent}", "type": "color" },
-            "hover": { "value": "{color.icon-button.text.primary.base}", "type": "color" },
+            "hover": { "value": "{color.icon-button.bg.base}", "type": "color" },
             "focus": { "value": "{color.icon-button.accent}", "type": "color" }
           },
           "active": {
@@ -200,9 +200,9 @@
             "focus": { "value": "{color.icon-button.accent}", "type": "color" }
           },
           "inverse-active": {
-            "base": { "value": "{color.icon-button.text.primary.base}", "type": "color" },
-            "hover": { "value": "color.icon-button.text.primary.base", "type": "color" },
-            "focus": { "value": "{color.icon-button.text.primary.base}", "type": "color" }
+            "base": { "value": "{color.icon-button.bg.base}", "type": "color" },
+            "hover": { "value": "{color.icon-button.bg.base}", "type": "color" },
+            "focus": { "value": "{color.icon-button.bg.base}", "type": "color" }
           }
         },
         "secondary": {
@@ -375,7 +375,7 @@
       "box-shadow": {
         "primary": {
           "base": {
-            "value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.text.primary.base}", "type": "shadow"
+            "value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.bg.base}", "type": "shadow"
           },
           "inverse": { "value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.accent}", "type": "shadow" },
           "active": { "value": "none", "type": "shadow" },

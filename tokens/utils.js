@@ -1,6 +1,6 @@
-const fs = require('fs');
-const readline = require('readline');
-const path = require('path');
+import fs from 'fs';
+import readline from 'readline';
+import path from 'path';
 
 function getFilesWithExtension(location, extension, files = [], excludeDirectories = []) {
   const content = fs.statSync(location);
@@ -201,7 +201,7 @@ function composeBreakpointName(breakpointName, format) {
   return `@custom-media --${breakpointName.replace(/breakpoint/g, `breakpoint-${format}-width`)}`;
 }
 
-module.exports = {
+export {
   createIndexCssFile,
   getFilesWithExtension,
   getSCSStoCSSMap,
