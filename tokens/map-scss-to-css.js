@@ -2,9 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const { getSCSStoCSSMap, getFilesWithExtension } = require('./utils');
 
-// const filename = fileURLToPath(import.meta.url);
-// const dirname = path.dirname(filename);
-
 const BASE_PATH = path.resolve(__dirname, './src');
 const TOKEN_PREFIX = '--pgn';
 
