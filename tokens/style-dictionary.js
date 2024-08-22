@@ -1,15 +1,11 @@
 /**
  * This module creates and exports custom StyleDictionary instance for Paragon.
  */
-import * as toml from 'js-toml';
-import StyleDictionary from 'style-dictionary';
-import chroma from 'chroma-js';
-import {
-  fileHeader, sortByReference, usesReferences, getReferences,
-} from 'style-dictionary/utils';
-import { colorYiq, darken, lighten } from './sass-helpers.js';
-import cssUtilities from './css-utilities.js';
-import { composeBreakpointName } from './utils.js';
+const toml = require('js-toml');
+const chroma = require('chroma-js');
+const { colorYiq, darken, lighten } = require('./sass-helpers');
+const cssUtilities = require('./css-utilities');
+const { composeBreakpointName } = require('./utils');
 
 const colorTransform = (token, theme) => {
   const {
@@ -66,10 +62,11 @@ const colorTransform = (token, theme) => {
  * 2. 'theme' to output only theme's variables (e.g, 'light' or 'dark'), if theme is not provided - only
  * core tokens are built.
  */
-const createCustomCSSVariables = ({
+const createCustomCSSVariables = async ({
   formatterArgs,
   themeVariant,
 }) => {
+  const { sortByReference, usesReferences, getReferences } = (await import('style-dictionary/utils'));
   const { dictionary, options, file } = formatterArgs;
   const outputTokens = themeVariant
     ? dictionary.allTokens.filter(token => token.filePath.includes(themeVariant))
@@ -90,144 +87,148 @@ const createCustomCSSVariables = ({
     return `  --${token.name}: ${$value};`;
   }).join('\n');
 
-  // return `${fileHeader({ file })}:root {\n${variables}\n}\n`;
   return `:root {\n${variables}\n}\n`;
 };
 
-/**
- * Transformer that applies SASS color functions to tokens.
- */
-StyleDictionary.registerTransform({
-  name: 'color/sass-color-functions',
-  transitive: true,
-  type: 'value',
-  filter: (token) => token.attributes.category === 'color' || token.$value?.toString().startsWith('#'),
-  transform: (token) => colorTransform(token),
-});
+const initializeStyleDictionary = async () => {
+  const StyleDictionary = (await import('style-dictionary')).default;
+  const { getReferences } = (await import('style-dictionary/utils'));
 
-/**
- * Transforms that implements str-replace from SASS.
- */
-StyleDictionary.registerTransform({
-  name: 'str-replace',
-  transitive: true,
-  type: 'value',
-  filter: (token) => token.modify && token.modify[0].type === 'str-replace',
-  transform: (token) => {
-    const { $value, modify } = token;
-    const { toReplace, replaceWith } = modify[0];
-    return $value.replaceAll(toReplace, replaceWith);
-  },
-});
+  /**
+   * Transformer that applies SASS color functions to tokens.
+   */
+  StyleDictionary.registerTransform({
+    name: 'color/sass-color-functions',
+    transitive: true,
+    type: 'value',
+    filter: (token) => token.attributes.category === 'color' || token.$value?.toString().startsWith('#'),
+    transform: (token) => colorTransform(token),
+  });
 
-/**
- * The custom formatter to create CSS variables for core tokens.
- */
-StyleDictionary.registerFormat({
-  name: 'css/custom-variables',
-  format: formatterArgs => createCustomCSSVariables({ formatterArgs }),
-});
+  /**
+   * Transforms that implements str-replace from SASS.
+   */
+  StyleDictionary.registerTransform({
+    name: 'str-replace',
+    transitive: true,
+    type: 'value',
+    filter: (token) => token.modify && token.modify[0].type === 'str-replace',
+    transform: (token) => {
+      const { $value, modify } = token;
+      const { toReplace, replaceWith } = modify[0];
+      return $value.replaceAll(toReplace, replaceWith);
+    },
+  });
 
-/**
- * Formatter to generate CSS utility classes.
- * Looks in ./src/utilities/ to get utility classes configuration, filters tokens by 'filters' object attributes
- * (see https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item for possible keys in the object,
- * each key should have a list of valid values) and generates CSS classes with using functions defined in
- * 'utilityFunctionsToApply' list, those functions must be located in css-utilities.js module and return string.
- */
-StyleDictionary.registerFormat({
-  name: 'css/utility-classes',
-  format: async ({ dictionary, file }) => {
-    const { utilities } = dictionary.tokens;
-    if (!utilities) {
-      return '';
-    }
+  /**
+   * The custom formatter to create CSS variables for core tokens.
+   */
+  StyleDictionary.registerFormat({
+    name: 'css/custom-variables',
+    format: formatterArgs => createCustomCSSVariables({ formatterArgs }),
+  });
 
-    let utilityClasses = '';
+  /**
+   * Formatter to generate CSS utility classes.
+   * Looks in ./src/utilities/ to get utility classes configuration, filters tokens by 'filters' object attributes
+   * (see https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item for possible keys in the object,
+   * each key should have a list of valid values) and generates CSS classes with using functions defined in
+   * 'utilityFunctionsToApply' list, those functions must be located in css-utilities.js module and return string.
+   */
+  StyleDictionary.registerFormat({
+    name: 'css/utility-classes',
+    format: async ({ dictionary, file }) => {
+      const { utilities } = dictionary.tokens;
+      if (!utilities) {
+        return '';
+      }
 
-    utilities.forEach(({ filters, utilityFunctionsToApply }) => {
-      let tokens = dictionary.allTokens;
+      let utilityClasses = '';
 
-      Object.entries(filters).forEach(([attributeName, allowedValues]) => {
-        tokens = tokens.filter((token) => allowedValues.includes(token.attributes[attributeName]));
-      });
+      utilities.forEach(({ filters, utilityFunctionsToApply }) => {
+        let tokens = dictionary.allTokens;
 
-      // eslint-disable-next-line no-restricted-syntax
-      for (const token of tokens) {
-        // Get action token by reference
-        const ref = getReferences(token.original.actions.default, dictionary.tokens)[0];
-        token.actions = { default: `var(--${ref.name})` };
+        Object.entries(filters).forEach(([attributeName, allowedValues]) => {
+          tokens = tokens.filter((token) => allowedValues.includes(token.attributes[attributeName]));
+        });
+
         // eslint-disable-next-line no-restricted-syntax
-        for (const funcName of utilityFunctionsToApply) {
-          utilityClasses += cssUtilities[funcName](token);
+        for (const token of tokens) {
+          // Get action token by reference
+          const ref = getReferences(token.original.actions.default, dictionary.tokens)[0];
+          token.actions = { default: `var(--${ref.name})` };
+          // eslint-disable-next-line no-restricted-syntax
+          for (const funcName of utilityFunctionsToApply) {
+            utilityClasses += cssUtilities[funcName](token);
+          }
+        }
+      });
+      // const header = StyleDictionary.hooks.fileHeaders.customFileHeader({ file });
+      return utilityClasses;
+    },
+  });
+
+  /**
+   * Formatter to generate CSS custom media queries for responsive breakpoints.
+   * Gets input about existing tokens of the 'size' category,
+   * 'breakpoints' subcategory, and generates a CSS custom media queries.
+   */
+  StyleDictionary.registerFormat({
+    name: 'css/custom-media-breakpoints',
+    format: ({ dictionary, file }) => {
+      const { breakpoint } = dictionary.tokens.size;
+
+      let customMediaVariables = '';
+      const breakpoints = Object.values(breakpoint || {});
+
+      for (let i = 0; i < breakpoints.length; i++) {
+        const [currentBreakpoint, nextBreakpoint] = [breakpoints[i], breakpoints[i + 1]];
+        customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'min')} (min-width: ${currentBreakpoint.$value});\n`;
+        if (nextBreakpoint) {
+          customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'max')} (max-width: ${nextBreakpoint.$value});\n`;
         }
       }
-    });
 
-    // const header = StyleDictionary.hooks.fileHeaders.customFileHeader({ file });
-    return utilityClasses;
-  },
-});
+      return customMediaVariables;
+    },
+  });
 
-/**
- * Formatter to generate CSS custom media queries for responsive breakpoints.
- * Gets input about existing tokens of the 'size' category,
- * 'breakpoints' subcategory, and generates a CSS custom media queries.
- */
-StyleDictionary.registerFormat({
-  name: 'css/custom-media-breakpoints',
-  format: ({ dictionary, file }) => {
-    const { breakpoint } = dictionary.tokens.size;
+  /**
+   * Custom file header for custom and built-in formatters.
+   */
+  StyleDictionary.registerFileHeader({
+    name: 'customFileHeader',
+    fileHeader: (defaultMessages = []) => {
+      return [
+        '/*',
+        ' * IMPORTANT: This file is the result of assembling design tokens.',
+        ' * Do not edit directly.',
+        ' */',
+        '',
+      ];
+    },
+  });
 
-    let customMediaVariables = '';
-    const breakpoints = Object.values(breakpoint || {});
+  /**
+   * Registers a filter `isSource` that filters output to only include tokens
+   * that are marked as `isSource` in their metadata.
+   */
+  StyleDictionary.registerFilter({
+    name: 'isSource',
+    filter: token => token.isSource === true,
+  });
 
-    for (let i = 0; i < breakpoints.length; i++) {
-      const [currentBreakpoint, nextBreakpoint] = [breakpoints[i], breakpoints[i + 1]];
-      customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'min')} (min-width: ${currentBreakpoint.$value});\n`;
-      if (nextBreakpoint) {
-        customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'max')} (max-width: ${nextBreakpoint.$value});\n`;
-      }
-    }
+  StyleDictionary.registerParser({
+    name: 'toml-parser',
+    pattern: /\.toml$/,
+    parser: ({ contents }) => toml.load(contents),
+  });
 
-    // return fileHeader({ file }) + customMediaVariables;
-    return customMediaVariables;
-  },
-});
+  return StyleDictionary;
+};
 
-/**
- * Custom file header for custom and built-in formatters.
- */
-StyleDictionary.registerFileHeader({
-  name: 'customFileHeader',
-  fileHeader: (defaultMessages = []) => {
-    return [
-      '/*',
-      ' * IMPORTANT: This file is the result of assembling design tokens.',
-      ' * Do not edit directly.',
-      ' */',
-      '',
-    ];
-  },
-});
-
-/**
- * Registers a filter `isSource` that filters output to only include tokens
- * that are marked as `isSource` in their metadata.
- */
-StyleDictionary.registerFilter({
-  name: 'isSource',
-  filter: token => token.isSource === true,
-});
-
-StyleDictionary.registerParser({
-  name: 'toml-parser',
-  pattern: /\.toml$/,
-  parser: ({ contents }) => toml.load(contents),
-});
-
-export {
-  StyleDictionary,
+module.exports = {
+  initializeStyleDictionary,
   createCustomCSSVariables,
   colorTransform,
 };
