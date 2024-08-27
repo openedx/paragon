@@ -2,52 +2,28 @@
   "$type": "dimension",
   "typography": {
     "toast": {
-      "font-size": {
-        "source": "$toast-font-size",
-        "$value": ".875rem"
-      }
+      "font-size": { "source": "$toast-font-size", "$value": ".875rem" }
     }
   },
   "size": {
     "toast": {
-      "max-width": {
-        "source": "$toast-max-width",
-        "$value": "400px"
-      },
+      "max-width": { "source": "$toast-max-width", "$value": "400px" },
       "border": {
-        "width": {
-          "source": "$toast-border-width",
-          "$value": "1px"
-        },
-        "radius": {
-          "source": "$toast-border-radius",
-          "$value": ".25rem"
-        }
+        "width": { "source": "$toast-border-width", "$value": "1px" },
+        "radius": { "source": "$toast-border-radius", "$value": ".25rem" }
       }
     }
   },
   "spacing": {
     "toast": {
       "padding": {
-        "x": {
-          "source": "$toast-padding-x",
-          "$value": ".75rem"
-        },
-        "y": {
-          "source": "$toast-padding-y",
-          "$value": ".25rem"
-        }
+        "x": { "source": "$toast-padding-x", "$value": ".75rem" },
+        "y": { "source": "$toast-padding-y", "$value": ".25rem" }
       },
       "container": {
         "gutter": {
-          "lg": {
-            "source": "$toast-container-gutter-lg",
-            "$value": "1.25rem"
-          },
-          "sm": {
-            "source": "$toast-container-gutter-sm",
-            "$value": ".625rem"
-          }
+          "lg": { "source": "$toast-container-gutter-lg", "$value": "1.25rem" },
+          "sm": { "source": "$toast-container-gutter-sm", "$value": ".625rem" }
         }
       }
     }

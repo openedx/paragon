@@ -5,46 +5,19 @@
       "card": {
         "spacer": {
           "y": {
-            "base": {
-              "source": "$collapsible-card-spacer-y",
-              "$value": ".5rem"
-            },
-            "lg": {
-              "source": "$collapsible-card-spacer-y-lg",
-              "$value": "{spacing.card.spacer.y}"
-            }
+            "base": { "source": "$collapsible-card-spacer-y", "$value": ".5rem" },
+            "lg": { "source": "$collapsible-card-spacer-y-lg", "$value": "{spacing.card.spacer.y}" }
           },
           "x": {
-            "base": {
-              "source": "$collapsible-card-spacer-x",
-              "$value": ".5rem"
-            },
-            "lg": {
-              "source": "$collapsible-card-spacer-x-lg",
-              "$value": "{spacing.card.spacer.x}"
-            }
+            "base": { "source": "$collapsible-card-spacer-x", "$value": ".5rem" },
+            "lg": { "source": "$collapsible-card-spacer-x-lg", "$value": "{spacing.card.spacer.x}" }
           },
-          "left-body": {
-            "source": "$collapsible-card-body-spacer-left",
-            "$value": ".75rem"
-          },
-          "icon": {
-            "source": "$collapsible-card-spacer-icon",
-            "$value": "2.5rem"
-          },
+          "left-body": { "source": "$collapsible-card-body-spacer-left", "$value": ".75rem" },
+          "icon": { "source": "$collapsible-card-spacer-icon", "$value": "2.5rem" },
           "basic": {
-            "y": {
-              "source": "$collapsible-basic-spacer-y",
-              "$value": ".5rem"
-            },
-            "x": {
-              "source": "$collapsible-basic-spacer-x",
-              "$value": ".5rem"
-            },
-            "icon": {
-              "source": "$collapsible-basic-spacer-icon",
-              "$value": ".625rem"
-            }
+            "y": { "source": "$collapsible-basic-spacer-y", "$value": ".5rem" },
+            "x": { "source": "$collapsible-basic-spacer-x", "$value": ".5rem" },
+            "icon": { "source": "$collapsible-basic-spacer-icon", "$value": ".625rem" }
           }
         }
       }

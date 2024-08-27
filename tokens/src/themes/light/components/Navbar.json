@@ -5,123 +5,63 @@
       "dark": {
         "text": {
           "source": "$navbar-dark-color",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.5
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.5 }],
           "$value": "{color.white}"
         },
         "hover": {
           "source": "$navbar-dark-hover-color",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.75
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.75 }],
           "$value": "{color.white}"
         },
-        "active": {
-          "source": "$navbar-dark-active-color",
-          "$value": "{color.active}"
-        },
+        "active": { "source": "$navbar-dark-active-color", "$value": "{color.active}" },
         "disabled": {
           "source": "$navbar-dark-disabled-color",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.25
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.25 }],
           "$value": "{color.white}"
         },
         "toggler": {
           "border": {
             "source": "$navbar-dark-toggler-border-color",
-            "modify": [
-              {
-                "type": "alpha",
-                "amount": 0.1
-              }
-            ],
+            "modify": [{ "type": "alpha", "amount": 0.1 }],
             "$value": "{color.white}"
           }
         },
         "brand": {
-          "text": {
-            "source": "$navbar-dark-brand-color",
-            "$value": "{color.navbar.dark.active}"
-          },
-          "hover": {
-            "source": "$navbar-dark-brand-hover-color",
-            "$value": "{color.navbar.dark.active}"
-          }
+          "text": { "source": "$navbar-dark-brand-color", "$value": "{color.navbar.dark.active}" },
+          "hover": { "source": "$navbar-dark-brand-hover-color", "$value": "{color.navbar.dark.active}" }
         }
       },
       "light": {
         "text": {
           "source": "$navbar-light-color",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.5
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.5 }],
           "$value": "{color.black}"
         },
         "hover": {
           "source": "$navbar-light-hover-color",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.7
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.7 }],
           "$value": "{color.black}"
         },
         "active": {
           "source": "$navbar-light-active-color",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.9
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.9 }],
           "$value": "{color.black}"
         },
         "disabled": {
           "source": "$navbar-light-disabled-color",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.3
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.3 }],
           "$value": "{color.black}"
         },
         "toggler": {
           "border": {
             "source": "$navbar-light-toggler-border-color",
-            "modify": [
-              {
-                "type": "alpha",
-                "amount": 0.1
-              }
-            ],
+            "modify": [{ "type": "alpha", "amount": 0.1 }],
             "$value": "{color.black}"
           }
         },
         "brand": {
-          "text": {
-            "source": "$navbar-light-brand-color",
-            "$value": "{color.navbar.light.active}"
-          },
-          "hover": {
-            "source": "$navbar-light-brand-hover-color",
-            "$value": "{color.navbar.light.active}"
-          }
+          "text": { "source": "$navbar-light-brand-color", "$value": "{color.navbar.light.active}" },
+          "hover": { "source": "$navbar-light-brand-hover-color", "$value": "{color.navbar.light.active}" }
         }
       }
     }
@@ -134,13 +74,7 @@
           "icon-bg": {
             "source": "$navbar-dark-toggler-icon-bg",
             "outputReferences": false,
-            "modify": [
-              {
-                "type": "str-replace",
-                "toReplace": "#",
-                "replaceWith": "%23"
-              }
-            ],
+            "modify": [{ "type": "str-replace", "toReplace": "#", "replaceWith": "%23" }],
             "$value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.dark.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")"
           }
         },
@@ -148,13 +82,7 @@
           "icon-bg": {
             "source": "$navbar-light-toggler-icon-bg",
             "outputReferences": false,
-            "modify": [
-              {
-                "type": "str-replace",
-                "toReplace": "#",
-                "replaceWith": "%23"
-              }
-            ],
+            "modify": [{ "type": "str-replace", "toReplace": "#", "replaceWith": "%23" }],
             "$value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.light.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")"
           }
         }

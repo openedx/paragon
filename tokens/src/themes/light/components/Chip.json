@@ -3,72 +3,36 @@
     "$type": "color",
     "chip": {
       "text": {
-        "light": {
-          "source": "$chip-light-color",
-          "$value": "{color.black}"
-        },
-        "dark": {
-          "source": "$chip-dark-color",
-          "$value": "{color.white}"
-        }
+        "light": { "source": "$chip-light-color", "$value": "{color.black}" },
+        "dark": { "source": "$chip-dark-color", "$value": "{color.white}" }
       },
       "bg": {
-        "light": {
-          "source": "$chip-light-bg-color",
-          "$value": "{color.white}"
-        },
-        "dark": {
-          "source": "$chip-dark-bg",
-          "$value": "{color.primary.300}"
-        }
+        "light": { "source": "$chip-light-bg-color", "$value": "{color.white}" },
+        "dark": { "source": "$chip-dark-bg", "$value": "{color.primary.300}" }
       },
       "border": {
-        "base": {
-          "source": "$chip-border-color",
-          "$value": "{color.light.800}"
-        },
+        "base": { "source": "$chip-border-color", "$value": "{color.light.800}" },
         "focus": {
           "selected": {
-            "dark": {
-              "source": "$chip-dark-selected-focus-border-color",
-              "$value": "{color.chip.outline.dark}"
-            },
-            "light": {
-              "source": "$chip-light-selected-focus-border-color",
-              "$value": "{color.dark.500}"
-            }
+            "dark": { "source": "$chip-dark-selected-focus-border-color", "$value": "{color.chip.outline.dark}" },
+            "light": { "source": "$chip-light-selected-focus-border-color", "$value": "{color.dark.500}" }
           }
         }
       },
       "label": {
-        "base": {
-          "source": "$chip-label-color",
-          "$value": "{color.primary.700}"
-        },
-        "dark": {
-          "source": "$chip-dark-label-color",
-          "$value": "{color.chip.outline.dark}"
-        }
+        "base": { "source": "$chip-label-color", "$value": "{color.primary.700}" },
+        "dark": { "source": "$chip-dark-label-color", "$value": "{color.chip.outline.dark}" }
       },
       "outline": {
-        "dark": {
-          "source": "$chip-dark-outline-color",
-          "$value": "{color.white}"
-        },
-        "light": {
-          "source": "$chip-light-outline-color",
-          "$value": "{color.chip.label.base}"
-        }
+        "dark": { "source": "$chip-dark-outline-color", "$value": "{color.white}" },
+        "light": { "source": "$chip-light-outline-color", "$value": "{color.chip.label.base}" }
       }
     }
   },
   "other": {
     "$type": "ratio",
     "chip": {
-      "opacity-disabled": {
-        "source": "$chip-disable-opacity",
-        "$value": ".3"
-      }
+      "opacity-disabled": { "source": "$chip-disable-opacity", "$value": ".3" }
     }
   }
 }

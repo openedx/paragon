@@ -3,62 +3,26 @@
   "typography": {
     "link": {
       "decoration": {
-        "base": {
-          "source": "$link-decoration",
-          "$value": "none"
-        },
-        "hover": {
-          "source": "$link-hover-decoration",
-          "$value": "underline"
-        },
+        "base": { "source": "$link-decoration", "$value": "none" },
+        "hover": { "source": "$link-hover-decoration", "$value": "underline" },
         "inline": {
-          "base": {
-            "source": "$inline-link-decoration",
-            "$value": "underline"
-          },
-          "hover": {
-            "source": "$inline-link-hover-decoration",
-            "$value": "underline"
-          }
+          "base": { "source": "$inline-link-decoration", "$value": "underline" },
+          "hover": { "source": "$inline-link-hover-decoration", "$value": "underline" }
         },
         "muted": {
-          "base": {
-            "source": "$muted-link-decoration",
-            "$value": "none"
-          },
-          "hover": {
-            "source": "$muted-link-hover-decoration",
-            "$value": "underline"
-          },
+          "base": { "source": "$muted-link-decoration", "$value": "none" },
+          "hover": { "source": "$muted-link-hover-decoration", "$value": "underline" },
           "inline": {
-            "base": {
-              "source": "$muted-inline-link-decoration",
-              "$value": "underline"
-            },
-            "hover": {
-              "source": "$muted-inline-link-hover-decoration",
-              "$value": "underline"
-            }
+            "base": { "source": "$muted-inline-link-decoration", "$value": "underline" },
+            "hover": { "source": "$muted-inline-link-hover-decoration", "$value": "underline" }
           }
         },
         "brand": {
-          "base": {
-            "source": "$brand-link-decoration",
-            "$value": "none"
-          },
-          "hover": {
-            "source": "$brand-link-hover-decoration",
-            "$value": "underline"
-          },
+          "base": { "source": "$brand-link-decoration", "$value": "none" },
+          "hover": { "source": "$brand-link-hover-decoration", "$value": "underline" },
           "inline": {
-            "base": {
-              "source": "$brand-inline-link-decoration",
-              "$value": "underline"
-            },
-            "hover": {
-              "source": "$brand-inline-link-hover-decoration",
-              "$value": "underline"
-            }
+            "base": { "source": "$brand-inline-link-decoration", "$value": "underline" },
+            "hover": { "source": "$brand-inline-link-hover-decoration", "$value": "underline" }
           }
         }
       }

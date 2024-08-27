@@ -2,44 +2,20 @@
   "elevation": {
     "$type": "ratio",
     "modal": {
-      "backdrop-zindex": {
-        "source": "$zindex-modal-backdrop",
-        "$value": "1040"
-      },
-      "zindex": {
-        "source": "$zindex-modal",
-        "$value": "1050"
-      }
+      "backdrop-zindex": { "source": "$zindex-modal-backdrop", "$value": "1040" },
+      "zindex": { "source": "$zindex-modal", "$value": "1050" }
     }
   },
   "size": {
     "$type": "dimension",
     "modal": {
-      "xl": {
-        "source": "$modal-xl",
-        "$value": "1140px"
-      },
-      "lg": {
-        "source": "$modal-lg",
-        "$value": "800px"
-      },
-      "md": {
-        "source": "$modal-md",
-        "$value": "500px"
-      },
-      "sm": {
-        "source": "$modal-sm",
-        "$value": "400px"
-      },
+      "xl": { "source": "$modal-xl", "$value": "1140px" },
+      "lg": { "source": "$modal-lg", "$value": "800px" },
+      "md": { "source": "$modal-md", "$value": "500px" },
+      "sm": { "source": "$modal-sm", "$value": "400px" },
       "content-border": {
-        "width": {
-          "source": "$modal-content-border-width",
-          "$value": "0px"
-        },
-        "radius": {
-          "source": "$modal-content-border-radius",
-          "$value": "{size.border.radius.lg}"
-        }
+        "width": { "source": "$modal-content-border-width", "$value": "0px" },
+        "radius": { "source": "$modal-content-border-radius", "$value": "{size.border.radius.lg}" }
       }
     }
   },
@@ -47,39 +23,18 @@
     "$type": "dimension",
     "modal": {
       "inner-padding": {
-        "base": {
-          "source": "$modal-inner-padding",
-          "$value": "1.5rem"
-        },
-        "bottom": {
-          "source": "$modal-inner-padding-bottom",
-          "$value": ".7rem"
-        }
+        "base": { "source": "$modal-inner-padding", "$value": "1.5rem" },
+        "bottom": { "source": "$modal-inner-padding-bottom", "$value": ".7rem" }
       },
       "footer-padding": {
-        "base": {
-          "source": "$modal-footer-padding",
-          "$value": "{spacing.modal.footer-padding.y} 1.5rem"
-        },
-        "y": {
-          "source": "$modal-footer-padding-y",
-          "$value": "1rem"
-        }
+        "base": { "source": "$modal-footer-padding", "$value": "{spacing.modal.footer-padding.y} 1.5rem" },
+        "y": { "source": "$modal-footer-padding-y", "$value": "1rem" }
       },
       "header-padding": {
-        "base": {
-          "source": "$modal-header-padding",
-          "$value": "{spacing.modal.header-padding.y} 1.5rem"
-        },
-        "y": {
-          "source": "$modal-header-padding-y",
-          "$value": "1rem"
-        }
+        "base": { "source": "$modal-header-padding", "$value": "{spacing.modal.header-padding.y} 1.5rem" },
+        "y": { "source": "$modal-header-padding-y", "$value": "1rem" }
       },
-      "dialog-margin": {
-        "source": "$modal-dialog-margin",
-        "$value": "1.5rem"
-      }
+      "dialog-margin": { "source": "$modal-dialog-margin", "$value": "1.5rem" }
     }
   }
 }

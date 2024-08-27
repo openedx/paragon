@@ -207,13 +207,7 @@
       },
       "600": {
         "source": "$primary-600",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.10"
-          }
-        ],
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
         "actions": {
           "default": "{color.action.default.primary.600}"
         },
@@ -222,13 +216,7 @@
       },
       "700": {
         "source": "$primary-700",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.20"
-          }
-        ],
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
         "actions": {
           "default": "{color.action.default.primary.700}"
         },
@@ -237,13 +225,7 @@
       },
       "800": {
         "source": "$primary-800",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.25"
-          }
-        ],
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
         "actions": {
           "default": "{color.action.default.primary.800}"
         },
@@ -252,13 +234,7 @@
       },
       "900": {
         "source": "$primary-900",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "black",
-            "amount": "0.30"
-          }
-        ],
+        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
         "actions": {
           "default": "{color.action.default.primary.900}"
         },
@@ -277,13 +253,7 @@
     "secondary": {
       "100": {
         "source": "$secondary-100",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.94"
-          }
-        ],
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
         "actions": {
           "default": "{color.action.default.secondary.100}"
         },
@@ -292,13 +262,7 @@
       },
       "200": {
         "source": "$secondary-200",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.75"
-          }
-        ],
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
         "actions": {
           "default": "{color.action.default.secondary.200}"
         },
@@ -307,13 +271,7 @@
       },
       "300": {
         "source": "$secondary-300",
-        "modify": [
-          {
-            "type": "mix",
-            "otherColor": "white",
-            "amount": "0.50"
-          }
-        ],
+        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
         "actions": {
           "default": "{color.action.default.secondary.300}"
         },

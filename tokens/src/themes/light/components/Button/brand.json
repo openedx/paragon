@@ -5,11 +5,7 @@
       "text": {
         "brand": {
           "source": "$btn-brand-color",
-          "modify": [
-            {
-              "type": "color-yiq"
-            }
-          ],
+          "modify": [{ "type": "color-yiq" }],
           "$value": "{color.btn.bg.brand}"
         },
         "outline-brand": {
@@ -36,11 +32,7 @@
         },
         "inverse-brand": {
           "source": "$btn-brand-inverse-bg",
-          "modify": [
-            {
-              "type": "color-yiq"
-            }
-          ],
+          "modify": [{ "type": "color-yiq" }],
           "$value": "{color.btn.text.inverse-brand}"
         },
         "inverse-outline-brand": {
@@ -70,11 +62,7 @@
         "text": {
           "brand": {
             "source": "$btn-brand-hover-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.hover.bg.brand}"
           },
           "outline-brand": {
@@ -83,12 +71,7 @@
           },
           "inverse-brand": {
             "source": "$btn-brand-inverse-hover-color",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.075
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.075 }],
             "$value": "{color.btn.text.inverse-brand}"
           },
           "inverse-outline-brand": {
@@ -107,12 +90,7 @@
           },
           "inverse-brand": {
             "source": "$btn-brand-inverse-hover-bg",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.075
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.075 }],
             "$value": "{color.btn.bg.inverse-brand}"
           },
           "inverse-outline-brand": {
@@ -143,39 +121,22 @@
         "text": {
           "brand": {
             "source": "$btn-brand-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.brand}"
           },
           "outline-brand": {
             "source": "$btn-brand-outline-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.outline-brand}"
           },
           "inverse-brand": {
             "source": "$btn-brand-inverse-active-color",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.1
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.1 }],
             "$value": "{color.btn.text.inverse-brand}"
           },
           "inverse-outline-brand": {
             "source": "$btn-brand-inverse-outline-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.inverse-outline-brand}"
           }
         },

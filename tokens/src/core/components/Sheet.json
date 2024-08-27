@@ -3,14 +3,8 @@
   "elevation": {
     "sheet": {
       "zindex": {
-        "backdrop": {
-          "source": "$zindex-sheet-backdrop",
-          "$value": "1031"
-        },
-        "main": {
-          "source": "$zindex-sheet",
-          "$value": "1032"
-        }
+        "backdrop": { "source": "$zindex-sheet-backdrop", "$value": "1031" },
+        "main": { "source": "$zindex-sheet", "$value": "1032" }
       }
     }
   }

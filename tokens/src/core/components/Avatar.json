@@ -1,52 +1,16 @@
 {
   "size": {
     "avatar": {
-      "base": {
-        "source": "$avatar-size",
-        "$value": "3rem",
-        "$type": "dimension"
-      },
-      "xs": {
-        "source": "$avatar-size-xs",
-        "$value": "1.5rem",
-        "$type": "dimension"
-      },
-      "sm": {
-        "source": "$avatar-size-sm",
-        "$value": "2.25rem",
-        "$type": "dimension"
-      },
-      "lg": {
-        "source": "$avatar-size-lg",
-        "$value": "4rem",
-        "$type": "dimension"
-      },
-      "xl": {
-        "source": "$avatar-size-xl",
-        "$value": "6rem",
-        "$type": "dimension"
-      },
-      "xxl": {
-        "source": "$avatar-size-xxl",
-        "$value": "11.5rem",
-        "$type": "dimension"
-      },
-      "huge": {
-        "source": "$avatar-size-huge",
-        "$value": "18.75rem",
-        "$type": "dimension"
-      },
+      "base": { "source": "$avatar-size", "$value": "3rem", "$type": "dimension" },
+      "xs": { "source": "$avatar-size-xs", "$value": "1.5rem", "$type": "dimension" },
+      "sm": { "source": "$avatar-size-sm", "$value": "2.25rem", "$type": "dimension" },
+      "lg": { "source": "$avatar-size-lg", "$value": "4rem", "$type": "dimension" },
+      "xl": { "source": "$avatar-size-xl", "$value": "6rem", "$type": "dimension" },
+      "xxl": { "source": "$avatar-size-xxl", "$value": "11.5rem", "$type": "dimension" },
+      "huge": { "source": "$avatar-size-huge", "$value": "18.75rem", "$type": "dimension" },
       "border": {
-        "base": {
-          "source": "$avatar-border",
-          "$value": "1px",
-          "$type": "dimension"
-        },
-        "radius": {
-          "source": "$avatar-border-radius",
-          "$value": "100%",
-          "$type": "percentage"
-        }
+        "base": { "source": "$avatar-border", "$value": "1px", "$type": "dimension" },
+        "radius": { "source": "$avatar-border-radius", "$value": "100%", "$type": "percentage" }
       }
     }
   }

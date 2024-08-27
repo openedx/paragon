@@ -3,10 +3,7 @@
   "spacing": {
     "breadcrumb": {
       "margin": {
-        "left": {
-          "source": "$breadcrumb-margin-left",
-          "$value": ".5rem"
-        }
+        "left": { "source": "$breadcrumb-margin-left", "$value": ".5rem" }
       }
     }
   },
@@ -14,25 +11,13 @@
     "breadcrumb": {
       "border": {
         "radius": {
-          "focus": {
-            "source": "$breadcrumb-focus-border-radius",
-            "$value": ".125rem"
-          }
+          "focus": { "source": "$breadcrumb-focus-border-radius", "$value": ".125rem" }
         },
         "axis": {
-          "x-focus": {
-            "source": "$breadcrumb-border-focus-axis-x",
-            "$value": ".25rem"
-          },
-          "y-focus": {
-            "source": "$breadcrumb-border-focus-axis-y",
-            "$value": ".5rem"
-          }
+          "x-focus": { "source": "$breadcrumb-border-focus-axis-x", "$value": ".25rem" },
+          "y-focus": { "source": "$breadcrumb-border-focus-axis-y", "$value": ".5rem" }
         },
-        "width-focus": {
-          "source": "$breadcrumb-border-focus-width",
-          "$value": ".0625rem"
-        }
+        "width-focus": { "source": "$breadcrumb-border-focus-width", "$value": ".0625rem" }
       }
     }
   }

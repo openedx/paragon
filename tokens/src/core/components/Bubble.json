@@ -3,14 +3,8 @@
   "spacing": {
     "bubble": {
       "expandable-padding": {
-        "y": {
-          "source": "$bubble-expandable-padding-y",
-          "$value": "0"
-        },
-        "x": {
-          "source": "$bubble-expandable-padding-x",
-          "$value": ".25rem"
-        }
+        "y": { "source": "$bubble-expandable-padding-y", "$value": "0" },
+        "x": { "source": "$bubble-expandable-padding-x", "$value": ".25rem" }
       }
     }
   }

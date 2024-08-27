@@ -1,23 +1,12 @@
 {
   "typography": {
     "code": {
-      "font-size": {
-        "source": "$code-font-size",
-        "$value": "87.5%",
-        "$type": "percentage"
-      },
+      "font-size": { "source": "$code-font-size", "$value": "87.5%", "$type": "percentage" },
       "kbd": {
-        "font-size": {
-          "source": "$kbd-font-size",
-          "$value": "{typography.code.font-size}",
-          "$type": "dimension"
-        },
+        "font-size": { "source": "$kbd-font-size", "$value": "{typography.code.font-size}", "$type": "dimension" },
         "nested": {
           "$type": "fontWeight",
-          "font-weight": {
-            "source": "$nested-kbd-font-weight",
-            "$value": "{typography.font.weight.bold}"
-          }
+          "font-weight": { "source": "$nested-kbd-font-weight", "$value": "{typography.font.weight.bold}" }
         }
       }
     }
@@ -27,14 +16,8 @@
     "code": {
       "kbd": {
         "padding": {
-          "y": {
-            "source": "$kbd-padding-y",
-            "$value": ".2rem"
-          },
-          "x": {
-            "source": "$kbd-padding-x",
-            "$value": ".4rem"
-          }
+          "y": { "source": "$kbd-padding-y", "$value": ".2rem" },
+          "x": { "source": "$kbd-padding-x", "$value": ".4rem" }
         }
       }
     }
@@ -44,10 +27,7 @@
     "code": {
       "pre": {
         "scrollable": {
-          "max-height": {
-            "source": "$pre-scrollable-max-height",
-            "$value": "340px"
-          }
+          "max-height": { "source": "$pre-scrollable-max-height", "$value": "340px" }
         }
       }
     }

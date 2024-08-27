@@ -2,31 +2,16 @@
   "typography": {
     "headings": {
       "font": {
-        "family": {
-          "source": "$headings-font-family",
-          "$value": "inherit",
-          "$type": "fontFamily"
-        },
-        "weight": {
-          "source": "$headings-font-weight",
-          "$value": "{typography.font.weight.bold}",
-          "$type": "fontWeight"
-        }
+        "family": { "source": "$headings-font-family", "$value": "inherit", "$type": "fontFamily" },
+        "weight": { "source": "$headings-font-weight", "$value": "{typography.font.weight.bold}", "$type": "fontWeight" }
       },
-      "line-height": {
-        "source": "$headings-line-height",
-        "$value": "1.25",
-        "$type": "dimension"
-      }
+      "line-height": { "source": "$headings-line-height", "$value": "1.25", "$type": "dimension" }
     }
   },
   "spacing": {
     "$type": "dimension",
     "headings": {
-      "margin-bottom": {
-        "source": "$headings-margin-bottom",
-        "$value": ".5rem"
-      }
+      "margin-bottom": { "source": "$headings-margin-bottom", "$value": ".5rem" }
     }
   }
 }

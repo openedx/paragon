@@ -3,24 +3,15 @@
   "size": {
     "tabs": {
       "notification": {
-        "height": {
-          "source": "$tab-notification-height",
-          "$value": "1rem"
-        },
-        "width": {
-          "source": "$tab-notification-width",
-          "$value": "1rem"
-        }
+        "height": { "source": "$tab-notification-height", "$value": "1rem" },
+        "width": { "source": "$tab-notification-width", "$value": "1rem" }
       }
     }
   },
   "typography": {
     "tabs": {
       "notification": {
-        "font-size": {
-          "source": "$tab-notification-font-size",
-          "$value": "{typography.font.size.xs}"
-        }
+        "font-size": { "source": "$tab-notification-font-size", "$value": "{typography.font.size.xs}" }
       }
     }
   }

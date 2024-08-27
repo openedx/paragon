@@ -3,21 +3,12 @@
     "$type": "color",
     "carousel": {
       "control": {
-        "base": {
-          "source": "$carousel-control-color",
-          "$value": "{color.white}"
-        }
+        "base": { "source": "$carousel-control-color", "$value": "{color.white}" }
       },
       "indicator": {
-        "active-bg": {
-          "source": "$carousel-indicator-active-bg",
-          "$value": "{color.white}"
-        }
+        "active-bg": { "source": "$carousel-indicator-active-bg", "$value": "{color.white}" }
       },
-      "caption": {
-        "source": "$carousel-caption-color",
-        "$value": "{color.white}"
-      }
+      "caption": { "source": "$carousel-caption-color", "$value": "{color.white}" }
     }
   },
   "content": {
@@ -28,25 +19,13 @@
           "prev-icon": {
             "source": "$carousel-control-prev-icon-bg",
             "outputReferences": false,
-            "modify": [
-              {
-                "type": "str-replace",
-                "toReplace": "#",
-                "replaceWith": "%23"
-              }
-            ],
+            "modify": [{ "type": "str-replace", "toReplace": "#", "replaceWith": "%23" }],
             "$value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.carousel.control.base}' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e\")"
           },
           "next-icon": {
             "source": "$carousel-control-next-icon-bg",
             "outputReferences": false,
-            "modify": [
-              {
-                "type": "str-replace",
-                "toReplace": "#",
-                "replaceWith": "%23"
-              }
-            ],
+            "modify": [{ "type": "str-replace", "toReplace": "#", "replaceWith": "%23" }],
             "$value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.carousel.control.base}' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e\")"
           }
         }
@@ -58,14 +37,8 @@
     "carousel": {
       "control": {
         "opacity": {
-          "base": {
-            "source": "$carousel-control-opacity",
-            "$value": ".5"
-          },
-          "hover": {
-            "source": "$carousel-control-hover-opacity",
-            "$value": ".9"
-          }
+          "base": { "source": "$carousel-control-opacity", "$value": ".5" },
+          "hover": { "source": "$carousel-control-hover-opacity", "$value": ".9" }
         }
       }
     }

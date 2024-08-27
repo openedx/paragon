@@ -3,42 +3,19 @@
   "color": {
     "product-tour": {
       "checkpoint": {
-        "bg": {
-          "source": "$checkpoint-background-color",
-          "$value": "{color.light.300}"
-        },
-        "body": {
-          "source": "$checkpoint-body-color",
-          "$value": "{color.gray.700}"
-        },
-        "border": {
-          "source": "$checkpoint-border-color",
-          "$value": "{color.brand.base}"
-        },
-        "breadcrumb": {
-          "source": "$checkpoint-breadcrumb-color",
-          "$value": "{color.primary.base}"
-        },
+        "bg": { "source": "$checkpoint-background-color", "$value": "{color.light.300}" },
+        "body": { "source": "$checkpoint-body-color", "$value": "{color.gray.700}" },
+        "border": { "source": "$checkpoint-border-color", "$value": "{color.brand.base}" },
+        "breadcrumb": { "source": "$checkpoint-breadcrumb-color", "$value": "{color.primary.base}" },
         "box-shadow": {
           "source": "$checkpoint-box-shadow-color",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.3
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.3 }],
           "$value": "{color.black}"
         },
         "arrow": {
           "border": {
-            "top": {
-              "source": "$checkpoint-arrow-border-top-color",
-              "$value": "{color.product-tour.checkpoint.bg}"
-            },
-            "transparent": {
-              "source": "$checkpoint-arrow-border-color-transparent",
-              "$value": "transparent"
-            }
+            "top": { "source": "$checkpoint-arrow-border-top-color", "$value": "{color.product-tour.checkpoint.bg}" },
+            "transparent": { "source": "$checkpoint-arrow-border-color-transparent", "$value": "transparent" }
           }
         }
       }

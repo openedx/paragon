@@ -3,62 +3,29 @@
     "$type": "dimension",
     "alert": {
       "padding": {
-        "y": {
-          "source": "$alert-padding-y",
-          "$value": "1.5rem"
-        },
-        "x": {
-          "source": "$alert-padding-x",
-          "$value": "1.5rem"
-        }
+        "y": { "source": "$alert-padding-y", "$value": "1.5rem" },
+        "x": { "source": "$alert-padding-x", "$value": "1.5rem" }
       },
-      "margin-bottom": {
-        "source": "$alert-margin-bottom",
-        "$value": "1rem"
-      },
-      "actions-gap": {
-        "source": "$alert-actions-gap",
-        "$value": "{spacing.spacer.3}"
-      },
-      "icon-space": {
-        "source": "$alert-icon-space",
-        "$value": ".8rem"
-      }
+      "margin-bottom": { "source": "$alert-margin-bottom", "$value": "1rem" },
+      "actions-gap": { "source": "$alert-actions-gap", "$value": "{spacing.spacer.3}" },
+      "icon-space": { "source": "$alert-icon-space", "$value": ".8rem" }
     }
   },
   "typography": {
     "alert": {
       "font": {
-        "weight-link": {
-          "source": "$alert-link-font-weight",
-          "$value": "{typography.font.weight.normal}",
-          "$type": "fontWeight"
-        },
-        "size": {
-          "source": "$alert-font-size",
-          "$value": ".875rem",
-          "$type": "dimension"
-        }
+        "weight-link": { "source": "$alert-link-font-weight", "$value": "{typography.font.weight.normal}", "$type": "fontWeight" },
+        "size": { "source": "$alert-font-size", "$value": ".875rem", "$type": "dimension" }
       },
-      "line-height": {
-        "source": "$alert-line-height",
-        "$value": "1.5rem",
-        "$type": "dimension"
-      }
+      "line-height": { "source": "$alert-line-height", "$value": "1.5rem", "$type": "dimension" }
     }
   },
   "size": {
     "$type": "dimension",
     "alert": {
       "border": {
-        "radius": {
-          "source": "$alert-border-radius",
-          "$value": "{size.border.radius.base}"
-        },
-        "width": {
-          "source": "$alert-border-width",
-          "$value": "0"
-        }
+        "radius": { "source": "$alert-border-radius", "$value": "{size.border.radius.base}" },
+        "width": { "source": "$alert-border-width", "$value": "0" }
       }
     }
   }

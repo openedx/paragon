@@ -2,10 +2,7 @@
   "$type": "color",
   "color": {
     "bg": {
-      "base": {
-        "$value": "{color.white}",
-        "$description": "Basic background color."
-      },
+      "base": { "$value": "{color.white}", "$description": "Basic background color." },
       "active": {
         "source": "$component-active-bg",
         "$value": "{color.primary.500}",
@@ -16,23 +13,13 @@
       "50": {
         "black": {
           "source": "$text-black-50",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.5
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.5 }],
           "$value": "{color.black}",
           "$description": "Black text color with transparency of 50%."
         },
         "white": {
           "source": "$text-white-50",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.5
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.5 }],
           "$value": "{color.white}",
           "$description": "White text color with transparency of 50%."
         }

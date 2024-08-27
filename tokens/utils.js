@@ -2,6 +2,15 @@ const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
 
+/**
+ * Recursively retrieves files with a specific extension from a given directory.
+ *
+ * @param {string} location - The path to the directory or file to start the search.
+ * @param {string} extension - The file extension to search for (e.g., '.js', '.css').
+ * @param {string[]} [files=[]] - An array to accumulate the file paths that match the extension.
+ * @param {string[]} [excludeDirectories=[]] - An array of directory names to exclude from the search.
+ * @returns {string[]} - An array of file paths that have the specified extension.
+ */
 function getFilesWithExtension(location, extension, files = [], excludeDirectories = []) {
   const content = fs.statSync(location);
   if (content.isDirectory()) {
@@ -17,6 +26,14 @@ function getFilesWithExtension(location, extension, files = [], excludeDirectori
   return files;
 }
 
+/**
+ * Generates a mapping of SCSS variables to corresponding CSS variables.
+ *
+ * @param {string} prefix - The prefix used to build the CSS variable names (e.g., '--my-prefix').
+ * @param {Object} tokensObject - The object representing the design tokens, which may be nested.
+ * @param {Object} result - The object where the mapping of SCSS to CSS variables will be stored.
+ * @returns {Object} - The `result` object containing the SCSS-to-CSS variable mappings.
+ */
 function getSCSStoCSSMap(prefix, tokensObject, result) {
   Object.entries(tokensObject).forEach(([node, value]) => {
     if (value?.constructor.name === 'Object') {
@@ -30,6 +47,16 @@ function getSCSStoCSSMap(prefix, tokensObject, result) {
   return result;
 }
 
+/**
+ * Replaces variable usage in a file based on a provided mapping and direction.
+ *
+ * @param {string} filePath - The path to the file where variables should be replaced.
+ * @param {Object} variablesMap - A map of variables to their replacement values.
+ * @param {string} [direction='scss-to-css'] - The direction of the replacement, either `scss-to-css` or `css-to-scss`.
+ * - `scss-to-css`: Replaces SCSS variables (e.g., `$some-variable`) with CSS variables.
+ * - `css-to-scss`: Replaces CSS variables (e.g., `var(--some-variable)`) with SCSS variables.
+ * @returns {Promise<void>} - A promise that resolves when the file has been successfully processed and written.
+ */
 async function replaceVariablesUsage(filePath, variablesMap, direction = 'scss-to-css') {
   let variableRegex;
   let result = '';
@@ -162,6 +189,15 @@ async function transformInPath(location, variablesMap, transformType = 'definiti
   }
 }
 
+/**
+ * Creates an `index.css` file that imports all other CSS files in a directory.
+ *
+ * @param {Object} options - The options for creating the `index.css` file.
+ * @param {string} [options.buildDir=path.resolve(__dirname, '../styles/css')]
+ * - The base directory where the CSS files are located.
+ * @param {boolean} options.isTheme - A flag indicating whether the directory is for theme files.
+ * @param {string} options.themeVariant - The specific theme variant to be used (e.g., 'dark', 'light').
+ */
 function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'), isTheme, themeVariant }) {
   const directoryPath = isTheme ? `${buildDir}/themes/${themeVariant}` : `${buildDir}/core`;
 
@@ -201,10 +237,22 @@ function composeBreakpointName(breakpointName, format) {
   return `@custom-media --${breakpointName.replace(/breakpoint/g, `breakpoint-${format}-width`)}`;
 }
 
+/**
+ * Generates a custom file header using Style Dictionary hooks.
+ *
+ * @param {Object} StyleDictionary - The Style Dictionary instance being used.
+ * @param {Object} file - The file object containing metadata about the file being generated.
+ * @returns {string[]} - An array of strings representing the lines of the file header.
+ */
+function createCustomHeader(StyleDictionary, file) {
+  return StyleDictionary.hooks.fileHeaders.customFileHeader({ file });
+}
+
 module.exports = {
   createIndexCssFile,
   getFilesWithExtension,
   getSCSStoCSSMap,
   transformInPath,
   composeBreakpointName,
+  createCustomHeader,
 };

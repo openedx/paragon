@@ -5,11 +5,7 @@
       "text": {
         "warning": {
           "source": "$btn-warning-color",
-          "modify": [
-            {
-              "type": "color-yiq"
-            }
-          ],
+          "modify": [{ "type": "color-yiq" }],
           "$value": "{color.btn.bg.warning}"
         },
         "outline-warning": {
@@ -36,11 +32,7 @@
         },
         "inverse-warning": {
           "source": "$btn-warning-inverse-bg",
-          "modify": [
-            {
-              "type": "color-yiq"
-            }
-          ],
+          "modify": [{ "type": "color-yiq" }],
           "$value": "{color.btn.text.inverse-warning}"
         },
         "inverse-outline-warning": {
@@ -70,11 +62,7 @@
         "text": {
           "warning": {
             "source": "$btn-warning-hover-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.hover.bg.warning}"
           },
           "outline-warning": {
@@ -83,12 +71,7 @@
           },
           "inverse-warning": {
             "source": "$btn-warning-inverse-hover-color",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.075
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.075 }],
             "$value": "{color.btn.text.inverse-warning}"
           },
           "inverse-outline-warning": {
@@ -107,12 +90,7 @@
           },
           "inverse-warning": {
             "source": "$btn-warning-inverse-hover-bg",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.075
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.075 }],
             "$value": "{color.btn.bg.inverse-warning}"
           },
           "inverse-outline-warning": {
@@ -143,39 +121,22 @@
         "text": {
           "warning": {
             "source": "$btn-warning-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.warning}"
           },
           "outline-warning": {
             "source": "$btn-warning-outline-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.outline-warning}"
           },
           "inverse-warning": {
             "source": "$btn-warning-inverse-active-color",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.1
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.1 }],
             "$value": "{color.btn.text.inverse-warning}"
           },
           "inverse-outline-warning": {
             "source": "$btn-warning-inverse-outline-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.inverse-outline-warning}"
           }
         },

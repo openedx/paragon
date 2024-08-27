@@ -2,103 +2,49 @@
   "color": {
     "$type": "color",
     "popover": {
-      "bg": {
-        "source": "$popover-bg",
-        "$value": "{color.bg.base}"
-      },
-      "border": {
-        "source": "$popover-border-color",
-        "$value": "rgba(0, 0, 0, .2)"
-      },
+      "bg": { "source": "$popover-bg", "$value": "{color.bg.base}" },
+      "border": { "source": "$popover-border-color", "$value": "rgba(0, 0, 0, .2)" },
       "header": {
-        "text": {
-          "source": "$popover-header-color",
-          "$value": "{color.headings.base}"
-        },
-        "bg": {
-          "source": "$popover-header-bg",
-          "$value": "{color.white}"
-        },
+        "text": { "source": "$popover-header-color", "$value": "{color.headings.base}" },
+        "bg": { "source": "$popover-header-bg", "$value": "{color.white}" },
         "bg-dark": {
           "source": "$popover-header-bg-dark",
-          "modify": [
-            {
-              "type": "darken",
-              "amount": 0.5
-            }
-          ],
+          "modify": [{ "type": "darken", "amount": 0.5 }],
           "$value": "{color.white}"
         },
         "border-bottom-dark": {
           "source": "$popover-header-border-bottom-darken",
-          "modify": [
-            {
-              "type": "darken",
-              "amount": 0.05
-            }
-          ],
+          "modify": [{ "type": "darken", "amount": 0.05 }],
           "$value": "{color.white}"
         }
       },
-      "body": {
-        "source": "$popover-body-color",
-        "$value": "{color.body.base}"
-      },
+      "body": { "source": "$popover-body-color", "$value": "{color.body.base}" },
       "arrow": {
-        "base": {
-          "source": "$popover-arrow-color",
-          "$value": "{color.popover.bg}"
-        },
+        "base": { "source": "$popover-arrow-color", "$value": "{color.popover.bg}" },
         "outer": {
           "source": "$popover-arrow-outer-color",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.05
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.05 }],
           "$value": "{color.popover.border}"
         }
       },
       "success": {
-        "bg": {
-          "source": "$popover-success-bg",
-          "$value": "{color.success.100}"
-        },
-        "icon": {
-          "source": "$popover-success-icon-color",
-          "$value": "{color.success.500}"
-        }
+        "bg": { "source": "$popover-success-bg", "$value": "{color.success.100}" },
+        "icon": { "source": "$popover-success-icon-color", "$value": "{color.success.500}" }
       },
       "warning": {
-        "bg": {
-          "source": "$popover-warning-bg",
-          "$value": "{color.warning.100}"
-        },
-        "icon": {
-          "source": "$popover-warning-icon-color",
-          "$value": "{color.warning.500}"
-        }
+        "bg": { "source": "$popover-warning-bg", "$value": "{color.warning.100}" },
+        "icon": { "source": "$popover-warning-icon-color", "$value": "{color.warning.500}" }
       },
       "danger": {
-        "bg": {
-          "source": "$popover-danger-bg",
-          "$value": "{color.danger.100}"
-        },
-        "icon": {
-          "source": "$popover-danger-icon-color",
-          "$value": "{color.danger.500}"
-        }
+        "bg": { "source": "$popover-danger-bg", "$value": "{color.danger.100}" },
+        "icon": { "source": "$popover-danger-icon-color", "$value": "{color.danger.500}" }
       }
     }
   },
   "elevation": {
     "$type": "shadow",
     "popover": {
-      "box-shadow": {
-        "source": "$popover-box-shadow",
-        "$value": "none"
-      }
+      "box-shadow": { "source": "$popover-box-shadow", "$value": "none" }
     }
   }
 }

@@ -3,73 +3,33 @@
     "carousel": {
       "control": {
         "width": {
-          "base": {
-            "source": "$carousel-control-width",
-            "$value": "15%",
-            "$type": "percentage"
-          },
-          "icon": {
-            "source": "$carousel-control-icon-width",
-            "$value": "20px",
-            "$type": "dimension"
-          }
+          "base": { "source": "$carousel-control-width", "$value": "15%", "$type": "percentage" },
+          "icon": { "source": "$carousel-control-icon-width", "$value": "20px", "$type": "dimension" }
         }
       },
       "indicator": {
         "$type": "dimension",
-        "width": {
-          "source": "$carousel-indicator-width",
-          "$value": "30px"
-        },
+        "width": { "source": "$carousel-indicator-width", "$value": "30px" },
         "height": {
-          "base": {
-            "source": "$carousel-indicator-height",
-            "$value": "3px"
-          },
-          "area-hit": {
-            "source": "$carousel-indicator-hit-area-height",
-            "$value": "10px"
-          }
+          "base": { "source": "$carousel-indicator-height", "$value": "3px" },
+          "area-hit": { "source": "$carousel-indicator-hit-area-height", "$value": "10px" }
         }
       },
-      "caption-width": {
-        "source": "$carousel-caption-width",
-        "$value": "70%",
-        "$type": "percentage"
-      }
+      "caption-width": { "source": "$carousel-caption-width", "$value": "70%", "$type": "percentage" }
     }
   },
   "spacing": {
     "$type": "dimension",
     "carousel": {
-      "indicator-spacer": {
-        "source": "$carousel-indicator-spacer",
-        "$value": "3px"
-      }
+      "indicator-spacer": { "source": "$carousel-indicator-spacer", "$value": "3px" }
     }
   },
   "transition": {
     "carousel": {
-      "base": {
-        "source": "$carousel-transition",
-        "$value": "transform {transition.carousel.duration} ease-in-out",
-        "$type": "transition"
-      },
-      "duration": {
-        "source": "$carousel-transition-duration",
-        "$value": ".6s",
-        "$type": "duration"
-      },
-      "indicator": {
-        "source": "$carousel-indicator-transition",
-        "$value": "opacity .6s ease",
-        "$type": "transition"
-      },
-      "control": {
-        "source": "$carousel-control-transition",
-        "$value": "opacity .15s ease",
-        "$type": "transition"
-      }
+      "base": { "source": "$carousel-transition", "$value": "transform {transition.carousel.duration} ease-in-out", "$type": "transition" },
+      "duration": { "source": "$carousel-transition-duration", "$value": ".6s", "$type": "duration" },
+      "indicator": { "source": "$carousel-indicator-transition", "$value": "opacity .6s ease", "$type": "transition" },
+      "control": { "source": "$carousel-control-transition", "$value": "opacity .15s ease", "$type": "transition" }
     }
   }
 }
