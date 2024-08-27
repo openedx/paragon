@@ -5,11 +5,7 @@
       "text": {
         "secondary": {
           "source": "$btn-secondary-color",
-          "modify": [
-            {
-              "type": "color-yiq"
-            }
-          ],
+          "modify": [{ "type": "color-yiq" }],
           "$value": "{color.btn.bg.secondary}"
         },
         "outline-secondary": {
@@ -40,11 +36,7 @@
         },
         "inverse-secondary": {
           "source": "$btn-secondary-inverse-bg",
-          "modify": [
-            {
-              "type": "color-yiq"
-            }
-          ],
+          "modify": [{ "type": "color-yiq" }],
           "$value": "{color.btn.text.inverse-secondary}"
         }
       },
@@ -70,11 +62,7 @@
         "text": {
           "secondary": {
             "source": "$btn-secondary-hover-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.hover.bg.secondary}"
           },
           "outline-secondary": {
@@ -83,12 +71,7 @@
           },
           "inverse-secondary": {
             "source": "$btn-secondary-inverse-hover-color",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.075
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.075 }],
             "$value": "{color.btn.text.inverse-secondary}"
           },
           "inverse-outline-secondary": {
@@ -107,12 +90,7 @@
           },
           "inverse-secondary": {
             "source": "$btn-secondary-inverse-hover-bg",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.075
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.075 }],
             "$value": "{color.btn.bg.inverse-secondary}"
           },
           "inverse-outline-secondary": {
@@ -143,39 +121,22 @@
         "text": {
           "secondary": {
             "source": "$btn-secondary-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.secondary}"
           },
           "outline-secondary": {
             "source": "$btn-secondary-outline-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.outline-secondary}"
           },
           "inverse-secondary": {
             "source": "$btn-secondary-inverse-active-color",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.1
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.1 }],
             "$value": "{color.btn.text.inverse-secondary}"
           },
           "inverse-outline-secondary": {
             "source": "$btn-secondary-inverse-outline-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.inverse-outline-secondary}"
           }
         },

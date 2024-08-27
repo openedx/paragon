@@ -3,177 +3,79 @@
   "color": {
     "btn": {
       "text": {
-        "tertiary": {
-          "source": "$btn-tertiary-color",
-          "$value": "{color.gray.700}"
-        },
-        "inverse-tertiary": {
-          "source": "$btn-inverse-tertiary-color",
-          "$value": "{color.white}"
-        }
+        "tertiary": { "source": "$btn-tertiary-color", "$value": "{color.gray.700}" },
+        "inverse-tertiary": { "source": "$btn-inverse-tertiary-color", "$value": "{color.white}" }
       },
       "bg": {
-        "tertiary": {
-          "source": "$btn-tertiary-bg",
-          "$value": "transparent"
-        },
-        "inverse-tertiary": {
-          "source": "$btn-inverse-tertiary-bg",
-          "$value": "transparent"
-        }
+        "tertiary": { "source": "$btn-tertiary-bg", "$value": "transparent" },
+        "inverse-tertiary": { "source": "$btn-inverse-tertiary-bg", "$value": "transparent" }
       },
       "border": {
-        "tertiary": {
-          "source": "$btn-tertiary-border-color",
-          "$value": "transparent"
-        },
-        "inverse-tertiary": {
-          "source": "$btn-inverse-tertiary-border-color",
-          "$value": "transparent"
-        }
+        "tertiary": { "source": "$btn-tertiary-border-color", "$value": "transparent" },
+        "inverse-tertiary": { "source": "$btn-inverse-tertiary-border-color", "$value": "transparent" }
       },
       "hover": {
         "text": {
-          "tertiary": {
-            "source": "$btn-tertiary-hover-color",
-            "$value": "{color.gray.700}"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-hover-color",
-            "$value": "{color.white}"
-          }
+          "tertiary": { "source": "$btn-tertiary-hover-color", "$value": "{color.gray.700}" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-hover-color", "$value": "{color.white}" }
         },
         "bg": {
-          "tertiary": {
-            "source": "$btn-tertiary-hover-bg",
-            "$value": "{color.light.500}"
-          },
+          "tertiary": { "source": "$btn-tertiary-hover-bg", "$value": "{color.light.500}" },
           "inverse-tertiary": {
             "source": "$btn-inverse-tertiary-hover-bg",
-            "modify": [
-              {
-                "type": "alpha",
-                "amount": 0.1
-              }
-            ],
+            "modify": [{ "type": "alpha", "amount": 0.1 }],
             "$value": "{color.white}"
           }
         },
         "border": {
-          "tertiary": {
-            "source": "$btn-tertiary-hover-border-color",
-            "$value": "transparent"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-hover-border-color",
-            "$value": "transparent"
-          }
+          "tertiary": { "source": "$btn-tertiary-hover-border-color", "$value": "transparent" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-hover-border-color", "$value": "transparent" }
         }
       },
       "active": {
         "text": {
-          "tertiary": {
-            "source": "$btn-tertiary-active-color",
-            "$value": "{color.gray.700}"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-active-color",
-            "$value": "{color.white}"
-          }
+          "tertiary": { "source": "$btn-tertiary-active-color", "$value": "{color.gray.700}" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-active-color", "$value": "{color.white}" }
         },
         "bg": {
-          "tertiary": {
-            "source": "$btn-tertiary-active-bg",
-            "$value": "{color.light.500}"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-active-bg",
-            "$value": "{color.btn.hover.bg.inverse-tertiary}"
-          }
+          "tertiary": { "source": "$btn-tertiary-active-bg", "$value": "{color.light.500}" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-active-bg", "$value": "{color.btn.hover.bg.inverse-tertiary}" }
         },
         "border": {
-          "tertiary": {
-            "source": "$btn-tertiary-active-border-color",
-            "$value": "transparent"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-active-border-color",
-            "$value": "transparent"
-          }
+          "tertiary": { "source": "$btn-tertiary-active-border-color", "$value": "transparent" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-active-border-color", "$value": "transparent" }
         }
       },
       "focus": {
         "text": {
-          "tertiary": {
-            "source": "$btn-tertiary-focus-color",
-            "$value": "{color.btn.text.tertiary}"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-focus-color",
-            "$value": "{color.btn.text.inverse-tertiary}"
-          }
+          "tertiary": { "source": "$btn-tertiary-focus-color", "$value": "{color.btn.text.tertiary}" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-focus-color", "$value": "{color.btn.text.inverse-tertiary}" }
         },
         "border": {
-          "tertiary": {
-            "source": "$btn-tertiary-focus-border-color",
-            "$value": "{color.btn.border.tertiary}"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-focus-border-color",
-            "$value": "transparent"
-          }
+          "tertiary": { "source": "$btn-tertiary-focus-border-color", "$value": "{color.btn.border.tertiary}" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-focus-border-color", "$value": "transparent" }
         },
         "bg": {
-          "tertiary": {
-            "source": "$btn-tertiary-focus-bg",
-            "$value": "inherit"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-focus-bg",
-            "$value": "inherit"
-          }
+          "tertiary": { "source": "$btn-tertiary-focus-bg", "$value": "inherit" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-focus-bg", "$value": "inherit" }
         },
         "outline": {
-          "tertiary": {
-            "source": "$btn-tertiary-focus-outline-color",
-            "$value": "{color.theme.focus.primary}"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-focus-outline-color",
-            "$value": "{color.white}"
-          }
+          "tertiary": { "source": "$btn-tertiary-focus-outline-color", "$value": "{color.theme.focus.primary}" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-focus-outline-color", "$value": "{color.white}" }
         }
       },
       "disabled": {
         "text": {
-          "tertiary": {
-            "source": "$btn-tertiary-disabled-color",
-            "$value": "{color.btn.text.tertiary}"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-disabled-color",
-            "$value": "{color.btn.text.inverse-tertiary}"
-          }
+          "tertiary": { "source": "$btn-tertiary-disabled-color", "$value": "{color.btn.text.tertiary}" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-disabled-color", "$value": "{color.btn.text.inverse-tertiary}" }
         },
         "bg": {
-          "tertiary": {
-            "source": "$btn-tertiary-disabled-bg",
-            "$value": "inherit"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-disabled-bg",
-            "$value": "inherit"
-          }
+          "tertiary": { "source": "$btn-tertiary-disabled-bg", "$value": "inherit" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-disabled-bg", "$value": "inherit" }
         },
         "border": {
-          "tertiary": {
-            "source": "$btn-tertiary-disabled-border-color",
-            "$value": "{color.btn.border.tertiary}"
-          },
-          "inverse-tertiary": {
-            "source": "$btn-inverse-tertiary-disabled-border-color",
-            "$value": "{color.btn.border.inverse-tertiary}"
-          }
+          "tertiary": { "source": "$btn-tertiary-disabled-border-color", "$value": "{color.btn.border.tertiary}" },
+          "inverse-tertiary": { "source": "$btn-inverse-tertiary-disabled-border-color", "$value": "{color.btn.border.inverse-tertiary}" }
         }
       }
     }

@@ -2,61 +2,34 @@
   "typography": {
     "$type": "dimension",
     "tooltip": {
-      "font-size": {
-        "source": "$tooltip-font-size",
-        "$value": "{typography.font.size.sm}"
-      }
+      "font-size": { "source": "$tooltip-font-size", "$value": "{typography.font.size.sm}" }
     }
   },
   "spacing": {
     "$type": "dimension",
     "tooltip": {
       "padding": {
-        "y": {
-          "source": "$tooltip-padding-y",
-          "$value": ".5rem"
-        },
-        "x": {
-          "source": "$tooltip-padding-x",
-          "$value": ".5rem"
-        }
+        "y": { "source": "$tooltip-padding-y", "$value": ".5rem" },
+        "x": { "source": "$tooltip-padding-x", "$value": ".5rem" }
       },
-      "margin": {
-        "source": "$tooltip-margin",
-        "$value": "0"
-      }
+      "margin": { "source": "$tooltip-margin", "$value": "0" }
     }
   },
   "elevation": {
     "$type": "ratio",
     "tooltip": {
-      "zindex": {
-        "source": "$zindex-tooltip",
-        "$value": "1070"
-      }
+      "zindex": { "source": "$zindex-tooltip", "$value": "1070" }
     }
   },
   "size": {
     "$type": "dimension",
     "tooltip": {
-      "max-width": {
-        "source": "$tooltip-max-width",
-        "$value": "200px"
-      },
+      "max-width": { "source": "$tooltip-max-width", "$value": "200px" },
       "arrow": {
-        "height": {
-          "source": "$tooltip-arrow-height",
-          "$value": ".4rem"
-        },
-        "width": {
-          "source": "$tooltip-arrow-width",
-          "$value": ".8rem"
-        }
+        "height": { "source": "$tooltip-arrow-height", "$value": ".4rem" },
+        "width": { "source": "$tooltip-arrow-width", "$value": ".8rem" }
       },
-      "border-radius": {
-        "source": "$tooltip-border-radius",
-        "$value": "{size.border.radius.base}"
-      }
+      "border-radius": { "source": "$tooltip-border-radius", "$value": "{size.border.radius.base}" }
     }
   }
 }

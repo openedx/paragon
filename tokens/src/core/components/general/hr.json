@@ -3,14 +3,8 @@
   "size": {
     "hr": {
       "border": {
-        "width": {
-          "source": "$hr-border-width",
-          "$value": "{size.border.width}"
-        },
-        "margin-y": {
-          "source": "$hr-margin-y",
-          "$value": "{spacing.spacer.base}"
-        }
+        "width": { "source": "$hr-border-width", "$value": "{size.border.width}" },
+        "margin-y": { "source": "$hr-margin-y", "$value": "{spacing.spacer.base}" }
       }
     }
   }

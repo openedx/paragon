@@ -2,34 +2,22 @@
   "color": {
     "$type": "color",
     "btn": {
-      "disabled-link": {
-        "source": "$btn-link-disabled-color",
-        "$value": "{color.disabled}"
-      }
+      "disabled-link": { "source": "$btn-link-disabled-color", "$value": "{color.disabled}" }
     }
   },
   "elevation": {
     "$type": "shadow",
     "btn": {
       "box-shadow": {
-        "base": {
-          "source": "$btn-box-shadow",
-          "$value": "none"
-        },
-        "active": {
-          "source": "$btn-active-box-shadow",
-          "$value": "none"
-        }
+        "base": { "source": "$btn-box-shadow", "$value": "none" },
+        "active": { "source": "$btn-active-box-shadow", "$value": "none" }
       }
     }
   },
   "other": {
     "$type": "ratio",
     "btn": {
-      "disabled-opacity": {
-        "source": "$btn-disabled-opacity",
-        "$value": ".65"
-      }
+      "disabled-opacity": { "source": "$btn-disabled-opacity", "$value": ".65" }
     }
   }
 }

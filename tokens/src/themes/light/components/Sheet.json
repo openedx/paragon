@@ -5,23 +5,13 @@
       "skrim": {
         "bg": {
           "source": "$sheet-skrim-bg",
-          "modify": [
-            {
-              "type": "alpha",
-              "amount": 0.5
-            }
-          ],
+          "modify": [{ "type": "alpha", "amount": 0.5 }],
           "$value": "{color.gray.300}"
         },
         "component": {
           "box-shadow": {
             "source": "$sheet-skrim-component-box-shadow",
-            "modify": [
-              {
-                "type": "alpha",
-                "amount": 0.15
-              }
-            ],
+            "modify": [{ "type": "alpha", "amount": 0.15 }],
             "$value": "{color.black}"
           }
         }

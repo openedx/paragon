@@ -4,28 +4,13 @@
     "product-tour": {
       "checkpoint": {
         "width": {
-          "border": {
-            "source": "$checkpoint-border-width",
-            "$value": "8px"
-          },
-          "arrow": {
-            "source": "$checkpoint-arrow-width",
-            "$value": "15px"
-          },
-          "max": {
-            "source": "$checkpoint-max-width",
-            "$value": "480px"
-          }
+          "border": { "source": "$checkpoint-border-width", "$value": "8px" },
+          "arrow": { "source": "$checkpoint-arrow-width", "$value": "15px" },
+          "max": { "source": "$checkpoint-max-width", "$value": "480px" }
         },
         "arrow": {
-          "top": {
-            "source": "$checkpoint-arrow-border-top",
-            "$value": "{size.product-tour.checkpoint.width.arrow}"
-          },
-          "transparent": {
-            "source": "$checkpoint-arrow-border-transparent",
-            "$value": "{size.product-tour.checkpoint.width.arrow}"
-          }
+          "top": { "source": "$checkpoint-arrow-border-top", "$value": "{size.product-tour.checkpoint.width.arrow}" },
+          "transparent": { "source": "$checkpoint-arrow-border-transparent", "$value": "{size.product-tour.checkpoint.width.arrow}" }
         }
       }
     }
@@ -34,10 +19,7 @@
     "$type": "ratio",
     "product-tour": {
       "checkpoint": {
-        "zindex": {
-          "source": "$checkpoint-z-index",
-          "$value": "1060"
-        }
+        "zindex": { "source": "$checkpoint-z-index", "$value": "1060" }
       }
     }
   }

@@ -3,47 +3,23 @@
   "typography": {
     "pagination": {
       "font-size": {
-        "sm": {
-          "source": "$pagination-font-size-sm",
-          "$value": ".875rem"
-        }
+        "sm": { "source": "$pagination-font-size-sm", "$value": ".875rem" }
       },
-      "line-height": {
-        "source": "$pagination-line-height",
-        "$value": "1.5rem"
-      }
+      "line-height": { "source": "$pagination-line-height", "$value": "1.5rem" }
     }
   },
   "spacing": {
     "pagination": {
       "padding": {
         "y": {
-          "base": {
-            "source": "$pagination-padding-y",
-            "$value": ".625rem"
-          },
-          "sm": {
-            "source": "$pagination-padding-y-sm",
-            "$value": ".8rem"
-          },
-          "lg": {
-            "source": "$pagination-padding-y-lg",
-            "$value": ".75rem"
-          }
+          "base": { "source": "$pagination-padding-y", "$value": ".625rem" },
+          "sm": { "source": "$pagination-padding-y-sm", "$value": ".8rem" },
+          "lg": { "source": "$pagination-padding-y-lg", "$value": ".75rem" }
         },
         "x": {
-          "base": {
-            "source": "$pagination-padding-x",
-            "$value": "1rem"
-          },
-          "sm": {
-            "source": "$pagination-padding-x-sm",
-            "$value": ".6rem"
-          },
-          "lg": {
-            "source": "$pagination-padding-x-lg",
-            "$value": "1.5rem"
-          }
+          "base": { "source": "$pagination-padding-x", "$value": "1rem" },
+          "sm": { "source": "$pagination-padding-x-sm", "$value": ".6rem" },
+          "lg": { "source": "$pagination-padding-x-lg", "$value": "1.5rem" }
         }
       }
     }
@@ -51,72 +27,36 @@
   "size": {
     "pagination": {
       "icon": {
-        "width": {
-          "source": "$pagination-icon-width",
-          "$value": "2.25rem"
-        },
-        "height": {
-          "source": "$pagination-icon-height",
-          "$value": "2.25rem"
-        }
+        "width": { "source": "$pagination-icon-width", "$value": "2.25rem" },
+        "height": { "source": "$pagination-icon-height", "$value": "2.25rem" }
       },
       "secondary": {
         "height": {
-          "base": {
-            "source": "$pagination-secondary-height",
-            "$value": "2.75rem"
-          },
-          "sm": {
-            "source": "$pagination-secondary-height-sm",
-            "$value": "2.25rem"
-          }
+          "base": { "source": "$pagination-secondary-height", "$value": "2.75rem" },
+          "sm": { "source": "$pagination-secondary-height-sm", "$value": "2.25rem" }
         }
       },
       "border": {
-        "width": {
-          "source": "$pagination-border-width",
-          "$value": "{size.border.width}"
-        },
+        "width": { "source": "$pagination-border-width", "$value": "{size.border.width}" },
         "radius": {
-          "sm": {
-            "source": "$pagination-border-radius-sm",
-            "$value": "{size.border.radius.sm}"
-          },
-          "lg": {
-            "source": "$pagination-border-radius-lg",
-            "$value": "{size.border.radius.lg}"
-          }
+          "sm": { "source": "$pagination-border-radius-sm", "$value": "{size.border.radius.sm}" },
+          "lg": { "source": "$pagination-border-radius-lg", "$value": "{size.border.radius.lg}" }
         }
       },
       "reduced": {
         "dropdown": {
-          "max-height": {
-            "source": "$pagination-reduced-dropdown-max-height",
-            "$value": "60vh"
-          },
-          "min-width": {
-            "source": "$pagination-reduced-dropdown-min-width",
-            "$value": "6rem"
-          }
+          "max-height": { "source": "$pagination-reduced-dropdown-max-height", "$value": "60vh" },
+          "min-width": { "source": "$pagination-reduced-dropdown-min-width", "$value": "6rem" }
         }
       },
       "toggle": {
         "border": {
-          "base": {
-            "source": "$pagination-toggle-border",
-            "$value": ".3125rem"
-          },
-          "sm": {
-            "source": "$pagination-toggle-border-sm",
-            "$value": ".25rem"
-          }
+          "base": { "source": "$pagination-toggle-border", "$value": ".3125rem" },
+          "sm": { "source": "$pagination-toggle-border-sm", "$value": ".25rem" }
         }
       },
       "focus": {
-        "outline": {
-          "source": "$pagination-focus-outline",
-          "$value": "0"
-        }
+        "outline": { "source": "$pagination-focus-outline", "$value": "0" }
       }
     }
   }

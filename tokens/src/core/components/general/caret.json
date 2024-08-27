@@ -2,22 +2,13 @@
   "$type": "dimension",
   "size": {
     "caret": {
-      "width": {
-        "source": "$caret-width",
-        "$value": ".3em"
-      }
+      "width": { "source": "$caret-width", "$value": ".3em" }
     }
   },
   "spacing": {
     "caret": {
-      "base": {
-        "source": "$caret-spacing",
-        "$value": ".255em"
-      },
-      "vertical-align": {
-        "source": "$caret-vertical-align",
-        "$value": ".255em"
-      }
+      "base": { "source": "$caret-spacing", "$value": ".255em" },
+      "vertical-align": { "source": "$caret-vertical-align", "$value": ".255em" }
     }
   }
 }

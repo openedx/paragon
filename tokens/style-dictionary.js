@@ -5,8 +5,26 @@ const toml = require('js-toml');
 const chroma = require('chroma-js');
 const { colorYiq, darken, lighten } = require('./sass-helpers');
 const cssUtilities = require('./css-utilities');
-const { composeBreakpointName } = require('./utils');
+const { composeBreakpointName, createCustomHeader } = require('./utils');
 
+/**
+ * Transforms a color token based on various modifications.
+ *
+ * @param {Object} token - The token object containing color information and modifications.
+ * @param {string} token.name - The name of the color token.
+ * @param {string} token.$value - The initial color value of the token.
+ * @param {Object} token.original - The original token object containing the original value.
+ * @param {string} token.original.$value - The original color value before any modifications.
+ * @param {Array} [token.modify=[]] - An array of modification objects to apply to the color.
+ * @param {string} token.modify.type - The type of modification to apply (e.g., 'mix', 'darken', 'lighten').
+ * @param {number} token.modify.amount - The amount by which to modify the color (e.g., percentage or value).
+ * @param {string} [token.modify.otherColor] - The other color to mix with, if applicable.
+ * @param {string} [token.modify.light] - The light color for YIQ modification.
+ * @param {string} [token.modify.dark] - The dark color for YIQ modification.
+ * @param {number} [token.modify.threshold] - The threshold for YIQ modification.
+ * @param {Object} theme - The theme object containing additional information for color transformations.
+ * @returns {string} - The transformed color value in hexadecimal format, including alpha if applicable.
+ */
 const colorTransform = (token, theme) => {
   const {
     name: tokenName,
@@ -65,7 +83,8 @@ const colorTransform = (token, theme) => {
 const createCustomCSSVariables = async ({
   formatterArgs,
   themeVariant,
-}) => {
+}, StyleDictionary) => {
+  // eslint-disable-next-line import/no-unresolved
   const { sortByReference, usesReferences, getReferences } = (await import('style-dictionary/utils'));
   const { dictionary, options, file } = formatterArgs;
   const outputTokens = themeVariant
@@ -87,11 +106,18 @@ const createCustomCSSVariables = async ({
     return `  --${token.name}: ${$value};`;
   }).join('\n');
 
-  return `:root {\n${variables}\n}\n`;
+  return `${createCustomHeader(StyleDictionary, file).join('\n')}\n:root {\n${variables}\n}\n`;
 };
 
+/**
+ * Initializes and configures Style Dictionary with custom transforms, formatters, filters, and parsers.
+ *
+ * @returns {Promise<Object>} - A promise that resolves to the configured Style Dictionary instance.
+ */
 const initializeStyleDictionary = async () => {
+  // eslint-disable-next-line import/no-unresolved
   const StyleDictionary = (await import('style-dictionary')).default;
+  // eslint-disable-next-line import/no-unresolved
   const { getReferences } = (await import('style-dictionary/utils'));
 
   /**
@@ -125,7 +151,7 @@ const initializeStyleDictionary = async () => {
    */
   StyleDictionary.registerFormat({
     name: 'css/custom-variables',
-    format: formatterArgs => createCustomCSSVariables({ formatterArgs }),
+    format: formatterArgs => createCustomCSSVariables({ formatterArgs }, StyleDictionary),
   });
 
   /**
@@ -163,8 +189,8 @@ const initializeStyleDictionary = async () => {
           }
         }
       });
-      // const header = StyleDictionary.hooks.fileHeaders.customFileHeader({ file });
-      return utilityClasses;
+
+      return `${createCustomHeader(StyleDictionary, file).join('\n')}\n${utilityClasses}`;
     },
   });
 
@@ -183,13 +209,15 @@ const initializeStyleDictionary = async () => {
 
       for (let i = 0; i < breakpoints.length; i++) {
         const [currentBreakpoint, nextBreakpoint] = [breakpoints[i], breakpoints[i + 1]];
-        customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'min')} (min-width: ${currentBreakpoint.$value});\n`;
+        customMediaVariables
+          += `${composeBreakpointName(currentBreakpoint.name, 'min')} (min-width: ${currentBreakpoint.$value});\n`;
         if (nextBreakpoint) {
-          customMediaVariables += `${composeBreakpointName(currentBreakpoint.name, 'max')} (max-width: ${nextBreakpoint.$value});\n`;
+          customMediaVariables
+            += `${composeBreakpointName(currentBreakpoint.name, 'max')} (max-width: ${nextBreakpoint.$value});\n`;
         }
       }
 
-      return customMediaVariables;
+      return `${createCustomHeader(StyleDictionary, file).join('\n')}\n${customMediaVariables}`;
     },
   });
 
@@ -198,11 +226,13 @@ const initializeStyleDictionary = async () => {
    */
   StyleDictionary.registerFileHeader({
     name: 'customFileHeader',
-    fileHeader: (defaultMessages = []) => {
+    fileHeader: () => {
+      const currentDate = new Date().toUTCString();
       return [
         '/*',
         ' * IMPORTANT: This file is the result of assembling design tokens.',
         ' * Do not edit directly.',
+        ` * Generated on ${currentDate}`,
         ' */',
         '',
       ];
@@ -218,6 +248,9 @@ const initializeStyleDictionary = async () => {
     filter: token => token.isSource === true,
   });
 
+  /**
+   * Registers a custom TOML parser with Style Dictionary.
+   */
   StyleDictionary.registerParser({
     name: 'toml-parser',
     pattern: /\.toml$/,

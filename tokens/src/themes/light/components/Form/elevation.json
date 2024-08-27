@@ -3,54 +3,27 @@
   "elevation": {
     "form": {
       "input": {
-        "base": {
-          "source": "$input-box-shadow",
-          "$value": "none"
-        },
-        "focus": {
-          "source": "$input-focus-box-shadow",
-          "$value": "0 0 0 1px {color.primary.500}"
-        }
+        "base": { "source": "$input-box-shadow", "$value": "none" },
+        "focus": { "source": "$input-focus-box-shadow", "$value": "0 0 0 1px {color.primary.500}" }
       },
       "control": {
         "indicator": {
-          "base": {
-            "source": "$custom-control-indicator-box-shadow",
-            "$value": "{elevation.form.input.base}"
-          },
+          "base": { "source": "$custom-control-indicator-box-shadow", "$value": "{elevation.form.input.base}" },
           "checked": {
-            "base": {
-              "source": "$custom-control-indicator-checked-box-shadow",
-              "$value": "none"
-            },
-            "focus": {
-              "source": "$custom-control-indicator-focus-box-shadow",
-              "$value": "0 0 0 4px rgba(0, 0, 0, .1)"
-            }
+            "base": { "source": "$custom-control-indicator-checked-box-shadow", "$value": "none" },
+            "focus": { "source": "$custom-control-indicator-focus-box-shadow", "$value": "0 0 0 4px rgba(0, 0, 0, .1)" }
           },
-          "active": {
-            "source": "$custom-control-indicator-active-box-shadow",
-            "$value": "none"
-          }
+          "active": { "source": "$custom-control-indicator-active-box-shadow", "$value": "none" }
         },
         "checkbox": {
           "indicator": {
-            "indeterminate": {
-              "source": "$custom-checkbox-indicator-indeterminate-box-shadow",
-              "$value": "none"
-            }
+            "indeterminate": { "source": "$custom-checkbox-indicator-indeterminate-box-shadow", "$value": "none" }
           }
         },
         "range": {
-          "track": {
-            "source": "$custom-range-track-box-shadow",
-            "$value": "none"
-          },
+          "track": { "source": "$custom-range-track-box-shadow", "$value": "none" },
           "thumb": {
-            "base": {
-              "source": "$custom-range-thumb-box-shadow",
-              "$value": "none"
-            },
+            "base": { "source": "$custom-range-thumb-box-shadow", "$value": "none" },
             "focus": {
               "source": "$custom-range-thumb-focus-box-shadow",
               "$value": "0 0 0 1px {color.body.bg}, {size.form.input.width.focus}"
@@ -58,25 +31,13 @@
           }
         },
         "file": {
-          "base": {
-            "source": "$custom-file-box-shadow",
-            "$value": "{elevation.form.input.base}"
-          },
-          "focus": {
-            "source": "$custom-file-focus-box-shadow",
-            "$value": "{elevation.form.input.focus}"
-          }
+          "base": { "source": "$custom-file-box-shadow", "$value": "{elevation.form.input.base}" },
+          "focus": { "source": "$custom-file-focus-box-shadow", "$value": "{elevation.form.input.focus}" }
         },
         "select": {
           "border": {
-            "base": {
-              "source": "$custom-select-box-shadow",
-              "$value": "none"
-            },
-            "focus": {
-              "source": "$custom-select-focus-box-shadow",
-              "$value": "{elevation.input.btn-focus.box-shadow}"
-            }
+            "base": { "source": "$custom-select-box-shadow", "$value": "none" },
+            "focus": { "source": "$custom-select-focus-box-shadow", "$value": "{elevation.input.btn-focus.box-shadow}" }
           }
         }
       }

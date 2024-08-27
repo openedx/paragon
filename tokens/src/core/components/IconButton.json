@@ -3,18 +3,9 @@
   "size": {
     "icon-button": {
       "diameter": {
-        "md": {
-          "source": "$btn-icon-diameter-md",
-          "$value": "2.75rem"
-        },
-        "sm": {
-          "source": "$btn-icon-diameter-sm",
-          "$value": "2.25rem"
-        },
-        "inline": {
-          "source": "$btn-icon-diameter-inline",
-          "$value": "calc({typography.line-height.base} * 1em + .1em)"
-        }
+        "md": { "source": "$btn-icon-diameter-md", "$value": "2.75rem" },
+        "sm": { "source": "$btn-icon-diameter-sm", "$value": "2.25rem" },
+        "inline": { "source": "$btn-icon-diameter-inline", "$value": "calc({typography.line-height.base} * 1em + .1em)" }
       }
     }
   }

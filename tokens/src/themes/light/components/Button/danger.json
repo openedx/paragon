@@ -5,17 +5,10 @@
       "text": {
         "danger": {
           "source": "$btn-danger-color",
-          "modify": [
-            {
-              "type": "color-yiq"
-            }
-          ],
+          "modify": [{ "type": "color-yiq" }],
           "$value": "{color.btn.bg.danger}"
         },
-        "outline-danger": {
-          "source": "$btn-danger-outline-color",
-          "$value": "{color.danger.base}"
-        },
+        "outline-danger": { "source": "$btn-danger-outline-color", "$value": "{color.danger.base}" },
         "inverse-danger": {
           "source": "$btn-danger-inverse-color",
           "$value": "{color.danger.base}"
@@ -26,21 +19,14 @@
         }
       },
       "bg": {
-        "danger": {
-          "source": "$btn-danger-bg",
-          "$value": "{color.danger.base}"
-        },
+        "danger": { "source": "$btn-danger-bg", "$value": "{color.danger.base}" },
         "outline-danger": {
           "source": "$btn-danger-outline-bg",
           "$value": "inherit"
         },
         "inverse-danger": {
           "source": "$btn-danger-inverse-bg",
-          "modify": [
-            {
-              "type": "color-yiq"
-            }
-          ],
+          "modify": [{ "type": "color-yiq" }],
           "$value": "{color.btn.text.inverse-danger}"
         },
         "inverse-outline-danger": {
@@ -70,11 +56,7 @@
         "text": {
           "danger": {
             "source": "$btn-danger-hover-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.hover.bg.danger}"
           },
           "outline-danger": {
@@ -83,12 +65,7 @@
           },
           "inverse-danger": {
             "source": "$btn-danger-inverse-hover-color",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.075
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.075 }],
             "$value": "{color.btn.text.inverse-danger}"
           },
           "inverse-outline-danger": {
@@ -107,12 +84,7 @@
           },
           "inverse-danger": {
             "source": "$btn-danger-inverse-hover-bg",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.075
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.075 }],
             "$value": "{color.btn.bg.inverse-danger}"
           },
           "inverse-outline-danger": {
@@ -143,39 +115,22 @@
         "text": {
           "danger": {
             "source": "$btn-danger-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.danger}"
           },
           "outline-danger": {
             "source": "$btn-danger-outline-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.outline-danger}"
           },
           "inverse-danger": {
             "source": "$btn-danger-inverse-active-color",
-            "modify": [
-              {
-                "type": "darken",
-                "amount": 0.1
-              }
-            ],
+            "modify": [{ "type": "darken", "amount": 0.1 }],
             "$value": "{color.btn.text.inverse-danger}"
           },
           "inverse-outline-danger": {
             "source": "$btn-danger-inverse-outline-active-color",
-            "modify": [
-              {
-                "type": "color-yiq"
-              }
-            ],
+            "modify": [{ "type": "color-yiq" }],
             "$value": "{color.btn.active.bg.inverse-outline-danger}"
           }
         },

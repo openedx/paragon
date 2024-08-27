@@ -3,18 +3,9 @@
   "spacing": {
     "avatar-button": {
       "padding-left": {
-        "base": {
-          "source": "$avatar-button-padding-left",
-          "$value": ".25em"
-        },
-        "sm": {
-          "source": "$avatar-button-padding-left-sm",
-          "$value": ".25em"
-        },
-        "lg": {
-          "source": "$avatar-button-padding-left-lg",
-          "$value": ".25em"
-        }
+        "base": { "source": "$avatar-button-padding-left", "$value": ".25em" },
+        "sm": { "source": "$avatar-button-padding-left-sm", "$value": ".25em" },
+        "lg": { "source": "$avatar-button-padding-left-lg", "$value": ".25em" }
       }
     }
   }

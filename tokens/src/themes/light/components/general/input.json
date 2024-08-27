@@ -2,10 +2,7 @@
   "color": {
     "$type": "color",
     "input": {
-      "btn-focus": {
-        "source": "$input-btn-focus-color",
-        "$value": "{color.bg.active}"
-      }
+      "btn-focus": { "source": "$input-btn-focus-color", "$value": "{color.bg.active}" }
     }
   },
   "elevation": {
