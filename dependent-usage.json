@@ -1,5 +1,5 @@
 {
-  "lastModified": 1724767665817,
+  "lastModified": 1724854086151,
   "projectUsages": [
     {
       "version": "22.7.0",
@@ -7000,6 +7000,12 @@
             "index": 2406
           },
           {
+            "filePath": "src/components/AdvanceAnalyticsV2/tabs/Leaderboard.jsx",
+            "line": 56,
+            "column": 8,
+            "index": 2009
+          },
+          {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
             "line": 159,
             "column": 6,
@@ -7144,6 +7150,12 @@
             "line": 153,
             "column": 8,
             "index": 5649
+          },
+          {
+            "filePath": "src/components/AdvanceAnalyticsV2/tabs/Leaderboard.jsx",
+            "line": 115,
+            "column": 10,
+            "index": 4309
           },
           {
             "filePath": "src/components/ContentHighlights/HighlightStepper/HighlightStepperSelectContentSearch.jsx",
@@ -8148,6 +8160,12 @@
             "index": 3748
           },
           {
+            "filePath": "src/components/AdvanceAnalyticsV2/ProgressOverlay.jsx",
+            "line": 10,
+            "column": 34,
+            "index": 400
+          },
+          {
             "filePath": "src/components/CodeAssignmentModal/index.jsx",
             "line": 426,
             "column": 62,
@@ -8326,6 +8344,12 @@
             "index": 5583
           },
           {
+            "filePath": "src/components/AdvanceAnalyticsV2/tabs/Leaderboard.jsx",
+            "line": 113,
+            "column": 10,
+            "index": 4239
+          },
+          {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
             "line": 178,
             "column": 8,
@@ -8382,6 +8406,12 @@
             "index": 5621
           },
           {
+            "filePath": "src/components/AdvanceAnalyticsV2/tabs/Leaderboard.jsx",
+            "line": 114,
+            "column": 10,
+            "index": 4279
+          },
+          {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
             "line": 179,
             "column": 8,
@@ -8424,6 +8454,12 @@
             "line": 160,
             "column": 8,
             "index": 5954
+          },
+          {
+            "filePath": "src/components/AdvanceAnalyticsV2/tabs/Leaderboard.jsx",
+            "line": 122,
+            "column": 10,
+            "index": 4625
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/CourseSearchResults.jsx",
@@ -8510,6 +8546,14 @@
             "line": 574,
             "column": 25,
             "index": 23636
+          }
+        ],
+        "TablePaginationMinimal": [
+          {
+            "filePath": "src/components/AdvanceAnalyticsV2/tabs/Leaderboard.jsx",
+            "line": 123,
+            "column": 12,
+            "index": 4661
           }
         ],
         "Hyperlink": [
@@ -30638,12 +30682,6 @@
             "line": 43,
             "column": 8,
             "index": 1134
-          },
-          {
-            "filePath": "src/widgets/RecommendationsPanel/LoadedView.jsx",
-            "line": 38,
-            "column": 8,
-            "index": 1103
           }
         ],
         "ActionRow": [
@@ -30773,13 +30811,7 @@
             "filePath": "src/widgets/LookingForChallengeWidget/index.jsx",
             "line": 31,
             "column": 10,
-            "index": 1022
-          },
-          {
-            "filePath": "src/widgets/RecommendationsPanel/components/CourseCard.jsx",
-            "line": 15,
-            "column": 4,
-            "index": 435
+            "index": 1000
           }
         ],
         "Form": [
@@ -30923,7 +30955,7 @@
             "filePath": "src/widgets/LookingForChallengeWidget/index.jsx",
             "line": 15,
             "column": 26,
-            "index": 488
+            "index": 466
           }
         ],
         "Dropdown.Menu": [
@@ -30965,13 +30997,7 @@
             "filePath": "src/widgets/LookingForChallengeWidget/index.jsx",
             "line": 21,
             "column": 4,
-            "index": 707
-          },
-          {
-            "filePath": "src/widgets/RecommendationsPanel/components/CourseCard.jsx",
-            "line": 20,
-            "column": 6,
-            "index": 561
+            "index": 685
           }
         ],
         "Card.Body": [
@@ -30985,13 +31011,7 @@
             "filePath": "src/widgets/LookingForChallengeWidget/index.jsx",
             "line": 26,
             "column": 6,
-            "index": 874
-          },
-          {
-            "filePath": "src/widgets/RecommendationsPanel/components/CourseCard.jsx",
-            "line": 26,
-            "column": 10,
-            "index": 860
+            "index": 852
           }
         ],
         "Card.Header": [
@@ -31014,12 +31034,6 @@
             "line": 32,
             "column": 14,
             "index": 1216
-          },
-          {
-            "filePath": "src/widgets/RecommendationsPanel/components/CourseCard.jsx",
-            "line": 27,
-            "column": 12,
-            "index": 922
           }
         ],
         "Card.Footer": [
@@ -31234,12 +31248,6 @@
             "line": 32,
             "column": 20,
             "index": 1016
-          },
-          {
-            "filePath": "src/widgets/RecommendationsPanel/LoadedView.jsx",
-            "line": 40,
-            "column": 22,
-            "index": 1162
           }
         ],
         "Container": [
@@ -31296,12 +31304,6 @@
             "line": 11,
             "column": 6,
             "index": 265
-          },
-          {
-            "filePath": "src/widgets/RecommendationsPanel/LoadingView.jsx",
-            "line": 10,
-            "column": 6,
-            "index": 306
           }
         ],
         "ModalDialog": [
@@ -31431,13 +31433,7 @@
             "filePath": "src/widgets/LookingForChallengeWidget/index.jsx",
             "line": 22,
             "column": 6,
-            "index": 779
-          },
-          {
-            "filePath": "src/widgets/RecommendationsPanel/components/CourseCard.jsx",
-            "line": 22,
-            "column": 10,
-            "index": 750
+            "index": 757
           }
         ],
         "ModalDialog.Header": [
@@ -31483,15 +31479,7 @@
             "filePath": "src/widgets/LookingForChallengeWidget/index.jsx",
             "line": 15,
             "column": 54,
-            "index": 516
-          }
-        ],
-        "Truncate": [
-          {
-            "filePath": "src/widgets/RecommendationsPanel/components/CourseCard.jsx",
-            "line": 29,
-            "column": 16,
-            "index": 1040
+            "index": 494
           }
         ]
       }
