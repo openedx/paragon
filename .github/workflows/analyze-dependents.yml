@@ -160,11 +160,6 @@ jobs:
       with:
         repository: openedx/frontend-learner-portal-base
         path: dependent-usage-analyzer/.projects/frontend-learner-portal-base
-    - name: Checkout openedx/frontend-lib-content-components
-      uses: actions/checkout@v3
-      with:
-        repository: openedx/frontend-lib-content-components
-        path: dependent-usage-analyzer/.projects/frontend-lib-content-components
     - name: Checkout openedx/frontend-lib-special-exams
       uses: actions/checkout@v3
       with:
