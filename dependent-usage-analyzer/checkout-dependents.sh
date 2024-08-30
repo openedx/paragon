@@ -32,7 +32,6 @@ mkdir .projects
   git clone git@github.com:openedx/frontend-component-header.git --depth 1
   git clone git@github.com:openedx/frontend-enterprise.git --depth 1
   git clone git@github.com:openedx/frontend-learner-portal-base.git --depth 1
-  git clone git@github.com:edx/frontend-lib-content-components.git --depth 1
   git clone git@github.com:edx/frontend-lib-special-exams.git --depth 1
   git clone git@github.com:openedx/frontend-platform.git --depth 1
   git clone git@github.com:openedx/frontend-template-application.git --depth 1
