@@ -41,9 +41,9 @@ function ComponentsList() {
   return (
     <Container className="py-3 bg-light-200 border-top border-light-300">
       <Container size="xl" className="py-5">
-        <div className="pgn-doc__menu-all-components pt-5">
+        <div className="pgn-doc__menu-all-components">
           <h3 className="mb-4">All components (A-Z)</h3>
-          <ul className="pgn-doc__menu-component-list list-unstyled small mb-4">
+          <ul className="pgn-doc__menu-component-list list-unstyled small">
             {all.map((node: IComponentNavItem) => <ComponentNavItem key={node.id} {...node} />)}
           </ul>
         </div>

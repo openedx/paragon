@@ -76,7 +76,7 @@
   "typography": {
     "footer": {
       "text": {
-        "font-size": { "source": "$card-footer-text-font-size", "$value": "{typography.font.size.small.x}" }
+        "font-size": { "source": "$card-footer-text-font-size", "$value": "{typography.font.size.xs}" }
       }
     }
   }

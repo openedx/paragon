@@ -21,13 +21,17 @@
 $color-levels: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 
 .x-small {
-  font-size: $x-small-font-size;
+  font-size: $x-small-font-size !important;
 }
 
 .micro {
-  font-size: $micro-font-size;
+  font-size: $micro-font-size !important;
   font-weight: normal;
-  line-height: $micro-line-height;
+  line-height: $micro-line-height !important;
+}
+
+.font-size-normal {
+  font-size: $font-size-base !important;
 }
 
 .mw-xs {
