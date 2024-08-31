@@ -2,35 +2,81 @@
  * This module creates and exports custom StyleDictionary instance for Paragon.
  */
 const toml = require('js-toml');
+const chalk = require('chalk');
 const chroma = require('chroma-js');
 const { colorYiq, darken, lighten } = require('./sass-helpers');
 const cssUtilities = require('./css-utilities');
-const { composeBreakpointName, createCustomHeader } = require('./utils');
+const { composeBreakpointName } = require('./utils');
+
+/* eslint-disable import/no-unresolved */
+const getStyleDictionary = async () => (await import('style-dictionary')).default;
+const getStyleDictionaryUtils = async () => import('style-dictionary/utils');
+/* eslint-enable import/no-unresolved */
+
+/**
+ * @typedef {import('style-dictionary/types').DesignToken} DesignToken
+ */
+
+/**
+ * @typedef ModifyColorYiq
+ * @property {'color-yiq'} type - The type of modification.
+ * @property {number} [amount] - The amount of modification to apply.
+ * @property {string} [otherColor] - The other color to mix with.
+ * @property {number} [light] - The light color to use for color-yiq.
+ * @property {number} [dark] - The dark color to use for color-yiq.
+ * @property {number} [threshold] - The threshold to use for color-yiq.
+ */
+
+/**
+ * @typedef ModifyColorDarken
+ * @property {'darken'} type - The type of modification.
+ * @property {number} amount - The amount of modification to apply.
+ */
+
+/**
+ * @typedef ModifyColorLighten
+ * @property {'lighten'} type - The type of modification.
+ * @property {number} amount - The amount of modification to apply.
+ */
+
+/**
+ * @typedef ModifyColorMix
+ * @property {'mix'} type - The type of modification.
+ * @property {number} amount - The amount of modification to apply.
+ * @property {string} otherColor - The other color to mix with.
+ */
+
+/**
+ * @typedef ModifyColorAlpha
+ * @property {'alpha'} type - The type of modification.
+ * @property {number} amount - The amount of modification to apply.
+ */
+
+/**
+ * @typedef DesignTokenModify
+ * @type {ModifyColorYiq | ModifyColorDarken | ModifyColorLighten | ModifyColorMix | ModifyColorAlpha}
+ */
+
+/**
+ * @typedef {DesignToken & {
+ *   outputReferences?: boolean;
+ *   modify?: DesignTokenModify[];
+ * }} ParagonDesignToken
+ */
 
 /**
  * Transforms a color token based on various modifications.
  *
- * @param {Object} token - The token object containing color information and modifications.
- * @param {string} token.name - The name of the color token.
- * @param {string} token.$value - The initial color value of the token.
- * @param {Object} token.original - The original token object containing the original value.
- * @param {string} token.original.$value - The original color value before any modifications.
- * @param {Array} [token.modify=[]] - An array of modification objects to apply to the color.
- * @param {string} token.modify.type - The type of modification to apply (e.g., 'mix', 'darken', 'lighten').
- * @param {number} token.modify.amount - The amount by which to modify the color (e.g., percentage or value).
- * @param {string} [token.modify.otherColor] - The other color to mix with, if applicable.
- * @param {string} [token.modify.light] - The light color for YIQ modification.
- * @param {string} [token.modify.dark] - The dark color for YIQ modification.
- * @param {number} [token.modify.threshold] - The threshold for YIQ modification.
- * @param {Object} theme - The theme object containing additional information for color transformations.
+ * @param {ParagonDesignToken} token - The token object containing color information and modifications.
+ * @param {string} themeVariant - The themeVariant object containing additional information for color transformations.
  * @returns {string} - The transformed color value in hexadecimal format, including alpha if applicable.
  */
-const colorTransform = (token, theme) => {
+const colorTransform = (token, themeVariant) => {
   const {
     name: tokenName,
     $value,
     original,
-    modify = [],
+    modify,
   } = token;
   const reservedColorValues = ['inherit', 'initial', 'revert', 'unset', 'currentColor', 'none'];
 
@@ -40,7 +86,7 @@ const colorTransform = (token, theme) => {
 
   let color = chroma($value);
 
-  if (modify && modify.length > 0) {
+  if (modify?.length > 0) {
     modify.forEach((modifier) => {
       const { type, amount, otherColor } = modifier;
       switch (type) {
@@ -55,7 +101,7 @@ const colorTransform = (token, theme) => {
             light,
             dark,
             threshold,
-            theme,
+            themeVariant,
           });
           break;
         }
@@ -65,8 +111,16 @@ const colorTransform = (token, theme) => {
         case 'lighten':
           color = lighten(color, amount);
           break;
-        default:
+        default: {
+          if (!color[type]) {
+            // eslint-disable-next-line no-console
+            console.warn(
+              chalk.keyword('orange').bold(`[Paragon] Warning: Invalid color modification type "${type}" for ${tokenName}.`),
+            );
+            return;
+          }
           color = color[type](amount);
+        }
       }
     });
   }
@@ -80,45 +134,44 @@ const colorTransform = (token, theme) => {
  * 2. 'theme' to output only theme's variables (e.g, 'light' or 'dark'), if theme is not provided - only
  * core tokens are built.
  */
-const createCustomCSSVariables = async ({
-  formatterArgs,
-  themeVariant,
-}, StyleDictionary) => {
-  // eslint-disable-next-line import/no-unresolved
-  const { sortByReference, usesReferences, getReferences } = (await import('style-dictionary/utils'));
+const createCustomCSSVariables = async ({ formatterArgs }) => {
+  const { fileHeader, formattedVariables } = await getStyleDictionaryUtils();
   const { dictionary, options, file } = formatterArgs;
-  const outputTokens = themeVariant
-    ? dictionary.allTokens.filter(token => token.filePath.includes(themeVariant))
-    : dictionary.allTokens;
-
-  const variables = outputTokens.sort(sortByReference(dictionary)).map(token => {
-    let { $value } = token;
-
-    const outputReferencesForToken = (token.original.outputReferences === false) ? false : options.outputReferences;
-
-    if (usesReferences(token.original.$value) && outputReferencesForToken) {
-      const refs = getReferences(token.original.$value, dictionary.tokens);
-      refs.forEach(ref => {
-        $value = $value.replace(ref.$value, `var(--${ref.name})`);
-      });
-    }
-
-    return `  --${token.name}: ${$value};`;
-  }).join('\n');
-
-  return `${createCustomHeader(StyleDictionary, file).join('\n')}\n:root {\n${variables}\n}\n`;
+  const { outputReferences, formatting } = options;
+  const variables = formattedVariables({
+    format: 'css',
+    dictionary,
+    outputReferences: (token) => {
+      // Formatter options configured to never output references
+      if (!outputReferences) {
+        return false;
+      }
+      // Token has modifications (e.g., mix, darken, lighten); the computed
+      // value should be output instead of the reference.
+      if (token.modify) {
+        return false;
+      }
+      // Formatter options configured to show output references, but handle when individual tokens might opt-out.
+      return token.outputReferences ?? true;
+    },
+    usesDtcg: true,
+  });
+  const header = await fileHeader({ file, formatting });
+  return `${header}:root {\n${variables}\n}\n`;
 };
+
+/**
+ * @typedef {type import("style-dictionary/types").StyleDictionary} StyleDictionary
+ */
 
 /**
  * Initializes and configures Style Dictionary with custom transforms, formatters, filters, and parsers.
  *
- * @returns {Promise<Object>} - A promise that resolves to the configured Style Dictionary instance.
+ * @returns {Promise<StyleDictionary>} - A promise that resolves to the configured Style Dictionary instance.
  */
-const initializeStyleDictionary = async () => {
-  // eslint-disable-next-line import/no-unresolved
-  const StyleDictionary = (await import('style-dictionary')).default;
-  // eslint-disable-next-line import/no-unresolved
-  const { getReferences } = (await import('style-dictionary/utils'));
+const initializeStyleDictionary = async ({ themes }) => {
+  const StyleDictionary = await getStyleDictionary();
+  const { getReferences } = await getStyleDictionaryUtils();
 
   /**
    * Transformer that applies SASS color functions to tokens.
@@ -127,7 +180,7 @@ const initializeStyleDictionary = async () => {
     name: 'color/sass-color-functions',
     transitive: true,
     type: 'value',
-    filter: (token) => token.attributes.category === 'color' || token.$value?.toString().startsWith('#'),
+    filter: (token) => token.attributes?.category === 'color' || token.$value.toString().startsWith('#'),
     transform: (token) => colorTransform(token),
   });
 
@@ -151,7 +204,7 @@ const initializeStyleDictionary = async () => {
    */
   StyleDictionary.registerFormat({
     name: 'css/custom-variables',
-    format: formatterArgs => createCustomCSSVariables({ formatterArgs }, StyleDictionary),
+    format: formatterArgs => createCustomCSSVariables({ formatterArgs }),
   });
 
   /**
@@ -163,7 +216,9 @@ const initializeStyleDictionary = async () => {
    */
   StyleDictionary.registerFormat({
     name: 'css/utility-classes',
-    format: async ({ dictionary, file }) => {
+    format: async ({ dictionary, file, options = {} }) => {
+      const { formatting } = options;
+      const { fileHeader } = await getStyleDictionaryUtils();
       const { utilities } = dictionary.tokens;
       if (!utilities) {
         return '';
@@ -189,8 +244,8 @@ const initializeStyleDictionary = async () => {
           }
         }
       });
-
-      return `${createCustomHeader(StyleDictionary, file).join('\n')}\n${utilityClasses}`;
+      const header = await fileHeader({ file, formatting });
+      return `${header}${utilityClasses}`;
     },
   });
 
@@ -201,7 +256,9 @@ const initializeStyleDictionary = async () => {
    */
   StyleDictionary.registerFormat({
     name: 'css/custom-media-breakpoints',
-    format: ({ dictionary, file }) => {
+    format: async ({ dictionary, file, options = {} }) => {
+      const { fileHeader } = await getStyleDictionaryUtils();
+      const { formatting } = options;
       const { breakpoint } = dictionary.tokens.size;
 
       let customMediaVariables = '';
@@ -216,36 +273,68 @@ const initializeStyleDictionary = async () => {
             += `${composeBreakpointName(currentBreakpoint.name, 'max')} (max-width: ${nextBreakpoint.$value});\n`;
         }
       }
-
-      return `${createCustomHeader(StyleDictionary, file).join('\n')}\n${customMediaVariables}`;
+      const header = await fileHeader({ file, formatting });
+      return `${header}${customMediaVariables}`;
     },
   });
 
   /**
-   * Custom file header for custom and built-in formatters.
+   * @typedef {function} StyleDictionaryFilterFunction
+   * @param {import('style-dictionary/types').TransformedToken} token - The token object to filter.
+   * @param {object} [opts] - The options object passed to the filter.
    */
-  StyleDictionary.registerFileHeader({
-    name: 'customFileHeader',
-    fileHeader: () => {
-      const currentDate = new Date().toUTCString();
-      return [
-        '/*',
-        ' * IMPORTANT: This file is the result of assembling design tokens.',
-        ' * Do not edit directly.',
-        ` * Generated on ${currentDate}`,
-        ' */',
-        '',
-      ];
-    },
-  });
 
   /**
-   * Registers a filter `isSource` that filters output to only include tokens
-   * that are marked as `isSource` in their metadata.
+   * @typedef {object} StyleDictionaryFilterOptions
+   * @property {boolean} hasThemeVariants - Indicates whether the filter should also be registered with theme variants.
    */
-  StyleDictionary.registerFilter({
-    name: 'isSource',
-    filter: token => token.isSource === true,
+
+  /**
+   * Registers a custom filter with Style Dictionary.
+   * @param {string} name Name for the filter.
+   * @param {StyleDictionaryFilterFunction} filter Filter value or function.
+   * @param {StyleDictionaryFilterOptions} [filterOptions] Custom options for the filter.
+   */
+  function registerStyleDictionaryFilter(name, filter, filterOptions = {}) {
+    StyleDictionary.registerFilter({ name, filter });
+    if (filterOptions.hasThemeVariants) {
+      themes.forEach((themeVariant) => {
+        StyleDictionary.registerFilter({
+          name: `${name}.${themeVariant}`,
+          filter: (token, opts) => {
+            const isThemeVariant = token.filePath.includes(themeVariant);
+            const baseFilter = typeof filter === 'function' ? filter(token, opts) : filter;
+            return baseFilter && isThemeVariant;
+          },
+        });
+      });
+    }
+  }
+
+  const paragonFilters = [
+    /**
+     * Registers a filter `isSource` that filters output to only include source tokens.
+     */
+    {
+      name: 'isSource',
+      filter: token => token.isSource,
+      opts: { hasThemeVariants: true },
+    },
+    /**
+     * Registers filter(s) `isThemeVariant.{variant}` that only include the requested theme variant tokens.
+     */
+    ...themes.map((themeVariant) => ({
+      name: `isThemeVariant.${themeVariant}`,
+      filter: token => token.filePath.includes(themeVariant),
+    })),
+  ];
+  paragonFilters.forEach(({ name, filter, opts }) => registerStyleDictionaryFilter(name, filter, opts));
+
+  themes.forEach((themeVariant) => {
+    StyleDictionary.registerFilter({
+      name: `isThemeVariant.${themeVariant}`,
+      filter: token => token.filePath.includes(themeVariant),
+    });
   });
 
   /**
@@ -264,4 +353,5 @@ module.exports = {
   initializeStyleDictionary,
   createCustomCSSVariables,
   colorTransform,
+  getStyleDictionaryUtils,
 };

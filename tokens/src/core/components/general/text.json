@@ -9,7 +9,7 @@
   "typography": {
     "blockquote": {
       "small": {
-        "font-size": { "source": "$blockquote-small-font-size", "$value": "{typography.font.size.small.base}" }
+        "font-size": { "source": "$blockquote-small-font-size", "$value": "{typography.font.size.sm}" }
       },
       "font-size": { "source": "$blockquote-font-size", "$value": "calc({typography.font.size.base} * 1.25)" }
     }

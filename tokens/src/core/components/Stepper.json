@@ -33,7 +33,7 @@
   },
   "typography": {
     "spacer": {
-      "line-height": { "source": "$stepper-header-line-height", "$value": "1px" }
+      "line-height": { "source": "$stepper-header-line-height", "$value": "1px", "$type": "number" }
     }
   }
 }

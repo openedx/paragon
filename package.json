@@ -52,7 +52,8 @@
     "prepare": "husky || true",
     "build-tokens": "./bin/paragon-scripts.js build-tokens --build-dir ./styles/css",
     "replace-variables-usage-with-css": "./bin/paragon-scripts.js replace-variables -p src -t usage",
-    "replace-variables-definition-with-css": "./bin/paragon-scripts.js replace-variables -p src -t definition"
+    "replace-variables-definition-with-css": "./bin/paragon-scripts.js replace-variables -p src -t definition",
+    "cli:help": "./bin/paragon-scripts.js help"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.4",
@@ -114,7 +115,7 @@
     "@babel/preset-typescript": "^7.16.7",
     "@edx/eslint-config": "^3.2.0",
     "@edx/stylelint-config-edx": "^2.3.0",
-    "@edx/typescript-config": "^1.0.1",
+    "@edx/typescript-config": "^1.1.0",
     "@formatjs/cli": "^5.0.2",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",

@@ -13,7 +13,7 @@
           "weight": { "source": "$input-font-weight", "$value": "{typography.font.weight.base}", "$type": "fontWeight" }
         },
         "line-height": {
-          "$type": "dimension",
+          "$type": "number",
           "base": { "source": "$input-line-height", "$value": "{typography.input.btn.line-height.base}" },
           "sm": { "source": "$input-line-height-sm", "$value": "{typography.input.btn.line-height.sm}" },
           "lg": { "source": "$input-line-height-lg", "$value": "{typography.input.btn.line-height.lg}" }
@@ -31,10 +31,10 @@
             },
             "weight": { "source": "$custom-select-font-weight", "$value": "{typography.form.input.font.weight}", "$type": "fontWeight" }
           },
-          "line-height": { "source": "$custom-select-line-height", "$value": "{typography.form.input.line-height.base}", "$type": "dimension" }
+          "line-height": { "source": "$custom-select-line-height", "$value": "{typography.form.input.line-height.base}", "$type": "number" }
         },
         "file": {
-          "line-height": { "source": "$custom-file-line-height", "$value": "{typography.form.input.line-height.base}", "$type": "dimension" },
+          "line-height": { "source": "$custom-file-line-height", "$value": "{typography.form.input.line-height.base}", "$type": "number" },
           "font": {
             "family": { "source": "$custom-file-font-family", "$value": "{typography.form.input.font.family}", "$type": "fontFamily" },
             "weight": { "source": "$custom-file-font-weight", "$value": "{typography.form.input.font.weight}", "$type": "fontWeight" }
@@ -44,13 +44,13 @@
       "feedback": {
         "$type": "dimension",
         "font": {
-          "size": { "source": "$form-feedback-font-size", "$value": "{typography.font.size.small.base}" }
+          "size": { "source": "$form-feedback-font-size", "$value": "{typography.font.size.sm}" }
         },
         "tooltip": {
           "font": {
             "size": { "source": "$form-feedback-tooltip-font-size", "$value": "{typography.font.size.sm}" }
           },
-          "line-height": { "source": "$form-feedback-tooltip-line-height", "$value": "{typography.line-height.base}" }
+          "line-height": { "source": "$form-feedback-tooltip-line-height", "$value": "{typography.line-height.base}", "$type": "number" }
         }
       }
     }

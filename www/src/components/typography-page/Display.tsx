@@ -12,7 +12,7 @@ export default function Display() {
       <h2 className="mb-2">Display</h2>
       <div className="mb-4">
         <DataTable
-          itemCount={4}
+          itemCount={displaySizes.length}
           data={displaySizes.map((size) => ({ text: `Display ${size}`, className: `display-${size}` }))}
           columns={[
             {
