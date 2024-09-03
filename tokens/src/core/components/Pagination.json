@@ -1,14 +1,15 @@
 {
-  "$type": "dimension",
   "typography": {
     "pagination": {
       "font-size": {
+        "$type": "dimension",
         "sm": { "source": "$pagination-font-size-sm", "$value": ".875rem" }
       },
       "line-height": { "source": "$pagination-line-height", "$value": "1.5rem", "$type": "number" }
     }
   },
   "spacing": {
+    "$type": "dimension",
     "pagination": {
       "padding": {
         "y": {
@@ -25,6 +26,7 @@
     }
   },
   "size": {
+    "$type": "dimension",
     "pagination": {
       "icon": {
         "width": { "source": "$pagination-icon-width", "$value": "2.25rem" },

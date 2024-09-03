@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "size": {
+    "$type": "dimension",
     "container": {
       "max-width": {
         "xs": { "source": "$max-width-xs", "$value": "464px" },

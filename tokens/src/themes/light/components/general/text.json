@@ -1,6 +1,6 @@
 {
-  "$type": "color",
   "color": {
+    "$type": "color",
     "text-muted": { "source": "$text-muted", "$value": "{color.gray.500}" },
     "mark-bg": { "source": "$mark-bg", "$value": "#FFF243" },
     "blockquote": {

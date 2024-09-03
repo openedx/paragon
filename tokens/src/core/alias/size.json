@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "size": {
+    "$type": "dimension",
     "border": {
       "width": { "source": "$border-width", "$value": "1px", "$description": "Default border width." },
       "radius": {

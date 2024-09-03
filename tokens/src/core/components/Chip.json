@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "spacing": {
+    "$type": "dimension",
     "chip": {
       "margin": {
         "base": { "source": "$chip-margin", "$value": ".125rem" },
@@ -24,6 +24,7 @@
     }
   },
   "size": {
+    "$type": "dimension",
     "chip": {
       "border-radius": { "source": "$chip-border-radius", "$value": ".375rem" },
       "icon": { "source": "$chip-icon-size", "$value": "1.5rem" }

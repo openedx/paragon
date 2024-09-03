@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "spacing": {
+    "$type": "dimension",
     "card": {
       "spacer": {
         "x": { "source": "$card-spacer-x", "$value": "1.25rem" },
@@ -40,6 +40,7 @@
     }
   },
   "size": {
+    "$type": "dimension",
     "card": {
       "border": {
         "width": { "source": "$card-border-width", "$value": "{size.border.width}" },
@@ -74,6 +75,7 @@
     }
   },
   "typography": {
+    "$type": "dimension",
     "footer": {
       "text": {
         "font-size": { "source": "$card-footer-text-font-size", "$value": "{typography.font.size.xs}" }

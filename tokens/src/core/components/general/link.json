@@ -1,8 +1,8 @@
 {
-  "$type": "textDecoration",
   "typography": {
     "link": {
       "decoration": {
+        "$type": "textDecoration",
         "base": { "source": "$link-decoration", "$value": "none" },
         "hover": { "source": "$link-hover-decoration", "$value": "underline" },
         "inline": {

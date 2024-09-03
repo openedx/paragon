@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "size": {
+    "$type": "dimension",
     "stack": {
       "gap": { "source": "$stack-gap", "$value": "0" }
     }

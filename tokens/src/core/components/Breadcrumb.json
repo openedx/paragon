@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "spacing": {
+    "$type": "dimension",
     "breadcrumb": {
       "margin": {
         "left": { "source": "$breadcrumb-margin-left", "$value": ".5rem" }
@@ -8,6 +8,7 @@
     }
   },
   "size": {
+    "$type": "dimension",
     "breadcrumb": {
       "border": {
         "radius": {

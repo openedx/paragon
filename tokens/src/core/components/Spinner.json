@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "size": {
+    "$type": "dimension",
     "spinner": {
       "base": {
         "width": { "source": "$spinner-width", "$value": "2rem" },
@@ -15,6 +15,7 @@
     }
   },
   "spacing": {
+    "$type": "dimension",
     "vertical-align": { "source": "$spinner-vertical-align", "$value": ".125em" }
   }
 }
