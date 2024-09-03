@@ -40,17 +40,17 @@
         },
         "sm": {
           "source": "$small-font-size",
-          "$value": "0.875rem",
+          "$value": ".875rem",
           "$description": "Small font size."
         },
         "xs": {
           "source": "$x-small-font-size",
-          "$value": "0.75rem",
+          "$value": ".75rem",
           "$description": "X-small font size."
         },
         "micro": {
           "source": "$micro-font-size",
-          "$value": ".6875rem",
+          "$value": ".688rem",
           "$type": "dimension",
           "$description": "Micro utils text font size."
         },
@@ -214,7 +214,7 @@
         },
         "table-th": {
           "source": "$table-th-font-weight",
-          "$value": "normal",
+          "$value": "bold",
           "$description": "Table th font weight."
         },
         "display": {

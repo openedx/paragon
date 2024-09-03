@@ -899,37 +899,6 @@ For accessibility, if the child `Card` components are interactive (e.g., `isClic
 }
 ```
 
-### CardDeck.Deprecated
-
-Gives any child `Card` components equal height with an appropriate gutter between cards. Each child `Card` component's width will be adjusted (e.g., become more narrow) to ensure all `Card` components fit within its parent's width.
-
-Note: This component is a pass-thru from `react-bootstrap`.
-
-```jsx live
-() => {
-  const CardComponent = () => (
-    <Card>
-      <Card.ImageCap
-        src="https://picsum.photos/360/200/"
-        srcAlt="Card image"
-      />
-      <Card.Header title="Card title" />
-      <Card.Section title="Section title">
-        <HipsterIpsum numShortParagraphs={1} />
-      </Card.Section>
-    </Card>
-  );
-
-  return (
-    <CardDeck.Deprecated>
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-    </CardDeck.Deprecated>
-  )
-}
-```
-
 ## CardCarousel
 
 Extends `CardDeck` to support navigating between any overflow `Card` components via left and right `IconButton` components as a scrollable carousel.
