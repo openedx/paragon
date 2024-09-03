@@ -1,3 +1,4 @@
-@import url("https://cdn.jsdelivr.net/npm/@edx/brand-edx.org@alpha/dist/core.min.css");
-@import url("https://cdn.jsdelivr.net/npm/@edx/brand-edx.org@alpha/dist/light.min.css");
+@import "~paragon-style/scss/core/core";
 @import "base";
+@import url("https://cdn.jsdelivr.net/npm/@edx/elm-theme@1.8.1/dist/core.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@edx/elm-theme@1.8.1/dist/light.min.css");

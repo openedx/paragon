@@ -327,6 +327,18 @@
 
 .color-palette {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-  grid-row-gap: 2rem;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr); // Default to 2 columns
+}
+
+@media (--pgn-size-breakpoint-min-width-md) {
+  .color-palette {
+    grid-template-columns: repeat(3, 1fr);  // 3 columns for medium+ screens
+  }
+}
+
+@media (--pgn-size-breakpoint-min-width-lg) {
+  .color-palette {
+    grid-template-columns: repeat(4, 1fr); // 4 columns for large+ screens
+  }
 }

@@ -17,7 +17,7 @@
         "weight-link": { "source": "$alert-link-font-weight", "$value": "{typography.font.weight.normal}", "$type": "fontWeight" },
         "size": { "source": "$alert-font-size", "$value": ".875rem", "$type": "dimension" }
       },
-      "line-height": { "source": "$alert-line-height", "$value": "1.5rem", "$type": "dimension" }
+      "line-height": { "source": "$alert-line-height", "$value": "1.5rem", "$type": "number" }
     }
   },
   "size": {

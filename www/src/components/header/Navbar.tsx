@@ -35,7 +35,7 @@ export default function Navbar({
   return (
     <Container as="header" className="py-3 bg-dark text-white sticky-top">
       <Row className="align-items-center text-center text-sm-left">
-        <Col className="pgn-doc__header-button--menu mb-2 mb-sm-0 col-4" sm={5}>
+        <Col className="pgn-doc__header-button--menu mb-2 mb-sm-0">
           {showMinimizedTitle && (
             <Button
               ref={setTarget}
@@ -48,10 +48,10 @@ export default function Navbar({
             </Button>
           )}
         </Col>
-        <Col className="mb-2 mb-sm-0 col-4" sm={showMinimizedTitle ? 2 : 3}>
+        <Col className="mb-2 mb-sm-0 text-center" sm={showMinimizedTitle ? 3 : 4}>
           <SiteTitle isFullVersion={!showMinimizedTitle} title={siteTitle} />
         </Col>
-        <Col className="small mb-2 mb-sm-0 col-4" sm={5} xl={showMinimizedTitle ? 5 : 4}>
+        <Col className="small mb-2 mb-sm-0">
           {showSettingsIcon && (
             <Nav className="pgn-doc__header-settings-and-search">
               <Nav.Item>

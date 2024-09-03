@@ -195,11 +195,11 @@ async function transformInPath(location, variablesMap, transformType = 'definiti
  * @param {Object} options - The options for creating the `index.css` file.
  * @param {string} [options.buildDir=path.resolve(__dirname, '../styles/css')]
  * - The base directory where the CSS files are located.
- * @param {boolean} options.isTheme - A flag indicating whether the directory is for theme files.
+ * @param {boolean} options.isThemeVariant - A flag indicating whether the directory is for theme files.
  * @param {string} options.themeVariant - The specific theme variant to be used (e.g., 'dark', 'light').
  */
-function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'), isTheme, themeVariant }) {
-  const directoryPath = isTheme ? `${buildDir}/themes/${themeVariant}` : `${buildDir}/core`;
+function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'), isThemeVariant, themeVariant }) {
+  const directoryPath = isThemeVariant ? `${buildDir}/themes/${themeVariant}` : `${buildDir}/core`;
 
   fs.readdir(directoryPath, (errDir, files) => {
     if (errDir) {
@@ -211,7 +211,7 @@ function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'
     const outputCssFiles = files.filter(file => file !== 'index.css');
     // When creating themes, there are typically two files: one for utility classes and one for variables.
     // It's organized them to allow variables be reading first.
-    if (isTheme) { outputCssFiles.reverse(); }
+    if (isThemeVariant) { outputCssFiles.reverse(); }
 
     const exportStatements = outputCssFiles.map((file) => `@import "${file}";`);
 
@@ -237,22 +237,10 @@ function composeBreakpointName(breakpointName, format) {
   return `@custom-media --${breakpointName.replace(/breakpoint/g, `breakpoint-${format}-width`)}`;
 }
 
-/**
- * Generates a custom file header using Style Dictionary hooks.
- *
- * @param {Object} StyleDictionary - The Style Dictionary instance being used.
- * @param {Object} file - The file object containing metadata about the file being generated.
- * @returns {string[]} - An array of strings representing the lines of the file header.
- */
-function createCustomHeader(StyleDictionary, file) {
-  return StyleDictionary.hooks.fileHeaders.customFileHeader({ file });
-}
-
 module.exports = {
   createIndexCssFile,
   getFilesWithExtension,
   getSCSStoCSSMap,
   transformInPath,
   composeBreakpointName,
-  createCustomHeader,
 };
