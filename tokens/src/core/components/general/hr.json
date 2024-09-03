@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "size": {
+    "$type": "dimension",
     "hr": {
       "border": {
         "width": { "source": "$hr-border-width", "$value": "{size.border.width}" },

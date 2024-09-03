@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "size": {
+    "$type": "dimension",
     "search-field": {
       "border": {
         "width": {
@@ -13,6 +13,7 @@
     }
   },
   "spacing": {
+    "$type": "dimension",
     "search-field": {
       "margin-button": { "source": "$search-button-margin", "$value": ".5rem" }
     }

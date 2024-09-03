@@ -1,6 +1,6 @@
 {
-  "$type": "shadow",
   "elevation": {
+    "$type": "shadow",
     "form": {
       "input": {
         "base": { "source": "$input-box-shadow", "$value": "none" },

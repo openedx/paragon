@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "spacing": {
+    "$type": "dimension",
     "navbar": {
       "padding": {
         "y": { "source": "$navbar-padding-y", "$value": "calc({spacing.spacer.base} / 2)" },
@@ -23,6 +23,7 @@
     }
   },
   "typography": {
+    "$type": "dimension",
     "navbar": {
       "brand": {
         "font-size": { "source": "$navbar-brand-font-size", "$value": "{typography.font.size.lg}" }
@@ -36,6 +37,7 @@
     }
   },
   "size": {
+    "$type": "dimension",
     "navbar": {
       "nav": {
         "scroll": {

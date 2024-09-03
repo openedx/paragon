@@ -1,6 +1,6 @@
 {
-  "$type": "color",
   "color": {
+    "$type": "color",
     "body": {
       "base": { "source": "$body-color", "$value": "{color.gray.700}" },
       "bg": { "source": "$body-bg", "$value": "{color.bg.base}" }

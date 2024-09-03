@@ -1,6 +1,6 @@
 {
-  "$type": "ratio",
   "elevation": {
+    "$type": "ratio",
     "sheet": {
       "zindex": {
         "backdrop": { "source": "$zindex-sheet-backdrop", "$value": "1031" },

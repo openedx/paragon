@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "size": {
+    "$type": "dimension",
     "tabs": {
       "notification": {
         "height": { "source": "$tab-notification-height", "$value": "1rem" },
@@ -9,6 +9,7 @@
     }
   },
   "typography": {
+    "$type": "dimension",
     "tabs": {
       "notification": {
         "font-size": { "source": "$tab-notification-font-size", "$value": "{typography.font.size.xs}" }

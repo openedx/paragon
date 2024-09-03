@@ -1,6 +1,6 @@
 {
-  "$type": "color",
   "color": {
+    "$type": "color",
     "bubble": {
       "text": {
         "success": { "source": "$bubble-success-color", "$value": "{color.white}" },

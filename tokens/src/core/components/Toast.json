@@ -1,11 +1,12 @@
 {
-  "$type": "dimension",
   "typography": {
+    "$type": "dimension",
     "toast": {
       "font-size": { "source": "$toast-font-size", "$value": ".875rem" }
     }
   },
   "size": {
+    "$type": "dimension",
     "toast": {
       "max-width": { "source": "$toast-max-width", "$value": "400px" },
       "border": {
@@ -15,6 +16,7 @@
     }
   },
   "spacing": {
+    "$type": "dimension",
     "toast": {
       "padding": {
         "x": { "source": "$toast-padding-x", "$value": ".75rem" },

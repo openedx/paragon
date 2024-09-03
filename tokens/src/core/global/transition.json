@@ -1,6 +1,6 @@
 {
-  "$type": "transition",
   "transition": {
+    "$type": "transition",
     "base": {
       "source": "$transition-base",
       "$value": "all .2s ease-in-out",
