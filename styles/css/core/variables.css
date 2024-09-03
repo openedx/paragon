@@ -1,6 +1,6 @@
 /**
- * Do not edit directly, this file was auto-generated. while transforming design tokens.
- * See <root>/tokens/README.md for more details.
+ * Do not edit directly, this file was auto-generated.
+ * Generated on Tue, 03 Sep 2024 14:45:12 GMT
  */
 
 :root {
@@ -89,9 +89,9 @@
   --pgn-typography-font-size-sm: 0.875rem; /* Small font size. */
   --pgn-typography-font-size-lg: var(--pgn-typography-font-size-base) * 1.25; /* Lead text font size. */
   --pgn-typography-font-size-base: 1.125rem; /* Base font size. */
-  --pgn-typography-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, '"Liberation Mono"', '"Courier New"', monospace; /* Monospace font family. */
+  --pgn-typography-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; /* Monospace font family. */
   --pgn-typography-font-family-serif: serif; /* Serif font family. */
-  --pgn-typography-font-family-sans-serif: -apple-system, BlinkMacSystemFont, '"Segoe UI"', Roboto, '"Helvetica Neue"', Arial, '"Noto Sans"', sans-serif, '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'; /* Sans-serif font family. */
+  --pgn-typography-font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; /* Sans-serif font family. */
   --pgn-typography-font-family-base: var(--pgn-typography-font-family-sans-serif); /* Basic font family. */
   --pgn-typography-blockquote-font-size: calc(var(--pgn-typography-font-size-base) * 1.25);
   --pgn-typography-blockquote-small-font-size: var(--pgn-typography-font-size-sm);
