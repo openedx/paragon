@@ -17,12 +17,12 @@
     }
 
     &-logo {
-      font-size: var(--pgn-typography-font-size-mobile-h1);
-      line-height: var(--pgn-typography-display-line-height-base);
+      font-size: var(--pgn-typography-font-size-h1-mobile);
+      line-height: var(--pgn-typography-line-height-display-base);
     }
 
     &-heading {
-      font-size: var(--pgn-typography-font-size-h3);
+      font-size: var(--pgn-typography-font-size-h3-base);
       line-height: var(--pgn-typography-line-height-base);
       margin: 0;
       color: var(--pgn-color-white);

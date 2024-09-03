@@ -1,6 +1,6 @@
 /**
- * Do not edit directly, this file was auto-generated.
- * Generated on Tue, 03 Sep 2024 14:45:12 GMT
+ * Do not edit directly, this file was auto-generated. while transforming design tokens.
+ * See <root>/tokens/README.md for more details.
  */
 
 :root {
@@ -55,7 +55,7 @@
   --pgn-typography-font-weight-display-3: var(--pgn-typography-font-weight-bold); /* Font weight of display level 3. */
   --pgn-typography-font-weight-display-2: var(--pgn-typography-font-weight-bold); /* Font weight of display level 2. */
   --pgn-typography-font-weight-display-1: var(--pgn-typography-font-weight-bold); /* Font weight of display level 1. */
-  --pgn-typography-font-weight-table-th: normal; /* Table th font weight. */
+  --pgn-typography-font-weight-table-th: bold; /* Table th font weight. */
   --pgn-typography-font-weight-lead: inherit; /* Lead text font weight. */
   --pgn-typography-font-weight-base: var(--pgn-typography-font-weight-normal); /* Basic font weight. */
   --pgn-typography-font-weight-bolder: bolder; /* Bolder font weight. */
@@ -84,9 +84,9 @@
   --pgn-typography-font-size-h2-base: 2rem; /* Font size of heading level 2. */
   --pgn-typography-font-size-h1-mobile: 2.25rem; /* Mobile font size of heading level 1. */
   --pgn-typography-font-size-h1-base: 2.5rem; /* Base font size of heading level 1. */
-  --pgn-typography-font-size-micro: .6875rem; /* Micro utils text font size. */
-  --pgn-typography-font-size-xs: 0.75rem; /* X-small font size. */
-  --pgn-typography-font-size-sm: 0.875rem; /* Small font size. */
+  --pgn-typography-font-size-micro: .688rem; /* Micro utils text font size. */
+  --pgn-typography-font-size-xs: .75rem; /* X-small font size. */
+  --pgn-typography-font-size-sm: .875rem; /* Small font size. */
   --pgn-typography-font-size-lg: var(--pgn-typography-font-size-base) * 1.25; /* Lead text font size. */
   --pgn-typography-font-size-base: 1.125rem; /* Base font size. */
   --pgn-typography-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; /* Monospace font family. */

@@ -6,7 +6,7 @@
         "base": { "source": "$btn-icon-bg", "$value": "transparent" },
         "primary": {
           "base": { "$value": "{color.icon-button.bg.base}" },
-          "hover": { "$value": "{color.icon-button.bg.base}" },
+          "hover": { "$value": "{color.icon-button.text.primary.base}" },
           "focus": { "$value": "{color.icon-button.bg.base}" },
           "inverse": {
             "base": { "$value": "{color.icon-button.bg.base}" },
@@ -14,9 +14,9 @@
             "focus": { "$value": "{color.icon-button.bg.base}" }
           },
           "active": {
-            "base": { "$value": "{color.icon-button.bg.base}" },
-            "hover": { "$value": "{color.icon-button.bg.base}" },
-            "focus": { "$value": "{color.icon-button.bg.base}" }
+            "base": { "$value": "{color.icon-button.text.primary.base}" },
+            "hover": { "$value": "{color.icon-button.text.primary.base}" },
+            "focus": { "$value": "{color.icon-button.text.primary.base}" }
           },
           "inverse-active": {
             "base": { "$value": "{color.icon-button.accent}" },
@@ -189,10 +189,10 @@
         "primary": {
           "base": { "$value": "{color.primary.base}" },
           "hover": { "$value": "{color.icon-button.accent}" },
-          "focus": { "$value": "{color.icon-button.bg.base}" },
+          "focus": { "$value": "{color.icon-button.text.primary.base}" },
           "inverse": {
             "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.bg.base}" },
+            "hover": { "$value": "{color.icon-button.text.primary.base}" },
             "focus": { "$value": "{color.icon-button.accent}" }
           },
           "active": {
@@ -201,9 +201,9 @@
             "focus": { "$value": "{color.icon-button.accent}" }
           },
           "inverse-active": {
-            "base": { "$value": "{color.icon-button.bg.base}" },
-            "hover": { "$value": "{color.icon-button.bg.base}" },
-            "focus": { "$value": "{color.icon-button.bg.base}" }
+            "base": { "$value": "{color.icon-button.text.primary.base}" },
+            "hover": { "$value": "{color.icon-button.text.primary.base}" },
+            "focus": { "$value": "{color.icon-button.text.primary.base}" }
           }
         },
         "secondary": {
@@ -382,7 +382,7 @@
     "icon-button": {
       "box-shadow": {
         "primary": {
-          "base": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.bg.base}" },
+          "base": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.text.primary.base}" },
           "inverse": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.accent}" },
           "active": { "$value": "none" },
           "inverse-active": { "$value": "none" }
