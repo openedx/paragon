@@ -1,6 +1,6 @@
 {
-  "$type": "color",
   "color": {
+    "$type": "color",
     "badge": {
       "text": {
         "primary": { "source": "$badge-primary-color", "modify": [{ "type": "color-yiq" }], "$value": "{color.primary.base}" },

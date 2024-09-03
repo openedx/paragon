@@ -1,6 +1,6 @@
 {
-  "$type": "color",
   "color": {
+    "$type": "color",
     "alert": {
       "title": { "source": "$alert-title-color", "$value": "{color.black}" },
       "content": { "source": "$alert-content-color", "$value": "{color.gray.700}" },

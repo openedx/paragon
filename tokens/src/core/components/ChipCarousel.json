@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "spacing": {
+    "$type": "dimension",
     "chip-carousel": {
       "controls-top-offset": { "source": "$chip-carousel-controls-top-offset", "$value": ".375rem" },
       "container": {

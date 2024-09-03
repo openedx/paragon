@@ -1,6 +1,6 @@
 {
-  "$type": "transition",
   "spacing": {
+    "$type": "transition",
     "bubble": {
       "expandable-padding": {
         "y": { "source": "$bubble-expandable-padding-y", "$value": "0" },

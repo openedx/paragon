@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "spacing": {
+    "$type": "dimension",
     "action-row": {
       "gap": {
         "x": { "source": "$action-row-gap-x", "$value": ".5rem" },

@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "spacing": {
+    "$type": "dimension",
     "stepper": {
       "header": {
         "padding": {
@@ -21,6 +21,7 @@
     }
   },
   "size": {
+    "$type": "dimension",
     "stepper": {
       "header": {
         "height-min": { "source": "$stepper-header-min-height", "$value": "5.13rem" }

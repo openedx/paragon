@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "spacing": {
+    "$type": "dimension",
     "avatar-button": {
       "padding-left": {
         "base": { "source": "$avatar-button-padding-left", "$value": ".25em" },

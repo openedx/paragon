@@ -1,6 +1,6 @@
 {
-  "$type": "color",
   "color": {
+    "$type": "color",
     "breadcrumb": {
       "base": { "source": "$breadcrumb-color", "$value": "{color.primary.500}" },
       "active": { "source": "$breadcrumb-active-color", "$value": "{color.gray.500}" },

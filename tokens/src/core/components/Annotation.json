@@ -1,6 +1,6 @@
 {
-  "$type": "dimension",
   "spacing": {
+    "$type": "dimension",
     "annotation": {
       "padding": { "source": "$annotation-padding", "$value": ".5rem" },
       "arrow-side": {
@@ -10,11 +10,12 @@
   },
   "typography": {
     "annotation": {
-      "font-size": { "source": "$annotation-font-size", "$value": "{typography.font.size.sm}" },
-      "line-height": { "source": "$annotation-line-height", "$value": "{typography.line-height.sm}", "type": "number" }
+      "font-size": { "source": "$annotation-font-size", "$value": "{typography.font.size.sm}", "$type": "dimension" },
+      "line-height": { "source": "$annotation-line-height", "$value": "{typography.line-height.sm}", "$type": "number" }
     }
   },
   "size": {
+    "$type": "dimension",
     "annotation": {
       "arrow-border": {
         "width": { "source": "$annotation-arrow-border-width", "$value": ".5rem" }
