@@ -225,7 +225,7 @@ jobs:
       run: npm ci
       working-directory: dependent-usage-analyzer
     - name: Download dependent project checkouts
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dependent-project-checkouts
         path: dependent-usage-analyzer
@@ -262,7 +262,7 @@ jobs:
       with:
         node-version: ${{ env.NODE_VER }}
     - name: Download analysis output
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dependent-usage-json
     - name: Create pull request for dependent project usages
