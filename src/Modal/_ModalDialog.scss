@@ -122,7 +122,7 @@
   }
 
   .pgn__modal-title {
-    font-size: var(--pgn-typography-font-size-h3);
+    font-size: var(--pgn-typography-font-size-h3-base);
     margin-inline-end: 3rem; // roughly accomodate the width of the close buttonn
     text-align: start;
   }
@@ -310,7 +310,7 @@
   }
 
   .pgn__modal-title {
-    font-size: var(--pgn-typography-font-size-h4);
+    font-size: var(--pgn-typography-font-size-h4-base);
     display: flex;
     flex-grow: 1;
     align-items: center;
