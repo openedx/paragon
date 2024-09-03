@@ -1,7 +1,6 @@
-/*
- * IMPORTANT: This file is the result of assembling design tokens.
- * Do not edit directly.
- * Generated on Tue, 27 Aug 2024 17:14:44 GMT
+/**
+ * Do not edit directly, this file was auto-generated. while transforming design tokens.
+ * See <root>/tokens/README.md for more details.
  */
 
 :root {
@@ -10,19 +9,19 @@
   --pgn-other-form-control-custom-file-lang: en;
   --pgn-other-form-control-range-track-cursor: pointer;
   --pgn-other-form-control-cursor: auto;
-  --pgn-elevation-zindex-fixed: 1030;
-  --pgn-elevation-zindex-sticky: 1020;
-  --pgn-elevation-zindex-2000: 2000;
-  --pgn-elevation-zindex-1800: 1800;
-  --pgn-elevation-zindex-1600: 1600;
-  --pgn-elevation-zindex-1400: 1400;
-  --pgn-elevation-zindex-1200: 1200;
-  --pgn-elevation-zindex-1000: 1000;
-  --pgn-elevation-zindex-800: 800;
-  --pgn-elevation-zindex-600: 600;
-  --pgn-elevation-zindex-400: 400;
-  --pgn-elevation-zindex-200: 200;
-  --pgn-elevation-zindex-0: 0;
+  --pgn-elevation-zindex-fixed: 1030; /* z-index of for fixed element. */
+  --pgn-elevation-zindex-sticky: 1020; /* z-index for sticky element. */
+  --pgn-elevation-zindex-2000: 2000; /* z-index of level 2000. */
+  --pgn-elevation-zindex-1800: 1800; /* z-index of level 1800. */
+  --pgn-elevation-zindex-1600: 1600; /* z-index of level 1600. */
+  --pgn-elevation-zindex-1400: 1400; /* z-index of level 1400. */
+  --pgn-elevation-zindex-1200: 1200; /* z-index of level 1200. */
+  --pgn-elevation-zindex-1000: 1000; /* z-index of level 1000. */
+  --pgn-elevation-zindex-800: 800; /* z-index of level 800. */
+  --pgn-elevation-zindex-600: 600; /* z-index of level 600. */
+  --pgn-elevation-zindex-400: 400; /* z-index of level 400. */
+  --pgn-elevation-zindex-200: 200; /* z-index of level 200. */
+  --pgn-elevation-zindex-0: 0; /* z-index of level 0. */
   --pgn-elevation-tooltip-zindex: 1070;
   --pgn-elevation-sheet-zindex-main: 1032;
   --pgn-elevation-sheet-zindex-backdrop: 1031;
@@ -31,10 +30,10 @@
   --pgn-elevation-modal-zindex: 1050;
   --pgn-elevation-modal-backdrop-zindex: 1040;
   --pgn-elevation-dropdown-zindex: 1000;
-  --pgn-transition-collapse-width: width .35s ease;
-  --pgn-transition-collapse-height: height .35s ease;
-  --pgn-transition-fade: opacity .15s linear;
-  --pgn-transition-base: all .2s ease-in-out;
+  --pgn-transition-collapse-width: width .35s ease; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-height: height .35s ease; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-fade: opacity .15s linear; /* Opacity transition that takes 150ms */
+  --pgn-transition-base: all .2s ease-in-out; /* Generic transition for any property change */
   --pgn-transition-progress-bar-bar-transition: width .6s ease;
   --pgn-transition-progress-bar-bar-animation-timing: 1s linear infinite;
   --pgn-transition-form-control: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -45,57 +44,57 @@
   --pgn-transition-carousel-base: transform var(--pgn-transition-carousel-duration) ease-in-out;
   --pgn-transition-btn: none;
   --pgn-transition-badge: none;
-  --pgn-typography-line-height-micro: .938rem;
-  --pgn-typography-line-height-sm: 1.5rem;
-  --pgn-typography-line-height-lg: 1.5rem;
-  --pgn-typography-line-height-base: 1.5556rem;
-  --pgn-typography-font-weight-table-th: normal;
-  --pgn-typography-font-weight-lead: inherit;
-  --pgn-typography-font-weight-base: var(--pgn-typography-font-weight-normal);
-  --pgn-typography-font-weight-bolder: bolder;
-  --pgn-typography-font-weight-bold: 700;
-  --pgn-typography-font-weight-semi-bold: 500;
-  --pgn-typography-font-weight-normal: 400;
-  --pgn-typography-font-weight-light: 300;
-  --pgn-typography-font-weight-lighter: lighter;
-  --pgn-typography-font-size-micro: .688rem;
-  --pgn-typography-font-size-lead: calc(var(--pgn-typography-font-size-base) * 1.25);
-  --pgn-typography-font-size-mobile-h6: var(--pgn-typography-font-size-h6);
-  --pgn-typography-font-size-mobile-h5: var(--pgn-typography-font-size-h5);
-  --pgn-typography-font-size-mobile-h4: var(--pgn-typography-font-size-h4);
-  --pgn-typography-font-size-mobile-h3: var(--pgn-typography-font-size-h3);
-  --pgn-typography-font-size-mobile-h2: var(--pgn-typography-font-size-h2);
-  --pgn-typography-font-size-mobile-h1: 2.25rem;
-  --pgn-typography-font-size-h6: .75rem;
-  --pgn-typography-font-size-h5: .875rem;
-  --pgn-typography-font-size-h4: 1.125rem;
-  --pgn-typography-font-size-h3: 1.375rem;
-  --pgn-typography-font-size-h2: 2rem;
-  --pgn-typography-font-size-h1: 2.5rem;
-  --pgn-typography-font-size-small-x: 75%;
-  --pgn-typography-font-size-small-base: 87.5%;
-  --pgn-typography-font-size-xs: .75rem;
-  --pgn-typography-font-size-sm: .875rem;
-  --pgn-typography-font-size-lg: 1.4063rem;
-  --pgn-typography-font-size-base: 1.125rem;
-  --pgn-typography-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, '"Liberation Mono"', '"Courier New"', monospace;
-  --pgn-typography-font-family-serif: serif;
-  --pgn-typography-font-family-sans-serif: -apple-system, BlinkMacSystemFont, '"Segoe UI"', Roboto, '"Helvetica Neue"', Arial, '"Noto Sans"', sans-serif, '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"';
-  --pgn-typography-font-family-base: var(--pgn-typography-font-family-sans-serif);
   --pgn-typography-print-page-size: a3;
-  --pgn-typography-display-weight-4: var(--pgn-typography-font-weight-bold);
-  --pgn-typography-display-weight-3: var(--pgn-typography-font-weight-bold);
-  --pgn-typography-display-weight-2: var(--pgn-typography-font-weight-bold);
-  --pgn-typography-display-weight-1: var(--pgn-typography-font-weight-bold);
-  --pgn-typography-display-mobile: 3.25rem;
-  --pgn-typography-display-line-height-mobile: 3.5rem;
-  --pgn-typography-display-line-height-base: 1rem;
-  --pgn-typography-display-4: 7.5rem;
-  --pgn-typography-display-3: 5.625rem;
-  --pgn-typography-display-2: 4.875rem;
-  --pgn-typography-display-1: 3.75rem;
+  --pgn-typography-line-height-display-mobile: 3.5rem; /* Mobile display line height. */
+  --pgn-typography-line-height-display-base: 1; /* Standard display line height. */
+  --pgn-typography-line-height-micro: .938rem; /* Micro utils line height. */
+  --pgn-typography-line-height-sm: 1.5; /* Small line height. */
+  --pgn-typography-line-height-lg: 1.5; /* Large line height. */
+  --pgn-typography-line-height-base: 1.5556; /* Basic line height. */
+  --pgn-typography-font-weight-display-4: var(--pgn-typography-font-weight-bold); /* Font weight of display level 4. */
+  --pgn-typography-font-weight-display-3: var(--pgn-typography-font-weight-bold); /* Font weight of display level 3. */
+  --pgn-typography-font-weight-display-2: var(--pgn-typography-font-weight-bold); /* Font weight of display level 2. */
+  --pgn-typography-font-weight-display-1: var(--pgn-typography-font-weight-bold); /* Font weight of display level 1. */
+  --pgn-typography-font-weight-table-th: normal; /* Table th font weight. */
+  --pgn-typography-font-weight-lead: inherit; /* Lead text font weight. */
+  --pgn-typography-font-weight-base: var(--pgn-typography-font-weight-normal); /* Basic font weight. */
+  --pgn-typography-font-weight-bolder: bolder; /* Bolder font weight. */
+  --pgn-typography-font-weight-bold: 700; /* Bold font weight. */
+  --pgn-typography-font-weight-semi-bold: 500; /* Semi-bold font weight. */
+  --pgn-typography-font-weight-normal: 400; /* Normal font weight. */
+  --pgn-typography-font-weight-light: 300; /* Light font weight. */
+  --pgn-typography-font-weight-lighter: lighter; /* Lighter font weight. */
+  --pgn-typography-font-size-display-mobile-4: var(--pgn-typography-font-size-display-mobile-1); /* Mobile font size for heading of level 4. */
+  --pgn-typography-font-size-display-mobile-3: var(--pgn-typography-font-size-display-mobile-1); /* Mobile font size for heading of level 3. */
+  --pgn-typography-font-size-display-mobile-2: var(--pgn-typography-font-size-display-mobile-1); /* Mobile font size for heading of level 2. */
+  --pgn-typography-font-size-display-mobile-1: 3.25rem; /* Mobile font size for heading of level 1. */
+  --pgn-typography-font-size-display-4: 7.5rem; /* Font size for heading of level 4. */
+  --pgn-typography-font-size-display-3: 5.625rem; /* Font size for heading of level 3. */
+  --pgn-typography-font-size-display-2: 4.875rem; /* Font size for heading of level 2. */
+  --pgn-typography-font-size-display-1: 3.75rem; /* Font size for heading of level 1. */
+  --pgn-typography-font-size-h6-mobile: var(--pgn-typography-font-size-h6-base); /* Mobile font size of heading level 6. */
+  --pgn-typography-font-size-h6-base: .75rem; /* Font size of heading level 6. */
+  --pgn-typography-font-size-h5-mobile: var(--pgn-typography-font-size-h5-base); /* Mobile font size of heading level 5. */
+  --pgn-typography-font-size-h5-base: .875rem; /* Font size of heading level 5. */
+  --pgn-typography-font-size-h4-mobile: var(--pgn-typography-font-size-h4-base); /* Mobile font size of heading level 4. */
+  --pgn-typography-font-size-h4-base: 1.125rem; /* Font size of heading level 4. */
+  --pgn-typography-font-size-h3-mobile: var(--pgn-typography-font-size-h3-base); /* Mobile font size of heading level 3. */
+  --pgn-typography-font-size-h3-base: 1.375rem; /* Font size of heading level 3. */
+  --pgn-typography-font-size-h2-mobile: var(--pgn-typography-font-size-h2-base); /* Mobile font size of heading level 2. */
+  --pgn-typography-font-size-h2-base: 2rem; /* Font size of heading level 2. */
+  --pgn-typography-font-size-h1-mobile: 2.25rem; /* Mobile font size of heading level 1. */
+  --pgn-typography-font-size-h1-base: 2.5rem; /* Base font size of heading level 1. */
+  --pgn-typography-font-size-micro: .6875rem; /* Micro utils text font size. */
+  --pgn-typography-font-size-xs: 0.75rem; /* X-small font size. */
+  --pgn-typography-font-size-sm: 0.875rem; /* Small font size. */
+  --pgn-typography-font-size-lg: var(--pgn-typography-font-size-base) * 1.25; /* Lead text font size. */
+  --pgn-typography-font-size-base: 1.125rem; /* Base font size. */
+  --pgn-typography-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, '"Liberation Mono"', '"Courier New"', monospace; /* Monospace font family. */
+  --pgn-typography-font-family-serif: serif; /* Serif font family. */
+  --pgn-typography-font-family-sans-serif: -apple-system, BlinkMacSystemFont, '"Segoe UI"', Roboto, '"Helvetica Neue"', Arial, '"Noto Sans"', sans-serif, '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'; /* Sans-serif font family. */
+  --pgn-typography-font-family-base: var(--pgn-typography-font-family-sans-serif); /* Basic font family. */
   --pgn-typography-blockquote-font-size: calc(var(--pgn-typography-font-size-base) * 1.25);
-  --pgn-typography-blockquote-small-font-size: var(--pgn-typography-font-size-small-base);
+  --pgn-typography-blockquote-small-font-size: var(--pgn-typography-font-size-sm);
   --pgn-typography-dt-font-weight: var(--pgn-typography-font-weight-bold);
   --pgn-typography-link-decoration-brand-inline-hover: underline;
   --pgn-typography-link-decoration-brand-inline-base: underline;
@@ -110,13 +109,13 @@
   --pgn-typography-link-decoration-hover: underline;
   --pgn-typography-link-decoration-base: none;
   --pgn-typography-input-btn-line-height-lg: var(--pgn-typography-line-height-lg);
-  --pgn-typography-input-btn-line-height-sm: 1.4286rem;
-  --pgn-typography-input-btn-line-height-base: 1.3333rem;
+  --pgn-typography-input-btn-line-height-sm: 1.4286;
+  --pgn-typography-input-btn-line-height-base: 1.3333;
   --pgn-typography-input-btn-font-size-lg: 1.325rem;
   --pgn-typography-input-btn-font-size-sm: .875rem;
   --pgn-typography-input-btn-font-size-base: 1.125rem;
   --pgn-typography-input-btn-font-family: inherit;
-  --pgn-typography-headings-line-height: 1.25rem;
+  --pgn-typography-headings-line-height: 1.25;
   --pgn-typography-headings-font-weight: var(--pgn-typography-font-weight-bold);
   --pgn-typography-headings-font-family: inherit;
   --pgn-typography-tooltip-font-size: var(--pgn-typography-font-size-sm);
@@ -137,7 +136,7 @@
   --pgn-typography-image-figure-caption-font-size: 90%;
   --pgn-typography-form-feedback-tooltip-line-height: var(--pgn-typography-line-height-base);
   --pgn-typography-form-feedback-tooltip-font-size: var(--pgn-typography-font-size-sm);
-  --pgn-typography-form-feedback-font-size: var(--pgn-typography-font-size-small-base);
+  --pgn-typography-form-feedback-font-size: var(--pgn-typography-font-size-sm);
   --pgn-typography-form-control-file-font-weight: var(--pgn-typography-form-input-font-weight);
   --pgn-typography-form-control-file-font-family: var(--pgn-typography-form-input-font-family);
   --pgn-typography-form-control-file-line-height: var(--pgn-typography-form-input-line-height-base);
@@ -155,7 +154,7 @@
   --pgn-typography-form-input-font-size-sm: var(--pgn-typography-input-btn-font-size-sm);
   --pgn-typography-form-input-font-size-base: var(--pgn-typography-input-btn-font-size-base);
   --pgn-typography-form-input-font-family: var(--pgn-typography-input-btn-font-family);
-  --pgn-typography-dropzone-restriction-msg-font-size: var(--pgn-typography-font-size-small-x);
+  --pgn-typography-dropzone-restriction-msg-font-size: var(--pgn-typography-font-size-xs);
   --pgn-typography-dropdown-item-text-decoration: none;
   --pgn-typography-dropdown-font-size: var(--pgn-typography-font-size-base);
   --pgn-typography-code-kbd-nested-font-weight: var(--pgn-typography-font-weight-bold);
@@ -163,7 +162,7 @@
   --pgn-typography-code-font-size: 87.5%;
   --pgn-typography-close-button-font-weight: var(--pgn-typography-font-weight-bold);
   --pgn-typography-close-button-font-size: calc(var(--pgn-typography-font-size-base) * 1.5);
-  --pgn-typography-footer-text-font-size: var(--pgn-typography-font-size-small-x);
+  --pgn-typography-footer-text-font-size: var(--pgn-typography-font-size-xs);
   --pgn-typography-btn-line-height-lg: var(--pgn-typography-input-btn-line-height-lg);
   --pgn-typography-btn-line-height-sm: var(--pgn-typography-input-btn-line-height-sm);
   --pgn-typography-btn-line-height-base: var(--pgn-typography-input-btn-line-height-base);
@@ -179,23 +178,23 @@
   --pgn-typography-alert-line-height: 1.5rem;
   --pgn-typography-alert-font-size: .875rem;
   --pgn-typography-alert-font-weight-link: var(--pgn-typography-font-weight-normal);
-  --pgn-spacing-grid-gutter-width: 24px;
-  --pgn-spacing-table-cell-padding-sm: .3rem;
-  --pgn-spacing-table-cell-padding-base: .75rem;
-  --pgn-spacing-label-margin-bottom: .5rem;
-  --pgn-spacing-spacer-5-5: calc(var(--pgn-spacing-spacer-base) * 4);
-  --pgn-spacing-spacer-4-5: calc(var(--pgn-spacing-spacer-base) * 2);
-  --pgn-spacing-spacer-3-5: calc(var(--pgn-spacing-spacer-base) * 1.25);
-  --pgn-spacing-spacer-2-5: calc(var(--pgn-spacing-spacer-base) * .75);
-  --pgn-spacing-spacer-1-5: calc(var(--pgn-spacing-spacer-base) * .375);
-  --pgn-spacing-spacer-base: 1rem;
-  --pgn-spacing-spacer-6: calc(var(--pgn-spacing-spacer-base) * 5);
-  --pgn-spacing-spacer-5: calc(var(--pgn-spacing-spacer-base) * 3);
-  --pgn-spacing-spacer-4: calc(var(--pgn-spacing-spacer-base) * 1.5);
-  --pgn-spacing-spacer-3: var(--pgn-spacing-spacer-base);
-  --pgn-spacing-spacer-2: calc(var(--pgn-spacing-spacer-base) * .5);
-  --pgn-spacing-spacer-1: calc(var(--pgn-spacing-spacer-base) * .25);
-  --pgn-spacing-spacer-0: 0rem;
+  --pgn-spacing-grid-gutter-width: 24px; /* Grid gutter width value. */
+  --pgn-spacing-table-cell-padding-sm: .3rem; /* Padding sm for tables. */
+  --pgn-spacing-table-cell-padding-base: .75rem; /* Padding for tables. */
+  --pgn-spacing-label-margin-bottom: .5rem; /* Margin bottom for label. */
+  --pgn-spacing-spacer-5-5: calc(var(--pgn-spacing-spacer-base) * 4); /* Space value of level 5.5 */
+  --pgn-spacing-spacer-4-5: calc(var(--pgn-spacing-spacer-base) * 2); /* Space value of level 4.5 */
+  --pgn-spacing-spacer-3-5: calc(var(--pgn-spacing-spacer-base) * 1.25); /* Space value of level 3.5 */
+  --pgn-spacing-spacer-2-5: calc(var(--pgn-spacing-spacer-base) * .75); /* Space value of level 2.5 */
+  --pgn-spacing-spacer-1-5: calc(var(--pgn-spacing-spacer-base) * .375); /* Space value of level 1.5 */
+  --pgn-spacing-spacer-base: 1rem; /* Basic space value */
+  --pgn-spacing-spacer-6: calc(var(--pgn-spacing-spacer-base) * 5); /* Space value of level 6 */
+  --pgn-spacing-spacer-5: calc(var(--pgn-spacing-spacer-base) * 3); /* Space value of level 5 */
+  --pgn-spacing-spacer-4: calc(var(--pgn-spacing-spacer-base) * 1.5); /* Space value of level 4 */
+  --pgn-spacing-spacer-3: var(--pgn-spacing-spacer-base); /* Space value of level 3 */
+  --pgn-spacing-spacer-2: calc(var(--pgn-spacing-spacer-base) * .5); /* Space value of level 2 */
+  --pgn-spacing-spacer-1: calc(var(--pgn-spacing-spacer-base) * .25); /* Space value of level 1 */
+  --pgn-spacing-spacer-0: 0; /* Space value of level 0 */
   --pgn-spacing-mark-padding: .2em;
   --pgn-spacing-paragraph-margin-bottom: 1rem;
   --pgn-spacing-list-group-item-padding-x: 1.25rem;
@@ -210,7 +209,7 @@
   --pgn-spacing-headings-margin-bottom: .5rem;
   --pgn-spacing-caret-vertical-align: .255em;
   --pgn-spacing-caret-base: .255em;
-  --pgn-spacing-tooltip-margin: 0rem;
+  --pgn-spacing-tooltip-margin: 0;
   --pgn-spacing-tooltip-padding-x: .5rem;
   --pgn-spacing-tooltip-padding-y: .5rem;
   --pgn-spacing-toast-container-gutter-sm: .625rem;
@@ -224,9 +223,9 @@
   --pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-x: .625rem;
   --pgn-spacing-tab-more-link-dropdown-toggle-padding-y: var(--pgn-spacing-spacer-base);
   --pgn-spacing-tab-more-link-dropdown-toggle-padding-x: .7rem;
-  --pgn-spacing-sticky-offset: 0rem;
-  --pgn-spacing-stepper-header-step-list-margin: 0rem;
-  --pgn-spacing-stepper-header-step-list-padding-x: 0rem;
+  --pgn-spacing-sticky-offset: 0;
+  --pgn-spacing-stepper-header-step-list-margin: 0;
+  --pgn-spacing-stepper-header-step-list-padding-x: 0;
   --pgn-spacing-stepper-header-step-list-padding-y: .25rem;
   --pgn-spacing-stepper-header-step-padding: .25rem;
   --pgn-spacing-stepper-header-padding-x: var(--pgn-spacing-spacer-base);
@@ -308,7 +307,7 @@
   --pgn-spacing-dropdown-padding-y-item: .25rem;
   --pgn-spacing-dropdown-padding-y-base: .5rem;
   --pgn-spacing-dropdown-padding-x-item: 1rem;
-  --pgn-spacing-dropdown-padding-x-base: 0rem;
+  --pgn-spacing-dropdown-padding-x-base: 0;
   --pgn-spacing-dropdown-spacer: .125rem;
   --pgn-spacing-data-table-footer-position: center;
   --pgn-spacing-data-table-padding-cell: .5rem .75rem;
@@ -347,7 +346,7 @@
   --pgn-spacing-card-loading-skeleton-spacer: .313rem;
   --pgn-spacing-card-footer-action-gap: .5rem;
   --pgn-spacing-card-columns-gap: 1.25rem;
-  --pgn-spacing-card-columns-count: 3rem;
+  --pgn-spacing-card-columns-count: 3;
   --pgn-spacing-card-columns-margin: var(--pgn-spacing-card-spacer-y);
   --pgn-spacing-card-margin-grid-bottom: var(--pgn-spacing-spacer-3);
   --pgn-spacing-card-margin-grid: var(--pgn-spacing-card-margin-group);
@@ -367,7 +366,7 @@
   --pgn-spacing-btn-padding-y-lg: var(--pgn-spacing-input-btn-padding-lg-y);
   --pgn-spacing-btn-padding-y-base: var(--pgn-spacing-input-btn-padding-y);
   --pgn-spacing-bubble-expandable-padding-x: .25rem;
-  --pgn-spacing-bubble-expandable-padding-y: 0rem;
+  --pgn-spacing-bubble-expandable-padding-y: 0;
   --pgn-spacing-breadcrumb-margin-left: .5rem;
   --pgn-spacing-badge-padding-y: .125rem;
   --pgn-spacing-badge-padding-x-pill: .6em;
@@ -384,12 +383,12 @@
   --pgn-spacing-alert-padding-y: 1.5rem;
   --pgn-spacing-action-row-gap-y: .5rem;
   --pgn-spacing-action-row-gap-x: .5rem;
-  --pgn-size-breakpoint-xxl: 1400px;
-  --pgn-size-breakpoint-xl: 1200px;
-  --pgn-size-breakpoint-lg: 992px;
-  --pgn-size-breakpoint-md: 768px;
-  --pgn-size-breakpoint-sm: 576px;
-  --pgn-size-breakpoint-xs: 0rem;
+  --pgn-size-breakpoint-xxl: 1400px; /* Starting breakpoint for large desktops, more than 1400px. */
+  --pgn-size-breakpoint-xl: 1200px; /* Starting breakpoint for large desktops. */
+  --pgn-size-breakpoint-lg: 992px; /* Starting breakpoint for desktops. */
+  --pgn-size-breakpoint-md: 768px; /* Starting breakpoint for tablets. */
+  --pgn-size-breakpoint-sm: 576px; /* Starting breakpoint for landscape phones. */
+  --pgn-size-breakpoint-xs: 0; /* Starting breakpoint for portrait phones. */
   --pgn-size-list-group-border-radius: var(--pgn-size-border-radius-base);
   --pgn-size-list-group-border-width: var(--pgn-size-border-width);
   --pgn-size-input-btn-focus-width: 1px;
@@ -407,9 +406,9 @@
   --pgn-size-tabs-notification-width: 1rem;
   --pgn-size-tabs-notification-height: 1rem;
   --pgn-size-stepper-step-bubble-error-shadow-width: 3px;
-  --pgn-size-stepper-step-width-min: 0rem;
+  --pgn-size-stepper-step-width-min: 0;
   --pgn-size-stepper-header-height-min: 5.13rem;
-  --pgn-size-stack-gap: 0rem;
+  --pgn-size-stack-gap: 0;
   --pgn-size-spinner-sm-border-width: .2em;
   --pgn-size-spinner-sm-height: var(--pgn-size-spinner-sm-width);
   --pgn-size-spinner-sm-width: 1rem;
@@ -417,11 +416,11 @@
   --pgn-size-spinner-base-height: var(--pgn-size-spinner-base-width);
   --pgn-size-spinner-base-width: 2rem;
   --pgn-size-search-field-search-input-height: calc(var(--pgn-typography-form-input-line-height-base) * 1em + var(--pgn-spacing-form-input-padding-y-base) * 2);
-  --pgn-size-search-field-border-radius: 0rem;
+  --pgn-size-search-field-border-radius: 0;
   --pgn-size-search-field-border-width-focus: .3125rem;
   --pgn-size-search-field-border-width-base: .0625rem;
   --pgn-size-progress-bar-threshold-circle: .5625rem;
-  --pgn-size-progress-bar-border-radius: 0rem;
+  --pgn-size-progress-bar-border-radius: 0;
   --pgn-size-progress-bar-border-width: 1px;
   --pgn-size-progress-bar-height-annotated: .3125rem;
   --pgn-size-progress-bar-height-base: 1rem;
@@ -437,7 +436,7 @@
   --pgn-size-popover-border-radius: var(--pgn-size-border-radius-sm);
   --pgn-size-popover-border-width: var(--pgn-size-border-width);
   --pgn-size-popover-max-width: 480px;
-  --pgn-size-pagination-focus-outline: 0rem;
+  --pgn-size-pagination-focus-outline: 0;
   --pgn-size-pagination-toggle-border-sm: .25rem;
   --pgn-size-pagination-toggle-border-base: .3125rem;
   --pgn-size-pagination-reduced-dropdown-min-width: 6rem;
@@ -452,7 +451,7 @@
   --pgn-size-navbar-toggler-border-radius: var(--pgn-size-btn-border-radius-base);
   --pgn-size-navbar-brand-height: calc(var(--pgn-typography-navbar-brand-font-size) * var(--pgn-typography-line-height-base));
   --pgn-size-navbar-nav-scroll-max-height: 75vh;
-  --pgn-size-nav-tabs-border-radius: 0rem;
+  --pgn-size-nav-tabs-border-radius: 0;
   --pgn-size-nav-tabs-border-width: 2px;
   --pgn-size-nav-tabs-inverse-link-active-border-bottom-width: var(--pgn-size-nav-tabs-link-border-bottom-width);
   --pgn-size-nav-tabs-link-border-bottom-width: .188rem;
@@ -491,7 +490,7 @@
   --pgn-size-form-autosuggest-icon-width: 2.4rem;
   --pgn-size-form-grid-gutter-width: 0.625rem;
   --pgn-size-form-control-border-radio-indicator-radius: 50%;
-  --pgn-size-form-control-border-checkbox-indicator-radius: 0rem;
+  --pgn-size-form-control-border-checkbox-indicator-radius: 0;
   --pgn-size-form-control-icon-width: 2rem;
   --pgn-size-form-control-file-border-radius: var(--pgn-size-form-input-radius-border-base);
   --pgn-size-form-control-file-height-inner: var(--pgn-size-form-input-height-inner-base);
@@ -499,7 +498,7 @@
   --pgn-size-form-control-file-width: var(--pgn-size-form-input-width-border);
   --pgn-size-form-control-range-thumb-focus-width: var(--pgn-size-form-input-width-focus);
   --pgn-size-form-control-range-thumb-border-radius: 1rem;
-  --pgn-size-form-control-range-thumb-border-base: 0rem;
+  --pgn-size-form-control-range-thumb-border-base: 0;
   --pgn-size-form-control-range-thumb-height: var(--pgn-size-form-control-range-thumb-width);
   --pgn-size-form-control-range-thumb-width: 1rem;
   --pgn-size-form-control-range-track-border-radius: 1rem;
@@ -593,11 +592,11 @@
   --pgn-size-annotation-border-radius: .25rem;
   --pgn-size-annotation-max-width: 18.75rem;
   --pgn-size-annotation-arrow-border-width: .5rem;
-  --pgn-size-alert-border-width: 0rem;
+  --pgn-size-alert-border-width: 0;
   --pgn-size-alert-border-radius: var(--pgn-size-border-radius-base);
-  --pgn-size-rounded-pill: 50rem;
-  --pgn-size-border-radius-sm: .25rem;
-  --pgn-size-border-radius-lg: .425rem;
-  --pgn-size-border-radius-base: .375rem;
-  --pgn-size-border-width: 1px;
+  --pgn-size-rounded-pill: 50rem; /* Pill border radius. */
+  --pgn-size-border-radius-sm: .25rem; /* Small border radius. */
+  --pgn-size-border-radius-lg: .425rem; /* Large border radius. */
+  --pgn-size-border-radius-base: .375rem; /* Default border radius. */
+  --pgn-size-border-width: 1px; /* Default border width. */
 }

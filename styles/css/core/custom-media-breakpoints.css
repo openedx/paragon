@@ -1,10 +1,9 @@
-/*
- * IMPORTANT: This file is the result of assembling design tokens.
- * Do not edit directly.
- * Generated on Tue, 27 Aug 2024 17:14:44 GMT
+/**
+ * Do not edit directly, this file was auto-generated. while transforming design tokens.
+ * See <root>/tokens/README.md for more details.
  */
 
-@custom-media --pgn-size-breakpoint-min-width-xs (min-width: 0rem);
+@custom-media --pgn-size-breakpoint-min-width-xs (min-width: 0);
 @custom-media --pgn-size-breakpoint-max-width-xs (max-width: 576px);
 @custom-media --pgn-size-breakpoint-min-width-sm (min-width: 576px);
 @custom-media --pgn-size-breakpoint-max-width-sm (max-width: 768px);

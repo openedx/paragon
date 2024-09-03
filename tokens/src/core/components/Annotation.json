@@ -11,7 +11,7 @@
   "typography": {
     "annotation": {
       "font-size": { "source": "$annotation-font-size", "$value": "{typography.font.size.sm}" },
-      "line-height": { "source": "$annotation-line-height", "$value": "{typography.line-height.sm}" }
+      "line-height": { "source": "$annotation-line-height", "$value": "{typography.line-height.sm}", "type": "number" }
     }
   },
   "size": {

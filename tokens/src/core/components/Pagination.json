@@ -5,7 +5,7 @@
       "font-size": {
         "sm": { "source": "$pagination-font-size-sm", "$value": ".875rem" }
       },
-      "line-height": { "source": "$pagination-line-height", "$value": "1.5rem" }
+      "line-height": { "source": "$pagination-line-height", "$value": "1.5rem", "$type": "number" }
     }
   },
   "spacing": {

@@ -43,7 +43,7 @@
         "weight": { "source": "$btn-font-weight", "$value": "{typography.font.weight.normal}", "$type": "fontWeight" }
       },
       "line-height": {
-        "$type": "dimension",
+        "$type": "number",
         "base": { "source": "$btn-line-height", "$value": "{typography.input.btn.line-height.base}" },
         "sm": { "source": "$btn-line-height-sm", "$value": "{typography.input.btn.line-height.sm}" },
         "lg": { "source": "$btn-line-height-lg", "$value": "{typography.input.btn.line-height.lg}" }

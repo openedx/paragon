@@ -703,19 +703,19 @@ $font-weight-bolder: var(--pgn-typography-font-weight-bolder) !default;
 $font-weight-base: var(--pgn-typography-font-weight-base) !default;
 $line-height-base: var(--pgn-typography-line-height-base) !default;
 
-$h1-font-size: var(--pgn-typography-font-size-h1) !default;
-$h2-font-size: var(--pgn-typography-font-size-h2) !default;
-$h3-font-size: var(--pgn-typography-font-size-h3) !default;
-$h4-font-size: var(--pgn-typography-font-size-h4) !default;
-$h5-font-size: var(--pgn-typography-font-size-h5) !default;
-$h6-font-size: var(--pgn-typography-font-size-h6) !default;
+$h1-font-size: var(--pgn-typography-font-size-h1-base) !default;
+$h2-font-size: var(--pgn-typography-font-size-h2-base) !default;
+$h3-font-size: var(--pgn-typography-font-size-h3-base) !default;
+$h4-font-size: var(--pgn-typography-font-size-h4-base) !default;
+$h5-font-size: var(--pgn-typography-font-size-h5-base) !default;
+$h6-font-size: var(--pgn-typography-font-size-h6-base) !default;
 
-$h1-mobile-font-size: var(--pgn-typography-font-size-mobile-h1) !default;
-$h2-mobile-font-size: var(--pgn-typography-font-size-mobile-h2) !default;
-$h3-mobile-font-size: var(--pgn-typography-font-size-mobile-h3) !default;
-$h4-mobile-font-size: var(--pgn-typography-font-size-mobile-h4) !default;
-$h5-mobile-font-size: var(--pgn-typography-font-size-mobile-h5) !default;
-$h6-mobile-font-size: var(--pgn-typography-font-size-mobile-h6) !default;
+$h1-mobile-font-size: var(--pgn-typography-font-size-h1-mobile) !default;
+$h2-mobile-font-size: var(--pgn-typography-font-size-h2-mobile) !default;
+$h3-mobile-font-size: var(--pgn-typography-font-size-h3-mobile) !default;
+$h4-mobile-font-size: var(--pgn-typography-font-size-h4-mobile) !default;
+$h5-mobile-font-size: var(--pgn-typography-font-size-h5-mobile) !default;
+$h6-mobile-font-size: var(--pgn-typography-font-size-h6-mobile) !default;
 
 $headings-margin-bottom: var(--pgn-spacing-headings-margin-bottom) !default;
 $headings-font-family: var(--pgn-typography-headings-font-family) !default;
@@ -723,29 +723,34 @@ $headings-font-weight: var(--pgn-typography-headings-font-weight) !default;
 $headings-line-height: var(--pgn-typography-headings-line-height) !default;
 $headings-color: var(--pgn-color-headings-base) !default;
 
-$display1-size: var(--pgn-typography-display-1) !default;
-$display2-size: var(--pgn-typography-display-2) !default;
-$display3-size: var(--pgn-typography-display-3) !default;
-$display4-size: var(--pgn-typography-display-4) !default;
+$display1-size: var(--pgn-typography-font-size-display-1) !default;
+$display2-size: var(--pgn-typography-font-size-display-2) !default;
+$display3-size: var(--pgn-typography-font-size-display-3) !default;
+$display4-size: var(--pgn-typography-font-size-display-4) !default;
 
-$display-mobile-size: var(--pgn-typography-display-mobile) !default;
+$display-mobile-size: var(--pgn-typography-font-size-display-mobile-1) !default; // deprecated in favor of $display1-mobile-size
+$display1-mobile-size: var(--pgn-typography-font-size-display-mobile-1) !default;
+$display2-mobile-size: var(--pgn-typography-font-size-display-mobile-2) !default;
+$display3-mobile-size: var(--pgn-typography-font-size-display-mobile-3) !default;
+$display4-mobile-size: var(--pgn-typography-font-size-display-mobile-4) !default;
 
-$display1-weight: var(--pgn-typography-display-weight-1) !default;
-$display2-weight: var(--pgn-typography-display-weight-2) !default;
-$display3-weight: var(--pgn-typography-display-weight-3) !default;
-$display4-weight: var(--pgn-typography-display-weight-4) !default;
 
-$display-line-height: var(--pgn-typography-display-line-height-base) !default;
-$display-mobile-line-height: var(--pgn-typography-display-line-height-mobile) !default;
+$display1-weight: var(--pgn-typography-font-weight-display-1) !default;
+$display2-weight: var(--pgn-typography-font-weight-display-2) !default;
+$display3-weight: var(--pgn-typography-font-weight-display-3) !default;
+$display4-weight: var(--pgn-typography-font-weight-display-4) !default;
 
-$lead-font-size: var(--pgn-typography-font-size-lead) !default;
+$display-line-height: var(--pgn-typography-line-height-display-base) !default;
+$display-mobile-line-height: var(--pgn-typography-line-height-display-mobile) !default;
+
+$lead-font-size: var(--pgn-typography-font-size-lg) !default;
 $lead-font-weight: var(--pgn-typography-font-weight-lead) !default;
 
-$small-font-size: var(--pgn-typography-font-size-small-base) !default;
-$x-small-font-size: var(--pgn-typography-font-size-small-x) !default;
+$small-font-size: var(--pgn-typography-font-size-sm) !default;
+$x-small-font-size: var(--pgn-typography-font-size-xs) !default;
 
-$micro-font-size: var(--pgn-typography-font-size-micro);
-$micro-line-height: var(--pgn-typography-line-height-micro);
+$micro-font-size: var(--pgn-typography-font-size-micro) !default;
+$micro-line-height: var(--pgn-typography-line-height-micro) !default;
 
 $text-muted: var(--pgn-color-text-muted) !default;
 

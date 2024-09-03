@@ -12,7 +12,7 @@
           }
         },
         "line-height": {
-          "$type": "dimension",
+          "$type": "number",
           "base": { "source": "$input-btn-line-height", "$value": "1.3333" },
           "sm": { "source": "$input-btn-line-height-sm", "$value": "1.4286" },
           "lg": { "source": "$input-btn-line-height-lg", "$value": "{typography.line-height.lg}" }

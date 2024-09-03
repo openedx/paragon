@@ -15,7 +15,7 @@ export default function SiteTitle({ title, isFullVersion, className } : SiteTitl
   return (
     <Link
       to="/"
-      className={classNames('d-block text-decoration-none', className)}
+      className={classNames('d-inline-block text-decoration-none', className)}
     >
       <div className="pgn-doc__header-title">
         <span
