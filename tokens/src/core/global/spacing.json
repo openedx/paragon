@@ -35,23 +35,23 @@
         "$value": "1rem",
         "$description": "Basic space value"
       },
-      "1,5": {
+      "1.5": {
         "$value": "calc({spacing.spacer.base} * .375)",
         "$description": "Space value of level 1.5"
       },
-      "2,5": {
+      "2.5": {
         "$value": "calc({spacing.spacer.base} * .75)",
         "$description": "Space value of level 2.5"
       },
-      "3,5": {
+      "3.5": {
         "$value": "calc({spacing.spacer.base} * 1.25)",
         "$description": "Space value of level 3.5"
       },
-      "4,5": {
+      "4.5": {
         "$value": "calc({spacing.spacer.base} * 2)",
         "$description": "Space value of level 4.5"
       },
-      "5,5": {
+      "5.5": {
         "$value": "calc({spacing.spacer.base} * 4)",
         "$description": "Space value of level 5.5"
       }
