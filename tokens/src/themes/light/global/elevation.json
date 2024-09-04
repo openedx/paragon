@@ -5,7 +5,22 @@
       "level": {
         "1": {
           "source": "$level-1-box-shadow",
-          "$value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, 0.15)",
+              "offsetX": "0rem",
+              "offsetY": "0.0625rem",
+              "blur": "0.125rem",
+              "spread": "0rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, 0.15)",
+              "offsetX": "0rem",
+              "offsetY": "0.0625rem",
+              "blur": "0.25rem",
+              "spread": "0rem"
+            }
+          ],
           "$description": "Basic box shadow of level 1."
         },
         "2": {
