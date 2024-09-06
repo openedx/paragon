@@ -353,6 +353,8 @@ a.pgn__card {
       bottom: #{-$card-logo-bottom-offset};
       width: $card-logo-width;
       height: $card-logo-height;
+      object-fit: scale-down;
+      object-position: center center;
       border-radius: $card-logo-border-radius;
       box-shadow: $level-1-box-shadow;
       padding: map_get($spacers, 2);
