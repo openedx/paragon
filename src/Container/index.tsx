@@ -28,8 +28,6 @@ const Container: ContainerType = React.forwardRef<HTMLDivElement, ContainerProps
   ...props
 }, ref) => (
   <RBContainer
-    bsPrefix="container"
-    fluid
     {...props}
     ref={ref}
     className={classNames(
