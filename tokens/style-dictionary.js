@@ -6,11 +6,12 @@ const chalk = require('chalk');
 const chroma = require('chroma-js');
 const { colorYiq, darken, lighten } = require('./sass-helpers');
 const cssUtilities = require('./css-utilities');
-const { composeBreakpointName } = require('./utils');
+const { composeBreakpointName, processAndUpdateTokens } = require('./utils');
 
 /* eslint-disable import/no-unresolved */
 const getStyleDictionary = async () => (await import('style-dictionary')).default;
 const getStyleDictionaryUtils = async () => import('style-dictionary/utils');
+const getTokensStudioTransforms = async () => import('@tokens-studio/sd-transforms');
 /* eslint-enable import/no-unresolved */
 
 /**
@@ -171,10 +172,45 @@ const createCustomCSSVariables = async ({ formatterArgs }) => {
  */
 const initializeStyleDictionary = async ({ themes }) => {
   const StyleDictionary = await getStyleDictionary();
-  const { getReferences } = await getStyleDictionaryUtils();
+  const sdUtils = await getStyleDictionaryUtils();
+  const {
+    register: registerTokensStudioTransforms,
+    getTransforms: tokensStudioTransforms,
+  } = await getTokensStudioTransforms();
+
+  StyleDictionary.registerPreprocessor({
+    name: 'pgn-annotate-token-extensions-with-references',
+    preprocessor: (dictionary) => {
+      // Define the extension properties to add to the tokens $extensions object
+      const extensionProperties = [
+        {
+          name: 'isReferencedBySourceToken',
+          filter: tkn => tkn.isSource,
+          referenceTokenFilter: tkn => !tkn.isSource,
+        },
+        {
+          name: 'isReferencedByThemeVariant',
+          filter: tkn => themes.some(theme => tkn.filePath.includes(theme)),
+          referenceTokenFilter: tkn => !themes.some(theme => tkn.filePath.includes(theme)),
+        },
+      ];
+
+      // Pass the dictionary to the recursive function to process and update tokens in place
+      const dictionaryCopy = { ...dictionary };
+      processAndUpdateTokens(dictionary, extensionProperties, sdUtils, dictionaryCopy);
+
+      // Return the updated dictionary
+      return dictionary;
+    },
+  });
 
   /**
-   * Transformer that applies SASS color functions to tokens.
+   * Registers transforms from @tokens-studio/sd-transforms.
+   */
+  registerTokensStudioTransforms(StyleDictionary);
+
+  /**
+   * Transforms tokens by applying SASS color functions to tokens.
    */
   StyleDictionary.registerTransform({
     name: 'color/sass-color-functions',
@@ -197,6 +233,22 @@ const initializeStyleDictionary = async ({ themes }) => {
       const { toReplace, replaceWith } = modify[0];
       return $value.replaceAll(toReplace, replaceWith);
     },
+  });
+
+  /**
+   * Registers a custom transform group for Paragon CSS.
+   */
+  const customTransforms = [
+    'color/sass-color-functions',
+    'str-replace',
+  ];
+  StyleDictionary.registerTransformGroup({
+    name: 'paragon-css',
+    transforms: [
+      ...tokensStudioTransforms({ platform: 'css' }),
+      ...StyleDictionary.hooks.transformGroups.css,
+      ...customTransforms,
+    ],
   });
 
   /**
@@ -236,7 +288,7 @@ const initializeStyleDictionary = async ({ themes }) => {
         // eslint-disable-next-line no-restricted-syntax
         for (const token of tokens) {
           // Get action token by reference
-          const ref = getReferences(token.original.actions.default, dictionary.tokens)[0];
+          const ref = sdUtils.getReferences(token.original.actions.default, dictionary.tokens)[0];
           token.actions = { default: `var(--${ref.name})` };
           // eslint-disable-next-line no-restricted-syntax
           for (const funcName of utilityFunctionsToApply) {
@@ -302,9 +354,13 @@ const initializeStyleDictionary = async ({ themes }) => {
         StyleDictionary.registerFilter({
           name: `${name}.${themeVariant}`,
           filter: (token, opts) => {
-            const isThemeVariant = token.filePath.includes(themeVariant);
-            const baseFilter = typeof filter === 'function' ? filter(token, opts) : filter;
-            return baseFilter && isThemeVariant;
+            const paragonExtensions = token.$extensions?.['org.openedx.paragon'];
+            const isReferencedByThemeVariant = !!paragonExtensions?.isReferencedByThemeVariant;
+            const baseFilterResult = typeof filter === 'function' ? filter(token, opts) || isReferencedByThemeVariant : filter;
+            if (!baseFilterResult) {
+              return false;
+            }
+            return token.filePath.includes(themeVariant) || isReferencedByThemeVariant;
           },
         });
       });
@@ -317,7 +373,11 @@ const initializeStyleDictionary = async ({ themes }) => {
      */
     {
       name: 'isSource',
-      filter: token => token.isSource,
+      filter: (token) => {
+        const paragonExtensions = token.$extensions?.['org.openedx.paragon'];
+        const isReferencedBySourceToken = !!paragonExtensions?.isReferencedBySourceToken;
+        return token.isSource || isReferencedBySourceToken;
+      },
       opts: { hasThemeVariants: true },
     },
     /**
@@ -325,17 +385,15 @@ const initializeStyleDictionary = async ({ themes }) => {
      */
     ...themes.map((themeVariant) => ({
       name: `isThemeVariant.${themeVariant}`,
-      filter: token => token.filePath.includes(themeVariant),
+      filter: (token) => {
+        const isThemeVariantToken = token.filePath.includes(themeVariant);
+        const paragonExtensions = token.$extensions?.['org.openedx.paragon'];
+        const isReferencedByThemeVariant = !!paragonExtensions?.isReferencedByThemeVariant;
+        return isThemeVariantToken || isReferencedByThemeVariant;
+      },
     })),
   ];
   paragonFilters.forEach(({ name, filter, opts }) => registerStyleDictionaryFilter(name, filter, opts));
-
-  themes.forEach((themeVariant) => {
-    StyleDictionary.registerFilter({
-      name: `isThemeVariant.${themeVariant}`,
-      filter: token => token.filePath.includes(themeVariant),
-    });
-  });
 
   /**
    * Registers a custom TOML parser with Style Dictionary.
@@ -362,6 +420,7 @@ const initializeStyleDictionary = async ({ themes }) => {
 
 module.exports = {
   initializeStyleDictionary,
+  getTokensStudioTransforms,
   createCustomCSSVariables,
   colorTransform,
   getStyleDictionaryUtils,
