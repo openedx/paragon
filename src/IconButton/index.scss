@@ -1,5 +1,151 @@
 @import "mixins";
 
+:root {
+  --pgn-elevation-icon-button-box-shadow-primary-base:
+    var(--pgn-elevation-icon-button-box-shadow-primary-base-inset)
+    var(--pgn-elevation-icon-button-box-shadow-primary-base-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-primary-base-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-primary-base-blur)
+    var(--pgn-elevation-icon-button-box-shadow-primary-base-spread)
+    var(--pgn-elevation-icon-button-box-shadow-primary-base-color);
+
+  --pgn-elevation-icon-button-box-shadow-primary-inverse:
+    var(--pgn-elevation-icon-button-box-shadow-primary-inverse-inset)
+    var(--pgn-elevation-icon-button-box-shadow-primary-inverse-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-primary-inverse-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-primary-inverse-blur)
+    var(--pgn-elevation-icon-button-box-shadow-primary-inverse-spread)
+    var(--pgn-elevation-icon-button-box-shadow-primary-inverse-color);
+
+  --pgn-elevation-icon-button-box-shadow-secondary-base:
+    var(--pgn-elevation-icon-button-box-shadow-secondary-base-inset)
+    var(--pgn-elevation-icon-button-box-shadow-secondary-base-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-secondary-base-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-secondary-base-blur)
+    var(--pgn-elevation-icon-button-box-shadow-secondary-base-spread)
+    var(--pgn-elevation-icon-button-box-shadow-secondary-base-color);
+
+  --pgn-elevation-icon-button-box-shadow-secondary-inverse:
+    var(--pgn-elevation-icon-button-box-shadow-secondary-inverse-inset)
+    var(--pgn-elevation-icon-button-box-shadow-secondary-inverse-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-secondary-inverse-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-secondary-inverse-blur)
+    var(--pgn-elevation-icon-button-box-shadow-secondary-inverse-spread)
+    var(--pgn-elevation-icon-button-box-shadow-secondary-inverse-color);
+
+  --pgn-elevation-icon-button-box-shadow-brand-base:
+    var(--pgn-elevation-icon-button-box-shadow-brand-base-inset)
+    var(--pgn-elevation-icon-button-box-shadow-brand-base-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-brand-base-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-brand-base-blur)
+    var(--pgn-elevation-icon-button-box-shadow-brand-base-spread)
+    var(--pgn-elevation-icon-button-box-shadow-brand-base-color);
+
+  --pgn-elevation-icon-button-box-shadow-brand-inverse:
+    var(--pgn-elevation-icon-button-box-shadow-brand-inverse-inset)
+    var(--pgn-elevation-icon-button-box-shadow-brand-inverse-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-brand-inverse-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-brand-inverse-blur)
+    var(--pgn-elevation-icon-button-box-shadow-brand-inverse-spread)
+    var(--pgn-elevation-icon-button-box-shadow-brand-inverse-color);
+
+  --pgn-elevation-icon-button-box-shadow-success-base:
+    var(--pgn-elevation-icon-button-box-shadow-success-base-inset)
+    var(--pgn-elevation-icon-button-box-shadow-success-base-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-success-base-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-success-base-blur)
+    var(--pgn-elevation-icon-button-box-shadow-success-base-spread)
+    var(--pgn-elevation-icon-button-box-shadow-success-base-color);
+
+  --pgn-elevation-icon-button-box-shadow-success-inverse:
+    var(--pgn-elevation-icon-button-box-shadow-success-inverse-inset)
+    var(--pgn-elevation-icon-button-box-shadow-success-inverse-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-success-inverse-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-success-inverse-blur)
+    var(--pgn-elevation-icon-button-box-shadow-success-inverse-spread)
+    var(--pgn-elevation-icon-button-box-shadow-success-inverse-color);
+
+  --pgn-elevation-icon-button-box-shadow-warning-base:
+    var(--pgn-elevation-icon-button-box-shadow-warning-base-inset)
+    var(--pgn-elevation-icon-button-box-shadow-warning-base-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-warning-base-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-warning-base-blur)
+    var(--pgn-elevation-icon-button-box-shadow-warning-base-spread)
+    var(--pgn-elevation-icon-button-box-shadow-warning-base-color);
+
+  --pgn-elevation-icon-button-box-shadow-warning-inverse:
+    var(--pgn-elevation-icon-button-box-shadow-warning-inverse-inset)
+    var(--pgn-elevation-icon-button-box-shadow-warning-inverse-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-warning-inverse-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-warning-inverse-blur)
+    var(--pgn-elevation-icon-button-box-shadow-warning-inverse-spread)
+    var(--pgn-elevation-icon-button-box-shadow-warning-inverse-color);
+
+  --pgn-elevation-icon-button-box-shadow-danger-base:
+    var(--pgn-elevation-icon-button-box-shadow-danger-base-inset)
+    var(--pgn-elevation-icon-button-box-shadow-danger-base-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-danger-base-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-danger-base-blur)
+    var(--pgn-elevation-icon-button-box-shadow-danger-base-spread)
+    var(--pgn-elevation-icon-button-box-shadow-danger-base-color);
+
+  --pgn-elevation-icon-button-box-shadow-danger-inverse:
+    var(--pgn-elevation-icon-button-box-shadow-danger-inverse-inset)
+    var(--pgn-elevation-icon-button-box-shadow-danger-inverse-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-danger-inverse-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-danger-inverse-blur)
+    var(--pgn-elevation-icon-button-box-shadow-danger-inverse-spread)
+    var(--pgn-elevation-icon-button-box-shadow-danger-inverse-color);
+
+  --pgn-elevation-icon-button-box-shadow-light-base:
+    var(--pgn-elevation-icon-button-box-shadow-light-base-inset)
+    var(--pgn-elevation-icon-button-box-shadow-light-base-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-light-base-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-light-base-blur)
+    var(--pgn-elevation-icon-button-box-shadow-light-base-spread)
+    var(--pgn-elevation-icon-button-box-shadow-light-base-color);
+
+  --pgn-elevation-icon-button-box-shadow-light-inverse:
+    var(--pgn-elevation-icon-button-box-shadow-light-inverse-inset)
+    var(--pgn-elevation-icon-button-box-shadow-light-inverse-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-light-inverse-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-light-inverse-blur)
+    var(--pgn-elevation-icon-button-box-shadow-light-inverse-spread)
+    var(--pgn-elevation-icon-button-box-shadow-light-inverse-color);
+
+  --pgn-elevation-icon-button-box-shadow-dark-base:
+    var(--pgn-elevation-icon-button-box-shadow-dark-base-inset)
+    var(--pgn-elevation-icon-button-box-shadow-dark-base-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-dark-base-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-dark-base-blur)
+    var(--pgn-elevation-icon-button-box-shadow-dark-base-spread)
+    var(--pgn-elevation-icon-button-box-shadow-dark-base-color);
+
+  --pgn-elevation-icon-button-box-shadow-dark-inverse:
+    var(--pgn-elevation-icon-button-box-shadow-dark-inverse)
+    var(--pgn-elevation-icon-button-box-shadow-dark-inverse-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-dark-inverse-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-dark-inverse-blur)
+    var(--pgn-elevation-icon-button-box-shadow-dark-inverse-spread)
+    var(--pgn-elevation-icon-button-box-shadow-dark-inverse-color);
+
+  --pgn-elevation-icon-button-box-shadow-black-base:
+    var(--pgn-elevation-icon-button-box-shadow-black-base-inset)
+    var(--pgn-elevation-icon-button-box-shadow-black-base-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-black-base-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-black-base-blur)
+    var(--pgn-elevation-icon-button-box-shadow-black-base-spread)
+    var(--pgn-elevation-icon-button-box-shadow-black-base-color);
+
+  --pgn-elevation-icon-button-box-shadow-black-inverse:
+    var(--pgn-elevation-icon-button-box-shadow-black-inverse-inset)
+    var(--pgn-elevation-icon-button-box-shadow-black-inverse-offset-x)
+    var(--pgn-elevation-icon-button-box-shadow-black-inverse-offset-y)
+    var(--pgn-elevation-icon-button-box-shadow-black-inverse-blur)
+    var(--pgn-elevation-icon-button-box-shadow-black-inverse-spread)
+    var(--pgn-elevation-icon-button-box-shadow-black-inverse-color);
+}
+
 .btn-icon {
   @include btn-icon-size(var(--pgn-size-icon-button-diameter-md));
 

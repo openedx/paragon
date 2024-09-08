@@ -30,18 +30,76 @@
   --pgn-elevation-modal-zindex: 1050;
   --pgn-elevation-modal-backdrop-zindex: 1040;
   --pgn-elevation-dropdown-zindex: 1000;
-  --pgn-transition-collapse-width: width .35s ease; /* Collapse transition for width that takes 350ms */
-  --pgn-transition-collapse-height: height .35s ease; /* Collapse transition for height that takes 350ms */
-  --pgn-transition-fade: opacity .15s linear; /* Opacity transition that takes 150ms */
-  --pgn-transition-base: all .2s ease-in-out; /* Generic transition for any property change */
-  --pgn-transition-progress-bar-bar-transition: width .6s ease;
-  --pgn-transition-progress-bar-bar-animation-timing: 1s linear infinite;
-  --pgn-transition-form-control: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  --pgn-transition-form-input: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  --pgn-transition-carousel-control: opacity .15s ease;
-  --pgn-transition-carousel-indicator: opacity .6s ease;
+  --pgn-transition-collapse-width-behavior: normal; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-width-delay: 0s; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-width-timing-function: ease; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-width-duration: 0.35s; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-width-property: width; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-height-behavior: normal; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-collapse-height-delay: 0s; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-collapse-height-timing-function: ease; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-collapse-height-duration: 0.35s; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-collapse-height-property: height; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-fade-behavior: normal; /* Opacity transition that takes 150ms */
+  --pgn-transition-fade-delay: 0s; /* Opacity transition that takes 150ms */
+  --pgn-transition-fade-timing-function: linear; /* Opacity transition that takes 150ms */
+  --pgn-transition-fade-duration: 0.15s; /* Opacity transition that takes 150ms */
+  --pgn-transition-fade-property: opacity; /* Opacity transition that takes 150ms */
+  --pgn-transition-base-behavior: normal; /* Generic transition for any property change */
+  --pgn-transition-base-delay: 0s; /* Generic transition for any property change */
+  --pgn-transition-base-timing-function: ease-in-out; /* Generic transition for any property change */
+  --pgn-transition-base-duration: 0.2s; /* Generic transition for any property change */
+  --pgn-transition-base-property: all; /* Generic transition for any property change */
+  --pgn-transition-progress-bar-transition-behavior: normal;
+  --pgn-transition-progress-bar-transition-delay: 0s;
+  --pgn-transition-progress-bar-transition-timing-function: ease;
+  --pgn-transition-progress-bar-transition-duration: 0.6s;
+  --pgn-transition-progress-bar-transition-property: width;
+  --pgn-transition-progress-bar-animation-timing-iteration-count: infinite;
+  --pgn-transition-progress-bar-animation-timing-delay: 0s;
+  --pgn-transition-progress-bar-animation-timing-timing-function: linear;
+  --pgn-transition-progress-bar-animation-timing-duration: 1s;
+  --pgn-transition-form-control-3-behavior: normal;
+  --pgn-transition-form-control-3-delay: 0s;
+  --pgn-transition-form-control-3-timing-function: ease-in-out;
+  --pgn-transition-form-control-3-duration: 0.15s;
+  --pgn-transition-form-control-3-property: box-shadow;
+  --pgn-transition-form-control-2-behavior: normal;
+  --pgn-transition-form-control-2-delay: 0s;
+  --pgn-transition-form-control-2-timing-function: ease-in-out;
+  --pgn-transition-form-control-2-duration: 0.15s;
+  --pgn-transition-form-control-2-property: border-color;
+  --pgn-transition-form-control-1-behavior: normal;
+  --pgn-transition-form-control-1-delay: 0s;
+  --pgn-transition-form-control-1-timing-function: ease-in-out;
+  --pgn-transition-form-control-1-duration: 0.15s;
+  --pgn-transition-form-control-1-property: background-color;
+  --pgn-transition-form-input-2-behavior: normal;
+  --pgn-transition-form-input-2-delay: 0s;
+  --pgn-transition-form-input-2-timing-function: ease-in-out;
+  --pgn-transition-form-input-2-duration: 0.15s;
+  --pgn-transition-form-input-2-property: box-shadow;
+  --pgn-transition-form-input-1-behavior: normal;
+  --pgn-transition-form-input-1-delay: 0s;
+  --pgn-transition-form-input-1-timing-function: ease-in-out;
+  --pgn-transition-form-input-1-duration: 0.15s;
+  --pgn-transition-form-input-1-property: border-color;
+  --pgn-transition-carousel-control-behavior: normal;
+  --pgn-transition-carousel-control-delay: 0ms;
+  --pgn-transition-carousel-control-timing-function: ease;
+  --pgn-transition-carousel-control-duration: 0.15s;
+  --pgn-transition-carousel-control-property: opacity;
+  --pgn-transition-carousel-indicator-behavior: normal;
+  --pgn-transition-carousel-indicator-delay: 0ms;
+  --pgn-transition-carousel-indicator-timing-function: ease;
+  --pgn-transition-carousel-indicator-duration: var(--pgn-transition-carousel-duration);
+  --pgn-transition-carousel-indicator-property: opacity;
   --pgn-transition-carousel-duration: 0.6s;
-  --pgn-transition-carousel-base: transform var(--pgn-transition-carousel-duration) ease-in-out;
+  --pgn-transition-carousel-base-behavior: normal;
+  --pgn-transition-carousel-base-delay: 0ms;
+  --pgn-transition-carousel-base-timing-function: ease-in-out;
+  --pgn-transition-carousel-base-duration: var(--pgn-transition-carousel-duration);
+  --pgn-transition-carousel-base-property: transform;
   --pgn-transition-btn: none;
   --pgn-transition-badge: none;
   --pgn-typography-print-page-size: a3;
@@ -87,7 +145,7 @@
   --pgn-typography-font-size-micro: 0.688rem; /* Micro utils text font size. */
   --pgn-typography-font-size-xs: 0.75rem; /* X-small font size. */
   --pgn-typography-font-size-sm: 0.875rem; /* Small font size. */
-  --pgn-typography-font-size-lg: var(--pgn-typography-font-size-base) * 1.25; /* Lead text font size. */
+  --pgn-typography-font-size-lg: calc(var(--pgn-typography-font-size-base) * 1.25); /* Lead text font size. */
   --pgn-typography-font-size-base: 1.125rem; /* Base font size. */
   --pgn-typography-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; /* Monospace font family. */
   --pgn-typography-font-family-serif: serif; /* Serif font family. */
@@ -159,7 +217,7 @@
   --pgn-typography-dropdown-font-size: var(--pgn-typography-font-size-base);
   --pgn-typography-code-kbd-nested-font-weight: var(--pgn-typography-font-weight-bold);
   --pgn-typography-code-kbd-font-size: var(--pgn-typography-code-font-size);
-  --pgn-typography-code-font-size: 87.5%;
+  --pgn-typography-code-font-size: var(--pgn-typography-font-size-sm);
   --pgn-typography-close-button-font-weight: var(--pgn-typography-font-weight-bold);
   --pgn-typography-close-button-font-size: calc(var(--pgn-typography-font-size-base) * 1.5);
   --pgn-typography-footer-text-font-size: var(--pgn-typography-font-size-xs);
@@ -258,9 +316,11 @@
   --pgn-spacing-nav-link-padding-y: 0.5rem;
   --pgn-spacing-modal-dialog-margin: 1.5rem;
   --pgn-spacing-modal-header-padding-y: 1rem;
-  --pgn-spacing-modal-header-padding-base: var(--pgn-spacing-modal-header-padding-y) 1.5rem;
+  --pgn-spacing-modal-header-padding-base-y: var(--pgn-spacing-modal-header-padding-y);
+  --pgn-spacing-modal-header-padding-base-x: 1.5rem;
   --pgn-spacing-modal-footer-padding-y: 1rem;
-  --pgn-spacing-modal-footer-padding-base: var(--pgn-spacing-modal-footer-padding-y) 1.5rem;
+  --pgn-spacing-modal-footer-padding-base-y: var(--pgn-spacing-modal-footer-padding-y);
+  --pgn-spacing-modal-footer-padding-base-x: 1.5rem;
   --pgn-spacing-modal-inner-padding-bottom: 0.7rem;
   --pgn-spacing-modal-inner-padding-base: 1.5rem;
   --pgn-spacing-menu-item-icon-margin-right: var(--pgn-spacing-menu-item-icon-margin-left);
@@ -274,7 +334,10 @@
   --pgn-spacing-form-control-select-feedback-tooltip-padding-x: 0.5rem;
   --pgn-spacing-form-control-select-feedback-tooltip-padding-y: 0.25rem;
   --pgn-spacing-form-control-select-feedback-margin-top: var(--pgn-spacing-form-text-margin-top);
-  --pgn-spacing-form-control-select-feedback-icon-position: center right calc(var(--pgn-spacing-form-control-select-padding-x-base) + var(--pgn-spacing-form-control-select-indicator-padding));
+  --pgn-spacing-form-control-select-feedback-icon-position-offset-y: 0;
+  --pgn-spacing-form-control-select-feedback-icon-position-offset-x: calc(var(--pgn-spacing-form-control-select-padding-x-base) + var(--pgn-spacing-form-control-select-indicator-padding));
+  --pgn-spacing-form-control-select-feedback-icon-position-position-x: right;
+  --pgn-spacing-form-control-select-feedback-icon-position-position-y: center;
   --pgn-spacing-form-control-select-feedback-icon-padding-right: calc((1em + 2 * var(--pgn-spacing-form-control-select-padding-y-base)) * 3 / 4 + var(--pgn-spacing-form-control-select-padding-x-base) + var(--pgn-spacing-form-control-select-indicator-padding));
   --pgn-spacing-form-control-select-indicator-padding: 1rem;
   --pgn-spacing-form-control-select-padding-x-lg: var(--pgn-spacing-form-input-padding-x-lg);
@@ -303,14 +366,16 @@
   --pgn-spacing-dropzone-padding: 1.5rem;
   --pgn-spacing-dropdown-close-container-top: 0.625rem;
   --pgn-spacing-dropdown-divider-margin-y: calc(var(--pgn-spacing-spacer-base) / 2);
-  --pgn-spacing-dropdown-padding-header: var(--pgn-spacing-dropdown-padding-y-base) var(--pgn-spacing-dropdown-padding-x-item);
+  --pgn-spacing-dropdown-padding-header-y: 0.5rem;
+  --pgn-spacing-dropdown-padding-header-x: var(--pgn-spacing-dropdown-padding-x-item);
   --pgn-spacing-dropdown-padding-y-item: 0.25rem;
   --pgn-spacing-dropdown-padding-y-base: 0.5rem;
   --pgn-spacing-dropdown-padding-x-item: 1rem;
   --pgn-spacing-dropdown-padding-x-base: 0rem;
   --pgn-spacing-dropdown-spacer: 0.125rem;
   --pgn-spacing-data-table-footer-position: center;
-  --pgn-spacing-data-table-padding-cell: 0.5rem 0.75rem;
+  --pgn-spacing-data-table-padding-cell-y: 0.75rem;
+  --pgn-spacing-data-table-padding-cell-x: 0.5rem;
   --pgn-spacing-data-table-padding-small: 0.5rem;
   --pgn-spacing-data-table-padding-y: 0.75rem;
   --pgn-spacing-data-table-padding-x: 0.75rem;

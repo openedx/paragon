@@ -1,3 +1,26 @@
+:root {
+  --pgn-transition-carousel-base:
+    var(--pgn-transition-carousel-base-property)
+    var(--pgn-transition-carousel-base-duration)
+    var(--pgn-transition-carousel-base-timing-function)
+    var(--pgn-transition-carousel-base-delay)
+    var(--pgn-transition-carousel-base-behavior);
+
+  --pgn-transition-carousel-indicator:
+    var(--pgn-transition-carousel-indicator-property)
+    var(--pgn-transition-carousel-indicator-duration)
+    var(--pgn-transition-carousel-indicator-timing-function)
+    var(--pgn-transition-carousel-indicator-delay)
+    var(--pgn-transition-carousel-indicator-behavior);
+
+  --pgn-transition-carousel-control:
+    var(--pgn-transition-carousel-control-property)
+    var(--pgn-transition-carousel-control-duration)
+    var(--pgn-transition-carousel-control-timing-function)
+    var(--pgn-transition-carousel-control-delay)
+    var(--pgn-transition-carousel-control-behavior);
+}
+
 .carousel {
   position: relative;
 }
@@ -58,7 +81,7 @@
   .active.carousel-item-right {
     z-index: 0;
     opacity: 0;
-    transition: opacity 0s var(--pgn-transition-carousel-base);
+    transition: var(--pgn-transition-carousel-base);
   }
 }
 

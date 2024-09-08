@@ -11,7 +11,13 @@
       "btn-focus": {
         "box-shadow": {
           "source": "$input-btn-focus-box-shadow",
-          "$value": "0 0 0 {size.input.btn.focus-width} {color.input.btn-focus}"
+          "$value": {
+            "color": "{color.input.btn-focus}",
+            "spread": "{size.input.btn.focus-width}",
+            "offsetX": "0",
+            "offsetY": "0",
+            "blur": "0"
+          }
         }
       }
     }

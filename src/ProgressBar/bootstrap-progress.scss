@@ -1,3 +1,18 @@
+:root {
+  --pgn-transition-progress-bar-animation-timing:
+    var(--pgn-transition-progress-bar-animation-timing-duration)
+    var(--pgn-transition-progress-bar-animation-timing-timing-function)
+    var(--pgn-transition-progress-bar-animation-timing-iteration-count)
+    var(--pgn-transition-progress-bar-animation-timing-delay);
+
+  --pgn-transition-progress-bar-transition:
+    var(--pgn-transition-progress-bar-transition-property)
+    var(--pgn-transition-progress-bar-transition-duration)
+    var(--pgn-transition-progress-bar-transition-timing-function)
+    var(--pgn-transition-progress-bar-transition-delay)
+    var(--pgn-transition-progress-bar-transition-behavior);
+}
+
 @if $enable-transitions {
   @keyframes progress-bar-stripes {
     from { background-position: var(--pgn-size-progress-bar-height-base) 0; }
@@ -10,7 +25,7 @@
   height: var(--pgn-size-progress-bar-height-base);
   overflow: hidden;
   line-height: 0;
-  background-color: var(--pgn-color-progress-bar-bg);
+  background-color: var(--pgn-color-progress-bg);
   box-shadow: var(--pgn-elevation-progress-bar-box-shadow);
 
   @include font-size(var(--pgn-typography-progress-bar-font-size));
@@ -22,12 +37,12 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  color: var(--pgn-color-progress-bar-bar-base);
+  color: var(--pgn-color-progress-bar-base);
   text-align: center;
   white-space: nowrap;
-  background-color: var(--pgn-color-progress-bar-bar-bg-base);
+  background-color: var(--pgn-color-progress-bar-bg-base);
 
-  @include transition(var(--pgn-transition-progress-bar-bar-transition));
+  @include transition(var(--pgn-transition-progress-bar-transition));
 }
 
 .progress-bar-striped {
@@ -38,7 +53,7 @@
 
 @if $enable-transitions {
   .progress-bar-animated {
-    animation: var(--pgn-transition-progress-bar-bar-animation-timing) progress-bar-stripes;
+    animation: var(--pgn-transition-progress-bar-animation-timing) progress-bar-stripes;
 
     @if $enable-prefers-reduced-motion-media-query {
       @media (prefers-reduced-motion: reduce) {

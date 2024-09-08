@@ -5,6 +5,15 @@
 @import "FormText";
 @import "FormControlSet";
 
+:root {
+  --pgn-elevation-form-control-indicator-checked-focus:
+    var(--pgn-elevation-form-control-indicator-checked-focus-offset-x)
+    var(--pgn-elevation-form-control-indicator-checked-focus-offset-y)
+    var(--pgn-elevation-form-control-indicator-checked-focus-blur)
+    var(--pgn-elevation-form-control-indicator-checked-focus-spread)
+    var(--pgn-elevation-form-control-indicator-checked-focus-color);
+}
+
 // A form input state used by the now deprecate Fieldset and asInput
 // we can remove this when they are deleted.
 .form-control.is-invalid.is-invalid-nodanger {

@@ -1,0 +1,44 @@
+:root {
+  /**
+   * TRANSITION
+   */
+  --pgn-transition-base:
+    var(--pgn-transition-base-property)
+    var(--pgn-transition-base-duration)
+    var(--pgn-transition-base-timing-function)
+    var(--pgn-transition-base-delay)
+    var(--pgn-transition-base-behavior);
+
+  --pgn-transition-fade:
+    var(--pgn-transition-fade-property)
+    var(--pgn-transition-fade-duration)
+    var(--pgn-transition-fade-timing-function)
+    var(--pgn-transition-fade-delay)
+    var(--pgn-transition-fade-behavior);
+
+  --pgn-transition-collapse-height:
+    var(--pgn-transition-collapse-height-property)
+    var(--pgn-transition-collapse-height-duration)
+    var(--pgn-transition-collapse-height-timing-function)
+    var(--pgn-transition-collapse-height-delay)
+    var(--pgn-transition-collapse-height-behavior);
+
+  --pgn-transition-collapse-width:
+    var(--pgn-transition-collapse-width-property)
+    var(--pgn-transition-collapse-width-duration)
+    var(--pgn-transition-collapse-width-timing-function)
+    var(--pgn-transition-collapse-width-delay)
+    var(--pgn-transition-collapse-width-behavior);
+
+  --pgn-transition-form-input:
+    var(--pgn-transition-form-input-1-property)
+    var(--pgn-transition-form-input-1-duration)
+    var(--pgn-transition-form-input-1-timing-function)
+    var(--pgn-transition-form-input-1-delay)
+    var(--pgn-transition-form-input-1-behavior),
+    var(--pgn-transition-form-input-2-property)
+    var(--pgn-transition-form-input-2-duration)
+    var(--pgn-transition-form-input-2-timing-function)
+    var(--pgn-transition-form-input-2-delay)
+    var(--pgn-transition-form-input-2-behavior);
+}

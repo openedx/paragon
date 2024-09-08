@@ -1,5 +1,21 @@
 @import "mixins";
 
+:root {
+  --pgn-elevation-annotation-box-shadow:
+    drop-shadow(
+      var(--pgn-elevation-annotation-box-shadow-1-offset-x)
+      var(--pgn-elevation-annotation-box-shadow-1-offset-y)
+      var(--pgn-elevation-annotation-box-shadow-1-blur)
+      var(--pgn-elevation-annotation-box-shadow-1-color)
+    )
+    drop-shadow(
+      var(--pgn-elevation-annotation-box-shadow-2-offset-x)
+      var(--pgn-elevation-annotation-box-shadow-2-offset-y)
+      var(--pgn-elevation-annotation-box-shadow-2-blur)
+      var(--pgn-elevation-annotation-box-shadow-2-color)
+    );
+}
+
 .pgn__annotation {
   padding: var(--pgn-spacing-annotation-padding);
   border-radius: var(--pgn-size-annotation-border-radius);

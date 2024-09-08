@@ -6,7 +6,7 @@
 }
 
 .progress-bar {
-  background-color: var(--pgn-color-progress-bar-bar-bg-base);
+  background-color: var(--pgn-color-progress-bar-bg-base);
 }
 
 .pgn__progress-annotated {
@@ -22,7 +22,7 @@
     border: none;
 
     .progress-bar {
-      background-color: var(--pgn-color-progress-bar-bar-bg-annotated);
+      background-color: var(--pgn-color-progress-bar-bg-annotated);
       overflow: visible;
       position: relative;
     }
