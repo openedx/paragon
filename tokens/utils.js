@@ -4,6 +4,8 @@ const path = require('path');
 
 const visitedTokens = {};
 
+const commonCssFiles = ['variables.css', 'abstraction-variables.css'];
+
 /**
  * Finds a token by its path in the token tree.
  * @param {string} path - The path to the token in the token tree.
@@ -334,11 +336,17 @@ function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'
     }
 
     const outputCssFiles = files.filter(file => file !== 'index.css');
-    // When creating themes, there are typically two files: one for utility classes and one for variables.
-    // It's organized them to allow variables be reading first.
-    if (isThemeVariant) { outputCssFiles.reverse(); }
 
-    const exportStatements = outputCssFiles.map((file) => `@import "${file}";`);
+    // For theme variants, files are ordered with variables first, abstraction variables second,
+    // and utility classes last. This ensures that variables are available before other files use them.
+    // For the core styles, custom media breakpoints replace utility classes in the order.
+    const sortOrder = isThemeVariant
+      ? [...commonCssFiles, 'utility-classes.css']
+      : [...commonCssFiles, 'custom-media-breakpoints.css'];
+
+    const sortedCssFiles = outputCssFiles.sort((a, b) => sortOrder.indexOf(a) - sortOrder.indexOf(b));
+
+    const exportStatements = sortedCssFiles.map((file) => `@import "${file}";`);
 
     const indexContent = `${exportStatements.join('\n')}\n`;
 

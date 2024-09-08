@@ -1,3 +1,15 @@
+:root {
+  --pgn-elevation-sticky-shadow-bottom:
+    var(--pgn-elevation-sticky-shadow-bottom-1-offset-x)
+    var(--pgn-elevation-sticky-shadow-bottom-1-offset-y)
+    var(--pgn-elevation-sticky-shadow-bottom-1-blur)
+    var(--pgn-elevation-sticky-shadow-bottom-1-color),
+    var(--pgn-elevation-sticky-shadow-bottom-2-offset-x)
+    var(--pgn-elevation-sticky-shadow-bottom-2-offset-y)
+    var(--pgn-elevation-sticky-shadow-bottom-2-blur)
+    var(--pgn-elevation-sticky-shadow-bottom-2-color);
+}
+
 .pgn__sticky {
   display: flex;
   width: 100%;

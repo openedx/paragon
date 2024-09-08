@@ -37,7 +37,13 @@
           "base": { "source": "$dropdown-padding-y", "$value": ".5rem" },
           "item": { "source": "$dropdown-item-padding-y", "$value": ".25rem" }
         },
-        "header": { "source": "$dropdown-header-padding", "$value": "{spacing.dropdown.padding.y.base} {spacing.dropdown.padding.x.item}" }
+        "header": {
+          "source": "$dropdown-header-padding",
+          "$value": {
+            "x": "{spacing.dropdown.padding.x.item}",
+            "y": ".5rem"
+          }
+        }
       },
       "divider": {
         "margin-y": { "source": "$dropdown-divider-margin-y", "$value": "calc({spacing.spacer.base} / 2)" }

@@ -6,7 +6,15 @@
   "elevation": {
     "$type": "shadow",
     "close-button": {
-      "text-shadow": { "source": "$close-text-shadow", "$value": "0 1px 0 {color.white}" }
+      "text-shadow": {
+        "source": "$close-text-shadow",
+        "$value": {
+          "color": "{color.white}",
+          "offsetX": "0",
+          "offsetY": "1px",
+          "blur": "0"
+        }
+      }
     }
   }
 }
