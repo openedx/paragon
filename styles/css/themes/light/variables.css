@@ -1573,8 +1573,8 @@
   --pgn-elevation-sticky-shadow-top: 0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15);
   --pgn-elevation-scrollable-body-box-shadow: #0000008C;
   --pgn-elevation-progress-bar-box-shadow: none;
-  --pgn-elevation-pagination-focus-box-shadow: var(--pgn-elevation-input-btn-focus-box-shadow);
-  --pgn-elevation-menu-box-shadow: var(--pgn-elevation-box-shadow-base);
+  --pgn-elevation-pagination-focus-box-shadow: 0 0 0 var(--pgn-size-input-btn-focus-width) var(--pgn-color-input-btn-focus);
+  --pgn-elevation-menu-box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .3);
   --pgn-elevation-image-thumbnail-box-shadow: none;
   --pgn-elevation-icon-button-box-shadow-black-inverse-active: none;
   --pgn-elevation-icon-button-box-shadow-black-active: none;
@@ -1612,9 +1612,9 @@
   --pgn-elevation-icon-button-box-shadow-primary-active: none;
   --pgn-elevation-icon-button-box-shadow-primary-inverse: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-accent);
   --pgn-elevation-icon-button-box-shadow-primary-base: inset 0 0 0 var(--pgn-size-btn-focus-width) var(--pgn-color-icon-button-text-primary-base);
-  --pgn-elevation-form-control-select-border-focus: var(--pgn-elevation-input-btn-focus-box-shadow);
+  --pgn-elevation-form-control-select-border-focus: 0 0 0 var(--pgn-size-input-btn-focus-width) var(--pgn-color-input-btn-focus);
   --pgn-elevation-form-control-select-border-base: none;
-  --pgn-elevation-form-control-file-focus: var(--pgn-elevation-form-input-focus);
+  --pgn-elevation-form-control-file-focus: 0 0 0 1px var(--pgn-color-primary-500);
   --pgn-elevation-form-control-file-base: var(--pgn-elevation-form-input-base);
   --pgn-elevation-form-control-range-thumb-focus: 0 0 0 1px var(--pgn-color-body-bg), var(--pgn-size-form-input-width-focus);
   --pgn-elevation-form-control-range-thumb-base: none;
@@ -1630,7 +1630,7 @@
   --pgn-elevation-dropzone-active: inset 0 0 0 2px var(--pgn-color-primary-500);
   --pgn-elevation-dropzone-focus: inset 0 0 0 2px var(--pgn-color-info-300);
   --pgn-elevation-dropzone-hover: inset 0 0 0 2px var(--pgn-color-info-300);
-  --pgn-elevation-data-table-box-shadow: var(--pgn-elevation-box-shadow-sm);
+  --pgn-elevation-data-table-box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, .2);
   --pgn-elevation-code-kbd-box-shadow: none;
   --pgn-elevation-close-button-text-shadow: 0 1px 0 var(--pgn-color-white);
   --pgn-elevation-btn-box-shadow-active: none;
