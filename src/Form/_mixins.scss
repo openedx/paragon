@@ -1,3 +1,25 @@
+:root {
+  --pgn-elevation-form-input-focus:
+    var(--pgn-elevation-form-input-focus-offset-x)
+    var(--pgn-elevation-form-input-focus-offset-y)
+    var(--pgn-elevation-form-input-focus-blur)
+    var(--pgn-elevation-form-input-focus-spread)
+    var(--pgn-elevation-form-input-focus-color);
+
+  --pgn-spacing-form-control-select-feedback-icon-position:
+    var(--pgn-spacing-form-control-select-feedback-icon-position-position-y)
+    var(--pgn-spacing-form-control-select-feedback-icon-position-position-x)
+    var(--pgn-spacing-form-control-select-feedback-icon-position-offset-x)
+    var(--pgn-spacing-form-control-select-feedback-icon-position-offset-y);
+
+  --pgn-other-content-form-control-select-bg:
+    var(--pgn-other-content-form-control-select-bg-image)
+    var(--pgn-other-content-form-control-select-bg-position-x)
+    var(--pgn-other-content-form-control-select-bg-offset-y)
+    var(--pgn-other-content-form-control-select-bg-position-y)
+    / var(--pgn-other-content-form-control-select-bg-color); // stylelint-disable-line scss/operator-no-newline-before
+}
+
 @mixin form-control-floating-label-initial(
   $padding-x,
   $padding-y,

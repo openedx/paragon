@@ -652,7 +652,10 @@ $box-shadow-sides: (
 ) !default;
 
 $box-shadow-sm: var(--pgn-elevation-box-shadow-sm) !default;
-$box-shadow: var(--pgn-elevation-box-shadow-base) !default;
+$box-shadow: var(--pgn-elevation-box-shadow-base-offset-x)
+  var(--pgn-elevation-box-shadow-base-offset-y)
+  var(--pgn-elevation-box-shadow-base-blur)
+  var(--pgn-elevation-box-shadow-base-color) !default;
 $box-shadow-lg: var(--pgn-elevation-box-shadow-lg) !default;
 
 $component-active-color: var(--pgn-color-active) !default;
@@ -728,7 +731,8 @@ $display2-size: var(--pgn-typography-font-size-display-2) !default;
 $display3-size: var(--pgn-typography-font-size-display-3) !default;
 $display4-size: var(--pgn-typography-font-size-display-4) !default;
 
-$display-mobile-size: var(--pgn-typography-font-size-display-mobile-1) !default; // deprecated in favor of $display1-mobile-size
+// deprecated in favor of $display1-mobile-size
+$display-mobile-size: var(--pgn-typography-font-size-display-mobile-1) !default;
 $display1-mobile-size: var(--pgn-typography-font-size-display-mobile-1) !default;
 $display2-mobile-size: var(--pgn-typography-font-size-display-mobile-2) !default;
 $display3-mobile-size: var(--pgn-typography-font-size-display-mobile-3) !default;
@@ -806,7 +810,11 @@ $input-btn-line-height: var(--pgn-typography-input-btn-line-height-base) !defaul
 
 $input-btn-focus-width: var(--pgn-size-input-btn-focus-width) !default;
 $input-btn-focus-color: var(--pgn-color-input-btn-focus) !default;
-$input-btn-focus-box-shadow: var(--pgn-elevation-input-btn-focus-box-shadow) !default;
+$input-btn-focus-box-shadow: var(--pgn-elevation-input-btn-focus-box-shadow-offset-x)
+  var(--pgn-elevation-input-btn-focus-box-shadow-offset-y)
+  var(--pgn-elevation-input-btn-focus-box-shadow-spread)
+  var(--pgn-elevation-input-btn-focus-box-shadow-color)
+  var(--pgn-elevation-input-btn-focus-box-shadow-blur) !default;
 
 $input-btn-padding-y-sm: var(--pgn-spacing-input-btn-padding-sm-y) !default;
 $input-btn-padding-x-sm: var(--pgn-spacing-input-btn-padding-sm-x) !default;

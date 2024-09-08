@@ -77,7 +77,12 @@
               },
               "position": {
                 "source": "$custom-select-feedback-icon-position",
-                "$value": "center right calc({spacing.form.control.select.padding.x.base} + {spacing.form.control.select.indicator.padding})"
+                "$value": {
+                  "position-y": "center",
+                  "position-x": "right",
+                  "offset-x": "calc({spacing.form.control.select.padding.x.base} + {spacing.form.control.select.indicator.padding})",
+                  "offset-y": "0"
+                }
               }
             },
             "margin": {

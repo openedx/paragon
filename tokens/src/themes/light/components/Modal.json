@@ -20,7 +20,20 @@
         "box-shadow": {
           "sm-up": {
             "source": "$modal-content-box-shadow-sm-up",
-            "$value": "0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15)"
+            "$value": [
+              {
+                "color": "rgba(0, 0, 0, .15)",
+                "offsetX": "0",
+                "offsetY": "10px",
+                "blur": "20px"
+              },
+              {
+                "color": "rgba(0, 0, 0, .15)",
+                "offsetX": "0",
+                "offsetY": "8px",
+                "blur": "20px"
+              }
+            ]
           }
         }
       }

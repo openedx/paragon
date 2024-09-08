@@ -1,3 +1,11 @@
+:root {
+  --pgn-elevation-close-button-text-shadow:
+    var(--pgn-elevation-close-button-text-shadow-offset-x)
+    var(--pgn-elevation-close-button-text-shadow-offset-y)
+    var(--pgn-elevation-close-button-text-shadow-blur)
+    var(--pgn-elevation-close-button-text-shadow-color);
+}
+
 .close {
   float: right;
   font-weight: var(--pgn-typography-close-button-font-weight);

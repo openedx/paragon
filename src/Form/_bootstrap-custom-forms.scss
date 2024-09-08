@@ -1,3 +1,43 @@
+:root {
+  --pgn-elevation-form-control-indicator-checked-focus:
+    var(--pgn-elevation-form-control-indicator-checked-focus-offset-x)
+    var(--pgn-elevation-form-control-indicator-checked-focus-offset-y)
+    var(--pgn-elevation-form-control-indicator-checked-focus-blur)
+    var(--pgn-elevation-form-control-indicator-checked-focus-spread)
+    var(--pgn-elevation-form-control-indicator-checked-focus-color);
+
+  --pgn-elevation-form-control-select-border-focus:
+    var(--pgn-elevation-form-control-select-border-focus-offset-x)
+    var(--pgn-elevation-form-control-select-border-focus-offset-y)
+    var(--pgn-elevation-form-control-select-border-focus-blur)
+    var(--pgn-elevation-form-control-select-border-focus-spread)
+    var(--pgn-elevation-form-control-select-border-focus-color);
+
+  --pgn-elevation-form-control-file-focus:
+    var(--pgn-elevation-form-control-file-focus-offset-x)
+    var(--pgn-elevation-form-control-file-focus-offset-y)
+    var(--pgn-elevation-form-control-file-focus-blur)
+    var(--pgn-elevation-form-control-file-focus-spread)
+    var(--pgn-elevation-form-control-file-focus-color);
+
+  --pgn-transition-form-control:
+    var(--pgn-transition-form-control-1-property)
+    var(--pgn-transition-form-control-1-duration)
+    var(--pgn-transition-form-control-1-timing-function)
+    var(--pgn-transition-form-control-1-delay)
+    var(--pgn-transition-form-control-1-behavior),
+    var(--pgn-transition-form-control-2-property)
+    var(--pgn-transition-form-control-2-duration)
+    var(--pgn-transition-form-control-2-timing-function)
+    var(--pgn-transition-form-control-2-delay)
+    var(--pgn-transition-form-control-2-behavior),
+    var(--pgn-transition-form-control-3-property)
+    var(--pgn-transition-form-control-3-duration)
+    var(--pgn-transition-form-control-3-timing-function)
+    var(--pgn-transition-form-control-3-delay)
+    var(--pgn-transition-form-control-3-behavior);
+}
+
 // Embedded icons from Open Iconic.
 // Released under MIT and copyright 2014 Waybury.
 // https://useiconic.com/open

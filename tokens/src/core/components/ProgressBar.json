@@ -30,9 +30,24 @@
   "transition": {
     "$type": "transition",
     "progress-bar": {
-      "bar": {
-        "animation-timing": { "source": "$progress-bar-animation-timing", "$value": "1s linear infinite" },
-        "transition": { "source": "$progress-bar-transition", "$value": "width .6s ease" }
+      "animation-timing": {
+        "source": "$progress-bar-animation-timing",
+        "$value": {
+          "duration": "1s",
+          "timing-function": "linear",
+          "delay": "0s",
+          "iteration-count": "infinite"
+        }
+      },
+      "transition": {
+        "source": "$progress-bar-transition",
+        "$value": {
+          "property": "width",
+          "duration": ".6s",
+          "timing-function": "ease",
+          "delay": "0s",
+          "behavior": "normal"
+        }
       }
     }
   }

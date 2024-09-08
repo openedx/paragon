@@ -4,7 +4,20 @@
     "annotation": {
       "box-shadow": {
         "source": "$annotation-box-shadow",
-        "$value": "drop-shadow(0 2px 4px rgba(0, 0, 0, .15)) drop-shadow(0 2px 8px rgba(0, 0, 0, .15))"
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, .15)",
+            "offsetX": "0",
+            "offsetY": "2px",
+            "blur": "4px"
+          },
+          {
+            "color": "rgba(0, 0, 0, .15)",
+            "offsetX": "0",
+            "offsetY": "2px",
+            "blur": "8px"
+          }
+        ]
       }
     }
   },
