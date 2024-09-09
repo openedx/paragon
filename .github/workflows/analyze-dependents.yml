@@ -267,7 +267,7 @@ jobs:
         name: dependent-usage-json
     - name: Create pull request for dependent project usages
       id: cpr
-      uses: peter-evans/create-pull-request@v3
+      uses: peter-evans/create-pull-request@v7
       with:
         commit-message: "docs: update dependent-usage.json"
         title: "docs: update dependent-usage.json"
