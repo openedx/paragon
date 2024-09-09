@@ -1640,4 +1640,9 @@
   --pgn-elevation-popover-box-shadow: none;
   --pgn-elevation-modal-content-box-shadow-sm-up: 0 10px 20px rgba(0, 0, 0, .15), 0 8px 20px rgba(0, 0, 0, .15);
   --pgn-elevation-dropdown-box-shadow: none;
+  --pgn-spacing-input-btn-padding-y: 0.5625rem;
+  --pgn-spacing-form-input-padding-y-base: var(--pgn-spacing-input-btn-padding-y);
+  --pgn-size-input-btn-focus-width: 1px;
+  --pgn-size-form-input-width-focus: 0.063rem;
+  --pgn-size-btn-focus-width: 2px;
 }

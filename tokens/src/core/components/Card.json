@@ -15,7 +15,7 @@
       },
       "columns": {
         "margin": { "source": "$card-columns-margin", "$value": "{spacing.card.spacer.y}" },
-        "count": { "source": "$card-columns-count", "$value": "3" },
+        "count": { "source": "$card-columns-count", "$value": "3", "$type": "number" },
         "gap": { "source": "$card-columns-gap", "$value": "1.25rem" }
       },
       "footer": {
