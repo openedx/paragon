@@ -14,7 +14,15 @@
     }
 
     &.pgn__sticky-shadow {
-      box-shadow: var(--pgn-elevation-sticky-shadow-bottom);
+      box-shadow:
+        var(--pgn-elevation-sticky-shadow-bottom-1-offset-x)
+        var(--pgn-elevation-sticky-shadow-bottom-1-offset-y)
+        var(--pgn-elevation-sticky-shadow-bottom-1-blur)
+        var(--pgn-elevation-sticky-shadow-bottom-1-color),
+        var(--pgn-elevation-sticky-shadow-bottom-2-offset-x)
+        var(--pgn-elevation-sticky-shadow-bottom-2-offset-y)
+        var(--pgn-elevation-sticky-shadow-bottom-2-blur)
+        var(--pgn-elevation-sticky-shadow-bottom-2-color);
     }
   }
 

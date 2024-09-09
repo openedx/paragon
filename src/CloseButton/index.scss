@@ -3,7 +3,11 @@
   font-weight: var(--pgn-typography-close-button-font-weight);
   line-height: 1;
   color: var(--pgn-color-close-button);
-  text-shadow: var(--pgn-elevation-close-button-text-shadow);
+  text-shadow:
+    var(--pgn-elevation-close-button-text-shadow-offset-x)
+    var(--pgn-elevation-close-button-text-shadow-offset-y)
+    var(--pgn-elevation-close-button-text-shadow-blur)
+    var(--pgn-elevation-close-button-text-shadow-color);
   opacity: .5;
 
   @include font-size(var(--pgn-typography-close-button-font-size));

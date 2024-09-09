@@ -41,7 +41,10 @@
   --pgn-transition-carousel-control: opacity .15s ease;
   --pgn-transition-carousel-indicator: opacity .6s ease;
   --pgn-transition-carousel-duration: 0.6s;
-  --pgn-transition-carousel-base: transform var(--pgn-transition-carousel-duration) ease-in-out 0ms;
+  --pgn-transition-carousel-base-timing-function: ease-in-out;
+  --pgn-transition-carousel-base-delay: 0ms;
+  --pgn-transition-carousel-base-duration: var(--pgn-transition-carousel-duration);
+  --pgn-transition-carousel-base-property: transform;
   --pgn-transition-btn: none;
   --pgn-transition-badge: none;
   --pgn-typography-print-page-size: a3;

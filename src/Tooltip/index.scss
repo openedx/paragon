@@ -11,7 +11,19 @@
   // Allow breaking very long words so they don't overflow the tooltip's bounds
   word-wrap: break-word;
   opacity: 0;
-  filter: var(--pgn-elevation-tooltip-box-shadow);
+  filter:
+    drop-shadow(
+      var(--pgn-elevation-tooltip-box-shadow-1-offset-x)
+      var(--pgn-elevation-tooltip-box-shadow-1-offset-y)
+      var(--pgn-elevation-tooltip-box-shadow-1-blur)
+      var(--pgn-elevation-tooltip-box-shadow-1-color)
+    ),
+    drop-shadow(
+      var(--pgn-elevation-tooltip-box-shadow-2-offset-x)
+      var(--pgn-elevation-tooltip-box-shadow-2-offset-y)
+      var(--pgn-elevation-tooltip-box-shadow-2-blur)
+      var(--pgn-elevation-tooltip-box-shadow-2-color)
+    );
 
   &.show {
     opacity: var(--pgn-other-tooltip-opacity);

@@ -411,7 +411,12 @@ select.form-control {
   }
 
   &:not(:disabled):hover {
-    box-shadow: var(--pgn-elevation-form-control-indicator-checked-focus);
+    box-shadow:
+      var(--pgn-elevation-form-control-indicator-checked-focus-offset-x)
+      var(--pgn-elevation-form-control-indicator-checked-focus-offset-y)
+      var(--pgn-elevation-form-control-indicator-checked-focus-blur)
+      var(--pgn-elevation-form-control-indicator-checked-focus-spread)
+      var(--pgn-elevation-form-control-indicator-checked-focus-color);
   }
 
   &:disabled {

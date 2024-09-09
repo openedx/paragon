@@ -39,7 +39,12 @@
   }
 
   &:focus ~ .custom-control-label::before {
-    box-shadow: var(--pgn-elevation-form-control-indicator-checked-focus);
+    box-shadow:
+      var(--pgn-elevation-form-control-indicator-checked-focus-offset-x)
+      var(--pgn-elevation-form-control-indicator-checked-focus-offset-y)
+      var(--pgn-elevation-form-control-indicator-checked-focus-blur)
+      var(--pgn-elevation-form-control-indicator-checked-focus-spread)
+      var(--pgn-elevation-form-control-indicator-checked-focus-color);
   }
 
   &:focus:not(:checked) ~ .custom-control-label::before {
@@ -249,7 +254,12 @@
   &:focus {
     border-color: var(--pgn-color-form-control-select-border-focus);
     outline: 0;
-    box-shadow: var(--pgn-elevation-form-control-select-border-focus);
+    box-shadow:
+      var(--pgn-elevation-form-control-select-border-focus-offset-x)
+      var(--pgn-elevation-form-control-select-border-focus-offset-y)
+      var(--pgn-elevation-form-control-select-border-focus-blur)
+      var(--pgn-elevation-form-control-select-border-focus-spread)
+      var(--pgn-elevation-form-control-select-border-focus-color);
 
     &::-ms-value {
       // For visual consistency with other platforms/browsers,
@@ -328,7 +338,12 @@
 
   &:focus ~ .custom-file-label {
     border-color: var(--pgn-color-form-control-file-border-focus);
-    box-shadow: var(--pgn-elevation-form-control-file-focus);
+    box-shadow:
+      var(--pgn-elevation-form-control-file-focus-offset-x)
+      var(--pgn-elevation-form-control-file-focus-offset-y)
+      var(--pgn-elevation-form-control-file-focus-blur)
+      var(--pgn-elevation-form-control-file-focus-spread)
+      var(--pgn-elevation-form-control-file-focus-color);
   }
 
   // Use [disabled] and :disabled to work around https://github.com/twbs/bootstrap/issues/28247

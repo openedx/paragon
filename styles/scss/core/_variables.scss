@@ -1,3 +1,4 @@
+/* stylelint-disable no-eol-whitespace */
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -467,62 +468,343 @@ $border-radius-sm: var(--pgn-size-border-radius-sm) !default;
 
 $rounded-pill: var(--pgn-size-rounded-pill) !default;
 
-$level-1-box-shadow: var(--pgn-elevation-box-shadow-level-1) !default;
-$level-2-box-shadow: var(--pgn-elevation-box-shadow-level-2) !default;
-$level-3-box-shadow: var(--pgn-elevation-box-shadow-level-3) !default;
-$level-4-box-shadow: var(--pgn-elevation-box-shadow-level-4) !default;
-$level-5-box-shadow: var(--pgn-elevation-box-shadow-level-5) !default;
+$level-1-box-shadow: 
+  var(--pgn-elevation-box-shadow-level-1-1-offset-y)
+  var(--pgn-elevation-box-shadow-level-1-1-offset-x)
+  var(--pgn-elevation-box-shadow-level-1-1-blur)
+  var(--pgn-elevation-box-shadow-level-1-1-color),
+  var(--pgn-elevation-box-shadow-level-1-2-offset-y)
+  var(--pgn-elevation-box-shadow-level-1-2-offset-x)
+  var(--pgn-elevation-box-shadow-level-1-2-blur)
+  var(--pgn-elevation-box-shadow-level-1-2-color) !default;
 
-$box-shadow-down-1: var(--pgn-elevation-box-shadow-down-1) !default;
-$box-shadow-down-2: var(--pgn-elevation-box-shadow-down-2) !default;
-$box-shadow-down-3: var(--pgn-elevation-box-shadow-down-3) !default;
-$box-shadow-down-4: var(--pgn-elevation-box-shadow-down-4) !default;
-$box-shadow-down-5: var(--pgn-elevation-box-shadow-down-5) !default;
+$level-2-box-shadow: 
+  var(--pgn-elevation-box-shadow-level-2-1-offset-y)
+  var(--pgn-elevation-box-shadow-level-2-1-offset-x)
+  var(--pgn-elevation-box-shadow-level-2-1-blur)
+  var(--pgn-elevation-box-shadow-level-2-1-color),
+  var(--pgn-elevation-box-shadow-level-2-2-offset-y)
+  var(--pgn-elevation-box-shadow-level-2-2-offset-x)
+  var(--pgn-elevation-box-shadow-level-2-2-blur)
+  var(--pgn-elevation-box-shadow-level-2-2-color) !default;
+$level-3-box-shadow: 
+  var(--pgn-elevation-box-shadow-level-3-1-offset-y)
+  var(--pgn-elevation-box-shadow-level-3-1-offset-x)
+  var(--pgn-elevation-box-shadow-level-3-1-blur)
+  var(--pgn-elevation-box-shadow-level-3-1-color),
+  var(--pgn-elevation-box-shadow-level-3-2-offset-y)
+  var(--pgn-elevation-box-shadow-level-3-2-offset-x)
+  var(--pgn-elevation-box-shadow-level-3-2-blur)
+  var(--pgn-elevation-box-shadow-level-3-2-color) !default;
+$level-4-box-shadow: 
+  var(--pgn-elevation-box-shadow-level-4-1-offset-y)
+  var(--pgn-elevation-box-shadow-level-4-1-offset-x)
+  var(--pgn-elevation-box-shadow-level-4-1-blur)
+  var(--pgn-elevation-box-shadow-level-4-1-color),
+  var(--pgn-elevation-box-shadow-level-4-2-offset-y)
+  var(--pgn-elevation-box-shadow-level-4-2-offset-x)
+  var(--pgn-elevation-box-shadow-level-4-2-blur)
+  var(--pgn-elevation-box-shadow-level-4-2-color) !default;
+$level-5-box-shadow: 
+  var(--pgn-elevation-box-shadow-level-5-1-offset-y)
+  var(--pgn-elevation-box-shadow-level-5-1-offset-x)
+  var(--pgn-elevation-box-shadow-level-5-1-blur)
+  var(--pgn-elevation-box-shadow-level-5-1-color),
+  var(--pgn-elevation-box-shadow-level-5-2-offset-y)
+  var(--pgn-elevation-box-shadow-level-5-2-offset-x)
+  var(--pgn-elevation-box-shadow-level-5-2-blur)
+  var(--pgn-elevation-box-shadow-level-5-2-color) !default;
 
-$box-shadow-left-1: var(--pgn-elevation-box-shadow-left-1) !default;
-$box-shadow-left-2: var(--pgn-elevation-box-shadow-left-2) !default;
-$box-shadow-left-3: var(--pgn-elevation-box-shadow-left-3) !default;
-$box-shadow-left-4: var(--pgn-elevation-box-shadow-left-4) !default;
-$box-shadow-left-5: var(--pgn-elevation-box-shadow-left-5) !default;
+$box-shadow-down-1: 
+  var(--pgn-elevation-box-shadow-down-1-1-offset-y)
+  var(--pgn-elevation-box-shadow-down-1-1-offset-x)
+  var(--pgn-elevation-box-shadow-down-1-1-blur)
+  var(--pgn-elevation-box-shadow-down-1-1-color),
+  var(--pgn-elevation-box-shadow-down-1-2-offset-y)
+  var(--pgn-elevation-box-shadow-down-1-2-offset-x)
+  var(--pgn-elevation-box-shadow-down-1-2-blur)
+  var(--pgn-elevation-box-shadow-down-1-2-color) !default;
+$box-shadow-down-2: 
+  var(--pgn-elevation-box-shadow-down-2-1-offset-y)
+  var(--pgn-elevation-box-shadow-down-2-1-offset-x)
+  var(--pgn-elevation-box-shadow-down-2-1-blur)
+  var(--pgn-elevation-box-shadow-down-2-1-color),
+  var(--pgn-elevation-box-shadow-down-2-2-offset-y)
+  var(--pgn-elevation-box-shadow-down-2-2-offset-x)
+  var(--pgn-elevation-box-shadow-down-2-2-blur)
+  var(--pgn-elevation-box-shadow-down-2-2-color) !default;
+$box-shadow-down-3: 
+  var(--pgn-elevation-box-shadow-down-3-1-offset-y)
+  var(--pgn-elevation-box-shadow-down-3-1-offset-x)
+  var(--pgn-elevation-box-shadow-down-3-1-blur)
+  var(--pgn-elevation-box-shadow-down-3-1-color),
+  var(--pgn-elevation-box-shadow-down-3-2-offset-y)
+  var(--pgn-elevation-box-shadow-down-3-2-offset-x)
+  var(--pgn-elevation-box-shadow-down-3-2-blur)
+  var(--pgn-elevation-box-shadow-down-3-2-color) !default;
+$box-shadow-down-4: 
+  var(--pgn-elevation-box-shadow-down-4-1-offset-y)
+  var(--pgn-elevation-box-shadow-down-4-1-offset-x)
+  var(--pgn-elevation-box-shadow-down-4-1-blur)
+  var(--pgn-elevation-box-shadow-down-4-1-color),
+  var(--pgn-elevation-box-shadow-down-4-2-offset-y)
+  var(--pgn-elevation-box-shadow-down-4-2-offset-x)
+  var(--pgn-elevation-box-shadow-down-4-2-blur)
+  var(--pgn-elevation-box-shadow-down-4-2-color) !default;
+$box-shadow-down-5: 
+  var(--pgn-elevation-box-shadow-down-5-1-offset-y)
+  var(--pgn-elevation-box-shadow-down-5-1-offset-x)
+  var(--pgn-elevation-box-shadow-down-5-1-blur)
+  var(--pgn-elevation-box-shadow-down-5-1-color),
+  var(--pgn-elevation-box-shadow-down-5-2-offset-y)
+  var(--pgn-elevation-box-shadow-down-5-2-offset-x)
+  var(--pgn-elevation-box-shadow-down-5-2-blur)
+  var(--pgn-elevation-box-shadow-down-5-2-color) !default;
 
-$box-shadow-up-1: var(--pgn-elevation-box-shadow-up-1) !default;
-$box-shadow-up-2: var(--pgn-elevation-box-shadow-up-2) !default;
-$box-shadow-up-3: var(--pgn-elevation-box-shadow-up-3) !default;
-$box-shadow-up-4: var(--pgn-elevation-box-shadow-up-4) !default;
-$box-shadow-up-5: var(--pgn-elevation-box-shadow-up-5) !default;
+$box-shadow-left-1: 
+  var(--pgn-elevation-box-shadow-left-1-1-offset-y)
+  var(--pgn-elevation-box-shadow-left-1-1-offset-x)
+  var(--pgn-elevation-box-shadow-left-1-1-blur)
+  var(--pgn-elevation-box-shadow-left-1-1-color),
+  var(--pgn-elevation-box-shadow-left-1-2-offset-y)
+  var(--pgn-elevation-box-shadow-left-1-2-offset-x)
+  var(--pgn-elevation-box-shadow-left-1-2-blur)
+  var(--pgn-elevation-box-shadow-left-1-2-color) !default;
+$box-shadow-left-2: 
+  var(--pgn-elevation-box-shadow-left-2-1-offset-y)
+  var(--pgn-elevation-box-shadow-left-2-1-offset-x)
+  var(--pgn-elevation-box-shadow-left-2-1-blur)
+  var(--pgn-elevation-box-shadow-left-2-1-color),
+  var(--pgn-elevation-box-shadow-left-2-2-offset-y)
+  var(--pgn-elevation-box-shadow-left-2-2-offset-x)
+  var(--pgn-elevation-box-shadow-left-2-2-blur)
+  var(--pgn-elevation-box-shadow-left-2-2-color) !default;
+$box-shadow-left-3: 
+  var(--pgn-elevation-box-shadow-left-3-1-offset-y)
+  var(--pgn-elevation-box-shadow-left-3-1-offset-x)
+  var(--pgn-elevation-box-shadow-left-3-1-blur)
+  var(--pgn-elevation-box-shadow-left-3-1-color),
+  var(--pgn-elevation-box-shadow-left-3-2-offset-y)
+  var(--pgn-elevation-box-shadow-left-3-2-offset-x)
+  var(--pgn-elevation-box-shadow-left-3-2-blur)
+  var(--pgn-elevation-box-shadow-left-3-2-color) !default;
+$box-shadow-left-4: 
+  var(--pgn-elevation-box-shadow-left-4-1-offset-y)
+  var(--pgn-elevation-box-shadow-left-4-1-offset-x)
+  var(--pgn-elevation-box-shadow-left-4-1-blur)
+  var(--pgn-elevation-box-shadow-left-4-1-color),
+  var(--pgn-elevation-box-shadow-left-4-2-offset-y)
+  var(--pgn-elevation-box-shadow-left-4-2-offset-x)
+  var(--pgn-elevation-box-shadow-left-4-2-blur)
+  var(--pgn-elevation-box-shadow-left-4-2-color) !default;
+$box-shadow-left-5: 
+  var(--pgn-elevation-box-shadow-left-1-1-offset-y)
+  var(--pgn-elevation-box-shadow-left-1-1-offset-x)
+  var(--pgn-elevation-box-shadow-left-1-1-blur)
+  var(--pgn-elevation-box-shadow-left-1-1-color),
+  var(--pgn-elevation-box-shadow-left-1-2-offset-y)
+  var(--pgn-elevation-box-shadow-left-1-2-offset-x)
+  var(--pgn-elevation-box-shadow-left-1-2-blur)
+  var(--pgn-elevation-box-shadow-left-1-2-color) !default;
 
-$box-shadow-right-1: var(--pgn-elevation-box-shadow-right-1) !default;
-$box-shadow-right-2: var(--pgn-elevation-box-shadow-right-2) !default;
-$box-shadow-right-3: var(--pgn-elevation-box-shadow-right-3) !default;
-$box-shadow-right-4: var(--pgn-elevation-box-shadow-right-4) !default;
-$box-shadow-right-5: var(--pgn-elevation-box-shadow-right-5) !default;
+$box-shadow-up-1: 
+  var(--pgn-elevation-box-shadow-up-1-1-offset-y)
+  var(--pgn-elevation-box-shadow-up-1-1-offset-x)
+  var(--pgn-elevation-box-shadow-up-1-1-blur)
+  var(--pgn-elevation-box-shadow-up-1-1-color),
+  var(--pgn-elevation-box-shadow-up-1-2-offset-y)
+  var(--pgn-elevation-box-shadow-up-1-2-offset-x)
+  var(--pgn-elevation-box-shadow-up-1-2-blur)
+  var(--pgn-elevation-box-shadow-up-1-2-color) !default;
+$box-shadow-up-2: 
+  var(--pgn-elevation-box-shadow-up-2-1-offset-y)
+  var(--pgn-elevation-box-shadow-up-2-1-offset-x)
+  var(--pgn-elevation-box-shadow-up-2-1-blur)
+  var(--pgn-elevation-box-shadow-up-2-1-color),
+  var(--pgn-elevation-box-shadow-up-2-2-offset-y)
+  var(--pgn-elevation-box-shadow-up-2-2-offset-x)
+  var(--pgn-elevation-box-shadow-up-2-2-blur)
+  var(--pgn-elevation-box-shadow-up-2-2-color) !default;
+$box-shadow-up-3: 
+  var(--pgn-elevation-box-shadow-up-3-1-offset-y)
+  var(--pgn-elevation-box-shadow-up-3-1-offset-x)
+  var(--pgn-elevation-box-shadow-up-3-1-blur)
+  var(--pgn-elevation-box-shadow-up-3-1-color),
+  var(--pgn-elevation-box-shadow-up-3-2-offset-y)
+  var(--pgn-elevation-box-shadow-up-3-2-offset-x)
+  var(--pgn-elevation-box-shadow-up-3-2-blur)
+  var(--pgn-elevation-box-shadow-up-3-2-color) !default;
+$box-shadow-up-4: 
+  var(--pgn-elevation-box-shadow-up-4-1-offset-y)
+  var(--pgn-elevation-box-shadow-up-4-1-offset-x)
+  var(--pgn-elevation-box-shadow-up-4-1-blur)
+  var(--pgn-elevation-box-shadow-up-4-1-color),
+  var(--pgn-elevation-box-shadow-up-4-2-offset-y)
+  var(--pgn-elevation-box-shadow-up-4-2-offset-x)
+  var(--pgn-elevation-box-shadow-up-4-2-blur)
+  var(--pgn-elevation-box-shadow-up-4-2-color) !default;
+$box-shadow-up-5: 
+  var(--pgn-elevation-box-shadow-up-5-1-offset-y)
+  var(--pgn-elevation-box-shadow-up-5-1-offset-x)
+  var(--pgn-elevation-box-shadow-up-5-1-blur)
+  var(--pgn-elevation-box-shadow-up-5-1-color),
+  var(--pgn-elevation-box-shadow-up-5-2-offset-y)
+  var(--pgn-elevation-box-shadow-up-5-2-offset-x)
+  var(--pgn-elevation-box-shadow-up-5-2-blur)
+  var(--pgn-elevation-box-shadow-up-5-2-color) !default;
 
-$box-shadow-centered-1: var(--pgn-elevation-box-shadow-centered-1) !default;
-$box-shadow-centered-2: var(--pgn-elevation-box-shadow-centered-2) !default;
-$box-shadow-centered-3: var(--pgn-elevation-box-shadow-centered-3) !default;
-$box-shadow-centered-4: var(--pgn-elevation-box-shadow-centered-4) !default;
-$box-shadow-centered-5: var(--pgn-elevation-box-shadow-centered-5) !default;
+$box-shadow-right-1: 
+  var(--pgn-elevation-box-shadow-right-1-1-offset-y)
+  var(--pgn-elevation-box-shadow-right-1-1-offset-x)
+  var(--pgn-elevation-box-shadow-right-1-1-blur)
+  var(--pgn-elevation-box-shadow-right-1-1-color),
+  var(--pgn-elevation-box-shadow-right-1-2-offset-y)
+  var(--pgn-elevation-box-shadow-right-1-2-offset-x)
+  var(--pgn-elevation-box-shadow-right-1-2-blur)
+  var(--pgn-elevation-box-shadow-right-1-2-color) !default;
+$box-shadow-right-2: 
+  var(--pgn-elevation-box-shadow-right-2-1-offset-y)
+  var(--pgn-elevation-box-shadow-right-2-1-offset-x)
+  var(--pgn-elevation-box-shadow-right-2-1-blur)
+  var(--pgn-elevation-box-shadow-right-2-1-color),
+  var(--pgn-elevation-box-shadow-right-2-2-offset-y)
+  var(--pgn-elevation-box-shadow-right-2-2-offset-x)
+  var(--pgn-elevation-box-shadow-right-2-2-blur)
+  var(--pgn-elevation-box-shadow-right-2-2-color) !default;
+$box-shadow-right-3: 
+  var(--pgn-elevation-box-shadow-right-3-1-offset-y)
+  var(--pgn-elevation-box-shadow-right-3-1-offset-x)
+  var(--pgn-elevation-box-shadow-right-3-1-blur)
+  var(--pgn-elevation-box-shadow-right-3-1-color),
+  var(--pgn-elevation-box-shadow-right-3-2-offset-y)
+  var(--pgn-elevation-box-shadow-right-3-2-offset-x)
+  var(--pgn-elevation-box-shadow-right-3-2-blur)
+  var(--pgn-elevation-box-shadow-right-3-2-color) !default;
+$box-shadow-right-4: 
+  var(--pgn-elevation-box-shadow-right-4-1-offset-y)
+  var(--pgn-elevation-box-shadow-right-4-1-offset-x)
+  var(--pgn-elevation-box-shadow-right-4-1-blur)
+  var(--pgn-elevation-box-shadow-right-4-1-color),
+  var(--pgn-elevation-box-shadow-right-4-2-offset-y)
+  var(--pgn-elevation-box-shadow-right-4-2-offset-x)
+  var(--pgn-elevation-box-shadow-right-4-2-blur)
+  var(--pgn-elevation-box-shadow-right-4-2-color) !default;
+$box-shadow-right-5: 
+  var(--pgn-elevation-box-shadow-right-5-1-offset-y)
+  var(--pgn-elevation-box-shadow-right-5-1-offset-x)
+  var(--pgn-elevation-box-shadow-right-5-1-blur)
+  var(--pgn-elevation-box-shadow-right-5-1-color),
+  var(--pgn-elevation-box-shadow-right-5-2-offset-y)
+  var(--pgn-elevation-box-shadow-right-5-2-offset-x)
+  var(--pgn-elevation-box-shadow-right-5-2-blur)
+  var(--pgn-elevation-box-shadow-right-5-2-color) !default;
+
+$box-shadow-centered-1: 
+  var(--pgn-elevation-box-shadow-centered-1-1-offset-y)
+  var(--pgn-elevation-box-shadow-centered-1-1-offset-x)
+  var(--pgn-elevation-box-shadow-centered-1-1-blur)
+  var(--pgn-elevation-box-shadow-centered-1-1-color),
+  var(--pgn-elevation-box-shadow-centered-1-2-offset-y)
+  var(--pgn-elevation-box-shadow-centered-1-2-offset-x)
+  var(--pgn-elevation-box-shadow-centered-1-2-blur)
+  var(--pgn-elevation-box-shadow-centered-1-2-color) !default;
+$box-shadow-centered-2: 
+  var(--pgn-elevation-box-shadow-centered-2-1-offset-y)
+  var(--pgn-elevation-box-shadow-centered-2-1-offset-x)
+  var(--pgn-elevation-box-shadow-centered-2-1-blur)
+  var(--pgn-elevation-box-shadow-centered-2-1-color),
+  var(--pgn-elevation-box-shadow-centered-2-2-offset-y)
+  var(--pgn-elevation-box-shadow-centered-2-2-offset-x)
+  var(--pgn-elevation-box-shadow-centered-2-2-blur)
+  var(--pgn-elevation-box-shadow-centered-2-2-color) !default;
+$box-shadow-centered-3: 
+  var(--pgn-elevation-box-shadow-centered-3-1-offset-y)
+  var(--pgn-elevation-box-shadow-centered-3-1-offset-x)
+  var(--pgn-elevation-box-shadow-centered-3-1-blur)
+  var(--pgn-elevation-box-shadow-centered-3-1-color),
+  var(--pgn-elevation-box-shadow-centered-3-2-offset-y)
+  var(--pgn-elevation-box-shadow-centered-3-2-offset-x)
+  var(--pgn-elevation-box-shadow-centered-3-2-blur)
+  var(--pgn-elevation-box-shadow-centered-3-2-color) !default;
+$box-shadow-centered-4: 
+  var(--pgn-elevation-box-shadow-centered-4-1-offset-y)
+  var(--pgn-elevation-box-shadow-centered-4-1-offset-x)
+  var(--pgn-elevation-box-shadow-centered-4-1-blur)
+  var(--pgn-elevation-box-shadow-centered-4-1-color),
+  var(--pgn-elevation-box-shadow-centered-4-2-offset-y)
+  var(--pgn-elevation-box-shadow-centered-4-2-offset-x)
+  var(--pgn-elevation-box-shadow-centered-4-2-blur)
+  var(--pgn-elevation-box-shadow-centered-4-2-color) !default;
+$box-shadow-centered-5: 
+  var(--pgn-elevation-box-shadow-centered-5-1-offset-y) 
+  var(--pgn-elevation-box-shadow-centered-5-1-offset-x) 
+  var(--pgn-elevation-box-shadow-centered-5-1-blur)
+  var(--pgn-elevation-box-shadow-centered-5-1-color),
+  var(--pgn-elevation-box-shadow-centered-5-2-offset-y)
+  var(--pgn-elevation-box-shadow-centered-5-2-offset-x)
+  var(--pgn-elevation-box-shadow-centered-5-2-blur)
+  var(--pgn-elevation-box-shadow-centered-5-2-color) !default;
 
 @mixin pgn-box-shadow($level, $side) {
   @if $side == "down" {
     @if $level == 1 {
-      box-shadow: var(--pgn-elevation-box-shadow-down-1);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-down-1-1-offset-y)
+        var(--pgn-elevation-box-shadow-down-1-1-offset-x)
+        var(--pgn-elevation-box-shadow-down-1-1-blur)
+        var(--pgn-elevation-box-shadow-down-1-1-color),
+        var(--pgn-elevation-box-shadow-down-1-2-offset-y)
+        var(--pgn-elevation-box-shadow-down-1-2-offset-x)
+        var(--pgn-elevation-box-shadow-down-1-2-blur)
+        var(--pgn-elevation-box-shadow-down-1-2-color);
     }
 
     @else if $level == 2 {
-      box-shadow: var(--pgn-elevation-box-shadow-down-2);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-down-2-1-offset-y)
+        var(--pgn-elevation-box-shadow-down-2-1-offset-x)
+        var(--pgn-elevation-box-shadow-down-2-1-blur)
+        var(--pgn-elevation-box-shadow-down-2-1-color),
+        var(--pgn-elevation-box-shadow-down-2-2-offset-y)
+        var(--pgn-elevation-box-shadow-down-2-2-offset-x)
+        var(--pgn-elevation-box-shadow-down-2-2-blur)
+        var(--pgn-elevation-box-shadow-down-2-2-color);
     }
 
     @else if $level == 3 {
-      box-shadow: var(--pgn-elevation-box-shadow-down-3);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-down-3-1-offset-y)
+        var(--pgn-elevation-box-shadow-down-3-1-offset-x)
+        var(--pgn-elevation-box-shadow-down-3-1-blur)
+        var(--pgn-elevation-box-shadow-down-3-1-color),
+        var(--pgn-elevation-box-shadow-down-3-2-offset-y)
+        var(--pgn-elevation-box-shadow-down-3-2-offset-x)
+        var(--pgn-elevation-box-shadow-down-3-2-blur)
+        var(--pgn-elevation-box-shadow-down-3-2-color);
     }
 
     @else if $level == 4 {
-      box-shadow: var(--pgn-elevation-box-shadow-down-4);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-down-4-1-offset-y)
+        var(--pgn-elevation-box-shadow-down-4-1-offset-x)
+        var(--pgn-elevation-box-shadow-down-4-1-blur)
+        var(--pgn-elevation-box-shadow-down-4-1-color),
+        var(--pgn-elevation-box-shadow-down-4-2-offset-y)
+        var(--pgn-elevation-box-shadow-down-4-2-offset-x)
+        var(--pgn-elevation-box-shadow-down-4-2-blur)
+        var(--pgn-elevation-box-shadow-down-4-2-color);
     }
 
     @else if $level == 5 {
-      box-shadow: var(--pgn-elevation-box-shadow-down-5);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-down-5-1-offset-y)
+        var(--pgn-elevation-box-shadow-down-5-1-offset-x)
+        var(--pgn-elevation-box-shadow-down-5-1-blur)
+        var(--pgn-elevation-box-shadow-down-5-1-color),
+        var(--pgn-elevation-box-shadow-down-5-2-offset-y)
+        var(--pgn-elevation-box-shadow-down-5-2-offset-x)
+        var(--pgn-elevation-box-shadow-down-5-2-blur)
+        var(--pgn-elevation-box-shadow-down-5-2-color);
     }
 
     @else {
@@ -532,23 +814,63 @@ $box-shadow-centered-5: var(--pgn-elevation-box-shadow-centered-5) !default;
 
   @if $side == "left" {
     @if $level == 1 {
-      box-shadow: var(--pgn-elevation-box-shadow-left-1);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-left-1-1-offset-y)
+        var(--pgn-elevation-box-shadow-left-1-1-offset-x)
+        var(--pgn-elevation-box-shadow-left-1-1-blur)
+        var(--pgn-elevation-box-shadow-left-1-1-color),
+        var(--pgn-elevation-box-shadow-left-1-2-offset-y)
+        var(--pgn-elevation-box-shadow-left-1-2-offset-x)
+        var(--pgn-elevation-box-shadow-left-1-2-blur)
+        var(--pgn-elevation-box-shadow-left-1-2-color);
     }
 
     @else if $level == 2 {
-      box-shadow: var(--pgn-elevation-box-shadow-left-2);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-left-2-1-offset-y)
+        var(--pgn-elevation-box-shadow-left-2-1-offset-x)
+        var(--pgn-elevation-box-shadow-left-2-1-blur)
+        var(--pgn-elevation-box-shadow-left-2-1-color),
+        var(--pgn-elevation-box-shadow-left-2-2-offset-y)
+        var(--pgn-elevation-box-shadow-left-2-2-offset-x)
+        var(--pgn-elevation-box-shadow-left-2-2-blur)
+        var(--pgn-elevation-box-shadow-left-2-2-color);
     }
 
     @else if $level == 3 {
-      box-shadow: var(--pgn-elevation-box-shadow-left-3);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-left-3-1-offset-y)
+        var(--pgn-elevation-box-shadow-left-3-1-offset-x)
+        var(--pgn-elevation-box-shadow-left-3-1-blur)
+        var(--pgn-elevation-box-shadow-left-3-1-color),
+        var(--pgn-elevation-box-shadow-left-3-2-offset-y)
+        var(--pgn-elevation-box-shadow-left-3-2-offset-x)
+        var(--pgn-elevation-box-shadow-left-3-2-blur)
+        var(--pgn-elevation-box-shadow-left-3-2-color);
     }
 
     @else if $level == 4 {
-      box-shadow: var(--pgn-elevation-box-shadow-left-4);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-left-4-1-offset-y)
+        var(--pgn-elevation-box-shadow-left-4-1-offset-x)
+        var(--pgn-elevation-box-shadow-left-4-1-blur)
+        var(--pgn-elevation-box-shadow-left-4-1-color),
+        var(--pgn-elevation-box-shadow-left-4-2-offset-y)
+        var(--pgn-elevation-box-shadow-left-4-2-offset-x)
+        var(--pgn-elevation-box-shadow-left-4-2-blur)
+        var(--pgn-elevation-box-shadow-left-4-2-color);
     }
 
     @else if $level == 5 {
-      box-shadow: var(--pgn-elevation-box-shadow-left-5);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-left-5-1-offset-y)
+        var(--pgn-elevation-box-shadow-left-5-1-offset-x)
+        var(--pgn-elevation-box-shadow-left-5-1-blur)
+        var(--pgn-elevation-box-shadow-left-5-1-color),
+        var(--pgn-elevation-box-shadow-left-5-2-offset-y)
+        var(--pgn-elevation-box-shadow-left-5-2-offset-x)
+        var(--pgn-elevation-box-shadow-left-5-2-blur)
+        var(--pgn-elevation-box-shadow-left-5-2-color);
     }
 
     @else {
@@ -558,23 +880,63 @@ $box-shadow-centered-5: var(--pgn-elevation-box-shadow-centered-5) !default;
 
   @if $side == "up" {
     @if $level == 1 {
-      box-shadow: var(--pgn-elevation-box-shadow-up-1);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-up-1-1-offset-y)
+        var(--pgn-elevation-box-shadow-up-1-1-offset-x)
+        var(--pgn-elevation-box-shadow-up-1-1-blur)
+        var(--pgn-elevation-box-shadow-up-1-1-color),
+        var(--pgn-elevation-box-shadow-up-1-2-offset-y)
+        var(--pgn-elevation-box-shadow-up-1-2-offset-x)
+        var(--pgn-elevation-box-shadow-up-1-2-blur)
+        var(--pgn-elevation-box-shadow-up-1-2-color);
     }
 
     @else if $level == 2 {
-      box-shadow: var(--pgn-elevation-box-shadow-up-2);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-up-2-1-offset-y)
+        var(--pgn-elevation-box-shadow-up-2-1-offset-x)
+        var(--pgn-elevation-box-shadow-up-2-1-blur)
+        var(--pgn-elevation-box-shadow-up-2-1-color),
+        var(--pgn-elevation-box-shadow-up-2-2-offset-y)
+        var(--pgn-elevation-box-shadow-up-2-2-offset-x)
+        var(--pgn-elevation-box-shadow-up-2-2-blur)
+        var(--pgn-elevation-box-shadow-up-2-2-color);
     }
 
     @else if $level == 3 {
-      box-shadow: var(--pgn-elevation-box-shadow-up-3);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-up-3-1-offset-y)
+        var(--pgn-elevation-box-shadow-up-3-1-offset-x)
+        var(--pgn-elevation-box-shadow-up-3-1-blur)
+        var(--pgn-elevation-box-shadow-up-3-1-color),
+        var(--pgn-elevation-box-shadow-up-3-2-offset-y)
+        var(--pgn-elevation-box-shadow-up-3-2-offset-x)
+        var(--pgn-elevation-box-shadow-up-3-2-blur)
+        var(--pgn-elevation-box-shadow-up-3-2-color);
     }
 
     @else if $level == 4 {
-      box-shadow: var(--pgn-elevation-box-shadow-up-4);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-up-4-1-offset-y)
+        var(--pgn-elevation-box-shadow-up-4-1-offset-x)
+        var(--pgn-elevation-box-shadow-up-4-1-blur)
+        var(--pgn-elevation-box-shadow-up-4-1-color),
+        var(--pgn-elevation-box-shadow-up-4-2-offset-y)
+        var(--pgn-elevation-box-shadow-up-4-2-offset-x)
+        var(--pgn-elevation-box-shadow-up-4-2-blur)
+        var(--pgn-elevation-box-shadow-up-4-2-color);
     }
 
     @else if $level == 5 {
-      box-shadow: var(--pgn-elevation-box-shadow-up-5);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-up-5-1-offset-y)
+        var(--pgn-elevation-box-shadow-up-5-1-offset-x)
+        var(--pgn-elevation-box-shadow-up-5-1-blur)
+        var(--pgn-elevation-box-shadow-up-5-1-color),
+        var(--pgn-elevation-box-shadow-up-5-2-offset-y)
+        var(--pgn-elevation-box-shadow-up-5-2-offset-x)
+        var(--pgn-elevation-box-shadow-up-5-2-blur)
+        var(--pgn-elevation-box-shadow-up-5-2-color);
     }
 
     @else {
@@ -584,23 +946,63 @@ $box-shadow-centered-5: var(--pgn-elevation-box-shadow-centered-5) !default;
 
   @if $side == "right" {
     @if $level == 1 {
-      box-shadow: var(--pgn-elevation-box-shadow-right-1);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-right-1-1-offset-y)
+        var(--pgn-elevation-box-shadow-right-1-1-offset-x)
+        var(--pgn-elevation-box-shadow-right-1-1-blur)
+        var(--pgn-elevation-box-shadow-right-1-1-color),
+        var(--pgn-elevation-box-shadow-right-1-2-offset-y)
+        var(--pgn-elevation-box-shadow-right-1-2-offset-x)
+        var(--pgn-elevation-box-shadow-right-1-2-blur)
+        var(--pgn-elevation-box-shadow-right-1-2-color);
     }
 
     @else if $level == 2 {
-      box-shadow: var(--pgn-elevation-box-shadow-right-2);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-right-2-1-offset-y)
+        var(--pgn-elevation-box-shadow-right-2-1-offset-x)
+        var(--pgn-elevation-box-shadow-right-2-1-blur)
+        var(--pgn-elevation-box-shadow-right-2-1-color),
+        var(--pgn-elevation-box-shadow-right-2-2-offset-y)
+        var(--pgn-elevation-box-shadow-right-2-2-offset-x)
+        var(--pgn-elevation-box-shadow-right-2-2-blur)
+        var(--pgn-elevation-box-shadow-right-2-2-color);
     }
 
     @else if $level == 3 {
-      box-shadow: var(--pgn-elevation-box-shadow-right-3);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-right-3-1-offset-y)
+        var(--pgn-elevation-box-shadow-right-3-1-offset-x)
+        var(--pgn-elevation-box-shadow-right-3-1-blur)
+        var(--pgn-elevation-box-shadow-right-3-1-color),
+        var(--pgn-elevation-box-shadow-right-3-2-offset-y)
+        var(--pgn-elevation-box-shadow-right-3-2-offset-x)
+        var(--pgn-elevation-box-shadow-right-3-2-blur)
+        var(--pgn-elevation-box-shadow-right-3-2-color);
     }
 
     @else if $level == 4 {
-      box-shadow: var(--pgn-elevation-box-shadow-right-4);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-right-4-1-offset-y)
+        var(--pgn-elevation-box-shadow-right-4-1-offset-x)
+        var(--pgn-elevation-box-shadow-right-4-1-blur)
+        var(--pgn-elevation-box-shadow-right-4-1-color),
+        var(--pgn-elevation-box-shadow-right-4-2-offset-y)
+        var(--pgn-elevation-box-shadow-right-4-2-offset-x)
+        var(--pgn-elevation-box-shadow-right-4-2-blur)
+        var(--pgn-elevation-box-shadow-right-4-2-color);
     }
 
     @else if $level == 5 {
-      box-shadow: var(--pgn-elevation-box-shadow-right-5);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-right-5-1-offset-y)
+        var(--pgn-elevation-box-shadow-right-5-1-offset-x)
+        var(--pgn-elevation-box-shadow-right-5-1-blur)
+        var(--pgn-elevation-box-shadow-right-5-1-color),
+        var(--pgn-elevation-box-shadow-right-5-2-offset-y)
+        var(--pgn-elevation-box-shadow-right-5-2-offset-x)
+        var(--pgn-elevation-box-shadow-right-5-2-blur)
+        var(--pgn-elevation-box-shadow-right-5-2-color);
     }
 
     @else {
@@ -610,23 +1012,63 @@ $box-shadow-centered-5: var(--pgn-elevation-box-shadow-centered-5) !default;
 
   @if $side == "centered" {
     @if $level == 1 {
-      box-shadow: var(--pgn-elevation-box-shadow-centered-1);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-centered-1-1-offset-y)
+        var(--pgn-elevation-box-shadow-centered-1-1-offset-x)
+        var(--pgn-elevation-box-shadow-centered-1-1-blur)
+        var(--pgn-elevation-box-shadow-centered-1-1-color),
+        var(--pgn-elevation-box-shadow-centered-1-2-offset-y)
+        var(--pgn-elevation-box-shadow-centered-1-2-offset-x)
+        var(--pgn-elevation-box-shadow-centered-1-2-blur)
+        var(--pgn-elevation-box-shadow-centered-1-2-color);
     }
 
     @else if $level == 2 {
-      box-shadow: var(--pgn-elevation-box-shadow-centered-2);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-centered-2-1-offset-y)
+        var(--pgn-elevation-box-shadow-centered-2-1-offset-x)
+        var(--pgn-elevation-box-shadow-centered-2-1-blur)
+        var(--pgn-elevation-box-shadow-centered-2-1-color),
+        var(--pgn-elevation-box-shadow-centered-2-2-offset-y)
+        var(--pgn-elevation-box-shadow-centered-2-2-offset-x)
+        var(--pgn-elevation-box-shadow-centered-2-2-blur)
+        var(--pgn-elevation-box-shadow-centered-2-2-color);
     }
 
     @else if $level == 3 {
-      box-shadow: var(--pgn-elevation-box-shadow-centered-3);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-centered-3-1-offset-y)
+        var(--pgn-elevation-box-shadow-centered-3-1-offset-x)
+        var(--pgn-elevation-box-shadow-centered-3-1-blur)
+        var(--pgn-elevation-box-shadow-centered-3-1-color),
+        var(--pgn-elevation-box-shadow-centered-3-2-offset-y)
+        var(--pgn-elevation-box-shadow-centered-3-2-offset-x)
+        var(--pgn-elevation-box-shadow-centered-3-2-blur)
+        var(--pgn-elevation-box-shadow-centered-3-2-color);
     }
 
     @else if $level == 4 {
-      box-shadow: var(--pgn-elevation-box-shadow-centered-4);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-centered-4-1-offset-y)
+        var(--pgn-elevation-box-shadow-centered-4-1-offset-x)
+        var(--pgn-elevation-box-shadow-centered-4-1-blur)
+        var(--pgn-elevation-box-shadow-centered-4-1-color),
+        var(--pgn-elevation-box-shadow-centered-4-2-offset-y)
+        var(--pgn-elevation-box-shadow-centered-4-2-offset-x)
+        var(--pgn-elevation-box-shadow-centered-4-2-blur)
+        var(--pgn-elevation-box-shadow-centered-4-2-color);
     }
 
     @else if $level == 5 {
-      box-shadow: var(--pgn-elevation-box-shadow-centered-5);
+      box-shadow:
+        var(--pgn-elevation-box-shadow-centered-5-1-offset-y)
+        var(--pgn-elevation-box-shadow-centered-5-1-offset-x)
+        var(--pgn-elevation-box-shadow-centered-5-1-blur)
+        var(--pgn-elevation-box-shadow-centered-5-1-color),
+        var(--pgn-elevation-box-shadow-centered-5-2-offset-y)
+        var(--pgn-elevation-box-shadow-centered-5-2-offset-x)
+        var(--pgn-elevation-box-shadow-centered-5-2-blur)
+        var(--pgn-elevation-box-shadow-centered-5-2-color);
     }
 
     @else {
@@ -728,7 +1170,8 @@ $display2-size: var(--pgn-typography-font-size-display-2) !default;
 $display3-size: var(--pgn-typography-font-size-display-3) !default;
 $display4-size: var(--pgn-typography-font-size-display-4) !default;
 
-$display-mobile-size: var(--pgn-typography-font-size-display-mobile-1) !default; // deprecated in favor of $display1-mobile-size
+// deprecated in favor of $display1-mobile-size
+$display-mobile-size: var(--pgn-typography-font-size-display-mobile-1) !default;
 $display1-mobile-size: var(--pgn-typography-font-size-display-mobile-1) !default;
 $display2-mobile-size: var(--pgn-typography-font-size-display-mobile-2) !default;
 $display3-mobile-size: var(--pgn-typography-font-size-display-mobile-3) !default;
@@ -806,7 +1249,12 @@ $input-btn-line-height: var(--pgn-typography-input-btn-line-height-base) !defaul
 
 $input-btn-focus-width: var(--pgn-size-input-btn-focus-width) !default;
 $input-btn-focus-color: var(--pgn-color-input-btn-focus) !default;
-$input-btn-focus-box-shadow: var(--pgn-elevation-input-btn-focus-box-shadow) !default;
+$input-btn-focus-box-shadow: 
+  var(--pgn-elevation-input-btn-focus-box-shadow-offset-x)
+  var(--pgn-elevation-input-btn-focus-box-shadow-offset-y)
+  var(--pgn-elevation-input-btn-focus-box-shadow-spread)
+  var(--pgn-elevation-input-btn-focus-box-shadow-color)
+  var(--pgn-elevation-input-btn-focus-box-shadow-blur) !default;
 
 $input-btn-padding-y-sm: var(--pgn-spacing-input-btn-padding-sm-y) !default;
 $input-btn-padding-x-sm: var(--pgn-spacing-input-btn-padding-sm-x) !default;

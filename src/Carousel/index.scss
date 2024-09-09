@@ -21,7 +21,11 @@
   width: 100%;
   margin-right: -100%;
   backface-visibility: hidden;
-  transition: var(--pgn-transition-carousel-base);
+  transition:
+    var(--pgn-transition-carousel-base-property)
+    var(--pgn-transition-carousel-base-duration)
+    var(--pgn-transition-carousel-base-timing-function)
+    var(--pgn-transition-carousel-base-delay);
 }
 
 .carousel-item.active,
@@ -58,7 +62,11 @@
   .active.carousel-item-right {
     z-index: 0;
     opacity: 0;
-    transition: opacity 0s var(--pgn-transition-carousel-base);
+    transition:
+      opacity 0s var(--pgn-transition-carousel-base-property)
+      var(--pgn-transition-carousel-base-duration)
+      var(--pgn-transition-carousel-base-timing-function)
+      var(--pgn-transition-carousel-base-delay);
   }
 }
 

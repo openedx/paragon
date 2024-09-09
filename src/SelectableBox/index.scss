@@ -18,7 +18,15 @@
   position: relative;
   height: 100%;
   padding: var(--pgn-spacing-selectable-box-padding);
-  box-shadow: var(--pgn-elevation-box-shadow-level-1);
+  box-shadow:
+    var(--pgn-elevation-box-shadow-level-1-1-offset-y)
+    var(--pgn-elevation-box-shadow-level-1-1-offset-x)
+    var(--pgn-elevation-box-shadow-level-1-1-blur)
+    var(--pgn-elevation-box-shadow-level-1-1-color),
+    var(--pgn-elevation-box-shadow-level-1-2-offset-y)
+    var(--pgn-elevation-box-shadow-level-1-2-offset-x)
+    var(--pgn-elevation-box-shadow-level-1-2-blur)
+    var(--pgn-elevation-box-shadow-level-1-2-color);
   border-radius: var(--pgn-spacing-selectable-box-border-radius);
   text-align: start;
   background: var(--pgn-color-white);

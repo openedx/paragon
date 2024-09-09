@@ -8,7 +8,15 @@
   max-width: var(--pgn-size-modal-md);
   overflow: auto;
   width: 100vw;
-  box-shadow: var(--pgn-elevation-modal-content-box-shadow-sm-up);
+  box-shadow:
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-1-offset-x)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-1-offset-y)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-1-blur)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-1-color),
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-2-offset-x)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-2-offset-y)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-2-blur)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-2-color);
   border: solid var(--pgn-size-modal-content-border-width) var(--pgn-color-modal-content-border);
   position: relative;
 

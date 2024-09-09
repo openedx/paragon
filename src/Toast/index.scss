@@ -2,7 +2,15 @@
 
 .toast {
   background-color: var(--pgn-color-toast-bg);
-  box-shadow: var(--pgn-elevation-toast-box-shadow);
+  box-shadow:
+    var(--pgn-elevation-toast-box-shadow-1-offset-x)
+    var(--pgn-elevation-toast-box-shadow-1-offset-y)
+    var(--pgn-elevation-toast-box-shadow-1-blur)
+    var(--pgn-elevation-toast-box-shadow-1-color),
+    var(--pgn-elevation-toast-box-shadow-2-offset-x)
+    var(--pgn-elevation-toast-box-shadow-2-offset-y)
+    var(--pgn-elevation-toast-box-shadow-2-blur)
+    var(--pgn-elevation-toast-box-shadow-2-color);
   margin: 0;
   padding: 1rem;
   position: relative;
