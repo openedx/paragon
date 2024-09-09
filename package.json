@@ -51,12 +51,14 @@
     "playroom:build": "npm run playroom:build --workspace=www",
     "prepare": "husky || true",
     "build-tokens": "./bin/paragon-scripts.js build-tokens --build-dir ./styles/css",
+    "build-tokens:watch": "npx nodemon --ignore styles/css -x \"npm run build-tokens\"",
     "replace-variables-usage-with-css": "./bin/paragon-scripts.js replace-variables -p src -t usage",
     "replace-variables-definition-with-css": "./bin/paragon-scripts.js replace-variables -p src -t definition",
     "cli:help": "./bin/paragon-scripts.js help"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.4",
+    "@tokens-studio/sd-transforms": "^1.2.4",
     "axios": "^0.27.2",
     "bootstrap": "^4.6.2",
     "chalk": "^4.1.2",

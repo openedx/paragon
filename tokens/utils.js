@@ -2,6 +2,131 @@ const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
 
+const visitedTokens = {};
+
+/**
+ * Finds a token by its path in the token tree.
+ * @param {string} path - The path to the token in the token tree.
+ * @returns {DesignToken} - The token object found at the specified path.
+ */
+function findTokenByPath(tokenPath, allTokens) {
+  const keys = tokenPath.split('.');
+  return keys.reduce((acc, key) => acc && acc[key], allTokens);
+}
+
+/**
+ * @typedef {object} ExtensionProperty
+ * @property {string} name - The name of the extension property.
+ * @property {(token: DesignToken) => boolean} filter - The filter function to determine
+ * if the token should be annotated.
+ * @property {(token: DesignToken) => boolean} referenceTokenFilter - The filter function to determine if
+ * the referenced token should be annotated.
+ */
+
+/**
+ * @typedef {object} AnnotateReferencedTokenExtensionsArgs
+ * @property {DesignToken} token - The token object to annotate.
+ * @property {ExtensionProperty[]} extensionProperties - The properties to annotate the referenced token with.
+ * @property {object} sdUtils - The Style Dictionary utility functions.
+ */
+
+/**
+ * Annotates referenced token $extensions with the specified properties.
+ * @param {AnnotateReferencedTokenExtensionsArgs} args - The arguments object.
+ */
+function annotateReferencedTokenExtensions({
+  token,
+  extensionProperties,
+  sdUtils,
+  dictionary,
+}) {
+  const stack = [token]; // Stack to process tokens iteratively
+
+  while (stack.length > 0) {
+    const currentToken = stack.pop();
+
+    // Get all references for the current token
+    const references = sdUtils.getReferences(currentToken, dictionary);
+    extensionProperties.forEach(({ name: propertyName, filter: propertyFilter, referenceTokenFilter }) => {
+      if (!propertyFilter(token)) {
+        // Skip processing if the token does not match the filter for the property
+        return;
+      }
+
+      // Iterate over each reference and mark the referenced token
+      references.forEach((foundReference) => {
+        const foundReferenceTokenPath = foundReference.ref.join('.');
+        if (visitedTokens[propertyName]?.has(foundReferenceTokenPath)) {
+          // Skip processing if the referenced token has already been marked
+          return;
+        }
+
+        if (!referenceTokenFilter?.(foundReference)) {
+          // Filter the reference tokens to only include the ones that match the filter
+          return;
+        }
+
+        // Directly access the referenced token from the returned reference object
+        const referencedToken = findTokenByPath(foundReferenceTokenPath, dictionary);
+        if (!referencedToken) {
+          return;
+        }
+
+        // Mark the referenced token
+        referencedToken.$extensions = {
+          ...referencedToken.$extensions,
+          'org.openedx.paragon': {
+            ...referencedToken.$extensions?.['org.openedx.paragon'],
+            [propertyName]: true,
+          },
+        };
+
+        visitedTokens[propertyName].add(foundReferenceTokenPath);
+
+        if (sdUtils.usesReferences(referencedToken)) {
+          // Push the referenced token to the stack to process its references
+          stack.push(referencedToken);
+        }
+      });
+    });
+  }
+}
+
+/**
+ * Processes and updates tokens in place by annotating referenced tokens with extension properties.
+ * @typedef {object} ProcessAndUpdateTokensArgs
+ * @property {object} tokens - The tokens object to process.
+ * @property {ExtensionProperty[]} extensionProperties - The properties to annotate the referenced token with.
+ * @property {object} sdUtils - The Style Dictionary utility functions.
+ */
+function processAndUpdateTokens(tokens, extensionProperties, sdUtils, dictionary) {
+  Object.keys(tokens).forEach(async (key) => {
+    const token = tokens[key];
+    if (typeof token !== 'object') {
+      // Skip non-object tokens
+      return;
+    }
+
+    // If this is a group (nested tokens), recurse into it
+    if (!Object.prototype.hasOwnProperty.call(token, '$value')) {
+      processAndUpdateTokens(token, extensionProperties, sdUtils, dictionary);
+    } else if (sdUtils.usesReferences(token)) {
+      // Initialize the visited tokens for each extension property
+      extensionProperties.forEach((property) => {
+        visitedTokens[property.name] = new Set();
+      });
+
+      // If the token uses reference(s), update the referenced token(s) $extensions metadata.
+      annotateReferencedTokenExtensions({
+        token,
+        extensionProperties,
+        sdUtils,
+        dictionary,
+      });
+    }
+  });
+}
+
 /**
  * Recursively retrieves files with a specific extension from a given directory.
  *
@@ -243,4 +368,5 @@ module.exports = {
   getSCSStoCSSMap,
   transformInPath,
   composeBreakpointName,
+  processAndUpdateTokens,
 };
