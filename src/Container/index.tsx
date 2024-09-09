@@ -22,7 +22,7 @@ interface ContainerProps extends RBContainerProps {
 
 type ContainerType = ComponentWithAsProp<'div', ContainerProps>;
 
-const Container: ContainerType = React.forwardRef<HTMLDivElement, ContainerProps>(({
+const Container: ContainerType = React.forwardRef<Element, ContainerProps>(({
   size,
   children,
   ...props
