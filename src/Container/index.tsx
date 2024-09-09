@@ -48,7 +48,7 @@ Container.propTypes = {
   /** Fill all available space at any breakpoint */
   fluid: PropTypes.bool,
   /** Set the maximum width for the container. Omiting the prop will remove the max-width */
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', undefined]),
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
   /** Overrides underlying component base CSS class name */
   bsPrefix: PropTypes.string,
 };
