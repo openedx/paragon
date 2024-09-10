@@ -1,0 +1,28 @@
+{
+  "typography": {
+    "image": {
+      "figure-caption": {
+        "font-size": { "value": "90%", "type": "percentage", "source": "$figure-caption-font-size" }
+      }
+    }
+  },
+  "size": {
+    "image": {
+      "thumbnail": {
+        "border": {
+          "width": { "value": "{size.border.width}", "type": "dimension", "source": "$thumbnail-border-width" },
+          "radius": {
+            "value": "{size.border.radius.base}", "type": "dimension", "source": "$thumbnail-border-radius"
+          }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "image": {
+      "thumbnail": {
+        "padding": { "value": ".25rem", "type": "dimension", "source": "$thumbnail-padding" }
+      }
+    }
+  }
+}

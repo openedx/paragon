@@ -257,6 +257,14 @@ function Menu() {
               </Link>
             </li>
             <li>
+              <Link
+                className={classNames({ active: pathname.endsWith('design-tokens') })}
+                to="/tools/design-tokens"
+              >
+                Design Tokens
+              </Link>
+            </li>
+            <li>
               <Link to="/playground" onClick={handlePlaygroundClick}>
                 Playground
                 <Badge className="ml-1" variant="warning">Beta</Badge>

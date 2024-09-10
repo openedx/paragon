@@ -1,0 +1,22 @@
+// List Groups
+// TODO: not used in Paragon.
+@mixin list-group-item-variant($state, $background, $color) {
+  .list-group-item-#{$state} {
+    color: $color;
+    background-color: $background;
+
+    &.list-group-item-action {
+      @include hover-focus() {
+        color: $color;
+        background-color: $background;
+        filter: opacity(.9);
+      }
+
+      &.active {
+        color: $white;
+        background-color: $color;
+        border-color: $color;
+      }
+    }
+  }
+}

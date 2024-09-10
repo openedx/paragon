@@ -31,80 +31,14 @@
     margin: 0;
   }
 
-  .status-indicator {
-    display: inline-flex;
-    align-items: center;
-    text-transform: uppercase;
-    font-size: .85em;
-    line-height: 1rem;
-    white-space: nowrap;
-
-    &.planned {
-      &::before {
-        background-color: gray;
-        border-color: #78D965;
-      }
-    }
-
-    &.updates-planned {
-      &::before {
-        background-color: gray;
-        border-color: #78D965;
-      }
-    }
-
-    &.green,
-    &.done,
-    &.stable {
-      &::before {
-        background-color: green;
-      }
-    }
-
-    &.needs-work,
-    &.reassessing {
-      &::before {
-        background-color: orange;
-      }
-    }
-
-    &.to-do {
-      &::before {
-        background-color: white;
-        border-color: teal;
-      }
-    }
-
-    &.in-progress {
-      font-weight: bold;
-      color: teal;
-
-      &::before {
-        background-color: teal;
-      }
-    }
-
-    &.deprecate-soon {
-      &::before {
-        background-color: red;
-      }
-    }
-
-    &::before {
-      content: " ";
-      background-color: silver;
-      display: inline-block;
-      width: .75rem;
-      margin-top: 0;
-      height: .75rem;
-      box-sizing: border-box;
-      border: solid 2px transparent;
-      margin-right: .375rem;
-      border-radius: 1rem;
-    }
-  }
-
   h6 {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.status-indicator-wrapper {
+  h5 {
     display: flex;
     align-items: center;
 
@@ -116,6 +50,79 @@
     .status-no-left-margin {
       margin-left: 0;
     }
+  }
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: .85em;
+  line-height: 1rem;
+  white-space: nowrap;
+
+  &.planned {
+    &::before {
+      background-color: gray;
+      border-color: #78D965;
+    }
+  }
+
+  &.updates-planned {
+    &::before {
+      background-color: gray;
+      border-color: #78D965;
+    }
+  }
+
+  &.green,
+  &.done,
+  &.stable {
+    &::before {
+      background-color: green;
+    }
+  }
+
+  &.needs-work,
+  &.reassessing {
+    &::before {
+      background-color: orange;
+    }
+  }
+
+  &.to-do {
+    &::before {
+      background-color: white;
+      border-color: teal;
+    }
+  }
+
+  &.in-progress {
+    font-weight: bold;
+    color: teal;
+
+    &::before {
+      background-color: teal;
+    }
+  }
+
+  &.deprecate-soon {
+    &::before {
+      background-color: red;
+    }
+  }
+
+  &::before {
+    content: " ";
+    background-color: silver;
+    display: inline-block;
+    width: .75rem;
+    margin-top: 0;
+    height: .75rem;
+    box-sizing: border-box;
+    border: solid 2px transparent;
+    margin-right: .375rem;
+    border-radius: 1rem;
   }
 }
 
@@ -138,7 +145,7 @@
     &:focus,
     &:hover,
     &:focus-visible {
-      border: $border-width solid $dark;
+      border: var(--pgn-size-border-width) solid var(--pgn-color-dark-base);
     }
   }
 }
@@ -176,8 +183,8 @@
 
   .pgn-doc__box-shadow-level-titles {
     .pgn-doc__box-shadow-level-title {
-      font-size: $font-size-base;
-      line-height: $line-height-base;
+      font-size: var(--pgn-typography-font-size-base);
+      line-height: var(--pgn-typography-line-height-base);
       width: 8.125rem;
       height: 6.25rem;
       text-align: left;
@@ -191,8 +198,8 @@
     min-width: 57rem;
 
     .pgn-doc__box-shadow-side-title {
-      font-size: $font-size-base;
-      line-height: $line-height-base;
+      font-size: var(--pgn-typography-font-size-base);
+      line-height: var(--pgn-typography-line-height-base);
       width: 6.25rem;
       height: 3rem;
 
@@ -222,13 +229,13 @@
     .pgn-doc__box-shadow-generator__preview-box {
       height: 9.375rem;
       width: 9.375rem;
-      background-color: $white;
-      border-radius: $border-radius-lg;
+      background-color: var(--pgn-color-white);
+      border-radius: var(--pgn-size-border-radius-lg);
     }
   }
 
   .pgn-doc__box-shadow-generator--toolkit {
-    padding: $spacer;
+    padding: var(--pgn-spacing-spacer-base);
 
     .pgn-doc__box-shadow-generator--toolkit-code {
       padding: 1rem;
@@ -237,9 +244,9 @@
       white-space: nowrap;
       display: flex;
       align-items: center;
-      background-color: $gray-100;
+      background-color: var(--pgn-color-gray-100);
 
-      @media (max-width: $max-width-sm) {
+      @media (--pgn-size-breakpoint-max-width-sm) {
         max-width: 100%;
       }
     }
@@ -248,21 +255,21 @@
   .pgn-doc__box-shadow-toolkit--controls-box {
     width: 100%;
     min-width: 15.625rem;
-    background-color: $dark;
-    padding: $spacer;
-    border-radius: $border-radius-lg;
-    color: $white;
-    margin-bottom: $spacer;
+    background-color: var(--pgn-color-dark-base);
+    padding: var(--pgn-spacing-spacer-base);
+    border-radius: var(--pgn-size-border-radius-lg);
+    color: var(--pgn-color-white);
+    margin-bottom: var(--pgn-spacing-spacer-base);
 
     &:not(:last-child) {
-      margin-right: $spacer;
+      margin-right: var(--pgn-spacing-spacer-base);
     }
 
     input[type="range"],
     input[type="color"] {
       width: 100%;
       display: block;
-      margin-bottom: $spacer;
+      margin-bottom: var(--pgn-spacing-spacer-base);
     }
 
     .form-control {
@@ -272,12 +279,12 @@
       height: auto;
 
       &:focus {
-        box-shadow: $level-4-box-shadow;
-        border-radius: $border-radius;
+        box-shadow: var(--pgn-elevation-box-shadow-level-4);
+        border-radius: var(--pgn-size-border-radius-base);
       }
 
       &[type="color"] {
-        height: $spacer * 1.5;
+        height: calc(var(--pgn-spacing-spacer-base) * 1.5);
       }
     }
   }
@@ -288,10 +295,10 @@
 }
 
 .pgn-doc__box-shadow--toast {
-  background-color: $dark;
+  background-color: var(--pgn-color-dark-base);
 
   .toast-header {
-    background-color: $dark;
+    background-color: var(--pgn-color-dark-base);
     box-shadow: none;
   }
 }
@@ -311,9 +318,15 @@
 }
 
 .pgn-doc__box-shadow-toolkit--controls-box--disable-btn svg {
-  fill: $white;
+  fill: var(--pgn-color-white);
 }
 
 .pgn-doc__box-shadow-toolkit--controls-box--remove-btn svg {
-  color: $white;
+  color: var(--pgn-color-white);
+}
+
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-row-gap: 2rem;
 }

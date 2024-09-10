@@ -1,0 +1,55 @@
+{
+  "color": {
+    "popover": {
+      "bg": { "value": "{color.bg.base}", "type": "color", "source": "$popover-bg" },
+      "border": { "value": "rgba(0, 0, 0, .2)", "type": "color",  "source": "$popover-border-color" },
+      "header": {
+        "text": { "value": "{color.headings.base}", "type": "color", "source": "$popover-header-color" },
+        "bg": { "value": "{color.white}", "type": "color", "source": "$popover-header-bg" },
+        "bg-dark": {
+          "value": "{color.white}",
+          "type": "color",
+          "source": "$popover-header-bg-dark",
+          "modify": [{ "type": "darken", "amount": 0.5 }]
+        },
+        "border-bottom-dark": {
+          "value": "{color.white}",
+          "type": "color",
+          "source": "$popover-header-border-bottom-darken",
+          "modify": [{ "type": "darken", "amount": 0.05 }]
+        }
+      },
+      "body": { "value": "{color.body.base}", "type": "color", "source": "$popover-body-color" },
+      "arrow": { 
+        "base": { "value": "{color.popover.bg}", "type": "color", "source": "$popover-arrow-color" },
+        "outer": {
+          "value": "{color.popover.border}",
+          "type": "color",
+          "source": "$popover-arrow-outer-color",
+          "modify": [{ "type": "alpha", "amount": 0.05 }]
+        }
+      },
+      "success": {
+        "bg": { "value": "{color.success.100}", "type": "color", "source": "$popover-success-bg" },
+        "icon": { "value": "{color.success.500}", "type": "color", "source": "$popover-success-icon-color" }
+      },
+      "warning": {
+        "bg": { "value": "{color.warning.100}", "type": "color", "source": "$popover-warning-bg" },
+        "icon": { "value": "{color.warning.500}", "type": "color", "source": "$popover-warning-icon-color" }
+      },
+      "danger": {
+        "bg": { "value": "{color.danger.100}", "type": "color", "source": "$popover-danger-bg" },
+        "icon": { "value": "{color.danger.500}", "type": "color", "source": "$popover-danger-icon-color" }
+      }
+    }
+  },
+  "elevation": {
+    "popover": {
+      "box-shadow": {
+        "value": "none",
+        "type": "shadow",
+        "source": "$popover-box-shadow"
+      }
+    }
+  }
+}

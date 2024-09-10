@@ -1,41 +1,41 @@
 .pgn__modal {
-  background: $modal-content-bg;
-  border-radius: $modal-content-inner-border-radius;
+  background: var(--pgn-color-modal-content-bg);
+  border-radius: calc(var(--pgn-size-modal-content-border-radius) - var(--pgn-size-modal-content-border-width));
   display: flex;
   flex-direction: column;
-  margin: 0 $modal-dialog-margin;
+  margin: 0 var(--pgn-spacing-modal-dialog-margin);
   max-height: 80vh;
-  max-width: $modal-md;
+  max-width: var(--pgn-size-modal-md);
   overflow: auto;
   width: 100vw;
-  box-shadow: $modal-content-box-shadow-sm-up;
-  border: solid $modal-content-border-width $modal-content-border-color;
+  box-shadow: var(--pgn-elevation-modal-content-box-shadow-sm-up);
+  border: solid var(--pgn-size-modal-content-border-width) var(--pgn-color-modal-content-border);
   position: relative;
 
   &:not(.pgn__modal-fullscreen) > *:first-child {
-    border-top-left-radius: $modal-content-border-radius;
-    border-top-right-radius: $modal-content-border-radius;
+    border-top-left-radius: var(--pgn-size-modal-content-border-radius);
+    border-top-right-radius: var(--pgn-size-modal-content-border-radius);
   }
 
   &:not(.pgn__modal-fullscreen) > *:last-child {
-    border-bottom-left-radius: $modal-content-border-radius;
-    border-bottom-right-radius: $modal-content-border-radius;
+    border-bottom-left-radius: var(--pgn-size-modal-content-border-radius);
+    border-bottom-right-radius: var(--pgn-size-modal-content-border-radius);
   }
 
   &.pgn__modal-scroll-fullscreen {
     max-height: none;
-    margin: $modal-dialog-margin;
+    margin: var(--pgn-spacing-modal-dialog-margin);
   }
 
   .pgn__modal-header {
-    padding-bottom: calc(#{$modal-inner-padding} / 2);
+    padding-bottom: calc(var(--pgn-spacing-modal-inner-padding-base) / 2);
   }
 
   .pgn__modal-body {
-    padding: calc(#{$modal-inner-padding} / 2) $modal-inner-padding;
+    padding: calc(var(--pgn-spacing-modal-inner-padding-base) / 2) var(--pgn-spacing-modal-inner-padding-base);
 
     &::before {
-      top: calc(#{$modal-inner-padding} / 2 * -1);
+      top: calc(var(--pgn-spacing-modal-inner-padding-base) / 2 * -1);
     }
   }
 
@@ -51,19 +51,19 @@
 // Sizes
 
 .pgn__modal-sm {
-  max-width: $modal-sm;
+  max-width: var(--pgn-size-modal-sm);
 }
 
 .pgn__modal-lg {
-  max-width: $modal-lg;
+  max-width: var(--pgn-size-modal-lg);
 }
 
 .pgn__modal-md {
-  max-width: $modal-md;
+  max-width: var(--pgn-size-modal-md);
 }
 
 .pgn__modal-xl {
-  max-width: $modal-xl;
+  max-width: var(--pgn-size-modal-xl);
 }
 
 .pgn__modal-fullscreen {
@@ -73,8 +73,8 @@
   max-width: none;
 
   .pgn__modal-footer {
-    border-top: solid 1px $light;
-    padding-top: $modal-footer-padding-y;
+    border-top: solid 1px var(--pgn-color-light-base);
+    padding-top: var(--pgn-spacing-modal-footer-padding-y);
   }
 
   .pgn__modal-header {
@@ -96,8 +96,8 @@
 .pgn__modal-close-container {
   position: absolute;
   z-index: 10;
-  top: $modal-close-container-top;
-  inset-inline-end: $modal-header-padding-y;
+  top: var(--pgn-spacing-dropdown-close-container-top);
+  inset-inline-end: var(--pgn-spacing-modal-header-padding-y);
 }
 
 .pgn__modal-header {
@@ -106,10 +106,10 @@
   justify-content: center;
   position: sticky;
   top: 0;
-  border-top-left-radius: $modal-content-border-radius;
-  border-top-right-radius: $modal-content-border-radius;
-  padding: $modal-header-padding;
-  background-color: $modal-content-bg;
+  border-top-left-radius: var(--pgn-size-modal-content-border-radius);
+  border-top-right-radius: var(--pgn-size-modal-content-border-radius);
+  padding: var(--pgn-spacing-modal-header-padding-base);
+  background-color: var(--pgn-color-modal-content-bg);
   transition: box-shadow 150ms ease;
   min-height: 2rem; // height of the icon close button
   box-sizing: content-box;
@@ -122,14 +122,14 @@
   }
 
   .pgn__modal-title {
-    font-size: $h3-font-size;
+    font-size: var(--pgn-typography-font-size-h3);
     margin-inline-end: 3rem; // roughly accomodate the width of the close buttonn
     text-align: start;
   }
 }
 
 .pgn__modal-hero {
-  padding: $modal-header-padding;
+  padding: var(--pgn-spacing-modal-header-padding-base);
   position: relative;
   display: flex;
   align-items: center;
@@ -155,7 +155,9 @@
 
 .pgn__modal-body {
   flex-grow: 1;
-  padding: $modal-inner-padding $modal-inner-padding calc(#{$modal-inner-padding} / 2);
+  padding:
+    var(--pgn-spacing-modal-inner-padding-base)
+    var(--pgn-spacing-modal-inner-padding-base) calc(var(--pgn-spacing-modal-inner-padding-base) / 2);
   overflow: auto;
   position: relative;
 
@@ -166,10 +168,10 @@
     display: block;
     height: 20px;
     position: sticky;
-    top: -$modal-inner-padding;
-    margin-top: -$modal-inner-padding;
-    margin-left: -$modal-inner-padding;
-    margin-right: -$modal-inner-padding;
+    top: calc(var(--pgn-spacing-modal-inner-padding-base) * -1);
+    margin-top: calc(var(--pgn-spacing-modal-inner-padding-base) * -1);
+    margin-left: calc(var(--pgn-spacing-modal-inner-padding-base) * -1);
+    margin-right: calc(var(--pgn-spacing-modal-inner-padding-base) * -1);
     opacity: .5;
     z-index: 2;
   }
@@ -187,10 +189,10 @@
     display: block;
     height: 20px;
     position: sticky;
-    bottom: calc(#{$modal-inner-padding} / 2 * -1);
-    margin-bottom: -$modal-inner-padding-bottom;
-    margin-left: -$modal-inner-padding;
-    margin-right: -$modal-inner-padding;
+    bottom: calc(var(--pgn-spacing-modal-inner-padding-base) / 2 * -1);
+    margin-bottom: calc(var(--pgn-spacing-modal-inner-padding-bottom) * -1);
+    margin-left: calc(var(--pgn-spacing-modal-inner-padding-base) * -1);
+    margin-right: calc(var(--pgn-spacing-modal-inner-padding-base) * -1);
     opacity: .5;
   }
 
@@ -248,10 +250,10 @@
   bottom: 0;
   display: flex;
   justify-content: flex-end;
-  background-color: $modal-content-bg;
+  background-color: var(--pgn-color-modal-content-bg);
   transition: box-shadow 150ms ease;
-  padding: $modal-footer-padding;
-  padding-top: calc(#{$modal-inner-padding} / 2);
+  padding: var(--pgn-spacing-modal-footer-padding-base);
+  padding-top: calc(var(--pgn-spacing-modal-inner-padding-base) / 2);
 }
 
 // Color Variants
@@ -259,8 +261,8 @@
 .pgn__modal-dark {
   .pgn__modal-header,
   .pgn__modal-hero {
-    background-color: $dark;
-    color: $white;
+    background-color: var(--pgn-color-dark-base);
+    color: var(--pgn-color-white);
 
     * {
       color: inherit;
@@ -269,15 +271,15 @@
 }
 
 .pgn__modal-warning .pgn__modal-header {
-  background-color: $warning-100;
+  background-color: var(--pgn-color-warning-100);
 }
 
 .pgn__modal-danger .pgn__modal-header {
-  background-color: $danger-100;
+  background-color: var(--pgn-color-danger-100);
 }
 
 .pgn__modal-success .pgn__modal-header {
-  background-color: $success-100;
+  background-color: var(--pgn-color-success-100);
 }
 
 // Modal types
@@ -291,31 +293,31 @@
 
   &.pgn__modal-warning {
     .pgn__alert-modal__title_icon {
-      color: $warning-500;
+      color: var(--pgn-color-warning-500);
     }
   }
 
   &.pgn__modal-success {
     .pgn__alert-modal__title_icon {
-      color: $success-500;
+      color: var(--pgn-color-success-500);
     }
   }
 
   &.pgn__modal-danger {
     .pgn__alert-modal__title_icon {
-      color: $danger-500;
+      color: var(--pgn-color-danger-500);
     }
   }
 
   .pgn__modal-title {
-    font-size: $h4-font-size;
+    font-size: var(--pgn-typography-font-size-h4);
     display: flex;
     flex-grow: 1;
     align-items: center;
 
     .pgn__alert-modal__title_icon {
       flex-shrink: 0;
-      margin-right: map-get($spacers, 2\.5);
+      margin-right: var(--pgn-spacing-spacer-2-5);
     }
   }
 }

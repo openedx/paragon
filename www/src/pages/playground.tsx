@@ -1,7 +1,7 @@
 import { navigate } from 'gatsby';
-import localforage from 'localforage';
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import localforage from 'localforage';
 import { ContentCopy, Check } from '~paragon-icons';
 import {
   Hyperlink,
@@ -34,13 +34,13 @@ export default function Playground({ location }) {
 
   useEffect(() => {
     /**
-     * We want to mirror the iframes url in the parent (aka browser) to support URL sharing.
-     * the iframes onload handler isn't invoked when the iframes url changes so we're polling here instead.
-     */
+         * We want to mirror the iframes url in the parent (aka browser) to support URL sharing.
+         * the iframes onload handler isn't invoked when the iframes url changes so we're polling here instead.
+         */
     const iframeUrlPoll = setInterval(() => {
       if (
         iframeRef?.current?.contentWindow
-        && iframeRef.current.contentWindow.location.search !== searchValue.current
+                && iframeRef.current.contentWindow.location.search !== searchValue.current
       ) {
         searchValue.current = iframeRef.current.contentWindow.location.search;
         navigate(`/playground${searchValue.current}`, { replace: true });

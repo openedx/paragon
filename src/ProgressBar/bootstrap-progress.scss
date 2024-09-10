@@ -1,0 +1,49 @@
+@if $enable-transitions {
+  @keyframes progress-bar-stripes {
+    from { background-position: var(--pgn-size-progress-bar-height-base) 0; }
+    to { background-position: 0 0; }
+  }
+}
+
+.progress {
+  display: flex;
+  height: var(--pgn-size-progress-bar-height-base);
+  overflow: hidden;
+  line-height: 0;
+  background-color: var(--pgn-color-progress-bar-bg);
+  box-shadow: var(--pgn-elevation-progress-bar-box-shadow);
+
+  @include font-size(var(--pgn-typography-progress-bar-font-size));
+  @include border-radius(var(--pgn-size-progress-bar-border-radius));
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--pgn-color-progress-bar-bar-base);
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--pgn-color-progress-bar-bar-bg-base);
+
+  @include transition(var(--pgn-transition-progress-bar-bar-transition));
+}
+
+.progress-bar-striped {
+  @include gradient-striped();
+
+  background-size: var(--pgn-size-progress-bar-height-base) var(--pgn-size-progress-bar-height-base);
+}
+
+@if $enable-transitions {
+  .progress-bar-animated {
+    animation: var(--pgn-transition-progress-bar-bar-animation-timing) progress-bar-stripes;
+
+    @if $enable-prefers-reduced-motion-media-query {
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+    }
+  }
+}

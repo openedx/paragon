@@ -1,0 +1,14 @@
+// OVERRIDE FROM BOOTSTRAP
+// No changes made. We do this to keep all button related mixins together,
+//
+// Button sizes
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $button-border-radius) {
+  padding: $padding-y $padding-x;
+
+  @include font-size($font-size);
+
+  line-height: $line-height;
+
+  // Manually declare to provide an override to the browser default
+  @include border-radius($button-border-radius, 0);
+}

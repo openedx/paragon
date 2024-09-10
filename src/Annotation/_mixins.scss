@@ -1,0 +1,104 @@
+@mixin annotation-triangle($triangle-color, $triangle-direction) {
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: solid transparent;
+
+  @if $triangle-direction == top {
+    border-bottom-color: $triangle-color;
+    border-width: 0 var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width);
+    right: 0;
+    left: 0;
+    top: calc(var(--pgn-size-annotation-arrow-border-width) * -1);
+    margin: 0 auto;
+  }
+
+  @else if $triangle-direction == right {
+    border-left-color: $triangle-color;
+    border-width:
+      var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
+      var(--pgn-size-annotation-arrow-border-width);
+    top: 0;
+    bottom: 0;
+    right: calc(var(--pgn-size-annotation-arrow-border-width) * -1);
+    margin: auto 0;
+  }
+
+  @else if $triangle-direction == bottom {
+    border-top-color: $triangle-color;
+    border-width: var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width) 0;
+    right: 0;
+    left: 0;
+    bottom: calc(var(--pgn-size-annotation-arrow-border-width) * -1);
+    margin: 0 auto;
+  }
+
+  @else if $triangle-direction == left {
+    border-right-color: $triangle-color;
+    border-width:
+      var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
+      var(--pgn-size-annotation-arrow-border-width) 0;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--pgn-size-annotation-arrow-border-width) * -1);
+    margin: auto 0;
+  }
+
+  @else {
+    @error "Unknown direction #{$triangle-direction}.";
+  }
+}
+
+@mixin annotation-variant($bg-color, $text-color, $direction) {
+  background-color: $bg-color;
+  color: $text-color;
+
+  // set additional margin to arrow side of the Annotation
+  margin-#{$direction}:
+    calc(
+      var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin)
+    );
+
+  [dir="rtl"] & {
+    @if $direction == left {
+      margin-left: 0;
+      margin-right:
+        calc(
+          var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin)
+        );
+    }
+
+    @else if $direction == right {
+      margin-right: 0;
+      margin-left:
+        calc(
+          var(--pgn-size-annotation-arrow-border-width) + var(--pgn-spacing-annotation-arrow-side-margin)
+        );
+    }
+  }
+
+  &::after {
+    @include annotation-triangle($bg-color, $direction);
+
+    [dir="rtl"] & {
+      @if $direction == left {
+        left: initial;
+        right: calc(var(--pgn-size-annotation-arrow-border-width) * -1);
+        border-width:
+          var(--pgn-size-annotation-arrow-border-width) 0 var(--pgn-size-annotation-arrow-border-width)
+          var(--pgn-size-annotation-arrow-border-width);
+        border-left-color: $bg-color;
+      }
+
+      @else if $direction == right {
+        right: initial;
+        left: calc(var(--pgn-size-annotation-arrow-border-width) * -1);
+        border-width:
+          var(--pgn-size-annotation-arrow-border-width) var(--pgn-size-annotation-arrow-border-width)
+          var(--pgn-size-annotation-arrow-border-width) 0;
+        border-right-color: $bg-color;
+      }
+    }
+  }
+}

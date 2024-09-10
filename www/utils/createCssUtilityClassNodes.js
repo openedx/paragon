@@ -12,7 +12,7 @@ function createCssUtilityClassNodes({
   // We convert to CSS first since we prefer the real values over tokens.
   const compiledCSS = sass
     .renderSync({
-      file: path.resolve(__dirname, '../../scss/core/utilities-only.scss'),
+      file: path.resolve(__dirname, '../../styles/scss/core/utilities-only.scss'),
       // Resolve tildes the way webpack would in our base npm project
       importer(url) {
         let resolvedUrl = url;
@@ -40,8 +40,8 @@ function createCssUtilityClassNodes({
           ({ property, value }) => `${property}: ${value};`,
         ),
         isUtility:
-                    declarations.length === 1
-                    && declarations[0].value.includes('!important'),
+            declarations.length === 1
+            && declarations[0].value.includes('!important'),
       };
 
       const nodeMeta = {

@@ -1,6 +1,3 @@
-@import "~@edx/brand-edx.org/paragon/fonts";
-@import "variables";
-@import "~@edx/brand-edx.org/paragon/variables";
-@import "~paragon-style/core/core";
-@import "~@edx/brand-edx.org/paragon/overrides";
+@import url("https://cdn.jsdelivr.net/npm/@edx/brand-edx.org@alpha/dist/core.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@edx/brand-edx.org@alpha/dist/light.min.css");
 @import "base";

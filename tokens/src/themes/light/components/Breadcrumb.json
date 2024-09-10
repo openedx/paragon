@@ -1,0 +1,13 @@
+{
+  "color": {
+    "breadcrumb": {
+      "base": { "value": "{color.primary.500}", "type": "color", "source": "$breadcrumb-color" },
+      "active": { "value": "{color.gray.500}", "type": "color", "source": "$breadcrumb-active-color" },
+      "inverse": {
+        "base": { "value": "{color.white}", "type": "color", "source": "$breadcrumb-inverse-color" },
+        "active": { "value": "{color.light.500}", "type": "color", "source": "$breadcrumb-inverse-active" },
+        "spacer": { "value": "{color.light.700}", "type": "color", "source": "$breadcrumb-inverse-spacer" }
+      }
+    }
+  }
+}

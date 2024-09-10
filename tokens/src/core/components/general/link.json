@@ -1,0 +1,30 @@
+{
+  "typography": {
+    "link": {
+      "decoration": {
+        "base": { "value": "none", "type": "textDecoration", "source": "$link-decoration" },
+        "hover": { "value": "underline", "type": "textDecoration", "source": "$link-hover-decoration" },
+        "inline": {
+          "base": { "value": "underline", "type": "textDecoration", "source": "$inline-link-decoration" },
+          "hover": { "value": "underline", "type": "textDecoration", "source": "$inline-link-hover-decoration" }
+        },
+        "muted": {
+          "base": { "value": "none", "type": "textDecoration", "source": "$muted-link-decoration" },
+          "hover": { "value": "underline", "type": "textDecoration", "source": "$muted-link-hover-decoration" },
+          "inline": {
+            "base": { "value": "underline", "type": "textDecoration", "source": "$muted-inline-link-decoration" },
+            "hover": { "value": "underline", "type": "textDecoration", "source": "$muted-inline-link-hover-decoration" }
+          }
+        },
+        "brand": {
+          "base": { "value": "none", "type": "textDecoration", "source": "$brand-link-decoration" },
+          "hover": { "value": "underline", "type": "textDecoration", "source": "$brand-link-hover-decoration" },
+          "inline": {
+            "base": { "value": "underline", "type": "textDecoration", "source": "$brand-inline-link-decoration" },
+            "hover": { "value": "underline", "type": "textDecoration", "source": "$brand-inline-link-hover-decoration" }
+          }
+        }
+      }
+    }
+  }
+}
