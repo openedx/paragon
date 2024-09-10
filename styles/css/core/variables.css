@@ -90,7 +90,7 @@
   --pgn-typography-font-size-micro: 0.688rem; /* Micro utils text font size. */
   --pgn-typography-font-size-xs: 0.75rem; /* X-small font size. */
   --pgn-typography-font-size-sm: 0.875rem; /* Small font size. */
-  --pgn-typography-font-size-lg: var(--pgn-typography-font-size-base) * 1.25; /* Lead text font size. */
+  --pgn-typography-font-size-lg: calc(var(--pgn-typography-font-size-base) * 1.25); /* Lead text font size. */
   --pgn-typography-font-size-base: 1.125rem; /* Base font size. */
   --pgn-typography-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; /* Monospace font family. */
   --pgn-typography-font-family-serif: serif; /* Serif font family. */
@@ -162,7 +162,7 @@
   --pgn-typography-dropdown-font-size: var(--pgn-typography-font-size-base);
   --pgn-typography-code-kbd-nested-font-weight: var(--pgn-typography-font-weight-bold);
   --pgn-typography-code-kbd-font-size: var(--pgn-typography-code-font-size);
-  --pgn-typography-code-font-size: 87.5%;
+  --pgn-typography-code-font-size: var(--pgn-typography-font-size-sm);
   --pgn-typography-close-button-font-weight: var(--pgn-typography-font-weight-bold);
   --pgn-typography-close-button-font-size: calc(var(--pgn-typography-font-size-base) * 1.5);
   --pgn-typography-footer-text-font-size: var(--pgn-typography-font-size-xs);

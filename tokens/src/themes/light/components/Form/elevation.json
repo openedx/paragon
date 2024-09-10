@@ -47,12 +47,11 @@
               "$value": [
                 {
                   "color": "{color.body.bg}",
-                  "spread": "1px",
+                  "spread": "0",
                   "offsetX": "0",
-                  "offsetY": "0",
-                  "blur": "0"
-                },
-                "{size.form.input.width.focus}"
+                  "offsetY": ".1rem",
+                  "blur": ".25rem"
+                }
               ]
             }
           }

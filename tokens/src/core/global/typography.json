@@ -35,7 +35,7 @@
         },
         "lg": {
           "source": "$lead-font-size",
-          "$value": "{typography.font.size.base} * 1.25",
+          "$value": "calc({typography.font.size.base} * 1.25)",
           "$description": "Lead text font size."
         },
         "sm": {
