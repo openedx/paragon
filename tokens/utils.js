@@ -2,6 +2,140 @@ const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
 
+const visitedTokens = {};
+
+/**
+ * Finds a token by its path in the token tree.
+ * @param {string} path - The path to the token in the token tree.
+ * @returns {DesignToken} - The token object found at the specified path.
+ */
+function findTokenByPath(tokenPath, allTokens) {
+  const keys = tokenPath.split('.');
+  return keys.reduce((acc, key) => acc && acc[key], allTokens);
+}
+
+/**
+ * @typedef {object} ExtensionProperty
+ * @property {string} name - The name of the extension property.
+ * @property {(token: DesignToken) => boolean} filter - The filter function to determine
+ * if the token should be annotated.
+ * @property {(token: DesignToken) => boolean} referenceTokenFilter - The filter function to determine if
+ * the referenced token should be annotated.
+ */
+
+/**
+ * @typedef {object} AnnotateReferencedTokenExtensionsArgs
+ * @property {DesignToken} token - The token object to annotate.
+ * @property {ExtensionProperty[]} extensionProperties - The properties to annotate the referenced token with.
+ * @property {object} sdUtils - The Style Dictionary utility functions.
+ */
+
+/**
+ * Annotates referenced token $extensions with the specified properties.
+ * @param {AnnotateReferencedTokenExtensionsArgs} args - The arguments object.
+ */
+function annotateReferencedTokenExtensions({
+  token,
+  extensionProperties,
+  sdUtils,
+  dictionary,
+}) {
+  const stack = [token]; // Stack to process tokens iteratively
+
+  while (stack.length > 0) {
+    const currentToken = stack.pop();
+
+    // Get all references for the current token
+    const references = sdUtils.getReferences(currentToken, dictionary);
+    extensionProperties.forEach(({ name: propertyName, filter: propertyFilter, referenceTokenFilter }) => {
+      if (!propertyFilter(token)) {
+        // Skip processing if the token does not match the filter for the property
+        return;
+      }
+
+      // Iterate over each reference and mark the referenced token
+      references.forEach((foundReference) => {
+        const foundReferenceTokenPath = foundReference.ref.join('.');
+        if (visitedTokens[propertyName]?.has(foundReferenceTokenPath)) {
+          // Skip processing if the referenced token has already been marked
+          return;
+        }
+
+        if (!referenceTokenFilter?.(foundReference)) {
+          // Filter the reference tokens to only include the ones that match the filter
+          return;
+        }
+
+        // Directly access the referenced token from the returned reference object
+        const referencedToken = findTokenByPath(foundReferenceTokenPath, dictionary);
+        if (!referencedToken) {
+          return;
+        }
+
+        // Mark the referenced token
+        referencedToken.$extensions = {
+          ...referencedToken.$extensions,
+          'org.openedx.paragon': {
+            ...referencedToken.$extensions?.['org.openedx.paragon'],
+            [propertyName]: true,
+          },
+        };
+
+        visitedTokens[propertyName].add(foundReferenceTokenPath);
+
+        if (sdUtils.usesReferences(referencedToken)) {
+          // Push the referenced token to the stack to process its references
+          stack.push(referencedToken);
+        }
+      });
+    });
+  }
+}
+
+/**
+ * Processes and updates tokens in place by annotating referenced tokens with extension properties.
+ * @typedef {object} ProcessAndUpdateTokensArgs
+ * @property {object} tokens - The tokens object to process.
+ * @property {ExtensionProperty[]} extensionProperties - The properties to annotate the referenced token with.
+ * @property {object} sdUtils - The Style Dictionary utility functions.
+ */
+function processAndUpdateTokens(tokens, extensionProperties, sdUtils, dictionary) {
+  Object.keys(tokens).forEach(async (key) => {
+    const token = tokens[key];
+    if (typeof token !== 'object') {
+      // Skip non-object tokens
+      return;
+    }
+
+    // If this is a group (nested tokens), recurse into it
+    if (!Object.prototype.hasOwnProperty.call(token, '$value')) {
+      processAndUpdateTokens(token, extensionProperties, sdUtils, dictionary);
+    } else if (sdUtils.usesReferences(token)) {
+      // Initialize the visited tokens for each extension property
+      extensionProperties.forEach((property) => {
+        visitedTokens[property.name] = new Set();
+      });
+
+      // If the token uses reference(s), update the referenced token(s) $extensions metadata.
+      annotateReferencedTokenExtensions({
+        token,
+        extensionProperties,
+        sdUtils,
+        dictionary,
+      });
+    }
+  });
+}
+
+/**
+ * Recursively retrieves files with a specific extension from a given directory.
+ *
+ * @param {string} location - The path to the directory or file to start the search.
+ * @param {string} extension - The file extension to search for (e.g., '.js', '.css').
+ * @param {string[]} [files=[]] - An array to accumulate the file paths that match the extension.
+ * @param {string[]} [excludeDirectories=[]] - An array of directory names to exclude from the search.
+ * @returns {string[]} - An array of file paths that have the specified extension.
+ */
 function getFilesWithExtension(location, extension, files = [], excludeDirectories = []) {
   const content = fs.statSync(location);
   if (content.isDirectory()) {
@@ -17,6 +151,14 @@ function getFilesWithExtension(location, extension, files = [], excludeDirectori
   return files;
 }
 
+/**
+ * Generates a mapping of SCSS variables to corresponding CSS variables.
+ *
+ * @param {string} prefix - The prefix used to build the CSS variable names (e.g., '--my-prefix').
+ * @param {Object} tokensObject - The object representing the design tokens, which may be nested.
+ * @param {Object} result - The object where the mapping of SCSS to CSS variables will be stored.
+ * @returns {Object} - The `result` object containing the SCSS-to-CSS variable mappings.
+ */
 function getSCSStoCSSMap(prefix, tokensObject, result) {
   Object.entries(tokensObject).forEach(([node, value]) => {
     if (value?.constructor.name === 'Object') {
@@ -30,6 +172,16 @@ function getSCSStoCSSMap(prefix, tokensObject, result) {
   return result;
 }
 
+/**
+ * Replaces variable usage in a file based on a provided mapping and direction.
+ *
+ * @param {string} filePath - The path to the file where variables should be replaced.
+ * @param {Object} variablesMap - A map of variables to their replacement values.
+ * @param {string} [direction='scss-to-css'] - The direction of the replacement, either `scss-to-css` or `css-to-scss`.
+ * - `scss-to-css`: Replaces SCSS variables (e.g., `$some-variable`) with CSS variables.
+ * - `css-to-scss`: Replaces CSS variables (e.g., `var(--some-variable)`) with SCSS variables.
+ * @returns {Promise<void>} - A promise that resolves when the file has been successfully processed and written.
+ */
 async function replaceVariablesUsage(filePath, variablesMap, direction = 'scss-to-css') {
   let variableRegex;
   let result = '';
@@ -162,8 +314,17 @@ async function transformInPath(location, variablesMap, transformType = 'definiti
   }
 }
 
-function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'), isTheme, themeVariant }) {
-  const directoryPath = isTheme ? `${buildDir}/themes/${themeVariant}` : `${buildDir}/core`;
+/**
+ * Creates an `index.css` file that imports all other CSS files in a directory.
+ *
+ * @param {Object} options - The options for creating the `index.css` file.
+ * @param {string} [options.buildDir=path.resolve(__dirname, '../styles/css')]
+ * - The base directory where the CSS files are located.
+ * @param {boolean} options.isThemeVariant - A flag indicating whether the directory is for theme files.
+ * @param {string} options.themeVariant - The specific theme variant to be used (e.g., 'dark', 'light').
+ */
+function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'), isThemeVariant, themeVariant }) {
+  const directoryPath = isThemeVariant ? `${buildDir}/themes/${themeVariant}` : `${buildDir}/core`;
 
   fs.readdir(directoryPath, (errDir, files) => {
     if (errDir) {
@@ -175,7 +336,7 @@ function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'
     const outputCssFiles = files.filter(file => file !== 'index.css');
     // When creating themes, there are typically two files: one for utility classes and one for variables.
     // It's organized them to allow variables be reading first.
-    if (isTheme) { outputCssFiles.reverse(); }
+    if (isThemeVariant) { outputCssFiles.reverse(); }
 
     const exportStatements = outputCssFiles.map((file) => `@import "${file}";`);
 
@@ -207,4 +368,5 @@ module.exports = {
   getSCSStoCSSMap,
   transformInPath,
   composeBreakpointName,
+  processAndUpdateTokens,
 };

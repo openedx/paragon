@@ -86,9 +86,19 @@ const COMMANDS = {
         defaultValue: false,
       },
       {
+        name: '--output-references',
+        description: 'Include references in the build output.',
+        defaultValue: true,
+      },
+      {
         name: '-t, --themes',
         description: 'Specify themes to include in the token build.',
         defaultValue: 'light',
+      },
+      {
+        name: '-v, --verbose',
+        description: 'Enable verbose logging.',
+        defaultValue: false,
       },
     ],
   },

@@ -1,11 +1,23 @@
 @import "~bootstrap/scss/type";
 
 @mixin mobile-type {
-  .display-1,
-  .display-2,
-  .display-3,
+  .display-1 {
+    font-size: $display1-mobile-size;
+    line-height: $display-mobile-line-height;
+  }
+
+  .display-2 {
+    font-size: $display2-mobile-size;
+    line-height: $display-mobile-line-height;
+  }
+
+  .display-3 {
+    font-size: $display3-mobile-size;
+    line-height: $display-mobile-line-height;
+  }
+
   .display-4 {
-    font-size: $display-mobile-size;
+    font-size: $display4-mobile-size;
     line-height: $display-mobile-line-height;
   }
 

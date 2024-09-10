@@ -7,13 +7,21 @@ import { MobileMeasuredCell, ClassNameCell, DesktopMeasuredCell } from '../Table
 const headingSizes = [1, 2, 3, 4, 5, 6];
 
 export default function Headings() {
+  const headingSizesTableData = headingSizes.map((size) => ({ text: `Heading ${size}`, className: `h${size}` }));
+  const tableData = [
+    ...headingSizesTableData,
+    {
+      text: 'Heading Label',
+      className: 'heading-label',
+    },
+  ];
   return (
     <>
       <h2 className="mb-2">Headings</h2>
       <div className="mb-4">
         <DataTable
-          itemCount={6}
-          data={headingSizes.map((size) => ({ text: `Heading ${size}`, className: `h${size}` }))}
+          itemCount={tableData.length}
+          data={tableData}
           columns={[
             {
               Header: 'Desktop',

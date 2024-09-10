@@ -88,7 +88,7 @@
   }
 
   #pgn__checkpoint-title {
-    font-size: var(--pgn-typography-font-size-h3);
+    font-size: var(--pgn-typography-font-size-h3-base);
     margin-inline-end: map_get($spacers, 2\.5);
     margin-bottom: 0;
   }

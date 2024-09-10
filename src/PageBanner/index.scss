@@ -4,12 +4,12 @@
   min-height: 36px;
   display: flex;
   flex-wrap: nowrap;
-  font-size: var(--pgn-typography-font-size-small-x);
+  font-size: var(--pgn-typography-font-size-xs);
   background-color: var(--pgn-page-baner-bg, inherit);
   color: var(--pgn-page-baner-color, inherit);
 
   @include media-breakpoint-up(md) {
-    font-size: var(--pgn-typography-font-size-small-base);
+    font-size: var(--pgn-typography-font-size-sm);
   }
 }
 

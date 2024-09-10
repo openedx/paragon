@@ -13,9 +13,12 @@ const weightLabels: Record<string, string> = {
 const measuredTypeProps = {
   properties: ['font-size', 'line-height', 'font-family', 'font-weight'],
   renderAfter: (measurements: { [x: string]: string; }) => {
-    const fontFamily = measurements['font-family']
-      ? measurements['font-family'].split(',')[0]
-      : null;
+    if (!measurements || Object.keys(measurements).length === 0) {
+      return (
+        <p className="m-0 text-muted">&nbsp;</p>
+      );
+    }
+    const fontFamily = measurements['font-family']?.split(',')[0];
     const weight = weightLabels[measurements['font-weight']];
     // only one significant digit if needed
     const fontSize = Math.round(Number.parseFloat(measurements['font-size']) * 10) / 10;

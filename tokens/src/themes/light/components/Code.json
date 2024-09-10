@@ -1,22 +1,20 @@
 {
   "color": {
+    "$type": "color",
     "code": {
-      "base": { "value": "#E83E8C", "type": "color", "source": "$code-color" },
+      "base": { "source": "$code-color", "$value": "#E83E8C" },
       "kbd": {
-        "base": { "value": "{color.white}", "type": "color", "source": "$kbd-color" },
-        "bg": { "value": "{color.gray.700}", "type": "color", "source": "$kbd-bg" }
+        "base": { "source": "$kbd-color", "$value": "{color.white}" },
+        "bg": { "source": "$kbd-bg", "$value": "{color.gray.700}" }
       },
-      "pre": { "value": "{color.gray.900}", "type": "color", "source": "$pre-color" }
+      "pre": { "source": "$pre-color", "$value": "{color.gray.900}" }
     }
   },
   "elevation": {
+    "$type": "shadow",
     "code": {
       "kbd": {
-        "box-shadow": {
-          "value": "none",
-          "type": "shadow",
-          "source": "$kbd-box-shadow"
-        }
+        "box-shadow": { "source": "$kbd-box-shadow", "$value": "none" }
       }
     }
   }

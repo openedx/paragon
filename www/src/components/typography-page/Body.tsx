@@ -1,11 +1,11 @@
 import React from 'react';
 import { DataTable } from '~paragon-react';
 
-import { DesktopMeasuredCell, ClassNameCell } from '../TableCells';
+import { DesktopMeasuredCell, ClassNameCell, ClassNameRowType } from '../TableCells';
 
-const bodyClassesAndDescriptions = [
+const bodyClassesAndDescriptions: ClassNameRowType[] = [
   { className: 'lead', text: 'Large Body' },
-  { className: '', text: 'Body' },
+  { className: 'font-size-normal', text: 'Body', hasClass: false },
   { className: 'small', text: 'Small Body' },
   { className: 'x-small', text: 'Extra Small Body' },
   { className: 'micro', text: 'Micro Body' },
@@ -17,7 +17,7 @@ export default function Body() {
       <h2 className="mb-2">Body</h2>
       <div className="mb-4">
         <DataTable
-          itemCount={5}
+          itemCount={bodyClassesAndDescriptions.length}
           data={bodyClassesAndDescriptions}
           columns={[
             {

@@ -51,11 +51,14 @@
     "playroom:build": "npm run playroom:build --workspace=www",
     "prepare": "husky || true",
     "build-tokens": "./bin/paragon-scripts.js build-tokens --build-dir ./styles/css",
+    "build-tokens:watch": "npx nodemon --ignore styles/css -x \"npm run build-tokens\"",
     "replace-variables-usage-with-css": "./bin/paragon-scripts.js replace-variables -p src -t usage",
-    "replace-variables-definition-with-css": "./bin/paragon-scripts.js replace-variables -p src -t definition"
+    "replace-variables-definition-with-css": "./bin/paragon-scripts.js replace-variables -p src -t definition",
+    "cli:help": "./bin/paragon-scripts.js help"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.4",
+    "@tokens-studio/sd-transforms": "^1.2.4",
     "axios": "^0.27.2",
     "bootstrap": "^4.6.2",
     "chalk": "^4.1.2",
@@ -93,7 +96,7 @@
     "react-table": "^7.7.0",
     "react-transition-group": "^4.4.2",
     "sass": "^1.58.3",
-    "style-dictionary": "^3.7.1",
+    "style-dictionary": "^4.0.1",
     "tabbable": "^5.3.3",
     "uncontrollable": "^7.2.1",
     "uuid": "^9.0.0"
@@ -114,7 +117,7 @@
     "@babel/preset-typescript": "^7.16.7",
     "@edx/eslint-config": "^3.2.0",
     "@edx/stylelint-config-edx": "^2.3.0",
-    "@edx/typescript-config": "^1.0.1",
+    "@edx/typescript-config": "^1.1.0",
     "@formatjs/cli": "^5.0.2",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",

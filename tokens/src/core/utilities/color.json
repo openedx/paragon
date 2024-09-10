@@ -2,11 +2,42 @@
   "utilities": [
     {
       "filters": {
-        "category": ["color"],
-        "type": ["gray", "primary", "secondary", "brand", "success", "info", "warning", "danger", "light", "dark", "accent"],
-        "item": ["base","100", "200", "300", "400", "500", "600", "700", "800", "900", "a", "b"]
+        "category": [
+          "color"
+        ],
+        "type": [
+          "gray",
+          "primary",
+          "secondary",
+          "brand",
+          "success",
+          "info",
+          "warning",
+          "danger",
+          "light",
+          "dark",
+          "accent"
+        ],
+        "item": [
+          "base",
+          "100",
+          "200",
+          "300",
+          "400",
+          "500",
+          "600",
+          "700",
+          "800",
+          "900",
+          "a",
+          "b"
+        ]
       },
-      "utilityFunctionsToApply": ["bgVariant", "textEmphasisVariant", "borderColor"]
+      "utilityFunctionsToApply": [
+        "bgVariant",
+        "textEmphasisVariant",
+        "borderColor"
+      ]
     }
   ]
 }

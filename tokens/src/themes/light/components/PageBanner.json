@@ -1,23 +1,24 @@
 {
   "color": {
+    "$type": "color",
     "page-banner": {
       "bg": {
-        "dark": { "value": "{color.dark.500}", "type": "color" },
-        "light": { "value": "{color.light.400}", "type": "color" },
+        "dark": { "$value": "{color.dark.500}" },
+        "light": { "$value": "{color.light.400}" },
         "accent": {
-          "a": { "value": "{color.accent.a}", "type": "color" },
-          "b": { "value": "{color.accent.b}", "type": "color" }
+          "a": { "$value": "{color.accent.a}" },
+          "b": { "$value": "{color.accent.b}" }
         },
-        "warning": { "value": "{color.warning.100}", "type": "color" }
+        "warning": { "$value": "{color.warning.100}" }
       },
       "text": {
-        "dark": { "value": "{color.white}", "type": "color" },
-        "light": { "value": "{color.black}", "type": "color" },
+        "dark": { "$value": "{color.white}" },
+        "light": { "$value": "{color.black}" },
         "accent": {
-          "a": { "value": "{color.black}", "type": "color" },
-          "b": { "value": "{color.black}", "type": "color" }
+          "a": { "$value": "{color.black}" },
+          "b": { "$value": "{color.black}" }
         },
-        "warning": { "value": "{color.black}", "type": "color" }
+        "warning": { "$value": "{color.black}" }
       }
     }
   }

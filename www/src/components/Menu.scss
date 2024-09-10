@@ -7,7 +7,7 @@
   border-right: var(--pgn-size-border-width) solid var(--pgn-color-light-400);
 
   .pgn-doc__menu-title {
-    font-size: var(--pgn-typography-font-size-h4);
+    font-size: var(--pgn-typography-font-size-h4-base);
     line-height: var(--pgn-typography-line-height-base);
     font-weight: var(--pgn-typography-font-weight-normal);
     color: var(--pgn-color-gray-700);
@@ -24,7 +24,7 @@
 
       .btn {
         width: 50%;
-        font-size: var(--pgn-typography-font-size-xs);
+        font-size: var(--pgn-typography-font-size-sm);
         line-height: var(--pgn-typography-headings-line-height);
       }
     }

@@ -1,3 +1,4 @@
+.PHONY: build
 build:
 	rm -rf ./dist
 	tsc --project tsconfig.build.json

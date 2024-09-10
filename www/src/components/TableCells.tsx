@@ -6,6 +6,18 @@ export type CodeCellType = {
   value: string | number | undefined,
 };
 
+export type ClassNameRowType = {
+  className: string | undefined,
+  text: string,
+  hasClass?: boolean,
+};
+
+export type ClassNameCellType = {
+  row: {
+    original: ClassNameRowType,
+  },
+} & CodeCellType;
+
 export type DataTableRowType = {
   row: {
     original: {
@@ -17,13 +29,17 @@ export type DataTableRowType = {
   },
 };
 
-export function ClassNameCell({ value }: CodeCellType) {
+export function ClassNameCell({ row, value }: ClassNameCellType) {
+  if (row.original.hasClass === false) {
+    return null;
+  }
+
   if (!value) {
     return null;
   }
 
   return (
-    <code className="fs-16">
+    <code className="font-size-normal">
       .{value}
     </code>
   );
@@ -31,7 +47,7 @@ export function ClassNameCell({ value }: CodeCellType) {
 
 export function TextCell({ value }: CodeCellType) {
   return (
-    <p className="m-0 fs-16">
+    <p className="m-0 font-size-normal">
       {value}
     </p>
   );
@@ -39,7 +55,7 @@ export function TextCell({ value }: CodeCellType) {
 
 export function CodeCell({ value }: CodeCellType) {
   return (
-    <code className="fs-16">
+    <code className="font-size-normal">
       {value}
     </code>
   );
@@ -69,7 +85,7 @@ export function MobileMeasuredCell({ row } : DataTableRowType) {
 
 export function StyleCell({ row } : DataTableRowType) {
   return (
-    <p className={`fs-16 ${row.original.className}`}>
+    <p className={`font-size-normal ${row.original.className}`}>
       {row.original.text}
     </p>
   );
