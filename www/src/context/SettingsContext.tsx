@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { IntlProvider } from 'react-intl';
-import { messages } from '~paragon-react';
+import { messages, type ContainerSize } from '~paragon-react';
 
 import { THEMES, DEFAULT_THEME } from '../../theme-config';
 import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
@@ -12,7 +12,7 @@ export interface IDefaultValue {
     theme?: string,
     direction?: string,
     language?: string,
-    containerWidth?: string,
+    containerWidth?: ContainerSize,
   },
   theme?: string,
   handleSettingsChange: Function,
@@ -35,7 +35,7 @@ function SettingsContextProvider({ children }) {
     theme: DEFAULT_THEME,
     direction: 'ltr',
     language: 'en',
-    containerWidth: 'md',
+    containerWidth: 'md' as ContainerSize,
   });
   const [showSettings, setShowSettings] = useState(false);
 
