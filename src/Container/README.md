@@ -19,6 +19,10 @@ The base container to contain, pad, and center content in the viewport. This com
 ```jsx live
 <div style={{ overflowX: 'auto' }}>
     <div style={{ width: '1500px', border: 'solid 3px red' }}>
+        <Container className="bg-danger-300 my-4">
+          The content in this container doesn't have a max width
+        </Container>
+        
         <Container size="xl" className="bg-danger-300 my-4">
           The content in this container won't exceed the extra large width.
         </Container>
