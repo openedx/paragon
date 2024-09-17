@@ -5,15 +5,7 @@
   background-color: var(--pgn-color-toast-bg);
   background-clip: padding-box;
   border: var(--pgn-size-toast-border-width) solid var(--pgn-color-toast-border);
-  box-shadow:
-    var(--pgn-elevation-toast-box-shadow-1-offset-x)
-    var(--pgn-elevation-toast-box-shadow-1-offset-y)
-    var(--pgn-elevation-toast-box-shadow-1-blur)
-    var(--pgn-elevation-toast-box-shadow-1-color),
-    var(--pgn-elevation-toast-box-shadow-2-offset-x)
-    var(--pgn-elevation-toast-box-shadow-2-offset-y)
-    var(--pgn-elevation-toast-box-shadow-2-blur)
-    var(--pgn-elevation-toast-box-shadow-2-color);
+  box-shadow: var(--pgn-elevation-toast-box-shadow);
   opacity: 0;
 
   @include font-size(var(--pgn-typography-toast-font-size));

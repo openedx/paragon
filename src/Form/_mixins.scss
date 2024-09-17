@@ -1,3 +1,12 @@
+:root {
+  --pgn-elevation-form-input-focus:
+    var(--pgn-elevation-form-input-focus-offset-x)
+    var(--pgn-elevation-form-input-focus-offset-y)
+    var(--pgn-elevation-form-input-focus-blur)
+    var(--pgn-elevation-form-input-focus-spread)
+    var(--pgn-elevation-form-input-focus-color);
+}
+
 @mixin form-control-floating-label-initial(
   $padding-x,
   $padding-y,
@@ -50,12 +59,7 @@
     background-color: var(--pgn-color-form-input-focus-bg);
     border-color: var(--pgn-color-form-input-focus-border);
     outline: 0;
-    box-shadow:
-      var(--pgn-elevation-form-input-focus-offset-x)
-      var(--pgn-elevation-form-input-focus-offset-y)
-      var(--pgn-elevation-form-input-focus-blur)
-      var(--pgn-elevation-form-input-focus-spread)
-      var(--pgn-elevation-form-input-focus-color);
+    box-shadow: var(--pgn-elevation-form-input-focus);
   }
 
   @include deprecate("The `form-control-focus()` mixin", "v4.4.0", "v5", $ignore-warning);

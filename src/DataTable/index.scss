@@ -1,12 +1,16 @@
-.pgn__data-table-wrapper {
-  font-size: var(--pgn-typography-font-size-sm);
-  border-radius: var(--pgn-size-border-radius-base);
-  background-color: var(--pgn-color-data-table-bg-base);
-  box-shadow:
+:root {
+  --pgn-elevation-data-table-box-shadow:
     var(--pgn-elevation-data-table-box-shadow-offset-x)
     var(--pgn-elevation-data-table-box-shadow-offset-y)
     var(--pgn-elevation-data-table-box-shadow-blur)
     var(--pgn-elevation-data-table-box-shadow-color);
+}
+
+.pgn__data-table-wrapper {
+  font-size: var(--pgn-typography-font-size-sm);
+  border-radius: var(--pgn-size-border-radius-base);
+  background-color: var(--pgn-color-data-table-bg-base);
+  box-shadow: var(--pgn-elevation-data-table-box-shadow);
 
   &.hide-shadow {
     box-shadow: none;
@@ -97,12 +101,7 @@
   .pgn__data-table-layout-sidebar {
     background-color: var(--pgn-color-data-table-bg-base);
     border-radius: var(--pgn-size-border-radius-base);
-    box-shadow:
-      var(--pgn-elevation-data-table-box-shadow-offset-x)
-      var(--pgn-elevation-data-table-box-shadow-offset-y)
-      var(--pgn-elevation-data-table-box-shadow-blur)
-      var(--pgn-elevation-data-table-box-shadow-color);
-    padding: var(--pgn-spacing-data-table-padding-small);
+    box-shadow: var(--pgn-elevation-data-table-box-shadow);
     margin-right: var(--pgn-spacing-spacer-4);
     flex: 0 0 var(--pgn-size-data-table-layout-sidebar-width);
   }
@@ -294,15 +293,7 @@
 .pgn__data-table__overflow-actions-menu {
   background: var(--pgn-color-white);
   padding: var(--pgn-spacing-spacer-2);
-  box-shadow:
-    var(--pgn-elevation-box-shadow-level-1-1-offset-y)
-    var(--pgn-elevation-box-shadow-level-1-1-offset-x)
-    var(--pgn-elevation-box-shadow-level-1-1-blur)
-    var(--pgn-elevation-box-shadow-level-1-1-color),
-    var(--pgn-elevation-box-shadow-level-1-2-offset-y)
-    var(--pgn-elevation-box-shadow-level-1-2-offset-x)
-    var(--pgn-elevation-box-shadow-level-1-2-blur)
-    var(--pgn-elevation-box-shadow-level-1-2-color);
+  box-shadow: var(--pgn-elevation-box-shadow-level-1);
   border-radius: 4px;
 }
 

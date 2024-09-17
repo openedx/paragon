@@ -1,8 +1,7 @@
 @import "bootstrap-toast";
 
-.toast {
-  background-color: var(--pgn-color-toast-bg);
-  box-shadow:
+:root {
+  --pgn-elevation-toast-box-shadow:
     var(--pgn-elevation-toast-box-shadow-1-offset-x)
     var(--pgn-elevation-toast-box-shadow-1-offset-y)
     var(--pgn-elevation-toast-box-shadow-1-blur)
@@ -11,6 +10,11 @@
     var(--pgn-elevation-toast-box-shadow-2-offset-y)
     var(--pgn-elevation-toast-box-shadow-2-blur)
     var(--pgn-elevation-toast-box-shadow-2-color);
+}
+
+.toast {
+  background-color: var(--pgn-color-toast-bg);
+  box-shadow: var(--pgn-elevation-toast-box-shadow);
   margin: 0;
   padding: 1rem;
   position: relative;

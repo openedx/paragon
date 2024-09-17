@@ -279,15 +279,7 @@
       height: auto;
 
       &:focus {
-        box-shadow:
-          var(--pgn-elevation-box-shadow-level-4-1-offset-y)
-          var(--pgn-elevation-box-shadow-level-4-1-offset-x)
-          var(--pgn-elevation-box-shadow-level-4-1-blur)
-          var(--pgn-elevation-box-shadow-level-4-1-color),
-          var(--pgn-elevation-box-shadow-level-4-2-offset-y)
-          var(--pgn-elevation-box-shadow-level-4-2-offset-x)
-          var(--pgn-elevation-box-shadow-level-4-2-blur)
-          var(--pgn-elevation-box-shadow-level-4-2-color);
+        box-shadow: var(--pgn-elevation-box-shadow-level-4);
         border-radius: var(--pgn-size-border-radius-base);
       }
 
