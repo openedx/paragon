@@ -3,7 +3,9 @@
     "$type": "color",
     "progress-bar": {
       "bg": { "source": "$progress-bg", "$value": "transparent" },
-      "border": { "source": "$progress-bar-border-color", "$value": "{color.gray.500}" },
+      "border": { "source": "$progress-bar-border-color", "$value": "{color.gray.500}" }
+    },
+    "progress": {
       "bar": {
         "base": { "source": "$progress-bar-color", "$value": "{color.white}" },
         "bg": {

@@ -5,7 +5,10 @@
 
 :root {
   --pgn-border-color-nav-tabs-link-border-focus: var(--pgn-color-nav-tabs-base-link-active-text);
-  --pgn-border-color-nav-tabs-link-border-hover: transparent transparent var(--pgn-color-nav-tabs-base-border-base);
+  --pgn-border-color-nav-tabs-link-border-hover-left: transparent;
+  --pgn-border-color-nav-tabs-link-border-hover-bottom: var(--pgn-color-nav-tabs-base-border-base);
+  --pgn-border-color-nav-tabs-link-border-hover-right: transparent;
+  --pgn-border-color-nav-tabs-link-border-hover-top: transparent;
   --pgn-border-color-nav-tabs-link-border-active: var(--pgn-color-primary-500);
   --pgn-content-navbar-toggler-light-icon-bg: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%2300000080' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --pgn-content-navbar-toggler-dark-icon-bg: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23FFFFFF80' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -303,9 +306,9 @@
   --pgn-color-search-field-border-focus: var(--pgn-color-black);
   --pgn-color-search-field-border-interaction: var(--pgn-color-black);
   --pgn-color-search-field-border-base: var(--pgn-color-gray-500);
-  --pgn-color-progress-bar-bar-bg-annotated: var(--pgn-color-dark-500);
-  --pgn-color-progress-bar-bar-bg-base: var(--pgn-color-accent-a);
-  --pgn-color-progress-bar-bar-base: var(--pgn-color-white);
+  --pgn-color-progress-bar-bg-annotated: var(--pgn-color-dark-500);
+  --pgn-color-progress-bar-bg-base: var(--pgn-color-accent-a);
+  --pgn-color-progress-bar-base: var(--pgn-color-white);
   --pgn-color-progress-bar-border: var(--pgn-color-gray-500);
   --pgn-color-progress-bar-bg: #00000000;
   --pgn-color-product-tour-checkpoint-arrow-border-transparent: #00000000;
@@ -1518,7 +1521,12 @@
   --pgn-other-modal-opacity: .5;
   --pgn-other-content-form-feedback-icon-invalid: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23C32D3AFF' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23C32D3AFF' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
   --pgn-other-content-form-feedback-icon-valid: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23178253FF' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
-  --pgn-other-content-form-control-select-bg: var(--pgn-other-content-form-control-select-indicator-icon) no-repeat right var(--pgn-spacing-form-input-padding-y-base) center / var(--pgn-color-form-control-select-bg-base);
+  --pgn-other-content-form-control-select-bg-position-y: center;
+  --pgn-other-content-form-control-select-bg-offset-y: var(--pgn-spacing-form-input-padding-y-base);
+  --pgn-other-content-form-control-select-bg-position-x: right;
+  --pgn-other-content-form-control-select-bg-repeat: no-repeat;
+  --pgn-other-content-form-control-select-bg-image: var(--pgn-other-content-form-control-select-indicator-icon);
+  --pgn-other-content-form-control-select-bg-color: var(--pgn-color-form-control-select-bg-base);
   --pgn-other-content-form-control-select-indicator-icon: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.58984L12 13.1698L7.41 8.58984L6 9.99984L12 15.9998L18 9.99984L16.59 8.58984Z" fill="%23454545FF"/></svg>');
   --pgn-other-content-form-control-switch-indicator-icon-on: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23FFFFFFFF'/%3e%3c/svg%3e");
   --pgn-other-content-form-control-switch-indicator-icon-off: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%230A3055FF'/%3e%3c/svg%3e");

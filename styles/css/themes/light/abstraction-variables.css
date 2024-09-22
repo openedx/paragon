@@ -1,4 +1,7 @@
 :root {
+  /**
+   * ELEVATION
+   */
   --pgn-elevation-box-shadow-level-1:
     var(--pgn-elevation-box-shadow-level-1-1-offset-x)
     var(--pgn-elevation-box-shadow-level-1-1-offset-y)

@@ -21,7 +21,13 @@
         "x": { "source": "$data-table-padding-x", "$value": ".75rem" },
         "y": { "source": "$data-table-padding-y", "$value": ".75rem" },
         "small": { "source": "$data-table-padding-small", "$value": ".5rem" },
-        "cell": { "source": "$data-table-cell-padding", "$value": ".5rem .75rem" }
+        "cell": {
+          "source": "$data-table-cell-padding",
+          "$value": {
+            "x": ".5rem",
+            "y": ".75rem"
+          }
+        }
       },
       "footer-position": { "source": "$data-table-footer-position", "$value": "center", "$type": "position" }
     }

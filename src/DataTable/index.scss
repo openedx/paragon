@@ -4,6 +4,10 @@
     var(--pgn-elevation-data-table-box-shadow-offset-y)
     var(--pgn-elevation-data-table-box-shadow-blur)
     var(--pgn-elevation-data-table-box-shadow-color);
+
+  --pgn-spacing-data-table-padding-cell:
+    var(--pgn-spacing-data-table-padding-cell-x)
+    var(--pgn-spacing-data-table-padding-cell-y);
 }
 
 .pgn__data-table-wrapper {
@@ -102,6 +106,7 @@
     background-color: var(--pgn-color-data-table-bg-base);
     border-radius: var(--pgn-size-border-radius-base);
     box-shadow: var(--pgn-elevation-data-table-box-shadow);
+    padding: var(--pgn-spacing-data-table-padding-small);
     margin-right: var(--pgn-spacing-spacer-4);
     flex: 0 0 var(--pgn-size-data-table-layout-sidebar-width);
   }
