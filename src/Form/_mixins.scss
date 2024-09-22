@@ -1,5 +1,3 @@
-// stylelint-disable scss/operator-no-newline-before
-
 :root {
   --pgn-elevation-form-input-focus:
     var(--pgn-elevation-form-input-focus-offset-x)
@@ -19,7 +17,7 @@
     var(--pgn-other-content-form-control-select-bg-position-x)
     var(--pgn-other-content-form-control-select-bg-offset-y)
     var(--pgn-other-content-form-control-select-bg-position-y)
-    / var(--pgn-other-content-form-control-select-bg-color);
+    / var(--pgn-other-content-form-control-select-bg-color); // stylelint-disable-line scss/operator-no-newline-before
 }
 
 @mixin form-control-floating-label-initial(
