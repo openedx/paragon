@@ -5,25 +5,32 @@ import { useLayoutEffect, useState } from 'react';
  * that fits within its bounding rectangle. This is done by summing the widths
  * of the children until they exceed the width of the container.
  *
- * @param {Element} containerElementRef - container element
- * @param {Element} overflowElementRef - overflow element
- *
  * The hook returns the index of the last visible child.
+ *
+ * @param containerElementRef - container element
+ * @param overflowElementRef - overflow element
  */
-const useIndexOfLastVisibleChild = (containerElementRef, overflowElementRef) => {
+const useIndexOfLastVisibleChild = (
+  containerElementRef: Element | null,
+  overflowElementRef: Element | null,
+): number => {
   const [indexOfLastVisibleChild, setIndexOfLastVisibleChild] = useState(-1);
 
   useLayoutEffect(() => {
+    if (!containerElementRef) {
+      return undefined;
+    }
+
     function updateLastVisibleChildIndex() {
       // Get array of child nodes from NodeList form
-      const childNodesArr = Array.prototype.slice.call(containerElementRef.children);
+      const childNodesArr = Array.prototype.slice.call(containerElementRef!.children);
       const { nextIndexOfLastVisibleChild } = childNodesArr
         // filter out the overflow element
         .filter(childNode => childNode !== overflowElementRef)
         // sum the widths to find the last visible element's index
         .reduce((acc, childNode, index) => {
           acc.sumWidth += childNode.getBoundingClientRect().width;
-          if (acc.sumWidth <= containerElementRef.getBoundingClientRect().width) {
+          if (acc.sumWidth <= containerElementRef!.getBoundingClientRect().width) {
             acc.nextIndexOfLastVisibleChild = index;
           }
           return acc;
@@ -32,23 +39,18 @@ const useIndexOfLastVisibleChild = (containerElementRef, overflowElementRef) => 
           // sometimes we'll show a dropdown with one item in it when it would fit,
           // but allowing this case dramatically simplifies the calculations we need
           // to do above.
-          sumWidth: overflowElementRef ? overflowElementRef.getBoundingClientRect().width : 0,
+          sumWidth: overflowElementRef?.getBoundingClientRect().width ?? 0,
           nextIndexOfLastVisibleChild: -1,
         });
 
       setIndexOfLastVisibleChild(nextIndexOfLastVisibleChild);
     }
 
-    if (containerElementRef) {
-      updateLastVisibleChildIndex();
+    updateLastVisibleChildIndex();
 
-      const resizeObserver = new ResizeObserver(() => updateLastVisibleChildIndex());
-      resizeObserver.observe(containerElementRef);
-
-      return () => resizeObserver.disconnect();
-    }
-
-    return undefined;
+    const resizeObserver = new ResizeObserver(() => updateLastVisibleChildIndex());
+    resizeObserver.observe(containerElementRef);
+    return () => resizeObserver.disconnect();
   }, [containerElementRef, overflowElementRef]);
 
   return indexOfLastVisibleChild;
