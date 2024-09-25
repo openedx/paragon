@@ -1,9 +1,13 @@
 :root {
   --pgn-transition-carousel-base:
-    var(--pgn-transition-carousel-base-property)
-    var(--pgn-transition-carousel-base-duration)
-    var(--pgn-transition-carousel-base-timing-function)
-    var(--pgn-transition-carousel-base-delay);
+    var(--pgn-transition-carousel-base-1-property)
+    var(--pgn-transition-carousel-base-1-duration)
+    var(--pgn-transition-carousel-base-1-timing-function)
+    var(--pgn-transition-carousel-base-1-delay),
+    var(--pgn-transition-carousel-base-2-property)
+    var(--pgn-transition-carousel-base-2-duration)
+    var(--pgn-transition-carousel-base-2-timing-function)
+    var(--pgn-transition-carousel-base-2-delay);
 
   --pgn-transition-carousel-indicator:
     var(--pgn-transition-carousel-indicator-property)
@@ -78,7 +82,7 @@
   .active.carousel-item-right {
     z-index: 0;
     opacity: 0;
-    transition: opacity 0s, var(--pgn-transition-carousel-base);
+    transition: var(--pgn-transition-carousel-base);
   }
 }
 

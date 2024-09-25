@@ -93,10 +93,14 @@
   --pgn-transition-carousel-indicator-duration: var(--pgn-transition-carousel-duration);
   --pgn-transition-carousel-indicator-property: opacity;
   --pgn-transition-carousel-duration: 0.6s;
-  --pgn-transition-carousel-base-timing-function: ease-in-out;
-  --pgn-transition-carousel-base-delay: 0ms;
-  --pgn-transition-carousel-base-duration: var(--pgn-transition-carousel-duration);
-  --pgn-transition-carousel-base-property: transform;
+  --pgn-transition-carousel-base-2-timing-function: ease-in-out;
+  --pgn-transition-carousel-base-2-delay: 0ms;
+  --pgn-transition-carousel-base-2-duration: var(--pgn-transition-carousel-duration);
+  --pgn-transition-carousel-base-2-property: transform;
+  --pgn-transition-carousel-base-1-timing-function: ease;
+  --pgn-transition-carousel-base-1-delay: 0ms;
+  --pgn-transition-carousel-base-1-duration: 0ms;
+  --pgn-transition-carousel-base-1-property: opacity;
   --pgn-transition-btn: none;
   --pgn-transition-badge: none;
   --pgn-typography-print-page-size: a3;

@@ -29,12 +29,20 @@
     "carousel": {
       "base": {
         "source": "$carousel-transition",
-        "$value": {
-          "property": "transform",
-          "duration": "{transition.carousel.duration}",
-          "delay": "0ms",
-          "timingFunction": "ease-in-out"
-        }
+        "$value": [
+          {
+            "property": "opacity",
+            "duration": "0ms",
+            "delay": "0ms",
+            "timingFunction": "ease"
+          },
+          {
+            "property": "transform",
+            "duration": "{transition.carousel.duration}",
+            "delay": "0ms",
+            "timingFunction": "ease-in-out"
+          }
+        ]
       },
       "duration": { "source": "$carousel-transition-duration", "$value": ".6s", "$type": "duration" },
       "indicator": {
