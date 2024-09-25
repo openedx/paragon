@@ -1,3 +1,37 @@
+:root {
+  --pgn-elevation-dropzone-hover:
+    var(--pgn-elevation-dropzone-hover-inset)
+    var(--pgn-elevation-dropzone-hover-offset-x)
+    var(--pgn-elevation-dropzone-hover-offset-y)
+    var(--pgn-elevation-dropzone-hover-blur)
+    var(--pgn-elevation-dropzone-hover-spread)
+    var(--pgn-elevation-dropzone-hover-color);
+
+  --pgn-elevation-dropzone-focus:
+    var(--pgn-elevation-dropzone-focus-inset)
+    var(--pgn-elevation-dropzone-focus-offset-x)
+    var(--pgn-elevation-dropzone-focus-offset-y)
+    var(--pgn-elevation-dropzone-focus-blur)
+    var(--pgn-elevation-dropzone-focus-spread)
+    var(--pgn-elevation-dropzone-focus-color);
+
+  --pgn-elevation-dropzone-error:
+    var(--pgn-elevation-dropzone-error-inset)
+    var(--pgn-elevation-dropzone-error-offset-x)
+    var(--pgn-elevation-dropzone-error-offset-y)
+    var(--pgn-elevation-dropzone-error-blur)
+    var(--pgn-elevation-dropzone-error-spread)
+    var(--pgn-elevation-dropzone-error-color);
+
+  --pgn-elevation-dropzone-active:
+    var(--pgn-elevation-dropzone-active-inset)
+    var(--pgn-elevation-dropzone-active-offset-x)
+    var(--pgn-elevation-dropzone-active-offset-y)
+    var(--pgn-elevation-dropzone-active-blur)
+    var(--pgn-elevation-dropzone-active-spread)
+    var(--pgn-elevation-dropzone-active-color);
+}
+
 .pgn__dropzone {
   display: flex;
   justify-content: center;

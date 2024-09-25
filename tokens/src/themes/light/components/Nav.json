@@ -7,7 +7,12 @@
           "active": { "source": "$nav-tabs-link-active-border-color", "$value": "{color.primary.500}" },
           "hover": {
             "source": "$nav-tabs-link-hover-border-color",
-            "$value": "transparent transparent {color.nav.tabs.base.border.base}"
+            "$value": {
+              "top": "transparent",
+              "right": "transparent",
+              "bottom": "{color.nav.tabs.base.border.base}",
+              "left": "transparent"
+            }
           },
           "focus": {
             "source": "$nav-tabs-link-focus-border-color",

@@ -1,5 +1,13 @@
 @import "mixins";
 
+:root {
+  --pgn-border-color-nav-tabs-link-border-hover:
+    var(--pgn-border-color-nav-tabs-link-border-hover-top)
+    var(--pgn-border-color-nav-tabs-link-border-hover-right)
+    var(--pgn-border-color-nav-tabs-link-border-hover-bottom)
+    var(--pgn-border-color-nav-tabs-link-border-hover-left);
+}
+
 // Base class
 //
 // Kickstart any navigation component with a set of style resets. Works with

@@ -25,11 +25,44 @@
     }
   },
   "transition": {
+    "$type": "transition",
     "carousel": {
-      "base": { "source": "$carousel-transition", "$value": "transform {transition.carousel.duration} ease-in-out", "$type": "transition" },
+      "base": {
+        "source": "$carousel-transition",
+        "$value": [
+          {
+            "property": "opacity",
+            "duration": "0ms",
+            "delay": "0ms",
+            "timingFunction": "ease"
+          },
+          {
+            "property": "transform",
+            "duration": "{transition.carousel.duration}",
+            "delay": "0ms",
+            "timingFunction": "ease-in-out"
+          }
+        ]
+      },
       "duration": { "source": "$carousel-transition-duration", "$value": ".6s", "$type": "duration" },
-      "indicator": { "source": "$carousel-indicator-transition", "$value": "opacity .6s ease", "$type": "transition" },
-      "control": { "source": "$carousel-control-transition", "$value": "opacity .15s ease", "$type": "transition" }
+      "indicator": {
+        "source": "$carousel-indicator-transition",
+        "$value": {
+          "property": "opacity",
+          "duration": "{transition.carousel.duration}",
+          "delay": "0ms",
+          "timingFunction": "ease"
+        }
+      },
+      "control": {
+        "source": "$carousel-control-transition",
+        "$value": {
+          "property": "opacity",
+          "duration": ".15s",
+          "delay": "0ms",
+          "timingFunction": "ease"
+        }
+      }
     }
   }
 }

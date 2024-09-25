@@ -5,177 +5,582 @@
       "level": {
         "1": {
           "source": "$level-1-box-shadow",
-          "$value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".0625rem",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".0625rem",
+              "blur": ".25rem"
+            }
+          ],
           "$description": "Basic box shadow of level 1."
         },
         "2": {
           "source": "$level-2-box-shadow",
-          "$value": "0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".125rem",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".125rem",
+              "blur": ".5rem"
+            }
+          ],
           "$description": "Basic box shadow of level 2."
         },
         "3": {
           "source": "$level-3-box-shadow",
-          "$value": "0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".625rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "1rem"
+            }
+          ],
           "$description": "Basic box shadow of level 3."
         },
         "4": {
           "source": "$level-4-box-shadow",
-          "$value": "0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".625rem",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".5rem",
+              "blur": "1.25rem"
+            }
+          ],
           "$description": "Basic box shadow of level 4."
         },
         "5": {
           "source": "$level-5-box-shadow",
-          "$value": "0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "1.25px",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".5rem",
+              "blur": "2.5rem"
+            }
+          ],
           "$description": "Basic box shadow of level 5."
         }
       },
       "base": {
         "source": "$box-shadow",
-        "$value": "0 .125rem .25rem rgba(0, 0, 0, .3)",
+        "$value": {
+          "color": "rgba(0, 0, 0, .3)",
+          "offsetX": "0",
+          "offsetY": ".125rem",
+          "blur": ".25rem"
+        },
         "$description": "Default box shadow."
       },
       "sm": {
         "source": "$box-shadow-sm",
-        "$value": "0 .0625rem .125rem rgba(0, 0, 0, .2)",
+        "$value": {
+          "color": "rgba(0, 0, 0, .2)",
+          "offsetX": "0",
+          "offsetY": ".0625rem",
+          "blur": ".125rem"
+        },
         "$description": "Small box shadow."
       },
       "lg": {
         "source": "$box-shadow-lg",
-        "$value": "0 .25rem .5rem rgba(0, 0, 0, .3)",
+        "$value": {
+          "color": "rgba(0, 0, 0, .3)",
+          "offsetX": "0",
+          "offsetY": ".25rem",
+          "blur": ".5rem"
+        },
         "$description": "Large box shadow."
       },
       "down": {
         "1": {
           "source": "$box-shadow-down-1",
-          "$value": "0 .0625rem .125rem rgba(0, 0, 0, .15), 0 .0625rem .25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".0625rem",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".0625rem",
+              "blur": ".25rem"
+            }
+          ],
           "$description": "Bottom box shadow of level 1."
         },
         "2": {
           "source": "$box-shadow-down-2",
-          "$value": "0 .125rem .25rem rgba(0, 0, 0, .15), 0 .125rem .5rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".125rem",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".125rem",
+              "blur": ".5rem"
+            }
+          ],
           "$description": "Bottom box shadow of level 2."
         },
         "3": {
           "source": "$box-shadow-down-3",
-          "$value": "0 .5rem 1rem rgba(0, 0, 0, .15), 0 .25rem .625rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".5rem",
+              "blur": "1rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".25rem",
+              "blur": ".625rem"
+            }
+          ],
           "$description": "Bottom box shadow of level 3."
         },
         "4": {
           "source": "$box-shadow-down-4",
-          "$value": "0 .625rem 1.25rem rgba(0, 0, 0, .15), 0 .5rem 1.25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".625rem",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".5rem",
+              "blur": "1.25rem"
+            }
+          ],
           "$description": "Bottom box shadow of level 4."
         },
         "5": {
           "source": "$box-shadow-down-5",
-          "$value": "0 1.25px 2.5rem rgba(0, 0, 0, .15), 0 .5rem 2.5rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "1.25px",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".5rem",
+              "blur": "2.5rem"
+            }
+          ],
           "$description": "Bottom box shadow of level 5."
         }
       },
       "left": {
         "1": {
           "source": "$box-shadow-left-1",
-          "$value": "-.0625rem 0 .125rem rgba(0, 0, 0, .15), -.0625rem 0 .25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.0625rem",
+              "offsetY": "0",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.0625rem",
+              "offsetY": "0",
+              "blur": ".25rem"
+            }
+          ],
           "$description": "Left box shadow of level 1."
         },
         "2": {
           "source": "$box-shadow-left-2",
-          "$value": "-.125rem 0 .25rem rgba(0, 0, 0, .15), -.125rem 0 .5rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.125rem",
+              "offsetY": "0",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.125rem",
+              "offsetY": "0",
+              "blur": ".5rem"
+            }
+          ],
           "$description": "Left box shadow of level 2."
         },
         "3": {
           "source": "$box-shadow-left-3",
-          "$value": "-.5rem 0 1rem rgba(0, 0, 0, .15), -.25rem 0 .625rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.5rem",
+              "offsetY": "0",
+              "blur": "1rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.25rem",
+              "offsetY": "0",
+              "blur": ".625rem"
+            }
+          ],
           "$description": "Left box shadow of level 3."
         },
         "4": {
           "source": "$box-shadow-left-4",
-          "$value": "-.625rem 0 1.25rem rgba(0, 0, 0, .15), -.5rem 0 1.25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.625rem",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.5rem",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            }
+          ],
           "$description": "Left box shadow of level 4."
         },
         "5": {
           "source": "$box-shadow-left-5",
-          "$value": "-1.25rem 0 2.5rem rgba(0, 0, 0, .15), -.5rem 0 3rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-1.25rem",
+              "offsetY": "0",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.5rem",
+              "offsetY": "0",
+              "blur": "3rem"
+            }
+          ],
           "$description": "Left box shadow of level 5."
         }
       },
       "up": {
         "1": {
           "source": "$box-shadow-up-1",
-          "$value": "0 -.0625rem .125rem rgba(0, 0, 0, .15), 0 -.0625rem .25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.0625rem",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.0625rem",
+              "blur": ".25rem"
+            }
+          ],
           "$description": "Top box shadow of level 1."
         },
         "2": {
           "source": "$box-shadow-up-2",
-          "$value": "0 -.125rem .25rem rgba(0, 0, 0, .15), 0 -.125rem .5rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.125rem",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.125rem",
+              "blur": ".5rem"
+            }
+          ],
           "$description": "Top box shadow of level 2."
         },
         "3": {
           "source": "$box-shadow-up-3",
-          "$value": "0 -.5rem 1rem rgba(0, 0, 0, .15), 0 -.25rem .625rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.5rem",
+              "blur": "1rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.25rem",
+              "blur": ".625rem"
+            }
+          ],
           "$description": "Top box shadow of level 3."
         },
         "4": {
           "source": "$box-shadow-up-4",
-          "$value": "0 -.625rem 1.25rem rgba(0, 0, 0, .15), 0 -.5rem 1.25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.625rem",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.5rem",
+              "blur": "1.25rem"
+            }
+          ],
           "$description": "Top box shadow of level 4."
         },
         "5": {
           "source": "$box-shadow-up-5",
-          "$value": "0 -1.25rem 2.5rem rgba(0, 0, 0, .15), 0 -.5rem 3rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-1.25rem",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.5rem",
+              "blur": "3rem"
+            }
+          ],
           "$description": "Basic box shadow of level 5."
         }
       },
       "right": {
         "1": {
           "source": "$box-shadow-right-1",
-          "$value": ".0625rem 0 .125rem rgba(0, 0, 0, .15), .0625rem 0 .25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".0625rem",
+              "offsetY": "0",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".0625rem",
+              "offsetY": "0",
+              "blur": ".25rem"
+            }
+          ],
           "$description": "Right box shadow of level 1."
         },
         "2": {
           "source": "$box-shadow-right-2",
-          "$value": ".125rem 0 .25rem rgba(0, 0, 0, .15), .125rem 0 .5rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".125rem",
+              "offsetY": "0",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".125rem",
+              "offsetY": "0",
+              "blur": ".5rem"
+            }
+          ],
           "$description": "Right box shadow of level 2."
         },
         "3": {
           "source": "$box-shadow-right-3",
-          "$value": ".5rem 0 1rem rgba(0, 0, 0, .15), .25rem 0 .625rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".5rem",
+              "offsetY": "0",
+              "blur": "1rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".25rem",
+              "offsetY": "0",
+              "blur": ".625rem"
+            }
+          ],
           "$description": "Right box shadow of level 3."
         },
         "4": {
           "source": "$box-shadow-right-4",
-          "$value": ".625rem 0 1.25rem rgba(0, 0, 0, .15), .5rem 0 1.25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".625rem",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".5rem",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            }
+          ],
           "$description": "Right box shadow of level 4."
         },
         "5": {
           "source": "$box-shadow-right-5",
-          "$value": "1.25rem 0 2.5rem rgba(0, 0, 0, .15), .5rem 0 3rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "1.25rem",
+              "offsetY": "0",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".5rem",
+              "offsetY": "0",
+              "blur": "3rem"
+            }
+          ],
           "$description": "Right box shadow of level 5."
         }
       },
       "centered": {
         "1": {
           "source": "$box-shadow-centered-1",
-          "$value": "0 0 .125rem rgba(0, 0, 0, .15), 0 0 .25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".25rem"
+            }
+          ],
           "$description": "Centered box shadow of level 1."
         },
         "2": {
           "source": "$box-shadow-centered-2",
-          "$value": "0 0 .25rem rgba(0, 0, 0, .15), 0 0 .5rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".5rem"
+            }
+          ],
           "$description": "Centered box shadow of level 2."
         },
         "3": {
           "source": "$box-shadow-centered-3",
-          "$value": "0 0 .625rem rgba(0, 0, 0, .15), 0 0 1rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".625rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "1rem"
+            }
+          ],
           "$description": "Centered box shadow of level 3."
         },
         "4": {
           "source": "$box-shadow-centered-4",
-          "$value": "0 0 1.25rem rgba(0, 0, 0, .15), 0 0 1.25rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            }
+          ],
           "$description": "Centered box shadow of level 4."
         },
         "5": {
           "source": "$box-shadow-centered-5",
-          "$value": "0 0 2.5rem rgba(0, 0, 0, .15), 0 0 3rem rgba(0, 0, 0, .15)",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "3rem"
+            }
+          ],
           "$description": "Centered box shadow of level 5."
         }
       }

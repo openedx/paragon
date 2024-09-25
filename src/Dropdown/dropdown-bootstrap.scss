@@ -1,3 +1,9 @@
+:root {
+  --pgn-spacing-dropdown-padding-header:
+    var(--pgn-spacing-dropdown-padding-header-y)
+    var(--pgn-spacing-dropdown-padding-header-x);
+}
+
 .dropup,
 .dropright,
 .dropdown,

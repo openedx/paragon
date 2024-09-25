@@ -1,3 +1,23 @@
+:root {
+  --pgn-elevation-modal-content-box-shadow-sm-up:
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-1-offset-x)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-1-offset-y)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-1-blur)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-1-color),
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-2-offset-x)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-2-offset-y)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-2-blur)
+    var(--pgn-elevation-modal-content-box-shadow-sm-up-2-color);
+
+  --pgn-spacing-modal-footer-padding-base:
+    var(--pgn-spacing-modal-footer-padding-base-y)
+    var(--pgn-spacing-modal-footer-padding-base-x);
+
+  --pgn-spacing-modal-header-padding-base:
+    var(--pgn-spacing-modal-header-padding-base-y)
+    var(--pgn-spacing-modal-header-padding-base-x);
+}
+
 .pgn__modal {
   background: var(--pgn-color-modal-content-bg);
   border-radius: calc(var(--pgn-size-modal-content-border-radius) - var(--pgn-size-modal-content-border-width));

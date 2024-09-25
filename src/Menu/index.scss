@@ -1,3 +1,11 @@
+:root {
+  --pgn-elevation-menu-box-shadow:
+    var(--pgn-elevation-menu-box-shadow-offset-x)
+    var(--pgn-elevation-menu-box-shadow-offset-y)
+    var(--pgn-elevation-menu-box-shadow-blur)
+    var(--pgn-elevation-menu-box-shadow-color);
+}
+
 .pgn__menu {
   border-radius: var(--pgn-size-menu-base-border-radius);
   box-shadow: var(--pgn-elevation-menu-box-shadow);
