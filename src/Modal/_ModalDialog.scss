@@ -40,10 +40,10 @@
   }
 
   &.pgn__modal-visible-overflow {
-    overflow: visible;
+    overflow-y: visible;
 
     .pgn__modal-body {
-      overflow: visible;
+      overflow-y: visible;
     }
   }
 }
