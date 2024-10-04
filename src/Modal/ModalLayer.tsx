@@ -6,7 +6,7 @@ import Portal from './Portal';
 import { ModalContextProvider } from './ModalContext';
 
 // istanbul ignore next
-function ModalBackdrop({ onClick }) {
+function ModalBackdrop({ onClick }: { onClick?: () => void }) {
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
@@ -22,12 +22,8 @@ ModalBackdrop.propTypes = {
   onClick: PropTypes.func,
 };
 
-ModalBackdrop.defaultProps = {
-  onClick: undefined,
-};
-
 // istanbul ignore next
-function ModalContentContainer({ children }) {
+function ModalContentContainer({ children = null }: { children?: React.ReactNode }) {
   return <div className="pgn__modal-content-container">{children}</div>;
 }
 
@@ -35,9 +31,18 @@ ModalContentContainer.propTypes = {
   children: PropTypes.node,
 };
 
-ModalContentContainer.defaultProps = {
-  children: null,
-};
+interface Props {
+  /** Specifies the contents of the modal */
+  children: React.ReactNode;
+  /** A callback function for when the modal is dismissed */
+  onClose: () => void;
+  /** Is the modal dialog open or closed */
+  isOpen: boolean;
+  /** Prevent clicking on the backdrop or pressing Esc to close the modal */
+  isBlocking?: boolean;
+  /** Specifies the z-index of the modal */
+  zIndex?: number;
+}
 
 /**
  * The ModalLayer should be used for any component that wishes to engage the user
@@ -46,8 +51,8 @@ ModalContentContainer.defaultProps = {
  * component is that if a modal object is visible then it is "enabled"
  */
 function ModalLayer({
-  children, onClose, isOpen, isBlocking, zIndex,
-}) {
+  children, onClose, isOpen, isBlocking = false, zIndex,
+}: Props) {
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('pgn__hidden-scroll-padding-right');
@@ -63,7 +68,7 @@ function ModalLayer({
     return null;
   }
 
-  const handleClose = isBlocking ? null : onClose;
+  const handleClose = isBlocking ? undefined : onClose;
 
   return (
     <ModalContextProvider onClose={onClose} isOpen={isOpen} isBlocking={isBlocking}>
@@ -100,11 +105,6 @@ ModalLayer.propTypes = {
   isBlocking: PropTypes.bool,
   /** Specifies the z-index of the modal */
   zIndex: PropTypes.number,
-};
-
-ModalLayer.defaultProps = {
-  isBlocking: false,
-  zIndex: undefined,
 };
 
 export { ModalBackdrop, ModalContentContainer };

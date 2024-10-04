@@ -12,7 +12,11 @@ export { default as Container, ContainerSize } from './Container';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
+export { default as ModalContext } from './Modal/ModalContext';
+export { default as ModalDialog, MODAL_DIALOG_CLOSE_LABEL } from './Modal/ModalDialog';
+export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
+export { default as Portal } from './Modal/Portal';
 export { default as Tooltip } from './Tooltip';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
@@ -103,11 +107,7 @@ export const FullscreenModal: any, FULLSCREEN_MODAL_CLOSE_LABEL: string; // from
 export const MarketingModal: any; // from './Modal/MarketingModal';
 export const StandardModal: any, STANDARD_MODAL_CLOSE_LABEL: string; // from './Modal/StandardModal';
 export const AlertModal: any; // from './Modal/AlertModal';
-export const ModalLayer: any; // from './Modal/ModalLayer';
-export const ModalDialog: any, MODAL_DIALOG_CLOSE_LABEL: string; // from './Modal/ModalDialog';
 export const ModalPopup: any; // from './Modal/ModalPopup';
-export const ModalContext: any; // from './Modal/ModalContext';
-export const Portal: any; // from './Modal/Portal';
 export const PopperElement: any; // from './Modal/PopperElement';
 
 export const
