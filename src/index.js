@@ -8,6 +8,7 @@ export { default as Bubble } from './Bubble';
 export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
+export { default as Container } from './Container';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
@@ -38,10 +39,11 @@ export {
 export {
   default as Carousel, CarouselItem, CAROUSEL_NEXT_LABEL_TEXT, CAROUSEL_PREV_LABEL_TEXT,
 } from './Carousel';
+/** @deprecated Replaced by `Form.Checkbox`. */
 export { default as CheckBox } from './CheckBox';
+/** @deprecated Replaced by `Form.Checkbox` and `Form.CheckboxSet`. */
 export { default as CheckBoxGroup } from './CheckBoxGroup';
 export { default as CloseButton } from './CloseButton';
-export { default as Container } from './Container';
 export { default as Layout, Col, Row } from './Layout';
 export { default as Collapse } from './Collapse';
 export { default as Collapsible } from './Collapsible';
@@ -53,6 +55,7 @@ export {
   SplitButton,
 } from './Dropdown';
 export { default as Fade } from './Fade';
+/** @deprecated */
 export { default as Fieldset } from './Fieldset';
 export {
   default as Form,
@@ -77,17 +80,23 @@ export {
   InputGroup,
 } from './Form';
 export { default as IconButtonToggle } from './IconButtonToggle';
+/** @deprecated Replaced by `Form.Control`. */
 export { default as Input } from './Input';
+/** @deprecated Replaced by `Form.Control`. */
 export { default as InputSelect } from './InputSelect';
+/** @deprecated Replaced by `Form.Control`. */
 export { default as InputText } from './InputText';
 export { default as Image, Figure } from './Image';
+/** @deprecated */
 export { default as ListBox } from './ListBox';
+/** @deprecated */
 export { default as ListBoxOption } from './ListBoxOption';
 export { default as MailtoLink, MAIL_TO_LINK_EXTERNAL_LINK_ALTERNATIVE_TEXT, MAIL_TO_LINK_EXTERNAL_LINK_TITLE } from './MailtoLink';
 export { default as Media } from './Media';
 export { default as Menu } from './Menu';
 export { default as MenuItem } from './Menu/MenuItem';
 export { default as SelectMenu, SELECT_MENU_DEFAULT_MESSAGE } from './Menu/SelectMenu';
+/** @deprecated Use `ModalDialog` instead. */
 export { default as Modal } from './Modal';
 export { default as ModalCloseButton } from './Modal/ModalCloseButton';
 export { default as FullscreenModal, FULLSCREEN_MODAL_CLOSE_LABEL } from './Modal/FullscreenModal';
@@ -122,6 +131,7 @@ export {
 export { default as Popover, PopoverTitle, PopoverContent } from './Popover';
 export { default as ProgressBar } from './ProgressBar';
 export { default as ProductTour } from './ProductTour';
+/** @deprecated Replaced by `Form.Radio` and `Form.RadioSet`. */
 export { default as RadioButtonGroup, RadioButton } from './RadioButtonGroup';
 export { default as ResponsiveEmbed } from './ResponsiveEmbed';
 export {
@@ -135,7 +145,9 @@ export { default as Sheet } from './Sheet';
 export { default as Spinner } from './Spinner';
 export { default as Stepper } from './Stepper';
 export { default as StatefulButton } from './StatefulButton';
+/** @deprecated Replaced by `Alert`. */
 export { default as StatusAlert } from './StatusAlert';
+/** @deprecated Replaced by `DataTable`. */
 export { default as Table } from './Table';
 export {
   default as Tabs,
@@ -144,8 +156,10 @@ export {
   TabContent,
   TabPane,
 } from './Tabs';
+/** @deprecated Replaced by `Form.Control`. */
 export { default as TextArea } from './TextArea';
 export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
+/** @deprecated Replaced by `Form.Group`. */
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';
