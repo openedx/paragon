@@ -8,6 +8,13 @@ import DataTableContext from '../../DataTableContext';
 import * as selectActions from '../data/actions';
 import { getRowIds } from '../data/helpers';
 
+function DataTableContextChild() {
+  const contextValue = useContext(DataTableContext);
+  return (
+    <div className="context-value" data-contextvalue={contextValue} />
+  );
+}
+
 // eslint-disable-next-line react/prop-types
 function ControlledSelectHeaderWrapper({ tableProps, selectProps, ...rest }) {
   return (
@@ -15,13 +22,6 @@ function ControlledSelectHeaderWrapper({ tableProps, selectProps, ...rest }) {
       <ControlledSelectHeader {...selectProps} {...rest} />
       <DataTableContextChild />
     </DataTable>
-  );
-}
-
-function DataTableContextChild() {
-  const contextValue = useContext(DataTableContext);
-  return (
-    <div className="context-value" data-contextvalue={contextValue} />
   );
 }
 

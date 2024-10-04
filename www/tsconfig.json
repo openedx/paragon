@@ -10,5 +10,5 @@
       "~paragon-icons": ["../icons"],
     }
   },
-  "include": ["src"]
+  "include": ["src", "playroom", "utils", "netlify", ".eslintrc.js", "*.js", "*.ts", "*.jsx", "*.tsx"]
 }

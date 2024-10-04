@@ -3,9 +3,9 @@ const path = require('path');
 module.exports = {
   extends: [
     '@edx/eslint-config',
-    'plugin:import/typescript',
   ],
-  parser: '@babel/eslint-parser',
+  plugins: ['@typescript-eslint'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     requireConfigFile: true,
     babelOptions: {
@@ -30,7 +30,9 @@ module.exports = {
           '**/*.stories.jsx',
           'src/setupTest.ts',
           '**/*.test.jsx',
+          '**/*.test.tsx',
           '**/*.test.js',
+          '**/*.test.ts',
           'config/*.js',
           '*.config.ts',
           '*.config.*.js',
@@ -62,13 +64,4 @@ module.exports = {
   globals: {
     newrelic: false,
   },
-  overrides: [
-    {
-      files: ['**/*.ts', '**/*.tsx'],
-      extends: 'airbnb-typescript',
-      parserOptions: {
-        project: './tsconfig.json',
-      },
-    },
-  ],
 };
