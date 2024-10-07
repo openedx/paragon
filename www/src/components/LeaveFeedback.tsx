@@ -1,6 +1,6 @@
 import React, { AnchorHTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
-import { useLocation } from '@reach/router';
+import { useLocation } from '@gatsbyjs/reach-router';
 import { Nav, Button, Hyperlink } from '~paragon-react';
 import { LEAVE_FEEDBACK_CLICKED_EVENT, sendUserAnalyticsEvent } from '../../segment-events';
 

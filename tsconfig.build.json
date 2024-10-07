@@ -3,8 +3,10 @@
   "compilerOptions": {
     // For build purposes, we use TypeScript/tsc to generate the .d.ts files and Babel to convert .tsx/.ts/.jsx to .js
     // In the future we could probably just use tsc for both though.
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "rootDir": "src"
   },
+  "include": ["src"],
   // Don't include the .test.tsx files when we build the .d.ts files in dist/
   "exclude": ["src/**/*.test.tsx"],
 }
