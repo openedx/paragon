@@ -8,6 +8,7 @@ export { default as Bubble } from './Bubble';
 export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
+export { default as Container } from './Container';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
@@ -39,7 +40,6 @@ export {
   default as Carousel, CarouselItem, CAROUSEL_NEXT_LABEL_TEXT, CAROUSEL_PREV_LABEL_TEXT,
 } from './Carousel';
 export { default as CloseButton } from './CloseButton';
-export { default as Container } from './Container';
 export { default as Layout, Col, Row } from './Layout';
 export { default as Collapse } from './Collapse';
 export { default as Collapsible } from './Collapsible';

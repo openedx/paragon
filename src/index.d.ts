@@ -39,7 +39,9 @@ export const
 export const
   Carousel: any, CarouselItem: any, CAROUSEL_NEXT_LABEL_TEXT: any, CAROUSEL_PREV_LABEL_TEXT: any;
 // from './Carousel';
+/** @deprecated Replaced by `Form.Checkbox`. */
 export const CheckBox: any; // from './CheckBox';
+/** @deprecated Replaced by `Form.Checkbox` and `Form.CheckboxSet`. */
 export const CheckBoxGroup: any; // from './CheckBoxGroup';
 export const CloseButton: any; // from './CloseButton';
 export const Layout: any, Col: any, Row: any; // from './Layout';
@@ -53,6 +55,7 @@ export const
   SplitButton: any;
 // from './Dropdown';
 export const Fade: any; // from './Fade';
+/** @deprecated */
 export const Fieldset: any; // from './Fieldset';
 export const
   Form: any,
@@ -77,17 +80,23 @@ export const
   InputGroup: any;
 // from './Form';
 export const IconButtonToggle: any; // from './IconButtonToggle';
+/** @deprecated Replaced by `Form.Control`. */
 export const Input: any; // from './Input';
+/** @deprecated Replaced by `Form.Control`. */
 export const InputSelect: any; // from './InputSelect';
+/** @deprecated Replaced by `Form.Control`. */
 export const InputText: any; // from './InputText';
 export const Image: any, Figure; // from './Image';
+/** @deprecated */
 export const ListBox: any; // from './ListBox';
+/** @deprecated */
 export const ListBoxOption: any; // from './ListBoxOption';
 export const MailtoLink: any, MAIL_TO_LINK_EXTERNAL_LINK_ALTERNATIVE_TEXT: string, MAIL_TO_LINK_EXTERNAL_LINK_TITLE: string; // from './MailtoLink';
 export const Media: any; // from './Media';
 export const Menu: any; // from './Menu';
 export const MenuItem: any; // from './Menu/MenuItem';
 export const SelectMenu: any, SELECT_MENU_DEFAULT_MESSAGE: string; // from './Menu/SelectMenu';
+/** @deprecated Use `ModalDialog` instead. */
 export const Modal: any; // from './Modal';
 export const ModalCloseButton: any; // from './Modal/ModalCloseButton';
 export const FullscreenModal: any, FULLSCREEN_MODAL_CLOSE_LABEL: string; // from './Modal/FullscreenModal';
@@ -122,6 +131,7 @@ export const
 export const Popover: any, PopoverTitle: any, PopoverContent: any; // from './Popover';
 export const ProgressBar: any; // from './ProgressBar';
 export const ProductTour: any; // from './ProductTour';
+/** @deprecated Replaced by `Form.Radio` and `Form.RadioSet`. */
 export const RadioButtonGroup: any, RadioButton: any; // from './RadioButtonGroup';
 export const ResponsiveEmbed: any; // from './ResponsiveEmbed';
 export const
@@ -135,7 +145,9 @@ export const Sheet: any; // from './Sheet';
 export const Spinner: any; // from './Spinner';
 export const Stepper: any; // from './Stepper';
 export const StatefulButton: any; // from './StatefulButton';
+/** @deprecated Replaced by `Alert`. */
 export const StatusAlert: any; // from './StatusAlert';
+/** @deprecated Replaced by `DataTable`. */
 export const Table: any; // from './Table';
 export const
   Tabs: any,
@@ -144,8 +156,10 @@ export const
   TabContent: any,
   TabPane: any;
 // from './Tabs';
+/** @deprecated Replaced by `Form.Control`. */
 export const TextArea: any; // from './TextArea';
 export const Toast: any, TOAST_CLOSE_LABEL_TEXT: string, TOAST_DELAY: number; // from './Toast';
+/** @deprecated Replaced by `Form.Group`. */
 export const ValidationFormGroup: any; // from './ValidationFormGroup';
 export const TransitionReplace: any; // from './TransitionReplace';
 export const ValidationMessage: any; // from './ValidationMessage';
