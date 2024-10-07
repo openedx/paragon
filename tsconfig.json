@@ -3,8 +3,16 @@
   "compilerOptions": {
     "noImplicitAny": true,
     "allowJs": false,
-    "rootDir": "src",
     "outDir": "dist"
   },
-  "include": ["src"]
+  "include": [
+    "lib/**/*",
+    "src/**/*",
+    "*.js",
+    ".eslintrc.js",
+    "__mocks__/*",
+    "algolia-docsearch/*", 
+    "bin/*",
+    "dependent-usage-analyzer/**/*"
+  ]
 }
