@@ -276,7 +276,7 @@ jobs:
         branch: dependent-usage-analyzer/update-dependent-usage-json
         base: master
     - name: Auto-approve pull request for dependent project usages
-      uses: hmarr/auto-approve-action@v2
+      uses: hmarr/auto-approve-action@v4
       with:
         pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
         github-token: ${{ secrets.requirements_bot_github_token }}
