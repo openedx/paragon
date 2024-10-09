@@ -12,7 +12,11 @@ export { default as Container } from './Container';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
+export { default as ModalContext } from './Modal/ModalContext';
+export { default as ModalDialog, MODAL_DIALOG_CLOSE_LABEL } from './Modal/ModalDialog';
+export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
+export { default as Portal } from './Modal/Portal';
 export { default as Tooltip } from './Tooltip';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
@@ -103,11 +107,7 @@ export { default as FullscreenModal, FULLSCREEN_MODAL_CLOSE_LABEL } from './Moda
 export { default as MarketingModal } from './Modal/MarketingModal';
 export { default as StandardModal, STANDARD_MODAL_CLOSE_LABEL } from './Modal/StandardModal';
 export { default as AlertModal } from './Modal/AlertModal';
-export { default as ModalLayer } from './Modal/ModalLayer';
-export { default as ModalDialog, MODAL_DIALOG_CLOSE_LABEL } from './Modal/ModalDialog';
 export { default as ModalPopup } from './Modal/ModalPopup';
-export { default as ModalContext } from './Modal/ModalContext';
-export { default as Portal } from './Modal/Portal';
 export { default as PopperElement } from './Modal/PopperElement';
 
 export {

@@ -6,12 +6,11 @@ import userEvent from '@testing-library/user-event';
 import ModalLayer from '../ModalLayer';
 
 /* eslint-disable react/prop-types */
-jest.mock('../Portal', () => function PortalMock(props) {
+jest.mock('../Portal', () => function PortalMock(props: any) {
   const { children, ...otherProps } = props;
   return (
-    <paragon-portal {...otherProps}>
-      {children}
-    </paragon-portal>
+    // @ts-ignore this fake element. (Property 'paragon-portal' does not exist on type 'JSX.IntrinsicElements')
+    <paragon-portal {...otherProps}>{children}</paragon-portal>
   );
 });
 
@@ -19,6 +18,7 @@ jest.mock('react-focus-on', () => ({
   FocusOn: jest.fn().mockImplementation((props) => {
     const { children, ...otherProps } = props;
     return (
+      // @ts-ignore this fake element. (Property 'focus-on' does not exist on type 'JSX.IntrinsicElements')
       <focus-on data-testid="focus-on" {...otherProps}>{children}</focus-on>
     );
   }),
@@ -117,7 +117,7 @@ describe('<ModalLayer />', () => {
       );
       expect(FocusOn).toHaveBeenCalledWith(
         expect.objectContaining({
-          onEscapeKey: null,
+          onEscapeKey: undefined,
         }),
         // note: this 2nd function argument represents the
         // `refOrContext` (in this case, the context value
