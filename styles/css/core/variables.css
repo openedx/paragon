@@ -47,7 +47,7 @@
   --pgn-transition-fade-property: opacity; /* Opacity transition that takes 150ms */
   --pgn-transition-base-behavior: unset; /* Generic transition for any property change */
   --pgn-transition-base-delay: 0s; /* Generic transition for any property change */
-  --pgn-transition-base-timing-function: ease-in; /* Generic transition for any property change */
+  --pgn-transition-base-timing-function: ease-in-out; /* Generic transition for any property change */
   --pgn-transition-base-duration: 0.2s; /* Generic transition for any property change */
   --pgn-transition-base-property: all; /* Generic transition for any property change */
   --pgn-transition-progress-bar-transition-behavior: unset;
