@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useMediaQuery } from 'react-responsive';
 import ModalLayer from './ModalLayer';
+// @ts-ignore for now - this needs to be converted to TypeScript
 import ModalCloseButton from './ModalCloseButton';
 import ModalDialogHeader from './ModalDialogHeader';
+// @ts-ignore for now - this needs to be converted to TypeScript
 import ModalDialogTitle from './ModalDialogTitle';
+// @ts-ignore for now - this needs to be converted to TypeScript
 import ModalDialogFooter from './ModalDialogFooter';
+// @ts-ignore for now - this needs to be converted to TypeScript
 import ModalDialogBody from './ModalDialogBody';
+// @ts-ignore for now - this needs to be converted to TypeScript
 import ModalDialogHero from './ModalDialogHero';
 
 import Icon from '../Icon';
@@ -16,22 +21,57 @@ import { Close } from '../../icons';
 
 export const MODAL_DIALOG_CLOSE_LABEL = 'Close';
 
+interface Props {
+  /** Specifies the content of the dialog */
+  children: React.ReactNode;
+  /** The aria-label of the dialog */
+  title: string;
+  /** A callback to close the modal dialog, e.g. when Escape is pressed */
+  onClose: () => void;
+  /** Is the modal dialog open or closed? */
+  isOpen?: boolean;
+  /** The close 'x' icon button in the top right of the dialog box */
+  hasCloseButton?: boolean;
+  /** Size determines the maximum width of the dialog box */
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'fullscreen';
+  /** The visual style of the dialog box */
+  variant?: 'default' | 'warning' | 'danger' | 'success' | 'dark';
+  /** The label supplied to the close icon button if one is rendered */
+  closeLabel?: string;
+  /** Specifies class name to append to the base element */
+  className?: string;
+  /**
+   * Determines where a scrollbar should appear if a modal is too large for the
+   * viewport. When false, the ``ModalDialog``. Body receives a scrollbar, when true
+   * the browser window itself receives the scrollbar.
+   */
+  isFullscreenScroll?: boolean;
+  /** To show full screen view on mobile screens */
+  isFullscreenOnMobile?: boolean;
+  /** Prevent clicking on the backdrop or pressing Esc to close the modal */
+  isBlocking?: boolean;
+  /** Specifies the z-index of the modal */
+  zIndex?: number;
+  /** Specifies whether overflow is visible in the modal */
+  isOverflowVisible?: boolean;
+}
+
 function ModalDialog({
   children,
   title,
-  isOpen,
+  isOpen = false,
   onClose,
-  size,
-  variant,
-  hasCloseButton,
-  closeLabel,
-  isFullscreenScroll,
+  size = 'md',
+  variant = 'default',
+  hasCloseButton = true,
+  closeLabel = MODAL_DIALOG_CLOSE_LABEL,
+  isFullscreenScroll = false,
   className,
-  isFullscreenOnMobile,
-  isBlocking,
+  isFullscreenOnMobile = false,
+  isBlocking = false,
   zIndex,
-  isOverflowVisible,
-}) {
+  isOverflowVisible = true,
+}: Props) {
   const isMobile = useMediaQuery({ query: '(max-width: 767.98px)' });
   const showFullScreen = (isFullscreenOnMobile && isMobile);
   return (
@@ -129,19 +169,6 @@ ModalDialog.propTypes = {
    * - `false` - any overflow content will be clipped to fit within the modal's dimensions.
    */
   isOverflowVisible: PropTypes.bool.isRequired,
-};
-
-ModalDialog.defaultProps = {
-  isOpen: false,
-  hasCloseButton: true,
-  size: 'md',
-  variant: 'default',
-  closeLabel: MODAL_DIALOG_CLOSE_LABEL,
-  className: undefined,
-  isFullscreenScroll: false,
-  isFullscreenOnMobile: false,
-  isBlocking: false,
-  zIndex: undefined,
 };
 
 ModalDialog.Header = ModalDialogHeader;

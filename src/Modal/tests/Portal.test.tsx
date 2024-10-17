@@ -21,7 +21,7 @@ describe('<Portal />', () => {
 
     const portalRoot = getPortalRoot();
     expect(portalRoot).not.toBeNull();
-    expect(portalRoot.children[0].id).toBe('portal-content-a');
+    expect(portalRoot!.children[0].id).toBe('portal-content-a');
   });
 
   it('renders both contents in a single #paragon-portal-root div', () => {
@@ -38,7 +38,7 @@ describe('<Portal />', () => {
 
     const portalRoot = getPortalRoot();
     expect(portalRoot).not.toBeNull();
-    expect(portalRoot.children[0].id).toBe('portal-content-a');
-    expect(portalRoot.children[1].id).toBe('portal-content-b');
+    expect(portalRoot!.children[0].id).toBe('portal-content-a');
+    expect(portalRoot!.children[1].id).toBe('portal-content-b');
   });
 });
