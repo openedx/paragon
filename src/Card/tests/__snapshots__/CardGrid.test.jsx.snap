@@ -17,12 +17,26 @@ exports[`<CardGrid /> Controlled Rendering renders with controlled columnSizes 1
         <div
           className="pgn__card-wrapper-image-cap vertical"
         >
+          <span
+            aria-busy={true}
+            aria-live="polite"
+            className="pgn__card-image-cap-loader show"
+          >
+            <span
+              className="react-loading-skeleton"
+              style={
+                Object {
+                  "height": 140,
+                }
+              }
+            >
+              ‌
+            </span>
+            <br />
+          </span>
           <img
             className="pgn__card-image-cap"
             loading="eager"
-            onError={[Function]}
-            onLoad={[Function]}
-            src="http://fake.image"
           />
         </div>
         <div
@@ -73,12 +87,26 @@ exports[`<CardGrid /> Controlled Rendering renders with disabled equal height 1`
         <div
           className="pgn__card-wrapper-image-cap vertical"
         >
+          <span
+            aria-busy={true}
+            aria-live="polite"
+            className="pgn__card-image-cap-loader show"
+          >
+            <span
+              className="react-loading-skeleton"
+              style={
+                Object {
+                  "height": 140,
+                }
+              }
+            >
+              ‌
+            </span>
+            <br />
+          </span>
           <img
             className="pgn__card-image-cap"
             loading="eager"
-            onError={[Function]}
-            onLoad={[Function]}
-            src="http://fake.image"
           />
         </div>
         <div
@@ -129,12 +157,26 @@ exports[`<CardGrid /> Uncontrolled Rendering renders default columnSizes 1`] = `
         <div
           className="pgn__card-wrapper-image-cap vertical"
         >
+          <span
+            aria-busy={true}
+            aria-live="polite"
+            className="pgn__card-image-cap-loader show"
+          >
+            <span
+              className="react-loading-skeleton"
+              style={
+                Object {
+                  "height": 140,
+                }
+              }
+            >
+              ‌
+            </span>
+            <br />
+          </span>
           <img
             className="pgn__card-image-cap"
             loading="eager"
-            onError={[Function]}
-            onLoad={[Function]}
-            src="http://fake.image"
           />
         </div>
         <div
