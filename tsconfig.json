@@ -11,8 +11,9 @@
     "*.js",
     ".eslintrc.js",
     "__mocks__/*",
-    "algolia-docsearch/*", 
+    "algolia-docsearch/*",
     "bin/*",
-    "dependent-usage-analyzer/**/*"
+    "dependent-usage-analyzer/**/*",
+    "tokens/**/*",
   ]
 }
