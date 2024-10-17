@@ -2,17 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+export interface ActionRowProps {
+  as?: React.ElementType;
+  isStacked?: boolean;
+  children?: React.ReactNode;
+  className?: string;
+}
+
 function ActionRow({
-  as,
+  as = 'div',
   isStacked,
   children,
+  className,
   ...props
-}) {
+}: ActionRowProps) {
   return React.createElement(
     as,
     {
       ...props,
-      className: classNames(props.className, {
+      className: classNames(className, {
         'pgn__action-row': !isStacked,
         'pgn__action-row-stacked': isStacked,
       }),
@@ -39,7 +47,7 @@ ActionRow.defaultProps = {
   isStacked: false,
 };
 
-function ActionRowSpacer() {
+function ActionRowSpacer(): React.ReactElement {
   return <span className="pgn__action-row-spacer" />;
 }
 
