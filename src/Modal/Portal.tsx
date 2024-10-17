@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 
-class Portal extends React.Component {
-  constructor(props) {
+interface Props {
+  children: React.ReactNode;
+}
+
+class Portal extends React.Component<Props> {
+  private rootName: string;
+
+  private rootElement: HTMLElement | null;
+
+  constructor(props: Props) {
     super(props);
     this.rootName = 'paragon-portal-root';
     // istanbul ignore if
@@ -30,9 +37,5 @@ class Portal extends React.Component {
     return null;
   }
 }
-
-Portal.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Portal;
