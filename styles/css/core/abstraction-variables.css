@@ -41,36 +41,4 @@
     var(--pgn-transition-form-input-2-timing-function)
     var(--pgn-transition-form-input-2-delay)
     var(--pgn-transition-form-input-2-behavior);
-
-  /**
-   * TYPOGRAPHY
-   */
-  --pgn-typography-font-family-sans-serif:
-    var(--pgn-typography-font-family-sans-serif-primary),
-    var(--pgn-typography-font-family-sans-serif-secondary),
-    var(--pgn-typography-font-family-sans-serif-tertiary),
-    var(--pgn-typography-font-family-sans-serif-alternate-1),
-    var(--pgn-typography-font-family-sans-serif-alternate-2),
-    var(--pgn-typography-font-family-sans-serif-alternate-3),
-    var(--pgn-typography-font-family-sans-serif-alternate-4),
-    var(--pgn-typography-font-family-sans-serif-fallback);
-
-  --pgn-typography-font-family-monospace:
-    var(--pgn-typography-font-family-monospace-primary),
-    var(--pgn-typography-font-family-monospace-secondary),
-    var(--pgn-typography-font-family-monospace-tertiary),
-    var(--pgn-typography-font-family-monospace-alternate-1),
-    var(--pgn-typography-font-family-monospace-alternate-2),
-    var(--pgn-typography-font-family-monospace-legacy),
-    var(--pgn-typography-font-family-monospace-fallback);
-
-  --pgn-typography-font-family-base:
-    var(--pgn-typography-font-family-base-primary),
-    var(--pgn-typography-font-family-base-secondary),
-    var(--pgn-typography-font-family-base-tertiary),
-    var(--pgn-typography-font-family-base-alternate-1),
-    var(--pgn-typography-font-family-base-alternate-2),
-    var(--pgn-typography-font-family-base-alternate-3),
-    var(--pgn-typography-font-family-base-alternate-4),
-    var(--pgn-typography-font-family-base-fallback);
 }

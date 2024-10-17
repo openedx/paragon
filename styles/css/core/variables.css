@@ -30,27 +30,27 @@
   --pgn-elevation-modal-zindex: 1050;
   --pgn-elevation-modal-backdrop-zindex: 1040;
   --pgn-elevation-dropdown-zindex: 1000;
-  --pgn-transition-collapse-width-behavior: unset; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-width-behavior: normal; /* Collapse transition for width that takes 350ms */
   --pgn-transition-collapse-width-delay: 0s; /* Collapse transition for width that takes 350ms */
   --pgn-transition-collapse-width-timing-function: ease; /* Collapse transition for width that takes 350ms */
   --pgn-transition-collapse-width-duration: 0.35s; /* Collapse transition for width that takes 350ms */
   --pgn-transition-collapse-width-property: width; /* Collapse transition for width that takes 350ms */
-  --pgn-transition-collapse-height-behavior: unset; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-collapse-height-behavior: normal; /* Collapse transition for height that takes 350ms */
   --pgn-transition-collapse-height-delay: 0s; /* Collapse transition for height that takes 350ms */
   --pgn-transition-collapse-height-timing-function: ease; /* Collapse transition for height that takes 350ms */
   --pgn-transition-collapse-height-duration: 0.35s; /* Collapse transition for height that takes 350ms */
   --pgn-transition-collapse-height-property: height; /* Collapse transition for height that takes 350ms */
-  --pgn-transition-fade-behavior: unset; /* Opacity transition that takes 150ms */
+  --pgn-transition-fade-behavior: normal; /* Opacity transition that takes 150ms */
   --pgn-transition-fade-delay: 0s; /* Opacity transition that takes 150ms */
   --pgn-transition-fade-timing-function: linear; /* Opacity transition that takes 150ms */
   --pgn-transition-fade-duration: 0.15s; /* Opacity transition that takes 150ms */
   --pgn-transition-fade-property: opacity; /* Opacity transition that takes 150ms */
-  --pgn-transition-base-behavior: unset; /* Generic transition for any property change */
+  --pgn-transition-base-behavior: normal; /* Generic transition for any property change */
   --pgn-transition-base-delay: 0s; /* Generic transition for any property change */
   --pgn-transition-base-timing-function: ease-in-out; /* Generic transition for any property change */
   --pgn-transition-base-duration: 0.2s; /* Generic transition for any property change */
   --pgn-transition-base-property: all; /* Generic transition for any property change */
-  --pgn-transition-progress-bar-transition-behavior: unset;
+  --pgn-transition-progress-bar-transition-behavior: normal;
   --pgn-transition-progress-bar-transition-delay: 0s;
   --pgn-transition-progress-bar-transition-timing-function: ease;
   --pgn-transition-progress-bar-transition-duration: 0.6s;
@@ -59,48 +59,47 @@
   --pgn-transition-progress-bar-animation-timing-delay: 0s;
   --pgn-transition-progress-bar-animation-timing-timing-function: linear;
   --pgn-transition-progress-bar-animation-timing-duration: 1s;
-  --pgn-transition-form-control-3-behavior: unset;
+  --pgn-transition-form-control-3-behavior: normal;
   --pgn-transition-form-control-3-delay: 0s;
   --pgn-transition-form-control-3-timing-function: ease-in-out;
   --pgn-transition-form-control-3-duration: 0.15s;
   --pgn-transition-form-control-3-property: box-shadow;
-  --pgn-transition-form-control-2-behavior: unset;
+  --pgn-transition-form-control-2-behavior: normal;
   --pgn-transition-form-control-2-delay: 0s;
   --pgn-transition-form-control-2-timing-function: ease-in-out;
   --pgn-transition-form-control-2-duration: 0.15s;
   --pgn-transition-form-control-2-property: border-color;
-  --pgn-transition-form-control-1-behavior: unset;
+  --pgn-transition-form-control-1-behavior: normal;
   --pgn-transition-form-control-1-delay: 0s;
   --pgn-transition-form-control-1-timing-function: ease-in-out;
   --pgn-transition-form-control-1-duration: 0.15s;
   --pgn-transition-form-control-1-property: background-color;
-  --pgn-transition-form-input-2-behavior: unset;
+  --pgn-transition-form-input-2-behavior: normal;
   --pgn-transition-form-input-2-delay: 0s;
   --pgn-transition-form-input-2-timing-function: ease-in-out;
   --pgn-transition-form-input-2-duration: 0.15s;
   --pgn-transition-form-input-2-property: box-shadow;
-  --pgn-transition-form-input-1-behavior: unset;
+  --pgn-transition-form-input-1-behavior: normal;
   --pgn-transition-form-input-1-delay: 0s;
   --pgn-transition-form-input-1-timing-function: ease-in-out;
   --pgn-transition-form-input-1-duration: 0.15s;
   --pgn-transition-form-input-1-property: border-color;
-  --pgn-transition-carousel-control-timing-function: ease;
+  --pgn-transition-carousel-control-behavior: normal;
   --pgn-transition-carousel-control-delay: 0ms;
+  --pgn-transition-carousel-control-timing-function: ease;
   --pgn-transition-carousel-control-duration: 0.15s;
   --pgn-transition-carousel-control-property: opacity;
-  --pgn-transition-carousel-indicator-timing-function: ease;
+  --pgn-transition-carousel-indicator-behavior: normal;
   --pgn-transition-carousel-indicator-delay: 0ms;
+  --pgn-transition-carousel-indicator-timing-function: ease;
   --pgn-transition-carousel-indicator-duration: var(--pgn-transition-carousel-duration);
   --pgn-transition-carousel-indicator-property: opacity;
   --pgn-transition-carousel-duration: 0.6s;
-  --pgn-transition-carousel-base-2-timing-function: ease-in-out;
-  --pgn-transition-carousel-base-2-delay: 0ms;
-  --pgn-transition-carousel-base-2-duration: var(--pgn-transition-carousel-duration);
-  --pgn-transition-carousel-base-2-property: transform;
-  --pgn-transition-carousel-base-1-timing-function: ease;
-  --pgn-transition-carousel-base-1-delay: 0ms;
-  --pgn-transition-carousel-base-1-duration: 0ms;
-  --pgn-transition-carousel-base-1-property: opacity;
+  --pgn-transition-carousel-base-behavior: normal;
+  --pgn-transition-carousel-base-delay: 0ms;
+  --pgn-transition-carousel-base-timing-function: ease-in-out;
+  --pgn-transition-carousel-base-duration: var(--pgn-transition-carousel-duration);
+  --pgn-transition-carousel-base-property: transform;
   --pgn-transition-btn: none;
   --pgn-transition-badge: none;
   --pgn-typography-print-page-size: a3;
@@ -148,30 +147,10 @@
   --pgn-typography-font-size-sm: 0.875rem; /* Small font size. */
   --pgn-typography-font-size-lg: calc(var(--pgn-typography-font-size-base) * 1.25); /* Lead text font size. */
   --pgn-typography-font-size-base: 1.125rem; /* Base font size. */
-  --pgn-typography-font-family-monospace-fallback: monospace; /* Monospace font family. */
-  --pgn-typography-font-family-monospace-legacy: Courier New; /* Monospace font family. */
-  --pgn-typography-font-family-monospace-alternate-2: Liberation Mono; /* Monospace font family. */
-  --pgn-typography-font-family-monospace-alternate-1: Consolas; /* Monospace font family. */
-  --pgn-typography-font-family-monospace-tertiary: Monaco; /* Monospace font family. */
-  --pgn-typography-font-family-monospace-secondary: Menlo; /* Monospace font family. */
-  --pgn-typography-font-family-monospace-primary: SFMono-Regular; /* Monospace font family. */
+  --pgn-typography-font-family-monospace: 'SFMono-Regular, Menlo, Monaco, Consolas, \'Liberation Mono\',  \'Courier New\', monospace'; /* Monospace font family. */
   --pgn-typography-font-family-serif: serif; /* Serif font family. */
-  --pgn-typography-font-family-sans-serif-fallback: sans-serif; /* Sans-serif font family. */
-  --pgn-typography-font-family-sans-serif-alternate-4: 'Noto Sans'; /* Sans-serif font family. */
-  --pgn-typography-font-family-sans-serif-alternate-3: Arial; /* Sans-serif font family. */
-  --pgn-typography-font-family-sans-serif-alternate-2: 'Helvetica Neue'; /* Sans-serif font family. */
-  --pgn-typography-font-family-sans-serif-alternate-1: Roboto; /* Sans-serif font family. */
-  --pgn-typography-font-family-sans-serif-tertiary: 'Segoe UI'; /* Sans-serif font family. */
-  --pgn-typography-font-family-sans-serif-secondary: BlinkMacSystemFont; /* Sans-serif font family. */
-  --pgn-typography-font-family-sans-serif-primary: -apple-system; /* Sans-serif font family. */
-  --pgn-typography-font-family-base-fallback: sans-serif; /* Basic font family. */
-  --pgn-typography-font-family-base-alternate-4: 'Noto Sans'; /* Basic font family. */
-  --pgn-typography-font-family-base-alternate-3: Arial; /* Basic font family. */
-  --pgn-typography-font-family-base-alternate-2: 'Helvetica Neue'; /* Basic font family. */
-  --pgn-typography-font-family-base-alternate-1: Roboto; /* Basic font family. */
-  --pgn-typography-font-family-base-tertiary: 'Segoe UI'; /* Basic font family. */
-  --pgn-typography-font-family-base-secondary: BlinkMacSystemFont; /* Basic font family. */
-  --pgn-typography-font-family-base-primary: -apple-system; /* Basic font family. */
+  --pgn-typography-font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; /* Sans-serif font family. */
+  --pgn-typography-font-family-base: var(--pgn-typography-font-family-sans-serif); /* Basic font family. */
   --pgn-typography-blockquote-font-size: calc(var(--pgn-typography-font-size-base) * 1.25);
   --pgn-typography-blockquote-small-font-size: var(--pgn-typography-font-size-sm);
   --pgn-typography-dt-font-weight: var(--pgn-typography-font-weight-bold);
@@ -387,7 +366,7 @@
   --pgn-spacing-dropzone-padding: 1.5rem;
   --pgn-spacing-dropdown-close-container-top: 0.625rem;
   --pgn-spacing-dropdown-divider-margin-y: calc(var(--pgn-spacing-spacer-base) / 2);
-  --pgn-spacing-dropdown-padding-header-y: var(--pgn-spacing-dropdown-padding-y-base);
+  --pgn-spacing-dropdown-padding-header-y: 0.5rem;
   --pgn-spacing-dropdown-padding-header-x: var(--pgn-spacing-dropdown-padding-x-item);
   --pgn-spacing-dropdown-padding-y-item: 0.25rem;
   --pgn-spacing-dropdown-padding-y-base: 0.5rem;

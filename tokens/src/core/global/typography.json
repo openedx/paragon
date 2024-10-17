@@ -11,16 +11,8 @@
         "sans": {
           "serif": {
             "source": "$font-family-sans-serif",
-            "$value": {
-              "primary": "-apple-system",
-              "secondary": "BlinkMacSystemFont",
-              "tertiary": "'Segoe UI'",
-              "alternate-1": "Roboto",
-              "alternate-2": "'Helvetica Neue'",
-              "alternate-3": "Arial",
-              "alternate-4": "'Noto Sans'",
-              "fallback": "sans-serif"
-            },
+            "$value": ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial",
+            "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
             "$description": "Sans-serif font family."
           }
         },
@@ -31,15 +23,7 @@
         },
         "monospace": {
           "source": "$font-family-monospace",
-          "$value": {
-            "primary": "SFMono-Regular",
-            "secondary": "Menlo",
-            "tertiary": "Monaco",
-            "alternate-1": "Consolas",
-            "alternate-2": "Liberation Mono",
-            "legacy": "Courier New",
-            "fallback": "monospace"
-          },
+          "$value": ["SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',  'Courier New', monospace"],
           "$description": "Monospace font family."
         }
       },

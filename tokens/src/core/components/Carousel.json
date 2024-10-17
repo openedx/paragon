@@ -29,20 +29,13 @@
     "carousel": {
       "base": {
         "source": "$carousel-transition",
-        "$value": [
-          {
-            "property": "opacity",
-            "duration": "0ms",
-            "delay": "0ms",
-            "timingFunction": "ease"
-          },
-          {
-            "property": "transform",
-            "duration": "{transition.carousel.duration}",
-            "delay": "0ms",
-            "timingFunction": "ease-in-out"
-          }
-        ]
+        "$value": {
+          "property": "transform",
+          "duration": "{transition.carousel.duration}",
+          "timingFunction": "ease-in-out",
+          "delay": "0ms",
+          "behavior": "normal"
+        }
       },
       "duration": { "source": "$carousel-transition-duration", "$value": ".6s", "$type": "duration" },
       "indicator": {
@@ -50,8 +43,9 @@
         "$value": {
           "property": "opacity",
           "duration": "{transition.carousel.duration}",
+          "timingFunction": "ease",
           "delay": "0ms",
-          "timingFunction": "ease"
+          "behavior": "normal"
         }
       },
       "control": {
@@ -59,8 +53,9 @@
         "$value": {
           "property": "opacity",
           "duration": ".15s",
+          "timingFunction": "ease",
           "delay": "0ms",
-          "timingFunction": "ease"
+          "behavior": "normal"
         }
       }
     }

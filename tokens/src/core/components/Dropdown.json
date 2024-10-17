@@ -41,7 +41,7 @@
           "source": "$dropdown-header-padding",
           "$value": {
             "x": "{spacing.dropdown.padding.x.item}",
-            "y": "{spacing.dropdown.padding.y.base}"
+            "y": ".5rem"
           }
         }
       },
