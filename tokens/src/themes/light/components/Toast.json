@@ -25,7 +25,20 @@
     "toast": {
       "box-shadow": {
         "source": "$toast-box-shadow",
-        "$value": "0 1.25rem 2.5rem rgba(0, 0, 0, .15), 0 .5rem 3rem rgba(0, 0, 0, .15)"
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, .15)",
+            "offsetX": "0",
+            "offsetY": "1.25rem",
+            "blur": "2.5rem"
+          },
+          {
+            "color": "rgba(0, 0, 0, .15)",
+            "offsetX": "0",
+            "offsetY": ".5rem",
+            "blur": "3rem"
+          }
+        ]
       }
     }
   }

@@ -1,7 +1,7 @@
 {
   "typography": {
     "code": {
-      "font-size": { "source": "$code-font-size", "$value": "87.5%", "$type": "percentage" },
+      "font-size": { "source": "$code-font-size", "$value": "{typography.font.size.sm}", "$type": "percentage" },
       "kbd": {
         "font-size": { "source": "$kbd-font-size", "$value": "{typography.code.font-size}", "$type": "dimension" },
         "nested": {

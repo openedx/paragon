@@ -4,14 +4,32 @@
     "form": {
       "input": {
         "base": { "source": "$input-box-shadow", "$value": "none" },
-        "focus": { "source": "$input-focus-box-shadow", "$value": "0 0 0 1px {color.primary.500}" }
+        "focus": {
+          "source": "$input-focus-box-shadow",
+          "$value": {
+            "color": "{color.primary.500}",
+            "spread": "1px",
+            "offsetX": "0",
+            "offsetY": "0",
+            "blur": "0"
+          }
+        }
       },
       "control": {
         "indicator": {
           "base": { "source": "$custom-control-indicator-box-shadow", "$value": "{elevation.form.input.base}" },
           "checked": {
             "base": { "source": "$custom-control-indicator-checked-box-shadow", "$value": "none" },
-            "focus": { "source": "$custom-control-indicator-focus-box-shadow", "$value": "0 0 0 4px rgba(0, 0, 0, .1)" }
+            "focus": {
+              "source": "$custom-control-indicator-focus-box-shadow",
+              "$value": {
+                "color": "rgba(0, 0, 0, .1)",
+                "spread": "4px",
+                "offsetX": "0",
+                "offsetY": "0",
+                "blur": "0"
+              }
+            }
           },
           "active": { "source": "$custom-control-indicator-active-box-shadow", "$value": "none" }
         },
@@ -26,7 +44,15 @@
             "base": { "source": "$custom-range-thumb-box-shadow", "$value": "none" },
             "focus": {
               "source": "$custom-range-thumb-focus-box-shadow",
-              "$value": "0 0 0 1px {color.body.bg}, {size.form.input.width.focus}"
+              "$value": [
+                {
+                  "color": "{color.body.bg}",
+                  "spread": "0",
+                  "offsetX": "0",
+                  "offsetY": ".1rem",
+                  "blur": ".25rem"
+                }
+              ]
             }
           }
         },
