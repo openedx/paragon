@@ -1,5 +1,5 @@
 {
-  "lastModified": 1729087629023,
+  "lastModified": 1729174014003,
   "projectUsages": [
     {
       "version": "22.8.1",
@@ -2343,9 +2343,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 64,
+            "line": 74,
             "column": 10,
-            "index": 2586
+            "index": 2989
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
@@ -4268,16 +4268,22 @@
             "index": 4563
           },
           {
+            "filePath": "src/components/PeopleManagement/GroupDetailCard.jsx",
+            "line": 9,
+            "column": 4,
+            "index": 292
+          },
+          {
             "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
             "line": 73,
             "column": 10,
             "index": 2576
           },
           {
-            "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 73,
-            "column": 8,
-            "index": 3006
+            "filePath": "src/components/PeopleManagement/ZeroState.jsx",
+            "line": 19,
+            "column": 4,
+            "index": 705
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
@@ -4514,6 +4520,12 @@
             "line": 21,
             "column": 4,
             "index": 552
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailCard.jsx",
+            "line": 11,
+            "column": 6,
+            "index": 376
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
@@ -5213,9 +5225,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 30,
+            "line": 33,
             "column": 47,
-            "index": 1230
+            "index": 1495
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -8934,6 +8946,12 @@
             "index": 1065
           },
           {
+            "filePath": "src/components/PeopleManagement/GroupDetailCard.jsx",
+            "line": 15,
+            "column": 8,
+            "index": 510
+          },
+          {
             "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
             "line": 112,
             "column": 14,
@@ -9317,9 +9335,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 37,
+            "line": 47,
             "column": 8,
-            "index": 1379
+            "index": 1788
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/ActionsTableCell.jsx",
@@ -11245,9 +11263,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 64,
+            "line": 74,
             "column": 30,
-            "index": 2606
+            "index": 3009
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
@@ -11420,10 +11438,10 @@
             "index": 1200
           },
           {
-            "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 74,
-            "column": 10,
-            "index": 3023
+            "filePath": "src/components/PeopleManagement/ZeroState.jsx",
+            "line": 20,
+            "column": 6,
+            "index": 718
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
@@ -11468,6 +11486,12 @@
             "line": 143,
             "column": 6,
             "index": 4178
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailCard.jsx",
+            "line": 10,
+            "column": 6,
+            "index": 335
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
@@ -11558,6 +11582,12 @@
             "index": 228
           },
           {
+            "filePath": "src/components/PeopleManagement/GroupDetailCard.jsx",
+            "line": 14,
+            "column": 6,
+            "index": 464
+          },
+          {
             "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
             "line": 97,
             "column": 12,
@@ -11630,6 +11660,18 @@
             "line": 8,
             "column": 2,
             "index": 319
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupCardGrid.jsx",
+            "line": 20,
+            "column": 6,
+            "index": 577
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupCardGrid.jsx",
+            "line": 37,
+            "column": 10,
+            "index": 979
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/index.jsx",
@@ -11719,9 +11761,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 63,
+            "line": 73,
             "column": 10,
-            "index": 2555
+            "index": 2958
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/index.jsx",
@@ -12514,6 +12556,12 @@
             "line": 69,
             "column": 6,
             "index": 2767
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupCardGrid.jsx",
+            "line": 33,
+            "column": 8,
+            "index": 867
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
@@ -25786,7 +25834,7 @@
             "filePath": "src/content-tags-drawer/ContentTagsDrawerSheet.jsx",
             "line": 21,
             "column": 6,
-            "index": 742
+            "index": 739
           },
           {
             "filePath": "src/files-and-videos/videos-page/transcript-settings/TranscriptSettings.jsx",
