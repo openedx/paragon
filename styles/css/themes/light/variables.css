@@ -306,11 +306,11 @@
   --pgn-color-search-field-border-focus: var(--pgn-color-black);
   --pgn-color-search-field-border-interaction: var(--pgn-color-black);
   --pgn-color-search-field-border-base: var(--pgn-color-gray-500);
+  --pgn-color-progress-bg: #00000000;
+  --pgn-color-progress-bar-border: var(--pgn-color-gray-500);
   --pgn-color-progress-bar-bg-annotated: var(--pgn-color-dark-500);
   --pgn-color-progress-bar-bg-base: var(--pgn-color-accent-a);
   --pgn-color-progress-bar-base: var(--pgn-color-white);
-  --pgn-color-progress-bar-border: var(--pgn-color-gray-500);
-  --pgn-color-progress-bar-bg: #00000000;
   --pgn-color-product-tour-checkpoint-arrow-border-transparent: #00000000;
   --pgn-color-product-tour-checkpoint-arrow-border-top: var(--pgn-color-product-tour-checkpoint-bg);
   --pgn-color-product-tour-checkpoint-box-shadow: #0000004D;

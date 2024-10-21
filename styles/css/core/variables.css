@@ -147,7 +147,7 @@
   --pgn-typography-font-size-sm: 0.875rem; /* Small font size. */
   --pgn-typography-font-size-lg: calc(var(--pgn-typography-font-size-base) * 1.25); /* Lead text font size. */
   --pgn-typography-font-size-base: 1.125rem; /* Base font size. */
-  --pgn-typography-font-family-monospace: 'SFMono-Regular, Menlo, Monaco, Consolas, \'Liberation Mono\',  \'Courier New\', monospace'; /* Monospace font family. */
+  --pgn-typography-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; /* Monospace font family. */
   --pgn-typography-font-family-serif: serif; /* Serif font family. */
   --pgn-typography-font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; /* Sans-serif font family. */
   --pgn-typography-font-family-base: var(--pgn-typography-font-family-sans-serif); /* Basic font family. */

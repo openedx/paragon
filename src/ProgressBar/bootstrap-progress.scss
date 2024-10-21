@@ -25,7 +25,7 @@
   height: var(--pgn-size-progress-bar-height-base);
   overflow: hidden;
   line-height: 0;
-  background-color: var(--pgn-color-progress-bar-bg);
+  background-color: var(--pgn-color-progress-bg);
   box-shadow: var(--pgn-elevation-progress-bar-box-shadow);
 
   @include font-size(var(--pgn-typography-progress-bar-font-size));

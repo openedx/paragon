@@ -23,7 +23,7 @@
         },
         "monospace": {
           "source": "$font-family-monospace",
-          "$value": ["SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',  'Courier New', monospace"],
+          "$value": ["SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono",  "Courier New", "monospace"],
           "$description": "Monospace font family."
         }
       },
