@@ -3,23 +3,47 @@
     "$type": "transition",
     "base": {
       "source": "$transition-base",
-      "$value": "all .2s ease-in-out",
+      "$value": {
+        "property": "all",
+        "duration": ".2s",
+        "timing-function": "ease-in-out",
+        "delay": "0s",
+        "behavior": "normal"
+      },
       "$description": "Generic transition for any property change"
     },
     "fade": {
       "source": "$transition-fade",
-      "$value": "opacity .15s linear",
+      "$value": {
+        "property": "opacity",
+        "duration": ".15s",
+        "timing-function": "linear",
+        "delay": "0s",
+        "behavior": "normal"
+      },
       "$description": "Opacity transition that takes 150ms"
     },
     "collapse": {
       "height": {
         "source": "$transition-collapse",
-        "$value": "height .35s ease",
+        "$value": {
+          "property": "height",
+          "duration": ".35s",
+          "timing-function": "ease",
+          "delay": "0s",
+          "behavior": "normal"
+        },
         "$description": "Collapse transition for height that takes 350ms"
       },
       "width": {
         "source": "$transition-collapse-width",
-        "$value": "width .35s ease",
+        "$value": {
+          "property": "width",
+          "duration": ".35s",
+          "timing-function": "ease",
+          "delay": "0s",
+          "behavior": "normal"
+        },
         "$description": "Collapse transition for width that takes 350ms"
       }
     }

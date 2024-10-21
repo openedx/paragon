@@ -11,7 +11,8 @@
         "sans": {
           "serif": {
             "source": "$font-family-sans-serif",
-            "$value": "-apple-system, BlinkMacSystemFont, 'Segoe UI',  Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+            "$value": ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial",
+            "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
             "$description": "Sans-serif font family."
           }
         },
@@ -22,7 +23,7 @@
         },
         "monospace": {
           "source": "$font-family-monospace",
-          "$value": "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',  'Courier New', monospace",
+          "$value": ["SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono",  "Courier New", "monospace"],
           "$description": "Monospace font family."
         }
       },
@@ -35,7 +36,7 @@
         },
         "lg": {
           "source": "$lead-font-size",
-          "$value": "{typography.font.size.base} * 1.25",
+          "$value": "calc({typography.font.size.base} * 1.25)",
           "$description": "Lead text font size."
         },
         "sm": {

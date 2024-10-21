@@ -382,56 +382,218 @@
     "icon-button": {
       "box-shadow": {
         "primary": {
-          "base": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.text.primary.base}" },
-          "inverse": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.accent}" },
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.primary.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
           "active": { "$value": "none" },
           "inverse-active": { "$value": "none" }
         },
         "secondary": {
-          "base": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.text.secondary.base}" },
-          "inverse": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.accent}" },
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.secondary.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
           "active": { "$value": "none" },
           "inverse-active": { "$value": "none" }
         },
         "brand": {
-          "base": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.text.brand.base}" },
-          "inverse": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.accent}" },
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.brand.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
           "active": { "$value": "none" },
           "inverse-active": { "$value": "none" }
         },
         "success": {
-          "base": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.text.success.base}" },
-          "inverse": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.accent}" },
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.success.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
           "active": { "$value": "none" },
           "inverse-active": { "$value": "none" }
         },
         "warning": {
-          "base": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.text.warning.base}" },
-          "inverse": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.accent}" },
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.warning.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
           "active": { "$value": "none" },
           "inverse-active": { "$value": "none" }
         },
         "danger": {
-          "base": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.text.danger.base}" },
-          "inverse": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.accent}" },
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.danger.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
           "active": { "$value": "none" },
           "inverse-active": { "$value": "none" }
         },
         "light": {
-          "base": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.text.light.base}" },
-          "inverse": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.accent}" },
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.light.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
           "active": { "$value": "none" },
           "inverse-active": { "$value": "none" }
         },
         "dark": {
-          "base": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.text.dark.base}" },
-          "inverse": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.accent}" },
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.dark.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
           "active": { "$value": "none" },
           "inverse-active": { "$value": "none" }
         },
         "black": {
-          "base": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.text.black.base}" },
-          "inverse": { "$value": "inset 0 0 0 {size.btn.focus.width} {color.icon-button.accent}" },
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.black.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            }
+          },
           "active": { "$value": "none" },
           "inverse-active": { "$value": "none" }
         }

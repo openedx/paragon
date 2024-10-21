@@ -1,3 +1,12 @@
+:root {
+  --pgn-elevation-pagination-focus-box-shadow:
+    var(--pgn-elevation-pagination-focus-box-shadow-offset-x)
+    var(--pgn-elevation-pagination-focus-box-shadow-offset-y)
+    var(--pgn-elevation-pagination-focus-box-shadow-blur)
+    var(--pgn-elevation-pagination-focus-box-shadow-spread)
+    var(--pgn-elevation-pagination-focus-box-shadow-color);
+}
+
 .pagination {
   display: flex;
 

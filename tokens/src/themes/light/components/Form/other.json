@@ -99,7 +99,14 @@
             },
             "bg": {
               "source": "$custom-select-background",
-              "$value": "{other.content.form.control.select.indicator.icon} no-repeat right {spacing.form.input.padding.y.base} center / {color.form.control.select.bg.base}",
+              "$value": {
+                "color": "{color.form.control.select.bg.base}",
+                "image": "{other.content.form.control.select.indicator.icon}",
+                "repeat": "no-repeat",
+                "position-x": "right",
+                "offset-y": "{spacing.form.input.padding.y.base}",
+                "position-y": "center"
+              },
               "$type": "background"
             }
           }

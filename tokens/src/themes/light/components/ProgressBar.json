@@ -2,15 +2,15 @@
   "color": {
     "$type": "color",
     "progress-bar": {
-      "bg": { "source": "$progress-bg", "$value": "transparent" },
-      "border": { "source": "$progress-bar-border-color", "$value": "{color.gray.500}" },
-      "bar": {
-        "base": { "source": "$progress-bar-color", "$value": "{color.white}" },
-        "bg": {
-          "base": { "source": "$progress-bar-bg", "$value": "{color.accent.a}" },
-          "annotated": { "source": "$annotated-progress-bar-bg", "$value": "{color.dark.500}" }
-        }
-      }
+      "base": { "source": "$progress-bar-color", "$value": "{color.white}" },
+      "bg": {
+        "base": { "source": "$progress-bar-bg", "$value": "{color.accent.a}" },
+        "annotated": { "source": "$annotated-progress-bar-bg", "$value": "{color.dark.500}" }
+      },
+      "border": { "source": "$progress-bar-border-color", "$value": "{color.gray.500}" }
+    },
+    "progress": {
+      "bg": { "source": "$progress-bg", "$value": "transparent" }
     }
   },
   "elevation": {
