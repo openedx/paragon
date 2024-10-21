@@ -1,5 +1,5 @@
 {
-  "lastModified": 1729433170433,
+  "lastModified": 1729519627820,
   "projectUsages": [
     {
       "version": "22.9.0",
@@ -33128,7 +33128,7 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.9.0",
       "name": "@edx/frontend-app-learner-dashboard",
       "repository": {
         "type": "git",
@@ -34543,6 +34543,12 @@
             "index": 2094
           },
           {
+            "filePath": "src/components/expired-subscription-modal/index.jsx",
+            "line": 33,
+            "column": 10,
+            "index": 992
+          },
+          {
             "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
             "line": 35,
             "column": 8,
@@ -34912,7 +34918,7 @@
             "filePath": "src/components/course/routes/CourseAbout.jsx",
             "line": 34,
             "column": 6,
-            "index": 1069
+            "index": 1074
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
@@ -34928,9 +34934,9 @@
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 57,
+            "line": 58,
             "column": 4,
-            "index": 1671
+            "index": 1741
           },
           {
             "filePath": "src/components/enterprise-banner/EnterpriseBanner.jsx",
@@ -35119,12 +35125,6 @@
             "index": 723
           },
           {
-            "filePath": "src/components/course/ExpiredSubscriptionModal.jsx",
-            "line": 9,
-            "column": 27,
-            "index": 284
-          },
-          {
             "filePath": "src/components/dashboard/sidebar/CouponCodesSummaryCard.jsx",
             "line": 19,
             "column": 6,
@@ -35141,6 +35141,12 @@
             "line": 33,
             "column": 28,
             "index": 1410
+          },
+          {
+            "filePath": "src/components/expired-subscription-modal/index.jsx",
+            "line": 8,
+            "column": 19,
+            "index": 251
           },
           {
             "filePath": "src/components/my-career/CategoryCard.jsx",
@@ -35174,9 +35180,9 @@
           },
           {
             "filePath": "src/components/search/Search.jsx",
-            "line": 37,
+            "line": 38,
             "column": 70,
-            "index": 1655
+            "index": 1725
           },
           {
             "filePath": "src/components/skills-quiz-v2/SkillsQuiz.jsx",
@@ -36019,6 +36025,12 @@
             "index": 5679
           },
           {
+            "filePath": "src/components/expired-subscription-modal/index.jsx",
+            "line": 27,
+            "column": 4,
+            "index": 814
+          },
+          {
             "filePath": "src/components/integration-warning-modal/IntegrationWarningModal.jsx",
             "line": 30,
             "column": 4,
@@ -36079,6 +36091,12 @@
             "line": 168,
             "column": 8,
             "index": 5954
+          },
+          {
+            "filePath": "src/components/expired-subscription-modal/index.jsx",
+            "line": 32,
+            "column": 8,
+            "index": 970
           },
           {
             "filePath": "src/components/microlearning/VideoFeedbackCard.jsx",
@@ -36248,9 +36266,9 @@
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 78,
+            "line": 79,
             "column": 6,
-            "index": 2406
+            "index": 2476
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
@@ -36446,13 +36464,13 @@
             "filePath": "src/components/course/routes/CourseAbout.jsx",
             "line": 35,
             "column": 8,
-            "index": 1116
+            "index": 1121
           },
           {
             "filePath": "src/components/course/routes/CourseAbout.jsx",
             "line": 48,
             "column": 10,
-            "index": 1496
+            "index": 1501
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
@@ -36778,7 +36796,7 @@
             "filePath": "src/components/course/routes/CourseAbout.jsx",
             "line": 49,
             "column": 12,
-            "index": 1514
+            "index": 1519
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
@@ -37302,9 +37320,9 @@
           },
           {
             "filePath": "src/components/search/Search.jsx",
-            "line": 154,
+            "line": 156,
             "column": 10,
-            "index": 5547
+            "index": 5652
           },
           {
             "filePath": "src/components/site-header/SiteHeaderLogos.jsx",
@@ -37770,7 +37788,7 @@
             "filePath": "src/components/course/routes/CourseAbout.jsx",
             "line": 39,
             "column": 10,
-            "index": 1215
+            "index": 1220
           },
           {
             "filePath": "src/components/dashboard/main-content/CoursesTabComponent.jsx",
@@ -37838,7 +37856,7 @@
             "filePath": "src/components/course/routes/CourseAbout.jsx",
             "line": 39,
             "column": 32,
-            "index": 1237
+            "index": 1242
           },
           {
             "filePath": "src/components/course/routes/tests/CourseAbout.test.jsx",
@@ -38379,44 +38397,6 @@
             "index": 2415
           }
         ],
-        "StandardModal": [
-          {
-            "filePath": "src/components/course/ExpiredSubscriptionModal.jsx",
-            "line": 14,
-            "column": 4,
-            "index": 402
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
-            "line": 114,
-            "column": 6,
-            "index": 2697
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
-            "line": 78,
-            "column": 6,
-            "index": 2485
-          },
-          {
-            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
-            "line": 72,
-            "column": 6,
-            "index": 1979
-          },
-          {
-            "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
-            "line": 22,
-            "column": 4,
-            "index": 788
-          },
-          {
-            "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
-            "line": 49,
-            "column": 4,
-            "index": 1832
-          }
-        ],
         "CheckCircle": [
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
@@ -38458,9 +38438,9 @@
         "Tabs": [
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 91,
+            "line": 92,
             "column": 6,
-            "index": 2906
+            "index": 2976
           }
         ],
         "Tab": [
@@ -38741,6 +38721,38 @@
             "line": 550,
             "column": 19,
             "index": 16916
+          }
+        ],
+        "StandardModal": [
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
+            "line": 114,
+            "column": 6,
+            "index": 2697
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/mark-complete-modal/MarkCompleteModal.jsx",
+            "line": 78,
+            "column": 6,
+            "index": 2485
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/move-to-in-progress-modal/MoveToInProgressModal.jsx",
+            "line": 72,
+            "column": 6,
+            "index": 1979
+          },
+          {
+            "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
+            "line": 22,
+            "column": 4,
+            "index": 788
+          },
+          {
+            "filePath": "src/components/program-progress/SubscriptionExpiringWarningModal.jsx",
+            "line": 49,
+            "column": 4,
+            "index": 1832
           }
         ],
         "Form.Group": [
@@ -39834,7 +39846,7 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.9.0",
       "name": "@edx/frontend-app-learner-record",
       "repository": {
         "type": "git",
@@ -45899,7 +45911,7 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.9.0",
       "name": "@edx/frontend-app-profile",
       "repository": {
         "type": "git",
@@ -50502,7 +50514,7 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.9.0",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
@@ -51808,7 +51820,7 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.9.0",
       "name": "@edx/frontend-template-application",
       "repository": {
         "type": "git",
