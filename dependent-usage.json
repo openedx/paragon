@@ -1,5 +1,5 @@
 {
-  "lastModified": 1729519627820,
+  "lastModified": 1729606029939,
   "projectUsages": [
     {
       "version": "22.9.0",
@@ -22,7 +22,7 @@
       "usages": {}
     },
     {
-      "version": "21.8.0",
+      "version": "21.13.1",
       "name": "edx-ora2",
       "repository": "https://github.com/openedx/edx-ora2.git",
       "folderName": "edx-ora2",
@@ -672,7 +672,7 @@
       }
     },
     {
-      "version": "22.0.0",
+      "version": "22.9.0",
       "name": "@edx/frontend-app-account",
       "repository": {
         "type": "git",
@@ -685,19 +685,19 @@
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
             "line": 219,
             "column": 8,
-            "index": 7974
+            "index": 7966
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
             "line": 241,
             "column": 8,
-            "index": 8688
+            "index": 8680
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 334,
+            "line": 324,
             "column": 4,
-            "index": 12018
+            "index": 11542
           },
           {
             "filePath": "src/account-settings/name-change/NameChange.jsx",
@@ -735,7 +735,7 @@
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
             "line": 249,
             "column": 16,
-            "index": 9167
+            "index": 9159
           },
           {
             "filePath": "src/account-settings/BetaLanguageBanner.jsx",
@@ -797,19 +797,19 @@
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
             "line": 295,
             "column": 14,
-            "index": 10540
+            "index": 10532
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 395,
+            "line": 385,
             "column": 27,
-            "index": 13896
+            "index": 13420
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 517,
+            "line": 507,
             "column": 20,
-            "index": 18052
+            "index": 17576
           }
         ],
         "Error": [
@@ -817,16 +817,76 @@
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
             "line": 310,
             "column": 14,
-            "index": 11106
+            "index": 11098
+          }
+        ],
+        "WarningFilled": [
+          {
+            "filePath": "src/account-settings/AccountSettingsPage.jsx",
+            "line": 326,
+            "column": 12,
+            "index": 11585
+          },
+          {
+            "filePath": "src/account-settings/AccountSettingsPage.jsx",
+            "line": 387,
+            "column": 27,
+            "index": 13564
+          }
+        ],
+        "Alert.Heading": [
+          {
+            "filePath": "src/account-settings/AccountSettingsPage.jsx",
+            "line": 328,
+            "column": 6,
+            "index": 11612
+          },
+          {
+            "filePath": "src/account-settings/OneTimeDismissibleAlert.jsx",
+            "line": 22,
+            "column": 6,
+            "index": 510
+          }
+        ],
+        "Icon": [
+          {
+            "filePath": "src/account-settings/AccountSettingsPage.jsx",
+            "line": 385,
+            "column": 16,
+            "index": 13409
+          },
+          {
+            "filePath": "src/account-settings/AccountSettingsPage.jsx",
+            "line": 387,
+            "column": 16,
+            "index": 13553
+          },
+          {
+            "filePath": "src/account-settings/JumpNav.jsx",
+            "line": 77,
+            "column": 16,
+            "index": 2794
+          },
+          {
+            "filePath": "src/notification-preferences/NotificationCourses.jsx",
+            "line": 56,
+            "column": 16,
+            "index": 1987
+          },
+          {
+            "filePath": "src/notification-preferences/NotificationPreferences.jsx",
+            "line": 79,
+            "column": 12,
+            "index": 3099
+          },
+          {
+            "filePath": "src/notification-preferences/NotificationTypes.jsx",
+            "line": 46,
+            "column": 16,
+            "index": 1688
           }
         ],
         "Button": [
-          {
-            "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 319,
-            "column": 16,
-            "index": 11535
-          },
           {
             "filePath": "src/account-settings/BetaLanguageBanner.jsx",
             "line": 71,
@@ -952,72 +1012,6 @@
             "line": 73,
             "column": 8,
             "index": 2425
-          }
-        ],
-        "WarningFilled": [
-          {
-            "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 336,
-            "column": 12,
-            "index": 12061
-          },
-          {
-            "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 397,
-            "column": 27,
-            "index": 14040
-          }
-        ],
-        "Alert.Heading": [
-          {
-            "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 338,
-            "column": 6,
-            "index": 12088
-          },
-          {
-            "filePath": "src/account-settings/OneTimeDismissibleAlert.jsx",
-            "line": 22,
-            "column": 6,
-            "index": 510
-          }
-        ],
-        "Icon": [
-          {
-            "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 395,
-            "column": 16,
-            "index": 13885
-          },
-          {
-            "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 397,
-            "column": 16,
-            "index": 14029
-          },
-          {
-            "filePath": "src/account-settings/JumpNav.jsx",
-            "line": 77,
-            "column": 16,
-            "index": 2794
-          },
-          {
-            "filePath": "src/notification-preferences/NotificationCourses.jsx",
-            "line": 56,
-            "column": 16,
-            "index": 1987
-          },
-          {
-            "filePath": "src/notification-preferences/NotificationPreferences.jsx",
-            "line": 79,
-            "column": 12,
-            "index": 3099
-          },
-          {
-            "filePath": "src/notification-preferences/NotificationTypes.jsx",
-            "line": 46,
-            "column": 16,
-            "index": 1688
           }
         ],
         "Form.Checkbox": [
@@ -33507,9 +33501,9 @@
         "ActionRow": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardActions/index.jsx",
-            "line": 24,
+            "line": 22,
             "column": 4,
-            "index": 727
+            "index": 714
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CreditBanner/views/components/CreditContent.jsx",
