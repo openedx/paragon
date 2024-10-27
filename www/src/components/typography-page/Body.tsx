@@ -15,7 +15,7 @@ export default function Body() {
   return (
     <>
       <h2 className="mb-2">Body</h2>
-      <div className="mb-4">
+      <div className="mb-4 pgn-doc__code-body-block">
         <DataTable
           itemCount={bodyClassesAndDescriptions.length}
           data={bodyClassesAndDescriptions}

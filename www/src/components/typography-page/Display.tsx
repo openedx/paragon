@@ -10,7 +10,7 @@ export default function Display() {
   return (
     <>
       <h2 className="mb-2">Display</h2>
-      <div className="mb-4">
+      <div className="mb-4 pgn-doc__code-display-block">
         <DataTable
           itemCount={displaySizes.length}
           data={displaySizes.map((size) => ({ text: `Display ${size}`, className: `display-${size}` }))}

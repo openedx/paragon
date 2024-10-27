@@ -143,8 +143,8 @@
   --pgn-typography-font-size-h1-mobile: 2.25rem; /* Mobile font size of heading level 1. */
   --pgn-typography-font-size-h1-base: 2.5rem; /* Base font size of heading level 1. */
   --pgn-typography-font-size-micro: 0.688rem; /* Micro utils text font size. */
-  --pgn-typography-font-size-xs: 0.75rem; /* X-small font size. */
-  --pgn-typography-font-size-sm: 0.875rem; /* Small font size. */
+  --pgn-typography-font-size-xs: 75%; /* X-small font size. */
+  --pgn-typography-font-size-sm: 87.5%; /* Small font size. */
   --pgn-typography-font-size-lg: calc(var(--pgn-typography-font-size-base) * 1.25); /* Lead text font size. */
   --pgn-typography-font-size-base: 1.125rem; /* Base font size. */
   --pgn-typography-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; /* Monospace font family. */

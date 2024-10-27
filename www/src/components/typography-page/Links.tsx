@@ -1,13 +1,10 @@
 import React from 'react';
 // @ts-ignore
-import { DataTable } from '~paragon-react';
+import { DataTable, Alert } from '~paragon-react';
+import { Info } from '~paragon-icons';
 import { TextCell } from '../TableCells';
 
 const linksClassesAndDescriptions = [
-  {
-    example: <a href="/#">Standalone Link</a>,
-    description: <span>The default style for <code>a</code> tags that don`t appear in a <code>p</code> tag.</span>,
-  },
   {
     example: <span>An <a className="inline-link" href="/foundations/typography/">inline link</a> in a sentence.</span>,
     description: <span>For links inside a <code>p</code> or with the <code>.inline-link</code> class name.</span>,
@@ -34,6 +31,9 @@ export default function Links() {
   return (
     <>
       <h2 className="mb-2">Links</h2>
+      <Alert variant="info" icon={Info}>
+        <a href="/#">Standalone Link</a> - the default style for <code>a</code> tag that appear outside of <code>p</code> tag.
+      </Alert>
       <div className="mb-4">
         <DataTable
           itemCount={4}
