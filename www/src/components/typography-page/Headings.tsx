@@ -18,7 +18,7 @@ export default function Headings() {
   return (
     <>
       <h2 className="mb-2">Headings</h2>
-      <div className="mb-4">
+      <div className="mb-4 pgn-doc__code-headings-block">
         <DataTable
           itemCount={tableData.length}
           data={tableData}

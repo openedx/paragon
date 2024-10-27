@@ -40,7 +40,7 @@
     margin-bottom: var(--pgn-spacing-spacer-base);
 
     .pgn_collapsible {
-      font-size: var(--pgn-typography-font-size-xs);
+      font-size: var(--pgn-typography-font-size-sm);
       line-height: var(--pgn-typography-headings-line-height);
       font-weight: var(--pgn-typography-font-weight-normal);
       color: var(--pgn-color-gray-700);
@@ -86,7 +86,6 @@
     }
 
     .collapsible-basic .collapsible-trigger {
-      font-size: var(--pgn-typography-font-size-sm);
       text-decoration: none;
       justify-content: start;
       flex-direction: row-reverse;

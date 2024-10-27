@@ -342,3 +342,37 @@
     grid-template-columns: repeat(4, 1fr); // 4 columns for large+ screens
   }
 }
+
+.pgn-doc__code-display-block,
+.pgn-doc__code-headings-block {
+  .pgn__data-table-cell-wrap {
+    max-width: max-content;
+  }
+
+  @media (--pgn-size-breakpoint-max-width-md) {
+    overflow: hidden;
+    overflow-x: scroll;
+
+    .pgn__data-table-layout-wrapper {
+      overflow-x: initial;
+    }
+  }
+
+  .heading-label {
+    font-size: var(--pgn-typography-font-size-base);
+    line-height: var(--pgn-typography-line-height-base);
+  }
+}
+
+.pgn-doc__code-body-block {
+  .lead,
+  .font-size-normal,
+  .small,
+  .x-small {
+    line-height: var(--pgn-typography-line-height-base);
+  }
+
+  .pgn__data-table-wrapper {
+    font-size: inherit;
+  }
+}
