@@ -86,8 +86,8 @@ const COMMANDS = {
         defaultValue: false,
       },
       {
-        name: '--output-references',
-        description: 'Include references in the build output.',
+        name: '--output-token-references',
+        description: 'Include references for tokens with aliases to other tokens in the build output.',
         defaultValue: true,
       },
       {
