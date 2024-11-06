@@ -1,5 +1,5 @@
 {
-  "lastModified": 1730815600078,
+  "lastModified": 1730902028548,
   "projectUsages": [
     {
       "version": "22.9.0",
@@ -15560,9 +15560,9 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/index.jsx",
-            "line": 50,
+            "line": 55,
             "column": 14,
-            "index": 1663
+            "index": 1883
           },
           {
             "filePath": "src/export-page/export-sidebar/ExportSidebar.jsx",
@@ -22230,9 +22230,9 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/index.jsx",
-            "line": 46,
+            "line": 48,
             "column": 10,
-            "index": 1444
+            "index": 1511
           },
           {
             "filePath": "src/editors/sharedComponents/SelectionModal/index.jsx",
@@ -24988,9 +24988,9 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/index.jsx",
-            "line": 33,
+            "line": 35,
             "column": 10,
-            "index": 1050
+            "index": 1117
           },
           {
             "filePath": "src/editors/containers/VideoGallery/index.jsx",
@@ -25570,9 +25570,9 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/index.jsx",
-            "line": 26,
+            "line": 28,
             "column": 4,
-            "index": 811
+            "index": 878
           },
           {
             "filePath": "src/files-and-videos/videos-page/transcript-settings/TranscriptSettings.jsx",
@@ -25796,9 +25796,9 @@
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/index.jsx",
-            "line": 31,
+            "line": 33,
             "column": 6,
-            "index": 932
+            "index": 999
           },
           {
             "filePath": "src/generic/CollapsableEditor.jsx",
@@ -45315,27 +45315,7 @@
             "index": 675
           }
         ],
-        "PageBanner": [
-          {
-            "filePath": "src/containers/CTA/index.jsx",
-            "line": 12,
-            "column": 2,
-            "index": 235
-          },
-          {
-            "filePath": "src/containers/NotificationsBanner/index.jsx",
-            "line": 10,
-            "column": 2,
-            "index": 284
-          }
-        ],
         "Hyperlink": [
-          {
-            "filePath": "src/containers/CTA/index.jsx",
-            "line": 15,
-            "column": 6,
-            "index": 325
-          },
           {
             "filePath": "src/containers/ListView/EmptySubmission.jsx",
             "line": 20,
@@ -45433,6 +45413,14 @@
             "line": 123,
             "column": 10,
             "index": 3771
+          }
+        ],
+        "PageBanner": [
+          {
+            "filePath": "src/containers/NotificationsBanner/index.jsx",
+            "line": 10,
+            "column": 2,
+            "index": 284
           }
         ],
         "StatefulButton": [
@@ -50046,9 +50034,9 @@
         "Dropdown": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 88,
+            "line": 90,
             "column": 6,
-            "index": 2275
+            "index": 2385
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
@@ -50060,9 +50048,9 @@
         "Dropdown.Toggle": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 89,
+            "line": 91,
             "column": 8,
-            "index": 2294
+            "index": 2404
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
@@ -50074,23 +50062,23 @@
         "AvatarButton": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 91,
+            "line": 93,
             "column": 14,
-            "index": 2354
+            "index": 2464
           },
           {
             "filePath": "src/MobileHeader.jsx",
-            "line": 178,
+            "line": 181,
             "column": 21,
-            "index": 5873
+            "index": 6129
           }
         ],
         "Dropdown.Menu": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 97,
+            "line": 99,
             "column": 8,
-            "index": 2549
+            "index": 2659
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
@@ -50102,15 +50090,15 @@
         "Dropdown.Item": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 99,
+            "line": 101,
             "column": 12,
-            "index": 2620
+            "index": 2730
           },
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 118,
+            "line": 120,
             "column": 16,
-            "index": 3365
+            "index": 3475
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
@@ -50176,25 +50164,25 @@
         "Dropdown.Header": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 113,
+            "line": 115,
             "column": 32,
-            "index": 3116
+            "index": 3226
           }
         ],
         "Dropdown.Divider": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 127,
+            "line": 129,
             "column": 46,
-            "index": 3733
+            "index": 3843
           }
         ],
         "Badge": [
           {
             "filePath": "src/Header.jsx",
-            "line": 107,
+            "line": 111,
             "column": 87,
-            "index": 3748
+            "index": 3935
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
@@ -50230,9 +50218,9 @@
           },
           {
             "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 101,
+            "line": 102,
             "column": 8,
-            "index": 4265
+            "index": 4289
           },
           {
             "filePath": "src/studio-header/HeaderBody.jsx",
@@ -50346,15 +50334,15 @@
           },
           {
             "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 117,
+            "line": 118,
             "column": 12,
-            "index": 4804
+            "index": 4828
           },
           {
             "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 122,
+            "line": 123,
             "column": 14,
-            "index": 5146
+            "index": 5170
           }
         ],
         "Settings": [
@@ -50412,25 +50400,25 @@
         "Spinner": [
           {
             "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 98,
+            "line": 99,
             "column": 10,
-            "index": 4022
+            "index": 4046
           }
         ],
         "CheckCircleLightOutline": [
           {
             "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 117,
+            "line": 118,
             "column": 56,
-            "index": 4848
+            "index": 4872
           }
         ],
         "AutoAwesome": [
           {
             "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 122,
+            "line": 123,
             "column": 25,
-            "index": 5157
+            "index": 5181
           }
         ],
         "Tabs": [
