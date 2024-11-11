@@ -31,10 +31,13 @@ label for the dialog element.
   const variants = ['default', 'warning', 'danger', 'success', 'dark'];
   const [modalSize, setModalSize] = useState('md');
   const [modalVariant, setModalVariant] = useState('default');
+
   return (
     <>
       <div className="d-flex">
-        <Button variant="outline-primary" onClick={open}>Open standard modal dialog</Button>
+        <Button variant="outline-primary" onClick={open}>
+          Open standard modal dialog
+        </Button>
       </div>
       <ModalDialog
         title="My dialog"
@@ -44,6 +47,7 @@ label for the dialog element.
         variant={modalVariant}
         hasCloseButton
         isFullscreenOnMobile
+        isOverflowVisible
       >
         <ModalDialog.Header>
           <ModalDialog.Title>
@@ -73,7 +77,11 @@ label for the dialog element.
             </Form.RadioSet>
           </Form.Group>
           <p>
-            I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever. Beard man braid migas single-origin coffee forage ramps. Tumeric messenger bag bicycle rights wayfarers, try-hard cronut blue bottle health goth. Sriracha tumblr cardigan, cloud bread succulents tumeric copper mug marfa semiotics woke next level organic roof party +1 try-hard.
+            I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever.
+            Beard man braid migas single-origin coffee forage ramps. Tumeric messenger
+            bag bicycle rights wayfarers, try-hard cronut blue bottle health goth.
+            Sriracha tumblr cardigan, cloud bread succulents tumeric copper mug marfa
+            semiotics woke next level organic roof party +1 try-hard.
           </p>
         </ModalDialog.Body>
 
@@ -82,7 +90,7 @@ label for the dialog element.
             <ModalDialog.CloseButton variant="tertiary">
               Cancel
             </ModalDialog.CloseButton>
-            <Button variant="primary">
+            <Button>
               A button
             </Button>
           </ActionRow>
@@ -102,10 +110,13 @@ label for the dialog element.
   const variants = ['default', 'warning', 'danger', 'success', 'dark'];
   const [modalSize, setModalSize] = useState('md');
   const [modalVariant, setModalVariant] = useState('dark');
+
   return (
     <>
       <div className="d-flex">
-        <Button variant="outline-primary" onClick={open}>Open marketing modal dialog</Button>
+        <Button variant="outline-primary" onClick={open}>
+          Open marketing modal dialog
+        </Button>
       </div>
       <ModalDialog
         title="My dialog"
@@ -114,6 +125,7 @@ label for the dialog element.
         size={modalSize}
         variant={modalVariant}
         hasCloseButton
+        isOverflowVisible
       >
         <ModalDialog.Hero>
           <ModalDialog.Hero.Background
@@ -144,7 +156,11 @@ label for the dialog element.
             </Form.RadioSet>
           </Form.Group>
           <p>
-            I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever. Beard man braid migas single-origin coffee forage ramps. Tumeric messenger bag bicycle rights wayfarers, try-hard cronut blue bottle health goth. Sriracha tumblr cardigan, cloud bread succulents tumeric copper mug marfa semiotics woke next level organic roof party +1 try-hard.
+            I'm baby palo santo ugh celiac fashion axe. La croix lo-fi venmo whatever.
+            Beard man braid migas single-origin coffee forage ramps. Tumeric messenger
+            bag bicycle rights wayfarers, try-hard cronut blue bottle health goth.
+            Sriracha tumblr cardigan, cloud bread succulents tumeric copper mug marfa
+            semiotics woke next level organic roof party +1 try-hard.
           </p>
         </ModalDialog.Body>
 
@@ -153,7 +169,80 @@ label for the dialog element.
             <ModalDialog.CloseButton variant="tertiary">
               Cancel
             </ModalDialog.CloseButton>
-            <Button variant="primary">
+            <Button>
+              A button
+            </Button>
+          </ActionRow>
+        </ModalDialog.Footer>
+      </ModalDialog>
+    </>
+  )
+}
+```
+
+## Overflow visibility handling
+
+The `isOverflowVisible` toggle controls whether content that extends beyond the modal's viewport boundaries is visible.
+When enabled (`isOverflowVisible` is set to `true`), any overflow content, such as dropdowns or tooltips,
+will be displayed outside the modal's main area instead of being clipped.
+
+In this example, switching `isOverflowVisible` on and off affects the visibility of the dropdown options in
+the autosuggest field, showing how overflow handling impacts content display within a modal.
+
+```jsx live
+() => {
+  const [isOpen, open, close] = useToggle(false);
+  const [isOn, setOn, setOff, toggle] = useToggle(false);
+
+  return (
+    <>
+      <div className="d-flex">
+        <Button variant="outline-primary" onClick={open}>
+          Open standard modal dialog
+        </Button>
+      </div>
+      <ModalDialog
+        title="My dialog"
+        isOpen={isOpen}
+        onClose={close}
+        hasCloseButton
+        isFullscreenOnMobile
+        isOverflowVisible={isOn}
+      >
+        <ModalDialog.Header>
+          <ModalDialog.Title>
+            I'm a dialog box
+          </ModalDialog.Title>
+        </ModalDialog.Header>
+
+        <ModalDialog.Body>
+          <Stack className="mb-3" direction="horizontal" gap={2}>
+            <Form.Switch checked={isOn} onChange={toggle}>
+              isOverflowVisible
+            </Form.Switch>
+            {isOn
+              ? <Badge variant="success">{JSON.stringify(isOn)}</Badge>
+              : <Badge variant="light">{JSON.stringify(isOn)}</Badge>
+            }
+          </Stack>
+          <Form.Autosuggest
+            aria-label="form autosuggest"
+            helpMessage="Select language"
+            placeholder="Open autosuggest dropdown"
+          >
+            <Form.AutosuggestOption id="javascript-option-id">JavaScript</Form.AutosuggestOption>
+            <Form.AutosuggestOption id="python-option-id">Python</Form.AutosuggestOption>
+            <Form.AutosuggestOption id="ruby-option-id">Ruby</Form.AutosuggestOption>
+            <Form.AutosuggestOption id="c-option-id">C</Form.AutosuggestOption>
+          </Form.Autosuggest>
+        </ModalDialog.Body>
+
+        <ModalDialog.Footer>
+          <ActionRow>
+            <ModalDialog.CloseButton variant="tertiary">
+              Cancel
+            </ModalDialog.CloseButton>
+            <Button>
               A button
             </Button>
           </ActionRow>
