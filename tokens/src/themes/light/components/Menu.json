@@ -2,29 +2,59 @@
   "elevation": {
     "$type": "shadow",
     "menu": {
-      "box-shadow": { "source": "$menu-box-shadow", "$value": "{elevation.box-shadow.base}" }
+      "box-shadow": {
+        "$value": "{elevation.box-shadow.base}",
+        "source": "$menu-box-shadow"
+      }
     }
   },
   "color": {
     "$type": "color",
     "menu": {
-      "bg": { "source": "$menu-bg", "$value": "{color.white}" },
+      "bg": {
+        "$value": "{color.white}",
+        "source": "$menu-bg"
+      },
       "item": {
-        "color": { "source": "$menu-item-color", "$value": "{color.body.base}" },
-        "bg": { "source": "$menu-item-bg", "$value": "transparent" },
-        "border": { "source": "$menu-item-border-color", "$value": "{color.menu.item.bg}" },
+        "color": {
+          "$value": "{color.body.base}",
+          "source": "$menu-item-color"
+        },
+        "bg": {
+          "$value": "transparent",
+          "source": "$menu-item-bg"
+        },
+        "border": {
+          "$value": "{color.menu.item.bg}",
+          "source": "$menu-item-border-color"
+        },
         "hover": {
-          "color": { "source": "$menu-item-hover-color", "$value": "{color.btn.text.tertiary}" },
-          "bg": { "source": "$menu-item-hover-bg", "$value": "{color.btn.hover.bg.tertiary}" },
-          "border": { "source": "$menu-item-hover-border-color", "$value": "{color.menu.item.bg}" }
+          "color": {
+            "$value": "{color.btn.text.tertiary}",
+            "source": "$menu-item-hover-color"
+          },
+          "bg": {
+            "$value": "{color.btn.hover.bg.tertiary}",
+            "source": "$menu-item-hover-bg"
+          },
+          "border": {
+            "$value": "{color.menu.item.bg}",
+            "source": "$menu-item-hover-border-color"
+          }
         },
         "focus": {
-          "bg": { "source": "$menu-item-focus-bg", "$value": "{color.btn.active.bg.tertiary}" }
+          "bg": {
+            "$value": "{color.btn.active.bg.tertiary}",
+            "source": "$menu-item-focus-bg"
+          }
         }
       },
       "select": {
         "btn-link": {
-          "color": { "source": "$menu-select-btn-link-color", "$value": "{color.primary.500}" }
+          "color": {
+            "$value": "{color.primary.500}",
+            "source": "$menu-select-btn-link-color"
+          }
         }
       }
     }

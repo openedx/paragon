@@ -2,12 +2,24 @@
   "other": {
     "form": {
       "control": {
-        "cursor": { "source": "$custom-control-cursor", "$value": "auto", "$type": "cursorStyle" },
-        "range-track-cursor": { "source": "$custom-range-track-cursor", "$value": "pointer", "$type": "cursorStyle" },
+        "cursor": {
+          "$type": "cursorStyle",
+          "$value": "auto",
+          "source": "$custom-control-cursor"
+        },
+        "range-track-cursor": {
+          "$type": "cursorStyle",
+          "$value": "pointer",
+          "source": "$custom-range-track-cursor"
+        },
         "custom-file": {
           "$type": "text",
-          "lang": { "$value": "en" },
-          "content": { "$value": "Browse" }
+          "lang": {
+            "$value": "en"
+          },
+          "content": {
+            "$value": "Browse"
+          }
         }
       }
     }

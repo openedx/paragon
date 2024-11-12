@@ -2,33 +2,46 @@
   "color": {
     "$type": "color",
     "bg": {
-      "base": { "$value": "{color.white}", "$description": "Basic background color." },
+      "base": {
+        "$value": "{color.white}",
+        "$description": "Basic background color."
+      },
       "active": {
-        "source": "$component-active-bg",
         "$value": "{color.primary.500}",
-        "$description": "Active background color."
+        "$description": "Active background color.",
+        "source": "$component-active-bg"
       }
     },
     "text": {
       "50": {
         "black": {
-          "source": "$text-black-50",
-          "modify": [{ "type": "alpha", "amount": 0.5 }],
           "$value": "{color.black}",
-          "$description": "Black text color with transparency of 50%."
+          "$description": "Black text color with transparency of 50%.",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.5
+            }
+          ],
+          "source": "$text-black-50"
         },
         "white": {
-          "source": "$text-white-50",
-          "modify": [{ "type": "alpha", "amount": 0.5 }],
           "$value": "{color.white}",
-          "$description": "White text color with transparency of 50%."
+          "$description": "White text color with transparency of 50%.",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.5
+            }
+          ],
+          "source": "$text-white-50"
         }
       }
     },
     "active": {
-      "source": "$component-active-color",
       "$value": "{color.white}",
-      "$description": "Color for active element."
+      "$description": "Color for active element.",
+      "source": "$component-active-color"
     },
     "disabled": {
       "$value": "{color.gray.500}",
@@ -42,20 +55,20 @@
     },
     "table": {
       "caption": {
-        "source": "$table-caption-color",
         "$value": "{color.text-muted}",
-        "$description": "Table caption color."
+        "$description": "Table caption color.",
+        "source": "$table-caption-color"
       },
       "border": {
-        "source": "$table-border-color",
         "$value": "{color.border}",
-        "$description": "Table border color."
+        "$description": "Table border color.",
+        "source": "$table-border-color"
       }
     },
     "border": {
-      "source": "$border-color",
       "$value": "{color.gray.200}",
-      "$description": "Border color."
+      "$description": "Border color.",
+      "source": "$border-color"
     },
     "theme": {
       "bg": {

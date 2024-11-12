@@ -31,9 +31,9 @@
         "$description": "Space value of level 6"
       },
       "base": {
-        "source": "$spacer",
         "$value": "1rem",
-        "$description": "Basic space value"
+        "$description": "Basic space value",
+        "source": "$spacer"
       },
       "1.5": {
         "$value": "calc({spacing.spacer.base} * .375)",
@@ -58,32 +58,32 @@
     },
     "label": {
       "margin-bottom": {
-        "source": "$label-margin-bottom",
         "$value": ".5rem",
-        "$description": "Margin bottom for label."
+        "$description": "Margin bottom for label.",
+        "source": "$label-margin-bottom"
       }
     },
     "table": {
       "cell": {
         "padding": {
           "base": {
-            "source": "$table-cell-padding",
             "$value": ".75rem",
-            "$description": "Padding for tables."
+            "$description": "Padding for tables.",
+            "source": "$table-cell-padding"
           },
           "sm": {
-            "source": "$table-cell-padding-sm",
             "$value": ".3rem",
-            "$description": "Padding sm for tables."
+            "$description": "Padding sm for tables.",
+            "source": "$table-cell-padding-sm"
           }
         }
       }
     },
     "grid": {
       "gutter-width": {
-        "source": "$grid-gutter-width",
         "$value": "24px",
-        "$description": "Grid gutter width value."
+        "$description": "Grid gutter width value.",
+        "source": "$grid-gutter-width"
       }
     }
   }

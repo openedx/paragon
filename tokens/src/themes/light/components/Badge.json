@@ -3,116 +3,308 @@
     "$type": "color",
     "badge": {
       "text": {
-        "primary": { "source": "$badge-primary-color", "modify": [{ "type": "color-yiq" }], "$value": "{color.primary.base}" },
-        "secondary": { "source": "$badge-secondary-color", "modify": [{ "type": "color-yiq" }], "$value": "{color.secondary.base}" },
-        "success": { "source": "$badge-success-color", "modify": [{ "type": "color-yiq" }], "$value": "{color.success.base}" },
-        "danger": { "source": "$badge-danger-color", "modify": [{ "type": "color-yiq" }], "$value": "{color.danger.base}" },
-        "warning": { "source": "$badge-warning-color", "modify": [{ "type": "color-yiq" }], "$value": "{color.warning.base}" },
-        "info": { "source": "$badge-info-color", "modify": [{ "type": "color-yiq" }], "$value": "{color.info.base}" },
-        "light": { "source": "$badge-light-color", "modify": [{ "type": "color-yiq" }], "$value": "{color.light.base}" },
-        "dark": { "source": "$badge-dark-color", "modify": [{ "type": "color-yiq" }], "$value": "{color.dark.base}" }
+        "primary": {
+          "$value": "{color.primary.base}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$badge-primary-color"
+        },
+        "secondary": {
+          "$value": "{color.secondary.base}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$badge-secondary-color"
+        },
+        "success": {
+          "$value": "{color.success.base}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$badge-success-color"
+        },
+        "danger": {
+          "$value": "{color.danger.base}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$badge-danger-color"
+        },
+        "warning": {
+          "$value": "{color.warning.base}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$badge-warning-color"
+        },
+        "info": {
+          "$value": "{color.info.base}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$badge-info-color"
+        },
+        "light": {
+          "$value": "{color.light.base}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$badge-light-color"
+        },
+        "dark": {
+          "$value": "{color.dark.base}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$badge-dark-color"
+        }
       },
       "bg": {
-        "primary": { "source": "$badge-primary-bg", "$value": "{color.primary.base}" },
-        "secondary": { "source": "$badge-secondary-bg", "$value": "{color.secondary.base}" },
-        "success": { "source": "$badge-success-bg", "$value": "{color.success.base}" },
-        "warning": { "source": "$badge-warning-bg", "$value": "{color.warning.base}" },
-        "danger": { "source": "$badge-danger-bg", "$value": "{color.danger.base}" },
-        "info": { "source": "$badge-info-bg", "$value": "{color.info.base}" },
-        "light": { "source": "$badge-light-bg", "$value": "{color.light.base}" },
-        "dark": { "source": "$badge-dark-bg", "$value": "{color.dark.base}" }
+        "primary": {
+          "$value": "{color.primary.base}",
+          "source": "$badge-primary-bg"
+        },
+        "secondary": {
+          "$value": "{color.secondary.base}",
+          "source": "$badge-secondary-bg"
+        },
+        "success": {
+          "$value": "{color.success.base}",
+          "source": "$badge-success-bg"
+        },
+        "warning": {
+          "$value": "{color.warning.base}",
+          "source": "$badge-warning-bg"
+        },
+        "danger": {
+          "$value": "{color.danger.base}",
+          "source": "$badge-danger-bg"
+        },
+        "info": {
+          "$value": "{color.info.base}",
+          "source": "$badge-info-bg"
+        },
+        "light": {
+          "$value": "{color.light.base}",
+          "source": "$badge-light-bg"
+        },
+        "dark": {
+          "$value": "{color.dark.base}",
+          "source": "$badge-dark-bg"
+        }
       },
       "focus": {
-        "primary": { "source": "$badge-primary-focus-color", "$value": "{color.badge.text.primary}" },
-        "secondary": { "source": "$badge-secondary-focus-color", "$value": "{color.badge.text.secondary}" },
-        "success": { "source": "$badge-success-focus-color", "$value": "{color.badge.text.success}" },
-        "warning": { "source": "$badge-warning-focus-color", "$value": "{color.badge.text.warning}" },
-        "danger": { "source": "$badge-danger-focus-color", "$value": "{color.badge.text.danger}" },
-        "info": { "source": "$badge-info-focus-color", "$value": "{color.badge.text.info}" },
-        "light": { "source": "$badge-light-focus-color", "$value": "{color.badge.text.light}" },
-        "dark": { "source": "$badge-dark-focus-color", "$value": "{color.badge.text.dark}" },
+        "primary": {
+          "$value": "{color.badge.text.primary}",
+          "source": "$badge-primary-focus-color"
+        },
+        "secondary": {
+          "$value": "{color.badge.text.secondary}",
+          "source": "$badge-secondary-focus-color"
+        },
+        "success": {
+          "$value": "{color.badge.text.success}",
+          "source": "$badge-success-focus-color"
+        },
+        "warning": {
+          "$value": "{color.badge.text.warning}",
+          "source": "$badge-warning-focus-color"
+        },
+        "danger": {
+          "$value": "{color.badge.text.danger}",
+          "source": "$badge-danger-focus-color"
+        },
+        "info": {
+          "$value": "{color.badge.text.info}",
+          "source": "$badge-info-focus-color"
+        },
+        "light": {
+          "$value": "{color.badge.text.light}",
+          "source": "$badge-light-focus-color"
+        },
+        "dark": {
+          "$value": "{color.badge.text.dark}",
+          "source": "$badge-dark-focus-color"
+        },
         "bg": {
           "primary": {
-            "source": "$badge-primary-focus-bg",
-            "modify": [{ "type": "darken", "amount": 0.1 }],
-            "$value": "{color.badge.bg.primary}"
+            "$value": "{color.badge.bg.primary}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "source": "$badge-primary-focus-bg"
           },
           "secondary": {
-            "source": "$badge-secondary-focus-bg",
-            "modify": [{ "type": "darken", "amount": 0.1 }],
-            "$value": "{color.badge.bg.secondary}"
+            "$value": "{color.badge.bg.secondary}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "source": "$badge-secondary-focus-bg"
           },
           "success": {
-            "source": "$badge-success-focus-bg",
-            "modify": [{ "type": "darken", "amount": 0.1 }],
-            "$value": "{color.badge.bg.success}"
+            "$value": "{color.badge.bg.success}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "source": "$badge-success-focus-bg"
           },
           "danger": {
-            "source": "$badge-danger-focus-bg",
-            "modify": [{ "type": "darken", "amount": 0.1 }],
-            "$value": "{color.badge.bg.danger}"
+            "$value": "{color.badge.bg.danger}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "source": "$badge-danger-focus-bg"
           },
           "warning": {
-            "source": "$badge-warning-focus-bg",
-            "modify": [{ "type": "darken", "amount": 0.1 }],
-            "$value": "{color.badge.bg.warning}"
+            "$value": "{color.badge.bg.warning}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "source": "$badge-warning-focus-bg"
           },
           "info": {
-            "source": "$badge-info-focus-bg",
-            "modify": [{ "type": "darken", "amount": 0.1 }],
-            "$value": "{color.badge.bg.info}"
+            "$value": "{color.badge.bg.info}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "source": "$badge-info-focus-bg"
           },
           "light": {
-            "source": "$badge-light-focus-bg",
-            "modify": [{ "type": "darken", "amount": 0.1 }],
-            "$value": "{color.badge.bg.light}"
+            "$value": "{color.badge.bg.light}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "source": "$badge-light-focus-bg"
           },
           "dark": {
-            "source": "$badge-dark-focus-bg",
-            "modify": [{ "type": "darken", "amount": 0.1 }],
-            "$value": "{color.badge.bg.dark}"
+            "$value": "{color.badge.bg.dark}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "source": "$badge-dark-focus-bg"
           }
         },
         "box-shadow": {
           "primary": {
-            "source": "$badge-primary-focus-box-shadow-color",
-            "modify": [{ "type": "alpha", "amount": 0.05 }],
-            "$value": "{color.badge.bg.primary}"
+            "$value": "{color.badge.bg.primary}",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "source": "$badge-primary-focus-box-shadow-color"
           },
           "secondary": {
-            "source": "$badge-secondary-focus-box-shadow-color",
-            "modify": [{ "type": "alpha", "amount": 0.05 }],
-            "$value": "{color.badge.bg.secondary}"
+            "$value": "{color.badge.bg.secondary}",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "source": "$badge-secondary-focus-box-shadow-color"
           },
           "success": {
-            "source": "$badge-success-focus-box-shadow-color",
-            "modify": [{ "type": "alpha", "amount": 0.05 }],
-            "$value": "{color.badge.bg.success}"
+            "$value": "{color.badge.bg.success}",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "source": "$badge-success-focus-box-shadow-color"
           },
           "danger": {
-            "source": "$badge-danger-focus-box-shadow-color",
-            "modify": [{ "type": "alpha", "amount": 0.05 }],
-            "$value": "{color.badge.bg.danger}"
+            "$value": "{color.badge.bg.danger}",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "source": "$badge-danger-focus-box-shadow-color"
           },
           "warning": {
-            "source": "$badge-warning-focus-box-shadow-color",
-            "modify": [{ "type": "alpha", "amount": 0.05 }],
-            "$value": "{color.badge.bg.warning}"
+            "$value": "{color.badge.bg.warning}",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "source": "$badge-warning-focus-box-shadow-color"
           },
           "info": {
-            "source": "$badge-info-focus-box-shadow-color",
-            "modify": [{ "type": "alpha", "amount": 0.05 }],
-            "$value": "{color.badge.bg.info}"
+            "$value": "{color.badge.bg.info}",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "source": "$badge-info-focus-box-shadow-color"
           },
           "light": {
-            "source": "$badge-light-focus-box-shadow-color",
-            "modify": [{ "type": "alpha", "amount": 0.05 }],
-            "$value": "{color.badge.bg.light}"
+            "$value": "{color.badge.bg.light}",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "source": "$badge-light-focus-box-shadow-color"
           },
           "dark": {
-            "source": "$badge-dark-focus-box-shadow-color",
-            "modify": [{ "type": "alpha", "amount": 0.05 }],
-            "$value": "{color.badge.bg.dark}"
+            "$value": "{color.badge.bg.dark}",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "source": "$badge-dark-focus-box-shadow-color"
           }
         }
       }

@@ -2,15 +2,33 @@
   "color": {
     "$type": "color",
     "tooltip": {
-      "text": { "source": "$tooltip-color", "$value": "{color.white}" },
-      "light": { "source": "$tooltip-color-light", "$value": "{color.black}" },
+      "text": {
+        "$value": "{color.white}",
+        "source": "$tooltip-color"
+      },
+      "light": {
+        "$value": "{color.black}",
+        "source": "$tooltip-color-light"
+      },
       "bg": {
-        "base": { "source": "$tooltip-bg", "$value": "{color.black}" },
-        "light": { "source": "$tooltip-bg-light", "$value": "{color.white}" }
+        "base": {
+          "$value": "{color.black}",
+          "source": "$tooltip-bg"
+        },
+        "light": {
+          "$value": "{color.white}",
+          "source": "$tooltip-bg-light"
+        }
       },
       "arrow": {
-        "base": { "source": "$tooltip-arrow-color", "$value": "{color.tooltip.bg.base}" },
-        "light": { "source": "$tooltip-arrow-color-light", "$value": "{color.white}" }
+        "base": {
+          "$value": "{color.tooltip.bg.base}",
+          "source": "$tooltip-arrow-color"
+        },
+        "light": {
+          "$value": "{color.white}",
+          "source": "$tooltip-arrow-color-light"
+        }
       }
     }
   },
@@ -18,7 +36,6 @@
     "$type": "shadow",
     "tooltip": {
       "box-shadow": {
-        "source": "$tooltip-box-shadow",
         "$value": [
           {
             "color": "rgba(0, 0, 0, .15)",
@@ -32,14 +49,18 @@
             "offsetY": "2px",
             "blur": "8px"
           }
-        ]
+        ],
+        "source": "$tooltip-box-shadow"
       }
     }
   },
   "other": {
     "$type": "ratio",
     "tooltip": {
-      "opacity": { "source": "$tooltip-opacity", "$value": "1" }
+      "opacity": {
+        "$value": "1",
+        "source": "$tooltip-opacity"
+      }
     }
   }
 }
