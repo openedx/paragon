@@ -44,7 +44,6 @@ module.exports = {
     'import/no-unresolved': [2, { ignore: ['axios'] }],
     'react/jsx-no-constructed-context-values': 0,
     'no-restricted-exports': [0, { restrictedNamedExports: ['default'] }],
-    // https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/340#issuecomment-338424908
     'jsx-a11y/anchor-is-valid': ['error', {
       components: ['Link'],
       specialLink: ['to'],
@@ -68,6 +67,20 @@ module.exports = {
       extends: 'airbnb-typescript',
       parserOptions: {
         project: './tsconfig.json',
+      },
+    },
+    {
+      files: ['**/*.json'],
+      plugins: ['jsonc'],
+      extends: ['plugin:jsonc/recommended-with-json'],
+      rules: {
+        'jsonc/indent': ['error', 2],
+        'jsonc/quote-props': ['error', 'always'],
+        'jsonc/quotes': ['error', 'double'],
+        'jsonc/no-octal': 'error',
+        'jsonc/no-dupe-keys': 'error',
+        'jsonc/valid-json-number': 'error',
+        'jsonc/no-bigint-literals': 'error',
       },
     },
   ],
