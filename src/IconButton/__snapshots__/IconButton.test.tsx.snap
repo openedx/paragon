@@ -56,7 +56,7 @@ exports[`<IconButton /> renders with deprecated props 1`] = `
       role="img"
       style={{}}
       viewBox="0 0 function SvgInfoOutline(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
+  return /*#__PURE__*/React.createElement("svg", _objectSpread({
     width: 24,
     height: 24,
     viewBox: "0 0 24 24",
