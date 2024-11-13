@@ -30,7 +30,7 @@
     }
   },
   "other": {
-    "$type": "ratio",
+    "$type": "number",
     "chip": {
       "opacity-disabled": { "source": "$chip-disable-opacity", "$value": ".3" }
     }

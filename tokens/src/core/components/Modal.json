@@ -1,6 +1,6 @@
 {
   "elevation": {
-    "$type": "ratio",
+    "$type": "number",
     "modal": {
       "backdrop-zindex": { "source": "$zindex-modal-backdrop", "$value": "1040" },
       "zindex": { "source": "$zindex-modal", "$value": "1050" }

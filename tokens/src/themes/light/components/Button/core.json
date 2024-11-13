@@ -15,7 +15,7 @@
     }
   },
   "other": {
-    "$type": "ratio",
+    "$type": "number",
     "btn": {
       "disabled-opacity": { "source": "$btn-disabled-opacity", "$value": ".65" }
     }
