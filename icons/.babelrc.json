@@ -3,9 +3,10 @@
     [
       "@babel/preset-env",
       {
-        "modules": false
+        "modules": false,
+        "targets": "defaults"
       }
     ],
-    "@babel/preset-react"
+    ["@babel/preset-react", { "useSpread": true } ]
   ]
 }
