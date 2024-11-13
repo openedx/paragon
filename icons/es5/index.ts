@@ -1382,6 +1382,7 @@ export { default as NetworkWifi3Bar } from "./NetworkWifi3Bar";
 export { default as NewLabel } from "./NewLabel";
 export { default as NewReleases } from "./NewReleases";
 export { default as Newspaper } from "./Newspaper";
+export { default as Newsstand } from "./Newsstand";
 export { default as NextPlan } from "./NextPlan";
 export { default as NextWeek } from "./NextWeek";
 export { default as Nfc } from "./Nfc";
