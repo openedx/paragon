@@ -16,7 +16,7 @@
     }
   },
   "elevation": {
-    "$type": "ratio",
+    "$type": "number",
     "tooltip": {
       "zindex": { "source": "$zindex-tooltip", "$value": "1070" }
     }

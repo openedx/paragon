@@ -17,7 +17,7 @@
     }
   },
   "other": {
-    "$type": "ratio",
+    "$type": "number",
     "search-field": {
       "disabled-opacity": { "source": "$search-disabled-opacity", "$value": ".3" }
     }
