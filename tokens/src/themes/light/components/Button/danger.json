@@ -4,300 +4,345 @@
     "btn": {
       "text": {
         "danger": {
-          "source": "$btn-danger-color",
-          "modify": [{ "type": "color-yiq" }],
-          "$value": "{color.btn.bg.danger}"
+          "$value": "{color.btn.bg.danger}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$btn-danger-color"
         },
-        "outline-danger": { "source": "$btn-danger-outline-color", "$value": "{color.danger.base}" },
+        "outline-danger": {
+          "$value": "{color.danger.base}",
+          "source": "$btn-danger-outline-color"
+        },
         "inverse-danger": {
-          "source": "$btn-danger-inverse-color",
-          "$value": "{color.danger.base}"
+          "$value": "{color.danger.base}",
+          "source": "$btn-danger-inverse-color"
         },
         "inverse-outline-danger": {
-          "source": "$btn-danger-inverse-outline-color",
-          "$value": "{color.white}"
+          "$value": "{color.white}",
+          "source": "$btn-danger-inverse-outline-color"
         }
       },
       "bg": {
-        "danger": { "source": "$btn-danger-bg", "$value": "{color.danger.base}" },
+        "danger": {
+          "$value": "{color.danger.base}",
+          "source": "$btn-danger-bg"
+        },
         "outline-danger": {
-          "source": "$btn-danger-outline-bg",
-          "$value": "inherit"
+          "$value": "inherit",
+          "source": "$btn-danger-outline-bg"
         },
         "inverse-danger": {
-          "source": "$btn-danger-inverse-bg",
-          "modify": [{ "type": "color-yiq" }],
-          "$value": "{color.btn.text.inverse-danger}"
+          "$value": "{color.btn.text.inverse-danger}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$btn-danger-inverse-bg"
         },
         "inverse-outline-danger": {
-          "source": "$btn-danger-inverse-outline-bg",
-          "$value": "transparent"
+          "$value": "transparent",
+          "source": "$btn-danger-inverse-outline-bg"
         }
       },
       "border": {
         "danger": {
-          "source": "$btn-danger-border-color",
-          "$value": "{color.btn.bg.danger}"
+          "$value": "{color.btn.bg.danger}",
+          "source": "$btn-danger-border-color"
         },
         "outline-danger": {
-          "source": "$btn-danger-outline-border-color",
-          "$value": "{color.danger.base}"
+          "$value": "{color.danger.base}",
+          "source": "$btn-danger-outline-border-color"
         },
         "inverse-danger": {
-          "source": "$btn-danger-inverse-border-color",
-          "$value": "transparent"
+          "$value": "transparent",
+          "source": "$btn-danger-inverse-border-color"
         },
         "inverse-outline-danger": {
-          "source": "$btn-danger-inverse-outline-border-color",
-          "$value": "{color.white}"
+          "$value": "{color.white}",
+          "source": "$btn-danger-inverse-outline-border-color"
         }
       },
       "hover": {
         "text": {
           "danger": {
-            "source": "$btn-danger-hover-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.hover.bg.danger}"
+            "$value": "{color.btn.hover.bg.danger}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-danger-hover-color"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-hover-color",
-            "$value": "{color.theme.hover.danger}"
+            "$value": "{color.theme.hover.danger}",
+            "source": "$btn-danger-outline-hover-color"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-hover-color",
-            "modify": [{ "type": "darken", "amount": 0.075 }],
-            "$value": "{color.btn.text.inverse-danger}"
+            "$value": "{color.btn.text.inverse-danger}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.075
+              }
+            ],
+            "source": "$btn-danger-inverse-hover-color"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-hover-color",
-            "$value": "{color.theme.hover.danger}"
+            "$value": "{color.theme.hover.danger}",
+            "source": "$btn-danger-inverse-outline-hover-color"
           }
         },
         "bg": {
           "danger": {
-            "source": "$btn-danger-hover-bg",
-            "$value": "{color.theme.hover.danger}"
+            "$value": "{color.theme.hover.danger}",
+            "source": "$btn-danger-hover-bg"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-hover-bg",
-            "$value": "{color.danger.100}"
+            "$value": "{color.danger.100}",
+            "source": "$btn-danger-outline-hover-bg"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-hover-bg",
-            "modify": [{ "type": "darken", "amount": 0.075 }],
-            "$value": "{color.btn.bg.inverse-danger}"
+            "$value": "{color.btn.bg.inverse-danger}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.075
+              }
+            ],
+            "source": "$btn-danger-inverse-hover-bg"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-hover-bg",
-            "$value": "{color.danger.100}"
+            "$value": "{color.danger.100}",
+            "source": "$btn-danger-inverse-outline-hover-bg"
           }
         },
         "border": {
           "danger": {
-            "source": "$btn-danger-hover-border-color",
-            "$value": "{color.theme.hover.danger}"
+            "$value": "{color.theme.hover.danger}",
+            "source": "$btn-danger-hover-border-color"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-hover-border-color",
-            "$value": "{color.danger.900}"
+            "$value": "{color.danger.900}",
+            "source": "$btn-danger-outline-hover-border-color"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-hover-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-danger-inverse-hover-border-color"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-hover-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-danger-inverse-outline-hover-border-color"
           }
         }
       },
       "active": {
         "text": {
           "danger": {
-            "source": "$btn-danger-active-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.active.bg.danger}"
+            "$value": "{color.btn.active.bg.danger}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-danger-active-color"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-active-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.active.bg.outline-danger}"
+            "$value": "{color.btn.active.bg.outline-danger}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-danger-outline-active-color"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-active-color",
-            "modify": [{ "type": "darken", "amount": 0.1 }],
-            "$value": "{color.btn.text.inverse-danger}"
+            "$value": "{color.btn.text.inverse-danger}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "source": "$btn-danger-inverse-active-color"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-active-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.active.bg.inverse-outline-danger}"
+            "$value": "{color.btn.active.bg.inverse-outline-danger}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-danger-inverse-outline-active-color"
           }
         },
         "bg": {
           "danger": {
-            "source": "$btn-danger-active-bg",
-            "$value": "{color.theme.active.danger}"
+            "$value": "{color.theme.active.danger}",
+            "source": "$btn-danger-active-bg"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-active-bg",
-            "$value": "{color.theme.bg.danger}"
+            "$value": "{color.theme.bg.danger}",
+            "source": "$btn-danger-outline-active-bg"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-active-bg",
-            "$value": "{color.gray.100}"
+            "$value": "{color.gray.100}",
+            "source": "$btn-danger-inverse-active-bg"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-active-bg",
-            "$value": "{color.theme.bg.danger}"
+            "$value": "{color.theme.bg.danger}",
+            "source": "$btn-danger-inverse-outline-active-bg"
           }
         },
         "border": {
           "danger": {
-            "source": "$btn-danger-active-border-color",
-            "$value": "{color.theme.active.danger}"
+            "$value": "{color.theme.active.danger}",
+            "source": "$btn-danger-active-border-color"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-active-border-color",
-            "$value": "{color.theme.active.danger}"
+            "$value": "{color.theme.active.danger}",
+            "source": "$btn-danger-outline-active-border-color"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-active-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-danger-inverse-active-border-color"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-active-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-danger-inverse-outline-active-border-color"
           }
         }
       },
       "focus": {
         "text": {
           "danger": {
-            "source": "$btn-danger-focus-color",
-            "$value": "{color.btn.text.danger}"
+            "$value": "{color.btn.text.danger}",
+            "source": "$btn-danger-focus-color"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-focus-color",
-            "$value": "{color.btn.text.inverse-danger}"
+            "$value": "{color.btn.text.inverse-danger}",
+            "source": "$btn-danger-inverse-focus-color"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-focus-color",
-            "$value": "{color.btn.text.outline-danger}"
+            "$value": "{color.btn.text.outline-danger}",
+            "source": "$btn-danger-outline-focus-color"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-focus-color",
-            "$value": "{color.btn.text.inverse-outline-danger}"
+            "$value": "{color.btn.text.inverse-outline-danger}",
+            "source": "$btn-danger-inverse-outline-focus-color"
           }
         },
         "border": {
           "danger": {
-            "source": "$btn-danger-focus-border-color",
-            "$value": "{color.btn.focus.bg.danger}"
+            "$value": "{color.btn.focus.bg.danger}",
+            "source": "$btn-danger-focus-border-color"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-focus-border-color",
-            "$value": "{color.btn.border.outline-danger}"
+            "$value": "{color.btn.border.outline-danger}",
+            "source": "$btn-danger-outline-focus-border-color"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-focus-border-color",
-            "$value": "{color.white}"
+            "$value": "{color.white}",
+            "source": "$btn-danger-inverse-focus-border-color"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-focus-border-color",
-            "$value": "{color.white}"
+            "$value": "{color.white}",
+            "source": "$btn-danger-inverse-outline-focus-border-color"
           }
         },
         "bg": {
           "danger": {
-            "source": "$btn-danger-focus-bg",
-            "$value": "{color.btn.bg.danger}"
+            "$value": "{color.btn.bg.danger}",
+            "source": "$btn-danger-focus-bg"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-focus-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-danger-outline-focus-bg"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-focus-bg",
-            "$value": "{color.btn.bg.inverse-danger}"
+            "$value": "{color.btn.bg.inverse-danger}",
+            "source": "$btn-danger-inverse-focus-bg"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-focus-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-danger-inverse-outline-focus-bg"
           }
         },
         "outline": {
           "danger": {
-            "source": "$btn-danger-focus-outline-color",
-            "$value": "{color.theme.focus.danger}"
+            "$value": "{color.theme.focus.danger}",
+            "source": "$btn-danger-focus-outline-color"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-focus-outline-color",
-            "$value": "{color.theme.focus.danger}"
+            "$value": "{color.theme.focus.danger}",
+            "source": "$btn-danger-outline-focus-outline-color"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-focus-outline-color",
-            "$value": "{color.btn.focus.border.inverse-danger}"
+            "$value": "{color.btn.focus.border.inverse-danger}",
+            "source": "$btn-danger-inverse-focus-outline-color"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-focus-outline-color",
-            "$value": "{color.btn.focus.border.inverse-danger}"
+            "$value": "{color.btn.focus.border.inverse-danger}",
+            "source": "$btn-danger-inverse-outline-focus-outline-color"
           }
         }
       },
       "disabled": {
         "text": {
           "danger": {
-            "source": "$btn-danger-disabled-color",
-            "$value": "{color.btn.text.danger}"
+            "$value": "{color.btn.text.danger}",
+            "source": "$btn-danger-disabled-color"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-disabled-color",
-            "$value": "{color.btn.hover.text.outline-danger}"
+            "$value": "{color.btn.hover.text.outline-danger}",
+            "source": "$btn-danger-outline-disabled-color"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-disabled-color",
-            "$value": "{color.danger.base}"
+            "$value": "{color.danger.base}",
+            "source": "$btn-danger-inverse-disabled-color"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-disabled-color",
-            "$value": "{color.btn.text.inverse-outline-danger}"
+            "$value": "{color.btn.text.inverse-outline-danger}",
+            "source": "$btn-danger-inverse-outline-disabled-color"
           }
         },
         "bg": {
           "danger": {
-            "source": "$btn-danger-disabled-bg",
-            "$value": "{color.btn.bg.danger}"
+            "$value": "{color.btn.bg.danger}",
+            "source": "$btn-danger-disabled-bg"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-disabled-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-danger-outline-disabled-bg"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-disabled-bg",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-danger-inverse-disabled-bg"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-disabled-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-danger-inverse-outline-disabled-bg"
           }
         },
         "border": {
           "danger": {
-            "source": "$btn-danger-disabled-border-color",
-            "$value": "{color.btn.border.danger}"
+            "$value": "{color.btn.border.danger}",
+            "source": "$btn-danger-disabled-border-color"
           },
           "outline-danger": {
-            "source": "$btn-danger-outline-disabled-border-color",
-            "$value": "{color.btn.border.outline-danger}"
+            "$value": "{color.btn.border.outline-danger}",
+            "source": "$btn-danger-outline-disabled-border-color"
           },
           "inverse-danger": {
-            "source": "$btn-danger-inverse-disabled-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-danger-inverse-disabled-border-color"
           },
           "inverse-outline-danger": {
-            "source": "$btn-danger-inverse-outline-disabled-border-color",
-            "$value": "{color.btn.border.inverse-outline-danger}"
+            "$value": "{color.btn.border.inverse-outline-danger}",
+            "source": "$btn-danger-inverse-outline-disabled-border-color"
           }
         }
       }

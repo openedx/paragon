@@ -4,306 +4,345 @@
     "btn": {
       "text": {
         "secondary": {
-          "source": "$btn-secondary-color",
-          "modify": [{ "type": "color-yiq" }],
-          "$value": "{color.btn.bg.secondary}"
+          "$value": "{color.btn.bg.secondary}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$btn-secondary-color"
         },
         "outline-secondary": {
-          "source": "$btn-secondary-outline-color",
-          "$value": "{color.secondary.base}"
+          "$value": "{color.secondary.base}",
+          "source": "$btn-secondary-outline-color"
         },
         "inverse-secondary": {
-          "source": "$btn-secondary-inverse-color",
-          "$value": "{color.secondary.base}"
+          "$value": "{color.secondary.base}",
+          "source": "$btn-secondary-inverse-color"
         },
         "inverse-outline-secondary": {
-          "source": "$btn-secondary-inverse-outline-color",
-          "$value": "{color.white}"
+          "$value": "{color.white}",
+          "source": "$btn-secondary-inverse-outline-color"
         }
       },
       "bg": {
         "secondary": {
-          "source": "$btn-secondary-bg",
-          "$value": "{color.secondary.base}"
+          "$value": "{color.secondary.base}",
+          "source": "$btn-secondary-bg"
         },
         "outline-secondary": {
-          "source": "$btn-secondary-outline-bg",
-          "$value": "inherit"
+          "$value": "inherit",
+          "source": "$btn-secondary-outline-bg"
         },
         "inverse-outline-secondary": {
-          "source": "$btn-secondary-inverse-outline-bg",
-          "$value": "inherit"
+          "$value": "inherit",
+          "source": "$btn-secondary-inverse-outline-bg"
         },
         "inverse-secondary": {
-          "source": "$btn-secondary-inverse-bg",
-          "modify": [{ "type": "color-yiq" }],
-          "$value": "{color.btn.text.inverse-secondary}"
+          "$value": "{color.btn.text.inverse-secondary}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$btn-secondary-inverse-bg"
         }
       },
       "border": {
         "secondary": {
-          "source": "$btn-secondary-border-color",
-          "$value": "{color.btn.bg.secondary}"
+          "$value": "{color.btn.bg.secondary}",
+          "source": "$btn-secondary-border-color"
         },
         "outline-secondary": {
-          "source": "$btn-secondary-outline-border-color",
-          "$value": "{color.secondary.base}"
+          "$value": "{color.secondary.base}",
+          "source": "$btn-secondary-outline-border-color"
         },
         "inverse-outline-secondary": {
-          "source": "$btn-secondary-inverse-outline-border-color",
-          "$value": "{color.white}"
+          "$value": "{color.white}",
+          "source": "$btn-secondary-inverse-outline-border-color"
         },
         "inverse-secondary": {
-          "source": "$btn-secondary-inverse-border-color",
-          "$value": "transparent"
+          "$value": "transparent",
+          "source": "$btn-secondary-inverse-border-color"
         }
       },
       "hover": {
         "text": {
           "secondary": {
-            "source": "$btn-secondary-hover-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.hover.bg.secondary}"
+            "$value": "{color.btn.hover.bg.secondary}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-secondary-hover-color"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-hover-color",
-            "$value": "{color.theme.hover.secondary}"
+            "$value": "{color.theme.hover.secondary}",
+            "source": "$btn-secondary-outline-hover-color"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-hover-color",
-            "modify": [{ "type": "darken", "amount": 0.075 }],
-            "$value": "{color.btn.text.inverse-secondary}"
+            "$value": "{color.btn.text.inverse-secondary}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.075
+              }
+            ],
+            "source": "$btn-secondary-inverse-hover-color"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-hover-color",
-            "$value": "{color.theme.hover.secondary}"
+            "$value": "{color.theme.hover.secondary}",
+            "source": "$btn-secondary-inverse-outline-hover-color"
           }
         },
         "bg": {
           "secondary": {
-            "source": "$btn-secondary-hover-bg",
-            "$value": "{color.theme.hover.secondary}"
+            "$value": "{color.theme.hover.secondary}",
+            "source": "$btn-secondary-hover-bg"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-hover-bg",
-            "$value": "{color.secondary.100}"
+            "$value": "{color.secondary.100}",
+            "source": "$btn-secondary-outline-hover-bg"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-hover-bg",
-            "modify": [{ "type": "darken", "amount": 0.075 }],
-            "$value": "{color.btn.bg.inverse-secondary}"
+            "$value": "{color.btn.bg.inverse-secondary}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.075
+              }
+            ],
+            "source": "$btn-secondary-inverse-hover-bg"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-hover-bg",
-            "$value": "{color.secondary.100}"
+            "$value": "{color.secondary.100}",
+            "source": "$btn-secondary-inverse-outline-hover-bg"
           }
         },
         "border": {
           "secondary": {
-            "source": "$btn-secondary-hover-border-color",
-            "$value": "{color.theme.hover.secondary}"
+            "$value": "{color.theme.hover.secondary}",
+            "source": "$btn-secondary-hover-border-color"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-hover-border-color",
-            "$value": "{color.secondary.900}"
+            "$value": "{color.secondary.900}",
+            "source": "$btn-secondary-outline-hover-border-color"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-hover-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-secondary-inverse-outline-hover-border-color"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-hover-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-secondary-inverse-hover-border-color"
           }
         }
       },
       "active": {
         "text": {
           "secondary": {
-            "source": "$btn-secondary-active-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.active.bg.secondary}"
+            "$value": "{color.btn.active.bg.secondary}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-secondary-active-color"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-active-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.active.bg.outline-secondary}"
+            "$value": "{color.btn.active.bg.outline-secondary}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-secondary-outline-active-color"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-active-color",
-            "modify": [{ "type": "darken", "amount": 0.1 }],
-            "$value": "{color.btn.text.inverse-secondary}"
+            "$value": "{color.btn.text.inverse-secondary}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "source": "$btn-secondary-inverse-active-color"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-active-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.active.bg.inverse-outline-secondary}"
+            "$value": "{color.btn.active.bg.inverse-outline-secondary}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-secondary-inverse-outline-active-color"
           }
         },
         "bg": {
           "secondary": {
-            "source": "$btn-secondary-active-bg",
-            "$value": "{color.theme.active.secondary}"
+            "$value": "{color.theme.active.secondary}",
+            "source": "$btn-secondary-active-bg"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-active-bg",
-            "$value": "{color.theme.bg.secondary}"
+            "$value": "{color.theme.bg.secondary}",
+            "source": "$btn-secondary-outline-active-bg"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-active-bg",
-            "$value": "{color.theme.bg.secondary}"
+            "$value": "{color.theme.bg.secondary}",
+            "source": "$btn-secondary-inverse-outline-active-bg"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-active-bg",
-            "$value": "{color.gray.100}"
+            "$value": "{color.gray.100}",
+            "source": "$btn-secondary-inverse-active-bg"
           }
         },
         "border": {
           "secondary": {
-            "source": "$btn-secondary-active-border-color",
-            "$value": "{color.theme.active.secondary}"
+            "$value": "{color.theme.active.secondary}",
+            "source": "$btn-secondary-active-border-color"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-active-border-color",
-            "$value": "{color.theme.active.secondary}"
+            "$value": "{color.theme.active.secondary}",
+            "source": "$btn-secondary-outline-active-border-color"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-active-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-secondary-inverse-outline-active-border-color"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-active-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-secondary-inverse-active-border-color"
           }
         }
       },
       "focus": {
         "text": {
           "secondary": {
-            "source": "$btn-secondary-focus-color",
-            "$value": "{color.btn.text.secondary}"
+            "$value": "{color.btn.text.secondary}",
+            "source": "$btn-secondary-focus-color"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-focus-color",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-secondary-inverse-focus-color"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-focus-color",
-            "$value": "{color.btn.text.outline-secondary}"
+            "$value": "{color.btn.text.outline-secondary}",
+            "source": "$btn-secondary-outline-focus-color"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-focus-color",
-            "$value": "{color.btn.text.inverse-outline-secondary}"
+            "$value": "{color.btn.text.inverse-outline-secondary}",
+            "source": "$btn-secondary-inverse-outline-focus-color"
           }
         },
         "border": {
           "secondary": {
-            "source": "$btn-secondary-focus-border-color",
-            "$value": "{color.btn.bg.secondary}"
+            "$value": "{color.btn.bg.secondary}",
+            "source": "$btn-secondary-focus-border-color"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-focus-border-color",
-            "$value": "{color.btn.border.outline-secondary}"
+            "$value": "{color.btn.border.outline-secondary}",
+            "source": "$btn-secondary-outline-focus-border-color"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-focus-border-color",
-            "$value": "{color.white}"
+            "$value": "{color.white}",
+            "source": "$btn-secondary-inverse-focus-border-color"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-focus-border-color",
-            "$value": "{color.white}"
+            "$value": "{color.white}",
+            "source": "$btn-secondary-inverse-outline-focus-border-color"
           }
         },
         "outline": {
           "secondary": {
-            "source": "$btn-secondary-focus-outline-color",
-            "$value": "{color.theme.focus.secondary}"
+            "$value": "{color.theme.focus.secondary}",
+            "source": "$btn-secondary-focus-outline-color"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-focus-outline-color",
-            "$value": "{color.theme.focus.secondary}"
+            "$value": "{color.theme.focus.secondary}",
+            "source": "$btn-secondary-outline-focus-outline-color"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-focus-outline-color",
-            "$value": "{color.white}"
+            "$value": "{color.white}",
+            "source": "$btn-secondary-inverse-focus-outline-color"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-focus-outline-color",
-            "$value": "{color.btn.border.inverse-outline-secondary}"
+            "$value": "{color.btn.border.inverse-outline-secondary}",
+            "source": "$btn-secondary-inverse-outline-focus-outline-color"
           }
         },
         "bg": {
           "secondary": {
-            "source": "$btn-secondary-focus-bg",
-            "$value": "{color.btn.bg.secondary}"
+            "$value": "{color.btn.bg.secondary}",
+            "source": "$btn-secondary-focus-bg"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-focus-bg",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-secondary-outline-focus-bg"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-focus-bg",
-            "$value": "{color.btn.bg.inverse-secondary}"
+            "$value": "{color.btn.bg.inverse-secondary}",
+            "source": "$btn-secondary-inverse-focus-bg"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-focus-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-secondary-inverse-outline-focus-bg"
           }
         }
       },
       "disabled": {
         "text": {
           "secondary": {
-            "source": "$btn-secondary-disabled-color",
-            "$value": "{color.btn.text.secondary}"
+            "$value": "{color.btn.text.secondary}",
+            "source": "$btn-secondary-disabled-color"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-disabled-color",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-secondary-outline-disabled-color"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-disabled-color",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-secondary-inverse-disabled-color"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-disabled-color",
-            "$value": "{color.btn.text.inverse-outline-secondary}"
+            "$value": "{color.btn.text.inverse-outline-secondary}",
+            "source": "$btn-secondary-inverse-outline-disabled-color"
           }
         },
         "bg": {
           "secondary": {
-            "source": "$btn-secondary-disabled-bg",
-            "$value": "{color.btn.bg.secondary}"
+            "$value": "{color.btn.bg.secondary}",
+            "source": "$btn-secondary-disabled-bg"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-disabled-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-secondary-outline-disabled-bg"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-disabled-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-secondary-inverse-disabled-bg"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-disabled-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-secondary-inverse-outline-disabled-bg"
           }
         },
         "border": {
           "secondary": {
-            "source": "$btn-secondary-disabled-border-color",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-secondary-disabled-border-color"
           },
           "outline-secondary": {
-            "source": "$btn-secondary-outline-disabled-border-color",
-            "$value": "{color.secondary.base}"
+            "$value": "{color.secondary.base}",
+            "source": "$btn-secondary-outline-disabled-border-color"
           },
           "inverse-secondary": {
-            "source": "$btn-secondary-inverse-disabled-border-color",
-            "$value": "{color.btn.border.inverse-secondary}"
+            "$value": "{color.btn.border.inverse-secondary}",
+            "source": "$btn-secondary-inverse-disabled-border-color"
           },
           "inverse-outline-secondary": {
-            "source": "$btn-secondary-inverse-outline-disabled-border-color",
-            "$value": "{color.btn.border.inverse-outline-secondary}"
+            "$value": "{color.btn.border.inverse-outline-secondary}",
+            "source": "$btn-secondary-inverse-outline-disabled-border-color"
           }
         }
       }

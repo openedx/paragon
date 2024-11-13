@@ -47,14 +47,14 @@
         "$description": "z-index of level 2000."
       },
       "sticky": {
-        "source": "$zindex-sticky",
         "$value": 1020,
-        "$description": "z-index for sticky element."
+        "$description": "z-index for sticky element.",
+        "source": "$zindex-sticky"
       },
       "fixed": {
-        "source": "$zindex-fixed",
         "$value": 1030,
-        "$description": "z-index of for fixed element."
+        "$description": "z-index of for fixed element.",
+        "source": "$zindex-fixed"
       }
     }
   }

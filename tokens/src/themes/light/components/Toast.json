@@ -2,20 +2,42 @@
   "color": {
     "$type": "color",
     "toast": {
-      "base": { "source": "$toast-color", "$value": "inherit" },
-      "bg": { "source": "$toast-background-color", "$value": "{color.gray.700}" },
+      "base": {
+        "$value": "inherit",
+        "source": "$toast-color"
+      },
+      "bg": {
+        "$value": "{color.gray.700}",
+        "source": "$toast-background-color"
+      },
       "border": {
-        "source": "$toast-border-color",
-        "modify": [{ "type": "alpha", "amount": 0.1 }],
-        "$value": "{color.black}"
+        "$value": "{color.black}",
+        "modify": [
+          {
+            "type": "alpha",
+            "amount": 0.1
+          }
+        ],
+        "source": "$toast-border-color"
       },
       "header": {
-        "text": { "source": "$toast-header-color", "$value": "{color.white}" },
-        "bg": { "source": "$toast-header-background-color", "$value": "{color.gray.700}" },
+        "text": {
+          "$value": "{color.white}",
+          "source": "$toast-header-color"
+        },
+        "bg": {
+          "$value": "{color.gray.700}",
+          "source": "$toast-header-background-color"
+        },
         "border": {
-          "source": "$toast-header-border-color",
-          "modify": [{ "type": "alpha", "amount": 0.5 }],
-          "$value": "{color.black}"
+          "$value": "{color.black}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.5
+            }
+          ],
+          "source": "$toast-header-border-color"
         }
       }
     }
@@ -24,7 +46,6 @@
     "$type": "shadow",
     "toast": {
       "box-shadow": {
-        "source": "$toast-box-shadow",
         "$value": [
           {
             "color": "rgba(0, 0, 0, .15)",
@@ -38,7 +59,8 @@
             "offsetY": ".5rem",
             "blur": "3rem"
           }
-        ]
+        ],
+        "source": "$toast-box-shadow"
       }
     }
   }

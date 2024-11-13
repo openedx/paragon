@@ -3,21 +3,39 @@
     "$type": "dimension",
     "navbar": {
       "padding": {
-        "y": { "source": "$navbar-padding-y", "$value": "calc({spacing.spacer.base} / 2)" },
+        "y": {
+          "$value": "calc({spacing.spacer.base} / 2)",
+          "source": "$navbar-padding-y"
+        },
         "x": {
-          "base": { "source": "$navbar-padding-x", "$value": "{spacing.spacer.base}" },
-          "nav-link": { "source": "$navbar-nav-link-padding-x", "$value": ".5rem" }
+          "base": {
+            "$value": "{spacing.spacer.base}",
+            "source": "$navbar-padding-x"
+          },
+          "nav-link": {
+            "$value": ".5rem",
+            "source": "$navbar-nav-link-padding-x"
+          }
         }
       },
       "brand": {
         "padding": {
-          "y": { "source": "$navbar-brand-padding-y", "$value": "calc(({typography.navbar.nav-link.height} - {size.navbar.brand.height}) / 2)" }
+          "y": {
+            "$value": "calc(({typography.navbar.nav-link.height} - {size.navbar.brand.height}) / 2)",
+            "source": "$navbar-brand-padding-y"
+          }
         }
       },
       "toggler": {
         "padding": {
-          "y": { "source": "$navbar-toggler-padding-y", "$value": ".25rem" },
-          "x": { "source": "$navbar-toggler-padding-x", "$value": ".75rem" }
+          "y": {
+            "$value": ".25rem",
+            "source": "$navbar-toggler-padding-y"
+          },
+          "x": {
+            "$value": ".75rem",
+            "source": "$navbar-toggler-padding-x"
+          }
         }
       }
     }
@@ -26,13 +44,22 @@
     "$type": "dimension",
     "navbar": {
       "brand": {
-        "font-size": { "source": "$navbar-brand-font-size", "$value": "{typography.font.size.lg}" }
+        "font-size": {
+          "$value": "{typography.font.size.lg}",
+          "source": "$navbar-brand-font-size"
+        }
       },
       "nav-link": {
-        "height": { "source": "$nav-link-height", "$value": "calc({typography.font.size.base} * {typography.line-height.base} + .5rem * 2)" }
+        "height": {
+          "$value": "calc({typography.font.size.base} * {typography.line-height.base} + .5rem * 2)",
+          "source": "$nav-link-height"
+        }
       },
       "toggler": {
-        "font-size": { "source": "$navbar-toggler-font-size", "$value": "{typography.font.size.lg}" }
+        "font-size": {
+          "$value": "{typography.font.size.lg}",
+          "source": "$navbar-toggler-font-size"
+        }
       }
     }
   },
@@ -41,14 +68,23 @@
     "navbar": {
       "nav": {
         "scroll": {
-          "max-height": { "source": "$navbar-nav-scroll-max-height", "$value": "75vh" }
+          "max-height": {
+            "$value": "75vh",
+            "source": "$navbar-nav-scroll-max-height"
+          }
         }
       },
       "brand": {
-        "height": { "source": "$navbar-brand-height", "$value": "calc({typography.navbar.brand.font-size} * {typography.line-height.base})" }
+        "height": {
+          "$value": "calc({typography.navbar.brand.font-size} * {typography.line-height.base})",
+          "source": "$navbar-brand-height"
+        }
       },
       "toggler": {
-        "border-radius": { "source": "$navbar-toggler-border-radius", "$value": "{size.btn.border.radius.base}" }
+        "border-radius": {
+          "$value": "{size.btn.border.radius.base}",
+          "source": "$navbar-toggler-border-radius"
+        }
       }
     }
   }

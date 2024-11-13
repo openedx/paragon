@@ -3,8 +3,14 @@
     "$type": "dimension",
     "bubble": {
       "expandable-padding": {
-        "y": { "source": "$bubble-expandable-padding-y", "$value": "0" },
-        "x": { "source": "$bubble-expandable-padding-x", "$value": ".25rem" }
+        "y": {
+          "$value": "0",
+          "source": "$bubble-expandable-padding-y"
+        },
+        "x": {
+          "$value": ".25rem",
+          "source": "$bubble-expandable-padding-x"
+        }
       }
     }
   }

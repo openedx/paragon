@@ -2,16 +2,28 @@
   "typography": {
     "$type": "dimension",
     "toast": {
-      "font-size": { "source": "$toast-font-size", "$value": ".875rem" }
+      "font-size": {
+        "$value": ".875rem",
+        "source": "$toast-font-size"
+      }
     }
   },
   "size": {
     "$type": "dimension",
     "toast": {
-      "max-width": { "source": "$toast-max-width", "$value": "400px" },
+      "max-width": {
+        "$value": "400px",
+        "source": "$toast-max-width"
+      },
       "border": {
-        "width": { "source": "$toast-border-width", "$value": "1px" },
-        "radius": { "source": "$toast-border-radius", "$value": ".25rem" }
+        "width": {
+          "$value": "1px",
+          "source": "$toast-border-width"
+        },
+        "radius": {
+          "$value": ".25rem",
+          "source": "$toast-border-radius"
+        }
       }
     }
   },
@@ -19,13 +31,25 @@
     "$type": "dimension",
     "toast": {
       "padding": {
-        "x": { "source": "$toast-padding-x", "$value": ".75rem" },
-        "y": { "source": "$toast-padding-y", "$value": ".25rem" }
+        "x": {
+          "$value": ".75rem",
+          "source": "$toast-padding-x"
+        },
+        "y": {
+          "$value": ".25rem",
+          "source": "$toast-padding-y"
+        }
       },
       "container": {
         "gutter": {
-          "lg": { "source": "$toast-container-gutter-lg", "$value": "1.25rem" },
-          "sm": { "source": "$toast-container-gutter-sm", "$value": ".625rem" }
+          "lg": {
+            "$value": "1.25rem",
+            "source": "$toast-container-gutter-lg"
+          },
+          "sm": {
+            "$value": ".625rem",
+            "source": "$toast-container-gutter-sm"
+          }
         }
       }
     }

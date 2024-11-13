@@ -3,20 +3,34 @@
     "$type": "color",
     "data-table": {
       "bg": {
-        "base": { "source": "$data-table-background-color", "$value": "{color.bg.base}" },
+        "base": {
+          "$value": "{color.bg.base}",
+          "source": "$data-table-background-color"
+        },
         "is-loading": {
-          "source": "$data-table-is-loading-bg",
-          "modify": [{ "type": "alpha", "amount": 0.7 }],
-          "$value": "{color.white}"
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.7
+            }
+          ],
+          "source": "$data-table-is-loading-bg"
         }
       },
-      "border": { "source": "$data-table-border-color", "$value": "{color.light.300}" }
+      "border": {
+        "$value": "{color.light.300}",
+        "source": "$data-table-border-color"
+      }
     }
   },
   "elevation": {
     "$type": "shadow",
     "data-table": {
-      "box-shadow": { "source": "$data-table-box-shadow", "$value": "{elevation.box-shadow.sm}" }
+      "box-shadow": {
+        "$value": "{elevation.box-shadow.sm}",
+        "source": "$data-table-box-shadow"
+      }
     }
   }
 }
