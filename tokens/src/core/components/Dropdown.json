@@ -54,7 +54,7 @@
     }
   },
   "elevation": {
-    "$type": "ratio",
+    "$type": "number",
     "dropdown": {
       "zindex": { "source": "$zindex-dropdown", "$value": "1000" }
     }

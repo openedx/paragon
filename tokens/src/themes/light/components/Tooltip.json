@@ -37,7 +37,7 @@
     }
   },
   "other": {
-    "$type": "ratio",
+    "$type": "number",
     "tooltip": {
       "opacity": { "source": "$tooltip-opacity", "$value": "1" }
     }

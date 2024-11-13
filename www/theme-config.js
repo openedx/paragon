@@ -17,7 +17,7 @@ const THEMES = [
   },
   {
     id: 'edxorg',
-    label: 'edX',
+    label: 'edX.org',
     stylesheet: 'edxorg-theme',
     pathToVariables: '@edx/brand-edx.org/paragon/_variables.scss',
   },
