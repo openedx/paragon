@@ -3,8 +3,14 @@
     "$type": "dimension",
     "tabs": {
       "notification": {
-        "height": { "source": "$tab-notification-height", "$value": "1rem" },
-        "width": { "source": "$tab-notification-width", "$value": "1rem" }
+        "height": {
+          "$value": "1rem",
+          "source": "$tab-notification-height"
+        },
+        "width": {
+          "$value": "1rem",
+          "source": "$tab-notification-width"
+        }
       }
     }
   },
@@ -12,7 +18,10 @@
     "$type": "dimension",
     "tabs": {
       "notification": {
-        "font-size": { "source": "$tab-notification-font-size", "$value": "{typography.font.size.xs}" }
+        "font-size": {
+          "$value": "{typography.font.size.xs}",
+          "source": "$tab-notification-font-size"
+        }
       }
     }
   }

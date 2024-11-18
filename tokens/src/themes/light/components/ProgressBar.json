@@ -2,21 +2,39 @@
   "color": {
     "$type": "color",
     "progress-bar": {
-      "base": { "source": "$progress-bar-color", "$value": "{color.white}" },
-      "bg": {
-        "base": { "source": "$progress-bar-bg", "$value": "{color.accent.a}" },
-        "annotated": { "source": "$annotated-progress-bar-bg", "$value": "{color.dark.500}" }
+      "base": {
+        "$value": "{color.white}",
+        "source": "$progress-bar-color"
       },
-      "border": { "source": "$progress-bar-border-color", "$value": "{color.gray.500}" }
+      "bg": {
+        "base": {
+          "$value": "{color.accent.a}",
+          "source": "$progress-bar-bg"
+        },
+        "annotated": {
+          "$value": "{color.dark.500}",
+          "source": "$annotated-progress-bar-bg"
+        }
+      },
+      "border": {
+        "$value": "{color.gray.500}",
+        "source": "$progress-bar-border-color"
+      }
     },
     "progress": {
-      "bg": { "source": "$progress-bg", "$value": "transparent" }
+      "bg": {
+        "$value": "transparent",
+        "source": "$progress-bg"
+      }
     }
   },
   "elevation": {
     "$type": "shadow",
     "progress-bar": {
-      "box-shadow": { "source": "$progress-box-shadow", "$value": "none" }
+      "box-shadow": {
+        "$value": "none",
+        "source": "$progress-box-shadow"
+      }
     }
   }
 }

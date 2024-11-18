@@ -2,143 +2,144 @@
   "color": {
     "$type": "color",
     "white": {
-      "source": "$white",
       "$value": "#FFFFFF",
-      "$description": "White color."
+      "$description": "White color.",
+      "source": "$white"
     },
     "black": {
-      "source": "$black",
       "$value": "#000000",
-      "$description": "Black color."
+      "$description": "Black color.",
+      "source": "$black"
     },
     "blue": {
-      "source": "$blue",
       "$value": "#23419F",
-      "$description": "Blue color."
+      "$description": "Blue color.",
+      "source": "$blue"
     },
     "red": {
-      "source": "$red",
       "$value": "#C32D3A",
-      "$description": "Red color."
+      "$description": "Red color.",
+      "source": "$red"
     },
     "green": {
-      "source": "$green",
       "$value": "#178253",
-      "$description": "Green color."
+      "$description": "Green color.",
+      "source": "$green"
     },
     "yellow": {
-      "source": "$yellow",
       "$value": "#FFD900",
-      "$description": "Yellow color."
+      "$description": "Yellow color.",
+      "source": "$yellow"
     },
     "teal": {
-      "source": "$teal",
       "$value": "#006DAA",
-      "$description": "Teal color."
+      "$description": "Teal color.",
+      "source": "$teal"
     },
     "accent": {
       "a": {
+        "$value": "#00BBF9",
+        "$description": "Accent-A color.",
         "source": "$accent-a",
         "actions": {
           "default": "{color.action.default.accent.a}"
-        },
-        "$value": "#00BBF9",
-        "$description": "Accent-A color."
+        }
       },
       "b": {
+        "$value": "#FFEE88",
+        "$description": "Accent-B color.",
         "source": "$accent-b",
         "actions": {
           "default": "{color.action.default.accent.b}"
-        },
-        "$value": "#FFEE88",
-        "$description": "Accent-B color."
+        }
       }
     },
     "gray": {
       "100": {
+        "$value": "#EBEBEB",
+        "$description": "Gray color of level 100.",
         "source": "$gray-100",
         "actions": {
           "default": "{color.action.default.gray.100}"
-        },
-        "$value": "#EBEBEB",
-        "$description": "Gray color of level 100."
+        }
       },
       "200": {
+        "$value": "#CCCCCC",
+        "$description": "Gray color of level 200.",
         "source": "$gray-200",
         "actions": {
           "default": "{color.action.default.gray.200}"
-        },
-        "$value": "#CCCCCC",
-        "$description": "Gray color of level 200."
+        }
       },
       "300": {
+        "$value": "#ADADAD",
+        "$description": "Gray color of level 300.",
         "source": "$gray-300",
         "actions": {
           "default": "{color.action.default.gray.300}"
-        },
-        "$value": "#ADADAD",
-        "$description": "Gray color of level 300."
+        }
       },
       "400": {
+        "$value": "#8F8F8F",
+        "$description": "Gray color of level 400.",
         "source": "$gray-400",
         "actions": {
           "default": "{color.action.default.gray.400}"
-        },
-        "$value": "#8F8F8F",
-        "$description": "Gray color of level 400."
+        }
       },
       "500": {
+        "$value": "{color.gray.base}",
+        "$description": "Gray color of level 500.",
         "source": "$gray-500",
         "actions": {
           "default": "{color.action.default.gray.500}"
-        },
-        "$value": "{color.gray.base}",
-        "$description": "Gray color of level 500."
+        }
       },
       "600": {
+        "$value": "#5C5C5C",
+        "$description": "Gray color of level 600.",
         "source": "$gray-600",
         "actions": {
           "default": "{color.action.default.gray.600}"
-        },
-        "$value": "#5C5C5C",
-        "$description": "Gray color of level 600."
+        }
       },
       "700": {
+        "$value": "#454545",
+        "$description": "Gray color of level 700.",
         "source": "$gray-700",
         "actions": {
           "default": "{color.action.default.gray.700}"
-        },
-        "$value": "#454545",
-        "$description": "Gray color of level 700."
+        }
       },
       "800": {
+        "$value": "#333333",
+        "$description": "Gray color of level 800.",
         "source": "$gray-800",
         "actions": {
           "default": "{color.action.default.gray.800}"
-        },
-        "$value": "#333333",
-        "$description": "Gray color of level 800."
+        }
       },
       "900": {
+        "$value": "#212529",
+        "$description": "Gray color of level 900.",
         "source": "$gray-900",
         "actions": {
           "default": "{color.action.default.gray.900}"
-        },
-        "$value": "#212529",
-        "$description": "Gray color of level 900."
+        }
       },
       "base": {
+        "$value": "#707070",
+        "$description": "Basic gray color.",
         "source": "$gray",
         "actions": {
           "default": "{color.action.default.gray.base}"
-        },
-        "$value": "#707070",
-        "$description": "Basic gray color."
+        }
       }
     },
     "primary": {
       "100": {
-        "source": "$primary-100",
+        "$value": "{color.primary.base}",
+        "$description": "Primary color of level 100.",
         "modify": [
           {
             "type": "mix",
@@ -146,14 +147,14 @@
             "amount": "0.94"
           }
         ],
+        "source": "$primary-100",
         "actions": {
           "default": "{color.action.default.primary.100}"
-        },
-        "$value": "{color.primary.base}",
-        "$description": "Primary color of level 100."
+        }
       },
       "200": {
-        "source": "$primary-200",
+        "$value": "{color.primary.base}",
+        "$description": "Primary color of level 200.",
         "modify": [
           {
             "type": "mix",
@@ -161,14 +162,14 @@
             "amount": "0.75"
           }
         ],
+        "source": "$primary-200",
         "actions": {
           "default": "{color.action.default.primary.200}"
-        },
-        "$value": "{color.primary.base}",
-        "$description": "Primary color of level 200."
+        }
       },
       "300": {
-        "source": "$primary-300",
+        "$value": "{color.primary.base}",
+        "$description": "Primary color of level 300.",
         "modify": [
           {
             "type": "mix",
@@ -176,14 +177,14 @@
             "amount": "0.50"
           }
         ],
+        "source": "$primary-300",
         "actions": {
           "default": "{color.action.default.primary.300}"
-        },
-        "$value": "{color.primary.base}",
-        "$description": "Primary color of level 300."
+        }
       },
       "400": {
-        "source": "$primary-400",
+        "$value": "{color.primary.base}",
+        "$description": "Primary color of level 400.",
         "modify": [
           {
             "type": "mix",
@@ -191,95 +192,137 @@
             "amount": "0.25"
           }
         ],
+        "source": "$primary-400",
         "actions": {
           "default": "{color.action.default.primary.400}"
-        },
-        "$value": "{color.primary.base}",
-        "$description": "Primary color of level 400."
+        }
       },
       "500": {
+        "$value": "{color.primary.base}",
+        "$description": "Primary color of level 500.",
         "source": "$primary-500",
         "actions": {
           "default": "{color.action.default.primary.500}"
-        },
-        "$value": "{color.primary.base}",
-        "$description": "Primary color of level 500."
+        }
       },
       "600": {
+        "$value": "{color.primary.base}",
+        "$description": "Primary color of level 600.",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "black",
+            "amount": "0.10"
+          }
+        ],
         "source": "$primary-600",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
         "actions": {
           "default": "{color.action.default.primary.600}"
-        },
-        "$value": "{color.primary.base}",
-        "$description": "Primary color of level 600."
+        }
       },
       "700": {
+        "$value": "{color.primary.base}",
+        "$description": "Primary color of level 700.",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "black",
+            "amount": "0.20"
+          }
+        ],
         "source": "$primary-700",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
         "actions": {
           "default": "{color.action.default.primary.700}"
-        },
-        "$value": "{color.primary.base}",
-        "$description": "Primary color of level 700."
+        }
       },
       "800": {
+        "$value": "{color.primary.base}",
+        "$description": "Primary color of level 800.",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "black",
+            "amount": "0.25"
+          }
+        ],
         "source": "$primary-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
         "actions": {
           "default": "{color.action.default.primary.800}"
-        },
-        "$value": "{color.primary.base}",
-        "$description": "Primary color of level 800."
+        }
       },
       "900": {
+        "$value": "{color.primary.base}",
+        "$description": "Primary color of level 900.",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "black",
+            "amount": "0.30"
+          }
+        ],
         "source": "$primary-900",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
         "actions": {
           "default": "{color.action.default.primary.900}"
-        },
-        "$value": "{color.primary.base}",
-        "$description": "Primary color of level 900."
+        }
       },
       "base": {
+        "$value": "#0A3055",
+        "$description": "Basic primary color.",
         "source": "$primary",
         "actions": {
           "default": "{color.action.default.primary.base}"
-        },
-        "$value": "#0A3055",
-        "$description": "Basic primary color."
+        }
       }
     },
     "secondary": {
       "100": {
+        "$value": "{color.secondary.base}",
+        "$description": "Secondary color of level 100.",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.94"
+          }
+        ],
         "source": "$secondary-100",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.94" }],
         "actions": {
           "default": "{color.action.default.secondary.100}"
-        },
-        "$value": "{color.secondary.base}",
-        "$description": "Secondary color of level 100."
+        }
       },
       "200": {
+        "$value": "{color.secondary.base}",
+        "$description": "Secondary color of level 200.",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.75"
+          }
+        ],
         "source": "$secondary-200",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.75" }],
         "actions": {
           "default": "{color.action.default.secondary.200}"
-        },
-        "$value": "{color.secondary.base}",
-        "$description": "Secondary color of level 200."
+        }
       },
       "300": {
+        "$value": "{color.secondary.base}",
+        "$description": "Secondary color of level 300.",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.50"
+          }
+        ],
         "source": "$secondary-300",
-        "modify": [{ "type": "mix", "otherColor": "white", "amount": "0.50" }],
         "actions": {
           "default": "{color.action.default.secondary.300}"
-        },
-        "$value": "{color.secondary.base}",
-        "$description": "Secondary color of level 300."
+        }
       },
       "400": {
-        "source": "$secondary-400",
+        "$value": "{color.secondary.base}",
+        "$description": "Secondary color of level 400.",
         "modify": [
           {
             "type": "mix",
@@ -287,22 +330,22 @@
             "amount": "0.25"
           }
         ],
+        "source": "$secondary-400",
         "actions": {
           "default": "{color.action.default.secondary.400}"
-        },
-        "$value": "{color.secondary.base}",
-        "$description": "Secondary color of level 400."
+        }
       },
       "500": {
+        "$value": "{color.secondary.base}",
+        "$description": "Secondary color of level 500.",
         "source": "$secondary-500",
         "actions": {
           "default": "{color.action.default.secondary.500}"
-        },
-        "$value": "{color.secondary.base}",
-        "$description": "Secondary color of level 500."
+        }
       },
       "600": {
-        "source": "$secondary-600",
+        "$value": "{color.secondary.base}",
+        "$description": "Secondary color of level 600.",
         "modify": [
           {
             "type": "mix",
@@ -310,14 +353,14 @@
             "amount": "0.10"
           }
         ],
+        "source": "$secondary-600",
         "actions": {
           "default": "{color.action.default.secondary.600}"
-        },
-        "$value": "{color.secondary.base}",
-        "$description": "Secondary color of level 600."
+        }
       },
       "700": {
-        "source": "$secondary-700",
+        "$value": "{color.secondary.base}",
+        "$description": "Secondary color of level 700.",
         "modify": [
           {
             "type": "mix",
@@ -325,14 +368,14 @@
             "amount": "0.20"
           }
         ],
+        "source": "$secondary-700",
         "actions": {
           "default": "{color.action.default.secondary.700}"
-        },
-        "$value": "{color.secondary.base}",
-        "$description": "Secondary color of level 700."
+        }
       },
       "800": {
-        "source": "$secondary-800",
+        "$value": "{color.secondary.base}",
+        "$description": "Secondary color of level 800.",
         "modify": [
           {
             "type": "mix",
@@ -340,14 +383,14 @@
             "amount": "0.25"
           }
         ],
+        "source": "$secondary-800",
         "actions": {
           "default": "{color.action.default.secondary.800}"
-        },
-        "$value": "{color.secondary.base}",
-        "$description": "Secondary color of level 800."
+        }
       },
       "900": {
-        "source": "$secondary-900",
+        "$value": "{color.secondary.base}",
+        "$description": "Secondary color of level 900.",
         "modify": [
           {
             "type": "mix",
@@ -355,24 +398,24 @@
             "amount": "0.30"
           }
         ],
+        "source": "$secondary-900",
         "actions": {
           "default": "{color.action.default.secondary.900}"
-        },
-        "$value": "{color.secondary.base}",
-        "$description": "Secondary color of level 900."
+        }
       },
       "base": {
+        "$value": "{color.gray.700}",
+        "$description": "Basic secondary color.",
         "source": "$secondary",
         "actions": {
           "default": "{color.action.default.secondary.base}"
-        },
-        "$value": "{color.gray.700}",
-        "$description": "Basic secondary color."
+        }
       }
     },
     "brand": {
       "100": {
-        "source": "$brand-100",
+        "$value": "{color.brand.base}",
+        "$description": "Brand color of level 100.",
         "modify": [
           {
             "type": "mix",
@@ -380,14 +423,14 @@
             "amount": "0.94"
           }
         ],
+        "source": "$brand-100",
         "actions": {
           "default": "{color.action.default.brand.100}"
-        },
-        "$value": "{color.brand.base}",
-        "$description": "Brand color of level 100."
+        }
       },
       "200": {
-        "source": "$brand-200",
+        "$value": "{color.brand.base}",
+        "$description": "Brand color of level 200.",
         "modify": [
           {
             "type": "mix",
@@ -395,14 +438,14 @@
             "amount": "0.75"
           }
         ],
+        "source": "$brand-200",
         "actions": {
           "default": "{color.action.default.brand.200}"
-        },
-        "$value": "{color.brand.base}",
-        "$description": "Brand color of level 200."
+        }
       },
       "300": {
-        "source": "$brand-300",
+        "$value": "{color.brand.base}",
+        "$description": "Brand color of level 300.",
         "modify": [
           {
             "type": "mix",
@@ -410,14 +453,14 @@
             "amount": "0.50"
           }
         ],
+        "source": "$brand-300",
         "actions": {
           "default": "{color.action.default.brand.300}"
-        },
-        "$value": "{color.brand.base}",
-        "$description": "Brand color of level 300."
+        }
       },
       "400": {
-        "source": "$brand-400",
+        "$value": "{color.brand.base}",
+        "$description": "Brand color of level 400.",
         "modify": [
           {
             "type": "mix",
@@ -425,22 +468,22 @@
             "amount": "0.25"
           }
         ],
+        "source": "$brand-400",
         "actions": {
           "default": "{color.action.default.brand.400}"
-        },
-        "$value": "{color.brand.base}",
-        "$description": "Brand color of level 400."
+        }
       },
       "500": {
+        "$value": "{color.brand.base}",
+        "$description": "Brand color of level 500.",
         "source": "$brand-500",
         "actions": {
           "default": "{color.action.default.brand.500}"
-        },
-        "$value": "{color.brand.base}",
-        "$description": "Brand color of level 500."
+        }
       },
       "600": {
-        "source": "$brand-600",
+        "$value": "{color.brand.base}",
+        "$description": "Brand color of level 600.",
         "modify": [
           {
             "type": "mix",
@@ -448,14 +491,14 @@
             "amount": "0.10"
           }
         ],
+        "source": "$brand-600",
         "actions": {
           "default": "{color.action.default.brand.600}"
-        },
-        "$value": "{color.brand.base}",
-        "$description": "Brand color of level 600."
+        }
       },
       "700": {
-        "source": "$brand-700",
+        "$value": "{color.brand.base}",
+        "$description": "Brand color of level 700.",
         "modify": [
           {
             "type": "mix",
@@ -463,14 +506,14 @@
             "amount": "0.20"
           }
         ],
+        "source": "$brand-700",
         "actions": {
           "default": "{color.action.default.brand.700}"
-        },
-        "$value": "{color.brand.base}",
-        "$description": "Brand color of level 700."
+        }
       },
       "800": {
-        "source": "$brand-800",
+        "$value": "{color.brand.base}",
+        "$description": "Brand color of level 800.",
         "modify": [
           {
             "type": "mix",
@@ -478,14 +521,14 @@
             "amount": "0.25"
           }
         ],
+        "source": "$brand-800",
         "actions": {
           "default": "{color.action.default.brand.800}"
-        },
-        "$value": "{color.brand.base}",
-        "$description": "Brand color of level 800."
+        }
       },
       "900": {
-        "source": "$brand-900",
+        "$value": "{color.brand.base}",
+        "$description": "Brand color of level 900.",
         "modify": [
           {
             "type": "mix",
@@ -493,24 +536,24 @@
             "amount": "0.30"
           }
         ],
+        "source": "$brand-900",
         "actions": {
           "default": "{color.action.default.brand.900}"
-        },
-        "$value": "{color.brand.base}",
-        "$description": "Brand color of level 900."
+        }
       },
       "base": {
+        "$value": "#9D0054",
+        "$description": "Basic brand color.",
         "source": "$brand",
         "actions": {
           "default": "{color.action.default.brand.base}"
-        },
-        "$value": "#9D0054",
-        "$description": "Basic brand color."
+        }
       }
     },
     "success": {
       "100": {
-        "source": "$success-100",
+        "$value": "{color.success.base}",
+        "$description": "Success color of level 100.",
         "modify": [
           {
             "type": "mix",
@@ -518,14 +561,14 @@
             "amount": "0.94"
           }
         ],
+        "source": "$success-100",
         "actions": {
           "default": "{color.action.default.success.100}"
-        },
-        "$value": "{color.success.base}",
-        "$description": "Success color of level 100."
+        }
       },
       "200": {
-        "source": "$success-200",
+        "$value": "{color.success.base}",
+        "$description": "Success color of level 200.",
         "modify": [
           {
             "type": "mix",
@@ -533,14 +576,14 @@
             "amount": "0.75"
           }
         ],
+        "source": "$success-200",
         "actions": {
           "default": "{color.action.default.success.200}"
-        },
-        "$value": "{color.success.base}",
-        "$description": "Success color of level 200."
+        }
       },
       "300": {
-        "source": "$success-300",
+        "$value": "{color.success.base}",
+        "$description": "Success color of level 300.",
         "modify": [
           {
             "type": "mix",
@@ -548,14 +591,14 @@
             "amount": "0.50"
           }
         ],
+        "source": "$success-300",
         "actions": {
           "default": "{color.action.default.success.300}"
-        },
-        "$value": "{color.success.base}",
-        "$description": "Success color of level 300."
+        }
       },
       "400": {
-        "source": "$success-400",
+        "$value": "{color.success.base}",
+        "$description": "Success color of level 400.",
         "modify": [
           {
             "type": "mix",
@@ -563,22 +606,22 @@
             "amount": "0.25"
           }
         ],
+        "source": "$success-400",
         "actions": {
           "default": "{color.action.default.success.400}"
-        },
-        "$value": "{color.success.base}",
-        "$description": "Success color of level 400."
+        }
       },
       "500": {
+        "$value": "{color.success.base}",
+        "$description": "Success color of level 500.",
         "source": "$success-500",
         "actions": {
           "default": "{color.action.default.success.500}"
-        },
-        "$value": "{color.success.base}",
-        "$description": "Success color of level 500."
+        }
       },
       "600": {
-        "source": "$success-600",
+        "$value": "{color.success.base}",
+        "$description": "Success color of level 600.",
         "modify": [
           {
             "type": "mix",
@@ -586,14 +629,14 @@
             "amount": "0.10"
           }
         ],
+        "source": "$success-600",
         "actions": {
           "default": "{color.action.default.success.600}"
-        },
-        "$value": "{color.success.base}",
-        "$description": "Success color of level 600."
+        }
       },
       "700": {
-        "source": "$success-700",
+        "$value": "{color.success.base}",
+        "$description": "Success color of level 700.",
         "modify": [
           {
             "type": "mix",
@@ -601,14 +644,14 @@
             "amount": "0.20"
           }
         ],
+        "source": "$success-700",
         "actions": {
           "default": "{color.action.default.success.700}"
-        },
-        "$value": "{color.success.base}",
-        "$description": "Success color of level 700."
+        }
       },
       "800": {
-        "source": "$success-800",
+        "$value": "{color.success.base}",
+        "$description": "Success color of level 800.",
         "modify": [
           {
             "type": "mix",
@@ -616,14 +659,14 @@
             "amount": "0.25"
           }
         ],
+        "source": "$success-800",
         "actions": {
           "default": "{color.action.default.success.800}"
-        },
-        "$value": "{color.success.base}",
-        "$description": "Success color of level 800."
+        }
       },
       "900": {
-        "source": "$success-900",
+        "$value": "{color.success.base}",
+        "$description": "Success color of level 900.",
         "modify": [
           {
             "type": "mix",
@@ -631,24 +674,24 @@
             "amount": "0.30"
           }
         ],
+        "source": "$success-900",
         "actions": {
           "default": "{color.action.default.success.900}"
-        },
-        "$value": "{color.success.base}",
-        "$description": "Success color of level 900."
+        }
       },
       "base": {
+        "$value": "{color.green}",
+        "$description": "Basic success color.",
         "source": "$success",
         "actions": {
           "default": "{color.action.default.success.base}"
-        },
-        "$value": "{color.green}",
-        "$description": "Basic success color."
+        }
       }
     },
     "info": {
       "100": {
-        "source": "$info-100",
+        "$value": "{color.info.base}",
+        "$description": "Info color of level 100.",
         "modify": [
           {
             "type": "mix",
@@ -656,14 +699,14 @@
             "amount": "0.94"
           }
         ],
+        "source": "$info-100",
         "actions": {
           "default": "{color.action.default.info.100}"
-        },
-        "$value": "{color.info.base}",
-        "$description": "Info color of level 100."
+        }
       },
       "200": {
-        "source": "$info-200",
+        "$value": "{color.info.base}",
+        "$description": "Info color of level 200.",
         "modify": [
           {
             "type": "mix",
@@ -671,14 +714,14 @@
             "amount": "0.75"
           }
         ],
+        "source": "$info-200",
         "actions": {
           "default": "{color.action.default.info.200}"
-        },
-        "$value": "{color.info.base}",
-        "$description": "Info color of level 200."
+        }
       },
       "300": {
-        "source": "$info-300",
+        "$value": "{color.info.base}",
+        "$description": "Info color of level 300.",
         "modify": [
           {
             "type": "mix",
@@ -686,14 +729,14 @@
             "amount": "0.50"
           }
         ],
+        "source": "$info-300",
         "actions": {
           "default": "{color.action.default.info.300}"
-        },
-        "$value": "{color.info.base}",
-        "$description": "Info color of level 300."
+        }
       },
       "400": {
-        "source": "$info-400",
+        "$value": "{color.info.base}",
+        "$description": "Info color of level 400.",
         "modify": [
           {
             "type": "mix",
@@ -701,22 +744,22 @@
             "amount": "0.25"
           }
         ],
+        "source": "$info-400",
         "actions": {
           "default": "{color.action.default.info.400}"
-        },
-        "$value": "{color.info.base}",
-        "$description": "Info color of level 400."
+        }
       },
       "500": {
+        "$value": "{color.info.base}",
+        "$description": "Info color of level 500.",
         "source": "$info-500",
         "actions": {
           "default": "{color.action.default.info.500}"
-        },
-        "$value": "{color.info.base}",
-        "$description": "Info color of level 500."
+        }
       },
       "600": {
-        "source": "$info-600",
+        "$value": "{color.info.base}",
+        "$description": "Info color of level 600.",
         "modify": [
           {
             "type": "mix",
@@ -724,14 +767,14 @@
             "amount": "0.10"
           }
         ],
+        "source": "$info-600",
         "actions": {
           "default": "{color.action.default.info.600}"
-        },
-        "$value": "{color.info.base}",
-        "$description": "Info color of level 600."
+        }
       },
       "700": {
-        "source": "$info-700",
+        "$value": "{color.info.base}",
+        "$description": "Info color of level 700.",
         "modify": [
           {
             "type": "mix",
@@ -739,14 +782,14 @@
             "amount": "0.20"
           }
         ],
+        "source": "$info-700",
         "actions": {
           "default": "{color.action.default.info.700}"
-        },
-        "$value": "{color.info.base}",
-        "$description": "Info color of level 700."
+        }
       },
       "800": {
-        "source": "$info-800",
+        "$value": "{color.info.base}",
+        "$description": "Info color of level 800.",
         "modify": [
           {
             "type": "mix",
@@ -754,14 +797,14 @@
             "amount": "0.25"
           }
         ],
+        "source": "$info-800",
         "actions": {
           "default": "{color.action.default.info.800}"
-        },
-        "$value": "{color.info.base}",
-        "$description": "Info color of level 800."
+        }
       },
       "900": {
-        "source": "$info-900",
+        "$value": "{color.info.base}",
+        "$description": "Info color of level 900.",
         "modify": [
           {
             "type": "mix",
@@ -769,24 +812,24 @@
             "amount": "0.30"
           }
         ],
+        "source": "$info-900",
         "actions": {
           "default": "{color.action.default.info.900}"
-        },
-        "$value": "{color.info.base}",
-        "$description": "Info color of level 900."
+        }
       },
       "base": {
+        "$value": "{color.teal}",
+        "$description": "Basic info color.",
         "source": "$info",
         "actions": {
           "default": "{color.action.default.info.base}"
-        },
-        "$value": "{color.teal}",
-        "$description": "Basic info color."
+        }
       }
     },
     "warning": {
       "100": {
-        "source": "$warning-100",
+        "$value": "{color.warning.base}",
+        "$description": "Warning color of level 100.",
         "modify": [
           {
             "type": "mix",
@@ -794,14 +837,14 @@
             "amount": "0.94"
           }
         ],
+        "source": "$warning-100",
         "actions": {
           "default": "{color.action.default.warning.100}"
-        },
-        "$value": "{color.warning.base}",
-        "$description": "Warning color of level 100."
+        }
       },
       "200": {
-        "source": "$warning-200",
+        "$value": "{color.warning.base}",
+        "$description": "Warning color of level 200.",
         "modify": [
           {
             "type": "mix",
@@ -809,14 +852,14 @@
             "amount": "0.75"
           }
         ],
+        "source": "$warning-200",
         "actions": {
           "default": "{color.action.default.warning.200}"
-        },
-        "$value": "{color.warning.base}",
-        "$description": "Warning color of level 200."
+        }
       },
       "300": {
-        "source": "$warning-300",
+        "$value": "{color.warning.base}",
+        "$description": "Warning color of level 300.",
         "modify": [
           {
             "type": "mix",
@@ -824,14 +867,14 @@
             "amount": "0.50"
           }
         ],
+        "source": "$warning-300",
         "actions": {
           "default": "{color.action.default.warning.300}"
-        },
-        "$value": "{color.warning.base}",
-        "$description": "Warning color of level 300."
+        }
       },
       "400": {
-        "source": "$warning-400",
+        "$value": "{color.warning.base}",
+        "$description": "Warning color of level 400.",
         "modify": [
           {
             "type": "mix",
@@ -839,22 +882,22 @@
             "amount": "0.25"
           }
         ],
+        "source": "$warning-400",
         "actions": {
           "default": "{color.action.default.warning.400}"
-        },
-        "$value": "{color.warning.base}",
-        "$description": "Warning color of level 400."
+        }
       },
       "500": {
+        "$value": "{color.warning.base}",
+        "$description": "Warning color of level 500.",
         "source": "$warning-500",
         "actions": {
           "default": "{color.action.default.warning.500}"
-        },
-        "$value": "{color.warning.base}",
-        "$description": "Warning color of level 500."
+        }
       },
       "600": {
-        "source": "$warning-600",
+        "$value": "{color.warning.base}",
+        "$description": "Warning color of level 600.",
         "modify": [
           {
             "type": "mix",
@@ -862,14 +905,14 @@
             "amount": "0.10"
           }
         ],
+        "source": "$warning-600",
         "actions": {
           "default": "{color.action.default.warning.600}"
-        },
-        "$value": "{color.warning.base}",
-        "$description": "Warning color of level 600."
+        }
       },
       "700": {
-        "source": "$warning-700",
+        "$value": "{color.warning.base}",
+        "$description": "Warning color of level 700.",
         "modify": [
           {
             "type": "mix",
@@ -877,14 +920,14 @@
             "amount": "0.20"
           }
         ],
+        "source": "$warning-700",
         "actions": {
           "default": "{color.action.default.warning.700}"
-        },
-        "$value": "{color.warning.base}",
-        "$description": "Warning color of level 700."
+        }
       },
       "800": {
-        "source": "$warning-800",
+        "$value": "{color.warning.base}",
+        "$description": "Warning color of level 800.",
         "modify": [
           {
             "type": "mix",
@@ -892,14 +935,14 @@
             "amount": "0.25"
           }
         ],
+        "source": "$warning-800",
         "actions": {
           "default": "{color.action.default.warning.800}"
-        },
-        "$value": "{color.warning.base}",
-        "$description": "Warning color of level 800."
+        }
       },
       "900": {
-        "source": "$warning-900",
+        "$value": "{color.warning.base}",
+        "$description": "Warning color of level 900.",
         "modify": [
           {
             "type": "mix",
@@ -907,24 +950,24 @@
             "amount": "0.30"
           }
         ],
+        "source": "$warning-900",
         "actions": {
           "default": "{color.action.default.warning.900}"
-        },
-        "$value": "{color.warning.base}",
-        "$description": "Warning color of level 900."
+        }
       },
       "base": {
+        "$value": "{color.yellow}",
+        "$description": "Basic warning color.",
         "source": "$warning",
         "actions": {
           "default": "{color.action.default.warning.base}"
-        },
-        "$value": "{color.yellow}",
-        "$description": "Basic warning color."
+        }
       }
     },
     "danger": {
       "100": {
-        "source": "$danger-100",
+        "$value": "{color.danger.base}",
+        "$description": "Danger color of level 100.",
         "modify": [
           {
             "type": "mix",
@@ -932,14 +975,14 @@
             "amount": "0.94"
           }
         ],
+        "source": "$danger-100",
         "actions": {
           "default": "{color.action.default.danger.100}"
-        },
-        "$value": "{color.danger.base}",
-        "$description": "Danger color of level 100."
+        }
       },
       "200": {
-        "source": "$danger-200",
+        "$value": "{color.danger.base}",
+        "$description": "Danger color of level 200.",
         "modify": [
           {
             "type": "mix",
@@ -947,14 +990,14 @@
             "amount": "0.75"
           }
         ],
+        "source": "$danger-200",
         "actions": {
           "default": "{color.action.default.danger.200}"
-        },
-        "$value": "{color.danger.base}",
-        "$description": "Danger color of level 200."
+        }
       },
       "300": {
-        "source": "$danger-300",
+        "$value": "{color.danger.base}",
+        "$description": "Danger color of level 300.",
         "modify": [
           {
             "type": "mix",
@@ -962,14 +1005,14 @@
             "amount": "0.50"
           }
         ],
+        "source": "$danger-300",
         "actions": {
           "default": "{color.action.default.danger.300}"
-        },
-        "$value": "{color.danger.base}",
-        "$description": "Danger color of level 300."
+        }
       },
       "400": {
-        "source": "$danger-400",
+        "$value": "{color.danger.base}",
+        "$description": "Danger color of level 400.",
         "modify": [
           {
             "type": "mix",
@@ -977,22 +1020,22 @@
             "amount": "0.25"
           }
         ],
+        "source": "$danger-400",
         "actions": {
           "default": "{color.action.default.danger.400}"
-        },
-        "$value": "{color.danger.base}",
-        "$description": "Danger color of level 400."
+        }
       },
       "500": {
+        "$value": "{color.danger.base}",
+        "$description": "Danger color of level 500.",
         "source": "$danger-500",
         "actions": {
           "default": "{color.action.default.danger.500}"
-        },
-        "$value": "{color.danger.base}",
-        "$description": "Danger color of level 500."
+        }
       },
       "600": {
-        "source": "$danger-600",
+        "$value": "{color.danger.base}",
+        "$description": "Danger color of level 600.",
         "modify": [
           {
             "type": "mix",
@@ -1000,14 +1043,14 @@
             "amount": "0.10"
           }
         ],
+        "source": "$danger-600",
         "actions": {
           "default": "{color.action.default.danger.600}"
-        },
-        "$value": "{color.danger.base}",
-        "$description": "Danger color of level 600."
+        }
       },
       "700": {
-        "source": "$danger-700",
+        "$value": "{color.danger.base}",
+        "$description": "Danger color of level 700.",
         "modify": [
           {
             "type": "mix",
@@ -1015,14 +1058,14 @@
             "amount": "0.20"
           }
         ],
+        "source": "$danger-700",
         "actions": {
           "default": "{color.action.default.danger.700}"
-        },
-        "$value": "{color.danger.base}",
-        "$description": "Danger color of level 700."
+        }
       },
       "800": {
-        "source": "$danger-800",
+        "$value": "{color.danger.base}",
+        "$description": "Danger color of level 800.",
         "modify": [
           {
             "type": "mix",
@@ -1030,14 +1073,14 @@
             "amount": "0.25"
           }
         ],
+        "source": "$danger-800",
         "actions": {
           "default": "{color.action.default.danger.800}"
-        },
-        "$value": "{color.danger.base}",
-        "$description": "Danger color of level 800."
+        }
       },
       "900": {
-        "source": "$danger-900",
+        "$value": "{color.danger.base}",
+        "$description": "Danger color of level 900.",
         "modify": [
           {
             "type": "mix",
@@ -1045,24 +1088,24 @@
             "amount": "0.30"
           }
         ],
+        "source": "$danger-900",
         "actions": {
           "default": "{color.action.default.danger.900}"
-        },
-        "$value": "{color.danger.base}",
-        "$description": "Danger color of level 900."
+        }
       },
       "base": {
+        "$value": "{color.red}",
+        "$description": "Basic danger color.",
         "source": "$danger",
         "actions": {
           "default": "{color.action.default.danger.base}"
-        },
-        "$value": "{color.red}",
-        "$description": "Basic danger color."
+        }
       }
     },
     "light": {
       "100": {
-        "source": "$light-100",
+        "$value": "{color.light.base}",
+        "$description": "Light color of level 100.",
         "modify": [
           {
             "type": "mix",
@@ -1070,14 +1113,14 @@
             "amount": "0.94"
           }
         ],
+        "source": "$light-100",
         "actions": {
           "default": "{color.action.default.light.100}"
-        },
-        "$value": "{color.light.base}",
-        "$description": "Light color of level 100."
+        }
       },
       "200": {
-        "source": "$light-200",
+        "$value": "{color.light.base}",
+        "$description": "Light color of level 200.",
         "modify": [
           {
             "type": "mix",
@@ -1085,14 +1128,14 @@
             "amount": "0.75"
           }
         ],
+        "source": "$light-200",
         "actions": {
           "default": "{color.action.default.light.200}"
-        },
-        "$value": "{color.light.base}",
-        "$description": "Light color of level 200."
+        }
       },
       "300": {
-        "source": "$light-300",
+        "$value": "{color.light.base}",
+        "$description": "Light color of level 300.",
         "modify": [
           {
             "type": "mix",
@@ -1100,14 +1143,14 @@
             "amount": "0.50"
           }
         ],
+        "source": "$light-300",
         "actions": {
           "default": "{color.action.default.light.300}"
-        },
-        "$value": "{color.light.base}",
-        "$description": "Light color of level 300."
+        }
       },
       "400": {
-        "source": "$light-400",
+        "$value": "{color.light.base}",
+        "$description": "Light color of level 400.",
         "modify": [
           {
             "type": "mix",
@@ -1115,22 +1158,22 @@
             "amount": "0.25"
           }
         ],
+        "source": "$light-400",
         "actions": {
           "default": "{color.action.default.light.400}"
-        },
-        "$value": "{color.light.base}",
-        "$description": "Light color of level 400."
+        }
       },
       "500": {
+        "$value": "{color.light.base}",
+        "$description": "Light color of level 500.",
         "source": "$light-500",
         "actions": {
           "default": "{color.action.default.light.500}"
-        },
-        "$value": "{color.light.base}",
-        "$description": "Light color of level 500."
+        }
       },
       "600": {
-        "source": "$light-600",
+        "$value": "{color.light.base}",
+        "$description": "Light color of level 600.",
         "modify": [
           {
             "type": "mix",
@@ -1138,14 +1181,14 @@
             "amount": "0.10"
           }
         ],
+        "source": "$light-600",
         "actions": {
           "default": "{color.action.default.light.600}"
-        },
-        "$value": "{color.light.base}",
-        "$description": "Light color of level 600."
+        }
       },
       "700": {
-        "source": "$light-700",
+        "$value": "{color.light.base}",
+        "$description": "Light color of level 700.",
         "modify": [
           {
             "type": "mix",
@@ -1153,14 +1196,14 @@
             "amount": "0.20"
           }
         ],
+        "source": "$light-700",
         "actions": {
           "default": "{color.action.default.light.700}"
-        },
-        "$value": "{color.light.base}",
-        "$description": "Light color of level 700."
+        }
       },
       "800": {
-        "source": "$light-800",
+        "$value": "{color.light.base}",
+        "$description": "Light color of level 800.",
         "modify": [
           {
             "type": "mix",
@@ -1168,14 +1211,14 @@
             "amount": "0.25"
           }
         ],
+        "source": "$light-800",
         "actions": {
           "default": "{color.action.default.light.800}"
-        },
-        "$value": "{color.light.base}",
-        "$description": "Light color of level 800."
+        }
       },
       "900": {
-        "source": "$light-900",
+        "$value": "{color.light.base}",
+        "$description": "Light color of level 900.",
         "modify": [
           {
             "type": "mix",
@@ -1183,24 +1226,24 @@
             "amount": "0.30"
           }
         ],
+        "source": "$light-900",
         "actions": {
           "default": "{color.action.default.light.900}"
-        },
-        "$value": "{color.light.base}",
-        "$description": "Light color of level 900."
+        }
       },
       "base": {
+        "$value": "#E1DDDB",
+        "$description": "Basic light color.",
         "source": "$light",
         "actions": {
           "default": "{color.action.default.light.base}"
-        },
-        "$value": "#E1DDDB",
-        "$description": "Basic light color."
+        }
       }
     },
     "dark": {
       "100": {
-        "source": "$dark-100",
+        "$value": "{color.dark.base}",
+        "$description": "Dark color of level 100.",
         "modify": [
           {
             "type": "mix",
@@ -1208,14 +1251,14 @@
             "amount": "0.94"
           }
         ],
+        "source": "$dark-100",
         "actions": {
           "default": "{color.action.default.dark.100}"
-        },
-        "$value": "{color.dark.base}",
-        "$description": "Dark color of level 100."
+        }
       },
       "200": {
-        "source": "$dark-200",
+        "$value": "{color.dark.base}",
+        "$description": "Dark color of level 200.",
         "modify": [
           {
             "type": "mix",
@@ -1223,14 +1266,14 @@
             "amount": "0.75"
           }
         ],
+        "source": "$dark-200",
         "actions": {
           "default": "{color.action.default.dark.200}"
-        },
-        "$value": "{color.dark.base}",
-        "$description": "Dark color of level 200."
+        }
       },
       "300": {
-        "source": "$dark-300",
+        "$value": "{color.dark.base}",
+        "$description": "Dark color of level 300.",
         "modify": [
           {
             "type": "mix",
@@ -1238,14 +1281,14 @@
             "amount": "0.50"
           }
         ],
+        "source": "$dark-300",
         "actions": {
           "default": "{color.action.default.dark.300}"
-        },
-        "$value": "{color.dark.base}",
-        "$description": "Dark color of level 300."
+        }
       },
       "400": {
-        "source": "$dark-400",
+        "$value": "{color.dark.base}",
+        "$description": "Dark color of level 400.",
         "modify": [
           {
             "type": "mix",
@@ -1253,22 +1296,22 @@
             "amount": "0.25"
           }
         ],
+        "source": "$dark-400",
         "actions": {
           "default": "{color.action.default.dark.400}"
-        },
-        "$value": "{color.dark.base}",
-        "$description": "Dark color of level 400."
+        }
       },
       "500": {
+        "$value": "{color.dark.base}",
+        "$description": "Dark color of level 500.",
         "source": "$dark-500",
         "actions": {
           "default": "{color.action.default.dark.500}"
-        },
-        "$value": "{color.dark.base}",
-        "$description": "Dark color of level 500."
+        }
       },
       "600": {
-        "source": "$dark-600",
+        "$value": "{color.dark.base}",
+        "$description": "Dark color of level 600.",
         "modify": [
           {
             "type": "mix",
@@ -1276,14 +1319,14 @@
             "amount": "0.10"
           }
         ],
+        "source": "$dark-600",
         "actions": {
           "default": "{color.action.default.dark.600}"
-        },
-        "$value": "{color.dark.base}",
-        "$description": "Dark color of level 600."
+        }
       },
       "700": {
-        "source": "$dark-700",
+        "$value": "{color.dark.base}",
+        "$description": "Info color of level 700.",
         "modify": [
           {
             "type": "mix",
@@ -1291,14 +1334,14 @@
             "amount": "0.20"
           }
         ],
+        "source": "$dark-700",
         "actions": {
           "default": "{color.action.default.dark.700}"
-        },
-        "$value": "{color.dark.base}",
-        "$description": "Info color of level 700."
+        }
       },
       "800": {
-        "source": "$dark-800",
+        "$value": "{color.dark.base}",
+        "$description": "Dark color of level 800.",
         "modify": [
           {
             "type": "mix",
@@ -1306,14 +1349,14 @@
             "amount": "0.25"
           }
         ],
+        "source": "$dark-800",
         "actions": {
           "default": "{color.action.default.dark.800}"
-        },
-        "$value": "{color.dark.base}",
-        "$description": "Dark color of level 800."
+        }
       },
       "900": {
-        "source": "$dark-900",
+        "$value": "{color.dark.base}",
+        "$description": "Dark color of level 900.",
         "modify": [
           {
             "type": "mix",
@@ -1321,1063 +1364,1062 @@
             "amount": "0.30"
           }
         ],
+        "source": "$dark-900",
         "actions": {
           "default": "{color.action.default.dark.900}"
-        },
-        "$value": "{color.dark.base}",
-        "$description": "Dark color of level 900."
+        }
       },
       "base": {
+        "$value": "#273F2F",
+        "$description": "Basic dark color.",
         "source": "$dark",
         "actions": {
           "default": "{color.action.default.dark.base}"
-        },
-        "$value": "#273F2F",
-        "$description": "Basic dark color."
+        }
       }
     },
     "action": {
       "default": {
         "gray": {
           "100": {
-            "source": "$action-default-gray-100",
+            "$value": "{color.gray.100}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.gray.100}"
+            "source": "$action-default-gray-100"
           },
           "200": {
-            "source": "$action-default-gray-200",
+            "$value": "{color.gray.200}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.gray.200}"
+            "source": "$action-default-gray-200"
           },
           "300": {
-            "source": "$action-default-gray-300",
+            "$value": "{color.gray.300}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.gray.300}"
+            "source": "$action-default-gray-300"
           },
           "400": {
-            "source": "$action-default-gray-400",
+            "$value": "{color.gray.400}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.gray.400}"
+            "source": "$action-default-gray-400"
           },
           "500": {
-            "source": "$action-default-gray-500",
+            "$value": "{color.gray.500}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.gray.500}"
+            "source": "$action-default-gray-500"
           },
           "600": {
-            "source": "$action-default-gray-600",
+            "$value": "{color.gray.600}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.gray.600}"
+            "source": "$action-default-gray-600"
           },
           "700": {
-            "source": "$action-default-gray-700",
+            "$value": "{color.gray.700}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.gray.700}"
+            "source": "$action-default-gray-700"
           },
           "800": {
-            "source": "$action-default-gray-800",
+            "$value": "{color.gray.800}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.gray.800}"
+            "source": "$action-default-gray-800"
           },
           "900": {
-            "source": "$action-default-gray-900",
+            "$value": "{color.gray.900}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.gray.900}"
+            "source": "$action-default-gray-900"
           },
           "base": {
-            "source": "$action-default-gray-base",
+            "$value": "{color.gray.base}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.gray.base}"
+            "source": "$action-default-gray-base"
           }
         },
         "primary": {
           "100": {
-            "source": "$action-default-primary-100",
+            "$value": "{color.primary.100}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.primary.100}"
+            "source": "$action-default-primary-100"
           },
           "200": {
-            "source": "$action-default-primary-200",
+            "$value": "{color.primary.200}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.primary.200}"
+            "source": "$action-default-primary-200"
           },
           "300": {
-            "source": "$action-default-primary-300",
+            "$value": "{color.primary.300}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.primary.300}"
+            "source": "$action-default-primary-300"
           },
           "400": {
-            "source": "$action-default-primary-400",
+            "$value": "{color.primary.400}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.primary.400}"
+            "source": "$action-default-primary-400"
           },
           "500": {
-            "source": "$action-default-primary-500",
+            "$value": "{color.primary.500}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.primary.500}"
+            "source": "$action-default-primary-500"
           },
           "600": {
-            "source": "$action-default-primary-600",
+            "$value": "{color.primary.600}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.primary.600}"
+            "source": "$action-default-primary-600"
           },
           "700": {
-            "source": "$action-default-primary-700",
+            "$value": "{color.primary.700}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.primary.700}"
+            "source": "$action-default-primary-700"
           },
           "800": {
-            "source": "$action-default-primary-800",
+            "$value": "{color.primary.800}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.primary.800}"
+            "source": "$action-default-primary-800"
           },
           "900": {
-            "source": "$action-default-primary-900",
+            "$value": "{color.primary.900}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.primary.900}"
+            "source": "$action-default-primary-900"
           },
           "base": {
-            "source": "$action-default-primary-base",
+            "$value": "{color.primary.base}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.primary.base}"
+            "source": "$action-default-primary-base"
           }
         },
         "secondary": {
           "100": {
-            "source": "$action-default-secondary-100",
+            "$value": "{color.secondary.100}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.secondary.100}"
+            "source": "$action-default-secondary-100"
           },
           "200": {
-            "source": "$action-default-secondary-200",
+            "$value": "{color.secondary.200}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.secondary.200}"
+            "source": "$action-default-secondary-200"
           },
           "300": {
-            "source": "$action-default-secondary-300",
+            "$value": "{color.secondary.300}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.secondary.300}"
+            "source": "$action-default-secondary-300"
           },
           "400": {
-            "source": "$action-default-secondary-400",
+            "$value": "{color.secondary.400}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.secondary.400}"
+            "source": "$action-default-secondary-400"
           },
           "500": {
-            "source": "$action-default-secondary-500",
+            "$value": "{color.secondary.500}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.secondary.500}"
+            "source": "$action-default-secondary-500"
           },
           "600": {
-            "source": "$action-default-secondary-600",
+            "$value": "{color.secondary.600}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.secondary.600}"
+            "source": "$action-default-secondary-600"
           },
           "700": {
-            "source": "$action-default-secondary-700",
+            "$value": "{color.secondary.700}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.secondary.700}"
+            "source": "$action-default-secondary-700"
           },
           "800": {
-            "source": "$action-default-secondary-800",
+            "$value": "{color.secondary.800}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.secondary.800}"
+            "source": "$action-default-secondary-800"
           },
           "900": {
-            "source": "$action-default-secondary-900",
+            "$value": "{color.secondary.900}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.secondary.900}"
+            "source": "$action-default-secondary-900"
           },
           "base": {
-            "source": "$action-default-secondary-base",
+            "$value": "{color.secondary.base}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.secondary.base}"
+            "source": "$action-default-secondary-base"
           }
         },
         "brand": {
           "100": {
-            "source": "$action-default-brand-100",
+            "$value": "{color.brand.100}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.brand.100}"
+            "source": "$action-default-brand-100"
           },
           "200": {
-            "source": "$action-default-brand-200",
+            "$value": "{color.brand.200}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.brand.200}"
+            "source": "$action-default-brand-200"
           },
           "300": {
-            "source": "$action-default-brand-300",
+            "$value": "{color.brand.300}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.brand.300}"
+            "source": "$action-default-brand-300"
           },
           "400": {
-            "source": "$action-default-brand-400",
+            "$value": "{color.brand.400}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.brand.400}"
+            "source": "$action-default-brand-400"
           },
           "500": {
-            "source": "$action-default-brand-500",
+            "$value": "{color.brand.500}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.brand.500}"
+            "source": "$action-default-brand-500"
           },
           "600": {
-            "source": "$action-default-brand-600",
+            "$value": "{color.brand.600}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.brand.600}"
+            "source": "$action-default-brand-600"
           },
           "700": {
-            "source": "$action-default-brand-700",
+            "$value": "{color.brand.700}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.brand.700}"
+            "source": "$action-default-brand-700"
           },
           "800": {
-            "source": "$action-default-brand-800",
+            "$value": "{color.brand.800}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.brand.800}"
+            "source": "$action-default-brand-800"
           },
           "900": {
-            "source": "$action-default-brand-900",
+            "$value": "{color.brand.900}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.brand.900}"
+            "source": "$action-default-brand-900"
           },
           "base": {
-            "source": "$action-default-brand-base",
+            "$value": "{color.brand.base}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.brand.base}"
+            "source": "$action-default-brand-base"
           }
         },
         "success": {
           "100": {
-            "source": "$action-default-success-100",
+            "$value": "{color.success.100}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.success.100}"
+            "source": "$action-default-success-100"
           },
           "200": {
-            "source": "$action-default-success-200",
+            "$value": "{color.success.200}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.success.200}"
+            "source": "$action-default-success-200"
           },
           "300": {
-            "source": "$action-default-success-300",
+            "$value": "{color.success.300}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.success.300}"
+            "source": "$action-default-success-300"
           },
           "400": {
-            "source": "$action-default-success-400",
+            "$value": "{color.success.400}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.success.400}"
+            "source": "$action-default-success-400"
           },
           "500": {
-            "source": "$action-default-success-500",
+            "$value": "{color.success.500}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.success.500}"
+            "source": "$action-default-success-500"
           },
           "600": {
-            "source": "$action-default-success-600",
+            "$value": "{color.success.600}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.success.600}"
+            "source": "$action-default-success-600"
           },
           "700": {
-            "source": "$action-default-success-700",
+            "$value": "{color.success.700}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.success.700}"
+            "source": "$action-default-success-700"
           },
           "800": {
-            "source": "$action-default-success-800",
+            "$value": "{color.success.800}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.success.800}"
+            "source": "$action-default-success-800"
           },
           "900": {
-            "source": "$action-default-success-900",
+            "$value": "{color.success.900}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.success.900}"
+            "source": "$action-default-success-900"
           },
           "base": {
-            "source": "$action-default-success-base",
+            "$value": "{color.success.base}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.success.base}"
+            "source": "$action-default-success-base"
           }
         },
         "info": {
           "100": {
-            "source": "$action-default-info-100",
+            "$value": "{color.info.100}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.info.100}"
+            "source": "$action-default-info-100"
           },
           "200": {
-            "source": "$action-default-info-200",
+            "$value": "{color.info.200}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.info.200}"
+            "source": "$action-default-info-200"
           },
           "300": {
-            "source": "$action-default-info-300",
+            "$value": "{color.info.300}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.info.300}"
+            "source": "$action-default-info-300"
           },
           "400": {
-            "source": "$action-default-info-400",
+            "$value": "{color.info.400}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.info.400}"
+            "source": "$action-default-info-400"
           },
           "500": {
-            "source": "$action-default-info-500",
+            "$value": "{color.info.500}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.info.500}"
+            "source": "$action-default-info-500"
           },
           "600": {
-            "source": "$action-default-info-600",
+            "$value": "{color.info.600}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.info.600}"
+            "source": "$action-default-info-600"
           },
           "700": {
-            "source": "$action-default-info-700",
+            "$value": "{color.info.700}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.info.700}"
+            "source": "$action-default-info-700"
           },
           "800": {
-            "source": "$action-default-info-800",
+            "$value": "{color.info.800}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.info.800}"
+            "source": "$action-default-info-800"
           },
           "900": {
-            "source": "$action-default-info-900",
+            "$value": "{color.info.900}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.info.900}"
+            "source": "$action-default-info-900"
           },
           "base": {
-            "source": "$action-default-info-base",
+            "$value": "{color.info.base}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.info.base}"
+            "source": "$action-default-info-base"
           }
         },
         "warning": {
           "100": {
-            "source": "$action-default-warning-100",
+            "$value": "{color.warning.100}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.warning.100}"
+            "source": "$action-default-warning-100"
           },
           "200": {
-            "source": "$action-default-warning-200",
+            "$value": "{color.warning.200}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.warning.200}"
+            "source": "$action-default-warning-200"
           },
           "300": {
-            "source": "$action-default-warning-300",
+            "$value": "{color.warning.300}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.warning.300}"
+            "source": "$action-default-warning-300"
           },
           "400": {
-            "source": "$action-default-warning-400",
+            "$value": "{color.warning.400}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.warning.400}"
+            "source": "$action-default-warning-400"
           },
           "500": {
-            "source": "$action-default-warning-500",
+            "$value": "{color.warning.500}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.warning.500}"
+            "source": "$action-default-warning-500"
           },
           "600": {
-            "source": "$action-default-warning-600",
+            "$value": "{color.warning.600}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.warning.600}"
+            "source": "$action-default-warning-600"
           },
           "700": {
-            "source": "$action-default-warning-700",
+            "$value": "{color.warning.700}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.warning.700}"
+            "source": "$action-default-warning-700"
           },
           "800": {
-            "source": "$action-default-warning-800",
+            "$value": "{color.warning.800}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.warning.800}"
+            "source": "$action-default-warning-800"
           },
           "900": {
-            "source": "$action-default-warning-900",
+            "$value": "{color.warning.900}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.warning.900}"
+            "source": "$action-default-warning-900"
           },
           "base": {
-            "source": "$action-default-warning-base",
+            "$value": "{color.warning.base}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.warning.base}"
+            "source": "$action-default-warning-base"
           }
         },
         "danger": {
           "100": {
-            "source": "$action-default-danger-100",
+            "$value": "{color.danger.100}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.danger.100}"
+            "source": "$action-default-danger-100"
           },
           "200": {
-            "source": "$action-default-danger-200",
+            "$value": "{color.danger.200}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.danger.200}"
+            "source": "$action-default-danger-200"
           },
           "300": {
-            "source": "$action-default-danger-300",
+            "$value": "{color.danger.300}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.danger.300}"
+            "source": "$action-default-danger-300"
           },
           "400": {
-            "source": "$action-default-danger-400",
+            "$value": "{color.danger.400}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.danger.400}"
+            "source": "$action-default-danger-400"
           },
           "500": {
-            "source": "$action-default-danger-500",
+            "$value": "{color.danger.500}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.danger.500}"
+            "source": "$action-default-danger-500"
           },
           "600": {
-            "source": "$action-default-danger-600",
+            "$value": "{color.danger.600}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.danger.600}"
+            "source": "$action-default-danger-600"
           },
           "700": {
-            "source": "$action-default-danger-700",
+            "$value": "{color.danger.700}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.danger.700}"
+            "source": "$action-default-danger-700"
           },
           "800": {
-            "source": "$action-default-danger-800",
+            "$value": "{color.danger.800}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.danger.800}"
+            "source": "$action-default-danger-800"
           },
           "900": {
-            "source": "$action-default-danger-900",
+            "$value": "{color.danger.900}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.danger.900}"
+            "source": "$action-default-danger-900"
           },
           "base": {
-            "source": "$action-default-danger-base",
+            "$value": "{color.danger.base}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.danger.base}"
+            "source": "$action-default-danger-base"
           }
         },
         "light": {
           "100": {
-            "source": "$action-default-light-100",
+            "$value": "{color.light.100}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.light.100}"
+            "source": "$action-default-light-100"
           },
           "200": {
-            "source": "$action-default-light-200",
+            "$value": "{color.light.200}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.light.200}"
+            "source": "$action-default-light-200"
           },
           "300": {
-            "source": "$action-default-light-300",
+            "$value": "{color.light.300}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.light.300}"
+            "source": "$action-default-light-300"
           },
           "400": {
-            "source": "$action-default-light-400",
+            "$value": "{color.light.400}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.light.400}"
+            "source": "$action-default-light-400"
           },
           "500": {
-            "source": "$action-default-light-500",
+            "$value": "{color.light.500}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.light.500}"
+            "source": "$action-default-light-500"
           },
           "600": {
-            "source": "$action-default-light-600",
+            "$value": "{color.light.600}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.light.600}"
+            "source": "$action-default-light-600"
           },
           "700": {
-            "source": "$action-default-light-700",
+            "$value": "{color.light.700}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.light.700}"
+            "source": "$action-default-light-700"
           },
           "800": {
-            "source": "$action-default-light-800",
+            "$value": "{color.light.800}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.light.800}"
+            "source": "$action-default-light-800"
           },
           "900": {
-            "source": "$action-default-light-900",
+            "$value": "{color.light.900}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.light.900}"
+            "source": "$action-default-light-900"
           },
           "base": {
-            "source": "$action-default-light-base",
+            "$value": "{color.light.base}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.light.base}"
+            "source": "$action-default-light-base"
           }
         },
         "dark": {
           "100": {
-            "source": "$action-default-dark-100",
+            "$value": "{color.dark.100}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.dark.100}"
+            "source": "$action-default-dark-100"
           },
           "200": {
-            "source": "$action-default-dark-200",
+            "$value": "{color.dark.200}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.dark.200}"
+            "source": "$action-default-dark-200"
           },
           "300": {
-            "source": "$action-default-dark-300",
+            "$value": "{color.dark.300}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.dark.300}"
+            "source": "$action-default-dark-300"
           },
           "400": {
-            "source": "$action-default-dark-400",
+            "$value": "{color.dark.400}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.dark.400}"
+            "source": "$action-default-dark-400"
           },
           "500": {
-            "source": "$action-default-dark-500",
+            "$value": "{color.dark.500}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.dark.500}"
+            "source": "$action-default-dark-500"
           },
           "600": {
-            "source": "$action-default-dark-600",
+            "$value": "{color.dark.600}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.dark.600}"
+            "source": "$action-default-dark-600"
           },
           "700": {
-            "source": "$action-default-dark-700",
+            "$value": "{color.dark.700}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.dark.700}"
+            "source": "$action-default-dark-700"
           },
           "800": {
-            "source": "$action-default-dark-800",
+            "$value": "{color.dark.800}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.dark.800}"
+            "source": "$action-default-dark-800"
           },
           "900": {
-            "source": "$action-default-dark-900",
+            "$value": "{color.dark.900}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.dark.900}"
+            "source": "$action-default-dark-900"
           },
           "base": {
-            "source": "$action-default-dark-base",
+            "$value": "{color.dark.base}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.dark.base}"
+            "source": "$action-default-dark-base"
           }
         },
         "accent": {
           "a": {
-            "source": "$action-default-accent-a",
+            "$value": "{color.accent.a}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.accent.a}"
+            "source": "$action-default-accent-a"
           },
           "b": {
-            "source": "$action-default-accent-b",
+            "$value": "{color.accent.b}",
             "modify": [
               {
                 "type": "darken",
                 "amount": "0.1"
               }
             ],
-            "$value": "{color.accent.b}"
+            "source": "$action-default-accent-b"
           }
         }
       }

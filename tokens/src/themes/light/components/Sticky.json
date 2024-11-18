@@ -4,7 +4,6 @@
     "sticky": {
       "shadow": {
         "top": {
-          "source": "$sticky-shadow-top",
           "$value": [
             {
               "color": "rgba(0, 0, 0, .15)",
@@ -18,10 +17,10 @@
               "offsetY": "-.25rem",
               "blur": ".625rem"
             }
-          ]
+          ],
+          "source": "$sticky-shadow-top"
         },
         "bottom": {
-          "source": "$sticky-shadow-bottom",
           "$value": [
             {
               "color": "rgba(0, 0, 0, .15)",
@@ -35,7 +34,8 @@
               "offsetY": ".25rem",
               "blur": ".625rem"
             }
-          ]
+          ],
+          "source": "$sticky-shadow-bottom"
         }
       }
     }

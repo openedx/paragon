@@ -2,37 +2,77 @@
   "color": {
     "$type": "color",
     "dropdown": {
-      "text": { "source": "$dropdown-color", "$value": "{color.body.base}" },
-      "header": { "source": "$dropdown-header-color", "$value": "{color.gray.500}" },
-      "bg": { "source": "$dropdown-bg", "$value": "{color.bg.base}" },
-      "border": {
-        "source": "$dropdown-border-color",
-        "modify": [{ "type": "alpha", "amount": 0.15 }],
-        "$value": "{color.black}"
+      "text": {
+        "$value": "{color.body.base}",
+        "source": "$dropdown-color"
       },
-      "divider-bg": { "source": "$dropdown-divider-bg", "$value": "{color.gray.100}" },
+      "header": {
+        "$value": "{color.gray.500}",
+        "source": "$dropdown-header-color"
+      },
+      "bg": {
+        "$value": "{color.bg.base}",
+        "source": "$dropdown-bg"
+      },
+      "border": {
+        "$value": "{color.black}",
+        "modify": [
+          {
+            "type": "alpha",
+            "amount": 0.15
+          }
+        ],
+        "source": "$dropdown-border-color"
+      },
+      "divider-bg": {
+        "$value": "{color.gray.100}",
+        "source": "$dropdown-divider-bg"
+      },
       "link": {
-        "base": { "source": "$dropdown-link-color", "$value": "{color.gray.900}" },
+        "base": {
+          "$value": "{color.gray.900}",
+          "source": "$dropdown-link-color"
+        },
         "hover": {
           "base": {
-            "source": "$dropdown-link-hover-color",
-            "modify": [{ "type": "darken", "amount": 0.5 }],
-            "$value": "{color.gray.900}"
+            "$value": "{color.gray.900}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.5
+              }
+            ],
+            "source": "$dropdown-link-hover-color"
           },
-          "bg": { "source": "$dropdown-link-hover-bg", "$value": "{color.light.300}" }
+          "bg": {
+            "$value": "{color.light.300}",
+            "source": "$dropdown-link-hover-bg"
+          }
         },
         "active": {
-          "base": { "source": "$dropdown-link-active-color", "$value": "{color.active}" },
-          "bg": { "source": "$dropdown-link-active-bg", "$value": "{color.bg.active}" }
+          "base": {
+            "$value": "{color.active}",
+            "source": "$dropdown-link-active-color"
+          },
+          "bg": {
+            "$value": "{color.bg.active}",
+            "source": "$dropdown-link-active-bg"
+          }
         },
-        "disabled": { "source": "$dropdown-link-disabled-color", "$value": "{color.disabled}" }
+        "disabled": {
+          "$value": "{color.disabled}",
+          "source": "$dropdown-link-disabled-color"
+        }
       }
     }
   },
   "elevation": {
     "$type": "shadow",
     "dropdown": {
-      "box-shadow": { "source": "$dropdown-box-shadow", "$value": "none" }
+      "box-shadow": {
+        "$value": "none",
+        "source": "$dropdown-box-shadow"
+      }
     }
   }
 }

@@ -4,13 +4,25 @@
     "menu": {
       "item": {
         "padding": {
-          "x": { "source": "$menu-item-padding-x", "$value": "{spacing.btn.padding.x.base}" },
-          "y": { "source": "$menu-item-padding-y", "$value": "{spacing.btn.padding.y.base}" }
+          "x": {
+            "$value": "{spacing.btn.padding.x.base}",
+            "source": "$menu-item-padding-x"
+          },
+          "y": {
+            "$value": "{spacing.btn.padding.y.base}",
+            "source": "$menu-item-padding-y"
+          }
         },
         "icon": {
           "margin": {
-            "left": { "source": "$menu-item-icon-margin-left", "$value": ".25em" },
-            "right": { "source": "$menu-item-icon-margin-right", "$value": "{spacing.menu.item.icon.margin.left}" }
+            "left": {
+              "$value": ".25em",
+              "source": "$menu-item-icon-margin-left"
+            },
+            "right": {
+              "$value": "{spacing.menu.item.icon.margin.left}",
+              "source": "$menu-item-icon-margin-right"
+            }
           }
         }
       }
@@ -21,8 +33,16 @@
       "select": {
         "btn-link": {
           "text-decoration": {
-            "line": { "source": "$menu-select-btn-link-text-decoration-line", "$value": "underline", "$type": "textDecoration" },
-            "thickness": { "source": "$menu-select-btn-link-text-decoration-thickness", "$value": ".125rem", "$type": "dimension" }
+            "line": {
+              "$type": "textDecoration",
+              "$value": "underline",
+              "source": "$menu-select-btn-link-text-decoration-line"
+            },
+            "thickness": {
+              "$type": "dimension",
+              "$value": ".125rem",
+              "source": "$menu-select-btn-link-text-decoration-thickness"
+            }
           }
         }
       }
@@ -32,17 +52,35 @@
     "$type": "dimension",
     "menu": {
       "base": {
-        "border-radius": { "source": "$menu-border-radius", "$value": ".25em" },
-        "max-height": { "source": "$menu-max-height", "$value": "16.813rem" }
+        "border-radius": {
+          "$value": ".25em",
+          "source": "$menu-border-radius"
+        },
+        "max-height": {
+          "$value": "16.813rem",
+          "source": "$menu-max-height"
+        }
       },
       "item": {
-        "height": { "source": "$menu-item-height", "$value": "3rem" },
+        "height": {
+          "$value": "3rem",
+          "source": "$menu-item-height"
+        },
         "width": {
-          "base": { "source": "$menu-item-width", "$value": "19rem" },
-          "xs": { "source": "$menu-item-width-xs", "$value": "13.438rem" }
+          "base": {
+            "$value": "19rem",
+            "source": "$menu-item-width"
+          },
+          "xs": {
+            "$value": "13.438rem",
+            "source": "$menu-item-width-xs"
+          }
         },
         "border": {
-          "width": { "source": "$menu-item-border-width", "$value": "{size.btn.border.width}" }
+          "width": {
+            "$value": "{size.btn.border.width}",
+            "source": "$menu-item-border-width"
+          }
         }
       }
     }

@@ -2,22 +2,34 @@
   "color": {
     "$type": "color",
     "btn": {
-      "disabled-link": { "source": "$btn-link-disabled-color", "$value": "{color.disabled}" }
+      "disabled-link": {
+        "$value": "{color.disabled}",
+        "source": "$btn-link-disabled-color"
+      }
     }
   },
   "elevation": {
     "$type": "shadow",
     "btn": {
       "box-shadow": {
-        "base": { "source": "$btn-box-shadow", "$value": "none" },
-        "active": { "source": "$btn-active-box-shadow", "$value": "none" }
+        "base": {
+          "$value": "none",
+          "source": "$btn-box-shadow"
+        },
+        "active": {
+          "$value": "none",
+          "source": "$btn-active-box-shadow"
+        }
       }
     }
   },
   "other": {
     "$type": "number",
     "btn": {
-      "disabled-opacity": { "source": "$btn-disabled-opacity", "$value": ".65" }
+      "disabled-opacity": {
+        "$value": ".65",
+        "source": "$btn-disabled-opacity"
+      }
     }
   }
 }

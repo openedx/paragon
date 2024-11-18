@@ -2,17 +2,29 @@
   "spacing": {
     "$type": "dimension",
     "paragraph": {
-      "margin-bottom": { "source": "$paragraph-margin-bottom", "$value": "1rem" }
+      "margin-bottom": {
+        "$value": "1rem",
+        "source": "$paragraph-margin-bottom"
+      }
     },
-    "mark-padding": { "source": "$mark-padding", "$value": ".2em" }
+    "mark-padding": {
+      "$value": ".2em",
+      "source": "$mark-padding"
+    }
   },
   "typography": {
     "$type": "dimension",
     "blockquote": {
       "small": {
-        "font-size": { "source": "$blockquote-small-font-size", "$value": "{typography.font.size.sm}" }
+        "font-size": {
+          "$value": "{typography.font.size.sm}",
+          "source": "$blockquote-small-font-size"
+        }
       },
-      "font-size": { "source": "$blockquote-font-size", "$value": "calc({typography.font.size.base} * 1.25)" }
+      "font-size": {
+        "$value": "calc({typography.font.size.base} * 1.25)",
+        "source": "$blockquote-font-size"
+      }
     }
   }
 }

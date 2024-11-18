@@ -2,19 +2,34 @@
   "color": {
     "$type": "color",
     "code": {
-      "base": { "source": "$code-color", "$value": "#E83E8C" },
-      "kbd": {
-        "base": { "source": "$kbd-color", "$value": "{color.white}" },
-        "bg": { "source": "$kbd-bg", "$value": "{color.gray.700}" }
+      "base": {
+        "$value": "#E83E8C",
+        "source": "$code-color"
       },
-      "pre": { "source": "$pre-color", "$value": "{color.gray.900}" }
+      "kbd": {
+        "base": {
+          "$value": "{color.white}",
+          "source": "$kbd-color"
+        },
+        "bg": {
+          "$value": "{color.gray.700}",
+          "source": "$kbd-bg"
+        }
+      },
+      "pre": {
+        "$value": "{color.gray.900}",
+        "source": "$pre-color"
+      }
     }
   },
   "elevation": {
     "$type": "shadow",
     "code": {
       "kbd": {
-        "box-shadow": { "source": "$kbd-box-shadow", "$value": "none" }
+        "box-shadow": {
+          "$value": "none",
+          "source": "$kbd-box-shadow"
+        }
       }
     }
   }

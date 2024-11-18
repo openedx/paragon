@@ -3,377 +3,812 @@
     "$type": "color",
     "icon-button": {
       "bg": {
-        "base": { "source": "$btn-icon-bg", "$value": "transparent" },
+        "base": {
+          "$value": "transparent",
+          "source": "$btn-icon-bg"
+        },
         "primary": {
-          "base": { "$value": "{color.icon-button.bg.base}" },
-          "hover": { "$value": "{color.icon-button.text.primary.base}" },
-          "focus": { "$value": "{color.icon-button.bg.base}" },
+          "base": {
+            "$value": "{color.icon-button.bg.base}"
+          },
+          "hover": {
+            "$value": "{color.icon-button.text.primary.base}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.bg.base}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.bg.base}" }
+            "base": {
+              "$value": "{color.icon-button.bg.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.icon-button.text.primary.base}" },
-            "hover": { "$value": "{color.icon-button.text.primary.base}" },
-            "focus": { "$value": "{color.icon-button.text.primary.base}" }
+            "base": {
+              "$value": "{color.icon-button.text.primary.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.primary.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.primary.base}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           }
         },
         "secondary": {
-          "base": { "$value": "{color.icon-button.bg.base}" },
-          "hover": { "$value": "{color.secondary.base}" },
-          "focus": { "$value": "{color.icon-button.bg.base}" },
+          "base": {
+            "$value": "{color.icon-button.bg.base}"
+          },
+          "hover": {
+            "$value": "{color.secondary.base}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.bg.base}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.bg.base}" }
+            "base": {
+              "$value": "{color.icon-button.bg.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.secondary.base}" },
-            "hover": { "$value": "{color.icon-button.bg.secondary.active.base}" },
-            "focus": { "$value": "{color.icon-button.bg.secondary.active.base}" }
+            "base": {
+              "$value": "{color.secondary.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.secondary.active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.secondary.active.base}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           }
         },
         "brand": {
-          "base": { "$value": "{color.icon-button.bg.base}" },
-          "hover": { "$value": "{color.brand.base}" },
-          "focus": { "$value": "{color.icon-button.bg.base}" },
+          "base": {
+            "$value": "{color.icon-button.bg.base}"
+          },
+          "hover": {
+            "$value": "{color.brand.base}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.bg.base}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.bg.base}" }
+            "base": {
+              "$value": "{color.icon-button.bg.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.brand.base}" },
-            "hover": { "$value": "{color.icon-button.bg.brand.active.base}" },
-            "focus": { "$value": "{color.icon-button.bg.brand.active.base}" }
+            "base": {
+              "$value": "{color.brand.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.brand.active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.brand.active.base}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           }
         },
         "success": {
-          "base": { "$value": "{color.icon-button.bg.base}" },
-          "hover": { "$value": "{color.success.base}" },
-          "focus": { "$value": "{color.icon-button.bg.base}" },
+          "base": {
+            "$value": "{color.icon-button.bg.base}"
+          },
+          "hover": {
+            "$value": "{color.success.base}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.bg.base}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.bg.base}" }
+            "base": {
+              "$value": "{color.icon-button.bg.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.success.base}" },
-            "hover": { "$value": "{color.icon-button.bg.success.active.base}" },
-            "focus": { "$value": "{color.icon-button.bg.success.active.base}" }
+            "base": {
+              "$value": "{color.success.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.success.active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.success.active.base}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           }
         },
         "warning": {
-          "base": { "$value": "{color.icon-button.bg.base}" },
-          "hover": { "$value": "{color.warning.base}" },
-          "focus": { "$value": "{color.icon-button.bg.base}" },
+          "base": {
+            "$value": "{color.icon-button.bg.base}"
+          },
+          "hover": {
+            "$value": "{color.warning.base}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.bg.base}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.bg.base}" }
+            "base": {
+              "$value": "{color.icon-button.bg.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.warning.base}" },
-            "hover": { "$value": "{color.icon-button.bg.warning.active.base}" },
-            "focus": { "$value": "{color.icon-button.bg.warning.active.base}" }
+            "base": {
+              "$value": "{color.warning.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.warning.active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.warning.active.base}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           }
         },
         "danger": {
-          "base": { "$value": "{color.icon-button.bg.base}" },
-          "hover": { "$value": "{color.danger.base}" },
-          "focus": { "$value": "{color.icon-button.bg.base}" },
+          "base": {
+            "$value": "{color.icon-button.bg.base}"
+          },
+          "hover": {
+            "$value": "{color.danger.base}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.bg.base}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.bg.base}" }
+            "base": {
+              "$value": "{color.icon-button.bg.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.danger.base}" },
-            "hover": { "$value": "{color.icon-button.bg.danger.active.base}" },
-            "focus": { "$value": "{color.icon-button.bg.danger.active.base}" }
+            "base": {
+              "$value": "{color.danger.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.danger.active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.danger.active.base}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           }
         },
         "light": {
-          "base": { "$value": "{color.icon-button.bg.base}" },
-          "hover": { "$value": "{color.light.base}" },
-          "focus": { "$value": "{color.icon-button.bg.base}" },
+          "base": {
+            "$value": "{color.icon-button.bg.base}"
+          },
+          "hover": {
+            "$value": "{color.light.base}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.bg.base}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.bg.base}" }
+            "base": {
+              "$value": "{color.icon-button.bg.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.light.base}" },
-            "hover": { "$value": "{color.icon-button.bg.light.active.base}" },
-            "focus": { "$value": "{color.icon-button.bg.light.active.base}" }
+            "base": {
+              "$value": "{color.light.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.light.active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.light.active.base}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           }
         },
         "dark": {
-          "base": { "$value": "{color.icon-button.bg.base}" },
-          "hover": { "$value": "{color.dark.base}" },
-          "focus": { "$value": "{color.icon-button.bg.base}" },
+          "base": {
+            "$value": "{color.icon-button.bg.base}"
+          },
+          "hover": {
+            "$value": "{color.dark.base}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.bg.base}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.bg.base}" }
+            "base": {
+              "$value": "{color.icon-button.bg.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.dark.base}" },
-            "hover": { "$value": "{color.icon-button.bg.dark.active.base}" },
-            "focus": { "$value": "{color.icon-button.bg.dark.active.base}" }
+            "base": {
+              "$value": "{color.dark.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.dark.active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.dark.active.base}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           }
         },
         "black": {
-          "base": { "$value": "{color.icon-button.bg.base}" },
-          "hover": { "$value": "{color.black}" },
-          "focus": { "$value": "{color.icon-button.bg.base}" },
+          "base": {
+            "$value": "{color.icon-button.bg.base}"
+          },
+          "hover": {
+            "$value": "{color.black}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.bg.base}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.bg.base}" }
+            "base": {
+              "$value": "{color.icon-button.bg.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.black}" },
-            "hover": { "$value": "{color.icon-button.bg.black.active.base}" },
-            "focus": { "$value": "{color.icon-button.bg.black.active.base}" }
+            "base": {
+              "$value": "{color.black}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.black.active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.black.active.base}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           }
         }
       },
       "text": {
         "primary": {
-          "base": { "$value": "{color.primary.base}" },
-          "hover": { "$value": "{color.icon-button.accent}" },
-          "focus": { "$value": "{color.icon-button.text.primary.base}" },
+          "base": {
+            "$value": "{color.primary.base}"
+          },
+          "hover": {
+            "$value": "{color.icon-button.accent}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.primary.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.text.primary.base}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.primary.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.icon-button.text.primary.base}" },
-            "hover": { "$value": "{color.icon-button.text.primary.base}" },
-            "focus": { "$value": "{color.icon-button.text.primary.base}" }
+            "base": {
+              "$value": "{color.icon-button.text.primary.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.primary.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.primary.base}"
+            }
           }
         },
         "secondary": {
-          "base": { "$value": "{color.secondary.base}" },
-          "hover": { "$value": "{color.icon-button.accent}" },
-          "focus": { "$value": "{color.icon-button.text.secondary.base}" },
+          "base": {
+            "$value": "{color.secondary.base}"
+          },
+          "hover": {
+            "$value": "{color.icon-button.accent}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.secondary.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.secondary.base}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.secondary.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.secondary.base}" },
-            "hover": { "$value": "{color.icon-button.text.secondary.inverse-active.base}" },
-            "focus": { "$value": "{color.icon-button.text.secondary.inverse-active.base}" }
+            "base": {
+              "$value": "{color.secondary.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.secondary.inverse-active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.secondary.inverse-active.base}"
+            }
           }
         },
         "brand": {
-          "base": { "$value": "{color.brand.base}" },
-          "hover": { "$value": "{color.icon-button.accent}" },
-          "focus": { "$value": "{color.icon-button.text.brand.base}" },
+          "base": {
+            "$value": "{color.brand.base}"
+          },
+          "hover": {
+            "$value": "{color.icon-button.accent}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.brand.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.brand.base}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.brand.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.brand.base}" },
-            "hover": { "$value": "{color.icon-button.text.brand.inverse-active.base}" },
-            "focus": { "$value": "{color.icon-button.text.brand.inverse-active.base}" }
+            "base": {
+              "$value": "{color.brand.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.brand.inverse-active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.brand.inverse-active.base}"
+            }
           }
         },
         "success": {
-          "base": { "$value": "{color.success.base}" },
-          "hover": { "$value": "{color.icon-button.accent}" },
-          "focus": { "$value": "{color.icon-button.text.success.base}" },
+          "base": {
+            "$value": "{color.success.base}"
+          },
+          "hover": {
+            "$value": "{color.icon-button.accent}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.success.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.success.base}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.success.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.success.base}" },
-            "hover": { "$value": "{color.icon-button.text.success.inverse-active.base}" },
-            "focus": { "$value": "{color.icon-button.text.success.inverse-active.base}" }
+            "base": {
+              "$value": "{color.success.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.success.inverse-active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.success.inverse-active.base}"
+            }
           }
         },
         "warning": {
-          "base": { "$value": "{color.warning.base}" },
-          "hover": { "$value": "{color.icon-button.accent}" },
-          "focus": { "$value": "{color.icon-button.text.warning.base}" },
+          "base": {
+            "$value": "{color.warning.base}"
+          },
+          "hover": {
+            "$value": "{color.icon-button.accent}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.warning.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.warning.base}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.warning.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.warning.base}" },
-            "hover": { "$value": "{color.icon-button.text.warning.inverse-active.base}" },
-            "focus": { "$value": "{color.icon-button.text.warning.inverse-active.base}" }
+            "base": {
+              "$value": "{color.warning.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.warning.inverse-active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.warning.inverse-active.base}"
+            }
           }
         },
         "danger": {
-          "base": { "$value": "{color.danger.base}" },
-          "hover": { "$value": "{color.icon-button.accent}" },
-          "focus": { "$value": "{color.icon-button.text.danger.base}" },
+          "base": {
+            "$value": "{color.danger.base}"
+          },
+          "hover": {
+            "$value": "{color.icon-button.accent}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.danger.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.danger.base}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.danger.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.danger.base}" },
-            "hover": { "$value": "{color.icon-button.text.danger.inverse-active.base}" },
-            "focus": { "$value": "{color.icon-button.text.danger.inverse-active.base}" }
+            "base": {
+              "$value": "{color.danger.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.danger.inverse-active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.danger.inverse-active.base}"
+            }
           }
         },
         "light": {
-          "base": { "$value": "{color.light.base}" },
-          "hover": { "$value": "{color.icon-button.accent}" },
-          "focus": { "$value": "{color.icon-button.text.light.base}" },
+          "base": {
+            "$value": "{color.light.base}"
+          },
+          "hover": {
+            "$value": "{color.icon-button.accent}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.light.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.light.base}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.light.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.light.base}" },
-            "hover": { "$value": "{color.icon-button.text.light.inverse-active.base}" },
-            "focus": { "$value": "{color.icon-button.text.light.inverse-active.base}" }
+            "base": {
+              "$value": "{color.light.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.light.inverse-active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.light.inverse-active.base}"
+            }
           }
         },
         "dark": {
-          "base": { "$value": "{color.dark.base}" },
-          "hover": { "$value": "{color.icon-button.accent}" },
-          "focus": { "$value": "{color.icon-button.text.dark.base}" },
+          "base": {
+            "$value": "{color.dark.base}"
+          },
+          "hover": {
+            "$value": "{color.icon-button.accent}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.dark.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.dark.base}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.dark.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.dark.base}" },
-            "hover": { "$value": "{color.icon-button.text.dark.inverse-active.base}" },
-            "focus": { "$value": "{color.icon-button.text.dark.inverse-active.base}" }
+            "base": {
+              "$value": "{color.dark.base}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.dark.inverse-active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.dark.inverse-active.base}"
+            }
           }
         },
         "black": {
-          "base": { "$value": "{color.black}" },
-          "hover": { "$value": "{color.icon-button.accent}" },
-          "focus": { "$value": "{color.icon-button.text.black.base}" },
+          "base": {
+            "$value": "{color.black}"
+          },
+          "hover": {
+            "$value": "{color.icon-button.accent}"
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.black.base}"
+          },
           "inverse": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.black}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.black}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "active": {
-            "base": { "$value": "{color.icon-button.accent}" },
-            "hover": { "$value": "{color.icon-button.accent}" },
-            "focus": { "$value": "{color.icon-button.accent}" }
+            "base": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}"
+            }
           },
           "inverse-active": {
-            "base": { "$value": "{color.black}" },
-            "hover": { "$value": "{color.icon-button.text.black.inverse-active.base}" },
-            "focus": { "$value": "{color.icon-button.text.black.inverse-active.base}" }
+            "base": {
+              "$value": "{color.black}"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.black.inverse-active.base}"
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.black.inverse-active.base}"
+            }
           }
         }
       },
       "accent": {
-        "source": "$btn-icon-accent-color",
-        "$value": "{color.white}"
+        "$value": "{color.white}",
+        "source": "$btn-icon-accent-color"
       },
       "black": {
-        "source": "$btn-icon-black",
-        "$value": "{color.black}"
+        "$value": "{color.black}",
+        "source": "$btn-icon-black"
       }
     }
   },
@@ -402,8 +837,12 @@
               "inset": "inset"
             }
           },
-          "active": { "$value": "none" },
-          "inverse-active": { "$value": "none" }
+          "active": {
+            "$value": "none"
+          },
+          "inverse-active": {
+            "$value": "none"
+          }
         },
         "secondary": {
           "base": {
@@ -426,8 +865,12 @@
               "inset": "inset"
             }
           },
-          "active": { "$value": "none" },
-          "inverse-active": { "$value": "none" }
+          "active": {
+            "$value": "none"
+          },
+          "inverse-active": {
+            "$value": "none"
+          }
         },
         "brand": {
           "base": {
@@ -450,8 +893,12 @@
               "inset": "inset"
             }
           },
-          "active": { "$value": "none" },
-          "inverse-active": { "$value": "none" }
+          "active": {
+            "$value": "none"
+          },
+          "inverse-active": {
+            "$value": "none"
+          }
         },
         "success": {
           "base": {
@@ -474,8 +921,12 @@
               "inset": "inset"
             }
           },
-          "active": { "$value": "none" },
-          "inverse-active": { "$value": "none" }
+          "active": {
+            "$value": "none"
+          },
+          "inverse-active": {
+            "$value": "none"
+          }
         },
         "warning": {
           "base": {
@@ -498,8 +949,12 @@
               "inset": "inset"
             }
           },
-          "active": { "$value": "none" },
-          "inverse-active": { "$value": "none" }
+          "active": {
+            "$value": "none"
+          },
+          "inverse-active": {
+            "$value": "none"
+          }
         },
         "danger": {
           "base": {
@@ -522,8 +977,12 @@
               "inset": "inset"
             }
           },
-          "active": { "$value": "none" },
-          "inverse-active": { "$value": "none" }
+          "active": {
+            "$value": "none"
+          },
+          "inverse-active": {
+            "$value": "none"
+          }
         },
         "light": {
           "base": {
@@ -546,8 +1005,12 @@
               "inset": "inset"
             }
           },
-          "active": { "$value": "none" },
-          "inverse-active": { "$value": "none" }
+          "active": {
+            "$value": "none"
+          },
+          "inverse-active": {
+            "$value": "none"
+          }
         },
         "dark": {
           "base": {
@@ -570,8 +1033,12 @@
               "inset": "inset"
             }
           },
-          "active": { "$value": "none" },
-          "inverse-active": { "$value": "none" }
+          "active": {
+            "$value": "none"
+          },
+          "inverse-active": {
+            "$value": "none"
+          }
         },
         "black": {
           "base": {
@@ -594,8 +1061,12 @@
               "inset": "inset"
             }
           },
-          "active": { "$value": "none" },
-          "inverse-active": { "$value": "none" }
+          "active": {
+            "$value": "none"
+          },
+          "inverse-active": {
+            "$value": "none"
+          }
         }
       }
     }

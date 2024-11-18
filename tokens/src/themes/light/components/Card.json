@@ -2,24 +2,50 @@
   "color": {
     "$type": "color",
     "card": {
-      "base": { "source": "$card-color", "$value": "inherit" },
+      "base": {
+        "$value": "inherit",
+        "source": "$card-color"
+      },
       "bg": {
-        "base": { "source": "$card-bg", "$value": "{color.bg.base}" },
-        "dark": { "source": "$card-bg-dark", "$value": "{color.primary.500}" },
-        "muted": { "source": "$card-bg-muted", "$value": "{color.light.200}" }
+        "base": {
+          "$value": "{color.bg.base}",
+          "source": "$card-bg"
+        },
+        "dark": {
+          "$value": "{color.primary.500}",
+          "source": "$card-bg-dark"
+        },
+        "muted": {
+          "$value": "{color.light.200}",
+          "source": "$card-bg-muted"
+        }
       },
       "border": {
         "base": {
-          "source": "$card-border-color",
-          "modify": [{ "type": "alpha", "amount": 0.125 }],
-          "$value": "{color.black}"
+          "$value": "{color.black}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.125
+            }
+          ],
+          "source": "$card-border-color"
         },
         "focus": {
-          "base": { "source": "$card-border-focus-color", "$value": "{color.primary.500}" },
-          "dark": { "source": "$card-border-focus-color-dark", "$value": "{color.theme.focus.primary}" }
+          "base": {
+            "$value": "{color.primary.500}",
+            "source": "$card-border-focus-color"
+          },
+          "dark": {
+            "$value": "{color.theme.focus.primary}",
+            "source": "$card-border-focus-color-dark"
+          }
         }
       },
-      "divider-bg": { "source": "$card-divider-bg", "$value": "{color.light.400}" }
+      "divider-bg": {
+        "$value": "{color.light.400}",
+        "source": "$card-divider-bg"
+      }
     }
   }
 }

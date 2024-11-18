@@ -2,20 +2,44 @@
   "elevation": {
     "$type": "number",
     "modal": {
-      "backdrop-zindex": { "source": "$zindex-modal-backdrop", "$value": "1040" },
-      "zindex": { "source": "$zindex-modal", "$value": "1050" }
+      "backdrop-zindex": {
+        "$value": "1040",
+        "source": "$zindex-modal-backdrop"
+      },
+      "zindex": {
+        "$value": "1050",
+        "source": "$zindex-modal"
+      }
     }
   },
   "size": {
     "$type": "dimension",
     "modal": {
-      "xl": { "source": "$modal-xl", "$value": "1140px" },
-      "lg": { "source": "$modal-lg", "$value": "800px" },
-      "md": { "source": "$modal-md", "$value": "500px" },
-      "sm": { "source": "$modal-sm", "$value": "400px" },
+      "xl": {
+        "$value": "1140px",
+        "source": "$modal-xl"
+      },
+      "lg": {
+        "$value": "800px",
+        "source": "$modal-lg"
+      },
+      "md": {
+        "$value": "500px",
+        "source": "$modal-md"
+      },
+      "sm": {
+        "$value": "400px",
+        "source": "$modal-sm"
+      },
       "content-border": {
-        "width": { "source": "$modal-content-border-width", "$value": "0px" },
-        "radius": { "source": "$modal-content-border-radius", "$value": "{size.border.radius.lg}" }
+        "width": {
+          "$value": "0px",
+          "source": "$modal-content-border-width"
+        },
+        "radius": {
+          "$value": "{size.border.radius.lg}",
+          "source": "$modal-content-border-radius"
+        }
       }
     }
   },
@@ -23,30 +47,45 @@
     "$type": "dimension",
     "modal": {
       "inner-padding": {
-        "base": { "source": "$modal-inner-padding", "$value": "1.5rem" },
-        "bottom": { "source": "$modal-inner-padding-bottom", "$value": ".7rem" }
+        "base": {
+          "$value": "1.5rem",
+          "source": "$modal-inner-padding"
+        },
+        "bottom": {
+          "$value": ".7rem",
+          "source": "$modal-inner-padding-bottom"
+        }
       },
       "footer-padding": {
         "base": {
-          "source": "$modal-footer-padding",
           "$value": {
             "x": "1.5rem",
             "y": "{spacing.modal.footer-padding.y}"
-          }
+          },
+          "source": "$modal-footer-padding"
         },
-        "y": { "source": "$modal-footer-padding-y", "$value": "1rem" }
+        "y": {
+          "$value": "1rem",
+          "source": "$modal-footer-padding-y"
+        }
       },
       "header-padding": {
         "base": {
-          "source": "$modal-header-padding",
           "$value": {
             "x": "1.5rem",
             "y": "{spacing.modal.header-padding.y}"
-          }
+          },
+          "source": "$modal-header-padding"
         },
-        "y": { "source": "$modal-header-padding-y", "$value": "1rem" }
+        "y": {
+          "$value": "1rem",
+          "source": "$modal-header-padding-y"
+        }
       },
-      "dialog-margin": { "source": "$modal-dialog-margin", "$value": "1.5rem" }
+      "dialog-margin": {
+        "$value": "1.5rem",
+        "source": "$modal-dialog-margin"
+      }
     }
   }
 }
