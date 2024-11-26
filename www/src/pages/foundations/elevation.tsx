@@ -54,7 +54,7 @@ function BoxShadowNode() {
 
   return (
     <div className="pgn-doc__box-shadow-cells">
-      {boxShadowCells}
+      { boxShadowCells }
       <Toast
         className="pgn-doc__box-shadow--toast"
         onClose={() => setShowToast(false)}
@@ -128,6 +128,7 @@ function BoxShadowToolkit({
           </Form.Label>
           <Form.Control
             id={`toolkit-control-${key}-${id}`}
+            key={key}
             min={key === 'x' || key === 'y' ? '-100' : '0'}
             max="100"
             type={key === 'color' ? 'color' : 'range'}

@@ -15,6 +15,10 @@ exports.COMPONENT_FILES = [
     templatePath: path.resolve(__dirname, './templates/index.jsx'),
   },
   {
+    targetPath: path.resolve(__dirname, '../src/componentName/_variables.scss'),
+    templatePath: path.resolve(__dirname, './templates/_variables.scss'),
+  },
+  {
     targetPath: path.resolve(__dirname, '../src/componentName/README.md'),
     templatePath: path.resolve(__dirname, './templates/README.md'),
   },

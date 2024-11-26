@@ -1,11 +1,10 @@
 .pgn-doc__code-block {
   margin: var(--pgn-spacing-spacer-base) 0 2rem;
+  background-color: var(--pgn-color-light-200);
+  border: solid 2px var(--pgn-color-light-300);
+  border-radius: var(--pgn-size-border-radius-base) var(--pgn-size-border-radius-base) 0 0;
 
   .pgn-doc__code-block-preview {
-    background-color: var(--pgn-color-light-200);
-    border: solid 2px var(--pgn-color-light-300);
-    border-bottom: 0;
-    border-radius: var(--pgn-size-border-radius-base) var(--pgn-size-border-radius-base) 0 0;
     padding: var(--pgn-spacing-spacer-base);
   }
 
