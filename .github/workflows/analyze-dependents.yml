@@ -209,7 +209,7 @@ jobs:
       with:
         args: zip -qq -r dependent-usage-analyzer/dependent-projects.zip dependent-usage-analyzer/.projects
     - name: Upload dependent projects checkouts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: dependent-project-checkouts
         path: dependent-usage-analyzer/dependent-projects.zip
@@ -230,7 +230,7 @@ jobs:
       run: npm ci
       working-directory: dependent-usage-analyzer
     - name: Download dependent project checkouts
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: dependent-project-checkouts
         path: dependent-usage-analyzer
@@ -247,7 +247,7 @@ jobs:
       run: npm run analyze .projects -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
       working-directory: dependent-usage-analyzer
     - name: Upload analysis output
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: dependent-usage-json
         path: dependent-usage.json
@@ -267,7 +267,7 @@ jobs:
       with:
         node-version: ${{ env.NODE_VER }}
     - name: Download analysis output
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: dependent-usage-json
     - name: Create pull request for dependent project usages

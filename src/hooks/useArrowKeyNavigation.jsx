@@ -32,8 +32,7 @@ function handleArrowKey({ event, currentIndex, availableElements }) {
     [nextElement] = availableElements;
   }
 
-  // eslint-disable-next-line no-unused-expressions
-  nextElement && nextElement.focus();
+  nextElement?.focus();
   event.preventDefault();
 }
 

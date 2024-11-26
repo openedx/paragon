@@ -352,6 +352,8 @@ a.pgn__card {
       bottom: calc(-1 * var(--pgn-spacing-card-logo-bottom-offset-base));
       width: var(--pgn-size-card-logo-width);
       height: var(--pgn-size-card-logo-height);
+      object-fit: scale-down;
+      object-position: center center;
       border-radius: var(--pgn-size-card-border-radius-logo);
       box-shadow: var(--pgn-elevation-box-shadow-level-1);
       padding: map_get($spacers, 2);
