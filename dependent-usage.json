@@ -1,5 +1,5 @@
 {
-  "lastModified": 1732630019787,
+  "lastModified": 1732716412389,
   "projectUsages": [
     {
       "version": "22.10.0",
@@ -421,18 +421,6 @@
             "line": 83,
             "column": 12,
             "index": 2267
-          },
-          {
-            "filePath": "openedx/features/announcements/static/announcements/jsx/Announcements.jsx",
-            "line": 97,
-            "column": 20,
-            "index": 2726
-          },
-          {
-            "filePath": "openedx/features/announcements/static/announcements/jsx/Announcements.jsx",
-            "line": 109,
-            "column": 20,
-            "index": 3225
           },
           {
             "filePath": "xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
@@ -877,7 +865,7 @@
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
             "line": 79,
             "column": 12,
-            "index": 3099
+            "index": 3082
           },
           {
             "filePath": "src/notification-preferences/NotificationTypes.jsx",
@@ -1621,7 +1609,7 @@
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
             "line": 110,
             "column": 12,
-            "index": 4318
+            "index": 4301
           }
         ],
         "Collapsible": [
@@ -1731,7 +1719,7 @@
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
             "line": 90,
             "column": 16,
-            "index": 3637
+            "index": 3620
           }
         ],
         "ArrowBack": [
@@ -1739,7 +1727,7 @@
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
             "line": 79,
             "column": 52,
-            "index": 3139
+            "index": 3122
           }
         ],
         "OverlayTrigger": [
@@ -3115,15 +3103,15 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 110,
+            "line": 115,
             "column": 10,
-            "index": 4108
+            "index": 4210
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 132,
+            "line": 137,
             "column": 12,
-            "index": 5077
+            "index": 5179
           },
           {
             "filePath": "src/components/learner-credit-management/TableTextFilter.jsx",
@@ -3677,9 +3665,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 133,
+            "line": 138,
             "column": 14,
-            "index": 5121
+            "index": 5223
           },
           {
             "filePath": "src/components/learner-credit-management/TableTextFilter.jsx",
@@ -3695,9 +3683,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 110,
+            "line": 115,
             "column": 10,
-            "index": 3851
+            "index": 4099
           },
           {
             "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
@@ -4233,9 +4221,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalSummary.jsx",
-            "line": 23,
+            "line": 26,
             "column": 6,
-            "index": 768
+            "index": 933
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteSummaryCount.jsx",
@@ -4308,6 +4296,12 @@
             "line": 73,
             "column": 10,
             "index": 2576
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 10,
+            "column": 4,
+            "index": 264
           },
           {
             "filePath": "src/components/PeopleManagement/ZeroState.jsx",
@@ -4493,9 +4487,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalSummary.jsx",
-            "line": 29,
+            "line": 32,
             "column": 8,
-            "index": 953
+            "index": 1118
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAggregateCards.jsx",
@@ -4562,6 +4556,12 @@
             "line": 93,
             "column": 14,
             "index": 3300
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 16,
+            "column": 6,
+            "index": 406
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
@@ -4995,9 +4995,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalSummary.jsx",
-            "line": 22,
+            "line": 25,
             "column": 4,
-            "index": 727
+            "index": 892
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalSummaryDuplicate.jsx",
@@ -5076,6 +5076,18 @@
             "line": 159,
             "column": 8,
             "index": 4703
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 9,
+            "column": 2,
+            "index": 225
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 17,
+            "column": 8,
+            "index": 429
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/SsoErrorPage.jsx",
@@ -5720,6 +5732,12 @@
             "line": 107,
             "column": 24,
             "index": 3844
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 18,
+            "column": 10,
+            "index": 478
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
@@ -6594,6 +6612,12 @@
             "line": 7,
             "column": 39,
             "index": 249
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 18,
+            "column": 45,
+            "index": 513
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
@@ -7727,9 +7751,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 107,
+            "line": 112,
             "column": 6,
-            "index": 4010
+            "index": 4112
           },
           {
             "filePath": "src/components/learner-credit-management/MultipleBudgetsPage.jsx",
@@ -7745,15 +7769,15 @@
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 107,
+            "line": 112,
             "column": 6,
-            "index": 3769
+            "index": 4017
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 123,
+            "line": 128,
             "column": 6,
-            "index": 4249
+            "index": 4497
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
@@ -8035,15 +8059,15 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 108,
+            "line": 113,
             "column": 8,
-            "index": 4041
+            "index": 4143
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 152,
+            "line": 157,
             "column": 8,
-            "index": 5880
+            "index": 5982
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAggregateCards.jsx",
@@ -8131,27 +8155,27 @@
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 108,
+            "line": 113,
             "column": 8,
-            "index": 3783
+            "index": 4031
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 121,
+            "line": 126,
             "column": 8,
-            "index": 4222
+            "index": 4470
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 124,
+            "line": 129,
             "column": 8,
-            "index": 4263
+            "index": 4511
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 138,
+            "line": 143,
             "column": 8,
-            "index": 4816
+            "index": 5064
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
@@ -9030,6 +9054,12 @@
             "line": 112,
             "column": 14,
             "index": 4004
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 22,
+            "column": 14,
+            "index": 738
           },
           {
             "filePath": "src/components/settings/HelpCenterButton.jsx",
@@ -11119,9 +11149,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 104,
+            "line": 109,
             "column": 4,
-            "index": 3888
+            "index": 3990
           },
           {
             "filePath": "src/components/learner-credit-management/MultipleBudgetsPage.jsx",
@@ -11131,9 +11161,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 99,
+            "line": 104,
             "column": 4,
-            "index": 3468
+            "index": 3716
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/SsoErrorPage.jsx",
@@ -11381,9 +11411,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 121,
+            "line": 126,
             "column": 12,
-            "index": 4598
+            "index": 4700
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessSubsidyTypeSelection.jsx",
@@ -11419,15 +11449,15 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 127,
+            "line": 132,
             "column": 14,
-            "index": 4803
+            "index": 4905
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 128,
+            "line": 133,
             "column": 14,
-            "index": 4906
+            "index": 5008
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessSubsidyTypeSelection.jsx",
