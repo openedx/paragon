@@ -11,7 +11,7 @@ const noop = () => {};
 
 interface FormGroupContextData {
   getControlProps: (props: Record<string, any>) => Record<string, any>;
-  getLabelProps: (props: React.HTMLProps<'label'>) => React.HTMLProps<'label'>;
+  getLabelProps: (props: React.ComponentPropsWithoutRef<'label'>) => React.ComponentPropsWithoutRef<'label'>;
   getDescriptorProps: (props: Record<string, any>) => Record<string, any>;
   useSetIsControlGroupEffect: (isControlGroup: boolean) => void;
   isControlGroup?: boolean;
@@ -53,7 +53,7 @@ function FormGroupContextProvider({
   controlId?: string;
   isInvalid?: boolean;
   isValid?: boolean;
-  size: typeof FORM_CONTROL_SIZES.SMALL | typeof FORM_CONTROL_SIZES.LARGE;
+  size?: typeof FORM_CONTROL_SIZES.SMALL | typeof FORM_CONTROL_SIZES.LARGE;
 }) {
   const controlId = useMemo(() => explicitControlId || newId('form-field'), [explicitControlId]);
   const [describedByIds, registerDescriptorId] = useIdList(controlId);
@@ -82,7 +82,7 @@ function FormGroupContextProvider({
     controlId,
   ]);
 
-  const getLabelProps = (labelProps: React.HTMLProps<'label'>) => {
+  const getLabelProps = (labelProps: React.ComponentPropsWithoutRef<'label'>) => {
     const id = registerLabelerId(labelProps?.id);
     if (isControlGroup) {
       return { ...labelProps, id };
