@@ -42,6 +42,7 @@ const Form = BootstrapForm as any as ComponentWithAsProp<'form', FormProps> & {
   AutosuggestOption: typeof FormAutosuggestOption;
   Checkbox: typeof FormCheckbox;
   CheckboxSet: typeof FormCheckboxSet;
+  Row: typeof BootstrapForm.Row;
   Switch: typeof FormSwitch;
   SwitchSet: typeof FormSwitchSet;
   Label: typeof FormLabel;
