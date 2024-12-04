@@ -77,8 +77,8 @@ Toast.defaultProps = {
 };
 
 Toast.propTypes = {
-  /** A string or an element that is rendered inside the main body of the `Toast`. */
-  children: PropTypes.string.isRequired,
+  /** A node that is rendered inside the main body of the `Toast`. */
+  children: PropTypes.node.isRequired,
   /**
    * A function that is called on close. It can be used to perform
    * actions upon closing of the `Toast`, such as setting the "show"
