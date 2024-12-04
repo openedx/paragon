@@ -1,7 +1,7 @@
 import React from 'react';
-import BaseCard from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import BaseCard from './BaseCard';
 import CardContext, { CardContextProvider } from './CardContext';
 import CardHeader from './CardHeader';
 import CardDivider from './CardDivider';
