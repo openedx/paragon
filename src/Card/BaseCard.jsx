@@ -14,9 +14,9 @@ const BaseCard = React.forwardRef(
       bgColor,
       textColor,
       borderColor,
-      hasBody = false,
+      hasBody,
       children,
-      as: Component = 'div',
+      as: Component,
       ...props
     },
     ref,
