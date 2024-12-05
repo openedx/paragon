@@ -48,7 +48,7 @@ describe('BaseCard Component', () => {
     );
     const contentElement = screen.getByText('Direct Content');
     expect(contentElement).toBeInTheDocument();
-    expect(contentElement.closest('div')).not.toHaveClass('card-body');
+    expect(contentElement.closest('div')).not.toHaveClass('pgn__card-body');
   });
 
   it('supports a custom tag with the `as` prop', () => {
