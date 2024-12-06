@@ -2,11 +2,43 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import type { ComponentWithAsProp, BsPropsWithAs } from '../utils/types/bootstrap';
+
+// @ts-ignore
 import CardBody from './CardBody';
 
 const BASE_CARD_CLASSNAME = 'card';
 
-const BaseCard = React.forwardRef(
+const colorVariants = [
+  'primary',
+  'secondary',
+  'success',
+  'danger',
+  'warning',
+  'info',
+  'dark',
+  'light',
+] as const;
+
+const textVariants = [
+  'white',
+  'muted',
+] as const;
+
+type ColorVariant = typeof colorVariants[number];
+type TextVariant = typeof textVariants[number];
+interface Props extends BsPropsWithAs {
+  prefix?: string;
+  bgColor?: ColorVariant;
+  textColor?: ColorVariant | TextVariant;
+  borderColor?: ColorVariant;
+  hasBody?: boolean;
+  className?: string;
+  children: React.ReactNode;
+}
+type BaseCardType = ComponentWithAsProp<'div', Props>;
+
+const BaseCard : BaseCardType = React.forwardRef<HTMLDivElement, Props>(
   (
     {
       prefix,
@@ -14,9 +46,9 @@ const BaseCard = React.forwardRef(
       bgColor,
       textColor,
       borderColor,
-      hasBody,
+      hasBody = false,
       children,
-      as: Component,
+      as: Component = 'div',
       ...props
     },
     ref,
@@ -37,24 +69,14 @@ const BaseCard = React.forwardRef(
   },
 );
 
-const colorVariants = [
-  'primary',
-  'secondary',
-  'success',
-  'danger',
-  'warning',
-  'info',
-  'dark',
-  'light',
-];
-
+/* eslint-disable react/require-default-props */
 BaseCard.propTypes = {
   /** Prefix for component CSS classes. */
   prefix: PropTypes.string,
   /** Background color of the card. */
   bgColor: PropTypes.oneOf(colorVariants),
   /** Text color of the card. */
-  textColor: PropTypes.oneOf([...colorVariants, 'white', 'muted']),
+  textColor: PropTypes.oneOf([...colorVariants, ...textVariants]),
   /** Border color of the card. */
   borderColor: PropTypes.oneOf(colorVariants),
   /** Determines whether the card should render its children inside a `CardBody` wrapper. */
@@ -65,17 +87,6 @@ BaseCard.propTypes = {
   className: PropTypes.string,
   /** The content to render inside the card. */
   children: PropTypes.node,
-};
-
-BaseCard.defaultProps = {
-  prefix: undefined,
-  hasBody: false,
-  as: 'div',
-  borderColor: undefined,
-  className: undefined,
-  children: undefined,
-  bgColor: undefined,
-  textColor: undefined,
 };
 
 export default BaseCard;
