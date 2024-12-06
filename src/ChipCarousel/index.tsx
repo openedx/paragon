@@ -2,7 +2,6 @@ import React, { ForwardedRef } from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import classNames from 'classnames';
-// @ts-ignore
 import { OverflowScroll, OverflowScrollContext } from '../OverflowScroll';
 import IconButton from '../IconButton';
 import Icon from '../Icon';
