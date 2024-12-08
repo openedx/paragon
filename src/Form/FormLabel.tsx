@@ -4,7 +4,14 @@ import classNames from 'classnames';
 import { useFormGroupContext } from './FormGroupContext';
 import { FORM_CONTROL_SIZES } from './constants';
 
-function FormLabel({ children, isInline, ...props }) {
+interface Props {
+  /** Specifies contents of the component. */
+  children: React.ReactNode;
+  /** Specifies whether the component should be displayed with inline styling. */
+  isInline?: boolean;
+}
+
+function FormLabel({ children, isInline = false, ...props }: Props & React.ComponentPropsWithoutRef<'label'>) {
   const { size, isControlGroup, getLabelProps } = useFormGroupContext();
   const className = classNames(
     'pgn__form-label',
@@ -20,8 +27,6 @@ function FormLabel({ children, isInline, ...props }) {
   return React.createElement(componentType, labelProps, children);
 }
 
-const SIZE_CHOICES = ['sm', 'lg'];
-
 FormLabel.propTypes = {
   /** Specifies class name to append to the base element. */
   className: PropTypes.string,
@@ -29,14 +34,6 @@ FormLabel.propTypes = {
   children: PropTypes.node.isRequired,
   /** Specifies whether the component should be displayed with inline styling. */
   isInline: PropTypes.bool,
-  /** Specifies size of the component. */
-  size: PropTypes.oneOf(SIZE_CHOICES),
-};
-
-FormLabel.defaultProps = {
-  isInline: false,
-  size: undefined,
-  className: undefined,
 };
 
 export default FormLabel;

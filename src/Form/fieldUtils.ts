@@ -8,10 +8,10 @@ const omitUndefinedProperties = (obj = {}) => Object.entries(obj)
       acc[key] = value;
     }
     return acc;
-  }, {});
+  }, {} as Record<string, any>);
 
-const callAllHandlers = (...handlers) => {
-  const unifiedEventHandler = (event) => {
+const callAllHandlers = <EventType extends Object>(...handlers: ((event: EventType) => void)[]) => {
+  const unifiedEventHandler = (event: EventType) => {
     handlers
       .filter(handler => typeof handler === 'function')
       .forEach(handler => handler(event));
@@ -19,16 +19,19 @@ const callAllHandlers = (...handlers) => {
   return unifiedEventHandler;
 };
 
-const useHasValue = ({ defaultValue, value }) => {
+const useHasValue = <ValueType>({ defaultValue, value }: { defaultValue?: ValueType, value?: ValueType }) => {
   const [hasUncontrolledValue, setHasUncontrolledValue] = useState(!!defaultValue || defaultValue === 0);
   const hasValue = !!value || value === 0 || hasUncontrolledValue;
-  const handleInputEvent = (e) => setHasUncontrolledValue(e.target.value);
+  const handleInputEvent = (e: React.ChangeEvent<HTMLInputElement>) => setHasUncontrolledValue(!!e.target.value);
   return [hasValue, handleInputEvent];
 };
 
-const useIdList = (uniqueIdPrefix, initialList) => {
+const useIdList = (
+  uniqueIdPrefix: string,
+  initialList?: string[],
+): [idList: string[], useRegisteredId: (id: string | undefined) => string | undefined] => {
   const [idList, setIdList] = useState(initialList || []);
-  const addId = (idToAdd) => {
+  const addId = (idToAdd: string) => {
     setIdList(oldIdList => [...oldIdList, idToAdd]);
     return idToAdd;
   };
@@ -36,17 +39,17 @@ const useIdList = (uniqueIdPrefix, initialList) => {
     const idToAdd = newId(`${uniqueIdPrefix}-`);
     return addId(idToAdd);
   };
-  const removeId = (idToRemove) => {
+  const removeId = (idToRemove: string | undefined) => {
     setIdList(oldIdList => oldIdList.filter(id => id !== idToRemove));
   };
 
-  const useRegisteredId = (explicitlyRegisteredId) => {
+  const useRegisteredId = (explicitlyRegisteredId: string | undefined) => {
     const [registeredId, setRegisteredId] = useState(explicitlyRegisteredId);
     useEffect(() => {
       if (explicitlyRegisteredId) {
         addId(explicitlyRegisteredId);
       } else if (!registeredId) {
-        setRegisteredId(getNewId(uniqueIdPrefix));
+        setRegisteredId(getNewId());
       }
       return () => removeId(registeredId);
     }, [registeredId, explicitlyRegisteredId]);
@@ -56,7 +59,7 @@ const useIdList = (uniqueIdPrefix, initialList) => {
   return [idList, useRegisteredId];
 };
 
-const mergeAttributeValues = (...values) => {
+const mergeAttributeValues = (...values: (string | undefined)[]) => {
   const mergedValues = classNames(values);
   return mergedValues || undefined;
 };

@@ -1,10 +1,9 @@
-/* eslint-disable import/prefer-default-export */
-const FORM_CONTROL_SIZES = {
+export const FORM_CONTROL_SIZES = {
   SMALL: 'sm',
   LARGE: 'lg',
-};
+} as const;
 
-const FORM_TEXT_TYPES = {
+export const FORM_TEXT_TYPES = {
   DEFAULT: 'default',
   VALID: 'valid',
   INVALID: 'invalid',
@@ -12,6 +11,4 @@ const FORM_TEXT_TYPES = {
   CRITERIA_EMPTY: 'criteria-empty',
   CRITERIA_VALID: 'criteria-valid',
   CRITERIA_INVALID: 'criteria-invalid',
-};
-
-export { FORM_CONTROL_SIZES, FORM_TEXT_TYPES };
+} as const;
