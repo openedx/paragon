@@ -105,7 +105,7 @@ class ListBoxWrapperForOnSelect extends React.Component {
             <span className="sr-only">none</span>
           ) : (
             <span
-              arialabelledby={`list-box-option-${
+              aria-labelledby={`list-box-option-${
                 this.state.selectedOptionIndex
               }`}
             >

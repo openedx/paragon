@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 /**
  * Randomly shuffle an array
@@ -48,18 +47,17 @@ const shortParagraphs = [
   'Pinterest tote bag synth, tattooed echo park cronut flannel kombucha kickstarter viral.',
 ];
 
-export type HipsterIpsumType = {
-  numParagraphs: number,
-  numShortParagraphs: number,
-};
+export type HipsterIpsumType = { numParagraphs?: number; numShortParagraphs?: number; };
 
-const getHipsterIpsumContent = (allParagraphs: Array<string>, numParagraphs: number) => allParagraphs
-  .slice(0, numParagraphs)
-  .map(text => <p key={text}>{text}</p>);
+const getHipsterIpsumContent = (allParagraphs: Array<string>, numParagraphs: number) => (
+  <>
+    {allParagraphs.slice(0, numParagraphs).map(text => <p key={text}>{text}</p>)}
+  </>
+);
 
 export type HipsterIpsumContentType = {
   shortParagraphsInContent: string[],
-  numShortParagraphs: number,
+  numShortParagraphs?: number,
   paragraphsInContent: string[],
   numParagraphs: number,
 };
@@ -79,10 +77,10 @@ const useHipsterIpsumContent = ({
   return getHipsterIpsumContent(shuffledParagraphs, numParagraphs);
 };
 
-function HipsterIpsum({
-  numParagraphs,
+const HipsterIpsum: React.FC<HipsterIpsumType> = ({
+  numParagraphs = 2,
   numShortParagraphs,
-}: HipsterIpsumType) {
+}) => {
   const content = useHipsterIpsumContent({
     shortParagraphsInContent: shortParagraphs,
     numShortParagraphs,
@@ -90,15 +88,6 @@ function HipsterIpsum({
     numParagraphs,
   });
   return content;
-}
-
-HipsterIpsum.propTypes = {
-  numParagraphs: PropTypes.number,
-  numShortParagraphs: PropTypes.number,
-};
-HipsterIpsum.defaultProps = {
-  numParagraphs: 2,
-  numShortParagraphs: undefined,
 };
 
 export default HipsterIpsum;

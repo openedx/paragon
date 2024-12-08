@@ -33,14 +33,13 @@ notes: |
   label="Username"
   description="The unique name that identifies you throughout the site."
   validator={value => {
-    let feedback = { isValid: true };
     if (value.length < 3) {
-      feedback = {
+      return {
         isValid: false,
         validationMessage: 'Username must be at least 3 characters in length.',
       };
     }
-    return feedback;
+    return { isValid: true };
   }}
 />
 ```
@@ -53,15 +52,14 @@ notes: |
   label="Username"
   description="The unique name that identifies you throughout the site."
   validator={value => {
-    let feedback = { isValid: true };
     if (value.length < 3) {
-      feedback = {
+      return {
         isValid: false,
         validationMessage: 'Username must be at least 3 characters in length.',
         dangerIconDescription: 'Error',
       };
     }
-    return feedback;
+    return { isValid: true };
   }}
   themes={['danger']}
 />

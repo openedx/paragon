@@ -36,7 +36,7 @@ export const isEveryPropDefined = (props, otherPropNames) => otherPropNames
  * Returns a PropType entry with the given propType that is required if otherPropName
  * is truthy.
  * @param {func} propType - target PropType
- * @param {string} otherPropName - string name for prop that, if true, marks the
+ * @param {string | string[]} otherPropName - string name for prop that, if true, marks the
  *   associated prop as required
  * @return {func} - PropType based on propType that is required if otherPropName is
  *   set to true.

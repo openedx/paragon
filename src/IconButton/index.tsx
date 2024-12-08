@@ -36,6 +36,8 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'light' | 'dark' | 'black' | 'brand';
   /** size of button to render */
   size?: 'sm' | 'md' | 'inline';
+  /** Used with `IconButtonToggle` */
+  value?: string;
   /** no children */
   children?: never;
 }
@@ -104,6 +106,7 @@ IconButton.defaultProps = {
   size: 'md',
   onClick: () => {},
   isActive: false,
+  value: undefined,
   children: undefined,
 };
 
@@ -140,6 +143,8 @@ IconButton.propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'inline']),
   /** whether to show the `IconButton` in an active state, whose styling is distinct from default state */
   isActive: PropTypes.bool,
+  /** Used with <IconButtonToggle> */
+  value: PropTypes.string,
 };
 
 interface PropsWithTooltip extends Props {

@@ -253,7 +253,7 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
     </Component>
   );
 
-  const ClearAction = ({ as: Component, tableInstance, ...rest }) => (
+  const ClearAction = ({ as: Component, tableInstance }) => (
     <Component
       variant="danger"
       onClick={() => {
@@ -845,7 +845,7 @@ a responsive grid of cards.
     </Component>
   );
 
-  const ClearAction = ({ as: Component, tableInstance, ...rest }) => (
+  const ClearAction = ({ as: Component, tableInstance }) => (
     <Component
       variant="danger"
       onClick={() => {

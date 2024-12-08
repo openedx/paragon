@@ -49,7 +49,9 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 () => {
   {/* start example state */}
   const [type, setType] = useState('default');
+  const [value, setValue] = useState('');
   {/* end example state */}
+  const handleChange = (e) => setValue(e.target.value);
 
   const inputs = {
     default: (
@@ -144,8 +146,6 @@ or [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
       </Form.Group>
     </>),
   };
-  const [value, setValue] = useState('');
-  const handleChange = (e) => setValue(e.target.value);
   return (
     <>
       {/* start example form block */}
@@ -172,7 +172,9 @@ See [react-imask](https://imask.js.org) for documentation on available props.
 () => {
   {/* start example state */}
   const [maskType, setMaskType] = useState('phone');
+  const [value, setValue] = useState('');
   {/* end example state */}
+  const handleChange = (e) => setValue(e.target.value);
 
   const inputsWithMask = {
     phone: (
@@ -254,10 +256,6 @@ See [react-imask](https://imask.js.org) for documentation on available props.
         </>
     ),
   };
-
-  const [value, setValue] = useState('');
-
-  const handleChange = (e) => setValue(e.target.value);
 
   return (
     <>

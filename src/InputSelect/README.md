@@ -90,14 +90,13 @@ notes: |
   label="Favorite Color"
   options={['', 'red', 'orange', 'yellow', 'green', 'blue', 'purple']}
   validator={value => {
-    let feedback = { isValid: true };
     if (!value) {
-      feedback = {
+      return {
         isValid: false,
         validationMessage: 'Please make a selection.',
       };
     }
-    return feedback;
+    return { isValid: true };
   }}
 />
 ```
