@@ -9,6 +9,28 @@ export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
 export { default as Container } from './Container';
+export {
+  default as Form,
+  RadioControl,
+  CheckboxControl,
+  SwitchControl,
+  FormSwitchSet,
+  FormControl,
+  FormControlDecoratorGroup,
+  FormControlFeedback,
+  FormCheck,
+  FormFile,
+  FormRadio,
+  FormRadioSet,
+  FormRadioSetContext,
+  FormGroup,
+  FormLabel,
+  useCheckboxSetValues,
+  FormText,
+  FormAutosuggest,
+  FormAutosuggestOption,
+  InputGroup,
+} from './Form';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
@@ -61,28 +83,6 @@ export {
 export { default as Fade } from './Fade';
 /** @deprecated */
 export { default as Fieldset } from './Fieldset';
-export {
-  default as Form,
-  RadioControl,
-  CheckboxControl,
-  SwitchControl,
-  FormSwitchSet,
-  FormControl,
-  FormControlDecoratorGroup,
-  FormControlFeedback,
-  FormCheck,
-  FormFile,
-  FormRadio,
-  FormRadioSet,
-  FormRadioSetContext,
-  FormGroup,
-  FormLabel,
-  useCheckboxSetValues,
-  FormText,
-  FormAutosuggest,
-  FormAutosuggestOption,
-  InputGroup,
-} from './Form';
 export { default as IconButtonToggle } from './IconButtonToggle';
 /** @deprecated Replaced by `Form.Control`. */
 export { default as Input } from './Input';
