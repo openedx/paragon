@@ -143,7 +143,7 @@ IconButton.propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'inline']),
   /** whether to show the `IconButton` in an active state, whose styling is distinct from default state */
   isActive: PropTypes.bool,
-  /** Used with <IconButtonToggle> */
+  /** Used with `IconButtonToggle` */
   value: PropTypes.string,
 };
 
