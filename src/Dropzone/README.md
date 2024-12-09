@@ -240,7 +240,7 @@ This example validates that only `400x479` images can be uploaded.
   async function imageDimensionValidator(file) {
     const image = new window.Image();
     try {
-      url = URL.createObjectURL(file);
+      const url = URL.createObjectURL(file);
       image.src = url;
       await image.decode();
       if (image.width !== 400 || image.height !== 479) {

@@ -145,7 +145,7 @@ You can use `Dropdown.Toggle` with [IconButton](/components/iconbutton) componen
 ```jsx live
 <Dropdown.Deprecated>
   <Dropdown.Deprecated.Button>
-    <Icon className="fa fa-user pr-3" alt="" />
+    <Icon className="fa fa-user pr-3" />
     Search Engines
   </Dropdown.Deprecated.Button>
   <Dropdown.Deprecated.Menu>
