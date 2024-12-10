@@ -4,23 +4,41 @@
     "stepper": {
       "header": {
         "bg": {
-          "base": { "source": "$stepper-header-bg", "$value": "transparent" },
-          "line": { "source": "$stepper-header-line-bg", "$value": "{color.light.base}" }
+          "base": {
+            "$value": "transparent",
+            "source": "$stepper-header-bg"
+          },
+          "line": {
+            "$value": "{color.light.base}",
+            "source": "$stepper-header-line-bg"
+          }
         },
         "step": {
-          "base": { "source": "$stepper-header-step-color", "$value": "{color.primary.base}" },
-          "bg": {
-            "base": { "source": "$stepper-header-step-bg", "$value": "{color.stepper.header.bg.base}" },
-            "active": { "source": "$stepper-header-active-step-bg", "$value": "{color.gray.500}" }
+          "base": {
+            "$value": "{color.primary.base}",
+            "source": "$stepper-header-step-color"
           },
-          "border": { "source": "$stepper-header-step-border", "$value": "none" },
+          "bg": {
+            "base": {
+              "$value": "{color.stepper.header.bg.base}",
+              "source": "$stepper-header-step-bg"
+            },
+            "active": {
+              "$value": "{color.gray.500}",
+              "source": "$stepper-header-active-step-bg"
+            }
+          },
+          "border": {
+            "$value": "none",
+            "source": "$stepper-header-step-border"
+          },
           "bubble-error": {
-            "source": "$stepper-header-step-error-bubble-color",
-            "$value": "{color.danger.base}"
+            "$value": "{color.danger.base}",
+            "source": "$stepper-header-step-error-bubble-color"
           },
           "description-error": {
-            "source": "$stepper-header-step-error-description-color",
-            "$value": "{color.stepper.header.step.bubble-error}"
+            "$value": "{color.stepper.header.step.bubble-error}",
+            "source": "$stepper-header-step-error-description-color"
           }
         }
       }

@@ -3,9 +3,14 @@
     "$type": "color",
     "hr": {
       "border": {
-        "source": "$hr-border-color",
-        "modify": [{ "type": "alpha", "amount": 0.1 }],
-        "$value": "{color.black}"
+        "$value": "{color.black}",
+        "modify": [
+          {
+            "type": "alpha",
+            "amount": 0.1
+          }
+        ],
+        "source": "$hr-border-color"
       }
     }
   }

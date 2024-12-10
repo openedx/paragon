@@ -4,15 +4,25 @@
     "sheet": {
       "skrim": {
         "bg": {
-          "source": "$sheet-skrim-bg",
-          "modify": [{ "type": "alpha", "amount": 0.5 }],
-          "$value": "{color.gray.300}"
+          "$value": "{color.gray.300}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.5
+            }
+          ],
+          "source": "$sheet-skrim-bg"
         },
         "component": {
           "box-shadow": {
-            "source": "$sheet-skrim-component-box-shadow",
-            "modify": [{ "type": "alpha", "amount": 0.15 }],
-            "$value": "{color.black}"
+            "$value": "{color.black}",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.15
+              }
+            ],
+            "source": "$sheet-skrim-component-box-shadow"
           }
         }
       }

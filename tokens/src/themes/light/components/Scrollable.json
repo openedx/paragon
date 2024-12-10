@@ -4,9 +4,14 @@
     "scrollable": {
       "body": {
         "box-shadow": {
-          "source": "$scrollable-body-box-shadow",
-          "modify": [{ "type": "alpha", "amount": 0.55 }],
-          "$value": "{color.black}"
+          "$value": "{color.black}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.55
+            }
+          ],
+          "source": "$scrollable-body-box-shadow"
         }
       }
     }

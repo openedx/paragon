@@ -3,60 +3,88 @@
     "carousel": {
       "control": {
         "width": {
-          "base": { "source": "$carousel-control-width", "$value": "15%", "$type": "percentage" },
-          "icon": { "source": "$carousel-control-icon-width", "$value": "20px", "$type": "dimension" }
+          "base": {
+            "$type": "percentage",
+            "$value": "15%",
+            "source": "$carousel-control-width"
+          },
+          "icon": {
+            "$type": "dimension",
+            "$value": "20px",
+            "source": "$carousel-control-icon-width"
+          }
         }
       },
       "indicator": {
         "$type": "dimension",
-        "width": { "source": "$carousel-indicator-width", "$value": "30px" },
+        "width": {
+          "$value": "30px",
+          "source": "$carousel-indicator-width"
+        },
         "height": {
-          "base": { "source": "$carousel-indicator-height", "$value": "3px" },
-          "area-hit": { "source": "$carousel-indicator-hit-area-height", "$value": "10px" }
+          "base": {
+            "$value": "3px",
+            "source": "$carousel-indicator-height"
+          },
+          "area-hit": {
+            "$value": "10px",
+            "source": "$carousel-indicator-hit-area-height"
+          }
         }
       },
-      "caption-width": { "source": "$carousel-caption-width", "$value": "70%", "$type": "percentage" }
+      "caption-width": {
+        "$type": "percentage",
+        "$value": "70%",
+        "source": "$carousel-caption-width"
+      }
     }
   },
   "spacing": {
     "$type": "dimension",
     "carousel": {
-      "indicator-spacer": { "source": "$carousel-indicator-spacer", "$value": "3px" }
+      "indicator-spacer": {
+        "$value": "3px",
+        "source": "$carousel-indicator-spacer"
+      }
     }
   },
   "transition": {
     "$type": "transition",
     "carousel": {
       "base": {
-        "source": "$carousel-transition",
         "$value": {
           "property": "transform",
           "duration": "{transition.carousel.duration}",
           "timingFunction": "ease-in-out",
           "delay": "0ms",
           "behavior": "normal"
-        }
+        },
+        "source": "$carousel-transition"
       },
-      "duration": { "source": "$carousel-transition-duration", "$value": ".6s", "$type": "duration" },
+      "duration": {
+        "$type": "duration",
+        "$value": ".6s",
+        "source": "$carousel-transition-duration"
+      },
       "indicator": {
-        "source": "$carousel-indicator-transition",
         "$value": {
           "property": "opacity",
           "duration": "{transition.carousel.duration}",
           "timingFunction": "ease",
           "delay": "0ms",
           "behavior": "normal"
-        }
+        },
+        "source": "$carousel-indicator-transition"
       },
       "control": {
-        "source": "$carousel-control-transition",
         "$value": {
           "property": "opacity",
           "duration": ".15s",
           "timingFunction": "ease",
           "delay": "0ms",
           "behavior": "normal"
-        }
+        },
+        "source": "$carousel-control-transition"
       }
     }
   }

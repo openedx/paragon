@@ -1,24 +1,39 @@
 {
   "typography": {
     "dropdown": {
-      "font-size": { "source": "$dropdown-font-size", "$value": "{typography.font.size.base}", "$type": "dimension" },
+      "font-size": {
+        "$type": "dimension",
+        "$value": "{typography.font.size.base}",
+        "source": "$dropdown-font-size"
+      },
       "item": {
         "$type": "textDecoration",
-        "text-decoration": { "$value": "none" }
+        "text-decoration": {
+          "$value": "none"
+        }
       }
     }
   },
   "size": {
     "$type": "dimension",
     "dropdown": {
-      "min-width": { "source": "$dropdown-min-width", "$value": "18rem" },
+      "min-width": {
+        "$value": "18rem",
+        "source": "$dropdown-min-width"
+      },
       "border": {
-        "width": { "source": "$dropdown-border-width", "$value": "{size.border.width}" },
+        "width": {
+          "$value": "{size.border.width}",
+          "source": "$dropdown-border-width"
+        },
         "radius": {
-          "base": { "source": "$dropdown-border-radius", "$value": "{size.border.radius.base}" },
+          "base": {
+            "$value": "{size.border.radius.base}",
+            "source": "$dropdown-border-radius"
+          },
           "inner": {
-            "source": "$dropdown-inner-border-radius",
-            "$value": "calc({size.dropdown.border.radius.base} - {size.dropdown.border.width})"
+            "$value": "calc({size.dropdown.border.radius.base} - {size.dropdown.border.width})",
+            "source": "$dropdown-inner-border-radius"
           }
         }
       }
@@ -27,36 +42,60 @@
   "spacing": {
     "$type": "dimension",
     "dropdown": {
-      "spacer": { "source": "$dropdown-spacer", "$value": ".125rem" },
+      "spacer": {
+        "$value": ".125rem",
+        "source": "$dropdown-spacer"
+      },
       "padding": {
         "x": {
-          "base": { "source": "$dropdown-padding-x", "$value": "0" },
-          "item": { "source": "$dropdown-item-padding-x", "$value": "1rem" }
+          "base": {
+            "$value": "0",
+            "source": "$dropdown-padding-x"
+          },
+          "item": {
+            "$value": "1rem",
+            "source": "$dropdown-item-padding-x"
+          }
         },
         "y": {
-          "base": { "source": "$dropdown-padding-y", "$value": ".5rem" },
-          "item": { "source": "$dropdown-item-padding-y", "$value": ".25rem" }
+          "base": {
+            "$value": ".5rem",
+            "source": "$dropdown-padding-y"
+          },
+          "item": {
+            "$value": ".25rem",
+            "source": "$dropdown-item-padding-y"
+          }
         },
         "header": {
-          "source": "$dropdown-header-padding",
           "$value": {
             "x": "{spacing.dropdown.padding.x.item}",
             "y": ".5rem"
-          }
+          },
+          "source": "$dropdown-header-padding"
         }
       },
       "divider": {
-        "margin-y": { "source": "$dropdown-divider-margin-y", "$value": "calc({spacing.spacer.base} / 2)" }
+        "margin-y": {
+          "$value": "calc({spacing.spacer.base} / 2)",
+          "source": "$dropdown-divider-margin-y"
+        }
       },
       "close-container": {
-        "top": { "source": "$modal-close-container-top", "$value": ".625rem" }
+        "top": {
+          "$value": ".625rem",
+          "source": "$modal-close-container-top"
+        }
       }
     }
   },
   "elevation": {
     "$type": "number",
     "dropdown": {
-      "zindex": { "source": "$zindex-dropdown", "$value": "1000" }
+      "zindex": {
+        "$value": "1000",
+        "source": "$zindex-dropdown"
+      }
     }
   }
 }

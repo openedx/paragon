@@ -2,17 +2,29 @@
   "typography": {
     "$type": "fontWeight",
     "dt": {
-      "font-weight": { "source": "$dt-font-weight", "$value": "{typography.font.weight.bold}" }
+      "font-weight": {
+        "$value": "{typography.font.weight.bold}",
+        "source": "$dt-font-weight"
+      }
     }
   },
   "spacing": {
     "$type": "dimension",
     "list": {
-      "inline-padding": { "source": "$list-inline-padding", "$value": ".5rem" },
+      "inline-padding": {
+        "$value": ".5rem",
+        "source": "$list-inline-padding"
+      },
       "group-item": {
         "padding": {
-          "y": { "source": "$list-group-item-padding-y", "$value": ".75rem" },
-          "x": { "source": "$list-group-item-padding-x", "$value": "1.25rem" }
+          "y": {
+            "$value": ".75rem",
+            "source": "$list-group-item-padding-y"
+          },
+          "x": {
+            "$value": "1.25rem",
+            "source": "$list-group-item-padding-x"
+          }
         }
       }
     }
@@ -21,8 +33,14 @@
     "$type": "dimension",
     "list-group": {
       "border": {
-        "width": { "source": "$list-group-border-width", "$value": "{size.border.width}" },
-        "radius": { "source": "$list-group-border-radius", "$value": "{size.border.radius.base}" }
+        "width": {
+          "$value": "{size.border.width}",
+          "source": "$list-group-border-width"
+        },
+        "radius": {
+          "$value": "{size.border.radius.base}",
+          "source": "$list-group-border-radius"
+        }
       }
     }
   }

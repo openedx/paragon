@@ -1,16 +1,52 @@
 {
   "size": {
     "avatar": {
-      "base": { "source": "$avatar-size", "$value": "3rem", "$type": "dimension" },
-      "xs": { "source": "$avatar-size-xs", "$value": "1.5rem", "$type": "dimension" },
-      "sm": { "source": "$avatar-size-sm", "$value": "2.25rem", "$type": "dimension" },
-      "lg": { "source": "$avatar-size-lg", "$value": "4rem", "$type": "dimension" },
-      "xl": { "source": "$avatar-size-xl", "$value": "6rem", "$type": "dimension" },
-      "xxl": { "source": "$avatar-size-xxl", "$value": "11.5rem", "$type": "dimension" },
-      "huge": { "source": "$avatar-size-huge", "$value": "18.75rem", "$type": "dimension" },
+      "base": {
+        "$type": "dimension",
+        "$value": "3rem",
+        "source": "$avatar-size"
+      },
+      "xs": {
+        "$type": "dimension",
+        "$value": "1.5rem",
+        "source": "$avatar-size-xs"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "2.25rem",
+        "source": "$avatar-size-sm"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "4rem",
+        "source": "$avatar-size-lg"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "6rem",
+        "source": "$avatar-size-xl"
+      },
+      "xxl": {
+        "$type": "dimension",
+        "$value": "11.5rem",
+        "source": "$avatar-size-xxl"
+      },
+      "huge": {
+        "$type": "dimension",
+        "$value": "18.75rem",
+        "source": "$avatar-size-huge"
+      },
       "border": {
-        "base": { "source": "$avatar-border", "$value": "1px", "$type": "dimension" },
-        "radius": { "source": "$avatar-border-radius", "$value": "100%", "$type": "percentage" }
+        "base": {
+          "$type": "dimension",
+          "$value": "1px",
+          "source": "$avatar-border"
+        },
+        "radius": {
+          "$type": "percentage",
+          "$value": "100%",
+          "source": "$avatar-border-radius"
+        }
       }
     }
   }

@@ -2,10 +2,18 @@
   "color": {
     "$type": "color",
     "image": {
-      "figure-caption": { "source": "$figure-caption-color", "$value": "{color.gray.500}" },
+      "figure-caption": {
+        "$value": "{color.gray.500}",
+        "source": "$figure-caption-color"
+      },
       "thumbnail": {
-        "bg": { "source": "$thumbnail-bg", "$value": "{color.body.bg}" },
-        "border": { "source": "$thumbnail-border-color", "$value": "{color.gray.200}"
+        "bg": {
+          "$value": "{color.body.bg}",
+          "source": "$thumbnail-bg"
+        },
+        "border": {
+          "$value": "{color.gray.200}",
+          "source": "$thumbnail-border-color"
         }
       }
     }
@@ -14,7 +22,10 @@
     "$type": "shadow",
     "image": {
       "thumbnail": {
-        "box-shadow": { "source": "$thumbnail-box-shadow", "$value": "none" }
+        "box-shadow": {
+          "$value": "none",
+          "source": "$thumbnail-box-shadow"
+        }
       }
     }
   }

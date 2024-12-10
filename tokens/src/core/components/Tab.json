@@ -3,17 +3,38 @@
     "$type": "dimension",
     "tab": {
       "more-link-dropdown-toggle": {
-        "padding-x": { "source": "$tab-more-link-dropdown-toggle-padding-x", "$value": ".7rem" },
-        "padding-y": { "source": "$tab-more-link-dropdown-toggle-padding-y", "$value": "{spacing.spacer.base}" }
+        "padding-x": {
+          "$value": ".7rem",
+          "source": "$tab-more-link-dropdown-toggle-padding-x"
+        },
+        "padding-y": {
+          "$value": "{spacing.spacer.base}",
+          "source": "$tab-more-link-dropdown-toggle-padding-y"
+        }
       },
       "inverse-pills-link-dropdown-toggle": {
-        "padding-x": { "source": "$tab-inverse-pills-link-dropdown-toggle-padding-x", "$value": ".625rem" },
-        "padding-y": { "source": "$tab-inverse-pills-link-dropdown-toggle-padding-y", "$value": "{spacing.spacer.base}" }
+        "padding-x": {
+          "$value": ".625rem",
+          "source": "$tab-inverse-pills-link-dropdown-toggle-padding-x"
+        },
+        "padding-y": {
+          "$value": "{spacing.spacer.base}",
+          "source": "$tab-inverse-pills-link-dropdown-toggle-padding-y"
+        }
       },
       "inverse-tabs-link-dropdown-toggle": {
-        "padding-x": { "source": "$tab-inverse-tabs-link-dropdown-toggle-padding-x", "$value": ".625rem" },
-        "padding-y": { "source": "$tab-inverse-tabs-link-dropdown-toggle-padding-y", "$value": "{spacing.spacer.base}" },
-        "distance": { "source": "$tab-inverse-pills-link-dropdown-distance", "$value": "5px" }
+        "padding-x": {
+          "$value": ".625rem",
+          "source": "$tab-inverse-tabs-link-dropdown-toggle-padding-x"
+        },
+        "padding-y": {
+          "$value": "{spacing.spacer.base}",
+          "source": "$tab-inverse-tabs-link-dropdown-toggle-padding-y"
+        },
+        "distance": {
+          "$value": "5px",
+          "source": "$tab-inverse-pills-link-dropdown-distance"
+        }
       }
     }
   }

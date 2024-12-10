@@ -4,18 +4,33 @@
     "search-field": {
       "border": {
         "width": {
-          "base": { "source": "$search-border-width", "$value": ".0625rem" },
-          "focus": { "source": "$search-border-focus-width", "$value": ".3125rem" }
+          "base": {
+            "$value": ".0625rem",
+            "source": "$search-border-width"
+          },
+          "focus": {
+            "$value": ".3125rem",
+            "source": "$search-border-focus-width"
+          }
         },
-        "radius": { "source": "$search-border-radius", "$value": "0" }
+        "radius": {
+          "$value": "0",
+          "source": "$search-border-radius"
+        }
       },
-      "search-input-height": { "source": "$input-height-search", "$value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2)" }
+      "search-input-height": {
+        "$value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2)",
+        "source": "$input-height-search"
+      }
     }
   },
   "spacing": {
     "$type": "dimension",
     "search-field": {
-      "margin-button": { "source": "$search-button-margin", "$value": ".5rem" }
+      "margin-button": {
+        "$value": ".5rem",
+        "source": "$search-button-margin"
+      }
     }
   }
 }

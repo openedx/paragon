@@ -3,7 +3,6 @@
     "$type": "transition",
     "form": {
       "input": {
-        "source": "$input-transition",
         "$value": [
           {
             "property": "border-color",
@@ -19,10 +18,10 @@
             "delay": "0s",
             "behavior": "normal"
           }
-        ]
+        ],
+        "source": "$input-transition"
       },
       "control": {
-        "source": "$custom-forms-transition",
         "$value": [
           {
             "property": "background-color",
@@ -45,7 +44,8 @@
             "delay": "0s",
             "behavior": "normal"
           }
-        ]
+        ],
+        "source": "$custom-forms-transition"
       }
     }
   }

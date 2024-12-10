@@ -2,7 +2,10 @@
   "color": {
     "$type": "color",
     "input": {
-      "btn-focus": { "source": "$input-btn-focus-color", "$value": "{color.bg.active}" }
+      "btn-focus": {
+        "$value": "{color.bg.active}",
+        "source": "$input-btn-focus-color"
+      }
     }
   },
   "elevation": {
@@ -10,14 +13,14 @@
     "input": {
       "btn-focus": {
         "box-shadow": {
-          "source": "$input-btn-focus-box-shadow",
           "$value": {
             "color": "{color.input.btn-focus}",
             "spread": "{size.input.btn.focus-width}",
             "offsetX": "0",
             "offsetY": "0",
             "blur": "0"
-          }
+          },
+          "source": "$input-btn-focus-box-shadow"
         }
       }
     }

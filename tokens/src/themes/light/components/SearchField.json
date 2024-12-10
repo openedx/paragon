@@ -3,23 +3,44 @@
     "$type": "color",
     "search-field": {
       "border": {
-        "base": { "source": "$search-border-color", "$value": "{color.gray.500}" },
-        "interaction": { "source": "$search-border-color-interaction", "$value": "{color.black}" },
-        "focus": { "source": "$search-border-focus-color", "$value": "{color.black}" }
+        "base": {
+          "$value": "{color.gray.500}",
+          "source": "$search-border-color"
+        },
+        "interaction": {
+          "$value": "{color.black}",
+          "source": "$search-border-color-interaction"
+        },
+        "focus": {
+          "$value": "{color.black}",
+          "source": "$search-border-focus-color"
+        }
       },
       "button": {
         "bg": {
-          "primary": { "source": "$search-btn-primary-bg", "$value": "{color.primary.500}" },
-          "brand": { "source": "$search-btn-brand-bg", "$value": "{color.brand.500}" }
+          "primary": {
+            "$value": "{color.primary.500}",
+            "source": "$search-btn-primary-bg"
+          },
+          "brand": {
+            "$value": "{color.brand.500}",
+            "source": "$search-btn-brand-bg"
+          }
         }
       },
-      "form-bg": { "source": "$search-form-background-color", "$value": "{color.white}" }
+      "form-bg": {
+        "$value": "{color.white}",
+        "source": "$search-form-background-color"
+      }
     }
   },
   "other": {
     "$type": "number",
     "search-field": {
-      "disabled-opacity": { "source": "$search-disabled-opacity", "$value": ".3" }
+      "disabled-opacity": {
+        "$value": ".3",
+        "source": "$search-disabled-opacity"
+      }
     }
   }
 }

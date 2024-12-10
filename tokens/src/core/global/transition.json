@@ -2,7 +2,6 @@
   "transition": {
     "$type": "transition",
     "base": {
-      "source": "$transition-base",
       "$value": {
         "property": "all",
         "duration": ".2s",
@@ -10,10 +9,10 @@
         "delay": "0s",
         "behavior": "normal"
       },
-      "$description": "Generic transition for any property change"
+      "$description": "Generic transition for any property change",
+      "source": "$transition-base"
     },
     "fade": {
-      "source": "$transition-fade",
       "$value": {
         "property": "opacity",
         "duration": ".15s",
@@ -21,11 +20,11 @@
         "delay": "0s",
         "behavior": "normal"
       },
-      "$description": "Opacity transition that takes 150ms"
+      "$description": "Opacity transition that takes 150ms",
+      "source": "$transition-fade"
     },
     "collapse": {
       "height": {
-        "source": "$transition-collapse",
         "$value": {
           "property": "height",
           "duration": ".35s",
@@ -33,10 +32,10 @@
           "delay": "0s",
           "behavior": "normal"
         },
-        "$description": "Collapse transition for height that takes 350ms"
+        "$description": "Collapse transition for height that takes 350ms",
+        "source": "$transition-collapse"
       },
       "width": {
-        "source": "$transition-collapse-width",
         "$value": {
           "property": "width",
           "duration": ".35s",
@@ -44,7 +43,8 @@
           "delay": "0s",
           "behavior": "normal"
         },
-        "$description": "Collapse transition for width that takes 350ms"
+        "$description": "Collapse transition for width that takes 350ms",
+        "source": "$transition-collapse-width"
       }
     }
   }
