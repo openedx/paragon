@@ -2,49 +2,103 @@
   "color": {
     "$type": "color",
     "popover": {
-      "bg": { "source": "$popover-bg", "$value": "{color.bg.base}" },
-      "border": { "source": "$popover-border-color", "$value": "rgba(0, 0, 0, .2)" },
+      "bg": {
+        "$value": "{color.bg.base}",
+        "source": "$popover-bg"
+      },
+      "border": {
+        "$value": "rgba(0, 0, 0, .2)",
+        "source": "$popover-border-color"
+      },
       "header": {
-        "text": { "source": "$popover-header-color", "$value": "{color.headings.base}" },
-        "bg": { "source": "$popover-header-bg", "$value": "{color.white}" },
+        "text": {
+          "$value": "{color.headings.base}",
+          "source": "$popover-header-color"
+        },
+        "bg": {
+          "$value": "{color.white}",
+          "source": "$popover-header-bg"
+        },
         "bg-dark": {
-          "source": "$popover-header-bg-dark",
-          "modify": [{ "type": "darken", "amount": 0.5 }],
-          "$value": "{color.white}"
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": 0.5
+            }
+          ],
+          "source": "$popover-header-bg-dark"
         },
         "border-bottom-dark": {
-          "source": "$popover-header-border-bottom-darken",
-          "modify": [{ "type": "darken", "amount": 0.05 }],
-          "$value": "{color.white}"
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": 0.05
+            }
+          ],
+          "source": "$popover-header-border-bottom-darken"
         }
       },
-      "body": { "source": "$popover-body-color", "$value": "{color.body.base}" },
+      "body": {
+        "$value": "{color.body.base}",
+        "source": "$popover-body-color"
+      },
       "arrow": {
-        "base": { "source": "$popover-arrow-color", "$value": "{color.popover.bg}" },
+        "base": {
+          "$value": "{color.popover.bg}",
+          "source": "$popover-arrow-color"
+        },
         "outer": {
-          "source": "$popover-arrow-outer-color",
-          "modify": [{ "type": "alpha", "amount": 0.05 }],
-          "$value": "{color.popover.border}"
+          "$value": "{color.popover.border}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.05
+            }
+          ],
+          "source": "$popover-arrow-outer-color"
         }
       },
       "success": {
-        "bg": { "source": "$popover-success-bg", "$value": "{color.success.100}" },
-        "icon": { "source": "$popover-success-icon-color", "$value": "{color.success.500}" }
+        "bg": {
+          "$value": "{color.success.100}",
+          "source": "$popover-success-bg"
+        },
+        "icon": {
+          "$value": "{color.success.500}",
+          "source": "$popover-success-icon-color"
+        }
       },
       "warning": {
-        "bg": { "source": "$popover-warning-bg", "$value": "{color.warning.100}" },
-        "icon": { "source": "$popover-warning-icon-color", "$value": "{color.warning.500}" }
+        "bg": {
+          "$value": "{color.warning.100}",
+          "source": "$popover-warning-bg"
+        },
+        "icon": {
+          "$value": "{color.warning.500}",
+          "source": "$popover-warning-icon-color"
+        }
       },
       "danger": {
-        "bg": { "source": "$popover-danger-bg", "$value": "{color.danger.100}" },
-        "icon": { "source": "$popover-danger-icon-color", "$value": "{color.danger.500}" }
+        "bg": {
+          "$value": "{color.danger.100}",
+          "source": "$popover-danger-bg"
+        },
+        "icon": {
+          "$value": "{color.danger.500}",
+          "source": "$popover-danger-icon-color"
+        }
       }
     }
   },
   "elevation": {
     "$type": "shadow",
     "popover": {
-      "box-shadow": { "source": "$popover-box-shadow", "$value": "none" }
+      "box-shadow": {
+        "$value": "none",
+        "source": "$popover-box-shadow"
+      }
     }
   }
 }

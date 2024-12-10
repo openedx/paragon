@@ -1,11 +1,23 @@
 {
   "color": {
     "$type": "color",
-    "text-muted": { "source": "$text-muted", "$value": "{color.gray.500}" },
-    "mark-bg": { "source": "$mark-bg", "$value": "#FFF243" },
-    "blockquote": {
-      "small": { "source": "$blockquote-small-color", "$value": "{color.gray.500}" }
+    "text-muted": {
+      "$value": "{color.gray.500}",
+      "source": "$text-muted"
     },
-    "yiq-light": { "source": "$yiq-text-light", "$value": "{color.white}" }
+    "mark-bg": {
+      "$value": "#FFF243",
+      "source": "$mark-bg"
+    },
+    "blockquote": {
+      "small": {
+        "$value": "{color.gray.500}",
+        "source": "$blockquote-small-color"
+      }
+    },
+    "yiq-light": {
+      "$value": "{color.white}",
+      "source": "$yiq-text-light"
+    }
   }
 }

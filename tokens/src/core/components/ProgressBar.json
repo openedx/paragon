@@ -2,28 +2,49 @@
   "typography": {
     "$type": "dimension",
     "progress-bar": {
-      "font-size": { "source": "$progress-font-size", "$value": "calc({typography.font.size.base} * .75)" }
+      "font-size": {
+        "$value": "calc({typography.font.size.base} * .75)",
+        "source": "$progress-font-size"
+      }
     }
   },
   "size": {
     "$type": "dimension",
     "progress-bar": {
       "height": {
-        "base": { "source": "$progress-height", "$value": "1rem" },
-        "annotated": { "source": "$annotated-progress-height", "$value": ".3125rem" }
+        "base": {
+          "$value": "1rem",
+          "source": "$progress-height"
+        },
+        "annotated": {
+          "$value": ".3125rem",
+          "source": "$annotated-progress-height"
+        }
       },
       "border": {
-        "width": { "source": "$progress-bar-border-width", "$value": "1px" },
-        "radius": { "source": "$progress-border-radius", "$value": "0" }
+        "width": {
+          "$value": "1px",
+          "source": "$progress-bar-border-width"
+        },
+        "radius": {
+          "$value": "0",
+          "source": "$progress-border-radius"
+        }
       },
-      "threshold-circle": { "source": "$progress-threshold-circle", "$value": ".5625rem" }
+      "threshold-circle": {
+        "$value": ".5625rem",
+        "source": "$progress-threshold-circle"
+      }
     }
   },
   "spacing": {
     "$type": "dimension",
     "progress-bar": {
       "hint": {
-        "annotation-gap": { "source": "$progress-hint-annotation-gap", "$value": ".5rem" }
+        "annotation-gap": {
+          "$value": ".5rem",
+          "source": "$progress-hint-annotation-gap"
+        }
       }
     }
   },
@@ -31,23 +52,23 @@
     "$type": "transition",
     "progress-bar": {
       "animation-timing": {
-        "source": "$progress-bar-animation-timing",
         "$value": {
           "duration": "1s",
           "timing-function": "linear",
           "delay": "0s",
           "iteration-count": "infinite"
-        }
+        },
+        "source": "$progress-bar-animation-timing"
       },
       "transition": {
-        "source": "$progress-bar-transition",
         "$value": {
           "property": "width",
           "duration": ".6s",
           "timing-function": "ease",
           "delay": "0s",
           "behavior": "normal"
-        }
+        },
+        "source": "$progress-bar-transition"
       }
     }
   }
