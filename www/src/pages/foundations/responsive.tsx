@@ -18,11 +18,34 @@ const BREAKPOINT_DESCRIPTIONS = {
   extraExtraLarge: { name: 'Extra extra large', identifier: 'xxl' },
 };
 
+const customBreakpoints = [
+  { name: '--pgn-size-breakpoint-min-width-xs', property: 'min-width', value: '0px' },
+  { name: '--pgn-size-breakpoint-max-width-xs', property: 'max-width', value: '576px' },
+  { name: '--pgn-size-breakpoint-min-width-sm', property: 'min-width', value: '576px' },
+  { name: '--pgn-size-breakpoint-max-width-sm', property: 'max-width', value: '768px' },
+  { name: '--pgn-size-breakpoint-min-width-md', property: 'min-width', value: '768px' },
+  { name: '--pgn-size-breakpoint-max-width-md', property: 'max-width', value: '992px' },
+  { name: '--pgn-size-breakpoint-min-width-lg', property: 'min-width', value: '992px' },
+  { name: '--pgn-size-breakpoint-max-width-lg', property: 'max-width', value: '1200px' },
+  { name: '--pgn-size-breakpoint-min-width-xl', property: 'min-width', value: '1200px' },
+  { name: '--pgn-size-breakpoint-max-width-xl', property: 'max-width', value: '1400px' },
+  { name: '--pgn-size-breakpoint-min-width-xxl', property: 'min-width', value: '1400px' },
+];
+
 const getBreakpointDescription = (breakpoint) => BREAKPOINT_DESCRIPTIONS[breakpoint] || {};
 
 function IdentifierCell({ row }) {
   return <code>{row.values.identifier}</code>;
 }
+
+function PropertyCell({ row }) {
+  return <code>{row.values.property}</code>;
+}
+
+function ValueCell({ row }) {
+  return <code>{row.values.value}</code>;
+}
+
 function MinWidthCell({ row }) {
   if (row.values.identifier === 'xs') {
     return (
@@ -45,6 +68,7 @@ function MinWidthCell({ row }) {
   }
   return <code>{row.values.minWidth ? `${row.values.minWidth}px` : '-'}</code>;
 }
+
 function MaxWidthCell({ row }) {
   return <code>{row.values.maxWidth ? `${row.values.maxWidth}px` : '-'}</code>;
 }
@@ -83,7 +107,8 @@ function Responsive({ pageContext }) {
         >
           <DataTable.Table />
         </DataTable>
-        <h2 className="mt-3">Basic usage</h2>
+        <h2 className="mt-3">SCSS variables</h2>
+        <h3 className="mt-3">Basic usage</h3>
         <p>
           To access or change the breakpoints in the scss use <code>$grid-breakpoints</code> variable.
         </p>
@@ -98,6 +123,57 @@ function Responsive({ pageContext }) {
         </p>
         <CodeBlock className="language-scss">
           {'@include media-breakpoint-up(map-get($grid-breakpoints, \'lg\')) { // styles here }'}
+        </CodeBlock>
+
+        <h2 className="mt-3">CSS Custom Media Breakpoints</h2>
+        <p>
+          Media breakpoints in CSS are defined using the following variables.
+        </p>
+        <h3>Available Breakpoints</h3>
+        <DataTable
+          className="pgn-doc__spacing-table"
+          data={customBreakpoints}
+          columns={[
+            { Header: 'Breakpoint', accessor: 'name' },
+            { Header: 'Property', accessor: 'property', Cell: PropertyCell },
+            { Header: 'Value', accessor: 'value', Cell: ValueCell },
+          ]}
+          itemCount={0}
+        >
+          <DataTable.Table />
+        </DataTable>
+
+        <h3 className="mt-3">Basic Usage</h3>
+        <p>
+          The structure of a breakpoint variable is:
+        </p>
+        <CodeBlock className="language-scss">
+          {'--pgn-size-breakpoint-{width_type}-{class_infix}'}
+        </CodeBlock>
+        <p>
+          Explanation of the variable components:
+          <ul>
+            <li><code>{'{width_type}'}</code> specifies the width type, either <strong>min</strong> for a minimum width
+              (inclusive) or <strong>max</strong> for a maximum width (inclusive).
+            </li>
+            <li><code>{'{class_infix}'}</code> refers to the breakpoint name, such as <code>sm</code>, <code>md</code>,
+              or <code>lg</code>.
+            </li>
+          </ul>
+        </p>
+
+        <p>
+          Example for applying styles when the screen width is narrower than the <code>md</code> breakpoint:
+        </p>
+        <CodeBlock className="language-scss">
+          {'@media (--pgn-size-breakpoint-max-width-md) { // styles here }'}
+        </CodeBlock>
+
+        <p>
+          For applying styles when the screen width is wider than the <code>md</code> breakpoint:
+        </p>
+        <CodeBlock className="language-scss">
+          {'@media (--pgn-size-breakpoint-min-width-md) { // styles here }'}
         </CodeBlock>
       </Container>
     </Layout>
@@ -116,6 +192,8 @@ const cellPropTypes = {
       identifier: PropTypes.string,
       minWidth: PropTypes.number,
       maxWidth: PropTypes.number,
+      property: PropTypes.string,
+      value: PropTypes.string,
     }),
   }),
 };
@@ -131,5 +209,11 @@ MaxWidthCell.propTypes = cellPropTypes;
 IdentifierCell.defaultProps = cellDefaultProps;
 MinWidthCell.defaultProps = cellDefaultProps;
 MaxWidthCell.defaultProps = cellDefaultProps;
+
+PropertyCell.propTypes = cellPropTypes;
+ValueCell.propTypes = cellPropTypes;
+
+PropertyCell.defaultProps = cellDefaultProps;
+ValueCell.defaultProps = cellDefaultProps;
 
 export default Responsive;
