@@ -218,7 +218,7 @@ jobs:
     - name: Setup Nodejs Env
       run: echo "NODE_VER=`cat .nvmrc`" >> $GITHUB_ENV
     - name: Setup Nodejs
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ env.NODE_VER }}
     - name: Install dependencies
@@ -258,7 +258,7 @@ jobs:
     - name: Setup Nodejs Env
       run: echo "NODE_VER=`cat .nvmrc`" >> $GITHUB_ENV
     - name: Setup Nodejs
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ env.NODE_VER }}
     - name: Download analysis output
