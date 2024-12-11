@@ -1,12 +1,10 @@
 name: Release CI
 
 on:
-  workflow_dispatch:
   push:
     branches:
-    - master
-    - alpha
-    - beta
+    - next
+    - release-*
 jobs:
   release:
     name: Release
@@ -38,4 +36,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.OPENEDX_SEMANTIC_RELEASE_GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.OPENEDX_SEMANTIC_RELEASE_NPM_TOKEN }}
-      run: npx semantic-release@22
+      run: npx semantic-release@22 --dry-run
