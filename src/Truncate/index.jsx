@@ -1,5 +1,5 @@
 import React, {
-  useLayoutEffect, useRef,
+  useLayoutEffect, useRef, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
 import { truncateLines } from './utils';
@@ -9,7 +9,7 @@ const DEFAULT_TRUNCATE_LINES = 1;
 const DEFAULT_TRUNCATE_ELLIPSIS = '...';
 const DEFAULT_TRUNCATE_ELEMENT_TYPE = 'div';
 
-function Truncate({
+function TruncateDeprecated({
   children, lines, ellipsis, elementType, className, whiteSpace, onTruncate,
 }) {
   const textContainer = useRef();
@@ -40,7 +40,7 @@ function Truncate({
   });
 }
 
-Truncate.propTypes = {
+TruncateDeprecated.propTypes = {
   /** The expected text to which the ellipsis would be applied. */
   children: PropTypes.string.isRequired,
   /** The number of lines the text to be truncated to. */
@@ -57,7 +57,7 @@ Truncate.propTypes = {
   onTruncate: PropTypes.func,
 };
 
-Truncate.defaultProps = {
+TruncateDeprecated.defaultProps = {
   lines: DEFAULT_TRUNCATE_LINES,
   ellipsis: DEFAULT_TRUNCATE_ELLIPSIS,
   whiteSpace: false,
@@ -65,5 +65,14 @@ Truncate.defaultProps = {
   className: undefined,
   onTruncate: undefined,
 };
+
+function Truncate() {
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log('Please use Truncate.Deprecated until a replacement is created');
+  }, []);
+  return null;
+}
+Truncate.Deprecated = TruncateDeprecated;
 
 export default Truncate;
