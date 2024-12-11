@@ -1,18 +1,25 @@
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 import * as React from "react";
-const SvgCc = props => /*#__PURE__*/React.createElement("svg", {
-  width: 24,
-  height: 24,
-  viewBox: "0 0 24 24",
-  fill: "none",
-  xmlns: "http://www.w3.org/2000/svg",
-  ...props
-}, /*#__PURE__*/React.createElement("path", {
-  d: "M11.889 10.333c-.567-1.031-1.533-1.441-2.655-1.441-1.633 0-2.933 1.153-2.933 3.104 0 1.985 1.222 3.105 2.988 3.105 1.134 0 2.1-.62 2.633-1.563l-1.244-.632c-.278.665-.7.865-1.233.865-.922 0-1.344-.765-1.344-1.775 0-1.008.356-1.774 1.344-1.774.267 0 .8.144 1.11.81l1.334-.699ZM15.017 8.892c1.121 0 2.088.41 2.654 1.441l-1.333.699c-.31-.666-.844-.81-1.11-.81-.989 0-1.344.766-1.344 1.774 0 1.01.422 1.775 1.344 1.775.533 0 .955-.2 1.232-.865l1.244.632c-.533.942-1.499 1.563-2.632 1.563-1.766 0-2.987-1.12-2.987-3.105 0-1.951 1.299-3.104 2.932-3.104Z",
-  fill: "currentColor"
-}), /*#__PURE__*/React.createElement("path", {
-  fillRule: "evenodd",
-  clipRule: "evenodd",
-  d: "M11.986 2C9.243 2 6.83 3.014 4.963 4.904 3.043 6.85 2 9.37 2 12c0 2.658 1.015 5.123 2.936 7.041C6.856 20.959 9.353 22 11.986 22c2.634 0 5.186-1.041 7.16-2.986C21.013 17.178 22 14.74 22 12c0-2.712-.988-5.178-2.88-7.068C17.2 3.014 14.73 2 11.985 2Zm.028 1.808c2.25 0 4.252.85 5.816 2.411 1.536 1.534 2.359 3.562 2.359 5.78 0 2.247-.796 4.22-2.332 5.727-1.619 1.589-3.704 2.438-5.843 2.438-2.168 0-4.198-.849-5.762-2.41C4.688 16.19 3.811 14.136 3.811 12c0-2.164.877-4.219 2.441-5.808C7.79 4.63 9.764 3.808 12.014 3.808Z",
-  fill: "currentColor"
-}));
+var SvgCc = function SvgCc(props) {
+  return /*#__PURE__*/React.createElement("svg", _objectSpread({
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M11.889 10.333c-.567-1.031-1.533-1.441-2.655-1.441-1.633 0-2.933 1.153-2.933 3.104 0 1.985 1.222 3.105 2.988 3.105 1.134 0 2.1-.62 2.633-1.563l-1.244-.632c-.278.665-.7.865-1.233.865-.922 0-1.344-.765-1.344-1.775 0-1.008.356-1.774 1.344-1.774.267 0 .8.144 1.11.81l1.334-.699ZM15.017 8.892c1.121 0 2.088.41 2.654 1.441l-1.333.699c-.31-.666-.844-.81-1.11-.81-.989 0-1.344.766-1.344 1.774 0 1.01.422 1.775 1.344 1.775.533 0 .955-.2 1.232-.865l1.244.632c-.533.942-1.499 1.563-2.632 1.563-1.766 0-2.987-1.12-2.987-3.105 0-1.951 1.299-3.104 2.932-3.104Z",
+    fill: "currentColor"
+  }), /*#__PURE__*/React.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M11.986 2C9.243 2 6.83 3.014 4.963 4.904 3.043 6.85 2 9.37 2 12c0 2.658 1.015 5.123 2.936 7.041C6.856 20.959 9.353 22 11.986 22c2.634 0 5.186-1.041 7.16-2.986C21.013 17.178 22 14.74 22 12c0-2.712-.988-5.178-2.88-7.068C17.2 3.014 14.73 2 11.985 2Zm.028 1.808c2.25 0 4.252.85 5.816 2.411 1.536 1.534 2.359 3.562 2.359 5.78 0 2.247-.796 4.22-2.332 5.727-1.619 1.589-3.704 2.438-5.843 2.438-2.168 0-4.198-.849-5.762-2.41C4.688 16.19 3.811 14.136 3.811 12c0-2.164.877-4.219 2.441-5.808C7.79 4.63 9.764 3.808 12.014 3.808Z",
+    fill: "currentColor"
+  }));
+};
 export default SvgCc;
