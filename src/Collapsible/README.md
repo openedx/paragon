@@ -185,13 +185,13 @@ See the developer console for logging.
 ### Controlled usage
 
 ```jsx live
-function() {
+() => {
   const [collapseIsOpen, setCollapseOpen] = React.useState(true);
 
   return (
     <Collapsible.Advanced
       open={collapseIsOpen}
-      onToggle={isOpen => setCollapseOpen(!isOpen)}
+      onToggle={isOpen => setCollapseOpen(isOpen)}
       className="collapsible-card"
     >
       <Collapsible.Trigger className="collapsible-trigger">

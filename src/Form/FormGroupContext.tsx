@@ -1,16 +1,28 @@
 import React, {
   useState, useEffect, useMemo, useCallback,
 } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { newId } from '../utils';
 import { useIdList, omitUndefinedProperties } from './fieldUtils';
 import { FORM_CONTROL_SIZES } from './constants';
 
-const identityFn = props => props;
+const identityFn = (props: Record<string, any>) => props;
 const noop = () => {};
 
-const FormGroupContext = React.createContext({
+interface FormGroupContextData {
+  getControlProps: (props: Record<string, any>) => Record<string, any>;
+  getLabelProps: (props: React.ComponentPropsWithoutRef<'label'>) => React.ComponentPropsWithoutRef<'label'>;
+  getDescriptorProps: (props: Record<string, any>) => Record<string, any>;
+  useSetIsControlGroupEffect: (isControlGroup: boolean) => void;
+  isControlGroup?: boolean;
+  controlId?: string;
+  isInvalid?: boolean;
+  isValid?: boolean;
+  size?: string;
+  hasFormGroupProvider?: boolean;
+}
+
+const FormGroupContext = React.createContext<FormGroupContextData>({
   getControlProps: identityFn,
   useSetIsControlGroupEffect: noop,
   getLabelProps: identityFn,
@@ -20,13 +32,15 @@ const FormGroupContext = React.createContext({
 
 const useFormGroupContext = () => React.useContext(FormGroupContext);
 
-const useStateEffect = (initialState) => {
+function useStateEffect<ValueType extends any>(
+  initialState: ValueType,
+): [value: ValueType, setter: (v: ValueType) => void] {
   const [state, setState] = useState(initialState);
-  const useSetStateEffect = (newState) => {
+  const useSetStateEffect = (newState: ValueType) => {
     useEffect(() => setState(newState), [newState]);
   };
   return [state, useSetStateEffect];
-};
+}
 
 function FormGroupContextProvider({
   children,
@@ -34,6 +48,12 @@ function FormGroupContextProvider({
   isInvalid,
   isValid,
   size,
+}: {
+  children: React.ReactNode;
+  controlId?: string;
+  isInvalid?: boolean;
+  isValid?: boolean;
+  size?: typeof FORM_CONTROL_SIZES.SMALL | typeof FORM_CONTROL_SIZES.LARGE;
 }) {
   const controlId = useMemo(() => explicitControlId || newId('form-field'), [explicitControlId]);
   const [describedByIds, registerDescriptorId] = useIdList(controlId);
@@ -62,7 +82,7 @@ function FormGroupContextProvider({
     controlId,
   ]);
 
-  const getLabelProps = (labelProps) => {
+  const getLabelProps = (labelProps: React.ComponentPropsWithoutRef<'label'>) => {
     const id = registerLabelerId(labelProps?.id);
     if (isControlGroup) {
       return { ...labelProps, id };
@@ -70,12 +90,12 @@ function FormGroupContextProvider({
     return { ...labelProps, htmlFor: controlId };
   };
 
-  const getDescriptorProps = (descriptorProps) => {
+  const getDescriptorProps = (descriptorProps: Record<string, any>) => {
     const id = registerDescriptorId(descriptorProps?.id);
     return { ...descriptorProps, id };
   };
 
-  const contextValue = {
+  const contextValue: FormGroupContextData = {
     getControlProps,
     getLabelProps,
     getDescriptorProps,
@@ -94,24 +114,6 @@ function FormGroupContextProvider({
     </FormGroupContext.Provider>
   );
 }
-
-FormGroupContextProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-  controlId: PropTypes.string,
-  isInvalid: PropTypes.bool,
-  isValid: PropTypes.bool,
-  size: PropTypes.oneOf([
-    FORM_CONTROL_SIZES.SMALL,
-    FORM_CONTROL_SIZES.LARGE,
-  ]),
-};
-
-FormGroupContextProvider.defaultProps = {
-  controlId: undefined,
-  isInvalid: undefined,
-  isValid: undefined,
-  size: undefined,
-};
 
 export {
   FormGroupContext,
