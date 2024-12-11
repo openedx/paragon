@@ -463,6 +463,11 @@ perf(pencil): remove graphiteWidth option
 BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite width of 10mm is always used for performance reason.
 ```
 
+#### Opening Pull Requests for Breaking Changes
+
+Pull requests that include Breaking Changes must be opened against the `next` branch instead of `release-x.x`.
+This ensures that breaking changes are accumulated and released together in the next major version, minimizing disruption for consumers.
+
 ## Treeshaking
 
 Paragon is distributed on npm as ES6 modules.  This means that webpack can use treeshaking on any Paragon components that a consuming app is not using, resulting in greatly reduced bundle sizes.
