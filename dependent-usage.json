@@ -1,8 +1,8 @@
 {
-  "lastModified": 1732457247799,
+  "lastModified": 1733926086658,
   "projectUsages": [
     {
-      "version": "22.10.0",
+      "version": "22.11.2",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -423,18 +423,6 @@
             "index": 2267
           },
           {
-            "filePath": "openedx/features/announcements/static/announcements/jsx/Announcements.jsx",
-            "line": 97,
-            "column": 20,
-            "index": 2726
-          },
-          {
-            "filePath": "openedx/features/announcements/static/announcements/jsx/Announcements.jsx",
-            "line": 109,
-            "column": 20,
-            "index": 3225
-          },
-          {
             "filePath": "xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
             "line": 47,
             "column": 16,
@@ -672,7 +660,7 @@
       }
     },
     {
-      "version": "22.9.0",
+      "version": "22.10.0",
       "name": "@edx/frontend-app-account",
       "repository": {
         "type": "git",
@@ -877,7 +865,7 @@
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
             "line": 79,
             "column": 12,
-            "index": 3099
+            "index": 3082
           },
           {
             "filePath": "src/notification-preferences/NotificationTypes.jsx",
@@ -1621,7 +1609,7 @@
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
             "line": 110,
             "column": 12,
-            "index": 4318
+            "index": 4301
           }
         ],
         "Collapsible": [
@@ -1731,7 +1719,7 @@
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
             "line": 90,
             "column": 16,
-            "index": 3637
+            "index": 3620
           }
         ],
         "ArrowBack": [
@@ -1739,7 +1727,7 @@
             "filePath": "src/notification-preferences/NotificationPreferences.jsx",
             "line": 79,
             "column": 52,
-            "index": 3139
+            "index": 3122
           }
         ],
         "OverlayTrigger": [
@@ -2085,15 +2073,15 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalButton.jsx",
-            "line": 248,
+            "line": 272,
             "column": 12,
-            "index": 9230
+            "index": 9851
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalButton.jsx",
-            "line": 270,
+            "line": 294,
             "column": 12,
-            "index": 10110
+            "index": 10731
           },
           {
             "filePath": "src/components/learner-credit-management/AssignmentsTableRefreshAction.jsx",
@@ -2336,22 +2324,22 @@
             "index": 3203
           },
           {
-            "filePath": "src/components/PeopleManagement/DeleteGroupModal.jsx",
-            "line": 70,
-            "column": 12,
-            "index": 2380
-          },
-          {
             "filePath": "src/components/PeopleManagement/GeneralErrorModal.jsx",
             "line": 35,
             "column": 8,
             "index": 1032
           },
           {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DeleteGroupModal.jsx",
+            "line": 70,
+            "column": 12,
+            "index": 2387
+          },
+          {
             "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 74,
+            "line": 75,
             "column": 10,
-            "index": 2989
+            "index": 3050
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
@@ -2824,6 +2812,12 @@
             "index": 197
           },
           {
+            "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
+            "line": 67,
+            "column": 16,
+            "index": 2868
+          },
+          {
             "filePath": "src/components/learner-credit-management/BudgetDetailActivityTabContents.jsx",
             "line": 35,
             "column": 8,
@@ -2858,6 +2852,12 @@
             "line": 59,
             "column": 8,
             "index": 1965
+          },
+          {
+            "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
+            "line": 42,
+            "column": 50,
+            "index": 1267
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalBudgetCard.jsx",
@@ -2920,10 +2920,10 @@
             "index": 2740
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 122,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 127,
             "column": 10,
-            "index": 4318
+            "index": 4572
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/SyncHistory.jsx",
@@ -3115,15 +3115,15 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 110,
+            "line": 115,
             "column": 10,
-            "index": 4108
+            "index": 4210
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 132,
+            "line": 137,
             "column": 12,
-            "index": 5077
+            "index": 5179
           },
           {
             "filePath": "src/components/learner-credit-management/TableTextFilter.jsx",
@@ -3677,9 +3677,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 133,
+            "line": 138,
             "column": 14,
-            "index": 5121
+            "index": 5223
           },
           {
             "filePath": "src/components/learner-credit-management/TableTextFilter.jsx",
@@ -3695,15 +3695,15 @@
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 110,
+            "line": 115,
             "column": 10,
-            "index": 3851
+            "index": 4099
           },
           {
-            "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
             "line": 67,
             "column": 10,
-            "index": 1964
+            "index": 1969
           },
           {
             "filePath": "src/components/RenderField/index.jsx",
@@ -4197,9 +4197,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
-            "line": 40,
+            "line": 47,
             "column": 4,
-            "index": 1111
+            "index": 1413
           },
           {
             "filePath": "src/components/learner-credit-management/empty-state/NoAssignableBudgetActivity.jsx",
@@ -4233,9 +4233,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalSummary.jsx",
-            "line": 23,
+            "line": 26,
             "column": 6,
-            "index": 768
+            "index": 933
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteSummaryCount.jsx",
@@ -4304,10 +4304,22 @@
             "index": 292
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 73,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 78,
             "column": 10,
-            "index": 2576
+            "index": 2830
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 10,
+            "column": 4,
+            "index": 264
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 12,
+            "column": 4,
+            "index": 279
           },
           {
             "filePath": "src/components/PeopleManagement/ZeroState.jsx",
@@ -4457,9 +4469,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
-            "line": 64,
+            "line": 71,
             "column": 8,
-            "index": 1987
+            "index": 2234
           },
           {
             "filePath": "src/components/learner-credit-management/empty-state/NoAssignableBudgetActivity.jsx",
@@ -4493,9 +4505,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalSummary.jsx",
-            "line": 29,
+            "line": 32,
             "column": 8,
-            "index": 953
+            "index": 1118
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAggregateCards.jsx",
@@ -4558,10 +4570,22 @@
             "index": 376
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 93,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 98,
             "column": 14,
-            "index": 3300
+            "index": 3554
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 16,
+            "column": 6,
+            "index": 406
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 14,
+            "column": 8,
+            "index": 337
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
@@ -4639,9 +4663,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
-            "line": 67,
+            "line": 74,
             "column": 14,
-            "index": 2062
+            "index": 2309
           },
           {
             "filePath": "src/components/learner-credit-management/SubBudgetCard.jsx",
@@ -4851,9 +4875,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 69,
-            "column": 12,
-            "index": 2935
+            "line": 78,
+            "column": 14,
+            "index": 3224
           },
           {
             "filePath": "src/components/learner-credit-management/AssignmentDetailsTableCell.jsx",
@@ -4965,15 +4989,15 @@
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
-            "line": 52,
+            "line": 59,
             "column": 12,
-            "index": 1450
+            "index": 1752
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
-            "line": 65,
+            "line": 72,
             "column": 10,
-            "index": 2012
+            "index": 2259
           },
           {
             "filePath": "src/components/learner-credit-management/EmailAddressTableCell.jsx",
@@ -4995,9 +5019,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalSummary.jsx",
-            "line": 22,
+            "line": 25,
             "column": 4,
-            "index": 727
+            "index": 892
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalSummaryDuplicate.jsx",
@@ -5076,6 +5100,24 @@
             "line": 159,
             "column": 8,
             "index": 4703
+          },
+          {
+            "filePath": "src/components/PeopleManagement/EnrollmentsTableColumnHeader.jsx",
+            "line": 12,
+            "column": 2,
+            "index": 275
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 9,
+            "column": 2,
+            "index": 225
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 17,
+            "column": 8,
+            "index": 429
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/SsoErrorPage.jsx",
@@ -5195,9 +5237,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalButton.jsx",
-            "line": 42,
+            "line": 48,
             "column": 32,
-            "index": 1964
+            "index": 2086
           },
           {
             "filePath": "src/components/learner-credit-management/BudgetDetailPageWrapper.jsx",
@@ -5236,34 +5278,34 @@
             "index": 1320
           },
           {
-            "filePath": "src/components/PeopleManagement/DeleteGroupModal.jsx",
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DeleteGroupModal.jsx",
             "line": 20,
             "column": 47,
-            "index": 706
+            "index": 713
           },
           {
-            "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
             "line": 17,
             "column": 47,
-            "index": 619
+            "index": 624
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 19,
-            "column": 65,
-            "index": 884
-          },
-          {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 20,
+            "column": 65,
+            "index": 959
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 21,
             "column": 59,
-            "index": 961
+            "index": 1036
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 33,
+            "line": 34,
             "column": 47,
-            "index": 1495
+            "index": 1556
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -5710,16 +5752,40 @@
             "index": 6841
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 82,
-            "column": 30,
-            "index": 2907
+            "filePath": "src/components/PeopleManagement/EnrollmentsTableColumnHeader.jsx",
+            "line": 35,
+            "column": 6,
+            "index": 1156
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 107,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 87,
+            "column": 30,
+            "index": 3161
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 112,
             "column": 24,
-            "index": 3844
+            "index": 4098
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 24,
+            "column": 14,
+            "index": 1080
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 29,
+            "column": 8,
+            "index": 1167
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 18,
+            "column": 10,
+            "index": 478
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
@@ -6210,12 +6276,6 @@
             "index": 1486
           },
           {
-            "filePath": "src/components/PlotlyAnalytics/PlotlyAnalyticsPage.jsx",
-            "line": 28,
-            "column": 4,
-            "index": 770
-          },
-          {
             "filePath": "src/components/RequestCodesPage/RequestCodesForm.jsx",
             "line": 30,
             "column": 6,
@@ -6596,6 +6656,12 @@
             "index": 249
           },
           {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 18,
+            "column": 45,
+            "index": 513
+          },
+          {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
             "line": 208,
             "column": 39,
@@ -6788,12 +6854,6 @@
             "line": 92,
             "column": 8,
             "index": 2980
-          },
-          {
-            "filePath": "src/components/PlotlyAnalytics/PlotlyAnalyticsPage.jsx",
-            "line": 34,
-            "column": 6,
-            "index": 981
           },
           {
             "filePath": "src/components/RequestCodesPage/RequestCodesForm.jsx",
@@ -7306,6 +7366,36 @@
             "index": 2506
           },
           {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 42,
+            "column": 10,
+            "index": 1563
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 43,
+            "column": 8,
+            "index": 1605
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 56,
+            "column": 6,
+            "index": 1846
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 60,
+            "column": 34,
+            "index": 1952
+          },
+          {
+            "filePath": "src/components/PeopleManagement/PeopleManagementTable.jsx",
+            "line": 23,
+            "column": 4,
+            "index": 861
+          },
+          {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
             "line": 141,
             "column": 8,
@@ -7727,9 +7817,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 107,
+            "line": 112,
             "column": 6,
-            "index": 4010
+            "index": 4112
           },
           {
             "filePath": "src/components/learner-credit-management/MultipleBudgetsPage.jsx",
@@ -7745,15 +7835,33 @@
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 107,
+            "line": 112,
             "column": 6,
-            "index": 3769
+            "index": 4017
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 123,
+            "line": 128,
             "column": 6,
-            "index": 4249
+            "index": 4497
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 15,
+            "column": 10,
+            "index": 379
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 20,
+            "column": 14,
+            "index": 524
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 23,
+            "column": 14,
+            "index": 614
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
@@ -8035,15 +8143,15 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 108,
+            "line": 113,
             "column": 8,
-            "index": 4041
+            "index": 4143
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 152,
+            "line": 157,
             "column": 8,
-            "index": 5880
+            "index": 5982
           },
           {
             "filePath": "src/components/learner-credit-management/LearnerCreditAggregateCards.jsx",
@@ -8131,27 +8239,51 @@
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 108,
+            "line": 113,
             "column": 8,
-            "index": 3783
+            "index": 4031
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 121,
+            "line": 126,
             "column": 8,
-            "index": 4222
+            "index": 4470
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 124,
+            "line": 129,
             "column": 8,
-            "index": 4263
+            "index": 4511
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 138,
+            "line": 143,
             "column": 8,
-            "index": 4816
+            "index": 5064
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 16,
+            "column": 12,
+            "index": 425
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 19,
+            "column": 12,
+            "index": 504
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 27,
+            "column": 12,
+            "index": 703
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 31,
+            "column": 12,
+            "index": 832
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
@@ -8247,9 +8379,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalButton.jsx",
-            "line": 290,
+            "line": 314,
             "column": 12,
-            "index": 10855
+            "index": 11476
           },
           {
             "filePath": "src/components/learner-credit-management/CancelAssignmentModal.jsx",
@@ -8288,10 +8420,10 @@
             "index": 3296
           },
           {
-            "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
             "line": 84,
             "column": 12,
-            "index": 2500
+            "index": 2505
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
@@ -8508,10 +8640,10 @@
             "index": 4878
           },
           {
-            "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
             "line": 108,
             "column": 18,
-            "index": 3672
+            "index": 3677
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
@@ -8668,6 +8800,12 @@
             "index": 2956
           },
           {
+            "filePath": "src/components/PeopleManagement/PeopleManagementTable.jsx",
+            "line": 49,
+            "column": 6,
+            "index": 1638
+          },
+          {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessLinkManagement.jsx",
             "line": 214,
             "column": 10,
@@ -8778,6 +8916,12 @@
             "line": 105,
             "column": 8,
             "index": 3155
+          },
+          {
+            "filePath": "src/components/PeopleManagement/PeopleManagementTable.jsx",
+            "line": 55,
+            "column": 6,
+            "index": 1798
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/ContentMetadataTable.jsx",
@@ -8895,9 +9039,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalButton.jsx",
-            "line": 250,
+            "line": 274,
             "column": 18,
-            "index": 9289
+            "index": 9910
           },
           {
             "filePath": "src/components/learner-credit-management/AssignmentDetailsTableCell.jsx",
@@ -9026,10 +9170,16 @@
             "index": 510
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 112,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 117,
             "column": 14,
-            "index": 4004
+            "index": 4258
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
+            "line": 22,
+            "column": 14,
+            "index": 738
           },
           {
             "filePath": "src/components/settings/HelpCenterButton.jsx",
@@ -9331,9 +9481,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalButton.jsx",
-            "line": 247,
+            "line": 271,
             "column": 10,
-            "index": 9206
+            "index": 9827
           },
           {
             "filePath": "src/components/learner-credit-management/CancelAssignmentModal.jsx",
@@ -9390,28 +9540,28 @@
             "index": 3146
           },
           {
-            "filePath": "src/components/PeopleManagement/DeleteGroupModal.jsx",
-            "line": 66,
-            "column": 10,
-            "index": 2238
-          },
-          {
-            "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
-            "line": 80,
-            "column": 10,
-            "index": 2359
-          },
-          {
             "filePath": "src/components/PeopleManagement/GeneralErrorModal.jsx",
             "line": 34,
             "column": 6,
             "index": 1012
           },
           {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DeleteGroupModal.jsx",
+            "line": 66,
+            "column": 10,
+            "index": 2245
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
+            "line": 80,
+            "column": 10,
+            "index": 2364
+          },
+          {
             "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 47,
+            "line": 48,
             "column": 8,
-            "index": 1788
+            "index": 1849
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/ActionsTableCell.jsx",
@@ -9670,22 +9820,22 @@
             "index": 785
           },
           {
-            "filePath": "src/components/PeopleManagement/DeleteGroupModal.jsx",
-            "line": 38,
-            "column": 6,
-            "index": 1188
-          },
-          {
-            "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
-            "line": 56,
-            "column": 6,
-            "index": 1655
-          },
-          {
             "filePath": "src/components/PeopleManagement/GeneralErrorModal.jsx",
             "line": 8,
             "column": 2,
             "index": 224
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DeleteGroupModal.jsx",
+            "line": 38,
+            "column": 6,
+            "index": 1195
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
+            "line": 56,
+            "column": 6,
+            "index": 1660
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -9822,22 +9972,22 @@
             "index": 903
           },
           {
-            "filePath": "src/components/PeopleManagement/DeleteGroupModal.jsx",
-            "line": 45,
-            "column": 8,
-            "index": 1346
-          },
-          {
-            "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
-            "line": 63,
-            "column": 8,
-            "index": 1811
-          },
-          {
             "filePath": "src/components/PeopleManagement/GeneralErrorModal.jsx",
             "line": 15,
             "column": 4,
             "index": 362
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DeleteGroupModal.jsx",
+            "line": 45,
+            "column": 8,
+            "index": 1353
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
+            "line": 63,
+            "column": 8,
+            "index": 1816
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -9968,22 +10118,22 @@
             "index": 932
           },
           {
-            "filePath": "src/components/PeopleManagement/DeleteGroupModal.jsx",
-            "line": 46,
-            "column": 10,
-            "index": 1377
-          },
-          {
-            "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
-            "line": 64,
-            "column": 10,
-            "index": 1842
-          },
-          {
             "filePath": "src/components/PeopleManagement/GeneralErrorModal.jsx",
             "line": 16,
             "column": 6,
             "index": 389
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DeleteGroupModal.jsx",
+            "line": 46,
+            "column": 10,
+            "index": 1384
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
+            "line": 64,
+            "column": 10,
+            "index": 1847
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -10114,22 +10264,22 @@
             "index": 1247
           },
           {
-            "filePath": "src/components/PeopleManagement/DeleteGroupModal.jsx",
-            "line": 48,
-            "column": 8,
-            "index": 1468
-          },
-          {
-            "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
-            "line": 66,
-            "column": 8,
-            "index": 1935
-          },
-          {
             "filePath": "src/components/PeopleManagement/GeneralErrorModal.jsx",
             "line": 25,
             "column": 4,
             "index": 660
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DeleteGroupModal.jsx",
+            "line": 48,
+            "column": 8,
+            "index": 1475
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
+            "line": 66,
+            "column": 8,
+            "index": 1940
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -10322,22 +10472,22 @@
             "index": 2012
           },
           {
-            "filePath": "src/components/PeopleManagement/DeleteGroupModal.jsx",
-            "line": 65,
-            "column": 8,
-            "index": 2207
-          },
-          {
-            "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
-            "line": 79,
-            "column": 8,
-            "index": 2328
-          },
-          {
             "filePath": "src/components/PeopleManagement/GeneralErrorModal.jsx",
             "line": 33,
             "column": 4,
             "index": 985
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DeleteGroupModal.jsx",
+            "line": 65,
+            "column": 8,
+            "index": 2214
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
+            "line": 79,
+            "column": 8,
+            "index": 2333
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -10662,10 +10812,16 @@
             "index": 2944
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 79,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 84,
             "column": 20,
-            "index": 2787
+            "index": 3041
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 22,
+            "column": 10,
+            "index": 1033
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
@@ -10712,10 +10868,10 @@
             "index": 2034
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 106,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 111,
             "column": 21,
-            "index": 3812
+            "index": 4066
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
@@ -10788,6 +10944,12 @@
             "line": 20,
             "column": 4,
             "index": 607
+          },
+          {
+            "filePath": "src/components/PeopleManagement/EnrollmentsTableColumnHeader.jsx",
+            "line": 20,
+            "column": 4,
+            "index": 616
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessConfiguredSubsidyType.jsx",
@@ -11002,16 +11164,16 @@
             "index": 2063
           },
           {
-            "filePath": "src/components/PeopleManagement/DeleteGroupModal.jsx",
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DeleteGroupModal.jsx",
             "line": 67,
             "column": 12,
-            "index": 2262
+            "index": 2269
           },
           {
-            "filePath": "src/components/PeopleManagement/EditGroupNameModal.jsx",
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
             "line": 81,
             "column": 12,
-            "index": 2383
+            "index": 2388
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -11119,9 +11281,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 104,
+            "line": 109,
             "column": 4,
-            "index": 3888
+            "index": 3990
           },
           {
             "filePath": "src/components/learner-credit-management/MultipleBudgetsPage.jsx",
@@ -11131,9 +11293,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 99,
+            "line": 104,
             "column": 4,
-            "index": 3468
+            "index": 3716
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/SsoErrorPage.jsx",
@@ -11337,9 +11499,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 74,
+            "line": 75,
             "column": 30,
-            "index": 3009
+            "index": 3070
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/index.jsx",
@@ -11381,9 +11543,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 121,
+            "line": 126,
             "column": 12,
-            "index": 4598
+            "index": 4700
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessSubsidyTypeSelection.jsx",
@@ -11419,15 +11581,15 @@
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 127,
+            "line": 132,
             "column": 14,
-            "index": 4803
+            "index": 4905
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalContent.jsx",
-            "line": 128,
+            "line": 133,
             "column": 14,
-            "index": 4906
+            "index": 5008
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessSubsidyTypeSelection.jsx",
@@ -11507,9 +11669,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
-            "line": 41,
+            "line": 48,
             "column": 6,
-            "index": 1200
+            "index": 1502
           },
           {
             "filePath": "src/components/PeopleManagement/ZeroState.jsx",
@@ -11551,9 +11713,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
-            "line": 48,
+            "line": 55,
             "column": 8,
-            "index": 1350
+            "index": 1652
           },
           {
             "filePath": "src/components/learner-credit-management/SubBudgetCard.jsx",
@@ -11568,10 +11730,10 @@
             "index": 335
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 75,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 80,
             "column": 14,
-            "index": 2646
+            "index": 2900
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
@@ -11633,9 +11795,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
-            "line": 89,
+            "line": 96,
             "column": 8,
-            "index": 2953
+            "index": 3200
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteModalPermissions.jsx",
@@ -11662,10 +11824,10 @@
             "index": 464
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 97,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 102,
             "column": 12,
-            "index": 3473
+            "index": 3727
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
@@ -11817,9 +11979,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalButton.jsx",
-            "line": 269,
+            "line": 293,
             "column": 12,
-            "index": 10077
+            "index": 10698
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteMembersModalWrapper.jsx",
@@ -11835,9 +11997,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
-            "line": 73,
+            "line": 74,
             "column": 10,
-            "index": 2958
+            "index": 3019
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/index.jsx",
@@ -11855,9 +12017,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalButton.jsx",
-            "line": 225,
+            "line": 249,
             "column": 6,
-            "index": 8430
+            "index": 9051
           },
           {
             "filePath": "src/components/learner-credit-management/invite-modal/InviteMembersModalWrapper.jsx",
@@ -11932,6 +12094,12 @@
             "line": 100,
             "column": 8,
             "index": 2994
+          },
+          {
+            "filePath": "src/components/PeopleManagement/PeopleManagementTable.jsx",
+            "line": 50,
+            "column": 6,
+            "index": 1674
           }
         ],
         "EditCircle": [
@@ -11977,13 +12145,13 @@
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
             "line": 21,
             "column": 44,
-            "index": 673
+            "index": 683
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
             "line": 22,
             "column": 49,
-            "index": 753
+            "index": 763
           },
           {
             "filePath": "src/components/learner-credit-management/data/hooks/useIsLargeOrGreater.js",
@@ -12233,9 +12401,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 48,
+            "line": 49,
             "column": 4,
-            "index": 1949
+            "index": 1972
           },
           {
             "filePath": "src/components/learner-credit-management/FlexGroupDropdown.jsx",
@@ -12248,6 +12416,12 @@
             "line": 34,
             "column": 6,
             "index": 1520
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 18,
+            "column": 2,
+            "index": 909
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
@@ -12277,9 +12451,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 55,
+            "line": 56,
             "column": 6,
-            "index": 2261
+            "index": 2284
           },
           {
             "filePath": "src/components/learner-credit-management/FlexGroupDropdown.jsx",
@@ -12292,6 +12466,12 @@
             "line": 35,
             "column": 8,
             "index": 1550
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 19,
+            "column": 4,
+            "index": 935
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
@@ -12329,9 +12509,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 58,
+            "line": 59,
             "column": 6,
-            "index": 2402
+            "index": 2425
           },
           {
             "filePath": "src/components/learner-credit-management/FlexGroupDropdown.jsx",
@@ -12344,6 +12524,12 @@
             "line": 43,
             "column": 8,
             "index": 1768
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 27,
+            "column": 4,
+            "index": 1121
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
@@ -12373,15 +12559,27 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 63,
-            "column": 10,
-            "index": 2693
+            "line": 66,
+            "column": 14,
+            "index": 2768
+          },
+          {
+            "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
+            "line": 72,
+            "column": 12,
+            "index": 2970
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/LearnerCreditGroupMembersTable.jsx",
             "line": 44,
             "column": 10,
             "index": 1794
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 28,
+            "column": 6,
+            "index": 1143
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
@@ -12526,6 +12724,12 @@
             "index": 704
           },
           {
+            "filePath": "src/components/PeopleManagement/EnrollmentsTableColumnHeader.jsx",
+            "line": 24,
+            "column": 8,
+            "index": 718
+          },
+          {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessConfiguredSubsidyType.jsx",
             "line": 27,
             "column": 10,
@@ -12598,6 +12802,12 @@
             "line": 35,
             "column": 27,
             "index": 1131
+          },
+          {
+            "filePath": "src/components/PeopleManagement/EnrollmentsTableColumnHeader.jsx",
+            "line": 35,
+            "column": 27,
+            "index": 1177
           },
           {
             "filePath": "src/components/settings/SettingsAppearanceTab/CustomThemeModal.jsx",
@@ -12717,9 +12927,9 @@
         "Dropdown.Header": [
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 59,
+            "line": 60,
             "column": 8,
-            "index": 2426
+            "index": 2449
           }
         ],
         "IconButtonWithTooltip": [
@@ -12748,10 +12958,10 @@
             "index": 2422
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 101,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 106,
             "column": 14,
-            "index": 3599
+            "index": 3853
           }
         ],
         "ModalPopup": [
@@ -12889,9 +13099,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
-            "line": 47,
+            "line": 54,
             "column": 6,
-            "index": 1330
+            "index": 1632
           },
           {
             "filePath": "src/components/learner-credit-management/SubBudgetCard.jsx",
@@ -12900,10 +13110,16 @@
             "index": 4683
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 74,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 79,
             "column": 12,
-            "index": 2620
+            "index": 2874
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 13,
+            "column": 6,
+            "index": 317
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
@@ -12930,6 +13146,18 @@
             "line": 21,
             "column": 31,
             "index": 1132
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 15,
+            "column": 31,
+            "index": 815
+          },
+          {
+            "filePath": "src/components/PeopleManagement/PeopleManagementTable.jsx",
+            "line": 11,
+            "column": 31,
+            "index": 496
           }
         ],
         "ProgressBar": [
@@ -12948,10 +13176,10 @@
             "index": 1211
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 58,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 63,
             "column": 10,
-            "index": 2003
+            "index": 2257
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/SyncHistory.jsx",
@@ -12989,13 +13217,13 @@
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
             "line": 21,
             "column": 18,
-            "index": 647
+            "index": 657
           },
           {
             "filePath": "src/components/learner-credit-management/cards/BaseCourseCard.jsx",
             "line": 22,
             "column": 23,
-            "index": 727
+            "index": 737
           },
           {
             "filePath": "src/components/learner-credit-management/data/hooks/useIsLargeOrGreater.js",
@@ -13100,6 +13328,12 @@
             "index": 1861
           },
           {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 29,
+            "column": 19,
+            "index": 1178
+          },
+          {
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
             "line": 136,
             "column": 22,
@@ -13130,6 +13364,12 @@
             "line": 39,
             "column": 15,
             "index": 1687
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupMembersTable.jsx",
+            "line": 23,
+            "column": 11,
+            "index": 1056
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
@@ -13206,24 +13446,32 @@
         ],
         "RemoveCircleOutline": [
           {
-            "filePath": "src/components/PeopleManagement/DeleteGroupModal.jsx",
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DeleteGroupModal.jsx",
             "line": 70,
             "column": 115,
-            "index": 2483
+            "index": 2490
           }
         ],
         "Edit": [
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage.jsx",
-            "line": 81,
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
+            "line": 86,
             "column": 27,
-            "index": 2871
+            "index": 3125
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
             "line": 161,
             "column": 22,
             "index": 5348
+          }
+        ],
+        "Avatar": [
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 17,
+            "column": 14,
+            "index": 452
           }
         ],
         "ProductTour": [
@@ -13521,7 +13769,7 @@
       }
     },
     {
-      "version": "22.10.0",
+      "version": "22.11.2",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -17358,13 +17606,13 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 382,
             "column": 12,
-            "index": 13204
+            "index": 13201
           },
           {
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 386,
             "column": 12,
-            "index": 13324
+            "index": 13321
           },
           {
             "filePath": "src/content-tags-drawer/ContentTagsDropDownSelector.jsx",
@@ -18064,9 +18312,9 @@
           },
           {
             "filePath": "src/generic/processing-notification/index.jsx",
-            "line": 20,
+            "line": 19,
             "column": 6,
-            "index": 569
+            "index": 532
           },
           {
             "filePath": "src/generic/tag-count/index.jsx",
@@ -20558,25 +20806,25 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 77,
             "column": 12,
-            "index": 2584
+            "index": 2581
           },
           {
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 86,
             "column": 12,
-            "index": 2920
+            "index": 2917
           },
           {
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 136,
             "column": 10,
-            "index": 4225
+            "index": 4222
           },
           {
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 397,
             "column": 20,
-            "index": 13841
+            "index": 13838
           },
           {
             "filePath": "src/content-tags-drawer/ContentTagsDropDownSelector.jsx",
@@ -21647,12 +21895,6 @@
             "index": 6798
           },
           {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 79,
-            "column": 6,
-            "index": 2359
-          },
-          {
             "filePath": "src/textbooks/empty-placeholder/EmptyPlaceholder.jsx",
             "line": 14,
             "column": 6,
@@ -21767,12 +22009,6 @@
             "line": 81,
             "column": 30,
             "index": 3069
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 80,
-            "column": 20,
-            "index": 2387
           }
         ],
         "OverlayTrigger": [
@@ -21859,12 +22095,6 @@
             "line": 74,
             "column": 4,
             "index": 1790
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 47,
-            "column": 6,
-            "index": 1185
           }
         ],
         "Tooltip": [
@@ -21933,12 +22163,6 @@
             "line": 34,
             "column": 10,
             "index": 936
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 50,
-            "column": 10,
-            "index": 1254
           }
         ],
         "SpinnerSimple": [
@@ -22747,24 +22971,6 @@
             "line": 82,
             "column": 8,
             "index": 2240
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 186,
-            "column": 8,
-            "index": 5394
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 196,
-            "column": 8,
-            "index": 5750
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 232,
-            "column": 12,
-            "index": 6816
           },
           {
             "filePath": "src/textbooks/Textbooks.jsx",
@@ -23588,31 +23794,25 @@
             "filePath": "src/taxonomy/taxonomy-menu/TaxonomyMenu.jsx",
             "line": 57,
             "column": 68,
-            "index": 1864
+            "index": 1863
           },
           {
             "filePath": "src/taxonomy/taxonomy-menu/TaxonomyMenu.jsx",
             "line": 58,
             "column": 65,
-            "index": 1947
+            "index": 1946
           },
           {
             "filePath": "src/taxonomy/taxonomy-menu/TaxonomyMenu.jsx",
             "line": 59,
             "column": 65,
-            "index": 2030
+            "index": 2029
           },
           {
             "filePath": "src/taxonomy/taxonomy-menu/TaxonomyMenu.jsx",
             "line": 60,
             "column": 77,
-            "index": 2125
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 37,
-            "column": 65,
-            "index": 992
+            "index": 2124
           },
           {
             "filePath": "src/textbooks/hooks.jsx",
@@ -25430,19 +25630,7 @@
             "filePath": "src/taxonomy/taxonomy-menu/TaxonomyMenu.jsx",
             "line": 155,
             "column": 10,
-            "index": 4896
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 64,
-            "column": 12,
-            "index": 1775
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 70,
-            "column": 12,
-            "index": 2033
+            "index": 4895
           }
         ],
         "Spinner": [
@@ -25450,7 +25638,7 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 113,
             "column": 4,
-            "index": 3638
+            "index": 3635
           },
           {
             "filePath": "src/content-tags-drawer/ContentTagsDropDownSelector.jsx",
@@ -25511,18 +25699,6 @@
             "line": 99,
             "column": 16,
             "index": 2268
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 145,
-            "column": 10,
-            "index": 4220
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 233,
-            "column": 14,
-            "index": 6889
           }
         ],
         "Collapsible.Advanced": [
@@ -25530,7 +25706,7 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 374,
             "column": 6,
-            "index": 12848
+            "index": 12845
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
@@ -25610,7 +25786,7 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 380,
             "column": 8,
-            "index": 13088
+            "index": 13085
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
@@ -25660,13 +25836,13 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 381,
             "column": 10,
-            "index": 13159
+            "index": 13156
           },
           {
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 385,
             "column": 10,
-            "index": 13281
+            "index": 13278
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
@@ -25734,7 +25910,7 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 382,
             "column": 23,
-            "index": 13215
+            "index": 13212
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
@@ -25748,7 +25924,7 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 386,
             "column": 23,
-            "index": 13335
+            "index": 13332
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/SettingsOption.jsx",
@@ -25762,7 +25938,7 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 391,
             "column": 8,
-            "index": 13486
+            "index": 13483
           },
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/AnswerWidget/AnswerOption.jsx",
@@ -25830,7 +26006,7 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 473,
             "column": 8,
-            "index": 17084
+            "index": 17081
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/FilterStatus.jsx",
@@ -25856,7 +26032,7 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
             "line": 475,
             "column": 22,
-            "index": 17143
+            "index": 17140
           },
           {
             "filePath": "src/content-tags-drawer/TagsTree.jsx",
@@ -25876,7 +26052,7 @@
             "filePath": "src/content-tags-drawer/ContentTagsCollapsibleHelper.jsx",
             "line": 114,
             "column": 48,
-            "index": 3893
+            "index": 3889
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
@@ -26146,13 +26322,7 @@
             "filePath": "src/taxonomy/taxonomy-menu/TaxonomyMenu.jsx",
             "line": 142,
             "column": 4,
-            "index": 4295
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 55,
-            "column": 8,
-            "index": 1413
+            "index": 4294
           }
         ],
         "Dropdown.Toggle": [
@@ -26262,13 +26432,7 @@
             "filePath": "src/taxonomy/taxonomy-menu/TaxonomyMenu.jsx",
             "line": 143,
             "column": 6,
-            "index": 4396
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 56,
-            "column": 10,
-            "index": 1466
+            "index": 4395
           }
         ],
         "MoveVertIcon": [
@@ -26386,13 +26550,7 @@
             "filePath": "src/taxonomy/taxonomy-menu/TaxonomyMenu.jsx",
             "line": 153,
             "column": 6,
-            "index": 4795
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 63,
-            "column": 10,
-            "index": 1747
+            "index": 4794
           }
         ],
         "Truncate": [
@@ -26670,15 +26828,9 @@
           },
           {
             "filePath": "src/generic/processing-notification/index.jsx",
-            "line": 12,
+            "line": 11,
             "column": 2,
-            "index": 305
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyLayout.jsx",
-            "line": 41,
-            "column": 10,
-            "index": 1449
+            "index": 268
           }
         ],
         "CampaignIcon": [
@@ -27393,12 +27545,6 @@
             "line": 22,
             "column": 15,
             "index": 784
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 98,
-            "column": 66,
-            "index": 2839
           }
         ],
         "FeedbackOutline": [
@@ -27999,12 +28145,6 @@
             "line": 60,
             "column": 6,
             "index": 1469
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 136,
-            "column": 4,
-            "index": 3906
           }
         ],
         "MenuItem": [
@@ -28091,24 +28231,6 @@
             "line": 62,
             "column": 10,
             "index": 1632
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 100,
-            "column": 4,
-            "index": 2888
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 110,
-            "column": 4,
-            "index": 3252
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 123,
-            "column": 8,
-            "index": 3648
           }
         ],
         "Form.SwitchSet": [
@@ -28186,25 +28308,19 @@
             "filePath": "src/taxonomy/tag-list/TagListTable.jsx",
             "line": 44,
             "column": 31,
-            "index": 1492
+            "index": 1493
           },
           {
             "filePath": "src/taxonomy/tag-list/TagListTable.jsx",
             "line": 81,
             "column": 6,
-            "index": 2420
+            "index": 2421
           },
           {
             "filePath": "src/taxonomy/tag-list/TagListTable.jsx",
             "line": 103,
             "column": 20,
-            "index": 3247
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 198,
-            "column": 12,
-            "index": 5829
+            "index": 3248
           }
         ],
         "DataTable.TableControlBar": [
@@ -28221,12 +28337,6 @@
             "line": 230,
             "column": 40,
             "index": 6390
-          },
-          {
-            "filePath": "src/taxonomy/TaxonomyListPage.jsx",
-            "line": 225,
-            "column": 14,
-            "index": 6609
           }
         ],
         "DataTable.Table": [
@@ -28246,7 +28356,7 @@
             "filePath": "src/taxonomy/tag-list/TagListTable.jsx",
             "line": 108,
             "column": 8,
-            "index": 3346
+            "index": 3347
           }
         ],
         "DataTable.EmptyTable": [
@@ -28260,7 +28370,7 @@
             "filePath": "src/taxonomy/tag-list/TagListTable.jsx",
             "line": 109,
             "column": 8,
-            "index": 3374
+            "index": 3375
           }
         ],
         "TableFooter": [
@@ -28588,9 +28698,9 @@
         "IconSettings": [
           {
             "filePath": "src/generic/processing-notification/index.jsx",
-            "line": 20,
+            "line": 19,
             "column": 68,
-            "index": 631
+            "index": 594
           }
         ],
         "WarningFilledIcon": [
@@ -28838,7 +28948,7 @@
             "filePath": "src/studio-home/tabs-section/courses-tab/courses-filters/index.jsx",
             "line": 104,
             "column": 8,
-            "index": 3325
+            "index": 3374
           }
         ],
         "Download": [
@@ -28898,7 +29008,7 @@
             "filePath": "src/taxonomy/tag-list/TagListTable.jsx",
             "line": 42,
             "column": 76,
-            "index": 1411
+            "index": 1412
           }
         ],
         "DataTable.TableFooter": [
@@ -28906,7 +29016,7 @@
             "filePath": "src/taxonomy/tag-list/TagListTable.jsx",
             "line": 111,
             "column": 13,
-            "index": 3539
+            "index": 3540
           }
         ],
         "ViewIcon": [
@@ -34434,19 +34544,19 @@
             "filePath": "src/components/course/data/utils.jsx",
             "line": 567,
             "column": 6,
-            "index": 20027
+            "index": 20068
           },
           {
             "filePath": "src/components/course/data/utils.jsx",
             "line": 583,
             "column": 6,
-            "index": 20405
+            "index": 20446
           },
           {
             "filePath": "src/components/course/data/utils.jsx",
             "line": 609,
             "column": 6,
-            "index": 21015
+            "index": 21056
           },
           {
             "filePath": "src/components/course/enrollment/components/ToExecutiveEducation2UEnrollment.jsx",
@@ -34510,15 +34620,15 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
-            "line": 65,
+            "line": 99,
             "column": 10,
-            "index": 1995
+            "index": 3525
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpcomingCourseCard.jsx",
-            "line": 11,
+            "line": 9,
             "column": 4,
-            "index": 337
+            "index": 283
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpgradeCourseButton.jsx",
@@ -34966,9 +35076,9 @@
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 52,
+            "line": 48,
             "column": 4,
-            "index": 1731
+            "index": 1762
           },
           {
             "filePath": "src/components/enterprise-banner/EnterpriseBanner.jsx",
@@ -35157,6 +35267,12 @@
             "index": 723
           },
           {
+            "filePath": "src/components/dashboard/DashboardPage.jsx",
+            "line": 19,
+            "column": 68,
+            "index": 984
+          },
+          {
             "filePath": "src/components/dashboard/sidebar/CouponCodesSummaryCard.jsx",
             "line": 19,
             "column": 6,
@@ -35238,9 +35354,9 @@
           },
           {
             "filePath": "src/components/course/course-header/deprecated/CourseRunCard.jsx",
-            "line": 352,
+            "line": 349,
             "column": 4,
-            "index": 11590
+            "index": 11402
           },
           {
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
@@ -35280,9 +35396,9 @@
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 228,
+            "line": 252,
             "column": 10,
-            "index": 9119
+            "index": 10008
           },
           {
             "filePath": "src/components/microlearning/VideoBanner.jsx",
@@ -35566,9 +35682,9 @@
           },
           {
             "filePath": "src/components/course/course-header/deprecated/CourseRunCard.jsx",
-            "line": 353,
+            "line": 350,
             "column": 6,
-            "index": 11603
+            "index": 11415
           },
           {
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
@@ -35644,9 +35760,9 @@
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 233,
+            "line": 257,
             "column": 14,
-            "index": 9262
+            "index": 10151
           },
           {
             "filePath": "src/components/microlearning/VideoBanner.jsx",
@@ -35932,13 +36048,13 @@
             "filePath": "src/components/course/data/utils.jsx",
             "line": 568,
             "column": 12,
-            "index": 20047
+            "index": 20088
           },
           {
             "filePath": "src/components/course/data/utils.jsx",
             "line": 584,
             "column": 12,
-            "index": 20425
+            "index": 20466
           },
           {
             "filePath": "src/components/course/routes/ExternalCourseEnrollment.jsx",
@@ -35990,15 +36106,15 @@
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 363,
+            "line": 387,
             "column": 34,
-            "index": 15938
+            "index": 16827
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 412,
+            "line": 436,
             "column": 32,
-            "index": 18758
+            "index": 19647
           },
           {
             "filePath": "src/components/program/ProgramInstructors.jsx",
@@ -36040,9 +36156,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
-            "line": 59,
+            "line": 93,
             "column": 4,
-            "index": 1847
+            "index": 3377
           },
           {
             "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
@@ -36108,9 +36224,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
-            "line": 64,
+            "line": 98,
             "column": 8,
-            "index": 1973
+            "index": 3503
           },
           {
             "filePath": "src/components/dashboard/SubscriptionExpirationModal.jsx",
@@ -36214,7 +36330,7 @@
             "filePath": "src/components/course/data/utils.jsx",
             "line": 610,
             "column": 12,
-            "index": 21035
+            "index": 21076
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseAssignmentAlert.jsx",
@@ -36242,9 +36358,9 @@
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 333,
+            "line": 357,
             "column": 32,
-            "index": 14289
+            "index": 15178
           },
           {
             "filePath": "src/components/program-progress/CouponCodesWarningModal.jsx",
@@ -36298,9 +36414,9 @@
           },
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 73,
+            "line": 69,
             "column": 6,
-            "index": 2466
+            "index": 2497
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/email-settings/EmailSettingsModal.jsx",
@@ -36322,9 +36438,9 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
-            "line": 83,
+            "line": 117,
             "column": 8,
-            "index": 2404
+            "index": 3934
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/CourseAssignmentAlert.jsx",
@@ -36352,9 +36468,9 @@
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 241,
+            "line": 265,
             "column": 16,
-            "index": 9701
+            "index": 10590
           },
           {
             "filePath": "src/components/program/ProgramCourses.jsx",
@@ -36620,33 +36736,33 @@
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 259,
+            "line": 283,
             "column": 16,
-            "index": 10577
+            "index": 11466
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 307,
+            "line": 331,
             "column": 16,
-            "index": 12877
+            "index": 13766
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 343,
+            "line": 367,
             "column": 18,
-            "index": 14664
+            "index": 15553
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 392,
+            "line": 416,
             "column": 16,
-            "index": 17496
+            "index": 18385
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 437,
+            "line": 461,
             "column": 16,
-            "index": 19926
+            "index": 20815
           },
           {
             "filePath": "src/components/microlearning/VideoDetailPage.jsx",
@@ -36970,39 +37086,39 @@
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 260,
+            "line": 284,
             "column": 18,
-            "index": 10618
+            "index": 11507
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 283,
+            "line": 307,
             "column": 18,
-            "index": 11765
+            "index": 12654
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 308,
+            "line": 332,
             "column": 18,
-            "index": 12918
+            "index": 13807
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 344,
+            "line": 368,
             "column": 20,
-            "index": 14690
+            "index": 15579
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 393,
+            "line": 417,
             "column": 18,
-            "index": 17520
+            "index": 18409
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 438,
+            "line": 462,
             "column": 18,
-            "index": 19967
+            "index": 20856
           },
           {
             "filePath": "src/components/my-career/MyCareerTabSkeleton.jsx",
@@ -37280,15 +37396,15 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/InProgressCourseCard.jsx",
-            "line": 97,
+            "line": 96,
             "column": 4,
-            "index": 3807
+            "index": 3784
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/InProgressCourseCard.jsx",
-            "line": 124,
+            "line": 123,
             "column": 6,
-            "index": 4625
+            "index": 4602
           },
           {
             "filePath": "src/components/dashboard/main-content/DashboardMainContent.jsx",
@@ -37922,15 +38038,15 @@
           },
           {
             "filePath": "src/components/dashboard/tests/DashboardPage.test.jsx",
-            "line": 184,
+            "line": 185,
             "column": 9,
-            "index": 5679
+            "index": 5729
           },
           {
             "filePath": "src/components/dashboard/tests/DashboardPage.test.jsx",
-            "line": 353,
+            "line": 356,
             "column": 62,
-            "index": 11282
+            "index": 11589
           },
           {
             "filePath": "src/components/my-career/AddJobRole.jsx",
@@ -38406,15 +38522,15 @@
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/unenroll/UnenrollModal.jsx",
-            "line": 71,
+            "line": 105,
             "column": 10,
-            "index": 2136
+            "index": 3666
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 453,
+            "line": 477,
             "column": 12,
-            "index": 20648
+            "index": 21537
           },
           {
             "filePath": "src/components/expired-subscription-modal/index.jsx",
@@ -38476,9 +38592,9 @@
         "Tabs": [
           {
             "filePath": "src/components/dashboard/DashboardPage.jsx",
-            "line": 86,
+            "line": 82,
             "column": 6,
-            "index": 2966
+            "index": 2995
           }
         ],
         "Tab": [
@@ -38802,33 +38918,33 @@
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 261,
+            "line": 285,
             "column": 20,
-            "index": 10659
+            "index": 11548
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 284,
+            "line": 308,
             "column": 20,
-            "index": 11806
+            "index": 12695
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 309,
+            "line": 333,
             "column": 20,
-            "index": 12960
+            "index": 13849
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 345,
+            "line": 369,
             "column": 22,
-            "index": 14718
+            "index": 15607
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 394,
+            "line": 418,
             "column": 20,
-            "index": 17546
+            "index": 18435
           },
           {
             "filePath": "src/components/microlearning/VideoFeedbackCard.jsx",
@@ -39026,9 +39142,9 @@
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 232,
+            "line": 256,
             "column": 12,
-            "index": 9236
+            "index": 10125
           }
         ],
         "ArrowBack": [
@@ -39042,21 +39158,21 @@
         "Form.Control": [
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 265,
+            "line": 289,
             "column": 22,
-            "index": 10817
+            "index": 11706
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 287,
+            "line": 311,
             "column": 22,
-            "index": 11914
+            "index": 12803
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 312,
+            "line": 336,
             "column": 22,
-            "index": 13071
+            "index": 13960
           },
           {
             "filePath": "src/components/program-progress/ProgramProgressCourses.jsx",
@@ -39068,15 +39184,15 @@
         "CheckboxControl": [
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 347,
+            "line": 371,
             "column": 26,
-            "index": 14825
+            "index": 15714
           },
           {
             "filePath": "src/components/executive-education-2u/UserEnrollmentForm.jsx",
-            "line": 396,
+            "line": 420,
             "column": 24,
-            "index": 17649
+            "index": 18538
           }
         ],
         "Timelapse": [
@@ -41028,9 +41144,9 @@
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 252,
-            "column": 12,
-            "index": 8853
+            "line": 253,
+            "column": 16,
+            "index": 9085
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/CourseGradeHeader.jsx",
@@ -41728,9 +41844,9 @@
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 245,
+            "line": 244,
             "column": 6,
-            "index": 8577
+            "index": 8667
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
@@ -41754,9 +41870,9 @@
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 246,
-            "column": 8,
-            "index": 8629
+            "line": 247,
+            "column": 12,
+            "index": 8837
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
@@ -41774,9 +41890,9 @@
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 250,
-            "column": 8,
-            "index": 8764
+            "line": 251,
+            "column": 12,
+            "index": 8988
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
@@ -41800,9 +41916,9 @@
           },
           {
             "filePath": "src/course-home/progress-tab/certificate-status/CertificateStatus.jsx",
-            "line": 247,
-            "column": 8,
-            "index": 8668
+            "line": 248,
+            "column": 12,
+            "index": 8880
           },
           {
             "filePath": "src/courseware/course/course-exit/CourseRecommendations.jsx",
@@ -41990,9 +42106,9 @@
           },
           {
             "filePath": "src/courseware/course/Course.jsx",
-            "line": 164,
+            "line": 163,
             "column": 22,
-            "index": 6128
+            "index": 6180
           },
           {
             "filePath": "src/courseware/course/sequence/lock-paywall/LockPaywall.jsx",
@@ -42112,9 +42228,9 @@
           },
           {
             "filePath": "src/courseware/course/Course.jsx",
-            "line": 66,
+            "line": 65,
             "column": 43,
-            "index": 2780
+            "index": 2841
           },
           {
             "filePath": "src/courseware/course/Course.test.jsx",
@@ -42628,9 +42744,9 @@
           },
           {
             "filePath": "src/courseware/course/sequence/Sequence.jsx",
-            "line": 41,
+            "line": 38,
             "column": 32,
-            "index": 1488
+            "index": 1585
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
@@ -42640,9 +42756,9 @@
           },
           {
             "filePath": "src/tab-page/LoadedTabPage.jsx",
-            "line": 43,
+            "line": 44,
             "column": 61,
-            "index": 1506
+            "index": 1533
           }
         ],
         "ModalPopup": [
@@ -42673,12 +42789,6 @@
             "line": 28,
             "column": 8,
             "index": 915
-          },
-          {
-            "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidgetOption.jsx",
-            "line": 71,
-            "column": 6,
-            "index": 1901
           }
         ],
         "ActionRow.Spacer": [
@@ -42701,12 +42811,6 @@
             "line": 41,
             "column": 10,
             "index": 1563
-          },
-          {
-            "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidget.jsx",
-            "line": 131,
-            "column": 10,
-            "index": 3821
           }
         ],
         "Dropdown.Toggle": [
@@ -42721,12 +42825,6 @@
             "line": 42,
             "column": 12,
             "index": 1604
-          },
-          {
-            "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidget.jsx",
-            "line": 132,
-            "column": 12,
-            "index": 3875
           }
         ],
         "Dropdown.Menu": [
@@ -42741,12 +42839,6 @@
             "line": 49,
             "column": 12,
             "index": 1986
-          },
-          {
-            "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeWidget.jsx",
-            "line": 135,
-            "column": 12,
-            "index": 4027
           }
         ],
         "ModalDialog": [
@@ -42857,14 +42949,6 @@
             "line": 16,
             "column": 15,
             "index": 404
-          }
-        ],
-        "Input": [
-          {
-            "filePath": "src/instructor-toolbar/masquerade-widget/MasqueradeUserNameInput.jsx",
-            "line": 49,
-            "column": 6,
-            "index": 1069
           }
         ],
         "ErrorOutline": [
@@ -50174,9 +50258,9 @@
         "Badge": [
           {
             "filePath": "src/Header.jsx",
-            "line": 111,
+            "line": 112,
             "column": 87,
-            "index": 3935
+            "index": 3956
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
@@ -50814,9 +50898,9 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 134,
+            "line": 148,
             "column": 12,
-            "index": 6165
+            "index": 6553
           }
         ],
         "CloseSmall": [
@@ -50836,9 +50920,9 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 35,
+            "line": 49,
             "column": 6,
-            "index": 1545
+            "index": 1933
           }
         ],
         "Dropdown.Toggle": [
@@ -50850,9 +50934,9 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 36,
+            "line": 50,
             "column": 8,
-            "index": 1603
+            "index": 1991
           }
         ],
         "Dropdown.Menu": [
@@ -50864,9 +50948,9 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 47,
+            "line": 61,
             "column": 8,
-            "index": 2012
+            "index": 2400
           }
         ],
         "Dropdown.Item": [
@@ -50878,33 +50962,33 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 48,
+            "line": 62,
             "column": 10,
-            "index": 2038
+            "index": 2426
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 64,
+            "line": 78,
             "column": 10,
-            "index": 2753
+            "index": 3141
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 80,
+            "line": 94,
             "column": 10,
-            "index": 3523
+            "index": 3911
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 100,
+            "line": 114,
             "column": 14,
-            "index": 4535
+            "index": 4923
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 119,
+            "line": 133,
             "column": 10,
-            "index": 5427
+            "index": 5815
           }
         ],
         "Input": [
@@ -50916,33 +51000,33 @@
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 49,
+            "line": 63,
             "column": 12,
-            "index": 2125
+            "index": 2513
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 65,
+            "line": 79,
             "column": 12,
-            "index": 2840
+            "index": 3228
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 81,
+            "line": 95,
             "column": 12,
-            "index": 3610
+            "index": 3998
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 101,
+            "line": 115,
             "column": 16,
-            "index": 4626
+            "index": 5014
           },
           {
             "filePath": "src/LearningTypeRadioFacet.jsx",
-            "line": 120,
+            "line": 134,
             "column": 12,
-            "index": 5514
+            "index": 5902
           },
           {
             "filePath": "src/TypeaheadFacetDropdown.jsx",
@@ -53442,7 +53526,7 @@
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 465,
             "column": 26,
-            "index": 20527
+            "index": 20576
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CourseCurriculum/index.jsx",
@@ -53536,9 +53620,9 @@
           },
           {
             "filePath": "src/packages/open-course-page/components/EnrollButton/EnrollButtonLink.jsx",
-            "line": 364,
+            "line": 376,
             "column": 20,
-            "index": 11952
+            "index": 12290
           },
           {
             "filePath": "src/packages/open-course-page/components/EnterpriseEnrollmentInformModal/index.jsx",
@@ -54524,7 +54608,7 @@
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 298,
             "column": 14,
-            "index": 10901
+            "index": 10950
           },
           {
             "filePath": "src/packages/program-page/components/ProgramHeader.jsx",
@@ -54550,7 +54634,7 @@
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 321,
             "column": 24,
-            "index": 12063
+            "index": 12112
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
@@ -54570,37 +54654,37 @@
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 323,
             "column": 28,
-            "index": 12188
+            "index": 12237
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 343,
             "column": 28,
-            "index": 13308
+            "index": 13357
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 364,
             "column": 26,
-            "index": 14452
+            "index": 14501
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 386,
             "column": 30,
-            "index": 15648
+            "index": 15697
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 418,
             "column": 32,
-            "index": 17640
+            "index": 17689
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 450,
             "column": 26,
-            "index": 19626
+            "index": 19675
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CCPAPage/CCPAPageEN.jsx",
@@ -54662,19 +54746,19 @@
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 331,
             "column": 30,
-            "index": 12589
+            "index": 12638
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 351,
             "column": 30,
-            "index": 13707
+            "index": 13756
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 372,
             "column": 28,
-            "index": 14840
+            "index": 14889
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
@@ -54724,43 +54808,43 @@
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 387,
             "column": 32,
-            "index": 15737
+            "index": 15786
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 399,
             "column": 36,
-            "index": 16463
+            "index": 16512
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 404,
             "column": 36,
-            "index": 16818
+            "index": 16867
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 419,
             "column": 34,
-            "index": 17731
+            "index": 17780
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 431,
             "column": 38,
-            "index": 18487
+            "index": 18536
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 436,
             "column": 38,
-            "index": 18852
+            "index": 18901
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 451,
             "column": 28,
-            "index": 19677
+            "index": 19726
           }
         ],
         "Form.RadioSet": [
@@ -54768,13 +54852,13 @@
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 392,
             "column": 32,
-            "index": 16051
+            "index": 16100
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 424,
             "column": 34,
-            "index": 18057
+            "index": 18106
           }
         ],
         "Form.Radio": [
@@ -54782,25 +54866,25 @@
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 398,
             "column": 34,
-            "index": 16360
+            "index": 16409
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 403,
             "column": 34,
-            "index": 16717
+            "index": 16766
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 430,
             "column": 36,
-            "index": 18382
+            "index": 18431
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
             "line": 435,
             "column": 36,
-            "index": 18749
+            "index": 18798
           }
         ],
         "OverlayTrigger": [
