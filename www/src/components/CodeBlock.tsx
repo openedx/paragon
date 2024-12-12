@@ -135,6 +135,11 @@ function CodeBlock({
     setShowToast(true);
   };
 
+  if (className === '' && typeof children === 'string' && !children.includes('\n')) {
+    // This is an inline code block. Don't use syntax highlighting.
+    return <code>{children}</code>;
+  }
+
   if (live) {
     return (
       <div className="pgn-doc__code-block">
