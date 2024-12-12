@@ -245,9 +245,6 @@ export const pageQuery = graphql`
       description {
         id
         text
-        childMdx {
-          body
-        }
       }
     }
   }
