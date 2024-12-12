@@ -10,15 +10,13 @@ import LinkedHeading from '../components/LinkedHeading';
 import { SettingsContext } from '../context/SettingsContext';
 
 const shortcodes = {
-  h1: (props: HTMLHeadingElement) => <LinkedHeading h="1" {...props} />,
-  h2: (props: HTMLHeadingElement) => <LinkedHeading h="2" {...props} />,
-  h3: (props: HTMLHeadingElement) => <LinkedHeading h="3" {...props} />,
-  h4: (props: HTMLHeadingElement) => <LinkedHeading h="4" {...props} />,
-  h5: (props: HTMLHeadingElement) => <LinkedHeading h="5" {...props} />,
-  h6: (props: HTMLHeadingElement) => <LinkedHeading h="6" {...props} />,
-  pre: (props:
-  JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> &
-  React.HTMLAttributes<HTMLDivElement>) => <div {...props} />,
+  h1: (props: JSX.IntrinsicElements['h1']) => <LinkedHeading h="1" {...props} />,
+  h2: (props: JSX.IntrinsicElements['h2']) => <LinkedHeading h="2" {...props} />,
+  h3: (props: JSX.IntrinsicElements['h3']) => <LinkedHeading h="3" {...props} />,
+  h4: (props: JSX.IntrinsicElements['h4']) => <LinkedHeading h="4" {...props} />,
+  h5: (props: JSX.IntrinsicElements['h5']) => <LinkedHeading h="5" {...props} />,
+  h6: (props: JSX.IntrinsicElements['h6']) => <LinkedHeading h="6" {...props} />,
+  pre: (props: JSX.IntrinsicElements['pre']) => <div {...props as any} />,
   code: CodeBlock,
   Link,
 };
