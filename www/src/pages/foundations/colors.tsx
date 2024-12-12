@@ -451,13 +451,13 @@ export const query = graphql`
   {
     allCssUtilityClasses(
       filter: { declarations: { regex: "/color/" }, isUtility: { eq: true } }
-      sort: { fields: selector, order: ASC }
+      sort: {selector: ASC}
     ) {
       nodes {
         selector
         declarations
       }
-      distinct(field: selector)
+      distinct(field: {selector: SELECT})
     }
   }
 `;

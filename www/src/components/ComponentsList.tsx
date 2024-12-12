@@ -12,7 +12,7 @@ const componentsQuery = graphql`
         }
         frontmatter: { type: {} }
       }
-      sort: { fields: frontmatter___title }
+      sort: { frontmatter: {title: ASC} }
     ) {
       all: nodes {
         ...ComponentPage
