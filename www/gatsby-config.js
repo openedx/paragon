@@ -55,6 +55,13 @@ const plugins = [
   {
     resolve: 'gatsby-source-filesystem',
     options: {
+      path: `${__dirname}/src/pages`,
+      name: 'pages',
+    },
+  },
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
       path: `${__dirname}/../CHANGELOG.md`,
       name: 'changelog',
     },
@@ -66,33 +73,27 @@ const plugins = [
     resolve: 'gatsby-plugin-mdx',
     options: {
       extensions: ['.mdx', '.md'],
-      defaultLayouts: {
-        components: require.resolve(
-          './src/templates/component-page-template.tsx',
-        ),
-        default: require.resolve(
-          './src/templates/default-mdx-page-template.tsx',
-        ),
-      },
-      rehypePlugins: [
-        rehypeSlugPlugin,
-        [
-          rehypeAutolinkHeadingsPlugin,
-          {
-            behavior: 'append',
-            content: {
-              type: 'element',
-              tagName: 'span',
-              properties: {
-                className: 'pgn-doc__anchor',
+      mdxOptions: {
+        rehypePlugins: [
+          rehypeSlugPlugin,
+          [
+            rehypeAutolinkHeadingsPlugin,
+            {
+              behavior: 'append',
+              content: {
+                type: 'element',
+                tagName: 'span',
+                properties: {
+                  className: 'pgn-doc__anchor',
+                },
+                children: [
+                  { type: 'text', value: '#' },
+                ],
               },
-              children: [
-                { type: 'text', value: '#' },
-              ],
             },
-          },
+          ],
         ],
-      ],
+      },
     },
   },
   {

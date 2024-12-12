@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import classNames from 'classnames';
 import {
   Container,
@@ -45,7 +44,8 @@ export interface IPageTemplate {
     scssVariablesData: Record<string, string>,
     componentsUsageInsights: string[],
     githubEditPath: string,
-  }
+  },
+  children: React.ReactNode,
 }
 
 export type ShortCodesTypes = {
@@ -55,6 +55,7 @@ export type ShortCodesTypes = {
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath },
+  children,
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
@@ -161,7 +162,7 @@ export default function PageTemplate({
           </Stack>
         </Stack>
         <MDXProvider components={shortcodes}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
+          {children}
         </MDXProvider>
         {scssVariables && (
           <div className="mb-5">
@@ -205,39 +206,10 @@ export default function PageTemplate({
   );
 }
 
-PageTemplate.propTypes = {
-  data: PropTypes.shape({
-    mdx: PropTypes.shape({
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string,
-        status: PropTypes.string,
-      }),
-      body: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-      tableOfContents: PropTypes.shape({
-        items: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
-      }),
-    }),
-    components: PropTypes.shape({
-      nodes: PropTypes.arrayOf(PropTypes.shape({})),
-    }),
-  }).isRequired,
-  pageContext: PropTypes.shape({
-    scssVariablesData: PropTypes.shape({
-      openedx: PropTypes.string,
-      edxorg: PropTypes.string,
-    }),
-  }),
-};
-
-PageTemplate.defaultProps = {
-  pageContext: null,
-};
-
 export const pageQuery = graphql`
   query ComponentPageQuery($id: String, $components: [String]) {
     mdx(id: { eq: $id }) {
       id
-      body
       frontmatter {
         title
         status

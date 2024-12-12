@@ -4,6 +4,8 @@ const { INSIGHTS_PAGES } = require('../src/config');
 const { getThemesSCSSVariables, processComponentSCSSVariables } = require('../theme-utils');
 const componentsUsage = require('../src/utils/componentsUsage');
 
+const componentPageTemplate = path.resolve(__dirname, '../src/templates/component-page-template.tsx');
+
 async function createPages(graphql, actions, reporter) {
   // Destructure the createPage function from the actions object
   const { createPage, createRedirect } = actions;
@@ -28,8 +30,9 @@ async function createPages(graphql, actions, reporter) {
             frontmatter {
               components
             }
-            slug
-            fileAbsolutePath
+            internal {
+              contentFilePath
+            }
           }
         }
       }
@@ -44,11 +47,10 @@ async function createPages(graphql, actions, reporter) {
   const themesSCSSVariables = await getThemesSCSSVariables();
 
   // you'll call `createPage` for each result
-  // eslint-disable-next-line no-restricted-syntax
   for (const { node } of components) {
-    const componentDir = node.slug.split('/')[0];
+    const componentDir = node.fields.slug.split('/')[0];
     const variablesPath = path.resolve(__dirname, `../../src/${componentDir}/_variables.scss`);
-    const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.fileAbsolutePath.split('src')[1]}`;
+    const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.internal.contentFilePath.split('src')[1]}`;
     let scssVariablesData = {};
 
     if (fs.existsSync(variablesPath)) {
@@ -60,8 +62,8 @@ async function createPages(graphql, actions, reporter) {
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
       path: node.fields.slug,
-      // This component will wrap our MDX content
-      component: path.resolve(__dirname, '../src/templates/component-page-template.tsx'),
+      // This layout will wrap our MDX content
+      component: `${componentPageTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       // You can use the values in this context in
       // our page layout component
       context: {
