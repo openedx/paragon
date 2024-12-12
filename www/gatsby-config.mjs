@@ -35,6 +35,9 @@ const plugins = [
           namedExport: false,
         },
       },
+      sassOptions: {
+        silenceDeprecations: ['abs-percent', 'color-functions', 'import', 'mixed-decls', 'global-builtin'],
+      },
     },
   },
   'gatsby-plugin-react-helmet',
