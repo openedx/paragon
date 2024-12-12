@@ -7,7 +7,7 @@ categories:
 - Buttonlike
 status: 'Needs Work'
 designStatus: 'Done'
-devStatus: 'To Do'
+devStatus: 'Done'
 notes: |
   Improve prop naming. Deprecate content prop.
   Use React.forwardRef for ref forwarding.
@@ -99,4 +99,19 @@ notes: |
     </Hyperlink>
   </div>
 </div>
+```
+
+## with custom link element
+
+``Hyperlink`` typically relies on the standard HTML anchor tag (i.e., ``a``); however, this behavior may be overriden when the destination link is to an internal route where it should be using routing instead (e.g., ``Link`` from React Router).
+
+```jsx live
+<Hyperlink
+  as={GatsbyLink}
+  // `destination` is still a required prop even though the `to` takes precedence.
+  destination="/components/button"
+  to="/components/button"
+>
+  Button
+</Hyperlink>
 ```
