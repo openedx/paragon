@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 import rehypeSlugPlugin from 'rehype-slug';
 import rehypeAutolinkHeadingsPlugin from 'rehype-autolink-headings';
+import rehypeMdxCodeProps from 'rehype-mdx-code-props';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -79,6 +80,7 @@ const plugins = [
       mdxOptions: {
         rehypePlugins: [
           rehypeSlugPlugin,
+          [rehypeMdxCodeProps, { tagName: 'code' }],
           [
             rehypeAutolinkHeadingsPlugin,
             {
