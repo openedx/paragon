@@ -1,8 +1,11 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
-const rehypeSlugPlugin = require('rehype-slug');
-const rehypeAutolinkHeadingsPlugin = require('rehype-autolink-headings');
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
+import rehypeSlugPlugin from 'rehype-slug';
+import rehypeAutolinkHeadingsPlugin from 'rehype-autolink-headings';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const segmentPlugin = {
   resolve: 'gatsby-plugin-segment-js',
@@ -113,7 +116,7 @@ if (process.env && process.env.FEATURE_ENABLE_AXE) {
   plugins.push(axePlugin);
 }
 
-module.exports = {
+export default {
   siteMetadata: {
     title: 'Paragon Design System',
     description: 'Technical documentation for the Paragon Design System.',
