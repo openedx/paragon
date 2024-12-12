@@ -93,7 +93,7 @@ const Chip = React.forwardRef(({
 });
 
 Chip.propTypes = {
-  /** Specifies the content of the `Chip`. */
+  /** Specifies the content of the `Chip`. */ // @ts-ignore
   children: PropTypes.node.isRequired,
   /** Specifies an additional `className` to add to the base element. */
   className: PropTypes.string,
