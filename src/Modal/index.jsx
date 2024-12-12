@@ -50,6 +50,8 @@ class Modal extends React.Component {
 
   componentWillUnmount() {
     if (this.parentElement) {
+      // TODO: update this to use the new createRoot() compatible APIs.
+      // eslint-disable-next-line react/no-deprecated
       ReactDOM.unmountComponentAtNode(this.parentElement);
     }
   }
