@@ -1,3 +1,4 @@
+@use "sass:map";
 // stylelint-disable-next-line selector-class-pattern
 .pgn__pageBanner-component {
   width: 100%;
@@ -46,7 +47,7 @@
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  padding: map_get($spacers, 2) map_get($spacers, 2\.5);
+  padding: map.get($spacers, 2) map.get($spacers, 2\.5);
   text-align: center;
 }
 

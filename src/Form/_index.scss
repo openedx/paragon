@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:string";
 @import "variables";
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/input-group";
@@ -60,7 +62,7 @@ $select-icon-padding: .5625rem !default;
     }
   }
 
-  @media (min-width: map-get($grid-breakpoints, "sm")) {
+  @media (min-width: map.get($grid-breakpoints, "sm")) {
     margin-inline-end: $custom-control-gutter;
   }
 
@@ -328,7 +330,7 @@ $select-icon-padding: .5625rem !default;
   select.form-control:not(.has-value):not(:focus) {
     // color: rgba(0,0,0,0); Force the rgba syntax to appear in the output rather
     // than transparent. IE11 does not understand color: transparent here.
-    color: unquote("rgba(0,0,0,0)");
+    color: string.unquote("rgba(0,0,0,0)");
   }
 }
 
@@ -588,7 +590,7 @@ select.form-control {
   .pgn__form-autosuggest__dropdown {
     @include pgn-box-shadow(1, "centered");
 
-    @media (min-width: map-get($grid-breakpoints, "sm")) {
+    @media (min-width: map.get($grid-breakpoints, "sm")) {
       margin-inline-end: $custom-control-gutter;
     }
 

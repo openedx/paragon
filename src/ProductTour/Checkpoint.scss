@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "variables";
 
 $checkpoint-arrow-top-color: solid $checkpoint-arrow-width $checkpoint-border-color;
@@ -9,12 +10,12 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
   background: $checkpoint-background-color;
   border-top: $checkpoint-border-width solid $checkpoint-border-color;
   border-radius: $border-radius;
-  padding: map_get($spacers, 4);
+  padding: map.get($spacers, 4);
   box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .3);
   z-index: $checkpoint-z-index;
   max-width: $checkpoint-max-width;
 
-  @media (max-width: map-get($grid-breakpoints, "md")) {
+  @media (max-width: map.get($grid-breakpoints, "md")) {
     min-width: 90%;
     max-width: 90%;
   }
@@ -43,7 +44,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
   }
 
   .pgn__checkpoint-button_dismiss {
-    margin-inline-end: map_get($spacers, 2);
+    margin-inline-end: map.get($spacers, 2);
   }
 
   .pgn__checkpoint-breadcrumb {
@@ -61,11 +62,11 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     }
 
     &:not(:first-child) {
-      margin-left: map_get($spacers, 1\.5);
+      margin-left: map.get($spacers, 1\.5);
     }
 
     [dir="rtl"] & {
-      margin-left: map_get($spacers, 1\.5);
+      margin-left: map.get($spacers, 1\.5);
       margin-right: 0;
 
       &:last-child {
@@ -81,19 +82,19 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
 
   .pgn__checkpoint-body {
     color: $checkpoint-body-color;
-    margin-bottom: map_get($spacers, 3\.5);
+    margin-bottom: map.get($spacers, 3\.5);
     text-align: start;
   }
 
   .pgn__checkpoint-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: map_get($spacers, 2\.5);
+    margin-bottom: map.get($spacers, 2\.5);
   }
 
   #pgn__checkpoint-title {
     font-size: $h3-font-size;
-    margin-inline-end: map_get($spacers, 2\.5);
+    margin-inline-end: map.get($spacers, 2\.5);
     margin-bottom: 0;
   }
 }
