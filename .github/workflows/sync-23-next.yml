@@ -1,0 +1,30 @@
+name: Sync next with 23.x
+on:
+  push:
+    branches:
+      - release-23.x
+  workflow_dispatch:
+
+jobs:
+  sync-branches:
+    runs-on: ubuntu-latest
+    name: Syncing branches
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+      - name: Create Pull Request
+        id: cpr
+        uses: tretuna/sync-branches@1.4.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.requirements_bot_github_token }}
+          FROM_BRANCH: release-23.x
+          TO_BRANCH: next
+      - name: Enable Pull Request Automerge
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          token: ${{ secrets.requirements_bot_github_token }}
+          pull-request-number: ${{ steps.cpr.outputs.PULL_REQUEST_NUMBER }}
