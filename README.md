@@ -123,6 +123,14 @@ Note that if you are using ``@edx/frontend-platform``'s ``AppProvider`` componen
 
 ## Contributing
 
+The branch to target with your PR depends on the type of change you are contributing to Paragon.
+
+| Branch to Target | Type of Change | Documentation Site |
+| - | - | - |
+| [`release-22.x`](https://github.com/openedx/paragon/tree/release-22.x) | Bug fix/security patch | https://paragon-openedx-v22.netlify.app/ |
+| [`release-23.x`](https://github.com/openedx/paragon/tree/release-23.x) | Bug fix/security patch/new (non-breaking) feature | https://paragon-openedx-v23.netlify.app/ |
+| [`next`](https://github.com/openedx/paragon/tree/next) | Breaking change | https://paragon-openedx.netlify.app/ |
+
 Please refer to the ["How to Contribute"](https://openedx.org/r/how-to-contribute) documentation and [Code of Conduct](https://openedx.org/code-of-conduct/) from Open edX.
 
 The Paragon Working Group accepts bug fixes, new features, documentation, and security patches. You may find open issues [here](https://github.com/openedx/paragon/issues) or by visiting the Paragon Working Group [project board](https://github.com/orgs/openedx/projects/43/views/15).
@@ -462,11 +470,6 @@ perf(pencil): remove graphiteWidth option
 
 BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite width of 10mm is always used for performance reason.
 ```
-
-#### Opening Pull Requests for Breaking Changes
-
-Pull requests that include Breaking Changes must be opened against the `next` branch instead of `release-x.x`.
-This ensures that breaking changes are accumulated and released together in the next major version, minimizing disruption for consumers.
 
 ## Treeshaking
 
