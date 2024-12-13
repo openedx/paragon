@@ -58,6 +58,30 @@ module.exports = {
     }],
     'no-param-reassign': [2, { props: false }],
   },
+  overrides: [
+    {
+      files: ['**/*.json'],
+      parser: 'jsonc-eslint-parser',
+      extends: ['plugin:jsonc/recommended-with-json'],
+      rules: {
+        'jsonc/indent': ['error', 2],
+        'jsonc/quote-props': ['error', 'always'],
+        'jsonc/quotes': ['error', 'double'],
+        'jsonc/no-octal': 'error',
+        'jsonc/no-dupe-keys': 'error',
+        'jsonc/valid-json-number': 'error',
+        'jsonc/no-bigint-literals': 'error',
+        'jsonc/no-comments': 'off',
+        // Disabled @typescript-eslint rules for JSON files as they contain plain data structures
+        // unrelated to TypeScript syntax, semantics, or runtime behavior.
+        '@typescript-eslint/naming-convention': 'off',
+        '@typescript-eslint/dot-notation': 'off',
+        '@typescript-eslint/no-implied-eval': 'off',
+        '@typescript-eslint/no-throw-literal': 'off',
+        '@typescript-eslint/return-await': 'off',
+      },
+    },
+  ],
   env: {
     jest: true,
   },
