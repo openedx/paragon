@@ -3,16 +3,25 @@
     "$type": "dimension",
     "dropzone": {
       "restriction-msg": {
-        "font-size": { "source": "$dropzone-restriction-msg-font-size", "$value": "{typography.font.size.xs}" }
+        "font-size": {
+          "$value": "{typography.font.size.xs}",
+          "source": "$dropzone-restriction-msg-font-size"
+        }
       }
     }
   },
   "spacing": {
     "$type": "dimension",
     "dropzone": {
-      "padding": { "source": "$dropzone-padding", "$value": "1.5rem" },
+      "padding": {
+        "$value": "1.5rem",
+        "source": "$dropzone-padding"
+      },
       "border": {
-        "base": { "source": "$dropzone-border-default", "$value": "1px" }
+        "base": {
+          "$value": "1px",
+          "source": "$dropzone-border-default"
+        }
       }
     }
   }

@@ -3,14 +3,25 @@
     "$type": "color",
     "modal": {
       "content": {
-        "bg": { "source": "$modal-content-bg", "$value": "{color.bg.base}" },
+        "bg": {
+          "$value": "{color.bg.base}",
+          "source": "$modal-content-bg"
+        },
         "border": {
-          "source": "$modal-content-border-color",
-          "modify": [{ "type": "alpha", "amount": 0.2 }],
-          "$value": "{color.black}"
+          "$value": "{color.black}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.2
+            }
+          ],
+          "source": "$modal-content-border-color"
         }
       },
-      "backdrop-bg": { "source": "$modal-backdrop-bg", "$value": "{color.black}" }
+      "backdrop-bg": {
+        "$value": "{color.black}",
+        "source": "$modal-backdrop-bg"
+      }
     }
   },
   "elevation": {
@@ -19,7 +30,6 @@
       "content": {
         "box-shadow": {
           "sm-up": {
-            "source": "$modal-content-box-shadow-sm-up",
             "$value": [
               {
                 "color": "rgba(0, 0, 0, .15)",
@@ -33,7 +43,8 @@
                 "offsetY": "8px",
                 "blur": "20px"
               }
-            ]
+            ],
+            "source": "$modal-content-box-shadow-sm-up"
           }
         }
       }
@@ -41,7 +52,10 @@
   },
   "other": {
     "modal": {
-      "opacity": { "source": "$modal-backdrop-opacity", "$value": ".5" }
+      "opacity": {
+        "$value": ".5",
+        "source": "$modal-backdrop-opacity"
+      }
     }
   }
 }

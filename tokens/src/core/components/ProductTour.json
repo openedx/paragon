@@ -4,13 +4,28 @@
     "product-tour": {
       "checkpoint": {
         "width": {
-          "border": { "source": "$checkpoint-border-width", "$value": "8px" },
-          "arrow": { "source": "$checkpoint-arrow-width", "$value": "15px" },
-          "max": { "source": "$checkpoint-max-width", "$value": "480px" }
+          "border": {
+            "$value": "8px",
+            "source": "$checkpoint-border-width"
+          },
+          "arrow": {
+            "$value": "15px",
+            "source": "$checkpoint-arrow-width"
+          },
+          "max": {
+            "$value": "480px",
+            "source": "$checkpoint-max-width"
+          }
         },
         "arrow": {
-          "top": { "source": "$checkpoint-arrow-border-top", "$value": "{size.product-tour.checkpoint.width.arrow}" },
-          "transparent": { "source": "$checkpoint-arrow-border-transparent", "$value": "{size.product-tour.checkpoint.width.arrow}" }
+          "top": {
+            "$value": "{size.product-tour.checkpoint.width.arrow}",
+            "source": "$checkpoint-arrow-border-top"
+          },
+          "transparent": {
+            "$value": "{size.product-tour.checkpoint.width.arrow}",
+            "source": "$checkpoint-arrow-border-transparent"
+          }
         }
       }
     }
@@ -19,7 +34,10 @@
     "$type": "number",
     "product-tour": {
       "checkpoint": {
-        "zindex": { "source": "$checkpoint-z-index", "$value": "1060" }
+        "zindex": {
+          "$value": "1060",
+          "source": "$checkpoint-z-index"
+        }
       }
     }
   }

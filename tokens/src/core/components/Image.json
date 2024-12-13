@@ -3,7 +3,10 @@
     "$type": "percentage",
     "image": {
       "figure-caption": {
-        "font-size": { "source": "$figure-caption-font-size", "$value": "90%" }
+        "font-size": {
+          "$value": "90%",
+          "source": "$figure-caption-font-size"
+        }
       }
     }
   },
@@ -12,8 +15,14 @@
     "image": {
       "thumbnail": {
         "border": {
-          "width": { "source": "$thumbnail-border-width", "$value": "{size.border.width}" },
-          "radius": { "source": "$thumbnail-border-radius", "$value": "{size.border.radius.base}" }
+          "width": {
+            "$value": "{size.border.width}",
+            "source": "$thumbnail-border-width"
+          },
+          "radius": {
+            "$value": "{size.border.radius.base}",
+            "source": "$thumbnail-border-radius"
+          }
         }
       }
     }
@@ -22,7 +31,10 @@
     "$type": "dimension",
     "image": {
       "thumbnail": {
-        "padding": { "source": "$thumbnail-padding", "$value": ".25rem" }
+        "padding": {
+          "$value": ".25rem",
+          "source": "$thumbnail-padding"
+        }
       }
     }
   }

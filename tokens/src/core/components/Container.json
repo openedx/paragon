@@ -3,11 +3,26 @@
     "$type": "dimension",
     "container": {
       "max-width": {
-        "xs": { "source": "$max-width-xs", "$value": "464px" },
-        "sm": { "source": "$max-width-sm", "$value": "708px" },
-        "md": { "source": "$max-width-md", "$value": "952px" },
-        "lg": { "source": "$max-width-lg", "$value": "1192px" },
-        "xl": { "source": "$max-width-xl", "$value": "1440px" }
+        "xs": {
+          "$value": "464px",
+          "source": "$max-width-xs"
+        },
+        "sm": {
+          "$value": "708px",
+          "source": "$max-width-sm"
+        },
+        "md": {
+          "$value": "952px",
+          "source": "$max-width-md"
+        },
+        "lg": {
+          "$value": "1192px",
+          "source": "$max-width-lg"
+        },
+        "xl": {
+          "$value": "1440px",
+          "source": "$max-width-xl"
+        }
       }
     }
   }

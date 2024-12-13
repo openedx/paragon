@@ -2,7 +2,10 @@
   "color": {
     "$type": "color",
     "headings": {
-      "base": { "source": "$headings-color", "$value": "{color.black}" }
+      "base": {
+        "$value": "{color.black}",
+        "source": "$headings-color"
+      }
     }
   }
 }

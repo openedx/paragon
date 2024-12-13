@@ -3,8 +3,14 @@
     "$type": "number",
     "sheet": {
       "zindex": {
-        "backdrop": { "source": "$zindex-sheet-backdrop", "$value": "1031" },
-        "main": { "source": "$zindex-sheet", "$value": "1032" }
+        "backdrop": {
+          "$value": "1031",
+          "source": "$zindex-sheet-backdrop"
+        },
+        "main": {
+          "$value": "1032",
+          "source": "$zindex-sheet"
+        }
       }
     }
   }

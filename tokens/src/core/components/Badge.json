@@ -4,18 +4,35 @@
     "badge": {
       "padding": {
         "x": {
-          "base": { "source": "$badge-padding-x", "$value": ".5rem" },
-          "pill": { "source": "$badge-pill-padding-x", "$value": ".6em" }
+          "base": {
+            "$value": ".5rem",
+            "source": "$badge-padding-x"
+          },
+          "pill": {
+            "$value": ".6em",
+            "source": "$badge-pill-padding-x"
+          }
         },
-        "y": { "source": "$badge-padding-y", "$value": ".125rem" }
+        "y": {
+          "$value": ".125rem",
+          "source": "$badge-padding-y"
+        }
       }
     }
   },
   "typography": {
     "badge": {
       "font": {
-        "size": { "source": "$badge-font-size", "$value": "75%", "$type": "percentage" },
-        "weight": { "source": "$badge-font-weight", "$value": "{typography.font.weight.bold}", "$type": "fontWeight" }
+        "size": {
+          "$type": "percentage",
+          "$value": "75%",
+          "source": "$badge-font-size"
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{typography.font.weight.bold}",
+          "source": "$badge-font-weight"
+        }
       }
     }
   },
@@ -23,14 +40,26 @@
     "$type": "dimension",
     "badge": {
       "border-radius": {
-        "base": { "source": "$badge-border-radius", "$value": ".25rem" },
-        "pill": { "source": "$badge-pill-border-radius", "$value": "10rem" }
+        "base": {
+          "$value": ".25rem",
+          "source": "$badge-border-radius"
+        },
+        "pill": {
+          "$value": "10rem",
+          "source": "$badge-pill-border-radius"
+        }
       },
-      "focus-width": { "source": "$badge-focus-width", "$value": "{size.input.btn.focus-width}" }
+      "focus-width": {
+        "$value": "{size.input.btn.focus-width}",
+        "source": "$badge-focus-width"
+      }
     }
   },
   "transition": {
     "$type": "transition",
-    "badge": { "source": "$badge-transition", "$value": "none" }
+    "badge": {
+      "$value": "none",
+      "source": "$badge-transition"
+    }
   }
 }

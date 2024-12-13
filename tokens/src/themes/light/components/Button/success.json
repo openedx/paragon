@@ -4,306 +4,345 @@
     "btn": {
       "text": {
         "success": {
-          "source": "$btn-success-color",
-          "modify": [{ "type": "color-yiq" }],
-          "$value": "{color.btn.bg.success}"
+          "$value": "{color.btn.bg.success}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$btn-success-color"
         },
         "outline-success": {
-          "source": "$btn-success-outline-color",
-          "$value": "{color.success.base}"
+          "$value": "{color.success.base}",
+          "source": "$btn-success-outline-color"
         },
         "inverse-success": {
-          "source": "$btn-success-inverse-color",
-          "$value": "{color.success.base}"
+          "$value": "{color.success.base}",
+          "source": "$btn-success-inverse-color"
         },
         "inverse-outline-success": {
-          "source": "$btn-success-inverse-outline-color",
-          "$value": "{color.white}"
+          "$value": "{color.white}",
+          "source": "$btn-success-inverse-outline-color"
         }
       },
       "bg": {
         "success": {
-          "source": "$btn-success-bg",
-          "$value": "{color.success.base}"
+          "$value": "{color.success.base}",
+          "source": "$btn-success-bg"
         },
         "outline-success": {
-          "source": "$btn-success-outline-bg",
-          "$value": "inherit"
+          "$value": "inherit",
+          "source": "$btn-success-outline-bg"
         },
         "inverse-success": {
-          "source": "$btn-success-inverse-bg",
-          "modify": [{ "type": "color-yiq" }],
-          "$value": "{color.btn.text.inverse-success}"
+          "$value": "{color.btn.text.inverse-success}",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ],
+          "source": "$btn-success-inverse-bg"
         },
         "inverse-outline-success": {
-          "source": "$btn-success-inverse-outline-bg",
-          "$value": "inherit"
+          "$value": "inherit",
+          "source": "$btn-success-inverse-outline-bg"
         }
       },
       "border": {
         "success": {
-          "source": "$btn-success-border-color",
-          "$value": "{color.btn.bg.success}"
+          "$value": "{color.btn.bg.success}",
+          "source": "$btn-success-border-color"
         },
         "outline-success": {
-          "source": "$btn-success-outline-border-color",
-          "$value": "{color.success.base}"
+          "$value": "{color.success.base}",
+          "source": "$btn-success-outline-border-color"
         },
         "inverse-success": {
-          "source": "$btn-success-inverse-border-color",
-          "$value": "transparent"
+          "$value": "transparent",
+          "source": "$btn-success-inverse-border-color"
         },
         "inverse-outline-success": {
-          "source": "$btn-success-inverse-outline-border-color",
-          "$value": "{color.white}"
+          "$value": "{color.white}",
+          "source": "$btn-success-inverse-outline-border-color"
         }
       },
       "hover": {
         "text": {
           "success": {
-            "source": "$btn-success-hover-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.hover.bg.success}"
+            "$value": "{color.btn.hover.bg.success}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-success-hover-color"
           },
           "outline-success": {
-            "source": "$btn-success-outline-hover-color",
-            "$value": "{color.theme.hover.success}"
+            "$value": "{color.theme.hover.success}",
+            "source": "$btn-success-outline-hover-color"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-hover-color",
-            "modify": [{ "type": "darken", "amount": 0.075 }],
-            "$value": "{color.btn.text.inverse-success}"
+            "$value": "{color.btn.text.inverse-success}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.075
+              }
+            ],
+            "source": "$btn-success-inverse-hover-color"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-hover-color",
-            "$value": "{color.theme.hover.success}"
+            "$value": "{color.theme.hover.success}",
+            "source": "$btn-success-inverse-outline-hover-color"
           }
         },
         "bg": {
           "success": {
-            "source": "$btn-success-hover-bg",
-            "$value": "{color.theme.hover.success}"
+            "$value": "{color.theme.hover.success}",
+            "source": "$btn-success-hover-bg"
           },
           "outline-success": {
-            "source": "$btn-success-outline-hover-bg",
-            "$value": "{color.success.100}"
+            "$value": "{color.success.100}",
+            "source": "$btn-success-outline-hover-bg"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-hover-bg",
-            "modify": [{ "type": "darken", "amount": 0.075 }],
-            "$value": "{color.btn.bg.inverse-success}"
+            "$value": "{color.btn.bg.inverse-success}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.075
+              }
+            ],
+            "source": "$btn-success-inverse-hover-bg"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-hover-bg",
-            "$value": "{color.success.100}"
+            "$value": "{color.success.100}",
+            "source": "$btn-success-inverse-outline-hover-bg"
           }
         },
         "border": {
           "success": {
-            "source": "$btn-success-hover-border-color",
-            "$value": "{color.theme.hover.success}"
+            "$value": "{color.theme.hover.success}",
+            "source": "$btn-success-hover-border-color"
           },
           "outline-success": {
-            "source": "$btn-success-outline-hover-border-color",
-            "$value": "{color.success.900}"
+            "$value": "{color.success.900}",
+            "source": "$btn-success-outline-hover-border-color"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-hover-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-success-inverse-hover-border-color"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-hover-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-success-inverse-outline-hover-border-color"
           }
         }
       },
       "active": {
         "text": {
           "success": {
-            "source": "$btn-success-active-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.active.bg.success}"
+            "$value": "{color.btn.active.bg.success}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-success-active-color"
           },
           "outline-success": {
-            "source": "$btn-success-outline-active-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.active.bg.outline-success}"
+            "$value": "{color.btn.active.bg.outline-success}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-success-outline-active-color"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-active-color",
-            "modify": [{ "type": "darken", "amount": 0.1 }],
-            "$value": "{color.btn.text.inverse-success}"
+            "$value": "{color.btn.text.inverse-success}",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "source": "$btn-success-inverse-active-color"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-active-color",
-            "modify": [{ "type": "color-yiq" }],
-            "$value": "{color.btn.active.bg.inverse-outline-success}"
+            "$value": "{color.btn.active.bg.inverse-outline-success}",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "source": "$btn-success-inverse-outline-active-color"
           }
         },
         "bg": {
           "success": {
-            "source": "$btn-success-active-bg",
-            "$value": "{color.theme.active.success}"
+            "$value": "{color.theme.active.success}",
+            "source": "$btn-success-active-bg"
           },
           "outline-success": {
-            "source": "$btn-success-outline-active-bg",
-            "$value": "{color.theme.bg.success}"
+            "$value": "{color.theme.bg.success}",
+            "source": "$btn-success-outline-active-bg"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-active-bg",
-            "$value": "{color.gray.100}"
+            "$value": "{color.gray.100}",
+            "source": "$btn-success-inverse-active-bg"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-active-bg",
-            "$value": "{color.theme.bg.success}"
+            "$value": "{color.theme.bg.success}",
+            "source": "$btn-success-inverse-outline-active-bg"
           }
         },
         "border": {
           "success": {
-            "source": "$btn-success-active-border-color",
-            "$value": "{color.theme.active.success}"
+            "$value": "{color.theme.active.success}",
+            "source": "$btn-success-active-border-color"
           },
           "outline-success": {
-            "source": "$btn-success-outline-active-border-color",
-            "$value": "{color.theme.active.success}"
+            "$value": "{color.theme.active.success}",
+            "source": "$btn-success-outline-active-border-color"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-active-border-color",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-success-inverse-active-border-color"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-active-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-success-inverse-outline-active-border-color"
           }
         }
       },
       "focus": {
         "text": {
           "success": {
-            "source": "$btn-success-focus-color",
-            "$value": "{color.btn.text.success}"
+            "$value": "{color.btn.text.success}",
+            "source": "$btn-success-focus-color"
           },
           "outline-success": {
-            "source": "$btn-success-outline-focus-color",
-            "$value": "{color.btn.text.outline-success}"
+            "$value": "{color.btn.text.outline-success}",
+            "source": "$btn-success-outline-focus-color"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-focus-color",
-            "$value": "{color.btn.text.inverse-success}"
+            "$value": "{color.btn.text.inverse-success}",
+            "source": "$btn-success-inverse-focus-color"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-focus-color",
-            "$value": "{color.btn.text.inverse-outline-success}"
+            "$value": "{color.btn.text.inverse-outline-success}",
+            "source": "$btn-success-inverse-outline-focus-color"
           }
         },
         "border": {
           "success": {
-            "source": "$btn-success-focus-border-color",
-            "$value": "{color.btn.border.success}"
+            "$value": "{color.btn.border.success}",
+            "source": "$btn-success-focus-border-color"
           },
           "outline-success": {
-            "source": "$btn-success-outline-focus-border-color",
-            "$value": "{color.btn.border.outline-success}"
+            "$value": "{color.btn.border.outline-success}",
+            "source": "$btn-success-outline-focus-border-color"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-focus-border-color",
-            "$value": "{color.white}"
+            "$value": "{color.white}",
+            "source": "$btn-success-inverse-focus-border-color"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-focus-border-color",
-            "$value": "{color.btn.border.inverse-outline-success}"
+            "$value": "{color.btn.border.inverse-outline-success}",
+            "source": "$btn-success-inverse-outline-focus-border-color"
           }
         },
         "bg": {
           "success": {
-            "source": "$btn-success-focus-bg",
-            "$value": "{color.btn.bg.success}"
+            "$value": "{color.btn.bg.success}",
+            "source": "$btn-success-focus-bg"
           },
           "outline-success": {
-            "source": "$btn-success-outline-focus-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-success-outline-focus-bg"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-focus-bg",
-            "$value": "{color.btn.bg.inverse-success}"
+            "$value": "{color.btn.bg.inverse-success}",
+            "source": "$btn-success-inverse-focus-bg"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-focus-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-success-inverse-outline-focus-bg"
           }
         },
         "outline": {
           "success": {
-            "source": "$btn-success-focus-outline-color",
-            "$value": "{color.theme.focus.success}"
+            "$value": "{color.theme.focus.success}",
+            "source": "$btn-success-focus-outline-color"
           },
           "outline-success": {
-            "source": "$btn-success-outline-focus-outline-color",
-            "$value": "{color.theme.focus.success}"
+            "$value": "{color.theme.focus.success}",
+            "source": "$btn-success-outline-focus-outline-color"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-focus-outline-color",
-            "$value": "{color.btn.focus.border.inverse-success}"
+            "$value": "{color.btn.focus.border.inverse-success}",
+            "source": "$btn-success-inverse-focus-outline-color"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-focus-outline-color",
-            "$value": "{color.btn.focus.border.inverse-outline-success}"
+            "$value": "{color.btn.focus.border.inverse-outline-success}",
+            "source": "$btn-success-inverse-outline-focus-outline-color"
           }
         }
       },
       "disabled": {
         "text": {
           "success": {
-            "source": "$btn-success-disabled-color",
-            "$value": "{color.btn.text.success}"
+            "$value": "{color.btn.text.success}",
+            "source": "$btn-success-disabled-color"
           },
           "outline-success": {
-            "source": "$btn-success-outline-disabled-color",
-            "$value": "{color.btn.text.outline-success}"
+            "$value": "{color.btn.text.outline-success}",
+            "source": "$btn-success-outline-disabled-color"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-disabled-color",
-            "$value": "{color.success.base}"
+            "$value": "{color.success.base}",
+            "source": "$btn-success-inverse-disabled-color"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-disabled-color",
-            "$value": "{color.btn.text.inverse-outline-success}"
+            "$value": "{color.btn.text.inverse-outline-success}",
+            "source": "$btn-success-inverse-outline-disabled-color"
           }
         },
         "bg": {
           "success": {
-            "source": "$btn-success-disabled-bg",
-            "$value": "{color.btn.bg.success}"
+            "$value": "{color.btn.bg.success}",
+            "source": "$btn-success-disabled-bg"
           },
           "outline-success": {
-            "source": "$btn-success-outline-disabled-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-success-outline-disabled-bg"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-disabled-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-success-inverse-disabled-bg"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-disabled-bg",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-success-inverse-outline-disabled-bg"
           }
         },
         "border": {
           "success": {
-            "source": "$btn-success-disabled-border-color",
-            "$value": "{color.btn.border.success}"
+            "$value": "{color.btn.border.success}",
+            "source": "$btn-success-disabled-border-color"
           },
           "outline-success": {
-            "source": "$btn-success-outline-disabled-border-color",
-            "$value": "{color.btn.border.outline-success}"
+            "$value": "{color.btn.border.outline-success}",
+            "source": "$btn-success-outline-disabled-border-color"
           },
           "inverse-success": {
-            "source": "$btn-success-inverse-disabled-border-color",
-            "$value": "transparent"
+            "$value": "transparent",
+            "source": "$btn-success-inverse-disabled-border-color"
           },
           "inverse-outline-success": {
-            "source": "$btn-success-inverse-outline-disabled-border-color",
-            "$value": "inherit"
+            "$value": "inherit",
+            "source": "$btn-success-inverse-outline-disabled-border-color"
           }
         }
       }

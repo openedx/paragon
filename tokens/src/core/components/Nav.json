@@ -2,8 +2,15 @@
   "typography": {
     "nav": {
       "link": {
-        "font-weight": { "source": "$nav-link-font-weight", "$value": "500", "$type": "fontWeight" },
-        "text-decoration": { "$value": "none", "$type": "textDecoration" }
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "500",
+          "source": "$nav-link-font-weight"
+        },
+        "text-decoration": {
+          "$type": "textDecoration",
+          "$value": "none"
+        }
       }
     }
   },
@@ -11,26 +18,47 @@
     "$type": "dimension",
     "nav": {
       "pills": {
-        "border-radius": { "source": "$nav-pills-border-radius", "$value": "{size.border.radius.base}" },
+        "border-radius": {
+          "$value": "{size.border.radius.base}",
+          "source": "$nav-pills-border-radius"
+        },
         "link": {
-          "border-width": { "source": "$nav-pills-link-border-width", "$value": "1px" }
+          "border-width": {
+            "$value": "1px",
+            "source": "$nav-pills-link-border-width"
+          }
         },
         "inverse-link": {
-          "border-width": { "source": "$nav-inverse-pills-link-border-width", "$value": "{size.nav.pills.link.border-width}" }
+          "border-width": {
+            "$value": "{size.nav.pills.link.border-width}",
+            "source": "$nav-inverse-pills-link-border-width"
+          }
         }
       },
       "tabs": {
         "link": {
           "border-bottom": {
-            "width": { "source": "$nav-tabs-link-border-bottom-width", "$value": ".188rem" }
+            "width": {
+              "$value": ".188rem",
+              "source": "$nav-tabs-link-border-bottom-width"
+            }
           }
         },
         "inverse-link": {
-          "active-border-bottom-width": { "source": "$nav-inverse-tabs-link-active-border-bottom-width", "$value": "{size.nav.tabs.link.border-bottom.width}" }
+          "active-border-bottom-width": {
+            "$value": "{size.nav.tabs.link.border-bottom.width}",
+            "source": "$nav-inverse-tabs-link-active-border-bottom-width"
+          }
         },
         "border": {
-          "width": { "source": "$nav-tabs-border-width", "$value": "2px" },
-          "radius": { "source": "$nav-tabs-border-radius", "$value": "0" }
+          "width": {
+            "$value": "2px",
+            "source": "$nav-tabs-border-width"
+          },
+          "radius": {
+            "$value": "0",
+            "source": "$nav-tabs-border-radius"
+          }
         }
       }
     }
@@ -40,10 +68,19 @@
     "nav": {
       "link": {
         "padding": {
-          "y": { "source": "$nav-link-padding-y", "$value": ".5rem" },
-          "x": { "source": "$nav-link-padding-x", "$value": "1rem" }
+          "y": {
+            "$value": ".5rem",
+            "source": "$nav-link-padding-y"
+          },
+          "x": {
+            "$value": "1rem",
+            "source": "$nav-link-padding-x"
+          }
         },
-        "distance-to-border": { "source": "$nav-tabs-link-distance-to-border", "$value": "4px" }
+        "distance-to-border": {
+          "$value": "4px",
+          "source": "$nav-tabs-link-distance-to-border"
+        }
       }
     }
   }

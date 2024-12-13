@@ -2,7 +2,10 @@
   "spacing": {
     "$type": "dimension",
     "sticky": {
-      "offset": { "source": "$sticky-offset", "$value": "0" }
+      "offset": {
+        "$value": "0",
+        "source": "$sticky-offset"
+      }
     }
   }
 }
