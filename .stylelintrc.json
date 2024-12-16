@@ -31,6 +31,10 @@
       "ignoreProperties": ["xs", "sm", "md", "lg", "xl", "xxl"]
     }],
     "alpha-value-notation": "number",
-    "color-function-notation": "legacy"
+    "color-function-notation": "legacy",
+    "value-keyword-case": ["lower", {
+      "ignoreProperties": ["/font-family/"]
+    }],
+    "custom-property-empty-line-before": null
   }
 }

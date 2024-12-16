@@ -1,5 +1,3 @@
-@import "variables";
-
 .pgn__chip-carousel {
   position: relative;
 
@@ -11,7 +9,9 @@
     &.pgn__chip-carousel-gap__#{$level} {
       .pgn__overflow-scroll-overflow-container {
         column-gap: $space;
-        padding: $chip-carousel-container-padding-x $chip-carousel-container-padding-y;
+        padding:
+          var(--pgn-spacing-chip-carousel-container-padding-x)
+          var(--pgn-spacing-chip-carousel-container-padding-y);
       }
     }
   }
@@ -20,7 +20,7 @@
   .pgn__chip-carousel__left-control {
     position: absolute;
     z-index: 2;
-    top: $chip-carousel-controls-top-offset;
+    top: var(--pgn-spacing-chip-carousel-controls-top-offset);
   }
 
   .pgn__chip-carousel__right-control {

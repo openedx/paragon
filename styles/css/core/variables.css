@@ -1,0 +1,667 @@
+/**
+ * Do not edit directly, this file was auto-generated. while transforming design tokens.
+ * See <root>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-theme-interval: 8%;
+  --pgn-other-form-control-custom-file-content: Browse;
+  --pgn-other-form-control-custom-file-lang: en;
+  --pgn-other-form-control-range-track-cursor: pointer;
+  --pgn-other-form-control-cursor: auto;
+  --pgn-elevation-zindex-fixed: 1030; /* z-index of for fixed element. */
+  --pgn-elevation-zindex-sticky: 1020; /* z-index for sticky element. */
+  --pgn-elevation-zindex-2000: 2000; /* z-index of level 2000. */
+  --pgn-elevation-zindex-1800: 1800; /* z-index of level 1800. */
+  --pgn-elevation-zindex-1600: 1600; /* z-index of level 1600. */
+  --pgn-elevation-zindex-1400: 1400; /* z-index of level 1400. */
+  --pgn-elevation-zindex-1200: 1200; /* z-index of level 1200. */
+  --pgn-elevation-zindex-1000: 1000; /* z-index of level 1000. */
+  --pgn-elevation-zindex-800: 800; /* z-index of level 800. */
+  --pgn-elevation-zindex-600: 600; /* z-index of level 600. */
+  --pgn-elevation-zindex-400: 400; /* z-index of level 400. */
+  --pgn-elevation-zindex-200: 200; /* z-index of level 200. */
+  --pgn-elevation-zindex-0: 0; /* z-index of level 0. */
+  --pgn-elevation-tooltip-zindex: 1070;
+  --pgn-elevation-sheet-zindex-main: 1032;
+  --pgn-elevation-sheet-zindex-backdrop: 1031;
+  --pgn-elevation-product-tour-checkpoint-zindex: 1060;
+  --pgn-elevation-popover-zindex: 1060;
+  --pgn-elevation-modal-zindex: 1050;
+  --pgn-elevation-modal-backdrop-zindex: 1040;
+  --pgn-elevation-dropdown-zindex: 1000;
+  --pgn-transition-collapse-width-behavior: normal; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-width-delay: 0s; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-width-timing-function: ease; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-width-duration: 0.35s; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-width-property: width; /* Collapse transition for width that takes 350ms */
+  --pgn-transition-collapse-height-behavior: normal; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-collapse-height-delay: 0s; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-collapse-height-timing-function: ease; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-collapse-height-duration: 0.35s; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-collapse-height-property: height; /* Collapse transition for height that takes 350ms */
+  --pgn-transition-fade-behavior: normal; /* Opacity transition that takes 150ms */
+  --pgn-transition-fade-delay: 0s; /* Opacity transition that takes 150ms */
+  --pgn-transition-fade-timing-function: linear; /* Opacity transition that takes 150ms */
+  --pgn-transition-fade-duration: 0.15s; /* Opacity transition that takes 150ms */
+  --pgn-transition-fade-property: opacity; /* Opacity transition that takes 150ms */
+  --pgn-transition-base-behavior: normal; /* Generic transition for any property change */
+  --pgn-transition-base-delay: 0s; /* Generic transition for any property change */
+  --pgn-transition-base-timing-function: ease-in-out; /* Generic transition for any property change */
+  --pgn-transition-base-duration: 0.2s; /* Generic transition for any property change */
+  --pgn-transition-base-property: all; /* Generic transition for any property change */
+  --pgn-transition-progress-bar-transition-behavior: normal;
+  --pgn-transition-progress-bar-transition-delay: 0s;
+  --pgn-transition-progress-bar-transition-timing-function: ease;
+  --pgn-transition-progress-bar-transition-duration: 0.6s;
+  --pgn-transition-progress-bar-transition-property: width;
+  --pgn-transition-progress-bar-animation-timing-iteration-count: infinite;
+  --pgn-transition-progress-bar-animation-timing-delay: 0s;
+  --pgn-transition-progress-bar-animation-timing-timing-function: linear;
+  --pgn-transition-progress-bar-animation-timing-duration: 1s;
+  --pgn-transition-form-control-3-behavior: normal;
+  --pgn-transition-form-control-3-delay: 0s;
+  --pgn-transition-form-control-3-timing-function: ease-in-out;
+  --pgn-transition-form-control-3-duration: 0.15s;
+  --pgn-transition-form-control-3-property: box-shadow;
+  --pgn-transition-form-control-2-behavior: normal;
+  --pgn-transition-form-control-2-delay: 0s;
+  --pgn-transition-form-control-2-timing-function: ease-in-out;
+  --pgn-transition-form-control-2-duration: 0.15s;
+  --pgn-transition-form-control-2-property: border-color;
+  --pgn-transition-form-control-1-behavior: normal;
+  --pgn-transition-form-control-1-delay: 0s;
+  --pgn-transition-form-control-1-timing-function: ease-in-out;
+  --pgn-transition-form-control-1-duration: 0.15s;
+  --pgn-transition-form-control-1-property: background-color;
+  --pgn-transition-form-input-2-behavior: normal;
+  --pgn-transition-form-input-2-delay: 0s;
+  --pgn-transition-form-input-2-timing-function: ease-in-out;
+  --pgn-transition-form-input-2-duration: 0.15s;
+  --pgn-transition-form-input-2-property: box-shadow;
+  --pgn-transition-form-input-1-behavior: normal;
+  --pgn-transition-form-input-1-delay: 0s;
+  --pgn-transition-form-input-1-timing-function: ease-in-out;
+  --pgn-transition-form-input-1-duration: 0.15s;
+  --pgn-transition-form-input-1-property: border-color;
+  --pgn-transition-carousel-control-behavior: normal;
+  --pgn-transition-carousel-control-delay: 0ms;
+  --pgn-transition-carousel-control-timing-function: ease;
+  --pgn-transition-carousel-control-duration: 0.15s;
+  --pgn-transition-carousel-control-property: opacity;
+  --pgn-transition-carousel-indicator-behavior: normal;
+  --pgn-transition-carousel-indicator-delay: 0ms;
+  --pgn-transition-carousel-indicator-timing-function: ease;
+  --pgn-transition-carousel-indicator-duration: var(--pgn-transition-carousel-duration);
+  --pgn-transition-carousel-indicator-property: opacity;
+  --pgn-transition-carousel-duration: 0.6s;
+  --pgn-transition-carousel-base-behavior: normal;
+  --pgn-transition-carousel-base-delay: 0ms;
+  --pgn-transition-carousel-base-timing-function: ease-in-out;
+  --pgn-transition-carousel-base-duration: var(--pgn-transition-carousel-duration);
+  --pgn-transition-carousel-base-property: transform;
+  --pgn-transition-btn: none;
+  --pgn-transition-badge: none;
+  --pgn-typography-print-page-size: a3;
+  --pgn-typography-line-height-display-mobile: 3.5rem; /* Mobile display line height. */
+  --pgn-typography-line-height-display-base: 1; /* Standard display line height. */
+  --pgn-typography-line-height-micro: 0.938rem; /* Micro utils line height. */
+  --pgn-typography-line-height-sm: 1.5; /* Small line height. */
+  --pgn-typography-line-height-lg: 1.5; /* Large line height. */
+  --pgn-typography-line-height-base: 1.5556; /* Basic line height. */
+  --pgn-typography-font-weight-display-4: var(--pgn-typography-font-weight-bold); /* Font weight of display level 4. */
+  --pgn-typography-font-weight-display-3: var(--pgn-typography-font-weight-bold); /* Font weight of display level 3. */
+  --pgn-typography-font-weight-display-2: var(--pgn-typography-font-weight-bold); /* Font weight of display level 2. */
+  --pgn-typography-font-weight-display-1: var(--pgn-typography-font-weight-bold); /* Font weight of display level 1. */
+  --pgn-typography-font-weight-table-th: 700; /* Table th font weight. */
+  --pgn-typography-font-weight-lead: inherit; /* Lead text font weight. */
+  --pgn-typography-font-weight-base: var(--pgn-typography-font-weight-normal); /* Basic font weight. */
+  --pgn-typography-font-weight-bolder: bolder; /* Bolder font weight. */
+  --pgn-typography-font-weight-bold: 700; /* Bold font weight. */
+  --pgn-typography-font-weight-semi-bold: 500; /* Semi-bold font weight. */
+  --pgn-typography-font-weight-normal: 400; /* Normal font weight. */
+  --pgn-typography-font-weight-light: 300; /* Light font weight. */
+  --pgn-typography-font-weight-lighter: lighter; /* Lighter font weight. */
+  --pgn-typography-font-size-display-mobile-4: var(--pgn-typography-font-size-display-mobile-1); /* Mobile font size for heading of level 4. */
+  --pgn-typography-font-size-display-mobile-3: var(--pgn-typography-font-size-display-mobile-1); /* Mobile font size for heading of level 3. */
+  --pgn-typography-font-size-display-mobile-2: var(--pgn-typography-font-size-display-mobile-1); /* Mobile font size for heading of level 2. */
+  --pgn-typography-font-size-display-mobile-1: 3.25rem; /* Mobile font size for heading of level 1. */
+  --pgn-typography-font-size-display-4: 7.5rem; /* Font size for heading of level 4. */
+  --pgn-typography-font-size-display-3: 5.625rem; /* Font size for heading of level 3. */
+  --pgn-typography-font-size-display-2: 4.875rem; /* Font size for heading of level 2. */
+  --pgn-typography-font-size-display-1: 3.75rem; /* Font size for heading of level 1. */
+  --pgn-typography-font-size-h6-mobile: var(--pgn-typography-font-size-h6-base); /* Mobile font size of heading level 6. */
+  --pgn-typography-font-size-h6-base: 0.75rem; /* Font size of heading level 6. */
+  --pgn-typography-font-size-h5-mobile: var(--pgn-typography-font-size-h5-base); /* Mobile font size of heading level 5. */
+  --pgn-typography-font-size-h5-base: 0.875rem; /* Font size of heading level 5. */
+  --pgn-typography-font-size-h4-mobile: var(--pgn-typography-font-size-h4-base); /* Mobile font size of heading level 4. */
+  --pgn-typography-font-size-h4-base: 1.125rem; /* Font size of heading level 4. */
+  --pgn-typography-font-size-h3-mobile: var(--pgn-typography-font-size-h3-base); /* Mobile font size of heading level 3. */
+  --pgn-typography-font-size-h3-base: 1.375rem; /* Font size of heading level 3. */
+  --pgn-typography-font-size-h2-mobile: var(--pgn-typography-font-size-h2-base); /* Mobile font size of heading level 2. */
+  --pgn-typography-font-size-h2-base: 2rem; /* Font size of heading level 2. */
+  --pgn-typography-font-size-h1-mobile: 2.25rem; /* Mobile font size of heading level 1. */
+  --pgn-typography-font-size-h1-base: 2.5rem; /* Base font size of heading level 1. */
+  --pgn-typography-font-size-micro: 0.688rem; /* Micro utils text font size. */
+  --pgn-typography-font-size-xs: 75%; /* X-small font size. */
+  --pgn-typography-font-size-sm: 87.5%; /* Small font size. */
+  --pgn-typography-font-size-lg: calc(var(--pgn-typography-font-size-base) * 1.25); /* Lead text font size. */
+  --pgn-typography-font-size-base: 1.125rem; /* Base font size. */
+  --pgn-typography-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; /* Monospace font family. */
+  --pgn-typography-font-family-serif: serif; /* Serif font family. */
+  --pgn-typography-font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; /* Sans-serif font family. */
+  --pgn-typography-font-family-base: var(--pgn-typography-font-family-sans-serif); /* Basic font family. */
+  --pgn-typography-blockquote-font-size: calc(var(--pgn-typography-font-size-base) * 1.25);
+  --pgn-typography-blockquote-small-font-size: var(--pgn-typography-font-size-sm);
+  --pgn-typography-dt-font-weight: var(--pgn-typography-font-weight-bold);
+  --pgn-typography-link-decoration-brand-inline-hover: underline;
+  --pgn-typography-link-decoration-brand-inline-base: underline;
+  --pgn-typography-link-decoration-brand-hover: underline;
+  --pgn-typography-link-decoration-brand-base: none;
+  --pgn-typography-link-decoration-muted-inline-hover: underline;
+  --pgn-typography-link-decoration-muted-inline-base: underline;
+  --pgn-typography-link-decoration-muted-hover: underline;
+  --pgn-typography-link-decoration-muted-base: none;
+  --pgn-typography-link-decoration-inline-hover: underline;
+  --pgn-typography-link-decoration-inline-base: underline;
+  --pgn-typography-link-decoration-hover: underline;
+  --pgn-typography-link-decoration-base: none;
+  --pgn-typography-input-btn-line-height-lg: var(--pgn-typography-line-height-lg);
+  --pgn-typography-input-btn-line-height-sm: 1.4286;
+  --pgn-typography-input-btn-line-height-base: 1.3333;
+  --pgn-typography-input-btn-font-size-lg: 1.325rem;
+  --pgn-typography-input-btn-font-size-sm: 0.875rem;
+  --pgn-typography-input-btn-font-size-base: 1.125rem;
+  --pgn-typography-input-btn-font-family: inherit;
+  --pgn-typography-headings-line-height: 1.25;
+  --pgn-typography-headings-font-weight: var(--pgn-typography-font-weight-bold);
+  --pgn-typography-headings-font-family: inherit;
+  --pgn-typography-tooltip-font-size: var(--pgn-typography-font-size-sm);
+  --pgn-typography-toast-font-size: 0.875rem;
+  --pgn-typography-tabs-notification-font-size: var(--pgn-typography-font-size-xs);
+  --pgn-typography-spacer-line-height: 1px;
+  --pgn-typography-progress-bar-font-size: calc(var(--pgn-typography-font-size-base) * .75);
+  --pgn-typography-popover-font-size: var(--pgn-typography-font-size-sm);
+  --pgn-typography-pagination-line-height: 1.5rem;
+  --pgn-typography-pagination-font-size-sm: 0.875rem;
+  --pgn-typography-navbar-toggler-font-size: var(--pgn-typography-font-size-lg);
+  --pgn-typography-navbar-nav-link-height: calc(var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base) + .5rem * 2);
+  --pgn-typography-navbar-brand-font-size: var(--pgn-typography-font-size-lg);
+  --pgn-typography-nav-link-text-decoration: none;
+  --pgn-typography-nav-link-font-weight: 500;
+  --pgn-typography-menu-select-btn-link-text-decoration-thickness: 0.125rem;
+  --pgn-typography-menu-select-btn-link-text-decoration-line: underline;
+  --pgn-typography-image-figure-caption-font-size: 90%;
+  --pgn-typography-form-feedback-tooltip-line-height: var(--pgn-typography-line-height-base);
+  --pgn-typography-form-feedback-tooltip-font-size: var(--pgn-typography-font-size-sm);
+  --pgn-typography-form-feedback-font-size: var(--pgn-typography-font-size-sm);
+  --pgn-typography-form-control-file-font-weight: var(--pgn-typography-form-input-font-weight);
+  --pgn-typography-form-control-file-font-family: var(--pgn-typography-form-input-font-family);
+  --pgn-typography-form-control-file-line-height: var(--pgn-typography-form-input-line-height-base);
+  --pgn-typography-form-control-select-line-height: var(--pgn-typography-form-input-line-height-base);
+  --pgn-typography-form-control-select-font-weight: var(--pgn-typography-form-input-font-weight);
+  --pgn-typography-form-control-select-font-size-lg: var(--pgn-typography-form-input-font-size-lg);
+  --pgn-typography-form-control-select-font-size-sm: var(--pgn-typography-form-input-font-size-sm);
+  --pgn-typography-form-control-select-font-size-base: var(--pgn-typography-form-input-font-size-base);
+  --pgn-typography-form-control-select-font-family: var(--pgn-typography-form-input-font-family);
+  --pgn-typography-form-input-line-height-lg: var(--pgn-typography-input-btn-line-height-lg);
+  --pgn-typography-form-input-line-height-sm: var(--pgn-typography-input-btn-line-height-sm);
+  --pgn-typography-form-input-line-height-base: var(--pgn-typography-input-btn-line-height-base);
+  --pgn-typography-form-input-font-weight: var(--pgn-typography-font-weight-base);
+  --pgn-typography-form-input-font-size-lg: var(--pgn-typography-input-btn-font-size-lg);
+  --pgn-typography-form-input-font-size-sm: var(--pgn-typography-input-btn-font-size-sm);
+  --pgn-typography-form-input-font-size-base: var(--pgn-typography-input-btn-font-size-base);
+  --pgn-typography-form-input-font-family: var(--pgn-typography-input-btn-font-family);
+  --pgn-typography-dropzone-restriction-msg-font-size: var(--pgn-typography-font-size-xs);
+  --pgn-typography-dropdown-item-text-decoration: none;
+  --pgn-typography-dropdown-font-size: var(--pgn-typography-font-size-base);
+  --pgn-typography-code-kbd-nested-font-weight: var(--pgn-typography-font-weight-bold);
+  --pgn-typography-code-kbd-font-size: var(--pgn-typography-code-font-size);
+  --pgn-typography-code-font-size: var(--pgn-typography-font-size-sm);
+  --pgn-typography-close-button-font-weight: var(--pgn-typography-font-weight-bold);
+  --pgn-typography-close-button-font-size: calc(var(--pgn-typography-font-size-base) * 1.5);
+  --pgn-typography-footer-text-font-size: var(--pgn-typography-font-size-xs);
+  --pgn-typography-btn-line-height-lg: var(--pgn-typography-input-btn-line-height-lg);
+  --pgn-typography-btn-line-height-sm: var(--pgn-typography-input-btn-line-height-sm);
+  --pgn-typography-btn-line-height-base: var(--pgn-typography-input-btn-line-height-base);
+  --pgn-typography-btn-font-weight: var(--pgn-typography-font-weight-normal);
+  --pgn-typography-btn-font-size-lg: var(--pgn-typography-input-btn-font-size-lg);
+  --pgn-typography-btn-font-size-sm: var(--pgn-typography-input-btn-font-size-sm);
+  --pgn-typography-btn-font-size-base: var(--pgn-typography-input-btn-font-size-base);
+  --pgn-typography-btn-font-family: var(--pgn-typography-input-btn-font-family);
+  --pgn-typography-badge-font-weight: var(--pgn-typography-font-weight-bold);
+  --pgn-typography-badge-font-size: 75%;
+  --pgn-typography-annotation-line-height: var(--pgn-typography-line-height-sm);
+  --pgn-typography-annotation-font-size: var(--pgn-typography-font-size-sm);
+  --pgn-typography-alert-line-height: 1.5rem;
+  --pgn-typography-alert-font-size: 0.875rem;
+  --pgn-typography-alert-font-weight-link: var(--pgn-typography-font-weight-normal);
+  --pgn-spacing-grid-gutter-width: 24px; /* Grid gutter width value. */
+  --pgn-spacing-table-cell-padding-sm: 0.3rem; /* Padding sm for tables. */
+  --pgn-spacing-table-cell-padding-base: 0.75rem; /* Padding for tables. */
+  --pgn-spacing-label-margin-bottom: 0.5rem; /* Margin bottom for label. */
+  --pgn-spacing-spacer-5-5: calc(var(--pgn-spacing-spacer-base) * 4); /* Space value of level 5.5 */
+  --pgn-spacing-spacer-4-5: calc(var(--pgn-spacing-spacer-base) * 2); /* Space value of level 4.5 */
+  --pgn-spacing-spacer-3-5: calc(var(--pgn-spacing-spacer-base) * 1.25); /* Space value of level 3.5 */
+  --pgn-spacing-spacer-2-5: calc(var(--pgn-spacing-spacer-base) * .75); /* Space value of level 2.5 */
+  --pgn-spacing-spacer-1-5: calc(var(--pgn-spacing-spacer-base) * .375); /* Space value of level 1.5 */
+  --pgn-spacing-spacer-base: 1rem; /* Basic space value */
+  --pgn-spacing-spacer-6: calc(var(--pgn-spacing-spacer-base) * 5); /* Space value of level 6 */
+  --pgn-spacing-spacer-5: calc(var(--pgn-spacing-spacer-base) * 3); /* Space value of level 5 */
+  --pgn-spacing-spacer-4: calc(var(--pgn-spacing-spacer-base) * 1.5); /* Space value of level 4 */
+  --pgn-spacing-spacer-3: var(--pgn-spacing-spacer-base); /* Space value of level 3 */
+  --pgn-spacing-spacer-2: calc(var(--pgn-spacing-spacer-base) * .5); /* Space value of level 2 */
+  --pgn-spacing-spacer-1: calc(var(--pgn-spacing-spacer-base) * .25); /* Space value of level 1 */
+  --pgn-spacing-spacer-0: 0rem; /* Space value of level 0 */
+  --pgn-spacing-mark-padding: 0.2em;
+  --pgn-spacing-paragraph-margin-bottom: 1rem;
+  --pgn-spacing-list-group-item-padding-x: 1.25rem;
+  --pgn-spacing-list-group-item-padding-y: 0.75rem;
+  --pgn-spacing-list-inline-padding: 0.5rem;
+  --pgn-spacing-input-btn-padding-lg-x: 1.25rem;
+  --pgn-spacing-input-btn-padding-lg-y: 0.6875rem;
+  --pgn-spacing-input-btn-padding-sm-x: 0.75rem;
+  --pgn-spacing-input-btn-padding-sm-y: 0.4375rem;
+  --pgn-spacing-input-btn-padding-x: 1rem;
+  --pgn-spacing-input-btn-padding-y: 0.5625rem;
+  --pgn-spacing-headings-margin-bottom: 0.5rem;
+  --pgn-spacing-caret-vertical-align: 0.255em;
+  --pgn-spacing-caret-base: 0.255em;
+  --pgn-spacing-tooltip-margin: 0rem;
+  --pgn-spacing-tooltip-padding-x: 0.5rem;
+  --pgn-spacing-tooltip-padding-y: 0.5rem;
+  --pgn-spacing-toast-container-gutter-sm: 0.625rem;
+  --pgn-spacing-toast-container-gutter-lg: 1.25rem;
+  --pgn-spacing-toast-padding-y: 0.25rem;
+  --pgn-spacing-toast-padding-x: 0.75rem;
+  --pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-distance: 5px;
+  --pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-padding-y: var(--pgn-spacing-spacer-base);
+  --pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-padding-x: 0.625rem;
+  --pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-y: var(--pgn-spacing-spacer-base);
+  --pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-x: 0.625rem;
+  --pgn-spacing-tab-more-link-dropdown-toggle-padding-y: var(--pgn-spacing-spacer-base);
+  --pgn-spacing-tab-more-link-dropdown-toggle-padding-x: 0.7rem;
+  --pgn-spacing-sticky-offset: 0rem;
+  --pgn-spacing-stepper-header-step-list-margin: 0rem;
+  --pgn-spacing-stepper-header-step-list-padding-x: 0rem;
+  --pgn-spacing-stepper-header-step-list-padding-y: 0.25rem;
+  --pgn-spacing-stepper-header-step-padding: 0.25rem;
+  --pgn-spacing-stepper-header-padding-x: var(--pgn-spacing-spacer-base);
+  --pgn-spacing-stepper-header-padding-y: 0.75rem;
+  --pgn-spacing-vertical-align: 0.125em;
+  --pgn-spacing-selectable-box-box-space: 0.75rem;
+  --pgn-spacing-selectable-box-border-radius: 0.25rem;
+  --pgn-spacing-selectable-box-padding: 1rem;
+  --pgn-spacing-search-field-margin-button: 0.5rem;
+  --pgn-spacing-progress-bar-hint-annotation-gap: 0.5rem;
+  --pgn-spacing-popover-icon-margin-right: 0.5rem;
+  --pgn-spacing-popover-body-padding-x: var(--pgn-spacing-popover-header-padding-x);
+  --pgn-spacing-popover-body-padding-y: var(--pgn-spacing-popover-header-padding-y);
+  --pgn-spacing-popover-header-padding-x: 1rem;
+  --pgn-spacing-popover-header-padding-y: 0.5rem;
+  --pgn-spacing-pagination-padding-x-lg: 1.5rem;
+  --pgn-spacing-pagination-padding-x-sm: 0.6rem;
+  --pgn-spacing-pagination-padding-x-base: 1rem;
+  --pgn-spacing-pagination-padding-y-lg: 0.75rem;
+  --pgn-spacing-pagination-padding-y-sm: 0.8rem;
+  --pgn-spacing-pagination-padding-y-base: 0.625rem;
+  --pgn-spacing-navbar-toggler-padding-x: 0.75rem;
+  --pgn-spacing-navbar-toggler-padding-y: 0.25rem;
+  --pgn-spacing-navbar-brand-padding-y: calc((var(--pgn-typography-navbar-nav-link-height) - var(--pgn-size-navbar-brand-height)) / 2);
+  --pgn-spacing-navbar-padding-x-nav-link: 0.5rem;
+  --pgn-spacing-navbar-padding-x-base: var(--pgn-spacing-spacer-base);
+  --pgn-spacing-navbar-padding-y: calc(var(--pgn-spacing-spacer-base) / 2);
+  --pgn-spacing-nav-link-distance-to-border: 4px;
+  --pgn-spacing-nav-link-padding-x: 1rem;
+  --pgn-spacing-nav-link-padding-y: 0.5rem;
+  --pgn-spacing-modal-dialog-margin: 1.5rem;
+  --pgn-spacing-modal-header-padding-y: 1rem;
+  --pgn-spacing-modal-header-padding-base-y: var(--pgn-spacing-modal-header-padding-y);
+  --pgn-spacing-modal-header-padding-base-x: 1.5rem;
+  --pgn-spacing-modal-footer-padding-y: 1rem;
+  --pgn-spacing-modal-footer-padding-base-y: var(--pgn-spacing-modal-footer-padding-y);
+  --pgn-spacing-modal-footer-padding-base-x: 1.5rem;
+  --pgn-spacing-modal-inner-padding-bottom: 0.7rem;
+  --pgn-spacing-modal-inner-padding-base: 1.5rem;
+  --pgn-spacing-menu-item-icon-margin-right: var(--pgn-spacing-menu-item-icon-margin-left);
+  --pgn-spacing-menu-item-icon-margin-left: 0.25em;
+  --pgn-spacing-menu-item-padding-y: var(--pgn-spacing-btn-padding-y-base);
+  --pgn-spacing-menu-item-padding-x: var(--pgn-spacing-btn-padding-x-base);
+  --pgn-spacing-image-thumbnail-padding: 0.25rem;
+  --pgn-spacing-form-control-file-padding-x: var(--pgn-spacing-form-input-padding-x-base);
+  --pgn-spacing-form-control-file-padding-y: var(--pgn-spacing-form-input-padding-y-base);
+  --pgn-spacing-form-control-select-icon-padding: 0.5625rem;
+  --pgn-spacing-form-control-select-feedback-tooltip-padding-x: 0.5rem;
+  --pgn-spacing-form-control-select-feedback-tooltip-padding-y: 0.25rem;
+  --pgn-spacing-form-control-select-feedback-margin-top: var(--pgn-spacing-form-text-margin-top);
+  --pgn-spacing-form-control-select-feedback-icon-position-offset-y: 0;
+  --pgn-spacing-form-control-select-feedback-icon-position-offset-x: calc(var(--pgn-spacing-form-control-select-padding-x-base) + var(--pgn-spacing-form-control-select-indicator-padding));
+  --pgn-spacing-form-control-select-feedback-icon-position-position-x: right;
+  --pgn-spacing-form-control-select-feedback-icon-position-position-y: center;
+  --pgn-spacing-form-control-select-feedback-icon-padding-right: calc((1em + 2 * var(--pgn-spacing-form-control-select-padding-y-base)) * 3 / 4 + var(--pgn-spacing-form-control-select-padding-x-base) + var(--pgn-spacing-form-control-select-indicator-padding));
+  --pgn-spacing-form-control-select-indicator-padding: 1rem;
+  --pgn-spacing-form-control-select-padding-x-lg: var(--pgn-spacing-form-input-padding-x-lg);
+  --pgn-spacing-form-control-select-padding-x-sm: var(--pgn-spacing-form-input-padding-x-sm);
+  --pgn-spacing-form-control-select-padding-x-base: var(--pgn-spacing-form-input-padding-x-base);
+  --pgn-spacing-form-control-select-padding-y-lg: var(--pgn-spacing-form-input-padding-y-lg);
+  --pgn-spacing-form-control-select-padding-y-sm: var(--pgn-spacing-form-input-padding-y-sm);
+  --pgn-spacing-form-control-select-padding-y-base: var(--pgn-spacing-form-input-padding-y-base);
+  --pgn-spacing-form-control-spacer-x: 1rem;
+  --pgn-spacing-form-control-gutter: 0.5rem;
+  --pgn-spacing-form-group-margin-bottom: 1rem;
+  --pgn-spacing-form-check-position-axis: 0.375rem;
+  --pgn-spacing-form-check-inline-margin-x: 0.75rem;
+  --pgn-spacing-form-text-margin-top: 0.25rem;
+  --pgn-spacing-form-input-check-margin-y: 0.3rem;
+  --pgn-spacing-form-input-check-margin-x-inline: 0.3125rem;
+  --pgn-spacing-form-input-check-margin-x-base: 0.25rem;
+  --pgn-spacing-form-input-check-gutter: 1.25rem;
+  --pgn-spacing-form-input-padding-x-lg: var(--pgn-spacing-input-btn-padding-lg-x);
+  --pgn-spacing-form-input-padding-x-sm: var(--pgn-spacing-input-btn-padding-sm-x);
+  --pgn-spacing-form-input-padding-x-base: var(--pgn-spacing-input-btn-padding-x);
+  --pgn-spacing-form-input-padding-y-lg: var(--pgn-spacing-input-btn-padding-lg-y);
+  --pgn-spacing-form-input-padding-y-sm: var(--pgn-spacing-input-btn-padding-sm-y);
+  --pgn-spacing-form-input-padding-y-base: var(--pgn-spacing-input-btn-padding-y);
+  --pgn-spacing-dropzone-border-base: 1px;
+  --pgn-spacing-dropzone-padding: 1.5rem;
+  --pgn-spacing-dropdown-close-container-top: 0.625rem;
+  --pgn-spacing-dropdown-divider-margin-y: calc(var(--pgn-spacing-spacer-base) / 2);
+  --pgn-spacing-dropdown-padding-header-y: 0.5rem;
+  --pgn-spacing-dropdown-padding-header-x: var(--pgn-spacing-dropdown-padding-x-item);
+  --pgn-spacing-dropdown-padding-y-item: 0.25rem;
+  --pgn-spacing-dropdown-padding-y-base: 0.5rem;
+  --pgn-spacing-dropdown-padding-x-item: 1rem;
+  --pgn-spacing-dropdown-padding-x-base: 0rem;
+  --pgn-spacing-dropdown-spacer: 0.125rem;
+  --pgn-spacing-data-table-footer-position: center;
+  --pgn-spacing-data-table-padding-cell-y: 0.75rem;
+  --pgn-spacing-data-table-padding-cell-x: 0.5rem;
+  --pgn-spacing-data-table-padding-small: 0.5rem;
+  --pgn-spacing-data-table-padding-y: 0.75rem;
+  --pgn-spacing-data-table-padding-x: 0.75rem;
+  --pgn-spacing-collapsible-card-spacer-basic-icon: 0.625rem;
+  --pgn-spacing-collapsible-card-spacer-basic-x: 0.5rem;
+  --pgn-spacing-collapsible-card-spacer-basic-y: 0.5rem;
+  --pgn-spacing-collapsible-card-spacer-icon: 2.5rem;
+  --pgn-spacing-collapsible-card-spacer-left-body: 0.75rem;
+  --pgn-spacing-collapsible-card-spacer-x-lg: var(--pgn-spacing-card-spacer-x);
+  --pgn-spacing-collapsible-card-spacer-x-base: 0.5rem;
+  --pgn-spacing-collapsible-card-spacer-y-lg: var(--pgn-spacing-card-spacer-y);
+  --pgn-spacing-collapsible-card-spacer-y-base: 0.5rem;
+  --pgn-spacing-code-kbd-padding-x: 0.4rem;
+  --pgn-spacing-code-kbd-padding-y: 0.2rem;
+  --pgn-spacing-chip-carousel-container-padding-y: 0.313rem;
+  --pgn-spacing-chip-carousel-container-padding-x: 0.625rem;
+  --pgn-spacing-chip-carousel-controls-top-offset: 0.375rem;
+  --pgn-spacing-chip-outline-width: 3px;
+  --pgn-spacing-chip-outline-focus-distance-dark: 0.313rem;
+  --pgn-spacing-chip-outline-focus-distance-light: 0.313rem;
+  --pgn-spacing-chip-outline-selected-distance-dark: 3px;
+  --pgn-spacing-chip-outline-selected-distance-light: 3px;
+  --pgn-spacing-chip-padding-x: 0.5rem;
+  --pgn-spacing-chip-padding-y: 1px;
+  --pgn-spacing-chip-margin-icon: 0.25rem;
+  --pgn-spacing-chip-margin-base: 0.125rem;
+  --pgn-spacing-carousel-indicator-spacer: 3px;
+  --pgn-spacing-card-focus-border-offset: 5px;
+  --pgn-spacing-card-logo-bottom-offset-horizontal: 0.4375rem;
+  --pgn-spacing-card-logo-bottom-offset-base: 1rem;
+  --pgn-spacing-card-logo-left-offset-horizontal: 0.4375rem;
+  --pgn-spacing-card-logo-left-offset-base: 1.5rem;
+  --pgn-spacing-card-loading-skeleton-spacer: 0.313rem;
+  --pgn-spacing-card-footer-action-gap: 0.5rem;
+  --pgn-spacing-card-columns-gap: 1.25rem;
+  --pgn-spacing-card-columns-count: 3;
+  --pgn-spacing-card-columns-margin: var(--pgn-spacing-card-spacer-y);
+  --pgn-spacing-card-margin-grid-bottom: var(--pgn-spacing-spacer-3);
+  --pgn-spacing-card-margin-grid: var(--pgn-spacing-card-margin-group);
+  --pgn-spacing-card-margin-deck-bottom: var(--pgn-spacing-spacer-3);
+  --pgn-spacing-card-margin-deck: var(--pgn-spacing-card-margin-group);
+  --pgn-spacing-card-margin-group: 12px;
+  --pgn-spacing-card-spacer-y: 0.75rem;
+  --pgn-spacing-card-spacer-x: 1.25rem;
+  --pgn-spacing-btn-focus-distance-to-border: calc(var(--pgn-spacing-btn-focus-border-gap) + var(--pgn-size-btn-border-width));
+  --pgn-spacing-btn-focus-border-gap: calc(var(--pgn-size-btn-focus-width) + var(--pgn-spacing-btn-focus-gap));
+  --pgn-spacing-btn-focus-gap: var(--pgn-size-btn-focus-width);
+  --pgn-spacing-btn-block-spacing-y: 0.5rem;
+  --pgn-spacing-btn-padding-x-sm: var(--pgn-spacing-input-btn-padding-sm-x);
+  --pgn-spacing-btn-padding-x-lg: var(--pgn-spacing-input-btn-padding-lg-x);
+  --pgn-spacing-btn-padding-x-base: var(--pgn-spacing-input-btn-padding-x);
+  --pgn-spacing-btn-padding-y-sm: var(--pgn-spacing-input-btn-padding-sm-y);
+  --pgn-spacing-btn-padding-y-lg: var(--pgn-spacing-input-btn-padding-lg-y);
+  --pgn-spacing-btn-padding-y-base: var(--pgn-spacing-input-btn-padding-y);
+  --pgn-spacing-bubble-expandable-padding-x: 0.25rem;
+  --pgn-spacing-bubble-expandable-padding-y: 0rem;
+  --pgn-spacing-breadcrumb-margin-left: 0.5rem;
+  --pgn-spacing-badge-padding-y: 0.125rem;
+  --pgn-spacing-badge-padding-x-pill: 0.6em;
+  --pgn-spacing-badge-padding-x-base: 0.5rem;
+  --pgn-spacing-avatar-button-padding-left-lg: 0.25em;
+  --pgn-spacing-avatar-button-padding-left-sm: 0.25em;
+  --pgn-spacing-avatar-button-padding-left-base: 0.25em;
+  --pgn-spacing-annotation-arrow-side-margin: 0.25rem;
+  --pgn-spacing-annotation-padding: 0.5rem;
+  --pgn-spacing-alert-icon-space: 0.8rem;
+  --pgn-spacing-alert-actions-gap: var(--pgn-spacing-spacer-3);
+  --pgn-spacing-alert-margin-bottom: 1rem;
+  --pgn-spacing-alert-padding-x: 1.5rem;
+  --pgn-spacing-alert-padding-y: 1.5rem;
+  --pgn-spacing-action-row-gap-y: 0.5rem;
+  --pgn-spacing-action-row-gap-x: 0.5rem;
+  --pgn-size-breakpoint-xxl: 1400px; /* Starting breakpoint for large desktops, more than 1400px. */
+  --pgn-size-breakpoint-xl: 1200px; /* Starting breakpoint for large desktops. */
+  --pgn-size-breakpoint-lg: 992px; /* Starting breakpoint for desktops. */
+  --pgn-size-breakpoint-md: 768px; /* Starting breakpoint for tablets. */
+  --pgn-size-breakpoint-sm: 576px; /* Starting breakpoint for landscape phones. */
+  --pgn-size-breakpoint-xs: 0px; /* Starting breakpoint for portrait phones. */
+  --pgn-size-list-group-border-radius: var(--pgn-size-border-radius-base);
+  --pgn-size-list-group-border-width: var(--pgn-size-border-width);
+  --pgn-size-input-btn-focus-width: 1px;
+  --pgn-size-input-btn-border-width: var(--pgn-size-border-width);
+  --pgn-size-hr-border-margin-y: var(--pgn-spacing-spacer-base);
+  --pgn-size-hr-border-width: var(--pgn-size-border-width);
+  --pgn-size-caret-width: 0.3em;
+  --pgn-size-tooltip-border-radius: var(--pgn-size-border-radius-base);
+  --pgn-size-tooltip-arrow-width: 0.8rem;
+  --pgn-size-tooltip-arrow-height: 0.4rem;
+  --pgn-size-tooltip-max-width: 200px;
+  --pgn-size-toast-border-radius: 0.25rem;
+  --pgn-size-toast-border-width: 1px;
+  --pgn-size-toast-max-width: 400px;
+  --pgn-size-tabs-notification-width: 1rem;
+  --pgn-size-tabs-notification-height: 1rem;
+  --pgn-size-stepper-step-bubble-error-shadow-width: 3px;
+  --pgn-size-stepper-step-width-min: 0rem;
+  --pgn-size-stepper-header-height-min: 5.13rem;
+  --pgn-size-stack-gap: 0rem;
+  --pgn-size-spinner-sm-border-width: 0.2em;
+  --pgn-size-spinner-sm-height: var(--pgn-size-spinner-sm-width);
+  --pgn-size-spinner-sm-width: 1rem;
+  --pgn-size-spinner-base-border-width: 0.25em;
+  --pgn-size-spinner-base-height: var(--pgn-size-spinner-base-width);
+  --pgn-size-spinner-base-width: 2rem;
+  --pgn-size-search-field-search-input-height: calc(var(--pgn-typography-form-input-line-height-base) * 1em + var(--pgn-spacing-form-input-padding-y-base) * 2);
+  --pgn-size-search-field-border-radius: 0rem;
+  --pgn-size-search-field-border-width-focus: 0.3125rem;
+  --pgn-size-search-field-border-width-base: 0.0625rem;
+  --pgn-size-progress-bar-threshold-circle: 0.5625rem;
+  --pgn-size-progress-bar-border-radius: 0rem;
+  --pgn-size-progress-bar-border-width: 1px;
+  --pgn-size-progress-bar-height-annotated: 0.3125rem;
+  --pgn-size-progress-bar-height-base: 1rem;
+  --pgn-size-product-tour-checkpoint-arrow-transparent: var(--pgn-size-product-tour-checkpoint-width-arrow);
+  --pgn-size-product-tour-checkpoint-arrow-top: var(--pgn-size-product-tour-checkpoint-width-arrow);
+  --pgn-size-product-tour-checkpoint-width-max: 480px;
+  --pgn-size-product-tour-checkpoint-width-arrow: 15px;
+  --pgn-size-product-tour-checkpoint-width-border: 8px;
+  --pgn-size-popover-arrow-height: 0.5rem;
+  --pgn-size-popover-arrow-width: 1rem;
+  --pgn-size-popover-icon-width: 1rem;
+  --pgn-size-popover-icon-height: 1rem;
+  --pgn-size-popover-border-radius: var(--pgn-size-border-radius-sm);
+  --pgn-size-popover-border-width: var(--pgn-size-border-width);
+  --pgn-size-popover-max-width: 480px;
+  --pgn-size-pagination-focus-outline: 0rem;
+  --pgn-size-pagination-toggle-border-sm: 0.25rem;
+  --pgn-size-pagination-toggle-border-base: 0.3125rem;
+  --pgn-size-pagination-reduced-dropdown-min-width: 6rem;
+  --pgn-size-pagination-reduced-dropdown-max-height: 60vh;
+  --pgn-size-pagination-border-radius-lg: var(--pgn-size-border-radius-lg);
+  --pgn-size-pagination-border-radius-sm: var(--pgn-size-border-radius-sm);
+  --pgn-size-pagination-border-width: var(--pgn-size-border-width);
+  --pgn-size-pagination-secondary-height-sm: 2.25rem;
+  --pgn-size-pagination-secondary-height-base: 2.75rem;
+  --pgn-size-pagination-icon-height: 2.25rem;
+  --pgn-size-pagination-icon-width: 2.25rem;
+  --pgn-size-navbar-toggler-border-radius: var(--pgn-size-btn-border-radius-base);
+  --pgn-size-navbar-brand-height: calc(var(--pgn-typography-navbar-brand-font-size) * var(--pgn-typography-line-height-base));
+  --pgn-size-navbar-nav-scroll-max-height: 75vh;
+  --pgn-size-nav-tabs-border-radius: 0rem;
+  --pgn-size-nav-tabs-border-width: 2px;
+  --pgn-size-nav-tabs-inverse-link-active-border-bottom-width: var(--pgn-size-nav-tabs-link-border-bottom-width);
+  --pgn-size-nav-tabs-link-border-bottom-width: 0.188rem;
+  --pgn-size-nav-pills-inverse-link-border-width: var(--pgn-size-nav-pills-link-border-width);
+  --pgn-size-nav-pills-link-border-width: 1px;
+  --pgn-size-nav-pills-border-radius: var(--pgn-size-border-radius-base);
+  --pgn-size-modal-content-border-radius: var(--pgn-size-border-radius-lg);
+  --pgn-size-modal-content-border-width: 0px;
+  --pgn-size-modal-sm: 400px;
+  --pgn-size-modal-md: 500px;
+  --pgn-size-modal-lg: 800px;
+  --pgn-size-modal-xl: 1140px;
+  --pgn-size-menu-item-border-width: var(--pgn-size-btn-border-width);
+  --pgn-size-menu-item-width-xs: 13.438rem;
+  --pgn-size-menu-item-width-base: 19rem;
+  --pgn-size-menu-item-height: 3rem;
+  --pgn-size-menu-base-max-height: 16.813rem;
+  --pgn-size-menu-base-border-radius: 0.25em;
+  --pgn-size-image-thumbnail-border-radius: var(--pgn-size-border-radius-base);
+  --pgn-size-image-thumbnail-border-width: var(--pgn-size-border-width);
+  --pgn-size-icon-button-diameter-inline: calc(var(--pgn-typography-line-height-base) * 1em + .1em);
+  --pgn-size-icon-button-diameter-sm: 2.25rem;
+  --pgn-size-icon-button-diameter-md: 2.75rem;
+  --pgn-size-icon-lg: 1.75rem;
+  --pgn-size-icon-md: 1.5rem;
+  --pgn-size-icon-sm: 1.25rem;
+  --pgn-size-icon-xs: 1rem;
+  --pgn-size-icon-inline: 0.8em;
+  --pgn-size-form-feedback-tooltip-border-radius: var(--pgn-size-border-radius-base);
+  --pgn-size-form-border-radius-width: 0.125rem;
+  --pgn-size-form-border-radius-check-focus: 0.0625rem;
+  --pgn-size-form-autosuggest-border-width: 0.125rem;
+  --pgn-size-form-autosuggest-spinner-height: var(--pgn-size-form-autosuggest-spinner-width);
+  --pgn-size-form-autosuggest-spinner-width: 1.25rem;
+  --pgn-size-form-autosuggest-icon-height: var(--pgn-size-form-autosuggest-icon-width);
+  --pgn-size-form-autosuggest-icon-width: 2.4rem;
+  --pgn-size-form-grid-gutter-width: 0.625rem;
+  --pgn-size-form-control-border-radio-indicator-radius: 50%;
+  --pgn-size-form-control-border-checkbox-indicator-radius: 0rem;
+  --pgn-size-form-control-icon-width: 2rem;
+  --pgn-size-form-control-file-border-radius: var(--pgn-size-form-input-radius-border-base);
+  --pgn-size-form-control-file-height-inner: var(--pgn-size-form-input-height-inner-base);
+  --pgn-size-form-control-file-height-base: var(--pgn-size-form-input-height-base);
+  --pgn-size-form-control-file-width: var(--pgn-size-form-input-width-border);
+  --pgn-size-form-control-range-thumb-focus-width: var(--pgn-size-form-input-width-focus);
+  --pgn-size-form-control-range-thumb-border-radius: 1rem;
+  --pgn-size-form-control-range-thumb-border-base: 0rem;
+  --pgn-size-form-control-range-thumb-height: var(--pgn-size-form-control-range-thumb-width);
+  --pgn-size-form-control-range-thumb-width: 1rem;
+  --pgn-size-form-control-range-track-border-radius: 1rem;
+  --pgn-size-form-control-range-track-height: 0.5rem;
+  --pgn-size-form-control-range-track-width: 100%;
+  --pgn-size-form-control-select-border-radius: var(--pgn-size-border-radius-base);
+  --pgn-size-form-control-select-border-width-base: var(--pgn-size-form-input-width-border);
+  --pgn-size-form-control-select-feedback-icon: var(--pgn-size-form-input-height-inner-half) var(--pgn-size-form-input-height-inner-half);
+  --pgn-size-form-control-select-height-sm: var(--pgn-size-form-input-height-sm);
+  --pgn-size-form-control-select-height-lg: var(--pgn-size-form-input-height-lg);
+  --pgn-size-form-control-select-height-base: var(--pgn-size-form-input-height-base);
+  --pgn-size-form-control-switch-indicator-border-radius: calc(var(--pgn-size-form-control-indicator-base) / 2);
+  --pgn-size-form-control-switch-indicator-base: calc(var(--pgn-size-form-control-indicator-base) - var(--pgn-size-form-control-indicator-border-width) * 4);
+  --pgn-size-form-control-switch-width: calc(var(--pgn-size-form-control-indicator-base) * 1.75);
+  --pgn-size-form-control-indicator-border-width: 0.125rem;
+  --pgn-size-form-control-indicator-bg: 100%;
+  --pgn-size-form-control-indicator-base: 1.25rem;
+  --pgn-size-form-input-radius-border-sm: var(--pgn-size-border-radius-sm);
+  --pgn-size-form-input-radius-border-lg: var(--pgn-size-border-radius-lg);
+  --pgn-size-form-input-radius-border-base: var(--pgn-size-border-radius-base);
+  --pgn-size-form-input-width-border: var(--pgn-size-input-btn-border-width);
+  --pgn-size-form-input-width-focus: 0.063rem;
+  --pgn-size-form-input-width-hover: 0.063rem;
+  --pgn-size-form-input-height-border: calc(var(--pgn-size-form-input-width-border) * 2);
+  --pgn-size-form-input-height-inner-quarter: calc(var(--pgn-typography-form-input-line-height-base) * .25em + calc(var(--pgn-spacing-form-input-padding-y-base) / 2));
+  --pgn-size-form-input-height-inner-half: calc(var(--pgn-typography-form-input-line-height-base) * .5em + var(--pgn-spacing-form-input-padding-y-base));
+  --pgn-size-form-input-height-inner-base: calc(var(--pgn-typography-form-input-line-height-base) * 1em + var(--pgn-spacing-form-input-padding-y-base) * 2);
+  --pgn-size-form-input-height-lg: calc(var(--pgn-typography-form-input-line-height-lg) * 1em + var(--pgn-spacing-input-btn-padding-lg-y) * 2 + var(--pgn-size-form-input-height-border));
+  --pgn-size-form-input-height-sm: calc(var(--pgn-typography-form-input-line-height-sm) * 1em + var(--pgn-spacing-input-btn-padding-sm-y) * 2 + var(--pgn-size-form-input-height-border));
+  --pgn-size-form-input-height-base: calc(var(--pgn-typography-form-input-line-height-base) * 1em + var(--pgn-spacing-form-input-padding-y-base) * 2 + var(--pgn-size-form-input-height-border));
+  --pgn-size-dropdown-border-radius-inner: calc(var(--pgn-size-dropdown-border-radius-base) - var(--pgn-size-dropdown-border-width));
+  --pgn-size-dropdown-border-radius-base: var(--pgn-size-border-radius-base);
+  --pgn-size-dropdown-border-width: var(--pgn-size-border-width);
+  --pgn-size-dropdown-min-width: 18rem;
+  --pgn-size-data-table-layout-sidebar-width: 12rem;
+  --pgn-size-data-table-dropdown-pagination-min-width: 6rem;
+  --pgn-size-data-table-dropdown-pagination-max-height: 60vh;
+  --pgn-size-data-table-border: 2px;
+  --pgn-size-container-max-width-xl: 1440px;
+  --pgn-size-container-max-width-lg: 1192px;
+  --pgn-size-container-max-width-md: 952px;
+  --pgn-size-container-max-width-sm: 708px;
+  --pgn-size-container-max-width-xs: 464px;
+  --pgn-size-color-picker-md: calc(1.3333em + 1.125rem + 2px);
+  --pgn-size-color-picker-sm: 2rem;
+  --pgn-size-code-pre-scrollable-max-height: 340px;
+  --pgn-size-chip-icon: 1.5rem;
+  --pgn-size-chip-border-radius: 0.375rem;
+  --pgn-size-carousel-caption-width: 70%;
+  --pgn-size-carousel-indicator-height-area-hit: 10px;
+  --pgn-size-carousel-indicator-height-base: 3px;
+  --pgn-size-carousel-indicator-width: 30px;
+  --pgn-size-carousel-control-width-icon: 20px;
+  --pgn-size-carousel-control-width-base: 15%;
+  --pgn-size-card-logo-height: 4.125rem;
+  --pgn-size-card-logo-width: 7.25rem;
+  --pgn-size-card-image-border-radius: var(--pgn-size-card-border-radius-base);
+  --pgn-size-card-image-vertical-max-height: 140px;
+  --pgn-size-card-image-horizontal-width-min: var(--pgn-size-card-image-horizontal-width-max);
+  --pgn-size-card-image-horizontal-width-max: 240px;
+  --pgn-size-card-focus-border-radius: calc(var(--pgn-spacing-card-focus-border-offset) + var(--pgn-size-card-border-radius-base));
+  --pgn-size-card-focus-border-width: 2px;
+  --pgn-size-card-border-radius-inner: calc(var(--pgn-size-card-border-radius-base) - var(--pgn-size-card-border-width));
+  --pgn-size-card-border-radius-logo: 0.25rem;
+  --pgn-size-card-border-radius-base: var(--pgn-size-border-radius-base);
+  --pgn-size-card-border-width: var(--pgn-size-border-width);
+  --pgn-size-btn-focus-border-radius-sm: var(--pgn-size-btn-border-radius-base);
+  --pgn-size-btn-focus-border-radius-lg: var(--pgn-size-btn-focus-border-radius-base);
+  --pgn-size-btn-focus-border-radius-base: calc(var(--pgn-size-btn-border-radius-base) + var(--pgn-spacing-btn-focus-border-gap));
+  --pgn-size-btn-focus-width: 2px;
+  --pgn-size-btn-border-radius-sm: var(--pgn-size-border-radius-sm);
+  --pgn-size-btn-border-radius-lg: var(--pgn-size-border-radius-lg);
+  --pgn-size-btn-border-radius-base: var(--pgn-size-border-radius-base);
+  --pgn-size-btn-border-width: var(--pgn-size-input-btn-border-width);
+  --pgn-size-breadcrumb-border-width-focus: 0.0625rem;
+  --pgn-size-breadcrumb-border-axis-y-focus: 0.5rem;
+  --pgn-size-breadcrumb-border-axis-x-focus: 0.25rem;
+  --pgn-size-breadcrumb-border-radius-focus: 0.125rem;
+  --pgn-size-badge-focus-width: var(--pgn-size-input-btn-focus-width);
+  --pgn-size-badge-border-radius-pill: 10rem;
+  --pgn-size-badge-border-radius-base: 0.25rem;
+  --pgn-size-avatar-border-radius: 100%;
+  --pgn-size-avatar-border-base: 1px;
+  --pgn-size-avatar-huge: 18.75rem;
+  --pgn-size-avatar-xxl: 11.5rem;
+  --pgn-size-avatar-xl: 6rem;
+  --pgn-size-avatar-lg: 4rem;
+  --pgn-size-avatar-sm: 2.25rem;
+  --pgn-size-avatar-xs: 1.5rem;
+  --pgn-size-avatar-base: 3rem;
+  --pgn-size-annotation-border-radius: 0.25rem;
+  --pgn-size-annotation-max-width: 18.75rem;
+  --pgn-size-annotation-arrow-border-width: 0.5rem;
+  --pgn-size-alert-border-width: 0rem;
+  --pgn-size-alert-border-radius: var(--pgn-size-border-radius-base);
+  --pgn-size-rounded-pill: 50rem; /* Pill border radius. */
+  --pgn-size-border-radius-sm: 0.25rem; /* Small border radius. */
+  --pgn-size-border-radius-lg: 0.425rem; /* Large border radius. */
+  --pgn-size-border-radius-base: 0.375rem; /* Default border radius. */
+  --pgn-size-border-width: 1px; /* Default border width. */
+}

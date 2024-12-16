@@ -1,0 +1,25 @@
+{
+  "color": {
+    "$type": "color",
+    "page-banner": {
+      "bg": {
+        "dark": { "$value": "{color.dark.500}" },
+        "light": { "$value": "{color.light.400}" },
+        "accent": {
+          "a": { "$value": "{color.accent.a}" },
+          "b": { "$value": "{color.accent.b}" }
+        },
+        "warning": { "$value": "{color.warning.100}" }
+      },
+      "text": {
+        "dark": { "$value": "{color.white}" },
+        "light": { "$value": "{color.black}" },
+        "accent": {
+          "a": { "$value": "{color.black}" },
+          "b": { "$value": "{color.black}" }
+        },
+        "warning": { "$value": "{color.black}" }
+      }
+    }
+  }
+}

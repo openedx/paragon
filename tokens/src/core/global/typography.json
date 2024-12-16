@@ -1,0 +1,286 @@
+{
+  "typography": {
+    "font": {
+      "family": {
+        "$type": "fontFamily",
+        "base": {
+          "source": "$font-family-base",
+          "$value": "{typography.font.family.sans.serif}",
+          "$description": "Basic font family."
+        },
+        "sans": {
+          "serif": {
+            "source": "$font-family-sans-serif",
+            "$value": ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial",
+            "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
+            "$description": "Sans-serif font family."
+          }
+        },
+        "serif": {
+          "source": "$font-family-serif",
+          "$value": "serif",
+          "$description": "Serif font family."
+        },
+        "monospace": {
+          "source": "$font-family-monospace",
+          "$value": ["SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono",  "Courier New", "monospace"],
+          "$description": "Monospace font family."
+        }
+      },
+      "size": {
+        "$type": "dimension",
+        "base": {
+          "source": "$font-size-base",
+          "$value": "1.125rem",
+          "$description": "Base font size."
+        },
+        "lg": {
+          "source": "$lead-font-size",
+          "$value": "calc({typography.font.size.base} * 1.25)",
+          "$description": "Lead text font size."
+        },
+        "sm": {
+          "source": "$small-font-size",
+          "$value": "87.5%",
+          "$description": "Small font size."
+        },
+        "xs": {
+          "source": "$x-small-font-size",
+          "$value": "75%",
+          "$description": "X-small font size."
+        },
+        "micro": {
+          "source": "$micro-font-size",
+          "$value": ".688rem",
+          "$type": "dimension",
+          "$description": "Micro utils text font size."
+        },
+        "h1": {
+          "base": {
+            "source": "$h1-font-size",
+            "$value": "2.5rem",
+            "$description": "Base font size of heading level 1."
+          },
+          "mobile": {
+            "source": "$h1-mobile-font-size",
+            "$value": "2.25rem",
+            "$description": "Mobile font size of heading level 1."
+          }
+        },
+        "h2": {
+          "base": {
+            "source": "$h2-font-size",
+            "$value": "2rem",
+            "$description": "Font size of heading level 2."
+          },
+          "mobile": {
+            "source": "$h2-mobile-font-size",
+            "$value": "{typography.font.size.h2.base}",
+            "$description": "Mobile font size of heading level 2."
+          }
+        },
+        "h3": {
+          "base": {
+            "source": "$h3-font-size",
+            "$value": "1.375rem",
+            "$description": "Font size of heading level 3."
+          },
+          "mobile": {
+            "source": "$h3-mobile-font-size",
+            "$value": "{typography.font.size.h3.base}",
+            "$description": "Mobile font size of heading level 3."
+          }
+        },
+        "h4": {
+          "base": {
+            "source": "$h4-font-size",
+            "$value": "1.125rem",
+            "$description": "Font size of heading level 4."
+          },
+          "mobile": {
+            "source": "$h4-mobile-font-size",
+            "$value": "{typography.font.size.h4.base}",
+            "$description": "Mobile font size of heading level 4."
+          }
+        },
+        "h5": {
+          "base": {
+            "source": "$h5-font-size",
+            "$value": ".875rem",
+            "$description": "Font size of heading level 5."
+          },
+          "mobile": {
+            "source": "$h5-mobile-font-size",
+            "$value": "{typography.font.size.h5.base}",
+            "$description": "Mobile font size of heading level 5."
+          }
+        },
+        "h6": {
+          "base": {
+            "source": "$h6-font-size",
+            "$value": ".75rem",
+            "$description": "Font size of heading level 6."
+          },
+          "mobile": {
+            "source": "$h6-mobile-font-size",
+            "$value": "{typography.font.size.h6.base}",
+            "$description": "Mobile font size of heading level 6."
+          }
+        },
+        "display": {
+          "1": {
+            "source": "$display1-size",
+            "$value": "3.75rem",
+            "$description": "Font size for heading of level 1."
+          },
+          "2": {
+            "source": "$display2-size",
+            "$value": "4.875rem",
+            "$description": "Font size for heading of level 2."
+          },
+          "3": {
+            "source": "$display3-size",
+            "$value": "5.625rem",
+            "$description": "Font size for heading of level 3."
+          },
+          "4": {
+            "source": "$display4-size",
+            "$value": "7.5rem",
+            "$description": "Font size for heading of level 4."
+          },
+          "mobile": {
+            "1": {
+              "source": "$display-mobile-size",
+              "$value": "3.25rem",
+              "$description": "Mobile font size for heading of level 1."
+            },
+            "2": {
+              "$value": "{typography.font.size.display.mobile.1}",
+              "$description": "Mobile font size for heading of level 2."
+            },
+            "3": {
+              "$value": "{typography.font.size.display.mobile.1}",
+              "$description": "Mobile font size for heading of level 3."
+            },
+            "4": {
+              "$value": "{typography.font.size.display.mobile.1}",
+              "$description": "Mobile font size for heading of level 4."
+            }
+          }
+        }
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "lighter": {
+          "source": "$font-weight-lighter",
+          "$value": "lighter",
+          "$description": "Lighter font weight."
+        },
+        "light": {
+          "source": "$font-weight-light",
+          "$value": "300",
+          "$description": "Light font weight."
+        },
+        "normal": {
+          "source": "$font-weight-normal",
+          "$value": "400",
+          "$description": "Normal font weight."
+        },
+        "semi": {
+          "bold": {
+            "source": "$font-weight-semi-bold",
+            "$value": "500",
+            "$description": "Semi-bold font weight."
+          }
+        },
+        "bold": {
+          "source": "$font-weight-bold",
+          "$value": "700",
+          "$description": "Bold font weight."
+        },
+        "bolder": {
+          "source": "$font-weight-bolder",
+          "$value": "bolder",
+          "$description": "Bolder font weight."
+        },
+        "base": {
+          "source": "$font-weight-base",
+          "$value": "{typography.font.weight.normal}",
+          "$description": "Basic font weight."
+        },
+        "lead": {
+          "source": "$lead-font-weight",
+          "$value": "inherit",
+          "$description": "Lead text font weight."
+        },
+        "table-th": {
+          "source": "$table-th-font-weight",
+          "$value": "bold",
+          "$description": "Table th font weight."
+        },
+        "display": {
+          "1": {
+            "source": "$display1-weight",
+            "$value": "{typography.font.weight.bold}",
+            "$description": "Font weight of display level 1."
+          },
+          "2": {
+            "source": "$display2-weight",
+            "$value": "{typography.font.weight.bold}",
+            "$description": "Font weight of display level 2."
+          },
+          "3": {
+            "source": "$display3-weight",
+            "$value": "{typography.font.weight.bold}",
+            "$description": "Font weight of display level 3."
+          },
+          "4": {
+            "source": "$display4-weight",
+            "$value": "{typography.font.weight.bold}",
+            "$description": "Font weight of display level 4."
+          }
+        }
+      }
+    },
+    "line-height": {
+      "$type": "number",
+      "base": {
+        "source": "$line-height-base",
+        "$value": "1.5556",
+        "$description": "Basic line height."
+      },
+      "lg": {
+        "source": "$line-height-lg",
+        "$value": "1.5",
+        "$description": "Large line height."
+      },
+      "sm": {
+        "source": "$line-height-sm",
+        "$value": "1.5",
+        "$description": "Small line height."
+      },
+      "micro": {
+        "source": "$micro-line-height",
+        "$value": ".938rem",
+        "$description": "Micro utils line height."
+      },
+      "display": {
+        "base": {
+          "source": "$display-line-height",
+          "$value": "1",
+          "$description": "Standard display line height."
+        },
+        "mobile": {
+          "source": "$display-mobile-line-height",
+          "$value": "3.5rem",
+          "$description": "Mobile display line height."
+        }
+      }
+    },
+    "print-page-size": {
+      "source": "$print-page-size",
+      "$value": "a3",
+      "$type": "dimension"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "tab": {
+      "more-link-dropdown-toggle": {
+        "padding-x": { "source": "$tab-more-link-dropdown-toggle-padding-x", "$value": ".7rem" },
+        "padding-y": { "source": "$tab-more-link-dropdown-toggle-padding-y", "$value": "{spacing.spacer.base}" }
+      },
+      "inverse-pills-link-dropdown-toggle": {
+        "padding-x": { "source": "$tab-inverse-pills-link-dropdown-toggle-padding-x", "$value": ".625rem" },
+        "padding-y": { "source": "$tab-inverse-pills-link-dropdown-toggle-padding-y", "$value": "{spacing.spacer.base}" }
+      },
+      "inverse-tabs-link-dropdown-toggle": {
+        "padding-x": { "source": "$tab-inverse-tabs-link-dropdown-toggle-padding-x", "$value": ".625rem" },
+        "padding-y": { "source": "$tab-inverse-tabs-link-dropdown-toggle-padding-y", "$value": "{spacing.spacer.base}" },
+        "distance": { "source": "$tab-inverse-pills-link-dropdown-distance", "$value": "5px" }
+      }
+    }
+  }
+}

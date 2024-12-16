@@ -1,5 +1,5 @@
 .pgn__form-text {
-  font-size: $small-font-size;
+  font-size: var(--pgn-typography-font-size-sm);
   display: flex;
   align-items: center;
 
@@ -22,35 +22,35 @@
 }
 
 .pgn__form-text-default {
-  color: $text-muted;
+  color: var(--pgn-color-text-muted);
 }
 
 .pgn__form-text-valid {
-  color: $form-feedback-valid-color;
+  color: var(--pgn-color-form-feedback-valid);
 }
 
 .pgn__form-text-invalid {
-  color: $form-feedback-invalid-color;
+  color: var(--pgn-color-form-feedback-invalid);
 }
 
 .pgn__form-text-warning {
-  color: $gray-900;
+  color: var(--pgn-color-gray-900);
 }
 
 .pgn__form-text-criteria-empty {
   .pgn__icon {
-    color: $text-muted;
+    color: var(--pgn-color-text-muted);
   }
 }
 
 .pgn__form-text-criteria-valid {
   .pgn__icon {
-    color: $form-feedback-valid-color;
+    color: var(--pgn-color-form-feedback-valid);
   }
 }
 
 .pgn__form-text-criteria-invalid {
   .pgn__icon {
-    color: $form-feedback-invalid-color;
+    color: var(--pgn-color-form-feedback-invalid);
   }
 }

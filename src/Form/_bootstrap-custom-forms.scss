@@ -1,0 +1,591 @@
+:root {
+  --pgn-elevation-form-control-indicator-checked-focus:
+    var(--pgn-elevation-form-control-indicator-checked-focus-offset-x)
+    var(--pgn-elevation-form-control-indicator-checked-focus-offset-y)
+    var(--pgn-elevation-form-control-indicator-checked-focus-blur)
+    var(--pgn-elevation-form-control-indicator-checked-focus-spread)
+    var(--pgn-elevation-form-control-indicator-checked-focus-color);
+
+  --pgn-elevation-form-control-select-border-focus:
+    var(--pgn-elevation-form-control-select-border-focus-offset-x)
+    var(--pgn-elevation-form-control-select-border-focus-offset-y)
+    var(--pgn-elevation-form-control-select-border-focus-blur)
+    var(--pgn-elevation-form-control-select-border-focus-spread)
+    var(--pgn-elevation-form-control-select-border-focus-color);
+
+  --pgn-elevation-form-control-file-focus:
+    var(--pgn-elevation-form-control-file-focus-offset-x)
+    var(--pgn-elevation-form-control-file-focus-offset-y)
+    var(--pgn-elevation-form-control-file-focus-blur)
+    var(--pgn-elevation-form-control-file-focus-spread)
+    var(--pgn-elevation-form-control-file-focus-color);
+
+  --pgn-transition-form-control:
+    var(--pgn-transition-form-control-1-property)
+    var(--pgn-transition-form-control-1-duration)
+    var(--pgn-transition-form-control-1-timing-function)
+    var(--pgn-transition-form-control-1-delay)
+    var(--pgn-transition-form-control-1-behavior),
+    var(--pgn-transition-form-control-2-property)
+    var(--pgn-transition-form-control-2-duration)
+    var(--pgn-transition-form-control-2-timing-function)
+    var(--pgn-transition-form-control-2-delay)
+    var(--pgn-transition-form-control-2-behavior),
+    var(--pgn-transition-form-control-3-property)
+    var(--pgn-transition-form-control-3-duration)
+    var(--pgn-transition-form-control-3-timing-function)
+    var(--pgn-transition-form-control-3-delay)
+    var(--pgn-transition-form-control-3-behavior);
+}
+
+// Embedded icons from Open Iconic.
+// Released under MIT and copyright 2014 Waybury.
+// https://useiconic.com/open
+
+
+// Checkboxes and radios
+//
+// Base class takes care of all the key behavioral aspects.
+
+.custom-control {
+  position: relative;
+  z-index: 1;
+  display: block;
+  min-height: calc(var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base));
+  padding-left: calc(var(--pgn-spacing-form-control-gutter) + var(--pgn-size-form-control-indicator-base));
+  print-color-adjust: exact; // Keep themed appearance for print
+}
+
+.custom-control-inline {
+  display: inline-flex;
+  margin-right: var(--pgn-spacing-form-control-spacer-x);
+}
+
+.custom-control-input {
+  position: absolute;
+  left: 0;
+  z-index: -1; // Put the input behind the label so it doesn't overlay text
+  width: var(--pgn-size-form-control-indicator-base);
+  // stylelint-disable-next-line max-line-length
+  height: calc((var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base) + var(--pgn-size-form-control-indicator-base)) * .5);
+  opacity: 0;
+
+  &:checked ~ .custom-control-label::before {
+    color: var(--pgn-color-form-control-indicator-checked-base);
+    border-color: var(--pgn-color-form-control-indicator-checked-border-base);
+    box-shadow: var(--pgn-elevation-form-control-indicator-checked-base);
+
+    @include gradient-bg(var(--pgn-color-form-control-indicator-checked-bg-base));
+  }
+
+  &:focus ~ .custom-control-label::before {
+    box-shadow: var(--pgn-elevation-form-control-indicator-checked-focus);
+  }
+
+  &:focus:not(:checked) ~ .custom-control-label::before {
+    border-color: var(--pgn-color-form-control-indicator-checked-border-focus);
+  }
+
+  &:not(:disabled):active ~ .custom-control-label::before {
+    color: var(--pgn-color-form-control-indicator-active-base);
+    background-color: var(--pgn-color-form-control-indicator-active-bg);
+    border-color: var(--pgn-color-form-control-indicator-active-border);
+    box-shadow: var(--pgn-elevation-form-control-indicator-active);
+  }
+
+  // Use [disabled] and :disabled to work around https://github.com/twbs/bootstrap/issues/28247
+  &[disabled],
+  &:disabled {
+    ~ .custom-control-label {
+      color: var(--pgn-color-form-control-label-disabled);
+
+      &::before {
+        background-color: var(--pgn-color-form-control-indicator-bg-disabled);
+      }
+    }
+  }
+}
+
+// Custom control indicators
+//
+// Build the custom controls out of pseudo-elements.
+
+.custom-control-label {
+  position: relative;
+  margin-bottom: 0;
+  color: var(--pgn-color-form-control-label-base);
+  vertical-align: top;
+  cursor: var(--pgn-other-form-control-cursor);
+
+  // Background-color and (when enabled) gradient
+  &::before {
+    content: "";
+    position: absolute;
+    // stylelint-disable-next-line max-line-length
+    top: calc((var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base) - var(--pgn-size-form-control-indicator-base)) * .5);
+    left: -(var(--pgn-spacing-form-control-gutter) + var(--pgn-size-form-control-indicator-base));
+    display: block;
+    width: var(--pgn-size-form-control-indicator-base);
+    height: var(--pgn-size-form-control-indicator-base);
+    pointer-events: none;
+    background-color: var(--pgn-color-form-control-indicator-bg-base);
+    border: var(--pgn-size-form-control-indicator-border-width) solid var(--pgn-color-form-control-indicator-border);
+    box-shadow: var(--pgn-elevation-form-control-indicator-base);
+  }
+
+  // Foreground (icon)
+  &::after {
+    content: "";
+    position: absolute;
+    // stylelint-disable-next-line max-line-length
+    top: calc((var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base) - var(--pgn-size-form-control-indicator-base)) * .5);
+    left: calc((var(--pgn-spacing-form-control-gutter) + var(--pgn-size-form-control-indicator-base)) * -1);
+    display: block;
+    width: var(--pgn-size-form-control-indicator-base);
+    height: var(--pgn-size-form-control-indicator-base);
+    background: 50% / var(--pgn-size-form-control-indicator-bg) no-repeat;
+  }
+}
+
+
+// Checkboxes
+//
+// Tweak just a few things for checkboxes.
+
+.custom-checkbox {
+  .custom-control-label::before {
+    @include border-radius(var(--pgn-size-form-control-border-checkbox-indicator-radius));
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-base);
+    }
+  }
+
+  .custom-control-input:indeterminate ~ .custom-control-label {
+    &::before {
+      border-color: var(--pgn-color-form-control-checkbox-indicator-indeterminate-border);
+      box-shadow: var(--pgn-elevation-form-control-checkbox-indicator-indeterminate);
+
+      @include gradient-bg(var(--pgn-color-form-control-checkbox-indicator-indeterminate-bg));
+    }
+
+    &::after {
+      background-image: var(--pgn-other-content-form-control-checkbox-indicator-indeterminate-icon);
+    }
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
+      @include gradient-bg(var(--pgn-color-form-control-indicator-checked-bg-disabled));
+    }
+
+    &:indeterminate ~ .custom-control-label::before {
+      @include gradient-bg(var(--pgn-color-form-control-indicator-checked-bg-disabled));
+    }
+  }
+}
+
+// Radios
+//
+// Tweak just a few things for radios.
+
+.custom-radio {
+  .custom-control-label::before {
+    // stylelint-disable-next-line property-disallowed-list
+    border-radius: var(--pgn-size-form-control-border-radio-indicator-radius);
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-image: var(--pgn-other-content-form-control-radio-indicator-icon-checked-base);
+    }
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
+      @include gradient-bg(var(--pgn-color-form-control-indicator-checked-bg-disabled));
+    }
+  }
+}
+
+
+// switches
+//
+// Tweak a few things for switches
+
+.custom-switch {
+  padding-left: calc(var(--pgn-size-form-control-switch-width) + var(--pgn-spacing-form-control-gutter));
+
+  .custom-control-label {
+    &::before {
+      left: calc(-1 * (var(--pgn-size-form-control-switch-width) + var(--pgn-spacing-form-control-gutter)));
+      width: var(--pgn-size-form-control-switch-width);
+      pointer-events: all;
+      // stylelint-disable-next-line property-disallowed-list
+      border-radius: var(--pgn-size-form-control-switch-indicator-border-radius);
+    }
+
+    &::after {
+      // stylelint-disable-next-line max-line-length
+      top: calc(calc((var(--pgn-typography-font-size-base) * var(--pgn-typography-line-height-base) - var(--pgn-size-form-control-indicator-base)) * .5) + calc(var(--pgn-size-form-control-indicator-border-width) * 2));
+      // stylelint-disable-next-line max-line-length
+      left: calc(calc(-1 * (var(--pgn-size-form-control-switch-width) + var(--pgn-spacing-form-control-gutter))) + calc(var(--pgn-size-form-control-indicator-border-width) * 2));
+      width: var(--pgn-size-form-control-switch-indicator-base);
+      height: var(--pgn-size-form-control-switch-indicator-base);
+      background-color: var(--pgn-color-form-control-indicator-border);
+      // stylelint-disable-next-line property-disallowed-list
+      border-radius: var(--pgn-size-form-control-switch-indicator-border-radius);
+      transition: transform .15s ease-in-out, var(--pgn-transition-form-control);
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-color: var(--pgn-color-form-control-indicator-bg-base);
+      // stylelint-disable-next-line max-line-length
+      transform: translateX(calc(var(--pgn-size-form-control-switch-width) - var(--pgn-size-form-control-indicator-base)));
+    }
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
+      @include gradient-bg(var(--pgn-color-form-control-indicator-checked-bg-disabled));
+    }
+  }
+}
+
+
+// Select
+//
+// Replaces the browser default select with a custom one, mostly pulled from
+// https://primer.github.io/.
+//
+
+.custom-select {
+  display: inline-block;
+  width: 100%;
+  height: var(--pgn-size-form-control-select-height-base);
+  // stylelint-disable-next-line max-line-length
+  padding:
+    var(--pgn-spacing-form-control-select-padding-y-base)
+    (var(--pgn-spacing-form-control-select-padding-x-base) + var(--pgn-spacing-form-control-select-indicator-padding))
+    var(--pgn-spacing-form-control-select-padding-y-base)
+    var(--pgn-spacing-form-control-select-padding-x-base);
+  font-family: var(--pgn-typography-form-control-select-font-family);
+  font-weight: var(--pgn-typography-form-control-select-font-weight);
+  line-height: var(--pgn-typography-form-control-select-line-height);
+  color: var(--pgn-color-form-control-select-base);
+  vertical-align: middle;
+  background: var(--pgn-color-form-control-select-bg-base) var(--pgn-other-content-form-control-select-bg);
+  border: var(--pgn-size-form-control-select-border-width-base) solid var(--pgn-color-form-control-select-border-base);
+  appearance: none;
+  box-shadow: var(--pgn-elevation-form-control-select-border-base);
+
+  @include font-size(var(--pgn-typography-form-control-select-font-size-base));
+  @include border-radius(var(--pgn-size-form-control-select-border-radius),0);
+
+  &:focus {
+    border-color: var(--pgn-color-form-control-select-border-focus);
+    outline: 0;
+    box-shadow: var(--pgn-elevation-form-control-select-border-focus);
+
+    &::-ms-value {
+      // For visual consistency with other platforms/browsers,
+      // suppress the default white text on blue background highlight given to
+      // the selected option text when the (still closed) <select> receives focus
+      // in IE and (under certain conditions) Edge.
+      // See https://github.com/twbs/bootstrap/issues/19398.
+      color: var(--pgn-color-form-input-base);
+      background-color: var(--pgn-color-form-input-bg-base);
+    }
+  }
+
+  &[multiple],
+  &[size]:not([size="1"]) {
+    height: auto;
+    padding-right: var(--pgn-spacing-form-control-select-padding-x-base);
+    background-image: none;
+  }
+
+  &:disabled {
+    color: var(--pgn-color-form-control-select-disabled);
+    background-color: var(--pgn-color-form-control-select-bg-disabled);
+  }
+
+  // Hides the default caret in IE11
+  &::-ms-expand {
+    display: none;
+  }
+
+  // Remove outline from select box in FF
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 var(--pgn-color-form-control-select-base);
+  }
+}
+
+.custom-select-sm {
+  height: var(--pgn-size-form-control-select-height-sm);
+  padding-top: var(--pgn-spacing-form-control-select-padding-y-sm);
+  padding-bottom: var(--pgn-spacing-form-control-select-padding-y-sm);
+  padding-left: var(--pgn-spacing-form-control-select-padding-x-sm);
+
+  @include font-size(var(--pgn-typography-form-control-select-font-size-sm));
+}
+
+.custom-select-lg {
+  height: var(--pgn-size-form-control-select-height-lg);
+  padding-top: var(--pgn-spacing-form-control-select-padding-y-lg);
+  padding-bottom: var(--pgn-spacing-form-control-select-padding-y-lg);
+  padding-left: var(--pgn-spacing-form-control-select-padding-x-lg);
+
+  @include font-size(var(--pgn-typography-form-control-select-font-size-lg));
+}
+
+
+// File
+//
+// Custom file input.
+
+.custom-file {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: var(--pgn-size-form-control-file-height-base);
+  margin-bottom: 0;
+}
+
+.custom-file-input {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: var(--pgn-size-form-control-file-height-base);
+  margin: 0;
+  overflow: hidden;
+  opacity: 0;
+
+  &:focus ~ .custom-file-label {
+    border-color: var(--pgn-color-form-control-file-border-focus);
+    box-shadow: var(--pgn-elevation-form-control-file-focus);
+  }
+
+  // Use [disabled] and :disabled to work around https://github.com/twbs/bootstrap/issues/28247
+  &[disabled] ~ .custom-file-label,
+  &:disabled ~ .custom-file-label {
+    background-color: var(--pgn-color-form-control-file-bg-disabled);
+  }
+
+  &:lang(#{--pgn-other-form-control-custom-file-lang}) ~ .custom-file-label::after {
+    content: var(--pgn-other-form-control-custom-file-content);
+  }
+
+  ~ .custom-file-label[data-browse]::after {
+    content: attr(data-browse);
+  }
+}
+
+.custom-file-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: var(--pgn-size-form-control-file-height-base);
+  padding: var(--pgn-spacing-form-control-file-padding-y) var(--pgn-spacing-form-control-file-padding-x);
+  overflow: hidden;
+  font-family: var(--pgn-typography-form-control-file-font-family);
+  font-weight: var(--pgn-typography-form-control-file-font-weight);
+  line-height: var(--pgn-typography-form-control-file-line-height);
+  color: var(--pgn-color-form-control-file-base);
+  background-color: var(--pgn-color-form-control-file-bg-base);
+  border: var(--pgn-size-form-control-file-width) solid var(--pgn-color-form-control-file-border-base);
+  box-shadow: var(--pgn-elevation-form-control-file-base);
+
+  @include border-radius(var(--pgn-size-form-control-file-border-radius));
+
+  &::after {
+    content: "Browse";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    height: var(--pgn-size-form-control-file-height-inner);
+    padding: var(--pgn-spacing-form-control-file-padding-y) var(--pgn-spacing-form-control-file-padding-x);
+    line-height: var(--pgn-typography-form-control-file-line-height);
+    color: var(--pgn-color-form-control-file-button-base);
+    border-left: inherit;
+
+    @include gradient-bg(var(--pgn-color-form-control-file-button-bg));
+    @include border-radius(
+      0 var(--pgn-size-form-control-file-border-radius)
+      var(--pgn-size-form-control-file-border-radius) 0
+    );
+  }
+}
+
+// Range
+//
+// Style range inputs the same across browsers. Vendor-specific rules for pseudo
+// elements cannot be mixed. As such, there are no shared styles for focus or
+// active states on prefixed selectors.
+
+.custom-range {
+  width: 100%;
+  height:
+    calc(
+      var(--pgn-size-form-control-range-thumb-height) + calc(
+        var(--pgn-size-form-control-range-thumb-focus-width) * 2));
+  padding: 0; // Need to reset padding
+  background-color: transparent;
+  appearance: none;
+
+  &:focus {
+    outline: 0;
+
+    // Pseudo-elements must be split across multiple rulesets to have an effect.
+    // No box-shadow() mixin for focus accessibility.
+    &::-webkit-slider-thumb { box-shadow: var(--pgn-elevation-form-control-range-thumb-focus); }
+    &::-moz-range-thumb { box-shadow: var(--pgn-elevation-form-control-range-thumb-focus); }
+    &::-ms-thumb { box-shadow: var(--pgn-elevation-form-control-range-thumb-focus); }
+  }
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &::-webkit-slider-thumb {
+    width: var(--pgn-size-form-control-range-thumb-width);
+    height: var(--pgn-size-form-control-range-thumb-height);
+    margin-top:
+      calc(
+        (var(--pgn-size-form-control-range-track-height) - var(--pgn-size-form-control-range-thumb-height)) * .5
+      ); // Webkit specific
+
+    border: var(--pgn-size-form-control-range-thumb-border-base);
+    appearance: none;
+    transition: var(--pgn-transition-form-control);
+    box-shadow: var(--pgn-elevation-form-control-range-thumb-base);
+
+    @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-base));
+    @include border-radius(var(--pgn-size-form-control-range-thumb-border-radius));
+
+    &:active {
+      @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-active));
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: var(--pgn-size-form-control-range-track-width);
+    height: var(--pgn-size-form-control-range-track-height);
+    color: transparent; // Why?
+    cursor: var(--pgn-other-form-control-range-track-cursor);
+    background-color: var(--pgn-color-form-control-range-track-bg);
+    border-color: transparent;
+    box-shadow: var(--pgn-elevation-form-control-range-track);
+
+    @include border-radius(var(--pgn-size-form-control-range-track-border-radius));
+  }
+
+  &::-moz-range-thumb {
+    width: var(--pgn-size-form-control-range-thumb-width);
+    height: var(--pgn-size-form-control-range-thumb-height);
+    border: var(--pgn-size-form-control-range-thumb-border-base);
+    appearance: none;
+    transition: var(--pgn-transition-form-control);
+    box-shadow: var(--pgn-elevation-form-control-range-thumb-base);
+
+    @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-base));
+    @include border-radius(var(--pgn-size-form-control-range-thumb-border-radius));
+
+    &:active {
+      @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-active));
+    }
+  }
+
+  &::-moz-range-track {
+    width: var(--pgn-size-form-control-range-track-width);
+    height: var(--pgn-size-form-control-range-track-height);
+    color: transparent;
+    cursor: var(--pgn-other-form-control-range-track-cursor);
+    background-color: var(--pgn-color-form-control-range-track-bg);
+    border-color: transparent; // Firefox specific?
+    box-shadow: var(--pgn-elevation-form-control-range-track);
+
+    @include border-radius(var(--pgn-size-form-control-range-track-border-radius));
+  }
+
+  &::-ms-thumb {
+    width: var(--pgn-size-form-control-range-thumb-width);
+    height: var(--pgn-size-form-control-range-thumb-height);
+    margin-top: 0; // Edge specific
+    margin-right: var(--pgn-size-form-control-range-thumb-focus-width);
+    margin-left: var(--pgn-size-form-control-range-thumb-focus-width);
+    border: var(--pgn-size-form-control-range-thumb-border-base);
+    appearance: none;
+    transition: var(--pgn-transition-form-control);
+    box-shadow: var(--pgn-elevation-form-control-range-thumb-base);
+
+    @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-base));
+    @include border-radius(var(--pgn-size-form-control-range-thumb-border-radius));
+
+    &:active {
+      @include gradient-bg(var(--pgn-color-form-control-range-thumb-bg-active));
+    }
+  }
+
+  &::-ms-track {
+    width: var(--pgn-size-form-control-range-track-width);
+    height: var(--pgn-size-form-control-range-track-height);
+    color: transparent;
+    cursor: var(--pgn-other-form-control-range-track-cursor);
+    background-color: transparent;
+    border-color: transparent;
+    border-width: calc(var(--pgn-size-form-control-range-thumb-height) * .5);
+    box-shadow: var(--pgn-elevation-form-control-range-track);
+  }
+
+  &::-ms-fill-lower {
+    background-color: var(--pgn-color-form-control-range-track-bg);
+
+    @include border-radius(var(--pgn-size-form-control-range-track-border-radius));
+  }
+
+  &::-ms-fill-upper {
+    margin-right: 15px; // arbitrary?
+    background-color: var(--pgn-color-form-control-range-track-bg);
+
+    @include border-radius(var(--pgn-size-form-control-range-track-border-radius));
+  }
+
+  &:disabled {
+    &::-webkit-slider-thumb {
+      background-color: var(--pgn-color-form-control-range-thumb-bg-disabled);
+    }
+
+    &::-webkit-slider-runnable-track {
+      cursor: default;
+    }
+
+    &::-moz-range-thumb {
+      background-color: var(--pgn-color-form-control-range-thumb-bg-disabled);
+    }
+
+    &::-moz-range-track {
+      cursor: default;
+    }
+
+    &::-ms-thumb {
+      background-color: var(--pgn-color-form-control-range-thumb-bg-disabled);
+    }
+  }
+}
+
+.custom-control-label::before,
+.custom-file-label,
+.custom-select {
+  transition: var(--pgn-transition-form-control);
+}

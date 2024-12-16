@@ -1,0 +1,12 @@
+{
+  "size": {
+    "$type": "dimension",
+    "icon": {
+      "inline": { "source": "$icon-inline", "$value": ".8em" },
+      "xs": { "source": "$icon-xs", "$value": "1rem" },
+      "sm": { "source": "$icon-sm", "$value": "1.25rem" },
+      "md": { "source": "$icon-md", "$value": "1.5rem" },
+      "lg": { "source": "$icon-lg", "$value": "1.75rem" }
+    }
+  }
+}

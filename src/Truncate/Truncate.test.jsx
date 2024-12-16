@@ -4,9 +4,9 @@ import Truncate from '.';
 
 describe('<Truncate />', () => {
   render(
-    <Truncate className="pgn__truncate">
+    <Truncate.Deprecated className="pgn__truncate">
       Learners, course teams, researchers, developers.
-    </Truncate>,
+    </Truncate.Deprecated>,
   );
   it('render with className', () => {
     const element = screen.getByText(/Learners, course teams, researchers, developers./i);
@@ -18,9 +18,9 @@ describe('<Truncate />', () => {
   it('render with onTruncate', () => {
     const mockFn = jest.fn();
     render(
-      <Truncate className="pgn__truncate" onTruncate={mockFn}>
+      <Truncate.Deprecated className="pgn__truncate" onTruncate={mockFn}>
         Learners, course teams, researchers, developers.
-      </Truncate>,
+      </Truncate.Deprecated>,
     );
     expect(mockFn).toHaveBeenCalledTimes(2);
   });

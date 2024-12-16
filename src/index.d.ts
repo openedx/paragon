@@ -9,28 +9,6 @@ export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
 export { default as Container, ContainerSize } from './Container';
-export {
-  default as Form,
-  RadioControl,
-  CheckboxControl,
-  SwitchControl,
-  FormSwitchSet,
-  FormControl,
-  FormControlDecoratorGroup,
-  FormControlFeedback,
-  FormCheck,
-  FormFile,
-  FormRadio,
-  FormRadioSet,
-  FormRadioSetContext,
-  FormGroup,
-  FormLabel,
-  useCheckboxSetValues,
-  FormText,
-  FormAutosuggest,
-  FormAutosuggestOption,
-  InputGroup,
-} from './Form';
 export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
@@ -83,6 +61,28 @@ export const
 export const Fade: any; // from './Fade';
 /** @deprecated */
 export const Fieldset: any; // from './Fieldset';
+export const
+  Form: any,
+  RadioControl: any,
+  CheckboxControl: any,
+  SwitchControl: any,
+  FormSwitchSet: any,
+  FormControl: any,
+  FormControlDecoratorGroup: any,
+  FormControlFeedback: any,
+  FormCheck: any,
+  FormFile: any,
+  FormRadio: any,
+  FormRadioSet: any,
+  FormRadioSetContext: any,
+  FormGroup: any,
+  FormLabel: any,
+  useCheckboxSetValues: any,
+  FormText: any,
+  FormAutosuggest: any,
+  FormAutosuggestOption: any,
+  InputGroup: any;
+// from './Form';
 export const IconButtonToggle: any; // from './IconButtonToggle';
 /** @deprecated Replaced by `Form.Control`. */
 export const Input: any; // from './Input';

@@ -1,0 +1,881 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+@import "exports.module.scss";
+
+// Color system
+$white: var(--pgn-color-white) !default;
+$gray-100: var(--pgn-color-gray-100) !default;
+$gray-200: var(--pgn-color-gray-200) !default;
+$gray-300: var(--pgn-color-gray-300) !default;
+$gray-400: var(--pgn-color-gray-400) !default;
+$gray-500: var(--pgn-color-gray-500) !default;
+$gray-600: var(--pgn-color-gray-600) !default;
+$gray-700: var(--pgn-color-gray-700) !default;
+$gray-800: var(--pgn-color-gray-800) !default;
+$gray-900: var(--pgn-color-gray-900) !default;
+$black: var(--pgn-color-black) !default;
+
+$grays: () !default;
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
+
+$blue: var(--pgn-color-blue) !default;
+$red: var(--pgn-color-red) !default;
+$yellow: var(--pgn-color-yellow) !default;
+$green: var(--pgn-color-green) !default;
+$teal: var(--pgn-color-teal) !default;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    "blue": $blue,
+    "green": $green,
+    "teal": $teal,
+    "red": $red,
+    "yellow": $yellow,
+    "white": $white,
+    "gray": $gray-500,
+    "dark-gray": $gray-700,
+  ),
+  $colors
+);
+
+$primary: var(--pgn-color-primary-base) !default;
+$secondary: var(--pgn-color-secondary-base) !default;
+$brand: var(--pgn-color-brand-base) !default;
+$success: var(--pgn-color-success-base) !default;
+$info: var(--pgn-color-info-base) !default;
+$danger: var(--pgn-color-danger-base) !default;
+$warning: var(--pgn-color-warning-base) !default;
+$light: var(--pgn-color-light-base) !default;
+$dark: var(--pgn-color-dark-base) !default;
+$accent-a: var(--pgn-color-accent-a) !default;
+$accent-b: var(--pgn-color-accent-b) !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "brand":      $brand,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark,
+    "gray":       $gray-500,
+    "accent-a":   $accent-a,
+    "accent-b":   $accent-b,
+  ),
+  $theme-colors
+);
+
+$primary-100: var(--pgn-color-primary-100) !default;
+$primary-200: var(--pgn-color-primary-200) !default;
+$primary-300: var(--pgn-color-primary-300) !default;
+$primary-400: var(--pgn-color-primary-400) !default;
+$primary-500: var(--pgn-color-primary-500) !default;
+$primary-600: var(--pgn-color-primary-600) !default;
+$primary-700: var(--pgn-color-primary-700) !default;
+$primary-800: var(--pgn-color-primary-800) !default;
+$primary-900: var(--pgn-color-primary-900) !default;
+
+$secondary-100: var(--pgn-color-secondary-100) !default;
+$secondary-200: var(--pgn-color-secondary-200) !default;
+$secondary-300: var(--pgn-color-secondary-300) !default;
+$secondary-400: var(--pgn-color-secondary-400) !default;
+$secondary-500: var(--pgn-color-secondary-500) !default;
+$secondary-600: var(--pgn-color-secondary-600) !default;
+$secondary-700: var(--pgn-color-secondary-700) !default;
+$secondary-800: var(--pgn-color-secondary-800) !default;
+$secondary-900: var(--pgn-color-secondary-900) !default;
+
+$brand-100: var(--pgn-color-brand-100) !default;
+$brand-200: var(--pgn-color-brand-200) !default;
+$brand-300: var(--pgn-color-brand-300) !default;
+$brand-400: var(--pgn-color-brand-400) !default;
+$brand-500: var(--pgn-color-brand-500) !default;
+$brand-600: var(--pgn-color-brand-600) !default;
+$brand-700: var(--pgn-color-brand-700) !default;
+$brand-800: var(--pgn-color-brand-800) !default;
+$brand-900: var(--pgn-color-brand-900) !default;
+
+$success-100: var(--pgn-color-success-100) !default;
+$success-200: var(--pgn-color-success-200) !default;
+$success-300: var(--pgn-color-success-300) !default;
+$success-400: var(--pgn-color-success-400) !default;
+$success-500: var(--pgn-color-success-500) !default;
+$success-600: var(--pgn-color-success-600) !default;
+$success-700: var(--pgn-color-success-700) !default;
+$success-800: var(--pgn-color-success-800) !default;
+$success-900: var(--pgn-color-success-900) !default;
+
+$info-100: var(--pgn-color-info-100) !default;
+$info-200: var(--pgn-color-info-200) !default;
+$info-300: var(--pgn-color-info-300) !default;
+$info-400: var(--pgn-color-info-400) !default;
+$info-500: var(--pgn-color-info-500) !default;
+$info-600: var(--pgn-color-info-600) !default;
+$info-700: var(--pgn-color-info-700) !default;
+$info-800: var(--pgn-color-info-800) !default;
+$info-900: var(--pgn-color-info-900) !default;
+
+$warning-100: var(--pgn-color-warning-100) !default;
+$warning-200: var(--pgn-color-warning-200) !default;
+$warning-300: var(--pgn-color-warning-300) !default;
+$warning-400: var(--pgn-color-warning-400) !default;
+$warning-500: var(--pgn-color-warning-500) !default;
+$warning-600: var(--pgn-color-warning-600) !default;
+$warning-700: var(--pgn-color-warning-700) !default;
+$warning-800: var(--pgn-color-warning-800) !default;
+$warning-900: var(--pgn-color-warning-900) !default;
+
+$danger-100: var(--pgn-color-danger-100) !default;
+$danger-200: var(--pgn-color-danger-200) !default;
+$danger-300: var(--pgn-color-danger-300) !default;
+$danger-400: var(--pgn-color-danger-400) !default;
+$danger-500: var(--pgn-color-danger-500) !default;
+$danger-600: var(--pgn-color-danger-600) !default;
+$danger-700: var(--pgn-color-danger-700) !default;
+$danger-800: var(--pgn-color-danger-800) !default;
+$danger-900: var(--pgn-color-danger-900) !default;
+
+$light-100: var(--pgn-color-light-100) !default;
+$light-200: var(--pgn-color-light-200) !default;
+$light-300: var(--pgn-color-light-300) !default;
+$light-400: var(--pgn-color-light-400) !default;
+$light-500: var(--pgn-color-light-500) !default;
+$light-600: var(--pgn-color-light-600) !default;
+$light-700: var(--pgn-color-light-700) !default;
+$light-800: var(--pgn-color-light-800) !default;
+$light-900: var(--pgn-color-light-900) !default;
+
+$dark-100: var(--pgn-color-dark-100) !default;
+$dark-200: var(--pgn-color-dark-200) !default;
+$dark-300: var(--pgn-color-dark-300) !default;
+$dark-400: var(--pgn-color-dark-400) !default;
+$dark-500: var(--pgn-color-dark-500) !default;
+$dark-600: var(--pgn-color-dark-600) !default;
+$dark-700: var(--pgn-color-dark-700) !default;
+$dark-800: var(--pgn-color-dark-800) !default;
+$dark-900: var(--pgn-color-dark-900) !default;
+
+$theme-color-levels: () !default;
+
+$theme-color-levels: map-merge(
+  (
+    "gray-100": $gray-100,
+    "gray-200": $gray-200,
+    "gray-300": $gray-300,
+    "gray-400": $gray-400,
+    "gray-500": $gray-500,
+    "gray-600": $gray-600,
+    "gray-700": $gray-700,
+    "gray-800": $gray-800,
+    "gray-900": $gray-900,
+    "primary-100": $primary-100,
+    "primary-200": $primary-200,
+    "primary-300": $primary-300,
+    "primary-400": $primary-400,
+    "primary-500": $primary-500,
+    "primary-600": $primary-600,
+    "primary-700": $primary-700,
+    "primary-800": $primary-800,
+    "primary-900": $primary-900,
+    "secondary-100": $secondary-100,
+    "secondary-200": $secondary-200,
+    "secondary-300": $secondary-300,
+    "secondary-400": $secondary-400,
+    "secondary-500": $secondary-500,
+    "secondary-600": $secondary-600,
+    "secondary-700": $secondary-700,
+    "secondary-800": $secondary-800,
+    "secondary-900": $secondary-900,
+    "brand-100": $brand-100,
+    "brand-200": $brand-200,
+    "brand-300": $brand-300,
+    "brand-400": $brand-400,
+    "brand-500": $brand-500,
+    "brand-600": $brand-600,
+    "brand-700": $brand-700,
+    "brand-800": $brand-800,
+    "brand-900": $brand-900,
+    "success-100": $success-100,
+    "success-200": $success-200,
+    "success-300": $success-300,
+    "success-400": $success-400,
+    "success-500": $success-500,
+    "success-600": $success-600,
+    "success-700": $success-700,
+    "success-800": $success-800,
+    "success-900": $success-900,
+    "info-100": $info-100,
+    "info-200": $info-200,
+    "info-300": $info-300,
+    "info-400": $info-400,
+    "info-500": $info-500,
+    "info-600": $info-600,
+    "info-700": $info-700,
+    "info-800": $info-800,
+    "info-900": $info-900,
+    "warning-100": $warning-100,
+    "warning-200": $warning-200,
+    "warning-300": $warning-300,
+    "warning-400": $warning-400,
+    "warning-500": $warning-500,
+    "warning-600": $warning-600,
+    "warning-700": $warning-700,
+    "warning-800": $warning-800,
+    "warning-900": $warning-900,
+    "danger-100": $danger-100,
+    "danger-200": $danger-200,
+    "danger-300": $danger-300,
+    "danger-400": $danger-400,
+    "danger-500": $danger-500,
+    "danger-600": $danger-600,
+    "danger-700": $danger-700,
+    "danger-800": $danger-800,
+    "danger-900": $danger-900,
+    "light-100": $light-100,
+    "light-200": $light-200,
+    "light-300": $light-300,
+    "light-400": $light-400,
+    "light-500": $light-500,
+    "light-600": $light-600,
+    "light-700": $light-700,
+    "light-800": $light-800,
+    "light-900": $light-900,
+    "dark-100": $dark-100,
+    "dark-200": $dark-200,
+    "dark-300": $dark-300,
+    "dark-400": $dark-400,
+    "dark-500": $dark-500,
+    "dark-600": $dark-600,
+    "dark-700": $dark-700,
+    "dark-800": $dark-800,
+    "dark-900": $dark-900,
+  ),
+  $theme-color-levels
+);
+
+$element-color-levels: () !default;
+
+$element-color-levels: map-merge(
+  (
+    "background": 100,
+    "disabled-border": 100,
+    "border": 200,
+    "icon": 300,
+    "active-border": 300,
+    "focus": 500,
+    "graphic": 300,
+    "default": 500,
+    "light-text": 500,
+    "hover": 700,
+    "text": 700,
+    "active": 900,
+    "dark-text": 900,
+  ),
+  $element-color-levels
+);
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval: var(--pgn-theme-interval) !default;
+
+// The yiq lightness value that determines when the lightness
+// of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold:  150 !default;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark:             theme-color("gray", "text") !default;
+$yiq-text-light:            var(--pgn-color-yiq-light) !default;
+
+// Characters which are escaped by the escape-svg function
+$escaped-characters: (
+  ("<", "%3c"),
+  (">", "%3e"),
+  ("#", "%23"),
+  ("(", "%28"),
+  (")", "%29"),
+) !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:                                true !default;
+$enable-rounded:                              true !default;
+$enable-gradients:                            false !default;
+$enable-transitions:                          true !default;
+$enable-prefers-reduced-motion-media-query:   true !default;
+$enable-grid-classes:                         true !default;
+$enable-pointer-cursor-for-buttons:           true !default;
+$enable-print-styles:                         true !default;
+$enable-responsive-font-sizes:                false !default;
+$enable-validation-icons:                     false !default;
+$enable-deprecation-messages:                 true !default;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: var(--pgn-spacing-spacer-base) !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: calc(#{$spacer} * .25),
+    1\.5: calc(#{$spacer} * .375),
+    2: calc(#{$spacer} * .5),
+    2\.5: calc(#{$spacer} * .75),
+    3: $spacer,
+    3\.5: calc(#{$spacer} * 1.25),
+    4: calc(#{$spacer} * 1.5),
+    4\.5: calc(#{$spacer} * 2),
+    5: calc(#{$spacer} * 3),
+    5\.5: calc(#{$spacer} * 4),
+    6: calc(#{$spacer} * 5),
+  ),
+  $spacers
+);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge(
+  (
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto
+  ),
+  $sizes
+);
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: var(--pgn-color-body-bg) !default;
+$body-color: var(--pgn-color-body-base) !default;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: var(--pgn-color-link-base) !default;
+$link-decoration: var(--pgn-typography-link-decoration-base) !default;
+$link-hover-color: var(--pgn-color-link-hover) !default;
+$link-hover-decoration: var(--pgn-typography-link-decoration-hover) !default;
+$inline-link-color: var(--pgn-color-link-inline-base) !default;
+$inline-link-decoration: var(--pgn-typography-link-decoration-inline-base) !default;
+$inline-link-decoration-color: var(--pgn-color-link-inline-decoration) !default;
+$inline-link-hover-color: var(--pgn-color-link-inline-hover-base) !default;
+$inline-link-hover-decoration: var(--pgn-typography-link-decoration-inline-hover) !default;
+$inline-link-hover-decoration-color: var(--pgn-color-link-inline-hover-decoration) !default;
+
+$muted-link-color: var(--pgn-color-link-muted-base) !default;
+$muted-link-decoration: var(--pgn-typography-link-decoration-muted-base) !default;
+$muted-link-hover-color: var(--pgn-color-link-muted-hover) !default;
+$muted-link-hover-decoration: var(--pgn-typography-link-decoration-muted-hover) !default;
+$muted-inline-link-color: var(--pgn-color-link-muted-inline-base) !default;
+$muted-inline-link-decoration: var(--pgn-typography-link-decoration-muted-inline-base) !default;
+$muted-inline-link-decoration-color: var(--pgn-color-link-muted-inline-decoration) !default;
+$muted-inline-link-hover-color: var(--pgn-color-link-muted-inline-hover-base) !default;
+$muted-inline-link-hover-decoration: var(--pgn-typography-link-decoration-muted-inline-hover) !default;
+$muted-inline-link-hover-decoration-color: var(--pgn-color-link-muted-inline-hover-decoration) !default;
+
+$brand-link-color: var(--pgn-color-link-brand-base) !default;
+$brand-link-decoration: var(--pgn-typography-link-decoration-brand-base) !default;
+$brand-link-hover-color: var(--pgn-color-link-brand-hover) !default;
+$brand-link-hover-decoration: var(--pgn-typography-link-decoration-brand-hover) !default;
+$brand-inline-link-color: var(--pgn-color-link-brand-inline-base) !default;
+$brand-inline-link-decoration: var(--pgn-typography-link-decoration-brand-inline-base) !default;
+$brand-inline-link-decoration-color: var(--pgn-color-link-brand-inline-decoration) !default;
+$brand-inline-link-hover-color: var(--pgn-color-link-brand-inline-hover-base) !default;
+$brand-inline-link-hover-decoration: var(--pgn-typography-link-decoration-brand-inline-hover) !default;
+$brand-inline-link-hover-decoration-color: var(--pgn-color-link-brand-inline-hover-decoration) !default;
+
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+$emphasized-link-hover-darken-percentage: var(--pgn-other-link-emphasized-hover-darken-percentage) !default;
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom: var(--pgn-spacing-paragraph-margin-bottom) !default;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1600px
+) !default;
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+// TODO: don`t create a token for this variable. Requires more changes to bootstrap files.
+$grid-columns: 12 !default;
+$grid-gutter-width: var(--pgn-spacing-grid-gutter-width) !default;
+// TODO: don`t create a token for this variable. Requires more changes to bootstrap files.
+$grid-row-columns: 6 !default;
+
+$max-width-xs: var(--pgn-size-container-max-width-xs) !default;
+$max-width-sm: var(--pgn-size-container-max-width-sm) !default;
+$max-width-md: var(--pgn-size-container-max-width-md) !default;
+$max-width-lg: var(--pgn-size-container-max-width-lg) !default;
+$max-width-xl: var(--pgn-size-container-max-width-xl) !default;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$line-height-lg: var(--pgn-typography-line-height-lg) !default;
+$line-height-sm: var(--pgn-typography-line-height-sm) !default;
+
+$border-width: var(--pgn-size-border-width) !default;
+$border-color: var(--pgn-color-border) !default;
+
+$border-radius: var(--pgn-size-border-radius-base) !default;
+$border-radius-lg: var(--pgn-size-border-radius-lg) !default;
+$border-radius-sm: var(--pgn-size-border-radius-sm) !default;
+
+$rounded-pill: var(--pgn-size-rounded-pill) !default;
+
+$level-1-box-shadow: var(--pgn-elevation-box-shadow-level-1) !default;
+$level-2-box-shadow: var(--pgn-elevation-box-shadow-level-2) !default;
+$level-3-box-shadow: var(--pgn-elevation-box-shadow-level-3) !default;
+$level-4-box-shadow: var(--pgn-elevation-box-shadow-level-4) !default;
+$level-5-box-shadow: var(--pgn-elevation-box-shadow-level-5) !default;
+
+$box-shadow-down-1: var(--pgn-elevation-box-shadow-down-1) !default;
+$box-shadow-down-2: var(--pgn-elevation-box-shadow-down-2) !default;
+$box-shadow-down-3: var(--pgn-elevation-box-shadow-down-3) !default;
+$box-shadow-down-4: var(--pgn-elevation-box-shadow-down-4) !default;
+$box-shadow-down-5: var(--pgn-elevation-box-shadow-down-5) !default;
+
+$box-shadow-left-1: var(--pgn-elevation-box-shadow-left-1) !default;
+$box-shadow-left-2: var(--pgn-elevation-box-shadow-left-2) !default;
+$box-shadow-left-3: var(--pgn-elevation-box-shadow-left-3) !default;
+$box-shadow-left-4: var(--pgn-elevation-box-shadow-left-4) !default;
+$box-shadow-left-5: var(--pgn-elevation-box-shadow-left-5) !default;
+
+$box-shadow-up-1: var(--pgn-elevation-box-shadow-up-1) !default;
+$box-shadow-up-2: var(--pgn-elevation-box-shadow-up-2) !default;
+$box-shadow-up-3: var(--pgn-elevation-box-shadow-up-3) !default;
+$box-shadow-up-4: var(--pgn-elevation-box-shadow-up-4) !default;
+$box-shadow-up-5: var(--pgn-elevation-box-shadow-up-5) !default;
+
+$box-shadow-right-1: var(--pgn-elevation-box-shadow-right-1) !default;
+$box-shadow-right-2: var(--pgn-elevation-box-shadow-right-2) !default;
+$box-shadow-right-3: var(--pgn-elevation-box-shadow-right-3) !default;
+$box-shadow-right-4: var(--pgn-elevation-box-shadow-right-4) !default;
+$box-shadow-right-5: var(--pgn-elevation-box-shadow-right-5) !default;
+
+$box-shadow-centered-1: var(--pgn-elevation-box-shadow-centered-1) !default;
+$box-shadow-centered-2: var(--pgn-elevation-box-shadow-centered-2) !default;
+$box-shadow-centered-3: var(--pgn-elevation-box-shadow-centered-3) !default;
+$box-shadow-centered-4: var(--pgn-elevation-box-shadow-centered-4) !default;
+$box-shadow-centered-5: var(--pgn-elevation-box-shadow-centered-5) !default;
+
+@mixin pgn-box-shadow($level, $side) {
+  @if $side == "down" {
+    @if $level == 1 {
+      box-shadow: var(--pgn-elevation-box-shadow-down-1);
+    }
+
+    @else if $level == 2 {
+      box-shadow: var(--pgn-elevation-box-shadow-down-2);
+    }
+
+    @else if $level == 3 {
+      box-shadow: var(--pgn-elevation-box-shadow-down-3);
+    }
+
+    @else if $level == 4 {
+      box-shadow: var(--pgn-elevation-box-shadow-down-4);
+    }
+
+    @else if $level == 5 {
+      box-shadow: var(--pgn-elevation-box-shadow-down-5);
+    }
+
+    @else {
+      @error "Box-shadow level #{$level} does not exist";
+    }
+  }
+
+  @if $side == "left" {
+    @if $level == 1 {
+      box-shadow: var(--pgn-elevation-box-shadow-left-1);
+    }
+
+    @else if $level == 2 {
+      box-shadow: var(--pgn-elevation-box-shadow-left-2);
+    }
+
+    @else if $level == 3 {
+      box-shadow: var(--pgn-elevation-box-shadow-left-3);
+    }
+
+    @else if $level == 4 {
+      box-shadow: var(--pgn-elevation-box-shadow-left-4);
+    }
+
+    @else if $level == 5 {
+      box-shadow: var(--pgn-elevation-box-shadow-left-5);
+    }
+
+    @else {
+      @error "Box-shadow level #{$level} does not exist";
+    }
+  }
+
+  @if $side == "up" {
+    @if $level == 1 {
+      box-shadow: var(--pgn-elevation-box-shadow-up-1);
+    }
+
+    @else if $level == 2 {
+      box-shadow: var(--pgn-elevation-box-shadow-up-2);
+    }
+
+    @else if $level == 3 {
+      box-shadow: var(--pgn-elevation-box-shadow-up-3);
+    }
+
+    @else if $level == 4 {
+      box-shadow: var(--pgn-elevation-box-shadow-up-4);
+    }
+
+    @else if $level == 5 {
+      box-shadow: var(--pgn-elevation-box-shadow-up-5);
+    }
+
+    @else {
+      @error "Box-shadow level #{$level} does not exist";
+    }
+  }
+
+  @if $side == "right" {
+    @if $level == 1 {
+      box-shadow: var(--pgn-elevation-box-shadow-right-1);
+    }
+
+    @else if $level == 2 {
+      box-shadow: var(--pgn-elevation-box-shadow-right-2);
+    }
+
+    @else if $level == 3 {
+      box-shadow: var(--pgn-elevation-box-shadow-right-3);
+    }
+
+    @else if $level == 4 {
+      box-shadow: var(--pgn-elevation-box-shadow-right-4);
+    }
+
+    @else if $level == 5 {
+      box-shadow: var(--pgn-elevation-box-shadow-right-5);
+    }
+
+    @else {
+      @error "Box-shadow level #{$level} does not exist";
+    }
+  }
+
+  @if $side == "centered" {
+    @if $level == 1 {
+      box-shadow: var(--pgn-elevation-box-shadow-centered-1);
+    }
+
+    @else if $level == 2 {
+      box-shadow: var(--pgn-elevation-box-shadow-centered-2);
+    }
+
+    @else if $level == 3 {
+      box-shadow: var(--pgn-elevation-box-shadow-centered-3);
+    }
+
+    @else if $level == 4 {
+      box-shadow: var(--pgn-elevation-box-shadow-centered-4);
+    }
+
+    @else if $level == 5 {
+      box-shadow: var(--pgn-elevation-box-shadow-centered-5);
+    }
+
+    @else {
+      @error "Box-shadow level #{$level} does not exist";
+    }
+  }
+}
+
+$levels: (
+  1,
+  2,
+  3,
+  4,
+  5
+) !default;
+
+$box-shadow-sides: (
+  "down",
+  "up",
+  "right",
+  "left",
+  "centered"
+) !default;
+
+$box-shadow-sm: var(--pgn-elevation-box-shadow-sm) !default;
+$box-shadow: var(--pgn-elevation-box-shadow-base-offset-x)
+  var(--pgn-elevation-box-shadow-base-offset-y)
+  var(--pgn-elevation-box-shadow-base-blur)
+  var(--pgn-elevation-box-shadow-base-color) !default;
+$box-shadow-lg: var(--pgn-elevation-box-shadow-lg) !default;
+
+$component-active-color: var(--pgn-color-active) !default;
+$component-active-bg: var(--pgn-color-bg-active) !default;
+
+$caret-width: var(--pgn-size-caret-width) !default;
+$caret-vertical-align: var(--pgn-spacing-caret-vertical-align) !default;
+$caret-spacing: var(--pgn-spacing-caret-base) !default;
+
+$transition-base: var(--pgn-transition-base) !default;
+$transition-fade: var(--pgn-transition-fade) !default;
+$transition-collapse: var(--pgn-transition-collapse-height) !default;
+$transition-collapse-width: var(--pgn-transition-collapse-width) !default;
+
+$embed-responsive-aspect-ratios: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$embed-responsive-aspect-ratios: join(
+  (
+    (21 9),
+    (16 9),
+    (4 3),
+    (1 1),
+  ),
+  $embed-responsive-aspect-ratios
+);
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: var(--pgn-typography-font-family-sans-serif) !default;
+$font-family-serif: var(--pgn-typography-font-family-serif) !default;
+$font-family-monospace: var(--pgn-typography-font-family-monospace) !default;
+$font-family-base: var(--pgn-typography-font-family-base) !default;
+
+$font-size-base: var(--pgn-typography-font-size-base) !default;
+$font-size-lg: var(--pgn-typography-font-size-lg) !default;
+$font-size-sm: var(--pgn-typography-font-size-sm) !default;
+$font-size-xs: var(--pgn-typography-font-size-xs) !default;
+
+$font-weight-lighter: var(--pgn-typography-font-weight-lighter) !default;
+$font-weight-light: var(--pgn-typography-font-weight-light) !default;
+$font-weight-normal: var(--pgn-typography-font-weight-normal) !default;
+$font-weight-semi-bold: var(--pgn-typography-font-weight-semi-bold) !default;
+$font-weight-bold: var(--pgn-typography-font-weight-bold) !default;
+$font-weight-bolder: var(--pgn-typography-font-weight-bolder) !default;
+
+$font-weight-base: var(--pgn-typography-font-weight-base) !default;
+$line-height-base: var(--pgn-typography-line-height-base) !default;
+
+$h1-font-size: var(--pgn-typography-font-size-h1-base) !default;
+$h2-font-size: var(--pgn-typography-font-size-h2-base) !default;
+$h3-font-size: var(--pgn-typography-font-size-h3-base) !default;
+$h4-font-size: var(--pgn-typography-font-size-h4-base) !default;
+$h5-font-size: var(--pgn-typography-font-size-h5-base) !default;
+$h6-font-size: var(--pgn-typography-font-size-h6-base) !default;
+
+$h1-mobile-font-size: var(--pgn-typography-font-size-h1-mobile) !default;
+$h2-mobile-font-size: var(--pgn-typography-font-size-h2-mobile) !default;
+$h3-mobile-font-size: var(--pgn-typography-font-size-h3-mobile) !default;
+$h4-mobile-font-size: var(--pgn-typography-font-size-h4-mobile) !default;
+$h5-mobile-font-size: var(--pgn-typography-font-size-h5-mobile) !default;
+$h6-mobile-font-size: var(--pgn-typography-font-size-h6-mobile) !default;
+
+$headings-margin-bottom: var(--pgn-spacing-headings-margin-bottom) !default;
+$headings-font-family: var(--pgn-typography-headings-font-family) !default;
+$headings-font-weight: var(--pgn-typography-headings-font-weight) !default;
+$headings-line-height: var(--pgn-typography-headings-line-height) !default;
+$headings-color: var(--pgn-color-headings-base) !default;
+
+$display1-size: var(--pgn-typography-font-size-display-1) !default;
+$display2-size: var(--pgn-typography-font-size-display-2) !default;
+$display3-size: var(--pgn-typography-font-size-display-3) !default;
+$display4-size: var(--pgn-typography-font-size-display-4) !default;
+
+// deprecated in favor of $display1-mobile-size
+$display-mobile-size: var(--pgn-typography-font-size-display-mobile-1) !default;
+$display1-mobile-size: var(--pgn-typography-font-size-display-mobile-1) !default;
+$display2-mobile-size: var(--pgn-typography-font-size-display-mobile-2) !default;
+$display3-mobile-size: var(--pgn-typography-font-size-display-mobile-3) !default;
+$display4-mobile-size: var(--pgn-typography-font-size-display-mobile-4) !default;
+
+
+$display1-weight: var(--pgn-typography-font-weight-display-1) !default;
+$display2-weight: var(--pgn-typography-font-weight-display-2) !default;
+$display3-weight: var(--pgn-typography-font-weight-display-3) !default;
+$display4-weight: var(--pgn-typography-font-weight-display-4) !default;
+
+$display-line-height: var(--pgn-typography-line-height-display-base) !default;
+$display-mobile-line-height: var(--pgn-typography-line-height-display-mobile) !default;
+
+$lead-font-size: var(--pgn-typography-font-size-lg) !default;
+$lead-font-weight: var(--pgn-typography-font-weight-lead) !default;
+
+$small-font-size: var(--pgn-typography-font-size-sm) !default;
+$x-small-font-size: var(--pgn-typography-font-size-xs) !default;
+
+$micro-font-size: var(--pgn-typography-font-size-micro) !default;
+$micro-line-height: var(--pgn-typography-line-height-micro) !default;
+
+$text-muted: var(--pgn-color-text-muted) !default;
+
+$blockquote-small-color: var(--pgn-color-blockquote-small) !default;
+$blockquote-small-font-size: var(--pgn-typography-blockquote-small-font-size) !default;
+$blockquote-font-size: var(--pgn-typography-blockquote-font-size) !default;
+
+$hr-border-color: var(--pgn-color-hr-border) !default;
+$hr-border-width: var(--pgn-size-hr-border-width) !default;
+
+$mark-padding: var(--pgn-spacing-mark-padding) !default;
+
+$dt-font-weight: var(--pgn-typography-dt-font-weight) !default;
+
+$list-inline-padding: var(--pgn-spacing-list-inline-padding) !default;
+
+$mark-bg: var(--pgn-color-mark-bg) !default;
+
+$hr-margin-y: var(--pgn-size-hr-border-margin-y) !default;
+
+$label-margin-bottom: var(--pgn-spacing-label-margin-bottom) !default;
+
+$table-cell-padding: var(--pgn-spacing-table-cell-padding-base) !default;
+$table-cell-padding-sm: var(--pgn-spacing-table-cell-padding-sm) !default;
+$table-caption-color: var(--pgn-color-table-caption) !default;
+$table-border-color: var(--pgn-color-table-border) !default;
+$table-th-font-weight: var(--pgn-typography-font-weight-table-th) !default;
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-dropdown: var(--pgn-elevation-dropdown-zindex) !default;
+$zindex-sticky: var(--pgn-elevation-zindex-sticky) !default;
+$zindex-fixed: var(--pgn-elevation-zindex-fixed) !default;
+$zindex-sheet-backdrop: var(--pgn-elevation-sheet-zindex-backdrop) !default;
+$zindex-sheet: var(--pgn-elevation-sheet-zindex-main) !default;
+$zindex-modal-backdrop: var(--pgn-elevation-modal-backdrop-zindex) !default;
+$zindex-modal: var(--pgn-elevation-modal-zindex) !default;
+$zindex-popover: var(--pgn-elevation-popover-zindex) !default;
+$zindex-tooltip: var(--pgn-elevation-tooltip-zindex) !default;
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y: var(--pgn-spacing-input-btn-padding-y) !default;
+$input-btn-padding-x: var(--pgn-spacing-input-btn-padding-x) !default;
+$input-btn-font-family: var(--pgn-typography-input-btn-font-family) !default;
+$input-btn-font-size: var(--pgn-typography-input-btn-font-size-base) !default;
+$input-btn-line-height: var(--pgn-typography-input-btn-line-height-base) !default;
+
+$input-btn-focus-width: var(--pgn-size-input-btn-focus-width) !default;
+$input-btn-focus-color: var(--pgn-color-input-btn-focus) !default;
+$input-btn-focus-box-shadow: var(--pgn-elevation-input-btn-focus-box-shadow-offset-x)
+  var(--pgn-elevation-input-btn-focus-box-shadow-offset-y)
+  var(--pgn-elevation-input-btn-focus-box-shadow-spread)
+  var(--pgn-elevation-input-btn-focus-box-shadow-color)
+  var(--pgn-elevation-input-btn-focus-box-shadow-blur) !default;
+
+$input-btn-padding-y-sm: var(--pgn-spacing-input-btn-padding-sm-y) !default;
+$input-btn-padding-x-sm: var(--pgn-spacing-input-btn-padding-sm-x) !default;
+$input-btn-font-size-sm: var(--pgn-typography-input-btn-font-size-sm) !default;
+$input-btn-line-height-sm: var(--pgn-typography-input-btn-line-height-sm) !default;
+
+$input-btn-padding-y-lg: var(--pgn-spacing-input-btn-padding-lg-y) !default;
+$input-btn-padding-x-lg: var(--pgn-spacing-input-btn-padding-lg-x) !default;
+$input-btn-font-size-lg: var(--pgn-typography-input-btn-font-size-lg) !default;
+$input-btn-line-height-lg: var(--pgn-typography-input-btn-line-height-lg) !default;
+
+$input-btn-border-width: var(--pgn-size-input-btn-border-width) !default;
+
+// Spinners
+
+// $spinner-width:           2rem !default;
+// $spinner-height:          $spinner-width !default;
+$spinner-vertical-align:     calc(var(--pgn-spacing-vertical-align) * -1) !default;
+
+// $spinner-border-width:    .25em !default;
+
+// $spinner-width-sm:        1rem !default;
+// $spinner-height-sm:       $spinner-width-sm !default;
+// $spinner-border-width-sm: .2em !default;
+
+// Utilities
+
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex !default;
+$overflows: auto, hidden !default;
+$positions: static, relative, absolute, fixed, sticky !default;
+$user-selects: all, auto, none !default;
+
+// Printing
+
+$print-page-size:                   var(--pgn-typography-print-page-size) !default;
+$print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
+
+// List group
+
+$list-group-color: var(--pgn-color-list-group-base) !default;
+$list-group-bg: var(--pgn-color-list-group-bg-base) !default;
+$list-group-border-color: var(--pgn-color-list-group-border) !default;
+$list-group-border-width: var(--pgn-size-list-group-border-width) !default;
+$list-group-border-radius: var(--pgn-size-list-group-border-radius) !default;
+
+$list-group-item-padding-y: var(--pgn-spacing-list-group-item-padding-y) !default;
+$list-group-item-padding-x: var(--pgn-spacing-list-group-item-padding-x) !default;
+
+$list-group-hover-bg: var(--pgn-color-list-group-bg-hover) !default;
+$list-group-active-color: var(--pgn-color-list-group-active-base) !default;
+$list-group-active-bg: var(--pgn-color-list-group-active-bg) !default;
+$list-group-active-border-color: var(--pgn-color-list-group-active-border) !default;
+
+$list-group-disabled-color: var(--pgn-color-list-group-disabled-base) !default;
+$list-group-disabled-bg: var(--pgn-color-list-group-disabled-bg) !default;
+
+$list-group-action-color: var(--pgn-color-list-group-action-base) !default;
+$list-group-action-hover-color: var(--pgn-color-list-group-action-hover) !default;
+
+$list-group-action-active-color: var(--pgn-color-list-group-action-active-base) !default;
+$list-group-action-active-bg: var(--pgn-color-list-group-action-active-bg) !default;
+
+$text-black-50: var(--pgn-color-text-50-black) !default;
+$text-white-50: var(--pgn-color-text-50-white) !default;

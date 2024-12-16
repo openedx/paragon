@@ -1,0 +1,14 @@
+{
+  "color": {
+    "$type": "color",
+    "breadcrumb": {
+      "base": { "source": "$breadcrumb-color", "$value": "{color.primary.500}" },
+      "active": { "source": "$breadcrumb-active-color", "$value": "{color.gray.500}" },
+      "inverse": {
+        "base": { "source": "$breadcrumb-inverse-color", "$value": "{color.white}" },
+        "active": { "source": "$breadcrumb-inverse-active", "$value": "{color.light.500}" },
+        "spacer": { "source": "$breadcrumb-inverse-spacer", "$value": "{color.light.700}" }
+      }
+    }
+  }
+}

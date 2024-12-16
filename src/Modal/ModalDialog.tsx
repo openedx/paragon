@@ -162,8 +162,13 @@ ModalDialog.propTypes = {
    * Specifies the z-index of the modal
    */
   zIndex: PropTypes.number,
-  /** Specifies whether overflow is visible in the modal */
-  isOverflowVisible: PropTypes.bool,
+  /**
+   * Specifies whether overflow content inside the modal should be visible.
+   * - `true` - content that exceeds the modal boundaries will remain visible outside the modal's main viewport,
+   * rather than being clipped or hidden.
+   * - `false` - any overflow content will be clipped to fit within the modal's dimensions.
+   */
+  isOverflowVisible: PropTypes.bool.isRequired,
 };
 
 ModalDialog.Header = ModalDialogHeader;

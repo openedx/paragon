@@ -1,0 +1,198 @@
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: var(--pgn-elevation-popover-zindex);
+  display: block;
+  max-width: var(--pgn-size-popover-max-width);
+
+  @include reset-text();
+  @include font-size(var(--pgn-typography-popover-font-size));
+
+  word-wrap: break-word;
+  background-color: var(--pgn-color-popover-bg);
+  background-clip: padding-box;
+  border: var(--pgn-size-popover-border-width) solid var(--pgn-color-popover-border);
+  box-shadow: var(--pgn-elevation-popover-box-shadow);
+
+  @include border-radius(var(--pgn-size-popover-border-radius));
+
+  .arrow {
+    position: absolute;
+    display: block;
+    width: var(--pgn-size-popover-arrow-width);
+    height: var(--pgn-size-popover-arrow-height);
+    margin: 0 var(--pgn-size-popover-border-radius);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+}
+
+.bs-popover-top {
+  margin-bottom: var(--pgn-size-popover-arrow-height);
+
+  > .arrow {
+    bottom: calc(-1 * calc(var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
+
+    &::before {
+      bottom: 0;
+      border-width: var(--pgn-size-popover-arrow-height) calc(var(--pgn-size-popover-arrow-width) * .5) 0;
+      border-top-color: var(--pgn-color-popover-arrow-outer);
+    }
+
+    &::after {
+      bottom: var(--pgn-size-popover-border-width);
+      border-width: var(--pgn-size-popover-arrow-height) calc(var(--pgn-size-popover-arrow-width) * .5) 0;
+      border-top-color: var(--pgn-color-popover-arrow-base);
+    }
+  }
+}
+
+.bs-popover-right {
+  margin-left: var(--pgn-size-popover-arrow-height);
+
+  > .arrow {
+    left: calc(-1 * calc(var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
+    width: var(--pgn-size-popover-arrow-height);
+    height: var(--pgn-size-popover-arrow-width);
+    margin: var(--pgn-size-popover-border-radius) 0;
+
+    &::before {
+      left: 0;
+      border-width:
+        calc(var(--pgn-size-popover-arrow-width) * .5)
+        var(--pgn-size-popover-arrow-height)
+        calc(var(--pgn-size-popover-arrow-width) * .5) 0;
+      border-right-color: var(--pgn-color-popover-arrow-outer);
+    }
+
+    &::after {
+      left: var(--pgn-size-popover-border-width);
+      border-width:
+        calc(var(--pgn-size-popover-arrow-width) * .5)
+        var(--pgn-size-popover-arrow-height)
+        calc(var(--pgn-size-popover-arrow-width) * .5) 0;
+      border-right-color: var(--pgn-color-popover-arrow-base);
+    }
+  }
+}
+
+.bs-popover-bottom {
+  margin-top: var(--pgn-size-popover-arrow-height);
+
+  > .arrow {
+    top: calc(-1 * calc(var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
+
+    &::before {
+      top: 0;
+      border-width:
+        0 calc(var(--pgn-size-popover-arrow-width) * .5)
+        var(--pgn-size-popover-arrow-height)
+        calc(var(--pgn-size-popover-arrow-width) * .5);
+      border-bottom-color: var(--pgn-color-popover-arrow-outer);
+    }
+
+    &::after {
+      top: var(--pgn-size-popover-border-width);
+      border-width:
+        0 calc(var(--pgn-size-popover-arrow-width) * .5)
+        var(--pgn-size-popover-arrow-height)
+        calc(var(--pgn-size-popover-arrow-width) * .5);
+      border-bottom-color: var(--pgn-color-popover-arrow-base);
+    }
+  }
+
+  // This will remove the popover-header's border just below the arrow
+  .popover-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: var(--pgn-size-popover-arrow-width);
+    margin-left: calc(var(--pgn-size-popover-arrow-width) * -.5);
+    border-bottom: var(--pgn-size-popover-border-width) solid var(--pgn-color-popover-header-bg);
+  }
+}
+
+.bs-popover-left {
+  margin-right: var(--pgn-size-popover-arrow-height);
+
+  > .arrow {
+    right: calc(-1 * calc(var(--pgn-size-popover-border-width) + var(--pgn-size-popover-arrow-height)));
+    width: var(--pgn-size-popover-arrow-height);
+    height: var(--pgn-size-popover-arrow-width);
+    margin: var(--pgn-size-popover-border-radius) 0;
+
+    &::before {
+      right: 0;
+      border-width:
+        calc(var(--pgn-size-popover-arrow-width) * .5) 0
+        calc(var(--pgn-size-popover-arrow-width) * .5)
+        var(--pgn-size-popover-arrow-height);
+      border-left-color: var(--pgn-color-popover-arrow-outer);
+    }
+
+    &::after {
+      right: var(--pgn-size-popover-border-width);
+      border-width:
+        calc(var(--pgn-size-popover-arrow-width) * .5) 0
+        calc(var(--pgn-size-popover-arrow-width) * .5)
+        var(--pgn-size-popover-arrow-height);
+      border-left-color: var(--pgn-color-popover-arrow-base);
+    }
+  }
+}
+
+.bs-popover-auto {
+  &[x-placement^="top"] {
+    /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+    @extend .bs-popover-top;
+  }
+
+  &[x-placement^="right"] {
+    /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+    @extend .bs-popover-right;
+  }
+
+  &[x-placement^="bottom"] {
+    /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+    @extend .bs-popover-bottom;
+  }
+
+  &[x-placement^="left"] {
+    /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+    @extend .bs-popover-left;
+  }
+}
+
+
+// Offset the popover to account for the popover arrow
+.popover-header {
+  padding: var(--pgn-spacing-popover-header-padding-y) var(--pgn-spacing-popover-header-padding-x);
+  margin-bottom: 0;
+
+  @include font-size(var(--pgn-typography-font-size-base));
+
+  color: var(--pgn-color-popover-header-text);
+  background-color: var(--pgn-color-popover-header-bg);
+  border-bottom: var(--pgn-size-popover-border-width) solid var(--pgn-color-popover-header-border-bottom-dark);
+
+  @include border-top-radius(calc(var(--pgn-size-popover-border-radius) - var(--pgn-size-popover-border-width)));
+
+  &:empty {
+    display: none;
+  }
+}
+
+.popover-body {
+  padding: var(--pgn-spacing-popover-body-padding-y) var(--pgn-spacing-popover-body-padding-x);
+  color: var(--pgn-color-popover-body);
+}

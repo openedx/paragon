@@ -39,29 +39,39 @@ In your React project:
 import { ComponentName } from '@openedx/paragon';
 ```
 
-#### SCSS Foundation
+#### CSS Foundation
 
-Usage for Open edX and others:
+**Usage with no theme:**
 
-**index.scss**
+The Paragon CSS Foundation offers a collection of fundamental styles, encompassing padding, typography, and sizing.
+When applied, these styles contribute to the creation of a straightforward and neat appearance for your application.
 
-```
-// ... Any custom SCSS variables should be defined here
-@import '~@openedx/paragon/scss/core/core.scss';
-```
-
-Usage on with `@edx/brand`:
-
-**index.scss**
+To integrate these foundational styles into your project, include the following import:
 
 ```
-@import '~@edx/brand/paragon/fonts.scss';
-@import '~@edx/brand/paragon/variables.scss';
-@import '~@openedx/paragon/scss/core/core.scss';
-@import '~@edx/brand/paragon/overrides.scss';
+@use "@openedx/paragon/dist/core.min.css";
 ```
 
-Note that including fonts will affect performance.  In some applications may choose not to load the custom font to keep it highly performant.
+**Usage with a theme:**
+
+In addition to the basic styles, you can provide a theme layer that includes styles for colors, shadows, backgrounds
+and transparency of elements. This allows you to visually represent a specific theme in your application.
+
+To apply these theme-specific styles, include the following import:
+
+```
+@use "@openedx/paragon/dist/core.min.css";
+@use "@my-brand/light.min.css";
+```
+
+**CDN links:**
+
+Alternative style integration is available when using CDN links:
+
+```
+@import url("https://cdn.jsdelivr.net/npm/@my-brand/core.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@my-brand/light.min.css");
+```
 
 ## Paragon CLI
 
@@ -69,7 +79,11 @@ The Paragon CLI (Command Line Interface) is a tool that provides various utility
 
 ### Available Commands
 
-- `paragon install-theme [theme]`: Installs the specific @edx/brand package.
+- `paragon install-theme`: Install a [brand package](https://github.com/openedx/brand-openedx).
+- `paragon migrate-to-openedx-scope`: Migrate from "@edx/paragon" to "@openedx/paragon".
+- `paragon build-tokens`: Build Paragon's design tokens.
+- `paragon replace-variables`: Replace SCSS variables usages or definitions to CSS variables and vice versa in `.scss` files.
+- `paragon build-scss`: Compile Paragon's core and themes SCSS into CSS.
 
 Use `paragon help` to see more information.
 
@@ -123,6 +137,14 @@ Note that if you are using ``@edx/frontend-platform``'s ``AppProvider`` componen
 
 ## Contributing
 
+The branch to target with your PR depends on the type of change you are contributing to Paragon.
+
+| Branch to Target | Type of Change | Documentation Site |
+| - | - | - |
+| [`release-22.x`](https://github.com/openedx/paragon/tree/release-22.x) | Bug fix/security patch | https://paragon-openedx-v22.netlify.app/ |
+| [`release-23.x`](https://github.com/openedx/paragon/tree/release-23.x) | Bug fix/security patch/new (non-breaking) feature | https://paragon-openedx-v23.netlify.app/ |
+| [`next`](https://github.com/openedx/paragon/tree/next) | Breaking change | https://paragon-openedx.netlify.app/ |
+
 Please refer to the ["How to Contribute"](https://openedx.org/r/how-to-contribute) documentation and [Code of Conduct](https://openedx.org/code-of-conduct/) from Open edX.
 
 The Paragon Working Group accepts bug fixes, new features, documentation, and security patches. You may find open issues [here](https://github.com/openedx/paragon/issues) or by visiting the Paragon Working Group [project board](https://github.com/orgs/openedx/projects/43/views/15).
@@ -148,7 +170,7 @@ module.exports = {
   dist: The sub-directory of the source code where it puts its build artifact. Often "dist".
   */
   localModules: [
-    { moduleName: '@openedx/paragon/scss/core', dir: '../src/paragon', dist: 'scss/core' },
+    { moduleName: '@openedx/paragon/styles/scss/core', dir: '../src/paragon', dist: 'styles/scss/core' },
     { moduleName: '@openedx/paragon/icons', dir: '../src/paragon', dist: 'icons' },
     // Note that using dist: 'dist' will require you to run 'npm build' in Paragon
     // to add local changes to the 'dist' directory, so that they can be picked up by the MFE.
@@ -158,7 +180,7 @@ module.exports = {
 };
 ```
 
-Then, when importing Paragon's core SCSS in your MFE the import needs to begin with a tilde `~` so that path to your local Paragon repository gets resolved correctly: `@import "~@openedx/paragon/scss/core";`
+Then, when importing Paragon's core SCSS in your MFE the import needs to begin with a tilde `~` so that path to your local Paragon repository gets resolved correctly: `@import "~@openedx/paragon/styles/scss/core/core.scss";`
 
 #### Internationalization
 
@@ -271,8 +293,7 @@ This will create a directory in `/src/` that will contain templates for all nece
 MyComponent
 ├── index.jsx
 ├── README.md
-├── MyComponent.scss
-├── _variables.scss
+├── index.scss
 └── MyComponent.test.jsx
 ```
 
@@ -311,11 +332,10 @@ export default MyComponent;
 ##### 4. (Optional) Add styles to your component.
 
 If your component requires additional styling (which most likely is the case), edit created SCSS style sheet in your
-component's directory `/src/MyComponent/MyComponent.scss` which by default contains an empty class for your component.
+component's directory `/src/MyComponent/index.scss` which by default contains an empty class for your component.
 
-If you wish to use SASS variables (which is the preferred way of styling the components since values can be
-easily overridden and customized by the consumers of Paragon), add them in `/src/MyComponent/_variables.scss` (this file should contain all variables specific to your component).
-This way the variables will also get automatically picked up by documentation site and displayed on your component's page.
+If you wish to use CSS variables (which is the preferred way of styling the components since values can be
+easily overridden and customized by the consumers of Paragon), you can do so by utilizing [design tokens](/tokens).
 
 **Please note that you need to follow [Paragon's CSS styling conventions](docs/decisions/0012-css-styling-conventions).**
 
@@ -463,11 +483,6 @@ perf(pencil): remove graphiteWidth option
 BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite width of 10mm is always used for performance reason.
 ```
 
-#### Opening Pull Requests for Breaking Changes
-
-Pull requests that include Breaking Changes must be opened against the `next` branch instead of `release-x.x`.
-This ensures that breaking changes are accumulated and released together in the next major version, minimizing disruption for consumers.
-
 ## Treeshaking
 
 Paragon is distributed on npm as ES6 modules.  This means that webpack can use treeshaking on any Paragon components that a consuming app is not using, resulting in greatly reduced bundle sizes.
@@ -482,3 +497,31 @@ The assigned maintainers for this component and other project details may be fou
 Please do not report security issues in public. Please email security@openedx.org.
 
 We tend to prioritize security issues which impact the published `@openedx/paragon` NPM library more so than the [documentation website](https://paragon-openedx.netlify.app/) or example React application.
+
+## Design Tokens
+
+Design tokens are all the values needed to build and maintain a design system — spacing, color, typography, object styles, etc. They can represent anything defined by the design: color as an RGB value, opacity as a number, spacing as a REM value. They are used instead of hard-coded values to provide flexibility and uniformity across the application.
+
+By defining style properties as tokens, we can transform the styles into various implementations compatible with different platforms or formats as our use cases expand (e.g., transforming tokens to CSS variables, CSS utility classes, etc.).
+
+### Theming with design tokens
+
+Paragon uses [style-dictionary](https://github.com/amzn/style-dictionary) to build design tokens into CSS variables that are included in the package. Read more in [design tokens README](tokens/README.md).
+
+#### Compiling CSS from design tokens for Paragon contributions (in this repo)
+1. **`npm install`.** Install dependencies, including `style-dictionary`.
+2. Make changes to design token(s).
+3. **`npm run build-scss`.** Transforms the tokens to CSS variables and CSS utility classes, and generates `core.css` and `light.css` output files.
+    - `light.css`. CSS variable definitions for colors in the light theme variant.
+    - `core.css`. Contains the majority of Paragon/Bootstrap foundational styles for layout, components, etc. Consumes CSS variables defined by `light.css`.
+4. Test changes locally (e.g., running the documentation website, the example MFE app, etc.).
+5. Ensure changes to `core.css` and `light.css` are committed & released to NPM (which also "releases" them on versioned public CDNs for NPM packages).
+6. Consuming applications would inject the `core.css` and `light.css` theme files into their applications via a mechanism similar to https://github.com/openedx/frontend-platform/pull/440 (ideally pulling from a public CDN for NPM packages, but falling back to locally installed copies, if needed).
+
+#### Compiling CSS from design tokens for `@edx/brand` theme authors (in `@edx/brand` repos)
+1. **`npm install`.** Install dependencies, including `@openedx/paragon`.
+2. Create tokens that will override Paragon's default tokens (matching same JSON schema).
+3. **`npm run build-scss`.** This `@edx/brand` repo will have a new NPM script that utilizes a new CLI exported by `@openedx/paragon` which exposes the `build-tokens.js` script (or possibly another if we end up needing one for the brand packages to run specifically, TBD) for `@edx/brand` consumers.
+    - The intent of running this command is to effectively deep merge the tokens defined in Paragon's default tokens with the override tokens defined by `@edx/brand`, generating its own `core.css` and `light.css` output files (exact output files still a TBD) containing CSS variable overrides based on the token overrides.
+5. Ensure any changes to the generated `core.css` and `light.css` files are committed & released to NPM (which also "releases" them on versioned public CDNs for NPM packages).
+    - _Note: It is a bit unclear still in the above linked implementation POC for `@edx/frontend-platform` how it would integrate with `@edx/brand` in this way. Open to suggestions/feedback/ideas here._

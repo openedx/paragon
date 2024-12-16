@@ -10,9 +10,6 @@ const BOOTSTRAP_BASE_URL = 'https://react-bootstrap-v4.netlify.app/components';
 
 const bootstrapLinks = {
   Button: `${BOOTSTRAP_BASE_URL}/buttons/#button-props`,
-  Card: `${BOOTSTRAP_BASE_URL}/cards/#card-props`,
-  CardBody: `${BOOTSTRAP_BASE_URL}/cards/#card-body-props`,
-  CardDeck: `${BOOTSTRAP_BASE_URL}/cards/#card-deck-props`,
   Dropdown: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-props`,
   DropdownToggle: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-toggle-props`,
   DropdownItem: `${BOOTSTRAP_BASE_URL}/dropdowns/#dropdown-item-props`,

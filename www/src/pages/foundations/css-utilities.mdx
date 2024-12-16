@@ -5,13 +5,15 @@ title: CSS Utilities
 import { graphql } from 'gatsby';
 import { Table } from '~paragon-react';
 import getCssSelectors from '../../utils/getCssSelectors.ts';
-import CSSUtilitiesTable from '../../components/CSSUtilitiesTable';
+import CSSUtilitiesTable from '../../components/css-utilities-table';
 
 
 # CSS Utilities
 
 
 ### Utility Classes
+
+Hover on styles with CSS variables to view computed values.
 
 <CSSUtilitiesTable
   selectors={getCssSelectors(props.data.utilities.nodes).concat([

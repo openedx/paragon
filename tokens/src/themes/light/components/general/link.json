@@ -1,0 +1,100 @@
+{
+  "color": {
+    "$type": "color",
+    "link": {
+      "base": { "source": "$link-color", "$value": "{color.info.500}" },
+      "hover": {
+        "source": "$link-hover-color",
+        "modify": [{ "type": "darken", "amount": 0.15 }],
+        "$value": "{color.link.base}"
+      },
+      "inline": {
+        "base": { "source": "$inline-link-color", "$value": "{color.info.500}" },
+        "decoration": {
+          "source": "$inline-link-decoration-color",
+          "modify": [{ "type": "alpha", "amount": 0.3 }],
+          "$value": "{color.link.inline.base}"
+        },
+        "hover": {
+          "base": {
+            "source": "$inline-link-hover-color",
+            "modify": [{ "type": "darken", "amount": 0.15 }],
+            "$value": "{color.link.inline.base}"
+          },
+          "decoration": {
+            "source": "$inline-link-hover-decoration-color",
+            "modify": [{ "type": "alpha", "amount": 1 }],
+            "$value": "{color.link.inline.hover.base}"
+          }
+        }
+      },
+      "muted": {
+        "base": { "source": "$muted-link-color", "$value": "{color.primary.500}" },
+        "hover": {
+          "source": "$muted-link-hover-color",
+          "modify": [{ "type": "darken", "amount": 0.15 }],
+          "$value": "{color.link.muted.base}"
+        },
+        "inline": {
+          "base": { "source": "$muted-inline-link-color", "$value": "{color.primary.500}" },
+          "decoration": {
+            "source": "$muted-inline-link-decoration-color",
+            "modify": [{ "type": "alpha", "amount": 0.3 }],
+            "$value": "{color.link.muted.inline.base}"
+          },
+          "hover": {
+            "base": {
+              "source": "$muted-inline-link-hover-color",
+              "modify": [{ "type": "darken", "amount": 0.15 }],
+              "$value": "{color.link.muted.inline.base}"
+            },
+            "decoration": {
+              "source": "$muted-inline-link-hover-decoration-color",
+              "modify": [{ "type": "alpha", "amount": 1 }],
+              "$value": "{color.link.muted.inline.hover.base}"
+            }
+          }
+        }
+      },
+      "brand": {
+        "base": { "source": "$brand-link-color", "$value": "{color.brand.500}" },
+        "hover": {
+          "source": "$brand-link-hover-color",
+          "modify": [{ "type": "darken", "amount": 0.15 }],
+          "$value": "{color.link.brand.base}"
+        },
+        "inline": {
+          "base": { "source": "$brand-inline-link-color", "$value": "{color.brand.500}" },
+          "decoration": {
+            "source": "$brand-inline-link-decoration-color",
+            "modify": [{ "type": "alpha", "amount": 0.3 }],
+            "$value": "{color.link.brand.inline.base}"
+          },
+          "hover": {
+            "base": {
+              "source": "$brand-inline-link-hover-color",
+              "modify": [{ "type": "darken", "amount": 0.15 }],
+              "$value": "{color.link.brand.inline.base}"
+            },
+            "decoration": {
+              "source": "$brand-inline-link-hover-decoration-color",
+              "modify": [{ "type": "alpha", "amount": 1 }],
+              "$value": "{color.link.brand.inline.hover.base}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "other": {
+    "$type": "percentage",
+    "link": {
+      "emphasized-hover": {
+        "darken-percentage": {
+          "source": "$emphasized-link-hover-darken-percentage",
+          "$value": "15%"
+        }
+      }
+    }
+  }
+}

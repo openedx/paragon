@@ -1,0 +1,22 @@
+{
+  "color": {
+    "$type": "color",
+    "data-table": {
+      "bg": {
+        "base": { "source": "$data-table-background-color", "$value": "{color.bg.base}" },
+        "is-loading": {
+          "source": "$data-table-is-loading-bg",
+          "modify": [{ "type": "alpha", "amount": 0.7 }],
+          "$value": "{color.white}"
+        }
+      },
+      "border": { "source": "$data-table-border-color", "$value": "{color.light.300}" }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "data-table": {
+      "box-shadow": { "source": "$data-table-box-shadow", "$value": "{elevation.box-shadow.sm}" }
+    }
+  }
+}

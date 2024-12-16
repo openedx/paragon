@@ -1,0 +1,61 @@
+{
+  "color": {
+    "$type": "color",
+    "dropzone": {
+      "error-wrapper": { "source": "$dropzone-error-wrapper-color", "$value": "{color.danger.500}" },
+      "restriction-msg": { "source": "$dropzone-restriction-msg-color", "$value": "{color.gray.500}" },
+      "border": {
+        "base": { "source": "$dropzone-border-color-default", "$value": "{color.gray.500}" }
+      }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "dropzone": {
+      "hover": {
+        "source": "$dropzone-box-shadow-hover",
+        "$value": {
+          "color": "{color.info.300}",
+          "spread": "2px",
+          "offsetX": "0",
+          "offsetY": "0",
+          "blur": "0",
+          "inset": "inset"
+        }
+      },
+      "focus": {
+        "source": "$dropzone-box-shadow-focus",
+        "$value": {
+          "color": "{color.info.300}",
+          "spread": "2px",
+          "offsetX": "0",
+          "offsetY": "0",
+          "blur": "0",
+          "inset": "inset"
+        }
+      },
+      "active": {
+        "source": "$dropzone-box-shadow-active",
+        "$value": {
+          "color": "{color.primary.500}",
+          "spread": "2px",
+          "offsetX": "0",
+          "offsetY": "0",
+          "blur": "0",
+          "inset": "inset"
+        }
+      },
+      "error": {
+        "source": "$dropzone-box-shadow-error",
+        "$value": {
+          "color": "{color.danger.300}",
+          "spread": "2px",
+          "offsetX": "0",
+          "offsetY": "0",
+          "blur": "0",
+          "inset": "inset"
+        }
+      }
+    }
+  }
+}

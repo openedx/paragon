@@ -1,0 +1,40 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "stepper": {
+      "header": {
+        "padding": {
+          "y": { "source": "$stepper-header-padding-y", "$value": ".75rem" },
+          "x": { "source": "$stepper-header-padding-x", "$value": "{spacing.spacer.base}" }
+        },
+        "step": {
+          "padding": { "source": "$stepper-header-step-padding", "$value": ".25rem" },
+          "list": {
+            "padding": {
+              "y": { "source": "$stepper-header-step-list-padding-y", "$value": ".25rem" },
+              "x": { "source": "$stepper-header-step-list-padding-x", "$value": "0" }
+            },
+            "margin": { "source": "$stepper-header-step-list-margin", "$value": "0" }
+          }
+        }
+      }
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "stepper": {
+      "header": {
+        "height-min": { "source": "$stepper-header-min-height", "$value": "5.13rem" }
+      },
+      "step": {
+        "width-min": { "source": "$stepper-header-step-min-width", "$value": "0" },
+        "bubble-error-shadow-width": { "source": "$stepper-header-step-error-bubble-shadow-width", "$value": "3px" }
+      }
+    }
+  },
+  "typography": {
+    "spacer": {
+      "line-height": { "source": "$stepper-header-line-height", "$value": "1px", "$type": "number" }
+    }
+  }
+}

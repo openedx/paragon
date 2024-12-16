@@ -1,0 +1,111 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "form": {
+      "input": {
+        "padding": {
+          "y": {
+            "base": { "source": "$input-padding-y", "$value": "{spacing.input.btn.padding.y}" },
+            "sm": { "source": "$input-padding-y-sm", "$value": "{spacing.input.btn.padding.sm.y}" },
+            "lg": { "source": "$input-padding-y-lg", "$value": "{spacing.input.btn.padding.lg.y}" }
+          },
+          "x": {
+            "base": { "source": "$input-padding-x", "$value": "{spacing.input.btn.padding.x}" },
+            "sm": { "source": "$input-padding-x-sm", "$value": "{spacing.input.btn.padding.sm.x}" },
+            "lg": { "source": "$input-padding-x-lg", "$value": "{spacing.input.btn.padding.lg.x}" }
+          }
+        },
+        "check": {
+          "gutter": { "source": "$form-check-input-gutter", "$value": "1.25rem" },
+          "margin": {
+            "x": {
+              "base": { "source": "$form-check-input-margin-x", "$value": ".25rem" },
+              "inline": { "source": "$form-check-inline-input-margin-x", "$value": ".3125rem" }
+            },
+            "y": { "source": "$form-check-input-margin-y", "$value": ".3rem" }
+          }
+        }
+      },
+      "text": {
+        "margin": {
+          "top": { "source": "$form-text-margin-top", "$value": ".25rem" }
+        }
+      },
+      "check": {
+        "inline": {
+          "margin": {
+            "x": { "source": "$form-check-inline-margin-x", "$value": ".75rem" }
+          }
+        },
+        "position": {
+          "axis": { "source": "$form-check-position-axis", "$value": ".375rem" }
+        }
+      },
+      "group": {
+        "margin": {
+          "bottom": { "source": "$form-group-margin-bottom", "$value": "1rem" }
+        }
+      },
+      "control": {
+        "gutter": { "source": "$custom-control-gutter", "$value": ".5rem" },
+        "spacer": {
+          "x": { "source": "$custom-control-spacer-x", "$value": "1rem" }
+        },
+        "select": {
+          "padding": {
+            "y": {
+              "base": { "source": "$custom-select-padding-y", "$value": "{spacing.form.input.padding.y.base}" },
+              "sm": { "source": "$custom-select-padding-y-sm", "$value": "{spacing.form.input.padding.y.sm}" },
+              "lg": { "source": "$custom-select-padding-y-lg", "$value": "{spacing.form.input.padding.y.lg}" }
+            },
+            "x": {
+              "base": { "source": "$custom-select-padding-x", "$value": "{spacing.form.input.padding.x.base}" },
+              "sm": { "source": "$custom-select-padding-x-sm", "$value": "{spacing.form.input.padding.x.sm}" },
+              "lg": { "source": "$custom-select-padding-x-lg", "$value": "{spacing.form.input.padding.x.lg}" }
+            }
+          },
+          "indicator": {
+            "padding": { "source": "$custom-select-indicator-padding", "$value": "1rem" }
+          },
+          "feedback": {
+            "icon": {
+              "padding": {
+                "right": {
+                  "source": "$custom-select-feedback-icon-padding-right",
+                  "$value": "calc((1em + 2 * {spacing.form.control.select.padding.y.base}) * 3 / 4 + {spacing.form.control.select.padding.x.base} + {spacing.form.control.select.indicator.padding})"
+                }
+              },
+              "position": {
+                "source": "$custom-select-feedback-icon-position",
+                "$value": {
+                  "position-y": "center",
+                  "position-x": "right",
+                  "offset-x": "calc({spacing.form.control.select.padding.x.base} + {spacing.form.control.select.indicator.padding})",
+                  "offset-y": "0"
+                }
+              }
+            },
+            "margin": {
+              "top": { "source": "$form-feedback-margin-top", "$value": "{spacing.form.text.margin.top}" }
+            },
+            "tooltip": {
+              "padding": {
+                "y": { "source": "$form-feedback-tooltip-padding-y", "$value": ".25rem" },
+                "x": { "source": "$form-feedback-tooltip-padding-x", "$value": ".5rem" }
+              }
+            }
+          },
+          "icon": {
+            "padding": { "source": "$select-icon-padding", "$value": ".5625rem" }
+          }
+        },
+        "file": {
+          "padding": {
+            "y": { "source": "$custom-file-padding-y", "$value": "{spacing.form.input.padding.y.base}" },
+            "x": { "source": "$custom-file-padding-x", "$value": "{spacing.form.input.padding.x.base}" }
+          }
+        }
+      }
+    }
+  }
+}

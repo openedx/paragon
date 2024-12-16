@@ -20,7 +20,7 @@ notes: ''
   return (
     <div className="d-flex flex-wrap">
       {variants.map((variant) => (
-        <IconButton key={variant} src={Close} iconAs={Icon} alt="Close" onClick={() => {}} variant={variant} className="mr-2" />
+        <IconButton key={variant} src={Close} alt="Close" onClick={() => {}} variant={variant} className="mr-2" />
       ))}
     </div>
   );
@@ -40,7 +40,6 @@ notes: ''
           tooltipPlacement='top'
           tooltipContent={<div>a nice tooltip of {variant}!</div>}
           src={Close}
-          iconAs={Icon}
           alt="Close"
           onClick={() => {}}
           variant={variant}
@@ -64,7 +63,6 @@ notes: ''
           isActive
           key={variant}
           src={Close}
-          iconAs={Icon}
           alt="Close"
           onClick={() => {}}
           variant={variant}
@@ -89,7 +87,6 @@ notes: ''
           isActive
           key={variant}
           src={Close}
-          iconAs={Icon}
           alt="Close"
           onClick={() => {}}
           variant={variant}
@@ -109,7 +106,6 @@ notes: ''
   <div className="p-1 bg-brand">
     <IconButton
       src={MenuIcon}
-      iconAs={Icon}
       alt="Menu"
       onClick={() => console.log("You clicked the menu button")}
       variant="brand"
@@ -119,7 +115,6 @@ notes: ''
   <div className="p-1 bg-primary">
     <IconButton
       src={MenuIcon}
-      iconAs={Icon}
       alt="Menu"
       onClick={() => console.log("You clicked the menu button")}
       variant="primary"
@@ -129,7 +124,6 @@ notes: ''
   <div className="p-1 bg-secondary">
     <IconButton
       src={MenuIcon}
-      iconAs={Icon}
       alt="Menu"
       onClick={() => console.log("You clicked the menu button")}
       variant="secondary"
@@ -139,7 +133,6 @@ notes: ''
   <div className="p-1 bg-success">
     <IconButton
       src={MenuIcon}
-      iconAs={Icon}
       alt="Menu"
       onClick={() => console.log("You clicked the menu button")}
       variant="success"
@@ -149,7 +142,6 @@ notes: ''
   <div className="p-1 bg-warning">
     <IconButton
       src={MenuIcon}
-      iconAs={Icon}
       alt="Menu"
       onClick={() => console.log("You clicked the menu button")}
       variant="warning"
@@ -159,7 +151,6 @@ notes: ''
   <div className="p-1 bg-danger">
     <IconButton
       src={MenuIcon}
-      iconAs={Icon}
       alt="Menu"
       onClick={() => console.log("You clicked the menu button")}
       variant="danger"
@@ -169,7 +160,6 @@ notes: ''
   <div className="p-1 bg-light">
     <IconButton
       src={MenuIcon}
-      iconAs={Icon}
       alt="Menu"
       onClick={() => console.log("You clicked the menu button")}
       variant="light"
@@ -179,7 +169,6 @@ notes: ''
   <div className="p-1" style={{ background: "black" }}>
     <IconButton
       src={MenuIcon}
-      iconAs={Icon}
       alt="Menu"
       onClick={() => console.log("You clicked the menu button")}
       variant="black"
@@ -197,7 +186,6 @@ notes: ''
     Small
     <IconButton
       src={MenuIcon}
-      iconAs={Icon}
       alt="Menu"
       onClick={() => {}}
       variant="primary"
@@ -208,7 +196,6 @@ notes: ''
     Inline:
     <IconButton
       src={MenuIcon}
-      iconAs={Icon}
       alt="Menu"
       onClick={() => {}}
       variant="primary"
@@ -220,7 +207,6 @@ notes: ''
     For example, applying className="x-small" will make the Icon Button look like this:
     <IconButton
       src={Favorite}
-      iconAs={Icon}
       alt="Favorite"
       onClick={() => {}}
       variant="primary"

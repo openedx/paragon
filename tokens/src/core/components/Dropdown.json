@@ -1,0 +1,62 @@
+{
+  "typography": {
+    "dropdown": {
+      "font-size": { "source": "$dropdown-font-size", "$value": "{typography.font.size.base}", "$type": "dimension" },
+      "item": {
+        "$type": "textDecoration",
+        "text-decoration": { "$value": "none" }
+      }
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "dropdown": {
+      "min-width": { "source": "$dropdown-min-width", "$value": "18rem" },
+      "border": {
+        "width": { "source": "$dropdown-border-width", "$value": "{size.border.width}" },
+        "radius": {
+          "base": { "source": "$dropdown-border-radius", "$value": "{size.border.radius.base}" },
+          "inner": {
+            "source": "$dropdown-inner-border-radius",
+            "$value": "calc({size.dropdown.border.radius.base} - {size.dropdown.border.width})"
+          }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "dropdown": {
+      "spacer": { "source": "$dropdown-spacer", "$value": ".125rem" },
+      "padding": {
+        "x": {
+          "base": { "source": "$dropdown-padding-x", "$value": "0" },
+          "item": { "source": "$dropdown-item-padding-x", "$value": "1rem" }
+        },
+        "y": {
+          "base": { "source": "$dropdown-padding-y", "$value": ".5rem" },
+          "item": { "source": "$dropdown-item-padding-y", "$value": ".25rem" }
+        },
+        "header": {
+          "source": "$dropdown-header-padding",
+          "$value": {
+            "x": "{spacing.dropdown.padding.x.item}",
+            "y": ".5rem"
+          }
+        }
+      },
+      "divider": {
+        "margin-y": { "source": "$dropdown-divider-margin-y", "$value": "calc({spacing.spacer.base} / 2)" }
+      },
+      "close-container": {
+        "top": { "source": "$modal-close-container-top", "$value": ".625rem" }
+      }
+    }
+  },
+  "elevation": {
+    "$type": "number",
+    "dropdown": {
+      "zindex": { "source": "$zindex-dropdown", "$value": "1000" }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "color": {
+    "$type": "color",
+    "toast": {
+      "base": { "source": "$toast-color", "$value": "inherit" },
+      "bg": { "source": "$toast-background-color", "$value": "{color.gray.700}" },
+      "border": {
+        "source": "$toast-border-color",
+        "modify": [{ "type": "alpha", "amount": 0.1 }],
+        "$value": "{color.black}"
+      },
+      "header": {
+        "text": { "source": "$toast-header-color", "$value": "{color.white}" },
+        "bg": { "source": "$toast-header-background-color", "$value": "{color.gray.700}" },
+        "border": {
+          "source": "$toast-header-border-color",
+          "modify": [{ "type": "alpha", "amount": 0.5 }],
+          "$value": "{color.black}"
+        }
+      }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "toast": {
+      "box-shadow": {
+        "source": "$toast-box-shadow",
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, .15)",
+            "offsetX": "0",
+            "offsetY": "1.25rem",
+            "blur": "2.5rem"
+          },
+          {
+            "color": "rgba(0, 0, 0, .15)",
+            "offsetX": "0",
+            "offsetY": ".5rem",
+            "blur": "3rem"
+          }
+        ]
+      }
+    }
+  }
+}

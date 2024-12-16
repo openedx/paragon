@@ -1,0 +1,90 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "spacer": {
+      "0": {
+        "$value": "0",
+        "$description": "Space value of level 0"
+      },
+      "1": {
+        "$value": "calc({spacing.spacer.base} * .25)",
+        "$description": "Space value of level 1"
+      },
+      "2": {
+        "$value": "calc({spacing.spacer.base} * .5)",
+        "$description": "Space value of level 2"
+      },
+      "3": {
+        "$value": "{spacing.spacer.base}",
+        "$description": "Space value of level 3"
+      },
+      "4": {
+        "$value": "calc({spacing.spacer.base} * 1.5)",
+        "$description": "Space value of level 4"
+      },
+      "5": {
+        "$value": "calc({spacing.spacer.base} * 3)",
+        "$description": "Space value of level 5"
+      },
+      "6": {
+        "$value": "calc({spacing.spacer.base} * 5)",
+        "$description": "Space value of level 6"
+      },
+      "base": {
+        "source": "$spacer",
+        "$value": "1rem",
+        "$description": "Basic space value"
+      },
+      "1.5": {
+        "$value": "calc({spacing.spacer.base} * .375)",
+        "$description": "Space value of level 1.5"
+      },
+      "2.5": {
+        "$value": "calc({spacing.spacer.base} * .75)",
+        "$description": "Space value of level 2.5"
+      },
+      "3.5": {
+        "$value": "calc({spacing.spacer.base} * 1.25)",
+        "$description": "Space value of level 3.5"
+      },
+      "4.5": {
+        "$value": "calc({spacing.spacer.base} * 2)",
+        "$description": "Space value of level 4.5"
+      },
+      "5.5": {
+        "$value": "calc({spacing.spacer.base} * 4)",
+        "$description": "Space value of level 5.5"
+      }
+    },
+    "label": {
+      "margin-bottom": {
+        "source": "$label-margin-bottom",
+        "$value": ".5rem",
+        "$description": "Margin bottom for label."
+      }
+    },
+    "table": {
+      "cell": {
+        "padding": {
+          "base": {
+            "source": "$table-cell-padding",
+            "$value": ".75rem",
+            "$description": "Padding for tables."
+          },
+          "sm": {
+            "source": "$table-cell-padding-sm",
+            "$value": ".3rem",
+            "$description": "Padding sm for tables."
+          }
+        }
+      }
+    },
+    "grid": {
+      "gutter-width": {
+        "source": "$grid-gutter-width",
+        "$value": "24px",
+        "$description": "Grid gutter width value."
+      }
+    }
+  }
+}
