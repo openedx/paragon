@@ -11,8 +11,8 @@ import { useLayoutEffect, useState } from 'react';
  * @param overflowElementRef - overflow element
  */
 const useIndexOfLastVisibleChild = (
-  containerElementRef: Element | null,
-  overflowElementRef: Element | null,
+  containerElementRef: HTMLElement | null,
+  overflowElementRef: HTMLElement | null,
 ): number => {
   const [indexOfLastVisibleChild, setIndexOfLastVisibleChild] = useState(-1);
 

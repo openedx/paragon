@@ -13,7 +13,7 @@ window.ResizeObserver = window.ResizeObserver
 
 function TestComponent() {
   const [containerElementRef, setContainerElementRef] = React.useState<HTMLDivElement | null>(null);
-  const overflowElementRef = React.useRef(null);
+  const overflowElementRef = React.useRef<HTMLDivElement>(null);
   const indexOfLastVisibleChild = useIndexOfLastVisibleChild(containerElementRef, overflowElementRef.current);
 
   return (

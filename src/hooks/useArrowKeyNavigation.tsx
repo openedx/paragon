@@ -1,24 +1,24 @@
 import { useRef, useEffect } from 'react';
 
-/**
- * A React hook to enable arrow key navigation on a component.
- */
+interface HandleEnterArgs {
+  event: KeyboardEvent;
+  currentIndex: number;
+  activeElement: HTMLElement;
+}
 
-function handleEnter(
-  { event, currentIndex, activeElement }: { event: KeyboardEvent, currentIndex: number, activeElement: HTMLElement },
-) {
+function handleEnter({ event, currentIndex, activeElement }: HandleEnterArgs) {
   if (currentIndex === -1) { return; }
   activeElement.click();
   event.preventDefault();
 }
 
-function handleArrowKey(
-  { event, currentIndex, availableElements }: {
-    event: KeyboardEvent,
-    currentIndex: number,
-    availableElements: NodeListOf<HTMLElement>,
-  },
-) {
+interface HandleArrowKeyArgs {
+  event: KeyboardEvent;
+  currentIndex: number;
+  availableElements: NodeListOf<HTMLElement>;
+}
+
+function handleArrowKey({ event, currentIndex, availableElements }: HandleArrowKeyArgs) {
   // If the focus isn't in the container, focus on the first thing
   if (currentIndex === -1) { availableElements[0].focus(); }
 
@@ -44,6 +44,13 @@ function handleArrowKey(
   event.preventDefault();
 }
 
+interface HandleEventsArgs {
+  event: KeyboardEvent;
+  ignoredKeys?: string[];
+  parentNode: HTMLElement | undefined;
+  selectors?: string;
+}
+
 /**
  * Implement arrow key navigation for the given parentNode
  */
@@ -52,7 +59,7 @@ function handleEvents({
   ignoredKeys = [],
   parentNode,
   selectors = 'a,button,input',
-}: { event: KeyboardEvent, ignoredKeys?: string[], parentNode: HTMLElement | undefined, selectors?: string }) {
+}: HandleEventsArgs) {
   if (!parentNode) { return; }
 
   const { key } = event;
@@ -90,6 +97,9 @@ export interface ArrowKeyNavProps {
   ignoredKeys?: string[];
 }
 
+/**
+ * A React hook to enable arrow key navigation on a component.
+ */
 export default function useArrowKeyNavigation(props: ArrowKeyNavProps = {}) {
   const { selectors, ignoredKeys } = props;
   const parentNode = useRef<HTMLElement>();
