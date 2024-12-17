@@ -10,7 +10,6 @@ import {
 } from '../CollapsibleButtonGroup';
 import { useWindowSize, Button } from '../..';
 import DataTableContext from '../DataTableContext';
-import { waitForComponentToPaint } from './utils';
 
 jest.mock('../../hooks/useWindowSize');
 useWindowSize.mockReturnValue({ width: 800 });
@@ -199,8 +198,7 @@ describe('<BulkActions />', () => {
     });
 
     it('displays the user\'s second button as an outline button', () => {
-      const { container } = render(<BulkActionsWrapper />);
-      waitForComponentToPaint(container);
+      render(<BulkActionsWrapper />);
       const buttons = screen.getAllByTestId('action');
       expect(buttons[0].textContent).toBe(SECOND_ACTION);
     });

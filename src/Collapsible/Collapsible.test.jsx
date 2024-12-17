@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
@@ -75,17 +75,23 @@ describe('<Collapsible />', () => {
         <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
       );
     });
-    it('opens on .open()', () => {
+    it('opens on .open()', async () => {
       expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
       ref.current.open();
-      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+      });
     });
 
-    it('closes on .close()', () => {
+    it('closes on .close()', async() => {
       ref.current.open();
-      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+      });
       ref.current.close();
-      expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
+      });
     });
 
     it('correct behavior with unmountOnExit', () => {
@@ -127,7 +133,9 @@ describe('<Collapsible />', () => {
 
     it('closes on trigger click', async () => {
       collapsible.open();
-      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+      });
       await userEvent.click(screen.getAllByRole('button')[0]); // Close
       expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
