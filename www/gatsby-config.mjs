@@ -41,6 +41,7 @@ const plugins = [
     },
   },
   'gatsby-plugin-react-helmet',
+  'gatsby-plugin-mdx-source-name',
   {
     resolve: 'gatsby-plugin-manifest',
     options: {
@@ -108,7 +109,7 @@ const plugins = [
     resolve: 'gatsby-plugin-page-creator',
     options: {
       path: `${__dirname}/src/pages`,
-      ignore: ['insights.tsx'],
+      ignore: ['insights.tsx', '**/*.(md|mdx)'],
     },
   },
 ];

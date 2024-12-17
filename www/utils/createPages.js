@@ -5,6 +5,7 @@ const { getThemesSCSSVariables, processComponentSCSSVariables } = require('../th
 const componentsUsage = require('../src/utils/componentsUsage');
 
 const componentPageTemplate = path.resolve(__dirname, '../src/templates/component-page-template.tsx');
+const defaultMdxPageTemplate = path.resolve(__dirname, '../src/templates/default-mdx-page-template.tsx');
 
 async function createPages(graphql, actions, reporter) {
   // Destructure the createPage function from the actions object
@@ -26,6 +27,7 @@ async function createPages(graphql, actions, reporter) {
             id
             fields {
               slug
+              source
             }
             frontmatter {
               components
@@ -42,12 +44,12 @@ async function createPages(graphql, actions, reporter) {
     reporter.panicOnBuild('🚨  ERROR: Loading createPages query');
   }
   // Create component detail pages.
-  const components = result.data.allMdx.edges;
+  const pages = result.data.allMdx.edges;
 
   const themesSCSSVariables = await getThemesSCSSVariables();
 
   // you'll call `createPage` for each result
-  for (const { node } of components) {
+  for (const { node } of pages) {
     const componentDir = node.fields.slug.split('/')[0];
     const variablesPath = path.resolve(__dirname, `../../src/${componentDir}/_variables.scss`);
     const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.internal.contentFilePath.split('src')[1]}`;
@@ -58,22 +60,39 @@ async function createPages(graphql, actions, reporter) {
       scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
     }
 
-    createPage({
-      // This is the slug you created before
-      // (or `node.frontmatter.slug`)
-      path: node.fields.slug,
-      // This layout will wrap our MDX content
-      component: `${componentPageTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
-      // You can use the values in this context in
-      // our page layout component
-      context: {
-        id: node.id,
-        components: node.frontmatter.components || [],
-        scssVariablesData,
-        componentsUsageInsights: Object.keys(componentsUsage),
-        githubEditPath,
-      },
-    });
+    if (node.fields.source === 'components') {
+      createPage({
+        // This is the slug you created before
+        // (or `node.frontmatter.slug`)
+        path: node.fields.slug,
+        // This layout will wrap our MDX content
+        component: `${componentPageTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+        // You can use the values in this context in
+        // our page layout component
+        context: {
+          id: node.id,
+          components: node.frontmatter.components || [],
+          scssVariablesData,
+          componentsUsageInsights: Object.keys(componentsUsage),
+          githubEditPath,
+        },
+      });
+    }
+    
+    if (node.fields.source === 'pages') {
+      createPage({
+        path: node.fields.slug,
+        component: `${defaultMdxPageTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+        context: {
+          id: node.id,
+          githubEditPath,
+          scssVariablesData,
+          frontmatter: {
+            title: node.frontmatter.title,
+          },
+        },
+      });
+    }
   }
 
   INSIGHTS_PAGES.forEach(({ path: pagePath, tab }) => {
