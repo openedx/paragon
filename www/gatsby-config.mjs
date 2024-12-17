@@ -130,4 +130,7 @@ export default {
   // Match the location of the site on github pages if no path prefix is specified
   pathPrefix: process.env.PATH_PREFIX || '',
   plugins,
+  flags: {
+    FAST_DEV: true,
+  },
 };

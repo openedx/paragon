@@ -54,8 +54,7 @@
   "scripts": {
     "build": "gatsby build --prefix-paths && npm run build-themes && playroom build",
     "clean": "gatsby clean",
-    "develop#note": "echo The GATSBY_CPU_COUNT limits the resources used to avoid an out of memory error on systems with more than 4 CPU cores",
-    "develop": "npm run build-themes && GATSBY_CPU_COUNT=4 gatsby develop",
+    "develop": "npm run build-themes && gatsby develop",
     "develop:with-theme": "npm run develop",
     "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx .",
     "start": "npm run develop",
