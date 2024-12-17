@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "sass:map";
 // stylelint-disable selector-class-pattern
 .DocSearch.DocSearch-Button {
   border-radius: 0;
@@ -53,7 +55,7 @@
     margin: 6.875rem auto auto;
     cursor: auto;
 
-    @media (max-width: map-get($grid-breakpoints, "md")) {
+    @media (max-width: map.get($grid-breakpoints, "md")) {
       max-width: 100%;
       margin: auto;
       border-radius: 0;
@@ -65,7 +67,7 @@
       border-top: $border-width solid $light-400;
       padding: 0 1.625rem;
 
-      @media (max-width: map-get($grid-breakpoints, "md")) {
+      @media (max-width: map.get($grid-breakpoints, "md")) {
         position: absolute;
         border-radius: 0;
         bottom: 0;
@@ -92,7 +94,7 @@
       padding: 0 1.625rem;
       max-height: 20.9375rem;
 
-      @media (max-width: map-get($grid-breakpoints, "md")) {
+      @media (max-width: map.get($grid-breakpoints, "md")) {
         height: 100%;
         // stylelint-disable-next-line max-line-length
         max-height: calc(var(--docsearch-vh, 1vh) * 100 - var(--docsearch-searchbox-height) - var(--docsearch-spacing) - var(--docsearch-footer-height));
@@ -170,7 +172,7 @@
       }
 
       .DocSearch-Hit .DocSearch-Hit-icon svg {
-        color: lighten($color: $dark, $amount: .5);
+        color: color.adjust($color: $dark, $lightness: .5%);
         position: absolute;
       }
 
@@ -291,7 +293,7 @@
       text-decoration: underline;
     }
 
-    @media (max-width: map-get($grid-breakpoints, "md")) {
+    @media (max-width: map.get($grid-breakpoints, "md")) {
       font-size: $font-size-base;
       line-height: $line-height-base;
       font-weight: $font-weight-semi-bold;
@@ -319,7 +321,7 @@
   }
 
   .DocSearch-Cancel {
-    @media (max-width: map-get($grid-breakpoints, "md")) {
+    @media (max-width: map.get($grid-breakpoints, "md")) {
       margin-right: 1.1875rem;
     }
   }

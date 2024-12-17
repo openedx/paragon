@@ -1,9 +1,6 @@
-/* eslint-disable react/no-unstable-nested-components */
 import React, { useContext, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import classNames from 'classnames';
 import {
   Container,
@@ -45,16 +42,25 @@ export interface IPageTemplate {
     scssVariablesData: Record<string, string>,
     componentsUsageInsights: string[],
     githubEditPath: string,
-  }
+  },
+  children: React.ReactNode,
 }
 
-export type ShortCodesTypes = {
-  displayName: string,
+const customMdxComponents = {
+  h2: (props: JSX.IntrinsicElements['h2']) => <LinkedHeading h="2" {...props} />,
+  h3: (props: JSX.IntrinsicElements['h3']) => <LinkedHeading h="3" {...props} />,
+  h4: (props: JSX.IntrinsicElements['h4']) => <LinkedHeading h="4" {...props} />,
+  h5: (props: JSX.IntrinsicElements['h5']) => <LinkedHeading h="5" {...props} />,
+  h6: (props: JSX.IntrinsicElements['h6']) => <LinkedHeading h="6" {...props} />,
+  pre: (props: JSX.IntrinsicElements['pre']) => <div {...props as any} />,
+  code: CodeBlock,
+  Link,
 };
 
 export default function PageTemplate({
   data: { mdx, components: componentNodes },
   pageContext: { scssVariablesData, componentsUsageInsights, githubEditPath },
+  children,
 }: IPageTemplate) {
   const isMobile = useMediaQuery({ maxWidth: breakpoints.large.maxWidth });
   const [showMinimizedTitle, setShowMinimizedTitle] = useState(false);
@@ -67,29 +73,6 @@ export default function PageTemplate({
       acc[currentValue.displayName] = currentValue;
       return acc;
     }, {});
-
-  const shortcodes = React.useMemo(() => {
-    function PropsTable({ displayName, ...props }: ShortCodesTypes) { // eslint-disable-line react/prop-types
-      if (components[displayName]) {
-        return <GenericPropsTable {...components[displayName]} {...props} />;
-      }
-      return null;
-    }
-    // Provide common components here
-    return {
-      h2: (props: HTMLElement) => <LinkedHeading h="2" {...props} />,
-      h3: (props: HTMLElement) => <LinkedHeading h="3" {...props} />,
-      h4: (props: HTMLElement) => <LinkedHeading h="4" {...props} />,
-      h5: (props: HTMLElement) => <LinkedHeading h="5" {...props} />,
-      h6: (props: HTMLElement) => <LinkedHeading h="6" {...props} />,
-      pre: (props:
-      JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> &
-      React.HTMLAttributes<HTMLDivElement>) => <div {...props} />,
-      code: CodeBlock,
-      Link,
-      PropsTable,
-    };
-  }, [components]);
 
   const scssVariablesTitle = 'Theme Variables (SCSS)';
   const scssVariablesUrl = 'theme-variables-scss';
@@ -160,8 +143,8 @@ export default function PageTemplate({
             <LeaveFeedback />
           </Stack>
         </Stack>
-        <MDXProvider components={shortcodes}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
+        <MDXProvider components={customMdxComponents}>
+          {children}
         </MDXProvider>
         {scssVariables && (
           <div className="mb-5">
@@ -205,39 +188,10 @@ export default function PageTemplate({
   );
 }
 
-PageTemplate.propTypes = {
-  data: PropTypes.shape({
-    mdx: PropTypes.shape({
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string,
-        status: PropTypes.string,
-      }),
-      body: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-      tableOfContents: PropTypes.shape({
-        items: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
-      }),
-    }),
-    components: PropTypes.shape({
-      nodes: PropTypes.arrayOf(PropTypes.shape({})),
-    }),
-  }).isRequired,
-  pageContext: PropTypes.shape({
-    scssVariablesData: PropTypes.shape({
-      openedx: PropTypes.string,
-      edxorg: PropTypes.string,
-    }),
-  }),
-};
-
-PageTemplate.defaultProps = {
-  pageContext: null,
-};
-
 export const pageQuery = graphql`
   query ComponentPageQuery($id: String, $components: [String]) {
     mdx(id: { eq: $id }) {
       id
-      body
       frontmatter {
         title
         status
@@ -273,9 +227,6 @@ export const pageQuery = graphql`
       description {
         id
         text
-        childMdx {
-          body
-        }
       }
     }
   }

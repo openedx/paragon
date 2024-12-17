@@ -1,9 +1,10 @@
+@use "sass:map";
 .pgn__hyperlink {
   display: inline-flex;
   align-items: center;
   text-align: start;
 
   &__external-icon {
-    margin-inline-start: map_get($spacers, 2);
+    margin-inline-start: map.get($spacers, 2);
   }
 }

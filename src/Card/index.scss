@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "variables";
 @import "~bootstrap/scss/card";
 
@@ -51,19 +52,19 @@ a.pgn__card {
 
 .pgn__card-carousel {
   .pgn__card-carousel-title {
-    margin-bottom: map-get($spacers, 2);
+    margin-bottom: map.get($spacers, 2);
   }
 
   .pgn__card-carousel-subtitle {
     font-size: $font-size-sm;
-    margin-bottom: map-get($spacers, 2);
+    margin-bottom: map.get($spacers, 2);
   }
 
   .pgn__card-carousel-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: map-get($spacers, 1);
+    margin-bottom: map.get($spacers, 1);
   }
 }
 
@@ -118,7 +119,7 @@ a.pgn__card {
     .pgn__card-header-content {
       display: flex;
       flex-direction: column;
-      margin-top: map_get($spacers, 4\.5);
+      margin-top: map.get($spacers, 4\.5);
       overflow: auto;
       text-align: start;
       width: 100%;
@@ -146,7 +147,7 @@ a.pgn__card {
 
     %header-subtitle {
       color: $gray-700;
-      margin-top: map_get($spacers, 1);
+      margin-top: map.get($spacers, 1);
     }
 
     .pgn__card-header-subtitle,
@@ -173,7 +174,7 @@ a.pgn__card {
       width: 100%;
 
       .react-loading-skeleton {
-        margin-top: map-get($spacers, 4);
+        margin-top: map.get($spacers, 4);
       }
     }
   }
@@ -357,7 +358,7 @@ a.pgn__card {
       object-position: center center;
       border-radius: $card-logo-border-radius;
       box-shadow: $level-1-box-shadow;
-      padding: map_get($spacers, 2);
+      padding: map.get($spacers, 2);
       background-color: $white;
       display: none;
 
@@ -391,7 +392,7 @@ a.pgn__card {
     }
 
     .pgn__card-status__actions {
-      margin-top: map-get($spacers, 3);
+      margin-top: map.get($spacers, 3);
     }
 
     .pgn__card-status__heading {
@@ -485,7 +486,7 @@ a.pgn__card {
   }
 }
 
-@media (max-width: map-get($grid-breakpoints, "sm")) {
+@media (max-width: map.get($grid-breakpoints, "sm")) {
   .pgn__card-footer {
     &.horizontal > :not(:last-child) {
       margin-inline-end: 0;

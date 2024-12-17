@@ -113,7 +113,7 @@ Hyperlink.defaultProps = {
 Hyperlink.propTypes = {
   /** specifies the URL */
   destination: PropTypes.string.isRequired,
-  /** Content of the hyperlink */
+  /** Content of the hyperlink */ // @ts-ignore
   children: PropTypes.node.isRequired,
   /** Custom class names for the hyperlink */
   className: PropTypes.string,

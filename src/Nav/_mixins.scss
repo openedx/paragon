@@ -1,3 +1,4 @@
+@use "sass:map";
 @mixin nav-tabs-link-focus(
   $border-color,
   $radius: $nav-tabs-border-radius,
@@ -5,7 +6,7 @@
 ) {
   position: relative;
   outline: 0;
-  z-index: map-get($map: $indexes, $key: 1);
+  z-index: map.get($map: $indexes, $key: 1);
 
   &::before {
     content: "";

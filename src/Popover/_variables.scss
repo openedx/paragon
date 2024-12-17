@@ -1,3 +1,4 @@
+@use "sass:color";
 // Popovers
 
 $popover-font-size:                 $font-size-sm !default;
@@ -26,7 +27,7 @@ $popover-arrow-width:               1rem !default;
 $popover-arrow-height:              .5rem !default;
 $popover-arrow-color:               $popover-bg !default;
 
-$popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default;
+$popover-arrow-outer-color:         color.adjust($popover-border-color, $alpha: .05) !default;
 
 $popover-success-bg:                $success-100 !default;
 $popover-success-icon-color:        $success-500 !default;
