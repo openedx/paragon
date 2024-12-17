@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import ColorPicker from '.';
 
@@ -29,33 +29,26 @@ describe('picker works as expected', () => {
   const color = 'wassap';
   const setColor = jest.fn();
   it('validates hex color', async () => {
+    const user = userEvent.setup();
     render(<ColorPicker color={color} setColor={setColor} />);
 
-    await act(async () => {
-      await userEvent.click(screen.getByRole('button'));
-    });
+    await user.click(screen.getByRole('button'));
     expect(screen.queryByTestId('hex-input').value).toEqual('#wassap');
     expect(screen.queryByText('Colors must be in hexadecimal format.')).toBeInTheDocument();
 
-    await act(async () => {
-      await userEvent.clear(screen.getByTestId('hex-input'));
-      await userEvent.paste(screen.getByTestId('hex-input'), '32116c');
-    });
+    await user.clear(screen.getByTestId('hex-input')); // clear() will keep focus on the element, so we can paste
+    await user.paste('32116c');
     expect(screen.queryByTestId('hex-input').value).toEqual('#32116c');
     expect(screen.queryByText('Colors must be in hexadecimal format.')).not.toBeInTheDocument();
 
-    await act(async () => {
-      await userEvent.clear(screen.getByTestId('hex-input'));
-      await userEvent.paste(screen.getByTestId('hex-input'), 'yuk');
-    });
+    await user.clear(screen.getByTestId('hex-input'));
+    await user.paste('yuk');
 
     expect(screen.queryByTestId('hex-input').value).toEqual('#yuk');
     expect(screen.queryByText('Colors must be in hexadecimal format.')).toBeInTheDocument();
 
-    await act(async () => {
-      await userEvent.clear(screen.getByTestId('hex-input'));
-      await userEvent.paste(screen.getByTestId('hex-input'), '#fad');
-    });
+    await user.clear(screen.getByTestId('hex-input'));
+    await user.paste('#fad');
 
     expect(screen.queryByTestId('hex-input').value).toEqual('#fad');
     expect(screen.queryByText('Colors must be in hexadecimal format.')).not.toBeInTheDocument();
