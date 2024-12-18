@@ -268,7 +268,7 @@ jobs:
         body: "Contains automated changes to the dependent-usage.json file, which provides the data for Paragon Usage Insights."
         labels: automerge
         branch: dependent-usage-analyzer/update-dependent-usage-json
-        base: release-22.x
+        base: next
     - name: Auto-approve pull request for dependent project usages
       uses: hmarr/auto-approve-action@v2
       with:
