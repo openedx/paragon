@@ -175,12 +175,6 @@ jobs:
       with:
         repository: openedx/frontend-template-application
         path: dependent-usage-analyzer/.projects/frontend-template-application
-    - name: Checkout edx/prospectus
-      uses: actions/checkout@v3
-      with:
-        repository: edx/prospectus
-        path: dependent-usage-analyzer/.projects/prospectus
-        token: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
     - name: Checkout openedx/studio-frontend
       uses: actions/checkout@v3
       with:
@@ -274,7 +268,7 @@ jobs:
         body: "Contains automated changes to the dependent-usage.json file, which provides the data for Paragon Usage Insights."
         labels: automerge
         branch: dependent-usage-analyzer/update-dependent-usage-json
-        base: master
+        base: release-22.x
     - name: Auto-approve pull request for dependent project usages
       uses: hmarr/auto-approve-action@v2
       with:
