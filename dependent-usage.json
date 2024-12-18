@@ -1,8 +1,8 @@
 {
-  "lastModified": 1734012486681,
+  "lastModified": 1734530873026,
   "projectUsages": [
     {
-      "version": "22.11.2",
+      "version": "22.12.0",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -5789,15 +5789,15 @@
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
-            "line": 148,
+            "line": 192,
             "column": 22,
-            "index": 4898
+            "index": 6178
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
-            "line": 153,
+            "line": 197,
             "column": 22,
-            "index": 5072
+            "index": 6352
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
@@ -8739,9 +8739,9 @@
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
-            "line": 150,
+            "line": 194,
             "column": 29,
-            "index": 4992
+            "index": 6272
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
@@ -8969,9 +8969,9 @@
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
-            "line": 155,
+            "line": 199,
             "column": 29,
-            "index": 5165
+            "index": 6445
           },
           {
             "filePath": "src/components/ReportingConfig/ReportingConfigForm.jsx",
@@ -11342,6 +11342,12 @@
             "index": 528
           },
           {
+            "filePath": "src/components/ReportingConfig/index.jsx",
+            "line": 249,
+            "column": 12,
+            "index": 8613
+          },
+          {
             "filePath": "src/components/TableComponent/index.jsx",
             "line": 109,
             "column": 12,
@@ -12867,15 +12873,15 @@
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
-            "line": 142,
+            "line": 186,
             "column": 14,
-            "index": 4660
+            "index": 5940
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
-            "line": 203,
+            "line": 258,
             "column": 10,
-            "index": 7266
+            "index": 8892
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/SettingsAccessTabSection.jsx",
@@ -13769,7 +13775,7 @@
       }
     },
     {
-      "version": "22.11.2",
+      "version": "22.12.0",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -19888,9 +19894,9 @@
           },
           {
             "filePath": "src/generic/delete-modal/DeleteModal.jsx",
-            "line": 35,
+            "line": 37,
             "column": 8,
-            "index": 810
+            "index": 836
           },
           {
             "filePath": "src/generic/modal-dropzone/ModalDropzone.jsx",
@@ -21560,9 +21566,9 @@
           },
           {
             "filePath": "src/generic/delete-modal/DeleteModal.jsx",
-            "line": 36,
+            "line": 38,
             "column": 10,
-            "index": 832
+            "index": 858
           },
           {
             "filePath": "src/generic/modal-dropzone/ModalDropzone.jsx",
@@ -23416,9 +23422,9 @@
           },
           {
             "filePath": "src/generic/delete-modal/DeleteModal.jsx",
-            "line": 29,
+            "line": 30,
             "column": 4,
-            "index": 677
+            "index": 685
           },
           {
             "filePath": "src/generic/modal-notification/index.jsx",
@@ -44822,9 +44828,9 @@
           },
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 51,
+            "line": 49,
             "column": 6,
-            "index": 1279
+            "index": 1269
           },
           {
             "filePath": "src/containers/ReviewActions/index.jsx",
@@ -45044,15 +45050,15 @@
         "IconButton": [
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 52,
+            "line": 50,
             "column": 8,
-            "index": 1345
+            "index": 1335
           },
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 71,
+            "line": 69,
             "column": 8,
-            "index": 1934
+            "index": 1924
           },
           {
             "filePath": "src/components/InfoPopover/index.jsx",
@@ -45076,15 +45082,15 @@
         "Icon": [
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 55,
+            "line": 53,
             "column": 18,
-            "index": 1433
+            "index": 1423
           },
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 74,
+            "line": 72,
             "column": 18,
-            "index": 2018
+            "index": 2008
           },
           {
             "filePath": "src/components/InfoPopover/index.jsx",
@@ -45162,9 +45168,9 @@
         "ChevronLeft": [
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 56,
+            "line": 54,
             "column": 15,
-            "index": 1454
+            "index": 1444
           },
           {
             "filePath": "src/containers/ReviewActions/components/SubmissionNavigation.jsx",
@@ -45176,9 +45182,9 @@
         "Form.Group": [
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 60,
+            "line": 58,
             "column": 8,
-            "index": 1558
+            "index": 1548
           },
           {
             "filePath": "src/containers/CriterionContainer/CriterionFeedback.jsx",
@@ -45202,15 +45208,15 @@
         "Form.Label": [
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 61,
+            "line": 59,
             "column": 10,
-            "index": 1623
+            "index": 1613
           },
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 69,
+            "line": 67,
             "column": 10,
-            "index": 1855
+            "index": 1845
           },
           {
             "filePath": "src/containers/CriterionContainer/index.jsx",
@@ -45234,9 +45240,9 @@
         "Form.Control": [
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 62,
+            "line": 60,
             "column": 10,
-            "index": 1673
+            "index": 1663
           },
           {
             "filePath": "src/containers/CriterionContainer/CriterionFeedback.jsx",
@@ -45254,9 +45260,9 @@
         "ChevronRight": [
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 75,
+            "line": 73,
             "column": 15,
-            "index": 2039
+            "index": 2029
           },
           {
             "filePath": "src/containers/ReviewActions/components/SubmissionNavigation.jsx",
@@ -53524,9 +53530,9 @@
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 465,
+            "line": 468,
             "column": 26,
-            "index": 20576
+            "index": 20697
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CourseCurriculum/index.jsx",
@@ -54606,9 +54612,9 @@
         "Spinner": [
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 298,
+            "line": 301,
             "column": 14,
-            "index": 10950
+            "index": 11071
           },
           {
             "filePath": "src/packages/program-page/components/ProgramHeader.jsx",
@@ -54632,9 +54638,9 @@
         "Form": [
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 321,
+            "line": 324,
             "column": 24,
-            "index": 12112
+            "index": 12233
           },
           {
             "filePath": "src/packages/search-page/components/RefinementFilters/components/FacetList/index.jsx",
@@ -54652,39 +54658,39 @@
         "Form.Group": [
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 323,
+            "line": 326,
             "column": 28,
-            "index": 12237
+            "index": 12358
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 343,
+            "line": 346,
             "column": 28,
-            "index": 13357
+            "index": 13478
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 364,
+            "line": 367,
             "column": 26,
-            "index": 14501
+            "index": 14622
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 386,
+            "line": 389,
             "column": 30,
-            "index": 15697
+            "index": 15818
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 418,
+            "line": 421,
             "column": 32,
-            "index": 17689
+            "index": 17810
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 450,
+            "line": 453,
             "column": 26,
-            "index": 19675
+            "index": 19796
           },
           {
             "filePath": "src/packages/queryless-pages/templates/CCPAPage/CCPAPageEN.jsx",
@@ -54744,21 +54750,21 @@
         "Form.Control": [
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 331,
+            "line": 334,
             "column": 30,
-            "index": 12638
+            "index": 12759
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 351,
+            "line": 354,
             "column": 30,
-            "index": 13756
+            "index": 13877
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 372,
+            "line": 375,
             "column": 28,
-            "index": 14889
+            "index": 15010
           },
           {
             "filePath": "src/pages/secure-preview/DynamicProductList.jsx",
@@ -54806,85 +54812,85 @@
         "FormLabel": [
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 387,
+            "line": 390,
             "column": 32,
-            "index": 15786
+            "index": 15907
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 399,
+            "line": 402,
             "column": 36,
-            "index": 16512
+            "index": 16633
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 404,
+            "line": 407,
             "column": 36,
-            "index": 16867
+            "index": 16988
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 419,
+            "line": 422,
             "column": 34,
-            "index": 17780
+            "index": 17901
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 431,
+            "line": 434,
             "column": 38,
-            "index": 18536
+            "index": 18657
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 436,
+            "line": 439,
             "column": 38,
-            "index": 18901
+            "index": 19022
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 451,
+            "line": 454,
             "column": 28,
-            "index": 19726
+            "index": 19847
           }
         ],
         "Form.RadioSet": [
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 392,
+            "line": 395,
             "column": 32,
-            "index": 16100
+            "index": 16221
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 424,
+            "line": 427,
             "column": 34,
-            "index": 18106
+            "index": 18227
           }
         ],
         "Form.Radio": [
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 398,
+            "line": 401,
             "column": 34,
-            "index": 16409
+            "index": 16530
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 403,
+            "line": 406,
             "column": 34,
-            "index": 16766
+            "index": 16887
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 430,
+            "line": 433,
             "column": 36,
-            "index": 18431
+            "index": 18552
           },
           {
             "filePath": "src/packages/exec-ed-page/components/CaptureForm/index.jsx",
-            "line": 435,
+            "line": 438,
             "column": 36,
-            "index": 18798
+            "index": 18919
           }
         ],
         "OverlayTrigger": [
