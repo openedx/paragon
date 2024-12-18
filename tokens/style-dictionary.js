@@ -410,8 +410,8 @@ const initializeStyleDictionary = async ({ themes }) => {
   StyleDictionary.registerFileHeader({
     name: 'customFileHeader',
     fileHeader: (defaultMessage) => [
-      `${defaultMessage} while transforming design tokens.`,
-      'See <root>/tokens/README.md for more details.',
+      `${defaultMessage}`,
+      'See <PARAGON_ROOT>/tokens/README.md for more details.',
     ],
   });
 
