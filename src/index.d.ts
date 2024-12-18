@@ -18,6 +18,11 @@ export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
 export { default as Tooltip } from './Tooltip';
+export { default as useWindowSize, type WindowSizeData } from './hooks/useWindowSize';
+export { default as useToggle, type Toggler, type ToggleHandlers } from './hooks/useToggle';
+export { default as useArrowKeyNavigation, type ArrowKeyNavProps } from './hooks/useArrowKeyNavigation';
+export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChild';
+export { default as useIsVisible } from './hooks/useIsVisible';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
@@ -187,11 +192,6 @@ export const Sticky: any; // from './Sticky';
 export const SelectableBox: any; // from './SelectableBox';
 export const breakpoints: any; // from './utils/breakpoints';
 export const Variant: any; // from './utils/constants';
-export const useWindowSize: any; // from './hooks/useWindowSize';
-export const useToggle: any; // from './hooks/useToggle';
-export const useArrowKeyNavigation: any; // from './hooks/useArrowKeyNavigation';
-export const useIndexOfLastVisibleChild: any; // from './hooks/useIndexOfLastVisibleChild';
-export const useIsVisible: any; // from './hooks/useIsVisible';
 export const
   OverflowScrollContext: any,
   OverflowScroll: any,
