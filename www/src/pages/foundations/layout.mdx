@@ -2,7 +2,6 @@
 title: Layout
 ---
 
-import { graphql } from 'gatsby';
 import { Table } from '~paragon-react';
 import getCssSelectors from '../../utils/getCssSelectors.ts';
 import CSSUtilitiesTable from '../../components/CSSUtilitiesTable';
@@ -176,39 +175,3 @@ the style only at a certain breakpoint and above.
 ### Misc Layout
 
 <CSSUtilitiesTable selectors={getCssSelectors(props.data.miscUtilities.nodes)} />
-
-
-export const pageQuery = graphql`
-{
-  flexUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/flex/"}, isUtility: {eq: true}}) {
-    nodes {
-      selector
-      declarations
-    }
-  }
-  displayUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/display/"}, isUtility: {eq: true}}) {
-    nodes {
-      selector
-      declarations
-    }
-  }
-  positionUtilities: allCssUtilityClasses(filter: {selector: {regex: "/(^fixed-)|(position)/"}}) {
-    nodes {
-      selector
-      declarations
-    }
-  }
-  maxWidthUtilities: allCssUtilityClasses(filter: {selector: {regex: "/(^mw-)/"}}) {
-    nodes {
-      selector
-      declarations
-    }
-  }
-  miscUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/(float)|(overflow)/"}, isUtility: {eq: true}}) {
-    nodes {
-      selector
-      declarations
-    }
-  }
-}
-`;
