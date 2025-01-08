@@ -83,7 +83,7 @@ describe('<Collapsible />', () => {
       });
     });
 
-    it('closes on .close()', async() => {
+    it('closes on .close()', async () => {
       ref.current.open();
       await waitFor(() => {
         expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();

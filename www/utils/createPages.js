@@ -78,7 +78,7 @@ async function createPages(graphql, actions, reporter) {
         },
       });
     }
-    
+
     if (node.fields.source === 'pages') {
       createPage({
         path: node.fields.slug,
