@@ -37,14 +37,16 @@ describe('<Tabs />', () => {
   });
 
   describe('switches tab selection', () => {
-    it('on click', () => {
+    it('on click', async () => {
+      const user = userEvent.setup();
       const { container } = render(<Tabs {...props} />);
       const tabButtons = container.querySelectorAll('button');
 
-      tabButtons.forEach((node, i) => {
-        userEvent.click(node);
+      for (const [i, node] of tabButtons.entries()) {
+        // eslint-disable-next-line no-await-in-loop
+        await user.click(node);
         tabSelectedAtIndex(i, container);
-      });
+      }
     });
   });
 });

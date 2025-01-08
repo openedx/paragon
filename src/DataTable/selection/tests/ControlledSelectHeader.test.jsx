@@ -42,7 +42,8 @@ describe('<ControlledSelectHeader />', () => {
     jest.resetAllMocks();
   });
 
-  it('correctly selects all page rows', () => {
+  it('correctly selects all page rows', async () => {
+    const user = userEvent.setup();
     const isChecked = true;
     mockToggleAllPageRowsSelectedProps.mockReturnValue({
       checked: isChecked,
@@ -53,13 +54,14 @@ describe('<ControlledSelectHeader />', () => {
     render(<ControlledSelectHeaderWrapper tableProps={tableProps} selectProps={selectProps} />);
 
     const checkbox = screen.getByRole('checkbox');
-    userEvent.click(checkbox);
+    await user.click(checkbox);
 
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith(rows, tableProps.itemCount);
   });
 
-  it('correctly unselects all page rows', () => {
+  it('correctly unselects all page rows', async () => {
+    const user = userEvent.setup();
     const spy = jest.spyOn(selectActions, 'clearPageSelectionAction');
     mockToggleAllPageRowsSelectedProps.mockReturnValue({
       checked: false,
@@ -78,7 +80,7 @@ describe('<ControlledSelectHeader />', () => {
     render(<ControlledSelectHeaderWrapper tableProps={newTableProps} selectProps={selectProps} />);
 
     const checkbox = screen.getByRole('checkbox');
-    userEvent.click(checkbox);
+    await user.click(checkbox);
 
     expect(spy).toHaveBeenCalledTimes(1);
     const rowIds = getRowIds(rows).map(id => id.toString());

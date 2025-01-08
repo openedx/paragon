@@ -28,7 +28,8 @@ function Component({ isClearValue }) {
 }
 
 describe('FormControl', () => {
-  it('textarea changes its height with autoResize prop', () => {
+  it('textarea changes its height with autoResize prop', async () => {
+    const user = userEvent.setup();
     const useReferenceSpy = jest.spyOn(React, 'useRef').mockReturnValue(ref);
     const onChangeFunc = jest.fn();
     const inputText = 'new text';
@@ -45,25 +46,27 @@ describe('FormControl', () => {
     expect(useReferenceSpy).toHaveBeenCalledTimes(1);
     expect(ref.current.style.height).toBe('0px');
 
-    userEvent.type(textarea, inputText);
+    await user.type(textarea, inputText);
 
     expect(onChangeFunc).toHaveBeenCalledTimes(inputText.length);
     expect(ref.current.style.height).toEqual(`${ref.current.scrollHeight + ref.current.offsetHeight}px`);
   });
 
-  it('should apply and accept input mask for phone numbers', () => {
+  it('should apply and accept input mask for phone numbers', async () => {
+    const user = userEvent.setup();
     render(<Component />);
 
     const input = screen.getByTestId('form-control-with-mask');
-    userEvent.type(input, '5555555555');
+    await user.type(input, '5555555555');
     expect(input.value).toBe('+1 (555) 555-5555');
   });
 
-  it('should be cleared from the mask elements value', () => {
+  it('should be cleared from the mask elements value', async () => {
+    const user = userEvent.setup();
     render(<Component isClearValue />);
 
     const input = screen.getByTestId('form-control-with-mask');
-    userEvent.type(input, '5555555555');
+    await user.type(input, '5555555555');
 
     expect(input.value).toBe('+1 (555) 555-5555');
     expect(unmaskedInputValue).toBe('15555555555');
