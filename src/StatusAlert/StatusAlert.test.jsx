@@ -113,17 +113,21 @@ describe('<StatusAlert />', () => {
     });
 
     it('does nothing on invalid keystroke q', async () => {
+      const user = userEvent.setup();
       const closeButton = screen.getByRole('button');
       expect(document.activeElement).toEqual(closeButton);
       closeButton.focus();
-      await userEvent.keyboard('{q}');
+      await user.keyboard('{q}');
       expect(document.activeElement).toEqual(closeButton);
     });
 
     it('does nothing on invalid keystroke + ctrl', async () => {
+      const user = userEvent.setup();
       const closeButton = screen.getByRole('button');
       expect(document.activeElement).toEqual(closeButton);
-      await userEvent.keyboard('{ctrl>}{tab}{/ctrl}');
+      // This was '{Control>}{Tab}{/Control}' before, but that _does_ seem to be changing the focus in newer RTL/React.
+      // I don't think that was the point of the test though, so it's 'z' for now.
+      await user.keyboard('{Control>}z{/Control}');
       expect(document.activeElement).toEqual(closeButton);
     });
   });
