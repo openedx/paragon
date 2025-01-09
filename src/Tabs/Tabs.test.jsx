@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event';
 import Tabs, { MORE_TAB_TEXT } from '.';
 import Tab from './Tab';
 
-jest.mock('../hooks/useIndexOfLastVisibleChild', () => ({
+jest.mock('../hooks/useIndexOfLastVisibleChildHook', () => ({
   __esModule: true,
   default: () => 0,
 }));
