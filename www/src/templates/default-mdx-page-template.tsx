@@ -21,14 +21,15 @@ const shortcodes = {
   Link,
 };
 
+/** context data added to props by createsPages()/onCreatePage() */
+export interface StandardContext {
+  frontmatter: { title: string; };
+  githubEditPath: string;
+}
+
 export interface IPageTemplateType {
-  children: React.ReactNode,
-  pageContext: {
-    frontmatter: {
-      title: string,
-    },
-    githubEditPath: string,
-  },
+  children: React.ReactNode;
+  pageContext: StandardContext;
 }
 
 export default function PageTemplate({ children, pageContext }: IPageTemplateType) {

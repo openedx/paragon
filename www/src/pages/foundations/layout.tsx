@@ -1,25 +1,20 @@
 import React from 'react';
 import { graphql, type PageProps } from 'gatsby';
-import Layout from '../../components/PageLayout';
+import PageTemplate, { type StandardContext } from '../../templates/default-mdx-page-template';
 
 // Import the MDX file as a React component, which we'll then render with data to form this page
-import LayoutMdx from './layout.mdx';
+import LayoutMdx from './layout-content.mdx';
 
 /** Data from the GraphQL query below */
 interface PageData {
   utilities: Record<string, any>;
 }
 
-/** context data added to props by createsPages()/onCreatePage() */
-interface StandardContext {
-  githubEditPath: string;
-}
-
 export default function LayoutPage({ data, pageContext }: PageProps<PageData, StandardContext>) {
   return (
-    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
+    <PageTemplate pageContext={pageContext}>
       <LayoutMdx data={data} />
-    </Layout>
+    </PageTemplate>
   );
 }
 
