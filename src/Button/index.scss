@@ -37,8 +37,8 @@
     }
   }
 
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled, .disabled):active,
+  &:not(:disabled, .disabled).active,
   .show > &.dropdown-toggle {
     color: $active-color;
     background-color: $active-background;
@@ -72,8 +72,8 @@
     border-color: $color;
   }
 
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled, .disabled):active,
+  &:not(:disabled, .disabled).active,
   .show > &.dropdown-toggle {
     color: color-yiq($active-background);
     background-color: $active-background;
@@ -110,7 +110,7 @@
   border-color: transparent;
   background-color: $background;
 
-  &:not(:disabled):not(.disabled) {
+  &:not(:disabled, .disabled) {
     @include hover {
       color: color.adjust($color, $lightness: -7.5%);
       background-color: color.adjust($background, $lightness: -7.5%);
@@ -124,8 +124,8 @@
     background-color: $background;
   }
 
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled, .disabled):active,
+  &:not(:disabled, .disabled).active,
   .show > &.dropdown-toggle {
     color: color.adjust($color, $lightness: -10%);
     background: #EEEEEE;
@@ -477,7 +477,7 @@ input[type="button"] {
   }
 }
 
-[dir="rtl"] .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
+[dir="rtl"] .btn-group > .btn:not(:last-child, .dropdown-toggle),
 [dir="rtl"] .btn-group > .btn-group:not(:last-child) > .btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

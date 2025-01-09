@@ -42,11 +42,11 @@
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (width <= 768px) {
     max-width: 100%;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (width >= 768px) {
     min-width: $toast-max-width;
     max-width: $toast-max-width;
   }

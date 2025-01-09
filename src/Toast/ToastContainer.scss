@@ -11,7 +11,7 @@
     left: 0;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (width <= 768px) {
     bottom: $toast-container-gutter-sm;
     right: $toast-container-gutter-sm;
     left: $toast-container-gutter-sm;
