@@ -12,7 +12,7 @@ function LinkedHeading({
   h,
   children,
   id,
-}: ILinkedHeading & JSX.IntrinsicElements['h2']): React.ReactNode {
+}: ILinkedHeading & JSX.IntrinsicElements['h2']): JSX.Element {
   const H = `h${h}` as HeadingTag;
 
   return (
