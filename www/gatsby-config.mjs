@@ -42,6 +42,7 @@ const plugins = [
   },
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-mdx-source-name',
+  'gatsby-plugin-typescript',
   {
     resolve: 'gatsby-plugin-manifest',
     options: {

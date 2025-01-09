@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import CardContext from './CardContext';
-import cardSrcFallbackImg from './fallback-default.png';
+import { cardSrcFallbackImg } from './CardFallbackDefaultImage';
 
 const SKELETON_HEIGHT_VALUE = 140;
 const LOGO_SKELETON_HEIGHT_VALUE = 41;

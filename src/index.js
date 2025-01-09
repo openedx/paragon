@@ -40,6 +40,11 @@ export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
 export { default as Tooltip } from './Tooltip';
+export { default as useWindowSize } from './hooks/useWindowSize';
+export { default as useToggle } from './hooks/useToggle';
+export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigation';
+export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChild';
+export { default as useIsVisible } from './hooks/useIsVisible';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
@@ -187,11 +192,6 @@ export { default as Sticky } from './Sticky';
 export { default as SelectableBox } from './SelectableBox';
 export { default as breakpoints } from './utils/breakpoints';
 export { default as Variant } from './utils/constants';
-export { default as useWindowSize } from './hooks/useWindowSize';
-export { default as useToggle } from './hooks/useToggle';
-export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigation';
-export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChild';
-export { default as useIsVisible } from './hooks/useIsVisible';
 export {
   OverflowScrollContext,
   OverflowScroll,
