@@ -275,7 +275,7 @@ jobs:
         pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
         github-token: ${{ secrets.requirements_bot_github_token }}
     - name: Auto-merge pull request for dependent project usages
-      uses: pascalgn/automerge-action@v0.14.3
+      uses: pascalgn/automerge-action@v0.16.4
       env:
         GITHUB_TOKEN: ${{ secrets.requirements_bot_github_token }}
         MERGE_METHOD: squash
