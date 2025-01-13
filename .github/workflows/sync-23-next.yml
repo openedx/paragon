@@ -24,7 +24,7 @@ jobs:
           FROM_BRANCH: release-23.x
           TO_BRANCH: next
       - name: Auto-approve pull request for sync
-        uses: hmarr/auto-approve-action@v2
+        uses: hmarr/auto-approve-action@v4
         with:
           pull-request-number: ${{ steps.cpr.outputs.PULL_REQUEST_NUMBER }}
           github-token: ${{ secrets.requirements_bot_github_token }}
