@@ -50,17 +50,20 @@ async function createPages(graphql, actions, reporter) {
 
   // you'll call `createPage` for each result
   for (const { node } of pages) {
-    const componentDir = node.fields.slug.split('/')[0];
-    const variablesPath = path.resolve(__dirname, `../../src/${componentDir}/_variables.scss`);
     const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.internal.contentFilePath.split('src')[1]}`;
-    let scssVariablesData = {};
-
-    if (fs.existsSync(variablesPath)) {
-      // eslint-disable-next-line no-await-in-loop
-      scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
-    }
-
+    
     if (node.fields.source === 'components') {
+      // Check for a _variables.scss file for this component, e.g. src/Button/_variables.scss.
+      // If it exists, load the data:
+      let scssVariablesData = {};
+      if (node.internal.contentFilePath.endsWith('/README.md')) {
+        const variablesPath = node.internal.contentFilePath.replace('/README.md', '/_variables.scss');
+        if (fs.existsSync(variablesPath)) {
+          // eslint-disable-next-line no-await-in-loop
+          scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
+        }
+      }
+
       createPage({
         // This is the slug you created before
         // (or `node.frontmatter.slug`)
@@ -86,7 +89,6 @@ async function createPages(graphql, actions, reporter) {
         context: {
           id: node.id,
           githubEditPath,
-          scssVariablesData,
           frontmatter: {
             title: node.frontmatter.title,
           },
