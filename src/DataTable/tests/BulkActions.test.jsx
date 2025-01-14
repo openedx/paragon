@@ -11,7 +11,7 @@ import {
 import { useWindowSize, Button } from '../..';
 import DataTableContext from '../DataTableContext';
 
-jest.mock('../../hooks/useWindowSize');
+jest.mock('../../hooks/useWindowSizeHook');
 useWindowSize.mockReturnValue({ width: 800 });
 
 const FIRST_ACTION = 'First Action';
