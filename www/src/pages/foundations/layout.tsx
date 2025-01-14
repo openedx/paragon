@@ -3,7 +3,7 @@ import { graphql, type PageProps } from 'gatsby';
 import PageTemplate, { type StandardContext } from '../../templates/default-mdx-page-template';
 
 // Import the MDX file as a React component, which we'll then render with data to form this page
-import LayoutMdx from './layout-content.mdx';
+import LayoutMdx from '../../page-fragments/layout-content.mdx';
 
 /** Data from the GraphQL query below */
 interface PageData {

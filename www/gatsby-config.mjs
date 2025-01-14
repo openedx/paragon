@@ -70,6 +70,13 @@ const plugins = [
   {
     resolve: 'gatsby-source-filesystem',
     options: {
+      path: `${__dirname}/src/page-fragments`,
+      name: 'page-fragments',
+    },
+  },
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
       path: `${__dirname}/../CHANGELOG.md`,
       name: 'changelog',
     },
