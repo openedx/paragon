@@ -46,12 +46,18 @@ export interface IPageTemplate {
   children: React.ReactNode,
 }
 
+interface HProps {
+  // We know that our heading elements (<h1>, <h2>, etc.) will always have content (children) and IDs:
+  id: string;
+  children: React.ReactNode;
+}
+
 const customMdxComponents = {
-  h2: (props: JSX.IntrinsicElements['h2']) => <LinkedHeading h="2" {...props} />,
-  h3: (props: JSX.IntrinsicElements['h3']) => <LinkedHeading h="3" {...props} />,
-  h4: (props: JSX.IntrinsicElements['h4']) => <LinkedHeading h="4" {...props} />,
-  h5: (props: JSX.IntrinsicElements['h5']) => <LinkedHeading h="5" {...props} />,
-  h6: (props: JSX.IntrinsicElements['h6']) => <LinkedHeading h="6" {...props} />,
+  h2: (props: JSX.IntrinsicElements['h2'] & HProps) => <LinkedHeading h="2" {...props} />,
+  h3: (props: JSX.IntrinsicElements['h3'] & HProps) => <LinkedHeading h="3" {...props} />,
+  h4: (props: JSX.IntrinsicElements['h4'] & HProps) => <LinkedHeading h="4" {...props} />,
+  h5: (props: JSX.IntrinsicElements['h5'] & HProps) => <LinkedHeading h="5" {...props} />,
+  h6: (props: JSX.IntrinsicElements['h6'] & HProps) => <LinkedHeading h="6" {...props} />,
   pre: (props: JSX.IntrinsicElements['pre']) => <div {...props as any} />,
   code: CodeBlock,
   Link,

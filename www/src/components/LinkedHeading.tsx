@@ -2,8 +2,8 @@ import React from 'react';
 
 export interface ILinkedHeading {
   h: string,
-  children?: React.ReactNode,
-  id?: string,
+  children: React.ReactNode,
+  id: string,
 }
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
