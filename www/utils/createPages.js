@@ -51,7 +51,7 @@ async function createPages(graphql, actions, reporter) {
   // you'll call `createPage` for each result
   for (const { node } of pages) {
     const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.internal.contentFilePath.split('src')[1]}`;
-    
+
     if (node.fields.source === 'components') {
       // Check for a _variables.scss file for this component, e.g. src/Button/_variables.scss.
       // If it exists, load the data:
