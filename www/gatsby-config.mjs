@@ -138,6 +138,28 @@ export default {
   // Match the location of the site on github pages if no path prefix is specified
   pathPrefix: process.env.PATH_PREFIX || '',
   plugins,
+  // Netlify now injects the Netlify Gatsby adapter to gatsby sites using a version
+  // of gatsby that supports gatsby adapters (>= 5.12.0)
+  // This includes "X-Frame-Options; DENY" as a default, which conflicts with having
+  // the playground in a frame.
+  // X-Frame-Options is deprecated and MDN recommends using the frame-ancestors
+  // directive in a Content-Security-Policy header instead.
+  // See:
+  // * https://answers.netlify.com/t/breaking-change-x-frame-options-set-to-deny/102220
+  // * https://www.netlify.com/blog/gatsby-adapters-realize-the-full-potential-of-gatsby-on-your-platform/
+  // * https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/adapters/
+  // * https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+  headers: [
+    {
+      source: '*',
+      headers: [
+        {
+          key: 'Content-Security-Policy',
+          value: 'frame-ancestors *;',
+        },
+      ],
+    },
+  ],
   flags: {
     FAST_DEV: true,
   },
