@@ -4,3 +4,7 @@
   environment = { SEGMENT_KEY = "", NODE_VERSION = "18.16.0" }
 [functions]
   directory = "www/netlify/functions"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors *;"
