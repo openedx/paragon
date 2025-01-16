@@ -21,7 +21,8 @@ describe('IconButtonToggle tests', () => {
     expect(btnAbc).toHaveClass('btn-icon-primary-active');
     expect(btnAbc).toHaveAttribute('aria-selected', 'true');
   });
-  test('switching activeValue works as expected', () => {
+  test('switching activeValue works as expected', async () => {
+    const user = userEvent.setup();
     const spyChanger = jest.fn();
     render(
       <IconButtonToggle activeValue="abc" onChange={spyChanger}>
@@ -38,7 +39,7 @@ describe('IconButtonToggle tests', () => {
     expect(btnAbc).toHaveClass('btn-icon-primary-active');
     expect(btnAbc).toHaveAttribute('aria-selected', 'true');
 
-    userEvent.click(btnDef);
+    await user.click(btnDef);
 
     waitFor(() => {
       expect(btnDef).toHaveClass('btn-icon-primary-active');

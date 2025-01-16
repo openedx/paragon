@@ -3,7 +3,6 @@ import { Context as ResponsiveContext } from 'react-responsive';
 import renderer from 'react-test-renderer';
 import {
   render,
-  act,
   screen,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -66,48 +65,53 @@ describe('<Pagination />', () => {
   });
 
   describe('handles controlled and uncontrolled behaviour properly', () => {
-    it('does not internally change page on page click if currentPage is provided', () => {
+    it('does not internally change page on page click if currentPage is provided', async () => {
+      const user = userEvent.setup();
       render(<Pagination {...baseProps} />);
       expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
 
-      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT));
+      await user.click(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT));
       expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
 
-      userEvent.click(screen.getByRole('button', { name: `${PAGINATION_BUTTON_LABEL_PAGE} 3` }));
+      await user.click(screen.getByRole('button', { name: `${PAGINATION_BUTTON_LABEL_PAGE} 3` }));
       expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
     });
 
-    it('controls page selection internally if currentPage is not provided', () => {
+    it('controls page selection internally if currentPage is not provided', async () => {
+      const user = userEvent.setup();
       render(<Pagination {...baseProps} currentPage={undefined} />);
       expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
 
-      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT));
+      await user.click(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT));
       expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('2');
 
-      userEvent.click(screen.getByRole('button', { name: `${PAGINATION_BUTTON_LABEL_PAGE} 3` }));
+      await user.click(screen.getByRole('button', { name: `${PAGINATION_BUTTON_LABEL_PAGE} 3` }));
       expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('3');
 
-      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_PREV));
+      await user.click(screen.getByText(PAGINATION_BUTTON_LABEL_PREV));
       expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('2');
     });
 
-    it('does not chang page if you click "next" button while on last page', () => {
+    it('does not chang page if you click "next" button while on last page', async () => {
+      const user = userEvent.setup();
       render(<Pagination {...baseProps} currentPage={undefined} initialPage={5} />);
       expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('5');
-      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT));
+      await user.click(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT));
       expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('5');
     });
 
-    it('does not chang page if you click "previous" button while on first page', () => {
+    it('does not chang page if you click "previous" button while on first page', async () => {
+      const user = userEvent.setup();
       render(<Pagination {...baseProps} currentPage={undefined} initialPage={1} />);
       expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
-      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_PREV));
+      await user.click(screen.getByText(PAGINATION_BUTTON_LABEL_PREV));
       expect(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false })).toHaveTextContent('1');
     });
   });
 
   describe('handles focus properly', () => {
-    it('should change focus to next button if previous page is first page', () => {
+    it('should change focus to next button if previous page is first page', async () => {
+      const user = userEvent.setup();
       const props = {
         ...baseProps,
         currentPage: 2,
@@ -117,11 +121,12 @@ describe('<Pagination />', () => {
         },
       };
       render(<Pagination {...props} />);
-      userEvent.click(screen.getByText(PAGINATION_BUTTON_LABEL_PREV));
+      await user.click(screen.getByText(PAGINATION_BUTTON_LABEL_PREV));
       expect(screen.getByText(PAGINATION_BUTTON_LABEL_NEXT)).toHaveFocus();
     });
 
-    it('should change focus to previous button if next page is last page', () => {
+    it('should change focus to previous button if next page is last page', async () => {
+      const user = userEvent.setup();
       const props = {
         ...baseProps,
         currentPage: baseProps.pageCount - 1,
@@ -131,7 +136,7 @@ describe('<Pagination />', () => {
         },
       };
       render(<Pagination {...props} />);
-      userEvent.click(screen.getByText(props.buttonLabel.next));
+      await user.click(screen.getByText(props.buttonLabel.next));
       expect(screen.getByText(props.buttonLabel.previous)).toHaveFocus();
     });
   });
@@ -191,7 +196,8 @@ describe('<Pagination />', () => {
     });
 
     describe('should fire callbacks properly', () => {
-      it('should not fire onPageSelect when selecting current page', () => {
+      it('should not fire onPageSelect when selecting current page', async () => {
+        const user = userEvent.setup();
         const spy = jest.fn();
         const props = {
           ...baseProps,
@@ -203,11 +209,12 @@ describe('<Pagination />', () => {
           </ResponsiveContext.Provider>
         ));
 
-        userEvent.click(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false }));
+        await user.click(screen.getByLabelText(PAGINATION_BUTTON_LABEL_CURRENT_PAGE, { exact: false }));
         expect(spy).toHaveBeenCalledTimes(0);
       });
 
-      it('should fire onPageSelect callback when selecting new page', () => {
+      it('should fire onPageSelect callback when selecting new page', async () => {
+        const user = userEvent.setup();
         const spy = jest.fn();
         const props = {
           ...baseProps,
@@ -219,17 +226,18 @@ describe('<Pagination />', () => {
           </ResponsiveContext.Provider>
         ));
 
-        userEvent.click(screen.getByLabelText(`${PAGINATION_BUTTON_LABEL_PAGE} 2`));
+        await user.click(screen.getByLabelText(`${PAGINATION_BUTTON_LABEL_PAGE} 2`));
         expect(spy).toHaveBeenCalledTimes(1);
 
-        userEvent.click(screen.getByLabelText(`${PAGINATION_BUTTON_LABEL_PAGE} 3`));
+        await user.click(screen.getByLabelText(`${PAGINATION_BUTTON_LABEL_PAGE} 3`));
         expect(spy).toHaveBeenCalledTimes(2);
       });
     });
   });
 
   describe('fires previous and next button click handlers', () => {
-    it('previous button onClick', () => {
+    it('previous button onClick', async () => {
+      const user = userEvent.setup();
       const spy = jest.fn();
       const props = {
         ...baseProps,
@@ -238,11 +246,12 @@ describe('<Pagination />', () => {
       };
       render(<Pagination {...props} />);
       const expectedPrevButtonAriaLabel = `${PAGINATION_BUTTON_LABEL_PREV}, ${PAGINATION_BUTTON_LABEL_PAGE} 2`;
-      userEvent.click(screen.getByRole('button', { name: expectedPrevButtonAriaLabel }));
+      await user.click(screen.getByRole('button', { name: expectedPrevButtonAriaLabel }));
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
-    it('next button onClick', () => {
+    it('next button onClick', async () => {
+      const user = userEvent.setup();
       const spy = jest.fn();
       const props = {
         ...baseProps,
@@ -250,7 +259,7 @@ describe('<Pagination />', () => {
       };
       render(<Pagination {...props} />);
       const expectedNextButtonAriaLabel = `${PAGINATION_BUTTON_LABEL_NEXT}, ${PAGINATION_BUTTON_LABEL_PAGE} 2`;
-      userEvent.click(screen.getByRole('button', { name: expectedNextButtonAriaLabel }));
+      await user.click(screen.getByRole('button', { name: expectedNextButtonAriaLabel }));
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
@@ -318,13 +327,12 @@ describe('<Pagination />', () => {
     });
 
     it('for the reduced variant shows dropdown button with the page count as label', async () => {
+      const user = userEvent.setup();
       render(<Pagination variant="reduced" {...props} />);
 
       const dropdownLabel = `${baseProps.currentPage} de ${baseProps.pageCount}`;
 
-      await act(async () => {
-        userEvent.click(screen.getByRole('button', { name: dropdownLabel }));
-      });
+      await user.click(screen.getByRole('button', { name: dropdownLabel }));
       expect(screen.queryAllByRole('button', { name: /^\d+$/ }).length).toEqual(baseProps.pageCount);
     });
 
