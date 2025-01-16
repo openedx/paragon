@@ -26,7 +26,7 @@ THEMES.forEach(theme => {
     file: `./src/scss/${theme.stylesheet}.scss`,
     outputStyle: 'compressed',
     importer,
-    quietDeps: true,
+    silenceDeprecations: ['abs-percent', 'color-functions', 'import', 'mixed-decls', 'global-builtin'],
   });
 
   fs.writeFileSync(`./public/static/${theme.stylesheet}.css`, result.css);

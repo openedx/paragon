@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:meta";
 @import "~bootstrap/scss/functions";
 
 //
@@ -15,20 +17,20 @@
   $base-color: #808080 !default;
   $color-level: 500 !default;
 
-  @if map-has-key($theme-colors, $color-name) {
-    $base-color: map-get($theme-colors, $color-name);
+  @if map.has-key($theme-colors, $color-name) {
+    $base-color: map.get($theme-colors, $color-name);
   }
 
-  @if type-of($variant) == "number" {
+  @if meta.type-of($variant) == "number" {
     $color-level: $variant;
   }
 
-  @else if map-has-key($element-color-levels, $variant) {
-    $color-level: map-get($element-color-levels, $variant);
+  @else if map.has-key($element-color-levels, $variant) {
+    $color-level: map.get($element-color-levels, $variant);
   }
 
-  @if map-has-key($theme-color-levels, "#{$color-name}-#{$color-level}") {
-    @return map-get($theme-color-levels, "#{$color-name}-#{$color-level}");
+  @if map.has-key($theme-color-levels, "#{$color-name}-#{$color-level}") {
+    @return map.get($theme-color-levels, "#{$color-name}-#{$color-level}");
   }
 
   @return $base-color;

@@ -1,10 +1,11 @@
+@use "sass:color";
 @import "variables";
 @import "~bootstrap/scss/button-group";
 
 @mixin button-variant(
-  $background, $border, $hover-background: darken($background, 7.5%),
-  $hover-border: darken($border, 10%), $active-background: darken($background, 10%),
-  $active-border: darken($border, 12.5%), $color: color-yiq($background), $hover-color: color-yiq($hover-background),
+  $background, $border, $hover-background: color.adjust($background, $lightness: -7.5%),
+  $hover-border: color.adjust($border, $lightness: -10%), $active-background: color.adjust($background, $lightness: -10%),
+  $active-border: color.adjust($border, $lightness: -12.5%), $color: color-yiq($background), $hover-color: color-yiq($hover-background),
   $active-color: color-yiq($active-background)
 ) {
   color: $color;
@@ -36,8 +37,8 @@
     }
   }
 
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled, .disabled):active,
+  &:not(:disabled, .disabled).active,
   .show > &.dropdown-toggle {
     color: $active-color;
     background-color: $active-background;
@@ -71,8 +72,8 @@
     border-color: $color;
   }
 
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled, .disabled):active,
+  &:not(:disabled, .disabled).active,
   .show > &.dropdown-toggle {
     color: color-yiq($active-background);
     background-color: $active-background;
@@ -109,10 +110,10 @@
   border-color: transparent;
   background-color: $background;
 
-  &:not(:disabled):not(.disabled) {
+  &:not(:disabled, .disabled) {
     @include hover {
-      color: darken($color, 7.5%);
-      background-color: darken($background, 7.5%);
+      color: color.adjust($color, $lightness: -7.5%);
+      background-color: color.adjust($background, $lightness: -7.5%);
       border-color: transparent;
     }
   }
@@ -123,10 +124,10 @@
     background-color: $background;
   }
 
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled, .disabled):active,
+  &:not(:disabled, .disabled).active,
   .show > &.dropdown-toggle {
-    color: darken($color, 10%);
+    color: color.adjust($color, $lightness: -10%);
     background: #EEEEEE;
   }
 }
@@ -256,10 +257,10 @@ fieldset:disabled a.btn {
     $active-border: theme-color($color, "active");
 
     // Defaults
-    $hover-background: darken($background, 7.5%) !default;
-    $hover-border: darken($border, 10%) !default;
-    $active-background: darken($background, 10%) !default;
-    $active-border: darken($border, 12.5%) !default;
+    $hover-background: color.adjust($background, $lightness: -7.5%) !default;
+    $hover-border: color.adjust($border, $lightness: -10%) !default;
+    $active-background: color.adjust($background, $lightness: -10%) !default;
+    $active-border: color.adjust($border, $lightness: -12.5%) !default;
 
     @include button-variant(
       $background,
@@ -476,7 +477,7 @@ input[type="button"] {
   }
 }
 
-[dir="rtl"] .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
+[dir="rtl"] .btn-group > .btn:not(:last-child, .dropdown-toggle),
 [dir="rtl"] .btn-group > .btn-group:not(:last-child) > .btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

@@ -18,6 +18,8 @@ var coreResult = sass.renderSync({
   file: './scss/core/core.scss',
   outputStyle: 'compressed',
   importer: tildaImporter,
+  // For now we can't resolve these warnings as we need to upgrade our 'bootstrap' dependency to do so:
+  silenceDeprecations: ['abs-percent', 'color-functions', 'import', 'mixed-decls', 'global-builtin'],
 });
 
 fs.writeFileSync('./dist/paragon.css', coreResult.css);

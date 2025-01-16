@@ -1,3 +1,4 @@
+@use "sass:map";
 // Alerts
 //
 // Define alert colors, border radius, and padding.
@@ -21,4 +22,4 @@ $alert-font-size:                   .875rem !default;
 $alert-line-height:                 1.5rem !default;
 $alert-content-color:               $gray-700 !default;
 
-$alert-actions-gap:                 map-get($spacers, 3);
+$alert-actions-gap:                 map.get($spacers, 3);

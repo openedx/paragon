@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:string";
 @import "variables";
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/input-group";
@@ -60,7 +62,7 @@ $select-icon-padding: .5625rem !default;
     }
   }
 
-  @media (min-width: map-get($grid-breakpoints, "sm")) {
+  @media (min-width: map.get($grid-breakpoints, "sm")) {
     margin-inline-end: $custom-control-gutter;
   }
 
@@ -306,7 +308,7 @@ $select-icon-padding: .5625rem !default;
       text-align: right;
     }
 
-    &:not(:focus):not(.has-value) {
+    &:not(:focus, .has-value) {
       color: transparent;
     }
 
@@ -318,17 +320,17 @@ $select-icon-padding: .5625rem !default;
     }
   }
 
-  .form-control:not(:focus):not(.has-value) {
+  .form-control:not(:focus, .has-value) {
     &::placeholder,
     &::-webkit-datetime-edit {
       opacity: 0;
     }
   }
 
-  select.form-control:not(.has-value):not(:focus) {
+  select.form-control:not(.has-value, :focus) {
     // color: rgba(0,0,0,0); Force the rgba syntax to appear in the output rather
     // than transparent. IE11 does not understand color: transparent here.
-    color: unquote("rgba(0,0,0,0)");
+    color: string.unquote("rgba(0,0,0,0)");
   }
 }
 
@@ -545,7 +547,7 @@ select.form-control {
 .input-group:not(.has-validation) > .input-group-append:not(:last-child) > .input-group-text,
 .input-group.has-validation > .input-group-append:nth-last-child(n+3) > .btn,
 .input-group.has-validation > .input-group-append:nth-last-child(n+3) > .input-group-text,
-.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .btn:not(:last-child, .dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   [dir="rtl"] & {
     border-radius: 0 $input-border-radius $input-border-radius 0;
@@ -588,7 +590,7 @@ select.form-control {
   .pgn__form-autosuggest__dropdown {
     @include pgn-box-shadow(1, "centered");
 
-    @media (min-width: map-get($grid-breakpoints, "sm")) {
+    @media (min-width: map.get($grid-breakpoints, "sm")) {
       margin-inline-end: $custom-control-gutter;
     }
 
