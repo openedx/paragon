@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useToggle } from '../..';
-import { ToggleHandlers } from '../useToggle';
+import { ToggleHandlers } from '../useToggleHook';
 
 const TOGGLE_IS_ON = 'on';
 const TOGGLE_IS_OFF = 'off';

@@ -1,3 +1,7 @@
+// Note: this file was renamed from 'useToggle.tsx' to 'useToggleHook.tsx' to fix
+// some bugs in the Gatsby www site, where Webpack was getting the .tsx and .mdx
+// files confused. Renaming this file allows us to keep the URLs of the docs site
+// unchanged.
 import { useState, useCallback } from 'react';
 
 export type Toggler = [

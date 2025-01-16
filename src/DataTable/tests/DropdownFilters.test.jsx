@@ -6,7 +6,7 @@ import DropdownFilters from '../DropdownFilters';
 import { useWindowSize } from '../..';
 import DataTableContext from '../DataTableContext';
 
-jest.mock('../../hooks/useWindowSize');
+jest.mock('../../hooks/useWindowSizeHook');
 
 const instance = {
   columns: [

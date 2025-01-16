@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
+import useArrowKeyNavigation from '../hooks/useArrowKeyNavigationHook';
 
 function Menu({
   as,
