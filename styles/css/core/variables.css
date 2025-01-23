@@ -4,6 +4,7 @@
  */
 
 :root {
+  --pgn-print-page-size: a3;
   --pgn-theme-interval: 8%;
   --pgn-other-form-control-custom-file-content: Browse;
   --pgn-other-form-control-custom-file-lang: en;
@@ -102,7 +103,6 @@
   --pgn-transition-carousel-base-property: transform;
   --pgn-transition-btn: none;
   --pgn-transition-badge: none;
-  --pgn-typography-print-page-size: a3;
   --pgn-typography-line-height-display-mobile: 3.5rem; /* Mobile display line height. */
   --pgn-typography-line-height-display-base: 1; /* Standard display line height. */
   --pgn-typography-line-height-micro: 0.938rem; /* Micro utils line height. */

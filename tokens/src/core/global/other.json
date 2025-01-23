@@ -4,5 +4,10 @@
     "$type": "percentage",
     "source": "$theme-color-interval",
     "$value": "8%"
+  },
+  "print-page-size": {
+    "source": "$print-page-size",
+    "$value": "a3",
+    "$type": "text"
   }
 }

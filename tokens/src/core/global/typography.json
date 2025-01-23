@@ -276,11 +276,6 @@
           "$description": "Mobile display line height."
         }
       }
-    },
-    "print-page-size": {
-      "source": "$print-page-size",
-      "$value": "a3",
-      "$type": "dimension"
     }
   }
 }

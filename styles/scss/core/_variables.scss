@@ -851,7 +851,7 @@ $user-selects: all, auto, none !default;
 
 // Printing
 
-$print-page-size:                   var(--pgn-typography-print-page-size) !default;
+$print-page-size:                   var(--pgn-print-page-size) !default;
 $print-body-min-width:              map.get($grid-breakpoints, "lg") !default;
 
 // List group
