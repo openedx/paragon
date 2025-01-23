@@ -12,7 +12,7 @@ import {
 } from '../..';
 import DataTableContext from '../DataTableContext';
 
-jest.mock('../../hooks/useWindowSize');
+jest.mock('../../hooks/useWindowSizeHook');
 useWindowSize.mockReturnValue({ width: 800 });
 
 function FirstAction({

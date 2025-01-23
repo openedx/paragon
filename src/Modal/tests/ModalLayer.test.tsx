@@ -78,7 +78,8 @@ describe('<ModalLayer />', () => {
   });
 
   describe('Dismiss modal', () => {
-    it('closes a non-blocking modal layer when backdrop is clicked', () => {
+    it('closes a non-blocking modal layer when backdrop is clicked', async () => {
+      const user = userEvent.setup();
       const closeFn = jest.fn();
       render(
         <ModalLayer isOpen onClose={closeFn} isBlocking={false}>
@@ -86,7 +87,7 @@ describe('<ModalLayer />', () => {
         </ModalLayer>,
       );
       const backdrop = screen.getByTestId('modal-backdrop');
-      userEvent.click(backdrop);
+      await user.click(backdrop);
       expect(closeFn).toHaveBeenCalled();
     });
 

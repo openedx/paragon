@@ -3,6 +3,9 @@ const fs = require('fs');
 const { INSIGHTS_PAGES } = require('../src/config');
 const componentsUsage = require('../src/utils/componentsUsage');
 
+const componentPageTemplate = path.resolve(__dirname, '../src/templates/component-page-template.tsx');
+const defaultMdxPageTemplate = path.resolve(__dirname, '../src/templates/default-mdx-page-template.tsx');
+
 async function createPages(graphql, actions, reporter) {
   // Destructure the createPage function from the actions object
   const { createPage, createRedirect } = actions;
@@ -23,12 +26,14 @@ async function createPages(graphql, actions, reporter) {
             id
             fields {
               slug
+              source
             }
             frontmatter {
               components
             }
-            slug
-            fileAbsolutePath
+            internal {
+              contentFilePath
+            }
           }
         }
       }
@@ -38,46 +43,69 @@ async function createPages(graphql, actions, reporter) {
     reporter.panicOnBuild('🚨  ERROR: Loading createPages query');
   }
   // Create component detail pages.
-  const components = result.data.allMdx.edges;
+  const pages = result.data.allMdx.edges;
 
   // you'll call `createPage` for each result
-  // eslint-disable-next-line no-restricted-syntax
-  for (const { node } of components) {
-    const componentDir = node.slug.split('/')[0];
-    const cssVariablesData = [];
-    const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.fileAbsolutePath.split('src')[1]}`;
+  for (const { node } of pages) {
+    const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.internal.contentFilePath.split('src')[1]}`;
 
-    const pathToComponents = fs.readdirSync(`../src/${componentDir}`);
+    if (node.fields.source === 'components') {
+      // Check for a _variables.scss file for this component, e.g. src/Button/_variables.scss.
+      // If it exists, load the data:
+      const cssVariablesData = [];      
+      const componentDir = path.dirname(node.internal.contentFilePath);
 
-    pathToComponents.forEach(componentFile => {
-      if (componentFile.endsWith('.scss')) {
-        const fileData = fs.readFileSync(`../src/${componentDir}/${componentFile}`, 'utf-8');
-        const customCSSVariables = fileData.match(/var\((\w|-|_)*\)/g);
+      const pathToComponents = fs.readdirSync(`../src/${componentDir}`);
 
-        customCSSVariables?.forEach(variable => {
-          if (!cssVariablesData.includes(variable)) {
-            cssVariablesData.push(variable);
-          }
-        });
-      }
-    });
+      pathToComponents.forEach(componentFile => {
+        if (componentFile.endsWith('.scss')) {
+          const fileData = fs.readFileSync(`../src/${componentDir}/${componentFile}`, 'utf-8');
+          const customCSSVariables = fileData.match(/var\((\w|-|_)*\)/g);
 
-    createPage({
-      // This is the slug you created before
-      // (or `node.frontmatter.slug`)
-      path: node.fields.slug,
-      // This component will wrap our MDX content
-      component: path.resolve('./src/templates/component-page-template.tsx'),
-      // You can use the values in this context in
-      // our page layout component
-      context: {
-        id: node.id,
-        components: node.frontmatter.components || [],
-        cssVariablesData,
-        componentsUsageInsights: Object.keys(componentsUsage),
-        githubEditPath,
-      },
-    });
+          customCSSVariables?.forEach(variable => {
+            if (!cssVariablesData.includes(variable)) {
+              cssVariablesData.push(variable);
+            }
+          });
+        }
+      });
+
+      createPage({
+        // This is the slug you created before
+        // (or `node.frontmatter.slug`)
+        path: node.fields.slug,
+        // This layout will wrap our MDX content
+        component: `${componentPageTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+        // You can use the values in this context in
+        // our page layout component
+        context: {
+          id: node.id,
+          components: node.frontmatter.components || [],
+          cssVariablesData,
+          componentsUsageInsights: Object.keys(componentsUsage),
+          githubEditPath,
+        },
+      });
+    }
+
+    if (fs.existsSync(variablesPath)) {
+      // eslint-disable-next-line no-await-in-loop
+      scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
+    }
+
+    if (node.fields.source === 'pages') {
+      createPage({
+        path: node.fields.slug,
+        component: `${defaultMdxPageTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+        context: {
+          id: node.id,
+          githubEditPath,
+          frontmatter: {
+            title: node.frontmatter.title,
+          },
+        },
+      });
+    }
   }
 
   INSIGHTS_PAGES.forEach(({ path: pagePath, tab }) => {

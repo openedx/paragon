@@ -71,48 +71,53 @@ describe('Keyboard Interactions', () => {
     expect(defaultItem).toHaveFocus();
   });
 
-  it('should focus the next item after ArrowDown keyDown', () => {
+  it('should focus the next item after ArrowDown keyDown', async () => {
+    const user = userEvent.setup();
     const defaultItem = screen.getByText('Default');
     const cantTouchThisItem = screen.getByText(MENU_ITEM_TEXT).parentElement;
 
-    userEvent.type(defaultItem, '{arrowdown}');
+    await user.type(defaultItem, '{arrowdown}');
 
     expect(cantTouchThisItem).toHaveFocus();
   });
 
-  it('should focus the next item after Tab keyDown', () => {
+  it('should focus the next item after Tab keyDown', async () => {
+    const user = userEvent.setup();
     const defaultItem = screen.getByText('Default').parentElement;
     const cantTouchThisItem = screen.getByText(MENU_ITEM_TEXT).parentElement;
     defaultItem.focus();
-    userEvent.tab();
+    await user.tab();
 
     expect(cantTouchThisItem).toHaveFocus();
   });
 
-  it('should loop focus to the first item after Tab keyDown on last item', () => {
+  it('should loop focus to the first item after Tab keyDown on last item', async () => {
+    const user = userEvent.setup();
     const defaultItem = screen.getByText('Default').parentElement;
     const iconBeforeItem = screen.getByText('Icon Before');
     iconBeforeItem.focus();
-    userEvent.tab();
+    await user.tab();
 
     expect(defaultItem).toHaveFocus();
   });
 
-  it('should loop focus to the last item after ArrowUp keyDown on first item', () => {
+  it('should loop focus to the last item after ArrowUp keyDown on first item', async () => {
+    const user = userEvent.setup();
     const defaultItem = screen.getByText('Default').parentElement;
     const iconBeforeItem = screen.getByText('Icon Before').parentElement;
     defaultItem.focus();
-    userEvent.type(defaultItem, '{arrowup}');
+    await user.type(defaultItem, '{arrowup}');
 
     expect(iconBeforeItem).toHaveFocus();
   });
 
-  it('should focus the previous item after Shift + Tab keyDown', () => {
+  it('should focus the previous item after Shift + Tab keyDown', async () => {
+    const user = userEvent.setup();
     const button1 = screen.getAllByRole('button')[0];
     const button2 = screen.getAllByRole('button')[1];
 
     button2.focus();
-    userEvent.tab({ shift: true });
+    await user.tab({ shift: true });
 
     expect(button1).toHaveFocus();
   });

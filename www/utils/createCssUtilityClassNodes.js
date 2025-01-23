@@ -21,6 +21,7 @@ function createCssUtilityClassNodes({
         }
         return { file: resolvedUrl };
       },
+      silenceDeprecations: ['abs-percent', 'color-functions', 'import', 'mixed-decls', 'global-builtin'],
     })
     .css.toString();
 

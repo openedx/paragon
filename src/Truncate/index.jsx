@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import { truncateLines } from './utils';
-import useWindowSize from '../hooks/useWindowSize';
+import useWindowSize from '../hooks/useWindowSizeHook';
 
 const DEFAULT_TRUNCATE_LINES = 1;
 const DEFAULT_TRUNCATE_ELLIPSIS = '...';

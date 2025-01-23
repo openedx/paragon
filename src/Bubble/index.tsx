@@ -38,6 +38,7 @@ const Bubble = React.forwardRef<HTMLDivElement, BubbleProps>(({
 
 Bubble.propTypes = {
   /** Specifies contents of the component. */
+  // @ts-ignore
   children: PropTypes.node,
   /** The `Bubble` style variant to use. */
   variant: PropTypes.oneOf(STYLE_VARIANTS),

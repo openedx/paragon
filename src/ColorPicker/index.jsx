@@ -8,7 +8,7 @@ import Form from '../Form';
 import ModalPopup from '../Modal/ModalPopup';
 import { OverlayTrigger } from '../Overlay';
 import Tooltip from '../Tooltip';
-import useToggle from '../hooks/useToggle';
+import useToggle from '../hooks/useToggleHook';
 
 function ColorPicker({
   color, setColor, className, size,

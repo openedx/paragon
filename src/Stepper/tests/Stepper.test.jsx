@@ -7,7 +7,7 @@ import { stepsReducer } from '../StepperContext';
 
 const mockWindowSize = { width: 1000, height: 1000 };
 
-jest.mock('../../hooks/useWindowSize', () => () => mockWindowSize);
+jest.mock('../../hooks/useWindowSizeHook', () => () => mockWindowSize);
 
 function Example({
   // eslint-disable-next-line react/prop-types

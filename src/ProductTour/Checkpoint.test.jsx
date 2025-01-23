@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import userEvent, { PointerEventsCheckLevel } from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
 
 import * as popper from '@popperjs/core';
@@ -100,8 +100,9 @@ describe('Checkpoint', () => {
     });
 
     it('end button onClick calls handleEnd', async () => {
+      const user = userEvent.setup({ pointerEventsCheck: PointerEventsCheckLevel.Never });
       const endButton = screen.getByText('End', { selector: 'button' });
-      await userEvent.click(endButton, undefined, { skipPointerEventsCheck: true });
+      await user.click(endButton);
       expect(handleEnd).toHaveBeenCalledTimes(1);
     });
   });

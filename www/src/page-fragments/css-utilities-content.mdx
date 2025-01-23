@@ -2,10 +2,9 @@
 title: CSS Utilities
 ---
 
-import { graphql } from 'gatsby';
 import { Table } from '~paragon-react';
-import getCssSelectors from '../../utils/getCssSelectors.ts';
-import CSSUtilitiesTable from '../../components/css-utilities-table';
+import getCssSelectors from '../utils/getCssSelectors.ts';
+import CSSUtilitiesTable from '../components/css-utilities-table';
 
 
 # CSS Utilities
@@ -44,17 +43,3 @@ Hover on styles with CSS variables to view computed values.
     { selector: 'w-xl-auto', declarations: ['@media(min-width: 1200px) { width: auto !important; }']},
   ])}
 />
-
-export const pageQuery = graphql`
-{
-  utilities: allCssUtilityClasses(
-    filter: {isUtility: {eq: true}},
-    sort: {fields: selector, order: ASC}
-  ) {
-    nodes {
-      selector
-      declarations
-    }
-  }
-}
-`;

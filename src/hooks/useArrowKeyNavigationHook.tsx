@@ -1,3 +1,7 @@
+// Note: this file was renamed from 'useArrowKeyNavigation.tsx' to 'useArrowKeyNavigationHook.tsx' to fix
+// some bugs in the Gatsby www site, where Webpack was getting the .tsx and .mdx
+// files confused. Renaming this file allows us to keep the URLs of the docs site
+// unchanged.
 import { useRef, useEffect } from 'react';
 
 interface HandleEnterArgs {

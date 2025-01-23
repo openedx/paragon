@@ -18,11 +18,11 @@ export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
 export { default as Tooltip } from './Tooltip';
-export { default as useWindowSize } from './hooks/useWindowSize';
-export { default as useToggle } from './hooks/useToggle';
-export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigation';
-export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChild';
-export { default as useIsVisible } from './hooks/useIsVisible';
+export { default as useWindowSize } from './hooks/useWindowSizeHook';
+export { default as useToggle } from './hooks/useToggleHook';
+export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigationHook';
+export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChildHook';
+export { default as useIsVisible } from './hooks/useIsVisibleHook';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types

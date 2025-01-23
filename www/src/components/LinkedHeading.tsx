@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 export interface ILinkedHeading {
   h: string,
@@ -13,7 +12,7 @@ function LinkedHeading({
   h,
   children,
   id,
-}: ILinkedHeading) {
+}: ILinkedHeading & JSX.IntrinsicElements['h2']): JSX.Element {
   const H = `h${h}` as HeadingTag;
 
   return (
@@ -22,11 +21,5 @@ function LinkedHeading({
     </H>
   );
 }
-
-LinkedHeading.propTypes = {
-  h: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  id: PropTypes.string.isRequired,
-};
 
 export default LinkedHeading;

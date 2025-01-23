@@ -2,11 +2,10 @@
 title: Layout
 ---
 
-import { graphql } from 'gatsby';
 import { Table } from '~paragon-react';
-import getCssSelectors from '../../utils/getCssSelectors.ts';
-import CSSUtilitiesTable from '../../components/css-utilities-table';
-import LayoutGenerator from '../../components/LayoutGenerator';
+import getCssSelectors from '../utils/getCssSelectors.ts';
+import CSSUtilitiesTable from '../components/css-utilities-table';
+import LayoutGenerator from '../components/LayoutGenerator';
 
 # Layout
 
@@ -16,12 +15,8 @@ Paragon's layout is controlled by the Bootstrap grid system. Documentation can b
 
 ## Components
 
-<p>
-  These components are pass throughs from React-Bootstrap.<br/>
-  <a href="https://react-bootstrap-v4.netlify.app/layout/grid/" target="_blank" rel="noopener noreferrer">
-    See React-Bootstrap for documentation.
-  </a>
-</p>
+These components are pass throughs from React-Bootstrap.<br />
+<a href="https://react-bootstrap-v4.netlify.app/layout/grid/" target="_blank" rel="noopener noreferrer">See React-Bootstrap for documentation.</a>
 
 ```jsx live
 <Container className="border">
@@ -176,39 +171,3 @@ the style only at a certain breakpoint and above.
 ### Misc Layout
 
 <CSSUtilitiesTable selectors={getCssSelectors(props.data.miscUtilities.nodes)} />
-
-
-export const pageQuery = graphql`
-{
-  flexUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/flex/"}, isUtility: {eq: true}}) {
-    nodes {
-      selector
-      declarations
-    }
-  }
-  displayUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/display/"}, isUtility: {eq: true}}) {
-    nodes {
-      selector
-      declarations
-    }
-  }
-  positionUtilities: allCssUtilityClasses(filter: {selector: {regex: "/(^fixed-)|(position)/"}}) {
-    nodes {
-      selector
-      declarations
-    }
-  }
-  maxWidthUtilities: allCssUtilityClasses(filter: {selector: {regex: "/(^mw-)/"}}) {
-    nodes {
-      selector
-      declarations
-    }
-  }
-  miscUtilities: allCssUtilityClasses(filter: {declarations: {regex: "/(float)|(overflow)/"}, isUtility: {eq: true}}) {
-    nodes {
-      selector
-      declarations
-    }
-  }
-}
-`;
