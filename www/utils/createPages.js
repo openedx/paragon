@@ -55,11 +55,11 @@ async function createPages(graphql, actions, reporter) {
       const cssVariablesData = [];      
       const componentDir = path.dirname(node.internal.contentFilePath);
 
-      const pathToComponents = fs.readdirSync(`../src/${componentDir}`);
+      const pathToComponents = fs.readdirSync(componentDir);
 
       pathToComponents.forEach(componentFile => {
         if (componentFile.endsWith('.scss')) {
-          const fileData = fs.readFileSync(`../src/${componentDir}/${componentFile}`, 'utf-8');
+          const fileData = fs.readFileSync(`${componentDir}/${componentFile}`, 'utf-8');
           const customCSSVariables = fileData.match(/var\((\w|-|_)*\)/g);
 
           customCSSVariables?.forEach(variable => {
@@ -86,11 +86,6 @@ async function createPages(graphql, actions, reporter) {
           githubEditPath,
         },
       });
-    }
-
-    if (fs.existsSync(variablesPath)) {
-      // eslint-disable-next-line no-await-in-loop
-      scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
     }
 
     if (node.fields.source === 'pages') {
