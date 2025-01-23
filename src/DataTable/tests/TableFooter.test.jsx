@@ -32,7 +32,11 @@ describe('<TableFooter />', () => {
   it('Renders the default footer', () => {
     render(<TableFooterWrapper />);
     expect(screen.getByTestId('row-status')).toBeInTheDocument();
-    expect(screen.getByLabelText('table pagination')).toBeInTheDocument();
+
+    // The TableFooter contains two components that have the aria-label
+    // "table pagination" - DataTable and DataTableMinimal.
+    const tables = screen.getAllByLabelText('table pagination');
+    tables.forEach(table => expect(table).toBeInTheDocument());
   });
 
   it('accepts a class name', () => {

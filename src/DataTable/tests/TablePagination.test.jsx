@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, act, screen } from '@testing-library/react';
+import { IntlProvider } from 'react-intl';
 import userEvent from '@testing-library/user-event';
 
 import TablePagination from '../TablePagination';
@@ -14,9 +15,11 @@ const instance = {
 // eslint-disable-next-line react/prop-types
 function PaginationWrapper({ value }) {
   return (
-    <DataTableContext.Provider value={value}>
-      <TablePagination />
-    </DataTableContext.Provider>
+    <IntlProvider>
+      <DataTableContext.Provider value={value}>
+        <TablePagination />
+      </DataTableContext.Provider>
+    </IntlProvider>
   );
 }
 
