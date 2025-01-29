@@ -263,6 +263,7 @@ jobs:
       id: cpr
       uses: peter-evans/create-pull-request@v7
       with:
+        token: ${{ secrets.requirements_bot_github_token }}
         commit-message: "docs: update dependent-usage.json"
         title: "docs: update dependent-usage.json"
         body: "Contains automated changes to the dependent-usage.json file, which provides the data for Paragon Usage Insights."
@@ -273,10 +274,10 @@ jobs:
       uses: hmarr/auto-approve-action@v4
       with:
         pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
-        github-token: ${{ secrets.requirements_bot_github_token }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
     - name: Auto-merge pull request for dependent project usages
       uses: pascalgn/automerge-action@v0.16.4
       env:
-        GITHUB_TOKEN: ${{ secrets.requirements_bot_github_token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MERGE_METHOD: squash
         MERGE_RETRY_SLEEP: 240000
