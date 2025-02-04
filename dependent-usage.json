@@ -1,5 +1,5 @@
 {
-  "lastModified": 1738591615562,
+  "lastModified": 1738678010041,
   "projectUsages": [
     {
       "version": "22.15.1",
@@ -2321,7 +2321,7 @@
             "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModal.jsx",
             "line": 88,
             "column": 16,
-            "index": 2984
+            "index": 2946
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModal.jsx",
@@ -2349,9 +2349,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/RemoveMemberModal.jsx",
-            "line": 64,
+            "line": 71,
             "column": 10,
-            "index": 2023
+            "index": 2288
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
@@ -5377,13 +5377,19 @@
             "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModal.jsx",
             "line": 28,
             "column": 80,
-            "index": 1295
+            "index": 1264
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModal.jsx",
             "line": 27,
             "column": 80,
             "index": 1291
+          },
+          {
+            "filePath": "src/components/PeopleManagement/DownloadCSVButton.jsx",
+            "line": 21,
+            "column": 47,
+            "index": 842
           },
           {
             "filePath": "src/components/PeopleManagement/DownloadCSVButton.jsx",
@@ -8663,13 +8669,25 @@
             "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModal.jsx",
             "line": 89,
             "column": 16,
-            "index": 3080
+            "index": 3042
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModal.jsx",
             "line": 97,
             "column": 12,
             "index": 3260
+          },
+          {
+            "filePath": "src/components/PeopleManagement/DownloadCSVButton.jsx",
+            "line": 55,
+            "column": 6,
+            "index": 1730
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/AddMembersBulkAction.jsx",
+            "line": 32,
+            "column": 4,
+            "index": 1067
           },
           {
             "filePath": "src/components/PeopleManagement/DownloadCSVButton.jsx",
@@ -9823,7 +9841,7 @@
             "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModal.jsx",
             "line": 86,
             "column": 14,
-            "index": 2919
+            "index": 2881
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModal.jsx",
@@ -9851,9 +9869,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/RemoveMemberModal.jsx",
-            "line": 60,
+            "line": 67,
             "column": 8,
-            "index": 1889
+            "index": 2154
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
@@ -10137,9 +10155,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/RemoveMemberModal.jsx",
-            "line": 29,
+            "line": 36,
             "column": 4,
-            "index": 867
+            "index": 1132
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -10295,9 +10313,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/RemoveMemberModal.jsx",
-            "line": 35,
+            "line": 42,
             "column": 6,
-            "index": 992
+            "index": 1257
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -10447,9 +10465,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/RemoveMemberModal.jsx",
-            "line": 36,
+            "line": 43,
             "column": 8,
-            "index": 1021
+            "index": 1286
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -10599,9 +10617,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/RemoveMemberModal.jsx",
-            "line": 40,
+            "line": 47,
             "column": 6,
-            "index": 1129
+            "index": 1394
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -10813,9 +10831,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/RemoveMemberModal.jsx",
-            "line": 59,
+            "line": 66,
             "column": 6,
-            "index": 1860
+            "index": 2125
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -11511,9 +11529,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/RemoveMemberModal.jsx",
-            "line": 61,
+            "line": 68,
             "column": 10,
-            "index": 1911
+            "index": 2176
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
@@ -12351,7 +12369,7 @@
             "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModal.jsx",
             "line": 87,
             "column": 16,
-            "index": 2947
+            "index": 2909
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModal.jsx",
@@ -12395,7 +12413,7 @@
             "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModal.jsx",
             "line": 76,
             "column": 10,
-            "index": 2501
+            "index": 2463
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModal.jsx",
@@ -13727,9 +13745,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/RemoveMemberModal.jsx",
-            "line": 67,
+            "line": 74,
             "column": 24,
-            "index": 2134
+            "index": 2399
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
