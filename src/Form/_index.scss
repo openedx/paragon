@@ -380,6 +380,7 @@ select.form-control {
   appearance: none;
   height: $custom-control-indicator-size;
   width: $custom-control-indicator-size;
+  min-width: $custom-control-indicator-size;
   background-color: $custom-control-indicator-bg;
   border: solid $custom-control-indicator-border-width $custom-control-indicator-border-color;
   border-radius: $custom-checkbox-indicator-border-radius;
@@ -437,6 +438,7 @@ select.form-control {
 
 .pgn__form-switch-input {
   width: $custom-switch-width;
+  min-width: $custom-switch-width;
   border-radius: $custom-switch-indicator-border-radius;
   background-image: escape-svg($custom-switch-indicator-icon-off);
   background-position: left center;
