@@ -9,6 +9,8 @@ const Configuration = {
         'revert', 'feat', 'fix', 'perf', 'docs', 'test', 'build', 'refactor', 'style', 'chore', 'temp',
       ]],
 
+    'header-max-length': [2, 'always', 10], 
+
     // Default rules we want to suppress:
     'body-leading-blank': [0, "always"],
     'body-max-line-length': [0, "always"],
