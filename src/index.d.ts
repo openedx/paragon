@@ -39,6 +39,7 @@ export { default as ModalDialog, MODAL_DIALOG_CLOSE_LABEL } from './Modal/ModalD
 export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
+export const Toast: any, TOAST_CLOSE_LABEL_TEXT: string, TOAST_DELAY: number; // from './Toast';
 export { default as Tooltip } from './Tooltip';
 export { default as useWindowSize, type WindowSizeData } from './hooks/useWindowSizeHook';
 export { default as useToggle, type Toggler, type ToggleHandlers } from './hooks/useToggleHook';
@@ -163,7 +164,6 @@ export const
 // from './Tabs';
 /** @deprecated Replaced by `Form.Control`. */
 export const TextArea: any; // from './TextArea';
-export const Toast: any, TOAST_CLOSE_LABEL_TEXT: string, TOAST_DELAY: number; // from './Toast';
 /** @deprecated Replaced by `Form.Group`. */
 export const ValidationFormGroup: any; // from './ValidationFormGroup';
 export const TransitionReplace: any; // from './TransitionReplace';

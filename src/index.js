@@ -39,6 +39,7 @@ export { default as ModalDialog, MODAL_DIALOG_CLOSE_LABEL } from './Modal/ModalD
 export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
+export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
 export { default as Tooltip } from './Tooltip';
 export { default as useWindowSize } from './hooks/useWindowSizeHook';
 export { default as useToggle } from './hooks/useToggleHook';
@@ -163,7 +164,6 @@ export {
 } from './Tabs';
 /** @deprecated Replaced by `Form.Control`. */
 export { default as TextArea } from './TextArea';
-export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
 /** @deprecated Replaced by `Form.Group`. */
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
