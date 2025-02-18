@@ -5,7 +5,7 @@ components:
 - Toast
 categories:
 - Overlays
-status: 'New'
+status: 'Stable'
 designStatus: 'Done'
 devStatus: 'Done'
 notes: ''
@@ -39,7 +39,7 @@ notes: ''
         Example of a basic Toast.
       </Toast>
 
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
+      <Button onClick={() => setShow(true)}>Show Toast</Button>
     </>
   );
 }
@@ -64,7 +64,7 @@ notes: ''
         Success! Example of a Toast with a button.
       </Toast>
 
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
+      <Button onClick={() => setShow(true)}>Show Toast</Button>
     </>
   );
 }
@@ -89,7 +89,7 @@ notes: ''
         Success! Example of a Toast with a link.
       </Toast>
 
-      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
+      <Button onClick={() => setShow(true)}>Show Toast</Button>
     </>
   );
 }

@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "variables";
 
 .toast-container {
@@ -11,7 +12,7 @@
     left: 0;
   }
 
-  @media only screen and (width <= 768px) {
+  @media (max-width: map.get($grid-breakpoints, "md")) {
     bottom: $toast-container-gutter-sm;
     right: $toast-container-gutter-sm;
     left: $toast-container-gutter-sm;
