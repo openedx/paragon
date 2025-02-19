@@ -5,6 +5,27 @@ name: Lint Commit Messages
 on:
   - pull_request
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   commitlint:
-    uses: openedx/.github/.github/workflows/commitlint.yml@master
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+        with:
+          # Fetch 100 commits.  Should be enough?
+          fetch-depth: 100
+
+      - name: Download a local configuration file if needed
+        run: |
+          if [[ ! -f commitlint.config.mjs ]]; then
+            echo "Downloading the default commitlint config from edx_lint"
+            wget --no-verbose -O commitlint.config.mjs https://raw.githubusercontent.com/openedx/edx-lint/HEAD/edx_lint/files/commitlint.config.js
+          fi
+          ls
+
+      - name: Run commitlint
+        uses: wagoid/commitlint-github-action@v6
