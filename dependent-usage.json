@@ -1,8 +1,8 @@
 {
-  "lastModified": 1739974016343,
+  "lastModified": 1740060438551,
   "projectUsages": [
     {
-      "version": "22.15.1",
+      "version": "23.3.1",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -421,6 +421,18 @@
             "line": 83,
             "column": 12,
             "index": 2267
+          },
+          {
+            "filePath": "openedx/features/announcements/static/announcements/jsx/Announcements.jsx",
+            "line": 97,
+            "column": 20,
+            "index": 2726
+          },
+          {
+            "filePath": "openedx/features/announcements/static/announcements/jsx/Announcements.jsx",
+            "line": 109,
+            "column": 20,
+            "index": 3225
           },
           {
             "filePath": "xmodule/js/common_static/common/js/components/BlockBrowser/components/BlockBrowser/BlockBrowser.jsx",
