@@ -39,7 +39,7 @@ export { default as ModalDialog, MODAL_DIALOG_CLOSE_LABEL } from './Modal/ModalD
 export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
-export const Toast: any, TOAST_CLOSE_LABEL_TEXT: string, TOAST_DELAY: number; // from './Toast';
+export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
 export { default as Tooltip } from './Tooltip';
 export { default as useWindowSize, type WindowSizeData } from './hooks/useWindowSizeHook';
 export { default as useToggle, type Toggler, type ToggleHandlers } from './hooks/useToggleHook';
