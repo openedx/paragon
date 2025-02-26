@@ -19,6 +19,7 @@ const FormControl = React.forwardRef(({
   autoResize,
   onChange,
   inputMask,
+  isAutoFill,
   ...props
 }, ref) => {
   const {
@@ -79,7 +80,7 @@ const FormControl = React.forwardRef(({
         isInvalid={isInvalid}
         isValid={isValid}
         className={classNames(controlClassName, {
-          'has-value': hasValue,
+          'has-value': hasValue || isAutoFill,
         })}
         onChange={handleOnChange}
         mask={inputMask}
@@ -127,6 +128,8 @@ FormControl.propTypes = {
   autoResize: PropTypes.bool,
   /** Specifies what format to use for the input mask. */
   inputMask: PropTypes.string,
+  /** Indicates whether the field contains an autofill value. */
+  isAutoFill: PropTypes.bool,
 };
 
 FormControl.defaultProps = {
@@ -146,6 +149,7 @@ FormControl.defaultProps = {
   isInvalid: undefined,
   autoResize: false,
   inputMask: undefined,
+  isAutoFill: false,
 };
 
 export default FormControl;

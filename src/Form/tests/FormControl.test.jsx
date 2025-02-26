@@ -71,4 +71,12 @@ describe('FormControl', () => {
     expect(input.value).toBe('+1 (555) 555-5555');
     expect(unmaskedInputValue).toBe('15555555555');
   });
+
+  it('applies has-value class when isAutoFill is true', async () => {
+    const { container } = render(<FormControl isAutoFill />);
+
+    const inputElement = container.querySelector('input');
+
+    expect(inputElement).toHaveClass('has-value');
+  });
 });
