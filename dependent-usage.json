@@ -1,5 +1,5 @@
 {
-  "lastModified": 1740578807034,
+  "lastModified": 1740665241297,
   "projectUsages": [
     {
       "version": "23.4.0",
@@ -50734,9 +50734,9 @@
         "Dropdown": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 90,
+            "line": 89,
             "column": 6,
-            "index": 2385
+            "index": 2341
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
@@ -50748,9 +50748,9 @@
         "Dropdown.Toggle": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 91,
+            "line": 90,
             "column": 8,
-            "index": 2404
+            "index": 2360
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
@@ -50762,23 +50762,23 @@
         "AvatarButton": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 93,
+            "line": 92,
             "column": 14,
-            "index": 2464
+            "index": 2420
           },
           {
             "filePath": "src/MobileHeader.jsx",
-            "line": 181,
+            "line": 180,
             "column": 21,
-            "index": 6129
+            "index": 5973
           }
         ],
         "Dropdown.Menu": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 99,
+            "line": 98,
             "column": 8,
-            "index": 2659
+            "index": 2615
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
@@ -50790,15 +50790,15 @@
         "Dropdown.Item": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 101,
+            "line": 100,
             "column": 12,
-            "index": 2730
+            "index": 2686
           },
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 120,
+            "line": 119,
             "column": 16,
-            "index": 3475
+            "index": 3431
           },
           {
             "filePath": "src/learning-header/AuthenticatedUserDropdown.jsx",
@@ -50864,17 +50864,17 @@
         "Dropdown.Header": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 115,
+            "line": 114,
             "column": 32,
-            "index": 3226
+            "index": 3182
           }
         ],
         "Dropdown.Divider": [
           {
             "filePath": "src/DesktopHeader.jsx",
-            "line": 129,
+            "line": 128,
             "column": 46,
-            "index": 3843
+            "index": 3799
           }
         ],
         "Badge": [
@@ -50905,244 +50905,18 @@
             "index": 619
           },
           {
-            "filePath": "src/Notification/index.jsx",
-            "line": 165,
-            "column": 14,
-            "index": 6108
-          },
-          {
-            "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 55,
-            "column": 12,
-            "index": 2506
-          },
-          {
-            "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 102,
-            "column": 8,
-            "index": 4241
-          },
-          {
             "filePath": "src/studio-header/HeaderBody.jsx",
             "line": 57,
             "column": 14,
             "index": 1073
           }
         ],
-        "useWindowSize": [
-          {
-            "filePath": "src/Notification/data/hook.js",
-            "line": 17,
-            "column": 21,
-            "index": 623
-          },
-          {
-            "filePath": "src/Notification/data/hook.js",
-            "line": 22,
-            "column": 21,
-            "index": 810
-          }
-        ],
-        "breakpoints": [
-          {
-            "filePath": "src/Notification/data/hook.js",
-            "line": 18,
-            "column": 9,
-            "index": 649
-          },
-          {
-            "filePath": "src/Notification/data/hook.js",
-            "line": 18,
-            "column": 78,
-            "index": 718
-          },
-          {
-            "filePath": "src/Notification/data/hook.js",
-            "line": 23,
-            "column": 29,
-            "index": 856
-          }
-        ],
         "OverlayTrigger": [
-          {
-            "filePath": "src/Notification/index.jsx",
-            "line": 120,
-            "column": 6,
-            "index": 4124
-          },
           {
             "filePath": "src/studio-header/CourseLockUp.jsx",
             "line": 18,
             "column": 2,
             "index": 330
-          }
-        ],
-        "Popover": [
-          {
-            "filePath": "src/Notification/index.jsx",
-            "line": 126,
-            "column": 10,
-            "index": 4279
-          }
-        ],
-        "Popover.Title": [
-          {
-            "filePath": "src/Notification/index.jsx",
-            "line": 139,
-            "column": 16,
-            "index": 4879
-          }
-        ],
-        "Hyperlink": [
-          {
-            "filePath": "src/Notification/index.jsx",
-            "line": 145,
-            "column": 18,
-            "index": 5213
-          },
-          {
-            "filePath": "src/Notification/NotificationRowItem.jsx",
-            "line": 43,
-            "column": 4,
-            "index": 1371
-          }
-        ],
-        "Icon": [
-          {
-            "filePath": "src/Notification/index.jsx",
-            "line": 150,
-            "column": 20,
-            "index": 5430
-          },
-          {
-            "filePath": "src/Notification/index.jsx",
-            "line": 183,
-            "column": 20,
-            "index": 6719
-          },
-          {
-            "filePath": "src/Notification/NotificationEmptySection.jsx",
-            "line": 24,
-            "column": 16,
-            "index": 895
-          },
-          {
-            "filePath": "src/Notification/NotificationRowItem.jsx",
-            "line": 51,
-            "column": 6,
-            "index": 1680
-          },
-          {
-            "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 118,
-            "column": 12,
-            "index": 4780
-          },
-          {
-            "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 123,
-            "column": 14,
-            "index": 5122
-          }
-        ],
-        "Settings": [
-          {
-            "filePath": "src/Notification/index.jsx",
-            "line": 151,
-            "column": 27,
-            "index": 5463
-          }
-        ],
-        "Popover.Content": [
-          {
-            "filePath": "src/Notification/index.jsx",
-            "line": 159,
-            "column": 14,
-            "index": 5775
-          }
-        ],
-        "IconButton": [
-          {
-            "filePath": "src/Notification/index.jsx",
-            "line": 178,
-            "column": 10,
-            "index": 6482
-          },
-          {
-            "filePath": "src/Notification/NotificationEmptySection.jsx",
-            "line": 20,
-            "column": 6,
-            "index": 744
-          }
-        ],
-        "NotificationsNone": [
-          {
-            "filePath": "src/Notification/index.jsx",
-            "line": 182,
-            "column": 17,
-            "index": 6680
-          },
-          {
-            "filePath": "src/Notification/NotificationEmptySection.jsx",
-            "line": 23,
-            "column": 13,
-            "index": 860
-          }
-        ],
-        "Bubble": [
-          {
-            "filePath": "src/Notification/index.jsx",
-            "line": 193,
-            "column": 12,
-            "index": 7054
-          }
-        ],
-        "Spinner": [
-          {
-            "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 99,
-            "column": 10,
-            "index": 3998
-          }
-        ],
-        "CheckCircleLightOutline": [
-          {
-            "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 118,
-            "column": 56,
-            "index": 4824
-          }
-        ],
-        "AutoAwesome": [
-          {
-            "filePath": "src/Notification/NotificationSections.jsx",
-            "line": 123,
-            "column": 25,
-            "index": 5133
-          }
-        ],
-        "Tabs": [
-          {
-            "filePath": "src/Notification/NotificationTabs.jsx",
-            "line": 43,
-            "column": 8,
-            "index": 1314
-          }
-        ],
-        "Tab": [
-          {
-            "filePath": "src/Notification/NotificationTabs.jsx",
-            "line": 50,
-            "column": 12,
-            "index": 1559
-          }
-        ],
-        "ProductTour": [
-          {
-            "filePath": "src/Notification/tours/NotificationTour.jsx",
-            "line": 23,
-            "column": 6,
-            "index": 769
           }
         ],
         "Tooltip": [
@@ -51459,7 +51233,7 @@
       }
     },
     {
-      "version": "21.13.1",
+      "version": "22.15.3",
       "name": "@edx/frontend-enterprise-catalog-search",
       "repository": {
         "type": "git",
@@ -51777,42 +51551,12 @@
             "index": 2093
           }
         ],
-        "Icon": [
-          {
-            "filePath": "src/SearchPagination.jsx",
-            "line": 23,
-            "column": 10,
-            "index": 708
-          },
-          {
-            "filePath": "src/SearchPagination.jsx",
-            "line": 29,
-            "column": 10,
-            "index": 848
-          }
-        ],
-        "ArrowBackIos": [
-          {
-            "filePath": "src/SearchPagination.jsx",
-            "line": 23,
-            "column": 21,
-            "index": 719
-          }
-        ],
-        "ArrowForwardIos": [
-          {
-            "filePath": "src/SearchPagination.jsx",
-            "line": 29,
-            "column": 21,
-            "index": 859
-          }
-        ],
         "Pagination": [
           {
             "filePath": "src/SearchPagination.jsx",
-            "line": 66,
+            "line": 56,
             "column": 4,
-            "index": 1853
+            "index": 1867
           }
         ],
         "ResponsiveContext.Provider": [
