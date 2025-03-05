@@ -18,8 +18,6 @@ function ToastContainer({ children }: ToastContainerProps) {
         existingElement = document.createElement('div');
         existingElement.id = TOAST_ROOT_ID;
         existingElement.className = 'toast-container';
-        existingElement.setAttribute('aria-live', 'polite');
-        existingElement.setAttribute('aria-atomic', 'true');
         document.body.appendChild(existingElement);
       }
       setRootElement(existingElement);

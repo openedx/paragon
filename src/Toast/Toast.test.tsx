@@ -71,7 +71,7 @@ describe('<Toast />', () => {
   });
   it('autohide is set to false onFocus and true onBlur', async () => {
     render(
-      <ToastWrapper data-testid="toast" {...props}>
+      <ToastWrapper {...props}>
         Success message.
       </ToastWrapper>,
     );
@@ -86,5 +86,17 @@ describe('<Toast />', () => {
       expect(screen.getByText('Success message.')).toBeTruthy();
       expect(toast).toHaveLength(1);
     }, 6000);
+  });
+  it('should contain aria-atomic and aria-live', async () => {
+    render(
+      <ToastWrapper {...props}>
+        Success message.
+      </ToastWrapper>,
+    );
+
+    const toast = screen.getByRole('alert');
+
+    expect(toast).toHaveAttribute('aria-atomic', 'true');
+    expect(toast).toHaveAttribute('aria-live', 'assertive');
   });
 });
