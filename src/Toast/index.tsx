@@ -16,7 +16,7 @@ export const TOAST_DELAY = 5000;
 interface ToastAction {
   label: string;
   href?: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
 }
 
 interface ToastProps {
