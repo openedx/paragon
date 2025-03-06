@@ -1,5 +1,5 @@
 {
-  "lastModified": 1741183631681,
+  "lastModified": 1741269999810,
   "projectUsages": [
     {
       "version": "23.4.0",
@@ -14287,7 +14287,7 @@
       }
     },
     {
-      "version": "22.15.3",
+      "version": "22.16.0",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -34984,15 +34984,15 @@
           },
           {
             "filePath": "src/components/app/routes/RouteErrorBoundary.jsx",
-            "line": 120,
+            "line": 121,
             "column": 12,
-            "index": 3571
+            "index": 3572
           },
           {
             "filePath": "src/components/app/routes/RouteErrorBoundary.jsx",
-            "line": 147,
+            "line": 148,
             "column": 6,
-            "index": 4362
+            "index": 4363
           },
           {
             "filePath": "src/components/budget-expiry-notification/index.jsx",
@@ -36628,9 +36628,9 @@
         "AlertModal": [
           {
             "filePath": "src/components/app/routes/RouteErrorBoundary.jsx",
-            "line": 113,
+            "line": 114,
             "column": 6,
-            "index": 3340
+            "index": 3341
           },
           {
             "filePath": "src/components/budget-expiry-notification/index.jsx",
@@ -36678,9 +36678,9 @@
         "ActionRow": [
           {
             "filePath": "src/components/app/routes/RouteErrorBoundary.jsx",
-            "line": 119,
+            "line": 120,
             "column": 10,
-            "index": 3547
+            "index": 3548
           },
           {
             "filePath": "src/components/budget-expiry-notification/index.jsx",
@@ -40519,15 +40519,15 @@
           },
           {
             "filePath": "src/components/ProgramRecord/ProgramRecord.jsx",
-            "line": 84,
-            "column": 6,
-            "index": 2663
+            "line": 79,
+            "column": 4,
+            "index": 2549
           },
           {
             "filePath": "src/components/ProgramRecord/RecordsHelp.jsx",
             "line": 23,
             "column": 14,
-            "index": 757
+            "index": 772
           },
           {
             "filePath": "src/components/ProgramRecordAlert/ProgramRecordAlert.jsx",
@@ -40599,9 +40599,9 @@
           },
           {
             "filePath": "src/components/ProgramRecord/ProgramRecord.jsx",
-            "line": 169,
+            "line": 164,
             "column": 8,
-            "index": 5575
+            "index": 5451
           },
           {
             "filePath": "src/components/ProgramRecordAlert/ProgramRecordAlert.jsx",
@@ -40668,12 +40668,6 @@
             "line": 165,
             "column": 10,
             "index": 5213
-          },
-          {
-            "filePath": "src/components/ProgramRecord/ProgramRecord.jsx",
-            "line": 79,
-            "column": 4,
-            "index": 2555
           },
           {
             "filePath": "src/components/ProgramRecord/ProgramRecordActions.jsx",
@@ -40762,6 +40756,12 @@
             "index": 3116
           },
           {
+            "filePath": "src/components/ProgramRecord/ProgramRecord.jsx",
+            "line": 83,
+            "column": 6,
+            "index": 2646
+          },
+          {
             "filePath": "src/components/ProgramRecordsList/ProgramRecordsList.jsx",
             "line": 52,
             "column": 8,
@@ -40777,9 +40777,9 @@
           },
           {
             "filePath": "src/components/ProgramRecord/ProgramRecord.jsx",
-            "line": 168,
+            "line": 163,
             "column": 6,
-            "index": 5542
+            "index": 5418
           },
           {
             "filePath": "src/components/ProgramRecordAlert/ProgramRecordAlert.jsx",
@@ -40816,20 +40816,12 @@
             "index": 926
           }
         ],
-        "ArrowBack": [
-          {
-            "filePath": "src/components/ProgramRecord/ProgramRecord.jsx",
-            "line": 81,
-            "column": 18,
-            "index": 2606
-          }
-        ],
         "Container": [
           {
             "filePath": "src/components/ProgramRecord/ProgramRecord.jsx",
-            "line": 203,
+            "line": 198,
             "column": 4,
-            "index": 6478
+            "index": 6354
           }
         ],
         "Icon": [
@@ -41139,7 +41131,7 @@
       }
     },
     {
-      "version": "22.13.0",
+      "version": "22.16.0",
       "name": "@edx/frontend-app-learning",
       "repository": {
         "type": "git",
@@ -51233,7 +51225,7 @@
       }
     },
     {
-      "version": "22.15.3",
+      "version": "22.16.0",
       "name": "@edx/frontend-enterprise-catalog-search",
       "repository": {
         "type": "git",
