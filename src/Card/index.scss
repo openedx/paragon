@@ -310,6 +310,7 @@ a.pgn__card {
     &.horizontal {
       max-width: $card-image-horizontal-max-width;
       min-width: $card-image-horizontal-min-width;
+      min-height: $card-image-horizontal-min-height;
       overflow: hidden;
 
       .pgn__card-image-cap {
@@ -318,6 +319,9 @@ a.pgn__card {
         border-radius: $card-image-border-radius 0 0 $card-image-border-radius;
         width: 100%;
         object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
       .pgn__card-logo-cap {
