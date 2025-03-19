@@ -30,7 +30,6 @@ async function parseSCSSIntoObject(pathToVariables) {
   let currentVariable = '';
   let currentValue = '';
 
-  // eslint-disable-next-line no-restricted-syntax
   for await (const line of rl) {
     // we encountered new variable
     if (line.startsWith('$')) {
@@ -64,7 +63,6 @@ async function parseSCSSIntoObject(pathToVariables) {
 async function getThemesSCSSVariables() {
   const themeSCSSVariables = {};
 
-  // eslint-disable-next-line no-restricted-syntax
   for (const { id, pathToVariables } of THEMES) {
     if (pathToVariables) {
       // eslint-disable-next-line no-await-in-loop
@@ -110,7 +108,6 @@ async function processComponentSCSSVariables(pathToStylesheet, themesData) {
     });
   }
 
-  // eslint-disable-next-line no-restricted-syntax
   for await (const line of rl) {
     if (line.startsWith('$')) {
       if (currentVar && currentValue) {

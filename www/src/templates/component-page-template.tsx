@@ -122,7 +122,6 @@ export default function PageTemplate({
       tocData={getTocData()}
       githubEditPath={githubEditPath}
     >
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={mdx.frontmatter.title} />
       <Container size={settings.containerWidth} className="py-5">
         {isDeprecated && (

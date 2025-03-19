@@ -32,7 +32,7 @@ class Input extends React.Component {
     if (process.env.NODE_ENV !== 'development') { return forwardedRef; }
 
     return (element) => {
-      if (forwardedRef) { forwardedRef.current = element; } // eslint-disable-line no-param-reassign
+      if (forwardedRef) { forwardedRef.current = element; }
       this.inputEl = element;
     };
   }
@@ -78,7 +78,7 @@ class Input extends React.Component {
       className,
       options,
       forwardedRef, // eslint-disable-line react/prop-types
-      ...attributes // eslint-disable-line react/prop-types
+      ...attributes
     } = this.props;
 
     const htmlTag = this.getHTMLTagForType();

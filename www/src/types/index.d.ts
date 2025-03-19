@@ -1,8 +1,7 @@
 // typing of properties and methods used in global
 
-// eslint-disable-next-line import/prefer-default-export
 export declare global {
-  // eslint-disable-next-line
+  // eslint-disable-next-line no-var, vars-on-top
   var analytics: Array;
 }
 

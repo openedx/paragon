@@ -81,16 +81,14 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     }
     setCurrentCheckpointData(null);
   };
-  /* eslint-disable */
   /**
    * Takes the final checkpoint array index value and looks for an existing onEnd callback.
-   * 
-   * If an onEnd callback exist on checkpointIndex value and it is the final checkpoint 
-   * in the array, the onEnd callback will be called for the parent, and individual onEnd object. 
-   * 
-   * @param {Integer} checkpointIndex 
+   *
+   * If an onEnd callback exist on checkpointIndex value and it is the final checkpoint
+   * in the array, the onEnd callback will be called for the parent, and individual onEnd object.
+   *
+   * @param {Integer} checkpointIndex
    */
-  /* eslint-enable */
   const handleEnd = (checkpointIndex) => {
     setIndex(0);
     setIsTourEnabled(false);

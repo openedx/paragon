@@ -80,7 +80,6 @@ function LayoutGenerator() {
   const columns: Array<React.ReactNode> = [];
 
   for (let i = 0; i < numColumns; i++) {
-    // eslint-disable-line no-plusplus
     columns.push(
       <Column
         key={i}

@@ -1,9 +1,9 @@
-/* eslint-disable no-plusplus, react/prop-types */
 import React from 'react';
 import { render } from '@testing-library/react';
 
 import TransitionReplace from '.';
 
+/* eslint-disable-next-line react/prop-types */
 function TestReplacement({ showContentA, ...props }) {
   return (
     <TransitionReplace {...props}>

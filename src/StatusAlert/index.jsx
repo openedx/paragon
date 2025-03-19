@@ -25,7 +25,6 @@ class StatusAlert extends React.Component {
     }
   }
 
-  /* eslint-disable react/no-did-update-set-state */
   componentDidUpdate(prevProps, prevState) {
     if (this.state.open && !prevState.open && this.xButton) {
       this.xButton.focus();

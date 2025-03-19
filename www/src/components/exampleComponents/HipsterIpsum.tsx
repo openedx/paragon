@@ -19,7 +19,6 @@ const shuffle = (array: Array<string>) => {
 
     // And swap it with the current element.
     temporaryValue = array[currentIndex];
-    /* eslint-disable no-param-reassign */
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }

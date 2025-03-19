@@ -1,4 +1,3 @@
-/* eslint-disable react/button-has-type */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -14,10 +13,18 @@ function Example() {
   return (
     <>
       <span data-testid={VALUES}>{values.join(' ')}</span>
-      <button data-testid="add" onClick={() => add('provolone')}>Add</button>
-      <button data-testid="remove" onClick={() => remove('provolone')}>Remove</button>
-      <button data-testid="set" onClick={() => set(['cheddar', 'swiss', 'provolone'])}>Set</button>
-      <button data-testid="clear" onClick={() => clear()}>Clear</button>
+      <button data-testid="add" onClick={() => add('provolone')} type="button">
+        Add
+      </button>
+      <button data-testid="remove" onClick={() => remove('provolone')} type="button">
+        Remove
+      </button>
+      <button data-testid="set" onClick={() => set(['cheddar', 'swiss', 'provolone'])} type="button">
+        Set
+      </button>
+      <button data-testid="clear" onClick={() => clear()} type="button">
+        Clear
+      </button>
     </>
   );
 }

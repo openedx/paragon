@@ -1,4 +1,3 @@
-/* eslint-disable react/button-has-type */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -19,16 +18,15 @@ const resetHandlerMocks = () => {
   mockHandleToggle.mockReset();
 };
 
-// eslint-disable-next-line react/prop-types
 function FakeComponent({ defaultIsOn, handlers }: { defaultIsOn: boolean, handlers: ToggleHandlers }) {
   const [isOn, setOn, setOff, toggle] = useToggle(defaultIsOn, handlers);
 
   return (
     <div>
       <div data-testid="toggle-value">{isOn ? TOGGLE_IS_ON : TOGGLE_IS_OFF}</div>
-      <button id="set-on" onClick={setOn}>set on</button>
-      <button id="set-off" onClick={setOff}>set off</button>
-      <button id="toggle" onClick={toggle}>toggle</button>
+      <button id="set-on" onClick={setOn} type="button">set on</button>
+      <button id="set-off" onClick={setOff} type="button">set off</button>
+      <button id="toggle" onClick={toggle} type="button">toggle</button>
     </div>
   );
 }

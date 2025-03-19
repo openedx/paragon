@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Form, Icon, Bubble, Stack, Container } from '@openedx/paragon'; // eslint-disable-line
-import { FavoriteBorder } from '@openedx/paragon/icons'; // eslint-disable-line
+// eslint-disable-next-line import/no-extraneous-dependencies, object-curly-newline
+import { Button, Form, Icon, Bubble, Stack, Container } from '@openedx/paragon';
+// eslint-disable-next-line import/no-extraneous-dependencies, object-curly-newline
+import { FavoriteBorder } from '@openedx/paragon/icons';
 
 function MyComponent() {
   const [value, setValue] = useState('');

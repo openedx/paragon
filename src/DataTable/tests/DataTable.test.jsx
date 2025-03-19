@@ -13,13 +13,11 @@ const additionalColumns = [
   {
     id: 'action',
     Header: 'Action',
-    // eslint-disable-next-line react/prop-types
     Cell: () => <div>extra content</div>,
   },
   {
     id: 'action2',
     Header: 'More',
-    // eslint-disable-next-line react/prop-types
     Cell: () => <div>extra content</div>,
   },
 ];
@@ -177,8 +175,12 @@ describe('<DataTable />', () => {
     [{ manualFilters: true, pageCount: 1 }, { manualFilters: true, manualPagination: false, manualSortBy: false }],
     [{ manualPagination: true, pageCount: 1 }, { manualFilters: false, manualPagination: true, manualSortBy: false }],
     [{ manualSortBy: true, pageCount: 1 }, { manualFilters: false, manualPagination: false, manualSortBy: true }],
-    // eslint-disable-next-line max-len, object-curly-newline
-    [{ manualSortBy: true, manualFilters: true, manualPagination: true, pageCount: 1 }, { manualFilters: true, manualPagination: true, manualSortBy: true }],
+    [
+      {
+        manualSortBy: true, manualFilters: true, manualPagination: true, pageCount: 1,
+      },
+      { manualFilters: true, manualPagination: true, manualSortBy: true },
+    ],
   ])('calls useTable with the correct manual settings %#', (additionalProps, expected) => {
     const spy = jest.spyOn(reactTable, 'useTable');
     render(<DataTableWrapper {...props} {...additionalProps} />);

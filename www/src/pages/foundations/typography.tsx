@@ -1,6 +1,6 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { useLocation } from '@gatsbyjs/reach-router';
 import { Container } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
@@ -45,10 +45,10 @@ const measuredTypeProps = {
 
 export default function TypographyPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
+  const location = useLocation();
 
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Typography" />
       <Container size={settings.containerWidth} className="py-5">
         <h1>Typography</h1>
@@ -196,7 +196,7 @@ export default function TypographyPage({ pageContext }) {
             </tr>
             <tr>
               <td colSpan={2}>
-                <a href="#">Standalone Link</a>
+                <a href={location.pathname}>Standalone Link</a>
               </td>
               <td>
                 <small>
@@ -209,7 +209,7 @@ export default function TypographyPage({ pageContext }) {
               <td colSpan={2}>
                 <p>
                   An{' '}
-                  <a className="inline-link" href="#">
+                  <a className="inline-link" href={location.pathname}>
                     inline link
                   </a>{' '}
                   in a sentence.
@@ -224,7 +224,7 @@ export default function TypographyPage({ pageContext }) {
             </tr>
             <tr>
               <td colSpan={2}>
-                <a className="muted-link" href="#">
+                <a className="muted-link" href={location.pathname}>
                   Muted, Standalone Link
                 </a>
               </td>
@@ -238,7 +238,7 @@ export default function TypographyPage({ pageContext }) {
               <td colSpan={2}>
                 <p>
                   An{' '}
-                  <a className="muted-link inline-link" href="#">
+                  <a className="muted-link inline-link" href={location.pathname}>
                     muted, inline link
                   </a>{' '}
                   in a sentence.

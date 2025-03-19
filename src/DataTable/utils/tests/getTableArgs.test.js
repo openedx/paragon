@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-newline */
 import {
   useSortBy, useFilters, useRowSelect, usePagination, useExpanded,
 } from 'react-table';
@@ -19,7 +18,9 @@ describe('getTableArgs', () => {
     [{ tableOptions, isFilterable: true, isSelectable: true }, [tableOptions, useFilters, useRowSelect]],
     [{ tableOptions, isFilterable: true, isExpandable: true }, [tableOptions, useFilters, useExpanded]],
     [
-      { tableOptions, isFilterable: true, isSelectable: true, isSortable: true, isPaginated: true, isExpandable: true },
+      {
+        tableOptions, isFilterable: true, isSelectable: true, isSortable: true, isPaginated: true, isExpandable: true,
+      },
       [tableOptions, useFilters, useSortBy, useExpanded, usePagination, useRowSelect],
     ],
     [

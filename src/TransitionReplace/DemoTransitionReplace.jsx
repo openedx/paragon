@@ -39,8 +39,9 @@ export default function DemoTransitionReplace() {
 
   return (
     <div>
-      {/*  eslint-disable-next-line react/button-has-type */}
-      <button className="btn btn-primary mb-2" onClick={changeContent}>Next Quote</button>
+      <button className="btn btn-primary mb-2" onClick={changeContent} type="button">
+        Next Quote
+      </button>
       <div
         style={{
           background: '#eee',

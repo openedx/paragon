@@ -51,7 +51,6 @@ function CollapsibleButtonGroup({
   const cloneAction = (action, index) => React.cloneElement(
     action.component,
     {
-      // eslint-disable-next-line react/no-array-index-key
       key: `${action}${index}`,
       as: Button, // for backwards compatibility this is needed
       ...action.args,

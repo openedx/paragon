@@ -18,7 +18,6 @@ const Sticky = React.forwardRef(({
   const defaultRef = React.useRef();
   const resolvedRef = ref || defaultRef;
 
-  // eslint-disable-next-line consistent-return
   useLayoutEffect(() => {
     if (resolvedRef.current) {
       const stickyElement = resolvedRef.current;
@@ -45,6 +44,7 @@ const Sticky = React.forwardRef(({
         observer.unobserve(stickyElement);
       };
     }
+    return undefined;
   }, [position, resolvedRef]);
 
   return (
