@@ -1,5 +1,5 @@
 {
-  "lastModified": 1742306829312,
+  "lastModified": 1742393220531,
   "projectUsages": [
     {
       "version": "23.4.1",
@@ -41210,7 +41210,7 @@
             "filePath": "src/course-home/outline-tab/OutlineTab.jsx",
             "line": 170,
             "column": 18,
-            "index": 6069
+            "index": 6151
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/ProctoringInfoPanel.jsx",
@@ -41453,18 +41453,6 @@
             "line": 47,
             "column": 61,
             "index": 1303
-          },
-          {
-            "filePath": "src/course-home/outline-tab/Section.jsx",
-            "line": 77,
-            "column": 12,
-            "index": 2312
-          },
-          {
-            "filePath": "src/course-home/outline-tab/SequenceLink.jsx",
-            "line": 122,
-            "column": 14,
-            "index": 3645
           },
           {
             "filePath": "src/course-home/outline-tab/widgets/WeeklyLearningGoalCard.jsx",
@@ -41931,92 +41919,6 @@
             "line": 39,
             "column": 10,
             "index": 928
-          }
-        ],
-        "DisabledVisible": [
-          {
-            "filePath": "src/course-home/outline-tab/Section.jsx",
-            "line": 77,
-            "column": 40,
-            "index": 2340
-          }
-        ],
-        "Collapsible": [
-          {
-            "filePath": "src/course-home/outline-tab/Section.jsx",
-            "line": 90,
-            "column": 6,
-            "index": 2634
-          },
-          {
-            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarSequence.jsx",
-            "line": 53,
-            "column": 6,
-            "index": 1562
-          }
-        ],
-        "IconButton": [
-          {
-            "filePath": "src/course-home/outline-tab/Section.jsx",
-            "line": 97,
-            "column": 10,
-            "index": 2828
-          },
-          {
-            "filePath": "src/course-home/outline-tab/Section.jsx",
-            "line": 105,
-            "column": 10,
-            "index": 3052
-          },
-          {
-            "filePath": "src/course-home/progress-tab/grades/course-grade/GradeRangeTooltip.jsx",
-            "line": 62,
-            "column": 6,
-            "index": 1867
-          },
-          {
-            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/NextButton.jsx",
-            "line": 49,
-            "column": 6,
-            "index": 1197
-          },
-          {
-            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
-            "line": 42,
-            "column": 6,
-            "index": 990
-          },
-          {
-            "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
-            "line": 71,
-            "column": 18,
-            "index": 2358
-          },
-          {
-            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
-            "line": 71,
-            "column": 6,
-            "index": 2358
-          },
-          {
-            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTrigger.jsx",
-            "line": 33,
-            "column": 6,
-            "index": 1146
-          },
-          {
-            "filePath": "src/generic/upgrade-notification/UpgradeNotification.jsx",
-            "line": 510,
-            "column": 14,
-            "index": 16501
-          }
-        ],
-        "Block": [
-          {
-            "filePath": "src/course-home/outline-tab/SequenceLink.jsx",
-            "line": 122,
-            "column": 42,
-            "index": 3673
           }
         ],
         "Card": [
@@ -42617,6 +42519,50 @@
             "index": 2871
           }
         ],
+        "IconButton": [
+          {
+            "filePath": "src/course-home/progress-tab/grades/course-grade/GradeRangeTooltip.jsx",
+            "line": 62,
+            "column": 6,
+            "index": 1867
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/NextButton.jsx",
+            "line": 49,
+            "column": 6,
+            "index": 1197
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
+            "line": 42,
+            "column": 6,
+            "index": 990
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
+            "line": 71,
+            "column": 18,
+            "index": 2358
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
+            "line": 71,
+            "column": 6,
+            "index": 2358
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTrigger.jsx",
+            "line": 33,
+            "column": 6,
+            "index": 1146
+          },
+          {
+            "filePath": "src/generic/upgrade-notification/UpgradeNotification.jsx",
+            "line": 510,
+            "column": 14,
+            "index": 16501
+          }
+        ],
         "InfoOutline": [
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/GradeRangeTooltip.jsx",
@@ -43165,6 +43111,14 @@
             "line": 50,
             "column": 19,
             "index": 1576
+          }
+        ],
+        "Collapsible": [
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarSequence.jsx",
+            "line": 53,
+            "column": 6,
+            "index": 1562
           }
         ],
         "ChevronLeftIcon": [
@@ -50666,7 +50620,7 @@
       }
     },
     {
-      "version": "22.16.0",
+      "version": "23.4.0",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
