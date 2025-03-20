@@ -653,12 +653,18 @@ $box-shadow-sides: (
   "centered"
 ) !default;
 
-$box-shadow-sm: var(--pgn-elevation-box-shadow-sm) !default;
+$box-shadow-sm:  var(--pgn-elevation-box-shadow-sm-offset-x)
+  var(--pgn-elevation-box-shadow-sm-offset-y)
+  var(--pgn-elevation-box-shadow-sm-blur)
+  var(--pgn-elevation-box-shadow-sm-color) !default;
 $box-shadow: var(--pgn-elevation-box-shadow-base-offset-x)
   var(--pgn-elevation-box-shadow-base-offset-y)
   var(--pgn-elevation-box-shadow-base-blur)
   var(--pgn-elevation-box-shadow-base-color) !default;
-$box-shadow-lg: var(--pgn-elevation-box-shadow-lg) !default;
+$box-shadow-lg:  var(--pgn-elevation-box-shadow-lg-offset-x)
+  var(--pgn-elevation-box-shadow-lg-offset-y)
+  var(--pgn-elevation-box-shadow-lg-blur)
+  var(--pgn-elevation-box-shadow-lg-color) !default;
 
 $component-active-color: var(--pgn-color-active) !default;
 $component-active-bg: var(--pgn-color-bg-active) !default;
