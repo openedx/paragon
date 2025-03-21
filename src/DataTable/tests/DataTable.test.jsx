@@ -212,7 +212,6 @@ describe('<DataTable />', () => {
       pageCount: 3,
       fetchData: jest.fn(),
     };
-
     render(<DataTableWrapper {...propsWithSelection} />);
     const filtersButton = screen.getByRole('button', { name: 'Filters' });
 
@@ -228,6 +227,10 @@ describe('<DataTable />', () => {
     // A filtered array is returned from the backend,
     // and the element counter displays its length.
     expect(selectAllButton).toHaveTextContent('Select all 7');
+
+    await userEvent.click(selectAllButton);
+
+    expect(screen.getByText('All 7 selected')).toBeInTheDocument();
   });
 
   describe('[legacy] controlled table selections', () => {

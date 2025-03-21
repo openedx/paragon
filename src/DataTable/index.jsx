@@ -81,12 +81,13 @@ function DataTable({
               selectedRowIds: {},
             };
           }
-          /*  Note: We override the `toggleRowSelected` action from react-table
-                because we need to preserve the order of the selected rows.
-                While `selectedRowIds` is an object that contains the selected rows as key-value pairs,
-                it does not maintain the order of selection. Therefore, we have added the `selectedRowsOrdered` property
-                to keep track of the order in which the rows were selected.
-            */
+          /**
+           * Note: We override the `toggleRowSelected` action from react-table
+           * because we need to preserve the order of the selected rows.
+           * while `selectedRowIds` is an object that contains the selected rows as key-value pairs,
+           * it does not maintain the order of selection. Therefore, we have added the `selectedRowsOrdered` property
+           * to keep track of the order in which the rows were selected.
+           */
           case 'toggleRowSelected': {
             const rowIndex = parseInt(action.id, 10);
             const { selectedRowsOrdered = [] } = previousState;
