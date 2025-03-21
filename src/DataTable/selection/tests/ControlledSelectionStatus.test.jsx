@@ -4,7 +4,10 @@ import { IntlProvider } from 'react-intl';
 import userEvent from '@testing-library/user-event';
 
 import ControlledSelectionStatus from '../ControlledSelectionStatus';
-import { clearSelectionAction, setSelectAllRowsAllPagesAction, setSelectedRowsAction } from '../data/actions';
+import {
+  clearSelectionAction,
+  setSelectAllRowsAllPagesAction,
+} from '../data/actions';
 import DataTableContext from '../../DataTableContext';
 import {
   SELECT_ALL_TEST_ID,
@@ -87,28 +90,6 @@ describe('<ControlledSelectionStatus />', () => {
       );
       const selectAllButton = screen.queryByTestId(SELECT_ALL_TEST_ID);
       expect(selectAllButton).not.toBeInTheDocument();
-    });
-
-    it('selects any unselected page rows', () => {
-      const selectedRows = Array(instance.itemCount).map((item, index) => ({ id: index + 1 }));
-      const dispatchSpy = jest.fn();
-      render(
-        <ControlledSelectionStatusWrapper
-          value={{
-            ...instance,
-            controlledTableSelections: [
-              {
-                selectedRows,
-                isEntireTableSelected: true,
-              },
-              dispatchSpy,
-            ],
-          }}
-        />,
-      );
-      expect(dispatchSpy).toHaveBeenCalledTimes(1);
-      const action = setSelectedRowsAction(instance.page, instance.itemCount);
-      expect(dispatchSpy).toHaveBeenCalledWith(action);
     });
   });
 

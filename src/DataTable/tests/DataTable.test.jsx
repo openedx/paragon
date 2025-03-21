@@ -242,7 +242,7 @@ describe('<DataTable />', () => {
 
       const contextValue = JSON.parse(contextDiv.getAttribute('data-contextvalue'));
       expect(contextValue.controlledTableSelections).toEqual([
-        { selectedRows: [], isEntireTableSelected: false },
+        { selectedRows: [], isEntireTableSelected: false, isSelectAllEnabled: false },
         null,
       ]);
     });
