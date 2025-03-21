@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import RBFormControl from 'react-bootstrap/FormControl';
@@ -19,7 +19,6 @@ const FormControl = React.forwardRef(({
   autoResize,
   onChange,
   inputMask,
-  isAutoFill,
   ...props
 }, ref) => {
   const {
@@ -31,11 +30,28 @@ const FormControl = React.forwardRef(({
   const inputRef = React.useRef();
   const resolvedRef = ref || inputRef;
   const size = props.size || formGroupContext.size;
+  const [isAutoFill, setIsAutoFill] = useState(false);
 
   const [hasValue, checkInputEventValue] = useHasValue({
     defaultValue: props.defaultValue,
     value: props.value,
   });
+
+  useEffect(() => {
+    if (!inputRef.current) { return; }
+
+    const checkAutoFill = () => {
+      setIsAutoFill(inputRef.current.matches(':autofill, :-webkit-autofill'));
+    };
+
+    checkAutoFill(); // Check immediately on mount
+
+    // Fallback check after a short delay
+    const timeoutId = setTimeout(checkAutoFill, 100);
+
+    // eslint-disable-next-line consistent-return
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   const handleResize = useCallback(() => {
     if (as === 'textarea' && autoResize) {
@@ -80,7 +96,7 @@ const FormControl = React.forwardRef(({
         isInvalid={isInvalid}
         isValid={isValid}
         className={classNames(controlClassName, {
-          'has-value': hasValue || isAutoFill,
+          'has-value': hasValue ? true : isAutoFill,
         })}
         onChange={handleOnChange}
         mask={inputMask}
@@ -128,8 +144,6 @@ FormControl.propTypes = {
   autoResize: PropTypes.bool,
   /** Specifies what format to use for the input mask. */
   inputMask: PropTypes.string,
-  /** Indicates whether the field contains an autofill value. */
-  isAutoFill: PropTypes.bool,
 };
 
 FormControl.defaultProps = {
@@ -149,7 +163,6 @@ FormControl.defaultProps = {
   isInvalid: undefined,
   autoResize: false,
   inputMask: undefined,
-  isAutoFill: false,
 };
 
 export default FormControl;
