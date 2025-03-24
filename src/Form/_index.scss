@@ -491,7 +491,7 @@ select.form-control {
   margin-top: .25rem;
 }
 
-.pgn__form-radio-input {
+.pgn__form-radio .pgn__form-radio-input {
   border-radius: var(--pgn-size-form-control-border-radio-indicator-radius);
 
   &:checked {
