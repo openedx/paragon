@@ -1,5 +1,5 @@
 {
-  "lastModified": 1742825234378,
+  "lastModified": 1742911642563,
   "projectUsages": [
     {
       "version": "23.4.2",
@@ -1777,7 +1777,7 @@
       }
     },
     {
-      "version": "21.13.1",
+      "version": "22.16.1",
       "name": "frontend-app-admin-portal",
       "repository": "https://github.com/openedx/frontend-app-admin-portal",
       "folderName": "frontend-app-admin-portal",
@@ -2657,7 +2657,7 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 186,
             "column": 10,
-            "index": 6601
+            "index": 6588
           },
           {
             "filePath": "src/components/SidebarToggle/index.jsx",
@@ -2929,13 +2929,19 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 143,
             "column": 10,
-            "index": 5402
+            "index": 5395
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
             "line": 70,
             "column": 27,
             "index": 2663
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
+            "line": 59,
+            "column": 8,
+            "index": 2096
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/SyncHistory.jsx",
@@ -3285,103 +3291,103 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 222,
             "column": 8,
-            "index": 7740
+            "index": 7727
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 230,
             "column": 10,
-            "index": 8005
+            "index": 7992
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 247,
             "column": 10,
-            "index": 8702
+            "index": 8689
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 269,
             "column": 10,
-            "index": 9632
+            "index": 9619
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 285,
             "column": 10,
-            "index": 10256
+            "index": 10243
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 301,
             "column": 10,
-            "index": 10853
+            "index": 10840
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 317,
             "column": 10,
-            "index": 11455
+            "index": 11442
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 333,
             "column": 10,
-            "index": 12052
+            "index": 12039
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 349,
             "column": 10,
-            "index": 12657
+            "index": 12644
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 374,
             "column": 10,
-            "index": 13577
+            "index": 13564
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 392,
             "column": 10,
-            "index": 14275
+            "index": 14262
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 411,
             "column": 10,
-            "index": 15025
+            "index": 15012
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 425,
             "column": 10,
-            "index": 15565
+            "index": 15552
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 439,
             "column": 10,
-            "index": 16115
+            "index": 16102
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 461,
             "column": 10,
-            "index": 17035
+            "index": 17022
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 483,
             "column": 10,
-            "index": 17906
+            "index": 17893
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 499,
             "column": 10,
-            "index": 18535
+            "index": 18522
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigIDPStep.jsx",
@@ -3725,9 +3731,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 80,
+            "line": 82,
             "column": 10,
-            "index": 3005
+            "index": 3063
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/EditGroupNameModal.jsx",
@@ -3823,97 +3829,97 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 231,
             "column": 12,
-            "index": 8030
+            "index": 8017
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 248,
             "column": 12,
-            "index": 8727
+            "index": 8714
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 270,
             "column": 12,
-            "index": 9657
+            "index": 9644
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 286,
             "column": 12,
-            "index": 10281
+            "index": 10268
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 302,
             "column": 12,
-            "index": 10878
+            "index": 10865
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 318,
             "column": 12,
-            "index": 11480
+            "index": 11467
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 334,
             "column": 12,
-            "index": 12077
+            "index": 12064
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 350,
             "column": 12,
-            "index": 12682
+            "index": 12669
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 375,
             "column": 12,
-            "index": 13602
+            "index": 13589
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 393,
             "column": 12,
-            "index": 14300
+            "index": 14287
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 412,
             "column": 12,
-            "index": 15050
+            "index": 15037
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 426,
             "column": 12,
-            "index": 15590
+            "index": 15577
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 440,
             "column": 12,
-            "index": 16140
+            "index": 16127
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 462,
             "column": 12,
-            "index": 17060
+            "index": 17047
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 484,
             "column": 12,
-            "index": 17931
+            "index": 17918
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 500,
             "column": 12,
-            "index": 18560
+            "index": 18547
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigIDPStep.jsx",
@@ -4095,7 +4101,7 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 210,
             "column": 16,
-            "index": 7298
+            "index": 7285
           },
           {
             "filePath": "src/components/subsidy-request-modals/ApproveCouponCodeRequestModal.jsx",
@@ -4319,7 +4325,13 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 89,
             "column": 10,
-            "index": 3431
+            "index": 3424
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
+            "line": 64,
+            "column": 8,
+            "index": 2182
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
@@ -4329,9 +4341,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
-            "line": 12,
+            "line": 18,
             "column": 4,
-            "index": 279
+            "index": 518
           },
           {
             "filePath": "src/components/PeopleManagement/ZeroState.jsx",
@@ -4591,7 +4603,13 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 109,
             "column": 14,
-            "index": 4157
+            "index": 4150
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
+            "line": 66,
+            "column": 10,
+            "index": 2295
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
@@ -4601,9 +4619,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
-            "line": 14,
+            "line": 20,
             "column": 8,
-            "index": 337
+            "index": 576
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
@@ -5079,9 +5097,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberDetailsTableCell.jsx",
-            "line": 68,
+            "line": 81,
             "column": 4,
-            "index": 1849
+            "index": 2679
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberEnrollmentsTableColumnHeader.jsx",
@@ -5371,19 +5389,19 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 27,
             "column": 65,
-            "index": 1372
+            "index": 1365
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 28,
             "column": 59,
-            "index": 1449
+            "index": 1442
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 31,
             "column": 77,
-            "index": 1665
+            "index": 1658
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupMembersTable.jsx",
@@ -5789,15 +5807,15 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberDetailsTableCell.jsx",
-            "line": 20,
+            "line": 21,
             "column": 14,
-            "index": 423
+            "index": 789
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberDetailsTableCell.jsx",
-            "line": 45,
+            "line": 46,
             "column": 16,
-            "index": 1233
+            "index": 1599
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberEnrollmentsTableColumnHeader.jsx",
@@ -5905,13 +5923,13 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 98,
             "column": 30,
-            "index": 3762
+            "index": 3755
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 122,
             "column": 24,
-            "index": 4662
+            "index": 4655
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupMembersTable.jsx",
@@ -5924,6 +5942,12 @@
             "line": 56,
             "column": 12,
             "index": 2023
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
+            "line": 65,
+            "column": 10,
+            "index": 2231
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
@@ -6513,7 +6537,7 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 199,
             "column": 8,
-            "index": 6982
+            "index": 6969
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConnectStep.jsx",
@@ -7069,7 +7093,7 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 212,
             "column": 10,
-            "index": 7324
+            "index": 7311
           },
           {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpirationBanner.jsx",
@@ -7943,9 +7967,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModalContent.jsx",
-            "line": 69,
+            "line": 71,
             "column": 6,
-            "index": 2763
+            "index": 2821
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
@@ -7955,27 +7979,27 @@
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 93,
+            "line": 95,
             "column": 6,
-            "index": 3403
+            "index": 3461
           },
           {
             "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
-            "line": 15,
+            "line": 21,
             "column": 10,
-            "index": 379
+            "index": 618
           },
           {
             "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
-            "line": 20,
+            "line": 26,
             "column": 14,
-            "index": 524
+            "index": 763
           },
           {
             "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
-            "line": 23,
+            "line": 29,
             "column": 14,
-            "index": 614
+            "index": 853
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
@@ -8353,21 +8377,21 @@
           },
           {
             "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModalContent.jsx",
-            "line": 67,
+            "line": 69,
             "column": 8,
-            "index": 2736
+            "index": 2794
           },
           {
             "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModalContent.jsx",
-            "line": 70,
+            "line": 72,
             "column": 8,
-            "index": 2777
+            "index": 2835
           },
           {
             "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModalContent.jsx",
-            "line": 84,
+            "line": 86,
             "column": 8,
-            "index": 3339
+            "index": 3397
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
@@ -8377,45 +8401,51 @@
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 91,
+            "line": 93,
             "column": 8,
-            "index": 3376
+            "index": 3434
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 94,
+            "line": 96,
             "column": 8,
-            "index": 3417
+            "index": 3475
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModalContent.jsx",
-            "line": 108,
+            "line": 110,
             "column": 8,
-            "index": 3958
+            "index": 4016
           },
           {
             "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
-            "line": 16,
+            "line": 22,
             "column": 12,
-            "index": 425
+            "index": 664
           },
           {
             "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
-            "line": 19,
+            "line": 25,
             "column": 12,
-            "index": 504
+            "index": 743
           },
           {
             "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
-            "line": 27,
+            "line": 33,
             "column": 12,
-            "index": 703
+            "index": 942
           },
           {
             "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
-            "line": 31,
+            "line": 37,
             "column": 12,
-            "index": 832
+            "index": 1071
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 42,
+            "column": 14,
+            "index": 1249
           },
           {
             "filePath": "src/components/settings/SettingsAccessTab/index.jsx",
@@ -9288,6 +9318,18 @@
             "index": 6365
           },
           {
+            "filePath": "src/components/learner-credit-management/members-tab/MemberDetailsTableCell.jsx",
+            "line": 57,
+            "column": 12,
+            "index": 1976
+          },
+          {
+            "filePath": "src/components/learner-credit-management/members-tab/MemberDetailsTableCell.jsx",
+            "line": 71,
+            "column": 10,
+            "index": 2372
+          },
+          {
             "filePath": "src/components/learner-credit-management/members-tab/status-chips/BaseStatusChip.jsx",
             "line": 59,
             "column": 18,
@@ -9327,13 +9369,19 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 127,
             "column": 14,
-            "index": 4822
+            "index": 4815
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
             "line": 23,
             "column": 14,
             "index": 785
+          },
+          {
+            "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
+            "line": 43,
+            "column": 16,
+            "index": 1271
           },
           {
             "filePath": "src/components/settings/HelpCenterButton.jsx",
@@ -9405,19 +9453,19 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 151,
             "column": 8,
-            "index": 5375
+            "index": 5362
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 202,
             "column": 12,
-            "index": 7049
+            "index": 7036
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 370,
             "column": 12,
-            "index": 13421
+            "index": 13408
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigServiceProviderStep.jsx",
@@ -10013,7 +10061,7 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 160,
             "column": 6,
-            "index": 5774
+            "index": 5761
           },
           {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpiredModal.jsx",
@@ -10165,7 +10213,7 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 165,
             "column": 8,
-            "index": 5902
+            "index": 5889
           },
           {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpiringModal.jsx",
@@ -10311,7 +10359,7 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 166,
             "column": 10,
-            "index": 5956
+            "index": 5943
           },
           {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpiringModal.jsx",
@@ -10457,7 +10505,7 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 170,
             "column": 8,
-            "index": 6088
+            "index": 6075
           },
           {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpiredModal.jsx",
@@ -10665,7 +10713,7 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 175,
             "column": 8,
-            "index": 6267
+            "index": 6254
           },
           {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpiredModal.jsx",
@@ -10857,7 +10905,7 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 223,
             "column": 10,
-            "index": 7780
+            "index": 7767
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigServiceProviderStep.jsx",
@@ -10955,15 +11003,15 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberDetailsTableCell.jsx",
-            "line": 16,
+            "line": 17,
             "column": 4,
-            "index": 344
+            "index": 710
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberDetailsTableCell.jsx",
-            "line": 40,
+            "line": 41,
             "column": 6,
-            "index": 1129
+            "index": 1495
           },
           {
             "filePath": "src/components/MultipleFileInputField/MultipleFileInputField.jsx",
@@ -10975,7 +11023,7 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 95,
             "column": 20,
-            "index": 3642
+            "index": 3635
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupMembersTable.jsx",
@@ -11031,7 +11079,7 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 121,
             "column": 21,
-            "index": 4630
+            "index": 4623
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
@@ -11357,7 +11405,7 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 176,
             "column": 10,
-            "index": 6298
+            "index": 6285
           },
           {
             "filePath": "src/components/subscriptions/expiration/SubscriptionExpiredModal.jsx",
@@ -11911,7 +11959,7 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 91,
             "column": 14,
-            "index": 3501
+            "index": 3494
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
@@ -12005,7 +12053,7 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 113,
             "column": 12,
-            "index": 4330
+            "index": 4323
           },
           {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/ZeroStateCard.jsx",
@@ -12443,97 +12491,97 @@
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 240,
             "column": 12,
-            "index": 8395
+            "index": 8382
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 257,
             "column": 12,
-            "index": 9118
+            "index": 9105
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 280,
             "column": 12,
-            "index": 10070
+            "index": 10057
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 296,
             "column": 12,
-            "index": 10682
+            "index": 10669
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 312,
             "column": 12,
-            "index": 11283
+            "index": 11270
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 328,
             "column": 12,
-            "index": 11881
+            "index": 11868
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 344,
             "column": 12,
-            "index": 12478
+            "index": 12465
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 360,
             "column": 12,
-            "index": 13090
+            "index": 13077
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 384,
             "column": 12,
-            "index": 13967
+            "index": 13954
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 403,
             "column": 12,
-            "index": 14702
+            "index": 14689
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 422,
             "column": 12,
-            "index": 15454
+            "index": 15441
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 436,
             "column": 12,
-            "index": 15991
+            "index": 15978
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 450,
             "column": 12,
-            "index": 16566
+            "index": 16553
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 472,
             "column": 12,
-            "index": 17481
+            "index": 17468
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 494,
             "column": 12,
-            "index": 18351
+            "index": 18338
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/steps/SSOConfigConfigureStep.jsx",
             "line": 510,
             "column": 12,
-            "index": 18955
+            "index": 18942
           },
           {
             "filePath": "src/components/TextAreaAutoSize/index.jsx",
@@ -13033,15 +13081,27 @@
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberDetailsTableCell.jsx",
-            "line": 19,
+            "line": 20,
             "column": 11,
-            "index": 401
+            "index": 767
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/MemberDetailsTableCell.jsx",
-            "line": 44,
+            "line": 45,
             "column": 13,
-            "index": 1209
+            "index": 1575
+          },
+          {
+            "filePath": "src/components/PeopleManagement/AddMembersModal/AddMemberModalSummaryLearnerList.jsx",
+            "line": 35,
+            "column": 39,
+            "index": 1420
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
+            "line": 65,
+            "column": 21,
+            "index": 2242
           },
           {
             "filePath": "src/components/PeopleManagement/AddMembersModal/AddMemberModalSummaryLearnerList.jsx",
@@ -13099,7 +13159,7 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 117,
             "column": 14,
-            "index": 4456
+            "index": 4449
           }
         ],
         "ModalPopup": [
@@ -13251,13 +13311,13 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 90,
             "column": 12,
-            "index": 3475
+            "index": 3468
           },
           {
             "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
-            "line": 13,
+            "line": 19,
             "column": 6,
-            "index": 317
+            "index": 556
           },
           {
             "filePath": "src/components/subscriptions/SubscriptionCard.jsx",
@@ -13339,7 +13399,13 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 74,
             "column": 10,
-            "index": 2858
+            "index": 2851
+          },
+          {
+            "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
+            "line": 52,
+            "column": 6,
+            "index": 1899
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/SyncHistory.jsx",
@@ -13683,7 +13749,7 @@
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 97,
             "column": 27,
-            "index": 3726
+            "index": 3719
           },
           {
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
@@ -13695,9 +13761,9 @@
         "Avatar": [
           {
             "filePath": "src/components/PeopleManagement/OrgMemberCard.jsx",
-            "line": 17,
+            "line": 23,
             "column": 14,
-            "index": 452
+            "index": 691
           }
         ],
         "ProductTour": [
@@ -13997,7 +14063,7 @@
       }
     },
     {
-      "version": "22.16.0",
+      "version": "22.16.1",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -40749,7 +40815,7 @@
       }
     },
     {
-      "version": "22.16.0",
+      "version": "22.16.1",
       "name": "@edx/frontend-app-learning",
       "repository": {
         "type": "git",
@@ -50833,7 +50899,7 @@
       }
     },
     {
-      "version": "22.16.0",
+      "version": "22.16.1",
       "name": "@edx/frontend-enterprise-catalog-search",
       "repository": {
         "type": "git",
