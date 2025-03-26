@@ -1,5 +1,5 @@
 {
-  "lastModified": 1742911642563,
+  "lastModified": 1742998051133,
   "projectUsages": [
     {
       "version": "23.4.2",
@@ -672,7 +672,7 @@
       }
     },
     {
-      "version": "22.13.0",
+      "version": "22.16.0",
       "name": "@edx/frontend-app-account",
       "repository": {
         "type": "git",
@@ -2939,9 +2939,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
-            "line": 59,
+            "line": 60,
             "column": 8,
-            "index": 2096
+            "index": 2178
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/SyncHistory.jsx",
@@ -4317,9 +4317,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailCard.jsx",
-            "line": 13,
+            "line": 14,
             "column": 4,
-            "index": 470
+            "index": 541
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
@@ -4329,9 +4329,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
-            "line": 64,
+            "line": 65,
             "column": 8,
-            "index": 2182
+            "index": 2264
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
@@ -4595,9 +4595,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailCard.jsx",
-            "line": 15,
+            "line": 16,
             "column": 6,
-            "index": 554
+            "index": 625
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
@@ -4607,9 +4607,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
-            "line": 66,
+            "line": 67,
             "column": 10,
-            "index": 2295
+            "index": 2377
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
@@ -5945,9 +5945,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
-            "line": 65,
+            "line": 66,
             "column": 10,
-            "index": 2231
+            "index": 2313
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerNotInOrgErrorState.jsx",
@@ -9361,9 +9361,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailCard.jsx",
-            "line": 19,
+            "line": 20,
             "column": 8,
-            "index": 688
+            "index": 759
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
@@ -11951,9 +11951,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailCard.jsx",
-            "line": 14,
+            "line": 15,
             "column": 6,
-            "index": 513
+            "index": 584
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
@@ -12045,9 +12045,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailCard.jsx",
-            "line": 18,
+            "line": 19,
             "column": 6,
-            "index": 642
+            "index": 713
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
@@ -13099,15 +13099,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
-            "line": 65,
+            "line": 66,
             "column": 21,
-            "index": 2242
-          },
-          {
-            "filePath": "src/components/PeopleManagement/AddMembersModal/AddMemberModalSummaryLearnerList.jsx",
-            "line": 35,
-            "column": 39,
-            "index": 1420
+            "index": 2324
           },
           {
             "filePath": "src/components/Sidebar/index.jsx",
@@ -13403,9 +13397,9 @@
           },
           {
             "filePath": "src/components/PeopleManagement/LearnerDetailPage/LearnerDetailPage.jsx",
-            "line": 52,
+            "line": 53,
             "column": 6,
-            "index": 1899
+            "index": 1981
           },
           {
             "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/SyncHistory.jsx",
@@ -14063,7 +14057,7 @@
       }
     },
     {
-      "version": "22.16.1",
+      "version": "22.16.2",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -33953,15 +33947,9 @@
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CourseBanner.jsx",
-            "line": 39,
+            "line": 32,
             "column": 12,
-            "index": 1130
-          },
-          {
-            "filePath": "src/containers/CourseCard/components/CourseCardBanners/CourseBanner.jsx",
-            "line": 49,
-            "column": 10,
-            "index": 1430
+            "index": 917
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CreditBanner/views/components/ProviderLink.jsx",
@@ -41430,15 +41418,15 @@
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/generic/NextButton.jsx",
-            "line": 62,
+            "line": 61,
             "column": 4,
-            "index": 1426
+            "index": 1418
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
-            "line": 55,
+            "line": 54,
             "column": 4,
-            "index": 1227
+            "index": 1219
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
@@ -41660,15 +41648,15 @@
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/generic/NextButton.jsx",
-            "line": 55,
+            "line": 54,
             "column": 16,
-            "index": 1359
+            "index": 1351
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
-            "line": 48,
+            "line": 47,
             "column": 16,
-            "index": 1159
+            "index": 1151
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
@@ -50899,7 +50887,7 @@
       }
     },
     {
-      "version": "22.16.1",
+      "version": "22.16.2",
       "name": "@edx/frontend-enterprise-catalog-search",
       "repository": {
         "type": "git",
@@ -52199,13 +52187,13 @@
             "filePath": "src/components/EditImageModal/EditImageModal.test.jsx",
             "line": 430,
             "column": 85,
-            "index": 19011
+            "index": 19003
           },
           {
             "filePath": "src/components/EditImageModal/EditImageModal.test.jsx",
             "line": 529,
             "column": 84,
-            "index": 24997
+            "index": 24989
           },
           {
             "filePath": "src/components/EditImageModal/index.jsx",
