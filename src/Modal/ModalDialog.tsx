@@ -53,7 +53,7 @@ interface Props {
   /** Specifies the z-index of the modal */
   zIndex?: number;
   /** Specifies whether overflow is visible in the modal */
-  isOverflowVisible?: boolean;
+  isOverflowVisible: boolean;
 }
 
 function ModalDialog({
@@ -70,7 +70,7 @@ function ModalDialog({
   isFullscreenOnMobile = false,
   isBlocking = false,
   zIndex,
-  isOverflowVisible = true,
+  isOverflowVisible,
 }: Props) {
   const isMobile = useMediaQuery({ query: '(max-width: 767.98px)' });
   const showFullScreen = (isFullscreenOnMobile && isMobile);
@@ -163,7 +163,7 @@ ModalDialog.propTypes = {
    */
   zIndex: PropTypes.number,
   /** Specifies whether overflow is visible in the modal */
-  isOverflowVisible: PropTypes.bool,
+  isOverflowVisible: PropTypes.bool.isRequired,
 };
 
 ModalDialog.Header = ModalDialogHeader;
