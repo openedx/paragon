@@ -14,6 +14,7 @@ describe('ModalDialog', () => {
         size="md"
         variant="default"
         hasCloseButton
+        isOverflowVisible={false}
       >
         <ModalDialog.Header>
           <ModalDialog.Title>The title</ModalDialog.Title>
@@ -42,6 +43,7 @@ describe('ModalDialog', () => {
       <ModalDialog
         title="My dialog"
         onClose={onClose}
+        isOverflowVisible={false}
       >
         <ModalDialog.Header><ModalDialog.Title>The title</ModalDialog.Title></ModalDialog.Header>
         <ModalDialog.Body><p>The hidden content</p></ModalDialog.Body>
@@ -64,6 +66,7 @@ describe('ModalDialog with Hero', () => {
         size="md"
         variant="default"
         hasCloseButton
+        isOverflowVisible={false}
       >
         <ModalDialog.Hero>
           <ModalDialog.Hero.Background backgroundSrc="imageurl" />
