@@ -412,7 +412,6 @@ select.form-control {
   border:
     solid var(--pgn-size-form-control-indicator-border-width)
     var(--pgn-color-form-control-indicator-border);
-  border-radius: var(--pgn-size-form-control-border-checkbox-indicator-radius) radius;
   margin-inline-end: var(--pgn-spacing-form-control-gutter);
   background-position: center;
 
@@ -434,6 +433,8 @@ select.form-control {
 }
 
 .pgn__form-checkbox-input {
+  border-radius: var(--pgn-size-form-control-border-checkbox-indicator-radius);
+
   &:checked {
     background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-base);
   }
@@ -491,7 +492,7 @@ select.form-control {
   margin-top: .25rem;
 }
 
-.pgn__form-radio .pgn__form-radio-input {
+.pgn__form-radio-input {
   border-radius: var(--pgn-size-form-control-border-radio-indicator-radius);
 
   &:checked {
