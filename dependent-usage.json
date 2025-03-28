@@ -1,8 +1,8 @@
 {
-  "lastModified": 1743084459068,
+  "lastModified": 1743170986602,
   "projectUsages": [
     {
-      "version": "23.4.2",
+      "version": "23.4.3",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -2340,12 +2340,6 @@
             "line": 36,
             "column": 8,
             "index": 1062
-          },
-          {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage/AddMemberTableAction.jsx",
-            "line": 6,
-            "column": 2,
-            "index": 178
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/AddMemberTableAction.jsx",
@@ -8546,12 +8540,6 @@
             "index": 2754
           },
           {
-            "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModal.jsx",
-            "line": 75,
-            "column": 16,
-            "index": 2752
-          },
-          {
             "filePath": "src/components/PeopleManagement/CreateGroupModal.jsx",
             "line": 126,
             "column": 12,
@@ -8672,24 +8660,6 @@
             "line": 123,
             "column": 20,
             "index": 4730
-          },
-          {
-            "filePath": "src/components/PeopleManagement/DownloadCSVButton.jsx",
-            "line": 105,
-            "column": 30,
-            "index": 3616
-          },
-          {
-            "filePath": "src/components/PeopleManagement/DownloadCSVButton.jsx",
-            "line": 108,
-            "column": 34,
-            "index": 3783
-          },
-          {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage/DownloadCsvIconButton.jsx",
-            "line": 91,
-            "column": 13,
-            "index": 3266
           },
           {
             "filePath": "src/components/PeopleManagement/DownloadCSVButton.jsx",
@@ -9324,18 +9294,6 @@
             "index": 2372
           },
           {
-            "filePath": "src/components/learner-credit-management/members-tab/MemberDetailsTableCell.jsx",
-            "line": 57,
-            "column": 12,
-            "index": 1976
-          },
-          {
-            "filePath": "src/components/learner-credit-management/members-tab/MemberDetailsTableCell.jsx",
-            "line": 71,
-            "column": 10,
-            "index": 2372
-          },
-          {
             "filePath": "src/components/learner-credit-management/members-tab/status-chips/BaseStatusChip.jsx",
             "line": 59,
             "column": 18,
@@ -9736,12 +9694,6 @@
             "index": 2593
           },
           {
-            "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModal.jsx",
-            "line": 72,
-            "column": 14,
-            "index": 2591
-          },
-          {
             "filePath": "src/components/PeopleManagement/CreateGroupModal.jsx",
             "line": 123,
             "column": 10,
@@ -9770,12 +9722,6 @@
             "line": 66,
             "column": 8,
             "index": 2186
-          },
-          {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage/RemoveMemberModal.jsx",
-            "line": 67,
-            "column": 8,
-            "index": 2157
           },
           {
             "filePath": "src/components/PeopleManagement/index.jsx",
@@ -11402,12 +11348,6 @@
             "index": 2208
           },
           {
-            "filePath": "src/components/PeopleManagement/GroupDetailPage/RemoveMemberModal.jsx",
-            "line": 68,
-            "column": 10,
-            "index": 2179
-          },
-          {
             "filePath": "src/components/settings/SettingsApiCredentialsTab/RegenerateCredentialWarningModal.jsx",
             "line": 77,
             "column": 12,
@@ -11578,12 +11518,6 @@
             "line": 24,
             "column": 4,
             "index": 667
-          },
-          {
-            "filePath": "src/components/ReportingConfig/index.jsx",
-            "line": 249,
-            "column": 12,
-            "index": 8613
           },
           {
             "filePath": "src/components/ReportingConfig/index.jsx",
@@ -12238,12 +12172,6 @@
             "line": 74,
             "column": 16,
             "index": 2621
-          },
-          {
-            "filePath": "src/components/PeopleManagement/AddMembersModal/AddMembersModal.jsx",
-            "line": 73,
-            "column": 16,
-            "index": 2619
           },
           {
             "filePath": "src/components/PeopleManagement/CreateGroupModal.jsx",
@@ -13886,32 +13814,6 @@
             "index": 1115
           }
         ],
-        "Image": [
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ErrorReporting/SyncHistory.jsx",
-            "line": 233,
-            "column": 16,
-            "index": 7679
-          },
-          {
-            "filePath": "src/components/settings/SettingsLMSTab/ExistingCard.jsx",
-            "line": 328,
-            "column": 14,
-            "index": 11647
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/SsoErrorPage.jsx",
-            "line": 28,
-            "column": 8,
-            "index": 721
-          },
-          {
-            "filePath": "src/components/settings/SettingsSSOTab/SsoErrorPage.jsx",
-            "line": 40,
-            "column": 8,
-            "index": 1089
-          }
-        ],
         "PlayCircleFilled": [
           {
             "filePath": "src/components/settings/SettingsSSOTab/ExistingSSOConfigs.jsx",
@@ -15396,7 +15298,7 @@
       }
     },
     {
-      "version": "22.7.0",
+      "version": "22.16.1",
       "name": "@edx/frontend-app-communications",
       "repository": {
         "type": "git",
@@ -15971,7 +15873,7 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@edx/frontend-app-authoring",
       "repository": {
         "type": "git",
@@ -29280,19 +29182,19 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@openedx-plugins/course-app-calculator",
       "folderName": "calculator",
       "usages": {}
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@openedx-plugins/course-app-edxnotes",
       "folderName": "edxnotes",
       "usages": {}
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@openedx-plugins/course-app-learning_assistant",
       "folderName": "learning_assistant",
       "usages": {
@@ -29313,7 +29215,7 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@openedx-plugins/course-app-live",
       "folderName": "live",
       "usages": {
@@ -29366,7 +29268,7 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@openedx-plugins/course-app-ora_settings",
       "folderName": "ora_settings",
       "usages": {
@@ -29485,7 +29387,7 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@openedx-plugins/course-app-proctoring",
       "folderName": "proctoring",
       "usages": {
@@ -29752,13 +29654,13 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@openedx-plugins/course-app-progress",
       "folderName": "progress",
       "usages": {}
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@openedx-plugins/course-app-teams",
       "folderName": "teams",
       "usages": {
@@ -29847,13 +29749,13 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@openedx-plugins/course-app-wiki",
       "folderName": "wiki",
       "usages": {}
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@openedx-plugins/course-app-xpert_unit_summary",
       "folderName": "xpert_unit_summary",
       "usages": {
@@ -30066,7 +29968,7 @@
       }
     },
     {
-      "version": "22.7.0",
+      "version": "22.16.1",
       "name": "@edx/frontend-app-discussions",
       "repository": {
         "type": "git",
@@ -33057,7 +32959,7 @@
       }
     },
     {
-      "version": "22.8.1",
+      "version": "22.16.1",
       "name": "@edx/frontend-app-gradebook",
       "repository": {
         "type": "git",
@@ -33544,7 +33446,7 @@
       }
     },
     {
-      "version": "22.15.3",
+      "version": "22.16.1",
       "name": "@edx/frontend-app-learner-dashboard",
       "repository": {
         "type": "git",
@@ -45109,7 +45011,7 @@
       }
     },
     {
-      "version": "21.11.3",
+      "version": "22.16.2",
       "name": "@edx/frontend-app-ora-grading",
       "repository": {
         "type": "git",
@@ -46339,7 +46241,7 @@
       }
     },
     {
-      "version": "22.16.0",
+      "version": "22.17.0",
       "name": "@edx/frontend-app-profile",
       "repository": {
         "type": "git",
@@ -51392,7 +51294,7 @@
       }
     },
     {
-      "version": "23.4.0",
+      "version": "23.4.2",
       "name": "@edx/frontend-lib-special-exams",
       "repository": {
         "type": "git",
