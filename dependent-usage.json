@@ -1,8 +1,8 @@
 {
-  "lastModified": 1744207711706,
+  "lastModified": 1744294078411,
   "projectUsages": [
     {
-      "version": "23.4.4",
+      "version": "23.4.5",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -20494,9 +20494,9 @@
           },
           {
             "filePath": "plugins/course-apps/teams/Settings.jsx",
-            "line": 132,
+            "line": 134,
             "column": 14,
-            "index": 4742
+            "index": 4817
           },
           {
             "filePath": "src/generic/configure-modal/AdvancedTab.jsx",
@@ -20922,9 +20922,9 @@
           },
           {
             "filePath": "plugins/course-apps/teams/Settings.jsx",
-            "line": 147,
+            "line": 149,
             "column": 20,
-            "index": 5448
+            "index": 5523
           },
           {
             "filePath": "src/advanced-settings/AdvancedSettings.jsx",
@@ -22148,9 +22148,9 @@
         "Add": [
           {
             "filePath": "plugins/course-apps/teams/Settings.jsx",
-            "line": 150,
+            "line": 152,
             "column": 34,
-            "index": 5588
+            "index": 5663
           },
           {
             "filePath": "src/content-tags-drawer/ContentTagsDropDownSelector.jsx",
@@ -29675,9 +29675,9 @@
           },
           {
             "filePath": "Settings.jsx",
-            "line": 147,
+            "line": 149,
             "column": 20,
-            "index": 5448
+            "index": 5523
           }
         ],
         "Form.Group": [
@@ -29721,17 +29721,17 @@
         "Form.Text": [
           {
             "filePath": "Settings.jsx",
-            "line": 132,
+            "line": 134,
             "column": 14,
-            "index": 4742
+            "index": 4817
           }
         ],
         "Add": [
           {
             "filePath": "Settings.jsx",
-            "line": 150,
+            "line": 152,
             "column": 34,
-            "index": 5588
+            "index": 5663
           }
         ]
       }
@@ -32947,7 +32947,7 @@
       }
     },
     {
-      "version": "22.16.1",
+      "version": "22.17.0",
       "name": "@edx/frontend-app-gradebook",
       "repository": {
         "type": "git",
@@ -45017,7 +45017,7 @@
       }
     },
     {
-      "version": "22.16.2",
+      "version": "22.17.0",
       "name": "@edx/frontend-app-ora-grading",
       "repository": {
         "type": "git",
