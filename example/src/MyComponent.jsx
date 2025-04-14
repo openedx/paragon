@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies, object-curly-newline
-import { Button, Form, Icon, Bubble, Stack, Container } from '@openedx/paragon';
-// eslint-disable-next-line import/no-extraneous-dependencies, object-curly-newline
+// eslint-disable-next-line import/no-extraneous-dependencies
+import {
+  Button, Form, Icon, Bubble, Stack, Container,
+} from '@openedx/paragon';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { FavoriteBorder } from '@openedx/paragon/icons';
 
 function MyComponent() {

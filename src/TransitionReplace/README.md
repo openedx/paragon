@@ -37,7 +37,7 @@ TransitionReplace expects only one child at any time. Swap content inside the co
           </div>
         )}
       </TransitionReplace>
-      <Button variant="primary" onClick={() => setIsEditing(!isEditing)}>
+      <Button onClick={() => setIsEditing(!isEditing)}>
         Toggle
       </Button>
     </div>
@@ -112,7 +112,7 @@ function DemoTransitionReplace() {
 
   return (
     <div>
-      <Button variant="primary" className="mb-2" onClick={changeContent}>
+      <Button className="mb-2" onClick={changeContent}>
         Next Quote
       </Button>
       <div
