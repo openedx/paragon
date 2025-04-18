@@ -1,16 +1,16 @@
-@use "sass:map";
-@import "card-bootstrap";
+@import "variables";
+@import "~bootstrap/scss/card";
 
 a .pgn__card,
 a.pgn__card {
-  color: var(--pgn-color-gray-700);
+  color: $gray-700;
   display: inline-block;
   text-decoration: none;
 }
 
 .pgn__card-grid {
   .row > div[class*="col-"] {
-    margin-bottom: var(--pgn-spacing-card-margin-grid-bottom);
+    margin-bottom: $card-grid-margin-bottom;
   }
 }
 
@@ -28,7 +28,7 @@ a.pgn__card {
 
 .pgn__card-deck {
   position: relative;
-  margin-bottom: var(--pgn-spacing-card-margin-deck-bottom);
+  margin-bottom: $card-deck-margin-bottom;
 
   &.pgn__card-deck-has-horizontal-scroll {
     .pgn__card-deck-row {
@@ -39,31 +39,31 @@ a.pgn__card {
   .pgn__card-deck-row {
     overflow: hidden;
     flex-wrap: nowrap;
-    padding-top: var(--pgn-spacing-card-focus-border-offset);
-    padding-bottom: var(--pgn-spacing-card-focus-border-offset);
+    padding-top: $card-focus-border-offset;
+    padding-bottom: $card-focus-border-offset;
 
     &:focus-visible {
-      outline: var(--pgn-size-card-focus-border-width) solid var(--pgn-color-card-border-focus-base);
-      border-radius: var(--pgn-size-card-focus-border-radius);
+      outline: $card-focus-border-width solid $card-border-focus-color;
+      border-radius: $card-focus-border-radius;
     }
   }
 }
 
 .pgn__card-carousel {
   .pgn__card-carousel-title {
-    margin-bottom: map.get($spacers, 2);
+    margin-bottom: map-get($spacers, 2);
   }
 
   .pgn__card-carousel-subtitle {
-    font-size: var(--pgn-typography-font-size-sm);
-    margin-bottom: map.get($spacers, 2);
+    font-size: $font-size-sm;
+    margin-bottom: map-get($spacers, 2);
   }
 
   .pgn__card-carousel-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: map.get($spacers, 1);
+    margin-bottom: map-get($spacers, 1);
   }
 }
 
@@ -73,16 +73,16 @@ a.pgn__card {
   &::before {
     content: "";
     position: absolute;
-    top: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
-    right: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
-    bottom: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
-    left: calc(-1 * var(--pgn-spacing-card-focus-border-offset));
-    border: solid var(--pgn-size-card-focus-border-width) var(--pgn-color-card-border-focus-base);
-    border-radius: var(--pgn-size-card-focus-border-radius);
+    top: calc(-1 * #{$card-focus-border-offset});
+    right: calc(-1 * #{$card-focus-border-offset});
+    bottom: calc(-1 * #{$card-focus-border-offset});
+    left: calc(-1 * #{$card-focus-border-offset});
+    border: solid $card-focus-border-width $card-border-focus-color;
+    border-radius: $card-focus-border-radius;
   }
 
   &.pgn__card-dark::before {
-    border: solid var(--pgn-size-card-focus-border-width) var(--pgn-color-card-border-focus-dark);
+    border: solid $card-focus-border-width $card-border-focus-color-dark;
   }
 }
 
@@ -111,22 +111,22 @@ a.pgn__card {
   }
 
   .pgn__card-header {
-    padding: 0 var(--pgn-spacing-card-spacer-x);
+    padding: 0 $card-spacer-x;
     display: flex;
     justify-content: space-between;
 
     .pgn__card-header-content {
       display: flex;
       flex-direction: column;
-      margin-top: map.get($spacers, 4\.5);
+      margin-top: map_get($spacers, 4\.5);
       overflow: auto;
       text-align: start;
       width: 100%;
     }
 
     %header-title {
-      color: var(--pgn-color-black);
-      font-weight: var(--pgn-typography-font-weight-bold);
+      color: $black;
+      font-weight: $font-weight-bold;
       text-align: start;
     }
 
@@ -137,16 +137,16 @@ a.pgn__card {
     }
 
     .pgn__card-header-title-sm {
-      font-size: var(--pgn-typography-font-size-h4-base);
+      font-size: $h4-font-size;
     }
 
     .pgn__card-header-title-md {
-      font-size: var(--pgn-typography-font-size-h3-base);
+      font-size: $h3-font-size;
     }
 
     %header-subtitle {
-      color: var(--pgn-color-gray-700);
-      margin-top: map.get($spacers, 1);
+      color: $gray-700;
+      margin-top: map_get($spacers, 1);
     }
 
     .pgn__card-header-subtitle,
@@ -156,16 +156,16 @@ a.pgn__card {
     }
 
     .pgn__card-header-subtitle-sm {
-      font-size: var(--pgn-typography-font-size-h5-base);
+      font-size: $h5-font-size;
     }
 
     .pgn__card-header-subtitle-md {
-      font-size: var(--pgn-typography-font-size-h4-base);
+      font-size: $h4-font-size;
     }
 
     .pgn__card-header-actions {
-      margin-top: var(--pgn-spacing-spacer-base);
-      margin-inline-start: var(--pgn-spacing-spacer-base);
+      margin-top: $spacer;
+      margin-inline-start: $spacer;
       flex-shrink: 0;
     }
 
@@ -173,14 +173,14 @@ a.pgn__card {
       width: 100%;
 
       .react-loading-skeleton {
-        margin-top: map.get($spacers, 4);
+        margin-top: map-get($spacers, 4);
       }
     }
   }
 
   .pgn__card-footer {
     width: 100%;
-    padding: var(--pgn-spacing-card-spacer-x);
+    padding: $card-spacer-x;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -190,7 +190,7 @@ a.pgn__card {
       padding-top: 0;
 
       & > * + * {
-        margin-inline-start: var(--pgn-spacing-card-footer-action-gap);
+        margin-inline-start: $card-footer-actions-gap;
       }
     }
 
@@ -201,11 +201,11 @@ a.pgn__card {
 
     &.vertical-stacked {
       flex-direction: column-reverse;
-      padding-top: var(--pgn-spacing-card-spacer-x) - var(--pgn-spacing-card-footer-action-gap);
+      padding-top: $card-spacer-x - $card-footer-actions-gap;
 
       & > * {
         width: 100%;
-        margin-top: var(--pgn-spacing-card-footer-action-gap);
+        margin-top: $card-footer-actions-gap;
       }
     }
 
@@ -213,23 +213,23 @@ a.pgn__card {
       flex-wrap: wrap;
 
       & > :not(:last-child) {
-        margin-inline-end: var(--pgn-spacing-card-footer-action-gap);
+        margin-inline-end: $card-footer-actions-gap;
       }
     }
 
     &.horizontal-stacked {
       flex-direction: column-reverse;
-      padding-top: var(--pgn-spacing-card-spacer-x) - var(--pgn-spacing-card-footer-action-gap);
+      padding-top: $card-spacer-x - $card-footer-actions-gap;
 
       & > * {
-        margin-top: var(--pgn-spacing-card-footer-action-gap);
+        margin-top: $card-footer-actions-gap;
       }
     }
 
     .pgn__card-footer-text {
-      color: var(--pgn-color-gray-700);
+      color: $gray-700;
       order: 1;
-      font-size: var(--pgn-typography-footer-text-font-size);
+      font-size: $card-footer-text-font-size;
 
       &.vertical {
         margin-inline-end: auto;
@@ -241,13 +241,13 @@ a.pgn__card {
       }
 
       &.horizontal {
-        margin-top: var(--pgn-spacing-card-spacer-x);
+        margin-top: $card-spacer-x;
         width: 100%;
         text-align: center;
       }
 
       &.horizontal-stacked {
-        margin-top: var(--pgn-spacing-card-spacer-x);
+        margin-top: $card-spacer-x;
         width: 100%;
         text-align: center;
         order: -1;
@@ -256,30 +256,30 @@ a.pgn__card {
   }
 
   .pgn__card-divider {
-    border-top: 1px solid var(--pgn-color-card-divider-bg);
+    border-top: 1px solid $card-divider-bg;
     height: 0;
   }
 
   .pgn__card-section {
-    padding: var(--pgn-spacing-card-spacer-x);
+    padding: $card-spacer-x;
     flex-grow: 1;
     text-align: start;
 
     &.is-muted {
-      background-color: var(--pgn-color-light-200);
+      background-color: $light-200;
     }
 
     .pgn__card-section-title {
-      color: var(--pgn-color-black);
-      font-weight: var(--pgn-typography-font-weight-bold);
-      font-size: var(--pgn-typography-font-size-h5-base);
-      margin-bottom: var(--pgn-spacing-card-spacer-y);
+      color: $black;
+      font-weight: $font-weight-bold;
+      font-size: $h5-font-size;
+      margin-bottom: $card-spacer-y;
     }
 
     .pgn__card-section-actions {
       display: flex;
       justify-content: flex-end;
-      margin-top: var(--pgn-spacing-card-spacer-y);
+      margin-top: $card-spacer-y;
     }
 
     dd {
@@ -294,8 +294,8 @@ a.pgn__card {
     object-fit: cover;
     max-height: inherit;
     width: 100%;
-    border-top-left-radius: var(--pgn-size-card-image-border-radius);
-    border-top-right-radius: var(--pgn-size-card-image-border-radius);
+    border-top-left-radius: $card-image-border-radius;
+    border-top-right-radius: $card-image-border-radius;
     display: none;
 
     &.show {
@@ -307,21 +307,21 @@ a.pgn__card {
     position: relative;
 
     &.horizontal {
-      max-width: var(--pgn-size-card-image-horizontal-width-max);
-      min-width: var(--pgn-size-card-image-horizontal-width-min);
+      max-width: $card-image-horizontal-max-width;
+      min-width: $card-image-horizontal-min-width;
       overflow: hidden;
 
       .pgn__card-image-cap {
         height: 100%;
         max-width: inherit;
-        border-radius: var(--pgn-size-card-image-border-radius) 0 0 var(--pgn-size-card-image-border-radius);
+        border-radius: $card-image-border-radius 0 0 $card-image-border-radius;
         width: auto;
         object-fit: cover;
       }
 
       .pgn__card-logo-cap {
-        inset-inline-start: var(--pgn-spacing-card-logo-left-offset-horizontal);
-        bottom: var(--pgn-spacing-card-logo-bottom-offset-horizontal);
+        inset-inline-start: $card-logo-left-offset-horizontal;
+        bottom: $card-logo-bottom-offset-horizontal;
       }
 
       .pgn__card-image-cap-loader {
@@ -333,14 +333,14 @@ a.pgn__card {
     }
 
     &.vertical {
-      max-height: var(--pgn-size-card-image-vertical-max-height);
+      max-height: $card-image-vertical-max-height;
     }
 
     .pgn__card-image-cap-loader {
       .react-loading-skeleton {
-        margin-bottom: calc(-1 * var(--pgn-spacing-card-loading-skeleton-spacer));
+        margin-bottom: -$loading-skeleton-spacer;
         position: relative;
-        top: calc(-1 * var(--pgn-spacing-card-loading-skeleton-spacer));
+        top: -$loading-skeleton-spacer;
         height: 100%;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
@@ -349,16 +349,16 @@ a.pgn__card {
 
     .pgn__card-logo-cap {
       position: absolute;
-      inset-inline-start: var(--pgn-spacing-card-logo-left-offset-base);
-      bottom: calc(-1 * var(--pgn-spacing-card-logo-bottom-offset-base));
-      width: var(--pgn-size-card-logo-width);
-      height: var(--pgn-size-card-logo-height);
+      inset-inline-start: $card-logo-left-offset;
+      bottom: #{-$card-logo-bottom-offset};
+      width: $card-logo-width;
+      height: $card-logo-height;
       object-fit: scale-down;
       object-position: center center;
-      border-radius: var(--pgn-size-card-border-radius-logo);
-      box-shadow: var(--pgn-elevation-box-shadow-level-1);
-      padding: map.get($spacers, 2);
-      background-color: var(--pgn-color-white);
+      border-radius: $card-logo-border-radius;
+      box-shadow: $level-1-box-shadow;
+      padding: map_get($spacers, 2);
+      background-color: $white;
       display: none;
 
       &.show {
@@ -370,13 +370,13 @@ a.pgn__card {
   .pgn__card-status {
     box-shadow: none;
     margin-bottom: 0;
-    font-size: var(--pgn-typography-font-size-sm);
+    font-size: $font-size-sm;
     line-height: 1.5rem;
     text-align: start;
     position: relative;
-    padding: var(--pgn-spacing-card-spacer-y) var(--pgn-spacing-card-spacer-x);
+    padding: $card-spacer-y $card-spacer-x;
     border: 0 solid transparent;
-    border-radius: 0 0 var(--pgn-size-card-border-radius-base) var(--pgn-size-card-border-radius-base);
+    border-radius: 0 0 $card-border-radius $card-border-radius;
 
     .pgn__card-status__content {
       display: flex;
@@ -391,14 +391,14 @@ a.pgn__card {
     }
 
     .pgn__card-status__actions {
-      margin-top: map.get($spacers, 3);
+      margin-top: map-get($spacers, 3);
     }
 
     .pgn__card-status__heading {
-      font-size: var(--pgn-typography-font-size-h4-base);
-      color: var(--pgn-color-black);
+      font-size: $h4-font-size;
+      color: $black;
       display: flex;
-      font-weight: var(--pgn-typography-font-weight-bold);
+      font-weight: $font-weight-bold;
       line-height: 1.5rem;
       margin-bottom: .5rem;
     }
@@ -423,13 +423,13 @@ a.pgn__card {
     }
 
     &.pgn__card-status__primary {
-      color: var(--pgn-color-white);
-      background-color: var(--pgn-color-primary-500);
-      border-color: var(--pgn-color-primary-500);
-      box-shadow: 0 0 0 1px var(--pgn-color-primary-500);
+      color: $white;
+      background-color: $primary-500;
+      border-color: $primary-500;
+      box-shadow: 0 0 0 1px $primary-500;
 
       .pgn__card-status__content-icon {
-        color: var(--pgn-color-white);
+        color: $white;
       }
     }
   }
@@ -441,15 +441,15 @@ a.pgn__card {
   border: 0;
 
   %dark-variant-content {
-    color: var(--pgn-color-white);
+    color: $white;
 
     a {
-      color: var(--pgn-color-white);
+      color: $white;
     }
   }
 
   &.pgn__card-dark {
-    background-color: var(--pgn-color-card-bg-dark);
+    background-color: $card-bg-dark;
 
     @extend %dark-variant-content;
 
@@ -481,11 +481,20 @@ a.pgn__card {
   }
 
   &.pgn__card-muted {
-    background-color: var(--pgn-color-card-bg-muted);
+    background-color: $card-bg-muted;
   }
 }
 
-@media (--pgn-size-breakpoint-max-width-xs) {
+// course title focus visibility styling
+.course-card {
+  .pgn__card-header,
+  .pgn__card-header-content {
+      overflow: visible !important;
+  }
+}
+
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
   .pgn__card-footer {
     &.horizontal > :not(:last-child) {
       margin-inline-end: 0;
