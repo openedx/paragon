@@ -6,9 +6,9 @@ import Checkpoint from './Checkpoint';
 const ProductTour = React.forwardRef(({ tours }, ref) => {
   const tourValue = tours.find((tour) => tour.enabled);
   const {
-    enabled, checkpoints = [], startingIndex, onEscape, onEnd, onDismiss: tourOnDismiss,
-    advanceButtonText: tourAdvanceButtonText, dismissButtonText: tourDismissButtonText,
-    endButtonText: tourEndButtonText,
+    enabled, extendedTour, checkpoints = [], startingIndex, onEscape, onEnd,
+    onDismiss: tourOnDismiss, advanceButtonText: tourAdvanceButtonText,
+    dismissButtonText: tourDismissButtonText, endButtonText: tourEndButtonText,
   } = tourValue || {};
   const [currentCheckpointData, setCurrentCheckpointData] = useState(null);
   const [index, setIndex] = useState(0);
@@ -108,6 +108,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
       currentCheckpointData={currentCheckpointData}
       dismissButtonText={dismissButtonText || tourDismissButtonText}
       endButtonText={endButtonText || tourEndButtonText}
+      extendedTour={extendedTour}
       index={index}
       onAdvance={handleAdvance}
       onDismiss={handleDismiss}
@@ -138,6 +139,7 @@ ProductTour.defaultProps = {
     },
     dismissButtonText: '',
     endButtonText: '',
+    extendedTour: false,
     onDismiss: () => {},
     onEnd: () => {},
     onEscape: () => {},
@@ -189,6 +191,8 @@ ProductTour.propTypes = {
     enabled: PropTypes.bool.isRequired,
     /** The text displayed on the button used to end the tour. */
     endButtonText: PropTypes.node,
+    /** A boolean that can customize the header to accommodate longer tours */
+    extendedTour: PropTypes.bool,
     /** A function that runs when triggering the `onClick` event of the dismiss button. */
     onDismiss: PropTypes.func,
     /** A function that runs when triggering the `onClick` event of the end button. */

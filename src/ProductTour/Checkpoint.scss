@@ -91,9 +91,22 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     margin-bottom: map_get($spacers, 2\.5);
   }
 
+  .pgn__checkpoint-header-extended {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: map_get($spacers, 2\.5);
+    align-items: center;
+    height: 30px;
+  }
+
   #pgn__checkpoint-title {
     font-size: $h3-font-size;
     margin-inline-end: map_get($spacers, 2\.5);
+    margin-bottom: 0;
+  }
+
+  .pgn__checkpoint-page-index {
+    font-size: $small-font-size;
     margin-bottom: 0;
   }
 }

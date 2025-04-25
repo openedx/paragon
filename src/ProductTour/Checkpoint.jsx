@@ -8,13 +8,14 @@ import breakpoints from '../utils/breakpoints';
 
 import CheckpointActionRow from './CheckpointActionRow';
 import CheckpointBody from './CheckpointBody';
-import CheckpointBreadcrumbs from './CheckpointBreadcrumbs';
-import CheckpointTitle from './CheckpointTitle';
+import CheckpointHeader from './CheckpointHeader';
 import messages from './messages';
 
 const Checkpoint = React.forwardRef(({
   body,
+  extendedTour,
   index,
+  onDismiss,
   placement,
   target,
   title,
@@ -105,10 +106,13 @@ const Checkpoint = React.forwardRef(({
         />
       </span>
       {(title || !isOnlyCheckpoint) && (
-        <div className="pgn__checkpoint-header">
-          <CheckpointTitle>{title}</CheckpointTitle>
-          <CheckpointBreadcrumbs currentIndex={index} totalCheckpoints={totalCheckpoints} />
-        </div>
+        <CheckpointHeader
+          extendedTour={extendedTour}
+          index={index}
+          onDismiss={onDismiss}
+          title={title}
+          totalCheckpoints={totalCheckpoints}
+        />
       )}
       <CheckpointBody>{body}</CheckpointBody>
       <CheckpointActionRow
@@ -132,6 +136,7 @@ Checkpoint.defaultProps = {
   body: null,
   dismissButtonText: null,
   endButtonText: null,
+  extendedTour: false,
   placement: 'top',
   title: null,
   showDismissButton: undefined,
@@ -146,6 +151,8 @@ Checkpoint.propTypes = {
   dismissButtonText: PropTypes.node,
   /** The text displayed on the button used to end the tour for the given Checkpoint. */
   endButtonText: PropTypes.node,
+  /** A boolean that can customize the header to accommodate longer tours */
+  extendedTour: PropTypes.bool,
   /** The current index of the given Checkpoint */
   index: PropTypes.number.isRequired,
   /** A function that runs when triggering the `onClick` event of the advance
