@@ -78,6 +78,43 @@ describe('<ProductTour />', () => {
     ],
   };
 
+  const extendedTourData = {
+    advanceButtonText: 'Next',
+    dismissButtonText: 'Dismiss',
+    extendedTour: true,
+    enabled: true,
+    endButtonText: 'Okay',
+    onDismiss: handleDismiss,
+    onEnd: handleEnd,
+    tourId: 'enabledTour',
+    checkpoints: [
+      {
+        body: 'Lorem ipsum body',
+        target: '#target-1',
+        title: 'Checkpoint 1',
+      },
+      {
+        body: 'Lorem ipsum body',
+        target: '#target-2',
+        title: 'Checkpoint 2',
+      },
+      {
+        body: 'Lorem ipsum body',
+        target: '#target-3',
+        title: 'Checkpoint 3',
+        onDismiss: customOnDismiss,
+        advanceButtonText: 'Override advance',
+        dismissButtonText: 'Override dismiss',
+
+      },
+      {
+        target: '#target-3',
+        title: 'Checkpoint 4',
+        endButtonText: 'End',
+      },
+    ],
+  };
+
   beforeEach(() => {
     popperMock.mockImplementation(jest.fn());
   });
@@ -193,6 +230,31 @@ describe('<ProductTour />', () => {
         });
 
         // Verify no Checkpoints have been rendered
+        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      });
+    });
+
+    describe('with extended tour', () => {
+      it('renders extended tour header with close button icon', async () => {
+        const { rerender } = render(<ProductTourWrapper tours={[extendedTourData]} />);
+        expect(screen.getByText('1 of 4')).toBeInTheDocument();
+
+        // Click the advance button
+        const advanceButton = screen.getByRole('button', { name: 'Next' });
+        await act(async () => {
+          await userEvent.click(advanceButton);
+        });
+
+        rerender(<ProductTourWrapper tours={[extendedTourData]} />);
+        expect(screen.getByText('2 of 4')).toBeInTheDocument();
+
+        const closeIcon = screen.getByRole('button', { name: 'Close tour' });
+        expect(closeIcon).toBeInTheDocument();
+
+        await act(async () => {
+          await userEvent.click(closeIcon);
+        });
+        expect(handleDismiss).toHaveBeenCalled();
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
       });
     });

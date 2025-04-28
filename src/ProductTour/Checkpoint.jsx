@@ -116,6 +116,7 @@ const Checkpoint = React.forwardRef(({
       )}
       <CheckpointBody>{body}</CheckpointBody>
       <CheckpointActionRow
+        onDismiss={onDismiss}
         isLastCheckpoint={isLastCheckpoint}
         index={index}
         {...props}
