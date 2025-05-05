@@ -17,6 +17,7 @@ const Checkpoint = React.forwardRef(({
   onBack,
   onDismiss,
   placement,
+  showDismissButton,
   target,
   title,
   totalCheckpoints,
@@ -116,6 +117,7 @@ const Checkpoint = React.forwardRef(({
         onDismiss={onDismiss}
         isLastCheckpoint={isLastCheckpoint}
         index={index}
+        showDismissButton={showDismissButton}
         {...props}
       />
       <div id="pgn__checkpoint-arrow" data-popper-arrow />

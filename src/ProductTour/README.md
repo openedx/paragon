@@ -44,17 +44,25 @@ The checkpoint objects themselves have additional props that can override the pr
             console.log('Dismissed the second checkpoint');
             setIsTourEnabled(false);
           }, // Override the default onDismiss above
-          placement: 'right',
+          placement: 'left',
           target: '#checkpoint-2',
           title: 'Second checkpoint',
         },
         {
           body: "Here's the third checkpoint!",
-          placement: 'bottom',
+          placement: 'right',
           target: '#checkpoint-3',
           title: 'Third checkpoint',
+          showDismissButton: true,
+          // Override the back button, replace with a dismiss
+        },
+        {
+          body: "Here's the fourth checkpoint!",
+          placement: 'bottom',
+          target: '#checkpoint-4',
+          title: 'Fourth checkpoint',
           onEnd: () => {
-            console.log('Ended the third checkpoint');
+            console.log('Ended the fourth checkpoint');
             setIsTourEnabled(false);
           } // Additional logic for the onEnd callback to be called on the last checkpoint
         }
@@ -71,6 +79,7 @@ The checkpoint objects themselves have additional props that can override the pr
           <div id="checkpoint-1"><Icon src={Check}/></div>
           <div id="checkpoint-2"><Icon src={Check}/></div>
           <div id="checkpoint-3"><Icon src={Check}/></div>
+          <div id="checkpoint-4"><Icon src={Check}/></div>
         </Row>
       </>
     );
