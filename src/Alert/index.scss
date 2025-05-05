@@ -19,8 +19,12 @@
   @include border-radius($alert-border-radius);
   @include pgn-box-shadow(1, "down");
 
-  .alert-message-content > :last-child {
-    margin-bottom: 0;
+  .alert-message-content {
+    align-self: baseline;
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
   }
 
   .alert-icon {
