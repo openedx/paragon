@@ -1,3 +1,4 @@
+@use "sass:color";
 // Dropdowns
 //
 // Dropdown menu container and contents.
@@ -18,7 +19,7 @@ $dropdown-divider-margin-y:         calc($spacer / 2) !default;
 $dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
 
 $dropdown-link-color:               theme-color("gray", "dark-text") !default;
-$dropdown-link-hover-color:         darken(theme-color("gray", "dark-text"), 5%) !default;
+$dropdown-link-hover-color:         color.adjust(theme-color("gray", "dark-text"), $lightness: -5%) !default;
 $dropdown-link-hover-bg:            $light-300 !default;
 
 $dropdown-link-active-color:        $component-active-color !default;

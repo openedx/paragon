@@ -31,6 +31,13 @@
       "ignoreProperties": ["xs", "sm", "md", "lg", "xl", "xxl"]
     }],
     "alpha-value-notation": "number",
-    "color-function-notation": "legacy"
+    "color-function-notation": "legacy",
+    "import-notation": "string",
+    "at-rule-empty-line-before": ["always", {
+      "except": ["blockless-after-same-name-blockless", "first-nested"],
+      "ignore": ["after-comment"],
+      "ignoreAtRules": ["import"]
+    }],
+    "declaration-block-no-redundant-longhand-properties": null
   }
 }

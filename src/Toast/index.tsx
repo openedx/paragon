@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
 import BaseToast from 'react-bootstrap/Toast';
 import { useIntl } from 'react-intl';
 
@@ -14,16 +13,40 @@ import IconButton from '../IconButton';
 export const TOAST_CLOSE_LABEL_TEXT = 'Close';
 export const TOAST_DELAY = 5000;
 
+interface ToastAction {
+  label: string;
+  href?: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
+}
+
+interface ToastProps {
+  children: string;
+  onClose: () => void;
+  show: boolean;
+  action?: ToastAction;
+  closeLabel?: string;
+  delay?: number;
+  className?: string;
+}
+
 function Toast({
-  action, children, className, closeLabel, onClose, show, ...rest
-}) {
+  action,
+  children,
+  className,
+  closeLabel,
+  onClose,
+  show,
+  ...rest
+}: ToastProps) {
   const intl = useIntl();
   const [autoHide, setAutoHide] = useState(true);
+
   const intlCloseLabel = closeLabel || intl.formatMessage({
     id: 'pgn.Toast.closeLabel',
     defaultMessage: 'Close',
     description: 'Close label for Toast component',
   });
+
   return (
     <ToastContainer>
       <BaseToast
@@ -37,9 +60,7 @@ function Toast({
         show={show}
         {...rest}
       >
-        <div
-          className="toast-header"
-        >
+        <div className="toast-header">
           <p className="small">{children}</p>
           <div className="toast-header-btn-container">
             <IconButton

@@ -1,4 +1,5 @@
 import React from 'react';
+import { IntlProvider } from 'react-intl';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
@@ -20,15 +21,17 @@ describe('Menu Item renders correctly', () => {
 
   it('renders as expected with menu items', () => {
     const tree = renderer.create((
-      <Menu>
-        <MenuItem> A Menu Item</MenuItem>
-        <MenuItem iconBefore={Add} stoven>A Menu Item With an Icon Before</MenuItem>
-        <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
-        <MenuItem disabled>A Disabled Menu Item</MenuItem>
-        <MenuItem as={Hyperlink} destination="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
-        <MenuItem as={Button} variant="primary" size="inline">A Button Menu Item</MenuItem>
-        <MenuItem as={Form.Checkbox}>A Checkbox Menu Item</MenuItem>
-      </Menu>
+      <IntlProvider locale="en">
+        <Menu>
+          <MenuItem> A Menu Item</MenuItem>
+          <MenuItem iconBefore={Add} stoven>A Menu Item With an Icon Before</MenuItem>
+          <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
+          <MenuItem disabled>A Disabled Menu Item</MenuItem>
+          <MenuItem as={Hyperlink} destination="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
+          <MenuItem as={Button} variant="primary" size="inline">A Button Menu Item</MenuItem>
+          <MenuItem as={Form.Checkbox}>A Checkbox Menu Item</MenuItem>
+        </Menu>
+      </IntlProvider>
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -71,48 +74,53 @@ describe('Keyboard Interactions', () => {
     expect(defaultItem).toHaveFocus();
   });
 
-  it('should focus the next item after ArrowDown keyDown', () => {
+  it('should focus the next item after ArrowDown keyDown', async () => {
+    const user = userEvent.setup();
     const defaultItem = screen.getByText('Default');
     const cantTouchThisItem = screen.getByText(MENU_ITEM_TEXT).parentElement;
 
-    userEvent.type(defaultItem, '{arrowdown}');
+    await user.type(defaultItem, '{arrowdown}');
 
     expect(cantTouchThisItem).toHaveFocus();
   });
 
-  it('should focus the next item after Tab keyDown', () => {
+  it('should focus the next item after Tab keyDown', async () => {
+    const user = userEvent.setup();
     const defaultItem = screen.getByText('Default').parentElement;
     const cantTouchThisItem = screen.getByText(MENU_ITEM_TEXT).parentElement;
     defaultItem.focus();
-    userEvent.tab();
+    await user.tab();
 
     expect(cantTouchThisItem).toHaveFocus();
   });
 
-  it('should loop focus to the first item after Tab keyDown on last item', () => {
+  it('should loop focus to the first item after Tab keyDown on last item', async () => {
+    const user = userEvent.setup();
     const defaultItem = screen.getByText('Default').parentElement;
     const iconBeforeItem = screen.getByText('Icon Before');
     iconBeforeItem.focus();
-    userEvent.tab();
+    await user.tab();
 
     expect(defaultItem).toHaveFocus();
   });
 
-  it('should loop focus to the last item after ArrowUp keyDown on first item', () => {
+  it('should loop focus to the last item after ArrowUp keyDown on first item', async () => {
+    const user = userEvent.setup();
     const defaultItem = screen.getByText('Default').parentElement;
     const iconBeforeItem = screen.getByText('Icon Before').parentElement;
     defaultItem.focus();
-    userEvent.type(defaultItem, '{arrowup}');
+    await user.type(defaultItem, '{arrowup}');
 
     expect(iconBeforeItem).toHaveFocus();
   });
 
-  it('should focus the previous item after Shift + Tab keyDown', () => {
+  it('should focus the previous item after Shift + Tab keyDown', async () => {
+    const user = userEvent.setup();
     const button1 = screen.getAllByRole('button')[0];
     const button2 = screen.getAllByRole('button')[1];
 
     button2.focus();
-    userEvent.tab({ shift: true });
+    await user.tab({ shift: true });
 
     expect(button1).toHaveFocus();
   });

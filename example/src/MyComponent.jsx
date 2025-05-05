@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form, Icon, Bubble, Stack, Container } from '@openedx/paragon'; // eslint-disable-line
 import { FavoriteBorder } from '@openedx/paragon/icons'; // eslint-disable-line
 
-const MyComponent = () => {
+function MyComponent() {
   const [value, setValue] = useState('');
   const handleChange = (e) => setValue(e.target.value);
   const handleClick = () => alert('Form is submitted!'); // eslint-disable-line no-alert
@@ -26,6 +26,6 @@ const MyComponent = () => {
       </Form>
     </Container>
   );
-};
+}
 
 export default MyComponent;

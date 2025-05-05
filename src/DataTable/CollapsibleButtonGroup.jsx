@@ -2,8 +2,8 @@ import React, { useContext, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { MoreVert } from '../../icons';
-import useToggle from '../hooks/useToggle';
-import useWindowSize from '../hooks/useWindowSize';
+import useToggle from '../hooks/useToggleHook';
+import useWindowSize from '../hooks/useWindowSizeHook';
 import DataTableContext from './DataTableContext';
 import Icon from '../Icon';
 import IconButton from '../IconButton';

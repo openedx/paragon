@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "variables";
 
 .pgn__data-table-wrapper {
@@ -26,10 +27,10 @@
   display: flex;
 
   .pgn__datatable__visible-actions {
-    margin-inline-start: map_get($spacers, 2);
+    margin-inline-start: map.get($spacers, 2);
 
     .btn {
-      margin-inline-start: map_get($spacers, 2);
+      margin-inline-start: map.get($spacers, 2);
 
       &:first-child {
         margin-inline-start: 0;
@@ -57,7 +58,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin-top: map_get($spacers, 4);
+    margin-top: map.get($spacers, 4);
   }
 
   .pgn__icon-button-toggle__container {
@@ -97,18 +98,18 @@
     border-radius: $border-radius;
     box-shadow: $data-table-box-shadow;
     padding: $data-table-padding-small;
-    margin-right: map_get($spacers, 4);
+    margin-right: map.get($spacers, 4);
     flex: 0 0 $data-table-layout-sidebar-width;
   }
 
   .pgn__data-table-side-filters {
     .pgn__data-table-side-filters-title {
-      margin-bottom: map_get($spacers, 3);
+      margin-bottom: map.get($spacers, 3);
       text-align: start;
     }
 
     .pgn__data-table-side-filters-status {
-      margin-bottom: map_get($spacers, 2);
+      margin-bottom: map.get($spacers, 2);
       display: flex;
       justify-content: flex-end;
     }
@@ -175,7 +176,7 @@
 }
 
 .pgn__data-table-filters-breakout-filter {
-  margin-inline-end: map_get($spacers, 2);
+  margin-inline-end: map.get($spacers, 2);
 }
 
 .pgn__data-table-filters-dropdown-item {
@@ -264,12 +265,12 @@
   padding: 0 $data-table-padding-x;
 
   .pgn__data-table-card-view-default-skeleton-card-section {
-    margin-top: map_get($spacers, 2);
+    margin-top: map.get($spacers, 2);
   }
 }
 
 .pgn__data-table__action-btn {
-  margin-left: map_get($spacers, 2);
+  margin-left: map.get($spacers, 2);
 
   &:first-child {
     margin-left: 0;
@@ -287,7 +288,7 @@
 
 .pgn__datatable__overflow-actions-menu {
   background: #FFFFFF;
-  padding: map_get($spacers, 2);
+  padding: map.get($spacers, 2);
   box-shadow: $level-1-box-shadow;
   border-radius: 4px;
 }
@@ -309,10 +310,10 @@
 
   &.selection-right {
     > :first-child {
-      margin-right: map_get($spacers, 2);
+      margin-right: map.get($spacers, 2);
 
       [dir="rtl"] & {
-        margin-left: map_get($spacers, 2);
+        margin-left: map.get($spacers, 2);
         margin-right: 0;
       }
     }
@@ -326,5 +327,5 @@
 .pgn__data-table__controlled-select {
   display: flex;
   align-content: center;
-  padding: map_get($spacers, 1);
+  padding: map.get($spacers, 1);
 }

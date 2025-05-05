@@ -11,8 +11,9 @@ const componentsQuery = graphql`
           internal: { owner: { nin: "gatsby-transformer-react-docgen" } }
         }
         frontmatter: { type: {} }
+        fields: { source: { eq: "components" } }
       }
-      sort: { fields: frontmatter___title }
+      sort: { frontmatter: {title: ASC} }
     ) {
       all: nodes {
         ...ComponentPage

@@ -109,7 +109,8 @@ describe('FormRadioSet', () => {
     expect(deciduousRadio).toHaveAttribute('name', 'trees');
   });
 
-  it('checks if onClick is called once in FormRadioSet', () => {
+  it('checks if onClick is called once in FormRadioSet', async () => {
+    const user = userEvent.setup();
     const handleChange = jest.fn();
     const { getByLabelText } = render(
       <FormGroup>
@@ -124,7 +125,7 @@ describe('FormRadioSet', () => {
       </FormGroup>,
     );
 
-    userEvent.click(getByLabelText('Red'));
+    await user.click(getByLabelText('Red'));
     expect(handleChange).toHaveBeenCalledTimes(1);
   });
 });

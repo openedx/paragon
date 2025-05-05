@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ListBox from '.';
@@ -82,15 +82,18 @@ describe('ListBox', () => {
 
     listBoxElement.focus();
 
-    expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-0');
+    await waitFor(() => {
+      expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-0');
+    });
   });
 
   it('should not select first ListBoxOption on focus if ListBoxOption selected', async () => {
+    const user = userEvent.setup();
     const listBoxElement = screen.getByRole('listbox');
 
     listBoxElement.focus();
 
-    await userEvent.keyboard('{arrowdown}');
+    await user.keyboard('{arrowdown}');
 
     listBoxElement.focus();
 
@@ -98,11 +101,12 @@ describe('ListBox', () => {
   });
 
   it('should select next ListBoxOption on down arrow key', async () => {
+    const user = userEvent.setup();
     const listBoxElement = screen.getByRole('listbox');
 
     listBoxElement.focus();
 
-    await userEvent.keyboard('{arrowdown}');
+    await user.keyboard('{arrowdown}');
 
     expect(listBoxElement.getAttribute('aria-activedescendant')).toEqual('list-box-option-1');
   });

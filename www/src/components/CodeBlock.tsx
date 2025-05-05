@@ -8,11 +8,11 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import axios from 'axios';
 import classNames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
+import debounce from 'lodash.debounce';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/duotoneDark';
 import {
@@ -121,8 +121,8 @@ export interface ICodeBlock {
 
 function CodeBlock({
   children,
-  className,
-  live,
+  className = '',
+  live = false,
 }: ICodeBlock) {
   const intl = useIntl();
   const language: any = className ? className.replace(/language-/, '') : 'jsx';
@@ -135,6 +135,11 @@ function CodeBlock({
     navigator.clipboard.writeText(codeExample);
     setShowToast(true);
   };
+
+  if (className === '' && typeof children === 'string' && !children.includes('\n')) {
+    // This is an `inline code` node. Don't use syntax highlighting.
+    return <code>{children}</code>;
+  }
 
   if (live) {
     return (
@@ -161,6 +166,7 @@ function CodeBlock({
             GatsbyLink: Link,
             classNames,
             uuidv4,
+            debounce,
           }}
           theme={theme}
         >
@@ -204,16 +210,5 @@ function CodeBlock({
     </Highlight>
   );
 }
-
-CodeBlock.propTypes = {
-  children: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  live: PropTypes.bool,
-};
-
-CodeBlock.defaultProps = {
-  live: false,
-  className: '',
-};
 
 export default CodeBlock;

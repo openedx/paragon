@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .pgn__modal {
   background: $modal-content-bg;
   border-radius: $modal-content-inner-border-radius;
@@ -123,6 +125,7 @@
 
   .pgn__modal-title {
     font-size: $h3-font-size;
+    line-height: $h3-font-size * $headings-line-height;
     margin-inline-end: 3rem; // roughly accomodate the width of the close buttonn
     text-align: start;
   }
@@ -308,14 +311,13 @@
   }
 
   .pgn__modal-title {
-    font-size: $h4-font-size;
     display: flex;
     flex-grow: 1;
     align-items: center;
 
     .pgn__alert-modal__title_icon {
       flex-shrink: 0;
-      margin-right: map-get($spacers, 2\.5);
+      margin-right: map.get($spacers, 2\.5);
     }
   }
 }

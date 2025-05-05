@@ -31,7 +31,7 @@ export {
   FormAutosuggestOption,
   InputGroup,
 } from './Form';
-export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
+export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
 export { default as ModalContext } from './Modal/ModalContext';
@@ -39,7 +39,13 @@ export { default as ModalDialog, MODAL_DIALOG_CLOSE_LABEL } from './Modal/ModalD
 export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
+export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
 export { default as Tooltip } from './Tooltip';
+export { default as useWindowSize, type WindowSizeData } from './hooks/useWindowSizeHook';
+export { default as useToggle, type Toggler, type ToggleHandlers } from './hooks/useToggleHook';
+export { default as useArrowKeyNavigation, type ArrowKeyNavProps } from './hooks/useArrowKeyNavigationHook';
+export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChildHook';
+export { default as useIsVisible } from './hooks/useIsVisibleHook';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
@@ -158,7 +164,6 @@ export const
 // from './Tabs';
 /** @deprecated Replaced by `Form.Control`. */
 export const TextArea: any; // from './TextArea';
-export const Toast: any, TOAST_CLOSE_LABEL_TEXT: string, TOAST_DELAY: number; // from './Toast';
 /** @deprecated Replaced by `Form.Group`. */
 export const ValidationFormGroup: any; // from './ValidationFormGroup';
 export const TransitionReplace: any; // from './TransitionReplace';
@@ -187,11 +192,6 @@ export const Sticky: any; // from './Sticky';
 export const SelectableBox: any; // from './SelectableBox';
 export const breakpoints: any; // from './utils/breakpoints';
 export const Variant: any; // from './utils/constants';
-export const useWindowSize: any; // from './hooks/useWindowSize';
-export const useToggle: any; // from './hooks/useToggle';
-export const useArrowKeyNavigation: any; // from './hooks/useArrowKeyNavigation';
-export const useIndexOfLastVisibleChild: any; // from './hooks/useIndexOfLastVisibleChild';
-export const useIsVisible: any; // from './hooks/useIsVisible';
 export const
   OverflowScrollContext: any,
   OverflowScroll: any,

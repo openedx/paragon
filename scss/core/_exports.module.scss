@@ -1,3 +1,4 @@
+@use "sass:map";
 // Grid breakpoints
 //
 // Define the minimum dimensions at which your layout will change,
@@ -13,10 +14,10 @@ $grid-breakpoints: (
 ) !default;
 
 :export {
-  xs: map-get($grid-breakpoints, "xs");
-  sm: map-get($grid-breakpoints, "sm");
-  md: map-get($grid-breakpoints, "md");
-  lg: map-get($grid-breakpoints, "lg");
-  xl: map-get($grid-breakpoints, "xl");
-  xxl: map-get($grid-breakpoints, "xxl");
+  xs: map.get($grid-breakpoints, "xs");
+  sm: map.get($grid-breakpoints, "sm");
+  md: map.get($grid-breakpoints, "md");
+  lg: map.get($grid-breakpoints, "lg");
+  xl: map.get($grid-breakpoints, "xl");
+  xxl: map.get($grid-breakpoints, "xxl");
 }

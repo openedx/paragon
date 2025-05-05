@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import useIsVisible from '../hooks/useIsVisible';
+import useIsVisible from '../hooks/useIsVisibleHook';
 
 function ModalDialogBody({
   as,

@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react'; // (or /dom, /vue, ...)
-import useIsVisible from '../hooks/useIsVisible';
+import useIsVisible from '../hooks/useIsVisibleHook';
 
 import Scrollable, { CLASSNAME_SCROLL_BOTTOM, CLASSNAME_SCROLL_TOP } from '.';
 
-jest.mock('../hooks/useIsVisible');
+jest.mock('../hooks/useIsVisibleHook');
 
 function rangeOfNumbers() {
   return Array.from({ length: 50 }, (v, k) => k + 1);

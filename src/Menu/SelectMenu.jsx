@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { ExpandMore } from '../../icons';
 import Button from '../Button';
 import ModalPopup from '../Modal/ModalPopup';
-import useToggle from '../hooks/useToggle';
+import useToggle from '../hooks/useToggleHook';
 import Menu from '.';
 import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 

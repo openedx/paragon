@@ -166,7 +166,8 @@ describe('FormCheckboxSet', () => {
     });
   });
 
-  it('checks if onClick is called once in FormCheckboxSet', () => {
+  it('checks if onClick is called once in FormCheckboxSet', async () => {
+    const user = userEvent.setup();
     const handleChange = jest.fn();
     const { getByLabelText } = render(
       <FormGroup controlId="my-field">
@@ -181,7 +182,7 @@ describe('FormCheckboxSet', () => {
       </FormGroup>,
     );
 
-    userEvent.click(getByLabelText('Red'));
+    await user.click(getByLabelText('Red'));
     expect(handleChange).toHaveBeenCalledTimes(1);
   });
 });

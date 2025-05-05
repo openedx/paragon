@@ -11,7 +11,7 @@ import BaseTabs from 'react-bootstrap/Tabs';
 import TabsDeprecated from './deprecated';
 import Bubble from '../Bubble';
 import Dropdown from '../Dropdown';
-import useIndexOfLastVisibleChild from '../hooks/useIndexOfLastVisibleChild';
+import useIndexOfLastVisibleChild from '../hooks/useIndexOfLastVisibleChildHook';
 import Tab from './Tab';
 
 export const MORE_TAB_TEXT = 'More...';

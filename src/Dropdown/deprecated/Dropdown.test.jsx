@@ -62,37 +62,43 @@ describe('<Dropdown />', () => {
     });
 
     it('opens on trigger click', async () => {
-      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
+      const user = userEvent.setup();
+      await user.click(wrapper.getByRole('button', { name: 'Search Engines' }));
       menuOpen(true, wrapper);
     });
 
     it('should focus on the first item after opening', async () => {
-      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
+      const user = userEvent.setup();
+      await user.click(wrapper.getByRole('button', { name: 'Search Engines' }));
       expect(wrapper.getByText('Google')).toHaveFocus();
     });
 
     it('does not close on click inside the menu', async () => {
-      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
-      await userEvent.click(wrapper.getByText('Google')); // Do nothing
+      const user = userEvent.setup();
+      await user.click(wrapper.getByRole('button', { name: 'Search Engines' }));
+      await user.click(wrapper.getByText('Google')); // Do nothing
       menuOpen(true, wrapper);
     });
 
     it('closes on trigger click', async () => {
-      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
-      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' })); // Close
+      const user = userEvent.setup();
+      await user.click(wrapper.getByRole('button', { name: 'Search Engines' }));
+      await user.click(wrapper.getByRole('button', { name: 'Search Engines' })); // Close
       menuOpen(false, wrapper);
     });
 
     it('should focus on the trigger button after closing', async () => {
-      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
-      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' })); // Close
+      const user = userEvent.setup();
+      await user.click(wrapper.getByRole('button', { name: 'Search Engines' }));
+      await user.click(wrapper.getByRole('button', { name: 'Search Engines' })); // Close
       expect(wrapper.getByRole('button', { name: 'Search Engines' })).toHaveFocus();
     });
 
     it('closes on document click when open', async () => {
-      await userEvent.click(wrapper.getByRole('button', { name: 'Search Engines' }));
+      const user = userEvent.setup();
+      await user.click(wrapper.getByRole('button', { name: 'Search Engines' }));
       menuOpen(true, wrapper);
-      document.dispatchEvent(new MouseEvent('click'));
+      await user.click(document.body);
       menuOpen(false, wrapper);
     });
   });
@@ -105,72 +111,82 @@ describe('<Dropdown />', () => {
     });
 
     it('opens on Enter keyDown', async () => {
+      const user = userEvent.setup();
       wrapper.getByRole('button', { name: 'Search Engines' }).focus();
-      await userEvent.keyboard('{Enter}');
+      await user.keyboard('{Enter}');
       menuOpen(true, wrapper);
     });
 
     it('opens on Space keyDown', async () => {
+      const user = userEvent.setup();
       wrapper.getByRole('button', { name: 'Search Engines' }).focus();
-      await userEvent.keyboard('{space}');
+      await user.keyboard(' ');
       menuOpen(true, wrapper);
     });
 
     it('should focus on the first item after opening', async () => {
+      const user = userEvent.setup();
       wrapper.getByRole('button', { name: 'Search Engines' }).focus();
-      await userEvent.keyboard('{Enter}');
+      await user.keyboard('{Enter}');
       expect(wrapper.getByText('Google')).toHaveFocus();
     });
 
     it('should focus the next item after ArrowDown keyDown', async () => {
+      const user = userEvent.setup();
       wrapper.getByRole('button', { name: 'Search Engines' }).focus();
-      await userEvent.keyboard('{Enter}');
-      await userEvent.keyboard('{arrowdown}');
+      await user.keyboard('{Enter}');
+      await user.keyboard('{arrowdown}');
       expect(wrapper.getByText('DuckDuckGo')).toHaveFocus();
     });
 
     it('should focus the next item after Tab keyDown', async () => {
+      const user = userEvent.setup();
       wrapper.getByRole('button', { name: 'Search Engines' }).focus();
-      await userEvent.keyboard('{Enter}');
-      await userEvent.tab();
+      await user.keyboard('{Enter}');
+      await user.tab();
       expect(wrapper.getByText('DuckDuckGo')).toHaveFocus();
     });
 
     it('should loop focus to the first item after Tab keyDown on last item', async () => {
+      const user = userEvent.setup();
       wrapper.getByRole('button', { name: 'Search Engines' }).focus();
-      await userEvent.keyboard('{Enter}');
+      await user.keyboard('{Enter}');
       wrapper.getByRole('link', { name: 'Yahoo' }).focus();
-      await userEvent.tab();
+      await user.tab();
       expect(wrapper.getByText('Google')).toHaveFocus();
     });
 
     it('should loop focus to the last item after ArrowUp keyDown on first item', async () => {
+      const user = userEvent.setup();
       wrapper.getByRole('button', { name: 'Search Engines' }).focus();
-      await userEvent.keyboard('{Enter}');
+      await user.keyboard('{Enter}');
       wrapper.getByRole('link', { name: 'Google' }).focus();
-      await userEvent.keyboard('{arrowup}');
+      await user.keyboard('{arrowup}');
       expect(wrapper.getByText('Yahoo')).toHaveFocus();
     });
 
     it('should focus the previous item after Shift + Tab keyDown', async () => {
+      const user = userEvent.setup();
       wrapper.getByRole('button', { name: 'Search Engines' }).focus();
-      await userEvent.keyboard('{Enter}');
+      await user.keyboard('{Enter}');
       wrapper.getByRole('link', { name: 'Yahoo' }).focus();
-      await userEvent.keyboard('{Shift>}{Tab}');
+      await user.keyboard('{Shift>}{Tab}');
       expect(wrapper.getByText('DuckDuckGo')).toHaveFocus();
     });
 
     it('should close the menu on Escape keyDown', async () => {
+      const user = userEvent.setup();
       wrapper.getByRole('button', { name: 'Search Engines' }).focus();
-      await userEvent.keyboard('{Enter}');
-      await userEvent.keyboard('{escape}');
+      await user.keyboard('{Enter}');
+      await user.keyboard('{escape}');
       menuOpen(false, wrapper);
     });
 
     it('should focus on the trigger button after closing', async () => {
+      const user = userEvent.setup();
       wrapper.getByRole('button', { name: 'Search Engines' }).focus();
-      await userEvent.keyboard('{Enter}');
-      await userEvent.keyboard('{escape}');
+      await user.keyboard('{Enter}');
+      await user.keyboard('{escape}');
       expect(wrapper.getByRole('button', { name: 'Search Engines' })).toHaveFocus();
     });
   });

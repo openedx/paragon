@@ -31,7 +31,7 @@ export {
   FormAutosuggestOption,
   InputGroup,
 } from './Form';
-export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
+export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
 export { default as ModalContext } from './Modal/ModalContext';
@@ -39,7 +39,13 @@ export { default as ModalDialog, MODAL_DIALOG_CLOSE_LABEL } from './Modal/ModalD
 export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
+export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
 export { default as Tooltip } from './Tooltip';
+export { default as useWindowSize } from './hooks/useWindowSizeHook';
+export { default as useToggle } from './hooks/useToggleHook';
+export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigationHook';
+export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChildHook';
+export { default as useIsVisible } from './hooks/useIsVisibleHook';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
@@ -158,7 +164,6 @@ export {
 } from './Tabs';
 /** @deprecated Replaced by `Form.Control`. */
 export { default as TextArea } from './TextArea';
-export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
 /** @deprecated Replaced by `Form.Group`. */
 export { default as ValidationFormGroup } from './ValidationFormGroup';
 export { default as TransitionReplace } from './TransitionReplace';
@@ -187,11 +192,6 @@ export { default as Sticky } from './Sticky';
 export { default as SelectableBox } from './SelectableBox';
 export { default as breakpoints } from './utils/breakpoints';
 export { default as Variant } from './utils/constants';
-export { default as useWindowSize } from './hooks/useWindowSize';
-export { default as useToggle } from './hooks/useToggle';
-export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigation';
-export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChild';
-export { default as useIsVisible } from './hooks/useIsVisible';
 export {
   OverflowScrollContext,
   OverflowScroll,

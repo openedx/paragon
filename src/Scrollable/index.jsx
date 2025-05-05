@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import useIsVisible from '../hooks/useIsVisible';
+import useIsVisible from '../hooks/useIsVisibleHook';
 
 export const CLASSNAME_SCROLL_TOP = 'pgn__scrollable-body-scroll-top';
 export const CLASSNAME_SCROLL_BOTTOM = 'pgn__scrollable-body-scroll-bottom';

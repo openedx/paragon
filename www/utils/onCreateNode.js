@@ -10,7 +10,15 @@ function onCreateNode(node, actions, getNode) {
       .split('README')[0]
       .toLowerCase();
 
-    const isChangelogNode = node.fileAbsolutePath && node.fileAbsolutePath.endsWith('CHANGELOG.md');
+    // Is this node (page) a page about a Paragon component, from src/**/.md(x),
+    // or (when false) is it one of the .mdx/.tsx files in www/src/ ?
+    const isChangelog = node.internal.contentFilePath.endsWith('CHANGELOG.md');
+    const isComponentPageNode = !node.internal.contentFilePath.includes('www/src/');
+    const slug = (/* eslint-disable */
+      isChangelog ? '/changelog/' :
+      isComponentPageNode ? `/components${value}` :
+      value
+    );/* eslint-enable */
 
     createNodeField({
       // Name of the field you are adding
@@ -20,7 +28,7 @@ function onCreateNode(node, actions, getNode) {
       // Generated value based on filepath with 'components' prefix. you
       // don't need a separating '/' before the value because
       // createFilePath returns a path with the leading '/'.
-      value: isChangelogNode ? 'changelog' : `/components${value}`,
+      value: slug,
     });
   }
 }

@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "variables";
 @import "~bootstrap/scss/toasts";
 
@@ -5,7 +6,7 @@
   background-color: $toast-background-color;
   box-shadow: $toast-box-shadow;
   margin: 0;
-  padding: 1rem;
+  padding: $spacer;
   position: relative;
   border-radius: $toast-border-radius;
   z-index: 2;
@@ -38,15 +39,15 @@
     }
 
     & + .btn {
-      margin-top: 1rem;
+      margin-top: $spacer;
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media (max-width: map.get($grid-breakpoints, "md")) {
     max-width: 100%;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media (min-width: map.get($grid-breakpoints, "md")) {
     min-width: $toast-max-width;
     max-width: $toast-max-width;
   }

@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "~bootstrap/scss/utilities";
 
 // Add background, border, and text color utilities
@@ -81,7 +82,7 @@ $color-levels: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 
 // Define classes for z-index
 $indexes: () !default;
-$indexes: map-merge(
+$indexes: map.merge(
   (
     0: 0,
     1: 200,

@@ -12,7 +12,7 @@ import FormControl from './FormControl';
 import FormControlFeedback from './FormControlFeedback';
 import IconButton from '../IconButton';
 import Spinner from '../Spinner';
-import useArrowKeyNavigation from '../hooks/useArrowKeyNavigation';
+import useArrowKeyNavigation from '../hooks/useArrowKeyNavigationHook';
 import messages from './messages';
 
 const FormAutosuggest = forwardRef(

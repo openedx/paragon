@@ -3,7 +3,8 @@ name: Release CI
 on:
   push:
     branches:
-    - master
+    - next
+    - release-*
 jobs:
   release:
     name: Release

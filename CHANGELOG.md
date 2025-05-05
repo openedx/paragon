@@ -802,8 +802,8 @@ The following subcomponents have been added / reworked:
 
 * fix: update image sizing according to figma design
 
-Co-authored-by: vlasovmichael <mykhailo.vlasov@raccoongang.com>
-Co-authored-by: vzadorozhnii <vladyslav.zadorozhnii@raccoongang.com>
+Co-authored-by: vlasovmichael \<mykhailo.vlasov@raccoongang.com\>
+Co-authored-by: vzadorozhnii \<vladyslav.zadorozhnii@raccoongang.com\>
 
 
 

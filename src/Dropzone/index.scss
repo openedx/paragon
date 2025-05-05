@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "variables";
 
 .pgn__dropzone {
@@ -41,7 +42,7 @@
 
 .pgn__dropzone-generic-alert {
   width: 100%;
-  margin-bottom: map_get($spacers, 4);
+  margin-bottom: map.get($spacers, 4);
 
   .pgn__alert-message-wrapper .alert-message-content {
     > span {
@@ -56,7 +57,7 @@
   background: $light-300;
   border-radius: 50%;
   position: relative;
-  margin-bottom: map-get($spacers, 4);
+  margin-bottom: map.get($spacers, 4);
 }
 
 .pgn__dropzone__upload-icon {

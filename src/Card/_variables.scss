@@ -1,3 +1,4 @@
+@use "sass:map";
 // Card
 
 $card-spacer-y:                      .75rem !default;
@@ -21,8 +22,8 @@ $card-img-overlay-padding:           1.25rem !default;
 $card-group-margin:                  calc($grid-gutter-width / 2) !default;
 $card-deck-margin:                   $card-group-margin !default;
 $card-grid-margin:                   $card-group-margin !default;
-$card-deck-margin-bottom:            map_get($spacers, 3) !default;
-$card-grid-margin-bottom:            map_get($spacers, 3) !default;
+$card-deck-margin-bottom:            map.get($spacers, 3) !default;
+$card-grid-margin-bottom:            map.get($spacers, 3) !default;
 
 $card-columns-count:                 3 !default;
 $card-columns-gap:                   1.25rem !default;

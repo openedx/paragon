@@ -60,7 +60,7 @@ function FormGroupContextProvider({
   const [labelledByIds, registerLabelerId] = useIdList(controlId);
   const [isControlGroup, useSetIsControlGroupEffect] = useStateEffect(false);
 
-  const getControlProps = useCallback((controlProps) => {
+  const getControlProps = useCallback((controlProps: Record<string, any>) => {
     // labelledByIds from the list above should only be added to a control
     // if it the control is a group. We prefer adding a condition here because:
     //    - Hooks cannot be called inside conditionals

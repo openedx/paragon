@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "variables";
 
 @mixin triangle($color, $direction) {
@@ -66,8 +67,8 @@ $arrow-directions: top, right, bottom, left;
 @each $name, $colors in $annotation-variants {
   @each $direction in $arrow-directions {
     .pgn__annotation-#{$name}-#{$direction} {
-      background-color: map-get($colors, "background-color");
-      color: map-get($colors, "color");
+      background-color: map.get($colors, "background-color");
+      color: map.get($colors, "color");
 
       // set additional margin to arrow side of the Annotation
       margin-#{$direction}: $annotation-arrow-border-width + $annotation-arrow-side-margin;
@@ -85,7 +86,7 @@ $arrow-directions: top, right, bottom, left;
       }
 
       &::after {
-        @include triangle(map-get($colors, "background-color"), $direction);
+        @include triangle(map.get($colors, "background-color"), $direction);
 
         [dir="rtl"] & {
           @if $direction == left {
@@ -94,7 +95,7 @@ $arrow-directions: top, right, bottom, left;
             border-width:
               $annotation-arrow-border-width 0 $annotation-arrow-border-width
               $annotation-arrow-border-width;
-            border-left-color: map-get($colors, "background-color");
+            border-left-color: map.get($colors, "background-color");
           }
 
           @else if $direction == right {
@@ -103,7 +104,7 @@ $arrow-directions: top, right, bottom, left;
             border-width:
               $annotation-arrow-border-width $annotation-arrow-border-width
               $annotation-arrow-border-width 0;
-            border-right-color: map-get($colors, "background-color");
+            border-right-color: map.get($colors, "background-color");
           }
         }
       }
