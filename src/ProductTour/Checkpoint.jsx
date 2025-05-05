@@ -13,8 +13,8 @@ import messages from './messages';
 
 const Checkpoint = React.forwardRef(({
   body,
-  extendedTour,
   index,
+  onBack,
   onDismiss,
   placement,
   target,
@@ -88,7 +88,6 @@ const Checkpoint = React.forwardRef(({
   }, [target, checkpointVisible, placement]);
 
   const isLastCheckpoint = index + 1 === totalCheckpoints;
-  const isOnlyCheckpoint = totalCheckpoints === 1;
 
   return (
     <div
@@ -105,17 +104,15 @@ const Checkpoint = React.forwardRef(({
           values={{ step: index + 1 }}
         />
       </span>
-      {(title || !isOnlyCheckpoint) && (
-        <CheckpointHeader
-          extendedTour={extendedTour}
-          index={index}
-          onDismiss={onDismiss}
-          title={title}
-          totalCheckpoints={totalCheckpoints}
-        />
-      )}
+      <CheckpointHeader
+        index={index}
+        onDismiss={onDismiss}
+        title={title}
+        totalCheckpoints={totalCheckpoints}
+      />
       <CheckpointBody>{body}</CheckpointBody>
       <CheckpointActionRow
+        onBack={onBack}
         onDismiss={onDismiss}
         isLastCheckpoint={isLastCheckpoint}
         index={index}
@@ -134,10 +131,10 @@ const Checkpoint = React.forwardRef(({
 
 Checkpoint.defaultProps = {
   advanceButtonText: null,
+  backButtonText: null,
   body: null,
   dismissButtonText: null,
   endButtonText: null,
-  extendedTour: false,
   placement: 'top',
   title: null,
   showDismissButton: undefined,
@@ -146,19 +143,22 @@ Checkpoint.defaultProps = {
 Checkpoint.propTypes = {
   /** The text displayed on the button used to advance the tour for the given Checkpoint. */
   advanceButtonText: PropTypes.node,
+  /** The text displayed on the button used go back in the tour for the given Checkpoint. */
+  backButtonText: PropTypes.node,
   /** The text displayed in the body of the Checkpoint */
   body: PropTypes.node,
   /** The text displayed on the button used to dismiss the tour for the given Checkpoint. */
   dismissButtonText: PropTypes.node,
   /** The text displayed on the button used to end the tour for the given Checkpoint. */
   endButtonText: PropTypes.node,
-  /** A boolean that can customize the header to accommodate longer tours */
-  extendedTour: PropTypes.bool,
   /** The current index of the given Checkpoint */
   index: PropTypes.number.isRequired,
   /** A function that runs when triggering the `onClick` event of the advance
    * button for the given Checkpoint. */
   onAdvance: PropTypes.func.isRequired,
+  /** A function that runs when triggering the `onBack` event of the back
+   * button for the given Checkpoint. */
+  onBack: PropTypes.func.isRequired,
   /** A function that runs when triggering the `onClick` event of the dismiss
    * button for the given Checkpoint. */
   onDismiss: PropTypes.func.isRequired,

@@ -11,6 +11,7 @@ const popperMock = jest.spyOn(popper, 'createPopper');
 
 describe('Checkpoint', () => {
   const handleAdvance = jest.fn();
+  const handleBack = jest.fn();
   const handleDismiss = jest.fn();
   const handleEnd = jest.fn();
 
@@ -29,11 +30,13 @@ describe('Checkpoint', () => {
           <div id="target-element">...</div>
           <Checkpoint
             advanceButtonText="Next"
+            backButtonText="Back"
             body="Lorem ipsum checkpoint body"
             dismissButtonText="Dismiss"
             endButtonText="End"
             index={1}
             onAdvance={handleAdvance}
+            onBack={handleBack}
             onDismiss={handleDismiss}
             onEnd={handleEnd}
             target="#target-element"
@@ -44,26 +47,15 @@ describe('Checkpoint', () => {
       );
     });
 
-    it('renders correct active breadcrumb', () => {
-      expect(screen.getByText('Checkpoint title')).toBeInTheDocument();
-      const breadcrumbs = screen.getAllByTestId('pgn__checkpoint-breadcrumb_', { exact: false });
-      expect(breadcrumbs.length).toEqual(5);
-      expect(breadcrumbs[0].classList).toContain('pgn__checkpoint-breadcrumb_inactive');
-      expect(breadcrumbs[1].classList).toContain('pgn__checkpoint-breadcrumb_active');
-      expect(breadcrumbs[2].classList).toContain('pgn__checkpoint-breadcrumb_inactive');
-      expect(breadcrumbs[3].classList).toContain('pgn__checkpoint-breadcrumb_inactive');
-      expect(breadcrumbs[4].classList).toContain('pgn__checkpoint-breadcrumb_inactive');
-    });
-
-    it('only renders advance and dismiss buttons (i.e. does not render end button)', () => {
-      expect(screen.getByRole('button', { name: 'Dismiss' })).toBeInTheDocument();
+    it('only renders advance and back buttons (i.e. does not render end button)', () => {
+      expect(screen.getByRole('button', { name: 'Back' })).toBeInTheDocument();
       expect(screen.getByRole('button', { name: 'Next' })).toBeInTheDocument();
     });
 
-    it('dismiss button onClick calls handleDismiss', async () => {
-      const dismissButton = screen.getByRole('button', { name: 'Dismiss' });
-      await userEvent.click(dismissButton);
-      expect(handleDismiss).toHaveBeenCalledTimes(1);
+    it('back button onClick calls handleBack', async () => {
+      const backButton = screen.getByRole('button', { name: 'Back' });
+      await userEvent.click(backButton);
+      expect(handleBack).toHaveBeenCalledTimes(1);
     });
 
     it('advance button onClick calls handleAdvance', async () => {

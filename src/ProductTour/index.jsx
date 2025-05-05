@@ -6,9 +6,10 @@ import Checkpoint from './Checkpoint';
 const ProductTour = React.forwardRef(({ tours }, ref) => {
   const tourValue = tours.find((tour) => tour.enabled);
   const {
-    enabled, extendedTour, checkpoints = [], startingIndex, onEscape, onEnd,
+    enabled, checkpoints = [], startingIndex, onEscape, onEnd, onBack,
     onDismiss: tourOnDismiss, advanceButtonText: tourAdvanceButtonText,
     dismissButtonText: tourDismissButtonText, endButtonText: tourEndButtonText,
+    backButtonText: tourBackButtonText,
   } = tourValue || {};
   const [currentCheckpointData, setCurrentCheckpointData] = useState(null);
   const [index, setIndex] = useState(0);
@@ -16,7 +17,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
   const [prunedCheckpoints, setPrunedCheckpoints] = useState([]);
   const {
     title, body, onAdvance, onDismiss, advanceButtonText, dismissButtonText,
-    endButtonText, placement, target, showDismissButton,
+    endButtonText, backButtonText, placement, target, showDismissButton,
   } = currentCheckpointData || {};
 
   /**
@@ -71,6 +72,13 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     }
   };
 
+  const handleBack = () => {
+    setIndex(index - 1);
+    if (onBack) {
+      onBack();
+    }
+  };
+
   const handleDismiss = () => {
     setIndex(0);
     setIsTourEnabled(false);
@@ -108,8 +116,9 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
       currentCheckpointData={currentCheckpointData}
       dismissButtonText={dismissButtonText || tourDismissButtonText}
       endButtonText={endButtonText || tourEndButtonText}
-      extendedTour={extendedTour}
+      backButtonText={backButtonText || tourBackButtonText}
       index={index}
+      onBack={handleBack}
       onAdvance={handleAdvance}
       onDismiss={handleDismiss}
       onEnd={handleEnd}
@@ -126,20 +135,23 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
 ProductTour.defaultProps = {
   tours: {
     advanceButtonText: '',
+    backButtonText: '',
     checkpoints: {
       advanceButtonText: '',
+      backButtonText: '',
       body: '',
       dismissButtonText: '',
       endButtonText: '',
       onAdvance: () => {},
       onDismiss: () => {},
+      onBack: () => {},
       placement: 'top',
       title: '',
       showDismissButton: undefined,
     },
     dismissButtonText: '',
     endButtonText: '',
-    extendedTour: false,
+    onBack: () => {},
     onDismiss: () => {},
     onEnd: () => {},
     onEscape: () => {},
@@ -151,11 +163,16 @@ ProductTour.propTypes = {
   tours: PropTypes.arrayOf(PropTypes.shape({
     /** The text displayed on all buttons used to advance the tour. */
     advanceButtonText: PropTypes.node,
+    /** The text displayed on all buttons used to go back in the tour */
+    backButtonText: PropTypes.node,
     /** An array comprised of checkpoint objects supporting the following values: */
     checkpoints: PropTypes.arrayOf(PropTypes.shape({
       /** The text displayed on the button used to advance the tour for the given Checkpoint
        * (overrides the* `advanceButtonText` defined in the parent tour object). */
       advanceButtonText: PropTypes.node,
+      /** The text displayed on the button used to go back in the tour for the given Checkpoint
+       * (overrides the* `backButtonText` defined in the parent tour object). */
+      backButtonText: PropTypes.node,
       /** The text displayed in the body of the Checkpoint */
       body: PropTypes.node,
       /** The text displayed on the button used to dismiss the tour for the given Checkpoint
@@ -191,8 +208,8 @@ ProductTour.propTypes = {
     enabled: PropTypes.bool.isRequired,
     /** The text displayed on the button used to end the tour. */
     endButtonText: PropTypes.node,
-    /** A boolean that can customize the header to accommodate longer tours */
-    extendedTour: PropTypes.bool,
+    /** A function that runs when triggering the `onBack` event of the back button. */
+    onBack: PropTypes.func,
     /** A function that runs when triggering the `onClick` event of the dismiss button. */
     onDismiss: PropTypes.func,
     /** A function that runs when triggering the `onClick` event of the end button. */

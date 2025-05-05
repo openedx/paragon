@@ -24,6 +24,7 @@ The checkpoint objects themselves have additional props that can override the pr
     const myFirstTour = {
       tourId: 'myFirstTour',
       advanceButtonText: 'Next',
+      backButtonText: 'Back',
       dismissButtonText: 'Dismiss',
       endButtonText: 'Okay',
       enabled: isTourEnabled,

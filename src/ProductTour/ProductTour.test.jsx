@@ -135,12 +135,12 @@ describe('<ProductTour />', () => {
 
   describe('one enabled tour', () => {
     describe('with default settings', () => {
-      it('renders checkpoint with correct title, body, and breadcrumbs', () => {
+      it('renders checkpoint with correct title, body, and page index', () => {
         render(<ProductTourWrapper tours={[tourData]} />);
 
         expect(screen.getByRole('dialog', { name: 'Checkpoint 1' })).toBeInTheDocument();
         expect(screen.getByText('Checkpoint 1')).toBeInTheDocument();
-        expect(screen.getByTestId('pgn__checkpoint-breadcrumb_active')).toBeInTheDocument();
+        expect(screen.getByText('1 of 4')).toBeInTheDocument();
       });
 
       it('onClick of advance button advances to next checkpoint', async () => {

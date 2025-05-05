@@ -1,42 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { useIntl } from 'react-intl';
 
-import CheckpointBreadcrumbs from './CheckpointBreadcrumbs';
+import Icon from '../Icon';
+import IconButton from '../IconButton';
+import { Close } from '../../icons';
 import CheckpointTitle from './CheckpointTitle';
-import CheckpointIndex from './CheckpointIndex';
 
 const CheckpointHeader = React.forwardRef(({
-  extendedTour, index, onDismiss, title, totalCheckpoints,
+  index, onDismiss, title, totalCheckpoints,
 }) => {
-  const className = classNames({
-    'pgn__checkpoint-header': !extendedTour,
-    'pgn__checkpoint-header-extended': extendedTour,
+  const intl = useIntl();
+  const oneBasedIndex = index + 1;
+
+  const closeAltText = intl.formatMessage({
+    id: 'pgn.ProductTour.checkpointHeader.close',
+    defaultMessage: 'Close tour',
+    description: 'Close alt text for ProductTour component',
   });
 
   return (
-    <div className={className}>
-      {!extendedTour && (
+    <div className="pgn__checkpoint-header-extended">
+      {index === 0 && (
         <>
           <CheckpointTitle>{title}</CheckpointTitle>
-          <CheckpointBreadcrumbs currentIndex={index} totalCheckpoints={totalCheckpoints} />
+          <p className="pgn__checkpoint-page-index">{oneBasedIndex} of {totalCheckpoints}</p>
         </>
       )}
-      {extendedTour && (
-        <CheckpointIndex index={index} onDismiss={onDismiss} title={title} totalCheckpoints={totalCheckpoints} />
+      {index !== 0 && (
+        <>
+          <p className="pgn__checkpoint-page-index">{oneBasedIndex} of {totalCheckpoints}</p>
+          <IconButton
+            iconAs={Icon}
+            src={Close}
+            alt={closeAltText}
+            onClick={onDismiss}
+            variant="primary"
+          />
+        </>
       )}
     </div>
   );
 });
 
 CheckpointHeader.defaultProps = {
-  extendedTour: false,
   title: '',
 };
 
 CheckpointHeader.propTypes = {
-  /** A boolean that can customize the header to accommodate longer tours */
-  extendedTour: PropTypes.bool,
   /** The current index of the given Checkpoint */
   index: PropTypes.number.isRequired,
   /** A function that runs when triggering the `onClick` event of the dismiss
