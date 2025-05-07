@@ -46,6 +46,7 @@ function Header({ siteTitle, showMinimizedTitle }: IHeaderProps) {
             size="fullscreen"
             hasCloseButton
             isFullscreenOnMobile
+            isOverflowVisible={false}
           >
             <div className="pgn-doc__header-home--menu">
               <Menu />

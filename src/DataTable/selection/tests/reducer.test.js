@@ -25,6 +25,7 @@ describe('DataTable selections reducer', () => {
     const action = setSelectedRowsAction(rows, itemCount);
     const updatedState = selectionsReducer(defaultInitialState, action);
     expect(updatedState).toEqual({
+      ...defaultInitialState,
       isEntireTableSelected: true,
       selectedRows: rows,
     });
@@ -38,6 +39,7 @@ describe('DataTable selections reducer', () => {
     const updatedState = selectionsReducer(initialState, action);
     expect(updatedState).toEqual({
       isEntireTableSelected: true,
+      isSelectAllEnabled: true,
       selectedRows: initialState.selectedRows,
     });
   });
@@ -70,6 +72,7 @@ describe('DataTable selections reducer', () => {
     const action = addSelectedRowAction(row, itemCount);
     const updatedState = selectionsReducer(defaultInitialState, action);
     expect(updatedState).toEqual({
+      ...defaultInitialState,
       selectedRows: [row],
       isEntireTableSelected: true,
     });
@@ -88,6 +91,7 @@ describe('DataTable selections reducer', () => {
     const rows = [{ id: 1 }, { id: 2 }, { id: 3 }];
     const initialState = {
       ...defaultInitialState,
+      isSelectAllEnabled: false,
       selectedRows: rows,
     };
     const action = clearPageSelectionAction([1, 2]);
