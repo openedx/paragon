@@ -28,7 +28,6 @@ describe('<ProductTour />', () => {
 
   const disabledTourData = {
     advanceButtonText: 'Next',
-    dismissButtonText: 'Dismiss',
     enabled: false,
     endButtonText: 'Okay',
     onDismiss: handleDismiss,
@@ -46,7 +45,6 @@ describe('<ProductTour />', () => {
   const tourData = {
     advanceButtonText: 'Next',
     backButtonText: 'Back',
-    dismissButtonText: 'Dismiss',
     enabled: true,
     endButtonText: 'Okay',
     onDismiss: handleDismiss,
@@ -129,11 +127,11 @@ describe('<ProductTour />', () => {
         expect(screen.getByRole('dialog', { name: 'Checkpoint 1' })).toBeInTheDocument();
 
         // Click the dismiss button
-        const dismissButton = screen.getByRole('button', { name: 'Dismiss' });
-        expect(dismissButton).toBeInTheDocument();
+        const closeButton = screen.getByRole('button', { name: 'Close tour' });
+        expect(closeButton).toBeInTheDocument();
 
         await act(async () => {
-          await userEvent.click(dismissButton);
+          await userEvent.click(closeButton);
         });
 
         // Verify no Checkpoints have rendered
@@ -162,7 +160,6 @@ describe('<ProductTour />', () => {
         const { rerender } = render(<ProductTourWrapper tours={[tourData]} />);
         // Back button only appears when you are not on the first step of the tour
         expect(screen.getByRole('heading', { name: 'Checkpoint 1' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Dismiss' })).toBeInTheDocument();
         expect(screen.queryByRole('button', { name: 'Back' })).not.toBeInTheDocument();
         // Advance the tour
         await act(async () => {
@@ -230,7 +227,6 @@ describe('<ProductTour />', () => {
     describe('with Checkpoint override settings', () => {
       const overrideTourData = {
         advanceButtonText: 'Next',
-        dismissButtonText: 'Dismiss',
         enabled: true,
         endButtonText: 'Okay',
         onDismiss: handleDismiss,
@@ -254,8 +250,7 @@ describe('<ProductTour />', () => {
             onDismiss: customOnDismiss,
             onAdvance: customOnAdvance,
             advanceButtonText: 'Override advance',
-            dismissButtonText: 'Override dismiss',
-            showDismissButton: true,
+            backButtonText: 'Override back',
           },
           {
             target: '#target-4',
@@ -284,16 +279,16 @@ describe('<ProductTour />', () => {
 
         expect(screen.getByText('Checkpoint 4')).toBeInTheDocument();
       });
-      it('applies override for dismissButtonText', () => {
+      it('applies override for backButtonText', () => {
         render(<ProductTourWrapper tours={[overrideTourData]} />);
-        expect(screen.getByRole('button', { name: 'Override dismiss' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Override back' })).toBeInTheDocument();
       });
 
       it('calls customHandleDismiss onClick of dismiss button', async () => {
         render(<ProductTourWrapper tours={[overrideTourData]} />);
-        const dismissButton = screen.getByRole('button', { name: 'Override dismiss' });
+        const closeButton = screen.getByRole('button', { name: 'Close tour' });
         await act(async () => {
-          await userEvent.click(dismissButton);
+          await userEvent.click(closeButton);
         });
         expect(customOnDismiss).toHaveBeenCalledTimes(1);
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
@@ -329,7 +324,6 @@ describe('<ProductTour />', () => {
       it('does not render', () => {
         const badTourData = {
           advanceButtonText: 'Next',
-          dismissButtonText: 'Dismiss',
           enabled: true,
           endButtonText: 'Okay',
           onDismiss: handleDismiss,
@@ -352,7 +346,6 @@ describe('<ProductTour />', () => {
       it('advances to next valid Checkpoint', () => {
         const badTourData = {
           advanceButtonText: 'Next',
-          dismissButtonText: 'Dismiss',
           enabled: true,
           endButtonText: 'Okay',
           onDismiss: handleDismiss,
@@ -385,7 +378,6 @@ describe('<ProductTour />', () => {
     it('renders first enabled tour', () => {
       const secondEnabledTourData = {
         advanceButtonText: 'Next',
-        dismissButtonText: 'Dismiss',
         enabled: true,
         endButtonText: 'Okay',
         onDismiss: handleDismiss,
