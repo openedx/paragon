@@ -183,14 +183,14 @@
     var(--pgn-elevation-box-shadow-up-3-2-color);
 
   --pgn-elevation-box-shadow-up-4:
-    var(--pgn-elevation-box-shadow-up-3-1-offset-x)
-    var(--pgn-elevation-box-shadow-up-3-1-offset-y)
-    var(--pgn-elevation-box-shadow-up-3-1-blur)
-    var(--pgn-elevation-box-shadow-up-3-1-color),
-    var(--pgn-elevation-box-shadow-up-3-2-offset-x)
-    var(--pgn-elevation-box-shadow-up-3-2-offset-y)
-    var(--pgn-elevation-box-shadow-up-3-2-blur)
-    var(--pgn-elevation-box-shadow-up-3-2-color);
+    var(--pgn-elevation-box-shadow-up-4-1-offset-x)
+    var(--pgn-elevation-box-shadow-up-4-1-offset-y)
+    var(--pgn-elevation-box-shadow-up-4-1-blur)
+    var(--pgn-elevation-box-shadow-up-4-1-color),
+    var(--pgn-elevation-box-shadow-up-4-2-offset-x)
+    var(--pgn-elevation-box-shadow-up-4-2-offset-y)
+    var(--pgn-elevation-box-shadow-up-4-2-blur)
+    var(--pgn-elevation-box-shadow-up-4-2-color);
 
   --pgn-elevation-box-shadow-up-5:
     var(--pgn-elevation-box-shadow-up-5-1-offset-x)
