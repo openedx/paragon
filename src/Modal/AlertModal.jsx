@@ -20,11 +20,11 @@ function AlertModal({
       <ModalDialog.Header>
         <ModalDialog.Title>
           {icon && (
-          <Icon
-            data-testid="title-icon"
-            src={icon}
-            className={classNames('pgn__alert-modal__title_icon')}
-          />
+            <Icon
+              data-testid="title-icon"
+              src={icon}
+              className={classNames('pgn__alert-modal__title_icon')}
+            />
           )}
           {props.title}
         </ModalDialog.Title>

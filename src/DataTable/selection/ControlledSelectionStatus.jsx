@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import DataTableContext from '../DataTableContext';
@@ -7,34 +7,19 @@ import BaseSelectionStatus from './BaseSelectionStatus';
 import {
   clearSelectionAction,
   setSelectAllRowsAllPagesAction,
-  setSelectedRowsAction,
 } from './data/actions';
-import {
-  getUnselectedPageRows,
-  getRowIds,
-} from './data/helpers';
 
 function ControlledSelectionStatus({ className, clearSelectionText }) {
   const {
     itemCount,
     page,
-    controlledTableSelections: [{ selectedRows, isEntireTableSelected }, dispatch],
+    controlledTableSelections: [
+      { selectedRows, isSelectAllEnabled },
+      selectionsDispatch,
+    ],
   } = useContext(DataTableContext);
 
-  useEffect(
-    () => {
-      if (isEntireTableSelected) {
-        const selectedRowIds = getRowIds(selectedRows);
-        const unselectedPageRows = getUnselectedPageRows(selectedRowIds, page);
-        if (unselectedPageRows.length) {
-          dispatch(setSelectedRowsAction(unselectedPageRows, itemCount));
-        }
-      }
-    },
-    [isEntireTableSelected, selectedRows, itemCount, page, dispatch],
-  );
-
-  const numSelectedRows = isEntireTableSelected ? itemCount : selectedRows.length;
+  const numSelectedRows = itemCount === selectedRows.length || isSelectAllEnabled ? itemCount : selectedRows.length;
   const numSelectedRowsOnPage = (page || []).filter(r => r.isSelected).length;
 
   const selectionStatusProps = {
@@ -42,8 +27,8 @@ function ControlledSelectionStatus({ className, clearSelectionText }) {
     numSelectedRows,
     numSelectedRowsOnPage,
     clearSelectionText,
-    onSelectAll: () => dispatch(setSelectAllRowsAllPagesAction()),
-    onClear: () => dispatch(clearSelectionAction()),
+    onSelectAll: () => selectionsDispatch(setSelectAllRowsAllPagesAction()),
+    onClear: () => selectionsDispatch(clearSelectionAction()),
   };
   return <BaseSelectionStatus {...selectionStatusProps} />;
 }

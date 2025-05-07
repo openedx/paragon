@@ -1,12 +1,10 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import userEvent from '@testing-library/user-event';
 
 import Toast from '.';
 
-/* eslint-disable-next-line react/prop-types */
-function ToastWrapper({ children, ...props }) {
+function ToastWrapper({ children, ...props }: React.ComponentProps<typeof Toast>) {
   return (
     <IntlProvider locale="en">
       <Toast {...props}>
@@ -17,7 +15,7 @@ function ToastWrapper({ children, ...props }) {
 }
 
 describe('<Toast />', () => {
-  const onCloseHandler = () => {};
+  const onCloseHandler = jest.fn();
   const props = {
     onClose: onCloseHandler,
     show: true,
@@ -44,7 +42,7 @@ describe('<Toast />', () => {
         {...props}
         action={{
           label: 'Optional action',
-          onClick: () => {},
+          onClick: jest.fn(),
         }}
       >
         Success message.
@@ -55,38 +53,50 @@ describe('<Toast />', () => {
   });
   it('autohide is set to false on onMouseOver and true on onMouseLeave', async () => {
     render(
-      <ToastWrapper data-testid="toast" {...props}>
+      <ToastWrapper {...props}>
         Success message.
       </ToastWrapper>,
     );
-    const toast = screen.getByTestId('toast');
+    const toast = screen.getByRole('alert');
     await userEvent.hover(toast);
     setTimeout(() => {
-      expect(screen.getByText('Success message.')).toEqual(true);
+      expect(screen.getByText('Success message.')).toBeTruthy();
       expect(toast).toHaveLength(1);
     }, 6000);
     await userEvent.unhover(toast);
     setTimeout(() => {
-      expect(screen.getByText('Success message.')).toEqual(false);
+      expect(screen.getByText('Success message.')).toBeTruthy();
       expect(toast).toHaveLength(1);
     }, 6000);
   });
   it('autohide is set to false onFocus and true onBlur', async () => {
     render(
-      <ToastWrapper data-testid="toast" {...props}>
+      <ToastWrapper {...props}>
         Success message.
       </ToastWrapper>,
     );
-    const toast = screen.getByTestId('toast');
+    const toast = screen.getByRole('alert');
     toast.focus();
     setTimeout(() => {
-      expect(screen.getByText('Success message.')).toEqual(true);
+      expect(screen.getByText('Success message.')).toBeTruthy();
       expect(toast).toHaveLength(1);
     }, 6000);
     await userEvent.tab();
     setTimeout(() => {
-      expect(screen.getByText('Success message.')).toEqual(false);
+      expect(screen.getByText('Success message.')).toBeTruthy();
       expect(toast).toHaveLength(1);
     }, 6000);
+  });
+  it('should contain aria-atomic and aria-live', async () => {
+    render(
+      <ToastWrapper {...props}>
+        Success message.
+      </ToastWrapper>,
+    );
+
+    const toast = screen.getByRole('alert');
+
+    expect(toast).toHaveAttribute('aria-atomic', 'true');
+    expect(toast).toHaveAttribute('aria-live', 'assertive');
   });
 });

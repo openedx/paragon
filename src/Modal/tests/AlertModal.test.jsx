@@ -42,6 +42,7 @@ describe('<AlertModal />', () => {
         isOpen={isOpen}
         onClose={closeFn}
         footerNode={<p>footer</p>}
+        isOverflowVisible={false}
       >
         <Body />
       </AlertModal>,
@@ -60,6 +61,7 @@ describe('<AlertModal />', () => {
           onClose={closeFn}
           icon={Info}
           footerNode={<p>footer</p>}
+          isOverflowVisible={false}
         >
           <Body />
         </AlertModal>,
@@ -77,6 +79,7 @@ describe('<AlertModal />', () => {
           onClose={closeFn}
           icon={Info}
           footerNode={<p>footer</p>}
+          isOverflowVisible={false}
         >
           <Body />
         </AlertModal>,
@@ -94,6 +97,7 @@ describe('<AlertModal />', () => {
           onClose={closeFn}
           icon={Info}
           footerNode={<p>footer</p>}
+          isOverflowVisible={false}
         >
           <Body />
         </AlertModal>,

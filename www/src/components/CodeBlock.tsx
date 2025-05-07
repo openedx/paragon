@@ -12,6 +12,7 @@ import { Link } from 'gatsby';
 import axios from 'axios';
 import classNames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
+import debounce from 'lodash.debounce';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/duotoneDark';
 import {
@@ -165,6 +166,7 @@ function CodeBlock({
             GatsbyLink: Link,
             classNames,
             uuidv4,
+            debounce,
           }}
           theme={theme}
         >

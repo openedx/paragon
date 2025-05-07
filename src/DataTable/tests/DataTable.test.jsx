@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as reactTable from 'react-table';
 import { IntlProvider } from 'react-intl';
@@ -212,7 +212,6 @@ describe('<DataTable />', () => {
       pageCount: 3,
       fetchData: jest.fn(),
     };
-
     render(<DataTableWrapper {...propsWithSelection} />);
     const filtersButton = screen.getByRole('button', { name: 'Filters' });
 
@@ -228,6 +227,10 @@ describe('<DataTable />', () => {
     // A filtered array is returned from the backend,
     // and the element counter displays its length.
     expect(selectAllButton).toHaveTextContent('Select all 7');
+
+    await userEvent.click(selectAllButton);
+
+    expect(screen.getByText('All 7 selected')).toBeInTheDocument();
   });
 
   describe('[legacy] controlled table selections', () => {
@@ -242,7 +245,7 @@ describe('<DataTable />', () => {
 
       const contextValue = JSON.parse(contextDiv.getAttribute('data-contextvalue'));
       expect(contextValue.controlledTableSelections).toEqual([
-        { selectedRows: [], isEntireTableSelected: false },
+        { selectedRows: [], isEntireTableSelected: false, isSelectAllEnabled: false },
         null,
       ]);
     });
@@ -311,6 +314,99 @@ describe('<DataTable />', () => {
 
       expect(mockOnSelectedRowsChange).toHaveBeenCalledTimes(1);
       expect(mockOnSelectedRowsChange).toHaveBeenCalledWith({});
+    });
+    it('Selects all rows across all pages with ControlledSelectionStatus component', async () => {
+      const selectColumn = {
+        id: 'selection',
+        Header: DataTable.ControlledSelectHeader,
+        Cell: DataTable.ControlledSelect,
+        disableSortBy: true,
+      };
+      const propsWithSelection = {
+        ...props,
+        isPaginated: true,
+        isSelectable: true,
+        manualSelectColumn: selectColumn,
+        SelectionStatusComponent: DataTable.ControlledSelectionStatus,
+        initialState: {
+          pageIndex: 0,
+          pageSize: 2,
+          selectedRowIds: {
+            1: true,
+          },
+        },
+      };
+      render(<DataTableWrapper {...propsWithSelection} />);
+      const selectAllButton = screen.getByTestId('test_selection_state_select_all_button');
+
+      await userEvent.click(selectAllButton);
+
+      expect(screen.getByText('All 7 selected')).toBeInTheDocument();
+    });
+
+    it('Select all item rows with ControlledSelectionStatus Component', async () => {
+      const selectColumn = {
+        id: 'selection',
+        Header: DataTable.ControlledSelectHeader,
+        Cell: DataTable.ControlledSelect,
+        disableSortBy: true,
+      };
+      const propsWithSelection = {
+        ...props,
+        isPaginated: true,
+        isSelectable: true,
+        manualSelectColumn: selectColumn,
+        SelectionStatusComponent: DataTable.ControlledSelectionStatus,
+        initialState: {
+          pageIndex: 0,
+          pageSize: 10,
+        },
+      };
+      render(<DataTableWrapper {...propsWithSelection} />);
+      const selectAllRowsButton = screen.getByTitle('Toggle All Current Page Rows Selected');
+
+      await userEvent.click(selectAllRowsButton);
+
+      expect(screen.getByText('All 7 selected')).toBeInTheDocument();
+    });
+
+    it('Select all item rows individually with ControlledSelectionStatus Component', async () => {
+      const selectColumn = {
+        id: 'selection',
+        Header: DataTable.ControlledSelectHeader,
+        Cell: DataTable.ControlledSelect,
+        disableSortBy: true,
+      };
+      const propsWithSelection = {
+        ...props,
+        isPaginated: true,
+        isSelectable: true,
+        manualSelectColumn: selectColumn,
+        SelectionStatusComponent: DataTable.ControlledSelectionStatus,
+        initialState: {
+          pageIndex: 0,
+          pageSize: 4,
+        },
+      };
+      render(<DataTableWrapper {...propsWithSelection} />);
+
+      const selectAllRows = () => {
+        const selectRowsButtons = screen.getAllByTitle('Toggle Row Selected');
+        selectRowsButtons.forEach(async (button) => {
+          await userEvent.click(button);
+        });
+      };
+      // Select all page 1
+      selectAllRows();
+
+      // Paginate to page 2
+      const nextPageButton2 = screen.getByLabelText('Next, Page 2');
+      await userEvent.click(nextPageButton2);
+
+      // Select all page 2
+      selectAllRows();
+
+      await waitFor(() => expect(screen.getByText('All 7 selected')).toBeInTheDocument());
     });
   });
 });
