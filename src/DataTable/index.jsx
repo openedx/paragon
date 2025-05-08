@@ -33,8 +33,10 @@ import DataTableLayout from './DataTableLayout';
 import ExpandAll from './ExpandAll';
 import ExpandRow from './ExpandRow';
 
-import { useSelectionActions } from './hooks';
-import selectionsReducer, { initialState as initialSelectionsState } from './selection/data/reducer';
+import { useDataTableSelections, useSelectionActions } from './hooks';
+import selectionsReducer, {
+  initialState as initialSelectionsState,
+} from './selection/data/reducer';
 
 function DataTable({
   columns, data, defaultColumnValues, additionalColumns, isSelectable,
@@ -79,12 +81,13 @@ function DataTable({
               selectedRowIds: {},
             };
           }
-          /*  Note: We override the `toggleRowSelected` action from react-table
-              because we need to preserve the order of the selected rows.
-              While `selectedRowIds` is an object that contains the selected rows as key-value pairs,
-              it does not maintain the order of selection. Therefore, we have added the `selectedRowsOrdered` property
-              to keep track of the order in which the rows were selected.
-          */
+          /**
+           * Note: We override the `toggleRowSelected` action from react-table
+           * because we need to preserve the order of the selected rows.
+           * while `selectedRowIds` is an object that contains the selected rows as key-value pairs,
+           * it does not maintain the order of selection. Therefore, we have added the `selectedRowsOrdered` property
+           * to keep track of the order in which the rows were selected.
+           */
           case 'toggleRowSelected': {
             const rowIndex = parseInt(action.id, 10);
             const { selectedRowsOrdered = [] } = previousState;
@@ -185,6 +188,15 @@ function DataTable({
 
   const selectionActions = useSelectionActions(instance, controlledTableSelections);
 
+  useDataTableSelections({
+    selections,
+    selectionsDispatch,
+    itemCount,
+    selectedRows,
+    page: instance.page,
+    isAllPageRowsSelected: instance.isAllPageRowsSelected,
+  });
+
   const enhancedInstance = {
     ...instance,
     manualFilters,
@@ -216,12 +228,12 @@ function DataTable({
         })}
         >
           {children || (
-          <>
-            <TableControlBar />
-            <Table />
-            <EmptyTableComponent content="No results found" />
-            <TableFooter />
-          </>
+            <>
+              <TableControlBar />
+              <Table />
+              <EmptyTableComponent content="No results found" />
+              <TableFooter />
+            </>
           )}
         </div>
       </DataTableLayout>
@@ -328,7 +340,7 @@ DataTable.propTypes = {
     Cell: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
   })),
   /** Function that will fetch table data. Called when page size, page index or filters change.
-    * Meant to be used with manual filters and pagination */
+   * Meant to be used with manual filters and pagination */
   fetchData: PropTypes.func,
   /** Initial state passed to react-table's documentation https://github.com/TanStack/table/blob/v7/docs/src/pages/docs/api/useTable.md */
   initialState: PropTypes.shape({
@@ -340,7 +352,7 @@ DataTable.propTypes = {
     selectedRowsOrdered: PropTypes.arrayOf(PropTypes.number),
   }),
   /** Table options passed to react-table's useTable hook. Will override some options passed in to DataTable, such
-     as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
+   as: data, columns, defaultColumn, manualFilters, manualPagination, manualSortBy, and initialState */
   initialTableOptions: PropTypes.shape({}),
   /** Actions to be performed on the table. Called with the table instance. Not displayed if rows are selected. */
   itemCount: PropTypes.number.isRequired,
