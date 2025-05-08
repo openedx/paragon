@@ -130,11 +130,9 @@ const Checkpoint = React.forwardRef(({
 Checkpoint.defaultProps = {
   advanceButtonText: null,
   body: null,
-  dismissButtonText: null,
   endButtonText: null,
   placement: 'top',
   title: null,
-  showDismissButton: undefined,
 };
 
 Checkpoint.propTypes = {
@@ -142,8 +140,6 @@ Checkpoint.propTypes = {
   advanceButtonText: PropTypes.node,
   /** The text displayed in the body of the Checkpoint */
   body: PropTypes.node,
-  /** The text displayed on the button used to dismiss the tour for the given Checkpoint. */
-  dismissButtonText: PropTypes.node,
   /** The text displayed on the button used to end the tour for the given Checkpoint. */
   endButtonText: PropTypes.node,
   /** The current index of the given Checkpoint */
@@ -168,8 +164,6 @@ Checkpoint.propTypes = {
   title: PropTypes.node,
   /** The total number of Checkpoints in a tour */
   totalCheckpoints: PropTypes.number.isRequired,
-  /** Enforces visibility of the dismiss button under all circumstances */
-  showDismissButton: PropTypes.bool,
 };
 
 export default Checkpoint;

@@ -1,4 +1,4 @@
-@import "variables";
+@import url("variables");
 
 $checkpoint-arrow-top-color: solid $checkpoint-arrow-width $checkpoint-border-color;
 $checkpoint-arrow-default-color: solid $checkpoint-arrow-width $checkpoint-background-color;
@@ -9,7 +9,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
   background: $checkpoint-background-color;
   border-top: $checkpoint-border-width solid $checkpoint-border-color;
   border-radius: $border-radius;
-  padding: map_get($spacers, 4);
+  padding: map_get($spacers, 3\.5);
   box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .3);
   z-index: $checkpoint-z-index;
   max-width: $checkpoint-max-width;
@@ -88,12 +88,19 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
   .pgn__checkpoint-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: map_get($spacers, 2\.5);
+    margin-bottom: map_get($spacers, 2);
+    align-items: center;
+    height: 30px;
   }
 
   #pgn__checkpoint-title {
     font-size: $h3-font-size;
     margin-inline-end: map_get($spacers, 2\.5);
+    margin-bottom: .5rem;
+  }
+
+  .pgn__checkpoint-page-index {
+    font-size: $small-font-size;
     margin-bottom: 0;
   }
 }

@@ -6,17 +6,17 @@ import Checkpoint from './Checkpoint';
 const ProductTour = React.forwardRef(({ tours }, ref) => {
   const tourValue = tours.find((tour) => tour.enabled);
   const {
-    enabled, checkpoints = [], startingIndex, onEscape, onEnd, onDismiss: tourOnDismiss,
-    advanceButtonText: tourAdvanceButtonText, dismissButtonText: tourDismissButtonText,
-    endButtonText: tourEndButtonText,
+    enabled, checkpoints = [], startingIndex, onEscape, onEnd, onBack,
+    onDismiss: tourOnDismiss, advanceButtonText: tourAdvanceButtonText,
+    endButtonText: tourEndButtonText, backButtonText: tourBackButtonText,
   } = tourValue || {};
   const [currentCheckpointData, setCurrentCheckpointData] = useState(null);
   const [index, setIndex] = useState(0);
   const [isTourEnabled, setIsTourEnabled] = useState(false);
   const [prunedCheckpoints, setPrunedCheckpoints] = useState([]);
   const {
-    title, body, onAdvance, onDismiss, advanceButtonText, dismissButtonText,
-    endButtonText, placement, target, showDismissButton,
+    title, body, onAdvance, onDismiss, advanceButtonText, endButtonText, backButtonText,
+    placement, target,
   } = currentCheckpointData || {};
 
   /**
@@ -71,6 +71,13 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     }
   };
 
+  const handleBack = () => {
+    setIndex(index - 1);
+    if (onBack) {
+      onBack();
+    }
+  };
+
   const handleDismiss = () => {
     setIndex(0);
     setIsTourEnabled(false);
@@ -104,19 +111,19 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
   return (
     <Checkpoint
       advanceButtonText={advanceButtonText || tourAdvanceButtonText}
+      backButtonText={backButtonText || tourBackButtonText}
       body={body}
       currentCheckpointData={currentCheckpointData}
-      dismissButtonText={dismissButtonText || tourDismissButtonText}
       endButtonText={endButtonText || tourEndButtonText}
       index={index}
       onAdvance={handleAdvance}
+      onBack={handleBack}
       onDismiss={handleDismiss}
       onEnd={handleEnd}
       placement={placement}
       target={target}
       title={title}
       totalCheckpoints={prunedCheckpoints.length}
-      showDismissButton={showDismissButton}
       ref={ref}
     />
   );
@@ -128,17 +135,16 @@ ProductTour.defaultProps = {
     checkpoints: {
       advanceButtonText: '',
       body: '',
-      dismissButtonText: '',
       endButtonText: '',
       onAdvance: () => {},
+      onBack: () => {},
       onDismiss: () => {},
       placement: 'top',
       title: '',
-      showDismissButton: undefined,
     },
-    dismissButtonText: '',
     endButtonText: '',
     onDismiss: () => {},
+    onBack: () => {},
     onEnd: () => {},
     onEscape: () => {},
     startingIndex: 0,
@@ -156,9 +162,6 @@ ProductTour.propTypes = {
       advanceButtonText: PropTypes.node,
       /** The text displayed in the body of the Checkpoint */
       body: PropTypes.node,
-      /** The text displayed on the button used to dismiss the tour for the given Checkpoint
-       * (overrides the `dismissButtonText` defined in the parent tour object). */
-      dismissButtonText: PropTypes.node,
       /** The text displayed on the button used to end the tour for the given Checkpoint
        * (overrides the `endButtonText` defined in the parent tour object). */
       endButtonText: PropTypes.node,
@@ -180,11 +183,7 @@ ProductTour.propTypes = {
       target: PropTypes.string.isRequired,
       /** The text displayed in the title of the Checkpoint */
       title: PropTypes.node,
-      /** Enforces visibility of the dismiss button under all circumstances */
-      showDismissButton: PropTypes.bool,
     })),
-    /** The text displayed on the button used to dismiss the tour. */
-    dismissButtonText: PropTypes.node,
     /** Whether the tour is enabled. If there are multiple tours defined, only one should be enabled at a time. */
     enabled: PropTypes.bool.isRequired,
     /** The text displayed on the button used to end the tour. */

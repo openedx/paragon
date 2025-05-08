@@ -24,7 +24,7 @@ The checkpoint objects themselves have additional props that can override the pr
     const myFirstTour = {
       tourId: 'myFirstTour',
       advanceButtonText: 'Next',
-      dismissButtonText: 'Dismiss',
+      backButtonText: 'Back',
       endButtonText: 'Okay',
       enabled: isTourEnabled,
       onDismiss: () => setIsTourEnabled(false),
@@ -52,6 +52,13 @@ The checkpoint objects themselves have additional props that can override the pr
           placement: 'bottom',
           target: '#checkpoint-3',
           title: 'Third checkpoint',
+          backButtonText: 'Rewind', 
+        },
+        {
+          body: "Here's the fourth checkpoint!",
+          placement: 'bottom',
+          target: '#checkpoint-4',
+          title: 'Fourth checkpoint',
           onEnd: () => {
             console.log('Ended the third checkpoint');
             setIsTourEnabled(false);

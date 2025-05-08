@@ -30,7 +30,6 @@ describe('Checkpoint', () => {
           <Checkpoint
             advanceButtonText="Next"
             body="Lorem ipsum checkpoint body"
-            dismissButtonText="Dismiss"
             endButtonText="End"
             index={1}
             onAdvance={handleAdvance}
@@ -81,7 +80,6 @@ describe('Checkpoint', () => {
           <Checkpoint
             advanceButtonText="Next"
             body="Lorem ipsum checkpoint body"
-            dismissButtonText="Dismiss"
             endButtonText="End"
             index={4}
             onAdvance={handleAdvance}
@@ -114,7 +112,6 @@ describe('Checkpoint', () => {
           <Checkpoint
             advanceButtonText="Next"
             body="Lorem ipsum checkpoint body"
-            dismissButtonText="Dismiss"
             endButtonText="End"
             index={0}
             onAdvance={handleAdvance}
@@ -135,32 +132,6 @@ describe('Checkpoint', () => {
     it('does not render breadcrumbs', () => {
       const breadcrumbs = screen.queryAllByTestId('pgn__checkpoint-breadcrumb_', { exact: false });
       expect(breadcrumbs.length).toEqual(0);
-    });
-  });
-
-  describe('only one Checkpoint in Tour and showDismissButton set to true', () => {
-    it('it renders dismiss button and end button', () => {
-      render(
-        <IntlProvider locale="en" messages={{}}>
-          <div id="#target-element" />
-          <Checkpoint
-            advanceButtonText="Next"
-            body="Lorem ipsum checkpoint body"
-            dismissButtonText="Dismiss"
-            endButtonText="End"
-            index={0}
-            onAdvance={handleAdvance}
-            onDismiss={handleDismiss}
-            onEnd={handleEnd}
-            target="#target-element"
-            title="Checkpoint title"
-            totalCheckpoints={1}
-            showDismissButton
-          />
-        </IntlProvider>,
-      );
-      expect(screen.getByText('Dismiss', { selector: 'button' })).toBeInTheDocument();
-      expect(screen.getByText('End', { selector: 'button' })).toBeInTheDocument();
     });
   });
 });
