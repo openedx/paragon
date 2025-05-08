@@ -1,0 +1,47 @@
+{
+  "color": {
+    "$type": "color",
+    "modal": {
+      "content": {
+        "bg": { "source": "$modal-content-bg", "$value": "{color.bg.base}" },
+        "border": {
+          "source": "$modal-content-border-color",
+          "modify": [{ "type": "alpha", "amount": 0.2 }],
+          "$value": "{color.black}"
+        }
+      },
+      "backdrop-bg": { "source": "$modal-backdrop-bg", "$value": "{color.black}" }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "modal": {
+      "content": {
+        "box-shadow": {
+          "sm-up": {
+            "source": "$modal-content-box-shadow-sm-up",
+            "$value": [
+              {
+                "color": "rgba(0, 0, 0, .15)",
+                "offsetX": "0",
+                "offsetY": "10px",
+                "blur": "20px"
+              },
+              {
+                "color": "rgba(0, 0, 0, .15)",
+                "offsetX": "0",
+                "offsetY": "8px",
+                "blur": "20px"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "other": {
+    "modal": {
+      "opacity": { "source": "$modal-backdrop-opacity", "$value": ".5" }
+    }
+  }
+}

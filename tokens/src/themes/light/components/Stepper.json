@@ -1,0 +1,29 @@
+{
+  "color": {
+    "$type": "color",
+    "stepper": {
+      "header": {
+        "bg": {
+          "base": { "source": "$stepper-header-bg", "$value": "transparent" },
+          "line": { "source": "$stepper-header-line-bg", "$value": "{color.light.base}" }
+        },
+        "step": {
+          "base": { "source": "$stepper-header-step-color", "$value": "{color.primary.base}" },
+          "bg": {
+            "base": { "source": "$stepper-header-step-bg", "$value": "{color.stepper.header.bg.base}" },
+            "active": { "source": "$stepper-header-active-step-bg", "$value": "{color.gray.500}" }
+          },
+          "border": { "source": "$stepper-header-step-border", "$value": "none" },
+          "bubble-error": {
+            "source": "$stepper-header-step-error-bubble-color",
+            "$value": "{color.danger.base}"
+          },
+          "description-error": {
+            "source": "$stepper-header-step-error-description-color",
+            "$value": "{color.stepper.header.step.bubble-error}"
+          }
+        }
+      }
+    }
+  }
+}

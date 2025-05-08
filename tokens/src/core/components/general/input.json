@@ -1,0 +1,51 @@
+{
+  "typography": {
+    "input": {
+      "btn": {
+        "font": {
+          "family": { "source": "$input-btn-font-family", "$value": "inherit", "$type": "fontFamily" },
+          "size": {
+            "$type": "dimension",
+            "base": { "source": "$input-btn-font-size", "$value": "1.125rem" },
+            "sm": { "source": "$input-btn-font-size-sm", "$value": ".875rem" },
+            "lg": { "source": "$input-btn-font-size-lg", "$value": "1.325rem" }
+          }
+        },
+        "line-height": {
+          "$type": "number",
+          "base": { "source": "$input-btn-line-height", "$value": "1.3333" },
+          "sm": { "source": "$input-btn-line-height-sm", "$value": "1.4286" },
+          "lg": { "source": "$input-btn-line-height-lg", "$value": "{typography.line-height.lg}" }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "input": {
+      "btn": {
+        "padding": {
+          "y": { "source": "$input-btn-padding-y", "$value": ".5625rem" },
+          "x": { "source": "$input-btn-padding-x", "$value": "1rem" },
+          "sm": {
+            "y": { "source": "$input-btn-padding-y-sm", "$value": ".4375rem" },
+            "x": { "source": "$input-btn-padding-x-sm", "$value": ".75rem" }
+          },
+          "lg": {
+            "y": { "source": "$input-btn-padding-y-lg", "$value": ".6875rem" },
+            "x": { "source": "$input-btn-padding-x-lg", "$value": "1.25rem" }
+          }
+        }
+      }
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "input": {
+      "btn": {
+        "border-width": { "source": "$input-btn-border-width", "$value": "{size.border.width}" },
+        "focus-width": { "source": "$input-btn-focus-width", "$value": "1px" }
+      }
+    }
+  }
+}

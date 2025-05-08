@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 
 export const OVERFLOW_SCROLL_OVERFLOW_CONTAINER_CLASS = 'pgn__overflow-scroll-overflow-container';
 
-export const OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START = 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%';
-export const OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_END = 'linear-gradient(to right, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%';
-export const OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START_END = 'linear-gradient(to right, var(--pgn-overflow-scroll-opacity-mask-transparent) 0%, black 10%, black 90%, var(--pgn-overflow-scroll-opacity-mask-transparent) 100%)';
+export const OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START = 'linear-gradient(to right, var(--pgn-color-overflow-scroll-opacity-mask-transparent) 0%, black 10%';
+export const OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_END = 'linear-gradient(to right, black 90%, var(--pgn-color-overflow-scroll-opacity-mask-transparent) 100%';
+export const OVERFLOW_SCROLL_OVERFLOW_OPACITY_MASK_GRADIENT_START_END = 'linear-gradient(to right, var(--pgn-color-overflow-scroll-opacity-mask-transparent) 0%, black 10%, black 90%, var(--pgn-color-overflow-scroll-opacity-mask-transparent) 100%)';
 
 /**
  * Given the ref the overflow container element, adds the following:

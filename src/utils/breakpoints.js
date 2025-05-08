@@ -1,4 +1,4 @@
-import breakpointSizes from '../../scss/core/_exports.module.scss';
+import breakpointSizes from '../../styles/scss/core/_exports.module.scss';
 
 const {
   sm, md, lg, xl, xxl,

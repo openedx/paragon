@@ -12,7 +12,6 @@
     "analytics-node": "^6.0.0",
     "axios": "^0.28.0",
     "classnames": "^2.3.1",
-    "color": "^4.2.3",
     "gatsby": "^5.14",
     "gatsby-plugin-manifest": "^5.14",
     "gatsby-plugin-mdx": "^5.14",
@@ -73,7 +72,6 @@
     "@babel/preset-typescript": "^7.16.7",
     "@edx/eslint-config": "^3.1.0",
     "@svgr/webpack": "6.5.1",
-    "@types/color": "^3.0.3",
     "@types/mdx": "^2.0.3",
     "@types/mdx-js__react": "^1.5.5",
     "@types/react-helmet": "^6.1.6",
@@ -81,7 +79,13 @@
     "eslint": "8.18.0",
     "eslint-import-resolver-webpack": "^0.13.2",
     "file-loader": "6.2.0",
-    "playroom": "^0.31.0"
+    "playroom": "^0.31.0",
+    "postcss": "^8.4.21",
+    "postcss-custom-media": "^9.1.2"
+  },
+  "optionalDependencies": {
+    "@parcel/watcher-darwin-arm64": "^2.5.0",
+    "@parcel/watcher-linux-x64-glibc": "^2.5.0"
   },
   "repository": {
     "type": "git",

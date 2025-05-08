@@ -1,0 +1,18 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "paragraph": {
+      "margin-bottom": { "source": "$paragraph-margin-bottom", "$value": "1rem" }
+    },
+    "mark-padding": { "source": "$mark-padding", "$value": ".2em" }
+  },
+  "typography": {
+    "$type": "dimension",
+    "blockquote": {
+      "small": {
+        "font-size": { "source": "$blockquote-small-font-size", "$value": "{typography.font.size.sm}" }
+      },
+      "font-size": { "source": "$blockquote-font-size", "$value": "calc({typography.font.size.base} * 1.25)" }
+    }
+  }
+}

@@ -1,45 +1,65 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Color from 'color';
-import { Container } from '~paragon-react';
+import { Container, DataTable } from '~paragon-react';
 import SEO from '../../components/SEO';
-import MeasuredItem from '../../components/MeasuredItem';
 import Layout from '../../components/PageLayout';
 import { SettingsContext } from '../../context/SettingsContext';
+import { CodeCell } from '../../components/TableCells';
 
 const utilityClasses = {
-  bg: (color: string, level: number) => (level ? `bg-${color}-${level}` : `bg-${color}`),
+  bg: (color: string, level?: number) => (level ? `bg-${color}-${level}` : `bg-${color}`),
   border: (color: string, level: number) => (level ? `border-${color}-${level}` : `border-${color}`),
   text: (color: string, level: number) => (level ? `text-${color}-${level}` : `text-${color}`),
 };
 
-export interface IColors {
-  themeName: string,
-  color: string,
-  unusedLevels: number[],
+type UnusedLevels = number[];
+
+interface ColorVariant {
+  name: string,
+  unusedLevels?: UnusedLevels,
+  hasLevels?: boolean,
 }
 
+export interface IColorsBase {
+  themeName: string,
+}
+
+export interface IColorsWithUnusedLevels extends IColorsBase {
+  unusedLevels?: UnusedLevels,
+  variants?: never,
+}
+
+export interface IColorsWithVariants extends IColorsBase {
+  variants: ColorVariant[],
+  unusedLevels?: never,
+}
+
+export type IColors = IColorsWithUnusedLevels | IColorsWithVariants;
+
 const colors: IColors[] = [
-  { themeName: 'gray', color: 'gray', unusedLevels: [] },
-  { themeName: 'primary', color: 'blue', unusedLevels: [] },
-  { themeName: 'brand', color: 'blue', unusedLevels: [] },
-  { themeName: 'light', color: 'light', unusedLevels: [] },
-  { themeName: 'dark', color: 'dark', unusedLevels: [] },
-  { themeName: 'success', color: 'green', unusedLevels: [] },
-  { themeName: 'info', color: 'teal', unusedLevels: [] },
-  { themeName: 'danger', color: 'red', unusedLevels: [] },
-  { themeName: 'warning', color: 'yellow', unusedLevels: [] },
+  { themeName: 'gray' },
+  { themeName: 'primary' },
+  { themeName: 'brand' },
+  { themeName: 'light' },
+  { themeName: 'dark' },
+  { themeName: 'success' },
+  { themeName: 'info' },
+  { themeName: 'danger' },
+  { themeName: 'warning' },
+  {
+    themeName: 'accent',
+    variants: [
+      { name: 'a', hasLevels: false },
+      { name: 'b', hasLevels: false },
+    ],
+  },
 ];
 
 const levels = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-export type ParseColorTypes = {
-  [key: string]: string | null;
-};
-
-const selectorColors: ParseColorTypes = {};
+const selectorColors: Record<string, string | null> = {};
 
 function parseColors(cssSelectors: { selector: string; declarations: string; }[]) {
   const colorsAreParsed = Object.keys(selectorColors).length !== 0;
@@ -54,36 +74,35 @@ function parseColors(cssSelectors: { selector: string; declarations: string; }[]
   });
 }
 
+export type CSSStyleDeclarationType = CSSStyleDeclaration | null;
+
 export interface ISwatch {
   name: string,
   colorClassName: string,
   isUnused?: boolean,
+  styles: CSSStyleDeclarationType,
 }
 
-function Swatch({ name, colorClassName, isUnused }: ISwatch) {
+function Swatch({
+  name, colorClassName, isUnused, styles,
+}: ISwatch) {
+  const computedValue = styles?.getPropertyValue(`--pgn-color-${name}`);
+
+  if (isUnused) {
+    return null;
+  }
+
   return (
     <div className="d-flex align-items-center mb-2">
-      <MeasuredItem
-        properties={['background-color']}
-        renderAfter={(measurements: { [x: string]: JSX.Element; }) => (
-          <div style={{ lineHeight: 1 }} className="small">
-            <code className="mb-0 d-block text-lowercase text-dark-700">
-              {name}
-            </code>
-            {measurements['background-color'] && (
-            <code style={{ fontSize: '65%' }} className="text-muted">
-              {Color(measurements['background-color']).hex()}
-            </code>
-            )}
-          </div>
-        )}
-      >
-        <div
-          className={classNames('p-3 mr-2 rounded', colorClassName, {
-            'unused-level': isUnused,
-          })}
-        />
-      </MeasuredItem>
+      <div className={classNames('p-3 mr-2 rounded', colorClassName)} />
+      <div style={{ lineHeight: 1 }} className="small">
+        <code className="d-block text-lowercase text-dark">
+          {name}
+        </code>
+        <code className="text-muted micro">
+          {computedValue}
+        </code>
+      </div>
     </div>
   );
 }
@@ -98,20 +117,70 @@ Swatch.defaultProps = {
   isUnused: false,
 };
 
-const renderColorRamp = (themeName: string, unusedLevels: number[]) => (
-  <div
-    key={`${themeName}`}
-    style={{ flexBasis: '24%', marginRight: '1%', marginBottom: '2rem' }}
-  >
+export interface IRenderColorRampBase {
+  themeName: string;
+  styles: CSSStyleDeclarationType;
+}
+
+export interface IRenderColorRampWithUnusedLevels extends IRenderColorRampBase {
+  unusedLevels?: UnusedLevels;
+  variants?: never;
+}
+
+export interface IRenderColorRampWithVariants extends IRenderColorRampBase {
+  variants: ColorVariant[];
+  unusedLevels?: never;
+}
+
+export type IRenderColorRamp = IRenderColorRampWithUnusedLevels | IRenderColorRampWithVariants;
+
+const renderColorRamp = ({
+  themeName,
+  unusedLevels = [],
+  variants = [],
+  styles,
+}: IRenderColorRamp) => (
+  <div key={`${themeName}`}>
     <p className="h5">{themeName}</p>
-    {levels.map(level => (
-      <Swatch
-        key={`$${themeName}-${level}`}
-        name={`$${themeName}-${level}`}
-        colorClassName={utilityClasses.bg(themeName, level)}
-        isUnused={unusedLevels.includes(level)}
-      />
-    ))}
+    {variants.length > 0
+      ? variants.map(({
+        name,
+        unusedLevels: variantUnusedLevels = [],
+        hasLevels = true,
+      }) => {
+        if (hasLevels) {
+          return (
+            <div key={`${themeName}-${name}`}>
+              {levels.map(level => (
+                <Swatch
+                  key={`${themeName}-${name}-${level}`}
+                  name={`${name}-${level}`}
+                  colorClassName={utilityClasses.bg(`${themeName}-${name}`, level)}
+                  isUnused={variantUnusedLevels.includes(level)}
+                  styles={styles}
+                />
+              ))}
+            </div>
+          );
+        }
+        return (
+          <Swatch
+            key={`${themeName}-${name}`}
+            name={`${themeName}-${name}`}
+            colorClassName={utilityClasses.bg(`${themeName}-${name}`)}
+            styles={styles}
+          />
+        );
+      })
+      : levels.map(level => (
+        <Swatch
+          key={`${themeName}-${level}`}
+          name={`${themeName}-${level}`}
+          colorClassName={utilityClasses.bg(themeName, level)}
+          isUnused={unusedLevels.includes(level)}
+          styles={styles}
+        />
+      ))}
   </div>
 );
 
@@ -129,6 +198,17 @@ export interface IColorsPage {
 // eslint-disable-next-line react/prop-types
 export default function ColorsPage({ data, pageContext }: IColorsPage) {
   const { settings } = useContext(SettingsContext);
+  const [styles, setStyles] = useState<CSSStyleDeclarationType>(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (typeof window !== 'undefined') {
+        const newStyles = getComputedStyle(document.body);
+        setStyles(newStyles);
+      }
+    }, 500);
+  }, [settings.theme]);
+
   parseColors(data.allCssUtilityClasses.nodes); // eslint-disable-line react/prop-types
 
   return (
@@ -137,120 +217,37 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
       <SEO title="Colors" />
       <Container size={settings.containerWidth} className="py-5">
         <h1>Colors</h1>
-        <div className="d-flex flex-wrap">
-          {colors
-            .slice(0, 3)
-            .map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels))}
-          <div
-            style={{
-              flexBasis: '19%',
-              marginRight: '1%',
-              marginBottom: '2rem',
-            }}
-          >
-            <p className="h5">accents</p>
-
-            <Swatch name="$accent-a" colorClassName="bg-accent-a" />
-            <Swatch name="$accent-b" colorClassName="bg-accent-b" />
-          </div>
-
-          {colors
-            .slice(3)
-            .map(({ themeName, unusedLevels }) => renderColorRamp(themeName, unusedLevels))}
+        <div className="color-palette mb-3">
+          {colors.map((colorArgs) => renderColorRamp({ ...colorArgs, styles }))}
         </div>
 
-        <h3>SCSS Color Usage</h3>
-        <p>Include these colors in scss files in one of two ways:</p>
+        <h3>CSS Color Usage</h3>
 
         <h4>Variable name</h4>
         <code className="d-block mb-4 bg-gray-100 p-3">
-          {'// $color_name-level '}
+          {'// var(--pgn-color-name-level) '}
           <br />
-          $primary-100
+          var(--pgn-color-primary-100)
           <br />
-          $primary-200
+          var(--pgn-color-primary-200)
           <br />
-          $brand-100
+          var(--pgn-color-brand-100)
           <br />
-          $brand-200
+          var(--pgn-color-brand-200)
         </code>
 
-        <h4>Mixin (deprecated)</h4>
-        <code className="d-block mb-4 bg-gray-100 p-3">
-          theme-color($color-name, $variant)
-        </code>
-
+        <h4>With default value</h4>
         <p>
-          Using the variable name instead of the theme-color mixin will make
-          later upgrade paths easier. Paragon may begin to adopt CSS variables
-          for theming and attempt to eliminate mixins from the public api.
+          Using a default value in CSS variables allows to set a default value for a variable,
+          which will be used if the primary value of the variable is not defined or not available.
         </p>
-
-        <table className="table pgn-doc__table">
-          <tbody>
-            <tr>
-              <td>
-                <strong>Color Name</strong>
-                <br />A theme color
-              </td>
-              <td>
-                {colors.map(({ themeName }) => (
-                  <code key={themeName} className="mr-2">{themeName}</code>
-                ))}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Variant</strong>
-                <br />
-                <p>A number level or element type</p>
-              </td>
-              <td>
-                <strong className="d-block">Levels </strong>
-                {levels.map(level => (
-                  <code key={level} className="mr-2">{level}</code>
-                ))}
-                <br />
-                <strong className="d-block">Element types </strong>
-                {[
-                  'background',
-                  'disabled-border',
-                  'border',
-                  'icon',
-                  'active-border',
-                  'focus',
-                  'graphic',
-                  'default',
-                  'light-text',
-                  'hover',
-                  'text',
-                  'active',
-                  'dark-text',
-                ].map(element => (
-                  <code key={element} className="mr-2">{element}</code>
-                ))}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h4>Example</h4>
-        <code className="d-block mb-2 bg-gray-100 p-3">
-          border: solid 1px <strong>$gray-300</strong>;
-        </code>
-
-        <code className="d-block mb-2 bg-gray-100 p-3">
-          border: solid 1px{' '}
-          <strong>theme-color(&ldquo;gray&rdquo;, &ldquo;border&rdquo;)</strong>
-          ;
-        </code>
-
         <code className="d-block mb-4 bg-gray-100 p-3">
-          border: solid 1px{' '}
-          <strong>theme-color(&ldquo;gray&rdquo;, 300)</strong>;
+          {'// var(--pgn-color-name-level), default variable '}
+          <br />
+          var(--pgn-color-brand-100, var(--pgn-color-primary-200))
         </code>
 
-        <h3>CSS Class Utilties</h3>
+        <h3>CSS Class Utilities</h3>
         <p>
           Utility classes for backgrounds, borders, and text colors follow the
           format below:
@@ -258,37 +255,23 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
         <p>
           <code>{'.{use}-{color}-{level}'}</code>
         </p>
-        <table className="table w-50">
-          <thead>
-            <tr>
-              <th>Use</th>
-              <th>Color</th>
-              <th>Level</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="align-top pr-4">
-                <code>bg-</code>
-                <br />
-                <code>border-</code>
-                <br />
-                <code>text-</code>
-                <br />
-              </td>
-              <td className="align-top pr-4">
-                {colors.map(({ themeName }) => (
-                  <code key={themeName} className="d-block">{themeName}-</code>
-                ))}
-              </td>
-              <td className="align-top pr-4">
-                {levels.map(level => (
-                  <code key={level} className="d-block">{level}</code>
-                ))}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="w-sm-50 mb-4">
+          <DataTable
+            itemCount={3}
+            data={colors.map(({ themeName }, index) => ({
+              use: Object.keys(utilityClasses)[index],
+              color: themeName,
+              level: levels[index],
+            }))}
+            columns={[
+              { Header: 'Use', accessor: 'use', Cell: CodeCell },
+              { Header: 'Color', accessor: 'color', Cell: CodeCell },
+              { Header: 'Level', accessor: 'level', Cell: CodeCell },
+            ]}
+          >
+            <DataTable.Table />
+          </DataTable>
+        </div>
 
         <h3>Background Fills</h3>
         <div className="d-flex flex-wrap">
@@ -363,7 +346,7 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
         <div className="d-flex">
           {[500, 700, 900].map(level => (
             <div key={level} style={{ flexBasis: '33%' }}>
-              {colors.map(({ themeName, unusedLevels }) => {
+              {colors.map(({ themeName, unusedLevels = [] }) => {
                 if (unusedLevels.includes(level)) { return null; }
                 return (
                   <code

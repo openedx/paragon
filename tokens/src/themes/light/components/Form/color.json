@@ -1,0 +1,216 @@
+{
+  "color": {
+    "form": {
+      "input": {
+        "$type": "color",
+        "base": { "source": "$input-color", "$value": "{color.gray.700}" },
+        "placeholder": { "source": "$input-placeholder-color", "$value": "{color.gray.500}" },
+        "plaintext": { "source": "$input-plaintext-color", "$value": "{color.body.base}" },
+        "border": { "source": "$input-border-color", "$value": "{color.gray.500}" },
+        "bg": {
+          "base": { "source": "$input-bg", "$value": "{color.bg.base}" },
+          "disabled": { "source": "$input-disabled-bg", "$value": "{color.gray.100}" }
+        },
+        "group": {
+          "addon": {
+            "base": { "source": "$input-group-addon-color", "$value": "{color.form.input.base}" },
+            "border": { "source": "$input-group-addon-border-color", "$value": "{color.form.input.border}" },
+            "bg": { "source": "$input-group-addon-bg", "$value": "{color.gray.100}" }
+          }
+        },
+        "focus": {
+          "base": { "source": "$input-focus-color", "$value": "{color.form.input.base}" },
+          "border": { "source": "$input-focus-border-color", "$value": "{color.input.focus}" },
+          "bg": { "source": "$input-focus-bg", "$value": "{color.form.input.bg.base}" }
+        }
+      },
+      "control": {
+        "indicator": {
+          "$type": "color",
+          "border": { "source": "$custom-control-indicator-border-color", "$value": "{color.gray.700}" },
+          "bg": {
+            "base": { "source": "$custom-control-indicator-bg", "$value": "{color.form.input.bg.base}" },
+            "disabled": { "source": "$custom-control-indicator-disabled-bg", "$value": "{color.form.input.bg.disabled}" }
+          },
+          "checked": {
+            "base": { "source": "$custom-control-indicator-checked-color", "$value": "{color.bg.active}" },
+            "valid": { "source": "$custom-control-indicator-checked-valid-color", "$value": "{color.success.base}" },
+            "invalid": { "source": "$custom-control-indicator-checked-invalid-color", "$value": "{color.danger.base}" },
+            "bg": {
+              "base": { "source": "$custom-control-indicator-checked-bg", "$value": "{color.bg.active}" },
+              "disabled": {
+                "source": "$custom-control-indicator-checked-disabled-bg",
+                "modify": [{ "type": "alpha", "amount": 0.5 }],
+                "$value": "{color.primary.base}"
+              }
+            },
+            "border": {
+              "base": { "source": "$custom-control-indicator-checked-border-color", "$value": "{color.form.control.indicator.checked.base}" },
+              "focus": { "source": "$custom-control-indicator-focus-border-color", "$value": "{color.form.input.focus.border}" }
+            }
+          },
+          "active": {
+            "base": { "source": "$custom-control-indicator-active-color", "$value": "{color.active}" },
+            "bg": { "source": "$custom-control-indicator-active-bg", "$value": "{color.bg.active}" },
+            "border": { "source": "$custom-control-indicator-active-border-color", "$value": "{color.form.control.indicator.active.bg}" }
+          }
+        },
+        "label": {
+          "$type": "color",
+          "base": { "source": "$custom-control-label-color", "$value": "inherit" },
+          "disabled": { "source": "$custom-control-label-disabled-color", "$value": "{color.disabled}" },
+          "floating": {
+            "text": {
+              "source": "$form-control-floating-label-text-bg",
+              "modify": [{ "type": "alpha", "amount": 0.1 }],
+              "$value": "{color.form.input.bg.base}"
+            }
+          }
+        },
+        "checkbox": {
+          "$type": "color",
+          "indicator": {
+            "indeterminate": {
+              "base": { "source": "$custom-checkbox-indicator-indeterminate-color", "$value": "{color.form.control.indicator.checked.base}" },
+              "bg": { "source": "$custom-checkbox-indicator-indeterminate-bg", "$value": "{color.bg.active}" },
+              "border": { "source": "$custom-checkbox-indicator-indeterminate-border-color", "$value": "{color.form.control.checkbox.indicator.indeterminate.bg}" }
+            }
+          }
+        },
+        "switch": {
+          "$type": "color",
+          "indicator": {
+            "checked": {
+              "bg": { "source": "$custom-switch-indicator-checked-bg", "$value": "{color.success.base}" }
+            }
+          }
+        },
+        "select": {
+          "base": {
+            "source": "$custom-select-color",
+            "$value": "{color.form.input.base}",
+            "$type": "color"
+          },
+          "disabled": {
+            "source": "$custom-select-disabled-color",
+            "$value": "{color.disabled}",
+            "$type": "color"
+          },
+          "indicator": {
+            "$type": "color",
+            "base": { "source": "$custom-select-indicator-color", "$value": "{color.theme.hover.gray}" }
+          },
+          "bg": {
+            "base": {
+              "source": "$custom-select-bg",
+              "$value": "{color.form.input.bg.base}",
+              "$type": "color"
+            },
+            "disabled": {
+              "source": "$custom-select-disabled-bg",
+              "$value": "{color.gray.100}",
+              "$type": "color"
+            },
+            "size": {
+              "source": "$custom-select-bg-size",
+              "$value": "{color.gray.100}",
+              "$type": "dimension"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "base": { "source": "$custom-select-border-color", "$value": "{color.form.input.border}" },
+            "focus": { "source": "$custom-select-focus-border-color", "$value": "{color.form.input.focus.border}" }
+          }
+        },
+        "range": {
+          "$type": "color",
+          "track": {
+            "bg": { "source": "$custom-range-track-bg", "$value": "{color.gray.300}" }
+          },
+          "thumb": {
+            "bg": {
+              "base": { "source": "$custom-range-thumb-bg", "$value": "{color.bg.active}" },
+              "disabled": { "source": "$custom-range-thumb-disabled-bg", "$value": "{color.disabled}" },
+              "active": {
+                "source": "$custom-range-thumb-active-bg",
+                "modify": [{ "type": "lighten", "amount": "0.35" }],
+                "$value": "{color.bg.active}"
+              }
+            }
+          }
+        },
+        "file": {
+          "$type": "color",
+          "base": { "source": "$custom-file-color", "$value": "{color.form.input.base}" },
+          "bg": {
+            "base": { "source": "$custom-file-bg", "$value": "{color.form.input.bg.base}" },
+            "disabled": { "source": "$custom-file-disabled-bg", "$value": "{color.form.input.bg.disabled}" }
+          },
+          "button": {
+            "base": { "source": "$custom-file-button-color", "$value": "{color.form.control.file.base}" },
+            "bg": { "source": "$custom-file-button-bg", "$value": "{color.form.input.group.addon.bg}" }
+          },
+          "border": {
+            "base": { "source": "$custom-file-border-color", "$value": "{color.form.input.border}" },
+            "focus": { "source": "$custom-file-focus-border-color", "$value": "{color.form.input.focus.border}" }
+          }
+        }
+      },
+      "feedback": {
+        "$type": "color",
+        "valid": { "source": "$form-feedback-valid-color", "$value": "{color.success.base}" },
+        "invalid": { "source": "$form-feedback-invalid-color", "$value": "{color.danger.base}" },
+        "icon": {
+          "valid": { "source": "$form-feedback-icon-valid-color", "$value": "{color.form.feedback.valid}" },
+          "invalid": { "source": "$form-feedback-icon-invalid-color", "$value": "{color.form.feedback.invalid}" }
+        },
+        "tooltip": {
+          "valid": {
+            "source": "$form-feedback-tooltip-valid-color",
+            "modify": [{ "type": "color-yiq" }],
+            "$value": "{color.form.feedback.valid}"
+          },
+          "bg": {
+            "valid": {
+              "source": "$form-feedback-tooltip-valid-bg",
+              "modify": [{ "type": "alpha", "amount": 0.9 }],
+              "$value": "{color.form.feedback.valid}"
+            },
+            "invalid": {
+              "source": "$form-feedback-tooltip-invalid-bg",
+              "modify": [{ "type": "alpha", "amount": 0.9 }],
+              "$value": "{color.form.feedback.invalid}"
+            }
+          },
+          "box-shadow": {
+            "focus": {
+              "valid": {
+                "source": "$form-feedback-focus-box-shadow-valid-color",
+                "modify": [{ "type": "alpha", "amount": 0.25 }],
+                "$value": "{color.form.feedback.valid}"
+              },
+              "invalid": {
+                "source": "$form-feedback-focus-box-shadow-invalid-color",
+                "modify": [{ "type": "alpha", "amount": 0.25 }],
+                "$value": "{color.form.feedback.invalid}"
+              }
+            }
+          }
+        },
+        "checked": {
+          "valid": {
+            "source": "$form-feedback-checked-valid-color",
+            "modify": [{ "type": "lighten", "amount": 0.1 }],
+            "$value": "{color.form.feedback.valid}"
+          },
+          "invalid": {
+            "source": "$form-feedback-checked-invalid-color",
+            "modify": [{ "type": "lighten", "amount": 0.1 }],
+            "$value": "{color.form.feedback.invalid}"
+          }
+        }
+      }
+    }
+  }
+}

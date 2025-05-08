@@ -1,0 +1,38 @@
+{
+  "color": {
+    "$type": "color",
+    "dropdown": {
+      "text": { "source": "$dropdown-color", "$value": "{color.body.base}" },
+      "header": { "source": "$dropdown-header-color", "$value": "{color.gray.500}" },
+      "bg": { "source": "$dropdown-bg", "$value": "{color.bg.base}" },
+      "border": {
+        "source": "$dropdown-border-color",
+        "modify": [{ "type": "alpha", "amount": 0.15 }],
+        "$value": "{color.black}"
+      },
+      "divider-bg": { "source": "$dropdown-divider-bg", "$value": "{color.gray.100}" },
+      "link": {
+        "base": { "source": "$dropdown-link-color", "$value": "{color.gray.900}" },
+        "hover": {
+          "base": {
+            "source": "$dropdown-link-hover-color",
+            "modify": [{ "type": "darken", "amount": 0.5 }],
+            "$value": "{color.gray.900}"
+          },
+          "bg": { "source": "$dropdown-link-hover-bg", "$value": "{color.light.300}" }
+        },
+        "active": {
+          "base": { "source": "$dropdown-link-active-color", "$value": "{color.active}" },
+          "bg": { "source": "$dropdown-link-active-bg", "$value": "{color.bg.active}" }
+        },
+        "disabled": { "source": "$dropdown-link-disabled-color", "$value": "{color.disabled}" }
+      }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "dropdown": {
+      "box-shadow": { "source": "$dropdown-box-shadow", "$value": "none" }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "navbar": {
+      "padding": {
+        "y": { "source": "$navbar-padding-y", "$value": "calc({spacing.spacer.base} / 2)" },
+        "x": {
+          "base": { "source": "$navbar-padding-x", "$value": "{spacing.spacer.base}" },
+          "nav-link": { "source": "$navbar-nav-link-padding-x", "$value": ".5rem" }
+        }
+      },
+      "brand": {
+        "padding": {
+          "y": { "source": "$navbar-brand-padding-y", "$value": "calc(({typography.navbar.nav-link.height} - {size.navbar.brand.height}) / 2)" }
+        }
+      },
+      "toggler": {
+        "padding": {
+          "y": { "source": "$navbar-toggler-padding-y", "$value": ".25rem" },
+          "x": { "source": "$navbar-toggler-padding-x", "$value": ".75rem" }
+        }
+      }
+    }
+  },
+  "typography": {
+    "$type": "dimension",
+    "navbar": {
+      "brand": {
+        "font-size": { "source": "$navbar-brand-font-size", "$value": "{typography.font.size.lg}" }
+      },
+      "nav-link": {
+        "height": { "source": "$nav-link-height", "$value": "calc({typography.font.size.base} * {typography.line-height.base} + .5rem * 2)" }
+      },
+      "toggler": {
+        "font-size": { "source": "$navbar-toggler-font-size", "$value": "{typography.font.size.lg}" }
+      }
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "navbar": {
+      "nav": {
+        "scroll": {
+          "max-height": { "source": "$navbar-nav-scroll-max-height", "$value": "75vh" }
+        }
+      },
+      "brand": {
+        "height": { "source": "$navbar-brand-height", "$value": "calc({typography.navbar.brand.font-size} * {typography.line-height.base})" }
+      },
+      "toggler": {
+        "border-radius": { "source": "$navbar-toggler-border-radius", "$value": "{size.btn.border.radius.base}" }
+      }
+    }
+  }
+}

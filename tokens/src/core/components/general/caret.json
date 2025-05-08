@@ -1,0 +1,15 @@
+{
+  "size": {
+    "$type": "dimension",
+    "caret": {
+      "width": { "source": "$caret-width", "$value": ".3em" }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "caret": {
+      "base": { "source": "$caret-spacing", "$value": ".255em" },
+      "vertical-align": { "source": "$caret-vertical-align", "$value": ".255em" }
+    }
+  }
+}

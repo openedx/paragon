@@ -1,3 +1,4 @@
+.PHONY: build
 build:
 	rm -rf ./dist
 	tsc --project tsconfig.build.json
@@ -10,7 +11,7 @@ build:
 	rm -rf dist/**/__snapshots__
 	rm -rf dist/__mocks__
 	rm -rf dist/setupTest.js
-	node build-scss.js
+	./bin/paragon-scripts.js build-scss
 
 export TRANSIFEX_RESOURCE = paragon
 transifex_langs = "ar,ca,es_419,fr,he,id,ko_KR,pl,pt_BR,ru,th,uk,zh_CN,es_AR,es_ES,pt_PT,tr_TR,it_IT"

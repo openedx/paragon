@@ -1,5 +1,3 @@
-@import "variables";
-
 .pgn__icon {
   display: block;
   height: 1.5rem; // 24px, Assumes base font size to be 16px
@@ -8,28 +6,28 @@
   flex-shrink: 0;
 
   &.pgn__icon__inline {
-    width: $icon-inline;
-    height: $icon-inline;
+    width: var(--pgn-size-icon-inline);
+    height: var(--pgn-size-icon-inline);
   }
 
   &.pgn__icon__xs {
-    width: $icon-xs;
-    height: $icon-xs;
+    width: var(--pgn-size-icon-xs);
+    height: var(--pgn-size-icon-xs);
   }
 
   &.pgn__icon__sm {
-    width: $icon-sm;
-    height: $icon-sm;
+    width: var(--pgn-size-icon-sm);
+    height: var(--pgn-size-icon-sm);
   }
 
   &.pgn__icon__md {
-    width: $icon-md;
-    height: $icon-md;
+    width: var(--pgn-size-icon-md);
+    height: var(--pgn-size-icon-md);
   }
 
   &.pgn__icon__lg {
-    width: $icon-lg;
-    height: $icon-lg;
+    width: var(--pgn-size-icon-lg);
+    height: var(--pgn-size-icon-lg);
   }
 }
 

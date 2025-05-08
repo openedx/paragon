@@ -1,0 +1,8 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "sticky": {
+      "offset": { "source": "$sticky-offset", "$value": "0" }
+    }
+  }
+}

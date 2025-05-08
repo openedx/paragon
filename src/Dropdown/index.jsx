@@ -5,7 +5,6 @@ import BaseDropdown from 'react-bootstrap/Dropdown';
 import DropdownMenu from 'react-bootstrap/DropdownMenu';
 import BaseDropdownItem from 'react-bootstrap/DropdownItem';
 import BaseDropdownToggle from 'react-bootstrap/DropdownToggle';
-import DropdownDeprecated from './deprecated';
 import Button from '../Button';
 import IconButton from '../IconButton';
 
@@ -138,7 +137,6 @@ Dropdown.Item.defaultProps = {
   className: undefined,
 };
 
-Dropdown.Deprecated = DropdownDeprecated;
 Dropdown.Toggle = DropdownToggle;
 Dropdown.Menu = DropdownMenu;
 Dropdown.Header = BaseDropdown.Header;

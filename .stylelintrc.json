@@ -38,6 +38,10 @@
       "ignore": ["after-comment"],
       "ignoreAtRules": ["import"]
     }],
-    "declaration-block-no-redundant-longhand-properties": null
+    "declaration-block-no-redundant-longhand-properties": null,
+    "value-keyword-case": ["lower", {
+      "ignoreProperties": ["/font-family/"]
+    }],
+    "custom-property-empty-line-before": null
   }
 }

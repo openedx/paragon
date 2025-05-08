@@ -1,0 +1,17 @@
+{
+  "typography": {
+    "headings": {
+      "font": {
+        "family": { "source": "$headings-font-family", "$value": "inherit", "$type": "fontFamily" },
+        "weight": { "source": "$headings-font-weight", "$value": "{typography.font.weight.bold}", "$type": "fontWeight" }
+      },
+      "line-height": { "source": "$headings-line-height", "$value": "1.25", "$type": "number" }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "headings": {
+      "margin-bottom": { "source": "$headings-margin-bottom", "$value": ".5rem" }
+    }
+  }
+}

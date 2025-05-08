@@ -1,0 +1,54 @@
+{
+  "typography": {
+    "$type": "dimension",
+    "progress-bar": {
+      "font-size": { "source": "$progress-font-size", "$value": "calc({typography.font.size.base} * .75)" }
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "progress-bar": {
+      "height": {
+        "base": { "source": "$progress-height", "$value": "1rem" },
+        "annotated": { "source": "$annotated-progress-height", "$value": ".3125rem" }
+      },
+      "border": {
+        "width": { "source": "$progress-bar-border-width", "$value": "1px" },
+        "radius": { "source": "$progress-border-radius", "$value": "0" }
+      },
+      "threshold-circle": { "source": "$progress-threshold-circle", "$value": ".5625rem" }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "progress-bar": {
+      "hint": {
+        "annotation-gap": { "source": "$progress-hint-annotation-gap", "$value": ".5rem" }
+      }
+    }
+  },
+  "transition": {
+    "$type": "transition",
+    "progress-bar": {
+      "animation-timing": {
+        "source": "$progress-bar-animation-timing",
+        "$value": {
+          "duration": "1s",
+          "timing-function": "linear",
+          "delay": "0s",
+          "iteration-count": "infinite"
+        }
+      },
+      "transition": {
+        "source": "$progress-bar-transition",
+        "$value": {
+          "property": "width",
+          "duration": ".6s",
+          "timing-function": "ease",
+          "delay": "0s",
+          "behavior": "normal"
+        }
+      }
+    }
+  }
+}

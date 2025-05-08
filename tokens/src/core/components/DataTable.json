@@ -1,0 +1,35 @@
+{
+  "size": {
+    "$type": "dimension",
+    "data-table": {
+      "border": { "source": "$data-table-border", "$value": "2px" },
+      "dropdown": {
+        "pagination": {
+          "max-height": { "source": "$data-table-pagination-dropdown-max-height", "$value": "60vh" },
+          "min-width": { "source": "$data-table-pagination-dropdown-min-width", "$value": "6rem" }
+        }
+      },
+      "layout": {
+        "sidebar-width": { "source": "$data-table-layout-sidebar-width", "$value": "12rem" }
+      }
+    }
+  },
+  "spacing": {
+    "data-table": {
+      "padding": {
+        "$type": "dimension",
+        "x": { "source": "$data-table-padding-x", "$value": ".75rem" },
+        "y": { "source": "$data-table-padding-y", "$value": ".75rem" },
+        "small": { "source": "$data-table-padding-small", "$value": ".5rem" },
+        "cell": {
+          "source": "$data-table-cell-padding",
+          "$value": {
+            "x": ".5rem",
+            "y": ".75rem"
+          }
+        }
+      },
+      "footer-position": { "source": "$data-table-footer-position", "$value": "center", "$type": "position" }
+    }
+  }
+}

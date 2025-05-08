@@ -1,0 +1,21 @@
+{
+  "size": {
+    "$type": "dimension",
+    "search-field": {
+      "border": {
+        "width": {
+          "base": { "source": "$search-border-width", "$value": ".0625rem" },
+          "focus": { "source": "$search-border-focus-width", "$value": ".3125rem" }
+        },
+        "radius": { "source": "$search-border-radius", "$value": "0" }
+      },
+      "search-input-height": { "source": "$input-height-search", "$value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2)" }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "search-field": {
+      "margin-button": { "source": "$search-button-margin", "$value": ".5rem" }
+    }
+  }
+}

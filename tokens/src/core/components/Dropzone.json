@@ -1,0 +1,19 @@
+{
+  "typography": {
+    "$type": "dimension",
+    "dropzone": {
+      "restriction-msg": {
+        "font-size": { "source": "$dropzone-restriction-msg-font-size", "$value": "{typography.font.size.xs}" }
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "dropzone": {
+      "padding": { "source": "$dropzone-padding", "$value": "1.5rem" },
+      "border": {
+        "base": { "source": "$dropzone-border-default", "$value": "1px" }
+      }
+    }
+  }
+}

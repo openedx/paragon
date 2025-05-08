@@ -12,7 +12,7 @@
 
   .pgn-doc__toc-list {
     padding-left: .75rem;
-    font-size: $font-size-sm;
+    font-size: var(--pgn-typography-font-size-sm);
   }
 
   & > .pgn-doc__toc-list {
@@ -27,12 +27,12 @@
 
   a {
     text-decoration: none;
-    color: $gray-500;
+    color: var(--pgn-color-gray-500);
 
     &:hover,
     &:focus,
     &.active {
-      color: $primary-500;
+      color: var(--pgn-color-primary-500);
     }
   }
 }

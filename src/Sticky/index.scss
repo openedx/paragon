@@ -1,4 +1,14 @@
-@import "variables";
+:root {
+  --pgn-elevation-sticky-shadow-bottom:
+    var(--pgn-elevation-sticky-shadow-bottom-1-offset-x)
+    var(--pgn-elevation-sticky-shadow-bottom-1-offset-y)
+    var(--pgn-elevation-sticky-shadow-bottom-1-blur)
+    var(--pgn-elevation-sticky-shadow-bottom-1-color),
+    var(--pgn-elevation-sticky-shadow-bottom-2-offset-x)
+    var(--pgn-elevation-sticky-shadow-bottom-2-offset-y)
+    var(--pgn-elevation-sticky-shadow-bottom-2-blur)
+    var(--pgn-elevation-sticky-shadow-bottom-2-color);
+}
 
 .pgn__sticky {
   display: flex;
@@ -7,7 +17,7 @@
 
   &.pgn__sticky-top {
     align-self: self-start;
-    top: $sticky-offset;
+    top: var(--pgn-spacing-sticky-offset);
 
     @each $level, $offset in $spacers {
       &.pgn__sticky-offset--#{$level} {
@@ -16,13 +26,13 @@
     }
 
     &.pgn__sticky-shadow {
-      box-shadow: $sticky-shadow-bottom;
+      box-shadow: var(--pgn-elevation-sticky-shadow-bottom);
     }
   }
 
   &.pgn__sticky-bottom {
     align-self: self-end;
-    bottom: $sticky-offset;
+    bottom: var(--pgn-spacing-sticky-offset);
 
     @each $level, $offset in $spacers {
       &.pgn__sticky-offset--#{$level} {
@@ -31,7 +41,7 @@
     }
 
     &.pgn__sticky-shadow {
-      box-shadow: $sticky-shadow-top;
+      box-shadow: var(--pgn-elevation-sticky-shadow-top);
     }
   }
 }

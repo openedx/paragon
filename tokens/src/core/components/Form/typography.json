@@ -1,0 +1,58 @@
+{
+  "typography": {
+    "form": {
+      "input": {
+        "font": {
+          "family": { "source": "$input-font-family", "$value": "{typography.input.btn.font.family}", "$type": "fontFamily" },
+          "size": {
+            "$type": "dimension",
+            "base": { "source": "$input-font-size", "$value": "{typography.input.btn.font.size.base}" },
+            "sm": { "source": "$input-font-size-sm", "$value": "{typography.input.btn.font.size.sm}" },
+            "lg": { "source": "$input-font-size-lg", "$value": "{typography.input.btn.font.size.lg}" }
+          },
+          "weight": { "source": "$input-font-weight", "$value": "{typography.font.weight.base}", "$type": "fontWeight" }
+        },
+        "line-height": {
+          "$type": "number",
+          "base": { "source": "$input-line-height", "$value": "{typography.input.btn.line-height.base}" },
+          "sm": { "source": "$input-line-height-sm", "$value": "{typography.input.btn.line-height.sm}" },
+          "lg": { "source": "$input-line-height-lg", "$value": "{typography.input.btn.line-height.lg}" }
+        }
+      },
+      "control": {
+        "select": {
+          "font": {
+            "family": { "source": "$custom-select-font-family", "$value": "{typography.form.input.font.family}", "$type": "fontFamily" },
+            "size": {
+              "$type": "dimension",
+              "base": { "source": "$custom-select-font-size", "$value": "{typography.form.input.font.size.base}" },
+              "sm": { "source": "$custom-select-font-size-sm", "$value": "{typography.form.input.font.size.sm}" },
+              "lg": { "source": "$custom-select-font-size-lg", "$value": "{typography.form.input.font.size.lg}" }
+            },
+            "weight": { "source": "$custom-select-font-weight", "$value": "{typography.form.input.font.weight}", "$type": "fontWeight" }
+          },
+          "line-height": { "source": "$custom-select-line-height", "$value": "{typography.form.input.line-height.base}", "$type": "number" }
+        },
+        "file": {
+          "line-height": { "source": "$custom-file-line-height", "$value": "{typography.form.input.line-height.base}", "$type": "number" },
+          "font": {
+            "family": { "source": "$custom-file-font-family", "$value": "{typography.form.input.font.family}", "$type": "fontFamily" },
+            "weight": { "source": "$custom-file-font-weight", "$value": "{typography.form.input.font.weight}", "$type": "fontWeight" }
+          }
+        }
+      },
+      "feedback": {
+        "$type": "dimension",
+        "font": {
+          "size": { "source": "$form-feedback-font-size", "$value": "{typography.font.size.sm}" }
+        },
+        "tooltip": {
+          "font": {
+            "size": { "source": "$form-feedback-tooltip-font-size", "$value": "{typography.font.size.sm}" }
+          },
+          "line-height": { "source": "$form-feedback-tooltip-line-height", "$value": "{typography.line-height.base}", "$type": "number" }
+        }
+      }
+    }
+  }
+}

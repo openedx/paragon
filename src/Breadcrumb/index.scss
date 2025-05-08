@@ -1,13 +1,11 @@
-@import "variables";
-
 .pgn__breadcrumb {
   .list-inline-item {
     &.active {
-      color: $breadcrumb-active-color;
+      color: var(--pgn-color-breadcrumb-active);
     }
 
     a.link-muted {
-      color: $breadcrumb-color;
+      color: var(--pgn-color-breadcrumb-base);
 
       &:focus {
         position: relative;
@@ -19,18 +17,18 @@
       &:focus::before {
         content: "";
         position: absolute;
-        top: -$breadcrumb-border-focus-axis-y;
-        right: -$breadcrumb-border-focus-axis-x;
-        bottom: -$breadcrumb-border-focus-axis-y;
-        left: -$breadcrumb-border-focus-axis-x;
-        border: $breadcrumb-border-focus-width solid $breadcrumb-color;
-        border-radius: $breadcrumb-focus-border-radius;
+        top: calc(var(--pgn-size-breadcrumb-border-axis-y-focus) * -1);
+        right: calc(var(--pgn-size-breadcrumb-border-axis-x-focus) * -1);
+        bottom: calc(var(--pgn-size-breadcrumb-border-axis-y-focus) * -1);
+        left: calc(var(--pgn-size-breadcrumb-border-axis-x-focus) * -1);
+        border: var(--pgn-size-breadcrumb-border-width-focus) solid var(--pgn-color-breadcrumb-base);
+        border-radius: var(--pgn-size-breadcrumb-border-radius-focus);
       }
     }
 
     [dir="rtl"] & {
       margin-right: 0;
-      margin-left: $breadcrumb-margin-left;
+      margin-left: var(--pgn-spacing-breadcrumb-margin-left);
     }
 
     .pgn__icon {
@@ -43,21 +41,21 @@
   &-dark {
     .list-inline-item {
       &.active {
-        color: $breadcrumb-inverse-active;
+        color: var(--pgn-color-breadcrumb-inverse-active);
       }
 
       a.link-muted {
-        color: $breadcrumb-inverse-color;
+        color: var(--pgn-color-breadcrumb-inverse-base);
 
         &:focus::before {
-          border: $breadcrumb-border-focus-width solid $breadcrumb-inverse-color;
+          border: var(--pgn-size-breadcrumb-border-width-focus) solid var(--pgn-color-breadcrumb-inverse-base);
         }
       }
     }
 
     .pgn__icon,
     .custom-spacer {
-      color: $breadcrumb-inverse-spacer;
+      color: var(--pgn-color-breadcrumb-inverse-spacer);
     }
   }
 
@@ -71,7 +69,7 @@
 
       .list-inline-item:not(:last-child) {
         margin-right: 0;
-        margin-left: $breadcrumb-margin-left;
+        margin-left: var(--pgn-spacing-breadcrumb-margin-left);
       }
 
       .pgn__icon {

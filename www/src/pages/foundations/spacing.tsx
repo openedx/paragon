@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Form, DataTable, Container } from '~paragon-react';
+import { Form, DataTable, Container } from '~paragon-react'; // eslint-disable-line
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
 import MeasuredItem from '../../components/MeasuredItem';
@@ -95,6 +95,16 @@ export default function SpacingPage({ pageContext }) {
     pixelValue: <PixelCell spacer={value} />,
   }));
 
+  const createUtilityClassesTabel = (prefix) => sizes.map(el => {
+    const rowData = {};
+
+    directions.forEach(({ key, name }) => {
+      rowData[name] = <code>.{getUtilityClassName(prefix, key, el)}</code>;
+    });
+
+    return rowData;
+  });
+
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
@@ -123,32 +133,39 @@ export default function SpacingPage({ pageContext }) {
         </p>
         <div className="border p-4">
           <div className="d-flex flex-column align-items-center">
-            <p className="h4">Direction</p>
-            <div className="d-flex flex-wrap mt-2">
-              {directions.map(({ key, name }) => (
-                <Form.Radio
-                  key={key}
-                  className="mx-2 mb-3"
-                  name="direction"
-                  value={key}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDirection(e.target.value)}
-                >
-                  {name}
-                </Form.Radio>
-              ))}
-            </div>
+            <Form.Group className="d-flex flex-column align-items-center">
+              <Form.Label className="font-weight-bolder">Direction</Form.Label>
+              <Form.RadioSet
+                name="direction-selector"
+                value={direction}
+                isInline
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDirection(e.target.value)}
+              >
+                {directions.map(({ key, name }) => (
+                  <Form.Radio
+                    id={`set-direction-${key}`}
+                    key={key}
+                    className="mt-0"
+                    value={key}
+                  >
+                    {name}
+                  </Form.Radio>
+                ))}
+              </Form.RadioSet>
+            </Form.Group>
             <Form.Group>
               <Form.Label className="d-block">
                 <span className="d-block text-center">Spacing Level: {size}</span>
               </Form.Label>
               <div
-                className="d-flex align-items-center"
+                className="d-flex align-items-center mt-1"
                 style={{ maxWidth: '20rem' }}
               >
                 -6
                 <Form.Control
-                  className="mx-2"
                   type="range"
+                  id="set-size"
+                  className="mx-2"
                   min={-6}
                   step={0.5}
                   max={6}
@@ -179,50 +196,40 @@ export default function SpacingPage({ pageContext }) {
           <code>{'.p{direction}-{level}'}</code>.
         </p>
 
-        <h3>All Spacing Utility Classes</h3>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>All directions</th>
-              <th>Top</th>
-              <th>Right</th>
-              <th>Bottom</th>
-              <th>Left</th>
-              <th>X Direction</th>
-              <th>Y Direction</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th colSpan={7}>Margin</th>
-            </tr>
-            <tr>
-              {directions.map(({ key }) => (
-                <td key={key}>
-                  {sizes.map(_size => (
-                    <code key={_size} className="d-block">
-                      .{getUtilityClassName('m', key, _size)}
-                    </code>
-                  ))}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <th colSpan={7}>Padding</th>
-            </tr>
-            <tr>
-              {directions.map(({ key }) => (
-                <td key={key}>
-                  {sizes.map(_size => (
-                    <code key={_size} className="d-block">
-                      .{getUtilityClassName('p', key, _size)}
-                    </code>
-                  ))}
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
+        <h3 className="mt-4">All Spacing Utility Classes</h3>
+
+        <h4 className="mt-3">Margin</h4>
+        <DataTable
+          className="pgn-doc__spacing-table"
+          data={createUtilityClassesTabel('m')}
+          columns={[
+            { Header: 'All directions', accessor: 'all' },
+            { Header: 'Top', accessor: 'top' },
+            { Header: 'Right', accessor: 'right' },
+            { Header: 'Bottom', accessor: 'bottom' },
+            { Header: 'Left', accessor: 'left' },
+            { Header: 'X Direction', accessor: 'x direction' },
+            { Header: 'Y Direction', accessor: 'y direction' },
+          ]}
+        >
+          <DataTable.Table />
+        </DataTable>
+        <h4 className="mt-3">Padding</h4>
+        <DataTable
+          className="pgn-doc__spacing-table"
+          data={createUtilityClassesTabel('p')}
+          columns={[
+            { Header: 'All directions', accessor: 'all' },
+            { Header: 'Top', accessor: 'top' },
+            { Header: 'Right', accessor: 'right' },
+            { Header: 'Bottom', accessor: 'bottom' },
+            { Header: 'Left', accessor: 'left' },
+            { Header: 'X Direction', accessor: 'x direction' },
+            { Header: 'Y Direction', accessor: 'y direction' },
+          ]}
+        >
+          <DataTable.Table />
+        </DataTable>
       </Container>
     </Layout>
   );

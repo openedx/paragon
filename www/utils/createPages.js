@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 const { INSIGHTS_PAGES } = require('../src/config');
-const { getThemesSCSSVariables, processComponentSCSSVariables } = require('../theme-utils');
 const componentsUsage = require('../src/utils/componentsUsage');
 
 const componentPageTemplate = path.resolve(__dirname, '../src/templates/component-page-template.tsx');
@@ -46,8 +45,6 @@ async function createPages(graphql, actions, reporter) {
   // Create component detail pages.
   const pages = result.data.allMdx.edges;
 
-  const themesSCSSVariables = await getThemesSCSSVariables();
-
   // you'll call `createPage` for each result
   for (const { node } of pages) {
     const githubEditPath = `https://github.com/openedx/paragon/edit/master/src${node.internal.contentFilePath.split('src')[1]}`;
@@ -55,13 +52,21 @@ async function createPages(graphql, actions, reporter) {
     if (node.fields.source === 'components') {
       // Check for a _variables.scss file for this component, e.g. src/Button/_variables.scss.
       // If it exists, load the data:
-      let scssVariablesData = {};
+      const cssVariablesData = [];
       const componentDir = path.dirname(node.internal.contentFilePath);
-      const variablesPath = `${componentDir}/_variables.scss`;
-      if (fs.existsSync(variablesPath)) {
-        // eslint-disable-next-line no-await-in-loop
-        scssVariablesData = await processComponentSCSSVariables(variablesPath, themesSCSSVariables);
-      }
+      const pathToComponents = fs.readdirSync(componentDir);
+      pathToComponents.forEach(componentFile => {
+        if (componentFile.endsWith('.scss')) {
+          const fileData = fs.readFileSync(`${componentDir}/${componentFile}`, 'utf-8');
+          const customCSSVariables = fileData.match(/var\((\w|-|_)*\)/g);
+
+          customCSSVariables?.forEach(variable => {
+            if (!cssVariablesData.includes(variable)) {
+              cssVariablesData.push(variable);
+            }
+          });
+        }
+      });
 
       createPage({
         // This is the slug you created before
@@ -74,7 +79,7 @@ async function createPages(graphql, actions, reporter) {
         context: {
           id: node.id,
           components: node.frontmatter.components || [],
-          scssVariablesData,
+          cssVariablesData,
           componentsUsageInsights: Object.keys(componentsUsage),
           githubEditPath,
         },

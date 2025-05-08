@@ -1,0 +1,10 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "selectable-box": {
+      "padding": { "source": "$selectable-box-padding", "$value": "1rem" },
+      "border-radius": { "source": "$selectable-box-border-radius", "$value": ".25rem" },
+      "box-space": { "source": "$selectable-box-space", "$value": ".75rem" }
+    }
+  }
+}

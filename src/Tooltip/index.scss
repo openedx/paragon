@@ -1,37 +1,179 @@
-@import "variables";
-@import "~bootstrap/scss/tooltip";
+:root {
+  --pgn-elevation-tooltip-box-shadow:
+    drop-shadow(
+      var(--pgn-elevation-tooltip-box-shadow-1-offset-x)
+      var(--pgn-elevation-tooltip-box-shadow-1-offset-y)
+      var(--pgn-elevation-tooltip-box-shadow-1-blur)
+      var(--pgn-elevation-tooltip-box-shadow-1-color)
+    )
+    drop-shadow(
+      var(--pgn-elevation-tooltip-box-shadow-2-offset-x)
+      var(--pgn-elevation-tooltip-box-shadow-2-offset-y)
+      var(--pgn-elevation-tooltip-box-shadow-2-blur)
+      var(--pgn-elevation-tooltip-box-shadow-2-color)
+    );
+}
 
+// Base class
 .tooltip {
-  filter: $tooltip-box-shadow;
+  position: absolute;
+  z-index: var(--pgn-elevation-tooltip-zindex);
+  display: block;
+  margin: var(--pgn-spacing-tooltip-margin);
+  // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
+  // So reset our font and text properties to avoid inheriting weird values.
+  @include reset-text();
+  @include font-size(var(--pgn-typography-tooltip-font-size));
+  // Allow breaking very long words so they don't overflow the tooltip's bounds
+  word-wrap: break-word;
+  opacity: 0;
+  filter: var(--pgn-elevation-tooltip-box-shadow);
+
+  &.show {
+    opacity: var(--pgn-other-tooltip-opacity);
+  }
+
+  .arrow {
+    position: absolute;
+    display: block;
+    width: var(--pgn-size-tooltip-arrow-width);
+    height: var(--pgn-size-tooltip-arrow-height);
+
+    &::before {
+      position: absolute;
+      content: "";
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+}
+
+.bs-tooltip-top {
+  padding: var(--pgn-size-tooltip-arrow-height) 0;
+
+  .arrow {
+    bottom: 0;
+
+    &::before {
+      top: 0;
+      border-width: var(--pgn-size-tooltip-arrow-height) calc(var(--pgn-size-tooltip-arrow-width) * .5) 0;
+      border-top-color: var(--pgn-color-tooltip-arrow-base);
+    }
+  }
+}
+
+.bs-tooltip-right {
+  padding: 0 var(--pgn-size-tooltip-arrow-height);
+
+  .arrow {
+    left: 0;
+    width: var(--pgn-size-tooltip-arrow-height);
+    height: var(--pgn-size-tooltip-arrow-width);
+
+    &::before {
+      right: 0;
+      border-width:
+        calc(var(--pgn-size-tooltip-arrow-width) * .5)
+        var(--pgn-size-tooltip-arrow-height)
+        calc(var(--pgn-size-tooltip-arrow-width) * .5) 0;
+      border-right-color: var(--pgn-color-tooltip-arrow-base);
+    }
+  }
+}
+
+.bs-tooltip-bottom {
+  padding: var(--pgn-size-tooltip-arrow-height) 0;
+
+  .arrow {
+    top: 0;
+
+    &::before {
+      bottom: 0;
+      border-width: 0 calc(var(--pgn-size-tooltip-arrow-width) * .5) var(--pgn-size-tooltip-arrow-height);
+      border-bottom-color: var(--pgn-color-tooltip-arrow-base);
+    }
+  }
+}
+
+.bs-tooltip-left {
+  padding: 0 var(--pgn-size-tooltip-arrow-height);
+
+  .arrow {
+    right: 0;
+    width: var(--pgn-size-tooltip-arrow-height);
+    height: var(--pgn-size-tooltip-arrow-width);
+
+    &::before {
+      left: 0;
+      border-width:
+        calc(var(--pgn-size-tooltip-arrow-width) * .5) 0
+        calc(var(--pgn-size-tooltip-arrow-width) * .5)
+        var(--pgn-size-tooltip-arrow-height);
+      border-left-color: var(--pgn-color-tooltip-arrow-base);
+    }
+  }
+}
+
+.bs-tooltip-auto {
+  &[x-placement^="top"] {
+    // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
+    @extend .bs-tooltip-top;
+  }
+
+  &[x-placement^="right"] {
+    // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
+    @extend .bs-tooltip-right;
+  }
+
+  &[x-placement^="bottom"] {
+    // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
+    @extend .bs-tooltip-bottom;
+  }
+
+  &[x-placement^="left"] {
+    // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
+    @extend .bs-tooltip-left;
+  }
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+  max-width: var(--pgn-size-tooltip-max-width);
+  padding: var(--pgn-spacing-tooltip-padding-y) var(--pgn-spacing-tooltip-padding-x);
+  color: var(--pgn-color-tooltip-text);
+  text-align: center;
+  background-color: var(--pgn-color-tooltip-bg-base);
+
+  @include border-radius(var(--pgn-size-tooltip-border-radius));
 }
 
 .tooltip-light {
   .tooltip-inner {
-    color: $tooltip-color-light;
-    background-color: $tooltip-bg-light;
+    color: var(--pgn-color-tooltip-light);
+    background-color: var(--pgn-color-tooltip-bg-light);
   }
 
   &.bs-tooltip-top .arrow {
     &::before {
-      border-top-color: $tooltip-arrow-color-light;
+      border-top-color: var(--pgn-color-tooltip-arrow-light);
     }
   }
 
   &.bs-tooltip-right .arrow {
     &::before {
-      border-right-color: $tooltip-arrow-color-light;
+      border-right-color: var(--pgn-color-tooltip-arrow-light);
     }
   }
 
   &.bs-tooltip-bottom .arrow {
     &::before {
-      border-bottom-color: $tooltip-arrow-color-light;
+      border-bottom-color: var(--pgn-color-tooltip-arrow-light);
     }
   }
 
   &.bs-tooltip-left .arrow {
     &::before {
-      border-left-color: $tooltip-arrow-color-light;
+      border-left-color: var(--pgn-color-tooltip-arrow-light);
     }
   }
 }

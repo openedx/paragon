@@ -2,7 +2,7 @@
   min-width: 13rem;
 
   &-title {
-    border-bottom: $border-width solid $light-400;
+    border-bottom: var(--pgn-size-border-width) solid var(--pgn-color-light-400);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,11 +11,11 @@
   }
 
   &-label {
-    color: $black;
+    color: var(--pgn-color-black);
   }
 
   &-direction {
-    border-bottom: $border-width solid $light-400;
+    border-bottom: var(--pgn-size-border-width) solid var(--pgn-color-light-400);
     padding-bottom: .75rem;
     margin-bottom: 0;
   }
@@ -26,6 +26,6 @@
   }
 
   &-nav--items .nav-item .nav-link {
-    color: $info-500;
+    color: var(--pgn-color-info-500);
   }
 }
