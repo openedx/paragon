@@ -24,10 +24,10 @@ describe('<ProductTour />', () => {
   const customOnEnd = jest.fn();
   const customOnDismiss = jest.fn();
   const customOnAdvance = jest.fn();
+  const customOnBack = jest.fn();
 
   const disabledTourData = {
     advanceButtonText: 'Next',
-    dismissButtonText: 'Dismiss',
     enabled: false,
     endButtonText: 'Okay',
     onDismiss: handleDismiss,
@@ -44,7 +44,7 @@ describe('<ProductTour />', () => {
 
   const tourData = {
     advanceButtonText: 'Next',
-    dismissButtonText: 'Dismiss',
+    backButtonText: 'Back',
     enabled: true,
     endButtonText: 'Okay',
     onDismiss: handleDismiss,
@@ -57,22 +57,19 @@ describe('<ProductTour />', () => {
         title: 'Checkpoint 1',
       },
       {
-        body: 'Lorem ipsum body',
+        body: 'Checkpoint 2',
         target: '#target-2',
-        title: 'Checkpoint 2',
       },
       {
-        body: 'Lorem ipsum body',
+        body: 'Checkpoint 3',
         target: '#target-3',
-        title: 'Checkpoint 3',
-        onDismiss: customOnDismiss,
+        onBack: customOnBack,
         advanceButtonText: 'Override advance',
-        dismissButtonText: 'Override dismiss',
-
+        backButtonText: 'Override back',
       },
       {
         target: '#target-3',
-        title: 'Checkpoint 4',
+        body: 'Checkpoint 4',
         endButtonText: 'End',
       },
     ],
@@ -98,12 +95,12 @@ describe('<ProductTour />', () => {
 
   describe('one enabled tour', () => {
     describe('with default settings', () => {
-      it('renders checkpoint with correct title, body, and breadcrumbs', () => {
+      it('renders checkpoint with correct title, body, and page index', () => {
         render(<ProductTourWrapper tours={[tourData]} />);
 
         expect(screen.getByRole('dialog', { name: 'Checkpoint 1' })).toBeInTheDocument();
         expect(screen.getByText('Checkpoint 1')).toBeInTheDocument();
-        expect(screen.getByTestId('pgn__checkpoint-breadcrumb_active')).toBeInTheDocument();
+        expect(screen.getByText('1 of 4')).toBeInTheDocument();
       });
 
       it('onClick of advance button advances to next checkpoint', async () => {
@@ -119,10 +116,8 @@ describe('<ProductTour />', () => {
 
         rerender(<ProductTourWrapper tours={[tourData]} />);
 
-        const heading = screen.getByRole('heading', { name: 'Checkpoint 2' });
-
         // Verify the second Checkpoint has rendered
-        expect(heading).toBeInTheDocument();
+        expect(screen.getByText('Checkpoint 2')).toBeInTheDocument();
       });
 
       it('onClick of dismiss button disables tour', async () => {
@@ -132,15 +127,56 @@ describe('<ProductTour />', () => {
         expect(screen.getByRole('dialog', { name: 'Checkpoint 1' })).toBeInTheDocument();
 
         // Click the dismiss button
-        const dismissButton = screen.getByRole('button', { name: 'Dismiss' });
-        expect(dismissButton).toBeInTheDocument();
+        const closeButton = screen.getByRole('button', { name: 'Close tour' });
+        expect(closeButton).toBeInTheDocument();
 
         await act(async () => {
-          await userEvent.click(dismissButton);
+          await userEvent.click(closeButton);
         });
 
         // Verify no Checkpoints have rendered
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      });
+
+      it('onClick of close icon button disables tour', async () => {
+        const { rerender } = render(<ProductTourWrapper tours={[tourData]} />);
+        // Advance the tour, close icon only appears after first step
+        await act(async () => {
+          await userEvent.click(screen.getByRole('button', { name: 'Next' }));
+        });
+        rerender(<ProductTourWrapper tours={[tourData]} />);
+
+        const closeIcon = screen.getByRole('button', { name: 'Close tour' });
+        expect(closeIcon).toBeInTheDocument();
+
+        await act(async () => {
+          await userEvent.click(closeIcon);
+        });
+        expect(handleDismiss).toHaveBeenCalled();
+        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      });
+
+      it('onClick of back button going to the previous checkpoint', async () => {
+        const { rerender } = render(<ProductTourWrapper tours={[tourData]} />);
+        // Back button only appears when you are not on the first step of the tour
+        expect(screen.getByRole('heading', { name: 'Checkpoint 1' })).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: 'Back' })).not.toBeInTheDocument();
+        // Advance the tour
+        await act(async () => {
+          await userEvent.click(screen.getByRole('button', { name: 'Next' }));
+        });
+        rerender(<ProductTourWrapper tours={[tourData]} />);
+        expect(screen.getByText('Checkpoint 2')).toBeInTheDocument();
+
+        // Go back in the tour
+        const backButton = screen.getByRole('button', { name: 'Back' });
+        expect(backButton).toBeInTheDocument();
+        await act(async () => {
+          await userEvent.click(backButton);
+        });
+
+        rerender(<ProductTourWrapper tours={[tourData]} />);
+        expect(screen.getByText('Checkpoint 1')).toBeInTheDocument();
       });
 
       it('onClick of end button disables tour', async () => {
@@ -191,7 +227,7 @@ describe('<ProductTour />', () => {
     describe('with Checkpoint override settings', () => {
       const overrideTourData = {
         advanceButtonText: 'Next',
-        dismissButtonText: 'Dismiss',
+        backButtonText: 'Back',
         enabled: true,
         endButtonText: 'Okay',
         onDismiss: handleDismiss,
@@ -206,23 +242,21 @@ describe('<ProductTour />', () => {
             title: 'Checkpoint 1',
           },
           {
-            body: 'Lorem ipsum body',
             target: '#target-2',
-            title: 'Checkpoint 2',
+            body: 'Checkpoint 2',
           },
           {
-            body: 'Lorem ipsum body',
             target: '#target-3',
-            title: 'Checkpoint 3',
+            body: 'Checkpoint 3',
+            onBack: customOnBack,
             onDismiss: customOnDismiss,
             onAdvance: customOnAdvance,
             advanceButtonText: 'Override advance',
-            dismissButtonText: 'Override dismiss',
-
+            backButtonText: 'Override back',
           },
           {
             target: '#target-4',
-            title: 'Checkpoint 4',
+            body: 'Checkpoint 4',
             endButtonText: 'Override end',
             onEnd: customOnEnd,
           },
@@ -230,8 +264,7 @@ describe('<ProductTour />', () => {
       };
       it('renders correct checkpoint on index override', () => {
         render(<ProductTourWrapper tours={[overrideTourData]} />);
-        expect(screen.getByRole('dialog', { name: 'Checkpoint 3' })).toBeInTheDocument();
-        expect(screen.getByRole('heading', { name: 'Checkpoint 3' })).toBeInTheDocument();
+        expect(screen.getByText('Checkpoint 3')).toBeInTheDocument();
       });
 
       it('applies override for advanceButtonText', async () => {
@@ -248,15 +281,16 @@ describe('<ProductTour />', () => {
 
         expect(screen.getByText('Checkpoint 4')).toBeInTheDocument();
       });
-      it('applies override for dismissButtonText', () => {
+      it('applies override for backButtonText', () => {
         render(<ProductTourWrapper tours={[overrideTourData]} />);
-        expect(screen.getByRole('button', { name: 'Override dismiss' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Override back' })).toBeInTheDocument();
       });
+
       it('calls customHandleDismiss onClick of dismiss button', async () => {
         render(<ProductTourWrapper tours={[overrideTourData]} />);
-        const dismissButton = screen.getByRole('button', { name: 'Override dismiss' });
+        const closeButton = screen.getByRole('button', { name: 'Close tour' });
         await act(async () => {
-          await userEvent.click(dismissButton);
+          await userEvent.click(closeButton);
         });
         expect(customOnDismiss).toHaveBeenCalledTimes(1);
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
@@ -292,7 +326,6 @@ describe('<ProductTour />', () => {
       it('does not render', () => {
         const badTourData = {
           advanceButtonText: 'Next',
-          dismissButtonText: 'Dismiss',
           enabled: true,
           endButtonText: 'Okay',
           onDismiss: handleDismiss,
@@ -315,7 +348,6 @@ describe('<ProductTour />', () => {
       it('advances to next valid Checkpoint', () => {
         const badTourData = {
           advanceButtonText: 'Next',
-          dismissButtonText: 'Dismiss',
           enabled: true,
           endButtonText: 'Okay',
           onDismiss: handleDismiss,
@@ -348,7 +380,6 @@ describe('<ProductTour />', () => {
     it('renders first enabled tour', () => {
       const secondEnabledTourData = {
         advanceButtonText: 'Next',
-        dismissButtonText: 'Dismiss',
         enabled: true,
         endButtonText: 'Okay',
         onDismiss: handleDismiss,

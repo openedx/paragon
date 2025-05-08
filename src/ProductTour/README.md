@@ -16,6 +16,10 @@ tours are enabled, `ProductTour` will only render the first enabled in the `tour
 `Checkpoints` are rendered in the order they're listed in the checkpoint array.
 The checkpoint objects themselves have additional props that can override the props defined in `ProductTour`.
 
+Best practices for ProductTour includes not overloading the user with a large amount of steps. 
+Paragon recommends keeping steps to a minimum, as well as any overriden button names to be 
+descriptive and readable. 
+
 ## Basic Usage
 
 ```jsx live
@@ -24,7 +28,7 @@ The checkpoint objects themselves have additional props that can override the pr
     const myFirstTour = {
       tourId: 'myFirstTour',
       advanceButtonText: 'Next',
-      dismissButtonText: 'Dismiss',
+      backButtonText: 'Back',
       endButtonText: 'Okay',
       enabled: isTourEnabled,
       onDismiss: () => setIsTourEnabled(false),
@@ -46,12 +50,12 @@ The checkpoint objects themselves have additional props that can override the pr
           placement: 'right',
           target: '#checkpoint-2',
           title: 'Second checkpoint',
+          backButtonText: 'Rewind', 
         },
         {
-          body: "Here's the third checkpoint!",
+          body: "The third checkpoint without a title",
           placement: 'bottom',
           target: '#checkpoint-3',
-          title: 'Third checkpoint',
           onEnd: () => {
             console.log('Ended the third checkpoint');
             setIsTourEnabled(false);
