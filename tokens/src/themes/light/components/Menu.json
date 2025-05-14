@@ -19,7 +19,7 @@
           "border": { "source": "$menu-item-hover-border-color", "$value": "{color.menu.item.bg}" }
         },
         "focus": {
-          "bg": { "source": "$menu-item-focus-bg", "$value": "{color.btn.active.bg.tertiary}" }
+          "bg": { "source": "$menu-item-focus-bg", "$value": "{color.light.500}" }
         }
       },
       "select": {
