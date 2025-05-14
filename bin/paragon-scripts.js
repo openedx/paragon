@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const chalk = require('chalk');
 const themeCommand = require('../lib/install-theme');
-const helpCommand = require('../lib/help');
+const { helpCommand } = require('../lib/help');
 const buildTokensCommand = require('../lib/build-tokens');
 const replaceVariablesCommand = require('../lib/replace-variables');
 const buildScssCommand = require('../lib/build-scss');
@@ -224,3 +224,7 @@ const COMMANDS = {
     process.exit(1);
   }
 })();
+
+module.exports = {
+  COMMANDS,
+};
