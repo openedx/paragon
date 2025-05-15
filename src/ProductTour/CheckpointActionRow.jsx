@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import ActionRow from '../ActionRow';
 import Button from '../Button';
 
 const CheckpointActionRow = React.forwardRef(({
@@ -11,13 +13,13 @@ const CheckpointActionRow = React.forwardRef(({
   onBack,
   onEnd,
   index,
-}, ref) => {
+}) => {
   const isFirstCheckpoint = index === 0;
   return (
-    <div className="pgn__checkpoint-action-row" ref={ref}>
+    <ActionRow className="pgn__checkpoint-action-row">
       {!isFirstCheckpoint && (
         <Button
-          className="pgn__checkpoint-button_back"
+          className="pgn__checkpoint-button-back"
           variant="tertiary"
           onClick={onBack}
         >
@@ -27,12 +29,11 @@ const CheckpointActionRow = React.forwardRef(({
       <Button
         autoFocus
         className="pgn__checkpoint-button_advance"
-        variant="primary"
         onClick={isLastCheckpoint ? () => onEnd(index) : () => onAdvance(index)}
       >
         {isLastCheckpoint ? endButtonText : advanceButtonText}
       </Button>
-    </div>
+    </ActionRow>
   );
 });
 

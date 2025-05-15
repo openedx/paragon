@@ -16,6 +16,11 @@ const messages = defineMessages({
     defaultMessage: '{step} of {totalSteps}',
     description: 'Page index showing your place in the ProductTour',
   },
+  closeAltText: {
+    id: 'pgn.ProductTour.checkpointHeader.close',
+    defaultMessage: 'Close tour',
+    description: 'Close alternative text for ProductTour component',
+  },
 });
 
 export default messages;

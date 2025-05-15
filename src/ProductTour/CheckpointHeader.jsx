@@ -14,30 +14,23 @@ const CheckpointHeader = React.forwardRef(({
   const intl = useIntl();
   const oneBasedIndex = index + 1;
 
-  const closeAltText = intl.formatMessage({
-    id: 'pgn.ProductTour.checkpointHeader.close',
-    defaultMessage: 'Close tour',
-    description: 'Close alt text for ProductTour component',
-  });
-
   return (
     <>
-      <div className="pgn__checkpoint-header">
-        <p className="pgn__checkpoint-page-index">
+      <header className="pgn__checkpoint-header">
+        <span className="pgn__checkpoint-page-index">
           <FormattedMessage
-            id="pgn.ProductTour.CheckpointHeader.pageIndex"
             {...messages.pageIndexText}
             values={{ step: oneBasedIndex, totalSteps: totalCheckpoints }}
           />
-        </p>
+        </span>
         <IconButton
+          size="sm"
           iconAs={Icon}
           src={Close}
-          alt={closeAltText}
+          alt={intl.formatMessage(messages.closeAltText)}
           onClick={onDismiss}
-          variant="primary"
         />
-      </div>
+      </header>
       {title && (<CheckpointTitle>{title}</CheckpointTitle>)}
     </>
   );

@@ -1,11 +1,12 @@
 import React from 'react';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
 
 import * as popper from '@popperjs/core';
 
 import ProductTour from '.';
+import messages from './messages';
 
 const popperMock = jest.spyOn(popper, 'createPopper');
 
@@ -104,17 +105,13 @@ describe('<ProductTour />', () => {
       });
 
       it('onClick of advance button advances to next checkpoint', async () => {
-        const { rerender } = render(<ProductTourWrapper tours={[tourData]} />);
+        render(<ProductTourWrapper tours={[tourData]} />);
         // Verify the first Checkpoint has rendered
         expect(screen.getByRole('heading', { name: 'Checkpoint 1' })).toBeInTheDocument();
 
         // Click the advance button
         const advanceButton = screen.getByRole('button', { name: 'Next' });
-        await act(async () => {
-          await userEvent.click(advanceButton);
-        });
-
-        rerender(<ProductTourWrapper tours={[tourData]} />);
+        await userEvent.click(advanceButton);
 
         // Verify the second Checkpoint has rendered
         expect(screen.getByText('Checkpoint 2')).toBeInTheDocument();
@@ -130,58 +127,50 @@ describe('<ProductTour />', () => {
         const closeButton = screen.getByRole('button', { name: 'Close tour' });
         expect(closeButton).toBeInTheDocument();
 
-        await act(async () => {
-          await userEvent.click(closeButton);
-        });
+        await userEvent.click(closeButton);
 
         // Verify no Checkpoints have rendered
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
       });
 
       it('onClick of close icon button disables tour', async () => {
-        const { rerender } = render(<ProductTourWrapper tours={[tourData]} />);
+        const user = userEvent.setup();
+        render(<ProductTourWrapper tours={[tourData]} />);
         // Advance the tour, close icon only appears after first step
-        await act(async () => {
-          await userEvent.click(screen.getByRole('button', { name: 'Next' }));
-        });
-        rerender(<ProductTourWrapper tours={[tourData]} />);
 
-        const closeIcon = screen.getByRole('button', { name: 'Close tour' });
+        await user.click(screen.getByRole('button', { name: 'Next' }));
+
+        const closeIcon = screen.getByRole('button', { name: messages.closeAltText.defaultMessage });
         expect(closeIcon).toBeInTheDocument();
 
-        await act(async () => {
-          await userEvent.click(closeIcon);
-        });
+        await user.click(closeIcon);
+
         expect(handleDismiss).toHaveBeenCalled();
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
       });
 
       it('onClick of back button going to the previous checkpoint', async () => {
-        const { rerender } = render(<ProductTourWrapper tours={[tourData]} />);
+        const user = userEvent.setup();
+        render(<ProductTourWrapper tours={[tourData]} />);
         // Back button only appears when you are not on the first step of the tour
         expect(screen.getByRole('heading', { name: 'Checkpoint 1' })).toBeInTheDocument();
         expect(screen.queryByRole('button', { name: 'Back' })).not.toBeInTheDocument();
         // Advance the tour
-        await act(async () => {
-          await userEvent.click(screen.getByRole('button', { name: 'Next' }));
-        });
-        rerender(<ProductTourWrapper tours={[tourData]} />);
+        await user.click(screen.getByRole('button', { name: 'Next' }));
+
         expect(screen.getByText('Checkpoint 2')).toBeInTheDocument();
 
         // Go back in the tour
         const backButton = screen.getByRole('button', { name: 'Back' });
         expect(backButton).toBeInTheDocument();
-        await act(async () => {
-          await userEvent.click(backButton);
-        });
+        await user.click(backButton);
 
-        rerender(<ProductTourWrapper tours={[tourData]} />);
         expect(screen.getByText('Checkpoint 1')).toBeInTheDocument();
       });
 
       it('onClick of end button disables tour', async () => {
         const user = userEvent.setup();
-        const { rerender } = render(<ProductTourWrapper tours={[tourData]} />);
+        render(<ProductTourWrapper tours={[tourData]} />);
 
         // Verify a Checkpoint has rendered
         expect(screen.getByRole('dialog', { name: 'Checkpoint 1' })).toBeInTheDocument();
@@ -193,12 +182,8 @@ describe('<ProductTour />', () => {
         const advanceButton2 = screen.getByRole('button', { name: 'Next' });
         await user.click(advanceButton2);
 
-        rerender(<ProductTourWrapper tours={[tourData]} />);
-
         const advanceButton3 = screen.getByRole('button', { name: 'Override advance' });
         await user.click(advanceButton3);
-
-        rerender(<ProductTourWrapper tours={[tourData]} />);
 
         // Click the end button
         const endButton = screen.getByRole('button', { name: 'End' });
@@ -268,16 +253,12 @@ describe('<ProductTour />', () => {
       });
 
       it('applies override for advanceButtonText', async () => {
-        const { rerender } = render(<ProductTourWrapper tours={[overrideTourData]} />);
+        render(<ProductTourWrapper tours={[overrideTourData]} />);
         expect(screen.getByRole('button', { name: 'Override advance' })).toBeInTheDocument();
         const advanceButton = screen.getByRole('button', { name: 'Override advance' });
-        await act(async () => {
-          await userEvent.click(advanceButton);
-        });
+        await userEvent.click(advanceButton);
         expect(screen.queryByRole('button', { name: 'Override advance' })).not.toBeInTheDocument();
         expect(customOnAdvance).toHaveBeenCalledTimes(1);
-
-        rerender(<ProductTourWrapper tours={[overrideTourData]} />);
 
         expect(screen.getByText('Checkpoint 4')).toBeInTheDocument();
       });
@@ -289,19 +270,16 @@ describe('<ProductTour />', () => {
       it('calls customHandleDismiss onClick of dismiss button', async () => {
         render(<ProductTourWrapper tours={[overrideTourData]} />);
         const closeButton = screen.getByRole('button', { name: 'Close tour' });
-        await act(async () => {
-          await userEvent.click(closeButton);
-        });
+        await userEvent.click(closeButton);
+
         expect(customOnDismiss).toHaveBeenCalledTimes(1);
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
       });
       it('calls customHandleOnEnd onClick of end button', async () => {
         const user = userEvent.setup();
-        const { rerender } = render(<ProductTourWrapper tours={[overrideTourData]} />);
+        render(<ProductTourWrapper tours={[overrideTourData]} />);
         const advanceButton = screen.getByRole('button', { name: 'Override advance' });
         await user.click(advanceButton);
-
-        rerender(<ProductTourWrapper tours={[overrideTourData]} />);
 
         expect(screen.getByText('Checkpoint 4')).toBeInTheDocument();
         const endButton = screen.getByRole('button', { name: 'Override end' });

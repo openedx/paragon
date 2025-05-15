@@ -16,8 +16,9 @@ tours are enabled, `ProductTour` will only render the first enabled in the `tour
 `Checkpoints` are rendered in the order they're listed in the checkpoint array.
 The checkpoint objects themselves have additional props that can override the props defined in `ProductTour`.
 
+## Usage guidelines
 Best practices for ProductTour includes not overloading the user with a large amount of steps. 
-Paragon recommends keeping steps to a minimum, as well as any overriden button names to be 
+Paragon recommends keeping to no more than 5 steps, as well as any overriden button names to be 
 descriptive and readable. 
 
 ## Basic Usage
