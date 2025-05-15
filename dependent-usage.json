@@ -1,8 +1,8 @@
 {
-  "lastModified": 1747231668476,
+  "lastModified": 1747318044623,
   "projectUsages": [
     {
-      "version": "23.5.1",
+      "version": "23.5.2",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -28109,12 +28109,6 @@
             "index": 1273
           },
           {
-            "filePath": "src/optimizer-page/scan-results/filterModal.jsx",
-            "line": 47,
-            "column": 10,
-            "index": 1273
-          },
-          {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
             "line": 110,
             "column": 24,
@@ -42119,6 +42113,48 @@
             "index": 412
           },
           {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
+            "line": 47,
+            "column": 16,
+            "index": 1151
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
+            "line": 49,
+            "column": 8,
+            "index": 1400
+          },
+          {
+            "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
+            "line": 57,
+            "column": 10,
+            "index": 1804
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
+            "line": 74,
+            "column": 28,
+            "index": 2464
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarSection.jsx",
+            "line": 51,
+            "column": 8,
+            "index": 1571
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/discussions/DiscussionsTrigger.jsx",
+            "line": 48,
+            "column": 6,
+            "index": 1594
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationIcon.jsx",
+            "line": 17,
+            "column": 6,
+            "index": 412
+          },
+          {
             "filePath": "src/preferences-unsubscribe/index.jsx",
             "line": 57,
             "column": 16,
@@ -50727,7 +50763,7 @@
       }
     },
     {
-      "version": "23.5.1",
+      "version": "22.17.0",
       "name": "@edx/frontend-component-header-edx",
       "repository": {
         "type": "git",
