@@ -11,7 +11,13 @@ const importer = function importer(url) {
   if (url.startsWith('~paragon-style')) {
     file = path.resolve(__dirname, '../styles', url.substr('~paragon-style/'.length));
   } else if (url[0] === '~') {
-    file = path.resolve(__dirname, '../node_modules', url.substr(1));
+    const siblingNodeModulesPath = path.resolve(__dirname, './node_modules', url.substr(1));
+    const parentNodeModulesPath = path.resolve(__dirname, '../node_modules', url.substr(1));
+    if (fs.existsSync(siblingNodeModulesPath)) {
+      file = siblingNodeModulesPath;
+    } else {
+      file = parentNodeModulesPath;
+    }
   }
 
   return { file };

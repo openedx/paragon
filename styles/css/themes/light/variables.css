@@ -1058,6 +1058,7 @@
   --pgn-color-theme-active-brand: var(--pgn-color-brand-900); /* Theme-specific brand active color. */
   --pgn-color-theme-active-light: var(--pgn-color-light-900); /* Theme-specific light active color. */
   --pgn-color-theme-active-dark: var(--pgn-color-dark-900); /* Theme-specific dark active color. */
+  --pgn-color-alert-actions-btn-bg-primary: var(--pgn-color-btn-bg-primary); /* TBD */
   --pgn-color-annotation-text-light: var(--pgn-color-primary-500);
   --pgn-color-annotation-bg-success: var(--pgn-color-success-base);
   --pgn-color-annotation-bg-error: var(--pgn-color-danger-base);
