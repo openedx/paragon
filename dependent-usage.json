@@ -1,5 +1,5 @@
 {
-  "lastModified": 1747577207481,
+  "lastModified": 1747663657946,
   "projectUsages": [
     {
       "version": "23.6.0",
@@ -18443,6 +18443,12 @@
             "index": 446
           },
           {
+            "filePath": "src/course-outline/xblock-status/NeverShowAssessmentResultMessage.jsx",
+            "line": 10,
+            "column": 6,
+            "index": 405
+          },
+          {
             "filePath": "src/course-outline/xblock-status/ReleaseStatus.jsx",
             "line": 37,
             "column": 6,
@@ -27731,6 +27737,14 @@
             "line": 15,
             "column": 44,
             "index": 484
+          }
+        ],
+        "HelpOutline": [
+          {
+            "filePath": "src/course-outline/xblock-status/NeverShowAssessmentResultMessage.jsx",
+            "line": 10,
+            "column": 44,
+            "index": 443
           }
         ],
         "ClockIcon": [
@@ -42275,6 +42289,48 @@
             "index": 412
           },
           {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
+            "line": 47,
+            "column": 16,
+            "index": 1151
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
+            "line": 49,
+            "column": 8,
+            "index": 1400
+          },
+          {
+            "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
+            "line": 57,
+            "column": 10,
+            "index": 1804
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
+            "line": 74,
+            "column": 28,
+            "index": 2464
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarSection.jsx",
+            "line": 51,
+            "column": 8,
+            "index": 1571
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/discussions/DiscussionsTrigger.jsx",
+            "line": 48,
+            "column": 6,
+            "index": 1594
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationIcon.jsx",
+            "line": 17,
+            "column": 6,
+            "index": 412
+          },
+          {
             "filePath": "src/preferences-unsubscribe/index.jsx",
             "line": 57,
             "column": 16,
@@ -51194,7 +51250,7 @@
       }
     },
     {
-      "version": "23.5.1",
+      "version": "23.6.0",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
@@ -52440,7 +52496,7 @@
       }
     },
     {
-      "version": "23.4.5",
+      "version": "23.6.0",
       "name": "@edx/frontend-template-application",
       "repository": {
         "type": "git",
