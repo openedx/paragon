@@ -73,6 +73,7 @@ describe('Checkpoint', () => {
             advanceButtonText="Next"
             backButtonText="Back"
             body="Lorem ipsum checkpoint body"
+            dismissButtonText="Escape"
             endButtonText="End"
             index={4}
             onAdvance={handleAdvance}
@@ -86,8 +87,13 @@ describe('Checkpoint', () => {
       );
     });
 
-    it('only renders end button (i.e. neither advance nor dismiss buttons)', () => {
+    it('only renders end button (i.e. neither advance nor back buttons)', () => {
       expect(screen.getByText('End', { selector: 'button' })).toBeInTheDocument();
+    });
+
+    it('uses deprecated dismissButtonText as alt text on the close icon', () => {
+      const closeButton = screen.getByTestId('Dismiss tour');
+      expect(closeButton).toHaveAttribute('aria-label', 'Escape');
     });
 
     it('end button onClick calls handleEnd', async () => {

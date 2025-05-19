@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 import Checkpoint from './Checkpoint';
 
@@ -8,15 +9,16 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
   const {
     enabled, checkpoints = [], startingIndex, onEscape, onEnd, onBack,
     onDismiss: tourOnDismiss, advanceButtonText: tourAdvanceButtonText,
-    endButtonText: tourEndButtonText, backButtonText: tourBackButtonText,
+    dismissButtonText: tourDismissButtonText, endButtonText: tourEndButtonText,
+    backButtonText: tourBackButtonText,
   } = tourValue || {};
   const [currentCheckpointData, setCurrentCheckpointData] = useState(null);
   const [index, setIndex] = useState(0);
   const [isTourEnabled, setIsTourEnabled] = useState(false);
   const [prunedCheckpoints, setPrunedCheckpoints] = useState([]);
   const {
-    title, body, onAdvance, onDismiss, advanceButtonText, endButtonText, backButtonText,
-    placement, target,
+    title, body, onAdvance, onDismiss, advanceButtonText, dismissButtonText,
+    endButtonText, backButtonText, placement, target,
   } = currentCheckpointData || {};
 
   /**
@@ -113,6 +115,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
       advanceButtonText={advanceButtonText || tourAdvanceButtonText}
       body={body}
       currentCheckpointData={currentCheckpointData}
+      dismissButtonText={dismissButtonText || tourDismissButtonText}
       endButtonText={endButtonText || tourEndButtonText}
       backButtonText={backButtonText || tourBackButtonText}
       index={index}
@@ -137,6 +140,7 @@ ProductTour.defaultProps = {
       advanceButtonText: '',
       backButtonText: '',
       body: '',
+      dismissButtonText: '',
       endButtonText: '',
       onAdvance: () => {},
       onDismiss: () => {},
@@ -144,6 +148,7 @@ ProductTour.defaultProps = {
       placement: 'top',
       title: '',
     },
+    dismissButtonText: '',
     endButtonText: '',
     onBack: () => {},
     onDismiss: () => {},
@@ -169,6 +174,8 @@ ProductTour.propTypes = {
       backButtonText: PropTypes.node,
       /** The text displayed in the body of the Checkpoint */
       body: PropTypes.node,
+      /** **Deprecated** The text displayed on the button used to dismiss the tour for the given Checkpoint.  */
+      dismissButtonText: PropTypes.node,
       /** The text displayed on the button used to end the tour for the given Checkpoint
        * (overrides the `endButtonText` defined in the parent tour object). */
       endButtonText: PropTypes.node,
@@ -191,6 +198,8 @@ ProductTour.propTypes = {
       /** The text displayed in the title of the Checkpoint */
       title: PropTypes.node,
     })),
+    /** **Deprecated** The text displayed on the button used to dismiss the tour for the given Checkpoint.  */
+    dismissButtonText: PropTypes.node,
     /** Whether the tour is enabled. If there are multiple tours defined, only one should be enabled at a time. */
     enabled: PropTypes.bool.isRequired,
     /** The text displayed on the button used to end the tour. */
@@ -209,5 +218,12 @@ ProductTour.propTypes = {
     tourId: PropTypes.string.isRequired,
   })),
 };
+
+export const ProductTourWithDeprecatedProp = withDeprecatedProps(ProductTour, 'ProductTour', {
+  dismissButtonText: {
+    deprType: DeprTypes.REMOVED,
+    message: 'The dismiss button was replaced with a close icon, button text is being used as alt text for the icon.',
+  },
+});
 
 export default ProductTour;

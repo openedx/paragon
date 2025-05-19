@@ -9,10 +9,11 @@ import CheckpointTitle from './CheckpointTitle';
 import messages from './messages';
 
 const CheckpointHeader = React.forwardRef(({
-  index, onDismiss, title, totalCheckpoints,
+  dismissAltText, index, onDismiss, title, totalCheckpoints,
 }) => {
   const intl = useIntl();
   const oneBasedIndex = index + 1;
+  const altText = (dismissAltText && typeof dismissAltText === 'string') ? dismissAltText : intl.formatMessage(messages.closeAltText);
 
   return (
     <>
@@ -27,8 +28,9 @@ const CheckpointHeader = React.forwardRef(({
           size="sm"
           iconAs={Icon}
           src={Close}
-          alt={intl.formatMessage(messages.closeAltText)}
+          alt={altText}
           onClick={onDismiss}
+          data-testid="Dismiss tour"
         />
       </header>
       {title && (<CheckpointTitle>{title}</CheckpointTitle>)}
@@ -37,10 +39,13 @@ const CheckpointHeader = React.forwardRef(({
 });
 
 CheckpointHeader.defaultProps = {
+  dismissAltText: null,
   title: '',
 };
 
 CheckpointHeader.propTypes = {
+  /** Was deprecated dismissButtonText, now is being passed as alt text to the close icon */
+  dismissAltText: PropTypes.string,
   /** The current index of the given Checkpoint */
   index: PropTypes.number.isRequired,
   /** A function that runs when triggering the `onClick` event of the dismiss
