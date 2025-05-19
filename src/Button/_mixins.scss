@@ -12,3 +12,34 @@
   // Manually declare to provide an override to the browser default
   @include border-radius($button-border-radius, 0);
 }
+
+/// Sets the CSS custom properties for a button variant
+/// @param {String} $variant - The variant name (e.g., 'primary', 'outline-primary')
+@mixin button-variant($variant) {
+  --pgn-btn-color: var(--pgn-color-btn-text-#{$variant});
+  --pgn-btn-bg: var(--pgn-color-btn-bg-#{$variant});
+  --pgn-btn-border-color: var(--pgn-color-btn-border-#{$variant});
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-#{$variant});
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-#{$variant});
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-#{$variant});
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-#{$variant});
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-#{$variant});
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-#{$variant});
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-#{$variant});
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-#{$variant});
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-#{$variant});
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-#{$variant});
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-#{$variant});
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-#{$variant});
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-#{$variant});
+}
+
+/// Overrides default button variants with custom variants
+/// @param {Map} $btn-variant-overrides - A map of variant names to override variants
+@mixin button-variant-overrides($btn-variant-overrides) {
+  @each $variant, $override in $btn-variant-overrides {
+    .btn-#{$variant} {
+      @include button-variant($override);
+    }
+  }
+}

@@ -1,3 +1,7 @@
+@use "sass:map";
+
+@import "../Button/mixins";
+
 //
 // Override Bootstrap's alert definition.
 // We do this to get more control over colors
@@ -7,6 +11,17 @@
 //
 // Base styles
 //
+
+// Core Paragon:
+$alert-actions-btn-variant-overrides: () !default;
+
+// Brand package (Elm theme):
+$alert-actions-btn-variant-overrides: map.merge(
+  (
+    "primary": "brand",
+  ),
+  $alert-actions-btn-variant-overrides,
+);
 
 .alert {
   position: relative;
@@ -87,36 +102,13 @@
 
   .pgn__alert-actions {
     margin-inline-start: var(--pgn-spacing-alert-actions-gap);
-
-    // {
-    //   originalVariant: desiredVariant,
-    // }
-
-    .btn-primary {
-      --pgn-btn-color: var(--pgn-color-btn-text-brand);
-      --pgn-btn-bg: var(--pgn-color-alert-actions-btn-bg-primary);
-      --pgn-btn-border-color: var(--pgn-color-btn-border-brand);
-      --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-brand);
-      --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-brand);
-      --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-brand);
-      --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-brand);
-      --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-brand);
-      --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-brand);
-      --pgn-btn-active-color: var(--pgn-color-btn-active-text-brand);
-      --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-brand);
-      --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-brand);
-      --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-brand);
-      --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-brand);
-      --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-brand);
-      --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-brand);
-
-      box-shadow: var(--pgn-elevation-btn-box-shadow-base);
-    }
+    @include button-variant-overrides($alert-actions-btn-variant-overrides);
   }
 }
 
 .pgn__alert-message-wrapper-stacked .pgn__alert-actions {
   margin-top: var(--pgn-spacing-alert-actions-gap);
+  @include button-variant-overrides($alert-actions-btn-variant-overrides);
 }
 
 // Alternate styles
