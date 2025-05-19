@@ -36,7 +36,7 @@ const plugins = [
         },
       },
       sassOptions: {
-        silenceDeprecations: ['abs-percent', 'color-functions', 'import', 'mixed-decls', 'global-builtin'],
+        silenceDeprecations: ['abs-percent', 'color-functions', 'import', 'mixed-decls', 'global-builtin', 'legacy-js-api'],
       },
     },
   },
