@@ -37,47 +37,61 @@
   }
 
   // Mixin for button states that affect border radius
+
   @mixin button-border-radius($side) {
     @if $side == 'right' {
       @include border-right-radius(0);
-    } @else if $side == 'left' {
+    }
+
+    @if $side == 'left' {
       @include border-left-radius(0);
     }
     
-    // Pseudo-class states
-    $pseudo-states: 'focus', 'active';
-    
     // Handle pseudo-classes
-    @each $state in $pseudo-states {
-      &.btn:not(:disabled):not(.disabled):#{$state},
-      &.btn:not(:disabled):not(.disabled):#{$state}::before {
-        @if $side == 'right' {
-          @include border-right-radius(0);
-        } @else if $side == 'left' {
-          @include border-left-radius(0);
-        }
+    &.btn:not(:disabled, .disabled):focus,
+    &.btn:not(:disabled, .disabled):focus::before {
+      @if $side == 'left' {
+        @include border-left-radius(0);
+      }
+
+      @if $side == 'right' {
+        @include border-right-radius(0);
+      }
+    }
+    
+    &.btn:not(:disabled, .disabled):active,
+    &.btn:not(:disabled, .disabled):active::before {
+      @if $side == 'left' {
+        @include border-left-radius(0);
+      }
+
+      @if $side == 'right' {
+        @include border-right-radius(0);
       }
     }
     
     // Handle .active class separately
-    &.btn:not(:disabled):not(.disabled).active,
-    &.btn:not(:disabled):not(.disabled).active::before {
+    &.btn:not(:disabled, .disabled).active,
+    &.btn:not(:disabled, .disabled).active::before {
       @if $side == 'right' {
         @include border-right-radius(0);
-      } @else if $side == 'left' {
+      }
+
+      @if $side == 'left' {
         @include border-left-radius(0);
       }
     }
   }
 
   // Right border radius for non-last buttons
+  > .btn:not(:last-child, .dropdown-toggle, :first-child),
   > .btn:not(:last-child, .dropdown-toggle),
   > .btn-group:not(:last-child) > .btn {
     @include button-border-radius('right');
   }
 
   // Left border radius for non-first buttons
-  > .btn:not(:first-child),
+  > .btn:not(:first-child, .dropdown-toggle),
   > .btn-group:not(:first-child) > .btn {
     @include button-border-radius('left');
   }
