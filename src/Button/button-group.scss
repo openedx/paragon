@@ -38,7 +38,7 @@
 
   // Mixin for button states that affect border radius
 
-  @mixin button-border-radius($side) {
+  @mixin button-border-radius-0($side) {
     @if $side == 'right' {
       @include border-right-radius(0);
     }
@@ -87,13 +87,13 @@
   > .btn:not(:last-child, .dropdown-toggle, :first-child),
   > .btn:not(:last-child, .dropdown-toggle),
   > .btn-group:not(:last-child) > .btn {
-    @include button-border-radius('right');
+    @include button-border-radius-0('right');
   }
 
   // Left border radius for non-first buttons
   > .btn:not(:first-child, .dropdown-toggle),
   > .btn-group:not(:first-child) > .btn {
-    @include button-border-radius('left');
+    @include button-border-radius-0('left');
   }
 }
 
