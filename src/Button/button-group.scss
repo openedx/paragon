@@ -70,7 +70,7 @@
       }
     }
     
-    // Handle .active class separately
+    // Handle .active class
     &.btn:not(:disabled, .disabled).active,
     &.btn:not(:disabled, .disabled).active::before {
       @if $side == 'right' {
