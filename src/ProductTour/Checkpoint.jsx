@@ -144,7 +144,7 @@ Checkpoint.propTypes = {
   /** The text displayed on the button used to advance the tour for the given Checkpoint. */
   advanceButtonText: PropTypes.node,
   /** The text displayed on the button used go back in the tour for the given Checkpoint. */
-  backButtonText: PropTypes.node,
+  backButtonText: PropTypes.string,
   /** The text displayed in the body of the Checkpoint */
   body: PropTypes.node,
   /** The text used in the alt for the icon used to dismiss the tour for the given Checkpoint */

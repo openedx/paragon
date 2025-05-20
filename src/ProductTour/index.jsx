@@ -186,7 +186,7 @@ ProductTour.propTypes = {
       advanceButtonText: PropTypes.node,
       /** The text displayed on the button used to go back in the tour for the given Checkpoint
        * (overrides the* `backButtonText` defined in the parent tour object). */
-      backButtonText: PropTypes.node,
+      backButtonText: PropTypes.string,
       /** The text displayed in the body of the Checkpoint */
       body: PropTypes.node,
       /** The text used in the alt for the icon used to dismiss the tour for the given Checkpoint */

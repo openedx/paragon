@@ -52,7 +52,7 @@ CheckpointActionRow.propTypes = {
   /** The text displayed on the button used to advance the tour. */
   advanceButtonText: PropTypes.node,
   /** The text displayed on the button used to go back on the tour */
-  backButtonText: PropTypes.node,
+  backButtonText: PropTypes.string,
   /** The text displayed on the button used to end the tour. */
   endButtonText: PropTypes.node,
   /** Whether the parent Checkpoint is the last in the tour. */

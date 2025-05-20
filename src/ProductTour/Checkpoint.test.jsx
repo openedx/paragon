@@ -52,14 +52,16 @@ describe('Checkpoint', () => {
     });
 
     it('back button onClick calls handleBack', async () => {
+      const user = userEvent.setup();
       const backButton = screen.getByRole('button', { name: 'Back' });
-      await userEvent.click(backButton);
+      await user.click(backButton);
       expect(handleBack).toHaveBeenCalledTimes(1);
     });
 
     it('advance button onClick calls handleAdvance', async () => {
+      const user = userEvent.setup();
       const advanceButton = screen.getByRole('button', { name: 'Next' });
-      await userEvent.click(advanceButton);
+      await user.click(advanceButton);
       expect(handleAdvance).toHaveBeenCalledTimes(1);
     });
   });
@@ -92,7 +94,7 @@ describe('Checkpoint', () => {
     });
 
     it('uses customized alt text on the close icon', () => {
-      const closeButton = screen.getByTestId('Dismiss tour');
+      const closeButton = screen.getByTestId('dismiss-tour');
       expect(closeButton).toHaveAttribute('aria-label', 'Escape');
     });
 
