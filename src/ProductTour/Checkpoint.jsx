@@ -9,11 +9,10 @@ import CheckpointActionRow from './CheckpointActionRow';
 import CheckpointBody from './CheckpointBody';
 import CheckpointHeader from './CheckpointHeader';
 import messages from './messages';
-import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 const Checkpoint = React.forwardRef(({
   body,
-  dismissButtonText,
+  dismissAltText,
   index,
   onBack,
   onDismiss,
@@ -106,7 +105,7 @@ const Checkpoint = React.forwardRef(({
         />
       </span>
       <CheckpointHeader
-        dismissAltText={dismissButtonText}
+        dismissAltText={dismissAltText}
         index={index}
         onDismiss={onDismiss}
         title={title}
@@ -135,7 +134,7 @@ Checkpoint.defaultProps = {
   advanceButtonText: null,
   backButtonText: null,
   body: null,
-  dismissButtonText: null,
+  dismissAltText: null,
   endButtonText: null,
   placement: 'top',
   title: null,
@@ -148,8 +147,8 @@ Checkpoint.propTypes = {
   backButtonText: PropTypes.node,
   /** The text displayed in the body of the Checkpoint */
   body: PropTypes.node,
-  /** **Deprecated** The text displayed on the button used to dismiss the tour for the given Checkpoint.  */
-  dismissButtonText: PropTypes.node,
+  /** The text used in the alt for the icon used to dismiss the tour for the given Checkpoint */
+  dismissAltText: PropTypes.string,
   /** The text displayed on the button used to end the tour for the given Checkpoint. */
   endButtonText: PropTypes.node,
   /** The current index of the given Checkpoint */
@@ -178,12 +177,5 @@ Checkpoint.propTypes = {
   /** The total number of Checkpoints in a tour */
   totalCheckpoints: PropTypes.number.isRequired,
 };
-
-export const CheckpointWithDeprecatedProp = withDeprecatedProps(Checkpoint, 'Checkpoint', {
-  dismissButtonText: {
-    deprType: DeprTypes.REMOVED,
-    message: 'The dismiss button was replaced with a close icon, button text is being used as alt text for the icon.',
-  },
-});
 
 export default Checkpoint;

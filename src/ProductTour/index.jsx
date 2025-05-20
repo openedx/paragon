@@ -7,9 +7,17 @@ import Checkpoint from './Checkpoint';
 const ProductTour = React.forwardRef(({ tours }, ref) => {
   const tourValue = tours.find((tour) => tour.enabled);
   const {
-    enabled, checkpoints = [], startingIndex, onEscape, onEnd, onBack,
-    onDismiss: tourOnDismiss, advanceButtonText: tourAdvanceButtonText,
-    dismissButtonText: tourDismissButtonText, endButtonText: tourEndButtonText,
+    enabled,
+    checkpoints = [],
+    startingIndex,
+    onEscape,
+    onEnd,
+    onBack,
+    onDismiss: tourOnDismiss,
+    advanceButtonText: tourAdvanceButtonText,
+    // dismissButtonText: tourDismissButtonText,
+    dismissAltText: tourDismissAltText,
+    endButtonText: tourEndButtonText,
     backButtonText: tourBackButtonText,
   } = tourValue || {};
   const [currentCheckpointData, setCurrentCheckpointData] = useState(null);
@@ -17,8 +25,17 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
   const [isTourEnabled, setIsTourEnabled] = useState(false);
   const [prunedCheckpoints, setPrunedCheckpoints] = useState([]);
   const {
-    title, body, onAdvance, onDismiss, advanceButtonText, dismissButtonText,
-    endButtonText, backButtonText, placement, target,
+    title,
+    body,
+    onAdvance,
+    onDismiss,
+    advanceButtonText,
+    // dismissButtonText,
+    dismissAltText,
+    endButtonText,
+    backButtonText,
+    placement,
+    target,
   } = currentCheckpointData || {};
 
   /**
@@ -115,7 +132,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
       advanceButtonText={advanceButtonText || tourAdvanceButtonText}
       body={body}
       currentCheckpointData={currentCheckpointData}
-      dismissButtonText={dismissButtonText || tourDismissButtonText}
+      dismissAltText={dismissAltText || tourDismissAltText}
       endButtonText={endButtonText || tourEndButtonText}
       backButtonText={backButtonText || tourBackButtonText}
       index={index}
@@ -140,7 +157,7 @@ ProductTour.defaultProps = {
       advanceButtonText: '',
       backButtonText: '',
       body: '',
-      dismissButtonText: '',
+      dismissAltText: '',
       endButtonText: '',
       onAdvance: () => {},
       onDismiss: () => {},
@@ -148,7 +165,7 @@ ProductTour.defaultProps = {
       placement: 'top',
       title: '',
     },
-    dismissButtonText: '',
+    dismissAltText: '',
     endButtonText: '',
     onBack: () => {},
     onDismiss: () => {},
@@ -174,12 +191,12 @@ ProductTour.propTypes = {
       backButtonText: PropTypes.node,
       /** The text displayed in the body of the Checkpoint */
       body: PropTypes.node,
-      /** **Deprecated** The text displayed on the button used to dismiss the tour for the given Checkpoint.  */
-      dismissButtonText: PropTypes.node,
+      /** The text used in the alt for the icon used to dismiss the tour for the given Checkpoint */
+      dismissAltText: PropTypes.string,
       /** The text displayed on the button used to end the tour for the given Checkpoint
        * (overrides the `endButtonText` defined in the parent tour object). */
       endButtonText: PropTypes.node,
-      /** A function that runs when triggering the `onClick` event of the advance
+      /** A function that runs when triggering the `onCick` event of the advance
        * button for the given Checkpoint. */
       onAdvance: PropTypes.func,
       /** A function that runs when triggering the `onClick` event of the dismiss
@@ -198,8 +215,8 @@ ProductTour.propTypes = {
       /** The text displayed in the title of the Checkpoint */
       title: PropTypes.node,
     })),
-    /** **Deprecated** The text displayed on the button used to dismiss the tour for the given Checkpoint.  */
-    dismissButtonText: PropTypes.node,
+    /** The text used in the alt for the icon used to dismiss the tour for the given Checkpoint */
+    dismissAltText: PropTypes.string,
     /** Whether the tour is enabled. If there are multiple tours defined, only one should be enabled at a time. */
     enabled: PropTypes.bool.isRequired,
     /** The text displayed on the button used to end the tour. */
@@ -219,11 +236,76 @@ ProductTour.propTypes = {
   })),
 };
 
-export const ProductTourWithDeprecatedProp = withDeprecatedProps(ProductTour, 'ProductTour', {
-  dismissButtonText: {
-    deprType: DeprTypes.REMOVED,
-    message: 'The dismiss button was replaced with a close icon, button text is being used as alt text for the icon.',
+/**
+ * Checks if the given object has a deprecated/legacy `dismissButtonText` property.
+ * @param {Object} obj - The object to check
+ * @returns {boolean} - True if the object has a deprecated/legacy `dismissButtonText` property, false otherwise
+ */
+const hasDismissButtonText = (obj) => {
+  if ('dismissButtonText' in obj && !!obj.dismissButtonText) {
+    return true;
+  }
+  return false;
+};
+
+export default withDeprecatedProps(ProductTour, 'ProductTour', {
+  tours: {
+    deprType: DeprTypes.FORMAT,
+    message: "The dismissButtonText options in the 'tours' prop have been moved to 'dismissAltText'.",
+    /**
+     * Determines whether the given prop value contains the deprecated/legacy `dismissButtonText` property.
+     * @param {Object[]} propValue - The tours prop value to check
+     * @returns {boolean} True if the prop value contains the deprecated/legacy `dismissButtonText`
+     *  property, false otherwise
+     */
+    expect: (propValue) => {
+      if (!Array.isArray(propValue)) {
+        return true;
+      }
+      return !propValue.some((tour) => {
+        if (hasDismissButtonText(tour)) {
+          return true;
+        }
+        return Array.isArray(tour.checkpoints)
+          && tour.checkpoints.some(hasDismissButtonText);
+      });
+    },
+    /**
+     * Transforms the given prop value by updating the
+     * deprecated/legacy `dismissButtonText` property to
+     * `dismissAltText`, if the prop value is a string. Otherwise,
+     * the original `dismissButtonText` property is ignored.
+     * @param {Object[]} propValue - The tours prop value to transform
+     * @returns {Object[]} The transformed prop value
+     */
+    transform: (propValue) => {
+      const tours = propValue.map((tour) => {
+        const updatedTour = { ...tour };
+
+        // Replace tour level dismissButtonText with dismissAltText
+        if (hasDismissButtonText(tour)) {
+          if (typeof tour.dismissButtonText === 'string') {
+            updatedTour.dismissAltText = tour.dismissButtonText;
+          }
+        }
+
+        // Replace checkpoint level dismissButtonText with dismissAltText
+        if (Array.isArray(tour.checkpoints)) {
+          updatedTour.checkpoints = tour.checkpoints.map((checkpoint) => {
+            if (hasDismissButtonText(checkpoint)) {
+              const { dismissButtonText, ...rest } = checkpoint;
+              if (typeof dismissButtonText === 'string') {
+                return { ...rest, dismissAltText: dismissButtonText };
+              }
+            }
+            return checkpoint;
+          });
+        }
+        return updatedTour;
+      });
+
+      // Return the transformed tours
+      return tours;
+    },
   },
 });
-
-export default ProductTour;
