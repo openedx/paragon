@@ -12,17 +12,6 @@
 // Base styles
 //
 
-// Core Paragon:
-$alert-actions-btn-variant-overrides: () !default;
-
-// Brand package (Elm theme):
-$alert-actions-btn-variant-overrides: map.merge(
-  (
-    "primary": "brand",
-  ),
-  $alert-actions-btn-variant-overrides,
-);
-
 .alert {
   position: relative;
   padding: var(--pgn-spacing-alert-padding-y) var(--pgn-spacing-alert-padding-x);
