@@ -359,7 +359,7 @@ const initializeStyleDictionary = async ({ themes }) => {
   };
 
   /**
-   * Registers a custom format for generating CSS custom properties for alert actions button variants.
+   * Registers a custom format for generating CSS style overrides for alert actions button variants.
    */
   StyleDictionary.registerFormat({
     name: 'css/button-variant-overrides-alert-actions',
@@ -367,7 +367,7 @@ const initializeStyleDictionary = async ({ themes }) => {
       let output = '';
       const { fileHeader } = await getStyleDictionaryUtils();
       const header = await fileHeader({ file: 'overrides/alert.css', formatting: 'css' });
-      const buttonVariantOverrides = dictionary.tokens.color.alert.actions.variants.overrides;
+      const buttonVariantOverrides = dictionary.tokens.color.alert.actions.overrides.variants;
       Object.entries(buttonVariantOverrides).forEach(([originalVariant, overrideVariant]) => {
         output += header;
         output += `.pgn__alert-message-wrapper .pgn__alert-actions .btn-${originalVariant},\n`;
