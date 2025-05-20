@@ -1,6 +1,7 @@
 const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
+const chalk = require('chalk');
 
 const visitedTokens = {};
 
@@ -328,14 +329,23 @@ async function transformInPath(location, variablesMap, transformType = 'definiti
 function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'), isThemeVariant, themeVariant }) {
   const directoryPath = isThemeVariant ? `${buildDir}/themes/${themeVariant}` : `${buildDir}/core`;
 
-  fs.readdir(directoryPath, (errDir, files) => {
-    if (errDir) {
-      // eslint-disable-next-line no-console
-      console.error('Error reading directory:', errDir);
-      return;
-    }
+  // Recursively read all files in the directory, including subdirectories
+  const getAllCssFiles = (dir) => {
+    const files = fs.readdirSync(dir, { withFileTypes: true });
+    return files.flatMap((file) => {
+      const fullPath = path.join(dir, file.name);
+      if (file.isDirectory()) {
+        return getAllCssFiles(fullPath); // Recursively get files in subdirectories
+      }
+      if (file.isFile() && file.name.endsWith('.css') && file.name !== 'index.css') {
+        return fullPath; // Include only CSS files, excluding `index.css`
+      }
+      return [];
+    });
+  };
 
-    const outputCssFiles = files.filter(file => file !== 'index.css');
+  try {
+    const cssFiles = getAllCssFiles(directoryPath);
 
     // For theme variants, files are ordered with variables first, abstraction variables second,
     // and utility classes last. This ensures that variables are available before other files use them.
@@ -344,19 +354,18 @@ function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'
       ? [...commonCssFiles, 'utility-classes.css']
       : [...commonCssFiles, 'custom-media-breakpoints.css'];
 
-    const sortedCssFiles = outputCssFiles.sort((a, b) => sortOrder.indexOf(a) - sortOrder.indexOf(b));
+    const sortedCssFiles = cssFiles.sort((a, b) => sortOrder.indexOf(a) - sortOrder.indexOf(b));
 
     const exportStatements = sortedCssFiles.map((file) => `@import "${file}";`);
 
     const indexContent = `${exportStatements.join('\n')}\n`;
 
-    fs.writeFile(path.join(directoryPath, 'index.css'), indexContent, (errFile) => {
-      if (errFile) {
-        // eslint-disable-next-line no-console
-        console.error('Error creating index file:', errFile);
-      }
-    });
-  });
+    // Write the `index.css` file
+    fs.writeFileSync(path.join(directoryPath, 'index.css'), indexContent);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(chalk.red(`Error creating index.css file: ${error}`));
+  }
 }
 
 /**

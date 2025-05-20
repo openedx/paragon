@@ -331,6 +331,56 @@ const initializeStyleDictionary = async ({ themes }) => {
   });
 
   /**
+   * Generates CSS custom properties for a button variant that matches the button-variant mixin
+   * @param {string} variant - The variant name (e.g., 'primary', 'brand')
+   * @returns {string} CSS custom properties for the button variant
+   */
+  const generateButtonVariantProperties = (variant) => {
+    const properties = [
+      `--pgn-btn-color: var(--pgn-color-btn-text-${variant});`,
+      `--pgn-btn-bg: var(--pgn-color-btn-bg-${variant});`,
+      `--pgn-btn-border-color: var(--pgn-color-btn-border-${variant});`,
+      `--pgn-btn-hover-color: var(--pgn-color-btn-hover-text-${variant});`,
+      `--pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-${variant});`,
+      `--pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-${variant});`,
+      `--pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-${variant});`,
+      `--pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-${variant});`,
+      `--pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-${variant});`,
+      `--pgn-btn-active-color: var(--pgn-color-btn-active-text-${variant});`,
+      `--pgn-btn-active-bg: var(--pgn-color-btn-active-bg-${variant});`,
+      `--pgn-btn-active-border-color: var(--pgn-color-btn-active-border-${variant});`,
+      `--pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-${variant});`,
+      `--pgn-btn-focus-color: var(--pgn-color-btn-focus-text-${variant});`,
+      `--pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-${variant});`,
+      `--pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-${variant});`,
+    ];
+
+    return properties.join('\n  ');
+  };
+
+  /**
+   * Registers a custom format for generating CSS custom properties for alert actions button variants.
+   */
+  StyleDictionary.registerFormat({
+    name: 'css/button-variant-overrides-alert-actions',
+    format: async ({ dictionary }) => {
+      let output = '';
+      const { fileHeader } = await getStyleDictionaryUtils();
+      const header = await fileHeader({ file: 'overrides/alert.css', formatting: 'css' });
+      const buttonVariantOverrides = dictionary.tokens.color.alert.actions['variant-overrides'];
+      Object.entries(buttonVariantOverrides).forEach(([originalVariant, overrideVariant]) => {
+        output += header;
+        output += `.pgn__alert-message-wrapper .pgn__alert-actions .btn-${originalVariant},\n`;
+        output += `.pgn__alert-message-wrapper-stacked .pgn__alert-actions .btn-${originalVariant} {\n`;
+        output += `  ${generateButtonVariantProperties(overrideVariant)};\n`;
+        output += '}\n\n';
+      });
+
+      return output;
+    },
+  });
+
+  /**
    * @typedef {function} StyleDictionaryFilterFunction
    * @param {import('style-dictionary/types').TransformedToken} token - The token object to filter.
    * @param {object} [opts] - The options object passed to the filter.

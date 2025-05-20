@@ -21,6 +21,11 @@
         "info": { "source": "$alert-info-border-color", "$value": "{color.theme.border.info}" },
         "danger": { "source": "$alert-danger-border-color", "$value": "{color.theme.border.danger}" },
         "warning": { "source": "$alert-warning-border-color", "$value": "{color.theme.border.warning}" }
+      },
+      "actions": {
+        "variant-overrides": {
+          "primary": "brand"
+        }
       }
     }
   }
