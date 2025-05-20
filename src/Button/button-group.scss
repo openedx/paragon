@@ -41,6 +41,7 @@
     @include border-right-radius(0);
   }
 
+  > .btn:not(:first-child),
   > .btn-group:not(:first-child) > .btn {
     @include border-left-radius(0);
   }
