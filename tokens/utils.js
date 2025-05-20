@@ -354,9 +354,19 @@ function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'
       ? [...commonCssFiles, 'utility-classes.css']
       : [...commonCssFiles, 'custom-media-breakpoints.css'];
 
-    const sortedCssFiles = cssFiles.sort((a, b) => sortOrder.indexOf(a) - sortOrder.indexOf(b));
+    // Sort files based on the defined order
+    const sortedCssFiles = cssFiles.sort((a, b) => {
+      const aName = path.basename(a);
+      const bName = path.basename(b);
+      return sortOrder.indexOf(aName) - sortOrder.indexOf(bName);
+    });
 
-    const exportStatements = sortedCssFiles.map((file) => `@import "${file}";`);
+    // Generate @import statements with relative paths
+    const exportStatements = sortedCssFiles.map((file) => {
+      // Get the relative path from the directory path to the file
+      const relativePath = path.relative(directoryPath, file).replace(/\\/g, '/');
+      return `@import "${relativePath}";`;
+    });
 
     const indexContent = `${exportStatements.join('\n')}\n`;
 

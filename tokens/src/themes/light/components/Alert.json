@@ -23,8 +23,13 @@
         "warning": { "source": "$alert-warning-border-color", "$value": "{color.theme.border.warning}" }
       },
       "actions": {
-        "variant-overrides": {
-          "primary": "brand"
+        "overrides": {
+          "variants": {},
+          "examples": {
+            "variants": {
+              "primary": "brand"
+            }
+          }
         }
       }
     }

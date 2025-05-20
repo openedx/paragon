@@ -367,7 +367,7 @@ const initializeStyleDictionary = async ({ themes }) => {
       let output = '';
       const { fileHeader } = await getStyleDictionaryUtils();
       const header = await fileHeader({ file: 'overrides/alert.css', formatting: 'css' });
-      const buttonVariantOverrides = dictionary.tokens.color.alert.actions['variant-overrides'];
+      const buttonVariantOverrides = dictionary.tokens.color.alert.actions.variants.overrides;
       Object.entries(buttonVariantOverrides).forEach(([originalVariant, overrideVariant]) => {
         output += header;
         output += `.pgn__alert-message-wrapper .pgn__alert-actions .btn-${originalVariant},\n`;
