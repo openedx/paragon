@@ -44,7 +44,7 @@ CheckpointHeader.defaultProps = {
 };
 
 CheckpointHeader.propTypes = {
-  /** Was deprecated dismissButtonText, now is being passed as alt text to the close icon */
+  /** The text used in the alt for the icon used to dismiss the tour for the given Checkpoint */
   dismissAltText: PropTypes.string,
   /** The current index of the given Checkpoint */
   index: PropTypes.number.isRequired,

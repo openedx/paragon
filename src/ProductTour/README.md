@@ -34,6 +34,7 @@ descriptive and readable.
       enabled: isTourEnabled,
       onDismiss: () => setIsTourEnabled(false),
       onEnd: () => setIsTourEnabled(false),
+      dismissAltText: '',
       checkpoints: [
         {
           advanceButtonText: 'Onward', // Override the default advanceButtonText above
@@ -41,6 +42,7 @@ descriptive and readable.
           placement: 'top',
           target: '#checkpoint-1',
           title: 'First checkpoint',
+          dismissAltText: '',
         },
         {
           body: "Here's the second checkpoint!",
