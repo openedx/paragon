@@ -11,13 +11,7 @@ const importer = function importer(url) {
   if (url.startsWith('~paragon-style')) {
     file = path.resolve(__dirname, '../styles', url.substr('~paragon-style/'.length));
   } else if (url[0] === '~') {
-    const siblingNodeModulesPath = path.resolve(__dirname, './node_modules', url.substr(1));
-    const parentNodeModulesPath = path.resolve(__dirname, '../node_modules', url.substr(1));
-    if (fs.existsSync(siblingNodeModulesPath)) {
-      file = siblingNodeModulesPath;
-    } else {
-      file = parentNodeModulesPath;
-    }
+    file = path.resolve(__dirname, '../node_modules', url.substr(1));
   }
 
   return { file };
@@ -36,7 +30,7 @@ THEMES.forEach(theme => {
     importer,
     quietDeps: true,
     // For now we can't resolve these warnings as we need to upgrade our 'bootstrap' dependency to do so:
-    silenceDeprecations: ['abs-percent', 'color-functions', 'import', 'mixed-decls', 'global-builtin', 'legacy-js-api'],
+    silenceDeprecations: ['abs-percent', 'color-functions', 'import', 'mixed-decls', 'global-builtin'],
   });
 
   postCSS([postCSSCustomMedia({ preserve: true })])
