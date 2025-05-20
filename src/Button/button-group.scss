@@ -15,7 +15,7 @@
     &:focus,
     &:active,
     &.active {
-      z-index: 2;
+      z-index: 1;
     }
   }
 }
@@ -36,64 +36,13 @@
     margin-left: calc(var(--pgn-size-btn-border-width) * -1);
   }
 
-  // Mixin for button states that affect border radius
-
-  @mixin button-border-radius-0($side) {
-    @if $side == 'right' {
-      @include border-right-radius(0);
-    }
-
-    @if $side == 'left' {
-      @include border-left-radius(0);
-    }
-    
-    // Handle pseudo-classes
-    &.btn:not(:disabled, .disabled):focus,
-    &.btn:not(:disabled, .disabled):focus::before {
-      @if $side == 'left' {
-        @include border-left-radius(0);
-      }
-
-      @if $side == 'right' {
-        @include border-right-radius(0);
-      }
-    }
-    
-    &.btn:not(:disabled, .disabled):active,
-    &.btn:not(:disabled, .disabled):active::before {
-      @if $side == 'left' {
-        @include border-left-radius(0);
-      }
-
-      @if $side == 'right' {
-        @include border-right-radius(0);
-      }
-    }
-    
-    // Handle .active class
-    &.btn:not(:disabled, .disabled).active,
-    &.btn:not(:disabled, .disabled).active::before {
-      @if $side == 'right' {
-        @include border-right-radius(0);
-      }
-
-      @if $side == 'left' {
-        @include border-left-radius(0);
-      }
-    }
-  }
-
-  // Right border radius for non-last buttons
-  > .btn:not(:last-child, .dropdown-toggle, :first-child),
   > .btn:not(:last-child, .dropdown-toggle),
   > .btn-group:not(:last-child) > .btn {
-    @include button-border-radius-0('right');
+    @include border-right-radius(0);
   }
 
-  // Left border radius for non-first buttons
-  > .btn:not(:first-child, .dropdown-toggle),
   > .btn-group:not(:first-child) > .btn {
-    @include button-border-radius-0('left');
+    @include border-left-radius(0);
   }
 }
 
