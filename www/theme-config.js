@@ -16,10 +16,10 @@ const THEMES = [
     pathToVariables: undefined,
   },
   {
-    id: 'elm',
-    label: 'Elm',
-    stylesheet: 'elm-theme',
-    pathToVariables: undefined,
+    id: 'edxorg',
+    label: 'edX.org',
+    stylesheet: 'edxorg-theme',
+    pathToVariables: '@edx/brand-edx.org/paragon/_variables.scss',
   },
 ];
 
