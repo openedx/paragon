@@ -1400,6 +1400,7 @@
   --pgn-color-image-figure-caption: var(--pgn-color-gray-500);
   --pgn-color-menu-item-color: var(--pgn-color-body-base);
   --pgn-color-menu-item-hover-color: var(--pgn-color-btn-hover-text-tertiary);
+  --pgn-color-menu-item-focus-bg: var(--pgn-color-light-500);
   --pgn-color-menu-select-btn-link-color: var(--pgn-color-primary-500);
   --pgn-color-modal-content-bg: var(--pgn-color-bg-base);
   --pgn-color-nav-tabs-base-border-base: var(--pgn-color-light-400);
@@ -1812,7 +1813,6 @@
   --pgn-color-icon-button-text-danger-inverse-active-focus: var(--pgn-color-icon-button-text-danger-inverse-active-base);
   --pgn-color-image-thumbnail-bg: var(--pgn-color-body-bg);
   --pgn-color-menu-item-hover-bg: var(--pgn-color-btn-hover-bg-tertiary);
-  --pgn-color-menu-item-focus-bg: var(--pgn-color-btn-active-bg-tertiary);
   --pgn-color-nav-tabs-inverse-link-bg-hover: var(--pgn-color-nav-tabs-inverse-link-border-bottom);
   --pgn-color-nav-pills-base-link-active-bg: var(--pgn-color-bg-active);
   --pgn-color-nav-pills-base-link-border: var(--pgn-color-nav-tabs-base-border-base);
