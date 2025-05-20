@@ -47,39 +47,6 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     margin-inline-end: map.get($spacers, 2);
   }
 
-  .pgn__checkpoint-breadcrumb {
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
-
-    &.pgn__checkpoint-breadcrumb_active {
-      background: $checkpoint-breadcrumb-color;
-    }
-
-    &.pgn__checkpoint-breadcrumb_inactive {
-      border: 1px solid $checkpoint-breadcrumb-color;
-      background: transparent;
-    }
-
-    &:not(:first-child) {
-      margin-left: map.get($spacers, 1\.5);
-    }
-
-    [dir="rtl"] & {
-      margin-left: map.get($spacers, 1\.5);
-      margin-right: 0;
-
-      &:last-child {
-        margin-left: 0;
-      }
-    }
-  }
-
-  .pgn__checkpoint-breadcrumb-container {
-    display: flex;
-    align-items: center;
-  }
-
   .pgn__checkpoint-body {
     color: $checkpoint-body-color;
     margin-bottom: map.get($spacers, 3\.5);

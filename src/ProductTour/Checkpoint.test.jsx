@@ -73,7 +73,7 @@ describe('Checkpoint', () => {
             advanceButtonText="Next"
             backButtonText="Back"
             body="Lorem ipsum checkpoint body"
-            dismissButtonText="Escape"
+            dismissAltText="Escape"
             endButtonText="End"
             index={4}
             onAdvance={handleAdvance}
@@ -91,7 +91,7 @@ describe('Checkpoint', () => {
       expect(screen.getByText('End', { selector: 'button' })).toBeInTheDocument();
     });
 
-    it('uses deprecated dismissButtonText as alt text on the close icon', () => {
+    it('uses customized alt text on the close icon', () => {
       const closeButton = screen.getByTestId('Dismiss tour');
       expect(closeButton).toHaveAttribute('aria-label', 'Escape');
     });

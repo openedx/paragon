@@ -15,7 +15,6 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     onBack,
     onDismiss: tourOnDismiss,
     advanceButtonText: tourAdvanceButtonText,
-    // dismissButtonText: tourDismissButtonText,
     dismissAltText: tourDismissAltText,
     endButtonText: tourEndButtonText,
     backButtonText: tourBackButtonText,
@@ -30,7 +29,6 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     onAdvance,
     onDismiss,
     advanceButtonText,
-    // dismissButtonText,
     dismissAltText,
     endButtonText,
     backButtonText,
@@ -196,7 +194,7 @@ ProductTour.propTypes = {
       /** The text displayed on the button used to end the tour for the given Checkpoint
        * (overrides the `endButtonText` defined in the parent tour object). */
       endButtonText: PropTypes.node,
-      /** A function that runs when triggering the `onCick` event of the advance
+      /** A function that runs when triggering the `onClick` event of the advance
        * button for the given Checkpoint. */
       onAdvance: PropTypes.func,
       /** A function that runs when triggering the `onClick` event of the dismiss
