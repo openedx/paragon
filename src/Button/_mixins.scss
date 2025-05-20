@@ -33,13 +33,3 @@
   --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-#{$variant});
   --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-#{$variant});
 }
-
-/// Overrides default button variants with custom variants
-/// @param {Map} $btn-variant-overrides - A map of variant names to override variants
-@mixin button-variant-overrides($btn-variant-overrides) {
-  @each $variant, $override in $btn-variant-overrides {
-    .btn-#{$variant} {
-      @include button-variant($override);
-    }
-  }
-}

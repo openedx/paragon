@@ -102,13 +102,11 @@ $alert-actions-btn-variant-overrides: map.merge(
 
   .pgn__alert-actions {
     margin-inline-start: var(--pgn-spacing-alert-actions-gap);
-    @include button-variant-overrides($alert-actions-btn-variant-overrides);
   }
 }
 
 .pgn__alert-message-wrapper-stacked .pgn__alert-actions {
   margin-top: var(--pgn-spacing-alert-actions-gap);
-  @include button-variant-overrides($alert-actions-btn-variant-overrides);
 }
 
 // Alternate styles

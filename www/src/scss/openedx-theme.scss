@@ -1,5 +1,6 @@
-@import "~paragon-style/scss/core/core";
-@import "~paragon-style/css/themes/light/variables";
-@import "~paragon-style/css/themes/light/abstraction-variables";
-@import "~paragon-style/css/themes/light/utility-classes";
-@import "base";
+@use "~paragon-style/scss/core/core";
+@use "~paragon-style/css/themes/light/overrides/alert";
+@use "~paragon-style/css/themes/light/variables";
+@use "~paragon-style/css/themes/light/abstraction-variables";
+@use "~paragon-style/css/themes/light/utility-classes";
+@use "base";
