@@ -285,7 +285,7 @@ export default withDeprecatedProps(ProductTour, 'ProductTour', {
           if (typeof tour.dismissButtonText === 'string') {
             updatedTour.dismissAltText = tour.dismissButtonText;
           } else {
-            const warningMessage = '[Deprecated]: The prop "dismissButtonText" has been moved to "dismissAltText" and expects a string.';
+            const warningMessage = "[Deprecated] ProductTour: The 'dismissButtonText' options within the 'tours' prop now expects a string";
             // eslint-disable-next-line no-console
             console.warn(warningMessage);
           }
