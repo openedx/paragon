@@ -178,7 +178,7 @@ ProductTour.propTypes = {
     /** The text displayed on all buttons used to advance the tour. */
     advanceButtonText: PropTypes.node,
     /** The text displayed on all buttons used to go back in the tour */
-    backButtonText: PropTypes.node,
+    backButtonText: PropTypes.string,
     /** An array comprised of checkpoint objects supporting the following values: */
     checkpoints: PropTypes.arrayOf(PropTypes.shape({
       /** The text displayed on the button used to advance the tour for the given Checkpoint
@@ -284,6 +284,10 @@ export default withDeprecatedProps(ProductTour, 'ProductTour', {
         if (hasDismissButtonText(tour)) {
           if (typeof tour.dismissButtonText === 'string') {
             updatedTour.dismissAltText = tour.dismissButtonText;
+          } else {
+            const warningMessage = '[Deprecated]: The prop "dismissButtonText" has been moved to "dismissAltText" and expects a string.';
+            // eslint-disable-next-line no-console
+            console.warn(warningMessage);
           }
         }
 

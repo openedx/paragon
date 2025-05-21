@@ -19,7 +19,8 @@ The checkpoint objects themselves have additional props that can override the pr
 ## Usage guidelines
 Best practices for ProductTour includes not overloading the user with a large amount of steps. 
 Paragon recommends keeping to no more than 5 steps, as well as any overriden button names to be 
-descriptive and readable. 
+descriptive and readable. Also, we recommend using a title at every step or only at the first step for a
+consistent and accessible experience.
 
 ## Basic Usage
 

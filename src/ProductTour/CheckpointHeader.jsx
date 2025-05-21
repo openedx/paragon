@@ -30,7 +30,7 @@ const CheckpointHeader = React.forwardRef(({
           src={Close}
           alt={altText}
           onClick={onDismiss}
-          data-testid="Dismiss tour"
+          data-testid="dismiss-tour"
         />
       </header>
       {title && (<CheckpointTitle>{title}</CheckpointTitle>)}
