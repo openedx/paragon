@@ -148,6 +148,11 @@ const COMMANDS = {
         defaultValue: 'styles/scss/core/core.scss',
       },
       {
+        name: '--excludeCore',
+        description: 'Exclude core from the SCSS build.',
+        defaultValue: false,
+      },
+      {
         name: '--themesPath',
         description: `Path to the directory that contains themes' files. Expects directory to have following structure:
           themes/
