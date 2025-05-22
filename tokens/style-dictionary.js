@@ -375,7 +375,7 @@ const initializeStyleDictionary = async ({ themes }) => {
         output += header;
         output += `.pgn__alert-message-wrapper .pgn__alert-actions .btn-${originalVariant},\n`;
         output += `.pgn__alert-message-wrapper-stacked .pgn__alert-actions .btn-${originalVariant} {\n`;
-        output += `  ${generateButtonVariantProperties(overrideVariant)};\n`;
+        output += `  ${generateButtonVariantProperties(overrideVariant)}\n`;
         output += '}\n\n';
       });
       return output;
