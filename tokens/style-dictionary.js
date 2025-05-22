@@ -364,10 +364,13 @@ const initializeStyleDictionary = async ({ themes }) => {
   StyleDictionary.registerFormat({
     name: 'css/button-variant-overrides-alert-actions',
     format: async ({ dictionary }) => {
-      let output = '';
       const { fileHeader } = await getStyleDictionaryUtils();
       const header = await fileHeader({ file: 'overrides/alert.css', formatting: 'css' });
-      const buttonVariantOverrides = dictionary.tokens.color.alert.actions.overrides.variants;
+      const buttonVariantOverrides = dictionary.tokens.color?.alert?.actions?.overrides?.button?.variants;
+      if (!buttonVariantOverrides) {
+        return '';
+      }
+      let output = '';
       Object.entries(buttonVariantOverrides).forEach(([originalVariant, overrideVariant]) => {
         output += header;
         output += `.pgn__alert-message-wrapper .pgn__alert-actions .btn-${originalVariant},\n`;
@@ -375,7 +378,6 @@ const initializeStyleDictionary = async ({ themes }) => {
         output += `  ${generateButtonVariantProperties(overrideVariant)};\n`;
         output += '}\n\n';
       });
-
       return output;
     },
   });
