@@ -16,6 +16,12 @@ tours are enabled, `ProductTour` will only render the first enabled in the `tour
 `Checkpoints` are rendered in the order they're listed in the checkpoint array.
 The checkpoint objects themselves have additional props that can override the props defined in `ProductTour`.
 
+## Usage guidelines
+Best practices for ProductTour includes not overloading the user with a large amount of steps. 
+Paragon recommends keeping to no more than 5 steps, as well as any overriden button names to be 
+descriptive and readable. Also, we recommend using a title at every step or only at the first step for a
+consistent and accessible experience.
+
 ## Basic Usage
 
 ```jsx live
@@ -24,11 +30,12 @@ The checkpoint objects themselves have additional props that can override the pr
     const myFirstTour = {
       tourId: 'myFirstTour',
       advanceButtonText: 'Next',
-      dismissButtonText: 'Dismiss',
+      backButtonText: 'Back',
       endButtonText: 'Okay',
       enabled: isTourEnabled,
       onDismiss: () => setIsTourEnabled(false),
       onEnd: () => setIsTourEnabled(false),
+      dismissAltText: '',
       checkpoints: [
         {
           advanceButtonText: 'Onward', // Override the default advanceButtonText above
@@ -36,6 +43,7 @@ The checkpoint objects themselves have additional props that can override the pr
           placement: 'top',
           target: '#checkpoint-1',
           title: 'First checkpoint',
+          dismissAltText: '',
         },
         {
           body: "Here's the second checkpoint!",
@@ -46,12 +54,12 @@ The checkpoint objects themselves have additional props that can override the pr
           placement: 'right',
           target: '#checkpoint-2',
           title: 'Second checkpoint',
+          backButtonText: 'Rewind', 
         },
         {
-          body: "Here's the third checkpoint!",
+          body: "The third checkpoint without a title",
           placement: 'bottom',
           target: '#checkpoint-3',
-          title: 'Third checkpoint',
           onEnd: () => {
             console.log('Ended the third checkpoint');
             setIsTourEnabled(false);
