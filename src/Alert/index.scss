@@ -15,9 +15,14 @@
   border: var(--pgn-size-alert-border-width) solid var(--pgn-alert-border-color, transparent);
   color: inherit;
   background-color: var(--pgn-alert-bg, transparent);
+  align-items: center;
 
   @include border-radius(var(--pgn-size-alert-border-radius));
   @include pgn-box-shadow(1, "down");
+
+  &:has(.alert-heading:not(:only-child)) {
+    align-items: start;
+  }
 
   .alert-message-content > :last-child {
     margin-bottom: 0;

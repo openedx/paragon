@@ -5,16 +5,17 @@ import { createPopper } from '@popperjs/core';
 import { FormattedMessage } from 'react-intl';
 
 import breakpoints from '../utils/breakpoints';
-
 import CheckpointActionRow from './CheckpointActionRow';
 import CheckpointBody from './CheckpointBody';
-import CheckpointBreadcrumbs from './CheckpointBreadcrumbs';
-import CheckpointTitle from './CheckpointTitle';
+import CheckpointHeader from './CheckpointHeader';
 import messages from './messages';
 
 const Checkpoint = React.forwardRef(({
   body,
+  dismissAltText,
   index,
+  onBack,
+  onDismiss,
   placement,
   target,
   title,
@@ -87,7 +88,6 @@ const Checkpoint = React.forwardRef(({
   }, [target, checkpointVisible, placement]);
 
   const isLastCheckpoint = index + 1 === totalCheckpoints;
-  const isOnlyCheckpoint = totalCheckpoints === 1;
 
   return (
     <div
@@ -104,14 +104,17 @@ const Checkpoint = React.forwardRef(({
           values={{ step: index + 1 }}
         />
       </span>
-      {(title || !isOnlyCheckpoint) && (
-        <div className="pgn__checkpoint-header">
-          <CheckpointTitle>{title}</CheckpointTitle>
-          <CheckpointBreadcrumbs currentIndex={index} totalCheckpoints={totalCheckpoints} />
-        </div>
-      )}
+      <CheckpointHeader
+        dismissAltText={dismissAltText}
+        index={index}
+        onDismiss={onDismiss}
+        title={title}
+        totalCheckpoints={totalCheckpoints}
+      />
       <CheckpointBody>{body}</CheckpointBody>
       <CheckpointActionRow
+        onBack={onBack}
+        onDismiss={onDismiss}
         isLastCheckpoint={isLastCheckpoint}
         index={index}
         {...props}
@@ -129,21 +132,23 @@ const Checkpoint = React.forwardRef(({
 
 Checkpoint.defaultProps = {
   advanceButtonText: null,
+  backButtonText: null,
   body: null,
-  dismissButtonText: null,
+  dismissAltText: null,
   endButtonText: null,
   placement: 'top',
   title: null,
-  showDismissButton: undefined,
 };
 
 Checkpoint.propTypes = {
   /** The text displayed on the button used to advance the tour for the given Checkpoint. */
   advanceButtonText: PropTypes.node,
+  /** The text displayed on the button used go back in the tour for the given Checkpoint. */
+  backButtonText: PropTypes.string,
   /** The text displayed in the body of the Checkpoint */
   body: PropTypes.node,
-  /** The text displayed on the button used to dismiss the tour for the given Checkpoint. */
-  dismissButtonText: PropTypes.node,
+  /** The text used in the alt for the icon used to dismiss the tour for the given Checkpoint */
+  dismissAltText: PropTypes.string,
   /** The text displayed on the button used to end the tour for the given Checkpoint. */
   endButtonText: PropTypes.node,
   /** The current index of the given Checkpoint */
@@ -151,6 +156,9 @@ Checkpoint.propTypes = {
   /** A function that runs when triggering the `onClick` event of the advance
    * button for the given Checkpoint. */
   onAdvance: PropTypes.func.isRequired,
+  /** A function that runs when triggering the `onBack` event of the back
+   * button for the given Checkpoint. */
+  onBack: PropTypes.func.isRequired,
   /** A function that runs when triggering the `onClick` event of the dismiss
    * button for the given Checkpoint. */
   onDismiss: PropTypes.func.isRequired,
@@ -168,8 +176,6 @@ Checkpoint.propTypes = {
   title: PropTypes.node,
   /** The total number of Checkpoints in a tour */
   totalCheckpoints: PropTypes.number.isRequired,
-  /** Enforces visibility of the dismiss button under all circumstances */
-  showDismissButton: PropTypes.bool,
 };
 
 export default Checkpoint;
