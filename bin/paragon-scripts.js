@@ -97,6 +97,11 @@ const COMMANDS = {
         defaultValue: 'light',
       },
       {
+        name: '--exclude-core',
+        description: 'Exclude core from the token build.',
+        defaultValue: false,
+      },
+      {
         name: '-v, --verbose',
         description: 'Enable verbose logging.',
         defaultValue: false,
