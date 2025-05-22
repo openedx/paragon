@@ -7,7 +7,7 @@ import { useIntl } from 'react-intl';
 import { Close } from '../../icons';
 import ToastContainer from './ToastContainer';
 import Button from '../Button';
-import Icon from '../Icon';
+import Icon, { type IconProps } from '../Icon';
 import IconButton from '../IconButton';
 
 export const TOAST_CLOSE_LABEL_TEXT = 'Close';
@@ -21,6 +21,8 @@ interface ToastAction {
 
 interface ToastProps {
   children: string;
+  icon?: React.ComponentType<IconProps>;
+  iconClassName?: string;
   onClose: () => void;
   show: boolean;
   action?: ToastAction;
@@ -36,6 +38,9 @@ function Toast({
   closeLabel,
   onClose,
   show,
+  icon,
+  iconClassName,
+  delay = TOAST_DELAY,
   ...rest
 }: ToastProps) {
   const intl = useIntl();
@@ -58,10 +63,12 @@ function Toast({
         onMouseOut={() => setAutoHide(true)}
         onMouseOver={() => setAutoHide(false)}
         show={show}
+        delay={delay}
         {...rest}
       >
         <div className="toast-header">
-          <p className="small">{children}</p>
+          {icon && <Icon className={classNames('toast-header-icon', iconClassName)} src={icon} />}
+          <p>{children}</p>
           <div className="toast-header-btn-container">
             <IconButton
               iconAs={Icon}
@@ -89,13 +96,6 @@ function Toast({
     </ToastContainer>
   );
 }
-
-Toast.defaultProps = {
-  action: null,
-  closeLabel: undefined,
-  delay: TOAST_DELAY,
-  className: undefined,
-};
 
 Toast.propTypes = {
   /** A string or an element that is rendered inside the main body of the `Toast`. */
@@ -127,6 +127,10 @@ Toast.propTypes = {
   delay: PropTypes.number,
   /** Class names for the `BaseToast` component */
   className: PropTypes.string,
+  /** Icon that will be shown in the  toast */
+  icon: PropTypes.func,
+  /** Class names for the `Icon` component */
+  iconClassName: PropTypes.string,
 };
 
 export default Toast;

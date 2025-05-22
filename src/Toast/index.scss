@@ -39,12 +39,16 @@
   .toast-header {
     align-items: center;
     border-bottom: 0;
-    justify-content: space-between;
     padding: 0;
+
+    .toast-header-icon {
+      margin-right: .75rem;
+    }
 
     p {
       font-size: var(--pgn-typography-font-size-sm);
-      margin: 0;
+      font-weight: var(--pgn-typography-weight-normal);
+      margin: 0 auto 0 0;
       padding-right: .75rem;
     }
 

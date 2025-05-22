@@ -45,6 +45,28 @@ notes: ''
 }
 ```
 
+## With Icon
+
+```jsx live
+() => {
+  const [show, setShow] = useState(false);
+
+  return (
+    <>
+      <Toast
+        icon={Settings}
+        onClose={() => setShow(false)}
+        show={show}
+      >
+        Processing.. Example of a Toast with an icon.
+      </Toast>
+
+      <Button onClick={() => setShow(true)}>Show Toast</Button>
+    </>
+  );
+}
+```
+
 ## With Button
 
 ```jsx live

@@ -1,7 +1,9 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import userEvent from '@testing-library/user-event';
 
+import { Info } from '../../icons';
 import Toast from '.';
 
 function ToastWrapper({ children, ...props }: React.ComponentProps<typeof Toast>) {
@@ -50,6 +52,20 @@ describe('<Toast />', () => {
     );
     const toastButton = screen.getByRole('button', { name: 'Optional action' });
     expect(toastButton.className).toContain('btn');
+  });
+  it('renders optional icon', () => {
+    const { container } = render(
+      <ToastWrapper
+        {...props}
+        icon={Info}
+        iconClassName="icon-class"
+      >
+        Success message.
+      </ToastWrapper>,
+    );
+
+    const toastIcon = container.querySelector('.__pgn__icon');
+    expect(toastIcon).toBeInTheDocument();
   });
   it('autohide is set to false on onMouseOver and true on onMouseLeave', async () => {
     render(
