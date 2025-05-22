@@ -1,4 +1,4 @@
 @use "~paragon-style/scss/core/core" as paragonCore;
-@use "~@edx/elm-theme/dist/core.css" as elmCore;
-@use "~@edx/elm-theme/dist/light.css" as elmLight;
-@import "base";
+@use "~@edx/elm-theme/dist/core" as elmCore;
+@use "~@edx/elm-theme/dist/light" as elmLight;
+@use "base";

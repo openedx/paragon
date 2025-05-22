@@ -367,7 +367,7 @@ const initializeStyleDictionary = async ({ themes }) => {
       const { fileHeader } = await getStyleDictionaryUtils();
       const header = await fileHeader({ file: 'overrides/alert.css', formatting: 'css' });
       const buttonVariantOverrides = dictionary.tokens.color?.alert?.actions?.overrides?.button?.variants;
-      if (!buttonVariantOverrides) {
+      if (!buttonVariantOverrides || typeof buttonVariantOverrides !== 'object') {
         return '';
       }
       let output = '';
