@@ -15,9 +15,14 @@
   padding: $alert-padding-y $alert-padding-x;
   margin-bottom: $alert-margin-bottom;
   border: $alert-border-width solid transparent;
+  align-items: center;
 
   @include border-radius($alert-border-radius);
   @include pgn-box-shadow(1, "down");
+
+  &:has(.alert-heading:not(:only-child)) {
+    align-items: start;
+  }
 
   .alert-message-content > :last-child {
     margin-bottom: 0;
