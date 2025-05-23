@@ -1,8 +1,8 @@
 {
-  "lastModified": 1747922871564,
+  "lastModified": 1748009225309,
   "projectUsages": [
     {
-      "version": "23.6.1",
+      "version": "23.9.0",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -2843,9 +2843,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 67,
+            "line": 68,
             "column": 16,
-            "index": 2868
+            "index": 2947
           },
           {
             "filePath": "src/components/learner-credit-management/BudgetDetailActivityTabContents.jsx",
@@ -5121,9 +5121,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 78,
+            "line": 79,
             "column": 14,
-            "index": 3224
+            "index": 3303
           },
           {
             "filePath": "src/components/learner-credit-management/AssignmentDetailsTableCell.jsx",
@@ -13131,9 +13131,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 49,
+            "line": 50,
             "column": 4,
-            "index": 1972
+            "index": 2051
           },
           {
             "filePath": "src/components/learner-credit-management/FlexGroupDropdown.jsx",
@@ -13181,9 +13181,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 56,
+            "line": 57,
             "column": 6,
-            "index": 2284
+            "index": 2363
           },
           {
             "filePath": "src/components/learner-credit-management/FlexGroupDropdown.jsx",
@@ -13239,9 +13239,9 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 59,
+            "line": 60,
             "column": 6,
-            "index": 2425
+            "index": 2504
           },
           {
             "filePath": "src/components/learner-credit-management/FlexGroupDropdown.jsx",
@@ -13289,15 +13289,15 @@
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 66,
+            "line": 67,
             "column": 14,
-            "index": 2768
+            "index": 2847
           },
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 72,
+            "line": 73,
             "column": 12,
-            "index": 2970
+            "index": 3049
           },
           {
             "filePath": "src/components/learner-credit-management/members-tab/LearnerCreditGroupMembersTable.jsx",
@@ -13583,9 +13583,9 @@
         "Dropdown.Header": [
           {
             "filePath": "src/components/learner-credit-management/assignment-modal/NewAssignmentModalDropdown.jsx",
-            "line": 60,
+            "line": 61,
             "column": 8,
-            "index": 2449
+            "index": 2528
           }
         ],
         "IconButtonWithTooltip": [
@@ -14519,7 +14519,7 @@
       }
     },
     {
-      "version": "22.18.0",
+      "version": "22.18.1",
       "name": "@edx/frontend-app-authn",
       "repository": {
         "type": "git",
@@ -42169,6 +42169,18 @@
             "index": 1400
           },
           {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
+            "line": 47,
+            "column": 16,
+            "index": 1151
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
+            "line": 49,
+            "column": 8,
+            "index": 1400
+          },
+          {
             "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
             "line": 57,
             "column": 10,
@@ -42197,12 +42209,6 @@
             "line": 17,
             "column": 6,
             "index": 412
-          },
-          {
-            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
-            "line": 47,
-            "column": 16,
-            "index": 1151
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
