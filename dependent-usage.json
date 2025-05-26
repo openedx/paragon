@@ -1,5 +1,5 @@
 {
-  "lastModified": 1748182014327,
+  "lastModified": 1748268459177,
   "projectUsages": [
     {
       "version": "23.9.0",
@@ -672,7 +672,7 @@
       }
     },
     {
-      "version": "22.17.0",
+      "version": "22.18.1",
       "name": "@edx/frontend-app-account",
       "repository": {
         "type": "git",
@@ -24176,33 +24176,33 @@
           },
           {
             "filePath": "src/course-outline/hooks.jsx",
-            "line": 88,
+            "line": 91,
             "column": 95,
-            "index": 2864
-          },
-          {
-            "filePath": "src/course-outline/hooks.jsx",
-            "line": 92,
-            "column": 77,
-            "index": 3172
-          },
-          {
-            "filePath": "src/course-outline/hooks.jsx",
-            "line": 93,
-            "column": 68,
-            "index": 3258
-          },
-          {
-            "filePath": "src/course-outline/hooks.jsx",
-            "line": 94,
-            "column": 74,
-            "index": 3350
+            "index": 2978
           },
           {
             "filePath": "src/course-outline/hooks.jsx",
             "line": 95,
+            "column": 77,
+            "index": 3286
+          },
+          {
+            "filePath": "src/course-outline/hooks.jsx",
+            "line": 96,
+            "column": 68,
+            "index": 3372
+          },
+          {
+            "filePath": "src/course-outline/hooks.jsx",
+            "line": 97,
+            "column": 74,
+            "index": 3464
+          },
+          {
+            "filePath": "src/course-outline/hooks.jsx",
+            "line": 98,
             "column": 65,
-            "index": 3433
+            "index": 3547
           },
           {
             "filePath": "src/course-outline/section-card/SectionCard.jsx",
@@ -33934,7 +33934,7 @@
       }
     },
     {
-      "version": "22.17.0",
+      "version": "22.18.1",
       "name": "@edx/frontend-app-learner-dashboard",
       "repository": {
         "type": "git",
@@ -35091,14 +35091,14 @@
           {
             "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
             "line": 47,
-            "column": 12,
-            "index": 1800
+            "column": 10,
+            "index": 1719
           },
           {
             "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
             "line": 58,
-            "column": 12,
-            "index": 2155
+            "column": 10,
+            "index": 2052
           },
           {
             "filePath": "src/components/course/course-header/course-run-actions/BasicNavigateToCourseware.jsx",
@@ -35605,12 +35605,6 @@
             "index": 2574
           },
           {
-            "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
-            "line": 22,
-            "column": 4,
-            "index": 770
-          },
-          {
             "filePath": "src/components/course/course-header/CourseHeader.jsx",
             "line": 62,
             "column": 6,
@@ -35832,9 +35826,9 @@
           },
           {
             "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
-            "line": 23,
-            "column": 6,
-            "index": 815
+            "line": 22,
+            "column": 4,
+            "index": 759
           },
           {
             "filePath": "src/components/course/course-header/CourseRunCard.jsx",
@@ -36173,8 +36167,8 @@
           {
             "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
             "line": 31,
-            "column": 8,
-            "index": 1026
+            "column": 6,
+            "index": 977
           },
           {
             "filePath": "src/components/course/course-header/CourseRunCard.jsx",
@@ -37176,7 +37170,7 @@
             "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
             "line": 17,
             "column": 18,
-            "index": 630
+            "index": 619
           },
           {
             "filePath": "src/components/course/tests/BrowseAndRequestCard.test.jsx",
@@ -37196,7 +37190,7 @@
             "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
             "line": 17,
             "column": 44,
-            "index": 656
+            "index": 645
           },
           {
             "filePath": "src/components/course/CourseMainContent.jsx",
@@ -37317,8 +37311,8 @@
           {
             "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
             "line": 26,
-            "column": 8,
-            "index": 895
+            "column": 6,
+            "index": 856
           },
           {
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
@@ -42205,6 +42199,18 @@
             "index": 1400
           },
           {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
+            "line": 47,
+            "column": 16,
+            "index": 1151
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
+            "line": 49,
+            "column": 8,
+            "index": 1400
+          },
+          {
             "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
             "line": 57,
             "column": 10,
@@ -42233,12 +42239,6 @@
             "line": 17,
             "column": 6,
             "index": 412
-          },
-          {
-            "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
-            "line": 49,
-            "column": 8,
-            "index": 1400
           },
           {
             "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
@@ -47090,6 +47090,12 @@
             "index": 3928
           },
           {
+            "filePath": "src/components/BulkOperations/index.jsx",
+            "line": 132,
+            "column": 10,
+            "index": 4085
+          },
+          {
             "filePath": "src/components/TableComponent/index.jsx",
             "line": 94,
             "column": 10,
@@ -47132,6 +47138,12 @@
             "line": 154,
             "column": 12,
             "index": 4273
+          },
+          {
+            "filePath": "src/components/BulkOperations/index.jsx",
+            "line": 142,
+            "column": 12,
+            "index": 4366
           }
         ],
         "DataTable.TableFooter": [
@@ -47140,6 +47152,12 @@
             "line": 155,
             "column": 12,
             "index": 4337
+          },
+          {
+            "filePath": "src/components/BulkOperations/index.jsx",
+            "line": 143,
+            "column": 12,
+            "index": 4430
           }
         ],
         "Container": [
@@ -47148,35 +47166,35 @@
             "line": 26,
             "column": 4,
             "index": 830
+          },
+          {
+            "filePath": "src/components/BulkOperations/index.jsx",
+            "line": 223,
+            "column": 2,
+            "index": 6753
           }
         ],
-        "Icon": [
+        "Dropzone": [
           {
-            "filePath": "src/components/Collaborator/index.jsx",
-            "line": 32,
-            "column": 8,
-            "index": 840
-          },
-          {
-            "filePath": "src/components/Collaborator/index.jsx",
-            "line": 53,
-            "column": 12,
-            "index": 1446
-          },
-          {
-            "filePath": "src/components/SidePanes/CommentsPane.jsx",
-            "line": 100,
-            "column": 24,
-            "index": 2846
-          },
-          {
-            "filePath": "src/components/SidePanes/UsersPane.jsx",
-            "line": 125,
-            "column": 13,
-            "index": 3483
+            "filePath": "src/components/BulkOperations/index.jsx",
+            "line": 76,
+            "column": 6,
+            "index": 2338
           }
         ],
         "Alert": [
+          {
+            "filePath": "src/components/BulkOperations/index.jsx",
+            "line": 102,
+            "column": 11,
+            "index": 2965
+          },
+          {
+            "filePath": "src/components/BulkOperations/index.jsx",
+            "line": 157,
+            "column": 8,
+            "index": 4646
+          },
           {
             "filePath": "src/components/CollaboratorPage/index.jsx",
             "line": 56,
@@ -47326,6 +47344,56 @@
             "line": 129,
             "column": 6,
             "index": 4043
+          }
+        ],
+        "DataTable.Table": [
+          {
+            "filePath": "src/components/BulkOperations/index.jsx",
+            "line": 141,
+            "column": 12,
+            "index": 4334
+          }
+        ],
+        "SelectMenu": [
+          {
+            "filePath": "src/components/BulkOperations/index.jsx",
+            "line": 173,
+            "column": 6,
+            "index": 4954
+          }
+        ],
+        "MenuItem": [
+          {
+            "filePath": "src/components/BulkOperations/index.jsx",
+            "line": 176,
+            "column": 12,
+            "index": 5116
+          }
+        ],
+        "Icon": [
+          {
+            "filePath": "src/components/Collaborator/index.jsx",
+            "line": 32,
+            "column": 8,
+            "index": 840
+          },
+          {
+            "filePath": "src/components/Collaborator/index.jsx",
+            "line": 53,
+            "column": 12,
+            "index": 1446
+          },
+          {
+            "filePath": "src/components/SidePanes/CommentsPane.jsx",
+            "line": 100,
+            "column": 24,
+            "index": 2846
+          },
+          {
+            "filePath": "src/components/SidePanes/UsersPane.jsx",
+            "line": 125,
+            "column": 13,
+            "index": 3483
           }
         ],
         "Alert.Heading": [
@@ -47511,7 +47579,7 @@
             "filePath": "src/components/RenderSelectField/index.jsx",
             "line": 17,
             "column": 21,
-            "index": 353
+            "index": 359
           },
           {
             "filePath": "src/components/RenderSelectField/updated-paragon-component.jsx",
@@ -47543,7 +47611,7 @@
             "filePath": "src/components/RenderSelectField/index.jsx",
             "line": 18,
             "column": 4,
-            "index": 391
+            "index": 397
           },
           {
             "filePath": "src/components/RenderSelectField/updated-paragon-component.jsx",
@@ -47585,9 +47653,9 @@
           },
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 37,
+            "line": 38,
             "column": 12,
-            "index": 1405
+            "index": 1452
           }
         ],
         "OverlayTrigger": [
@@ -47657,41 +47725,41 @@
         "Dropdown": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 57,
+            "line": 65,
             "column": 12,
-            "index": 2333
+            "index": 2697
           }
         ],
         "Dropdown.Toggle": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 58,
+            "line": 66,
             "column": 14,
-            "index": 2358
+            "index": 2722
           }
         ],
         "AvatarButton": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 58,
+            "line": 66,
             "column": 35,
-            "index": 2379
+            "index": 2743
           }
         ],
         "Dropdown.Menu": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 62,
+            "line": 70,
             "column": 14,
-            "index": 2487
+            "index": 2851
           }
         ],
         "Dropdown.Item": [
           {
             "filePath": "src/components/Header/index.jsx",
-            "line": 63,
+            "line": 71,
             "column": 16,
-            "index": 2519
+            "index": 2883
           }
         ],
         "Spinner": [
@@ -52500,7 +52568,7 @@
       }
     },
     {
-      "version": "23.6.0",
+      "version": "23.9.0",
       "name": "@edx/frontend-template-application",
       "repository": {
         "type": "git",
