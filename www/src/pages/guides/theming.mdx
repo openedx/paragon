@@ -1,0 +1,69 @@
+---
+title: Theming
+---
+
+# Theming
+
+The default Paragon theme may be extended/overriden by installing a custom brand package under the ``@edx/brand`` namespace as an NPM alias. For example:
+
+```json
+{
+    "dependencies": {
+        "@edx/brand": "npm:@opendx/brand-openedx"
+    }
+}
+```
+
+The aliased ``@edx/brand`` package may extend or override Paragon's default design tokens and styles to modify the default theme, providing custom brand colors, shadows, etc. specific to their deployment.
+
+The design tokens provided by the ``@edx/brand`` package are transformed into CSS variables and utility classes, which may be used to override the default CSS variables provided by Paragon for brand customization.
+
+For more details on how to use the ``@edx/brand`` package to override Paragon's default design tokens and styles, see the [``@edx/brand-openedx`` documentation](https://github.com/openedx/brand-openedx).
+
+## Advanced use cases
+
+### Override button variants composed in components without modifying the application code
+
+In some cases, a Paragon component (e.g., ``Alert``) will allow consuming frontend applications to provide ``Button`` as nodes to props and/or children, e.g.:
+
+```tsx
+<Alert
+  // ...other props
+  actions={[
+    <Button variant="primary">Hello world</Button>
+  ]}
+>
+  <p>Alert content</p>
+</Alert>
+```
+
+However, some Open edX operators or theme authors may not want to use the default ``Button`` variants in their deployments, and instead want to use their own custom ``Button`` variants as defaults within specific components. In this case, the ``Button`` variants used in the component in the upstream ``openedx`` repository may be overridden by configuring the ``@edx/brand`` package tokens to provide a custom ``Button`` variant mapping of the original variant names to the desired variant names.
+
+For example, if the upstream ``openedx`` application repository uses the ``primary`` variant, but the operator/theme author wants to use the ``brand`` variant instead, they may configure the ``@edx/brand`` package tokens to map the ``primary`` variant to the ``brand`` variant.
+
+When defining button variant overrides, the Paragon ``build-tokens`` CLI command will output an ``/overrides/component-button-variants.css`` file that may be included within the ``@edx/brand`` packages stylesheet.
+
+#### Alert
+
+The overrides for the ``Alert`` component may be configured within ``/tokens/src/themes/light/components/Alert.json``:
+
+```json
+{
+  "color": {
+    "$type": "color",
+    "alert": {
+      "actions": {
+        "overrides": {
+          "button": {
+            "variants": {
+              "primary": "brand"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+This will cause the ``Alert`` component to use the ``brand`` variant of the ``Button`` component instead of the ``primary`` variant by overriding the default ``.btn-primary`` CSS class with the existing CSS variables for the ``brand`` variant instead.

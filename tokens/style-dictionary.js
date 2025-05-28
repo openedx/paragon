@@ -6,7 +6,7 @@ const chalk = require('chalk');
 const chroma = require('chroma-js');
 const { colorYiq, darken, lighten } = require('./sass-helpers');
 const cssUtilities = require('./css-utilities');
-const { composeBreakpointName, processAndUpdateTokens } = require('./utils');
+const { composeBreakpointName, processAndUpdateTokens, generateButtonVariantProperties } = require('./utils');
 
 /* eslint-disable import/no-unresolved */
 const getStyleDictionary = async () => (await import('style-dictionary')).default;
@@ -331,53 +331,64 @@ const initializeStyleDictionary = async ({ themes }) => {
   });
 
   /**
-   * Generates CSS custom properties for a button variant that matches the button-variant mixin
-   * @param {string} variant - The variant name (e.g., 'primary', 'brand')
-   * @returns {string} CSS custom properties for the button variant
+   * Configuration for button variant overrides by component type.
+   * Each entry defines:
+   * - getTokens: Function that receives the dictionary tokens and returns the button variant overrides
+   * - selectors: Array of CSS selectors where the button variants should be overridden
    */
-  const generateButtonVariantProperties = (variant) => {
-    const properties = [
-      `--pgn-btn-color: var(--pgn-color-btn-text-${variant});`,
-      `--pgn-btn-bg: var(--pgn-color-btn-bg-${variant});`,
-      `--pgn-btn-border-color: var(--pgn-color-btn-border-${variant});`,
-      `--pgn-btn-hover-color: var(--pgn-color-btn-hover-text-${variant});`,
-      `--pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-${variant});`,
-      `--pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-${variant});`,
-      `--pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-${variant});`,
-      `--pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-${variant});`,
-      `--pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-${variant});`,
-      `--pgn-btn-active-color: var(--pgn-color-btn-active-text-${variant});`,
-      `--pgn-btn-active-bg: var(--pgn-color-btn-active-bg-${variant});`,
-      `--pgn-btn-active-border-color: var(--pgn-color-btn-active-border-${variant});`,
-      `--pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-${variant});`,
-      `--pgn-btn-focus-color: var(--pgn-color-btn-focus-text-${variant});`,
-      `--pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-${variant});`,
-      `--pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-${variant});`,
-    ];
-
-    return properties.join('\n  ');
-  };
+  const BUTTON_VARIANT_OVERRIDES_CONFIG = [
+    {
+      name: 'Alert',
+      getTokens: (tokens) => tokens?.color?.alert?.actions?.overrides?.button?.variants,
+      selectors: [
+        '.pgn__alert-message-wrapper .pgn__alert-actions',
+        '.pgn__alert-message-wrapper-stacked .pgn__alert-actions',
+      ],
+    },
+    // Add new component configurations here!
+  ];
 
   /**
-   * Registers a custom format for generating CSS style overrides for alert actions button variants.
+   * Registers a custom format for generating CSS style overrides for button variants in different components.
+   * All overrides are combined into a single CSS file.
    */
   StyleDictionary.registerFormat({
-    name: 'css/button-variant-overrides-alert-actions',
+    name: 'css/component-button-variant-overrides',
     format: async ({ dictionary }) => {
       const { fileHeader } = await getStyleDictionaryUtils();
-      const header = await fileHeader({ file: 'overrides/alert.css', formatting: 'css' });
-      const buttonVariantOverrides = dictionary.tokens.color?.alert?.actions?.overrides?.button?.variants;
-      if (!buttonVariantOverrides || typeof buttonVariantOverrides !== 'object') {
-        return '';
-      }
-      let output = '';
-      Object.entries(buttonVariantOverrides).forEach(([originalVariant, overrideVariant]) => {
-        output += header;
-        output += `.pgn__alert-message-wrapper .pgn__alert-actions .btn-${originalVariant},\n`;
-        output += `.pgn__alert-message-wrapper-stacked .pgn__alert-actions .btn-${originalVariant} {\n`;
-        output += `  ${generateButtonVariantProperties(overrideVariant)}\n`;
-        output += '}\n\n';
+      const header = await fileHeader({
+        file: 'overrides/component-button-variants.css',
+        formatting: 'css',
       });
+      let hasOutputHeader = false;
+      let output = '';
+
+      // Process each component configuration
+      BUTTON_VARIANT_OVERRIDES_CONFIG.forEach((config) => {
+        const buttonVariantOverrides = config.getTokens(dictionary.tokens);
+
+        if (!buttonVariantOverrides || typeof buttonVariantOverrides !== 'object' || Object.keys(buttonVariantOverrides).length === 0) {
+          return; // No overrides tokens found, skip.
+        }
+
+        if (!hasOutputHeader) {
+          output += header;
+          hasOutputHeader = true;
+        }
+
+        output += `// ${config.name}\n\n`;
+
+        Object.entries(buttonVariantOverrides).forEach(([originalVariant, overrideVariant]) => {
+          const selectorOutput = config.selectors
+            .map(selector => `${selector} .btn-${originalVariant}`)
+            .join(',\n');
+
+          output += `${selectorOutput} {\n`;
+          output += `  ${generateButtonVariantProperties(overrideVariant)}\n`;
+          output += '}\n\n';
+        });
+      });
+
       return output;
     },
   });
