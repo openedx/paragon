@@ -1,5 +1,5 @@
 {
-  "lastModified": 1748354783435,
+  "lastModified": 1748441257947,
   "projectUsages": [
     {
       "version": "23.9.0",
@@ -7742,18 +7742,6 @@
             "line": 69,
             "column": 34,
             "index": 2441
-          },
-          {
-            "filePath": "src/components/AdminV2/tabs/ModuleActivityReport.jsx",
-            "line": 65,
-            "column": 6,
-            "index": 2331
-          },
-          {
-            "filePath": "src/components/AdminV2/tabs/ModuleActivityReport.jsx",
-            "line": 67,
-            "column": 34,
-            "index": 2406
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2/tabs/AnalyticsTable.jsx",
@@ -41964,9 +41952,9 @@
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
-            "line": 59,
+            "line": 58,
             "column": 8,
-            "index": 1934
+            "index": 1924
           },
           {
             "filePath": "src/generic/upgrade-button/UpgradeButton.jsx",
@@ -42241,6 +42229,18 @@
             "index": 1400
           },
           {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
+            "line": 47,
+            "column": 16,
+            "index": 1151
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
+            "line": 49,
+            "column": 8,
+            "index": 1400
+          },
+          {
             "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
             "line": 57,
             "column": 10,
@@ -42269,12 +42269,6 @@
             "line": 17,
             "column": 6,
             "index": 412
-          },
-          {
-            "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
-            "line": 74,
-            "column": 28,
-            "index": 2464
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarSection.jsx",
@@ -43174,9 +43168,9 @@
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
-            "line": 72,
+            "line": 71,
             "column": 6,
-            "index": 2362
+            "index": 2352
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTrigger.jsx",
@@ -43710,9 +43704,9 @@
         "useToggle": [
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
-            "line": 22,
+            "line": 21,
             "column": 84,
-            "index": 891
+            "index": 838
           },
           {
             "filePath": "src/tab-page/LoadedTabPage.jsx",
@@ -43724,17 +43718,17 @@
         "ChevronLeftIcon": [
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
-            "line": 61,
+            "line": 60,
             "column": 22,
-            "index": 1989
+            "index": 1979
           }
         ],
         "MenuOpenIcon": [
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
-            "line": 75,
+            "line": 74,
             "column": 16,
-            "index": 2544
+            "index": 2534
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTrigger.jsx",
