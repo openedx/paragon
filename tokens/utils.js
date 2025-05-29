@@ -1,6 +1,7 @@
 const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
+const chalk = require('chalk');
 
 const visitedTokens = {};
 
@@ -328,14 +329,23 @@ async function transformInPath(location, variablesMap, transformType = 'definiti
 function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'), isThemeVariant, themeVariant }) {
   const directoryPath = isThemeVariant ? `${buildDir}/themes/${themeVariant}` : `${buildDir}/core`;
 
-  fs.readdir(directoryPath, (errDir, files) => {
-    if (errDir) {
-      // eslint-disable-next-line no-console
-      console.error('Error reading directory:', errDir);
-      return;
-    }
+  // Recursively read all files in the directory, including subdirectories
+  const getAllCssFiles = (dir) => {
+    const files = fs.readdirSync(dir, { withFileTypes: true });
+    return files.flatMap((file) => {
+      const fullPath = path.join(dir, file.name);
+      if (file.isDirectory()) {
+        return getAllCssFiles(fullPath); // Recursively get files in subdirectories
+      }
+      if (file.isFile() && file.name.endsWith('.css') && file.name !== 'index.css') {
+        return fullPath; // Include only CSS files, excluding `index.css`
+      }
+      return [];
+    });
+  };
 
-    const outputCssFiles = files.filter(file => file !== 'index.css');
+  try {
+    const cssFiles = getAllCssFiles(directoryPath);
 
     // For theme variants, files are ordered with variables first, abstraction variables second,
     // and utility classes last. This ensures that variables are available before other files use them.
@@ -344,19 +354,28 @@ function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'
       ? [...commonCssFiles, 'utility-classes.css']
       : [...commonCssFiles, 'custom-media-breakpoints.css'];
 
-    const sortedCssFiles = outputCssFiles.sort((a, b) => sortOrder.indexOf(a) - sortOrder.indexOf(b));
+    // Sort files based on the defined order
+    const sortedCssFiles = cssFiles.sort((a, b) => {
+      const aName = path.basename(a);
+      const bName = path.basename(b);
+      return sortOrder.indexOf(aName) - sortOrder.indexOf(bName);
+    });
 
-    const exportStatements = sortedCssFiles.map((file) => `@import "${file}";`);
+    // Generate @import statements with relative paths
+    const exportStatements = sortedCssFiles.map((file) => {
+      // Get the relative path from the directory path to the file
+      const relativePath = path.relative(directoryPath, file).replace(/\\/g, '/');
+      return `@import "${relativePath}";`;
+    });
 
     const indexContent = `${exportStatements.join('\n')}\n`;
 
-    fs.writeFile(path.join(directoryPath, 'index.css'), indexContent, (errFile) => {
-      if (errFile) {
-        // eslint-disable-next-line no-console
-        console.error('Error creating index file:', errFile);
-      }
-    });
-  });
+    // Write the `index.css` file
+    fs.writeFileSync(path.join(directoryPath, 'index.css'), indexContent);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(chalk.red(`Error creating index.css file: ${error}`));
+  }
 }
 
 /**
@@ -370,6 +389,33 @@ function composeBreakpointName(breakpointName, format) {
   return `@custom-media --${breakpointName.replace(/breakpoint/g, `breakpoint-${format}-width`)}`;
 }
 
+/**
+ * Generates CSS custom properties for a button variant that matches the button-variant mixin
+ * @param {string} variant - The variant name (e.g., 'primary', 'brand')
+ * @returns {string} CSS custom properties for the button variant
+ */
+function generateButtonVariantProperties(variant) {
+  const properties = [
+    `--pgn-btn-color: var(--pgn-color-btn-text-${variant});`,
+    `--pgn-btn-bg: var(--pgn-color-btn-bg-${variant});`,
+    `--pgn-btn-border-color: var(--pgn-color-btn-border-${variant});`,
+    `--pgn-btn-hover-color: var(--pgn-color-btn-hover-text-${variant});`,
+    `--pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-${variant});`,
+    `--pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-${variant});`,
+    `--pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-${variant});`,
+    `--pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-${variant});`,
+    `--pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-${variant});`,
+    `--pgn-btn-active-color: var(--pgn-color-btn-active-text-${variant});`,
+    `--pgn-btn-active-bg: var(--pgn-color-btn-active-bg-${variant});`,
+    `--pgn-btn-active-border-color: var(--pgn-color-btn-active-border-${variant});`,
+    `--pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-${variant});`,
+    `--pgn-btn-focus-color: var(--pgn-color-btn-focus-text-${variant});`,
+    `--pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-${variant});`,
+    `--pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-${variant});`,
+  ];
+  return properties.join('\n  ');
+}
+
 module.exports = {
   createIndexCssFile,
   getFilesWithExtension,
@@ -377,4 +423,5 @@ module.exports = {
   transformInPath,
   composeBreakpointName,
   processAndUpdateTokens,
+  generateButtonVariantProperties,
 };
