@@ -16,7 +16,29 @@
   @include border-radius($button-border-radius, 0);
 }
 
-// Mixin for button states that affect border radius
+/// Sets the CSS custom properties for a button variant
+/// @param {String} $variant - The variant name (e.g., 'primary', 'outline-primary')
+@mixin button-variant($variant) {
+  --pgn-btn-color: var(--pgn-color-btn-text-#{$variant});
+  --pgn-btn-bg: var(--pgn-color-btn-bg-#{$variant});
+  --pgn-btn-border-color: var(--pgn-color-btn-border-#{$variant});
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-#{$variant});
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-#{$variant});
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-#{$variant});
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-#{$variant});
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-#{$variant});
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-#{$variant});
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-#{$variant});
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-#{$variant});
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-#{$variant});
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-#{$variant});
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-#{$variant});
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-#{$variant});
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-#{$variant});
+}
+
+/// Mixin for button states that affect border radius
+/// @param {String} $side - The side of the button to affect ('left' or 'right')
 @mixin button-border-radius-0($side) {
   @if $side == 'right' {
     @include border-right-radius(0);
@@ -26,7 +48,7 @@
     @include border-left-radius(0);
   }
   
-  // Handle pseudo-classes
+  /// Handle pseudo-classes
   &.btn:not(:disabled, .disabled):focus,
   &.btn:not(:disabled, .disabled):focus::before {
     @if $side == 'left' {
@@ -49,7 +71,7 @@
     }
   }
   
-  // Handle .active class
+  /// Handle .active class
   &.btn:not(:disabled, .disabled).active,
   &.btn:not(:disabled, .disabled).active::before {
     @if $side == 'right' {

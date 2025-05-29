@@ -215,6 +215,14 @@ function Menu() {
               </Link>
             </li>
             <li>
+              <Link
+                className={classNames({ active: pathname.endsWith('theming') })}
+                to="/guides/theming"
+              >
+                Theming
+              </Link>
+            </li>
+            <li>
               <Hyperlink
                 destination="https://openedx.atlassian.net/wiki/spaces/BPL/pages/1773502564/Component+Contribution+Process"
                 target="_blank"
