@@ -55,7 +55,11 @@
     "build-tokens:watch": "npx nodemon --ignore styles/css -x \"npm run build-tokens\"",
     "replace-variables-usage-with-css": "./bin/paragon-scripts.js replace-variables -p src -t usage",
     "replace-variables-definition-with-css": "./bin/paragon-scripts.js replace-variables -p src -t definition",
-    "cli:help": "./bin/paragon-scripts.js help"
+    "cli:help": "./bin/paragon-scripts.js help",
+    "build-specific-theme": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir my-build --themes test1",
+    "build-specific-themes": "./bin/paragon-scripts.js build-tokens --source themes --build-dir my-build --themes test1 --themes test2",
+    "build-specific-themes-with-base-theme": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir my-build --themes test1 --base-theme light",
+    "build-themes": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir my-build --all-themes"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.4",
