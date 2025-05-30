@@ -1,8 +1,8 @@
 {
-  "lastModified": 1748527629420,
+  "lastModified": 1748614052062,
   "projectUsages": [
     {
-      "version": "23.9.0",
+      "version": "23.10.0",
       "name": "edx-credentials",
       "repository": {
         "type": "git",
@@ -20958,7 +20958,7 @@
             "filePath": "src/course-unit/CourseUnit.jsx",
             "line": 149,
             "column": 20,
-            "index": 5370
+            "index": 5371
           },
           {
             "filePath": "src/generic/ConnectionErrorAlert.jsx",
@@ -23068,7 +23068,7 @@
             "filePath": "src/course-unit/CourseUnit.jsx",
             "line": 247,
             "column": 14,
-            "index": 9059
+            "index": 9060
           },
           {
             "filePath": "src/course-unit/sidebar/components/SidebarBody.jsx",
@@ -23712,7 +23712,7 @@
             "filePath": "src/course-unit/CourseUnit.jsx",
             "line": 196,
             "column": 10,
-            "index": 6943
+            "index": 6944
           },
           {
             "filePath": "src/course-updates/CourseUpdates.jsx",
@@ -23846,13 +23846,13 @@
             "filePath": "src/course-unit/CourseUnit.jsx",
             "line": 197,
             "column": 12,
-            "index": 6980
+            "index": 6981
           },
           {
             "filePath": "src/course-unit/CourseUnit.jsx",
             "line": 246,
             "column": 12,
-            "index": 9028
+            "index": 9029
           },
           {
             "filePath": "src/course-updates/CourseUpdates.jsx",
@@ -27574,7 +27574,7 @@
             "filePath": "src/course-unit/CourseUnit.jsx",
             "line": 203,
             "column": 24,
-            "index": 7262
+            "index": 7263
           },
           {
             "filePath": "src/generic/configure-modal/AdvancedTab.jsx",
@@ -42253,6 +42253,18 @@
             "index": 1400
           },
           {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
+            "line": 47,
+            "column": 16,
+            "index": 1151
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
+            "line": 49,
+            "column": 8,
+            "index": 1400
+          },
+          {
             "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
             "line": 57,
             "column": 10,
@@ -42281,12 +42293,6 @@
             "line": 17,
             "column": 6,
             "index": 412
-          },
-          {
-            "filePath": "src/courseware/course/sidebar/sidebars/discussions/DiscussionsTrigger.jsx",
-            "line": 48,
-            "column": 6,
-            "index": 1594
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationIcon.jsx",
@@ -42537,10 +42543,10 @@
             "index": 6133
           },
           {
-            "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryHeader.jsx",
-            "line": 32,
-            "column": 12,
-            "index": 913
+            "filePath": "src/course-home/outline-tab/alerts/scheduled-content-alert/ScheduledCotentAlert.jsx",
+            "line": 15,
+            "column": 10,
+            "index": 452
           },
           {
             "filePath": "src/course-home/suggested-schedule-messaging/UpgradeToCompleteAlert.jsx",
@@ -43405,7 +43411,7 @@
             "index": 1318
           }
         ],
-        "DataTable.TableFooter": [
+        "Stack": [
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryTableFooter.jsx",
             "line": 47,
