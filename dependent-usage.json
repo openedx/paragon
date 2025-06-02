@@ -1,5 +1,5 @@
 {
-  "lastModified": 1748786801130,
+  "lastModified": 1748873302349,
   "projectUsages": [
     {
       "version": "23.10.0",
@@ -22028,9 +22028,9 @@
           },
           {
             "filePath": "src/editors/sharedComponents/SourceCodeModal/index.jsx",
-            "line": 32,
+            "line": 31,
             "column": 8,
-            "index": 678
+            "index": 651
           },
           {
             "filePath": "src/editors/sharedComponents/TypeaheadDropdown/index.jsx",
@@ -27870,9 +27870,9 @@
           },
           {
             "filePath": "src/editors/sharedComponents/SourceCodeModal/index.jsx",
-            "line": 25,
+            "line": 24,
             "column": 21,
-            "index": 567
+            "index": 540
           },
           {
             "filePath": "src/pages-and-resources/discussions/data/hook.js",
@@ -42265,6 +42265,18 @@
             "index": 1400
           },
           {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
+            "line": 47,
+            "column": 16,
+            "index": 1151
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
+            "line": 49,
+            "column": 8,
+            "index": 1400
+          },
+          {
             "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
             "line": 57,
             "column": 10,
@@ -51346,7 +51358,7 @@
       }
     },
     {
-      "version": "23.6.0",
+      "version": "23.10.0",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
