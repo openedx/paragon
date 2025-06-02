@@ -114,6 +114,7 @@ You can use `Dropdown.Toggle` with [IconButton](/components/iconbutton) componen
     src={MoreVert}
     iconAs={Icon}
     variant="primary"
+    aria-label="More actions"
   />
   <Dropdown.Menu>
     <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
