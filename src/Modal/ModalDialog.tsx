@@ -21,8 +21,6 @@ import IconButton from '../IconButton';
 import { Close } from '../../icons';
 import messages from './messages';
 
-export const MODAL_DIALOG_CLOSE_LABEL = 'Close';
-
 interface Props {
   /** Specifies the content of the dialog */
   children: React.ReactNode;
