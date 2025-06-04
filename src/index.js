@@ -46,13 +46,14 @@ export { default as useToggle } from './hooks/useToggleHook';
 export { default as useArrowKeyNavigation } from './hooks/useArrowKeyNavigationHook';
 export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChildHook';
 export { default as useIsVisible } from './hooks/useIsVisibleHook';
+export { default as Alert, ALERT_CLOSE_LABEL_TEXT } from './Alert';
+export { default as breakpoints } from './utils/breakpoints';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 export { default as asInput } from './asInput';
 export { default as ActionRow } from './ActionRow';
-export { default as Alert, ALERT_CLOSE_LABEL_TEXT } from './Alert';
 export { default as Annotation } from './Annotation';
 export { default as Avatar } from './Avatar';
 export { default as AvatarButton } from './AvatarButton';
@@ -190,7 +191,6 @@ export { default as Stack } from './Stack';
 export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
 export { default as Sticky } from './Sticky';
 export { default as SelectableBox } from './SelectableBox';
-export { default as breakpoints } from './utils/breakpoints';
 export { default as Variant } from './utils/constants';
 export {
   OverflowScrollContext,

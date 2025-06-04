@@ -46,13 +46,14 @@ export { default as useToggle, type Toggler, type ToggleHandlers } from './hooks
 export { default as useArrowKeyNavigation, type ArrowKeyNavProps } from './hooks/useArrowKeyNavigationHook';
 export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChildHook';
 export { default as useIsVisible } from './hooks/useIsVisibleHook';
+export { default as Alert, ALERT_CLOSE_LABEL_TEXT } from './Alert';
+export { default as breakpoints } from './utils/breakpoints';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 export const asInput: any; // from './asInput';
 export const ActionRow: any; // from './ActionRow';
-export const Alert: any, ALERT_CLOSE_LABEL_TEXT: string; // from './Alert';
 export const Annotation: any; // from './Annotation';
 export const Avatar: any; // from './Avatar';
 export const AvatarButton: any; // from './AvatarButton';
@@ -190,7 +191,6 @@ export const Stack: any; // from './Stack';
 export const ToggleButton: any, ToggleButtonGroup: any; // from './ToggleButton';
 export const Sticky: any; // from './Sticky';
 export const SelectableBox: any; // from './SelectableBox';
-export const breakpoints: any; // from './utils/breakpoints';
 export const Variant: any; // from './utils/constants';
 export const
   OverflowScrollContext: any,
