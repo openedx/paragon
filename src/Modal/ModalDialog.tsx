@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useMediaQuery } from 'react-responsive';
+import { useIntl } from 'react-intl';
 import ModalLayer from './ModalLayer';
 // @ts-ignore for now - this needs to be converted to TypeScript
 import ModalCloseButton from './ModalCloseButton';
@@ -18,8 +19,7 @@ import ModalDialogHero from './ModalDialogHero';
 import Icon from '../Icon';
 import IconButton from '../IconButton';
 import { Close } from '../../icons';
-
-export const MODAL_DIALOG_CLOSE_LABEL = 'Close';
+import messages from './messages';
 
 interface Props {
   /** Specifies the content of the dialog */
@@ -64,7 +64,7 @@ function ModalDialog({
   size = 'md',
   variant = 'default',
   hasCloseButton = true,
-  closeLabel = MODAL_DIALOG_CLOSE_LABEL,
+  closeLabel,
   isFullscreenScroll = false,
   className,
   isFullscreenOnMobile = false,
@@ -72,6 +72,8 @@ function ModalDialog({
   zIndex,
   isOverflowVisible,
 }: Props) {
+  const intl = useIntl();
+  const closeButtonText = closeLabel || intl.formatMessage(messages.closeButtonText);
   const isMobile = useMediaQuery({ query: '(max-width: 767.98px)' });
   const showFullScreen = (isFullscreenOnMobile && isMobile);
   return (
@@ -97,7 +99,7 @@ function ModalDialog({
               iconAs={Icon}
               invertColors={variant === 'dark'}
               src={Close}
-              alt={closeLabel}
+              alt={closeButtonText}
             />
           </div>
         )}
