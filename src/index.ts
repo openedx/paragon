@@ -1,6 +1,7 @@
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that have types
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
+export { default as Alert, ALERT_CLOSE_LABEL_TEXT } from './Alert';
 export { default as Bubble } from './Bubble';
 export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
@@ -32,7 +33,7 @@ export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
 export { default as ModalContext } from './Modal/ModalContext';
-export { default as ModalDialog, MODAL_DIALOG_CLOSE_LABEL } from './Modal/ModalDialog';
+export { default as ModalDialog } from './Modal/ModalDialog';
 export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
@@ -43,6 +44,7 @@ export { default as useToggle, type Toggler, type ToggleHandlers } from './hooks
 export { default as useArrowKeyNavigation, type ArrowKeyNavProps } from './hooks/useArrowKeyNavigationHook';
 export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChildHook';
 export { default as useIsVisible } from './hooks/useIsVisibleHook';
+export { default as breakpoints } from './utils/breakpoints';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
@@ -51,8 +53,6 @@ export { default as useIsVisible } from './hooks/useIsVisibleHook';
 export { default as asInput } from './asInput';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as ActionRow } from './ActionRow';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Alert, ALERT_CLOSE_LABEL_TEXT } from './Alert';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Annotation } from './Annotation';
 // @ts-ignore: has yet to be converted to TypeScript
@@ -229,8 +229,6 @@ export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
 export { default as Sticky } from './Sticky';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as SelectableBox } from './SelectableBox';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as breakpoints } from './utils/breakpoints';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Variant } from './utils/constants';
 export {

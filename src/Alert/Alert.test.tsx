@@ -7,10 +7,13 @@ import { Context as ResponsiveContext } from 'react-responsive';
 import { Info } from '../../icons';
 import breakpoints from '../utils/breakpoints';
 import Button from '../Button';
-import Alert from '.';
+import Alert, { AlertProps } from '.';
 
-// eslint-disable-next-line react/prop-types
-function AlertWrapper({ children, ...props }) {
+/** A compile time check. Whatever React elements this wraps won't run at runtime. */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function CompileCheck(_props: { children: React.ReactNode }) { return null; }
+
+function AlertWrapper({ children, ...props }: AlertProps & { children: React.ReactNode }) {
   return (
     <IntlProvider locale="en" messages={{}}>
       <Alert {...props}>
@@ -19,6 +22,33 @@ function AlertWrapper({ children, ...props }) {
     </IntlProvider>
   );
 }
+
+describe('Alert component type checking', () => {
+  it('has correct typing', () => {
+    <CompileCheck>
+      <Alert>Basic alert</Alert>
+      <Alert variant="primary">Primary alert</Alert>
+      <Alert icon={Info}>Alert with icon</Alert>
+      <Alert dismissible onClose={() => {}}>Dismissible alert</Alert>
+      <Alert actions={[<Button key="action">Action</Button>]}>Alert with action</Alert>
+      <Alert stacked>Stacked alert</Alert>
+      <Alert closeLabel="Close">Custom close label</Alert>
+      <Alert.Heading>Alert heading</Alert.Heading>
+      <Alert.Link href="#">Alert link</Alert.Link>
+
+      {/* @ts-expect-error Invalid variant */}
+      <Alert variant="invalid" />
+      {/* @ts-expect-error Invalid icon type */}
+      <Alert icon="string" />
+      {/* @ts-expect-error Invalid closeLabel type */}
+      <Alert closeLabel={{}} />
+      {/* @ts-expect-error Invalid Heading props */}
+      <Alert.Heading href="#" />
+      {/* @ts-expect-error Invalid Link props */}
+      <Alert.Link variant="primary" />
+    </CompileCheck>;
+  });
+});
 
 describe('<Alert />', () => {
   it('renders without any props', () => {
