@@ -1,5 +1,5 @@
 {
-  "lastModified": 1749391577096,
+  "lastModified": 1749478049075,
   "projectUsages": [
     {
       "version": "23.10.1",
@@ -42247,6 +42247,48 @@
             "index": 412
           },
           {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
+            "line": 47,
+            "column": 16,
+            "index": 1151
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
+            "line": 49,
+            "column": 8,
+            "index": 1400
+          },
+          {
+            "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
+            "line": 57,
+            "column": 10,
+            "index": 1804
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
+            "line": 74,
+            "column": 28,
+            "index": 2464
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarSection.jsx",
+            "line": 54,
+            "column": 8,
+            "index": 1702
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/discussions/DiscussionsTrigger.jsx",
+            "line": 48,
+            "column": 6,
+            "index": 1594
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationIcon.jsx",
+            "line": 17,
+            "column": 6,
+            "index": 412
+          },
+          {
             "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
             "line": 49,
             "column": 8,
@@ -43568,24 +43610,6 @@
           }
         ],
         "Stack": [
-          {
-            "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryHeader.jsx",
-            "line": 25,
-            "column": 4,
-            "index": 646
-          },
-          {
-            "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryHeader.jsx",
-            "line": 26,
-            "column": 6,
-            "index": 685
-          },
-          {
-            "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryHeader.jsx",
-            "line": 45,
-            "column": 8,
-            "index": 1313
-          },
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryTableFooter.jsx",
             "line": 47,
@@ -51512,7 +51536,7 @@
       }
     },
     {
-      "version": "23.10.0",
+      "version": "23.10.1",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
