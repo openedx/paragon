@@ -1,5 +1,5 @@
 {
-  "lastModified": 1749478049075,
+  "lastModified": 1749564465290,
   "projectUsages": [
     {
       "version": "23.10.1",
@@ -1747,7 +1747,7 @@
       }
     },
     {
-      "version": "22.17.0",
+      "version": "22.18.0",
       "name": "frontend-app-admin-portal",
       "repository": "https://github.com/openedx/frontend-app-admin-portal",
       "folderName": "frontend-app-admin-portal",
@@ -42289,6 +42289,48 @@
             "index": 412
           },
           {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
+            "line": 47,
+            "column": 16,
+            "index": 1151
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
+            "line": 49,
+            "column": 8,
+            "index": 1400
+          },
+          {
+            "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
+            "line": 57,
+            "column": 10,
+            "index": 1804
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
+            "line": 74,
+            "column": 28,
+            "index": 2464
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarSection.jsx",
+            "line": 54,
+            "column": 8,
+            "index": 1702
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/discussions/DiscussionsTrigger.jsx",
+            "line": 48,
+            "column": 6,
+            "index": 1594
+          },
+          {
+            "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationIcon.jsx",
+            "line": 17,
+            "column": 6,
+            "index": 412
+          },
+          {
             "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
             "line": 49,
             "column": 8,
@@ -47533,7 +47575,7 @@
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 141,
             "column": 13,
-            "index": 4087
+            "index": 4079
           },
           {
             "filePath": "src/components/StafferPage/index.jsx",
@@ -47607,7 +47649,7 @@
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 125,
             "column": 13,
-            "index": 3483
+            "index": 3475
           }
         ],
         "Alert.Heading": [
@@ -47919,7 +47961,7 @@
             "filePath": "src/components/SidePanes/UsersPane.jsx",
             "line": 160,
             "column": 16,
-            "index": 4883
+            "index": 4875
           }
         ],
         "InfoOutline": [
