@@ -338,7 +338,7 @@ const initializeStyleDictionary = async ({ themes }) => {
    */
   const BUTTON_VARIANT_OVERRIDES_CONFIG = [
     {
-      name: 'Alert',
+      name: 'Alert actions',
       getTokens: (tokens) => tokens?.color?.alert?.actions?.overrides?.button?.variants,
       selectors: [
         '.pgn__alert-message-wrapper .pgn__alert-actions',
@@ -346,7 +346,7 @@ const initializeStyleDictionary = async ({ themes }) => {
       ],
     },
     {
-      name: 'Modal',
+      name: 'Modal footer buttons',
       getTokens: (tokens) => tokens?.color?.modal?.footer?.overrides?.button?.variants,
       selectors: [
         '.pgn__modal .pgn__modal-footer',
