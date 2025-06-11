@@ -346,7 +346,7 @@ const initializeStyleDictionary = async ({ themes }) => {
       ],
     },
     {
-      name: 'Modal footer buttons',
+      name: 'Modal footer',
       getTokens: (tokens) => tokens?.color?.modal?.footer?.overrides?.button?.variants,
       selectors: [
         '.pgn__modal .pgn__modal-footer',
