@@ -345,6 +345,13 @@ const initializeStyleDictionary = async ({ themes }) => {
         '.pgn__alert-message-wrapper-stacked .pgn__alert-actions',
       ],
     },
+    {
+      name: 'Modal',
+      getTokens: (tokens) => tokens?.color?.modal?.footer?.overrides?.button?.variants,
+      selectors: [
+        '.pgn__modal .pgn__modal-footer',
+      ],
+    },
     // Add new component configurations here!
   ];
 
@@ -376,7 +383,7 @@ const initializeStyleDictionary = async ({ themes }) => {
           hasOutputHeader = true;
         }
 
-        output += `// ${config.name}\n\n`;
+        output += `/* ${config.name} */\n\n`;
 
         Object.entries(buttonVariantOverrides).forEach(([originalVariant, overrideVariant]) => {
           const selectorOutput = config.selectors
