@@ -338,11 +338,18 @@ const initializeStyleDictionary = async ({ themes }) => {
    */
   const BUTTON_VARIANT_OVERRIDES_CONFIG = [
     {
-      name: 'Alert',
+      name: 'Alert actions',
       getTokens: (tokens) => tokens?.color?.alert?.actions?.overrides?.button?.variants,
       selectors: [
         '.pgn__alert-message-wrapper .pgn__alert-actions',
         '.pgn__alert-message-wrapper-stacked .pgn__alert-actions',
+      ],
+    },
+    {
+      name: 'Modal footer',
+      getTokens: (tokens) => tokens?.color?.modal?.footer?.overrides?.button?.variants,
+      selectors: [
+        '.pgn__modal .pgn__modal-footer',
       ],
     },
     // Add new component configurations here!
@@ -376,7 +383,7 @@ const initializeStyleDictionary = async ({ themes }) => {
           hasOutputHeader = true;
         }
 
-        output += `// ${config.name}\n\n`;
+        output += `/* ${config.name} */\n\n`;
 
         Object.entries(buttonVariantOverrides).forEach(([originalVariant, overrideVariant]) => {
           const selectorOutput = config.selectors

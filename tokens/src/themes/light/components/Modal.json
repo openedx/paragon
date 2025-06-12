@@ -10,7 +10,21 @@
           "$value": "{color.black}"
         }
       },
-      "backdrop-bg": { "source": "$modal-backdrop-bg", "$value": "{color.black}" }
+      "backdrop-bg": { "source": "$modal-backdrop-bg", "$value": "{color.black}" },
+      "footer": {
+        "overrides": {
+          "button": {
+            "variants": {}
+          },
+          "examples": {
+            "button": {
+              "variants": {
+                "primary": "brand"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "elevation": {
