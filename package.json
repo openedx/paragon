@@ -31,8 +31,8 @@
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "stylelint": "stylelint \"src/**/*.scss\" \"scss/**/*.scss\" \"www/src/**/*.scss\" --config .stylelintrc.json",
-    "lint": "npm run stylelint && eslint --ext .js --ext .jsx --ext .ts --ext .tsx . && npm run lint --workspaces --if-present",
-    "lint:fix": "npm run stylelint && eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx . && npm run lint --workspaces --if-present",
+    "lint": "npm run stylelint && eslint --ext .js --ext .jsx --ext .ts --ext .tsx --ext .json . && npm run lint --workspaces --if-present",
+    "lint:fix": "npm run stylelint && eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx --ext .json . && npm run lint --workspaces --if-present",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "snapshot": "jest --updateSnapshot",
@@ -141,6 +141,10 @@
     "babel-loader": "^8.2.4",
     "commander": "^9.3.0",
     "eslint": "8.18.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsonc": "^2.18.1",
     "eslint-plugin-jsx-a11y": "6.7.1",
     "husky": "^9.0.11",
     "identity-obj-proxy": "^3.0.0",
@@ -198,7 +202,7 @@
     "extends @edx/browserslist-config"
   ],
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,jsx,ts,tsx,json}": [
       "npx eslint"
     ],
     "*.scss": [

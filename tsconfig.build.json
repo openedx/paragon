@@ -8,5 +8,5 @@
   },
   "include": ["src"],
   // Don't include the .test.tsx files when we build the .d.ts files in dist/
-  "exclude": ["src/**/*.test.tsx"],
+  "exclude": ["src/**/*.test.tsx"]
 }
