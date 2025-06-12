@@ -27,7 +27,7 @@ function CheckboxFilter({
   return (
     <Form.Group role="group" aria-labelledby={ariaLabel.current}>
       <FormLabel id={ariaLabel.current} className="pgn__checkbox-filter-label">{Header}</FormLabel>
-      <Form.CheckboxSet name={Header}>
+      <Form.CheckboxSet name={Header} value={checkedBoxes}>
         {filterChoices.map(({ name, number, value }) => (
           <Form.Checkbox
             key={`${headerBasedId}${name}`}
