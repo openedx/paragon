@@ -6,7 +6,7 @@ const chalk = require('chalk');
 const chroma = require('chroma-js');
 const { colorYiq, darken, lighten } = require('./sass-helpers');
 const cssUtilities = require('./css-utilities');
-const { composeBreakpointName, processAndUpdateTokens } = require('./utils');
+const { composeBreakpointName, processAndUpdateTokens, generateButtonVariantProperties } = require('./utils');
 
 /* eslint-disable import/no-unresolved */
 const getStyleDictionary = async () => (await import('style-dictionary')).default;
@@ -327,6 +327,69 @@ const initializeStyleDictionary = async ({ themes }) => {
       }
       const header = await fileHeader({ file, formatting });
       return `${header}${customMediaVariables}`;
+    },
+  });
+
+  /**
+   * Configuration for button variant overrides by component type.
+   * Each entry defines:
+   * - getTokens: Function that receives the dictionary tokens and returns the button variant overrides
+   * - selectors: Array of CSS selectors where the button variants should be overridden
+   */
+  const BUTTON_VARIANT_OVERRIDES_CONFIG = [
+    {
+      name: 'Alert',
+      getTokens: (tokens) => tokens?.color?.alert?.actions?.overrides?.button?.variants,
+      selectors: [
+        '.pgn__alert-message-wrapper .pgn__alert-actions',
+        '.pgn__alert-message-wrapper-stacked .pgn__alert-actions',
+      ],
+    },
+    // Add new component configurations here!
+  ];
+
+  /**
+   * Registers a custom format for generating CSS style overrides for button variants in different components.
+   * All overrides are combined into a single CSS file.
+   */
+  StyleDictionary.registerFormat({
+    name: 'css/component-button-variant-overrides',
+    format: async ({ dictionary }) => {
+      const { fileHeader } = await getStyleDictionaryUtils();
+      const header = await fileHeader({
+        file: 'overrides/component-button-variants.css',
+        formatting: 'css',
+      });
+      let hasOutputHeader = false;
+      let output = '';
+
+      // Process each component configuration
+      BUTTON_VARIANT_OVERRIDES_CONFIG.forEach((config) => {
+        const buttonVariantOverrides = config.getTokens(dictionary.tokens);
+
+        if (!buttonVariantOverrides || typeof buttonVariantOverrides !== 'object' || Object.keys(buttonVariantOverrides).length === 0) {
+          return; // No overrides tokens found, skip.
+        }
+
+        if (!hasOutputHeader) {
+          output += header;
+          hasOutputHeader = true;
+        }
+
+        output += `// ${config.name}\n\n`;
+
+        Object.entries(buttonVariantOverrides).forEach(([originalVariant, overrideVariant]) => {
+          const selectorOutput = config.selectors
+            .map(selector => `${selector} .btn-${originalVariant}`)
+            .join(',\n');
+
+          output += `${selectorOutput} {\n`;
+          output += `  ${generateButtonVariantProperties(overrideVariant)}\n`;
+          output += '}\n\n';
+        });
+      });
+
+      return output;
     },
   });
 

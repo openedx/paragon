@@ -9,7 +9,29 @@ export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
 export { default as Container } from './Container';
-export { default as Hyperlink, HYPER_LINK_EXTERNAL_LINK_ALT_TEXT, HYPER_LINK_EXTERNAL_LINK_TITLE } from './Hyperlink';
+export {
+  default as Form,
+  RadioControl,
+  CheckboxControl,
+  SwitchControl,
+  FormSwitchSet,
+  FormControl,
+  FormControlDecoratorGroup,
+  FormControlFeedback,
+  FormCheck,
+  FormFile,
+  FormRadio,
+  FormRadioSet,
+  FormRadioSetContext,
+  FormGroup,
+  FormLabel,
+  useCheckboxSetValues,
+  FormText,
+  FormAutosuggest,
+  FormAutosuggestOption,
+  InputGroup,
+} from './Form';
+export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
 export { default as ModalContext } from './Modal/ModalContext';
@@ -17,6 +39,7 @@ export { default as ModalDialog, MODAL_DIALOG_CLOSE_LABEL } from './Modal/ModalD
 export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
+export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
 export { default as Tooltip } from './Tooltip';
 export { default as useWindowSize } from './hooks/useWindowSizeHook';
 export { default as useToggle } from './hooks/useToggleHook';
@@ -60,28 +83,6 @@ export {
   SplitButton,
 } from './Dropdown';
 export { default as Fade } from './Fade';
-export {
-  default as Form,
-  RadioControl,
-  CheckboxControl,
-  SwitchControl,
-  FormSwitchSet,
-  FormControl,
-  FormControlDecoratorGroup,
-  FormControlFeedback,
-  FormCheck,
-  FormFile,
-  FormRadio,
-  FormRadioSet,
-  FormRadioSetContext,
-  FormGroup,
-  FormLabel,
-  useCheckboxSetValues,
-  FormText,
-  FormAutosuggest,
-  FormAutosuggestOption,
-  InputGroup,
-} from './Form';
 export { default as IconButtonToggle } from './IconButtonToggle';
 export { default as Image, Figure } from './Image';
 export { default as MailtoLink, MAIL_TO_LINK_EXTERNAL_LINK_ALTERNATIVE_TEXT, MAIL_TO_LINK_EXTERNAL_LINK_TITLE } from './MailtoLink';
@@ -137,7 +138,6 @@ export {
   TabContent,
   TabPane,
 } from './Tabs';
-export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
 export { default as TransitionReplace } from './TransitionReplace';
 export { default as ValidationMessage } from './ValidationMessage';
 export { default as DataTable } from './DataTable';

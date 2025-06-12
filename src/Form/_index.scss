@@ -294,7 +294,8 @@
 
   .form-control:focus ~ &,
   // select.form-control ~ &,
-  .form-control.has-value ~ & {
+  .form-control.has-value ~ &,
+  .form-control:is(:-webkit-autofill, :autofill) ~ & {
     .pgn__form-control-floating-label-text {
       background-color: var(--pgn-color-form-input-bg-base);
     }
@@ -408,11 +409,11 @@ select.form-control {
   appearance: none;
   height: var(--pgn-size-form-control-indicator-base);
   width: var(--pgn-size-form-control-indicator-base);
+  min-width: var(--pgn-size-form-control-indicator-base);
   background-color: var(--pgn-color-form-control-indicator-bg-base);
   border:
     solid var(--pgn-size-form-control-indicator-border-width)
     var(--pgn-color-form-control-indicator-border);
-  border-radius: var(--pgn-size-form-control-border-checkbox-indicator-radius) radius;
   margin-inline-end: var(--pgn-spacing-form-control-gutter);
   background-position: center;
 
@@ -434,6 +435,8 @@ select.form-control {
 }
 
 .pgn__form-checkbox-input {
+  border-radius: var(--pgn-size-form-control-border-checkbox-indicator-radius);
+
   &:checked {
     background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-base);
   }
@@ -467,6 +470,7 @@ select.form-control {
 
 .pgn__form-switch-input {
   width: var(--pgn-size-form-control-switch-width);
+  min-width: var(--pgn-size-form-control-switch-width);
   border-radius: var(--pgn-size-form-control-switch-indicator-border-radius);
   background-image: var(--pgn-other-content-form-control-switch-indicator-icon-off);
   background-position: left center;

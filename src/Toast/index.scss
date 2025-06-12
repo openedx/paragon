@@ -16,7 +16,7 @@
   background-color: var(--pgn-color-toast-bg);
   box-shadow: var(--pgn-elevation-toast-box-shadow);
   margin: 0;
-  padding: 1rem;
+  padding: var(--pgn-spacing-spacer-base);
   position: relative;
   border-radius: var(--pgn-size-toast-border-radius);
   z-index: 2;
@@ -49,7 +49,7 @@
     }
 
     & + .btn {
-      margin-top: 1rem;
+      margin-top: var(--pgn-spacing-spacer-base);
     }
   }
 

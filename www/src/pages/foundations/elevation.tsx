@@ -395,14 +395,14 @@ export default function ElevationPage({ pageContext }) {
         <h4>Example variables usage</h4>
         <p>Variables are available with following pattern: </p>
         <code className="d-block mb-2 bg-gray-100 p-3">
-          {'$box-shadow-{direction}-{level}'}
+          {'var(--pgn-elevation-box-shadow-{direction}-{level})'}
         </code>
         <p>For example:</p>
         <code className="d-block mb-2 bg-gray-100 p-3">
-          $box-shadow-right-2
+          var(--pgn-elevation-box-shadow-right-2)
         </code>
         <code className="d-block mb-2 bg-gray-100 p-3">
-          $box-shadow-up-3
+          var(--pgn-elevation-box-shadow-up-3)
         </code>
         <br />
 

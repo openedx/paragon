@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const chalk = require('chalk');
 const themeCommand = require('../lib/install-theme');
-const helpCommand = require('../lib/help');
+const { helpCommand } = require('../lib/help');
 const buildTokensCommand = require('../lib/build-tokens');
 const replaceVariablesCommand = require('../lib/replace-variables');
 const buildScssCommand = require('../lib/build-scss');
@@ -92,8 +92,14 @@ const COMMANDS = {
       },
       {
         name: '-t, --themes',
-        description: 'Specify themes to include in the token build.',
+        description: `Specify themes to include in the token build.
+          Can be provided as a comma-separated list (e.g., "light,dark") or multiple arguments (e.g., "-t light -t dark").`,
         defaultValue: 'light',
+      },
+      {
+        name: '--exclude-core',
+        description: 'Exclude core from the token build.',
+        defaultValue: false,
       },
       {
         name: '-v, --verbose',
@@ -140,6 +146,11 @@ const COMMANDS = {
         name: '--corePath',
         description: 'Path to the theme\'s core SCSS file, defaults to Paragon\'s core.scss.',
         defaultValue: 'styles/scss/core/core.scss',
+      },
+      {
+        name: '--excludeCore',
+        description: 'Exclude core from the SCSS build.',
+        defaultValue: false,
       },
       {
         name: '--themesPath',
@@ -223,3 +234,7 @@ const COMMANDS = {
     process.exit(1);
   }
 })();
+
+module.exports = {
+  COMMANDS,
+};

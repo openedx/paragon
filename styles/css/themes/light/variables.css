@@ -250,12 +250,12 @@
   --pgn-elevation-box-shadow-level-4-2-blur: 1.25rem; /* Basic box shadow of level 4. */
   --pgn-elevation-box-shadow-level-5-1-color: rgba(0, 0, 0, 0.15); /* Basic box shadow of level 5. */
   --pgn-elevation-box-shadow-level-5-1-offset-x: 0; /* Basic box shadow of level 5. */
-  --pgn-elevation-box-shadow-level-5-1-offset-y: 1.25px; /* Basic box shadow of level 5. */
+  --pgn-elevation-box-shadow-level-5-1-offset-y: 1.25rem; /* Basic box shadow of level 5. */
   --pgn-elevation-box-shadow-level-5-1-blur: 2.5rem; /* Basic box shadow of level 5. */
   --pgn-elevation-box-shadow-level-5-2-color: rgba(0, 0, 0, 0.15); /* Basic box shadow of level 5. */
   --pgn-elevation-box-shadow-level-5-2-offset-x: 0; /* Basic box shadow of level 5. */
   --pgn-elevation-box-shadow-level-5-2-offset-y: 0.5rem; /* Basic box shadow of level 5. */
-  --pgn-elevation-box-shadow-level-5-2-blur: 2.5rem; /* Basic box shadow of level 5. */
+  --pgn-elevation-box-shadow-level-5-2-blur: 3rem; /* Basic box shadow of level 5. */
   --pgn-elevation-box-shadow-base-color: rgba(0, 0, 0, 0.3); /* Default box shadow. */
   --pgn-elevation-box-shadow-base-offset-x: 0; /* Default box shadow. */
   --pgn-elevation-box-shadow-base-offset-y: 0.125rem; /* Default box shadow. */
@@ -302,12 +302,12 @@
   --pgn-elevation-box-shadow-down-4-2-blur: 1.25rem; /* Bottom box shadow of level 4. */
   --pgn-elevation-box-shadow-down-5-1-color: rgba(0, 0, 0, 0.15); /* Bottom box shadow of level 5. */
   --pgn-elevation-box-shadow-down-5-1-offset-x: 0; /* Bottom box shadow of level 5. */
-  --pgn-elevation-box-shadow-down-5-1-offset-y: 1.25px; /* Bottom box shadow of level 5. */
+  --pgn-elevation-box-shadow-down-5-1-offset-y: 1.25rem; /* Bottom box shadow of level 5. */
   --pgn-elevation-box-shadow-down-5-1-blur: 2.5rem; /* Bottom box shadow of level 5. */
   --pgn-elevation-box-shadow-down-5-2-color: rgba(0, 0, 0, 0.15); /* Bottom box shadow of level 5. */
   --pgn-elevation-box-shadow-down-5-2-offset-x: 0; /* Bottom box shadow of level 5. */
   --pgn-elevation-box-shadow-down-5-2-offset-y: 0.5rem; /* Bottom box shadow of level 5. */
-  --pgn-elevation-box-shadow-down-5-2-blur: 2.5rem; /* Bottom box shadow of level 5. */
+  --pgn-elevation-box-shadow-down-5-2-blur: 3rem; /* Bottom box shadow of level 5. */
   --pgn-elevation-box-shadow-left-1-1-color: rgba(0, 0, 0, 0.15); /* Left box shadow of level 1. */
   --pgn-elevation-box-shadow-left-1-1-offset-x: -0.0625rem; /* Left box shadow of level 1. */
   --pgn-elevation-box-shadow-left-1-1-offset-y: 0; /* Left box shadow of level 1. */
@@ -1399,7 +1399,8 @@
   --pgn-color-icon-button-text-black-inverse-active-focus: var(--pgn-color-icon-button-text-black-inverse-active-base);
   --pgn-color-image-figure-caption: var(--pgn-color-gray-500);
   --pgn-color-menu-item-color: var(--pgn-color-body-base);
-  --pgn-color-menu-item-hover-color: var(--pgn-color-btn-text-tertiary);
+  --pgn-color-menu-item-hover-color: var(--pgn-color-btn-hover-text-tertiary);
+  --pgn-color-menu-item-focus-bg: var(--pgn-color-light-500);
   --pgn-color-menu-select-btn-link-color: var(--pgn-color-primary-500);
   --pgn-color-modal-content-bg: var(--pgn-color-bg-base);
   --pgn-color-nav-tabs-base-border-base: var(--pgn-color-light-400);
@@ -1812,7 +1813,6 @@
   --pgn-color-icon-button-text-danger-inverse-active-focus: var(--pgn-color-icon-button-text-danger-inverse-active-base);
   --pgn-color-image-thumbnail-bg: var(--pgn-color-body-bg);
   --pgn-color-menu-item-hover-bg: var(--pgn-color-btn-hover-bg-tertiary);
-  --pgn-color-menu-item-focus-bg: var(--pgn-color-btn-active-bg-tertiary);
   --pgn-color-nav-tabs-inverse-link-bg-hover: var(--pgn-color-nav-tabs-inverse-link-border-bottom);
   --pgn-color-nav-pills-base-link-active-bg: var(--pgn-color-bg-active);
   --pgn-color-nav-pills-base-link-border: var(--pgn-color-nav-tabs-base-border-base);

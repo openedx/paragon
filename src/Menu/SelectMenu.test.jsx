@@ -1,4 +1,6 @@
 import React from 'react';
+import { IntlProvider } from 'react-intl';
+import PropTypes from 'prop-types';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
@@ -10,27 +12,44 @@ import Hyperlink from '../Hyperlink';
 const app = document.createElement('div');
 document.body.appendChild(app);
 
+function SelectMenuWrapper({ children }) {
+  return (
+    <IntlProvider locale="en">
+      {children}
+    </IntlProvider>
+  );
+}
+SelectMenuWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 function DefaultSelectMenu(props) {
-  return <SelectMenu {...props}><MenuItem>A Menu Item</MenuItem></SelectMenu>;
+  return (
+    <SelectMenuWrapper>
+      <SelectMenu {...props}><MenuItem>A Menu Item</MenuItem></SelectMenu>
+    </SelectMenuWrapper>
+  );
 }
 
 function defaultSelectMenu() {
   return (
-    <SelectMenu>
-      <MenuItem>A Menu Item</MenuItem>
-      <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
-      <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
-      <MenuItem disabled>A Disabled Menu Item</MenuItem>
-      <MenuItem as={Hyperlink} destination="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
-      <MenuItem>Falstaff</MenuItem>
-      <MenuItem>Scipio</MenuItem>
-      <MenuItem>Faustus</MenuItem>
-      <MenuItem>Cordelia</MenuItem>
-      <MenuItem>Renfrancine</MenuItem>
-      <MenuItem>Stovern</MenuItem>
-      <MenuItem>Kainian</MenuItem>
-      <MenuItem>M. Hortens</MenuItem>
-    </SelectMenu>
+    <SelectMenuWrapper>
+      <SelectMenu>
+        <MenuItem>A Menu Item</MenuItem>
+        <MenuItem iconBefore={Add}>A Menu Item With an Icon Before</MenuItem>
+        <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
+        <MenuItem disabled>A Disabled Menu Item</MenuItem>
+        <MenuItem as={Hyperlink} destination="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
+        <MenuItem>Falstaff</MenuItem>
+        <MenuItem>Scipio</MenuItem>
+        <MenuItem>Faustus</MenuItem>
+        <MenuItem>Cordelia</MenuItem>
+        <MenuItem>Renfrancine</MenuItem>
+        <MenuItem>Stovern</MenuItem>
+        <MenuItem>Kainian</MenuItem>
+        <MenuItem>M. Hortens</MenuItem>
+      </SelectMenu>
+    </SelectMenuWrapper>
   );
 }
 

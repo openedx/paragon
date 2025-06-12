@@ -15,7 +15,7 @@
     &:focus,
     &:active,
     &.active {
-      z-index: 1;
+      z-index: 2;
     }
   }
 }
@@ -36,14 +36,17 @@
     margin-left: calc(var(--pgn-size-btn-border-width) * -1);
   }
 
+  // Right border radius for non-last buttons
+  > .btn:not(:last-child, .dropdown-toggle, :first-child),
   > .btn:not(:last-child, .dropdown-toggle),
   > .btn-group:not(:last-child) > .btn {
-    @include border-right-radius(0);
+    @include button-border-radius-0('right');
   }
 
-  > .btn:not(:first-child),
+  // Left border radius for non-first buttons
+  > .btn:not(:first-child, .dropdown-toggle),
   > .btn-group:not(:first-child) > .btn {
-    @include border-left-radius(0);
+    @include button-border-radius-0('left');
   }
 }
 

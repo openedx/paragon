@@ -1,4 +1,5 @@
 import React from 'react';
+import { IntlProvider } from 'react-intl';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
@@ -20,15 +21,17 @@ describe('Menu Item renders correctly', () => {
 
   it('renders as expected with menu items', () => {
     const tree = renderer.create((
-      <Menu>
-        <MenuItem> A Menu Item</MenuItem>
-        <MenuItem iconBefore={Add} stoven>A Menu Item With an Icon Before</MenuItem>
-        <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
-        <MenuItem disabled>A Disabled Menu Item</MenuItem>
-        <MenuItem as={Hyperlink} destination="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
-        <MenuItem as={Button} variant="primary" size="inline">A Button Menu Item</MenuItem>
-        <MenuItem as={Form.Checkbox}>A Checkbox Menu Item</MenuItem>
-      </Menu>
+      <IntlProvider locale="en">
+        <Menu>
+          <MenuItem> A Menu Item</MenuItem>
+          <MenuItem iconBefore={Add} stoven>A Menu Item With an Icon Before</MenuItem>
+          <MenuItem iconAfter={Check}>A Menu Item With an Icon After </MenuItem>
+          <MenuItem disabled>A Disabled Menu Item</MenuItem>
+          <MenuItem as={Hyperlink} destination="https://en.wikipedia.org/wiki/Hyperlink">A Link Menu Item</MenuItem>
+          <MenuItem as={Button} variant="primary" size="inline">A Button Menu Item</MenuItem>
+          <MenuItem as={Form.Checkbox}>A Checkbox Menu Item</MenuItem>
+        </Menu>
+      </IntlProvider>
     )).toJSON();
     expect(tree).toMatchSnapshot();
   });
