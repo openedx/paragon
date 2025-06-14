@@ -13,10 +13,10 @@ const CheckpointActionRow = React.forwardRef(({
   onBack,
   onEnd,
   index,
-}) => {
+}, ref) => {
   const isFirstCheckpoint = index === 0;
   return (
-    <ActionRow className="pgn__checkpoint-action-row">
+    <ActionRow className="pgn__checkpoint-action-row" ref={ref}>
       {!isFirstCheckpoint && (
         <Button
           className="pgn__checkpoint-button-back"
