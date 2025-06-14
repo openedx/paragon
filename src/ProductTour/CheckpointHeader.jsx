@@ -10,14 +10,14 @@ import messages from './messages';
 
 const CheckpointHeader = React.forwardRef(({
   dismissAltText, index, onDismiss, title, totalCheckpoints,
-}) => {
+}, ref) => {
   const intl = useIntl();
   const oneBasedIndex = index + 1;
   const altText = (dismissAltText && typeof dismissAltText === 'string') ? dismissAltText : intl.formatMessage(messages.closeAltText);
 
   return (
     <>
-      <header className="pgn__checkpoint-header">
+      <header className="pgn__checkpoint-header" ref={ref}>
         <span className="pgn__checkpoint-page-index">
           <FormattedMessage
             {...messages.pageIndexText}
