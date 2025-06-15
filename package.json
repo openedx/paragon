@@ -57,20 +57,20 @@
     "replace-variables-definition-with-css": "./bin/paragon-scripts.js replace-variables -p src -t definition",
     "cli:help": "./bin/paragon-scripts.js help",
 
-    "build-tokens-test-case-1": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-1",
-    "build-tokens-test-case-2": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-2 --all-themes",
-    "build-tokens-test-case-3": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-3 --base-theme light",
-    "build-tokens-test-case-4": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-4 --base-theme light --all-themes",
+    "build-tokens-test-case-1": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-1",
+    "build-tokens-test-case-2": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-2 --all-themes",
+    "build-tokens-test-case-3": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-3 --base-theme light",
+    "build-tokens-test-case-4": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-4 --base-theme light --all-themes",
 
-    "build-tokens-test-case-5": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-5 --themes theme-1",
-    "build-tokens-test-case-6": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-6 --themes theme-1 --all-themes",
-    "build-tokens-test-case-7": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-7 --themes theme-1 --base-theme light",
-    "build-tokens-test-case-8": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-8 --themes theme-1 --base-theme light --all-themes",
+    "build-tokens-test-case-5": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-5 --themes theme-1",
+    "build-tokens-test-case-6": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-6 --themes theme-1 --all-themes",
+    "build-tokens-test-case-7": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-7 --themes theme-1 --base-theme light",
+    "build-tokens-test-case-8": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-8 --themes theme-1 --base-theme light --all-themes",
 
-    "build-tokens-test-case-9": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-9 --themes theme-1 --themes theme-2",
-    "build-tokens-test-case-10": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-10 --themes theme-1 --themes theme-2 --all-themes",
-    "build-tokens-test-case-11": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-11 --themes theme-1 --themes theme-2 --base-theme light",
-    "build-tokens-test-case-12": "./bin/paragon-scripts.js build-tokens --source . themes --build-dir build/test-case-12 --themes theme-1 --themes theme-2 --base-theme light --all-themes",
+    "build-tokens-test-case-9": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-9 --themes theme-1 --themes theme-2",
+    "build-tokens-test-case-10": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-10 --themes theme-1 --themes theme-2 --all-themes",
+    "build-tokens-test-case-11": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-11 --themes theme-1 --themes theme-2 --base-theme light",
+    "build-tokens-test-case-12": "./bin/paragon-scripts.js build-tokens --source . --build-dir build/test-case-12 --themes theme-1 --themes theme-2 --base-theme light --all-themes",
 
     "build-tokens-test-cases": "npm run build-tokens-test-case-1 && npm run build-tokens-test-case-2 && npm run build-tokens-test-case-3 && npm run build-tokens-test-case-4 && npm run build-tokens-test-case-5 && npm run build-tokens-test-case-6 && npm run build-tokens-test-case-7 && npm run build-tokens-test-case-8 && npm run build-tokens-test-case-9 && npm run build-tokens-test-case-10 && npm run build-tokens-test-case-11 && npm run build-tokens-test-case-12"
   },
