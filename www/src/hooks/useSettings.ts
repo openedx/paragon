@@ -22,11 +22,25 @@ const defaultSettings: Settings = {
 export const useSettings = () => {
   const [settings, setSettings] = useState<Settings>(defaultSettings);
 
-  const updateSettings = (key: string, value: any) => {
-    const newSettings = { ...settings, [key]: value };
-    setSettings(prevState => ({ ...prevState, [key]: value }));
+  const updateSettings = (keyOrUpdates: string | Record<string, any>, value?: any) => {
+    let updates: Record<string, any>;
+    
+    if (typeof keyOrUpdates === 'string') {
+      // Single key-value update
+      updates = { [keyOrUpdates]: value };
+    } else {
+      // Multiple updates object
+      updates = keyOrUpdates;
+    }
+    
+    const newSettings = { ...settings, ...updates };
+    setSettings(prevState => ({ ...prevState, ...updates }));
     global.localStorage.setItem('pgn__settings', JSON.stringify(newSettings));
-    sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: key, value });
+    
+    // Send analytics events for each update
+    Object.entries(updates).forEach(([key, val]) => {
+      sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: key, value: val });
+    });
   };
 
   const loadSettingsFromStorage = () => {

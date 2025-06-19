@@ -4,7 +4,7 @@ import { encodeThemesToQueryParam, ThemeSetting } from '../utils/queryParamEncod
 
 export const useCustomThemes = (
   settings: any,
-  updateSettings: (key: string, value: any) => void
+  updateSettings: (keyOrUpdates: string | Record<string, any>, value?: any) => void
 ) => {
   const injectThemeCSS = (themes: ThemeSetting[], activeIndex: number) => {
     // Remove any previous custom CSS
@@ -51,9 +51,11 @@ export const useCustomThemes = (
     injectThemeCSS(themesArr, activeIdx);
     updateURLParams(themesArr, activeIdx);
     
-    // Update settings
-    updateSettings('customThemes', themesArr);
-    updateSettings('activeCustomThemeIndex', activeIdx);
+    // Update settings atomically
+    updateSettings({
+      customThemes: themesArr,
+      activeCustomThemeIndex: activeIdx,
+    });
   };
 
   const handleCustomThemeChange = (theme: ThemeSetting) => {
@@ -64,9 +66,11 @@ export const useCustomThemes = (
     injectThemeCSS(themesArr, activeIdx);
     updateURLParams(themesArr, activeIdx);
     
-    // Update settings
-    updateSettings('customThemes', themesArr);
-    updateSettings('activeCustomThemeIndex', activeIdx);
+    // Update settings atomically
+    updateSettings({
+      customThemes: themesArr,
+      activeCustomThemeIndex: activeIdx,
+    });
   };
 
   const resetCustomTheme = () => {
@@ -76,12 +80,13 @@ export const useCustomThemes = (
     // Update URL params - remove themes
     const url = new URL(window.location.href);
     url.searchParams.delete('themes');
-    url.searchParams.delete('activeTheme');
     window.history.replaceState({}, '', url.toString());
     
-    // Update settings
-    updateSettings('customThemes', []);
-    updateSettings('activeCustomThemeIndex', 0);
+    // Update settings atomically
+    updateSettings({
+      customThemes: [],
+      activeCustomThemeIndex: 0,
+    });
   };
 
   // Apply theme CSS on mount and when settings change

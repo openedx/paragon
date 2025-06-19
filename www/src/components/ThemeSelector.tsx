@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import {
   Button,
@@ -8,7 +8,7 @@ import {
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 import StandardModal from '../../../src/Modal/StandardModal.jsx';
-import CustomBrandForm from './CustomBrandForm';
+import CustomBrandForm, { CustomBrandFormRef } from './CustomBrandForm';
 import ActionRow from '../../../src/ActionRow';
 
 export interface IThemeSelector {
@@ -22,10 +22,15 @@ export function ThemeSelector({ className }: IThemeSelector) {
     resetCustomTheme,
   } = useContext(SettingsContext);
   const [showBrandModal, openBrandModal, closeBrandModal] = useToggle(false);
+  const formRef = useRef<CustomBrandFormRef>(null);
 
   const customThemes = Array.isArray(settings?.customThemes) ? settings.customThemes : [];
   const activeIdx = typeof settings?.activeCustomThemeIndex === 'number' ? settings.activeCustomThemeIndex : 0;
   const currentTheme = customThemes[activeIdx] || null;
+
+  const handleSaveClick = () => {
+    formRef.current?.submitForm();
+  };
 
   return (
     <div className={className}>
@@ -70,9 +75,7 @@ export function ThemeSelector({ className }: IThemeSelector) {
             <ActionRow.Spacer />
             <Button
               variant="primary"
-              onClick={() => {
-                (document.getElementById('customBrandForm') as HTMLFormElement | null)?.requestSubmit();
-              }}
+              onClick={handleSaveClick}
             >
               Save
             </Button>
@@ -81,6 +84,7 @@ export function ThemeSelector({ className }: IThemeSelector) {
         isOverflowVisible={false}
       >
         <CustomBrandForm
+          ref={formRef}
           initialBrand={currentTheme}
           onSave={brand => {
             handleCustomThemeChange(brand);

@@ -1,7 +1,18 @@
-import React, { useState, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useRef, useEffect, useImperativeHandle, forwardRef } from 'react';
 import { Form, Button, IconButton, Stack } from '~paragon-react';
 import { Close } from '~paragon-icons';
+
+interface CustomBrandFormProps {
+  initialBrand?: {
+    name: string;
+    urls: string[];
+  };
+  onSave: (brand: { name: string; urls: string[] }) => void;
+}
+
+export interface CustomBrandFormRef {
+  submitForm: () => void;
+}
 
 function isValidCssUrl(url) {
   try {
@@ -12,12 +23,13 @@ function isValidCssUrl(url) {
   }
 }
 
-export default function CustomBrandForm({ initialBrand, onSave }) {
+const CustomBrandForm = forwardRef<CustomBrandFormRef, CustomBrandFormProps>(({ initialBrand, onSave }, ref) => {
   const [brandName, setBrandName] = useState(initialBrand?.name || '');
   const [urls, setUrls] = useState(initialBrand?.urls || ['']);
   const [touched, setTouched] = useState({ name: false, urls: [false] });
   const urlInputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const prevUrlsLength = useRef(urls.length);
+  const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     if (urls.length > prevUrlsLength.current) {
@@ -57,8 +69,18 @@ export default function CustomBrandForm({ initialBrand, onSave }) {
     onSave({ name: brandName.trim(), urls: urls.map(u => u.trim()) });
   };
 
+  const submitForm = () => {
+    setTouched({ name: true, urls: urls.map(() => true) });
+    if (!canSubmit) return;
+    onSave({ name: brandName.trim(), urls: urls.map(u => u.trim()) });
+  };
+
+  useImperativeHandle(ref, () => ({
+    submitForm,
+  }));
+
   return (
-    <Form id="customBrandForm" onSubmit={handleSubmit}>
+    <Form id="customBrandForm" onSubmit={handleSubmit} ref={formRef}>
       <Form.Text className="mb-3">
         Add a custom brand name and one or more CSS URLs to apply your own theme. The CSS files should be accessible via public URLs and must end with <code>.css</code>.
       </Form.Text>
@@ -120,16 +142,6 @@ export default function CustomBrandForm({ initialBrand, onSave }) {
       </Button>
     </Form>
   );
-}
+});
 
-CustomBrandForm.propTypes = {
-  initialBrand: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    urls: PropTypes.arrayOf(PropTypes.string).isRequired,
-  }),
-  onSave: PropTypes.func.isRequired,
-};
-
-CustomBrandForm.defaultProps = {
-  initialBrand: undefined,
-};
+export default CustomBrandForm;
