@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useImperativeHandle, forwardRef } from 'react';
 import { Form, Button, IconButton, Stack } from '~paragon-react';
-import { Close } from '~paragon-icons';
+import { Close, Plus } from '~paragon-icons';
 
 interface CustomThemesFormProps {
   initialTheme?: {
@@ -137,8 +137,13 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
           )}
         </Form.Group>
       ))}
-      <Button variant="link" size="sm" className="mt-1 p-0" onClick={handleAddUrl} type="button">
-        + Add another URL
+      <Button
+        variant="link"
+        size="sm"
+        onClick={handleAddUrl} 
+        iconBefore={Plus}
+      >
+        Add another URL
       </Button>
     </Form>
   );
