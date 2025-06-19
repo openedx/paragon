@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
-import { encodeThemesToQueryParam } from '../utils/queryParamEncoding';
 import { type ThemeConfig } from '../types/types';
 import { UpdateSettingsFunction } from './useSettings';
+
+import { encodeThemesToQueryParam } from '../utils/queryParamEncoding';
 
 /**
  * Hook to manage theme state including default and custom themes

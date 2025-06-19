@@ -1,7 +1,7 @@
 const React = require('react');
 const { SettingsContextProvider } = require('./src/context/SettingsContext');
 const { InsightsContextProvider } = require('./src/context/InsightsContext');
-const { encodeThemesToQueryParam } = require('./src/utils/queryParamEncoding');
+const { encodeThemesToQueryParam } = require('../lib/queryParamEncoding');
 const { hasUrls } = require('./src/utils/themeUtils');
 
 // wrap whole app in settings context

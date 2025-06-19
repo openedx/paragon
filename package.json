@@ -53,6 +53,7 @@
     "prepare": "husky || true",
     "build-tokens": "./bin/paragon-scripts.js build-tokens --build-dir ./styles/css",
     "build-tokens:watch": "npx nodemon --ignore styles/css -x \"npm run build-tokens\"",
+    "serve-theme-css": "./bin/paragon-scripts.js serve-theme-css --build-dir ./dist --theme-name='Custom Theme Name'",
     "replace-variables-usage-with-css": "./bin/paragon-scripts.js replace-variables -p src -t usage",
     "replace-variables-definition-with-css": "./bin/paragon-scripts.js replace-variables -p src -t definition",
     "cli:help": "./bin/paragon-scripts.js help"
@@ -75,6 +76,7 @@
     "js-toml": "^1.0.0",
     "lodash.uniqby": "^4.7.0",
     "log-update": "^4.0.0",
+    "lz-string": "^1.5.0",
     "mailto-link": "^2.0.0",
     "minimist": "^1.2.8",
     "ora": "^5.4.1",
