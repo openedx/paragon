@@ -35,7 +35,7 @@ export function ThemeSelector({ className }: IThemeSelector) {
   return (
     <div className={className}>
       <Stack gap={1}>
-        <div>
+        <div role="status">
           <div className="small">Current theme:</div>
           <div>
             <Badge variant="primary">
