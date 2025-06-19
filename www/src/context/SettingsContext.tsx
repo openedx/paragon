@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 import { messages } from '~paragon-react';
 
-import {
-  useSettings, useCustomThemes, useDirection, useSettingsUI,
-} from '../hooks';
+import { useSettings } from '../hooks/useSettings';
+import { useCustomThemes } from '../hooks/useCustomThemes';
+import { useDirection } from '../hooks/useDirection';
+import { useSettingsUI } from '../hooks/useSettingsUI';
 
 export interface IDefaultValue {
   settings: {

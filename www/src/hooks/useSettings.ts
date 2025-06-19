@@ -11,12 +11,12 @@ export interface Settings {
   activeCustomThemeIndex?: number;
 }
 
-export type UpdateSettingsParams = 
-  | string 
+export type UpdateSettingsParams =
+  | string
   | Record<string, any>;
 
 export type UpdateSettingsFunction = (
-  keyOrUpdates: UpdateSettingsParams, 
+  keyOrUpdates: UpdateSettingsParams,
   value?: any
 ) => void;
 

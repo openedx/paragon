@@ -12,10 +12,10 @@ export interface CurrentTheme {
  */
 export const useCurrentTheme = (): CurrentTheme => {
   const { settings } = useContext(SettingsContext);
-  
+
   const customThemes = Array.isArray(settings?.customThemes) ? settings.customThemes : [];
   const activeIdx = typeof settings?.activeCustomThemeIndex === 'number' ? settings.activeCustomThemeIndex : 0;
   const currentTheme = customThemes[activeIdx] || { name: 'Open edX' };
-  
+
   return currentTheme;
-}; 
+};

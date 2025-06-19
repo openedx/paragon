@@ -47,7 +47,6 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
     formState: { errors },
     trigger,
     getValues,
-    watch,
   } = useForm<FormData>({
     defaultValues: {
       name: initialTheme?.name || '',
@@ -144,13 +143,13 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
                   return true;
                 },
               }}
-              render={({ field }) => (
+              render={({ field: formField }) => (
                 <Form.Control
                   size="sm"
                   type="url"
                   placeholder="https://cdn.example.com/theme.css"
                   aria-label={idx === 0 ? undefined : 'Additional CSS URL'}
-                  {...field}
+                  {...formField}
                   ref={el => {
                     urlInputRefs.current[idx] = el;
                   }}

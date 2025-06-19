@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DataTable, Skeleton } from '~paragon-react';
 import { useCurrentTheme } from '../hooks';
 
