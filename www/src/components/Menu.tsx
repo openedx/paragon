@@ -16,8 +16,7 @@ import {
   useToggle,
 } from '~paragon-react';
 import Search from './Search';
-import { SettingsContext } from '../context/SettingsContext';
-import { THEMES } from '../../theme-config';
+import ThemeSelector from './ThemeSelector';
 import {
   PLAYGROUND_EVENTS,
   sendUserAnalyticsEvent,
@@ -177,78 +176,14 @@ interface IMenuQueryComponents {
 }
 
 function Menu() {
-  const {
-    settings,
-    handleCustomBrandChange,
-    resetCustomBrand,
-  } = useContext(SettingsContext);
   const { pathname } = useLocation();
   const { components } = useStaticQuery(menuQuery);
   const { categories }: IMenuQueryComponents = components;
-  const [showBrandModal, openBrandModal, closeBrandModal] = useToggle(false);
 
   return (
     <div className="pgn-doc__menu">
-      <div className="pgn-doc__menu-btn--group">
-        <Stack gap={1}>
-          <div>
-            <div className="small">Current theme:</div>
-            <div>
-              <Badge variant="primary">
-                {settings?.customBrand?.name || 'Open edX'}
-              </Badge>
-            </div>
-          </div>
-          <Button
-            size="sm"
-            variant="outline-primary"
-            className="mt-2 mt-md-0"
-            onClick={openBrandModal}
-            block
-          >
-            {settings?.customBrand ? 'Edit custom theme' : 'Add custom theme'}
-          </Button>
-        </Stack>
-        <StandardModal
-          title={settings?.customBrand ? 'Edit Custom Theme' : 'Add Custom Theme'}
-          isOpen={showBrandModal}
-          onClose={closeBrandModal}
-          size="lg"
-          hasCloseButton={false}
-          footerNode={
-            <ActionRow>
-              <Button variant="tertiary" onClick={closeBrandModal}>
-                Cancel
-              </Button>
-              {settings && settings?.customBrand && (
-                <Button variant="outline-danger" onClick={() => {
-                  resetCustomBrand();
-                  closeBrandModal();
-                }}>
-                  Reset to Default
-                </Button>
-              )}
-              <ActionRow.Spacer />
-              <Button
-                variant="primary"
-                onClick={() => {
-                  (document.getElementById('customBrandForm') as HTMLFormElement | null)?.requestSubmit();
-                }}
-              >
-                Save
-              </Button>
-            </ActionRow>
-          }
-          isOverflowVisible={false}
-        >
-          <CustomBrandForm
-            initialBrand={settings?.customBrand}
-            onSave={brand => {
-              handleCustomBrandChange(brand);
-              closeBrandModal();
-            }}
-          />
-        </StandardModal>
+      <div className="pgn-doc__menu-theme-selector">
+        <ThemeSelector />
       </div>
       <Search />
       <div className="pgn-doc__menu-items">
