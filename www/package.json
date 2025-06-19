@@ -52,15 +52,14 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build --prefix-paths && npm run build-themes && playroom build",
+    "build": "gatsby build --prefix-paths && playroom build",
     "clean": "gatsby clean",
-    "develop": "npm run build-themes && gatsby develop",
+    "develop": "gatsby develop",
     "develop:with-theme": "npm run develop",
     "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx .",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-themes": "node build-themes.js",
     "playroom:start": "playroom start",
     "playroom:build": "playroom build"
   },
