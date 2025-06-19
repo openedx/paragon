@@ -1,23 +1,20 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { IntlProvider } from 'react-intl';
-import { messages, type ContainerSize } from '~paragon-react';
+import { messages } from '~paragon-react';
 
 import { THEMES, DEFAULT_THEME } from '../../theme-config';
-import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
-import { encodeThemesToQueryParam, decodeThemesFromQueryParam, ThemeSetting } from '../utils/queryParamEncoding';
+import { useSettings, useCustomThemes, useDirection, useSettingsUI } from '../hooks';
 
 export interface IDefaultValue {
   settings: {
-    theme?: string,
     direction?: string,
     language?: string,
-    containerWidth?: ContainerSize,
-    customThemes?: ThemeSetting[],
+    containerWidth?: any,
+    customThemes?: any[],
     activeCustomThemeIndex?: number,
   },
-  theme?: string,
   handleSettingsChange: Function,
   handleCustomThemeChange: Function,
   resetCustomTheme: Function,
@@ -36,168 +33,23 @@ const defaultValue = {
 export const SettingsContext = createContext<IDefaultValue>(defaultValue);
 
 function SettingsContextProvider({ children }) {
-  // gatsby does not have access to the localStorage during the build (and first render)
-  // so sadly we cannot initialize theme with value from localStorage
-  const [settings, setSettings] = useState({
-    theme: DEFAULT_THEME,
-    direction: 'ltr',
-    language: 'en',
-    containerWidth: 'md' as ContainerSize,
-    customThemes: [] as ThemeSetting[],
-    activeCustomThemeIndex: 0,
-  });
-  const [showSettings, setShowSettings] = useState(false);
+  const { settings, updateSettings } = useSettings();
+  const { handleCustomThemesChange, handleCustomThemeChange, resetCustomTheme } = useCustomThemes(settings, updateSettings);
+  const { handleDirectionChange } = useDirection(settings, updateSettings);
+  const { showSettings, openSettings, closeSettings } = useSettingsUI();
 
   const handleSettingsChange = (key: string, value: any) => {
     if (key === 'direction') {
-      document.body.setAttribute('dir', value);
-    }
-    if (key === 'customThemes' || key === 'activeCustomThemeIndex') {
-    // Remove any previous custom CSS
-    document.querySelectorAll('link[data-custom-brand]').forEach(el => el.remove());
-      let themesArr: ThemeSetting[] = settings.customThemes || [];
-      let activeIdx = settings.activeCustomThemeIndex || 0;
-      if (key === 'customThemes') {
-        themesArr = value || [];
-        if (activeIdx >= themesArr.length) activeIdx = 0;
-      } else if (key === 'activeCustomThemeIndex') {
-        activeIdx = value;
-      }
-      // Inject CSS for the active theme
-      if (themesArr.length > 0 && themesArr[activeIdx]) {
-        themesArr[activeIdx].urls.forEach((url: string) => {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = url;
-      link.setAttribute('data-custom-brand', 'true');
-      document.head.appendChild(link);
-    });
-      }
-      // Update query param for themes and active index
-      const encoded = encodeThemesToQueryParam(themesArr);
-      const url = new URL(window.location.href);
-      if (themesArr.length > 0) {
-        url.searchParams.set('themes', encoded);
-        url.searchParams.set('activeTheme', String(activeIdx));
-      } else {
-        url.searchParams.delete('themes');
-        url.searchParams.delete('activeTheme');
-      }
-      window.history.replaceState({}, '', url.toString());
-      // Store only customThemes and activeCustomThemeIndex in localStorage
-      const newSettings = { ...settings, customThemes: themesArr, activeCustomThemeIndex: activeIdx };
-      setSettings(prevState => ({ ...prevState, customThemes: themesArr, activeCustomThemeIndex: activeIdx }));
-      global.localStorage.setItem('pgn__settings', JSON.stringify(newSettings));
-      sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: key, value });
-      return;
-    }
-    const newSettings = { ...settings, [key]: value };
-    setSettings(prevState => ({ ...prevState, [key]: value }));
-    global.localStorage.setItem('pgn__settings', JSON.stringify(newSettings));
-    sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: key, value });
-  };
-
-  const handleCustomThemeChange = (theme: ThemeSetting) => {
-    // Update both customThemes and activeCustomThemeIndex in one call
-    const themesArr = [theme];
-    const activeIdx = 0;
-    
-    // Remove any previous custom CSS
-    document.querySelectorAll('link[data-custom-brand]').forEach(el => el.remove());
-    
-    // Inject CSS for the new theme
-    if (themesArr.length > 0 && themesArr[activeIdx]) {
-      themesArr[activeIdx].urls.forEach((url: string) => {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = url;
-        link.setAttribute('data-custom-brand', 'true');
-        document.head.appendChild(link);
-      });
-    }
-    
-    // Update query param for themes and active index
-    const encoded = encodeThemesToQueryParam(themesArr);
-    const url = new URL(window.location.href);
-    if (themesArr.length > 0) {
-      url.searchParams.set('themes', encoded);
-      url.searchParams.set('activeTheme', String(activeIdx));
+      handleDirectionChange(value);
+    } else if (key === 'customThemes' || key === 'activeCustomThemeIndex') {
+      handleCustomThemesChange(key, value);
     } else {
-      url.searchParams.delete('themes');
-      url.searchParams.delete('activeTheme');
+      updateSettings(key, value);
     }
-    window.history.replaceState({}, '', url.toString());
-    
-    // Update state and localStorage
-    const newSettings = { ...settings, customThemes: themesArr, activeCustomThemeIndex: activeIdx };
-    setSettings(prevState => ({ ...prevState, customThemes: themesArr, activeCustomThemeIndex: activeIdx }));
-    global.localStorage.setItem('pgn__settings', JSON.stringify(newSettings));
-    sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: 'customThemes', value: themesArr });
   };
 
-  const resetCustomTheme = () => {
-    // Remove any previous custom CSS
-    document.querySelectorAll('link[data-custom-brand]').forEach(el => el.remove());
-    
-    // Update query param - remove themes
-    const url = new URL(window.location.href);
-    url.searchParams.delete('themes');
-    url.searchParams.delete('activeTheme');
-    window.history.replaceState({}, '', url.toString());
-    
-    // Update state and localStorage
-    const newSettings = { ...settings, customThemes: [], activeCustomThemeIndex: 0 };
-    setSettings(prevState => ({ ...prevState, customThemes: [], activeCustomThemeIndex: 0 }));
-    global.localStorage.setItem('pgn__settings', JSON.stringify(newSettings));
-    sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: 'customThemes', value: [] });
-  };
-
-  const toggleSettings = (value: boolean) => {
-    const event = value
-      ? SETTINGS_EVENTS.OPENED
-      : SETTINGS_EVENTS.CLOSED;
-
-    setShowSettings(value);
-    sendUserAnalyticsEvent(event);
-  };
-
-  // this hook will be called after the first render, so we can safely access localStorage
+  // Initialize analytics if not available
   useEffect(() => {
-    const url = new URL(window.location.href);
-    const themesParam = url.searchParams.get('themes');
-    const activeThemeParam = url.searchParams.get('activeTheme');
-    let loadedThemes: ThemeSetting[] = [];
-    let loadedActiveIdx = 0;
-    let loadedSettings: any = {};
-    if (themesParam) {
-      loadedThemes = decodeThemesFromQueryParam(themesParam);
-      loadedActiveIdx = activeThemeParam ? parseInt(activeThemeParam, 10) : 0;
-    } else {
-    const storageSettings = global.localStorage.getItem('pgn__settings');
-      let savedSettings = storageSettings ? JSON.parse(storageSettings) : null;
-      // Migrate old customBrands to customThemes if present
-      if (savedSettings && savedSettings.customBrands && !savedSettings.customThemes) {
-        savedSettings.customThemes = savedSettings.customBrands;
-        delete savedSettings.customBrands;
-        global.localStorage.setItem('pgn__settings', JSON.stringify(savedSettings));
-      }
-      loadedThemes = savedSettings && savedSettings.customThemes ? savedSettings.customThemes : [];
-      loadedActiveIdx = savedSettings && typeof savedSettings.activeCustomThemeIndex === 'number' ? savedSettings.activeCustomThemeIndex : 0;
-      loadedSettings = savedSettings || {};
-    }
-    setSettings(prev => ({ ...prev, customThemes: loadedThemes, activeCustomThemeIndex: loadedActiveIdx }));
-    if (loadedSettings.direction) {
-      document.body.setAttribute('dir', loadedSettings.direction);
-    }
-    if (loadedThemes.length > 0 && loadedThemes[loadedActiveIdx]) {
-      loadedThemes[loadedActiveIdx].urls.forEach((url: string) => {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = url;
-        link.setAttribute('data-custom-brand', 'true');
-        document.head.appendChild(link);
-      });
-    }
     if (!global.analytics) {
       global.analytics = {};
       global.analytics.track = () => {};
@@ -210,8 +62,8 @@ function SettingsContextProvider({ children }) {
     handleSettingsChange,
     handleCustomThemeChange,
     resetCustomTheme,
-    closeSettings: () => toggleSettings(false),
-    openSettings: () => toggleSettings(true),
+    closeSettings,
+    openSettings,
   };
 
   return (
@@ -227,12 +79,12 @@ function SettingsContextProvider({ children }) {
           <link
             key={id}
             href={`/static/${stylesheet}.css`}
-            rel={`stylesheet${settings.theme === id ? '' : ' alternate'}`}
+            rel={`stylesheet${id === DEFAULT_THEME ? '' : ' alternate'}`}
             type="text/css"
           />
         ))}
       </Helmet>
-      <IntlProvider messages={messages[settings.language]} locale={settings.language.split('-')[0]}>
+      <IntlProvider messages={messages[settings.language || 'en']} locale={settings.language?.split('-')[0] || 'en'}>
         {children}
       </IntlProvider>
     </SettingsContext.Provider>
