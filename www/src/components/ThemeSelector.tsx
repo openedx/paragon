@@ -42,11 +42,11 @@ export default function ThemeSelector() {
           onClick={openBrandModal}
           block
         >
-          {currentTheme ? 'Edit custom theme' : 'Add custom theme'}
+          {currentTheme.urls ? 'Edit custom theme' : 'Add custom theme'}
         </Button>
       </Stack>
       <StandardModal
-        title={currentTheme ? 'Edit Custom Theme' : 'Add Custom Theme'}
+        title={currentTheme.urls ? 'Edit Custom Theme' : 'Add Custom Theme'}
         isOpen={showBrandModal}
         onClose={closeBrandModal}
         size="lg"
@@ -56,7 +56,7 @@ export default function ThemeSelector() {
             <Button variant="tertiary" onClick={closeBrandModal}>
               Cancel
             </Button>
-            {currentTheme && (
+            {currentTheme.urls && (
               <Button
                 variant="outline-danger"
                 size="sm"
