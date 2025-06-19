@@ -4,13 +4,13 @@ import {
   Badge,
   Stack,
   useToggle,
+  ActionRow,
+  StandardModal,
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
-import StandardModal from '../../../src/Modal/StandardModal.jsx';
 import CustomThemesForm, { CustomThemesFormRef } from './CustomThemesForm';
-import ActionRow from '../../../src/ActionRow';
 
-export function ThemeSelector() {
+export default function ThemeSelector() {
   const {
     settings,
     handleCustomThemeChange,
@@ -54,16 +54,20 @@ export function ThemeSelector() {
         onClose={closeBrandModal}
         size="lg"
         hasCloseButton={false}
-        footerNode={
+        footerNode={(
           <ActionRow>
             <Button variant="tertiary" onClick={closeBrandModal}>
               Cancel
             </Button>
             {currentTheme && (
-              <Button variant="outline-danger" size="sm" onClick={() => {
-                resetCustomTheme();
-                closeBrandModal();
-              }}>
+              <Button
+                variant="outline-danger"
+                size="sm"
+                onClick={() => {
+                  resetCustomTheme();
+                  closeBrandModal();
+                }}
+              >
                 Reset to Default
               </Button>
             )}
@@ -75,7 +79,7 @@ export function ThemeSelector() {
               Save
             </Button>
           </ActionRow>
-        }
+        )}
         isOverflowVisible={false}
       >
         <CustomThemesForm
@@ -90,5 +94,3 @@ export function ThemeSelector() {
     </div>
   );
 }
-
-export default ThemeSelector; 

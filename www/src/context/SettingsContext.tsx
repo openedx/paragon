@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 import { messages } from '~paragon-react';
 
-import { useSettings, useCustomThemes, useDirection, useSettingsUI } from '../hooks';
+import {
+  useSettings, useCustomThemes, useDirection, useSettingsUI,
+} from '../hooks';
 
 export interface IDefaultValue {
   settings: {
@@ -32,7 +34,11 @@ export const SettingsContext = createContext<IDefaultValue>(defaultValue);
 
 function SettingsContextProvider({ children }) {
   const { settings, updateSettings } = useSettings();
-  const { handleCustomThemesChange, handleCustomThemeChange, resetCustomTheme } = useCustomThemes(settings, updateSettings);
+  const {
+    handleCustomThemesChange,
+    handleCustomThemeChange,
+    resetCustomTheme,
+  } = useCustomThemes(settings, updateSettings);
   const { handleDirectionChange } = useDirection(settings, updateSettings);
   const { showSettings, openSettings, closeSettings } = useSettingsUI();
 

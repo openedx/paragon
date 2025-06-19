@@ -1,9 +1,7 @@
-import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
-
-export const useDirection = (
+export default function useDirection(
   settings: any,
-  updateSettings: (key: string, value: any) => void
-) => {
+  updateSettings: (key: string, value: any) => void,
+) {
   const handleDirectionChange = (value: string) => {
     document.body.setAttribute('dir', value);
     updateSettings('direction', value);
@@ -12,4 +10,4 @@ export const useDirection = (
   return {
     handleDirectionChange,
   };
-};
+}

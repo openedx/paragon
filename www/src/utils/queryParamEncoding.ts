@@ -29,7 +29,7 @@ export function decodeThemesFromQueryParam(param: string): ThemeState {
   try {
     const json = decodeURIComponent(atob(param));
     const parsed = JSON.parse(json);
-    
+
     // Handle legacy format (just themes array)
     if (Array.isArray(parsed)) {
       return {
@@ -37,7 +37,7 @@ export function decodeThemesFromQueryParam(param: string): ThemeState {
         activeIndex: 0,
       };
     }
-    
+
     // Handle new format (ThemeState object)
     return {
       themes: parsed.themes || [],

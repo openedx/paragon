@@ -1,12 +1,23 @@
-import React, { useState, useRef, useEffect, useImperativeHandle, forwardRef } from 'react';
-import { Form, Button, IconButton, Stack } from '~paragon-react';
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useImperativeHandle,
+  forwardRef,
+} from 'react';
+import {
+  Form,
+  Button,
+  IconButton,
+  Stack,
+} from '~paragon-react';
 import { Close, Plus } from '~paragon-icons';
 
 interface CustomThemesFormProps {
-  initialTheme?: {
+  initialTheme: {
     name: string;
     urls: string[];
-  };
+  } | null;
   onSave: (theme: { name: string; urls: string[] }) => void;
 }
 
@@ -65,13 +76,13 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
   const handleSubmit = e => {
     e.preventDefault();
     setTouched({ name: true, urls: urls.map(() => true) });
-    if (!canSubmit) return;
+    if (!canSubmit) { return; }
     onSave({ name: themeName.trim(), urls: urls.map(u => u.trim()) });
   };
 
   const submitForm = () => {
     setTouched({ name: true, urls: urls.map(() => true) });
-    if (!canSubmit) return;
+    if (!canSubmit) { return; }
     onSave({ name: themeName.trim(), urls: urls.map(u => u.trim()) });
   };
 
@@ -82,7 +93,8 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
   return (
     <Form id="customThemesForm" onSubmit={handleSubmit} ref={formRef}>
       <Form.Text className="mb-3">
-        Add a custom theme name and one or more CSS URLs to apply your own theme. The CSS files should be accessible via public URLs and must end with <code>.css</code>.
+        Add a custom theme name and one or more CSS URLs to apply your own theme. The CSS files should be
+        accessible via URLs and must end with <code>.css</code>.
       </Form.Text>
       <Form.Group controlId="customThemeName" isInvalid={touched.name && !nameValid}>
         <Form.Label>Theme Name</Form.Label>
@@ -101,7 +113,7 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
       </Form.Group>
       {urls.map((url, idx) => (
         <Form.Group
-          key={idx}
+          key={url}
           controlId={`customThemeUrl${idx}`}
           isInvalid={touched.urls[idx] && !isValidCssUrl(url)}
         >
@@ -118,7 +130,9 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
               onBlur={() => setTouched(t => ({ ...t, urls: t.urls.map((v, i) => (i === idx ? true : v)) }))}
               required
               aria-label={idx === 0 ? undefined : 'Additional CSS URL'}
-              ref={el => urlInputRefs.current[idx] = el}
+              ref={el => {
+                urlInputRefs.current[idx] = el;
+              }}
             />
             {urls.length > 1 && (
               <IconButton
@@ -140,7 +154,7 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
       <Button
         variant="link"
         size="sm"
-        onClick={handleAddUrl} 
+        onClick={handleAddUrl}
         iconBefore={Plus}
       >
         Add another URL
@@ -148,5 +162,7 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
     </Form>
   );
 });
+
+CustomThemesForm.displayName = 'CustomThemesForm';
 
 export default CustomThemesForm;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { type ContainerSize } from '~paragon-react';
 import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
-import { ThemeSetting } from '../utils/queryParamEncoding';
+import { decodeThemesFromQueryParam, ThemeSetting } from '../utils/queryParamEncoding';
 
 export interface Settings {
   direction?: string;
@@ -24,7 +24,7 @@ export const useSettings = () => {
 
   const updateSettings = (keyOrUpdates: string | Record<string, any>, value?: any) => {
     let updates: Record<string, any>;
-    
+
     if (typeof keyOrUpdates === 'string') {
       // Single key-value update
       updates = { [keyOrUpdates]: value };
@@ -32,11 +32,11 @@ export const useSettings = () => {
       // Multiple updates object
       updates = keyOrUpdates;
     }
-    
+
     const newSettings = { ...settings, ...updates };
     setSettings(prevState => ({ ...prevState, ...updates }));
     global.localStorage.setItem('pgn__settings', JSON.stringify(newSettings));
-    
+
     // Send analytics events for each update
     Object.entries(updates).forEach(([key, val]) => {
       sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: key, value: val });
@@ -47,14 +47,14 @@ export const useSettings = () => {
     const storageSettings = global.localStorage.getItem('pgn__settings');
     if (storageSettings) {
       const savedSettings = JSON.parse(storageSettings);
-      
+
       // Migrate old customBrands to customThemes if present
       if (savedSettings.customBrands && !savedSettings.customThemes) {
         savedSettings.customThemes = savedSettings.customBrands;
         delete savedSettings.customBrands;
         global.localStorage.setItem('pgn__settings', JSON.stringify(savedSettings));
       }
-      
+
       return savedSettings;
     }
     return null;
@@ -63,37 +63,36 @@ export const useSettings = () => {
   const loadSettingsFromURL = () => {
     const url = new URL(window.location.href);
     const themesParam = url.searchParams.get('themes');
-    
+
     if (themesParam) {
-      const { decodeThemesFromQueryParam } = require('../utils/queryParamEncoding');
       const themeState = decodeThemesFromQueryParam(themesParam);
-      
+
       return {
         customThemes: themeState.themes,
         activeCustomThemeIndex: themeState.activeIndex,
       };
     }
-    
+
     return null;
   };
 
   useEffect(() => {
     const urlSettings = loadSettingsFromURL();
     const storageSettings = loadSettingsFromStorage();
-    
+
     const finalSettings = {
       ...defaultSettings,
       ...storageSettings,
       ...urlSettings,
     };
-    
+
     setSettings(finalSettings);
-    
+
     // Apply direction to document body
     if (finalSettings.direction) {
       document.body.setAttribute('dir', finalSettings.direction);
     }
-    
+
     // If themes were loaded from URL, save them to localStorage
     if (urlSettings) {
       const settingsToSave = {

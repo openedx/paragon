@@ -1,15 +1,14 @@
 import { useEffect } from 'react';
-import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
 import { encodeThemesToQueryParam, ThemeSetting } from '../utils/queryParamEncoding';
 
 export const useCustomThemes = (
   settings: any,
-  updateSettings: (keyOrUpdates: string | Record<string, any>, value?: any) => void
+  updateSettings: (keyOrUpdates: string | Record<string, any>, value?: any) => void,
 ) => {
   const injectThemeCSS = (themes: ThemeSetting[], activeIndex: number) => {
     // Remove any previous custom CSS
     document.querySelectorAll('link[data-custom-theme]').forEach(el => el.remove());
-    
+
     // Inject CSS for the active theme
     if (themes.length > 0 && themes[activeIndex]) {
       themes[activeIndex].urls.forEach((url: string) => {
@@ -25,32 +24,32 @@ export const useCustomThemes = (
   const updateURLParams = (themes: ThemeSetting[], activeIndex: number) => {
     const encoded = encodeThemesToQueryParam(themes, activeIndex);
     const url = new URL(window.location.href);
-    
+
     if (themes.length > 0) {
       url.searchParams.set('themes', encoded);
     } else {
       url.searchParams.delete('themes');
       url.searchParams.delete('activeTheme');
     }
-    
+
     window.history.replaceState({}, '', url.toString());
   };
 
   const handleCustomThemesChange = (key: string, value: any) => {
     let themesArr: ThemeSetting[] = settings.customThemes || [];
     let activeIdx = settings.activeCustomThemeIndex || 0;
-    
+
     if (key === 'customThemes') {
       themesArr = value || [];
-      if (activeIdx >= themesArr.length) activeIdx = 0;
+      if (activeIdx >= themesArr.length) { activeIdx = 0; }
     } else if (key === 'activeCustomThemeIndex') {
       activeIdx = value;
     }
-    
+
     // Inject CSS and update URL
     injectThemeCSS(themesArr, activeIdx);
     updateURLParams(themesArr, activeIdx);
-    
+
     // Update settings atomically
     updateSettings({
       customThemes: themesArr,
@@ -61,11 +60,11 @@ export const useCustomThemes = (
   const handleCustomThemeChange = (theme: ThemeSetting) => {
     const themesArr = [theme];
     const activeIdx = 0;
-    
+
     // Inject CSS and update URL
     injectThemeCSS(themesArr, activeIdx);
     updateURLParams(themesArr, activeIdx);
-    
+
     // Update settings atomically
     updateSettings({
       customThemes: themesArr,
@@ -76,12 +75,12 @@ export const useCustomThemes = (
   const resetCustomTheme = () => {
     // Remove any previous custom CSS
     document.querySelectorAll('link[data-custom-theme]').forEach(el => el.remove());
-    
+
     // Update URL params - remove themes
     const url = new URL(window.location.href);
     url.searchParams.delete('themes');
     window.history.replaceState({}, '', url.toString());
-    
+
     // Update settings atomically
     updateSettings({
       customThemes: [],
@@ -93,7 +92,7 @@ export const useCustomThemes = (
   useEffect(() => {
     const themes = settings.customThemes || [];
     const activeIndex = settings.activeCustomThemeIndex || 0;
-    
+
     if (themes.length > 0 && themes[activeIndex]) {
       injectThemeCSS(themes, activeIndex);
     }
