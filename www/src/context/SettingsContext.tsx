@@ -13,9 +13,12 @@ export interface IDefaultValue {
     direction?: string,
     language?: string,
     containerWidth?: ContainerSize,
+    customBrand?: null | { name: string, urls: string[] },
   },
   theme?: string,
   handleSettingsChange: Function,
+  handleCustomBrandChange: Function,
+  resetCustomBrand: Function,
   showSettings?: React.SyntheticEvent | React.ReactNode,
   closeSettings?: () => void,
   openSettings?: () => void,
@@ -24,6 +27,8 @@ export interface IDefaultValue {
 const defaultValue = {
   settings: {},
   handleSettingsChange: () => {},
+  handleCustomBrandChange: () => {},
+  resetCustomBrand: () => {},
 };
 
 export const SettingsContext = createContext<IDefaultValue>(defaultValue);
@@ -36,6 +41,7 @@ function SettingsContextProvider({ children }) {
     direction: 'ltr',
     language: 'en',
     containerWidth: 'md' as ContainerSize,
+    customBrand: null as null | { name: string, urls: string[] },
   });
   const [showSettings, setShowSettings] = useState(false);
 
@@ -46,6 +52,27 @@ function SettingsContextProvider({ children }) {
     setSettings(prevState => ({ ...prevState, [key]: value }));
     global.localStorage.setItem('pgn__settings', JSON.stringify({ ...settings, [key]: value }));
     sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: key, value });
+  };
+
+  const handleCustomBrandChange = (brand: { name: string, urls: string[] }) => {
+    setSettings(prev => ({ ...prev, customBrand: brand }));
+    global.localStorage.setItem('pgn__custom_brand', JSON.stringify(brand));
+    // Remove any previous custom CSS
+    document.querySelectorAll('link[data-custom-brand]').forEach(el => el.remove());
+    // Inject new CSS URLs
+    brand.urls.forEach(url => {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = url;
+      link.setAttribute('data-custom-brand', 'true');
+      document.head.appendChild(link);
+    });
+  };
+
+  const resetCustomBrand = () => {
+    setSettings(prev => ({ ...prev, customBrand: null }));
+    global.localStorage.removeItem('pgn__custom_brand');
+    document.querySelectorAll('link[data-custom-brand]').forEach(el => el.remove());
   };
 
   const toggleSettings = (value: boolean) => {
@@ -61,9 +88,23 @@ function SettingsContextProvider({ children }) {
   useEffect(() => {
     const storageSettings = global.localStorage.getItem('pgn__settings');
     const savedSettings = storageSettings ? JSON.parse(storageSettings) : null;
+    const storageBrand = global.localStorage.getItem('pgn__custom_brand');
+    const savedBrand = storageBrand ? JSON.parse(storageBrand) : null;
     if (savedSettings) {
-      setSettings(savedSettings);
+      setSettings(prev => ({ ...prev, ...savedSettings, customBrand: savedBrand }));
       document.body.setAttribute('dir', savedSettings.direction);
+    } else if (savedBrand) {
+      setSettings(prev => ({ ...prev, customBrand: savedBrand }));
+    }
+    if (savedBrand) {
+      // Inject custom CSS on load
+      savedBrand.urls.forEach(url => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = url;
+        link.setAttribute('data-custom-brand', 'true');
+        document.head.appendChild(link);
+      });
     }
     if (!global.analytics) {
       global.analytics = {};
@@ -75,6 +116,8 @@ function SettingsContextProvider({ children }) {
     settings,
     showSettings,
     handleSettingsChange,
+    handleCustomBrandChange,
+    resetCustomBrand,
     closeSettings: () => toggleSettings(false),
     openSettings: () => toggleSettings(true),
   };
