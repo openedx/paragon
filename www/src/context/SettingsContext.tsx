@@ -98,14 +98,58 @@ function SettingsContextProvider({ children }) {
   };
 
   const handleCustomThemeChange = (theme: ThemeSetting) => {
-    // Add or replace the first custom theme and set it as active
-    handleSettingsChange('customThemes', [theme]);
-    handleSettingsChange('activeCustomThemeIndex', 0);
+    // Update both customThemes and activeCustomThemeIndex in one call
+    const themesArr = [theme];
+    const activeIdx = 0;
+    
+    // Remove any previous custom CSS
+    document.querySelectorAll('link[data-custom-brand]').forEach(el => el.remove());
+    
+    // Inject CSS for the new theme
+    if (themesArr.length > 0 && themesArr[activeIdx]) {
+      themesArr[activeIdx].urls.forEach((url: string) => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = url;
+        link.setAttribute('data-custom-brand', 'true');
+        document.head.appendChild(link);
+      });
+    }
+    
+    // Update query param for themes and active index
+    const encoded = encodeThemesToQueryParam(themesArr);
+    const url = new URL(window.location.href);
+    if (themesArr.length > 0) {
+      url.searchParams.set('themes', encoded);
+      url.searchParams.set('activeTheme', String(activeIdx));
+    } else {
+      url.searchParams.delete('themes');
+      url.searchParams.delete('activeTheme');
+    }
+    window.history.replaceState({}, '', url.toString());
+    
+    // Update state and localStorage
+    const newSettings = { ...settings, customThemes: themesArr, activeCustomThemeIndex: activeIdx };
+    setSettings(prevState => ({ ...prevState, customThemes: themesArr, activeCustomThemeIndex: activeIdx }));
+    global.localStorage.setItem('pgn__settings', JSON.stringify(newSettings));
+    sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: 'customThemes', value: themesArr });
   };
 
   const resetCustomTheme = () => {
-    handleSettingsChange('customThemes', []);
-    handleSettingsChange('activeCustomThemeIndex', 0);
+    // Remove any previous custom CSS
+    document.querySelectorAll('link[data-custom-brand]').forEach(el => el.remove());
+    
+    // Update query param - remove themes
+    const url = new URL(window.location.href);
+    url.searchParams.delete('themes');
+    url.searchParams.delete('activeTheme');
+    window.history.replaceState({}, '', url.toString());
+    
+    // Update state and localStorage
+    const newSettings = { ...settings, customThemes: [], activeCustomThemeIndex: 0 };
+    setSettings(prevState => ({ ...prevState, customThemes: [], activeCustomThemeIndex: 0 }));
+    global.localStorage.setItem('pgn__settings', JSON.stringify(newSettings));
+    sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: 'customThemes', value: [] });
   };
 
   const toggleSettings = (value: boolean) => {
