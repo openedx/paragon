@@ -39,10 +39,9 @@ exports.onRouteUpdate = ({ location: { hash, pathname, href } }) => {
         if (!currentThemesParam) {
           // Import the encoding function dynamically
           const { encodeThemesToQueryParam } = require('./src/utils/queryParamEncoding');
-          const encoded = encodeThemesToQueryParam(customThemes);
+          const encoded = encodeThemesToQueryParam(customThemes, activeIdx);
           
           url.searchParams.set('themes', encoded);
-          url.searchParams.set('activeTheme', String(activeIdx));
           
           // Use replaceState to avoid adding to browser history
           window.history.replaceState({}, '', url.toString());

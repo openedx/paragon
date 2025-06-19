@@ -49,16 +49,14 @@ export const useSettings = () => {
   const loadSettingsFromURL = () => {
     const url = new URL(window.location.href);
     const themesParam = url.searchParams.get('themes');
-    const activeThemeParam = url.searchParams.get('activeTheme');
     
     if (themesParam) {
       const { decodeThemesFromQueryParam } = require('../utils/queryParamEncoding');
-      const loadedThemes = decodeThemesFromQueryParam(themesParam);
-      const loadedActiveIdx = activeThemeParam ? parseInt(activeThemeParam, 10) : 0;
+      const themeState = decodeThemesFromQueryParam(themesParam);
       
       return {
-        customThemes: loadedThemes,
-        activeCustomThemeIndex: loadedActiveIdx,
+        customThemes: themeState.themes,
+        activeCustomThemeIndex: themeState.activeIndex,
       };
     }
     

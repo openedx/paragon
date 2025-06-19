@@ -23,12 +23,11 @@ export const useCustomThemes = (
   };
 
   const updateURLParams = (themes: ThemeSetting[], activeIndex: number) => {
-    const encoded = encodeThemesToQueryParam(themes);
+    const encoded = encodeThemesToQueryParam(themes, activeIndex);
     const url = new URL(window.location.href);
     
     if (themes.length > 0) {
       url.searchParams.set('themes', encoded);
-      url.searchParams.set('activeTheme', String(activeIndex));
     } else {
       url.searchParams.delete('themes');
       url.searchParams.delete('activeTheme');
