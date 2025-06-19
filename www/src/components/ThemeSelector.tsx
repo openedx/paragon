@@ -1,5 +1,4 @@
 import React, { useContext, useRef } from 'react';
-import PropTypes from 'prop-types';
 import {
   Button,
   Badge,
@@ -11,11 +10,7 @@ import StandardModal from '../../../src/Modal/StandardModal.jsx';
 import CustomThemesForm, { CustomThemesFormRef } from './CustomThemesForm';
 import ActionRow from '../../../src/ActionRow';
 
-export interface IThemeSelector {
-  className?: string,
-}
-
-export function ThemeSelector({ className }: IThemeSelector) {
+export function ThemeSelector() {
   const {
     settings,
     handleCustomThemeChange,
@@ -33,7 +28,7 @@ export function ThemeSelector({ className }: IThemeSelector) {
   };
 
   return (
-    <div className={className}>
+    <div>
       <Stack gap={1}>
         <div role="status">
           <div className="small">Current theme:</div>
@@ -95,13 +90,5 @@ export function ThemeSelector({ className }: IThemeSelector) {
     </div>
   );
 }
-
-ThemeSelector.propTypes = {
-  className: PropTypes.string,
-};
-
-ThemeSelector.defaultProps = {
-  className: undefined,
-};
 
 export default ThemeSelector; 
