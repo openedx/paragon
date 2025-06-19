@@ -1,4 +1,5 @@
 export default function useDirection(
+  // @ts-expect-error - settings is not used
   settings: any,
   updateSettings: (keyOrUpdates: string | Record<string, any>, value?: any) => void,
 ) {
