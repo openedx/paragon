@@ -104,4 +104,4 @@ export const useCustomThemes = (
     handleCustomThemeChange,
     resetCustomTheme,
   };
-}; 
+};

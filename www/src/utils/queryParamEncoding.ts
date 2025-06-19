@@ -49,4 +49,4 @@ export function decodeThemesFromQueryParam(param: string): ThemeState {
       activeIndex: 0,
     };
   }
-} 
+}

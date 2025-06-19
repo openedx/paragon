@@ -21,4 +21,4 @@ export const useSettingsUI = () => {
     openSettings,
     closeSettings,
   };
-}; 
+};

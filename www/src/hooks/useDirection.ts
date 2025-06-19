@@ -12,4 +12,4 @@ export const useDirection = (
   return {
     handleDirectionChange,
   };
-}; 
+};
