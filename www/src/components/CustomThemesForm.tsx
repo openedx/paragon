@@ -136,7 +136,7 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
                 required: 'CSS URL is required.',
                 validate: (value) => {
                   if (!value || value.trim().length === 0) {
-                    return 'CSS URL is required.';
+                    return 'CSS URL is required?!?!.';
                   }
                   if (!isValidCssUrl(value.trim())) {
                     return 'Please enter a valid CSS URL (must start with http(s) and end with .css).';
@@ -144,7 +144,7 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
                   return true;
                 },
               }}
-              render={({ field, fieldState }) => (
+              render={({ field }) => (
                 <Form.Control
                   size="sm"
                   type="url"

@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 
-import { SettingsContext } from '../context/SettingsContext';
+import { useCurrentTheme } from '../hooks';
 
 export interface IMeasuredItem {
   properties: string[],
@@ -23,8 +23,7 @@ function MeasuredItem({
   renderAfter,
   children,
 }: IMeasuredItem) {
-  const { settings } = useContext(SettingsContext);
-  const { theme } = settings;
+  const currentTheme = useCurrentTheme();
   const [measurements, setMeasurements] = useState(initialMeasurements);
   const itemRef = useRef();
 
@@ -44,7 +43,7 @@ function MeasuredItem({
       const timeout = setTimeout(measure, 1000);
       return () => clearTimeout(timeout);
     },
-    [theme, properties],
+    [currentTheme.name, properties],
   );
 
   return (

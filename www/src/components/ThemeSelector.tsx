@@ -9,19 +9,16 @@ import {
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 import CustomThemesForm, { CustomThemesFormRef } from './CustomThemesForm';
+import { useCurrentTheme } from '../hooks';
 
 export default function ThemeSelector() {
   const {
-    settings,
     handleCustomThemeChange,
     resetCustomTheme,
   } = useContext(SettingsContext);
   const [showBrandModal, openBrandModal, closeBrandModal] = useToggle(false);
   const formRef = useRef<CustomThemesFormRef>(null);
-
-  const customThemes = Array.isArray(settings?.customThemes) ? settings.customThemes : [];
-  const activeIdx = typeof settings?.activeCustomThemeIndex === 'number' ? settings.activeCustomThemeIndex : 0;
-  const currentTheme = customThemes[activeIdx] || null;
+  const currentTheme = useCurrentTheme();
 
   const handleSaveClick = () => {
     formRef.current?.submitForm();
@@ -84,7 +81,7 @@ export default function ThemeSelector() {
       >
         <CustomThemesForm
           ref={formRef}
-          initialTheme={currentTheme}
+          initialTheme={currentTheme.urls ? { name: currentTheme.name, urls: currentTheme.urls } : null}
           onSave={theme => {
             handleCustomThemeChange(theme);
             closeBrandModal();
