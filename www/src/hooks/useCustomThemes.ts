@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { encodeThemesToQueryParam, ThemeSetting } from '../utils/queryParamEncoding';
+import { UpdateSettingsFunction } from './useSettings';
 
 export const useCustomThemes = (
   settings: any,
-  updateSettings: (keyOrUpdates: string | Record<string, any>, value?: any) => void,
+  updateSettings: UpdateSettingsFunction,
 ) => {
   const injectThemeCSS = (themes: ThemeSetting[], activeIndex: number) => {
     // Remove any previous custom CSS

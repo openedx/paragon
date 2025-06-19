@@ -1,6 +1,6 @@
 export default function useDirection(
   settings: any,
-  updateSettings: (key: string, value: any) => void,
+  updateSettings: (keyOrUpdates: string | Record<string, any>, value?: any) => void,
 ) {
   const handleDirectionChange = (value: string) => {
     document.body.setAttribute('dir', value);

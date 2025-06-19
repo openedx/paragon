@@ -11,6 +11,20 @@ export interface Settings {
   activeCustomThemeIndex?: number;
 }
 
+export type UpdateSettingsParams = 
+  | string 
+  | Record<string, any>;
+
+export type UpdateSettingsFunction = (
+  keyOrUpdates: UpdateSettingsParams, 
+  value?: any
+) => void;
+
+export interface UseSettings {
+  settings: Settings;
+  updateSettings: UpdateSettingsFunction;
+}
+
 const defaultSettings: Settings = {
   direction: 'ltr',
   language: 'en',
@@ -19,10 +33,10 @@ const defaultSettings: Settings = {
   activeCustomThemeIndex: 0,
 };
 
-export const useSettings = () => {
+export const useSettings = (): UseSettings => {
   const [settings, setSettings] = useState<Settings>(defaultSettings);
 
-  const updateSettings = (keyOrUpdates: string | Record<string, any>, value?: any) => {
+  const updateSettings: UpdateSettingsFunction = (keyOrUpdates, value) => {
     let updates: Record<string, any>;
 
     if (typeof keyOrUpdates === 'string') {
