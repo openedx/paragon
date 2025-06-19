@@ -132,4 +132,4 @@ CustomBrandForm.propTypes = {
 
 CustomBrandForm.defaultProps = {
   initialBrand: undefined,
-}; 
+};
