@@ -16,13 +16,15 @@ export default function CustomBrandForm({ initialBrand, onSave }) {
   const [brandName, setBrandName] = useState(initialBrand?.name || '');
   const [urls, setUrls] = useState(initialBrand?.urls || ['']);
   const [touched, setTouched] = useState({ name: false, urls: [false] });
-  const brandNameInputRef = useRef<HTMLInputElement>(null);
+  const urlInputRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const prevUrlsLength = useRef(urls.length);
 
   useEffect(() => {
-    if (brandNameInputRef.current) {
-      brandNameInputRef.current.focus();
+    if (urls.length > prevUrlsLength.current) {
+      urlInputRefs.current[urls.length - 1]?.focus();
     }
-  }, []);
+    prevUrlsLength.current = urls.length;
+  }, [urls.length]);
 
   const handleUrlChange = (idx, value) => {
     setUrls(urls.map((u, i) => (i === idx ? value : u)));
@@ -68,7 +70,6 @@ export default function CustomBrandForm({ initialBrand, onSave }) {
           onChange={e => setBrandName(e.target.value)}
           onBlur={() => setTouched(t => ({ ...t, name: true }))}
           required
-          ref={brandNameInputRef}
         />
         {touched.name && !nameValid && (
           <Form.Control.Feedback type="invalid">
@@ -93,9 +94,9 @@ export default function CustomBrandForm({ initialBrand, onSave }) {
               placeholder="https://cdn.example.com/theme.css"
               onChange={e => handleUrlChange(idx, e.target.value)}
               onBlur={() => setTouched(t => ({ ...t, urls: t.urls.map((v, i) => (i === idx ? true : v)) }))}
-              isInvalid={touched.urls[idx] && !isValidCssUrl(url)}
               required
               aria-label={idx === 0 ? undefined : 'Additional CSS URL'}
+              ref={el => urlInputRefs.current[idx] = el}
             />
             {urls.length > 1 && (
               <IconButton

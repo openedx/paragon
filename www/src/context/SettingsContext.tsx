@@ -45,9 +45,22 @@ function SettingsContextProvider({ children }) {
   });
   const [showSettings, setShowSettings] = useState(false);
 
-  const handleSettingsChange = (key: string, value: string) => {
+  const handleSettingsChange = (key: string, value: any) => {
     if (key === 'direction') {
       document.body.setAttribute('dir', value);
+    }
+    if (key === 'customBrand') {
+      // Remove any previous custom CSS
+      document.querySelectorAll('link[data-custom-brand]').forEach(el => el.remove());
+      if (value) {
+        value.urls.forEach((url: string) => {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = url;
+          link.setAttribute('data-custom-brand', 'true');
+          document.head.appendChild(link);
+        });
+      }
     }
     setSettings(prevState => ({ ...prevState, [key]: value }));
     global.localStorage.setItem('pgn__settings', JSON.stringify({ ...settings, [key]: value }));
@@ -55,24 +68,11 @@ function SettingsContextProvider({ children }) {
   };
 
   const handleCustomBrandChange = (brand: { name: string, urls: string[] }) => {
-    setSettings(prev => ({ ...prev, customBrand: brand }));
-    global.localStorage.setItem('pgn__custom_brand', JSON.stringify(brand));
-    // Remove any previous custom CSS
-    document.querySelectorAll('link[data-custom-brand]').forEach(el => el.remove());
-    // Inject new CSS URLs
-    brand.urls.forEach(url => {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = url;
-      link.setAttribute('data-custom-brand', 'true');
-      document.head.appendChild(link);
-    });
+    handleSettingsChange('customBrand', brand);
   };
 
   const resetCustomBrand = () => {
-    setSettings(prev => ({ ...prev, customBrand: null }));
-    global.localStorage.removeItem('pgn__custom_brand');
-    document.querySelectorAll('link[data-custom-brand]').forEach(el => el.remove());
+    handleSettingsChange('customBrand', null);
   };
 
   const toggleSettings = (value: boolean) => {
