@@ -57,6 +57,9 @@ export default function CustomBrandForm({ initialBrand, onSave }) {
 
   return (
     <Form id="customBrandForm" onSubmit={handleSubmit}>
+      <Form.Text className="mb-3">
+        Add a custom brand name and one or more CSS URLs to apply your own theme. The CSS files should be accessible via public URLs and must end with <code>.css</code>.
+      </Form.Text>
       <Form.Group controlId="customBrandName" isInvalid={touched.name && !nameValid}>
         <Form.Label>Brand Name</Form.Label>
         <Form.Control
