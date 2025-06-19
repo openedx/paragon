@@ -2,15 +2,15 @@ import React, { useState, useRef, useEffect, useImperativeHandle, forwardRef } f
 import { Form, Button, IconButton, Stack } from '~paragon-react';
 import { Close } from '~paragon-icons';
 
-interface CustomBrandFormProps {
-  initialBrand?: {
+interface CustomThemesFormProps {
+  initialTheme?: {
     name: string;
     urls: string[];
   };
-  onSave: (brand: { name: string; urls: string[] }) => void;
+  onSave: (theme: { name: string; urls: string[] }) => void;
 }
 
-export interface CustomBrandFormRef {
+export interface CustomThemesFormRef {
   submitForm: () => void;
 }
 
@@ -23,9 +23,9 @@ function isValidCssUrl(url) {
   }
 }
 
-const CustomBrandForm = forwardRef<CustomBrandFormRef, CustomBrandFormProps>(({ initialBrand, onSave }, ref) => {
-  const [brandName, setBrandName] = useState(initialBrand?.name || '');
-  const [urls, setUrls] = useState(initialBrand?.urls || ['']);
+const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(({ initialTheme, onSave }, ref) => {
+  const [themeName, setThemeName] = useState(initialTheme?.name || '');
+  const [urls, setUrls] = useState(initialTheme?.urls || ['']);
   const [touched, setTouched] = useState({ name: false, urls: [false] });
   const urlInputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const prevUrlsLength = useRef(urls.length);
@@ -54,7 +54,7 @@ const CustomBrandForm = forwardRef<CustomBrandFormRef, CustomBrandFormProps>(({ 
   };
 
   const validate = () => {
-    const nameValid = brandName.trim().length > 0;
+    const nameValid = themeName.trim().length > 0;
     const urlsValid = urls.length > 0 && urls.every(isValidCssUrl);
     return { nameValid, urlsValid };
   };
@@ -66,13 +66,13 @@ const CustomBrandForm = forwardRef<CustomBrandFormRef, CustomBrandFormProps>(({ 
     e.preventDefault();
     setTouched({ name: true, urls: urls.map(() => true) });
     if (!canSubmit) return;
-    onSave({ name: brandName.trim(), urls: urls.map(u => u.trim()) });
+    onSave({ name: themeName.trim(), urls: urls.map(u => u.trim()) });
   };
 
   const submitForm = () => {
     setTouched({ name: true, urls: urls.map(() => true) });
     if (!canSubmit) return;
-    onSave({ name: brandName.trim(), urls: urls.map(u => u.trim()) });
+    onSave({ name: themeName.trim(), urls: urls.map(u => u.trim()) });
   };
 
   useImperativeHandle(ref, () => ({
@@ -80,29 +80,29 @@ const CustomBrandForm = forwardRef<CustomBrandFormRef, CustomBrandFormProps>(({ 
   }));
 
   return (
-    <Form id="customBrandForm" onSubmit={handleSubmit} ref={formRef}>
+    <Form id="customThemesForm" onSubmit={handleSubmit} ref={formRef}>
       <Form.Text className="mb-3">
-        Add a custom brand name and one or more CSS URLs to apply your own theme. The CSS files should be accessible via public URLs and must end with <code>.css</code>.
+        Add a custom theme name and one or more CSS URLs to apply your own theme. The CSS files should be accessible via public URLs and must end with <code>.css</code>.
       </Form.Text>
-      <Form.Group controlId="customBrandName" isInvalid={touched.name && !nameValid}>
-        <Form.Label>Brand Name</Form.Label>
+      <Form.Group controlId="customThemeName" isInvalid={touched.name && !nameValid}>
+        <Form.Label>Theme Name</Form.Label>
         <Form.Control
           size="sm"
-          value={brandName}
-          onChange={e => setBrandName(e.target.value)}
+          value={themeName}
+          onChange={e => setThemeName(e.target.value)}
           onBlur={() => setTouched(t => ({ ...t, name: true }))}
           required
         />
         {touched.name && !nameValid && (
           <Form.Control.Feedback type="invalid">
-            Brand name is required.
+            Theme name is required.
           </Form.Control.Feedback>
         )}
       </Form.Group>
       {urls.map((url, idx) => (
         <Form.Group
           key={idx}
-          controlId={`customBrandUrl${idx}`}
+          controlId={`customThemeUrl${idx}`}
           isInvalid={touched.urls[idx] && !isValidCssUrl(url)}
         >
           {idx === 0 && (
@@ -144,4 +144,4 @@ const CustomBrandForm = forwardRef<CustomBrandFormRef, CustomBrandFormProps>(({ 
   );
 });
 
-export default CustomBrandForm;
+export default CustomThemesForm;

@@ -8,7 +8,7 @@ import {
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 import StandardModal from '../../../src/Modal/StandardModal.jsx';
-import CustomBrandForm, { CustomBrandFormRef } from './CustomBrandForm';
+import CustomThemesForm, { CustomThemesFormRef } from './CustomThemesForm';
 import ActionRow from '../../../src/ActionRow';
 
 export interface IThemeSelector {
@@ -22,7 +22,7 @@ export function ThemeSelector({ className }: IThemeSelector) {
     resetCustomTheme,
   } = useContext(SettingsContext);
   const [showBrandModal, openBrandModal, closeBrandModal] = useToggle(false);
-  const formRef = useRef<CustomBrandFormRef>(null);
+  const formRef = useRef<CustomThemesFormRef>(null);
 
   const customThemes = Array.isArray(settings?.customThemes) ? settings.customThemes : [];
   const activeIdx = typeof settings?.activeCustomThemeIndex === 'number' ? settings.activeCustomThemeIndex : 0;
@@ -83,11 +83,11 @@ export function ThemeSelector({ className }: IThemeSelector) {
         }
         isOverflowVisible={false}
       >
-        <CustomBrandForm
+        <CustomThemesForm
           ref={formRef}
-          initialBrand={currentTheme}
-          onSave={brand => {
-            handleCustomThemeChange(brand);
+          initialTheme={currentTheme}
+          onSave={theme => {
+            handleCustomThemeChange(theme);
             closeBrandModal();
           }}
         />
