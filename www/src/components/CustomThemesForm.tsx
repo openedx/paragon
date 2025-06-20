@@ -47,12 +47,15 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
     formState: { errors },
     trigger,
     getValues,
+    watch,
+    clearErrors,
   } = useForm<FormData>({
     defaultValues: {
       name: initialTheme?.name || '',
       urls: initialTheme?.urls.length ? initialTheme.urls.map(url => ({ url })) : [{ url: '' }],
     },
     mode: 'onTouched',
+    delayError: 300,
   });
 
   const { fields, append, remove } = useFieldArray({
@@ -62,6 +65,10 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
 
   const urlInputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const prevUrlsLength = useRef(fields.length);
+
+  // Watch URL values to check for blank inputs
+  const watchedUrls = watch('urls');
+  const hasBlankUrl = watchedUrls?.some(urlObj => !urlObj.url || urlObj.url.trim() === '');
 
   useEffect(() => {
     if (fields.length > prevUrlsLength.current) {
@@ -90,7 +97,10 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
   }));
 
   const handleAddUrl = () => {
+    const newIndex = fields.length;
     append({ url: '' });
+    // Clear validation errors only for the newly added field
+    clearErrors(`urls.${newIndex}.url`);
   };
 
   const handleRemoveUrl = (index: number) => {
@@ -182,6 +192,7 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
         size="sm"
         onClick={handleAddUrl}
         iconBefore={Plus}
+        disabled={hasBlankUrl}
       >
         Add another URL
       </Button>
