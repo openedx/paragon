@@ -29,16 +29,19 @@ exports.onRouteUpdate = ({ location: { hash, pathname, href } }) => {
     const storageSettings = localStorage.getItem('pgn__settings');
     if (storageSettings) {
       const savedSettings = JSON.parse(storageSettings);
-      const customThemes = savedSettings.customThemes || [];
-      const activeIdx = savedSettings.activeCustomThemeIndex || 0;
+      const themes = savedSettings.themes || [];
+      const activeIdx = savedSettings.activeThemeIndex;
 
-      if (customThemes.length > 0) {
+      // Only preserve themes if we have custom themes (more than just the default theme)
+      const hasCustomThemes = themes.some(theme => theme.urls && theme.urls.length > 0);
+
+      if (hasCustomThemes) {
         const url = new URL(window.location.href);
         const currentThemesParam = url.searchParams.get('themes');
 
         // Only update if themes param is missing
         if (!currentThemesParam) {
-          const encoded = encodeThemesToQueryParam(customThemes, activeIdx);
+          const encoded = encodeThemesToQueryParam(themes, activeIdx || 0);
 
           url.searchParams.set('themes', encoded);
 

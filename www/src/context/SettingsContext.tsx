@@ -13,12 +13,14 @@ export interface IDefaultValue {
     direction?: string,
     language?: string,
     containerWidth?: ContainerSize,
-    customThemes?: any[],
-    activeCustomThemeIndex?: number,
+    themes?: any[],
+    activeThemeIndex?: number,
   },
   handleSettingsChange: Function,
-  handleCustomThemeChange: Function,
-  resetCustomTheme: Function,
+  addTheme: Function,
+  updateTheme: Function,
+  removeTheme: Function,
+  resetThemes: Function,
   showSettings?: React.SyntheticEvent | React.ReactNode,
   closeSettings?: () => void,
   openSettings?: () => void,
@@ -27,8 +29,10 @@ export interface IDefaultValue {
 const defaultValue = {
   settings: {},
   handleSettingsChange: () => {},
-  handleCustomThemeChange: () => {},
-  resetCustomTheme: () => {},
+  addTheme: () => {},
+  updateTheme: () => {},
+  removeTheme: () => {},
+  resetThemes: () => {},
 };
 
 export const SettingsContext = createContext<IDefaultValue>(defaultValue);
@@ -36,9 +40,11 @@ export const SettingsContext = createContext<IDefaultValue>(defaultValue);
 function SettingsContextProvider({ children }) {
   const { settings, updateSettings } = useSettings();
   const {
-    handleCustomThemesChange,
-    handleCustomThemeChange,
-    resetCustomTheme,
+    handleThemesChange,
+    addTheme,
+    updateTheme,
+    removeTheme,
+    resetThemes,
   } = useCustomThemes(settings, updateSettings);
   const { handleDirectionChange } = useDirection(settings, updateSettings);
   const { showSettings, openSettings, closeSettings } = useSettingsUI();
@@ -46,8 +52,8 @@ function SettingsContextProvider({ children }) {
   const handleSettingsChange = (key: string, value: any) => {
     if (key === 'direction') {
       handleDirectionChange(value);
-    } else if (key === 'customThemes' || key === 'activeCustomThemeIndex') {
-      handleCustomThemesChange(key, value);
+    } else if (key === 'themes' || key === 'activeThemeIndex') {
+      handleThemesChange(key, value);
     } else {
       updateSettings(key, value);
     }
@@ -65,8 +71,10 @@ function SettingsContextProvider({ children }) {
     settings,
     showSettings,
     handleSettingsChange,
-    handleCustomThemeChange,
-    resetCustomTheme,
+    addTheme,
+    updateTheme,
+    removeTheme,
+    resetThemes,
     closeSettings,
     openSettings,
   };

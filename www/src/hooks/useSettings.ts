@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { type ContainerSize } from '~paragon-react';
 import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
-import { decodeThemesFromQueryParam, ThemeSetting } from '../utils/queryParamEncoding';
+import { decodeThemesFromQueryParam } from '../utils/queryParamEncoding';
+import { type ThemeSetting } from '../types/types';
 
 export interface Settings {
   direction?: string;
   language?: string;
   containerWidth?: ContainerSize;
-  customThemes?: ThemeSetting[];
-  activeCustomThemeIndex?: number;
+  themes?: ThemeSetting[];
+  activeThemeIndex?: number;
 }
 
 export type UpdateSettingsParams =
@@ -29,8 +30,10 @@ const defaultSettings: Settings = {
   direction: 'ltr',
   language: 'en',
   containerWidth: 'md' as ContainerSize,
-  customThemes: [],
-  activeCustomThemeIndex: 0,
+  themes: [
+    { name: 'Open edX (Default)', urls: [] },
+  ],
+  activeThemeIndex: 0,
 };
 
 export const useSettings = (): UseSettings => {
@@ -62,9 +65,9 @@ export const useSettings = (): UseSettings => {
     if (storageSettings) {
       const savedSettings = JSON.parse(storageSettings);
 
-      // Migrate old customBrands to customThemes if present
-      if (savedSettings.customBrands && !savedSettings.customThemes) {
-        savedSettings.customThemes = savedSettings.customBrands;
+      // Migrate old customBrands to themes if present
+      if (savedSettings.customBrands && !savedSettings.themes) {
+        savedSettings.themes = savedSettings.customBrands;
         delete savedSettings.customBrands;
         global.localStorage.setItem('pgn__settings', JSON.stringify(savedSettings));
       }
@@ -82,8 +85,8 @@ export const useSettings = (): UseSettings => {
       const themeState = decodeThemesFromQueryParam(themesParam);
 
       return {
-        customThemes: themeState.themes,
-        activeCustomThemeIndex: themeState.activeIndex,
+        themes: themeState.themes,
+        activeThemeIndex: themeState.activeIndex,
       };
     }
 
@@ -100,6 +103,16 @@ export const useSettings = (): UseSettings => {
       ...urlSettings,
     };
 
+    const themes = finalSettings.themes || [];
+    const activeIndex = finalSettings.activeThemeIndex;
+
+    if (!Array.isArray(finalSettings.themes) || finalSettings.themes.length === 0) {
+      finalSettings.themes = defaultSettings.themes;
+      finalSettings.activeThemeIndex = 0;
+    } else if (activeIndex == null || activeIndex < 0 || activeIndex >= themes.length) {
+      finalSettings.activeThemeIndex = 0;
+    }
+
     setSettings(finalSettings);
 
     // Apply direction to document body
@@ -111,8 +124,8 @@ export const useSettings = (): UseSettings => {
     if (urlSettings) {
       const settingsToSave = {
         ...storageSettings,
-        customThemes: urlSettings.customThemes,
-        activeCustomThemeIndex: urlSettings.activeCustomThemeIndex,
+        themes: urlSettings.themes,
+        activeThemeIndex: urlSettings.activeThemeIndex,
       };
       global.localStorage.setItem('pgn__settings', JSON.stringify(settingsToSave));
     }

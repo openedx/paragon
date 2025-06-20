@@ -1,93 +1,155 @@
-import React, { useContext, useRef } from 'react';
+import React from 'react';
 import {
   Button,
-  Badge,
   Stack,
-  useToggle,
-  ActionRow,
-  StandardModal,
+  IconButton,
+  TransitionReplace,
 } from '~paragon-react';
-import { SettingsContext } from '../context/SettingsContext';
-import CustomThemesForm, { CustomThemesFormRef } from './CustomThemesForm';
-import { useCurrentTheme } from '../hooks';
+import { Close } from '~paragon-icons';
+import { useCurrentTheme } from '../hooks/useCurrentTheme';
+import { useThemeModal } from '../hooks/useThemeModal';
+import { useResetModal } from '../hooks/useResetModal';
+import { useEditMode } from '../hooks/useEditMode';
+import { useThemeContext } from '../hooks/useThemeContext';
+import ViewPanel from './ViewPanel';
+import EditPanel from './EditPanel';
+import ResetThemesModal from './ResetThemesModal';
+import RemoveThemeModal from './RemoveThemeModal';
+import AddThemeModal from './AddThemeModal';
+import EditThemeModal from './EditThemeModal';
 
 export default function ThemeSelector() {
   const {
-    handleCustomThemeChange,
-    resetCustomTheme,
-  } = useContext(SettingsContext);
-  const [showBrandModal, openBrandModal, closeBrandModal] = useToggle(false);
-  const formRef = useRef<CustomThemesFormRef>(null);
+    themes,
+    currentThemeIndex,
+    hasCustomThemes,
+    addTheme,
+    updateTheme,
+    removeTheme,
+    resetThemes,
+    setCurrentTheme,
+  } = useThemeContext();
+
   const currentTheme = useCurrentTheme();
 
-  const handleSaveClick = () => {
-    formRef.current?.submitForm();
+  const {
+    showAddModal,
+    showEditModal,
+    editingTheme,
+    showRemoveConfirm,
+    addFormRef,
+    editFormRef,
+    closeAddModal,
+    closeEditModal,
+    handleAddSaveClick,
+    handleEditSaveClick,
+    handleEditTheme,
+    handleRemoveTheme,
+    handleConfirmRemove,
+    handleCancelRemove,
+    handleAddClick,
+    handleAddTheme,
+    handleEditThemeSave,
+  } = useThemeModal(
+    addTheme,
+    updateTheme,
+    removeTheme,
+  );
+
+  const {
+    showResetConfirm,
+    openResetConfirm,
+    closeResetConfirm,
+    handleResetConfirm,
+  } = useResetModal(resetThemes);
+
+  const handleThemeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    const themeIndex = parseInt(value, 10);
+    setCurrentTheme(themeIndex);
   };
+
+  const {
+    isEditMode,
+    toggleEditMode,
+    editButtonRef,
+    closeButtonRef,
+    radioRefs,
+    handleTransitionEnd,
+  } = useEditMode(currentThemeIndex);
 
   return (
     <div>
-      <Stack gap={1}>
-        <div role="status">
-          <div className="small">Current theme:</div>
-          <div>
-            <Badge variant="primary">
-              {currentTheme?.name || 'Open edX'}
-            </Badge>
-          </div>
-        </div>
-        <Button
-          size="sm"
-          variant="outline-primary"
-          className="mt-2 mt-md-0"
-          onClick={openBrandModal}
-          block
-        >
-          {currentTheme.urls ? 'Edit custom theme' : 'Add custom theme'}
-        </Button>
-      </Stack>
-      <StandardModal
-        title={currentTheme.urls ? 'Edit Custom Theme' : 'Add Custom Theme'}
-        isOpen={showBrandModal}
-        onClose={closeBrandModal}
-        size="lg"
-        hasCloseButton={false}
-        footerNode={(
-          <ActionRow>
-            <Button variant="tertiary" onClick={closeBrandModal}>
-              Cancel
-            </Button>
-            {currentTheme.urls && (
-              <Button
-                variant="outline-danger"
-                size="sm"
-                onClick={() => {
-                  resetCustomTheme();
-                  closeBrandModal();
-                }}
-              >
-                Reset to Default
-              </Button>
-            )}
-            <ActionRow.Spacer />
-            <Button
-              variant="primary"
-              onClick={handleSaveClick}
-            >
-              Save
-            </Button>
-          </ActionRow>
+      <Stack direction="horizontal" className="justify-content-between">
+        <span className="small">Current theme:</span>
+        {isEditMode ? (
+          <IconButton
+            ref={closeButtonRef}
+            src={Close}
+            alt="Finish editing"
+            size="sm"
+            onClick={toggleEditMode}
+            variant="secondary"
+          />
+        ) : (
+          <Button ref={editButtonRef} size="sm" variant="link" onClick={toggleEditMode}>
+            Edit
+          </Button>
         )}
-        isOverflowVisible={false}
-      >
-        <CustomThemesForm
-          ref={formRef}
-          initialTheme={currentTheme.urls ? { name: currentTheme.name, urls: currentTheme.urls } : null}
-          onSave={theme => {
-            handleCustomThemeChange(theme);
-            closeBrandModal();
-          }}
+      </Stack>
+      <TransitionReplace onChildExited={handleTransitionEnd}>
+        {isEditMode ? (
+          <div key="edit">
+            <EditPanel
+              themes={themes}
+              currentThemeValue={currentThemeIndex.toString()}
+              onThemeChange={handleThemeChange}
+              onEditTheme={(themeIndex) => handleEditTheme(themeIndex, themes)}
+              hasCustomThemes={hasCustomThemes}
+              onResetClick={openResetConfirm}
+              onAddClick={handleAddClick}
+              radioRefs={radioRefs}
+            />
+          </div>
+        ) : (
+          <div key="view">
+            <ViewPanel
+              currentTheme={currentTheme}
+            />
+          </div>
+        )}
+      </TransitionReplace>
+      <AddThemeModal
+        isOpen={showAddModal}
+        onClose={closeAddModal}
+        onSave={handleAddSaveClick}
+        existingThemes={themes}
+        formRef={addFormRef}
+        onSaveTheme={handleAddTheme}
+      />
+      {editingTheme && (
+        <EditThemeModal
+          isOpen={showEditModal}
+          onClose={closeEditModal}
+          onSave={handleEditSaveClick}
+          onRemove={handleRemoveTheme}
+          editingTheme={editingTheme}
+          existingThemes={themes}
+          formRef={editFormRef}
+          onSaveTheme={handleEditThemeSave}
         />
-      </StandardModal>
+      )}
+      <RemoveThemeModal
+        isOpen={showRemoveConfirm}
+        onClose={handleCancelRemove}
+        onConfirm={handleConfirmRemove}
+        themeName={editingTheme?.name || ''}
+      />
+      <ResetThemesModal
+        isOpen={showResetConfirm}
+        onClose={closeResetConfirm}
+        onConfirm={handleResetConfirm}
+      />
     </div>
   );
 }

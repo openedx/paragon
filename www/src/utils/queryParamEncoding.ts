@@ -1,9 +1,5 @@
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string';
-
-export interface ThemeSetting {
-  name: string;
-  urls: string[];
-}
+import { type ThemeSetting } from '../types/types';
 
 export interface ThemeState {
   themes: ThemeSetting[];

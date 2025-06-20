@@ -44,3 +44,14 @@ export interface IComponentUsage {
   name: string,
   componentUsageInProjects: IComponentUsageData[],
 }
+
+// Theme-related types
+export interface Theme {
+  name: string;
+  urls?: string[];
+}
+
+export interface ThemeSetting {
+  name: string;
+  urls: string[];
+}
