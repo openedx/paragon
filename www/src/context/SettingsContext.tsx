@@ -1,7 +1,7 @@
 import React, { createContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
-import { messages } from '~paragon-react';
+import { messages, type ContainerSize } from '~paragon-react';
 
 import { useSettings } from '../hooks/useSettings';
 import { useCustomThemes } from '../hooks/useCustomThemes';
@@ -12,7 +12,7 @@ export interface IDefaultValue {
   settings: {
     direction?: string,
     language?: string,
-    containerWidth?: any,
+    containerWidth?: ContainerSize,
     customThemes?: any[],
     activeCustomThemeIndex?: number,
   },

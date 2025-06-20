@@ -118,63 +118,67 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
           </Form.Control.Feedback>
         )}
       </Form.Group>
-      {fields.map((field, idx) => (
-        <Form.Group
-          key={field.id}
-          controlId={`customThemeUrl${idx}`}
-          isInvalid={!!errors.urls?.[idx]}
-        >
-          {idx === 0 && (
-            <Form.Label>CSS URL</Form.Label>
-          )}
-          <Stack direction="horizontal" gap={1}>
-            <Controller
-              name={`urls.${idx}.url`}
-              control={control}
-              rules={{
-                required: 'CSS URL is required.',
-                validate: (value) => {
-                  if (!value || value.trim().length === 0) {
-                    return 'CSS URL is required?!?!.';
-                  }
-                  if (!isValidCssUrl(value.trim())) {
-                    return 'Please enter a valid CSS URL (must start with http(s) and end with .css).';
-                  }
-                  return true;
-                },
-              }}
-              render={({ field: formField }) => (
-                <Form.Control
-                  size="sm"
-                  type="url"
-                  placeholder="https://cdn.example.com/theme.css"
-                  aria-label={idx === 0 ? undefined : 'Additional CSS URL'}
-                  {...formField}
-                  ref={el => {
-                    urlInputRefs.current[idx] = el;
+      <div role="group" aria-label="CSS URL(s)">
+        <Form.Label  onClick={() => urlInputRefs.current[0]?.focus()}>
+          CSS URL(s)
+        </Form.Label>
+        <div>
+          {fields.map((field, idx) => (
+            <Form.Group
+              key={field.id}
+              controlId={`customThemeUrl${idx}`}
+              isInvalid={!!errors.urls?.[idx]}
+            >
+              <Stack direction="horizontal" gap={1}>
+                <Controller
+                  name={`urls.${idx}.url`}
+                  control={control}
+                  rules={{
+                    required: 'CSS URL is required.',
+                    validate: (value) => {
+                      if (!value || value.trim().length === 0) {
+                        return 'CSS URL is required?!';
+                      }
+                      if (!isValidCssUrl(value.trim())) {
+                        return 'Please enter a valid CSS URL (must start with http(s) and end with .css).';
+                      }
+                      return true;
+                    },
                   }}
+                  render={({ field: formField }) => (
+                    <Form.Control
+                      size="sm"
+                      type="url"
+                      placeholder="https://cdn.example.com/theme.css"
+                      aria-label="CSS URL"
+                      {...formField}
+                      ref={el => {
+                        urlInputRefs.current[idx] = el;
+                      }}
+                    />
+                  )}
                 />
+                {fields.length > 1 && (
+                  <IconButton
+                    variant="danger"
+                    src={Close}
+                    onClick={() => handleRemoveUrl(idx)}
+                    alt="Remove URL"
+                    size="inline"
+                  />
+                )}
+              </Stack>
+              {errors.urls?.[idx] && (
+                <Form.Control.Feedback type="invalid">
+                  {errors.urls[idx]?.url?.message}
+                </Form.Control.Feedback>
               )}
-            />
-            {fields.length > 1 && (
-              <IconButton
-                variant="danger"
-                src={Close}
-                onClick={() => handleRemoveUrl(idx)}
-                alt="Remove URL"
-                size="inline"
-              />
-            )}
-          </Stack>
-          {errors.urls?.[idx] && (
-            <Form.Control.Feedback type="invalid">
-              {errors.urls[idx]?.url?.message}
-            </Form.Control.Feedback>
-          )}
-        </Form.Group>
-      ))}
+            </Form.Group>
+          ))}
+        </div>
+      </div>
       <Button
-        variant="link"
+        variant="tertiary"
         size="sm"
         onClick={handleAddUrl}
         iconBefore={Plus}
