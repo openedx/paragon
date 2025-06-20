@@ -78,8 +78,11 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
   }, [fields.length]);
 
   const onSubmit = (data: FormData) => {
+    const trimmedName = data.name.trim();
+    const themeName = trimmedName || 'Custom';
+    
     onSave({
-      name: data.name.trim(),
+      name: themeName,
       urls: data.urls.map(u => u.url.trim()).filter(url => url.length > 0),
     });
   };
@@ -117,10 +120,7 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
         <Form.Label>Theme Name</Form.Label>
         <Form.Control
           size="sm"
-          {...register('name', {
-            required: 'Theme name is required.',
-            validate: (value) => value.trim().length > 0 || 'Theme name is required.',
-          })}
+          {...register('name')}
         />
         {errors.name && (
           <Form.Control.Feedback type="invalid">
