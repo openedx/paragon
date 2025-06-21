@@ -1,5 +1,5 @@
 {
-  "lastModified": 1750428425873,
+  "lastModified": 1750514778880,
   "projectUsages": [
     {
       "version": "23.12.2",
@@ -39361,10 +39361,54 @@
             "index": 1239
           },
           {
-            "filePath": "src/components/search/Search.jsx",
-            "line": 144,
-            "column": 8,
-            "index": 4847
+            "filePath": "src/components/course/CourseSidebar.jsx",
+            "line": 102,
+            "column": 18,
+            "index": 4201
+          }
+        ],
+        "Equalizer": [
+          {
+            "filePath": "src/components/course/CourseSidebar.jsx",
+            "line": 130,
+            "column": 18,
+            "index": 5197
+          }
+        ],
+        "VideoFile": [
+          {
+            "filePath": "src/components/course/CourseSidebar.jsx",
+            "line": 156,
+            "column": 18,
+            "index": 6242
+          }
+        ],
+        "Person": [
+          {
+            "filePath": "src/components/course/CourseSidebar.jsx",
+            "line": 165,
+            "column": 18,
+            "index": 6533
+          },
+          {
+            "filePath": "src/components/microlearning/VideoDetailPage.jsx",
+            "line": 239,
+            "column": 54,
+            "index": 9967
+          },
+          {
+            "filePath": "src/components/program/ProgramSidebar.jsx",
+            "line": 35,
+            "column": 18,
+            "index": 1295
+          }
+        ],
+        "OverlayTrigger": [
+          {
+            "filePath": "src/components/course/CourseSkills.jsx",
+            "line": 34,
+            "column": 10,
+            "index": 1060
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/UpgradeCourseButton.jsx",
@@ -42537,6 +42581,18 @@
             "index": 1400
           },
           {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/generic/PreviousButton.jsx",
+            "line": 47,
+            "column": 16,
+            "index": 1151
+          },
+          {
+            "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
+            "line": 49,
+            "column": 8,
+            "index": 1400
+          },
+          {
             "filePath": "src/courseware/course/bookmark/BookmarkButton.jsx",
             "line": 58,
             "column": 20,
@@ -42721,14 +42777,6 @@
             "line": 30,
             "column": 8,
             "index": 925
-          }
-        ],
-        "Navbar.Brand": [
-          {
-            "filePath": "src/course-home/courseware-search/CoursewareSearchForm.jsx",
-            "line": 32,
-            "column": 6,
-            "index": 972
           }
         ],
         "AvatarButton": [
@@ -43242,6 +43290,18 @@
             "index": 310
           },
           {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
+            "line": 6,
+            "column": 22,
+            "index": 309
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusSidePanelSlot/index.jsx",
+            "line": 6,
+            "column": 22,
+            "index": 310
+          },
+          {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
             "line": 75,
             "column": 21,
@@ -43394,6 +43454,12 @@
             "index": 4666
           },
           {
+            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/hooks.js",
+            "line": 122,
+            "column": 55,
+            "index": 4666
+          },
+          {
             "filePath": "src/courseware/course/sidebar/sidebars/notifications/NotificationTray.test.jsx",
             "line": 46,
             "column": 24,
@@ -43434,6 +43500,18 @@
             "line": 58,
             "column": 8,
             "index": 1924
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
+            "line": 7,
+            "column": 36,
+            "index": 368
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusSidePanelSlot/index.jsx",
+            "line": 7,
+            "column": 36,
+            "index": 369
           },
           {
             "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
@@ -43772,7 +43850,7 @@
             "index": 1318
           }
         ],
-        "DataTable.TableFooter": [
+        "Stack": [
           {
             "filePath": "src/course-home/progress-tab/grades/grade-summary/GradeSummaryTableFooter.jsx",
             "line": 47,
@@ -46509,16 +46587,24 @@
         ],
         "Row": [
           {
-            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 151,
-            "column": 6,
-            "index": 4584
+            "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
+            "line": 54,
+            "column": 15,
+            "index": 1444
           },
           {
-            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 243,
-            "column": 14,
-            "index": 8463
+            "filePath": "src/containers/ReviewActions/components/SubmissionNavigation.jsx",
+            "line": 31,
+            "column": 11,
+            "index": 835
+          }
+        ],
+        "Form.Group": [
+          {
+            "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
+            "line": 58,
+            "column": 8,
+            "index": 1548
           },
           {
             "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
@@ -46539,16 +46625,16 @@
             "index": 11844
           },
           {
-            "filePath": "src/library-authoring/author-library/LibraryAuthoringPage.jsx",
-            "line": 346,
-            "column": 12,
-            "index": 13129
+            "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
+            "line": 59,
+            "column": 10,
+            "index": 1613
           },
           {
-            "filePath": "src/library-authoring/common/License.jsx",
-            "line": 22,
-            "column": 4,
-            "index": 668
+            "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
+            "line": 67,
+            "column": 10,
+            "index": 1845
           },
           {
             "filePath": "src/library-authoring/common/License.jsx",
@@ -46569,10 +46655,10 @@
             "index": 1539
           },
           {
-            "filePath": "src/library-authoring/common/LicenseField.jsx",
-            "line": 74,
-            "column": 8,
-            "index": 2274
+            "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
+            "line": 60,
+            "column": 10,
+            "index": 1663
           },
           {
             "filePath": "src/library-authoring/common/LicenseField.jsx",
@@ -46587,10 +46673,10 @@
             "index": 3856
           },
           {
-            "filePath": "src/library-authoring/common/LicenseField.jsx",
-            "line": 133,
-            "column": 4,
-            "index": 4643
+            "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
+            "line": 73,
+            "column": 15,
+            "index": 2029
           },
           {
             "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
@@ -46648,11 +46734,11 @@
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
             "line": 50,
             "column": 8,
-            "index": 1335
+            "index": 569
           },
           {
-            "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
-            "line": 69,
+            "filePath": "src/components/InfoPopover/index.jsx",
+            "line": 27,
             "column": 8,
             "index": 1924
           },
@@ -46695,16 +46781,10 @@
             "index": 4206
           },
           {
-            "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
-            "line": 301,
-            "column": 12,
-            "index": 10112
-          },
-          {
-            "filePath": "src/library-authoring/list-libraries/LibraryListPage.jsx",
-            "line": 172,
-            "column": 18,
-            "index": 5763
+            "filePath": "src/containers/ListView/ListViewBreadcrumb.jsx",
+            "line": 25,
+            "column": 6,
+            "index": 854
           }
         ],
         "SelectableBox.Set": [
@@ -46795,17 +46875,13 @@
             "index": 414
           },
           {
-            "filePath": "src/library-authoring/configure-library/LibraryConfigurePage.jsx",
-            "line": 199,
-            "column": 16,
-            "index": 4974
-          },
-          {
-            "filePath": "src/library-authoring/course-import/CourseImportPage.jsx",
-            "line": 389,
-            "column": 18,
-            "index": 13006
-          },
+            "filePath": "src/containers/ListView/SubmissionsTable.jsx",
+            "line": 123,
+            "column": 10,
+            "index": 3771
+          }
+        ],
+        "StatefulButton": [
           {
             "filePath": "src/components/FilePreview/BaseRenderers/PDFRenderer.jsx",
             "line": 60,
@@ -47400,9 +47476,22 @@
           {
             "filePath": "src/components/FilePreview/Banners/ErrorBanner.jsx",
             "line": 21,
-            "column": 6,
-            "index": 679
-          },
+            "column": 8,
+            "index": 724
+          }
+        ]
+      }
+    },
+    {
+      "version": "23.12.2",
+      "name": "@edx/frontend-app-profile",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/openedx/frontend-app-profile.git"
+      },
+      "folderName": "frontend-app-profile",
+      "usages": {
+        "Alert": [
           {
             "filePath": "src/containers/DemoWarning/index.jsx",
             "line": 23,
@@ -52991,277 +53080,208 @@
             "column": 14,
             "index": 2277
           }
-        ],
+        ]
+      }
+    },
+    {
+      "version": "23.4.2",
+      "name": "@edx/frontend-app-support",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/openedx/frontend-app-support-tools.git"
+      },
+      "folderName": "frontend-app-support-tools",
+      "usages": {
         "Container": [
           {
-            "filePath": "src/instructions/EntranceInstructions.jsx",
-            "line": 29,
-            "column": 6,
-            "index": 1058
+            "filePath": "src/Configuration/ConfigurationPage.jsx",
+            "line": 15,
+            "column": 4,
+            "index": 448
           },
           {
-            "filePath": "src/instructions/ErrorInstructions.jsx",
-            "line": 26,
-            "column": 6,
-            "index": 830
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomersPage.jsx",
+            "line": 86,
+            "column": 4,
+            "index": 2545
           },
           {
-            "filePath": "src/instructions/ExpiredInstructions.jsx",
-            "line": 6,
-            "column": 2,
-            "index": 180
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 65,
+            "column": 8,
+            "index": 1968
           },
           {
-            "filePath": "src/instructions/proctored_exam/download-instructions/index.jsx",
-            "line": 111,
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 82,
             "column": 6,
             "index": 3713
           },
           {
-            "filePath": "src/instructions/proctored_exam/OnboardingErrorExamInstructions.jsx",
-            "line": 74,
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 87,
             "column": 6,
-            "index": 2659
+            "index": 2767
           },
           {
-            "filePath": "src/instructions/proctored_exam/prerequisites-instructions/index.jsx",
-            "line": 37,
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 90,
             "column": 6,
-            "index": 1267
+            "index": 2853
           },
           {
-            "filePath": "src/instructions/proctored_exam/ReadyToStartProctoredExamInstructions.jsx",
-            "line": 32,
-            "column": 6,
-            "index": 1042
+            "filePath": "src/Configuration/Provisioning/ErrorPage/ErrorPageContainer.jsx",
+            "line": 27,
+            "column": 4,
+            "index": 973
           },
           {
-            "filePath": "src/instructions/proctored_exam/SkipProctoredExamInstruction.jsx",
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormContainer.jsx",
             "line": 15,
             "column": 6,
-            "index": 437
+            "index": 446
           },
           {
-            "filePath": "src/instructions/RejectedInstructions.jsx",
-            "line": 26,
-            "column": 6,
-            "index": 848
-          },
-          {
-            "filePath": "src/instructions/SubmitInstructions.jsx",
-            "line": 34,
-            "column": 6,
-            "index": 1165
-          },
-          {
-            "filePath": "src/instructions/SubmittedInstructions.jsx",
-            "line": 29,
-            "column": 6,
-            "index": 999
-          },
-          {
-            "filePath": "src/instructions/VerifiedInstructions.jsx",
-            "line": 25,
-            "column": 6,
-            "index": 784
-          }
-        ],
-        "MailtoLink": [
-          {
-            "filePath": "src/instructions/onboarding_exam/EntranceOnboardingExamInstructions.jsx",
-            "line": 68,
-            "column": 10,
-            "index": 2446
-          },
-          {
-            "filePath": "src/instructions/onboarding_exam/EntranceOnboardingExamInstructions.jsx",
-            "line": 83,
-            "column": 10,
-            "index": 3022
-          },
-          {
-            "filePath": "src/instructions/onboarding_exam/RejectedOnboardingExamInstructions.jsx",
-            "line": 29,
-            "column": 10,
-            "index": 1041
-          },
-          {
-            "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
-            "line": 42,
-            "column": 8,
-            "index": 1571
-          },
-          {
-            "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
-            "line": 83,
-            "column": 8,
-            "index": 3076
-          },
-          {
-            "filePath": "src/instructions/onboarding_exam/VerifiedOnboardingExamInstructions.jsx",
-            "line": 33,
-            "column": 8,
-            "index": 1099
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/ErrorProctoredExamInstructions.jsx",
-            "line": 23,
-            "column": 33,
-            "index": 976
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/OnboardingErrorExamInstructions.jsx",
-            "line": 90,
-            "column": 12,
-            "index": 3404
-          }
-        ],
-        "Button": [
-          {
-            "filePath": "src/instructions/onboarding_exam/EntranceOnboardingExamInstructions.jsx",
-            "line": 93,
-            "column": 8,
-            "index": 3349
-          },
-          {
-            "filePath": "src/instructions/onboarding_exam/ErrorOnboardingExamInstructions.jsx",
-            "line": 26,
-            "column": 6,
-            "index": 832
-          },
-          {
-            "filePath": "src/instructions/onboarding_exam/RejectedOnboardingExamInstructions.jsx",
-            "line": 38,
-            "column": 6,
-            "index": 1397
-          },
-          {
-            "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
-            "line": 60,
-            "column": 8,
-            "index": 2315
-          },
-          {
-            "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
-            "line": 67,
-            "column": 6,
-            "index": 2580
-          },
-          {
-            "filePath": "src/instructions/practice_exam/EntrancePracticeExamInstructions.jsx",
-            "line": 27,
-            "column": 8,
-            "index": 890
-          },
-          {
-            "filePath": "src/instructions/practice_exam/ErrorPracticeExamInstructions.jsx",
-            "line": 38,
-            "column": 6,
-            "index": 1289
-          },
-          {
-            "filePath": "src/instructions/practice_exam/SubmittedPracticeExamInstructions.jsx",
-            "line": 35,
-            "column": 8,
-            "index": 1230
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/download-instructions/DownloadButtons.jsx",
-            "line": 11,
-            "column": 6,
-            "index": 306
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/download-instructions/DownloadButtons.jsx",
-            "line": 23,
-            "column": 4,
-            "index": 725
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/EntranceProctoredExamInstructions.jsx",
-            "line": 58,
-            "column": 8,
-            "index": 2116
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/Footer.jsx",
-            "line": 12,
-            "column": 8,
-            "index": 340
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/ReadyToStartProctoredExamInstructions.jsx",
-            "line": 86,
-            "column": 10,
-            "index": 3166
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/ReadyToStartProctoredExamInstructions.jsx",
-            "line": 119,
-            "column": 8,
-            "index": 4294
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/SkipProctoredExamButton.jsx",
-            "line": 8,
-            "column": 4,
-            "index": 236
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/SkipProctoredExamInstruction.jsx",
-            "line": 30,
-            "column": 10,
-            "index": 1100
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/SkipProctoredExamInstruction.jsx",
-            "line": 41,
-            "column": 10,
-            "index": 1509
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/SubmitProctoredExamInstructions.jsx",
-            "line": 61,
-            "column": 6,
-            "index": 2271
-          },
-          {
-            "filePath": "src/instructions/proctored_exam/WarningModal.jsx",
-            "line": 25,
-            "column": 8,
-            "index": 541
-          },
-          {
-            "filePath": "src/instructions/SubmitInstructions.jsx",
-            "line": 39,
-            "column": 10,
-            "index": 1372
-          },
-          {
-            "filePath": "src/instructions/timed_exam/StartTimedExamInstructions.jsx",
-            "line": 39,
-            "column": 6,
-            "index": 1400
-          },
-          {
-            "filePath": "src/instructions/timed_exam/SubmitTimedExamInstructions.jsx",
-            "line": 31,
-            "column": 6,
-            "index": 981
-          },
-          {
-            "filePath": "src/timer/ExamTimerBlock.jsx",
-            "line": 119,
-            "column": 14,
-            "index": 4240
-          }
-        ],
-        "useToggle": [
-          {
-            "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
+            "filePath": "src/Configuration/Provisioning/ProvisioningPage.jsx",
             "line": 9,
-            "column": 31,
-            "index": 338
+            "column": 4,
+            "index": 212
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/SubsidyDetailViewContainer.jsx",
+            "line": 13,
+            "column": 6,
+            "index": 495
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyEditView/SubsidyEditViewContainer.jsx",
+            "line": 18,
+            "column": 6,
+            "index": 548
+          }
+        ],
+        "Stack": [
+          {
+            "filePath": "src/Configuration/ConfigurationPage.jsx",
+            "line": 17,
+            "column": 6,
+            "index": 531
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetailSubComponent.jsx",
+            "line": 31,
+            "column": 2,
+            "index": 911
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 47,
+            "column": 8,
+            "index": 1513
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 83,
+            "column": 8,
+            "index": 2599
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewContainer.jsx",
+            "line": 91,
+            "column": 8,
+            "index": 2895
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/EnterpriseCustomerUserDetail.jsx",
+            "line": 72,
+            "column": 4,
+            "index": 1909
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/LearnerCreditPlanCard.jsx",
+            "line": 48,
+            "column": 8,
+            "index": 1455
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/SubscriptionPlanCard.jsx",
+            "line": 45,
+            "column": 8,
+            "index": 1431
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormDefineCustomCatalogHeader.jsx",
+            "line": 33,
+            "column": 10,
+            "index": 1153
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/ProvisioningFormTerm.jsx",
+            "line": 59,
+            "column": 6,
+            "index": 1795
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/PolicyDetailView/PolicyContainer.jsx",
+            "line": 13,
+            "column": 4,
+            "index": 605
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/TermDetail.jsx",
+            "line": 16,
+            "column": 8,
+            "index": 443
+          }
+        ],
+        "Hyperlink": [
+          {
+            "filePath": "src/Configuration/ConfigurationPage.jsx",
+            "line": 19,
+            "column": 10,
+            "index": 602
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 21,
+            "column": 8,
+            "index": 619
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 34,
+            "column": 8,
+            "index": 975
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerCard.jsx",
+            "line": 47,
+            "column": 10,
+            "index": 1701
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/CustomerViewCard.jsx",
+            "line": 22,
+            "column": 10,
+            "index": 563
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/EnterpriseCustomerUserDetail.jsx",
+            "line": 17,
+            "column": 8,
+            "index": 578
+          },
+          {
+            "filePath": "src/Configuration/Customers/CustomerDetailView/EnterpriseCustomerUserDetail.jsx",
+            "line": 50,
+            "column": 6,
+            "index": 1358
+          },
+          {
+            "filePath": "src/Configuration/Provisioning/DashboardDataTable/DashboardTableLinks.jsx",
+            "line": 12,
+            "column": 6,
+            "index": 545
           },
           {
             "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.test.jsx",
@@ -53294,128 +53314,46 @@
             "index": 567
           },
           {
-            "filePath": "src/timer/ExamTimerBlock.jsx",
+            "filePath": "src/Configuration/Provisioning/ProvisioningForm/CustomCatalog/ProvisioningFormDefineCustomCatalogHeader.jsx",
             "line": 23,
-            "column": 43,
-            "index": 799
-          }
-        ],
-        "Check": [
-          {
-            "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
-            "line": 14,
-            "column": 16,
-            "index": 397
-          }
-        ],
-        "Form.Group": [
-          {
-            "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
-            "line": 29,
-            "column": 4,
-            "index": 674
-          }
-        ],
-        "Form.Label": [
-          {
-            "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
-            "line": 30,
-            "column": 6,
-            "index": 693
-          }
-        ],
-        "Form.Control": [
-          {
-            "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
-            "line": 36,
-            "column": 6,
-            "index": 981
-          }
-        ],
-        "StatefulButton": [
-          {
-            "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
-            "line": 41,
-            "column": 10,
-            "index": 1095
-          }
-        ],
-        "ModalDialog": [
-          {
-            "filePath": "src/instructions/proctored_exam/WarningModal.jsx",
-            "line": 8,
-            "column": 2,
-            "index": 201
-          }
-        ],
-        "ModalDialog.Header": [
-          {
-            "filePath": "src/instructions/proctored_exam/WarningModal.jsx",
-            "line": 15,
-            "column": 4,
-            "index": 314
-          }
-        ],
-        "ModalDialog.Title": [
-          {
-            "filePath": "src/instructions/proctored_exam/WarningModal.jsx",
-            "line": 16,
-            "column": 6,
-            "index": 341
-          }
-        ],
-        "ModalDialog.Body": [
-          {
-            "filePath": "src/instructions/proctored_exam/WarningModal.jsx",
-            "line": 20,
-            "column": 4,
-            "index": 434
-          }
-        ],
-        "ModalDialog.Footer": [
-          {
-            "filePath": "src/instructions/proctored_exam/WarningModal.jsx",
-            "line": 23,
-            "column": 4,
-            "index": 494
-          }
-        ],
-        "ActionRow": [
-          {
-            "filePath": "src/instructions/proctored_exam/WarningModal.jsx",
-            "line": 24,
-            "column": 6,
-            "index": 521
-          }
-        ],
-        "VisibilityOff": [
-          {
-            "filePath": "src/timer/CountDownTimer.jsx",
-            "line": 51,
-            "column": 48,
-            "index": 1879
-          }
-        ],
-        "Visibility": [
-          {
-            "filePath": "src/timer/CountDownTimer.jsx",
-            "line": 52,
-            "column": 48,
-            "index": 1965
-          }
-        ],
-        "Alert.Link": [
-          {
-            "filePath": "src/timer/ExamTimerBlock.jsx",
-            "line": 74,
-            "column": 18,
-            "index": 2541
+            "column": 8,
+            "index": 766
           },
           {
-            "filePath": "src/timer/ExamTimerBlock.jsx",
-            "line": 92,
-            "column": 20,
-            "index": 3260
+            "filePath": "src/Configuration/Provisioning/SubsidyDetailView/PolicyDetailView/CustomCatalogDetail.jsx",
+            "line": 18,
+            "column": 10,
+            "index": 652
+          },
+          {
+            "filePath": "src/ProgramEnrollments/ProgramInspector/EnrollmentDetails.jsx",
+            "line": 38,
+            "column": 18,
+            "index": 1250
+          },
+          {
+            "filePath": "src/users/CopyShowHyperLinks.jsx",
+            "line": 10,
+            "column": 6,
+            "index": 257
+          },
+          {
+            "filePath": "src/users/CopyShowHyperLinks.jsx",
+            "line": 24,
+            "column": 6,
+            "index": 651
+          },
+          {
+            "filePath": "src/users/entitlements/Entitlements.jsx",
+            "line": 67,
+            "column": 8,
+            "index": 2602
+          },
+          {
+            "filePath": "src/users/LearnerCredentials.jsx",
+            "line": 113,
+            "column": 14,
+            "index": 3029
           },
           {
             "filePath": "src/timer/ExamTimerBlock.jsx",
@@ -53437,24 +53375,16 @@
       "usages": {
         "Container": [
           {
-            "filePath": "src/react/ErrorPage.jsx",
-            "line": 39,
+            "filePath": "src/users/VerifiedName.jsx",
+            "line": 149,
             "column": 6,
-            "index": 818
+            "index": 4428
           }
         ],
-        "Row": [
+        "Icon": [
           {
-            "filePath": "src/react/ErrorPage.jsx",
-            "line": 40,
-            "column": 8,
-            "index": 939
-          }
-        ],
-        "Col": [
-          {
-            "filePath": "src/react/ErrorPage.jsx",
-            "line": 41,
+            "filePath": "src/Configuration/Customers/CustomerDataTable/CustomerDetails.jsx",
+            "line": 49,
             "column": 10,
             "index": 955
           }
