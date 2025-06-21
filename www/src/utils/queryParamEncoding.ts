@@ -1,88 +1,60 @@
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string';
-import { type ThemeSetting } from '../types/types';
+import { type ThemeConfig } from '../types/types';
 
 export interface ThemeState {
-  themes: ThemeSetting[];
+  themes: ThemeConfig[];
   activeIndex: number;
 }
 
-interface ShortThemeSetting {
+interface ShortThemeConfig {
   n: string; // name
   u: string[]; // urls
 }
 
 interface ShortThemeState {
-  t: ShortThemeSetting[]; // themes
+  t: ShortThemeConfig[]; // themes
   i: number; // activeIndex
-}
-
-/**
- * Converts a ThemeState object to its shorthand representation for compression.
- */
-function toShortThemeState(fullState: ThemeState): ShortThemeState {
-  const shortThemes: ShortThemeSetting[] = fullState.themes.map(theme => ({
-    n: theme.name,
-    u: theme.urls,
-  }));
-
-  return {
-    t: shortThemes,
-    i: fullState.activeIndex,
-  };
-}
-
-/**
- * Converts a shorthand ThemeState object back to its full representation.
- */
-function fromShortThemeState(shortState: ShortThemeState): ThemeState {
-  const fullThemes: ThemeSetting[] = (shortState.t || []).map(shortTheme => ({
-    name: shortTheme.n,
-    urls: shortTheme.u || [],
-  }));
-
-  return {
-    themes: fullThemes,
-    activeIndex: shortState.i || 0,
-  };
 }
 
 /**
  * Encodes theme state (themes array + active index) as a highly compressed string for use in a query param.
  * Uses shorthand keys and LZ-String compression.
  */
-export function encodeThemesToQueryParam(themes: ThemeSetting[], activeIndex: number): string {
+export function encodeThemesToQueryParam(themes: ThemeConfig[], activeIndex: number): string {
   const fullState: ThemeState = { themes, activeIndex };
-  const shortState = toShortThemeState(fullState);
-  const json = JSON.stringify(shortState);
-  return compressToEncodedURIComponent(json);
+  const shortThemes: ShortThemeConfig[] = fullState.themes.map(theme => ({
+    n: theme.name,
+    u: theme.urls,
+  }));
+  const shortState: ShortThemeState = {
+    t: shortThemes,
+    i: fullState.activeIndex,
+  };
+  return compressToEncodedURIComponent(JSON.stringify(shortState));
 }
 
 /**
  * Decodes a compressed query param value into theme state (themes array + active index).
  * Handles LZ-String decompression and shorthand key expansion.
  */
-export function decodeThemesFromQueryParam(param: string): ThemeState {
+export function decodeThemesFromQueryParam(encoded: string): ThemeState {
   try {
-    const json = decompressFromEncodedURIComponent(param);
-    if (json === null || json === '') {
-      throw new Error('Failed to decompress parameter or empty result.');
-    }
+    const decompressed = decompressFromEncodedURIComponent(encoded);
+    if (!decompressed) { return { themes: [], activeIndex: 0 }; }
 
-    const parsed: unknown = JSON.parse(json);
+    const shortState: ShortThemeState = JSON.parse(decompressed);
+    const fullThemes: ThemeConfig[] = (shortState.t || []).map(shortTheme => ({
+      name: shortTheme.n,
+      urls: shortTheme.u,
+    }));
 
-    // Check if it matches the shorthand format
-    if (typeof parsed === 'object' && parsed !== null && 't' in parsed && 'i' in parsed) {
-      return fromShortThemeState(parsed as ShortThemeState);
-    }
-
-    // If none of the above, it's an unrecognized or invalid format after decompression/parsing
-    throw new Error('Unrecognized theme state format after decompression.');
+    return {
+      themes: fullThemes,
+      activeIndex: shortState.i || 0,
+    };
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Error decoding theme query param:', error);
-    return {
-      themes: [],
-      activeIndex: 0,
-    };
+    return { themes: [], activeIndex: 0 };
   }
 }

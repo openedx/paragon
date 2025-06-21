@@ -51,7 +51,6 @@ export interface Theme {
   urls?: string[];
 }
 
-export interface ThemeSetting {
-  name: string;
-  urls: string[];
-}
+// Utility types for when URLs are required
+export type ThemeWithUrls = Theme & { urls: string[] };
+export type ThemeConfig = Required<Theme>;

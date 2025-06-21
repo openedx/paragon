@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { type ContainerSize } from '~paragon-react';
 import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
 import { decodeThemesFromQueryParam } from '../utils/queryParamEncoding';
-import { type ThemeSetting } from '../types/types';
+import { type ThemeConfig } from '../types/types';
 
 export interface Settings {
   direction?: string;
   language?: string;
   containerWidth?: ContainerSize;
-  themes?: ThemeSetting[];
+  themes?: ThemeConfig[];
   activeThemeIndex?: number;
 }
 

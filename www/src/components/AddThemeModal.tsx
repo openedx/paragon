@@ -5,7 +5,8 @@ import {
   StandardModal,
 } from '~paragon-react';
 import CustomThemesForm, { CustomThemesFormRef } from './CustomThemesForm';
-import { type Theme } from '../types/types';
+import { type Theme, type ThemeConfig } from '../types/types';
+import { createThemeConfig } from '../utils/themeUtils';
 import { ThemeFormProvider } from '../context/ThemeFormContext';
 
 interface AddThemeModalProps {
@@ -14,7 +15,7 @@ interface AddThemeModalProps {
   onSave: () => void;
   existingThemes: Theme[];
   formRef: React.RefObject<CustomThemesFormRef>;
-  onSaveTheme: (theme: { name: string; urls: string[] }) => void;
+  onSaveTheme: (theme: ThemeConfig) => void;
 }
 
 const AddThemeModal: React.FC<AddThemeModalProps> = ({
@@ -48,10 +49,7 @@ const AddThemeModal: React.FC<AddThemeModalProps> = ({
     isOverflowVisible={false}
   >
     <ThemeFormProvider
-      existingThemes={existingThemes.map(theme => ({
-        name: theme.name,
-        urls: theme.urls || [],
-      }))}
+      existingThemes={existingThemes.map(createThemeConfig)}
       onSaveTheme={onSaveTheme}
     >
       <CustomThemesForm

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { SettingsContext } from '../context/SettingsContext';
-import { type ThemeSetting } from '../types/types';
+import { type ThemeConfig } from '../types/types';
 
 export const useThemeContext = () => {
   const context = useContext(SettingsContext);
@@ -36,8 +36,8 @@ export const useThemeContext = () => {
     hasCustomThemes,
 
     // Actions
-    addTheme: addTheme as (theme: ThemeSetting) => void,
-    updateTheme: updateTheme as (index: number, theme: ThemeSetting) => void,
+    addTheme: addTheme as (theme: ThemeConfig) => void,
+    updateTheme: updateTheme as (index: number, theme: ThemeConfig) => void,
     removeTheme: removeTheme as (index: number) => void,
     resetThemes: resetThemes as () => void,
     setCurrentTheme,

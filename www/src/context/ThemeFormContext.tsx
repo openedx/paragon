@@ -1,9 +1,9 @@
 import React, { createContext, useContext, ReactNode } from 'react';
-import { type Theme, type ThemeSetting } from '../types/types';
+import { type Theme, type ThemeConfig } from '../types/types';
 
 interface ThemeFormContextValue {
   existingThemes: Theme[];
-  onSaveTheme: (theme: ThemeSetting) => void;
+  onSaveTheme: (theme: ThemeConfig) => void;
 }
 
 const ThemeFormContext = createContext<ThemeFormContextValue | null>(null);
@@ -11,7 +11,7 @@ const ThemeFormContext = createContext<ThemeFormContextValue | null>(null);
 interface ThemeFormProviderProps {
   children: ReactNode;
   existingThemes: Theme[];
-  onSaveTheme: (theme: ThemeSetting) => void;
+  onSaveTheme: (theme: ThemeConfig) => void;
 }
 
 export const ThemeFormProvider: React.FC<ThemeFormProviderProps> = ({

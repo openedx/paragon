@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { encodeThemesToQueryParam } from '../utils/queryParamEncoding';
-import { type ThemeSetting } from '../types/types';
+import { type ThemeConfig } from '../types/types';
 import { UpdateSettingsFunction } from './useSettings';
 
 /**
@@ -11,7 +11,7 @@ export const useCustomThemes = (
   settings: any,
   updateSettings: UpdateSettingsFunction,
 ) => {
-  const injectThemeCSS = (themes: ThemeSetting[], activeIndex: number) => {
+  const injectThemeCSS = (themes: ThemeConfig[], activeIndex: number) => {
     // Remove any previous custom CSS
     document.querySelectorAll('link[data-custom-theme]').forEach(el => el.remove());
 
@@ -27,7 +27,7 @@ export const useCustomThemes = (
     }
   };
 
-  const updateURLParams = (themes: ThemeSetting[], activeIndex: number) => {
+  const updateURLParams = (themes: ThemeConfig[], activeIndex: number) => {
     const url = new URL(window.location.href);
 
     // Only set URL params if we have custom themes (more than just the default theme)
@@ -45,7 +45,7 @@ export const useCustomThemes = (
   };
 
   const handleThemesChange = (key: string, value: any) => {
-    let themesArr: ThemeSetting[] = settings.themes || [];
+    let themesArr: ThemeConfig[] = settings.themes || [];
     let activeIdx = settings.activeThemeIndex || 0;
 
     if (key === 'themes') {
@@ -72,7 +72,7 @@ export const useCustomThemes = (
     });
   };
 
-  const addTheme = (theme: ThemeSetting) => {
+  const addTheme = (theme: ThemeConfig) => {
     const currentThemes = settings.themes || [];
     const themesArr = [...currentThemes, theme];
     const activeIdx = themesArr.length - 1;
@@ -86,7 +86,7 @@ export const useCustomThemes = (
     });
   };
 
-  const updateTheme = (index: number, theme: ThemeSetting) => {
+  const updateTheme = (index: number, theme: ThemeConfig) => {
     const currentThemes = settings.themes || [];
     if (index >= 0 && index < currentThemes.length) {
       const newThemes = [...currentThemes];

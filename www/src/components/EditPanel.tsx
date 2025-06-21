@@ -6,6 +6,7 @@ import {
 } from '~paragon-react';
 import { Plus } from '~paragon-icons';
 import { type Theme } from '../types/types';
+import { isCustomTheme } from '../utils/themeUtils';
 
 interface EditPanelProps {
   themes: Theme[];
@@ -38,7 +39,7 @@ const EditPanel: React.FC<EditPanelProps> = ({
       ref={radioRefs}
     >
       {themes.map((theme, index) => {
-        const isCustomTheme = theme.urls && theme.urls.length > 0;
+        const isCustom = isCustomTheme(theme);
         return (
           <div key={theme.name}>
             <Form.Radio
@@ -49,7 +50,7 @@ const EditPanel: React.FC<EditPanelProps> = ({
             >
               <Stack gap={1}>
                 <span>{theme.name}</span>
-                {isCustomTheme && (
+                {isCustom && (
                   <div>
                     <Button
                       variant="link"

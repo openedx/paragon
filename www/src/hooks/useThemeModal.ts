@@ -1,16 +1,11 @@
 import { useState, useRef } from 'react';
 import { useToggle } from '~paragon-react';
-import { type Theme } from '../types/types';
+import { type Theme, type ThemeConfig } from '../types/types';
 import { CustomThemesFormRef } from '../components/CustomThemesForm';
 
-interface ThemeData {
-  name: string;
-  urls: string[];
-}
-
 export const useThemeModal = (
-  addTheme: (theme: ThemeData) => void,
-  updateTheme: (index: number, theme: ThemeData) => void,
+  addTheme: (theme: ThemeConfig) => void,
+  updateTheme: (index: number, theme: ThemeConfig) => void,
   removeTheme: (index: number) => void,
   onAddModalClose?: () => void,
   onAddThemeSave?: () => void,
@@ -75,7 +70,7 @@ export const useThemeModal = (
     openAddModal();
   };
 
-  const handleAddTheme = (theme: ThemeData) => {
+  const handleAddTheme = (theme: ThemeConfig) => {
     addTheme(theme);
     closeAddModal();
     if (onAddThemeSave) {
@@ -85,7 +80,7 @@ export const useThemeModal = (
     }
   };
 
-  const handleEditThemeSave = (theme: ThemeData) => {
+  const handleEditThemeSave = (theme: ThemeConfig) => {
     if (editingThemeIndex !== null) {
       updateTheme(editingThemeIndex, theme);
     }

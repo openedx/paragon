@@ -5,7 +5,8 @@ import {
   StandardModal,
 } from '~paragon-react';
 import CustomThemesForm, { CustomThemesFormRef } from './CustomThemesForm';
-import { type Theme } from '../types/types';
+import { type Theme, type ThemeConfig } from '../types/types';
+import { createThemeConfig, hasUrls } from '../utils/themeUtils';
 import { ThemeFormProvider } from '../context/ThemeFormContext';
 
 interface EditThemeModalProps {
@@ -16,7 +17,7 @@ interface EditThemeModalProps {
   editingTheme: Theme;
   existingThemes: Theme[];
   formRef: React.RefObject<CustomThemesFormRef>;
-  onSaveTheme: (theme: { name: string; urls: string[] }) => void;
+  onSaveTheme: (theme: ThemeConfig) => void;
 }
 
 const EditThemeModal: React.FC<EditThemeModalProps> = ({
@@ -59,15 +60,12 @@ const EditThemeModal: React.FC<EditThemeModalProps> = ({
     isOverflowVisible={false}
   >
     <ThemeFormProvider
-      existingThemes={existingThemes.map(theme => ({
-        name: theme.name,
-        urls: theme.urls || [],
-      }))}
+      existingThemes={existingThemes.map(createThemeConfig)}
       onSaveTheme={onSaveTheme}
     >
       <CustomThemesForm
         ref={formRef}
-        initialTheme={editingTheme.urls ? { name: editingTheme.name, urls: editingTheme.urls } : null}
+        initialTheme={hasUrls(editingTheme) ? createThemeConfig(editingTheme) : null}
       />
     </ThemeFormProvider>
   </StandardModal>
