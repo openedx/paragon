@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   ActionRow,
   StandardModal,
 } from '~paragon-react';
 import CustomThemesForm, { CustomThemesFormRef } from './CustomThemesForm';
-import { type Theme, type ThemeConfig } from '../types/types';
-import { createThemeConfig } from '../utils/themeUtils';
+import { type Theme, type ThemeConfig, type ThemeFormState } from '../types/types';
+import { convertTheme } from '../utils/themeUtils';
 import { ThemeFormProvider } from '../context/ThemeFormContext';
 
 interface AddThemeModalProps {
@@ -25,39 +25,45 @@ const AddThemeModal: React.FC<AddThemeModalProps> = ({
   existingThemes,
   formRef,
   onSaveTheme,
-}) => (
-  <StandardModal
-    title="Add Custom Theme"
-    isOpen={isOpen}
-    onClose={onClose}
-    size="lg"
-    hasCloseButton={false}
-    footerNode={(
-      <ActionRow>
-        <ActionRow.Spacer />
-        <Button variant="tertiary" onClick={onClose}>
-          Cancel
-        </Button>
-        <Button
-          variant="primary"
-          onClick={onSave}
-        >
-          Save
-        </Button>
-      </ActionRow>
-      )}
-    isOverflowVisible={false}
-  >
-    <ThemeFormProvider
-      existingThemes={existingThemes.map(createThemeConfig)}
-      onSaveTheme={onSaveTheme}
+}) => {
+  const [formState, setFormState] = useState<ThemeFormState>({ isValid: false });
+
+  return (
+    <StandardModal
+      title="Add Custom Theme"
+      isOpen={isOpen}
+      onClose={onClose}
+      size="lg"
+      hasCloseButton={false}
+      footerNode={(
+        <ActionRow>
+          <ActionRow.Spacer />
+          <Button variant="tertiary" onClick={onClose}>
+            Cancel
+          </Button>
+          <Button
+            variant="primary"
+            onClick={onSave}
+            disabled={!formState.isValid}
+          >
+            Save
+          </Button>
+        </ActionRow>
+        )}
+      isOverflowVisible={false}
     >
-      <CustomThemesForm
-        ref={formRef}
-        initialTheme={null}
-      />
-    </ThemeFormProvider>
-  </StandardModal>
-);
+      <ThemeFormProvider
+        existingThemes={existingThemes.map(theme => convertTheme(theme))}
+        onSaveTheme={onSaveTheme}
+      >
+        <CustomThemesForm
+          ref={formRef}
+          initialTheme={null}
+          onFormStateChange={setFormState}
+        />
+      </ThemeFormProvider>
+    </StandardModal>
+  );
+};
 
 export default AddThemeModal;

@@ -12,16 +12,9 @@ import {
   Stack,
 } from '~paragon-react';
 import { Close, Plus } from '~paragon-icons';
-import { type Theme } from '../types/types';
+import { type Theme, type ThemeFormState } from '../types/types';
+import { generateCustomThemeName, isThemeNameAvailable, createNewTheme } from '../utils/themeUtils';
 import { useThemeForm } from '../context/ThemeFormContext';
-
-interface CustomThemesFormProps {
-  initialTheme: Theme | null;
-}
-
-export interface CustomThemesFormRef {
-  submitForm: () => void;
-}
 
 interface FormData {
   name: string;
@@ -30,41 +23,33 @@ interface FormData {
 
 function isValidCssUrl(url: string) {
   try {
-    const u = new URL(url);
-    return u.protocol.startsWith('http') && u.pathname.endsWith('.css');
+    const urlObj = new URL(url);
+    return urlObj.protocol.startsWith('http') && url.endsWith('.css');
   } catch {
     return false;
   }
 }
 
-/**
- * Generates the next available "Custom" theme name
- * @param existingThemes - Array of existing themes to check against
- * @returns The next available custom theme name
- */
-function getNextCustomName(existingThemes?: Theme[]) {
-  if (!existingThemes) { return 'Custom'; }
+export interface CustomThemesFormRef {
+  submitForm: () => void;
+}
 
-  const customThemeCount = existingThemes
-    .map(theme => theme.name)
-    .filter(name => name.startsWith('Custom'))
-    .length;
-
-  return customThemeCount === 0 ? 'Custom' : `Custom ${customThemeCount + 1}`;
+interface CustomThemesFormProps {
+  initialTheme: Theme | null;
+  onFormStateChange?: (state: ThemeFormState) => void;
 }
 
 const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
-  ({ initialTheme }, ref) => {
+  ({ initialTheme, onFormStateChange }, ref) => {
     const { existingThemes, onSaveTheme } = useThemeForm();
 
     const {
       register,
       handleSubmit,
       control,
-      formState: { errors },
+      formState: { errors, isValid: formIsValid },
       trigger,
       getValues,
-      watch,
       clearErrors,
     } = useForm<FormData>({
       defaultValues: {
@@ -85,9 +70,10 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
     const urlInputRefs = useRef<(HTMLInputElement | null)[]>([]);
     const prevUrlsLength = useRef(fields.length);
 
-    // Watch URL values to check for blank inputs
-    const watchedUrls = watch('urls');
-    const hasBlankUrl = watchedUrls?.some(urlObj => !urlObj.url || urlObj.url.trim() === '');
+    // Notify parent of form validation state changes
+    useEffect(() => {
+      onFormStateChange?.({ isValid: formIsValid });
+    }, [formIsValid, onFormStateChange]);
 
     useEffect(() => {
       if (fields.length > prevUrlsLength.current) {
@@ -98,12 +84,10 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
 
     const onSubmit = (data: FormData) => {
       const trimmedName = data.name.trim();
-      const themeName = trimmedName || getNextCustomName(existingThemes);
+      const urls = data.urls.map(u => u.url.trim()).filter(url => url.length > 0);
 
-      onSaveTheme({
-        name: themeName,
-        urls: data.urls.map(u => u.url.trim()).filter(url => url.length > 0),
-      });
+      const themeConfig = createNewTheme(existingThemes, trimmedName || undefined, urls);
+      onSaveTheme(themeConfig);
     };
 
     const submitForm = async () => {
@@ -139,7 +123,7 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
           <Form.Label>Theme Name</Form.Label>
           <Form.Control
             size="sm"
-            placeholder={getNextCustomName(existingThemes)}
+            placeholder={generateCustomThemeName(existingThemes)}
             {...register('name', {
               validate: (value) => {
                 if (!value || value.trim().length === 0) {
@@ -148,16 +132,8 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
 
                 const trimmedName = value.trim();
 
-                // Check if name already exists (excluding current theme being edited)
-                const existingNames = existingThemes?.map(theme => theme.name) || [];
-                const currentThemeName = initialTheme?.name;
-
-                // If editing, exclude the current theme name from the check
-                const namesToCheck = currentThemeName
-                  ? existingNames.filter(name => name !== currentThemeName)
-                  : existingNames;
-
-                if (namesToCheck.includes(trimmedName)) {
+                // Check if name is available (excluding current theme being edited)
+                if (!isThemeNameAvailable(trimmedName, existingThemes, initialTheme)) {
                   return 'Theme name must be unique.';
                 }
 
@@ -235,9 +211,9 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
           size="sm"
           onClick={handleAddUrl}
           iconBefore={Plus}
-          disabled={hasBlankUrl}
+          block
         >
-          Add another URL
+          Add URL
         </Button>
       </Form>
     );
@@ -245,5 +221,10 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
 );
 
 CustomThemesForm.displayName = 'CustomThemesForm';
+
+// Add defaultProps for optional props
+CustomThemesForm.defaultProps = {
+  onFormStateChange: undefined,
+};
 
 export default CustomThemesForm;
