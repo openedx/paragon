@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   Button,
   Stack,
@@ -32,6 +32,36 @@ export default function ThemeSelector() {
 
   const currentTheme = useCurrentTheme();
 
+  const addButtonRef = useRef<HTMLButtonElement>(null);
+
+  const handleResetComplete = () => {
+    if (addButtonRef.current) {
+      addButtonRef.current.focus();
+    }
+  };
+
+  const handleAddModalClose = () => {
+    if (addButtonRef.current) {
+      addButtonRef.current.focus();
+    }
+  };
+
+  const {
+    isEditMode,
+    toggleEditMode,
+    editButtonRef,
+    closeButtonRef,
+    radioRefs,
+    handleTransitionEnd,
+  } = useEditMode(currentThemeIndex);
+
+  const handleAddThemeSave = () => {
+    const newThemeIndex = themes.length;
+    if (radioRefs.current && radioRefs.current[newThemeIndex]) {
+      radioRefs.current[newThemeIndex].focus();
+    }
+  };
+
   const {
     showAddModal,
     showEditModal,
@@ -54,6 +84,8 @@ export default function ThemeSelector() {
     addTheme,
     updateTheme,
     removeTheme,
+    handleAddModalClose,
+    handleAddThemeSave,
   );
 
   const {
@@ -61,22 +93,13 @@ export default function ThemeSelector() {
     openResetConfirm,
     closeResetConfirm,
     handleResetConfirm,
-  } = useResetModal(resetThemes);
+  } = useResetModal(resetThemes, handleResetComplete);
 
   const handleThemeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     const themeIndex = parseInt(value, 10);
     setCurrentTheme(themeIndex);
   };
-
-  const {
-    isEditMode,
-    toggleEditMode,
-    editButtonRef,
-    closeButtonRef,
-    radioRefs,
-    handleTransitionEnd,
-  } = useEditMode(currentThemeIndex);
 
   return (
     <div>
@@ -109,6 +132,7 @@ export default function ThemeSelector() {
               onResetClick={openResetConfirm}
               onAddClick={handleAddClick}
               radioRefs={radioRefs}
+              addButtonRef={addButtonRef}
             />
           </div>
         ) : (

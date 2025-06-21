@@ -12,6 +12,8 @@ export const useThemeModal = (
   addTheme: (theme: ThemeData) => void,
   updateTheme: (index: number, theme: ThemeData) => void,
   removeTheme: (index: number) => void,
+  onAddModalClose?: () => void,
+  onAddThemeSave?: () => void,
 ) => {
   const [showAddModal, openAddModal, closeAddModal] = useToggle(false);
   const [showEditModal, openEditModal, closeEditModal] = useToggle(false);
@@ -23,6 +25,11 @@ export const useThemeModal = (
 
   const closeAddModalHandler = () => {
     closeAddModal();
+    if (onAddModalClose) {
+      setTimeout(() => {
+        onAddModalClose();
+      }, 0);
+    }
   };
 
   const closeEditModalHandler = () => {
@@ -70,7 +77,12 @@ export const useThemeModal = (
 
   const handleAddTheme = (theme: ThemeData) => {
     addTheme(theme);
-    closeAddModalHandler();
+    closeAddModal();
+    if (onAddThemeSave) {
+      setTimeout(() => {
+        onAddThemeSave();
+      }, 0);
+    }
   };
 
   const handleEditThemeSave = (theme: ThemeData) => {

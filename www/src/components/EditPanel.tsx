@@ -16,6 +16,7 @@ interface EditPanelProps {
   onResetClick: () => void;
   onAddClick: () => void;
   radioRefs: React.MutableRefObject<(HTMLInputElement | null)[]>;
+  addButtonRef?: React.RefObject<HTMLButtonElement>;
 }
 
 const EditPanel: React.FC<EditPanelProps> = ({
@@ -27,6 +28,7 @@ const EditPanel: React.FC<EditPanelProps> = ({
   onResetClick,
   onAddClick,
   radioRefs,
+  addButtonRef,
 }) => (
   <Stack gap={3} className="mt-2">
     <Form.RadioSet
@@ -72,6 +74,7 @@ const EditPanel: React.FC<EditPanelProps> = ({
     <Stack gap={2}>
       <div>
         <Button
+          ref={addButtonRef}
           size="sm"
           variant="outline-primary"
           onClick={onAddClick}
