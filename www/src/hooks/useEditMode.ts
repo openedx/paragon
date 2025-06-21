@@ -3,8 +3,8 @@ import { useToggle } from '~paragon-react';
 
 export const useEditMode = (activeThemeIndex: number) => {
   const [isEditMode, , , toggleEditMode] = useToggle(false);
-  const editButtonRef = useRef<HTMLButtonElement>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const editButtonRef = useRef<HTMLButtonElement | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const radioRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const handleTransitionEnd = () => {

@@ -32,7 +32,7 @@ export default function ThemeSelector() {
 
   const currentTheme = useCurrentTheme();
 
-  const addButtonRef = useRef<HTMLButtonElement>(null);
+  const addButtonRef = useRef<HTMLButtonElement | null>(null);
 
   const handleResetComplete = () => {
     if (addButtonRef.current) {
@@ -57,8 +57,9 @@ export default function ThemeSelector() {
 
   const handleAddThemeSave = () => {
     const newThemeIndex = themes.length;
-    if (radioRefs.current && radioRefs.current[newThemeIndex]) {
-      radioRefs.current[newThemeIndex].focus();
+    const radioRef = radioRefs.current?.[newThemeIndex];
+    if (radioRef) {
+      radioRef.focus();
     }
   };
 
