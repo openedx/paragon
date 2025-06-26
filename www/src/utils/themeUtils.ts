@@ -49,7 +49,7 @@ export const generateCustomThemeName = (existingThemes: Theme[] = []): string =>
 
   // Find the highest number used
   const maxNumber = customThemeNames.length > 0 ? Math.max(...customThemeNames) : 0;
-  
+
   // Return "Custom" for the first one, "Custom X" for subsequent ones
   return maxNumber === 0 ? 'Custom' : `Custom ${maxNumber + 1}`;
 };

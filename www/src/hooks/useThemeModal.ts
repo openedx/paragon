@@ -45,8 +45,8 @@ export const useThemeModal = (
     editFormRef.current?.submitForm();
   };
 
-  const handleEditTheme = (themeIndex: number, themes: Theme[]) => {
-    const themeToEdit = themes[themeIndex];
+  const handleEditTheme = (themeIndex: number, themeList: Theme[]) => {
+    const themeToEdit = themeList[themeIndex];
     if (themeToEdit) {
       setEditingTheme(themeToEdit);
       setEditingThemeIndex(themeIndex);
@@ -62,21 +62,21 @@ export const useThemeModal = (
     if (editingThemeIndex === null) {
       return;
     }
-    
+
     const currentThemes = themes || [];
     const currentActiveIndex = activeThemeIndex || 0;
-    
+
     removeTheme(editingThemeIndex);
     closeEditModalHandler();
-    
+
     if (!onRemoveTheme) {
       return;
     }
-    
+
     // Calculate the new active index after removing the theme
     const calculateNewActiveIndex = () => {
       const remainingThemesCount = currentThemes.length - 1;
-      
+
       // If we're removing the currently active theme, pick a new one
       if (currentActiveIndex === editingThemeIndex) {
         // If it was the last theme, go to the first theme (index 0)
@@ -86,16 +86,16 @@ export const useThemeModal = (
         // Otherwise, stay at the same index (the next theme will shift up to this position)
         return currentActiveIndex;
       }
-      
+
       // If the active theme comes after the removed theme, shift back by 1
       if (currentActiveIndex > editingThemeIndex) {
         return currentActiveIndex - 1;
       }
-      
+
       // Otherwise, keep the same index
       return currentActiveIndex;
     };
-    
+
     const newActiveIndex = calculateNewActiveIndex();
     onRemoveTheme(newActiveIndex);
   };

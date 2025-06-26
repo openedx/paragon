@@ -1,6 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import {
-  Button,
   Stack,
   Collapsible,
   IconButton,
@@ -11,7 +10,6 @@ import { useThemeModal } from '../hooks/useThemeModal';
 import { useResetModal } from '../hooks/useResetModal';
 import { useEditMode } from '../hooks/useEditMode';
 import { useThemeContext } from '../hooks/useThemeContext';
-import { type ThemeConfig } from '../types/types';
 import ThemeDisplay from './ThemeDisplay';
 import ThemeOptions from './ThemeOptions';
 import ResetThemesModal from './ResetThemesModal';
@@ -47,6 +45,13 @@ export default function ThemeSelector() {
     }
   };
 
+  const {
+    isEditMode,
+    toggleEditMode,
+    onOpen,
+    radioRefs,
+  } = useEditMode(currentThemeIndex);
+
   const handleRemoveThemeComplete = (newActiveIndex: number) => {
     // Focus the current active theme radio button
     // The default theme will always exist, so updatedThemes.length > 0 is guaranteed
@@ -57,13 +62,6 @@ export default function ThemeSelector() {
       }
     }, 100); // Small delay to ensure DOM is updated after theme removal
   };
-
-  const {
-    isEditMode,
-    toggleEditMode,
-    onOpen,
-    radioRefs,
-  } = useEditMode(currentThemeIndex);
 
   const handleAddThemeSave = () => {
     const newThemeIndex = themes.length;
