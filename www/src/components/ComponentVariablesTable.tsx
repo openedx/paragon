@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DataTable, Skeleton } from '~paragon-react';
-import { SettingsContext } from '../context/SettingsContext';
+import { useCurrentTheme } from '../hooks';
 
 const initialTableData = Array(5).fill({ variableName: <Skeleton />, computedValue: <Skeleton /> });
 
 function ComponentVariablesTable({ rawStylesheet }: ComponentVariablesTableProps) {
   const [tableData, setTableData] = useState<Array<TableRowData>>(initialTableData);
-  const { settings: { theme } } = useContext(SettingsContext);
+  const currentTheme = useCurrentTheme();
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,7 +27,7 @@ function ComponentVariablesTable({ rawStylesheet }: ComponentVariablesTableProps
 
       setTableData(tableRows);
     }, 1000);
-  }, [rawStylesheet, theme]);
+  }, [rawStylesheet, currentTheme.name]);
 
   return (
     <DataTable

@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "dependencies": {
     "@docsearch/react": "^3.8",
-    "@edx/elm-theme": "^1.8.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@mdx-js/mdx": "^2",
     "@mdx-js/react": "^2",
@@ -24,6 +23,7 @@
     "gatsby-transformer-react-docgen": "^8.14",
     "localforage": "^1.10.0",
     "lodash.debounce": "^4.0.8",
+    "lz-string": "^1.5.0",
     "prism-react-renderer": "^1.3.3",
     "prop-types": "^15.8.1",
     "query-string": "^8.1.0",
@@ -32,6 +32,7 @@
     "react-dom": "^18",
     "react-focus-on": "^3.6.0",
     "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.58.1",
     "react-intl": "^6.4",
     "react-live": "^2.4.1",
     "react-markdown": "^9.0.1",
@@ -45,10 +46,12 @@
   },
   "keywords": [
     "paragon",
+    "design system",
     "pattern library",
     "design",
     "react",
-    "component library"
+    "component library",
+    "design tokens"
   ],
   "license": "MIT",
   "scripts": {
