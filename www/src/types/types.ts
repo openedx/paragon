@@ -44,3 +44,59 @@ export interface IComponentUsage {
   name: string,
   componentUsageInProjects: IComponentUsageData[],
 }
+
+// Theme-related types
+export interface Theme {
+  /** The display name of the theme */
+  name: string;
+  /** Array of CSS URLs to load for this theme */
+  urls?: string[];
+  /** Optional metadata about the theme */
+  metadata?: {
+    /** Indicates if the user provided a custom name for this theme */
+    hasCustomName?: boolean;
+  };
+}
+
+/**
+ * A theme configuration with required URLs - used when themes need to be fully specified
+ * This is the primary type used throughout the application for theme management
+ */
+export type ThemeConfig = {
+  /** The display name of the theme */
+  name: string;
+  /** Array of CSS URLs to load for this theme (required) */
+  urls: string[];
+  /** Optional metadata about the theme */
+  metadata?: Theme['metadata'];
+};
+
+/**
+ * A theme that guarantees URLs are present - useful for type safety when working with
+ * themes that must have CSS resources
+ */
+export type ThemeWithUrls = Theme & { urls: string[] };
+
+/**
+ * A theme without URLs - typically the default theme
+ */
+export type ThemeWithoutUrls = Theme & { urls: undefined };
+
+/**
+ * Array of theme configurations - the standard type for theme collections
+ */
+export type ThemeConfigArray = ThemeConfig[];
+
+/**
+ * Array of themes that may or may not have URLs
+ */
+export type ThemeArray = Theme[];
+
+/**
+ * Theme form state interface for extensible state management
+ * Used by theme form components to communicate validation and state information to parent components
+ */
+export interface ThemeFormState {
+  /** Whether the theme form is currently valid */
+  isValid: boolean;
+}

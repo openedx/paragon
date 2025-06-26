@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useLocation } from '@gatsbyjs/reach-router';
 import PropTypes from 'prop-types';
 import { Link, graphql, useStaticQuery } from 'gatsby';
@@ -6,16 +6,13 @@ import classNames from 'classnames';
 import {
   Tooltip,
   OverlayTrigger,
-  Button,
   Badge,
   Collapsible,
   Hyperlink,
-  ButtonGroup,
   Image,
 } from '~paragon-react';
 import Search from './Search';
-import { SettingsContext } from '../context/SettingsContext';
-import { THEMES } from '../../theme-config';
+import ThemeSelector from './ThemeSelector';
 import {
   PLAYGROUND_EVENTS,
   sendUserAnalyticsEvent,
@@ -172,31 +169,14 @@ interface IMenuQueryComponents {
 }
 
 function Menu() {
-  const {
-    settings,
-    handleSettingsChange,
-  } = useContext(SettingsContext);
   const { pathname } = useLocation();
   const { components } = useStaticQuery(menuQuery);
   const { categories }: IMenuQueryComponents = components;
 
   return (
     <div className="pgn-doc__menu">
-      <h2 className="pgn-doc__menu-title">Theme</h2>
-      <div className="pgn-doc__menu-btn--group">
-        <ButtonGroup>
-          {THEMES.map(({ id, label }) => (
-            <Button
-              key={id}
-              variant={settings.theme === id ? 'primary' : 'outline-primary'}
-              size="sm"
-              onClick={() => handleSettingsChange('theme', id)}
-              {...settings.theme === id ? { 'data-autofocus': true } : {}}
-            >
-              {label}
-            </Button>
-          ))}
-        </ButtonGroup>
+      <div className="pgn-doc__menu-theme-selector">
+        <ThemeSelector />
       </div>
       <Search />
       <div className="pgn-doc__menu-items">

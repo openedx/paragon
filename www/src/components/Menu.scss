@@ -13,21 +13,10 @@
     color: var(--pgn-color-gray-700);
   }
 
-  .pgn-doc__menu-btn--group {
+  .pgn-doc__menu-theme-selector {
     padding-bottom: var(--pgn-spacing-spacer-base);
     border-bottom: var(--pgn-size-border-width) solid var(--pgn-color-light-400);
     margin-bottom: var(--pgn-spacing-spacer-base);
-
-    .btn-group {
-      width: 100%;
-      white-space: nowrap;
-
-      .btn {
-        width: 50%;
-        font-size: var(--pgn-typography-font-size-sm);
-        line-height: var(--pgn-typography-headings-line-height);
-      }
-    }
   }
 
   .pgn-doc__menu-component--list-category {

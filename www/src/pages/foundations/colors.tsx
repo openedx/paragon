@@ -5,8 +5,9 @@ import classNames from 'classnames';
 import { Container, DataTable } from '~paragon-react';
 import SEO from '../../components/SEO';
 import Layout from '../../components/PageLayout';
-import { SettingsContext } from '../../context/SettingsContext';
 import { CodeCell } from '../../components/TableCells';
+import { useCurrentTheme } from '../../hooks';
+import { SettingsContext } from '../../context/SettingsContext';
 
 const utilityClasses = {
   bg: (color: string, level?: number) => (level ? `bg-${color}-${level}` : `bg-${color}`),
@@ -198,6 +199,7 @@ export interface IColorsPage {
 // eslint-disable-next-line react/prop-types
 export default function ColorsPage({ data, pageContext }: IColorsPage) {
   const { settings } = useContext(SettingsContext);
+  const currentTheme = useCurrentTheme();
   const [styles, setStyles] = useState<CSSStyleDeclarationType>(null);
 
   useEffect(() => {
@@ -207,7 +209,7 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
         setStyles(newStyles);
       }
     }, 500);
-  }, [settings.theme]);
+  }, [currentTheme.name]);
 
   parseColors(data.allCssUtilityClasses.nodes); // eslint-disable-line react/prop-types
 

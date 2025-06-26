@@ -15,17 +15,8 @@ const THEMES = [
     stylesheet: 'openedx-theme',
     pathToVariables: undefined,
   },
-  {
-    id: 'elm',
-    label: 'Elm',
-    stylesheet: 'elm-theme',
-    pathToVariables: undefined,
-  },
 ];
-
-const DEFAULT_THEME = 'openedx';
 
 module.exports = {
   THEMES,
-  DEFAULT_THEME,
 };

@@ -1,21 +1,26 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import { IntlProvider } from 'react-intl';
 import { messages, type ContainerSize } from '~paragon-react';
 
-import { THEMES, DEFAULT_THEME } from '../../theme-config';
-import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
+import { useSettings } from '../hooks/useSettings';
+import { useCustomThemes } from '../hooks/useCustomThemes';
+import { useDirection } from '../hooks/useDirection';
+import { useSettingsUI } from '../hooks/useSettingsUI';
 
 export interface IDefaultValue {
   settings: {
-    theme?: string,
     direction?: string,
     language?: string,
     containerWidth?: ContainerSize,
+    themes?: any[],
+    activeThemeIndex?: number,
   },
-  theme?: string,
   handleSettingsChange: Function,
+  addTheme: Function,
+  updateTheme: Function,
+  removeTheme: Function,
+  resetThemes: Function,
   showSettings?: React.SyntheticEvent | React.ReactNode,
   closeSettings?: () => void,
   openSettings?: () => void,
@@ -24,47 +29,38 @@ export interface IDefaultValue {
 const defaultValue = {
   settings: {},
   handleSettingsChange: () => {},
+  addTheme: () => {},
+  updateTheme: () => {},
+  removeTheme: () => {},
+  resetThemes: () => {},
 };
 
 export const SettingsContext = createContext<IDefaultValue>(defaultValue);
 
 function SettingsContextProvider({ children }) {
-  // gatsby does not have access to the localStorage during the build (and first render)
-  // so sadly we cannot initialize theme with value from localStorage
-  const [settings, setSettings] = useState({
-    theme: DEFAULT_THEME,
-    direction: 'ltr',
-    language: 'en',
-    containerWidth: 'md' as ContainerSize,
-  });
-  const [showSettings, setShowSettings] = useState(false);
+  const { settings, updateSettings } = useSettings();
+  const {
+    handleThemesChange,
+    addTheme,
+    updateTheme,
+    removeTheme,
+    resetThemes,
+  } = useCustomThemes(settings, updateSettings);
+  const { handleDirectionChange } = useDirection(settings, updateSettings);
+  const { showSettings, openSettings, closeSettings } = useSettingsUI();
 
-  const handleSettingsChange = (key: string, value: string) => {
+  const handleSettingsChange = (key: string, value: any) => {
     if (key === 'direction') {
-      document.body.setAttribute('dir', value);
+      handleDirectionChange(value);
+    } else if (key === 'themes' || key === 'activeThemeIndex') {
+      handleThemesChange(key, value);
+    } else {
+      updateSettings(key, value);
     }
-    setSettings(prevState => ({ ...prevState, [key]: value }));
-    global.localStorage.setItem('pgn__settings', JSON.stringify({ ...settings, [key]: value }));
-    sendUserAnalyticsEvent(SETTINGS_EVENTS.CHANGED, { setting: key, value });
   };
 
-  const toggleSettings = (value: boolean) => {
-    const event = value
-      ? SETTINGS_EVENTS.OPENED
-      : SETTINGS_EVENTS.CLOSED;
-
-    setShowSettings(value);
-    sendUserAnalyticsEvent(event);
-  };
-
-  // this hook will be called after the first render, so we can safely access localStorage
+  // Initialize analytics if not available
   useEffect(() => {
-    const storageSettings = global.localStorage.getItem('pgn__settings');
-    const savedSettings = storageSettings ? JSON.parse(storageSettings) : null;
-    if (savedSettings) {
-      setSettings(savedSettings);
-      document.body.setAttribute('dir', savedSettings.direction);
-    }
     if (!global.analytics) {
       global.analytics = {};
       global.analytics.track = () => {};
@@ -75,29 +71,17 @@ function SettingsContextProvider({ children }) {
     settings,
     showSettings,
     handleSettingsChange,
-    closeSettings: () => toggleSettings(false),
-    openSettings: () => toggleSettings(true),
+    addTheme,
+    updateTheme,
+    removeTheme,
+    resetThemes,
+    closeSettings,
+    openSettings,
   };
 
   return (
     <SettingsContext.Provider value={contextValue}>
-      <Helmet>
-        {/* Open edX theme is the base and default theme which should always be included and active in the <head>.
-            Other themes generally inherit from it and override its values, so if they are included after the base
-            one they wil get applied to the site. This is done to avoid flickering when changing themes,
-            if you simply change href of the stylesheet there is a small window of time when the previous
-            theme gets unapplied and new one loaded which leaves whose site without styles.
-         */}
-        {THEMES.map(({ stylesheet, id }) => id !== DEFAULT_THEME && (
-          <link
-            key={id}
-            href={`/static/${stylesheet}.css`}
-            rel={`stylesheet${settings.theme === id ? '' : ' alternate'}`}
-            type="text/css"
-          />
-        ))}
-      </Helmet>
-      <IntlProvider messages={messages[settings.language]} locale={settings.language.split('-')[0]}>
+      <IntlProvider messages={messages[settings.language || 'en']} locale={settings.language?.split('-')[0] || 'en'}>
         {children}
       </IntlProvider>
     </SettingsContext.Provider>
