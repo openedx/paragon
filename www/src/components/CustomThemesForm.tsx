@@ -47,6 +47,7 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
       register,
       handleSubmit,
       control,
+      watch,
       formState: { errors, isValid: formIsValid },
       trigger,
       getValues,
@@ -66,6 +67,10 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
       control,
       name: 'urls',
     });
+
+    // Watch URL values to check for blank inputs
+    const watchedUrls = watch('urls');
+    const hasBlankUrl = watchedUrls?.some(urlField => !urlField.url?.trim());
 
     const urlInputRefs = useRef<(HTMLInputElement | null)[]>([]);
     const prevUrlsLength = useRef(fields.length);
@@ -211,7 +216,7 @@ const CustomThemesForm = forwardRef<CustomThemesFormRef, CustomThemesFormProps>(
           size="sm"
           onClick={handleAddUrl}
           iconBefore={Plus}
-          block
+          disabled={hasBlankUrl}
         >
           Add URL
         </Button>

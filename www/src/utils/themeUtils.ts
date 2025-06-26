@@ -30,23 +30,28 @@ export const convertTheme = (
 };
 
 /**
- * Gets count of auto-named themes (not all custom themes)
- * @param existingThemes - Array of existing themes
- * @returns Count of auto-named themes
- */
-export const getCustomThemeCount = (existingThemes: Theme[] = []): number => {
-  const autoNamedThemes = existingThemes.filter(theme => !theme.metadata?.hasCustomName);
-  return autoNamedThemes.length;
-};
-
-/**
- * Generates next available "Custom" theme name using metadata tracking
+ * Generates next available "Custom" theme name by finding the highest existing number
  * @param existingThemes - Array of existing themes
  * @returns Next available custom theme name
  */
 export const generateCustomThemeName = (existingThemes: Theme[] = []): string => {
-  const currentCount = getCustomThemeCount(existingThemes);
-  return currentCount === 0 ? 'Custom' : `Custom ${currentCount + 1}`;
+  // Find all existing "Custom" theme names
+  const customThemePattern = /^Custom(\s+(\d+))?$/;
+  const customThemeNames = existingThemes
+    .map(theme => theme.name)
+    .filter(name => customThemePattern.test(name))
+    .map(name => {
+      const match = name.match(customThemePattern);
+      // If it's just "Custom" (no number), treat it as number 1
+      // If it's "Custom X", use the number X
+      return match && match[2] ? parseInt(match[2], 10) : 1;
+    });
+
+  // Find the highest number used
+  const maxNumber = customThemeNames.length > 0 ? Math.max(...customThemeNames) : 0;
+  
+  // Return "Custom" for the first one, "Custom X" for subsequent ones
+  return maxNumber === 0 ? 'Custom' : `Custom ${maxNumber + 1}`;
 };
 
 /**

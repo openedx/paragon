@@ -8,7 +8,7 @@ import { Plus } from '~paragon-icons';
 import { type Theme } from '../types/types';
 import { hasUrls } from '../utils/themeUtils';
 
-interface EditPanelProps {
+interface ThemeOptionsProps {
   themes: Theme[];
   currentThemeValue: string;
   onThemeChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -20,7 +20,7 @@ interface EditPanelProps {
   addButtonRef?: React.RefObject<HTMLButtonElement>;
 }
 
-const EditPanel: React.FC<EditPanelProps> = ({
+const ThemeOptions: React.FC<ThemeOptionsProps> = ({
   themes,
   currentThemeValue,
   onThemeChange,
@@ -31,7 +31,7 @@ const EditPanel: React.FC<EditPanelProps> = ({
   radioRefs,
   addButtonRef,
 }) => (
-  <Stack gap={3} className="mt-2">
+  <Stack gap={3}>
     <Form.RadioSet
       name="theme"
       value={currentThemeValue}
@@ -101,4 +101,4 @@ const EditPanel: React.FC<EditPanelProps> = ({
   </Stack>
 );
 
-export default EditPanel;
+export default ThemeOptions;

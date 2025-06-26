@@ -1,27 +1,22 @@
-import { useRef } from 'react';
+import { useRef, useCallback } from 'react';
 import { useToggle } from '~paragon-react';
 
 export const useEditMode = (activeThemeIndex: number) => {
   const [isEditMode, , , toggleEditMode] = useToggle(false);
-  const editButtonRef = useRef<HTMLButtonElement | null>(null);
-  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const radioRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-  const handleTransitionEnd = () => {
-    if (isEditMode) {
-      const currentIndex = activeThemeIndex || 0;
+  const handleOpen = useCallback(() => {
+    // Focus management when collapsible opens
+    const currentIndex = activeThemeIndex || 0;
+    setTimeout(() => {
       radioRefs.current[currentIndex]?.focus();
-    } else {
-      editButtonRef.current?.focus();
-    }
-  };
+    }, 100); // Small delay to ensure DOM is updated
+  }, [activeThemeIndex]);
 
   return {
     isEditMode,
     toggleEditMode,
-    editButtonRef,
-    closeButtonRef,
+    onOpen: handleOpen,
     radioRefs,
-    handleTransitionEnd,
   };
 };

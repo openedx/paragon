@@ -1,18 +1,19 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import {
   Button,
   Stack,
+  Collapsible,
   IconButton,
-  TransitionReplace,
 } from '~paragon-react';
-import { Close } from '~paragon-icons';
+import { ExpandMore, ExpandLess } from '~paragon-icons';
 import { useCurrentTheme } from '../hooks/useCurrentTheme';
 import { useThemeModal } from '../hooks/useThemeModal';
 import { useResetModal } from '../hooks/useResetModal';
 import { useEditMode } from '../hooks/useEditMode';
 import { useThemeContext } from '../hooks/useThemeContext';
-import ViewPanel from './ViewPanel';
-import EditPanel from './EditPanel';
+import { type ThemeConfig } from '../types/types';
+import ThemeDisplay from './ThemeDisplay';
+import ThemeOptions from './ThemeOptions';
 import ResetThemesModal from './ResetThemesModal';
 import RemoveThemeModal from './RemoveThemeModal';
 import AddThemeModal from './AddThemeModal';
@@ -46,13 +47,22 @@ export default function ThemeSelector() {
     }
   };
 
+  const handleRemoveThemeComplete = (newActiveIndex: number) => {
+    // Focus the current active theme radio button
+    // The default theme will always exist, so updatedThemes.length > 0 is guaranteed
+    setTimeout(() => {
+      const radioRef = radioRefs.current?.[newActiveIndex];
+      if (radioRef) {
+        radioRef.focus();
+      }
+    }, 100); // Small delay to ensure DOM is updated after theme removal
+  };
+
   const {
     isEditMode,
     toggleEditMode,
-    editButtonRef,
-    closeButtonRef,
+    onOpen,
     radioRefs,
-    handleTransitionEnd,
   } = useEditMode(currentThemeIndex);
 
   const handleAddThemeSave = () => {
@@ -85,8 +95,11 @@ export default function ThemeSelector() {
     addTheme,
     updateTheme,
     removeTheme,
+    themes,
+    currentThemeIndex,
     handleAddModalClose,
     handleAddThemeSave,
+    handleRemoveThemeComplete,
   );
 
   const {
@@ -104,46 +117,46 @@ export default function ThemeSelector() {
 
   return (
     <div>
-      <Stack direction="horizontal" className="justify-content-between">
-        <span className="small">Current theme:</span>
-        {isEditMode ? (
-          <IconButton
-            ref={closeButtonRef}
-            src={Close}
-            alt="Finish editing"
-            size="sm"
-            onClick={toggleEditMode}
-            variant="secondary"
+      <Collapsible.Advanced
+        open={isEditMode}
+        onToggle={toggleEditMode}
+        onOpen={onOpen}
+      >
+        <Collapsible.Trigger>
+          <Stack direction="horizontal" className="justify-content-between align-items-center">
+            <ThemeDisplay currentTheme={currentTheme} />
+            <Collapsible.Visible whenClosed>
+              <IconButton
+                src={ExpandMore}
+                alt="Expand theme options"
+                size="sm"
+                variant="secondary"
+              />
+            </Collapsible.Visible>
+            <Collapsible.Visible whenOpen>
+              <IconButton
+                src={ExpandLess}
+                alt="Collapse theme options"
+                size="sm"
+                variant="secondary"
+              />
+            </Collapsible.Visible>
+          </Stack>
+        </Collapsible.Trigger>
+        <Collapsible.Body className="mt-4">
+          <ThemeOptions
+            themes={themes}
+            currentThemeValue={currentThemeIndex.toString()}
+            onThemeChange={handleThemeChange}
+            onEditTheme={(themeIndex) => handleEditTheme(themeIndex, themes)}
+            hasCustomThemes={hasCustomThemes}
+            onResetClick={openResetConfirm}
+            onAddClick={handleAddClick}
+            radioRefs={radioRefs}
+            addButtonRef={addButtonRef}
           />
-        ) : (
-          <Button ref={editButtonRef} size="sm" variant="link" onClick={toggleEditMode}>
-            Edit
-          </Button>
-        )}
-      </Stack>
-      <TransitionReplace onChildExited={handleTransitionEnd}>
-        {isEditMode ? (
-          <div key="edit">
-            <EditPanel
-              themes={themes}
-              currentThemeValue={currentThemeIndex.toString()}
-              onThemeChange={handleThemeChange}
-              onEditTheme={(themeIndex) => handleEditTheme(themeIndex, themes)}
-              hasCustomThemes={hasCustomThemes}
-              onResetClick={openResetConfirm}
-              onAddClick={handleAddClick}
-              radioRefs={radioRefs}
-              addButtonRef={addButtonRef}
-            />
-          </div>
-        ) : (
-          <div key="view">
-            <ViewPanel
-              currentTheme={currentTheme}
-            />
-          </div>
-        )}
-      </TransitionReplace>
+        </Collapsible.Body>
+      </Collapsible.Advanced>
       <AddThemeModal
         isOpen={showAddModal}
         onClose={closeAddModal}
