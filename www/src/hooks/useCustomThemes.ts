@@ -21,6 +21,7 @@ export const useCustomThemes = (
       themes[activeIndex].urls.forEach((url: string) => {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
+        link.type = 'text/css';
         link.href = url;
         link.setAttribute('data-custom-theme', 'true');
         document.head.appendChild(link);
