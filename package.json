@@ -39,6 +39,7 @@
     "start": "npm start --workspace=www",
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
+    "test:watch-no-coverage": "npm run test:watch -- --coverage=false",
     "generate-component": "npm start --workspace=component-generator",
     "example:start": "npm start --workspace=example",
     "example:start:with-theme": "npm run start:with-theme --workspace=example",
