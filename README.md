@@ -84,6 +84,7 @@ The Paragon CLI (Command Line Interface) is a tool that provides various utility
 - `paragon build-tokens`: Build Paragon's design tokens.
 - `paragon replace-variables`: Replace SCSS variables usages or definitions to CSS variables and vice versa in `.scss` files.
 - `paragon build-scss`: Compile Paragon's core and themes SCSS into CSS.
+- `paragon serve-theme-css`: Serve built theme CSS files on a local server as if they were on a CDN.
 
 Use `paragon help` to see more information.
 
