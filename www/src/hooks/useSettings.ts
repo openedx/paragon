@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { type ContainerSize } from '~paragon-react';
 import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
 import { type ThemeConfig } from '../types/types';
-
 import { decodeThemesFromQueryParam } from '../utils/queryParamEncoding';
 
 export interface Settings {
