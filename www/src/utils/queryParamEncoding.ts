@@ -1,4 +1,4 @@
-import { ThemeConfig } from "../types/types";
+import { ThemeConfig } from '../types/types';
 
 // TypeScript wrapper for the CommonJS queryParamEncoding module
 const queryParamEncoding = require('../../../lib/queryParamEncoding');
