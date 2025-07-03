@@ -213,6 +213,16 @@ const COMMANDS = {
         description: 'Whether to enable CORS headers.',
         defaultValue: true,
       },
+      {
+        name: '-t, --theme-name',
+        description: 'The name for the theme in the docs URL.',
+        defaultValue: 'Local Theme',
+      },
+      {
+        name: '-d, --docs-url',
+        description: 'The base URL for the Paragon docs site.',
+        defaultValue: 'https://paragon-openedx.netlify.app/',
+      },
     ],
   },
   help: {
