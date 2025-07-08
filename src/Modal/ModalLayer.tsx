@@ -18,7 +18,7 @@ function ModalBackdrop({ onClick }: { onClick?: () => void }) {
       data-testid="modal-backdrop"
       role="button"
       tabIndex={0}
-      aria-label={intl.formatMessage(messages.closeModal)}
+      aria-label={intl.formatMessage(messages.closeButtonText)}
     />
   );
 }

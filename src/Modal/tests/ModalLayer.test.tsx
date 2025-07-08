@@ -44,9 +44,11 @@ describe('<ModalLayer />', () => {
 
     it('renders the dialog and a modal context provider', () => {
       render(
-        <ModalLayer isOpen={isOpen} onClose={closeFn}>
-          <Dialog />
-        </ModalLayer>,
+        <IntlProvider locale="en" messages={{}}>
+          <ModalLayer isOpen={isOpen} onClose={closeFn}>
+            <Dialog />
+          </ModalLayer>
+        </IntlProvider>,
       );
 
       const dialog = screen.getByRole('dialog', { name: 'A dialog' });
@@ -55,9 +57,11 @@ describe('<ModalLayer />', () => {
 
     it('renders a focus-on component with appropriate props', () => {
       render(
-        <ModalLayer isOpen={isOpen} onClose={closeFn}>
-          <Dialog />
-        </ModalLayer>,
+        <IntlProvider locale="en" messages={{}}>
+          <ModalLayer isOpen={isOpen} onClose={closeFn}>
+            <Dialog />
+          </ModalLayer>
+        </IntlProvider>,
       );
 
       const focusOn = screen.getByTestId('focus-on');
@@ -67,11 +71,13 @@ describe('<ModalLayer />', () => {
     });
   });
 
-  test('when isOpen is false the dialog is not rendered', () => {
+  it('when isOpen is false the dialog is not rendered', () => {
     render(
-      <ModalLayer isOpen={false} onClose={jest.fn()}>
-        <Dialog />
-      </ModalLayer>,
+      <IntlProvider locale="en" messages={{}}>
+        <ModalLayer isOpen={false} onClose={jest.fn()}>
+          <Dialog />
+        </ModalLayer>
+      </IntlProvider>,
     );
 
     const dialog = screen.queryByRole('dialog', { name: 'A dialog' });
@@ -89,7 +95,7 @@ describe('<ModalLayer />', () => {
           </ModalLayer>
         </IntlProvider>,
       );
-      const backdrop = screen.getByRole('button', { name: messages.closeModal.defaultMessage });
+      const backdrop = screen.getByRole('button', { name: messages.closeButtonText.defaultMessage });
       await user.click(backdrop);
       expect(closeFn).toHaveBeenCalled();
     });
@@ -143,7 +149,7 @@ describe('<ModalLayer />', () => {
           </ModalLayer>
         </IntlProvider>,
       );
-      const backdrop = screen.getByRole('button', { name: messages.closeModal.defaultMessage });
+      const backdrop = screen.getByRole('button', { name: messages.closeButtonText.defaultMessage });
       userEvent.click(backdrop);
       expect(closeFn).not.toHaveBeenCalled();
     });
