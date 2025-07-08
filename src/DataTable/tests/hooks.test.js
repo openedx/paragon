@@ -1,4 +1,5 @@
-import { useSelectionActions } from '../hooks';
+import { renderHook } from '@testing-library/react';
+import { useSelectionActions, useDataTableSelections } from '../hooks';
 
 const mockToggleAllRowsSelected = jest.fn();
 const mockInstanceDispatcher = jest.fn();
@@ -39,6 +40,65 @@ describe('hooks', () => {
       clearSelection();
       expect(mockToggleAllRowsSelected.mock.calls.length).toBe(0);
       expect(mockInstanceDispatcher.mock.calls.length).toBe(1);
+    });
+  });
+
+  describe('useDataTableSelections', () => {
+    let selectionsDispatch;
+    beforeEach(() => {
+      selectionsDispatch = jest.fn();
+    });
+
+    it('should dispatch toggleIsEntireTableSelected when isSelectAllEnabled is true and isEntireTableSelected is false (line 75)', () => {
+      const selections = { isSelectAllEnabled: true, isEntireTableSelected: false };
+      renderHook(() => useDataTableSelections({
+        selections,
+        selectionsDispatch,
+        itemCount: 10,
+        selectedRows: [],
+        page: [],
+        isAllPageRowsSelected: false,
+      }));
+      expect(selectionsDispatch).toHaveBeenCalledTimes(1);
+    });
+
+    it('should dispatch toggleIsEntireTableSelected when isSelectAllEnabled is false, isEntireTableSelected is true, and isAllPageRowsSelected is false (line 86, first condition)', () => {
+      const selections = { isSelectAllEnabled: false, isEntireTableSelected: true };
+      renderHook(() => useDataTableSelections({
+        selections,
+        selectionsDispatch,
+        itemCount: 10,
+        selectedRows: [],
+        page: [],
+        isAllPageRowsSelected: false,
+      }));
+      expect(selectionsDispatch).toHaveBeenCalledTimes(1);
+    });
+
+    it('should dispatch toggleIsEntireTableSelected when isSelectAllEnabled is true, isEntireTableSelected is false, and isAllPageRowsSelected is true (line 86, second condition)', () => {
+      const selections = { isSelectAllEnabled: true, isEntireTableSelected: false };
+      renderHook(() => useDataTableSelections({
+        selections,
+        selectionsDispatch,
+        itemCount: 10,
+        selectedRows: [],
+        page: [],
+        isAllPageRowsSelected: true,
+      }));
+      expect(selectionsDispatch).toHaveBeenCalledTimes(2);
+    });
+
+    it('should NOT dispatch toggleIsEntireTableSelected if conditions are not met', () => {
+      const selections = { isSelectAllEnabled: false, isEntireTableSelected: false };
+      renderHook(() => useDataTableSelections({
+        selections,
+        selectionsDispatch,
+        itemCount: 10,
+        selectedRows: [],
+        page: [],
+        isAllPageRowsSelected: false,
+      }));
+      expect(selectionsDispatch).not.toHaveBeenCalled();
     });
   });
 });
