@@ -10,7 +10,7 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
   background: $checkpoint-background-color;
   border-top: $checkpoint-border-width solid $checkpoint-border-color;
   border-radius: $border-radius;
-  padding: map.get($spacers, 4);
+  padding: map.get($spacers, 3\.5);
   box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .3);
   z-index: $checkpoint-z-index;
   max-width: $checkpoint-max-width;
@@ -47,39 +47,6 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
     margin-inline-end: map.get($spacers, 2);
   }
 
-  .pgn__checkpoint-breadcrumb {
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
-
-    &.pgn__checkpoint-breadcrumb_active {
-      background: $checkpoint-breadcrumb-color;
-    }
-
-    &.pgn__checkpoint-breadcrumb_inactive {
-      border: 1px solid $checkpoint-breadcrumb-color;
-      background: transparent;
-    }
-
-    &:not(:first-child) {
-      margin-left: map.get($spacers, 1\.5);
-    }
-
-    [dir="rtl"] & {
-      margin-left: map.get($spacers, 1\.5);
-      margin-right: 0;
-
-      &:last-child {
-        margin-left: 0;
-      }
-    }
-  }
-
-  .pgn__checkpoint-breadcrumb-container {
-    display: flex;
-    align-items: center;
-  }
-
   .pgn__checkpoint-body {
     color: $checkpoint-body-color;
     margin-bottom: map.get($spacers, 3\.5);
@@ -89,13 +56,18 @@ $checkpoint-arrow-transparent: solid $checkpoint-arrow-width transparent;
   .pgn__checkpoint-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: map.get($spacers, 2\.5);
+    margin-bottom: map.get($spacers, 2);
+    align-items: center;
   }
 
   #pgn__checkpoint-title {
     font-size: $h3-font-size;
     margin-inline-end: map.get($spacers, 2\.5);
-    margin-bottom: 0;
+    margin-bottom: map.get($spacers, 2);;
+  }
+
+  .pgn__checkpoint-page-index {
+    font-size: $small-font-size;
   }
 }
 

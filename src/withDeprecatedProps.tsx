@@ -66,10 +66,17 @@ function withDeprecatedProps<T extends Record<string, any>>(
             acc[propName] = this.props[propName];
           }
           break;
-        case DeprTypes.MOVED_AND_FORMAT:
-          this.warn(`${componentName}: The prop '${propName}' has been moved to '${newName}' and expects a new format. ${message}`);
-          acc[newName!] = transform!(this.props[propName], this.props);
+        case DeprTypes.MOVED_AND_FORMAT: {
+          const propValue = this.props[propName];
+          let warningMessage = `${componentName}: The prop '${propName}' has been moved to '${newName}'`;
+          if (expect && !expect(propValue)) {
+            warningMessage += ' and expects a new format';
+          }
+          warningMessage += message ? `. ${message}` : '';
+          this.warn(warningMessage);
+          acc[newName!] = transform ? transform(propValue, this.props) : propValue;
           break;
+        }
         default:
           acc[propName] = this.props[propName];
           break;

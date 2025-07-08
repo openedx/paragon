@@ -265,8 +265,8 @@ $select-icon-padding: .5625rem !default;
   }
 
   .form-control:focus ~ &,
-  // select.form-control ~ &,
-  .form-control.has-value ~ & {
+  .form-control.has-value ~ &,
+  .form-control:is(:-webkit-autofill, :autofill) ~ & {
     .pgn__form-control-floating-label-text {
       background-color: $input-bg;
     }

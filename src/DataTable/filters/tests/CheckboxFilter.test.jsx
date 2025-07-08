@@ -75,4 +75,12 @@ describe('<CheckboxFilter />', () => {
     const badge = screen.queryByText(String(palomino.number));
     expect(badge).toBeNull();
   });
+
+  it('renders unchecked checkboxes when filterValue is null', () => {
+    render(<CheckboxFilter column={{ ...props.column, filterValue: null }} />);
+    const checkboxes = screen.getAllByRole('checkbox');
+    checkboxes.forEach(checkbox => {
+      expect(checkbox).not.toBeChecked();
+    });
+  });
 });

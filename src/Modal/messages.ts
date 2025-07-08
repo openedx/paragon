@@ -1,10 +1,10 @@
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
-  closeModal: {
-    id: 'pgn.Modal.closeModal',
-    defaultMessage: 'Close modal',
-    description: 'Screen-reader message to notify user that they are located at the bottom of the product tour step.',
+  closeButtonText: {
+    id: 'pgn.Modal.closeButon',
+    defaultMessage: 'Close',
+    description: 'Accessible name for the close button in the modal dialog',
   },
 });
 
