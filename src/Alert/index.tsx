@@ -11,12 +11,12 @@ import React, {
   RefAttributes,
   cloneElement,
 } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {
   Alert as BaseAlert,
   AlertProps as BaseAlertProps,
 } from 'react-bootstrap';
+import { type TransitionComponent } from 'react-bootstrap/helpers';
 import divWithClassName from 'react-bootstrap/divWithClassName';
 import { FormattedMessage } from 'react-intl';
 import { useMediaQuery } from 'react-responsive';
@@ -33,29 +33,51 @@ export type AlertVariant = 'primary' | 'secondary' | 'success' | 'danger' | 'war
 export type BaseProps = Omit<BaseAlertProps, 'children' | 'variant' | 'closeLabel'>;
 
 export interface AlertProps extends BaseProps {
+  /** Specifies class name to append to the base element */
   className?: string;
+  /** Overrides underlying component base CSS class name */
   bsPrefix?: string;
+  /** Specifies variant to use. */
   variant?: AlertVariant;
+  /**
+   * Animate the entering and exiting of the Alert. `true` will use the `<Fade>` transition,
+   * more detailed customization is also provided.
+   */
+  transition?: boolean | TransitionComponent;
   children?: ReactNode;
+  /** Icon that will be shown in the alert */
   icon?: React.ComponentType<IconProps>;
+  /** Whether the alert is shown. */
   show?: boolean;
+  /** Whether the alert is dismissible. Defaults to false. */
   dismissible?: boolean;
+  /** Optional callback function for when the alert it dismissed. */
   onClose?: () => void;
+  /** Optional list of action elements. May include, at most, 2 actions, or 1 if dismissible is true. */
   actions?: React.ReactElement[];
+  /** Position of the dismiss and call-to-action buttons. Defaults to `false`. */
   stacked?: boolean;
+  /** Sets the text for alert close button, defaults to 'Dismiss'. */
   closeLabel?: string | ReactNode;
 }
 
 export interface AlertHeadingProps {
+  /** Specifies the base element */
   as?: ElementType;
+  /** Overrides underlying component base CSS class name */
   bsPrefix?: string;
+  // eslint-disable-next-line react/no-unused-prop-types
   children?: ReactNode;
 }
 
 export interface AlertLinkProps {
+  /** Specifies the base element */
   as?: ElementType;
+  /** Overrides underlying component base CSS class name */
   bsPrefix?: string;
+  // eslint-disable-next-line react/no-unused-prop-types
   children?: ReactNode;
+  // eslint-disable-next-line react/no-unused-prop-types
   href?: string;
 }
 
@@ -64,16 +86,17 @@ export interface AlertComponent extends ForwardRefExoticComponent<AlertProps & R
   Link: FC<AlertLinkProps>;
 }
 
-const Alert = forwardRef<HTMLDivElement, AlertProps>(({
+const Alert = forwardRef(({
   children,
   icon,
   actions,
-  dismissible,
-  onClose,
+  dismissible = false,
+  onClose = () => {},
   closeLabel,
-  stacked,
+  stacked = false,
+  show = true,
   ...props
-}, ref) => {
+}: AlertProps, ref: React.ForwardedRef<HTMLDivElement>) => {
   const [isStacked, setIsStacked] = useState(stacked);
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
   const actionButtonSize = 'sm';
@@ -98,6 +121,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(({
     <BaseAlert
       {...props}
       className={classNames('alert-content', props.className)}
+      show={show}
       ref={ref}
     >
       {icon && <Icon src={icon} className="alert-icon" />}
@@ -142,96 +166,21 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(({
 const DivStyledAsH4 = divWithClassName('h4');
 DivStyledAsH4.displayName = 'DivStyledAsH4';
 
-function AlertHeading(props: AlertHeadingProps): JSX.Element {
-  return <BaseAlert.Heading {...props} />;
+function AlertHeading({
+  as = DivStyledAsH4,
+  bsPrefix = 'alert-heading',
+  ...props
+}: AlertHeadingProps): JSX.Element {
+  return <BaseAlert.Heading {...{ as, bsPrefix, ...props }} />;
 }
 
-function AlertLink(props: AlertLinkProps): JSX.Element {
-  return <BaseAlert.Link {...props} />;
+function AlertLink({
+  as = 'a',
+  bsPrefix = 'alert-link',
+  ...props
+}: AlertLinkProps): JSX.Element {
+  return <BaseAlert.Link {...{ as, bsPrefix, ...props }} />;
 }
-
-AlertLink.propTypes = {
-  /** Specifies the base element */
-  as: PropTypes.elementType as PropTypes.Validator<ElementType>,
-  /** Overrides underlying component base CSS class name */
-  bsPrefix: PropTypes.string,
-};
-
-AlertHeading.propTypes = {
-  /** Specifies the base element */
-  as: PropTypes.elementType as PropTypes.Validator<ElementType>,
-  /** Overrides underlying component base CSS class name */
-  bsPrefix: PropTypes.string,
-};
-
-AlertLink.defaultProps = {
-  as: 'a' as ElementType,
-  bsPrefix: 'alert-link',
-};
-
-AlertHeading.defaultProps = {
-  as: DivStyledAsH4,
-  bsPrefix: 'alert-heading',
-};
-
-Alert.propTypes = {
-  ...BaseAlert.propTypes,
-  /** Specifies class name to append to the base element */
-  className: PropTypes.string,
-  /** Overrides underlying component base CSS class name */
-  bsPrefix: PropTypes.string,
-  /** Specifies variant to use. */
-  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light'] as AlertVariant[]),
-  /**
-   * Animate the entering and exiting of the Alert. `true` will use the `<Fade>` transition,
-   * more detailed customization is also provided.
-   */
-  transition: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.shape({
-      in: PropTypes.bool,
-      appear: PropTypes.bool,
-      children: PropTypes.node,
-      onEnter: PropTypes.func,
-      onEntered: PropTypes.func,
-      onEntering: PropTypes.func,
-      onExit: PropTypes.func,
-      onExited: PropTypes.func,
-      onExiting: PropTypes.func,
-    }),
-  ]) as PropTypes.Validator<BaseAlertProps['transition']>,
-  /** Docstring for the children prop */
-  children: PropTypes.node as PropTypes.Validator<ReactNode>,
-  /** Docstring for the icon prop... Icon that will be shown in the alert */
-  icon: PropTypes.func,
-  /** Whether the alert is shown. */
-  show: PropTypes.bool,
-  /** Whether the alert is dismissible. Defaults to true. */
-  dismissible: PropTypes.bool,
-  /** Optional callback function for when the alert it dismissed. */
-  onClose: PropTypes.func,
-  /** Optional list of action elements. May include, at most, 2 actions, or 1 if dismissible is true. */
-  actions: PropTypes.arrayOf(PropTypes.element) as PropTypes.Validator<React.ReactElement[]>,
-  /** Position of the dismiss and call-to-action buttons. Defaults to ``false``. */
-  stacked: PropTypes.bool,
-  /** Sets the text for alert close button, defaults to 'Dismiss'. */
-  closeLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-};
-
-Alert.defaultProps = {
-  ...BaseAlert.defaultProps,
-  children: undefined,
-  icon: undefined,
-  actions: undefined,
-  dismissible: false,
-  onClose: () => {},
-  closeLabel: undefined,
-  show: true,
-  stacked: false,
-  className: undefined,
-  bsPrefix: undefined,
-  variant: undefined,
-};
 
 Alert.Heading = AlertHeading;
 Alert.Link = AlertLink;
