@@ -48,17 +48,17 @@ DefaultValue.defaultProps = {
 };
 
 export interface IProp {
-  name: string,
-  type?: {},
-  required?: boolean,
-  defaultValue: {},
+  name: string;
+  type: { name: string, value?: any, raw?: string, required?: boolean };
+  required?: boolean;
+  defaultValue: {};
   description: {
     text: string;
   };
 }
 
 function Prop({
-  name, type, required, defaultValue, description,
+  name, type, required = false, defaultValue, description,
 }: IProp) {
   return (
     <li className="px-4 border-top border-light-300">
@@ -85,25 +85,10 @@ function Prop({
   );
 }
 
-Prop.propTypes = {
-  name: PropTypes.string.isRequired,
-  type: PropTypes.shape({}).isRequired,
-  required: PropTypes.bool,
-  defaultValue: PropTypes.shape({}),
-  description: PropTypes.shape({
-    text: PropTypes.string,
-  }),
-};
-Prop.defaultProps = {
-  required: false,
-  defaultValue: {},
-  description: undefined,
-};
-
 export interface IPropsTable {
-  props: Array<Function>,
-  displayName: string,
-  content: string,
+  props: IProp[];
+  displayName: string;
+  content: string;
 }
 
 function PropsTable({ props: componentProps, displayName, content }: IPropsTable) {
@@ -131,17 +116,5 @@ function PropsTable({ props: componentProps, displayName, content }: IPropsTable
     </Card>
   );
 }
-
-PropsTable.propTypes = {
-  props: PropTypes.arrayOf(PropTypes.shape({})),
-  content: PropTypes.string,
-  displayName: PropTypes.string,
-};
-
-PropsTable.defaultProps = {
-  props: [],
-  content: undefined,
-  displayName: undefined,
-};
 
 export default PropsTable;
