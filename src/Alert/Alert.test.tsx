@@ -1,7 +1,7 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 import renderer, { act } from 'react-test-renderer';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Context as ResponsiveContext } from 'react-responsive';
 import { Info } from '../../icons';
@@ -111,5 +111,18 @@ describe('<Alert />', () => {
       )).toJSON();
     });
     expect(tree).toMatchSnapshot();
+  });
+  it('renders with headings and links', async () => {
+    render(
+      <AlertWrapper>
+        <Alert.Heading>This is the heading</Alert.Heading>
+        And <Alert.Link href="#">here is a link</Alert.Link>.
+      </AlertWrapper>,
+    );
+    const alertDiv = screen.getByRole('alert');
+    const heading = within(alertDiv).getByText(/This is the heading/);
+    expect(heading).toHaveClass('alert-heading', 'h4');
+    const link = within(alertDiv).getByRole('link', { name: 'here is a link' });
+    expect(link).toHaveClass('alert-link');
   });
 });
