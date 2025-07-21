@@ -37,14 +37,17 @@ function PropType({
         raw={raw}
       />
     );
+  } else if (name) {
+    // For TypeScript types, we simply display the type as a string.
+    return (
+      <span>
+        <code>{name}</code>
+        <RequiredBadge isRequired={required} />
+      </span>
+    );
+  } else {
+    return <>unknown type</>;
   }
-  // For TypeScript types, we simply display the type as a string.
-  return (
-    <span>
-      <code>{name}</code>
-      <RequiredBadge isRequired={required} />
-    </span>
-  );
 }
 
 export interface ISimplePropType {
