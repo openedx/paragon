@@ -11,7 +11,7 @@ import {
 } from '~paragon-react';
 import { SettingsContext } from '../context/SettingsContext';
 import CodeBlock from '../components/CodeBlock';
-import GenericPropsTable from '../components/PropsTable';
+import GenericPropsTable, { IPropsTable } from '../components/PropsTable';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';
 import LinkedHeading from '../components/LinkedHeading';
@@ -170,7 +170,7 @@ export default function PageTemplate({
           </h2>
         )}
         {typeof sortedComponentNames !== 'string' && sortedComponentNames?.map((componentName: string | number) => {
-          const node: { displayName: string } = components[componentName];
+          const node: { displayName: string } & IPropsTable = components[componentName] as any;
           if (!node) {
             return null;
           }

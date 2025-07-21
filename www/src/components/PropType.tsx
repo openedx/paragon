@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Badge } from '~paragon-react';
 
 export type RequiredBadgeTypes = {
   isRequired?: boolean,
 };
 
-function RequiredBadge({ isRequired }: RequiredBadgeTypes) {
+function RequiredBadge({ isRequired = false }: RequiredBadgeTypes) {
   if (!isRequired) { return null; }
   return (
     <>
@@ -16,23 +15,15 @@ function RequiredBadge({ isRequired }: RequiredBadgeTypes) {
   );
 }
 
-RequiredBadge.propTypes = {
-  isRequired: PropTypes.bool,
-};
-
-RequiredBadge.defaultProps = {
-  isRequired: false,
-};
-
 export interface IPropType {
-  name: string,
-  value?: any,
-  raw?: string,
-  required?: boolean,
+  name: string;
+  value?: any;
+  raw?: string;
+  required?: boolean;
 }
 
 function PropType({
-  name, value, required, raw,
+  name, value = null, required = false, raw = '',
 }: IPropType) {
   // eslint-disable-next-line @typescript-eslint/no-use-before-define
   const PropTypeComponent = PROP_TYPE_COMPONENTS[name];
@@ -46,50 +37,25 @@ function PropType({
         raw={raw}
       />
     );
+  } else if (name) {
+    // For TypeScript types, we simply display the type as a string.
+    return (
+      <span>
+        <code>{name}</code>
+        <RequiredBadge isRequired={required} />
+      </span>
+    );
+  } else {
+    return <>unknown type</>;
   }
-
-  return <>unknown type</>;
 }
-
-PropType.propTypes = {
-  name: PropTypes.oneOf([
-    'arrayOf',
-    'custom',
-    'enum',
-    'array',
-    'bool',
-    'func',
-    'number',
-    'object',
-    'string',
-    'any',
-    'element',
-    'node',
-    'symbol',
-    'objectOf',
-    'shape',
-    'exact',
-    'union',
-    'elementType',
-  ]),
-  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  raw: PropTypes.string,
-  required: PropTypes.bool,
-};
-
-PropType.defaultProps = {
-  name: 'any',
-  value: null,
-  raw: '',
-  required: false,
-};
 
 export interface ISimplePropType {
   name: string,
   isRequired?: boolean,
 }
 
-function SimplePropType({ name, isRequired }: ISimplePropType) {
+function SimplePropType({ name, isRequired = false }: ISimplePropType) {
   return (
     <span>
       <code>{name}</code>
@@ -98,22 +64,13 @@ function SimplePropType({ name, isRequired }: ISimplePropType) {
   );
 }
 
-SimplePropType.propTypes = {
-  isRequired: PropTypes.bool,
-  name: PropTypes.string.isRequired,
-};
-
-SimplePropType.defaultProps = {
-  isRequired: false,
-};
-
 export interface IPropTypeEnum {
-  name: string,
-  value: Array<any>,
-  isRequired?: boolean,
+  name: string;
+  value: any[];
+  isRequired?: boolean;
 }
 
-function PropTypeEnum({ name, value: enumValue, isRequired }: IPropTypeEnum) {
+function PropTypeEnum({ name, value: enumValue, isRequired = false }: IPropTypeEnum) {
   return (
     <span>
       <code>{name}</code>
@@ -127,48 +84,28 @@ function PropTypeEnum({ name, value: enumValue, isRequired }: IPropTypeEnum) {
   );
 }
 
-PropTypeEnum.propTypes = {
-  isRequired: PropTypes.bool,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
-};
-
-PropTypeEnum.defaultProps = {
-  isRequired: false,
-};
-
 export interface IPropTypeUnion {
-  value: any,
-  isRequired?: boolean,
+  value: IPropType[];
+  isRequired?: boolean;
 }
 
-function PropTypeUnion({ value, isRequired }: IPropTypeUnion) {
+function PropTypeUnion({ value, isRequired = false }: IPropTypeUnion) {
   return (
     <span>
       {value
         .map((propType: { name: string }) => <PropType key={propType.name} {...propType} />)
-        .reduce((prev: Element, curr: Element) => [prev, ' | ', curr])}
+        .reduce((prev, curr) => <>{prev} | {curr}</>)}
       <RequiredBadge isRequired={isRequired} />
     </span>
   );
 }
 
-PropTypeUnion.propTypes = {
-  isRequired: PropTypes.bool,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
-};
-
-PropTypeUnion.defaultProps = {
-  isRequired: false,
-};
-
 export interface IPropTypeInstanceOf {
-  isRequired?: boolean,
-  value: string,
+  isRequired?: boolean;
+  value: string;
 }
 
-function PropTypeInstanceOf({ value, isRequired }: IPropTypeInstanceOf) {
+function PropTypeInstanceOf({ value, isRequired = false }: IPropTypeInstanceOf) {
   return (
     <span>
       <code>{value}</code>
@@ -177,21 +114,12 @@ function PropTypeInstanceOf({ value, isRequired }: IPropTypeInstanceOf) {
   );
 }
 
-PropTypeInstanceOf.propTypes = {
-  isRequired: PropTypes.bool,
-  value: PropTypes.string.isRequired,
-};
-
-PropTypeInstanceOf.defaultProps = {
-  isRequired: false,
-};
-
 export interface IPropTypeArrayOf {
-  isRequired?: boolean,
-  value: Array<{}>,
+  isRequired?: boolean;
+  value: IPropType;
 }
 
-function PropTypeArrayOf({ value, isRequired }: IPropTypeArrayOf) {
+function PropTypeArrayOf({ value, isRequired = false }: IPropTypeArrayOf) {
   return (
     <span>
       <PropType {...value} />
@@ -201,21 +129,12 @@ function PropTypeArrayOf({ value, isRequired }: IPropTypeArrayOf) {
   );
 }
 
-PropTypeArrayOf.propTypes = {
-  isRequired: PropTypes.bool,
-  value: PropTypes.shape({}).isRequired,
-};
-
-PropTypeArrayOf.defaultProps = {
-  isRequired: false,
-};
-
 export interface IPropTypeObjectOf {
-  value: Array<{}>,
-  isRequired?: boolean,
+  value: IPropType;
+  isRequired?: boolean;
 }
 
-function PropTypeObjectOf({ value, isRequired }: IPropTypeObjectOf) {
+function PropTypeObjectOf({ value, isRequired = false }: IPropTypeObjectOf) {
   return (
     <span>
       <code>
@@ -228,22 +147,13 @@ function PropTypeObjectOf({ value, isRequired }: IPropTypeObjectOf) {
   );
 }
 
-PropTypeObjectOf.propTypes = {
-  isRequired: PropTypes.bool,
-  value: PropTypes.shape({}).isRequired,
-};
-
-PropTypeObjectOf.defaultProps = {
-  isRequired: false,
-};
-
 export interface IPropTypeShape {
-  isRequired?: boolean,
-  name: string,
-  value: Array<{}>,
+  isRequired?: boolean;
+  name: string;
+  value: IPropType[];
 }
 
-function PropTypeShape({ name, value, isRequired }: IPropTypeShape) {
+function PropTypeShape({ name, value, isRequired = false }: IPropTypeShape) {
   return (
     <span className="small">
       <code>{name}</code>
@@ -259,25 +169,15 @@ function PropTypeShape({ name, value, isRequired }: IPropTypeShape) {
   );
 }
 
-PropTypeShape.propTypes = {
-  isRequired: PropTypes.bool,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.shape({}).isRequired,
-};
-
-PropTypeShape.defaultProps = {
-  isRequired: false,
-};
-
 export interface IPropTypeExact {
-  isRequired?: boolean,
-  name: string,
+  isRequired?: boolean;
+  name: string;
   value: {
-    propType: JSX.Element,
-  },
+    propType: IPropType;
+  };
 }
 
-function PropTypeExact({ name, value, isRequired }: IPropTypeExact) {
+function PropTypeExact({ name, value, isRequired = false }: IPropTypeExact) {
   return (
     <span className="small">
       <code>{name}</code>
@@ -293,22 +193,12 @@ function PropTypeExact({ name, value, isRequired }: IPropTypeExact) {
   );
 }
 
-PropTypeExact.propTypes = {
-  isRequired: PropTypes.bool,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.shape({}).isRequired,
-};
-
-PropTypeExact.defaultProps = {
-  isRequired: false,
-};
-
 export interface ICustomPropType {
-  isRequired?: boolean,
-  raw?: string
+  isRequired?: boolean;
+  raw?: string;
 }
 
-function CustomPropType({ raw, isRequired }: ICustomPropType) {
+function CustomPropType({ raw = '', isRequired = false }: ICustomPropType) {
   return (
     <span>
       <code>{raw}</code>
@@ -317,21 +207,17 @@ function CustomPropType({ raw, isRequired }: ICustomPropType) {
   );
 }
 
-CustomPropType.propTypes = {
-  isRequired: PropTypes.bool,
-  raw: PropTypes.string,
-};
-
-CustomPropType.defaultProps = {
-  isRequired: false,
-  raw: '',
-};
-
 export type PropTypeComponentsTypes = {
-  [key: string]: Function,
+  [key: string]: (...args: any[]) => JSX.Element,
 };
 
+/**
+ * Maps the deprecated propType names to components. These aren't needed for
+ * TypeScript types since their string representation is already useful as is.
+ */
 const PROP_TYPE_COMPONENTS: PropTypeComponentsTypes = {
+  // Other than 'string', 'any', and 'object', these are all legacy propTypes types
+  // and won't be used once the components are converted to TypeScript definitions.
   array: SimplePropType,
   bool: SimplePropType,
   func: SimplePropType,
