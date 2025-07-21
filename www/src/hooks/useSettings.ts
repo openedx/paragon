@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { type ContainerSize } from '~paragon-react';
 import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
-import { decodeThemesFromQueryParam } from '../utils/queryParamEncoding';
 import { type ThemeConfig } from '../types/types';
+import { decodeThemesFromQueryParam } from '../utils/queryParamEncoding';
 
 export interface Settings {
   direction?: string;

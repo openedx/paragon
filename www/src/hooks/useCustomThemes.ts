@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
-import { encodeThemesToQueryParam } from '../utils/queryParamEncoding';
 import { type ThemeConfig } from '../types/types';
 import { UpdateSettingsFunction } from './useSettings';
+
+import { encodeThemesToQueryParam } from '../utils/queryParamEncoding';
 
 /**
  * Hook to manage theme state including default and custom themes
@@ -20,6 +21,7 @@ export const useCustomThemes = (
       themes[activeIndex].urls.forEach((url: string) => {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
+        link.type = 'text/css';
         link.href = url;
         link.setAttribute('data-custom-theme', 'true');
         document.head.appendChild(link);
