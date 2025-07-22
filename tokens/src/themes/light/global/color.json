@@ -2382,5 +2382,385 @@
         }
       }
     }
+    "label" {
+      "a": {
+        "100": {
+          "$value": "#F9E6E6",
+          "$description": "Label color A of level 100."
+        },
+        "200": {
+          "$value": "#EFBDBD",
+          "$description": "Label color A of level 200."
+        },
+        "300": {
+          "$value": "#E69898",
+          "$description": "Label color A of level 300."
+        },
+        "400": {
+          "$value": "#DA6363",
+          "$description": "Label color A of level 400."
+        },
+        "500": {
+          "$value": "{color.label.a.base}",
+          "$description": "Label color A of level 500."
+        },
+        "600": {
+          "$value": "#B92C2C",
+          "$description": "Label color A of level 600."
+        },
+        "700": {
+          "$value": "#942323",
+          "$description": "Label color A of level 700."
+        },
+        "800": {
+          "$value": "#731C1C",
+          "$description": "Label color A of level 800."
+        },
+        "900": {
+          "$value": "#521414",
+          "$description": "Label color A of level 900."
+        },
+        "base": {
+          "$value": "#D24242",
+          "$description": "Base color of Label color A."
+        }
+      },  
+      "b": {
+        "100": {
+          "$value": "#F6F9F1",
+          "$description": "Label color B of level 100."
+        },
+        "200": {
+          "$value": "#D9E4C4",
+          "$description": "Label color B of level 200."
+        },
+        "300": {
+          "$value": "#B3C888",
+          "$description": "Label color B of level 300."
+        },
+        "400": {
+          "$value": "#96B35B",
+          "$description": "Label color B of level 400."
+        },
+        "500": {
+          "$value": "{color.label.b.base}",
+          "$description": "Label color B of level 500."
+        },
+        "600": {
+          "$value": "#677E3A",
+          "$description": "Label color B of level 600."
+        },
+        "700": {
+          "$value": "#5C7033",
+          "$description": "Label color B of level 700."
+        },
+        "800": {
+          "$value": "#4A5B2A",
+          "$description": "Label color B of level 800."
+        },
+        "900": {
+          "$value": "#394620",
+          "$description": "Label color B of level 900."
+        },
+        "base": {
+          "$value": "#7B9645",
+          "$description": "Base color of Label color B."
+        }
+      },  
+      "c": {
+        "100": {
+          "$value": "#E6E6F9",
+          "$description": "Label color C of level 100."
+        },
+        "200": {
+          "$value": "#C5C5F1",
+          "$description": "Label color C of level 200."
+        },
+        "300": {
+          "$value": "#A4A4E9",
+          "$description": "Label color C of level 300."
+        },
+        "400": {
+          "$value": "#7F7FE1",
+          "$description": "Label color C of level 400."
+        },
+        "500": {
+          "$value": "{color.label.c.base}",
+          "$description": "Label color C of level 500."
+        },
+        "600": {
+          "$value": "#3131CE",
+          "$description": "Label color C of level 600."
+        },
+        "700": {
+          "$value": "#2727A5",
+          "$description": "Label color C of level 700."
+        },
+        "800": {
+          "$value": "#1D1D7C",
+          "$description": "Label color C of level 800."
+        },
+        "900": {
+          "$value": "#141452",
+          "$description": "Label color C of level 900."
+        },
+        "base": {
+          "$value": "#5A5AD8",
+          "$description": "Base color of Label color C."
+        }
+      }, 
+      "d": {
+        "100": {
+          "$value": "#FAF5EB",
+          "$description": "Label color D of level 100."
+        },
+        "200": {
+          "$value": "#EEDCBA",
+          "$description": "Label color D of level 200."
+        },
+        "300": {
+          "$value": "#DDBA74",
+          "$description": "Label color D of level 300."
+        },
+        "400": {
+          "$value": "#CF9F3F",
+          "$description": "Label color D of level 400."
+        },
+        "500": {
+          "$value": "{color.label.d.base}",
+          "$description": "Label color D of level 500."
+        },
+        "600": {
+          "$value": "#936E25",
+          "$description": "Label color D of level 600."
+        },
+        "700": {
+          "$value": "#7F5F1F",
+          "$description": "Label color D of level 700."
+        },
+        "800": {
+          "$value": "#6A501A",
+          "$description": "Label color D of level 800."
+        },
+        "900": {
+          "$value": "#523D14",
+          "$description": "Label color D of level 900."
+        },
+        "base": {
+          "$value": "#B0842C",
+          "$description": "Base color of Label color D."
+        }
+      },   
+      "e": {
+        "100": {
+          "$value": "#E6F3F9",
+          "$description": "Label color E of level 100."
+        },
+        "200": {
+          "$value": "#B5DBED",
+          "$description": "Label color E of level 200."
+        },
+        "300": {
+          "$value": "#7FC0E1",
+          "$description": "Label color E of level 300."
+        },
+        "400": {
+          "$value": "#52AAD6",
+          "$description": "Label color E of level 400."
+        },
+        "500": {
+          "$value": "{color.label.e.base}",
+          "$description": "Label color E of level 500."
+        },
+        "600": {
+          "$value": "#277BA5",
+          "$description": "Label color E of level 600."
+        },
+        "700": {
+          "$value": "#21688C",
+          "$description": "Label color E of level 700."
+        },
+        "800": {
+          "$value": "#1B536F",
+          "$description": "Label color E of level 800."
+        },
+        "900": {
+          "$value": "#143D52",
+          "$description": "Label color E of level 900."
+        },
+        "base": {
+          "$value": "#2E90C2",
+          "$description": "Base color of Label color E."
+        }
+      }, 
+      "f": {
+        "100": {
+          "$value": "#FAEAF2",
+          "$description": "Label color F of level 100."
+        },
+        "200": {
+          "$value": "#EBADCC",
+          "$description": "Label color F of level 200."
+        },
+        "300": {
+          "$value": "#E283B2",
+          "$description": "Label color F of level 300."
+        },
+        "400": {
+          "$value": "#DA639E",
+          "$description": "Label color F of level 400."
+        },
+        "500": {
+          "$value": "{color.label.f.base}",
+          "$description": "Label color F of level 500."
+        },
+        "600": {
+          "$value": "#B92C73",
+          "$description": "Label color F of level 600."
+        },
+        "700": {
+          "$value": "#94235C",
+          "$description": "Label color F of level 700."
+        },
+        "800": {
+          "$value": "#731C47",
+          "$description": "Label color F of level 800."
+        },
+        "900": {
+          "$value": "#521433",
+          "$description": "Label color F of level 900."
+        },
+        "base": {
+          "$value": "#D13F88",
+          "$description": "Base color of Label color F."
+        }
+      }, 
+      "g": {
+        "100": {
+          "$value": "#F0FAF6",
+          "$description": "Label color G of level 100."
+        },
+        "200": {
+          "$value": "#BEE9DB",
+          "$description": "Label color G of level 200."
+        },
+        "300": {
+          "$value": "#7DD4B7",
+          "$description": "Label color G of level 300."
+        },
+        "400": {
+          "$value": "#4BC39B",
+          "$description": "Label color G of level 400."
+        },
+        "500": {
+          "$value": "{color.label.g.base}",
+          "$description": "Label color G of level 500."
+        },
+        "600": {
+          "$value": "#2B8265",
+          "$description": "Label color G of level 600."
+        },
+        "700": {
+          "$value": "#267359",
+          "$description": "Label color G of level 700."
+        },
+        "800": {
+          "$value": "#20604A",
+          "$description": "Label color G of level 800."
+        },
+        "900": {
+          "$value": "#1A4C3C",
+          "$description": "Label color G of level 900."
+        },
+        "base": {
+          "$value": "#36A17D",
+          "$description": "Base color of Label color G."
+        }
+      }, 
+      "h": {
+        "100": {
+          "$value": "#F3E6F9",
+          "$description": "Label color H of level 100."
+        },
+        "200": {
+          "$value": "#E3C5F1",
+          "$description": "Label color H of level 200."
+        },
+        "300": {
+          "$value": "#D2A4E9",
+          "$description": "Label color H of level 300."
+        },
+        "400": {
+          "$value": "#C07FE1",
+          "$description": "Label color H of level 400."
+        },
+        "500": {
+          "$value": "{color.label.h.base}",
+          "$description": "Label color H of level 500."
+        },
+        "600": {
+          "$value": "#9A31CE",
+          "$description": "Label color H of level 600."
+        },
+        "700": {
+          "$value": "#7B27A5",
+          "$description": "Label color H of level 700."
+        },
+        "800": {
+          "$value": "#5C1D7C",
+          "$description": "Label color H of level 800."
+        },
+        "900": {
+          "$value": "#3D1452",
+          "$description": "Label color H of level 900."
+        },
+        "base": {
+          "$value": "#AE5AD8",
+          "$description": "Base color of Label color H."
+        }
+      }, 
+      "i": {
+        "100": {
+          "$value": "#ECF8EC",
+          "$description": "Label color I of level 100."
+        },
+        "200": {
+          "$value": "#C0E8C0",
+          "$description": "Label color I of level 200."
+        },
+        "300": {
+          "$value": "#80D080",
+          "$description": "Label color I of level 300."
+        },
+        "400": {
+          "$value": "#50BE50",
+          "$description": "Label color I of level 400."
+        },
+        "500": {
+          "$value": "{color.label.i.base}",
+          "$description": "Label color I of level 500."
+        },
+        "600": {
+          "$value": "#328632",
+          "$description": "Label color I of level 600."
+        },
+        "700": {
+          "$value": "#2B732B",
+          "$description": "Label color I of level 700."
+        },
+        "800": {
+          "$value": "#246124",
+          "$description": "Label color I of level 800."
+        },
+        "900": {
+          "$value": "#1C4A1C",
+          "$description": "Label color I of level 900."
+        },
+        "base": {
+          "$value": "#3BA03B",
+          "$description": "Base color of Label color I."
+        }
+      } 
+    }
   }
 }
