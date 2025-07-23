@@ -49,6 +49,8 @@ function DataTable({
   EmptyTableComponent,
   manualSelectColumn,
   showFiltersInSidebar,
+  filtersTitle,
+  dataTableLayoutClassName,
   dataViewToggleOptions,
   disableElevation,
   isLoading,
@@ -222,7 +224,7 @@ function DataTable({
 
   return (
     <DataTableContext.Provider value={enhancedInstance}>
-      <DataTableLayout>
+      <DataTableLayout filtersTitle={filtersTitle} className={dataTableLayoutClassName}>
         <div className={classNames('pgn__data-table-wrapper', {
           'hide-shadow': !!disableElevation,
         })}
@@ -264,6 +266,8 @@ DataTable.defaultProps = {
   FilterStatusComponent: FilterStatus,
   RowStatusComponent: RowStatus,
   showFiltersInSidebar: false,
+  filtersTitle: undefined,
+  dataTableLayoutClassName: undefined,
   dataViewToggleOptions: {
     isDataViewToggleEnabled: false,
     onDataViewToggle: () => {},
@@ -425,6 +429,10 @@ DataTable.propTypes = {
   children: PropTypes.node,
   /** If true filters will be shown on sidebar instead */
   showFiltersInSidebar: PropTypes.bool,
+  /** Title of the filters section */
+  filtersTitle: PropTypes.string,
+  /** Class name for the data table layout */
+  dataTableLayoutClassName: PropTypes.string,
   /** options for data view toggle */
   dataViewToggleOptions: PropTypes.shape({
     /** Whether to show a toggle button group which allows view switching between card and table views */
