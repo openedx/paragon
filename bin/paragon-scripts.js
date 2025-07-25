@@ -108,8 +108,8 @@ const COMMANDS = {
         defaultValue: false,
       },
       {
-        name: '--base-theme',
-        description: 'Specify the base theme to use in the token build. For example, to build the "high-contrast" theme on top of the light theme use "--theme high-contrast --base-theme light".',
+        name: '--base-paragon-theme',
+        description: 'Specify the base theme to use in the token build. For example, to build the "high-contrast" theme on top of the light theme use "--theme high-contrast --base-paragon-theme light".',
         defaultValue: 'Same as theme',
       },
       {
