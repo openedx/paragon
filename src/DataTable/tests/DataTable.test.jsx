@@ -162,6 +162,20 @@ describe('<DataTable />', () => {
     expect(screen.getByText('Action')).toBeInTheDocument();
     expect(screen.getByText('More')).toBeInTheDocument();
   });
+
+  it('displays the filters in the sidebar', () => {
+    render(
+      <DataTableWrapper
+        showFiltersInSidebar
+        isFilterable
+        defaultColumnValues={{ Filter: TextFilter }}
+        filtersTitle="Refine Your Search"
+        {...props}
+      />,
+    );
+    expect(screen.getByText('Refine Your Search')).toBeInTheDocument();
+  });
+
   it('calls useTable with the data and columns', () => {
     const spy = jest.spyOn(reactTable, 'useTable');
     render(<DataTableWrapper {...props} />);
