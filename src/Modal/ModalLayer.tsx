@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import Portal from './Portal';
 import { ModalContextProvider } from './ModalContext';
@@ -18,18 +17,10 @@ function ModalBackdrop({ onClick }: { onClick?: () => void }) {
   );
 }
 
-ModalBackdrop.propTypes = {
-  onClick: PropTypes.func,
-};
-
 // istanbul ignore next
 function ModalContentContainer({ children = null }: { children?: React.ReactNode }) {
   return <div className="pgn__modal-content-container">{children}</div>;
 }
-
-ModalContentContainer.propTypes = {
-  children: PropTypes.node,
-};
 
 interface Props {
   /** Specifies the contents of the modal */
@@ -93,19 +84,6 @@ function ModalLayer({
     </ModalContextProvider>
   );
 }
-
-ModalLayer.propTypes = {
-  /** Specifies the contents of the modal */
-  children: PropTypes.node.isRequired,
-  /** A callback function for when the modal is dismissed */
-  onClose: PropTypes.func.isRequired,
-  /** Is the modal dialog open or closed */
-  isOpen: PropTypes.bool.isRequired,
-  /** Prevent clicking on the backdrop or pressing Esc to close the modal */
-  isBlocking: PropTypes.bool,
-  /** Specifies the z-index of the modal */
-  zIndex: PropTypes.number,
-};
 
 export { ModalBackdrop, ModalContentContainer };
 export default ModalLayer;
