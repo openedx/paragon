@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useMediaQuery } from 'react-responsive';
 import { useIntl } from 'react-intl';
@@ -52,7 +51,12 @@ interface Props {
   isBlocking?: boolean;
   /** Specifies the z-index of the modal */
   zIndex?: number;
-  /** Specifies whether overflow is visible in the modal */
+  /**
+   * Specifies whether overflow content inside the modal should be visible.
+   * - `true` - content that exceeds the modal boundaries will remain visible outside the modal's main viewport,
+   * rather than being clipped or hidden.
+   * - `false` - any overflow content will be clipped to fit within the modal's dimensions.
+   */
   isOverflowVisible: boolean;
 }
 
@@ -108,70 +112,6 @@ function ModalDialog({
     </ModalLayer>
   );
 }
-
-ModalDialog.propTypes = {
-  /**
-   *  Specifies the content of the dialog
-   */
-  children: PropTypes.node.isRequired,
-  /**
-   * The aria-label of the dialog
-   */
-  title: PropTypes.string.isRequired,
-  /**
-   * A callback to close the modal dialog
-   */
-  onClose: PropTypes.func.isRequired,
-  /**
-   * Is the modal dialog open or closed
-   */
-  isOpen: PropTypes.bool,
-  /**
-   * The close 'x' icon button in the top right of the dialog box
-   */
-  hasCloseButton: PropTypes.bool,
-  /**
-   * Sizes determine the maximum width of the dialog box
-   */
-  size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'fullscreen']),
-  /**
-   * The visual style of the dialog box
-   */
-  variant: PropTypes.oneOf(['default', 'warning', 'danger', 'success', 'dark']),
-  /**
-   * The label supplied to the close icon button if one is rendered
-   */
-  closeLabel: PropTypes.string,
-  /**
-   *  Specifies class name to append to the base element
-   */
-  className: PropTypes.string,
-  /**
-   * Determines where a scrollbar should appear if a modal is too large for the
-   * viewport. When false, the ``ModalDialog``. Body receives a scrollbar, when true
-   * the browser window itself receives the scrollbar.
-   */
-  isFullscreenScroll: PropTypes.bool,
-  /**
-   * To show full screen view on mobile screens
-   */
-  isFullscreenOnMobile: PropTypes.bool,
-  /**
-   * Prevent clicking on the backdrop or pressing Esc to close the modal
-   */
-  isBlocking: PropTypes.bool,
-  /**
-   * Specifies the z-index of the modal
-   */
-  zIndex: PropTypes.number,
-  /**
-   * Specifies whether overflow content inside the modal should be visible.
-   * - `true` - content that exceeds the modal boundaries will remain visible outside the modal's main viewport,
-   * rather than being clipped or hidden.
-   * - `false` - any overflow content will be clipped to fit within the modal's dimensions.
-   */
-  isOverflowVisible: PropTypes.bool.isRequired,
-};
 
 ModalDialog.Header = ModalDialogHeader;
 ModalDialog.Title = ModalDialogTitle;
