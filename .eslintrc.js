@@ -81,6 +81,12 @@ module.exports = {
         '@typescript-eslint/return-await': 'off',
       },
     },
+    {
+      files: ['**/*.tsx'],
+      rules: {
+        'react/require-default-props': 'off',
+      },
+    },
   ],
   env: {
     jest: true,
