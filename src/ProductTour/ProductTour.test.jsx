@@ -60,11 +60,11 @@ describe('<ProductTour />', () => {
       {
         body: 'Checkpoint 2',
         target: '#target-2',
+        onBack: customOnBack,
       },
       {
         body: 'Checkpoint 3',
         target: '#target-3',
-        onBack: customOnBack,
         advanceButtonText: 'Override advance',
         backButtonText: 'Override back',
       },
@@ -115,6 +115,27 @@ describe('<ProductTour />', () => {
 
         // Verify the second Checkpoint has rendered
         expect(screen.getByText('Checkpoint 2')).toBeInTheDocument();
+      });
+
+      it('onClick of back button rewinds to last checkpoint', async () => {
+        render(<ProductTourWrapper tours={[tourData]} />);
+        // Verify the first Checkpoint has rendered
+        expect(screen.getByRole('heading', { name: 'Checkpoint 1' })).toBeInTheDocument();
+
+        // Click the advance button
+        const advanceButton = screen.getByRole('button', { name: 'Next' });
+        await userEvent.click(advanceButton);
+
+        // Verify the second Checkpoint has rendered
+        expect(screen.getByText('Checkpoint 2')).toBeInTheDocument();
+
+        // Click the advance button
+        const backButton = screen.getByRole('button', { name: 'Back' });
+        await userEvent.click(backButton);
+
+        // Verify the first Checkpoint has rendered
+        expect(screen.getByText('Checkpoint 1')).toBeInTheDocument();
+        expect(customOnBack).toHaveBeenCalled();
       });
 
       it('onClick of dismiss button disables tour', async () => {
