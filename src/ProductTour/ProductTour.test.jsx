@@ -129,7 +129,7 @@ describe('<ProductTour />', () => {
         // Verify the second Checkpoint has rendered
         expect(screen.getByText('Checkpoint 2')).toBeInTheDocument();
 
-        // Click the advance button
+        // Click the back button
         const backButton = screen.getByRole('button', { name: 'Back' });
         await userEvent.click(backButton);
 
