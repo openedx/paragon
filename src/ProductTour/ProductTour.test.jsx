@@ -19,6 +19,8 @@ describe('<ProductTour />', () => {
       <div id="target-4">...</div>
     </>
   );
+  const handleAdvance = jest.fn();
+  const handleBack = jest.fn();
   const handleDismiss = jest.fn();
   const handleEnd = jest.fn();
   const handleEscape = jest.fn();
@@ -31,6 +33,8 @@ describe('<ProductTour />', () => {
     advanceButtonText: 'Next',
     enabled: false,
     endButtonText: 'Okay',
+    onAdvance: handleAdvance,
+    onBack: handleBack,
     onDismiss: handleDismiss,
     onEnd: handleEnd,
     tourId: 'disabledTour',
@@ -48,6 +52,8 @@ describe('<ProductTour />', () => {
     backButtonText: 'Back',
     enabled: true,
     endButtonText: 'Okay',
+    onAdvance: handleAdvance,
+    onBack: handleBack,
     onDismiss: handleDismiss,
     onEnd: handleEnd,
     tourId: 'enabledTour',
@@ -60,11 +66,12 @@ describe('<ProductTour />', () => {
       {
         body: 'Checkpoint 2',
         target: '#target-2',
-        onBack: customOnBack,
+        onAdvance: customOnAdvance,
       },
       {
         body: 'Checkpoint 3',
         target: '#target-3',
+        onBack: customOnBack,
         advanceButtonText: 'Override advance',
         backButtonText: 'Override back',
       },
@@ -82,6 +89,7 @@ describe('<ProductTour />', () => {
 
   afterEach(() => {
     popperMock.mockReset();
+    jest.resetAllMocks();
   });
 
   // eslint-disable-next-line react/prop-types
@@ -115,6 +123,11 @@ describe('<ProductTour />', () => {
 
         // Verify the second Checkpoint has rendered
         expect(screen.getByText('Checkpoint 2')).toBeInTheDocument();
+        expect(handleAdvance).toHaveBeenCalled();
+
+        await userEvent.click(advanceButton);
+        expect(screen.getByText('Checkpoint 3')).toBeInTheDocument();
+        expect(customOnAdvance).toHaveBeenCalled();
       });
 
       it('onClick of back button rewinds to last checkpoint', async () => {
@@ -126,16 +139,22 @@ describe('<ProductTour />', () => {
         const advanceButton = screen.getByRole('button', { name: 'Next' });
         await userEvent.click(advanceButton);
 
-        // Verify the second Checkpoint has rendered
+        // go forward to the 3rd checkpoint
         expect(screen.getByText('Checkpoint 2')).toBeInTheDocument();
+        await userEvent.click(advanceButton);
+        expect(screen.getByText('Checkpoint 3')).toBeInTheDocument();
 
-        // Click the back button
-        const backButton = screen.getByRole('button', { name: 'Back' });
+        // First back button should use custom on back function
+        let backButton = screen.getByRole('button', { name: 'Override back' });
         await userEvent.click(backButton);
-
-        // Verify the first Checkpoint has rendered
-        expect(screen.getByText('Checkpoint 1')).toBeInTheDocument();
+        expect(screen.getByText('Checkpoint 2')).toBeInTheDocument();
         expect(customOnBack).toHaveBeenCalled();
+
+        // Second back button should use the tour's default back function
+        backButton = screen.getByRole('button', { name: 'Back' });
+        await userEvent.click(backButton);
+        expect(screen.getByText('Checkpoint 1')).toBeInTheDocument();
+        expect(handleBack).toHaveBeenCalled();
       });
 
       it('onClick of dismiss button disables tour', async () => {
@@ -305,7 +324,6 @@ describe('<ProductTour />', () => {
         expect(screen.getByText('Checkpoint 4')).toBeInTheDocument();
         const endButton = screen.getByRole('button', { name: 'Override end' });
         await user.click(endButton);
-        expect(handleEnd).toBeCalledTimes(1);
         expect(customOnEnd).toHaveBeenCalledTimes(1);
         expect(screen.queryByText('Checkpoint 4')).not.toBeInTheDocument();
       });

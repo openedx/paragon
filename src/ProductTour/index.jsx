@@ -12,6 +12,8 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     startingIndex,
     onEscape,
     onEnd,
+    onAdvance: tourOnAdvance,
+    onBack: tourOnBack,
     onDismiss: tourOnDismiss,
     advanceButtonText: tourAdvanceButtonText,
     dismissAltText: tourDismissAltText,
@@ -85,6 +87,8 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     setIndex(index + 1);
     if (onAdvance) {
       onAdvance();
+    } else {
+      tourOnAdvance();
     }
   };
 
@@ -92,6 +96,8 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     setIndex(index - 1);
     if (onBack) {
       onBack();
+    } else {
+      tourOnBack();
     }
   };
 
