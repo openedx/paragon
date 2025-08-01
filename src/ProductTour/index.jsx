@@ -87,7 +87,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     setIndex(index + 1);
     if (onAdvance) {
       onAdvance();
-    } else {
+    } else if (tourOnAdvance) {
       tourOnAdvance();
     }
   };
@@ -96,7 +96,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     setIndex(index - 1);
     if (onBack) {
       onBack();
-    } else {
+    } else if (tourOnBack) {
       tourOnBack();
     }
   };
@@ -106,7 +106,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     setIsTourEnabled(false);
     if (onDismiss) {
       onDismiss();
-    } else {
+    } else if (tourOnDismiss) {
       tourOnDismiss();
     }
     setCurrentCheckpointData(null);
