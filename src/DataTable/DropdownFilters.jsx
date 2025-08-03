@@ -11,7 +11,7 @@ function DropdownFilters() {
   const intl = useIntl();
   const { width } = useWindowSize();
   const {
-    columns, numBreakoutFilters, filtersTitle, showFiltersInSidebar,
+    columns, numBreakoutFilters, filtersTitle,
   } = useContext(DataTableContext);
 
   const [breakoutFilters, otherFilters] = useMemo(() => {
@@ -30,8 +30,7 @@ function DropdownFilters() {
     return [boFilters, dropdownFilters];
   }, [columns, width, numBreakoutFilters]);
 
-  const dropdownTitle = filtersTitle && !showFiltersInSidebar
-    ? filtersTitle : intl.formatMessage(messages.filtersDropdownTitle);
+  const dropdownTitle = filtersTitle || intl.formatMessage(messages.filtersDropdownTitle);
 
   return (
     <div className="pgn__data-table-filters">
