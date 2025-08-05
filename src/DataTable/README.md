@@ -176,7 +176,7 @@ To enable proper selection behavior with backend pagination (i.e., when ``isSele
       producer: 'Isao Takahata',
       release_date: 1986,
       rt_score: 95,
-    }, 
+    },
     {
       id: '12cfb892-aac0-4c5b-94af-521852e46d6a',
       title: 'Grave of the Fireflies',
@@ -567,7 +567,7 @@ Can be used to show the loading state when ``DataTable`` is asynchronously fetch
     },
   ];
   {/* end example state */}
-  
+
   return (
     <>
       {/* start example form block */}
@@ -634,7 +634,7 @@ You can pass a function to render custom components for bulk actions and table a
       Enroll
     </Button>
   );
-  
+
   const EnrollAction = ({ selectedFlatRows, ...rest }) => (
     // Here is access to the selectedFlatRows, isEntireTableSelected, tableInstance
     <Button variant="danger" onClick={() => console.log('Enroll', selectedFlatRows, rest)}>
@@ -647,13 +647,13 @@ You can pass a function to render custom components for bulk actions and table a
       Assign
     </Button>
   );
-  
+
   const ExtraAction = ({ text, selectedFlatRows, ...rest }) => (
     <Button onClick={() => console.log(`Extra Action ${text}`, selectedFlatRows, rest)}>
       {`Extra Action ${text}`}
     </Button>
   );
-  
+
   return (
     <DataTable
       isSelectable
@@ -734,7 +734,7 @@ You can pass a function to render custom components for bulk actions and table a
     </DataTable>
   )
 }
-  
+
 ```
 
 #### Actions with Data view toggle enabled
@@ -889,7 +889,7 @@ a responsive grid of cards.
       Clear Selection
     </Component>
   );
-  
+
   return (
     <DataTable
       isFilterable
@@ -1103,7 +1103,7 @@ Use `columnSizes` prop of `CardView` component to define how many `Cards` are sh
 
   const ExampleCard = ({ className, original }) => {
     const { name, color, famous_for: famousFor } = original;
-		
+
     return (
       <Card className={className}>
         <Card.ImageCap src="https://picsum.photos/360/200/" srcAlt="Card image" />
@@ -1195,7 +1195,7 @@ You can also display `Cards` with horizontal view. If the table is selectable co
           <Card.Header title={name} />
           <Card.Section>
             <dl>
-              <dt>Color</dt>								
+              <dt>Color</dt>
               <dd>{color}</dd>
               <dt>Famous For</dt>
               <dd>{famousFor}</dd>
@@ -1217,7 +1217,7 @@ You can also display `Cards` with horizontal view. If the table is selectable co
           name: 'Lil Bub',
           color: 'brown tabby',
           famous_for: 'weird tongue',
-        }, 
+        },
         {
           name: 'Grumpy Cat',
           color: 'siamese',
@@ -1258,6 +1258,7 @@ For a more desktop friendly view, you can move filters into a sidebar by providi
 ```jsx live
   <DataTable
     showFiltersInSidebar
+    filtersTitle="Color filters"
     isFilterable
     isSortable
     defaultColumnValues={{ Filter: TextFilter }}
@@ -1330,17 +1331,17 @@ For a more desktop friendly view, you can move filters into a sidebar by providi
 ```
 
 ## Expandable rows
-`DataTable` supports expandable rows which once expanded render additional content under the row. Displayed content 
+`DataTable` supports expandable rows which once expanded render additional content under the row. Displayed content
 is controlled by the `renderRowSubComponent` prop, which is a function that receives `row` as its single prop and renders expanded view, you also
 need to pass `isEpandable` prop to `DataTable` to indicate that it should support expand behavior for rows.
-Finally, an additional column is required to be included into `columns` prop which will contain handlers for expand / collapse behavior, see examples below. 
+Finally, an additional column is required to be included into `columns` prop which will contain handlers for expand / collapse behavior, see examples below.
 
 ### Default view
 
 Here we use default expander column offered by Paragon and for each row render value of the `name` attribute as its subcomponent.
 
 ```jsx live
-<DataTable 
+<DataTable
   isExpandable
   itemCount={7}
   renderRowSubComponent={({ row }) => <div className='text-center'>{row.values.name}</div>}
@@ -1457,10 +1458,10 @@ You can create your own custom expander column and use it, see code example belo
       </DataTable>
     </div>
   )
-	
+
   return (
     <DataTable
-      isExpandable 
+      isExpandable
       renderRowSubComponent={renderSubComponent}
       itemCount={3}
       data={[
@@ -1481,7 +1482,7 @@ You can create your own custom expander column and use it, see code example belo
           reason: 'Felt like it',
         },
         {
-          name: 'Smoothie', 
+          name: 'Smoothie',
           color: 'orange tabby',
           famous_for: 'modeling',
           date_modified: currentDate,
@@ -1527,7 +1528,7 @@ You can create your own cell content by passing the `Cell` property to a specifi
     newColors[index] = cellColors[index] < 3 ? cellColors[index] + 1 : 0;
     setCellColors(newColors);
   };
-  
+
   return (
     <DataTable
       isExpandable
@@ -1544,7 +1545,7 @@ You can create your own cell content by passing the `Cell` property to a specifi
           famous_for: 'serving moods',
         },
         {
-          name: 'Smoothie', 
+          name: 'Smoothie',
           color: 'orange tabby',
           famous_for: 'modeling',
         },
