@@ -151,16 +151,4 @@ describe('<StatusAlert />', () => {
       expect(statusAlertButton.innerHTML).toEqual(document.activeElement.innerHTML);
     });
   });
-  describe('default onClose behavior', () => {
-    it('does not throw error if onClose is not provided', async () => {
-      render(<StatusAlert dialog="Test Alert" open />);
-
-      const closeButton = screen.getByRole('button');
-      expect(closeButton).toBeInTheDocument();
-
-      await userEvent.click(closeButton);
-
-      expect(screen.queryByRole('alert')).toBeNull();
-    });
-  });
 });

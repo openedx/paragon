@@ -1,11 +1,9 @@
 import React from 'react';
 import { FocusOn } from 'react-focus-on';
-import { IntlProvider } from 'react-intl';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ModalLayer from '../ModalLayer';
-import messages from '../messages';
 
 jest.mock('../Portal', () => function PortalMock(props: any) {
   const { children, ...otherProps } = props;
@@ -44,11 +42,9 @@ describe('<ModalLayer />', () => {
 
     it('renders the dialog and a modal context provider', () => {
       render(
-        <IntlProvider locale="en" messages={{}}>
-          <ModalLayer isOpen={isOpen} onClose={closeFn}>
-            <Dialog />
-          </ModalLayer>
-        </IntlProvider>,
+        <ModalLayer isOpen={isOpen} onClose={closeFn}>
+          <Dialog />
+        </ModalLayer>,
       );
 
       const dialog = screen.getByRole('dialog', { name: 'A dialog' });
@@ -57,11 +53,9 @@ describe('<ModalLayer />', () => {
 
     it('renders a focus-on component with appropriate props', () => {
       render(
-        <IntlProvider locale="en" messages={{}}>
-          <ModalLayer isOpen={isOpen} onClose={closeFn}>
-            <Dialog />
-          </ModalLayer>
-        </IntlProvider>,
+        <ModalLayer isOpen={isOpen} onClose={closeFn}>
+          <Dialog />
+        </ModalLayer>,
       );
 
       const focusOn = screen.getByTestId('focus-on');
@@ -73,11 +67,9 @@ describe('<ModalLayer />', () => {
 
   it('when isOpen is false the dialog is not rendered', () => {
     render(
-      <IntlProvider locale="en" messages={{}}>
-        <ModalLayer isOpen={false} onClose={jest.fn()}>
-          <Dialog />
-        </ModalLayer>
-      </IntlProvider>,
+      <ModalLayer isOpen={false} onClose={jest.fn()}>
+        <Dialog />
+      </ModalLayer>,
     );
 
     const dialog = screen.queryByRole('dialog', { name: 'A dialog' });
@@ -89,13 +81,11 @@ describe('<ModalLayer />', () => {
       const user = userEvent.setup();
       const closeFn = jest.fn();
       render(
-        <IntlProvider locale="en" messages={{}}>
-          <ModalLayer isOpen onClose={closeFn} isBlocking={false}>
-            <Dialog />
-          </ModalLayer>
-        </IntlProvider>,
+        <ModalLayer isOpen onClose={closeFn} isBlocking={false}>
+          <Dialog />
+        </ModalLayer>,
       );
-      const backdrop = screen.getByRole('button', { name: messages.closeButtonText.defaultMessage });
+      const backdrop = screen.getByTestId('modal-backdrop');
       await user.click(backdrop);
       expect(closeFn).toHaveBeenCalled();
     });
@@ -103,11 +93,9 @@ describe('<ModalLayer />', () => {
     it('should configure FocusOn to close a non-blocking modal layer when Esc key is pressed', () => {
       const closeFn = jest.fn();
       render(
-        <IntlProvider locale="en" messages={{}}>
-          <ModalLayer isOpen onClose={closeFn} isBlocking={false}>
-            <Dialog />
-          </ModalLayer>
-        </IntlProvider>,
+        <ModalLayer isOpen onClose={closeFn} isBlocking={false}>
+          <Dialog />
+        </ModalLayer>,
       );
       expect(FocusOn).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -123,11 +111,9 @@ describe('<ModalLayer />', () => {
     it('should not configure FocusOn to close a blocking modal layer when Esc key is pressed', () => {
       const closeFn = jest.fn();
       render(
-        <IntlProvider locale="en" messages={{}}>
-          <ModalLayer isOpen onClose={closeFn} isBlocking>
-            <Dialog />
-          </ModalLayer>
-        </IntlProvider>,
+        <ModalLayer isOpen onClose={closeFn} isBlocking>
+          <Dialog />
+        </ModalLayer>,
       );
       expect(FocusOn).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -143,13 +129,11 @@ describe('<ModalLayer />', () => {
     it('does not close a blocking modal layer when backdrop is clicked', () => {
       const closeFn = jest.fn();
       render(
-        <IntlProvider locale="en" messages={{}}>
-          <ModalLayer isOpen onClose={closeFn} isBlocking>
-            <Dialog />
-          </ModalLayer>
-        </IntlProvider>,
+        <ModalLayer isOpen onClose={closeFn} isBlocking>
+          <Dialog />
+        </ModalLayer>,
       );
-      const backdrop = screen.getByRole('button', { name: messages.closeButtonText.defaultMessage });
+      const backdrop = screen.getByTestId('modal-backdrop');
       userEvent.click(backdrop);
       expect(closeFn).not.toHaveBeenCalled();
     });

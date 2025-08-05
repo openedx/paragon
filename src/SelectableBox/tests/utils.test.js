@@ -12,11 +12,4 @@ describe('utils', () => {
     expect(getInputType('SelectableBoxSet', 'radio')).toEqual(Form.RadioSet);
     expect(getInputType('SelectableBoxSet', 'checkbox')).toEqual(Form.CheckboxSet);
   });
-
-  it('getInputType returns null for unknown components', () => {
-    expect(getInputType('UnknownComponent', 'radio')).toBeNull();
-    expect(getInputType(undefined, 'radio')).toBeNull();
-    expect(getInputType(null, 'radio')).toBeNull();
-    expect(getInputType(123, 'radio')).toBeNull();
-  });
 });

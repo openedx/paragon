@@ -2,23 +2,17 @@ import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
-import { useIntl } from 'react-intl';
-import messages from './messages';
 import Portal from './Portal';
 import { ModalContextProvider } from './ModalContext';
 
 function ModalBackdrop({ onClick }: { onClick?: () => void }) {
-  const intl = useIntl();
-
   return (
     <div
       className="pgn__modal-backdrop"
       onClick={onClick}
       onKeyDown={onClick}
       data-testid="modal-backdrop"
-      role="button"
-      tabIndex={0}
-      aria-label={intl.formatMessage(messages.closeButtonText)}
+      role="presentation"
     />
   );
 }
