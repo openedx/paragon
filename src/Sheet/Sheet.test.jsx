@@ -45,6 +45,12 @@ describe('<Sheet />', () => {
         renderJSON(<Sheet position={POSITIONS.right} variant={VARIANTS.dark} />),
       ).toMatchSnapshot();
     });
+
+    test('className snapshot', () => {
+      expect(
+        renderJSON(<Sheet className="custom-classname" />),
+      ).toMatchSnapshot();
+    });
   });
   describe('correct rendering', () => {
     it('returns empty render if show is false', () => {

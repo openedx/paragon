@@ -26,13 +26,16 @@ class Sheet extends React.Component {
   }
 
   renderSheet() {
-    const { children, position, variant } = this.props;
+    const {
+      children, position, variant, className,
+    } = this.props;
     return (
       <div
         className={classNames(
           'pgn__sheet-component',
           `pgn__sheet__${variant}`,
           position,
+          className,
         )}
         role="alert"
         aria-live="polite"
@@ -93,6 +96,8 @@ Sheet.propTypes = {
   onClose: PropTypes.func,
   /** a string designating which version of the sheet to show (light vs dark) */
   variant: PropTypes.oneOf([VARIANTS.light, VARIANTS.dark]),
+  /** Specifies class name to append to the base element. */
+  className: PropTypes.string,
 };
 
 Sheet.defaultProps = {
@@ -102,6 +107,7 @@ Sheet.defaultProps = {
   show: true,
   onClose: () => {},
   variant: VARIANTS.light,
+  className: undefined,
 };
 
 export default Sheet;
