@@ -1,5 +1,5 @@
 {
-  "lastModified": 1754834848904,
+  "lastModified": 1754921335085,
   "projectUsages": [
     {
       "version": "23.14.1",
@@ -672,7 +672,7 @@
       }
     },
     {
-      "version": "23.14.0",
+      "version": "23.14.1",
       "name": "@edx/frontend-app-account",
       "repository": {
         "type": "git",
@@ -683,21 +683,21 @@
         "Alert": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 255,
+            "line": 259,
             "column": 8,
-            "index": 9104
+            "index": 9146
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 277,
+            "line": 281,
             "column": 8,
-            "index": 9818
+            "index": 9857
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 360,
+            "line": 364,
             "column": 4,
-            "index": 12680
+            "index": 12657
           },
           {
             "filePath": "src/account-settings/name-change/NameChange.jsx",
@@ -733,15 +733,15 @@
         "Hyperlink": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 285,
+            "line": 289,
             "column": 16,
-            "index": 10297
+            "index": 10325
           },
           {
             "filePath": "src/account-settings/BetaLanguageBanner.jsx",
-            "line": 77,
-            "column": 12,
-            "index": 2873
+            "line": 75,
+            "column": 10,
+            "index": 2799
           },
           {
             "filePath": "src/account-settings/delete-account/BeforeProceedingBanner.jsx",
@@ -751,9 +751,9 @@
           },
           {
             "filePath": "src/account-settings/delete-account/DeleteAccount.jsx",
-            "line": 105,
+            "line": 102,
             "column": 16,
-            "index": 3308
+            "index": 3166
           },
           {
             "filePath": "src/account-settings/delete-account/PrintingInstructions.jsx",
@@ -795,51 +795,51 @@
         "CheckCircle": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 331,
+            "line": 335,
             "column": 14,
-            "index": 11670
+            "index": 11679
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 421,
+            "line": 425,
             "column": 27,
-            "index": 14558
+            "index": 14479
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 544,
+            "line": 548,
             "column": 20,
-            "index": 18775
+            "index": 18545
           }
         ],
         "Error": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 346,
+            "line": 350,
             "column": 14,
-            "index": 12236
+            "index": 12229
           }
         ],
         "WarningFilled": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 362,
+            "line": 366,
             "column": 12,
-            "index": 12723
+            "index": 12700
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 423,
+            "line": 427,
             "column": 27,
-            "index": 14702
+            "index": 14623
           }
         ],
         "Alert.Heading": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 364,
+            "line": 368,
             "column": 6,
-            "index": 12750
+            "index": 12727
           },
           {
             "filePath": "src/account-settings/OneTimeDismissibleAlert.jsx",
@@ -851,15 +851,15 @@
         "Icon": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 421,
+            "line": 425,
             "column": 16,
-            "index": 14547
+            "index": 14468
           },
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 423,
+            "line": 427,
             "column": 16,
-            "index": 14691
+            "index": 14612
           },
           {
             "filePath": "src/notification-preferences/NotificationTypes.jsx",
@@ -871,9 +871,9 @@
         "Container": [
           {
             "filePath": "src/account-settings/AccountSettingsPage.jsx",
-            "line": 855,
-            "column": 6,
-            "index": 32166
+            "line": 848,
+            "column": 4,
+            "index": 31024
           },
           {
             "filePath": "src/notification-preferences/NotificationSettings.jsx",
@@ -885,27 +885,27 @@
         "Button": [
           {
             "filePath": "src/account-settings/BetaLanguageBanner.jsx",
-            "line": 71,
-            "column": 12,
-            "index": 2566
+            "line": 69,
+            "column": 10,
+            "index": 2520
           },
           {
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
-            "line": 84,
-            "column": 12,
-            "index": 2809
+            "line": 79,
+            "column": 10,
+            "index": 2642
           },
           {
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
-            "line": 85,
-            "column": 12,
-            "index": 2879
+            "line": 80,
+            "column": 10,
+            "index": 2710
           },
           {
             "filePath": "src/account-settings/delete-account/DeleteAccount.jsx",
-            "line": 110,
+            "line": 107,
             "column": 16,
-            "index": 3594
+            "index": 3452
           },
           {
             "filePath": "src/account-settings/DOBForm.jsx",
@@ -1145,9 +1145,9 @@
           },
           {
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
-            "line": 111,
-            "column": 10,
-            "index": 3719
+            "line": 106,
+            "column": 8,
+            "index": 3495
           },
           {
             "filePath": "src/account-settings/DOBForm.jsx",
@@ -1187,9 +1187,9 @@
           },
           {
             "filePath": "src/id-verification/Camera.jsx",
-            "line": 285,
-            "column": 8,
-            "index": 9030
+            "line": 284,
+            "column": 6,
+            "index": 9551
           },
           {
             "filePath": "src/id-verification/panels/GetNameIdPanel.jsx",
@@ -1207,9 +1207,9 @@
           },
           {
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
-            "line": 115,
-            "column": 12,
-            "index": 3832
+            "line": 110,
+            "column": 10,
+            "index": 3600
           },
           {
             "filePath": "src/account-settings/DOBForm.jsx",
@@ -1311,9 +1311,9 @@
           },
           {
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
-            "line": 83,
-            "column": 10,
-            "index": 2785
+            "line": 78,
+            "column": 8,
+            "index": 2620
           },
           {
             "filePath": "src/account-settings/DOBForm.jsx",
@@ -1413,17 +1413,17 @@
         "AlertModal": [
           {
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
-            "line": 77,
-            "column": 6,
-            "index": 2573
+            "line": 72,
+            "column": 4,
+            "index": 2420
           }
         ],
         "Form.Control": [
           {
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
-            "line": 118,
-            "column": 12,
-            "index": 4030
+            "line": 113,
+            "column": 10,
+            "index": 3792
           },
           {
             "filePath": "src/account-settings/DOBForm.jsx",
@@ -1525,9 +1525,9 @@
           },
           {
             "filePath": "src/id-verification/Camera.jsx",
-            "line": 296,
-            "column": 10,
-            "index": 9755
+            "line": 295,
+            "column": 8,
+            "index": 10205
           }
         ],
         "useWindowSize": [
@@ -1577,17 +1577,17 @@
         "Form.Check": [
           {
             "filePath": "src/id-verification/Camera.jsx",
-            "line": 286,
-            "column": 10,
-            "index": 9126
+            "line": 285,
+            "column": 8,
+            "index": 9645
           }
         ],
         "Spinner": [
           {
             "filePath": "src/id-verification/Camera.jsx",
-            "line": 295,
-            "column": 53,
-            "index": 9640
+            "line": 294,
+            "column": 40,
+            "index": 10092
           },
           {
             "filePath": "src/id-verification/panels/SummaryPanel.jsx",
@@ -3141,63 +3141,57 @@
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 95,
+            "line": 98,
             "column": 14,
-            "index": 2946
+            "index": 3028
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 150,
+            "line": 153,
             "column": 14,
-            "index": 5846
+            "index": 5928
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 169,
+            "line": 172,
             "column": 14,
-            "index": 6694
+            "index": 6776
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 190,
+            "line": 193,
             "column": 16,
-            "index": 7566
+            "index": 7648
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 237,
+            "line": 240,
             "column": 16,
-            "index": 9706
+            "index": 9788
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 281,
+            "line": 284,
             "column": 14,
-            "index": 11663
+            "index": 11745
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 314,
+            "line": 317,
             "column": 16,
-            "index": 13068
+            "index": 13150
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 335,
+            "line": 346,
             "column": 14,
-            "index": 13879
+            "index": 14187
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 356,
-            "column": 14,
-            "index": 14683
-          },
-          {
-            "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 396,
+            "line": 386,
             "column": 16,
-            "index": 16547
+            "index": 16051
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2/AnalyticsV2Page.jsx",
@@ -3635,63 +3629,57 @@
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 96,
+            "line": 99,
             "column": 16,
-            "index": 2975
+            "index": 3057
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 151,
+            "line": 154,
             "column": 16,
-            "index": 5875
+            "index": 5957
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 170,
+            "line": 173,
             "column": 16,
-            "index": 6723
+            "index": 6805
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 191,
+            "line": 194,
             "column": 18,
-            "index": 7597
+            "index": 7679
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 238,
+            "line": 241,
             "column": 18,
-            "index": 9737
+            "index": 9819
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 282,
+            "line": 285,
             "column": 16,
-            "index": 11692
+            "index": 11774
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 315,
+            "line": 318,
             "column": 18,
-            "index": 13099
+            "index": 13181
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 336,
+            "line": 347,
             "column": 16,
-            "index": 13908
+            "index": 14216
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 357,
-            "column": 16,
-            "index": 14712
-          },
-          {
-            "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 397,
+            "line": 387,
             "column": 18,
-            "index": 16578
+            "index": 16082
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2/AnalyticsV2Page.jsx",
@@ -3925,63 +3913,57 @@
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 103,
+            "line": 106,
             "column": 16,
-            "index": 3330
+            "index": 3412
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 158,
+            "line": 161,
             "column": 16,
-            "index": 6212
+            "index": 6294
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 177,
+            "line": 180,
             "column": 16,
-            "index": 7054
+            "index": 7136
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 197,
+            "line": 200,
             "column": 18,
-            "index": 7845
+            "index": 7927
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 244,
+            "line": 247,
             "column": 18,
-            "index": 9986
+            "index": 10068
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 289,
+            "line": 292,
             "column": 16,
-            "index": 12022
+            "index": 12104
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 322,
+            "line": 325,
             "column": 18,
-            "index": 13449
+            "index": 13531
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 343,
+            "line": 370,
             "column": 16,
-            "index": 14244
+            "index": 15515
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 380,
-            "column": 16,
-            "index": 16011
-          },
-          {
-            "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 403,
+            "line": 393,
             "column": 18,
-            "index": 16861
+            "index": 16365
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2/AnalyticsV2Page.jsx",
@@ -4317,9 +4299,9 @@
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 367,
+            "line": 357,
             "column": 26,
-            "index": 15227
+            "index": 14731
           },
           {
             "filePath": "src/components/CodeManagement/ManageCodesTab.jsx",
@@ -6133,9 +6115,9 @@
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 85,
+            "line": 88,
             "column": 18,
-            "index": 2733
+            "index": 2815
           },
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/DownloadCSVButton.jsx",
@@ -10593,9 +10575,9 @@
         "IconButton": [
           {
             "filePath": "src/components/AdvanceAnalyticsV2.0/AnalyticsFilters.jsx",
-            "line": 80,
+            "line": 83,
             "column": 8,
-            "index": 2499
+            "index": 2581
           },
           {
             "filePath": "src/components/BulkEnrollmentPage/stepper/ReviewItem.jsx",
@@ -14802,6 +14784,12 @@
             "line": 495,
             "column": 12,
             "index": 18372
+          },
+          {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DownloadCsvIconButton.jsx",
+            "line": 88,
+            "column": 6,
+            "index": 3129
           },
           {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/DownloadCsvIconButton.jsx",
@@ -22011,6 +21999,12 @@
             "line": 132,
             "column": 10,
             "index": 4041
+          },
+          {
+            "filePath": "src/course-outline/xblock-status/NeverShowAssessmentResultMessage.jsx",
+            "line": 10,
+            "column": 6,
+            "index": 405
           },
           {
             "filePath": "src/course-outline/xblock-status/NeverShowAssessmentResultMessage.jsx",
@@ -34643,6 +34637,180 @@
             "index": 268
           }
         ],
+        "Row": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/GroupFeedback/GroupFeedbackRow.jsx",
+            "line": 39,
+            "column": 8,
+            "index": 1062
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
+            "line": 30,
+            "column": 6,
+            "index": 1034
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
+            "line": 40,
+            "column": 10,
+            "index": 1310
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/FilterStatus.jsx",
+            "line": 27,
+            "column": 6,
+            "index": 733
+          },
+          {
+            "filePath": "src/files-and-videos/generic/UsageMetricsMessage.jsx",
+            "line": 39,
+            "column": 6,
+            "index": 1197
+          },
+          {
+            "filePath": "src/group-configurations/index.jsx",
+            "line": 56,
+            "column": 6,
+            "index": 1836
+          },
+          {
+            "filePath": "src/studio-home/tabs-section/libraries-tab/index.jsx",
+            "line": 21,
+            "column": 6,
+            "index": 594
+          },
+          {
+            "filePath": "src/studio-home/tabs-section/libraries-tab/index.jsx",
+            "line": 31,
+            "column": 10,
+            "index": 801
+          },
+          {
+            "filePath": "src/textbooks/Textbooks.jsx",
+            "line": 68,
+            "column": 6,
+            "index": 2127
+          }
+        ],
+        "Form.Checkbox": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/GroupFeedback/GroupFeedbackRow.jsx",
+            "line": 41,
+            "column": 12,
+            "index": 1134
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
+            "line": 74,
+            "column": 8,
+            "index": 2425
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/SocialShareWidget/index.jsx",
+            "line": 54,
+            "column": 6,
+            "index": 1593
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 156,
+            "column": 14,
+            "index": 4964
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 178,
+            "column": 12,
+            "index": 5864
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 123,
+            "column": 10,
+            "index": 4120
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/AltTextControls.jsx",
+            "line": 47,
+            "column": 6,
+            "index": 1432
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 150,
+            "column": 14,
+            "index": 4699
+          },
+          {
+            "filePath": "src/generic/configure-modal/PrereqSettings.jsx",
+            "line": 92,
+            "column": 6,
+            "index": 2742
+          },
+          {
+            "filePath": "src/generic/configure-modal/UnitTab.jsx",
+            "line": 65,
+            "column": 10,
+            "index": 1634
+          },
+          {
+            "filePath": "src/generic/configure-modal/UnitTab.jsx",
+            "line": 152,
+            "column": 10,
+            "index": 5151
+          },
+          {
+            "filePath": "src/generic/configure-modal/VisibilityTab.jsx",
+            "line": 118,
+            "column": 10,
+            "index": 4181
+          },
+          {
+            "filePath": "src/optimizer-page/scan-results/filterModal.jsx",
+            "line": 53,
+            "column": 14,
+            "index": 1485
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
+            "line": 119,
+            "column": 30,
+            "index": 4296
+          },
+          {
+            "filePath": "src/schedule-and-details/requirements-section/entrance-exam/index.jsx",
+            "line": 33,
+            "column": 10,
+            "index": 1015
+          },
+          {
+            "filePath": "src/taxonomy/manage-orgs/ManageOrgsModal.jsx",
+            "line": 213,
+            "column": 10,
+            "index": 6366
+          }
+        ],
+        "Toast": [
+          {
+            "filePath": "src/editors/containers/TextEditor/index.jsx",
+            "line": 87,
+            "column": 8,
+            "index": 2286
+          },
+          {
+            "filePath": "src/files-and-videos/generic/ApiStatusToast.jsx",
+            "line": 22,
+            "column": 4,
+            "index": 435
+          },
+          {
+            "filePath": "src/generic/processing-notification/index.jsx",
+            "line": 11,
+            "column": 2,
+            "index": 268
+          }
+        ],
         "Form.Checkbox": [
           {
             "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/GroupFeedback/GroupFeedbackRow.jsx",
@@ -43939,6 +44107,12 @@
             "index": 410
           },
           {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ApprovedCourseCard.jsx",
+            "line": 14,
+            "column": 4,
+            "index": 410
+          },
+          {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/AssignedCourseCard.jsx",
             "line": 21,
             "column": 4,
@@ -44847,6 +45021,18 @@
             "index": 5203
           },
           {
+            "filePath": "src/components/search/content-highlights/ContentHighlights.jsx",
+            "line": 34,
+            "column": 4,
+            "index": 1189
+          },
+          {
+            "filePath": "src/components/search/Search.jsx",
+            "line": 151,
+            "column": 14,
+            "index": 5203
+          },
+          {
             "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/EditConfirmationButtons.jsx",
             "line": 25,
             "column": 6,
@@ -45283,6 +45469,12 @@
             "index": 2417
           },
           {
+            "filePath": "src/components/course/course-header/CourseRunCards.jsx",
+            "line": 53,
+            "column": 14,
+            "index": 2417
+          },
+          {
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
             "line": 59,
             "column": 6,
@@ -45421,6 +45613,12 @@
             "line": 385,
             "column": 16,
             "index": 13540
+          },
+          {
+            "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
+            "line": 31,
+            "column": 6,
+            "index": 977
           },
           {
             "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
@@ -46035,6 +46233,12 @@
             "index": 1067
           },
           {
+            "filePath": "src/components/course/CreatedBy.jsx",
+            "line": 32,
+            "column": 18,
+            "index": 1067
+          },
+          {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 32,
             "column": 8,
@@ -46175,6 +46379,12 @@
             "line": 584,
             "column": 12,
             "index": 20835
+          },
+          {
+            "filePath": "src/components/course/data/utils.jsx",
+            "line": 600,
+            "column": 12,
+            "index": 21213
           },
           {
             "filePath": "src/components/course/data/utils.jsx",
@@ -52926,6 +53136,18 @@
             "index": 310
           },
           {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
+            "line": 6,
+            "column": 22,
+            "index": 309
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusSidePanelSlot/index.jsx",
+            "line": 6,
+            "column": 22,
+            "index": 310
+          },
+          {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
             "line": 72,
             "column": 21,
@@ -53100,6 +53322,18 @@
             "line": 118,
             "column": 6,
             "index": 3481
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
+            "line": 7,
+            "column": 36,
+            "index": 368
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusSidePanelSlot/index.jsx",
+            "line": 7,
+            "column": 36,
+            "index": 369
           },
           {
             "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
@@ -57278,6 +57512,20 @@
             "index": 362
           }
         ],
+        "breakpoints": [
+          {
+            "filePath": "src/profile/data/hooks.js",
+            "line": 6,
+            "column": 29,
+            "index": 223
+          },
+          {
+            "filePath": "src/profile/data/hooks.js",
+            "line": 11,
+            "column": 29,
+            "index": 362
+          }
+        ],
         "Badge": [
           {
             "filePath": "src/profile-v2/forms/Bio.jsx",
@@ -57428,6 +57676,14 @@
             "line": 36,
             "column": 10,
             "index": 1330
+          }
+        ],
+        "EditOutline": [
+          {
+            "filePath": "src/profile/forms/elements/EditButton.jsx",
+            "line": 29,
+            "column": 6,
+            "index": 800
           }
         ],
         "EditOutline": [
@@ -62457,7 +62713,7 @@
       }
     },
     {
-      "version": "23.14.0",
+      "version": "23.14.1",
       "name": "@edx/frontend-component-header",
       "repository": {
         "type": "git",
