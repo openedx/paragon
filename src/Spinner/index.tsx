@@ -1,13 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import BaseSpinner from 'react-bootstrap/Spinner';
+import BaseSpinner, { type SpinnerProps as BaseSpinnerProps } from 'react-bootstrap/Spinner';
 
+interface SpinnerProps extends BaseSpinnerProps {
+  /** Optionally specify additional CSS classes to give this spinner's `<div>`. */
+  className?: string;
+  /** Specifies the screen reader content for a11y. */
+  screenReaderText?: React.ReactNode;
+}
+
+/** A spinning animation that indicates loading. */
 const Spinner = React.forwardRef(({
   className,
   screenReaderText,
   ...attrs
-}, ref) => {
+}: SpinnerProps, ref: React.ForwardedRef<HTMLDivElement>) => {
   const spinnerProps = {
     ...attrs,
     className: classNames('pgn__spinner', className),
@@ -19,17 +26,5 @@ const Spinner = React.forwardRef(({
     </BaseSpinner>
   );
 });
-
-Spinner.propTypes = {
-  /** Specifies the class name for the component. */
-  className: PropTypes.string,
-  /** Specifies the screen reader content for a11y. */
-  screenReaderText: PropTypes.node,
-};
-
-Spinner.defaultProps = {
-  className: undefined,
-  screenReaderText: undefined,
-};
 
 export default Spinner;

@@ -81,6 +81,14 @@ module.exports = {
         '@typescript-eslint/return-await': 'off',
       },
     },
+    // We can remove the following .tsx default-props override if
+    // https://github.com/openedx/eslint-config/pull/178 merges and we pull in that version.
+    {
+      files: ['**/*.tsx'],
+      rules: {
+        'react/require-default-props': 'off',
+      },
+    },
   ],
   env: {
     jest: true,
