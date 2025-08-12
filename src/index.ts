@@ -37,6 +37,7 @@ export { default as ModalDialog } from './Modal/ModalDialog';
 export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
+export { default as Spinner } from './Spinner';
 export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
 export { default as Tooltip } from './Tooltip';
 export { default as useWindowSize, type WindowSizeData } from './hooks/useWindowSizeHook';
@@ -167,8 +168,6 @@ export {
 } from './SearchField';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Sheet } from './Sheet';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Spinner } from './Spinner';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Stepper } from './Stepper';
 // @ts-ignore: has yet to be converted to TypeScript
