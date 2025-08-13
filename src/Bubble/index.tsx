@@ -1,27 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const STYLE_VARIANTS = ['primary', 'success', 'error', 'warning'] as const;
-
-export type BubbleVariant = typeof STYLE_VARIANTS[number];
+export type BubbleVariant = 'primary' | 'success' | 'error' | 'warning';
 
 export interface BubbleProps {
+  /** Specifies contents of the component. */
   children: React.ReactNode;
+  /** The `Bubble` style variant to use. */
   variant?: BubbleVariant;
+  /** Activates disabled variant. */
   disabled?: boolean;
+  /** Optional class name(s) to append to the base element. */
   className?: string;
+  /** Specifies whether to add padding to the `Bubble` or not. */
   expandable?: boolean;
 }
 
-const Bubble = React.forwardRef<HTMLDivElement, BubbleProps>(({
-  variant,
+const Bubble = React.forwardRef(({
+  variant = 'primary',
   className,
-  children,
-  disabled,
-  expandable,
+  children = null,
+  disabled = false,
+  expandable = false,
   ...props
-}, ref) => (
+}: BubbleProps, ref: React.ForwardedRef<HTMLDivElement>) => (
   <div
     ref={ref}
     className={classNames(
@@ -35,27 +37,5 @@ const Bubble = React.forwardRef<HTMLDivElement, BubbleProps>(({
     {children}
   </div>
 ));
-
-Bubble.propTypes = {
-  /** Specifies contents of the component. */
-  // @ts-ignore
-  children: PropTypes.node,
-  /** The `Bubble` style variant to use. */
-  variant: PropTypes.oneOf(STYLE_VARIANTS),
-  /** Activates disabled variant. */
-  disabled: PropTypes.bool,
-  /** A class name to append to the base element. */
-  className: PropTypes.string,
-  /** Specifies whether to add padding to the `Bubble` or not. */
-  expandable: PropTypes.bool,
-};
-
-Bubble.defaultProps = {
-  children: null,
-  variant: 'primary',
-  disabled: false,
-  className: undefined,
-  expandable: false,
-};
 
 export default Bubble;

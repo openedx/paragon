@@ -1,13 +1,18 @@
 import React, { useContext, useMemo } from 'react';
+import { useIntl } from 'react-intl';
 import DataTableContext from './DataTableContext';
 import { DropdownButton } from '../Dropdown';
 import useWindowSize from '../hooks/useWindowSizeHook';
 import breakpoints from '../utils/breakpoints';
+import messages from './messages';
 
 /** The first filter will be as an input, additional filters will be available in a dropdown.  */
 function DropdownFilters() {
+  const intl = useIntl();
   const { width } = useWindowSize();
-  const { columns, numBreakoutFilters } = useContext(DataTableContext);
+  const {
+    columns, numBreakoutFilters, filtersTitle,
+  } = useContext(DataTableContext);
 
   const [breakoutFilters, otherFilters] = useMemo(() => {
     if (!columns) {
@@ -25,6 +30,8 @@ function DropdownFilters() {
     return [boFilters, dropdownFilters];
   }, [columns, width, numBreakoutFilters]);
 
+  const dropdownTitle = filtersTitle || intl.formatMessage(messages.filtersDropdownTitle);
+
   return (
     <div className="pgn__data-table-filters">
       {breakoutFilters.length > 0 && breakoutFilters.map((column) => (
@@ -33,7 +40,7 @@ function DropdownFilters() {
         </div>
       ))}
       {otherFilters.length > 0 && (
-        <DropdownButton variant="outline-primary" id="table-filters-dropdown" title="Filters">
+        <DropdownButton variant="outline-primary" id="table-filters-dropdown" title={dropdownTitle}>
           {otherFilters.map((column) => (
             <div
               key={column.Header}

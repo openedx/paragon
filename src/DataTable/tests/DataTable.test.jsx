@@ -8,6 +8,7 @@ import DataTable from '..';
 import DataTableContext from '../DataTableContext';
 import { TextFilter } from '../..';
 import { SELECT_ALL_TEST_ID } from '../selection/data/constants';
+import messages from '../messages';
 
 const additionalColumns = [
   {
@@ -162,6 +163,55 @@ describe('<DataTable />', () => {
     expect(screen.getByText('Action')).toBeInTheDocument();
     expect(screen.getByText('More')).toBeInTheDocument();
   });
+
+  it('displays the custom filters title in the sidebar', () => {
+    render(
+      <DataTableWrapper
+        showFiltersInSidebar
+        filtersTitle="Refine Your Search"
+        isFilterable
+        defaultColumnValues={{ Filter: TextFilter }}
+        {...props}
+      />,
+    );
+    expect(screen.getByRole('heading', { name: 'Refine Your Search' })).toBeInTheDocument();
+  });
+
+  it('displays the default filters title in the sidebar', () => {
+    render(
+      <DataTableWrapper
+        showFiltersInSidebar
+        isFilterable
+        defaultColumnValues={{ Filter: TextFilter }}
+        {...props}
+      />,
+    );
+    expect(screen.getByRole('heading', { name: messages.filtersDropdownTitle.defaultMessage })).toBeInTheDocument();
+  });
+
+  it('displays the custom filters title in the filters dropdown', () => {
+    render(
+      <DataTableWrapper
+        filtersTitle="Refine Your Search"
+        isFilterable
+        defaultColumnValues={{ Filter: TextFilter }}
+        {...props}
+      />,
+    );
+    expect(screen.getByRole('button', { name: 'Refine Your Search' })).toBeInTheDocument();
+  });
+
+  it('displays the default filters title in the filters dropdown', () => {
+    render(
+      <DataTableWrapper
+        isFilterable
+        defaultColumnValues={{ Filter: TextFilter }}
+        {...props}
+      />,
+    );
+    expect(screen.getByRole('button', { name: messages.filtersDropdownTitle.defaultMessage })).toBeInTheDocument();
+  });
+
   it('calls useTable with the data and columns', () => {
     const spy = jest.spyOn(reactTable, 'useTable');
     render(<DataTableWrapper {...props} />);
@@ -213,7 +263,7 @@ describe('<DataTable />', () => {
       fetchData: jest.fn(),
     };
     render(<DataTableWrapper {...propsWithSelection} />);
-    const filtersButton = screen.getByRole('button', { name: 'Filters' });
+    const filtersButton = screen.getByRole('button', { name: messages.filtersDropdownTitle.defaultMessage });
 
     await userEvent.click(filtersButton);
 
