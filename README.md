@@ -121,6 +121,72 @@ Note that if you are using ``@edx/frontend-platform``'s ``AppProvider`` componen
   });
 ```
 
+## Available Scripts
+
+Paragon provides a comprehensive set of npm scripts to help with development, testing, building, and maintenance tasks. Here's a detailed explanation of each available script:
+
+### Build Scripts
+
+- **`npm run build`** - Builds the entire Paragon design system using the Makefile. This compiles TypeScript, SCSS, and creates the distribution files in the `dist/` directory.
+
+- **`npm run build-docs`** - Builds the documentation website specifically. This is useful when generating a static version of the docs for deployment.
+
+- **`npm run build-types`** - Generates TypeScript declaration files (`.d.ts`). This is essential for providing type information to TypeScript consumers.
+
+### Development Scripts
+
+- **`npm start`** - Starts the documentation website development server. This is the primary way to view and interact with Paragon components during development.
+
+- **`npm run generate-component`** - Launches the component generator tool. This interactive CLI helps create new components with all the necessary files and boilerplate code.
+
+- **`npm run example:start`** - Starts the example application, which allows testing Paragon components in a micro-frontend (MFE) environment.
+
+- **`npm run example:start:with-theme`** - Starts the example application with theme support, useful for testing branded components.
+
+### Testing Scripts
+
+- **`npm run test`** - Runs the full test suite with coverage reporting using Jest.
+
+- **`npm run test:watch`** - Runs tests in watch mode, automatically re-running tests when files change.
+
+- **`npm run debug-test`** - Runs tests with Node.js inspector enabled, allowing debugging tests in Chrome DevTools.
+
+- **`npm run snapshot`** - Updates Jest snapshot files. Run this when intentional changes to component rendering should be reflected in snapshots.
+
+### Code Quality Scripts
+
+- **`npm run lint`** - Runs both ESLint (for JavaScript/TypeScript) and Stylelint (for SCSS) to check code quality and enforce coding standards.
+
+- **`npm run stylelint`** - Runs Stylelint specifically on SCSS files to ensure consistent styling conventions.
+
+- **`npm run type-check`** - Performs TypeScript type checking without emitting files.
+
+- **`npm run type-check:watch`** - Runs TypeScript type checking in watch mode, continuously monitoring for type errors during development.
+
+### Internationalization Scripts
+
+- **`npm run i18n_extract`** - Extracts internationalization strings from React components and generates a JSON file for translation services like Transifex.
+
+- **`npm run i18n_compile`** - Compiles translated messages back into the format expected by react-intl.
+
+### Documentation and Playroom Scripts
+
+- **`npm run playroom:start`** - Starts Playroom, a tool for developing and testing components in isolation with live code editing.
+
+- **`npm run playroom:build`** - Builds a static version of Playroom for deployment.
+
+### Release and Maintenance Scripts
+
+- **`npm run semantic-release`** - Runs the semantic release process, which automatically determines version bumps, creates Git tags, and publishes to npm based on commit messages.
+
+- **`npm run generate-changelog`** - Generates a changelog file based on commit history and semantic versioning.
+
+- **`npm run commit`** - Runs the commitizen CLI, which helps create properly formatted commit messages that work with semantic-release.
+
+- **`npm run prepublishOnly`** - Automatically runs before npm publish to ensure the library is built before distribution.
+
+- **`npm run prepare`** - Sets up Git hooks (via Husky) for pre-commit linting and other checks.
+
 ## Contributing
 
 The branch to target with your PR depends on the type of change you are contributing to Paragon.
@@ -148,7 +214,7 @@ If you want to test the changes with local MFE setup, you need to create a "modu
 ```javascript
 module.exports = {
   /*
-  Modules you want to use from local source code. Adding a module here means that when 
+  Modules you want to use from local source code. Adding a module here means that when
   your MFE runs its build, it'll resolve the source from peer directories of the app.
 
   moduleName: the name you use to import code from the module.
@@ -173,26 +239,26 @@ Then, when importing Paragon's core SCSS in your MFE the import needs to begin w
 When developing a new component you should generally follow three rules:
 1. The component should not have **any** hardcoded strings as it would be impossible for consumers to translate it
 2. Internationalize all default values of props that expect strings, i.e.
-   
+
    - For places where you need to display a string, and it's okay if it is a React element use ``FormattedMessage``, e.g. (see [Alert](src/Alert/index.jsx) component for a full example)
-   
+
       ```javascript
       import { FormattedMessage } from 'react-intl';
-      
-      <FormattedMessage 
+
+      <FormattedMessage
         id="pgn.Alert.closeLabel"
         defaultMessage="Dismiss"
         description="Label of a close button on Alert component"
       />
       ```
-     
+
    - For places where the display string has to be a plain JavaScript string use ``formatMessage``, this would require access to ``intl`` object from ``react-intl``, e.g.
-      
+
       - For class components use ``injectIntl`` HOC
 
           ```javascript
           import { injectIntl } from 'react-intl';
-          
+
           class MyClassComponent extends React.Component {
             render() {
               const { altText, intl } = this.props;
@@ -201,7 +267,7 @@ When developing a new component you should generally follow three rules:
                 defaultMessage: 'Close',
                 description: 'Close label for Toast component',
               });
-              
+
               return (
                 <IconButton
                   alt={intlCloseLabel}
@@ -211,15 +277,15 @@ When developing a new component you should generally follow three rules:
               )
             }
           }
-          
+
           export default injectIntl(MyClassComponent);
           ```
 
       - For functional components use ``useIntl`` hook
 
-          ```javascript 
+          ```javascript
           import { useIntl } from 'react-intl';
-    
+
           const MyFunctionComponent = ({ altText }) => {
             const intls = useIntl();
             const intlAltText = altText || intl.formatMessage({
@@ -227,7 +293,7 @@ When developing a new component you should generally follow three rules:
               defaultMessage: 'Close',
               description: 'Close label for Toast component',
             });
-    
+
             return (
               <IconButton
                 alt={intlCloseLabel}
@@ -239,7 +305,7 @@ When developing a new component you should generally follow three rules:
 
           export default MyFunctionComponent;
           ```
-      
+
    **Notes on the format above**:
    - `id` is required and must be a dot-separated string of the format `pgn.<componentName>.<subcomponentName>.<propName>`
    - The `defaultMessage` is required, and should be the English display string.
