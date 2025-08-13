@@ -1,5 +1,4 @@
 import React, { AnchorHTMLAttributes } from 'react';
-import PropTypes from 'prop-types';
 import { Button, Hyperlink, Nav } from '~paragon-react';
 import { PAGE_EDIT_BTN_CLICKED_EVENT, sendUserAnalyticsEvent } from '../../../segment-events';
 
@@ -40,14 +39,5 @@ function PageEditBtn({ githubEditPath, isNavLink, ...props }: PageEditBtnProps) 
     </Button>
   );
 }
-
-PageEditBtn.propTypes = {
-  githubEditPath: PropTypes.string.isRequired,
-  isNavLink: PropTypes.bool,
-};
-
-PageEditBtn.defaultProps = {
-  isNavLink: false,
-};
 
 export default PageEditBtn;

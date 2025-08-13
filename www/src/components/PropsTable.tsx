@@ -100,10 +100,13 @@ function PropsTable({ props: componentProps, displayName, content }: IPropsTable
       {content && <p className="px-4 small">{content}</p>}
       {bootstrapLink && (
         <p className="px-4 small mb-3">
-          This is a pass through component from React-Bootstrap, see original props documentation{' '}
+          This is a pass through component from React-Bootstrap; see original props documentation{' '}
           <Hyperlink destination={bootstrapLink}>
             here.
-          </Hyperlink>
+          </Hyperlink>{' '}
+          You can also pass any HTML attributes, such as <code>onClick</code>, <code>role</code>, etc. Which attributes
+          are available depends on whether or not you have overriden the underlying HTML element using the{' '}
+          <code>as</code> property.
         </p>
       )}
       {componentProps.length > 0 ? (
