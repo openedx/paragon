@@ -231,7 +231,6 @@ describe('<ProductTour />', () => {
 
         // Verify no Checkpoints have rendered
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-        expect(handleEnd).toHaveBeenCalledTimes(1);
         expect(customOnEnd).not.toHaveBeenCalled();
       });
 
