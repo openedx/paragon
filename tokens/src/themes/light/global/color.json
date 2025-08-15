@@ -1336,6 +1336,654 @@
         "$description": "Basic dark color."
       }
     },
+    "label-a": {
+      "100": {
+        "$value": "#F9E6E6",
+        "$description": "Label color A of level 100.",
+        "actions": {
+          "default": "{color.action.default.label-a.100}"
+        }
+      },
+      "200": {
+        "$value": "#EFBDBD",
+        "$description": "Label color A of level 200.",
+        "actions": {
+          "default": "{color.action.default.label-a.200}"
+        }
+      },
+      "300": {
+        "$value": "#E69898",
+        "$description": "Label color A of level 300.",
+        "actions": {
+          "default": "{color.action.default.label-a.300}"
+        }
+      },
+      "400": {
+        "$value": "#DA6363",
+        "$description": "Label color A of level 400.",
+        "actions": {
+          "default": "{color.action.default.label-a.400}"
+        }
+      },
+      "500": {
+        "$value": "{color.label-a.base}",
+        "$description": "Label color A of level 500.",
+        "actions": {
+          "default": "{color.action.default.label-a.500}"
+        }
+      },
+      "600": {
+        "$value": "#B92C2C",
+        "$description": "Label color A of level 600.",
+        "actions": {
+          "default": "{color.action.default.label-a.600}"
+        }
+      },
+      "700": {
+        "$value": "#942323",
+        "$description": "Label color A of level 700.",
+        "actions": {
+          "default": "{color.action.default.label-a.700}"
+        }
+      },
+      "800": {
+        "$value": "#731C1C",
+        "$description": "Label color A of level 800.",
+        "actions": {
+          "default": "{color.action.default.label-a.800}"
+        }
+      },
+      "900": {
+        "$value": "#521414",
+        "$description": "Label color A of level 900.",
+        "actions": {
+          "default": "{color.action.default.label-a.900}"
+        }
+      },
+      "base": {
+        "$value": "#D24242",
+        "$description": "Base color of Label color A.",
+        "actions": {
+          "default": "{color.action.default.label-a.base}"
+        }
+      }
+    },
+    "label-b": {
+      "100": {
+        "$value": "#F6F9F1",
+        "$description": "Label color B of level 100.",
+        "actions": {
+          "default": "{color.action.default.label-b.100}"
+        }
+      },
+      "200": {
+        "$value": "#D9E4C4",
+        "$description": "Label color B of level 200.",
+        "actions": {
+          "default": "{color.action.default.label-b.200}"
+        }
+      },
+      "300": {
+        "$value": "#B3C888",
+        "$description": "Label color B of level 300.",
+        "actions": {
+          "default": "{color.action.default.label-b.300}"
+        }
+      },
+      "400": {
+        "$value": "#96B35B",
+        "$description": "Label color B of level 400.",
+        "actions": {
+          "default": "{color.action.default.label-b.400}"
+        }
+      },
+      "500": {
+        "$value": "{color.label-b.base}",
+        "$description": "Label color B of level 500.",
+        "actions": {
+          "default": "{color.action.default.label-b.500}"
+        }
+      },
+      "600": {
+        "$value": "#677E3A",
+        "$description": "Label color B of level 600.",
+        "actions": {
+          "default": "{color.action.default.label-b.600}"
+        }
+      },
+      "700": {
+        "$value": "#5C7033",
+        "$description": "Label color B of level 700.",
+        "actions": {
+          "default": "{color.action.default.label-b.700}"
+        }
+      },
+      "800": {
+        "$value": "#4A5B2A",
+        "$description": "Label color B of level 800.",
+        "actions": {
+          "default": "{color.action.default.label-b.800}"
+        }
+      },
+      "900": {
+        "$value": "#394620",
+        "$description": "Label color B of level 900.",
+        "actions": {
+          "default": "{color.action.default.label-b.900}"
+        }
+      },
+      "base": {
+        "$value": "#7B9645",
+        "$description": "Base color of Label color B.",
+        "actions": {
+          "default": "{color.action.default.label-b.base}"
+        }
+      }
+    },
+    "label-c": {
+      "100": {
+        "$value": "#E6E6F9",
+        "$description": "Label color C of level 100.",
+        "actions": {
+          "default": "{color.action.default.label-c.100}"
+        }
+      },
+      "200": {
+        "$value": "#C5C5F1",
+        "$description": "Label color C of level 200.",
+        "actions": {
+          "default": "{color.action.default.label-c.200}"
+        }
+      },
+      "300": {
+        "$value": "#A4A4E9",
+        "$description": "Label color C of level 300.",
+        "actions": {
+          "default": "{color.action.default.label-c.300}"
+        }
+      },
+      "400": {
+        "$value": "#7F7FE1",
+        "$description": "Label color C of level 400.",
+        "actions": {
+          "default": "{color.action.default.label-c.400}"
+        }
+      },
+      "500": {
+        "$value": "{color.label-c.base}",
+        "$description": "Label color C of level 500.",
+        "actions": {
+          "default": "{color.action.default.label-c.500}"
+        }
+      },
+      "600": {
+        "$value": "#3131CE",
+        "$description": "Label color C of level 600.",
+        "actions": {
+          "default": "{color.action.default.label-c.600}"
+        }
+      },
+      "700": {
+        "$value": "#2727A5",
+        "$description": "Label color C of level 700.",
+        "actions": {
+          "default": "{color.action.default.label-c.700}"
+        }
+      },
+      "800": {
+        "$value": "#1D1D7C",
+        "$description": "Label color C of level 800.",
+        "actions": {
+          "default": "{color.action.default.label-c.800}"
+        }
+      },
+      "900": {
+        "$value": "#141452",
+        "$description": "Label color C of level 900.",
+        "actions": {
+          "default": "{color.action.default.label-c.900}"
+        }
+      },
+      "base": {
+        "$value": "#5A5AD8",
+        "$description": "Base color of Label color C.",
+        "actions": {
+          "default": "{color.action.default.label-c.base}"
+        }
+      }
+    },
+    "label-d": {
+      "100": {
+        "$value": "#FAF5EB",
+        "$description": "Label color D of level 100.",
+        "actions": {
+          "default": "{color.action.default.label-d.100}"
+        }
+      },
+      "200": {
+        "$value": "#EEDCBA",
+        "$description": "Label color D of level 200.",
+        "actions": {
+          "default": "{color.action.default.label-d.200}"
+        }
+      },
+      "300": {
+        "$value": "#DDBA74",
+        "$description": "Label color D of level 300.",
+        "actions": {
+          "default": "{color.action.default.label-d.300}"
+        }
+      },
+      "400": {
+        "$value": "#CF9F3F",
+        "$description": "Label color D of level 400.",
+        "actions": {
+          "default": "{color.action.default.label-d.400}"
+        }
+      },
+      "500": {
+        "$value": "{color.label-d.base}",
+        "$description": "Label color D of level 500.",
+        "actions": {
+          "default": "{color.action.default.label-d.500}"
+        }
+      },
+      "600": {
+        "$value": "#936E25",
+        "$description": "Label color D of level 600.",
+        "actions": {
+          "default": "{color.action.default.label-d.600}"
+        }
+      },
+      "700": {
+        "$value": "#7F5F1F",
+        "$description": "Label color D of level 700.",
+        "actions": {
+          "default": "{color.action.default.label-d.700}"
+        }
+      },
+      "800": {
+        "$value": "#6A501A",
+        "$description": "Label color D of level 800.",
+        "actions": {
+          "default": "{color.action.default.label-d.800}"
+        }
+      },
+      "900": {
+        "$value": "#523D14",
+        "$description": "Label color D of level 900.",
+        "actions": {
+          "default": "{color.action.default.label-d.900}"
+        }
+      },
+      "base": {
+        "$value": "#B0842C",
+        "$description": "Base color of Label color D.",
+        "actions": {
+          "default": "{color.action.default.label-d.base}"
+        }
+      }
+    },
+    "label-e": {
+      "100": {
+        "$value": "#E6F3F9",
+        "$description": "Label color E of level 100.",
+        "actions": {
+          "default": "{color.action.default.label-e.100}"
+        }
+      },
+      "200": {
+        "$value": "#B5DBED",
+        "$description": "Label color E of level 200.",
+        "actions": {
+          "default": "{color.action.default.label-e.200}"
+        }
+      },
+      "300": {
+        "$value": "#7FC0E1",
+        "$description": "Label color E of level 300.",
+        "actions": {
+          "default": "{color.action.default.label-e.300}"
+        }
+      },
+      "400": {
+        "$value": "#52AAD6",
+        "$description": "Label color E of level 400.",
+        "actions": {
+          "default": "{color.action.default.label-e.400}"
+        }
+      },
+      "500": {
+        "$value": "{color.label-e.base}",
+        "$description": "Label color E of level 500.",
+        "actions": {
+          "default": "{color.action.default.label-e.500}"
+        }
+      },
+      "600": {
+        "$value": "#277BA5",
+        "$description": "Label color E of level 600.",
+        "actions": {
+          "default": "{color.action.default.label-e.600}"
+        }
+      },
+      "700": {
+        "$value": "#21688C",
+        "$description": "Label color E of level 700.",
+        "actions": {
+          "default": "{color.action.default.label-e.700}"
+        }
+      },
+      "800": {
+        "$value": "#1B536F",
+        "$description": "Label color E of level 800.",
+        "actions": {
+          "default": "{color.action.default.label-e.800}"
+        }
+      },
+      "900": {
+        "$value": "#143D52",
+        "$description": "Label color E of level 900.",
+        "actions": {
+          "default": "{color.action.default.label-e.900}"
+        }
+      },
+      "base": {
+        "$value": "#2E90C2",
+        "$description": "Base color of Label color E.",
+        "actions": {
+          "default": "{color.action.default.label-e.base}"
+        }
+      }
+    },
+    "label-f": {
+      "100": {
+        "$value": "#FAEAF2",
+        "$description": "Label color F of level 100.",
+        "actions": {
+          "default": "{color.action.default.label-f.100}"
+        }
+      },
+      "200": {
+        "$value": "#EBADCC",
+        "$description": "Label color F of level 200.",
+        "actions": {
+          "default": "{color.action.default.label-f.200}"
+        }
+      },
+      "300": {
+        "$value": "#E283B2",
+        "$description": "Label color F of level 300.",
+        "actions": {
+          "default": "{color.action.default.label-f.300}"
+        }
+      },
+      "400": {
+        "$value": "#DA639E",
+        "$description": "Label color F of level 400.",
+        "actions": {
+          "default": "{color.action.default.label-f.400}"
+        }
+      },
+      "500": {
+        "$value": "{color.label-f.base}",
+        "$description": "Label color F of level 500.",
+        "actions": {
+          "default": "{color.action.default.label-f.500}"
+        }
+      },
+      "600": {
+        "$value": "#B92C73",
+        "$description": "Label color F of level 600.",
+        "actions": {
+          "default": "{color.action.default.label-f.600}"
+        }
+      },
+      "700": {
+        "$value": "#94235C",
+        "$description": "Label color F of level 700.",
+        "actions": {
+          "default": "{color.action.default.label-f.700}"
+        }
+      },
+      "800": {
+        "$value": "#731C47",
+        "$description": "Label color F of level 800.",
+        "actions": {
+          "default": "{color.action.default.label-f.800}"
+        }
+      },
+      "900": {
+        "$value": "#521433",
+        "$description": "Label color F of level 900.",
+        "actions": {
+          "default": "{color.action.default.label-f.900}"
+        }
+      },
+      "base": {
+        "$value": "#D13F88",
+        "$description": "Base color of Label color F.",
+        "actions": {
+          "default": "{color.action.default.label-f.base}"
+        }
+      }
+    },
+    "label-g": {
+      "100": {
+        "$value": "#F0FAF6",
+        "$description": "Label color G of level 100.",
+        "actions": {
+          "default": "{color.action.default.label-g.100}"
+        }
+      },
+      "200": {
+        "$value": "#BEE9DB",
+        "$description": "Label color G of level 200.",
+        "actions": {
+          "default": "{color.action.default.label-g.200}"
+        }
+      },
+      "300": {
+        "$value": "#7DD4B7",
+        "$description": "Label color G of level 300.",
+        "actions": {
+          "default": "{color.action.default.label-g.300}"
+        }
+      },
+      "400": {
+        "$value": "#4BC39B",
+        "$description": "Label color G of level 400.",
+        "actions": {
+          "default": "{color.action.default.label-g.400}"
+        }
+      },
+      "500": {
+        "$value": "{color.label-g.base}",
+        "$description": "Label color G of level 500.",
+        "actions": {
+          "default": "{color.action.default.label-g.500}"
+        }
+      },
+      "600": {
+        "$value": "#2B8265",
+        "$description": "Label color G of level 600.",
+        "actions": {
+          "default": "{color.action.default.label-g.600}"
+        }
+      },
+      "700": {
+        "$value": "#267359",
+        "$description": "Label color G of level 700.",
+        "actions": {
+          "default": "{color.action.default.label-g.700}"
+        }
+      },
+      "800": {
+        "$value": "#20604A",
+        "$description": "Label color G of level 800.",
+        "actions": {
+          "default": "{color.action.default.label-g.800}"
+        }
+      },
+      "900": {
+        "$value": "#1A4C3C",
+        "$description": "Label color G of level 900.",
+        "actions": {
+          "default": "{color.action.default.label-g.900}"
+        }
+      },
+      "base": {
+        "$value": "#36A17D",
+        "$description": "Base color of Label color G.",
+        "actions": {
+          "default": "{color.action.default.label-g.base}"
+        }
+      }
+    },
+    "label-h": {
+      "100": {
+        "$value": "#F3E6F9",
+        "$description": "Label color H of level 100.",
+        "actions": {
+          "default": "{color.action.default.label-h.100}"
+        }
+      },
+      "200": {
+        "$value": "#E3C5F1",
+        "$description": "Label color H of level 200.",
+        "actions": {
+          "default": "{color.action.default.label-h.200}"
+        }
+      },
+      "300": {
+        "$value": "#D2A4E9",
+        "$description": "Label color H of level 300.",
+        "actions": {
+          "default": "{color.action.default.label-h.300}"
+        }
+      },
+      "400": {
+        "$value": "#C07FE1",
+        "$description": "Label color H of level 400.",
+        "actions": {
+          "default": "{color.action.default.label-h.400}"
+        }
+      },
+      "500": {
+        "$value": "{color.label-h.base}",
+        "$description": "Label color H of level 500.",
+        "actions": {
+          "default": "{color.action.default.label-h.500}"
+        }
+      },
+      "600": {
+        "$value": "#9A31CE",
+        "$description": "Label color H of level 600.",
+        "actions": {
+          "default": "{color.action.default.label-h.600}"
+        }
+      },
+      "700": {
+        "$value": "#7B27A5",
+        "$description": "Label color H of level 700.",
+        "actions": {
+          "default": "{color.action.default.label-h.700}"
+        }
+      },
+      "800": {
+        "$value": "#5C1D7C",
+        "$description": "Label color H of level 800.",
+        "actions": {
+          "default": "{color.action.default.label-h.800}"
+        }
+      },
+      "900": {
+        "$value": "#3D1452",
+        "$description": "Label color H of level 900.",
+        "actions": {
+          "default": "{color.action.default.label-h.900}"
+        }
+      },
+      "base": {
+        "$value": "#AE5AD8",
+        "$description": "Base color of Label color H.",
+        "actions": {
+          "default": "{color.action.default.label-h.base}"
+        }
+      }
+    },
+    "label-i": {
+      "100": {
+        "$value": "#ECF8EC",
+        "$description": "Label color I of level 100.",
+        "actions": {
+          "default": "{color.action.default.label-i.100}"
+        }
+      },
+      "200": {
+        "$value": "#C0E8C0",
+        "$description": "Label color I of level 200.",
+        "actions": {
+          "default": "{color.action.default.label-i.200}"
+        }
+      },
+      "300": {
+        "$value": "#80D080",
+        "$description": "Label color I of level 300.",
+        "actions": {
+          "default": "{color.action.default.label-i.300}"
+        }
+      },
+      "400": {
+        "$value": "#50BE50",
+        "$description": "Label color I of level 400.",
+        "actions": {
+          "default": "{color.action.default.label-i.400}"
+        }
+      },
+      "500": {
+        "$value": "{color.label-i.base}",
+        "$description": "Label color I of level 500.",
+        "actions": {
+          "default": "{color.action.default.label-i.500}"
+        }
+      },
+      "600": {
+        "$value": "#328632",
+        "$description": "Label color I of level 600.",
+        "actions": {
+          "default": "{color.action.default.label-i.600}"
+        }
+      },
+      "700": {
+        "$value": "#2B732B",
+        "$description": "Label color I of level 700.",
+        "actions": {
+          "default": "{color.action.default.label-i.700}"
+        }
+      },
+      "800": {
+        "$value": "#246124",
+        "$description": "Label color I of level 800.",
+        "actions": {
+          "default": "{color.action.default.label-i.800}"
+        }
+      },
+      "900": {
+        "$value": "#1C4A1C",
+        "$description": "Label color I of level 900.",
+        "actions": {
+          "default": "{color.action.default.label-i.900}"
+        }
+      },
+      "base": {
+        "$value": "#3BA03B",
+        "$description": "Base color of Label color I.",
+        "actions": {
+          "default": "{color.action.default.label-i.base}"
+        }
+      }
+    },
     "action": {
       "default": {
         "gray": {
@@ -2356,6 +3004,924 @@
               }
             ],
             "$value": "{color.dark.base}"
+          }
+        },
+        "label-a": {
+          "100": {
+            "source": "$action-default-label-a-100",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-a.100}"
+          },
+          "200": {
+            "source": "$action-default-label-a-200",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-a.200}"
+          },
+          "300": {
+            "source": "$action-default-label-a-300",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-a.300}"
+          },
+          "400": {
+            "source": "$action-default-label-a-400",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-a.400}"
+          },
+          "500": {
+            "source": "$action-default-label-a-500",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-a.500}"
+          },
+          "600": {
+            "source": "$action-default-label-a-600",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-a.600}"
+          },
+          "700": {
+            "source": "$action-default-label-a-700",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-a.700}"
+          },
+          "800": {
+            "source": "$action-default-label-a-800",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-a.800}"
+          },
+          "900": {
+            "source": "$action-default-label-a-900",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-a.900}"
+          },
+          "base": {
+            "source": "$action-default-label-a-base",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-a.base}"
+          }
+        },
+        "label-b": {
+          "100": {
+            "source": "$action-default-label-b-100",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-b.100}"
+          },
+          "200": {
+            "source": "$action-default-label-b-200",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-b.200}"
+          },
+          "300": {
+            "source": "$action-default-label-b-300",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-b.300}"
+          },
+          "400": {
+            "source": "$action-default-label-b-400",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-b.400}"
+          },
+          "500": {
+            "source": "$action-default-label-b-500",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-b.500}"
+          },
+          "600": {
+            "source": "$action-default-label-b-600",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-b.600}"
+          },
+          "700": {
+            "source": "$action-default-label-b-700",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-b.700}"
+          },
+          "800": {
+            "source": "$action-default-label-b-800",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-b.800}"
+          },
+          "900": {
+            "source": "$action-default-label-b-900",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-b.900}"
+          },
+          "base": {
+            "source": "$action-default-label-b-base",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-b.base}"
+          }
+        },
+        "label-c": {
+          "100": {
+            "source": "$action-default-label-c-100",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-c.100}"
+          },
+          "200": {
+            "source": "$action-default-label-c-200",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-c.200}"
+          },
+          "300": {
+            "source": "$action-default-label-c-300",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-c.300}"
+          },
+          "400": {
+            "source": "$action-default-label-c-400",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-c.400}"
+          },
+          "500": {
+            "source": "$action-default-label-c-500",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-c.500}"
+          },
+          "600": {
+            "source": "$action-default-label-c-600",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-c.600}"
+          },
+          "700": {
+            "source": "$action-default-label-c-700",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-c.700}"
+          },
+          "800": {
+            "source": "$action-default-label-c-800",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-c.800}"
+          },
+          "900": {
+            "source": "$action-default-label-c-900",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-c.900}"
+          },
+          "base": {
+            "source": "$action-default-label-c-base",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-c.base}"
+          }
+        },
+        "label-d": {
+          "100": {
+            "source": "$action-default-label-d-100",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-d.100}"
+          },
+          "200": {
+            "source": "$action-default-label-d-200",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-d.200}"
+          },
+          "300": {
+            "source": "$action-default-label-d-300",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-d.300}"
+          },
+          "400": {
+            "source": "$action-default-label-d-400",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-d.400}"
+          },
+          "500": {
+            "source": "$action-default-label-d-500",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-d.500}"
+          },
+          "600": {
+            "source": "$action-default-label-d-600",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-d.600}"
+          },
+          "700": {
+            "source": "$action-default-label-d-700",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-d.700}"
+          },
+          "800": {
+            "source": "$action-default-label-d-800",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-d.800}"
+          },
+          "900": {
+            "source": "$action-default-label-d-900",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-d.900}"
+          },
+          "base": {
+            "source": "$action-default-label-d-base",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-d.base}"
+          }
+        },
+        "label-e": {
+          "100": {
+            "source": "$action-default-label-e-100",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-e.100}"
+          },
+          "200": {
+            "source": "$action-default-label-e-200",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-e.200}"
+          },
+          "300": {
+            "source": "$action-default-label-e-300",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-e.300}"
+          },
+          "400": {
+            "source": "$action-default-label-e-400",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-e.400}"
+          },
+          "500": {
+            "source": "$action-default-label-e-500",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-e.500}"
+          },
+          "600": {
+            "source": "$action-default-label-e-600",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-e.600}"
+          },
+          "700": {
+            "source": "$action-default-label-e-700",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-e.700}"
+          },
+          "800": {
+            "source": "$action-default-label-e-800",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-e.800}"
+          },
+          "900": {
+            "source": "$action-default-label-e-900",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-e.900}"
+          },
+          "base": {
+            "source": "$action-default-label-e-base",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-e.base}"
+          }
+        },
+        "label-f": {
+          "100": {
+            "source": "$action-default-label-f-100",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-f.100}"
+          },
+          "200": {
+            "source": "$action-default-label-f-200",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-f.200}"
+          },
+          "300": {
+            "source": "$action-default-label-f-300",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-f.300}"
+          },
+          "400": {
+            "source": "$action-default-label-f-400",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-f.400}"
+          },
+          "500": {
+            "source": "$action-default-label-f-500",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-f.500}"
+          },
+          "600": {
+            "source": "$action-default-label-f-600",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-f.600}"
+          },
+          "700": {
+            "source": "$action-default-label-f-700",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-f.700}"
+          },
+          "800": {
+            "source": "$action-default-label-f-800",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-f.800}"
+          },
+          "900": {
+            "source": "$action-default-label-f-900",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-f.900}"
+          },
+          "base": {
+            "source": "$action-default-label-f-base",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-f.base}"
+          }
+        },
+        "label-g": {
+          "100": {
+            "source": "$action-default-label-g-100",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-g.100}"
+          },
+          "200": {
+            "source": "$action-default-label-g-200",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-g.200}"
+          },
+          "300": {
+            "source": "$action-default-label-g-300",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-g.300}"
+          },
+          "400": {
+            "source": "$action-default-label-g-400",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-g.400}"
+          },
+          "500": {
+            "source": "$action-default-label-g-500",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-g.500}"
+          },
+          "600": {
+            "source": "$action-default-label-g-600",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-g.600}"
+          },
+          "700": {
+            "source": "$action-default-label-g-700",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-g.700}"
+          },
+          "800": {
+            "source": "$action-default-label-g-800",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-g.800}"
+          },
+          "900": {
+            "source": "$action-default-label-g-900",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-g.900}"
+          },
+          "base": {
+            "source": "$action-default-label-g-base",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-g.base}"
+          }
+        },
+        "label-h": {
+          "100": {
+            "source": "$action-default-label-h-100",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-h.100}"
+          },
+          "200": {
+            "source": "$action-default-label-h-200",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-h.200}"
+          },
+          "300": {
+            "source": "$action-default-label-h-300",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-h.300}"
+          },
+          "400": {
+            "source": "$action-default-label-h-400",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-h.400}"
+          },
+          "500": {
+            "source": "$action-default-label-h-500",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-h.500}"
+          },
+          "600": {
+            "source": "$action-default-label-h-600",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-h.600}"
+          },
+          "700": {
+            "source": "$action-default-label-h-700",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-h.700}"
+          },
+          "800": {
+            "source": "$action-default-label-h-800",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-h.800}"
+          },
+          "900": {
+            "source": "$action-default-label-h-900",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-h.900}"
+          },
+          "base": {
+            "source": "$action-default-label-h-base",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-h.base}"
+          }
+        },
+        "label-i": {
+          "100": {
+            "source": "$action-default-label-i-100",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-i.100}"
+          },
+          "200": {
+            "source": "$action-default-label-i-200",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-i.200}"
+          },
+          "300": {
+            "source": "$action-default-label-i-300",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-i.300}"
+          },
+          "400": {
+            "source": "$action-default-label-i-400",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-i.400}"
+          },
+          "500": {
+            "source": "$action-default-label-i-500",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-i.500}"
+          },
+          "600": {
+            "source": "$action-default-label-i-600",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-i.600}"
+          },
+          "700": {
+            "source": "$action-default-label-i-700",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-i.700}"
+          },
+          "800": {
+            "source": "$action-default-label-i-800",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-i.800}"
+          },
+          "900": {
+            "source": "$action-default-label-i-900",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-i.900}"
+          },
+          "base": {
+            "source": "$action-default-label-i-base",
+            "modify": [
+              {
+                "type": "darken",
+                "amount": "0.1"
+              }
+            ],
+            "$value": "{color.label-i.base}"
           }
         },
         "accent": {

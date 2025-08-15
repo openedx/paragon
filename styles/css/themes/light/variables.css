@@ -654,6 +654,87 @@
   --pgn-color-brand-base: #9D0054FF; /* Basic brand color. */
   --pgn-color-light-base: #E1DDDBFF; /* Basic light color. */
   --pgn-color-dark-base: #273F2FFF; /* Basic dark color. */
+  --pgn-color-label-a-100: #F9E6E6FF; /* Label color A of level 100. */
+  --pgn-color-label-a-200: #EFBDBDFF; /* Label color A of level 200. */
+  --pgn-color-label-a-300: #E69898FF; /* Label color A of level 300. */
+  --pgn-color-label-a-400: #DA6363FF; /* Label color A of level 400. */
+  --pgn-color-label-a-600: #B92C2CFF; /* Label color A of level 600. */
+  --pgn-color-label-a-700: #942323FF; /* Label color A of level 700. */
+  --pgn-color-label-a-800: #731C1CFF; /* Label color A of level 800. */
+  --pgn-color-label-a-900: #521414FF; /* Label color A of level 900. */
+  --pgn-color-label-a-base: #D24242FF; /* Base color of Label color A. */
+  --pgn-color-label-b-100: #F6F9F1FF; /* Label color B of level 100. */
+  --pgn-color-label-b-200: #D9E4C4FF; /* Label color B of level 200. */
+  --pgn-color-label-b-300: #B3C888FF; /* Label color B of level 300. */
+  --pgn-color-label-b-400: #96B35BFF; /* Label color B of level 400. */
+  --pgn-color-label-b-600: #677E3AFF; /* Label color B of level 600. */
+  --pgn-color-label-b-700: #5C7033FF; /* Label color B of level 700. */
+  --pgn-color-label-b-800: #4A5B2AFF; /* Label color B of level 800. */
+  --pgn-color-label-b-900: #394620FF; /* Label color B of level 900. */
+  --pgn-color-label-b-base: #7B9645FF; /* Base color of Label color B. */
+  --pgn-color-label-c-100: #E6E6F9FF; /* Label color C of level 100. */
+  --pgn-color-label-c-200: #C5C5F1FF; /* Label color C of level 200. */
+  --pgn-color-label-c-300: #A4A4E9FF; /* Label color C of level 300. */
+  --pgn-color-label-c-400: #7F7FE1FF; /* Label color C of level 400. */
+  --pgn-color-label-c-600: #3131CEFF; /* Label color C of level 600. */
+  --pgn-color-label-c-700: #2727A5FF; /* Label color C of level 700. */
+  --pgn-color-label-c-800: #1D1D7CFF; /* Label color C of level 800. */
+  --pgn-color-label-c-900: #141452FF; /* Label color C of level 900. */
+  --pgn-color-label-c-base: #5A5AD8FF; /* Base color of Label color C. */
+  --pgn-color-label-d-100: #FAF5EBFF; /* Label color D of level 100. */
+  --pgn-color-label-d-200: #EEDCBAFF; /* Label color D of level 200. */
+  --pgn-color-label-d-300: #DDBA74FF; /* Label color D of level 300. */
+  --pgn-color-label-d-400: #CF9F3FFF; /* Label color D of level 400. */
+  --pgn-color-label-d-600: #936E25FF; /* Label color D of level 600. */
+  --pgn-color-label-d-700: #7F5F1FFF; /* Label color D of level 700. */
+  --pgn-color-label-d-800: #6A501AFF; /* Label color D of level 800. */
+  --pgn-color-label-d-900: #523D14FF; /* Label color D of level 900. */
+  --pgn-color-label-d-base: #B0842CFF; /* Base color of Label color D. */
+  --pgn-color-label-e-100: #E6F3F9FF; /* Label color E of level 100. */
+  --pgn-color-label-e-200: #B5DBEDFF; /* Label color E of level 200. */
+  --pgn-color-label-e-300: #7FC0E1FF; /* Label color E of level 300. */
+  --pgn-color-label-e-400: #52AAD6FF; /* Label color E of level 400. */
+  --pgn-color-label-e-600: #277BA5FF; /* Label color E of level 600. */
+  --pgn-color-label-e-700: #21688CFF; /* Label color E of level 700. */
+  --pgn-color-label-e-800: #1B536FFF; /* Label color E of level 800. */
+  --pgn-color-label-e-900: #143D52FF; /* Label color E of level 900. */
+  --pgn-color-label-e-base: #2E90C2FF; /* Base color of Label color E. */
+  --pgn-color-label-f-100: #FAEAF2FF; /* Label color F of level 100. */
+  --pgn-color-label-f-200: #EBADCCFF; /* Label color F of level 200. */
+  --pgn-color-label-f-300: #E283B2FF; /* Label color F of level 300. */
+  --pgn-color-label-f-400: #DA639EFF; /* Label color F of level 400. */
+  --pgn-color-label-f-600: #B92C73FF; /* Label color F of level 600. */
+  --pgn-color-label-f-700: #94235CFF; /* Label color F of level 700. */
+  --pgn-color-label-f-800: #731C47FF; /* Label color F of level 800. */
+  --pgn-color-label-f-900: #521433FF; /* Label color F of level 900. */
+  --pgn-color-label-f-base: #D13F88FF; /* Base color of Label color F. */
+  --pgn-color-label-g-100: #F0FAF6FF; /* Label color G of level 100. */
+  --pgn-color-label-g-200: #BEE9DBFF; /* Label color G of level 200. */
+  --pgn-color-label-g-300: #7DD4B7FF; /* Label color G of level 300. */
+  --pgn-color-label-g-400: #4BC39BFF; /* Label color G of level 400. */
+  --pgn-color-label-g-600: #2B8265FF; /* Label color G of level 600. */
+  --pgn-color-label-g-700: #267359FF; /* Label color G of level 700. */
+  --pgn-color-label-g-800: #20604AFF; /* Label color G of level 800. */
+  --pgn-color-label-g-900: #1A4C3CFF; /* Label color G of level 900. */
+  --pgn-color-label-g-base: #36A17DFF; /* Base color of Label color G. */
+  --pgn-color-label-h-100: #F3E6F9FF; /* Label color H of level 100. */
+  --pgn-color-label-h-200: #E3C5F1FF; /* Label color H of level 200. */
+  --pgn-color-label-h-300: #D2A4E9FF; /* Label color H of level 300. */
+  --pgn-color-label-h-400: #C07FE1FF; /* Label color H of level 400. */
+  --pgn-color-label-h-600: #9A31CEFF; /* Label color H of level 600. */
+  --pgn-color-label-h-700: #7B27A5FF; /* Label color H of level 700. */
+  --pgn-color-label-h-800: #5C1D7CFF; /* Label color H of level 800. */
+  --pgn-color-label-h-900: #3D1452FF; /* Label color H of level 900. */
+  --pgn-color-label-h-base: #AE5AD8FF; /* Base color of Label color H. */
+  --pgn-color-label-i-100: #ECF8ECFF; /* Label color I of level 100. */
+  --pgn-color-label-i-200: #C0E8C0FF; /* Label color I of level 200. */
+  --pgn-color-label-i-300: #80D080FF; /* Label color I of level 300. */
+  --pgn-color-label-i-400: #50BE50FF; /* Label color I of level 400. */
+  --pgn-color-label-i-600: #328632FF; /* Label color I of level 600. */
+  --pgn-color-label-i-700: #2B732BFF; /* Label color I of level 700. */
+  --pgn-color-label-i-800: #246124FF; /* Label color I of level 800. */
+  --pgn-color-label-i-900: #1C4A1CFF; /* Label color I of level 900. */
+  --pgn-color-label-i-base: #3BA03BFF; /* Base color of Label color I. */
   --pgn-border-color-nav-tabs-link-border-hover-top: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-right: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-left: transparent;
@@ -995,6 +1076,15 @@
   --pgn-color-dark-700: #1F3226FF; /* Info color of level 700. */
   --pgn-color-dark-800: #1D2F23FF; /* Dark color of level 800. */
   --pgn-color-dark-900: #1B2C21FF; /* Dark color of level 900. */
+  --pgn-color-label-a-500: var(--pgn-color-label-a-base); /* Label color A of level 500. */
+  --pgn-color-label-b-500: var(--pgn-color-label-b-base); /* Label color B of level 500. */
+  --pgn-color-label-c-500: var(--pgn-color-label-c-base); /* Label color C of level 500. */
+  --pgn-color-label-d-500: var(--pgn-color-label-d-base); /* Label color D of level 500. */
+  --pgn-color-label-e-500: var(--pgn-color-label-e-base); /* Label color E of level 500. */
+  --pgn-color-label-f-500: var(--pgn-color-label-f-base); /* Label color F of level 500. */
+  --pgn-color-label-g-500: var(--pgn-color-label-g-base); /* Label color G of level 500. */
+  --pgn-color-label-h-500: var(--pgn-color-label-h-base); /* Label color H of level 500. */
+  --pgn-color-label-i-500: var(--pgn-color-label-i-base); /* Label color I of level 500. */
   --pgn-color-action-default-gray-100: #D2D2D2FF;
   --pgn-color-action-default-gray-200: #B3B3B3FF;
   --pgn-color-action-default-gray-300: #949494FF;
@@ -1008,6 +1098,87 @@
   --pgn-color-action-default-brand-base: #6A0039FF;
   --pgn-color-action-default-light-base: #CAC3BFFF;
   --pgn-color-action-default-dark-base: #142018FF;
+  --pgn-color-action-default-label-a-100: #EFBDBDFF;
+  --pgn-color-action-default-label-a-200: #E59494FF;
+  --pgn-color-action-default-label-a-300: #DC6F6FFF;
+  --pgn-color-action-default-label-a-400: #D03A3AFF;
+  --pgn-color-action-default-label-a-600: #902222FF;
+  --pgn-color-action-default-label-a-700: #6B1919FF;
+  --pgn-color-action-default-label-a-800: #4A1212FF;
+  --pgn-color-action-default-label-a-900: #290A0AFF;
+  --pgn-color-action-default-label-a-base: #B62B2BFF;
+  --pgn-color-action-default-label-b-100: #DFEACDFF;
+  --pgn-color-action-default-label-b-200: #C2D4A1FF;
+  --pgn-color-action-default-label-b-300: #9DB865FF;
+  --pgn-color-action-default-label-b-400: #7B9645FF;
+  --pgn-color-action-default-label-b-600: #4A5B2AFF;
+  --pgn-color-action-default-label-b-700: #3F4D23FF;
+  --pgn-color-action-default-label-b-800: #2E381AFF;
+  --pgn-color-action-default-label-b-900: #1D2310FF;
+  --pgn-color-action-default-label-b-base: #5E7335FF;
+  --pgn-color-action-default-label-c-100: #BDBDEFFF;
+  --pgn-color-action-default-label-c-200: #9C9CE7FF;
+  --pgn-color-action-default-label-c-300: #7B7BDFFF;
+  --pgn-color-action-default-label-c-400: #5656D7FF;
+  --pgn-color-action-default-label-c-600: #2727A5FF;
+  --pgn-color-action-default-label-c-700: #1D1D7CFF;
+  --pgn-color-action-default-label-c-800: #131353FF;
+  --pgn-color-action-default-label-c-900: #0A0A29FF;
+  --pgn-color-action-default-label-c-base: #3131CEFF;
+  --pgn-color-action-default-label-d-100: #F0E1C2FF;
+  --pgn-color-action-default-label-d-200: #E4C791FF;
+  --pgn-color-action-default-label-d-300: #D3A64BFF;
+  --pgn-color-action-default-label-d-400: #AF832CFF;
+  --pgn-color-action-default-label-d-600: #6A501BFF;
+  --pgn-color-action-default-label-d-700: #564015FF;
+  --pgn-color-action-default-label-d-800: #413110FF;
+  --pgn-color-action-default-label-d-900: #291E0AFF;
+  --pgn-color-action-default-label-d-base: #876522FF;
+  --pgn-color-action-default-label-e-100: #BDDFEFFF;
+  --pgn-color-action-default-label-e-200: #8CC7E3FF;
+  --pgn-color-action-default-label-e-300: #56ACD7FF;
+  --pgn-color-action-default-label-e-400: #2F94C6FF;
+  --pgn-color-action-default-label-e-600: #1D5C7CFF;
+  --pgn-color-action-default-label-e-700: #174963FF;
+  --pgn-color-action-default-label-e-800: #113446FF;
+  --pgn-color-action-default-label-e-900: #0A1E29FF;
+  --pgn-color-action-default-label-e-base: #247199FF;
+  --pgn-color-action-default-label-f-100: #F0C1D9FF;
+  --pgn-color-action-default-label-f-200: #E184B3FF;
+  --pgn-color-action-default-label-f-300: #D85A98FF;
+  --pgn-color-action-default-label-f-400: #D03A84FF;
+  --pgn-color-action-default-label-f-600: #902259FF;
+  --pgn-color-action-default-label-f-700: #6B1942FF;
+  --pgn-color-action-default-label-f-800: #4A122EFF;
+  --pgn-color-action-default-label-f-900: #290A1AFF;
+  --pgn-color-action-default-label-f-base: #B22B6FFF;
+  --pgn-color-action-default-label-g-100: #CAEDDFFF;
+  --pgn-color-action-default-label-g-200: #98DCC6FF;
+  --pgn-color-action-default-label-g-300: #57C7A2FF;
+  --pgn-color-action-default-label-g-400: #37A480FF;
+  --pgn-color-action-default-label-g-600: #1E5C47FF;
+  --pgn-color-action-default-label-g-700: #194D3BFF;
+  --pgn-color-action-default-label-g-800: #133A2DFF;
+  --pgn-color-action-default-label-g-900: #0D261EFF;
+  --pgn-color-action-default-label-g-base: #297B5FFF;
+  --pgn-color-action-default-label-h-100: #DFBDEFFF;
+  --pgn-color-action-default-label-h-200: #CF9CE7FF;
+  --pgn-color-action-default-label-h-300: #BE7BDFFF;
+  --pgn-color-action-default-label-h-400: #AC56D7FF;
+  --pgn-color-action-default-label-h-600: #7B27A5FF;
+  --pgn-color-action-default-label-h-700: #5C1D7CFF;
+  --pgn-color-action-default-label-h-800: #3D1353FF;
+  --pgn-color-action-default-label-h-900: #1E0A29FF;
+  --pgn-color-action-default-label-h-base: #9A31CEFF;
+  --pgn-color-action-default-label-i-100: #C7EAC7FF;
+  --pgn-color-action-default-label-i-200: #9BDA9BFF;
+  --pgn-color-action-default-label-i-300: #5BC25BFF;
+  --pgn-color-action-default-label-i-400: #3BA03BFF;
+  --pgn-color-action-default-label-i-600: #246124FF;
+  --pgn-color-action-default-label-i-700: #1D4E1DFF;
+  --pgn-color-action-default-label-i-800: #163C16FF;
+  --pgn-color-action-default-label-i-900: #0E250EFF;
+  --pgn-color-action-default-label-i-base: #2D7B2DFF;
   --pgn-color-action-default-accent-a: #0095C6FF;
   --pgn-color-action-default-accent-b: #FFE755FF;
   --pgn-elevation-dropzone-active-color: var(--pgn-color-primary-500);
@@ -1546,6 +1717,15 @@
   --pgn-color-action-default-dark-700: #0B130EFF;
   --pgn-color-action-default-dark-800: #0A0F0CFF;
   --pgn-color-action-default-dark-900: #080C09FF;
+  --pgn-color-action-default-label-a-500: #B62B2BFF;
+  --pgn-color-action-default-label-b-500: #5E7335FF;
+  --pgn-color-action-default-label-c-500: #3131CEFF;
+  --pgn-color-action-default-label-d-500: #876522FF;
+  --pgn-color-action-default-label-e-500: #247199FF;
+  --pgn-color-action-default-label-f-500: #B22B6FFF;
+  --pgn-color-action-default-label-g-500: #297B5FFF;
+  --pgn-color-action-default-label-h-500: #9A31CEFF;
+  --pgn-color-action-default-label-i-500: #2D7B2DFF;
   --pgn-content-carousel-control-bg-prev-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFFFF' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
   --pgn-content-carousel-control-bg-next-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFFFF' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
   --pgn-content-navbar-toggler-dark-icon-bg: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23FFFFFF80' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");

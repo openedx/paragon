@@ -39,7 +39,7 @@ export interface IColorsWithVariants extends IColorsBase {
 
 export type IColors = IColorsWithUnusedLevels | IColorsWithVariants;
 
-const colors: IColors[] = [
+const semanticColors: IColors[] = [
   { themeName: 'gray' },
   { themeName: 'primary' },
   { themeName: 'brand' },
@@ -49,6 +49,21 @@ const colors: IColors[] = [
   { themeName: 'info' },
   { themeName: 'danger' },
   { themeName: 'warning' },
+];
+
+const labelColors: IColors[] = [
+  { themeName: 'label-a' },
+  { themeName: 'label-b' },
+  { themeName: 'label-c' },
+  { themeName: 'label-d' },
+  { themeName: 'label-e' },
+  { themeName: 'label-f' },
+  { themeName: 'label-g' },
+  { themeName: 'label-h' },
+  { themeName: 'label-i' },
+];
+
+const otherColors: IColors[] = [
   {
     themeName: 'accent',
     variants: [
@@ -56,6 +71,12 @@ const colors: IColors[] = [
       { name: 'b', hasLevels: false },
     ],
   },
+];
+
+const colors: IColors[] = [
+  ...semanticColors,
+  ...labelColors,
+  ...otherColors,
 ];
 
 const levels = [100, 200, 300, 400, 500, 600, 700, 800, 900];
@@ -219,8 +240,20 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
       <SEO title="Colors" />
       <Container size={settings.containerWidth} className="py-5">
         <h1>Colors</h1>
+
+        <h3>Semantic Colors</h3>
         <div className="color-palette mb-3">
-          {colors.map((colorArgs) => renderColorRamp({ ...colorArgs, styles }))}
+          {semanticColors.map((colorArgs) => renderColorRamp({ ...colorArgs, styles }))}
+        </div>
+
+        <h3>Label Colors</h3>
+        <div className="color-palette mb-3">
+          {labelColors.map((colorArgs) => renderColorRamp({ ...colorArgs, styles }))}
+        </div>
+
+        <h3>Other Colors</h3>
+        <div className="color-palette mb-3">
+          {otherColors.map((colorArgs) => renderColorRamp({ ...colorArgs, styles }))}
         </div>
 
         <h3>CSS Color Usage</h3>
@@ -381,7 +414,7 @@ export default function ColorsPage({ data, pageContext }: IColorsPage) {
             </div>
           </div>
           {colors.map(({ themeName }) => {
-            if (themeName === 'warning') { return null; }
+            if (themeName === 'warning' || themeName === 'accent') { return null; }
             return (
               <div key={themeName} className="d-flex rounded overflow-hidden mb-3">
                 <div
