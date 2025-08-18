@@ -21,6 +21,13 @@ type BaseVariant = (
   | 'link'
 );
 
+/**
+ * This was added so these types could be added as a non-breaking change, it should be removed
+ * in the next major release, and all uses should be updated to the non-deprecated Variant.
+ * @deprecated - remove in Paragon 24
+ */
+type OtherDeprecatedValue = string & {}; // Allow any other string value for now, even though it's invalid
+
 export interface ButtonProps extends Omit<BaseButtonProps, 'size'> {
   /** Set a custom element for this component (default: `button`, with `type="button"`). */
   as?: React.ElementType;
@@ -57,7 +64,7 @@ export interface ButtonProps extends Omit<BaseButtonProps, 'size'> {
    * as well as one of the customized variants (= base variant prefixed with `inverse-`, `outline-`
    * or `inverse-outline-`)
    * */
-  variant?: BaseVariant | `inverse-${BaseVariant}` | `outline-${BaseVariant}` | `inverse-outline-${BaseVariant}`;
+  variant?: BaseVariant | `inverse-${BaseVariant}` | `outline-${BaseVariant}` | `inverse-outline-${BaseVariant}` | OtherDeprecatedValue;
 }
 
 const Button: ComponentWithAsProp<'button', ButtonProps> = React.forwardRef(({
