@@ -22,8 +22,7 @@ type BaseVariant = (
 );
 
 /**
- * This was added so these types could be added as a non-breaking change, it should be removed
- * in the next major release, and all uses should be updated to the non-deprecated Variant.
+ * This was added so these types could be added as a non-breaking change.
  * @deprecated - remove in Paragon 24
  */
 type OtherDeprecatedValue = string & {}; // Allow any other string value for now, even though it's invalid
