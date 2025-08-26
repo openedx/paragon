@@ -50,7 +50,7 @@ describe('<FilterStatus />', () => {
     const button = screen.getByText(filterProps.clearFiltersText);
     await userEvent.click(button);
     expect(clearSpy).toHaveBeenCalledTimes(1);
-    expect(clearSpy).toHaveBeenCalledWith([]);
+    expect(clearSpy).toHaveBeenCalledWith(undefined);
   });
   it('displays the current filter names', () => {
     render(<FilterStatusWrapper value={instance} props={filterProps} />);
