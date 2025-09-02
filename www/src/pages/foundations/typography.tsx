@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useLocation } from '@gatsbyjs/reach-router';
 import { Container } from '~paragon-react';
 import SEO from '../../components/SEO';
 import MeasuredItem from '../../components/MeasuredItem';
@@ -45,7 +44,6 @@ const measuredTypeProps = {
 
 export default function TypographyPage({ pageContext }) {
   const { settings } = useContext(SettingsContext);
-  const location = useLocation();
 
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
@@ -196,7 +194,7 @@ export default function TypographyPage({ pageContext }) {
             </tr>
             <tr>
               <td colSpan={2}>
-                <a href={location.pathname}>Standalone Link</a>
+                <a href="#links">Standalone Link</a>
               </td>
               <td>
                 <small>
@@ -209,7 +207,7 @@ export default function TypographyPage({ pageContext }) {
               <td colSpan={2}>
                 <p>
                   An{' '}
-                  <a className="inline-link" href={location.pathname}>
+                  <a className="inline-link" href="#links">
                     inline link
                   </a>{' '}
                   in a sentence.
@@ -224,7 +222,7 @@ export default function TypographyPage({ pageContext }) {
             </tr>
             <tr>
               <td colSpan={2}>
-                <a className="muted-link" href={location.pathname}>
+                <a className="muted-link" href="#links">
                   Muted, Standalone Link
                 </a>
               </td>
@@ -238,7 +236,7 @@ export default function TypographyPage({ pageContext }) {
               <td colSpan={2}>
                 <p>
                   An{' '}
-                  <a className="muted-link inline-link" href={location.pathname}>
+                  <a className="muted-link inline-link" href="#links">
                     muted, inline link
                   </a>{' '}
                   in a sentence.
