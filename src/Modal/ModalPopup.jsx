@@ -16,6 +16,7 @@ function ModalPopup({
   withPortal,
   placement,
   hasArrow,
+  noIsolation,
   ...popperProps
 }) {
   const RootComponent = withPortal ? Portal : React.Fragment;
@@ -56,6 +57,7 @@ function ModalPopup({
             enabled={isOpen}
             onEscapeKey={onClose}
             onClickOutside={handleOnClickOutside}
+            noIsolation={noIsolation}
           >
             {isOpen && (
               <div className="pgn__modal-popup__tooltip">
@@ -98,6 +100,8 @@ ModalPopup.propTypes = {
   placement: PopperElement.propTypes.placement,
   /** Caret to the modal popup pointing to the target */
   hasArrow: PropTypes.bool,
+  /** Disables aria-hidden isolation */
+  noIsolation: PropTypes.bool,
 };
 
 ModalPopup.defaultProps = {
@@ -106,6 +110,7 @@ ModalPopup.defaultProps = {
   placement: 'bottom-start',
   positionRef: null,
   hasArrow: false,
+  noIsolation: false,
 };
 
 export default ModalPopup;
