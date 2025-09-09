@@ -46,6 +46,8 @@ export { default as useArrowKeyNavigation, type ArrowKeyNavProps } from './hooks
 export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChildHook';
 export { default as useIsVisible } from './hooks/useIsVisibleHook';
 export { default as breakpoints } from './utils/breakpoints';
+export { default as ModalPopup } from './Modal/ModalPopup';
+export { default as PopperElement } from './Modal/PopperElement';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
@@ -123,10 +125,6 @@ export { default as MarketingModal } from './Modal/MarketingModal';
 export { default as StandardModal, STANDARD_MODAL_CLOSE_LABEL } from './Modal/StandardModal';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as AlertModal } from './Modal/AlertModal';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as ModalPopup } from './Modal/ModalPopup';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as PopperElement } from './Modal/PopperElement';
 
 export {
   default as Nav,
