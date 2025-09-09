@@ -59,7 +59,6 @@ function Header({ siteTitle, showMinimizedTitle }: IHeaderProps) {
             positionRef={target}
             isOpen={isOpen}
             onClose={close}
-            onEscapeKey={close}
           >
             <div className="pgn-doc__header-home--menu">
               <Menu />

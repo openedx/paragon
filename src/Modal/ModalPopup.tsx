@@ -4,7 +4,7 @@ import type { Placement } from '@popperjs/core';
 import { Modifier } from 'react-popper';
 import Portal from './Portal';
 import { ModalContextProvider } from './ModalContext';
-import PopperElement from './PopperElement';
+import PopperElement, { PopperElementProps } from './PopperElement';
 
 type PlacementOffsets = {
   [K in Placement]: number[] | undefined;
@@ -28,7 +28,7 @@ const PLACEMENT_OFFSETS: PlacementOffsets = {
   'left-end': undefined,
 };
 
-interface ModalPopupProps {
+interface ModalPopupProps extends PopperElementProps {
   /** Specifies the contents of the modal */
   children: React.ReactNode,
   /** A callback function for when the modal is dismissed */
@@ -41,7 +41,7 @@ interface ModalPopupProps {
   withPortal?: boolean,
   // This type: https://stackoverflow.com/questions/48007326/what-is-the-correct-proptype-for-a-ref-in-react
   /** Specifies an element near which the modal should be displayed */
-  positionRef?: React.RefObject<HTMLElement> | null,
+  positionRef?: HTMLElement | null,
   /** Specifies position according to the element that the ``positionRef`` prop points to */
   placement?: Placement,
   /** Caret to the modal popup pointing to the target */
@@ -91,7 +91,7 @@ function ModalPopup({
       <RootComponent>
         <PopperElement
           modifiers={hasArrow ? popperParams : undefined}
-          target={positionRef?.current}
+          target={positionRef}
           placement={placement}
           {...popperProps}
         >

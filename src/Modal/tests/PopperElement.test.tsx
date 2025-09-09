@@ -38,7 +38,7 @@ const defaultPopperOptions = {
 
 describe('<PopperElement />', () => {
   it('should use Popper and apply styles and attributes to child div', () => {
-    const targetRef = { current: <div /> };
+    const targetRef = document.createElement('div');
     const { container } = render(
       <PopperElement target={targetRef}>
         <div id="popper-content">Popper content</div>

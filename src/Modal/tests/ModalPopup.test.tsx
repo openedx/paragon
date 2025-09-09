@@ -49,15 +49,14 @@ const arrowPlacements: Placement[] = [
 ];
 
 describe('<ModalPopup />', () => {
-  const mockPositionRef: React.RefObject<HTMLElement> = React.createRef();
+  let mockPositionRef: HTMLElement | null = null;
 
   describe('when isOpen', () => {
     const isOpen = true;
     const closeFn = jest.fn();
 
     it('renders the dialog', () => {
-      // @ts-ignore
-      mockPositionRef.current = document.createElement('div');
+      mockPositionRef = document.createElement('div');
       render(
         <ModalPopup
           positionRef={mockPositionRef}
