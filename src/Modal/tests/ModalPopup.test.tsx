@@ -1,21 +1,22 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { Placement } from '@popperjs/core';
 import ModalPopup from '../ModalPopup';
 
 /* eslint-disable react/prop-types */
-jest.mock('../Portal', () => function PortalMock(props) {
+jest.mock('../Portal', () => function PortalMock(props: { [x: string]: any; children: any; }) {
   const { children, ...otherProps } = props;
   return (
-    <paragon-portal data-testid="portal" {...otherProps}>
-      {children}
-    </paragon-portal>
+    // @ts-ignore this fake element. (Property 'paragon-portal' does not exist on type 'JSX.IntrinsicElements')
+    <paragon-portal data-testid="portal" {...otherProps}>{children}</paragon-portal>
   );
 });
 
 jest.mock('react-focus-on', () => ({
-  FocusOn: (props) => {
+  FocusOn: (props: { [x: string]: any; children: any; }) => {
     const { children, ...otherProps } = props;
     return (
+      // @ts-ignore this fake element. (Property 'focus-on' does not exist on type 'JSX.IntrinsicElements')
       <focus-on data-testid="focus-on" {...otherProps}>{children}</focus-on>
     );
   },
@@ -29,7 +30,7 @@ function Dialog() {
   );
 }
 
-const arrowPlacements = [
+const arrowPlacements: Placement[] = [
   'auto',
   'auto-start',
   'auto-end',
@@ -48,13 +49,14 @@ const arrowPlacements = [
 ];
 
 describe('<ModalPopup />', () => {
-  const mockPositionRef = React.createRef();
+  const mockPositionRef: React.RefObject<HTMLElement> = React.createRef();
 
   describe('when isOpen', () => {
     const isOpen = true;
     const closeFn = jest.fn();
 
     it('renders the dialog', () => {
+      // @ts-ignore
       mockPositionRef.current = document.createElement('div');
       render(
         <ModalPopup
