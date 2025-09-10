@@ -6,26 +6,9 @@ import Portal from './Portal';
 import { ModalContextProvider } from './ModalContext';
 import PopperElement, { PopperElementProps } from './PopperElement';
 
-type PlacementOffsets = {
-  [K in Placement]: number[] | undefined;
-};
-
-const PLACEMENT_OFFSETS: PlacementOffsets = {
+const PLACEMENT_OFFSETS: { [K in Placement]?: number[] | undefined } = {
   right: [-2, 10],
   left: [-2, 10],
-  auto: undefined,
-  'auto-start': undefined,
-  'auto-end': undefined,
-  top: undefined,
-  bottom: undefined,
-  'top-start': undefined,
-  'top-end': undefined,
-  'bottom-start': undefined,
-  'bottom-end': undefined,
-  'right-start': undefined,
-  'right-end': undefined,
-  'left-start': undefined,
-  'left-end': undefined,
 };
 
 interface ModalPopupProps extends PopperElementProps {
