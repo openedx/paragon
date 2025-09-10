@@ -52,7 +52,7 @@ function DataTable({
   filtersTitle,
   dataViewToggleOptions,
   disableElevation,
-  dataTableLayoutClassName,
+  className,
   isLoading,
   children,
   onSelectedRowsChanged,
@@ -225,7 +225,7 @@ function DataTable({
 
   return (
     <DataTableContext.Provider value={enhancedInstance}>
-      <DataTableLayout filtersTitle={filtersTitle} className={dataTableLayoutClassName}>
+      <DataTableLayout filtersTitle={filtersTitle} className={className}>
         <div className={classNames('pgn__data-table-wrapper', {
           'hide-shadow': !!disableElevation,
         })}
@@ -276,7 +276,7 @@ DataTable.defaultProps = {
   },
   disableElevation: false,
   renderRowSubComponent: undefined,
-  dataTableLayoutClassName: undefined,
+  className: undefined,
   isExpandable: false,
   isLoading: false,
   onSelectedRowsChanged: undefined,
@@ -431,7 +431,7 @@ DataTable.propTypes = {
   /** If true filters will be shown on sidebar instead */
   showFiltersInSidebar: PropTypes.bool,
   /** Class name for the data table layout */
-  dataTableLayoutClassName: PropTypes.string,
+  className: PropTypes.string,
   /** Title of the filters section */
   filtersTitle: PropTypes.string,
   /** options for data view toggle */
