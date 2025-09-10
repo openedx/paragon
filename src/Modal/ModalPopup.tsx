@@ -20,16 +20,16 @@ interface ModalPopupProps extends PopperElementProps {
   isOpen: boolean,
   /** Prevent clicking on the backdrop or pressing Esc to close the modal */
   isBlocking?: boolean,
-  /** Insert modal into a different location in the DOM */
+  /** Insert modal into a different location in the DOM. */
   withPortal?: boolean,
   // This type: https://stackoverflow.com/questions/48007326/what-is-the-correct-proptype-for-a-ref-in-react
-  /** Specifies an element near which the modal should be displayed */
+  /** Specifies an element near which the modal should be displayed. */
   positionRef?: HTMLElement | null,
-  /** Specifies position according to the element that the ``positionRef`` prop points to */
+  /** Specifies position according to the element that the ``positionRef`` prop points to. */
   placement?: Placement,
-  /** Caret to the modal popup pointing to the target */
+  /** Caret to the modal popup pointing to the target. */
   hasArrow?: boolean,
-  /** Disables aria-hidden isolation */
+  /** Disables aria-hidden isolation. */
   noIsolation?: boolean,
 }
 
@@ -38,11 +38,11 @@ function ModalPopup({
   onClose,
   isOpen,
   positionRef = null,
-  isBlocking,
-  withPortal,
+  isBlocking = false,
+  withPortal = false,
   placement = 'bottom-start',
-  hasArrow,
-  noIsolation,
+  hasArrow = false,
+  noIsolation = false,
   ...popperProps
 }: ModalPopupProps) {
   const RootComponent = withPortal ? Portal : React.Fragment;
