@@ -35,8 +35,10 @@ export { default as IconButton, IconButtonWithTooltip } from './IconButton';
 export { default as ModalContext } from './Modal/ModalContext';
 export { default as ModalDialog } from './Modal/ModalDialog';
 export { default as ModalLayer } from './Modal/ModalLayer';
+export { default as ModalPopup } from './Modal/ModalPopup';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
+export { default as PopperElement } from './Modal/PopperElement';
 export { default as Spinner } from './Spinner';
 export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
 export { default as Tooltip } from './Tooltip';
@@ -46,8 +48,6 @@ export { default as useArrowKeyNavigation, type ArrowKeyNavProps } from './hooks
 export { default as useIndexOfLastVisibleChild } from './hooks/useIndexOfLastVisibleChildHook';
 export { default as useIsVisible } from './hooks/useIsVisibleHook';
 export { default as breakpoints } from './utils/breakpoints';
-export { default as ModalPopup } from './Modal/ModalPopup';
-export { default as PopperElement } from './Modal/PopperElement';
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that don't have types
