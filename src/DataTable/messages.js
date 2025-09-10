@@ -6,6 +6,11 @@ const messages = defineMessages({
     defaultMessage: 'table pagination',
     description: 'Accessibile name for the navigation element of a pagination component',
   },
+  filtersDropdownTitle: {
+    id: 'pgn.DataTable.filtersDropdownTitle',
+    defaultMessage: 'Filters',
+    description: 'Title of the filters dropdown',
+  },
 });
 
 export default messages;

@@ -1,10 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { IntlProvider } from 'react-intl';
 
 import DropdownFilters from '../DropdownFilters';
 import { useWindowSize } from '../..';
 import DataTableContext from '../DataTableContext';
+import messages from '../messages';
 
 jest.mock('../../hooks/useWindowSizeHook');
 
@@ -31,9 +33,11 @@ const instance = {
 // eslint-disable-next-line react/prop-types
 function DropdownFiltersWrapper({ value = instance, props }) {
   return (
-    <DataTableContext.Provider value={value}>
-      <DropdownFilters {...props} />
-    </DataTableContext.Provider>
+    <IntlProvider locale="en">
+      <DataTableContext.Provider value={value}>
+        <DropdownFilters {...props} />
+      </DataTableContext.Provider>
+    </IntlProvider>
   );
 }
 
@@ -56,7 +60,7 @@ describe('<DropdownFilters />', () => {
       // filter should be rendered in the dropdown, so should not be present before
       // clicking the button.
       expect(screen.queryByText('Occupation filter')).toBeNull();
-      const filtersButton = screen.getByRole('button', { name: /Filters/i });
+      const filtersButton = screen.getByRole('button', { name: messages.filtersDropdownTitle.defaultMessage });
       await userEvent.click(filtersButton);
       expect(screen.getByText('Occupation filter')).toBeInTheDocument();
     });
@@ -65,7 +69,7 @@ describe('<DropdownFilters />', () => {
       useWindowSize.mockReturnValue({ width: 800 });
       render(<DropdownFiltersWrapper />);
       expect(screen.queryByText('DOB filter')).toBeNull();
-      const filtersButton = screen.getByRole('button', { name: /Filters/i });
+      const filtersButton = screen.getByRole('button', { name: messages.filtersDropdownTitle.defaultMessage });
       await userEvent.click(filtersButton);
       expect(screen.queryByText('DOB filter')).toBeNull();
     });
@@ -74,7 +78,7 @@ describe('<DropdownFilters />', () => {
       useWindowSize.mockReturnValue({ width: 800 });
       render(<DropdownFiltersWrapper value={{ columns: [instance.columns[1]] }} />);
       expect(screen.getByText('Occupation filter')).toBeInTheDocument();
-      expect(screen.queryByRole('button', { name: /Filters/i })).toBeNull();
+      expect(screen.queryByRole('button', { name: messages.filtersDropdownTitle.defaultMessage })).toBeNull();
     });
   });
 
@@ -88,7 +92,7 @@ describe('<DropdownFilters />', () => {
     it('renders all filters in the dropdown', async () => {
       useWindowSize.mockReturnValue({ width: 500 });
       render(<DropdownFiltersWrapper />);
-      const filtersButton = screen.getByRole('button', { name: /Filters/i });
+      const filtersButton = screen.getByRole('button', { name: messages.filtersDropdownTitle.defaultMessage });
       await userEvent.click(filtersButton);
       expect(screen.getByText('Bears filter')).toBeInTheDocument();
       expect(screen.getByText('Occupation filter')).toBeInTheDocument();

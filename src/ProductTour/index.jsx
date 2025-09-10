@@ -12,7 +12,8 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     startingIndex,
     onEscape,
     onEnd,
-    onBack,
+    onAdvance: tourOnAdvance,
+    onBack: tourOnBack,
     onDismiss: tourOnDismiss,
     advanceButtonText: tourAdvanceButtonText,
     dismissAltText: tourDismissAltText,
@@ -27,6 +28,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     title,
     body,
     onAdvance,
+    onBack,
     onDismiss,
     advanceButtonText,
     dismissAltText,
@@ -85,6 +87,8 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     setIndex(index + 1);
     if (onAdvance) {
       onAdvance();
+    } else if (tourOnAdvance) {
+      tourOnAdvance();
     }
   };
 
@@ -92,6 +96,8 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     setIndex(index - 1);
     if (onBack) {
       onBack();
+    } else if (tourOnBack) {
+      tourOnBack();
     }
   };
 
@@ -100,7 +106,7 @@ const ProductTour = React.forwardRef(({ tours }, ref) => {
     setIsTourEnabled(false);
     if (onDismiss) {
       onDismiss();
-    } else {
+    } else if (tourOnDismiss) {
       tourOnDismiss();
     }
     setCurrentCheckpointData(null);
