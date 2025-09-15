@@ -1,5 +1,4 @@
 import React, { ForwardedRef } from 'react';
-import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import classNames from 'classnames';
 // @ts-ignore
@@ -21,15 +20,30 @@ export interface OverflowScrollContextProps {
 }
 
 export interface ChipCarouselProps {
+  /** Specifies class name for the ChipCarousel. */
   className?: string;
+  /** Specifies array of `Chip` elements to be rendered inside the carousel. */
   items: Array<React.ReactElement>;
+  /** Text describing the ChipCarousel for screen readers. */
   ariaLabel: string;
+  /** Whether the default opacity masks should be shown at the start/end, if applicable. */
   disableOpacityMasks?: boolean;
+  /** Callback function for when the user scrolls to the previous element. */
   onScrollPrevious?: () => void;
+  /** Callback function for when the user scrolls to the next element. */
   onScrollNext?: () => void;
+  /** Whether users can scroll within the overflow container. */
   canScrollHorizontal?: boolean;
+  /** A value specifying the distance the scroll should move. */
   offset?: number | string;
+  /** Type of offset value (percentage or fixed). */
   offsetType?: 'percentage' | 'fixed';
+  /**
+   * Specifies inner space between children blocks.
+   *
+   * Valid values are based on `the spacing classes`:
+   * `0, 0.5, ... 6`.
+   */
   gap?: number;
 }
 
@@ -43,7 +57,7 @@ const ChipCarousel = React.forwardRef(({
   canScrollHorizontal = false,
   offset = 120,
   offsetType = 'fixed',
-  gap,
+  gap = 3,
   ...props
 }: ChipCarouselProps, ref: ForwardedRef<HTMLDivElement>) => {
   const intl = useIntl();
@@ -114,45 +128,5 @@ const ChipCarousel = React.forwardRef(({
     </div>
   );
 });
-
-ChipCarousel.propTypes = {
-  /** Text describing the ChipCarousel for screen readers. */
-  ariaLabel: PropTypes.string.isRequired,
-  /** Specifies class name for the ChipCarousel. */
-  className: PropTypes.string,
-  /** Specifies array of `Chip` elements to be rendered inside the carousel. */
-  // @ts-ignore
-  items: PropTypes.arrayOf(PropTypes.element).isRequired,
-  /** Whether the default opacity masks should be shown at the start/end, if applicable. */
-  disableOpacityMasks: PropTypes.bool,
-  /** Callback function for when the user scrolls to the previous element. */
-  onScrollPrevious: PropTypes.func,
-  /** Callback function for when the user scrolls to the next element. */
-  onScrollNext: PropTypes.func,
-  /** Whether users can scroll within the overflow container. */
-  canScrollHorizontal: PropTypes.bool,
-  /** A value specifying the distance the scroll should move. */
-  offset: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  /** Type of offset value (percentage or fixed). */
-  offsetType: PropTypes.oneOf(['percentage', 'fixed']),
-  /**
-   * Specifies inner space between children blocks.
-   *
-   * Valid values are based on `the spacing classes`:
-   * `0, 0.5, ... 6`.
-   */
-  gap: PropTypes.number,
-};
-
-ChipCarousel.defaultProps = {
-  className: undefined,
-  disableOpacityMasks: undefined,
-  onScrollPrevious: undefined,
-  onScrollNext: undefined,
-  canScrollHorizontal: false,
-  offset: 120,
-  offsetType: 'fixed',
-  gap: 3,
-};
 
 export default ChipCarousel;
