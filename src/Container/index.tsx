@@ -23,7 +23,7 @@ interface ContainerProps extends RBContainerProps {
   /** Overrides underlying component base CSS class name */
   bsPrefix?: string,
   /** Set the maximum width for the container. Omiting the prop will remove the max-width */
-  size?: ContainerSize;
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }
 
 type ContainerType = ComponentWithAsProp<'div', ContainerProps>;
