@@ -15,9 +15,9 @@ enum ContainerSizeClass {
 
 export type ContainerSize = keyof typeof ContainerSizeClass;
 
-interface ContainerProps<As extends React.ElementType = 'div'> extends RBContainerProps {
+interface ContainerProps extends RBContainerProps {
   /** Override the base element */
-  as?: As,
+  as?: React.ElementType,
   /** Fill all available space at any breakpoint */
   fluid?: boolean,
   /** Overrides underlying component base CSS class name */
