@@ -15,7 +15,13 @@ enum ContainerSizeClass {
 
 export type ContainerSize = keyof typeof ContainerSizeClass;
 
-interface ContainerProps extends RBContainerProps {
+interface ContainerProps<As extends React.ElementType = 'div'> extends RBContainerProps {
+  /** Override the base element */
+  as?: As,
+  /** Fill all available space at any breakpoint */
+  fluid?: boolean,
+  /** Overrides underlying component base CSS class name */
+  bsPrefix?: string,
   /** Set the maximum width for the container. Omiting the prop will remove the max-width */
   size?: ContainerSize;
 }
