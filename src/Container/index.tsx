@@ -1,7 +1,6 @@
 /* eslint-disable react/require-default-props */
-import React from 'react';
+import React, { ForwardedRef } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import RBContainer, { type ContainerProps as RBContainerProps } from 'react-bootstrap/Container';
 
 import type { ComponentWithAsProp } from '../utils/types/bootstrap';
@@ -17,18 +16,25 @@ enum ContainerSizeClass {
 export type ContainerSize = keyof typeof ContainerSizeClass;
 
 interface ContainerProps extends RBContainerProps {
+  /** Set the maximum width for the container. Omiting the prop will remove the max-width */
   size?: ContainerSize;
 }
 
 type ContainerType = ComponentWithAsProp<'div', ContainerProps>;
 
-const Container: ContainerType = React.forwardRef<Element, ContainerProps>(({
+const Container: ContainerType = React.forwardRef(({
   size,
   children,
+  as = 'div',
+  bsPrefix = 'container',
+  fluid = true,
   ...props
-}, ref) => (
+}: ContainerProps, ref: ForwardedRef<Element>) => (
   <RBContainer
     {...props}
+    as={as}
+    bsPrefix={bsPrefix}
+    fluid={fluid}
     ref={ref}
     className={classNames(
       props.className,
@@ -38,27 +44,5 @@ const Container: ContainerType = React.forwardRef<Element, ContainerProps>(({
     {children}
   </RBContainer>
 ));
-
-Container.propTypes = {
-  ...RBContainer.propTypes,
-  /** Override the base element */
-  as: PropTypes.elementType,
-  /** Specifies the contents of the container */
-  children: PropTypes.node,
-  /** Fill all available space at any breakpoint */
-  fluid: PropTypes.bool,
-  /** Set the maximum width for the container. Omiting the prop will remove the max-width */
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-  /** Overrides underlying component base CSS class name */
-  bsPrefix: PropTypes.string,
-};
-
-Container.defaultProps = {
-  as: 'div',
-  children: undefined,
-  fluid: true,
-  size: undefined,
-  bsPrefix: 'container',
-};
 
 export default Container;
