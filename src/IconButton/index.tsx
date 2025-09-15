@@ -41,7 +41,7 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
 const IconButton = React.forwardRef(({
   className,
   alt,
-  invertColors,
+  invertColors = false,
   icon,
   src,
   iconClassNames,
