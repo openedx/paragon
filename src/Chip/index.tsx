@@ -1,6 +1,5 @@
 import React, { ForwardedRef, KeyboardEventHandler, MouseEventHandler } from 'react';
 import classNames from 'classnames';
-import { STYLE_VARIANTS } from './constants';
 import ChipIcon from './ChipIcon';
 
 export const CHIP_PGN_CLASS = 'pgn__chip';
@@ -12,8 +11,11 @@ export interface IChip {
   onClick?: KeyboardEventHandler & MouseEventHandler,
   /** Specifies an additional `className` to add to the base element. */
   className?: string,
-  /** The `Chip` style variant to use. */
-  variant?: typeof STYLE_VARIANTS[keyof typeof STYLE_VARIANTS],
+  /** The `Chip` style variant to use.
+   * Previously found on /constants as STYLE_VARIANTS,
+   * but wasn't clear on documentation what the options were so hardcoded the options.
+  */
+  variant?: 'dark' | 'light',
   /**
    * An icon component to render before the content.
    * Example import of a Paragon icon component:
@@ -32,6 +34,7 @@ export interface IChip {
   iconAfter?: React.ComponentType,
   /** Specifies icon alt text. */
   iconAfterAlt?: string,
+  /** A click handler for the `Chip` icon before. */
   onIconBeforeClick?: KeyboardEventHandler & MouseEventHandler,
   /** A click handler for the `Chip` icon after. */
   onIconAfterClick?: KeyboardEventHandler & MouseEventHandler,
@@ -44,7 +47,7 @@ export interface IChip {
 const Chip = React.forwardRef(({
   children,
   className,
-  variant = STYLE_VARIANTS.LIGHT,
+  variant = 'light',
   iconBefore,
   iconBeforeAlt,
   iconAfter,
