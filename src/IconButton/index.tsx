@@ -38,7 +38,7 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   children?: never;
 }
 
-const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
+const IconButton = React.forwardRef(({
   className,
   alt,
   invertColors,
@@ -52,7 +52,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
   isActive = false,
   children, // unused, just here because we don't want it to be part of 'attrs'
   ...attrs
-}, ref) => {
+} : Props, ref: React.ForwardedRef<HTMLButtonElement>) => {
   const invert = invertColors ? 'inverse-' : '';
   const activeStyle = isActive ? `${variant}-` : '';
   const IconComponent = iconAs;
