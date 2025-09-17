@@ -7,14 +7,11 @@ export const CHIP_PGN_CLASS = 'pgn__chip';
 export interface IChip {
   /** Specifies the content of the `Chip`. */
   children: React.ReactNode,
-  /** Click handler for the whole Chip, has effect only when Chip does not have any interactive icons. */
+  /** Click handler for the whole `Chip`, has effect only when Chip does not have any interactive icons. */
   onClick?: KeyboardEventHandler & MouseEventHandler,
   /** Specifies an additional `className` to add to the base element. */
   className?: string,
-  /** The `Chip` style variant to use.
-   * Previously found on /constants as STYLE_VARIANTS,
-   * but wasn't clear on documentation what the options were so hardcoded the options.
-  */
+  /** The `Chip` style variant to use. */
   variant?: 'dark' | 'light',
   /**
    * An icon component to render before the content.

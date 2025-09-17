@@ -8,7 +8,7 @@ interface Props {
   children: React.ReactNode;
   /** Specifies whether the component should be displayed with inline styling. */
   isInline?: boolean;
-  /** Specifies class name to append to the base element. */
+  /** Specifies an additional `className` to add to the base element. */
   className?: string;
 }
 

@@ -26,15 +26,15 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   iconClassNames?: string;
   /** Click handler for the button */
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  /** whether to show the `IconButton` in an active state, whose styling is distinct from default state */
+  /** Whether to show the `IconButton` in an active state, whose styling is distinct from default state */
   isActive?: boolean;
   /** @deprecated Using FontAwesome icons is deprecated. Instead, pass iconAs={Icon} src={...} */
   icon?: { prefix?: string; iconName?: string, icon?: any[] },
   /** Type of button (uses Bootstrap options) */
   variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'light' | 'dark' | 'black' | 'brand';
-  /** size of button to render */
+  /** Size of button to render */
   size?: 'sm' | 'md' | 'inline';
-  /** no children */
+  /** No children */
   children?: never;
 }
 
@@ -88,9 +88,9 @@ const IconButton = React.forwardRef(({
 });
 
 interface PropsWithTooltip extends Props {
-  /** tooltip placement can be top, left, right etc, choose from https://popper.js.org/docs/v2/constructors/#options */
+  /** Tooltip placement can be top, left, right etc, choose from https://popper.js.org/docs/v2/constructors/#options */
   tooltipPlacement?: Placement,
-  /** any content to pass to tooltip content area */
+  /** Any content to pass to tooltip content area */
   tooltipContent: React.ReactNode,
 }
 

@@ -27,7 +27,7 @@ interface ToastProps {
    * element to false.
    * */
   onClose: () => void;
-  /** Boolean used to control whether the `Toast` shows */
+  /** Boolean used to control whether the `Toast` shows. */
   show: boolean;
   /**
    * Fields used to build optional action button.
@@ -42,7 +42,7 @@ interface ToastProps {
   closeLabel?: string;
   /** Time in milliseconds for which the `Toast` will display. */
   delay?: number;
-  /** Class names for the `BaseToast` component */
+  /** Class names for the `BaseToast` component. */
   className?: string;
 }
 
