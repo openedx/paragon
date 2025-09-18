@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -9,7 +9,7 @@ function FormControlSet({
   children,
   ...props
 }) {
-  return React.createElement(as, {
+  return createElement(as, {
     className: classNames(
       className,
       {

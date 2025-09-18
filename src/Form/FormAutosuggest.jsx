@@ -1,5 +1,11 @@
-import React, {
-  useEffect, useState, useRef, forwardRef, useImperativeHandle,
+import {
+  Children,
+  cloneElement,
+  useEffect,
+  useState,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
 } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
@@ -86,11 +92,11 @@ const FormAutosuggest = forwardRef(
     };
 
     function getItems(strToFind = '') {
-      let childrenOpt = React.Children.map(children, (child) => {
+      let childrenOpt = Children.map(children, (child) => {
         const { children: childChildren, onClick, ...rest } = child.props;
         const menuItemId = child.props.id ?? uuidv4();
 
-        return React.cloneElement(child, {
+        return cloneElement(child, {
           ...rest,
           children: childChildren,
           'data-value': childChildren,

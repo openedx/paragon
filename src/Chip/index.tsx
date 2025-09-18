@@ -1,4 +1,7 @@
-import React, { ForwardedRef, KeyboardEventHandler, MouseEventHandler } from 'react';
+import type { ReactNode, ComponentType } from 'react';
+import {
+  forwardRef, ForwardedRef, KeyboardEventHandler, MouseEventHandler,
+} from 'react';
 import PropTypes, { type Requireable } from 'prop-types';
 import classNames from 'classnames';
 // @ts-ignore
@@ -9,13 +12,13 @@ import ChipIcon from './ChipIcon';
 export const CHIP_PGN_CLASS = 'pgn__chip';
 
 export interface IChip {
-  children: React.ReactNode,
+  children: ReactNode,
   onClick?: KeyboardEventHandler & MouseEventHandler,
   className?: string,
   variant?: typeof STYLE_VARIANTS[keyof typeof STYLE_VARIANTS],
-  iconBefore?: React.ComponentType,
+  iconBefore?: ComponentType,
   iconBeforeAlt?: string,
-  iconAfter?: React.ComponentType,
+  iconAfter?: ComponentType,
   iconAfterAlt?: string,
   onIconBeforeClick?: KeyboardEventHandler & MouseEventHandler,
   onIconAfterClick?: KeyboardEventHandler & MouseEventHandler,
@@ -23,7 +26,7 @@ export interface IChip {
   isSelected?: boolean,
 }
 
-const Chip = React.forwardRef(({
+const Chip = forwardRef(({
   children,
   className,
   variant,
@@ -110,7 +113,7 @@ Chip.propTypes = {
    *
    * `import { Check } from '@openedx/paragon/icons';`
    */
-  iconBefore: PropTypes.elementType as Requireable<React.ComponentType>,
+  iconBefore: PropTypes.elementType as Requireable<ComponentType>,
   /** Specifies icon alt text. */
   iconBeforeAlt: requiredWhen(PropTypes.string, ['iconBefore', 'onIconBeforeClick']),
   /** A click handler for the `Chip` icon before. */
@@ -121,7 +124,7 @@ Chip.propTypes = {
    *
    * `import { Check } from '@openedx/paragon/icons';`
    */
-  iconAfter: PropTypes.elementType as Requireable<React.ComponentType>,
+  iconAfter: PropTypes.elementType as Requireable<ComponentType>,
   /** Specifies icon alt text. */
   iconAfterAlt: requiredWhen(PropTypes.string, ['iconAfter', 'onIconAfterClick']),
   /** A click handler for the `Chip` icon after. */

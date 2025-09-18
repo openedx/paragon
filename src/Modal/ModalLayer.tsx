@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect } from 'react';
 import classNames from 'classnames';
 import { FocusOn } from 'react-focus-on';
 import Portal from './Portal';
@@ -7,24 +8,26 @@ import { ModalContextProvider } from './ModalContext';
 // istanbul ignore next
 function ModalBackdrop({ onClick }: { onClick?: () => void }) {
   return (
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    <div
-      className="pgn__modal-backdrop"
-      onClick={onClick}
-      onKeyDown={onClick}
-      data-testid="modal-backdrop"
-    />
+    (
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+      <div
+        className="pgn__modal-backdrop"
+        onClick={onClick}
+        onKeyDown={onClick}
+        data-testid="modal-backdrop"
+      />
+    )
   );
 }
 
 // istanbul ignore next
-function ModalContentContainer({ children = null }: { children?: React.ReactNode }) {
+function ModalContentContainer({ children = null }: { children?: ReactNode }) {
   return <div className="pgn__modal-content-container">{children}</div>;
 }
 
 interface Props {
   /** Specifies the contents of the modal */
-  children: React.ReactNode;
+  children: ReactNode;
   /** A callback function for when the modal is dismissed */
   onClose: () => void;
   /** Is the modal dialog open or closed */

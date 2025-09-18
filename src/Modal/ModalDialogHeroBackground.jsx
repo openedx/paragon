@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -8,7 +8,7 @@ function ModalDialogHeroBackground({
   children,
   ...props
 }) {
-  return React.createElement(
+  return createElement(
     as,
     {
       ...props,

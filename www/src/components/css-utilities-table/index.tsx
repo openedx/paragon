@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import type { MouseEvent } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 // @ts-ignore
 import { DataTable, Overlay, Popover } from '~paragon-react'; // eslint-disable-line
@@ -20,7 +21,7 @@ function CSSUtilitiesTable({ selectors }: CSSUtilities) {
     return () => { document.body.removeChild(dummyDiv); };
   }, []);
 
-  const handleCSSVariableMouseEnter = (e: React.MouseEvent, declaration: string) => {
+  const handleCSSVariableMouseEnter = (e: MouseEvent, declaration: string) => {
     setPopoverTarget(e.target as HTMLElement);
     setShowPopover(true);
 

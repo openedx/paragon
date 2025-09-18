@@ -1,9 +1,9 @@
-import React, {
-  useCallback, useEffect, useReducer, useState,
+import {
+  createContext, useCallback, useEffect, useReducer, useState,
 } from 'react';
 import PropTypes from 'prop-types';
 
-export const StepperContext = React.createContext({
+export const StepperContext = createContext({
   activeKey: '',
 });
 

@@ -1,4 +1,6 @@
-import React, { useLayoutEffect, useState } from 'react';
+import {
+  forwardRef, useRef, useLayoutEffect, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -7,7 +9,7 @@ const POSITION_VARIANTS = [
   'bottom',
 ];
 
-const Sticky = React.forwardRef(({
+const Sticky = forwardRef(({
   position,
   children,
   offset,
@@ -15,7 +17,7 @@ const Sticky = React.forwardRef(({
   ...rest
 }, ref) => {
   const [isSticky, setIsSticky] = useState(false);
-  const defaultRef = React.useRef();
+  const defaultRef = useRef();
   const resolvedRef = ref || defaultRef;
 
   // eslint-disable-next-line consistent-return

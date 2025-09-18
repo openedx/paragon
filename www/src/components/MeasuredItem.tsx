@@ -1,8 +1,5 @@
-import React, {
-  useState,
-  useRef,
-  useEffect,
-} from 'react';
+import type { ReactNode, ReactElement } from 'react';
+import { cloneElement, useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { useCurrentTheme } from '../hooks';
@@ -11,7 +8,7 @@ export interface IMeasuredItem {
   properties: string[],
   renderBefore?: Function,
   renderAfter?: Function,
-  children: React.ReactNode,
+  children: ReactNode,
 }
 
 const initialMeasurements = {};
@@ -45,13 +42,11 @@ function MeasuredItem({
     [currentTheme.name, properties],
   );
 
-  return (
-    <>
-      {renderBefore?.(measurements)}
-      {React.cloneElement(children as React.ReactElement, { ref: itemRef })}
-      {renderAfter?.(measurements)}
-    </>
-  );
+  return (<>
+    {renderBefore?.(measurements)}
+    {cloneElement(children as ReactElement, { ref: itemRef })}
+    {renderAfter?.(measurements)}
+  </>);
 }
 
 MeasuredItem.propTypes = {

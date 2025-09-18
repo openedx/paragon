@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -26,7 +26,7 @@ const defaultProps = {
   variantIconDescription: '',
 };
 
-class ValidationMessage extends React.Component {
+class ValidationMessage extends Component {
   getVariantFeedbackClassName() {
     const { variant } = this.props;
     let className;

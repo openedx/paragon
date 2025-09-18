@@ -1,4 +1,5 @@
-import React, { ForwardedRef } from 'react';
+import type { ReactElement } from 'react';
+import { forwardRef, createElement, ForwardedRef } from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import classNames from 'classnames';
@@ -22,7 +23,7 @@ export interface OverflowScrollContextProps {
 
 export interface ChipCarouselProps {
   className?: string;
-  items: Array<React.ReactElement>;
+  items: Array<ReactElement>;
   ariaLabel: string;
   disableOpacityMasks?: boolean;
   onScrollPrevious?: () => void;
@@ -33,7 +34,7 @@ export interface ChipCarouselProps {
   gap?: number;
 }
 
-const ChipCarousel = React.forwardRef(({
+const ChipCarousel = forwardRef(({
   className,
   items,
   ariaLabel,
@@ -49,32 +50,33 @@ const ChipCarousel = React.forwardRef(({
   const intl = useIntl();
 
   return (
-    <div
-      className={classNames('pgn__chip-carousel', className, gap ? `pgn__chip-carousel-gap__${gap}` : '')}
-      {...props}
-      ref={ref}
-    >
-      <OverflowScroll
-        ariaLabel={ariaLabel}
-        hasInteractiveChildren
-        disableScroll={!canScrollHorizontal}
-        disableOpacityMasks={disableOpacityMasks}
-        onScrollPrevious={onScrollPrevious}
-        onScrollNext={onScrollNext}
-        offset={offset}
-        offsetType={offsetType}
+    (
+      <div
+        className={classNames('pgn__chip-carousel', className, gap ? `pgn__chip-carousel-gap__${gap}` : '')}
+        {...props}
+        ref={ref}
       >
-        <OverflowScrollContext.Consumer>
-          {({
-            setOverflowRef,
-            isScrolledToStart,
-            isScrolledToEnd,
-            scrollToPrevious,
-            scrollToNext,
-          }: OverflowScrollContextProps) => (
-            <>
+        <OverflowScroll
+          ariaLabel={ariaLabel}
+          hasInteractiveChildren
+          disableScroll={!canScrollHorizontal}
+          disableOpacityMasks={disableOpacityMasks}
+          onScrollPrevious={onScrollPrevious}
+          onScrollNext={onScrollNext}
+          offset={offset}
+          offsetType={offsetType}
+        >
+          <OverflowScrollContext.Consumer>
+            {({
+              setOverflowRef,
+              isScrolledToStart,
+              isScrolledToEnd,
+              scrollToPrevious,
+              scrollToNext,
+            }: OverflowScrollContextProps) => (
               <>
-                {!isScrolledToStart && (
+                <>
+                  {!isScrolledToStart && (
                   <IconButton
                     size="sm"
                     className="pgn__chip-carousel__left-control"
@@ -83,8 +85,8 @@ const ChipCarousel = React.forwardRef(({
                     alt={intl.formatMessage(messages.scrollToPrevious)}
                     onClick={scrollToPrevious}
                   />
-                )}
-                {!isScrolledToEnd && (
+                  )}
+                  {!isScrolledToEnd && (
                   <IconButton
                     size="sm"
                     className="pgn__chip-carousel__right-control"
@@ -93,25 +95,26 @@ const ChipCarousel = React.forwardRef(({
                     alt={intl.formatMessage(messages.scrollToNext)}
                     onClick={scrollToNext}
                   />
-                )}
+                  )}
+                </>
+                <div ref={setOverflowRef} className="d-flex">
+                  <OverflowScroll.Items>
+                    {items?.map((item, id) => {
+                      const { children } = item?.props || {};
+                      if (!children) {
+                        return null;
+                      }
+                      // eslint-disable-next-line react/no-array-index-key
+                      return createElement(Chip, { ...item.props, key: id });
+                    })}
+                  </OverflowScroll.Items>
+                </div>
               </>
-              <div ref={setOverflowRef} className="d-flex">
-                <OverflowScroll.Items>
-                  {items?.map((item, id) => {
-                    const { children } = item?.props || {};
-                    if (!children) {
-                      return null;
-                    }
-                    // eslint-disable-next-line react/no-array-index-key
-                    return React.createElement(Chip, { ...item.props, key: id });
-                  })}
-                </OverflowScroll.Items>
-              </div>
-            </>
-          )}
-        </OverflowScrollContext.Consumer>
-      </OverflowScroll>
-    </div>
+            )}
+          </OverflowScrollContext.Consumer>
+        </OverflowScroll>
+      </div>
+    )
   );
 });
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from '~paragon-react';
 import Layout from '../components/PageLayout';
 import SEO from '../components/SEO';

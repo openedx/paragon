@@ -1,23 +1,25 @@
 /* eslint-disable react/require-default-props */
-import React from 'react';
+import type { ReactNode } from 'react';
+
+import { forwardRef, createElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import type { ComponentWithAsProp } from '../utils/types/bootstrap';
 
 export interface Props {
   as?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
 type HeaderType = ComponentWithAsProp<'div', Props>;
 
-const ModalDialogHeader: HeaderType = React.forwardRef<HTMLDivElement, Props>(({
+const ModalDialogHeader: HeaderType = forwardRef<HTMLDivElement, Props>(({
   as = 'div',
   children,
   ...props
 }, ref) => (
-  React.createElement(
+  createElement(
     as,
     {
       ...props,

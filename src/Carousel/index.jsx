@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import BaseCarousel from 'react-bootstrap/Carousel';
 import BaseCarouselItem from 'react-bootstrap/CarouselItem';
@@ -7,11 +7,11 @@ import BaseCarouselCaption from 'react-bootstrap/CarouselCaption';
 export const CAROUSEL_NEXT_LABEL_TEXT = 'Next';
 export const CAROUSEL_PREV_LABEL_TEXT = 'Previous';
 
-const Carousel = React.forwardRef((props, ref) => <BaseCarousel {...props} ref={ref} />);
+const Carousel = forwardRef((props, ref) => <BaseCarousel {...props} ref={ref} />);
 
-const CarouselItem = React.forwardRef((props, ref) => <BaseCarouselItem {...props} ref={ref} />);
+const CarouselItem = forwardRef((props, ref) => <BaseCarouselItem {...props} ref={ref} />);
 
-const CarouselCaption = React.forwardRef((props, ref) => <BaseCarouselCaption {...props} ref={ref} />);
+const CarouselCaption = forwardRef((props, ref) => <BaseCarouselCaption {...props} ref={ref} />);
 
 Carousel.propTypes = {
   /** Specifies element type for this component. */

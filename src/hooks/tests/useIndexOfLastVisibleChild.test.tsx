@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useRef } from 'react';
 import { render } from '@testing-library/react';
 import { useIndexOfLastVisibleChild } from '../..';
 
@@ -12,8 +12,8 @@ window.ResizeObserver = window.ResizeObserver
   }));
 
 function TestComponent() {
-  const [containerElementRef, setContainerElementRef] = React.useState<HTMLDivElement | null>(null);
-  const overflowElementRef = React.useRef<HTMLDivElement>(null);
+  const [containerElementRef, setContainerElementRef] = useState<HTMLDivElement | null>(null);
+  const overflowElementRef = useRef<HTMLDivElement>(null);
   const indexOfLastVisibleChild = useIndexOfLastVisibleChild(containerElementRef, overflowElementRef.current);
 
   return (

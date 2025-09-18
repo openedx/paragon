@@ -1,5 +1,3 @@
-import React from 'react';
-// @ts-ignore
 import { DataTable } from '~paragon-react';
 
 import { MobileMeasuredCell, ClassNameCell, DesktopMeasuredCell } from '../TableCells';

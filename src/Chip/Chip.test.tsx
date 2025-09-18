@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ComponentProps } from 'react';
 import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -7,7 +7,7 @@ import { Close } from '../../icons';
 import { STYLE_VARIANTS } from './constants';
 import Chip from '.';
 
-function TestChip(props: Omit<React.ComponentProps<typeof Chip>, 'children'>) {
+function TestChip(props: Omit<ComponentProps<typeof Chip>, 'children'>) {
   return (
     <Chip {...props}>
       Test

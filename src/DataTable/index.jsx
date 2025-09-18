@@ -1,6 +1,4 @@
-import React, {
-  useEffect, useMemo, useReducer,
-} from 'react';
+import { useEffect, useMemo, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { useTable, useMountedLayoutEffect } from 'react-table';
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Container } from '~paragon-react';
 import { ComponentNavItem, IComponentNavItem } from './Menu';

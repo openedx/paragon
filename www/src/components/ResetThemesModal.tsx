@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import type { FC } from 'react';
+import { useRef, useEffect } from 'react';
 import {
   Button,
   ActionRow,
@@ -11,7 +12,7 @@ interface ResetThemesModalProps {
   onConfirm: () => void;
 }
 
-const ResetThemesModal: React.FC<ResetThemesModalProps> = ({
+const ResetThemesModal: FC<ResetThemesModalProps> = ({
   isOpen,
   onClose,
   onConfirm,

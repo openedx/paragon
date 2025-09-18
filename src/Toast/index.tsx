@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import type { MouseEvent } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import BaseToast from 'react-bootstrap/Toast';
@@ -16,7 +17,7 @@ export const TOAST_DELAY = 5000;
 interface ToastAction {
   label: string;
   href?: string;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
 }
 
 interface ToastProps {

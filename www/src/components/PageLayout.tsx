@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from 'react';
+import type { ReactNode } from 'react';
 import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
@@ -30,7 +30,7 @@ import AutoToc from './AutoToc';
 import PageEditBtn from './PageEditBtn';
 
 export interface ILayout {
-  children: React.ReactNode,
+  children: ReactNode,
   showMinimizedTitle: boolean,
   hideFooterComponentMenu: boolean,
   isMdx: boolean,

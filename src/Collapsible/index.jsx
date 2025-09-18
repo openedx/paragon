@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef, isValidElement } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -17,7 +17,7 @@ const styleIcons = {
   // card and card-lg use the defaults specified in defaultProps
 };
 
-const Collapsible = React.forwardRef((props, ref) => {
+const Collapsible = forwardRef((props, ref) => {
   const {
     children,
     className,
@@ -29,7 +29,7 @@ const Collapsible = React.forwardRef((props, ref) => {
   } = props;
 
   const icons = { iconWhenClosed, iconWhenOpen, ...styleIcons[styling] };
-  const titleElement = React.isValidElement(title) ? title : <span>{title}</span>;
+  const titleElement = isValidElement(title) ? title : <span>{title}</span>;
 
   return (
     <Collapsible.Advanced

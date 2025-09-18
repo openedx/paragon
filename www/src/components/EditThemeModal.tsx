@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import type { RefObject, FC } from 'react';
+import { useState } from 'react';
 import {
   Button,
   ActionRow,
@@ -16,11 +17,11 @@ interface EditThemeModalProps {
   onRemove: () => void;
   editingTheme: Theme;
   existingThemes: Theme[];
-  formRef: React.RefObject<CustomThemesFormRef>;
+  formRef: RefObject<CustomThemesFormRef>;
   onSaveTheme: (theme: ThemeConfig) => void;
 }
 
-const EditThemeModal: React.FC<EditThemeModalProps> = ({
+const EditThemeModal: FC<EditThemeModalProps> = ({
   isOpen,
   onClose,
   onSave,

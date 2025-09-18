@@ -1,5 +1,7 @@
 /* eslint no-console: 0 */
-import React from 'react';
+import type { ComponentType } from 'react';
+
+import { Component } from 'react';
 
 export enum DeprTypes {
   MOVED = 'MOVED',
@@ -17,11 +19,11 @@ export interface DeprecatedProps extends Record<string, any> {
 }
 
 function withDeprecatedProps<T extends Record<string, any>>(
-  WrappedComponent: React.ComponentType<any>,
+  WrappedComponent: ComponentType<any>,
   componentName: string,
   deprecatedProps: Record<string, DeprecatedProps>,
 ) : any {
-  class WithDeprecatedProps extends React.Component<T> {
+  class WithDeprecatedProps extends Component<T> {
     // eslint-disable-next-line react/static-property-placement
     public static displayName = `withDeprecatedProps(${componentName})`;
 

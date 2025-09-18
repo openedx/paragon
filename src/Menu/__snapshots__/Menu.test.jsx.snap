@@ -4,6 +4,7 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
 <div
   className="pgn__menu"
 >
+   
   <button
     className="pgn__menu-item"
   >
@@ -145,5 +146,6 @@ exports[`Menu Item renders correctly renders as expected with menu items 1`] = `
       </label>
     </div>
   </div>
+   
 </div>
 `;

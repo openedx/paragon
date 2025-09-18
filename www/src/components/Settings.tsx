@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
-import React, { useContext } from 'react';
+import type { ChangeEvent } from 'react';
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Close } from '~paragon-icons';
 import {
@@ -28,7 +29,7 @@ function Settings({ showMinimizedTitle }: ISetting) {
   } = useContext(SettingsContext);
 
   return (
-    <Sheet
+    (<Sheet
       position="right"
       show={showSettings}
       variant="light"
@@ -50,7 +51,7 @@ function Settings({ showMinimizedTitle }: ISetting) {
             <Form.Label className="pgn-doc__settings-label">Text direction</Form.Label>
             <Form.RadioSet
               name="direction"
-              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('direction', e.target.value)}
+              onChange={(e: ChangeEvent<HTMLSelectElement>) => handleSettingsChange('direction', e.target.value)}
               value={settings.direction}
             >
               <Form.Radio value="ltr">Left to right</Form.Radio>
@@ -80,7 +81,7 @@ function Settings({ showMinimizedTitle }: ISetting) {
               <Form.Control
                 as="select"
                 value={settings.containerWidth}
-                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSettingsChange('containerWidth', e.target.value)}
+                onChange={(e: ChangeEvent<HTMLSelectElement>) => handleSettingsChange('containerWidth', e.target.value)}
               >
                 <option value="xs">xs</option>
                 <option value="sm">sm</option>
@@ -104,7 +105,7 @@ function Settings({ showMinimizedTitle }: ISetting) {
           </Nav>
         </Stack>
       </div>
-    </Sheet>
+    </Sheet>)
   );
 }
 

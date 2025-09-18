@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable } from '~paragon-react';
 import ComponentUsageExamples, { IComponentUsageExamples } from './ComponentUsageExamples';

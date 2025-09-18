@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 import { useLocation } from '@gatsbyjs/reach-router';
 import PropTypes from 'prop-types';
 import { Link, graphql, useStaticQuery } from 'gatsby';
@@ -124,7 +124,7 @@ ComponentNavItem.defaultProps = {
 };
 
 export type MenuComponentListTypes = {
-  children: React.ReactNode,
+  children: ReactNode,
 };
 
 function MenuComponentList({ children }: MenuComponentListTypes) {
@@ -138,7 +138,7 @@ MenuComponentList.propTypes = {
 };
 
 export interface IMenuComponentListCategory {
-  children: React.ReactNode,
+  children: ReactNode,
   title: string,
 }
 

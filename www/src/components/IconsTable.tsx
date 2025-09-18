@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import type { RefObject, FC } from 'react';
+import { useRef, useEffect, useMemo, useState } from 'react';
 import debounce from 'lodash.debounce';
 import * as IconComponents from '~paragon-icons';
 import { type IconName } from '~paragon-icons';
@@ -13,10 +14,10 @@ const COLUMN_WIDTH = 150;
 interface TableCellProps {
   iconName: IconName;
   setCurrentIcon: (name: IconName) => void;
-  previewRef: React.RefObject<HTMLDivElement>;
+  previewRef: RefObject<HTMLDivElement>;
 }
 
-const TableCell: React.FC<TableCellProps> = ({
+const TableCell: FC<TableCellProps> = ({
   iconName,
   setCurrentIcon,
   previewRef,
@@ -57,7 +58,7 @@ interface TableRowProps {
   data: Pick<TableCellProps, 'previewRef' | 'setCurrentIcon'>
 }
 
-const TableRow: React.FC<TableRowProps> = ({
+const TableRow: FC<TableRowProps> = ({
   rowIndex, columnsCount, iconsList, data,
 }) => {
   const startIndex = rowIndex * columnsCount;
@@ -84,9 +85,9 @@ const TableRow: React.FC<TableRowProps> = ({
 };
 
 function IconsTable({ iconNames }: { iconNames: IconName[] }) {
-  const previewRef = React.useRef<HTMLDivElement>(null);
-  const tableRef = React.useRef<HTMLDivElement>(null);
-  const tableBottom = React.useRef<HTMLDivElement>(null);
+  const previewRef = useRef<HTMLDivElement>(null);
+  const tableRef = useRef<HTMLDivElement>(null);
+  const tableBottom = useRef<HTMLDivElement>(null);
   const [searchValue, setSearchValue] = useState('');
   const [tableWidth, setTableWidth] = useState(0);
   const [data, setData] = useState({ iconsList: iconNames, rowsCount: ROWS_PER_WINDOW });

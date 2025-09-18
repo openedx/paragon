@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Form, DataTable, Container } from '~paragon-react'; // eslint-disable-line
@@ -106,7 +107,7 @@ export default function SpacingPage({ pageContext }) {
   });
 
   return (
-    <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
+    (<Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Spacing" />
       <Container size={settings.containerWidth} className="py-5">
@@ -139,7 +140,7 @@ export default function SpacingPage({ pageContext }) {
                 name="direction-selector"
                 value={direction}
                 isInline
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDirection(e.target.value)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setDirection(e.target.value)}
               >
                 {directions.map(({ key, name }) => (
                   <Form.Radio
@@ -170,7 +171,7 @@ export default function SpacingPage({ pageContext }) {
                   step={0.5}
                   max={6}
                   value={size}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSize(parseInt(e.target.value, 10))}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => setSize(parseInt(e.target.value, 10))}
                 />
                 6
               </div>
@@ -231,7 +232,7 @@ export default function SpacingPage({ pageContext }) {
           <DataTable.Table />
         </DataTable>
       </Container>
-    </Layout>
+    </Layout>)
   );
 }
 

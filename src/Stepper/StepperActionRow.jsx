@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { createElement, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { StepperContext } from './StepperContext';
 import ActionRow from '../ActionRow';
@@ -16,7 +16,7 @@ function StepperActionRow({
     return null;
   }
 
-  return React.createElement(as, props, children);
+  return createElement(as, props, children);
 }
 
 StepperActionRow.propTypes = {

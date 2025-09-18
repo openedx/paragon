@@ -1,4 +1,4 @@
-import React, { useContext, useCallback } from 'react';
+import { createElement, useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import { CollapsibleContext } from './CollapsibleAdvanced';
@@ -36,7 +36,7 @@ function CollapsibleTrigger({
     }
   }, [onKeyDown, handleToggle]);
 
-  return React.createElement(
+  return createElement(
     tag,
     {
       ...props,

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 import Checkpoint from './Checkpoint';
 
-const ProductTour = React.forwardRef(({ tours }, ref) => {
+const ProductTour = forwardRef(({ tours }, ref) => {
   const tourValue = tours.find((tour) => tour.enabled);
   const {
     enabled,

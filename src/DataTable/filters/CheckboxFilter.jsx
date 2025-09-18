@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import { useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import Form, { FormLabel } from '../../Form';
 import Badge from '../../Badge';

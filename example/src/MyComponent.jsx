@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Form, Icon, Bubble, Stack, Container } from '@openedx/paragon'; // eslint-disable-line
 import { FavoriteBorder } from '@openedx/paragon/icons'; // eslint-disable-line
 

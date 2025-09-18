@@ -1,4 +1,5 @@
-import React, { createContext, useEffect } from 'react';
+import type { SyntheticEvent, ReactNode } from 'react';
+import { createContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 import { messages, type ContainerSize } from '~paragon-react';
@@ -21,7 +22,7 @@ export interface IDefaultValue {
   updateTheme: Function,
   removeTheme: Function,
   resetThemes: Function,
-  showSettings?: React.SyntheticEvent | React.ReactNode,
+  showSettings?: SyntheticEvent | ReactNode,
   closeSettings?: () => void,
   openSettings?: () => void,
 }
