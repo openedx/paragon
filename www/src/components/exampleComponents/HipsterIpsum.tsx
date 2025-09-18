@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 
 /**
  * Randomly shuffle an array
@@ -77,7 +77,7 @@ const useHipsterIpsumContent = ({
   return getHipsterIpsumContent(shuffledParagraphs, numParagraphs);
 };
 
-const HipsterIpsum: React.FC<HipsterIpsumType> = ({
+const HipsterIpsum: FC<HipsterIpsumType> = ({
   numParagraphs = 2,
   numShortParagraphs,
 }) => {

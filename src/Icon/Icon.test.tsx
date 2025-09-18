@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import * as ParagonIcons from '../../icons';
 import { type IconName } from '../../icons';
@@ -18,7 +18,7 @@ function BlankSrc() {
 
 /** A compile time check. Whatever React elements this wraps won't run at runtime. */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function CompileCheck(_props: { children: React.ReactNode }) { return null; }
+function CompileCheck(_props: { children: ReactNode }) { return null; }
 
 describe('IconName type', () => {
   it('has correct typing', () => {

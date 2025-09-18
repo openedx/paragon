@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Close, WbSunny, DoDisturb } from '~paragon-icons';
 import {
@@ -117,7 +118,7 @@ function BoxShadowToolkit({
   };
 
   return (
-    <section className="pgn-doc__box-shadow-toolkit--controls-box">
+    (<section className="pgn-doc__box-shadow-toolkit--controls-box">
       {controlsProps.map(({ key, name }) => (
         <Form.Group key={key}>
           <Form.Label
@@ -132,7 +133,7 @@ function BoxShadowToolkit({
             max="100"
             type={key === 'color' ? 'color' : 'range'}
             defaultValue="0"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateBoxShadowModel(key, e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updateBoxShadowModel(key, e.target.value)}
             disabled={isDisabled}
           />
         </Form.Group>
@@ -183,7 +184,7 @@ function BoxShadowToolkit({
           )}
         </div>
       </div>
-    </section>
+    </section>)
   );
 }
 

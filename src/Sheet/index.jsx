@@ -1,4 +1,4 @@
-import React from 'react';
+import { createRef, Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FocusOn } from 'react-focus-on';
@@ -17,11 +17,11 @@ export const VARIANTS = {
   dark: 'dark',
 };
 
-class Sheet extends React.Component {
+class Sheet extends Component {
   constructor(props) {
     super(props);
 
-    this.wrapperRef = React.createRef();
+    this.wrapperRef = createRef();
     this.renderSheet = this.renderSheet.bind(this);
   }
 

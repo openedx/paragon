@@ -1,4 +1,6 @@
-import React, {
+import type { ReactNode, ChangeEvent, MouseEvent } from 'react';
+
+import {
   useCallback,
   useContext,
   useEffect,
@@ -8,6 +10,7 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
+
 import { Link } from 'gatsby';
 import axios from 'axios';
 import classNames from 'classnames';
@@ -36,9 +39,9 @@ const {
 } = ParagonReact;
 
 export type CollapsibleLiveEditorTypes = {
-  children: React.ReactNode;
+  children: ReactNode;
   clickToCopy: () => void;
-  handleCodeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  handleCodeChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 };
 
 function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: CollapsibleLiveEditorTypes) {
@@ -64,7 +67,7 @@ function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: Coll
     return node;
   };
 
-  const submitSegmentEvent = (e: React.MouseEvent & { target: HTMLElement }) => {
+  const submitSegmentEvent = (e: MouseEvent & { target: HTMLElement }) => {
     const componentNameAndCategory = window.location.pathname.replace(/\//g, '.')
       .replace(/.components./gi, '');
     const headingElement = getCodeBlockHeading(e.target);

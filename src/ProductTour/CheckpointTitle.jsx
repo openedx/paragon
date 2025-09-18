@@ -1,7 +1,7 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-const CheckpointTitle = React.forwardRef(({ children }, ref) => (
+const CheckpointTitle = forwardRef(({ children }, ref) => (
   <h2 id="pgn__checkpoint-title" ref={ref}>
     {children}
   </h2>

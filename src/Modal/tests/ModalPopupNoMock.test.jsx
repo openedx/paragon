@@ -1,10 +1,10 @@
-import React from 'react';
+import { createRef } from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ModalPopup from '../ModalPopup';
 
 describe('<ModalPopup />', () => {
-  const mockPositionRef = React.createRef();
+  const mockPositionRef = createRef();
 
   describe('when isOpen', () => {
     const isOpen = true;

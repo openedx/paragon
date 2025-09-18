@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import BaseTooltip, { type TooltipProps as BaseTooltipProps } from 'react-bootstrap/Tooltip';
@@ -27,7 +27,7 @@ const PLACEMENT_VARIANTS: Placement[] = [
   'left-start',
 ];
 
-const Tooltip: ComponentWithAsProp<'div', TooltipProps> = React.forwardRef(({
+const Tooltip: ComponentWithAsProp<'div', TooltipProps> = forwardRef(({
   children,
   variant,
   ...props

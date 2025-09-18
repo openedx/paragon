@@ -1,4 +1,5 @@
-import React, { createContext, useContext, ReactNode } from 'react';
+import type { FC } from 'react';
+import { createContext, useContext, ReactNode } from 'react';
 import { type Theme, type ThemeConfig } from '../types/types';
 
 interface ThemeFormContextValue {
@@ -14,7 +15,7 @@ interface ThemeFormProviderProps {
   onSaveTheme: (theme: ThemeConfig) => void;
 }
 
-export const ThemeFormProvider: React.FC<ThemeFormProviderProps> = ({
+export const ThemeFormProvider: FC<ThemeFormProviderProps> = ({
   children,
   existingThemes,
   onSaveTheme,

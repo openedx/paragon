@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import classNames from 'classnames';
@@ -43,13 +44,13 @@ export interface IPageTemplate {
     componentsUsageInsights: string[],
     githubEditPath: string,
   },
-  children: React.ReactNode,
+  children: ReactNode,
 }
 
 interface HProps {
   // We know that our heading elements (<h1>, <h2>, etc.) will always have content (children) and IDs:
   id: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const customMdxComponents = {

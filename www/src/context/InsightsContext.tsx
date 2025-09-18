@@ -1,6 +1,4 @@
-import React, {
-  createContext, useState, useEffect, useMemo,
-} from 'react';
+import { createContext, useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import * as Icons from '~paragon-icons';
 import * as Components from '~paragon-react';

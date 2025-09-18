@@ -1,5 +1,5 @@
-import React, {
-  useLayoutEffect, useRef, useEffect,
+import {
+  createElement, useLayoutEffect, useRef, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
 import { truncateLines } from './utils';
@@ -34,7 +34,7 @@ function TruncateDeprecated({
     }
   }, [children, ellipsis, lines, onTruncate, whiteSpace, width]);
 
-  return React.createElement(elementType, {
+  return createElement(elementType, {
     ref: textContainer,
     className,
   });

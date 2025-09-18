@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ChangeEvent, MutableRefObject, RefObject, FC } from 'react';
 import {
   Button,
   Stack,
@@ -11,16 +11,16 @@ import { hasUrls } from '../utils/themeUtils';
 interface ThemeOptionsProps {
   themes: Theme[];
   currentThemeValue: string;
-  onThemeChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onThemeChange: (event: ChangeEvent<HTMLInputElement>) => void;
   onEditTheme: (themeIndex: number) => void;
   hasCustomThemes: boolean;
   onResetClick: () => void;
   onAddClick: () => void;
-  radioRefs: React.MutableRefObject<(HTMLInputElement | null)[]>;
-  addButtonRef?: React.RefObject<HTMLButtonElement>;
+  radioRefs: MutableRefObject<(HTMLInputElement | null)[]>;
+  addButtonRef?: RefObject<HTMLButtonElement>;
 }
 
-const ThemeOptions: React.FC<ThemeOptionsProps> = ({
+const ThemeOptions: FC<ThemeOptionsProps> = ({
   themes,
   currentThemeValue,
   onThemeChange,

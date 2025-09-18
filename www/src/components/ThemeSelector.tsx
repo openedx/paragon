@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import type { ChangeEvent } from 'react';
+import { useRef } from 'react';
 import {
   Stack,
   Collapsible,
@@ -107,7 +108,7 @@ export default function ThemeSelector() {
     handleResetConfirm,
   } = useResetModal(resetThemes, handleResetComplete);
 
-  const handleThemeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleThemeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     const themeIndex = parseInt(value, 10);
     setCurrentTheme(themeIndex);

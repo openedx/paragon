@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes } from 'react';
 import { Button, Hyperlink, Nav } from '~paragon-react';
 import { PAGE_EDIT_BTN_CLICKED_EVENT, sendUserAnalyticsEvent } from '../../../segment-events';
 

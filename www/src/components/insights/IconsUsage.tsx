@@ -1,4 +1,3 @@
-import React from 'react';
 import ComponentUsage from './ComponentUsage';
 
 import componentsUsage from '../../utils/componentsUsage';

@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 import { useIntl } from 'react-intl';
 import DataTableContext from './DataTableContext';
 import { DropdownButton } from '../Dropdown';

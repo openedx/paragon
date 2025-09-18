@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   act, waitFor, render, fireEvent,
 } from '@testing-library/react';

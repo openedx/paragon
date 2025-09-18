@@ -1,11 +1,11 @@
-import React, { Children, useMemo } from 'react';
+import { forwardRef, Children, useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useOverflowScrollItems } from '../OverflowScroll';
 
-const CardDeck = React.forwardRef(({
+const CardDeck = forwardRef(({
   className,
   children,
   columnSizes,

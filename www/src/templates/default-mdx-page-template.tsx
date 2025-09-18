@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import type { ReactNode } from 'react';
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { MDXProvider } from '@mdx-js/react';
 import { Link } from 'gatsby';
@@ -12,7 +13,7 @@ import { SettingsContext } from '../context/SettingsContext';
 interface HProps {
   // We know that our heading elements (<h1>, <h2>, etc.) will always have content (children) and IDs:
   id: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const shortcodes = {
@@ -34,7 +35,7 @@ export interface StandardContext {
 }
 
 export interface IPageTemplateType {
-  children: React.ReactNode;
+  children: ReactNode;
   pageContext: StandardContext;
 }
 

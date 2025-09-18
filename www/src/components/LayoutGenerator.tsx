@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import type { ChangeEvent, ReactNode } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormGroup, FormControl, FormLabel } from '~paragon-react';
@@ -16,7 +17,7 @@ function Column({
   index, width, onChangeWidth, offset, onChangeOffset,
 }: IColumn) {
   return (
-    <div
+    (<div
       className={classNames('col mb-4', {
         [`col-${width}`]: width > 0,
         [`offset-${offset}`]: offset > 0,
@@ -40,7 +41,7 @@ function Column({
             min={0}
             step={1}
             max={12}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeWidth(index, e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => onChangeWidth(index, e.target.value)}
           />
         </FormGroup>
         <FormGroup className="form-inline m-2">
@@ -57,11 +58,11 @@ function Column({
             min={0}
             step={1}
             max={11}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeOffset(index, e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => onChangeOffset(index, e.target.value)}
           />
         </FormGroup>
       </div>
-    </div>
+    </div>)
   );
 }
 
@@ -87,7 +88,7 @@ function LayoutGenerator() {
   const [columnWidths, setColumnWidths] = useState<StateKeyTypes>({ 0: 3, 1: 6, 2: 3 });
   const [columnOffsets, setColumnOffsets] = useState<StateKeyTypes>({});
 
-  const columns: Array<React.ReactNode> = [];
+  const columns: Array<ReactNode> = [];
 
   for (let i = 0; i < numColumns; i++) {
     columns.push(
@@ -127,31 +128,29 @@ ${columnsString.join('').slice(0, -1)}
     return rowString;
   };
 
-  return (
-    <>
-      <p>
-        Drag the slider to add or remove columns. Edit the width and offset
-        values for each column and see the output below.
-      </p>
-      <FormGroup className="form-inline mb-4">
-        <FormLabel isInline className="mr-3" htmlFor="num-cols-range">
-          Number of Columns: {numColumns}
-        </FormLabel>
-        <FormControl
-          id="num-cols-range"
-          type="range"
-          value={numColumns}
-          min={1}
-          step={1}
-          max={12}
-          style={{ width: '10rem' }}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setColumns(parseInt(e.target.value, 10))}
-        />
-      </FormGroup>
-      <div className="row">{columns}</div>
-      <CodeBlock className="language-jsx">{renderMarkupString()}</CodeBlock>
-    </>
-  );
+  return (<>
+    <p>
+      Drag the slider to add or remove columns. Edit the width and offset
+      values for each column and see the output below.
+    </p>
+    <FormGroup className="form-inline mb-4">
+      <FormLabel isInline className="mr-3" htmlFor="num-cols-range">
+        Number of Columns: {numColumns}
+      </FormLabel>
+      <FormControl
+        id="num-cols-range"
+        type="range"
+        value={numColumns}
+        min={1}
+        step={1}
+        max={12}
+        style={{ width: '10rem' }}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => setColumns(parseInt(e.target.value, 10))}
+      />
+    </FormGroup>
+    <div className="row">{columns}</div>
+    <CodeBlock className="language-jsx">{renderMarkupString()}</CodeBlock>
+  </>);
 }
 
 export default LayoutGenerator;

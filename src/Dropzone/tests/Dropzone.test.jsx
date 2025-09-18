@@ -1,4 +1,3 @@
-import React from 'react';
 import { IntlProvider } from 'react-intl';
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';

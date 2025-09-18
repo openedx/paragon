@@ -1,4 +1,4 @@
-import React from 'react';
+import type { SetStateAction, Dispatch } from 'react';
 import PropTypes from 'prop-types';
 import { MenuIcon, Close, Settings } from '~paragon-icons';
 import {
@@ -16,7 +16,7 @@ import Search from '../Search';
 export interface INavbar {
   siteTitle: string,
   onMenuClick: () => void,
-  setTarget: React.Dispatch<React.SetStateAction<HTMLButtonElement | null>>,
+  setTarget: Dispatch<SetStateAction<HTMLButtonElement | null>>,
   onSettingsClick?: () => void,
   menuIsOpen?: boolean,
   showMinimizedTitle?: boolean,

@@ -1,5 +1,4 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react'; // (or /dom, /vue, ...)
+import { render, screen } from '@testing-library/react';
 import useIsVisible from '../hooks/useIsVisibleHook';
 
 import Scrollable, { CLASSNAME_SCROLL_BOTTOM, CLASSNAME_SCROLL_TOP } from '.';

@@ -1,5 +1,3 @@
-import React from 'react';
-// @ts-ignore
 import { DataTable, Alert } from '~paragon-react';
 import { Info } from '~paragon-icons';
 import { TextCell } from '../TableCells';

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import BulkActions from './BulkActions';
 import TableActions from './TableActions';
 import DataTableContext from './DataTableContext';

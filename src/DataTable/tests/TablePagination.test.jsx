@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, act, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import userEvent from '@testing-library/user-event';

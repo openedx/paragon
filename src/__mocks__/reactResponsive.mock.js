@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { MediaQueryProps } from 'react-responsive';
 
 // We have to rename the below variables to start with `mock` so

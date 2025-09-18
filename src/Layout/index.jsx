@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef, Children, createElement } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import PropTypes from 'prop-types';
@@ -6,15 +6,15 @@ import PropTypes from 'prop-types';
 const COL_VALUES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto'];
 const SIZES = ['xs', 'sm', 'md', 'lg', 'xl'];
 
-const LayoutElement = React.forwardRef((props, ref) => <div ref={ref} {...props} />);
+const LayoutElement = forwardRef((props, ref) => <div ref={ref} {...props} />);
 
-const Layout = React.forwardRef(({ children, ...props }, ref) => {
+const Layout = forwardRef(({ children, ...props }, ref) => {
   const childrenLength = children.length;
 
   const isValidDimensions = (dataList, validLength) => !dataList || dataList.length === validLength;
   const errors = {};
 
-  const layout = React.Children.map(children, (child, index) => {
+  const layout = Children.map(children, (child, index) => {
     const newProps = { ...child.props };
     SIZES.forEach(size => {
       const sizeProps = props[size];
@@ -28,7 +28,7 @@ const Layout = React.forwardRef(({ children, ...props }, ref) => {
       newProps[size] = { span, offset };
     });
     newProps.ref = child.ref;
-    return React.createElement(Col, newProps, child.props.children);
+    return createElement(Col, newProps, child.props.children);
   });
 
   Object.keys(errors).forEach(breakpoint => {

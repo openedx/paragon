@@ -1,6 +1,6 @@
 import { navigate } from 'gatsby';
 import localforage from 'localforage';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ContentCopy, Check } from '~paragon-icons';
 import {

@@ -1,5 +1,7 @@
 /* eslint-disable react/require-default-props */
-import React, {
+import type { ComponentType, ReactElement, ForwardedRef } from 'react';
+
+import {
   useCallback,
   useEffect,
   useState,
@@ -11,6 +13,7 @@ import React, {
   RefAttributes,
   cloneElement,
 } from 'react';
+
 import classNames from 'classnames';
 import {
   Alert as BaseAlert,
@@ -46,7 +49,7 @@ export interface AlertProps extends BaseProps {
   transition?: boolean | TransitionComponent;
   children?: ReactNode;
   /** Icon that will be shown in the alert */
-  icon?: React.ComponentType<IconProps>;
+  icon?: ComponentType<IconProps>;
   /** Whether the alert is shown. */
   show?: boolean;
   /** Whether the alert is dismissible. Defaults to false. */
@@ -54,7 +57,7 @@ export interface AlertProps extends BaseProps {
   /** Optional callback function for when the alert it dismissed. */
   onClose?: () => void;
   /** Optional list of action elements. May include, at most, 2 actions, or 1 if dismissible is true. */
-  actions?: React.ReactElement[];
+  actions?: ReactElement[];
   /** Position of the dismiss and call-to-action buttons. Defaults to `false`. */
   stacked?: boolean;
   /** Sets the text for alert close button, defaults to 'Dismiss'. */
@@ -96,7 +99,7 @@ const Alert = forwardRef(({
   stacked = false,
   show = true,
   ...props
-}: AlertProps, ref: React.ForwardedRef<HTMLDivElement>) => {
+}: AlertProps, ref: ForwardedRef<HTMLDivElement>) => {
   const [isStacked, setIsStacked] = useState(stacked);
   const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
   const actionButtonSize = 'sm';
@@ -110,7 +113,7 @@ const Alert = forwardRef(({
   }, [isExtraSmall, stacked]);
 
   const cloneActionElement = useCallback(
-    (Action: React.ReactElement) => {
+    (Action: ReactElement) => {
       const addtlActionProps = { size: actionButtonSize, key: Action.props.children };
       return cloneElement(Action, addtlActionProps);
     },

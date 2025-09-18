@@ -1,4 +1,3 @@
-import React from 'react';
 import { IntlProvider } from 'react-intl';
 import PropTypes from 'prop-types';
 import { render, screen } from '@testing-library/react';

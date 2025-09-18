@@ -1,8 +1,8 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import BaseBadge from 'react-bootstrap/Badge';
 
-const Badge = React.forwardRef((props, ref) => <BaseBadge {...props} ref={ref} />);
+const Badge = forwardRef((props, ref) => <BaseBadge {...props} ref={ref} />);
 
 const STYLE_VARIANTS = [
   'primary',

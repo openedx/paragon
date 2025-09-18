@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef, createElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { getInputType } from './utils';
@@ -11,7 +11,7 @@ const INPUT_TYPES = [
 
 const DEFAULT_COLUMNS_NUMBER = 2;
 
-const SelectableBoxSet = React.forwardRef(({
+const SelectableBoxSet = forwardRef(({
   children,
   name,
   value,
@@ -26,7 +26,7 @@ const SelectableBoxSet = React.forwardRef(({
 }, ref) => {
   const inputType = getInputType('SelectableBoxSet', type);
 
-  return React.createElement(
+  return createElement(
     inputType,
     {
       name,

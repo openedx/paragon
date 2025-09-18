@@ -1,4 +1,4 @@
-import React from 'react';
+import { createRef } from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
@@ -69,7 +69,7 @@ describe('<Collapsible />', () => {
   });
 
   describe('Imperative Methods', () => {
-    const ref = React.createRef();
+    const ref = createRef();
     beforeEach(() => {
       render(
         <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
@@ -117,7 +117,7 @@ describe('<Collapsible />', () => {
 
   describe('Mouse Interactions', () => {
     let collapsible;
-    const ref = React.createRef();
+    const ref = createRef();
     beforeEach(() => {
       render(
         <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
@@ -167,7 +167,7 @@ describe('<Collapsible />', () => {
 
   describe('Keyboard Interactions', () => {
     let collapsible;
-    const ref = React.createRef();
+    const ref = createRef();
     beforeEach(() => {
       render(
         <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,

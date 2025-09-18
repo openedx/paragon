@@ -1,8 +1,3 @@
-import React from 'react';
-
-/**
- * Convert hex value to [r, g, b] array, hex value must be a string of 6 characters without leading #.
- */
 function convertHexToRgb(hexColor: string) {
   if (hexColor.length !== 6) {
     throw new Error('Invalid HEX color, it must contain only 6 digits and be without starting #.');

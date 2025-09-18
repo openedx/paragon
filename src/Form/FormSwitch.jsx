@@ -1,12 +1,12 @@
-import React from 'react';
+import { forwardRef, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import FormCheckbox from './FormCheckbox';
 import { useFormGroupContext } from './FormGroupContext';
 
-const SwitchControl = React.forwardRef(
+const SwitchControl = forwardRef(
   ({ isIndeterminate, ...props }, ref) => {
-    const defaultRef = React.useRef();
+    const defaultRef = useRef();
     const resolvedRef = ref || defaultRef;
     const { getControlProps } = useFormGroupContext();
     const checkboxProps = getControlProps({
@@ -17,7 +17,7 @@ const SwitchControl = React.forwardRef(
       ),
     });
 
-    React.useEffect(() => {
+    useEffect(() => {
       // this if(resolvedRef.current) prevents console errors in testing
       if (resolvedRef.current) {
         resolvedRef.current.indeterminate = isIndeterminate;
@@ -46,7 +46,7 @@ SwitchControl.defaultProps = {
   className: undefined,
 };
 
-const FormSwitch = React.forwardRef(({
+const FormSwitch = forwardRef(({
   children,
   className,
   helperText,

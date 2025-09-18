@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import type { FC } from 'react';
+import { useRef, useEffect } from 'react';
 import {
   Button,
   ActionRow,
@@ -12,7 +13,7 @@ interface RemoveThemeModalProps {
   themeName: string;
 }
 
-const RemoveThemeModal: React.FC<RemoveThemeModalProps> = ({
+const RemoveThemeModal: FC<RemoveThemeModalProps> = ({
   isOpen,
   onClose,
   onConfirm,

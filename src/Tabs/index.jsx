@@ -1,4 +1,7 @@
-import React, {
+import {
+  Children,
+  isValidElement,
+  cloneElement,
   useEffect,
   useMemo,
   useRef,
@@ -81,14 +84,14 @@ function Tabs({
         handleDropdownTabClick(eventKey);
       }
     };
-    const childrenList = React.Children.map(children, (child, index) => {
+    const childrenList = Children.map(children, (child, index) => {
       if (child?.type?.name !== 'Tab' && process.env.NODE_ENV === 'development') {
         // eslint-disable-next-line no-console
         console.error(
           `Tabs children can only be of type Tab. ${children[index]} was passed instead.`,
         );
       }
-      if (!React.isValidElement(child)) {
+      if (!isValidElement(child)) {
         return child;
       }
       const {
@@ -114,7 +117,7 @@ function Tabs({
         newTitle = title;
       }
       const tabClass = index > indexOfLastVisibleChild ? 'pgn__tab_invisible' : '';
-      const modifiedTab = React.cloneElement(child, {
+      const modifiedTab = cloneElement(child, {
         ...rest,
         title: newTitle,
         tabClassName: classNames(tabClass, tabClassName),

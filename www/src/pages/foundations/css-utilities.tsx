@@ -1,4 +1,3 @@
-import React from 'react';
 import { graphql, type PageProps } from 'gatsby';
 import PageTemplate, { type StandardContext } from '../../templates/default-mdx-page-template';
 

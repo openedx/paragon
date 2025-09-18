@@ -1,5 +1,4 @@
 /* eslint-disable no-plusplus, react/prop-types */
-import React from 'react';
 import { render } from '@testing-library/react';
 
 import TransitionReplace from '.';

@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import emailPropType from 'email-prop-type';
 import isRequiredIf from 'react-proptype-conditional-require';
@@ -11,7 +11,7 @@ import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 export const MAIL_TO_LINK_EXTERNAL_LINK_ALTERNATIVE_TEXT = 'Dismiss';
 export const MAIL_TO_LINK_EXTERNAL_LINK_TITLE = 'Opens in a new tab';
 
-const MailtoLink = React.forwardRef((props, ref) => {
+const MailtoLink = forwardRef((props, ref) => {
   const {
     to,
     cc,

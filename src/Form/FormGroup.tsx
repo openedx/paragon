@@ -1,12 +1,13 @@
-import React from 'react';
+import type { ElementType, ReactNode, ComponentPropsWithoutRef } from 'react';
+import { createElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormGroupContextProvider } from './FormGroupContext';
 import { FORM_CONTROL_SIZES } from './constants';
 
-interface Props<As extends React.ElementType> {
+interface Props<As extends ElementType> {
   /** Specifies contents of the component. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Specifies class name to append to the base element. */
   className?: string;
   /** Specifies base element for the component. */
@@ -22,7 +23,7 @@ interface Props<As extends React.ElementType> {
   size?: typeof FORM_CONTROL_SIZES.SMALL | typeof FORM_CONTROL_SIZES.LARGE;
 }
 
-function FormGroup<As extends React.ElementType = 'div'>({
+function FormGroup<As extends ElementType = 'div'>({
   children,
   controlId,
   isInvalid = false,
@@ -30,8 +31,8 @@ function FormGroup<As extends React.ElementType = 'div'>({
   size,
   as,
   ...props
-}: Props<As> & React.ComponentPropsWithoutRef<As>) {
-  return React.createElement(
+}: Props<As> & ComponentPropsWithoutRef<As>) {
+  return createElement(
     as ?? 'div',
     {
       ...props,

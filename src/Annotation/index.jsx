@@ -1,8 +1,8 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Annotation = React.forwardRef(({
+const Annotation = forwardRef(({
   className,
   variant,
   children,

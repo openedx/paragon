@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes } from 'react';
 import { useLocation } from '@gatsbyjs/reach-router';
 import { Nav, Button, Hyperlink } from '~paragon-react';
 import { LEAVE_FEEDBACK_CLICKED_EVENT, sendUserAnalyticsEvent } from '../../segment-events';

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   useToggle,

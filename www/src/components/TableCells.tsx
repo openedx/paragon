@@ -1,4 +1,3 @@
-import React from 'react';
 import MeasuredItem from './MeasuredItem';
 import measuredTypeProps from './typography-page/measuredTypeProps';
 

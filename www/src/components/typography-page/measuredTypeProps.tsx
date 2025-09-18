@@ -1,5 +1,3 @@
-import React from 'react';
-
 const weightLabels: Record<string, string> = {
   200: 'Light',
   300: 'Light',
