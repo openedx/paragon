@@ -1,6 +1,7 @@
 import React, { ForwardedRef, KeyboardEventHandler, MouseEventHandler } from 'react';
 import classNames from 'classnames';
 import ChipIcon from './ChipIcon';
+import { STYLE_VARIANTS } from './constants';
 
 export const CHIP_PGN_CLASS = 'pgn__chip';
 
@@ -11,8 +12,8 @@ export interface IChip {
   onClick?: KeyboardEventHandler & MouseEventHandler,
   /** Specifies an additional `className` to add to the base element. */
   className?: string,
-  /** The `Chip` style variant to use. */
-  variant?: 'dark' | 'light',
+  /** The `Chip` style variant to use. Can be `dark` | `light` */
+  variant?: typeof STYLE_VARIANTS[keyof typeof STYLE_VARIANTS],
   /**
    * An icon component to render before the content.
    * Example import of a Paragon icon component:
