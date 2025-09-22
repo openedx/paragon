@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Button from '../Button';
@@ -10,7 +10,7 @@ const buttonSizesToAvatarSize = {
   lg: 'md',
 };
 
-const AvatarButton = React.forwardRef(({
+const AvatarButton = forwardRef(({
   children,
   className,
   showLabel,

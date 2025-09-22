@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -24,7 +24,7 @@ export default function BreadcrumbLink({ as, clickHandler, linkProps }) {
     addtlProps.onClick = clickHandler;
   }
 
-  return React.createElement(
+  return createElement(
     as,
     {
       ...props,
