@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { forwardRef, useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
@@ -6,7 +6,7 @@ import CardContext from './CardContext';
 
 const IS_LOADING_HEIGHT_VALUE = 18;
 
-const CardFooter = React.forwardRef(({
+const CardFooter = forwardRef(({
   children,
   className,
   isStacked,
