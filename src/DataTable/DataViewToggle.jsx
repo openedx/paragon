@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { GridView, ListView } from '../../icons';
 import DataTableContext from './DataTableContext';
 import Icon from '../Icon';

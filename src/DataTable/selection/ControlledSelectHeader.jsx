@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useCallback } from 'react';
+import { useContext, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import { CheckboxControl } from '../../Form';

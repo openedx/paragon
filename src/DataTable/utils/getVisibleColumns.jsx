@@ -1,4 +1,4 @@
-import React, { useMemo, useContext, useEffect } from 'react';
+import { useMemo, useContext, useEffect } from 'react';
 
 import { CheckboxControl } from '../../Form';
 import DataTableContext from '../DataTableContext';
