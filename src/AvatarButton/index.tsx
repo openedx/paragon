@@ -1,4 +1,4 @@
-import React, { ForwardedRef } from 'react';
+import { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import Avatar, { AvatarProps } from '../Avatar';
@@ -24,7 +24,7 @@ interface AvatarButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement
   variant?: string;
 }
 
-const AvatarButton = React.forwardRef(({
+const AvatarButton = forwardRef(({
   children,
   className,
   showLabel = true,

@@ -1,9 +1,9 @@
-import React from 'react';
+import { ImgHTMLAttributes } from 'react';
 import classNames from 'classnames';
 // @ts-ignore
 import defaultAvatar from './default-avatar.svg';
 
-export interface AvatarProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+export interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   /** Alt text. Usually the user's name */
   alt?: string;
   /** Size of the avatar */
