@@ -12,7 +12,7 @@ export interface IChip {
   onClick?: KeyboardEventHandler & MouseEventHandler,
   /** Specifies an additional `className` to add to the base element. */
   className?: string,
-  /** The `Chip` style variant to use. Can be `dark` | `light` */
+  /** The `Chip` style [variant](https://github.com/openedx/paragon/blob/release-23.x/src/Chip/constants.ts) to use. */
   variant?: typeof STYLE_VARIANTS[keyof typeof STYLE_VARIANTS],
   /**
    * An icon component to render before the content.

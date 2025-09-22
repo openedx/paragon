@@ -34,6 +34,7 @@ interface ToastProps {
    * `label` is a string rendered inside the button.
    * `href` is a link that will render the action button as an anchor tag.
    * `onClick` is a function that is called when the button is clicked.
+   * The full type definition can be seen [here](https://github.com/openedx/paragon/blob/release-23.x/src/Toast/index.tsx#L16)
    */
   action?: ToastAction;
   /**
