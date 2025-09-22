@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { FormGroupContextProvider } from './FormGroupContext';
+import { FORM_CONTROL_SIZES } from './constants';
 
 interface Props<As extends React.ElementType> {
   /** Specifies contents of the component. */
@@ -16,8 +17,8 @@ interface Props<As extends React.ElementType> {
   isInvalid?: boolean;
   /** Specifies whether to display components in valid state, this affects styling. */
   isValid?: boolean;
-  /** Specifies size for the component. enum from constants FORM_CONTROL_SIZES */
-  size?: 'sm' | 'lg';
+  /** Specifies size for the component. The full type definition can be seen [here](https://github.com/openedx/paragon/blob/release-23.x/src/Form/constants.ts#L1) */
+  size?: typeof FORM_CONTROL_SIZES.SMALL | typeof FORM_CONTROL_SIZES.LARGE;
 }
 
 function FormGroup<As extends React.ElementType = 'div'>({
