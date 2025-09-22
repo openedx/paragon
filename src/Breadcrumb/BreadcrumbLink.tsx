@@ -1,15 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default function BreadcrumbLink({ as, clickHandler, linkProps }) {
+interface BreadcrumbLinkProps {
+  as: React.ElementType;
+  clickHandler?: (event: React.MouseEvent, link: any) => void;
+  linkProps: {
+    label: string;
+    url?: string; // deprecated, use href instead when rendering as 'a'
+    className?: string;
+    [key: string]: any;
+  };
+}
+
+interface AdditionalProps {
+  href?: string;
+  onClick?: (event: React.MouseEvent, link: any) => void;
+}
+
+export default function BreadcrumbLink({ as, clickHandler = undefined, linkProps }: BreadcrumbLinkProps) {
   const {
     label,
     url,
     className,
     ...props
   } = linkProps;
-  const addtlProps = {};
+  const addtlProps: AdditionalProps = {};
 
   if (as === 'a' && url) {
     // eslint-disable-next-line no-console
@@ -34,17 +49,3 @@ export default function BreadcrumbLink({ as, clickHandler, linkProps }) {
     label,
   );
 }
-
-BreadcrumbLink.propTypes = {
-  as: PropTypes.elementType.isRequired,
-  clickHandler: PropTypes.func,
-  linkProps: PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    url: PropTypes.string,
-    className: PropTypes.string,
-  }).isRequired,
-};
-
-BreadcrumbLink.defaultProps = {
-  clickHandler: undefined,
-};

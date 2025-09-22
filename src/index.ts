@@ -6,6 +6,8 @@ export { default as Alert, ALERT_CLOSE_LABEL_TEXT } from './Alert';
 export { default as Annotation } from './Annotation';
 export { default as Avatar } from './Avatar';
 export { default as AvatarButton } from './AvatarButton';
+export { default as Badge } from './Badge';
+export { default as Breadcrumb } from './Breadcrumb';
 export { default as Bubble } from './Bubble';
 export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
@@ -56,10 +58,6 @@ export { default as breakpoints } from './utils/breakpoints';
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as asInput } from './asInput';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Badge } from './Badge';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Breadcrumb } from './Breadcrumb';
 
 export {
   default as Card,
