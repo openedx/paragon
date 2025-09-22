@@ -1,4 +1,6 @@
-import React, { useCallback, useEffect } from 'react';
+import {
+  forwardRef, useRef, useCallback, useEffect,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import RBFormControl from 'react-bootstrap/FormControl';
@@ -9,7 +11,7 @@ import FormControlDecoratorGroup from './FormControlDecoratorGroup';
 
 import { callAllHandlers, useHasValue } from './fieldUtils';
 
-const FormControl = React.forwardRef(({
+const FormControl = forwardRef(({
   as,
   className,
   controlClassName,
@@ -27,7 +29,7 @@ const FormControl = React.forwardRef(({
     getControlProps,
     ...formGroupContext
   } = useFormGroupContext();
-  const inputRef = React.useRef();
+  const inputRef = useRef();
   const resolvedRef = ref || inputRef;
   const size = props.size || formGroupContext.size;
 

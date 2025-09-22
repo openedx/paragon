@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useRadioSetContext } from './FormRadioSetContext';
@@ -6,7 +6,7 @@ import { FormGroupContextProvider, useFormGroupContext } from './FormGroupContex
 import FormLabel from './FormLabel';
 import FormControlFeedback from './FormControlFeedback';
 
-const RadioControl = React.forwardRef((props, ref) => {
+const RadioControl = forwardRef((props, ref) => {
   const { getControlProps } = useFormGroupContext();
   const { getRadioControlProps, hasRadioSetProvider } = useRadioSetContext();
   let radioProps = getControlProps({
@@ -31,7 +31,7 @@ RadioControl.defaultProps = {
   className: undefined,
 };
 
-const FormRadio = React.forwardRef(({
+const FormRadio = forwardRef(({
   children,
   className,
   controlClassName,
