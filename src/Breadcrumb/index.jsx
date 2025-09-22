@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -14,28 +14,30 @@ function Breadcrumb({
   const displayLinks = isMobile ? [links[linkCount - 1]] : links;
 
   return (
-    <nav
-      aria-label={ariaLabel}
-      className={classNames('pgn__breadcrumb', `pgn__breadcrumb-${variant}`)}
-      {...props}
-    >
-      <ol className={classNames('list-inline', { 'is-mobile': isMobile })}>
-        {displayLinks.map((link, i) => (
-          <React.Fragment key={link.label}>
-            <li className={classNames('list-inline-item')}>
-              <BreadcrumbLink as={linkAs} clickHandler={clickHandler} linkProps={link} />
-            </li>
-            {(activeLabel || ((i + 1) < linkCount))
+    (
+      <nav
+        aria-label={ariaLabel}
+        className={classNames('pgn__breadcrumb', `pgn__breadcrumb-${variant}`)}
+        {...props}
+      >
+        <ol className={classNames('list-inline', { 'is-mobile': isMobile })}>
+          {displayLinks.map((link, i) => (
+            <Fragment key={link.label}>
+              <li className={classNames('list-inline-item')}>
+                <BreadcrumbLink as={linkAs} clickHandler={clickHandler} linkProps={link} />
+              </li>
+              {(activeLabel || ((i + 1) < linkCount))
               && (
               <li className="list-inline-item" role="presentation">
                 {spacer || <Icon src={ChevronRight} id={`spacer-${i}`} />}
               </li>
               )}
-          </React.Fragment>
-        ))}
-        {!isMobile && activeLabel && <li className="list-inline-item active" key="active" aria-current="page">{activeLabel}</li>}
-      </ol>
-    </nav>
+            </Fragment>
+          ))}
+          {!isMobile && activeLabel && <li className="list-inline-item active" key="active" aria-current="page">{activeLabel}</li>}
+        </ol>
+      </nav>
+    )
   );
 }
 

@@ -1,4 +1,7 @@
-import React from 'react';
+import type {
+  ElementType, ComponentType, ReactNode, ForwardedRef, AriaRole,
+} from 'react';
+import { forwardRef } from 'react';
 import classNames from 'classnames';
 import BaseButton, { type ButtonProps as BaseButtonProps } from 'react-bootstrap/Button';
 import BaseButtonGroup, { type ButtonGroupProps as BaseButtonGroupProps } from 'react-bootstrap/ButtonGroup';
@@ -29,7 +32,7 @@ type OtherDeprecatedValue = string & {}; // Allow any other string value for now
 
 export interface ButtonProps extends Omit<BaseButtonProps, 'size'> {
   /** Set a custom element for this component (default: `button`, with `type="button"`). */
-  as?: React.ElementType;
+  as?: ElementType;
   size?: 'sm' | 'md' | 'lg' | 'inline';
   /**
    * An icon component to render. Example:
@@ -38,7 +41,7 @@ export interface ButtonProps extends Omit<BaseButtonProps, 'size'> {
    * <Button iconBefore={Close}>Close</Button>
    * ```
    */
-  iconBefore?: React.ComponentType;
+  iconBefore?: ComponentType;
   /**
    * An icon component to render. Example:
    * ```
@@ -46,7 +49,7 @@ export interface ButtonProps extends Omit<BaseButtonProps, 'size'> {
    * <Button iconAfter={Close}>Close</Button>
    * ```
    */
-  iconAfter?: React.ComponentType;
+  iconAfter?: ComponentType;
 
   // The following are the same as in BaseButtonProps, but we re-define them to add documentation.
   // The upstream type defintions do not have any comments/docs.
@@ -56,7 +59,7 @@ export interface ButtonProps extends Omit<BaseButtonProps, 'size'> {
   /** Optional: Specify additional class name(s) to apply to the button */
   className?: string;
   /** Specifies the text that is displayed within the button. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Specifies variant to use.
    * Can be one of the base variants: `primary`, `secondary`, `tertiary`, `brand`, `success`, `danger`, `warning`,
    * `info`, `dark`, `light`, `link`,
@@ -66,13 +69,13 @@ export interface ButtonProps extends Omit<BaseButtonProps, 'size'> {
   variant?: BaseVariant | `inverse-${BaseVariant}` | `outline-${BaseVariant}` | `inverse-outline-${BaseVariant}` | OtherDeprecatedValue;
 }
 
-const Button: ComponentWithAsProp<'button', ButtonProps> = React.forwardRef(({
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   children,
   iconAfter,
   iconBefore,
   size,
   ...props
-}: ButtonProps, ref: React.ForwardedRef<HTMLDivElement>) => (
+}, ref) => (
   <BaseButton
     size={size as 'sm' | 'lg' | undefined} // Bootstrap's <Button> types do not allow 'md' or 'inline', but we do.
     {...props}
@@ -83,7 +86,7 @@ const Button: ComponentWithAsProp<'button', ButtonProps> = React.forwardRef(({
     {children}
     {iconAfter && <Icon className="btn-icon-after" size={size} src={iconAfter} />}
   </BaseButton>
-));
+)) as ComponentWithAsProp<'button', ButtonProps>;
 
 // We could just re-export 'ButtonGroup', but we currently override it to
 // force ButtonGroup's 'size' prop to accept our custom values of 'md' and
@@ -91,9 +94,9 @@ const Button: ComponentWithAsProp<'button', ButtonProps> = React.forwardRef(({
 
 interface ButtonGroupProps extends Omit<BaseButtonGroupProps, 'size'> {
   /** Specifies element type for this component. */
-  as?: React.ElementType;
+  as?: ElementType;
   /** An ARIA role describing the button group (default: `group`). */
-  role?: React.AriaRole;
+  role?: AriaRole;
   /** Specifies the size for all Buttons in the group (default: `md`). */
   size?: 'sm' | 'md' | 'lg' | 'inline';
   /** Display as a button toggle group (default: `false`). */
@@ -104,27 +107,25 @@ interface ButtonGroupProps extends Omit<BaseButtonGroupProps, 'size'> {
   bsPrefix?: string;
 }
 
-const ButtonGroup: ComponentWithAsProp<'div', ButtonGroupProps> = (
-  React.forwardRef(({ size = 'md', ...props }: ButtonGroupProps, ref: React.ForwardedRef<HTMLDivElement>) => (
-    <BaseButtonGroup size={size as 'sm' | 'lg'} {...props} ref={ref} />
-  ))
-);
+const ButtonGroup = forwardRef(({ size = 'md', ...props }: ButtonGroupProps, ref: ForwardedRef<HTMLDivElement>) => (
+  <BaseButtonGroup size={size as 'sm' | 'lg'} {...props} ref={ref} />
+)) as ComponentWithAsProp<'div', ButtonGroupProps>;
 
 // We could just re-export 'ButtonToolbar', but we currently override it to
 // narrow the type of 'role' to valid roles and to document its properties.
 
 interface ButtonToolbarProps extends BaseButtonToolbarProps {
   /** An ARIA role describing the button group (default: `toolbar`). */
-  role?: React.AriaRole;
+  role?: AriaRole;
   /** Overrides underlying component base CSS class name (default: `btn-toolbar`) */
   bsPrefix?: string;
 }
 
-const ButtonToolbar: ComponentWithAsProp<'div', ButtonToolbarProps> = (
-  React.forwardRef((props: ButtonToolbarProps, ref: React.ForwardedRef<HTMLDivElement>) => (
+const ButtonToolbar = forwardRef<HTMLDivElement, ButtonToolbarProps>(
+  (props, ref) => (
     <BaseButtonToolbar {...props} ref={ref} />
-  ))
-);
+  ),
+) as ComponentWithAsProp<'div', ButtonToolbarProps>;
 
 export default Button;
 export { ButtonGroup, ButtonToolbar };

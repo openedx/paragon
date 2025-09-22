@@ -1,11 +1,12 @@
-import React from 'react';
+import type { ReactNode, ForwardedRef } from 'react';
+import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 export type BubbleVariant = 'primary' | 'success' | 'error' | 'warning';
 
 export interface BubbleProps {
   /** Specifies contents of the component. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** The `Bubble` style variant to use. */
   variant?: BubbleVariant;
   /** Activates disabled variant. */
@@ -16,14 +17,14 @@ export interface BubbleProps {
   expandable?: boolean;
 }
 
-const Bubble = React.forwardRef(({
+const Bubble = forwardRef(({
   variant = 'primary',
   className,
   children = null,
   disabled = false,
   expandable = false,
   ...props
-}: BubbleProps, ref: React.ForwardedRef<HTMLDivElement>) => (
+}: BubbleProps, ref: ForwardedRef<HTMLDivElement>) => (
   <div
     ref={ref}
     className={classNames(

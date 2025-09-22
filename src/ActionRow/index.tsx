@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import classNames from 'classnames';
 
 interface ActionRowProps extends React.HTMLAttributes<HTMLElement> {
@@ -18,7 +18,7 @@ function ActionRow({
   children,
   ...props
 }: ActionRowProps) {
-  return React.createElement(
+  return createElement(
     as,
     {
       ...props,
