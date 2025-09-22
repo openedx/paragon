@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { OverflowScrollContext } from '../../OverflowScroll';
 

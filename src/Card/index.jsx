@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import BaseCard from './BaseCard';
@@ -14,7 +14,7 @@ import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 export const CARD_VARIANTS = ['light', 'dark', 'muted'];
 
-const Card = React.forwardRef(({
+const Card = forwardRef(({
   orientation,
   isLoading,
   className,

@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import { forwardRef, useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import Icon from '../Icon';
 import CardContext from './CardContext';
 
-const CardStatus = React.forwardRef(({
+const CardStatus = forwardRef(({
   className,
   children,
   variant,
