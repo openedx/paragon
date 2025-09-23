@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 
@@ -8,7 +8,7 @@ import { Close } from '../../icons';
 import CheckpointTitle from './CheckpointTitle';
 import messages from './messages';
 
-const CheckpointHeader = React.forwardRef(({
+const CheckpointHeader = forwardRef(({
   dismissAltText, index, onDismiss, title, totalCheckpoints,
 }, ref) => {
   const intl = useIntl();

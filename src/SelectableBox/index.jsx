@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import {
+  forwardRef, createElement, useRef, useEffect,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import SelectableBoxSet from './SelectableBoxSet';
@@ -11,7 +13,7 @@ const INPUT_TYPES = [
   'checkbox',
 ];
 
-const SelectableBox = React.forwardRef(({
+const SelectableBox = forwardRef(({
   type,
   value,
   checked,
@@ -41,7 +43,7 @@ const SelectableBox = React.forwardRef(({
   };
 
   const inputRef = useRef(null);
-  const input = React.createElement(inputType, {
+  const input = createElement(inputType, {
     value,
     checked,
     hidden: inputHidden,

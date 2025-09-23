@@ -1,7 +1,7 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-const CheckpointBody = React.forwardRef(({ children }, ref) => {
+const CheckpointBody = forwardRef(({ children }, ref) => {
   if (!children) {
     return null;
   }

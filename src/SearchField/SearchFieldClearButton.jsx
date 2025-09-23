@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 import { SearchFieldContext } from './SearchFieldAdvanced';
 import Icon from '../Icon';
