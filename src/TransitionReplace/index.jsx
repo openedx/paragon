@@ -1,9 +1,9 @@
-import React from 'react';
+import { Children, Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import classNames from 'classnames';
 
-class TransitionReplace extends React.Component {
+class TransitionReplace extends Component {
   constructor(props) {
     super(props);
 
@@ -117,17 +117,19 @@ class TransitionReplace extends React.Component {
 
   render() {
     return (
-      <TransitionGroup
-        className={classNames(
-          'pgn-transition-replace-group',
-          'position-relative',
-          { 'overflow-hidden': this.state.height !== null },
-          this.props.className,
-        )}
-        style={{ height: this.state.height }}
-      >
-        {React.Children.map(this.props.children, this.renderChildTransition, this)}
-      </TransitionGroup>
+      (
+        <TransitionGroup
+          className={classNames(
+            'pgn-transition-replace-group',
+            'position-relative',
+            { 'overflow-hidden': this.state.height !== null },
+            this.props.className,
+          )}
+          style={{ height: this.state.height }}
+        >
+          {Children.map(this.props.children, this.renderChildTransition, this)}
+        </TransitionGroup>
+      )
     );
   }
 }
