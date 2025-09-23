@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { Fragment, useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import StepperHeaderStep from './StepperHeaderStep';
@@ -12,20 +12,22 @@ function StepListSeparator() {
 
 function StepList({ steps, activeKey }) {
   return (
-    <ul className="pgn__stepper-header-step-list">
-      {steps.map(({ label, ...stepProps }, index) => (
-        <React.Fragment key={stepProps.eventKey}>
-          {index !== 0 && <StepListSeparator />}
-          <StepperHeaderStep
-            {...stepProps}
-            index={index}
-            isActive={activeKey === stepProps.eventKey}
-          >
-            {label}
-          </StepperHeaderStep>
-        </React.Fragment>
-      ))}
-    </ul>
+    (
+      <ul className="pgn__stepper-header-step-list">
+        {steps.map(({ label, ...stepProps }, index) => (
+          <Fragment key={stepProps.eventKey}>
+            {index !== 0 && <StepListSeparator />}
+            <StepperHeaderStep
+              {...stepProps}
+              index={index}
+              isActive={activeKey === stepProps.eventKey}
+            >
+              {label}
+            </StepperHeaderStep>
+          </Fragment>
+        ))}
+      </ul>
+    )
   );
 }
 
