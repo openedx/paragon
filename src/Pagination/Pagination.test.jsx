@@ -1,4 +1,3 @@
-import React from 'react';
 import { Context as ResponsiveContext } from 'react-responsive';
 import renderer from 'react-test-renderer';
 import {

@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import BasePopover from 'react-bootstrap/Popover';
@@ -13,7 +13,7 @@ const PLACEMENT_VARIANTS = [
   'right',
 ];
 
-const Popover = React.forwardRef(({
+const Popover = forwardRef(({
   children,
   variant,
   ...props

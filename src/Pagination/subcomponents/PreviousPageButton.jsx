@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import classNames from 'classnames';
 import { PAGINATION_BUTTON_ICON_BUTTON_PREV_ALT } from '../constants';
 import Button from '../../Button';

@@ -1,4 +1,3 @@
-import React from 'react';
 import BaseOverlay, { type OverlayProps, type Placement } from 'react-bootstrap/Overlay';
 import BaseOverlayTrigger, { type OverlayTriggerProps, type OverlayTriggerType } from 'react-bootstrap/OverlayTrigger';
 import Fade from 'react-bootstrap/Fade';

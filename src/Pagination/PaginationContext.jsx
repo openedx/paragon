@@ -1,8 +1,5 @@
-import React, {
-  createContext,
-  useEffect,
-  useRef,
-  useState,
+import {
+  createContext, useEffect, useRef, useState,
 } from 'react';
 import PropTypes from 'prop-types';
 import { PAGINATION_VARIANTS } from './constants';
