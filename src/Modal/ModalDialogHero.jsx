@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ModalDialogHeroContent from './ModalDialogHeroContent';
@@ -9,7 +9,7 @@ function ModalDialogHero({
   children,
   ...props
 }) {
-  return React.createElement(
+  return createElement(
     as,
     {
       ...props,

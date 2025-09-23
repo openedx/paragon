@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { IntlProvider } from 'react-intl';
@@ -6,14 +5,14 @@ import AlertModal from '../AlertModal';
 import { Info } from '../../../icons';
 
 /* eslint-disable react/prop-types */
-jest.mock('../Portal', () => function PortalMock(props) {
+jest.mock('../Portal', () => (function PortalMock(props) {
   const { children, ...otherProps } = props;
   return (
     <paragon-portal {...otherProps}>
       {children}
     </paragon-portal>
   );
-});
+}));
 
 jest.mock('react-focus-on', () => ({
   FocusOn: (props) => {

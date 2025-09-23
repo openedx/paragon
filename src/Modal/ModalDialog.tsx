@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 import classNames from 'classnames';
 import { useMediaQuery } from 'react-responsive';
 import { useIntl } from 'react-intl';
@@ -22,7 +22,7 @@ import messages from './messages';
 
 interface Props {
   /** Specifies the content of the dialog */
-  children: React.ReactNode;
+  children: ReactNode;
   /** The aria-label of the dialog */
   title: string;
   /** A callback to close the modal dialog, e.g. when Escape is pressed */
