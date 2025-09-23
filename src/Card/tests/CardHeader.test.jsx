@@ -5,10 +5,10 @@ import CardHeader from '../CardHeader';
 import CardContext from '../CardContext';
 
 // eslint-disable-next-line react/prop-types
-function CardHeaderWrapper({ isLoading }) {
+function CardHeaderWrapper({ isLoading, size = 'md', actions = null }) {
   return (
     <CardContext.Provider value={{ isLoading }}>
-      <CardHeader />
+      <CardHeader size={size} actions={actions} />
     </CardContext.Provider>
   );
 }
@@ -46,5 +46,11 @@ describe('<CardHeader />', () => {
   it('renders with loading state', () => {
     const { container } = render(<CardHeaderWrapper isLoading />);
     expect(container.querySelector('.pgn__card-header-loader')).toBeTruthy();
+  });
+
+  it('renders with size sm and actions', () => {
+    const actions = <>Actions</>;
+    const { getByText } = render(<CardHeaderWrapper size="sm" actions={actions} />);
+    expect(getByText('Actions')).toBeInTheDocument();
   });
 });
