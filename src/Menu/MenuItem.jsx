@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from '../Icon';
@@ -13,7 +13,7 @@ function MenuItem({
 }) {
   const className = classNames(props.className, 'pgn__menu-item');
 
-  return React.createElement(
+  return createElement(
     as,
     {
       ...props,

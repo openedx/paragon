@@ -1,4 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import {
+  useRef,
+  useMemo,
+  createRef,
+  Children,
+  cloneElement,
+  useState,
+  useEffect,
+  useCallback,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { ExpandMore } from '../../icons';
@@ -21,9 +30,9 @@ function SelectMenu({
   const [triggerTarget, setTriggerTarget] = useState(null);
   // this ref is used to focus the menu open button after any menu option is clicked.
   // triggerTarget.current.focus() inside the onCLick() function didn't guarantee element focus.
-  const focusMenuRef = React.useRef(false);
-  const itemsCollection = React.useMemo(
-    () => Array.from({ length: children.length }).map(() => React.createRef()),
+  const focusMenuRef = useRef(false);
+  const itemsCollection = useMemo(
+    () => Array.from({ length: children.length }).map(() => createRef()),
     [children.length],
   );
 
@@ -39,7 +48,7 @@ function SelectMenu({
   const [selected, setSelected] = useState(defaultIndex());
   const [isOpen, open, close] = useToggle(false);
 
-  const createMenuItems = () => React.Children.map(children, (child, index) => {
+  const createMenuItems = () => Children.map(children, (child, index) => {
     const newProps = {
       onClick(e) {
         if (child.props.onClick) {
@@ -55,10 +64,10 @@ function SelectMenu({
     if (selected === index) {
       newProps['aria-current'] = 'page';
     }
-    return React.cloneElement(child, newProps);
+    return cloneElement(child, newProps);
   });
 
-  const prevOpenRef = React.useRef();
+  const prevOpenRef = useRef();
 
   useEffect(() => {
     if (isOpen && selected) {

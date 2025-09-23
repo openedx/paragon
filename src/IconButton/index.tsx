@@ -1,4 +1,7 @@
-import React from 'react';
+import type {
+  HTMLAttributes, ComponentType, MouseEventHandler, ReactNode,
+} from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { type Placement } from 'react-bootstrap/Overlay';
@@ -6,8 +9,8 @@ import { OverlayTrigger } from '../Overlay';
 import Tooltip from '../Tooltip';
 import Icon from '../Icon';
 
-interface Props extends React.HTMLAttributes<HTMLButtonElement> {
-  iconAs?: React.ComponentType<any>,
+interface Props extends HTMLAttributes<HTMLButtonElement> {
+  iconAs?: ComponentType<any>,
   /** Additional CSS class[es] to apply to this button */
   className?: string;
   /** Alt text for your icon. For best practice, avoid using alt text to describe
@@ -21,11 +24,11 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
    * */
   // Note: React.ComponentType is what we want here. React.ElementType would allow some element type strings like "div",
   // but we only want to allow components like 'Add' (a specific icon component function/class)
-  src?: React.ComponentType;
+  src?: ComponentType;
   /** Extra class names that will be added to the icon */
   iconClassNames?: string;
   /** Click handler for the button */
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   /** whether to show the `IconButton` in an active state, whose styling is distinct from default state */
   isActive?: boolean;
   /** @deprecated Using FontAwesome icons is deprecated. Instead, pass iconAs={Icon} src={...} */
@@ -38,7 +41,7 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   children?: never;
 }
 
-const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
+const IconButton = forwardRef<HTMLButtonElement, Props>(({
   className,
   alt,
   invertColors,
@@ -139,7 +142,7 @@ interface PropsWithTooltip extends Props {
   /** choose from https://popper.js.org/docs/v2/constructors/#options */
   tooltipPlacement: Placement,
   /** any content to pass to tooltip content area */
-  tooltipContent: React.ReactNode,
+  tooltipContent: ReactNode,
 }
 
 /**

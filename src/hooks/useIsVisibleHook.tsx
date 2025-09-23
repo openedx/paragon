@@ -1,8 +1,9 @@
-import React, { useRef, useState, useEffect } from 'react';
+import type { MutableRefObject } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 const useIsVisible = (defaultIsVisible = true): [
   isVisible: boolean,
-  sentinelRef: React.MutableRefObject<HTMLElement | null>,
+  sentinelRef: MutableRefObject<HTMLElement | null>,
 ] => {
   const sentinelRef = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(defaultIsVisible);
