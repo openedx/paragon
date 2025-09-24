@@ -15,7 +15,7 @@ const STYLE_VARIANTS = [
 interface BadgeProps extends React.HTMLAttributes<HTMLElement> {
   /** Specifies element type for this component */
   as?: React.ElementType;
-  /** Visual style of the badge */
+  /** Visual style of the badge. The full type definition can be seen [here](https://github.com/openedx/paragon/blob/release-23.x/src/Badge/index.tsx) */
   variant?: typeof STYLE_VARIANTS[number];
   /** Add the `pill` modifier to make badges more rounded with some additional horizontal padding */
   pill?: boolean;
