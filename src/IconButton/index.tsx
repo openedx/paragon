@@ -28,7 +28,7 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   /** Whether to show the `IconButton` in an active state, whose styling is distinct from default state */
   isActive?: boolean;
-  /** Accepts a [Paragon icon](https://paragon-openedx.netlify.app/foundations/icons) */
+  /** @deprecated Using FontAwesome icons is deprecated. Instead, pass iconAs={Icon} src={...} */
   icon?: { prefix?: string; iconName?: string, icon?: any[] },
   /** Type of button (uses Bootstrap options). */
   variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'light' | 'dark' | 'black' | 'brand';
