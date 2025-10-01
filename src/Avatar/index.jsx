@@ -1,23 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// @ts-ignore
 import defaultAvatar from './default-avatar.svg';
 
-export interface AvatarProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  /** Alt text. Usually the user's name */
-  alt?: string;
-  /** Size of the avatar */
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'huge';
-  /** Image src of the avatar image */
-  src?: string;
-}
-
 function Avatar({
-  alt = '',
-  size = 'md',
+  alt,
+  size,
   src,
   ...attrs
-}: AvatarProps) {
+}) {
   return (
     <img
       {...attrs}
@@ -31,5 +22,20 @@ function Avatar({
     />
   );
 }
+
+Avatar.propTypes = {
+  /** Alt text. Usually the user's name */
+  alt: PropTypes.string,
+  /** Size of the avatar */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'huge']),
+  /** Image src of the avatar image */
+  src: PropTypes.string,
+};
+
+Avatar.defaultProps = {
+  alt: '',
+  size: 'md',
+  src: undefined,
+};
 
 export default Avatar;
