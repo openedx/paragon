@@ -10,6 +10,7 @@ import Tooltip from '../Tooltip';
 import Icon from '../Icon';
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
+  /** Component that renders the icon, currently defaults to `Icon` */
   iconAs?: ComponentType<any>,
   /** Additional CSS class[es] to apply to this button */
   className?: string;
@@ -29,33 +30,33 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
   iconClassNames?: string;
   /** Click handler for the button */
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  /** whether to show the `IconButton` in an active state, whose styling is distinct from default state */
+  /** Whether to show the `IconButton` in an active state, whose styling is distinct from default state */
   isActive?: boolean;
   /** @deprecated Using FontAwesome icons is deprecated. Instead, pass iconAs={Icon} src={...} */
   icon?: { prefix?: string; iconName?: string, icon?: any[] },
-  /** Type of button (uses Bootstrap options) */
+  /** Type of button (uses Bootstrap options). */
   variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'light' | 'dark' | 'black' | 'brand';
-  /** size of button to render */
+  /** Size of button to render */
   size?: 'sm' | 'md' | 'inline';
-  /** no children */
+  /** No children */
   children?: never;
 }
 
 const IconButton = forwardRef<HTMLButtonElement, Props>(({
   className,
   alt,
-  invertColors,
+  invertColors = false,
   icon,
   src,
   iconClassNames,
-  onClick,
-  size,
-  variant,
-  iconAs,
-  isActive,
+  onClick = () => {},
+  size = 'md',
+  variant = 'primary',
+  iconAs = Icon,
+  isActive = false,
   children, // unused, just here because we don't want it to be part of 'attrs'
   ...attrs
-}, ref) => {
+} : Props, ref: React.ForwardedRef<HTMLButtonElement>) => {
   const invert = invertColors ? 'inverse-' : '';
   const activeStyle = isActive ? `${variant}-` : '';
   const IconComponent = iconAs;
@@ -90,54 +91,6 @@ const IconButton = forwardRef<HTMLButtonElement, Props>(({
   );
 });
 
-IconButton.defaultProps = {
-  iconAs: Icon,
-  src: undefined,
-  icon: undefined,
-  iconClassNames: undefined,
-  className: undefined,
-  invertColors: false,
-  variant: 'primary',
-  size: 'md',
-  onClick: () => {},
-  isActive: false,
-  children: undefined,
-};
-
-IconButton.propTypes = {
-  /** A custom class name. */
-  className: PropTypes.string,
-  /** Component that renders the icon, currently defaults to `Icon` */
-  iconAs: PropTypes.elementType as any,
-  /** An icon component to render. Example import of a Paragon icon component:
-   * `import { Check } from '@openedx/paragon/icons';`
-   * */
-  src: PropTypes.elementType as any,
-  /** Alt text for your icon. For best practice, avoid using alt text to describe
-   * the image in the `IconButton`. Instead, we recommend describing the function
-   * of the button. */
-  alt: PropTypes.string.isRequired,
-  /** Changes icon styles for dark background */
-  invertColors: PropTypes.bool,
-  /** Accepts a [Paragon icon](https://paragon-openedx.netlify.app/foundations/icons) */
-  icon: PropTypes.shape({
-    prefix: PropTypes.string,
-    iconName: PropTypes.string,
-    // eslint-disable-next-line react/forbid-prop-types
-    icon: PropTypes.array,
-  }) as any,
-  /** Extra class names that will be added to the icon */
-  iconClassNames: PropTypes.string,
-  /** Click handler for the button */
-  onClick: PropTypes.func,
-  /** Type of button (uses Bootstrap options) */
-  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black', 'brand']),
-  /** size of button to render */
-  size: PropTypes.oneOf(['sm', 'md', 'inline']),
-  /** whether to show the `IconButton` in an active state, whose styling is distinct from default state */
-  isActive: PropTypes.bool,
-};
-
 interface PropsWithTooltip extends Props {
   /** choose from https://popper.js.org/docs/v2/constructors/#options */
   tooltipPlacement: Placement,
@@ -149,7 +102,7 @@ interface PropsWithTooltip extends Props {
  * An icon button wrapped in overlaytrigger to display a tooltip.
  */
 function IconButtonWithTooltip({
-  tooltipPlacement, tooltipContent, ...props
+  tooltipPlacement = 'top', tooltipContent, ...props
 }: PropsWithTooltip) {
   const invert = props.invertColors ? 'inverse-' : '';
   return (
@@ -168,22 +121,6 @@ function IconButtonWithTooltip({
     </OverlayTrigger>
   );
 }
-
-IconButtonWithTooltip.defaultProps = {
-  ...IconButton.defaultProps,
-  tooltipPlacement: 'top',
-};
-
-IconButtonWithTooltip.propTypes = {
-  /** tooltip placement can be top, left, right etc, per https://popper.js.org/docs/v2/constructors/#options  */
-  tooltipPlacement: PropTypes.string,
-  /** any valid JSX or text to be rendered as tooltip contents */
-  tooltipContent: PropTypes.node.isRequired,
-  /** Type of button (uses Bootstrap options) */
-  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'light', 'dark', 'black', 'brand']),
-  /** Changes icon styles for dark background */
-  invertColors: PropTypes.bool,
-};
 
 (IconButton as any).IconButtonWithTooltip = IconButtonWithTooltip;
 
