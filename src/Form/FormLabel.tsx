@@ -10,6 +10,8 @@ interface Props {
   children: ReactNode;
   /** Specifies whether the component should be displayed with inline styling. */
   isInline?: boolean;
+  /** Specifies an additional `className` to add to the base element. */
+  className?: string;
 }
 
 function FormLabel({ children, isInline = false, ...props }: Props & ComponentPropsWithoutRef<'label'>) {
@@ -27,14 +29,5 @@ function FormLabel({ children, isInline = false, ...props }: Props & ComponentPr
   const componentType = isControlGroup ? 'p' : 'label';
   return createElement(componentType, labelProps, children);
 }
-
-FormLabel.propTypes = {
-  /** Specifies class name to append to the base element. */
-  className: PropTypes.string,
-  /** Specifies contents of the component. */
-  children: PropTypes.node.isRequired,
-  /** Specifies whether the component should be displayed with inline styling. */
-  isInline: PropTypes.bool,
-};
 
 export default FormLabel;
