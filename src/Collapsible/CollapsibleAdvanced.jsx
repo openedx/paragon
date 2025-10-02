@@ -1,10 +1,11 @@
-import React from 'react';
+// React import needed to support JSX outside functions, if removed build-docs will fail
+import React, { createContext, Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const CollapsibleContext = React.createContext();
+export const CollapsibleContext = createContext();
 
-class CollapsibleAdvanced extends React.Component {
+class CollapsibleAdvanced extends Component {
   static getDerivedStateFromProps(props) {
     if (props.open !== undefined) {
       return {

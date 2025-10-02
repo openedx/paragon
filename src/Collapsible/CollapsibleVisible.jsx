@@ -1,3 +1,4 @@
+// React import needed to support JSX outside functions, if removed build-docs will fail
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 

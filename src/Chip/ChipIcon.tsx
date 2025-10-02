@@ -1,4 +1,5 @@
-import React, { KeyboardEventHandler, MouseEventHandler } from 'react';
+import type { ComponentType } from 'react';
+import { KeyboardEventHandler, MouseEventHandler } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import IconButton from '../IconButton';
@@ -6,7 +7,7 @@ import { STYLE_VARIANTS } from './constants';
 
 export type ChipIconProps = {
   className: string,
-  src: React.ComponentType,
+  src: ComponentType,
   variant: typeof STYLE_VARIANTS[keyof typeof STYLE_VARIANTS],
   disabled?: boolean,
 } & (
