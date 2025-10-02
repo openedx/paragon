@@ -1,4 +1,4 @@
-import React, { forwardRef, ForwardedRef } from 'react';
+import { forwardRef, ButtonHTMLAttributes, ForwardedRef } from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import Avatar, { AvatarProps } from '../Avatar';
@@ -9,7 +9,7 @@ const buttonSizesToAvatarSize = {
   lg: 'md',
 };
 
-interface AvatarButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface AvatarButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   /** The button text */
   children?: string;
   /** A class name to append to the button */
