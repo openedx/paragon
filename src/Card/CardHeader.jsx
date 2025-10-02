@@ -1,4 +1,5 @@
-import {
+// React import needed to support JSX outside functions, if removed build-docs fails
+import React, {
   forwardRef, isValidElement, cloneElement, useCallback, useContext,
 } from 'react';
 import PropTypes from 'prop-types';

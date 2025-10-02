@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { forwardRef } from 'react';
+// React import needed to support JSX outside functions, if removed build-docs fails
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
