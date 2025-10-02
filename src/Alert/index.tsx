@@ -1,6 +1,7 @@
 /* eslint-disable react/require-default-props */
 import type { ComponentType, ReactElement, ForwardedRef } from 'react';
 
+// react import needed to support JSX outside functions
 import {
   useCallback,
   useEffect,
