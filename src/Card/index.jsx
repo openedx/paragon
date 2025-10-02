@@ -1,4 +1,5 @@
-import React from 'react';
+// React import needed to support JSX outside functions
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import BaseCard from './BaseCard';
@@ -14,7 +15,7 @@ import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 export const CARD_VARIANTS = ['light', 'dark', 'muted'];
 
-const Card = React.forwardRef(({
+const Card = forwardRef(({
   orientation,
   isLoading,
   className,

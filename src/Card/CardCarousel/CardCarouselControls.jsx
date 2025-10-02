@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { useIntl } from 'react-intl';
 import Stack from '../../Stack';
 import IconButton from '../../IconButton';

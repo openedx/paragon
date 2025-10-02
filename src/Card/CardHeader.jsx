@@ -1,4 +1,7 @@
-import React, { useCallback, useContext } from 'react';
+// React import needed to support JSX outside functions
+import React, {
+  forwardRef, isValidElement, cloneElement, useCallback, useContext,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
@@ -6,7 +9,7 @@ import CardContext from './CardContext';
 
 const SKELETON_HEIGHT_VALUE = 20;
 
-const CardHeader = React.forwardRef(({
+const CardHeader = forwardRef(({
   actions,
   className,
   size,
@@ -18,13 +21,13 @@ const CardHeader = React.forwardRef(({
   const { isLoading } = useContext(CardContext);
   const cloneActions = useCallback(
     (Action) => {
-      if (React.isValidElement(Action)) {
+      if (isValidElement(Action)) {
         const { children } = Action.props;
         const addtlActionProps = {
           size,
           children: Array.isArray(children) ? children.map(cloneActions) : cloneActions(children),
         };
-        return React.cloneElement(Action, addtlActionProps);
+        return cloneElement(Action, addtlActionProps);
       }
 
       return Action;
