@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react/no-unused-prop-types */
+import { cloneElement, Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -62,7 +63,7 @@ export const defaultProps = {
 };
 
 const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => {
-  class NewComponent extends React.Component {
+  class NewComponent extends Component {
     constructor(props) {
       super(props);
       this.handleChange = this.handleChange.bind(this);
@@ -133,15 +134,18 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
     getLabel() {
       return (
-        <label
-          id={`label-${this.state.id}`}
-          htmlFor={this.state.id}
-          className={classNames({
-            'form-check-label': this.isGroupedInput(),
-          })}
-        >
-          {this.props.label}
-        </label>
+        // eslint-disable-next-line jsx-a11y/label-has-for
+        (
+          <label
+            id={`label-${this.state.id}`}
+            htmlFor={this.state.id}
+            className={classNames({
+              'form-check-label': this.isGroupedInput(),
+            })}
+          >
+            {this.props.label}
+          </label>
+        )
       );
     }
 
@@ -179,7 +183,7 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
     getAddons({ addonElements, type }) {
       if (Array.isArray(addonElements)) {
-        return addonElements.map((addon, index) => React.cloneElement(
+        return addonElements.map((addon, index) => cloneElement(
           addon,
           { key: this.generateInputGroupAddonKey({ prefix: type, index }) },
         ));

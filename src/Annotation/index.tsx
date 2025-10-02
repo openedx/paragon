@@ -1,9 +1,10 @@
-import React, { ForwardedRef } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
+import { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
 
-interface AnnotationProps extends React.HTMLAttributes<HTMLSpanElement> {
+interface AnnotationProps extends HTMLAttributes<HTMLSpanElement> {
   /** Specifies contents of the component. */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Specifies class name to append to the base element. */
   className?: string;
   /** Specifies variant to use. */
@@ -12,7 +13,7 @@ interface AnnotationProps extends React.HTMLAttributes<HTMLSpanElement> {
   arrowPlacement?: 'top' | 'right' | 'bottom' | 'left';
 }
 
-const Annotation = React.forwardRef(({
+const Annotation = forwardRef(({
   className,
   variant = 'success',
   children,
