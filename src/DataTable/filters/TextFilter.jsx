@@ -1,4 +1,5 @@
-import { isValidElement, useRef } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { isValidElement, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Form from '../../Form';
 import { newId } from '../../utils';

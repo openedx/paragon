@@ -1,4 +1,5 @@
-import { useContext, useMemo } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { useContext, useMemo } from 'react';
 import { useIntl } from 'react-intl';
 import DataTableContext from './DataTableContext';
 import { DropdownButton } from '../Dropdown';
