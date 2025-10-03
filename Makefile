@@ -32,6 +32,26 @@ test.npm.%: validate-no-uncommitted-package-lock-changes
 requirements:  ## install ci requirements
 	npm ci
 
+# npm swallows errors
+# see https://github.com/openedx/paragon/issues/3329
+# 
+# Instead of having this directly in the build-docs script
+# in the top-level package.json, put it here so we can have
+# a single source of truth and get proper error codes in CI
+.PHONY: build-docs
+build-docs:
+	npm run build --workspace=www
+
+# npm swallows errors
+# see https://github.com/openedx/paragon/issues/3329
+# 
+# Instead of having this directly in the lint script
+# in the top-level package.json, put it here so we can have
+# a single source of truth and get proper error codes in CI
+.PHONY: lint
+lint:
+	npm run stylelint && npm run eslint && npm run lint --workspaces --if-present
+
 i18n.extract:
 	# Pulling display strings from .jsx files into .json files...
 	npm run-script i18n_extract

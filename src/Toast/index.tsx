@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import BaseToast from 'react-bootstrap/Toast';
 import { useIntl } from 'react-intl';
 
@@ -20,12 +19,31 @@ interface ToastAction {
 }
 
 interface ToastProps {
+  /** A string or an element that is rendered inside the main body of the `Toast`. */
   children: string;
+  /**
+   * A function that is called on close. It can be used to perform
+   * actions upon closing of the `Toast`, such as setting the "show"
+   * element to false.
+   * */
   onClose: () => void;
+  /** Boolean used to control whether the `Toast` shows. */
   show: boolean;
+  /**
+   * Fields used to build optional action button.
+   * `label` is a string rendered inside the button.
+   * `href` is a link that will render the action button as an anchor tag.
+   * `onClick` is a function that is called when the button is clicked.
+   * The full type definition can be seen [here](https://github.com/openedx/paragon/blob/release-23.x/src/Toast/index.tsx#L16)
+   */
   action?: ToastAction;
+  /**
+   * Alt text for the `Toast`'s dismiss button. Defaults to 'Close'.
+   */
   closeLabel?: string;
+  /** Time in milliseconds for which the `Toast` will display. */
   delay?: number;
+  /** Class names for the `BaseToast` component. */
   className?: string;
 }
 
@@ -36,6 +54,7 @@ function Toast({
   closeLabel,
   onClose,
   show,
+  delay = TOAST_DELAY,
   ...rest
 }: ToastProps) {
   const intl = useIntl();
@@ -58,6 +77,7 @@ function Toast({
         onMouseOut={() => setAutoHide(true)}
         onMouseOver={() => setAutoHide(false)}
         show={show}
+        delay={delay}
         {...rest}
       >
         <div className="toast-header">
@@ -89,44 +109,5 @@ function Toast({
     </ToastContainer>
   );
 }
-
-Toast.defaultProps = {
-  action: null,
-  closeLabel: undefined,
-  delay: TOAST_DELAY,
-  className: undefined,
-};
-
-Toast.propTypes = {
-  /** A string or an element that is rendered inside the main body of the `Toast`. */
-  children: PropTypes.string.isRequired,
-  /**
-   * A function that is called on close. It can be used to perform
-   * actions upon closing of the `Toast`, such as setting the "show"
-   * element to false.
-   * */
-  onClose: PropTypes.func.isRequired,
-  /** Boolean used to control whether the `Toast` shows */
-  show: PropTypes.bool.isRequired,
-  /**
-   * Fields used to build optional action button.
-   * `label` is a string rendered inside the button.
-   * `href` is a link that will render the action button as an anchor tag.
-   * `onClick` is a function that is called when the button is clicked.
-   */
-  action: PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    href: PropTypes.string,
-    onClick: PropTypes.func,
-  }),
-  /**
-   * Alt text for the `Toast`'s dismiss button. Defaults to 'Close'.
-   */
-  closeLabel: PropTypes.string,
-  /** Time in milliseconds for which the `Toast` will display. */
-  delay: PropTypes.number,
-  /** Class names for the `BaseToast` component */
-  className: PropTypes.string,
-};
 
 export default Toast;
