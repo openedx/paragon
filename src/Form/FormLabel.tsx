@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useFormGroupContext } from './FormGroupContext';
 import { FORM_CONTROL_SIZES } from './constants';
@@ -9,6 +8,8 @@ interface Props {
   children: React.ReactNode;
   /** Specifies whether the component should be displayed with inline styling. */
   isInline?: boolean;
+  /** Specifies an additional `className` to add to the base element. */
+  className?: string;
 }
 
 function FormLabel({ children, isInline = false, ...props }: Props & React.ComponentPropsWithoutRef<'label'>) {
@@ -26,14 +27,5 @@ function FormLabel({ children, isInline = false, ...props }: Props & React.Compo
   const componentType = isControlGroup ? 'p' : 'label';
   return React.createElement(componentType, labelProps, children);
 }
-
-FormLabel.propTypes = {
-  /** Specifies class name to append to the base element. */
-  className: PropTypes.string,
-  /** Specifies contents of the component. */
-  children: PropTypes.node.isRequired,
-  /** Specifies whether the component should be displayed with inline styling. */
-  isInline: PropTypes.bool,
-};
 
 export default FormLabel;
