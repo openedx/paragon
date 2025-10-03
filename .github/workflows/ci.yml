@@ -8,6 +8,10 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 24]
+    continue-on-error: ${{ matrix.node == 24 }}
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -16,13 +20,13 @@ jobs:
     - name: Setup Nodejs
       uses: actions/setup-node@v4
       with:
-        node-version-file: '.nvmrc'
+        node-version: ${{ matrix.node }}
     - name: Install dependencies
       run: npm ci
     - name: Check Types
       run: npm run type-check
     - name: Lint
-      run: npm run lint
+      run: make lint
     - name: Test
       run: npm run test
     - name: Verify icon changes
@@ -38,7 +42,7 @@ jobs:
     - name: Build
       run: npm run build
     - name: Build Docs
-      run: npm run build-docs
+      run: make build-docs
     - name: Coverage
       uses: codecov/codecov-action@v4
       with:
