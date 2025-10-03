@@ -1,4 +1,5 @@
-import { forwardRef, useState } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { forwardRef, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import BaseDropdown from 'react-bootstrap/Dropdown';

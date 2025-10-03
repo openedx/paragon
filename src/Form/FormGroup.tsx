@@ -1,5 +1,6 @@
 import type { ElementType, ReactNode, ComponentPropsWithoutRef } from 'react';
-import { createElement } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormGroupContextProvider } from './FormGroupContext';

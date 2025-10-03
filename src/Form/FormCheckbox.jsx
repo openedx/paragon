@@ -1,4 +1,5 @@
-import {
+// React import needed to support build-docs, if removed the build-docs will break
+import React, {
   forwardRef, useRef, useEffect, createElement,
 } from 'react';
 import PropTypes from 'prop-types';

@@ -1,4 +1,5 @@
-import { forwardRef } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useRadioSetContext } from './FormRadioSetContext';

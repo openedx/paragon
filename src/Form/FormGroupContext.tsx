@@ -1,5 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
-import {
+// React import needed to support build-docs, if removed the build-docs will break
+import React, {
   createContext, useContext, useState, useEffect, useMemo, useCallback,
 } from 'react';
 import classNames from 'classnames';
