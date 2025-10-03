@@ -1,4 +1,5 @@
-import { Fragment } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import Portal from './Portal';

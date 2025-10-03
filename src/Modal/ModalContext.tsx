@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { createContext, useMemo } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { createContext, useMemo } from 'react';
 
 interface ContextData {
   onClose: () => void;

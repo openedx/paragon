@@ -1,3 +1,5 @@
+// React import needed to support build-docs, if removed the build-docs will break
+import React from 'react';
 import type { ReactNode } from 'react';
 import classNames from 'classnames';
 import { useMediaQuery } from 'react-responsive';
