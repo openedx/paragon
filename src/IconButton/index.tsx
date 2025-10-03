@@ -1,8 +1,8 @@
 import type {
   HTMLAttributes, ComponentType, MouseEventHandler, ReactNode,
 } from 'react';
-import { forwardRef } from 'react';
-import PropTypes from 'prop-types';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { forwardRef } from 'react';
 import classNames from 'classnames';
 import { type Placement } from 'react-bootstrap/Overlay';
 import { OverlayTrigger } from '../Overlay';
