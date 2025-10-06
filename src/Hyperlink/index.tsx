@@ -1,4 +1,6 @@
-import React, { forwardRef, ForwardedRef } from 'react';
+import React, {
+  forwardRef, ForwardedRef, ElementType, ReactNode,
+} from 'react';
 import classNames from 'classnames';
 import {
   type BsPrefixRefForwardingComponent as ComponentWithAsProp,
@@ -9,10 +11,12 @@ import { Launch } from '../../icons';
 import Icon from '../Icon';
 
 export interface HyperlinkProps extends BsPrefixProps, Omit<React.ComponentPropsWithRef<'a'>, 'href' | 'target'> {
-  /** specifies the URL */
+  /** specifies the component element type to render for the hyperlink. */
+  as?: ElementType;
+  /** specifies the URL; required if `as` prop is a standard anchor tag */
   destination?: string;
   /** Content of the hyperlink */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Custom class names for the hyperlink */
   className?: string;
   /** Alt text for the icon indicating that this link opens in a new tab, if target="_blank". e.g. _("in a new tab") */

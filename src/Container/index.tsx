@@ -1,5 +1,7 @@
 /* eslint-disable react/require-default-props */
-import React, { ForwardedRef } from 'react';
+import {
+  ForwardedRef, ReactNode, ElementType, forwardRef,
+} from 'react';
 import classNames from 'classnames';
 import RBContainer, { type ContainerProps as RBContainerProps } from 'react-bootstrap/Container';
 
@@ -17,7 +19,9 @@ export type ContainerSize = keyof typeof ContainerSizeClass;
 
 interface ContainerProps extends RBContainerProps {
   /** Override the base element */
-  as?: React.ElementType,
+  as?: ElementType,
+  /** Specifies the contents of the container */
+  children: ReactNode,
   /** Fill all available space at any breakpoint */
   fluid?: boolean,
   /** Overrides underlying component base CSS class name */
@@ -28,7 +32,7 @@ interface ContainerProps extends RBContainerProps {
 
 type ContainerType = ComponentWithAsProp<'div', ContainerProps>;
 
-const Container: ContainerType = React.forwardRef(({
+const Container: ContainerType = forwardRef(({
   size,
   children,
   as = 'div',
