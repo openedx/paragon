@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { useContext } from 'react';
 import classNames from 'classnames';
 import { PAGINATION_BUTTON_ICON_BUTTON_NEXT_ALT } from '../constants';
 import PaginationContext from '../PaginationContext';

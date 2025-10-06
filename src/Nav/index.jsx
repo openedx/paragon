@@ -1,3 +1,5 @@
+// React import needed to support build-docs, if removed the build-docs will break
+import React from 'react';
 import BaseNav from 'react-bootstrap/Nav';
 import BaseNavDropdown from 'react-bootstrap/NavDropdown';
 import BaseNavItem from 'react-bootstrap/NavItem';
