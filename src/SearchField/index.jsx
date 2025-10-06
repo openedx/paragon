@@ -1,4 +1,5 @@
-import { useCallback } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import { Search, Close } from '../../icons';
