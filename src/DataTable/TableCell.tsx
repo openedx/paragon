@@ -1,4 +1,4 @@
-import { ReactNode, TdHTMLAttributes } from 'react';
+import React, { ReactNode, TdHTMLAttributes } from 'react';
 import classNames from 'classnames';
 
 interface TableCellProps {

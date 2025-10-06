@@ -1,4 +1,4 @@
-import { ElementType, ReactNode, createElement } from 'react';
+import React, { ElementType, ReactNode, createElement } from 'react';
 import classNames from 'classnames';
 import useArrowKeyNavigation from '../hooks/useArrowKeyNavigationHook';
 

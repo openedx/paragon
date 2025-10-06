@@ -1,3 +1,4 @@
+import React from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
 import { ArrowDropDown, ArrowDropUp, ArrowDropUpDown } from '../../icons';
