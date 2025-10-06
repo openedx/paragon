@@ -1,4 +1,5 @@
-import { Children, Component } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { Children, Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import classNames from 'classnames';
