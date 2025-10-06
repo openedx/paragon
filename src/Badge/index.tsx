@@ -1,5 +1,6 @@
 import React, { ForwardedRef } from 'react';
 import BaseBadge from 'react-bootstrap/Badge';
+import { ComponentWithAsProp } from '../utils/types/bootstrap';
 
 const STYLE_VARIANTS = [
   'primary',
@@ -12,7 +13,7 @@ const STYLE_VARIANTS = [
   'dark',
 ];
 
-interface BadgeProps extends React.HTMLAttributes<HTMLElement> {
+interface BadgeProps {
   /** Specifies element type for this component */
   as?: React.ElementType;
   /** Visual style of the badge. The full type definition can be seen [here](https://github.com/openedx/paragon/blob/release-23.x/src/Badge/index.tsx) */
@@ -23,9 +24,9 @@ interface BadgeProps extends React.HTMLAttributes<HTMLElement> {
   bsPrefix?: string;
 }
 
-const Badge = React.forwardRef(({
+const Badge: ComponentWithAsProp<'span', BadgeProps> = React.forwardRef(({
   as = 'span', variant = 'primary', pill = false, bsPrefix = 'badge', ...props
-}: BadgeProps, ref: ForwardedRef<HTMLElement>) => (
+}: BadgeProps, ref: ForwardedRef<HTMLSpanElement>) => (
   <BaseBadge as={as} variant={variant} pill={pill} bsPrefix={bsPrefix} {...props} ref={ref} />
 ));
 

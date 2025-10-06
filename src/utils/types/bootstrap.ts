@@ -3,7 +3,24 @@
  */
 import React from 'react';
 
-import type { BsPrefixProps, BsPrefixRefForwardingComponent } from 'react-bootstrap/esm/helpers';
+import type { BsPrefixProps, ReplaceProps } from 'react-bootstrap/esm/helpers';
+
+/**
+ * Do not use this directly; see `ComponentWithAsProp`.
+ * This is the same as `BsPrefixRefForwardingComponent` in react-bootstrap but it fixes the return type to be
+ * `React.ReactNode` instead of `React.ReactElement | null`, for compatibility
+ * with React 18 type definitions.
+ */
+interface BsPrefixRefForwardingComponent<TInitial extends React.ElementType, P = unknown> {
+  <As extends React.ElementType = TInitial>(
+    props: React.PropsWithChildren<ReplaceProps<As, BsPrefixProps<As> & P>>,
+    context?: any
+  ): React.ReactNode;
+  propTypes?: any;
+  contextTypes?: any;
+  defaultProps?: Partial<P>;
+  displayName?: string;
+}
 
 /**
  * Type helper for defining props of a component that wraps a bootstrap
