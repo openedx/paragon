@@ -1,7 +1,11 @@
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that have types
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
+export { default as ActionRow } from './ActionRow';
 export { default as Alert, ALERT_CLOSE_LABEL_TEXT } from './Alert';
+export { default as Annotation } from './Annotation';
+export { default as Avatar } from './Avatar';
+export { default as AvatarButton } from './AvatarButton';
 export { default as Bubble } from './Bubble';
 export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
@@ -52,14 +56,6 @@ export { default as breakpoints } from './utils/breakpoints';
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as asInput } from './asInput';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as ActionRow } from './ActionRow';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Annotation } from './Annotation';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Avatar } from './Avatar';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as AvatarButton } from './AvatarButton';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Badge } from './Badge';
 // @ts-ignore: has yet to be converted to TypeScript
