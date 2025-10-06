@@ -1,5 +1,5 @@
 /* eslint-disable react/require-default-props */
-import {
+import React, {
   ForwardedRef, ReactNode, ElementType, forwardRef,
 } from 'react';
 import classNames from 'classnames';
