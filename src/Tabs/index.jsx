@@ -1,4 +1,5 @@
-import {
+// React import needed to support build-docs, if removed the build-docs will break
+import React, {
   Children,
   isValidElement,
   cloneElement,

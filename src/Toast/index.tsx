@@ -1,5 +1,6 @@
 import type { MouseEvent } from 'react';
-import { useState } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import BaseToast from 'react-bootstrap/Toast';
 import { useIntl } from 'react-intl';
