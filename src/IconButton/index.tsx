@@ -1,13 +1,17 @@
-import React from 'react';
+import type {
+  HTMLAttributes, ComponentType, MouseEventHandler, ReactNode,
+} from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { forwardRef } from 'react';
 import classNames from 'classnames';
 import { type Placement } from 'react-bootstrap/Overlay';
 import { OverlayTrigger } from '../Overlay';
 import Tooltip from '../Tooltip';
 import Icon from '../Icon';
 
-interface Props extends React.HTMLAttributes<HTMLButtonElement> {
+interface Props extends HTMLAttributes<HTMLButtonElement> {
   /** Component that renders the icon, currently defaults to `Icon` */
-  iconAs?: React.ComponentType<any>,
+  iconAs?: ComponentType<any>,
   /** Additional CSS class[es] to apply to this button */
   className?: string;
   /** Alt text for your icon. For best practice, avoid using alt text to describe
@@ -21,11 +25,11 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
    * */
   // Note: React.ComponentType is what we want here. React.ElementType would allow some element type strings like "div",
   // but we only want to allow components like 'Add' (a specific icon component function/class)
-  src?: React.ComponentType;
+  src?: ComponentType;
   /** Extra class names that will be added to the icon */
   iconClassNames?: string;
   /** Click handler for the button */
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   /** Whether to show the `IconButton` in an active state, whose styling is distinct from default state */
   isActive?: boolean;
   /** @deprecated Using FontAwesome icons is deprecated. Instead, pass iconAs={Icon} src={...} */
@@ -38,7 +42,7 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   children?: never;
 }
 
-const IconButton = React.forwardRef(({
+const IconButton = forwardRef<HTMLButtonElement, Props>(({
   className,
   alt,
   invertColors = false,
@@ -88,10 +92,10 @@ const IconButton = React.forwardRef(({
 });
 
 interface PropsWithTooltip extends Props {
-  /** Tooltip placement can be top, left, right etc, choose from https://popper.js.org/docs/v2/constructors/#options */
-  tooltipPlacement?: Placement,
-  /** Any content to pass to tooltip content area */
-  tooltipContent: React.ReactNode,
+  /** choose from https://popper.js.org/docs/v2/constructors/#options */
+  tooltipPlacement: Placement,
+  /** any content to pass to tooltip content area */
+  tooltipContent: ReactNode,
 }
 
 /**

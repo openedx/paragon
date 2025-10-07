@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import useArrowKeyNavigation from '../hooks/useArrowKeyNavigationHook';
@@ -12,7 +12,7 @@ function Menu({
   const parentRef = useArrowKeyNavigation({ selectors: arrowKeyNavigationSelector });
   const className = classNames(props.className, 'pgn__menu');
 
-  return React.createElement(
+  return createElement(
     as,
     {
       ...props,
@@ -21,9 +21,7 @@ function Menu({
     },
     (
       // eslint-disable-next-line react/jsx-no-useless-fragment
-      <>
-        {children}
-      </>
+      (<> {children} </>)
     ),
   );
 }

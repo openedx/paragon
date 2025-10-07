@@ -1,3 +1,5 @@
+import type { ComponentPropsWithRef, ReactNode, ElementType } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -11,11 +13,11 @@ import Icon from '../Icon';
 // @ts-ignore
 import { customPropTypeRequirement } from '../utils/propTypes/utils';
 
-export interface HyperlinkProps extends BsPrefixProps, Omit<React.ComponentPropsWithRef<'a'>, 'href' | 'target'> {
+export interface HyperlinkProps extends BsPrefixProps, Omit<ComponentPropsWithRef<'a'>, 'href' | 'target'> {
   /** specifies the URL */
   destination?: string;
   /** Content of the hyperlink */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Custom class names for the hyperlink */
   className?: string;
   /** Alt text for the icon indicating that this link opens in a new tab, if target="_blank". e.g. _("in a new tab") */
@@ -134,7 +136,7 @@ Hyperlink.propTypes = {
   /** specifies the URL; required iff `as` prop is a standard anchor tag */
   destination: customPropTypeRequirement(
     PropTypes.string,
-    ({ as }: { as: React.ElementType }) => as && as === 'a',
+    ({ as }: { as: ElementType }) => as && as === 'a',
     // "[`destination` is required when]..."
     'the `as` prop is a standard anchor element (i.e., "a")',
   ),

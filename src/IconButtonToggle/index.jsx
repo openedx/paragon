@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { Children, cloneElement, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 /**
@@ -13,9 +13,9 @@ import PropTypes from 'prop-types';
  */
 function IconButtonToggle({ activeValue, onChange, children }) {
   const iconButtons = useMemo(
-    () => React.Children.map(children, iconButton => {
+    () => Children.map(children, iconButton => {
       const isActive = iconButton.props.value === activeValue;
-      return React.cloneElement(iconButton, {
+      return cloneElement(iconButton, {
         onClick: () => { onChange(iconButton.props.value); },
         isActive,
         'aria-selected': isActive,
