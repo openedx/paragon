@@ -5,7 +5,7 @@ interface CardCarouselSubtitleProps {
   /** Specifies contents of the component. */
   children: React.ReactNode;
   /** Specifies the base element */
-  as?: string | React.ElementType;
+  as?: React.ElementType;
   /** A class name to append to the base element. */
   className?: string;
 }

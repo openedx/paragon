@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 interface CardCarouselTitleProps {
   children: React.ReactNode;
-  as?: React.ElementType | string;
+  as?: React.ElementType;
   className?: string;
 }
 
