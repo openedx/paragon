@@ -1,4 +1,7 @@
-import React from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, {
+  forwardRef, useRef, useEffect, createElement,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useCheckboxSetContext } from './FormCheckboxSetContext';
@@ -6,10 +9,10 @@ import { FormGroupContextProvider, useFormGroupContext } from './FormGroupContex
 import FormLabel from './FormLabel';
 import FormControlFeedback from './FormControlFeedback';
 
-const CheckboxControl = React.forwardRef(
+const CheckboxControl = forwardRef(
   ({ isIndeterminate, ...props }, ref) => {
     const { getCheckboxControlProps, hasCheckboxSetProvider } = useCheckboxSetContext();
-    const defaultRef = React.useRef();
+    const defaultRef = useRef();
     const resolvedRef = ref || defaultRef;
     const { getControlProps } = useFormGroupContext();
     let checkboxProps = getControlProps({
@@ -21,7 +24,7 @@ const CheckboxControl = React.forwardRef(
       checkboxProps = getCheckboxControlProps(checkboxProps);
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
       // this if(resolvedRef.current) prevents console errors in testing
       if (resolvedRef.current) {
         resolvedRef.current.indeterminate = isIndeterminate;
@@ -50,7 +53,7 @@ CheckboxControl.defaultProps = {
   className: undefined,
 };
 
-const FormCheckbox = React.forwardRef(({
+const FormCheckbox = forwardRef(({
   children,
   className,
   controlClassName,
@@ -71,7 +74,7 @@ const FormCheckbox = React.forwardRef(({
     role: 'group',
   } : {};
 
-  const control = React.createElement(controlAs, { ...props, className: controlClassName, ref });
+  const control = createElement(controlAs, { ...props, className: controlClassName, ref });
   return (
     <FormGroupContextProvider
       controlId={props.id}

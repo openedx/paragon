@@ -1,5 +1,7 @@
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
 import React, {
-  useState, useEffect, useMemo, useCallback,
+  createContext, useContext, useState, useEffect, useMemo, useCallback,
 } from 'react';
 import classNames from 'classnames';
 import { newId } from '../utils';
@@ -11,7 +13,7 @@ const noop = () => {};
 
 interface FormGroupContextData {
   getControlProps: (props: Record<string, any>) => Record<string, any>;
-  getLabelProps: (props: React.ComponentPropsWithoutRef<'label'>) => React.ComponentPropsWithoutRef<'label'>;
+  getLabelProps: (props: ComponentPropsWithoutRef<'label'>) => ComponentPropsWithoutRef<'label'>;
   getDescriptorProps: (props: Record<string, any>) => Record<string, any>;
   useSetIsControlGroupEffect: (isControlGroup: boolean) => void;
   isControlGroup?: boolean;
@@ -22,7 +24,7 @@ interface FormGroupContextData {
   hasFormGroupProvider?: boolean;
 }
 
-const FormGroupContext = React.createContext<FormGroupContextData>({
+const FormGroupContext = createContext<FormGroupContextData>({
   getControlProps: identityFn,
   useSetIsControlGroupEffect: noop,
   getLabelProps: identityFn,
@@ -30,7 +32,7 @@ const FormGroupContext = React.createContext<FormGroupContextData>({
   hasFormGroupProvider: false,
 });
 
-const useFormGroupContext = () => React.useContext(FormGroupContext);
+const useFormGroupContext = () => useContext(FormGroupContext);
 
 function useStateEffect<ValueType extends any>(
   initialState: ValueType,
@@ -49,7 +51,7 @@ function FormGroupContextProvider({
   isValid,
   size,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   controlId?: string;
   isInvalid?: boolean;
   isValid?: boolean;
@@ -82,7 +84,7 @@ function FormGroupContextProvider({
     controlId,
   ]);
 
-  const getLabelProps = (labelProps: React.ComponentPropsWithoutRef<'label'>) => {
+  const getLabelProps = (labelProps: ComponentPropsWithoutRef<'label'>) => {
     const id = registerLabelerId(labelProps?.id);
     if (isControlGroup) {
       return { ...labelProps, id };

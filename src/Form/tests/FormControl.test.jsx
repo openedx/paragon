@@ -10,6 +10,14 @@ const ref = {
 
 let unmaskedInputValue;
 
+jest.mock('react', () => {
+  const actualReact = jest.requireActual('react');
+  return {
+    ...actualReact,
+    useRef: jest.fn(() => ref),
+  };
+});
+
 // eslint-disable-next-line react/prop-types
 function Component({ isClearValue }) {
   const [inputValue, setInputValue] = useState('');
@@ -30,7 +38,7 @@ function Component({ isClearValue }) {
 describe('FormControl', () => {
   it('textarea changes its height with autoResize prop', async () => {
     const user = userEvent.setup();
-    const useReferenceSpy = jest.spyOn(React, 'useRef').mockReturnValue(ref);
+    const useReferenceSpy = React.useRef;
     const onChangeFunc = jest.fn();
     const inputText = 'new text';
     render(

@@ -1,4 +1,5 @@
-import React from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { forwardRef, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import BaseDropdown from 'react-bootstrap/Dropdown';
@@ -8,7 +9,7 @@ import BaseDropdownToggle from 'react-bootstrap/DropdownToggle';
 import Button from '../Button';
 import IconButton from '../IconButton';
 
-const Dropdown = React.forwardRef(
+const Dropdown = forwardRef(
   // eslint-disable-next-line prefer-arrow-callback
   function Dropdown({
     show,
@@ -18,7 +19,7 @@ const Dropdown = React.forwardRef(
     className,
     ...rest
   }, ref) {
-    const [internalShow, setInternalShow] = React.useState(show);
+    const [internalShow, setInternalShow] = useState(show);
     const isClosingPermitted = (source) => {
       // autoClose=false only permits close on button click
       if (autoClose === false) {
@@ -88,7 +89,7 @@ Dropdown.defaultProps = {
   variant: 'light',
 };
 
-const DropdownToggle = React.forwardRef(
+const DropdownToggle = forwardRef(
   // eslint-disable-next-line prefer-arrow-callback
   function DropdownToggle({
     as,
@@ -116,7 +117,7 @@ DropdownToggle.defaultProps = {
   bsPrefix: 'dropdown-toggle',
 };
 
-Dropdown.Item = React.forwardRef(
+Dropdown.Item = forwardRef(
   // eslint-disable-next-line prefer-arrow-callback
   function DropdownItem({ className, ...otherProps }, ref) {
     return (

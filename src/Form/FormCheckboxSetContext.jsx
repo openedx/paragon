@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import { createContext, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { callAllHandlers } from './fieldUtils';
 
 const identityFn = props => props;
 
-const FormCheckboxSetContext = React.createContext({
+const FormCheckboxSetContext = createContext({
   getCheckboxControlProps: identityFn,
   hasCheckboxSetProvider: false,
 });

@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { createContext, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { callAllHandlers } from './fieldUtils';
 
 const identityFn = props => props;
 
-const FormRadioSetContext = React.createContext({
+const FormRadioSetContext = createContext({
   getRadioControlProps: identityFn,
   hasRadioSetProvider: false,
 });
