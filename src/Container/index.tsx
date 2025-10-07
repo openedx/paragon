@@ -1,5 +1,6 @@
 /* eslint-disable react/require-default-props */
-import React from 'react';
+// React import needed to support JSX outside functions, if removed build-docs will fail
+import React, { forwardRef } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import RBContainer, { type ContainerProps as RBContainerProps } from 'react-bootstrap/Container';
@@ -22,7 +23,7 @@ interface ContainerProps extends RBContainerProps {
 
 type ContainerType = ComponentWithAsProp<'div', ContainerProps>;
 
-const Container: ContainerType = React.forwardRef<Element, ContainerProps>(({
+const Container: ContainerType = forwardRef<Element, ContainerProps>(({
   size,
   children,
   ...props

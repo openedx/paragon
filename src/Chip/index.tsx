@@ -1,4 +1,7 @@
-import React, { ForwardedRef, KeyboardEventHandler, MouseEventHandler } from 'react';
+import type { ReactNode, ComponentType } from 'react';
+import {
+  forwardRef, ForwardedRef, KeyboardEventHandler, MouseEventHandler,
+} from 'react';
 import classNames from 'classnames';
 import ChipIcon from './ChipIcon';
 import { STYLE_VARIANTS } from './constants';
@@ -7,7 +10,7 @@ export const CHIP_PGN_CLASS = 'pgn__chip';
 
 export interface IChip {
   /** Specifies the content of the `Chip`. */
-  children: React.ReactNode,
+  children: ReactNode,
   /** Click handler for the whole `Chip`, has effect only when Chip does not have any interactive icons. */
   onClick?: KeyboardEventHandler & MouseEventHandler,
   /** Specifies an additional `className` to add to the base element. */
@@ -20,7 +23,7 @@ export interface IChip {
    *
    * `import { Check } from '@openedx/paragon/icons';`
    */
-  iconBefore?: React.ComponentType,
+  iconBefore?: ComponentType,
   /** Specifies icon alt text. */
   iconBeforeAlt?: string,
   /**
@@ -29,7 +32,7 @@ export interface IChip {
    *
    * `import { Check } from '@openedx/paragon/icons';`
    */
-  iconAfter?: React.ComponentType,
+  iconAfter?: ComponentType,
   /** Specifies icon alt text. */
   iconAfterAlt?: string,
   /** A click handler for the `Chip` icon before. */
@@ -42,7 +45,7 @@ export interface IChip {
   isSelected?: boolean,
 }
 
-const Chip = React.forwardRef(({
+const Chip = forwardRef(({
   children,
   className,
   variant = 'light',

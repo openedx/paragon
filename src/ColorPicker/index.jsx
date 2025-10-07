@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { HexColorPicker } from 'react-colorful';
@@ -14,7 +14,7 @@ function ColorPicker({
   color, setColor, className, size,
 }) {
   const [isOpen, open, close] = useToggle(false);
-  const [target, setTarget] = React.useState(null);
+  const [target, setTarget] = useState(null);
 
   const colorIsValid = (colorToValidate) => {
     const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
@@ -29,16 +29,16 @@ function ColorPicker({
     return colorString.slice(0, 7);
   };
 
-  const [hexValid, setHexValid] = React.useState(() => (color === '' || colorIsValid(formatHexColorString(color))));
+  const [hexValid, setHexValid] = useState(() => (color === '' || colorIsValid(formatHexColorString(color))));
 
-  const [hexColorString, setHexColorString] = React.useState(() => {
+  const [hexColorString, setHexColorString] = useState(() => {
     if (color === '') {
       return '';
     }
 
     return formatHexColorString(color);
   });
-  const [colorToDisplay, setColorToDisplay] = React.useState(() => {
+  const [colorToDisplay, setColorToDisplay] = useState(() => {
     const formattedColor = formatHexColorString(color);
     if (colorIsValid(formattedColor)) {
       return formattedColor;

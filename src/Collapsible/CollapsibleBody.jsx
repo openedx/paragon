@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+// React import needed to support JSX outside functions, if removed build-docs will fail
+import React, { createElement, cloneElement, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import Collapse from '../Collapse';
@@ -13,11 +14,11 @@ function CollapsibleBody({
   // Keys are added to these elements so that TransitionReplace
   // will recognize them as unique components and perform the
   // transition properly.
-  const content = React.createElement(tag, { key: 'body', ...props }, children);
+  const content = createElement(tag, { key: 'body', ...props }, children);
   const transitionBody = isOpen ? content : <div key="empty" />;
 
   if (transitionWrapper) {
-    return React.cloneElement(transitionWrapper, {}, transitionBody);
+    return cloneElement(transitionWrapper, {}, transitionBody);
   }
   /* istanbul ignore next */
   return unmountOnExit
