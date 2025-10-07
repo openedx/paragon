@@ -29,7 +29,7 @@ function FormGroup<As extends React.ElementType = 'div'>({
   size,
   as,
   ...props
-}: Props & { as?: As } & React.ComponentPropsWithoutRef<As>) {
+}: { as?: As } & Props & React.ComponentPropsWithoutRef<As>) {
   return React.createElement(
     as ?? 'div',
     {
