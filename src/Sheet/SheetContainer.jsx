@@ -19,6 +19,7 @@ class SheetContainer extends React.Component {
   updateRootElement = () => {
     const { className } = this.props;
 
+    /* istanbul ignore next */
     if (typeof document === 'undefined') {
       this.rootElement = null;
       return;
