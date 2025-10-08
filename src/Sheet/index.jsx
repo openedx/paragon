@@ -26,13 +26,16 @@ class Sheet extends React.Component {
   }
 
   renderSheet() {
-    const { children, position, variant } = this.props;
+    const {
+      children, position, variant, sheetClassName,
+    } = this.props;
     return (
       <div
         className={classNames(
           'pgn__sheet-component',
           `pgn__sheet__${variant}`,
           position,
+          sheetClassName,
         )}
         role="alert"
         aria-live="polite"
@@ -50,12 +53,13 @@ class Sheet extends React.Component {
       blocking,
       show,
       onClose,
+      className,
     } = this.props;
     if (!show) {
       return null;
     }
     return (
-      <SheetContainer>
+      <SheetContainer className={classNames(className)}>
         <div
           className={classNames(
             'pgn__sheet-skrim',
@@ -93,6 +97,10 @@ Sheet.propTypes = {
   onClose: PropTypes.func,
   /** a string designating which version of the sheet to show (light vs dark) */
   variant: PropTypes.oneOf([VARIANTS.light, VARIANTS.dark]),
+  /** A class that is appended to the base element. */
+  className: PropTypes.string,
+  /** A class that is appended to the sheet element. */
+  sheetClassName: PropTypes.string,
 };
 
 Sheet.defaultProps = {
@@ -102,6 +110,8 @@ Sheet.defaultProps = {
   show: true,
   onClose: () => {},
   variant: VARIANTS.light,
+  className: undefined,
+  sheetClassName: undefined,
 };
 
 export default Sheet;

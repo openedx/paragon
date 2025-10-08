@@ -31,4 +31,13 @@ describe('<SheetContainer />', () => {
     const childEl2 = screen.getByText(childContent2);
     expect(childEl2).toBeTruthy();
   });
+
+  it('applies custom className if provided', () => {
+    const customClass = 'custom-class';
+    render(<SheetContainer className={customClass}>{child1}</SheetContainer>);
+    const rootEl = screen.getByTestId('sheet-container');
+    expect(rootEl).toBeTruthy();
+    expect(rootEl.className).toContain('sheet-container');
+    expect(rootEl.className).toContain(customClass);
+  });
 });
