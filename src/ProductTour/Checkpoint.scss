@@ -64,7 +64,7 @@
   }
 
   .pgn__checkpoint-page-index {
-    font-size: $small-font-size;
+    font-size: var(--pgn-typography-font-size-sm);
   }
 }
 

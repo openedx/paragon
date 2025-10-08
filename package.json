@@ -27,11 +27,12 @@
   "sideEffects": false,
   "scripts": {
     "build": "make build",
-    "build-docs": "npm run build --workspace=www",
+    "build-docs": "make build-docs",
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
     "stylelint": "stylelint \"src/**/*.scss\" \"scss/**/*.scss\" \"www/src/**/*.scss\" --config .stylelintrc.json",
-    "lint": "npm run stylelint && eslint --ext .js --ext .jsx --ext .ts --ext .tsx --ext .json . && npm run lint --workspaces --if-present",
+    "eslint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx --ext .json .",
+    "lint": "make lint",
     "lint:fix": "npm run stylelint && eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx --ext .json . && npm run lint --workspaces --if-present",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
@@ -100,7 +101,7 @@
     "react-table": "^7.7.0",
     "react-transition-group": "^4.4.2",
     "sass": "^1.58.3",
-    "style-dictionary": "^4.3.2",
+    "style-dictionary": "^4.4.0",
     "tabbable": "^5.3.3",
     "uncontrollable": "^7.2.1",
     "uuid": "^9.0.0"
