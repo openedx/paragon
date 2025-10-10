@@ -423,17 +423,17 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
           Filter: CheckboxFilter,
           filter: 'includesValue',
           filterChoices: [{
-            name: 'orange tabby',
+            name: 'Orange Tabby',
             number: 1,
             value: 'orange tabby',
           },
           {
-            name: 'brown tabby',
+            name: 'Brown Tabby',
             number: 1,
             value: 'brown tabby',
           },
           {
-            name: 'siamese',
+            name: 'Siamese',
             number: 1,
             value: 'siamese',
           }],
@@ -503,17 +503,17 @@ See ``dataViewToggleOptions`` props documentation for all supported props.
           Filter: CheckboxFilter,
           filter: 'includesValue',
           filterChoices: [{
-            name: 'orange tabby',
+            name: 'Orange Tabby',
             number: 1,
             value: 'orange tabby',
           },
           {
-            name: 'brown tabby',
+            name: 'Brown Tabby',
             number: 1,
             value: 'brown tabby',
           },
           {
-            name: 'siamese',
+            name: 'Siamese',
             number: 1,
             value: 'siamese',
           }]
@@ -1306,17 +1306,17 @@ For a more desktop friendly view, you can move filters into a sidebar by providi
         Filter: CheckboxFilter,
         filter: 'includesValue',
         filterChoices: [{
-          name: 'orange tabby',
+          name: 'Orange Tabby',
           number: 2,
           value: 'orange tabby',
         },
         {
-          name: 'brown tabby',
+          name: 'Brown Tabby',
           number: 2,
           value: 'brown tabby',
         },
         {
-          name: 'siamese',
+          name: 'Siamese',
           number: 1,
           value: 'siamese',
         }]
@@ -1659,17 +1659,17 @@ After selecting the maximum possible number of rows, you can display an error me
           filter: 'includesValue',
           filterChoices: [
             {
-              name: 'russian white',
+              name: 'Russian white',
               number: 1,
               value: 'russian white',
             },
             {
-              name: 'orange tabby',
+              name: 'Orange Tabby',
               number: 2,
               value: 'orange tabby',
             },
             {
-              name: 'brown tabby',
+              name: 'Brown Tabby',
               number: 3,
               value: 'brown tabby',
             },
