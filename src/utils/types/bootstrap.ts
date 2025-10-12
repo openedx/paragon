@@ -1,7 +1,7 @@
 /**
  * Types related to bootstrap components
  */
-import React from 'react';
+import type { ElementType } from 'react';
 
 import type { BsPrefixProps, BsPrefixRefForwardingComponent } from 'react-bootstrap/esm/helpers';
 
@@ -14,7 +14,7 @@ import type { BsPrefixProps, BsPrefixRefForwardingComponent } from 'react-bootst
  *
  * This type assumes no `children` are allowed, but you can extend it to allow children.
  */
-export type BsPropsWithAs<As extends React.ElementType = React.ElementType> = BsPrefixProps<As>;
+export type BsPropsWithAs<As extends ElementType = ElementType> = BsPrefixProps<As>;
 
 /**
  * This is a helper that can be used to define the type of a Paragon component
@@ -39,5 +39,5 @@ export type BsPropsWithAs<As extends React.ElementType = React.ElementType> = Bs
  * ```
  * Note that you need to define the default (e.g. `'div'`) in three different places.
  */
-export type ComponentWithAsProp<DefaultElementType extends React.ElementType, Props>
+export type ComponentWithAsProp<DefaultElementType extends ElementType, Props>
   = BsPrefixRefForwardingComponent<DefaultElementType, Props>;

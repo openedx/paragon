@@ -1,16 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from 'react';
+import type {
+  ElementType, FC, MouseEventHandler, RefObject,
+} from 'react';
+
+import { forwardRef } from 'react';
 import type { BsPropsWithAs, ComponentWithAsProp } from './bootstrap';
 
 // Note: these are type-only tests. They don't actually do much at runtime; the important checks are at transpile time.
 
 describe('BsPropsWithAs', () => {
-  interface Props<As extends React.ElementType = 'table'> extends BsPropsWithAs<As> {
+  interface Props<As extends ElementType = 'table'> extends BsPropsWithAs<As> {
     otherProp?: number;
   }
 
   it('defines optional bsPrefix, className, and as but no other props', () => {
-    const checkProps = <As extends React.ElementType = 'table'>(_props: Props<As>) => {};
+    const checkProps = <As extends ElementType = 'table'>(_props: Props<As>) => {};
     // These are all valid props per the prop definition:
     checkProps({ });
     checkProps({ bsPrefix: 'bs' });
@@ -34,43 +38,43 @@ describe('ComponentWithAsProp', () => {
     customProp?: string;
   }
   const MyComponent: ComponentWithAsProp<'div', MyProps> = (
-    React.forwardRef<HTMLDivElement, MyProps>(
+    forwardRef<HTMLDivElement, MyProps>(
       ({ as: Inner = 'div', ...props }, ref) => <Inner {...props} ref={ref} />,
     )
   );
 
   // eslint-disable-next-line react/function-component-definition
-  const CustomComponent: React.FC<{ requiredProp: string }> = () => <span />;
+  const CustomComponent: FC<{ requiredProp: string }> = () => <span />;
 
   it('is defined to wrap a <div> by default, and accepts related props', () => {
     // This is valid - by default it is a DIV so accepts props and ref related to DIV:
-    const divClick: React.MouseEventHandler<HTMLDivElement> = () => {};
-    const divRef: React.RefObject<HTMLDivElement> = { current: null };
+    const divClick: MouseEventHandler<HTMLDivElement> = () => {};
+    const divRef: RefObject<HTMLDivElement> = { current: null };
     const valid = <MyComponent ref={divRef} onClick={divClick} customProp="foo" />;
   });
 
   it('is defined to wrap a <div> by default, and rejects unrelated props', () => {
-    const btnRef: React.RefObject<HTMLButtonElement> = { current: null };
+    const btnRef: RefObject<HTMLButtonElement> = { current: null };
     // @ts-expect-error because the ref is to a <button> ref, but this is wrapping a <div>
     const invalidRef = <MyComponent ref={btnRef} customProp="foo" />;
 
-    const btnClick: React.MouseEventHandler<HTMLButtonElement> = () => {};
+    const btnClick: MouseEventHandler<HTMLButtonElement> = () => {};
     // @ts-expect-error because the handler is for a <button> event, but this is wrapping a <div>
     const invalidClick = <MyComponent onClick={btnClick} />;
   });
 
   it('can be changed to wrap a <canvas>, and accepts related props', () => {
-    const canvasClick: React.MouseEventHandler<HTMLCanvasElement> = () => {};
-    const canvasRef: React.RefObject<HTMLCanvasElement> = { current: null };
+    const canvasClick: MouseEventHandler<HTMLCanvasElement> = () => {};
+    const canvasRef: RefObject<HTMLCanvasElement> = { current: null };
     const valid = <MyComponent as="canvas" ref={canvasRef} onClick={canvasClick} customProp="foo" />;
   });
 
   it('can be changed to wrap a <canvas>, and rejects unrelated props', () => {
-    const btnRef: React.RefObject<HTMLButtonElement> = { current: null };
+    const btnRef: RefObject<HTMLButtonElement> = { current: null };
     // @ts-expect-error because the ref is to a <button> ref, but this is wrapping an <canvas>
     const invalidRef = <MyComponent as="canvas" ref={btnRef} customProp="foo" />;
 
-    const btnClick: React.MouseEventHandler<HTMLButtonElement> = () => {};
+    const btnClick: MouseEventHandler<HTMLButtonElement> = () => {};
     // @ts-expect-error because the handler is for a <button> event, but this is wrapping an <canvas>
     const invalidClick = <MyComponent as="canvas" onClick={btnClick} />;
   });
