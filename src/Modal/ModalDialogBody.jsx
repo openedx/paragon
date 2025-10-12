@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import useIsVisible from '../hooks/useIsVisibleHook';
@@ -18,7 +18,7 @@ function ModalDialogBody({
       'pgn__modal-body-scroll-bottom': isScrolledToBottom,
     },
   );
-  return React.createElement(
+  return createElement(
     as,
     { ...props, className },
     (

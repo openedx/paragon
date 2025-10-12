@@ -1,11 +1,12 @@
-import React from 'react';
+import type { ReactNode } from 'react';
+import { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-class Portal extends React.Component<Props> {
+class Portal extends Component<Props> {
   private rootName: string;
 
   private rootElement: HTMLElement | null;

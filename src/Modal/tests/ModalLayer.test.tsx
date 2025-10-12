@@ -1,4 +1,3 @@
-import React from 'react';
 import { FocusOn } from 'react-focus-on';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -6,20 +5,20 @@ import userEvent from '@testing-library/user-event';
 import ModalLayer from '../ModalLayer';
 
 /* eslint-disable react/prop-types */
-jest.mock('../Portal', () => function PortalMock(props: any) {
+jest.mock('../Portal', () => (function PortalMock(props: any) {
   const { children, ...otherProps } = props;
   return (
     // @ts-ignore this fake element. (Property 'paragon-portal' does not exist on type 'JSX.IntrinsicElements')
-    <paragon-portal {...otherProps}>{children}</paragon-portal>
+    (<paragon-portal {...otherProps}>{children}</paragon-portal>)
   );
-});
+}));
 
 jest.mock('react-focus-on', () => ({
   FocusOn: jest.fn().mockImplementation((props) => {
     const { children, ...otherProps } = props;
     return (
       // @ts-ignore this fake element. (Property 'focus-on' does not exist on type 'JSX.IntrinsicElements')
-      <focus-on data-testid="focus-on" {...otherProps}>{children}</focus-on>
+      (<focus-on data-testid="focus-on" {...otherProps}>{children}</focus-on>)
     );
   }),
 }));

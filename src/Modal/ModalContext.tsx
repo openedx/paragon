@@ -1,4 +1,6 @@
-import React, { useMemo } from 'react';
+import type { ReactNode } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { createContext, useMemo } from 'react';
 
 interface ContextData {
   onClose: () => void;
@@ -6,7 +8,7 @@ interface ContextData {
   isBlocking: boolean;
 }
 
-const ModalContext = React.createContext<ContextData>({
+const ModalContext = createContext<ContextData>({
   onClose: () => {},
   isOpen: false,
   isBlocking: false,
@@ -21,7 +23,7 @@ function ModalContextProvider({
   onClose: () => void;
   isOpen: boolean;
   isBlocking?: boolean;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }) {
   const modalContextValue = useMemo<ContextData>(
     () => ({ onClose, isOpen, isBlocking }),

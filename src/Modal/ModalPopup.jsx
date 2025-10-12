@@ -1,4 +1,5 @@
-import React from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FocusOn } from 'react-focus-on';
 import Portal from './Portal';
@@ -18,7 +19,7 @@ function ModalPopup({
   hasArrow,
   ...popperProps
 }) {
-  const RootComponent = withPortal ? Portal : React.Fragment;
+  const RootComponent = withPortal ? Portal : Fragment;
   const placementOffsetValue = PLACEMENT_OFFSETS[placement] || [0, 10];
 
   const popperParams = [

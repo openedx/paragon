@@ -1,16 +1,16 @@
-import React from 'react';
+import { createRef } from 'react';
 import { render, screen } from '@testing-library/react';
 import ModalPopup from '../ModalPopup';
 
 /* eslint-disable react/prop-types */
-jest.mock('../Portal', () => function PortalMock(props) {
+jest.mock('../Portal', () => (function PortalMock(props) {
   const { children, ...otherProps } = props;
   return (
     <paragon-portal data-testid="portal" {...otherProps}>
       {children}
     </paragon-portal>
   );
-});
+}));
 
 jest.mock('react-focus-on', () => ({
   FocusOn: (props) => {
@@ -48,7 +48,7 @@ const arrowPlacements = [
 ];
 
 describe('<ModalPopup />', () => {
-  const mockPositionRef = React.createRef();
+  const mockPositionRef = createRef();
 
   describe('when isOpen', () => {
     const isOpen = true;
