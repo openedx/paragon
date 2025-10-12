@@ -1,3 +1,4 @@
+// React import needed to support JSX outside functions
 import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
 

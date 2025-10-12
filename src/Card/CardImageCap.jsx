@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { forwardRef, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
@@ -8,7 +8,7 @@ import { cardSrcFallbackImg } from './CardFallbackDefaultImage';
 const SKELETON_HEIGHT_VALUE = 140;
 const LOGO_SKELETON_HEIGHT_VALUE = 41;
 
-const CardImageCap = React.forwardRef(({
+const CardImageCap = forwardRef(({
   src,
   fallbackSrc,
   srcAlt,

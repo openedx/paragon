@@ -1,4 +1,6 @@
-import React from 'react';
+import type { ReactNode } from 'react';
+// React import needed to support JSX outside functions
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -34,11 +36,11 @@ interface Props extends BsPropsWithAs {
   borderColor?: ColorVariant;
   hasBody?: boolean;
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 type BaseCardType = ComponentWithAsProp<'div', Props>;
 
-const BaseCard : BaseCardType = React.forwardRef<HTMLDivElement, Props>(
+const BaseCard : BaseCardType = forwardRef<HTMLDivElement, Props>(
   (
     {
       prefix,

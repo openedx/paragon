@@ -1,4 +1,4 @@
-import React, { useContext, isValidElement } from 'react';
+import { useContext, isValidElement } from 'react';
 import PropTypes from 'prop-types';
 import CardCarouselTitle from './CardCarouselTitle';
 import CardCarouselSubtitle from './CardCarouselSubtitle';

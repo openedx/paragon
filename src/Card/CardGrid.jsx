@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { Children, useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
@@ -11,7 +11,7 @@ function CardGrid({
   hasEqualColumnHeights,
 }) {
   const cards = useMemo(
-    () => React.Children.map(children, (card) => (
+    () => Children.map(children, (card) => (
       <Col
         {...columnSizes}
         className={classNames(
