@@ -61,7 +61,6 @@ function Responsive({ pageContext }) {
 
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Responsive" />
       <Container size={settings.containerWidth} className="py-5">
         <h1>Responsive</h1>

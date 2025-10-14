@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import classNames from 'classnames';
 import isRequiredIf from 'react-proptype-conditional-require';
@@ -84,7 +83,11 @@ class Table extends React.Component {
         </Button>
       );
     } else if (column.hideHeader) {
-      heading = (<span className={classNames('sr-only')} data-testid="table-heading-sr">{column.label}</span>);
+      heading = (
+        <span className={classNames('sr-only')} data-testid="table-heading-sr">
+          {column.label}
+        </span>
+      );
     } else {
       heading = column.label;
     }
@@ -165,25 +168,49 @@ Table.propTypes = {
     PropTypes.element,
   ]),
   className: PropTypes.string,
-  /** specifies the order and contents of the table's columns and provides display strings for each column's heading. It is composed of an ordered array of objects. Each object contains the following keys:
+  /** Specifies the order and contents of the table's columns and provides
+   * display strings for each column's heading. It is composed of an ordered
+   * array of objects. Each object contains the following keys:
 
 1. `label` (string or element; required) contains the display string for each column's heading.
-2. `key` (string; required) maps that label to its corresponding datum for each row in `data`, to ensure table data are displayed in their appropriate columns.
-3. `columnSortable` (boolean; optional) specifies at the column-level whether the column is sortable. If `columnSortable` is `true`, a sort button will be rendered in the column table heading. It is only required if `tableSortable` is set to `true`.
-4. `onSort` (function; conditionally required) specifies what function is called when a sortable column is clicked. It is only required if the column's `columnSortable` is set to `true`.
-5. `hideHeader` (boolean; optional) specifies at the column-level whether the column label is visible. A column that is sortable cannot have its label be hidden.
-6. `width` (string; conditionally required) only if `hasFixedColumnWidths` is set to `true`, the `<td>` elements' `class` attributes will be set to this value. This allows restricting columns to specific widths. See [Bootstrap's grid documentation](https://getbootstrap.com/docs/4.0/layout/grid/) for `col` class names that can be used.
+2. `key` (string; required) maps that label to its corresponding datum
+for each row in `data`, to ensure table data are displayed in their appropriate columns.
+3. `columnSortable` (boolean; optional) specifies at the column-level whether
+the column is sortable. If `columnSortable` is `true`, a sort button
+will be rendered in the column table heading. It is only required if `tableSortable` is set to `true`.
+4. `onSort` (function; conditionally required) specifies what function
+is called when a sortable column is clicked. It is only required if
+the column's `columnSortable` is set to `true`.
+5. `hideHeader` (boolean; optional) specifies at the column-level whether
+the column label is visible. A column that is sortable cannot have its label be hidden.
+6. `width` (string; conditionally required) only if `hasFixedColumnWidths`
+is set to `true`, the `<td>` elements' `class` attributes will be set to
+this value. This allows restricting columns to specific widths.
+See [Bootstrap's grid documentation](https://getbootstrap.com/docs/4.0/layout/grid/)
+for `col` class names that can be used.
 
 The order of objects in `columns` specifies the order of the columns in the table. */
   data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  /** specifies the order and contents of the table's columns and provides display strings for each column's heading. It is composed of an ordered array of objects. Each object contains the following keys:
+  /** specifies the order and contents of the table's columns and provides
+   * display strings for each column's heading. It is composed of an ordered
+   * array of objects. Each object contains the following keys:
 
 1. `label` (string or element; required) contains the display string for each column's heading.
-2. `key` (string; required) maps that label to its corresponding datum for each row in `data`, to ensure table data are displayed in their appropriate columns.
-3. `columnSortable` (boolean; optional) specifies at the column-level whether the column is sortable. If `columnSortable` is `true`, a sort button will be rendered in the column table heading. It is only required if `tableSortable` is set to `true`.
-4. `onSort` (function; conditionally required) specifies what function is called when a sortable column is clicked. It is only required if the column's `columnSortable` is set to `true`.
-5. `hideHeader` (boolean; optional) specifies at the column-level whether the column label is visible. A column that is sortable cannot have its label be hidden.
-6. `width` (string; conditionally required) only if `hasFixedColumnWidths` is set to `true`, the `<td>` elements' `class` attributes will be set to this value. This allows restricting columns to specific widths. See [Bootstrap's grid documentation](https://getbootstrap.com/docs/4.0/layout/grid/) for `col` class names that can be used.
+2. `key` (string; required) maps that label to its corresponding datum
+for each row in `data`, to ensure table data are displayed in their appropriate columns.
+3. `columnSortable` (boolean; optional) specifies at the column-level whether
+the column is sortable. If `columnSortable` is `true`, a sort button will be
+rendered in the column table heading. It is only required if `tableSortable` is set to `true`.
+4. `onSort` (function; conditionally required) specifies what function is
+called when a sortable column is clicked. It is only required if the column's
+`columnSortable` is set to `true`.
+5. `hideHeader` (boolean; optional) specifies at the column-level whether
+the column label is visible. A column that is sortable cannot have its label be hidden.
+6. `width` (string; conditionally required) only if `hasFixedColumnWidths`
+is set to `true`, the `<td>` elements' `class` attributes will be set to this value.
+This allows restricting columns to specific widths.
+See [Bootstrap's grid documentation](https://getbootstrap.com/docs/4.0/layout/grid/)
+for `col` class names that can be used.
 
 The order of objects in `columns` specifies the order of the columns in the table. */
   columns: PropTypes.arrayOf(PropTypes.shape({
@@ -197,21 +224,26 @@ The order of objects in `columns` specifies the order of the columns in the tabl
     hideHeader: PropTypes.bool,
     width: isRequiredIf(PropTypes.string, props => props.hasFixedColumnWidths),
   })).isRequired,
-  /** Specifies Bootstrap class names to apply to the table heading. Options are detailed in [Bootstrap's docs](https://getbootstrap.com/docs/4.0/content/tables/#table-head-options).
+  /** Specifies Bootstrap class names to apply to the table heading. Options are detailed in
+   * [Bootstrap's docs](https://getbootstrap.com/docs/4.0/content/tables/#table-head-options).
  */
   headingClassName: PropTypes.arrayOf(PropTypes.string),
-  /** Specifies whether the table is sortable. This setting supercedes column-level sortability, so if it is `false`, no sortable components will be rendered. */
+  /** Specifies whether the table is sortable. This setting supercedes
+   * column-level sortability, so if it is `false`, no sortable components will be rendered. */
   tableSortable: PropTypes.bool,
-  /** Specifies whether the table's columns have fixed widths. Every element in `columns` must define a `width` if this is `true`.
+  /** Specifies whether the table's columns have fixed widths.
+   * Every element in `columns` must define a `width` if this is `true`.
  */
   hasFixedColumnWidths: PropTypes.bool,
-  /* eslint-disable react/require-default-props */
-  /** Specifies the key of the column that is sorted by default. It is only required if `tableSortable` is set to `true`. */
+  /** Specifies the key of the column that is sorted by default.
+   * It is only required if `tableSortable` is set to `true`. */
   defaultSortedColumn: isRequiredIf(PropTypes.string, props => props.tableSortable),
-  /* eslint-disable react/require-default-props */
-  /** Specifies the direction the `defaultSortedColumn` is sorted in by default; it will typically be either 'asc' or 'desc'. It is only required if `tableSortable` is set to `true`. */
+  /** Specifies the direction the `defaultSortedColumn` is sorted in by default;
+   * it will typically be either 'asc' or 'desc'. It is only required if
+   * `tableSortable` is set to `true`. */
   defaultSortDirection: isRequiredIf(PropTypes.string, props => props.tableSortable),
-  /** Specifies the screen reader only text that accompanies the sort buttons for sortable columns. It takes the form of an object containing the following keys:
+  /** Specifies the screen reader only text that accompanies the sort buttons
+   * for sortable columns. It takes the form of an object containing the following keys:
 
 1. `asc`: (string) specifies the screen reader only text for sort buttons in the ascending state.
 2. `desc`: (string) specifies the screen reader only text for sort buttons in the descending state.
@@ -236,7 +268,8 @@ Default:
     }),
     props => props.tableSortable,
   ),
-  /** Specifies the key for the column that should act as a row header. Rather than rendering as `<td>` elements,
+  /** Specifies the key for the column that should act as a row header.
+   * Rather than rendering as `<td>` elements,
 cells in this column will render as `<th scope="row">`  */
   rowHeaderColumnKey: PropTypes.string,
 };
@@ -252,6 +285,9 @@ Table.defaultProps = {
     desc: 'sort descending',
     defaultText: 'click to sort',
   },
+  defaultSortedColumn: undefined,
+  defaultSortDirection: undefined,
+  rowHeaderColumnKey: undefined,
 };
 
 export default withDeprecatedProps(Table, 'TableDeprecated', {

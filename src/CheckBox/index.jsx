@@ -15,7 +15,6 @@ class Check extends React.Component {
     };
   }
 
-  /* eslint-disable react/no-did-update-set-state */
   componentDidUpdate(prevProps) {
     if (prevProps.checked !== this.props.checked) {
       this.setState({
@@ -50,8 +49,9 @@ class Check extends React.Component {
 }
 
 Check.propTypes = {
-  // eslint-disable-next-line max-len
-  /** (`Boolean`): `true` if the state should be checked, `false` otherwise. This prop can be used to manage the Checkbox more directly, overriding the default Checkbox checked state. */
+  /** (`Boolean`): `true` if the state should be checked, `false` otherwise.
+   * This prop can be used to manage the Checkbox more directly,
+   * overriding the default Checkbox checked state. */
   checked: PropTypes.bool,
   /** (`Boolean`): `true` if the checkbox should be disabled, `false` otherwise */
   onChange: PropTypes.func,

@@ -43,7 +43,6 @@ class Modal extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     const { open } = this.props;
     if (open !== prevProps.open || open !== prevState.open) {
-      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ open });
     }
   }

@@ -10,15 +10,14 @@ import Button from '../Button';
 import IconButton from '../IconButton';
 
 const Dropdown = React.forwardRef(
-  // eslint-disable-next-line prefer-arrow-callback
-  function Dropdown({
+  ({
     show,
     autoClose,
     onToggle,
     variant,
     className,
     ...rest
-  }, ref) {
+  }, ref) => {
     const [internalShow, setInternalShow] = React.useState(show);
     const isClosingPermitted = (source) => {
       // autoClose=false only permits close on button click
@@ -90,12 +89,11 @@ Dropdown.defaultProps = {
 };
 
 const DropdownToggle = React.forwardRef(
-  // eslint-disable-next-line prefer-arrow-callback
-  function DropdownToggle({
+  ({
     as,
     bsPrefix,
     ...otherProps
-  }, ref) {
+  }, ref) => {
     // hide arrow from the toggle if it is rendered as IconButton
     // because it hinders the positioning of IconButton
     const prefix = as === IconButton ? 'pgn__dropdown-toggle-iconbutton' : bsPrefix;
@@ -118,16 +116,13 @@ DropdownToggle.defaultProps = {
 };
 
 Dropdown.Item = React.forwardRef(
-  // eslint-disable-next-line prefer-arrow-callback
-  function DropdownItem({ className, ...otherProps }, ref) {
-    return (
-      <BaseDropdownItem
-        className={classNames(className, 'pgn__dropdown-item')}
-        ref={ref}
-        {...otherProps}
-      />
-    );
-  },
+  ({ className, ...otherProps }, ref) => (
+    <BaseDropdownItem
+      className={classNames(className, 'pgn__dropdown-item')}
+      ref={ref}
+      {...otherProps}
+    />
+  ),
 );
 
 Dropdown.Item.propTypes = {

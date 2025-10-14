@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -23,7 +22,10 @@ function Text(props) {
 
 Text.propTypes = {
   className: PropTypes.string,
-  /** specifies all of the properties that are necessary from the included `asInput` component.  Please see details for input requirements within that component.
+  /**
+   * Specifies all of the properties that are necessary
+   * from the included `asInput` component.  Please see details for
+   * input requirements within that component.
   */
   inputRef: PropTypes.oneOfType([
     PropTypes.func,

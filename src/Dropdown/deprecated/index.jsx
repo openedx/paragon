@@ -12,7 +12,6 @@ import withDeprecatedProps, { DeprTypes } from '../../withDeprecatedProps';
 const { Provider, Consumer } = React.createContext();
 
 class Dropdown extends React.Component {
-  // eslint-disable-next-line react/sort-comp
   static idCounter = 0; // For creating unique ids
 
   constructor(props) {

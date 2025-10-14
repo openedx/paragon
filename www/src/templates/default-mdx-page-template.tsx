@@ -43,7 +43,6 @@ export default function PageTemplate({ children, pageContext }: IPageTemplateTyp
 
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title={pageContext?.frontmatter?.title} />
       <Container size={settings.containerWidth} className="py-5">
         <MDXProvider components={shortcodes}>{children}</MDXProvider>

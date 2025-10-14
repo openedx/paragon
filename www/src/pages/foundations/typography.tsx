@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Container } from '~paragon-react';
@@ -48,7 +47,6 @@ export default function TypographyPage({ pageContext }) {
 
   return (
     <Layout isAutoToc githubEditPath={pageContext.githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Typography" />
       <Container size={settings.containerWidth} className="py-5">
         <h1>Typography</h1>
@@ -196,7 +194,7 @@ export default function TypographyPage({ pageContext }) {
             </tr>
             <tr>
               <td colSpan={2}>
-                <a href="#">Standalone Link</a>
+                <a href="#links">Standalone Link</a>
               </td>
               <td>
                 <small>
@@ -209,7 +207,7 @@ export default function TypographyPage({ pageContext }) {
               <td colSpan={2}>
                 <p>
                   An{' '}
-                  <a className="inline-link" href="#">
+                  <a className="inline-link" href="#links">
                     inline link
                   </a>{' '}
                   in a sentence.
@@ -224,7 +222,7 @@ export default function TypographyPage({ pageContext }) {
             </tr>
             <tr>
               <td colSpan={2}>
-                <a className="muted-link" href="#">
+                <a className="muted-link" href="#links">
                   Muted, Standalone Link
                 </a>
               </td>
@@ -238,7 +236,7 @@ export default function TypographyPage({ pageContext }) {
               <td colSpan={2}>
                 <p>
                   An{' '}
-                  <a className="muted-link inline-link" href="#">
+                  <a className="muted-link inline-link" href="#links">
                     muted, inline link
                   </a>{' '}
                   in a sentence.

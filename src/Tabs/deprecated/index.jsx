@@ -1,7 +1,3 @@
-// TODO: @jaebradley fix these eslint errors
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable max-len */
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -42,7 +38,6 @@ class Tabs extends React.Component {
 
       return (
         <li key={labelId}>
-          {/* eslint-disable-next-line react/button-has-type */}
           <button
             role="tab"
             aria-selected={selected}
@@ -52,6 +47,7 @@ class Tabs extends React.Component {
             className={classNames('nav-link nav-item', {
               active: selected,
             })}
+            type="button"
           >
             {label}
           </button>
@@ -107,7 +103,11 @@ class Tabs extends React.Component {
 }
 // TODO: custom validator that ensures labels and panels are the same length
 Tabs.propTypes = {
-  /** specifies the list of elements that will be displayed within each of the tabbed views.  It is the content relevant to each label. Children should not be passed as Props, but should instead be nested between the opening and closing `<Tabs> </Tabs>` tags. */
+  /**
+   * Specifies the list of elements that will be displayed within each
+   * of the tabbed views.  It is the content relevant to each label.
+   * Children should not be passed as Props, but should instead be nested
+   * between the opening and closing `<Tabs> </Tabs>` tags. */
   labels: PropTypes.arrayOf(PropTypes.node).isRequired,
   /** specifies the list of headings that will appear on all of the tabs that will be created.
  */

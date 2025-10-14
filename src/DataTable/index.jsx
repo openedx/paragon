@@ -323,7 +323,7 @@ DataTable.propTypes = {
   isPaginated: PropTypes.bool,
   /** Indicates that pagination will be done manually. A fetchData function must be provided */
   manualPagination: PropTypes.bool,
-  // eslint-disable-next-line react/require-default-props
+  /** Number of pages in the table. Required when manualPagination is true */
   pageCount: requiredWhen(PropTypes.number, 'manualPagination'),
   /** Table rows can be filtered, using a default filter in the default column values, or in the column definition */
   isFilterable: PropTypes.bool,

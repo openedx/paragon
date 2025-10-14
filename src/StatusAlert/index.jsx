@@ -25,7 +25,6 @@ class StatusAlert extends React.Component {
     }
   }
 
-  /* eslint-disable react/no-did-update-set-state */
   componentDidUpdate(prevProps, prevState) {
     if (this.state.open && !prevState.open && this.xButton) {
       this.xButton.focus();
@@ -116,7 +115,6 @@ StatusAlert.propTypes = {
   dialog: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   /** specifies if the status alert will include the dismissible X button to close the alert. It defaults to true. */
   dismissible: PropTypes.bool,
-  /* eslint-disable react/require-default-props */
   closeButtonAriaLabel: PropTypes.string,
   /** is a function that is called on close. It can be used to perform actions upon closing of the status alert,
    * such as restoring focus to the previous logical focusable element.  It is only required if `dismissible`
@@ -132,6 +130,7 @@ StatusAlert.defaultProps = {
   closeButtonAriaLabel: 'Close',
   dismissible: true,
   open: false,
+  onClose: () => {},
 };
 
 export default withDeprecatedProps(StatusAlert, 'StatusAlert', {
