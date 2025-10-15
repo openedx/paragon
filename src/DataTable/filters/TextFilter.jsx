@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+// React import needed to support build-docs, if removed the build-docs will break
+import React, { isValidElement, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Form from '../../Form';
 import { newId } from '../../utils';
@@ -20,7 +21,7 @@ function TextFilter({
 }) {
   const ariaLabel = useRef(newId(`text-filter-label-${getHeaderProps().key}-`));
   const formattedHeader = formatHeaderForLabel(Header);
-  const inputText = React.isValidElement(formattedHeader) ? formattedHeader : `Search ${formattedHeader}`;
+  const inputText = isValidElement(formattedHeader) ? formattedHeader : `Search ${formattedHeader}`;
   return (
     <Form.Group controlId={ariaLabel.current}>
       <Form.Label className="sr-only">{inputText}</Form.Label>

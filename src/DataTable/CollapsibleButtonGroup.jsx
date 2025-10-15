@@ -1,4 +1,6 @@
-import React, { useContext, useMemo, useState } from 'react';
+import {
+  cloneElement, useContext, useMemo, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 
 import { MoreVert } from '../../icons';
@@ -48,7 +50,7 @@ function CollapsibleButtonGroup({
     return null;
   }
 
-  const cloneAction = (action, index) => React.cloneElement(
+  const cloneAction = (action, index) => cloneElement(
     action.component,
     {
       key: `${action}${index}`,

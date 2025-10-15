@@ -1,3 +1,4 @@
+// React import needed to support build-docs, if removed the build-docs will break
 import React, { useContext, useMemo } from 'react';
 import { useIntl } from 'react-intl';
 import DataTableContext from './DataTableContext';
