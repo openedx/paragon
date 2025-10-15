@@ -55,9 +55,9 @@ describe('<Sheet />', () => {
       expect(container2.firstChild).not.toBeNull();
     });
 
-    it('renders with custom sheetClassName', () => {
+    it('renders with custom className', () => {
       const customClassName = 'custom-class';
-      const { container } = render(<Sheet sheetClassName={customClassName} />);
+      const { container } = render(<Sheet className={customClassName} />);
       const sheetElement = container.querySelector('.pgn__sheet-component');
 
       expect(sheetElement).toBeInTheDocument();
@@ -65,9 +65,9 @@ describe('<Sheet />', () => {
       expect(sheetElement).toHaveClass(customClassName);
     });
 
-    it('handles multiple custom sheetClassName', () => {
+    it('handles multiple custom className', () => {
       const customClasses = 'class-one class-two';
-      const { container } = render(<Sheet sheetClassName={customClasses} />);
+      const { container } = render(<Sheet className={customClasses} />);
       const sheetElement = container.querySelector('.pgn__sheet-component');
 
       expect(sheetElement).toHaveClass('pgn__sheet-component');
@@ -77,7 +77,7 @@ describe('<Sheet />', () => {
 
     it('renders with custom className on SheetContainer', () => {
       const customClassName = 'custom-container-class';
-      const { getByTestId } = render(<Sheet className={customClassName} />);
+      const { getByTestId } = render(<Sheet containerClassName={customClassName} />);
       const sheetContainer = getByTestId('sheet-container');
 
       expect(sheetContainer).toBeInTheDocument();
@@ -87,7 +87,7 @@ describe('<Sheet />', () => {
 
     it('handles multiple custom className values on SheetContainer', () => {
       const customClasses = 'container-one container-two';
-      const { getByTestId } = render(<Sheet className={customClasses} />);
+      const { getByTestId } = render(<Sheet containerClassName={customClasses} />);
       const sheetContainer = getByTestId('sheet-container');
 
       expect(sheetContainer).toBeInTheDocument();
@@ -96,11 +96,11 @@ describe('<Sheet />', () => {
       expect(sheetContainer).toHaveClass('container-two');
     });
 
-    it('handles className and sheetClassName simultaneously', () => {
+    it('handles className and containerClassName simultaneously', () => {
       const containerClass = 'container-class';
       const sheetClass = 'sheet-class';
       const { getByTestId, container } = render(
-        <Sheet className={containerClass} sheetClassName={sheetClass} />,
+        <Sheet containerClassName={containerClass} className={sheetClass} />,
       );
       const sheetContainer = getByTestId('sheet-container');
       const sheetElement = container.querySelector('.pgn__sheet-component');
