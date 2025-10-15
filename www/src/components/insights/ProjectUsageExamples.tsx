@@ -22,7 +22,6 @@ function ProjectUsageExamples({ row }: IProjectUsageExamples) {
 
   const orderedComponentUsages: { [key: string]: Array<IProjectUsages> } = Object.keys(usages)
     .sort().reduce((obj: { [index: string]: any }, key) => {
-    // eslint-disable-next-line no-param-reassign
       obj[key] = usages[key];
       return obj;
     }, {});

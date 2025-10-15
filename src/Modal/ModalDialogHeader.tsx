@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -35,6 +34,11 @@ ModalDialogHeader.propTypes = {
   children: PropTypes.node.isRequired,
   /** Specifies class name to append to the base element */
   className: PropTypes.string,
+};
+
+ModalDialogHeader.defaultProps = {
+  as: 'div',
+  className: '',
 };
 
 export default ModalDialogHeader;

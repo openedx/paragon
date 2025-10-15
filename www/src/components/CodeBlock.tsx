@@ -187,7 +187,6 @@ function CodeBlock({
     );
   }
 
-  /* eslint-disable react/no-array-index-key */
   return (
     <Highlight {...defaultProps} code={children} language={language}>
       {({
@@ -199,9 +198,9 @@ function CodeBlock({
       }) => (
         <pre className={preClassName} style={{ ...style, padding: '1rem', overflowY: 'auto' }}>
           {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
+            <div key={uuidv4()} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
+                <span key={uuidv4()} {...getTokenProps({ token, key })} />
               ))}
             </div>
           ))}

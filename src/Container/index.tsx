@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import React, {
   ForwardedRef, ReactNode, ElementType, forwardRef,
 } from 'react';

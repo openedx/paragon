@@ -1,5 +1,5 @@
 // @ts-ignore
-import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
+import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line import/no-relative-packages
 import getGithubProjectUrl from './getGithubProjectUrl';
 import { IDependentProjectsUsages, IDependentUsage, IUsage } from '../types/types';
 
