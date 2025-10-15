@@ -12,7 +12,6 @@ jest.mock('../../../OverflowScroll', () => ({
   OverflowScroll: jest.fn(),
 }));
 
-// eslint-disable-next-line react/prop-types
 OverflowScroll.mockImplementation(({ children }) => {
   const overflowRef = { current: document.createElement('div') };
   const contextValue = {

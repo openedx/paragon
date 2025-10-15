@@ -1,17 +1,15 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
 import ChipCarousel from '.';
+import Chip from '../Chip';
 
-const items = [
-  <div onClick={jest.fn()} data-testid="chip">Item 1</div>,
-  <div onClick={jest.fn()} data-testid="chip">Item 2</div>,
-  <div onClick={jest.fn()} data-testid="chip">Item 3</div>,
-  <div onClick={jest.fn()} data-testid="chip" />,
-];
+const items = Array.from({ length: 4 }, (_, i) => (
+  <Chip onClick={jest.fn()}>
+    {`Item ${i + 1}`}
+  </Chip>
+));
 
 const ariaLabel = 'Test aria label';
 function TestingChipCarousel(props) {
@@ -29,9 +27,9 @@ describe('<ChipCarousel />', () => {
     const carousel = screen.getByTestId('chip-carousel');
     expect(carousel).toBeTruthy();
 
-    const chipItems = screen.queryAllByTestId('chip');
-    expect(chipItems).toHaveLength(items.length - 1);
-    for (let i = 0; i < chipItems.length - 1; i++) {
+    const chipItems = screen.queryAllByRole('button');
+    expect(chipItems).toHaveLength(items.length);
+    for (let i = 0; i < chipItems.length; i++) {
       expect(chipItems[i].textContent).toBe(items[i].props.children);
     }
   });

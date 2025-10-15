@@ -25,7 +25,6 @@ export const placeInfoAtZero = (
       horizontalMargin += annotationOnly ? 0.0 : elementParams.width;
     }
   }
-  // eslint-disable-next-line no-param-reassign
   ref.current.style[direction === 'rtl' ? 'marginRight' : 'marginLeft'] = `${-horizontalMargin}px`;
   return true;
 };

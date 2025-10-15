@@ -7,7 +7,6 @@ import ComponentsList from '../components/ComponentsList';
 function HomePage() {
   return (
     <Layout showMinimizedTitle hideFooterComponentMenu>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Home" />
       <div className="bg-dark text-white text-center py-5">
         <h1 className="display-3 text-white">Paragon Design System</h1>

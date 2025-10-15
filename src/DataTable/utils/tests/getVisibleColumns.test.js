@@ -1,5 +1,3 @@
-/* eslint-disable object-curly-newline */
-
 import getVisibleColumns, { selectColumn } from '../getVisibleColumns';
 
 describe('getVisibleColums', () => {

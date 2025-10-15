@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unused-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -84,7 +83,6 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
       };
     }
 
-    /* eslint-disable react/no-did-update-set-state */
     componentDidUpdate(prevProps) {
       const updatedState = {};
       if (this.props.value !== prevProps.value) {
@@ -135,7 +133,6 @@ const asInput = (WrappedComponent, inputType = undefined, labelFirst = true) => 
 
     getLabel() {
       return (
-        // eslint-disable-next-line jsx-a11y/label-has-for
         <label
           id={`label-${this.state.id}`}
           htmlFor={this.state.id}

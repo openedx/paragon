@@ -31,7 +31,7 @@ function CheckboxFilter({
         {filterChoices.map(({ name, number, value }) => (
           <Form.Checkbox
             key={`${headerBasedId}${name}`}
-            value={name}
+            value={value}
             checked={checkedBoxes.includes(value)}
             onChange={() => changeCheckbox(value)}
             aria-label={name}

@@ -14,7 +14,6 @@ const props = {
   headerClassName: 'align-me',
 };
 
-// eslint-disable-next-line react/prop-types
 function FakeTable({ ...rest }) {
   return <table><thead><tr><TableHeaderCell {...rest} /></tr></thead></table>;
 }
