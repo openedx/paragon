@@ -1,4 +1,3 @@
-import React from 'react';
 import BaseNavbar from 'react-bootstrap/Navbar';
 import BaseNavbarBrand from 'react-bootstrap/NavbarBrand';
 import BaseNavbarToggle from 'react-bootstrap/NavbarToggle';

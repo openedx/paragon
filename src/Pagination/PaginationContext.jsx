@@ -1,8 +1,6 @@
+// React import needed to support build-docs, if removed the build-docs will break
 import React, {
-  createContext,
-  useEffect,
-  useRef,
-  useState,
+  createContext, useEffect, useRef, useState,
 } from 'react';
 import PropTypes from 'prop-types';
 import { PAGINATION_VARIANTS } from './constants';

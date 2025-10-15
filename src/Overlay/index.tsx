@@ -1,3 +1,4 @@
+// React import needed to support build-docs, if removed the build-docs will break
 import React from 'react';
 import BaseOverlay, { type OverlayProps, type Placement } from 'react-bootstrap/Overlay';
 import BaseOverlayTrigger, { type OverlayTriggerProps, type OverlayTriggerType } from 'react-bootstrap/OverlayTrigger';
