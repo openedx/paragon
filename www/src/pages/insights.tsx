@@ -17,7 +17,7 @@ import IconsUsage from '../components/insights/IconsUsage';
 import ComponentsUsage from '../components/insights/ComponentsUsage';
 
 // @ts-ignore
-import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line
+import dependentProjectsAnalysis from '../../../dependent-usage.json'; // eslint-disable-line import/no-relative-packages
 import { sendUserAnalyticsEvent, USAGE_INSIGHTS_EVENTS } from '../../segment-events';
 import { INSIGHTS_TABS, INSIGHTS_PAGES } from '../config';
 import componentsUsage from '../utils/componentsUsage';
@@ -70,7 +70,6 @@ export default function InsightsPage({ pageContext: { tab, githubEditPath } }: I
   };
   return (
     <Layout isAutoToc tab={tab} githubEditPath={githubEditPath}>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
       <SEO title="Usage Insights" />
       <Container size={settings.containerWidth} className="py-5">
         <header className="mb-5">

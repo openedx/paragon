@@ -6,7 +6,6 @@ export interface IComponentStatus {
   noLeftMargin?: string,
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export function ComponentStatus({ status, noLeftMargin }: IComponentStatus) {
   if (!status) { return null; }
   return (

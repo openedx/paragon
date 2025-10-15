@@ -38,7 +38,6 @@ describe('<SelectableBox />', () => {
     it('renders with radio input type if neither checkbox nor radio is passed', () => {
       // Mock the `console.error` is intentional because an invalid `type` prop
       // with `wrongType` specified for `ForwardRef` expects one of the ['radio','flag'] parameters.
-      // eslint-disable-next-line no-console
       const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
       render(<SelectableRadio type="wrongType" />);
       const selectableBox = screen.getByRole('button');

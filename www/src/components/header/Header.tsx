@@ -17,7 +17,6 @@ export interface IHeaderProps {
 }
 
 function Header({ siteTitle, showMinimizedTitle }: IHeaderProps) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isOpen, , close, toggle] = useToggle(false);
   const [target, setTarget] = useState<HTMLButtonElement | null>(null);
   const { openSettings } = useContext(SettingsContext);
