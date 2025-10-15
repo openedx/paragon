@@ -1,16 +1,11 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
 
-const DIRECTION_VARIANTS = [
-  'horizontal',
-  'vertical',
-];
-
 interface StackProps {
   /** Specifies the content of the `Stack`. */
   children: React.ReactNode;
   /** Specifies direction of the children blocks (column/row). */
-  direction?: typeof DIRECTION_VARIANTS[number];
+  direction?: 'horizontal' | 'vertical';
   /**
    * Specifies inner space between children blocks.
    *

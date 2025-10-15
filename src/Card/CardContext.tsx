@@ -1,16 +1,23 @@
 import React, { createContext, ReactNode } from 'react';
 
-const CardContext = createContext({});
-
-interface CardContextProviderProps {
+interface CardContextData {
   /** Specifies which orientation to use. */
-  orientation?: 'horizontal' | 'vertical';
+  orientation: 'horizontal' | 'vertical';
   /** Specifies loading state. */
-  isLoading?: boolean;
+  isLoading: boolean;
+  /** Specifies `Card` style variant */
+  variant: 'light' | 'dark' | 'muted';
+}
+
+const CardContext = createContext<CardContextData>({
+  orientation: 'vertical',
+  isLoading: false,
+  variant: 'light',
+});
+
+interface CardContextProviderProps extends Partial<CardContextData> {
   /** Specifies content of the component. */
   children?: ReactNode;
-  /** Specifies `Card` style variant */
-  variant?: 'light' | 'dark' | 'muted';
 }
 
 function CardContextProvider({
