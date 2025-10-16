@@ -1,7 +1,5 @@
 /* eslint-disable react/require-default-props */
 import type { ComponentType, ReactElement, ForwardedRef } from 'react';
-
-// react import needed to support JSX outside functions
 import {
   useCallback,
   useEffect,
@@ -14,7 +12,6 @@ import {
   RefAttributes,
   cloneElement,
 } from 'react';
-
 import classNames from 'classnames';
 import {
   Alert as BaseAlert,

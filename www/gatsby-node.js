@@ -10,6 +10,15 @@ const onCreateWebpackConfig = require('./utils/onCreateWebpackConfig');
 const createCssUtilityClassNodes = require('./utils/createCssUtilityClassNodes');
 const onCreatePage = require('./utils/onCreatePage');
 
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPreset({
+    name: '@babel/preset-react',
+    options: {
+      runtime: 'automatic'
+    },
+  });
+};
+
 exports.onCreateWebpackConfig = ({ actions }) => onCreateWebpackConfig(actions);
 
 exports.onCreateNode = ({ node, actions, getNode }) => onCreateNode(node, actions, getNode);

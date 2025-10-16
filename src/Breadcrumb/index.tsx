@@ -57,12 +57,11 @@ function Breadcrumb({
                 {spacer || <Icon src={ChevronRight} id={`spacer-${i}`} />}
               </li>
               )}
-            </Fragment>
-          ))}
-          {!isMobile && activeLabel && <li className="list-inline-item active" key="active" aria-current="page">{activeLabel}</li>}
-        </ol>
-      </nav>
-    )
+          </Fragment>
+        ))}
+        {!isMobile && activeLabel && <li className="list-inline-item active" key="active" aria-current="page">{activeLabel}</li>}
+      </ol>
+    </nav>
   );
 }
 
