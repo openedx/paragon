@@ -1,10 +1,10 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 import ActionRow from '../ActionRow';
 import Button from '../Button';
 
-const CheckpointActionRow = React.forwardRef(({
+const CheckpointActionRow = forwardRef(({
   advanceButtonText,
   backButtonText,
   endButtonText,

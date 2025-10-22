@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-class SheetContainer extends React.Component {
+class SheetContainer extends Component {
   constructor(props) {
     super(props);
     this.sheetRootName = 'sheet-root';

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import PropTypes from 'prop-types';
 import { createPopper } from '@popperjs/core';
@@ -10,7 +10,7 @@ import CheckpointBody from './CheckpointBody';
 import CheckpointHeader from './CheckpointHeader';
 import messages from './messages';
 
-const Checkpoint = React.forwardRef(({
+const Checkpoint = forwardRef(({
   body,
   dismissAltText,
   index,

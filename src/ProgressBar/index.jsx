@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import { useRef, useCallback, useEffect } from 'react';
 import ProgressBarBase from 'react-bootstrap/ProgressBar';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -31,8 +31,8 @@ function ProgressBarAnnotated({
   thresholdHint,
   ...props
 }) {
-  const progressInfoRef = React.useRef();
-  const thresholdInfoRef = React.useRef();
+  const progressInfoRef = useRef();
+  const thresholdInfoRef = useRef();
   const thresholdPercent = (threshold || 0) - (now || 0);
   const isProgressHintAfter = now < HINT_SWAP_PERCENT;
   const isThresholdHintAfter = threshold < HINT_SWAP_PERCENT;
