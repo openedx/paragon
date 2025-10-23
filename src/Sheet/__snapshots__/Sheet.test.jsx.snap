@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Sheet /> snapshots blocking, left snapshot 1`] = `
-<sheet-container>
+<div
+  className="sheet-container"
+  data-testid="sheet-container"
+>
   <div
     className="pgn__sheet-skrim"
     role="presentation"
@@ -28,11 +31,14 @@ exports[`<Sheet /> snapshots blocking, left snapshot 1`] = `
       />
     </div>
   </focus-on>
-</sheet-container>
+</div>
 `;
 
 exports[`<Sheet /> snapshots dark, right snapshot 1`] = `
-<sheet-container>
+<div
+  className="sheet-container"
+  data-testid="sheet-container"
+>
   <div
     className="pgn__sheet-skrim hidden"
     role="presentation"
@@ -59,11 +65,14 @@ exports[`<Sheet /> snapshots dark, right snapshot 1`] = `
       />
     </div>
   </focus-on>
-</sheet-container>
+</div>
 `;
 
 exports[`<Sheet /> snapshots default args snapshot: bottom, show, light 1`] = `
-<sheet-container>
+<div
+  className="sheet-container"
+  data-testid="sheet-container"
+>
   <div
     className="pgn__sheet-skrim hidden"
     role="presentation"
@@ -96,5 +105,5 @@ exports[`<Sheet /> snapshots default args snapshot: bottom, show, light 1`] = `
       </div>
     </div>
   </focus-on>
-</sheet-container>
+</div>
 `;

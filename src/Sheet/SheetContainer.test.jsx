@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import SheetContainer from './SheetContainer';
 
 const childId1 = 'sheet-container-TEST-child1';
@@ -30,5 +30,38 @@ describe('<SheetContainer />', () => {
     expect(childEl1).toBeTruthy();
     const childEl2 = screen.getByText(childContent2);
     expect(childEl2).toBeTruthy();
+  });
+
+  it('applies custom className if provided', () => {
+    const customClass = 'custom-class';
+    render(<SheetContainer className={customClass}>{child1}</SheetContainer>);
+    const rootEl = screen.getByTestId('sheet-container');
+    expect(rootEl).toBeTruthy();
+    expect(rootEl.className).toContain('sheet-container');
+    expect(rootEl.className).toContain(customClass);
+  });
+
+  it('calls updateRootElement when className changes (componentDidUpdate)', () => {
+    const { rerender } = render(
+      <SheetContainer className="first-class">
+        <div>Content</div>
+      </SheetContainer>,
+    );
+
+    const sheetRoot = document.getElementById('sheet-root');
+    expect(sheetRoot).toHaveClass('sheet-container');
+    expect(sheetRoot).toHaveClass('first-class');
+
+    act(() => {
+      rerender(
+        <SheetContainer className="second-class">
+          <div>Content</div>
+        </SheetContainer>,
+      );
+    });
+
+    expect(sheetRoot).toHaveClass('sheet-container');
+    expect(sheetRoot).toHaveClass('second-class');
+    expect(sheetRoot).not.toHaveClass('first-class');
   });
 });
