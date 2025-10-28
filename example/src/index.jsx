@@ -19,7 +19,7 @@ subscribe(APP_READY, () => {
       <PageWrap>
         <MyComponent />
       </PageWrap>
-    </AppProvider>
+    </AppProvider>,
   );
 });
 
