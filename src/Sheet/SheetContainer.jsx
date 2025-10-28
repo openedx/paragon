@@ -1,23 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 class SheetContainer extends React.Component {
   constructor(props) {
     super(props);
     this.sheetRootName = 'sheet-root';
-    if (typeof document === 'undefined') {
-      this.rootElement = null;
-    } else if (document.getElementById(this.sheetRootName)) {
-      this.rootElement = document.getElementById(this.sheetRootName);
-    } else {
-      const rootElement = document.createElement('div');
-      rootElement.setAttribute('id', this.sheetRootName);
-      rootElement.setAttribute('class', 'sheet-container');
-      rootElement.setAttribute('data-testid', 'sheet-container');
-      this.rootElement = document.body.appendChild(rootElement);
+    this.updateRootElement();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.className !== this.props.className) {
+      this.updateRootElement();
     }
   }
+
+  updateRootElement = () => {
+    const { className } = this.props;
+
+    /* istanbul ignore next */
+    if (typeof document === 'undefined') {
+      this.rootElement = null;
+      return;
+    }
+
+    let rootElement = document.getElementById(this.sheetRootName);
+
+    if (!rootElement) {
+      rootElement = document.createElement('div');
+      rootElement.setAttribute('id', this.sheetRootName);
+      rootElement.setAttribute('data-testid', 'sheet-container');
+      document.body.appendChild(rootElement);
+    }
+
+    const classes = classNames('sheet-container', className);
+    rootElement.setAttribute('class', classes);
+
+    this.rootElement = rootElement;
+  };
 
   render() {
     if (this.rootElement) {
@@ -32,6 +53,12 @@ class SheetContainer extends React.Component {
 
 SheetContainer.propTypes = {
   children: PropTypes.node.isRequired,
+  /** Additional CSS classes to apply to the sheet container */
+  className: PropTypes.string,
+};
+
+SheetContainer.defaultProps = {
+  className: undefined,
 };
 
 export default SheetContainer;

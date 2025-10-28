@@ -52,6 +52,7 @@ function DataTable({
   filtersTitle,
   dataViewToggleOptions,
   disableElevation,
+  className,
   isLoading,
   children,
   onSelectedRowsChanged,
@@ -224,7 +225,7 @@ function DataTable({
 
   return (
     <DataTableContext.Provider value={enhancedInstance}>
-      <DataTableLayout filtersTitle={filtersTitle}>
+      <DataTableLayout filtersTitle={filtersTitle} className={className}>
         <div className={classNames('pgn__data-table-wrapper', {
           'hide-shadow': !!disableElevation,
         })}
@@ -275,6 +276,7 @@ DataTable.defaultProps = {
   },
   disableElevation: false,
   renderRowSubComponent: undefined,
+  className: undefined,
   isExpandable: false,
   isLoading: false,
   onSelectedRowsChanged: undefined,
@@ -321,7 +323,7 @@ DataTable.propTypes = {
   isPaginated: PropTypes.bool,
   /** Indicates that pagination will be done manually. A fetchData function must be provided */
   manualPagination: PropTypes.bool,
-  // eslint-disable-next-line react/require-default-props
+  /** Number of pages in the table. Required when manualPagination is true */
   pageCount: requiredWhen(PropTypes.number, 'manualPagination'),
   /** Table rows can be filtered, using a default filter in the default column values, or in the column definition */
   isFilterable: PropTypes.bool,
@@ -428,6 +430,8 @@ DataTable.propTypes = {
   children: PropTypes.node,
   /** If true filters will be shown on sidebar instead */
   showFiltersInSidebar: PropTypes.bool,
+  /** Class name for the data table layout */
+  className: PropTypes.string,
   /** Title of the filters section */
   filtersTitle: PropTypes.string,
   /** options for data view toggle */

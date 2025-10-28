@@ -8,19 +8,15 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [20, 24]
-    continue-on-error: ${{ matrix.node == 24 }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         fetch-depth: 0
     - name: Setup Nodejs
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
-        node-version: ${{ matrix.node }}
+        node-version-file: '.nvmrc'
     - name: Install dependencies
       run: npm ci
     - name: Check Types
@@ -44,6 +40,6 @@ jobs:
     - name: Build Docs
       run: make build-docs
     - name: Coverage
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v5
       with:
         token: ${{ secrets.CODECOV_TOKEN }}

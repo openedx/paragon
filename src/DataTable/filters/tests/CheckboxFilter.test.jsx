@@ -83,4 +83,35 @@ describe('<CheckboxFilter />', () => {
       expect(checkbox).not.toBeChecked();
     });
   });
+
+  it('uses value for filtering when name and value differ', async () => {
+    const testChoice = { name: 'Test', value: 'test' };
+    const propsWithCaseDifference = {
+      column: {
+        ...props.column,
+        filterChoices: [testChoice],
+        filterValue: [],
+      },
+    };
+
+    const { rerender } = render(<CheckboxFilter {...propsWithCaseDifference} />);
+
+    const checkbox = screen.getByLabelText(testChoice.name);
+
+    await userEvent.click(checkbox);
+
+    expect(setFilterMock).toHaveBeenCalledWith([testChoice.value]);
+
+    rerender(<CheckboxFilter column={{
+      ...propsWithCaseDifference.column,
+      filterValue: [testChoice.value],
+    }}
+    />);
+
+    expect(checkbox).toBeChecked();
+
+    await userEvent.click(checkbox);
+
+    expect(setFilterMock).toHaveBeenCalledWith([]);
+  });
 });
