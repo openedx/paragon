@@ -1,0 +1,58 @@
+---
+title: 'useMediaQuery'
+type: 'hook'
+categories:
+- Hooks
+components:
+- useMediaQuery
+status: 'New'
+designStatus: 'Done'
+devStatus: 'Done'
+notes: ''
+---
+
+Passed through from [`react-responsive`](https://github.com/yocontra/react-responsive)
+
+## Sample Usage
+
+<p>Change the screen size to see the effect.</p>
+
+{/* interface BreakpointRange {
+  minWidth?: number;
+  maxWidth?: number;
+}
+
+interface Breakpoints {
+  extraSmall: BreakpointRange;
+  small: BreakpointRange;
+  medium: BreakpointRange;
+  large: BreakpointRange;
+  extraLarge: BreakpointRange;
+  extraExtraLarge: BreakpointRange;
+} */}
+
+```jsx live
+() => {
+  const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.extraSmall.maxWidth });
+  const isSmall = useMediaQuery({ minWidth: breakpoints.small.minWidth, maxWidth: breakpoints.small.maxWidth });
+  const isMedium = useMediaQuery({ minWidth: breakpoints.medium.minWidth, maxWidth: breakpoints.medium.maxWidth });
+  const isLarge = useMediaQuery({ minWidth: breakpoints.large.minWidth, maxWidth: breakpoints.large.maxWidth });
+  const isExtraLarge = useMediaQuery({ minWidth: breakpoints.extraLarge.minWidth, maxWidth: breakpoints.extraLarge.maxWidth });
+  const isExtraExtraLarge = useMediaQuery({ minWidth: breakpoints.extraExtraLarge.minWidth });
+
+  const MatchDisplay = ({queryResult, children}) => (
+      <Badge variant={queryResult ? 'success' : 'danger'}>{children}</Badge>
+  )
+
+  return (
+    <p>
+      <MatchDisplay queryResult={isExtraSmall}>Extra Small</MatchDisplay><br/>
+      <MatchDisplay queryResult={isSmall}>Small</MatchDisplay><br/>
+      <MatchDisplay queryResult={isMedium}>Medium</MatchDisplay><br/>
+      <MatchDisplay queryResult={isLarge}>Large</MatchDisplay><br/>
+      <MatchDisplay queryResult={isExtraLarge}>Extra Large</MatchDisplay><br/>
+      <MatchDisplay queryResult={isExtraExtraLarge}>Extra Extra Large</MatchDisplay><br/>
+    </p>
+  );
+}
+```
