@@ -1,4 +1,4 @@
-import React, { forwardRef, ForwardedRef } from 'react';
+import React, { forwardRef, ForwardedRef, HTMLProps } from 'react';
 import classNames from 'classnames';
 
 interface StackProps {
@@ -26,7 +26,7 @@ const Stack = forwardRef(({
   children,
   className,
   ...rest
-}: StackProps, ref: ForwardedRef<HTMLDivElement>) => (
+}: StackProps & HTMLProps<HTMLDivElement>, ref: ForwardedRef<HTMLDivElement>) => (
   <div
     ref={ref}
     className={classNames(

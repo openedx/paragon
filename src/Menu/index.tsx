@@ -1,8 +1,13 @@
-import React, { ElementType, ReactNode, createElement } from 'react';
+import React, {
+  createElement,
+  type ElementType,
+  type ReactNode,
+  type ComponentPropsWithoutRef,
+} from 'react';
 import classNames from 'classnames';
 import useArrowKeyNavigation from '../hooks/useArrowKeyNavigationHook';
 
-interface MenuProps {
+interface MenuProps<As extends ElementType> {
   /** Specifies class name to append to the base element */
   className?: string;
   /**
@@ -11,16 +16,17 @@ interface MenuProps {
    */
   arrowKeyNavigationSelector?: string;
   /** Specifies the base element */
-  as?: ElementType;
+  as?: As;
   /** Specifies the content of the menu */
   children?: ReactNode;
 }
-function Menu({
-  as = 'div',
+
+function Menu<As extends ElementType = 'div'>({
+  as = 'div' as As,
   arrowKeyNavigationSelector = 'a:not(:disabled),button:not(:disabled),input:not(:disabled)',
   children,
   ...props
-}: MenuProps) {
+}: MenuProps<As> & ComponentPropsWithoutRef<As>) {
   const parentRef = useArrowKeyNavigation({ selectors: arrowKeyNavigationSelector });
   const className = classNames(props.className, 'pgn__menu');
 

@@ -1,10 +1,15 @@
 import React, {
-  ReactElement, ReactNode, ElementType, createElement, ComponentType,
+  type ReactElement,
+  type ReactNode,
+  type ElementType,
+  createElement,
+  type ComponentType,
+  type ComponentPropsWithoutRef,
 } from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
 
-interface MenuItemProps {
+interface MenuItemProps<As extends ElementType> {
   /** Specifies that this `MenuItem` is selected inside the `SelectMenu` */
   defaultSelected?: boolean;
   /** Specifies class name to append to the base element */
@@ -12,21 +17,22 @@ interface MenuItemProps {
   /** Specifies the content of the `MenuItem` */
   children: ReactNode;
   /** Specifies the base element */
-  as?: ElementType;
+  as?: As;
   /** Specifies the jsx before the content of the `MenuItem` */
   iconBefore?: ReactElement | ElementType;
   /** Specifies the jsx after the content of the `MenuItem` */
   iconAfter?: ReactElement | ElementType;
 }
-function MenuItem({
-  as = 'button',
+
+function MenuItem<As extends ElementType = 'button'>({
+  as = 'button' as As,
   children,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   defaultSelected = false,
   iconAfter,
   iconBefore,
   ...props
-}: MenuItemProps) {
+}: MenuItemProps<As> & ComponentPropsWithoutRef<As>) {
   const className = classNames(props.className, 'pgn__menu-item');
 
   return createElement(

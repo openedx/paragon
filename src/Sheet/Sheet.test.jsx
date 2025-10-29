@@ -6,11 +6,12 @@ import Sheet, { POSITIONS, VARIANTS } from '.';
 
 /* eslint-disable react/prop-types */
 jest.mock('./SheetContainer', () => function SheetContainerMock(props) {
-  const { children, ...otherProps } = props;
+  const { children, className, ...otherProps } = props;
+  const allClasses = ['sheet-container', className].filter(Boolean).join(' ');
   return (
-    <sheet-container {...otherProps}>
+    <div data-testid="sheet-container" className={allClasses} {...otherProps}>
       {children}
-    </sheet-container>
+    </div>
   );
 });
 
@@ -52,6 +53,65 @@ describe('<Sheet />', () => {
       expect(container.firstChild).toBeNull();
       const { container: container2 } = render(<Sheet />);
       expect(container2.firstChild).not.toBeNull();
+    });
+
+    it('renders with custom className', () => {
+      const customClassName = 'custom-class';
+      const { container } = render(<Sheet className={customClassName} />);
+      const sheetElement = container.querySelector('.pgn__sheet-component');
+
+      expect(sheetElement).toBeInTheDocument();
+      expect(sheetElement).toHaveClass('pgn__sheet-component');
+      expect(sheetElement).toHaveClass(customClassName);
+    });
+
+    it('handles multiple custom className', () => {
+      const customClasses = 'class-one class-two';
+      const { container } = render(<Sheet className={customClasses} />);
+      const sheetElement = container.querySelector('.pgn__sheet-component');
+
+      expect(sheetElement).toHaveClass('pgn__sheet-component');
+      expect(sheetElement).toHaveClass('class-one');
+      expect(sheetElement).toHaveClass('class-two');
+    });
+
+    it('renders with custom className on SheetContainer', () => {
+      const customClassName = 'custom-container-class';
+      const { getByTestId } = render(<Sheet containerClassName={customClassName} />);
+      const sheetContainer = getByTestId('sheet-container');
+
+      expect(sheetContainer).toBeInTheDocument();
+      expect(sheetContainer).toHaveClass('sheet-container');
+      expect(sheetContainer).toHaveClass(customClassName);
+    });
+
+    it('handles multiple custom className values on SheetContainer', () => {
+      const customClasses = 'container-one container-two';
+      const { getByTestId } = render(<Sheet containerClassName={customClasses} />);
+      const sheetContainer = getByTestId('sheet-container');
+
+      expect(sheetContainer).toBeInTheDocument();
+      expect(sheetContainer).toHaveClass('sheet-container');
+      expect(sheetContainer).toHaveClass('container-one');
+      expect(sheetContainer).toHaveClass('container-two');
+    });
+
+    it('handles className and containerClassName simultaneously', () => {
+      const containerClass = 'container-class';
+      const sheetClass = 'sheet-class';
+      const { getByTestId, container } = render(
+        <Sheet containerClassName={containerClass} className={sheetClass} />,
+      );
+      const sheetContainer = getByTestId('sheet-container');
+      const sheetElement = container.querySelector('.pgn__sheet-component');
+
+      expect(sheetContainer).toBeInTheDocument();
+      expect(sheetContainer).toHaveClass('sheet-container');
+      expect(sheetContainer).toHaveClass(containerClass);
+
+      expect(sheetElement).toBeInTheDocument();
+      expect(sheetElement).toHaveClass('pgn__sheet-component');
+      expect(sheetElement).toHaveClass(sheetClass);
     });
   });
 });
