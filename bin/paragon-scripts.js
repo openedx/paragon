@@ -267,6 +267,10 @@ const COMMANDS = {
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(chalk.red.bold('An error occurred:', error));
+    if (error instanceof Error) {
+      // eslint-disable-next-line no-console
+      console.error(chalk.red(error.stack));
+    }
     sendTrackInfo('openedx.paragon.cli-command.used', { command, status: 'error', errorMsg: error.message });
     process.exit(1);
   }
