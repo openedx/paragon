@@ -8,7 +8,6 @@
     "test": {
       "presets": [
         ["@babel/preset-env", {}],
-        ["@babel/preset-react", { "useSpread": true, "runtime": "automatic" } ],
         "@babel/preset-typescript"
       ]
     }
