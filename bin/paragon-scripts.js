@@ -94,7 +94,8 @@ const COMMANDS = {
       {
         name: '-t, --themes',
         description: `Specify themes to include in the token build.
-          Can be provided as a comma-separated list (e.g., "light,dark") or multiple arguments (e.g., "-t light -t dark").`,
+          Can be provided as a comma-separated list (e.g., "light,dark") or multiple arguments (e.g., "-t light -t dark").
+          Cannot be used with --all-themes`,
         defaultValue: 'light',
       },
       {
@@ -114,7 +115,7 @@ const COMMANDS = {
       },
       {
         name: '--all-themes',
-        description: 'Build tokens for all themes in the source directory.',
+        description: 'Build tokens for all themes in the source directory. Cannot be used with --themes.',
         defaultValue: false,
       },
     ],
