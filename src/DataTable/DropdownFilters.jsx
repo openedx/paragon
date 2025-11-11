@@ -23,7 +23,7 @@ function DropdownFilters() {
       return [[], availableFilters];
     }
 
-    const numberOfBreakoutFilters = numBreakoutFilters || 1;
+    const numberOfBreakoutFilters = numBreakoutFilters ?? 1;
     const boFilters = availableFilters.slice(0, numberOfBreakoutFilters);
     const dropdownFilters = availableFilters.slice(numberOfBreakoutFilters);
 

@@ -416,8 +416,8 @@ DataTable.propTypes = {
     /** A custom component representing an action */
     PropTypes.element,
   ]),
-  /** Number between one and four filters that can be shown on the top row. */
-  numBreakoutFilters: PropTypes.oneOf([1, 2, 3, 4]),
+  /** Number between zero and four filters that can be shown on the top row. */
+  numBreakoutFilters: PropTypes.oneOf([0, 1, 2, 3, 4]),
   /** Component to be displayed when the table is empty */
   EmptyTableComponent: PropTypes.elementType,
   /** Component to be displayed for row status, ie, 10 of 20 rows. Displayed by default in the TableControlBar */

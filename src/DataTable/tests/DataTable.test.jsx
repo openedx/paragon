@@ -162,6 +162,44 @@ describe('<DataTable />', () => {
     expect(screen.getByText('More')).toBeInTheDocument();
   });
 
+  it('places all filters in the dropdown if numBreakoutFilters is 0', async () => {
+    render(
+      <DataTableWrapper
+        {...props}
+        isFilterable
+        defaultColumnValues={{ Filter: TextFilter }}
+        numBreakoutFilters={0}
+      />,
+    );
+
+    expect(screen.queryByPlaceholderText('Search name')).toBeNull();
+
+    const filtersButton = screen.getByRole('button', { name: messages.filtersDropdownTitle.defaultMessage });
+    await userEvent.click(filtersButton);
+
+    expect(screen.getByPlaceholderText('Search name')).toBeInTheDocument();
+  });
+
+  it('displays two breakout filters if numBreakoutFilters is 2', async () => {
+    render(
+      <DataTableWrapper
+        {...props}
+        isFilterable
+        defaultColumnValues={{ Filter: TextFilter }}
+        numBreakoutFilters={2}
+      />,
+    );
+
+    expect(screen.getByPlaceholderText('Search name')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('Search famous for')).toBeInTheDocument();
+    expect(screen.queryByPlaceholderText('Search coat color')).toBeNull();
+
+    const filtersButton = screen.getByRole('button', { name: messages.filtersDropdownTitle.defaultMessage });
+    await userEvent.click(filtersButton);
+
+    expect(screen.getByPlaceholderText('Search coat color')).toBeInTheDocument();
+  });
+
   it('displays the custom filters title in the sidebar', () => {
     render(
       <DataTableWrapper
