@@ -94,7 +94,8 @@ const COMMANDS = {
       {
         name: '-t, --themes',
         description: `Specify themes to include in the token build.
-          Can be provided as a comma-separated list (e.g., "light,dark") or multiple arguments (e.g., "-t light -t dark").`,
+          Can be provided as a comma-separated list (e.g., "light,dark") or multiple arguments (e.g., "-t light -t dark").
+          Cannot be used with --all-themes`,
         defaultValue: 'light',
       },
       {
@@ -105,6 +106,16 @@ const COMMANDS = {
       {
         name: '-v, --verbose',
         description: 'Enable verbose logging.',
+        defaultValue: false,
+      },
+      {
+        name: '--base-paragon-theme',
+        description: 'Specify the base theme to use in the token build. For example, to build the "high-contrast" theme on top of the light theme use "--theme high-contrast --base-paragon-theme light".',
+        defaultValue: 'Same as theme',
+      },
+      {
+        name: '--all-themes',
+        description: 'Build tokens for all themes in the source directory. Cannot be used with --themes.',
         defaultValue: false,
       },
     ],
