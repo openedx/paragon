@@ -22,6 +22,7 @@ const CardImageCap = React.forwardRef(({
   logoSkeletonWidth,
   className,
   imageLoadingType,
+  skeletonDuringImageLoad,
 }, ref) => {
   const { orientation, isLoading } = useContext(CardContext);
   const [showImageCap, setShowImageCap] = useState(false);
@@ -29,24 +30,30 @@ const CardImageCap = React.forwardRef(({
 
   const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
 
+  const loadingSkeleton = () => (
+    <Skeleton
+      containerClassName="pgn__card-image-cap-loader"
+      height={orientation === 'horizontal' ? '100%' : skeletonHeight}
+      width={skeletonWidth}
+    />
+  );
+
+  const loadingLogoSkeleton = () => (
+    <Skeleton
+      containerClassName="pgn__card-logo-cap"
+      height={logoSkeletonHeight}
+      width={logoSkeletonWidth}
+    />
+  );
+
   if (isLoading) {
     return (
       <div
         className={classNames(wrapperClassName, className)}
         data-testid="image-loader-wrapper"
       >
-        <Skeleton
-          containerClassName="pgn__card-image-cap-loader"
-          height={orientation === 'horizontal' ? '100%' : skeletonHeight}
-          width={skeletonWidth}
-        />
-        {logoSkeleton && (
-          <Skeleton
-            containerClassName="pgn__card-logo-cap"
-            height={logoSkeletonHeight}
-            width={logoSkeletonWidth}
-          />
-        )}
+        {loadingSkeleton()}
+        {logoSkeleton && loadingLogoSkeleton()}
       </div>
     );
   }
@@ -70,24 +77,30 @@ const CardImageCap = React.forwardRef(({
   return (
     <div className={classNames(className, wrapperClassName)} ref={ref}>
       {!!src && (
-        <img
-          className={classNames('pgn__card-image-cap', { show: showImageCap })}
-          src={src}
-          onError={(event) => handleSrcFallback(event, fallbackSrc, 'imageCap')}
-          onLoad={() => setShowImageCap(true)}
-          alt={srcAlt}
-          loading={imageLoadingType}
-        />
+        <>
+          {skeletonDuringImageLoad && !showImageCap && loadingSkeleton()}
+          <img
+            className={classNames('pgn__card-image-cap', { show: showImageCap })}
+            src={src}
+            onError={(event) => handleSrcFallback(event, fallbackSrc, 'imageCap')}
+            onLoad={() => setShowImageCap(true)}
+            alt={srcAlt}
+            loading={imageLoadingType}
+          />
+        </>
       )}
       {!!logoSrc && (
-        <img
-          className={classNames('pgn__card-logo-cap', { show: showLogoCap })}
-          src={logoSrc}
-          onError={(event) => handleSrcFallback(event, fallbackLogoSrc, 'logoCap')}
-          onLoad={() => setShowLogoCap(true)}
-          alt={logoAlt}
-          loading={imageLoadingType}
-        />
+        <>
+          {skeletonDuringImageLoad && !showLogoCap && loadingLogoSkeleton()}
+          <img
+            className={classNames('pgn__card-logo-cap', { show: showLogoCap })}
+            src={logoSrc}
+            onError={(event) => handleSrcFallback(event, fallbackLogoSrc, 'logoCap')}
+            onLoad={() => setShowLogoCap(true)}
+            alt={logoAlt}
+            loading={imageLoadingType}
+          />
+        </>
       )}
     </div>
   );
@@ -120,6 +133,9 @@ CardImageCap.propTypes = {
   logoSkeletonWidth: PropTypes.number,
   /** Specifies loading type for images */
   imageLoadingType: PropTypes.oneOf(['eager', 'lazy']),
+  /** Render the loading skeleton when the image is loading in
+   *  addition to when the whole card is in `isLoading` state */
+  skeletonDuringImageLoad: PropTypes.bool,
 };
 
 CardImageCap.defaultProps = {
@@ -136,6 +152,7 @@ CardImageCap.defaultProps = {
   skeletonWidth: undefined,
   logoSkeletonWidth: undefined,
   imageLoadingType: 'eager',
+  skeletonDuringImageLoad: false,
 };
 
 export default CardImageCap;
