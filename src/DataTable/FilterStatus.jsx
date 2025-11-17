@@ -26,7 +26,7 @@ function FilterStatus({
         className={buttonClassName}
         variant={variant}
         size={size}
-        onClick={() => setAllFilters([])}
+        onClick={() => setAllFilters(undefined)}
       >
         {clearFiltersText === undefined
           ? (
