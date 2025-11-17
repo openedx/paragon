@@ -122,3 +122,27 @@ $indexes: map.merge(
     }
   }
 }
+
+// Dynamic viewport
+// 
+// Following the pattern of `vh-100` and `min-vh-100` from
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/utilities/_sizing.scss
+// 
+// More info on MDN
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#dynamic_viewport_units
+
+.dvh-100 {
+   // fallback for browsers that don't support dynamic viewport units
+   height: 100vh !important;
+
+   // dynamic units for modern browsers
+   height: 100dvh !important;
+}
+
+.min-dvh-100 {
+   // fallback for browsers that don't support dynamic viewport units
+   min-height: 100vh !important;
+
+   // dynamic units for modern browsers
+   min-height: 100dvh !important;
+}
