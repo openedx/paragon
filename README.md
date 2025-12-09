@@ -514,10 +514,34 @@ Paragon components can have different behavior in the MFE environment. `example`
 
 Steps to install the `example` app.
 
+To set up the example app with a local Tutor installation, you'll need to configure a Tutor plugin to handle CORS settings
+
+Prerequisites.
+
+Before running the example app, ensure you have a local Tutor installation configured.
+1. Create a new file (i.e. `paragon-example-app.py`) in your tutor plugins folder (`tutor plugins printroot` to get the path).
+2. Add the following content to the paragon-example-app.py file:
+```
+from tutor import hooks
+
+hooks.Filters.ENV_PATCHES.add_item(
+  (
+    "openedx-lms-development-settings",
+    """
+CORS_ORIGIN_WHITELIST.append("http://localhost:8080")
+LOGIN_REDIRECT_WHITELIST.append("http://localhost:8080")
+CSRF_TRUSTED_ORIGINS.append("http://localhost:8080")
+    """
+    )
+)
+```
+3. Enable the plugin: `tutor plugins enable paragon-example-app`
+4. Apply configuration changes: `tutor config save` && `tutor dev restart`
+
+Running the Example App:
 1. `npm install` to install dependencies.
-2. Launch any devstack. It is required for MFE to login into the system and set up configs.
-3. `npm run example:start` to start the app.
-4. Go to the `example/src/MyComponent.jsx` and use Paragon components inside the MFE environment.
+2. `npm run example:start` to start the app.
+3. Go to the `example/src/MyComponent.jsx` and use Paragon components inside the MFE environment.
 
 ## Semantic Release
 
