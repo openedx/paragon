@@ -159,4 +159,5 @@ module.exports = {
   truncateLines,
   constructChildren,
   createCopyElement,
+  assembleStringFromChildrenArray,
 };

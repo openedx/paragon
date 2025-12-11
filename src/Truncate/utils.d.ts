@@ -1,0 +1,1 @@
+export function assembleStringFromChildrenArray(children: React.Node, elementsData: Array = []): string;
