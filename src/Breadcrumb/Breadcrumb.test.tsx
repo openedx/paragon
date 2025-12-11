@@ -1,4 +1,5 @@
-import React from 'react';
+import assert from 'node:assert/strict';
+import { describe, mock, it } from 'node:test';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -24,8 +25,8 @@ const baseProps = {
 describe('<Breadcrumb />', () => {
   it('renders with just links', () => {
     render(<Breadcrumb {...baseProps} />);
-    expect(screen.queryAllByRole('list').length).toBe(1);
-    expect(screen.queryAllByRole('listitem').length).toBe(baseProps.links.length);
+    assert.equal(screen.queryAllByRole('list').length, 1);
+    assert.equal(screen.queryAllByRole('listitem').length, baseProps.links.length);
   });
 
   it('renders with links and active label', () => {
@@ -34,9 +35,9 @@ describe('<Breadcrumb />', () => {
     const list = screen.queryAllByRole('list');
     const listItems = screen.queryAllByRole('listitem');
 
-    expect(list.length).toBe(1);
-    expect(listItems.length).toBe(baseProps.links.length + 1);
-    expect(listItems[listItems.length - 1].textContent).toBe(label);
+    assert.equal(list.length, 1);
+    assert.equal(listItems.length, baseProps.links.length + 1);
+    assert.equal(listItems[listItems.length - 1].textContent, label);
   });
 
   it('renders custom spacer', () => {
@@ -44,29 +45,29 @@ describe('<Breadcrumb />', () => {
       <Breadcrumb {...baseProps} spacer={<span>/</span>} />,
     );
     const listItems = screen.queryAllByRole('listitem');
-    expect(listItems.length).toBe(baseProps.links.length);
-    expect(screen.getAllByRole('presentation').length).toBe(2);
+    assert.equal(listItems.length, baseProps.links.length);
+    assert.equal(screen.getAllByRole('presentation').length, 2);
   });
 
   it('fires the passed in click handler', async () => {
     const user = userEvent.setup();
-    const clickHandler = jest.fn();
+    const clickHandler = mock.fn();
     render(<Breadcrumb {...baseProps} clickHandler={clickHandler} />);
 
     const listItems = screen.queryAllByRole('listitem');
     const links = screen.queryAllByRole('link');
-    expect(listItems.length).toBe(baseProps.links.length);
+    assert.equal(listItems.length, baseProps.links.length);
 
     await user.click(links[0]);
-    expect(clickHandler).toHaveBeenCalled();
+    assert.equal(clickHandler.mock.callCount(), 1);
   });
 
   it('renders in mobile view', () => {
     render(<Breadcrumb {...baseProps} isMobile />);
     const list = screen.getByRole('list');
     const listItems = screen.getAllByRole('listitem');
-    expect(listItems.length).toBe(1);
-    expect(list.className).toContain('is-mobile');
+    assert.equal(listItems.length, 1);
+    assert.match(list.className, /is-mobile/);
   });
 
   it('renders links as custom elements', () => {
@@ -74,10 +75,10 @@ describe('<Breadcrumb />', () => {
     const list = screen.getByRole('list');
 
     const anchors = list.querySelectorAll('a');
-    expect(anchors.length).toBe(0);
+    assert.equal(anchors.length, 0);
 
     const customLinks = list.querySelectorAll('div');
-    expect(customLinks.length).toBe(3);
+    assert.equal(customLinks.length, 3);
   });
 
   it('passes down link props to link elements', () => {
@@ -91,8 +92,8 @@ describe('<Breadcrumb />', () => {
     render(<Breadcrumb links={[linkProps]} />);
 
     const links = screen.getByRole('link');
-    expect(links.className).toContain('my-link');
-    expect(links.getAttribute('target')).toBe('_blank');
-    expect(links.getAttribute('href')).toBe('/link-1');
+    assert.match(links.className, /my-link/);
+    assert.equal(links.getAttribute('target'), '_blank');
+    assert.equal(links.getAttribute('href'), '/link-1');
   });
 });

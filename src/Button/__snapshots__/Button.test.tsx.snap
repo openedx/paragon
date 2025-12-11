@@ -1,6 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Button /> correct rendering renders as a link disable with href 1`] = `
+exports[`<Button /> > correct rendering > renders as a link > disable with href 1`] = `
 <a
   aria-disabled={true}
   className="btn btn-primary disabled"
@@ -13,7 +11,7 @@ exports[`<Button /> correct rendering renders as a link disable with href 1`] = 
 </a>
 `;
 
-exports[`<Button /> correct rendering renders as a link with href 1`] = `
+exports[`<Button /> > correct rendering > renders as a link > with href 1`] = `
 <a
   className="btn btn-primary"
   href="https://edx.org"
@@ -24,7 +22,7 @@ exports[`<Button /> correct rendering renders as a link with href 1`] = `
 </a>
 `;
 
-exports[`<Button /> correct rendering renders with props iconAfter 1`] = `
+exports[`<Button /> > correct rendering > renders with props iconAfter 1`] = `
 <button
   className="btn btn-primary"
   disabled={false}
@@ -53,7 +51,7 @@ exports[`<Button /> correct rendering renders with props iconAfter 1`] = `
 </button>
 `;
 
-exports[`<Button /> correct rendering renders with props iconAfter and size 1`] = `
+exports[`<Button /> > correct rendering > renders with props iconAfter and size 1`] = `
 <button
   className="btn btn-primary btn-sm"
   disabled={false}
@@ -82,7 +80,7 @@ exports[`<Button /> correct rendering renders with props iconAfter and size 1`] 
 </button>
 `;
 
-exports[`<Button /> correct rendering renders with props iconBefore 1`] = `
+exports[`<Button /> > correct rendering > renders with props iconBefore 1`] = `
 <button
   className="btn btn-primary"
   disabled={false}
@@ -111,7 +109,7 @@ exports[`<Button /> correct rendering renders with props iconBefore 1`] = `
 </button>
 `;
 
-exports[`<Button /> correct rendering renders with props iconBefore and iconAfter 1`] = `
+exports[`<Button /> > correct rendering > renders with props iconBefore and iconAfter 1`] = `
 <button
   className="btn btn-primary"
   disabled={false}
@@ -159,7 +157,7 @@ exports[`<Button /> correct rendering renders with props iconBefore and iconAfte
 </button>
 `;
 
-exports[`<Button /> correct rendering renders with props iconBefore and size 1`] = `
+exports[`<Button /> > correct rendering > renders with props iconBefore and size 1`] = `
 <button
   className="btn btn-primary btn-md"
   disabled={false}
@@ -188,7 +186,7 @@ exports[`<Button /> correct rendering renders with props iconBefore and size 1`]
 </button>
 `;
 
-exports[`<Button /> correct rendering renders without props 1`] = `
+exports[`<Button /> > correct rendering > renders without props 1`] = `
 <button
   className="btn btn-primary"
   disabled={false}
@@ -198,7 +196,7 @@ exports[`<Button /> correct rendering renders without props 1`] = `
 </button>
 `;
 
-exports[`<Button /> correct rendering with size="inline" 1`] = `
+exports[`<Button /> > correct rendering > with size=\"inline\" 1`] = `
 <p>
   <span
     className="mr-1"

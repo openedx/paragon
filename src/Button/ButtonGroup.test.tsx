@@ -1,18 +1,18 @@
-import React from 'react';
+import { describe, it } from 'node:test';
 import renderer from 'react-test-renderer';
 
 import Button, { ButtonGroup } from './index';
 
 describe('<ButtonGroup />', () => {
   describe('correct rendering', () => {
-    it('renders without props', () => {
+    it('renders without props', (t) => {
       const tree = renderer.create((
         <ButtonGroup />
       )).toJSON();
-      expect(tree).toMatchSnapshot();
+      t.assert.snapshot(tree);
     });
 
-    it('renders with children', () => {
+    it('renders with children', (t) => {
       const tree = renderer.create((
         <ButtonGroup size="lg">
           <Button variant="primary">Left</Button>
@@ -20,7 +20,7 @@ describe('<ButtonGroup />', () => {
           <Button variant="primary">Right</Button>
         </ButtonGroup>
       )).toJSON();
-      expect(tree).toMatchSnapshot();
+      t.assert.snapshot(tree);
     });
   });
 });
