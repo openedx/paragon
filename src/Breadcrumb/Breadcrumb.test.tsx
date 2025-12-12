@@ -1,7 +1,12 @@
-import assert from 'node:assert/strict';
-import { describe, mock, it } from 'node:test';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import {
+  assert,
+  describe,
+  mock,
+  it,
+  render,
+  screen,
+  userEvent,
+} from '../testUtils';
 
 import Breadcrumb from '.';
 
@@ -67,7 +72,7 @@ describe('<Breadcrumb />', () => {
     const list = screen.getByRole('list');
     const listItems = screen.getAllByRole('listitem');
     assert.equal(listItems.length, 1);
-    assert.match(list.className, /is-mobile/);
+    assert.containsClass(list, 'is-mobile');
   });
 
   it('renders links as custom elements', () => {
@@ -92,7 +97,7 @@ describe('<Breadcrumb />', () => {
     render(<Breadcrumb links={[linkProps]} />);
 
     const links = screen.getByRole('link');
-    assert.match(links.className, /my-link/);
+    assert.containsClass(links, 'my-link');
     assert.equal(links.getAttribute('target'), '_blank');
     assert.equal(links.getAttribute('href'), '/link-1');
   });

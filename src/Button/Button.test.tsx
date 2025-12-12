@@ -1,9 +1,14 @@
-import assert from 'node:assert/strict';
-import { describe, mock, it } from 'node:test';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import renderer from 'react-test-renderer';
 import { IntlProvider } from 'react-intl';
+import {
+  assert,
+  describe,
+  mock,
+  it,
+  render,
+  renderer,
+  screen,
+  userEvent,
+} from '../testUtils';
 
 import { Close } from '../../icons';
 import Button from '.';
@@ -21,7 +26,7 @@ describe('<Button />', () => {
     it('renders with correct class when variant is added', () => {
       render(<Button variant="brand">Button</Button>);
       const button = screen.getByRole('button');
-      assert.match(button.className, /btn-brand/);
+      assert.containsClass(button, 'btn-brand');
     });
 
     it('renders with props iconBefore and size', (t) => {
@@ -80,7 +85,7 @@ describe('<Button />', () => {
         const link = screen.getByRole('link');
         await userEvent.click(link);
         // Mock should not be called:
-        assert.equal(onClick.mock.callCount(), 0);
+        assert.wasNotCalled(onClick);
       });
 
       it('invalid disabled if without href', async () => {
@@ -88,13 +93,13 @@ describe('<Button />', () => {
         const { rerender } = render(<Button as="a" disabled onClick={onClick}>Button</Button>);
         const link = screen.getByText('Button');
         await userEvent.click(link);
-        assert.equal(onClick.mock.callCount(), 1);
+        assert.wasCalled(onClick);
         onClick.mock.resetCalls();
 
         rerender(<Button as="a" href="" disabled onClick={onClick}>Button</Button>);
         const emptyHrefLink = screen.getByRole('link', { name: 'Button' });
         await userEvent.click(emptyHrefLink);
-        assert.equal(onClick.mock.callCount(), 1);
+        assert.wasCalled(onClick);
       });
 
       it('test button as hyperlink', () => {
