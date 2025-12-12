@@ -1,5 +1,3 @@
-// TODO: assess what it would take to move to TypeScript
-
 import React, {
   useLayoutEffect, useRef, useEffect,
 } from 'react';

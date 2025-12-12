@@ -1,4 +1,6 @@
-interface ElementDataEntry {
+import React from 'react';
+
+export interface ElementDataEntry {
   type: React.ElementType | string | null; 
   props: Record<string, any> | null; 
   start: number; 
@@ -14,7 +16,7 @@ interface ElementDataEntry {
  * @param {array} elementsData original data to restore children
  * @returns string
  */
-function assembleStringFromChildrenArray(
+export function assembleStringFromChildrenArray(
   children: Array<React.ReactNode>,
   elementsData: Array<ElementDataEntry> = [], 
 ): string {
@@ -47,8 +49,7 @@ function assembleStringFromChildrenArray(
 
       } else if (elementChildren) {
         const nestedChildrenData: ElementDataEntry[] = [];
-        
-        // Handle React children normalization (convert single object to array)
+
         const childrenArray = Array.isArray(elementChildren) 
           ? elementChildren 
           : [elementChildren]; // If it's a single element, wrap it in an array
@@ -58,7 +59,7 @@ function assembleStringFromChildrenArray(
           nestedChildrenData,
         );
 
-        currentChildren = nestedChildrenData; // Assign the results of the recursive call
+        currentChildren = nestedChildrenData;
       }
     } 
     const end = result.length;
@@ -73,8 +74,4 @@ function assembleStringFromChildrenArray(
   });
 
   return result;
-}
-
-module.exports = {
-  assembleStringFromChildrenArray,
 };

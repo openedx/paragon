@@ -1,5 +1,5 @@
 import React from "react";
-import { assembleStringFromChildrenArray } from './utils';
+import { assembleStringFromChildrenArray } from "./utils";
 
 interface TruncateProps {
     /** The expected text to which the ellipsis would be applied. */
@@ -10,9 +10,11 @@ interface TruncateProps {
 
 function Truncate({ children, lines = 1}: TruncateProps) {
   const style = {
+    lineClamp: lines,
     WebkitLineClamp: lines,
   }
-  const initialText = typeof children === 'string' ? children : assembleStringFromChildrenArray(children);
+
+  const initialText = Array.isArray(children) ? assembleStringFromChildrenArray(children) : String(children);
 
   return (
     <p
