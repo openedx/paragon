@@ -32,7 +32,7 @@ describe('utils', () => {
     });
 
     it('should handle a single React element with a simple string child', async () => {
-      const elementText = 'test-element-text'
+      const elementText = 'test-element-text';
       const originalProps = { id: 1, children: elementText };
       const element = mockElement('span', originalProps);
       const elementsData: ElementDataEntry[] = [];

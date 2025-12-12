@@ -25,7 +25,7 @@ export function assembleStringFromChildrenArray(
   children?.forEach(child => {
     const isStringOrNumber = typeof child === 'string' || typeof child === 'number';
     const isElement = React.isValidElement(child);
-    
+
     // Default values if the child is a simple string/number
     let currentChildren = null;
     let childProps: Record<string, any> | null = null;
@@ -35,8 +35,7 @@ export function assembleStringFromChildrenArray(
 
     if (isStringOrNumber) {
       result += String(child);
-    } 
-    else if (isElement) {
+    } else if (isElement) {
       childProps = (child as React.ReactElement).props;
       childType = (child as React.ReactElement).type;
 
@@ -45,7 +44,6 @@ export function assembleStringFromChildrenArray(
 
       if (isElementChildrenStringOrNumber) {
         result += String(elementChildren);
-
       } else if (elementChildren) {
         const nestedChildrenData: ElementDataEntry[] = [];
 
