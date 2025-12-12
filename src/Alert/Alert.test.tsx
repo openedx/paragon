@@ -1,9 +1,17 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
-import renderer, { act } from 'react-test-renderer';
-import { render, screen, within } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { Context as ResponsiveContext } from 'react-responsive';
+import {
+  assert,
+  describe,
+  mock,
+  it,
+  render,
+  renderer,
+  screen,
+  userEvent,
+  within,
+} from '../testUtils';
 import { Info } from '../../icons';
 import breakpoints from '../utils/breakpoints';
 import Button from '../Button';
@@ -51,66 +59,63 @@ describe('Alert component type checking', () => {
 });
 
 describe('<Alert />', () => {
-  it('renders without any props', () => {
+  it('renders without any props', (t) => {
     const tree = renderer.create((
       <AlertWrapper>Alert</AlertWrapper>
     )).toJSON();
-    expect(tree).toMatchSnapshot();
+    t.assert.snapshot(tree);
   });
-  it('renders with icon prop', () => {
+  it('renders with icon prop', (t) => {
     const tree = renderer.create((
       <AlertWrapper icon={Info}>Alert</AlertWrapper>
     )).toJSON();
-    expect(tree).toMatchSnapshot();
+    t.assert.snapshot(tree);
   });
-  it('renders with dismissible prop', () => {
+  it('renders with dismissible prop', (t) => {
     const tree = renderer.create((
       <AlertWrapper dismissible>Alert</AlertWrapper>
     )).toJSON();
-    expect(tree).toMatchSnapshot();
+    t.assert.snapshot(tree);
   });
   it('handles dismissible onClose', async () => {
-    const mockOnClose = jest.fn();
+    const mockOnClose = mock.fn();
     render(<AlertWrapper onClose={mockOnClose} dismissible>Alert</AlertWrapper>);
     const button = screen.getByRole('button');
     await userEvent.click(button);
-    expect(mockOnClose).toHaveBeenCalledTimes(1);
+    assert.wasCalled(mockOnClose);
   });
-  it('renders with button prop', () => {
+  it('renders with button prop', (t) => {
     const tree = renderer.create((
       <AlertWrapper actions={[<Button>Hello</Button>]}>Alert</AlertWrapper>
     )).toJSON();
-    expect(tree).toMatchSnapshot();
+    t.assert.snapshot(tree);
   });
   it('handles button onClick', async () => {
-    const mockOnClick = jest.fn();
+    const mockOnClick = mock.fn();
     render(<AlertWrapper actions={[<Button onClick={mockOnClick}>Hello</Button>]}>Alert</AlertWrapper>);
     const button = screen.getByRole('button');
     await userEvent.click(button);
-    expect(mockOnClick).toHaveBeenCalledTimes(1);
+    assert.wasCalled(mockOnClick);
   });
-  it('renders with button and dismissible props', () => {
+  it('renders with button and dismissible props', (t) => {
     const tree = renderer.create((
       <AlertWrapper actions={[<Button>Hello</Button>]} dismissible>Alert</AlertWrapper>
     )).toJSON();
-    expect(tree).toMatchSnapshot();
+    t.assert.snapshot(tree);
   });
-  it('renders with stacked prop', () => {
+  it('renders with stacked prop', (t) => {
     const tree = renderer.create((
       <AlertWrapper stacked actions={[<Button>Hello</Button>]} dismissible>Alert</AlertWrapper>
     )).toJSON();
-    expect(tree).toMatchSnapshot();
+    t.assert.snapshot(tree);
   });
-  it('switches to stacked variant at extra small breakpoint', () => {
-    let tree;
-    act(() => {
-      tree = renderer.create((
-        <ResponsiveContext.Provider value={{ width: breakpoints.extraSmall.maxWidth }}>
-          <AlertWrapper dismissible>Alert</AlertWrapper>
-        </ResponsiveContext.Provider>
-      )).toJSON();
-    });
-    expect(tree).toMatchSnapshot();
+  it('switches to stacked variant at extra small breakpoint', (t) => {
+    const tree = renderer.create((
+      <ResponsiveContext.Provider value={{ width: breakpoints.extraSmall.maxWidth }}>
+        <AlertWrapper dismissible>Alert</AlertWrapper>
+      </ResponsiveContext.Provider>
+    )).toJSON();
+    t.assert.snapshot(tree);
   });
   it('renders with headings and links', async () => {
     render(
@@ -121,8 +126,9 @@ describe('<Alert />', () => {
     );
     const alertDiv = screen.getByRole('alert');
     const heading = within(alertDiv).getByText(/This is the heading/);
-    expect(heading).toHaveClass('alert-heading', 'h4');
+    assert.containsClass(heading, 'alert-heading');
+    assert.containsClass(heading, 'h4');
     const link = within(alertDiv).getByRole('link', { name: 'here is a link' });
-    expect(link).toHaveClass('alert-link');
+    assert.containsClass(link, 'alert-link');
   });
 });

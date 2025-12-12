@@ -1,6 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Alert /> renders with button and dismissible props 1`] = `
+exports[`<Alert /> > renders with button and dismissible props 1`] = `
 <div
   className="fade alert-content alert show"
   role="alert"
@@ -39,7 +37,7 @@ exports[`<Alert /> renders with button and dismissible props 1`] = `
 </div>
 `;
 
-exports[`<Alert /> renders with button prop 1`] = `
+exports[`<Alert /> > renders with button prop 1`] = `
 <div
   className="fade alert-content alert show"
   role="alert"
@@ -70,7 +68,7 @@ exports[`<Alert /> renders with button prop 1`] = `
 </div>
 `;
 
-exports[`<Alert /> renders with dismissible prop 1`] = `
+exports[`<Alert /> > renders with dismissible prop 1`] = `
 <div
   className="fade alert-content alert show"
   role="alert"
@@ -102,7 +100,7 @@ exports[`<Alert /> renders with dismissible prop 1`] = `
 </div>
 `;
 
-exports[`<Alert /> renders with icon prop 1`] = `
+exports[`<Alert /> > renders with icon prop 1`] = `
 <div
   className="fade alert-content alert show"
   role="alert"
@@ -138,7 +136,7 @@ exports[`<Alert /> renders with icon prop 1`] = `
 </div>
 `;
 
-exports[`<Alert /> renders with stacked prop 1`] = `
+exports[`<Alert /> > renders with stacked prop 1`] = `
 <div
   className="fade alert-content alert show"
   role="alert"
@@ -177,7 +175,7 @@ exports[`<Alert /> renders with stacked prop 1`] = `
 </div>
 `;
 
-exports[`<Alert /> renders without any props 1`] = `
+exports[`<Alert /> > renders without any props 1`] = `
 <div
   className="fade alert-content alert show"
   role="alert"
@@ -194,4 +192,34 @@ exports[`<Alert /> renders without any props 1`] = `
 </div>
 `;
 
-exports[`<Alert /> switches to stacked variant at extra small breakpoint 1`] = `null`;
+exports[`<Alert /> > switches to stacked variant at extra small breakpoint 1`] = `
+<div
+  className="fade alert-content alert show"
+  role="alert"
+>
+  <div
+    className="pgn__alert-message-wrapper"
+  >
+    <div
+      className="alert-message-content"
+    >
+      Alert
+    </div>
+    <div
+      className="pgn__alert-actions pgn__action-row"
+    >
+      <span
+        className="pgn__action-row-spacer"
+      />
+      <button
+        className="btn btn-tertiary btn-sm"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Dismiss
+      </button>
+    </div>
+  </div>
+</div>
+`;
