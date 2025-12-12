@@ -1,4 +1,9 @@
-import React from 'react';
+import {
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 import { IntlProvider } from 'react-intl';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -58,30 +63,30 @@ describe('<Button />', () => {
     });
 
     describe('renders as a link', () => {
-      test('with href', () => {
+      it('with href', () => {
         const tree = renderer.create((
           <Button href="https://edx.org">Button</Button>
         )).toJSON();
         expect(tree).toMatchSnapshot();
       });
 
-      test('disable with href', () => {
+      it('disable with href', () => {
         const tree = renderer.create((
           <Button as="a" href="https://edx.org" disabled>Button</Button>
         )).toJSON();
         expect(tree).toMatchSnapshot();
       });
 
-      test('cannot click if disabled', async () => {
-        const onClick = jest.fn();
+      it('cannot click if disabled', async () => {
+        const onClick = vi.fn();
         render(<Button as="a" href="https://edx.org" disabled onClick={onClick}>Button</Button>);
         const link = screen.getByRole('link');
         await userEvent.click(link);
         expect(onClick).not.toHaveBeenCalled();
       });
 
-      test('invalid disabled if without href', async () => {
-        const onClick = jest.fn();
+      it('invalid disabled if without href', async () => {
+        const onClick = vi.fn();
         const { rerender } = render(<Button as="a" disabled onClick={onClick}>Button</Button>);
         const link = screen.getByText('Button');
         await userEvent.click(link);
@@ -94,7 +99,7 @@ describe('<Button />', () => {
         expect(onClick).toHaveBeenCalled();
       });
 
-      test('test button as hyperlink', () => {
+      it('test button as hyperlink', () => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const ref = (_current: HTMLAnchorElement) => {}; // Check typing of a ref - should not show type errors.
         render(
@@ -106,7 +111,7 @@ describe('<Button />', () => {
       });
     });
 
-    test('with size="inline"', () => {
+    it('with size="inline"', () => {
       const tree = renderer.create((
         <p>
           <span className="mr-1">2 items selected.</span>

@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Avatar > renders in all sizes 1`] = `
+[
+  <img
+    alt=""
+    className="pgn__avatar pgn__avatar-xs"
+    src="data:image/svg+xml,%3csvg%20width='36'%20height='36'%20viewBox='0%200%2036%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='36'%20height='36'%20fill='white'/%3e%3cpath%20d='M18%2018C20.21%2018%2022%2016.21%2022%2014C22%2011.79%2020.21%2010%2018%2010C15.79%2010%2014%2011.79%2014%2014C14%2016.21%2015.79%2018%2018%2018ZM18%2020C15.33%2020%2010%2021.34%2010%2024V26H26V24C26%2021.34%2020.67%2020%2018%2020Z'%20fill='%2300262B'/%3e%3c/svg%3e"
+  />,
+  <img
+    alt=""
+    className="pgn__avatar pgn__avatar-sm"
+    src="data:image/svg+xml,%3csvg%20width='36'%20height='36'%20viewBox='0%200%2036%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='36'%20height='36'%20fill='white'/%3e%3cpath%20d='M18%2018C20.21%2018%2022%2016.21%2022%2014C22%2011.79%2020.21%2010%2018%2010C15.79%2010%2014%2011.79%2014%2014C14%2016.21%2015.79%2018%2018%2018ZM18%2020C15.33%2020%2010%2021.34%2010%2024V26H26V24C26%2021.34%2020.67%2020%2018%2020Z'%20fill='%2300262B'/%3e%3c/svg%3e"
+  />,
+  <img
+    alt=""
+    className="pgn__avatar pgn__avatar-md"
+    src="data:image/svg+xml,%3csvg%20width='36'%20height='36'%20viewBox='0%200%2036%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='36'%20height='36'%20fill='white'/%3e%3cpath%20d='M18%2018C20.21%2018%2022%2016.21%2022%2014C22%2011.79%2020.21%2010%2018%2010C15.79%2010%2014%2011.79%2014%2014C14%2016.21%2015.79%2018%2018%2018ZM18%2020C15.33%2020%2010%2021.34%2010%2024V26H26V24C26%2021.34%2020.67%2020%2018%2020Z'%20fill='%2300262B'/%3e%3c/svg%3e"
+  />,
+  <img
+    alt=""
+    className="pgn__avatar pgn__avatar-lg"
+    src="data:image/svg+xml,%3csvg%20width='36'%20height='36'%20viewBox='0%200%2036%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='36'%20height='36'%20fill='white'/%3e%3cpath%20d='M18%2018C20.21%2018%2022%2016.21%2022%2014C22%2011.79%2020.21%2010%2018%2010C15.79%2010%2014%2011.79%2014%2014C14%2016.21%2015.79%2018%2018%2018ZM18%2020C15.33%2020%2010%2021.34%2010%2024V26H26V24C26%2021.34%2020.67%2020%2018%2020Z'%20fill='%2300262B'/%3e%3c/svg%3e"
+  />,
+  <img
+    alt=""
+    className="pgn__avatar pgn__avatar-xl"
+    src="data:image/svg+xml,%3csvg%20width='36'%20height='36'%20viewBox='0%200%2036%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='36'%20height='36'%20fill='white'/%3e%3cpath%20d='M18%2018C20.21%2018%2022%2016.21%2022%2014C22%2011.79%2020.21%2010%2018%2010C15.79%2010%2014%2011.79%2014%2014C14%2016.21%2015.79%2018%2018%2018ZM18%2020C15.33%2020%2010%2021.34%2010%2024V26H26V24C26%2021.34%2020.67%2020%2018%2020Z'%20fill='%2300262B'/%3e%3c/svg%3e"
+  />,
+  <img
+    alt=""
+    className="pgn__avatar pgn__avatar-xxl"
+    src="data:image/svg+xml,%3csvg%20width='36'%20height='36'%20viewBox='0%200%2036%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='36'%20height='36'%20fill='white'/%3e%3cpath%20d='M18%2018C20.21%2018%2022%2016.21%2022%2014C22%2011.79%2020.21%2010%2018%2010C15.79%2010%2014%2011.79%2014%2014C14%2016.21%2015.79%2018%2018%2018ZM18%2020C15.33%2020%2010%2021.34%2010%2024V26H26V24C26%2021.34%2020.67%2020%2018%2020Z'%20fill='%2300262B'/%3e%3c/svg%3e"
+  />,
+  <img
+    alt=""
+    className="pgn__avatar pgn__avatar-huge"
+    src="data:image/svg+xml,%3csvg%20width='36'%20height='36'%20viewBox='0%200%2036%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='36'%20height='36'%20fill='white'/%3e%3cpath%20d='M18%2018C20.21%2018%2022%2016.21%2022%2014C22%2011.79%2020.21%2010%2018%2010C15.79%2010%2014%2011.79%2014%2014C14%2016.21%2015.79%2018%2018%2018ZM18%2020C15.33%2020%2010%2021.34%2010%2024V26H26V24C26%2021.34%2020.67%2020%2018%2020Z'%20fill='%2300262B'/%3e%3c/svg%3e"
+  />,
+]
+`;

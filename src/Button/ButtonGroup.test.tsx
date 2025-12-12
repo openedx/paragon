@@ -1,4 +1,8 @@
-import React from 'react';
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest';
 import renderer from 'react-test-renderer';
 
 import Button, { ButtonGroup } from './index';

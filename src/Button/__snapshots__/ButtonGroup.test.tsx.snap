@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<ButtonGroup /> correct rendering renders with children 1`] = `
+exports[`<ButtonGroup /> > correct rendering > renders with children 1`] = `
 <div
   className="btn-group btn-group-lg"
   role="group"
@@ -29,7 +29,7 @@ exports[`<ButtonGroup /> correct rendering renders with children 1`] = `
 </div>
 `;
 
-exports[`<ButtonGroup /> correct rendering renders without props 1`] = `
+exports[`<ButtonGroup /> > correct rendering > renders without props 1`] = `
 <div
   className="btn-group btn-group-md"
   role="group"

@@ -1,4 +1,8 @@
-import React from 'react';
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest';
 import renderer from 'react-test-renderer';
 import Avatar from './index';
 
@@ -21,8 +25,7 @@ describe('Avatar', () => {
   it('has a default avatar url', () => {
     const testRenderer = renderer.create(<Avatar />);
     const testInstance = testRenderer.root;
-    // test-file-stub is what our fileMock.js returns for all images and svgs
-    expect(testInstance.findByType('img').props.src).toBe('test-file-stub');
+    expect(testInstance.findByType('img').props.src).toMatch(/^data:image\/svg\+xml,/);
   });
 
   it('can set a custom avatar url', () => {
