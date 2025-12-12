@@ -1,18 +1,18 @@
-import React from "react";
-import { assembleStringFromChildrenArray } from "./utils";
+import React from 'react';
+import { assembleStringFromChildrenArray } from './utils';
 
 interface TruncateProps {
-    /** The expected text to which the ellipsis would be applied. */
-    children: React.ReactNode;
-    /** The number of lines the text to be truncated to. */
-    lines?: number;
+  /** The expected text to which the ellipsis would be applied. */
+  children: React.ReactNode;
+  /** The number of lines the text to be truncated to. */
+  lines?: number;
 }
 
-function Truncate({ children, lines = 1}: TruncateProps) {
+function Truncate({ children, lines = 1 }: TruncateProps) {
   const style = {
     lineClamp: lines,
     WebkitLineClamp: lines,
-  }
+  };
 
   const initialText = Array.isArray(children) ? assembleStringFromChildrenArray(children) : String(children);
 
@@ -26,7 +26,7 @@ function Truncate({ children, lines = 1}: TruncateProps) {
     >
       {children}
     </p>
-  )
+  );
 }
 
 export default Truncate;

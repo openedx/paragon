@@ -1,11 +1,11 @@
 import React from 'react';
 
 export interface ElementDataEntry {
-  type: React.ElementType | string | null; 
-  props: Record<string, any> | null; 
-  start: number; 
-  end: number; 
-  children: ElementDataEntry[] | null; 
+  type: React.ElementType | string | null;
+  props: Record<string, any> | null;
+  start: number;
+  end: number;
+  children: ElementDataEntry[] | null;
 }
 
 /**
@@ -18,9 +18,8 @@ export interface ElementDataEntry {
  */
 export function assembleStringFromChildrenArray(
   children: Array<React.ReactNode>,
-  elementsData: Array<ElementDataEntry> = [], 
+  elementsData: Array<ElementDataEntry> = [],
 ): string {
-
   let result = '';
 
   children?.forEach(child => {
@@ -50,8 +49,8 @@ export function assembleStringFromChildrenArray(
       } else if (elementChildren) {
         const nestedChildrenData: ElementDataEntry[] = [];
 
-        const childrenArray = Array.isArray(elementChildren) 
-          ? elementChildren 
+        const childrenArray = Array.isArray(elementChildren)
+          ? elementChildren
           : [elementChildren]; // If it's a single element, wrap it in an array
 
         result += assembleStringFromChildrenArray(
@@ -61,9 +60,9 @@ export function assembleStringFromChildrenArray(
 
         currentChildren = nestedChildrenData;
       }
-    } 
+    }
     const end = result.length;
-    
+
     elementsData.push({
       type: childType,
       props: childProps,
@@ -74,4 +73,4 @@ export function assembleStringFromChildrenArray(
   });
 
   return result;
-};
+}

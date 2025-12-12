@@ -1,8 +1,8 @@
 import React, {
-  useLayoutEffect, useRef, useEffect,
+  useLayoutEffect, useRef,
 } from 'react';
 import PropTypes from 'prop-types';
-import { truncateLines } from './utils';
+import { truncateLines } from './utils.deprecated';
 import useWindowSize from '../hooks/useWindowSizeHook';
 
 const DEFAULT_TRUNCATE_LINES = 1;
