@@ -129,6 +129,19 @@
 .pgn__searchfield__button.btn[type="submit"] {
   border-radius: 0;
   margin-inline-start: var(--pgn-spacing-search-field-margin-button);
+  text-transform: capitalize;
+
+  &:focus {
+		&::before {
+			border-radius: 0;
+		}
+	}
+
+	&:focus-visible {
+		&::after {
+			content: none;
+		}
+	}
 }
 
 .pgn__searchfield__iconbutton-submit,
