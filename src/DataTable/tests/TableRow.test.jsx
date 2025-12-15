@@ -82,9 +82,8 @@ describe('<TableRow />', () => {
   });
 
   it('does not render subcomponent if row is in expanded state and does not have renderRowSubComponent function defined', () => {
-    const { container } = render(<TableRowWrapper value={{}} row={{ ...props, isExpanded: true }} />);
+    render(<TableRowWrapper value={{}} row={{ ...props, isExpanded: true }} />);
     const rows = screen.getAllByRole('row');
     expect(rows.length).toEqual(1);
-    expect(container.querySelector('div')).not.toBeInTheDocument();
   });
 });
