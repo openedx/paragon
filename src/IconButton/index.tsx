@@ -5,7 +5,7 @@ import { OverlayTrigger } from '../Overlay';
 import Tooltip from '../Tooltip';
 import Icon from '../Icon';
 
-interface Props extends React.HTMLAttributes<HTMLButtonElement> {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Component that renders the icon, currently defaults to `Icon` */
   iconAs?: React.ComponentType<any>,
   /** Additional CSS class[es] to apply to this button */
