@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 /**
  *
  * @param {object} args arguments
- * @param {boolean} args.activeValue the current value of the active/selected iconButton.
+ * @param {string} args.activeValue the current value of the active/selected iconButton.
  *                                   if not provided, none of the iconButtons will initially be active
  * @param {Function} args.onChange callback to call when toggle value changes.
  *                                 Receives value of the selected toggle button.
