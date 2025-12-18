@@ -5,10 +5,19 @@ on:
     branches:
     - next
     - release-*
+
+permissions:
+  contents: read # for checkout
+
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for trusted publishing and npm provenance
     steps:
     - name: Checkout
       uses: actions/checkout@v5
@@ -35,5 +44,4 @@ jobs:
     - name: Release
       env:
         GITHUB_TOKEN: ${{ secrets.OPENEDX_SEMANTIC_RELEASE_GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.OPENEDX_SEMANTIC_RELEASE_NPM_TOKEN }}
-      run: npx semantic-release@22
+      run: npx semantic-release@25
