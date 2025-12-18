@@ -3,7 +3,8 @@
   "compilerOptions": {
     "noImplicitAny": true,
     "allowJs": false,
-    "outDir": "dist"
+    "outDir": "dist",
+    "skipLibCheck": true
   },
   "include": [
     "lib/**/*",
