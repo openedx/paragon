@@ -132,16 +132,16 @@
   text-transform: capitalize;
 
   &:focus {
-		&::before {
-			border-radius: 0;
-		}
-	}
+    &::before {
+      border-radius: 0;
+    }
+  }
 
-	&:focus-visible {
-		&::after {
-			content: none;
-		}
-	}
+  &:focus-visible {
+    &::after {
+      content: none;
+    }
+  }
 }
 
 .pgn__searchfield__iconbutton-submit,
