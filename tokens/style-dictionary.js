@@ -277,7 +277,7 @@ const initializeStyleDictionary = async ({ themes }) => {
       }
 
       let utilityClasses = '';
-
+      // console.log('utilities ===>', utilities);
       utilities.forEach(({ filters, utilityFunctionsToApply }) => {
         let tokens = dictionary.allTokens;
 
@@ -287,8 +287,10 @@ const initializeStyleDictionary = async ({ themes }) => {
 
         // eslint-disable-next-line no-restricted-syntax
         for (const token of tokens) {
+          // console.log('token ======>', token);
           // Get action token by reference
           const ref = sdUtils.getReferences(token.original.actions.default, dictionary.tokens)[0];
+          // console.log('ref ======>', ref);
           token.actions = { default: `var(--${ref.name})` };
           // eslint-disable-next-line no-restricted-syntax
           for (const funcName of utilityFunctionsToApply) {
@@ -297,6 +299,7 @@ const initializeStyleDictionary = async ({ themes }) => {
         }
       });
       const header = await fileHeader({ file, formatting });
+      // console.log('utilityClasses ======>', `${header}${utilityClasses}`);
       return `${header}${utilityClasses}`;
     },
   });

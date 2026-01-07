@@ -12,7 +12,7 @@ a${parent}:hover,
 a${parent}:focus,
 button${parent}:hover,
 button${parent}:focus {
-  background-color: ${actions.default} !important;
+  background-color: ${actions?.default} !important;
 }
 
 `;
@@ -30,7 +30,7 @@ function textEmphasisVariant(token) {
 
 a${parent}:hover,
 a${parent}:focus {
-  color: ${actions.default} !important;
+  color: ${actions?.default} !important;
 }
 
 `;

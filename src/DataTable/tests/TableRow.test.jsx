@@ -85,6 +85,10 @@ describe('<TableRow />', () => {
     const { container } = render(<TableRowWrapper value={{}} row={{ ...props, isExpanded: true }} />);
     const rows = screen.getAllByRole('row');
     expect(rows.length).toEqual(1);
-    expect(container.querySelector('div')).not.toBeInTheDocument();
+    // expect(container.querySelector('div')).not.toBeInTheDocument();
+    expect(container.querySelector('.subcomponent-class')).not.toBeInTheDocument();
+    screen.debug();
+    const subcomponentWrapper = rows[1];
+    expect(subcomponentWrapper.querySelector('div')).toBeInTheDocument();
   });
 });
