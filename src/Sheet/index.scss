@@ -81,8 +81,24 @@
 
   &.left,
   &.right {
-    max-width: 272px;
     height: 100%;
     top: 0;
+		width: 100%;
+
+		&.pgn__sheet-sm {
+      max-width: 272px;
+    }
+
+    &.pgn__sheet-md {
+      max-width: 500px;
+    }
+
+    &.pgn__sheet-lg {
+      max-width: 800px;
+    }
+
+		@media (--pgn-size-breakpoint-max-width-xs) {
+			max-width: 100vw !important;
+		}
   }
 }

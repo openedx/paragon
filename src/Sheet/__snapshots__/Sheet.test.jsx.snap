@@ -23,7 +23,7 @@ exports[`<Sheet /> snapshots blocking, left snapshot 1`] = `
     <div
       aria-atomic="true"
       aria-live="polite"
-      className="pgn__sheet-component pgn__sheet__light left"
+      className="pgn__sheet-component pgn__sheet__light pgn__sheet-md left"
       role="alert"
     >
       <div
@@ -57,7 +57,7 @@ exports[`<Sheet /> snapshots dark, right snapshot 1`] = `
     <div
       aria-atomic="true"
       aria-live="polite"
-      className="pgn__sheet-component pgn__sheet__dark right"
+      className="pgn__sheet-component pgn__sheet__dark pgn__sheet-md right"
       role="alert"
     >
       <div
@@ -91,7 +91,7 @@ exports[`<Sheet /> snapshots default args snapshot: bottom, show, light 1`] = `
     <div
       aria-atomic="true"
       aria-live="polite"
-      className="pgn__sheet-component pgn__sheet__light bottom"
+      className="pgn__sheet-component pgn__sheet__light pgn__sheet-md bottom"
       role="alert"
     >
       <div

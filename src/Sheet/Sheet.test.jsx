@@ -113,5 +113,23 @@ describe('<Sheet />', () => {
       expect(sheetElement).toHaveClass('pgn__sheet-component');
       expect(sheetElement).toHaveClass(sheetClass);
     });
+
+    it('renders with correct size classes', () => {
+      const { container: containerSm } = render(<Sheet size="sm" />);
+      const sheetSm = containerSm.querySelector('.pgn__sheet-component');
+
+      expect(sheetSm).toHaveClass('pgn__sheet-sm');
+      expect(sheetSm).not.toHaveClass('pgn__sheet-md');
+
+      const { container: containerLg } = render(<Sheet size="lg" />);
+      const sheetLg = containerLg.querySelector('.pgn__sheet-component');
+      expect(sheetLg).toHaveClass('pgn__sheet-lg');
+    });
+
+    it('renders default size (md) when no size is provided', () => {
+      const { container } = render(<Sheet />);
+      const sheet = container.querySelector('.pgn__sheet-component');
+      expect(sheet).toHaveClass('pgn__sheet-md');
+    });
   });
 });
