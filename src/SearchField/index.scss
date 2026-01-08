@@ -131,16 +131,12 @@
   margin-inline-start: var(--pgn-spacing-search-field-margin-button);
   text-transform: capitalize;
 
-  &:focus {
-    &::before {
-      border-radius: 0;
-    }
+  &:focus::before {
+    border-radius: 0;
   }
 
-  &:focus-visible {
-    &::after {
-      content: none;
-    }
+  &:focus-visible::after {
+    content: none;
   }
 }
 
