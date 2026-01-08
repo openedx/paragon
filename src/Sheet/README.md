@@ -20,11 +20,11 @@ notes: |
   const [blocking, setBlocking] = useState(false);
   const [dark, setDark] = useState(false);
   const [position, setPosition] = useState('right');
-	const [size, setSize] = useState('md');
+  const [size, setSize] = useState('md');
   const [show, setShow] = useState(false);
 
   const positions = ['left', 'right', 'top', 'bottom'];
-	const sizes = ['sm', 'md', 'lg'];
+  const sizes = ['sm', 'md', 'lg'];
 
   return (
     <>
@@ -37,15 +37,15 @@ notes: |
           <Dropdown.Item eventKey={position}>{position}</Dropdown.Item>
         ))}
       </DropdownButton><br />
-			<DropdownButton
-				id="size-dropdown-btn"
-				onSelect={setSize}
-				title={`Size: ${size}`}
-			>
-				{sizes.map(s => (
-					<Dropdown.Item key={s} eventKey={s}>{s}</Dropdown.Item>
-				))}
-			</DropdownButton><br />
+      <DropdownButton
+        id="size-dropdown-btn"
+        onSelect={setSize}
+        title={`Size: ${size}`}
+      >
+        {sizes.map(s => (
+          <Dropdown.Item key={s} eventKey={s}>{s}</Dropdown.Item>
+        ))}
+      </DropdownButton><br />
       <Button onClick={() => setShow(true)} className="mb-2 mb-md-0">
         Show the Sheet
       </Button>{' '}
@@ -58,7 +58,7 @@ notes: |
 
       <Sheet
         position={position}
-				size={size}
+        size={size}
         show={show}
         blocking={blocking}
         variant={dark ? 'dark' : 'light'}
