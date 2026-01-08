@@ -5,7 +5,7 @@ import BreadcrumbLink from './BreadcrumbLink';
 import { ChevronRight } from '../../icons';
 import Icon from '../Icon';
 
-interface BreadcrumbProps {
+interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement> { // There is no 'HTMLNavElement'
   /** An array of objects describing links to be rendered. The contents of an object depend on the value of `linkAs`
    * prop as these objects will get passed down as props to the underlying component defined by `linkAs` prop.
    */
@@ -19,7 +19,7 @@ interface BreadcrumbProps {
   spacer?: React.ReactElement;
   /** allows to add a custom function to be called `onClick` of a breadcrumb link.
    * The use case for this is for adding custom analytics to the component. */
-  clickHandler?: (event: React.MouseEvent, link: any) => void;
+  clickHandler?: (event: React.MouseEvent<HTMLAnchorElement>, link: any) => void;
   /** The `Breadcrumbs` style variant to use. */
   variant?: 'light' | 'dark';
   /** The `Breadcrumbs` mobile variant view. */
@@ -28,10 +28,12 @@ interface BreadcrumbProps {
    * [react-router's Link](https://reactrouter.com/en/main/components/link).
    */
   linkAs?: React.ElementType;
+  /** Optional class name(s) to append to the base `<nav>` element. */
+  className?: string;
 }
 
 function Breadcrumb({
-  links, activeLabel, spacer, clickHandler,
+  links, activeLabel, spacer, clickHandler, className,
   variant = 'light', isMobile = false, ariaLabel = 'breadcrumb', linkAs = 'a', ...props
 }: BreadcrumbProps) {
   const linkCount = links.length;
@@ -40,7 +42,7 @@ function Breadcrumb({
   return (
     <nav
       aria-label={ariaLabel}
-      className={classNames('pgn__breadcrumb', `pgn__breadcrumb-${variant}`)}
+      className={classNames('pgn__breadcrumb', `pgn__breadcrumb-${variant}`, className)}
       {...props}
     >
       <ol className={classNames('list-inline', { 'is-mobile': isMobile })}>
