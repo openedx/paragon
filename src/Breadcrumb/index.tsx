@@ -5,7 +5,7 @@ import BreadcrumbLink from './BreadcrumbLink';
 import { ChevronRight } from '../../icons';
 import Icon from '../Icon';
 
-interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement> { // There is no 'HTMLNavElement'
+interface BreadcrumbProps {
   /** An array of objects describing links to be rendered. The contents of an object depend on the value of `linkAs`
    * prop as these objects will get passed down as props to the underlying component defined by `linkAs` prop.
    */
@@ -34,7 +34,7 @@ interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement> { // There i
 
 function Breadcrumb({
   links, activeLabel, spacer, clickHandler, className,
-  variant = 'light', isMobile = false, ariaLabel = 'breadcrumb', linkAs = 'a', ...props
+  variant = 'light', isMobile = false, ariaLabel = 'breadcrumb', linkAs = 'a',
 }: BreadcrumbProps) {
   const linkCount = links.length;
   const displayLinks = isMobile ? [links[linkCount - 1]] : links;
@@ -43,7 +43,6 @@ function Breadcrumb({
     <nav
       aria-label={ariaLabel}
       className={classNames('pgn__breadcrumb', `pgn__breadcrumb-${variant}`, className)}
-      {...props}
     >
       <ol className={classNames('list-inline', { 'is-mobile': isMobile })}>
         {displayLinks.map((link, i) => (
