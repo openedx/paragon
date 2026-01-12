@@ -95,4 +95,29 @@ describe('<Breadcrumb />', () => {
     expect(links.getAttribute('target')).toBe('_blank');
     expect(links.getAttribute('href')).toBe('/link-1');
   });
+
+  it('renders with a custom CSS class', () => {
+    render(<Breadcrumb {...baseProps} ariaLabel="Breadcrumbs" className="foobar" />);
+    const nav = screen.getByLabelText('Breadcrumbs');
+    expect(nav.classList).toContain('foobar');
+    expect(nav.classList).toContain('pgn__breadcrumb');
+    expect(nav.classList).toContain('pgn__breadcrumb-light');
+  });
+
+  it('can access data-xxxxx attributes on the links in clickHandler', async () => {
+    const user = userEvent.setup();
+    const clickHandler = jest.fn();
+    render(
+      <Breadcrumb
+        ariaLabel="Location"
+        links={[
+          { label: 'Link1', href: '/link1', 'data-parent-index': 17 },
+        ]}
+        clickHandler={({ currentTarget }) => clickHandler(currentTarget.dataset.parentIndex)}
+      />,
+    );
+    const link = screen.getByRole('link', { name: 'Link1' });
+    await user.click(link);
+    expect(clickHandler).toHaveBeenCalledWith('17');
+  });
 });
