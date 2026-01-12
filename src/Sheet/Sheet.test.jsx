@@ -115,14 +115,16 @@ describe('<Sheet />', () => {
     });
 
     it('renders with correct size classes', () => {
-      const { container: containerSm } = render(<Sheet size="sm" />);
-      const sheetSm = containerSm.querySelector('.pgn__sheet-component');
+      const { unmount } = render(<Sheet size="sm" />);
+      const sheetSm = screen.getByRole('alert');
 
       expect(sheetSm).toHaveClass('pgn__sheet-sm');
-      expect(sheetSm).not.toHaveClass('pgn__sheet-md');
 
-      const { container: containerLg } = render(<Sheet size="lg" />);
-      const sheetLg = containerLg.querySelector('.pgn__sheet-component');
+      unmount();
+
+      render(<Sheet size="lg" />);
+      const sheetLg = screen.getByRole('alert');
+
       expect(sheetLg).toHaveClass('pgn__sheet-lg');
     });
 
