@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import Sheet, { POSITIONS, VARIANTS } from '.';
 
@@ -127,8 +127,8 @@ describe('<Sheet />', () => {
     });
 
     it('renders default size (md) when no size is provided', () => {
-      const { container } = render(<Sheet />);
-      const sheet = container.querySelector('.pgn__sheet-component');
+      render(<Sheet />);
+      const sheet = screen.getByRole('alert');
       expect(sheet).toHaveClass('pgn__sheet-md');
     });
   });

@@ -19,7 +19,7 @@ notes: |
 () => {
   const [blocking, setBlocking] = useState(false);
   const [dark, setDark] = useState(false);
-  const [position, setPosition] = useState('right');
+  const [position, setPosition] = useState('bottom');
   const [size, setSize] = useState('md');
   const [show, setShow] = useState(false);
 

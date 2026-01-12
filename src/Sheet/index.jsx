@@ -102,7 +102,7 @@ Sheet.propTypes = {
     POSITIONS.top,
     POSITIONS.bottom,
   ]),
-  /** A string designation sheet's size */
+  /** ize of sheet to render */
   size: PropTypes.oneOf([SIZES.sm, SIZES.md, SIZES.lg]),
   /** Boolean used to control whether the Sheet shows. */
   show: PropTypes.bool,
