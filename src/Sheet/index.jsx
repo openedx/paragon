@@ -102,8 +102,8 @@ Sheet.propTypes = {
     POSITIONS.top,
     POSITIONS.bottom,
   ]),
-  /** ize of sheet to render */
-  size: PropTypes.oneOf([SIZES.sm, SIZES.md, SIZES.lg]),
+  /** Size of sheet to render */
+  size: PropTypes.oneOf(Object.values(SIZES)),
   /** Boolean used to control whether the Sheet shows. */
   show: PropTypes.bool,
   /** Specifies function that controls `show` value. */

@@ -42,8 +42,8 @@ notes: |
         onSelect={setSize}
         title={`Size: ${size}`}
       >
-        {sizes.map(s => (
-          <Dropdown.Item key={s} eventKey={s}>{s}</Dropdown.Item>
+        {sizes.map((size) => (
+          <Dropdown.Item key={size} eventKey={size}>{size}</Dropdown.Item>
         ))}
       </DropdownButton><br />
       <Button onClick={() => setShow(true)} className="mb-2 mb-md-0">
