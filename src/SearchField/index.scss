@@ -129,7 +129,6 @@
 .pgn__searchfield__button.btn[type="submit"] {
   border-radius: 0;
   margin-inline-start: var(--pgn-spacing-search-field-margin-button);
-  text-transform: capitalize;
 
   &:focus::before {
     border-radius: 0;
