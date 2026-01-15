@@ -131,7 +131,7 @@
   margin-inline-start: var(--pgn-spacing-search-field-margin-button);
 
   &:focus::before {
-    border-radius: 0;
+    border-radius: inherit;
   }
 
   &:focus-visible::after {
