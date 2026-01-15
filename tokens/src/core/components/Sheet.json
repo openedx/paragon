@@ -11,9 +11,9 @@
   "size": {
     "$type": "dimension",
     "sheet": {
-      "sm": { "value": "400px" },
-      "md": { "value": "500px" },
-      "lg": { "value": "800px" }
+      "sm": { "$value": "400px" },
+      "md": { "$value": "500px" },
+      "lg": { "$value": "800px" }
     }
   }
 }
