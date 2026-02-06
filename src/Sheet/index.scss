@@ -85,16 +85,16 @@
     top: 0;
     width: 100%;
 
-    &.pgn__sheet-sm {
-      max-width: var(--pgn-size-sheet-sm);
+    &.pgn__sheet-width-sm {
+      max-width: var(--pgn-width-sheet-sm);
     }
 
-    &.pgn__sheet-md {
-      max-width: var(--pgn-size-sheet-md);
+    &.pgn__sheet-width-md {
+      max-width: var(--pgn-width-sheet-md);
     }
 
-    &.pgn__sheet-lg {
-      max-width: var(--pgn-size-sheet-lg);
+    &.pgn__sheet-width-lg {
+      max-width: var(--pgn-width-sheet-lg);
     }
   }
 }

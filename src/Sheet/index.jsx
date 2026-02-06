@@ -12,7 +12,7 @@ export const POSITIONS = {
   bottom: 'bottom',
 };
 
-export const SIZES = {
+export const WIDTHS = {
   sm: 'sm',
   md: 'md',
   lg: 'lg',
@@ -33,14 +33,14 @@ class Sheet extends React.Component {
 
   renderSheet() {
     const {
-      children, position, variant, className, size,
+      children, position, variant, className, width,
     } = this.props;
     return (
       <div
         className={classNames(
           'pgn__sheet-component',
           `pgn__sheet__${variant}`,
-          `pgn__sheet-${size}`,
+          `pgn__sheet-width-${width}`,
           position,
           className,
         )}
@@ -102,8 +102,8 @@ Sheet.propTypes = {
     POSITIONS.top,
     POSITIONS.bottom,
   ]),
-  /** Size of sheet to render */
-  size: PropTypes.oneOf(Object.values(SIZES)),
+  /** Width of sheet to render */
+  width: PropTypes.oneOf(Object.values(WIDTHS)),
   /** Boolean used to control whether the Sheet shows. */
   show: PropTypes.bool,
   /** Specifies function that controls `show` value. */
@@ -116,7 +116,7 @@ Sheet.defaultProps = {
   blocking: false,
   children: undefined,
   position: POSITIONS.bottom,
-  size: SIZES.md,
+  width: WIDTHS.md,
   show: true,
   onClose: () => {},
   variant: VARIANTS.light,

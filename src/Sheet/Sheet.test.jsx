@@ -114,24 +114,24 @@ describe('<Sheet />', () => {
       expect(sheetElement).toHaveClass(sheetClass);
     });
 
-    it('renders with correct size classes', () => {
-      const { unmount } = render(<Sheet size="sm" />);
+    it('renders with correct width classes', () => {
+      const { unmount } = render(<Sheet width="sm" />);
       const sheetSm = screen.getByRole('alert');
 
-      expect(sheetSm).toHaveClass('pgn__sheet-sm');
+      expect(sheetSm).toHaveClass('pgn__sheet-width-sm');
 
       unmount();
 
-      render(<Sheet size="lg" />);
+      render(<Sheet width="lg" />);
       const sheetLg = screen.getByRole('alert');
 
-      expect(sheetLg).toHaveClass('pgn__sheet-lg');
+      expect(sheetLg).toHaveClass('pgn__sheet-width-lg');
     });
 
-    it('renders default size (md) when no size is provided', () => {
+    it('renders default width (md) when no width is provided', () => {
       render(<Sheet />);
       const sheet = screen.getByRole('alert');
-      expect(sheet).toHaveClass('pgn__sheet-md');
+      expect(sheet).toHaveClass('pgn__sheet-width-md');
     });
   });
 });
