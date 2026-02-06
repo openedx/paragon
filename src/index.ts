@@ -158,7 +158,6 @@ export {
   SEARCH_FIELD_SCREEN_READER_TEXT_LABEL,
   SEARCH_FIELD_SCREEN_READER_TEXT_CLEAR_BUTTON,
   SEARCH_FIELD_SCREEN_READER_TEXT_SUBMIT_BUTTON,
-  SEARCH_FIELD_BUTTON_TEXT,
   // @ts-ignore: has yet to be converted to TypeScript
 } from './SearchField';
 // @ts-ignore: has yet to be converted to TypeScript
