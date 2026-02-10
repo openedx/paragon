@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { useMediaQuery } from 'react-responsive';
 import { useIntl } from 'react-intl';
 import ModalLayer from './ModalLayer';
+
 // @ts-ignore for now - this needs to be converted to TypeScript
 import ModalCloseButton from './ModalCloseButton';
 import ModalDialogHeader from './ModalDialogHeader';
@@ -17,7 +18,8 @@ import ModalDialogHero from './ModalDialogHero';
 
 import Icon from '../Icon';
 import IconButton from '../IconButton';
-import { Close } from '../../icons';
+import useToggle from '../hooks/useToggleHook';
+import { Close, FullscreenExit, Fullscreen } from '../../icons';
 import messages from './messages';
 
 interface Props {
@@ -39,6 +41,10 @@ interface Props {
   closeLabel?: string;
   /** Specifies class name to append to the base element */
   className?: string;
+  /** Renders the fullscreen icon button in the top right of the dialog box. It will not be redered (even if set to
+   * true) if the dialog is fullscreen for another reason (e.g. isFullscreenOnMobile is true and the viewport is
+   * mobile, or the dialog size is already set to fullscreen) */
+  hasFullscreenButton?: boolean;
   /**
    * Determines where a scrollbar should appear if a modal is too large for the
    * viewport. When false, the ``ModalDialog``. Body receives a scrollbar, when true
@@ -69,6 +75,7 @@ function ModalDialog({
   variant = 'default',
   hasCloseButton = true,
   closeLabel,
+  hasFullscreenButton = false,
   isFullscreenScroll = false,
   className,
   isFullscreenOnMobile = false,
@@ -79,7 +86,10 @@ function ModalDialog({
   const intl = useIntl();
   const closeButtonText = closeLabel || intl.formatMessage(messages.closeButtonText);
   const isMobile = useMediaQuery({ query: '(max-width: 767.98px)' });
-  const showFullScreen = (isFullscreenOnMobile && isMobile);
+  const alwaysFullscreen = (isFullscreenOnMobile && isMobile) || size === 'fullscreen';
+
+  const [isFullscreen, , , toggleFullscreen] = useToggle(alwaysFullscreen);
+
   return (
     <ModalLayer isOpen={isOpen} onClose={onClose} isBlocking={isBlocking} zIndex={zIndex}>
       <div
@@ -88,7 +98,7 @@ function ModalDialog({
         className={classNames(
           'pgn__modal',
           {
-            [`pgn__modal-${showFullScreen ? 'fullscreen' : size}`]: size,
+            [`pgn__modal-${isFullscreen ? 'fullscreen' : size}`]: size,
             [`pgn__modal-${variant}`]: variant,
             'pgn__modal-scroll-fullscreen': isFullscreenScroll,
             'pgn__modal-visible-overflow': isOverflowVisible,
@@ -96,15 +106,26 @@ function ModalDialog({
           className,
         )}
       >
-        {hasCloseButton && (
-          <div className="pgn__modal-close-container">
-            <ModalCloseButton
-              as={IconButton}
-              iconAs={Icon}
-              invertColors={variant === 'dark'}
-              src={Close}
-              alt={closeButtonText}
-            />
+        {(hasCloseButton || hasFullscreenButton) && (
+          <div className="pgn__modal-title-buttons-container">
+            {hasFullscreenButton && !alwaysFullscreen && (
+              <IconButton
+                src={isFullscreen ? FullscreenExit : Fullscreen}
+                iconAs={Icon}
+                invertColors={variant === 'dark'}
+                onClick={toggleFullscreen}
+                alt={intl.formatMessage(messages.fullscreenButtonText)}
+              />
+            )}
+            {hasCloseButton && (
+              <ModalCloseButton
+                as={IconButton}
+                iconAs={Icon}
+                invertColors={variant === 'dark'}
+                src={Close}
+                alt={closeButtonText}
+              />
+            )}
           </div>
         )}
         {children}
