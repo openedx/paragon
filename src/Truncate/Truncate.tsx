@@ -9,19 +9,20 @@ interface TruncateProps {
 }
 
 function Truncate({ children, lines = 1 }: TruncateProps) {
-  const style = {
-    lineClamp: lines,
-    WebkitLineClamp: lines,
-  };
-
-  const initialText = Array.isArray(children) ? assembleStringFromChildrenArray(children) : String(children);
+  let initialText: string = '';
+  if (Array.isArray(children)) {
+    const { result } = assembleStringFromChildrenArray(children)
+    initialText = result;
+  } else {
+    initialText = String(children)
+  }
 
   return (
     <p
       title={initialText}
       aria-label={initialText}
       className="truncate-text"
-      style={style}
+      style={{ "--truncate-prop-lines": lines } as React.CSSProperties}
       data-testid="truncate-element"
     >
       {children}

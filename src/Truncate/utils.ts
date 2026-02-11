@@ -8,6 +8,11 @@ export interface ElementDataEntry {
   children: ElementDataEntry[] | null;
 }
 
+export interface AssemblyResult {
+  result: string;
+  elementsData: ElementDataEntry[];
+};
+
 /**
  * Retrieves plain string from children array and collects data
  * to be able to restore original children in the future.
@@ -18,50 +23,43 @@ export interface ElementDataEntry {
  */
 export function assembleStringFromChildrenArray(
   children: Array<React.ReactNode>,
-  elementsData: Array<ElementDataEntry> = [],
-): string {
-  let result = '';
+): AssemblyResult {
+  let finalResult = '';
+  const finalElementsData: ElementDataEntry[] = [];
 
   children?.forEach(child => {
     const isStringOrNumber = typeof child === 'string' || typeof child === 'number';
     const isElement = React.isValidElement(child);
 
-    // Default values if the child is a simple string/number
-    let currentChildren = null;
+    let currentChildren: ElementDataEntry[] | null = null;
     let childProps: Record<string, any> | null = null;
     let childType: React.ElementType | string | null = null;
 
-    const start = result.length;
+    const start = finalResult.length;
 
     if (isStringOrNumber) {
-      result += String(child);
+      finalResult += String(child);
     } else if (isElement) {
       childProps = (child as React.ReactElement).props;
       childType = (child as React.ReactElement).type;
 
       const elementChildren = childProps?.children;
-      const isElementChildrenStringOrNumber = typeof elementChildren === 'string' || typeof elementChildren === 'number';
 
-      if (isElementChildrenStringOrNumber) {
-        result += String(elementChildren);
+      if (typeof elementChildren === 'string' || typeof elementChildren === 'number') {
+        finalResult += String(elementChildren);
       } else if (elementChildren) {
-        const nestedChildrenData: ElementDataEntry[] = [];
-
-        const childrenArray = Array.isArray(elementChildren)
-          ? elementChildren
-          : [elementChildren]; // If it's a single element, wrap it in an array
-
-        result += assembleStringFromChildrenArray(
-          childrenArray as Array<React.ReactNode>,
-          nestedChildrenData,
-        );
-
-        currentChildren = nestedChildrenData;
+        const childrenArray = Array.isArray(elementChildren) ? elementChildren : [elementChildren];
+        
+        const { result, elementsData } = assembleStringFromChildrenArray(childrenArray);
+        
+        finalResult += result;
+        currentChildren = elementsData;
       }
     }
-    const end = result.length;
 
-    elementsData.push({
+    const end = finalResult.length;
+
+    finalElementsData.push({
       type: childType,
       props: childProps,
       start,
@@ -70,5 +68,5 @@ export function assembleStringFromChildrenArray(
     });
   });
 
-  return result;
+  return { result: finalResult, elementsData: finalElementsData };
 }

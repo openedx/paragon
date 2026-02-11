@@ -20,7 +20,7 @@ describe('Truncate Component', () => {
     render(<Truncate>{testContent}</Truncate>);
 
     const element = screen.getByTestId('truncate-element');
-    expect(element.style.WebkitLineClamp).toBe('1');
+    expect(element.style.getPropertyValue('--truncate-prop-lines')).toBe('1');
 
     expect(element).toHaveAttribute('title', testContent);
     expect(element).toHaveAttribute('aria-label', testContent);
@@ -33,7 +33,7 @@ describe('Truncate Component', () => {
 
     const element = screen.getByTestId('truncate-element');
 
-    expect(element.style.WebkitLineClamp).toBe(String(customLines));
+    expect(element.style.getPropertyValue('--truncate-prop-lines')).toBe(String(customLines));
 
     expect(element).toHaveAttribute('title', testContent);
     expect(element).toHaveAttribute('aria-label', testContent);

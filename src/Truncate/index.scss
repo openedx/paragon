@@ -1,7 +1,7 @@
-.truncate-text {
+.pgn__truncate-text {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
+  -webkit-line-clamp: var(--truncate-prop-lines);
+  line-clamp: var(--truncate-prop-lines);
 }
