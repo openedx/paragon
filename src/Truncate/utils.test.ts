@@ -1,15 +1,13 @@
-import { assembleStringFromChildrenArray } from './utils';
 import React from 'react';
+import { assembleStringFromChildrenArray } from './utils';
 
-const mockElement = (type: string, props: Record<string, any>) => 
-  React.createElement(type, props);
+const mockElement = (type: string, props: Record<string, any>) => React.createElement(type, props);
 
 describe('utils', () => {
   describe('assembleStringFromChildrenArray', () => {
-    
     it('should correctly assemble a string from a simple array of strings and numbers', () => {
       const inputChildren = ['Hello', 123, ' World!'];
-      
+
       const { result, elementsData } = assembleStringFromChildrenArray(inputChildren);
 
       expect(result).toBe('Hello123 World!');
@@ -24,7 +22,7 @@ describe('utils', () => {
       const elementText = 'test-element-text';
       const originalProps = { id: 1, children: elementText };
       const element = mockElement('span', originalProps);
-      
+
       const { result, elementsData } = assembleStringFromChildrenArray([element]);
 
       expect(result).toBe(elementText);
@@ -55,7 +53,7 @@ describe('utils', () => {
       const { result, elementsData } = assembleStringFromChildrenArray([outerDiv]);
 
       expect(result).toBe('Outer Inner');
-      
+
       expect(elementsData).toHaveLength(1);
       const divData = elementsData[0];
       expect(divData.type).toBe('div');
@@ -63,7 +61,7 @@ describe('utils', () => {
       expect(divData.children).toHaveLength(2);
       expect(divData.children?.[0].type).toBeNull();
       expect(divData.children?.[1].type).toBe('strong');
-      
+
       expect(divData.children?.[1].start).toBe(6);
       expect(divData.children?.[1].end).toBe(11);
     });

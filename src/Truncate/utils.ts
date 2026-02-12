@@ -11,7 +11,7 @@ export interface ElementDataEntry {
 export interface AssemblyResult {
   result: string;
   elementsData: ElementDataEntry[];
-};
+}
 
 /**
  * Retrieves plain string from children array and collects data
@@ -49,9 +49,9 @@ export function assembleStringFromChildrenArray(
         finalResult += String(elementChildren);
       } else if (elementChildren) {
         const childrenArray = Array.isArray(elementChildren) ? elementChildren : [elementChildren];
-        
+
         const { result, elementsData } = assembleStringFromChildrenArray(childrenArray);
-        
+
         finalResult += result;
         currentChildren = elementsData;
       }

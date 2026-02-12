@@ -11,10 +11,10 @@ interface TruncateProps {
 function Truncate({ children, lines = 1 }: TruncateProps) {
   let initialText: string = '';
   if (Array.isArray(children)) {
-    const { result } = assembleStringFromChildrenArray(children)
+    const { result } = assembleStringFromChildrenArray(children);
     initialText = result;
   } else {
-    initialText = String(children)
+    initialText = String(children);
   }
 
   return (
@@ -22,7 +22,7 @@ function Truncate({ children, lines = 1 }: TruncateProps) {
       title={initialText}
       aria-label={initialText}
       className="truncate-text"
-      style={{ "--truncate-prop-lines": lines } as React.CSSProperties}
+      style={{ '--truncate-prop-lines': lines } as React.CSSProperties}
       data-testid="truncate-element"
     >
       {children}
