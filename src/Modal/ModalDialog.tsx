@@ -41,7 +41,7 @@ interface Props {
   closeLabel?: string;
   /** Specifies class name to append to the base element */
   className?: string;
-  /** Renders the fullscreen icon button in the top right of the dialog box. It will not be redered (even if set to
+  /** Renders the fullscreen icon button in the top right of the dialog box. It will not be rendered (even if set to
    * true) if the dialog is fullscreen for another reason (e.g. isFullscreenOnMobile is true and the viewport is
    * mobile, or the dialog size is already set to fullscreen) */
   hasFullscreenButton?: boolean;
