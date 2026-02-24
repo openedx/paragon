@@ -38,6 +38,7 @@ export {
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
+export { default as ModalCloseButton } from './Modal/ModalCloseButton';
 export { default as ModalContext } from './Modal/ModalContext';
 export { default as ModalDialog } from './Modal/ModalDialog';
 export { default as ModalLayer } from './Modal/ModalLayer';
@@ -108,8 +109,6 @@ export { default as Menu } from './Menu';
 export { default as MenuItem } from './Menu/MenuItem';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as SelectMenu, SELECT_MENU_DEFAULT_MESSAGE } from './Menu/SelectMenu';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as ModalCloseButton } from './Modal/ModalCloseButton';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as FullscreenModal, FULLSCREEN_MODAL_CLOSE_LABEL } from './Modal/FullscreenModal';
 // @ts-ignore: has yet to be converted to TypeScript
