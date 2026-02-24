@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { StepperContext } from './StepperContext';
 import ActionRow from '../ActionRow';
 
@@ -15,16 +16,18 @@ export interface StepperActionRowProps {
   [key: string]: any; // For additional props passed through
 }
 
-interface StepperActionRowComponent extends React.FC<StepperActionRowProps> {
+interface StepperActionRowComponent {
+  (props: StepperActionRowProps): JSX.Element | null;
   Spacer: typeof ActionRow.Spacer;
+  propTypes?: any;
 }
 
-const StepperActionRow: StepperActionRowComponent = ({
+function StepperActionRow({
   as = ActionRow,
   children,
   eventKey,
   ...props
-}) => {
+}: StepperActionRowProps) {
   const { activeKey } = useContext(StepperContext);
   const isActive = activeKey === eventKey;
 
@@ -33,8 +36,14 @@ const StepperActionRow: StepperActionRowComponent = ({
   }
 
   return React.createElement(as, props, children);
+}
+
+StepperActionRow.propTypes = {
+  as: PropTypes.elementType,
+  children: PropTypes.node.isRequired,
+  eventKey: PropTypes.string.isRequired,
 };
 
-StepperActionRow.Spacer = ActionRow.Spacer;
+(StepperActionRow as StepperActionRowComponent).Spacer = ActionRow.Spacer;
 
 export default StepperActionRow;

@@ -27,7 +27,7 @@ export const StepperContext = React.createContext<StepperContextValue>({
   getIsViewed: () => false,
 });
 
-type StepsAction = 
+type StepsAction =
   | { type: 'register'; step: Step }
   | { type: 'remove'; eventKey: string };
 
