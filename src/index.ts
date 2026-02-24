@@ -3,6 +3,7 @@
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 export { default as ActionRow } from './ActionRow';
 export { default as Alert, ALERT_CLOSE_LABEL_TEXT } from './Alert';
+export { default as AlertModal } from './Modal/AlertModal';
 export { default as Annotation } from './Annotation';
 export { default as Avatar } from './Avatar';
 export { default as AvatarButton } from './AvatarButton';
@@ -116,8 +117,6 @@ export { default as FullscreenModal, FULLSCREEN_MODAL_CLOSE_LABEL } from './Moda
 export { default as MarketingModal } from './Modal/MarketingModal';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as StandardModal, STANDARD_MODAL_CLOSE_LABEL } from './Modal/StandardModal';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as AlertModal } from './Modal/AlertModal';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as ModalPopup } from './Modal/ModalPopup';
 // @ts-ignore: has yet to be converted to TypeScript
