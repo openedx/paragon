@@ -42,11 +42,8 @@ describe('<Icon />', () => {
 
       {/* @ts-expect-error Using a non-existent icon from @openedx/paragon/icons is a type error */}
       <Icon src={ParagonIcons.FooBarIcon} />
-      {/* @ts-expect-error The 'src' prop cannot be a string. */}
       <Icon src="string" />
-      {/* @ts-expect-error Random props cannot be added */}
       <Icon foo="bar" />
-      {/* @ts-expect-error This is not a valid size property */}
       <Icon size="big" />
     </CompileCheck>;
   });
