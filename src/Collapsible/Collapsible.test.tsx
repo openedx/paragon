@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
 import Collapsible from '.';
+import CollapsibleAdvanced from './CollapsibleAdvanced';
 
 const EXAMPLE_CONTENT = 'Example content';
 
@@ -69,26 +70,26 @@ describe('<Collapsible />', () => {
   });
 
   describe('Imperative Methods', () => {
-    const ref = React.createRef();
+    const ref = React.createRef<CollapsibleAdvanced>();
     beforeEach(() => {
       render(
-        <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
+        <Collapsible.Advanced ref={ref as any}>{collapsibleContent}</Collapsible.Advanced>,
       );
     });
     it('opens on .open()', async () => {
       expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
-      ref.current.open();
+      ref.current?.open();
       await waitFor(() => {
         expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
       });
     });
 
     it('closes on .close()', async () => {
-      ref.current.open();
+      ref.current?.open();
       await waitFor(() => {
         expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
       });
-      ref.current.close();
+      ref.current?.close();
       await waitFor(() => {
         expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
       });
@@ -101,26 +102,26 @@ describe('<Collapsible />', () => {
         return <h1>Hello world</h1>;
       }
       render(
-        <Collapsible.Advanced ref={ref} unmountOnExit={false}>
+        <Collapsible.Advanced ref={ref as any} unmountOnExit={false}>
           <Collapsible.Body>
             <Comp />
           </Collapsible.Body>
         </Collapsible.Advanced>,
       );
-      ref.current.open();
+      ref.current?.open();
       expect(i).toEqual(1);
-      ref.current.close();
-      ref.current.open();
+      ref.current?.close();
+      ref.current?.open();
       expect(i).toEqual(1);
     });
   });
 
   describe('Mouse Interactions', () => {
-    let collapsible;
-    const ref = React.createRef();
+    let collapsible: CollapsibleAdvanced | null;
+    const ref = React.createRef<CollapsibleAdvanced>();
     beforeEach(() => {
       render(
-        <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
+        <Collapsible.Advanced ref={ref as any}>{collapsibleContent}</Collapsible.Advanced>,
       );
       collapsible = ref.current;
     });
@@ -132,7 +133,7 @@ describe('<Collapsible />', () => {
     });
 
     it('closes on trigger click', async () => {
-      collapsible.open();
+      collapsible?.open();
       await waitFor(() => {
         expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
       });
@@ -141,36 +142,36 @@ describe('<Collapsible />', () => {
     });
 
     it('does not open on close only trigger click', async () => {
-      collapsible.close();
+      collapsible?.close();
       await userEvent.click(screen.getByTestId('close-only')); // No-op
       expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('closes on close only trigger click', async () => {
-      collapsible.open();
+      collapsible?.open();
       await userEvent.click(screen.getByTestId('close-only')); // Close
       expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('does not close on open only trigger click', async () => {
-      collapsible.open();
+      collapsible?.open();
       await userEvent.click(screen.getByTestId('open-only')); // No-op
       expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
 
     it('opens on open only trigger click', async () => {
-      collapsible.close();
+      collapsible?.close();
       await userEvent.click(screen.getByTestId('open-only')); // Open
       expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
   });
 
   describe('Keyboard Interactions', () => {
-    let collapsible;
-    const ref = React.createRef();
+    let collapsible: CollapsibleAdvanced | null;
+    const ref = React.createRef<CollapsibleAdvanced>();
     beforeEach(() => {
       render(
-        <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
+        <Collapsible.Advanced ref={ref as any}>{collapsibleContent}</Collapsible.Advanced>,
       );
       collapsible = ref.current;
     });
@@ -182,35 +183,35 @@ describe('<Collapsible />', () => {
     });
 
     it('closes on trigger enter keydown', async () => {
-      collapsible.open();
+      collapsible?.open();
       screen.getAllByRole('button')[0].focus();
       await userEvent.keyboard('{enter}'); // Close
       expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('does not open on close only trigger enter keydown', async () => {
-      collapsible.close();
+      collapsible?.close();
       screen.getByTestId('close-only').focus();
       await userEvent.keyboard('{enter}'); // No-op
       expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('closes on close only trigger enter keydown', async () => {
-      collapsible.open();
+      collapsible?.open();
       screen.getByTestId('close-only').focus();
       await userEvent.keyboard('{enter}'); // Close
       expect(screen.queryByText(EXAMPLE_CONTENT)).not.toBeInTheDocument();
     });
 
     it('does not close on open only trigger enter keydown', async () => {
-      collapsible.open();
+      collapsible?.open();
       screen.getByTestId('open-only').focus();
       await userEvent.keyboard('{enter}'); // No-op
       expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
 
     it('opens on open only trigger enter keydown', async () => {
-      collapsible.close();
+      collapsible?.close();
       screen.getByTestId('open-only').focus();
       await userEvent.keyboard('{enter}'); // Open
       expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
