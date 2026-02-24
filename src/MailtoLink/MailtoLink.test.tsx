@@ -8,11 +8,11 @@ const emailAddress = 'edx@example.com';
 const emailAddresses = ['foo@example.com', 'bar@example.com', 'baz@example.com'];
 const subject = 'subject';
 const body = 'body';
-const content = 'content';
+const children = 'content';
 
-const baseProps = { subject, body, content };
+const baseProps = { subject, body, children };
 
-function MailtoLinkWrapper(props) {
+function MailtoLinkWrapper(props: React.ComponentProps<typeof MailtoLink>) {
   return (
     <IntlProvider locale="en">
       <MailtoLink {...props} />
@@ -55,7 +55,7 @@ describe('correct rendering', () => {
   });
 
   it('renders empty mailtoLink', () => {
-    const { getByText } = render(<MailtoLinkWrapper content={content} />);
+    const { getByText } = render(<MailtoLinkWrapper>{children}</MailtoLinkWrapper>);
     const linkElement = getByText('content');
     expect(linkElement.getAttribute('href')).toEqual('mailto:');
   });

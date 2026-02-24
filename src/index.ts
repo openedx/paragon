@@ -7,6 +7,7 @@ export { default as Annotation } from './Annotation';
 export { default as Avatar } from './Avatar';
 export { default as AvatarButton } from './AvatarButton';
 export { default as Badge } from './Badge';
+export { default as MailtoLink, MAIL_TO_LINK_EXTERNAL_LINK_ALTERNATIVE_TEXT, MAIL_TO_LINK_EXTERNAL_LINK_TITLE } from './MailtoLink';
 export { default as Breadcrumb } from './Breadcrumb';
 export { default as Bubble } from './Bubble';
 export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
@@ -98,8 +99,7 @@ export { default as Fade } from './Fade';
 export { default as IconButtonToggle } from './IconButtonToggle';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Image, Figure } from './Image';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as MailtoLink, MAIL_TO_LINK_EXTERNAL_LINK_ALTERNATIVE_TEXT, MAIL_TO_LINK_EXTERNAL_LINK_TITLE } from './MailtoLink';
+
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Media } from './Media';
 // @ts-ignore: has yet to be converted to TypeScript
