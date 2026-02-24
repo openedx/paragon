@@ -45,6 +45,7 @@ export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
 export { default as Spinner } from './Spinner';
 export { default as Stack } from './Stack';
+export { default as StatefulButton } from './StatefulButton';
 export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
 export { default as Tooltip } from './Tooltip';
 export { default as useWindowSize, type WindowSizeData } from './hooks/useWindowSizeHook';
@@ -165,8 +166,6 @@ export {
 export { default as Sheet } from './Sheet';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Stepper } from './Stepper';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as StatefulButton } from './StatefulButton';
 export {
   default as Tabs,
   Tab,
