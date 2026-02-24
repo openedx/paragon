@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import useIsVisible from '../hooks/useIsVisibleHook';
@@ -7,20 +6,27 @@ import useIsVisible from '../hooks/useIsVisibleHook';
 export const CLASSNAME_SCROLL_TOP = 'pgn__scrollable-body-scroll-top';
 export const CLASSNAME_SCROLL_BOTTOM = 'pgn__scrollable-body-scroll-bottom';
 
-function Scrollable({ children, ...props }) {
+export interface ScrollableProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Specifies the content of the `Scrollable`. */
+  children: React.ReactNode;
+  /** Additional classnames for this component. */
+  className?: string;
+}
+
+function Scrollable({ children, className, ...props }: ScrollableProps) {
   const [isScrolledToTop, topSentinelRef] = useIsVisible();
   const [isScrolledToBottom, bottomSentinelRef] = useIsVisible();
   const [valueNow, setValueNow] = useState(0);
-  const className = classNames(
+  const scrollableClassName = classNames(
     'pgn__scrollable-body',
-    props.className,
+    className,
     {
       [CLASSNAME_SCROLL_TOP]: isScrolledToTop,
       [CLASSNAME_SCROLL_BOTTOM]: isScrolledToBottom,
     },
   );
 
-  const handleScroll = (e) => {
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const maxScrollHeight = e.currentTarget.scrollHeight - e.currentTarget.clientHeight;
     setValueNow(Math.ceil((100 * e.currentTarget.scrollTop) / maxScrollHeight));
   };
@@ -28,33 +34,24 @@ function Scrollable({ children, ...props }) {
   return (
     <div
       {...props}
-      className={className}
+      className={scrollableClassName}
       role="scrollbar"
       aria-valuemin={0}
       aria-valuemax={100}
       aria-valuenow={valueNow}
       aria-controls="scrollbar"
-      tabIndex="0"
+      tabIndex={0}
       onScroll={handleScroll}
     >
-      <div ref={topSentinelRef} />
+      <div ref={topSentinelRef as React.RefObject<HTMLDivElement>} />
       <div className="pgn__scrollable-body-content">
         {children}
       </div>
-      <div ref={bottomSentinelRef} />
+      <div ref={bottomSentinelRef as React.RefObject<HTMLDivElement>} />
     </div>
   );
 }
 
-Scrollable.propTypes = {
-  /** Specifies the content of the `Scrollable`. */
-  children: PropTypes.node.isRequired,
-  /** Additional classnames for this component. */
-  className: PropTypes.string,
-};
-
-Scrollable.defaultProps = {
-  className: undefined,
-};
+Scrollable.displayName = 'Scrollable';
 
 export default Scrollable;
