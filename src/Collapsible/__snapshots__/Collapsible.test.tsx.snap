@@ -3,7 +3,6 @@
 exports[`<Collapsible /> Controlled Rendering renders closed by default 1`] = `
 <div
   className="pgn_collapsible"
-  open={false}
 >
   <div
     aria-expanded={false}
@@ -160,6 +159,7 @@ exports[`<Collapsible /> Uncontrolled Rendering renders closed by default 1`] = 
 exports[`<Collapsible /> Uncontrolled Rendering renders open by default 1`] = `
 <div
   className="pgn_collapsible is-open"
+  defaultOpen={true}
 >
   <div
     aria-expanded={true}
