@@ -1,10 +1,12 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 
-import TransitionReplace from '.';
+import TransitionReplace, { TransitionReplaceProps } from '.';
 
-/* eslint-disable-next-line react/prop-types */
-function TestReplacement({ showContentA, ...props }) {
+interface TestReplacementProps extends Omit<TransitionReplaceProps, 'children'> {
+  showContentA: boolean;
+}
+
+function TestReplacement({ showContentA, ...props }: TestReplacementProps) {
   return (
     <TransitionReplace {...props}>
       {showContentA ? (
@@ -19,17 +21,17 @@ function TestReplacement({ showContentA, ...props }) {
 describe('TransitionReplace', () => {
   it('should add entering class names for each part of the transition', (done) => {
     let count = 0;
-    const onChildEnter = (node) => {
+    const onChildEnter = (node: HTMLElement) => {
       count++;
       expect(count).toEqual(1);
       expect(node.classList.contains('test-enter')).toEqual(true);
     };
-    const onChildEntering = (node) => {
+    const onChildEntering = (node: HTMLElement) => {
       count++;
       expect(count).toEqual(2);
       expect(node.classList.contains('test-enter-active')).toEqual(true);
     };
-    const onChildEntered = (node) => {
+    const onChildEntered = (node: HTMLElement) => {
       count++;
       expect(count).toEqual(3);
       expect(node.classList.contains('test-enter-done')).toEqual(true);
@@ -63,17 +65,17 @@ describe('TransitionReplace', () => {
 
   it('should add exiting class names for each part of the transition', (done) => {
     let count = 0;
-    const onChildExit = (node) => {
+    const onChildExit = (node: HTMLElement) => {
       count++;
       expect(count).toEqual(1);
       expect(node.classList.contains('test-exit')).toEqual(true);
     };
-    const onChildExiting = (node) => {
+    const onChildExiting = (node: HTMLElement) => {
       count++;
       expect(count).toEqual(2);
       expect(node.classList.contains('test-exit-active')).toEqual(true);
     };
-    const onChildExited = (node) => {
+    const onChildExited = (node: HTMLElement) => {
       count++;
       expect(count).toEqual(3);
       expect(node.classList.contains('test-exit-done')).toEqual(true);
