@@ -42,6 +42,7 @@ export { default as ModalContext } from './Modal/ModalContext';
 export { default as ModalDialog } from './Modal/ModalDialog';
 export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
+export { default as Popover, PopoverTitle, PopoverContent } from './Popover';
 export { default as Portal } from './Modal/Portal';
 export { default as Spinner } from './Spinner';
 export { default as Stack } from './Stack';
@@ -145,8 +146,6 @@ export {
   PAGINATION_BUTTON_LABEL_PAGE,
   // @ts-ignore: has yet to be converted to TypeScript
 } from './Pagination';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Popover, PopoverTitle, PopoverContent } from './Popover';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as ProgressBar } from './ProgressBar';
 // @ts-ignore: has yet to be converted to TypeScript
