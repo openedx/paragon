@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * Gets the current annotation styles and calculates the left margin so
  * that the annotation pointer indicates on zero of the ProgressBar.
@@ -8,11 +10,11 @@
  * @param {string} annotationClass is used to identify the annotation element
  */
 export const placeInfoAtZero = (
-  ref,
-  direction = 'ltr',
-  annotationOnly = true,
-  annotationClass = 'pgn__annotation',
-) => {
+  ref: React.RefObject<HTMLElement | null>,
+  direction: string = 'ltr',
+  annotationOnly: boolean = true,
+  annotationClass: string = 'pgn__annotation',
+): boolean => {
   if (!ref.current || !ref.current.style) { return false; }
   const { children } = ref.current;
   let horizontalMargin = 0.0;
@@ -38,6 +40,6 @@ export const placeInfoAtZero = (
  * depending on the direction.
  */
 export const getOffsetStyles = (
-  value,
-  direction,
-) => (direction === 'rtl' ? { right: `${value}%` } : { left: `${value}%` });
+  value: number | undefined,
+  direction: string,
+): { left: string } | { right: string } => (direction === 'rtl' ? { right: `${value}%` } : { left: `${value}%` });

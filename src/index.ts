@@ -147,8 +147,8 @@ export {
 } from './Pagination';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Popover, PopoverTitle, PopoverContent } from './Popover';
-// @ts-ignore: has yet to be converted to TypeScript
 export { default as ProgressBar } from './ProgressBar';
+export type { ProgressBarAnnotatedProps } from './ProgressBar';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as ProductTour } from './ProductTour';
 // @ts-ignore: has yet to be converted to TypeScript

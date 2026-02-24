@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
-import ProgressBar, { ANNOTATION_CLASS } from '..';
+import ProgressBar, { ANNOTATION_CLASS, ProgressBarAnnotatedProps } from '..';
 
 const ref = {
   current: {
@@ -24,9 +24,9 @@ const ref = {
       },
     ],
   },
-};
+} as any;
 
-function ProgressBarElement(props) {
+function ProgressBarElement(props: ProgressBarAnnotatedProps) {
   return (
     <ProgressBar.Annotated
       now={20}
@@ -99,13 +99,13 @@ describe('<ProgressBar.Annotated />', () => {
       expect(progressHints[1].textContent).toEqual('');
     });
     it('should apply styles based on direction for threshold', () => {
-      window.getComputedStyle = jest.fn().mockReturnValue({ getPropertyValue: () => 'rtl' });
+      window.getComputedStyle = jest.fn().mockReturnValue({ getPropertyValue: () => 'rtl' }) as any;
       const { container } = render(<ProgressBarElement />);
       const progressInfo = container.querySelector('.pgn__progress-info');
-      const computedStyles = window.getComputedStyle(progressInfo);
+      const computedStyles = window.getComputedStyle(progressInfo!);
 
       expect(computedStyles.getPropertyValue('directory')).toBe('rtl');
-      window.getComputedStyle.mockRestore();
+      (window.getComputedStyle as jest.Mock).mockRestore();
     });
   });
 });

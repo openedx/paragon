@@ -1,6 +1,6 @@
+/* eslint-disable react/require-default-props */
 import React, { useCallback, useEffect } from 'react';
 import ProgressBarBase from 'react-bootstrap/ProgressBar';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Annotation from '../Annotation';
 import { getOffsetStyles, placeInfoAtZero } from './utils';
@@ -14,30 +14,53 @@ const VARIANTS = [
   'warning',
   'success',
   'error',
-];
+] as const;
 
-function ProgressBar(props) {
+type Variant = typeof VARIANTS[number];
+
+export interface ProgressBarAnnotatedProps {
+  /** Current value of progress. */
+  now?: number;
+  /** Show label that represents visual percentage. */
+  label?: React.ReactNode;
+  /** The `ProgressBar` style variant to use. */
+  variant?: Variant;
+  /** Specifies an additional `className` to add to the base element. */
+  className?: string;
+  /** Threshold current value. */
+  threshold?: number;
+  /** Specifies label for `threshold`. */
+  thresholdLabel?: React.ReactNode;
+  /** Variant for threshold value. */
+  thresholdVariant?: Variant;
+  /** Text near the progress annotation. */
+  progressHint?: React.ReactNode;
+  /** Text near the threshold annotation. */
+  thresholdHint?: React.ReactNode;
+}
+
+function ProgressBar(props: React.ComponentPropsWithoutRef<typeof ProgressBarBase>) {
   return <ProgressBarBase {...props} />;
 }
 
 function ProgressBarAnnotated({
   now,
   label,
-  variant,
+  variant = PROGRESS_DEFAULT_VARIANT,
   threshold,
   thresholdLabel,
-  thresholdVariant,
+  thresholdVariant = THRESHOLD_DEFAULT_VARIANT,
   progressHint,
   thresholdHint,
   ...props
-}) {
-  const progressInfoRef = React.useRef();
-  const thresholdInfoRef = React.useRef();
+}: ProgressBarAnnotatedProps) {
+  const progressInfoRef = React.useRef<HTMLDivElement>(null);
+  const thresholdInfoRef = React.useRef<HTMLDivElement>(null);
   const thresholdPercent = (threshold || 0) - (now || 0);
-  const isProgressHintAfter = now < HINT_SWAP_PERCENT;
-  const isThresholdHintAfter = threshold < HINT_SWAP_PERCENT;
-  const progressColor = VARIANTS.includes(variant) ? variant : PROGRESS_DEFAULT_VARIANT;
-  const thresholdColor = VARIANTS.includes(thresholdVariant) ? thresholdVariant : THRESHOLD_DEFAULT_VARIANT;
+  const isProgressHintAfter = (now as number) < HINT_SWAP_PERCENT;
+  const isThresholdHintAfter = (threshold as number) < HINT_SWAP_PERCENT;
+  const progressColor = VARIANTS.includes(variant!) ? variant! : PROGRESS_DEFAULT_VARIANT;
+  const thresholdColor = VARIANTS.includes(thresholdVariant!) ? thresholdVariant! : THRESHOLD_DEFAULT_VARIANT;
   const direction = window.getComputedStyle(document.body).getPropertyValue('direction');
 
   const positionAnnotations = useCallback(() => {
@@ -51,11 +74,11 @@ function ProgressBarAnnotated({
       positionAnnotations();
     });
     const progressInfoEl = progressInfoRef.current;
-    observer.observe(progressInfoEl);
-    return () => progressInfoEl && observer.unobserve(progressInfoEl);
+    observer.observe(progressInfoEl!);
+    return () => { if (progressInfoEl) { observer.unobserve(progressInfoEl); } };
   }, [positionAnnotations]);
 
-  const getHint = (text) => (
+  const getHint = (text: React.ReactNode) => (
     <span className="pgn__progress-hint" data-testid="progress-hint">
       {text}
     </span>
@@ -114,38 +137,12 @@ function ProgressBarAnnotated({
   );
 }
 
-ProgressBarAnnotated.propTypes = {
-  /** Current value of progress. */
-  now: PropTypes.number,
-  /** Show label that represents visual percentage. */
-  label: PropTypes.node,
-  /** The `ProgressBar` style variant to use. */
-  variant: PropTypes.oneOf(VARIANTS),
-  /** Specifies an additional `className` to add to the base element. */
-  className: PropTypes.string,
-  /** Threshold current value. */
-  threshold: PropTypes.number,
-  /** Specifies label for `threshold`. */
-  thresholdLabel: PropTypes.node,
-  /** Variant for threshold value. */
-  thresholdVariant: PropTypes.oneOf(VARIANTS),
-  /** Text near the progress annotation. */
-  progressHint: PropTypes.node,
-  /** Text near the threshold annotation. */
-  thresholdHint: PropTypes.node,
-};
+interface ProgressBarComponent {
+  (props: React.ComponentPropsWithoutRef<typeof ProgressBarBase>): React.JSX.Element;
+  Annotated: React.FC<ProgressBarAnnotatedProps>;
+}
 
-ProgressBarAnnotated.defaultProps = {
-  now: undefined,
-  label: undefined,
-  variant: PROGRESS_DEFAULT_VARIANT,
-  className: undefined,
-  threshold: undefined,
-  thresholdLabel: undefined,
-  thresholdVariant: THRESHOLD_DEFAULT_VARIANT,
-  progressHint: undefined,
-  thresholdHint: undefined,
-};
+const ProgressBarWithAnnotated = ProgressBar as unknown as ProgressBarComponent;
+ProgressBarWithAnnotated.Annotated = ProgressBarAnnotated;
 
-ProgressBar.Annotated = ProgressBarAnnotated;
-export default ProgressBar;
+export default ProgressBarWithAnnotated;

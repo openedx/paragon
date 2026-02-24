@@ -21,7 +21,7 @@ const ref = {
       },
     ],
   },
-};
+} as any;
 
 describe('utils', () => {
   describe('placeInfoAtZero', () => {
@@ -86,8 +86,8 @@ describe('utils', () => {
       expect(actualMarginRight).toEqual(expectedHorizontalMargin);
     });
     it('returns false if reference is wrong', () => {
-      const wrongRef1 = {};
-      const wrongRef2 = { current: {} };
+      const wrongRef1 = {} as any;
+      const wrongRef2 = { current: {} } as any;
       expect(placeInfoAtZero(wrongRef1)).toEqual(false);
       expect(placeInfoAtZero(wrongRef2)).toEqual(false);
     });
