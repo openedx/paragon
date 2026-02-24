@@ -37,8 +37,9 @@ export interface PageCountProps {
   totalSteps: number;
 }
 
-const PageCount: React.FC<PageCountProps> = ({ activeStepIndex, totalSteps }) => 
-  <>Step {activeStepIndex + 1} of {totalSteps}</>;
+function PageCount({ activeStepIndex, totalSteps }: PageCountProps) {
+  return <>Step {activeStepIndex + 1} of {totalSteps}</>;
+}
 
 export interface StepperHeaderProps {
   /** Specifies class name to append to the base element. */
@@ -51,15 +52,16 @@ export interface StepperHeaderProps {
   compactWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 }
 
-interface StepperHeaderComponent extends React.FC<StepperHeaderProps> {
+interface StepperHeaderComponent {
+  (props: StepperHeaderProps): JSX.Element | null;
   Step: typeof StepperHeaderStep;
 }
 
-const StepperHeader: StepperHeaderComponent = ({ 
-  className = null, 
-  PageCountComponent = PageCount, 
-  compactWidth = 'sm' 
-}) => {
+function StepperHeader({
+  className = null,
+  PageCountComponent = PageCount,
+  compactWidth = 'sm',
+}: StepperHeaderProps) {
   const { steps, activeKey } = useContext(StepperContext);
   const windowDimensions = useWindowSize();
   const size = Size[compactWidth] || 'small';
@@ -69,11 +71,11 @@ const StepperHeader: StepperHeaderComponent = ({
   if (isCompactView) {
     const activeStepIndex = steps.findIndex(step => step.eventKey === activeKey);
     const activeStep = steps[activeStepIndex];
-    
+
     if (!activeStep) {
       return null;
     }
-    
+
     return (
       <div className={classNames('pgn__stepper-header', className)}>
         <StepperHeaderStep
@@ -99,8 +101,8 @@ const StepperHeader: StepperHeaderComponent = ({
       <StepList steps={steps} activeKey={activeKey} />
     </div>
   );
-};
+}
 
-StepperHeader.Step = StepperHeaderStep;
+(StepperHeader as StepperHeaderComponent).Step = StepperHeaderStep;
 
 export default StepperHeader;
