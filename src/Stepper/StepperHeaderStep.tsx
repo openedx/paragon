@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { Check, Error } from '../../icons';
@@ -7,14 +6,29 @@ import { StepperContext } from './StepperContext';
 import Icon from '../Icon';
 import Bubble from '../Bubble';
 
+export interface StepperHeaderStepProps {
+  /** A number that will be display in the icon of the `HeaderStep`. */
+  index: number;
+  /** A text of the `HeaderStep`. */
+  title: string;
+  /** Specifies that this `HeaderStep` is active. */
+  isActive?: boolean;
+  /** Informs user if this `Step` has errors. */
+  hasError?: boolean;
+  /** A text under the `title`. */
+  description?: string;
+  /** Callback fired when element gets clicked. */
+  onClick?: () => void;
+}
+
 function StepperHeaderStep({
   title,
-  isActive,
-  hasError,
+  isActive = false,
+  hasError = false,
   description,
   index,
   onClick,
-}) {
+}: StepperHeaderStepProps) {
   const { getIsViewed } = useContext(StepperContext);
   const isComplete = getIsViewed(index + 1);
   const isViewed = getIsViewed(index);
@@ -70,27 +84,5 @@ function StepperHeaderStep({
     </li>
   );
 }
-
-StepperHeaderStep.propTypes = {
-  /** A number that will be display in the icon of the `HeaderStep`. */
-  index: PropTypes.number.isRequired,
-  /** A text of the `HeaderStep`. */
-  title: PropTypes.string.isRequired,
-  /** Specifies that this `HeaderStep` is active. */
-  isActive: PropTypes.bool,
-  /** Informs user if this `Step` has errors. */
-  hasError: PropTypes.bool,
-  /** A text under the `title`. */
-  description: PropTypes.string,
-  /** Callback fired when element gets clicked. */
-  onClick: PropTypes.func,
-};
-
-StepperHeaderStep.defaultProps = {
-  isActive: false,
-  hasError: false,
-  description: undefined,
-  onClick: undefined,
-};
 
 export default StepperHeaderStep;
