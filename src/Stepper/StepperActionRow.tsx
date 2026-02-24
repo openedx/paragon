@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import { StepperContext } from './StepperContext';
 import ActionRow from '../ActionRow';
 
@@ -37,12 +36,6 @@ function StepperActionRow({
 
   return React.createElement(as, props, children);
 }
-
-StepperActionRow.propTypes = {
-  as: PropTypes.elementType,
-  children: PropTypes.node.isRequired,
-  eventKey: PropTypes.string.isRequired,
-};
 
 (StepperActionRow as StepperActionRowComponent).Spacer = ActionRow.Spacer;
 

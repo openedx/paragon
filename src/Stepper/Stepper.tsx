@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import StepperStep from './StepperStep';
 import StepperHeader from './StepperHeader';
 import StepperActionRow from './StepperActionRow';
@@ -31,11 +30,6 @@ const Stepper: StepperComponent = function Stepper({ children, activeKey }: Step
     </StepperContextProvider>
   );
 } as StepperComponent;
-
-Stepper.propTypes = {
-  children: PropTypes.node.isRequired,
-  activeKey: PropTypes.string.isRequired,
-};
 
 Stepper.Step = StepperStep;
 Stepper.Header = StepperHeader;
