@@ -24,21 +24,21 @@ interface StepperComponent {
   propTypes?: any;
 }
 
-function Stepper({ children, activeKey }: StepperProps) {
+const Stepper: StepperComponent = function Stepper({ children, activeKey }: StepperProps) {
   return (
     <StepperContextProvider activeKey={activeKey}>
       {children}
     </StepperContextProvider>
   );
-}
+} as StepperComponent;
 
 Stepper.propTypes = {
   children: PropTypes.node.isRequired,
   activeKey: PropTypes.string.isRequired,
 };
 
-(Stepper as StepperComponent).Step = StepperStep;
-(Stepper as StepperComponent).Header = StepperHeader;
-(Stepper as StepperComponent).ActionRow = StepperActionRow;
+Stepper.Step = StepperStep;
+Stepper.Header = StepperHeader;
+Stepper.ActionRow = StepperActionRow;
 
 export default Stepper;
