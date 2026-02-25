@@ -18,7 +18,6 @@ export interface StepperActionRowProps {
 interface StepperActionRowComponent {
   (props: StepperActionRowProps): JSX.Element | null;
   Spacer: typeof ActionRow.Spacer;
-  propTypes?: any;
 }
 
 function StepperActionRow({
