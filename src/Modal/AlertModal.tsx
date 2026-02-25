@@ -4,39 +4,21 @@ import classNames from 'classnames';
 import Icon from '../Icon';
 import ModalDialog from './ModalDialog';
 
-interface AlertModalProps {
-  /** Specifies the content of the dialog */
-  children: React.ReactNode;
-  /** The aria-label of the dialog */
-  title: string;
-  /** Is the modal dialog open or closed */
-  isOpen?: boolean;
-  /** Prevent clicking on the backdrop or pressing Esc to close the modal */
-  isBlocking?: boolean;
-  /** Specifies whether the dialog box should contain 'x' icon button in the top right */
-  hasCloseButton?: boolean;
+type ModalDialogProps = React.ComponentProps<typeof ModalDialog>;
+
+// Extends all ModalDialog props, but omits certain props to re-declare them:
+// - onClose: ModalDialog requires it, but AlertModal defaults it to () => {}
+// - isOverflowVisible: required in ModalDialog but was absent from AlertModal's propTypes;
+//   undefined is falsy so defaulting to false matches the previous behavior
+// - variant: ModalDialog allows 'dark' but AlertModal intentionally excludes it
+// footerNode and icon are AlertModal-specific props not present on ModalDialog
+interface AlertModalProps extends Omit<ModalDialogProps, 'onClose' | 'isOverflowVisible' | 'variant'> {
   /** A callback to close the modal dialog */
   onClose?: () => void;
-  /** Sizes determine the maximum width of the dialog box */
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'fullscreen';
-  /** The visual style of the dialog box */
-  variant?: 'default' | 'warning' | 'danger' | 'success';
-  /** The label supplied to the close icon button if one is rendered */
-  closeLabel?: string;
-  /** Specifies class name to append to the base element */
-  className?: string;
-  /**
-   * Determines where a scrollbar should appear if a modal is too large for the
-   * viewport. When false, the ModalDialog.Body receives a scrollbar, when true
-   * the browser window itself receives the scrollbar.
-   */
-  isFullscreenScroll?: boolean;
-  /** To show full screen view on mobile screens */
-  isFullscreenOnMobile?: boolean;
   /** Specifies whether overflow content inside the modal should be visible */
   isOverflowVisible?: boolean;
-  /** Specifies the z-index of the modal */
-  zIndex?: number;
+  /** The visual style of the dialog box */
+  variant?: 'default' | 'warning' | 'danger' | 'success';
   /** Specifies what should be displayed in the footer of the dialog box */
   footerNode?: React.ReactNode;
   /** Icon that will be shown in the header of modal */
@@ -48,33 +30,19 @@ function AlertModal({
   footerNode = null,
   icon,
   title,
-  isOpen = false,
-  isBlocking = false,
   hasCloseButton = false,
   onClose = () => {},
-  size = 'md',
-  variant = 'default',
-  closeLabel = 'Close',
-  className,
-  isFullscreenScroll = false,
-  isFullscreenOnMobile,
   isOverflowVisible = false,
-  zIndex,
+  className,
+  ...props
 }: AlertModalProps) {
   return (
     <ModalDialog
+      {...props}
       title={title}
-      isOpen={isOpen}
-      onClose={onClose}
-      size={size}
-      variant={variant}
       hasCloseButton={hasCloseButton}
-      closeLabel={closeLabel}
-      isFullscreenScroll={isFullscreenScroll}
-      isFullscreenOnMobile={isFullscreenOnMobile}
-      isBlocking={isBlocking}
+      onClose={onClose}
       isOverflowVisible={isOverflowVisible}
-      zIndex={zIndex}
       className={classNames('pgn__alert-modal', className)}
     >
       <ModalDialog.Header>
