@@ -20,7 +20,6 @@ interface StepperComponent {
   Step: typeof StepperStep;
   Header: typeof StepperHeader;
   ActionRow: typeof StepperActionRow;
-  propTypes?: any;
 }
 
 const Stepper: StepperComponent = function Stepper({ children, activeKey }: StepperProps) {
