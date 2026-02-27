@@ -1,5 +1,5 @@
 {
-  "lastModified": 1772029570324,
+  "lastModified": 1772201977430,
   "projectUsages": [
     {
       "version": "23.19.1",
@@ -5216,6 +5216,34 @@
             "line": 40,
             "column": 16,
             "index": 1498
+          }
+        ],
+        "OverlayTrigger": [
+          {
+            "filePath": "src/account-settings/EmailField.jsx",
+            "line": 164,
+            "column": 12,
+            "index": 5151
+          },
+          {
+            "filePath": "src/notification-preferences/NotificationTypes.jsx",
+            "line": 34,
+            "column": 12,
+            "index": 1239
+          }
+        ],
+        "Tooltip": [
+          {
+            "filePath": "src/account-settings/EmailField.jsx",
+            "line": 167,
+            "column": 16,
+            "index": 5238
+          },
+          {
+            "filePath": "src/notification-preferences/NotificationTypes.jsx",
+            "line": 39,
+            "column": 16,
+            "index": 1409
           }
         ],
         "OverlayTrigger": [
@@ -20440,6 +20468,12 @@
             "index": 3129
           },
           {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DownloadCsvIconButton.jsx",
+            "line": 88,
+            "column": 6,
+            "index": 3129
+          },
+          {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 130,
             "column": 14,
@@ -23827,6 +23861,42 @@
           {
             "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
             "line": 143,
+            "column": 14,
+            "index": 5067
+          },
+          {
+            "filePath": "src/forgot-password/ForgotPasswordPage.jsx",
+            "line": 157,
+            "column": 16,
+            "index": 5668
+          },
+          {
+            "filePath": "src/login/LoginFailure.jsx",
+            "line": 46,
+            "column": 4,
+            "index": 1296
+          },
+          {
+            "filePath": "src/login/LoginFailure.jsx",
+            "line": 112,
+            "column": 8,
+            "index": 3615
+          },
+          {
+            "filePath": "src/progressive-profiling/ProgressiveProfiling.jsx",
+            "line": 239,
+            "column": 18,
+            "index": 8728
+          },
+          {
+            "filePath": "src/recommendations/ProductCard/BaseCard/index.jsx",
+            "line": 22,
+            "column": 4,
+            "index": 421
+          },
+          {
+            "filePath": "src/recommendations/RecommendationsPage.jsx",
+            "line": 81,
             "column": 10,
             "index": 2503
           },
@@ -25683,12 +25753,6 @@
             "index": 1259
           },
           {
-            "filePath": "src/import-page/import-sidebar/ImportSidebar.jsx",
-            "line": 41,
-            "column": 6,
-            "index": 2173
-          },
-          {
             "filePath": "src/pages-and-resources/app-settings-modal/AppSettingsModal.jsx",
             "line": 97,
             "column": 4,
@@ -26078,7 +26142,7 @@
             "filePath": "src/generic/configure-modal/ConfigureModal.jsx",
             "line": 300,
             "column": 16,
-            "index": 9677
+            "index": 9669
           },
           {
             "filePath": "src/generic/configure-modal/PrereqSettings.jsx",
@@ -28637,6 +28701,12 @@
             "index": 405
           },
           {
+            "filePath": "src/course-outline/xblock-status/NeverShowAssessmentResultMessage.jsx",
+            "line": 10,
+            "column": 6,
+            "index": 405
+          },
+          {
             "filePath": "src/course-outline/xblock-status/ReleaseStatus.jsx",
             "line": 37,
             "column": 6,
@@ -28647,6 +28717,12 @@
             "line": 59,
             "column": 22,
             "index": 6661
+          },
+          {
+            "filePath": "src/course-team/course-team-sidebar/CourseTeamSidebar.jsx",
+            "line": 39,
+            "column": 16,
+            "index": 1406
           },
           {
             "filePath": "src/course-team/course-team-sidebar/CourseTeamSidebar.jsx",
@@ -30249,34 +30325,8 @@
             "index": 1403
           },
           {
-            "filePath": "src/generic/course-stepper/index.jsx",
-            "line": 77,
-            "column": 14,
-            "index": 2107
-          },
-          {
-            "filePath": "src/taxonomy/import-tags/ImportTagsWizard.jsx",
-            "line": 273,
-            "column": 4,
-            "index": 8153
-          },
-          {
-            "filePath": "src/taxonomy/import-tags/ImportTagsWizard.jsx",
-            "line": 405,
-            "column": 10,
-            "index": 11931
-          },
-          {
-            "filePath": "src/taxonomy/manage-orgs/ManageOrgsModal.jsx",
-            "line": 166,
-            "column": 10,
-            "index": 4431
-          }
-        ],
-        "ModalDialog.Body": [
-          {
-            "filePath": "src/generic/modal-dropzone/ModalDropzone.jsx",
-            "line": 69,
+            "filePath": "src/generic/course-upload-image/index.jsx",
+            "line": 72,
             "column": 16,
             "index": 1931
           },
@@ -30667,12 +30717,6 @@
             "line": 334,
             "column": 46,
             "index": 10105
-          },
-          {
-            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
-            "line": 159,
-            "column": 20,
-            "index": 6115
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/table-custom-columns/TranscriptColumn.jsx",
@@ -31078,7 +31122,7 @@
             "filePath": "src/generic/configure-modal/ConfigureModal.jsx",
             "line": 283,
             "column": 8,
-            "index": 9128
+            "index": 9120
           },
           {
             "filePath": "src/generic/modal-dropzone/ModalDropzone.jsx",
@@ -31188,7 +31232,7 @@
             "filePath": "src/generic/configure-modal/ConfigureModal.jsx",
             "line": 284,
             "column": 10,
-            "index": 9195
+            "index": 9187
           },
           {
             "filePath": "src/generic/modal-dropzone/ModalDropzone.jsx",
@@ -31298,7 +31342,7 @@
             "filePath": "src/generic/configure-modal/ConfigureModal.jsx",
             "line": 299,
             "column": 14,
-            "index": 9608
+            "index": 9600
           },
           {
             "filePath": "src/generic/modal-dropzone/ModalDropzone.jsx",
@@ -31396,7 +31440,7 @@
             "filePath": "src/generic/configure-modal/ConfigureModal.jsx",
             "line": 304,
             "column": 14,
-            "index": 9860
+            "index": 9852
           },
           {
             "filePath": "src/generic/modal-dropzone/ModalDropzone.jsx",
@@ -31704,7 +31748,7 @@
             "filePath": "src/generic/configure-modal/ConfigureModal.jsx",
             "line": 305,
             "column": 16,
-            "index": 9914
+            "index": 9906
           },
           {
             "filePath": "src/generic/create-or-rerun-course/CreateOrRerunCourseForm.jsx",
@@ -31868,7 +31912,7 @@
             "filePath": "src/generic/configure-modal/ConfigureModal.jsx",
             "line": 306,
             "column": 18,
-            "index": 9944
+            "index": 9936
           },
           {
             "filePath": "src/generic/modal-dropzone/ModalDropzone.jsx",
@@ -31931,12 +31975,6 @@
             "line": 321,
             "column": 16,
             "index": 9566
-          },
-          {
-            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
-            "line": 278,
-            "column": 12,
-            "index": 11501
           },
           {
             "filePath": "src/custom-pages/CustomPageCard.jsx",
@@ -32321,12 +32359,6 @@
             "index": 1863
           },
           {
-            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
-            "line": 166,
-            "column": 10,
-            "index": 6426
-          },
-          {
             "filePath": "src/files-and-videos/videos-page/transcript-settings/Cielo24Form.jsx",
             "line": 50,
             "column": 8,
@@ -32423,18 +32455,6 @@
             "line": 150,
             "column": 20,
             "index": 5587
-          },
-          {
-            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
-            "line": 207,
-            "column": 22,
-            "index": 8341
-          },
-          {
-            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
-            "line": 274,
-            "column": 14,
-            "index": 11322
           },
           {
             "filePath": "src/advanced-settings/modal-error/ModalError.jsx",
@@ -32623,10 +32643,10 @@
             "index": 1741
           },
           {
-            "filePath": "src/generic/configure-modal/VisibilityTab.jsx",
-            "line": 124,
-            "column": 8,
-            "index": 4444
+            "filePath": "src/course-team/course-team-member/CourseTeamMember.jsx",
+            "line": 48,
+            "column": 12,
+            "index": 1502
           },
           {
             "filePath": "src/course-team/info-modal/InfoModal.jsx",
@@ -33096,7 +33116,7 @@
             "filePath": "src/generic/configure-modal/ConfigureModal.jsx",
             "line": 309,
             "column": 18,
-            "index": 10116
+            "index": 10108
           },
           {
             "filePath": "src/generic/ConfirmationPopup.jsx",
@@ -33154,9 +33174,57 @@
           },
           {
             "filePath": "src/group-configurations/common/TitleButton.jsx",
-            "line": 37,
-            "column": 8,
-            "index": 3696
+            "line": 21,
+            "column": 4,
+            "index": 527
+          },
+          {
+            "filePath": "src/group-configurations/content-groups-section/ContentGroupForm.jsx",
+            "line": 86,
+            "column": 16,
+            "index": 2685
+          },
+          {
+            "filePath": "src/group-configurations/content-groups-section/ContentGroupForm.jsx",
+            "line": 89,
+            "column": 16,
+            "index": 2836
+          },
+          {
+            "filePath": "src/group-configurations/content-groups-section/index.jsx",
+            "line": 59,
+            "column": 12,
+            "index": 2032
+          },
+          {
+            "filePath": "src/group-configurations/empty-placeholder/index.jsx",
+            "line": 23,
+            "column": 6,
+            "index": 757
+          },
+          {
+            "filePath": "src/group-configurations/experiment-configurations-section/ExperimentForm.jsx",
+            "line": 119,
+            "column": 14,
+            "index": 3986
+          },
+          {
+            "filePath": "src/group-configurations/experiment-configurations-section/ExperimentForm.jsx",
+            "line": 122,
+            "column": 14,
+            "index": 4148
+          },
+          {
+            "filePath": "src/group-configurations/experiment-configurations-section/ExperimentFormGroups.jsx",
+            "line": 82,
+            "column": 6,
+            "index": 2667
+          },
+          {
+            "filePath": "src/group-configurations/experiment-configurations-section/index.jsx",
+            "line": 48,
+            "column": 12,
+            "index": 1666
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-restrictions/RestrictionSchedules.jsx",
@@ -33613,418 +33681,6 @@
             "index": 5219
           }
         ],
-        "Container": [
-          {
-            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
-            "line": 155,
-            "column": 6,
-            "index": 5911
-          },
-          {
-            "filePath": "src/certificates/layout/MainLayout.jsx",
-            "line": 25,
-            "column": 6,
-            "index": 821
-          },
-          {
-            "filePath": "src/course-checklist/ChecklistSection/ChecklistSection.jsx",
-            "line": 23,
-            "column": 4,
-            "index": 775
-          },
-          {
-            "filePath": "src/course-rerun/index.jsx",
-            "line": 47,
-            "column": 6,
-            "index": 1269
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
-            "line": 122,
-            "column": 12,
-            "index": 4425
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
-            "line": 26,
-            "column": 6,
-            "index": 577
-          },
-          {
-            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/Preview.jsx",
-            "line": 22,
-            "column": 4,
-            "index": 495
-          },
-          {
-            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
-            "line": 29,
-            "column": 4,
-            "index": 940
-          },
-          {
-            "filePath": "src/files-and-videos/files-page/FilesPage.jsx",
-            "line": 49,
-            "column": 6,
-            "index": 1660
-          },
-          {
-            "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 94,
-            "column": 6,
-            "index": 3350
-          },
-          {
-            "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 134,
-            "column": 6,
-            "index": 4342
-          },
-          {
-            "filePath": "src/group-configurations/index.jsx",
-            "line": 47,
-            "column": 6,
-            "index": 1658
-          },
-          {
-            "filePath": "src/group-configurations/index.jsx",
-            "line": 68,
-            "column": 6,
-            "index": 2128
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
-            "line": 120,
-            "column": 4,
-            "index": 3643
-          },
-          {
-            "filePath": "src/pages-and-resources/discussions/app-list/AppList.jsx",
-            "line": 108,
-            "column": 6,
-            "index": 3877
-          },
-          {
-            "filePath": "src/schedule-and-details/index.jsx",
-            "line": 180,
-            "column": 6,
-            "index": 5603
-          },
-          {
-            "filePath": "src/taxonomy/delete-dialog/index.jsx",
-            "line": 41,
-            "column": 4,
-            "index": 953
-          },
-          {
-            "filePath": "src/taxonomy/export-modal/index.jsx",
-            "line": 29,
-            "column": 4,
-            "index": 687
-          },
-          {
-            "filePath": "src/taxonomy/import-tags/ImportTagsWizard.jsx",
-            "line": 152,
-            "column": 28,
-            "index": 4727
-          },
-          {
-            "filePath": "src/taxonomy/import-tags/ImportTagsWizard.jsx",
-            "line": 414,
-            "column": 4,
-            "index": 12164
-          },
-          {
-            "filePath": "src/taxonomy/manage-orgs/ManageOrgsModal.jsx",
-            "line": 149,
-            "column": 4,
-            "index": 3789
-          },
-          {
-            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailPage.jsx",
-            "line": 65,
-            "column": 8,
-            "index": 1714
-          },
-          {
-            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailPage.jsx",
-            "line": 82,
-            "column": 8,
-            "index": 2240
-          },
-          {
-            "filePath": "src/textbooks/Textbooks.jsx",
-            "line": 58,
-            "column": 6,
-            "index": 1948
-          },
-          {
-            "filePath": "src/textbooks/Textbooks.jsx",
-            "line": 79,
-            "column": 6,
-            "index": 2380
-          }
-        ],
-        "CheckCircle": [
-          {
-            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
-            "line": 172,
-            "column": 22,
-            "index": 6682
-          },
-          {
-            "filePath": "src/course-checklist/ChecklistSection/ChecklistItemBody.jsx",
-            "line": 46,
-            "column": 17,
-            "index": 1867
-          },
-          {
-            "filePath": "src/grading-settings/assignment-section/index.jsx",
-            "line": 179,
-            "column": 22,
-            "index": 7193
-          },
-          {
-            "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 139,
-            "column": 18,
-            "index": 4528
-          }
-        ],
-        "Layout": [
-          {
-            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
-            "line": 183,
-            "column": 10,
-            "index": 7206
-          },
-          {
-            "filePath": "src/certificates/layout/MainLayout.jsx",
-            "line": 34,
-            "column": 10,
-            "index": 1176
-          },
-          {
-            "filePath": "src/course-rerun/index.jsx",
-            "line": 67,
-            "column": 10,
-            "index": 2044
-          },
-          {
-            "filePath": "src/export-page/export-footer/ExportFooter.jsx",
-            "line": 11,
-            "column": 6,
-            "index": 270
-          },
-          {
-            "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 148,
-            "column": 12,
-            "index": 4913
-          },
-          {
-            "filePath": "src/group-configurations/index.jsx",
-            "line": 74,
-            "column": 8,
-            "index": 2375
-          },
-          {
-            "filePath": "src/schedule-and-details/index.jsx",
-            "line": 231,
-            "column": 10,
-            "index": 7434
-          },
-          {
-            "filePath": "src/studio-home/verify-email-layout/index.jsx",
-            "line": 14,
-            "column": 4,
-            "index": 424
-          },
-          {
-            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailPage.jsx",
-            "line": 83,
-            "column": 10,
-            "index": 2272
-          },
-          {
-            "filePath": "src/textbooks/Textbooks.jsx",
-            "line": 100,
-            "column": 10,
-            "index": 3090
-          }
-        ],
-        "Layout.Element": [
-          {
-            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
-            "line": 190,
-            "column": 12,
-            "index": 7458
-          },
-          {
-            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
-            "line": 248,
-            "column": 12,
-            "index": 10344
-          },
-          {
-            "filePath": "src/certificates/layout/MainLayout.jsx",
-            "line": 41,
-            "column": 12,
-            "index": 1428
-          },
-          {
-            "filePath": "src/certificates/layout/MainLayout.jsx",
-            "line": 46,
-            "column": 12,
-            "index": 1575
-          },
-          {
-            "filePath": "src/course-rerun/index.jsx",
-            "line": 74,
-            "column": 12,
-            "index": 2296
-          },
-          {
-            "filePath": "src/course-rerun/index.jsx",
-            "line": 80,
-            "column": 12,
-            "index": 2513
-          },
-          {
-            "filePath": "src/export-page/export-footer/ExportFooter.jsx",
-            "line": 18,
-            "column": 8,
-            "index": 559
-          },
-          {
-            "filePath": "src/export-page/export-footer/ExportFooter.jsx",
-            "line": 30,
-            "column": 8,
-            "index": 1230
-          },
-          {
-            "filePath": "src/export-page/export-footer/ExportFooter.jsx",
-            "line": 31,
-            "column": 8,
-            "index": 1257
-          },
-          {
-            "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 155,
-            "column": 14,
-            "index": 5179
-          },
-          {
-            "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 232,
-            "column": 14,
-            "index": 9068
-          },
-          {
-            "filePath": "src/group-configurations/index.jsx",
-            "line": 81,
-            "column": 10,
-            "index": 2613
-          },
-          {
-            "filePath": "src/group-configurations/index.jsx",
-            "line": 106,
-            "column": 10,
-            "index": 3530
-          },
-          {
-            "filePath": "src/schedule-and-details/index.jsx",
-            "line": 238,
-            "column": 12,
-            "index": 7686
-          },
-          {
-            "filePath": "src/schedule-and-details/index.jsx",
-            "line": 337,
-            "column": 12,
-            "index": 12167
-          },
-          {
-            "filePath": "src/studio-home/verify-email-layout/index.jsx",
-            "line": 21,
-            "column": 6,
-            "index": 634
-          },
-          {
-            "filePath": "src/studio-home/verify-email-layout/index.jsx",
-            "line": 34,
-            "column": 6,
-            "index": 1083
-          },
-          {
-            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailPage.jsx",
-            "line": 90,
-            "column": 12,
-            "index": 2524
-          },
-          {
-            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailPage.jsx",
-            "line": 93,
-            "column": 12,
-            "index": 2638
-          },
-          {
-            "filePath": "src/textbooks/Textbooks.jsx",
-            "line": 107,
-            "column": 12,
-            "index": 3346
-          },
-          {
-            "filePath": "src/textbooks/Textbooks.jsx",
-            "line": 136,
-            "column": 12,
-            "index": 4681
-          }
-        ],
-        "Warning": [
-          {
-            "filePath": "src/advanced-settings/AdvancedSettings.jsx",
-            "line": 286,
-            "column": 16,
-            "index": 11813
-          },
-          {
-            "filePath": "src/grading-settings/assignment-section/index.jsx",
-            "line": 144,
-            "column": 22,
-            "index": 5563
-          },
-          {
-            "filePath": "src/grading-settings/assignment-section/index.jsx",
-            "line": 165,
-            "column": 22,
-            "index": 6526
-          },
-          {
-            "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 273,
-            "column": 16,
-            "index": 10674
-          },
-          {
-            "filePath": "src/taxonomy/delete-dialog/index.jsx",
-            "line": 54,
-            "column": 23,
-            "index": 1446
-          },
-          {
-            "filePath": "src/taxonomy/import-tags/ImportTagsWizard.jsx",
-            "line": 404,
-            "column": 21,
-            "index": 11884
-          },
-          {
-            "filePath": "src/taxonomy/manage-orgs/ManageOrgsModal.jsx",
-            "line": 41,
-            "column": 12,
-            "index": 941
-          }
-        ],
         "AlertModal": [
           {
             "filePath": "src/advanced-settings/modal-error/ModalError.jsx",
@@ -34191,12 +33847,6 @@
             "line": 96,
             "column": 10,
             "index": 2159
-          },
-          {
-            "filePath": "src/import-page/file-section/FileSection.jsx",
-            "line": 24,
-            "column": 4,
-            "index": 884
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/lti/LtiConfigForm.jsx",
@@ -34367,12 +34017,6 @@
             "line": 24,
             "column": 6,
             "index": 462
-          },
-          {
-            "filePath": "src/import-page/file-section/FileSection.jsx",
-            "line": 30,
-            "column": 6,
-            "index": 1107
           },
           {
             "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
@@ -34774,9 +34418,9 @@
           },
           {
             "filePath": "src/group-configurations/index.jsx",
-            "line": 82,
+            "line": 86,
             "column": 12,
-            "index": 2642
+            "index": 2843
           },
           {
             "filePath": "src/schedule-and-details/license-section/license-commons-options/index.jsx",
@@ -35935,6 +35579,324 @@
             "index": 4967
           }
         ],
+        "Container": [
+          {
+            "filePath": "src/certificates/layout/MainLayout.jsx",
+            "line": 25,
+            "column": 6,
+            "index": 821
+          },
+          {
+            "filePath": "src/course-checklist/ChecklistSection/ChecklistSection.jsx",
+            "line": 23,
+            "column": 4,
+            "index": 775
+          },
+          {
+            "filePath": "src/course-rerun/index.jsx",
+            "line": 47,
+            "column": 6,
+            "index": 1269
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/index.jsx",
+            "line": 122,
+            "column": 12,
+            "index": 4425
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/HintRow.jsx",
+            "line": 26,
+            "column": 6,
+            "index": 577
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/SelectTypeModal/content/Preview.jsx",
+            "line": 22,
+            "column": 4,
+            "index": 495
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
+            "line": 29,
+            "column": 4,
+            "index": 940
+          },
+          {
+            "filePath": "src/files-and-videos/files-page/FilesPage.jsx",
+            "line": 49,
+            "column": 6,
+            "index": 1660
+          },
+          {
+            "filePath": "src/grading-settings/GradingSettings.jsx",
+            "line": 94,
+            "column": 6,
+            "index": 3350
+          },
+          {
+            "filePath": "src/grading-settings/GradingSettings.jsx",
+            "line": 134,
+            "column": 6,
+            "index": 4342
+          },
+          {
+            "filePath": "src/group-configurations/index.jsx",
+            "line": 48,
+            "column": 6,
+            "index": 1713
+          },
+          {
+            "filePath": "src/group-configurations/index.jsx",
+            "line": 72,
+            "column": 6,
+            "index": 2329
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/AppConfigForm.jsx",
+            "line": 120,
+            "column": 4,
+            "index": 3643
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/AppList.jsx",
+            "line": 108,
+            "column": 6,
+            "index": 3877
+          },
+          {
+            "filePath": "src/schedule-and-details/index.jsx",
+            "line": 180,
+            "column": 6,
+            "index": 5603
+          },
+          {
+            "filePath": "src/taxonomy/delete-dialog/index.jsx",
+            "line": 41,
+            "column": 4,
+            "index": 953
+          },
+          {
+            "filePath": "src/taxonomy/export-modal/index.jsx",
+            "line": 29,
+            "column": 4,
+            "index": 687
+          },
+          {
+            "filePath": "src/taxonomy/import-tags/ImportTagsWizard.jsx",
+            "line": 152,
+            "column": 28,
+            "index": 4727
+          },
+          {
+            "filePath": "src/taxonomy/import-tags/ImportTagsWizard.jsx",
+            "line": 414,
+            "column": 4,
+            "index": 12164
+          },
+          {
+            "filePath": "src/taxonomy/manage-orgs/ManageOrgsModal.jsx",
+            "line": 149,
+            "column": 4,
+            "index": 3789
+          },
+          {
+            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailPage.jsx",
+            "line": 65,
+            "column": 8,
+            "index": 1714
+          },
+          {
+            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailPage.jsx",
+            "line": 82,
+            "column": 8,
+            "index": 2240
+          },
+          {
+            "filePath": "src/textbooks/Textbooks.jsx",
+            "line": 58,
+            "column": 6,
+            "index": 1948
+          },
+          {
+            "filePath": "src/textbooks/Textbooks.jsx",
+            "line": 79,
+            "column": 6,
+            "index": 2380
+          }
+        ],
+        "Layout": [
+          {
+            "filePath": "src/certificates/layout/MainLayout.jsx",
+            "line": 34,
+            "column": 10,
+            "index": 1176
+          },
+          {
+            "filePath": "src/course-rerun/index.jsx",
+            "line": 67,
+            "column": 10,
+            "index": 2044
+          },
+          {
+            "filePath": "src/export-page/export-footer/ExportFooter.jsx",
+            "line": 11,
+            "column": 6,
+            "index": 270
+          },
+          {
+            "filePath": "src/grading-settings/GradingSettings.jsx",
+            "line": 148,
+            "column": 12,
+            "index": 4913
+          },
+          {
+            "filePath": "src/group-configurations/index.jsx",
+            "line": 78,
+            "column": 8,
+            "index": 2576
+          },
+          {
+            "filePath": "src/schedule-and-details/index.jsx",
+            "line": 231,
+            "column": 10,
+            "index": 7434
+          },
+          {
+            "filePath": "src/studio-home/verify-email-layout/index.jsx",
+            "line": 14,
+            "column": 4,
+            "index": 424
+          },
+          {
+            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailPage.jsx",
+            "line": 83,
+            "column": 10,
+            "index": 2272
+          },
+          {
+            "filePath": "src/textbooks/Textbooks.jsx",
+            "line": 100,
+            "column": 10,
+            "index": 3090
+          }
+        ],
+        "Layout.Element": [
+          {
+            "filePath": "src/certificates/layout/MainLayout.jsx",
+            "line": 41,
+            "column": 12,
+            "index": 1428
+          },
+          {
+            "filePath": "src/certificates/layout/MainLayout.jsx",
+            "line": 46,
+            "column": 12,
+            "index": 1575
+          },
+          {
+            "filePath": "src/course-rerun/index.jsx",
+            "line": 74,
+            "column": 12,
+            "index": 2296
+          },
+          {
+            "filePath": "src/course-rerun/index.jsx",
+            "line": 80,
+            "column": 12,
+            "index": 2513
+          },
+          {
+            "filePath": "src/export-page/export-footer/ExportFooter.jsx",
+            "line": 18,
+            "column": 8,
+            "index": 559
+          },
+          {
+            "filePath": "src/export-page/export-footer/ExportFooter.jsx",
+            "line": 30,
+            "column": 8,
+            "index": 1230
+          },
+          {
+            "filePath": "src/export-page/export-footer/ExportFooter.jsx",
+            "line": 31,
+            "column": 8,
+            "index": 1257
+          },
+          {
+            "filePath": "src/grading-settings/GradingSettings.jsx",
+            "line": 155,
+            "column": 14,
+            "index": 5179
+          },
+          {
+            "filePath": "src/grading-settings/GradingSettings.jsx",
+            "line": 232,
+            "column": 14,
+            "index": 9068
+          },
+          {
+            "filePath": "src/group-configurations/index.jsx",
+            "line": 85,
+            "column": 10,
+            "index": 2814
+          },
+          {
+            "filePath": "src/group-configurations/index.jsx",
+            "line": 117,
+            "column": 10,
+            "index": 3978
+          },
+          {
+            "filePath": "src/schedule-and-details/index.jsx",
+            "line": 238,
+            "column": 12,
+            "index": 7686
+          },
+          {
+            "filePath": "src/schedule-and-details/index.jsx",
+            "line": 337,
+            "column": 12,
+            "index": 12167
+          },
+          {
+            "filePath": "src/studio-home/verify-email-layout/index.jsx",
+            "line": 21,
+            "column": 6,
+            "index": 634
+          },
+          {
+            "filePath": "src/studio-home/verify-email-layout/index.jsx",
+            "line": 34,
+            "column": 6,
+            "index": 1083
+          },
+          {
+            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailPage.jsx",
+            "line": 90,
+            "column": 12,
+            "index": 2524
+          },
+          {
+            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailPage.jsx",
+            "line": 93,
+            "column": 12,
+            "index": 2638
+          },
+          {
+            "filePath": "src/textbooks/Textbooks.jsx",
+            "line": 107,
+            "column": 12,
+            "index": 3346
+          },
+          {
+            "filePath": "src/textbooks/Textbooks.jsx",
+            "line": 136,
+            "column": 12,
+            "index": 4681
+          }
+        ],
         "Spinner": [
           {
             "filePath": "src/content-tags-drawer/ContentTagsCollapsible.jsx",
@@ -36885,6 +36847,26 @@
             "line": 54,
             "column": 4,
             "index": 1898
+          }
+        ],
+        "CheckCircle": [
+          {
+            "filePath": "src/course-checklist/ChecklistSection/ChecklistItemBody.jsx",
+            "line": 46,
+            "column": 17,
+            "index": 1867
+          },
+          {
+            "filePath": "src/grading-settings/assignment-section/index.jsx",
+            "line": 179,
+            "column": 22,
+            "index": 7193
+          },
+          {
+            "filePath": "src/grading-settings/GradingSettings.jsx",
+            "line": 139,
+            "column": 18,
+            "index": 4528
           }
         ],
         "RadioButtonUnchecked": [
@@ -38199,6 +38181,156 @@
             "line": 115,
             "column": 24,
             "index": 4167
+          }
+        ],
+        "Row": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/GroupFeedback/GroupFeedbackRow.jsx",
+            "line": 39,
+            "column": 8,
+            "index": 1062
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
+            "line": 30,
+            "column": 6,
+            "index": 1034
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
+            "line": 40,
+            "column": 10,
+            "index": 1310
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/FilterStatus.jsx",
+            "line": 27,
+            "column": 6,
+            "index": 733
+          },
+          {
+            "filePath": "src/files-and-videos/generic/UsageMetricsMessage.jsx",
+            "line": 38,
+            "column": 6,
+            "index": 1187
+          },
+          {
+            "filePath": "src/group-configurations/index.jsx",
+            "line": 56,
+            "column": 6,
+            "index": 1871
+          },
+          {
+            "filePath": "src/textbooks/Textbooks.jsx",
+            "line": 66,
+            "column": 6,
+            "index": 2106
+          }
+        ],
+        "Form.Checkbox": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/GroupFeedback/GroupFeedbackRow.jsx",
+            "line": 41,
+            "column": 12,
+            "index": 1134
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
+            "line": 114,
+            "column": 8,
+            "index": 3783
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/SocialShareWidget/index.jsx",
+            "line": 53,
+            "column": 6,
+            "index": 1662
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 156,
+            "column": 14,
+            "index": 4964
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 178,
+            "column": 12,
+            "index": 5864
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 123,
+            "column": 10,
+            "index": 4162
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/AltTextControls.jsx",
+            "line": 47,
+            "column": 6,
+            "index": 1432
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 150,
+            "column": 14,
+            "index": 4699
+          },
+          {
+            "filePath": "src/generic/configure-modal/PrereqSettings.jsx",
+            "line": 92,
+            "column": 6,
+            "index": 2742
+          },
+          {
+            "filePath": "src/generic/configure-modal/VisibilityTab.jsx",
+            "line": 124,
+            "column": 10,
+            "index": 4506
+          },
+          {
+            "filePath": "src/optimizer-page/scan-results/filterModal.jsx",
+            "line": 53,
+            "column": 14,
+            "index": 1485
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
+            "line": 123,
+            "column": 30,
+            "index": 4594
+          },
+          {
+            "filePath": "src/schedule-and-details/requirements-section/entrance-exam/index.jsx",
+            "line": 33,
+            "column": 10,
+            "index": 1015
+          },
+          {
+            "filePath": "src/taxonomy/manage-orgs/ManageOrgsModal.jsx",
+            "line": 213,
+            "column": 10,
+            "index": 6358
+          }
+        ],
+        "Toast": [
+          {
+            "filePath": "src/editors/containers/TextEditor/index.jsx",
+            "line": 87,
+            "column": 8,
+            "index": 2286
+          },
+          {
+            "filePath": "src/files-and-videos/generic/ApiStatusToast.jsx",
+            "line": 22,
+            "column": 4,
+            "index": 435
+          },
+          {
+            "filePath": "src/generic/processing-notification/index.jsx",
+            "line": 11,
+            "column": 2,
+            "index": 268
           }
         ],
         "Row": [
@@ -83445,6 +83577,86 @@
             "index": 2222
           }
         ],
+        "Card.Header": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 56,
+            "column": 12,
+            "index": 1718
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/GalleryCard.jsx",
+            "line": 31,
+            "column": 6,
+            "index": 690
+          },
+          {
+            "filePath": "src/files-and-videos/videos-page/info-sidebar/transcript-item/Transcript.jsx",
+            "line": 57,
+            "column": 10,
+            "index": 1381
+          },
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 18,
+            "column": 4,
+            "index": 349
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 74,
+            "column": 6,
+            "index": 1905
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
+            "line": 33,
+            "column": 6,
+            "index": 1055
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 42,
+            "column": 6,
+            "index": 1142
+          },
+          {
+            "filePath": "src/schedule-and-details/basic-section/index.jsx",
+            "line": 95,
+            "column": 6,
+            "index": 2673
+          },
+          {
+            "filePath": "src/studio-home/processing-courses/course-item/index.jsx",
+            "line": 33,
+            "column": 10,
+            "index": 840
+          },
+          {
+            "filePath": "src/studio-home/processing-courses/course-item/index.jsx",
+            "line": 60,
+            "column": 10,
+            "index": 1798
+          },
+          {
+            "filePath": "src/taxonomy/taxonomy-card/index.jsx",
+            "line": 114,
+            "column": 6,
+            "index": 2685
+          },
+          {
+            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailSideCard.jsx",
+            "line": 13,
+            "column": 6,
+            "index": 277
+          },
+          {
+            "filePath": "src/textbooks/textbook-card/TextbooksCard.jsx",
+            "line": 73,
+            "column": 12,
+            "index": 2222
+          }
+        ],
         "ClosedCaption": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/LanguageNamesWidget.jsx",
@@ -83513,12 +83725,6 @@
             "line": 101,
             "column": 16,
             "index": 2403
-          },
-          {
-            "filePath": "src/import-page/file-section/FileSection.jsx",
-            "line": 33,
-            "column": 12,
-            "index": 1202
           },
           {
             "filePath": "src/taxonomy/import-tags/ImportTagsWizard.jsx",
@@ -84117,6 +84323,44 @@
             "line": 19,
             "column": 68,
             "index": 594
+          }
+        ],
+        "Warning": [
+          {
+            "filePath": "src/grading-settings/assignment-section/index.jsx",
+            "line": 144,
+            "column": 22,
+            "index": 5563
+          },
+          {
+            "filePath": "src/grading-settings/assignment-section/index.jsx",
+            "line": 165,
+            "column": 22,
+            "index": 6526
+          },
+          {
+            "filePath": "src/grading-settings/GradingSettings.jsx",
+            "line": 273,
+            "column": 16,
+            "index": 10674
+          },
+          {
+            "filePath": "src/taxonomy/delete-dialog/index.jsx",
+            "line": 54,
+            "column": 23,
+            "index": 1446
+          },
+          {
+            "filePath": "src/taxonomy/import-tags/ImportTagsWizard.jsx",
+            "line": 404,
+            "column": 21,
+            "index": 11884
+          },
+          {
+            "filePath": "src/taxonomy/manage-orgs/ManageOrgsModal.jsx",
+            "line": 41,
+            "column": 12,
+            "index": 941
           }
         ],
         "WarningFilledIcon": [
@@ -90085,6 +90329,14 @@
         ],
         "Toast": [
           {
+            "filePath": "src/components/GradesView/ImportGradesButton/index.jsx",
+            "line": 27,
+            "column": 6,
+            "index": 733
+          }
+        ],
+        "Toast": [
+          {
             "filePath": "Settings.jsx",
             "line": 620,
             "column": 8,
@@ -91399,6 +91651,12 @@
             "line": 40,
             "column": 6,
             "index": 1690
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ApprovedCourseCard.jsx",
+            "line": 14,
+            "column": 4,
+            "index": 410
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ApprovedCourseCard.jsx",
@@ -95951,6 +96209,18 @@
             "index": 5203
           },
           {
+            "filePath": "src/components/search/content-highlights/ContentHighlights.jsx",
+            "line": 34,
+            "column": 4,
+            "index": 1189
+          },
+          {
+            "filePath": "src/components/search/Search.jsx",
+            "line": 151,
+            "column": 14,
+            "index": 5203
+          },
+          {
             "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/EditConfirmationButtons.jsx",
             "line": 25,
             "column": 6,
@@ -97545,6 +97815,12 @@
             "index": 2417
           },
           {
+            "filePath": "src/components/course/course-header/CourseRunCards.jsx",
+            "line": 53,
+            "column": 14,
+            "index": 2417
+          },
+          {
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
             "line": 59,
             "column": 6,
@@ -97683,6 +97959,12 @@
             "line": 385,
             "column": 16,
             "index": 13540
+          },
+          {
+            "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
+            "line": 31,
+            "column": 6,
+            "index": 977
           },
           {
             "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
@@ -100613,6 +100895,12 @@
             "index": 1067
           },
           {
+            "filePath": "src/components/course/CreatedBy.jsx",
+            "line": 32,
+            "column": 18,
+            "index": 1067
+          },
+          {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 32,
             "column": 8,
@@ -100753,6 +101041,12 @@
             "line": 584,
             "column": 12,
             "index": 20836
+          },
+          {
+            "filePath": "src/components/course/data/utils.jsx",
+            "line": 600,
+            "column": 12,
+            "index": 21214
           },
           {
             "filePath": "src/components/course/data/utils.jsx",
@@ -110968,6 +111262,18 @@
             "index": 310
           },
           {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
+            "line": 6,
+            "column": 22,
+            "index": 309
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusSidePanelSlot/index.jsx",
+            "line": 6,
+            "column": 22,
+            "index": 310
+          },
+          {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
             "line": 72,
             "column": 21,
@@ -111142,6 +111448,18 @@
             "line": 118,
             "column": 6,
             "index": 3481
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
+            "line": 7,
+            "column": 36,
+            "index": 368
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusSidePanelSlot/index.jsx",
+            "line": 7,
+            "column": 36,
+            "index": 369
           },
           {
             "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
@@ -117544,6 +117862,58 @@
             "line": 301,
             "column": 22,
             "index": 10546
+          }
+        ],
+        "Tooltip": [
+          {
+            "filePath": "src/profile/forms/elements/EditButton.jsx",
+            "line": 15,
+            "column": 8,
+            "index": 477
+          },
+          {
+            "filePath": "src/profile/forms/Name.jsx",
+            "line": 60,
+            "column": 22,
+            "index": 1894
+          },
+          {
+            "filePath": "src/profile/forms/Name.jsx",
+            "line": 97,
+            "column": 18,
+            "index": 3360
+          },
+          {
+            "filePath": "src/profile/forms/Name.jsx",
+            "line": 126,
+            "column": 18,
+            "index": 4433
+          },
+          {
+            "filePath": "src/profile/forms/Name.jsx",
+            "line": 151,
+            "column": 18,
+            "index": 5386
+          },
+          {
+            "filePath": "src/profile/forms/ProfileAvatar.jsx",
+            "line": 68,
+            "column": 14,
+            "index": 1485
+          },
+          {
+            "filePath": "src/profile/ProfilePage.jsx",
+            "line": 305,
+            "column": 26,
+            "index": 10697
+          }
+        ],
+        "EditOutline": [
+          {
+            "filePath": "src/profile/forms/elements/EditButton.jsx",
+            "line": 29,
+            "column": 8,
+            "index": 844
           }
         ],
         "Tooltip": [
