@@ -1,5 +1,5 @@
 {
-  "lastModified": 1772547717957,
+  "lastModified": 1772634005709,
   "projectUsages": [
     {
       "version": "23.19.1",
@@ -899,7 +899,7 @@
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
             "line": 85,
             "column": 12,
-            "index": 2879
+            "index": 2959
           },
           {
             "filePath": "src/account-settings/delete-account/DeleteAccount.jsx",
@@ -1159,7 +1159,7 @@
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
             "line": 111,
             "column": 10,
-            "index": 3719
+            "index": 3874
           },
           {
             "filePath": "src/account-settings/DOBForm.jsx",
@@ -1227,7 +1227,7 @@
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
             "line": 115,
             "column": 12,
-            "index": 3832
+            "index": 3987
           },
           {
             "filePath": "src/account-settings/DOBForm.jsx",
@@ -1471,7 +1471,7 @@
             "filePath": "src/account-settings/delete-account/ConfirmationModal.jsx",
             "line": 118,
             "column": 12,
-            "index": 4030
+            "index": 4185
           },
           {
             "filePath": "src/account-settings/DOBForm.jsx",
@@ -5216,6 +5216,34 @@
             "line": 40,
             "column": 16,
             "index": 1498
+          }
+        ],
+        "OverlayTrigger": [
+          {
+            "filePath": "src/account-settings/EmailField.jsx",
+            "line": 164,
+            "column": 12,
+            "index": 5151
+          },
+          {
+            "filePath": "src/notification-preferences/NotificationTypes.jsx",
+            "line": 34,
+            "column": 12,
+            "index": 1239
+          }
+        ],
+        "Tooltip": [
+          {
+            "filePath": "src/account-settings/EmailField.jsx",
+            "line": 167,
+            "column": 16,
+            "index": 5238
+          },
+          {
+            "filePath": "src/notification-preferences/NotificationTypes.jsx",
+            "line": 39,
+            "column": 16,
+            "index": 1409
           }
         ],
         "OverlayTrigger": [
@@ -20610,6 +20638,12 @@
             "index": 3129
           },
           {
+            "filePath": "src/components/PeopleManagement/GroupDetailPage/DownloadCsvIconButton.jsx",
+            "line": 88,
+            "column": 6,
+            "index": 3129
+          },
+          {
             "filePath": "src/components/PeopleManagement/GroupDetailPage/GroupDetailPage.jsx",
             "line": 130,
             "column": 14,
@@ -28855,6 +28889,12 @@
             "index": 405
           },
           {
+            "filePath": "src/course-outline/xblock-status/NeverShowAssessmentResultMessage.jsx",
+            "line": 10,
+            "column": 6,
+            "index": 405
+          },
+          {
             "filePath": "src/course-outline/xblock-status/ReleaseStatus.jsx",
             "line": 37,
             "column": 6,
@@ -28865,6 +28905,12 @@
             "line": 59,
             "column": 22,
             "index": 6661
+          },
+          {
+            "filePath": "src/course-team/course-team-sidebar/CourseTeamSidebar.jsx",
+            "line": 39,
+            "column": 16,
+            "index": 1406
           },
           {
             "filePath": "src/course-team/course-team-sidebar/CourseTeamSidebar.jsx",
@@ -38269,6 +38315,156 @@
             "line": 115,
             "column": 24,
             "index": 4167
+          }
+        ],
+        "Row": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/GroupFeedback/GroupFeedbackRow.jsx",
+            "line": 39,
+            "column": 8,
+            "index": 1062
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
+            "line": 30,
+            "column": 6,
+            "index": 1034
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
+            "line": 40,
+            "column": 10,
+            "index": 1310
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/FilterStatus.jsx",
+            "line": 27,
+            "column": 6,
+            "index": 733
+          },
+          {
+            "filePath": "src/files-and-videos/generic/UsageMetricsMessage.jsx",
+            "line": 38,
+            "column": 6,
+            "index": 1187
+          },
+          {
+            "filePath": "src/group-configurations/index.jsx",
+            "line": 56,
+            "column": 6,
+            "index": 1871
+          },
+          {
+            "filePath": "src/textbooks/Textbooks.jsx",
+            "line": 66,
+            "column": 6,
+            "index": 2106
+          }
+        ],
+        "Form.Checkbox": [
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/GroupFeedback/GroupFeedbackRow.jsx",
+            "line": 41,
+            "column": 12,
+            "index": 1134
+          },
+          {
+            "filePath": "src/editors/containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/ScoringCard.jsx",
+            "line": 114,
+            "column": 8,
+            "index": 3783
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/SocialShareWidget/index.jsx",
+            "line": 53,
+            "column": 6,
+            "index": 1662
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 156,
+            "column": 14,
+            "index": 4964
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/index.jsx",
+            "line": 178,
+            "column": 12,
+            "index": 5864
+          },
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoSourceWidget/index.jsx",
+            "line": 123,
+            "column": 10,
+            "index": 4162
+          },
+          {
+            "filePath": "src/editors/sharedComponents/ImageUploadModal/ImageSettingsModal/AltTextControls.jsx",
+            "line": 47,
+            "column": 6,
+            "index": 1432
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
+            "line": 150,
+            "column": 14,
+            "index": 4699
+          },
+          {
+            "filePath": "src/generic/configure-modal/PrereqSettings.jsx",
+            "line": 92,
+            "column": 6,
+            "index": 2742
+          },
+          {
+            "filePath": "src/generic/configure-modal/VisibilityTab.jsx",
+            "line": 124,
+            "column": 10,
+            "index": 4506
+          },
+          {
+            "filePath": "src/optimizer-page/scan-results/filterModal.jsx",
+            "line": 53,
+            "column": 14,
+            "index": 1485
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/DivisionByGroupFields.jsx",
+            "line": 123,
+            "column": 30,
+            "index": 4594
+          },
+          {
+            "filePath": "src/schedule-and-details/requirements-section/entrance-exam/index.jsx",
+            "line": 33,
+            "column": 10,
+            "index": 1015
+          },
+          {
+            "filePath": "src/taxonomy/manage-orgs/ManageOrgsModal.jsx",
+            "line": 213,
+            "column": 10,
+            "index": 6358
+          }
+        ],
+        "Toast": [
+          {
+            "filePath": "src/editors/containers/TextEditor/index.jsx",
+            "line": 87,
+            "column": 8,
+            "index": 2286
+          },
+          {
+            "filePath": "src/files-and-videos/generic/ApiStatusToast.jsx",
+            "line": 22,
+            "column": 4,
+            "index": 435
+          },
+          {
+            "filePath": "src/generic/processing-notification/index.jsx",
+            "line": 11,
+            "column": 2,
+            "index": 268
           }
         ],
         "Row": [
@@ -84665,6 +84861,86 @@
             "index": 2222
           }
         ],
+        "Card.Header": [
+          {
+            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/Transcript.jsx",
+            "line": 56,
+            "column": 12,
+            "index": 1718
+          },
+          {
+            "filePath": "src/files-and-videos/generic/table-components/GalleryCard.jsx",
+            "line": 31,
+            "column": 6,
+            "index": 690
+          },
+          {
+            "filePath": "src/files-and-videos/videos-page/info-sidebar/transcript-item/Transcript.jsx",
+            "line": 57,
+            "column": 10,
+            "index": 1381
+          },
+          {
+            "filePath": "src/generic/ConfirmationPopup.jsx",
+            "line": 18,
+            "column": 4,
+            "index": 349
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-config-form/apps/shared/discussion-topics/TopicItem.jsx",
+            "line": 74,
+            "column": 6,
+            "index": 1905
+          },
+          {
+            "filePath": "src/pages-and-resources/discussions/app-list/AppCard.jsx",
+            "line": 33,
+            "column": 6,
+            "index": 1055
+          },
+          {
+            "filePath": "src/pages-and-resources/pages/PageCard.jsx",
+            "line": 42,
+            "column": 6,
+            "index": 1142
+          },
+          {
+            "filePath": "src/schedule-and-details/basic-section/index.jsx",
+            "line": 95,
+            "column": 6,
+            "index": 2673
+          },
+          {
+            "filePath": "src/studio-home/processing-courses/course-item/index.jsx",
+            "line": 33,
+            "column": 10,
+            "index": 840
+          },
+          {
+            "filePath": "src/studio-home/processing-courses/course-item/index.jsx",
+            "line": 60,
+            "column": 10,
+            "index": 1798
+          },
+          {
+            "filePath": "src/taxonomy/taxonomy-card/index.jsx",
+            "line": 114,
+            "column": 6,
+            "index": 2685
+          },
+          {
+            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailSideCard.jsx",
+            "line": 13,
+            "column": 6,
+            "index": 277
+          },
+          {
+            "filePath": "src/textbooks/textbook-card/TextbooksCard.jsx",
+            "line": 73,
+            "column": 12,
+            "index": 2222
+          }
+        ],
         "ClosedCaption": [
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/VideoPreviewWidget/LanguageNamesWidget.jsx",
@@ -91341,6 +91617,14 @@
         ],
         "Toast": [
           {
+            "filePath": "src/components/GradesView/ImportGradesButton/index.jsx",
+            "line": 27,
+            "column": 6,
+            "index": 733
+          }
+        ],
+        "Toast": [
+          {
             "filePath": "Settings.jsx",
             "line": 620,
             "column": 8,
@@ -91393,9 +91677,9 @@
         "Collapsible.Advanced": [
           {
             "filePath": "src/App.jsx",
-            "line": 86,
+            "line": 56,
             "column": 16,
-            "index": 2719
+            "index": 1814
           },
           {
             "filePath": "src/components/Banner.jsx",
@@ -91431,33 +91715,69 @@
           },
           {
             "filePath": "src/containers/CourseCard/hooks.js",
-            "line": 6,
+            "line": 4,
             "column": 20,
-            "index": 213
+            "index": 122
+          },
+          {
+            "filePath": "src/containers/CourseCard/hooks.test.js",
+            "line": 20,
+            "column": 4,
+            "index": 460
+          },
+          {
+            "filePath": "src/containers/CourseCard/hooks.test.js",
+            "line": 27,
+            "column": 4,
+            "index": 748
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 45,
+            "line": 51,
             "column": 20,
-            "index": 930
-          },
-          {
-            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
-            "line": 46,
-            "column": 6,
-            "index": 1423
+            "index": 1422
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
             "line": 57,
             "column": 6,
-            "index": 2018
+            "index": 1535
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
-            "line": 68,
+            "line": 62,
             "column": 6,
-            "index": 2602
+            "index": 2174
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
+            "line": 76,
+            "column": 6,
+            "index": 2853
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
+            "line": 86,
+            "column": 6,
+            "index": 3356
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
+            "line": 95,
+            "column": 6,
+            "index": 3871
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
+            "line": 117,
+            "column": 6,
+            "index": 4958
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
+            "line": 139,
+            "column": 6,
+            "index": 6049
           },
           {
             "filePath": "src/containers/CoursesPanel/CourseList/hooks.js",
@@ -91467,21 +91787,21 @@
           },
           {
             "filePath": "src/containers/Dashboard/hooks.js",
-            "line": 28,
+            "line": 22,
             "column": 20,
-            "index": 858
+            "index": 653
           },
           {
             "filePath": "src/containers/Dashboard/hooks.test.js",
-            "line": 43,
+            "line": 32,
             "column": 0,
-            "index": 1030
+            "index": 791
           },
           {
             "filePath": "src/containers/Dashboard/hooks.test.js",
-            "line": 68,
+            "line": 57,
             "column": 10,
-            "index": 1908
+            "index": 1669
           }
         ],
         "breakpoints": [
@@ -91541,27 +91861,57 @@
           },
           {
             "filePath": "src/containers/CourseCard/hooks.js",
-            "line": 7,
+            "line": 5,
             "column": 17,
-            "index": 247
+            "index": 156
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 46,
+            "line": 52,
             "column": 27,
-            "index": 974
-          },
-          {
-            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
-            "line": 46,
-            "column": 49,
             "index": 1466
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
-            "line": 57,
-            "column": 49,
-            "index": 2061
+            "line": 48,
+            "column": 45,
+            "index": 1574
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
+            "line": 62,
+            "column": 45,
+            "index": 2213
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
+            "line": 76,
+            "column": 45,
+            "index": 2892
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
+            "line": 86,
+            "column": 45,
+            "index": 3395
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
+            "line": 95,
+            "column": 45,
+            "index": 3910
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
+            "line": 117,
+            "column": 45,
+            "index": 4997
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
+            "line": 139,
+            "column": 45,
+            "index": 6088
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
@@ -91570,28 +91920,16 @@
             "index": 2641
           },
           {
-            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.test.jsx",
-            "line": 68,
-            "column": 45,
-            "index": 2641
-          },
-          {
-            "filePath": "src/files-and-videos/files-page/FileInfoModalSidebar.jsx",
-            "line": 65,
-            "column": 8,
-            "index": 1654
-          },
-          {
-            "filePath": "src/files-and-videos/files-page/FileInfoModalSidebar.jsx",
-            "line": 82,
-            "column": 8,
-            "index": 2203
+            "filePath": "src/containers/Dashboard/hooks.js",
+            "line": 26,
+            "column": 34,
+            "index": 797
           },
           {
             "filePath": "src/containers/Dashboard/hooks.test.js",
-            "line": 44,
+            "line": 33,
             "column": 0,
-            "index": 1076
+            "index": 837
           }
         ],
         "Button": [
@@ -91635,13 +91973,43 @@
             "filePath": "src/generic/course-upload-image/index.jsx",
             "line": 69,
             "column": 6,
-            "index": 1857
+            "index": 695
+          },
+          {
+            "filePath": "src/containers/CourseCard/components/CourseCardBanners/EntitlementBanner.jsx",
+            "line": 53,
+            "column": 12,
+            "index": 1578
+          },
+          {
+            "filePath": "src/containers/CourseCard/components/CourseCardDetails/index.jsx",
+            "line": 30,
+            "column": 10,
+            "index": 738
+          },
+          {
+            "filePath": "src/containers/CourseCard/components/RelatedProgramsBadge/index.jsx",
+            "line": 22,
+            "column": 6,
+            "index": 567
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/ActiveCourseFilters.jsx",
+            "line": 26,
+            "column": 6,
+            "index": 722
+          },
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
+            "line": 56,
+            "column": 6,
+            "index": 1550
           },
           {
             "filePath": "src/containers/CoursesPanel/NoCoursesView/index.jsx",
-            "line": 28,
+            "line": 29,
             "column": 6,
-            "index": 921
+            "index": 1012
           },
           {
             "filePath": "src/discussions/posts/post/PostHeader.jsx",
@@ -91675,21 +92043,21 @@
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ConfirmPane.jsx",
-            "line": 26,
+            "line": 27,
             "column": 8,
-            "index": 692
+            "index": 735
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ConfirmPane.jsx",
-            "line": 29,
+            "line": 30,
             "column": 8,
-            "index": 818
+            "index": 861
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/FinishedPane.jsx",
             "line": 28,
             "column": 8,
-            "index": 675
+            "index": 717
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ReasonPane.jsx",
@@ -91707,9 +92075,9 @@
         "ActionRow": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardActions/index.jsx",
-            "line": 22,
+            "line": 21,
             "column": 4,
-            "index": 714
+            "index": 749
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ReasonPane.jsx",
@@ -91751,15 +92119,15 @@
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ConfirmPane.jsx",
-            "line": 25,
+            "line": 26,
             "column": 6,
-            "index": 672
+            "index": 715
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/FinishedPane.jsx",
             "line": 27,
             "column": 6,
-            "index": 655
+            "index": 697
           },
           {
             "filePath": "src/containers/UnenrollConfirmModal/components/ReasonPane.jsx",
@@ -91771,9 +92139,9 @@
         "MailtoLink": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CertificateBanner.jsx",
-            "line": 29,
+            "line": 48,
             "column": 31,
-            "index": 1025
+            "index": 1670
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CreditBanner/index.jsx",
@@ -91783,49 +92151,49 @@
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/EntitlementBanner.jsx",
-            "line": 34,
+            "line": 42,
             "column": 37,
-            "index": 985
+            "index": 1263
           }
         ],
         "CheckCircle": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CertificateBanner.jsx",
-            "line": 42,
+            "line": 61,
             "column": 38,
-            "index": 1644
+            "index": 2289
           }
         ],
         "Hyperlink": [
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CertificateBanner.jsx",
-            "line": 47,
+            "line": 66,
             "column": 12,
-            "index": 1787
+            "index": 2432
           },
           {
-            "filePath": "src/taxonomy/taxonomy-menu/TaxonomyMenu.jsx",
-            "line": 57,
-            "column": 68,
-            "index": 1863
+            "filePath": "src/containers/CourseCard/components/CourseCardBanners/CertificateBanner.jsx",
+            "line": 87,
+            "column": 10,
+            "index": 2955
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CourseBanner.jsx",
-            "line": 32,
+            "line": 37,
             "column": 12,
-            "index": 917
+            "index": 1168
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardBanners/CreditBanner/views/components/ProviderLink.jsx",
-            "line": 11,
+            "line": 12,
             "column": 4,
-            "index": 292
+            "index": 327
           },
           {
             "filePath": "src/plugins/LookingForChallengeWidget/index.jsx",
-            "line": 33,
+            "line": 34,
             "column": 10,
-            "index": 1090
+            "index": 1181
           }
         ],
         "Form": [
@@ -91837,16 +92205,18 @@
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 59,
-            "column": 23,
-            "index": 1440
+            "line": 65,
+            "column": 6,
+            "index": 1784
           },
           {
-            "filePath": "src/editors/sharedComponents/SelectionModal/SearchSort.jsx",
-            "line": 99,
-            "column": 10,
-            "index": 2754
-          },
+            "filePath": "src/containers/MasqueradeBar/index.jsx",
+            "line": 55,
+            "column": 6,
+            "index": 1787
+          }
+        ],
+        "FormControl": [
           {
             "filePath": "src/editors/sharedComponents/TypeaheadDropdown/index.jsx",
             "line": 190,
@@ -91854,28 +92224,18 @@
             "index": 4902
           },
           {
-            "filePath": "src/files-and-videos/files-page/FileInfoModalSidebar.jsx",
-            "line": 64,
-            "column": 8,
-            "index": 1625
-          },
-          {
-            "filePath": "src/files-and-videos/files-page/FileInfoModalSidebar.jsx",
-            "line": 81,
-            "column": 8,
-            "index": 2174
-          },
-          {
-            "filePath": "src/files-and-videos/files-page/FileInfoModalSidebar.jsx",
-            "line": 102,
-            "column": 8,
-            "index": 2888
-          },
-          {
-            "filePath": "src/files-and-videos/videos-page/transcript-settings/TranscriptSettings.jsx",
-            "line": 80,
+            "filePath": "src/containers/MasqueradeBar/index.jsx",
+            "line": 77,
             "column": 14,
-            "index": 2757
+            "index": 2606
+          }
+        ],
+        "Program": [
+          {
+            "filePath": "src/containers/CourseCard/components/CourseCardBanners/RelatedProgramsBanner/index.jsx",
+            "line": 24,
+            "column": 12,
+            "index": 629
           },
           {
             "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
@@ -91901,7 +92261,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardImage.jsx",
             "line": 39,
             "column": 12,
-            "index": 1496
+            "index": 1558
           },
           {
             "filePath": "src/certificates/certificate-create-form/CertificateCreateForm.jsx",
@@ -91913,7 +92273,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 40,
             "column": 6,
-            "index": 1185
+            "index": 1240
           }
         ],
         "Dropdown.Toggle": [
@@ -91921,7 +92281,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 41,
             "column": 8,
-            "index": 1236
+            "index": 1291
           }
         ],
         "IconButton": [
@@ -91929,7 +92289,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 43,
             "column": 14,
-            "index": 1318
+            "index": 1373
           }
         ],
         "MoreVert": [
@@ -91937,7 +92297,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 44,
             "column": 15,
-            "index": 1345
+            "index": 1400
           }
         ],
         "Icon": [
@@ -91945,7 +92305,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 45,
             "column": 18,
-            "index": 1373
+            "index": 1428
           },
           {
             "filePath": "src/containers/CourseCard/components/RelatedProgramsBadge/index.jsx",
@@ -91955,21 +92315,21 @@
           },
           {
             "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
-            "line": 80,
+            "line": 86,
             "column": 18,
-            "index": 2035
+            "index": 2572
           },
           {
             "filePath": "src/containers/MasqueradeBar/index.jsx",
-            "line": 44,
+            "line": 59,
             "column": 14,
-            "index": 1069
+            "index": 1947
           },
           {
             "filePath": "src/containers/MasqueradeBar/index.jsx",
-            "line": 58,
+            "line": 73,
             "column": 14,
-            "index": 1523
+            "index": 2401
           },
           {
             "filePath": "src/containers/RelatedProgramsModal/components/ProgramCard.jsx",
@@ -91981,7 +92341,7 @@
             "filePath": "src/plugins/LookingForChallengeWidget/index.jsx",
             "line": 15,
             "column": 26,
-            "index": 489
+            "index": 508
           }
         ],
         "Dropdown.Menu": [
@@ -91989,7 +92349,7 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 49,
             "column": 8,
-            "index": 1478
+            "index": 1533
           }
         ],
         "Dropdown.Item": [
@@ -91997,13 +92357,13 @@
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/index.jsx",
             "line": 51,
             "column": 12,
-            "index": 1545
+            "index": 1600
           },
           {
             "filePath": "src/containers/CourseCard/components/CourseCardMenu/SocialShareMenu.jsx",
             "line": 35,
             "column": 8,
-            "index": 1094
+            "index": 1339
           }
         ],
         "Card": [
@@ -92021,9 +92381,9 @@
           },
           {
             "filePath": "src/plugins/LookingForChallengeWidget/index.jsx",
-            "line": 23,
+            "line": 24,
             "column": 4,
-            "index": 775
+            "index": 866
           }
         ],
         "Card.Body": [
@@ -92035,9 +92395,9 @@
           },
           {
             "filePath": "src/plugins/LookingForChallengeWidget/index.jsx",
-            "line": 28,
+            "line": 29,
             "column": 6,
-            "index": 942
+            "index": 1033
           }
         ],
         "Card.Header": [
@@ -92073,22 +92433,26 @@
         "Chip": [
           {
             "filePath": "src/containers/CourseFilterControls/ActiveCourseFilters.jsx",
-            "line": 21,
+            "line": 18,
             "column": 8,
-            "index": 580
+            "index": 527
           },
           {
             "filePath": "src/containers/MasqueradeBar/index.jsx",
-            "line": 47,
-            "column": 6,
-            "index": 954
-          },
+            "line": 62,
+            "column": 12,
+            "index": 2062
+          }
+        ],
+        "CloseSmall": [
           {
-            "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 272,
-            "column": 8,
-            "index": 9895
-          },
+            "filePath": "src/containers/CourseFilterControls/ActiveCourseFilters.jsx",
+            "line": 20,
+            "column": 21,
+            "index": 577
+          }
+        ],
+        "Form.Checkbox": [
           {
             "filePath": "src/files-and-videos/generic/table-components/GalleryCard.jsx",
             "line": 30,
@@ -92230,84 +92594,64 @@
         ],
         "Tune": [
           {
-            "filePath": "src/course-outline/card-header/CardHeader.jsx",
-            "line": 176,
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
+            "line": 59,
+            "column": 20,
+            "index": 1639
+          }
+        ],
+        "Sheet": [
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
+            "line": 68,
+            "column": 12,
+            "index": 1835
+          }
+        ],
+        "ModalCloseButton": [
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
+            "line": 85,
             "column": 16,
-            "index": 5425
+            "index": 2486
+          }
+        ],
+        "Close": [
+          {
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
+            "line": 86,
+            "column": 29,
+            "index": 2583
           },
           {
-            "filePath": "src/course-outline/card-header/CardHeader.jsx",
-            "line": 186,
-            "column": 14,
-            "index": 5883
-          },
+            "filePath": "src/containers/MasqueradeBar/index.jsx",
+            "line": 64,
+            "column": 25,
+            "index": 2135
+          }
+        ],
+        "ModalPopup": [
           {
-            "filePath": "src/course-outline/card-header/CardHeader.jsx",
-            "line": 193,
-            "column": 14,
-            "index": 6183
-          },
-          {
-            "filePath": "src/course-outline/card-header/CardHeader.jsx",
-            "line": 201,
-            "column": 16,
-            "index": 6566
-          },
-          {
-            "filePath": "src/course-outline/card-header/CardHeader.jsx",
-            "line": 211,
-            "column": 16,
-            "index": 6968
-          },
-          {
-            "filePath": "src/course-outline/card-header/CardHeader.jsx",
-            "line": 216,
-            "column": 16,
-            "index": 7169
-          },
-          {
-            "filePath": "src/course-outline/card-header/CardHeader.jsx",
-            "line": 225,
-            "column": 18,
-            "index": 7518
-          },
-          {
-            "filePath": "src/course-outline/card-header/CardHeader.jsx",
-            "line": 232,
-            "column": 18,
-            "index": 7847
-          },
-          {
-            "filePath": "src/course-outline/card-header/CardHeader.jsx",
-            "line": 242,
-            "column": 16,
-            "index": 8257
-          },
-          {
-            "filePath": "src/generic/course-upload-image/index.jsx",
-            "line": 111,
-            "column": 8,
-            "index": 3271
-          },
-          {
-            "filePath": "src/containers/CourseFilterControls/hooks.test.js",
-            "line": 57,
-            "column": 6,
-            "index": 1304
-          },
-          {
-            "filePath": "src/containers/CourseFilterControls/hooks.test.js",
-            "line": 84,
-            "column": 6,
-            "index": 2165
+            "filePath": "src/containers/CourseFilterControls/CourseFilterControls.jsx",
+            "line": 91,
+            "column": 12,
+            "index": 2699
           }
         ],
         "Pagination": [
           {
-            "filePath": "src/discussions/posts/post-editor/PostEditor.jsx",
-            "line": 489,
+            "filePath": "src/containers/CoursesPanel/CourseList/index.jsx",
+            "line": 30,
             "column": 10,
-            "index": 17954
+            "index": 814
+          }
+        ],
+        "Image": [
+          {
+            "filePath": "src/containers/CoursesPanel/NoCoursesView/index.jsx",
+            "line": 22,
+            "column": 6,
+            "index": 761
           },
           {
             "filePath": "src/schedule-and-details/instructors-section/instructor-container/index.jsx",
@@ -92323,9 +92667,9 @@
           },
           {
             "filePath": "src/containers/CoursesPanel/NoCoursesView/index.jsx",
-            "line": 32,
+            "line": 33,
             "column": 20,
-            "index": 1031
+            "index": 1122
           }
         ],
         "Container": [
@@ -92336,11 +92680,13 @@
             "index": 3036
           },
           {
-            "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/TranscriptWidget/LanguageSelector.jsx",
-            "line": 103,
-            "column": 20,
-            "index": 3162
-          },
+            "filePath": "src/containers/RelatedProgramsModal/index.jsx",
+            "line": 43,
+            "column": 8,
+            "index": 1325
+          }
+        ],
+        "Row": [
           {
             "filePath": "src/export-page/CourseExportPage.jsx",
             "line": 91,
@@ -92354,10 +92700,18 @@
             "index": 690
           },
           {
-            "filePath": "src/files-and-videos/videos-page/info-sidebar/transcript-item/Transcript.jsx",
-            "line": 58,
+            "filePath": "src/containers/RelatedProgramsModal/index.jsx",
+            "line": 44,
             "column": 10,
-            "index": 1391
+            "index": 1347
+          }
+        ],
+        "Col": [
+          {
+            "filePath": "src/containers/Dashboard/DashboardLayout.jsx",
+            "line": 40,
+            "column": 8,
+            "index": 874
           },
           {
             "filePath": "src/custom-pages/CustomPageCard.jsx",
@@ -92373,9 +92727,9 @@
           },
           {
             "filePath": "src/containers/RelatedProgramsModal/index.jsx",
-            "line": 45,
+            "line": 46,
             "column": 14,
-            "index": 1389
+            "index": 1419
           }
         ],
         "Spinner": [
@@ -92395,9 +92749,9 @@
           },
           {
             "filePath": "src/containers/RelatedProgramsModal/index.jsx",
-            "line": 24,
+            "line": 25,
             "column": 4,
-            "index": 643
+            "index": 673
           },
           {
             "filePath": "src/editors/containers/VideoEditor/components/VideoSettingsModal/components/ThumbnailWidget/index.jsx",
@@ -92409,61 +92763,83 @@
             "filePath": "src/files-and-videos/files-page/FileInfoModalSidebar.jsx",
             "line": 93,
             "column": 8,
-            "index": 2606
-          },
+            "index": 788
+          }
+        ],
+        "PageBanner": [
           {
-            "filePath": "src/taxonomy/taxonomy-detail/TaxonomyDetailSideCard.jsx",
-            "line": 13,
+            "filePath": "src/containers/LearnerDashboardHeader/ConfirmEmailBanner/index.jsx",
+            "line": 33,
             "column": 6,
-            "index": 277
-          },
+            "index": 743
+          }
+        ],
+        "MarketingModal": [
           {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 56,
-            "column": 12,
-            "index": 1627
-          },
+            "filePath": "src/containers/LearnerDashboardHeader/ConfirmEmailBanner/index.jsx",
+            "line": 47,
+            "column": 6,
+            "index": 1238
+          }
+        ],
+        "ModalDialog.Hero": [
           {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 63,
+            "filePath": "src/containers/LearnerDashboardHeader/ConfirmEmailBanner/index.jsx",
+            "line": 53,
             "column": 10,
-            "index": 1887
-          },
-          {
-            "filePath": "src/files-and-videos/generic/table-components/TableActions.jsx",
-            "line": 70,
-            "column": 10,
-            "index": 2157
-          },
+            "index": 1402
+          }
+        ],
+        "FormLabel": [
           {
             "filePath": "src/containers/MasqueradeBar/index.jsx",
             "line": 58,
+            "column": 12,
+            "index": 1880
+          },
+          {
+            "filePath": "src/containers/MasqueradeBar/index.jsx",
+            "line": 72,
+            "column": 12,
+            "index": 2307
+          }
+        ],
+        "PersonSearch": [
+          {
+            "filePath": "src/containers/MasqueradeBar/index.jsx",
+            "line": 59,
             "column": 25,
-            "index": 1534
+            "index": 1958
+          },
+          {
+            "filePath": "src/containers/MasqueradeBar/index.jsx",
+            "line": 73,
+            "column": 25,
+            "index": 2412
           }
         ],
         "FormGroup": [
           {
             "filePath": "src/containers/MasqueradeBar/index.jsx",
-            "line": 61,
+            "line": 76,
             "column": 12,
-            "index": 1635
+            "index": 2513
           }
         ],
         "FormControlFeedback": [
           {
             "filePath": "src/containers/MasqueradeBar/index.jsx",
-            "line": 69,
+            "line": 84,
             "column": 16,
-            "index": 2039
+            "index": 2917
           }
         ],
         "StatefulButton": [
           {
             "filePath": "src/containers/MasqueradeBar/index.jsx",
-            "line": 74,
+            "line": 89,
             "column": 12,
-            "index": 2243
+            "index": 3121
           }
         ],
         "Card.ImageCap": [
@@ -92475,31 +92851,31 @@
           },
           {
             "filePath": "src/plugins/LookingForChallengeWidget/index.jsx",
-            "line": 24,
+            "line": 25,
             "column": 6,
-            "index": 847
+            "index": 938
           }
         ],
         "ModalDialog.Header": [
           {
             "filePath": "src/containers/RelatedProgramsModal/index.jsx",
-            "line": 34,
+            "line": 35,
             "column": 6,
-            "index": 912
+            "index": 942
           },
           {
             "filePath": "src/containers/RelatedProgramsModal/index.jsx",
-            "line": 37,
+            "line": 38,
             "column": 6,
-            "index": 1066
+            "index": 1096
           }
         ],
         "ModalDialog.Body": [
           {
             "filePath": "src/containers/RelatedProgramsModal/index.jsx",
-            "line": 40,
+            "line": 41,
             "column": 6,
-            "index": 1182
+            "index": 1212
           }
         ],
         "Form.Label": [
@@ -92521,7 +92897,7 @@
             "filePath": "src/plugins/LookingForChallengeWidget/index.jsx",
             "line": 15,
             "column": 54,
-            "index": 517
+            "index": 536
           }
         ]
       }
@@ -92655,6 +93031,12 @@
             "line": 40,
             "column": 6,
             "index": 1690
+          },
+          {
+            "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ApprovedCourseCard.jsx",
+            "line": 14,
+            "column": 4,
+            "index": 410
           },
           {
             "filePath": "src/components/dashboard/main-content/course-enrollments/course-cards/ApprovedCourseCard.jsx",
@@ -97297,6 +97679,18 @@
             "index": 5203
           },
           {
+            "filePath": "src/components/search/content-highlights/ContentHighlights.jsx",
+            "line": 34,
+            "column": 4,
+            "index": 1189
+          },
+          {
+            "filePath": "src/components/search/Search.jsx",
+            "line": 151,
+            "column": 14,
+            "index": 5203
+          },
+          {
             "filePath": "src/editors/containers/EditorContainer/components/TitleHeader/EditConfirmationButtons.jsx",
             "line": 25,
             "column": 6,
@@ -98921,6 +99315,12 @@
             "index": 2417
           },
           {
+            "filePath": "src/components/course/course-header/CourseRunCards.jsx",
+            "line": 53,
+            "column": 14,
+            "index": 2417
+          },
+          {
             "filePath": "src/components/course/CourseRecommendationCard.jsx",
             "line": 59,
             "column": 6,
@@ -99059,6 +99459,12 @@
             "line": 385,
             "column": 16,
             "index": 13540
+          },
+          {
+            "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
+            "line": 31,
+            "column": 6,
+            "index": 977
           },
           {
             "filePath": "src/components/course/BrowseAndRequestAlert.jsx",
@@ -102049,6 +102455,12 @@
             "index": 1067
           },
           {
+            "filePath": "src/components/course/CreatedBy.jsx",
+            "line": 32,
+            "column": 18,
+            "index": 1067
+          },
+          {
             "filePath": "src/components/pathway/PathwayModal.jsx",
             "line": 32,
             "column": 8,
@@ -102189,6 +102601,12 @@
             "line": 584,
             "column": 12,
             "index": 20836
+          },
+          {
+            "filePath": "src/components/course/data/utils.jsx",
+            "line": 600,
+            "column": 12,
+            "index": 21214
           },
           {
             "filePath": "src/components/course/data/utils.jsx",
@@ -112494,6 +112912,18 @@
             "index": 310
           },
           {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
+            "line": 6,
+            "column": 22,
+            "index": 309
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusSidePanelSlot/index.jsx",
+            "line": 6,
+            "column": 22,
+            "index": 310
+          },
+          {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
             "line": 72,
             "column": 21,
@@ -112668,6 +113098,18 @@
             "line": 118,
             "column": 6,
             "index": 3481
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
+            "line": 7,
+            "column": 36,
+            "index": 368
+          },
+          {
+            "filePath": "src/plugin-slots/ProgressTabCertificateStatusSidePanelSlot/index.jsx",
+            "line": 7,
+            "column": 36,
+            "index": 369
           },
           {
             "filePath": "src/plugin-slots/ProgressTabCertificateStatusMainBodySlot/index.jsx",
@@ -119130,6 +119572,58 @@
             "line": 301,
             "column": 22,
             "index": 10546
+          }
+        ],
+        "Tooltip": [
+          {
+            "filePath": "src/profile/forms/elements/EditButton.jsx",
+            "line": 15,
+            "column": 8,
+            "index": 477
+          },
+          {
+            "filePath": "src/profile/forms/Name.jsx",
+            "line": 60,
+            "column": 22,
+            "index": 1894
+          },
+          {
+            "filePath": "src/profile/forms/Name.jsx",
+            "line": 97,
+            "column": 18,
+            "index": 3360
+          },
+          {
+            "filePath": "src/profile/forms/Name.jsx",
+            "line": 126,
+            "column": 18,
+            "index": 4433
+          },
+          {
+            "filePath": "src/profile/forms/Name.jsx",
+            "line": 151,
+            "column": 18,
+            "index": 5386
+          },
+          {
+            "filePath": "src/profile/forms/ProfileAvatar.jsx",
+            "line": 68,
+            "column": 14,
+            "index": 1485
+          },
+          {
+            "filePath": "src/profile/ProfilePage.jsx",
+            "line": 305,
+            "column": 26,
+            "index": 10697
+          }
+        ],
+        "EditOutline": [
+          {
+            "filePath": "src/profile/forms/elements/EditButton.jsx",
+            "line": 29,
+            "column": 8,
+            "index": 844
           }
         ],
         "Tooltip": [
