@@ -13,11 +13,6 @@ build:
 	rm -rf dist/setupTest.js
 	./bin/paragon-scripts.js build-scss
 
-export TRANSIFEX_RESOURCE = paragon
-transifex_langs = "ar,ca,es_419,fr,he,id,ko_KR,pl,pt_BR,ru,th,uk,zh_CN,es_AR,es_ES,pt_PT,tr_TR,it_IT"
-i18n = ./src/i18n
-transifex_input = $(i18n)/transifex_input.json
-
 NPM_TESTS=build i18n_extract lint test
 
 .PHONY: test
@@ -57,22 +52,6 @@ i18n.extract:
 	npm run-script i18n_extract
 
 extract_translations: | requirements i18n.extract
-
-# Despite the name, we actually need this target to detect changes in the incoming translated message files as well.
-detect_changed_source_translations:
-	# Checking for changed translations...
-	git diff --exit-code $(i18n)
-
-# Pushes translations to Transifex.  You must run make extract_translations first.
-push_translations:
-	# Pushing strings to Transifex...
-	tx push -s
-
-# Pulls translations from Transifex.
-pull_translations: | requirements
-	tx pull -t -f --mode reviewed --languages=$(transifex_langs)
-	# compile files with translated strings to KEYVALUEJSON format which react-intl understands...
-	npm run-script i18n_compile
 
 # This target is used by Travis.
 validate-no-uncommitted-package-lock-changes:
