@@ -25,6 +25,9 @@
     "/lib"
   ],
   "sideEffects": false,
+  "atlasTranslations": {
+    "path": "translations/paragon/src/i18n/messages"
+  },
   "scripts": {
     "build": "make build",
     "build-docs": "make build-docs",
