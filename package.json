@@ -109,8 +109,8 @@
     "uuid": "^9.0.0"
   },
   "peerDependencies": {
-    "react": "^16.8.6 || ^17 || ^18",
-    "react-dom": "^16.8.6 || ^17 || ^18",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-intl": "^5.25.1 || ^6.4.0"
   },
   "devDependencies": {
@@ -133,8 +133,8 @@
     "@testing-library/react": "^16.1",
     "@testing-library/user-event": "^14.5",
     "@types/jest": "^29.5.10",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@types/react-responsive": "^9.0.0",
     "@types/react-table": "^7.7.19",
     "@types/react-test-renderer": "^18.0.0",
@@ -158,8 +158,8 @@
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.0",
     "markdown-loader-jest": "^0.1.1",
-    "react": "^18",
-    "react-test-renderer": "^18",
+    "react": "^19.0.0",
+    "react-test-renderer": "^19.0.0",
     "regenerator-runtime": "^0.14.0",
     "semantic-release": "^25.0.0",
     "stylelint": "^15.11.0",
