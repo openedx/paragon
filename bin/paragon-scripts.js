@@ -83,7 +83,7 @@ const COMMANDS = {
       },
       {
         name: '--source-tokens-only',
-        description: 'Include only source design tokens in the build.',
+        description: 'If provided, only tokens from --source will be included in the output; Paragon tokens will be used for references but not included in the output.',
         defaultValue: false,
       },
       {
