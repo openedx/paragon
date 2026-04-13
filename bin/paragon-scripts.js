@@ -133,12 +133,12 @@ const COMMANDS = {
     options: [
       {
         name: '-s, --source',
-        description: 'Type of replacement: usage or definition. If set to "definition" the command will only update SCSS variables definitions with CSS variables, if set to "usage" - all occurrences of SCSS variables will we replaced',
+        description: 'The path to the source directory containing variable mappings.',
         defaultValue: '\'\'',
       },
       {
         name: '-t, --replacementType',
-        description: 'Type of replacement: usage or definition. If set to "definition" the command will only update SCSS variables definitions with CSS variables, if set to "usage" - all occurrences of SCSS variables will we replaced',
+        description: 'Type of replacement: usage or definition. If set to "definition" the command will only update SCSS variables definitions with CSS variables, if set to "usage" - all occurrences of SCSS variables will be replaced.',
         choices: '[usage|definition]',
         defaultValue: 'definition',
       },
