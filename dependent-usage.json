@@ -1,5 +1,5 @@
 {
-  "lastModified": 1776003543930,
+  "lastModified": 1776091180829,
   "projectUsages": [
     {
       "version": "3.4.8",
@@ -929,7 +929,7 @@
             "index": 397
           }
         ],
-        "Search": [
+        "Form.Group": [
           {
             "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
             "line": 29,
@@ -22787,27 +22787,27 @@
           },
           {
             "filePath": "src/course-outline/hooks.jsx",
-            "line": 91,
+            "line": 92,
             "column": 95,
-            "index": 3104
-          },
-          {
-            "filePath": "src/course-outline/hooks.jsx",
-            "line": 95,
-            "column": 77,
-            "index": 3412
+            "index": 3164
           },
           {
             "filePath": "src/course-outline/hooks.jsx",
             "line": 96,
-            "column": 74,
-            "index": 3504
+            "column": 77,
+            "index": 3472
           },
           {
             "filePath": "src/course-outline/hooks.jsx",
             "line": 97,
+            "column": 74,
+            "index": 3564
+          },
+          {
+            "filePath": "src/course-outline/hooks.jsx",
+            "line": 98,
             "column": 65,
-            "index": 3587
+            "index": 3647
           },
           {
             "filePath": "src/certificates/certificate-signatories/signatory/SignatoryForm.jsx",
@@ -23886,12 +23886,6 @@
             "index": 10505
           },
           {
-            "filePath": "src/course-outline/highlights-modal/HighlightsModal.jsx",
-            "line": 80,
-            "column": 16,
-            "index": 2833
-          },
-          {
             "filePath": "src/course-outline/enable-highlights-modal/EnableHighlightsModal.jsx",
             "line": 31,
             "column": 10,
@@ -24434,12 +24428,6 @@
             "index": 11039
           },
           {
-            "filePath": "src/course-outline/highlights-modal/HighlightsModal.jsx",
-            "line": 59,
-            "column": 20,
-            "index": 1891
-          },
-          {
             "filePath": "src/course-outline/enable-highlights-modal/EnableHighlightsModal.jsx",
             "line": 43,
             "column": 8,
@@ -24805,7 +24793,7 @@
             "filePath": "src/generic/datepicker-control/DatepickerControl.jsx",
             "line": 49,
             "column": 4,
-            "index": 1261
+            "index": 1273
           },
           {
             "filePath": "src/generic/create-or-rerun-course/CreateOrRerunCourseForm.jsx",
@@ -25353,7 +25341,7 @@
             "filePath": "src/generic/datepicker-control/DatepickerControl.jsx",
             "line": 50,
             "column": 6,
-            "index": 1352
+            "index": 1364
           },
           {
             "filePath": "src/generic/create-or-rerun-course/CreateOrRerunCourseForm.jsx",
@@ -25375,15 +25363,15 @@
           },
           {
             "filePath": "src/generic/configure-modal/PrereqSettings.jsx",
-            "line": 64,
+            "line": 65,
             "column": 21,
-            "index": 1829
+            "index": 1933
           },
           {
             "filePath": "src/generic/configure-modal/PrereqSettings.jsx",
-            "line": 73,
+            "line": 75,
             "column": 21,
-            "index": 2190
+            "index": 2398
           },
           {
             "filePath": "src/generic/configure-modal/BasicTab.jsx",
@@ -25959,7 +25947,13 @@
             "filePath": "src/generic/datepicker-control/DatepickerControl.jsx",
             "line": 60,
             "column": 10,
-            "index": 1734
+            "index": 1746
+          },
+          {
+            "filePath": "src/generic/datepicker-control/DatepickerControl.jsx",
+            "line": 67,
+            "column": 10,
+            "index": 1976
           },
           {
             "filePath": "src/generic/course-upload-image/index.jsx",
@@ -26948,12 +26942,6 @@
             "line": 58,
             "column": 16,
             "index": 1695
-          },
-          {
-            "filePath": "src/course-outline/highlights-modal/HighlightsModal.jsx",
-            "line": 76,
-            "column": 14,
-            "index": 2639
           },
           {
             "filePath": "src/course-outline/enable-highlights-modal/EnableHighlightsModal.jsx",
@@ -28470,12 +28458,6 @@
             "index": 442
           },
           {
-            "filePath": "src/course-outline/highlights-modal/HighlightsModal.jsx",
-            "line": 36,
-            "column": 4,
-            "index": 1124
-          },
-          {
             "filePath": "plugins/course-apps/xpert_unit_summary/settings-modal/SettingsModal.jsx",
             "line": 78,
             "column": 4,
@@ -28572,12 +28554,6 @@
             "line": 38,
             "column": 4,
             "index": 673
-          },
-          {
-            "filePath": "src/course-outline/highlights-modal/HighlightsModal.jsx",
-            "line": 45,
-            "column": 6,
-            "index": 1336
           },
           {
             "filePath": "plugins/course-apps/xpert_unit_summary/settings-modal/SettingsModal.jsx",
@@ -28678,12 +28654,6 @@
             "index": 767
           },
           {
-            "filePath": "src/course-outline/highlights-modal/HighlightsModal.jsx",
-            "line": 46,
-            "column": 8,
-            "index": 1402
-          },
-          {
             "filePath": "plugins/course-apps/xpert_unit_summary/settings-modal/SettingsModal.jsx",
             "line": 88,
             "column": 8,
@@ -28774,12 +28744,6 @@
             "line": 45,
             "column": 6,
             "index": 921
-          },
-          {
-            "filePath": "src/course-outline/highlights-modal/HighlightsModal.jsx",
-            "line": 55,
-            "column": 12,
-            "index": 1715
           },
           {
             "filePath": "plugins/course-apps/xpert_unit_summary/settings-modal/SettingsModal.jsx",
@@ -29329,9 +29293,9 @@
           },
           {
             "filePath": "src/generic/configure-modal/PrereqSettings.jsx",
-            "line": 92,
+            "line": 94,
             "column": 6,
-            "index": 2742
+            "index": 2950
           },
           {
             "filePath": "src/files-and-videos/generic/table-components/sort-and-filter-modal/SortAndFilterModal.jsx",
@@ -29450,12 +29414,6 @@
             "index": 1007
           },
           {
-            "filePath": "src/course-outline/highlights-modal/HighlightsModal.jsx",
-            "line": 75,
-            "column": 12,
-            "index": 2587
-          },
-          {
             "filePath": "plugins/course-apps/xpert_unit_summary/settings-modal/SettingsModal.jsx",
             "line": 95,
             "column": 6,
@@ -29528,12 +29486,6 @@
             "line": 58,
             "column": 10,
             "index": 1213
-          },
-          {
-            "filePath": "src/course-outline/highlights-modal/HighlightsModal.jsx",
-            "line": 77,
-            "column": 16,
-            "index": 2667
           },
           {
             "filePath": "plugins/course-apps/xpert_unit_summary/settings-modal/SettingsModal.jsx",
@@ -31827,9 +31779,9 @@
           },
           {
             "filePath": "src/generic/datepicker-control/DatepickerControl.jsx",
-            "line": 92,
+            "line": 99,
             "column": 8,
-            "index": 2855
+            "index": 3095
           },
           {
             "filePath": "src/generic/create-or-rerun-course/CreateOrRerunCourseForm.jsx",
@@ -33011,7 +32963,15 @@
             "filePath": "src/generic/datepicker-control/DatepickerControl.jsx",
             "line": 61,
             "column": 17,
-            "index": 1757
+            "index": 1769
+          }
+        ],
+        "AccessTime": [
+          {
+            "filePath": "src/generic/datepicker-control/DatepickerControl.jsx",
+            "line": 68,
+            "column": 17,
+            "index": 1999
           }
         ],
         "InfoIcon": [
