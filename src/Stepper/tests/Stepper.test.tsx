@@ -5,17 +5,33 @@ import userEvent from '@testing-library/user-event';
 import Stepper from '../Stepper';
 import { stepsReducer } from '../StepperContext';
 
-const mockWindowSize = { width: 1000, height: 1000 };
+interface MockWindowSize {
+  width: number;
+  height: number;
+}
+
+const mockWindowSize: MockWindowSize = { width: 1000, height: 1000 };
 
 jest.mock('../../hooks/useWindowSizeHook', () => () => mockWindowSize);
 
+interface ExampleProps {
+  activeKey: string;
+  hasStepWithError?: boolean;
+  hasFourthStep?: boolean;
+  handleStepClick?: (key: string) => void;
+  compactWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+}
+
 function Example({
-  // eslint-disable-next-line react/prop-types
-  activeKey, hasStepWithError, hasFourthStep, handleStepClick,
-}) {
+  activeKey,
+  hasStepWithError,
+  hasFourthStep,
+  handleStepClick,
+  compactWidth = 'sm',
+}: ExampleProps) {
   return (
     <Stepper activeKey={activeKey}>
-      <Stepper.Header compactWidth="sm" />
+      <Stepper.Header compactWidth={compactWidth} />
 
       <Stepper.Step
         eventKey="welcome"
@@ -60,7 +76,7 @@ function Example({
 describe('Stepper', () => {
   it('renders the activeKey content', () => {
     const { rerender } = render(
-      <Example activeKey="welcome" showError={false} hasFourthStep />,
+      <Example activeKey="welcome" hasFourthStep />,
     );
 
     expect(screen.getByText('Welcome content')).toBeInTheDocument();
@@ -71,7 +87,7 @@ describe('Stepper', () => {
     expect(screen.queryByText('Review actions content')).not.toBeInTheDocument();
 
     rerender(
-      <Example activeKey="cats" showError={false} hasFourthStep />,
+      <Example activeKey="cats" hasFourthStep />,
     );
 
     expect(screen.getByText('Cat content')).toBeInTheDocument();
@@ -86,7 +102,7 @@ describe('Stepper', () => {
     it('ignores onClick function if Step has not been visited yet', async () => {
       const onStepClick = jest.fn();
       render(
-        <Example activeKey="welcome" showError={false} hasFourthStep handleStepClick={onStepClick} />,
+        <Example activeKey="welcome" hasFourthStep handleStepClick={onStepClick} />,
       );
 
       await userEvent.click(screen.getByText('Cat'));
@@ -96,13 +112,14 @@ describe('Stepper', () => {
     it('invokes onClick function if Step has been visited', async () => {
       const onStepClick = jest.fn();
       render(
-        <Example activeKey="review" showError={false} hasFourthStep handleStepClick={onStepClick} />,
+        <Example activeKey="review" hasFourthStep handleStepClick={onStepClick} />,
       );
 
       await userEvent.click(screen.getByText('Welcome'));
       expect(onStepClick).toHaveBeenCalledTimes(1);
     });
   });
+
   describe('stepper header compact view', () => {
     beforeEach(() => {
       mockWindowSize.width = 200;
@@ -223,22 +240,22 @@ describe('stepsReducer', () => {
   const step2WithError = { ...step2, hasError: true };
 
   it('registers a steps in order', () => {
-    const action1 = { type: 'register', step: step1 };
+    const action1 = { type: 'register' as const, step: step1 };
     const stepsState1 = stepsReducer([], action1);
     expect(stepsState1).toEqual([step1]);
-    const action2 = { type: 'register', step: step2 };
+    const action2 = { type: 'register' as const, step: step2 };
     const stepsState2 = stepsReducer(stepsState1, action2);
     expect(stepsState2).toEqual([step1, step2]);
   });
 
   it('removes a step', () => {
-    const action = { type: 'remove', eventKey: step2.eventKey };
+    const action = { type: 'remove' as const, eventKey: step2.eventKey };
     const steps = stepsReducer([step1, step2], action);
     expect(steps).toEqual([step1]);
   });
 
   it('updates a step', () => {
-    const action = { type: 'register', step: step2WithError };
+    const action = { type: 'register' as const, step: step2WithError };
     const steps = stepsReducer([step1, step2, step3], action);
     expect(steps).toEqual([step1, step2WithError, step3]);
   });
