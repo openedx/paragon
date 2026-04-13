@@ -1,4 +1,5 @@
-const { createConfig } = require('@edx/frontend-build');
+const path = require('path');
+const { createConfig } = require('@openedx/frontend-build');
 
 const config = createConfig('webpack-dev');
 const resolvedAlias = {};
@@ -13,5 +14,15 @@ Object.entries(config.resolve.alias).forEach(([key, pathInNodeModules]) => {
 });
 
 config.resolve.alias = resolvedAlias;
+
+// frontend-build's loaders (style-loader, etc.) may be nested in its own node_modules
+// rather than hoisted, so tell webpack where to find them.
+config.resolveLoader = {
+  ...config.resolveLoader,
+  modules: [
+    ...((config.resolveLoader && config.resolveLoader.modules) || ['node_modules']),
+    path.resolve(__dirname, 'node_modules/@openedx/frontend-build/node_modules'),
+  ],
+};
 
 module.exports = config;
