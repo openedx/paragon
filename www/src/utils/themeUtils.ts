@@ -1,5 +1,14 @@
 import { type Theme, type ThemeConfig, type ThemeWithUrls } from '../types/types';
 
+export const DEFAULT_THEME: ThemeConfig = {
+  name: 'Open edX (Default)',
+  urls: [
+    'https://cdn.jsdelivr.net/npm/@openedx/brand-openedx@2/dist/core.min.css',
+    'https://cdn.jsdelivr.net/npm/@openedx/brand-openedx@2/dist/light.min.css',
+  ],
+  isDefault: true,
+};
+
 /**
  * Converts existing theme to ThemeConfig (edit mode)
  * @param theme - Existing theme to convert

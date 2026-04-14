@@ -3,6 +3,7 @@ import { type ThemeConfig } from '../types/types';
 import { UpdateSettingsFunction } from './useSettings';
 
 import { encodeThemesToQueryParam } from '../utils/queryParamEncoding';
+import { DEFAULT_THEME } from '../utils/themeUtils';
 
 /**
  * Hook to manage theme state including default and custom themes
@@ -33,10 +34,10 @@ export const useCustomThemes = (
     const url = new URL(window.location.href);
 
     // Only set URL params if we have custom themes (more than just the default theme)
-    const hasCustomThemes = themes.length > 1 || (themes.length === 1 && themes[0].urls && themes[0].urls.length > 0);
+    const hasCustomThemes = themes.some(t => !t.isDefault);
 
     if (hasCustomThemes) {
-      const encoded = encodeThemesToQueryParam(themes, activeIndex);
+      const encoded = encodeThemesToQueryParam(themes.filter(t => !t.isDefault), activeIndex);
       url.searchParams.set('themes', encoded);
     } else {
       url.searchParams.delete('themes');
@@ -59,7 +60,7 @@ export const useCustomThemes = (
 
     // Ensure we have at least the default theme
     if (themesArr.length === 0) {
-      themesArr = [{ name: 'Open edX (Default)', urls: [] }];
+      themesArr = [DEFAULT_THEME];
       activeIdx = 0;
     }
 
@@ -112,7 +113,7 @@ export const useCustomThemes = (
 
       // Ensure we have at least the default theme
       if (newThemes.length === 0) {
-        newThemes.push({ name: 'Open edX (Default)', urls: [] });
+        newThemes.push(DEFAULT_THEME);
       }
 
       // Adjust active index if needed
@@ -145,7 +146,7 @@ export const useCustomThemes = (
 
     // Update settings atomically - reset to just the default theme
     updateSettings({
-      themes: [{ name: 'Open edX (Default)', urls: [] }],
+      themes: [DEFAULT_THEME],
       activeThemeIndex: 0,
     });
   };
