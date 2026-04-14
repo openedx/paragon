@@ -198,7 +198,7 @@ jobs:
       with:
         args: zip -qq -r dependent-usage-analyzer/dependent-projects.zip dependent-usage-analyzer/.projects
     - name: Upload dependent projects checkouts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: dependent-project-checkouts
         path: dependent-usage-analyzer/dependent-projects.zip
@@ -236,7 +236,7 @@ jobs:
       run: npm run analyze .projects -- --out "${GITHUB_WORKSPACE}/dependent-usage.json"
       working-directory: dependent-usage-analyzer
     - name: Upload analysis output
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: dependent-usage-json
         path: dependent-usage.json
