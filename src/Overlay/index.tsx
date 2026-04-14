@@ -1,169 +1,130 @@
 import React from 'react';
-import BaseOverlay, { type OverlayProps, type Placement } from 'react-bootstrap/Overlay';
+import BaseOverlay, { type OverlayProps, type OverlayChildren, type Placement } from 'react-bootstrap/Overlay';
 import BaseOverlayTrigger, { type OverlayTriggerProps, type OverlayTriggerType } from 'react-bootstrap/OverlayTrigger';
 import Fade from 'react-bootstrap/Fade';
-import PropTypes from 'prop-types';
 
-// Note: The only thing this file adds to the base component is propTypes validation.
+// Note: The only thing this file adds to the base components is default prop values.
 // As more Paragon consumers adopt TypeScript, we could consider removing almost all of this code
 // and just re-export the Overlay and OverlayTrigger components from react-bootstrap unmodified.
 
-const PLACEMENT_VARIANTS: Placement[] = [
-  'auto-start',
-  'auto',
-  'auto-end',
-  'top-start',
-  'top',
-  'top-end',
-  'right-start',
-  'right',
-  'right-end',
-  'bottom-end',
-  'bottom',
-  'bottom-start',
-  'left-end',
-  'left',
-  'left-start',
-];
+// Alias this type to a better name for documentation purposes.
+export type DOMContainer = OverlayProps['target'];
 
-const TRIGGER_VARIANTS: OverlayTriggerType[] = [
-  'hover',
-  'click',
-  'focus',
-];
-
-function Overlay(props: OverlayProps) {
-  return <BaseOverlay {...props} />;
-}
-function OverlayTrigger(props: OverlayTriggerProps) {
-  return (
-    <BaseOverlayTrigger {...props}>
-      {props.children}
-    </BaseOverlayTrigger>
-  );
-}
-
-const triggerType = PropTypes.oneOf(TRIGGER_VARIANTS);
-
-Overlay.propTypes = {
+export interface ParagonOverlayProps extends OverlayProps {
   /** Specifies the content of the `Overlay`. */
-  children: PropTypes.node.isRequired,
+  children: OverlayChildren;
   /**
    * A component instance, DOM node, or function that returns either.
    * The overlay will be positioned in relation to the target.
    */
-  container: PropTypes.oneOfType([PropTypes.elementType, PropTypes.func]),
+  container?: DOMContainer;
   /** Callback fired before the `Overlay` transitions in. */
-  onEnter: PropTypes.func,
+  onEnter?: ((node: HTMLElement, isAppearing: boolean) => any);
   /** Callback fired after the `Overlay` finishes transitioning in. */
-  onEntered: PropTypes.func,
+  onEntered?: ((node: HTMLElement, isAppearing: boolean) => any);
   /** Callback fired as the `Overlay` begins to transition in. */
-  onEntering: PropTypes.func,
-  /** Callback fired right before the `Overlay` transitions out */
-  onExit: PropTypes.func,
+  onEntering?: ((node: HTMLElement, isAppearing: boolean) => any);
+  /** Callback fired right before the `Overlay` transitions out. */
+  onExit?: ((node: HTMLElement) => any);
   /** Callback fired after the `Overlay` finishes transitioning out. */
-  onExited: PropTypes.func,
+  onExited?: ((node: HTMLElement) => any);
   /** Callback fired as the Overlay begins to transition out. */
-  onExiting: PropTypes.func,
+  onExiting?: ((node: HTMLElement) => any);
   /**
    * A callback invoked by the overlay when it wishes to be hidden.
    * Required if `rootClose` is specified.
    */
-  onHide: PropTypes.func,
-  /** The placement of the `Overlay` in relation to it's target. */
-  placement: PropTypes.oneOf(PLACEMENT_VARIANTS),
+  onHide?: ((e: Event) => void);
+  /** The placement of the `Overlay` in relation to its target. */
+  placement?: Placement;
   /** A set of popper options and props passed directly to `Popper`. */
-  popperConfig: PropTypes.shape({}),
+  popperConfig?: OverlayProps['popperConfig'];
   /** Specify whether the overlay should trigger `onHide` when the user clicks outside the overlay. */
-  rootClose: PropTypes.bool,
-  /** Specify event for triggering a “root close” toggle. */
-  rootCloseEvent: PropTypes.oneOf(['click', 'mousedown']),
+  rootClose?: boolean;
+  /** Specify event for triggering a "root close" toggle. */
+  rootCloseEvent?: OverlayProps['rootCloseEvent'];
   /** Set the visibility of the `Overlay`. */
-  show: PropTypes.bool,
-  /**
-   * The visibility of the `Overlay`. `show` is a controlled prop so should
-   * be paired with `onToggle` to avoid breaking user interactions.
-   *
-   * Manually toggling show does not wait for delay to change the visibility.
-   *
-   * Controls `onToggle`.
-   */
-  target: PropTypes.oneOfType([PropTypes.elementType, PropTypes.func]),
+  show?: boolean;
+  /** The target element the `Overlay` is positioned in relation to. */
+  target: DOMContainer;
   /**
    * Animate the entering and exiting of the Overlay. `true` will use the `<Fade>` transition,
    * or a custom react-transition-group `<Transition>` component can be provided.
    */
-  transition: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-};
+  transition?: OverlayProps['transition'];
+}
 
-OverlayTrigger.propTypes = {
+export interface ParagonOverlayTriggerProps extends OverlayTriggerProps {
   /** Specifies the content of the `OverlayTrigger`. */
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
+  children: OverlayTriggerProps['children'];
   /** An element or text to overlay next to the target. */
-  overlay: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
+  overlay: OverlayTriggerProps['overlay'];
   /** The initial visibility state of the `Overlay`. */
-  defaultShow: PropTypes.bool,
+  defaultShow?: boolean;
   /** A millisecond delay amount to show and hide the `Overlay` once triggered. */
-  delay: PropTypes.oneOfType([PropTypes.number, PropTypes.shape({})]),
+  delay?: OverlayTriggerProps['delay'];
   /** The initial flip state of the `Overlay`. */
-  flip: PropTypes.bool,
-  onHide: PropTypes.func,
+  flip?: boolean;
+  /** Callback fired when the visibility of the overlay changes. */
+  onHide?: OverlayTriggerProps['onHide'];
   /**
    * A callback that fires when the user triggers a change in tooltip visibility.
    * `onToggle` is called with the desired next show, and generally should be
    * passed back to the `show` prop. `onToggle` fires after the configured `delay`.
-   *
-   * Controls `show`.
    */
-  onToggle: PropTypes.func,
-  /** The placement of the `Overlay` in relation to it's target. */
-  placement: PropTypes.oneOf(PLACEMENT_VARIANTS),
-  /** A `Popper.js` config object passed to the the underlying popper instance. */
-  popperConfig: PropTypes.shape({}),
+  onToggle?: OverlayTriggerProps['onToggle'];
+  /** The placement of the `Overlay` in relation to its target. */
+  placement?: Placement;
+  /** A `Popper.js` config object passed to the underlying popper instance. */
+  popperConfig?: OverlayTriggerProps['popperConfig'];
   /**
-   * The visibility of the `Overlay`. `show` is a controlled prop so should
-   * be paired with `onToggle` to avoid breaking user interactions.
-   *
-   * Manually toggling show does not wait for delay to change the visibility.
-   *
-   * Controls `onToggle`.
+   * The visibility of the `Overlay`. `show` is a controlled prop so should be
+   * paired with `onToggle` to avoid breaking user interactions.
    */
-  show: PropTypes.bool,
-  target: PropTypes.instanceOf(EventTarget),
+  show?: boolean;
+  /** The target element the `Overlay` is positioned in relation to. */
+  target?: OverlayTriggerProps['target'];
   /** Specify which action or actions trigger `Overlay` visibility. */
-  trigger: PropTypes.oneOfType([triggerType, PropTypes.arrayOf(triggerType)]),
-};
+  trigger?: OverlayTriggerType | OverlayTriggerType[];
+}
 
-Overlay.defaultProps = {
-  container: undefined,
-  onEnter: undefined,
-  onEntered: undefined,
-  onEntering: undefined,
-  onExit: undefined,
-  onExited: undefined,
-  onExiting: undefined,
-  onHide: undefined,
-  placement: 'top',
-  popperConfig: {},
-  rootClose: false,
-  rootCloseEvent: undefined,
-  show: false,
-  target: undefined,
-  transition: Fade,
-};
+function Overlay({
+  placement = 'top',
+  popperConfig = {},
+  rootClose = false,
+  show = false,
+  transition = Fade,
+  ...props
+}: ParagonOverlayProps) {
+  return (
+    <BaseOverlay
+      placement={placement}
+      popperConfig={popperConfig}
+      rootClose={rootClose}
+      show={show}
+      transition={transition}
+      {...props}
+    />
+  );
+}
 
-OverlayTrigger.defaultProps = {
-  defaultShow: false,
-  delay: undefined,
-  flip: undefined,
-  onHide: undefined,
-  onToggle: undefined,
-  placement: undefined,
-  popperConfig: {},
-  show: undefined,
-  target: undefined,
-  trigger: ['hover', 'focus'],
-};
+function OverlayTrigger({
+  defaultShow = false,
+  popperConfig = {},
+  trigger = ['hover', 'focus'],
+  ...props
+}: ParagonOverlayTriggerProps) {
+  return (
+    <BaseOverlayTrigger
+      defaultShow={defaultShow}
+      popperConfig={popperConfig}
+      trigger={trigger}
+      {...props}
+    >
+      {props.children}
+    </BaseOverlayTrigger>
+  );
+}
 
 export { OverlayTrigger };
 export default Overlay;

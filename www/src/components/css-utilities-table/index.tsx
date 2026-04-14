@@ -74,7 +74,7 @@ function CSSUtilitiesTable({ selectors }: CSSUtilities) {
       </DataTable>
       <Overlay
         show={showPopover}
-        target={popoverTarget}
+        target={popoverTarget!}
         placement="top"
       >
         <Popover id="css-variable-value-popover">

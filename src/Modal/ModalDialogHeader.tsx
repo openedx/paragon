@@ -1,21 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import type { ComponentWithAsProp } from '../utils/types/bootstrap';
 
 export interface Props {
+  /** Specifies the base element. */
   as?: string;
+  /** Specifies the contents of the header. */
   children: React.ReactNode;
+  /** Specifies class name to append to the base element. */
   className?: string;
 }
 
 type HeaderType = ComponentWithAsProp<'div', Props>;
 
-const ModalDialogHeader: HeaderType = React.forwardRef<HTMLDivElement, Props>(({
+const ModalDialogHeader: HeaderType = React.forwardRef(({
   as = 'div',
   children,
   ...props
-}, ref) => (
+}: Props, ref: React.ForwardedRef<HTMLDivElement>) => (
   React.createElement(
     as,
     {
@@ -26,19 +28,5 @@ const ModalDialogHeader: HeaderType = React.forwardRef<HTMLDivElement, Props>(({
     children,
   )
 ));
-
-ModalDialogHeader.propTypes = {
-  /** Specifies the base element */
-  as: PropTypes.elementType,
-  /** Specifies the contents of the header */
-  children: PropTypes.node.isRequired,
-  /** Specifies class name to append to the base element */
-  className: PropTypes.string,
-};
-
-ModalDialogHeader.defaultProps = {
-  as: 'div',
-  className: '',
-};
 
 export default ModalDialogHeader;
