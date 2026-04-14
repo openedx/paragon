@@ -200,8 +200,6 @@ Paragon provides a comprehensive set of npm scripts to help with development, te
 
 - **`npm run prepublishOnly`** - Automatically runs before npm publish to ensure the library is built before distribution.
 
-- **`npm run prepare`** - Sets up Git hooks (via Husky) for pre-commit linting and other checks.
-
 ## Contributing
 
 The branch to target with your PR depends on the type of change you are contributing to Paragon.
