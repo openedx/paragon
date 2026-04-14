@@ -54,7 +54,6 @@
     "build-types": "tsc --emitDeclarationOnly",
     "playroom:start": "npm run playroom:start --workspace=www",
     "playroom:build": "npm run playroom:build --workspace=www",
-    "prepare": "husky || true",
     "build-tokens": "./bin/paragon-scripts.js build-tokens --build-dir ./styles/css",
     "build-tokens:watch": "npx nodemon --ignore styles/css -x \"npm run build-tokens\"",
     "serve-theme-css": "./bin/paragon-scripts.js serve-theme-css --build-dir ./dist --theme-name='Custom Theme Name'",
@@ -151,12 +150,10 @@
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-jsonc": "^2.18.1",
     "eslint-plugin-jsx-a11y": "6.10.2",
-    "husky": "^9.0.11",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-cli": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "lint-staged": "^15.2.0",
     "markdown-loader-jest": "^0.1.1",
     "react": "^18",
     "react-test-renderer": "^18",
@@ -206,14 +203,6 @@
   "browserslist": [
     "extends @edx/browserslist-config"
   ],
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,json}": [
-      "npx eslint"
-    ],
-    "*.scss": [
-      "npx stylelint"
-    ]
-  },
   "workspaces": [
     "example",
     "component-generator",
