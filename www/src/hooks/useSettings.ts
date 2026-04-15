@@ -3,6 +3,7 @@ import { type ContainerSize } from '~paragon-react';
 import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
 import { type ThemeConfig } from '../types/types';
 import { decodeThemesFromQueryParam } from '../utils/queryParamEncoding';
+import { DEFAULT_THEME } from '../utils/themeUtils';
 
 export interface Settings {
   direction?: string;
@@ -30,9 +31,7 @@ const defaultSettings: Settings = {
   direction: 'ltr',
   language: 'en',
   containerWidth: 'md' as ContainerSize,
-  themes: [
-    { name: 'Open edX (Default)', urls: [] },
-  ],
+  themes: [DEFAULT_THEME],
   activeThemeIndex: 0,
 };
 
@@ -103,13 +102,14 @@ export const useSettings = (): UseSettings => {
       ...urlSettings,
     };
 
-    const themes = finalSettings.themes || [];
-    const activeIndex = finalSettings.activeThemeIndex;
+    // Normalize themes: filter out entries without URLs (e.g. old default themes
+    // from shared links or localStorage), and ensure DEFAULT_THEME is always first.
+    const loadedThemes = Array.isArray(finalSettings.themes) ? finalSettings.themes : [];
+    const customThemes = loadedThemes.filter(t => !t.isDefault && t.urls?.length > 0);
+    finalSettings.themes = [DEFAULT_THEME, ...customThemes];
 
-    if (!Array.isArray(finalSettings.themes) || finalSettings.themes.length === 0) {
-      finalSettings.themes = defaultSettings.themes;
-      finalSettings.activeThemeIndex = 0;
-    } else if (activeIndex == null || activeIndex < 0 || activeIndex >= themes.length) {
+    const activeIndex = finalSettings.activeThemeIndex;
+    if (activeIndex == null || activeIndex < 0 || activeIndex >= finalSettings.themes.length) {
       finalSettings.activeThemeIndex = 0;
     }
 
@@ -120,12 +120,12 @@ export const useSettings = (): UseSettings => {
       document.body.setAttribute('dir', finalSettings.direction);
     }
 
-    // If themes were loaded from URL, save them to localStorage
+    // If themes were loaded from URL, save normalized themes to localStorage
     if (urlSettings) {
       const settingsToSave = {
         ...storageSettings,
-        themes: urlSettings.themes,
-        activeThemeIndex: urlSettings.activeThemeIndex,
+        themes: finalSettings.themes,
+        activeThemeIndex: finalSettings.activeThemeIndex,
       };
       global.localStorage.setItem('pgn__settings', JSON.stringify(settingsToSave));
     }

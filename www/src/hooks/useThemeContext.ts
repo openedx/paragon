@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { SettingsContext } from '../context/SettingsContext';
 import { type ThemeConfig } from '../types/types';
-import { hasUrls } from '../utils/themeUtils';
 
 export const useThemeContext = () => {
   const context = useContext(SettingsContext);
@@ -27,7 +26,7 @@ export const useThemeContext = () => {
     handleSettingsChange('activeThemeIndex', index);
   };
 
-  const hasCustomThemes = themes.some(hasUrls);
+  const hasCustomThemes = themes.some(t => !t.isDefault);
 
   return {
     // State
