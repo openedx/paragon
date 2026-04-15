@@ -40,6 +40,6 @@ jobs:
     - name: Build Docs
       run: make build-docs
     - name: Coverage
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
