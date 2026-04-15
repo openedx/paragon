@@ -6,7 +6,6 @@ import {
 } from '~paragon-react';
 import { Plus } from '~paragon-icons';
 import { type Theme } from '../types/types';
-import { hasUrls } from '../utils/themeUtils';
 
 interface ThemeOptionsProps {
   themes: Theme[];
@@ -38,39 +37,36 @@ const ThemeOptions: React.FC<ThemeOptionsProps> = ({
       onChange={onThemeChange}
       ref={radioRefs}
     >
-      {themes.map((theme, index) => {
-        const isCustom = hasUrls(theme);
-        return (
-          <div key={theme.name}>
-            <Form.Radio
-              value={index.toString()}
-              ref={(el) => {
-                radioRefs.current[index] = el;
-              }}
-            >
-              <Stack gap={1}>
-                <span>{theme.name}</span>
-                {isCustom && (
-                  <div>
-                    <Button
-                      variant="link"
-                      size="sm"
-                      className="p-0"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        onEditTheme(index);
-                      }}
-                    >
-                      Edit
-                    </Button>
-                  </div>
-                )}
-              </Stack>
-            </Form.Radio>
-          </div>
-        );
-      })}
+      {themes.map((theme, index) => (
+        <div key={theme.name}>
+          <Form.Radio
+            value={index.toString()}
+            ref={(el) => {
+              radioRefs.current[index] = el;
+            }}
+          >
+            <Stack gap={1}>
+              <span>{theme.name}</span>
+              {!theme.isDefault && (
+                <div>
+                  <Button
+                    variant="link"
+                    size="sm"
+                    className="p-0"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      onEditTheme(index);
+                    }}
+                  >
+                    Edit
+                  </Button>
+                </div>
+              )}
+            </Stack>
+          </Form.Radio>
+        </div>
+      ))}
     </Form.RadioSet>
     <Stack gap={2}>
       <div>

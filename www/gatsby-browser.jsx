@@ -2,7 +2,6 @@ const React = require('react');
 const { SettingsContextProvider } = require('./src/context/SettingsContext');
 const { InsightsContextProvider } = require('./src/context/InsightsContext');
 const { encodeThemesToQueryParam } = require('../lib/queryParamEncoding');
-const { hasUrls } = require('./src/utils/themeUtils');
 
 // wrap whole app in settings context
 exports.wrapRootElement = ({ element }) => (
@@ -34,7 +33,7 @@ exports.onRouteUpdate = ({ location: { hash, pathname, href } }) => {
       const activeIdx = savedSettings.activeThemeIndex;
 
       // Only preserve themes if we have custom themes (more than just the default theme)
-      const hasCustomThemes = themes.some(hasUrls);
+      const hasCustomThemes = themes.some(t => !t.isDefault);
 
       if (hasCustomThemes) {
         const url = new URL(window.location.href);
@@ -42,7 +41,7 @@ exports.onRouteUpdate = ({ location: { hash, pathname, href } }) => {
 
         // Only update if themes param is missing
         if (!currentThemesParam) {
-          const encoded = encodeThemesToQueryParam(themes, activeIdx || 0);
+          const encoded = encodeThemesToQueryParam(themes.filter(t => !t.isDefault), activeIdx || 0);
 
           url.searchParams.set('themes', encoded);
 

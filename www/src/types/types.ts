@@ -51,6 +51,8 @@ export interface Theme {
   name: string;
   /** Array of CSS URLs to load for this theme */
   urls?: string[];
+  /** Whether this is the built-in default theme */
+  isDefault?: boolean;
   /** Optional metadata about the theme */
   metadata?: {
     /** Indicates if the user provided a custom name for this theme */
@@ -67,6 +69,8 @@ export type ThemeConfig = {
   name: string;
   /** Array of CSS URLs to load for this theme (required) */
   urls: string[];
+  /** Whether this is the built-in default theme */
+  isDefault?: boolean;
   /** Optional metadata about the theme */
   metadata?: Theme['metadata'];
 };

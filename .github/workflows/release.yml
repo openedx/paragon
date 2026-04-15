@@ -38,7 +38,7 @@ jobs:
     - name: Build Docs
       run: npm run build-docs
     - name: Coverage
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
     - name: Release
