@@ -195,8 +195,7 @@ const COMMANDS = {
         description: `Specifies which theme variants are marked as defaults in the generated theme-urls.json.
           Consuming applications (Open edX micro-frontends) use theme-urls.json to determine
           which theme CSS files to load; variants listed here are loaded automatically without
-          requiring explicit configuration. Variants not listed as defaults are still built and
-          available but must be explicitly selected by the consuming application.
+          requiring explicit configuration.
           You can provide multiple default theme variants by passing multiple values, for
           example: \`--defaultThemeVariants light dark\`
         `,
