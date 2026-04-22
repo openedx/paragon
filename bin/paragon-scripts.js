@@ -192,7 +192,10 @@ const COMMANDS = {
       },
       {
         name: '--defaultThemeVariants',
-        description: `Specifies default theme variants. Defaults to a single 'light' theme variant.
+        description: `Specifies which theme variants are marked as defaults in the generated theme-urls.json.
+          Consuming applications (Open edX micro-frontends) use theme-urls.json to determine
+          which theme CSS files to load; variants listed here are loaded automatically without
+          requiring explicit configuration.
           You can provide multiple default theme variants by passing multiple values, for
           example: \`--defaultThemeVariants light dark\`
         `,
@@ -262,6 +265,10 @@ const COMMANDS = {
  * @function executeParagonCommand
  */
 (async () => {
+  process.on('SIGINT', () => {
+    process.exit(130);
+  });
+
   const [command, ...commandArgs] = process.argv.slice(2);
   const resolvedCommand = commandAliases[command] || command;
   const executor = COMMANDS[resolvedCommand];
