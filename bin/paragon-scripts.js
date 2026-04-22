@@ -265,6 +265,10 @@ const COMMANDS = {
  * @function executeParagonCommand
  */
 (async () => {
+  process.on('SIGINT', () => {
+    process.exit(130);
+  });
+
   const [command, ...commandArgs] = process.argv.slice(2);
   const resolvedCommand = commandAliases[command] || command;
   const executor = COMMANDS[resolvedCommand];
