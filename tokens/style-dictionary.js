@@ -311,10 +311,9 @@ const initializeStyleDictionary = async ({ themes }) => {
     format: async ({ dictionary, file, options = {} }) => {
       const { fileHeader } = await getStyleDictionaryUtils();
       const { formatting } = options;
-      const { breakpoint } = dictionary.tokens.size;
 
       let customMediaVariables = '';
-      const breakpoints = Object.values(breakpoint || {});
+      const breakpoints = Object.values(dictionary.tokens?.size?.breakpoint || {});
 
       for (let i = 0; i < breakpoints.length; i++) {
         const [currentBreakpoint, nextBreakpoint] = [breakpoints[i], breakpoints[i + 1]];
