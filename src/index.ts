@@ -43,6 +43,7 @@ export { default as ModalDialog } from './Modal/ModalDialog';
 export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
 export { default as Portal } from './Modal/Portal';
+export { default as Scrollable } from './Scrollable';
 export { default as Spinner } from './Spinner';
 export { default as Stack } from './Stack';
 export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
@@ -83,8 +84,6 @@ export { default as Layout, Col, Row } from './Layout';
 export { default as Collapse } from './Collapse';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Collapsible } from './Collapsible';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Scrollable } from './Scrollable';
 export {
   default as Dropdown,
   DropdownToggle,
