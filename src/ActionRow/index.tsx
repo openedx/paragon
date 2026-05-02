@@ -32,7 +32,7 @@ function ActionRow({
 }
 
 function ActionRowSpacer() {
-  return <span className="pgn__action-row-spacer" />;
+  return <span className="pgn__action-row-spacer" aria-hidden="true" />;
 }
 
 ActionRow.Spacer = ActionRowSpacer;
