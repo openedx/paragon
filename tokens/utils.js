@@ -361,8 +361,19 @@ function createIndexCssFile({ buildDir = path.resolve(__dirname, '../styles/css'
       return sortOrder.indexOf(aName) - sortOrder.indexOf(bName);
     });
 
+    // For theme variants, app variables.css files get @import'd from the
+    // theme's index.css so app overrides flow into the theme bundle via
+    // build-scss's postCSS-import pass.
+    const appsDir = path.join(buildDir, 'apps');
+    const appCssFiles = (isThemeVariant && fs.existsSync(appsDir))
+      ? getAllCssFiles(appsDir)
+      : [];
+
+    // Apps don't have load-order dependencies, so we just append them.
+    const allCssFiles = [...sortedCssFiles, ...appCssFiles];
+
     // Generate @import statements with relative paths
-    const exportStatements = sortedCssFiles.map((file) => {
+    const exportStatements = allCssFiles.map((file) => {
       // Get the relative path from the directory path to the file
       const relativePath = path.relative(directoryPath, file).replace(/\\/g, '/');
       return `@import "${relativePath}";`;
