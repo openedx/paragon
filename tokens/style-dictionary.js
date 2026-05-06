@@ -252,6 +252,31 @@ const initializeStyleDictionary = async ({ themes }) => {
   });
 
   /**
+   * Conditionally prepends `pgn-` to non-source tokens so that app-config builds
+   * (which run with `prefix: ''` so app tokens output unprefixed) still emit
+   * `var(--pgn-…)` for references to Paragon core/theme tokens loaded via `include`.
+   * Source tokens (the app's own) keep their unprefixed name.
+   */
+  StyleDictionary.registerTransform({
+    name: 'name/pgn-for-non-source',
+    type: 'name',
+    transform: (token) => (token.isSource ? token.name : `pgn-${token.name}`),
+  });
+
+  /**
+   * Transform group used by app configs. Extends `paragon-css` with the
+   * conditional name transform appended so it runs after the standard kebab
+   * name transform.
+   */
+  StyleDictionary.registerTransformGroup({
+    name: 'paragon-css-app',
+    transforms: [
+      ...StyleDictionary.hooks.transformGroups['paragon-css'],
+      'name/pgn-for-non-source',
+    ],
+  });
+
+  /**
    * The custom formatter to create CSS variables for core tokens.
    */
   StyleDictionary.registerFormat({
