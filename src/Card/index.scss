@@ -310,7 +310,6 @@ a.pgn__card {
     &.horizontal {
       max-width: $card-image-horizontal-max-width;
       min-width: $card-image-horizontal-min-width;
-      min-height: $card-image-horizontal-min-height;
       overflow: hidden;
 
       .pgn__card-image-cap {
@@ -319,9 +318,16 @@ a.pgn__card {
         border-radius: $card-image-border-radius 0 0 $card-image-border-radius;
         width: auto;
         object-fit: cover;
-        position: absolute;
-        left: 0;
-        top: 0;
+      }
+
+      // Safari doesn't resolve `height: 100%` on children of flex-stretched items.
+      // `display: flex` on the wrapper lets Safari stretch the image via flex instead.
+      @supports (-webkit-touch-callout: none) {
+        display: flex;
+
+        .pgn__card-image-cap {
+          height: auto;
+        }
       }
 
       .pgn__card-logo-cap {
