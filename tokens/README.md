@@ -155,3 +155,50 @@ functions from tokens that are of `color` category and theirs `type` is one of `
 and `item` is one of `["base", "100", "200", ...]`.
 
 If you want to generate additional utility classes you need to add a similar JSON file to `src/utilities` directory.
+
+## Application tokens
+
+In addition to `core/` and `themes/`, Paragon supports a third top-level token directory: `apps/`. Tokens placed under `apps/<app-name>/` are emitted **without** the `--pgn-` prefix into `<buildDir>/apps/<app-name>/variables.css`. This is intended for theme authors who want to override CSS variables defined by individual MFEs (which use their own naming conventions, not `--pgn-`).
+
+For example, `frontend-app-catalog`'s home banner uses
+```scss
+background-color: var(--catalog-home-page-banner-background-color, var(--pgn-color-gray-500));
+```
+
+A theme author can target that variable by placing the following at `<their-source>/apps/catalog/home-page.json`:
+
+```json
+{
+  "catalog": {
+    "home-page": {
+      "banner": {
+        "background-color": { "$value": "{color.primary.400}", "$type": "color" }
+      }
+    }
+  }
+}
+```
+
+The build emits:
+
+```css
+:root {
+  --catalog-home-page-banner-background-color: var(--pgn-color-primary-400);
+}
+```
+
+…replacing the MFE's gray fallback with the theme's primary color.
+
+### Path conventions
+
+The recommended structure is kebab-case path segments matching the MFE's CSS variable name 1:1. For example, the four-level nesting above (`catalog` → `home-page` → `banner` → `background-color`) maps to the variable `--catalog-home-page-banner-background-color`. Multi-word concepts like `home-page` and `background-color` use hyphens within a single segment; single-word segments stay simple.
+
+This is the same convention used by Paragon's existing `core/` and `themes/` token files.
+
+### Theme variation
+
+App tokens are not theme-variant-aware in this version — there's a single `apps/<app-name>/variables.css` regardless of how many themes are being built. Theme variation flows through *references*: writing `{ "$value": "{color.primary.400}" }` produces a `var(--pgn-color-primary-400)` reference in the output, which resolves at runtime against whichever Paragon theme CSS is loaded. So when a brand publishes both `light.css` and `dark.css`, the same app override layers correctly on top of each.
+
+### Output and consumption
+
+App `variables.css` files are inlined into each theme variant's bundle by `paragon build-scss` via `@import` statements added to the theme's `index.css`. So when a theme author publishes `dist/light.min.css`, it already contains the app overrides. No separate per-app CSS files are emitted in `dist/`, and no MFE-side configuration change is needed — every MFE that loads the brand's `light.min.css` automatically picks up every app's custom-property declarations on `:root`.
