@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 
 import newId from '../utils/newId';
-import withDeprecatedProps, { DeprTypes } from '../withDeprecatedProps';
 
 /**
  * An svg with an "img" role must satisfy the following a11y requirements
@@ -105,11 +104,4 @@ function Icon({
   );
 }
 
-export default withDeprecatedProps(Icon, 'Icon', {
-  className: {
-    deprType: DeprTypes.FORMAT,
-    expect: (value: any) => typeof value === 'string',
-    transform: (value: any) => (Array.isArray(value) ? value.join(' ') : value),
-    message: 'It should be a string.',
-  },
-});
+export default Icon;
