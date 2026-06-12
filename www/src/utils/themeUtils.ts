@@ -10,6 +10,24 @@ export const DEFAULT_THEME: ThemeConfig = {
 };
 
 /**
+ * Built-in "Open edX Dark" theme.
+ *
+ * The dark variant is compiled from `www/src/scss/openedx-dark-theme.scss`
+ * (registered in `theme-config.js`) into `public/static/openedx-dark-theme.css`.
+ * Selecting it overlays Paragon's dark design-token CSS over the page.
+ */
+export const DARK_DEFAULT_THEME: ThemeConfig = {
+  name: 'Open edX Dark',
+  urls: ['/static/openedx-dark-theme.css'],
+  isDefault: true,
+};
+
+/**
+ * Built-in themes that are always present in the theme selector, in display order.
+ */
+export const DEFAULT_THEMES: ThemeConfig[] = [DEFAULT_THEME, DARK_DEFAULT_THEME];
+
+/**
  * Converts existing theme to ThemeConfig (edit mode)
  * @param theme - Existing theme to convert
  * @param customName - Optional custom name (preserves existing name if not provided)

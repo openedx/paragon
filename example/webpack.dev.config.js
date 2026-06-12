@@ -25,4 +25,17 @@ config.resolveLoader = {
   ],
 };
 
+// Serve Paragon's built theme stylesheets (dist/light.min.css, dist/dark.min.css)
+// at /paragon-dist so the ThemeSwitcher demo can swap between them via a <link>.
+// Requires `make build` (or `npm run build`) at the repo root to populate ./dist.
+const existingStatic = config.devServer && config.devServer.static;
+const staticDirs = Array.isArray(existingStatic)
+  ? [...existingStatic]
+  : (existingStatic ? [existingStatic] : []);
+staticDirs.push({
+  directory: path.resolve(__dirname, '..', 'dist'),
+  publicPath: '/paragon-dist',
+});
+config.devServer = { ...(config.devServer || {}), static: staticDirs };
+
 module.exports = config;

@@ -27,7 +27,7 @@ A generic component for creating accessibile modal layer objects. The modal laye
         <Button variant="outline-primary" onClick={open}>Open modal layer</Button>
       </div>
       <ModalLayer isOpen={isOpen} onClose={close}>
-        <div role="dialog" aria-label="My dialog" className="mw-sm p-5 bg-white mx-auto my-5">
+        <div role="dialog" aria-label="My dialog" className="mw-sm p-5 mx-auto my-5 border rounded" style={{ backgroundColor: 'var(--pgn-color-bg-base)' }}>
           <h1>I'm a dialog box</h1>
           <p>
             <Button variant="primary" className="mie-2">A button</Button>
@@ -67,7 +67,7 @@ A generic component for creating accessibile modal layer objects. The modal laye
         <Button variant="outline-primary" onClick={open}>Open small modal layer</Button>
       </div>
       <ModalLayer isOpen={isOpen} onClose={close}>
-        <div role="dialog" aria-label="My dialog" className="mw-sm p-5 bg-white mx-auto my-5">
+        <div role="dialog" aria-label="My dialog" className="mw-sm p-5 mx-auto my-5 border rounded" style={{ backgroundColor: 'var(--pgn-color-bg-base)' }}>
           <h1>I'm a dialog box</h1>
           <p>
             <Button variant="primary" className="mie-2">A button</Button>

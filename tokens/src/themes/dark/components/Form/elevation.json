@@ -1,0 +1,72 @@
+{
+  "elevation": {
+    "$type": "shadow",
+    "form": {
+      "input": {
+        "base": { "source": "$input-box-shadow", "$value": "none" },
+        "focus": {
+          "source": "$input-focus-box-shadow",
+          "$value": {
+            "color": "{color.primary.500}",
+            "spread": "1px",
+            "offsetX": "0",
+            "offsetY": "0",
+            "blur": "0"
+          }
+        }
+      },
+      "control": {
+        "indicator": {
+          "base": { "source": "$custom-control-indicator-box-shadow", "$value": "{elevation.form.input.base}" },
+          "checked": {
+            "base": { "source": "$custom-control-indicator-checked-box-shadow", "$value": "none" },
+            "focus": {
+              "source": "$custom-control-indicator-focus-box-shadow",
+              "$value": {
+                "color": "rgba(0, 0, 0, .1)",
+                "spread": "4px",
+                "offsetX": "0",
+                "offsetY": "0",
+                "blur": "0"
+              }
+            }
+          },
+          "active": { "source": "$custom-control-indicator-active-box-shadow", "$value": "none" }
+        },
+        "checkbox": {
+          "indicator": {
+            "indeterminate": { "source": "$custom-checkbox-indicator-indeterminate-box-shadow", "$value": "none" }
+          }
+        },
+        "range": {
+          "track": { "source": "$custom-range-track-box-shadow", "$value": "none" },
+          "thumb": {
+            "base": { "source": "$custom-range-thumb-box-shadow", "$value": "none" },
+            "focus": {
+              "source": "$custom-range-thumb-focus-box-shadow",
+              "$value": [
+                {
+                  "color": "{color.body.bg}",
+                  "spread": "0",
+                  "offsetX": "0",
+                  "offsetY": ".1rem",
+                  "blur": ".25rem"
+                }
+              ]
+            }
+          }
+        },
+        "file": {
+          "base": { "source": "$custom-file-box-shadow", "$value": "{elevation.form.input.base}" },
+          "focus": { "source": "$custom-file-focus-box-shadow", "$value": "{elevation.form.input.focus}" }
+        },
+        "select": {
+          "border": {
+            "base": { "source": "$custom-select-box-shadow", "$value": "none" },
+            "focus": { "source": "$custom-select-focus-box-shadow", "$value": "{elevation.input.btn-focus.box-shadow}" }
+          }
+        }
+      }
+    }
+  }
+}
