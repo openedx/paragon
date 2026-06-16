@@ -1,15 +1,13 @@
 {
   "presets": [
     ["@babel/preset-env", { "modules": false } ],
-    ["@babel/preset-react", { "useSpread": true } ],
+    ["@babel/preset-react", { "useSpread": true, "runtime": "automatic" } ],
     "@babel/preset-typescript"
   ],
   "env": {
     "test": {
       "presets": [
-        ["@babel/preset-env", {}],
-        ["@babel/preset-react", { "useSpread": true } ],
-        "@babel/preset-typescript"
+        ["@babel/preset-env", {}]
       ]
     }
   }

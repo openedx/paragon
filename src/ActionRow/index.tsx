@@ -1,11 +1,12 @@
-import React from 'react';
+import type { HTMLAttributes, ElementType, ReactNode } from 'react';
+import { createElement } from 'react';
 import classNames from 'classnames';
 
-interface ActionRowProps extends React.HTMLAttributes<HTMLElement> {
+interface ActionRowProps extends HTMLAttributes<HTMLElement> {
   /** Specifies the base element */
-  as?: React.ElementType;
+  as?: ElementType;
   /** Specifies the contents of the row */
-  children: React.ReactNode;
+  children: ReactNode;
   /** Specifies class name to append to the base element */
   className?: string;
   /** Specifies whether row should be displayed horizontally */
@@ -18,7 +19,7 @@ function ActionRow({
   children,
   ...props
 }: ActionRowProps) {
-  return React.createElement(
+  return createElement(
     as,
     {
       ...props,

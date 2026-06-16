@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import classNames from 'classnames';
 
 import BreadcrumbLink from './BreadcrumbLink';
@@ -46,7 +46,7 @@ function Breadcrumb({
     >
       <ol className={classNames('list-inline', { 'is-mobile': isMobile })}>
         {displayLinks.map((link, i) => (
-          <React.Fragment key={link.label}>
+          <Fragment key={link.label}>
             <li className={classNames('list-inline-item')}>
               <BreadcrumbLink as={linkAs} clickHandler={clickHandler} linkProps={link} />
             </li>
@@ -56,7 +56,7 @@ function Breadcrumb({
                 {spacer || <Icon src={ChevronRight} id={`spacer-${i}`} />}
               </li>
               )}
-          </React.Fragment>
+          </Fragment>
         ))}
         {!isMobile && activeLabel && <li className="list-inline-item active" key="active" aria-current="page">{activeLabel}</li>}
       </ol>
