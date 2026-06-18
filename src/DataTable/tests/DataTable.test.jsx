@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import {
+  render, screen, waitFor, within,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as reactTable from 'react-table';
 import { IntlProvider } from 'react-intl';
@@ -143,6 +145,36 @@ describe('<DataTable />', () => {
     render(<DataTableWrapper {...props} />);
     expect(screen.getAllByRole('columnheader')).toHaveLength(props.columns.length);
     expect(screen.getAllByRole('row')).toHaveLength(props.data.length + 1); // (need + 1 to include header row)
+  });
+
+  it('sorts rows when activating a sortable header button', async () => {
+    const getNameColumnValues = () => screen.getAllByRole('row')
+      .slice(1)
+      .map(row => within(row).getAllByRole('cell')[0].textContent);
+
+    render(<DataTableWrapper {...props} isSortable />);
+
+    expect(getNameColumnValues()).toEqual([
+      'Lil Bub',
+      'Grumpy Cat',
+      'Smoothie',
+      'Maru',
+      'Keyboard Cat',
+      'Long Cat',
+      'Zeno',
+    ]);
+
+    await userEvent.click(screen.getByRole('button', { name: 'Name' }));
+
+    await waitFor(() => expect(getNameColumnValues()).toEqual([
+      'Grumpy Cat',
+      'Keyboard Cat',
+      'Lil Bub',
+      'Long Cat',
+      'Maru',
+      'Smoothie',
+      'Zeno',
+    ]));
   });
 
   it('displays a table footer', () => {
