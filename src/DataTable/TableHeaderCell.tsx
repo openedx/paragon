@@ -49,9 +49,10 @@ function TableHeaderCell({
   headerClassName,
 }: TableHeaderCellProps) {
   const toggleProps = canSort && getSortByToggleProps ? getSortByToggleProps() : {};
-  const ariaSort: React.AriaAttributes['aria-sort'] = isSorted
-    ? (isSortedDesc ? 'descending' : 'ascending')
-    : undefined;
+  let ariaSort: React.AriaAttributes['aria-sort'];
+  if (isSorted) {
+    ariaSort = isSortedDesc ? 'descending' : 'ascending';
+  }
   const headerContentClassName = classNames('pgn__data-table-header-content', headerClassName);
 
   return (
