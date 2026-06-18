@@ -150,6 +150,7 @@
     // The button owns sortable header padding so the full visible header remains the sort hit target.
     &.pgn__data-table-sortable-header {
       padding: 0;
+      position: relative;
     }
   }
 
@@ -168,6 +169,13 @@
     text-align: inherit;
     width: 100%;
     box-sizing: border-box;
+
+    // Extend pointer hit testing to the full sortable th when row height is set by another header cell.
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
   }
 
   td {
