@@ -90,6 +90,13 @@ describe('<TableHeaderCell />', () => {
       expect(button).toHaveClass('pgn__data-table-sort-button');
     });
 
+    it('adds headerClassName to sortable header content', () => {
+      render(<FakeTable {...props} canSort />);
+      const button = screen.getByRole('button', { name: 'Title' });
+      expect(button).not.toHaveClass(props.headerClassName);
+      expect(button.firstChild).toHaveClass(props.headerClassName);
+    });
+
     it('adds ascending sort state to the header cell when sorted ascending', () => {
       render(<FakeTable {...props} canSort isSorted />);
       const cell = screen.getByRole('columnheader');

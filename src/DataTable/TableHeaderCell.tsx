@@ -48,7 +48,7 @@ function TableHeaderCell({
   isSortedDesc = false,
   headerClassName,
 }: TableHeaderCellProps) {
-  const headerProps = getHeaderProps();
+  const { key, ...headerProps } = getHeaderProps();
   const toggleProps = canSort && getSortByToggleProps ? getSortByToggleProps() : {};
   // Per WAI-ARIA APG sortable table guidance, only the actively sorted header should expose aria-sort.
   let ariaSort: React.AriaAttributes['aria-sort'];
@@ -59,6 +59,7 @@ function TableHeaderCell({
 
   return (
     <th
+      key={key}
       {...headerProps}
       scope="col"
       aria-sort={ariaSort}
@@ -73,12 +74,13 @@ function TableHeaderCell({
           type="button"
           className={classNames(
             'pgn__data-table-sort-button',
-            headerContentClassName,
             toggleProps.className,
           )}
         >
-          <span>{render('Header')}</span>
-          <SortIndicator isSorted={isSorted} isSortedDesc={isSortedDesc || false} />
+          <span className={headerContentClassName}>
+            <span>{render('Header')}</span>
+            <SortIndicator isSorted={isSorted} isSortedDesc={isSortedDesc || false} />
+          </span>
         </button>
       ) : (
         <span className={headerContentClassName}>
