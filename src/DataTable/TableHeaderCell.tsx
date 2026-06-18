@@ -50,6 +50,7 @@ function TableHeaderCell({
 }: TableHeaderCellProps) {
   const headerProps = getHeaderProps();
   const toggleProps = canSort && getSortByToggleProps ? getSortByToggleProps() : {};
+  // Per W3C guidance, only the actively sorted header should expose aria-sort.
   let ariaSort: React.AriaAttributes['aria-sort'];
   if (isSorted) {
     ariaSort = isSortedDesc ? 'descending' : 'ascending';

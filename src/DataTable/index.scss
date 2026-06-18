@@ -147,6 +147,7 @@
     padding: var(--pgn-spacing-data-table-padding-cell);
     text-align: start;
 
+    // The button owns sortable header padding so the full visible header remains the sort hit target.
     &.pgn__data-table-sortable-header {
       padding: 0;
     }
