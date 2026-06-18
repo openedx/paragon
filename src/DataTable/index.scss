@@ -146,6 +146,10 @@
     background-color: var(--pgn-color-light-300);
     padding: var(--pgn-spacing-data-table-padding-cell);
     text-align: start;
+
+    &.pgn__data-table-sortable-header {
+      padding: 0;
+    }
   }
 
   .pgn__data-table-header-content {
@@ -159,9 +163,10 @@
     color: inherit;
     cursor: pointer;
     font: inherit;
-    padding: 0;
+    padding: var(--pgn-spacing-data-table-padding-cell);
     text-align: inherit;
     width: 100%;
+    box-sizing: border-box;
   }
 
   td {

@@ -50,6 +50,12 @@ describe('<TableHeaderCell />', () => {
       render(<FakeTable {...props} />);
       expect(screen.queryByRole('button')).not.toBeInTheDocument();
     });
+
+    it('does not add sortable header styling to non-sortable headers', () => {
+      render(<FakeTable {...props} />);
+      const cell = screen.getByRole('columnheader');
+      expect(cell).not.toHaveClass('pgn__data-table-sortable-header');
+    });
   });
 
   describe('with sorting', () => {
@@ -74,6 +80,14 @@ describe('<TableHeaderCell />', () => {
     it('renders the sort toggle as a button', () => {
       render(<FakeTable {...props} canSort />);
       expect(screen.getByRole('button', { name: 'Title' })).toBeInTheDocument();
+    });
+
+    it('adds sortable header styling to preserve the sort button hit target', () => {
+      render(<FakeTable {...props} canSort />);
+      const cell = screen.getByRole('columnheader');
+      const button = screen.getByRole('button', { name: 'Title' });
+      expect(cell).toHaveClass('pgn__data-table-sortable-header');
+      expect(button).toHaveClass('pgn__data-table-sort-button');
     });
 
     it('adds ascending sort state to the header cell when sorted ascending', () => {

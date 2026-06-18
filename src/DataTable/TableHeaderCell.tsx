@@ -48,6 +48,7 @@ function TableHeaderCell({
   isSortedDesc = false,
   headerClassName,
 }: TableHeaderCellProps) {
+  const headerProps = getHeaderProps();
   const toggleProps = canSort && getSortByToggleProps ? getSortByToggleProps() : {};
   let ariaSort: React.AriaAttributes['aria-sort'];
   if (isSorted) {
@@ -56,7 +57,15 @@ function TableHeaderCell({
   const headerContentClassName = classNames('pgn__data-table-header-content', headerClassName);
 
   return (
-    <th {...getHeaderProps()} scope="col" aria-sort={ariaSort}>
+    <th
+      {...headerProps}
+      scope="col"
+      aria-sort={ariaSort}
+      className={classNames(
+        headerProps.className,
+        { 'pgn__data-table-sortable-header': canSort },
+      )}
+    >
       {canSort ? (
         <button
           {...toggleProps}
