@@ -31,24 +31,51 @@ const props = {
   }],
 };
 
-describe('<TableHeaderRow />', () => {
+function renderTableHeaderRow() {
   render(<table><TableHeaderRow {...props} /></table>);
-  const head = screen.getByRole('rowgroup');
-  const row = screen.getByRole('row');
-  const cells = screen.getAllByRole('columnheader');
+}
 
+describe('<TableHeaderRow />', () => {
   it('renders a table head and row', () => {
+    renderTableHeaderRow();
+
+    const head = screen.getByRole('rowgroup');
+    const row = screen.getByRole('row');
+
     expect(head).toBeInTheDocument();
     expect(row).toBeInTheDocument();
   });
 
   it('adds props to the row', () => {
+    renderTableHeaderRow();
+
+    const row = screen.getByRole('row');
+
     expect(row.className).toEqual('red');
   });
 
   it('renders cells', () => {
+    renderTableHeaderRow();
+
+    const cells = screen.getAllByRole('columnheader');
+
     expect(cells.length).toEqual(2);
     expect(cells[0]).toHaveTextContent(header1Name);
     expect(cells[1]).toHaveTextContent(header2Name);
+  });
+
+  it('does not spread React keys from react-table prop getters', () => {
+    const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    try {
+      renderTableHeaderRow();
+
+      const keySpreadWarning = consoleError.mock.calls.some(([message]) => (
+        String(message).includes('A props object containing a "key" prop')
+      ));
+      expect(keySpreadWarning).toEqual(false);
+    } finally {
+      consoleError.mockRestore();
+    }
   });
 });
