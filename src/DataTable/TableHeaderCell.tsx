@@ -31,7 +31,7 @@ interface TableHeaderCellProps {
   render: (type: 'Header') => React.ReactNode;
   /** Indicates whether the column is sorted in descending order */
   isSortedDesc?: boolean;
-  /** Gets props related to sorting that will be passed to th */
+  /** Gets props related to sorting that will be passed to the sort button */
   getSortByToggleProps?: (...args: any[]) => Record<string, any>;
   /** Indicates whether a column is sortable */
   canSort?: boolean;
@@ -49,13 +49,31 @@ function TableHeaderCell({
   headerClassName,
 }: TableHeaderCellProps) {
   const toggleProps = canSort && getSortByToggleProps ? getSortByToggleProps() : {};
+  const ariaSort: React.AriaAttributes['aria-sort'] = isSorted
+    ? (isSortedDesc ? 'descending' : 'ascending')
+    : undefined;
+  const headerContentClassName = classNames('pgn__data-table-header-content', headerClassName);
 
   return (
-    <th {...getHeaderProps(toggleProps)}>
-      <span className={classNames('d-flex align-items-center', headerClassName)}>
-        <span>{render('Header')}</span>
-        {canSort && <SortIndicator isSorted={isSorted} isSortedDesc={isSortedDesc || false} />}
-      </span>
+    <th {...getHeaderProps()} scope="col" aria-sort={ariaSort}>
+      {canSort ? (
+        <button
+          {...toggleProps}
+          type="button"
+          className={classNames(
+            'pgn__data-table-sort-button',
+            headerContentClassName,
+            toggleProps.className,
+          )}
+        >
+          <span>{render('Header')}</span>
+          <SortIndicator isSorted={isSorted} isSortedDesc={isSortedDesc || false} />
+        </button>
+      ) : (
+        <span className={headerContentClassName}>
+          <span>{render('Header')}</span>
+        </span>
+      )}
     </th>
   );
 }

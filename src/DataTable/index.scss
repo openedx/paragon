@@ -148,6 +148,22 @@
     text-align: start;
   }
 
+  .pgn__data-table-header-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .pgn__data-table-sort-button {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+    text-align: inherit;
+    width: 100%;
+  }
+
   td {
     padding: var(--pgn-spacing-data-table-padding-cell);
     line-height: 24px;
