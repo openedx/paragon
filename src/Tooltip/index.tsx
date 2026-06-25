@@ -17,11 +17,7 @@ interface TooltipProps extends BaseTooltipProps {
    *
    * This is generally provided by the Overlay component positioning the tooltip.
    */
-  placement?: (
-    'auto' | 'auto-start' | 'auto-end'
-    | 'top' | 'bottom' | 'right' | 'left'
-    | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end' | 'right-start' | 'right-end' | 'left-start' | 'left-end'
-  );
+  placement?: Placement;
   /** Additional CSS class(es) to put on the tooltip element. */
   className?: string;
   /** A Popper.js config object passed to the the underlying popper instance. */
@@ -31,7 +27,7 @@ interface TooltipProps extends BaseTooltipProps {
 const Tooltip: ComponentWithAsProp<'div', TooltipProps> = React.forwardRef(({
   children,
   variant,
-  placement = 'right' as Placement,
+  placement = 'right',
   bsPrefix = 'tooltip',
   ...props
 }: TooltipProps, ref: React.ForwardedRef<HTMLDivElement>) => (

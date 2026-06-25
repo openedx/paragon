@@ -7,9 +7,6 @@ import Fade from 'react-bootstrap/Fade';
 // As more Paragon consumers adopt TypeScript, we could consider removing almost all of this code
 // and just re-export the Overlay and OverlayTrigger components from react-bootstrap unmodified.
 
-// Alias this type to a better name for documentation purposes.
-export type DOMContainer = OverlayProps['target'];
-
 export interface ParagonOverlayProps extends OverlayProps {
   /** Specifies the content of the `Overlay`. */
   children: OverlayChildren;
@@ -17,25 +14,30 @@ export interface ParagonOverlayProps extends OverlayProps {
    * A component instance, DOM node, or function that returns either.
    * The overlay will be positioned in relation to the target.
    */
-  container?: DOMContainer;
+  container?: OverlayProps['container'];
   /** Callback fired before the `Overlay` transitions in. */
-  onEnter?: ((node: HTMLElement, isAppearing: boolean) => any);
+  onEnter?: (node: HTMLElement, isAppearing: boolean) => any;
   /** Callback fired after the `Overlay` finishes transitioning in. */
-  onEntered?: ((node: HTMLElement, isAppearing: boolean) => any);
+  onEntered?: (node: HTMLElement, isAppearing: boolean) => any;
   /** Callback fired as the `Overlay` begins to transition in. */
-  onEntering?: ((node: HTMLElement, isAppearing: boolean) => any);
+  onEntering?: (node: HTMLElement, isAppearing: boolean) => any;
   /** Callback fired right before the `Overlay` transitions out. */
-  onExit?: ((node: HTMLElement) => any);
+  onExit?: (node: HTMLElement) => any;
   /** Callback fired after the `Overlay` finishes transitioning out. */
-  onExited?: ((node: HTMLElement) => any);
+  onExited?: (node: HTMLElement) => any;
   /** Callback fired as the Overlay begins to transition out. */
-  onExiting?: ((node: HTMLElement) => any);
+  onExiting?: (node: HTMLElement) => any;
   /**
    * A callback invoked by the overlay when it wishes to be hidden.
    * Required if `rootClose` is specified.
    */
-  onHide?: ((e: Event) => void);
-  /** The placement of the `Overlay` in relation to its target. */
+  onHide?: (e: Event) => void;
+  /**
+   * The placement of the `Overlay` in relation to its target.
+   *
+   * Valid values are: `auto`, `auto-start`, `auto-end`, `top`, `bottom`, `right`, `left`,
+   * `top-start`, `top-end`, `bottom-start`, `bottom-end`, `right-start`, `right-end`, `left-start`, `left-end`.
+   */
   placement?: Placement;
   /** A set of popper options and props passed directly to `Popper`. */
   popperConfig?: OverlayProps['popperConfig'];
@@ -46,7 +48,7 @@ export interface ParagonOverlayProps extends OverlayProps {
   /** Set the visibility of the `Overlay`. */
   show?: boolean;
   /** The target element the `Overlay` is positioned in relation to. */
-  target: DOMContainer;
+  target: OverlayProps['target'];
   /**
    * Animate the entering and exiting of the Overlay. `true` will use the `<Fade>` transition,
    * or a custom react-transition-group `<Transition>` component can be provided.
