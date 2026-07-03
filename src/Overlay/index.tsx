@@ -7,7 +7,7 @@ import Fade from 'react-bootstrap/Fade';
 // As more Paragon consumers adopt TypeScript, we could consider removing almost all of this code
 // and just re-export the Overlay and OverlayTrigger components from react-bootstrap unmodified.
 
-export interface ParagonOverlayProps extends OverlayProps {
+export interface ParagonOverlayProps extends Omit<OverlayProps, 'target'> {
   /** Specifies the content of the `Overlay`. */
   children: OverlayChildren;
   /**
@@ -47,8 +47,12 @@ export interface ParagonOverlayProps extends OverlayProps {
   rootCloseEvent?: OverlayProps['rootCloseEvent'];
   /** Set the visibility of the `Overlay`. */
   show?: boolean;
-  /** The target element the `Overlay` is positioned in relation to. */
-  target: OverlayProps['target'];
+  /**
+   * The target element the `Overlay` is positioned in relation to.
+   * Note: this is marked optional for backwards compatibility, but it is required for the overlay to work,
+   * and the upstream types mark it as required.
+   */
+  target?: OverlayProps['target'];
   /**
    * Animate the entering and exiting of the Overlay. `true` will use the `<Fade>` transition,
    * or a custom react-transition-group `<Transition>` component can be provided.
@@ -105,7 +109,8 @@ function Overlay({
       rootClose={rootClose}
       show={show}
       transition={transition}
-      {...props}
+      // `target` is currently optional for Paragon consumers, but react-bootstrap types it as required.
+      {...props as (typeof props & Pick<OverlayProps, 'target'>)}
     />
   );
 }
