@@ -83,8 +83,10 @@ const Chip = React.forwardRef(({
         <ChipIcon
           className={`${CHIP_PGN_CLASS}__icon-before`}
           src={iconBefore}
-          onClick={onIconBeforeClick}
-          alt={iconBeforeAlt}
+          /* The following two props should only be passed if _both_ are defined, but we haven't been checking that nor
+             enforcing it at runtime, so doing so now would be a breaking change. Hence the `!` */
+          onClick={onIconBeforeClick!}
+          alt={iconBeforeAlt!}
           variant={variant}
           disabled={disabled}
         />
@@ -101,8 +103,10 @@ const Chip = React.forwardRef(({
         <ChipIcon
           className={`${CHIP_PGN_CLASS}__icon-after`}
           src={iconAfter}
-          onClick={onIconAfterClick}
-          alt={iconAfterAlt}
+          /* The following two props should only be passed if _both_ are defined, but we haven't been checking that nor
+             enforcing it at runtime, so doing so now would be a breaking change. Hence the `!` */
+          onClick={onIconAfterClick!}
+          alt={iconAfterAlt!}
           variant={variant}
           disabled={disabled}
         />
