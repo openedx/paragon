@@ -1,22 +1,30 @@
 import React, { KeyboardEventHandler, MouseEventHandler } from 'react';
-import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import IconButton from '../IconButton';
 import { STYLE_VARIANTS } from './constants';
 
 export type ChipIconProps = {
-  className: string,
-  src: React.ComponentType,
-  variant: typeof STYLE_VARIANTS[keyof typeof STYLE_VARIANTS],
-  disabled?: boolean,
+  /** Additional CSS class name(s) to append to the base element. */
+  className: string;
+  /** The icon component to render. */
+  src: React.ComponentType;
+  /** The visual style variant of the chip icon. */
+  variant?: typeof STYLE_VARIANTS[keyof typeof STYLE_VARIANTS];
+  /** Whether the icon is in a disabled state. */
+  disabled?: boolean;
 } & (
   // Either _both_ onClick and alt are provided, or neither is:
-  | { onClick: KeyboardEventHandler<HTMLButtonElement> & MouseEventHandler<HTMLButtonElement>, alt: string }
-  | { onClick?: undefined, alt?: undefined }
+  | {
+    /** Callback for click and keyboard events on the icon button. */
+    onClick: KeyboardEventHandler<HTMLButtonElement> & MouseEventHandler<HTMLButtonElement>;
+    /** Accessible label for the icon button. Required when `onClick` is provided. */
+    alt: string;
+  }
+  | { onClick?: undefined; alt?: undefined }
 );
 
 function ChipIcon({
-  className, src, onClick, alt, variant, disabled,
+  className, src, onClick, alt, variant = STYLE_VARIANTS.LIGHT, disabled = false,
 }: ChipIconProps) {
   if (onClick) {
     return (
@@ -34,21 +42,5 @@ function ChipIcon({
 
   return <Icon src={src} className={className} size="sm" />;
 }
-
-ChipIcon.propTypes = {
-  className: PropTypes.string.isRequired,
-  src: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
-  onClick: PropTypes.func,
-  alt: PropTypes.string,
-  variant: PropTypes.string,
-  disabled: PropTypes.bool,
-};
-
-ChipIcon.defaultProps = {
-  onClick: undefined,
-  alt: undefined,
-  variant: STYLE_VARIANTS.LIGHT,
-  disabled: false,
-};
 
 export default ChipIcon;

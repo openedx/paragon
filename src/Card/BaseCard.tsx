@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import type { ComponentWithAsProp, BsPropsWithAs } from '../utils/types/bootstrap';
@@ -28,12 +27,19 @@ const textVariants = [
 type ColorVariant = typeof colorVariants[number];
 type TextVariant = typeof textVariants[number];
 interface Props extends BsPropsWithAs {
+  /** Prefix for component CSS classes. */
   prefix?: string;
+  /** Background color of the card. */
   bgColor?: ColorVariant;
+  /** Text color of the card. */
   textColor?: ColorVariant | TextVariant;
+  /** Border color of the card. */
   borderColor?: ColorVariant;
+  /** Determines whether the card should render its children inside a `CardBody` wrapper. */
   hasBody?: boolean;
+  /** Additional CSS class names to apply to the card element. */
   className?: string;
+  /** The content to render inside the card. */
   children: React.ReactNode;
 }
 type BaseCardType = ComponentWithAsProp<'div', Props>;
@@ -68,25 +74,5 @@ const BaseCard : BaseCardType = React.forwardRef<HTMLDivElement, Props>(
     );
   },
 );
-
-/* eslint-disable react/require-default-props */
-BaseCard.propTypes = {
-  /** Prefix for component CSS classes. */
-  prefix: PropTypes.string,
-  /** Background color of the card. */
-  bgColor: PropTypes.oneOf(colorVariants),
-  /** Text color of the card. */
-  textColor: PropTypes.oneOf([...colorVariants, ...textVariants]),
-  /** Border color of the card. */
-  borderColor: PropTypes.oneOf(colorVariants),
-  /** Determines whether the card should render its children inside a `CardBody` wrapper. */
-  hasBody: PropTypes.bool,
-  /** Set a custom element for this component. */
-  as: PropTypes.elementType,
-  /** Additional CSS class names to apply to the card element. */
-  className: PropTypes.string,
-  /** The content to render inside the card. */
-  children: PropTypes.node,
-};
 
 export default BaseCard;
