@@ -1,5 +1,5 @@
 {
-  "lastModified": 1784213057552,
+  "lastModified": 1784299024049,
   "projectUsages": [
     {
       "version": "3.4.8",
@@ -9293,9 +9293,9 @@
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarSection.jsx",
-            "line": 54,
+            "line": 61,
             "column": 8,
-            "index": 1702
+            "index": 1888
           },
           {
             "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
@@ -10336,16 +10336,10 @@
             "index": 527
           },
           {
-            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
-            "line": 57,
-            "column": 8,
-            "index": 1902
-          },
-          {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarSection.jsx",
-            "line": 45,
+            "line": 52,
             "column": 6,
-            "index": 1403
+            "index": 1589
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/UnitButton.jsx",
@@ -10652,12 +10646,6 @@
             "index": 1109
           },
           {
-            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
-            "line": 70,
-            "column": 6,
-            "index": 2330
-          },
-          {
             "filePath": "src/courseware/course/sidebar/common/SidebarBase.jsx",
             "line": 70,
             "column": 16,
@@ -10688,84 +10676,22 @@
             "line": 36,
             "column": 16,
             "index": 1301
-          },
-          {
-            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
-            "line": 73,
-            "column": 16,
-            "index": 2512
-          }
-        ],
-        "useToggle": [
-          {
-            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
-            "line": 21,
-            "column": 84,
-            "index": 838
-          }
-        ],
-        "ChevronLeftIcon": [
-          {
-            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTray.jsx",
-            "line": 59,
-            "column": 22,
-            "index": 1957
           }
         ],
         "Collapsible": [
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarSequence.jsx",
-            "line": 55,
+            "line": 62,
             "column": 6,
-            "index": 1696
+            "index": 1884
           }
         ],
         "ChevronRightIcon": [
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarSection.jsx",
-            "line": 54,
+            "line": 61,
             "column": 19,
-            "index": 1713
-          }
-        ],
-        "LmsCompletionSolid": [
-          {
-            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/CompletionIcon.jsx",
-            "line": 15,
-            "column": 13,
-            "index": 479
-          }
-        ],
-        "CheckCircle": [
-          {
-            "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/CompletionIcon.jsx",
-            "line": 17,
-            "column": 13,
-            "index": 612
-          },
-          {
-            "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
-            "line": 316,
-            "column": 41,
-            "index": 12735
-          },
-          {
-            "filePath": "src/course-home/progress-tab/grades/course-grade/CourseGradeFooter.jsx",
-            "line": 82,
-            "column": 15,
-            "index": 2775
-          },
-          {
-            "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
-            "line": 51,
-            "column": 95,
-            "index": 1711
-          },
-          {
-            "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
-            "line": 58,
-            "column": 83,
-            "index": 2123
+            "index": 1899
           }
         ],
         "ArrowBackIos": [
@@ -11032,6 +10958,32 @@
             "line": 193,
             "column": 10,
             "index": 6701
+          }
+        ],
+        "CheckCircle": [
+          {
+            "filePath": "src/courseware/course/course-exit/CourseCelebration.jsx",
+            "line": 316,
+            "column": 41,
+            "index": 12735
+          },
+          {
+            "filePath": "src/course-home/progress-tab/grades/course-grade/CourseGradeFooter.jsx",
+            "line": 82,
+            "column": 15,
+            "index": 2775
+          },
+          {
+            "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
+            "line": 51,
+            "column": 95,
+            "index": 1711
+          },
+          {
+            "filePath": "src/course-home/progress-tab/credit-information/CreditInformation.jsx",
+            "line": 58,
+            "column": 83,
+            "index": 2123
           }
         ],
         "Collapsible.Advanced": [
