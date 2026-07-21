@@ -1,0 +1,87 @@
+import { Meta, Title, Subtitle, Story, Controls } from '@storybook/addon-docs/blocks';
+
+import * as ButtonGroupStories from './ButtonGroup.stories';
+import { LiveExample } from '../docs/LiveExample';
+
+<Meta title="Buttonlike/ButtonGroup" />
+
+<Title>Button Group</Title>
+
+<Subtitle>Group related buttons so they read as a single control; ButtonToolbar arranges multiple groups.</Subtitle>
+
+`ButtonGroup` visually and semantically groups related `Button`s (ARIA
+`role="group"`). It replaces Bootstrap's `.btn-group-*` global classes: a group
+propagates its `size` to child buttons via React context, and inner border radii
+are collapsed with logical properties so the group works in both LTR and RTL.
+
+`ButtonToolbar` (ARIA `role="toolbar"`) lays out one or more groups.
+
+## Basic usage
+
+```tsx
+import { Button, ButtonGroup } from '@openedx/paragon';
+
+<ButtonGroup aria-label="Text style">
+  <Button variant="outline-primary">Bold</Button>
+  <Button variant="outline-primary">Italic</Button>
+  <Button variant="outline-primary">Underline</Button>
+</ButtonGroup>
+```
+
+<Story of={ButtonGroupStories.Default} />
+
+## Props
+
+<Controls of={ButtonGroupStories.Default} />
+
+## Sizes
+
+A group sets the size of every button it contains — set it once on the group
+rather than on each `Button`.
+
+<LiveExample code={`
+<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
+  <ButtonGroup size="sm" aria-label="Small">
+    <Button variant="outline-primary">One</Button>
+    <Button variant="outline-primary">Two</Button>
+  </ButtonGroup>
+  <ButtonGroup size="lg" aria-label="Large">
+    <Button variant="outline-primary">One</Button>
+    <Button variant="outline-primary">Two</Button>
+  </ButtonGroup>
+</div>
+`} />
+
+## Vertical
+
+<LiveExample code={`
+<ButtonGroup vertical aria-label="Vertical">
+  <Button variant="outline-primary">Top</Button>
+  <Button variant="outline-primary">Middle</Button>
+  <Button variant="outline-primary">Bottom</Button>
+</ButtonGroup>
+`} />
+
+## ButtonToolbar
+
+Compose several groups inside a `ButtonToolbar`.
+
+<LiveExample code={`
+<ButtonToolbar aria-label="Formatting">
+  <ButtonGroup aria-label="Text style" size="sm">
+    <Button variant="outline-primary">Bold</Button>
+    <Button variant="outline-primary">Italic</Button>
+  </ButtonGroup>
+  <ButtonGroup aria-label="Alignment" size="sm">
+    <Button variant="outline-secondary">Left</Button>
+    <Button variant="outline-secondary">Center</Button>
+    <Button variant="outline-secondary">Right</Button>
+  </ButtonGroup>
+</ButtonToolbar>
+`} />
+
+## Accessibility notes
+
+- Always provide an `aria-label` on each `ButtonGroup` and `ButtonToolbar`.
+- Use `ButtonToolbar` when you have more than one group, so assistive tech
+  announces the toolbar and its constituent groups correctly.

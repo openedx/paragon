@@ -21,8 +21,14 @@ function DotIcon() {
 }
 
 const meta: Meta<typeof Button> = {
-  title: 'Prototype/Button',
+  // Kept under a separate, fully-hidden root so it does NOT share a title with
+  // the `Buttonlike/Button` docs page — that keeps the MDX an unattached, single
+  // sidebar leaf (no "Docs" sub-node). Stories are the raw material for that
+  // page, hidden from the sidebar via `!dev` but still referenceable through
+  // `<Story of>` / `<Controls of>`.
+  title: 'Internal/Button',
   component: Button,
+  tags: ['!dev'],
   parameters: { layout: 'padded' },
   args: {
     children: 'Button',

@@ -3,9 +3,9 @@ import { Meta, Title, Subtitle, Story, Controls } from '@storybook/addon-docs/bl
 import * as ButtonStories from './Button.stories';
 import { LiveExample } from '../docs/LiveExample';
 
-<Meta of={ButtonStories} />
+<Meta title="Buttonlike/Button" />
 
-<Title />
+<Title>Button</Title>
 
 <Subtitle>Accessible, themeable button — React Aria behavior, styled entirely from Paragon design tokens.</Subtitle>
 
@@ -91,18 +91,8 @@ anchor is handled via `aria-disabled` rather than the legacy
 
 ## Grouping
 
-Compose `ButtonGroup` and `ButtonToolbar`; a group propagates its `size` to
-child buttons.
-
-<LiveExample code={`
-<ButtonToolbar aria-label="Formatting">
-  <ButtonGroup aria-label="Text style" size="sm">
-    <Button variant="outline-primary">Bold</Button>
-    <Button variant="outline-primary">Italic</Button>
-    <Button variant="outline-primary">Underline</Button>
-  </ButtonGroup>
-</ButtonToolbar>
-`} />
+Related buttons can be combined with `ButtonGroup` and `ButtonToolbar` — see the
+[ButtonGroup](?path=/docs/buttonlike-buttongroup--docs) page.
 
 ## Accessibility notes
 
