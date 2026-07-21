@@ -1,0 +1,209 @@
+/*
+ * Button styles — a CSS Modules port of src/Button/index.scss.
+ *
+ * Every value still comes from the same `--pgn-*` design tokens; nothing is
+ * hard-coded. Differences from the Bootstrap-era SCSS:
+ *   - Class names are locally scoped (no global `.btn-primary` leakage).
+ *   - Variant token remapping happens inline in Button.tsx (see `variantVars`),
+ *     so there are no per-variant rules here.
+ *   - Focus is driven by React Aria's `[data-focus-visible]` instead of `:focus`,
+ *     which correctly distinguishes keyboard focus from pointer focus.
+ *   - Logical properties (margin-inline-*) give RTL support without `[dir=rtl]`
+ *     overrides.
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--pgn-typography-btn-font-family);
+  font-weight: var(--pgn-typography-btn-font-weight);
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  cursor: pointer;
+  border: var(--pgn-size-btn-border-width) solid var(--pgn-btn-border-color, transparent);
+  color: var(--pgn-btn-color, var(--pgn-color-body-base));
+  background-color: var(--pgn-btn-bg, transparent);
+  transition: var(--pgn-transition-btn);
+
+  /* base (md) size */
+  padding: var(--pgn-spacing-btn-padding-y-base) var(--pgn-spacing-btn-padding-x-base);
+  font-size: var(--pgn-typography-btn-font-size-base);
+  line-height: var(--pgn-typography-btn-line-height-base);
+  border-radius: var(--pgn-size-btn-border-radius-base);
+}
+
+.btn:hover:not(:disabled) {
+  color: var(--pgn-btn-hover-color, var(--pgn-color-body-base));
+  background-color: var(--pgn-btn-hover-bg, transparent);
+  border-color: var(--pgn-btn-hover-border-color, transparent);
+  text-decoration: none;
+}
+
+.btn[data-pressed]:not(:disabled) {
+  color: var(--pgn-btn-active-color, inherit);
+  background-color: var(--pgn-btn-active-bg, inherit);
+  border-color: var(--pgn-btn-active-border-color, transparent);
+}
+
+/* Keyboard focus ring, drawn as an offset outline via ::before (matches Paragon). */
+.btn[data-focus-visible]:not(:disabled) {
+  position: relative;
+  outline: 0;
+  background: var(--pgn-btn-focus-bg, transparent);
+  border-color: var(--pgn-btn-focus-border-color, transparent);
+  color: var(--pgn-btn-focus-color, var(--pgn-color-body-base));
+}
+
+.btn[data-focus-visible]:not(:disabled, .link)::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--pgn-spacing-btn-focus-distance-to-border) * -1);
+  border: solid var(--pgn-size-btn-focus-width) var(--pgn-btn-focus-outline-color, var(--pgn-color-body-base));
+  border-radius: var(--pgn-size-btn-focus-border-radius-base);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  color: var(--pgn-btn-disabled-color, inherit);
+  background-color: var(--pgn-btn-disabled-bg, inherit);
+  border-color: var(--pgn-btn-disabled-border-color, transparent);
+  opacity: var(--pgn-other-btn-disabled-opacity);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Icon slots */
+.iconBefore {
+  display: inline-flex;
+  margin-inline-end: .5rem;
+  margin-inline-start: -.25em;
+}
+
+.iconAfter {
+  display: inline-flex;
+  margin-inline-start: .5rem;
+  margin-inline-end: -.25em;
+}
+
+/* Link-styled button */
+.link {
+  font-weight: var(--pgn-typography-font-weight-normal);
+  color: var(--pgn-color-link-base);
+  background-color: transparent;
+  border-color: transparent;
+  text-decoration: var(--pgn-typography-link-decoration-base);
+}
+
+.link:hover:not(:disabled) {
+  color: var(--pgn-color-link-hover);
+  background-color: transparent;
+  border-color: transparent;
+  text-decoration: var(--pgn-typography-link-decoration-hover);
+}
+
+.link:disabled,
+.link[aria-disabled="true"] {
+  color: var(--pgn-color-btn-disabled-link);
+}
+
+/* Sizes */
+.lg {
+  padding: var(--pgn-spacing-btn-padding-y-lg) var(--pgn-spacing-btn-padding-x-lg);
+  font-size: var(--pgn-typography-btn-font-size-lg);
+  line-height: var(--pgn-typography-btn-line-height-lg);
+  border-radius: var(--pgn-size-btn-border-radius-lg);
+}
+
+.lg[data-focus-visible]::before {
+  border-radius: var(--pgn-size-btn-focus-border-radius-lg);
+}
+
+.sm {
+  padding: var(--pgn-spacing-btn-padding-y-sm) var(--pgn-spacing-btn-padding-x-sm);
+  font-size: var(--pgn-typography-btn-font-size-sm);
+  line-height: var(--pgn-typography-btn-line-height-sm);
+  border-radius: var(--pgn-size-btn-border-radius-sm);
+}
+
+.sm[data-focus-visible]::before {
+  border-radius: var(--pgn-size-btn-focus-border-radius-sm);
+}
+
+.inline {
+  line-height: calc(var(--pgn-typography-line-height-base) * 1em - 2 * var(--pgn-size-btn-border-width));
+  font-size: inherit;
+  vertical-align: bottom;
+  padding: 0 .25em;
+}
+
+.block {
+  display: flex;
+  width: 100%;
+}
+
+.block + .block {
+  margin-top: var(--pgn-spacing-btn-block-spacing-y);
+}
+
+/* Button group & toolbar */
+.btnGroup {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.btnGroup > .btn {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.btnGroup > .btn:not(:first-child) {
+  margin-inline-start: calc(var(--pgn-size-btn-border-width) * -1);
+}
+
+/* Collapse inner border radii so grouped buttons read as one control. */
+.btnGroup > .btn:not(:first-child) {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+
+.btnGroup > .btn:not(:last-child) {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.btnGroup > .btn:hover,
+.btnGroup > .btn[data-focus-visible],
+.btnGroup > .btn[data-pressed] {
+  z-index: 1;
+}
+
+.btnGroupVertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.btnGroupVertical > .btn {
+  width: 100%;
+}
+
+.btnGroupVertical > .btn:not(:first-child) {
+  margin-inline-start: 0;
+  margin-top: calc(var(--pgn-size-btn-border-width) * -1);
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+}
+
+.btnGroupVertical > .btn:not(:last-child) {
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.btnToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: .5rem;
+}
