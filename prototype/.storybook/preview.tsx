@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 
 // Load the design-token CSS custom properties globally, exactly as a consuming
 // app would. This is the *same* compiled token output the real library ships —

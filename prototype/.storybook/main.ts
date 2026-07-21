@@ -1,14 +1,12 @@
+import { fileURLToPath } from "node:url";
+import { dirname } from "node:path";
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(ts|tsx|mdx)'],
-  addons: [
-    '@storybook/addon-essentials',
-    // Reinforces Paragon's accessibility mission directly in the workbench.
-    '@storybook/addon-a11y',
-  ],
+  addons: [getAbsolutePath("@storybook/addon-a11y"), getAbsolutePath("@storybook/addon-docs")],
   framework: {
-    name: '@storybook/react-vite',
+    name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
   // Props tables are generated from the TypeScript types below, replacing the
@@ -24,3 +22,7 @@ const config: StorybookConfig = {
 };
 
 export default config;
+
+function getAbsolutePath(value: string): any {
+  return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)));
+}

@@ -111,7 +111,7 @@ Concretely:
 6. **Tests → Vitest**, keeping ``@testing-library/react`` and the existing
    accessibility assertions.
 
-7. **Documentation → Storybook 8 (Vite builder)**, retiring Gatsby,
+7. **Documentation → Storybook 10 (Vite builder)**, retiring Gatsby,
    ``gatsby-transformer-react-docgen``, ``react-docgen`` v5, ``react-live``, and
    Playroom. Props tables are generated from TypeScript types
    (``react-docgen-typescript``); existing per-component ``README.md`` / ``.mdx``
@@ -132,7 +132,7 @@ The work ships continuously behind stable public APIs:
    contract held.
 3. Swap the behavior engine component-by-component onto React Aria (and DataTable
    onto TanStack Table), leaf components first, each shipping independently.
-4. Stand up Storybook 8 alongside Gatsby, port component pages, then retire
+4. Stand up Storybook 10 alongside Gatsby, port component pages, then retire
    Gatsby.
 5. Remove the ``source:`` SCSS back-compat from tokens and drop the legacy
    dependencies (``bootstrap``, ``react-bootstrap``, ``axios``,

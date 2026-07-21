@@ -19,7 +19,7 @@ Paragon Working Group evaluate the approach concretely.
 | Types | mixed `.jsx`/`.tsx` | **100% TypeScript** |
 | Build | Babel + tsc + Makefile | **Vite** library mode + `vite-plugin-dts` |
 | Tests | Jest | **Vitest** + Testing Library |
-| Docs | Gatsby + react-docgen v5 | **Storybook 8** (props from TS types) |
+| Docs | Gatsby + react-docgen v5 | **Storybook 10** (props from TS types) |
 
 The public prop API (`variant`, `size`, `iconBefore/After`, `as`, `disabled`,
 `onClick`, …) is preserved from `@openedx/paragon`'s Button, so consuming code
