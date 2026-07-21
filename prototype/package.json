@@ -29,10 +29,12 @@
   "dependencies": {
     "clsx": "^2.1.1",
     "react-aria": "^3.35.0",
-    "react-aria-components": "^1.5.0"
+    "react-aria-components": "^1.5.0",
+    "react-live": "^4.1.8"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^10.5.3",
+    "@storybook/addon-docs": "^10.5.3",
     "@storybook/react": "^10.5.3",
     "@storybook/react-vite": "^10.5.3",
     "@testing-library/jest-dom": "^6.6.3",
@@ -48,7 +50,6 @@
     "typescript": "^5.6.3",
     "vite": "^5.4.11",
     "vite-plugin-dts": "^4.3.0",
-    "vitest": "^2.1.8",
-    "@storybook/addon-docs": "^10.5.3"
+    "vitest": "^2.1.8"
   }
 }

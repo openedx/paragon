@@ -4,6 +4,7 @@ import { Button } from './Button';
 import { ButtonGroup } from './ButtonGroup';
 import { ButtonToolbar } from './ButtonToolbar';
 import type { BaseVariant } from './types';
+import { LivePlayground } from '../docs/LivePlayground';
 
 const BASE_VARIANTS: BaseVariant[] = [
   'primary', 'secondary', 'tertiary', 'brand', 'success',
@@ -38,13 +39,22 @@ const meta: Meta<typeof Button> = {
       ],
     },
     size: { control: 'inline-radio', options: ['sm', 'md', 'lg', 'inline'] },
+    children: { control: 'text' },
+    disabled: { control: 'boolean' },
+    block: { control: 'boolean' },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Playground: Story = {};
+/**
+ * Live, editable example whose JSX is generated from the Controls below. Changing
+ * a control rewrites the editor; you can also edit the JSX directly.
+ */
+export const Playground: Story = {
+  render: (args) => <LivePlayground {...args} />,
+};
 
 export const Variants: Story = {
   render: () => (
