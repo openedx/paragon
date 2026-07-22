@@ -5,7 +5,7 @@ import {
 import clsx from 'clsx';
 
 import { useCollapsibleContext } from './CollapsibleAdvanced';
-import styles from './Collapsible.module.css';
+import '../styles/collapsible.css';
 
 export interface CollapsibleTriggerProps
   extends React.HTMLAttributes<HTMLElement> {
@@ -82,7 +82,7 @@ export const CollapsibleTrigger = React.forwardRef<HTMLElement, CollapsibleTrigg
       {...rest}
       ref={ref}
       data-focus-visible={isFocusVisible || undefined}
-      className={clsx(styles.focusRing, className)}
+      className={clsx('pgn__collapsible-focus', className)}
     >
       {children}
     </ElementType>

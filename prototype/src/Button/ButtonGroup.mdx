@@ -12,9 +12,11 @@ export const examples = ButtonGroupStories.examples;
 <Subtitle>Group related buttons so they read as a single control; ButtonToolbar arranges multiple groups.</Subtitle>
 
 `ButtonGroup` visually and semantically groups related `Button`s (ARIA
-`role="group"`). It replaces Bootstrap's `.btn-group-*` global classes: a group
-propagates its `size` to child buttons via React context, and inner border radii
-are collapsed with logical properties so the group works in both LTR and RTL.
+`role="group"`). It renders the public `btn-group` class (part of Paragon's
+global class layer) and additionally propagates its `size` to child buttons via
+React context — replacing Bootstrap's `.btn-group-sm` / `.btn-group-lg` sizing
+classes — while inner border radii are collapsed with logical properties so the
+group works in both LTR and RTL.
 
 `ButtonToolbar` (ARIA `role="toolbar"`) lays out one or more groups.
 

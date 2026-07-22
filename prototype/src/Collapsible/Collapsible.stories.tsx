@@ -4,7 +4,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Collapsible } from './Collapsible';
 import type { CollapsibleStyling } from './Collapsible';
 import { ExamplePropsForm } from '../docs/ExamplePropsForm';
-import collapsibleStyles from './Collapsible.module.css';
 import { extractExamples } from '../docs/extractExamples';
 import raw from './Collapsible.stories.tsx?raw';
 
@@ -52,11 +51,10 @@ export const Playground: Story = {
  * stories. Each is a single expression wrapped in `( … )`.
  *
  * These mirror src/Collapsible/README.md 1:1 and in the same order. The
- * original component style classes (`collapsible-card`, `collapsible-trigger`,
- * `collapsible-body`) map to this module's classes, exposed to react-live as
- * `collapsibleStyles`; the Bootstrap utilities (`d-flex`, `flex-grow-1`, `btn
- * btn-outline-primary`) become inline styles / the `collapsibleStyles.closeButton`
- * helper, since the prototype does not ship them.
+ * component style classes (`collapsible-card`, `collapsible-trigger`,
+ * `collapsible-body`) and the utility / button classes (`d-flex`, `flex-grow-1`,
+ * `btn btn-outline-primary`) are all part of Paragon's global public class layer
+ * (src/styles/*.css), so these snippets are verbatim copies of the README.
  * ---------------------------------------------------------------------------
  */
 
@@ -135,31 +133,31 @@ export const advancedBareMinimum = (
 );
 
 export const advancedCard = (
-  <Collapsible.Advanced className={collapsibleStyles.card}>
-    <Collapsible.Trigger className={collapsibleStyles.trigger}>
-      <span style={{ flexGrow: 1 }}>This is the title</span>
+  <Collapsible.Advanced className="collapsible-card">
+    <Collapsible.Trigger className="collapsible-trigger d-flex">
+      <span className="flex-grow-1">This is the title</span>
       <Collapsible.Visible whenClosed> + </Collapsible.Visible>
       <Collapsible.Visible whenOpen> - </Collapsible.Visible>
     </Collapsible.Trigger>
 
-    <Collapsible.Body className={collapsibleStyles.body}>
+    <Collapsible.Body className="collapsible-body">
       The content
     </Collapsible.Body>
   </Collapsible.Advanced>
 );
 
 export const advancedWithCloseButton = (
-  <Collapsible.Advanced className={collapsibleStyles.card} defaultOpen>
-    <Collapsible.Trigger className={collapsibleStyles.trigger}>
-      <span style={{ flexGrow: 1 }}>This is the title</span>
+  <Collapsible.Advanced className="collapsible-card" defaultOpen>
+    <Collapsible.Trigger className="collapsible-trigger d-flex">
+      <span className="flex-grow-1">This is the title</span>
       <Collapsible.Visible whenClosed> + </Collapsible.Visible>
       <Collapsible.Visible whenOpen> - </Collapsible.Visible>
     </Collapsible.Trigger>
 
-    <Collapsible.Body className={collapsibleStyles.body}>
+    <Collapsible.Body className="collapsible-body">
       <p>The content</p>
 
-      <Collapsible.Trigger closeOnly tag="button" className={collapsibleStyles.closeButton}>
+      <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
         Close
       </Collapsible.Trigger>
     </Collapsible.Body>
@@ -168,13 +166,13 @@ export const advancedWithCloseButton = (
 
 export const advancedCallbacks = (
   <Collapsible.Advanced
-    className={`${collapsibleStyles.card} ${collapsibleStyles.cardLg}`}
+    className="collapsible-card-lg"
     onToggle={(isOpen) => console.log('Collapsible toggled and open is: ', isOpen)}
     onOpen={() => console.log('Collapsible opened.')}
     onClose={() => console.log('Collapsible closed.')}
   >
-    <Collapsible.Trigger className={collapsibleStyles.trigger}>
-      <h4 style={{ flexGrow: 1 }}>I'm a heading</h4>
+    <Collapsible.Trigger className="collapsible-trigger">
+      <h4 className="flex-grow-1">I'm a heading</h4>
 
       <Collapsible.Visible whenClosed>
         +
@@ -185,10 +183,10 @@ export const advancedCallbacks = (
       </Collapsible.Visible>
     </Collapsible.Trigger>
 
-    <Collapsible.Body className={collapsibleStyles.body}>
+    <Collapsible.Body className="collapsible-body">
       <p>Your stuff goes here.</p>
 
-      <Collapsible.Trigger closeOnly tag="button" className={collapsibleStyles.closeButton}>
+      <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
         Close
       </Collapsible.Trigger>
     </Collapsible.Body>
@@ -203,10 +201,10 @@ export const advancedControlled = (
       <Collapsible.Advanced
         open={collapseIsOpen}
         onToggle={(isOpen) => setCollapseOpen(isOpen)}
-        className={collapsibleStyles.card}
+        className="collapsible-card"
       >
-        <Collapsible.Trigger className={collapsibleStyles.trigger}>
-          <h4 style={{ flexGrow: 1 }}>I'm a heading</h4>
+        <Collapsible.Trigger className="collapsible-trigger">
+          <h4 className="flex-grow-1">I'm a heading</h4>
 
           <Collapsible.Visible whenClosed>
             +
@@ -217,10 +215,10 @@ export const advancedControlled = (
           </Collapsible.Visible>
         </Collapsible.Trigger>
 
-        <Collapsible.Body className={collapsibleStyles.body}>
+        <Collapsible.Body className="collapsible-body">
           <p>Your stuff goes here.</p>
 
-          <Collapsible.Trigger closeOnly tag="button" className={collapsibleStyles.closeButton}>
+          <Collapsible.Trigger closeOnly tag="a" className="btn btn-outline-primary">
             Close
           </Collapsible.Trigger>
         </Collapsible.Body>

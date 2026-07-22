@@ -1,0 +1,9 @@
+/*
+ * The global, public class layer: Bootstrap-compatible component and utility
+ * classes that consuming MFEs apply to their own markup (see ADR 0022). Kept
+ * separate from the token CSS and from each component's internal CSS Modules so
+ * the public class contract is one importable stylesheet.
+ */
+@import "./utilities.css";
+@import "./button.css";
+@import "./collapsible.css";

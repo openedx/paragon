@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import styles from './Button.module.css';
+import '../styles/button.css';
 
 export interface ButtonToolbarProps {
   /** Specifies element type for this component (default: `div`). */
@@ -26,7 +26,7 @@ export const ButtonToolbar = React.forwardRef<HTMLElement, ButtonToolbarProps>((
       {...rest}
       ref={ref}
       role={role}
-      className={clsx(styles.btnToolbar, className)}
+      className={clsx('btn-toolbar', className)}
     >
       {children}
     </ElementType>

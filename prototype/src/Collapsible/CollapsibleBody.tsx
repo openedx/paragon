@@ -3,7 +3,7 @@ import { mergeProps } from 'react-aria';
 import clsx from 'clsx';
 
 import { useCollapsibleContext } from './CollapsibleAdvanced';
-import styles from './Collapsible.module.css';
+import '../styles/collapsible.css';
 
 export interface CollapsibleBodyProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -35,7 +35,7 @@ export const CollapsibleBody = ({
     <ElementType
       {...mergeProps(panelProps, rest)}
       ref={panelRef}
-      className={clsx(styles.panel, className)}
+      className={clsx('pgn__collapsible-panel', className)}
     >
       {children}
     </ElementType>

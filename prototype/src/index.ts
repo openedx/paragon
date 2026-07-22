@@ -1,5 +1,8 @@
 import './tokens.css';
 import './base.css';
+// The global, public, Bootstrap-compatible class layer (btn/utility/component
+// classes). Shipped for consumers who apply these classes to their own markup.
+import './styles/index.css';
 
 export {
   Button, ButtonGroup, ButtonToolbar,

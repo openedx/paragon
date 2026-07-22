@@ -79,13 +79,34 @@ Concretely:
    engine changes. This also retires ``uncontrollable``, ``tabbable``, and
    ``react-focus-on``.
 
-2. **Style layer → CSS Modules driven by token CSS variables.** Remove Bootstrap
-   SCSS. Each component's styles become a co-located ``*.module.css`` file that
-   references the existing token-derived CSS custom properties. The small
-   Bootstrap surface actually in use (``reboot``/``root``, grid, utilities) is
-   re-implemented with modern native CSS (nesting, ``:where()`` for low
-   specificity, logical properties for RTL, container queries). Consumer usage
-   (``dependent-usage.json``) guides which utilities to retain.
+2. **Style layer → a two-layer model over token CSS variables.** Remove Bootstrap
+   SCSS, replacing it with:
+
+   a. A **global, public class layer** — the Bootstrap-compatible class names
+      Paragon has always shipped and that consumers apply directly to their own
+      markup: the component classes (``btn``, ``btn-<variant>``, ``btn-lg``,
+      ``btn-group``, ``collapsible-card``, …), the grid (``col-*``), and the
+      layout/spacing utilities (``d-flex``, ``flex-grow-1``, …). **These class
+      names are part of Paragon's public API and are preserved**, so existing
+      consumer markup such as ``<a class="btn btn-primary">`` keeps rendering
+      correctly. They are re-authored from Bootstrap SCSS into plain native CSS
+      over the same ``--pgn-*`` tokens (``:where()`` for zero-specificity
+      utilities, logical properties for RTL, container queries), and generated
+      from the token set rather than hand-maintained. Consumer usage
+      (``dependent-usage.json``) guides which of Bootstrap's utilities to keep
+      versus drop via major-version releases.
+
+   b. **CSS Modules for component-internal implementation details** that are *not*
+      part of the public class contract (e.g. a disclosure's animation wrapper or
+      a focus-ring hook), so those stay locally scoped and cannot leak.
+
+   The public class layer is the single source of truth for appearance: React
+   components **apply the same public classes** a consumer would write by hand and
+   add only behavior (React Aria) on top, so a component and its raw-HTML
+   equivalent render identically. This supersedes an earlier prototype iteration
+   that styled ``Button`` with hashed CSS-Module classes plus a ``data-variant``
+   attribute; that approach broke the public class contract (a raw
+   ``<a class="btn btn-primary">`` received no styles) and is not carried forward.
 
 3. **Design-tokens theming API → preserved unchanged.** The ``style-dictionary``
    pipeline and the emitted ``core.css`` / ``light.css`` CSS-variable contract
@@ -148,15 +169,17 @@ Consequences
   major versions rather than a fork.
 - **Accessibility improves**, since React Aria's ARIA/keyboard/focus/i18n
   behavior is more rigorous and better maintained than our Bootstrap 4 baseline.
-- **The internal styling model changes** from global Bootstrap classes to
-  component-scoped CSS Modules over token variables. This reintroduces CSS
-  Modules (cf. ADR 0006) but without the Bootstrap-partial version-drift problem
-  that motivated their removal.
+- **The styling model splits into a public class layer and private CSS Modules.**
+  The Bootstrap-compatible class names remain global and public (see Decision 2a);
+  component-*internal* styles move to scoped CSS Modules over token variables.
+  This reintroduces CSS Modules (cf. ADR 0006) but without the Bootstrap-partial
+  version-drift problem that motivated their removal.
 - **Consumers relying on raw Bootstrap 4 class names** (e.g. ``btn``,
-  ``col-*``, Bootstrap utility classes) rather than Paragon components or tokens
-  will be affected. Paragon will provide a compatibility utility layer for the
-  classes real consumers depend on and communicate removals via major-version
-  releases.
+  ``btn-outline-primary``, ``col-*``, utility classes) rather than Paragon
+  components or tokens keep working: the class names they depend on are preserved
+  as the public class layer, re-authored in plain CSS over tokens. Any Bootstrap
+  classes no consumer uses (per ``dependent-usage.json``) are pruned via
+  major-version releases rather than silently.
 - **Guardrails required before removal steps:** snapshot the emitted CSS
   custom-property set (theming regression net), keep per-component
   ``@testing-library`` + a11y assertions as the public-API contract test, and use

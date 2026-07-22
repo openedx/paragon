@@ -6,13 +6,13 @@ import clsx from 'clsx';
 
 import type { ButtonProps } from './types';
 import { ButtonGroupContext } from './ButtonGroupContext';
-import styles from './Button.module.css';
+import '../styles/button.css';
 
 const SIZE_CLASS = {
-  sm: styles.sm,
+  sm: 'btn-sm',
   md: undefined,
-  lg: styles.lg,
-  inline: styles.inline,
+  lg: 'btn-lg',
+  inline: 'btn-inline',
 } as const;
 
 /**
@@ -59,8 +59,6 @@ export const Button = React.forwardRef<HTMLElement, ButtonProps>((
   );
   const { isFocusVisible, focusProps } = useFocusRing();
 
-  const isLink = variant === 'link';
-
   return (
     <ElementType
       {...mergeProps(buttonProps, focusProps, { onClick })}
@@ -70,28 +68,28 @@ export const Button = React.forwardRef<HTMLElement, ButtonProps>((
       // link elements, which is why `rest` must be spread last.
       {...rest}
       ref={ref}
-      // Styling is entirely token-driven CSS: `data-variant` selects the
-      // `.btn[data-variant="…"]` block in Button.module.css, which re-points the
-      // generic `--pgn-btn-*` custom properties. No inline styles.
-      data-variant={variant}
       data-pressed={isPressed || undefined}
       data-focus-visible={isFocusVisible || undefined}
+      // Styling comes from the global, public `btn` class layer (src/styles/
+      // button.css): `btn` + `btn-<variant>` (+ size/block). These are the same
+      // Bootstrap-compatible class names Paragon has always shipped, so a raw
+      // `<a class="btn btn-primary">` renders identically to this component.
       className={clsx(
-        styles.btn,
-        isLink && styles.link,
+        'btn',
+        `btn-${variant}`,
         SIZE_CLASS[resolvedSize],
-        block && styles.block,
+        block && 'btn-block',
         className,
       )}
     >
       {IconBefore && (
-        <span className={styles.iconBefore} aria-hidden>
+        <span className="btn-icon-before" aria-hidden>
           <IconBefore />
         </span>
       )}
       {children}
       {IconAfter && (
-        <span className={styles.iconAfter} aria-hidden>
+        <span className="btn-icon-after" aria-hidden>
           <IconAfter />
         </span>
       )}

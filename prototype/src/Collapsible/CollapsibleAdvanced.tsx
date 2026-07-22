@@ -5,7 +5,7 @@ import { useDisclosure, type AriaButtonProps } from 'react-aria';
 import { useDisclosureState } from 'react-stately';
 import clsx from 'clsx';
 
-import styles from './Collapsible.module.css';
+import '../styles/collapsible.css';
 
 /**
  * The value shared by `CollapsibleAdvanced` with its `Trigger`, `Body` and
@@ -146,7 +146,7 @@ export const CollapsibleAdvanced = React.forwardRef<CollapsibleHandle, Collapsib
   return (
     <div
       {...rest}
-      className={clsx(styles.collapsible, className)}
+      className={clsx('pgn_collapsible', className)}
       data-open={state.isExpanded || undefined}
     >
       <CollapsibleContext.Provider value={value}>

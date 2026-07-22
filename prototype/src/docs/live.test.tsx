@@ -23,7 +23,7 @@ describe('LivePlayground', () => {
   it('generates JSX from args and renders the matching Button', async () => {
     render(<LivePlayground variant="danger" size="lg" disabled>Go</LivePlayground>);
     const btn = await screen.findByRole('button', { name: 'Go' });
-    expect(btn).toHaveAttribute('data-variant', 'danger');
+    expect(btn).toHaveClass('btn', 'btn-danger');
   });
 
 });

@@ -13,9 +13,12 @@ describe('Button', () => {
     expect(btn.tagName).toBe('BUTTON');
   });
 
-  it('applies the variant as a data attribute so themes/tests can target it', () => {
+  it('applies the public Bootstrap-compatible variant class', () => {
     render(<Button variant="danger">Delete</Button>);
-    expect(screen.getByRole('button', { name: 'Delete' })).toHaveAttribute('data-variant', 'danger');
+    const btn = screen.getByRole('button', { name: 'Delete' });
+    // Global, stable class names (not hashed) — the same public API a raw
+    // `<a class="btn btn-danger">` relies on.
+    expect(btn).toHaveClass('btn', 'btn-danger');
   });
 
   it('forwards the legacy onClick handler', async () => {

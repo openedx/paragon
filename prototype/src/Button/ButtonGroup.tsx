@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import type { ButtonSize } from './types';
 import { ButtonGroupContext } from './ButtonGroupContext';
-import styles from './Button.module.css';
+import '../styles/button.css';
 
 export interface ButtonGroupProps {
   /** Specifies element type for this component (default: `div`). */
@@ -42,7 +42,7 @@ export const ButtonGroup = React.forwardRef<HTMLElement, ButtonGroupProps>((
         {...rest}
         ref={ref}
         role={role}
-        className={clsx(styles.btnGroup, vertical && styles.btnGroupVertical, className)}
+        className={clsx('btn-group', vertical && 'btn-group-vertical', className)}
       >
         {children}
       </ElementType>

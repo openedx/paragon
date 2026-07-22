@@ -19,9 +19,12 @@ on Bootstrap or `react-bootstrap`:
 - **Behavior** comes from [React Aria](https://react-spectrum.adobe.com/react-aria/)'s
   `useButton` — cross-device press handling, keyboard support, and correct
   `disabled` semantics even when the button is rendered as an `<a>`.
-- **Styling** is a co-located CSS Module that reads the same `--pgn-*` design
-  tokens the library ships today, so theming (including `@edx/brand` overrides)
-  is unaffected.
+- **Styling** comes from the global, public `btn` class layer
+  (`src/styles/button.css`) over the same `--pgn-*` design tokens the library
+  ships today, so theming (`@edx/brand` overrides) is unaffected. `btn` /
+  `btn-<variant>` are the same Bootstrap-compatible class names Paragon has
+  always shipped, so the component and a raw `<a class="btn btn-primary">` render
+  identically.
 - **Focus** uses a keyboard-only focus ring (`:focus-visible` via React Aria's
   `[data-focus-visible]`).
 

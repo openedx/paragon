@@ -10,7 +10,13 @@ import CollapsibleAdvanced, {
 import CollapsibleTrigger from './CollapsibleTrigger';
 import CollapsibleBody from './CollapsibleBody';
 import CollapsibleVisible from './CollapsibleVisible';
-import styles from './Collapsible.module.css';
+import '../styles/collapsible.css';
+
+const STYLING_CLASS: Record<CollapsibleStyling, string> = {
+  basic: 'collapsible-basic',
+  card: 'collapsible-card',
+  'card-lg': 'collapsible-card-lg',
+};
 
 /** Style variant of the convenience `Collapsible`. */
 export type CollapsibleStyling = 'basic' | 'card' | 'card-lg';
@@ -78,21 +84,17 @@ export const Collapsible = React.forwardRef<CollapsibleHandle, CollapsibleProps>
   const openIcon = iconWhenOpen ?? <ExpandLess />;
   const titleElement = React.isValidElement(title) ? title : <span>{title}</span>;
 
-  const stylingClass = styling === 'basic'
-    ? styles.basic
-    : clsx(styles.card, styling === 'card-lg' && styles.cardLg);
-
   return (
-    <CollapsibleAdvanced {...other} ref={ref} className={clsx(stylingClass, className)}>
-      <CollapsibleTrigger className={styles.trigger}>
+    <CollapsibleAdvanced {...other} ref={ref} className={clsx(STYLING_CLASS[styling], className)}>
+      <CollapsibleTrigger className="collapsible-trigger">
         {titleElement}
-        <span className={styles.icon}>
+        <span className="collapsible-icon">
           <CollapsibleVisible whenClosed>{closedIcon}</CollapsibleVisible>
           <CollapsibleVisible whenOpen>{openIcon}</CollapsibleVisible>
         </span>
       </CollapsibleTrigger>
 
-      <CollapsibleBody className={styles.body}>{children}</CollapsibleBody>
+      <CollapsibleBody className="collapsible-body">{children}</CollapsibleBody>
     </CollapsibleAdvanced>
   );
 }) as CollapsibleComponent;

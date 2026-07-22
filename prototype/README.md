@@ -14,7 +14,7 @@ Paragon Working Group evaluate the approach concretely.
 | Concern | Old | This prototype |
 | --- | --- | --- |
 | Behavior | `react-bootstrap` | **React Aria** (`useButton`, `useFocusRing`) |
-| Styling | Bootstrap 4 SCSS, global classes | **CSS Modules** over the same `--pgn-*` tokens |
+| Styling | Bootstrap 4 SCSS, global classes | Public **global classes** (`btn`, utilities) re-authored in plain CSS + **CSS Modules** for internals, all over the same `--pgn-*` tokens |
 | Theming API | `style-dictionary` → CSS vars | **Unchanged** — imported verbatim (`src/tokens.css`) |
 | Types | mixed `.jsx`/`.tsx` | **100% TypeScript** |
 | Build | Babel + tsc + Makefile | **Vite** library mode + `vite-plugin-dts` |
@@ -62,16 +62,23 @@ can bump `typescript` accordingly.
    working and expose `onPress` alongside it. **Decision needed:** whether to
    deprecate `onClick` over a major version or keep both indefinitely.
 
-3. **Variant theming is per-variant CSS**, not inline styles. Each variant has a
-   `.btn[data-variant="…"]` block in `Button.module.css` that re-points the
-   generic `--pgn-btn-*` custom properties to that variant's tokens — a 1:1 port
-   of the SCSS `button-variant` mixin. The component only sets `data-variant`;
-   there are no inline styles. (Stack's `gap` works the same way, via `.gap-*`
-   classes.) This keeps all styling in CSS at the cost of verbosity, so the
-   blocks are generated from the token set rather than hand-maintained. An
-   earlier revision did this remapping inline in `Button.tsx` (`variantVars`);
-   moving it to CSS keeps rendered elements attribute-only and lets the whole
-   variant surface be themed/inspected in one place.
+3. **The Bootstrap-compatible classes stay global and public.** `btn`,
+   `btn-<variant>`, `btn-lg`, `btn-group`, `collapsible-card`, and the layout
+   utilities (`d-flex`, `flex-grow-1`, …) are part of Paragon's public API —
+   consumers write them on their own markup (`<a class="btn btn-primary">`), so
+   they must keep working. They live in a global class layer
+   ([src/styles/](src/styles/)), re-authored from SCSS into plain CSS over the
+   same `--pgn-*` tokens: each variant is a `.btn-<variant>` block re-pointing the
+   generic `--pgn-btn-*` custom properties (a 1:1 port of the SCSS
+   `button-variant` mixin), generated from the token set. The `Button` /
+   `Collapsible` components **apply these same public classes** and add React Aria
+   behavior on top, so a component and its raw-HTML equivalent render identically.
+   CSS Modules are still used, but only for component-*internal* details that are
+   not part of the public class contract (e.g. Collapsible's disclosure animation
+   wrapper and focus-ring hook). An earlier revision of this prototype styled
+   `Button` with hashed CSS-Module classes plus a `data-variant` attribute; that
+   broke the public contract (a raw `<a class="btn btn-primary">` got no styles),
+   so it was replaced by this global layer. See ADR 0022 Decision 2.
 
 4. **Focus uses `[data-focus-visible]` from React Aria** instead of `:focus`,
    so the focus ring shows only for keyboard users.

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Button, ButtonGroup, ButtonToolbar } from '../Button';
 import { Stack } from '../Stack';
 import { Collapsible } from '../Collapsible';
-import collapsibleStyles from '../Collapsible/Collapsible.module.css';
 import { ExamplePropsForm } from './ExamplePropsForm';
 
 /** A tiny inline icon so live examples can demonstrate icon slots dependency-free. */
@@ -45,9 +44,6 @@ export const scope = {
   ButtonToolbar,
   Stack,
   Collapsible,
-  // The Collapsible CSS Module, so `Collapsible.Advanced` examples can apply the
-  // card/basic style presets by name (e.g. `className={collapsibleStyles.card}`).
-  collapsibleStyles,
   ExamplePropsForm,
   DotIcon,
   Add,
