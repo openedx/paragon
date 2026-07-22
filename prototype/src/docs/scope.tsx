@@ -1,5 +1,10 @@
+import React, { useState } from 'react';
+
 import { Button, ButtonGroup, ButtonToolbar } from '../Button';
 import { Stack } from '../Stack';
+import { Collapsible } from '../Collapsible';
+import collapsibleStyles from '../Collapsible/Collapsible.module.css';
+import { ExamplePropsForm } from './ExamplePropsForm';
 
 /** A tiny inline icon so live examples can demonstrate icon slots dependency-free. */
 export function DotIcon() {
@@ -32,10 +37,18 @@ export const Highlight = icon('M6 14l3 3v5h6v-5l3-3V9H6v5zM11 2h2v3h-2V2zM3.5 5.
  * Paragon's current Gatsby docs supply component scope in `www/.../CodeBlock.tsx`.
  */
 export const scope = {
+  // React itself, so live examples can use hooks (`useState`) and `React.*`.
+  React,
+  useState,
   Button,
   ButtonGroup,
   ButtonToolbar,
   Stack,
+  Collapsible,
+  // The Collapsible CSS Module, so `Collapsible.Advanced` examples can apply the
+  // card/basic style presets by name (e.g. `className={collapsibleStyles.card}`).
+  collapsibleStyles,
+  ExamplePropsForm,
   DotIcon,
   Add,
   Remove,

@@ -9,3 +9,21 @@ export type {
 } from './Button';
 export { Stack } from './Stack';
 export type { StackProps } from './Stack';
+export {
+  Collapsible,
+  CollapsibleAdvanced,
+  CollapsibleContext,
+  CollapsibleTrigger,
+  CollapsibleBody,
+  CollapsibleVisible,
+} from './Collapsible';
+export type {
+  CollapsibleProps,
+  CollapsibleStyling,
+  CollapsibleAdvancedProps,
+  CollapsibleHandle,
+  CollapsibleContextValue,
+  CollapsibleTriggerProps,
+  CollapsibleBodyProps,
+  CollapsibleVisibleProps,
+} from './Collapsible';

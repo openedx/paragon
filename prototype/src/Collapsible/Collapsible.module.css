@@ -1,0 +1,143 @@
+/*
+ * Collapsible styles — a CSS Modules port of src/Collapsible/index.scss.
+ *
+ * Every value still comes from the same `--pgn-*` design tokens; nothing is
+ * hard-coded. Differences from the Bootstrap-era SCSS:
+ *   - Class names are locally scoped (no global `.collapsible-card` leakage);
+ *     the structural `.panel`/`.focusRing` classes are applied by the
+ *     components, and the `.card`/`.basic` style presets are applied by the
+ *     convenience `Collapsible`.
+ *   - `.card`/`.card-body` no longer `@extend` Bootstrap's `.card`; the handful
+ *     of card properties actually used are inlined from the same card tokens.
+ *   - The body's expand/collapse animation is driven by React Aria's
+ *     `--disclosure-panel-height` custom property instead of the JS-based
+ *     `Collapse` / `TransitionReplace` components.
+ *   - Focus is driven by React Aria's `[data-focus-visible]` instead of `:focus`.
+ *   - Logical properties (`margin-inline-start`) give RTL support without a
+ *     `[dir=rtl]` override.
+ */
+
+.collapsible {
+  /* The composable root; unstyled by default like Paragon's CollapsibleAdvanced. */
+  text-align: start;
+}
+
+/*
+ * The disclosure panel. React Aria's `useDisclosure` sets
+ * `--disclosure-panel-height` on this element (a pixel value while animating,
+ * then `auto`) and adds `hidden="until-found"` once fully collapsed. We animate
+ * `height` from that property; `box-sizing: border-box` keeps the body's own
+ * padding inside the animated height so it collapses cleanly to zero.
+ */
+.panel {
+  box-sizing: border-box;
+  overflow: hidden;
+  height: var(--disclosure-panel-height, auto);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .panel {
+    transition: height 300ms ease;
+  }
+}
+
+/* Keyboard-only focus ring for the (div-based) trigger, mirroring Button. */
+.focusRing[data-focus-visible] {
+  outline: var(--pgn-size-btn-focus-width, 2px) solid var(--pgn-color-primary-base);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ card --- */
+
+.card {
+  background-color: var(--pgn-color-card-bg-base);
+  border: var(--pgn-size-card-border-width) solid var(--pgn-color-card-border-base);
+  border-radius: 0;
+}
+
+.card .trigger {
+  padding: var(--pgn-spacing-collapsible-card-spacer-y-base) var(--pgn-spacing-collapsible-card-spacer-x-base);
+  border-radius: var(--pgn-size-card-border-radius-inner);
+  border-bottom: var(--pgn-size-card-border-width) solid transparent;
+  transition: border-color 100ms ease 150ms;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: start;
+}
+
+.card .trigger > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.card .trigger[aria-expanded="true"] {
+  border-radius: var(--pgn-size-card-border-radius-inner) var(--pgn-size-card-border-radius-inner) 0 0;
+  border-color: var(--pgn-color-card-border-base);
+  transition: none;
+}
+
+.card .body {
+  padding: var(--pgn-spacing-collapsible-card-spacer-y-base) var(--pgn-spacing-collapsible-card-spacer-x-base);
+  padding-left: var(--pgn-spacing-collapsible-card-spacer-left-body);
+  text-align: start;
+}
+
+.card .body > *:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------- card-lg --- */
+
+.cardLg .trigger {
+  padding: var(--pgn-spacing-collapsible-card-spacer-y-lg) var(--pgn-spacing-collapsible-card-spacer-x-lg);
+}
+
+.cardLg .body {
+  padding: var(--pgn-spacing-collapsible-card-spacer-y-lg) var(--pgn-spacing-collapsible-card-spacer-x-lg);
+}
+
+/* ----------------------------------------------------------------- basic --- */
+
+.basic .trigger {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  text-decoration: underline;
+  color: var(--pgn-color-primary-base);
+  padding: var(--pgn-spacing-collapsible-card-spacer-basic-y) var(--pgn-spacing-collapsible-card-spacer-basic-x);
+}
+
+.basic .body {
+  padding: var(--pgn-spacing-collapsible-card-spacer-basic-y) var(--pgn-spacing-collapsible-card-spacer-basic-x);
+  text-align: start;
+}
+
+/* ------------------------------------------------------------------ icon --- */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  margin-inline-start: var(--pgn-spacing-collapsible-card-spacer-icon);
+}
+
+.basic .icon {
+  margin-inline-start: var(--pgn-spacing-collapsible-card-spacer-basic-icon);
+}
+
+/*
+ * A convenience "outline-primary" button look for the docs' close-button
+ * example — a token-driven stand-in for the `btn btn-outline-primary` utility
+ * classes the original README uses, exposed to live examples via `collapsibleStyles`.
+ */
+.closeButton {
+  margin-top: 1rem;
+  padding: var(--pgn-spacing-btn-padding-y-base) var(--pgn-spacing-btn-padding-x-base);
+  border: var(--pgn-size-btn-border-width) solid var(--pgn-color-btn-border-outline-primary);
+  border-radius: var(--pgn-size-btn-border-radius-base);
+  background-color: transparent;
+  color: var(--pgn-color-btn-text-outline-primary);
+  font: inherit;
+  cursor: pointer;
+}
