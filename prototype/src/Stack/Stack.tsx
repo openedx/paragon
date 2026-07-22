@@ -39,7 +39,6 @@ export const Stack = React.forwardRef<HTMLDivElement, StackProps>((
     reversed = false,
     children,
     className,
-    style,
     ...rest
   },
   ref,
@@ -49,14 +48,11 @@ export const Stack = React.forwardRef<HTMLDivElement, StackProps>((
     className={clsx(
       direction === 'horizontal' ? styles.hstack : styles.vstack,
       reversed && styles.reversed,
+      // Select the spacer-scale gap class (e.g. 1.5 -> `gap-1-5`). All styling
+      // lives in the CSS Module; the component sets no inline styles.
+      styles[`gap-${String(gap).replace('.', '-')}`],
       className,
     )}
-    style={{
-      // Map the numeric gap onto the spacer token scale (e.g. 1.5 -> `1-5`),
-      // keeping spacing token-driven and themeable.
-      '--pgn-stack-gap': `var(--pgn-spacing-spacer-${String(gap).replace('.', '-')})`,
-      ...style,
-    } as React.CSSProperties}
     {...rest}
   >
     {children}

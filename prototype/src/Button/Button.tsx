@@ -4,38 +4,9 @@ import {
 } from 'react-aria';
 import clsx from 'clsx';
 
-import type { ButtonProps, ButtonVariant } from './types';
+import type { ButtonProps } from './types';
 import { ButtonGroupContext } from './ButtonGroupContext';
 import styles from './Button.module.css';
-
-/**
- * Maps the generic `--pgn-btn-*` custom properties consumed by the base `.btn`
- * rule to the variant-specific token variables. This is a 1:1 port of the SCSS
- * `button-variant` mixin — the mixin only ever re-pointed these variables, so
- * doing it inline keeps the styling token-driven while avoiding 44 near-identical
- * CSS blocks. (A static-class alternative is noted in the prototype README.)
- */
-function variantVars(variant: ButtonVariant): React.CSSProperties {
-  const v = variant;
-  return {
-    '--pgn-btn-color': `var(--pgn-color-btn-text-${v})`,
-    '--pgn-btn-bg': `var(--pgn-color-btn-bg-${v})`,
-    '--pgn-btn-border-color': `var(--pgn-color-btn-border-${v})`,
-    '--pgn-btn-hover-color': `var(--pgn-color-btn-hover-text-${v})`,
-    '--pgn-btn-hover-bg': `var(--pgn-color-btn-hover-bg-${v})`,
-    '--pgn-btn-hover-border-color': `var(--pgn-color-btn-hover-border-${v})`,
-    '--pgn-btn-disabled-color': `var(--pgn-color-btn-disabled-text-${v})`,
-    '--pgn-btn-disabled-bg': `var(--pgn-color-btn-disabled-bg-${v})`,
-    '--pgn-btn-disabled-border-color': `var(--pgn-color-btn-disabled-border-${v})`,
-    '--pgn-btn-active-color': `var(--pgn-color-btn-active-text-${v})`,
-    '--pgn-btn-active-bg': `var(--pgn-color-btn-active-bg-${v})`,
-    '--pgn-btn-active-border-color': `var(--pgn-color-btn-active-border-${v})`,
-    '--pgn-btn-focus-outline-color': `var(--pgn-color-btn-focus-outline-${v})`,
-    '--pgn-btn-focus-color': `var(--pgn-color-btn-focus-text-${v})`,
-    '--pgn-btn-focus-border-color': `var(--pgn-color-btn-focus-border-${v})`,
-    '--pgn-btn-focus-bg': `var(--pgn-color-btn-focus-bg-${v})`,
-  } as React.CSSProperties;
-}
 
 const SIZE_CLASS = {
   sm: styles.sm,
@@ -99,7 +70,9 @@ export const Button = React.forwardRef<HTMLElement, ButtonProps>((
       // link elements, which is why `rest` must be spread last.
       {...rest}
       ref={ref}
-      style={isLink ? undefined : variantVars(variant)}
+      // Styling is entirely token-driven CSS: `data-variant` selects the
+      // `.btn[data-variant="…"]` block in Button.module.css, which re-points the
+      // generic `--pgn-btn-*` custom properties. No inline styles.
       data-variant={variant}
       data-pressed={isPressed || undefined}
       data-focus-visible={isFocusVisible || undefined}

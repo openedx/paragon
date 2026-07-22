@@ -16,17 +16,16 @@ describe('Stack', () => {
     expect(screen.getByTestId('stack').className).toMatch(/hstack/);
   });
 
-  it('resolves the gap to the matching spacer token', () => {
+  it('applies the gap class for the matching spacer level', () => {
     render(<Stack data-testid="stack" gap={3}>Content</Stack>);
-    // Gap is token-driven: the component sets --pgn-stack-gap to the spacer var.
-    expect(screen.getByTestId('stack').style.getPropertyValue('--pgn-stack-gap'))
-      .toBe('var(--pgn-spacing-spacer-3)');
+    // Gap is token-driven via a CSS Module class, not an inline style.
+    expect(screen.getByTestId('stack').className).toMatch(/gap-3/);
+    expect(screen.getByTestId('stack').getAttribute('style')).toBeNull();
   });
 
-  it('maps half-step gaps onto the spacer scale (1.5 -> 1-5)', () => {
+  it('maps half-step gaps onto the spacer scale (1.5 -> gap-1-5)', () => {
     render(<Stack data-testid="stack" gap={1.5}>Content</Stack>);
-    expect(screen.getByTestId('stack').style.getPropertyValue('--pgn-stack-gap'))
-      .toBe('var(--pgn-spacing-spacer-1-5)');
+    expect(screen.getByTestId('stack').className).toMatch(/gap-1-5/);
   });
 
   it('applies the reversed modifier', () => {
@@ -41,11 +40,11 @@ describe('Stack', () => {
     expect(stack).toHaveAttribute('aria-label', 'things');
   });
 
-  it('merges a caller-supplied style with the gap variable', () => {
+  it('forwards a caller-supplied style alongside the gap class', () => {
     render(<Stack data-testid="stack" gap={2} style={{ marginTop: '1rem' }}>Content</Stack>);
     const stack = screen.getByTestId('stack');
     expect(stack.style.marginTop).toBe('1rem');
-    expect(stack.style.getPropertyValue('--pgn-stack-gap')).toBe('var(--pgn-spacing-spacer-2)');
+    expect(stack.className).toMatch(/gap-2/);
   });
 
   it('forwards a ref to the underlying element', () => {

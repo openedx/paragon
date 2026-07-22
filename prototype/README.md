@@ -49,11 +49,16 @@ npm run build      # ESM + .d.ts into dist/
    working and expose `onPress` alongside it. **Decision needed:** whether to
    deprecate `onClick` over a major version or keep both indefinitely.
 
-3. **Variant theming is inline token-variable remapping** (`variantVars` in
-   `Button.tsx`), a 1:1 port of the SCSS `button-variant` mixin. This avoids 44
-   near-identical CSS rules. The alternative — static per-variant classes or
-   `[data-variant]` blocks — keeps all styling in CSS at the cost of verbosity.
-   Worth a WG preference call before rolling out to 60+ components.
+3. **Variant theming is per-variant CSS**, not inline styles. Each variant has a
+   `.btn[data-variant="…"]` block in `Button.module.css` that re-points the
+   generic `--pgn-btn-*` custom properties to that variant's tokens — a 1:1 port
+   of the SCSS `button-variant` mixin. The component only sets `data-variant`;
+   there are no inline styles. (Stack's `gap` works the same way, via `.gap-*`
+   classes.) This keeps all styling in CSS at the cost of verbosity, so the
+   blocks are generated from the token set rather than hand-maintained. An
+   earlier revision did this remapping inline in `Button.tsx` (`variantVars`);
+   moving it to CSS keeps rendered elements attribute-only and lets the whole
+   variant surface be themed/inspected in one place.
 
 4. **Focus uses `[data-focus-visible]` from React Aria** instead of `:focus`,
    so the focus ring shows only for keyboard users.
