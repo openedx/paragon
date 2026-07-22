@@ -1,34 +1,33 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Button } from './Button';
-import { ButtonGroup } from './ButtonGroup';
-import { ButtonToolbar } from './ButtonToolbar';
+import { Stack } from '../Stack';
 import type { BaseVariant } from './types';
 import { LivePlayground } from '../docs/LivePlayground';
+import {
+  Add, Remove, ArrowBack, ArrowDropDown, Highlight,
+} from '../docs/scope';
+import { extractExamples } from '../docs/extractExamples';
+import raw from './Button.stories.tsx?raw';
 
 const BASE_VARIANTS: BaseVariant[] = [
   'primary', 'secondary', 'tertiary', 'brand', 'success',
   'danger', 'warning', 'info', 'dark', 'light', 'link',
 ];
 
-// A tiny inline icon so stories stay dependency-free.
-function DotIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden>
-      <circle cx="8" cy="8" r="5" />
-    </svg>
-  );
-}
-
 const meta: Meta<typeof Button> = {
   // Kept under a separate, fully-hidden root so it does NOT share a title with
   // the `Buttonlike/Button` docs page — that keeps the MDX an unattached, single
-  // sidebar leaf (no "Docs" sub-node). Stories are the raw material for that
+  // sidebar leaf (no "Docs" sub-node). The story is the raw material for that
   // page, hidden from the sidebar via `!dev` but still referenceable through
   // `<Story of>` / `<Controls of>`.
   title: 'Internal/Button',
   component: Button,
   tags: ['!dev'],
+  // Only PascalCase exports are Storybook stories. The camelCase exports at the
+  // bottom of this file (`coreButtons`, … and the `examples` source map) are the
+  // docs' live-example source — real TSX so `tsc` typechecks them — not stories.
+  includeStories: /^[A-Z]/,
   parameters: { layout: 'padded' },
   args: {
     children: 'Button',
@@ -62,88 +61,119 @@ export const Playground: Story = {
   render: (args) => <LivePlayground {...args} />,
 };
 
-export const Variants: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '.75rem', flexWrap: 'wrap' }}>
-      {BASE_VARIANTS.map((v) => (
-        <Button key={v} variant={v}>{v}</Button>
-      ))}
-    </div>
-  ),
-};
+/*
+ * ---------------------------------------------------------------------------
+ * Docs live examples.
+ *
+ * Authored as real TSX so TypeScript typechecks every prop against the Button
+ * types (a bad `variant`, a removed prop, or a mistyped icon fails
+ * `npm run type-check`). Their verbatim source is extracted (see
+ * `extractExamples`) and fed to react-live, so the docs stay editable.
+ *
+ * These are camelCase on purpose — `includeStories` above keeps Storybook from
+ * treating them as stories. Each must be a single JSX expression wrapped in
+ * `( … )` (react-live evaluates one; the extractor keys off that shape).
+ * ---------------------------------------------------------------------------
+ */
 
-export const OutlineAndInverse: Story = {
-  render: () => (
-    <div style={{ display: 'grid', gap: '.75rem' }}>
-      <div style={{ display: 'flex', gap: '.75rem', flexWrap: 'wrap' }}>
-        {BASE_VARIANTS.filter((v) => v !== 'link').map((v) => (
-          <Button key={v} variant={`outline-${v}` as const}>{`outline-${v}`}</Button>
-        ))}
-      </div>
-      <div style={{ display: 'flex', gap: '.75rem', flexWrap: 'wrap', background: '#0A3055', padding: '1rem' }}>
-        {BASE_VARIANTS.filter((v) => v !== 'link').map((v) => (
-          <Button key={v} variant={`inverse-${v}` as const}>{`inverse-${v}`}</Button>
-        ))}
-      </div>
-    </div>
-  ),
-};
+export const coreButtons = (
+  <Stack gap={2} direction="horizontal">
+    <Button variant="brand">Brand</Button>
+    <Button variant="outline-brand">Outline Brand</Button>
+    <Button variant="primary">Primary</Button>
+    <Button variant="outline-primary">Outline Primary</Button>
+    <Button variant="tertiary">Tertiary</Button>
+  </Stack>
+);
 
-export const Sizes: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '.75rem', alignItems: 'center' }}>
-      <Button size="sm">Small</Button>
-      <Button size="md">Medium</Button>
-      <Button size="lg">Large</Button>
-      <span>
-        Text with an
-        {' '}
-        <Button size="inline" variant="link">inline</Button>
-        {' '}
-        button.
-      </span>
-    </div>
-  ),
-};
+export const coreButtonsInverse = (
+  <Stack
+    gap={2}
+    direction="horizontal"
+    style={{ backgroundColor: 'var(--pgn-color-dark-700)', padding: '1rem' }}
+  >
+    <Button variant="inverse-brand">Brand</Button>
+    <Button variant="inverse-outline-brand">Outline Brand</Button>
+    <Button variant="inverse-primary">Primary</Button>
+    <Button variant="inverse-outline-primary">Outline Primary</Button>
+    <Button variant="inverse-tertiary">Tertiary</Button>
+  </Stack>
+);
 
-export const WithIcons: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '.75rem' }}>
-      <Button iconBefore={DotIcon}>Icon before</Button>
-      <Button iconAfter={DotIcon}>Icon after</Button>
-      <Button iconBefore={DotIcon} iconAfter={DotIcon}>Both</Button>
-    </div>
-  ),
-};
+export const utilityButtons = (
+  <>
+    <Stack gap={2} direction="horizontal" style={{ marginBottom: '0.5rem' }}>
+      <Button variant="success">Success</Button>
+      <Button variant="danger">Danger</Button>
+      <Button variant="outline-success">Success</Button>
+      <Button variant="outline-danger">Danger</Button>
+    </Stack>
+    <Stack gap={2} direction="horizontal">
+      <Button variant="link">Link</Button>
+      <Button variant="light">Light</Button>
+      <Button variant="dark">Dark</Button>
+      <Button variant="outline-light">Light</Button>
+      <Button variant="outline-dark">Dark</Button>
+    </Stack>
+  </>
+);
 
-export const Disabled: Story = {
-  args: { disabled: true },
-};
+export const sizes = (
+  <>
+    <Stack gap={2} direction="horizontal" style={{ marginBottom: '0.5rem' }}>
+      <Button variant="primary" size="lg">Large button</Button>
+      <Button variant="outline-primary" size="lg">Large button</Button>
+    </Stack>
+    <Stack gap={2} direction="horizontal" style={{ marginBottom: '0.5rem' }}>
+      <Button variant="primary" size="sm">Small button</Button>
+      <Button variant="outline-primary" size="sm">Small button</Button>
+    </Stack>
+    <Stack gap={2} direction="horizontal">
+      <Button variant="link" size="inline">Inline button</Button>
+      <Button variant="link" size="inline">Inline button</Button>
+    </Stack>
+  </>
+);
 
-/** Demonstrates polymorphism: rendered as an anchor, still keyboard-accessible
- *  and correctly disabled via React Aria (no `pointer-events` hack needed). */
-export const AsAnchor: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '.75rem' }}>
-      <Button as="a" href="https://openedx.org" variant="primary">Link that looks like a button</Button>
-      <Button as="a" variant="outline-primary" disabled>Disabled anchor</Button>
-    </div>
-  ),
-};
+export const inlineSize = (
+  <p>
+    <span style={{ marginRight: '0.25rem' }}>2 items selected.</span>
+    <span style={{ marginRight: '0.25rem' }}><Button variant="link" size="inline">Select all</Button></span>
+    <Button variant="link" size="inline">Clear</Button>
+  </p>
+);
 
-export const Groups: Story = {
-  render: () => (
-    <ButtonToolbar aria-label="Formatting">
-      <ButtonGroup aria-label="Text style" size="sm">
-        <Button variant="outline-primary">Bold</Button>
-        <Button variant="outline-primary">Italic</Button>
-        <Button variant="outline-primary">Underline</Button>
-      </ButtonGroup>
-      <ButtonGroup aria-label="Alignment">
-        <Button variant="outline-secondary">Left</Button>
-        <Button variant="outline-secondary">Center</Button>
-        <Button variant="outline-secondary">Right</Button>
-      </ButtonGroup>
-    </ButtonToolbar>
-  ),
-};
+export const blockButtons = (
+  <>
+    <Button variant="primary" size="lg" block>Block level button</Button>
+    <Button variant="secondary" size="lg" block>Block level button</Button>
+  </>
+);
+
+export const disabled = (
+  <Stack gap={2} direction="horizontal">
+    <Button variant="primary" disabled>Primary disabled</Button>
+    <Button variant="secondary" disabled>Secondary disabled</Button>
+    <Button as="a" href="https://edx.org" disabled>Link disabled</Button>
+  </Stack>
+);
+
+export const emptyHref = (
+  <Stack gap={2} direction="horizontal">
+    <Button as="a" disabled>No href</Button>
+    <Button as="a" href="" disabled>Empty string href</Button>
+  </Stack>
+);
+
+export const withIcons = (
+  <Stack gap={2} direction="horizontal">
+    <Button variant="brand" iconBefore={ArrowBack}>Brand</Button>
+    <Button variant="outline-brand" iconAfter={ArrowDropDown}>Outline Brand</Button>
+    <Button variant="primary" iconBefore={Remove} iconAfter={Add}>Primary</Button>
+    <Button variant="outline-primary" iconBefore={Highlight}>Outline Primary</Button>
+    <Button variant="tertiary" iconAfter={Add}>Tertiary</Button>
+  </Stack>
+);
+
+/** Editable source strings for react-live, extracted verbatim from this file. */
+export const examples = extractExamples(raw);

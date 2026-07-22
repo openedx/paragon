@@ -3,6 +3,8 @@ import { Meta, Title, Subtitle, Story, Controls } from '@storybook/addon-docs/bl
 import * as ButtonStories from './Button.stories';
 import { LiveExample } from '../docs/LiveExample';
 
+export const examples = ButtonStories.examples;
+
 <Meta title="Buttonlike/Button" />
 
 <Title>Button</Title>
@@ -34,133 +36,52 @@ directly in the editor to experiment. Changing a control overwrites the editor.
 
 {/*
   The sections below mirror the existing Paragon docs (src/Button/README.md)
-  1:1 and in the same order, so the two docs are easy to compare. The JSX is
-  kept close to the original; `Stack` and the named icons are provided via the
-  react-live scope, and the original Bootstrap utility classes
-  (`bg-dark-700`, `p-4`, `mb-2`, `mr-1`) are expressed as inline styles since
-  the prototype does not ship Bootstrap's utility classes.
+  1:1 and in the same order, so the two docs are easy to compare. The examples
+  are authored as real TSX in `Button.examples.tsx` (so TypeScript typechecks
+  every prop) and their source is rendered here, editable, via react-live. The
+  original Bootstrap utility classes (`bg-dark-700`, `p-4`, `mb-2`, `mr-1`) are
+  expressed as inline styles since the prototype does not ship them.
 */}
 
 ## Core Buttons
 
-<LiveExample code={`
-<Stack gap={2} direction="horizontal">
-  <Button variant="brand">Brand</Button>
-  <Button variant="outline-brand">Outline Brand</Button>
-  <Button variant="primary">Primary</Button>
-  <Button variant="outline-primary">Outline Primary</Button>
-  <Button variant="tertiary">Tertiary</Button>
-</Stack>
-`} />
+<LiveExample code={examples.coreButtons} />
 
 ## Core Buttons (Inverse Pallete)
 
-<LiveExample code={`
-<Stack
-  gap={2}
-  direction="horizontal"
-  style={{ backgroundColor: 'var(--pgn-color-dark-700)', padding: '1rem' }}
->
-  <Button variant="inverse-brand">Brand</Button>
-  <Button variant="inverse-outline-brand">Outline Brand</Button>
-  <Button variant="inverse-primary">Primary</Button>
-  <Button variant="inverse-outline-primary">Outline Primary</Button>
-  <Button variant="inverse-tertiary">Tertiary</Button>
-</Stack>
-`} />
+<LiveExample code={examples.coreButtonsInverse} />
 
 ## Utility Buttons
 
-<LiveExample code={`
-<>
-  <Stack gap={2} direction="horizontal" style={{ marginBottom: '0.5rem' }}>
-    <Button variant="success">Success</Button>
-    <Button variant="danger">Danger</Button>
-    <Button variant="outline-success">Success</Button>
-    <Button variant="outline-danger">Danger</Button>
-  </Stack>
-  <Stack gap={2} direction="horizontal">
-    <Button variant="link">Link</Button>
-    <Button variant="light">Light</Button>
-    <Button variant="dark">Dark</Button>
-    <Button variant="outline-light">Light</Button>
-    <Button variant="outline-dark">Dark</Button>
-  </Stack>
-</>
-`} />
+<LiveExample code={examples.utilityButtons} />
 
 ## Size
 
-<LiveExample code={`
-<>
-  <Stack gap={2} direction="horizontal" style={{ marginBottom: '0.5rem' }}>
-    <Button variant="primary" size="lg">Large button</Button>
-    <Button variant="outline-primary" size="lg">Large button</Button>
-  </Stack>
-  <Stack gap={2} direction="horizontal" style={{ marginBottom: '0.5rem' }}>
-    <Button variant="primary" size="sm">Small button</Button>
-    <Button variant="outline-primary" size="sm">Small button</Button>
-  </Stack>
-  <Stack gap={2} direction="horizontal">
-    <Button variant="link" size="inline">Inline button</Button>
-    <Button variant="link" size="inline">Inline button</Button>
-  </Stack>
-</>
-`} />
+<LiveExample code={examples.sizes} />
 
 ### When to use the inline size
 
 Use inline size buttons for when a button sits with a line of text.
 
-<LiveExample code={`
-<p>
-  <span style={{ marginRight: '0.25rem' }}>2 items selected.</span>
-  <span style={{ marginRight: '0.25rem' }}><Button variant="link" size="inline">Select all</Button></span>
-  <Button variant="link" size="inline">Clear</Button>
-</p>
-`} />
+<LiveExample code={examples.inlineSize} />
 
 ## Block Buttons
 
-<LiveExample code={`
-<>
-  <Button variant="primary" size="lg" block>Block level button</Button>
-  <Button variant="secondary" size="lg" block>Block level button</Button>
-</>
-`} />
+<LiveExample code={examples.blockButtons} />
 
 ### Disabled
 
-<LiveExample code={`
-<Stack gap={2} direction="horizontal">
-  <Button variant="primary" disabled>Primary disabled</Button>
-  <Button variant="secondary" disabled>Secondary disabled</Button>
-  <Button as="a" href="https://edx.org" disabled>Link disabled</Button>
-</Stack>
-`} />
+<LiveExample code={examples.disabled} />
 
 ### With empty href
 
 For link to be `disabled`, it must have href defined with some value.
 
-<LiveExample code={`
-<Stack gap={2} direction="horizontal">
-  <Button as="a" disabled>No href</Button>
-  <Button as="a" href="" disabled>Empty string href</Button>
-</Stack>
-`} />
+<LiveExample code={examples.emptyHref} />
 
 ### With Icons before or after
 
-<LiveExample code={`
-<Stack gap={2} direction="horizontal">
-  <Button variant="brand" iconBefore={ArrowBack}>Brand</Button>
-  <Button variant="outline-brand" iconAfter={ArrowDropDown}>Outline Brand</Button>
-  <Button variant="primary" iconBefore={Remove} iconAfter={Add}>Primary</Button>
-  <Button variant="outline-primary" iconBefore={Highlight}>Outline Primary</Button>
-  <Button variant="tertiary" iconAfter={Add}>Tertiary</Button>
-</Stack>
-`} />
+<LiveExample code={examples.withIcons} />
 
 ## Stateful buttons
 

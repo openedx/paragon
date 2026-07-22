@@ -3,6 +3,8 @@ import { Meta, Title, Subtitle, Story, Controls } from '@storybook/addon-docs/bl
 import * as ButtonGroupStories from './ButtonGroup.stories';
 import { LiveExample } from '../docs/LiveExample';
 
+export const examples = ButtonGroupStories.examples;
+
 <Meta title="Buttonlike/ButtonGroup" />
 
 <Title>Button Group</Title>
@@ -28,57 +30,28 @@ import { Button, ButtonGroup } from '@openedx/paragon';
 </ButtonGroup>
 ```
 
-<Story of={ButtonGroupStories.Default} />
+<Story of={ButtonGroupStories.Playground} />
 
 ## Props
 
-<Controls of={ButtonGroupStories.Default} />
+<Controls of={ButtonGroupStories.Playground} />
 
 ## Sizes
 
 A group sets the size of every button it contains — set it once on the group
 rather than on each `Button`.
 
-<LiveExample code={`
-<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
-  <ButtonGroup size="sm" aria-label="Small">
-    <Button variant="outline-primary">One</Button>
-    <Button variant="outline-primary">Two</Button>
-  </ButtonGroup>
-  <ButtonGroup size="lg" aria-label="Large">
-    <Button variant="outline-primary">One</Button>
-    <Button variant="outline-primary">Two</Button>
-  </ButtonGroup>
-</div>
-`} />
+<LiveExample code={examples.sizes} />
 
 ## Vertical
 
-<LiveExample code={`
-<ButtonGroup vertical aria-label="Vertical">
-  <Button variant="outline-primary">Top</Button>
-  <Button variant="outline-primary">Middle</Button>
-  <Button variant="outline-primary">Bottom</Button>
-</ButtonGroup>
-`} />
+<LiveExample code={examples.vertical} />
 
 ## ButtonToolbar
 
 Compose several groups inside a `ButtonToolbar`.
 
-<LiveExample code={`
-<ButtonToolbar aria-label="Formatting">
-  <ButtonGroup aria-label="Text style" size="sm">
-    <Button variant="outline-primary">Bold</Button>
-    <Button variant="outline-primary">Italic</Button>
-  </ButtonGroup>
-  <ButtonGroup aria-label="Alignment" size="sm">
-    <Button variant="outline-secondary">Left</Button>
-    <Button variant="outline-secondary">Center</Button>
-    <Button variant="outline-secondary">Right</Button>
-  </ButtonGroup>
-</ButtonToolbar>
-`} />
+<LiveExample code={examples.toolbar} />
 
 ## Accessibility notes
 
