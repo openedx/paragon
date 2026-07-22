@@ -9,7 +9,7 @@
 
 .preview {
   padding: 1.5rem;
-  background: #fff;
+  background-color: var(--pgn-color-light-200);
   /* A plain block formatting context (not a flex row): each example lays out its
      own children — usually via <Stack> — so block-level/flex-container siblings
      (e.g. multiple horizontal Stacks, or `block` buttons) stack vertically and
