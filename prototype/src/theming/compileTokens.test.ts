@@ -39,3 +39,24 @@ describe('non-colour global tokens', () => {
     expect(vars['--pgn-size-btn-focus-border-radius-base']).toBe('calc(1rem + calc(2px + 2px))');
   });
 });
+
+describe('nav / tabs theming', () => {
+  it('derives the active tab text colour from primary', async () => {
+    const { vars } = await compileTokens();
+    expect(vars['--pgn-color-nav-tabs-base-link-active-text']).toBe('#0A3055FF');
+  });
+
+  it('recolours the active tab text when $primary changes', async () => {
+    const { vars } = await compileTokens({ primary: '#7A1FA2' });
+    expect(vars['--pgn-color-nav-tabs-base-link-active-text']).toBe('#7A1FA2FF');
+  });
+});
+
+describe('nav tabs active border', () => {
+  it('derives the active tab border from primary and tracks it', async () => {
+    const base = await compileTokens();
+    expect(base.vars['--pgn-border-color-nav-tabs-link-border-active']).toBe('#0A3055FF');
+    const themed = await compileTokens({ primary: '#7A1FA2' });
+    expect(themed.vars['--pgn-border-color-nav-tabs-link-border-active']).toBe('#7A1FA2FF');
+  });
+});

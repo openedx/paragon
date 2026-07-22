@@ -42,6 +42,19 @@
   gap: 0.5rem;
 }
 
+/* Buttons and tabs use `font-family: inherit` so that, in a real consuming app,
+   they follow the body's base font. Inside Storybook's docs frame that chain is
+   broken: the docs reset sets `font-family` on the wrapper elements, so `inherit`
+   resolves to Storybook's font rather than the base. Custom properties, however,
+   inherit reliably (that's why the colour tokens work here), so we resolve the
+   base font family from the token variable directly. This is a preview-only
+   workaround for the docs environment — the token data itself is unchanged. */
+.preview :global(.btn),
+.preview :global(.nav-link),
+.preview :global(.tab-content) {
+  font-family: var(--pgn-typography-font-family-base);
+}
+
 /* Sample prose that renders in the base font tokens, so the Font family control
    has something obvious (beyond the buttons) to affect. */
 .proseSample {

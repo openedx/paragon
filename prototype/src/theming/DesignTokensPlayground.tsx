@@ -4,6 +4,7 @@ import {
 } from 'react';
 
 import { Button, ButtonGroup } from '../Button';
+import { Tabs, Tab } from '../Tabs';
 import {
   BASE_COLORS, VARIANTS, BASE_TOKEN_PATH, GLOBAL_CONTROLS, type Variant,
 } from './tokenTree';
@@ -178,6 +179,24 @@ export function DesignTokensPlayground() {
               <Button variant="outline-primary">Right</Button>
             </ButtonGroup>
           </div>
+        </div>
+        <div className={styles.previewSection}>
+          <h4>Tabs</h4>
+          {/* The active tab's text derives from primary (see tokenTree.ts), and
+              tab labels inherit the base font — so Tabs theme with the controls too. */}
+          <Tabs defaultActiveKey="overview">
+            <Tab eventKey="overview" title="Overview">
+              The active tab’s text colour follows <code>$primary</code>, and every
+              label inherits the base font family.
+            </Tab>
+            <Tab eventKey="details" title="Details">
+              Switch the primary colour or the font family and watch this navigation
+              re-theme along with the buttons.
+            </Tab>
+            <Tab eventKey="archived" title="Archived" disabled>
+              Disabled tab.
+            </Tab>
+          </Tabs>
         </div>
       </div>
 

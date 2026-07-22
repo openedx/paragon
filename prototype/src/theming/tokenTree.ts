@@ -209,8 +209,22 @@ export function buildTokenTree(
 
   color.theme = theme;
   color.btn = btn;
+  // A slice of the nav/tabs colour tokens, so the Tabs in the preview theme too:
+  // the active tab's text derives from primary (mirrors tokens/src). Inactive tab
+  // text (gray) is left to the global stylesheet, exactly as in the real tokens.
+  color.nav = {
+    tabs: { base: { link: { active: { text: ref('color.primary.500') } } } },
+  };
 
-  const tree = { color, ...buildGlobalTokens() };
+  const tree = {
+    color,
+    // The active tab's bottom border also derives from primary in tokens/src, so
+    // the underline under the selected tab tracks the primary colour.
+    'border-color': {
+      nav: { 'tabs-link': { border: { active: ref('color.primary.500') } } },
+    },
+    ...buildGlobalTokens(),
+  };
 
   // Apply literal pins for individually-edited derived tokens.
   for (const [path, value] of Object.entries(tokenOverrides)) {
@@ -309,11 +323,10 @@ export const GLOBAL_CONTROLS: GlobalControl[] = [
       { label: 'Serif', value: SERIF_FONT_STACK },
       { label: 'Monospace', value: MONOSPACE_FONT_STACK },
     ],
-    // The button font-family token is the CSS keyword `inherit` — its own value
-    // never changes, yet buttons still follow the base via the CSS cascade.
-    related: ['typography.btn.font.family'],
-    relatedLabel: 'Consumed by buttons',
-    relatedNote: 'The button font-family is the CSS keyword “inherit”, not a reference to the base above — so buttons follow the base font through the CSS cascade, and its token value stays “inherit”.',
+    // Buttons and tabs consume `typography.btn.font.family` / `font-family:
+    // inherit`, which is the CSS keyword `inherit` — they follow this base font
+    // through the cascade rather than a token reference. (That token stays in the
+    // compiled output; it just isn't a separately-editable control here.)
   },
   {
     path: 'typography.btn.font.size.base',
