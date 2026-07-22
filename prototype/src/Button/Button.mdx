@@ -32,62 +32,143 @@ directly in the editor to experiment. Changing a control overwrites the editor.
 
 <Controls of={ButtonStories.Playground} />
 
-## Variants
+{/*
+  The sections below mirror the existing Paragon docs (src/Button/README.md)
+  1:1 and in the same order, so the two docs are easy to compare. The JSX is
+  kept close to the original; `Stack` and the named icons are provided via the
+  react-live scope, and the original Bootstrap utility classes
+  (`bg-dark-700`, `p-4`, `mb-2`, `mr-1`) are expressed as inline styles since
+  the prototype does not ship Bootstrap's utility classes.
+*/}
 
-Eleven base variants, each with `outline-`, `inverse-`, and `inverse-outline-`
-forms. Variant theming is a pure remapping of design-token CSS variables — no
-per-variant styles are hand-written.
-
-<LiveExample code={`
-<div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-  <Button variant="primary">primary</Button>
-  <Button variant="secondary">secondary</Button>
-  <Button variant="brand">brand</Button>
-  <Button variant="success">success</Button>
-  <Button variant="danger">danger</Button>
-  <Button variant="outline-primary">outline-primary</Button>
-  <Button variant="inverse-primary">inverse-primary</Button>
-  <Button variant="link">link</Button>
-</div>
-`} />
-
-## Sizes
-
-`sm`, `md` (default), `lg`, and Paragon's `inline` size for buttons that sit
-within a line of text.
+## Core Buttons
 
 <LiveExample code={`
-<div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-  <Button size="sm">Small</Button>
-  <Button size="md">Medium</Button>
-  <Button size="lg">Large</Button>
-</div>
+<Stack gap={2} direction="horizontal">
+  <Button variant="brand">Brand</Button>
+  <Button variant="outline-brand">Outline Brand</Button>
+  <Button variant="primary">Primary</Button>
+  <Button variant="outline-primary">Outline Primary</Button>
+  <Button variant="tertiary">Tertiary</Button>
+</Stack>
 `} />
 
-## Icons
-
-Pass any icon component to \`iconBefore\` and/or \`iconAfter\`.
+## Core Buttons (Inverse Pallete)
 
 <LiveExample code={`
-<div style={{ display: 'flex', gap: '0.75rem' }}>
-  <Button iconBefore={DotIcon}>Icon before</Button>
-  <Button iconAfter={DotIcon}>Icon after</Button>
-  <Button iconBefore={DotIcon} iconAfter={DotIcon}>Both</Button>
-</div>
+<Stack
+  gap={2}
+  direction="horizontal"
+  style={{ backgroundColor: 'var(--pgn-color-dark-700)', padding: '1rem' }}
+>
+  <Button variant="inverse-brand">Brand</Button>
+  <Button variant="inverse-outline-brand">Outline Brand</Button>
+  <Button variant="inverse-primary">Primary</Button>
+  <Button variant="inverse-outline-primary">Outline Primary</Button>
+  <Button variant="inverse-tertiary">Tertiary</Button>
+</Stack>
 `} />
 
-## Polymorphism (`as`)
-
-Render as any element while keeping accessible button behavior. A disabled
-anchor is handled via `aria-disabled` rather than the legacy
-`pointer-events: none` hack.
+## Utility Buttons
 
 <LiveExample code={`
-<div style={{ display: 'flex', gap: '0.75rem' }}>
-  <Button as="a" href="https://openedx.org" variant="primary">Link button</Button>
-  <Button as="a" variant="outline-primary" disabled>Disabled anchor</Button>
-</div>
+<>
+  <Stack gap={2} direction="horizontal" style={{ marginBottom: '0.5rem' }}>
+    <Button variant="success">Success</Button>
+    <Button variant="danger">Danger</Button>
+    <Button variant="outline-success">Success</Button>
+    <Button variant="outline-danger">Danger</Button>
+  </Stack>
+  <Stack gap={2} direction="horizontal">
+    <Button variant="link">Link</Button>
+    <Button variant="light">Light</Button>
+    <Button variant="dark">Dark</Button>
+    <Button variant="outline-light">Light</Button>
+    <Button variant="outline-dark">Dark</Button>
+  </Stack>
+</>
 `} />
+
+## Size
+
+<LiveExample code={`
+<>
+  <Stack gap={2} direction="horizontal" style={{ marginBottom: '0.5rem' }}>
+    <Button variant="primary" size="lg">Large button</Button>
+    <Button variant="outline-primary" size="lg">Large button</Button>
+  </Stack>
+  <Stack gap={2} direction="horizontal" style={{ marginBottom: '0.5rem' }}>
+    <Button variant="primary" size="sm">Small button</Button>
+    <Button variant="outline-primary" size="sm">Small button</Button>
+  </Stack>
+  <Stack gap={2} direction="horizontal">
+    <Button variant="link" size="inline">Inline button</Button>
+    <Button variant="link" size="inline">Inline button</Button>
+  </Stack>
+</>
+`} />
+
+### When to use the inline size
+
+Use inline size buttons for when a button sits with a line of text.
+
+<LiveExample code={`
+<p>
+  <span style={{ marginRight: '0.25rem' }}>2 items selected.</span>
+  <span style={{ marginRight: '0.25rem' }}><Button variant="link" size="inline">Select all</Button></span>
+  <Button variant="link" size="inline">Clear</Button>
+</p>
+`} />
+
+## Block Buttons
+
+<LiveExample code={`
+<>
+  <Button variant="primary" size="lg" block>Block level button</Button>
+  <Button variant="secondary" size="lg" block>Block level button</Button>
+</>
+`} />
+
+### Disabled
+
+<LiveExample code={`
+<Stack gap={2} direction="horizontal">
+  <Button variant="primary" disabled>Primary disabled</Button>
+  <Button variant="secondary" disabled>Secondary disabled</Button>
+  <Button as="a" href="https://edx.org" disabled>Link disabled</Button>
+</Stack>
+`} />
+
+### With empty href
+
+For link to be `disabled`, it must have href defined with some value.
+
+<LiveExample code={`
+<Stack gap={2} direction="horizontal">
+  <Button as="a" disabled>No href</Button>
+  <Button as="a" href="" disabled>Empty string href</Button>
+</Stack>
+`} />
+
+### With Icons before or after
+
+<LiveExample code={`
+<Stack gap={2} direction="horizontal">
+  <Button variant="brand" iconBefore={ArrowBack}>Brand</Button>
+  <Button variant="outline-brand" iconAfter={ArrowDropDown}>Outline Brand</Button>
+  <Button variant="primary" iconBefore={Remove} iconAfter={Add}>Primary</Button>
+  <Button variant="outline-primary" iconBefore={Highlight}>Outline Primary</Button>
+  <Button variant="tertiary" iconAfter={Add}>Tertiary</Button>
+</Stack>
+`} />
+
+## Stateful buttons
+
+To implement a loading state, Paragon provides the `StatefulButton` component
+(not part of this prototype). It manages and displays loading/complete states
+for a more efficient, user-friendly experience.
+
+{/* --- Additions beyond the original README --- */}
 
 ## Grouping
 
