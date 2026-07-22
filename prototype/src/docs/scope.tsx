@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button, ButtonGroup, ButtonToolbar } from '../Button';
 import { Stack } from '../Stack';
 import { Collapsible } from '../Collapsible';
+import { Tabs, Tab } from '../Tabs';
 
 /** A tiny inline icon so live examples can demonstrate icon slots dependency-free. */
 export function DotIcon() {
@@ -43,6 +44,8 @@ export const scope = {
   ButtonToolbar,
   Stack,
   Collapsible,
+  Tabs,
+  Tab,
   DotIcon,
   Add,
   Remove,

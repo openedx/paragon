@@ -30,3 +30,7 @@ export type {
   CollapsibleBodyProps,
   CollapsibleVisibleProps,
 } from './Collapsible';
+export { Tabs, Tab, MORE_TAB_TEXT } from './Tabs';
+export type {
+  TabsProps, TabsVariant, TabProps,
+} from './Tabs';
