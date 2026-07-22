@@ -19,7 +19,10 @@ export interface LiveExampleProps {
  */
 export function LiveExample({ code }: LiveExampleProps) {
   return (
-    <div className={styles.live}>
+    // `sb-unstyled` opts the preview out of Storybook's docs typography reset
+    // (which otherwise forces "Nunito Sans" onto every div in the docs prose),
+    // so components render in the Paragon base font like a real consuming app.
+    <div className={`${styles.live} sb-unstyled`}>
       <LiveProvider code={code.trim()} scope={scope}>
         <LivePreview className={styles.preview} />
         <div className={styles.editorLabel}>Editable — try changing the code</div>

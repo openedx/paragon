@@ -31,7 +31,8 @@ export function generateCode(args: Partial<ButtonProps>): string {
 export function LivePlayground(args: Partial<ButtonProps>) {
   const code = generateCode(args);
   return (
-    <div className={styles.live}>
+    // `sb-unstyled`: opt out of Storybook's docs font reset (see LiveExample).
+    <div className={`${styles.live} sb-unstyled`}>
       {/* key={code}: a new generated string (from a changed control) forces a
           remount so the editor content is replaced with the regenerated JSX. */}
       <LiveProvider key={code} code={code} scope={scope}>

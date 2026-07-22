@@ -14,6 +14,11 @@
   flex-wrap: wrap;
   gap: .5rem;
   align-items: center;
+  /* Anchor the Paragon base typography so previews render like a consuming app,
+     independent of Storybook's own docs font (which would otherwise be inherited
+     by inline examples). */
+  font-family: var(--pgn-typography-font-family-base);
+  color: var(--pgn-color-body-base);
 }
 
 .editor {
