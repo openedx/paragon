@@ -89,6 +89,16 @@ export function generateCode(
   return `<${component}${attrStr}>${body}</${component}>`;
 }
 
+/**
+ * Resolves a Playground's optional `children` text arg into the JSX-source string
+ * for `generateCode`'s `children` option: when the control has been set to a
+ * non-empty string it is used verbatim (so a consumer can type text or JSX);
+ * otherwise the component's default example template is kept.
+ */
+export function playgroundChildren(children: unknown, defaultTemplate: string): string {
+  return typeof children === 'string' && children.trim() ? children : defaultTemplate;
+}
+
 export interface LivePlaygroundProps {
   /** The generated JSX snippet — rendered live and shown in the editor. */
   code: string;

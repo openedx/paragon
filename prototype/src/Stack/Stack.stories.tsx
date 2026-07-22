@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Stack } from './Stack';
 import { Button } from '../Button';
-import { LivePlayground, generateCode } from '../docs/LivePlayground';
+import { LivePlayground, generateCode, playgroundChildren } from '../docs/LivePlayground';
 import { extractExamples } from '../docs/extractExamples';
 import raw from './Stack.stories.tsx?raw';
 
@@ -27,6 +27,9 @@ const meta: Meta<typeof Stack> = {
       },
     },
     reversed: { control: 'boolean' },
+    // Plain-text children make no sense here (a Stack lays out elements); hide the
+    // control rather than let Storybook auto-generate a ReactNode "Set object" one.
+    children: { table: { disable: true } },
   },
 };
 
@@ -38,11 +41,11 @@ export const Playground: Story = {
     <LivePlayground
       code={generateCode('Stack', args, {
         defaults: { direction: 'vertical', reversed: false },
-        children: [
+        children: playgroundChildren(args.children, [
           '<Button variant="primary">first button</Button>',
           '<Button variant="primary">second button</Button>',
           '<Button variant="primary">third button</Button>',
-        ].join('\n'),
+        ].join('\n')),
       })}
     />
   ),

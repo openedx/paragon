@@ -2,7 +2,9 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
 import { LiveExample } from './LiveExample';
-import { LivePlayground, generateCode, raw } from './LivePlayground';
+import {
+  LivePlayground, generateCode, raw, playgroundChildren,
+} from './LivePlayground';
 
 // react-live computes the preview element in an effect, so the rendered Button
 // appears after the initial commit — hence the async `findBy*` queries.
@@ -62,5 +64,17 @@ describe('generateCode (Controls → JSX)', () => {
     expect(generateCode('Collapsible', { iconWhenClosed: raw('<Add />') }, {
       children: '<p>Body</p>',
     })).toBe('<Collapsible iconWhenClosed={<Add />}><p>Body</p></Collapsible>');
+  });
+});
+
+describe('playgroundChildren (optional children override)', () => {
+  it('uses a non-empty string value verbatim', () => {
+    expect(playgroundChildren('<Button>Hi</Button>', '<p>Default</p>'))
+      .toBe('<Button>Hi</Button>');
+  });
+
+  it('falls back to the default template when unset or blank', () => {
+    expect(playgroundChildren(undefined, '<p>Default</p>')).toBe('<p>Default</p>');
+    expect(playgroundChildren('   ', '<p>Default</p>')).toBe('<p>Default</p>');
   });
 });

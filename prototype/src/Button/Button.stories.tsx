@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from './Button';
 import { Stack } from '../Stack';
 import type { BaseVariant } from './types';
-import { LivePlayground, generateCode } from '../docs/LivePlayground';
+import { LivePlayground, generateCode, playgroundChildren } from '../docs/LivePlayground';
 import {
   Add, Remove, ArrowBack, ArrowDropDown, Highlight,
 } from '../docs/scope';
@@ -59,7 +59,12 @@ type Story = StoryObj<typeof Button>;
  */
 export const Playground: Story = {
   render: (args) => (
-    <LivePlayground code={generateCode('Button', args, { defaults: { size: 'md' } })} />
+    <LivePlayground
+      code={generateCode('Button', args, {
+        defaults: { size: 'md' },
+        children: playgroundChildren(args.children, 'Button'),
+      })}
+    />
   ),
 };
 

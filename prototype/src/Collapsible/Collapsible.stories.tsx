@@ -4,7 +4,9 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Collapsible } from './Collapsible';
 import type { CollapsibleStyling } from './Collapsible';
 import { ExamplePropsForm } from '../docs/ExamplePropsForm';
-import { LivePlayground, generateCode, raw as rawExpr } from '../docs/LivePlayground';
+import {
+  LivePlayground, generateCode, raw as rawExpr, playgroundChildren,
+} from '../docs/LivePlayground';
 import { extractExamples } from '../docs/extractExamples';
 import raw from './Collapsible.stories.tsx?raw';
 
@@ -29,6 +31,7 @@ const meta: Meta<typeof Collapsible> = {
     title: { control: 'text' },
     styling: { control: 'inline-radio', options: ['basic', 'card', 'card-lg'] },
     defaultOpen: { control: 'boolean' },
+    children: { control: 'text' },
     // The icon slots take JSX, but the control only carries a choice string that
     // the Playground maps to the JSX shown in the generated snippet (see below).
     iconWhenClosed: {
@@ -68,7 +71,7 @@ export const Playground: Story = {
         iconWhenOpen: iconProp(args.iconWhenOpen as IconChoice, '<Remove />', 'Close'),
       }, {
         defaults: { styling: 'card', defaultOpen: false },
-        children: '<p>Your stuff goes here.</p>',
+        children: playgroundChildren(args.children, '<p>Your stuff goes here.</p>'),
       })}
     />
   ),

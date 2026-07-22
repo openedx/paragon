@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from './Button';
 import { ButtonGroup } from './ButtonGroup';
 import { ButtonToolbar } from './ButtonToolbar';
-import { LivePlayground, generateCode } from '../docs/LivePlayground';
+import { LivePlayground, generateCode, playgroundChildren } from '../docs/LivePlayground';
 import { extractExamples } from '../docs/extractExamples';
 import raw from './ButtonGroup.stories.tsx?raw';
 
@@ -20,6 +20,9 @@ const meta: Meta<typeof ButtonGroup> = {
   argTypes: {
     size: { control: 'inline-radio', options: ['sm', 'md', 'lg', 'inline'] },
     vertical: { control: 'boolean' },
+    // Plain-text children make no sense here (the group holds Buttons); hide the
+    // control rather than let Storybook auto-generate a ReactNode "Set object" one.
+    children: { table: { disable: true } },
   },
 };
 
@@ -31,11 +34,11 @@ export const Playground: Story = {
     <LivePlayground
       code={generateCode('ButtonGroup', { ...args, 'aria-label': 'Text style' }, {
         defaults: { size: 'md' },
-        children: [
+        children: playgroundChildren(args.children, [
           '<Button variant="outline-primary">Bold</Button>',
           '<Button variant="outline-primary">Italic</Button>',
           '<Button variant="outline-primary">Underline</Button>',
-        ].join('\n'),
+        ].join('\n')),
       })}
     />
   ),
