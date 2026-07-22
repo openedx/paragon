@@ -1,0 +1,181 @@
+/*
+ * Styling for the interactive Theme Variables table (see ThemeVariables.tsx).
+ *
+ * Mirrors the read-only "Theme Variables" table the current Paragon docs render
+ * (www/src/components/ComponentVariablesTable.tsx) but adds an editable value
+ * column: edits are written as `--pgn-*` custom properties on the live preview,
+ * so consumers can see a token change ripple through the buttons immediately.
+ */
+
+.root {
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+/* Live preview area — the container these custom-property overrides are applied
+   to, so every descendant .btn re-reads the edited tokens. */
+.preview {
+  padding: 1.5rem;
+  background-color: var(--pgn-color-light-200);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-family: var(--pgn-typography-font-family-base);
+  color: var(--pgn-color-body-base);
+}
+
+.previewRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: #f4f4f6;
+  border-top: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.toolbarLabel {
+  font: 600 11px/1 system-ui, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b6b7b;
+}
+
+.resetAll {
+  font: 600 12px/1 system-ui, sans-serif;
+  color: #3a3a4a;
+  background: #fff;
+  border: 1px solid #c4c4cc;
+  border-radius: 4px;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+}
+
+.resetAll:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 12.5px;
+}
+
+.table th {
+  text-align: left;
+  font: 600 11px/1 system-ui, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b6b7b;
+  padding: 0.6rem 1rem;
+  background: #fafafa;
+  border-bottom: 1px solid #e2e2e6;
+  position: sticky;
+  top: 0;
+}
+
+.groupRow td {
+  padding: 0.6rem 1rem 0.3rem;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f2;
+}
+
+.groupLabel {
+  font: 700 11px/1 system-ui, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9a9aa6;
+}
+
+.table td {
+  padding: 0.4rem 1rem;
+  border-bottom: 1px solid #f0f0f2;
+  vertical-align: middle;
+}
+
+.varName {
+  color: #2d2d38;
+  white-space: nowrap;
+}
+
+.overridden .varName::after {
+  content: "edited";
+  margin-inline-start: 0.5rem;
+  font: 600 9px/1 system-ui, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #7a5cff;
+  background: #efeaff;
+  border-radius: 3px;
+  padding: 2px 4px;
+  vertical-align: middle;
+}
+
+.valueCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.swatch {
+  inline-size: 1.4rem;
+  block-size: 1.4rem;
+  padding: 0;
+  border: 1px solid #c4c4cc;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  flex: none;
+}
+
+.valueInput {
+  flex: 1 1 auto;
+  min-width: 8rem;
+  font-family: inherit;
+  font-size: 12.5px;
+  padding: 0.3rem 0.45rem;
+  border: 1px solid #c4c4cc;
+  border-radius: 4px;
+  background: #fff;
+  color: #2d2d38;
+}
+
+.valueInput:focus {
+  outline: 2px solid #7a5cff;
+  outline-offset: -1px;
+  border-color: #7a5cff;
+}
+
+.resetRow {
+  font: 600 15px/1 system-ui, sans-serif;
+  color: #9a9aa6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  visibility: hidden;
+}
+
+.overridden .resetRow {
+  visibility: visible;
+}
+
+.resetRow:hover {
+  color: #3a3a4a;
+}

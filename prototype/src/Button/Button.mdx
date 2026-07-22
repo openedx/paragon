@@ -2,6 +2,7 @@ import { Meta, Title, Subtitle, Story, Controls } from '@storybook/addon-docs/bl
 
 import * as ButtonStories from './Button.stories';
 import { LiveExample } from '../docs/LiveExample';
+import { ThemeVariables } from '../docs/ThemeVariables';
 
 export const examples = ButtonStories.examples;
 
@@ -93,6 +94,25 @@ To implement a loading state, Paragon provides the `StatefulButton` component
 for a more efficient, user-friendly experience.
 
 {/* --- Additions beyond the original README --- */}
+
+## Theme Variables
+
+Button appearance is authored entirely over Paragon's `--pgn-*` design tokens —
+the same set the current docs list under
+[Theme variables](https://paragon-openedx.netlify.app/components/button/). Edit
+any value below and the preview buttons update instantly, because every `.btn`
+rule reads these custom properties at render time. This is exactly how
+`@edx/brand` themes Paragon: it re-points these tokens, and the button module
+follows along without any component changes.
+
+The upstream table auto-generates its list by scraping `var(--pgn-…)` references
+from Button's SCSS, which means it silently omits every **per-variant colour**
+(`--pgn-color-btn-bg-primary`, `-brand`, `-secondary`, …) — in the SCSS those are
+written with interpolation (`--pgn-color-btn-bg-#{$variant}`) the scraper's regex
+can't match, even though they are the tokens that actually colour each button.
+They are included below.
+
+<ThemeVariables />
 
 ## Grouping
 
