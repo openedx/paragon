@@ -15,5 +15,5 @@
     "declaration": true,
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": ["src", "vitest.setup.ts", ".storybook"]
+  "include": ["src", "vitest.setup.ts", ".storybook/**/*.tsx"]
 }
