@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
 import { LiveExample } from './LiveExample';
-import { LivePlayground, generateCode } from './LivePlayground';
+import { LivePlayground, generateCode, raw } from './LivePlayground';
 
 // react-live computes the preview element in an effect, so the rendered Button
 // appears after the initial commit — hence the async `findBy*` queries.
@@ -56,5 +56,11 @@ describe('generateCode (Controls → JSX)', () => {
   it('self-closes when there is no body', () => {
     expect(generateCode('Button', { variant: 'danger', disabled: true }))
       .toBe('<Button variant="danger" disabled />');
+  });
+
+  it('emits a raw() prop value verbatim inside braces (not quoted)', () => {
+    expect(generateCode('Collapsible', { iconWhenClosed: raw('<Add />') }, {
+      children: '<p>Body</p>',
+    })).toBe('<Collapsible iconWhenClosed={<Add />}><p>Body</p></Collapsible>');
   });
 });

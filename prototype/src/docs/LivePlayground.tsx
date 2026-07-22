@@ -5,6 +5,25 @@ import {
 import { scope } from './scope';
 import styles from './live.module.css';
 
+const RAW = Symbol('raw');
+
+/** A prop value that `generateCode` should emit verbatim inside `{…}`. */
+export interface RawExpr { [RAW]: string; }
+
+/**
+ * Marks a string as a raw JSX expression so `generateCode` emits it as
+ * `name={expr}` rather than the quoted `name="expr"`. Use it for props whose
+ * value is JSX rather than a primitive, e.g. `iconWhenClosed={raw('<Add />')}`
+ * (the referenced identifier must be in `scope`).
+ */
+export function raw(expr: string): RawExpr {
+  return { [RAW]: expr };
+}
+
+function isRaw(value: unknown): value is RawExpr {
+  return typeof value === 'object' && value !== null && RAW in value;
+}
+
 export interface GenerateCodeOptions {
   /**
    * Prop values equal to these are treated as the component's default and are
@@ -51,6 +70,8 @@ export function generateCode(
     if (value === undefined || value === null || value === false) continue;
     if (value === true) {
       attrs.push(name);
+    } else if (isRaw(value)) {
+      attrs.push(`${name}={${value[RAW]}}`);
     } else if (typeof value === 'string') {
       attrs.push(`${name}="${value}"`);
     } else {

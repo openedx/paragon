@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Collapsible } from './Collapsible';
 import type { CollapsibleStyling } from './Collapsible';
 import { ExamplePropsForm } from '../docs/ExamplePropsForm';
-import { LivePlayground, generateCode } from '../docs/LivePlayground';
+import { LivePlayground, generateCode, raw as rawExpr } from '../docs/LivePlayground';
 import { extractExamples } from '../docs/extractExamples';
 import raw from './Collapsible.stories.tsx?raw';
 
@@ -22,21 +22,51 @@ const meta: Meta<typeof Collapsible> = {
     title: 'Toggle Collapsible',
     styling: 'basic',
     defaultOpen: false,
+    iconWhenClosed: 'unset',
+    iconWhenOpen: 'unset',
   },
   argTypes: {
     title: { control: 'text' },
     styling: { control: 'inline-radio', options: ['basic', 'card', 'card-lg'] },
     defaultOpen: { control: 'boolean' },
+    // The icon slots take JSX, but the control only carries a choice string that
+    // the Playground maps to the JSX shown in the generated snippet (see below).
+    iconWhenClosed: {
+      options: ['unset', 'icon', 'text'],
+      control: { type: 'inline-radio', labels: { unset: '(unset)', icon: '+ icon', text: '"Open" text' } },
+    },
+    iconWhenOpen: {
+      options: ['unset', 'icon', 'text'],
+      control: { type: 'inline-radio', labels: { unset: '(unset)', icon: '– icon', text: '"Close" text' } },
+    },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof Collapsible>;
 
+type IconChoice = 'unset' | 'icon' | 'text';
+
+/**
+ * Maps the Playground's icon radio choice to the value the generated snippet
+ * shows: `unset` omits the prop (Collapsible falls back to its chevrons), `icon`
+ * emits a raw `<Add />` / `<Remove />` (the `+` / `–` icons from the Button docs,
+ * in live `scope`), and `text` passes a plain string the trigger renders as-is.
+ */
+function iconProp(choice: IconChoice, iconExpr: string, text: string) {
+  if (choice === 'icon') return rawExpr(iconExpr);
+  if (choice === 'text') return text;
+  return undefined;
+}
+
 export const Playground: Story = {
   render: (args) => (
     <LivePlayground
-      code={generateCode('Collapsible', args, {
+      code={generateCode('Collapsible', {
+        ...args,
+        iconWhenClosed: iconProp(args.iconWhenClosed as IconChoice, '<Add />', 'Open'),
+        iconWhenOpen: iconProp(args.iconWhenOpen as IconChoice, '<Remove />', 'Close'),
+      }, {
         defaults: { styling: 'card', defaultOpen: false },
         children: '<p>Your stuff goes here.</p>',
       })}
