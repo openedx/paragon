@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Collapsible } from './Collapsible';
 import type { CollapsibleStyling } from './Collapsible';
 import { ExamplePropsForm } from '../docs/ExamplePropsForm';
+import { LivePlayground, generateCode } from '../docs/LivePlayground';
 import { extractExamples } from '../docs/extractExamples';
 import raw from './Collapsible.stories.tsx?raw';
 
@@ -19,7 +20,7 @@ const meta: Meta<typeof Collapsible> = {
   parameters: { layout: 'padded' },
   args: {
     title: 'Toggle Collapsible',
-    styling: 'card',
+    styling: 'basic',
     defaultOpen: false,
   },
   argTypes: {
@@ -34,9 +35,12 @@ type Story = StoryObj<typeof Collapsible>;
 
 export const Playground: Story = {
   render: (args) => (
-    <Collapsible {...args}>
-      <p>Your stuff goes here.</p>
-    </Collapsible>
+    <LivePlayground
+      code={generateCode('Collapsible', args, {
+        defaults: { styling: 'card', defaultOpen: false },
+        children: '<p>Your stuff goes here.</p>',
+      })}
+    />
   ),
 };
 

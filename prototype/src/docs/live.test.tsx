@@ -20,27 +20,41 @@ describe('LiveExample', () => {
 });
 
 describe('LivePlayground', () => {
-  it('generates JSX from args and renders the matching Button', async () => {
-    render(<LivePlayground variant="danger" size="lg" disabled>Go</LivePlayground>);
+  it('renders the provided code string as a live preview', async () => {
+    render(<LivePlayground code={'<Button variant="danger">Go</Button>'} />);
     const btn = await screen.findByRole('button', { name: 'Go' });
     expect(btn).toHaveClass('btn', 'btn-danger');
   });
-
 });
 
 describe('generateCode (Controls → JSX)', () => {
-  it('serializes variant plus a non-default size and label', () => {
-    expect(generateCode({ variant: 'success', size: 'sm', children: 'Save' }))
-      .toBe('<Button variant="success" size="sm">Save</Button>');
+  it('serializes props, omitting defaults, with a string body from children', () => {
+    expect(generateCode('Button', { variant: 'success', size: 'sm', children: 'Save' }, {
+      defaults: { size: 'md' },
+    })).toBe('<Button variant="success" size="sm">Save</Button>');
   });
 
-  it('omits the size attribute for the default md size', () => {
-    expect(generateCode({ variant: 'primary', size: 'md', children: 'Default' }))
-      .toBe('<Button variant="primary">Default</Button>');
+  it('omits a prop whose value matches the supplied default', () => {
+    expect(generateCode('Button', { variant: 'primary', size: 'md', children: 'Default' }, {
+      defaults: { size: 'md' },
+    })).toBe('<Button variant="primary">Default</Button>');
   });
 
-  it('includes boolean flags and falls back to a default label', () => {
-    expect(generateCode({ variant: 'danger', disabled: true, block: true }))
-      .toBe('<Button variant="danger" disabled block>Button</Button>');
+  it('renders booleans bare and serializes numbers with braces', () => {
+    expect(generateCode('Stack', { direction: 'vertical', gap: 3, reversed: true }, {
+      defaults: { direction: 'vertical' },
+      children: '<Button>a</Button>',
+    })).toBe('<Stack gap={3} reversed><Button>a</Button></Stack>');
+  });
+
+  it('formats multi-line children as an indented block', () => {
+    expect(generateCode('ButtonGroup', { 'aria-label': 'X' }, {
+      children: '<Button>a</Button>\n<Button>b</Button>',
+    })).toBe('<ButtonGroup aria-label="X">\n  <Button>a</Button>\n  <Button>b</Button>\n</ButtonGroup>');
+  });
+
+  it('self-closes when there is no body', () => {
+    expect(generateCode('Button', { variant: 'danger', disabled: true }))
+      .toBe('<Button variant="danger" disabled />');
   });
 });

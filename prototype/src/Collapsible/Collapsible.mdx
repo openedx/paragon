@@ -45,10 +45,10 @@ When to use:
   The sections below mirror the existing Paragon docs (src/Collapsible/README.md)
   1:1 and in the same order. The examples are authored as real TSX in
   Collapsible.stories.tsx (so TypeScript typechecks every prop) and their source
-  is rendered here, editable, via react-live. The component style classes
-  (collapsible-card / -trigger / -body) and the utility / button classes
-  (d-flex, flex-grow-1, btn btn-outline-primary) are all part of Paragon's global
-  public class layer (src/styles/*.css), so these snippets are verbatim README.
+  is rendered here, editable, via react-live. The component's own style classes
+  (collapsible-card / -trigger / -body) map to this module's classes, exposed to
+  the live scope as `collapsibleStyles`; the Bootstrap utilities become inline
+  styles / the `collapsibleStyles.closeButton` helper.
 */}
 
 ## Basic Usage

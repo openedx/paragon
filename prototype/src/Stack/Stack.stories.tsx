@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Stack } from './Stack';
 import { Button } from '../Button';
+import { LivePlayground, generateCode } from '../docs/LivePlayground';
 import { extractExamples } from '../docs/extractExamples';
 import raw from './Stack.stories.tsx?raw';
 
@@ -34,11 +35,16 @@ type Story = StoryObj<typeof Stack>;
 
 export const Playground: Story = {
   render: (args) => (
-    <Stack {...args}>
-      <Button variant="primary">first button</Button>
-      <Button variant="primary">second button</Button>
-      <Button variant="primary">third button</Button>
-    </Stack>
+    <LivePlayground
+      code={generateCode('Stack', args, {
+        defaults: { direction: 'vertical', reversed: false },
+        children: [
+          '<Button variant="primary">first button</Button>',
+          '<Button variant="primary">second button</Button>',
+          '<Button variant="primary">third button</Button>',
+        ].join('\n'),
+      })}
+    />
   ),
 };
 

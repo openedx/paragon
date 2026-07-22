@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from './Button';
 import { ButtonGroup } from './ButtonGroup';
 import { ButtonToolbar } from './ButtonToolbar';
+import { LivePlayground, generateCode } from '../docs/LivePlayground';
 import { extractExamples } from '../docs/extractExamples';
 import raw from './ButtonGroup.stories.tsx?raw';
 
@@ -27,11 +28,16 @@ type Story = StoryObj<typeof ButtonGroup>;
 
 export const Playground: Story = {
   render: (args) => (
-    <ButtonGroup {...args} aria-label="Text style">
-      <Button variant="outline-primary">Bold</Button>
-      <Button variant="outline-primary">Italic</Button>
-      <Button variant="outline-primary">Underline</Button>
-    </ButtonGroup>
+    <LivePlayground
+      code={generateCode('ButtonGroup', { ...args, 'aria-label': 'Text style' }, {
+        defaults: { size: 'md' },
+        children: [
+          '<Button variant="outline-primary">Bold</Button>',
+          '<Button variant="outline-primary">Italic</Button>',
+          '<Button variant="outline-primary">Underline</Button>',
+        ].join('\n'),
+      })}
+    />
   ),
 };
 

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from './Button';
 import { Stack } from '../Stack';
 import type { BaseVariant } from './types';
-import { LivePlayground } from '../docs/LivePlayground';
+import { LivePlayground, generateCode } from '../docs/LivePlayground';
 import {
   Add, Remove, ArrowBack, ArrowDropDown, Highlight,
 } from '../docs/scope';
@@ -58,7 +58,9 @@ type Story = StoryObj<typeof Button>;
  * a control rewrites the editor; you can also edit the JSX directly.
  */
 export const Playground: Story = {
-  render: (args) => <LivePlayground {...args} />,
+  render: (args) => (
+    <LivePlayground code={generateCode('Button', args, { defaults: { size: 'md' } })} />
+  ),
 };
 
 /*
