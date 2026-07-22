@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Collapsible } from './Collapsible';
-import type { CollapsibleStyling } from './Collapsible';
-import { ExamplePropsForm } from '../docs/ExamplePropsForm';
 import {
   LivePlayground, generateCode, raw as rawExpr, playgroundChildren,
 } from '../docs/LivePlayground';
@@ -105,39 +103,12 @@ export const basicStyle = (
 );
 
 export const cardStyle = (
-  () => {
-    const [styling, setStyling] = useState<CollapsibleStyling>('card');
-    const [withIcon, setWithIcon] = useState(false);
-    const iconProps = {
-      iconWhenOpen: <span>CLOSE SESAME</span>,
-      iconWhenClosed: <span>OPEN SESAME</span>,
-    };
-
-    return (
-      <>
-        {/* start example form block */}
-        <ExamplePropsForm
-          inputs={[
-            {
-              value: styling,
-              setValue: (value) => setStyling(value as CollapsibleStyling),
-              options: ['card', 'card-lg'],
-              name: 'styling',
-            },
-            { value: withIcon, setValue: setWithIcon, name: 'with icon' },
-          ]}
-        />
-        {/* end example form block */}
-        <Collapsible
-          styling={styling}
-          title={<p><strong>Toggle Collapsible</strong></p>}
-          {...withIcon ? iconProps : {}}
-        >
-          <p>Your stuff goes here.</p>
-        </Collapsible>
-      </>
-    );
-  }
+  <Collapsible
+    styling="card"
+    title={<p><strong>Toggle Collapsible</strong></p>}
+  >
+    <p>Your stuff goes here.</p>
+  </Collapsible>
 );
 
 export const defaultOpen = (
