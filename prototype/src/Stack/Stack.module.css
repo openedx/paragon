@@ -1,0 +1,35 @@
+/*
+ * Stack styles — a CSS Modules port of src/Stack/index.scss.
+ *
+ * Faithful to the original: vertical stacks stretch and flex-grow; horizontal
+ * stacks center their items. `reversed` flips the flow direction. The gap is
+ * still driven entirely by the existing spacer design tokens — the component
+ * sets `--pgn-stack-gap` to the matching `--pgn-spacing-spacer-*` token (see
+ * Stack.tsx), so nothing is hard-coded and theming is unaffected.
+ */
+
+.vstack,
+.hstack {
+  display: flex;
+  align-self: stretch;
+  gap: var(--pgn-stack-gap, var(--pgn-size-stack-gap));
+}
+
+.vstack {
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.vstack.reversed {
+  flex-direction: column-reverse;
+}
+
+.hstack {
+  flex-direction: row;
+  align-items: center;
+}
+
+.hstack.reversed {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}

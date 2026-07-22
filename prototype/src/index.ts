@@ -7,3 +7,5 @@ export {
 export type {
   ButtonProps, ButtonGroupProps, ButtonToolbarProps, ButtonVariant, ButtonSize, BaseVariant,
 } from './Button';
+export { Stack } from './Stack';
+export type { StackProps } from './Stack';

@@ -1,0 +1,85 @@
+import { Meta, Title, Subtitle, Story, Controls } from '@storybook/addon-docs/blocks';
+
+import * as StackStories from './Stack.stories';
+import { LiveExample } from '../docs/LiveExample';
+
+<Meta title="Layout/Stack" />
+
+<Title>Stack</Title>
+
+<Subtitle>Flexbox layout helper — space children vertically or horizontally using Paragon's spacer tokens.</Subtitle>
+
+Shorthand helpers that build on top of our flexbox utilities to make component
+layout faster and easier than ever. Similar to the
+[Bootstrap Stack](https://react-bootstrap.github.io/docs/layout/stack/) component.
+
+`Stack` is the prototype re-implementation of Paragon's `Stack` on the modern
+stack proposed in [ADR&nbsp;0022](https://github.com/openedx/paragon). Its public
+prop API (`direction`, `gap`, `reversed`) is unchanged from `@openedx/paragon`;
+internally the global `pgn__vstack` / `pgn__hstack` classes become locally-scoped
+CSS Module classes, and the `gap` is resolved to the matching
+`--pgn-spacing-spacer-*` design token, so spacing stays token-driven and
+themeable.
+
+## Playground
+
+<Story of={StackStories.Playground} />
+
+<Controls of={StackStories.Playground} />
+
+{/*
+  The sections below mirror the existing Paragon docs (src/Stack/README.md)
+  1:1 and in the same order, so the two docs are easy to compare. The JSX is
+  kept close to the original; the README's `className="border p-2"` boxes are
+  expressed with inline styles that read the `--pgn-color-border` and
+  `--pgn-spacing-spacer-*` tokens, since the prototype does not ship Bootstrap's
+  border/padding utility classes.
+*/}
+
+## Basic Usage
+
+## Vertical direction
+
+Stacks are vertical by default and stacked items are full-width by default. Watch
+this pull request to see more details about the
+[auto stretching behavior](https://github.com/openedx/paragon/pull/1188).
+
+<LiveExample code={`
+<Stack gap={3}>
+  <Button>first button</Button>
+  <Button>second button</Button>
+  <Button>third button</Button>
+</Stack>
+`} />
+
+## Horizontal direction
+
+<LiveExample code={`
+<Stack direction="horizontal" gap={3}>
+  <div style={{ border: '1px solid var(--pgn-color-border)', padding: 'var(--pgn-spacing-spacer-2)' }}>first block</div>
+  <div style={{ border: '1px solid var(--pgn-color-border)', padding: 'var(--pgn-spacing-spacer-2)' }}>second block</div>
+  <div style={{ border: '1px solid var(--pgn-color-border)', padding: 'var(--pgn-spacing-spacer-2)' }}>third block</div>
+</Stack>
+`} />
+
+## Reversed props
+
+**Vertical** with the `reversed` prop:
+
+<LiveExample code={`
+<Stack gap={3} reversed>
+  <Button>first button</Button>
+  <Button>second button</Button>
+  <Button>third button</Button>
+</Stack>
+`} />
+
+**Horizontal** with the `reversed` prop:
+
+<LiveExample code={`
+<Stack direction="horizontal" gap={3} reversed>
+  <div style={{ border: '1px solid var(--pgn-color-border)', padding: 'var(--pgn-spacing-spacer-2)' }}>first block</div>
+  <div style={{ border: '1px solid var(--pgn-color-border)', padding: 'var(--pgn-spacing-spacer-2)' }}>second block</div>
+  <div style={{ border: '1px solid var(--pgn-color-border)', padding: 'var(--pgn-spacing-spacer-2)' }}>third block</div>
+</Stack>
+`} />
