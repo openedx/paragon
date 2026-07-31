@@ -177,6 +177,23 @@ describe('<DataTable />', () => {
     ]));
   });
 
+  it('only sets aria-sort on the primary sorted header when multi-sorting', async () => {
+    const user = userEvent.setup();
+    const { container } = render(<DataTableWrapper {...props} isSortable />);
+
+    await user.click(screen.getByRole('button', { name: 'Name' }));
+    await user.keyboard('{Shift>}');
+    await user.click(screen.getByRole('button', { name: 'Famous For' }));
+    await user.keyboard('{/Shift}');
+
+    const nameHeader = screen.getByRole('button', { name: 'Name' }).closest('th');
+    const famousForHeader = screen.getByRole('button', { name: 'Famous For' }).closest('th');
+
+    await waitFor(() => expect(container.querySelectorAll('th[aria-sort]')).toHaveLength(1));
+    expect(nameHeader).toHaveAttribute('aria-sort', 'ascending');
+    expect(famousForHeader).not.toHaveAttribute('aria-sort');
+  });
+
   it('displays a table footer', () => {
     render(<DataTableWrapper {...props} />);
     expect(screen.getByTestId('table-footer')).toBeInTheDocument();

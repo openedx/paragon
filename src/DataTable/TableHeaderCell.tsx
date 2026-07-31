@@ -35,6 +35,8 @@ interface TableHeaderCellProps {
   getSortByToggleProps?: (...args: any[]) => Record<string, any>;
   /** Indicates whether a column is sortable */
   canSort?: boolean;
+  /** Indicates the column's sort priority */
+  sortedIndex?: number;
   /** Class(es) to be applied to header cells */
   headerClassName?: string;
 }
@@ -46,13 +48,14 @@ function TableHeaderCell({
   getSortByToggleProps = () => ({}),
   isSorted = false,
   isSortedDesc = false,
+  sortedIndex = 0,
   headerClassName,
 }: TableHeaderCellProps) {
   const headerProps = getHeaderProps();
   const toggleProps = canSort && getSortByToggleProps ? getSortByToggleProps() : {};
   // Per WAI-ARIA APG sortable table guidance, only the actively sorted header should expose aria-sort.
   let ariaSort: React.AriaAttributes['aria-sort'];
-  if (isSorted) {
+  if (isSorted && sortedIndex === 0) {
     ariaSort = isSortedDesc ? 'descending' : 'ascending';
   }
   const headerContentClassName = classNames('pgn__data-table-header-content', headerClassName);
