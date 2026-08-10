@@ -1,7 +1,7 @@
 const { InvalidOptionArgumentError } = require('commander');
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
+const { exec } = require('node:child_process');
 require('dotenv').config();
 
 /**
