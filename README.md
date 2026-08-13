@@ -90,7 +90,7 @@ Use `paragon help` to see more information.
 
 ## Internationalization
 
-Paragon supports internationalization for its components out of the box with the support of [react-intl](https://formatjs.io/docs/react-intl/). You may view translated strings for each component on the documentation website by switching languages in the settings.
+Paragon supports internationalization for its components out of the box with the support of [react-intl](https://formatjs.io/docs/react-intl/). ``react-intl`` 5.x, 6.x, or 10.1.20+ may be used. You may view translated strings for each component on the documentation website by switching languages in the settings.
 
 Due to Paragon's dependence on ``react-intl``, that means that your whole app needs to be wrapped in its provider, e.g.:
 
@@ -265,59 +265,30 @@ When developing a new component you should generally follow three rules:
       />
       ```
 
-   - For places where the display string has to be a plain JavaScript string use ``formatMessage``, this would require access to ``intl`` object from ``react-intl``, e.g.
+   - For places where the display string has to be a plain JavaScript string use ``formatMessage``, this would require access to ``intl`` object from ``react-intl``, which is provided by the ``useIntl`` hook (the ``injectIntl`` HOC must not be used, as it was removed in ``react-intl`` 10)
 
-      - For class components use ``injectIntl`` HOC
+      ```javascript
+      import { useIntl } from 'react-intl';
 
-          ```javascript
-          import { injectIntl } from 'react-intl';
+      const MyFunctionComponent = ({ altText }) => {
+        const intl = useIntl();
+        const intlAltText = altText || intl.formatMessage({
+          id: 'pgn.MyComponent.altText',
+          defaultMessage: 'Close',
+          description: 'Close label for Toast component',
+        });
 
-          class MyClassComponent extends React.Component {
-            render() {
-              const { altText, intl } = this.props;
-              const intlAltText = altText || intl.formatMessage({
-                id: 'pgn.MyComponent.altText',
-                defaultMessage: 'Close',
-                description: 'Close label for Toast component',
-              });
+        return (
+          <IconButton
+            alt={intlAltText}
+            onClick={() => {}}
+            variant="primary"
+          />
+        )
+      }
 
-              return (
-                <IconButton
-                  alt={intlCloseLabel}
-                  onClick={() => {}}
-                  variant="primary"
-                />
-              )
-            }
-          }
-
-          export default injectIntl(MyClassComponent);
-          ```
-
-      - For functional components use ``useIntl`` hook
-
-          ```javascript
-          import { useIntl } from 'react-intl';
-
-          const MyFunctionComponent = ({ altText }) => {
-            const intls = useIntl();
-            const intlAltText = altText || intl.formatMessage({
-              id: 'pgn.MyComponent.altText',
-              defaultMessage: 'Close',
-              description: 'Close label for Toast component',
-            });
-
-            return (
-              <IconButton
-                alt={intlCloseLabel}
-                onClick={() => {}}
-                variant="primary"
-              />
-            )
-          }
-
-          export default MyFunctionComponent;
-          ```
+      export default MyFunctionComponent;
+      ```
 
    **Notes on the format above**:
    - `id` is required and must be a dot-separated string of the format `pgn.<componentName>.<subcomponentName>.<propName>`
