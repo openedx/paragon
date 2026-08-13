@@ -158,7 +158,7 @@ const createCustomCSSVariables = async ({ formatterArgs }) => {
     usesDtcg: true,
   });
   const header = await fileHeader({ file, formatting });
-  return `${header}:root {\n${variables}\n}\n`;
+  return `${header}:root, :host {\n${variables}\n}\n`;
 };
 
 /**
