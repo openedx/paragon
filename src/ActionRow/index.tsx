@@ -18,6 +18,12 @@ function ActionRow({
   children,
   ...props
 }: ActionRowProps) {
+  // Reverse DOM order when stacked so the primary action (last child) is first
+  // in the tab sequence, matching its visual position at the top of the stack.
+  const orderedChildren = isStacked
+    ? React.Children.toArray(children).reverse()
+    : children;
+
   return React.createElement(
     as,
     {
@@ -27,7 +33,7 @@ function ActionRow({
         'pgn__action-row-stacked': isStacked,
       }),
     },
-    children,
+    orderedChildren,
   );
 }
 
