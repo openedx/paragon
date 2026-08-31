@@ -20,9 +20,11 @@ notes: |
   const [blocking, setBlocking] = useState(false);
   const [dark, setDark] = useState(false);
   const [position, setPosition] = useState('bottom');
+  const [width, setWidth] = useState('md');
   const [show, setShow] = useState(false);
 
   const positions = ['left', 'right', 'top', 'bottom'];
+  const widths = ['sm', 'md', 'lg'];
 
   return (
     <>
@@ -33,6 +35,15 @@ notes: |
       >
         {positions.map(position => (
           <Dropdown.Item eventKey={position}>{position}</Dropdown.Item>
+        ))}
+      </DropdownButton><br />
+      <DropdownButton
+        id="width-dropdown-btn"
+        onSelect={setWidth}
+        title={`Width: ${width}`}
+      >
+        {widths.map((width) => (
+          <Dropdown.Item key={width} eventKey={width}>{width}</Dropdown.Item>
         ))}
       </DropdownButton><br />
       <Button onClick={() => setShow(true)} className="mb-2 mb-md-0">
@@ -47,6 +58,7 @@ notes: |
 
       <Sheet
         position={position}
+        width={width}
         show={show}
         blocking={blocking}
         variant={dark ? 'dark' : 'light'}
