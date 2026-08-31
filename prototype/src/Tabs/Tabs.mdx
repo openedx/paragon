@@ -1,0 +1,122 @@
+import { Meta, Title, Subtitle, Story, Controls } from '@storybook/addon-docs/blocks';
+
+import * as TabsStories from './Tabs.stories';
+import { LiveExample } from '../docs/LiveExample';
+
+export const examples = TabsStories.examples;
+
+<Meta title="Navigation/Tabs" />
+
+<Title>Tabs</Title>
+
+<Subtitle>Organize content into sections and switch between them — React Aria tab behavior, styled entirely from Paragon design tokens.</Subtitle>
+
+`Tabs` is the prototype re-implementation of Paragon's `Tabs` on the modern stack
+proposed in [ADR&nbsp;0022](https://github.com/openedx/paragon). The declarative
+`<Tabs><Tab eventKey title>…</Tab></Tabs>` API — including `variant`,
+`defaultActiveKey` / `activeKey`, `onSelect`, and per-tab `disabled` /
+`notification` — is unchanged from `@openedx/paragon`, but the internals no longer
+depend on Bootstrap or `react-bootstrap`:
+
+- **Behavior** comes from [React Aria](https://react-spectrum.adobe.com/react-aria/)'s
+  `useTabList` / `useTab` / `useTabPanel` plus react-stately's `useTabListState`:
+  correct `role="tablist"` / `tab` / `tabpanel` semantics, arrow-key navigation,
+  and `aria-selected` / `aria-controls` linkage — no more manual `MutationObserver`
+  syncing of `aria-selected`.
+- **Styling** is the global, public `nav` / `nav-tabs` / `nav-pills` /
+  `nav-inverse-*` / `nav-button-group` class layer (`src/styles/tabs.css`) over
+  the same `--pgn-*` design tokens the library ships today, so a component and a
+  raw `<ul class="nav nav-tabs">` render identically and theming (including
+  `@edx/brand`) is unaffected.
+- **Focus** uses a keyboard-only focus ring (`:focus-visible` via React Aria's
+  `[data-focus-visible]`), matching `Button`.
+
+## Playground
+
+Edit the props with the controls and the JSX below regenerates; you can also type
+directly in the editor to experiment. Changing a control overwrites the editor.
+
+<Story of={TabsStories.Playground} />
+
+<Controls of={TabsStories.Playground} />
+
+{/*
+  The sections below mirror the existing Paragon docs (src/Tabs/README.md) 1:1 and
+  in the same order. The examples are authored as real TSX in Tabs.stories.tsx (so
+  TypeScript typechecks every prop) and their source is rendered here, editable,
+  via react-live. The `nav`/`nav-tabs`/… classes are part of Paragon's global
+  public class layer (src/styles/tabs.css); the README's
+  `<Stack className="bg-dark-700 p-4">` inverse wrappers become inline styles that
+  read the `--pgn-color-dark-700` token, since the prototype does not ship
+  Bootstrap's background/padding utilities.
+*/}
+
+## Uncontrolled usage
+
+<LiveExample code={examples.uncontrolled} />
+
+## Controlled usage
+
+<LiveExample code={examples.controlled} />
+
+## Button group usage
+
+<LiveExample code={examples.buttonGroup} />
+
+## Pills usage
+
+<LiveExample code={examples.pills} />
+
+## Inverse-Pills usage
+
+<LiveExample code={examples.inversePills} />
+
+## Inverse Tabs usage
+
+<LiveExample code={examples.inverseTabs} />
+
+## With notification
+
+<LiveExample code={examples.withNotification} />
+
+### With screen reader text in notification
+
+<LiveExample code={examples.withScreenReaderNotification} />
+
+## Conditional rendering
+
+<LiveExample code={examples.conditionalRendering} />
+
+{/* --- Additions beyond the original README --- */}
+
+## Accessibility notes
+
+- The tab list, tabs, and panel carry `role="tablist"` / `tab` / `tabpanel` with
+  `aria-selected` and `aria-controls` / `aria-labelledby` linkage, all wired by
+  React Aria — no `MutationObserver` shim.
+- Keyboard: <kbd>←</kbd> / <kbd>→</kbd> move between tabs (selection follows focus
+  by default); <kbd>Home</kbd> / <kbd>End</kbd> jump to the first / last tab. The
+  focus ring appears only for keyboard focus (`[data-focus-visible]`).
+- Disabled tabs are skipped by keyboard navigation and cannot be selected.
+
+## Migration decisions surfaced here (for WG ratification)
+
+1. **Only the active panel is mounted.** React Aria renders the selected tab's
+   panel and unmounts the rest, rather than Bootstrap's "render every pane, hide
+   the inactive ones with `display: none`". This keeps the DOM minimal and the
+   `aria-labelledby` linkage correct. **Decision needed:** whether any consumers
+   rely on inactive panels staying mounted (e.g. to preserve uncontrolled form
+   state); if so, a `mountOnEnter` / `unmountOnExit`-style escape hatch can be
+   added.
+2. **The responsive "More…" overflow dropdown is not ported.** In the current
+   library, tabs that don't fit collapse into a `More…` dropdown, implemented with
+   `Dropdown` + the `useIndexOfLastVisibleChild` hook. That depends on the
+   `Dropdown` module, which is out of scope for this step (the same reason
+   `dropdown-toggle-split` is deferred — see the prototype README). `moreTabText`
+   is retained on the props for API compatibility but is currently inert. It will
+   return with the Dropdown migration.
+3. **`variant` maps to the same public `nav-*` classes.** `tabs` → `nav-tabs`,
+   `pills` → `nav-pills`, `inverse-tabs` → `nav-inverse-tabs`, `inverse-pills` →
+   `nav-inverse-pills`, `button-group` → `nav-button-group` — the same
+   Bootstrap-compatible class names Paragon ships today, so consumer overrides
+   keyed on those classes keep working.

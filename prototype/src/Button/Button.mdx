@@ -1,0 +1,115 @@
+import { Meta, Title, Subtitle, Story, Controls } from '@storybook/addon-docs/blocks';
+
+import * as ButtonStories from './Button.stories';
+import { LiveExample } from '../docs/LiveExample';
+
+export const examples = ButtonStories.examples;
+
+<Meta title="Buttonlike/Button" />
+
+<Title>Button</Title>
+
+<Subtitle>Accessible, themeable button — React Aria behavior, styled entirely from Paragon design tokens.</Subtitle>
+
+`Button` is the prototype re-implementation of Paragon's `Button` on the modern
+stack proposed in [ADR&nbsp;0022](https://github.com/openedx/paragon). Its public
+prop API is unchanged from `@openedx/paragon`, but its internals no longer depend
+on Bootstrap or `react-bootstrap`:
+
+- **Behavior** comes from [React Aria](https://react-spectrum.adobe.com/react-aria/)'s
+  `useButton` — cross-device press handling, keyboard support, and correct
+  `disabled` semantics even when the button is rendered as an `<a>`.
+- **Styling** comes from the global, public `btn` class layer
+  (`src/styles/button.css`) over the same `--pgn-*` design tokens the library
+  ships today, so theming (`@edx/brand` overrides) is unaffected. `btn` /
+  `btn-<variant>` are the same Bootstrap-compatible class names Paragon has
+  always shipped, so the component and a raw `<a class="btn btn-primary">` render
+  identically.
+- **Focus** uses a keyboard-only focus ring (`:focus-visible` via React Aria's
+  `[data-focus-visible]`).
+
+## Playground
+
+Edit the props with the controls and the JSX below regenerates; you can also type
+directly in the editor to experiment. Changing a control overwrites the editor.
+
+<Story of={ButtonStories.Playground} />
+
+<Controls of={ButtonStories.Playground} />
+
+{/*
+  The sections below mirror the existing Paragon docs (src/Button/README.md)
+  1:1 and in the same order, so the two docs are easy to compare. The examples
+  are authored as real TSX in `Button.examples.tsx` (so TypeScript typechecks
+  every prop) and their source is rendered here, editable, via react-live. The
+  original Bootstrap utility classes (`bg-dark-700`, `p-4`, `mb-2`, `mr-1`) are
+  expressed as inline styles since the prototype does not ship them.
+*/}
+
+## Core Buttons
+
+<LiveExample code={examples.coreButtons} />
+
+## Core Buttons (Inverse Pallete)
+
+<LiveExample code={examples.coreButtonsInverse} />
+
+## Utility Buttons
+
+<LiveExample code={examples.utilityButtons} />
+
+## Size
+
+<LiveExample code={examples.sizes} />
+
+### When to use the inline size
+
+Use inline size buttons for when a button sits with a line of text.
+
+<LiveExample code={examples.inlineSize} />
+
+## Block Buttons
+
+<LiveExample code={examples.blockButtons} />
+
+### Disabled
+
+<LiveExample code={examples.disabled} />
+
+### With empty href
+
+For link to be `disabled`, it must have href defined with some value.
+
+<LiveExample code={examples.emptyHref} />
+
+### With Icons before or after
+
+<LiveExample code={examples.withIcons} />
+
+## Stateful buttons
+
+To implement a loading state, Paragon provides the `StatefulButton` component
+(not part of this prototype). It manages and displays loading/complete states
+for a more efficient, user-friendly experience.
+
+{/* --- Additions beyond the original README --- */}
+
+## Theming
+
+Button appearance is authored entirely over Paragon's `--pgn-*` design tokens, so
+theming happens without any component changes. To experiment with token values
+live — set a source colour and watch Style Dictionary re-derive the button
+tokens — see the [Design Tokens](?path=/docs/theming-design-tokens--docs) page.
+
+## Grouping
+
+Related buttons can be combined with `ButtonGroup` and `ButtonToolbar` — see the
+[ButtonGroup](?path=/docs/buttonlike-buttongroup--docs) page.
+
+## Accessibility notes
+
+- Keyboard: activates on <kbd>Enter</kbd> and <kbd>Space</kbd>; the focus ring
+  appears only for keyboard focus.
+- `onPress` is preferred for new code; `onClick` is bridged for API
+  compatibility with the current Paragon Button.
+- When rendering icon-only buttons, provide an `aria-label`.

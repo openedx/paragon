@@ -1,0 +1,130 @@
+/*
+ * Collapsible class layer - global, public classes.
+ *
+ * The `collapsible-card`, `collapsible-card-lg`, `collapsible-basic`,
+ * `collapsible-trigger`, `collapsible-body` and `collapsible-icon` class names
+ * are part of Paragon's PUBLIC API - `Collapsible.Advanced` consumers apply them
+ * directly to their own markup - so they stay global and stable (ADR 0022).
+ * The `pgn__collapsible-*` classes are prototype-internal (namespaced) and are
+ * applied by the components; they are not a consumer contract.
+ *
+ * Ported from src/Collapsible/index.scss to plain CSS over the same `--pgn-*`
+ * tokens. `.collapsible-card`/`.collapsible-card-lg` no longer `@extend`
+ * Bootstrap's `.card`; the handful of card properties actually used are inlined
+ * from the same card tokens. The expand/collapse animation is driven by React
+ * Aria's `--disclosure-panel-height` custom property (see CollapsibleBody)
+ * instead of the JS-based `Collapse` / `TransitionReplace` components.
+ */
+
+.pgn_collapsible {
+  text-align: start;
+}
+
+/*
+ * The disclosure panel (internal). React Aria's `useDisclosure` sets
+ * `--disclosure-panel-height` on this element (a pixel value while animating,
+ * then `auto`) and adds `hidden="until-found"` once fully collapsed. We animate
+ * `height` from that property; `box-sizing: border-box` keeps the body's own
+ * padding inside the animated height so it collapses cleanly to zero.
+ */
+.pgn__collapsible-panel {
+  box-sizing: border-box;
+  overflow: hidden;
+  height: var(--disclosure-panel-height, auto);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pgn__collapsible-panel {
+    transition: height 300ms ease;
+  }
+}
+
+/* Keyboard-only focus ring for the (div-based) trigger, mirroring Button. */
+.pgn__collapsible-focus[data-focus-visible] {
+  outline: var(--pgn-size-btn-focus-width, 2px) solid var(--pgn-color-primary-base);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------- card / card-lg --- */
+
+.collapsible-card,
+.collapsible-card-lg {
+  background-color: var(--pgn-color-card-bg-base);
+  border: var(--pgn-size-card-border-width) solid var(--pgn-color-card-border-base);
+  border-radius: 0;
+}
+
+.collapsible-card .collapsible-trigger,
+.collapsible-card-lg .collapsible-trigger {
+  padding: var(--pgn-spacing-collapsible-card-spacer-y-base) var(--pgn-spacing-collapsible-card-spacer-x-base);
+  border-radius: var(--pgn-size-card-border-radius-inner);
+  border-bottom: var(--pgn-size-card-border-width) solid transparent;
+  transition: border-color 100ms ease 150ms;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: start;
+}
+
+.collapsible-card .collapsible-trigger > *,
+.collapsible-card-lg .collapsible-trigger > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.collapsible-card .collapsible-trigger[aria-expanded="true"],
+.collapsible-card-lg .collapsible-trigger[aria-expanded="true"] {
+  border-radius: var(--pgn-size-card-border-radius-inner) var(--pgn-size-card-border-radius-inner) 0 0;
+  border-color: var(--pgn-color-card-border-base);
+  transition: none;
+}
+
+.collapsible-card .collapsible-body,
+.collapsible-card-lg .collapsible-body {
+  padding: var(--pgn-spacing-collapsible-card-spacer-y-base) var(--pgn-spacing-collapsible-card-spacer-x-base);
+  padding-left: var(--pgn-spacing-collapsible-card-spacer-left-body);
+  text-align: start;
+}
+
+.collapsible-card .collapsible-body > *:last-child,
+.collapsible-card-lg .collapsible-body > *:last-child {
+  margin-bottom: 0;
+}
+
+/* card-lg overrides only the paddings (Paragon's `@extend .collapsible-card`). */
+.collapsible-card-lg .collapsible-trigger {
+  padding: var(--pgn-spacing-collapsible-card-spacer-y-lg) var(--pgn-spacing-collapsible-card-spacer-x-lg);
+}
+
+.collapsible-card-lg .collapsible-body {
+  padding: var(--pgn-spacing-collapsible-card-spacer-y-lg) var(--pgn-spacing-collapsible-card-spacer-x-lg);
+}
+
+/* ------------------------------------------------------------------ basic --- */
+
+.collapsible-basic .collapsible-trigger {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  text-decoration: underline;
+  color: var(--pgn-color-primary-base);
+  padding: var(--pgn-spacing-collapsible-card-spacer-basic-y) var(--pgn-spacing-collapsible-card-spacer-basic-x);
+}
+
+.collapsible-basic .collapsible-body {
+  padding: var(--pgn-spacing-collapsible-card-spacer-basic-y) var(--pgn-spacing-collapsible-card-spacer-basic-x);
+  text-align: start;
+}
+
+/* ------------------------------------------------------------------ icon --- */
+
+.collapsible-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-inline-start: var(--pgn-spacing-collapsible-card-spacer-icon);
+}
+
+.collapsible-basic .collapsible-icon {
+  margin-inline-start: var(--pgn-spacing-collapsible-card-spacer-basic-icon);
+}
