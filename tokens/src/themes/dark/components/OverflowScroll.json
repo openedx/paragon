@@ -1,0 +1,11 @@
+{
+  "color": {
+    "$type": "color",
+    "overflow-scroll": {
+      "opacity-mask-transparent": {
+        "source": "$overflow-scroll-opacity-mask-transparent",
+        "$value": "rgba(0, 0, 0, .4)"
+      }
+    }
+  }
+}
