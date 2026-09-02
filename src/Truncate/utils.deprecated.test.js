@@ -1,4 +1,4 @@
-import { constructChildren, cropText, truncateLines } from './utils';
+import { constructChildren, cropText, truncateLines } from './utils.deprecated';
 
 const createElementMock = {
   parentNode: {

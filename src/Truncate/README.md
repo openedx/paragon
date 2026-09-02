@@ -5,11 +5,9 @@ components:
 - Truncate
 categories:
 - Content
-status: 'Deprecate Soon'
+status: 'New'
 designStatus: 'Done'
 devStatus: 'Done'
-notes: |
-  Plan to replace with native css implementation as per https://github.com/openedx/paragon/issues/3311
 ---
 
 A Truncate component can help you crop multiline text. There will be three dots at the end of the text.
@@ -17,34 +15,34 @@ A Truncate component can help you crop multiline text. There will be three dots 
 ## Basic Usage
 
 ```jsx live
-  <Truncate.Deprecated lines={2}>
+  <Truncate lines={2}>
     Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons 
     for using the platform and objectives to accomplish. To help members of each group learn about what edX 
     offers, reach goals, and solve problems, edX provides a variety of information resources.
     Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons
     for using the platform and objectives to accomplish. To help members of each group learn about what edX
     offers, reach goals, and solve problems, edX provides a variety of information resources.
-  </Truncate.Deprecated>
+  </Truncate>
 ```
 
 ### With the custom ellipsis
 
 ```jsx live
-    <Truncate.Deprecated lines={2} ellipsis="🎉🎉🎉" whiteSpace>
+    <Truncate lines={2}>
         Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons
         for using the platform and objectives to accomplish. To help members of each group learn about what edX
         offers, reach goals, and solve problems, edX provides a variety of information resources.
-    </Truncate.Deprecated>
+    </Truncate>
 ```
 
 ### With the onTruncate
 
 ```jsx live
-    <Truncate.Deprecated lines={2} onTruncate={() => console.log('onTruncate')}>
+    <Truncate lines={2}>
         Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons
         for using the platform and objectives to accomplish. To help members of each group learn about what edX
         offers, reach goals, and solve problems, edX provides a variety of information resources.
-    </Truncate.Deprecated>
+    </Truncate>
 ```
 
 ### Example usage in Card
@@ -61,22 +59,22 @@ A Truncate component can help you crop multiline text. There will be three dots 
       />
       <Card.Header
         title={
-          <Truncate.Deprecated lines={2}>
+          <Truncate lines={2}>
             Using Enhanced Capabilities In Your Course
-          </Truncate.Deprecated>}
+          </Truncate>}
       />
       <Card.Section>
-        <Truncate.Deprecated lines={4}>
+        <Truncate lines={4}>
           Learners, course teams, researchers, developers: the edX community includes groups with a range of reasons
           for using the platform and objectives to accomplish. To help members of each group learn about what edX
           offers, reach goals, and solve problems, edX provides a variety of information resources.
-        </Truncate.Deprecated>
+        </Truncate>
       </Card.Section>
       <Card.Footer
         textElement={
-          <Truncate.Deprecated lines={2}>
+          <Truncate lines={2}>
             Using Enhanced Capabilities In Your Course
-          </Truncate.Deprecated>}
+          </Truncate>}
       >
         <Button style={{ minWidth: 100 }}>Action 1</Button>
       </Card.Footer>
@@ -87,10 +85,12 @@ A Truncate component can help you crop multiline text. There will be three dots 
 
 ### HTML markdown support
 
-**Note**: `Truncate` supports only plain `HTML` children and not `jsx`.
+**Note**: `Truncate` supports only plain `HTML` children and not `jsx`. 
+
+QUESTION FOR KEVIN: Would this fail screen readers anyway?
 
 ```jsx live
-<Truncate.Deprecated lines={1}>
+<Truncate lines={1}>
   <a href="#">Learners</a>, course teams, researchers, developers: the edX community includes <strong class="strong-class"><i class="i-class">groups with <u>a range</u> of <q>reasons</q></i></strong> for using the platform and objectives to accomplish.
-</Truncate.Deprecated>
+</Truncate>
 ```
