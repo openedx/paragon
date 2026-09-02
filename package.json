@@ -30,8 +30,9 @@
   },
   "scripts": {
     "build": "make build",
+    "build-incremental": "make build-incremental",
     "clean": "make clean",
-    "watch:build": "nodemon -x \"npm run build\"",
+    "watch:build": "nodemon -x \"npm run build-incremental\"",
     "build-docs": "make build-docs",
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
