@@ -1,6 +1,6 @@
 {
   "name": "@openedx/paragon",
-  "version": "20.18.1",
+  "version": "0.0.0-dev",
   "description": "Accessible, responsive UI component library based on Bootstrap.",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -30,6 +30,8 @@
   },
   "scripts": {
     "build": "make build",
+    "clean": "make clean",
+    "watch:build": "nodemon -x \"npm run build\"",
     "build-docs": "make build-docs",
     "commit": "commit",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
@@ -154,6 +156,7 @@
     "jest-cli": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "markdown-loader-jest": "^0.1.1",
+    "nodemon": "^3.1.14",
     "react": "^18",
     "react-intl": "^10.1.20",
     "react-test-renderer": "^18",
