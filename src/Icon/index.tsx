@@ -19,7 +19,7 @@ interface SvgAttrs extends React.SVGAttributes<SVGElement> {
 export interface IconProps extends Omit<React.ComponentPropsWithoutRef<'span'>, 'id' | 'className'> {
   /**
    * An icon component to render.
-   * Example import of a Paragon icon component: `import { Check } from '@openedx/paragon/icons';`
+   * Example import of a Paragon icon component: `import { Check } from '@openedx/paragon/icons';`.
    */
   src?: React.ComponentType<any>;
   /** HTML element attributes to pass through to the underlying svg element */
