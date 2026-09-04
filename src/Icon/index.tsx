@@ -28,11 +28,11 @@ export interface IconProps extends Omit<React.ComponentPropsWithoutRef<'span'>, 
    * the `id` property of the Icon element, by default this value is generated
    * with the `newId` function with the `prefix` of `Icon`.
    */
-  id?: string | null;
+  id?: string;
   /** The size of the icon. */
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'inline';
   /** A class name that will define what the Icon looks like. */
-  className?: string | string[];
+  className?: string;
   /**
    * a boolean that determines the value of `aria-hidden` attribute on the Icon span,
    * this value is `true` by default.
@@ -70,8 +70,8 @@ function Icon({
 
     return (
       <span
-        className={classNames('pgn__icon', { [`pgn__icon__${size}`]: !!size }, Array.isArray(className) ? className.join(' ') : className)}
-        id={id || undefined}
+        className={classNames('pgn__icon', { [`pgn__icon__${size}`]: !!size }, className)}
+        id={id}
         {...attrs}
       >
         <Component
@@ -92,7 +92,7 @@ function Icon({
     <>
       <span
         id={id || newId('Icon')}
-        className={Array.isArray(className) ? className.join(' ') : className}
+        className={className}
         aria-hidden={hidden}
       />
       {screenReaderText && (
