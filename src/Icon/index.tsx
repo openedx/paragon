@@ -22,7 +22,7 @@ export interface IconProps extends Omit<React.ComponentPropsWithoutRef<'span'>, 
    * Example import of a Paragon icon component: `import { Check } from '@openedx/paragon/icons';`
    */
   src?: React.ComponentType<any>;
-  /** HTML element attributes to pass through to the underlying svg element */
+  /** HTML element attributes to pass through to the underlying `svg` element */
   svgAttrs?: SvgAttrs;
   /**
    * the `id` property of the Icon element, by default this value is generated
