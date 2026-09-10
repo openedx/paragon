@@ -1,0 +1,18 @@
+{
+  "watch": [
+    "src",
+    "styles",
+    "tokens",
+    "lib",
+    "bin"
+  ],
+  "ext": "ts,tsx,js,jsx,json,scss,css",
+  "ignore": [
+    "node_modules/**",
+    ".git/**",
+    "dist/**",
+    "**/*.test.*",
+    "**/__snapshots__/**"
+  ],
+  "delay": 250
+}

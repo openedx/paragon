@@ -1,9 +1,22 @@
-.PHONY: build
-build:
+.PHONY: clean
+clean:
 	rm -rf ./dist
+
+# A full build from scratch. Use this for CI and for publishing.
+.PHONY: build
+build: clean build-incremental
+
+# Rebuilds only the parts whose sources changed. Compiling the stylesheets takes
+# minutes while the JavaScript takes seconds, so a watch rebuild should not
+# redo the stylesheets on every component edit.
+.PHONY: build-incremental
+build-incremental: build-js build-scss
+
+.PHONY: build-js
+build-js:
 	tsc --project tsconfig.build.json
 	rm icons/es5/index.d.ts  # We don't need this; not sure how to tell tsc not to generate it
-	./node_modules/.bin/babel src --config-file ./babel.config.json --out-dir dist --source-maps --ignore **/*.d.ts,**/*.test.jsx,**/*.test.tsx,**/__mocks__,**/__snapshots__,**/setupTest.js --copy-files --extensions ".ts,.tsx,.jsx"
+	babel src --config-file ./babel.config.json --out-dir dist --source-maps --ignore **/*.d.ts,**/*.test.jsx,**/*.test.tsx,**/__mocks__,**/__snapshots__,**/setupTest.js --copy-files --extensions ".ts,.tsx,.jsx"
 	# --copy-files will bring in everything else that wasn't processed by babel. Remove what we don't want.
 	find ./dist -name "tests" -type d -prune -exec rm -rf "{}" \; # delete tests directories
 	find ./dist -name "*.test.*" -delete # delete other tests files that weren't in tests directories
@@ -11,6 +24,13 @@ build:
 	rm -rf dist/**/__snapshots__
 	rm -rf dist/__mocks__
 	rm -rf dist/setupTest.js
+
+THEME_SOURCES := $(shell find styles/scss styles/css src \( -name '*.scss' -o -name '*.css' \))
+
+.PHONY: build-scss
+build-scss: dist/theme-urls.json
+
+dist/theme-urls.json: $(THEME_SOURCES) lib/build-scss.js
 	./bin/paragon-scripts.js build-scss
 
 NPM_TESTS=build i18n_extract lint test
