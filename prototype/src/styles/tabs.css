@@ -1,0 +1,305 @@
+/*
+ * Tabs / Nav class layer - global, public, Bootstrap-compatible classes.
+ *
+ * The `nav`, `nav-link`, `nav-tabs`, `nav-pills`, `nav-inverse-tabs`,
+ * `nav-inverse-pills`, `nav-button-group`, `tab-content`, `tab-pane` and
+ * `pgn__tabs` class names are part of Paragon's PUBLIC API - consuming MFEs apply
+ * them to their own markup - so they stay global and stable (ADR 0022). The
+ * `Tabs` React component applies these same classes and layers React Aria's tab
+ * behaviour on top, so a component and its raw-HTML equivalent render
+ * identically.
+ *
+ * Ported from src/Nav/index.scss + src/Tabs/index.scss to plain CSS over the same
+ * `--pgn-*` design tokens, with two deliberate changes that mirror the rest of
+ * the prototype:
+ *   - Keyboard focus is driven by React Aria's `[data-focus-visible]` instead of
+ *     `:focus`, so the focus ring only shows for keyboard users (ADR 0022,
+ *     Decision - same as Button).
+ *   - The responsive "More..." overflow dropdown rules are omitted: they depend
+ *     on the Dropdown component, which is not part of this prototype (see the
+ *     migration notes in Tabs.mdx).
+ */
+
+:root {
+  --pgn-border-color-nav-tabs-link-border-hover:
+    var(--pgn-border-color-nav-tabs-link-border-hover-top)
+    var(--pgn-border-color-nav-tabs-link-border-hover-right)
+    var(--pgn-border-color-nav-tabs-link-border-hover-bottom)
+    var(--pgn-border-color-nav-tabs-link-border-hover-left);
+}
+
+/* -------------------------------------------------------------- nav base --- */
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  padding: var(--pgn-spacing-nav-link-padding-y) var(--pgn-spacing-nav-link-padding-x);
+  text-decoration: var(--pgn-typography-nav-link-text-decoration);
+  color: var(--pgn-color-nav-link-text-base);
+  font-weight: var(--pgn-typography-nav-link-font-weight);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  text-decoration: none;
+  color: var(--pgn-color-nav-link-text-base);
+}
+
+/* Disabled state lightens text. React Aria adds aria-disabled; match on both. */
+.nav-link.disabled,
+.nav-link[aria-disabled="true"] {
+  color: var(--pgn-color-nav-link-text-disabled);
+  pointer-events: none;
+  cursor: default;
+}
+
+/* --------------------------------------------------------------- pgn__tabs --- */
+
+.pgn__tabs {
+  flex-wrap: nowrap;
+}
+
+.pgn__tabs > * {
+  position: relative;
+}
+
+/*
+ * The notification badge (internal to the component's rendered title). Ported
+ * from Paragon's `Bubble variant="error"` placement: pinned to the tab's
+ * top-right corner and sized from the same notification tokens.
+ */
+.pgn__tab-notification {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--pgn-size-tabs-notification-height);
+  min-width: var(--pgn-size-tabs-notification-width);
+  padding: 0 .25em;
+  font-size: var(--pgn-typography-tabs-notification-font-size);
+  line-height: 1;
+  color: var(--pgn-color-white);
+  background-color: var(--pgn-color-danger-base);
+  border-radius: 10rem;
+}
+
+/*
+ * Keyboard-only focus ring, ported from Nav's `nav-tabs-link-focus` mixin: an
+ * offset border drawn via `::before` rather than a `:focus` outline. Variant
+ * blocks below re-point `--pgn-tabs-focus-*` to change its colour / radius.
+ */
+.pgn__tabs .nav-link[data-focus-visible] {
+  position: relative;
+  outline: 0;
+  z-index: 1;
+}
+
+.pgn__tabs .nav-link[data-focus-visible]::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--pgn-spacing-nav-link-distance-to-border) * -1);
+  border:
+    solid var(--pgn-size-nav-tabs-border-width)
+    var(--pgn-tabs-focus-border-color, var(--pgn-border-color-nav-tabs-link-border-focus));
+  border-radius: var(--pgn-tabs-focus-border-radius, var(--pgn-size-nav-tabs-border-radius));
+}
+
+/* ------------------------------------------------------------------ tabs --- */
+
+.nav-tabs {
+  border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-tabs-base-border-base);
+}
+
+.nav-tabs button.nav-link {
+  border: none;
+  border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-link-border);
+}
+
+.nav-tabs button.nav-link.disabled,
+.nav-tabs button.nav-link[aria-disabled="true"] {
+  border-color: var(--pgn-color-nav-tabs-base-link-disabled-border);
+}
+
+.nav-tabs .nav-link {
+  margin-bottom: calc(var(--pgn-size-nav-tabs-border-width) * -1);
+  border-top-left-radius: var(--pgn-size-nav-tabs-border-radius);
+  border-top-right-radius: var(--pgn-size-nav-tabs-border-radius);
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: var(--pgn-color-nav-tabs-base-link-hover-bg);
+}
+
+.nav-tabs .nav-link[data-focus-visible] {
+  border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-tabs-base-border-focus);
+}
+
+.nav-tabs .nav-link.disabled,
+.nav-tabs .nav-link[aria-disabled="true"] {
+  color: var(--pgn-color-nav-link-text-disabled);
+  background-color: var(--pgn-color-nav-tabs-base-text-disabled);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--pgn-color-nav-tabs-base-link-active-text);
+  background-color: var(--pgn-color-nav-tabs-base-link-active-bg);
+  border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-border-color-nav-tabs-link-border-active);
+}
+
+.nav-tabs .nav-link.active:hover {
+  background-color: var(--pgn-color-nav-tabs-base-link-hover-bg);
+}
+
+/* ----------------------------------------------------------------- pills --- */
+
+.nav-pills .nav-link {
+  border-radius: var(--pgn-size-nav-pills-border-radius);
+}
+
+.nav-pills .nav-link.active {
+  color: var(--pgn-color-nav-pills-base-link-active-text);
+  background-color: var(--pgn-color-nav-pills-base-link-active-bg);
+}
+
+.pgn__tabs.nav-pills .nav-link {
+  border: var(--pgn-size-nav-pills-link-border-width) solid var(--pgn-color-nav-pills-base-link-border);
+}
+
+.pgn__tabs.nav-pills .nav-link:hover {
+  border-color: var(--pgn-border-color-nav-tabs-link-border-hover);
+  background-color: var(--pgn-color-nav-tabs-base-link-hover-bg);
+}
+
+.pgn__tabs.nav-pills .nav-link[data-focus-visible] {
+  --pgn-tabs-focus-border-radius: var(--pgn-size-nav-pills-border-radius);
+}
+
+.pgn__tabs.nav-pills .nav-link.active {
+  color: var(--pgn-color-nav-pills-base-link-active-text);
+  background-color: var(--pgn-color-nav-pills-base-link-active-bg);
+  border-color: var(--pgn-color-nav-pills-base-link-active-border);
+}
+
+/* ---------------------------------------------------------- button-group --- */
+
+.nav-button-group .nav-link {
+  border: solid 1px var(--pgn-color-nav-tabs-base-border-base);
+}
+
+.nav-button-group .nav-link:first-child {
+  border-top-left-radius: var(--pgn-size-nav-pills-border-radius);
+  border-bottom-left-radius: var(--pgn-size-nav-pills-border-radius);
+}
+
+.nav-button-group .nav-link:last-child {
+  border-top-right-radius: var(--pgn-size-nav-pills-border-radius);
+  border-bottom-right-radius: var(--pgn-size-nav-pills-border-radius);
+}
+
+.nav-button-group .nav-link:hover {
+  background: var(--pgn-color-nav-tabs-base-link-hover-bg);
+}
+
+.nav-button-group .nav-link + .nav-link {
+  margin-left: -1px;
+}
+
+.nav-button-group .nav-link.active {
+  color: var(--pgn-color-nav-pills-base-link-active-text);
+  background-color: var(--pgn-color-nav-pills-base-link-active-bg);
+  border-color: transparent;
+}
+
+/* ----------------------------------------------------------- inverse pills --- */
+
+.pgn__tabs.nav-inverse-pills + .tab-content {
+  color: var(--pgn-color-nav-pills-inverse-tab-content-color);
+}
+
+.pgn__tabs.nav-inverse-pills .nav-link {
+  color: var(--pgn-color-nav-pills-inverse-link-text-base);
+  border: var(--pgn-size-nav-pills-inverse-link-border-width) solid var(--pgn-color-nav-pills-inverse-link-border-base);
+  border-radius: var(--pgn-size-nav-pills-border-radius);
+}
+
+.pgn__tabs.nav-inverse-pills .nav-link:hover {
+  background-color: var(--pgn-color-nav-pills-inverse-link-bg-hover);
+}
+
+.pgn__tabs.nav-inverse-pills .nav-link[data-focus-visible] {
+  --pgn-tabs-focus-border-color: var(--pgn-color-nav-pills-inverse-link-text-focus);
+  --pgn-tabs-focus-border-radius: var(--pgn-size-nav-pills-border-radius);
+}
+
+.pgn__tabs.nav-inverse-pills .nav-link.disabled,
+.pgn__tabs.nav-inverse-pills .nav-link[aria-disabled="true"] {
+  opacity: .5;
+}
+
+.pgn__tabs.nav-inverse-pills .nav-link.active {
+  background-color: var(--pgn-color-nav-pills-inverse-link-bg-active);
+  color: var(--pgn-color-nav-pills-inverse-link-text-active);
+  border-color: var(--pgn-color-nav-pills-inverse-link-border-active);
+}
+
+.pgn__tabs.nav-inverse-pills .nav-link.active:hover {
+  background-color: var(--pgn-color-nav-pills-inverse-link-bg-active-hover);
+  color: var(--pgn-color-nav-pills-inverse-link-text-active-hover);
+  border-color: var(--pgn-color-nav-pills-inverse-link-border-active-hover);
+}
+
+/* ----------------------------------------------------------- inverse tabs --- */
+
+.pgn__tabs.nav-inverse-tabs + .tab-content {
+  color: var(--pgn-color-nav-tabs-inverse-link-tab-content-color);
+}
+
+.pgn__tabs.nav-inverse-tabs .nav-link {
+  color: var(--pgn-color-nav-tabs-inverse-link-text-base);
+  border: none;
+  border-bottom: var(--pgn-size-nav-tabs-border-width) solid var(--pgn-color-nav-tabs-inverse-link-border-bottom);
+}
+
+.pgn__tabs.nav-inverse-tabs .nav-link:hover {
+  background-color: var(--pgn-color-nav-tabs-inverse-link-bg-hover);
+}
+
+.pgn__tabs.nav-inverse-tabs .nav-link[data-focus-visible] {
+  --pgn-tabs-focus-border-color: var(--pgn-color-nav-tabs-inverse-link-bg-focus);
+}
+
+.pgn__tabs.nav-inverse-tabs .nav-link.disabled,
+.pgn__tabs.nav-inverse-tabs .nav-link[aria-disabled="true"] {
+  opacity: .5;
+}
+
+.pgn__tabs.nav-inverse-tabs .nav-link.active {
+  /* stylelint-disable-next-line max-line-length */
+  border-bottom: var(--pgn-size-nav-tabs-inverse-link-active-border-bottom-width) solid var(--pgn-color-nav-tabs-inverse-link-border-active);
+  background-color: var(--pgn-color-nav-tabs-inverse-link-bg-active);
+}
+
+.pgn__tabs.nav-inverse-tabs .nav-link.active:hover {
+  background-color: var(--pgn-color-nav-tabs-inverse-link-bg-active-hover);
+}
+
+/* --------------------------------------------------------------- content --- */
+
+.tab-content > .tab-pane {
+  text-align: start;
+}

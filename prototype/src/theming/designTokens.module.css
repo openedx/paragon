@@ -1,0 +1,341 @@
+/* Styling for the Design Tokens / Theming playground (DesignTokensPlayground.tsx). */
+
+.root {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 22rem);
+  gap: 1.5rem;
+  align-items: start;
+  margin: 1rem 0;
+  font-family: var(--pgn-typography-font-family-base);
+  color: var(--pgn-color-body-base);
+}
+
+@media (max-width: 48rem) {
+  .root { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* --- Live preview (left) --- */
+.preview {
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: var(--pgn-color-light-200);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.previewSection > h4 {
+  font: 600 11px/1 system-ui, sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #6b6b7b;
+  margin: 0 0 0.6rem;
+}
+
+.previewRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Buttons and tabs use `font-family: inherit` so that, in a real consuming app,
+   they follow the body's base font. Inside Storybook's docs frame that chain is
+   broken: the docs reset sets `font-family` on the wrapper elements, so `inherit`
+   resolves to Storybook's font rather than the base. Custom properties, however,
+   inherit reliably (that's why the colour tokens work here), so we resolve the
+   base font family from the token variable directly. This is a preview-only
+   workaround for the docs environment — the token data itself is unchanged. */
+.preview :global(.btn),
+.preview :global(.nav-link),
+.preview :global(.tab-content) {
+  font-family: var(--pgn-typography-font-family-base);
+}
+
+/* Sample prose that renders in the base font tokens, so the Font family control
+   has something obvious (beyond the buttons) to affect. */
+.proseSample {
+  font-family: var(--pgn-typography-font-family-base);
+  color: var(--pgn-color-body-base);
+}
+
+.proseSample h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+}
+
+.proseSample p {
+  font-size: var(--pgn-typography-font-size-base, 1.125rem);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 42rem;
+}
+
+.proseSample code {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.85em;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  padding: 1px 4px;
+}
+
+/* --- Controls (right) --- */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.panelTitle {
+  font: 700 13px/1.2 system-ui, sans-serif;
+  margin: 0;
+}
+
+.resetAll {
+  font: 600 12px/1 system-ui, sans-serif;
+  color: #3a3a4a;
+  background: #fff;
+  border: 1px solid #c4c4cc;
+  border-radius: 4px;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+}
+
+.resetAll:disabled { opacity: 0.4; cursor: default; }
+
+.card {
+  border: 1px solid #d9d9df;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* The prominent top-level source-token control. */
+.baseControl {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: #fafafa;
+}
+
+.baseSwatch {
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  border: 1px solid #c4c4cc;
+  border-radius: 6px;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  flex: none;
+}
+
+.baseMeta { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+
+.baseName {
+  font: 700 14px/1 system-ui, sans-serif;
+}
+
+.baseToken {
+  font: 12px/1 "SFMono-Regular", Consolas, monospace;
+  color: #8a8a96;
+}
+
+.baseValueInput {
+  margin-inline-start: auto;
+  inline-size: 6.5rem;
+  font: 12.5px/1 "SFMono-Regular", Consolas, monospace;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid #c4c4cc;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* Disclosure for the derived tokens. */
+.disclosure {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  background: #fff;
+  border: none;
+  border-top: 1px solid #ececf0;
+  font: 600 12px/1 system-ui, sans-serif;
+  color: #4a4a58;
+  cursor: pointer;
+  text-align: start;
+}
+
+.disclosure:hover { background: #fbfbfd; }
+
+.caret {
+  display: inline-block;
+  transition: transform 0.12s ease;
+  color: #9a9aa6;
+}
+
+.caretOpen { transform: rotate(90deg); }
+
+.count {
+  margin-inline-start: auto;
+  font: 600 11px/1 system-ui, sans-serif;
+  color: #9a9aa6;
+}
+
+.derived {
+  border-top: 1px solid #ececf0;
+  background: #fcfcfd;
+}
+
+.groupHeader {
+  font: 700 10px/1 system-ui, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9a9aa6;
+  padding: 0.6rem 1rem 0.3rem;
+}
+
+.groupNote {
+  font: 11px/1.4 system-ui, sans-serif;
+  color: #9a9aa6;
+  margin: 0;
+  padding: 0 1rem 0.35rem;
+}
+
+.tokenRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 1rem;
+}
+
+.tokenRow.overridden {
+  background: #f6f2ff;
+}
+
+.tokenSwatch {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  border: 1px solid #c4c4cc;
+  border-radius: 4px;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  flex: none;
+}
+
+.tokenSwatchStatic {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  border: 1px solid #c4c4cc;
+  border-radius: 4px;
+  flex: none;
+}
+
+.tokenName {
+  font: 11.5px/1.3 "SFMono-Regular", Consolas, monospace;
+  color: #3a3a48;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.tokenValue {
+  inline-size: 6.25rem;
+  font: 11px/1 "SFMono-Regular", Consolas, monospace;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid #d0d0d6;
+  border-radius: 4px;
+  flex: none;
+}
+
+.tokenValueReadonly {
+  color: #8a8a96;
+  background: #f4f4f6;
+}
+
+.resetRow {
+  font: 600 14px/1 system-ui, sans-serif;
+  color: #9a9aa6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.15rem;
+  flex: none;
+}
+
+.resetRow:hover { color: #3a3a4a; }
+
+.hint {
+  font: 12px/1.5 system-ui, sans-serif;
+  color: #6b6b7b;
+  margin: 0;
+}
+
+.hint code {
+  font: 11px/1 "SFMono-Regular", Consolas, monospace;
+  background: #eeeef2;
+  border-radius: 3px;
+  padding: 1px 4px;
+}
+
+/* Wide value input used by the non-colour global controls. */
+.valueInputWide {
+  flex: 1 1 auto;
+  min-width: 0;
+  font: 12.5px/1.3 "SFMono-Regular", Consolas, monospace;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #c4c4cc;
+  border-radius: 4px;
+}
+
+.valueInputWide:focus {
+  outline: 2px solid #7a5cff;
+  outline-offset: -1px;
+  border-color: #7a5cff;
+}
+
+.fontPreview {
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  border: 1px solid #c4c4cc;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3a3a48;
+  flex: none;
+}
+
+.presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0 1rem 0.75rem;
+}
+
+.preset {
+  font: 600 11px/1 system-ui, sans-serif;
+  color: #4a4a58;
+  background: #f4f4f6;
+  border: 1px solid #d9d9df;
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+}
+
+.preset:hover {
+  background: #ececf0;
+}

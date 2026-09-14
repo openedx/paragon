@@ -1,0 +1,27 @@
+/*
+ * Foundational base layer — the modern replacement for Bootstrap's `reboot`.
+ *
+ * Paragon's button (and form) font tokens resolve to `inherit`, on the
+ * assumption that a base layer establishes the root typography that components
+ * inherit. Bootstrap's reboot used to do this; here we set it explicitly from
+ * the same `--pgn-*` design tokens. Without this, buttons fall back to the
+ * user-agent serif default.
+ *
+ * This is imported both by the library entry (so consumers get it) and by the
+ * Storybook preview (so docs/story frames render like a real consuming app).
+ */
+/*
+ * Apply the base typography to `body`, NOT `html` — exactly as Bootstrap's
+ * reboot does. `--pgn-typography-font-size-base` is `1.125rem`, so setting it on
+ * the root (`html`) would inflate the `rem` reference from 16px to 18px and make
+ * every `rem`-based component token compound (e.g. the button's own `1.125rem`
+ * font-size would render at 20.25px instead of 18px). Keeping `html` at the
+ * browser default preserves `rem` = 16px, so `1.125rem` resolves to 18px
+ * everywhere, matching the current library.
+ */
+:where(body) {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-base);
+  line-height: var(--pgn-typography-line-height-base);
+  color: var(--pgn-color-body-base);
+}

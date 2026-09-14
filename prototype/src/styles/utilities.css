@@ -1,0 +1,36 @@
+/*
+ * Utility class layer - global, public, Bootstrap-compatible classes.
+ *
+ * Like the button classes, Paragon's layout/spacing utilities (d-flex,
+ * flex-grow-1, ...) are part of the PUBLIC API: consuming MFEs apply them to
+ * their own markup, so they must stay global and stable (ADR 0022). Ported from
+ * Bootstrap to plain CSS; `:where()` keeps their specificity at zero so a
+ * component's own rules always win, matching Bootstrap's utility behaviour.
+ *
+ * This prototype ships only the small, representative subset the migrated
+ * components' docs exercise. The full set Paragon ships is generated from the
+ * same token scale and pruned against `dependent-usage.json` (see ADR 0022).
+ */
+
+:where(.d-flex) { display: flex; }
+:where(.d-inline-flex) { display: inline-flex; }
+:where(.d-block) { display: block; }
+:where(.d-none) { display: none; }
+
+:where(.flex-grow-1) { flex-grow: 1; }
+:where(.flex-column) { flex-direction: column; }
+:where(.align-items-center) { align-items: center; }
+:where(.justify-content-between) { justify-content: space-between; }
+
+/* Visually hidden, but available to screen readers (e.g. Tabs' notification text). */
+:where(.sr-only) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
