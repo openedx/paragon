@@ -8,6 +8,10 @@
           "source": "$modal-content-border-color",
           "modify": [{ "type": "alpha", "amount": 0.2 }],
           "$value": "{color.black}"
+        },
+        "scroll-shadow": {
+          "from": { "source": "$modal-scroll-shadow-from", "$value": "#605C5C" },
+          "to": { "source": "$modal-scroll-shadow-to", "$value": "#B8BEBE" }
         }
       },
       "backdrop-bg": { "source": "$modal-backdrop-bg", "$value": "{color.black}" },

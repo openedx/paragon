@@ -1,0 +1,43 @@
+{
+  "elevation": {
+    "$type": "shadow",
+    "sticky": {
+      "shadow": {
+        "top": {
+          "source": "$sticky-shadow-top",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.5rem",
+              "blur": "1rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.25rem",
+              "blur": ".625rem"
+            }
+          ]
+        },
+        "bottom": {
+          "source": "$sticky-shadow-bottom",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".5rem",
+              "blur": "1rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".25rem",
+              "blur": ".625rem"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

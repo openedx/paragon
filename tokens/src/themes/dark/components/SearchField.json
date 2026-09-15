@@ -1,0 +1,25 @@
+{
+  "color": {
+    "$type": "color",
+    "search-field": {
+      "border": {
+        "base": { "source": "$search-border-color", "$value": "{color.gray.500}" },
+        "interaction": { "source": "$search-border-color-interaction", "$value": "{color.white}" },
+        "focus": { "source": "$search-border-focus-color", "$value": "{color.white}" }
+      },
+      "button": {
+        "bg": {
+          "primary": { "source": "$search-btn-primary-bg", "$value": "{color.primary.500}" },
+          "brand": { "source": "$search-btn-brand-bg", "$value": "{color.brand.500}" }
+        }
+      },
+      "form-bg": { "source": "$search-form-background-color", "$value": "{color.bg.base}" }
+    }
+  },
+  "other": {
+    "$type": "number",
+    "search-field": {
+      "disabled-opacity": { "source": "$search-disabled-opacity", "$value": ".3" }
+    }
+  }
+}

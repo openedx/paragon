@@ -1,0 +1,45 @@
+{
+  "color": {
+    "$type": "color",
+    "tooltip": {
+      "text": { "source": "$tooltip-color", "$value": "{color.white}" },
+      "light": { "source": "$tooltip-color-light", "$value": "{color.black}" },
+      "bg": {
+        "base": { "source": "$tooltip-bg", "$value": "{color.black}" },
+        "light": { "source": "$tooltip-bg-light", "$value": "{color.white}" }
+      },
+      "arrow": {
+        "base": { "source": "$tooltip-arrow-color", "$value": "{color.tooltip.bg.base}" },
+        "light": { "source": "$tooltip-arrow-color-light", "$value": "{color.white}" }
+      }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "tooltip": {
+      "box-shadow": {
+        "source": "$tooltip-box-shadow",
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, .15)",
+            "offsetX": "0",
+            "offsetY": "2px",
+            "blur": "4px"
+          },
+          {
+            "color": "rgba(0, 0, 0, .15)",
+            "offsetX": "0",
+            "offsetY": "2px",
+            "blur": "8px"
+          }
+        ]
+      }
+    }
+  },
+  "other": {
+    "$type": "number",
+    "tooltip": {
+      "opacity": { "source": "$tooltip-opacity", "$value": "1" }
+    }
+  }
+}

@@ -1,3 +1,8 @@
 .react-loading-skeleton {
   z-index: unset;
+  // Map react-loading-skeleton's own custom properties to theme-aware Paragon
+  // grays so the placeholder shimmer adapts to light/dark instead of staying
+  // a fixed light gray (which appears as a bright patch on dark surfaces).
+  --base-color: var(--pgn-color-gray-200) !important;
+  --highlight-color: var(--pgn-color-gray-300) !important;
 }
