@@ -2,9 +2,12 @@
 clean:
 	rm -rf ./dist
 
-# A full build from scratch. Use this for CI and for publishing.
+# A full build from scratch. Use this for CI and for publishing. Recursive so
+# the clean is guaranteed to finish before the build starts, even under `make -j`.
 .PHONY: build
-build: clean build-incremental
+build:
+	$(MAKE) clean
+	$(MAKE) build-incremental
 
 # Rebuilds only the parts whose sources changed. Compiling the stylesheets takes
 # minutes while the JavaScript takes seconds, so a watch rebuild should not
@@ -25,12 +28,12 @@ build-js:
 	rm -rf dist/__mocks__
 	rm -rf dist/setupTest.js
 
-THEME_SOURCES := $(shell find styles/scss styles/css src \( -name '*.scss' -o -name '*.css' \))
+STYLESHEET_SOURCES := $(shell find styles/scss styles/css src \( -name '*.scss' -o -name '*.css' \))
 
 .PHONY: build-scss
 build-scss: dist/theme-urls.json
 
-dist/theme-urls.json: $(THEME_SOURCES) lib/build-scss.js
+dist/theme-urls.json: $(STYLESHEET_SOURCES) lib/build-scss.js
 	./bin/paragon-scripts.js build-scss
 
 NPM_TESTS=build i18n_extract lint test
