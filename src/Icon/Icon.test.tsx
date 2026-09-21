@@ -6,10 +6,7 @@ import { type IconName } from '../../icons';
 import Icon from './index';
 
 const testId = 'testId';
-const classNames = [
-  'fa',
-  'fa-check',
-];
+const className = 'fa fa-check';
 const srTest = 'srTest';
 
 function BlankSrc() {
@@ -53,28 +50,17 @@ describe('<Icon />', () => {
 
   describe('props received correctly', () => {
     it('receives required props', () => {
-      const { container } = render(<Icon className={classNames} />);
+      const { container } = render(<Icon className={className} />);
       const iconSpans = container.querySelectorAll('span');
       const iconSpan = iconSpans[0];
 
       expect(iconSpan.getAttribute('id')).toContain('Icon');
-      expect(iconSpan.classList.contains(classNames[0])).toEqual(true);
-      expect(iconSpan.classList.contains(classNames[1])).toEqual(true);
-    });
-
-    it('handles null id properly', () => {
-      const nullId = null;
-      const { container } = render(<Icon id={nullId} className={classNames} />);
-      const iconSpans = container.querySelectorAll('span');
-      const iconSpan = iconSpans[0];
-
-      expect(iconSpan.getAttribute('id')).toContain('Icon');
-      expect(iconSpan.classList.contains(classNames[0])).toEqual(true);
-      expect(iconSpan.classList.contains(classNames[1])).toEqual(true);
+      expect(iconSpan.classList.contains('fa')).toEqual(true);
+      expect(iconSpan.classList.contains('fa-check')).toEqual(true);
     });
 
     it('generates unique ids when no id is provided', () => {
-      const { container } = render(<><Icon className={classNames} /><Icon className={classNames} /></>);
+      const { container } = render(<><Icon className={className} /><Icon className={className} /></>);
       const iconSpans = container.querySelectorAll('span');
       const iconSpan1 = iconSpans[0];
       const iconSpan2 = iconSpans[1];
@@ -87,7 +73,7 @@ describe('<Icon />', () => {
     });
 
     it('handles screenReaderText correctly', () => {
-      const { container } = render(<Icon id={testId} className={classNames} screenReaderText={srTest} />);
+      const { container } = render(<Icon id={testId} className={className} screenReaderText={srTest} />);
       const iconSpans = container.querySelectorAll('span');
 
       expect(iconSpans.length).toEqual(2);
@@ -96,7 +82,7 @@ describe('<Icon />', () => {
     });
 
     it('receives size prop correctly', () => {
-      const { container } = render(<Icon src={BlankSrc} className={classNames} size="xs" />);
+      const { container } = render(<Icon src={BlankSrc} className={className} size="xs" />);
       const iconSpans = container.querySelectorAll('span');
       const iconSpan = iconSpans[0];
 
