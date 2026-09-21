@@ -365,7 +365,7 @@ Note that `Card.Footer` has a separate `orientation` prop which will override th
       <Card.ImageCap
         src="https://picsum.photos/360/200/"
         srcAlt="Card image"
-        logoSrc="https://via.placeholder.com/150"
+        logoSrc="https://placeholder.photo/150"
         logoAlt="Card logo"
       />
       <Card.Header
@@ -403,7 +403,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
         <Card.ImageCap
           src="https://picsum.photos/360/200/"
           srcAlt="Card image"
-          logoSrc="https://via.placeholder.com/150"
+          logoSrc="https://placeholder.photo/150"
           logoAlt="Card logo"
         />
         <Card.Body>
@@ -427,7 +427,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
         <Card.ImageCap
           src="https://picsum.photos/360/200/"
           srcAlt="Card image"
-          logoSrc="https://via.placeholder.com/150"
+          logoSrc="https://placeholder.photo/150"
           logoAlt="Card logo"
         />
         <Card.Section 
@@ -444,7 +444,7 @@ When using horizontal variant Paragon provides additional component `Card.Body` 
         <Card.ImageCap
           src="https://picsum.photos/360/200/"
           srcAlt="Card image"
-          logoSrc="https://via.placeholder.com/150"
+          logoSrc="https://placeholder.photo/150"
           logoAlt="Card logo"
         />
         <Card.Body>
@@ -486,7 +486,7 @@ An optional `actions` prop may be passed to include call-to-action button(s).
         <Card.ImageCap
           src="https://picsum.photos/360/200/"
           srcAlt="Card image"
-          logoSrc="https://via.placeholder.com/150"
+          logoSrc="https://placeholder.photo/150"
           logoAlt="Card logo"
         />
         <Card.Header title="Card title"/>
@@ -502,7 +502,7 @@ An optional `actions` prop may be passed to include call-to-action button(s).
         <Card.ImageCap
           src="https://picsum.photos/360/200/"
           srcAlt="Card image"
-          logoSrc="https://via.placeholder.com/150"
+          logoSrc="https://placeholder.photo/150"
           logoAlt="Card logo"
         />
         <Card.Body>
@@ -756,7 +756,7 @@ The default fallback image will be displayed if `fallbackSrc` is not specified.
         skeletonHeight={isExtraSmall ? 140 : null}
         src="https://picsum.photos/360/200/"
         srcAlt="Card image"
-        logoSrc="https://via.placeholder.com/150"
+        logoSrc="https://placeholder.photo/150"
         logoAlt="Card logo"
       />
       <Card.Body>
