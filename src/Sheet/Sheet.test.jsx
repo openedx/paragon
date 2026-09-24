@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import Sheet, { POSITIONS, VARIANTS } from '.';
 
@@ -112,6 +112,26 @@ describe('<Sheet />', () => {
       expect(sheetElement).toBeInTheDocument();
       expect(sheetElement).toHaveClass('pgn__sheet-component');
       expect(sheetElement).toHaveClass(sheetClass);
+    });
+
+    it('renders with correct width classes', () => {
+      const { unmount } = render(<Sheet width="sm" />);
+      const sheetSm = screen.getByRole('alert');
+
+      expect(sheetSm).toHaveClass('pgn__sheet-width-sm');
+
+      unmount();
+
+      render(<Sheet width="lg" />);
+      const sheetLg = screen.getByRole('alert');
+
+      expect(sheetLg).toHaveClass('pgn__sheet-width-lg');
+    });
+
+    it('renders default width (md) when no width is provided', () => {
+      render(<Sheet />);
+      const sheet = screen.getByRole('alert');
+      expect(sheet).toHaveClass('pgn__sheet-width-md');
     });
   });
 });
