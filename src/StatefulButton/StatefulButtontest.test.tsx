@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import StatefulButton from './index';
+import StatefulButton from '.';
 import Icon from '../Icon';
 
 describe('StatefulButton', () => {
@@ -13,7 +13,7 @@ describe('StatefulButton', () => {
         complete: 'Saved',
       },
       className: 'mr-2',
-      variant: 'primary',
+      variant: 'primary' as const,
     };
     const tree = renderer.create((
       <div>
@@ -39,7 +39,7 @@ describe('StatefulButton', () => {
       },
       disabledStates: ['pending'],
       className: 'mr-2',
-      variant: 'primary',
+      variant: 'primary' as const,
     };
     const tree = renderer.create((
       <>
@@ -63,7 +63,7 @@ describe('StatefulButton', () => {
       },
       disabledStates: ['unedited'],
       className: 'mr-2',
-      variant: 'primary',
+      variant: 'primary' as const,
     };
     const tree = renderer.create((
       <>
