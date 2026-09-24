@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
 
 import { SearchFieldContext } from './SearchFieldAdvanced';
 import Button from '../Button';
 import IconButton from '../IconButton';
 import Icon from '../Icon';
+import messages from './messages';
 
 const STYLE_VARIANTS = [
   'light',
@@ -23,6 +25,8 @@ function SearchFieldSubmitButton(props) {
   const {
     screenReaderText, icons, refs, value, disabled,
   } = useContext(SearchFieldContext);
+  const intl = useIntl();
+  const defaultButtonText = buttonText ?? intl.formatMessage(messages.searchButtonText);
 
   if (submitButtonLocation === 'internal' && value.length) {
     return null;
@@ -37,7 +41,7 @@ function SearchFieldSubmitButton(props) {
       disabled={disabled}
       {...others}
     >
-      {buttonText}
+      {defaultButtonText}
       <span className="sr-only">{screenReaderText.submitButton}</span>
     </Button>
   ) : (
@@ -70,7 +74,6 @@ SearchFieldSubmitButton.propTypes = {
 SearchFieldSubmitButton.defaultProps = {
   variant: 'light',
   submitButtonLocation: 'internal',
-  buttonText: 'Search',
 };
 
 export default SearchFieldSubmitButton;

@@ -129,6 +129,14 @@
 .pgn__searchfield__button.btn[type="submit"] {
   border-radius: 0;
   margin-inline-start: var(--pgn-spacing-search-field-margin-button);
+
+  &:focus::before {
+    border-radius: inherit;
+  }
+
+  &:focus-visible::after {
+    content: none;
+  }
 }
 
 .pgn__searchfield__iconbutton-submit,
