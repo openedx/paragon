@@ -26,7 +26,7 @@ function SearchFieldSubmitButton(props) {
     screenReaderText, icons, refs, value, disabled,
   } = useContext(SearchFieldContext);
   const intl = useIntl();
-  const defaultButtonText = buttonText ?? intl.formatMessage(messages.searchButtonText);
+  const resolvedButtonText = buttonText ?? intl.formatMessage(messages.searchButtonText);
 
   if (submitButtonLocation === 'internal' && value.length) {
     return null;
@@ -41,7 +41,7 @@ function SearchFieldSubmitButton(props) {
       disabled={disabled}
       {...others}
     >
-      {defaultButtonText}
+      {resolvedButtonText}
       <span className="sr-only">{screenReaderText.submitButton}</span>
     </Button>
   ) : (
