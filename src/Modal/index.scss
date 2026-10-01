@@ -62,7 +62,7 @@
   }
 
   &::before {
-    border-top-color: rgba(0, 0, 0, .2);
+    border-top-color: var(--pgn-color-modal-content-border);
   }
 }
 
@@ -98,7 +98,7 @@
 .pgn__modal-popup__arrow-top-start::after,
 .pgn__modal-popup__arrow-top::after {
   bottom: var(--pgn-size-border-width);
-  border-top-color: var(--pgn-color-white);
+  border-top-color: var(--pgn-color-bg-base);
 }
 
 [data-popper-placement^="right"] .pgn__modal-popup__arrow-auto,

@@ -3,7 +3,7 @@ import { type ThemeConfig } from '../types/types';
 import { UpdateSettingsFunction } from './useSettings';
 
 import { encodeThemesToQueryParam } from '../utils/queryParamEncoding';
-import { DEFAULT_THEME } from '../utils/themeUtils';
+import { DEFAULT_THEMES } from '../utils/themeUtils';
 
 /**
  * Hook to manage theme state including default and custom themes
@@ -58,9 +58,9 @@ export const useCustomThemes = (
       activeIdx = value;
     }
 
-    // Ensure we have at least the default theme
+    // Ensure we have at least the built-in default themes
     if (themesArr.length === 0) {
-      themesArr = [DEFAULT_THEME];
+      themesArr = [...DEFAULT_THEMES];
       activeIdx = 0;
     }
 
@@ -111,9 +111,9 @@ export const useCustomThemes = (
     if (index >= 0 && index < currentThemes.length) {
       const newThemes = currentThemes.filter((_, i) => i !== index);
 
-      // Ensure we have at least the default theme
+      // Ensure we have at least the built-in default themes
       if (newThemes.length === 0) {
-        newThemes.push(DEFAULT_THEME);
+        newThemes.push(...DEFAULT_THEMES);
       }
 
       // Adjust active index if needed
@@ -144,9 +144,9 @@ export const useCustomThemes = (
     url.searchParams.delete('themes');
     window.history.replaceState({}, '', url.toString());
 
-    // Update settings atomically - reset to just the default theme
+    // Update settings atomically - reset to the built-in default themes
     updateSettings({
-      themes: [DEFAULT_THEME],
+      themes: [...DEFAULT_THEMES],
       activeThemeIndex: 0,
     });
   };

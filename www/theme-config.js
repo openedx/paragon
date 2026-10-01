@@ -15,6 +15,12 @@ const THEMES = [
     stylesheet: 'openedx-theme',
     pathToVariables: undefined,
   },
+  {
+    id: 'openedx-dark',
+    label: 'Open edX Dark',
+    stylesheet: 'openedx-dark-theme',
+    pathToVariables: undefined,
+  },
 ];
 
 module.exports = {
