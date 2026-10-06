@@ -1,5 +1,5 @@
 {
-  "lastModified": 1791209948411,
+  "lastModified": 1791296205501,
   "projectUsages": [
     {
       "version": "3.4.8",
@@ -5988,166 +5988,206 @@
       }
     },
     {
-      "version": "23.19.2",
-      "name": "@edx/frontend-app-profile",
+      "version": "23.23.0",
+      "name": "@openedx/frontend-app-profile",
       "repository": {
         "type": "git",
         "url": "git+https://github.com/openedx/frontend-app-profile.git"
       },
       "folderName": "frontend-app-profile",
       "usages": {
+        "Button": [
+          {
+            "filePath": "src/slots/AdditionalProfileFieldsSlot/example/index.jsx",
+            "line": 71,
+            "column": 14,
+            "index": 2484
+          },
+          {
+            "filePath": "src/profile/forms/elements/FormControls.jsx",
+            "line": 41,
+            "column": 10,
+            "index": 1417
+          },
+          {
+            "filePath": "src/profile/forms/elements/EditButton.jsx",
+            "line": 22,
+            "column": 6,
+            "index": 722
+          }
+        ],
         "Hyperlink": [
           {
             "filePath": "src/profile/ProfilePage.jsx",
-            "line": 137,
+            "line": 126,
             "column": 6,
-            "index": 4263
+            "index": 3877
           },
           {
             "filePath": "src/profile/CertificateCard.jsx",
             "line": 95,
             "column": 12,
-            "index": 3051
+            "index": 3068
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
             "line": 72,
             "column": 18,
-            "index": 2446
+            "index": 2654
           }
         ],
         "Alert": [
           {
             "filePath": "src/profile/ProfilePage.jsx",
-            "line": 155,
+            "line": 144,
             "column": 10,
-            "index": 4791
+            "index": 4405
           },
           {
             "filePath": "src/profile/forms/SocialLinks.jsx",
-            "line": 99,
+            "line": 95,
             "column": 16,
-            "index": 2580
+            "index": 2622
+          }
+        ],
+        "Container": [
+          {
+            "filePath": "src/profile/ProfilePage.jsx",
+            "line": 174,
+            "column": 12,
+            "index": 5331
+          },
+          {
+            "filePath": "src/profile/ProfilePage.jsx",
+            "line": 255,
+            "column": 12,
+            "index": 8683
+          },
+          {
+            "filePath": "src/profile/ProfilePage.jsx",
+            "line": 383,
+            "column": 12,
+            "index": 14267
           }
         ],
         "OverlayTrigger": [
           {
             "filePath": "src/profile/ProfilePage.jsx",
-            "line": 301,
-            "column": 22,
-            "index": 10546
+            "line": 294,
+            "column": 24,
+            "index": 10607
           },
           {
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 64,
             "column": 10,
-            "index": 1382
+            "index": 1384
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 56,
+            "line": 54,
             "column": 18,
-            "index": 1759
+            "index": 1816
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 93,
+            "line": 96,
             "column": 14,
-            "index": 3241
+            "index": 3555
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 122,
+            "line": 125,
             "column": 14,
-            "index": 4314
+            "index": 4628
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 147,
+            "line": 150,
             "column": 14,
-            "index": 5267
+            "index": 5581
           },
           {
             "filePath": "src/profile/forms/elements/EditButton.jsx",
             "line": 11,
             "column": 4,
-            "index": 398
+            "index": 419
           }
         ],
         "Tooltip": [
           {
             "filePath": "src/profile/ProfilePage.jsx",
-            "line": 305,
-            "column": 26,
-            "index": 10697
+            "line": 298,
+            "column": 28,
+            "index": 10766
           },
           {
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 68,
             "column": 14,
-            "index": 1485
+            "index": 1487
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 60,
+            "line": 58,
             "column": 22,
-            "index": 1894
+            "index": 1951
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 97,
+            "line": 100,
             "column": 18,
-            "index": 3360
+            "index": 3674
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 126,
+            "line": 129,
             "column": 18,
-            "index": 4433
+            "index": 4747
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 151,
+            "line": 154,
             "column": 18,
-            "index": 5386
+            "index": 5700
           },
           {
             "filePath": "src/profile/forms/elements/EditButton.jsx",
             "line": 15,
             "column": 8,
-            "index": 477
+            "index": 498
           }
         ],
         "InfoOutline": [
           {
             "filePath": "src/profile/ProfilePage.jsx",
-            "line": 312,
-            "column": 24,
-            "index": 11050
+            "line": 305,
+            "column": 26,
+            "index": 11133
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 67,
+            "line": 65,
             "column": 20,
-            "index": 2221
+            "index": 2278
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 104,
+            "line": 107,
             "column": 16,
-            "index": 3661
+            "index": 3975
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 133,
+            "line": 136,
             "column": 16,
-            "index": 4734
+            "index": 5048
           },
           {
             "filePath": "src/profile/forms/Name.jsx",
-            "line": 158,
+            "line": 161,
             "column": 16,
-            "index": 5687
+            "index": 6001
           }
         ],
         "Dropdown": [
@@ -6155,7 +6195,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 63,
             "column": 8,
-            "index": 1361
+            "index": 1363
           }
         ],
         "Dropdown.Toggle": [
@@ -6163,7 +6203,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 81,
             "column": 12,
-            "index": 2021
+            "index": 2023
           }
         ],
         "IconButton": [
@@ -6171,7 +6211,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 85,
             "column": 18,
-            "index": 2157
+            "index": 2159
           }
         ],
         "PhotoCamera": [
@@ -6179,7 +6219,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 86,
             "column": 19,
-            "index": 2188
+            "index": 2190
           }
         ],
         "Icon": [
@@ -6187,7 +6227,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 87,
             "column": 22,
-            "index": 2223
+            "index": 2225
           }
         ],
         "Dropdown.Menu": [
@@ -6195,7 +6235,7 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 92,
             "column": 10,
-            "index": 2350
+            "index": 2352
           }
         ],
         "Dropdown.Item": [
@@ -6203,39 +6243,39 @@
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 93,
             "column": 12,
-            "index": 2414
+            "index": 2416
           },
           {
             "filePath": "src/profile/forms/ProfileAvatar.jsx",
             "line": 101,
             "column": 14,
-            "index": 2742
+            "index": 2744
           }
         ],
         "Form.Group": [
           {
             "filePath": "src/profile/forms/PreferredLanguage.jsx",
-            "line": 60,
+            "line": 57,
             "column": 14,
-            "index": 1693
+            "index": 1785
           },
           {
             "filePath": "src/profile/forms/Education.jsx",
-            "line": 53,
+            "line": 50,
             "column": 14,
-            "index": 1509
+            "index": 1563
           },
           {
             "filePath": "src/profile/forms/Country.jsx",
-            "line": 56,
+            "line": 52,
             "column": 14,
-            "index": 1584
+            "index": 1682
           },
           {
             "filePath": "src/profile/forms/Bio.jsx",
-            "line": 55,
+            "line": 52,
             "column": 14,
-            "index": 1549
+            "index": 1593
           }
         ],
         "TransitionReplace": [
@@ -6246,32 +6286,12 @@
             "index": 1091
           }
         ],
-        "Button": [
-          {
-            "filePath": "src/profile/forms/elements/FormControls.jsx",
-            "line": 41,
-            "column": 10,
-            "index": 1363
-          },
-          {
-            "filePath": "src/profile/forms/elements/EditButton.jsx",
-            "line": 22,
-            "column": 6,
-            "index": 701
-          },
-          {
-            "filePath": "src/plugin-slots/AdditionalProfileFieldsSlot/example/index.jsx",
-            "line": 71,
-            "column": 14,
-            "index": 2490
-          }
-        ],
         "StatefulButton": [
           {
             "filePath": "src/profile/forms/elements/FormControls.jsx",
             "line": 46,
             "column": 10,
-            "index": 1582
+            "index": 1636
           }
         ],
         "EditOutline": [
@@ -6279,35 +6299,35 @@
             "filePath": "src/profile/forms/elements/EditButton.jsx",
             "line": 29,
             "column": 8,
-            "index": 844
+            "index": 865
           }
         ],
         "useWindowSize": [
           {
             "filePath": "src/profile/data/hooks.js",
-            "line": 5,
+            "line": 36,
             "column": 21,
-            "index": 177
+            "index": 1140
           },
           {
             "filePath": "src/profile/data/hooks.js",
-            "line": 10,
+            "line": 41,
             "column": 21,
-            "index": 316
+            "index": 1279
           }
         ],
         "breakpoints": [
           {
             "filePath": "src/profile/data/hooks.js",
-            "line": 6,
+            "line": 37,
             "column": 29,
-            "index": 223
+            "index": 1186
           },
           {
             "filePath": "src/profile/data/hooks.js",
-            "line": 11,
+            "line": 42,
             "column": 29,
-            "index": 362
+            "index": 1325
           }
         ]
       }
@@ -9275,21 +9295,21 @@
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.test.jsx",
-            "line": 92,
+            "line": 93,
             "column": 24,
-            "index": 3215
+            "index": 3293
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.test.jsx",
-            "line": 139,
+            "line": 140,
             "column": 24,
-            "index": 5011
+            "index": 5089
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.test.jsx",
-            "line": 157,
+            "line": 158,
             "column": 24,
-            "index": 6042
+            "index": 6120
           },
           {
             "filePath": "src/shared/streak-celebration/StreakCelebrationModal.jsx",
@@ -9311,33 +9331,33 @@
           },
           {
             "filePath": "src/courseware/course/test-utils.jsx",
-            "line": 38,
+            "line": 31,
             "column": 22,
-            "index": 1329
+            "index": 1099
           },
           {
             "filePath": "src/courseware/course/Course.test.jsx",
-            "line": 81,
+            "line": 78,
             "column": 24,
-            "index": 2710
+            "index": 2636
           },
           {
             "filePath": "src/courseware/course/Course.test.jsx",
-            "line": 184,
+            "line": 171,
             "column": 26,
-            "index": 6880
+            "index": 6140
           },
           {
             "filePath": "src/courseware/course/Course.test.jsx",
-            "line": 299,
+            "line": 286,
             "column": 24,
-            "index": 11483
+            "index": 10655
           },
           {
             "filePath": "src/courseware/course/Course.test.jsx",
-            "line": 480,
+            "line": 457,
             "column": 24,
-            "index": 18647
+            "index": 17271
           },
           {
             "filePath": "src/courseware/course/Course.jsx",
@@ -9359,45 +9379,45 @@
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/CourseOutlineTrigger.test.jsx",
-            "line": 61,
+            "line": 57,
             "column": 24,
-            "index": 2373
+            "index": 2195
           },
           {
             "filePath": "src/courseware/course/sidebar/sidebars/course-outline/components/SidebarUnit.test.jsx",
-            "line": 176,
+            "line": 174,
             "column": 26,
-            "index": 6737
+            "index": 6639
           },
           {
             "filePath": "src/courseware/course/sidebar/common/SidebarBase.test.jsx",
             "line": 54,
             "column": 24,
-            "index": 1663
+            "index": 1599
           },
           {
             "filePath": "src/courseware/course/sidebar/common/SidebarBase.test.jsx",
             "line": 121,
             "column": 26,
-            "index": 3767
+            "index": 3703
           },
           {
             "filePath": "src/courseware/course/sequence/Sequence.test.jsx",
-            "line": 43,
+            "line": 44,
             "column": 24,
-            "index": 1593
+            "index": 1607
           },
           {
             "filePath": "src/courseware/course/sequence/Sequence.test.jsx",
-            "line": 454,
+            "line": 448,
             "column": 26,
-            "index": 18831
+            "index": 18185
           },
           {
             "filePath": "src/courseware/course/sequence/Sequence.test.jsx",
-            "line": 498,
+            "line": 491,
             "column": 26,
-            "index": 20634
+            "index": 19911
           },
           {
             "filePath": "src/courseware/course/sequence/sequence-navigation/hooks.js",
@@ -9481,7 +9501,7 @@
             "filePath": "src/course-home/progress-tab/ProgressTab.test.jsx",
             "line": 960,
             "column": 26,
-            "index": 34525
+            "index": 34520
           },
           {
             "filePath": "src/course-home/progress-tab/grades/course-grade/CourseGradeFooter.jsx",
@@ -18953,9 +18973,15 @@
           },
           {
             "filePath": "src/components/GradesView/FilterMenuToggle/index.jsx",
-            "line": 22,
+            "line": 23,
             "column": 6,
-            "index": 704
+            "index": 720
+          },
+          {
+            "filePath": "src/components/GradebookHeader/index.jsx",
+            "line": 33,
+            "column": 6,
+            "index": 1327
           },
           {
             "filePath": "src/components/GradebookFilters/index.jsx",
@@ -18982,6 +19008,20 @@
             "line": 50,
             "column": 4,
             "index": 1830
+          }
+        ],
+        "Bubble": [
+          {
+            "filePath": "src/components/GradesView/index.jsx",
+            "line": 45,
+            "column": 10,
+            "index": 1508
+          },
+          {
+            "filePath": "src/components/GradesView/index.jsx",
+            "line": 59,
+            "column": 10,
+            "index": 1981
           }
         ],
         "Spinner": [
@@ -19063,7 +19103,7 @@
             "filePath": "src/components/GradesView/ScoreViewInput/index.jsx",
             "line": 19,
             "column": 6,
-            "index": 609
+            "index": 647
           },
           {
             "filePath": "src/components/GradebookFilters/SelectGroup.jsx",
@@ -19083,7 +19123,7 @@
             "filePath": "src/components/GradesView/ScoreViewInput/index.jsx",
             "line": 20,
             "column": 6,
-            "index": 677
+            "index": 751
           },
           {
             "filePath": "src/components/GradesView/ImportGradesButton/index.jsx",
@@ -19155,15 +19195,15 @@
           },
           {
             "filePath": "src/components/GradebookHeader/index.jsx",
-            "line": 42,
+            "line": 41,
             "column": 8,
-            "index": 1534
+            "index": 1593
           },
           {
             "filePath": "src/components/GradebookHeader/index.jsx",
-            "line": 59,
+            "line": 62,
             "column": 10,
-            "index": 2216
+            "index": 2272
           },
           {
             "filePath": "src/components/GradebookFilters/CourseGradeFilter/index.jsx",
@@ -19265,9 +19305,9 @@
         "FilterAlt": [
           {
             "filePath": "src/components/GradesView/FilterMenuToggle/index.jsx",
-            "line": 22,
+            "line": 23,
             "column": 17,
-            "index": 715
+            "index": 731
           },
           {
             "filePath": "src/components/GradebookFilters/index.jsx",
@@ -19314,6 +19354,28 @@
             "line": 65,
             "column": 10,
             "index": 1892
+          }
+        ],
+        "ArrowBackIos": [
+          {
+            "filePath": "src/components/GradebookHeader/index.jsx",
+            "line": 33,
+            "column": 17,
+            "index": 1338
+          }
+        ],
+        "Hyperlink": [
+          {
+            "filePath": "src/components/GradebookHeader/index.jsx",
+            "line": 47,
+            "column": 6,
+            "index": 1735
+          },
+          {
+            "filePath": "src/components/BulkManagementHistoryView/ResultsSummary.jsx",
+            "line": 21,
+            "column": 4,
+            "index": 567
           }
         ],
         "IconButton": [
@@ -19364,14 +19426,6 @@
             "line": 82,
             "column": 8,
             "index": 2668
-          }
-        ],
-        "Hyperlink": [
-          {
-            "filePath": "src/components/BulkManagementHistoryView/ResultsSummary.jsx",
-            "line": 21,
-            "column": 4,
-            "index": 567
           }
         ],
         "Download": [
