@@ -1,0 +1,53 @@
+import { Meta, Title, Subtitle, Story, Controls } from '@storybook/addon-docs/blocks';
+
+import * as ButtonGroupStories from './ButtonGroup.stories';
+import { LiveExample } from '../docs/LiveExample';
+
+export const examples = ButtonGroupStories.examples;
+
+<Meta title="Buttonlike/ButtonGroup" />
+
+<Title>Button Group</Title>
+
+<Subtitle>Group related buttons so they read as a single control; ButtonToolbar arranges multiple groups.</Subtitle>
+
+`ButtonGroup` visually and semantically groups related `Button`s (ARIA
+`role="group"`). It renders the public `btn-group` class (part of Paragon's
+global class layer) and additionally propagates its `size` to child buttons via
+React context — replacing Bootstrap's `.btn-group-sm` / `.btn-group-lg` sizing
+classes — while inner border radii are collapsed with logical properties so the
+group works in both LTR and RTL.
+
+`ButtonToolbar` (ARIA `role="toolbar"`) lays out one or more groups.
+
+## Playground
+
+Edit the props with the controls and the JSX below regenerates; you can also type
+directly in the editor to experiment. Changing a control overwrites the editor.
+
+<Story of={ButtonGroupStories.Playground} />
+
+<Controls of={ButtonGroupStories.Playground} />
+
+## Sizes
+
+A group sets the size of every button it contains — set it once on the group
+rather than on each `Button`.
+
+<LiveExample code={examples.sizes} />
+
+## Vertical
+
+<LiveExample code={examples.vertical} />
+
+## ButtonToolbar
+
+Compose several groups inside a `ButtonToolbar`.
+
+<LiveExample code={examples.toolbar} />
+
+## Accessibility notes
+
+- Always provide an `aria-label` on each `ButtonGroup` and `ButtonToolbar`.
+- Use `ButtonToolbar` when you have more than one group, so assistive tech
+  announces the toolbar and its constituent groups correctly.
