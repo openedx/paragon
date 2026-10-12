@@ -89,8 +89,8 @@
     border-right:
       solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
       var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
-    filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
-    -webkit-filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .1));
+    filter: drop-shadow(0 4px 2px var(--pgn-color-product-tour-checkpoint-box-shadow));
+    -webkit-filter: drop-shadow(0 4px 2px var(--pgn-color-product-tour-checkpoint-box-shadow));
   }
 }
 
@@ -131,7 +131,7 @@
     border-right:
       solid var(--pgn-size-product-tour-checkpoint-arrow-transparent)
       var(--pgn-color-product-tour-checkpoint-arrow-border-transparent);
-    filter: drop-shadow(3px 1px 2px rgba(0, 0, 0, .1));
+    filter: drop-shadow(3px 1px 2px var(--pgn-color-product-tour-checkpoint-box-shadow));
   }
 }
 
@@ -153,6 +153,6 @@
     border-right:
       solid var(--pgn-size-product-tour-checkpoint-arrow-top)
       var(--pgn-color-product-tour-checkpoint-arrow-border-top);
-    filter: drop-shadow(-3px 1px 2px rgba(0, 0, 0, .1));
+    filter: drop-shadow(-3px 1px 2px var(--pgn-color-product-tour-checkpoint-box-shadow));
   }
 }

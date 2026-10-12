@@ -40,8 +40,8 @@ A proper way to implement this is to use [callback refs](https://react.dev/refer
         isOpen={isOpen}
         onClose={close}>
         <div
-          className="bg-white p-3 rounded shadow"
-          style={{textAlign: 'start'}}>
+          className="p-3 rounded shadow border"
+          style={{textAlign: 'start', backgroundColor: 'var(--pgn-color-bg-base)'}}>
           <p>This could be a menu or tray.</p>
 
           <Button variant="primary" className="mie-2">Action</Button>
@@ -78,8 +78,8 @@ The arrow modifier positions an inner element of the modal popup so it appears c
         isOpen={isOpen}
         onClose={close}>
         <div
-          className="bg-white p-3 rounded shadow border"
-          style={{textAlign: 'start'}}>
+          className="p-3 rounded shadow border"
+          style={{textAlign: 'start', backgroundColor: 'var(--pgn-color-bg-base)'}}>
           <p>This could be a menu or tray.</p>
 
           <Button variant="primary" className="mie-2">Action</Button>

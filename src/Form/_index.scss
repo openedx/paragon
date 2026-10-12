@@ -503,7 +503,7 @@ select.form-control {
   }
 
   &:focus {
-    border-color: var(--pgn-color-black);
+    border-color: var(--pgn-color-gray-900);
 
     &::before {
       border-radius: var(--pgn-size-form-control-border-radio-indicator-radius);
@@ -632,7 +632,7 @@ select.form-control {
     max-height: 15rem;
     overflow-y: scroll;
     position: absolute;
-    background-color: var(--pgn-color-white);
+    background-color: var(--pgn-color-bg-base);
     width: calc(100% - .5rem);
     z-index: var(--pgn-elevation-dropdown-zindex);
     top: 3.125rem;
@@ -658,7 +658,7 @@ select.form-control {
       .spinner-border {
         width: var(--pgn-size-form-autosuggest-spinner-width);
         height: var(--pgn-size-form-autosuggest-spinner-height);
-        border: var(--pgn-size-form-autosuggest-border-width) solid var(--pgn-color-black);
+        border: var(--pgn-size-form-autosuggest-border-width) solid var(--pgn-color-gray-900);
         border-right-color: transparent;
       }
     }

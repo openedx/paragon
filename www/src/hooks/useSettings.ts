@@ -3,7 +3,7 @@ import { type ContainerSize } from '~paragon-react';
 import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
 import { type ThemeConfig } from '../types/types';
 import { decodeThemesFromQueryParam } from '../utils/queryParamEncoding';
-import { DEFAULT_THEME } from '../utils/themeUtils';
+import { DEFAULT_THEMES } from '../utils/themeUtils';
 
 export interface Settings {
   direction?: string;
@@ -31,7 +31,7 @@ const defaultSettings: Settings = {
   direction: 'ltr',
   language: 'en',
   containerWidth: 'md' as ContainerSize,
-  themes: [DEFAULT_THEME],
+  themes: DEFAULT_THEMES,
   activeThemeIndex: 0,
 };
 
@@ -103,10 +103,11 @@ export const useSettings = (): UseSettings => {
     };
 
     // Normalize themes: filter out entries without URLs (e.g. old default themes
-    // from shared links or localStorage), and ensure DEFAULT_THEME is always first.
+    // from shared links or localStorage), and ensure the built-in DEFAULT_THEMES
+    // (light + dark) are always first, in order.
     const loadedThemes = Array.isArray(finalSettings.themes) ? finalSettings.themes : [];
     const customThemes = loadedThemes.filter(t => !t.isDefault && t.urls?.length > 0);
-    finalSettings.themes = [DEFAULT_THEME, ...customThemes];
+    finalSettings.themes = [...DEFAULT_THEMES, ...customThemes];
 
     const activeIndex = finalSettings.activeThemeIndex;
     if (activeIndex == null || activeIndex < 0 || activeIndex >= finalSettings.themes.length) {

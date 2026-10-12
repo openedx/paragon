@@ -54,7 +54,7 @@
     "build-types": "tsc --emitDeclarationOnly",
     "playroom:start": "npm run playroom:start --workspace=www",
     "playroom:build": "npm run playroom:build --workspace=www",
-    "build-tokens": "./bin/paragon-scripts.js build-tokens --build-dir ./styles/css",
+    "build-tokens": "./bin/paragon-scripts.js build-tokens --build-dir ./styles/css --all-themes",
     "build-tokens:watch": "npx nodemon --ignore styles/css -x \"npm run build-tokens\"",
     "serve-theme-css": "./bin/paragon-scripts.js serve-theme-css --build-dir ./dist --theme-name='Custom Theme Name'",
     "replace-variables-usage-with-css": "./bin/paragon-scripts.js replace-variables -p src -t usage",
