@@ -11,7 +11,7 @@
       "ignoreProperties": ["animation", "filter"]
     }],
     "value-no-vendor-prefix": [true, {
-      "ignoreValues": ["fill-available"]
+      "ignoreValues": ["fill-available", "box"]
     }],
     "function-no-unknown": null,
     "number-leading-zero": "never",
