@@ -11,7 +11,6 @@ import SearchFieldSubmitButton from './SearchFieldSubmitButton';
 export const SEARCH_FIELD_SCREEN_READER_TEXT_LABEL = 'search';
 export const SEARCH_FIELD_SCREEN_READER_TEXT_SUBMIT_BUTTON = 'submit search';
 export const SEARCH_FIELD_SCREEN_READER_TEXT_CLEAR_BUTTON = 'clear search';
-export const SEARCH_FIELD_BUTTON_TEXT = 'search';
 
 const STYLE_VARIANTS = [
   'light',
@@ -178,7 +177,6 @@ SearchField.defaultProps = {
   variant: 'light',
   disabled: false,
   submitButtonLocation: 'internal',
-  buttonText: SEARCH_FIELD_BUTTON_TEXT,
 };
 
 SearchField.Advanced = SearchFieldAdvanced;
