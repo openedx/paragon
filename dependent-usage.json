@@ -1,5 +1,5 @@
 {
-  "lastModified": 1791901124303,
+  "lastModified": 1791987306358,
   "projectUsages": [
     {
       "version": "3.4.8",
@@ -415,128 +415,128 @@
       }
     },
     {
-      "version": "23.4.2",
+      "version": "23.23.0",
       "name": "@edx/frontend-lib-special-exams",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/edx/frontend-lib-special-exams.git"
+        "url": "git+https://github.com/openedx/frontend-lib-special-exams.git"
       },
       "folderName": "frontend-lib-special-exams",
       "usages": {
         "useToggle": [
           {
             "filePath": "src/timer/ExamTimerBlock.jsx",
-            "line": 24,
+            "line": 23,
             "column": 43,
-            "index": 803
+            "index": 716
           },
           {
             "filePath": "src/timer/CountDownTimer.jsx",
             "line": 15,
             "column": 46,
-            "index": 595
+            "index": 578
           },
           {
             "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.test.jsx",
-            "line": 44,
+            "line": 41,
             "column": 4,
-            "index": 1212
+            "index": 1142
           },
           {
             "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.test.jsx",
-            "line": 186,
+            "line": 151,
             "column": 6,
-            "index": 6171
+            "index": 5705
           },
           {
             "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.test.jsx",
-            "line": 188,
+            "line": 153,
             "column": 4,
-            "index": 6229
+            "index": 5763
           },
           {
             "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.test.jsx",
-            "line": 226,
+            "line": 185,
             "column": 4,
-            "index": 7488
+            "index": 6955
           },
           {
             "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
-            "line": 9,
+            "line": 8,
             "column": 31,
-            "index": 338
+            "index": 291
           }
         ],
         "Alert": [
           {
             "filePath": "src/timer/ExamTimerBlock.jsx",
-            "line": 65,
+            "line": 67,
             "column": 6,
-            "index": 2189
+            "index": 2188
           },
           {
             "filePath": "src/instructions/UnknownAttemptStatusError.jsx",
             "line": 6,
             "column": 2,
-            "index": 178
+            "index": 161
           },
           {
             "filePath": "src/exam/ExamAPIError.jsx",
             "line": 16,
             "column": 4,
-            "index": 603
+            "index": 630
           },
           {
             "filePath": "src/exam/Exam.jsx",
-            "line": 101,
+            "line": 109,
             "column": 8,
-            "index": 3770
+            "index": 4079
           }
         ],
         "Alert.Link": [
           {
             "filePath": "src/timer/ExamTimerBlock.jsx",
-            "line": 76,
+            "line": 78,
             "column": 18,
-            "index": 2602
+            "index": 2601
           },
           {
             "filePath": "src/timer/ExamTimerBlock.jsx",
-            "line": 94,
+            "line": 96,
             "column": 20,
-            "index": 3321
+            "index": 3320
           },
           {
             "filePath": "src/timer/ExamTimerBlock.jsx",
-            "line": 103,
+            "line": 105,
             "column": 18,
-            "index": 3642
+            "index": 3641
           }
         ],
         "Button": [
           {
             "filePath": "src/timer/ExamTimerBlock.jsx",
-            "line": 121,
+            "line": 123,
             "column": 14,
-            "index": 4301
+            "index": 4300
           },
           {
             "filePath": "src/instructions/SubmitInstructions.jsx",
             "line": 39,
             "column": 10,
-            "index": 1372
+            "index": 1331
           },
           {
             "filePath": "src/instructions/timed_exam/SubmitTimedExamInstructions.jsx",
-            "line": 31,
+            "line": 30,
             "column": 6,
-            "index": 981
+            "index": 928
           },
           {
             "filePath": "src/instructions/timed_exam/StartTimedExamInstructions.jsx",
-            "line": 39,
+            "line": 38,
             "column": 6,
-            "index": 1400
+            "index": 1316
           },
           {
             "filePath": "src/instructions/proctored_exam/WarningModal.jsx",
@@ -548,109 +548,109 @@
             "filePath": "src/instructions/proctored_exam/SubmitProctoredExamInstructions.jsx",
             "line": 61,
             "column": 6,
-            "index": 2271
+            "index": 2249
           },
           {
             "filePath": "src/instructions/proctored_exam/SkipProctoredExamInstruction.jsx",
-            "line": 30,
+            "line": 29,
             "column": 10,
-            "index": 1100
+            "index": 1063
           },
           {
             "filePath": "src/instructions/proctored_exam/SkipProctoredExamInstruction.jsx",
-            "line": 41,
+            "line": 40,
             "column": 10,
-            "index": 1509
+            "index": 1469
           },
           {
             "filePath": "src/instructions/proctored_exam/SkipProctoredExamButton.jsx",
             "line": 8,
             "column": 4,
-            "index": 236
+            "index": 219
           },
           {
             "filePath": "src/instructions/proctored_exam/ReadyToStartProctoredExamInstructions.jsx",
-            "line": 86,
+            "line": 85,
             "column": 10,
-            "index": 3166
+            "index": 3182
           },
           {
             "filePath": "src/instructions/proctored_exam/ReadyToStartProctoredExamInstructions.jsx",
-            "line": 119,
+            "line": 118,
             "column": 8,
-            "index": 4294
+            "index": 4310
           },
           {
             "filePath": "src/instructions/proctored_exam/Footer.jsx",
             "line": 12,
             "column": 8,
-            "index": 340
+            "index": 348
           },
           {
             "filePath": "src/instructions/proctored_exam/EntranceProctoredExamInstructions.jsx",
-            "line": 58,
+            "line": 59,
             "column": 8,
-            "index": 2116
+            "index": 2154
           },
           {
             "filePath": "src/instructions/proctored_exam/download-instructions/DownloadButtons.jsx",
             "line": 11,
             "column": 6,
-            "index": 306
+            "index": 289
           },
           {
             "filePath": "src/instructions/proctored_exam/download-instructions/DownloadButtons.jsx",
             "line": 23,
             "column": 4,
-            "index": 725
+            "index": 708
           },
           {
             "filePath": "src/instructions/practice_exam/SubmittedPracticeExamInstructions.jsx",
-            "line": 35,
+            "line": 34,
             "column": 8,
-            "index": 1230
+            "index": 1136
           },
           {
             "filePath": "src/instructions/practice_exam/ErrorPracticeExamInstructions.jsx",
-            "line": 38,
+            "line": 37,
             "column": 6,
-            "index": 1289
+            "index": 1234
           },
           {
             "filePath": "src/instructions/practice_exam/EntrancePracticeExamInstructions.jsx",
-            "line": 27,
+            "line": 26,
             "column": 8,
-            "index": 890
+            "index": 869
           },
           {
             "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
-            "line": 60,
+            "line": 59,
             "column": 8,
-            "index": 2315
+            "index": 2249
           },
           {
             "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
-            "line": 67,
+            "line": 66,
             "column": 6,
-            "index": 2580
+            "index": 2514
           },
           {
             "filePath": "src/instructions/onboarding_exam/RejectedOnboardingExamInstructions.jsx",
-            "line": 38,
+            "line": 37,
             "column": 6,
-            "index": 1397
+            "index": 1331
           },
           {
             "filePath": "src/instructions/onboarding_exam/ErrorOnboardingExamInstructions.jsx",
-            "line": 26,
+            "line": 25,
             "column": 6,
-            "index": 832
+            "index": 777
           },
           {
             "filePath": "src/instructions/onboarding_exam/EntranceOnboardingExamInstructions.jsx",
-            "line": 93,
+            "line": 92,
             "column": 8,
-            "index": 3349
+            "index": 3317
           }
         ],
         "Icon": [
@@ -658,19 +658,19 @@
             "filePath": "src/timer/CountDownTimer.jsx",
             "line": 52,
             "column": 12,
-            "index": 1865
+            "index": 1848
           },
           {
             "filePath": "src/timer/CountDownTimer.jsx",
             "line": 53,
             "column": 12,
-            "index": 1951
+            "index": 1934
           },
           {
             "filePath": "src/exam/ExamAPIError.jsx",
             "line": 17,
             "column": 6,
-            "index": 673
+            "index": 700
           }
         ],
         "VisibilityOff": [
@@ -678,7 +678,7 @@
             "filePath": "src/timer/CountDownTimer.jsx",
             "line": 52,
             "column": 48,
-            "index": 1901
+            "index": 1884
           }
         ],
         "Visibility": [
@@ -686,7 +686,7 @@
             "filePath": "src/timer/CountDownTimer.jsx",
             "line": 53,
             "column": 48,
-            "index": 1987
+            "index": 1970
           }
         ],
         "Container": [
@@ -698,27 +698,27 @@
           },
           {
             "filePath": "src/instructions/SubmittedInstructions.jsx",
-            "line": 29,
+            "line": 35,
             "column": 6,
-            "index": 999
+            "index": 1287
           },
           {
             "filePath": "src/instructions/SubmitInstructions.jsx",
             "line": 34,
             "column": 6,
-            "index": 1165
+            "index": 1124
           },
           {
             "filePath": "src/instructions/RejectedInstructions.jsx",
             "line": 26,
             "column": 6,
-            "index": 848
+            "index": 831
           },
           {
             "filePath": "src/instructions/ExpiredInstructions.jsx",
             "line": 6,
             "column": 2,
-            "index": 180
+            "index": 163
           },
           {
             "filePath": "src/instructions/ErrorInstructions.jsx",
@@ -734,33 +734,33 @@
           },
           {
             "filePath": "src/instructions/proctored_exam/SkipProctoredExamInstruction.jsx",
-            "line": 15,
+            "line": 14,
             "column": 6,
-            "index": 437
+            "index": 400
           },
           {
             "filePath": "src/instructions/proctored_exam/ReadyToStartProctoredExamInstructions.jsx",
-            "line": 32,
+            "line": 31,
             "column": 6,
-            "index": 1042
+            "index": 1058
           },
           {
             "filePath": "src/instructions/proctored_exam/OnboardingErrorExamInstructions.jsx",
-            "line": 74,
+            "line": 75,
             "column": 6,
             "index": 2659
           },
           {
             "filePath": "src/instructions/proctored_exam/prerequisites-instructions/index.jsx",
-            "line": 37,
+            "line": 39,
             "column": 6,
-            "index": 1267
+            "index": 1314
           },
           {
             "filePath": "src/instructions/proctored_exam/download-instructions/index.jsx",
-            "line": 113,
+            "line": 110,
             "column": 6,
-            "index": 3720
+            "index": 3868
           }
         ],
         "Alert.Heading": [
@@ -768,13 +768,13 @@
             "filePath": "src/instructions/UnknownAttemptStatusError.jsx",
             "line": 7,
             "column": 4,
-            "index": 242
+            "index": 225
           },
           {
             "filePath": "src/exam/ExamAPIError.jsx",
             "line": 18,
             "column": 6,
-            "index": 722
+            "index": 749
           }
         ],
         "ModalDialog": [
@@ -828,97 +828,97 @@
         "Spinner": [
           {
             "filePath": "src/instructions/proctored_exam/ReadyToStartProctoredExamInstructions.jsx",
-            "line": 125,
+            "line": 124,
             "column": 32,
-            "index": 4484
+            "index": 4500
           },
           {
             "filePath": "src/exam/Exam.jsx",
-            "line": 80,
+            "line": 88,
             "column": 8,
-            "index": 3108
+            "index": 3417
           }
         ],
         "Hyperlink": [
           {
             "filePath": "src/instructions/proctored_exam/OnboardingErrorExamInstructions.jsx",
-            "line": 29,
+            "line": 30,
             "column": 14,
             "index": 1127
           },
           {
             "filePath": "src/instructions/proctored_exam/OnboardingErrorExamInstructions.jsx",
-            "line": 58,
+            "line": 59,
             "column": 14,
             "index": 2277
           },
           {
             "filePath": "src/instructions/proctored_exam/ErrorProctoredExamInstructions.jsx",
-            "line": 34,
+            "line": 31,
             "column": 31,
-            "index": 1432
+            "index": 1382
           },
           {
             "filePath": "src/instructions/proctored_exam/download-instructions/LtiProviderInstructions.jsx",
             "line": 10,
             "column": 4,
-            "index": 325
+            "index": 308
           },
           {
             "filePath": "src/exam/ExamAPIError.jsx",
             "line": 31,
             "column": 16,
-            "index": 1290
+            "index": 1317
           }
         ],
         "MailtoLink": [
           {
             "filePath": "src/instructions/proctored_exam/OnboardingErrorExamInstructions.jsx",
-            "line": 90,
+            "line": 91,
             "column": 12,
             "index": 3404
           },
           {
             "filePath": "src/instructions/proctored_exam/ErrorProctoredExamInstructions.jsx",
-            "line": 23,
+            "line": 20,
             "column": 33,
-            "index": 976
+            "index": 926
           },
           {
             "filePath": "src/instructions/onboarding_exam/VerifiedOnboardingExamInstructions.jsx",
             "line": 33,
             "column": 8,
-            "index": 1099
+            "index": 1070
           },
           {
             "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
-            "line": 42,
+            "line": 41,
             "column": 8,
-            "index": 1571
+            "index": 1505
           },
           {
             "filePath": "src/instructions/onboarding_exam/SubmittedOnboardingExamInstructions.jsx",
-            "line": 83,
+            "line": 82,
             "column": 8,
-            "index": 3076
+            "index": 3007
           },
           {
             "filePath": "src/instructions/onboarding_exam/RejectedOnboardingExamInstructions.jsx",
-            "line": 29,
+            "line": 28,
             "column": 10,
-            "index": 1041
+            "index": 975
           },
           {
             "filePath": "src/instructions/onboarding_exam/EntranceOnboardingExamInstructions.jsx",
-            "line": 68,
+            "line": 67,
             "column": 10,
-            "index": 2446
+            "index": 2414
           },
           {
             "filePath": "src/instructions/onboarding_exam/EntranceOnboardingExamInstructions.jsx",
-            "line": 83,
+            "line": 82,
             "column": 10,
-            "index": 3022
+            "index": 2990
           }
         ],
         "Check": [
@@ -926,7 +926,7 @@
             "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
             "line": 14,
             "column": 16,
-            "index": 397
+            "index": 380
           }
         ],
         "Form.Group": [
@@ -934,7 +934,7 @@
             "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
             "line": 29,
             "column": 4,
-            "index": 674
+            "index": 657
           }
         ],
         "Form.Label": [
@@ -942,7 +942,7 @@
             "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
             "line": 30,
             "column": 6,
-            "index": 693
+            "index": 676
           }
         ],
         "Form.Control": [
@@ -950,7 +950,7 @@
             "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
             "line": 36,
             "column": 6,
-            "index": 981
+            "index": 964
           }
         ],
         "StatefulButton": [
@@ -958,7 +958,7 @@
             "filePath": "src/instructions/proctored_exam/download-instructions/ExamCode.jsx",
             "line": 41,
             "column": 10,
-            "index": 1095
+            "index": 1078
           }
         ],
         "Info": [
@@ -966,13 +966,13 @@
             "filePath": "src/exam/ExamAPIError.jsx",
             "line": 17,
             "column": 17,
-            "index": 684
+            "index": 711
           },
           {
             "filePath": "src/exam/Exam.jsx",
-            "line": 101,
+            "line": 109,
             "column": 36,
-            "index": 3798
+            "index": 4107
           }
         ]
       }
