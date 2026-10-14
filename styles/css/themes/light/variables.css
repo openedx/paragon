@@ -614,7 +614,6 @@
   --pgn-color-btn-disabled-border-inverse-outline-success: inherit;
   --pgn-color-btn-disabled-border-inverse-warning: #00000000;
   --pgn-color-card-base: inherit;
-  --pgn-color-code-base: #E83E8CFF;
   --pgn-color-form-control-label-base: inherit;
   --pgn-color-icon-button-bg-base: #00000000;
   --pgn-color-menu-item-bg: #00000000;
@@ -1231,6 +1230,7 @@
   --pgn-color-chip-border-focus-selected-light: var(--pgn-color-dark-500);
   --pgn-color-chip-label-base: var(--pgn-color-primary-700);
   --pgn-color-chip-label-dark: var(--pgn-color-chip-outline-dark);
+  --pgn-color-code-base: var(--pgn-color-brand-500);
   --pgn-color-data-table-bg-base: var(--pgn-color-bg-base);
   --pgn-color-data-table-border: var(--pgn-color-light-300);
   --pgn-color-dropdown-text: var(--pgn-color-body-base);
