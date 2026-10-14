@@ -118,7 +118,7 @@ a.pgn__card {
     .pgn__card-header-content {
       display: flex;
       flex-direction: column;
-      margin-top: map.get($spacers, 4\.5);
+      margin-top: var(--pgn-spacing-spacer-base);
       overflow: auto;
       text-align: start;
       width: 100%;
@@ -164,6 +164,8 @@ a.pgn__card {
     }
 
     .pgn__card-header-actions {
+      display: flex;
+      align-items: center;
       margin-top: var(--pgn-spacing-spacer-base);
       margin-inline-start: var(--pgn-spacing-spacer-base);
       flex-shrink: 0;
@@ -334,7 +336,12 @@ a.pgn__card {
 
     &.vertical {
       max-height: var(--pgn-size-card-image-vertical-max-height);
+
+      &.with-logo {
+        margin-bottom: var(--pgn-spacing-spacer-base);
+      }
     }
+
 
     .pgn__card-image-cap-loader {
       .react-loading-skeleton {
