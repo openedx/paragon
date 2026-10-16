@@ -33,9 +33,15 @@ requirements:  ## install ci requirements
 # Instead of having this directly in the build-docs script
 # in the top-level package.json, put it here so we can have
 # a single source of truth and get proper error codes in CI
+#
+# ✨ For our prototype, we're overriding the docs build so we can see the new storybook on Netlify
 .PHONY: build-docs
 build-docs:
-	npm run build --workspace=www
+	cd prototype && npm install
+	cd prototype && npm run build
+	cd prototype && npm run build-storybook
+	rm -rf www/public
+	cp -r prototype/storybook-static www/public 
 
 # npm swallows errors
 # see https://github.com/openedx/paragon/issues/3329
