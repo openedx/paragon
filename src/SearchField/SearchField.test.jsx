@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { IntlProvider } from 'react-intl';
 
 import SearchField from '.';
 
@@ -13,14 +14,20 @@ const baseProps = {
   onSubmit: () => {},
 };
 
+const renderWithIntl = (ui) => render(
+  <IntlProvider locale="en" messages={{}}>
+    {ui}
+  </IntlProvider>,
+);
+
 describe('<SearchField /> with basic usage', () => {
   it('should match the snapshot', () => {
-    const { container } = render(<SearchField {...baseProps} />);
+    const { container } = renderWithIntl(<SearchField {...baseProps} />);
     expect(container).toMatchSnapshot();
   });
 
   it('renders SearchField.Advanced component`', () => {
-    render(<SearchField {...baseProps} data-testid="advanced-component" />);
+    renderWithIntl(<SearchField {...baseProps} data-testid="advanced-component" />);
     const advancedComponent = screen.getByTestId('advanced-component');
     expect(advancedComponent).toBeInTheDocument();
   });
@@ -28,7 +35,7 @@ describe('<SearchField /> with basic usage', () => {
   it('should pass correct props to `SearchField.Label`', () => {
     const label = 'foobar';
     let props = { ...baseProps, label };
-    const { rerender } = render(<SearchField {...props} label={label} />);
+    const { rerender } = renderWithIntl(<SearchField {...props} label={label} />);
     const labelElement = screen.getByLabelText(label);
     expect(labelElement).toBeInTheDocument();
 
@@ -36,7 +43,11 @@ describe('<SearchField /> with basic usage', () => {
       ...baseProps,
       screenReaderText: { label, submitButton: 'submit foobar' },
     };
-    rerender(<SearchField {...props} />);
+    rerender(
+      <IntlProvider locale="en" messages={{}}>
+        <SearchField {...props} />
+      </IntlProvider>,
+    );
     const srOnlyLabelElement = screen.getByText(label);
     expect(srOnlyLabelElement).toBeInTheDocument();
     expect(srOnlyLabelElement).toHaveClass('sr-only');
@@ -46,7 +57,7 @@ describe('<SearchField /> with basic usage', () => {
     const placeholder = 'foobar';
     const inputTestId = 'foo';
     const props = { ...baseProps, placeholder, inputProps: { 'data-testid': inputTestId } };
-    render(<SearchField {...props} />);
+    renderWithIntl(<SearchField {...props} />);
     const inputElement = screen.getByTestId(inputTestId);
     expect(inputElement).toBeInTheDocument();
     expect(inputElement).toHaveAttribute('placeholder', placeholder);
@@ -55,7 +66,7 @@ describe('<SearchField /> with basic usage', () => {
   it('should use passed in initial `value` prop', () => {
     const value = 'foobar';
     const props = { ...baseProps, value };
-    render(<SearchField {...props} />);
+    renderWithIntl(<SearchField {...props} />);
     const inputElement = screen.getByRole('searchbox');
     expect(inputElement).toBeInTheDocument();
     expect(inputElement).toHaveValue(value);
@@ -68,7 +79,7 @@ describe('<SearchField /> with basic usage', () => {
       clearButton: 'borrar búsqueda',
     };
     const props = { ...baseProps, screenReaderText };
-    render(<SearchField {...props} />);
+    renderWithIntl(<SearchField {...props} />);
     const input = screen.getByRole('searchbox', { target: 'submit' });
     const submitLabel = screen.getByLabelText(screenReaderText.label);
     expect(submitLabel).toBeInTheDocument();
@@ -80,9 +91,9 @@ describe('<SearchField /> with basic usage', () => {
   });
 
   it('should add div if `submitButtonLocation` is passed', () => {
-    const { container } = render(<SearchField {...baseProps} />);
+    const { container } = renderWithIntl(<SearchField {...baseProps} />);
     expect(container.querySelector('.pgn__searchfield_wrapper')).toBeNull();
-    const { container: containerExternal } = render(<SearchField {...baseProps} submitButtonLocation="external" />);
+    const { container: containerExternal } = renderWithIntl(<SearchField {...baseProps} submitButtonLocation="external" />);
     expect(containerExternal.querySelector('.pgn__searchfield_wrapper')).toBeInTheDocument();
   });
 
@@ -90,7 +101,7 @@ describe('<SearchField /> with basic usage', () => {
     it('focus handler', () => {
       const spy = jest.fn();
       const props = { ...baseProps, onFocus: spy };
-      render(<SearchField {...props} />);
+      renderWithIntl(<SearchField {...props} />);
       const inputElement = screen.getByRole('searchbox');
       inputElement.focus();
       expect(spy).toHaveBeenCalledTimes(1);
@@ -99,7 +110,7 @@ describe('<SearchField /> with basic usage', () => {
     it('blur handler', async () => {
       const spy = jest.fn();
       const props = { ...baseProps, onBlur: spy };
-      render(<SearchField {...props} />);
+      renderWithIntl(<SearchField {...props} />);
       const inputElement = screen.getByRole('searchbox');
       inputElement.focus();
       await userEvent.tab();
@@ -110,7 +121,7 @@ describe('<SearchField /> with basic usage', () => {
       const spy = jest.fn();
       const props = { ...baseProps, onChange: spy };
       const inputText = 'foobar';
-      render(<SearchField {...props} />);
+      renderWithIntl(<SearchField {...props} />);
       const inputElement = screen.getByRole('searchbox');
       await userEvent.type(inputElement, inputText);
       expect(spy).toHaveBeenCalledTimes(inputText.length);
@@ -119,7 +130,7 @@ describe('<SearchField /> with basic usage', () => {
     it('clear handler', async () => {
       const spy = jest.fn();
       const props = { ...baseProps, onClear: spy };
-      render(<SearchField {...props} />);
+      renderWithIntl(<SearchField {...props} />);
       const inputElement = screen.getByRole('searchbox');
       await userEvent.type(inputElement, 'foobar');
 
@@ -132,7 +143,7 @@ describe('<SearchField /> with basic usage', () => {
     it('submit handler on submit button click', async () => {
       const spy = jest.fn();
       const props = { ...baseProps, onSubmit: spy, submitButtonLocation: BUTTON_LOCATION_VARIANTS[1] };
-      render(<SearchField {...props} />);
+      renderWithIntl(<SearchField {...props} />);
       const inputElement = screen.getByRole('searchbox');
       const submitButton = screen.getByRole('button', { type: 'submit' });
       await userEvent.type(inputElement, 'foobar');
@@ -145,7 +156,7 @@ describe('<SearchField /> with basic usage', () => {
   describe('clear button', () => {
     it('should be visible with input value', async () => {
       const props = { ...baseProps };
-      render(<SearchField {...props} />);
+      renderWithIntl(<SearchField {...props} />);
       const inputElement = screen.getByRole('searchbox');
       expect(screen.queryByRole('button', { name: 'clear search', type: 'reset' })).toBeNull();
       await userEvent.type(inputElement, 'foobar');
@@ -154,7 +165,7 @@ describe('<SearchField /> with basic usage', () => {
 
     it('should clear input value when clicked', async () => {
       const props = { ...baseProps };
-      render(<SearchField {...props} />);
+      renderWithIntl(<SearchField {...props} />);
       const inputElement = screen.getByRole('searchbox', { target: 'submit' });
       await userEvent.type(inputElement, 'foobar');
       expect(inputElement).toHaveValue('foobar');
@@ -167,7 +178,7 @@ describe('<SearchField /> with basic usage', () => {
   describe('advanced usage', () => {
     it('should pass props to the clear button', async () => {
       const buttonProps = { variant: 'inline' };
-      render(
+      renderWithIntl(
         <SearchField.Advanced {...baseProps}>
           <SearchField.Input />
           <SearchField.ClearButton {...buttonProps} />
@@ -181,7 +192,7 @@ describe('<SearchField /> with basic usage', () => {
 
     it('should pass props to the label', () => {
       const labelProps = { variant: 'inline' };
-      render(
+      renderWithIntl(
         <SearchField.Advanced {...baseProps}>
           <SearchField.Label {...labelProps}>Labeled</SearchField.Label>
         </SearchField.Advanced>,
@@ -196,7 +207,7 @@ describe('<SearchField /> with basic usage', () => {
         submitButtonLocation: 'external',
         buttonText,
       };
-      render(
+      renderWithIntl(
         <SearchField.Advanced {...baseProps}>
           <SearchField.SubmitButton {...buttonProps} />
         </SearchField.Advanced>,
@@ -212,7 +223,7 @@ describe('<SearchField /> with basic usage', () => {
         submitButtonLocation: 'external',
         buttonText,
       };
-      render(
+      renderWithIntl(
         <SearchField.Advanced {...baseProps}>
           <SearchField.SubmitButton {...buttonProps} variant="dark" />
         </SearchField.Advanced>,
