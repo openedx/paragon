@@ -125,7 +125,7 @@ a.pgn__card {
     }
 
     %header-title {
-      color: var(--pgn-color-black);
+      color: var(--pgn-color-headings-base);
       font-weight: var(--pgn-typography-font-weight-bold);
       text-align: start;
     }
@@ -270,7 +270,7 @@ a.pgn__card {
     }
 
     .pgn__card-section-title {
-      color: var(--pgn-color-black);
+      color: var(--pgn-color-headings-base);
       font-weight: var(--pgn-typography-font-weight-bold);
       font-size: var(--pgn-typography-font-size-h5-base);
       margin-bottom: var(--pgn-spacing-card-spacer-y);
@@ -396,7 +396,7 @@ a.pgn__card {
 
     .pgn__card-status__heading {
       font-size: var(--pgn-typography-font-size-h4-base);
-      color: var(--pgn-color-black);
+      color: var(--pgn-color-headings-base);
       display: flex;
       font-weight: var(--pgn-typography-font-weight-bold);
       line-height: 1.5rem;

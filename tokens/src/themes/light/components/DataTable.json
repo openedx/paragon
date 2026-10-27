@@ -8,7 +8,9 @@
           "source": "$data-table-is-loading-bg",
           "modify": [{ "type": "alpha", "amount": 0.7 }],
           "$value": "{color.white}"
-        }
+        },
+        "header": { "source": "$data-table-header-bg", "$value": "{color.light.300}" },
+        "striped": { "source": "$data-table-striped-bg", "$value": "{color.light.200}" }
       },
       "border": { "source": "$data-table-border-color", "$value": "{color.light.300}" }
     }
