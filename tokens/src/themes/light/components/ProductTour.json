@@ -13,6 +13,10 @@
           "$value": "{color.black}"
         },
         "arrow": {
+          "shadow": {
+            "modify": [{ "type": "alpha", "amount": 0.1 }],
+            "$value": "{color.black}"
+          },
           "border": {
             "top": { "source": "$checkpoint-arrow-border-top-color", "$value": "{color.product-tour.checkpoint.bg}" },
             "transparent": { "source": "$checkpoint-arrow-border-color-transparent", "$value": "transparent" }

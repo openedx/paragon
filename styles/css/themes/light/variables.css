@@ -808,9 +808,11 @@
   --pgn-color-form-input-group-addon-bg: var(--pgn-color-gray-100);
   --pgn-color-form-control-indicator-border: var(--pgn-color-gray-700);
   --pgn-color-form-control-indicator-checked-bg-disabled: #0A305580;
+  --pgn-color-form-control-radio-border-focus: var(--pgn-color-black);
   --pgn-color-form-control-select-bg-disabled: var(--pgn-color-gray-100);
   --pgn-color-form-control-select-bg-size: var(--pgn-color-gray-100);
   --pgn-color-form-control-range-track-bg: var(--pgn-color-gray-300);
+  --pgn-color-form-autosuggest-spinner: var(--pgn-color-black);
   --pgn-color-icon-button-bg-primary-base: var(--pgn-color-icon-button-bg-base);
   --pgn-color-icon-button-bg-primary-focus: var(--pgn-color-icon-button-bg-base);
   --pgn-color-icon-button-bg-primary-inverse-base: var(--pgn-color-icon-button-bg-base);
@@ -921,6 +923,7 @@
   --pgn-color-product-tour-checkpoint-border: var(--pgn-color-brand-base);
   --pgn-color-product-tour-checkpoint-breadcrumb: var(--pgn-color-primary-base);
   --pgn-color-product-tour-checkpoint-box-shadow: #0000004D;
+  --pgn-color-product-tour-checkpoint-arrow-shadow: #0000001A;
   --pgn-color-progress-bar-base: var(--pgn-color-white);
   --pgn-color-progress-bar-bg-base: var(--pgn-color-accent-a);
   --pgn-color-search-field-border-interaction: var(--pgn-color-black);
