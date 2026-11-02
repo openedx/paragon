@@ -77,7 +77,7 @@ A ``Menu`` can be implemented to appear inside a `modalpopup` for a wide variety
       <ModalPopup positionRef={target} isOpen={isOpen} onClose={close} style={{
         width: 500, height: 50
       }}>
-      <div className="bg-white">
+      <div style={{ backgroundColor: 'var(--pgn-color-bg-base)' }}>
         <Menu>
           <MenuItem as={Button} variant="tertiary" size="inline" onClick= {()=>setSelected('Beans')}>Beans</MenuItem>
           <MenuItem as={Button} variant="tertiary" size="inline" onClick= {()=>setSelected('Greens')}>Greens</MenuItem>

@@ -618,6 +618,8 @@
   --pgn-color-form-control-label-base: inherit;
   --pgn-color-icon-button-bg-base: #00000000;
   --pgn-color-menu-item-bg: #00000000;
+  --pgn-color-modal-content-scroll-shadow-from: #605C5CFF;
+  --pgn-color-modal-content-scroll-shadow-to: #B8BEBEFF;
   --pgn-color-nav-link-border: #00000000;
   --pgn-color-nav-tabs-base-bg-hover: #00000000;
   --pgn-color-nav-tabs-base-link-active-bg: #00000000;
@@ -1232,6 +1234,8 @@
   --pgn-color-chip-label-base: var(--pgn-color-primary-700);
   --pgn-color-chip-label-dark: var(--pgn-color-chip-outline-dark);
   --pgn-color-data-table-bg-base: var(--pgn-color-bg-base);
+  --pgn-color-data-table-bg-header: var(--pgn-color-light-300);
+  --pgn-color-data-table-bg-striped: var(--pgn-color-light-200);
   --pgn-color-data-table-border: var(--pgn-color-light-300);
   --pgn-color-dropdown-text: var(--pgn-color-body-base);
   --pgn-color-dropdown-header: var(--pgn-color-gray-500);
