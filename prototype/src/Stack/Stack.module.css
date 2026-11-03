@@ -1,0 +1,53 @@
+/*
+ * Stack styles — a CSS Modules port of src/Stack/index.scss.
+ *
+ * Faithful to the original: vertical stacks stretch and flex-grow; horizontal
+ * stacks center their items. `reversed` flips the flow direction. The gap is
+ * selected by a `.gap-*` class (a port of the SCSS `@each $spacers` loop), so
+ * spacing is fully token-driven with no inline styles on the component.
+ */
+
+.vstack,
+.hstack {
+  display: flex;
+  align-self: stretch;
+  gap: var(--pgn-size-stack-gap);
+}
+
+.vstack {
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.vstack.reversed {
+  flex-direction: column-reverse;
+}
+
+.hstack {
+  flex-direction: row;
+  align-items: center;
+}
+
+.hstack.reversed {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/*
+ * Gap classes on the Paragon spacer scale — a 1:1 port of the SCSS
+ * `@each $level, $space in $spacers` loop. The component adds the class matching
+ * its `gap` prop (e.g. `gap={1.5}` -> `.gap-1-5`); values outside the scale get
+ * no class and fall back to `--pgn-size-stack-gap`, exactly as the original did.
+ */
+.gap-0 { gap: var(--pgn-spacing-spacer-0); }
+.gap-1 { gap: var(--pgn-spacing-spacer-1); }
+.gap-2 { gap: var(--pgn-spacing-spacer-2); }
+.gap-3 { gap: var(--pgn-spacing-spacer-3); }
+.gap-4 { gap: var(--pgn-spacing-spacer-4); }
+.gap-5 { gap: var(--pgn-spacing-spacer-5); }
+.gap-6 { gap: var(--pgn-spacing-spacer-6); }
+.gap-1-5 { gap: var(--pgn-spacing-spacer-1-5); }
+.gap-2-5 { gap: var(--pgn-spacing-spacer-2-5); }
+.gap-3-5 { gap: var(--pgn-spacing-spacer-3-5); }
+.gap-4-5 { gap: var(--pgn-spacing-spacer-4-5); }
+.gap-5-5 { gap: var(--pgn-spacing-spacer-5-5); }

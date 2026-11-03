@@ -1,0 +1,149 @@
+import { Meta, Title, Subtitle, Story, Controls } from '@storybook/addon-docs/blocks';
+
+import * as CollapsibleStories from './Collapsible.stories';
+import { LiveExample } from '../docs/LiveExample';
+
+export const examples = CollapsibleStories.examples;
+
+<Meta title="Content/Collapsible" />
+
+<Title>Collapsible</Title>
+
+<Subtitle>Toggle the visibility of supplemental content — React Aria disclosure behavior, styled entirely from Paragon design tokens.</Subtitle>
+
+Collapsible is an element that allows a user to toggle (view/hide) supplemental
+information or actions.
+
+`Collapsible` is the prototype re-implementation of Paragon's `Collapsible` on
+the modern stack proposed in [ADR&nbsp;0022](https://github.com/openedx/paragon).
+Its public API is unchanged from `@openedx/paragon` — the convenience
+`<Collapsible>` (with `styling`, `title`, icon slots and callbacks), the
+composable `Collapsible.Advanced` / `Trigger` / `Body` / `Visible`, and the
+imperative `open()` / `close()` ref — but its internals no longer depend on
+Bootstrap or `react-bootstrap`:
+
+- **Behavior** comes from [React Aria](https://react-spectrum.adobe.com/react-aria/)'s
+  `useDisclosureState` + `useDisclosure`: correct `aria-expanded` /
+  `aria-controls` linkage, keyboard support, and the expand/collapse animation.
+  Triggers get their press + focus behavior from `useButton`, exactly like
+  `Button`.
+- **Styling** is a co-located CSS Module reading the same `--pgn-*` design tokens
+  the library ships today, so theming (including `@edx/brand`) is unaffected.
+
+When to use:
+- To organize related information.
+- To shorten pages and reduce scrolling when content is not crucial to read in full.
+- When space is at a premium and long content cannot be displayed all at once.
+
+## Playground
+
+<Story of={CollapsibleStories.Playground} />
+
+<Controls of={CollapsibleStories.Playground} />
+
+{/*
+  The sections below mirror the existing Paragon docs (src/Collapsible/README.md)
+  1:1 and in the same order. The examples are authored as real TSX in
+  Collapsible.stories.tsx (so TypeScript typechecks every prop) and their source
+  is rendered here, editable, via react-live. The component's own style classes
+  (collapsible-card / -trigger / -body) map to this module's classes, exposed to
+  the live scope as `collapsibleStyles`; the Bootstrap utilities become inline
+  styles / the `collapsibleStyles.closeButton` helper.
+*/}
+
+## Basic Usage
+
+The `styling` prop at the top level `<Collapsible />` component determines if the
+collapsible has basic styling, card, or card with heading.
+
+### Basic Style
+
+<LiveExample code={examples.basicStyle} />
+
+### Card Style
+
+This is the default style if no `styling` prop is supplied.
+
+<LiveExample code={examples.cardStyle} />
+
+### Default Open
+
+<LiveExample code={examples.defaultOpen} />
+
+### With Callbacks
+
+See the developer console for logging.
+
+<LiveExample code={examples.withCallbacks} />
+
+<hr />
+
+## Advanced Usage
+
+For needs that deviate from the three styles above, use `<Collapsible.Advanced />`.
+
+### Bare minimum
+
+<LiveExample code={examples.advancedBareMinimum} />
+
+### Card style with advanced usage
+
+<LiveExample code={examples.advancedCard} />
+
+### With a close button
+
+<LiveExample code={examples.advancedWithCloseButton} />
+
+### onOpen, onClose and onToggle callbacks
+
+See the developer console for logging.
+
+<LiveExample code={examples.advancedCallbacks} />
+
+### Controlled usage
+
+<LiveExample code={examples.advancedControlled} />
+
+## Imperative methods
+
+If you need to open or close the Collapsible intermittently due to an event, such
+as loading the page or clicking a link, you can open or close an **uncontrolled**
+Collapsible by getting a ref to the component and calling `collapsibleRef.open()`
+or `collapsibleRef.close()`. The internal state of the component will be updated
+accordingly.
+
+```tsx
+const collapsibleRef = React.useRef(null);
+
+<Collapsible ref={collapsibleRef} title="Toggle Collapsible">
+  <p>Your stuff goes here.</p>
+</Collapsible>
+
+// later, in an event handler:
+collapsibleRef.current.open();
+collapsibleRef.current.close();
+```
+
+{/* --- Additions beyond the original README --- */}
+
+## Accessibility notes
+
+- The trigger and body are linked with `aria-controls` / `aria-labelledby`, and
+  the trigger exposes `aria-expanded`, all wired by React Aria's `useDisclosure`.
+- The trigger activates on <kbd>Enter</kbd> and <kbd>Space</kbd>; the focus ring
+  appears only for keyboard focus (`[data-focus-visible]`), matching `Button`.
+- Respects `prefers-reduced-motion`: the expand/collapse height transition is
+  disabled when the user has reduced motion enabled.
+
+## Migration decisions surfaced here (for WG ratification)
+
+1. **`unmountOnExit` becomes `hidden="until-found"`.** React Aria keeps the panel
+   in the DOM when collapsed and marks it `hidden="until-found"` rather than
+   unmounting it, so the content stays findable via browser find-in-page and
+   indexable. The `unmountOnExit` prop is retained for API compatibility but is
+   now effectively informational. **Decision needed:** whether to formally
+   deprecate `unmountOnExit`.
+2. **Animation is CSS-driven, not JS.** The old `Collapse` / `TransitionReplace`
+   components are replaced by React Aria's `--disclosure-panel-height` custom
+   property plus a CSS `height` transition — no measurement components in the
+   render tree.
