@@ -28,7 +28,7 @@ const CardImageCap = React.forwardRef(({
   const [showImageCap, setShowImageCap] = useState(false);
   const [showLogoCap, setShowLogoCap] = useState(false);
 
-  const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}`;
+  const wrapperClassName = `pgn__card-wrapper-image-cap ${orientation}${showLogoCap ? ' with-logo' : ''}`;
 
   const loadingSkeleton = () => (
     <Skeleton
