@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { useMediaQuery } from 'react-responsive';
 import { useIntl } from 'react-intl';
 import ModalLayer from './ModalLayer';
-// @ts-ignore for now - this needs to be converted to TypeScript
 import ModalCloseButton from './ModalCloseButton';
 import ModalDialogHeader from './ModalDialogHeader';
 // @ts-ignore for now - this needs to be converted to TypeScript
