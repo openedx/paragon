@@ -4,6 +4,7 @@ import {
 import classNames from 'classnames';
 import ModalContext from './ModalContext';
 import Button from '../Button';
+import type { ComponentWithAsProp } from '../utils/types/bootstrap';
 
 export interface ModalCloseButtonProps {
   /** Specifies the base element */
@@ -14,16 +15,15 @@ export interface ModalCloseButtonProps {
   className?: string;
   /** Specifies the callback function when the close button is clicked */
   onClick?: () => void;
-  [key: string]: any; // For spreading other props
 }
 
-const ModalCloseButton = forwardRef(({
+const ModalCloseButton: ComponentWithAsProp<typeof Button, ModalCloseButtonProps> = forwardRef(({
   as = Button,
   children = null,
   className,
   onClick,
   ...props
-}: ModalCloseButtonProps, ref: React.Ref<HTMLButtonElement>) => {
+}: ModalCloseButtonProps, ref: React.ForwardedRef<HTMLButtonElement>) => {
   const { onClose } = useContext(ModalContext);
   const type = as;
   const componentProps = {
