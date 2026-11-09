@@ -1,19 +1,35 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
+import {
+  useContext, forwardRef, ReactNode, FC, ForwardedRef,
+} from 'react';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import Icon from '../Icon';
 import CardContext from './CardContext';
 
-const CardStatus = React.forwardRef(({
+interface CardStatusProps {
+  /** The class to append to the base element. */
+  className?: string;
+  /** Specifies the content of the component. */
+  children: ReactNode;
+  /** Specifies variant to use. */
+  variant?: 'primary' | 'success' | 'danger' | 'warning';
+  /** Icon that will be shown in the top-left corner. */
+  icon?: FC;
+  /** Specifies title for the `Card.Status`. */
+  title?: ReactNode | string;
+  /** Specifies any optional actions, e.g. button(s). */
+  actions?: ReactNode;
+}
+
+const CardStatus = forwardRef(({
   className,
   children,
-  variant,
+  variant = 'warning',
   icon,
   title,
   actions,
   ...props
-}, ref) => {
+}: CardStatusProps, ref: ForwardedRef<HTMLDivElement>) => {
   const { isLoading } = useContext(CardContext);
 
   if (isLoading) {
@@ -56,33 +72,5 @@ const CardStatus = React.forwardRef(({
     </div>
   );
 });
-
-CardStatus.propTypes = {
-  /** Specifies the content of the component. */
-  children: PropTypes.node.isRequired,
-  /** The class to append to the base element. */
-  className: PropTypes.string,
-  /** Icon that will be shown in the top-left corner. */
-  icon: PropTypes.func,
-  /** Specifies variant to use. */
-  variant: PropTypes.oneOf([
-    'primary',
-    'success',
-    'danger',
-    'warning',
-  ]),
-  /** Specifies title for the `Card.Status`. */
-  title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  /** Specifies any optional actions, e.g. button(s). */
-  actions: PropTypes.node,
-};
-
-CardStatus.defaultProps = {
-  className: undefined,
-  icon: undefined,
-  variant: 'warning',
-  title: undefined,
-  actions: undefined,
-};
 
 export default CardStatus;
