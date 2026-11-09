@@ -38,7 +38,7 @@ export interface StatefulButtonProps extends React.ComponentPropsWithoutRef<type
   labels: { [key: string]: React.ReactNode };
   /** Each state has an `icon`. */
   icons?: { [key: string]: React.ReactNode };
-  /** Each state has a `disabledState` */
+  /** States listed in `disabledStates` will not be clickable */
   disabledStates?: string[];
 }
 
