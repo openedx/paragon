@@ -1,0 +1,62 @@
+import { Meta, Title, Subtitle } from '@storybook/addon-docs/blocks';
+
+import { DesignTokensPlayground } from './DesignTokensPlayground';
+
+<Meta title="Theming/Design Tokens" />
+
+<Title>Design Tokens</Title>
+
+<Subtitle>Set a source colour and watch Style Dictionary re-derive the whole palette — compiled live, in your browser.</Subtitle>
+
+Paragon's theming is driven by **design tokens** in [`tokens/src/`](https://github.com/openedx/paragon/tree/master/tokens/src).
+A small number of _source_ tokens (like `$brand` and `$primary`) fan out, through
+[Style Dictionary](https://styledictionary.com/), into hundreds of _derived_
+tokens: a 100–900 tint/shade **palette scale** (`mix` with white/black), a set of
+**theme aliases** (`color.theme.*`), and finally the per-variant **button tokens**
+(`color.btn.*`) that the `.btn-<variant>` classes consume. Button label colours are
+`color-yiq` of their background — Bootstrap's contrast picker — so a light source
+colour automatically flips the text dark.
+
+The playground below runs a **real Style Dictionary instance in the browser**. The
+colour maths (`mix`, `color-yiq`, `darken`) is ported from the repo's
+`tokens/style-dictionary.js`, and the in-memory token tree mirrors `tokens/src/`
+one-to-one. Editing a source colour recompiles the entire graph and applies the
+resulting `--pgn-*` custom properties to the preview live.
+
+<DesignTokensPlayground />
+
+## How it works
+
+1. **Source tokens.** `$brand` (`color.brand.base`) and `$primary`
+   (`color.primary.base`) are the only hand-set colours.
+2. **Palette scale.** `color.<variant>.100…900` are `mix()`es of the base with
+   white (tints, 100–400) or black (shades, 600–900); `500` _is_ the base.
+3. **Theme aliases.** `color.theme.{bg,border,focus,hover,active}.<variant>` point
+   at fixed scale levels (100 / 200 / 500 / 700 / 900).
+4. **Button tokens.** `color.btn.*.<variant>` reference the theme aliases; text
+   tokens are `color-yiq` of their background for guaranteed contrast.
+
+Expand **Derived tokens** under either source to see — and override — any token in
+that chain. Pinning a derived token to a literal value cascades to everything
+downstream of it, exactly as an `@edx/brand` override would.
+
+## Beyond colour
+
+The **Typography, sizing & spacing** controls theme every variant at once:
+
+- **Font family** (`typography.font.family.base`) — the buttons inherit it.
+- **Button font size** (`typography.btn.font.size.base`, with `-sm` / `-lg`).
+- **Border radius** (`size.border.radius.base`) — fans out, through a real
+  `calc()`, into `size.btn.border.radius.base` and the focus-ring radius
+  `size.btn.focus.border-radius.base`.
+- **Button padding** (`spacing.btn.padding.{x,y}.base`).
+
+These are non-colour tokens (`dimension`, `fontFamily`), so they demonstrate that
+the same in-browser Style Dictionary pipeline handles references and `calc()`
+chains, not just colour maths.
+
+## Scope
+
+This iteration models **brand** and **primary** (solid + `outline-`) colours plus
+the global typography/sizing/spacing tokens above. The same mechanism extends to
+the other variants (secondary, success, danger, …) and further token groups.

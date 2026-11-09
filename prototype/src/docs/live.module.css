@@ -1,0 +1,60 @@
+.live {
+  display: grid;
+  gap: 0;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.preview {
+  padding: 1.5rem;
+  background-color: var(--pgn-color-light-200);
+  /* A plain block formatting context (not a flex row): each example lays out its
+     own children — usually via <Stack> — so block-level/flex-container siblings
+     (e.g. multiple horizontal Stacks, or `block` buttons) stack vertically and
+     fill the width, matching how the current Paragon docs render them. */
+  display: flow-root;
+  /* Anchor the Paragon base typography so previews render like a consuming app,
+     independent of Storybook's own docs font (which would otherwise be inherited
+     by inline examples). */
+  font-family: var(--pgn-typography-font-family-base);
+  color: var(--pgn-color-body-base);
+}
+
+.editor {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  background: #1e1e2e;
+  color: #f8f8f2;
+  border-top: 1px solid #d0d0d0;
+}
+
+/* react-live renders a <textarea> overlaid on a highlighted <pre>; make both
+   share the same padding so the caret aligns with the text. */
+.editor textarea,
+.editor pre {
+  padding: 1rem !important;
+  outline: none;
+}
+
+.editorLabel {
+  font: 600 11px/1 system-ui, sans-serif;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #6b6b7b;
+  padding: .5rem 1rem;
+  background: #1e1e2e;
+  border-top: 1px solid #d0d0d0;
+}
+
+.error {
+  margin: 0;
+  padding: .75rem 1rem;
+  background: #2d0b0b;
+  color: #ffb4b4;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+}
