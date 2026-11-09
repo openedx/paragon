@@ -12,7 +12,9 @@ export { default as Bubble } from './Bubble';
 export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
+export { default as CloseButton } from './CloseButton';
 export { default as Container, type ContainerSize } from './Container';
+export { default as DropdownFilter } from './DataTable/filters/DropdownFilter';
 export {
   default as Form,
   RadioControl,
@@ -76,8 +78,6 @@ export {
   default as Carousel, CarouselItem, CAROUSEL_NEXT_LABEL_TEXT, CAROUSEL_PREV_LABEL_TEXT,
   // @ts-ignore: has yet to be converted to TypeScript
 } from './Carousel';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as CloseButton } from './CloseButton';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Layout, Col, Row } from './Layout';
 // @ts-ignore: has yet to be converted to TypeScript
@@ -184,8 +184,6 @@ export { default as DataTable } from './DataTable';
 export { default as TextFilter } from './DataTable/filters/TextFilter';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as CheckboxFilter } from './DataTable/filters/CheckboxFilter';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as DropdownFilter } from './DataTable/filters/DropdownFilter';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as MultiSelectDropdownFilter } from './DataTable/filters/MultiSelectDropdownFilter';
 // @ts-ignore: has yet to be converted to TypeScript
