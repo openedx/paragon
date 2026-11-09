@@ -1,8 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { ReactNode } from 'react';
 import { useFormGroupContext } from './FormGroupContext';
 
-function FormControlFloatingLabel({ children }) {
+interface FormControlFloatingLabelProps {
+  children: ReactNode;
+}
+
+function FormControlFloatingLabel({ children }: FormControlFloatingLabelProps) {
   const { controlId } = useFormGroupContext();
   return (
     <div className="pgn__form-control-floating-label">
@@ -17,9 +20,5 @@ function FormControlFloatingLabel({ children }) {
     </div>
   );
 }
-
-FormControlFloatingLabel.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default FormControlFloatingLabel;
