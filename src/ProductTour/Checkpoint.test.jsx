@@ -6,6 +6,7 @@ import { IntlProvider } from 'react-intl';
 import * as popper from '@popperjs/core';
 
 import Checkpoint from './Checkpoint';
+import CheckpointTitle from './CheckpointTitle';
 
 const popperMock = jest.spyOn(popper, 'createPopper');
 
@@ -129,6 +130,13 @@ describe('Checkpoint', () => {
 
     it('only renders end button (i.e. neither advance nor dismiss buttons)', () => {
       expect(screen.getByText('End', { selector: 'button' })).toBeInTheDocument();
+    });
+  });
+
+  describe('CheckpointTitle', () => {
+    it('renders an empty heading when no children are provided', () => {
+      render(<CheckpointTitle />);
+      expect(screen.getByRole('heading', { level: 2 })).toBeEmptyDOMElement();
     });
   });
 });
