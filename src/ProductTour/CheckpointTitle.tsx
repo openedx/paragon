@@ -1,4 +1,4 @@
-import { forwardRef, ForwardedRef, ReactNode } from 'react';
+import React, { forwardRef, ForwardedRef, ReactNode } from 'react';
 
 interface CheckpointTitleProps {
   children?: ReactNode;

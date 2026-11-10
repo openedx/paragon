@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, MouseEventHandler } from 'react';
+import React, { ComponentPropsWithoutRef, MouseEventHandler } from 'react';
 import classNames from 'classnames';
 import MenuItem from '../Menu/MenuItem';
 
