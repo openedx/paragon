@@ -1,10 +1,10 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent, { PointerEventsCheckLevel } from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
 
 import * as popper from '@popperjs/core';
 
+// @ts-ignore
 import Checkpoint from './Checkpoint';
 import CheckpointTitle from './CheckpointTitle';
 
@@ -133,6 +133,8 @@ describe('Checkpoint', () => {
     });
   });
 
+  // This test is based on the existing behavior, but it doesn't necessarily make sense.
+  // It would probably be better to render nothing at all when no heading text is provided.
   describe('CheckpointTitle', () => {
     it('renders an empty heading when no children are provided', () => {
       render(<CheckpointTitle />);
