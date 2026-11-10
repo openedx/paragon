@@ -17,7 +17,7 @@ export interface ModalCloseButtonProps {
   onClick?: () => void;
 }
 
-const ModalCloseButton: ComponentWithAsProp<typeof Button, ModalCloseButtonProps> = forwardRef(({
+const ModalCloseButton: ComponentWithAsProp<'button', ModalCloseButtonProps> = forwardRef(({
   as = Button,
   children = null,
   className,
