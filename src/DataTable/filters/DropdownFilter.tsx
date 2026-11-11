@@ -1,18 +1,41 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef, ReactNode } from 'react';
 import Form from '../../Form';
 import { newId } from '../../utils';
 
 const DEFAULT_VALUE = '';
 
+interface DropdownFilterProps {
+  /**
+   * Specifies a column object.
+   *
+   * `setFilter`: Function to set the filter value.
+   *
+   * `Header`: Column header used for labels and placeholders.
+   *
+   * `filterChoices`: Specifies array of choices.
+   *
+   * `getHeaderProps`: Generates a key unique to the column being filtered.
+   */
+  column: {
+    setFilter: (value: string | number | undefined) => void;
+    Header: ReactNode;
+    filterChoices: {
+      name: string;
+      number?: number;
+      value: string | number;
+    }[];
+    getHeaderProps: () => { key: string };
+  };
+}
+
 function DropdownFilter({
   column: {
     setFilter, Header, filterChoices, getHeaderProps,
   },
-}) {
+}: DropdownFilterProps) {
   // creates a unique label that does not change on re-render in case there are multiple checkbox filters in the dom
   const ariaLabel = useRef(newId(`dropdown-filter-label-${getHeaderProps().key}-`));
-  const onChange = (e) => {
+  const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === DEFAULT_VALUE) {
       // setting undefined resets the filter
       return setFilter(undefined);
@@ -35,29 +58,5 @@ function DropdownFilter({
     </Form.Group>
   );
 }
-
-DropdownFilter.propTypes = {
-  /**
-   * Specifies a column object.
-   *
-   * `setFilter`: Function to set the filter value.
-   *
-   * `Header`: Column header used for labels and placeholders.
-   *
-   * `filterChoices`: Specifies array of choices.
-   *
-   * `getHeaderProps`: Generates a key unique to the column being filtered.
-   */
-  column: PropTypes.shape({
-    setFilter: PropTypes.func.isRequired,
-    Header: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]).isRequired,
-    filterChoices: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      number: PropTypes.number,
-      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    })).isRequired,
-    getHeaderProps: PropTypes.func.isRequired,
-  }).isRequired,
-};
 
 export default DropdownFilter;

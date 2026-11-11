@@ -19,7 +19,6 @@ import FormRadioSet from './FormRadioSet';
 import FormRadioSetContext from './FormRadioSetContext';
 // @ts-ignore
 import FormAutosuggest from './FormAutosuggest';
-// @ts-ignore
 import FormAutosuggestOption from './FormAutosuggestOption';
 // @ts-ignore
 import FormCheckbox, { CheckboxControl } from './FormCheckbox';
