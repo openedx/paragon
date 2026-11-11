@@ -1,27 +1,33 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import StepperStep from './StepperStep';
 import StepperHeader from './StepperHeader';
 import StepperActionRow from './StepperActionRow';
 import { StepperContextProvider } from './StepperContext';
 
-function Stepper({ children, activeKey }) {
+export interface StepperProps {
+  /**
+   * Specifies the content of the `Stepper`.
+   */
+  children: React.ReactNode;
+  /**
+   * The eventKey of the step to display.
+   */
+  activeKey: string;
+}
+
+interface StepperComponent {
+  (props: StepperProps): JSX.Element;
+  Step: typeof StepperStep;
+  Header: typeof StepperHeader;
+  ActionRow: typeof StepperActionRow;
+}
+
+const Stepper: StepperComponent = function Stepper({ children, activeKey }: StepperProps) {
   return (
     <StepperContextProvider activeKey={activeKey}>
       {children}
     </StepperContextProvider>
   );
-}
-
-Stepper.propTypes = {
-  /**
-   * Specifies the content of the `Stepper`.
-   */
-  children: PropTypes.node.isRequired,
-  /**
-   * The eventKey of the step to display.
-   */
-  activeKey: PropTypes.string.isRequired,
 };
 
 Stepper.Step = StepperStep;
