@@ -217,4 +217,70 @@ describe('<Collapsible />', () => {
       expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
     });
   });
+
+  describe('Default Collapsible', () => {
+    it('toggles content and fires callbacks when the title is clicked', async () => {
+      const onOpen = jest.fn();
+      const onClose = jest.fn();
+      const onToggle = jest.fn();
+      render(
+        <Collapsible title="Section title" onOpen={onOpen} onClose={onClose} onToggle={onToggle}>
+          {EXAMPLE_CONTENT}
+        </Collapsible>,
+      );
+      const trigger = screen.getByRole('button', { name: 'Section title' });
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+
+      await userEvent.click(trigger);
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
+      expect(screen.getByText(EXAMPLE_CONTENT)).toBeInTheDocument();
+      expect(onOpen).toHaveBeenCalledTimes(1);
+      expect(onToggle).toHaveBeenLastCalledWith(true);
+
+      await userEvent.click(trigger);
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+      expect(onClose).toHaveBeenCalledTimes(1);
+      expect(onToggle).toHaveBeenLastCalledWith(false);
+    });
+
+    it('renders a React element title as is', () => {
+      render(<Collapsible title={<h3>Heading title</h3>}>{EXAMPLE_CONTENT}</Collapsible>);
+      expect(screen.getByRole('heading', { name: 'Heading title' })).toBeInTheDocument();
+    });
+
+    it('applies the styling variant class', () => {
+      const { container } = render(
+        <Collapsible title="Basic title" styling="basic">{EXAMPLE_CONTENT}</Collapsible>,
+      );
+      expect(container.firstChild).toHaveClass('pgn_collapsible', 'collapsible-basic');
+    });
+  });
+
+  describe('Trigger', () => {
+    it('calls the onClick and onKeyDown props', async () => {
+      const onClick = jest.fn();
+      const onKeyDown = jest.fn();
+      render(
+        <Collapsible.Advanced>
+          <Collapsible.Trigger onClick={onClick} onKeyDown={onKeyDown}>Toggle</Collapsible.Trigger>
+        </Collapsible.Advanced>,
+      );
+      const trigger = screen.getByRole('button', { name: 'Toggle' });
+
+      await userEvent.click(trigger);
+      expect(onClick).toHaveBeenCalledTimes(1);
+
+      trigger.focus();
+      await userEvent.keyboard('{enter}');
+      expect(onKeyDown).toHaveBeenCalled();
+    });
+
+    it('does not throw when rendered outside of a Collapsible', async () => {
+      render(<Collapsible.Trigger>Toggle</Collapsible.Trigger>);
+      const trigger = screen.getByRole('button', { name: 'Toggle' });
+
+      await userEvent.click(trigger);
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    });
+  });
 });
