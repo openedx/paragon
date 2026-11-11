@@ -12,13 +12,21 @@ export interface CollapsibleContextValue {
 export const CollapsibleContext = React.createContext<CollapsibleContextValue | undefined>(undefined);
 
 export interface CollapsibleAdvancedProps extends React.ComponentPropsWithRef<'div'> {
+  /** Specifies contents of the component. */
   children?: React.ReactNode;
+  /** Specifies classname to append to the base element. */
   className?: string;
+  /** Specifies whether `Collapsible` should be initially open. */
   defaultOpen?: boolean;
+  /** Specifies whether `Collapsible` is open. */
   open?: boolean;
+  /** Callback fired when `Collapsible's` state is toggled. */
   onToggle?: (isOpen: boolean) => void;
+  /** Callback fired when `Collapsible` opens. */
   onOpen?: () => void;
+  /** Callback fired when `Collapsible` closes. */
   onClose?: () => void;
+  /** Unmount the component (remove it from the DOM) when it is collapsed. */
   unmountOnExit?: boolean;
 }
 

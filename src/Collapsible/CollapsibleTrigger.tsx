@@ -3,11 +3,17 @@ import React, { useContext, useCallback } from 'react';
 import { CollapsibleContext } from './CollapsibleAdvanced';
 
 export interface CollapsibleTriggerProps extends React.ComponentPropsWithoutRef<'div'> {
+  /** Specifies contents of the component. */
   children?: React.ReactNode;
+  /** Specifies base element. */
   tag?: string | React.ElementType;
+  /** Specifies whether toggling `Collapsible's` state will always trigger only open action. */
   openOnly?: boolean;
+  /** Specifies whether toggling `Collapsible's` state will always trigger only close action. */
   closeOnly?: boolean;
+  /** Callback fired when element gets clicked. */
   onClick?: (e: React.MouseEvent) => void;
+  /** Callback fired when a key is pressed. */
   onKeyDown?: (e: React.KeyboardEvent) => void;
 }
 
