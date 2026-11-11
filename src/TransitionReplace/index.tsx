@@ -10,17 +10,35 @@ interface TransitionStyles {
 }
 
 export interface TransitionReplaceProps {
+  /** Specifies an additional class for the base element */
   children?: React.ReactElement;
+  /** Duration of the element appearance transition. */
   enterDuration?: number;
+  /** Duration of the element dismiss transition. */
   exitDuration?: number;
+  /** Specifies class name to append to the base element. */
   className?: string;
+  /** A `Transition` callback fired immediately after the `enter` or `appear` class is applied. */
   onChildEnter?: (node: HTMLElement) => void;
+  /** A `Transition` callback fired immediately after the `enter-active` or `appear-active` class is applied. */
   onChildEntering?: (node: HTMLElement) => void;
+  /**
+   * A `Transition` callback fired immediately after the `enter` or
+   * `appear` classes are removed and the done class is added to the DOM node.
+   */
   onChildEntered?: (node: HTMLElement) => void;
+  /** A `Transition` callback fired immediately after the `exit` class is applied. */
   onChildExit?: (node: HTMLElement) => void;
+  /** A `Transition` callback fired immediately after the `exit-active` is applied. */
   onChildExiting?: (node: HTMLElement) => void;
+  /**
+   * A `Transition` callback fired immediately after the `exit` classes
+   * are removed and the exit-done class is added to the DOM node.
+   */
   onChildExited?: (node: HTMLElement) => void;
+  /** An object that specifies transition styles. */
   transitionStyles?: TransitionStyles;
+  /** Specifies class name to append to the `Transition`. */
   transitionClassNames?: string;
 }
 

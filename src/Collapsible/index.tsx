@@ -21,17 +21,29 @@ const styleIcons: Record<string, StyleIcons> = {
 };
 
 export interface CollapsibleProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
+  /** Specifies contents of the component. */
   children: React.ReactNode;
+  /** Specifies class name to append to the base element. */
   className?: string;
+  /** Specifies whether the `Collapsible` should be initially open. */
   defaultOpen?: boolean;
+  /** Specifies icon to show when `Collapsible` is closed. */
   iconWhenClosed?: React.ReactElement;
+  /** Specifies icon to show when `Collapsible` is open. */
   iconWhenOpen?: React.ReactElement;
+  /** Callback fired when `Collapsible` closes. */
   onClose?: () => void;
+  /** Callback fired when `Collapsible` opens. */
   onOpen?: () => void;
+  /** Callback fired when `Collapsible's` state is toggled. */
   onToggle?: (isOpen: boolean) => void;
+  /** Specifies whether `Collapsible` is open. */
   open?: boolean;
+  /** Specifies style variant. */
   styling?: 'basic' | 'card' | 'card-lg';
+  /** Specifies title. */
   title: React.ReactNode;
+  /** Unmount the component (remove it from the DOM) when it is collapsed */
   unmountOnExit?: boolean;
 }
 

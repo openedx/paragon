@@ -5,8 +5,11 @@ import { CollapsibleContext } from './CollapsibleAdvanced';
 import TransitionReplace from '../TransitionReplace';
 
 export interface CollapsibleBodyProps extends React.ComponentPropsWithoutRef<'div'> {
+  /** Specifies contents of the component. */
   children?: React.ReactNode;
+  /** Specifies content's base element. */
   tag?: string;
+  /** Specifies transition element. */
   transitionWrapper?: React.ReactElement;
 }
 
