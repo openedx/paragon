@@ -20,7 +20,7 @@ interface StepperActionRowComponent {
   Spacer: typeof ActionRow.Spacer;
 }
 
-function StepperActionRow({
+const StepperActionRow: StepperActionRowComponent = function StepperActionRow({
   as = ActionRow,
   children,
   eventKey,
@@ -34,8 +34,8 @@ function StepperActionRow({
   }
 
   return React.createElement(as, props, children);
-}
+};
 
-(StepperActionRow as StepperActionRowComponent).Spacer = ActionRow.Spacer;
+StepperActionRow.Spacer = ActionRow.Spacer;
 
 export default StepperActionRow;

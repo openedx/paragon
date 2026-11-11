@@ -28,7 +28,7 @@ const Stepper: StepperComponent = function Stepper({ children, activeKey }: Step
       {children}
     </StepperContextProvider>
   );
-} as StepperComponent;
+};
 
 Stepper.Step = StepperStep;
 Stepper.Header = StepperHeader;

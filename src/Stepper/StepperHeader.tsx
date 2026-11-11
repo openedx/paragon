@@ -17,14 +17,13 @@ export interface StepListProps {
 function StepList({ steps, activeKey }: StepListProps) {
   return (
     <ul className="pgn__stepper-header-step-list">
-      {steps.map(({ title: label, ...stepProps }, index) => (
-        <React.Fragment key={stepProps.eventKey}>
+      {steps.map((step, index) => (
+        <React.Fragment key={step.eventKey}>
           {index !== 0 && <StepListSeparator />}
           <StepperHeaderStep
-            {...stepProps}
-            title={label}
+            {...step}
             index={index}
-            isActive={activeKey === stepProps.eventKey}
+            isActive={activeKey === step.eventKey}
           />
         </React.Fragment>
       ))}
@@ -57,7 +56,7 @@ interface StepperHeaderComponent {
   Step: typeof StepperHeaderStep;
 }
 
-function StepperHeader({
+const StepperHeader: StepperHeaderComponent = function StepperHeader({
   className = null,
   PageCountComponent = PageCount,
   compactWidth = 'sm',
@@ -66,7 +65,7 @@ function StepperHeader({
   const windowDimensions = useWindowSize();
   const size = Size[compactWidth] || 'small';
   const breakpointWidth = breakpoints[size].maxWidth || Infinity;
-  const isCompactView = (windowDimensions.width ?? 0) < breakpointWidth;
+  const isCompactView = windowDimensions.width !== undefined && windowDimensions.width < breakpointWidth;
 
   if (isCompactView) {
     const activeStepIndex = steps.findIndex(step => step.eventKey === activeKey);
@@ -80,7 +79,6 @@ function StepperHeader({
       <div className={classNames('pgn__stepper-header', className)}>
         <StepperHeaderStep
           {...activeStep}
-          title={activeStep.title}
           index={activeStepIndex}
           isActive
         />
@@ -101,8 +99,8 @@ function StepperHeader({
       <StepList steps={steps} activeKey={activeKey} />
     </div>
   );
-}
+};
 
-(StepperHeader as StepperHeaderComponent).Step = StepperHeaderStep;
+StepperHeader.Step = StepperHeaderStep;
 
 export default StepperHeader;
