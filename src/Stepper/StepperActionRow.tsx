@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, forwardRef } from 'react';
 import { StepperContext } from './StepperContext';
 import ActionRow from '../ActionRow';
+import type { ComponentWithAsProp } from '../utils/types/bootstrap';
 
 export interface StepperActionRowProps {
   /** Specifies the content of the `ActionRow`. */
@@ -12,20 +13,18 @@ export interface StepperActionRowProps {
   eventKey: string;
   /** Specifies the base element */
   as?: React.ElementType;
-  [key: string]: any; // For additional props passed through
 }
 
-interface StepperActionRowComponent {
-  (props: StepperActionRowProps): JSX.Element | null;
+type StepperActionRowComponent = ComponentWithAsProp<'div', StepperActionRowProps> & {
   Spacer: typeof ActionRow.Spacer;
-}
+};
 
-const StepperActionRow: StepperActionRowComponent = function StepperActionRow({
+const StepperActionRowBase: ComponentWithAsProp<'div', StepperActionRowProps> = forwardRef(({
   as = ActionRow,
   children,
   eventKey,
   ...props
-}: StepperActionRowProps) {
+}: StepperActionRowProps, ref: React.ForwardedRef<HTMLDivElement>) => {
   const { activeKey } = useContext(StepperContext);
   const isActive = activeKey === eventKey;
 
@@ -33,9 +32,12 @@ const StepperActionRow: StepperActionRowComponent = function StepperActionRow({
     return null;
   }
 
-  return React.createElement(as, props, children);
-};
+  return React.createElement(as, { ...props, ref }, children);
+});
+
+const StepperActionRow = StepperActionRowBase as StepperActionRowComponent;
 
 StepperActionRow.Spacer = ActionRow.Spacer;
+StepperActionRow.displayName = 'StepperActionRow';
 
 export default StepperActionRow;
