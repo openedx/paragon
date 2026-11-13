@@ -1,3 +1,7 @@
 .react-loading-skeleton {
+  // Fallbacks are the library's own colors, for pages that load core without a theme.
+  --base-color: var(--pgn-color-skeleton-base, #EBEBEB);
+  --highlight-color: var(--pgn-color-skeleton-highlight, #F5F5F5);
+
   z-index: unset;
 }
