@@ -10,13 +10,23 @@ interface TableCellProps {
   column: {
     /** Class(es) to be applied to the cells in the given column */
     cellClassName?: string;
+    /** Renders cell content directly in the `td`, without the wrapper that clips overflowing content.
+     * Use it for cells with overlays, e.g. dropdowns. */
+    allowOverflow?: boolean;
   };
 }
 function TableCell({ getCellProps, render, column }: TableCellProps) {
   const { className, ...rest } = getCellProps();
+
+  const cellClasses = classNames(className, column.cellClassName);
+
   return (
-    <td {...rest} className={classNames('pgn__data-table-cell-wrap', className, column.cellClassName)}>
-      {render('Cell')}
+    <td {...rest} className={cellClasses}>
+      {column.allowOverflow ? render('Cell') : (
+        <div className="pgn__data-table-cell-wrap">
+          {render('Cell')}
+        </div>
+      )}
     </td>
   );
 }
