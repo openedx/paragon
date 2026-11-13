@@ -1,0 +1,21 @@
+{
+  "color": {
+    "$type": "color",
+    "code": {
+      "base": { "source": "$code-color", "$value": "#E83E8C" },
+      "kbd": {
+        "base": { "source": "$kbd-color", "$value": "{color.white}" },
+        "bg": { "source": "$kbd-bg", "$value": "{color.gray.700}" }
+      },
+      "pre": { "source": "$pre-color", "$value": "{color.gray.900}" }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "code": {
+      "kbd": {
+        "box-shadow": { "source": "$kbd-box-shadow", "$value": "none" }
+      }
+    }
+  }
+}
