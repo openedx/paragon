@@ -1,0 +1,9 @@
+{
+  "color": {
+    "$type": "color",
+    "skeleton": {
+      "base": { "$value": "{color.gray.200}" },
+      "highlight": { "$value": "{color.gray.300}" }
+    }
+  }
+}
