@@ -503,7 +503,7 @@ select.form-control {
   }
 
   &:focus {
-    border-color: var(--pgn-color-black);
+    border-color: var(--pgn-color-form-control-radio-border-focus);
 
     &::before {
       border-radius: var(--pgn-size-form-control-border-radio-indicator-radius);
@@ -658,7 +658,7 @@ select.form-control {
       .spinner-border {
         width: var(--pgn-size-form-autosuggest-spinner-width);
         height: var(--pgn-size-form-autosuggest-spinner-height);
-        border: var(--pgn-size-form-autosuggest-border-width) solid var(--pgn-color-black);
+        border: var(--pgn-size-form-autosuggest-border-width) solid var(--pgn-color-form-autosuggest-spinner);
         border-right-color: transparent;
       }
     }
