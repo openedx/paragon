@@ -632,7 +632,7 @@ select.form-control {
     max-height: 15rem;
     overflow-y: scroll;
     position: absolute;
-    background-color: var(--pgn-color-white);
+    background-color: var(--pgn-color-bg-base);
     width: calc(100% - .5rem);
     z-index: var(--pgn-elevation-dropdown-zindex);
     top: 3.125rem;
