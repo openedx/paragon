@@ -41,7 +41,11 @@ exports.onRouteUpdate = ({ location: { hash, pathname, href } }) => {
 
         // Only update if themes param is missing
         if (!currentThemesParam) {
-          const encoded = encodeThemesToQueryParam(themes.filter(t => !t.isDefault), activeIdx || 0);
+          const encoded = encodeThemesToQueryParam(
+            themes.filter(t => !t.isDefault),
+            activeIdx || 0,
+            themes.filter(t => t.isDefault).length,
+          );
 
           url.searchParams.set('themes', encoded);
 

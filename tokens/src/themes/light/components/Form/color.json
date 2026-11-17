@@ -77,6 +77,12 @@
             }
           }
         },
+        "radio": {
+          "$type": "color",
+          "border": {
+            "focus": { "$value": "{color.black}" }
+          }
+        },
         "switch": {
           "$type": "color",
           "indicator": {
@@ -156,6 +162,10 @@
             "focus": { "source": "$custom-file-focus-border-color", "$value": "{color.form.input.focus.border}" }
           }
         }
+      },
+      "autosuggest": {
+        "$type": "color",
+        "spinner": { "$value": "{color.black}" }
       },
       "feedback": {
         "$type": "color",

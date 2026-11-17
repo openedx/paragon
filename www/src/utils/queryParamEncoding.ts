@@ -7,11 +7,16 @@ const queryParamEncoding = require('../../../lib/queryParamEncoding');
 export type ThemeState = {
   themes: ThemeConfig[];
   activeIndex: number;
+  builtInCount: number;
 };
 
 // Type-safe function signatures that replace the original implementations
-export function encodeThemesToQueryParam(themes: ThemeConfig[], activeIndex: number): string {
-  return queryParamEncoding.encodeThemesToQueryParam(themes, activeIndex);
+export function encodeThemesToQueryParam(
+  themes: ThemeConfig[],
+  activeIndex: number,
+  builtInCount?: number,
+): string {
+  return queryParamEncoding.encodeThemesToQueryParam(themes, activeIndex, builtInCount);
 }
 
 export function decodeThemesFromQueryParam(encoded: string): ThemeState {

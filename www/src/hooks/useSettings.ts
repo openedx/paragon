@@ -3,7 +3,7 @@ import { type ContainerSize } from '~paragon-react';
 import { SETTINGS_EVENTS, sendUserAnalyticsEvent } from '../../segment-events';
 import { type ThemeConfig } from '../types/types';
 import { decodeThemesFromQueryParam } from '../utils/queryParamEncoding';
-import { DEFAULT_THEME } from '../utils/themeUtils';
+import { DEFAULT_THEMES, normalizeThemes, themesFromLink } from '../utils/themeUtils';
 
 export interface Settings {
   direction?: string;
@@ -31,7 +31,7 @@ const defaultSettings: Settings = {
   direction: 'ltr',
   language: 'en',
   containerWidth: 'md' as ContainerSize,
-  themes: [DEFAULT_THEME],
+  themes: DEFAULT_THEMES,
   activeThemeIndex: 0,
 };
 
@@ -83,10 +83,7 @@ export const useSettings = (): UseSettings => {
     if (themesParam) {
       const themeState = decodeThemesFromQueryParam(themesParam);
 
-      return {
-        themes: themeState.themes,
-        activeThemeIndex: themeState.activeIndex,
-      };
+      return themesFromLink(themeState.themes, themeState.activeIndex, themeState.builtInCount);
     }
 
     return null;
@@ -103,15 +100,14 @@ export const useSettings = (): UseSettings => {
     };
 
     // Normalize themes: filter out entries without URLs (e.g. old default themes
-    // from shared links or localStorage), and ensure DEFAULT_THEME is always first.
-    const loadedThemes = Array.isArray(finalSettings.themes) ? finalSettings.themes : [];
-    const customThemes = loadedThemes.filter(t => !t.isDefault && t.urls?.length > 0);
-    finalSettings.themes = [DEFAULT_THEME, ...customThemes];
-
-    const activeIndex = finalSettings.activeThemeIndex;
-    if (activeIndex == null || activeIndex < 0 || activeIndex >= finalSettings.themes.length) {
-      finalSettings.activeThemeIndex = 0;
-    }
+    // from shared links or localStorage), keep the built-in DEFAULT_THEMES (light + dark)
+    // first, in order, and keep the same theme selected.
+    const normalized = normalizeThemes(
+      Array.isArray(finalSettings.themes) ? finalSettings.themes : [],
+      finalSettings.activeThemeIndex,
+    );
+    finalSettings.themes = normalized.themes;
+    finalSettings.activeThemeIndex = normalized.activeIndex;
 
     setSettings(finalSettings);
 

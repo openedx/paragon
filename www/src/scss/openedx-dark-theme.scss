@@ -1,0 +1,7 @@
+// Library styles go first so the Skeleton color tokens from Paragon core can override them.
+@use "~react-loading-skeleton/dist/skeleton";
+@use "~paragon-style/scss/core/core" as paragonCore;
+@use "~paragon-style/css/themes/dark/variables" as paragonDarkVariables;
+@use "~paragon-style/css/themes/dark/abstraction-variables" as paragonDarkAbstractionVariables;
+@use "~paragon-style/css/themes/dark/utility-classes" as paragonDarkUtilityClasses;
+@use "base";
