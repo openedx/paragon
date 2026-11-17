@@ -3,16 +3,23 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Stepper from '../Stepper';
-import { stepsReducer } from '../StepperContext';
+import StepperHeader, { PageCountProps } from '../StepperHeader';
+import StepperHeaderStep from '../StepperHeaderStep';
+import StepperStep from '../StepperStep';
+import { StepperContext, StepperContextValue, stepsReducer } from '../StepperContext';
 
 interface MockWindowSize {
-  width: number;
+  width: number | undefined;
   height: number;
 }
 
 const mockWindowSize: MockWindowSize = { width: 1000, height: 1000 };
 
 jest.mock('../../hooks/useWindowSizeHook', () => () => mockWindowSize);
+
+function CustomPageCount({ activeStepIndex, totalSteps }: PageCountProps) {
+  return <span>{`Custom ${activeStepIndex + 1}/${totalSteps}`}</span>;
+}
 
 interface ExampleProps {
   activeKey: string;
@@ -118,6 +125,20 @@ describe('Stepper', () => {
       await userEvent.click(screen.getByText('Welcome'));
       expect(onStepClick).toHaveBeenCalledTimes(1);
     });
+
+    it('renders an error icon in a clickable Step with errors', async () => {
+      const onStepClick = jest.fn();
+      render(
+        <Example activeKey="review" hasStepWithError handleStepClick={onStepClick} />,
+      );
+
+      const catStepButton = screen.getByRole('button', { name: 'Cat step' });
+      expect(catStepButton).toHaveClass('pgn__stepper-header-step-has-error');
+      expect(screen.getByTestId('step-error')).toBeInTheDocument();
+
+      await userEvent.click(catStepButton);
+      expect(onStepClick).toHaveBeenCalledWith('cats');
+    });
   });
 
   describe('stepper header compact view', () => {
@@ -156,6 +177,58 @@ describe('Stepper', () => {
       );
 
       mockWindowSize.width = 768;
+
+      expect(container.querySelector(step)).toBeInTheDocument();
+    });
+
+    it('renders nothing when the activeKey does not match any step', () => {
+      const { container } = render(
+        <Example activeKey="non-existent" />,
+      );
+
+      expect(container.querySelector('.pgn__stepper-header')).not.toBeInTheDocument();
+    });
+
+    it('renders a custom PageCountComponent', () => {
+      render(
+        <Stepper activeKey="b">
+          <Stepper.Header PageCountComponent={CustomPageCount} className="custom-header" />
+          <Stepper.Step eventKey="a" title="A">A content</Stepper.Step>
+          <Stepper.Step eventKey="b" title="B">B content</Stepper.Step>
+        </Stepper>,
+      );
+
+      expect(screen.getByText('Custom 2/2')).toBeInTheDocument();
+    });
+
+    it('renders the standard view when the window width is undefined', () => {
+      mockWindowSize.width = undefined;
+
+      const { container } = render(
+        <Example activeKey="cats" />,
+      );
+
+      expect(container.querySelector(step)).not.toBeInTheDocument();
+      expect(screen.getAllByTestId('step')).toHaveLength(3);
+    });
+
+    it('always renders the compact view when compactWidth has no max width', () => {
+      mockWindowSize.width = 5000;
+
+      const { container } = render(
+        <Example compactWidth="xxl" activeKey="cats" />,
+      );
+
+      expect(container.querySelector(step)).toBeInTheDocument();
+    });
+
+    it('falls back to the small breakpoint for an unknown compactWidth', () => {
+      mockWindowSize.width = 700;
+
+      const { container } = render(
+        // @ts-expect-error testing an invalid compactWidth value
+        <Example compactWidth="unknown" activeKey="cats" />,
+      );
 
       expect(container.querySelector(step)).toBeInTheDocument();
     });
@@ -258,5 +331,57 @@ describe('stepsReducer', () => {
     const action = { type: 'register' as const, step: step2WithError };
     const steps = stepsReducer([step1, step2, step3], action);
     expect(steps).toEqual([step1, step2WithError, step3]);
+  });
+
+  it('sorts steps by index when steps use the index prop', () => {
+    const indexedStep1 = { ...step1, index: 1 };
+    const indexedStep2 = { ...step2, index: 2 };
+    const stepWithoutIndex = { ...step3 };
+    const action = { type: 'register' as const, step: stepWithoutIndex };
+    const steps = stepsReducer([indexedStep2, indexedStep1], action);
+    expect(steps).toEqual([stepWithoutIndex, indexedStep1, indexedStep2]);
+  });
+});
+
+describe('StepperContext default value', () => {
+  it('provides no-op defaults when used outside of a Stepper', () => {
+    let contextValue: StepperContextValue | undefined;
+    function Consumer() {
+      contextValue = React.useContext(StepperContext);
+      return null;
+    }
+    render(<Consumer />);
+
+    expect(contextValue!.activeKey).toBe('');
+    expect(contextValue!.steps).toEqual([]);
+    expect(contextValue!.getIsViewed(0)).toBe(false);
+    expect(() => contextValue!.registerStep({ eventKey: 'a', title: 'A' })).not.toThrow();
+    expect(() => contextValue!.removeStep('a')).not.toThrow();
+  });
+
+  it('renders Stepper subcomponents without a provider', () => {
+    const { unmount } = render(
+      <>
+        <StepperHeader />
+        <StepperStep eventKey="a" title="A">A content</StepperStep>
+      </>,
+    );
+
+    expect(screen.queryByText('A content')).not.toBeInTheDocument();
+    expect(screen.queryAllByTestId('step')).toHaveLength(0);
+    expect(() => unmount()).not.toThrow();
+  });
+});
+
+describe('StepperHeaderStep', () => {
+  it('renders a non-active, non-error step by default', () => {
+    const onClick = jest.fn();
+    render(<StepperHeaderStep index={0} title="Default step" onClick={onClick} />);
+
+    const step = screen.getByTestId('step');
+    expect(step).not.toHaveClass('pgn__stepper-header-step-active');
+    expect(step).not.toHaveClass('pgn__stepper-header-step-has-error');
+    expect(screen.getByText('1')).toBeInTheDocument();
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
   });
 });
