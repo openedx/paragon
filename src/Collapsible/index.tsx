@@ -47,23 +47,25 @@ export interface CollapsibleProps extends Omit<React.ComponentPropsWithoutRef<'d
   unmountOnExit?: boolean;
 }
 
-const Collapsible = React.forwardRef<CollapsibleAdvanced, CollapsibleProps>((props, ref) => {
-  const {
-    children,
-    className,
-    title,
-    styling = 'card',
-    iconWhenClosed = <Icon src={ExpandMore} />,
-    iconWhenOpen = <Icon src={ExpandLess} />,
-    ...other
-  } = props;
-
+const Collapsible = React.forwardRef(({
+  children,
+  className,
+  title,
+  styling = 'card',
+  iconWhenClosed = <Icon src={ExpandMore} />,
+  iconWhenOpen = <Icon src={ExpandLess} />,
+  defaultOpen = false,
+  unmountOnExit = true,
+  ...other
+}: CollapsibleProps, ref: React.ForwardedRef<CollapsibleAdvanced>) => {
   const icons = { ...(styleIcons[styling] || {}), iconWhenClosed, iconWhenOpen };
   const titleElement = React.isValidElement(title) ? title : <span>{title}</span>;
 
   return (
     <Collapsible.Advanced
       {...other}
+      defaultOpen={defaultOpen}
+      unmountOnExit={unmountOnExit}
       className={classNames(className, `collapsible-${styling}`)}
       // @ts-ignore - ref type mismatch between class component and forwardRef
       ref={ref}
