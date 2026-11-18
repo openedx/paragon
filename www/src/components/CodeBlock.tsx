@@ -38,7 +38,7 @@ const {
 export type CollapsibleLiveEditorTypes = {
   children: React.ReactNode;
   clickToCopy: () => void;
-  handleCodeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  handleCodeChange: (e: React.FormEvent<HTMLDivElement>) => void;
 };
 
 function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: CollapsibleLiveEditorTypes) {
@@ -64,10 +64,10 @@ function CollapsibleLiveEditor({ children, clickToCopy, handleCodeChange }: Coll
     return node;
   };
 
-  const submitSegmentEvent = (e: React.MouseEvent & { target: HTMLElement }) => {
+  const submitSegmentEvent = (e: React.MouseEvent<HTMLDivElement>) => {
     const componentNameAndCategory = window.location.pathname.replace(/\//g, '.')
       .replace(/.components./gi, '');
-    const headingElement = getCodeBlockHeading(e.target);
+    const headingElement = getCodeBlockHeading(e.target as HTMLElement);
 
     if (!headingElement) {
       const event = collapseIsOpen

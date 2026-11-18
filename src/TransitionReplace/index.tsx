@@ -1,10 +1,53 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import classNames from 'classnames';
 
-class TransitionReplace extends React.Component {
-  constructor(props) {
+interface TransitionStyles {
+  entering?: React.CSSProperties;
+  entered?: React.CSSProperties;
+  exiting?: React.CSSProperties;
+  exited?: React.CSSProperties;
+}
+
+export interface TransitionReplaceProps {
+  /** Specifies an additional class for the base element */
+  children?: React.ReactElement;
+  /** Duration of the element appearance transition. */
+  enterDuration?: number;
+  /** Duration of the element dismiss transition. */
+  exitDuration?: number;
+  /** Specifies class name to append to the base element. */
+  className?: string;
+  /** A `Transition` callback fired immediately after the `enter` or `appear` class is applied. */
+  onChildEnter?: (node: HTMLElement) => void;
+  /** A `Transition` callback fired immediately after the `enter-active` or `appear-active` class is applied. */
+  onChildEntering?: (node: HTMLElement) => void;
+  /**
+   * A `Transition` callback fired immediately after the `enter` or
+   * `appear` classes are removed and the done class is added to the DOM node.
+   */
+  onChildEntered?: (node: HTMLElement) => void;
+  /** A `Transition` callback fired immediately after the `exit` class is applied. */
+  onChildExit?: (node: HTMLElement) => void;
+  /** A `Transition` callback fired immediately after the `exit-active` is applied. */
+  onChildExiting?: (node: HTMLElement) => void;
+  /**
+   * A `Transition` callback fired immediately after the `exit` classes
+   * are removed and the exit-done class is added to the DOM node.
+   */
+  onChildExited?: (node: HTMLElement) => void;
+  /** An object that specifies transition styles. */
+  transitionStyles?: TransitionStyles;
+  /** Specifies class name to append to the `Transition`. */
+  transitionClassNames?: string;
+}
+
+interface TransitionReplaceState {
+  height: number | null;
+}
+
+class TransitionReplace extends React.Component<TransitionReplaceProps, TransitionReplaceState> {
+  constructor(props: TransitionReplaceProps) {
     super(props);
 
     this.state = { height: null };
@@ -31,47 +74,48 @@ class TransitionReplace extends React.Component {
   // 2. onChildEntering     (set the height to match the new content)
   // 3. onChildExited       (reset the height to null)
 
-  onChildEnter(htmlNode) {
+  onChildEnter(htmlNode: HTMLElement) {
     if (this.props.onChildEnter) { this.props.onChildEnter(htmlNode); }
   }
 
-  onChildEntering(htmlNode) {
+  onChildEntering(htmlNode: HTMLElement) {
     this.setState({ height: htmlNode.offsetHeight });
     if (this.props.onChildEntering) { this.props.onChildEntering(htmlNode); }
   }
 
-  onChildEntered(htmlNode) {
+  onChildEntered(htmlNode: HTMLElement) {
     this.setState({ height: null });
     if (this.props.onChildEntered) { this.props.onChildEntered(htmlNode); }
   }
 
-  onChildExit(htmlNode) {
+  onChildExit(htmlNode: HTMLElement) {
     this.setState({ height: htmlNode.offsetHeight });
     if (this.props.onChildExit) { this.props.onChildExit(htmlNode); }
   }
 
-  onChildExiting(htmlNode) {
+  onChildExiting(htmlNode: HTMLElement) {
     if (this.props.onChildExiting) { this.props.onChildExiting(htmlNode); }
   }
 
-  onChildExited(htmlNode) {
+  onChildExited(htmlNode: HTMLElement) {
     this.setState({ height: null });
     if (this.props.onChildExited) { this.props.onChildExited(htmlNode); }
   }
 
-  renderChildTransition(child) {
+  renderChildTransition = (child: React.ReactElement) => {
     if (!child.key && process.env.NODE_ENV === 'development') {
       // eslint-disable-next-line no-console
       console.warn("TransitionReplace: A child is missing a 'key' prop. Keys are required for any child of this component.");
     }
+
     // Makes the exiting and entering children occupy the same space
     // SCSS handles the crossfade so it can be easily overridden
-    const commonChildStyles = {
+    const commonChildStyles: React.CSSProperties = {
       // Prevent margin-collapsing which throws off height calculations
       padding: '.1px 0',
     };
 
-    const transitionStyles = {
+    const transitionStyles: Record<string, React.CSSProperties> = {
       entering: {},
       entered: {},
       exiting: {
@@ -87,8 +131,8 @@ class TransitionReplace extends React.Component {
     return (
       <CSSTransition
         timeout={{
-          enter: this.props.enterDuration,
-          exit: this.props.exitDuration,
+          enter: this.props.enterDuration ?? 300,
+          exit: this.props.exitDuration ?? 300,
         }}
         unmountOnExit
         mountOnEnter
@@ -98,14 +142,14 @@ class TransitionReplace extends React.Component {
         onExit={this.onChildExit}
         onExiting={this.onChildExiting}
         onExited={this.onChildExited}
-        classNames={this.props.transitionClassNames}
+        classNames={this.props.transitionClassNames ?? 'pgn__transition-replace'}
       >
         {state => (
           <div
             style={{
               ...commonChildStyles,
               ...transitionStyles[state],
-              ...this.props.transitionStyles[state],
+              ...(this.props.transitionStyles?.[state as keyof TransitionStyles] || {}),
             }}
           >
             {child}
@@ -113,7 +157,7 @@ class TransitionReplace extends React.Component {
         )}
       </CSSTransition>
     );
-  }
+  };
 
   render() {
     return (
@@ -124,65 +168,12 @@ class TransitionReplace extends React.Component {
           { 'overflow-hidden': this.state.height !== null },
           this.props.className,
         )}
-        style={{ height: this.state.height }}
+        style={{ height: this.state.height ?? undefined }}
       >
-        {React.Children.map(this.props.children, this.renderChildTransition, this)}
+        {React.Children.map(this.props.children, this.renderChildTransition)}
       </TransitionGroup>
     );
   }
 }
-
-TransitionReplace.propTypes = {
-  /** Specifies an additional class for the base element */
-  children: PropTypes.element,
-  /** Duration of the element appearance transition. */
-  enterDuration: PropTypes.number,
-  /** Duration of the element dismiss transition. */
-  exitDuration: PropTypes.number,
-  /** Specifies class name to append to the base element. */
-  className: PropTypes.string,
-  /** A `Transition` callback fired immediately after the `enter` or `appear` class is applied. */
-  onChildEnter: PropTypes.func,
-  /** A `Transition` callback fired immediately after the `enter-active` or `appear-active` class is applied. */
-  onChildEntering: PropTypes.func,
-  /**
-   * A `Transition` callback fired immediately after the `enter` or
-   * `appear` classes are removed and the done class is added to the DOM node.
-   */
-  onChildEntered: PropTypes.func,
-  /** A `Transition` callback fired immediately after the `exit` class is applied. */
-  onChildExit: PropTypes.func,
-  /** A `Transition` callback fired immediately after the `exit-active` is applied. */
-  onChildExiting: PropTypes.func,
-  /**
-   * A `Transition` callback fired immediately after the `exit` classes
-   * are removed and the exit-done class is added to the DOM node.
-   */
-  onChildExited: PropTypes.func,
-  /** An object that specifies transition styles. */
-  transitionStyles: PropTypes.shape({
-    entering: PropTypes.shape({}),
-    entered: PropTypes.shape({}),
-    exiting: PropTypes.shape({}),
-    exited: PropTypes.shape({}),
-  }),
-  /** Specifies class name to append to the `Transition`. */
-  transitionClassNames: PropTypes.string,
-};
-
-TransitionReplace.defaultProps = {
-  children: undefined,
-  enterDuration: 300,
-  exitDuration: 300,
-  className: undefined,
-  onChildEnter: undefined,
-  onChildEntering: undefined,
-  onChildEntered: undefined,
-  onChildExit: undefined,
-  onChildExiting: undefined,
-  onChildExited: undefined,
-  transitionStyles: {},
-  transitionClassNames: 'pgn__transition-replace',
-};
 
 export default TransitionReplace;
