@@ -11,7 +11,7 @@ export interface CollapsibleContextValue {
 
 export const CollapsibleContext = React.createContext<CollapsibleContextValue | undefined>(undefined);
 
-export interface CollapsibleAdvancedProps extends React.ComponentPropsWithRef<'div'> {
+export interface CollapsibleAdvancedProps extends React.ComponentPropsWithoutRef<'div'> {
   /** Specifies contents of the component. */
   children?: React.ReactNode;
   /** Specifies classname to append to the base element. */
@@ -38,6 +38,9 @@ class CollapsibleAdvanced extends React.Component<CollapsibleAdvancedProps, Coll
   static getDerivedStateFromProps(props: CollapsibleAdvancedProps) {
     if (props.open !== undefined) {
       return {
+        // Since this method fires on both props and state changes, local updates
+        // to the controlled value will be ignored, because the props version
+        // always overrides it. In this case, this is exactly what we want.
         isOpen: props.open,
       };
     }
@@ -91,14 +94,13 @@ class CollapsibleAdvanced extends React.Component<CollapsibleAdvancedProps, Coll
       onOpen,
       onClose,
       open,
-      ref,
+      defaultOpen,
       ...props
     } = this.props;
 
     return (
       <div
         {...props}
-        ref={ref}
         className={classNames('pgn_collapsible', className, {
           'is-open': this.state.isOpen,
         })}

@@ -60,6 +60,20 @@ class TransitionReplace extends React.Component<TransitionReplaceProps, Transiti
     this.onChildExited = this.onChildExited.bind(this);
   }
 
+  // Transition events are fired in this order:
+  //
+  // onEnter > onEntering > onEntered
+  // onExit  > onExiting  > onExited
+  //
+  // Keep in mind that we always have two transitions happening
+  // both the entering and leaving children
+  //
+  // We set the container height (for animation) in this order:
+  //
+  // 1. onChildExit         (explicitly set the height to match the current current)
+  // 2. onChildEntering     (set the height to match the new content)
+  // 3. onChildExited       (reset the height to null)
+
   onChildEnter(htmlNode: HTMLElement) {
     if (this.props.onChildEnter) { this.props.onChildEnter(htmlNode); }
   }
@@ -94,7 +108,10 @@ class TransitionReplace extends React.Component<TransitionReplaceProps, Transiti
       console.warn("TransitionReplace: A child is missing a 'key' prop. Keys are required for any child of this component.");
     }
 
+    // Makes the exiting and entering children occupy the same space
+    // SCSS handles the crossfade so it can be easily overridden
     const commonChildStyles: React.CSSProperties = {
+      // Prevent margin-collapsing which throws off height calculations
       padding: '.1px 0',
     };
 

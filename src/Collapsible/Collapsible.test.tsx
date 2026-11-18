@@ -73,7 +73,7 @@ describe('<Collapsible />', () => {
     const ref = React.createRef<CollapsibleAdvanced>();
     beforeEach(() => {
       render(
-        <Collapsible.Advanced ref={ref as any}>{collapsibleContent}</Collapsible.Advanced>,
+        <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
       );
     });
     it('opens on .open()', async () => {
@@ -102,7 +102,7 @@ describe('<Collapsible />', () => {
         return <h1>Hello world</h1>;
       }
       render(
-        <Collapsible.Advanced ref={ref as any} unmountOnExit={false}>
+        <Collapsible.Advanced ref={ref} unmountOnExit={false}>
           <Collapsible.Body>
             <Comp />
           </Collapsible.Body>
@@ -121,7 +121,7 @@ describe('<Collapsible />', () => {
     const ref = React.createRef<CollapsibleAdvanced>();
     beforeEach(() => {
       render(
-        <Collapsible.Advanced ref={ref as any}>{collapsibleContent}</Collapsible.Advanced>,
+        <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
       );
       collapsible = ref.current;
     });
@@ -171,7 +171,7 @@ describe('<Collapsible />', () => {
     const ref = React.createRef<CollapsibleAdvanced>();
     beforeEach(() => {
       render(
-        <Collapsible.Advanced ref={ref as any}>{collapsibleContent}</Collapsible.Advanced>,
+        <Collapsible.Advanced ref={ref}>{collapsibleContent}</Collapsible.Advanced>,
       );
       collapsible = ref.current;
     });
