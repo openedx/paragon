@@ -60,7 +60,7 @@
         "actions": {
           "default": "{color.action.default.gray.100}"
         },
-        "$value": "#EBEBEB",
+        "$value": "{raw.color.gray.100}",
         "$description": "Gray color of level 100."
       },
       "200": {
@@ -68,7 +68,7 @@
         "actions": {
           "default": "{color.action.default.gray.200}"
         },
-        "$value": "#CCCCCC",
+        "$value": "{raw.color.gray.200}",
         "$description": "Gray color of level 200."
       },
       "300": {
@@ -76,7 +76,7 @@
         "actions": {
           "default": "{color.action.default.gray.300}"
         },
-        "$value": "#ADADAD",
+        "$value": "{raw.color.gray.300}",
         "$description": "Gray color of level 300."
       },
       "400": {
@@ -84,7 +84,7 @@
         "actions": {
           "default": "{color.action.default.gray.400}"
         },
-        "$value": "#8F8F8F",
+        "$value": "{raw.color.gray.400}",
         "$description": "Gray color of level 400."
       },
       "500": {
@@ -100,7 +100,7 @@
         "actions": {
           "default": "{color.action.default.gray.600}"
         },
-        "$value": "#5C5C5C",
+        "$value": "{raw.color.gray.600}",
         "$description": "Gray color of level 600."
       },
       "700": {
@@ -108,7 +108,7 @@
         "actions": {
           "default": "{color.action.default.gray.700}"
         },
-        "$value": "#454545",
+        "$value": "{raw.color.gray.700}",
         "$description": "Gray color of level 700."
       },
       "800": {
@@ -116,7 +116,7 @@
         "actions": {
           "default": "{color.action.default.gray.800}"
         },
-        "$value": "#333333",
+        "$value": "{raw.color.gray.800}",
         "$description": "Gray color of level 800."
       },
       "900": {
@@ -124,7 +124,7 @@
         "actions": {
           "default": "{color.action.default.gray.900}"
         },
-        "$value": "#212529",
+        "$value": "{raw.color.gray.900}",
         "$description": "Gray color of level 900."
       },
       "base": {
@@ -132,7 +132,7 @@
         "actions": {
           "default": "{color.action.default.gray.base}"
         },
-        "$value": "#707070",
+        "$value": "{raw.color.gray.base}",
         "$description": "Basic gray color."
       }
     },
@@ -142,7 +142,7 @@
         "modify": [
           {
             "type": "mix",
-            "otherColor": "white",
+            "otherColor": "{raw.color.scale.toward-bg}",
             "amount": "0.94"
           }
         ],
@@ -157,7 +157,7 @@
         "modify": [
           {
             "type": "mix",
-            "otherColor": "white",
+            "otherColor": "{raw.color.scale.toward-bg}",
             "amount": "0.75"
           }
         ],
@@ -172,7 +172,7 @@
         "modify": [
           {
             "type": "mix",
-            "otherColor": "white",
+            "otherColor": "{raw.color.scale.toward-bg}",
             "amount": "0.50"
           }
         ],
@@ -187,7 +187,7 @@
         "modify": [
           {
             "type": "mix",
-            "otherColor": "white",
+            "otherColor": "{raw.color.scale.toward-bg}",
             "amount": "0.25"
           }
         ],
@@ -207,7 +207,7 @@
       },
       "600": {
         "source": "$primary-600",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.10" }],
+        "modify": [{ "type": "mix", "otherColor": "{raw.color.scale.toward-fg}", "amount": "0.10" }],
         "actions": {
           "default": "{color.action.default.primary.600}"
         },
@@ -216,7 +216,7 @@
       },
       "700": {
         "source": "$primary-700",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.20" }],
+        "modify": [{ "type": "mix", "otherColor": "{raw.color.scale.toward-fg}", "amount": "0.20" }],
         "actions": {
           "default": "{color.action.default.primary.700}"
         },
@@ -225,7 +225,7 @@
       },
       "800": {
         "source": "$primary-800",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.25" }],
+        "modify": [{ "type": "mix", "otherColor": "{raw.color.scale.toward-fg}", "amount": "0.25" }],
         "actions": {
           "default": "{color.action.default.primary.800}"
         },
@@ -234,7 +234,7 @@
       },
       "900": {
         "source": "$primary-900",
-        "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.30" }],
+        "modify": [{ "type": "mix", "otherColor": "{raw.color.scale.toward-fg}", "amount": "0.30" }],
         "actions": {
           "default": "{color.action.default.primary.900}"
         },
@@ -246,7 +246,7 @@
         "actions": {
           "default": "{color.action.default.primary.base}"
         },
-        "$value": "#0A3055",
+        "$value": "{raw.color.primary.base}",
         "$description": "Basic primary color."
       }
     },
@@ -1344,7 +1344,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.gray.100}"
@@ -1354,7 +1354,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.gray.200}"
@@ -1364,7 +1364,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.gray.300}"
@@ -1374,7 +1374,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.gray.400}"
@@ -1384,7 +1384,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.gray.500}"
@@ -1394,7 +1394,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.gray.600}"
@@ -1404,7 +1404,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.gray.700}"
@@ -1414,7 +1414,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.gray.800}"
@@ -1424,7 +1424,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.gray.900}"
@@ -1434,7 +1434,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.gray.base}"
@@ -1446,7 +1446,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.primary.100}"
@@ -1456,7 +1456,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.primary.200}"
@@ -1466,7 +1466,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.primary.300}"
@@ -1476,7 +1476,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.primary.400}"
@@ -1486,7 +1486,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.primary.500}"
@@ -1496,7 +1496,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.primary.600}"
@@ -1506,7 +1506,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.primary.700}"
@@ -1516,7 +1516,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.primary.800}"
@@ -1526,7 +1526,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.primary.900}"
@@ -1536,7 +1536,7 @@
             "modify": [
               {
                 "type": "darken",
-                "amount": "0.1"
+                "amount": "{raw.color.action.shift}"
               }
             ],
             "$value": "{color.primary.base}"

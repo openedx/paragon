@@ -8,7 +8,12 @@ const chalk = require('chalk');
 const chroma = require('chroma-js');
 const { colorYiq, darken, lighten } = require('./sass-helpers');
 const cssUtilities = require('./css-utilities');
-const { composeBreakpointName, processAndUpdateTokens, generateButtonVariantProperties } = require('./utils');
+const {
+  composeBreakpointName,
+  processAndUpdateTokens,
+  generateButtonVariantProperties,
+  inlineRawValues,
+} = require('./utils');
 
 /* eslint-disable import/no-unresolved */
 const getStyleDictionary = async () => (await import('style-dictionary')).default;
@@ -205,6 +210,15 @@ const initializeStyleDictionary = async ({ themes, baseParagonTheme }) => {
     register: registerTokensStudioTransforms,
     getTransforms: tokensStudioTransforms,
   } = await getTokensStudioTransforms();
+
+  /**
+   * Inlines a Paragon theme's raw values into the schema, so they are build-time only
+   * and never reach the output (see `inlineRawValues`).
+   */
+  StyleDictionary.registerPreprocessor({
+    name: 'pgn-inline-raw',
+    preprocessor: (dictionary) => inlineRawValues(dictionary),
+  });
 
   StyleDictionary.registerPreprocessor({
     name: 'pgn-annotate-token-extensions-with-references',

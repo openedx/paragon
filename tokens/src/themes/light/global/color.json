@@ -1,0 +1,36 @@
+{
+  "raw": {
+    "color": {
+      "gray": {
+        "100": { "$value": "#EBEBEB" },
+        "200": { "$value": "#CCCCCC" },
+        "300": { "$value": "#ADADAD" },
+        "400": { "$value": "#8F8F8F" },
+        "600": { "$value": "#5C5C5C" },
+        "700": { "$value": "#454545" },
+        "800": { "$value": "#333333" },
+        "900": { "$value": "#212529" },
+        "base": { "$value": "#707070" }
+      },
+      "primary": {
+        "base": { "$value": "#0A3055" }
+      },
+      "scale": {
+        "toward-bg": {
+          "$value": "#FFFFFF",
+          "$description": "Color that the 100–400 steps of the primary palette are mixed toward."
+        },
+        "toward-fg": {
+          "$value": "#000000",
+          "$description": "Color that the 600–900 steps of the primary palette are mixed toward."
+        }
+      },
+      "action": {
+        "shift": {
+          "$value": "0.1",
+          "$description": "Signed darken amount for the action.default.gray.* and action.default.primary.* colors."
+        }
+      }
+    }
+  }
+}
