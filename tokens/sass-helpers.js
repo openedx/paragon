@@ -88,7 +88,7 @@ function colorYiq({
 /**
  * Overrides chroma-js's lighten / darken functions to behave the same way SASS functions do.
  */
-const lighten = (color, hslPercent) => color.set('hsl.l', color.get('hsl.l') + hslPercent);
+const lighten = (color, hslPercent) => color.set('hsl.l', color.get('hsl.l') + Number(hslPercent));
 const darken = (color, hslPercent) => lighten(color, -hslPercent);
 
 module.exports = {
