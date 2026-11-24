@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import Button from '../../Button';
 import Card from '..';
 import CardStatus from '../CardStatus';
-import WarningFilled from '../../../icons/jsx/WarningFilled';
+import { WarningFilled } from '../../../icons';
 
 describe('correct rendering', () => {
   it('renders CardStatus element', () => {

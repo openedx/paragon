@@ -18,7 +18,7 @@ build-incremental: build-js build-scss
 .PHONY: build-js
 build-js:
 	tsc --project tsconfig.build.json
-	rm icons/es5/index.d.ts  # We don't need this; not sure how to tell tsc not to generate it
+	node icons/build-compat.mjs  # deprecated icons/es5 and icons/jsx re-exports, kept for backwards compatibility
 	babel src --config-file ./babel.config.json --out-dir dist --source-maps --ignore **/*.d.ts,**/*.test.jsx,**/*.test.tsx,**/__mocks__,**/__snapshots__,**/setupTest.js --copy-files --extensions ".ts,.tsx,.jsx"
 	# --copy-files will bring in everything else that wasn't processed by babel. Remove what we don't want.
 	find ./dist -name "tests" -type d -prune -exec rm -rf "{}" \; # delete tests directories
