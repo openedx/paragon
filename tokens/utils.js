@@ -427,7 +427,54 @@ function generateButtonVariantProperties(variant) {
   return properties.join('\n  ');
 }
 
+/**
+ * Inlines a theme's raw values into the token tree: every string that is exactly `{raw.<path>}`
+ * is replaced with that raw token's value, following references between raw values, and the
+ * top-level `raw` group is removed. Raw values are internal to Paragon's own themes for now:
+ * they never reach the output, and brand packages can't override them yet.
+ *
+ * @param {Object} dictionary - The token tree, possibly with a top-level `raw` group.
+ * @returns {Object} The token tree without the `raw` group.
+ */
+function inlineRawValues(dictionary) {
+  const { raw, ...tokens } = dictionary;
+  if (!raw) {
+    return dictionary;
+  }
+
+  const maxDepth = 10;
+  const rawReference = /^\{(raw\.[^}]+)\}$/;
+  const getRawValue = (reference) => reference.split('.').slice(1).reduce((node, key) => node?.[key], raw)?.$value;
+  const inlineValue = (value) => {
+    let result = value;
+    for (let depth = 0; typeof result === 'string' && rawReference.test(result); depth += 1) {
+      if (depth === maxDepth) {
+        throw new Error(`[Paragon] Circular or too deep raw reference: ${value}`);
+      }
+      const [, reference] = result.match(rawReference);
+      result = getRawValue(reference);
+      if (result === undefined) {
+        throw new Error(`[Paragon] Unresolved raw value: {${reference}}`);
+      }
+    }
+    return result;
+  };
+  const inlineNode = (node) => {
+    Object.keys(node).forEach((key) => {
+      if (typeof node[key] === 'string') {
+        node[key] = inlineValue(node[key]);
+      } else if (node[key] && typeof node[key] === 'object') {
+        inlineNode(node[key]);
+      }
+    });
+  };
+
+  inlineNode(tokens);
+  return tokens;
+}
+
 module.exports = {
+  inlineRawValues,
   createIndexCssFile,
   getFilesWithExtension,
   getSCSStoCSSMap,

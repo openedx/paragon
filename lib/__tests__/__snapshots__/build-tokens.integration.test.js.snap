@@ -1,0 +1,477 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`build-tokens CLI should build TOML tokens 1`] = `
+{
+  "themes/light/index.css": "@import "variables.css";
+",
+  "themes/light/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-size-btn-focus-width: 2px;
+  --pgn-size-input-btn-focus-width: 1px;
+  --pgn-spacing-input-btn-padding-y: 0.5625rem;
+  --pgn-color-primary-base: #0E5D6FFF; /** Basic primary color. */
+  --pgn-spacing-form-input-padding-y-base: var(--pgn-spacing-input-btn-padding-y);
+  --pgn-color-action-default-primary-base: #083742FF;
+}
+",
+}
+`;
+
+exports[`build-tokens CLI should build a brand with a light and a brand-only dark theme 1`] = `
+{
+  "core/custom-media-breakpoints.css": {
+    "identicalToCommittedCss": true,
+  },
+  "core/index.css": "@import "variables.css";
+@import "custom-media-breakpoints.css";
+",
+  "core/variables.css": {
+    "diffFromCommittedCss": [
+      "+   --pgn-typography-font-family-base: Inter, sans-serif; /** Basic font family. */",
+      "-   --pgn-typography-font-family-base: var(--pgn-typography-font-family-sans-serif); /** Basic font family. */",
+    ],
+  },
+  "themes/dark/index.css": "@import "variables.css";
+@import "utility-classes.css";
+",
+  "themes/dark/utility-classes.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+",
+  "themes/dark/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-color-bg-base: #121212FF;
+}
+",
+  "themes/light/index.css": "@import "overrides/component-button-variants.css";
+@import "variables.css";
+@import "utility-classes.css";
+",
+  "themes/light/overrides/component-button-variants.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+/* Alert actions */
+
+.pgn__alert-message-wrapper .pgn__alert-actions .btn-primary,
+.pgn__alert-message-wrapper-stacked .pgn__alert-actions .btn-primary {
+  --pgn-btn-color: var(--pgn-color-btn-text-brand);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-brand);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-brand);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-brand);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-brand);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-brand);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-brand);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-brand);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-brand);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-brand);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-brand);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-brand);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-brand);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-brand);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-brand);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-brand);
+}
+
+",
+  "themes/light/utility-classes.css": {
+    "identicalToCommittedCss": true,
+  },
+  "themes/light/variables.css": {
+    "diffFromCommittedCss": [
+      "+   --pgn-color-gray-100: #F2F2F2FF; /** Gray color of level 100. */",
+      "+   --pgn-color-primary-base: #00262BFF; /** Basic primary color. */",
+      "+   --pgn-color-form-control-indicator-checked-bg-disabled: #00262B80;",
+      "+   --pgn-color-primary-100: #F0F2F2FF; /** Primary color of level 100. */",
+      "+   --pgn-color-primary-200: #99A8AAFF; /** Primary color of level 200. */",
+      "+   --pgn-color-primary-300: #809395FF; /** Primary color of level 300. */",
+      "+   --pgn-color-primary-400: #405C60FF; /** Primary color of level 400. */",
+      "+   --pgn-color-primary-600: #002227FF; /** Primary color of level 600. */",
+      "+   --pgn-color-primary-700: #001E22FF; /** Primary color of level 700. */",
+      "+   --pgn-color-primary-800: #001D20FF; /** Primary color of level 800. */",
+      "+   --pgn-color-primary-900: #001B1EFF; /** Primary color of level 900. */",
+      "+   --pgn-color-action-default-gray-100: #D9D9D9FF;",
+      "+   --pgn-color-action-default-gray-300: #7A7A7AFF;",
+      "+   --pgn-color-action-default-primary-base: #000000FF;",
+      "+   --pgn-color-badge-focus-bg-primary: #000000FF;",
+      "+   --pgn-color-badge-focus-box-shadow-primary: #00262B0D;",
+      "+   --pgn-color-btn-hover-text-inverse-primary: #000405FF;",
+      "+   --pgn-color-btn-active-text-inverse-primary: #000000FF;",
+      "+   --pgn-color-action-default-primary-100: #D5DADAFF;",
+      "+   --pgn-color-action-default-primary-200: #7D9093FF;",
+      "+   --pgn-color-action-default-primary-300: #67797BFF;",
+      "+   --pgn-color-action-default-primary-400: #2C3F41FF;",
+      "+   --pgn-color-action-default-primary-500: #000000FF;",
+      "+   --pgn-color-action-default-primary-600: #000000FF;",
+      "+   --pgn-color-action-default-primary-700: #000000FF;",
+      "+   --pgn-color-action-default-primary-800: #000000FF;",
+      "+   --pgn-color-action-default-primary-900: #000000FF;",
+      "+   --pgn-color-link-muted-hover: #000000FF;",
+      "+   --pgn-color-link-muted-inline-decoration: #00262B4D;",
+      "+   --pgn-color-link-muted-inline-hover-base: #000000FF;",
+      "+   --pgn-other-content-form-control-checkbox-indicator-icon-checked-base: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='%2300262BFF'/></svg>");",
+      "+   --pgn-other-content-form-control-radio-indicator-icon-checked-base: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2300262BFF'/%3e%3c/svg%3e");",
+      "+   --pgn-other-content-form-control-switch-indicator-icon-off: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2300262BFF'/%3e%3c/svg%3e");",
+      "+   --pgn-color-link-muted-inline-hover-decoration: #000000FF;",
+      "+   --pgn-other-content-form-control-checkbox-indicator-indeterminate-icon: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM17 13H7V11H17V13Z' fill='%2300262BFF'/></svg>");",
+      "-   --pgn-color-gray-100: #EBEBEBFF; /** Gray color of level 100. */",
+      "-   --pgn-color-primary-base: #0A3055FF; /** Basic primary color. */",
+      "-   --pgn-color-form-control-indicator-checked-bg-disabled: #0A305580;",
+      "-   --pgn-color-primary-100: #F0F3F5FF; /** Primary color of level 100. */",
+      "-   --pgn-color-primary-200: #C2CBD5FF; /** Primary color of level 200. */",
+      "-   --pgn-color-primary-300: #8598AAFF; /** Primary color of level 300. */",
+      "-   --pgn-color-primary-400: #476480FF; /** Primary color of level 400. */",
+      "-   --pgn-color-primary-600: #092B4DFF; /** Primary color of level 600. */",
+      "-   --pgn-color-primary-700: #082644FF; /** Primary color of level 700. */",
+      "-   --pgn-color-primary-800: #082440FF; /** Primary color of level 800. */",
+      "-   --pgn-color-primary-900: #07223CFF; /** Primary color of level 900. */",
+      "-   --pgn-color-action-default-gray-100: #D2D2D2FF;",
+      "-   --pgn-color-action-default-gray-300: #949494FF;",
+      "-   --pgn-color-action-default-primary-base: #051627FF;",
+      "-   --pgn-color-badge-focus-bg-primary: #051627FF;",
+      "-   --pgn-color-badge-focus-box-shadow-primary: #0A30550D;",
+      "-   --pgn-color-btn-hover-text-inverse-primary: #061D33FF;",
+      "-   --pgn-color-btn-active-text-inverse-primary: #051627FF;",
+      "-   --pgn-color-action-default-primary-100: #D1DBE1FF;",
+      "-   --pgn-color-action-default-primary-200: #A4B1C0FF;",
+      "-   --pgn-color-action-default-primary-300: #677F95FF;",
+      "-   --pgn-color-action-default-primary-400: #354A5FFF;",
+      "-   --pgn-color-action-default-primary-500: #051627FF;",
+      "-   --pgn-color-action-default-primary-600: #04111FFF;",
+      "-   --pgn-color-action-default-primary-700: #030C16FF;",
+      "-   --pgn-color-action-default-primary-800: #020A13FF;",
+      "-   --pgn-color-action-default-primary-900: #02080EFF;",
+      "-   --pgn-color-link-muted-hover: #020911FF;",
+      "-   --pgn-color-link-muted-inline-decoration: #0A30554D;",
+      "-   --pgn-color-link-muted-inline-hover-base: #020911FF;",
+      "-   --pgn-other-content-form-control-checkbox-indicator-icon-checked-base: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='%230A3055FF'/></svg>");",
+      "-   --pgn-other-content-form-control-radio-indicator-icon-checked-base: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%230A3055FF'/%3e%3c/svg%3e");",
+      "-   --pgn-other-content-form-control-switch-indicator-icon-off: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%230A3055FF'/%3e%3c/svg%3e");",
+      "-   --pgn-color-link-muted-inline-hover-decoration: #020911FF;",
+      "-   --pgn-other-content-form-control-checkbox-indicator-indeterminate-icon: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM17 13H7V11H17V13Z' fill='%230A3055FF'/></svg>");",
+    ],
+  },
+}
+`;
+
+exports[`build-tokens CLI should build a brand, source tokens only 1`] = `
+{
+  "core/custom-media-breakpoints.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+",
+  "core/index.css": "@import "variables.css";
+@import "custom-media-breakpoints.css";
+",
+  "core/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-typography-font-family-base: Inter, sans-serif; /** Basic font family. */
+}
+",
+  "themes/light/index.css": "@import "overrides/component-button-variants.css";
+@import "variables.css";
+",
+  "themes/light/overrides/component-button-variants.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+/* Alert actions */
+
+.pgn__alert-message-wrapper .pgn__alert-actions .btn-primary,
+.pgn__alert-message-wrapper-stacked .pgn__alert-actions .btn-primary {
+  --pgn-btn-color: var(--pgn-color-btn-text-brand);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-brand);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-brand);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-brand);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-brand);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-brand);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-brand);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-brand);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-brand);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-brand);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-brand);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-brand);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-brand);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-brand);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-brand);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-brand);
+}
+
+",
+  "themes/light/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-size-btn-focus-width: 2px;
+  --pgn-size-input-btn-focus-width: 1px;
+  --pgn-spacing-input-btn-padding-y: 0.5625rem;
+  --pgn-color-gray-100: #F2F2F2FF; /** Gray color of level 100. */
+  --pgn-color-primary-base: #00262BFF; /** Basic primary color. */
+  --pgn-spacing-form-input-padding-y-base: var(--pgn-spacing-input-btn-padding-y);
+  --pgn-color-action-default-gray-100: #D9D9D9FF;
+  --pgn-color-action-default-primary-base: #000000FF;
+}
+",
+}
+`;
+
+exports[`build-tokens CLI should build a theme on top of the light theme 1`] = `
+{
+  "core/custom-media-breakpoints.css": {
+    "identicalToCommittedCss": true,
+  },
+  "core/index.css": "@import "variables.css";
+@import "custom-media-breakpoints.css";
+",
+  "core/variables.css": {
+    "diffFromCommittedCss": [
+      "+   --pgn-typography-font-family-base: Inter, sans-serif; /** Basic font family. */",
+      "-   --pgn-typography-font-family-base: var(--pgn-typography-font-family-sans-serif); /** Basic font family. */",
+    ],
+  },
+  "themes/high-contrast/index.css": "@import "variables.css";
+@import "utility-classes.css";
+",
+  "themes/high-contrast/utility-classes.css": {
+    "identicalToCommittedCss": true,
+  },
+  "themes/high-contrast/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-color-primary-base: #000000FF; /** Basic primary color. */
+  --pgn-color-action-default-primary-base: #000000FF;
+}
+",
+}
+`;
+
+exports[`build-tokens CLI should build a theme on top of the light theme, source tokens only 1`] = `
+{
+  "core/custom-media-breakpoints.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+",
+  "core/index.css": "@import "variables.css";
+@import "custom-media-breakpoints.css";
+",
+  "core/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-typography-font-family-base: Inter, sans-serif; /** Basic font family. */
+}
+",
+  "themes/high-contrast/index.css": "@import "variables.css";
+",
+  "themes/high-contrast/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-color-primary-base: #000000FF; /** Basic primary color. */
+  --pgn-color-action-default-primary-base: #000000FF;
+}
+",
+}
+`;
+
+exports[`build-tokens CLI should build all brand themes, source tokens only 1`] = `
+{
+  "core/custom-media-breakpoints.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+",
+  "core/index.css": "@import "variables.css";
+@import "custom-media-breakpoints.css";
+",
+  "core/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-typography-font-family-base: Inter, sans-serif; /** Basic font family. */
+}
+",
+  "themes/dark/index.css": "@import "variables.css";
+",
+  "themes/dark/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-color-bg-base: #121212FF;
+}
+",
+  "themes/high-contrast/index.css": "@import "variables.css";
+",
+  "themes/high-contrast/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-color-primary-base: #000000FF;
+}
+",
+  "themes/light/index.css": "@import "overrides/component-button-variants.css";
+@import "variables.css";
+",
+  "themes/light/overrides/component-button-variants.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+/* Alert actions */
+
+.pgn__alert-message-wrapper .pgn__alert-actions .btn-primary,
+.pgn__alert-message-wrapper-stacked .pgn__alert-actions .btn-primary {
+  --pgn-btn-color: var(--pgn-color-btn-text-brand);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-brand);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-brand);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-brand);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-brand);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-brand);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-brand);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-brand);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-brand);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-brand);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-brand);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-brand);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-brand);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-brand);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-brand);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-brand);
+}
+
+",
+  "themes/light/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-size-btn-focus-width: 2px;
+  --pgn-size-input-btn-focus-width: 1px;
+  --pgn-spacing-input-btn-padding-y: 0.5625rem;
+  --pgn-color-gray-100: #F2F2F2FF; /** Gray color of level 100. */
+  --pgn-color-primary-base: #00262BFF; /** Basic primary color. */
+  --pgn-spacing-form-input-padding-y-base: var(--pgn-spacing-input-btn-padding-y);
+  --pgn-color-action-default-gray-100: #D9D9D9FF;
+  --pgn-color-action-default-primary-base: #000000FF;
+}
+",
+}
+`;
+
+exports[`build-tokens CLI should build app tokens 1`] = `
+{
+  "apps/catalog/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --catalog-home-page-banner-background-color: var(--pgn-color-primary-400);
+}
+",
+  "core/custom-media-breakpoints.css": {
+    "identicalToCommittedCss": true,
+  },
+  "core/index.css": "@import "variables.css";
+@import "custom-media-breakpoints.css";
+",
+  "core/variables.css": {
+    "identicalToCommittedCss": true,
+  },
+  "themes/light/index.css": "@import "variables.css";
+@import "utility-classes.css";
+@import "../../apps/catalog/variables.css";
+",
+  "themes/light/utility-classes.css": {
+    "identicalToCommittedCss": true,
+  },
+  "themes/light/variables.css": {
+    "identicalToCommittedCss": true,
+  },
+}
+`;
+
+exports[`build-tokens CLI should build without output references or core 1`] = `
+{
+  "themes/light/index.css": "@import "overrides/component-button-variants.css";
+@import "variables.css";
+",
+  "themes/light/overrides/component-button-variants.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+/* Alert actions */
+
+.pgn__alert-message-wrapper .pgn__alert-actions .btn-primary,
+.pgn__alert-message-wrapper-stacked .pgn__alert-actions .btn-primary {
+  --pgn-btn-color: var(--pgn-color-btn-text-brand);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-brand);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-brand);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-brand);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-brand);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-brand);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-brand);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-brand);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-brand);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-brand);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-brand);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-brand);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-brand);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-brand);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-brand);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-brand);
+}
+
+",
+  "themes/light/variables.css": "/**
+ * Do not edit directly, this file was auto-generated.
+ * See <PARAGON_ROOT>/tokens/README.md for more details.
+ */
+
+:root {
+  --pgn-size-btn-focus-width: 2px;
+  --pgn-size-input-btn-focus-width: 1px;
+  --pgn-spacing-input-btn-padding-y: 0.5625rem;
+  --pgn-color-gray-100: #F2F2F2FF; /** Gray color of level 100. */
+  --pgn-color-primary-base: #00262BFF; /** Basic primary color. */
+  --pgn-spacing-form-input-padding-y-base: 0.5625rem;
+  --pgn-color-action-default-gray-100: #D9D9D9FF;
+  --pgn-color-action-default-primary-base: #000000FF;
+}
+",
+}
+`;

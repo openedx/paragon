@@ -1,12 +1,19 @@
 /**
  * This module creates and exports custom StyleDictionary instance for Paragon.
  */
+const fs = require('fs');
+const path = require('path');
 const toml = require('js-toml');
 const chalk = require('chalk');
 const chroma = require('chroma-js');
 const { colorYiq, darken, lighten } = require('./sass-helpers');
 const cssUtilities = require('./css-utilities');
-const { composeBreakpointName, processAndUpdateTokens, generateButtonVariantProperties } = require('./utils');
+const {
+  composeBreakpointName,
+  processAndUpdateTokens,
+  generateButtonVariantProperties,
+  inlineRawValues,
+} = require('./utils');
 
 /* eslint-disable import/no-unresolved */
 const getStyleDictionary = async () => (await import('style-dictionary')).default;
@@ -166,17 +173,52 @@ const createCustomCSSVariables = async ({ formatterArgs }) => {
  */
 
 /**
+ * Paragon's token schema: which tokens exist and how they are computed. It used to live in
+ * `src/themes/light/`; keeping it apart lets a theme provide values only (see #4275).
+ */
+const SEMANTIC_TOKENS_DIR = path.resolve(__dirname, 'src/semantic');
+
+/**
+ * Whether Paragon itself ships the given theme variant (`src/themes/<variant>`).
+ *
+ * @param {string} themeVariant
+ * @returns {boolean}
+ */
+const paragonShipsTheme = (themeVariant) => fs.existsSync(path.resolve(__dirname, 'src/themes', themeVariant));
+
+/**
  * Initializes and configures Style Dictionary with custom transforms, formatters, filters, and parsers.
  *
+ * @param {Object} args
+ * @param {string[]} args.themes - The theme variants being built.
+ * @param {string} [args.baseParagonTheme] - The Paragon theme the variants are built on, if not their own.
  * @returns {Promise<StyleDictionary>} - A promise that resolves to the configured Style Dictionary instance.
  */
-const initializeStyleDictionary = async ({ themes }) => {
+const initializeStyleDictionary = async ({ themes, baseParagonTheme }) => {
+  // Paragon's schema is part of a variant only when the variant is built on Paragon's own values
+  // for it; an overlay on another Paragon theme (`--base-paragon-theme`) keeps overlay-only output.
+  const themesWithSemanticTokens = new Set(themes.filter(
+    (themeVariant) => paragonShipsTheme(themeVariant) && (!baseParagonTheme || baseParagonTheme === themeVariant),
+  ));
+  const isThemeVariantToken = (token, themeVariant) => token.filePath.includes(themeVariant)
+    || (themesWithSemanticTokens.has(themeVariant)
+      && path.resolve(token.filePath).startsWith(`${SEMANTIC_TOKENS_DIR}${path.sep}`));
+
   const StyleDictionary = await getStyleDictionary();
   const sdUtils = await getStyleDictionaryUtils();
   const {
     register: registerTokensStudioTransforms,
     getTransforms: tokensStudioTransforms,
   } = await getTokensStudioTransforms();
+
+  /**
+   * Inlines a Paragon theme's raw values into the schema, so they are build-time only
+   * and never reach the output (see `inlineRawValues`).
+   */
+  StyleDictionary.registerPreprocessor({
+    name: 'pgn-inline-raw',
+    preprocessor: (dictionary) => inlineRawValues(dictionary),
+  });
 
   StyleDictionary.registerPreprocessor({
     name: 'pgn-annotate-token-extensions-with-references',
@@ -190,8 +232,8 @@ const initializeStyleDictionary = async ({ themes }) => {
         },
         {
           name: 'isReferencedByThemeVariant',
-          filter: tkn => themes.some(theme => tkn.filePath.includes(theme)),
-          referenceTokenFilter: tkn => !themes.some(theme => tkn.filePath.includes(theme)),
+          filter: tkn => themes.some(theme => isThemeVariantToken(tkn, theme)),
+          referenceTokenFilter: tkn => !themes.some(theme => isThemeVariantToken(tkn, theme)),
         },
       ];
 
@@ -454,7 +496,7 @@ const initializeStyleDictionary = async ({ themes }) => {
             if (!baseFilterResult) {
               return false;
             }
-            return token.filePath.includes(themeVariant) || isReferencedByThemeVariant;
+            return isThemeVariantToken(token, themeVariant) || isReferencedByThemeVariant;
           },
         });
       });
@@ -480,10 +522,9 @@ const initializeStyleDictionary = async ({ themes }) => {
     ...themes.map((themeVariant) => ({
       name: `isThemeVariant.${themeVariant}`,
       filter: (token) => {
-        const isThemeVariantToken = token.filePath.includes(themeVariant);
         const paragonExtensions = token.$extensions?.['org.openedx.paragon'];
         const isReferencedByThemeVariant = !!paragonExtensions?.isReferencedByThemeVariant;
-        return isThemeVariantToken || isReferencedByThemeVariant;
+        return isThemeVariantToken(token, themeVariant) || isReferencedByThemeVariant;
       },
     })),
   ];
@@ -513,6 +554,8 @@ const initializeStyleDictionary = async ({ themes }) => {
 };
 
 module.exports = {
+  SEMANTIC_TOKENS_DIR,
+  paragonShipsTheme,
   initializeStyleDictionary,
   getTokensStudioTransforms,
   createCustomCSSVariables,

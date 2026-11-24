@@ -14,6 +14,8 @@ mockStyleDictionary.hooks = {
 const mockInitializeStyleDictionary = jest.fn().mockResolvedValue(mockStyleDictionary);
 
 module.exports = {
+  SEMANTIC_TOKENS_DIR: '/paragon/tokens/src/semantic',
+  paragonShipsTheme: jest.fn(() => true),
   initializeStyleDictionary: mockInitializeStyleDictionary,
   getTokensStudioTransforms: jest.fn().mockResolvedValue({
     expandTypesMap: {},

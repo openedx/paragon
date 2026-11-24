@@ -1,0 +1,18 @@
+{
+  "color": {
+    "primary": {
+      "base": { "$value": "#00262B" },
+      "200": { "modify": [{ "amount": "0.6" }] }
+    },
+    "gray": {
+      "100": { "$value": "#F2F2F2" }
+    },
+    "action": {
+      "default": {
+        "gray": {
+          "300": { "modify": [{ "amount": "0.2" }] }
+        }
+      }
+    }
+  }
+}
