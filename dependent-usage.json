@@ -1,5 +1,5 @@
 {
-  "lastModified": 1795443070436,
+  "lastModified": 1795529467736,
   "projectUsages": [
     {
       "version": "3.4.8",
@@ -22957,21 +22957,21 @@
           },
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 302,
+            "line": 329,
             "column": 16,
-            "index": 11761
+            "index": 12496
           },
           {
             "filePath": "src/grading-settings/assignment-section/index.jsx",
-            "line": 153,
+            "line": 164,
             "column": 22,
-            "index": 5789
+            "index": 6232
           },
           {
             "filePath": "src/grading-settings/assignment-section/index.jsx",
-            "line": 172,
+            "line": 183,
             "column": 22,
-            "index": 6700
+            "index": 7143
           }
         ],
         "ActionRow": [
@@ -23471,21 +23471,21 @@
           },
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 249,
+            "line": 276,
             "column": 22,
-            "index": 9696
+            "index": 10431
           },
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 289,
+            "line": 316,
             "column": 14,
-            "index": 11201
+            "index": 11936
           },
           {
             "filePath": "src/grading-settings/assignment-section/index.jsx",
-            "line": 192,
+            "line": 203,
             "column": 14,
-            "index": 7598
+            "index": 8041
           },
           {
             "filePath": "src/generic/ConfirmationPopup.jsx",
@@ -24171,21 +24171,21 @@
           },
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 113,
+            "line": 119,
             "column": 6,
-            "index": 3973
+            "index": 4026
           },
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 155,
+            "line": 176,
             "column": 6,
-            "index": 5040
+            "index": 5586
           },
           {
             "filePath": "src/files-and-videos/files-page/FilesPage.jsx",
-            "line": 68,
+            "line": 71,
             "column": 6,
-            "index": 2333
+            "index": 2408
           },
           {
             "filePath": "src/editors/sharedComponents/ErrorBoundary/ErrorPage.jsx",
@@ -24787,9 +24787,9 @@
           },
           {
             "filePath": "src/grading-settings/assignment-section/assignments/AssignmentItem.jsx",
-            "line": 26,
+            "line": 22,
             "column": 4,
-            "index": 458
+            "index": 364
           },
           {
             "filePath": "src/generic/FormSwitchGroup.jsx",
@@ -25547,9 +25547,9 @@
           },
           {
             "filePath": "src/grading-settings/assignment-section/assignments/AssignmentItem.jsx",
-            "line": 31,
+            "line": 27,
             "column": 6,
-            "index": 595
+            "index": 501
           },
           {
             "filePath": "src/generic/FormSwitchGroup.jsx",
@@ -27051,9 +27051,9 @@
           },
           {
             "filePath": "src/grading-settings/assignment-section/assignments/AssignmentItem.jsx",
-            "line": 32,
+            "line": 28,
             "column": 6,
-            "index": 660
+            "index": 566
           },
           {
             "filePath": "src/generic/create-or-rerun-course/CreateOrRerunCourseForm.jsx",
@@ -27269,9 +27269,9 @@
           },
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 169,
+            "line": 196,
             "column": 12,
-            "index": 5611
+            "index": 6346
           },
           {
             "filePath": "src/course-rerun/index.jsx",
@@ -27295,15 +27295,15 @@
           },
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 176,
+            "line": 203,
             "column": 14,
-            "index": 5877
+            "index": 6612
           },
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 260,
+            "line": 287,
             "column": 14,
-            "index": 10105
+            "index": 10840
           },
           {
             "filePath": "src/course-rerun/index.jsx",
@@ -28399,9 +28399,9 @@
           },
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 293,
+            "line": 320,
             "column": 12,
-            "index": 11387
+            "index": 12122
           },
           {
             "filePath": "src/generic/create-or-rerun-course/CreateOrRerunCourseForm.jsx",
@@ -30385,15 +30385,15 @@
         "CheckCircle": [
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 160,
+            "line": 181,
             "column": 18,
-            "index": 5226
+            "index": 5772
           },
           {
             "filePath": "src/grading-settings/assignment-section/index.jsx",
-            "line": 186,
+            "line": 197,
             "column": 22,
-            "index": 7365
+            "index": 7808
           },
           {
             "filePath": "src/files-and-videos/videos-page/info-sidebar/TranscriptTab.jsx",
@@ -30408,12 +30408,32 @@
             "index": 2028
           }
         ],
+        "ErrorOutline": [
+          {
+            "filePath": "src/grading-settings/GradingSettings.jsx",
+            "line": 190,
+            "column": 18,
+            "index": 6168
+          },
+          {
+            "filePath": "src/files-and-videos/videos-page/upload-modal/UploadStatusIcon.jsx",
+            "line": 12,
+            "column": 24,
+            "index": 421
+          },
+          {
+            "filePath": "src/files-and-videos/generic/UsageMetricsMessage.jsx",
+            "line": 42,
+            "column": 15,
+            "index": 1324
+          }
+        ],
         "IconAdd": [
           {
             "filePath": "src/grading-settings/GradingSettings.jsx",
-            "line": 251,
+            "line": 278,
             "column": 36,
-            "index": 9782
+            "index": 10517
           },
           {
             "filePath": "src/grading-settings/grading-scale/GradingScale.jsx",
@@ -30718,20 +30738,6 @@
             "line": 97,
             "column": 25,
             "index": 3181
-          }
-        ],
-        "ErrorOutline": [
-          {
-            "filePath": "src/files-and-videos/videos-page/upload-modal/UploadStatusIcon.jsx",
-            "line": 12,
-            "column": 24,
-            "index": 421
-          },
-          {
-            "filePath": "src/files-and-videos/generic/UsageMetricsMessage.jsx",
-            "line": 42,
-            "column": 15,
-            "index": 1324
           }
         ],
         "WarningFilled": [
