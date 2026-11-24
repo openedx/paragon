@@ -19,7 +19,7 @@ type StepperActionRowComponent = ComponentWithAsProp<'div', StepperActionRowProp
   Spacer: typeof ActionRow.Spacer;
 };
 
-const StepperActionRowBase: ComponentWithAsProp<'div', StepperActionRowProps> = forwardRef(({
+const StepperActionRow: ComponentWithAsProp<'div', StepperActionRowProps> = forwardRef(({
   as = ActionRow,
   children,
   eventKey,
@@ -35,9 +35,7 @@ const StepperActionRowBase: ComponentWithAsProp<'div', StepperActionRowProps> = 
   return React.createElement(as, { ...props, ref }, children);
 });
 
-const StepperActionRow = StepperActionRowBase as StepperActionRowComponent;
-
-StepperActionRow.Spacer = ActionRow.Spacer;
+(StepperActionRow as StepperActionRowComponent).Spacer = ActionRow.Spacer;
 StepperActionRow.displayName = 'StepperActionRow';
 
-export default StepperActionRow;
+export default StepperActionRow as StepperActionRowComponent;
