@@ -23,6 +23,14 @@ jobs:
       run: npm run type-check
     - name: Lint
       run: make lint
+    - name: Verify generated token stylesheets
+      run: |
+        npm run build-tokens
+        if [[ -n $(git status -s -- styles/css) ]]; then
+          echo "::error::Generated token stylesheets do not match the committed ones. Please run \`npm run build-tokens\`."
+          git status -s -- styles/css
+          exit 1
+        fi
     - name: Test
       run: npm run test
     - name: Verify icon changes
