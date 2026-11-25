@@ -19,6 +19,8 @@ import { Add } from '@openedx/paragon/icons';
   Both files are committed. CI checks that they match `svg/`.
 - `build-compat.mjs` generates the deprecated `es5/` and `jsx/` folders (not committed). They keep old import paths
   like `@openedx/paragon/icons/es5/Add` working by re-exporting from `index.js`. The root `make build` runs it.
+  TypeScript users see these imports as deprecated. `deprecated-paths.d.ts` covers the single-icon files with one
+  wildcard declaration.
 
 ## Adding an icon
 
