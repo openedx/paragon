@@ -34,7 +34,7 @@
 .pgn__sheet-component {
   position: fixed;
   padding: 1.25rem;
-  background-color: var(--pgn-color-white);
+  background-color: var(--pgn-color-bg-base);
   z-index: var(--pgn-elevation-sheet-zindex-main);
 
   &.pgn__sheet__dark {
