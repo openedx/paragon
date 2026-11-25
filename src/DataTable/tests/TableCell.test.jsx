@@ -42,4 +42,17 @@ describe('<TableCell />', () => {
     const cell = screen.getByRole('cell');
     expect(cell).toHaveClass(addedClass);
   });
+
+  it('wraps cell content in a clipping wrapper by default', () => {
+    render(<table><tbody><tr><TableCell {...props} /></tr></tbody></table>);
+    const cell = screen.getByRole('cell');
+    expect(cell.firstChild).toHaveClass('pgn__data-table-cell-wrap');
+  });
+
+  it('renders cell content without the wrapper when column has allowOverflow', () => {
+    render(<table><tbody><tr><TableCell {...{ ...props, column: { allowOverflow: true } }} /></tr></tbody></table>);
+    const cell = screen.getByRole('cell');
+    expect(cell.querySelector('.pgn__data-table-cell-wrap')).not.toBeInTheDocument();
+    expect(cell).toHaveTextContent('Cell data');
+  });
 });

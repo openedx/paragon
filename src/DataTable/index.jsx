@@ -297,6 +297,8 @@ DataTable.propTypes = {
     Filter: PropTypes.elementType,
     /** Specifies filter type */
     filter: PropTypes.string,
+    /** Renders cell content without the wrapper that clips overflowing content (e.g. for dropdowns) */
+    allowOverflow: PropTypes.bool,
     /** Specifies filter choices */
     filterChoices: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
@@ -343,6 +345,8 @@ DataTable.propTypes = {
     Header: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
     /** Component that renders in the added column. It will receive the row as a prop */
     Cell: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
+    /** Renders cell content without the wrapper that clips overflowing content (e.g. for dropdowns) */
+    allowOverflow: PropTypes.bool,
   })),
   /** Function that will fetch table data. Called when page size, page index or filters change.
    * Meant to be used with manual filters and pagination */
