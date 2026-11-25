@@ -169,6 +169,7 @@ ${icons.map(({ exportName, args }) => `export const ${exportName} = /*#__PURE__*
 `;
 
 const dts = `${GENERATED_NOTICE}
+/// <reference path="./deprecated-paths.d.ts" />
 import type { FC } from 'react';
 import type * as allIcons from './index';
 

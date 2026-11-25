@@ -1,3 +1,7 @@
+// Types that mark deprecated import paths like '@openedx/paragon/icons/es5/Add' as deprecated. Referenced here
+// (tsc copies this line into dist/index.d.ts) so they apply to any project that imports '@openedx/paragon'.
+/// <reference path="../icons/deprecated-paths.d.ts" />
+
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Things that have types
 // // // // // // // // // // // // // // // // // // // // // // // // // // //

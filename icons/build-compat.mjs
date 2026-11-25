@@ -10,8 +10,9 @@
  * files only re-export from it. They are generated at build time (`make build`) and are not committed.
  * New code should use `import { Add } from '@openedx/paragon/icons'`.
  *
- * Only `es5/index` has TypeScript types, as it did before, with each icon marked `@deprecated`.
- * The single-icon files have never had types, and still don't.
+ * TypeScript users see these imports as deprecated:
+ *   - `es5/index` gets generated types (below), with each icon marked `@deprecated`;
+ *   - the single-icon files are covered by one wildcard declaration in `deprecated-paths.d.ts`.
  */
 import fs from 'node:fs';
 import path from 'node:path';
