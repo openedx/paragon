@@ -16,7 +16,7 @@ notes: |
 A layout utility for the common use case of aligning buttons, links or text
 in a row in a control bar or nav.
 
-ActionRow assumes that its last child is the primary action and lays out actions so that the last item is in a primary location. If horizontal, the primary action sits on the right. If stacked, the primary action sits at the top of the stack (this is done via `flex-direction: column-reverse;`).
+ActionRow assumes that its last child is the primary action and lays out actions so that the last item is in a primary location. If horizontal, the primary action sits on the right. If stacked, the primary action sits at the top of the stack — the component reverses the DOM order of children so that keyboard focus order matches the visual order (primary action is reached first).
 
 ## Basic Usage
 
