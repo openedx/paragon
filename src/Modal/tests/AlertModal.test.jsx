@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { IntlProvider } from 'react-intl';
 import AlertModal from '../AlertModal';
@@ -53,6 +54,30 @@ describe('<AlertModal />', () => {
 
     const body = screen.getByText('The body of alert.');
     expect(body).toBeInTheDocument();
+  });
+
+  it('renders without optional props', () => {
+    render(
+      <IntlProvider locale="en" messages={{}}>
+        <AlertModal title="minimal" isOpen>
+          <Body />
+        </AlertModal>
+      </IntlProvider>,
+    );
+    expect(screen.getByText('The body of alert.')).toBeInTheDocument();
+    expect(screen.queryByText('footer')).not.toBeInTheDocument();
+  });
+
+  it('close button click invokes default no-op onClose without error', async () => {
+    render(
+      <IntlProvider locale="en" messages={{}}>
+        <AlertModal title="closeable" isOpen hasCloseButton>
+          <Body />
+        </AlertModal>
+      </IntlProvider>,
+    );
+    await userEvent.click(screen.getByRole('button', { name: 'Close' }));
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
   describe('with variant prop', () => {
