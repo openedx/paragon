@@ -5,6 +5,7 @@ import {
 } from '@openedx/paragon';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { FavoriteBorder } from '@openedx/paragon/icons';
+import ThemeSwitcher from './ThemeSwitcher';
 
 function MyComponent() {
   const [value, setValue] = useState('');
@@ -13,9 +14,12 @@ function MyComponent() {
 
   return (
     <Container className="p-5">
-      <Stack direction="horizontal" gap={2}>
-        <h1>My Form</h1>
-        <Bubble variant="error">1</Bubble>
+      <Stack direction="horizontal" gap={2} className="justify-content-between align-items-center">
+        <Stack direction="horizontal" gap={2}>
+          <h1>My Form</h1>
+          <Bubble variant="error">1</Bubble>
+        </Stack>
+        <ThemeSwitcher />
       </Stack>
       <Form>
         <Form.Group>

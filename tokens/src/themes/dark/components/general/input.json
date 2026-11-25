@@ -1,0 +1,25 @@
+{
+  "color": {
+    "$type": "color",
+    "input": {
+      "btn-focus": { "source": "$input-btn-focus-color", "$value": "{color.bg.active}" }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "input": {
+      "btn-focus": {
+        "box-shadow": {
+          "source": "$input-btn-focus-box-shadow",
+          "$value": {
+            "color": "{color.input.btn-focus}",
+            "spread": "{size.input.btn.focus-width}",
+            "offsetX": "0",
+            "offsetY": "0",
+            "blur": "0"
+          }
+        }
+      }
+    }
+  }
+}
