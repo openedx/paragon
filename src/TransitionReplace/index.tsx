@@ -10,8 +10,8 @@ interface TransitionStyles {
 }
 
 export interface TransitionReplaceProps {
-  /** Specifies an additional class for the base element */
-  children?: React.ReactElement;
+  /** The content that will be displayed with a transition when it changes. */
+  children?: React.ReactElement | null;
   /** Duration of the element appearance transition. */
   enterDuration?: number;
   /** Duration of the element dismiss transition. */
