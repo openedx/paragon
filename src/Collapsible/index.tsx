@@ -8,18 +8,6 @@ import CollapsibleTrigger from './CollapsibleTrigger';
 import CollapsibleVisible from './CollapsibleVisible';
 import Icon from '../Icon';
 
-interface StyleIcons {
-  iconWhenClosed: React.ReactElement;
-  iconWhenOpen: React.ReactElement;
-}
-
-const styleIcons: Record<string, StyleIcons> = {
-  basic: {
-    iconWhenClosed: <Icon src={ExpandMore} />,
-    iconWhenOpen: <Icon src={ExpandLess} />,
-  },
-};
-
 export interface CollapsibleProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
   /** Specifies contents of the component. */
   children: React.ReactNode;
@@ -27,10 +15,10 @@ export interface CollapsibleProps extends Omit<React.ComponentPropsWithoutRef<'d
   className?: string;
   /** Specifies whether the `Collapsible` should be initially open. */
   defaultOpen?: boolean;
-  /** Specifies icon to show when `Collapsible` is closed. */
-  iconWhenClosed?: React.ReactElement;
-  /** Specifies icon to show when `Collapsible` is open. */
-  iconWhenOpen?: React.ReactElement;
+  /** Specifies icon to show when `Collapsible` is closed. Pass `null` to hide the icon. */
+  iconWhenClosed?: React.ReactElement | null;
+  /** Specifies icon to show when `Collapsible` is open. Pass `null` to hide the icon. */
+  iconWhenOpen?: React.ReactElement | null;
   /** Callback fired when `Collapsible` closes. */
   onClose?: () => void;
   /** Callback fired when `Collapsible` opens. */
@@ -58,7 +46,6 @@ const Collapsible = React.forwardRef(({
   unmountOnExit = true,
   ...other
 }: CollapsibleProps, ref: React.ForwardedRef<CollapsibleAdvanced>) => {
-  const icons = { ...(styleIcons[styling] || {}), iconWhenClosed, iconWhenOpen };
   const titleElement = React.isValidElement(title) ? title : <span>{title}</span>;
 
   return (
@@ -72,10 +59,12 @@ const Collapsible = React.forwardRef(({
     >
       <Collapsible.Trigger className="collapsible-trigger">
         {titleElement}
-        <span className="collapsible-icon">
-          <Collapsible.Visible whenClosed>{icons.iconWhenClosed}</Collapsible.Visible>
-          <Collapsible.Visible whenOpen>{icons.iconWhenOpen}</Collapsible.Visible>
-        </span>
+        {(iconWhenClosed || iconWhenOpen) && (
+          <span className="collapsible-icon">
+            <Collapsible.Visible whenClosed>{iconWhenClosed}</Collapsible.Visible>
+            <Collapsible.Visible whenOpen>{iconWhenOpen}</Collapsible.Visible>
+          </span>
+        )}
       </Collapsible.Trigger>
 
       <Collapsible.Body className="collapsible-body">{children}</Collapsible.Body>

@@ -51,7 +51,7 @@ describe('ModalDialog', () => {
         >
           <ModalDialog.Header><ModalDialog.Title>The title</ModalDialog.Title></ModalDialog.Header>
           <ModalDialog.Body><p>The hidden content</p></ModalDialog.Body>
-          <ModalDialog.Footer><ModalDialog.CloseButton>Cancel</ModalDialog.CloseButton></ModalDialog.Footer>
+          <ModalDialog.Footer><ModalDialog.CloseButton variant="tertiary">Cancel</ModalDialog.CloseButton></ModalDialog.Footer>
         </ModalDialog>
       </IntlProvider>,
     );

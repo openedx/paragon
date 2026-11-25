@@ -3,10 +3,10 @@ import {
 } from 'react';
 import classNames from 'classnames';
 import ModalContext from './ModalContext';
-import Button from '../Button';
+import Button, { type ButtonProps } from '../Button';
 import type { ComponentWithAsProp } from '../utils/types/bootstrap';
 
-export interface ModalCloseButtonProps {
+export interface ModalCloseButtonProps extends Omit<ButtonProps, 'children' | 'onClick'> {
   /** Specifies the base element */
   as?: ElementType;
   /** Specifies the content of the button */
