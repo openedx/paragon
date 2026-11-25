@@ -157,12 +157,14 @@ This header displays a title, subtitle, and may contain actions.
 <div>
   <Card className="mb-2">
     <Card.Header title="Title" />
+    <Card.Footer />
   </Card>
   <Card>
     <Card.Header 
       title="Title"
       subtitle="Subtitle"
     />
+    <Card.Footer />
   </Card>
 </div>
 ```
@@ -191,6 +193,7 @@ The `Card.Header` supports custom actions via the actions prop and renders them 
             </ActionRow>
           } 
         />
+        <Card.Footer />
       </Card>
       <Card>
         <Card.Header
@@ -214,6 +217,7 @@ The `Card.Header` supports custom actions via the actions prop and renders them 
             </Dropdown>
           }
         />
+        <Card.Footer />
       </Card>
     </div>
 )}
@@ -235,6 +239,7 @@ Add ``size="sm"`` for smaller header content and actions.
     }
     size="sm"
   />
+  <Card.Footer />
 </Card>
 ```
 
