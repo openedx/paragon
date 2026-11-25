@@ -1,8 +1,8 @@
 import React, {
-  useLayoutEffect, useRef, useEffect,
+  useLayoutEffect, useRef,
 } from 'react';
 import PropTypes from 'prop-types';
-import { truncateLines } from './utils';
+import { truncateLines } from './utils.deprecated';
 import useWindowSize from '../hooks/useWindowSizeHook';
 
 const DEFAULT_TRUNCATE_LINES = 1;
@@ -66,13 +66,4 @@ TruncateDeprecated.defaultProps = {
   onTruncate: undefined,
 };
 
-function Truncate() {
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log('Please use Truncate.Deprecated until a replacement is created');
-  }, []);
-  return null;
-}
-Truncate.Deprecated = TruncateDeprecated;
-
-export default Truncate;
+export default TruncateDeprecated;
