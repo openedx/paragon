@@ -17,6 +17,7 @@ exports[`<Alert /> renders with button and dismissible props 1`] = `
       className="pgn__alert-actions pgn__action-row"
     >
       <span
+        aria-hidden="true"
         className="pgn__action-row-spacer"
       />
       <button
@@ -56,6 +57,7 @@ exports[`<Alert /> renders with button prop 1`] = `
       className="pgn__alert-actions pgn__action-row"
     >
       <span
+        aria-hidden="true"
         className="pgn__action-row-spacer"
       />
       <button
@@ -87,6 +89,7 @@ exports[`<Alert /> renders with dismissible prop 1`] = `
       className="pgn__alert-actions pgn__action-row"
     >
       <span
+        aria-hidden="true"
         className="pgn__action-row-spacer"
       />
       <button
@@ -155,6 +158,7 @@ exports[`<Alert /> renders with stacked prop 1`] = `
       className="pgn__alert-actions pgn__action-row"
     >
       <span
+        aria-hidden="true"
         className="pgn__action-row-spacer"
       />
       <button

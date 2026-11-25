@@ -18,6 +18,21 @@ in a row in a control bar or nav.
 
 ActionRow assumes that its last child is the primary action and lays out actions so that the last item is in a primary location. If horizontal, the primary action sits on the right. If stacked, the primary action sits at the top of the stack (this is done via `flex-direction: column-reverse;`).
 
+## Accessibility
+
+When ActionRow groups interactive controls (buttons, links), add `role="group"` and `aria-label`
+so assistive technology users can identify the group's purpose and distinguish multiple ActionRows
+on the same page:
+
+```jsx live
+<ActionRow role="group" aria-label="Form actions">
+  <Button variant="tertiary">Cancel</Button>
+  <Button variant="primary">Submit</Button>
+</ActionRow>
+```
+
+Both attributes are passed through to the underlying element via the standard HTML attributes spread.
+
 ## Basic Usage
 
 ```jsx live
