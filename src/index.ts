@@ -13,8 +13,12 @@ export { default as Button, ButtonGroup, ButtonToolbar } from './Button';
 export { default as Chip, CHIP_PGN_CLASS } from './Chip';
 export { default as ChipCarousel } from './ChipCarousel';
 export { default as CloseButton } from './CloseButton';
+export { default as Collapse } from './Collapse';
+export { default as Collapsible } from './Collapsible';
 export { default as Container, type ContainerSize } from './Container';
+export { default as DataTableContext } from './DataTable/DataTableContext';
 export { default as DropdownFilter } from './DataTable/filters/DropdownFilter';
+export { default as Fade } from './Fade';
 export {
   default as Form,
   RadioControl,
@@ -40,18 +44,29 @@ export {
 export { default as Hyperlink } from './Hyperlink';
 export { default as Icon } from './Icon';
 export { default as IconButton, IconButtonWithTooltip } from './IconButton';
+export { default as Image, Figure } from './Image';
+export { default as Media } from './Media';
+export { default as Menu } from './Menu';
+export { default as MenuItem } from './Menu/MenuItem';
 export { default as ModalCloseButton } from './Modal/ModalCloseButton';
 export { default as ModalContext } from './Modal/ModalContext';
 export { default as ModalDialog } from './Modal/ModalDialog';
 export { default as ModalLayer } from './Modal/ModalLayer';
 export { default as Overlay, OverlayTrigger } from './Overlay';
+export { default as PageBanner, PAGE_BANNER_DISMISS_ALT_TEXT } from './PageBanner';
 export { default as Portal } from './Modal/Portal';
+export { default as ResponsiveEmbed } from './ResponsiveEmbed';
 export { default as Scrollable } from './Scrollable';
 export { default as Spinner } from './Spinner';
 export { default as Stack } from './Stack';
 export { default as StatefulButton } from './StatefulButton';
+export { default as Stepper } from './Stepper';
+export { default as TableCell } from './DataTable/TableCell';
+export { default as TableHeaderCell } from './DataTable/TableHeaderCell';
 export { default as Toast, TOAST_CLOSE_LABEL_TEXT, TOAST_DELAY } from './Toast';
+export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
 export { default as Tooltip } from './Tooltip';
+export { default as TransitionReplace } from './TransitionReplace';
 export { default as useWindowSize, type WindowSizeData } from './hooks/useWindowSizeHook';
 export { default as useToggle, type Toggler, type ToggleHandlers } from './hooks/useToggleHook';
 export { default as useArrowKeyNavigation, type ArrowKeyNavProps } from './hooks/useArrowKeyNavigationHook';
@@ -82,10 +97,6 @@ export {
 } from './Carousel';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Layout, Col, Row } from './Layout';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Collapse } from './Collapse';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Collapsible } from './Collapsible';
 export {
   default as Dropdown,
   DropdownToggle,
@@ -94,19 +105,9 @@ export {
   // @ts-ignore: has yet to be converted to TypeScript
 } from './Dropdown';
 // @ts-ignore: has yet to be converted to TypeScript
-export { default as Fade } from './Fade';
-// @ts-ignore: has yet to be converted to TypeScript
 export { default as IconButtonToggle } from './IconButtonToggle';
 // @ts-ignore: has yet to be converted to TypeScript
-export { default as Image, Figure } from './Image';
-// @ts-ignore: has yet to be converted to TypeScript
 export { default as MailtoLink, MAIL_TO_LINK_EXTERNAL_LINK_ALTERNATIVE_TEXT, MAIL_TO_LINK_EXTERNAL_LINK_TITLE } from './MailtoLink';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Media } from './Media';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Menu } from './Menu';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as MenuItem } from './Menu/MenuItem';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as SelectMenu, SELECT_MENU_DEFAULT_MESSAGE } from './Menu/SelectMenu';
 // @ts-ignore: has yet to be converted to TypeScript
@@ -131,8 +132,6 @@ export {
 } from './Nav';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Navbar, NavbarBrand, NAVBAR_LABEL } from './Navbar';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as PageBanner, PAGE_BANNER_DISMISS_ALT_TEXT } from './PageBanner';
 export {
   default as Pagination,
   PAGINATION_BUTTON_LABEL_PREV,
@@ -150,8 +149,6 @@ export { default as Popover, PopoverTitle, PopoverContent } from './Popover';
 export { default as ProgressBar } from './ProgressBar';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as ProductTour } from './ProductTour';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as ResponsiveEmbed } from './ResponsiveEmbed';
 export {
   default as SearchField,
   SEARCH_FIELD_SCREEN_READER_TEXT_LABEL,
@@ -162,8 +159,6 @@ export {
 } from './SearchField';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Sheet } from './Sheet';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Stepper } from './Stepper';
 export {
   default as Tabs,
   Tab,
@@ -172,8 +167,6 @@ export {
   TabPane,
 // @ts-ignore: has yet to be converted to TypeScript
 } from './Tabs';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as TransitionReplace } from './TransitionReplace';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as ValidationMessage } from './ValidationMessage';
 // @ts-ignore: has yet to be converted to TypeScript
@@ -185,10 +178,6 @@ export { default as CheckboxFilter } from './DataTable/filters/CheckboxFilter';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as MultiSelectDropdownFilter } from './DataTable/filters/MultiSelectDropdownFilter';
 // @ts-ignore: has yet to be converted to TypeScript
-export { default as TableHeaderCell } from './DataTable/TableHeaderCell';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as TableCell } from './DataTable/TableCell';
-// @ts-ignore: has yet to be converted to TypeScript
 export { default as TableFilters, TABLE_FILTERS_BUTTON_TEXT } from './DataTable/TableFilters';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as TableHeader } from './DataTable/TableHeaderRow';
@@ -199,8 +188,6 @@ export { default as TablePagination } from './DataTable/TablePagination';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as TablePaginationMinimal } from './DataTable/TablePaginationMinimal';
 // @ts-ignore: has yet to be converted to TypeScript
-export { default as DataTableContext } from './DataTable/DataTableContext';
-// @ts-ignore: has yet to be converted to TypeScript
 export { default as BulkActions } from './DataTable/BulkActions';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as TableControlBar } from './DataTable/TableControlBar';
@@ -210,8 +197,6 @@ export { default as TableFooter } from './DataTable/TableFooter';
 export { default as CardView } from './DataTable/CardView';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Skeleton, SkeletonTheme } from './Skeleton/index';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as ToggleButton, ToggleButtonGroup } from './ToggleButton';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Sticky } from './Sticky';
 // @ts-ignore: has yet to be converted to TypeScript
