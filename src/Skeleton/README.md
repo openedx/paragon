@@ -3,6 +3,7 @@ title: 'Skeleton'
 type: 'component'
 components:
 - Skeleton
+- SkeletonTheme
 categories:
 - Status & metadata
 status: 'New'

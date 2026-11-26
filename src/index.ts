@@ -57,6 +57,9 @@ export { default as PageBanner, PAGE_BANNER_DISMISS_ALT_TEXT } from './PageBanne
 export { default as Portal } from './Modal/Portal';
 export { default as ResponsiveEmbed } from './ResponsiveEmbed';
 export { default as Scrollable } from './Scrollable';
+export {
+  default as Skeleton, SkeletonTheme, type SkeletonProps, type SkeletonThemeProps,
+} from './Skeleton';
 export { default as Spinner } from './Spinner';
 export { default as Stack } from './Stack';
 export { default as StatefulButton } from './StatefulButton';
@@ -195,8 +198,6 @@ export { default as TableControlBar } from './DataTable/TableControlBar';
 export { default as TableFooter } from './DataTable/TableFooter';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as CardView } from './DataTable/CardView';
-// @ts-ignore: has yet to be converted to TypeScript
-export { default as Skeleton, SkeletonTheme } from './Skeleton/index';
 // @ts-ignore: has yet to be converted to TypeScript
 export { default as Sticky } from './Sticky';
 // @ts-ignore: has yet to be converted to TypeScript
