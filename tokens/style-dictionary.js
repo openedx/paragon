@@ -31,13 +31,13 @@ const getTokensStudioTransforms = async () => import('@tokens-studio/sd-transfor
 /**
  * @typedef ModifyColorDarken
  * @property {'darken'} type - The type of modification.
- * @property {number} amount - The amount of modification to apply.
+ * @property {number|string} amount - The amount of modification to apply.
  */
 
 /**
  * @typedef ModifyColorLighten
  * @property {'lighten'} type - The type of modification.
- * @property {number} amount - The amount of modification to apply.
+ * @property {number|string} amount - The amount of modification to apply.
  */
 
 /**
