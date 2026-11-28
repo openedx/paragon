@@ -1,0 +1,17 @@
+/*
+ * Design-token CSS custom properties.
+ *
+ * These are imported verbatim from Paragon's EXISTING compiled token output
+ * (built by the unchanged `style-dictionary` pipeline). The prototype does not
+ * redefine a single token — it consumes the same `--pgn-*` variables the real
+ * `core.css` / `light.css` ship today. This is the concrete demonstration that
+ * removing Bootstrap and moving to CSS Modules leaves the design-tokens theming
+ * API byte-compatible: `@edx/brand` overrides and consuming MFEs are unaffected.
+ *
+ * In the real library these are delivered as `@openedx/paragon/dist/core.css`
+ * plus a theme file; here we point straight at the repo's build artifacts.
+ */
+@import "../../styles/css/core/variables.css";
+@import "../../styles/css/core/abstraction-variables.css";
+@import "../../styles/css/themes/light/variables.css";
+@import "../../styles/css/themes/light/abstraction-variables.css";
